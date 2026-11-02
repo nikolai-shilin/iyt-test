@@ -1,0 +1,3425 @@
+[
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "Wednesday evening club race, first beat. You are close-hauled on port tack in a Laser; Red, also close-hauled but on starboard tack, is converging from your right and will arrive at the same spot in about five seconds. Who keeps clear?",
+  "a": "You — a port-tack boat keeps clear of a starboard-tack boat (rule 10)",
+  "o": [
+   "Red — the boat that has the other on her left-hand side keeps clear",
+   "Whichever boat is to windward at the moment the courses cross",
+   "Red — you will reach the crossing point first, so you are clear ahead"
+  ],
+  "why": "Rule 10: when boats are on opposite tacks, the port-tack boat keeps clear of the starboard-tack boat.",
+  "ref": "RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 95,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 205,
+     "y": 150,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On the run of a windward–leeward course in 12 knots you are in a 470 on port gybe, boom out to starboard. Grey is running on starboard gybe and converging slowly from your right, two hull lengths away; no mark is near. Who keeps clear?",
+  "a": "You — on a run the tack is given by the side the boom is on, and you are the port-tack boat (rule 10)",
+  "o": [
+   "Grey — on a run boats are not on tacks, so the boat astern keeps clear",
+   "Grey — she is to windward of you and the windward boat keeps clear (rule 11)",
+   "Neither — on a run both boats hold their course until one is overlapped inside"
+  ],
+  "why": "Rule 10 applies on every point of sail; definition Tack: a boat is on the tack of her windward side, opposite to her boom.",
+  "ref": "RRS 10, RRS definition Tack",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 115,
+     "y": 80,
+     "hdg": 170,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 200,
+     "y": 85,
+     "hdg": 190,
+     "label": "Grey"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "In a Melges 24 fleet on the run you are heading dead downwind with your boom out to port. Black comes up on your port quarter sailing by the lee, her boom out to starboard, and will be alongside in a moment. Which tack is Black on, and who keeps clear?",
+  "a": "Black is on port tack — the side her mainsail lies on is her leeward side — so she keeps clear of you (rule 10)",
+  "o": [
+   "Black is on starboard tack because the wind reaches her over her starboard side, so you keep clear",
+   "Black is clear astern, so she keeps clear under rule 12 whatever tack she is on",
+   "You become the windward boat once she is alongside, so you keep clear (rule 11)"
+  ],
+  "why": "Definition Leeward and Windward: by the lee, the leeward side is where the mainsail lies; Black's windward side is port, so she is on port tack.",
+  "ref": "RRS 10, RRS definition Leeward and Windward",
+  "fig": {
+   "type": "card",
+   "title": "On the run",
+   "lines": [
+    "You: dead downwind, boom out to port",
+    "Black: by the lee, boom out to starboard",
+    "Black overtaking on your port quarter",
+    "12 knots, no mark nearby"
+   ],
+   "tag": "Who keeps clear?"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are beating on port tack in a Dragon on the second lap of a windward–leeward course. Yellow, still on her first lap, is running down towards you on starboard tack under spinnaker; you will meet in three hull lengths. Who keeps clear?",
+  "a": "You — you are on port and Yellow on starboard; rule 10 applies whatever the point of sail",
+  "o": [
+   "Yellow — a boat running keeps clear of a boat beating",
+   "Yellow — she is on a different leg and must not interfere with you (rule 23.2)",
+   "Neither — boats on different legs of the course each sail their own course"
+  ],
+  "why": "Rule 10 depends only on tacks, not on who is beating or running or which leg they are on.",
+  "ref": "RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 155,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 178,
+     "y": 45,
+     "hdg": 181,
+     "label": "Yellow"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "At a Saronic Gulf regatta you are running on starboard gybe in a 36-ft cruiser-racer, spinnaker set. Ahead and to leeward a J/24 is beating on port tack and will pass close across your bow. Her skipper shouts that a boat beating has priority over a boat running. Who is right?",
+  "a": "You — she is on port tack and you are on starboard; rule 10 applies regardless of who is beating or running",
+  "o": [
+   "The J/24 — a close-hauled boat has right of way over a boat sailing free",
+   "The J/24 — she is the smaller boat and is restricted in her ability to manoeuvre",
+   "Neither has right of way; each must simply avoid contact with the other (rule 14)"
+  ],
+  "why": "Rule 10: the port-tack boat keeps clear of the starboard-tack boat; there is no beating-over-running rule.",
+  "ref": "RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 125,
+     "y": 45,
+     "hdg": 185,
+     "label": "You",
+     "you": true,
+     "scale": 0.75
+    },
+    {
+     "x": 75,
+     "y": 150,
+     "hdg": 45,
+     "label": "Red"
+    }
+   ],
+   "note": "Red is the J/24"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are close-hauled on port in a J/70; White is close-hauled on starboard, eight hull lengths away on your right. You judge that you will cross her bow with two clear hull lengths to spare and hold your course. You cross as expected and White never alters course. Did you break a rule?",
+  "a": "No — you kept clear: White could sail her course with no need to take avoiding action",
+  "o": [
+   "Yes — a port-tack boat may never cross ahead of a starboard-tack boat",
+   "Yes — a port-tack boat must tack or bear away once a starboard-tack boat is within ten hull lengths",
+   "Yes — you should have hailed White before crossing ahead of her"
+  ],
+  "why": "Definition Keep Clear: the right-of-way boat can sail her course without avoiding action; a safe cross satisfies rule 10.",
+  "ref": "RRS 10, RRS definition Keep Clear",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 60,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 245,
+     "y": 150,
+     "hdg": 315,
+     "label": "White"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "On a beat at the national Optimist championship you are on port tack. A starboard-tack boat is converging and you decide to duck her: you bear away, pass a metre behind her transom and harden up again. The starboard boat held her course throughout. Who, if anyone, broke a rule?",
+  "a": "Nobody — you kept clear as rule 10 requires, and the starboard boat was entitled to hold her course",
+  "o": [
+   "You — a port-tack boat must tack, not bear away, to keep clear",
+   "The starboard boat — she should have borne away to let you cross ahead",
+   "You — passing within a metre of another boat is too close to be keeping clear"
+  ],
+  "why": "Rule 10: the port-tack boat keeps clear; ducking astern is the normal way to do it, and the starboard boat need not alter course.",
+  "ref": "RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 95,
+     "y": 160,
+     "hdg": 65,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 175,
+     "y": 115,
+     "hdg": 315,
+     "label": "A"
+    }
+   ],
+   "note": "You bear away to pass astern of A"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are close-hauled on starboard tack. Red, on port, is on a collision course and hails «Hold your course!» as she bears away to pass behind you. You luff a little to improve your lane; Red, now passing further astern, is not affected. Did Red's hail bind you to hold your course?",
+  "a": "No — Red has no right to demand that; you may change course, provided you give her room to keep clear (rule 16.1)",
+  "o": [
+   "Yes — once a port-tack boat hails «Hold your course» the starboard-tack boat must not alter course",
+   "Yes — a right-of-way boat must always hold her course until the other boat is clear",
+   "No — but only because Red hailed after you had already begun to change course"
+  ],
+  "why": "Rule 10 gives starboard the right of way; a hail creates no obligation. The starboard boat may alter course within rule 16.",
+  "ref": "RRS 10, RRS 16.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 195,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 95,
+     "y": 150,
+     "hdg": 45,
+     "label": "Red"
+    }
+   ],
+   "note": "Red hails «Hold your course!»"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "Forty seconds before the start of a Hobie 16 race you are reaching slowly along the line on starboard tack. Green comes the other way on port tack, below the line, and you converge. Her helm says that before the start «there are no rules yet». Who keeps clear?",
+  "a": "Green — Part 2 applies to boats sailing in the racing area well before the start, and the port-tack boat keeps clear",
+  "o": [
+   "You — before the start the boat nearer the committee boat keeps clear",
+   "Nobody — the right-of-way rules only apply after the starting signal",
+   "Green — but only because she is sailing away from the line"
+  ],
+  "why": "Rule 10 applies before the start like any Part 2 rule: Part 2 governs boats sailing in or near the racing area.",
+  "ref": "RRS 10, RRS Part 2 preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 110,
+    "x2": 280,
+    "y2": 110,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 215,
+     "y": 140,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 85,
+     "y": 150,
+     "hdg": 90,
+     "label": "Green"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You approach the windward mark, to be left to port, close-hauled on starboard tack and two lengths short of the layline. Blue is coming in on port tack on her layline and will arrive at the mark just ahead of you, on the inside. She hails for mark-room. Who keeps clear?",
+  "a": "Blue — on a beat rule 18 does not apply between boats on opposite tacks, so rule 10 governs and the port-tack boat keeps clear",
+  "o": [
+   "You — Blue is the inside boat in the zone and is entitled to mark-room (rule 18.2)",
+   "You — the boat that reaches the zone first has right of way at the mark",
+   "Blue — but only if you hail «Starboard» before she enters the zone"
+  ],
+  "why": "Rule 18.1: no mark-room between boats on opposite tacks on a beat to windward; rule 10 applies instead.",
+  "ref": "RRS 10, RRS 18.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 72,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 220,
+     "y": 155,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 100,
+     "y": 150,
+     "hdg": 45,
+     "label": "Blue"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Just before the start you luff head to wind on starboard tack and stop there, sails flapping, bow pointing straight into the wind. Grey approaches on port tack and hails that you are «tacking» and must keep clear of her. Is she right?",
+  "a": "No — until you pass head to wind you remain on starboard tack, so Grey, on port, keeps clear of you (rule 10)",
+  "o": [
+   "Yes — a boat head to wind is tacking and keeps clear of everyone (rule 13)",
+   "Yes — a stationary boat has no right of way over a boat making way",
+   "No — but only because a boat stopped at the line is an obstruction"
+  ],
+  "why": "Definition Tack and rule 13: a boat stays on the tack of her windward side and is only «tacking» after she passes head to wind.",
+  "ref": "RRS 10, RRS 13, RRS definition Tack",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 95,
+    "x2": 280,
+    "y2": 95,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 135,
+     "hdg": 0,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 70,
+     "y": 165,
+     "hdg": 45,
+     "label": "Grey"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On a reaching leg at Bodrum you are on port tack on a two-sail reach. Blue is on starboard tack with her bow about half a length ahead of yours, and your courses converge. Your crew says that as the boat clear astern you must keep clear — and anyway you would have to as the port-tack boat. Which rule actually applies?",
+  "a": "Rule 10 — the port-tack boat keeps clear; «clear astern» means nothing between boats on opposite tacks here",
+  "o": [
+   "Rule 12 — a boat clear astern keeps clear of a boat clear ahead",
+   "Rule 11 — you are the windward boat and must keep clear",
+   "Rule 15 — Blue acquired right of way and must first give you room"
+  ],
+  "why": "Definition Clear Astern/Overlap: the terms apply to opposite tacks only under rule 18 or when both sail more than 90° from the wind.",
+  "ref": "RRS 10, RRS definition Clear Astern and Clear Ahead; Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 90,
+     "y": 160,
+     "hdg": 60,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 205,
+     "y": 140,
+     "hdg": 300,
+     "label": "Blue"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "Running in 18 knots near the end of a long leg you are on port gybe. Grey, on starboard gybe, is two hull lengths clear astern of you and faster on the waves; she is on a converging course and will reach your transom within a minute. Who must keep clear, and from when?",
+  "a": "You, from now — rule 10 applies between boats on opposite tacks whether or not they are overlapped",
+  "o": [
+   "Grey, until she becomes overlapped with you; after that you keep clear",
+   "Grey — the boat clear astern keeps clear on any leg of the course (rule 12)",
+   "Nobody until the boats are within one hull length of each other"
+  ],
+  "why": "Rule 10 does not depend on overlap; rule 12 (clear astern keeps clear) is only between boats on the same tack.",
+  "ref": "RRS 10, RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 125,
+     "hdg": 170,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 168,
+     "y": 60,
+     "hdg": 190,
+     "label": "Grey"
+    }
+   ],
+   "note": "Grey is two lengths astern and faster"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "A club race on a lake in 10 knots mixes dinghies and windsurfers in one start. You are beating on port tack in a Laser when a windsurfer on starboard tack converges with you. Does rule 10 apply between a board and a boat?",
+  "a": "Yes — a windsurfer is a boat under the rules; you, on port tack, keep clear of her on starboard",
+  "o": [
+   "No — windsurfers are not boats, so the board keeps clear of all dinghies",
+   "No — the more manoeuvrable vessel keeps clear, and a board turns faster",
+   "Yes — but a board is on the tack of the hand nearest the mast, so this one is on port"
+  ],
+  "why": "«Boat» in the RRS includes a board; Appendix B changes some rules for windsurfing but not rule 10.",
+  "ref": "RRS 10, RRS Appendix B",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 100,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 215,
+     "y": 150,
+     "hdg": 315,
+     "label": "Board",
+     "scale": 0.45
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "During a mixed handicap race on a river you are beating on starboard tack in an Optimist. A 36-ft cruiser-racer on port tack is bearing down on you and her crew wave you away, shouting that a big boat cannot stop. Who keeps clear?",
+  "a": "The cruiser-racer — she is on port tack and you are on starboard; size does not change rule 10",
+  "o": [
+   "You — a small boat keeps clear of a larger, less manoeuvrable boat",
+   "You — a dinghy must keep clear of a keelboat under the rules of Part 2",
+   "Both equally — when sizes differ the boats share the duty to avoid each other"
+  ],
+  "why": "Rule 10 has no exception for size, speed or manoeuvrability: the port-tack boat keeps clear.",
+  "ref": "RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 200,
+     "y": 155,
+     "hdg": 315,
+     "label": "You",
+     "you": true,
+     "scale": 0.45
+    },
+    {
+     "x": 85,
+     "y": 150,
+     "hdg": 45,
+     "label": "Red",
+     "scale": 0.9
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "You are close-hauled on starboard tack in a 420. A port-tack 420 crosses your bow so close that you have to bear away to miss her transom. Her crew later says you never hailed «Starboard», so she did not need to keep clear. Is that right?",
+  "a": "No — rule 10 does not require any hail; the port-tack boat must keep clear whether or not you shout",
+  "o": [
+   "Yes — a starboard-tack boat only has right of way after hailing «Starboard»",
+   "Yes — without a hail the port-tack boat may assume that you will keep clear",
+   "No — but she only broke a rule if there was actual contact"
+  ],
+  "why": "Rule 10 is unconditional; no hail is needed, and forcing the starboard boat to alter course is already a breach.",
+  "ref": "RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 200,
+     "y": 155,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 135,
+     "y": 110,
+     "hdg": 45,
+     "label": "A"
+    }
+   ],
+   "note": "You bear away to miss A's transom"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You plan a port-tack start at the pin end in a 29er fleet. In the last fifteen seconds you approach the pin close-hauled on port while twenty boats come down the line on starboard. You cannot find a gap and cross just in front of the nearest starboard boat, which has to luff to avoid you. Which rule did you break?",
+  "a": "Rule 10 — a port-tack boat keeps clear of starboard-tack boats, and there is no exception at the start",
+  "o": [
+   "Rule 18 — you did not give the starboard boats room at the pin end",
+   "None — at the pin end a port-tack boat that is starting is entitled to room",
+   "Rule 11 — you were the windward boat at the moment of crossing"
+  ],
+  "why": "Rule 10 applies at the start; a port-tack start works only if you cross or duck every starboard boat.",
+  "ref": "RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 105,
+    "x2": 285,
+    "y2": 105,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 70,
+     "y": 160,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 145,
+     "y": 150,
+     "hdg": 315,
+     "label": "A"
+    },
+    {
+     "x": 205,
+     "y": 165,
+     "hdg": 315,
+     "label": "B"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On the first beat the wind shifts 20° to the right. You are on port tack, now lifted, and the starboard-tack boats are headed and sagging down towards you. Blue, on starboard, hails that you must tack because «the shift gives starboard the right of way». Do you have to tack?",
+  "a": "No — you must keep clear of Blue under rule 10, but you choose how: tack, duck astern of her, or cross if you safely can",
+  "o": [
+   "Yes — in a right-hand shift port-tack boats must tack to keep clear",
+   "No — a lifted boat has right of way over a headed boat",
+   "Yes — a starboard-tack boat may tell the port-tack boat how to keep clear"
+  ],
+  "why": "Rule 10 says who keeps clear, not how; the give-way boat picks any manoeuvre that keeps her clear.",
+  "ref": "RRS 10, RRS definition Keep Clear",
+  "fig": {
+   "type": "race",
+   "wind": 20,
+   "boats": [
+    {
+     "x": 90,
+     "y": 155,
+     "hdg": 65,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 220,
+     "y": 150,
+     "hdg": 335,
+     "label": "Blue"
+    }
+   ],
+   "note": "The wind has shifted 20° right"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "At a leeward gate you are running in on port gybe, about to round the left-hand gate mark. Yellow, who rounded the right-hand mark a moment ago, is now beating out on starboard tack straight across your course, three hull lengths away. She is on the next leg; you are finishing the run. Who keeps clear?",
+  "a": "You — rule 10 applies: you are on port and Yellow on starboard; being on different legs changes nothing here",
+  "o": [
+   "Yellow — a boat leaving a mark keeps clear of a boat still approaching it",
+   "Yellow — a boat on a later leg must not interfere with a boat still on the run (rule 23.2)",
+   "You — but only because you are in the zone and must give Yellow mark-room"
+  ],
+  "why": "Rule 10 governs boats on opposite tacks; rule 18 is off between a boat approaching a mark and one leaving it (18.1).",
+  "ref": "RRS 10, RRS 18.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 110,
+    "y": 120,
+    "label": "Gate mark"
+   },
+   "boats": [
+    {
+     "x": 125,
+     "y": 40,
+     "hdg": 175,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 195,
+     "y": 125,
+     "hdg": 315,
+     "label": "Yellow"
+    }
+   ],
+   "note": "Yellow rounded the other gate mark"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "On a trapezoid course you approach the gybe mark on a broad reach on port tack, overlapped inside Red, who is on starboard tack and also reaching to the mark. Both of you are in the zone. Who has right of way, and who is owed mark-room?",
+  "a": "Red has right of way under rule 10, but she must give you mark-room as the inside overlapped boat (rule 18.2)",
+  "o": [
+   "You have right of way — the inside boat at a mark always has right of way",
+   "Red has right of way and owes you nothing — rule 18 is off between boats on opposite tacks",
+   "You have right of way under rule 10 and are owed mark-room as well"
+  ],
+  "why": "Rule 10 gives starboard the right of way; rule 18 applies on a reach between opposite tacks, so the outside boat still gives mark-room.",
+  "ref": "RRS 10, RRS 18.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 150,
+    "y": 118,
+    "zone": true,
+    "label": "Gybe mark"
+   },
+   "boats": [
+    {
+     "x": 75,
+     "y": 55,
+     "hdg": 135,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 235,
+     "y": 72,
+     "hdg": 220,
+     "label": "Red"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On a river course with a two-knot ebb you are close-hauled on port tack. The current sets you sideways towards Blue, who is close-hauled on starboard, and you realise you will not cross her after all. You hold on, hoping the stream will carry you clear; Blue has to tack to avoid you. Did the current excuse you?",
+  "a": "No — you broke rule 10; keeping clear is your responsibility, whatever the current does to your track",
+  "o": [
+   "Yes — a boat set by current is not responsible for the resulting course over the ground",
+   "Yes — Blue tacked of her own choice, so you never actually failed to keep clear",
+   "No — but Blue also broke rule 14 by tacking instead of bearing away"
+  ],
+  "why": "Rule 10 is about tacks and keeping clear; current, waves or a dying breeze never excuse the give-way boat.",
+  "ref": "RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 90,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 200,
+     "y": 150,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "A two-knot current sets you to the right"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are the starboard-tack boat on a beat. Green crosses on port a quarter of a length ahead of your bow; you bear away slightly to make sure of missing her and there is no contact. Green says no rule was broken because you never touched. Is she right?",
+  "a": "No — a port-tack boat fails to keep clear whenever the starboard boat has to take avoiding action; contact is not required",
+  "o": [
+   "Yes — without contact there is no breach of a rule of Part 2",
+   "Yes — you bore away by choice, which shows that Green had crossed safely",
+   "No — but only because she passed within one hull length of you"
+  ],
+  "why": "Definition Keep Clear: the right-of-way boat must be able to sail her course with no need to take avoiding action.",
+  "ref": "RRS 10, RRS definition Keep Clear",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 195,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 125,
+     "hdg": 45,
+     "label": "Green"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "You are on port tack a length from the finishing line, aiming to finish at the committee boat end. Blue is on starboard tack and will cross your path exactly at the line. You feel that a boat about to finish should be let through. Who keeps clear?",
+  "a": "You — the port-tack boat keeps clear of the starboard-tack boat right up to the finish (rule 10)",
+  "o": [
+   "Blue — a boat finishing has right of way over boats still racing",
+   "Blue — a boat crossing the finishing line may not be obstructed by another boat",
+   "Nobody — the rules of Part 2 stop applying once a boat is in the finishing zone"
+  ],
+  "why": "Rule 10 applies until a boat has finished and cleared the line; there is no priority for the boat about to finish.",
+  "ref": "RRS 10, RRS definition Racing",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 90,
+    "x2": 280,
+    "y2": 90,
+    "label": "Finish line"
+   },
+   "boats": [
+    {
+     "x": 215,
+     "y": 140,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 270,
+     "y": 150,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On a reaching leg in 20 knots you are on starboard tack, heading for the gybe mark. Black, on port tack, has already rounded it and is coming back towards you on the reciprocal course; you are nearly head-on, two lengths apart. Black's crew hails «Keep right, like ships!». What must happen?",
+  "a": "Black keeps clear — the head-on rule of the collision regulations does not apply between boats racing; under rule 10 the port-tack boat keeps clear",
+  "o": [
+   "Both alter course to starboard, as the collision regulations require",
+   "You keep clear — a boat that has rounded the mark is on the next leg and has priority",
+   "Both keep clear of each other equally, since neither boat is to windward"
+  ],
+  "why": "Between boats racing, Part 2 replaces the IRPCS; on opposite tacks rule 10 decides, whatever the angle of approach.",
+  "ref": "RRS 10, RRS Part 2 preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 230,
+     "y": 130,
+     "hdg": 250,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 85,
+     "y": 165,
+     "hdg": 70,
+     "label": "Black"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "In 25 knots and big waves you are ducking a starboard-tack boat on the beat. As you pass behind her a wave throws your bow into the corner of her transom. You tell her that the wave did it, not you. How does the rule see it?",
+  "a": "You broke rule 10 (and rule 14) — keeping clear means allowing for the conditions and passing far enough astern",
+  "o": [
+   "Nobody broke a rule — contact caused by a wave is an accident, not a breach",
+   "The starboard boat broke rule 14 — she should have borne away to open the gap",
+   "You broke rule 11 — at the moment of contact you were the windward boat"
+  ],
+  "why": "Rule 10 and definition Keep Clear: the give-way boat must leave a margin that works in the existing conditions.",
+  "ref": "RRS 10, RRS 14",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 165,
+     "hdg": 70,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 165,
+     "y": 125,
+     "hdg": 315,
+     "label": "A"
+    }
+   ],
+   "note": "25 knots, big waves"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "First beat of a Star class regatta in Split. You and Blue are both close-hauled on starboard tack and overlapped, Blue a length to leeward of you. You are slowly sagging down towards her. Who keeps clear?",
+  "a": "You — on the same tack and overlapped, the windward boat keeps clear (rule 11)",
+  "o": [
+   "Blue — the boat that established the overlap from astern keeps clear",
+   "Blue — the leeward boat must bear away to give you room to sail your course",
+   "Neither — both boats hold their course until one of them is clear ahead"
+  ],
+  "why": "Rule 11: when boats are on the same tack and overlapped, the windward boat keeps clear of the leeward boat.",
+  "ref": "RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 170,
+     "y": 120,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 135,
+     "y": 155,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On a reach in a J/24 fleet Grey comes up from clear astern and establishes an overlap to leeward of you, about a length away, then holds her proper course. You hold yours and the boats slowly converge until Grey hails «Up!». You answer that she came from behind, so she must keep clear. Who is right?",
+  "a": "Grey — once overlapped you are the windward boat and keep clear (rule 11); her overlap from astern only limits how high she may sail (rule 17)",
+  "o": [
+   "You — a boat that establishes an overlap from clear astern keeps clear of the boat she overtakes",
+   "You — a leeward boat may not hail a windward boat up on a reaching leg",
+   "Grey — but only because she hailed before the boats converged"
+  ],
+  "why": "Rule 11 puts the duty on the windward boat however the overlap began; rule 17 limits the leeward boat to her proper course.",
+  "ref": "RRS 11, RRS 17",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 110,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 175,
+     "y": 150,
+     "hdg": 270,
+     "label": "Grey"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Beating in light air you are overlapped to windward of Red on port tack, hulls a metre apart. Your mainsail is eased in a puff and its leech brushes Red's shroud. There is no damage and the hulls never touch. Did anyone break a rule?",
+  "a": "You — a windward boat that touches the leeward boat with any part of her equipment has failed to keep clear (rule 11)",
+  "o": [
+   "Nobody — only hull-to-hull contact counts under the rules of Part 2",
+   "Red — a leeward boat must leave the windward boat room for her sails",
+   "Nobody — there was no damage, so rule 14 exonerates both boats"
+  ],
+  "why": "Rule 11 and definition Keep Clear: contact by sails or rigging is contact; the windward boat must stay clear with all of her boat.",
+  "ref": "RRS 11, RRS definition Keep Clear",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 120,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 175,
+     "y": 145,
+     "hdg": 45,
+     "label": "Red"
+    }
+   ],
+   "note": "Your leech brushes Red's shroud"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "On a tight spinnaker reach you are the windward boat, overlapped with Yellow to leeward on the same tack. A gust heels you and you slide down towards her; her crew shout. Who keeps clear?",
+  "a": "You — same tack and overlapped: the windward boat keeps clear, and a gust does not change that (rule 11)",
+  "o": [
+   "Yellow — the leeward boat bears away to make room for a boat heeled by a gust",
+   "Yellow — your bow was ahead of hers when the gust hit, so you were clear ahead",
+   "Neither — on a reach both boats share the duty to avoid contact equally"
+  ],
+  "why": "Rule 11: the windward boat keeps clear; she must sail with a margin that allows for gusts and waves.",
+  "ref": "RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 105,
+     "hdg": 250,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 180,
+     "y": 145,
+     "hdg": 250,
+     "label": "Yellow"
+    }
+   ],
+   "note": "A gust heels you down towards Yellow"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Both of you are running on starboard gybe in a Laser fleet, booms out to port, overlapped and a length apart. You are on Blue's starboard side — the side her boom is not on. Blue says you are the windward boat and must keep clear. Is she right?",
+  "a": "Yes — on a run the windward boat is the one on the side opposite the boom; you are to windward of Blue and keep clear (rule 11)",
+  "o": [
+   "No — on a run there is no windward boat; the boat clear astern keeps clear",
+   "No — you are to leeward of Blue because you are on her starboard side",
+   "Yes — but only because you are the boat farther from the leeward mark"
+  ],
+  "why": "Definition Leeward and Windward: running, the leeward side is the side the mainsail lies on; the other side is windward (rule 11).",
+  "ref": "RRS 11, RRS definition Leeward and Windward",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 115,
+     "y": 105,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 100,
+     "hdg": 181,
+     "label": "Blue"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Thirty seconds before the start you are overlapped to windward of Green, both on starboard tack, reaching slowly along the line. Green luffs steadily towards head to wind to open a gap to leeward. You protest that she is sailing above her proper course. Must you respond?",
+  "a": "Yes — before the start there is no proper course, so Green may luff up to head to wind, giving you room to keep clear; you keep clear (rule 11)",
+  "o": [
+   "No — a leeward boat may not luff above close-hauled before the starting signal",
+   "No — rule 17 forbids a leeward boat to sail above her proper course",
+   "Yes — but only once Green has hailed «Up» three times"
+  ],
+  "why": "Rule 11: the windward boat keeps clear; rule 17 cannot apply before the start as proper course does not exist yet (rule 16.1 still limits her).",
+  "ref": "RRS 11, RRS definition Proper Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 95,
+    "x2": 280,
+    "y2": 95,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 160,
+     "y": 125,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 165,
+     "y": 165,
+     "hdg": 300,
+     "label": "Green"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Rounding the leeward mark in 15 knots you gybe from starboard to port to windward of Black, who is overlapped to leeward of you and gybes too. As your boom comes across the boat rolls, and your boom end swings over Black's deck and touches her mainsheet. No damage. Who broke a rule?",
+  "a": "You — as the windward boat you must keep clear, boom included; touching Black is a failure to keep clear (rules 11 and 14)",
+  "o": [
+   "Black — a boat to leeward must leave room for the windward boat's boom during a gybe",
+   "Nobody — a boat gybing is tacking, and rules 10–12 do not apply to her (rule 13)",
+   "Nobody — there was no damage, so neither boat can be penalised"
+  ],
+  "why": "Rule 11 applies throughout a gybe (rule 13 covers only tacking); the windward boat's gear must stay clear of the leeward boat.",
+  "ref": "RRS 11, RRS 14",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 100,
+    "y": 108,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 172,
+     "y": 81,
+     "hdg": 120,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 120,
+     "hdg": 120,
+     "label": "Black"
+    }
+   ],
+   "note": "Your boom swings over Black's deck"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are overlapped to windward of a Dragon on the same tack on a beat, and she slowly climbs up on you. Your helm says he is already pinching and cannot point any higher, so the leeward boat has to leave him alone. What does the rule require?",
+  "a": "You must still keep clear — tack away, slow down or drop astern; rule 11 does not depend on how high you can point",
+  "o": [
+   "The leeward boat must bear away as soon as you hail that you cannot point higher",
+   "Nothing — a boat sailing close-hauled is on her proper course and need not change it",
+   "You must keep clear only after the leeward boat hails «Protest»"
+  ],
+  "why": "Rule 11: the windward boat keeps clear; how she does it is her problem — the leeward boat may sail her course.",
+  "ref": "RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 115,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 130,
+     "y": 150,
+     "hdg": 315,
+     "label": "A"
+    }
+   ],
+   "note": "A is the Dragon, pointing higher than you"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "Three Lasers are overlapped on starboard tack after the start: Red to leeward, you in the middle, White to windward, with half a length between each. Red luffs slowly. White does not respond, so you cannot luff without hitting her, and you touch Red. Who broke a rule?",
+  "a": "White broke rule 11 by not keeping clear of you; you are exonerated for touching Red because White compelled you (rule 43.1(a))",
+  "o": [
+   "Only you — you were the windward boat relative to Red and you touched her",
+   "Red — a leeward boat may not luff when three boats are overlapped",
+   "You and White equally — each windward boat keeps clear of the boat below her"
+  ],
+  "why": "Rule 11 applies to each pair; a boat compelled to break a rule by another boat's breach is exonerated under rule 43.1(a).",
+  "ref": "RRS 11, RRS 43.1(a)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 160,
+     "hdg": 315,
+     "label": "Red"
+    },
+    {
+     "x": 150,
+     "y": 130,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 180,
+     "y": 100,
+     "hdg": 315,
+     "label": "White"
+    }
+   ],
+   "note": "Red luffs; White does not respond"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "On a reach you are the leeward boat; Grey is overlapped to windward of you, and Black is overlapped to windward of Grey but her bow is behind your stern. You luff. Black says you may not luff her because she is not overlapped with you. Is she overlapped?",
+  "a": "Yes — boats are overlapped when a boat between them overlaps both; Black is a windward boat and must keep clear of you (rule 11)",
+  "o": [
+   "No — an overlap exists only when the hulls themselves overlap, so rule 12 applies to Black",
+   "No — you may luff Grey, but Black need not respond until her bow passes your stern",
+   "Yes — but as the outside boat Black only has to give you room, not keep clear"
+  ],
+  "why": "Definition Overlap: boats are also overlapped when a boat between them overlaps both; then rule 11 applies to the windward boat.",
+  "ref": "RRS 11, RRS definition Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 160,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 125,
+     "hdg": 270,
+     "label": "Grey"
+    },
+    {
+     "x": 205,
+     "y": 90,
+     "hdg": 270,
+     "label": "Black"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are close-hauled on port tack. Blue, also on port, is above you on a reach, footing fast and coming down across your course so that within seconds your bows will be overlapped and she will be the windward boat. Who keeps clear?",
+  "a": "Blue — once the boats are on the same tack and overlapped, the windward boat keeps clear, whatever her point of sail (rule 11)",
+  "o": [
+   "You — a boat sailing free has right of way over a boat sailing close-hauled",
+   "You — Blue is the faster boat and cannot be expected to alter course",
+   "You — a close-hauled boat keeps clear of a reaching boat because she can tack away"
+  ],
+  "why": "Rule 11 depends on tack and overlap only; a reaching boat to windward of a close-hauled boat on the same tack keeps clear.",
+  "ref": "RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 115,
+     "y": 100,
+     "hdg": 95,
+     "label": "Blue"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "In a handicap race a 40-ft racer-cruiser is overlapped to windward of your Laser on the same tack, both close-hauled, and she is drifting down onto you in a dying breeze. Her crew say that a small dinghy should get out of the way of a big yacht. Who keeps clear?",
+  "a": "The big boat — she is the windward boat, and rule 11 does not care about size",
+  "o": [
+   "You — a dinghy keeps clear of a yacht that is harder to manoeuvre",
+   "You — in light air the boat with more way on has right of way",
+   "Both — in a dying breeze the boats share the duty to keep apart"
+  ],
+  "why": "Rule 11: the windward boat keeps clear; size, class and handicap make no difference.",
+  "ref": "RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 135,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true,
+     "scale": 0.45
+    },
+    {
+     "x": 170,
+     "y": 125,
+     "hdg": 315,
+     "label": "A",
+     "scale": 0.9
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Red is overlapped to windward of you on the same tack with her bow half a length ahead of yours; both of you are close-hauled and your courses slowly converge. Red's helm says that as the boat ahead she has right of way and you must bear away. Is that right?",
+  "a": "No — overlapped boats are judged by windward and leeward, not by whose bow is ahead; Red, to windward, keeps clear (rule 11)",
+  "o": [
+   "Yes — a boat whose bow is ahead is clear ahead and has right of way (rule 12)",
+   "Yes — the boat that reached the overlap position first has right of way",
+   "No — but Red may hold her course until you hail her"
+  ],
+  "why": "Definition Overlap: boats are overlapped unless one is clear astern; while overlapped, rule 11 applies, not rule 12.",
+  "ref": "RRS 11, RRS definition Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 145,
+     "y": 145,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 110,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "Twenty seconds before the start you and Blue both luff head to wind side by side at the committee boat, having both been on starboard tack; Blue is on your port side. You drift down onto her. Who keeps clear?",
+  "a": "You — head to wind you both remain on starboard tack; Blue, on your port (formerly leeward) side, is the leeward boat, so you keep clear (rule 11)",
+  "o": [
+   "Blue — a boat head to wind has no rights and keeps clear of boats around her",
+   "Neither — boats head to wind are on no tack, so rules 10–12 do not apply",
+   "Blue — she is nearer the pin end and must give room to the boat at the committee boat"
+  ],
+  "why": "Definition Leeward and Windward: head to wind, the leeward side is the one that was leeward before; rule 11 still applies.",
+  "ref": "RRS 11, RRS definition Leeward and Windward",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 90,
+    "x2": 270,
+    "y2": 90,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 225,
+     "y": 135,
+     "hdg": 0,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 185,
+     "y": 135,
+     "hdg": 0,
+     "label": "Blue"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On a broad reach you are overlapped to windward of Black on the same tack. Black bears away towards the leeward mark, still well outside the zone, and as she turns her stern swings up towards your bow. You hold your course. What are your obligations?",
+  "a": "Keep clear — you are the windward boat (rule 11); Black may bear away but must give you room to keep clear (rule 16.1)",
+  "o": [
+   "None — a leeward boat that bears away gives up her right of way",
+   "Hold your course — the leeward boat may not change course while the boats are overlapped",
+   "Bear away too, but only after Black has hailed her intention"
+  ],
+  "why": "Rule 11 keeps the duty on the windward boat whatever course the leeward boat sails; rule 16.1 limits how the leeward boat may turn.",
+  "ref": "RRS 11, RRS 16.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 135,
+     "y": 100,
+     "hdg": 225,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 170,
+     "y": 135,
+     "hdg": 212,
+     "label": "Black"
+    }
+   ],
+   "note": "Black bears away"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "A faster Melges 24 comes up from clear astern and establishes an overlap to windward of you on a reach, a length away. You luff hard at once, well above your proper course, and she has to luff sharply to keep clear. She protests you under rule 17. Who is right?",
+  "a": "You — rule 17 limits only a leeward boat that overlapped from astern; you may luff (within rule 16.1) and she keeps clear (rule 11)",
+  "o": [
+   "The Melges — a leeward boat may never sail above her proper course on a reach",
+   "The Melges — a boat being overtaken must hold her course",
+   "Neither — the overtaking boat keeps clear, but only until she draws level with you"
+  ],
+  "why": "Rule 17 applies to a boat that became overlapped to leeward from clear astern; here the overlap came from windward, so rule 11 governs.",
+  "ref": "RRS 11, RRS 17",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 150,
+     "hdg": 290,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 165,
+     "y": 110,
+     "hdg": 270,
+     "label": "Red"
+    }
+   ],
+   "note": "Red is the Melges 24"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "You and Grey are overlapped on port tack, you to leeward, both close-hauled. A starboard-tack boat appears from behind Grey, and you can keep clear of her only by bearing away — but Grey is so close that you would hit her. You hail; Grey does nothing and you have to tack away, losing two lengths. Who broke a rule?",
+  "a": "Grey — as the windward boat she had to keep clear of you (rule 11), including giving you room to bear away for the starboard-tack boat",
+  "o": [
+   "You — you should have ducked the starboard boat without involving Grey",
+   "Nobody — Grey was not involved with the starboard boat and could hold her course",
+   "The starboard boat — she should have hailed before coming through the pair"
+  ],
+  "why": "Keeping clear includes letting the leeward boat change course; Grey had to keep clear so you could keep clear under rule 10.",
+  "ref": "RRS 11, RRS 10, RRS definition Keep Clear",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 115,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 95,
+     "y": 125,
+     "hdg": 45,
+     "label": "Grey"
+    },
+    {
+     "x": 205,
+     "y": 115,
+     "hdg": 315,
+     "label": "A"
+    }
+   ],
+   "note": "A is on starboard tack"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "A hundred metres from the finishing line you are overlapped to leeward of White on the same tack, both close-hauled towards the committee boat. You luff her slowly towards head to wind to stop her finishing ahead of you. White says luffing is not allowed on the finishing leg. Who keeps clear?",
+  "a": "White — she is the windward boat and keeps clear until she has finished and cleared the line (rule 11); you remain limited by rules 16.1 and 17",
+  "o": [
+   "You — in the last hundred metres the boat ahead on the water has right of way",
+   "White — but only if you hail «Up» before starting to luff",
+   "Neither — once boats are approaching the finishing line luffing is prohibited"
+  ],
+  "why": "Rule 11 applies up to the finish; there is no special finishing rule, only the usual limits (16.1, 17) on the leeward boat.",
+  "ref": "RRS 11, RRS definition Racing",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 85,
+    "x2": 270,
+    "y2": 85,
+    "label": "Finish line"
+   },
+   "boats": [
+    {
+     "x": 215,
+     "y": 145,
+     "hdg": 325,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 245,
+     "y": 120,
+     "hdg": 315,
+     "label": "White"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "In a tacking duel on the last beat the leeward boat sits half a metre off your leeward side, overlapped, both on starboard. You want to tack away but cannot pass head to wind without your stern hitting her. What may you do?",
+  "a": "Anything that keeps you clear without touching her — slow down and drop astern, then tack; while overlapped you keep clear (rule 11)",
+  "o": [
+   "Hail «Room to tack» — a windward boat may always demand room to tack from the leeward boat",
+   "Tack anyway — a boat tacking has right of way over boats around her (rule 13)",
+   "Nothing — the leeward boat must bear away to let you tack"
+  ],
+  "why": "Rule 11: the windward boat keeps clear; rule 20 (room to tack) exists only at an obstruction, and a tacking boat has no rights.",
+  "ref": "RRS 11, RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 120,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 145,
+     "y": 140,
+     "hdg": 315,
+     "label": "A"
+    }
+   ],
+   "note": "A is half a metre to leeward"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "An Optimist fleet and a 420 fleet share a course with separate starts. A 420 from the earlier start, already on her second lap, is overlapped to windward of your Optimist on the same tack, converging on you on a beat. Her crew say a different fleet is none of your business. Who keeps clear?",
+  "a": "The 420 — Part 2 applies between all boats racing, whatever their fleet; the windward boat keeps clear (rule 11)",
+  "o": [
+   "You — a boat on a later lap has right of way over a boat on an earlier lap",
+   "You — boats of different fleets keep clear of the faster class",
+   "Neither — rules of Part 2 apply only between boats in the same race"
+  ],
+  "why": "Rule 11 applies between any two boats racing; a boat on another leg is also limited by rule 23.2 but gains no rights from it.",
+  "ref": "RRS 11, RRS Part 2 preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true,
+     "scale": 0.45
+    },
+    {
+     "x": 175,
+     "y": 125,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "Red is the 420"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "Overlapped to windward of Blue on a reach, you hailed «Starboard!» first, loud and clear, before Blue hailed «Up!». You are both on starboard tack. Blue luffs gently and you have to respond. Does your earlier hail give you any right?",
+  "a": "No — hails do not create rights; you are the windward boat and keep clear of Blue (rule 11)",
+  "o": [
+   "Yes — the boat that hails first establishes her right of way",
+   "Yes — «Starboard» is a valid hail between any two boats and the other must respond",
+   "No — but Blue may not luff until she has answered your hail"
+  ],
+  "why": "Rule 11: between boats on the same tack, the windward boat keeps clear; hailing «Starboard» means nothing here.",
+  "ref": "RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 105,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 165,
+     "y": 150,
+     "hdg": 285,
+     "label": "Blue"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are the windward boat, overlapped with Green on starboard tack on a beat, and she is squeezing you up. You decide to keep clear by tacking onto port and passing head to wind in time, without touching her. Was that a lawful way to keep clear?",
+  "a": "Yes — the windward boat may keep clear by tacking, as long as she does it without contact; after passing head to wind rule 13 applies to her",
+  "o": [
+   "No — a windward boat may only keep clear by luffing, never by tacking",
+   "No — tacking away breaks rule 13, since a boat tacking must keep clear of everyone",
+   "Yes — and from the moment she begins to turn Green must keep clear of her"
+  ],
+  "why": "Rule 11 says keep clear, not how; a tack is fine if clean. Once past head to wind, rule 13 puts the duty on the tacking boat.",
+  "ref": "RRS 11, RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 115,
+     "hdg": 340,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 135,
+     "y": 150,
+     "hdg": 315,
+     "label": "Green"
+    }
+   ],
+   "note": "You begin to tack away"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "In the last ten seconds you are barging at the committee boat: overlapped to windward of Red, both on starboard tack, and there is not enough room for you between Red and the committee boat. Red holds her course and you are squeezed out. Red's crew smile. Who had to keep clear?",
+  "a": "You — at a starting mark surrounded by navigable water there is no mark-room, so plain rule 11 applies and the windward boat keeps clear",
+  "o": [
+   "Red — you were the inside boat at a mark and were entitled to mark-room (rule 18)",
+   "Red — a leeward boat must give room to a windward boat that is already overlapped at the line",
+   "Nobody — boats may not be squeezed out at the committee boat; Red had to bear away"
+  ],
+  "why": "Rule 11 governs; Section C (rule 18) is switched off at a starting mark surrounded by navigable water while boats approach it to start.",
+  "ref": "RRS 11, RRS Part 2 Section C preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 95,
+    "x2": 265,
+    "y2": 95,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 215,
+     "y": 135,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 190,
+     "y": 155,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On a run in a Finn fleet, both on starboard gybe, Yellow is overlapped to leeward of you, having been there since the windward mark. She luffs towards a beam reach to take you up away from the leeward mark. You must gybe away or follow her up. What does rule 11 require of you?",
+  "a": "Keep clear in whatever way you choose — respond up or gybe away; Yellow may luff, subject to rules 16.1 and 17",
+  "o": [
+   "Nothing — on a run the leeward boat may not luff a windward boat",
+   "Hold your course — the leeward boat has to sail straight to the leeward mark",
+   "Keep clear only if Yellow is also the boat clear ahead"
+  ],
+  "why": "Rule 11 applies on every point of sail; the windward boat keeps clear, the leeward boat's luff is limited only by 16.1 and 17.",
+  "ref": "RRS 11, RRS 17",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 100,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 165,
+     "y": 110,
+     "hdg": 215,
+     "label": "Yellow"
+    }
+   ],
+   "note": "Yellow luffs towards a beam reach"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "You are the leeward boat on starboard and luff Grey, who is overlapped to windward and responds. You keep turning and pass head to wind. What are the rights now?",
+  "a": "You are now tacking: you must keep clear of Grey until you are close-hauled on port tack (rule 13); rule 11 no longer applies to her",
+  "o": [
+   "Nothing changes — you remain the leeward right-of-way boat until you are close-hauled on the new tack",
+   "Grey must now keep clear of you under rule 10, since you are about to be on port tack",
+   "Both boats must stop luffing; neither has right of way while one is head to wind"
+  ],
+  "why": "Rule 13: from passing head to wind until close-hauled the tacking boat keeps clear; rules 10–12 are switched off for her.",
+  "ref": "RRS 13, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 140,
+     "hdg": 10,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 175,
+     "y": 120,
+     "hdg": 350,
+     "label": "Grey"
+    }
+   ],
+   "note": "You have just passed head to wind"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "On the run of a 49er regatta in 25 knots you catch a wave and surf straight into the transom of Blue, who is sailing dead ahead of you on the same gybe. Blue did not change course. Who broke a rule?",
+  "a": "You — a boat clear astern keeps clear of a boat clear ahead on the same tack (rule 12), and you also broke rule 14",
+  "o": [
+   "Blue — a boat ahead must keep moving fast enough not to be hit by the boat astern",
+   "Nobody — contact caused by a wave in strong wind is not a breach",
+   "Blue — she should have gybed away when she saw you surfing down on her"
+  ],
+  "why": "Rule 12: on the same tack and not overlapped, the boat clear astern keeps clear; waves are the astern boat's problem.",
+  "ref": "RRS 12, RRS 14",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 65,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 125,
+     "hdg": 181,
+     "label": "Blue"
+    }
+   ],
+   "note": "25 knots, you are surfing down a wave"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "On a reach at a Palma regatta you are a length behind Grey, same tack, and decide to pass her to windward. You luff to go round her stern and your bow clips her transom corner before you are overlapped. Who broke a rule?",
+  "a": "You — while clear astern you had to keep clear of Grey (rule 12), and you caused contact (rule 14)",
+  "o": [
+   "Grey — a boat clear ahead must give room to a boat starting to overtake her",
+   "Nobody — a light touch of transoms without damage is not an incident",
+   "Grey — she became the windward boat the moment you began to luff"
+  ],
+  "why": "Rule 12: until an overlap exists, the boat clear astern keeps clear; the manoeuvre to pass must itself be clear.",
+  "ref": "RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 115,
+     "hdg": 270,
+     "label": "Grey"
+    },
+    {
+     "x": 190,
+     "y": 125,
+     "hdg": 285,
+     "label": "You",
+     "you": true
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are a length clear astern of Red on a reach, same tack, going faster. Red eases her sheets and slows, without altering her heading, so that you close on her transom quickly and have to bear away. You hail that she may not slow down in front of you. Who is right?",
+  "a": "Red — she may slow down; rule 16.1 is only about changing course. You, clear astern, keep clear (rule 12)",
+  "o": [
+   "You — a boat clear ahead may not reduce speed when a boat is close astern",
+   "You — by slowing Red changed her course and had to give you room (rule 16.1)",
+   "Neither — once Red slows the boats are overlapped and rule 11 applies"
+  ],
+  "why": "Rule 12 puts the duty on the boat astern; slowing is not a change of course, so rule 16.1 does not apply.",
+  "ref": "RRS 12, RRS 16.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 120,
+     "hdg": 270,
+     "label": "Red"
+    },
+    {
+     "x": 195,
+     "y": 120,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Red eases sheets and slows"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Before the start White is clear ahead of you on starboard tack, half a length away. She luffs smoothly towards head to wind to kill speed. You have room to respond but do not, and you touch her quarter. Who broke a rule?",
+  "a": "You — the boat clear astern keeps clear (rule 12); White changed course but gave you room, as rule 16.1 requires",
+  "o": [
+   "White — a boat clear ahead may not luff above close-hauled with a boat astern",
+   "White — she changed course, and a right-of-way boat that changes course loses her rights",
+   "Nobody — before the starting signal luffing incidents are not penalised"
+  ],
+  "why": "Rule 12 applies to the boat astern; the boat ahead may change course if she gives room to keep clear (rule 16.1).",
+  "ref": "RRS 12, RRS 16.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 90,
+    "x2": 275,
+    "y2": 90,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 120,
+     "hdg": 345,
+     "label": "White"
+    },
+    {
+     "x": 180,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "White luffs to slow down"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You have been clear astern of Black on a reach, same tack, keeping clear under rule 12. You sail down to leeward and your bow draws level with her stern, a length away. Black now hails «Keep clear, you're astern!». Which rule applies now?",
+  "a": "Rule 11 — you are overlapped and the leeward boat, so Black keeps clear; rules 15 and 17 limit you at first",
+  "o": [
+   "Rule 12 still — you remain the boat clear astern until your bow passes Black's bow",
+   "Rule 12 still — a boat that overtakes keeps clear until she is fully past",
+   "Rule 11 — you keep clear of Black because she was ahead first"
+  ],
+  "why": "Definition Overlap: once not clear astern, the boats are overlapped and rule 11 applies; rules 15 and 17 limit the new leeward boat.",
+  "ref": "RRS 12, RRS 11, RRS 15",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 110,
+     "hdg": 270,
+     "label": "Black"
+    },
+    {
+     "x": 165,
+     "y": 150,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Your bow has just drawn level with her stern"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "On the run you sit directly behind a Dragon on the same gybe, blanketing her, and close in fast. Her helm looks back and shouts that you must not take his wind. Who keeps clear, and may you blanket her?",
+  "a": "You keep clear as the boat clear astern (rule 12); taking her wind is allowed",
+  "o": [
+   "She keeps clear — a boat being blanketed has no way on and the other boat must avoid her",
+   "You keep clear, and blanketing a boat ahead on a run is prohibited",
+   "Nobody keeps clear until the boats are overlapped"
+  ],
+  "why": "Rule 12: the boat clear astern keeps clear; no rule forbids blanketing another boat.",
+  "ref": "RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 60,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 120,
+     "hdg": 181,
+     "label": "A"
+    }
+   ],
+   "note": "A is the Dragon"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "You are clear astern of Blue on a beat, same tack, and pull out to leeward to pass her. At the moment your bow passes her transom, a length to leeward, Blue is pointing slightly below you so that she will converge on you immediately. Contact follows. Who broke a rule?",
+  "a": "Probably you — you acquired right of way (rule 11) but had to give Blue room to keep clear at first (rule 15); if you gave her no room, you broke rule 15",
+  "o": [
+   "Blue — from the moment of overlap she was the windward boat and had to keep clear whatever happened",
+   "You — the overtaking boat must keep clear until she is clear ahead",
+   "Nobody — contact during an overtaking manoeuvre is an accepted risk"
+  ],
+  "why": "Rules 12 → 11: the new leeward boat has right of way, but rule 15 requires her to give the windward boat room to keep clear initially.",
+  "ref": "RRS 12, RRS 15",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 110,
+     "hdg": 310,
+     "label": "Blue"
+    },
+    {
+     "x": 150,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Your bow has just passed Blue's transom to leeward"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "Both of you are running with spinnakers in 20 knots. Red is clear ahead on starboard gybe; you are clear astern on port gybe, surfing faster and about to run up onto her transom. Your crew say you are fine because the boat astern only keeps clear on the same tack. Which rule governs?",
+  "a": "Rule 10 — you are on opposite tacks, so the port-tack boat keeps clear; being astern is irrelevant",
+  "o": [
+   "Rule 12 — the boat clear astern keeps clear, so you must keep clear for that reason",
+   "None until you are overlapped — then rule 11 applies to the windward boat",
+   "Rule 12 — but in your favour: Red, the boat ahead, keeps clear of the faster boat"
+  ],
+  "why": "Rule 12 applies only on the same tack; on opposite tacks rule 10 applies regardless of who is ahead.",
+  "ref": "RRS 10, RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 60,
+     "hdg": 179,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 125,
+     "hdg": 181,
+     "label": "Red"
+    }
+   ],
+   "note": "You are on port gybe, Red on starboard"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Ten seconds before the start Grey sits stalled on the line, sails flapping, close-hauled on starboard but almost stopped. You come in behind her at full speed on starboard, directly astern, and have nowhere to go but into her transom. Who keeps clear?",
+  "a": "You — Grey is clear ahead and you are clear astern on the same tack (rule 12); approaching at speed was your choice",
+  "o": [
+   "Grey — a boat that stops on the line must get out of the way of boats arriving at speed",
+   "Grey — a boat without steerage way has no right of way",
+   "Nobody — before the start a boat on the line may be pushed over by a boat behind her"
+  ],
+  "why": "Rule 12: the boat clear astern keeps clear, however slowly the boat ahead is moving.",
+  "ref": "RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 95,
+    "x2": 275,
+    "y2": 95,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 118,
+     "hdg": 315,
+     "label": "Grey"
+    },
+    {
+     "x": 190,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Grey is almost stopped"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "You are a few metres clear astern of Yellow on a reach, slightly on her leeward quarter and keeping clear. Without warning Yellow bears away sharply across your bow and your bow hits her side; there was no time to react. Who broke a rule?",
+  "a": "Yellow — she changed course without giving you room to keep clear (rule 16.1); you are exonerated for breaking rule 12 (rule 43.1(a))",
+  "o": [
+   "You — a boat clear astern must keep clear whatever the boat ahead does",
+   "You — you should have stayed directly behind her where a bear-away cannot reach you",
+   "Nobody — a boat ahead may bear away whenever she wants, and contact was accidental"
+  ],
+  "why": "Rule 12 keeps the astern boat clear, but a right-of-way boat changing course must give room (16.1); a boat compelled to break a rule is exonerated.",
+  "ref": "RRS 12, RRS 16.1, RRS 43.1(a)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 115,
+     "hdg": 240,
+     "label": "Yellow"
+    },
+    {
+     "x": 185,
+     "y": 135,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Yellow bears away sharply"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are clear astern of Blue on a beat and faster; you choose to pass to windward of her. As your bow draws level with her stern you become overlapped to windward. Blue says nothing has changed and you still keep clear. Is she right?",
+  "a": "Yes — rule 12 applied while you were astern and rule 11 applies now you are overlapped to windward; either way you keep clear",
+  "o": [
+   "No — an overtaking boat that establishes an overlap acquires right of way",
+   "No — once overlapped neither boat has to keep clear until one luffs",
+   "Yes — but only until your bow passes her bow; then you have right of way"
+  ],
+  "why": "Rules 12 and 11: a boat passing to windward keeps clear throughout — first as clear astern, then as windward boat.",
+  "ref": "RRS 12, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 125,
+     "hdg": 315,
+     "label": "Blue"
+    },
+    {
+     "x": 180,
+     "y": 115,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You were overlapped to windward of White on a reach and keeping clear. White accelerates in a puff and her stern passes clear ahead of your bow. She then bears away a little across your course, giving you time to react. What are your obligations now?",
+  "a": "You are clear astern and keep clear (rule 12); White may change course as long as she gives you room to keep clear (rule 16.1)",
+  "o": [
+   "None — once the overlap is broken neither boat has an obligation to the other",
+   "Hold your course — the overlap is broken, so White must not change course until you are clear",
+   "You remain the windward boat and keep clear under rule 11 until White is two lengths ahead"
+  ],
+  "why": "Definition Overlap: once clear astern, rule 12 replaces rule 11; the boat ahead may change course within rule 16.1.",
+  "ref": "RRS 12, RRS definition Clear Astern and Clear Ahead; Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 115,
+     "hdg": 255,
+     "label": "White"
+    },
+    {
+     "x": 185,
+     "y": 110,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "White has just pulled clear ahead"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "The breeze has died to two knots on a river course and the stream is carrying the fleet along. You are clear astern of Red on the same tack; the current carries you into her transom while neither of you can steer. Did you break a rule?",
+  "a": "Yes — clear astern you keep clear (rule 12) and avoid contact (rule 14); the current is no excuse",
+  "o": [
+   "No — without steerage way no boat is subject to the rules of Part 2",
+   "No — Red should have anchored to stop drifting back onto you",
+   "Yes, but only rule 14; rule 12 does not apply to boats that are drifting"
+  ],
+  "why": "Rule 12 applies whenever boats are racing; rule 14 asks only that contact be avoided «if reasonably possible».",
+  "ref": "RRS 12, RRS 14",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 105,
+     "hdg": 315,
+     "label": "Red"
+    },
+    {
+     "x": 185,
+     "y": 140,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Two knots of wind, a strong stream"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "On a reach in a sportsboat fleet you believe you are clear ahead of Green, who is on your leeward quarter. Her bowsprit is extended with the gennaker set, and its tip reaches past your transom although her hull does not. She hails «Leeward boat!». Is she overlapped with you?",
+  "a": "Yes — equipment in normal position counts, so her bowsprit creates the overlap; rule 11 applies and you are the windward boat",
+  "o": [
+   "No — only hulls count for an overlap, so you remain clear ahead and rule 12 applies",
+   "No — a bowsprit counts only when it overlaps the other boat's hull by its full length",
+   "Yes — and as the boat ahead you must now bear away below her"
+  ],
+  "why": "Definition Clear Astern: a boat is clear astern when her hull and equipment in normal position are behind the other's; a set bowsprit counts.",
+  "ref": "RRS 11, RRS 12, RRS definition Clear Astern and Clear Ahead; Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 110,
+     "hdg": 250,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 170,
+     "y": 145,
+     "hdg": 250,
+     "label": "Green"
+    }
+   ],
+   "note": "Green's bowsprit tip is past your transom"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "On the run you are two lengths clear astern of Black, both on starboard gybe, and keeping clear under rule 12. Black gybes onto port and continues down the leg; you hold your course on starboard and you converge. Who keeps clear now?",
+  "a": "Black — after her gybe you are on opposite tacks, so the port-tack boat keeps clear (rule 10); rule 12 no longer applies",
+  "o": [
+   "You — you remain the boat clear astern and keep clear until you are overlapped",
+   "Black — but only during the gybe itself; afterwards you keep clear again as the boat astern",
+   "You — a boat that has just gybed is entitled to room from boats behind her (rule 15)"
+  ],
+  "why": "Rule 12 is a same-tack rule; once the boats are on opposite tacks, rule 10 decides, whoever is ahead.",
+  "ref": "RRS 10, RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 60,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 125,
+     "hdg": 165,
+     "label": "Black"
+    }
+   ],
+   "note": "Black has just gybed onto port"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Blue is two lengths clear ahead of you on starboard tack on a beat; you are keeping clear. She tacks onto port right in your path and settles close-hauled a length and a half ahead of you. Who keeps clear during her tack, and who after it?",
+  "a": "Blue both times — while tacking she keeps clear under rule 13, and once close-hauled on port she keeps clear of you, on starboard, under rule 10",
+  "o": [
+   "You both times — the boat astern keeps clear of the boat ahead whatever she does (rule 12)",
+   "Blue while tacking, then you — once she has completed her tack you are the boat clear astern again",
+   "You while she tacks, then Blue — a boat tacking has right of way until she is close-hauled"
+  ],
+  "why": "Rule 12 ends when Blue passes head to wind; rule 13 applies during the tack and rule 10 afterwards, since the tacks differ.",
+  "ref": "RRS 12, RRS 13, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 105,
+     "hdg": 40,
+     "label": "Blue"
+    },
+    {
+     "x": 185,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Blue has tacked onto port in your path"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "In a mixed-class club race your 36-ft cruiser-racer is clear astern of an Optimist on the same tack and closing fast on a reach. Your crew assume the little boat will get out of your way. Who keeps clear?",
+  "a": "You — the boat clear astern keeps clear of the boat clear ahead (rule 12); the size of the boats is irrelevant",
+  "o": [
+   "The Optimist — a small boat keeps clear of a large boat that cannot slow down",
+   "The Optimist — a slower boat must give way to a faster boat overtaking her",
+   "Nobody until the boats are overlapped; then the windward boat keeps clear"
+  ],
+  "why": "Rule 12 puts the duty on the boat astern; there is no rule about size or speed.",
+  "ref": "RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 135,
+     "y": 115,
+     "hdg": 270,
+     "label": "A",
+     "scale": 0.45
+    },
+    {
+     "x": 205,
+     "y": 115,
+     "hdg": 270,
+     "label": "You",
+     "you": true,
+     "scale": 0.9
+    }
+   ],
+   "note": "A is the Optimist"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are sailing a length and a half behind Grey on a beat, same tack, a little to leeward of her track. You hail «Leeward boat!» and expect her to hold her course. Grey luffs slightly and you have to luff too. Did Grey have to respect your position?",
+  "a": "No — you were clear astern, not overlapped, so you had no rights; you keep clear under rule 12 (Grey must still give you room when she changes course, rule 16.1)",
+  "o": [
+   "Yes — a boat to leeward is the leeward boat and has right of way whether overlapped or not",
+   "Yes — a boat within two hull lengths to leeward is treated as overlapped",
+   "No — but Grey may not change course at all with a boat close astern"
+  ],
+  "why": "Leeward and windward are only defined between overlapped boats; clear astern you keep clear under rule 12.",
+  "ref": "RRS 12, RRS definition Leeward and Windward",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 145,
+     "y": 110,
+     "hdg": 320,
+     "label": "Grey"
+    },
+    {
+     "x": 165,
+     "y": 155,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "On a reach Black is three lengths ahead of you on the same tack. She luffs twenty degrees to keep her wind clear of your approach, then bears away again. You never need to alter course. Did Black do anything wrong?",
+  "a": "No — a boat clear ahead may change course to defend her wind; you, clear astern, simply keep clear (rule 12)",
+  "o": [
+   "Yes — a boat clear ahead may not sail above her proper course on a reach (rule 17)",
+   "Yes — a right-of-way boat may not change course when another boat is within three lengths",
+   "Yes — she may defend her wind only after you have become overlapped"
+  ],
+  "why": "Rule 12: clear astern keeps clear; the boat ahead is limited only by rule 16.1, and rule 17 does not restrict a boat clear ahead.",
+  "ref": "RRS 12, RRS 16.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 110,
+     "y": 110,
+     "hdg": 290,
+     "label": "Black"
+    },
+    {
+     "x": 200,
+     "y": 125,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Black luffs to defend her wind"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "Red rounds the windward mark just ahead of you and bears away onto the run, but her spinnaker hoist goes wrong and she wallows. You are directly astern on the same tack and closing fast. Who keeps clear?",
+  "a": "You — Red is clear ahead and you are clear astern on the same tack (rule 12)",
+  "o": [
+   "Red — a boat with a sail-handling problem must get out of the way of boats behind her",
+   "Red — a boat that slows down after rounding a mark loses her right of way",
+   "Nobody — on the run neither boat has an obligation until an overlap exists"
+  ],
+  "why": "Rule 12: whatever is happening on the boat ahead, the boat clear astern keeps clear.",
+  "ref": "RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 45,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 120,
+     "y": 150,
+     "hdg": 185,
+     "label": "Red"
+    },
+    {
+     "x": 125,
+     "y": 85,
+     "hdg": 185,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Red's spinnaker hoist has gone wrong"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On a reaching leg you are clear astern of White and faster. Each time you head down to pass her to leeward she bears away below her proper course to stay between you and the leeward mark; you have to keep clear. You protest that she sailed below her proper course. Will it succeed?",
+  "a": "No — there is no longer a rule against a boat sailing below her proper course; White may do so, giving you room to keep clear, and you keep clear under rule 12",
+  "o": [
+   "Yes — a boat clear ahead may not sail below her proper course to block a boat astern (rule 17)",
+   "Yes — bearing away in front of a boat astern breaks rule 16.1 whether or not room was given",
+   "No — but only because White was outside the zone of the leeward mark"
+  ],
+  "why": "The old rule against sailing below proper course was deleted in 2013; rule 12 keeps the boat astern clear, rule 16.1 limits the boat ahead.",
+  "ref": "RRS 12, RRS 16.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 125,
+     "y": 115,
+     "hdg": 240,
+     "label": "White"
+    },
+    {
+     "x": 195,
+     "y": 110,
+     "hdg": 255,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "White bears away to stay between you and the mark"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Approaching the finishing line on the same tack, you are half a length clear astern of Blue. Blue luffs slowly head to wind to shoot the line and loses speed; you had room and time to respond but misjudge it and your bow touches her transom. Who broke a rule?",
+  "a": "You — the boat clear astern keeps clear (rule 12); Blue changed course slowly enough to give you room (rule 16.1)",
+  "o": [
+   "Blue — a boat may not luff head to wind to shoot the line with another boat close astern",
+   "Blue — she changed course and must therefore take responsibility for the contact",
+   "Nobody — both boats had finished, so the rules of Part 2 no longer applied"
+  ],
+  "why": "Rule 12 applies until a boat has finished and cleared the line; a luff that leaves room to keep clear complies with rule 16.1.",
+  "ref": "RRS 12, RRS 16.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 80,
+    "x2": 275,
+    "y2": 80,
+    "label": "Finish line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 100,
+     "hdg": 350,
+     "label": "Blue"
+    },
+    {
+     "x": 170,
+     "y": 140,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ]
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are clear astern of Green on a beat and gaining. Green looks back, sees you half a length from her transom and bears away a few degrees to open the gap because she fears a collision. There is no contact. Green protests you. Did you break rule 12?",
+  "a": "Yes, if Green's fear was reasonable — keeping clear means she can sail her course without needing to take avoiding action, and she took it",
+  "o": [
+   "No — there was no contact, so you kept clear",
+   "No — a boat ahead that alters course does so at her own risk and cannot protest",
+   "Yes — any boat within one hull length of the boat ahead breaks rule 12"
+  ],
+  "why": "Definition Keep Clear: the right-of-way boat must have no need to take avoiding action; a justified avoiding action shows rule 12 was broken.",
+  "ref": "RRS 12, RRS definition Keep Clear",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 110,
+     "hdg": 310,
+     "label": "Green"
+    },
+    {
+     "x": 165,
+     "y": 138,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Green bears away to open the gap"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "Three boats are in line astern on a reach in 20 knots, a length apart, all on the same tack: A ahead, you in the middle, C behind. C surfs into your transom and pushes you into A. Who broke a rule?",
+  "a": "C — she had to keep clear of you (rule 12); you are exonerated for the contact with A because C compelled it (rule 43.1(a))",
+  "o": [
+   "You and C — each boat astern broke rule 12 against the boat ahead of her",
+   "Only you — you hit A, and C's push is a matter between you and C",
+   "A — the leading boat in a line must sail fast enough to keep the gaps open"
+  ],
+  "why": "Rule 12 applies to each pair; a boat forced into a breach by another boat's breach is exonerated (rule 43.1(a)).",
+  "ref": "RRS 12, RRS 43.1(a)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 100,
+     "y": 120,
+     "hdg": 270,
+     "label": "A"
+    },
+    {
+     "x": 160,
+     "y": 120,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 220,
+     "y": 120,
+     "hdg": 270,
+     "label": "C"
+    }
+   ],
+   "note": "C surfs into you and pushes you into A"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are a length clear astern of Yellow on a reach, same tack, and clearly faster. You can pass her on either side. Which side gives you right of way once you are overlapped?",
+  "a": "To leeward — overlapped to leeward you become the right-of-way boat (rule 11), limited by rules 15 and 17; to windward you keep clear",
+  "o": [
+   "To windward — the overtaking boat to windward has right of way once overlapped",
+   "Neither — an overtaking boat keeps clear until she is clear ahead, whichever side she passes",
+   "Either — once overlapped the boat that was faster has right of way"
+  ],
+  "why": "Rules 12 and 11: passing to windward you stay the keep-clear boat; passing to leeward you gain rights, limited by rules 15 and 17.",
+  "ref": "RRS 12, RRS 11, RRS 17",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 125,
+     "hdg": 270,
+     "label": "Yellow"
+    },
+    {
+     "x": 200,
+     "y": 125,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Which side do you pass her?"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "You are close-hauled on starboard tack in an ILCA 7. Red, on port, tacks a length in front of you; she is still turning, sails flapping, and not yet close-hauled on starboard when you have to bear away to miss her. Who broke a rule?",
+  "a": "Red — after passing head to wind a boat keeps clear of others until she is on a close-hauled course (rule 13)",
+  "o": [
+   "You — once Red passed head to wind she was on starboard tack and had right of way",
+   "Nobody — a boat tacking is entitled to room from boats around her",
+   "You — the boat clear astern keeps clear of the boat ahead, and Red was ahead"
+  ],
+  "why": "Rule 13: from passing head to wind until she is on a close-hauled course, a boat keeps clear; rules 10–12 do not apply to her.",
+  "ref": "RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 195,
+     "y": 155,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 110,
+     "hdg": 345,
+     "label": "Red"
+    }
+   ],
+   "note": "Red has passed head to wind but is not yet close-hauled"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You and Blue are both close-hauled on port tack, side by side a length apart, Blue on your starboard side. A header comes and you both tack at the same moment; halfway through, both past head to wind, you are converging. Which boat keeps clear?",
+  "a": "You — when two boats are tacking at the same time, the one on the other's port side keeps clear (rule 13)",
+  "o": [
+   "Blue — the boat that was to windward before the tack keeps clear",
+   "Blue — she will be the windward boat after the tack, so she must keep clear",
+   "Neither — boats tacking simultaneously both hold their turn and sort it out afterwards"
+  ],
+  "why": "Rule 13, last sentence: if two boats are subject to it at the same time, the one on the other's port side or astern keeps clear.",
+  "ref": "RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 130,
+     "hdg": 355,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 175,
+     "y": 130,
+     "hdg": 355,
+     "label": "Blue"
+    }
+   ],
+   "note": "Both boats have just passed head to wind"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Grey is a length and a half clear ahead of you on starboard tack on a beat. She tacks onto port; you tack at the same moment, so that both of you are past head to wind together, you directly astern of her. Who keeps clear while you are both tacking?",
+  "a": "You — of two boats tacking at the same time, the one astern keeps clear (rule 13)",
+  "o": [
+   "Grey — a boat ahead that tacks must keep clear of the boat behind her, whatever the other does",
+   "Nobody — rule 13 only applies when one boat is tacking and the other is not",
+   "Grey — the boat that started her tack first keeps clear"
+  ],
+  "why": "Rule 13: if two boats are tacking at the same time, the one on the other's port side or the one astern keeps clear.",
+  "ref": "RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 135,
+     "y": 100,
+     "hdg": 10,
+     "label": "Grey"
+    },
+    {
+     "x": 170,
+     "y": 150,
+     "hdg": 10,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Both boats are between head to wind and close-hauled"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "You are close-hauled on starboard. Black, on port, crosses just ahead of your bow and tacks onto your lee bow, completing her tack close-hauled half a length to leeward and slightly ahead of you. You can keep clear by luffing a little, which you do. What are the rights after her tack?",
+  "a": "Black is now the leeward boat with right of way (rule 11); she had to keep clear while tacking (rule 13) and give you room to keep clear at first (rule 15), which she did",
+  "o": [
+   "You keep right of way as the boat that was on starboard first; Black must keep clear until you are clear ahead",
+   "Black keeps clear until she has drawn clear ahead of you (rule 12)",
+   "Black broke rule 13 simply by tacking within one hull length of you"
+  ],
+  "why": "Rule 13 ends when Black is close-hauled; then rule 11 applies, and rule 15 asks only that you have room to keep clear.",
+  "ref": "RRS 13, RRS 11, RRS 15",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 185,
+     "y": 130,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 140,
+     "hdg": 315,
+     "label": "Black"
+    }
+   ],
+   "note": "Black has just completed a lee-bow tack"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "Beating on starboard in a Dragon, you see White, on port, tack directly ahead of you and settle close-hauled on starboard a length in front of your bow. You have to bear away slightly to avoid her transom a moment after she is close-hauled. Who, if anyone, broke a rule?",
+  "a": "White, if your avoiding action was needed as soon as she became close-hauled — she must give you room to keep clear (rule 15); after that you are clear astern and keep clear (rule 12)",
+  "o": [
+   "Nobody — once White was close-hauled you were the boat clear astern and simply had to keep clear",
+   "White — a boat may never tack into a position directly ahead of another boat",
+   "You — you must keep clear of a boat that is tacking in front of you (rule 13)"
+  ],
+  "why": "Rule 13 ends when the tacking boat is close-hauled; rule 12 then applies, but rule 15 obliges her to give the boat astern room initially.",
+  "ref": "RRS 13, RRS 12, RRS 15",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 190,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 120,
+     "hdg": 315,
+     "label": "White"
+    }
+   ],
+   "note": "White has just tacked into a position directly ahead"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "You are fetching the windward mark, to be left to port, close-hauled on starboard, well inside the zone. Green comes in on port, tacks under your bow a length from the mark and is still head to wind when you must luff above close-hauled to avoid her. Which rules did Green break?",
+  "a": "Rule 13 — she had to keep clear while tacking; and she also broke rule 18.3 by making you sail above close-hauled to avoid her",
+  "o": [
+   "None — a boat tacking inside the zone is entitled to mark-room from a boat outside her",
+   "Rule 10 only — she was on port tack when she arrived at the mark",
+   "Rule 18.2 — she was clear astern when you entered the zone and had to give you mark-room"
+  ],
+  "why": "Rule 13 applies to a tacking boat anywhere; at a mark to be left to port, 18.3 adds that she must not make a starboard boat sail above close-hauled.",
+  "ref": "RRS 13, RRS 18.3",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 150,
+    "y": 75,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 215,
+     "y": 140,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 175,
+     "y": 100,
+     "hdg": 0,
+     "label": "Green"
+    }
+   ],
+   "note": "Green is head to wind under your bow"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Rounding the leeward mark, Yellow gybes from port to starboard right next to you; you are running on starboard gybe, overlapped to windward of her. As she gybes she claims that, like a boat tacking, she has no obligations while her boom is crossing and you must stay clear. Is she right?",
+  "a": "No — rule 13 covers tacking only; a boat gybing keeps whatever obligations she has under rules 10, 11 and 12 throughout",
+  "o": [
+   "Yes — a boat gybing, like a boat tacking, keeps clear of all other boats until her boom has crossed",
+   "Yes — rule 13 applies to any change of tack, whether by tacking or gybing",
+   "No — but a boat gybing has right of way over all boats until she is on her new course"
+  ],
+  "why": "Rule 13 applies after passing head to wind only; while gybing a boat is always on one tack or the other and rules 10–12 apply.",
+  "ref": "RRS 13, RRS definition Tack",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 100,
+    "y": 125,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 165,
+     "y": 70,
+     "hdg": 185,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 130,
+     "y": 85,
+     "hdg": 180,
+     "label": "Yellow"
+    }
+   ],
+   "note": "Yellow is gybing from port to starboard"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "On a run you are on port gybe and converge with a boat on starboard. You begin to gybe to keep clear: you bear away, the boom lifts and starts to swing across. At what moment do you become a starboard-tack boat under the rules?",
+  "a": "When your mainsail lies on the other side — the boom has crossed the centreline — because your leeward side is then the side the mainsail is on",
+  "o": [
+   "The moment you put the helm over to bear away for the gybe",
+   "Only when the mainsail has filled and the boat is settled on her new course",
+   "The moment the wind crosses your stern, whatever the boom is doing"
+  ],
+  "why": "Definition Leeward and Windward: running, the leeward side is where the mainsail lies; definition Tack: a boat is on the tack of her windward side.",
+  "ref": "RRS definition Tack, RRS definition Leeward and Windward, RRS 10",
+  "fig": {
+   "type": "card",
+   "title": "Gybing on the run",
+   "lines": [
+    "You: port gybe, converging with a starboard boat",
+    "Helm over, the boom starts to swing",
+    "No mark nearby, 10 knots"
+   ],
+   "tag": "New tack when?"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "In five knots you tack from port to starboard and get stuck in irons: you are past head to wind, pointing a little to the new side, barely moving, sails flapping, for ten seconds. Blue, close-hauled on starboard, approaches and has to bear away round you. Are you the starboard-tack boat with rights, or still tacking?",
+  "a": "Still tacking — until you are on a close-hauled course rule 13 applies and you keep clear, however long the tack takes",
+  "o": [
+   "Starboard-tack boat — you passed head to wind, so rules 10 and 11 now apply in your favour",
+   "Neither — a boat without steerage way is an obstruction that others must avoid",
+   "Still tacking — but after five seconds in irons a boat regains her rights"
+  ],
+  "why": "Rule 13: the obligation lasts from passing head to wind until a close-hauled course, with no time limit.",
+  "ref": "RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 110,
+     "hdg": 350,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 205,
+     "y": 160,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "Five knots; you are stuck in irons"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are the starboard-tack boat on a beat and decide to tack onto port to cover. Red, close-hauled on port, is two lengths away and will have to alter course if you tack in front of her. Your crew say «We have starboard, she has to keep clear anyway». Is that right?",
+  "a": "No — once you pass head to wind you are tacking and keep clear of Red until you are close-hauled (rule 13); your former right of way is gone",
+  "o": [
+   "Yes — a starboard-tack boat keeps her right of way until she is close-hauled on the new tack",
+   "Yes — Red is the port-tack boat and keeps clear throughout (rule 10)",
+   "No — but only because Red is within two hull lengths of you"
+  ],
+  "why": "Rule 13 switches off rules 10–12 for a boat between head to wind and close-hauled: she keeps clear of everyone.",
+  "ref": "RRS 13, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 110,
+     "hdg": 330,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 110,
+     "y": 160,
+     "hdg": 45,
+     "label": "Red"
+    }
+   ],
+   "note": "You are about to tack onto port"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You tack from port to starboard ahead of Grey, who is close-hauled on starboard. Your bow is on a close-hauled heading, but your sails are still luffing and you have hardly any speed when Grey has to bear away. Grey says you were still tacking. Were you?",
+  "a": "No — rule 13 ends when the boat is on a close-hauled course, whether or not her sails are trimmed or she has speed; from then on rules 10–12 apply",
+  "o": [
+   "Yes — a tack ends only when the sails are full and the boat has regained her speed",
+   "Yes — a tack ends when the boat has sailed one hull length on the new tack",
+   "No — rule 13 ended the moment you passed head to wind"
+  ],
+  "why": "Rule 13: «until she is on a close-hauled course» — a heading, not a state of trim; afterwards rule 15 governs the initial moments.",
+  "ref": "RRS 13, RRS 15",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 115,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 195,
+     "y": 150,
+     "hdg": 315,
+     "label": "Grey"
+    }
+   ],
+   "note": "You are on a close-hauled heading, sails still luffing"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You tack onto starboard when Red, close-hauled on port, is four hull lengths away. You are close-hauled well before she arrives; she holds on, then has to bear away under your stern at the last moment and protests that you tacked in front of her. Did you break rule 13?",
+  "a": "No — your tack was complete long before Red needed to act; she had room to keep clear (rule 15) and, on port, had to keep clear (rule 10)",
+  "o": [
+   "Yes — a boat may not tack in front of a port-tack boat within five hull lengths",
+   "Yes — you acquired right of way by tacking, so you had to keep clear until Red was past",
+   "No — but only because Red failed to hail «Protest» at the time"
+  ],
+  "why": "Rule 13 is only breached if the other boat must act while you are between head to wind and close-hauled; four lengths is ample room.",
+  "ref": "RRS 13, RRS 15, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 190,
+     "y": 100,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 70,
+     "y": 165,
+     "hdg": 45,
+     "label": "Red"
+    }
+   ],
+   "note": "You completed your tack with Red four lengths away"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "Approaching the windward mark, to be left to port, you are on the starboard layline and have been on starboard since entering the zone. Blue tacks from port to starboard inside the zone just to leeward and ahead of you, completes her tack and then fetches the mark; you have to pinch above close-hauled to clear her stern. Which rule did Blue break?",
+  "a": "Rule 18.3 — after passing head to wind in the zone she must not make a starboard boat fetching the mark sail above close-hauled; her tack was clean under rule 13",
+  "o": [
+   "Rule 13 — a boat that tacks inside the zone is tacking until she has rounded the mark",
+   "Rule 10 — she arrived at the mark on port tack",
+   "None — once close-hauled she was the leeward boat and could sail her course (rule 11)"
+  ],
+  "why": "Rule 13 ends at close-hauled; in the zone at a port-hand mark, rule 18.3 then limits a boat that tacked from port to starboard.",
+  "ref": "RRS 13, RRS 18.3",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 150,
+    "y": 75,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 215,
+     "y": 140,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 180,
+     "y": 118,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "Blue tacked inside the zone and now fetches the mark"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "In a match-race style duel Black tacks on top of you: she crosses from port and tacks to windward of you, completing her tack close-hauled a length to windward and overlapped. You luff hard at once, above close-hauled, and she has to respond. Black protests under rule 17. Who is right?",
+  "a": "You — Black is the windward boat and keeps clear (rule 11); rule 17 does not apply when the overlap began while she was tacking, so you may luff (within rule 16.1)",
+  "o": [
+   "Black — a leeward boat may not sail above close-hauled on a beat once overlapped",
+   "Black — a boat that has just completed a tack is entitled to room and may not be luffed",
+   "Neither — Black was still tacking and you had to keep clear of her under rule 13"
+  ],
+  "why": "Rule 13 ends at close-hauled; rule 11 then applies, and rule 17 is excluded when the overlap is established while rule 13 applied.",
+  "ref": "RRS 13, RRS 11, RRS 17",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 145,
+     "y": 150,
+     "hdg": 330,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 175,
+     "y": 115,
+     "hdg": 315,
+     "label": "Black"
+    }
+   ],
+   "note": "Black has just tacked to windward of you; you luff"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are close-hauled on port and Green close-hauled on starboard, converging. Both of you tack at the same moment — you onto starboard, Green onto port — and halfway through, both past head to wind, you are still converging, Green on your port side. Who keeps clear?",
+  "a": "Green — while both boats are tacking, the one on the other's port side keeps clear (rule 13), whatever tack each is heading for",
+  "o": [
+   "You — you were on port tack when the incident began, so rule 10 still applies",
+   "Green — she will be on port tack after her tack, so rule 10 applies to her",
+   "Neither — when boats tack in opposite directions rule 13 does not decide and both keep clear"
+  ],
+  "why": "Rule 13: if two boats are subject to it at the same time, the one on the other's port side or astern keeps clear; the original tacks are irrelevant.",
+  "ref": "RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 190,
+     "y": 135,
+     "hdg": 10,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 130,
+     "y": 135,
+     "hdg": 350,
+     "label": "Green"
+    }
+   ],
+   "note": "Both boats are head to wind and turning away from each other's old tacks"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You are the windward boat overlapped with Blue on starboard and tack away to keep clear. As you come out of your tack onto port, another starboard-tack boat, White, is right there and has to luff to miss you before you are close-hauled. Did you keep clear?",
+  "a": "No — you kept clear of Blue, but while tacking you had to keep clear of White too (rule 13), and once close-hauled on port you keep clear of her under rule 10",
+  "o": [
+   "Yes — a boat tacking to keep clear of a leeward boat is entitled to room from other boats",
+   "Yes — White, on starboard, had to give you room to complete the tack (rule 15)",
+   "No — but only because you came out of the tack to windward of White"
+  ],
+  "why": "Rule 13 is owed to every boat, not just the one you were escaping from; the tack must be made where it is clear of everyone.",
+  "ref": "RRS 13, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 120,
+     "hdg": 30,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 120,
+     "y": 150,
+     "hdg": 315,
+     "label": "Blue"
+    },
+    {
+     "x": 205,
+     "y": 145,
+     "hdg": 315,
+     "label": "White"
+    }
+   ],
+   "note": "You tacked away from Blue into White's path"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "Halfway through a tack from port to starboard, past head to wind but not yet close-hauled, your crew sees a boat approaching on starboard and asks whether she has to give way to you. What do you answer?",
+  "a": "No — while tacking we keep clear of every boat; we have no right of way until we are on a close-hauled course (rule 13)",
+  "o": [
+   "Yes — we are past head to wind, so we are on starboard tack and have right of way",
+   "Yes — a boat tacking is entitled to room from boats on both tacks",
+   "No — but only from boats on port tack; starboard boats keep clear of us"
+  ],
+  "why": "Rule 13: after passing head to wind a boat keeps clear of other boats until she is on a close-hauled course.",
+  "ref": "RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 120,
+     "hdg": 345,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 215,
+     "y": 160,
+     "hdg": 315,
+     "label": "A"
+    }
+   ],
+   "note": "You are past head to wind, A approaches on starboard"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "A 29er on port tacks in front of you; you are close-hauled on starboard. While she is still luffing round you ease sheets and luff a touch, because you were not sure she would clear you; she completes her tack two lengths ahead and sails on. Did she break rule 13, and what applies now?",
+  "a": "If your avoiding action was reasonably needed while she was tacking, she broke rule 13; now she is clear ahead on the same tack and you keep clear (rule 12)",
+  "o": [
+   "No — she completed her tack two lengths ahead, so she kept clear; you now have right of way as the boat astern",
+   "Yes, in any case — tacking within three lengths of a starboard-tack boat breaks rule 13",
+   "No — a boat on starboard may never claim a breach by a boat that tacks onto starboard"
+  ],
+  "why": "Rule 13 is broken when the other boat needs to take avoiding action during the tack; afterwards rule 12 applies to the boat clear astern.",
+  "ref": "RRS 13, RRS 12, RRS definition Keep Clear",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 200,
+     "y": 150,
+     "hdg": 318,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 112,
+     "hdg": 340,
+     "label": "A"
+    }
+   ],
+   "note": "A is the 29er, still completing her tack"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "Grey, on port, hails «Tacking!» loudly and tacks onto starboard under your bow while you are close-hauled on starboard; you have to bear away while she is still head to wind. Grey says her hail warned you in time. Does the hail change anything?",
+  "a": "No — a hail gives no rights; Grey had to keep clear until close-hauled (rule 13) and did not",
+  "o": [
+   "Yes — a boat that hails «Tacking» in good time may tack and the other boat must give her room",
+   "Yes — once a hail is made the hailed boat has to keep clear of the tacking boat",
+   "No — but only because Grey hailed in English rather than in the language of the event"
+  ],
+  "why": "Rule 13 has no hail; «Tacking» is a courtesy at best and does not shift the duty to keep clear.",
+  "ref": "RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 195,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 112,
+     "hdg": 0,
+     "label": "Grey"
+    }
+   ],
+   "note": "Grey hails «Tacking!»"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Yellow, on port, tacks under your bow while you are close-hauled on starboard. You hold your course and your bow hits her side while she is still between head to wind and close-hauled. There is no damage. Who broke which rule?",
+  "a": "Yellow broke rule 13 by not keeping clear while tacking; you broke rule 14 but are exonerated as the right-of-way boat because there was no damage or injury (rule 43.1(c))",
+  "o": [
+   "Only Yellow — a right-of-way boat may hold her course into a boat that is not keeping clear",
+   "Only you — you must keep clear of a boat that is tacking in front of you",
+   "Both broke rule 13 — a boat that holds her course into a tacking boat is treated as tacking too"
+  ],
+  "why": "Rule 13 governs the tacking boat; rule 14 requires even the right-of-way boat to avoid contact once it is clear the other is not keeping clear.",
+  "ref": "RRS 13, RRS 14, RRS 43.1(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 190,
+     "y": 145,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 163,
+     "y": 118,
+     "hdg": 355,
+     "label": "Yellow"
+    }
+   ],
+   "note": "Contact while Yellow is still tacking"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 3,
+  "q": "Red is close-hauled on starboard; you are on port and bear away to duck her. Just as you commit to the duck, Red tacks onto port right ahead of you and ends up close-hauled a length in front of you, both now on port. What were the obligations during her tack, and what are they now?",
+  "a": "During her tack Red kept clear (rule 13) and had to give you room when she became clear ahead (rule 15); now you are clear astern on the same tack and keep clear (rule 12)",
+  "o": [
+   "You kept clear throughout — first as the port-tack boat (rule 10), then as the boat astern (rule 12)",
+   "Red keeps clear throughout — a boat that tacks in front of another is responsible for her until they separate",
+   "Nobody has an obligation now — a boat that was ducking is entitled to continue her manoeuvre"
+  ],
+  "why": "Rule 13 while tacking, then rule 12 on the same tack; rule 15 bridges the two by requiring Red to give room initially.",
+  "ref": "RRS 13, RRS 15, RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 160,
+     "hdg": 60,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 118,
+     "hdg": 45,
+     "label": "Red"
+    }
+   ],
+   "note": "Red tacked onto port while you were ducking her"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "Fifteen seconds before the start you are reaching in towards the committee boat on starboard tack. Black, who was on port below the line, tacks onto starboard right in front of you and is still turning, not close-hauled, when you have to luff to avoid her. Black says that before the start boats are «all tacking around» and rule 13 is not enforced. Is she right?",
+  "a": "No — rule 13 applies before the start like any Part 2 rule; while tacking Black had to keep clear of you",
+  "o": [
+   "Yes — before the starting signal boats manoeuvring at the line are not subject to rules 10–13",
+   "Yes — only rule 14 applies in the last minute before the start",
+   "No — but Black had the right to tack because she was approaching a starting mark"
+  ],
+  "why": "Rule 13 applies whenever Part 2 applies, from the time boats are sailing in the racing area intending to race.",
+  "ref": "RRS 13, RRS Part 2 preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 90,
+    "x2": 270,
+    "y2": 90,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 230,
+     "y": 150,
+     "hdg": 300,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 190,
+     "y": 125,
+     "hdg": 345,
+     "label": "Black"
+    }
+   ],
+   "note": "Black tacked in front of you below the line"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You tack from port to starboard and, instead of settling close-hauled, keep bearing away straight onto a reach to pass astern of Blue, who is on starboard. Blue claims you were «still tacking» when you passed her because you never sailed close-hauled. When did rule 13 stop applying to you?",
+  "a": "When your heading passed through a close-hauled course — rule 13 requires reaching that course, not holding it",
+  "o": [
+   "Only when you steadied on your new course on the reach",
+   "Never on this manoeuvre — a boat that does not sail close-hauled after a tack keeps clear until the next mark",
+   "When you passed head to wind — that is where every tack ends"
+  ],
+  "why": "Rule 13: «until she is on a close-hauled course»; a boat that turns through close-hauled onto a reach is no longer tacking.",
+  "ref": "RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 115,
+     "hdg": 290,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 185,
+     "y": 130,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "You bore away through close-hauled onto a reach"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 2,
+  "q": "You and White are overlapped on port tack, you to leeward. White tacks onto starboard; you stay on port and the boats converge again a few seconds later. Who keeps clear during White's tack, and who afterwards?",
+  "a": "White keeps clear while tacking (rule 13); once she is close-hauled on starboard you are on opposite tacks and you, on port, keep clear (rule 10)",
+  "o": [
+   "White keeps clear throughout — she was the windward boat and stays the give-way boat until the boats separate",
+   "You keep clear throughout — a leeward boat must give room to a windward boat that wants to tack",
+   "Nobody — after a tack the boats start again with equal rights until one hails"
+  ],
+  "why": "Rule 11 ends when White passes head to wind; rule 13 covers her tack, and rule 10 applies once she is close-hauled on starboard.",
+  "ref": "RRS 13, RRS 11, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 140,
+     "y": 110,
+     "hdg": 15,
+     "label": "White"
+    }
+   ],
+   "note": "White is tacking onto starboard"
+  }
+ },
+ {
+  "topic": "rightofway",
+  "difficulty": 1,
+  "q": "You have just tacked from port to starboard and are now settled close-hauled, sheets in. Green, also on starboard, is three hull lengths directly behind you, having been there since before your tack. Which rule now governs the two of you?",
+  "a": "Rule 12 — you are clear ahead on the same tack, so Green, clear astern, keeps clear of you",
+  "o": [
+   "Rule 13 — you remain the tacking boat until you have sailed clear of Green",
+   "Rule 15 — having just acquired right of way you must keep clear of Green for a while",
+   "Rule 10 — Green is still treated as being on the tack you came from"
+  ],
+  "why": "Rule 13 ends at close-hauled; rule 12 then applies between boats on the same tack that are not overlapped.",
+  "ref": "RRS 13, RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 95,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 190,
+     "y": 155,
+     "hdg": 315,
+     "label": "Green"
+    }
+   ],
+   "note": "Your tack is complete; Green is three lengths astern"
+  }
+ }
+]

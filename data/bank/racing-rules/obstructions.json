@@ -1,0 +1,3664 @@
+[
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Wednesday evening club race, 8 knots. You and Blue are close-hauled on starboard tack, overlapped, you to leeward, heading straight at a large yacht anchored in the middle of the leg. Which of you decides whether to pass her to port or to starboard?",
+  "a": "You — the right-of-way boat chooses the side; if you change course to do so you must give Blue room to keep clear",
+  "o": [
+   "Blue — the windward boat chooses because she can see over the obstruction",
+   "Blue — whichever boat hails her choice first decides",
+   "Neither — both must pass an anchored vessel on the side nearer the next mark"
+  ],
+  "why": "Rule 19.2(a): the right-of-way boat may pass an obstruction on either side; if she changes course to do so, she gives the other boat room to keep clear.",
+  "ref": "RRS 19.2(a)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 165,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 148,
+     "y": 150,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 52,
+    "y": 50,
+    "w": 20,
+    "h": 60,
+    "label": "Anchored yacht",
+    "lx": 62,
+    "ly": 126
+   },
+   "note": "Both on starboard, Blue to windward"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You are reaching on port tack, overlapped inside Red — between her and the end of a long concrete pier you both have to pass. Red, outside and to leeward, holds her course and the gap closes. Does Red have to give you room?",
+  "a": "Yes — once overlapped, the outside boat gives the inside boat room between her and the obstruction, even though Red is the right-of-way boat",
+  "o": [
+   "No — Red is the leeward boat and has right of way, so you must keep clear by slowing down",
+   "No — room at an obstruction is owed only to a boat that was clear ahead when it was first reached",
+   "Yes, but only if you hailed \"Water\" before Red reached the pier"
+  ],
+  "why": "Rule 19.2(b): when boats are overlapped, the outside boat gives the inside boat room between her and the obstruction, unless unable since the overlap began.",
+  "ref": "RRS 19.2(b)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 95,
+     "y": 60,
+     "hdg": 90,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 85,
+     "y": 88,
+     "hdg": 90,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 60,
+    "y": 0,
+    "w": 170,
+    "h": 34,
+    "label": "Pier"
+   },
+   "note": "Both on port tack, reaching east along the pier"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Dying breeze, 5 knots, running on starboard. Grey, clear astern of you, surges on a puff and gets an overlap on your inside only a boat length before you both reach a line of moored motor boats. You cannot open a gap in time; she wedges in and touches both a mooring buoy and your quarter. Who broke a rule?",
+  "a": "Grey — the outside boat need not give room when she has been unable to do so from the time the overlap began",
+  "o": [
+   "You — an outside boat must always give room to an inside overlapped boat at an obstruction",
+   "Nobody — a boat astern may squeeze in as long as she gets the overlap before the obstruction",
+   "You — as the boat ahead at an obstruction you should have slowed to let Grey through"
+  ],
+  "why": "Rule 19.2(b): the outside boat gives room unless she has been unable to do so since the overlap began; Grey must then keep clear (rule 11).",
+  "ref": "RRS 19.2(b)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 105,
+     "y": 90,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 80,
+     "y": 72,
+     "hdg": 181,
+     "label": "Grey"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 100,
+    "w": 48,
+    "h": 100,
+    "label": "Moored boats"
+   },
+   "note": "Grey has just got the overlap, one length from the moorings"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "470 nationals, you are beating along a beach on starboard tack, clear astern of 4471. You sail a little lower and faster and become overlapped between her and the shore at a point where there is not enough room for a boat to pass. 4471 does not move over and you have to tack out. Were you entitled to room?",
+  "a": "No — at a continuing obstruction a boat that gets an inside overlap from clear astern where there is no room is not entitled to it, and must keep clear",
+  "o": [
+   "Yes — once overlapped the outside boat must always give room at an obstruction",
+   "Yes — you were the leeward boat, so under rule 11 4471 had to luff and make space",
+   "No, but 4471 had to tack away at once as the boat farther from the shore"
+  ],
+  "why": "Rule 19.2(c): at a continuing obstruction a boat from clear astern that gets an inside overlap with no room is not entitled to it; rules 10 and 11 are off.",
+  "ref": "RRS 19.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 155,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 162,
+     "y": 118,
+     "hdg": 315,
+     "label": "4471"
+    }
+   ],
+   "obstruction": {
+    "path": "M0 0 L0 200 L150 200 Z",
+    "label": "Shore",
+    "lx": 38,
+    "ly": 172
+   },
+   "note": "You have just got an overlap between 4471 and the beach"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Saronic Gulf, reaching on starboard along a rocky shore in 12 knots. You come up from clear astern of Red and get an overlap between her and the rocks where there are three lengths of clear water. A minute later the shore juts out, the gap narrows, and Red bears away toward the rocks to close you out. Who is right?",
+  "a": "You — there was room between Red and the shore when the overlap began, so rule 19.2(b) applies and Red must give you room; 19.2(c) does not bite",
+  "o": [
+   "Red — at a continuing obstruction a boat that comes from clear astern is never entitled to inside room",
+   "Red — she may bear away at you as long as she gives you room to keep clear under rule 16.1",
+   "Red — a leeward boat cannot claim room against a boat that was ahead of her"
+  ],
+  "why": "Rule 19.2(c) denies room only when there was no room between the other boat and the obstruction at the moment the overlap began; otherwise 19.2(b) applies.",
+  "ref": "RRS 19.2(b), RRS 19.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 122,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 125,
+     "y": 98,
+     "hdg": 270,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "path": "M0 200 L0 165 L120 160 L200 150 L320 165 L320 200 Z",
+    "label": "Rocky shore",
+    "lx": 160,
+    "ly": 182
+   },
+   "note": "The shore juts out ahead; Red bears away toward you"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You and Blue, overlapped on starboard tack, approach the committee boat end of the finishing line. Blue is inside and hails \"Room — obstruction!\", claiming room under rule 19 to pass between you and the committee boat. Which rule actually governs?",
+  "a": "Rule 18 — the committee boat is a mark you both must leave on the same side, so Blue is entitled to mark-room, not room under rule 19",
+  "o": [
+   "Rule 19 — a committee boat is a vessel, so it is an obstruction and the inside boat gets room between you and it",
+   "Neither — at a finishing mark surrounded by navigable water no room is owed, just as at the start",
+   "Rule 19 — because the committee boat is anchored it counts like any other anchored vessel"
+  ],
+  "why": "Rule 19.1(a): rule 19 does not apply when the obstruction is a mark the boats must leave on the same side; rule 18 applies at a finishing mark.",
+  "ref": "RRS 19.1(a), RRS 18.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 120,
+    "x2": 230,
+    "y2": 120,
+    "label": "Finish line"
+   },
+   "boats": [
+    {
+     "x": 190,
+     "y": 178,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 216,
+     "y": 163,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "Finishing at the committee boat end, Blue inside"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Leeward mark to port, three boats overlapped on starboard: Red inside, Blue in the middle, you outside. Blue is entitled to mark-room from you under rule 18. Blue also hails you for room under rule 19 to pass Red, saying Red is an obstruction to her. Is she right?",
+  "a": "No — when rule 18 applies between you and the obstruction is another boat overlapped with each of you, rule 19 does not apply; rule 18 alone governs",
+  "o": [
+   "Yes — Red is a boat Blue must keep clear of, so she is an obstruction and rule 19 adds room to the mark-room",
+   "Yes — rule 19 always applies at a boat, and rule 18 only at the mark itself",
+   "No — a boat racing can never be an obstruction, so rule 19 never involves other boats"
+  ],
+  "why": "Rule 19.1(b): rule 19 does not apply when rule 18 applies between the boats and the obstruction is another boat overlapped with each of them.",
+  "ref": "RRS 19.1(b)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 140,
+    "y": 125,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 196,
+     "y": 66,
+     "hdg": 225,
+     "label": "Red"
+    },
+    {
+     "x": 220,
+     "y": 82,
+     "hdg": 225,
+     "label": "Blue"
+    },
+    {
+     "x": 244,
+     "y": 98,
+     "hdg": 225,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Leave the mark to port; Red inside, you outside"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Beat in 12 knots. You and Yellow are close-hauled on port, overlapped, you to leeward, Yellow a length to windward. Grey crosses on starboard. You decide to bear away and pass astern of Grey, but Yellow, who also has to duck, is bearing down on you. What must Yellow do?",
+  "a": "Give you room to pass astern of Grey between her and Grey — Grey is an obstruction to you both and you, the right-of-way boat, chose the side",
+  "o": [
+   "Nothing — Yellow is clear of Grey; if you cannot duck in time you must tack",
+   "Tack at once — a windward port-tack boat must always tack when a starboard-tack boat crosses",
+   "Hold her course — at an obstruction the boat nearest to it must find her own way round"
+  ],
+  "why": "A right-of-way boat is an obstruction to boats that must keep clear of her; rule 19.2(a)–(b): you choose the side and Yellow, outside, gives you room.",
+  "ref": "RRS 19.2, RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 152,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 104,
+     "y": 134,
+     "hdg": 45,
+     "label": "Yellow"
+    },
+    {
+     "x": 205,
+     "y": 88,
+     "hdg": 315,
+     "label": "Grey"
+    }
+   ],
+   "note": "Grey on starboard; both port-tack boats will have to duck her"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Palma, 36-ft cruiser-racers running on port gybe. You are clear ahead of Blue, who is a length and a half astern on the same tack, and a trawler lies at anchor dead ahead. At the last moment you alter course sharply to starboard; Blue, who was already going that way, has to gybe to miss your stern. Was that allowed?",
+  "a": "You may choose either side, but when you change course to do it you must give Blue room to keep clear — you did not",
+  "o": [
+   "Yes — a boat clear ahead has no obligation whatever to a boat clear astern",
+   "No — you had to pass on the side Blue had committed to, because she chose first",
+   "No — you had to hail your choice; without a hail the boat astern picks the side"
+  ],
+  "why": "Rule 19.2(a): the right-of-way boat may pass either side, but if she changes course to do so she gives the other boat room to keep clear (as in rule 16.1).",
+  "ref": "RRS 19.2(a), RRS 16.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 78,
+     "hdg": 179,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 172,
+     "y": 40,
+     "hdg": 179,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 150,
+    "y": 130,
+    "w": 20,
+    "h": 50,
+    "label": "Trawler",
+    "lx": 200,
+    "ly": 158
+   },
+   "note": "You bear away hard to starboard at the last moment"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "You are close-hauled on port tack. Red, close-hauled on starboard, is converging and will cross just ahead of you. Your crew asks: is Red an obstruction to us?",
+  "a": "Yes — a boat racing is an obstruction to boats that must keep clear of her, so Red is one to you, though you are not one to her",
+  "o": [
+   "No — only fixed objects, anchored vessels and the shore are obstructions",
+   "Yes, and that means Red must also give you room to pass her",
+   "No — a boat is an obstruction only when she is capsized, anchored or aground"
+  ],
+  "why": "Definition Obstruction: a boat racing is an obstruction to other boats only if they must keep clear of her or avoid her under rule 22.",
+  "ref": "RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 115,
+     "y": 155,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 200,
+     "y": 100,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "Red on starboard, you on port"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "A race committee RIB is holding station on her engine 40 m below the windward mark; the sailing instructions do not list her as a mark. You and Grey, overlapped and close-hauled on starboard, must pass her; Grey is inside, between you and the RIB. What are Grey's rights?",
+  "a": "Grey is entitled to room to pass between you and the RIB under rule 19 — the RIB is an obstruction, not a mark",
+  "o": [
+   "None — the RIB is a mark boat, so rule 18 applies and Grey gets mark-room only if overlapped at the zone",
+   "None — a vessel with her engine running is never an obstruction to boats racing",
+   "None — Grey is the windward boat and must keep clear of you whatever is in her way"
+  ],
+  "why": "Definition Obstruction and rule 19.2(b): a vessel you cannot pass without a substantial course change is an obstruction; the outside boat gives room.",
+  "ref": "RRS 19.2(b), RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 120,
+    "y": 45,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 178,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 176,
+     "y": 166,
+     "hdg": 315,
+     "label": "Grey"
+    }
+   ],
+   "obstruction": {
+    "x": 166,
+    "y": 92,
+    "w": 14,
+    "h": 30,
+    "label": "RC RIB",
+    "lx": 205,
+    "ly": 110
+   },
+   "note": "Grey inside, between you and the RIB"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Lake regatta. The sailing instructions declare the swimming area, marked by yellow buoys, a prohibited area. You and Blue are overlapped on starboard, reaching along its edge, you inside. Blue says no room is owed because \"a few buoys are not an obstruction\". Who is right?",
+  "a": "You — an area that a rule prohibits boats from entering is an obstruction by definition, so Blue, outside, must give you room",
+  "o": [
+   "Blue — only a solid object you could hit can be an obstruction under the rules",
+   "Blue — the prohibited area binds each boat separately and creates no rights between boats",
+   "You, but only because the buoys themselves are marks of the course"
+  ],
+  "why": "Definition Obstruction (c): an object, area or line so designated by a rule that boats may not enter or cross; rule 19.2(b) then applies.",
+  "ref": "RRS 19.2(b), RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 200,
+     "y": 128,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 175,
+     "y": 98,
+     "hdg": 270,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 40,
+    "y": 150,
+    "w": 240,
+    "h": 40,
+    "label": "Swimming area (prohibited)"
+   },
+   "note": "Reaching west along the prohibited area, you inside"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You are overlapped inside Red, to windward, passing the head of a pier on port tack. Red, the leeward boat, luffs you toward the pilings and you touch a piling and then her hull; no damage. Who is penalised?",
+  "a": "Red — she had to give you room; you are exonerated for breaking rule 11 and for the contact, as you were sailing within the room you were entitled to",
+  "o": [
+   "You — a windward boat must keep clear whatever the obstruction; the pier is your problem",
+   "Both — Red for luffing and you for the contact, because rule 14 applies to every boat",
+   "Nobody — luffing is allowed and touching a pier is not a breach of any racing rule"
+  ],
+  "why": "Rule 19.2(b) binds the outside boat; rule 43.1(b)–(c): the inside boat sailing within her room is exonerated for breaking rules 11 and 14 (no damage).",
+  "ref": "RRS 19.2(b), RRS 43.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 58,
+     "hdg": 90,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 108,
+     "y": 88,
+     "hdg": 90,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 90,
+    "y": 0,
+    "w": 130,
+    "h": 32,
+    "label": "Pier"
+   },
+   "note": "Red luffs you toward the pier head"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Lake race in 6 knots. A tall navigation post stands in the middle of the second leg; it is not a mark of the course. You and Black are overlapped on starboard, you inside and nearer the post. Black says you cannot claim room \"because it isn't a mark\". Is she right?",
+  "a": "No — the post is an obstruction and, being overlapped, Black as the outside boat must give you room to pass between her and it",
+  "o": [
+   "Yes — room is owed only at marks of the course and at other boats",
+   "Yes — a post with navigable water all round can be passed either side, so no room is owed",
+   "No, but only if you were clear ahead when the post was two lengths away"
+  ],
+  "why": "Definition Obstruction (an object a boat could not pass without a substantial course change) and rule 19.2(b); a post needs no status as a mark.",
+  "ref": "RRS 19.2(b), RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 125,
+     "y": 172,
+     "hdg": 315,
+     "label": "Black"
+    }
+   ],
+   "obstruction": {
+    "x": 100,
+    "y": 96,
+    "w": 12,
+    "h": 12,
+    "label": "Post",
+    "lx": 135,
+    "ly": 106
+   },
+   "note": "You inside, nearer the post"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Bodrum, 15 knots. Blue, inside and to windward of you, is given room to pass between you and an anchored gulet. She swings out much wider than she needs, well clear of the gulet, and her boom hits your shrouds. She says she was \"within her room\". Was she?",
+  "a": "No — room is the space needed to pass in a seamanlike way; sailing wider than that she was no longer within it and broke rule 11 as windward boat",
+  "o": [
+   "Yes — an inside boat may use all the space the outside boat gives up until both are past the obstruction",
+   "Yes — rule 19 gives the inside boat right of way until both boats are clear of the obstruction",
+   "No, but you are penalised too, for not giving extra room in the waves"
+  ],
+  "why": "Definition Room: space to manoeuvre promptly in a seamanlike way; rule 43.1(b) exonerates only a boat sailing within that room.",
+  "ref": "RRS definition Room, RRS 43.1(b)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 128,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 162,
+     "y": 150,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 180,
+    "y": 70,
+    "w": 22,
+    "h": 55,
+    "label": "Anchored gulet",
+    "lx": 191,
+    "ly": 140
+   },
+   "note": "Blue swings wide of the gulet and into you"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Run in 10 knots. You are on starboard tack, Blue on port, both sailing more than 90° from the wind and side by side, approaching an anchored ship. Blue is nearer the ship. Must you give her room to pass between you and the ship?",
+  "a": "Yes — boats on opposite tacks are overlapped when both sail more than 90° from the wind, so rule 19.2(b) applies and you, outside, give room",
+  "o": [
+   "No — rule 10 gives you right of way and a port-tack boat is never entitled to room from a starboard-tack boat",
+   "No — boats on opposite tacks cannot be overlapped, so rule 19.2(b) cannot apply",
+   "Yes, but only once Blue has gybed onto starboard tack"
+  ],
+  "why": "Definition Overlap: opposite-tack boats are overlapped when both sail more than 90° from the true wind; rule 19.2(b) then applies between them.",
+  "ref": "RRS 19.2(b), RRS definition Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 175,
+     "y": 62,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 148,
+     "y": 66,
+     "hdg": 179,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 110,
+    "y": 125,
+    "w": 22,
+    "h": 55,
+    "label": "Anchored ship",
+    "lx": 165,
+    "ly": 155
+   },
+   "note": "Both running; Blue inside, nearer the ship"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Thirty seconds to the start. Blue, overlapped to windward of you, squeezes between you and the committee boat and hails \"Room — obstruction!\". Must you give her room?",
+  "a": "No — the committee boat is a starting mark in navigable water: rule 18 is off while approaching to start and rule 19 does not apply at a mark; rule 11 governs",
+  "o": [
+   "Yes — the committee boat is a vessel, so it is an obstruction and the inside boat is entitled to room under rule 19 until she is past it",
+   "Yes — a boat overlapped inside when the pair reaches the zone of the committee boat is entitled to mark-room under rule 18.2(a)",
+   "No — before the starting signal no boat has a proper course, and therefore no boat can be entitled to room of any kind"
+  ],
+  "why": "Rules 18.1 and 19.1(a): no mark-room at a starting mark surrounded by navigable water and no rule 19 room at a mark; the windward boat keeps clear (rule 11).",
+  "ref": "RRS 19.1(a), RRS 18.1, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 135,
+    "x2": 240,
+    "y2": 135,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 200,
+     "y": 180,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 226,
+     "y": 166,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "30 s before the start; Blue barging at the committee boat"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Just after the start, you and Red are close-hauled on starboard, overlapped, heading between the committee boat and the small buoy marking her anchor 25 m upwind of her. You are inside, nearer the anchor line. Red says the anchor line is part of the mark and no room is owed. What is the anchor line?",
+  "a": "An obstruction, not part of the mark — overlapped boats passing it are subject to rule 19, so Red must give you room",
+  "o": [
+   "Part of the mark — touching it is a rule 31 breach and rule 18 applies to it",
+   "Nothing — only the hull of the committee boat has any status under the rules",
+   "A mark — anything attached to a mark boat, including her ground tackle, is part of her"
+  ],
+  "why": "Rules 18.1 and 19.1(a): no mark-room at a starting mark in navigable water and no rule 19 room at a mark; the windward boat keeps clear (rule 11).",
+  "ref": "RRS 19.2(b), RRS definition Mark",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 130,
+    "x2": 230,
+    "y2": 130,
+    "label": "Start line"
+   },
+   "obstruction": {
+    "path": "M229 130 L231 130 L263 82 L261 82 Z",
+    "label": "Anchor line",
+    "lx": 282,
+    "ly": 100
+   },
+   "boats": [
+    {
+     "x": 214,
+     "y": 168,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 190,
+     "y": 180,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "You inside, heading between the committee boat and her anchor buoy"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Reaching leg, you are the windward boat overlapped with Red, who is to leeward. A spectator boat is anchored on the course ahead. Red bears away to pass to leeward of her. Must you pass on the same side as Red?",
+  "a": "No — Red, the right-of-way boat, chooses her side and you must keep clear of her; if you can pass the other side while keeping clear, you may",
+  "o": [
+   "Yes — overlapped boats must pass an obstruction on the same side, the side chosen by the right-of-way boat",
+   "Yes — the windward boat always follows the leeward boat's side at an obstruction",
+   "No — as the windward boat you choose your side first and Red adjusts to it"
+  ],
+  "why": "Rule 19.2(a) gives the right-of-way boat the choice of side; the other boat's duty is to keep clear (rule 11), on whichever side she can do so.",
+  "ref": "RRS 19.2(a), RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 215,
+     "y": 120,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 205,
+     "y": 148,
+     "hdg": 270,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 95,
+    "y": 110,
+    "w": 55,
+    "h": 18,
+    "label": "Spectator boat",
+    "lx": 122,
+    "ly": 100
+   },
+   "note": "Red bears away to pass to leeward of the spectator boat"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "The fleet beats up a narrow river. To port is a quay with forty yachts moored along it; ahead a small fishing boat lies at anchor. Which of them is a continuing obstruction?",
+  "a": "The line of moored yachts along the quay — the small anchored fishing boat is an ordinary obstruction",
+  "o": [
+   "Both — any object you cannot pass without a substantial course change is a continuing obstruction",
+   "The fishing boat — a vessel at anchor is always a continuing obstruction",
+   "Neither — only natural shoreline counts as a continuing obstruction"
+  ],
+  "why": "A continuing obstruction is one boats sail alongside for some time (a shore, a long quay, a line of moored boats); a short object is an ordinary obstruction.",
+  "ref": "RRS 19.2(c), RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 190,
+     "y": 165,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 230,
+     "y": 120,
+     "hdg": 45,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 200,
+    "label": "Quay, moored yachts",
+    "lx": 32,
+    "ly": 110
+   },
+   "note": "A small fishing boat is anchored further up the river"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "River race with two knots of current under you. You and Blue are overlapped on port, reaching toward the bridge arch the sailing instructions tell you to use; you are inside, nearer the pier of the bridge. How much room must Blue give you?",
+  "a": "Room to pass between her and the pier in a seamanlike way in the existing conditions — which here includes space for the set of the current",
+  "o": [
+   "Exactly one hull length between you and the pier; the current is your own problem",
+   "None — a bridge pier is not an obstruction because the arch is a designated passage",
+   "Only room to keep clear of Blue herself; the pier is not her concern"
+  ],
+  "why": "Rule 19.2(b) and definition Room: the space needed in the existing conditions to manoeuvre promptly in a seamanlike way — current included.",
+  "ref": "RRS 19.2(b), RRS definition Room",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 100,
+     "y": 70,
+     "hdg": 90,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 88,
+     "y": 98,
+     "hdg": 90,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "path": "M190 0 L230 0 L230 95 L190 95 Z M190 145 L230 145 L230 200 L190 200 Z",
+    "label": "Bridge piers",
+    "lx": 262,
+    "ly": 120
+   },
+   "note": "Current sets you toward the upper pier"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You are close-hauled on port, Red close-hauled on starboard; your courses converge right at an anchored barge. Red hails that she is the inside boat and demands room between you and the barge. Does she get it?",
+  "a": "No room is owed — on a beat opposite-tack boats are not overlapped, so rule 19.2(b) cannot apply; rule 10 governs and you keep clear of Red",
+  "o": [
+   "Yes — Red, as right-of-way boat, is entitled to room between you and the barge under rule 19.2(b)",
+   "No — you are the inside boat and are entitled to room, so Red must bear away",
+   "No — both boats must pass the barge on the side nearer the next mark, and neither owes room"
+  ],
+  "why": "Definition Overlap: boats on opposite tacks on a beat are not overlapped; rule 19.2(b) needs an overlap, so only rule 10 applies.",
+  "ref": "RRS 19.2(b), RRS 10, RRS definition Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 110,
+     "y": 160,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 210,
+     "y": 150,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 140,
+    "y": 70,
+    "w": 40,
+    "h": 22,
+    "label": "Barge",
+    "lx": 160,
+    "ly": 60
+   },
+   "note": "Courses converge at the barge"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Beating along a sea wall on starboard tack. Blue came from clear astern and wedged in between you and the wall where there was no room; you had to pinch to avoid contact. Now the wall falls away and there is plenty of water. Still overlapped, Blue hails \"Leeward boat — up, up!\" May she now claim rights under rule 11?",
+  "a": "No — for as long as that overlap lasts she must keep clear and rules 10 and 11 do not apply; the gap opening later gives her nothing",
+  "o": [
+   "Yes — as soon as there is room between you and the wall the normal rules return and she is the leeward boat",
+   "Yes — rule 19.2(c) only applies at the moment the overlap begins, not afterwards",
+   "No — but you must now give her room under rule 19.2(b) because room has become available"
+  ],
+  "why": "Rule 19.2(c): a boat that got the inside overlap without room is not entitled to it and, while the overlap lasts, keeps clear; rules 10 and 11 do not apply.",
+  "ref": "RRS 19.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 120,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 122,
+     "y": 132,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "path": "M0 0 L0 200 L60 200 L60 120 L110 0 Z",
+    "label": "Sea wall",
+    "lx": 30,
+    "ly": 160
+   },
+   "note": "Blue got the overlap earlier where there was no room"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "The course passes through a 40 m gap in a breakwater. Three boats arrive overlapped on starboard: White nearest the gap wall, you in the middle, Grey outside. Who owes room to whom?",
+  "a": "Grey must give you room, and you must give White room — each outside boat gives the boat inside her room to pass between her and the obstruction",
+  "o": [
+   "Grey gives room to White only; the middle boat has no rights and no duties under rule 19",
+   "You give room to White, but Grey owes you nothing because you are not nearest the wall",
+   "Nobody — a gap in a breakwater is a passage, not an obstruction, so rule 19 is off"
+  ],
+  "why": "Rule 19.2(b) applies between each pair of overlapped boats: the outer gives the middle room, and the middle, as outside boat to the inner, gives her room too.",
+  "ref": "RRS 19.2(b)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 165,
+     "hdg": 315,
+     "label": "White"
+    },
+    {
+     "x": 178,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 206,
+     "y": 135,
+     "hdg": 315,
+     "label": "Grey"
+    }
+   ],
+   "obstruction": {
+    "path": "M0 40 L95 40 L95 70 L0 70 Z M150 40 L320 40 L320 70 L150 70 Z",
+    "label": "Breakwater",
+    "lx": 220,
+    "ly": 86
+   },
+   "note": "The gap is between the two walls; White nearest the left wall"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Split, a Mediterranean regatta. A rock awash is marked on the chart but has no buoy. You and Red are overlapped on port, reaching, you inside and nearer the rock. Red says that without a buoy it is \"not an obstruction under the rules\". Who is right?",
+  "a": "You — an object a boat one length away heading at it could not pass without a substantial course change is an obstruction, buoyed or not; Red gives you room",
+  "o": [
+   "Red — only objects marked on the water or listed in the sailing instructions are obstructions",
+   "Red — a rock is part of the seabed, and the rules deal only with objects on the surface",
+   "You, but only because the chart counts as part of the sailing instructions"
+  ],
+  "why": "Definition Obstruction (a): an object a boat could not pass without substantially changing course if she were one hull length from it; rule 19.2(b) applies.",
+  "ref": "RRS 19.2(b), RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 100,
+     "y": 82,
+     "hdg": 90,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 88,
+     "y": 110,
+     "hdg": 90,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "path": "M185 55 L205 48 L222 60 L212 76 L190 72 Z",
+    "label": "Rock awash",
+    "lx": 205,
+    "ly": 94
+   },
+   "note": "You inside, nearer the rock"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "You are close-hauled on port tack, three lengths from a stone quay, with Blue close to windward of you so that you cannot tack without hitting her. You hail \"Room to tack!\". Is your hail allowed?",
+  "a": "Yes — you are close-hauled, approaching an obstruction, and will soon need a substantial course change to avoid it safely",
+  "o": [
+   "No — you may hail only when you are already within one hull length of the obstruction",
+   "No — a leeward boat may not hail; room to tack is for the windward boat",
+   "Yes, but only if you first hailed \"Water\" and waited for a reply"
+  ],
+  "why": "Rule 20.1: a boat may hail for room to tack when approaching an obstruction, about to need a substantial course change, and sailing close-hauled or above.",
+  "ref": "RRS 20.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 126,
+     "y": 132,
+     "hdg": 45,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "path": "M210 0 L320 0 L320 90 L250 90 Z",
+    "label": "Quay",
+    "lx": 230,
+    "ly": 104
+   },
+   "note": "You will hit the quay in three lengths unless you tack"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You are on a reach, about 20° below close-hauled, with the shore coming up and Blue just to windward. You hail \"Room to tack!\"; Blue tacks at once and then protests you. What should the protest committee decide?",
+  "a": "You are penalised: you hailed while not sailing close-hauled, breaking rule 20.1; Blue was right to respond, as she must even to an improper hail",
+  "o": [
+   "Blue is penalised: a boat that responds to a hail accepts it and cannot protest afterwards",
+   "Nobody: on a reach the hail is simply void and Blue could have ignored it",
+   "Both are penalised: you for hailing and Blue for responding to an invalid hail"
+  ],
+  "why": "Rule 20.1(b): hail only when sailing close-hauled or above; rule 20.2(b): the hailed boat responds even if the hail breaks rule 20.1.",
+  "ref": "RRS 20.1(b), RRS 20.2(b)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 140,
+     "hdg": 65,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 132,
+     "y": 116,
+     "hdg": 65,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 262,
+    "y": 80,
+    "w": 58,
+    "h": 120,
+    "label": "Shore"
+   },
+   "note": "You are reaching, well below close-hauled"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Beating up a shoreline, Red, close to leeward of you on the same tack, hails \"Room to tack!\". Which responses satisfy the rule?",
+  "a": "Tack as soon as possible, or reply \"You tack\" at once and then give Red room to tack and to avoid you",
+  "o": [
+   "Reply \"Hold your course\" and bear away to give her room to tack beneath you",
+   "Tack as soon as possible, or ignore the hail if you can see she could still bear away",
+   "Reply \"You tack\" and keep your course; Red must then tack and keep clear of you"
+  ],
+  "why": "Rule 20.2(c): the hailed boat either tacks as soon as possible or immediately replies \"You tack\" and gives the hailing boat room to tack and avoid her.",
+  "ref": "RRS 20.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 112,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 100,
+     "y": 136,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 200,
+    "label": "Shore"
+   },
+   "note": "Red to leeward hails for room to tack"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You hail Blue, to windward, for room to tack at a pier. She replies \"You tack!\" but then holds her course and you have to abort your tack to avoid her stern, ending up pinching along the pier. Who broke a rule?",
+  "a": "Blue — after replying \"You tack\" she had to give you room to tack and to avoid her",
+  "o": [
+   "You — once Blue replied you had to tack and keep clear of her under rule 13 whatever room there was",
+   "Nobody — \"You tack\" transfers the whole responsibility to the hailing boat",
+   "You — you should have tacked before hailing instead of waiting for Blue's answer"
+  ],
+  "why": "Rule 20.2(c): a hailed boat that replies \"You tack\" must then give the hailing boat room to tack and to avoid her.",
+  "ref": "RRS 20.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 110,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 146,
+     "y": 96,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 200,
+    "label": "Pier"
+   },
+   "note": "Blue replied \"You tack\" but did not move over"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "A 20° header hits you on the beat, far from any shore or boat you must avoid. Grey is sitting on your windward quarter, so you cannot tack without fouling her. You hail \"Room to tack!\" to get across onto the lifted tack. Is that allowed?",
+  "a": "No — the hail is allowed only when approaching an obstruction; Grey must still respond, but she may protest you",
+  "o": [
+   "Yes — a boat may hail for room to tack whenever another boat prevents her from tacking",
+   "Yes — a header of 20° or more is a reason that justifies requiring room to tack",
+   "No, and Grey may simply ignore the hail because there is no obstruction"
+  ],
+  "why": "Rule 20.1: a hail is permitted only when approaching an obstruction; rule 20.2(b): the hailed boat responds even if the hail breaks rule 20.1.",
+  "ref": "RRS 20.1, RRS 20.2(b)",
+  "fig": {
+   "type": "race",
+   "wind": 20,
+   "boats": [
+    {
+     "x": 150,
+     "y": 140,
+     "hdg": 335,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 178,
+     "y": 150,
+     "hdg": 335,
+     "label": "Grey"
+    }
+   ],
+   "note": "The wind has headed you 20°; no obstruction anywhere"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Windward mark to be left to port. You and Red are both close-hauled on starboard in the zone, Red to windward and fetching the mark, you a little below the layline and heading straight at the mark. You hail Red \"Room to tack!\" to avoid hitting the mark; she tacks away and you round. What happened under the rules?",
+  "a": "You broke rule 20.1 — no hail for room to tack when the obstruction is a mark and a boat fetching it would have to change course; Red nevertheless had to respond",
+  "o": [
+   "Nothing wrong — the mark is an obstruction and you were close-hauled, so the hail met every condition of rule 20.1",
+   "Red broke rule 20.2 — a boat fetching a mark may refuse to respond to a hail for room to tack, and she should have",
+   "Both acted correctly — Red's tack counted as giving you mark-room under rule 18.2(a)"
+  ],
+  "why": "Rule 20.1, last sentence: no hail when the obstruction is a mark and a boat fetching it would have to change course; rule 20.2(b): she still responds.",
+  "ref": "RRS 20.1, RRS 20.2(b)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 150,
+    "y": 70,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 210,
+     "y": 140,
+     "hdg": 320,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 236,
+     "y": 126,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "Red is fetching the mark; you are heading straight at it"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Three boats close-hauled on port toward a sea wall: Yellow to leeward, you in the middle, Black to windward. Yellow hails you \"Room to tack!\". You cannot tack because Black is right beside you to windward. What do you do?",
+  "a": "Hail Black for room to tack at once, then tack as soon as she responds — between you and Black rule 20.2 applies",
+  "o": [
+   "Reply \"You tack\" to Yellow — a boat that cannot tack is excused from responding",
+   "Bear away under Yellow's stern; the hail does not bind a boat that has another boat to windward",
+   "Wait until Black tacks of her own accord; you may not hail unless you are the leeward boat"
+  ],
+  "why": "Rule 20.3: a hailed boat that intends to tack may hail another boat on the same tack for room to tack, even if her own hail would not meet rule 20.1.",
+  "ref": "RRS 20.3",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 160,
+     "hdg": 45,
+     "label": "Yellow"
+    },
+    {
+     "x": 138,
+     "y": 142,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 116,
+     "y": 124,
+     "hdg": 45,
+     "label": "Black"
+    }
+   ],
+   "obstruction": {
+    "path": "M230 0 L320 0 L320 110 L262 110 Z",
+    "label": "Sea wall",
+    "lx": 240,
+    "ly": 124
+   },
+   "note": "Yellow has hailed you; Black is close to windward of you"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Approaching a shoal marked by a pole, you hail \"Room to tack!\" and put the helm down in the same breath. Red, to windward, has no time to react and your bow hits her quarter. Who broke a rule?",
+  "a": "You — after hailing you must give the hailed boat time to respond before you tack; until she responds you have no right to tack into her",
+  "o": [
+   "Red — once hailed she had to tack instantly, and she did not",
+   "Nobody — the collision was caused by the shoal, which is nobody's fault",
+   "Red — a windward boat must anticipate a hail whenever an obstruction is near"
+  ],
+  "why": "Rule 20.2(a): after hailing, a boat gives the hailed boat time to respond; tacking at once she also breaks rule 13 while past head to wind.",
+  "ref": "RRS 20.2(a), RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 130,
+     "hdg": 350,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 152,
+     "y": 118,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 40,
+    "y": 40,
+    "w": 30,
+    "h": 30,
+    "label": "Shoal",
+    "lx": 55,
+    "ly": 86
+   },
+   "note": "You hailed and tacked at the same moment"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Blue tacked immediately when you hailed her for room to tack at a rocky point. Now, with Blue gone, you look again and think you can just squeeze past the point without tacking. May you hold on?",
+  "a": "No — once the hailed boat has responded, you must tack as soon as possible",
+  "o": [
+   "Yes — the hail only obliges the hailed boat; the hailer may then do as she pleases",
+   "Yes — if the obstruction can be cleared after all, the hail is cancelled automatically",
+   "No — you had to tack before Blue did; the hailing boat always tacks first"
+  ],
+  "why": "Rule 20.2(d): when the hailed boat responds, the hailing boat shall tack as soon as possible.",
+  "ref": "RRS 20.2(d)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 140,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 100,
+     "y": 100,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "path": "M250 0 L320 0 L320 120 L280 120 Z",
+    "label": "Rocky point",
+    "lx": 262,
+    "ly": 134
+   },
+   "note": "Blue has already tacked in response to your hail"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Beat along a lee shore off Split in 25 knots and breaking waves. You need room to tack and hail Red at the top of your voice, but her crew, hiking hard, clearly hear nothing. What does the rule require of you?",
+  "a": "You must also make a signal that clearly indicates your need for room to tack — in such conditions the hail alone is not enough",
+  "o": [
+   "Nothing more — a loud hail satisfies the rule whether or not it is heard",
+   "You must call Red on VHF channel 16; no other method is recognised",
+   "You cannot ask for room; in heavy weather rule 20 is suspended for safety"
+  ],
+  "why": "Rule 20.4(a): when conditions mean a hail may not be heard, the boat must also make a signal that clearly indicates her need for room to tack (or her response).",
+  "ref": "RRS 20.4(a)",
+  "fig": {
+   "type": "card",
+   "title": "Beat along a lee shore, Split",
+   "lines": [
+    "Wind 25 knots, breaking waves",
+    "You: close-hauled on port, 3 lengths off the shore",
+    "Red: close to windward, same tack",
+    "You hail \"Room to tack\" — no reaction"
+   ],
+   "tag": "Rule 20"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You hail Blue, to windward, for room to tack at a harbour wall. Blue replies \"You tack!\", but Red is close to windward of Blue and Blue cannot move over; you are forced to bear away along the wall. Who broke a rule?",
+  "a": "Blue — having replied \"You tack\" she had to give you room; she should have tacked, or passed the hail on to Red and then tacked",
+  "o": [
+   "Red — the outermost boat is always responsible for making room when a hail is made",
+   "You — you should have hailed Red directly, as the boat that was actually in the way",
+   "Nobody — Blue did all she could; rule 20 does not apply when three boats are involved"
+  ],
+  "why": "Rule 20.2(c): after \"You tack\" the hailed boat must give room; rule 20.3 lets her instead hail a third boat and tack when that boat responds.",
+  "ref": "RRS 20.2(c), RRS 20.3",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 140,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 174,
+     "y": 128,
+     "hdg": 315,
+     "label": "Blue"
+    },
+    {
+     "x": 198,
+     "y": 116,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 200,
+    "label": "Harbour wall"
+   },
+   "note": "Blue replied \"You tack\" but Red pins her"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "You are close-hauled on port, a few lengths from the shore. Grey, close-hauled on starboard, is crossing just ahead of you. You hail Grey \"Room to tack!\". What is the effect?",
+  "a": "None — rule 20 works only between boats on the same tack; Grey keeps her rights under rule 10 and you must keep clear of her",
+  "o": [
+   "Grey must respond by tacking or replying \"You tack\" — the hail binds any boat within hearing",
+   "Grey must respond, because an obstruction cancels rule 10 between boats near it",
+   "Grey may ignore the hail, but she must still give you room under rule 19"
+  ],
+  "why": "Rule 20.1: a boat may hail for room to tack and avoid a boat on the same tack; across tacks rule 10 applies and the hail has no effect.",
+  "ref": "RRS 20.1, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 200,
+     "y": 110,
+     "hdg": 315,
+     "label": "Grey"
+    }
+   ],
+   "obstruction": {
+    "path": "M230 0 L320 0 L320 100 L260 100 Z",
+    "label": "Shore",
+    "lx": 245,
+    "ly": 114
+   },
+   "note": "Grey is on starboard, you on port"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "The windward mark, to be left to port, is laid three lengths off a rocky point. You and Blue are close-hauled on port in the zone, Blue to windward and inside for the rounding; the rocks are dead ahead. You hail Blue \"Room to tack!\" and she tacks; you tack after her. Blue later protests that you failed to give her mark-room. Decision?",
+  "a": "No breach — from your hail until you had tacked and avoided Blue, rule 18.2 did not apply between you; Blue had to respond to the hail",
+  "o": [
+   "You broke rule 18.2(a) — Blue was the inside boat at the zone and mark-room overrides any hail for room to tack",
+   "Blue broke rule 20.2 — a boat entitled to mark-room may refuse a hail for room to tack",
+   "You broke rule 20.1 — a boat may never hail for room to tack inside the zone of a mark"
+  ],
+  "why": "Rule 20.2(e): from the time a boat hails for room to tack until she has tacked and avoided the hailed boat, rule 18.2 does not apply between them.",
+  "ref": "RRS 20.2(e)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 165,
+    "y": 80,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 160,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 126,
+     "y": 142,
+     "hdg": 45,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "path": "M235 0 L320 0 L320 115 L270 115 Z",
+    "label": "Rocks",
+    "lx": 252,
+    "ly": 128
+   },
+   "note": "The rocks are dead ahead; the mark is in reach after one tack"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "In 20 knots you hail Red for room to tack at a breakwater. Red, to windward, takes four or five seconds to ease sheets, get the crew across and tack. You protest her for not tacking \"at once\". Decision?",
+  "a": "No breach — Red tacked as soon as possible in a seamanlike way for the conditions; the rule does not require an instant tack",
+  "o": [
+   "Breach — the hailed boat must begin her tack within two seconds of the hail",
+   "Breach — a hailed boat that cannot tack instantly must reply \"You tack\" instead",
+   "No breach, because a hailed boat is never required to tack, only to give room"
+  ],
+  "why": "Rule 20.2(c): the hailed boat tacks \"as soon as possible\" — promptly and in a seamanlike way in the conditions, not instantly regardless of them.",
+  "ref": "RRS 20.2(c), RRS definition Room",
+  "fig": {
+   "type": "card",
+   "title": "Breakwater, 20 knots",
+   "lines": [
+    "You hail \"Room to tack\" at four lengths",
+    "Red (to windward) eases sheets, crew crosses",
+    "Red tacks after about five seconds",
+    "You clear the breakwater with room to spare"
+   ],
+   "tag": "Protest"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "You hail Blue, to windward, for room to tack as the shore comes up. Blue says nothing and holds her course; you run out of water and have to crash-tack under her transom, touching her rudder. Who broke a rule?",
+  "a": "Blue — she had to respond by tacking or by replying \"You tack\" and giving room; silence and holding course is not a response",
+  "o": [
+   "You — a boat that cannot tack safely must slow down and wait until the windward boat has passed",
+   "Nobody — Blue may choose not to respond if she judges the hail unjustified",
+   "You — you had to hail a second time before tacking, and you did not"
+  ],
+  "why": "Rule 20.2(c): the hailed boat shall respond either by tacking as soon as possible or by replying \"You tack\" and giving room; Blue did neither.",
+  "ref": "RRS 20.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 118,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 146,
+     "y": 106,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 200,
+    "label": "Shore"
+   },
+   "note": "Blue holds her course in silence"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You hail Grey, to windward, for room to tack at a line of moored boats. Grey replies \"You tack!\" and luffs to give you room. Instead of tacking you bear away and pass astern of her, then carry on. Grey protests. What did you break?",
+  "a": "Rule 20.2(d) — once the hailed boat responds, the hailing boat must tack as soon as possible, not bear away under her stern",
+  "o": [
+   "Nothing — once room is given, the hailing boat may use it to tack or to bear away as she sees fit",
+   "Rule 20.1 — bearing away proved that you did not need a substantial course change after all",
+   "Rule 16.1 — by bearing away you changed course without giving Grey room to keep clear"
+  ],
+  "why": "Rule 20.2(d): when the hailed boat responds, the hailing boat shall tack as soon as possible.",
+  "ref": "RRS 20.2(d)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 130,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 154,
+     "y": 112,
+     "hdg": 300,
+     "label": "Grey"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 200,
+    "label": "Moored boats"
+   },
+   "note": "Grey has luffed to give you room; you bear away instead"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You are close-hauled on port with Yellow a length to windward, overlapped. Red is approaching on starboard; you are too close to her to bear away under her stern. You hail Yellow \"Room to tack!\". Is the hail valid?",
+  "a": "Yes — Red, a boat you must keep clear of, is an obstruction; you are close-hauled and need a substantial course change, so Yellow must respond",
+  "o": [
+   "No — only fixed objects, the shore and anchored vessels are obstructions for the purposes of rule 20",
+   "No — at another boat your only option is to bear away under her stern under rule 19",
+   "Yes, but Yellow may respond by holding her course if she judges that you could still duck Red"
+  ],
+  "why": "Definition Obstruction: a right-of-way boat is an obstruction to a boat that must keep clear of her; rule 20.1 allows the hail and 20.2 requires a response.",
+  "ref": "RRS 20.1, RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 114,
+     "y": 132,
+     "hdg": 45,
+     "label": "Yellow"
+    },
+    {
+     "x": 200,
+     "y": 96,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "Red on starboard is too close for you to duck"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Same beat: you to leeward and Yellow to windward, both close-hauled on port and overlapped, with Red on starboard approaching. You could either bear away under Red's stern or tack. Yellow shouts \"Just duck her!\". Who decides what the pair does?",
+  "a": "You — as the right-of-way boat between the two port-tack boats you may duck (and Yellow gives room under rule 19) or hail for room to tack under rule 20",
+  "o": [
+   "Yellow — the windward boat decides whether the pair tacks or ducks, because she has the bigger move to make",
+   "Red — the starboard-tack boat may hail \"Hold your course\" and fix what the port-tack boats do",
+   "Neither — the rules require both port-tack boats to tack when a starboard-tack boat is an obstruction"
+  ],
+  "why": "Rule 19.2(a) gives the right-of-way boat the choice of side; rule 20.1 lets her hail for room to tack instead; the windward boat must comply either way.",
+  "ref": "RRS 19.2(a), RRS 20.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 135,
+     "y": 155,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 109,
+     "y": 137,
+     "hdg": 45,
+     "label": "Yellow"
+    },
+    {
+     "x": 210,
+     "y": 92,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "You may duck Red or hail for room to tack"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "You hail Blue for room to tack at a shore; she replies \"You tack!\" and bears away only slightly. You tack as fast as you can, but in the tack your transom brushes her bow — no damage. The protest committee finds Blue could easily have borne away more. Who is penalised?",
+  "a": "Blue — she failed to give room to tack and to avoid her; you are exonerated for breaking rules 13 and 14 while sailing within the room you were entitled to",
+  "o": [
+   "You — a tacking boat must keep clear under rule 13 whatever room she was given",
+   "Both — Blue for the room and you for the contact; rule 14 is never excused",
+   "Nobody — contact without damage during a room-to-tack exchange is not a breach"
+  ],
+  "why": "Rule 20.2(c) binds the hailed boat; rule 43.1(b)–(c) exonerates the hailing boat sailing within her room for breaking rule 13 and rule 14 (no damage).",
+  "ref": "RRS 20.2(c), RRS 43.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 118,
+     "hdg": 10,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 154,
+     "y": 100,
+     "hdg": 305,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 200,
+    "label": "Shore"
+   },
+   "note": "Blue bore away only a little; you are mid-tack"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "A small dinghy lies at anchor ahead of you on the beat. Bearing away ten degrees for a couple of lengths would take you clear of her. Instead you hail Blue, close to windward, \"Room to tack!\" because the other tack suits you. What are the consequences?",
+  "a": "Your hail broke rule 20.1 — avoiding the dinghy did not require a substantial course change; Blue must still respond but may protest you",
+  "o": [
+   "None — any object you must steer round is an obstruction and justifies a hail for room to tack",
+   "None — the hailing boat alone judges whether a course change is substantial",
+   "Blue may ignore the hail, since a dinghy at anchor is too small to be an obstruction"
+  ],
+  "why": "Rule 20.1(a): the boat must be about to need a substantial course change to avoid the obstruction safely; rule 20.2(b): the hailed boat still responds.",
+  "ref": "RRS 20.1(a), RRS 20.2(b)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 164,
+     "y": 148,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 92,
+    "y": 96,
+    "w": 10,
+    "h": 22,
+    "label": "Anchored dinghy",
+    "lx": 97,
+    "ly": 132
+   },
+   "note": "A small bear-away would clear the dinghy"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Red is a length clear ahead and to windward of you, both close-hauled on starboard, as a long pier approaches. You are not overlapped, but if you tack now you will tack straight into her path. May you hail her for room to tack?",
+  "a": "Yes — rule 20 needs no overlap; you may hail a boat on the same tack whose position prevents your tack, and Red must respond",
+  "o": [
+   "No — room to tack can be claimed only from a boat you are overlapped with",
+   "No — a boat clear astern has no rights at all against a boat clear ahead",
+   "Yes, but Red may answer \"You tack\" only, since she is ahead of you"
+  ],
+  "why": "Rule 20.1 speaks of a boat on the same tack, not an overlapped one; the hailed boat responds under rule 20.2(c).",
+  "ref": "RRS 20.1, RRS 20.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 144,
+     "y": 112,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 200,
+    "label": "Pier"
+   },
+   "note": "Red clear ahead and to windward; no overlap"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "You hailed Blue for room to tack at a mole and she has replied \"You tack!\". Who tacks first now?",
+  "a": "You, the hailing boat — as soon as possible, while Blue gives you room to tack and to avoid her",
+  "o": [
+   "Blue — \"You tack\" means she will tack and you follow her round",
+   "Both together — the rule requires simultaneous tacks after that reply",
+   "Whichever boat is nearer the mole decides who tacks first"
+  ],
+  "why": "Rule 20.2(c)–(d): after \"You tack\" the hailed boat gives room and the hailing boat tacks as soon as possible.",
+  "ref": "RRS 20.2(c), RRS 20.2(d)",
+  "fig": null
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "On the final beat of a club race you hail Blue, to windward, for room to tack as a jetty approaches. Blue says nothing for several seconds, keeps sailing, and only when you are a length from the jetty shouts \"You tack!\" and bears away. You tack and barely miss the piles. Did Blue comply?",
+  "a": "No — she had to respond either by tacking as soon as possible or by replying \"You tack\" immediately; a late answer is not a response",
+  "o": [
+   "Yes — she replied \"You tack\" and gave room, which is all the rule requires",
+   "Yes — a hailed boat may take time to assess whether the hail was justified before answering",
+   "No — she had to tack herself; \"You tack\" is only allowed when she cannot tack"
+  ],
+  "why": "Rule 20.2(c): the reply \"You tack\" must be immediate; rule 20.2(a) gives the hailed boat time to respond, not time to wait and see.",
+  "ref": "RRS 20.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 120,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 146,
+     "y": 108,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "path": "M0 0 L80 0 L80 60 L0 60 Z M0 60 L40 60 L40 200 L0 200 Z",
+    "label": "Jetty",
+    "lx": 40,
+    "ly": 30
+   },
+   "note": "Blue answered only when you were a length from the piles"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "The notice of race says that a boat needing room to tack shall hail \"Room to tack\" and raise one arm, and that the response shall be a hail plus a hand signal. Your crew only shouts in Greek and Red does not react. Who is right?",
+  "a": "Red — the notice of race may prescribe an alternative communication for the hail and the response and require boats to use it; make the prescribed signal",
+  "o": [
+   "You — any clear hail in any language satisfies rule 20, and the notice of race cannot add to it",
+   "You — only the sailing instructions, not the notice of race, can change how rule 20 hails are made",
+   "Neither — when the notice of race prescribes a signal, a boat need not hail at all; she may just tack"
+  ],
+  "why": "Rule 20.4(b): the notice of race may specify an alternative communication for the hail and the response and require boats to use it.",
+  "ref": "RRS 20.4(b)",
+  "fig": {
+   "type": "card",
+   "title": "Notice of race, hails under rule 20",
+   "lines": [
+    "Hail \"Room to tack\" and raise one arm",
+    "Response: hail and clear hand signal",
+    "You: hail in Greek, no arm signal",
+    "Red: no reaction, holds course"
+   ],
+   "tag": "NoR"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Windward mark to port. You are close-hauled on starboard, heading straight at the mark — you cannot pass it without a substantial course change. Red is close to windward of you but below the layline, not fetching the mark. You hail Red \"Room to tack!\". Is that allowed?",
+  "a": "Yes — the ban on hailing at a mark applies only when a boat fetching the mark would have to change course; Red is not fetching, so she must respond",
+  "o": [
+   "No — a boat may never hail for room to tack when the obstruction is a mark of the course",
+   "No — inside the zone rule 18 replaces rule 20 completely",
+   "Only if Red agrees — at a mark the hailed boat may refuse to respond"
+  ],
+  "why": "Rule 20.1, last sentence: the hail is barred when the obstruction is a mark and a boat fetching it would be required to change course — not otherwise.",
+  "ref": "RRS 20.1, RRS definition Fetching",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 140,
+    "y": 70,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 200,
+     "y": 130,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 222,
+     "y": 138,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "Neither of you is fetching the mark; you are aimed at it"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Red, to leeward of you on port tack, hails \"Room to tack!\" as a moored barge approaches. You judge that she could easily bear away under the barge and do nothing. Red has to bear away hard at the last moment. In the hearing the protest committee agrees that Red's hail did not meet rule 20.1. Who is penalised?",
+  "a": "Both — Red for hailing when rule 20.1 did not allow it, and you for not responding, because the hailed boat must respond even to a hail that breaks 20.1",
+  "o": [
+   "Only Red — an invalid hail imposes no obligation on the hailed boat",
+   "Only you — once a boat hails, the hailed boat alone is responsible for what follows",
+   "Nobody — the committee found the hail invalid, so the whole exchange is void"
+  ],
+  "why": "Rule 20.2(b): the hailed boat shall respond even if the hail breaks rule 20.1; the remedy for an improper hail is a protest, not refusal.",
+  "ref": "RRS 20.1, RRS 20.2(b)",
+  "fig": {
+   "type": "card",
+   "title": "Protest hearing: Red v. You",
+   "lines": [
+    "Red hailed \"Room to tack\" at a moored barge",
+    "You held course, judging the hail unjustified",
+    "Red bore away hard, no contact",
+    "PC finds: the hail did not meet rule 20.1"
+   ],
+   "tag": "Decision?"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "You are close-hauled on starboard with Blue close to windward, and the beach is two lengths ahead. You need her to let you tack. What should you hail?",
+  "a": "\"Room to tack!\" — loudly and in time for Blue to respond before you have to turn",
+  "o": [
+   "\"Starboard!\" — it is the only hail the rules recognise between boats on a beat",
+   "\"Water!\" — and then tack at once; the traditional hail needs no reply",
+   "\"Protest!\" — a hail for room must be preceded by a protest hail to be valid"
+  ],
+  "why": "Rule 20.1: the hail is \"Room to tack\"; rule 20.2(a): after hailing, the boat gives the hailed boat time to respond.",
+  "ref": "RRS 20.1, RRS 20.2(a)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 122,
+     "y": 128,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 148,
+     "y": 116,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 200,
+    "label": "Beach"
+   },
+   "note": "Two lengths to the beach"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Flag X goes up with one sound after the start and you realise your bow was over the line. You bear away and sail back toward the pre-start side on starboard tack, straight into the boats still starting. What are your obligations?",
+  "a": "You must keep clear of every boat that is not returning, until your hull is completely on the pre-start side",
+  "o": [
+   "None beyond the normal rules — on starboard tack you keep right of way over port-tack boats",
+   "Only to avoid contact; the starting boats must give you room to get back",
+   "To keep clear only of boats that have already crossed the starting line"
+  ],
+  "why": "Rule 21.1: a boat sailing toward the pre-start side after her starting signal keeps clear of a boat not doing so until her hull is completely on that side.",
+  "ref": "RRS 21.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 120,
+    "x2": 250,
+    "y2": 120,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 95,
+     "hdg": 200,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 110,
+     "y": 165,
+     "hdg": 45,
+     "label": "A"
+    },
+    {
+     "x": 190,
+     "y": 168,
+     "hdg": 315,
+     "label": "B"
+    }
+   ],
+   "note": "You are returning after the start; A and B are starting"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You were OCS and are returning. Your bow is now back across the line but your stern is still on the course side when Grey, starting on port, converges with you on starboard. Grey keeps clear of you, saying you are \"back\". Who had to keep clear at that moment?",
+  "a": "You — your obligation under rule 21.1 lasts until your hull is completely on the pre-start side, and your stern was still over",
+  "o": [
+   "Grey — as soon as any part of your hull is back on the pre-start side you regain your rights",
+   "Grey — a port-tack boat keeps clear of a starboard-tack boat whatever the circumstances",
+   "Neither — boats returning to start and boats starting have no obligations to each other"
+  ],
+  "why": "Rule 21.1: the returning boat keeps clear until her hull is completely on the pre-start side of the line or its extensions.",
+  "ref": "RRS 21.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 120,
+    "x2": 250,
+    "y2": 120,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 122,
+     "hdg": 190,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 100,
+     "y": 168,
+     "hdg": 45,
+     "label": "Grey"
+    }
+   ],
+   "note": "Your stern is still on the course side of the line"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "One minute after the start Blue, scored over early, is beating back toward the line on starboard tack. You started correctly and are close-hauled on port, on course to cross her bow. Blue hails \"Starboard!\". Must you keep clear?",
+  "a": "No — while rule 21.1 applies between you, the rules of Section A do not; Blue, returning to start, must keep clear of you",
+  "o": [
+   "Yes — rule 10 applies regardless of what either boat is doing, and you are on port",
+   "Yes — a boat returning to start may hail for right of way and you must respond",
+   "No, but only because Blue failed to hail before you became overlapped"
+  ],
+  "why": "Part 2 Section D preamble: when rule 21 applies between two boats, the rules of Section A (10–13) do not; rule 21.1 puts the duty on the returning boat.",
+  "ref": "RRS 21.1, RRS Part 2 Section D preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 110,
+    "x2": 250,
+    "y2": 110,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 120,
+     "y": 160,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 190,
+     "y": 165,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "Blue is returning to the pre-start side; you have started"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "After touching Red at the windward mark you are taking a Two-Turns Penalty. Halfway through your first turn you are on starboard tack, bow pointing at Grey, who is close-hauled on port. Who keeps clear?",
+  "a": "You — a boat taking a penalty keeps clear of a boat that is not, whatever tack either boat is on",
+  "o": [
+   "Grey — you are on starboard and rule 10 applies throughout your turns",
+   "Grey — a boat doing turns has right of way so that she can complete them promptly",
+   "Both must keep clear of each other equally; neither has right of way during a penalty"
+  ],
+  "why": "Rule 21.2: a boat taking a penalty keeps clear of one that is not; Section A does not apply between them.",
+  "ref": "RRS 21.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 60,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 170,
+     "y": 130,
+     "hdg": 280,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 100,
+     "y": 150,
+     "hdg": 45,
+     "label": "Grey"
+    }
+   ],
+   "track": "M200 115 C 195 150 160 155 165 125",
+   "note": "You are in the middle of your Two-Turns Penalty"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Twenty seconds before the start you are early at the committee boat. You back your jib and the boat starts moving astern through the water. Black, close astern of you, is luffing slowly toward the line. Who keeps clear?",
+  "a": "You — a boat moving astern through the water by backing a sail keeps clear of a boat that is not",
+  "o": [
+   "Black — a boat clear astern keeps clear of the boat ahead under rule 12",
+   "Black — before the starting signal no boat may sail into a boat that is holding position",
+   "Both equally — before the start there is no right of way at all"
+  ],
+  "why": "Rule 21.3: a boat moving astern, or sideways to windward, through the water by backing a sail keeps clear of a boat that is not.",
+  "ref": "RRS 21.3",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 200,
+     "y": 135,
+     "hdg": 340,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 190,
+     "y": 178,
+     "hdg": 330,
+     "label": "Black"
+    }
+   ],
+   "note": "Your jib is backed; you are moving astern"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "You hit the leeward mark and start your One-Turn Penalty right away, a length from the mark, while three boats are rounding behind you. Blue, one of them, has to luff to miss you and protests. You say she had to stay clear of a boat doing a penalty. Who is right?",
+  "a": "Blue — a boat taking a penalty keeps clear of others; Blue's duty under rule 23.2 not to interfere applies only \"if reasonably possible\" and does not give you rights",
+  "o": [
+   "You — rule 23.2 forbids interfering with a boat taking a penalty, so Blue had to keep clear",
+   "You — a One-Turn Penalty must be started at once, and other boats must make space for it",
+   "Nobody — penalty turns are taken outside the rules of Part 2"
+  ],
+  "why": "Rule 44.2: get well clear before the turns; rule 21.2: a boat taking a penalty keeps clear; rule 23.2 asks others not to interfere only if reasonably possible.",
+  "ref": "RRS 21.2, RRS 23.2, RRS 44.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 150,
+    "y": 110,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 120,
+     "y": 135,
+     "hdg": 90,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 170,
+     "y": 60,
+     "hdg": 200,
+     "label": "Blue"
+    },
+    {
+     "x": 200,
+     "y": 40,
+     "hdg": 200,
+     "label": "A"
+    }
+   ],
+   "note": "You began your turn a length from the mark, in the traffic"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Flag I was displayed. You were over the line in the last minute, so you must sail round an end. You are now sailing along the course side of the line toward the pin, then round it, crossing the line's extension. Red is starting correctly on starboard. Until when must you keep clear of her?",
+  "a": "Until your hull is completely on the pre-start side of the line or its extension — the whole way round the end you are a returning boat",
+  "o": [
+   "Only until you cross the line itself; once past the pin you have normal rights",
+   "Never — a boat complying with rule 30.1 has right of way so that she can get back quickly",
+   "Only while you are on the course side; on the extension of the line rule 21 does not apply"
+  ],
+  "why": "Rule 21.1: a boat sailing toward the pre-start side of the line or its extensions to comply with rule 30.1 keeps clear until her hull is completely there.",
+  "ref": "RRS 21.1, RRS 30.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 120,
+    "x2": 260,
+    "y2": 120,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 120,
+     "y": 98,
+     "hdg": 250,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 165,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "track": "M200 95 L80 95 C 40 95 40 150 80 150",
+   "note": "Flag I; you must round the pin end to return"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Fifteen seconds before the starting signal you realise you are already over the line. You bear away and sail back toward the pre-start side on starboard, meeting Grey on port who is coming up to start. Who keeps clear?",
+  "a": "Grey — rule 21.1 applies only after your starting signal; before it the ordinary rules apply, and you are on starboard",
+  "o": [
+   "You — a boat sailing back toward the pre-start side always keeps clear of boats approaching the line",
+   "You — a boat that is over the line early loses her rights from the moment she crosses it",
+   "Both — before the start neither boat has right of way"
+  ],
+  "why": "Rule 21.1 begins with the boat's starting signal; before it, Section A applies — rule 10 puts the duty on the port-tack boat.",
+  "ref": "RRS 21.1, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 110,
+    "x2": 250,
+    "y2": 110,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 100,
+     "hdg": 200,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 100,
+     "y": 165,
+     "hdg": 45,
+     "label": "Grey"
+    }
+   ],
+   "note": "15 s before the starting signal"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Crowded start, 10 seconds to go. Holding position at the committee boat, you push your boom out to windward; the boat does not go astern but slides sideways to windward through the water, into the gap where Red is luffing up beside you. Red protests. What rule applies?",
+  "a": "Rule 21.3 — a boat moving sideways to windward through the water by backing a sail must keep clear of a boat that is not; you broke it",
+  "o": [
+   "Rule 11 — you were the leeward boat and Red, to windward, had to keep clear of you",
+   "No rule — moving sideways is not moving astern, so rule 21.3 did not apply",
+   "Rule 12 — Red was clear astern of you when the contact began"
+  ],
+  "why": "Rule 21.3 (2025 wording): a boat moving astern or sideways to windward through the water by backing a sail keeps clear of a boat that is not.",
+  "ref": "RRS 21.3",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 190,
+     "y": 140,
+     "hdg": 350,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 214,
+     "y": 150,
+     "hdg": 340,
+     "label": "Red"
+    }
+   ],
+   "note": "Your boom is pushed out to windward; you slide sideways toward Red"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "You were OCS, sailed back, and your whole hull is now on the pre-start side; you tack and head for the line again on starboard. Yellow, who was also OCS and is still on the course side returning, converges with you on port. Flag X is still displayed. Who keeps clear?",
+  "a": "Yellow — once your hull was completely on the pre-start side your rule 21.1 obligation ended; Yellow is still returning, so she keeps clear of you",
+  "o": [
+   "You — while flag X is displayed every boat that was OCS keeps clear of all other boats",
+   "Neither owes the other anything — two returning boats have no obligations between them",
+   "You — a boat that was OCS keeps clear until the race committee lowers flag X"
+  ],
+  "why": "Rule 21.1 ends when the hull is completely on the pre-start side; the boat still returning keeps clear of the boat that is no longer doing so.",
+  "ref": "RRS 21.1, RRS 29.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 110,
+    "x2": 250,
+    "y2": 110,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 170,
+     "y": 165,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 110,
+     "y": 95,
+     "hdg": 160,
+     "label": "Yellow"
+    }
+   ],
+   "note": "You are starting again; Yellow is still on the course side"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You touched the offset mark and are taking a One-Turn Penalty. During the turn your bow strikes Grey, who was sailing the leg on a steady course and did not alter to avoid you; a stanchion is bent. Who broke which rules?",
+  "a": "You broke rule 21.2 (a boat taking a penalty keeps clear) and rule 14; Grey, as the boat with rights, broke rule 14 too if she could have avoided the contact once it was clear you were not keeping clear",
+  "o": [
+   "Only Grey — rule 23.2 forbids interfering with a boat taking a penalty, and she sailed into your turn",
+   "Only you, and only rule 14 — a boat doing turns keeps her normal right of way during them",
+   "Nobody — a penalty turn is a manoeuvre the other boats must allow for, and damage is a matter for insurance"
+  ],
+  "why": "Rule 21.2: the penalised boat keeps clear; rule 14: every boat avoids contact when reasonably possible, and with damage neither boat is exonerated.",
+  "ref": "RRS 21.2, RRS 14",
+  "fig": {
+   "type": "card",
+   "title": "Offset mark, after the rounding",
+   "lines": [
+    "You touched the mark, began a One-Turn Penalty",
+    "Grey sailing the leg on a steady course",
+    "Your bow hit Grey's side; stanchion bent",
+    "Grey did not alter course at all"
+   ],
+   "tag": "Damage"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Two sounds and First Substitute: general recall. Half the fleet turns back toward the pre-start side on starboard; you are among them. Red, on port, is sailing the other way to get a clear look at the pin. She claims you must keep clear as \"a boat returning to start\". Is she right?",
+  "a": "No — after a general recall nobody is returning to start under rule 21.1; the ordinary Part 2 rules apply between boats intending to race, so Red on port keeps clear",
+  "o": [
+   "Yes — every boat sailing toward the pre-start side after a starting signal keeps clear of boats not doing so",
+   "Yes — after a general recall the whole fleet was over early, so all are bound by rule 21.1",
+   "No — after a general recall no racing rules apply at all until the next warning signal"
+  ],
+  "why": "Rule 21.1 covers a boat returning after her starting signal to start; a general recall cancels that start, and Part 2 applies between boats intending to race.",
+  "ref": "RRS 21.1, RRS 29.2, RRS Part 2 preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 120,
+    "x2": 250,
+    "y2": 120,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 160,
+     "y": 90,
+     "hdg": 225,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 100,
+     "y": 80,
+     "hdg": 90,
+     "label": "Red"
+    }
+   ],
+   "note": "General recall signalled; both are on the course side"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Blue, returning after being OCS, sails on starboard into Black, who has started correctly on port and holds her course to the end. The boats touch; no damage. Black took no avoiding action at all. What does the protest committee decide?",
+  "a": "Blue broke rule 21.1 and rule 14; Black broke rule 14 but is exonerated because she was the boat with rights and there was no damage or injury",
+  "o": [
+   "Both are disqualified — rule 14 applies equally to both boats and both made contact",
+   "Black is penalised — on port she had to keep clear of a starboard-tack boat, returning or not",
+   "Nobody — contact without damage is not a breach of any rule"
+  ],
+  "why": "Rule 21.1 and 14 against Blue; rule 43.1(c): a boat with rights that breaks rule 14 is exonerated when the contact causes no damage or injury.",
+  "ref": "RRS 21.1, RRS 14, RRS 43.1(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 110,
+    "x2": 250,
+    "y2": 110,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 110,
+     "y": 160,
+     "hdg": 45,
+     "label": "Black"
+    },
+    {
+     "x": 175,
+     "y": 120,
+     "hdg": 200,
+     "label": "Blue"
+    }
+   ],
+   "note": "Blue returning; Black started and held course"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Red is clear ahead of you on the run and begins a Two-Turns Penalty for an earlier incident. As she heads up and tacks she comes back across your bow. You are clear astern and sailing straight down the leg. Who keeps clear?",
+  "a": "Red — a boat taking a penalty keeps clear, and rule 12 does not apply between you while she does so",
+  "o": [
+   "You — a boat clear astern keeps clear of the boat ahead under rule 12 until she has passed her",
+   "You — Red is turning to starboard tack and rule 10 gives her right of way",
+   "Both — the rules require both boats to keep clear during penalty turns"
+  ],
+  "why": "Rule 21.2 puts the duty on the penalised boat; the Section D preamble switches off Section A (rules 10–13) between the two boats while rule 21 applies.",
+  "ref": "RRS 21.2, RRS Part 2 Section D preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 60,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 120,
+     "hdg": 45,
+     "label": "Red"
+    }
+   ],
+   "track": "M150 100 C 150 130 185 130 180 110",
+   "note": "Red has begun her turns ahead of you"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Gusty 18 knots on the run. The ILCA ahead of you broaches and capsizes, mast flat on the water, right in your path. You are on starboard, she was on port. What must you do?",
+  "a": "Avoid her if possible — a boat shall avoid a capsized boat, whatever tack either was on",
+  "o": [
+   "Hold your course — she was on port tack and must keep clear of you even capsized",
+   "Hail \"Starboard!\" and bear away only if she fails to right herself in time",
+   "Hold your course — a capsized boat is not racing and has left the race"
+  ],
+  "why": "Rule 22: if possible, a boat shall avoid a boat that is capsized or has not regained control after capsizing.",
+  "ref": "RRS 22",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 55,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 130,
+     "hdg": 90,
+     "label": "A"
+    }
+   ],
+   "note": "A has capsized, mast in the water, directly ahead of you"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Squall on the reach. A 470 ahead of you is knocked flat, gunwale under, the crew hanging from the trapeze in the water, but the mast is still well above the surface. Her helm hails \"Capsized — keep off!\". Is she a capsized boat under the rules?",
+  "a": "No — a boat is capsized only when her masthead is in the water; she is a boat under way and the normal rules apply between you",
+  "o": [
+   "Yes — any boat with crew in the water counts as capsized",
+   "Yes — a boat heeled past 45° is capsized under the definition",
+   "No — only a boat that has turned turtle is capsized under the rules"
+  ],
+  "why": "Rule 22, last sentence: a boat is capsized when her masthead is in the water.",
+  "ref": "RRS 22",
+  "fig": {
+   "type": "card",
+   "title": "Squall on the reach",
+   "lines": [
+    "470 ahead knocked flat, gunwale under",
+    "Crew in the water on the trapeze",
+    "Masthead well clear of the water",
+    "Helm hails \"Capsized — keep off!\""
+   ],
+   "tag": "Capsized?"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "A 29er ahead of you capsized, has just been righted and is upright again, but the helm is still climbing over the gunwale, the sails are flogging and the boat is drifting sideways. You are approaching fast on a reach. Is she still protected by rule 22?",
+  "a": "Yes — a boat that has not yet regained control after capsizing is still one you must avoid if possible",
+  "o": [
+   "No — the protection ends the moment the boat comes upright",
+   "No — once the crew are back aboard the normal right-of-way rules apply at once",
+   "Yes, but only if she displays a protest flag or hails for room"
+  ],
+  "why": "Rule 22: avoid, if possible, a boat that is capsized or has not regained control after capsizing.",
+  "ref": "RRS 22",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 220,
+     "y": 120,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 110,
+     "y": 112,
+     "hdg": 200,
+     "label": "A"
+    }
+   ],
+   "note": "A is upright but drifting; helm not yet back aboard"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "River race, falling tide. Blue has run aground on a sandbank on the inside of the bend and sits heeled over with her keel in the mud. Your course takes you close past her. What are your obligations?",
+  "a": "Avoid her if possible — a boat shall avoid a boat that is aground; she is also an obstruction between you and other boats",
+  "o": [
+   "None — a boat aground is out of the race and no longer a boat under the rules",
+   "Keep clear of her only if she is on starboard tack",
+   "Give her room to get off — a boat aground has right of way over boats that are afloat"
+  ],
+  "why": "Rule 22: if possible, avoid a boat that is anchored or aground; being a boat you must avoid, she is an obstruction (definition).",
+  "ref": "RRS 22, RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 200,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 100,
+     "y": 100,
+     "hdg": 300,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "path": "M0 200 L0 120 L60 100 L130 110 L160 150 L120 200 Z",
+    "label": "Sandbank",
+    "lx": 60,
+    "ly": 170
+   },
+   "note": "Blue is aground on the sandbank"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "The breeze dies to nothing and the ebb starts to carry the fleet backwards past the leeward mark. Red drops an anchor and lies head to tide. A puff comes and you, on port tack, find your course leads straight to her. She was lying with her boom to port. Who keeps clear?",
+  "a": "You must avoid her if possible — she is anchored, and while rule 22 applies between you the Section A rules do not, so her tack is irrelevant",
+  "o": [
+   "Red — she must keep clear of boats that are sailing, because anchoring is not allowed while racing",
+   "Red — she is on starboard tack by her boom, so rule 10 applies and you keep clear",
+   "Neither — an anchored boat is not racing, and rule 23.1 only asks her not to interfere"
+  ],
+  "why": "Rule 45 allows anchoring; rule 22: avoid an anchored boat if possible; Section D preamble: Section A does not apply while rule 22 applies.",
+  "ref": "RRS 22, RRS 45, RRS Part 2 Section D preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 120,
+    "y": 60,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 180,
+     "y": 165,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 230,
+     "y": 115,
+     "hdg": 20,
+     "label": "Red"
+    }
+   ],
+   "note": "Red is anchored against the tide; a puff has filled in"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Grey sees a windsurfer from another event in the water, clearly exhausted, and stops to hold him up until the rescue boat arrives. You are beating up toward her on starboard; she lies stopped, across your course. What are your obligations, and what can Grey expect afterwards?",
+  "a": "You must avoid her if possible — she is helping a person in danger — and Grey may request redress for the places she lost while giving help",
+  "o": [
+   "Nothing — a stopped boat is not racing, so she must get out of your way under rule 23.1",
+   "You keep clear only if she is on starboard; afterwards she can only ask the race committee for a resail",
+   "You must avoid her, but she gets no redress because helping is a personal choice"
+  ],
+  "why": "Rule 22: avoid, if possible, a boat trying to help a person or vessel in danger; rule 1.1 obliges her to help and rule 61.4(b)(4) allows redress.",
+  "ref": "RRS 22, RRS 1.1, RRS 61.4(b)(4)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 170,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 110,
+     "y": 90,
+     "hdg": 90,
+     "label": "Grey"
+    }
+   ],
+   "note": "Grey has stopped to hold up a swimmer in difficulty"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "A Laser capsized at the gybe mark is lying on her side, mast on the water, bow pointing to starboard tack. You are approaching on port, could easily go behind her, but hold your course on the theory that she is \"not sailing\". Your bow touches her hull; no damage. Did you break a rule?",
+  "a": "Yes — rule 22 required you to avoid her if possible, and rule 14 required you to avoid contact; her former tack is irrelevant",
+  "o": [
+   "No — a capsized boat is not a boat under way and cannot be fouled",
+   "No — contact without damage is never a breach when the other boat is capsized",
+   "Yes, but only rule 10, because her bow pointed to starboard tack"
+  ],
+  "why": "Rule 22: avoid a capsized boat if possible; rule 14: avoid contact; a capsized boat has no tack obligations, so Section A is not the issue.",
+  "ref": "RRS 22, RRS 14",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 150,
+    "y": 80,
+    "label": "Gybe mark"
+   },
+   "boats": [
+    {
+     "x": 200,
+     "y": 165,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 165,
+     "y": 120,
+     "hdg": 300,
+     "label": "A"
+    }
+   ],
+   "note": "A capsized beside the mark; you could pass astern of her"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Twenty-five knots, 49er fleet. White capsizes to leeward of you; in the same gust you capsize too and, while you are both in the water, the wind blows your hull onto hers. Her crew protest you under rule 22. What should happen?",
+  "a": "No penalty — rule 22 requires a boat to avoid a capsized boat only \"if possible\"; capsized yourself, you could do nothing",
+  "o": [
+   "You are penalised — rule 22 is absolute and contact with a capsized boat is always a breach",
+   "You are penalised unless you took a Two-Turns Penalty immediately after righting",
+   "Both boats are penalised — each failed to avoid the other"
+  ],
+  "why": "Rule 22 applies \"if possible\"; a boat that is herself capsized and out of control cannot avoid another and breaks no rule.",
+  "ref": "RRS 22",
+  "fig": {
+   "type": "card",
+   "title": "49er fleet, 25 knots",
+   "lines": [
+    "White capsizes to leeward of you",
+    "You capsize in the same gust",
+    "Both crews in the water",
+    "Your hull blows down onto White's"
+   ],
+   "tag": "Rule 22"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Just before the start Red hails \"Room to tack!\" to you from close to leeward on starboard, pointing at an anchored motor boat ahead. Having room to spare, you decide to tack rather than reply \"You tack\". Red shouts that she wanted to keep going on starboard. Did you respond correctly?",
+  "a": "Yes — tacking as soon as possible is a valid response; the choice between tacking and replying \"You tack\" belongs to the hailed boat",
+  "o": [
+   "No — the hailing boat may specify which response she wants, and you must comply",
+   "No — before the starting signal a boat may only reply \"You tack\", never tack herself",
+   "Yes, but only because the hail was made before the starting signal"
+  ],
+  "why": "Rule 20.2(c): the hailed boat responds either by tacking as soon as possible or by replying \"You tack\" and giving room — her choice.",
+  "ref": "RRS 20.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 120,
+    "x2": 250,
+    "y2": 120,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 175,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 128,
+     "y": 185,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 60,
+    "y": 130,
+    "w": 16,
+    "h": 34,
+    "label": "Motor boat",
+    "lx": 68,
+    "ly": 178
+   },
+   "note": "Red hailed; you choose to tack"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Blue went aground on a shoal at the edge of the course. Her crew have rowed out a kedge in the dinghy and are winching her off; she is still touching bottom and swinging slowly. You are reaching toward her. Is she still a boat you must avoid under rule 22?",
+  "a": "Yes — she is still aground; until she is afloat and under way you must avoid her if possible",
+  "o": [
+   "No — once a boat starts getting herself off she is sailing again and the normal rules apply",
+   "No — a boat using her anchor to move is breaking rule 42 and has no protection",
+   "Yes, but only until her crew get back aboard from the dinghy"
+  ],
+  "why": "Rule 22: if possible, avoid a boat that is anchored or aground; the protection lasts while she is in that state.",
+  "ref": "RRS 22",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 210,
+     "y": 120,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 90,
+     "y": 105,
+     "hdg": 330,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "path": "M0 200 L0 130 L50 110 L120 115 L150 150 L110 200 Z",
+    "label": "Shoal",
+    "lx": 55,
+    "ly": 172
+   },
+   "note": "Blue is aground and kedging off"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "A J/24 from your fleet has anchored in the dying breeze, lying across the leg. You and Blue, overlapped on starboard, approach her; you are inside, nearer the anchored boat, and Blue, to leeward, says she is not going to \"give room for someone's parking\". Who is right?",
+  "a": "You — both of you must avoid the anchored boat under rule 22, so she is an obstruction to you both, and as outside boat Blue must give you room to pass her",
+  "o": [
+   "Blue — an anchored boat from your own fleet is a competitor, not an obstruction, so rule 19 is off",
+   "Blue — the leeward boat has right of way and the windward boat must find her own way past",
+   "Neither — the anchored boat must weigh anchor and keep clear of boats still sailing"
+  ],
+  "why": "Definition Obstruction: a boat racing is an obstruction to boats that must avoid her under rule 22; rule 19.2(b): the outside boat gives the inside boat room.",
+  "ref": "RRS 22, RRS 19.2(b), RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 175,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 172,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "x": 90,
+    "y": 80,
+    "w": 14,
+    "h": 32,
+    "label": "Anchored J/24",
+    "lx": 97,
+    "ly": 126
+   },
+   "note": "You are inside, nearer the anchored boat"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Red capsizes to windward of you on the beat; her crew, standing on the centreboard, shouts \"Starboard! Keep clear!\" as you approach on port. What is your obligation?",
+  "a": "To avoid her if possible under rule 22 — her tack is irrelevant, because Section A does not apply while rule 22 applies between you",
+  "o": [
+   "To keep clear under rule 10 — she is on starboard tack and her hail confirms it",
+   "None at all — a capsized boat has no rights and you may pass as close as you like",
+   "To keep clear under rule 10 only if she rights herself before you reach her"
+  ],
+  "why": "Section D preamble: when rule 22 applies between two boats, Section A does not; rule 22: avoid a capsized boat if possible.",
+  "ref": "RRS 22, RRS Part 2 Section D preamble",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 160,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 190,
+     "y": 100,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "Red is capsized; her crew hails \"Starboard!\""
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Two knots of foul tide and no wind, 200 m from the finish. Grey drops her anchor and lies right in the approach you were drifting along. When a zephyr comes you have to steer round her and lose a place. Can you protest her for anchoring on the course?",
+  "a": "No — a boat may anchor while racing, and you had to avoid her under rule 22; she only had to recover the anchor before continuing, if possible",
+  "o": [
+   "Yes — anchoring while racing is prohibited by rule 45 unless the sailing instructions allow it",
+   "Yes — a boat may anchor only outside the zone of a mark and never on a finishing approach",
+   "Yes — an anchored boat that obstructs others must be scored DNF"
+  ],
+  "why": "Rule 45 allows a boat to anchor (recovering the anchor before continuing, if possible); rule 22: other boats avoid her if possible.",
+  "ref": "RRS 45, RRS 22",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 50,
+    "x2": 240,
+    "y2": 50,
+    "label": "Finish line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 170,
+     "hdg": 0,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 110,
+     "hdg": 180,
+     "label": "Grey"
+    }
+   ],
+   "note": "Grey anchored head to tide in the finishing approach"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Beating on port, you find a capsized Optimist dead ahead. To avoid her you tack onto starboard — straight into the path of Grey, who is close-hauled on starboard and has to bear away sharply to miss you. Grey protests. Are you exonerated because you were avoiding a capsized boat?",
+  "a": "No — you broke rule 13 (and 15) against Grey; the capsized boat broke no rule, so rule 43.1(a) gives no exoneration — you should have borne away or tacked earlier",
+  "o": [
+   "Yes — rule 22 takes precedence over every other rule of Part 2 whenever a capsized boat is involved",
+   "Yes — a boat compelled to change course by an obstruction is exonerated for any resulting breach",
+   "No, but Grey is penalised too, for not giving you room to avoid the capsized boat"
+  ],
+  "why": "Rule 43.1(a) exonerates only a boat compelled to break a rule by another boat's breach; the capsized boat broke nothing, so rules 13 and 15 apply in full.",
+  "ref": "RRS 22, RRS 13, RRS 43.1(a)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 140,
+     "hdg": 350,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 210,
+     "y": 125,
+     "hdg": 315,
+     "label": "Grey"
+    },
+    {
+     "x": 160,
+     "y": 80,
+     "hdg": 135,
+     "label": "A"
+    }
+   ],
+   "note": "A is capsized ahead; you tack into Grey's path"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Yellow capsized to windward of the leeward mark, righted, got the crew aboard and is now sailing again, close-hauled on starboard, sheets in and under full control. You come down on port and she hails that you must still avoid her \"because she capsized\". Must you?",
+  "a": "You must keep clear of her under rule 10, as of any starboard-tack boat — rule 22 stopped applying when she regained control",
+  "o": [
+   "Yes — a boat that has capsized in a race keeps rule 22 protection until she finishes",
+   "No — a boat that capsized loses her rights for the rest of the leg",
+   "No — rule 10 does not apply to a boat that has been capsized within the last two minutes"
+  ],
+  "why": "Rule 22 covers a boat that is capsized or has not regained control after capsizing; once she is under control the normal rules return.",
+  "ref": "RRS 22, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 120,
+    "y": 130,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 165,
+     "y": 60,
+     "hdg": 179,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 200,
+     "y": 140,
+     "hdg": 315,
+     "label": "Yellow"
+    }
+   ],
+   "note": "Yellow is upright, sailing close-hauled under control"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "You have finished, cleared the line, and are sailing back toward the harbour on a reach, straight through the boats still beating up to finish. Red has to tack to avoid you. Did you break a rule?",
+  "a": "Yes — a boat not racing shall not interfere with a boat racing if reasonably possible; sail round the fleet",
+  "o": [
+   "No — once you have finished the racing rules no longer apply to you",
+   "No — you were the right-of-way boat under rules 10 and 11 against Red",
+   "Yes — rule 10, because Red was on starboard tack"
+  ],
+  "why": "Rule 23.1: if reasonably possible, a boat not racing shall not interfere with a boat that is racing.",
+  "ref": "RRS 23.1, RRS definition Racing",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 60,
+    "x2": 240,
+    "y2": 60,
+    "label": "Finish line"
+   },
+   "boats": [
+    {
+     "x": 120,
+     "y": 110,
+     "hdg": 120,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 200,
+     "y": 165,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "You have finished and cleared the line; Red is still racing"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Your spinnaker halyard breaks and you retire, hoisting nothing and heading home under main. On the way you tack right in front of Blue, who is still racing on the beat and has to duck you. What rule did you break?",
+  "a": "Rule 23.1 — a boat not racing shall not interfere with a boat racing if reasonably possible",
+  "o": [
+   "Rule 13 — a boat that tacks must keep clear of a boat that is not tacking",
+   "None — a boat that has retired is outside the rules of Part 2",
+   "Rule 42 — a retired boat may not sail through the racing area"
+  ],
+  "why": "Rule 23.1: if reasonably possible, a boat not racing shall not interfere with a boat that is racing.",
+  "ref": "RRS 23.1",
+  "fig": null
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Two fleets on the same course. You are running on port in the second fleet; the first fleet is beating up toward you on their last leg. You hold your proper course straight down the run, forcing a couple of their starboard-tack boats to go round you. Did you break rule 23.2?",
+  "a": "No — after the starting signal rule 23.2 does not apply to a boat sailing her proper course; you still owe rule 10 to starboard-tack boats",
+  "o": [
+   "Yes — a boat on another leg must always give way to boats beating",
+   "Yes — rule 23.2 forbids any interference with boats on another leg, proper course or not",
+   "No — rule 23.2 applies only between boats of the same fleet"
+  ],
+  "why": "Rule 23.2: do not interfere with a boat on another leg if reasonably possible — but after the starting signal not when sailing your proper course.",
+  "ref": "RRS 23.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 55,
+     "hdg": 179,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 120,
+     "y": 165,
+     "hdg": 315,
+     "label": "A"
+    },
+    {
+     "x": 200,
+     "y": 160,
+     "hdg": 45,
+     "label": "B"
+    }
+   ],
+   "note": "You run on your proper course; A and B are a different fleet, beating"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Club series: the Optimists started ten minutes before you and are on their run as you beat up. One of them is a clubmate you want to tease, so you sail well above your course to sit on her wind for a while. Harmless?",
+  "a": "No — you interfered with a boat on another leg while not sailing your proper course; rule 23.2 does not excuse that",
+  "o": [
+   "Yes — boats on different legs may do anything short of contact",
+   "Yes — the proper-course exception covers whatever course you choose after the start",
+   "No — rule 2, fair sailing, is the only rule you broke"
+  ],
+  "why": "Rule 23.2: do not interfere with a boat on another leg if reasonably possible; after the start the exception covers only a boat sailing her proper course.",
+  "ref": "RRS 23.2, RRS definition Proper Course",
+  "fig": null
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 1,
+  "q": "Blue fouled you at the windward mark and sails off to one side to do her turns. You follow her and sail close to her so that she cannot complete her turns without hitting you. Allowed?",
+  "a": "No — if reasonably possible, a boat shall not interfere with a boat that is taking a penalty",
+  "o": [
+   "Yes — the penalised boat must keep clear of you, so where you sail is your business",
+   "Yes — rule 23 applies only between boats on different legs",
+   "No — it breaks rule 21.2, which forbids others from approaching a penalised boat"
+  ],
+  "why": "Rule 23.2: if reasonably possible, a boat shall not interfere with a boat that is taking a penalty.",
+  "ref": "RRS 23.2",
+  "fig": null
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "Championship, two classes. The J/70s' warning signal is in twelve minutes; you (a J/70) are sailing near the committee boat while the Melges 24s are finishing their first race. (1) Right now, and (2) once your preparatory signal has gone — which rule limits you toward the finishing Melges?",
+  "a": "(1) Rule 23.1 — you are not yet racing and must not interfere with them if reasonably possible; (2) rule 23.2 — you are racing on another leg, with no proper-course exception before your start",
+  "o": [
+   "Neither — boats of a different class owe nothing to each other under the racing rules",
+   "Rule 23.1 in both cases — you are not racing until your starting signal",
+   "Rule 23.2 in both cases, and after your preparatory signal you may sail any course since you have a proper course"
+  ],
+  "why": "Definition Racing: from the preparatory signal; rule 23.1 covers a boat not racing, 23.2 a boat on another leg (proper-course exception only after the start).",
+  "ref": "RRS 23.1, RRS 23.2, RRS definition Racing",
+  "fig": {
+   "type": "card",
+   "title": "Two classes, one committee boat",
+   "lines": [
+    "Melges 24s finishing race 1",
+    "J/70 warning signal in 12 minutes",
+    "You (J/70) sailing near the finishing line",
+    "Your preparatory signal: in 11 minutes"
+   ],
+   "tag": "Which rule?"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Black was OCS and is beating back toward the line. You have started correctly and, although it is not your fastest course, you tack on her wind twice to slow her down before she gets back. Black protests. Decision?",
+  "a": "You broke rule 23.2 — a boat shall not interfere with a boat subject to rule 21.1 if reasonably possible, and you were not sailing your proper course",
+  "o": [
+   "No breach — a returning boat keeps clear of you, so you may sail wherever you like",
+   "No breach — after the starting signal rule 23.2 never applies",
+   "You broke rule 21.1 — covering a returning boat counts as sailing toward the pre-start side"
+  ],
+  "why": "Rule 23.2: do not interfere with a boat subject to rule 21.1 if reasonably possible; the proper-course exception did not cover tacking on her wind.",
+  "ref": "RRS 23.2, RRS 21.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 130,
+    "x2": 250,
+    "y2": 130,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 100,
+     "hdg": 200,
+     "label": "Black"
+    },
+    {
+     "x": 170,
+     "y": 60,
+     "hdg": 225,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You have tacked onto Black's wind as she returns"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "You cross the finishing line at the pin end and immediately bear away to clear it, but before you are past the pin mark Blue, finishing behind you on starboard, is on a collision course with you (you are now on port). Blue says you must keep clear under rule 23.1 as a boat that is no longer racing. Is she right about the rule?",
+  "a": "No — you are still racing until you have cleared the finishing line and marks, so the ordinary rules apply: you keep clear of Blue under rule 10, not under rule 23.1",
+  "o": [
+   "Yes — a boat stops racing the moment she finishes, and from then on rule 23.1 alone applies to her",
+   "No — a boat that has finished has right of way over boats still finishing",
+   "Yes, and in addition rule 10 applies, so you are doubly obliged to keep clear"
+  ],
+  "why": "Definition Racing: a boat is racing until she finishes and clears the finishing line and marks; until then Part 2 applies as usual and rule 23.1 does not.",
+  "ref": "RRS definition Racing, RRS 10, RRS 23.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 80,
+    "x2": 250,
+    "y2": 80,
+    "label": "Finish line"
+   },
+   "boats": [
+    {
+     "x": 80,
+     "y": 70,
+     "hdg": 135,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 130,
+     "y": 130,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "You have finished but not yet cleared the pin; Blue is finishing"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You retired after a gear failure and are sailing home through a crowded leeward-mark rounding of another fleet. Boxed in by boats on both sides and a committee RIB astern, you cannot avoid forcing one of them to alter course slightly. That boat protests you under rule 23.1. Likely outcome?",
+  "a": "No penalty if the protest committee finds that avoiding the interference was not reasonably possible — rule 23.1 is limited to what is reasonably possible",
+  "o": [
+   "Disqualification — a boat not racing must never interfere with a racing boat, whatever the circumstances",
+   "No penalty — rule 23.1 cannot be the subject of a protest by a boat",
+   "A Two-Turns Penalty, which you must take even though you have retired"
+  ],
+  "why": "Rule 23.1 applies \"if reasonably possible\"; whether avoidance was reasonably possible is a question of fact for the protest committee.",
+  "ref": "RRS 23.1",
+  "fig": {
+   "type": "card",
+   "title": "Retired, sailing home",
+   "lines": [
+    "Crowded leeward mark of another fleet",
+    "You boxed in: boats both sides, RIB astern",
+    "One racing boat alters course slightly",
+    "She protests you under rule 23.1"
+   ],
+   "tag": "Outcome?"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "After finishing race 2 and clearing the line, Grey sails back through the fleet still racing and forces several boats to alter course. A protest under rule 23.1 is upheld. Grey argues that she cannot be penalised because she was not racing. To which race does the penalty apply?",
+  "a": "To the race sailed nearest in time to the incident — here race 2; a breach while not racing is penalised in that race",
+  "o": [
+   "None — a boat that is not racing cannot be penalised under the racing rules",
+   "The next race she sails, because the penalty must affect a future result",
+   "All races of the day, because the breach was not tied to any single race"
+  ],
+  "why": "Rule 60.5(c): when a boat has broken a rule while not racing, her penalty applies to the race sailed nearest in time to the incident.",
+  "ref": "RRS 23.1, RRS 60.5(c)",
+  "fig": {
+   "type": "card",
+   "title": "Protest: Grey, rule 23.1",
+   "lines": [
+    "Grey finished race 2 and cleared the line",
+    "Sailed back through the racing fleet",
+    "Several boats forced to alter course",
+    "Protest upheld; Grey: \"I was not racing\""
+   ],
+   "tag": "Penalty?"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Running on port on your proper course, you meet a boat from the earlier fleet close-hauled on starboard. You hold on, telling your crew that rule 23.2 lets a boat on her proper course ignore boats on other legs. She has to bear away to avoid you. Who broke a rule?",
+  "a": "You — rule 23.2's proper-course exception only removes the duty not to interfere; rule 10 still requires a port-tack boat to keep clear",
+  "o": [
+   "She did — a boat on another leg must keep clear of a boat sailing her proper course",
+   "Nobody — between boats on different legs only rule 23.2 applies, and you met it",
+   "She did — a beating boat always keeps clear of a running boat"
+  ],
+  "why": "Rule 23.2 limits interference between boats on different legs; it does not switch off Section A — rule 10 still applies between opposite-tack boats.",
+  "ref": "RRS 10, RRS 23.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 60,
+     "hdg": 179,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 140,
+     "y": 160,
+     "hdg": 315,
+     "label": "A"
+    }
+   ],
+   "note": "A is from the earlier fleet, beating on starboard"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Red was over the line at the start, never went back and knows she will be scored OCS, but sails the whole course anyway. On the second beat she meets you, port against her starboard, and you claim she must keep clear as \"a boat that is not really racing\". Who keeps clear?",
+  "a": "You — Red is still racing until she finishes or retires; being OCS does not change her rights, so rule 10 applies and you keep clear",
+  "o": [
+   "Red — a boat that will be scored OCS has no rights against boats that started correctly",
+   "Red — she is subject to rule 21.1 for the rest of the race because she never returned",
+   "Neither — a boat that did not start is not covered by Part 2 at all"
+  ],
+  "why": "Definition Racing: a boat races from her preparatory signal until she finishes and clears the line or retires; scoring OCS later does not change Part 2.",
+  "ref": "RRS 10, RRS definition Racing",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 160,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 200,
+     "y": 110,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "Red was OCS and did not return; both are on the second beat"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Black flag start. Yellow was in the triangle in the last minute, the race was recalled, and her sail number is displayed: she is BFD. Instead of leaving the course area she hangs around the line and tacks through the next fleet's start, forcing boats to alter course. Which rules has she broken?",
+  "a": "Rule 30.4 (she had to leave the course area) and rule 23.1 — a boat not racing shall not interfere with boats racing, if reasonably possible",
+  "o": [
+   "Only rule 30.4 — a disqualified boat is outside the rules of Part 2",
+   "None — a boat that has been disqualified may sail wherever she likes",
+   "Only rule 21.1 — she is still a boat that started early and is returning"
+  ],
+  "why": "Rule 30.4: a boat disqualified under the black flag leaves the course area; rule 23.1: a boat not racing does not interfere with racing boats if she can.",
+  "ref": "RRS 23.1, RRS 30.4",
+  "fig": {
+   "type": "card",
+   "title": "Black flag start, general recall",
+   "lines": [
+    "Yellow in the triangle in the last minute",
+    "Her sail number displayed: BFD",
+    "Yellow stays near the line",
+    "Tacks through the next fleet's start"
+   ],
+   "tag": "BFD"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You have retired with a torn mainsail and are motoring back across the racing area. The fleet is still beating toward you. Which rule tells you how to behave toward them, and what does it say?",
+  "a": "Rule 23.1 — a boat not racing shall not interfere with a boat racing if reasonably possible; motor round the fleet, not through it",
+  "o": [
+   "None — under engine you are a power-driven vessel and only the COLREGs apply to you",
+   "Rule 10 — racing boats on port must keep clear of you, and you of those on starboard",
+   "Rule 22 — a boat under engine is treated like a boat anchored, and others must avoid you"
+  ],
+  "why": "Rule 23.1 covers any boat not racing, under sail or power: if reasonably possible, do not interfere with a boat that is racing.",
+  "ref": "RRS 23.1",
+  "fig": null
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Hobie 16 fleet reaching on port in 18 knots toward an anchored fishing boat. You come up from clear astern of White and get an overlap on her inside, four lengths before the fishing boat, with plenty of water between them. White holds her line and says she owes nothing to a boat that came from astern. Is she right?",
+  "a": "No — the fishing boat is not a continuing obstruction, you were overlapped in time, and White was able to give room from the moment the overlap began, so she must",
+  "o": [
+   "Yes — a boat that establishes an overlap from clear astern is never entitled to room at an obstruction",
+   "Yes — rule 19 applies only to boats that were overlapped at the start of the leg",
+   "No — but she must only give you room if you hail for it before reaching the fishing boat"
+  ],
+  "why": "Rule 19.2(b): the outside boat gives room unless unable since the overlap began; 19.2(c) limits overlaps from astern only at a continuing obstruction.",
+  "ref": "RRS 19.2(b), RRS 19.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 90,
+     "y": 70,
+     "hdg": 90,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 112,
+     "y": 96,
+     "hdg": 90,
+     "label": "White"
+    }
+   ],
+   "obstruction": {
+    "x": 205,
+    "y": 60,
+    "w": 14,
+    "h": 34,
+    "label": "Fishing boat",
+    "lx": 212,
+    "ly": 110
+   },
+   "note": "You got the inside overlap four lengths before the fishing boat"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "Blue was over the line at the gun but has not noticed flag X and simply sails on up the beat on starboard. You, on port, having started correctly, consider ducking her unnecessary because \"she is OCS and must keep clear\". Must you keep clear?",
+  "a": "Yes — rule 21.1 applies only to a boat sailing back toward the pre-start side; Blue is not returning, so she has her normal rights under rule 10",
+  "o": [
+   "No — a boat that was over the line keeps clear of all boats until the race committee lowers flag X",
+   "No — an OCS boat keeps clear of boats that started correctly for the whole first leg",
+   "Yes, but only because you did not hail \"OCS\" to her"
+  ],
+  "why": "Rule 21.1 binds a boat sailing toward the pre-start side to start; a boat OCS who sails on is not doing that, and Section A applies normally.",
+  "ref": "RRS 21.1, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 40,
+    "y1": 150,
+    "x2": 250,
+    "y2": 150,
+    "label": "Start line"
+   },
+   "boats": [
+    {
+     "x": 120,
+     "y": 130,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 200,
+     "y": 90,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "Blue was OCS but is sailing on up the beat"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "On the run you could have steered round a capsized Laser but cut it fine and brushed her hull; no damage, nobody hurt. You know you broke rule 22. What can you do on the water?",
+  "a": "Take a Two-Turns Penalty promptly after getting well clear — rule 22 is a rule of Part 2, so rule 44.1 applies",
+  "o": [
+   "Nothing — a breach of rule 22 can only be dealt with by a protest committee hearing",
+   "Take a One-Turn Penalty, as for touching a mark",
+   "Retire — contact with a capsized boat always requires retirement"
+  ],
+  "why": "Rule 44.1: a boat that may have broken one or more rules of Part 2 may take a Two-Turns Penalty; rule 22 is in Part 2 Section D.",
+  "ref": "RRS 22, RRS 44.1",
+  "fig": null
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 3,
+  "q": "The sailing instructions make the long harbour breakwater a mark, to be left to starboard on the way out. You and Grey, both on port, sail along it a length off; Grey is clear ahead. You get an overlap between her and the breakwater where there is not room for a boat. Grey holds her course. Who is right?",
+  "a": "Grey — at a continuing obstruction rule 19 applies and rule 18 does not, even if the obstruction is also a mark; from clear astern with no room you get no entitlement",
+  "o": [
+   "You — a mark that boats must leave on the same side is governed by rule 18 and you were overlapped before the end of it",
+   "You — rule 18.2(a) protects the inside boat as soon as she is overlapped within the zone of a mark",
+   "Grey, but only because you failed to hail for room before becoming overlapped"
+  ],
+  "why": "Rule 19.1, last sentence: at a continuing obstruction rule 19 always applies and rule 18 does not; rule 19.2(c) then denies room to the boat from astern.",
+  "ref": "RRS 19.1, RRS 19.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 80,
+     "hdg": 90,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 96,
+     "hdg": 90,
+     "label": "Grey"
+    }
+   ],
+   "obstruction": {
+    "x": 40,
+    "y": 0,
+    "w": 260,
+    "h": 40,
+    "label": "Breakwater (a mark, leave to starboard)"
+   },
+   "note": "The breakwater is both a continuing obstruction and a mark"
+  }
+ },
+ {
+  "topic": "obstructions",
+  "difficulty": 2,
+  "q": "You are pinching hard, well above a normal close-hauled course, trying to clear a headland on port tack, with Blue overlapped close to windward. It is not going to work, so you hail \"Room to tack!\". Blue says the hail is invalid because you were \"not close-hauled\". Is she right?",
+  "a": "No — the rule allows the hail when sailing close-hauled or above; pinching above close-hauled still qualifies, and Blue must respond",
+  "o": [
+   "Yes — a boat must be exactly on a close-hauled course when she hails",
+   "Yes — a boat that is pinching has already changed course substantially, so no further change is needed",
+   "No — the point of sailing is irrelevant; any boat may hail for room to tack at an obstruction"
+  ],
+  "why": "Rule 20.1(b): the hailing boat must be sailing close-hauled or above; rule 20.2(b)–(c): the hailed boat responds.",
+  "ref": "RRS 20.1(b), RRS 20.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 150,
+     "hdg": 30,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 128,
+     "y": 138,
+     "hdg": 40,
+     "label": "Blue"
+    }
+   ],
+   "obstruction": {
+    "path": "M240 0 L320 0 L320 110 L262 110 Z",
+    "label": "Headland",
+    "lx": 246,
+    "ly": 124
+   },
+   "note": "You are pinching above close-hauled toward the headland"
+  }
+ }
+]

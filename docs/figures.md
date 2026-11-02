@@ -133,6 +133,26 @@ For situations with nothing to draw but several facts to weigh. `tag` is a red p
 `kind`: `cleat`, `winch`, `rail`, `ring`, `sheet`. These are schematic (the line and the fitting), not knot
 diagrams — knots are asked by name. Proper knot drawings would be hand-made SVGs or photos; see PLAN.md.
 
+## race — a racing situation, top view
+
+```json
+{ "type": "race", "wind": 0, "scale": 0.6,
+  "boats": [ { "x": 110, "y": 150, "hdg": 315, "label": "You", "you": true }, { "x": 170, "y": 120, "hdg": 45, "label": "Blue" } ],
+  "mark": { "x": 160, "y": 70, "zone": true, "label": "Windward mark" },
+  "line": { "x1": 40, "y1": 160, "x2": 290, "y2": 160, "label": "Start line" },
+  "obstruction": { "x": 0, "y": 0, "w": 70, "h": 200, "label": "Shore" },
+  "track": "M40 180 L160 70", "note": "Both close-hauled, two hull lengths apart" }
+```
+
+For the Racing Rules of Sailing. `wind` is the direction the wind blows from (0 = from the top); each boat is drawn
+with the sail on its leeward side, so the tack can be read from the picture (with `wind: 0`, `hdg` 315 is
+close-hauled on starboard tack, 45 on port), and a dashed arrow shows the heading. `you: true` adds the blue dot.
+`mark` is a yellow buoy; `zone: true` draws the three-hull-length circle (hull length = 44 × `scale`), a number
+sets the radius directly. `line` runs from the pin (x1, y1) to the committee boat (x2, y2), which is drawn there.
+`obstruction` is a grey rectangle (`x y w h`) or a `path`. Built-in labels (`You`, `wind`, `zone`, `pin`, `RC`,
+`A`–`D`) go through `FIG_TEXT`; other boat labels, `mark.label`, `line.label`, `obstruction.label` and `note`
+are translated by path (`boats.1.label`, …).
+
 ## Adding a type
 
 Add `FIG.<name> = f => { … return svg }` in `figures.js` using the helpers (`NS`, `txt`, `boat`, `arrow`,

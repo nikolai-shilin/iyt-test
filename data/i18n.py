@@ -54,6 +54,12 @@ def figure_texts(f):
     for who in ('you', 'other'):
         if has_words((f.get(who) or {}).get('label')):
             out[f'{who}.label'] = f[who]['label']
+    for i, b in enumerate(f.get('boats') or []):  # race
+        if has_words(b.get('label')) and b['label'] not in ('You', 'A', 'B', 'C', 'D'):
+            out[f'boats.{i}.label'] = b['label']
+    for k in ('mark', 'line', 'obstruction'):
+        if has_words((f.get(k) or {}).get('label')):
+            out[f'{k}.label'] = f[k]['label']
     return out
 
 

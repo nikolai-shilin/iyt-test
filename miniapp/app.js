@@ -21,13 +21,15 @@ const NATIVE_BUTTONS = false;
 const BOT_LINK = 'https://t.me/iyt_test_bot';
 const $app = document.getElementById('app');
 
-// IYT recreational levels in course-progression order (iytworld.com/students/recreational/iyt-course-progression).
-// A level with an id has a bank (data/<id>.json, question ids <prefix>-nnn); the others show as coming.
+// IYT recreational levels in course-progression order (iytworld.com/students/recreational/iyt-course-progression),
+// then the Racing Rules of Sailing (not an IYT course). A level with an id has a bank (data/<id>.json, question ids
+// <prefix>-nnn); the others show as coming.
 const LEVELS = [
   { id: 'vhf-radio-operator', prefix: 'vhf', link: 'vhf', title: 'VHF Radio Operator' },
   { id: 'international-crew', prefix: 'ic', link: 'crew', title: 'International Crew' },
   { id: 'flotilla-skipper', prefix: 'fs', link: 'flotilla', title: 'Flotilla Skipper' },
   { id: 'bareboat-skipper', prefix: 'bs', link: 'bareboat', title: 'Bareboat Skipper' },
+  { id: 'racing-rules', prefix: 'rr', link: 'racing', title: 'Racing Rules of Sailing' },
   { title: 'ICC', soon: 'planned' },
   { title: 'Yachtmaster Coastal', soon: 'soon' },
   { title: 'Yachtmaster Offshore', soon: 'soon2027' },
@@ -42,6 +44,7 @@ const TOPIC_ICONS = {
   'vhf-radio-operator': { set: 'vhf', channels: 'radio', calls: 'mic', phonetic: 'flag-alpha', dsc: 'mmsi', distress: 'flare', urgency: 'megaphone', sar: 'lifebuoy', gmdss: 'beacon', licences: 'licence' },
   'international-crew': { boat: 'yacht', sailing: 'sail', knots: 'knot', deck: 'cleat', helming: 'wheel', safety: 'lifejacket', lookout: 'binoculars', weather: 'cloud', aboard: 'mug', emergency: 'medkit' },
   'flotilla-skipper': { power: 'propeller', mooring: 'anchor', sailing: 'sail', colregs: 'rules', buoyage: 'buoy', pilotage: 'lighthouse', weather: 'barometer', systems: 'gear', skipper: 'captain', emergency: 'lifebuoy' },
+  'racing-rules': { definitions: 'book', rightofway: 'sail', limits: 'wheel', marks: 'buoy', obstructions: 'lighthouse', starting: 'timer', course: 'map', propulsion: 'wind', penalties: 'refresh', protests: 'trophy' },
 };
 const topicIcon = (tp, level = LEVEL) => (TOPIC_ICONS[level.id] || {})[tp.id] || tp.icon || 'book';
 const LANGS = ['en', 'ru'];
@@ -107,7 +110,7 @@ const STR = {
       ['No explanations until you submit', 'Afterwards every mistake shows the right answer and why.'],
       ['Leaving pauses the timer', 'Close the app and the exam waits for you, up to 24 hours.']],
     lastAttempts: 'Last attempts', passedW: 'passed', notPassedW: 'not passed',
-    examDefaults: 'Exam size, time and pass mark are app defaults, not confirmed IYT figures.',
+    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Exam size, time and pass mark are app defaults — there is no official rules exam.' : 'Exam size, time and pass mark are app defaults, not confirmed IYT figures.'),
     startExam: 'Start the exam', continueExam: 'Continue the exam', startOver: 'Start over',
     confirmRestart: 'Start a new exam? The one in progress will be dropped.',
     nOf: (i, n) => `${i} of ${n}`, nextArrow: 'Next ›', finishDots: 'Finish…', prevArrow: '‹ Previous', allQuestions: 'All questions',
@@ -122,7 +125,7 @@ const STR = {
     costMost: (list) => `${list} cost you the most points.`, workFirst: 'Work on these first', fine: 'Fine',
     backToLevel: 'Back to the level', practiseWeak: (w) => `Practise the ${pl(w, 'topic')}`.replace('topic', 'weak topic'), practise: 'Practise', share: 'Share',
     reviewN: (n) => `Review ${pl(n, 'mistake')}`,
-    shareText: (p, lv) => `I scored ${p}% on the IYT ${lv} mock exam — practice questions for IYT levels:`, copied: 'Copied to the clipboard',
+    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `I scored ${p}% on the ${lv} mock exam — situations on the race course, by the rules:` : `I scored ${p}% on the IYT ${lv} mock exam — practice questions for IYT levels:`), copied: 'Copied to the clipboard',
     thisWeek: 'This week', answeredW: 'answered', dayStreak: 'day streak', masteryByTopic: 'Mastery by topic', practiseWeakest: 'Practise weakest ›',
     misMeta: (n) => `${pl(n, 'question')} answered wrong and not yet mastered`, noneNow: 'None right now',
     flaggedQ: 'Flagged questions', flagHint: 'Flag a question to keep it here',
@@ -133,7 +136,7 @@ const STR = {
     explain: 'Explain after each answer', explainMeta: 'Off = exam style, results at the end',
     reset: 'Reset progress', resetMeta: 'Mastery, mistakes, streak and exams', resetBtn: 'Reset',
     confirmReset: 'Reset all progress? Mastery, mistakes, streak and exam history will be cleared.', resetDone: 'Progress reset',
-    disclaimer: (v) => `Questions are written for study and are not official IYT exam content. Bank version ${v}.`, partEnglish: '', loading: 'Loading…',
+    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Questions are written for study from the Racing Rules of Sailing 2025–2028 and are not a World Sailing publication; the rules themselves are the authority. Bank version ${v}.` : `Questions are written for study and are not official IYT exam content. Bank version ${v}.`), partEnglish: '', loading: 'Loading…',
     whatToPractise: 'What to practise?', all: 'All', none: 'None', weakPre: 'Weak topics are preselected. ', tapToggle: 'Tap to add or remove.',
     questionsK: 'Questions', allN: (n) => `All ${n}`, mistakesOnly: 'Mistakes only', showAnswer: 'Show the answer after each question',
     start: (n) => `Start · ${pl(n, 'question')}`, pickTopic: 'Pick a topic',
@@ -189,7 +192,7 @@ const STR = {
       ['Пояснения — только после сдачи', 'Потом у каждой ошибки будет верный ответ и пояснение.'],
       ['Выход ставит таймер на паузу', 'Закройте приложение — экзамен подождёт до 24 часов.']],
     lastAttempts: 'Последние попытки', passedW: 'сдан', notPassedW: 'не сдан',
-    examDefaults: 'Число вопросов, время и проходной балл — настройки приложения, а не подтверждённые данные IYT.',
+    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Число вопросов, время и проходной балл — настройки приложения: официального экзамена по правилам нет.' : 'Число вопросов, время и проходной балл — настройки приложения, а не подтверждённые данные IYT.'),
     startExam: 'Начать экзамен', continueExam: 'Продолжить экзамен', startOver: 'Начать заново',
     confirmRestart: 'Начать новый экзамен? Текущий будет сброшен.',
     nOf: (i, n) => `${i} из ${n}`, nextArrow: 'Далее ›', finishDots: 'Завершить…', prevArrow: '‹ Назад', allQuestions: 'Все вопросы',
@@ -204,7 +207,7 @@ const STR = {
     costMost: (list) => `Больше всего баллов потеряно в темах: ${list}.`, workFirst: 'Сначала подтяните', fine: 'В порядке',
     backToLevel: 'К уровню', practiseWeak: (w) => `Тренировать слабые темы (${w})`, practise: 'Тренировка', share: 'Поделиться',
     reviewN: (n) => `Разобрать ошибки (${n})`,
-    shareText: (p, lv) => `Мой результат на пробном экзамене IYT ${lv} — ${p}%. Вопросы для подготовки к IYT:`, copied: 'Скопировано',
+    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `Мой результат на пробном экзамене по правилам парусных гонок — ${p}%. Ситуации на дистанции по ППГ-25:` : `Мой результат на пробном экзамене IYT ${lv} — ${p}%. Вопросы для подготовки к IYT:`), copied: 'Скопировано',
     thisWeek: 'Эта неделя', answeredW: 'отвечено', dayStreak: (n) => `${word(n, 'day')} подряд`, masteryByTopic: 'Освоение по темам', practiseWeakest: 'Тренировать слабые ›',
     misMeta: (n) => `Вопросов с ошибкой, ещё не освоенных: ${n}`, noneNow: 'Сейчас нет',
     flaggedQ: 'Отмеченные вопросы', flagHint: 'Отметьте вопрос — он появится здесь',
@@ -215,7 +218,7 @@ const STR = {
     explain: 'Пояснение после ответа', explainMeta: 'Выкл. — как на экзамене, итог в конце',
     reset: 'Сбросить прогресс', resetMeta: 'Освоение, ошибки, серия дней и экзамены', resetBtn: 'Сбросить',
     confirmReset: 'Сбросить весь прогресс? Освоение, ошибки, серия дней и история экзаменов будут удалены.', resetDone: 'Прогресс сброшен',
-    disclaimer: (v) => `Вопросы написаны для подготовки и не являются официальными вопросами экзамена IYT. Версия банка ${v}.`,
+    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Вопросы написаны для подготовки по Правилам парусных гонок 2025–2028 и не являются публикацией World Sailing; сами правила — единственный источник. Версия банка ${v}.` : `Вопросы написаны для подготовки и не являются официальными вопросами экзамена IYT. Версия банка ${v}.`),
     loading: 'Загрузка…',
     partEnglish: ' Перевод вопросов готовится — пока часть из них на английском.',
     whatToPractise: 'Что тренируем?', all: 'Все', none: 'Снять все', weakPre: 'Слабые темы уже выбраны. ', tapToggle: 'Нажмите, чтобы добавить или убрать.',
@@ -244,6 +247,7 @@ const FIG_RU = {
   'Light at night': 'Огонь ночью', 'N (true)': 'N ист.', MN: 'N магн.', Variation: 'Склонение', Deviation: 'Девиация',
   'True course': 'ИК', W: 'W', E: 'E', 'Depths in metres below chart datum': 'Глубины в метрах от нуля глубин',
   Anchoring: 'Якорная стоянка', 'Northern hemisphere': 'Северное полушарие',
+  zone: 'зона', pin: 'знак', RC: 'ГК', A: 'A', B: 'B', C: 'C', D: 'D',
 };
 
 /* ---------- small helpers ---------- */

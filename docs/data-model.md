@@ -108,7 +108,8 @@ npm run db:load -- flotilla-skipper   # one level
 ```
 
 It needs `SUPABASE_URL` and `SUPABASE_SECRET_KEY` (dashboard → Project Settings → API keys) in `.env.local`. Only
-the secret key may run `load_bank`. A new level must first have a row in `levels` (the eight IYT levels are there).
+the secret key may run `load_bank`. A new level must first have a row in `levels` (the eight IYT levels are there; Racing Rules of Sailing
+comes with `20261103120000_racing_rules_level.sql`).
 Figures are stored as the JSON spec and rendered on the client by `figures.js` — no image files.
 
 ## Notes

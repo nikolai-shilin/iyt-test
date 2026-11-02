@@ -109,9 +109,10 @@ first 100, right answers that stand out by length, and that every figure renders
 
 ## Other levels
 
-VHF Radio Operator (`vhf-`), International Crew (`ic-`) and Flotilla Skipper (`fs-`) are built by
-`data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each topic is
-`data/bank/<level>/<topic>.json` (20 questions, about 4/12/4 by difficulty) with its Russian text beside it in
+VHF Radio Operator (`vhf-`), International Crew (`ic-`), Flotilla Skipper (`fs-`) and Racing Rules of Sailing
+(`rr-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
+topic is `data/bank/<level>/<topic>.json` (20 questions, about 4/12/4 by difficulty; 100 and 20/60/20 for the
+Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
 `<topic>.ru.json`: the same order, `{q, a, o, why, ref, fig}`, where `o` keeps the English order of the wrong options and
 `fig` maps figure text paths to the translation. The build shuffles the options once and writes both
 `data/questions/<level>.json` and the overlay `data/questions/<level>.ru.json` in that same order.
@@ -122,7 +123,18 @@ python3 data/build_level.py [<level>]
 ```
 
 To add a level: add it to `LEVELS` in `build_level.py`, write its topic files, build, then add its `id`, `prefix` and
-deep-link name to `LEVELS` in `miniapp/app.js` and `bot/core.mjs`.
+deep-link name to `LEVELS` in `miniapp/app.js` and `bot/core.mjs`, a row to `public.levels` (a migration, as
+`20261103120000_racing_rules_level.sql`) and its topic icons to `TOPIC_ICONS` in the app.
+
+### Racing Rules of Sailing
+
+Not an IYT course: the Racing Rules of Sailing 2025–2028 (World Sailing) as situations on the race course, 10 topics
+× 100 — definitions, right of way (10–13), general limitations (14–17), mark-room (18), obstructions and Section D
+(19–23), starting, sailing the course, Part 4 (propulsion and the rest), penalties (44), protests and scoring. The
+Russian text follows the official translation ППГ-25 (Russian Sailing Federation); `ref` cites `RRS 18.2(b)` /
+`ППГ 18.2(b)`. Most drawn questions use the `race` figure (figures.md): wind, boats on their tacks, a mark with its
+zone, a start line, an obstruction. The level's title and note are its own (`title`, `note` in `LEVELS`), and the
+app's disclaimer and share text name World Sailing instead of IYT for it.
 
 ## Translations
 

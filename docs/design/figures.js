@@ -175,6 +175,45 @@ FIG.sail = f => {
   return s + '</svg>';
 };
 
+/* ---------- race: a racing situation, top view — wind, boats on their tacks, a mark with its zone, a start line, an obstruction ----------
+   { type: 'race', wind: 0, scale: .6, boats: [{ x, y, hdg, label, you }], mark: { x, y, zone: true, label }, line: { x1, y1, x2, y2, label },
+     obstruction: { x, y, w, h, label } | { path, label }, track: 'M…', note }
+   The sail is drawn on the leeward side for the wind, so the tack can be read from the picture; a dashed arrow shows each heading.
+   zone: true draws the three-hull-length circle round the mark. The line runs from the pin (x1, y1) to the committee boat (x2, y2). */
+FIG.race = f => {
+  const sc = f.scale || .6, wind = f.wind ?? 0, len = 44 * sc;
+  let s = NS() + windArrow(wind);
+  if (f.obstruction) {
+    const o = f.obstruction;
+    s += o.path ? `<path d="${o.path}" fill="var(--tag-line)"/>` : `<rect x="${o.x}" y="${o.y}" width="${o.w}" height="${o.h}" rx="8" fill="var(--tag-line)"/>`;
+    if (o.label) s += txt(o.lx ?? (o.path ? 160 : o.x + o.w / 2), o.ly ?? (o.path ? 20 : o.y + o.h / 2 + 4), o.label, { s: 10 });
+  }
+  if (f.track) s += `<path d="${f.track}" fill="none" stroke="var(--tag-line)" stroke-width="2" stroke-dasharray="4 5"/>`;
+  if (f.line) {
+    const l = f.line;
+    s += `<line x1="${l.x1}" y1="${l.y1}" x2="${l.x2}" y2="${l.y2}" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 4"/>`;
+    s += `<circle cx="${l.x1}" cy="${l.y1}" r="5" fill="${COL.y}" stroke="var(--ink)" stroke-width="1.5"/>` + txt(l.x1, l.y1 + 16, ft('pin'), { s: 9 });
+    s += boat(l.x2, l.y2, l.hdg ?? wind, { scale: sc * .9 }) + txt(l.x2, l.y2 + len * .7 + 10, ft('RC'), { s: 9 });
+    if (l.label) s += txt((l.x1 + l.x2) / 2, Math.min(l.y1, l.y2) - 8, l.label, { s: 10 });
+  }
+  if (f.mark) {
+    const m = f.mark, r = m.zone === true ? 3 * len : (m.zone || 0);
+    if (r) s += `<circle cx="${m.x}" cy="${m.y}" r="${r}" fill="var(--accent)" opacity=".06"/><circle cx="${m.x}" cy="${m.y}" r="${r}" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 5"/>` + txt(m.x, Math.max(m.y - r + 12, 14), ft('zone'), { s: 9, f: 'var(--accent)' });
+    s += `<circle cx="${m.x}" cy="${m.y}" r="7" fill="${COL.y}" stroke="var(--ink)" stroke-width="2"/>`;
+    /* the label goes under the mark, or above it when a boat sits just below */
+    const below = (f.boats || []).some(b => Math.abs(b.x - m.x) < 40 && b.y > m.y && b.y - m.y < 45);
+    if (m.label) s += txt(m.x, m.y + (m.labelY ?? (below ? -14 : 20)), m.label, { s: 10 });
+  }
+  (f.boats || []).forEach(b => {
+    const hdg = b.hdg ?? 0, rel = ((hdg - wind) % 360 + 360) % 360, boom = rel < 180 ? 14 : -14;
+    const [tx, ty] = pol(b.x, b.y, len * 1.4, hdg);
+    s += arrow(b.x, b.y, tx, ty, { c: 'var(--muted)', dash: true });
+    s += boat(b.x, b.y, hdg, { sail: true, boom, you: !!b.you, scale: b.scale || sc, label: b.label ? ft(b.label) : '', labelY: 34 });
+  });
+  if (f.note) s += txt(160, 194, f.note, { s: 11, w: 400 });
+  return s + '</svg>';
+};
+
 /* ---------- dayshape: a boat with a day shape hoisted ---------- */
 FIG.dayshape = f => {
   let s = NS() + `<path d="M10 150c16-10 32-10 48 0s32 10 48 0 32-10 48 0 32 10 48 0 32-10 48 0 32 10 48 0" fill="none" stroke="var(--faint)" stroke-width="2"/>`;

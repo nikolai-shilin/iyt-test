@@ -1,0 +1,3184 @@
+[
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Wednesday evening club race, J/24s on a starboard-tack reach. Red is directly behind you; her bow is about a metre behind the line abeam of your transom. In the words of the rules, are you overlapped?",
+  "a": "No — Red is clear astern: her hull and equipment are behind a line abeam from the aftermost point of your hull",
+  "o": [
+   "Yes — boats on the same tack within two hull lengths of each other are always overlapped",
+   "Yes — an overlap exists whenever two boats on the same tack are within hailing distance",
+   "No — boats are overlapped only when they are side by side with their bows level"
+  ],
+  "why": "Definition Clear Astern and Clear Ahead; Overlap: a boat is clear astern when her hull and equipment are behind a line abeam from the other's aftermost point.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 110,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 178,
+     "y": 110,
+     "hdg": 270,
+     "label": "Red"
+    }
+   ],
+   "note": "Red's bow is 1 m behind the line abeam your transom"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "National championship, 470s beating on port tack. Blue has been sailing to leeward and slightly behind you; her bow has just moved ahead of the line abeam of your stern, about half a boat length to leeward. What is the state between you now?",
+  "a": "You are overlapped — neither boat is clear astern of the other, so rule 11 now applies between you",
+  "o": [
+   "Blue is still clear astern — an overlap begins only when her bow reaches your mast",
+   "You are clear ahead — a boat to leeward cannot become overlapped from behind",
+   "Not overlapped — boats are overlapped only when their bows are level"
+  ],
+  "why": "Definition Overlap: boats overlap when neither is clear astern — the moment Blue's bow crosses the line abeam your transom.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 100,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 170,
+     "y": 125,
+     "hdg": 45,
+     "label": "Blue"
+    }
+   ],
+   "note": "Blue's bow has just crossed the line abeam your stern"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "First beat of a Saronic Gulf regatta. You are close-hauled on starboard tack; Grey is close-hauled on port tack, exactly level with you and three hull lengths to leeward. Your crew says you are 'overlapped' with Grey. Are you?",
+  "a": "No — on a beat boats on opposite tacks are not overlapped; the terms apply across tacks only when rule 18 applies or both sail more than 90° from the true wind",
+  "o": [
+   "Yes — any two boats whose bows are level are overlapped, whatever their tacks",
+   "Yes — boats on opposite tacks are overlapped whenever they are within three hull lengths",
+   "No — boats on opposite tacks can never be overlapped in any circumstances"
+  ],
+  "why": "Definition Overlap: the terms apply to boats on opposite tacks only when rule 18 applies or both sail more than 90° from the true wind.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 110,
+     "y": 120,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 210,
+     "y": 120,
+     "hdg": 45,
+     "label": "Grey"
+    }
+   ],
+   "note": "Both close-hauled, bows level"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Melges 24s on the run in 15 knots. You are on starboard gybe, Blue on port gybe, both sailing dead downwind side by side about 20 m apart and slowly converging. Are you overlapped in the sense of the rules?",
+  "a": "Yes — both of you are sailing more than 90° from the true wind, so the overlap terms apply even though you are on opposite tacks",
+  "o": [
+   "No — boats on opposite tacks are never overlapped; only rule 10 matters between you",
+   "Yes, but only once the gap between you is less than two hull lengths",
+   "Yes, but only once one of you has entered the zone of the leeward mark"
+  ],
+  "why": "Definition Overlap: boats on opposite tacks are overlapped when both are sailing more than 90° from the true wind (rule 10 still governs them).",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 100,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 190,
+     "y": 100,
+     "hdg": 179,
+     "label": "Blue"
+    }
+   ],
+   "note": "Both dead downwind, 20 m apart"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Three Lasers approach the leeward mark on starboard gybe. B is overlapped with C on the inside and with A on the outside, but A's bow is well behind C's transom line. Are A and C overlapped with each other?",
+  "a": "Yes — a boat between them (B) is overlapped with both, so A and C are overlapped too",
+  "o": [
+   "No — A is clear astern of C, and an overlap is judged only between the two boats concerned",
+   "No — an intervening boat breaks any overlap rather than creating one",
+   "Only if A and C are within one hull length of each other"
+  ],
+  "why": "Definition Overlap: two boats are also overlapped when a boat between them overlaps both.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 100,
+     "y": 80,
+     "hdg": 225,
+     "label": "A"
+    },
+    {
+     "x": 135,
+     "y": 90,
+     "hdg": 225,
+     "label": "B"
+    },
+    {
+     "x": 170,
+     "y": 100,
+     "hdg": 225,
+     "label": "C"
+    }
+   ],
+   "mark": {
+    "x": 120,
+    "y": 178,
+    "labelY": -14,
+    "label": "Leeward mark"
+   },
+   "note": "A is clear astern of C on her own, but B overlaps both"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Your 36-ft cruiser-racer is reaching under gennaker; Black, a sister ship on the same tack, is coming up from astern. Black's hull is still half a metre short of the line abeam your transom, but her bowsprit, extended with the gennaker set, reaches a metre past that line. Overlapped?",
+  "a": "Yes — equipment in its normal position counts, and an extended bowsprit with the sail set is in its normal position",
+  "o": [
+   "No — only the hulls count when deciding whether boats are overlapped",
+   "No — a bowsprit counts only when it is retracted into the hull",
+   "Only if the gennaker itself also crosses the line abeam your transom"
+  ],
+  "why": "Definition Clear Astern: judged by hull and equipment in normal position; a bowsprit extended with the sail set is equipment in normal position.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 130,
+     "y": 110,
+     "hdg": 225,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 92,
+     "hdg": 225,
+     "label": "Black"
+    }
+   ],
+   "note": "Black's extended bowsprit reaches past your transom line"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "On a long starboard-tack reach Blue came up from clear astern and became overlapped to leeward of you. A puff then carried you ahead until her bow dropped behind your transom line; a minute later she surged forward and her bow crossed that line again. When was the overlap broken?",
+  "a": "At the moment Blue's bow and equipment dropped behind the line abeam your transom — an overlap exists only while neither boat is clear astern",
+  "o": [
+   "Never — once established, an overlap lasts until the boats are more than a hull length apart",
+   "Never — an overlap continues until the leeward boat hails that it is broken",
+   "Only once Blue had dropped more than two hull lengths behind you"
+  ],
+  "why": "Definition Overlap: the boats are overlapped only while neither is clear astern; the state changes the moment a boat becomes clear astern.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 100,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 195,
+     "y": 122,
+     "hdg": 270,
+     "label": "Blue"
+    }
+   ],
+   "note": "Blue has dropped back clear astern again"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Leeward mark to be left to port. You approach on starboard gybe and Red on port gybe, both broad reaching at about 140° to the wind and level with each other, you nearer the mark. You entered the zone first. Are you overlapped with Red for the purposes of rule 18?",
+  "a": "Yes — both of you are sailing more than 90° from the true wind and rule 18 applies between you, so the overlap terms apply across the tacks",
+  "o": [
+   "No — boats on opposite tacks are never overlapped at a mark; only rule 10 applies",
+   "Not until Red gybes onto starboard and you are on the same tack",
+   "Only if the boats are also within one hull length of each other"
+  ],
+  "why": "Definition Overlap: applies to opposite tacks when rule 18 applies or both sail more than 90° from the wind — both are true at this leeward mark.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 18.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 205,
+     "y": 42,
+     "hdg": 225,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 115,
+     "y": 42,
+     "hdg": 135,
+     "label": "Red"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 100,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "Both broad reaching, about 140° from the wind"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Lake race, J/70s. You are on starboard tack reaching at about 80° to the true wind; Grey is on port tack reaching at about 110° to the wind. You are converging with bows level and no mark nearby. Are you overlapped, and which rule governs?",
+  "a": "Not overlapped — only one of you is sailing more than 90° from the wind; rule 10 governs and Grey keeps clear",
+  "o": [
+   "Overlapped — your bows are level, so rule 11 applies and the windward boat keeps clear",
+   "Overlapped — one boat sailing more than 90° from the wind is enough to apply the overlap terms",
+   "Not overlapped — and no rule of Part 2 applies until one of you enters a zone"
+  ],
+  "why": "Definition Overlap: on opposite tacks it needs both boats more than 90° from the wind (or rule 18); here only Grey is, so rule 10 decides.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 210,
+     "y": 100,
+     "hdg": 280,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 110,
+     "y": 120,
+     "hdg": 110,
+     "label": "Grey"
+    }
+   ],
+   "note": "You at about 80°, Grey at about 110° to the wind"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Two Dragons on the run on the same gybe, bows level but about 60 m apart across the course. Grey's owner says you cannot be overlapped at that distance. Are you overlapped?",
+  "a": "Yes — the definition has no distance limit; as long as neither boat is clear astern you are overlapped, and rule 11 applies if you converge",
+  "o": [
+   "No — boats more than two hull lengths apart cannot be overlapped",
+   "No — an overlap exists only within three hull lengths, the size of the zone",
+   "Only once you come within hailing distance of each other"
+  ],
+  "why": "Definition Overlap: boats overlap whenever neither is clear astern, whatever the lateral distance between them.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 100,
+     "y": 110,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 220,
+     "y": 110,
+     "hdg": 181,
+     "label": "Grey"
+    }
+   ],
+   "note": "Bows level, 60 m apart"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Optimist regatta. Red is following you directly astern on the same tack. Her bow is 30 cm behind the transom of your hull, but ahead of the trailing edge of your rudder blade, which projects behind the transom. Clear astern or overlapped?",
+  "a": "Overlapped — the line is taken abeam from the aftermost point of hull OR equipment in normal position, here your rudder blade",
+  "o": [
+   "Clear astern — only the hull counts, and her bow is behind your transom",
+   "Clear astern — a rudder is not equipment, it is part of the steering gear",
+   "Overlapped only if Red's bow is also ahead of your tiller extension"
+  ],
+  "why": "Definition Clear Astern: measured from the aftermost point of the other boat's hull and equipment in normal position — a rudder counts.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 110,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 170,
+     "y": 130,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "Red's bow is behind your transom but ahead of your rudder's trailing edge"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Beating on starboard tack in a dying breeze, you are about three hull lengths directly behind Blue, who is also on starboard. How do the rules describe your position relative to Blue, and what follows from it?",
+  "a": "You are clear astern and Blue is clear ahead — not overlapped, so you keep clear under rule 12",
+  "o": [
+   "You are the windward boat, so you keep clear under rule 11",
+   "You are overlapped to leeward and Blue must keep clear of you",
+   "You are on opposite tacks for the purposes of the rules until you draw level"
+  ],
+  "why": "Definition Clear Astern and Clear Ahead; rule 12: same tack, not overlapped — the boat clear astern keeps clear.",
+  "ref": "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 170,
+     "y": 130,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 115,
+     "y": 75,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "Three hull lengths astern of Blue, same tack"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "You are close-hauled on starboard tack. Blue, on port tack, tries to cross ahead but misjudges it: to avoid hitting her you have to luff about 20°. There is no contact. Did Blue keep clear of you?",
+  "a": "No — you could not sail your course without taking avoiding action, so she failed to keep clear",
+  "o": [
+   "Yes — there was no contact, which is all that keeping clear requires",
+   "Yes — you chose to luff; a boat keeps clear as long as she does not actually hit the other",
+   "Yes — a port-tack boat is allowed to cross within one hull length if she can"
+  ],
+  "why": "Definition Keep Clear: the right-of-way boat must be able to sail her course with no need to take avoiding action — she had to luff.",
+  "ref": "RRS definition Keep Clear, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 130,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 165,
+     "y": 120,
+     "hdg": 45,
+     "label": "Blue"
+    }
+   ],
+   "note": "You had to luff 20° to miss her bow"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "On a reach you are the leeward boat, overlapped with Red, who is sailing about 30 cm to windward of you. You can hold your course without touching her, but if you luffed even slightly you would hit her at once. Is Red keeping clear?",
+  "a": "No — when boats are overlapped the right-of-way boat must also be able to change course in both directions without immediately making contact",
+  "o": [
+   "Yes — there is no contact and you can sail your present course",
+   "Yes — a windward boat only has to avoid actual contact with the leeward boat",
+   "Yes — as long as she does not close the gap any further she is keeping clear"
+  ],
+  "why": "Definition Keep Clear (b): when overlapped, the right-of-way boat must be able to change course both ways without immediate contact.",
+  "ref": "RRS definition Keep Clear, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 110,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 92,
+     "hdg": 270,
+     "label": "Red"
+    }
+   ],
+   "note": "Red is 30 cm to windward of you"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Beating in a Bodrum regatta, you are on starboard tack. Grey, on port, crosses about one hull length ahead of your bow; you hold your course and speed throughout and never need to alter. Did Grey keep clear?",
+  "a": "Yes — you could sail your course with no need to take avoiding action, which is what keeping clear means",
+  "o": [
+   "No — a port-tack boat must cross at least two hull lengths ahead of a starboard-tack boat",
+   "No — crossing within one hull length is automatically a failure to keep clear",
+   "No — you were entitled to luff, and she left you no room to do so"
+  ],
+  "why": "Definition Keep Clear (a): the right-of-way boat can sail her course with no need to take avoiding action; no minimum distance is set.",
+  "ref": "RRS definition Keep Clear, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 130,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 190,
+     "y": 80,
+     "hdg": 45,
+     "label": "Grey"
+    }
+   ],
+   "note": "Grey crossed one length ahead; you held your course"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Running in 20 knots and waves, Blue, clear astern on the same gybe, surfs down a wave to within a metre of your transom and sits there. You carry on sailing your course and never have to do anything about her. Is Blue keeping clear?",
+  "a": "Yes — you can sail your course without taking avoiding action; keeping clear does not require any particular distance",
+  "o": [
+   "No — a boat clear astern must stay at least one hull length away",
+   "No — sitting that close is intimidation and breaks rule 12 by itself",
+   "No — she must also keep clear of your wake and disturbed water"
+  ],
+  "why": "Definition Keep Clear: judged by whether the right-of-way boat needs to take avoiding action, not by distance.",
+  "ref": "RRS definition Keep Clear, RRS 12",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 100,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 140,
+     "y": 135,
+     "hdg": 181,
+     "label": "Blue"
+    }
+   ],
+   "note": "Blue surfed to within 1 m of your transom"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "You are on starboard; Black, on port, is clearly going to pass about a hull length astern of you. Out of caution you bear away 10° before she gets there. Your crew wants to protest Black for not keeping clear. Did she fail to keep clear?",
+  "a": "No — if you could have sailed your course without needing to act, Black kept clear; your voluntary alteration does not change that",
+  "o": [
+   "Yes — any course change by the right-of-way boat proves that the other boat did not keep clear",
+   "Yes — you took avoiding action, and that is the whole test in the definition",
+   "No — but only because rule 16.1 forbids a right-of-way boat to alter course at all"
+  ],
+  "why": "Definition Keep Clear: the test is whether the right-of-way boat NEEDED to take avoiding action, not whether she chose to alter course.",
+  "ref": "RRS definition Keep Clear, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 110,
+     "y": 120,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 175,
+     "y": 150,
+     "hdg": 45,
+     "label": "Black"
+    }
+   ],
+   "note": "Black would pass about a length astern"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Reaching in a Palma regatta, you are leeward and overlapped with Blue to windward. You luff a few degrees, slowly, and the end of Blue's boom touches your shroud. No damage. Was Blue keeping clear before the touch?",
+  "a": "No — a windward boat that is so close that a small course change by the leeward boat causes immediate contact is not keeping clear",
+  "o": [
+   "Yes — until the moment of contact she was keeping clear; only the touch itself broke a rule",
+   "Yes — the contact was your fault for luffing; Blue was sailing a steady course",
+   "Yes — a boom touching a shroud without damage does not count as contact"
+  ],
+  "why": "Definition Keep Clear (b): overlapped, the right-of-way boat must be able to change course both ways without immediate contact.",
+  "ref": "RRS definition Keep Clear, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 112,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 95,
+     "hdg": 270,
+     "label": "Blue"
+    }
+   ],
+   "note": "Blue's boom end touched your shroud when you luffed slightly"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Club race, 29ers on a reach. You are leeward, Grey overlapped to windward about two metres away. You luff slowly and steadily; Grey responds every time and keeps about a metre between you all the way up. Did Grey keep clear?",
+  "a": "Yes — you could change course and she responded without contact or any need for you to take avoiding action",
+  "o": [
+   "No — a windward boat must respond before the leeward boat starts to luff, not after",
+   "No — a windward boat must keep at least one hull length away from a luffing leeward boat",
+   "No — once a leeward boat luffs, the windward boat has broken rule 11 whatever she does"
+  ],
+  "why": "Definition Keep Clear: Grey kept clear because you could sail and change course without needing to avoid her; rule 16.1 only required your luff to leave room.",
+  "ref": "RRS definition Keep Clear, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 115,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 97,
+     "hdg": 270,
+     "label": "Grey"
+    }
+   ],
+   "note": "You luff slowly; Grey keeps about a metre away"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Hobie 16s on a lake. Red, on port, is crossing you on starboard. You hail 'Starboard!' loudly, hold your course, and she passes about two metres ahead of your bow. Afterwards your crew insists Red broke rule 10 because 'she forced us to hail'. Did she?",
+  "a": "No — a hail is not avoiding action; you sailed your course without needing to alter, so Red kept clear",
+  "o": [
+   "Yes — a starboard-tack boat that has to hail has by definition been prevented from sailing her course",
+   "Yes — passing within two metres is always a failure to keep clear under rule 10",
+   "Yes — unless she acknowledged your hail, she did not keep clear"
+  ],
+  "why": "Definition Keep Clear: what matters is whether the right-of-way boat needed to take avoiding action, not whether she hailed.",
+  "ref": "RRS definition Keep Clear, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 115,
+     "y": 125,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 180,
+     "y": 75,
+     "hdg": 45,
+     "label": "Red"
+    }
+   ],
+   "note": "Red passed 2 m ahead of your bow"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Both you and Blue are close-hauled on starboard tack and overlapped. Looking forward, Blue is on your left, on the side away from the wind. Which of you is the leeward boat, and who keeps clear?",
+  "a": "Blue is the leeward boat — she is on your leeward side — and you, the windward boat, keep clear under rule 11",
+  "o": [
+   "You are the leeward boat because you are nearer the wind, so Blue keeps clear",
+   "Blue is the windward boat because she is slightly ahead of you",
+   "Neither — the terms windward and leeward are used only on a run"
+  ],
+  "why": "Definition Leeward and Windward: when overlapped on the same tack, the boat on the other's leeward side is the leeward boat; rule 11.",
+  "ref": "RRS definition Leeward and Windward, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 170,
+     "y": 110,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 140,
+     "y": 135,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "Both close-hauled on starboard, overlapped"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You are sailing exactly dead downwind in a Star, the mainsail eased out to port. Red is converging on the opposite gybe and the two of you argue about who is on which tack. Which is your leeward side, and what tack are you on?",
+  "a": "Port is leeward — the side the mainsail lies on — so your windward side is starboard: you are on starboard tack",
+  "o": [
+   "Port is your leeward side, so you are on port tack — the tack follows the leeward side",
+   "Starboard is your leeward side, so you are on starboard tack",
+   "Dead downwind you have no leeward side and are on no tack"
+  ],
+  "why": "Definition Leeward and Windward: dead downwind the leeward side is where the mainsail lies; definition Tack: the tack is named by the windward side.",
+  "ref": "RRS definition Leeward and Windward, RRS definition Tack, Starboard or Port",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 100,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Dead downwind, main out to port"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "ILCA 7 on the run in 8 knots. You are sailing by the lee: the wind now comes over your starboard quarter, but your mainsail is still out on the starboard side. A boat with her main to port is converging. What tack are you on?",
+  "a": "Port tack — sailing by the lee, your leeward side is the side your mainsail lies on (starboard), so your windward side is port",
+  "o": [
+   "Starboard tack — the wind is coming over your starboard side",
+   "Starboard tack — you were on starboard before you bore away by the lee and the tack does not change until you gybe",
+   "No tack — a boat sailing by the lee is not on either tack until the boom crosses"
+  ],
+  "why": "Definition Leeward and Windward: when sailing by the lee the leeward side is the side the mainsail lies on; the tack follows the windward side.",
+  "ref": "RRS definition Leeward and Windward, RRS definition Tack, Starboard or Port",
+  "fig": {
+   "type": "card",
+   "title": "ILCA 7 on the run",
+   "lines": [
+    "Wind over the starboard quarter",
+    "Mainsail still out on the starboard side",
+    "Sailing by the lee"
+   ],
+   "tag": "Which tack?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Thirty seconds before the start you luff head to wind from starboard tack to kill speed; your boom flaps on the centreline. Red, close by, wants to know which side of you is your leeward side right now. What is the answer?",
+  "a": "Your port side — the side that was your leeward side before you came head to wind",
+  "o": [
+   "Neither — a boat head to wind has no leeward side",
+   "Whichever side your boom falls to next",
+   "Your starboard side — a boat head to wind is treated as being on port tack"
+  ],
+  "why": "Definition Leeward and Windward: for a boat head to wind, the leeward side is the one that was leeward before she luffed head to wind.",
+  "ref": "RRS definition Leeward and Windward",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 120,
+     "hdg": 359,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 120,
+     "y": 135,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "note": "You have luffed head to wind from starboard tack"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Running on starboard gybe with your boom out to port, you are overlapped with Grey, who is also on starboard gybe and sailing on your port side about two lengths away. Which boat is the leeward boat?",
+  "a": "Grey — she is on your leeward side, the side your mainsail lies on, so you are the windward boat and keep clear",
+  "o": [
+   "You — the boat with her boom further out is always the leeward boat",
+   "Grey is the windward boat because she is on the side your boom points to",
+   "Neither — on a run both boats count as windward boats"
+  ],
+  "why": "Definition Leeward and Windward: on a run the leeward side is where the mainsail lies; the boat on that side of you is the leeward boat.",
+  "ref": "RRS definition Leeward and Windward, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 100,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 215,
+     "y": 100,
+     "hdg": 181,
+     "label": "Grey"
+    }
+   ],
+   "note": "Both on starboard gybe, mains out to port"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "You are beating in a 470 with the boom on your port side and the wind coming over your starboard rail. A boat ahead hails 'What tack are you?'. What is the correct answer?",
+  "a": "Starboard tack — a boat is on the tack corresponding to her windward side, and your windward side is starboard",
+  "o": [
+   "Port tack — the tack is named after the side the boom is on",
+   "Port tack — the tack is named after the side the jib sheet is trimmed on",
+   "It depends on which way you last tacked"
+  ],
+  "why": "Definition Tack, Starboard or Port: a boat is on the tack, starboard or port, corresponding to her windward side.",
+  "ref": "RRS definition Tack, Starboard or Port",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 110,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Boom on your port side, wind over the starboard rail"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You are tacking from port to starboard near Grey, who is close-hauled on starboard. At this instant your bow is exactly head to wind with the boom on the centreline. What tack are you on, and which rule governs you against Grey?",
+  "a": "Still on port tack — until you pass head to wind your windward side has not changed, so rule 10 still applies against Grey",
+  "o": [
+   "Already on starboard tack — a boat head to wind is on the tack she is turning towards",
+   "On no tack at all — a boat head to wind has no rights and every other boat must avoid her",
+   "On starboard tack from the moment the helm went down, so Grey must keep clear"
+  ],
+  "why": "Definition Tack: named by the windward side, which changes only after passing head to wind; until then rule 10, then rule 13 until close-hauled.",
+  "ref": "RRS definition Tack, Starboard or Port, RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 120,
+     "hdg": 0,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 205,
+     "y": 150,
+     "hdg": 315,
+     "label": "Grey"
+    }
+   ],
+   "note": "You are exactly head to wind, turning from port to starboard"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Running on port gybe with the mainsail to starboard, you bear away to gybe near Red. The helm goes over, the boom swings across the centreline and the mainsail fills on the port side; you then head up to a reach. At which moment did you change tack?",
+  "a": "When the mainsail crossed to the port side — at that moment your leeward side, and so your windward side and your tack, changed",
+  "o": [
+   "When you put the helm over to start the gybe",
+   "When the mainsail was sheeted home on the new gybe",
+   "Only when you hardened up to a reach with the wind on the new windward side"
+  ],
+  "why": "Definitions Tack and Leeward and Windward: on a run the leeward side is where the mainsail lies; the tack changes when the sail crosses the centreline.",
+  "ref": "RRS definition Tack, Starboard or Port, RRS definition Leeward and Windward",
+  "fig": {
+   "type": "card",
+   "title": "Gybe on the run",
+   "lines": [
+    "You were on port gybe, main to starboard",
+    "Helm over; the boom swings across",
+    "Main fills on the port side"
+   ],
+   "tag": "Tack changes when?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Your mainsail blows out on the second beat and you carry on racing under jib alone, with the wind coming over your port side. Blue on starboard tack converges. What tack are you on now?",
+  "a": "Port tack — the tack is named by your windward side, which is port, whether or not you have a mainsail",
+  "o": [
+   "No tack — without a mainsail the definition cannot be applied and Blue must avoid you",
+   "Starboard tack — the jib is drawing on the starboard side",
+   "Whichever tack you were on when the mainsail failed, until you next tack"
+  ],
+  "why": "Definition Tack: a boat is on the tack corresponding to her windward side; the mainsail matters only for dead downwind and by the lee.",
+  "ref": "RRS definition Tack, Starboard or Port, RRS 10",
+  "fig": {
+   "type": "card",
+   "title": "Mainsail blown out",
+   "lines": [
+    "Racing on under jib alone",
+    "Wind over the port side",
+    "Blue converging on starboard tack"
+   ],
+   "tag": "Which tack?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "An Optimist sailor on the run has let the sail out to port and is sailing by the lee, with the wind coming over the port quarter. Another Optimist with her sail to starboard is close by. What tack is the by-the-lee boat on?",
+  "a": "Starboard tack — by the lee, her leeward side is the side the sail lies on (port), so her windward side is starboard",
+  "o": [
+   "Port tack — the wind is coming over her port quarter",
+   "Port tack — the sail is on the port side and the tack follows the sail",
+   "She is on no tack until she either gybes or heads up"
+  ],
+  "why": "Definition Leeward and Windward: by the lee, the leeward side is where the mainsail lies; the tack is named by the opposite (windward) side.",
+  "ref": "RRS definition Leeward and Windward, RRS definition Tack, Starboard or Port",
+  "fig": {
+   "type": "card",
+   "title": "Optimist by the lee",
+   "lines": [
+    "Sail out to port",
+    "Wind over the port quarter",
+    "Another boat close by, sail to starboard"
+   ],
+   "tag": "Which tack?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "You are running with the main out to port. Red is alongside on your starboard side, also with her main to port but sailing slightly by the lee. You converge. Red hails that she is on starboard and you must keep clear. Who is right?",
+  "a": "You — both of you have the mainsail to port, so both are on starboard tack; Red is on your windward side and keeps clear under rule 11",
+  "o": [
+   "Red — a boat sailing by the lee is always the leeward boat, whatever side she is on",
+   "Red — sailing by the lee put you on opposite tacks and rule 10 favours her",
+   "Neither has right of way until one of you gybes onto the other gybe"
+  ],
+  "why": "Definitions Leeward and Windward and Tack: the main to port puts both on starboard tack; Red, on your windward side, keeps clear (rule 11).",
+  "ref": "RRS definition Tack, Starboard or Port, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 100,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 105,
+     "y": 100,
+     "hdg": 183,
+     "label": "Red"
+    }
+   ],
+   "note": "Red is slightly by the lee, main still to port"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "You are sailing an ILCA 7 (hull 4.2 m) towards the windward mark with another ILCA close by. How far from the mark does the zone begin for the two of you?",
+  "a": "About 12.6 m — three hull lengths of the boat nearer the mark",
+  "o": [
+   "About 8.4 m — two hull lengths",
+   "About 16.8 m — four hull lengths",
+   "A fixed 20 m round every mark, whatever the boat"
+  ],
+  "why": "Definition Zone: the area around a mark within a distance of three hull lengths of the boat nearer to it.",
+  "ref": "RRS definition Zone",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 100,
+     "y": 165,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "note": "ILCA 7, hull 4.2 m"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Mixed handicap race. Your ILCA 7 (4.2 m) and Blue, a 40-footer (12 m), approach the leeward mark on converging courses, your Laser nearer the mark. How big is the zone that matters between you?",
+  "a": "Three of your hull lengths, about 13 m — the zone is measured by the boat nearer the mark",
+  "o": [
+   "Three of Blue's hull lengths, about 36 m — the bigger boat sets the zone",
+   "Three lengths of the smaller boat in all cases, whoever is nearer",
+   "The average of the two boats' lengths times three"
+  ],
+  "why": "Definition Zone: three hull lengths of the boat nearer to the mark — here the Laser.",
+  "ref": "RRS definition Zone",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 210,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 80,
+     "y": 175,
+     "hdg": 45,
+     "label": "Blue",
+     "scale": 1.1
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "Your ILCA 7 is nearer the mark than Blue, a 40-footer"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Same handicap fleet, next mark: this time your 40-footer is 15 m from the mark and Grey's Laser is 20 m from it, both approaching. Grey's helm shouts that nobody is in the zone yet. Is he right?",
+  "a": "No — the nearer boat is now your 40-footer, so the zone is three of your lengths, 36 m, and both of you are already in it",
+  "o": [
+   "Yes — the zone is three Laser lengths, 13 m, and neither boat is within that",
+   "Yes — the zone is always measured by the smallest boat in the fleet",
+   "No — the zone is three lengths of the bigger boat only for the bigger boat; Grey is outside"
+  ],
+  "why": "Definition Zone: three hull lengths of the boat nearer the mark — the zone is one circle, and here it is set by the 40-footer.",
+  "ref": "RRS definition Zone",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 190,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true,
+     "scale": 1.1
+    },
+    {
+     "x": 95,
+     "y": 170,
+     "hdg": 45,
+     "label": "Grey"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Mark"
+   },
+   "note": "Your 40-footer is 15 m from the mark, Grey's Laser 20 m"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Approaching the windward mark, the stem of your J/70 has just crossed the three-hull-length circle while the rest of your hull is still outside it. Blue is close astern. Have you reached the zone?",
+  "a": "Yes — a boat is in the zone when any part of her hull is in it",
+  "o": [
+   "No — a boat is in the zone only when her whole hull is inside the circle",
+   "No — a boat is in the zone when her mast crosses the circle",
+   "No — a boat is in the zone only when she is within one hull length of the mark"
+  ],
+  "why": "Definition Zone: a boat is in the zone when any part of her hull is in the zone.",
+  "ref": "RRS definition Zone",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 215,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 245,
+     "y": 178,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "note": "Your stem has just crossed the circle"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Your sportsboat's bowsprit is extended with the gennaker set as you approach the leeward mark. The tip of the bowsprit is inside the three-length circle, but your stem is still outside it. Red, the boat behind, claims you are not yet in the zone. Who is right?",
+  "a": "Red — only the hull counts for the zone, and no part of your hull is in it yet",
+  "o": [
+   "You — equipment in its normal position counts, as it does for an overlap",
+   "You — the bowsprit is part of the hull once it is extended",
+   "Red, but only because the gennaker is not yet filled"
+  ],
+  "why": "Definition Zone: a boat is in the zone when any part of her HULL is in it — unlike the overlap definition, equipment does not count.",
+  "ref": "RRS definition Zone",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 228,
+     "y": 163,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 250,
+     "y": 185,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "Your bowsprit is inside the circle, your hull is not"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Windward–leeward course with a leeward gate; the gate marks are about 60 m apart. You are two hull lengths from the left-hand gate mark and five from the right-hand one. Are you in the zone?",
+  "a": "Yes, of the left-hand mark — each gate mark has its own zone, and you are within three lengths of that one",
+  "o": [
+   "Yes, of both — a gate has one zone covering both marks",
+   "No — at a gate the zone is measured from the middle of the gate",
+   "No — the zone applies only at rounding marks, not at a gate"
+  ],
+  "why": "Definition Zone: the area within three hull lengths of a mark; each gate mark is a mark with its own zone.",
+  "ref": "RRS definition Zone, RRS definition Mark",
+  "fig": {
+   "type": "card",
+   "title": "Leeward gate",
+   "lines": [
+    "You are 2 hull lengths from the left mark",
+    "5 hull lengths from the right mark",
+    "Gate marks about 60 m apart"
+   ],
+   "tag": "In the zone?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "After a port–starboard incident Red hails 'Protest!' at you and later lodges a written form. Ashore your crew argues that the shouted word was 'the protest' and the form was just paperwork. What is a protest in the sense of the rules?",
+  "a": "An allegation by a boat or a committee under rule 60 that a boat has broken a rule; the hail only announces the intention",
+  "o": [
+   "The hail itself — any shout of 'Protest' on the water is the protest, and the form is optional paperwork",
+   "A complaint that only the protest committee can make against a boat",
+   "A request by a boat to have her own score corrected"
+  ],
+  "why": "Definition Protest: an allegation made under rule 60 by a boat, a race committee, a technical committee or a protest committee that a boat has broken a rule.",
+  "ref": "RRS definition Protest, RRS 60",
+  "fig": null
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Two minutes before the start, manoeuvring near the committee boat end of the line, your boom brushes the committee boat's hull. Your tactician says that's nothing — 'it's a boat, not a mark'. Is the committee boat a mark?",
+  "a": "Yes — a race committee vessel surrounded by navigable water from which the starting line extends is a mark, so you touched a mark",
+  "o": [
+   "No — only buoys listed in the sailing instructions are marks",
+   "No — a vessel can never be a mark, only an obstruction",
+   "Only after the starting signal; before it the committee boat is not a mark"
+  ],
+  "why": "Definition Mark: includes a race committee vessel surrounded by navigable water from which the starting or finishing line extends.",
+  "ref": "RRS definition Mark, RRS 31",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 240,
+     "y": 135,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "line": {
+    "x1": 40,
+    "y1": 150,
+    "x2": 260,
+    "y2": 150,
+    "label": "Start line"
+   },
+   "note": "Your boom brushes the committee boat's hull"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Starting at the committee boat end in a cross-current, your keel snags the committee boat's anchor line for a moment; you never touch the vessel itself. Have you touched a mark?",
+  "a": "No — the anchor line of a committee boat is not part of the mark",
+  "o": [
+   "Yes — anything attached to the committee boat is part of the mark",
+   "Yes — the anchor line marks the end of the starting line",
+   "Only if the anchor line is above the water where you touched it"
+  ],
+  "why": "Definition Mark: an anchor line is not part of the mark.",
+  "ref": "RRS definition Mark",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 265,
+     "y": 118,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "line": {
+    "x1": 40,
+    "y1": 150,
+    "x2": 260,
+    "y2": 150,
+    "label": "Start line"
+   },
+   "note": "Your keel snags the committee boat's anchor line"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Finishing close to the committee boat, your topsides rub along a large fender that the race committee has hung over her quarter; your hull never touches the vessel itself. Did you touch a mark?",
+  "a": "Yes — an object intentionally attached to the committee boat is part of the mark",
+  "o": [
+   "No — only the hull of the committee boat is the mark",
+   "No — fenders are safety equipment and are excluded from the definition",
+   "Only if the fender was listed in the sailing instructions"
+  ],
+  "why": "Definition Mark: any object intentionally attached to the object or vessel is part of the mark (an anchor line is not).",
+  "ref": "RRS definition Mark, RRS 31",
+  "fig": {
+   "type": "card",
+   "title": "Finish at the committee boat",
+   "lines": [
+    "A large fender hangs on her quarter",
+    "Your topsides rub along the fender",
+    "Your hull never touches the vessel"
+   ],
+   "tag": "A mark?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "A coach RIB has drifted onto the pin-end buoy and is lying against it when you start. Your bow touches the RIB but not the buoy. Did you touch a mark?",
+  "a": "No — the RIB is not intentionally attached to the buoy, so it is not part of the mark",
+  "o": [
+   "Yes — anything in contact with a mark becomes part of it",
+   "Yes — the RIB is within the zone of the mark",
+   "Only if the RIB is one of the race committee's boats"
+  ],
+  "why": "Definition Mark: only objects INTENTIONALLY attached to a mark are part of it; a boat that drifted against it is not.",
+  "ref": "RRS definition Mark",
+  "fig": {
+   "type": "card",
+   "title": "Pin end at the start",
+   "lines": [
+    "A coach RIB has drifted onto the pin buoy",
+    "Your bow touches the RIB, not the buoy"
+   ],
+   "tag": "A mark?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "A safety boat has anchored about 20 m to leeward of the windward mark; the sailing instructions say nothing about her. Blue rounds the safety boat as if she were part of the mark and claims mark-room from you there. What is the safety boat?",
+  "a": "Not a mark — she is not required to be left on a side by the sailing instructions; she is at most an obstruction",
+  "o": [
+   "A mark — any race committee boat near a mark becomes part of that mark",
+   "A mark — the zone of the windward mark extends to cover her",
+   "A mark, but only for the boats that round her first"
+  ],
+  "why": "Definition Mark: an object the SI require a boat to leave on a specified side, or an RC vessel from which a line extends — not this safety boat.",
+  "ref": "RRS definition Mark, RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 160,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 170,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "mark": {
+    "x": 150,
+    "y": 80,
+    "label": "Windward mark"
+   },
+   "obstruction": {
+    "x": 195,
+    "y": 120,
+    "w": 64,
+    "h": 16,
+    "label": "Safety boat"
+   },
+   "note": "The safety boat is anchored 20 m from the mark, not in the SI"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "The sailing instructions for a coastal race say: 'The yellow harbour buoy shall be left to starboard.' It is not a rounding mark of the course and lies well off the direct line. On the way out you pass it close on your port side. What is that buoy?",
+  "a": "A mark — an object the sailing instructions require you to leave on a specified side; passing it on the wrong side breaks rule 28",
+  "o": [
+   "Not a mark — only the rounding marks listed in the course diagram are marks",
+   "An obstruction only — a buoy becomes a mark only if you must round it",
+   "Nothing — a harbour buoy cannot be a mark in a yacht race"
+  ],
+  "why": "Definition Mark: an object the sailing instructions require a boat to leave on a specified side.",
+  "ref": "RRS definition Mark, RRS 28",
+  "fig": {
+   "type": "card",
+   "title": "Sailing instructions",
+   "lines": [
+    "Yellow harbour buoy: leave to starboard",
+    "Not listed as a rounding mark",
+    "You pass it on your port side"
+   ],
+   "tag": "A mark?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Day two of a lake regatta. An orange buoy from yesterday's course is still anchored on today's first beat but does not appear in today's sailing instructions. The shortest route passes it on its 'wrong' side. May you pass it on either side?",
+  "a": "Yes — it is not a mark today, because no sailing instruction requires you to leave it on a side",
+  "o": [
+   "No — once a buoy has been used as a mark it stays a mark for the regatta",
+   "No — an anchored orange buoy is always a mark of the course",
+   "Only if the race committee removes it before the start"
+  ],
+  "why": "Definition Mark: an object is a mark only if the sailing instructions require it to be left on a specified side (or it is an RC vessel with a line).",
+  "ref": "RRS definition Mark",
+  "fig": {
+   "type": "card",
+   "title": "Lake regatta, day 2",
+   "lines": [
+    "An orange buoy from yesterday's course",
+    "Not in today's sailing instructions",
+    "Shortest route passes it on the other side"
+   ],
+   "tag": "A mark?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You and Blue are overlapped on port tack, you to leeward. Grey, on starboard, will cross close ahead of both of you. Blue says a boat racing can't be an obstruction. Is Grey an obstruction to you and Blue?",
+  "a": "Yes — a boat racing is an obstruction to boats that must keep clear of her, and both of you must keep clear of Grey under rule 10",
+  "o": [
+   "No — a boat racing is never an obstruction, only moored vessels and land are",
+   "No — Grey is an obstruction only to the boat nearer to her",
+   "Only if Grey is more than twice your hull length"
+  ],
+  "why": "Definition Obstruction: a boat racing is an obstruction to other boats only if they are required to keep clear of her (or avoid her under rule 22).",
+  "ref": "RRS definition Obstruction, RRS 10",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 140,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 100,
+     "y": 120,
+     "hdg": 45,
+     "label": "Blue"
+    },
+    {
+     "x": 210,
+     "y": 110,
+     "hdg": 315,
+     "label": "Grey"
+    }
+   ],
+   "note": "Grey on starboard will cross close ahead of both of you"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You are overlapped to leeward of Blue on a reach; she is converging on you. Your tactician says 'she's an obstruction, call for room'. Is Blue an obstruction for you?",
+  "a": "No — a boat racing is an obstruction only to boats that must keep clear of her; you are the right-of-way boat and Blue keeps clear of you",
+  "o": [
+   "Yes — any boat racing within one hull length is an obstruction",
+   "Yes — a windward boat is an obstruction to the leeward boat once they are overlapped",
+   "Only if Blue is larger than you"
+  ],
+  "why": "Definition Obstruction: a boat racing is not an obstruction to boats that are not required to keep clear of her.",
+  "ref": "RRS definition Obstruction, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 115,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 97,
+     "hdg": 270,
+     "label": "Blue"
+    }
+   ],
+   "note": "Blue, to windward, is converging on you"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "On the first beat of a Split regatta a 15 m yacht lies on a mooring directly in your path. If you were one hull length from her and heading straight at her, you could not pass without a substantial change of course. What is she?",
+  "a": "An obstruction — you could not pass her without changing course substantially when one hull length from her",
+  "o": [
+   "A mark — any anchored vessel on the course is a mark",
+   "Nothing in the rules — moored boats are simply to be avoided by seamanship",
+   "A continuing obstruction, because she is longer than your boat"
+  ],
+  "why": "Definition Obstruction: an object a boat could not pass without changing course substantially if sailing directly towards it one hull length away.",
+  "ref": "RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 90,
+     "y": 160,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "obstruction": {
+    "x": 130,
+    "y": 80,
+    "w": 66,
+    "h": 22,
+    "label": "Moored yacht"
+   },
+   "note": "You are heading straight at her"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "The port-tack leg of a river race runs along a stone embankment about 300 m long; you and Red, same tack, will sail several hull lengths close along it. How do the rules describe the embankment?",
+  "a": "A continuing obstruction — an obstruction along which the boats concerned will pass at least three hull lengths",
+  "o": [
+   "A mark — the sailing instructions require you to leave the shore on one side",
+   "An ordinary obstruction — the shore is never a continuing obstruction",
+   "Not an obstruction, because you can see it from far away"
+  ],
+  "why": "Definition Continuing Obstruction (2025): an obstruction is continuing when the shortest boat concerned would pass at least three hull lengths along it.",
+  "ref": "RRS definition Continuing Obstruction, RRS 19.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 110,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 140,
+     "y": 140,
+     "hdg": 315,
+     "label": "Red"
+    }
+   ],
+   "obstruction": {
+    "x": 0,
+    "y": 0,
+    "w": 60,
+    "h": 200,
+    "label": "Shore"
+   },
+   "note": "A long stone embankment along the leg"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "You and Black are overlapped on port tack. Blue, a 60-footer on starboard, is crossing slowly just ahead, and you will pass close along her whole length — more than three of your hull lengths. Black calls Blue a 'continuing obstruction' and claims room under rule 19.2(c). Is Blue a continuing obstruction?",
+  "a": "No — Blue is an obstruction to you both, but a vessel under way, including a boat racing, is never a continuing obstruction",
+  "o": [
+   "Yes — any obstruction you pass along for three hull lengths or more is continuing",
+   "Yes — a right-of-way boat longer than three of your hull lengths is a continuing obstruction",
+   "No — a boat racing can never be an obstruction of any kind"
+  ],
+  "why": "Definitions Obstruction and Continuing Obstruction: a vessel under way, including a boat racing, is never a continuing obstruction.",
+  "ref": "RRS definition Continuing Obstruction, RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 155,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 120,
+     "y": 135,
+     "hdg": 45,
+     "label": "Black"
+    },
+    {
+     "x": 175,
+     "y": 85,
+     "hdg": 300,
+     "label": "Blue",
+     "scale": 1.3
+    }
+   ],
+   "note": "Blue, a 60-footer on starboard, crosses slowly just ahead"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "A 29er has capsized on the run with her mast in the water, right on your line to the leeward mark. Your crew says a capsized boat is 'just another boat racing' and not an obstruction. What is she?",
+  "a": "An obstruction — you must avoid her under rule 22, and a boat racing is an obstruction to boats that must keep clear of or avoid her",
+  "o": [
+   "Not an obstruction — a boat racing can never be an obstruction",
+   "A mark — a capsized boat on the course becomes a mark of the course",
+   "Not an obstruction until the race committee declares her one"
+  ],
+  "why": "Definition Obstruction: a boat racing is an obstruction to boats required to keep clear of her or, under rule 22, to avoid her.",
+  "ref": "RRS definition Obstruction, RRS 22",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 160,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "obstruction": {
+    "x": 145,
+    "y": 84,
+    "w": 72,
+    "h": 16,
+    "label": "Capsized 29er"
+   },
+   "note": "Her mast is in the water, right on your line"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "The offset mark at the top of the course is a small inflatable buoy; sailing straight at it from one hull length away, your Laser could pass it with a slight alteration. Blue, overlapped outside you, says you may not claim room to pass it as an obstruction. Is the buoy an obstruction?",
+  "a": "No — a mark is not automatically an obstruction; this buoy does not need a substantial change of course to pass, so only rule 18 applies",
+  "o": [
+   "Yes — every mark of the course is also an obstruction",
+   "Yes — any object you must leave on a specified side is an obstruction",
+   "No — a buoy is never an obstruction; only vessels and land are"
+  ],
+  "why": "Definition Obstruction: an object needing a substantial course change to pass from one hull length away; a small mark does not qualify (a committee boat would).",
+  "ref": "RRS definition Obstruction, RRS definition Mark",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 110,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 145,
+     "y": 175,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 100,
+    "label": "Offset mark"
+   },
+   "note": "A small inflatable buoy, no zone shown"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "The sailing instructions prohibit entering a buoyed swimming area off the beach. On the first beat the swimming area lies across your port-tack course and you will have to tack to avoid it. What is the swimming area in the rules?",
+  "a": "An obstruction — an area that a rule prohibits boats from entering is an obstruction, so rules 19 and 20 can apply there",
+  "o": [
+   "A mark — the sailing instructions require you to leave it on one side",
+   "Nothing — only solid objects can be obstructions",
+   "A continuing obstruction in all cases, whatever its size"
+  ],
+  "why": "Definition Obstruction (c): an object, area or line so designated by a rule that boats are prohibited from entering or crossing.",
+  "ref": "RRS definition Obstruction",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 170,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "obstruction": {
+    "x": 20,
+    "y": 40,
+    "w": 90,
+    "h": 70,
+    "label": "Swim area"
+   },
+   "note": "The SI prohibit entering the buoyed swimming area"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "The finishing line runs from a 25 m committee boat. You and Blue, overlapped, are finishing close to her; you will pass along her for more than three hull lengths. Blue argues rule 18 is off because the committee boat is a continuing obstruction and only rule 19 applies. Is she right?",
+  "a": "No — a race committee vessel that is also a mark is not a continuing obstruction, so rule 18 applies at the committee boat at the finish",
+  "o": [
+   "Yes — any obstruction you pass along for three hull lengths is continuing and rule 19 replaces rule 18",
+   "Yes — a committee boat is never a mark at the finish, only an obstruction",
+   "No — because a committee boat is never an obstruction of any kind"
+  ],
+  "why": "Definition Continuing Obstruction (2025): a race committee vessel that is also a mark is not a continuing obstruction; rule 18.1 keeps rule 18 on.",
+  "ref": "RRS definition Continuing Obstruction, RRS 18.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 250,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 225,
+     "y": 142,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 230,
+    "y2": 110,
+    "label": "Finish line"
+   },
+   "note": "Committee boat 25 m long; you finish close along her"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You are entitled to mark-room at the leeward mark. Red, outside, leaves you a gap — but the only way to use it is to scrape the mark with your hull as you round. Has Red given you room?",
+  "a": "No — room includes the space to comply with rule 31, so a gap you can use only by touching the mark is not room",
+  "o": [
+   "Yes — room is any space wide enough for your hull; touching the mark is your problem",
+   "Yes — the definition of room says nothing about marks",
+   "No — because room means at least one full hull length of clear water"
+  ],
+  "why": "Definition Room: the space a boat needs in the existing conditions, including space to comply with her obligations under Part 2 and rule 31.",
+  "ref": "RRS definition Room, RRS 31",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 205,
+     "y": 48,
+     "hdg": 225,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 172,
+     "y": 42,
+     "hdg": 225,
+     "label": "Red"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 100,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "Red leaves a gap you can use only by scraping the mark"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "29ers at the gybe mark in 25 knots and big waves. You are inside with mark-room; the outside boat leaves you about a metre from the mark to gybe in — in 8 knots that would be plenty. Is it room in these conditions?",
+  "a": "No — room is the space needed in the existing conditions, and a gybe in 25 knots and waves needs more space than one in 8 knots",
+  "o": [
+   "Yes — room is a fixed amount of space, the same in any wind",
+   "Yes — a metre is always enough room for a dinghy to gybe",
+   "No — because in strong wind an inside boat is entitled to as much room as she asks for"
+  ],
+  "why": "Definition Room: the space a boat needs in the existing conditions while manoeuvring promptly in a seamanlike way.",
+  "ref": "RRS definition Room, RRS definition Mark-Room",
+  "fig": {
+   "type": "card",
+   "title": "29ers, 25 knots, big waves",
+   "lines": [
+    "You are inside at the gybe mark",
+    "Outside boat leaves you 1 m from the mark",
+    "In 8 knots that would be plenty"
+   ],
+   "tag": "Room?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Passing an anchored ship, you are the inside boat and the outside boat gives you a gap of about a length and a half — enough to pass if you go at once. You hesitate, drift closer to the ship, and then need three lengths to get through. Did the outside boat fail to give you room?",
+  "a": "No — room is the space needed to manoeuvre promptly in a seamanlike way; she gave you that, and the extra space you later needed was of your own making",
+  "o": [
+   "Yes — the outside boat must give whatever space the inside boat eventually needs",
+   "Yes — room must always be at least three hull lengths at an obstruction",
+   "No — because an inside boat at an obstruction is never entitled to room at all"
+  ],
+  "why": "Definition Room: the space needed while manoeuvring PROMPTLY in a seamanlike way in the existing conditions.",
+  "ref": "RRS definition Room, RRS 19.2(b)",
+  "fig": {
+   "type": "card",
+   "title": "Anchored ship, inside overlap",
+   "lines": [
+    "Outside boat gives you 1.5 lengths of gap",
+    "You hesitate and drift closer to the ship",
+    "Then you need 3 lengths to pass"
+   ],
+   "tag": "Enough room?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Beating along a long pier, you are inside and overlapped with Blue. Blue leaves a lane between herself and the pier, but Grey, on starboard tack, is lying in that lane and you would have to sail into her to use it. Has Blue given you room to pass the pier?",
+  "a": "No — room includes the space to meet your obligations under Part 2, here keeping clear of Grey; a lane you can use only by hitting Grey is not room",
+  "o": [
+   "Yes — Blue is responsible only for the space between herself and the pier, not for Grey",
+   "Yes — once a lane exists, how you get through it is your problem",
+   "No — but only because Grey is herself an obstruction and must move"
+  ],
+  "why": "Definition Room: includes space to comply with the boat's obligations under the rules of Part 2 and rule 31.",
+  "ref": "RRS definition Room, RRS 19.2(b)",
+  "fig": {
+   "type": "card",
+   "title": "Pier, three boats",
+   "lines": [
+    "You are inside Blue, overlapped",
+    "Blue leaves a lane by the pier",
+    "Grey, on starboard, lies in that lane"
+   ],
+   "tag": "Room?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You are inside and overlapped at the leeward mark when Blue, outside, reaches the zone. A length before the mark Blue starts to luff you away from it, saying mark-room begins 'only at the mark itself'. Is she right?",
+  "a": "No — mark-room includes room to sail to the mark when your proper course is to sail close to it, so she must let you get there",
+  "o": [
+   "Yes — mark-room is only room to round the mark once you are alongside it",
+   "Yes — until you are within one hull length of the mark only rule 11 applies",
+   "No — because an inside boat has right of way over all boats inside the zone"
+  ],
+  "why": "Definition Mark-Room: room for a boat to sail to the mark when her proper course is to sail close to it, then to round or pass it.",
+  "ref": "RRS definition Mark-Room, RRS 18.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 95,
+     "y": 45,
+     "hdg": 135,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 70,
+     "y": 52,
+     "hdg": 135,
+     "label": "Blue"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "Blue luffs you away from the mark a length before it"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You are the inside, windward boat entitled to mark-room at the leeward mark. You slow down and swing wide so that you can come out of the rounding tight and high — the tactical rounding — and Red, outside, has to sail even wider to stay clear. Does mark-room cover that?",
+  "a": "No — mark-room is room to sail to the mark and to round or pass it as needed to sail the course, a seamanlike rounding, not a tactical wide-and-tight one",
+  "o": [
+   "Yes — the inside boat may round the mark any way she likes",
+   "Yes — mark-room includes room to sail your proper course throughout the rounding",
+   "No — because mark-room gives room only to pass the mark, never to round it"
+  ],
+  "why": "Definition Mark-Room: room to sail to the mark, round or pass it on the required side and leave it astern — not room for a tactical rounding.",
+  "ref": "RRS definition Mark-Room, RRS 18.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 100,
+     "y": 40,
+     "hdg": 135,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 72,
+     "y": 48,
+     "hdg": 135,
+     "label": "Red"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "You swing wide to round up tight; Red must go wider still"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Windward mark to be left to port. You and Blue approach on port tack, overlapped, you inside and to windward of her, both in the zone. If you tack now you will fetch the mark. Does the mark-room Blue owes you include room to tack?",
+  "a": "Yes — mark-room includes room to tack when the inside boat is overlapped to windward of the boat required to give it and would fetch the mark after her tack",
+  "o": [
+   "No — mark-room never includes room to tack",
+   "No — room to tack can only be obtained by hailing under rule 20",
+   "Yes — mark-room always includes room to tack at a windward mark, whatever the positions"
+  ],
+  "why": "Definition Mark-Room: includes room to tack only if the boat is overlapped inside and to windward of the giver and would be fetching the mark after her tack.",
+  "ref": "RRS definition Mark-Room, RRS 18.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 95,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 115,
+     "y": 165,
+     "hdg": 45,
+     "label": "Blue"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "note": "You would fetch the mark after tacking"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Windward mark to be left to starboard. You and Grey are overlapped on port tack in the zone, you inside but to leeward of her, and you need to tack to round the mark. Grey is giving you mark-room. Does it include room for your tack?",
+  "a": "No — room to tack is included only for an inside boat overlapped to windward of the giver; to leeward you tack at your own risk",
+  "o": [
+   "Yes — mark-room at a windward mark always includes room to tack, whichever side the inside boat is on",
+   "Yes — the inside boat is entitled to whatever room she needs to round",
+   "No — because mark-room ends as soon as a boat enters the zone"
+  ],
+  "why": "Definition Mark-Room: room to tack is included only for an inside boat overlapped to windward of the boat giving mark-room who would fetch after tacking.",
+  "ref": "RRS definition Mark-Room, RRS 13",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 105,
+     "y": 150,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 85,
+     "y": 135,
+     "hdg": 45,
+     "label": "Grey"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Windward mark (to starboard)"
+   },
+   "note": "You are inside but to leeward of Grey"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Leeward mark, you inside with mark-room. The moment the mark is abeam of you, Black, outside, closes in hard, saying your mark-room 'ended at the mark'. Your transom is still level with the mark. Has your mark-room ended?",
+  "a": "No — mark-room includes room to leave the mark astern, so it lasts until you have passed it, not just until it is abeam",
+  "o": [
+   "Yes — mark-room lasts only until the mark is abeam of the inside boat",
+   "Yes — mark-room ends the moment the inside boat's bow passes the mark",
+   "No — mark-room lasts until the inside boat leaves the zone, however she sails"
+  ],
+  "why": "Definition Mark-Room (2025): room to sail to the mark, round or pass it on the required side, and leave it astern.",
+  "ref": "RRS definition Mark-Room, RRS 18.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 95,
+     "y": 45,
+     "hdg": 135,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 70,
+     "y": 52,
+     "hdg": 135,
+     "label": "Black"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "Black closes in as soon as the mark is abeam of you"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "You are the inside boat at the leeward mark and Grey, outside, must give you mark-room. In the words of the rules, what exactly is Grey obliged to give you?",
+  "a": "Room to sail to the mark when your proper course is close to it, to round or pass it on the required side, and to leave it astern",
+  "o": [
+   "The right to round the mark in whatever way you choose, including a wide tactical rounding",
+   "Room to luff Grey as hard as you like after the rounding",
+   "Right of way over every boat inside the zone"
+  ],
+  "why": "Definition Mark-Room: room to sail to the mark, to round or pass it on the required side, and to leave it astern.",
+  "ref": "RRS definition Mark-Room",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 205,
+     "y": 48,
+     "hdg": 225,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 172,
+     "y": 42,
+     "hdg": 225,
+     "label": "Grey"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 100,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "You are inside, Grey must give mark-room"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "You are the inside, windward boat at the leeward mark and Red, outside and to leeward, is giving you mark-room. Rounding, you come down onto Red; she luffs slightly and you touch. You claim mark-room gave you right of way. Did it?",
+  "a": "No — mark-room is room, not right of way; you were still the windward boat under rule 11, exonerated only if you stayed within your mark-room",
+  "o": [
+   "Yes — a boat entitled to mark-room has right of way over the boat giving it until she has left the mark astern",
+   "Yes — inside the zone mark-room replaces all the rules of Section A",
+   "No — and because you touched Red you must retire"
+  ],
+  "why": "Mark-room is room (definition), not right of way; rule 11 still applies, and rule 43.1(b) exonerates a breach while sailing within the mark-room.",
+  "ref": "RRS definition Mark-Room, RRS 43.1(b)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 100,
+     "y": 40,
+     "hdg": 135,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 75,
+     "y": 48,
+     "hdg": 135,
+     "label": "Red"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 95,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "You come down onto Red while rounding inside"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Thirty seconds before the start you are the leeward boat, overlapped with Blue, having come up from astern. You luff slowly to well above close-hauled to make room to leeward. Blue protests that you sailed above your proper course. Does she have a case?",
+  "a": "No — a boat has no proper course before her starting signal, so rule 17 cannot limit you now; only rule 16.1 governs your luff",
+  "o": [
+   "Yes — a leeward boat that came from astern may never sail above close-hauled",
+   "Yes — proper course before the start is the course to the committee boat end",
+   "No — because before the start no rule limits a leeward boat at all"
+  ],
+  "why": "Definition Proper Course: a boat has no proper course before her starting signal; rule 17 therefore does not apply before the start.",
+  "ref": "RRS definition Proper Course, RRS 17",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 142,
+     "hdg": 340,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 176,
+     "y": 136,
+     "hdg": 340,
+     "label": "Blue"
+    }
+   ],
+   "line": {
+    "x1": 40,
+    "y1": 120,
+    "x2": 280,
+    "y2": 120,
+    "label": "Start line"
+   },
+   "note": "30 s before the start; you luff above close-hauled"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "On the run in waves, you and Red are both on starboard gybe, two lengths apart. You sail high and fast to surf; Red sails deep and slow straight at the mark. Each of you says the other is 'not on a proper course'. Who is right?",
+  "a": "Neither — each sails the course she would sail to finish soonest without the other; two boats can have different proper courses",
+  "o": [
+   "Red — the proper course is always the straight line to the next mark, whatever the waves",
+   "You — the faster course is by definition the only proper course",
+   "Neither has a proper course on a run; the term applies only on a beat"
+  ],
+  "why": "Definition Proper Course: a course a boat could choose to sail the course and finish as soon as possible in the absence of the other boats referred to.",
+  "ref": "RRS definition Proper Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 110,
+     "y": 80,
+     "hdg": 215,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 180,
+     "y": 80,
+     "hdg": 185,
+     "label": "Red"
+    }
+   ],
+   "note": "Both on starboard: you sail high and fast, Red deep and slow"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "On the reach to the gybe mark you became overlapped to leeward of Blue from clear astern, within two lengths. You now steer about 10° above the direct line to the mark 'to keep clear air from Blue'. Is that your proper course?",
+  "a": "No — proper course is the course you would sail in Blue's absence; a course chosen only because of Blue is not it, and rule 17 forbids sailing above it",
+  "o": [
+   "Yes — any course that gets you to the mark faster than Blue is a proper course",
+   "Yes — keeping clear air is a legitimate reason, so the course is proper",
+   "No — because on a reach the proper course is always the straight line to the mark"
+  ],
+  "why": "Definition Proper Course: the course a boat would sail to finish asap in the absence of the other boats referred to in the rule using the term (here Blue).",
+  "ref": "RRS definition Proper Course, RRS 17",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 165,
+     "y": 118,
+     "hdg": 280,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 140,
+     "y": 95,
+     "hdg": 270,
+     "label": "Blue"
+    }
+   ],
+   "mark": {
+    "x": 40,
+    "y": 110,
+    "label": "Gybe mark"
+   },
+   "note": "You steer 10° above the line to the mark"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "In an ILCA 7 you are alone on the run to the leeward mark in 6 knots; dead downwind is slow and gybing angles are faster. What is your proper course in the sense of the rules?",
+  "a": "The course you would sail to finish as soon as possible — here the faster gybing angles, not necessarily the straight line to the mark",
+  "o": [
+   "The straight line from mark to mark; anything else is above or below proper course",
+   "The course the leading boat is sailing",
+   "The compass course published in the sailing instructions"
+  ],
+  "why": "Definition Proper Course: a course a boat could choose to sail the course and finish as soon as possible, in the absence of the other boats referred to.",
+  "ref": "RRS definition Proper Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 80,
+     "hdg": 181,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 170,
+    "labelY": -14,
+    "label": "Leeward mark"
+   },
+   "note": "Dead downwind is slow; gybing angles are faster"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "On the run the wind veers 20°. The rhumb line to the leeward mark is now almost dead downwind, so you sail about 15° high of it to keep speed; Grey, to leeward, says you are sailing above your proper course. Are you?",
+  "a": "Not necessarily — proper course changes with the wind; if 15° high gets you to the mark soonest without Grey, it is your proper course",
+  "o": [
+   "Yes — after a shift the proper course is the new rhumb line to the mark and nothing else",
+   "Yes — the proper course is fixed at the start of the leg and does not change",
+   "No — in a shift a boat may sail any course she likes for one minute"
+  ],
+  "why": "Definition Proper Course: judged by what the boat would sail to finish asap in the existing conditions — it changes as the wind changes.",
+  "ref": "RRS definition Proper Course, RRS 17",
+  "fig": {
+   "type": "race",
+   "wind": 20,
+   "boats": [
+    {
+     "x": 170,
+     "y": 100,
+     "hdg": 215,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 115,
+     "y": 110,
+     "hdg": 205,
+     "label": "Grey"
+    }
+   ],
+   "mark": {
+    "x": 120,
+    "y": 180,
+    "labelY": -14,
+    "label": "Leeward mark"
+   },
+   "note": "The wind has just veered 20°"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "You are on starboard tack approaching the windward mark, which is to be left to port. On your present course you will pass just to windward of the mark and round it without tacking. How do the rules describe your position?",
+  "a": "You are fetching the mark — you can pass to windward of it and leave it on the required side without changing tack",
+  "o": [
+   "You are overstanding the mark, which is not allowed inside the zone",
+   "You are laying the mark only if you are also in the zone",
+   "You are on the port lay line"
+  ],
+  "why": "Definition Fetching: a boat is fetching a mark when she can pass to windward of it and leave it on the required side without changing tack.",
+  "ref": "RRS definition Fetching",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 190,
+     "y": 146,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "mark": {
+    "x": 120,
+    "y": 90,
+    "label": "Windward mark"
+   },
+   "note": "You will pass to windward of the mark without tacking"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Approaching the windward mark on starboard tack, you realise you will pass just to leeward of it and will need a short tack and tack back to get round. Blue, inside you on port, asks whether you are fetching the mark. Are you?",
+  "a": "No — you cannot pass to windward of the mark and leave it on the required side without changing tack, so you are not fetching it",
+  "o": [
+   "Yes — a starboard-tack boat approaching a mark is always fetching it",
+   "Yes — any boat that will round the mark on the current leg is fetching it",
+   "Yes — as long as you are in the zone when you make the extra tacks"
+  ],
+  "why": "Definition Fetching: requires that the boat can pass to windward of the mark on the required side without changing tack.",
+  "ref": "RRS definition Fetching, RRS 18.3",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 205,
+     "y": 129,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 150,
+     "y": 150,
+     "hdg": 45,
+     "label": "Blue"
+    }
+   ],
+   "mark": {
+    "x": 170,
+    "y": 80,
+    "label": "Windward mark"
+   },
+   "note": "You would pass just to leeward of the mark on this tack"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "The windward mark in this race is to be left to starboard. You approach on port tack and will pass to windward of it, leaving it to starboard, without tacking. Red says only a starboard-tack boat can be 'fetching'. Who is right?",
+  "a": "You — fetching depends on passing to windward of the mark on the required side without changing tack, which you will do on port tack",
+  "o": [
+   "Red — the definition of fetching applies only to boats on starboard tack",
+   "Red — a boat on port tack is never fetching because she must keep clear of starboard boats",
+   "Neither — fetching applies only at marks to be left to port"
+  ],
+  "why": "Definition Fetching: the tack is irrelevant; what matters is passing to windward of the mark and leaving it on the required side without changing tack.",
+  "ref": "RRS definition Fetching",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 80,
+     "y": 141,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 60,
+     "y": 120,
+     "hdg": 45,
+     "label": "Red"
+    }
+   ],
+   "mark": {
+    "x": 150,
+    "y": 85,
+    "label": "Windward mark (to starboard)"
+   },
+   "note": "You will pass to windward of the mark without tacking"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Your bow crosses the finishing line from the course side, the committee sounds a horn, and your crew asks whether you have to sail the whole hull across before you have finished. Have you finished?",
+  "a": "Yes — you finished when any part of your hull crossed the line from the course side; you need not cross it completely",
+  "o": [
+   "No — a boat finishes only when her whole hull has crossed the line",
+   "No — a boat finishes when her mast crosses the line",
+   "Only once the race committee records your sail number"
+  ],
+  "why": "Definition Finish: a boat finishes when any part of her hull crosses the finishing line from the course side; she need not cross completely.",
+  "ref": "RRS definition Finish",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 124,
+     "hdg": 350,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finish line"
+   },
+   "note": "Your bow has just crossed the line"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You cross the finishing line and then realise you left the last mark on the wrong side. You sail back, round it correctly and cross the line again. When did you finish?",
+  "a": "On the second crossing — after the first crossing you continued to sail the course to correct an error, so you had not finished",
+  "o": [
+   "On the first crossing — a boat finishes the first time her hull crosses the line",
+   "On the first crossing, but you are scored DNF for the error",
+   "You did not finish at all — a mark error cannot be corrected after crossing the line"
+  ],
+  "why": "Definition Finish: a boat has not finished if, after crossing the line, she corrects an error in sailing the course or continues to sail the course.",
+  "ref": "RRS definition Finish, RRS 28",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 120,
+     "y": 120,
+     "hdg": 350,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finish line"
+   },
+   "mark": {
+    "x": 250,
+    "y": 160,
+    "label": "Last mark"
+   },
+   "track": "M250 160 L130 112",
+   "note": "You crossed, then realised you left the last mark on the wrong side"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Crossing the finishing line near the committee boat, your quarter touches her hull. You carry on across the line, then do a One-Turn Penalty on the far side and sail away. Have you finished properly?",
+  "a": "No — a boat that takes a rule 44.2 penalty after crossing has not finished; after the turn you had to return to the course side and cross again",
+  "o": [
+   "Yes — you finished when your bow crossed, and the turn on the far side afterwards was enough to clear the touch",
+   "Yes — touching a finishing mark after your bow has crossed carries no penalty",
+   "No — and the touch means you must retire from the race"
+  ],
+  "why": "Definition Finish: a boat has not finished if after crossing the line she takes a penalty under rule 44.2; rule 44.2 sends her back to the course side.",
+  "ref": "RRS definition Finish, RRS 44.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 235,
+     "y": 128,
+     "hdg": 340,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finish line"
+   },
+   "note": "You touched the committee boat as your bow crossed"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Photo finish between Dragons at the pin end. Your spinnaker is a metre over the line and your bow pulpit is on it, but your stem is still half a metre short; Blue's stem is just over the line. Who finished first?",
+  "a": "Blue — only the hull counts for finishing, and her hull crossed first while yours had not yet reached the line",
+  "o": [
+   "You — the first part of the boat to cross, here your spinnaker, counts",
+   "You — the pulpit is part of the hull and it was over the line",
+   "A dead heat — both boats had equipment over the line at the same time"
+  ],
+  "why": "Definition Finish: any part of her HULL crosses the finishing line; sails, poles and pulpits do not count.",
+  "ref": "RRS definition Finish",
+  "fig": {
+   "type": "card",
+   "title": "Photo finish, Dragons",
+   "lines": [
+    "Your spinnaker is a metre over the line",
+    "Your stem is still half a metre short",
+    "Blue's stem is just over the line"
+   ],
+   "tag": "Who finished?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "P flag start. At the starting signal your bow is over the line. You bear away, sail back until your whole hull is on the pre-start side, then cross the line again. When did you start?",
+  "a": "On the second crossing — you start when your hull crosses from the pre-start side after being entirely on that side at or after the signal",
+  "o": [
+   "At the starting signal — your bow was already across the line, so that is when you started",
+   "You cannot start at all once you were over at the signal; you are scored OCS",
+   "On the second crossing, but only if you also rounded an end of the line"
+  ],
+  "why": "Definition Start: hull entirely on the pre-start side at or after the starting signal, then any part of the hull crosses to the course side.",
+  "ref": "RRS definition Start, RRS 29.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 100,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "line": {
+    "x1": 40,
+    "y1": 120,
+    "x2": 280,
+    "y2": 120,
+    "label": "Start line"
+   },
+   "note": "At the gun your bow was over; you sail back below the line"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Downwind start in a 5.5 m sportsboat. At the starting signal your spinnaker pole is over the line but your hull is entirely behind it; the race committee shows no flag X. Did you start correctly?",
+  "a": "Yes — only the hull counts; your hull was entirely on the pre-start side at the signal and started when it crossed",
+  "o": [
+   "No — any part of the boat or her equipment over the line at the signal makes her OCS",
+   "No — a spinnaker pole over the line is treated as part of the hull",
+   "Yes, but only because the race committee did not display flag X"
+  ],
+  "why": "Definition Start: judged by the hull — the hull must be entirely on the pre-start side at or after the starting signal.",
+  "ref": "RRS definition Start",
+  "fig": {
+   "type": "card",
+   "title": "Downwind start, 5.5 m boat",
+   "lines": [
+    "Spinnaker pole is over the line at the gun",
+    "Hull entirely behind the line",
+    "RC shows no flag X"
+   ],
+   "tag": "OCS?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "You hold back below the line and, three seconds after the starting signal, your bow crosses the starting line towards the first mark with the rest of your hull still behind it. At which moment did you start?",
+  "a": "At that moment — a boat starts when any part of her hull first crosses the line from the pre-start side after the signal",
+  "o": [
+   "Only when your whole hull has crossed the line onto the course side",
+   "At the starting signal itself, like every boat in the fleet",
+   "When your mast crosses the line"
+  ],
+  "why": "Definition Start: any part of the hull crosses the starting line from the pre-start side to the course side after the starting signal.",
+  "ref": "RRS definition Start",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 132,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "line": {
+    "x1": 40,
+    "y1": 120,
+    "x2": 280,
+    "y2": 120,
+    "label": "Start line"
+   },
+   "note": "Three seconds after the gun your bow crosses the line"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Three minutes before the start, after the preparatory signal, you brush the pin-end buoy while running the line. Your crew says you can't be penalised because the race hasn't started. Are you racing?",
+  "a": "Yes — a boat is racing from her preparatory signal, so rule 31 applies and you must take a One-Turn Penalty",
+  "o": [
+   "No — a boat is racing only from her starting signal",
+   "No — a boat is racing only once she has crossed the starting line",
+   "Yes, but rule 31 applies only after the starting signal"
+  ],
+  "why": "Definition Racing: a boat is racing from her preparatory signal until she finishes and clears the line and marks, or retires.",
+  "ref": "RRS definition Racing, RRS 31",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 52,
+     "y": 152,
+     "hdg": 300,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "line": {
+    "x1": 40,
+    "y1": 130,
+    "x2": 280,
+    "y2": 130,
+    "label": "Start line"
+   },
+   "note": "Three minutes before the start you brush the pin buoy"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You finish in light air at the pin end, the breeze dies and the current carries you back onto the pin buoy before you can get clear of the line. Your crew says it doesn't matter — you have finished. Does it?",
+  "a": "It matters — you are still racing until you have finished AND cleared the finishing line and marks, so touching the pin breaks rule 31",
+  "o": [
+   "It doesn't — a boat stops racing the moment any part of her hull crosses the finishing line",
+   "It doesn't — rule 31 never applies to finishing marks",
+   "It matters only if the race committee saw the touch"
+  ],
+  "why": "Definition Racing: a boat is racing until she finishes and clears the finishing line and marks; rule 31 applies until then.",
+  "ref": "RRS definition Racing, RRS 31",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 66,
+     "y": 94,
+     "hdg": 200,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finish line"
+   },
+   "note": "After crossing, you drift back onto the pin"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Six minutes before the start — the warning signal is up, the preparatory not yet — you and Grey touch while manoeuvring behind the line. A slight scratch, no real damage. Were you racing, and can either of you be penalised?",
+  "a": "Neither of you was racing yet; Part 2 still applied, but a boat not racing is penalised under it only for breaking rule 14 with injury or serious damage, or rule 23.1",
+  "o": [
+   "Both were racing from the warning signal, so the normal Part 2 rules and penalties apply",
+   "Neither was racing, so no rule of Part 2 applied at all and nothing can be done",
+   "Both were racing because they were in the starting area"
+  ],
+  "why": "Definition Racing: from the preparatory signal; Part 2 preamble: a boat not racing is penalised only for rule 14 with injury or serious damage, or rule 23.1.",
+  "ref": "RRS definition Racing, RRS Part 2 preamble",
+  "fig": {
+   "type": "card",
+   "title": "Six minutes before the start",
+   "lines": [
+    "Warning signal up, preparatory not yet",
+    "You and Grey touch while manoeuvring",
+    "Slight scratch, no damage"
+   ],
+   "tag": "Racing?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "General recall: First Substitute goes up with two sounds. While sailing back to the start you hit the pin buoy. The new preparatory signal is made five minutes later. Do you owe a penalty for touching the pin?",
+  "a": "No — when a general recall is signalled a boat is no longer racing, so rule 31 did not apply; you are racing again from the new preparatory signal",
+  "o": [
+   "Yes — you remain racing until the race is abandoned or you finish",
+   "Yes — a general recall merely postpones the start; everything in between counts",
+   "No — but only if you take a One-Turn Penalty before the new start"
+  ],
+  "why": "Definition Racing: racing ends when the race committee signals a general recall, postponement or abandonment; it restarts at the next preparatory signal.",
+  "ref": "RRS definition Racing, RRS 29.2",
+  "fig": {
+   "type": "card",
+   "title": "General recall",
+   "lines": [
+    "First Substitute up, two sounds",
+    "You hit the pin while sailing back",
+    "New preparatory signal 5 min later"
+   ],
+   "tag": "Penalty?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You have finished and cleared the finishing line and are heading home through the boats still finishing. Red, racing, has to bear away to avoid you. Red's helm shouts that you must keep clear because you are 'still in the race'. What is your status?",
+  "a": "You are no longer racing — but a boat not racing shall not interfere with a boat racing, so you still had to keep out of Red's way",
+  "o": [
+   "You are still racing until the last boat finishes, and all Part 2 rules apply to you",
+   "You are still racing until you reach the harbour",
+   "You are not racing, so no rule of any kind applies between you and Red"
+  ],
+  "why": "Definition Racing: ends when the boat finishes and clears the line and marks; rule 23.1 then forbids her to interfere with boats racing.",
+  "ref": "RRS definition Racing, RRS 23.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 150,
+     "y": 78,
+     "hdg": 160,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 120,
+     "y": 150,
+     "hdg": 350,
+     "label": "Red"
+    },
+    {
+     "x": 190,
+     "y": 150,
+     "hdg": 350,
+     "label": "Blue"
+    }
+   ],
+   "line": {
+    "x1": 60,
+    "y1": 100,
+    "x2": 240,
+    "y2": 100,
+    "label": "Finish line"
+   },
+   "note": "You have finished and cleared the line and are heading home"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Leeward gate, two marks 60 m apart, the previous mark directly upwind. You round the left-hand gate mark but pass it on its outside, away from the other mark, then head up on the beat. Have you sailed the course at the gate?",
+  "a": "No — the string of your track must pass between the gate marks from the direction of the previous mark; go back and pass through the gate",
+  "o": [
+   "Yes — a gate mark may be left on either side as long as you round it and head up to windward",
+   "Yes — passing either gate mark on any side counts as passing the gate",
+   "No — and you can no longer correct it; you are scored DNF"
+  ],
+  "why": "Definition Sail the Course (2025): the string of the boat's track must pass between the gate marks in the direction from the previous mark.",
+  "ref": "RRS definition Sail the Course, RRS 28",
+  "fig": {
+   "type": "card",
+   "title": "Leeward gate",
+   "lines": [
+    "Two marks 60 m apart, previous mark upwind",
+    "You round the left mark on its outside",
+    "Then head up to windward"
+   ],
+   "tag": "Sailed the course?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "On the second beat you pass the pin-end buoy of the starting line, still anchored, on the side you would not be allowed to on a leg it bounded. Blue hails that you have broken rule 28. Have you?",
+  "a": "No — a mark that does not begin, bound or end the leg you are sailing has no required side, so you may pass it on either side",
+  "o": [
+   "Yes — a starting mark must be left on its required side on every leg of the race",
+   "Yes — every mark of the course has a required side at all times",
+   "No — but only because the pin is a buoy and not a committee boat"
+  ],
+  "why": "Definition Sail the Course: a mark that does not begin, bound or end the leg a boat is sailing has no required side.",
+  "ref": "RRS definition Sail the Course, RRS 28",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 70,
+     "y": 130,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 110,
+     "y": 150,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "line": {
+    "x1": 40,
+    "y1": 160,
+    "x2": 140,
+    "y2": 160,
+    "label": "Start line"
+   },
+   "note": "Second beat: you pass the pin end on its 'wrong' side"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "At 10:55, five minutes before the scheduled warning signal, the committee boat displays flag AP with two sounds. What is the status of the race?",
+  "a": "Postponed — the race will not start at its scheduled time, but it may be started later or abandoned later",
+  "o": [
+   "Abandoned — it is void and will be resailed another day",
+   "Cancelled — there will be no more racing today",
+   "Started — AP is the warning signal for the first class"
+  ],
+  "why": "Definition Postpone: a postponed race is delayed before its scheduled start but may be started or abandoned later.",
+  "ref": "RRS definition Postpone, race signals",
+  "fig": {
+   "type": "card",
+   "title": "Committee boat, 10:55",
+   "lines": [
+    "Flag AP up with two sounds",
+    "Scheduled warning signal 11:00"
+   ],
+   "tag": "Status?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "On the second beat you are leading by 200 m when the committee boat displays flag N with three sounds. What has happened to the race, and to your lead?",
+  "a": "The race is abandoned — it is void, may be resailed, and your lead counts for nothing",
+  "o": [
+   "The race is postponed — it will continue from the same positions later",
+   "The race is shortened — you will finish at the next mark",
+   "The race is abandoned but the positions at the time are scored"
+  ],
+  "why": "Definition Abandon: a race that the race committee or protest committee abandons is void but may be resailed.",
+  "ref": "RRS definition Abandon, RRS 32",
+  "fig": {
+   "type": "card",
+   "title": "Second beat, 12:40",
+   "lines": [
+    "Flag N up with three sounds",
+    "You are leading by 200 m"
+   ],
+   "tag": "Status?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Blue protests you after a port–starboard incident. At the hearing the protest committee calls Grey's helmsman, who saw it, to describe what happened; three jury members hear the case. Who are the parties to this hearing?",
+  "a": "Blue and you — the protestor and the protestee; Grey's helmsman is a witness, and the protest committee is never a party",
+  "o": [
+   "Blue, you and Grey — everyone who gives evidence is a party",
+   "Blue, you and the protest committee, which represents the race",
+   "Only Blue — the boat that made the protest"
+  ],
+  "why": "Definition Party: in a protest hearing the protestor and protestee; witnesses are not parties and the protest committee never is.",
+  "ref": "RRS definition Party, RRS 63",
+  "fig": {
+   "type": "card",
+   "title": "Protest hearing",
+   "lines": [
+    "Blue protests you for a port–starboard",
+    "Grey's helmsman is called to describe it",
+    "Three jury members hear the case"
+   ],
+   "tag": "Who are the parties?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "At a club championship three things are on your mind: a club 'tradition' that nobody luffs before the start, an amendment to the sailing instructions posted on the official notice board, and a class rule limiting sail area. Which of these are rules in the sense of the RRS?",
+  "a": "The SI amendment and the class rule — the sailing instructions and class rules are rules; a club tradition is not",
+  "o": [
+   "All three — anything the club and the sailors generally observe is a rule",
+   "Only the class rule — sailing instructions are instructions, not rules",
+   "Only the SI amendment — class rules are a matter for the class, not the RRS"
+  ],
+  "why": "Definition Rule: includes the RRS, the notice of race, the sailing instructions, class rules and the national prescriptions — not customs or traditions.",
+  "ref": "RRS definition Rule",
+  "fig": {
+   "type": "card",
+   "title": "Club championship",
+   "lines": [
+    "Tradition: nobody luffs before the start",
+    "SI amendment on the notice board",
+    "Class rule limiting sail area"
+   ],
+   "tag": "Which are rules?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "After Blue clearly broke rule 10 and sailed on without taking a penalty, you protest her for breaking 'Sportsmanship and the Rules' as well as rule 10. Can the protest committee penalise her under the Basic Principle?",
+  "a": "No — the Basic Principles are not rules under the definition Rule, so she is penalised under rule 10 and, if a clear breach of sportsmanship is established, under rule 2",
+  "o": [
+   "Yes — the Basic Principles are the most important rules in the book",
+   "Yes — any boat that fails to take a penalty is automatically disqualified under the Basic Principle",
+   "No — because a boat can only be penalised under one rule per incident"
+  ],
+  "why": "Definition Rule: the rules in the book including Definitions, race signals, Introduction, preambles and appendices — but not the Basic Principles or headings.",
+  "ref": "RRS definition Rule, RRS 2",
+  "fig": null
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "On a reach your boom touches Red's shroud when she luffs slightly; you were the windward boat and know you broke rule 11. Nobody hails 'Protest' and Red sails on. What does the basic principle of sportsmanship expect of you?",
+  "a": "To take the appropriate penalty promptly — here two turns — or retire, whether or not anyone protests",
+  "o": [
+   "Nothing — a boat is penalised only if another boat protests",
+   "To wait and see whether Red lodges a protest ashore before deciding",
+   "To apologise to Red after the race, which settles the matter"
+  ],
+  "why": "Basic Principle Sportsmanship and the Rules: a boat that breaks a rule and is not exonerated promptly takes an appropriate penalty, which may be to retire.",
+  "ref": "RRS Basic Principles, RRS 44.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 92,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 160,
+     "y": 110,
+     "hdg": 270,
+     "label": "Red"
+    }
+   ],
+   "note": "Your boom touched Red's shroud; nobody hailed"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Second beat in 18 knots. A crew member of Grey has gone overboard and Grey cannot get back to him quickly. You are closest; you stop, pick him up and lose ten places. Were you required to help, and what about your result?",
+  "a": "Yes — a boat shall give all possible help to any person in danger (rule 1.1), and you may request redress for the places you lost",
+  "o": [
+   "No — helping is voluntary; the safety boat is responsible, and your result stands",
+   "Yes — but your result stands; helping is part of the risk of racing",
+   "No — only boats that are not racing are required to help"
+  ],
+  "why": "Rule 1.1: a boat shall give all possible help to any person or vessel in danger; redress is available for a score made worse by giving help under rule 1.1.",
+  "ref": "RRS 1.1, RRS 61",
+  "fig": {
+   "type": "card",
+   "title": "Second beat, 18 knots",
+   "lines": [
+    "A crew member of Grey is in the water",
+    "Grey cannot get back to him quickly",
+    "You stop and pick him up, lose 10 places"
+   ],
+   "tag": "Required?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "You have retired from the race with a broken tiller and are motoring home. You pass a windsurfer who is capsized with his rig trapped, in cold water and clearly in trouble. Since you are no longer racing, must you help?",
+  "a": "Yes — rule 1.1 applies to a boat or competitor whether or not she is racing: give all possible help to a person in danger",
+  "o": [
+   "No — once you have retired the racing rules no longer apply to you",
+   "No — a retired boat must not interfere with the race in any way",
+   "Only if the race committee asks you to help"
+  ],
+  "why": "Rule 1.1: a boat, competitor or support person shall give all possible help to any person or vessel in danger — not limited to boats racing.",
+  "ref": "RRS 1.1",
+  "fig": {
+   "type": "card",
+   "title": "After retiring",
+   "lines": [
+    "You retired with a broken tiller",
+    "Windsurfer capsized, rig trapped, cold",
+    "You have an engine"
+   ],
+   "tag": "Must you help?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Club race in 8 knots, flag Y not displayed and nothing about personal flotation devices in the sailing instructions. You decide to leave your lifejacket below. Who is responsible for that decision under the rules?",
+  "a": "You — each competitor is individually responsible for wearing personal flotation adequate for the conditions (rule 1.2)",
+  "o": [
+   "The race committee — it must order lifejackets whenever they are needed",
+   "The person in charge of the boat alone — crew have no responsibility",
+   "Nobody — lifejackets are required only when flag Y is displayed"
+  ],
+  "why": "Rule 1.2: each competitor is individually responsible for wearing a personal flotation device adequate for the conditions (flag Y makes it mandatory).",
+  "ref": "RRS 1.2, RRS 40",
+  "fig": {
+   "type": "card",
+   "title": "Club race, 8 knots",
+   "lines": [
+    "No flag Y displayed",
+    "SI say nothing about PFDs",
+    "You leave your lifejacket below"
+   ],
+   "tag": "Who decides?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "Leeward mark, Blue outside and to windward of Red, who is inside with mark-room. Blue deliberately bears away hard into Red to push her onto the mark and gain a place. What rule has Blue broken besides rule 11, and what is the penalty?",
+  "a": "Rule 2, fair sailing — a deliberate breach to gain an advantage; the penalty is a disqualification that is not excludable (DNE)",
+  "o": [
+   "Only rule 11 — a Two-Turns Penalty settles everything, whatever her intention",
+   "Rule 14 — contact, so Blue retires but may discard the score",
+   "Rule 69 — the only rule that deals with deliberate fouls, with a one-race DSQ"
+  ],
+  "why": "Rule 2: a boat competes in compliance with recognised principles of sportsmanship; a clearly established breach is penalised with a non-excludable DSQ.",
+  "ref": "RRS 2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 200,
+     "y": 50,
+     "hdg": 225,
+     "label": "Red"
+    },
+    {
+     "x": 175,
+     "y": 42,
+     "hdg": 240,
+     "label": "Blue"
+    }
+   ],
+   "mark": {
+    "x": 160,
+    "y": 100,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "note": "Blue bears away hard into Red to push her onto the mark"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 3,
+  "q": "Crowded start in 25 knots. You deliberately hit Grey, on port, to slow her down, then immediately take a Two-Turns Penalty. Grey protests under rule 2. Does your penalty settle the matter?",
+  "a": "No — a deliberate breach to gain an advantage violates rule 2 regardless of the turns; the protest committee can still penalise you with a DNE",
+  "o": [
+   "Yes — a Two-Turns Penalty wipes out any breach of a Part 2 rule, deliberate or not",
+   "Yes — rule 2 applies only when no penalty is taken",
+   "No — but the most the committee can do is a Two-Turns Penalty taken again ashore"
+  ],
+  "why": "Rule 2: deliberately breaking a rule is a breach of fair sailing in itself; the on-the-water penalty covers rule 10, not the rule 2 breach.",
+  "ref": "RRS 2, RRS 44.1",
+  "fig": {
+   "type": "card",
+   "title": "Start, 25 knots",
+   "lines": [
+    "You deliberately hit Grey on port",
+    "You then take a Two-Turns Penalty",
+    "Grey protests under rule 2"
+   ],
+   "tag": "Outcome?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 1,
+  "q": "Day three of a championship: 30 knots with gusts of 38. The race committee starts the race on time, and half the fleet stays ashore. Your crew says the committee is responsible if you go out and get hurt. Who decides whether you race?",
+  "a": "You — the responsibility for a boat's decision to participate in a race or to continue racing is hers alone (rule 3)",
+  "o": [
+   "The race committee — by starting the race it takes responsibility for the boats",
+   "The organising authority — it must cancel racing above a safe wind limit",
+   "The class association — it sets the wind limits in the class rules"
+  ],
+  "why": "Rule 3: the responsibility for a boat's decision to participate in a race or to continue racing is hers alone.",
+  "ref": "RRS 3",
+  "fig": {
+   "type": "card",
+   "title": "Championship, day 3",
+   "lines": [
+    "30 knots, gusts 38",
+    "RC starts the race on time",
+    "Half the fleet stays ashore"
+   ],
+   "tag": "Who decides?"
+  }
+ },
+ {
+  "topic": "definitions",
+  "difficulty": 2,
+  "q": "The protest committee disqualifies you from race 4. You are sure it got the facts wrong, and a friend suggests taking the club to court. What have you agreed to by entering the regatta?",
+  "a": "To be governed by the rules, to accept their penalties and procedures (including appeal) as final, and not to go to any court outside them",
+  "o": [
+   "Nothing beyond paying the entry fee — you keep every right to take the club to court",
+   "To accept the protest committee's decision as final with no appeal of any kind",
+   "To accept the rules only while you are afloat and racing"
+  ],
+  "why": "Rule 4: by participating a competitor agrees to be governed by the rules, to accept penalties subject to appeal and review, and not to resort to any court.",
+  "ref": "RRS 4, RRS 70",
+  "fig": {
+   "type": "card",
+   "title": "After the hearing",
+   "lines": [
+    "You are disqualified from race 4",
+    "You think the jury got the facts wrong",
+    "A friend suggests going to court"
+   ],
+   "tag": "Rule 4"
+  }
+ }
+]

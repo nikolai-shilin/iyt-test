@@ -1,7 +1,7 @@
 """Checks one topic file in data/bank/ before it goes into the bank.
 
 Usage: python3 data/check_topic.py <topic>              # Bareboat Skipper, data/bank/<topic>.json (90 questions)
-       python3 data/check_topic.py <level> <topic>      # other levels, data/bank/<level>/<topic>.json (20 questions)
+       python3 data/check_topic.py <level> <topic>      # other levels, data/bank/<level>/<topic>.json (20 or, per build_level.py, 100 questions)
 Checks shape, the difficulty spread, near-duplicates (within the file and against data/build_bank.py),
 answers that stand out by length, and that every figure renders with docs/design/figures.js.
 Exit code 1 if there are errors; warnings are printed but do not fail.
@@ -11,7 +11,7 @@ import json, os, re, subprocess, sys, difflib
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 TOPICS = ['terms', 'ropework', 'safety', 'colregs', 'navigation', 'buoyage', 'weather', 'anchoring', 'systems', 'emergency']
-FIG_TYPES = {'encounter', 'lights', 'buoy', 'compass', 'chart', 'anchor', 'isobars', 'sail', 'dayshape', 'bay', 'panel', 'card', 'rope'}
+FIG_TYPES = {'encounter', 'lights', 'buoy', 'compass', 'chart', 'anchor', 'isobars', 'sail', 'dayshape', 'bay', 'panel', 'card', 'rope', 'race'}
 WANT = 90
 
 
@@ -28,7 +28,9 @@ def norm(s):
 def main(topic, level=None):
     global WANT
     if level:
-        WANT = 20
+        sys.path.insert(0, HERE)
+        from build_level import LEVELS, PER_TOPIC
+        WANT = LEVELS[level].get('per', PER_TOPIC)
         path = os.path.join(HERE, 'bank', level, f'{topic}.json')
     else:
         path = os.path.join(HERE, 'bank', f'{topic}.json')

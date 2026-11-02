@@ -1,5 +1,6 @@
 """Builds the question banks of the levels whose questions live only in topic files (every level but Bareboat
-Skipper, which has its own build_bank.py).
+Skipper, which has its own build_bank.py): the IYT levels with 20 questions per topic, and Racing Rules of Sailing
+with 100 per topic (`per` in LEVELS; `title` and `note` when the level is not an IYT course).
 
   python3 data/build_level.py                      # all levels below
   python3 data/build_level.py international-crew   # one level
@@ -19,6 +20,10 @@ from i18n import figure_texts  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 NOTE = ('Scenario questions written for study, close to the IYT {name} syllabus. Not official IYT exam content. '
         'figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.')
+
+RRS_NOTE = ('Scenario questions on the Racing Rules of Sailing 2025–2028 (World Sailing), written for study: real situations on the '
+            'course, at the start, at marks, in protests. Not an official World Sailing publication; the rules themselves are the authority. '
+            'figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults.')
 
 # topics: (id, English title, Russian title, Russian short name, icon for the mini app)
 LEVELS = {
@@ -64,6 +69,22 @@ LEVELS = {
             ('skipper', 'Skipper duties & flotilla routine', 'Обязанности шкипера и порядок во флотилии', 'Шкипер', 'captain'),
             ('emergency', 'Safety & emergencies', 'Безопасность и аварии', 'Аварии', 'lifebuoy'),
         ]),
+    # Not an IYT course: the Racing Rules of Sailing (World Sailing, 2025–2028), as situations on the race course.
+    'racing-rules': dict(
+        prefix='rr', name='Racing Rules of Sailing', title='Racing Rules of Sailing', note=RRS_NOTE, per=100,
+        passMark=70, examQuestions=40, examMinutes=60, version='2026-11-03',
+        topics=[
+            ('definitions', 'Definitions & basic principles', 'Определения и основные принципы', 'Определения', 'book'),
+            ('rightofway', 'Right of way — opposite tacks, same tack, tacking (Rules 10–13)', 'Право дороги — разные галсы, один галс, поворот оверштаг (правила 10–13)', 'Право дороги', 'sail'),
+            ('limits', 'General limitations — contact, acquiring right of way, changing course (Rules 14–17)', 'Общие ограничения — контакт, получение права дороги, изменение курса (правила 14–17)', 'Ограничения', 'wheel'),
+            ('marks', 'Mark-room (Rule 18)', 'Место-у-знака (правило 18)', 'Знаки', 'buoy'),
+            ('obstructions', 'Obstructions, room to tack & other situations (Rules 19–23)', 'Препятствия, место для поворота и другие ситуации (правила 19–23)', 'Препятствия', 'lighthouse'),
+            ('starting', 'Starting — signals, recalls & starting penalties', 'Старт — сигналы, отзывы и наказания на старте', 'Старт', 'timer'),
+            ('course', 'Sailing the course, marks & finishing', 'Прохождение дистанции, знаки и финиш', 'Дистанция', 'map'),
+            ('propulsion', 'Propulsion & other requirements when racing', 'Движущая сила и другие требования во время гонки', 'Правило 42', 'wind'),
+            ('penalties', 'Penalties at the time of an incident', 'Наказания в момент инцидента', 'Наказания', 'refresh'),
+            ('protests', 'Protests, hearings, redress & scoring', 'Протесты, рассмотрение, исправление результата и очки', 'Протесты', 'trophy'),
+        ]),
 }
 PER_TOPIC = 20
 
@@ -75,10 +96,11 @@ def load(level, topic, lang=None):
 
 def build(level):
     L = LEVELS[level]
+    per = L.get('per', PER_TOPIC)
     Q, R = [], []
     for t, *_ in L['topics']:
         items = load(level, t)
-        assert items and len(items) == PER_TOPIC, f'{level}/{t}: {len(items or [])} questions, want {PER_TOPIC}'
+        assert items and len(items) == per, f'{level}/{t}: {len(items or [])} questions, want {per}'
         assert all(x['topic'] == t for x in items), f'{level}/{t}: wrong topic field'
         ru = load(level, t, 'ru')
         assert ru is None or len(ru) == len(items), f'{level}/{t}.ru: {len(ru)} entries for {len(items)} questions'
@@ -98,8 +120,8 @@ def build(level):
             got = set((r.get('fig') or {}))
             assert want == got, f'{qid}: Russian figure paths {sorted(got)}, want {sorted(want)}'
             tr[qid] = {k: v for k, v in dict(q=r['q'], options=pick(r), why=r['why'], ref=r['ref'], figure=r.get('fig') or {}).items() if v}
-    bank = dict(level=level, title=f'IYT {L["name"]}', lang='en', passMark=L['passMark'], examQuestions=L['examQuestions'],
-                examMinutes=L['examMinutes'], version=L['version'], note=NOTE.format(name=L['name']),
+    bank = dict(level=level, title=L.get('title', f'IYT {L["name"]}'), lang='en', passMark=L['passMark'], examQuestions=L['examQuestions'],
+                examMinutes=L['examMinutes'], version=L['version'], note=L.get('note', NOTE.format(name=L['name'])),
                 topics=[dict(id=t, title=n, icon=ic, count=sum(1 for x in Q if x['topic'] == t)) for t, n, _, _, ic in L['topics']],
                 questions=out)
     qdir = os.path.join(HERE, 'questions')

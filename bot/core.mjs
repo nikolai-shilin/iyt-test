@@ -14,8 +14,8 @@ const token = process.env.TELEGRAM_BOT_TOKEN;
 if (!token) throw new Error('TELEGRAM_BOT_TOKEN is not set');
 export const webapp = (process.env.WEBAPP_URL || '').replace(/\/$/, '');
 
-// The levels with a bank, in IYT order; `link` is the mini app deep link that opens the level (miniapp/app.js LEVELS).
-const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], ['flotilla-skipper', 'flotilla'], ['bareboat-skipper', 'bareboat']];
+// The levels with a bank, in IYT order, then the Racing Rules; `link` is the mini app deep link that opens the level (miniapp/app.js LEVELS).
+const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], ['flotilla-skipper', 'flotilla'], ['bareboat-skipper', 'bareboat'], ['racing-rules', 'racing']];
 // A bank comes from Supabase — bank() / bank_overlay() return the same shape as the files (docs/data-model.md) —
 // or, when the database is not configured or does not answer, from data/questions/<name>.json bundled with the function.
 async function read(name) {
@@ -87,8 +87,8 @@ const send = (chat_id, text, reply_markup) => api('sendMessage', { chat_id, text
 const RU = (from) => /^(ru|uk|be|kk)\b/i.test(from?.language_code || '');
 const T = {
   start: (ru) => ru
-    ? `⚓️ <b>IYT Test</b> — вопросы для подготовки к экзаменам IYT. Уже доступны: <b>${names.join('</b>, <b>')}</b> — ${N} ситуаций, тренировка по темам и пробный экзамен.\n\nНажмите «Открыть» и выберите уровень.`
-    : `⚓️ <b>IYT Test</b> — practice questions for IYT certification levels. Ready now: <b>${names.join('</b>, <b>')}</b> — ${N} situations, practice by topic and a mock exam.\n\nTap Open and pick your level.`,
+    ? `⚓️ <b>IYT Test</b> — вопросы для подготовки к экзаменам IYT и по Правилам парусных гонок. Уже доступны: <b>${names.join('</b>, <b>')}</b> — ${N} ситуаций, тренировка по темам и пробный экзамен.\n\nНажмите «Открыть» и выберите уровень.`
+    : `⚓️ <b>IYT Test</b> — practice questions for IYT certification levels and the Racing Rules of Sailing. Ready now: <b>${names.join('</b>, <b>')}</b> — ${N} situations, practice by topic and a mock exam.\n\nTap Open and pick your level.`,
   open: (ru) => (ru ? 'Открыть' : 'Open'),
   exam: (ru) => (ru ? '⏱ Пробный экзамен по вашему уровню: случайные вопросы из всех тем, таймер, ответы в конце, 70 % для сдачи.' : '⏱ Mock exam for your level: random questions from every topic, a timer, answers at the end, 70 % to pass.'),
   examBtn: (ru) => (ru ? 'Начать экзамен' : 'Start the exam'),

@@ -1,0 +1,2880 @@
+[
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Windward–leeward course, all marks to port, a 29er national championship in 18 knots. In the crush at the windward mark you end up passing it on the wrong side, leaving it to starboard; five lengths down the run you realise. What must you do?",
+  "a": "Sail back and unwind: return upwind past the mark on the side you came, round it leaving it to port, then carry on — you may correct the error until you finish",
+  "o": [
+   "Take a Two-Turns Penalty as soon as you are clear of other boats and carry on down the run — a mark error is a Part 2 breach",
+   "Retire — once you have left the zone a rounding on the wrong side can no longer be corrected",
+   "Carry on; the race committee only scores a boat NSC if she misses a mark altogether, not if she rounds it the wrong way"
+  ],
+  "why": "Rule 28.2: a boat may correct any error in sailing the course until she finishes; penalty turns do not replace the unwinding.",
+  "ref": "RRS 28.2, RRS definition Sail the Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 80,
+    "label": "Windward mark"
+   },
+   "track": "M120 180 L140 100 Q150 55 178 80 L200 140",
+   "boats": [
+    {
+     "x": 200,
+     "y": 140,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You rounded leaving the mark to starboard"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "The sailing instructions give course Start – 1 – 2 – 3 – Finish, marks to port. On the leg from mark 1 to mark 2 you pass mark 4, a mark of another course, leaving it on your starboard side. Your crew is worried. Have you broken a rule?",
+  "a": "No — a mark that does not begin, bound or end the leg you are sailing may be left on either side",
+  "o": [
+   "Yes — every mark laid by the race committee for the regatta must be left to port",
+   "Yes — you must go back and leave mark 4 to port before continuing to mark 2",
+   "Only if the leader left it to port; the first boat sets the required side for the fleet"
+  ],
+  "why": "Rule 28.1: a boat may leave on either side a mark that does not begin, bound or end the leg she is sailing.",
+  "ref": "RRS 28.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 185,
+    "y": 125,
+    "label": "Mark 4 (other course)"
+   },
+   "track": "M50 175 L230 60",
+   "boats": [
+    {
+     "x": 120,
+     "y": 130,
+     "hdg": 55,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Leg from mark 1 to mark 2"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "In a dying breeze on a lake you misjudge the leeward gate: you sail past the outside of the right-hand gate mark without passing between the two marks, then harden up for the beat. Your crew says it does not matter which gate mark you round. Are they right?",
+  "a": "No — your string must pass between the gate marks from the direction of the previous mark; you must go back and sail through the gate",
+  "o": [
+   "Yes — at a gate you only have to leave one of the two marks on the required side, and you did",
+   "No — you broke rule 28 and must take a Two-Turns Penalty before continuing up the beat",
+   "No — a gate error cannot be corrected and the race committee will score you NSC"
+  ],
+  "why": "Definition Sail the Course: the string passes between the gate marks from the direction of the previous mark; rule 28.2 lets her correct it.",
+  "ref": "RRS 28, RRS definition Sail the Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 190,
+    "y": 110,
+    "label": "Right-hand gate mark"
+   },
+   "track": "M150 30 L215 95 L214 128 L196 150",
+   "boats": [
+    {
+     "x": 196,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "The left-hand gate mark is 60 m to the left, off the picture"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "A lake regatta uses a small island as a mark: the sailing instructions say \"the island to starboard\". The breeze is better on the island's western shore, so you sail down that side with the island on your left and carry on to the next mark. What is your position?",
+  "a": "You have not sailed the course — the island had to be on your starboard side; go back and pass it correctly before you finish, or you will be scored NSC",
+  "o": [
+   "You are fine — a natural feature used as a mark may be passed on either side if the SI do not name a rounding direction",
+   "You broke rule 31 by passing on the wrong side; a One-Turn Penalty puts it right",
+   "You are fine as long as you did not touch the island or its shoal water"
+  ],
+  "why": "Rule 28.1 and definition Sail the Course: each mark of the leg must be left on the required side; the island is a mark of the course.",
+  "ref": "RRS 28.1, RRS definition Mark",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "obstruction": {
+    "path": "M120 70 C160 48 210 60 218 100 C226 140 176 162 134 142 C98 126 88 88 120 70 Z",
+    "label": "Island",
+    "lx": 160,
+    "ly": 110
+   },
+   "track": "M85 28 L72 100 L80 170",
+   "boats": [
+    {
+     "x": 78,
+     "y": 140,
+     "hdg": 185,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "SI: the island to starboard"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "Thirty seconds after crossing the finishing line in a Melges 24 you realise that at the last gate you sailed outside the right-hand gate mark instead of between the two marks. You are still a few lengths past the line. What can you do?",
+  "a": "Go back, pass through the gate correctly and cross the finishing line again — you may correct the error because you had not yet finished",
+  "o": [
+   "Nothing — once you cross the finishing line your finish stands, and the race committee will score you NSC",
+   "Return to the course side of the line, take a Two-Turns Penalty and cross the line again",
+   "Nothing is needed — the gate marks do not bound the final leg to the finish"
+  ],
+  "why": "Rule 28.2 allows correction until she finishes; by sailing back to correct, a boat that crossed the line \"continues to sail the course\" and has not finished.",
+  "ref": "RRS 28.2, RRS definition Finish",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 50,
+    "y1": 70,
+    "x2": 235,
+    "y2": 70,
+    "label": "Finishing line"
+   },
+   "mark": {
+    "x": 215,
+    "y": 150,
+    "label": "Right-hand gate mark"
+   },
+   "track": "M225 100 L232 140 L218 172 L120 110 L92 55",
+   "boats": [
+    {
+     "x": 90,
+     "y": 50,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You passed outside the right-hand gate mark"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "In race 3 of a J/70 regatta Blue, sail number 4471, leaves mark 2 to starboard although the marks are to be left to port, never goes back, and finishes third. Nobody protests her. What happens to her score?",
+  "a": "The race committee scores her NSC without a hearing, because she did not sail the course",
+  "o": [
+   "Nothing — a boat can only lose her place if another boat protests her within the time limit",
+   "She keeps third place unless the race committee protests her and a hearing finds she broke rule 28",
+   "She is scored DNF — a boat that misses a mark is treated as not having finished"
+  ],
+  "why": "Rule 28 and Appendix A5.1 (2025): a boat the race committee determines did not sail the course is scored NSC without a hearing.",
+  "ref": "RRS 28, RRS A5.1",
+  "fig": {
+   "type": "card",
+   "title": "Race 3, after the finish",
+   "lines": [
+    "Blue 4471 left mark 2 to starboard",
+    "Marks were to be left to port",
+    "She never went back to correct it",
+    "Finished third; nobody protested"
+   ],
+   "tag": "Score?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Two minutes before your start in a Dragon fleet you sail round the committee boat, go out onto the course side of the line and come back through the line to the pre-start side to set up. The helm of the boat next to you says you now have to \"unwind\" around the committee boat. Does he have a point?",
+  "a": "No — the string that must pass the marks correctly starts only when you begin approaching the line from the pre-start side to start; earlier manoeuvres do not count",
+  "o": [
+   "Yes — every pass of a starting mark from the preparatory signal onward is part of the string and must be unwound",
+   "Yes — having been on the course side you must now return around an end of the line before you may start",
+   "Only if flag I was displayed; under flag P the string starts at the starting signal"
+  ],
+  "why": "Definition Sail the Course: the string runs from when she begins approaching the starting line from its pre-start side to start until she finishes.",
+  "ref": "RRS definition Sail the Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 50,
+    "y1": 120,
+    "x2": 235,
+    "y2": 120,
+    "label": "Starting line"
+   },
+   "track": "M180 150 L262 140 L258 100 L210 95 L192 120 L160 148",
+   "boats": [
+    {
+     "x": 150,
+     "y": 150,
+     "hdg": 240,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Two minutes before the start"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "You are close-hauled on starboard, two lengths from the windward mark, to be left to port. Red, overlapped to windward, bears away onto you; to avoid contact you bear away hard and pass the mark on the wrong side. You hail \"Protest\". Do you still have to go back?",
+  "a": "Yes — being forced the wrong side does not relieve you of sailing the course; unwind and round the mark correctly, and protest Red for breaking rule 11",
+  "o": [
+   "No — you are exonerated under rule 43.1(a) because Red compelled you to pass the mark on the wrong side",
+   "No — Red's breach means the protest committee will give you redress for the places you lost",
+   "No — but you must take a One-Turn Penalty for passing a mark of the leg on the wrong side"
+  ],
+  "why": "Rule 28 still applies: a boat forced past a mark on the wrong side must correct it (28.2); the other boat is penalised under rule 11.",
+  "ref": "RRS 28.2, RRS 11",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 150,
+    "y": 70,
+    "zone": true,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 140,
+     "y": 128,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 168,
+     "y": 112,
+     "hdg": 290,
+     "label": "Red"
+    }
+   ],
+   "note": "Red bears away onto you at the mark"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "The course board shows W2 — two laps of a windward–leeward course. You round the leeward gate after the first lap, cross the finishing line, hear no sound signal, stop and drop the jib. A friend on the committee boat shouts that you have one more lap to sail. Where do you stand?",
+  "a": "You have not sailed the course; if you go on and sail the second lap your earlier crossing does not count and you finish when you cross the line after it",
+  "o": [
+   "You have finished — the race committee must record the time of your first crossing of the line",
+   "You must take a Two-Turns Penalty for crossing the finishing line before completing the course",
+   "Your race is over — crossing the finishing line early is scored NSC and cannot be corrected"
+  ],
+  "why": "Definition Finish: a boat that crosses the line and then continues to sail the course has not finished; rule 28.2 lets her complete the course.",
+  "ref": "RRS 28.2, RRS definition Finish",
+  "fig": {
+   "type": "card",
+   "title": "Course W2 (two laps)",
+   "lines": [
+    "You rounded the leeward gate once",
+    "Then crossed the finishing line",
+    "No sound signal from the RC",
+    "You stopped and lowered the jib"
+   ],
+   "tag": "Finished?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "River race, two knots of current setting across the course. Approaching the leeward mark, to be left to port, the stream sweeps you past it on the wrong side before you can round. You turn back, sail up past the mark on the same side you came down, then round it correctly leaving it to port. What else do you owe?",
+  "a": "Nothing — you corrected the error before finishing, as rule 28.2 allows, and no penalty is due for the error itself",
+  "o": [
+   "A One-Turn Penalty, taken as soon as you are well clear of other boats",
+   "A Two-Turns Penalty, because passing a mark on the wrong side is treated like a Part 2 breach",
+   "You must retire — a boat set onto the wrong side of a mark by current cannot correct her course"
+  ],
+  "why": "Rule 28.2: an error in sailing the course may be corrected before finishing; rule 44 penalties are for Part 2 and rule 31 breaches only.",
+  "ref": "RRS 28.2, RRS 44.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 110,
+    "label": "Leeward mark"
+   },
+   "track": "M165 30 L178 85 L180 140 L195 150 L188 100 L175 80 L150 85 L138 120 L128 170",
+   "boats": [
+    {
+     "x": 128,
+     "y": 150,
+     "hdg": 190,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Current 2 kn setting to the right; marks to port"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "At a Bodrum regatta the course board on the committee boat shows course 3, but you read it as course 2. You sail course 2 faultlessly — every mark of it on the correct side — and cross the finishing line fifth. What will the results show?",
+  "a": "NSC — you did not sail the course that was signalled, however well you sailed the other one",
+  "o": [
+   "DNF — a boat that sails the wrong course is treated as not having finished",
+   "Fifth place, unless the race committee protests you and a hearing finds you broke rule 28",
+   "DSQ after a hearing — a wrong course is always a disqualification"
+  ],
+  "why": "Rule 28 requires the course signalled to be sailed; Appendix A5.1 lets the race committee score NSC without a hearing.",
+  "ref": "RRS 28.1, RRS A5.1",
+  "fig": {
+   "type": "card",
+   "title": "Course board: 3",
+   "lines": [
+    "You sailed course 2 instead",
+    "Every mark of course 2 left correctly",
+    "Crossed the finishing line fifth",
+    "Nobody protested"
+   ],
+   "tag": "Result?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "In the pile-up at the pin end of a Laser start you are squeezed out and pass outside the pin mark, leaving it to starboard; you never crossed the line between the pin and the committee boat. The fleet sails off. What is your position?",
+  "a": "You have not started — go back to the pre-start side and cross the line between the pin and the committee boat before sailing on",
+  "o": [
+   "You started — part of your hull crossed the extension of the line after the starting signal",
+   "You broke rule 31 by passing a starting mark on the wrong side; take a One-Turn Penalty",
+   "Sail on; the race committee will score you OCS and nothing you do now can change that"
+  ],
+  "why": "Definition Start and rule 28.1: a boat starts by crossing the starting line between its marks; until then she has not sailed the course.",
+  "ref": "RRS 28.1, RRS definition Start",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 50,
+    "y1": 120,
+    "x2": 235,
+    "y2": 120,
+    "label": "Starting line"
+   },
+   "track": "M25 170 L38 118 L70 65",
+   "boats": [
+    {
+     "x": 72,
+     "y": 62,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You passed outside the pin"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "Grey rounded the windward mark the wrong way and is now sailing back on starboard tack to unwind her rounding. You are approaching the mark close-hauled on port and will meet her. Who keeps clear?",
+  "a": "You do — Grey is racing and on starboard; a boat correcting an error in sailing the course keeps her normal rights under Part 2",
+  "o": [
+   "Grey — a boat sailing back to correct a course error must keep clear of boats sailing the course properly, like a boat returning to start",
+   "Grey — she is not racing while she unwinds, so she must not interfere with you",
+   "Nobody has to keep clear until Grey hails that she is unwinding; then you must give her room"
+  ],
+  "why": "Rule 10 applies as usual; rule 21 lists boats returning to start, taking a penalty or moving astern, not a boat correcting a rule 28 error.",
+  "ref": "RRS 10, RRS 21, RRS 28.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 75,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 115,
+     "y": 145,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 185,
+     "y": 118,
+     "hdg": 315,
+     "label": "Grey"
+    }
+   ],
+   "note": "Grey is sailing back to unwind her rounding"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The sailing instructions list an offset mark 1a, to be left to port, 50 m from the windward mark. In 25 knots your spinnaker hoist goes wrong and you pass 1a leaving it to starboard. Your crew says an offset mark is only an aid and does not count. Who is right?",
+  "a": "You must go back — 1a begins the run and has a required side; the string must pass it to port",
+  "o": [
+   "Your crew — only marks with a number in the course sequence have a required side",
+   "Your crew — an offset mark counts only for boats that have hoisted a spinnaker before reaching it",
+   "Neither — passing 1a on the wrong side is a rule 31 breach cured by a One-Turn Penalty"
+  ],
+  "why": "Rule 28.1: a mark that begins, bounds or ends the leg being sailed must be left on the required side; the offset mark begins the run.",
+  "ref": "RRS 28.1, RRS definition Sail the Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 110,
+    "y": 95,
+    "label": "Offset mark 1a"
+   },
+   "track": "M200 60 Q172 42 150 70 L128 110 L122 160",
+   "boats": [
+    {
+     "x": 122,
+     "y": 148,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Mark 1 is just above the picture; you left 1a to starboard"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "The sailing instructions define the finishing line as between the committee boat and a yellow pin buoy. A press RIB has anchored 30 m from the committee boat. You cross the line between the committee boat and the pin, passing the RIB on your right. Blue says the RIB was a mark and you left it on the wrong side. Is Blue right?",
+  "a": "No — the RIB is not a mark; only objects the sailing instructions require you to leave on a specified side are marks",
+  "o": [
+   "Yes — any vessel anchored by the organising authority near a line is part of that line",
+   "Yes — a race committee or press vessel is a mark whenever it displays a flag",
+   "Only if the RIB was closer to the pin than to the committee boat"
+  ],
+  "why": "Definition Mark: an object the sailing instructions require a boat to leave on a specified side, or an RC vessel from which a line extends.",
+  "ref": "RRS definition Mark, RRS 28.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 50,
+    "y1": 130,
+    "x2": 235,
+    "y2": 130,
+    "label": "Finishing line"
+   },
+   "obstruction": {
+    "x": 150,
+    "y": 60,
+    "w": 28,
+    "h": 14,
+    "label": "Press RIB"
+   },
+   "boats": [
+    {
+     "x": 200,
+     "y": 100,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "The SI mention only the committee boat and the pin"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Windward–leeward course with an offset mark 1a used on the run. On the second beat you want to tack right where 1a lies, leaving it on whichever side suits the shift. May you?",
+  "a": "Yes — on the beat 1a does not begin, bound or end the leg you are sailing, so it may be left on either side",
+  "o": [
+   "No — once a mark is part of the course it must be left to port on every leg",
+   "No — you may pass 1a on either side only if you keep more than two hull lengths from it",
+   "Yes, but only after the leading boat has shown which side the fleet will take"
+  ],
+  "why": "Rule 28.1: a mark that does not begin, bound or end the leg a boat is sailing may be left on either side.",
+  "ref": "RRS 28.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 120,
+    "y": 90,
+    "label": "Offset mark 1a"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 140,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Second beat; 1a is used only on the run"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "Marks to port. You left the windward mark to starboard and are ten lengths down the run before you notice. Your tactician proposes simply circling the mark once in the direction you first passed it. Which route actually unwinds the error?",
+  "a": "Sail back upwind past the mark on the side you came down, then round it leaving it to port — the string pulled taut must lie on the port side of the mark",
+  "o": [
+   "Circle the mark once in the same direction you first passed it; a full loop in either direction straightens the string",
+   "Cross to the correct side below the mark and carry on — the string only has to end up on the correct side",
+   "Return to the zone, take a One-Turn Penalty at the mark and continue down the run"
+  ],
+  "why": "Definition Sail the Course: the string drawn taut must pass each mark on the required side; unwinding means retracing and rounding correctly.",
+  "ref": "RRS 28.2, RRS definition Sail the Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 80,
+    "label": "Windward mark"
+   },
+   "track": "M110 178 L140 98 L150 58 L185 68 L205 140",
+   "boats": [
+    {
+     "x": 205,
+     "y": 140,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Marks to port; you left this mark to starboard"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "At the leeward gate of a windward–leeward course the leader passes between the gate marks and rounds the left-hand mark. You pass between the gate marks and round the right-hand one, as the breeze is better on that side. Is your rounding valid?",
+  "a": "Yes — having passed between the gate marks from the direction of the previous mark you may round either of them",
+  "o": [
+   "No — all boats must round the same gate mark as the leading boat",
+   "No — with marks to port only the left-hand gate mark may be rounded",
+   "Yes, but you must first hail the boats behind you which mark you are taking"
+  ],
+  "why": "Definition Sail the Course: pass between the gate marks from the direction of the previous mark; either mark may then be rounded.",
+  "ref": "RRS 28, RRS definition Sail the Course",
+  "fig": {
+   "type": "card",
+   "title": "Leeward gate",
+   "lines": [
+    "SI: pass between the gate marks,",
+    "then round either mark",
+    "Leader rounds the left-hand mark",
+    "You round the right-hand mark"
+   ],
+   "tag": "Valid?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Two laps of a windward–leeward course; the finishing line lies between the committee boat and a pin halfway up the beat. On the first beat you sail straight across the finishing line on your way to the windward mark. Any consequence?",
+  "a": "None — you are continuing to sail the course, so you have not finished, and the finishing marks have no required side on the first beat",
+  "o": [
+   "You have finished and will be scored by that crossing unless you re-cross the line in the other direction",
+   "You must take a One-Turn Penalty for passing between finishing marks before completing the course",
+   "You must leave both finishing marks to port, since all marks of the course are to port"
+  ],
+  "why": "Definition Finish (c): a boat that crosses the finishing line and continues to sail the course has not finished; rule 28.1 on marks of the leg.",
+  "ref": "RRS 28.1, RRS definition Finish",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 100,
+    "x2": 235,
+    "y2": 100,
+    "label": "Finishing line"
+   },
+   "mark": {
+    "x": 150,
+    "y": 40,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 120,
+     "y": 140,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "First beat of two laps"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "The results sheet scores you NSC in race 2: the race committee says you missed mark 3. Your GPS track shows you rounded it correctly. There are forty minutes left in the protest time limit. What is the right step?",
+  "a": "Request redress within the time limit — an incorrect NSC score is an improper action of the race committee — and bring the track as evidence",
+  "o": [
+   "Protest the race committee under rule 28; the protest committee will then hear it like a protest between boats",
+   "Appeal straight to the national authority, since scoring decisions are not heard by the protest committee",
+   "Nothing can be done — a score given by the race committee without a hearing is final"
+  ],
+  "why": "Rule 61.4(b)(1): a boat whose score was made significantly worse by an improper action or omission of the race committee may request redress.",
+  "ref": "RRS 61.4(b)(1), RRS A5.1",
+  "fig": {
+   "type": "card",
+   "title": "Results posted",
+   "lines": [
+    "You are scored NSC in race 2",
+    "RC says you missed mark 3",
+    "Your GPS track shows you rounded it",
+    "Protest time limit: 40 min left"
+   ],
+   "tag": "NSC"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "The course board on the committee boat shows 2. The sailing instructions define course 2 as Start – 1 – 2 – 3 – 1 – Finish, all marks to port. After rounding mark 3 the leader heads straight for the finishing line. Where should you go?",
+  "a": "Back to mark 1 — course 2 requires mark 1 to be rounded again before the finish; the leader is making an error",
+  "o": [
+   "Follow the leader to the finish — the first boat's course becomes the course for the fleet",
+   "To the finish — once every mark has been rounded at least once the course is sailed",
+   "Wait near mark 3 for the race committee to signal whether mark 1 is required again"
+  ],
+  "why": "Rule 28.1: a boat shall sail the course described in the sailing instructions; other boats' errors change nothing.",
+  "ref": "RRS 28.1",
+  "fig": {
+   "type": "card",
+   "title": "Course board shows 2",
+   "lines": [
+    "SI: course 2 = S – 1 – 2 – 3 – 1 – F",
+    "All marks to port",
+    "After mark 3 the leader heads",
+    "straight for the finishing line"
+   ],
+   "tag": "Next leg?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The sailing instructions say the windward mark is an orange inflatable. At the top of the beat you find an orange inflatable and, 100 m away, a yellow one. The leader rounds the yellow one and the next three boats follow. Which should you round?",
+  "a": "The orange one — the mark is the object the sailing instructions describe; following the leader is no defence against NSC",
+  "o": [
+   "The yellow one — once the leading boats have rounded a buoy it becomes the mark for the fleet",
+   "Either — when two buoys are in the area the race committee must accept both",
+   "The yellow one, then the orange one, to be safe"
+  ],
+  "why": "Rule 28.1 and definition Mark: the course is the one the sailing instructions describe, however many boats round the wrong object.",
+  "ref": "RRS 28.1, RRS definition Mark",
+  "fig": {
+   "type": "card",
+   "title": "At the windward mark",
+   "lines": [
+    "SI: mark 1 is an orange inflatable",
+    "You find an orange and a yellow one",
+    "100 m apart",
+    "The leader rounds the yellow one"
+   ],
+   "tag": "Which?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "Two minutes before the start of a Wednesday evening club race you are luffing head to wind by the committee boat and your boom swings against its hull. Nothing is damaged. What must you do?",
+  "a": "Take a One-Turn Penalty — you are racing from the preparatory signal, and a starting mark must not be touched before you start",
+  "o": [
+   "Nothing — touching a mark before the starting signal is not a breach, because the race has not begun",
+   "Take a Two-Turns Penalty — contact with the committee boat is treated like a collision with another boat",
+   "Return to the pre-start side round an end of the line and start again"
+  ],
+  "why": "Rule 31: while racing, a boat shall not touch a starting mark before starting; racing begins at the preparatory signal; penalty under rule 44.2.",
+  "ref": "RRS 31, RRS 44.2, RRS definition Racing",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 50,
+    "y1": 120,
+    "x2": 235,
+    "y2": 120,
+    "label": "Starting line"
+   },
+   "boats": [
+    {
+     "x": 222,
+     "y": 142,
+     "hdg": 0,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Two minutes to the start; your boom touches the committee boat"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Starting at the committee boat end in a 36-ft cruiser-racer, you cut it fine and your keel snags the committee boat's anchor line, which is slanting away from its bow. The hull never touches the boat. Have you broken rule 31?",
+  "a": "No — the anchor line of a committee boat is not part of the mark, so touching it is not touching the mark",
+  "o": [
+   "Yes — anything attached to the committee boat is part of the mark; take a One-Turn Penalty",
+   "Yes — and because you fouled her ground tackle the penalty is two turns",
+   "No, but you must retire if the anchor line stopped your boat for more than a few seconds"
+  ],
+  "why": "Definition Mark: an anchor line of a race committee vessel is not part of the mark; rule 31 is not broken.",
+  "ref": "RRS 31, RRS definition Mark",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 50,
+    "y1": 120,
+    "x2": 235,
+    "y2": 120,
+    "label": "Starting line"
+   },
+   "track": "M235 120 L262 72",
+   "boats": [
+    {
+     "x": 215,
+     "y": 138,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "The dashed line is the committee boat's anchor line"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "You cross the finishing line in a 470, bear away to clear it and your transom bumps the pin-end finishing mark. You have not yet cleared the line. What is the right response?",
+  "a": "Take a One-Turn Penalty and finish again: sail completely back to the course side, do the turn, then cross the line — you are still racing until you clear the line and marks",
+  "o": [
+   "Nothing — you had already finished, and rule 31 does not apply after the finish",
+   "Take a One-Turn Penalty where you are; your finish stands because you crossed the line before the touch",
+   "Retire — a mark touched after finishing cannot be penalised by turns"
+  ],
+  "why": "Rule 31 covers a finishing mark after finishing while still racing; definition Finish (a): a boat taking a 44.2 penalty after crossing has not finished.",
+  "ref": "RRS 31, RRS 44.2, RRS definition Finish",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finishing line"
+   },
+   "boats": [
+    {
+     "x": 70,
+     "y": 92,
+     "hdg": 300,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Your transom touches the pin just after crossing"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "Rounding the windward mark in a J/24, your hull clears it by half a metre but the lazy spinnaker sheet hanging from the pole drags over the top of the buoy. Your bowman says only the hull counts. Is he right?",
+  "a": "No — a boat touches a mark with any part of her hull, crew or equipment; take a One-Turn Penalty",
+  "o": [
+   "Yes — since 2021 only the hull counts for touching a mark, just as for finishing",
+   "Yes — running rigging is not part of the boat for rule 31",
+   "No — and because a sail control touched the mark the penalty is two turns"
+  ],
+  "why": "Rule 31 is broken when any part of the boat, her equipment or crew touches the mark; the hull-only wording belongs to the definitions Start and Finish.",
+  "ref": "RRS 31, RRS 44.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 90,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 178,
+     "y": 118,
+     "hdg": 330,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Your spinnaker sheet drags over the mark"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "At a crowded leeward mark you are the outside boat, fail to give Blue the mark-room she is entitled to, touch her gunwale and, in the same tangle, bump the mark. No damage. How many turns do you owe?",
+  "a": "Two turns in all — one Two-Turns Penalty covers the Part 2 breach, and for breaking rule 31 in the same incident you need not take the One-Turn Penalty as well",
+  "o": [
+   "Three turns — a Two-Turns Penalty for the Part 2 breach plus a One-Turn Penalty for the mark",
+   "One turn — when a boat touches a mark the One-Turn Penalty replaces any other penalty",
+   "Four turns — a Two-Turns Penalty for each rule broken"
+  ],
+  "why": "Rule 44.1(a): a boat that may have broken a Part 2 rule and rule 31 in the same incident need not take the penalty for rule 31.",
+  "ref": "RRS 44.1(a), RRS 18.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 165,
+    "y": 95,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 132,
+     "hdg": 180,
+     "label": "Blue"
+    },
+    {
+     "x": 128,
+     "y": 140,
+     "hdg": 165,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You touch both Blue and the mark"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "You are the inside boat at the leeward mark, overlapped since well before the zone. Red, outside, does not give you mark-room, squeezes you and your hull is pushed against the mark. Who takes a penalty?",
+  "a": "Red takes a Two-Turns Penalty for breaking rule 18.2; you are exonerated for touching the mark because Red compelled you to",
+  "o": [
+   "Both — Red for rule 18.2 and you a One-Turn Penalty for rule 31; the mark touch is always your own",
+   "Only you — the boat that touches the mark is the one that broke a rule",
+   "Nobody — contact caused by crowding at a mark is exonerated for all boats"
+  ],
+  "why": "Rule 43.1(a): a boat compelled to break a rule by another boat's breach is exonerated; the outside boat broke rule 18.2(a).",
+  "ref": "RRS 43.1(a), RRS 31, RRS 18.2(a)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 165,
+    "y": 95,
+    "zone": true,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 135,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 128,
+     "y": 142,
+     "hdg": 165,
+     "label": "Red"
+    }
+   ],
+   "note": "Red squeezes you onto the mark"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "You touch the leeward mark with the hull in a pack of twelve boats. You carry on for about thirty seconds to get out of the traffic, then make one turn — a tack followed by a gybe — and rejoin. Was the penalty taken correctly?",
+  "a": "Yes — after getting well clear of other boats as soon as possible you promptly made one turn including a tack and a gybe",
+  "o": [
+   "No — the turn must be made immediately at the mark, among the other boats if need be",
+   "No — a turn for touching a mark must include two tacks, not a tack and a gybe",
+   "No — the penalty must be completed before you leave the zone of the mark you touched"
+  ],
+  "why": "Rule 44.2: get well clear of other boats as soon after the incident as possible, then promptly make the turn, each turn with one tack and one gybe.",
+  "ref": "RRS 44.2",
+  "fig": {
+   "type": "card",
+   "title": "Leeward mark, twelve boats around",
+   "lines": [
+    "Your hull touches the mark",
+    "You carry on about 30 s to get clear",
+    "Then one turn: a tack and a gybe",
+    "Then you rejoin the race"
+   ],
+   "tag": "Correct?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Windward–leeward course with the starting line below the leeward gate. On the first beat, tacking in a lull, you brush one of the gate marks with your bow. Must you take a penalty?",
+  "a": "No — on the first beat the gate marks do not begin, bound or end the leg you are sailing, so touching one is not a breach",
+  "o": [
+   "Yes — a One-Turn Penalty; any mark of the course touched while racing breaks rule 31",
+   "Yes — a Two-Turns Penalty, because the gate is a rounding mark of the course",
+   "No — but you must sail back and pass through the gate before continuing up the beat"
+  ],
+  "why": "Rule 31 applies to a starting mark before starting, a mark that begins, bounds or ends the leg she is sailing, or a finishing mark after finishing.",
+  "ref": "RRS 31",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 50,
+    "y1": 160,
+    "x2": 235,
+    "y2": 160,
+    "label": "Starting line"
+   },
+   "mark": {
+    "x": 120,
+    "y": 108,
+    "label": "Leeward gate mark"
+   },
+   "boats": [
+    {
+     "x": 130,
+     "y": 126,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "First beat; the gate is used only on the run"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Ten seconds after starting at the committee boat end of a Star fleet, a gust heels you and your quarter touches the committee boat's topsides. You had already crossed the line. Is this a breach of rule 31?",
+  "a": "Yes — the committee boat is a mark that begins the first leg; take a One-Turn Penalty after getting well clear",
+  "o": [
+   "No — rule 31 only protects a starting mark before the start, and you had started",
+   "No — a committee boat is never a mark once the starting signal has been made",
+   "Yes — but the penalty is to return and start again round an end of the line"
+  ],
+  "why": "Rule 31: a boat shall not touch a mark that begins, bounds or ends the leg she is sailing; the starting marks begin the first leg.",
+  "ref": "RRS 31, RRS 44.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 50,
+    "y1": 120,
+    "x2": 235,
+    "y2": 120,
+    "label": "Starting line"
+   },
+   "boats": [
+    {
+     "x": 226,
+     "y": 102,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Ten seconds after starting your quarter touches the committee boat"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "You have finished, cleared the finishing line and are sailing back to the committee boat to hand over a declaration form. Coming alongside, your bow bumps its hull. Do you owe a penalty?",
+  "a": "No — you stopped racing when you finished and cleared the line and marks, so rule 31 no longer applies",
+  "o": [
+   "Yes — a One-Turn Penalty; the committee boat is a finishing mark and you touched it after finishing",
+   "Yes — and since you cannot take turns now, the race committee will score you DSQ",
+   "Only if the committee boat was also the starting-line boat"
+  ],
+  "why": "Definition Racing: a boat is racing until she finishes and clears the finishing line and marks; rule 31 applies only while racing.",
+  "ref": "RRS 31, RRS definition Racing",
+  "fig": {
+   "type": "card",
+   "title": "After the finish",
+   "lines": [
+    "You finished and cleared the line",
+    "You sail back to the RC boat",
+    "to hand over a declaration",
+    "Your bow bumps the RC boat's hull"
+   ],
+   "tag": "Penalty?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "The windward mark has a small pick-up float tied to it on a short line so the mark-layer can lift it. Rounding close, your rudder nudges the float but not the buoy itself. Your crew says the float is like an anchor line and does not count. Who is right?",
+  "a": "You touched the mark — an object intentionally attached to a mark is part of it; only the anchor line is excluded",
+  "o": [
+   "Your crew — only the inflatable buoy itself is the mark; anything tied to it is ground tackle",
+   "Your crew — a float is attached to the anchor line, which is not part of the mark",
+   "Nobody can say — whether an attachment counts is decided by the protest committee case by case"
+  ],
+  "why": "Definition Mark: any object intentionally attached to the object or vessel is part of the mark; an anchor line is not.",
+  "ref": "RRS 31, RRS definition Mark",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 90,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 176,
+     "y": 120,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "A small pick-up float is tied to the mark"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "You fouled Grey on port tack at the windward mark and begin your Two-Turns Penalty as soon as you are clear. During the first turn you hit the mark. You complete the two turns and sail on. Have you done enough?",
+  "a": "No — touching the mark during the turns is a new incident; you owe a One-Turn Penalty in addition to the two turns",
+  "o": [
+   "Yes — rule 44.1(a) says a boat taking a Two-Turns Penalty need not take a penalty for rule 31",
+   "Yes — a boat taking a penalty is exonerated for any mark she touches while turning",
+   "No — hitting a mark during a penalty voids it; you must retire"
+  ],
+  "why": "Rule 44.1(a) covers a Part 2 breach and rule 31 broken in the same incident; a touch during the turns is a separate incident with its own penalty.",
+  "ref": "RRS 44.1(a), RRS 31",
+  "fig": {
+   "type": "card",
+   "title": "Two-Turns Penalty at the windward mark",
+   "lines": [
+    "You fouled Grey (rule 10) at the mark",
+    "You start your two turns at once",
+    "During the first turn you hit the mark",
+    "You complete the two turns and sail on"
+   ],
+   "tag": "Enough?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "An Optimist sailor at a club race touches the leeward mark with her bow. Her coach has told her to \"always do a 720 to be safe\". What penalty does the rule actually require?",
+  "a": "A One-Turn Penalty — one tack and one gybe; a Two-Turns Penalty is for breaking a rule of Part 2",
+  "o": [
+   "A Two-Turns Penalty — two full turns are required for any breach while racing",
+   "No penalty — in dinghy classes rule 31 is deleted by the class rules",
+   "A 20 % scoring penalty, reported to the race committee at the finish"
+  ],
+  "why": "Rule 44.1: a boat that may have broken rule 31 may take a One-Turn Penalty; the Two-Turns Penalty is for Part 2 breaches.",
+  "ref": "RRS 44.1, RRS 31",
+  "fig": {
+   "type": "card",
+   "title": "Optimist club race",
+   "lines": [
+    "Her bow touches the leeward mark",
+    "No other boat involved",
+    "Coach: \"always do a 720\""
+   ],
+   "tag": "Penalty?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Twenty-five knots and steep waves at the leeward mark. You round with room to spare, but a wave lifts your bow and drops it onto the mark. It was nobody's fault. Must you take a penalty?",
+  "a": "Yes — rule 31 has no fault element; unless another boat compelled the touch, a One-Turn Penalty is due",
+  "o": [
+   "No — a touch caused by sea state rather than by your handling is not a breach",
+   "No — in a wind of 25 knots or more rule 31 is suspended for safety",
+   "Yes — a Two-Turns Penalty, because heavy-weather contact is treated as serious"
+  ],
+  "why": "Rule 31 is broken by any touch while racing; exoneration under rule 43.1(a) requires another boat's breach, not a wave.",
+  "ref": "RRS 31, RRS 43.1(a)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 100,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 178,
+     "y": 122,
+     "hdg": 200,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "A wave drops your bow onto the mark"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "You round the leeward mark cleanly, harden up onto the beat, and as you sheet in your transom swings and hits the mark. You are already heading up the next leg. Have you broken rule 31?",
+  "a": "Yes — the mark ends the run and begins the beat, so it is a mark of the leg you are sailing; take a One-Turn Penalty",
+  "o": [
+   "No — once your bow has passed the mark you are on the next leg and the mark no longer counts",
+   "No — only contact with the bow or the hull forward of the mast counts as touching a mark",
+   "Yes — but as the touch was after the rounding the penalty is two turns"
+  ],
+  "why": "Rule 31: a mark that begins, bounds or ends the leg she is sailing; the leeward mark both ends the run and begins the beat.",
+  "ref": "RRS 31, RRS 44.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 100,
+    "label": "Leeward mark"
+   },
+   "boats": [
+    {
+     "x": 172,
+     "y": 126,
+     "hdg": 330,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Hardening up after rounding, your transom hits the mark"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "You sail through the leeward gate intending to round the left-hand mark. On the way through, your spinnaker pole end touches the right-hand gate mark, which you are not rounding. Your crew says only the mark you round matters. Right?",
+  "a": "No — both gate marks bound the leg, so touching either is a breach of rule 31; take a One-Turn Penalty",
+  "o": [
+   "Yes — rule 31 applies only to the gate mark you actually round",
+   "Yes — a spinnaker pole is not part of the boat for the purposes of rule 31",
+   "No — but the penalty is two turns because you touched a mark you were not rounding"
+  ],
+  "why": "Rule 31: a boat shall not touch a mark that begins, bounds or ends the leg she is sailing; both gate marks do.",
+  "ref": "RRS 31",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 190,
+    "y": 110,
+    "label": "Right-hand gate mark"
+   },
+   "boats": [
+    {
+     "x": 176,
+     "y": 100,
+     "hdg": 190,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "The left-hand gate mark is off the picture to the left"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Red saw your mainsail leech brush the windward mark, hailed \"Protest\" and displayed her red flag. You felt nothing and took no penalty. At the hearing the protest committee finds that you did touch the mark. What is the penalty?",
+  "a": "Disqualification — the One-Turn Penalty is available only at the time of the incident; a boat found at a hearing to have broken rule 31 is disqualified",
+  "o": [
+   "A One-Turn Penalty imposed by the protest committee, taken before the next race",
+   "A 20 % scoring penalty — the protest committee cannot disqualify for touching a mark",
+   "No penalty — a touch you did not feel is not a breach"
+  ],
+  "why": "Rule 60.5(c): a boat found to have broken a rule and not exonerated is disqualified unless another penalty applies; rule 44 is for the time of the incident.",
+  "ref": "RRS 60.5(c), RRS 31",
+  "fig": {
+   "type": "card",
+   "title": "Protest hearing",
+   "lines": [
+    "Red: your leech brushed the windward mark",
+    "Red hailed and showed a red flag",
+    "You felt nothing, took no penalty",
+    "PC finds that you touched the mark"
+   ],
+   "tag": "Penalty?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "Approaching the pin end of the finishing line on starboard in light air, your bow touches the pin mark before any part of your hull has crossed the line. What must you do?",
+  "a": "Take a One-Turn Penalty with your hull completely on the course side, then finish — a finishing mark bounds the last leg",
+  "o": [
+   "Nothing — rule 31 covers a finishing mark only after finishing",
+   "Cross the line, then take the One-Turn Penalty on the far side",
+   "Finish, then return and pass the pin again on the other side to cancel the touch"
+  ],
+  "why": "Rule 31 covers a mark that bounds the leg; rule 44.2: a penalty near the finishing line is taken with the hull completely on the course side before finishing.",
+  "ref": "RRS 31, RRS 44.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finishing line"
+   },
+   "boats": [
+    {
+     "x": 74,
+     "y": 136,
+     "hdg": 350,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Your bow touches the pin before your hull crosses"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Rounding the windward mark tight in a Hobie 16, your crew reaches out and pushes the mark away with her hand so that the hulls do not hit it. Has the boat touched the mark?",
+  "a": "Yes — a crew member's hand on the mark is the boat touching it; a One-Turn Penalty is due",
+  "o": [
+   "No — fending off by hand is seamanlike and avoids a touch by the hull",
+   "No — only the hull, spars and sails count; a crew member is not the boat",
+   "Yes — and because the touch was deliberate the penalty is two turns"
+  ],
+  "why": "Rule 31: a boat touches a mark when her hull, equipment or crew touch it; fending off is still a touch.",
+  "ref": "RRS 31, RRS 44.2",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 90,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 173,
+     "y": 118,
+     "hdg": 320,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Your crew fends the mark off by hand"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "You touched the leeward mark and decide to take your penalty: you tack onto port, then bear away straight onto the new leg without gybing, because that was quicker and you ended up on the same heading as before. Is the penalty taken?",
+  "a": "No — a turn must include one tack and one gybe; without the gybe you have not taken the One-Turn Penalty",
+  "o": [
+   "Yes — a tack followed by bearing away through 360° of heading counts as one turn",
+   "Yes — for touching a mark a tack alone is enough; the gybe is only needed for Part 2 breaches",
+   "No — the penalty must consist of two gybes, not a tack"
+  ],
+  "why": "Rule 44.2: each turn includes one tack and one gybe, made promptly in the same direction.",
+  "ref": "RRS 44.2",
+  "fig": {
+   "type": "card",
+   "title": "Penalty for touching the mark",
+   "lines": [
+    "You tack onto port",
+    "Bear away onto the new leg",
+    "No gybe — it was quicker",
+    "Same heading as before"
+   ],
+   "tag": "Valid?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "Finishing upwind in an ILCA 7, your bow crosses the finishing line; you tack away at once, so the rest of the hull never crosses. The race officer took your time as the bow crossed. Have you finished?",
+  "a": "Yes — a boat finishes when any part of her hull crosses the line from the course side; she need not cross completely",
+  "o": [
+   "No — the whole hull must cross the line before a boat has finished",
+   "No — tacking back onto the course side cancels the crossing and you must cross again",
+   "Yes, but only because the race officer recorded a time; otherwise you would not have finished"
+  ],
+  "why": "Definition Finish: any part of the hull crossing from the course side; after finishing she need not cross completely (rule 28.1).",
+  "ref": "RRS definition Finish, RRS 28.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finishing line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 116,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Your bow crosses, then you tack away"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Downwind finish. Your spinnaker, flying well ahead of the bow, is across the finishing line a full second before Blue's bow; Blue's hull then crosses, and your hull crosses after it. Who finished first?",
+  "a": "Blue — a boat finishes when part of her hull crosses the line; sails and other equipment do not count",
+  "o": [
+   "You — any part of the boat or her equipment in its normal position crossing the line counts",
+   "You — on a downwind finish the spinnaker is taken as the foremost point of the boat",
+   "A dead heat — the race committee scores both boats in the same place"
+  ],
+  "why": "Definition Finish (2021 wording): any part of her hull crosses the finishing line; equipment such as a spinnaker is not counted.",
+  "ref": "RRS definition Finish",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finishing line"
+   },
+   "boats": [
+    {
+     "x": 140,
+     "y": 90,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 186,
+     "y": 95,
+     "hdg": 180,
+     "label": "Blue"
+    }
+   ],
+   "note": "Your spinnaker is over the line; Blue's bow, then your hull, follow"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Two lengths before the finishing line you foul Red on port tack. Your bow crosses the line, and only then do you start a Two-Turns Penalty just beyond the line. Have you finished, and when?",
+  "a": "Not yet — a boat that takes a rule 44.2 penalty after crossing has not finished; sail completely back to the course side, do the turns and cross again",
+  "o": [
+   "Yes — you finished when your bow crossed; the turns afterwards are a separate matter",
+   "Yes — provided you complete the two turns within the finishing window set by the SI",
+   "No — and you cannot finish now; a penalty after crossing the line means DNF"
+  ],
+  "why": "Rule 44.2: near the finishing line the hull must be completely on the course side before she finishes; definition Finish (a).",
+  "ref": "RRS 44.2, RRS definition Finish",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 100,
+    "x2": 240,
+    "y2": 100,
+    "label": "Finishing line"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 72,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You fouled Red two lengths before the line and crossed it"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "You start a Two-Turns Penalty on the course side, close to the finishing line. In the second turn your bow pokes across the line; you complete the turn on the course side and then cross the line. Which crossing is your finish?",
+  "a": "The last one — after the penalty your hull had to be wholly on the course side before you could finish, so the poke across does not count",
+  "o": [
+   "The first one — the moment your bow poked across the line during the second turn, as the race committee recorded it",
+   "Neither — a boat that crosses the line during a penalty is scored DNF",
+   "The first one, but with a 20 % scoring penalty added for crossing early"
+  ],
+  "why": "Rule 44.2 and definition Finish (a): a boat taking a penalty at or near the line has not finished until her hull is wholly on the course side and she crosses.",
+  "ref": "RRS 44.2, RRS definition Finish",
+  "fig": {
+   "type": "card",
+   "title": "Two-Turns Penalty near the finishing line",
+   "lines": [
+    "You start the turns on the course side",
+    "In the second turn your bow pokes",
+    "across the line; you complete the turn",
+    "on the course side and cross the line"
+   ],
+   "tag": "Finish?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "You cross the finishing line in a 470 in the middle of the fleet. Your crew asks whether you must now sail on through the line or come back the way you came. What are the rules?",
+  "a": "You may clear the line in either direction, but you must not interfere with boats that are still racing",
+  "o": [
+   "You must continue across and clear the line in the direction you were sailing",
+   "You must return to the course side so the race committee can see your sail number again",
+   "You must sail round the committee boat before leaving the finishing area"
+  ],
+  "why": "Rule 28.1: after finishing she need not cross the line completely; rule 23.1: a boat not racing shall not interfere with a boat racing.",
+  "ref": "RRS 28.1, RRS 23.1",
+  "fig": null
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "On the last leg of a coastal race you see a RIB anchored with a blue flag on a staff and, 80 m from it, a yellow buoy. No other committee vessel is in sight. What does the blue flag tell you?",
+  "a": "That the staff with the blue flag is one end of the finishing line — finish between it and the buoy",
+  "o": [
+   "That the course has been shortened and you finish at the next rounding mark",
+   "That the RIB is a mark of the course to be left to port",
+   "That a protest hearing will be held ashore; come within hail for instructions"
+  ],
+  "why": "Race signals: a staff displaying a blue flag marks one end of the finishing line.",
+  "ref": "RRS race signals (blue flag)",
+  "fig": {
+   "type": "card",
+   "title": "Last leg, coastal race",
+   "lines": [
+    "A RIB anchored with a blue flag on a staff",
+    "A yellow buoy 80 m from it",
+    "No other committee vessel in sight"
+   ],
+   "tag": "Blue flag"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "A 40° shift on the last beat lets you fetch the finishing line from the north, the side away from the last mark. You cross the line heading south, the opposite way to the fleet. Have you finished?",
+  "a": "No — a boat finishes by crossing the line from the course side, the direction of the last mark; you must go round an end and cross correctly",
+  "o": [
+   "Yes — the direction of crossing does not matter as long as the whole hull passes between the marks",
+   "Yes — the race committee must record any crossing of the line after the starting signal",
+   "No — and you can no longer finish, since a line crossed the wrong way is closed to that boat"
+  ],
+  "why": "Definition Finish: any part of the hull crosses the finishing line from the course side; a crossing from the other side is not a finish.",
+  "ref": "RRS definition Finish, RRS 28.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finishing line"
+   },
+   "mark": {
+    "x": 110,
+    "y": 168,
+    "label": "Last mark"
+   },
+   "boats": [
+    {
+     "x": 190,
+     "y": 80,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You approach the line from the side away from the last mark"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "You cross the finishing line between the committee boat and the pin, from the direction of the last mark. There is no horn and nobody seems to be on deck. Your helm wants to go round and cross again to be sure. Have you finished?",
+  "a": "Yes — finishing is defined by your hull crossing the line from the course side, not by a sound signal or an acknowledgement",
+  "o": [
+   "No — a boat has not finished until the race committee makes a sound signal for her",
+   "No — without an acknowledgement you must cross again until the committee reacts",
+   "Yes, but your finishing time will be the time of your second crossing"
+  ],
+  "why": "Definition Finish: a boat finishes when any part of her hull crosses the line from the course side; the rules require no signal from the RC.",
+  "ref": "RRS definition Finish",
+  "fig": {
+   "type": "card",
+   "title": "You cross the finishing line",
+   "lines": [
+    "Between the RC boat and the pin",
+    "From the direction of the last mark",
+    "No horn, nobody on deck"
+   ],
+   "tag": "Finished?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "The sailing instructions say: \"Boats failing to finish within 20 minutes after the first boat sails the course and finishes will be scored DNF without a hearing.\" The breeze dies and you cross the line 22 minutes after the winner. How are you scored?",
+  "a": "DNF — the finishing window in the sailing instructions had closed, and no hearing is needed",
+  "o": [
+   "By your finishing place — once the first boat has finished within the time limit every boat that finishes is scored",
+   "DNC — a boat outside the finishing window is treated as not having come to the starting area",
+   "By your finishing place, but with a 20 % scoring penalty for finishing late"
+  ],
+  "why": "Rule 35 and A5.1: the SI may set a finishing window; a boat outside it is scored DNF without a hearing.",
+  "ref": "RRS 35, RRS A5.1",
+  "fig": {
+   "type": "card",
+   "title": "SI 14.2: finishing window",
+   "lines": [
+    "DNF if not finished within 20 min",
+    "after the first boat finishes",
+    "Winner finished at 15:40",
+    "You crossed the line at 16:02"
+   ],
+   "tag": "Score?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "A Wednesday evening race has a time limit of 90 minutes. The wind dies completely; at 90 minutes the leading boat is still 200 m from the finishing line and nobody has finished. What must the race committee do?",
+  "a": "Abandon the race — if no boat sails the course and finishes within the time limit the race is abandoned",
+  "o": [
+   "Score the boats by their positions on the course at the moment the time limit expired",
+   "Wait until the leader finishes and then give every other boat a finishing window",
+   "Shorten the course to the last mark the leader rounded and score the boats as they passed it"
+  ],
+  "why": "Rule 35: if no boat finishes within the time limit, the race committee shall abandon the race.",
+  "ref": "RRS 35",
+  "fig": {
+   "type": "card",
+   "title": "Time limit 90 minutes",
+   "lines": [
+    "Wind has died completely",
+    "Leader 200 m from the line at 90 min",
+    "No boat has finished"
+   ],
+   "tag": "RC action?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The sailing instructions give a time limit of two hours but say nothing about a finishing window. The winner finishes after 1 h 50 min; the breeze then dies and you drift across the line after 2 h 40 min. The race committee is still there. How are you scored?",
+  "a": "By your finishing place — once one boat sails the course and finishes within the time limit, all boats that finish are scored, unless the SI set a finishing window",
+  "o": [
+   "DNF — any boat finishing after the time limit has expired is scored as not having finished",
+   "DNF — a boat must finish within 30 minutes of the winner unless the SI say otherwise",
+   "By your finishing place, but only if the race committee did not abandon the race"
+  ],
+  "why": "Rule 35: if one boat finishes within the time limit and the race is not abandoned, all boats that finish are scored by their finishing places.",
+  "ref": "RRS 35",
+  "fig": {
+   "type": "card",
+   "title": "Time limit 2 h, no finishing window",
+   "lines": [
+    "Winner finished at 1 h 50 min",
+    "Breeze died",
+    "You crossed the line at 2 h 40 min",
+    "RC vessel still on station"
+   ],
+   "tag": "Score?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "You have finished, cleared the line and marks, dropped the sails and are motoring back to the harbour across the course. A Laser still racing on the run has to bear away sharply to avoid you. Did you break a rule, and which?",
+  "a": "Yes — rule 23.1: a boat not racing shall not interfere with a boat that is racing; you may be protested and penalised",
+  "o": [
+   "No — once you have finished the racing rules no longer apply to you",
+   "Yes — rule 10, since a boat under engine is on neither tack and must keep clear of every sailing boat",
+   "No — a boat racing must keep clear of a vessel under power under the collision regulations"
+  ],
+  "why": "Definition Racing ends when she finishes and clears the line and marks; rule 23.1 then forbids interfering with a boat racing.",
+  "ref": "RRS 23.1, RRS definition Racing",
+  "fig": {
+   "type": "card",
+   "title": "After finishing",
+   "lines": [
+    "You finished and cleared the line",
+    "Sails down, motoring across the course",
+    "A Laser on the run bears away sharply",
+    "to avoid you"
+   ],
+   "tag": "Rule?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "The finishing line runs between the committee boat and a pin; the windward mark lies 50 m beyond the pin. Approaching on starboard, you could save a tack by passing between the pin and the windward mark. Would you finish?",
+  "a": "No — to finish your hull must cross the line between its two marks; passing outside the pin is not a crossing",
+  "o": [
+   "Yes — the finishing line extends to the windward mark when it lies within 50 m of the pin",
+   "Yes — any crossing of the line or its extensions from the course side is a finish",
+   "No — but you may then take a One-Turn Penalty and be scored as finished"
+  ],
+  "why": "Definition Finish: the hull must cross the finishing line, which runs between its marks; the extensions are not the line.",
+  "ref": "RRS definition Finish, RRS 28.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 90,
+    "y1": 110,
+    "x2": 245,
+    "y2": 110,
+    "label": "Finishing line"
+   },
+   "mark": {
+    "x": 40,
+    "y": 120,
+    "label": "Windward mark"
+   },
+   "boats": [
+    {
+     "x": 64,
+     "y": 150,
+     "hdg": 350,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "The windward mark lies 50 m beyond the pin"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "A Saronic Gulf regatta sets a time limit of 90 minutes for the first boat and a finishing window of 30 minutes. The first boat finishes after 89 minutes. You are 15 minutes behind her in a dying breeze. What does this mean for the race?",
+  "a": "The race stands — one boat finished within the time limit, and every boat that finishes within the next 30 minutes is scored by her place",
+  "o": [
+   "The race will be abandoned because most of the fleet will not finish within 90 minutes",
+   "Only the first boat is scored; the time limit applies to every boat individually",
+   "The race committee must shorten the course so that the rest of the fleet can finish"
+  ],
+  "why": "Rule 35: if one boat sails the course and finishes within the time limit, the race is scored; the SI finishing window applies to the rest.",
+  "ref": "RRS 35",
+  "fig": {
+   "type": "card",
+   "title": "Time limit 90 min, window 30 min",
+   "lines": [
+    "First boat finished at 89 min",
+    "You are 15 min behind her",
+    "Breeze dying"
+   ],
+   "tag": "Race valid?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "In a Melges 24 regatta the only boat to finish within the time limit is later disqualified after a protest hearing. The rest of the fleet finished a few minutes outside the limit but within the finishing window. Is the race still valid?",
+  "a": "Yes — a race is scored if one boat started, sailed the course and finished within the time limit, even if she is later disqualified or retires",
+  "o": [
+   "No — the time limit is now unmet by every boat with a valid finish, so the race is abandoned",
+   "No — the protest committee must order the race to be resailed",
+   "Yes, but only if the protest committee decides to give the fleet redress"
+  ],
+  "why": "Rule 90.3(a): a race is scored if not abandoned and one boat finished within the time limit, even if she afterwards retired or was disqualified.",
+  "ref": "RRS 90.3(a), RRS 35",
+  "fig": {
+   "type": "card",
+   "title": "After the protest hearing",
+   "lines": [
+    "Only one boat finished within the limit",
+    "She is disqualified at the hearing",
+    "The rest finished within the window"
+   ],
+   "tag": "Valid?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The sailing instructions add a mark 1 time limit: \"If no boat has passed mark 1 within 40 minutes the race will be abandoned.\" In a fading sea breeze the leader is still 100 m short of mark 1 at 41 minutes. What should you expect?",
+  "a": "Flag N with three sounds — the race committee abandons the race under the sailing instructions; a resail may follow",
+  "o": [
+   "Flag S with two sounds — the course is shortened to finish at mark 1",
+   "Nothing until the overall time limit expires; a mark time limit is only guidance for the race committee",
+   "Flag C — the race committee moves mark 1 closer so the leader can reach it in time"
+  ],
+  "why": "Rule 32.1 and 35: the RC abandons when the time limits set by the rules or the SI are not met, signalling N with three sounds.",
+  "ref": "RRS 32.1, RRS 35",
+  "fig": {
+   "type": "card",
+   "title": "SI 13.3: mark 1 time limit 40 min",
+   "lines": [
+    "Fading sea breeze",
+    "At 41 min the leader is 100 m",
+    "short of mark 1"
+   ],
+   "tag": "Expect?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Halfway up the last beat you break a batten and decide to retire. The shortest way home is straight down through the fleet still beating towards you. A 470 on starboard has to tack to avoid you. Where do you stand?",
+  "a": "A boat that has retired is no longer racing and must not interfere with a boat racing — you broke rule 23.1",
+  "o": [
+   "You are fine — a retired boat is no longer bound by any racing rule",
+   "You are fine — a retired boat keeps her Part 2 rights until she reaches the harbour",
+   "You broke rule 10 only; rule 23 applies only to boats that have finished"
+  ],
+  "why": "Definition Racing: a boat is no longer racing once she retires; rule 23.1: a boat not racing shall not interfere with a boat racing.",
+  "ref": "RRS 23.1, RRS definition Racing",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 160,
+     "y": 60,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 120,
+     "y": 140,
+     "hdg": 315,
+     "label": "A"
+    },
+    {
+     "x": 200,
+     "y": 135,
+     "hdg": 45,
+     "label": "B"
+    }
+   ],
+   "note": "You have retired and are sailing straight home through the fleet"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "On the second beat you see a committee RIB anchored beside mark 3 displaying flag S, and you hear two sound signals. Where do you now finish?",
+  "a": "Between mark 3 and the staff with flag S on the RIB — the course has been shortened to finish at that rounding mark",
+  "o": [
+   "At the original finishing line, but the race committee will score you as you pass mark 3",
+   "Between mark 3 and the next mark of the course",
+   "At mark 3 only if you are in the leading half of the fleet; the others sail the full course"
+  ],
+  "why": "Rule 32.2(a): when the course is shortened at a rounding mark, the finishing line is between the mark and a staff displaying flag S.",
+  "ref": "RRS 32.2(a), race signals",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 80,
+    "label": "Mark 3"
+   },
+   "line": {
+    "x1": 160,
+    "y1": 80,
+    "x2": 232,
+    "y2": 84,
+    "label": "Flag S, two sounds"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 150,
+     "hdg": 315,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "The committee RIB is anchored beside mark 3"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Running down to the leeward gate you see flag S with two sounds on a committee RIB anchored 30 m to the right of the right-hand gate mark. Where is the finishing line?",
+  "a": "Between the two gate marks — when a course is shortened at a gate, the line is between the gate marks",
+  "o": [
+   "Between the right-hand gate mark and the RIB displaying flag S",
+   "Between the left-hand gate mark and the RIB, so that boats pass through the gate first",
+   "Between whichever gate mark you choose to round and the RIB"
+  ],
+  "why": "Rule 32.2(c): when the course is shortened at a gate, the finishing line is between the gate marks.",
+  "ref": "RRS 32.2(c)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 190,
+    "y": 110,
+    "label": "Right-hand gate mark"
+   },
+   "obstruction": {
+    "x": 226,
+    "y": 104,
+    "w": 26,
+    "h": 12,
+    "label": "RIB, flag S"
+   },
+   "boats": [
+    {
+     "x": 160,
+     "y": 45,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "The left-hand gate mark is 60 m to the left, off the picture"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "You are second, 100 m behind the leader, when a committee RIB at mark 2 hoists flag S with two sounds — a few seconds after the leader has already crossed the line between the mark and the RIB. You finish there. What is the position?",
+  "a": "The shortening was improper — the signal must be made before the first boat crosses the new finishing line — so boats whose scores suffer may request redress",
+  "o": [
+   "The shortening is valid for every boat except the leader, who must sail the full course",
+   "The shortening is valid; the leader simply finishes at the original finishing line",
+   "The shortening is void and all boats must continue to the original finishing line"
+  ],
+  "why": "Rule 32.2: the shortened-course signal shall be made before the first boat crosses the finishing line; a late signal is an RC error (rule 61.4(b)(1)).",
+  "ref": "RRS 32.2, RRS 61.4(b)(1)",
+  "fig": {
+   "type": "card",
+   "title": "Mark 2, flag S hoisted",
+   "lines": [
+    "Leader crossed the mark–RIB line",
+    "a few seconds before the hoist",
+    "You cross 100 m behind her"
+   ],
+   "tag": "Valid?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "A trapezoid course in a dying breeze: at the halfway point the race committee calculates that no boat can finish within the time limit. May the race committee shorten the course, and under which provision?",
+  "a": "Yes — insufficient wind making it unlikely that any boat will finish within the time limit is a ground for shortening under rule 32.1",
+  "o": [
+   "No — once a race has started the course may only be shortened for safety reasons",
+   "No — the race committee must let the time limit expire and then abandon",
+   "Yes, but only with the agreement of a majority of the boats still racing"
+  ],
+  "why": "Rule 32.1(b): the RC may shorten or abandon because of insufficient wind making it unlikely that any boat will finish within the time limit.",
+  "ref": "RRS 32.1(b)",
+  "fig": {
+   "type": "card",
+   "title": "Trapezoid, breeze dying",
+   "lines": [
+    "Halfway through the course",
+    "RC: no boat can finish in time",
+    "Time limit 2 hours"
+   ],
+   "tag": "Shorten?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "On the first beat of a Dragon regatta off Split the committee boat hoists flag N and makes three sound signals. What does this mean for you?",
+  "a": "All races are abandoned; return to the starting area — the warning signal will be made one minute after flag N is lowered",
+  "o": [
+   "The course is shortened; finish at the next rounding mark, between the mark and the committee boat",
+   "Your individual start was invalid; return to the pre-start side and start again",
+   "No more racing today; all races are abandoned and you should return to the harbour"
+  ],
+  "why": "Rule 32.3 and race signals: N with three sounds — all races abandoned, return to the starting area; a warning follows one minute after removal.",
+  "ref": "RRS 32.3, race signals (N)",
+  "fig": {
+   "type": "card",
+   "title": "First beat, Dragon regatta",
+   "lines": [
+    "Committee boat hoists flag N",
+    "Three sound signals",
+    "You are halfway up the beat"
+   ],
+   "tag": "Flag N"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "At 15:00 on the last day of a Palma regatta, with a storm front approaching, the race committee abandons your race by displaying flag N over flag A with three sounds. What should you do?",
+  "a": "Head for the harbour — all races are abandoned and there will be no more racing today",
+  "o": [
+   "Return to the starting area and wait for the warning signal of a new start",
+   "Finish the race, as N over A abandons only the races that have not yet started",
+   "Sail to the committee boat; N over A means further signals will be made from there"
+  ],
+  "why": "Race signals: N over A — all races abandoned, no more racing today (N over H — further signals ashore).",
+  "ref": "RRS 32.3, race signals (N over A)",
+  "fig": {
+   "type": "card",
+   "title": "15:00, storm front approaching",
+   "lines": [
+    "Committee boat: flag N over flag A",
+    "Three sound signals"
+   ],
+   "tag": "N over A"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "Half the fleet, including you, has finished within the time limit when the wind dies completely and the rest of the boats are stuck a mile from the line. The race officer wants to abandon the race. May he?",
+  "a": "He may abandon under rule 32.1(b), but as boats have already finished within the time limit he must first consider the consequences for all boats in the race or series",
+  "o": [
+   "No — once one boat has finished within the time limit the race can no longer be abandoned",
+   "Yes, without restriction — abandoning after the start is entirely at the race committee's discretion",
+   "No — he must instead score the boats still sailing by their positions on the course"
+  ],
+  "why": "Rule 32.1: if a boat has finished within the time limit, the RC shall not abandon without considering the consequences for all boats in the race or series.",
+  "ref": "RRS 32.1",
+  "fig": {
+   "type": "card",
+   "title": "Wind has died",
+   "lines": [
+    "Half the fleet finished within the limit",
+    "The rest are a mile from the line",
+    "Race officer wants to abandon"
+   ],
+   "tag": "May he?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The regatta is behind schedule after a postponement. Twenty minutes into race 2, with good wind and no safety problem, the race committee displays flag S at mark 2 to shorten the course so that race 3 can be sailed. A competitor claims this is not allowed. Who is right?",
+  "a": "The race committee — it may shorten the course so that further scheduled races can be sailed",
+  "o": [
+   "The competitor — after the start a course may be shortened only for weather, wind or a missing mark",
+   "The competitor — the schedule is a reason to postpone later races, never to shorten a race in progress",
+   "Neither — the race committee may shorten only with the protest committee's approval"
+  ],
+  "why": "Rule 32.1: in addition to the listed grounds, the RC may shorten the course so that other scheduled races can be sailed.",
+  "ref": "RRS 32.1",
+  "fig": {
+   "type": "card",
+   "title": "Race 2, behind schedule",
+   "lines": [
+    "Good wind, no safety problem",
+    "Flag S at mark 2, two sounds",
+    "Purpose: to fit in race 3"
+   ],
+   "tag": "Allowed?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Three classes are racing on the same course. At the leeward gate a committee RIB displays flag S over the Optimist class flag, with two sounds. You are sailing a 420. Where do you finish?",
+  "a": "At the original finishing line — a signal displayed over a class flag applies only to that class, so only the Optimists finish at the gate",
+  "o": [
+   "At the gate — a shortened course applies to every class on that course",
+   "At the gate, but only if the Optimists started before you",
+   "Nowhere yet — you must wait for a separate flag S for the 420 class before you may finish anywhere"
+  ],
+  "why": "Race signals: a visual signal displayed over a class flag applies only to that class; rule 32.2 shortens the course for that class.",
+  "ref": "RRS 32.2, race signals",
+  "fig": {
+   "type": "card",
+   "title": "Leeward gate, three classes",
+   "lines": [
+    "Committee RIB: flag S over the",
+    "Optimist class flag, two sounds",
+    "You are racing a 420"
+   ],
+   "tag": "Finish where?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The course has been shortened at mark 2, to be left to port; the flag S boat lies to the right of the mark. Approaching on the run, must you still round mark 2 before you finish?",
+  "a": "No — you finish when your hull crosses the line between mark 2 and the S boat from the direction of the last mark, leaving mark 2 on the required side",
+  "o": [
+   "Yes — round mark 2 as usual and then cross the line from the other side",
+   "Yes — the shortened course only moves the finish; every mark must still be rounded",
+   "No — and you may cross the line from either direction, since it was not part of the original course"
+  ],
+  "why": "Rule 32.2(a) and definition Finish: cross the line between the mark and the S staff from the course side; the mark keeps its required side.",
+  "ref": "RRS 32.2(a), RRS definition Finish",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 150,
+    "y": 100,
+    "label": "Mark 2"
+   },
+   "line": {
+    "x1": 150,
+    "y1": 100,
+    "x2": 230,
+    "y2": 104,
+    "label": "Flag S"
+   },
+   "boats": [
+    {
+     "x": 185,
+     "y": 40,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Marks to port; you come down the run"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Ten minutes after the start the race officer realises the warning signal was made with the wrong class flag. He displays flag N with three sounds. Was he entitled to abandon for that reason after the start?",
+  "a": "Yes — an error in the starting procedure is a ground for abandoning after the start under rule 32.1",
+  "o": [
+   "No — after the starting signal the race may be abandoned only for weather or a missing mark",
+   "No — a starting error can only be dealt with by a general recall before the start",
+   "Yes, but only if a boat requests redress for the error"
+  ],
+  "why": "Rule 32.1: after the starting signal the RC may abandon the race because of an error in the starting procedure.",
+  "ref": "RRS 32.1",
+  "fig": {
+   "type": "card",
+   "title": "Ten minutes after the start",
+   "lines": [
+    "Warning signal was made with the",
+    "wrong class flag",
+    "Flag N, three sounds"
+   ],
+   "tag": "Entitled?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "Finishing at a shortened course, you squeeze between mark 2 and the committee RIB flying flag S and your boom taps the RIB's hull as you cross. Does this matter?",
+  "a": "Yes — the RIB from which the finishing line extends is a finishing mark; take a One-Turn Penalty, sail completely back to the course side and finish again",
+  "o": [
+   "No — the RIB is a committee vessel, not a mark; only the buoy at the other end is a finishing mark",
+   "No — rule 31 does not apply at a shortened-course finish",
+   "Yes — but as you had already crossed you are finished, and only a protest can penalise you"
+  ],
+  "why": "Definition Mark: a race committee vessel from which the finishing line extends is a mark; rule 31 and rule 44.2 near the finishing line.",
+  "ref": "RRS 31, RRS 44.2, RRS definition Mark",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 150,
+    "y": 100,
+    "label": "Mark 2"
+   },
+   "line": {
+    "x1": 150,
+    "y1": 100,
+    "x2": 230,
+    "y2": 104,
+    "label": "Flag S"
+   },
+   "boats": [
+    {
+     "x": 205,
+     "y": 118,
+     "hdg": 350,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Your boom taps the S boat as you cross"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The sailing instructions require boats to pass through the start/finish line in the middle of every lap. On lap 1 of a three-lap race the committee boat displays flag S with two sounds. Where do you finish?",
+  "a": "At the start/finish line as you next cross it — a course may be shortened at a line boats are required to cross according to the course description",
+  "o": [
+   "At the next rounding mark, between the mark and a staff with flag S",
+   "At the start/finish line only after completing the lap you are sailing in full",
+   "The signal is invalid, because a course can only be shortened at a rounding mark or a gate"
+  ],
+  "why": "Rule 32.2(b): the finishing line may be a line boats are required to cross according to the course description.",
+  "ref": "RRS 32.2(b)",
+  "fig": {
+   "type": "card",
+   "title": "Three-lap course",
+   "lines": [
+    "SI: pass through the start/finish line",
+    "in the middle of every lap",
+    "Lap 1: committee boat shows flag S,",
+    "two sounds"
+   ],
+   "tag": "Finish where?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "You missed the flag S at mark 3 and, having crossed the line between mark 3 and the committee RIB, carried on round the rest of the course to the original finishing line, crossing it twenty minutes later. Which is your finish?",
+  "a": "Your crossing of the shortened line at mark 3 — the course was complete there, so you finished then; the extra sailing changes nothing",
+  "o": [
+   "Your crossing of the original finishing line — a boat is scored at the last line she crosses",
+   "Neither — a boat that does not see the shortening signal is scored DNF",
+   "Your crossing at mark 3, but with a penalty for sailing beyond the finish"
+  ],
+  "why": "Rule 32.2 and definition Finish: she finished when her hull crossed the shortened finishing line from the course side; later sailing is irrelevant.",
+  "ref": "RRS 32.2, RRS definition Finish",
+  "fig": {
+   "type": "card",
+   "title": "Flag S at mark 3 missed",
+   "lines": [
+    "You crossed the mark–RIB line",
+    "Carried on round the course",
+    "Crossed the original line 20 min later"
+   ],
+   "tag": "Finish?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "You are leading on the last leg when the race committee abandons the race because the windward mark has dragged 300 m from its position and several boats rounded it in different places. You lose a certain win. Can you get redress?",
+  "a": "No — abandoning because a mark is out of position is a proper action under rule 32.1(c), and redress requires an improper action or omission of the race committee",
+  "o": [
+   "Yes — a boat leading when a race is abandoned is entitled to average points for that race",
+   "Yes — the race committee should have shortened the course instead, and failing to do so is improper",
+   "No — redress is never available for anything that happens after the starting signal"
+  ],
+  "why": "Rule 32.1(c) allows abandonment for a mark missing or out of position; rule 61.4(b)(1) requires an improper action or omission.",
+  "ref": "RRS 32.1(c), RRS 61.4(b)(1)",
+  "fig": {
+   "type": "card",
+   "title": "Last leg, you are leading",
+   "lines": [
+    "Windward mark dragged 300 m",
+    "Boats rounded in different places",
+    "RC: flag N, three sounds"
+   ],
+   "tag": "Redress?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "During race 4 of a 29er regatta on a lake, the committee boat displays flag N over flag H with three sounds. What is the race committee telling you?",
+  "a": "All races in progress are abandoned; go ashore and wait for further signals there",
+  "o": [
+   "All races are abandoned and there will be no more racing today",
+   "Race 4 is shortened; finish at the next mark where a staff with flag H is displayed",
+   "Return to the starting area; a new warning signal will be made in one minute"
+  ],
+  "why": "Race signals: N over H — all races abandoned, further signals ashore (N over A — no more racing today).",
+  "ref": "RRS 32.3, race signals (N over H)",
+  "fig": {
+   "type": "card",
+   "title": "Race 4, 29er regatta",
+   "lines": [
+    "Committee boat: flag N over flag H",
+    "Three sound signals"
+   ],
+   "tag": "N over H"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 1,
+  "q": "Approaching the windward mark on the first beat you see a committee RIB near the mark displaying flag C with repeated sound signals and a green triangle. What has changed?",
+  "a": "The position of the next mark has been changed — it has been moved to starboard of its original position",
+  "o": [
+   "The course has been shortened and the next mark is now the finish",
+   "The next mark has been moved to port; green marks the port side on the course board",
+   "The windward mark you are approaching has been moved and you must look for it to starboard"
+  ],
+  "why": "Rule 33(a): flag C with repeated sounds and a green triangle — the direction of the next leg is changed to starboard.",
+  "ref": "RRS 33(a), race signals (C)",
+  "fig": {
+   "type": "card",
+   "title": "Approaching the windward mark",
+   "lines": [
+    "Committee RIB near mark 1:",
+    "flag C, repeated sound signals,",
+    "a green triangle"
+   ],
+   "tag": "Flag C"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "At the leeward gate a committee boat shows flag C with repeated sound signals and a board with a minus sign. Your crew wonders whether the race has been shortened. What does the signal mean?",
+  "a": "The next leg has been made shorter — the windward mark has been moved closer; the race continues",
+  "o": [
+   "The course has been shortened and you finish at the windward mark",
+   "The next leg is longer by one mark; the minus sign means a mark has been removed from the course",
+   "The time limit has been reduced; check the notice board after the race"
+  ],
+  "why": "Rule 33(b): flag C with repeated sounds and \"−\" — the length of the next leg is decreased (\"+\" — increased).",
+  "ref": "RRS 33(b), race signals (C)",
+  "fig": {
+   "type": "card",
+   "title": "Leeward gate",
+   "lines": [
+    "Committee boat: flag C,",
+    "repeated sound signals,",
+    "a board showing \"−\""
+   ],
+   "tag": "Meaning?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "On the run towards the leeward gate you see a committee RIB beside the gate showing flag C, repeated sounds and a board reading 215. What does the number tell you?",
+  "a": "The new compass bearing of the next leg — the windward mark now lies on 215° from the gate",
+  "o": [
+   "The distance to the next mark in metres, since the leg has been shortened",
+   "The sail number of a boat the race committee intends to protest",
+   "The time at which the race will be abandoned if no boat has finished"
+  ],
+  "why": "Rule 33(a)(1): a change of direction of the next leg may be signalled by displaying the new compass bearing.",
+  "ref": "RRS 33(a)(1)",
+  "fig": {
+   "type": "card",
+   "title": "Run to the leeward gate",
+   "lines": [
+    "Committee RIB beside the gate:",
+    "flag C, repeated sounds,",
+    "a board reading 215"
+   ],
+   "tag": "215?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "You lead round the windward mark and are already ten lengths down the run when the race committee, behind you, hoists flag C with a green triangle at the mark to move the leeward gate. You never see it and sail to the old gate position, where there are no marks. Where do you stand?",
+  "a": "The change was signalled improperly — it must be signalled before the boats begin the leg — so if your score suffers you may request redress",
+  "o": [
+   "You must still find the new gate; the race committee may change a leg at any moment while boats are racing",
+   "You are scored NSC for missing the gate, and nothing can be done about it",
+   "The change is void for the whole fleet, which must sail the original course"
+  ],
+  "why": "Rule 33: a change is signalled before boats begin the leg; a late signal is an improper RC action, a ground for redress under rule 61.4(b)(1).",
+  "ref": "RRS 33, RRS 61.4(b)(1)",
+  "fig": {
+   "type": "card",
+   "title": "Leading down the run",
+   "lines": [
+    "Flag C hoisted at the windward mark",
+    "after you were 10 lengths down the leg",
+    "You sailed to the old gate position:",
+    "no marks there"
+   ],
+   "tag": "Redress?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Flag C with a red rectangle is displayed at the windward mark as you round it. Looking down the run you cannot yet see the leeward gate in its new position; the mark-laying boat is still motoring with the buoys aboard. Is the change valid?",
+  "a": "Yes — the next mark need not be in position when the change is signalled; head to port of the old leg and look for the gate being laid",
+  "o": [
+   "No — a change of leg is valid only once the new mark is already anchored in position",
+   "No — without a visible mark you may sail to the original gate position and round there",
+   "Yes, but you may wait at the windward mark until the new gate is laid"
+  ],
+  "why": "Rule 33: the next mark need not be in position when the change is signalled; the red rectangle means the leg is changed to port.",
+  "ref": "RRS 33, RRS 33(a)(2)",
+  "fig": {
+   "type": "card",
+   "title": "Rounding the windward mark",
+   "lines": [
+    "Flag C, repeated sounds, red rectangle",
+    "New gate not yet visible",
+    "Mark-laying boat still motoring",
+    "with the buoys aboard"
+   ],
+   "tag": "Valid?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "After a 20° shift the race committee signalled a change at mark 2 with flag C and a green triangle. Rounding mark 3 later you find mark 4 has also been moved, but there was no flag C at mark 3. Was the race committee allowed to move mark 4 without signalling?",
+  "a": "Yes — to maintain the course configuration, legs after a changed leg may be changed without further signals",
+  "o": [
+   "No — every leg that is changed must be signalled with flag C at the mark where it begins",
+   "No — a second change in the same race requires the race to be abandoned",
+   "Yes, but only if mark 4 was moved by less than 100 m"
+  ],
+  "why": "Rule 33(c): to maintain the course configuration, subsequent legs may be changed without further signalling.",
+  "ref": "RRS 33(c)",
+  "fig": {
+   "type": "card",
+   "title": "After a 20° shift",
+   "lines": [
+    "Flag C + green triangle at mark 2",
+    "At mark 3: no signal",
+    "Mark 4 has also been moved"
+   ],
+   "tag": "Allowed?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "Halfway up the first beat you see the mark-laying boat lift the windward mark and re-lay it 150 m to the right, with no flag C anywhere and the original mark in no way missing or adrift. Several boats on the left are now badly placed. Was that a proper race committee action?",
+  "a": "No — rule 33 allows changing only the next leg, signalled before boats begin it, and rule 34 covers only a mark missing or out of position",
+  "o": [
+   "Yes — the race committee may move any mark at any time to keep the beat square to the wind",
+   "Yes — rule 34 allows a mark to be relaid wherever the race committee thinks best",
+   "No — but only because the mark was moved more than 100 m; a smaller adjustment needs no signal"
+  ],
+  "why": "Rule 33 permits changing the next leg, signalled before boats begin it; rule 34 permits repositioning only a mark missing or out of position.",
+  "ref": "RRS 33, RRS 34",
+  "fig": {
+   "type": "card",
+   "title": "First beat",
+   "lines": [
+    "Windward mark lifted and relaid",
+    "150 m to the right",
+    "No flag C; mark was not adrift",
+    "Left-side boats now badly placed"
+   ],
+   "tag": "Proper?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The sailing instructions say course changes will be signalled under rule 33. At mark 1 a committee boat shows flag C with repeated sounds, a red rectangle and a board with 190. Mark 2 was on 230° from mark 1. Where do you look for mark 2 now?",
+  "a": "On a bearing of 190° from mark 1 — the leg has been changed to port, and the board gives the new compass bearing",
+  "o": [
+   "On a bearing of 230° still — the red rectangle only warns that mark 2 is to be left to port",
+   "On a bearing of 270° — the red rectangle means 40° further to starboard",
+   "At mark 1 itself — flag C with a bearing means the course is shortened to finish here"
+  ],
+  "why": "Rule 33(a): the change of direction is signalled by the new compass bearing and/or a red rectangle (port) or green triangle (starboard).",
+  "ref": "RRS 33(a)",
+  "fig": {
+   "type": "card",
+   "title": "At mark 1",
+   "lines": [
+    "Flag C, repeated sound signals",
+    "Red rectangle",
+    "Board: 190",
+    "Mark 2 was on 230° from mark 1"
+   ],
+   "tag": "Bearing?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Running towards mark 2 you cannot find it; where it should be there is a committee RIB displaying flag M and making repetitive sound signals. What do you do?",
+  "a": "Treat the RIB as mark 2 — leave it on the required side and continue the course",
+  "o": [
+   "Sail to where mark 2 was laid according to the sailing instructions and round that position",
+   "Stop and wait: flag M means the race will be abandoned once all boats have gathered",
+   "Pass the RIB on either side; a committee vessel is never a mark unless it anchors a line"
+  ],
+  "why": "Rule 34(b): a missing mark may be replaced by an object displaying flag M with repetitive sound signals; it is then the mark.",
+  "ref": "RRS 34, race signals (M)",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "obstruction": {
+    "x": 147,
+    "y": 72,
+    "w": 26,
+    "h": 12,
+    "label": "RIB, flag M"
+   },
+   "boats": [
+    {
+     "x": 150,
+     "y": 140,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "Mark 2 has disappeared; the RIB makes repeated sound signals"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "During the second lap the leeward mark drags 80 m downwind in a gust. The mark-laying boat tows it back to its original position without any flag or sound signal. Blue says the race committee had to signal the move with flag C. Is Blue right?",
+  "a": "No — a mark out of position may be moved back to its correct position without a signal; flag C is for changing the next leg",
+  "o": [
+   "Yes — any movement of a mark while boats are racing must be signalled with flag C",
+   "Yes — the race committee should instead have abandoned the race",
+   "No — but the mark should have been replaced by a vessel with flag M, not towed back"
+  ],
+  "why": "Rule 34(a): if a mark is missing or out of position the RC shall, if possible, replace it in its correct position; no signal is required.",
+  "ref": "RRS 34(a)",
+  "fig": {
+   "type": "card",
+   "title": "Second lap",
+   "lines": [
+    "Leeward mark dragged 80 m downwind",
+    "Mark-laying boat tows it back",
+    "No flag, no sound signal"
+   ],
+   "tag": "Signal?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "The windward mark has sunk. There is no spare buoy and the only committee RIB is busy with a capsized Optimist. The leaders are approaching the spot where the mark was. What should the race committee do?",
+  "a": "If it cannot put a replacement or a vessel with flag M in position, it should abandon the race under rule 32.1(c), because a mark is missing",
+  "o": [
+   "Let the boats round the GPS position of the mark; the sailing instructions give its coordinates",
+   "Shorten the course with flag S at the leeward mark after the boats have come back down",
+   "Score the boats by their order of arrival at the spot and continue to the next mark"
+  ],
+  "why": "Rule 34: replace a missing mark or substitute an object with flag M if possible; otherwise rule 32.1(c) — abandon because a mark is missing.",
+  "ref": "RRS 34, RRS 32.1(c)",
+  "fig": {
+   "type": "card",
+   "title": "Windward mark sunk",
+   "lines": [
+    "No spare buoy",
+    "Only RIB busy with a capsized Optimist",
+    "Leaders approaching the spot"
+   ],
+   "tag": "RC action?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Mark 3 has gone adrift. A committee RIB with flag M and repeated sound signals has anchored about 100 m from where the mark used to be. You round the empty spot where mark 3 was, ignoring the RIB, and sail on. How will you be scored?",
+  "a": "NSC — the RIB with flag M replaced the mark, so you did not sail the course",
+  "o": [
+   "By your finishing place — the sailing instructions give the mark's position, and you rounded it",
+   "By your finishing place, since the RIB was not in the mark's exact position",
+   "DNF — a boat that does not round the replacement vessel is treated as not finishing"
+  ],
+  "why": "Rule 34(b): an object displaying flag M replaces the missing mark; rule 28 and A5.1 — a boat that does not sail the course is scored NSC.",
+  "ref": "RRS 34(b), RRS 28, RRS A5.1",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "obstruction": {
+    "x": 198,
+    "y": 66,
+    "w": 26,
+    "h": 12,
+    "label": "RIB, flag M"
+   },
+   "track": "M110 175 L112 100 Q118 76 136 92 L150 160",
+   "boats": [
+    {
+     "x": 150,
+     "y": 150,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You rounded the empty spot where mark 3 used to be"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "In race 2 you fouled Blue on port tack and took a Two-Turns Penalty. Twenty minutes later the race was abandoned and is now being resailed. Blue says you must take the two turns again at the start of the resail. Must you?",
+  "a": "No — a breach in the original race is not a reason to penalise a boat in the resail, except for rules 2, 30.2, 30.4, 69 or rule 14 with serious damage or injury",
+  "o": [
+   "Yes — penalties taken in an abandoned race do not count and must be repeated",
+   "Yes — but one turn is enough the second time",
+   "No — because you took the penalty at the time; had you not, you would be disqualified from the resail"
+  ],
+  "why": "Rule 36(b): breaches in the original race are not a reason to penalise a boat in the resail, with the listed exceptions.",
+  "ref": "RRS 36",
+  "fig": {
+   "type": "card",
+   "title": "Race 2 abandoned, now resailed",
+   "lines": [
+    "You fouled Blue and took two turns",
+    "Race abandoned 20 min later",
+    "Blue: \"do your turns again\""
+   ],
+   "tag": "Must you?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "In the original race Grey, on port, hit you at speed and holed your topsides — a clear breach of rule 14 with serious damage. The race was then abandoned for lack of wind and resailed. Grey sails the resail and says the abandonment wiped the slate clean. Is she right?",
+  "a": "No — rule 36 excepts rule 14 breaches that caused serious damage or injury; Grey can still be penalised for the original incident",
+  "o": [
+   "Yes — a breach in an abandoned race can never be penalised in the resail",
+   "Yes — but you can request redress in the resail for the damage",
+   "No — because any contact in an abandoned race carries over, with or without damage"
+  ],
+  "why": "Rule 36(b): a boat may still be penalised for a breach of rules 2, 30.2, 30.4, 69 or rule 14 when she caused serious damage or injury.",
+  "ref": "RRS 36(b), RRS 14",
+  "fig": {
+   "type": "card",
+   "title": "Original race, then resail",
+   "lines": [
+    "Grey on port hit you at speed",
+    "Your topsides holed: serious damage",
+    "Race abandoned, then resailed",
+    "Grey: \"slate wiped clean\""
+   ],
+   "tag": "Right?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Under a black flag you were in the triangle in the last minute and the race committee displayed your sail number after the general recall. The class now restarts. May you sail the restart?",
+  "a": "No — a boat disqualified under rule 30.4 may not sail in the restart; rule 36 makes 30.4 the one breach that bars a boat from a restarted race",
+  "o": [
+   "Yes — a general recall cancels all starting penalties, including the black flag",
+   "Yes — but you must start at least one minute after the starting signal",
+   "No — and you are also excluded from the rest of the regatta"
+  ],
+  "why": "Rule 36(a): a breach in the original race does not prevent a boat from competing in a restart, except a breach of rule 30.4.",
+  "ref": "RRS 36(a), RRS 30.4",
+  "fig": {
+   "type": "card",
+   "title": "Black flag start, general recall",
+   "lines": [
+    "In the triangle in the last minute",
+    "RC displayed your sail number",
+    "Class is restarting"
+   ],
+   "tag": "Restart?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "In a race later abandoned for a wind shift, Red deliberately sailed through the finishing area to block a rival, breaking rule 2. The race is resailed. Red says the abandonment ends the matter. Does it?",
+  "a": "No — rule 36 keeps rule 2 breaches alive: Red can still be penalised for the original race despite the abandonment",
+  "o": [
+   "Yes — once a race is abandoned nothing that happened in it can be penalised",
+   "Yes — unless the rival requests redress in the resail",
+   "No — but only a report under rule 69 can now be made, not a protest"
+  ],
+  "why": "Rule 36(b): a breach of rule 2, 30.2, 30.4, 69 or rule 14 with serious damage in the original race may still be penalised after a resail.",
+  "ref": "RRS 36(b), RRS 2",
+  "fig": {
+   "type": "card",
+   "title": "Abandoned race, resailed",
+   "lines": [
+    "Red deliberately blocked a rival",
+    "A breach of rule 2 (fair sailing)",
+    "Red: \"the abandonment ends it\""
+   ],
+   "tag": "Ends it?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "Your hull has crossed the finishing line and you are turning away on port tack, still within a length of the pin. Blue, finishing on starboard, is converging. Who keeps clear?",
+  "a": "You do — until you clear the finishing line and marks you are still racing, so rule 10 applies as usual between you",
+  "o": [
+   "Blue — a boat that has finished has right of way over boats still finishing",
+   "Nobody — once a boat's hull has crossed the line the rules of Part 2 no longer apply to her",
+   "Blue — she must not interfere with a boat that has finished, under rule 23.1"
+  ],
+  "why": "Definition Racing: a boat is racing until she finishes and clears the line and marks; Part 2 applies, rule 10 (opposite tacks).",
+  "ref": "RRS 10, RRS definition Racing",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "line": {
+    "x1": 60,
+    "y1": 110,
+    "x2": 240,
+    "y2": 110,
+    "label": "Finishing line"
+   },
+   "boats": [
+    {
+     "x": 92,
+     "y": 92,
+     "hdg": 60,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 135,
+     "y": 138,
+     "hdg": 315,
+     "label": "Blue"
+    }
+   ],
+   "note": "You have crossed but not yet cleared the line"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The sailing instructions for a coastal race say: \"Mark 1 to port, mark 2 to starboard, mark 3 to port.\" Your crew assumes all marks are to port and plans to round mark 2 turning left. What is correct?",
+  "a": "Round mark 2 leaving it to starboard, turning right — each mark must be left on the side the sailing instructions specify for it",
+  "o": [
+   "Round all marks to port — marks of a course are always left on the same side",
+   "Round mark 2 either side — a single mark with a different side does not bound a leg",
+   "Round mark 2 to port and take a One-Turn Penalty for the error"
+  ],
+  "why": "Rule 28.1 and definition Sail the Course: each mark is passed on its required side as given in the sailing instructions.",
+  "ref": "RRS 28.1",
+  "fig": {
+   "type": "card",
+   "title": "SI 10.2: the course",
+   "lines": [
+    "Mark 1 to port",
+    "Mark 2 to starboard",
+    "Mark 3 to port",
+    "Crew plans to turn left at mark 2"
+   ],
+   "tag": "Correct?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The sailing instructions name mark 2 as a rounding mark; the course doubles back from it towards mark 1. In a foul tide you turn back 50 m short of mark 2, well on its correct side, and head for mark 1. Have you sailed the leg?",
+  "a": "No — the string must touch each rounding mark; by turning short of mark 2 you never passed it, and you must go back and round it before you finish",
+  "o": [
+   "Yes — the string stays on the correct side of mark 2, so the leg is sailed",
+   "Yes — a rounding mark need only be approached within hailing distance",
+   "No — and because you turned short of a mark you are scored DNF"
+  ],
+  "why": "Definition Sail the Course: the string touches each mark the SI designate a rounding mark; rule 28.2 allows the error to be corrected.",
+  "ref": "RRS 28, RRS definition Sail the Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 70,
+    "label": "Mark 2 (rounding mark)"
+   },
+   "track": "M110 175 L150 105 L190 165",
+   "boats": [
+    {
+     "x": 188,
+     "y": 160,
+     "hdg": 155,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You turned back 50 m short of mark 2"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "At mark 2 the committee boat shows flag C with repeated sounds, a board with 040 and a minus sign. The leg to mark 3 was 1.2 miles on 020°. What do you now know about the leg to mark 3?",
+  "a": "It now lies on 040° and is shorter than 1.2 miles — mark 3 has been moved to starboard and closer",
+  "o": [
+   "It lies on 040° and is 1.2 miles minus 40 metres long",
+   "It lies 40° to port of the old bearing and is shorter",
+   "It is unchanged — the signal concerns the leg after mark 3"
+  ],
+  "why": "Rule 33(a) and (b): flag C with a new compass bearing changes the direction, and \"−\" means the leg has been shortened.",
+  "ref": "RRS 33",
+  "fig": {
+   "type": "card",
+   "title": "At mark 2",
+   "lines": [
+    "Flag C, repeated sound signals",
+    "Board: 040 and \"−\"",
+    "Old leg to mark 3: 1.2 M on 020°"
+   ],
+   "tag": "New leg?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "You pass between the leeward gate marks and gybe round the right-hand mark, leaving it to starboard. Your crew protests that the sailing instructions say \"marks to port\". Did you round correctly?",
+  "a": "Yes — at a gate a boat passes between the marks and may round either; rounding the right-hand mark means leaving it to starboard, which the gate definition allows",
+  "o": [
+   "No — with marks to port the right-hand gate mark may only be passed on your port side",
+   "No — you should have gone round the outside of the right-hand mark to keep it to port",
+   "Yes, but only because your crew had not hailed which mark to take"
+  ],
+  "why": "Definition Sail the Course: at a gate the string passes between the marks from the previous mark and then round either gate mark.",
+  "ref": "RRS 28, RRS definition Sail the Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 190,
+    "y": 110,
+    "label": "Right-hand gate mark"
+   },
+   "track": "M168 35 L176 100 L192 128 L210 112 L205 92",
+   "boats": [
+    {
+     "x": 208,
+     "y": 88,
+     "hdg": 45,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "The left-hand gate mark is off the picture to the left"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "In a Hobie 16 race the only boat to cross the finishing line within the 90-minute time limit is later scored NSC because she left mark 3 on the wrong side. Three other boats crossed the line a few minutes after the time limit. Is the race valid?",
+  "a": "No — a race is scored only if a boat started, sailed the course and finished within the time limit; an NSC boat did not sail the course, so the race must be abandoned",
+  "o": [
+   "Yes — she crossed the finishing line within the time limit, and that is what the time limit measures",
+   "Yes — the first of the three later boats is treated as having finished within the limit",
+   "No — but the race committee may score the three boats by their order of crossing"
+  ],
+  "why": "Rule 35 and 90.3(a): the race stands only if one boat starts, sails the course and finishes within the time limit; otherwise it is abandoned.",
+  "ref": "RRS 35, RRS 90.3(a)",
+  "fig": {
+   "type": "card",
+   "title": "Time limit 90 min",
+   "lines": [
+    "Only one boat crossed within 90 min",
+    "She is scored NSC (mark 3 wrong side)",
+    "Three boats crossed a few minutes later"
+   ],
+   "tag": "Valid?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "A change of course was correctly signalled with flag C at the windward mark before you got there, but you did not notice it. You sailed to the original leeward mark, which had been removed, found nothing and eventually finished. How will you be scored?",
+  "a": "NSC — the changed course is the course; a boat that does not see a correctly made signal is still bound by it",
+  "o": [
+   "By your finishing place — a boat that could not see the new mark is not responsible for the change",
+   "Average points — missing a signal is a ground for redress",
+   "DNF — you did not finish the course as originally described"
+  ],
+  "why": "Rule 33 changes the course when signalled before boats begin the leg; rule 28 requires that course to be sailed; A5.1 — NSC.",
+  "ref": "RRS 33, RRS 28, RRS A5.1",
+  "fig": {
+   "type": "card",
+   "title": "Flag C at the windward mark",
+   "lines": [
+    "Correctly signalled before you arrived",
+    "You did not notice it",
+    "Sailed to the old leeward mark: removed",
+    "Eventually finished"
+   ],
+   "tag": "Score?"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 3,
+  "q": "You capsize while tacking at the windward mark and, still capsized, drift past the mark on the wrong side; you right the boat three lengths beyond it. Your crew says a capsized boat is not sailing, so the drift does not count. Who is right?",
+  "a": "You must unwind — the string of your track passed the mark on the wrong side, however you got there; sail back and round it correctly",
+  "o": [
+   "Your crew — a boat is not sailing the course while capsized, so her drift is ignored",
+   "Your crew — but you must take a One-Turn Penalty for passing the mark on the wrong side",
+   "Nobody can say — ask the race committee for a ruling before continuing"
+  ],
+  "why": "Definition Sail the Course: the string represents the boat's track from the start to the finish; rule 28.2 lets her correct the error before finishing.",
+  "ref": "RRS 28.2, RRS definition Sail the Course",
+  "fig": {
+   "type": "race",
+   "wind": 0,
+   "mark": {
+    "x": 160,
+    "y": 80,
+    "label": "Windward mark"
+   },
+   "track": "M120 175 L145 100 L148 70 L172 72 L185 120",
+   "boats": [
+    {
+     "x": 185,
+     "y": 122,
+     "hdg": 180,
+     "label": "You",
+     "you": true
+    }
+   ],
+   "note": "You capsized at the mark and drifted past it on the wrong side"
+  }
+ },
+ {
+  "topic": "course",
+  "difficulty": 2,
+  "q": "The race committee signals a general recall with the First Substitute and two sounds. Sailing back, you bump the committee boat while jostling at its stern. Must you take a One-Turn Penalty?",
+  "a": "No — the general recall ended your racing, so rule 31 no longer applied when you touched the committee boat",
+  "o": [
+   "Yes — you remain racing until the First Substitute is lowered and the new warning signal is made",
+   "Yes — the committee boat is a starting mark from the first preparatory signal until the class finally starts",
+   "No — but you must return around an end of the line before the new start"
+  ],
+  "why": "Definition Racing: a boat stops racing when a general recall is signalled; rule 31 applies only while racing.",
+  "ref": "RRS 31, RRS definition Racing",
+  "fig": {
+   "type": "card",
+   "title": "General recall",
+   "lines": [
+    "First Substitute, two sounds",
+    "Sailing back, you bump the",
+    "committee boat's stern"
+   ],
+   "tag": "Penalty?"
+  }
+ }
+]
