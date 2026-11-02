@@ -1,6 +1,6 @@
 /* IYT Test — Telegram mini app.
    Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile); C4 Students
-   (every student's results, api/admin.mjs) opens from the profile for the admins only.
+   (every student's results and the questions they flagged, api/admin.mjs) opens from the profile for the admins only.
    Banks are read from Supabase (fetchBank), with the static JSON files as fallback; progress lives on the device
    (localStorage + Telegram CloudStorage) and, inside Telegram, on the server (serverSave → api/progress.mjs), so the
    same code also runs in a plain browser for testing.
@@ -138,6 +138,7 @@ const STR = {
     studentsW: (n) => word(n, 'student'), activeWeek: 'active this week', examsTaken: (n) => word(n, 'exam') + ' taken', answeredN: (n) => `${n} answered`,
     noProgress: 'No answers yet', lastActive: 'Last active', joined: 'Joined', dailyOn: 'Question of the day on', dailyOff: 'Question of the day off',
     noExamsAdmin: 'No mock exam yet', reload: 'Reload', sortProgress: 'Progress', sortName: 'Name', sortJoined: 'Date joined',
+    flaggedMeta: 'Questions students marked to come back to', flaggedNone: 'Nobody has flagged a question yet', flaggedBy: 'Flagged by',
   },
   ru: {
     learn: 'Учёба', exam: 'Экзамен', progress: 'Прогресс', profile: 'Профиль', back: '‹ Назад',
@@ -219,6 +220,7 @@ const STR = {
     studentsW: (n) => word(n, 'student'), activeWeek: 'активны за неделю', examsTaken: (n) => word(n, 'exam') + ' пройдено', answeredN: (n) => `${n} отвечено`,
     noProgress: 'Ответов ещё нет', lastActive: 'Последняя активность', joined: 'В приложении с', dailyOn: 'Вопрос дня включён', dailyOff: 'Вопрос дня выключен',
     noExamsAdmin: 'Экзаменов ещё не было', reload: 'Обновить', sortProgress: 'Прогресс', sortName: 'Имя', sortJoined: 'Дата',
+    flaggedMeta: 'Вопросы, которые ученики отметили, чтобы вернуться', flaggedNone: 'Отмеченных вопросов пока нет', flaggedBy: 'Отметили',
   },
 };
 const t = (k, ...a) => { const v = STR[LANG][k] ?? STR.en[k]; return typeof v === 'function' ? v(...a) : v; };
@@ -543,6 +545,18 @@ function studentLevel(u) {
   return { lv, n, ...L, pct: Math.round((L.mastered / n) * 100), seenPct: Math.round((L.seen / n) * 100) };
 }
 const studentName = (u) => u.name || (u.username ? '@' + u.username : String(u.id));
+// A question of any loaded level, for the Students page: Q holds the current level in LANG, the other levels show in English.
+function anyQ(id) {
+  if (Q[id]) return { q: Q[id], lv: LEVEL, topic: TT[Q[id].topic] || '' };
+  const lv = levelOfPrefix(String(id).split('-')[0]), b = lv && BASES[lv.id], q = b && b.questions.find((x) => x.id === id);
+  return q ? { q, lv, topic: (b.topics.find((tp) => tp.id === q.topic) || {}).title || '' } : null;
+}
+// The questions the students flagged, most flagged first: [{ id, users }]. Ids no bank knows are left out.
+function flaggedByStudents() {
+  const by = {};
+  ADM.forEach((u) => (u.flags || []).forEach((id) => { (by[id] = by[id] || []).push(u); }));
+  return Object.keys(by).filter(anyQ).map((id) => ({ id, users: by[id] })).sort((a, b) => b.users.length - a.users.length || a.id.localeCompare(b.id));
+}
 const initials = (name) => name.replace(/^@/, '').split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
 async function toggleDaily(el) {
   if (typeof DAILY !== 'boolean') return;
@@ -990,9 +1004,15 @@ const VIEWS = {
         const bar = L && L.seen ? `<span class="bar"><i style="width:${L.pct}%"></i><i class="seen" style="left:${L.pct}%;width:${Math.max(0, L.seenPct - L.pct)}%"></i></span>` : '';
         return `<div class="topic${bar ? ' x3' : ''} stu" data-act="student" data-id="${u.id}">${avatar(u, 'ico')}<span class="card-title">${esc(name)}</span><span class="tmeta">${esc(meta)}</span>${bar}<span class="n">${right}</span></div>`;
       }).join('');
+      // the questions they flagged, grouped by question; a tap opens the question and who flagged it
+      const fl = flaggedByStudents();
+      const frows = fl.map(({ id, users }) => { const { q, lv, topic } = anyQ(id);
+        return `<div class="topic flq" data-act="flagq" data-id="${id}"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span><span class="n"><b>${users.length}</b>${t('studentsW', users.length)}</span></div>`; }).join('');
       body = `<div class="stats"><div class="stat"><b data-count="${ADM.length}">${ADM.length}</b><span class="meta">${t('studentsW', ADM.length)}</span></div><div class="stat"><b>${active}</b><span class="meta">${t('activeWeek')}</span></div><div class="stat"><b>${exams}</b><span class="meta">${t('examsTaken', exams)}</span></div></div>
         <div class="tags" style="margin-top:4px">${chip('progress')}${chip('name')}${chip('joined')}</div>
-        <div class="topics">${rows}</div>`;
+        <div class="topics">${rows}</div>
+        <div class="stack g8" style="margin-top:8px"><div><span class="kicker">${t('flaggedQ')}</span><p class="card-meta" style="margin:4px 0 0">${t('flaggedMeta')}</p></div>
+          ${fl.length ? `<div class="topics">${frows}</div>` : `<p class="card-meta" style="margin:0">${t('flaggedNone')}</p>`}</div>`;
     }
     return {
       title: t('students'),
@@ -1001,8 +1021,18 @@ const VIEWS = {
   },
 };
 
-/* A3 Set up a session · B3 Exam grid · C4 one student */
+/* A3 Set up a session · B3 Exam grid · C4 one student, one flagged question */
 const SHEETS = {
+  flagq(s) {
+    const f = anyQ(s.id);
+    if (!f || !Array.isArray(ADM)) return `<div class="empty"><span class="meta">${t('studentsFail')}</span></div>`;
+    const { q, lv, topic } = f, users = ADM.filter((u) => (u.flags || []).includes(s.id));
+    const opts = q.options.map((o, i) => `<div class="ans${i === q.answer ? ' ok' : ' plain'}"><span class="l">${i === q.answer ? svg('check', 12) : ''}</span><span>${esc(o)}</span></div>`).join('');
+    const who = users.map((u) => `<div class="att who" data-act="student" data-id="${u.id}">${avatar(u, 'tg-ava', 'width:32px;height:32px;font-size:12px')}<span class="card-title">${esc(studentName(u))}</span>${svg('next', 16)}</div>`).join('');
+    return `<span class="meta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span>
+      <div class="rev flq-card"><p class="q">${esc(q.q)}</p>${figHtml(q)}${opts}<p class="body-muted" style="font-size:14px">${esc(q.why)}</p></div>
+      <div class="stack g8"><span class="kicker">${t('flaggedBy')} · ${users.length}</span><div>${who}</div></div>`;
+  },
   student(s) {
     const u = Array.isArray(ADM) && ADM.find((x) => x.id === s.id);
     if (!u) return `<div class="empty"><span class="meta">${t('studentsFail')}</span></div>`;
@@ -1224,6 +1254,7 @@ const ACT = {
   admin: () => go('admin'),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
+  flagq: (d) => { sheet = { v: 'flagq', id: d.id }; render(); },
   sort: (d) => { ADM_SORT = d.s; hap('sel'); render(); },
   reset: async () => {
     if (!(await confirmBox(t('confirmReset')))) return;
