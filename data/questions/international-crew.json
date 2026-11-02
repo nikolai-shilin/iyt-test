@@ -5,7 +5,7 @@
   "passMark": 70,
   "examQuestions": 30,
   "examMinutes": 45,
-  "version": "2026-11-02a",
+  "version": "2026-11-02b",
   "note": "Scenario questions written for study, close to the IYT International Crew syllabus. Not official IYT exam content. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.",
   "topics": [
     {
@@ -533,7 +533,7 @@
         "Pull in until the tell-tales droop, then leave it",
         "Ease until the whole sail flaps, then cleat it there",
         "Pull in until the sail is hard and flat, then cleat it",
-        "Ease until the luff starts to flap, then pull back just enough to stop it"
+        "Ease until the luff just flaps, then pull in enough to stop it"
       ],
       "answer": 3,
       "why": "The best trim is just short of luffing: ease till it flaps, then sheet in a touch.",
@@ -610,10 +610,10 @@
       "q": "The helm calls \"Ready to gybe\". You are on the mainsheet. What do you do?",
       "figure": null,
       "options": [
-        "Cleat it where it is and keep clear of the boom",
-        "Let the mainsheet run free so the boom can swing",
-        "Ease it out further to spill the wind first",
-        "Pull the main in to the centre, then ease it out on the new side"
+        "Cleat it where it is and keep well clear of the boom",
+        "Let the mainsheet run free so the boom can swing across",
+        "Ease it out further to spill the wind from the sail first",
+        "Pull the main in to the centre, then ease it on the new side"
       ],
       "answer": 3,
       "why": "Hauling the boom in first keeps its swing short and controlled; then ease it out.",
@@ -1086,10 +1086,10 @@
       "q": "You have coiled a mooring line and want to hang it in the locker without it coming undone. How do you finish the coil?",
       "figure": null,
       "options": [
-        "Tie the two ends together with a reef knot",
-        "Wind the coil tightly round your elbow first",
-        "Wrap the end round the coil, push a loop through and over the top",
-        "Tuck the loose end in among the loops"
+        "Tie the two free ends together with a reef knot",
+        "Wind the coil tightly round your hand and elbow first",
+        "Wrap the end round the coil, pass a loop through and over the top",
+        "Tuck the loose end in among the loops of the coil"
       ],
       "answer": 2,
       "why": "Turns round the coil and a loop over the top hold it neat, and it is quick to free.",
@@ -1118,10 +1118,10 @@
       "q": "How do you hold the coiled line to throw it ashore?",
       "figure": null,
       "options": [
-        "Split the coil: throw one half, let the other run from your open hand",
-        "Throw the whole coil in one bundle",
-        "Throw the loose end first, then the coil",
-        "Wrap the coil round your hand and throw"
+        "Split the coil: throw one half, let the rest run from your hand",
+        "Throw the whole coil in one bundle, as hard as you can",
+        "Throw the loose end first, then the whole coil after it",
+        "Wrap the coil round your hand and throw it as one"
       ],
       "answer": 0,
       "why": "Half the coil carries the line; the rest runs out freely from your open hand without tangling.",
@@ -1254,10 +1254,10 @@
         "note": "Skipper: \"Ease the bow line a metre\""
       },
       "options": [
-        "Throw off every turn and let the line run",
-        "Wrap the tail round your hand, then uncleat",
-        "Take off the hitch and figure-eights, keep a turn on, ease it round",
-        "Untie it and tie a fresh bowline further along"
+        "Throw off every turn at once and let the line run out",
+        "Wrap the tail round your hand for grip, then uncleat it",
+        "Take off the hitch and figure-eights, keep a turn, ease round",
+        "Untie it completely and tie a fresh bowline further along"
       ],
       "answer": 2,
       "why": "A turn round the base keeps control while you surge the line out against the friction.",
@@ -1475,10 +1475,10 @@
         ]
       },
       "options": [
-        "Both sides, at the widest part, level with the neighbours' hulls",
-        "At the bow only, to protect the anchor",
-        "One side only, the side the wind comes from",
-        "At the stern only, low down by the water"
+        "Both sides, at the widest part, level with the neighbours",
+        "At the bow only, to protect the anchor and pulpit",
+        "One side only, the side the wind is coming from",
+        "At the stern only, hanging low down by the water"
       ],
       "answer": 0,
       "why": "Stern-to, your sides lie against the yachts next to you, so the fenders go on both sides.",
@@ -1587,10 +1587,10 @@
       "q": "Before leaving, the skipper asks you to rig the stern line as a slip line, so you can let it go from on board. What do you do?",
       "figure": null,
       "options": [
-        "Tie a bowline round the bollard instead",
-        "Put two cleat hitches on the boat's cleat",
+        "Tie a bowline round the bollard instead of a hitch",
+        "Make it fast with two cleat hitches on the boat's cleat",
         "Lead it round the bollard and back, both ends cleated aboard",
-        "Tie a second line to the same bollard"
+        "Tie a second line to the same bollard as a back-up"
       ],
       "answer": 2,
       "why": "With both ends aboard, you let one end go and pull the line back round the bollard.",
@@ -1796,7 +1796,7 @@
       "options": [
         "Chase every swing of the compass card",
         "Steer for a landmark on 090° and check the compass now and then",
-        "Steer by the wake astern, keeping it straight",
+        "Steer by the wake astern and ignore the compass",
         "Steer for the nearest boat on that side"
       ],
       "answer": 1,
@@ -2649,7 +2649,7 @@
         "A green light only",
         "A red and a green light side by side",
         "A white light above a red one",
-        "One white light, low down"
+        "A single white light only"
       ],
       "answer": 3,
       "why": "From astern you see only the white sternlight; the sidelights are hidden from behind.",
@@ -3883,7 +3883,7 @@
       "figure": null,
       "options": [
         "Yes — water is never used below decks",
-        "Yes — only powder works on cushions",
+        "No — water is safe on any fire aboard",
         "No — water is fine on burning fabric",
         "Yes — water makes any fire spread"
       ],

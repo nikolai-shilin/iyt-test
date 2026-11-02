@@ -23,7 +23,7 @@ NOTE = ('Scenario questions written for study, close to the IYT {name} syllabus.
 # topics: (id, English title, Russian title, Russian short name, icon for the mini app)
 LEVELS = {
     'vhf-radio-operator': dict(
-        prefix='vhf', name='VHF Radio Operator', passMark=70, examQuestions=30, examMinutes=45, version='2026-11-02a',
+        prefix='vhf', name='VHF Radio Operator', passMark=70, examQuestions=30, examMinutes=45, version='2026-11-02b',
         topics=[
             ('set', 'The VHF set & its controls', 'УКВ-радиостанция и её органы управления', 'Радиостанция', 'wrench'),
             ('channels', 'Channels & range', 'Каналы и дальность связи', 'Каналы', 'radio'),
@@ -37,7 +37,7 @@ LEVELS = {
             ('licences', 'Licences & regulations', 'Лицензии и правила радиосвязи', 'Правила', 'book'),
         ]),
     'international-crew': dict(
-        prefix='ic', name='International Crew', passMark=70, examQuestions=30, examMinutes=45, version='2026-11-02a',
+        prefix='ic', name='International Crew', passMark=70, examQuestions=30, examMinutes=45, version='2026-11-02b',
         topics=[
             ('boat', 'Parts of the boat & terms', 'Устройство яхты и термины', 'Термины', 'yacht'),
             ('sailing', 'Points of sail & sail handling', 'Курсы относительно ветра и работа с парусами', 'Паруса', 'wind'),
@@ -51,7 +51,7 @@ LEVELS = {
             ('emergency', 'Emergencies & first aid', 'Аварии и первая помощь', 'Аварии', 'radio'),
         ]),
     'flotilla-skipper': dict(
-        prefix='fs', name='Flotilla Skipper', passMark=70, examQuestions=40, examMinutes=60, version='2026-11-02a',
+        prefix='fs', name='Flotilla Skipper', passMark=70, examQuestions=40, examMinutes=60, version='2026-11-02b',
         topics=[
             ('power', 'Boat handling under power', 'Управление яхтой под мотором', 'Под мотором', 'yacht'),
             ('mooring', 'Mooring & anchoring', 'Швартовка и якорная стоянка', 'Швартовка', 'anchor'),

@@ -92,8 +92,9 @@ FIG.buoy = f => {
   s += `<line x1="${x}" y1="${top}" x2="${x}" y2="${k === 'safe' ? 30 : 32}" stroke="var(--ink)" stroke-width="2"/>` + tm;
   // light + rhythm panel on the right
   if (f.rhythm) {
-    const lc = { 'lat-port': B ? COL.g : COL.r, 'lat-stbd': B ? COL.r : COL.g, 'special': COL.y }[k] || '#fff';
+    const lc = { 'lat-port': B ? COL.g : COL.r, 'lat-stbd': B ? COL.r : COL.g, 'special': COL.y, 'wreck': COL.y }[k] || '#fff';
     s += `<rect x="196" y="60" width="114" height="80" rx="14" fill="#07101a"/><circle cx="222" cy="92" r="9" fill="${lc}"/><circle cx="222" cy="92" r="18" fill="${lc}" opacity=".18"/>`;
+    if (k === 'wreck') s += `<path d="M222 83 A9 9 0 0 0 222 101 Z" fill="#2a5bd7"/>`;  /* alternating blue/yellow: half and half */
     s += txt(236, 88, ft('Light at night'), { s: 10, f: '#8aa0b8', w: 400, a: 'start' }) + txt(236, 104, f.rhythm, { s: 13, f: '#fff', a: 'start' });
     if (f.rhythmNote) s += txt(253, 128, f.rhythmNote, { s: 10, f: '#8aa0b8', w: 400 });
   }
@@ -180,7 +181,7 @@ FIG.dayshape = f => {
   s += `<path d="M70 140 L250 140 L232 160 L88 160 Z" fill="var(--ink)"/><line x1="160" y1="140" x2="160" y2="40" stroke="var(--ink)" stroke-width="3"/>`;
   if (f.sail) s += `<path d="M163 44 L163 134 L228 134 Z" fill="var(--band)" stroke="var(--ink)" stroke-width="1.5"/>`;
   const sh = { ball: `<circle cx="160" cy="62" r="12" fill="var(--ink)"/>`, 'cone-down': `<path d="M148 54 L172 54 L160 76 Z" fill="var(--ink)"/>`, 'two-balls': `<circle cx="160" cy="50" r="10" fill="var(--ink)"/><circle cx="160" cy="76" r="10" fill="var(--ink)"/>`,
-    'ball-diamond-ball': `<circle cx="160" cy="44" r="8" fill="var(--ink)"/><path d="M160 54 L170 66 L160 78 L150 66 Z" fill="var(--ink)"/><circle cx="160" cy="88" r="8" fill="var(--ink)"/>`, cylinder: `<rect x="150" y="48" width="20" height="30" fill="var(--ink)"/>`, 'two-cones': `<path d="M148 40 L172 40 L160 60 Z" fill="var(--ink)"/><path d="M148 84 L172 84 L160 64 Z" fill="var(--ink)"/>`, 'three-balls': `<circle cx="160" cy="46" r="8" fill="var(--ink)"/><circle cx="146" cy="68" r="8" fill="var(--ink)"/><circle cx="174" cy="68" r="8" fill="var(--ink)"/>` }[f.shape] || '';
+    'ball-diamond-ball': `<circle cx="160" cy="44" r="8" fill="var(--ink)"/><path d="M160 54 L170 66 L160 78 L150 66 Z" fill="var(--ink)"/><circle cx="160" cy="88" r="8" fill="var(--ink)"/>`, cylinder: `<rect x="150" y="48" width="20" height="30" fill="var(--ink)"/>`, 'two-cones': `<path d="M148 40 L172 40 L160 60 Z" fill="var(--ink)"/><path d="M148 84 L172 84 L160 64 Z" fill="var(--ink)"/>`, 'three-balls': `<circle cx="160" cy="44" r="8" fill="var(--ink)"/><circle cx="160" cy="66" r="8" fill="var(--ink)"/><circle cx="160" cy="88" r="8" fill="var(--ink)"/>` }[f.shape] || '';
   s += sh;
   if (f.note) s += txt(160, 190, f.note, { s: 11, w: 400 });
   return s + '</svg>';

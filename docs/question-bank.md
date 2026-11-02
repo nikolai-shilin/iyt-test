@@ -142,5 +142,5 @@ partial translation is safe to ship. `source` records the bank version the overl
 when the bank has moved on. Built-in figure labels ("You", "wind", "Variation"…) are translated in the app
 (`FIG_RU` in `miniapp/app.js`, via `FIG_TEXT` in figures.js) and used only on translated questions.
 
-Status: `bareboat-skipper.ru.json` covers all 1000 questions (bank version 2026-11-02c). Terms and style for new or
+Status: `bareboat-skipper.ru.json` covers all 1000 questions (bank version 2026-11-02d). Terms and style for new or
 changed questions: [glossary-ru.md](glossary-ru.md). After editing the bank, run `check` — it lists what to translate.

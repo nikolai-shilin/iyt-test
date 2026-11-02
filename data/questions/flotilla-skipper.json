@@ -5,7 +5,7 @@
   "passMark": 70,
   "examQuestions": 40,
   "examMinutes": 60,
-  "version": "2026-11-02a",
+  "version": "2026-11-02b",
   "note": "Scenario questions written for study, close to the IYT Flotilla Skipper syllabus. Not official IYT exam content. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.",
   "topics": [
     {
@@ -847,7 +847,7 @@
       "q": "Where do you anchor?",
       "figure": {
         "type": "bay",
-        "wind": 180,
+        "wind": 0,
         "land": "M0 0 H320 V35 C 220 50 100 30 0 45 Z",
         "spots": [
           [
@@ -2532,7 +2532,7 @@
       "q": "The pilot book says: 'Enter with the chapel in line with the white house, 320°.' Why follow the transit rather than steer 320° on the compass?",
       "figure": null,
       "options": [
-        "It allows for variation, so no sums are needed",
+        "It is only needed when the compass has failed",
         "It shows at once if wind or current set you off",
         "It also tells you how far off the entrance you are",
         "It still works when the visibility closes in"
@@ -4298,7 +4298,7 @@
           "boom": 14
         },
         "other": {
-          "bearing": 330,
+          "bearing": 20,
           "dist": 80,
           "hdg": 0,
           "label": "MOB",

@@ -5,7 +5,7 @@
   "passMark": 70,
   "examQuestions": 40,
   "examMinutes": 60,
-  "version": "2026-11-02c",
+  "version": "2026-11-02d",
   "note": "Scenario questions written for study, close to the IYT Bareboat Skipper theory syllabus. Not official IYT exam content. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.",
   "topics": [
     {
@@ -192,24 +192,7 @@
       "topic": "terms",
       "difficulty": 1,
       "q": "The genoa is flapping on a beam reach. Which line do you pull in?",
-      "figure": {
-        "type": "rope",
-        "kind": "winch",
-        "labels": [
-          [
-            80,
-            86,
-            "genoa sheet",
-            "middle"
-          ],
-          [
-            255,
-            90,
-            "pull",
-            "middle"
-          ]
-        ]
-      },
+      "figure": null,
       "options": [
         "The topping lift",
         "The genoa halyard",
@@ -244,7 +227,7 @@
       "figure": {
         "type": "sail",
         "wind": 180,
-        "hdg": 170,
+        "hdg": 350,
         "note": "Running, about to gybe"
       },
       "options": [
@@ -322,10 +305,10 @@
         ]
       },
       "options": [
-        "A reef knot",
-        "A clove hitch",
-        "A bowline",
-        "A figure-of-eight stopper knot in the end of the sheet"
+        "A reef knot in the end of the sheet",
+        "A clove hitch round the block",
+        "A bowline tied to the clew",
+        "A figure of eight in the end of the sheet"
       ],
       "answer": 3,
       "why": "The stopper will not pass through the block.",
@@ -438,12 +421,12 @@
           [
             80,
             86,
-            "jammed"
+            "loaded sheet"
           ],
           [
             255,
             90,
-            "load"
+            "tail"
           ],
           [
             160,
@@ -454,7 +437,7 @@
       },
       "options": [
         "Tie a rolling hitch on the sheet with a spare line, take the load on another winch, then clear the turns",
-        "Tack immediately",
+        "Pull the tail harder to drag the riding turn through",
         "Release the halyard",
         "Cut the sheet"
       ],
@@ -620,7 +603,7 @@
           "boom": 14
         },
         "other": {
-          "bearing": 165,
+          "bearing": -165,
           "dist": 70,
           "hdg": 0,
           "scale": 0.3,
@@ -675,7 +658,7 @@
       "id": "bs-028",
       "topic": "safety",
       "difficulty": 3,
-      "q": "You have recovered a crew member after 15 minutes in 16° water. They shiver, mumble and cannot grip. What do you do?",
+      "q": "You have recovered a crew member after 15 minutes in 16 °C water. They shiver, mumble and cannot grip. What do you do?",
       "figure": null,
       "options": [
         "Make them walk around the deck",
@@ -1007,7 +990,7 @@
       "id": "bs-042",
       "topic": "navigation",
       "difficulty": 3,
-      "q": "The chart gives this variation. Your plotted true course is 090°. What do you steer by the compass?",
+      "q": "The chart gives this variation; your compass has no deviation. Your plotted true course is 090°. What do you steer?",
       "figure": {
         "type": "compass",
         "variation": -4,
@@ -1121,7 +1104,7 @@
         "boat": [
           40,
           168,
-          45
+          67
         ],
         "panel": [
           "Now 14:00",
@@ -1349,10 +1332,16 @@
       "difficulty": 2,
       "q": "At night you see a white light flashing six times then one long flash. What is it and where do you pass?",
       "figure": {
-        "type": "buoy",
-        "kind": "card-s",
-        "rhythm": "Q(6)+LFl",
-        "rhythmNote": "six quick + one long"
+        "type": "lights",
+        "lights": [
+          {
+            "c": "w",
+            "x": 160,
+            "y": 128,
+            "t": "Q(6)+LFl 15s"
+          }
+        ],
+        "note": "Night · six quick flashes, then one long"
       },
       "options": [
         "A south cardinal — pass south of it",
@@ -1472,7 +1461,7 @@
       "id": "bs-058",
       "topic": "buoyage",
       "difficulty": 2,
-      "q": "You see a single white light low down, its bearing slowly changing. What is most likely?",
+      "q": "You see a single steady white light low down, its bearing slowly changing. What is most likely?",
       "figure": {
         "type": "lights",
         "lights": [
@@ -1483,7 +1472,7 @@
             "t": "white"
           }
         ],
-        "note": "Night · single white light, bearing drawing slowly left"
+        "note": "Night · steady white light, bearing drawing slowly left"
       },
       "options": [
         "A lighthouse",
@@ -1621,7 +1610,7 @@
       },
       "options": [
         "Straight towards the low",
-        "From the south-west, backing as the low passes",
+        "From the south-west, veering as the low passes",
         "From the east, steady",
         "From the north-east"
       ],
@@ -1639,7 +1628,7 @@
         "4–6 knots",
         "11–16 knots",
         "About 22–33 knots",
-        "40–47 knots"
+        "41–47 knots"
       ],
       "answer": 2,
       "why": "F6 is 22–27 kn, F7 28–33 kn — the limit for comfortable cruising.",
@@ -1826,11 +1815,11 @@
       "options": [
         "10 m",
         "5 m",
-        "At least 20 m (4 × depth), more if wind is expected",
+        "At least 24 m (4 × depth to the roller), more if wind is expected",
         "50 m"
       ],
       "answer": 2,
-      "why": "Chain scope 4:1 minimum; 6:1 or more in strong wind.",
+      "why": "Chain scope 4:1 minimum, measured from the bow roller; 6:1 or more in strong wind.",
       "ref": "Anchoring"
     },
     {
@@ -1841,29 +1830,35 @@
       "figure": {
         "type": "bay",
         "wind": 180,
-        "land": "M0 200 H320 V140 C 260 130 230 90 200 70 C 170 50 120 60 80 80 C 50 95 20 110 0 100 Z",
+        "land": "M0 200 H190 V135 C 150 120 60 125 0 130 Z M250 200 H320 V110 C 300 120 270 140 250 150 Z",
         "spots": [
           [
-            150,
-            150,
+            90,
+            95,
             "A"
           ],
           [
-            240,
+            220,
             60,
             "B"
           ],
           [
-            60,
-            40,
+            220,
+            150,
             "C"
           ]
         ],
         "labels": [
           [
-            160,
-            185,
+            95,
+            165,
             "LAND (south)",
+            "middle"
+          ],
+          [
+            220,
+            128,
+            "channel",
             "middle"
           ]
         ],
@@ -2469,7 +2464,7 @@
         "Launch the liferaft"
       ],
       "answer": 0,
-      "why": "Taste it: fresh = tank; salt = hull or fitting. Bungs ready.",
+      "why": "Pumps only buy time: find the inflow and stop it. Taste the water — fresh = tank, salt = hull or fitting; bungs ready.",
       "ref": "Flooding"
     },
     {
@@ -3163,7 +3158,7 @@
             "middle"
           ]
         ],
-        "note": "Windward winch, before the tack"
+        "note": "Before the tack"
       },
       "options": [
         "The unused one on the windward side",
@@ -4239,7 +4234,7 @@
       },
       "options": [
         "Yes, with 0.3 m to spare",
-        "Yes, the aerial will bend",
+        "Yes, 15.5 + 0.8 = 16.3 m clears it",
         "Yes, with 1.5 m to spare",
         "No: your air draft is 17.5 m"
       ],
@@ -6098,7 +6093,7 @@
         "No stretch, so surges snatch the cleats",
         "It cannot be tied to a bollard",
         "It is too weak to be used as a mooring line",
-        "It floats and fouls the props"
+        "It sinks and chafes on the seabed"
       ],
       "answer": 0,
       "why": "Mooring lines need stretch; Dyneema passes shock loads straight to the fittings.",
@@ -7386,7 +7381,7 @@
         "type": "card",
         "title": "Later that evening",
         "lines": [
-          "Hit by the boom four hours ago",
+          "Hit by the boom this morning",
           "Has vomited three times",
           "Drowsy and hard to wake",
           "One pupil larger than the other"
@@ -9555,14 +9550,14 @@
       "figure": {
         "type": "encounter",
         "you": {
-          "hdg": 60,
+          "hdg": 45,
           "sail": true,
           "boom": 14
         },
         "other": {
           "bearing": -70,
           "dist": 80,
-          "hdg": 90,
+          "hdg": 60,
           "sail": true,
           "boom": 14
         },
@@ -12817,7 +12812,7 @@
       "q": "Over an hour in open water, on several different headings, you see these readings. What is wrong?",
       "figure": {
         "type": "card",
-        "title": "Open water, no current",
+        "title": "Open water",
         "lines": [
           "Log (speed through water) 4.0 kn",
           "GPS speed over ground 5.2 kn",
@@ -13493,7 +13488,7 @@
         "type": "card",
         "title": "Pilotage plan",
         "lines": [
-          "Steer 020°M, chapel right ahead",
+          "Steer 000°M, chapel right ahead",
           "Turn to 110°M when the light",
           "bears 090°M (on the beam)"
         ]
@@ -15380,7 +15375,7 @@
             "y": 122
           }
         ],
-        "note": "Night · no white light above it"
+        "note": "Night · steady light, no white above it"
       },
       "options": [
         "A power vessel showing her starboard side",
@@ -15406,7 +15401,7 @@
             "y": 46
           }
         ],
-        "note": "Night · single red light, high up"
+        "note": "Night · single steady red light, high up"
       },
       "options": [
         "A port-hand mark",
@@ -21603,7 +21598,7 @@
       "q": "Reversing towards the quay with sternway on, you want the stern to go to port. Which way do you turn the wheel?",
       "figure": null,
       "options": [
-        "To starboard — then a burst ahead",
+        "To starboard — astern, the bow follows the wheel",
         "Amidships — steer with prop walk only",
         "To port — astern, the stern follows the wheel",
         "To starboard — astern, steering is reversed"
@@ -23826,7 +23821,7 @@
         ]
       },
       "options": [
-        "Red hand flare",
+        "A torch flashed at it",
         "Red parachute rocket",
         "Orange smoke",
         "White hand flare"
@@ -24237,7 +24232,7 @@
           "scale": 0.3,
           "label": "MOB"
         },
-        "wind": 315,
+        "wind": 300,
         "note": "Close reach, crew has just gone over"
       },
       "options": [
@@ -24263,7 +24258,7 @@
           "boom": -14
         },
         "other": {
-          "bearing": 60,
+          "bearing": 30,
           "dist": 85,
           "hdg": 0,
           "scale": 0.3,
@@ -24750,7 +24745,7 @@
         "Hoist full sail so the yacht rolls less",
         "Send all the crew below out of the way",
         "Drop the main, secure the boom and loose gear",
-        "Hoist the ensign so the crew can see you"
+        "Hoist the ensign so the helicopter can see you"
       ],
       "answer": 2,
       "why": "The downdraught catches anything loose; the winchman needs a clear area.",
