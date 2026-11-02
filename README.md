@@ -45,6 +45,7 @@ bot/
 api/
   telegram.mjs                  Vercel function: Telegram's webhook, runs core.mjs
   daily.mjs                     Vercel cron (06:00 UTC daily): runs bot/daily.mjs
+  settings.mjs                  the app's question-of-the-day switch (users.daily_question), checked with Telegram initData
 ```
 
 ## Mini app

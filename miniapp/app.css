@@ -73,3 +73,19 @@ body { -webkit-tap-highlight-color: transparent; }
 /* home: levels without a bank, grouped */
 .app .soonlist { padding: 14px 18px 4px; }
 .app .soonlist .kicker { display: block; margin-bottom: 2px; }
+/* topic rows: a "seen · right" line under the title once a topic has answers (red when the topic is weak),
+   and a third, grey bar step for questions seen but not yet answered right */
+.app .topic.x3 { grid-template-rows: auto auto auto; }
+.app .topic.x3 .ico, .app .topic.x3 .n { grid-row: 1 / span 3; }
+.app .topic .tmeta { grid-column: 2; grid-row: 2; font: 400 13px 'Carlito', Arial, sans-serif; color: var(--muted); }
+.app .topic .tmeta.bad-t { color: var(--danger); font-weight: 700; }
+.app .topic.x3 .bar { grid-row: 3; }
+.app .bar i.seen { background: var(--ink); opacity: .22; }
+/* results: what the next sessions do with this one's answers */
+.app .next-band { padding: 16px 18px; display: grid; gap: 12px; }
+.app .next-band .r { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; align-items: start; }
+.app .next-band .r > span { width: 28px; height: 28px; border-radius: 50%; background: var(--bg); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+/* profile: a value on the right of a settings row (current level) */
+.app .set .val { font: 400 15px 'Carlito', Arial, sans-serif; color: var(--muted); display: inline-flex; align-items: center; gap: 2px; }
+/* a weak result bar can be 0 px wide, so the count carries the red too */
+.app .tbar.weak .n { color: var(--danger); }
