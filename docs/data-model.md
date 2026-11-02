@@ -37,7 +37,7 @@ run `npm run db:load` — until then the apps keep showing the old version from 
 
 ```sql
 -- catalogue (anyone may read it with the publishable key; written only by load_bank())
-levels                id text pk, prefix text, link text, title, sort, status ('available'|'planned'|'soon'|'soon2027'),
+levels                id text pk, prefix text, link text, title, bank_title (the bank file's title, set by load_bank), sort, status ('available'|'planned'|'soon'|'soon2027'),
                       pass_mark, exam_questions, exam_minutes, version, note, updated_at
 topics                (level_id, id) pk, title, icon, sort
 questions             id text pk, level_id, topic_id → topics, sort, difficulty 1–3, q, figure jsonb null,
