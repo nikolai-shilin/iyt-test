@@ -245,7 +245,7 @@ function hap(kind) {
 const confirmBox = (msg) => new Promise((res) => (tgv('6.2') ? TG.showConfirm(msg, res) : res(window.confirm(msg))));
 function toast(text) {
   $app.querySelector('.toast')?.remove();
-  $app.insertAdjacentHTML('beforeend', `<div class="toast">${esc(text)}</div>`);
+  $app.insertAdjacentHTML('beforeend', `<div class="toast" role="status" aria-live="polite">${esc(text)}</div>`);
   setTimeout(() => $app.querySelector('.toast')?.remove(), 1400);
 }
 
@@ -502,6 +502,8 @@ function applyTheme() {
   const n = isNight();
   $app.classList.toggle('theme-night', n);
   document.documentElement.dataset.theme = n ? 'dark' : 'light';
+  document.documentElement.style.colorScheme = n ? 'dark' : 'light';
+  const meta = document.querySelector('meta[name=theme-color]'); if (meta) meta.content = n ? '#000000' : '#ffffff';
   if (tgv('6.9')) {
     const bg = n ? '#000000' : '#ffffff';
     try { TG.setHeaderColor(bg); TG.setBackgroundColor(bg); if (tgv('7.10')) TG.setBottomBarColor(bg); } catch (e) {}
@@ -552,9 +554,9 @@ function nativeButtons(B) {
   const MB = TG.MainButton, SB = TG.SecondaryButton;
   if (B.main) {
     const off = !!B.main.off;
-    MB.setParams({ text: B.main.text, color: off ? tok('--band') : tok('--accent'), text_color: off ? tok('--faint') : tok('--on-accent'), is_active: !off, is_visible: true });
+    MB.setParams({ text: B.main.text, color: off ? tok('--band') : tok('--accent-ink'), text_color: off ? tok('--muted') : tok('--on-accent'), is_active: !off, is_visible: true });
   } else MB.hide();
-  if (B.second) SB.setParams({ text: B.second.text, color: tok('--band'), text_color: tok('--accent'), is_active: true, is_visible: true, position: B.second.pos || 'left' });
+  if (B.second) SB.setParams({ text: B.second.text, color: tok('--band'), text_color: tok('--accent-ink'), is_active: true, is_visible: true, position: B.second.pos || 'left' });
   else SB.hide();
 }
 
@@ -631,8 +633,8 @@ const VIEWS = {
       title: LEVEL.title,
       body: `<div class="row" style="gap:18px;align-items:center">${ring(lp, seenPct(), ' l', `<b>${lp}%</b><small>${t('mastered')}</small>`)}
           <p class="body-s">${esc(text)}</p></div>
-        <div class="row" style="gap:10px"><button class="pill pill-primary" style="flex:1;padding:0 14px;font-size:18px" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
-          <button class="pill" style="flex:1;padding:0 14px;font-size:18px" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
+        <div class="row" style="gap:10px"><button class="pill pill-primary lvl-btn" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
+          <button class="pill lvl-btn" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
         ${mis ? `<div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${t('toAnswerTwice', mis)}</div></div><button class="mini mini-accent" data-act="allMistakes">${t('review')}</button></div>` : ''}
         <div class="stack g8"><div class="row sb-between"><span class="kicker">${t('topics')}</span><span class="meta">${t('masteredTotal')}</span></div>${topicRows()}</div>`,
     };
@@ -868,7 +870,7 @@ const SHEETS = {
     const misAll = allMistakes();
     const chips = TOPICS.map((tp) => {
       const c = s.mis ? topicIds(tp.id).filter(isMistake).length : topicIds(tp.id).length;
-      return `<button class="tag${s.on.has(tp.id) ? ' tag-on' : ''}${s.mis && !c ? ' off' : ''}" style="min-height:36px;font-size:14px;padding:0 12px;gap:6px" data-act="chip" data-t="${tp.id}">${esc(short(tp.id))}<span class="tag-count">${c}</span></button>`;
+      return `<button class="tag${s.on.has(tp.id) ? ' tag-on' : ''}${s.mis && !c ? ' off' : ''}" style="min-height:40px;font-size:14px;padding:0 12px;gap:6px" data-act="chip" data-t="${tp.id}">${esc(short(tp.id))}<span class="tag-count">${c}</span></button>`;
     }).join('');
     const sz = (v, label) => `<button class="tag${s.size === v ? ' tag-on' : ''}" style="min-height:40px;font-size:15px" data-act="size" data-s="${v}">${label}</button>`;
     return `<div class="stack g4"><span class="meta">${t('practice')}</span><h2 class="display-s">${t('whatToPractise')}</h2></div>

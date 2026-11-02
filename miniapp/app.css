@@ -109,3 +109,42 @@ body { -webkit-tap-highlight-color: transparent; }
 .app [data-act]:focus-visible, .app button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .app .lang svg { margin-right: 5px; }
 .app.theme-night .ring.seen { background: conic-gradient(var(--accent) calc(var(--v) * 1%), color-mix(in srgb, var(--accent) 55%, var(--tag-line)) 0 calc(var(--s) * 1%), var(--tag-line) 0); }
+
+/* ---- audit fixes: contrast ---- */
+/* day --muted was 4.4:1 on white and 4.1:1 on the band; this one is 5.2:1 / 4.8:1. Night stays as designed (10:1). */
+.app:not(.theme-night) { --muted: #62706f; }
+/* white on the bright accent is 3.5:1, so anything with text on a blue fill uses the darker blue (5.2:1);
+   rings, bars and the "seen" arc keep the bright one. Night: --accent-ink is the night accent already. */
+.app .pill-primary, .app .tgmain .b, .app .pass:not(.no) { background: var(--accent-ink); border-color: var(--accent-ink); }
+.app .tgmain .b.off { background: var(--band); color: var(--muted); }
+.app .tgmain .b2 { background: var(--band); }
+.app .grid40 span.now { color: var(--accent-ink); border-color: var(--accent-ink); }
+.app.theme-night .figtag { color: #1a0400; }
+
+/* ---- audit fixes: tap targets ---- */
+/* text links keep their size but get a 44 px hit area */
+.app button.meta, .app .danger-link, .app .tgh button { position: relative; }
+.app button.meta::after, .app .danger-link::after, .app .tgh button::after { content: ''; position: absolute; left: -8px; right: -8px; top: 50%; height: 44px; transform: translateY(-50%); }
+.app .mini { height: 40px; }
+.app .lang { height: 36px; }
+.app .grid40 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+
+/* ---- one shape for every button: the pill (cards keep their 20–28 px corners) ---- */
+.app .pill, .app .tag, .app .mini, .app .lang, .app .langs, .app .toggle, .app .pass, .app .tgmain .b, .app .grid40 span { border-radius: 999px; }
+.app .grid40 span.f::after { top: 5px; right: 5px; }
+
+/* ---- audit fixes: 11 px labels → 12 px ---- */
+.app .nav a, .app .stat .meta, .app .days span, .app .ring.l small { font-size: 12px; }
+
+/* ---- audit fixes: layout ---- */
+.app .lvl-btn { flex: 1; padding: 0 14px; font-size: 18px; }
+@media (max-width: 359px) {
+  .app .lvl-btn { font-size: 16px; gap: 6px; padding: 0 8px; }
+  .app .ring.l { --sz: 120px; } .app .ring.l b { font-size: 30px; } .app .ring.l small { bottom: 24px; }
+}
+.app .tgmain.wrap { padding-left: 24px; padding-right: 24px; }
+.app .sheet { overscroll-behavior: contain; }
+@media (prefers-reduced-motion: reduce) {
+  .app .sheet, .app .scrim, .app .toast { animation: none; }
+  .app .lvl, .app .topic, .app .opt, .app .tag, .app .mini, .app .pill, .app .grid40 span, .app .lang, .app .toggle, .app .tgmain .b { transition: none; }
+}
