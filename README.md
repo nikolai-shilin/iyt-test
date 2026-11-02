@@ -38,13 +38,13 @@ miniapp/
   build.mjs                     copies the app + design files + banks into miniapp/dist (the folder to host)
 bot/
   core.mjs                      the bot's replies: /start /exam /progress /settings open the app, /daily asks a question
-  daily.mjs                     the morning question of the day to everyone who has it on
+  daily.mjs                     the daily question of the day to everyone who has it on
   bot.mjs                       runs core.mjs by long polling (local testing)
   scripts/setup.mjs             sets the bot's name, descriptions, commands and menu button
   scripts/webhook.mjs           points Telegram at the Vercel webhook, or removes it
 api/
   telegram.mjs                  Vercel function: Telegram's webhook, runs core.mjs
-  daily.mjs                     Vercel cron (06:00 UTC daily): runs bot/daily.mjs
+  daily.mjs                     Vercel cron (09:00 UTC daily): runs bot/daily.mjs
   settings.mjs                  the app's question-of-the-day switch (users.daily_question), checked with Telegram initData
 ```
 
@@ -82,11 +82,11 @@ To try bot changes locally: `npm run bot:webhook -- --delete`, then `npm run bot
 
 ### Question of the day
 
-Every morning (Vercel cron, `0 6 * * *` UTC — 09:00 Moscow, 10:00 Dubai) the bot sends one text question with A–D
+Every day (Vercel cron, `0 9 * * *` UTC — 13:00 Dubai, 12:00 Moscow) the bot sends one text question with A–D
 buttons to each user who has it on; the answer and the note come back in the same message. Everyone gets the same
 question that day. The bot saves each user who writes to it in Supabase `users` (`daily_question` on by default).
 
-- **Per user**: a switch button under the morning question and in `/settings` ("Question of the day: on/off").
+- **Per user**: a switch button under the daily question and in `/settings` ("Question of the day: on/off").
 - **Whole bot**: `DAILY_QUESTION=off` in the Vercel env stops the send for everyone (users' own switches stay).
 - Users who block the bot are marked (`blocked_at`) and skipped until they write again.
 

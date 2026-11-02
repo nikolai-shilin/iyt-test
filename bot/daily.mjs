@@ -1,4 +1,4 @@
-// The morning send: the question of the day to every user who has it on (users.daily_question), once per UTC day.
+// The daily send (09:00 UTC = 13:00 Dubai): the question of the day to every user who has it on (users.daily_question), once per UTC day.
 // Run by the Vercel cron (api/daily.mjs, schedule in vercel.json) or by hand: bot/scripts/daily.mjs.
 //
 // Switches:

@@ -1,4 +1,4 @@
-// Runs the question-of-the-day send by hand (the Vercel cron runs the same code each morning).
+// Runs the question-of-the-day send by hand (the Vercel cron runs the same code every day at 09:00 UTC).
 //
 //   npm run bot:daily -- --to <chat id> [--ru]   # today's question to one chat only (ignores switches and DB)
 //   npm run bot:daily -- --dry                   # how many users would get it today; sends nothing
