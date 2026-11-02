@@ -29,7 +29,7 @@ docs/
 data/
   build_bank.py                 source of the Bareboat Skipper bank — edit here, then run
   questions/bareboat-skipper.json
-  questions/bareboat-skipper.ru.json   Russian overlay (topic names so far)
+  questions/bareboat-skipper.ru.json   Russian translation of the bank (overlay)
   i18n.py                       extract strings to translate / check an overlay
 miniapp/
   index.html  app.js  app.css   the Telegram mini app (static, no framework, no backend)
@@ -55,8 +55,8 @@ pass/fail), C1 progress, C2 profile (theme, shuffle, reset). Mastery = right twi
 user in Telegram CloudStorage (localStorage in a browser), so there is no server or database yet. Inside Telegram
 the app uses the native Back, Main and Secondary buttons and haptics; outside it draws the same bar itself.
 Deep links: `?screen=exam|progress|profile|practice|level`, or `startapp=` with the same values.
-Languages: English and Russian interface (picked from the Telegram language, switch in Profile). Russian question
-text comes from `data/questions/bareboat-skipper.ru.json` — so far only topic names; see
+Languages: English and Russian interface (picked from the Telegram language, switch in Profile). All 1000 questions
+are translated in `data/questions/bareboat-skipper.ru.json` (terms: [docs/glossary-ru.md](docs/glossary-ru.md)); see
 [docs/question-bank.md](docs/question-bank.md#translations).
 
 It is live at https://iyt-test.vercel.app and connected to [@iyt_test_bot](https://t.me/iyt_test_bot): the bot's
