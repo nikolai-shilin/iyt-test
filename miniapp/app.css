@@ -89,3 +89,23 @@ body { -webkit-tap-highlight-color: transparent; }
 .app .set .val { font: 400 15px 'Carlito', Arial, sans-serif; color: var(--muted); display: inline-flex; align-items: center; gap: 2px; }
 /* a weak result bar can be 0 px wide, so the count carries the red too */
 .app .tbar.weak .n { color: var(--danger); }
+
+/* accent as text: the bright fill blue is 3.5:1 on white, too low for 12–13 px labels; this one is 5.3:1.
+   At night the fill blue already reads well on black. */
+.app { --accent-ink: #0072ad; }
+.app.theme-night { --accent-ink: var(--accent); }
+.app .acc, .app .mini-accent, .app .pill:not(.pill-primary), .app .tgh button, .app .tgmain .b2, .app .tag-accent { color: var(--accent-ink); }
+.app .mini-accent, .app .pill:not(.pill-primary):not(.pill-quiet) { border-color: var(--accent-ink); }
+.app .pill-quiet { color: var(--ink); }
+
+/* mastery ring with a second, lighter step: seen but not yet mastered */
+.app .ring.seen { background: conic-gradient(var(--accent) calc(var(--v) * 1%), color-mix(in srgb, var(--accent) 30%, var(--tag-line)) 0 calc(var(--s) * 1%), var(--tag-line) 0); }
+
+/* home for a returning student: where they left off, one tap to keep going */
+.app .resume { padding: 16px 18px 18px; display: grid; gap: 12px; }
+.app .resume .pill { height: 50px; }
+
+/* keyboard focus */
+.app [data-act]:focus-visible, .app button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.app .lang svg { margin-right: 5px; }
+.app.theme-night .ring.seen { background: conic-gradient(var(--accent) calc(var(--v) * 1%), color-mix(in srgb, var(--accent) 55%, var(--tag-line)) 0 calc(var(--s) * 1%), var(--tag-line) 0); }

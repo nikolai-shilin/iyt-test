@@ -1,7 +1,8 @@
 /* IYT Test — Telegram mini app.
    Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile).
-   Banks are read from Supabase (fetchBank), with the static JSON files as fallback; progress lives in Telegram
-   CloudStorage (per user, per bot) with a localStorage copy, so the same code also runs in a plain browser for testing.
+   Banks are read from Supabase (fetchBank), with the static JSON files as fallback; progress lives on the device
+   (localStorage + Telegram CloudStorage) and, inside Telegram, on the server (serverSave → api/progress.mjs), so the
+   same code also runs in a plain browser for testing.
    Levels: every level with an `id` in LEVELS has a bank (bank() in the database, or data/<id>.json); all of them load at start (the home screen
    shows mastery for each), the one picked last (S.set.level) is the current level the other screens work on.
    Languages: English and Russian. Interface strings are in STR below; question text comes from the bank plus an
@@ -54,7 +55,6 @@ function word(n, key) {
   return a === 1 && b !== 11 ? f[0] : a >= 2 && a <= 4 && (b < 12 || b > 14) ? f[1] : f[2];
 }
 const pl = (n, key) => `${n} ${word(n, key)}`;
-const ofN = (n) => (n % 10 === 1 && n % 100 !== 11 ? 'ошибки' : 'ошибок'); // "из 1 ошибки", "из 7 ошибок"
 
 const STR = {
   en: {
@@ -67,7 +67,11 @@ const STR = {
     examOpen: 'Mock exam in progress', continue: 'Continue',
     examLine: (a, n, left) => `${a} of ${n} answered · ${left} left`,
     mastered: 'mastered', halfway: 'halfway', halfwayN: (n) => `+${n} halfway`, moreLevels: 'More levels',
-    levelText: (m, n, h) => `${m} of ${n} mastered${h ? `, ${h} halfway there (right once)` : ''}.`,
+    levelText: (m, n, h, sn) => `${m} of ${n} mastered${h ? `, ${h} halfway there (right once)` : ''}. ${sn} seen so far.`,
+    resumeK: 'Continue', resumeMeta: (sn, n, mis) => `${sn} of ${n} seen${mis ? ` · ${pl(mis, 'mistake')} to clear` : ''}`,
+    practiseN: (n) => `Practise ${pl(n, 'question')}`, levelsK: 'Levels',
+    mockExams: 'Mock exams', noExams: 'No mock exam yet — take one when you feel ready.', weakestTopics: 'Weakest topics', allTopics: 'All topics ›',
+    themeDay: 'Day', themeNight: 'Night',
     weakest: (list) => ` Weakest: ${list}.`,
     levelFresh: 'A question counts as mastered once you answer it right twice in a row. Start with any topic.',
     practice: 'Practice', mockExam: 'Mock exam', mockShort: 'Mock exam',
@@ -76,9 +80,10 @@ const STR = {
     questionOf: (i, n) => `Question ${i} of ${n}`, correct: 'Correct', notQuite: 'Not quite', why: 'Why',
     flag: 'Flag', flagged: 'Flagged', skip: 'Skip', check: 'Check', next: 'Next', finish: 'Finish', seeResults: 'See results',
     results: 'Results', heads: ['Excellent', 'Good session', 'Getting there', 'Keep going'],
-    worst: (topic, k, w) => `${topic} needs the most work — ${k} of ${pl(w, 'mistake')} ${k === 1 ? 'was' : 'were'} there.`,
     noMistakes: 'No mistakes this time.',
-    score: 'score', time: 'time', byTopic: 'By topic', timeSpent: (s) => ` Time ${s}.`, statNew: 'new', statWrong: 'mistakes',
+    score: 'score', time: 'time', byTopic: 'By topic', timeSpent: (s) => ` Time ${s}.`, statNew: 'first seen', statWrong: 'mistakes',
+    spread: (w, k) => `${pl(w, 'mistake')} across ${pl(k, 'topic')} — no single weak spot yet.`,
+    weakAll: (topic, r, n) => `${topic} is still your weak spot — ${r} of ${n} right across all your answers.`,
     seenRight: (s, r) => `seen ${s} · right ${r}`, whatNext: 'What next', nextMastered: (n) => `+${pl(n, 'question')} mastered`, nextMasteredMeta: 'Right twice in a row. They come back only now and then.',
     nextHalf: (n) => `${pl(n, 'question')} halfway`, nextHalfMeta: 'Right once. Answer right again in a later session to master.',
     nextWrong: (n) => `${pl(n, 'mistake')} come${n === 1 ? 's' : ''} back first`, nextWrongMeta: 'Until you answer right twice in a row.',
@@ -136,7 +141,11 @@ const STR = {
     examOpen: 'Пробный экзамен не закончен', continue: 'Продолжить',
     examLine: (a, n, left) => `отвечено ${a} из ${n} · осталось ${left}`,
     mastered: 'освоено', halfway: 'на полпути', halfwayN: (n) => `+${n} на полпути`, moreLevels: 'Другие уровни',
-    levelText: (m, n, h) => `Освоено ${m} из ${n}${h ? `, на полпути ${h} (верно один раз)` : ''}.`,
+    levelText: (m, n, h, sn) => `Освоено ${m} из ${n}${h ? `, на полпути ${h} (верно один раз)` : ''}. Уже видели: ${sn}.`,
+    resumeK: 'Продолжить', resumeMeta: (sn, n, mis) => `Видели ${sn} из ${n}${mis ? ` · ошибок к разбору: ${mis}` : ''}`,
+    practiseN: (n) => `Тренировка · ${pl(n, 'question')}`, levelsK: 'Уровни',
+    mockExams: 'Пробные экзамены', noExams: 'Пробных экзаменов ещё не было — попробуйте, когда будете готовы.', weakestTopics: 'Самые слабые темы', allTopics: 'Все темы ›',
+    themeDay: 'День', themeNight: 'Ночь',
     weakest: (list) => ` Слабее всего: ${list}.`,
     levelFresh: 'Вопрос считается освоенным, когда вы дважды подряд отвечаете на него верно. Начните с любой темы.',
     practice: 'Тренировка', mockExam: 'Пробный экзамен', mockShort: 'Экзамен',
@@ -145,9 +154,10 @@ const STR = {
     questionOf: (i, n) => `Вопрос ${i} из ${n}`, correct: 'Верно', notQuite: 'Неверно', why: 'Почему',
     flag: 'Отметить', flagged: 'Отмечен', skip: 'Пропустить', check: 'Проверить', next: 'Далее', finish: 'Закончить', seeResults: 'Результаты',
     results: 'Результаты', heads: ['Отлично', 'Хорошая тренировка', 'Почти получилось', 'Продолжайте'],
-    worst: (topic, k, w) => `Больше всего внимания требует тема «${topic}»: здесь ${k} из ${w} ${ofN(w)}.`,
     noMistakes: 'Ни одной ошибки.',
-    score: 'результат', time: 'время', byTopic: 'По темам', timeSpent: (s) => ` Время ${s}.`, statNew: 'новых', statWrong: 'ошибок',
+    score: 'результат', time: 'время', byTopic: 'По темам', timeSpent: (s) => ` Время ${s}.`, statNew: 'впервые', statWrong: 'ошибок',
+    spread: (w, k) => `Ошибок: ${w}, в разных темах (${k}) — явно слабой темы пока нет.`,
+    weakAll: (topic, r, n) => `Слабое место — тема «${topic}»: верно ${r} из ${n} по всем вашим ответам.`,
     seenRight: (s, r) => `видели ${s} · верно ${r}`, whatNext: 'Что дальше', nextMastered: (n) => `Освоено: +${pl(n, 'question')}`, nextMasteredMeta: 'Верно дважды подряд. Будут попадаться лишь изредка.',
     nextHalf: (n) => `На полпути: ${pl(n, 'question')}`, nextHalfMeta: 'Верно один раз. Ответьте верно ещё раз в следующих тренировках — и вопрос освоен.',
     nextWrong: (n) => `Первыми вернутся ошибки: ${n}`, nextWrongMeta: 'Пока не ответите верно дважды подряд.',
@@ -327,6 +337,9 @@ let BY_TOPIC = {};
 const topicIds = (tp) => BY_TOPIC[tp] || [];
 const topicPct = (tp) => { const ids = topicIds(tp); return Math.round((ids.filter(mastered).length / ids.length) * 100); };
 const levelPct = (b = BANK) => Math.round((b.questions.filter((q) => mastered(q.id)).length / b.questions.length) * 100);
+const seenPct = (b = BANK) => Math.round((b.questions.filter((q) => touched(q.id)).length / b.questions.length) * 100);
+// mastery ring; a lighter second step shows questions seen but not yet mastered, so early sessions show up
+const ring = (lp, sp, cls = '', inner = `<b>${lp}%</b>`) => `<span class="ring seen${cls}" style="--v:${lp};--s:${Math.max(lp, sp)}">${inner}</span>`;
 const ready = () => LEVELS.filter((l) => l.id && BASES[l.id]);
 // Exams are kept per level; records from before levels existed have no lv and are Bareboat Skipper's.
 const lvOf = (x) => (x && x.lv) || DEFAULT_LEVEL;
@@ -509,7 +522,7 @@ function render(toTop) {
   let h = '';
   if (!IN_TG) h += `<div class="tgh"><span>${stack.length > 1 || sheet ? `<button data-act="back">${t('back')}</button>` : ''}</span><b>${esc(V.title)}</b><span></span></div>`;
   h += `<div class="scroll wrap">${V.body}</div>`;
-  if (V.nav && stack.length === 1) h += `<div class="nav">${NAV.map(([v, i, k]) => `<a class="${v === V.nav ? 'on' : ''}" data-act="tab" data-v="${v}"><span data-i="${i}"></span>${t(k)}</a>`).join('')}</div>`;
+  if (V.nav && stack.length === 1) h += `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === V.nav ? 'on' : ''}" data-act="tab" data-v="${v}"${v === V.nav ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
   const B = sheet ? {} : V;
   mainCb = B.main ? B.main.act : null;
   secCb = B.second ? B.second.act : null;
@@ -522,6 +535,10 @@ function render(toTop) {
   }
   if (sheet) h += `<div class="scrim" data-act="back"></div><div class="sheet"><div class="grip"></div><div class="wrap stack g16">${SHEETS[sheet.v](sheet)}</div></div>`;
   $app.innerHTML = h;
+  $app.querySelectorAll('[data-act]:not(button):not(.scrim)').forEach((el) => {
+    if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+    if (!el.classList.contains('locked') && !el.classList.contains('off')) el.tabIndex = 0;
+  });
   paintIcons($app);
   const sc = $app.querySelector('.scroll');
   if (keep) sc.scrollTop = keep;
@@ -542,8 +559,8 @@ function nativeButtons(B) {
 }
 
 /* ---------- pieces shared by several screens ---------- */
-function topicRows() {
-  return `<div class="topics">${TOPICS.map((tp) => {
+function topicRows(list = TOPICS) {
+  return `<div class="topics">${list.map((tp) => {
     const ids = topicIds(tp.id), m = ids.filter(mastered).length, p = Math.round((m / ids.length) * 100);
     const h = ids.filter(halfway).length, hp = Math.round((h / ids.length) * 100);
     const seen = topicSeen(tp.id), right = ids.filter((id) => rec(id)[0].endsWith('1')).length;
@@ -552,7 +569,7 @@ function topicRows() {
     const cls = p >= 100 ? ' done' : weak ? ' weak' : '';
     const line = seen && p < 100 ? `<span class="tmeta${weak ? ' bad-t' : ''}">${t('seenRight', seen, right)}</span>` : '';
     return `<div class="topic${cls}${line ? ' x3' : ''}" data-act="setup" data-t="${tp.id}"><span class="ico">${p >= 100 ? svg('check', 18) : svg(tp.icon || TOPIC_ICON[tp.id] || 'book', 18)}</span>` +
-      `<span class="card-title">${esc(tp.title)}</span>${line}<span class="n"><b>${m}/${ids.length}</b>${h ? `<span class="acc">${t('halfwayN', h)}</span>` : t('mastered')}</span>` +
+      `<span class="card-title">${esc(tp.title)}</span>${line}<span class="n"><b>${m}/${ids.length}</b>${h ? `<span class="acc">${t('halfwayN', h)}</span>` : ''}</span>` +
       `<span class="bar"><i style="width:${p}%"></i><i class="half" style="left:${p}%;width:${hp}%"></i><i class="seen" style="left:${p + hp}%;width:${sp}%"></i></span></div>`;
   }).join('')}</div>`;
 }
@@ -578,20 +595,26 @@ const VIEWS = {
   /* A1 Home */
   home() {
     const st = streak();
+    const returning = S.total > 0;
     const lv = LEVELS.filter((l) => l.id && BASES[l.id]).map((l) => {
-      const b = l.id && BASES[l.id];
-      if (!b) return `<div class="lvl soon"><span class="ring" style="--v:0"><b>—</b></span><div><div class="card-title">${l.title}</div><div class="card-meta">${t(l.soon || 'soon')}</div></div></div>`;
-      const lp = levelPct(b);
-      return `<div class="lvl${l === LEVEL ? ' on' : ''}" data-act="level" data-id="${l.id}"><span class="ring" style="--v:${lp}"><b>${lp}%</b></span><div><div class="card-title">${l.title}</div>` +
+      const b = BASES[l.id], lp = levelPct(b);
+      return `<div class="lvl${l === LEVEL ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, seenPct(b))}<div><div class="card-title">${l.title}</div>` +
         `<div class="card-meta">${t('levelMeta', b.topics.length, b.questions.length, myExams(l.id).length)}</div></div><span class="chev" data-i="next" data-s="20"></span></div>`;
     }).join('');
+    // first visit: the pitch; afterwards: pick up where you left off
+    const lp = levelPct(), mis = allMistakes().length;
+    const top = returning
+      ? `<div class="band resume"><span class="kicker">${t('resumeK')}</span>
+          <div class="row" style="gap:14px;align-items:center">${ring(lp, seenPct())}<div><div class="card-title">${esc(LEVEL.title)}</div><div class="card-meta">${t('resumeMeta', BANK.questions.filter((q) => touched(q.id)).length, BANK.questions.length, mis)}</div></div></div>
+          <button class="pill pill-primary pill-wide" data-act="resume"><span data-i="play" data-s="18"></span>${t('practiseN', 10)}</button></div>`
+      : `<div class="stack g12"><span class="meta">${t('homeKicker')}</span><h1 class="display">${t('homeTitle')}</h1>
+        <p class="body-muted">${t('homeLead')}</p></div>`;
     return {
       title: 'IYT Test', nav: 'home',
       body: `<div class="row sb-between" style="min-height:40px"><img class="logo" src="design/logo-black.svg" alt="RYC">${st ? `<span class="streak"><span class="fire" data-i="fire" data-s="14"></span>${t('streak', st)}</span>` : ''}</div>
-        <div class="stack g12"><span class="meta">${t('homeKicker')}</span><h1 class="display">${t('homeTitle')}</h1>
-        <p class="body-muted">${t('homeLead')}</p></div>
+        ${top}
         ${S.exam ? `<div class="continue" data-act="examIntro"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
-        <div class="stack" style="gap:10px">${lv}</div>
+        <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
         <div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${LEVELS.filter((l) => !(l.id && BASES[l.id])).map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>`,
     };
   },
@@ -601,12 +624,13 @@ const VIEWS = {
     const lp = levelPct(), m = BANK.questions.filter((q) => mastered(q.id)).length;
     const any = BANK.questions.some((q) => touched(q.id));
     const weakest = weakTopics().sort((a, b) => topicAcc(a) - topicAcc(b)).slice(0, 2).map(short);
-    const text = any ? t('levelText', m, BANK.questions.length, BANK.questions.filter((q) => halfway(q.id)).length) + (weakest.length ? t('weakest', weakest.join(', ')) : '') : t('levelFresh');
+    const sn = BANK.questions.filter((q) => touched(q.id)).length;
+    const text = any ? t('levelText', m, BANK.questions.length, BANK.questions.filter((q) => halfway(q.id)).length, sn) + (weakest.length ? t('weakest', weakest.join(', ')) : '') : t('levelFresh');
     const mis = allMistakes().length;
     return {
       title: LEVEL.title,
-      body: `<div class="row" style="gap:18px;align-items:center"><span class="ring l" style="--v:${lp}"><b>${lp}%</b><small>${t('mastered')}</small></span>
-          <div class="stack g8"><span class="meta">${esc(BANK.title)}</span><p class="body-s">${esc(text)}</p></div></div>
+      body: `<div class="row" style="gap:18px;align-items:center">${ring(lp, seenPct(), ' l', `<b>${lp}%</b><small>${t('mastered')}</small>`)}
+          <p class="body-s">${esc(text)}</p></div>
         <div class="row" style="gap:10px"><button class="pill pill-primary" style="flex:1;padding:0 14px;font-size:18px" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
           <button class="pill" style="flex:1;padding:0 14px;font-size:18px" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
         ${mis ? `<div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${t('toAnswerTwice', mis)}</div></div><button class="mini mini-accent" data-act="allMistakes">${t('review')}</button></div>` : ''}
@@ -661,10 +685,14 @@ const VIEWS = {
     const plus = P.ids.filter((id) => mastered(id) && !P.before[id]).length;
     const half = P.ids.filter(halfway).length, fresh = done.filter((id) => !P.seen.has(id)).length;
     const per = perTopic(done, (id) => P.res[id] === 'ok');
-    const worst = Object.entries(per).filter(([, [a, b]]) => a < b).sort((x, y) => (x[1][0] - x[1][1]) - (y[1][0] - y[1][1]))[0];
+    // one session has a question or two per topic, so a topic is called out only if it is weak over all answers too
+    const missed = Object.entries(per).filter(([, [a, b]]) => a < b);
+    const worst = missed.filter(([tp]) => WEAK.has(tp)).sort((x, y) => topicAcc(x[0]) - topicAcc(y[0]))[0];
+    const rightAll = (tp) => topicIds(tp).filter((id) => touched(id) && rec(id)[0].endsWith('1')).length;
     const heads = t('heads');
     const head = heads[pct >= 90 ? 0 : pct >= 70 ? 1 : pct >= 50 ? 2 : 3];
-    const copy = (wrong.length ? t('worst', short(worst[0]), worst[1][1] - worst[1][0], wrong.length) : t('noMistakes')) + t('timeSpent', fmt(P.secs * 1000));
+    const copy = (!wrong.length ? t('noMistakes') : worst ? t('weakAll', short(worst[0]), rightAll(worst[0]), topicSeen(worst[0])) : t('spread', wrong.length, missed.length)) + t('timeSpent', fmt(P.secs * 1000));
+    const reviewAct = () => go('review', { items: wrong.map((id) => ({ id, pick: P.picks[id] })), label: 'thisSession', from: 'session' });
     // what the next sessions will do with this one's answers
     const nextRow = (icon, title, meta) => `<div class="r"><span>${svg(icon, 16)}</span><div><div class="card-title">${title}</div><div class="card-meta">${meta}</div></div></div>`;
     const next = (plus ? nextRow('trophy', t('nextMastered', plus), t('nextMasteredMeta')) : '') +
@@ -672,8 +700,10 @@ const VIEWS = {
       (wrong.length ? nextRow('refresh', t('nextWrong', wrong.length), t('nextWrongMeta')) : '');
     return {
       title: t('results'),
-      main: wrong.length ? { text: t('practiseTopic', lower(short(worst[0]))), act: () => startPractice(pickFor(topicIds(worst[0]), 10)) } : { text: t('practiseMore'), act: () => openSetup() },
-      second: wrong.length ? { pos: 'bottom', text: t('mistakesN', wrong.length), icon: 'refresh', act: () => go('review', { items: wrong.map((id) => ({ id, pick: P.picks[id] })), label: 'thisSession', from: 'session' }) } : null,
+      main: worst ? { text: t('practiseTopic', lower(short(worst[0]))), act: () => startPractice(pickFor(topicIds(worst[0]), 10)) }
+        : wrong.length ? { text: t('reviewN', wrong.length), icon: 'refresh', act: reviewAct } : { text: t('practiseMore'), act: () => openSetup() },
+      second: worst ? { pos: 'bottom', text: t('mistakesN', wrong.length), icon: 'refresh', act: reviewAct }
+        : wrong.length ? { pos: 'bottom', text: t('practiseMore'), act: () => openSetup() } : null,
       body: `<div class="score"><span class="ring l" style="--v:${pct}"><b>${ok}/${done.length}</b><small>${t('correct')}</small></span>
           <h2 class="display" style="font-size:34px">${head}</h2><p class="body-muted">${esc(copy)}</p></div>
         <div class="stats"><div class="stat"><b>+${fresh}</b><span class="meta">${t('statNew')}</span></div><div class="stat"><b>${half}</b><span class="meta">${t('halfway')}</span></div><div class="stat"><b>${wrong.length}</b><span class="meta">${t('statWrong')}</span></div></div>
@@ -711,11 +741,10 @@ const VIEWS = {
     return {
       title: t('mockExam'), nav: 'examIntro',
       main: { text: S.exam ? t('continueExam') : t('startExam'), act: startExam },
-      second: S.exam ? { text: t('startOver'), act: restartExam, pos: 'bottom' } : null,
       body: `<div class="stack g8"><span class="meta">${LEVEL.title}</span><h2 class="display">${t('mockExam')}</h2>
           <p class="body-muted">${t('examLead', TOPICS.length)}</p></div>
         <div class="stats"><div class="stat"><b>${BANK.examQuestions}</b><span class="meta">${t('questionsW', BANK.examQuestions)}</span></div><div class="stat"><b>${BANK.examMinutes}</b><span class="meta">${t('minutesW', BANK.examMinutes)}</span></div><div class="stat"><b>${BANK.passMark}%</b><span class="meta">${t('toPass')}</span></div></div>
-        ${S.exam ? `<div class="continue" data-act="main"><div><span class="meta">${t('inProgress')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
+        ${S.exam ? `<div class="row sb-between"><div><span class="meta">${t('inProgress')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><button class="danger-link" data-act="restart">${t('startOver')}</button></div>` : ''}
         <div class="steps steps-plain">${rules}</div>
         ${atts ? `<div class="band" style="padding:16px 18px"><div class="card-title" style="margin-bottom:4px">${t('lastAttempts')}</div>${atts}</div>` : ''}
         <p class="hint">${t('examDefaults')}</p>`,
@@ -784,6 +813,8 @@ const VIEWS = {
     const names = t('days');
     const days = week.map((w, k) => `<div class="${k === 6 ? 'today' : ''}"><i class="${w.n ? '' : 'z'}" style="height:${w.n ? Math.max(8, (w.n / max) * 100) : 4}%"></i><span>${names[w.d.getDay()]}</span></div>`).join('');
     const mis = allMistakes().length, fl = S.flags.filter((id) => Q[id]).length;
+    const exams = myExams().slice(0, 5).map((e) => `<div class="att"><span class="card-meta">${day(e.at)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
+    const weakest = TOPICS.filter((tp) => topicSeen(tp.id)).sort((a, b) => topicAcc(a.id) - topicAcc(b.id) || topicPct(a.id) - topicPct(b.id)).slice(0, 3);
     return {
       title: 'IYT Test', nav: 'progress',
       body: `<div class="stack g4"><span class="meta">${LEVEL.title}</span><h2 class="display-s">${t('progress')}</h2></div>
@@ -791,7 +822,8 @@ const VIEWS = {
         <div class="band" style="padding:16px 18px"><div class="row sb-between" style="margin-bottom:12px"><span class="kicker">${t('thisWeek')}</span><span class="meta">${pl(sum, 'question')}</span></div><div class="days">${days}</div></div>
         <div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${mis ? t('misMeta', mis) : t('noneNow')}</div></div><button class="mini mini-accent${mis ? '' : ' off'}" data-act="allMistakes">${t('review')}</button></div>
         <div class="row sb-between"><div><div class="card-title">${t('flaggedQ')}</div><div class="card-meta">${fl ? pl(fl, 'question') : t('flagHint')}</div></div><button class="mini mini-accent${fl ? '' : ' off'}" data-act="flagged">${t('practise')}</button></div>
-        <div class="stack g8"><div class="row sb-between"><span class="kicker">${t('masteryByTopic')}</span><button class="meta acc" data-act="setup">${t('practiseWeakest')}</button></div>${topicRows()}</div>`,
+        <div class="band" style="padding:16px 18px"><div class="row sb-between" style="margin-bottom:4px"><span class="kicker">${t('mockExams')}</span><button class="meta acc" data-act="examIntro">${t('mockShort')} ›</button></div>${exams || `<p class="card-meta" style="margin:6px 0 0">${t('noExams')}</p>`}</div>
+        ${weakest.length ? `<div class="stack g8"><div class="row sb-between"><span class="kicker">${t('weakestTopics')}</span><button class="meta acc" data-act="level">${t('allTopics')}</button></div>${topicRows(weakest)}</div>` : ''}`,
     };
   },
 
@@ -803,7 +835,7 @@ const VIEWS = {
     const ava = u && u.photo_url ? `<img src="${esc(u.photo_url)}" alt="">` : esc(ini);
     const th = S.set.theme;
     const seg = (act, val, on, inner) => `<button class="lang${on ? ' lang-on' : ''}" data-act="${act}" data-t="${val}">${inner}</button>`;
-    const tog = (k) => `<button class="toggle${S.set[k] ? ' on' : ''}" data-act="set" data-k="${k}" aria-pressed="${S.set[k]}"></button>`;
+    const tog = (k) => `<button class="toggle${S.set[k] ? ' on' : ''}" data-act="set" data-k="${k}" aria-pressed="${S.set[k]}" aria-label="${esc(t(k === 'shuffle' ? 'shuffle' : 'explain'))}"></button>`;
     const partial = LANG !== 'en' && BANK.translated < BANK.questions.length ? t('partEnglish') : '';
     loadDaily();
     // with several levels the row opens the level list on Home; with one it is plain text
@@ -811,7 +843,7 @@ const VIEWS = {
       ? `<div class="set" data-act="tab" data-v="home"><div class="card-title">${t('currentLevel')}</div><span class="val">${esc(LEVEL.title)}${svg('next', 16)}</span></div>`
       : `<div class="set"><div class="card-title">${t('currentLevel')}</div><span class="val">${esc(LEVEL.title)}</span></div>`;
     const daily = typeof DAILY === 'boolean'
-      ? `<div class="set"><div><div class="card-title">${t('daily')}</div><div class="card-meta">${t('dailyMeta')}</div></div><button class="toggle${DAILY ? ' on' : ''}" data-act="daily" aria-pressed="${DAILY}"></button></div>` : '';
+      ? `<div class="set"><div><div class="card-title">${t('daily')}</div><div class="card-meta">${t('dailyMeta')}</div></div><button class="toggle${DAILY ? ' on' : ''}" data-act="daily" aria-pressed="${DAILY}" aria-label="${esc(t('daily'))}"></button></div>` : '';
     return {
       title: 'IYT Test', nav: 'profile',
       body: `<div class="row" style="gap:14px"><span class="tg-ava" style="width:52px;height:52px;font-size:16px">${ava}</span><div><div class="card-title" style="font-size:18px">${esc(name)}</div>
@@ -819,7 +851,7 @@ const VIEWS = {
         <div class="stack">
           ${daily}${lvl}
           <div class="set"><div class="card-title">${t('language')}</div><div class="langs">${LANGS.map((l) => seg('lang', l, LANG === l, l.toUpperCase())).join('')}</div></div>
-          <div class="set"><div class="card-title">${t('theme')}</div><div class="langs">${seg('theme', 'day', th === 'day', svg('sun', 14))}${seg('theme', 'night', th === 'night', svg('moon', 14))}${seg('theme', 'auto', th === 'auto', t('auto'))}</div></div>
+          <div class="set"><div class="card-title">${t('theme')}</div><div class="langs">${seg('theme', 'day', th === 'day', svg('sun', 14) + t('themeDay'))}${seg('theme', 'night', th === 'night', svg('moon', 14) + t('themeNight'))}${seg('theme', 'auto', th === 'auto', t('auto'))}</div></div>
           <div class="set"><div><div class="card-title">${t('shuffle')}</div><div class="card-meta">${t('shuffleMeta')}</div></div>${tog('shuffle')}</div>
           <div class="set"><div><div class="card-title">${t('explain')}</div><div class="card-meta">${t('explainMeta')}</div></div>${tog('feedback')}</div>
           <div class="set"><div><div class="card-title">${t('reset')}</div><div class="card-meta">${t('resetMeta')}</div></div><button class="danger-link" data-act="reset">${t('resetBtn')}</button></div>
@@ -843,8 +875,8 @@ const SHEETS = {
       <div class="stack g8"><div class="row sb-between"><span class="kicker">${t('topics')}</span><button class="meta acc" data-act="chipsAll">${s.on.size === TOPICS.length ? t('none') : t('all')}</button></div>
         <div class="tags">${chips}</div><span class="hint">${weakTopics().length ? t('weakPre') : ''}${t('tapToggle')}</span></div>
       <div class="stack g8"><span class="kicker">${t('questionsK')}</span><div class="tags">${N > 10 ? sz(10, '10') : ''}${N > 20 ? sz(20, '20') : ''}${sz('all', t('allN', N))}
-        <button class="tag${s.mis ? ' tag-on' : ''}${misAll.length ? '' : ' off'}" style="min-height:40px;font-size:15px" data-act="mis"><span data-i="refresh" data-s="16"></span>${t('mistakesOnly')}</button></div></div>
-      <div class="set" style="border:0;padding:6px 0 0"><div><div class="card-title">${t('showAnswer')}</div><div class="card-meta">${t('explainMeta')}</div></div><button class="toggle${s.fb ? ' on' : ''}" data-act="fb"></button></div>
+        ${misAll.length ? `<button class="tag${s.mis ? ' tag-on' : ''}" style="min-height:40px;font-size:15px" data-act="mis"><span data-i="refresh" data-s="16"></span>${t('mistakesOnly')}<span class="tag-count">${misAll.length}</span></button>` : ''}</div></div>
+      <div class="set" style="border:0;padding:6px 0 0"><div><div class="card-title">${t('showAnswer')}</div><div class="card-meta">${t('explainMeta')}</div></div><button class="toggle${s.fb ? ' on' : ''}" data-act="fb" aria-pressed="${s.fb}" aria-label="${esc(t('showAnswer'))}"></button></div>
       <div class="sheet-foot"><button class="pill pill-primary pill-wide${size ? '' : ' off'}" data-act="start">${size ? t('start', size) : t('pickTopic')}</button></div>`;
   },
   grid() {
@@ -1000,6 +1032,7 @@ const ACT = {
   second: () => secCb && secCb(),
   tab: (d) => tab(d.v),
   level: async (d) => { if (d.id) await setLevel(d.id); go('level'); },
+  resume: () => startPractice(pickFor(BANK.questions.map((q) => q.id), 10)),
   examIntro: () => (cur().v === 'examIntro' ? null : go('examIntro')),
   setup: (d) => openSetup(d.t ? [d.t] : undefined),
   allMistakes: () => go('review', { items: allMistakes().map((id) => ({ id })), label: 'allMistakes', from: 'all' }),
@@ -1025,6 +1058,7 @@ const ACT = {
   grid: () => { sheet = { v: 'grid' }; render(); },
   jump: (d) => { S.exam.i = +d.n; sheet = null; save(false); render(true); },
   submit: () => submitExam(false),
+  restart: () => restartExam(),
   // profile
   lang: async (d) => { if (!TG_LANG) { S.set.lang = d.t; save(); } await setLang(d.t); render(); },
   theme: (d) => { S.set.theme = d.t; save(); applyTheme(); render(); },
@@ -1045,6 +1079,9 @@ $app.addEventListener('click', (e) => {
 });
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') back();
+  // Enter / Space on a focused card or row acts like a tap (buttons do this on their own)
+  const f = document.activeElement;
+  if ((e.key === 'Enter' || e.key === ' ') && f && f !== document.body && f.matches('[data-act]:not(button)') && $app.contains(f)) { e.preventDefault(); f.click(); return; }
   const c = cur();
   if (sheet || (c.v !== 'question' && c.v !== 'exam')) return;
   const k = 'abcd'.indexOf(e.key.toLowerCase()), num = '1234'.indexOf(e.key);
