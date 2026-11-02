@@ -57,3 +57,19 @@ body { -webkit-tap-highlight-color: transparent; }
 .app .continue { border: 2px solid var(--ink); border-radius: 24px; padding: 16px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; }
 .app .rev .ans.ok.plain .l { background: var(--accent); }
 .app .toast { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 20; background: var(--sel-bg); color: var(--sel-ink); font: 700 14px 'Carlito', Arial, sans-serif; padding: 10px 16px; border-radius: 18px; animation: fade .2s ease; white-space: nowrap; }
+
+/* progress bars carry two segments: mastered, then halfway (right once) */
+.app .bar { position: relative; }
+.app .bar i { position: absolute; left: 0; top: 0; }
+.app .bar i.half { position: absolute; background: var(--accent); opacity: .35; }
+.app .bar i:first-child { z-index: 1; }
+.app .sheet:has(.sheet-foot) { padding-bottom: 0; }
+/* practice set-up: Start stays in view while the sheet scrolls */
+.app .sheet-foot { position: sticky; bottom: 0; background: var(--bg); padding: 10px 0 max(20px, env(safe-area-inset-bottom)); margin-top: -4px; box-shadow: 0 -10px 16px -6px var(--bg); }
+/* text-only "card" figures render as HTML, not a fixed-height drawing */
+.app .figcard { position: relative; background: var(--band); border-radius: 20px; padding: 14px 18px 16px; display: flex; flex-direction: column; gap: 8px; }
+.app .figcard ul { margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 4px; font: 400 15px/1.35 'Merriweather', Georgia, serif; color: var(--ink); }
+.app .figtag { position: absolute; top: 12px; right: 14px; background: var(--danger); color: #fff; font: 700 12px 'Carlito', Arial, sans-serif; padding: 4px 10px; border-radius: 12px; }
+/* home: levels without a bank, grouped */
+.app .soonlist { padding: 14px 18px 4px; }
+.app .soonlist .kicker { display: block; margin-bottom: 2px; }

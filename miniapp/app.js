@@ -1,7 +1,9 @@
 /* IYT Test — Telegram mini app.
    Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile).
-   No backend: the bank is a static JSON file, progress lives in Telegram CloudStorage (per user, per bot) with a
-   localStorage copy, so the same code also runs in a plain browser for testing.
+   Banks are read from Supabase (fetchBank), with the static JSON files as fallback; progress lives in Telegram
+   CloudStorage (per user, per bot) with a localStorage copy, so the same code also runs in a plain browser for testing.
+   Levels: every level with an `id` in LEVELS has a bank (bank() in the database, or data/<id>.json); all of them load at start (the home screen
+   shows mastery for each), the one picked last (S.set.level) is the current level the other screens work on.
    Languages: English and Russian. Interface strings are in STR below; question text comes from the bank plus an
    optional overlay data/<level>.<lang>.json (see data/i18n.py) — questions it does not cover stay in English.
    Globals from the design files: rycIcon (icons.js), svg / paintIcons (test-icons.js), figSvg / FIG_TEXT (figures.js). */
@@ -14,14 +16,28 @@ const NATIVE_BUTTONS = tgv('7.10'); // MainButton + SecondaryButton; older clien
 const BOT_LINK = 'https://t.me/iyt_test_bot';
 const $app = document.getElementById('app');
 
-const LEVEL = { id: 'bareboat-skipper', title: 'Bareboat Skipper' };
-const SOON = [['International Crew', 'soon'], ['Yachtmaster Coastal', 'soon'], ['Yachtmaster Offshore', 'soon2027']];
+// IYT recreational levels in course-progression order (iytworld.com/students/recreational/iyt-course-progression).
+// A level with an id has a bank (data/<id>.json, question ids <prefix>-nnn); the others show as coming.
+const LEVELS = [
+  { id: 'vhf-radio-operator', prefix: 'vhf', link: 'vhf', title: 'VHF Radio Operator' },
+  { id: 'international-crew', prefix: 'ic', link: 'crew', title: 'International Crew' },
+  { id: 'flotilla-skipper', prefix: 'fs', link: 'flotilla', title: 'Flotilla Skipper' },
+  { id: 'bareboat-skipper', prefix: 'bs', link: 'bareboat', title: 'Bareboat Skipper' },
+  { title: 'ICC', soon: 'planned' },
+  { title: 'Yachtmaster Coastal', soon: 'soon' },
+  { title: 'Yachtmaster Offshore', soon: 'soon2027' },
+  { title: 'Yachtmaster Ocean', soon: 'planned' },
+];
+const DEFAULT_LEVEL = 'bareboat-skipper';
+let LEVEL = LEVELS.find((l) => l.id === DEFAULT_LEVEL); // the current level
+// Bareboat topics have no icon in the bank; the other banks carry topics[].icon.
 const TOPIC_ICON = { terms: 'yacht', ropework: 'rope', safety: 'ring', colregs: 'compass', navigation: 'map', buoyage: 'buoy', weather: 'wind', anchoring: 'anchor', systems: 'wrench', emergency: 'radio' };
 const LANGS = ['en', 'ru'];
 
-let BASE = null;    // the bank as loaded (English)
-let BANK = null;    // the bank in the current language
-let OVERLAY = {};   // lang → overlay JSON (or null when there is none)
+const BASES = {};   // level id → the bank as loaded (English); a level whose bank failed to load is left out
+let BASE = null;    // BASES of the current level
+let BANK = null;    // the current level's bank in the current language
+let OVERLAY = {};   // '<level>.<lang>' → overlay JSON (or null when there is none)
 let Q = {}, TOPICS = [], TT = {}, TS = {};
 let LANG = 'en';
 
@@ -43,15 +59,16 @@ const ofN = (n) => (n % 10 === 1 && n % 100 !== 11 ? 'ошибки' : 'ошиб�
 const STR = {
   en: {
     learn: 'Learn', exam: 'Exam', progress: 'Progress', profile: 'Profile', back: '‹ Back',
-    soon: 'Coming soon', soon2027: 'Coming in 2027',
+    soon: 'Coming soon', soon2027: 'Coming in 2027', planned: 'Planned',
     homeKicker: 'IYT theory · free', homeTitle: 'Pass your IYT&nbsp;exam',
     homeLead: 'Close-to-real questions for every certification level, with an explanation after each answer. Pick a level to continue.',
     streak: (n) => `${n}-day streak`,
     levelMeta: (t, q, ex) => `${pl(t, 'topic')} · ${pl(q, 'question')}${ex ? ' · ' + pl(ex, 'exam') + ' taken' : ''}`,
     examOpen: 'Mock exam in progress', continue: 'Continue',
     examLine: (a, n, left) => `${a} of ${n} answered · ${left} left`,
-    mastered: 'mastered',
-    levelText: (m, n) => `${m} of ${n} questions answered right twice in a row.`,
+    mastered: 'mastered', halfway: 'halfway', halfwayN: (n) => `+${n} halfway`, moreLevels: 'More levels',
+    halfwayHint: (n) => `${pl(n, 'question')} right once — answer ${n === 1 ? 'it' : 'them'} right again to master.`,
+    levelText: (m, n, h) => `${m} of ${n} mastered${h ? `, ${h} halfway there (right once)` : ''}.`,
     weakest: (list) => ` Weakest: ${list}.`,
     levelFresh: 'A question counts as mastered once you answer it right twice in a row. Start with any topic.',
     practice: 'Practice', mockExam: 'Mock exam', mockShort: 'Mock exam',
@@ -87,7 +104,7 @@ const STR = {
     costMost: (list) => `${list} cost you the most points.`, workFirst: 'Work on these first', fine: 'Fine',
     backToLevel: 'Back to the level', practiseWeak: (w) => `Practise the ${pl(w, 'topic')}`.replace('topic', 'weak topic'), practise: 'Practise', share: 'Share',
     reviewN: (n) => `Review ${pl(n, 'mistake')}`,
-    shareText: (p) => `I scored ${p}% on the IYT Bareboat Skipper mock exam — practice questions for IYT levels:`, copied: 'Copied to the clipboard',
+    shareText: (p, lv) => `I scored ${p}% on the IYT ${lv} mock exam — practice questions for IYT levels:`, copied: 'Copied to the clipboard',
     thisWeek: 'This week', answeredW: 'answered', dayStreak: 'day streak', masteryByTopic: 'Mastery by topic', practiseWeakest: 'Practise weakest ›',
     misMeta: (n) => `${pl(n, 'question')} answered wrong and not yet mastered`, noneNow: 'None right now',
     flaggedQ: 'Flagged questions', flagHint: 'Flag a question to keep it here',
@@ -108,15 +125,16 @@ const STR = {
   },
   ru: {
     learn: 'Учёба', exam: 'Экзамен', progress: 'Прогресс', profile: 'Профиль', back: '‹ Назад',
-    soon: 'Скоро', soon2027: 'В 2027 году',
+    soon: 'Скоро', soon2027: 'В 2027 году', planned: 'В планах',
     homeKicker: 'Теория IYT · бесплатно', homeTitle: 'Сдайте экзамен&nbsp;IYT',
     homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа. Выберите уровень.',
     streak: (n) => `${pl(n, 'day')} подряд`,
     levelMeta: (t, q, ex) => `${pl(t, 'topic')} · ${pl(q, 'question')}${ex ? ' · ' + pl(ex, 'exam') : ''}`,
     examOpen: 'Пробный экзамен не закончен', continue: 'Продолжить',
     examLine: (a, n, left) => `отвечено ${a} из ${n} · осталось ${left}`,
-    mastered: 'освоено',
-    levelText: (m, n) => `${m} из ${n} вопросов отвечены верно дважды подряд.`,
+    mastered: 'освоено', halfway: 'на полпути', halfwayN: (n) => `+${n} на полпути`, moreLevels: 'Другие уровни',
+    halfwayHint: (n) => `Верно один раз: ${pl(n, 'question')}. Ответьте верно ещё раз — и вопрос освоен.`,
+    levelText: (m, n, h) => `Освоено ${m} из ${n}${h ? `, на полпути ${h} (верно один раз)` : ''}.`,
     weakest: (list) => ` Слабее всего: ${list}.`,
     levelFresh: 'Вопрос считается освоенным, когда вы дважды подряд отвечаете на него верно. Начните с любой темы.',
     practice: 'Тренировка', mockExam: 'Пробный экзамен', mockShort: 'Экзамен',
@@ -152,7 +170,7 @@ const STR = {
     costMost: (list) => `Больше всего баллов потеряно в темах: ${list}.`, workFirst: 'Сначала подтяните', fine: 'В порядке',
     backToLevel: 'К уровню', practiseWeak: (w) => `Тренировать слабые темы (${w})`, practise: 'Тренировка', share: 'Поделиться',
     reviewN: (n) => `Разобрать ошибки (${n})`,
-    shareText: (p) => `Мой результат на пробном экзамене IYT Bareboat Skipper — ${p}%. Вопросы для подготовки к IYT:`, copied: 'Скопировано',
+    shareText: (p, lv) => `Мой результат на пробном экзамене IYT ${lv} — ${p}%. Вопросы для подготовки к IYT:`, copied: 'Скопировано',
     thisWeek: 'Эта неделя', answeredW: 'отвечено', dayStreak: (n) => `${word(n, 'day')} подряд`, masteryByTopic: 'Освоение по темам', practiseWeakest: 'Тренировать слабые ›',
     misMeta: (n) => `Вопросов с ошибкой, ещё не освоенных: ${n}`, noneNow: 'Сейчас нет',
     flaggedQ: 'Отмеченные вопросы', flagHint: 'Отметьте вопрос — он появится здесь',
@@ -197,6 +215,9 @@ function figHtml(q) {
   if (!q.figure) return '';
   for (const k in FIG_TEXT) delete FIG_TEXT[k];
   if (q._tr && LANG === 'ru') Object.assign(FIG_TEXT, FIG_RU);
+  const f = q.figure;
+  if (f.type === 'card') return `<div class="figcard">${f.tag ? `<span class="figtag">${esc(f.tag)}</span>` : ''}<span class="kicker">${esc(f.title || '')}</span>` +
+    `<ul>${(f.lines || []).map((l) => `<li>${esc(l)}</li>`).join('')}</ul></div>`;
   return `<div class="fig">${figSvg(q.figure)}</div>`;
 }
 
@@ -214,7 +235,7 @@ function toast(text) {
 /* ---------- state: mastery per question, activity per day, exams; saved locally and to CloudStorage ---------- */
 // q[id] = [last two results as '0'/'1', wrong count]. Mastered = right twice in a row (docs/data-model.md).
 const KEY = 'iyt-test-state-v1';
-const fresh = () => ({ v: 1, ts: 0, q: {}, days: {}, total: 0, flags: [], exams: [], exam: null, last: null, set: { theme: 'auto', shuffle: true, feedback: true, lang: '' } });
+const fresh = () => ({ v: 1, ts: 0, q: {}, days: {}, total: 0, flags: [], exams: [], exam: null, held: {}, last: null, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
 let S = fresh();
 const merge = (o) => { const f = fresh(); return { ...f, ...o, set: { ...f.set, ...(o && o.set) } }; };
 
@@ -258,6 +279,7 @@ const rec = (id) => S.q[id] || ['', 0];
 const mastered = (id) => rec(id)[0] === '11';
 const isMistake = (id) => rec(id)[1] > 0 && !mastered(id);
 const touched = (id) => !!S.q[id];
+const halfway = (id) => !mastered(id) && rec(id)[0].endsWith('1');
 function record(id, ok) {
   const [h, w] = rec(id);
   S.q[id] = [(h + (ok ? '1' : '0')).slice(-2), w + (ok ? 0 : 1)];
@@ -268,9 +290,16 @@ function record(id, ok) {
 let BY_TOPIC = {};
 const topicIds = (tp) => BY_TOPIC[tp] || [];
 const topicPct = (tp) => { const ids = topicIds(tp); return Math.round((ids.filter(mastered).length / ids.length) * 100); };
-const levelPct = () => Math.round((BANK.questions.filter((q) => mastered(q.id)).length / BANK.questions.length) * 100);
+const levelPct = (b = BANK) => Math.round((b.questions.filter((q) => mastered(q.id)).length / b.questions.length) * 100);
+const ready = () => LEVELS.filter((l) => l.id && BASES[l.id]);
+// Exams are kept per level; records from before levels existed have no lv and are Bareboat Skipper's.
+const lvOf = (x) => (x && x.lv) || DEFAULT_LEVEL;
+const myExams = (id = LEVEL.id) => S.exams.filter((e) => lvOf(e) === id);
 const allMistakes = () => BANK.questions.filter((q) => isMistake(q.id)).map((q) => q.id);
-const weakTopics = () => TOPICS.filter((tp) => topicPct(tp.id) < 50 && topicIds(tp.id).some(touched)).map((tp) => tp.id);
+// accuracy of the last attempt on every touched question of a topic (null when untouched)
+const topicAcc = (tp) => { const ids = topicIds(tp).filter(touched); return ids.length ? ids.filter((id) => rec(id)[0].endsWith('1')).length / ids.length : null; };
+const weakTopics = () => TOPICS.filter((tp) => { const a = topicAcc(tp.id); return a != null && a < 0.6; }).map((tp) => tp.id);
+let WEAK = new Set();
 function streak() {
   const d = new Date();
   if (!S.days[dkey(d)]) d.setDate(d.getDate() - 1); // today not practised yet: the streak is still alive
@@ -286,12 +315,30 @@ function pickLang() {
   const code = (IN_TG && TG.initDataUnsafe?.user?.language_code) || navigator.language || '';
   return /^(ru|uk|be|kk)\b/i.test(code) ? 'ru' : 'en';
 }
-async function loadOverlay(lang) {
-  if (lang === 'en' || lang in OVERLAY) return;
+// Banks come from Supabase (docs/data-model.md: bank() and bank_overlay() return the same shape as the files);
+// the JSON files shipped next to the app are the fallback when the database is slow, down or lacks the level.
+// The publishable key only reads the catalogue.
+const SUPABASE = { url: 'https://xpdhkahgvusuicynssxq.supabase.co', key: 'sb_publishable_WKUQdLYP62nam72_h4p5QA_Sz8nxD_Y' };
+async function fetchBank(level, lang = 'en') {
+  const fn = lang === 'en' ? `bank?p_level=${level}` : `bank_overlay?p_level=${level}&p_lang=${lang}`;
   try {
-    const r = await fetch(`data/${LEVEL.id}.${lang}.json`, { cache: 'no-cache' });
-    OVERLAY[lang] = r.ok ? await r.json() : null;
-  } catch (e) { OVERLAY[lang] = null; }
+    const ctl = typeof AbortController === 'function' ? new AbortController() : null;
+    const timer = ctl && setTimeout(() => ctl.abort(), 8000);
+    const r = await fetch(`${SUPABASE.url}/rest/v1/rpc/${fn}`, { headers: { apikey: SUPABASE.key }, signal: ctl && ctl.signal });
+    const b = r.ok ? await r.json() : null;
+    clearTimeout(timer);
+    if (b) return b;
+  } catch (e) {}
+  const r = await fetch(`data/${lang === 'en' ? level : `${level}.${lang}`}.json`, { cache: 'no-cache' });
+  return r.ok ? r.json() : r.status;
+}
+async function loadOverlay(lang, lv = LEVEL.id) {
+  const k = `${lv}.${lang}`;
+  if (lang === 'en' || k in OVERLAY) return;
+  try {
+    const o = await fetchBank(lv, lang);
+    OVERLAY[k] = o && o.questions ? o : null;
+  } catch (e) { OVERLAY[k] = null; }
 }
 function setPath(obj, path, val) {
   const k = path.split('.');
@@ -301,7 +348,8 @@ function setPath(obj, path, val) {
 }
 // Rebuilds BANK/Q/TOPICS in LANG. Option order never changes, so progress and exams keyed by option index stay valid.
 function localise() {
-  const ov = (LANG !== 'en' && OVERLAY[LANG]) || null;
+  BASE = BASES[LEVEL.id];
+  const ov = (LANG !== 'en' && OVERLAY[`${LEVEL.id}.${LANG}`]) || null;
   const tq = (ov && ov.questions) || {};
   const questions = BASE.questions.map((q) => {
     const tr = tq[q.id];
@@ -323,6 +371,25 @@ async function setLang(lang) {
   LANG = lang;
   await loadOverlay(lang);
   localise();
+}
+// Makes another level current. An exam in progress is put aside and comes back when you return to its level.
+async function setLevel(id) {
+  const l = LEVELS.find((x) => x.id === id && BASES[x.id]);
+  if (!l || l === LEVEL) return;
+  stopTimer();
+  LEVEL = l;
+  S.set.level = id;
+  swapExam();
+  await loadOverlay(LANG);
+  localise();
+  expireExam();
+  save();
+}
+// Keeps S.exam for the current level only; exams of other levels wait in S.held.
+function swapExam() {
+  S.held = S.held || {};
+  if (S.exam && lvOf(S.exam) !== LEVEL.id) { S.held[lvOf(S.exam)] = S.exam; S.exam = null; }
+  if (!S.exam && S.held[LEVEL.id]) { S.exam = S.held[LEVEL.id]; delete S.held[LEVEL.id]; }
 }
 
 /* ---------- navigation: a stack of views, one optional sheet on top ---------- */
@@ -369,6 +436,7 @@ const NAV = [['home', 'book', 'learn'], ['examIntro', 'timer', 'exam'], ['progre
 function render(toTop) {
   if (cur().v === 'exam' && !S.exam) stack[stack.length - 1] = { v: 'examIntro' };
   const c = cur();
+  WEAK = new Set(weakTopics());
   const V = VIEWS[c.v](c);
   const old = $app.querySelector('.scroll');
   const keep = !toTop && old ? old.scrollTop : 0;
@@ -411,9 +479,10 @@ function nativeButtons(B) {
 function topicRows() {
   return `<div class="topics">${TOPICS.map((tp) => {
     const ids = topicIds(tp.id), m = ids.filter(mastered).length, p = Math.round((m / ids.length) * 100);
-    const cls = p >= 100 ? ' done' : p < 50 && ids.some(touched) ? ' weak' : '';
-    return `<div class="topic${cls}" data-act="setup" data-t="${tp.id}"><span class="ico">${p >= 100 ? svg('check', 18) : svg(TOPIC_ICON[tp.id] || 'book', 18)}</span>` +
-      `<span class="card-title">${esc(tp.title)}</span><span class="n"><b>${m}/${ids.length}</b>${t('mastered')}</span><span class="bar"><i style="width:${p}%"></i></span></div>`;
+    const h = ids.filter(halfway).length, hp = Math.round((h / ids.length) * 100);
+    const cls = p >= 100 ? ' done' : WEAK.has(tp.id) ? ' weak' : '';
+    return `<div class="topic${cls}" data-act="setup" data-t="${tp.id}"><span class="ico">${p >= 100 ? svg('check', 18) : svg(tp.icon || TOPIC_ICON[tp.id] || 'book', 18)}</span>` +
+      `<span class="card-title">${esc(tp.title)}</span><span class="n"><b>${m}/${ids.length}</b>${h ? `<span class="acc">${t('halfwayN', h)}</span>` : t('mastered')}</span><span class="bar"><i style="width:${p}%"></i><i class="half" style="left:${p}%;width:${hp}%"></i></span></div>`;
   }).join('')}</div>`;
 }
 function tbars(per, limit = 60) {
@@ -437,17 +506,22 @@ function examLine() {
 const VIEWS = {
   /* A1 Home */
   home() {
-    const st = streak(), lp = levelPct(), ex = S.exams.length;
-    const lv = `<div class="lvl on" data-act="level"><span class="ring" style="--v:${lp}"><b>${lp}%</b></span><div><div class="card-title">${LEVEL.title}</div>` +
-        `<div class="card-meta">${t('levelMeta', TOPICS.length, BANK.questions.length, ex)}</div></div><span class="chev" data-i="next" data-s="20"></span></div>` +
-      SOON.map(([title, k]) => `<div class="lvl soon"><span class="ring" style="--v:0"><b>—</b></span><div><div class="card-title">${title}</div><div class="card-meta">${t(k)}</div></div></div>`).join('');
+    const st = streak();
+    const lv = LEVELS.filter((l) => l.id && BASES[l.id]).map((l) => {
+      const b = l.id && BASES[l.id];
+      if (!b) return `<div class="lvl soon"><span class="ring" style="--v:0"><b>—</b></span><div><div class="card-title">${l.title}</div><div class="card-meta">${t(l.soon || 'soon')}</div></div></div>`;
+      const lp = levelPct(b);
+      return `<div class="lvl${l === LEVEL ? ' on' : ''}" data-act="level" data-id="${l.id}"><span class="ring" style="--v:${lp}"><b>${lp}%</b></span><div><div class="card-title">${l.title}</div>` +
+        `<div class="card-meta">${t('levelMeta', b.topics.length, b.questions.length, myExams(l.id).length)}</div></div><span class="chev" data-i="next" data-s="20"></span></div>`;
+    }).join('');
     return {
       title: 'IYT Test', nav: 'home',
       body: `<div class="row sb-between" style="min-height:40px"><img class="logo" src="design/logo-black.svg" alt="RYC">${st ? `<span class="streak"><span class="fire" data-i="fire" data-s="14"></span>${t('streak', st)}</span>` : ''}</div>
         <div class="stack g12"><span class="meta">${t('homeKicker')}</span><h1 class="display">${t('homeTitle')}</h1>
         <p class="body-muted">${t('homeLead')}</p></div>
         ${S.exam ? `<div class="continue" data-act="examIntro"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
-        <div class="stack" style="gap:10px">${lv}</div>`,
+        <div class="stack" style="gap:10px">${lv}</div>
+        <div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${LEVELS.filter((l) => !(l.id && BASES[l.id])).map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>`,
     };
   },
 
@@ -455,8 +529,8 @@ const VIEWS = {
   level() {
     const lp = levelPct(), m = BANK.questions.filter((q) => mastered(q.id)).length;
     const any = BANK.questions.some((q) => touched(q.id));
-    const weakest = TOPICS.filter((tp) => topicIds(tp.id).some(touched) && topicPct(tp.id) < 100).sort((a, b) => topicPct(a.id) - topicPct(b.id)).slice(0, 2).map((tp) => short(tp.id));
-    const text = any ? t('levelText', m, BANK.questions.length) + (weakest.length ? t('weakest', weakest.join(', ')) : '') : t('levelFresh');
+    const weakest = weakTopics().sort((a, b) => topicAcc(a) - topicAcc(b)).slice(0, 2).map(short);
+    const text = any ? t('levelText', m, BANK.questions.length, BANK.questions.filter((q) => halfway(q.id)).length) + (weakest.length ? t('weakest', weakest.join(', ')) : '') : t('levelFresh');
     const mis = allMistakes().length;
     return {
       title: LEVEL.title,
@@ -514,6 +588,7 @@ const VIEWS = {
     const pct = done.length ? Math.round((ok / done.length) * 100) : 0;
     const wrong = done.filter((id) => P.res[id] === 'bad');
     const plus = P.ids.filter((id) => mastered(id) && !P.before[id]).length;
+    const half = P.ids.filter(halfway).length;
     const per = perTopic(done, (id) => P.res[id] === 'ok');
     const worst = Object.entries(per).filter(([, [a, b]]) => a < b).sort((x, y) => (x[1][0] - x[1][1]) - (y[1][0] - y[1][1]))[0];
     const heads = t('heads');
@@ -522,12 +597,12 @@ const VIEWS = {
     return {
       title: t('results'),
       main: wrong.length ? { text: t('practiseTopic', lower(short(worst[0]))), act: () => startPractice(pickFor(topicIds(worst[0]), 10)) } : { text: t('practiseMore'), act: () => openSetup() },
-      second: wrong.length ? { text: t('mistakesN', wrong.length), icon: 'refresh', act: () => go('review', { items: wrong.map((id) => ({ id, pick: P.picks[id] })), label: 'thisSession', from: 'session' }) } : null,
+      second: wrong.length ? { pos: 'bottom', text: t('mistakesN', wrong.length), icon: 'refresh', act: () => go('review', { items: wrong.map((id) => ({ id, pick: P.picks[id] })), label: 'thisSession', from: 'session' }) } : null,
       body: `<div class="score"><span class="ring l" style="--v:${pct}"><b>${ok}/${done.length}</b><small>${t('correct')}</small></span>
           <h2 class="display" style="font-size:34px">${head}</h2><p class="body-muted">${esc(copy)}</p></div>
-        <div class="stats"><div class="stat"><b>${pct}%</b><span class="meta">${t('score')}</span></div><div class="stat"><b>${fmt(P.secs * 1000)}</b><span class="meta">${t('time')}</span></div><div class="stat"><b>+${plus}</b><span class="meta">${t('mastered')}</span></div></div>
+        <div class="stats"><div class="stat"><b>${pct}%</b><span class="meta">${t('score')}</span></div><div class="stat"><b>${fmt(P.secs * 1000)}</b><span class="meta">${t('time')}</span></div>${plus ? `<div class="stat"><b>+${plus}</b><span class="meta">${t('mastered')}</span></div>` : `<div class="stat"><b>${half}</b><span class="meta">${t('halfway')}</span></div>`}</div>
         <div class="stack g8"><span class="kicker">${t('byTopic')}</span>${tbars(per)}</div>
-        <p class="hint hint-line">${t('masteryMove', P.lvlBefore, levelPct())}</p>`,
+        <p class="hint hint-line">${half ? t('halfwayHint', half) : t('masteryMove', P.lvlBefore, levelPct())}</p>`,
     };
   },
 
@@ -555,7 +630,7 @@ const VIEWS = {
 
   /* B1 Exam intro (also the Exam tab) */
   examIntro() {
-    const atts = S.exams.slice(0, 5).map((e) => `<div class="att"><span class="card-meta">${day(e.at)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
+    const atts = myExams().slice(0, 5).map((e) => `<div class="att"><span class="card-meta">${day(e.at)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
     const rules = t('rules').map(([a, b], i) => `<div class="step step-num"><span class="step-ico">${i + 1}</span><div><div class="card-title">${a}</div><div class="card-meta">${b}</div></div></div>`).join('');
     return {
       title: t('mockExam'), nav: 'examIntro',
@@ -638,9 +713,9 @@ const VIEWS = {
       body: `<div class="stack g4"><span class="meta">${LEVEL.title}</span><h2 class="display-s">${t('progress')}</h2></div>
         <div class="stats"><div class="stat"><b>${lp}%</b><span class="meta">${t('mastered')}</span></div><div class="stat"><b>${S.total}</b><span class="meta">${t('answeredW')}</span></div><div class="stat"><b>${st}</b><span class="meta">${t('dayStreak', st)}</span></div></div>
         <div class="band" style="padding:16px 18px"><div class="row sb-between" style="margin-bottom:12px"><span class="kicker">${t('thisWeek')}</span><span class="meta">${pl(sum, 'question')}</span></div><div class="days">${days}</div></div>
-        <div class="stack g8"><div class="row sb-between"><span class="kicker">${t('masteryByTopic')}</span><button class="meta acc" data-act="setup">${t('practiseWeakest')}</button></div>${topicRows()}</div>
         <div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${mis ? t('misMeta', mis) : t('noneNow')}</div></div><button class="mini mini-accent${mis ? '' : ' off'}" data-act="allMistakes">${t('review')}</button></div>
-        <div class="row sb-between"><div><div class="card-title">${t('flaggedQ')}</div><div class="card-meta">${fl ? pl(fl, 'question') : t('flagHint')}</div></div><button class="mini mini-accent${fl ? '' : ' off'}" data-act="flagged">${t('practise')}</button></div>`,
+        <div class="row sb-between"><div><div class="card-title">${t('flaggedQ')}</div><div class="card-meta">${fl ? pl(fl, 'question') : t('flagHint')}</div></div><button class="mini mini-accent${fl ? '' : ' off'}" data-act="flagged">${t('practise')}</button></div>
+        <div class="stack g8"><div class="row sb-between"><span class="kicker">${t('masteryByTopic')}</span><button class="meta acc" data-act="setup">${t('practiseWeakest')}</button></div>${topicRows()}</div>`,
     };
   },
 
@@ -678,7 +753,7 @@ const SHEETS = {
     const misAll = allMistakes();
     const chips = TOPICS.map((tp) => {
       const c = s.mis ? topicIds(tp.id).filter(isMistake).length : topicIds(tp.id).length;
-      return `<button class="tag${s.on.has(tp.id) ? ' tag-on' : ''}${s.mis && !c ? ' off' : ''}" style="min-height:40px;font-size:15px;padding:0 14px" data-act="chip" data-t="${tp.id}">${esc(short(tp.id))}<span class="tag-count">${c}</span></button>`;
+      return `<button class="tag${s.on.has(tp.id) ? ' tag-on' : ''}${s.mis && !c ? ' off' : ''}" style="min-height:36px;font-size:14px;padding:0 12px;gap:6px" data-act="chip" data-t="${tp.id}">${esc(short(tp.id))}<span class="tag-count">${c}</span></button>`;
     }).join('');
     const sz = (v, label) => `<button class="tag${s.size === v ? ' tag-on' : ''}" style="min-height:40px;font-size:15px" data-act="size" data-s="${v}">${label}</button>`;
     return `<div class="stack g4"><span class="meta">${t('practice')}</span><h2 class="display-s">${t('whatToPractise')}</h2></div>
@@ -687,7 +762,7 @@ const SHEETS = {
       <div class="stack g8"><span class="kicker">${t('questionsK')}</span><div class="tags">${N > 10 ? sz(10, '10') : ''}${N > 20 ? sz(20, '20') : ''}${sz('all', t('allN', N))}
         <button class="tag${s.mis ? ' tag-on' : ''}${misAll.length ? '' : ' off'}" style="min-height:40px;font-size:15px" data-act="mis"><span data-i="refresh" data-s="16"></span>${t('mistakesOnly')}</button></div></div>
       <div class="set" style="border:0;padding:6px 0 0"><div><div class="card-title">${t('showAnswer')}</div><div class="card-meta">${t('explainMeta')}</div></div><button class="toggle${s.fb ? ' on' : ''}" data-act="fb"></button></div>
-      <button class="pill pill-primary pill-wide${size ? '' : ' off'}" data-act="start">${size ? t('start', size) : t('pickTopic')}</button>`;
+      <div class="sheet-foot"><button class="pill pill-primary pill-wide${size ? '' : ' off'}" data-act="start">${size ? t('start', size) : t('pickTopic')}</button></div>`;
   },
   grid() {
     const E = S.exam, a = E.ids.filter((id) => E.ans[id] != null).length, left = E.ids.length - a;
@@ -779,7 +854,7 @@ function buildExam() {
   const ids = [];
   while (ids.length < n && groups.some((g) => g.length)) for (const g of groups) if (g.length && ids.length < n) ids.push(g.pop());
   const order = shuffle(ids);
-  S.exam = { ids: order, ord: Object.fromEntries(order.map((id) => [id, S.set.shuffle ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3]])), ans: {}, flags: [], el: 0, i: 0, at: Date.now(), last: Date.now() };
+  S.exam = { lv: LEVEL.id, ids: order, ord: Object.fromEntries(order.map((id) => [id, S.set.shuffle ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3]])), ans: {}, flags: [], el: 0, i: 0, at: Date.now(), last: Date.now() };
   save();
 }
 function startExam() {
@@ -814,7 +889,7 @@ async function submitExam(auto) {
   });
   const n = E.ids.length, pct = Math.round((ok / n) * 100), passed = pct >= BANK.passMark;
   const R = { at: Date.now(), ok, n, pct, passed, secs: Math.round(E.el / 1000), left, auto: !!auto, ids: E.ids, ans: E.ans };
-  S.exams = [{ at: R.at, ok, n, pct, passed, secs: R.secs }, ...S.exams].slice(0, 20);
+  S.exams = [{ lv: LEVEL.id, at: R.at, ok, n, pct, passed, secs: R.secs }, ...S.exams].slice(0, 40);
   S.last = R;
   S.exam = null;
   save();
@@ -823,7 +898,7 @@ async function submitExam(auto) {
   if (cur().v === 'exam') { sheet = null; replace('examResult'); }
 }
 function share(R) {
-  const text = t('shareText', R.pct);
+  const text = t('shareText', R.pct, LEVEL.title);
   if (IN_TG) TG.openTelegramLink(`https://t.me/share/url?url=${encodeURIComponent(BOT_LINK)}&text=${encodeURIComponent(text)}`);
   else if (navigator.share) navigator.share({ text, url: BOT_LINK }).catch(() => {});
   else { navigator.clipboard?.writeText(`${text} ${BOT_LINK}`); toast(t('copied')); }
@@ -835,7 +910,7 @@ const ACT = {
   main: () => mainCb && mainCb(),
   second: () => secCb && secCb(),
   tab: (d) => tab(d.v),
-  level: () => go('level'),
+  level: async (d) => { if (d.id) await setLevel(d.id); go('level'); },
   examIntro: () => (cur().v === 'examIntro' ? null : go('examIntro')),
   setup: (d) => openSetup(d.t ? [d.t] : undefined),
   allMistakes: () => go('review', { items: allMistakes().map((id) => ({ id })), label: 'allMistakes', from: 'all' }),
@@ -898,7 +973,7 @@ function deepLink() {
   if (p === 'exam') stack = [{ v: 'examIntro' }];
   else if (p === 'progress') stack = [{ v: 'progress' }];
   else if (p === 'profile' || p === 'settings') stack = [{ v: 'profile' }];
-  else if (p === 'bareboat' || p === 'level') stack = [{ v: 'home' }, { v: 'level' }];
+  else if (p === 'level' || LEVELS.some((l) => l.link === p && BASES[l.id])) stack = [{ v: 'home' }, { v: 'level' }];
   else if (p === 'practice') { stack = [{ v: 'home' }, { v: 'level' }]; return 'setup'; }
   return null;
 }
@@ -919,11 +994,17 @@ async function init() {
   loadLocal();
   applyTheme();
   LANG = pickLang();
-  const [res] = await Promise.all([fetch(`data/${LEVEL.id}.json`, { cache: 'no-cache' }), loadOverlay(LANG)]);
-  if (!res.ok) throw new Error(t('bankError', res.status));
-  BASE = await res.json();
+  const banks = await Promise.all(LEVELS.filter((l) => l.id).map((l) =>
+    fetchBank(l.id).catch(() => 0).then((b) => [l.id, b])));
+  for (const [id, b] of banks) if (b && b.questions) BASES[id] = b;
+  if (!BASES[DEFAULT_LEVEL]) throw new Error(t('bankError', banks.find(([id]) => id === DEFAULT_LEVEL)[1]));
   const remote = await cloudLoad();
   if (remote && remote.ts > S.ts) { S = merge(remote); applyTheme(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  const link = (IN_TG && TG.initDataUnsafe && TG.initDataUnsafe.start_param) || new URLSearchParams(location.search).get('screen') || '';
+  const want = (LEVELS.find((l) => l.link === link) || {}).id || S.set.level;
+  LEVEL = LEVELS.find((l) => l.id === want && BASES[l.id]) || LEVELS.find((l) => l.id === DEFAULT_LEVEL);
+  S.set.level = LEVEL.id;
+  swapExam();
   await setLang(pickLang());
   prune();
   expireExam();
