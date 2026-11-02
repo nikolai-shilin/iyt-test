@@ -67,7 +67,6 @@ const STR = {
     examOpen: 'Mock exam in progress', continue: 'Continue',
     examLine: (a, n, left) => `${a} of ${n} answered · ${left} left`,
     mastered: 'mastered', halfway: 'halfway', halfwayN: (n) => `+${n} halfway`, moreLevels: 'More levels',
-    halfwayHint: (n) => `${pl(n, 'question')} right once — answer ${n === 1 ? 'it' : 'them'} right again to master.`,
     levelText: (m, n, h) => `${m} of ${n} mastered${h ? `, ${h} halfway there (right once)` : ''}.`,
     weakest: (list) => ` Weakest: ${list}.`,
     levelFresh: 'A question counts as mastered once you answer it right twice in a row. Start with any topic.',
@@ -78,8 +77,11 @@ const STR = {
     flag: 'Flag', flagged: 'Flagged', skip: 'Skip', check: 'Check', next: 'Next', finish: 'Finish', seeResults: 'See results',
     results: 'Results', heads: ['Excellent', 'Good session', 'Getting there', 'Keep going'],
     worst: (topic, k, w) => `${topic} needs the most work — ${k} of ${pl(w, 'mistake')} ${k === 1 ? 'was' : 'were'} there.`,
-    noMistakes: 'No mistakes this time.', movedMastered: (n) => ` ${pl(n, 'question')} moved to mastered.`,
-    score: 'score', time: 'time', byTopic: 'By topic', masteryMove: (a, b) => `Mastery: ${a}% → ${b}%`,
+    noMistakes: 'No mistakes this time.',
+    score: 'score', time: 'time', byTopic: 'By topic', timeSpent: (s) => ` Time ${s}.`, statNew: 'new', statWrong: 'mistakes',
+    seenRight: (s, r) => `seen ${s} · right ${r}`, whatNext: 'What next', nextMastered: (n) => `+${pl(n, 'question')} mastered`, nextMasteredMeta: 'Right twice in a row. They come back only now and then.',
+    nextHalf: (n) => `${pl(n, 'question')} halfway`, nextHalfMeta: 'Right once. Answer right again in a later session to master.',
+    nextWrong: (n) => `${pl(n, 'mistake')} come${n === 1 ? 's' : ''} back first`, nextWrongMeta: 'Until you answer right twice in a row.',
     practiseTopic: (t) => `Practise ${t}`, practiseMore: 'Practise more', mistakesN: (n) => `Mistakes · ${n}`,
     mistakesTitle: 'Mistakes', thisSession: 'This session', allMistakes: 'All mistakes', reviewTitle: 'Review mistakes',
     notAnswered: 'Not answered', nothingToReview: 'Nothing to review — no mistakes here.', practiseThese: 'Practise these again',
@@ -110,6 +112,7 @@ const STR = {
     flaggedQ: 'Flagged questions', flagHint: 'Flag a question to keep it here',
     guest: 'Guest', syncedTg: 'progress synced with Telegram', savedBrowser: 'Progress is saved in this browser',
     currentLevel: 'Current level', language: 'Language', theme: 'Theme', auto: 'Auto',
+    daily: 'Question of the day', dailyMeta: 'Every morning in the chat with the bot', dailyAccess: 'Allow the bot to message you to get the question',
     shuffle: 'Shuffle options', shuffleMeta: 'Different order each time',
     explain: 'Explain after each answer', explainMeta: 'Off = exam style, results at the end',
     reset: 'Reset progress', resetMeta: 'Mastery, mistakes, streak and exams', resetBtn: 'Reset',
@@ -133,7 +136,6 @@ const STR = {
     examOpen: 'Пробный экзамен не закончен', continue: 'Продолжить',
     examLine: (a, n, left) => `отвечено ${a} из ${n} · осталось ${left}`,
     mastered: 'освоено', halfway: 'на полпути', halfwayN: (n) => `+${n} на полпути`, moreLevels: 'Другие уровни',
-    halfwayHint: (n) => `Верно один раз: ${pl(n, 'question')}. Ответьте верно ещё раз — и вопрос освоен.`,
     levelText: (m, n, h) => `Освоено ${m} из ${n}${h ? `, на полпути ${h} (верно один раз)` : ''}.`,
     weakest: (list) => ` Слабее всего: ${list}.`,
     levelFresh: 'Вопрос считается освоенным, когда вы дважды подряд отвечаете на него верно. Начните с любой темы.',
@@ -144,8 +146,11 @@ const STR = {
     flag: 'Отметить', flagged: 'Отмечен', skip: 'Пропустить', check: 'Проверить', next: 'Далее', finish: 'Закончить', seeResults: 'Результаты',
     results: 'Результаты', heads: ['Отлично', 'Хорошая тренировка', 'Почти получилось', 'Продолжайте'],
     worst: (topic, k, w) => `Больше всего внимания требует тема «${topic}»: здесь ${k} из ${w} ${ofN(w)}.`,
-    noMistakes: 'Ни одной ошибки.', movedMastered: (n) => ` Новых освоенных вопросов: ${n}.`,
-    score: 'результат', time: 'время', byTopic: 'По темам', masteryMove: (a, b) => `Освоено: ${a}% → ${b}%`,
+    noMistakes: 'Ни одной ошибки.',
+    score: 'результат', time: 'время', byTopic: 'По темам', timeSpent: (s) => ` Время ${s}.`, statNew: 'новых', statWrong: 'ошибок',
+    seenRight: (s, r) => `видели ${s} · верно ${r}`, whatNext: 'Что дальше', nextMastered: (n) => `Освоено: +${pl(n, 'question')}`, nextMasteredMeta: 'Верно дважды подряд. Будут попадаться лишь изредка.',
+    nextHalf: (n) => `На полпути: ${pl(n, 'question')}`, nextHalfMeta: 'Верно один раз. Ответьте верно ещё раз в следующих тренировках — и вопрос освоен.',
+    nextWrong: (n) => `Первыми вернутся ошибки: ${n}`, nextWrongMeta: 'Пока не ответите верно дважды подряд.',
     practiseTopic: (t) => `Тренировать: ${t}`, practiseMore: 'Ещё тренировка', mistakesN: (n) => `Ошибки · ${n}`,
     mistakesTitle: 'Ошибки', thisSession: 'Эта тренировка', allMistakes: 'Все ошибки', reviewTitle: 'Разбор ошибок',
     notAnswered: 'Нет ответа', nothingToReview: 'Разбирать нечего — ошибок нет.', practiseThese: 'Повторить эти вопросы',
@@ -176,6 +181,7 @@ const STR = {
     flaggedQ: 'Отмеченные вопросы', flagHint: 'Отметьте вопрос — он появится здесь',
     guest: 'Гость', syncedTg: 'прогресс сохраняется в Telegram', savedBrowser: 'Прогресс сохраняется в этом браузере',
     currentLevel: 'Текущий уровень', language: 'Язык', theme: 'Тема', auto: 'Авто',
+    daily: 'Вопрос дня', dailyMeta: 'Каждое утро в чате с ботом', dailyAccess: 'Разрешите боту писать вам, чтобы получать вопрос',
     shuffle: 'Перемешивать варианты', shuffleMeta: 'Каждый раз в другом порядке',
     explain: 'Пояснение после ответа', explainMeta: 'Выкл. — как на экзамене, итог в конце',
     reset: 'Сбросить прогресс', resetMeta: 'Освоение, ошибки, серия дней и экзамены', resetBtn: 'Сбросить',
@@ -299,7 +305,9 @@ const myExams = (id = LEVEL.id) => S.exams.filter((e) => lvOf(e) === id);
 const allMistakes = () => BANK.questions.filter((q) => isMistake(q.id)).map((q) => q.id);
 // accuracy of the last attempt on every touched question of a topic (null when untouched)
 const topicAcc = (tp) => { const ids = topicIds(tp).filter(touched); return ids.length ? ids.filter((id) => rec(id)[0].endsWith('1')).length / ids.length : null; };
-const weakTopics = () => TOPICS.filter((tp) => { const a = topicAcc(tp.id); return a != null && a < 0.6; }).map((tp) => tp.id);
+const topicSeen = (tp) => topicIds(tp).filter(touched).length;
+// weak = under 60 % right on the last attempt, judged only once a topic has 5 answered questions
+const weakTopics = () => TOPICS.filter((tp) => { const a = topicAcc(tp.id); return a != null && a < 0.6 && topicSeen(tp.id) >= 5; }).map((tp) => tp.id);
 let WEAK = new Set();
 function streak() {
   const d = new Date();
@@ -400,6 +408,31 @@ function swapExam() {
 let stack = [{ v: 'home' }];
 let sheet = null;
 let P = null; // the running practice session (memory only)
+// The question-of-the-day switch lives on the server (api/settings.mjs, the same flag as the bot's /settings).
+// undefined = not asked yet, null = unavailable (outside Telegram, no database, request failed) and the row is hidden.
+let DAILY;
+const settingsApi = (body) => fetch('/api/settings', {
+  method: body ? 'POST' : 'GET', body: body && JSON.stringify(body),
+  headers: { 'x-telegram-init-data': TG.initData, ...(body && { 'content-type': 'application/json' }) },
+}).then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))));
+function loadDaily() {
+  if (!IN_TG || DAILY !== undefined) return;
+  DAILY = null;
+  settingsApi().then((j) => {
+    if (typeof j.daily !== 'boolean') return;
+    DAILY = j.daily;
+    if (cur().v === 'profile' && !sheet) render();
+  }).catch(() => {});
+}
+async function toggleDaily() {
+  if (typeof DAILY !== 'boolean') return;
+  const on = !DAILY;
+  // the bot can only message people who allowed it; Telegram asks once and remembers
+  if (on && tgv('6.9') && !(await new Promise((res) => TG.requestWriteAccess(res)))) return toast(t('dailyAccess'));
+  DAILY = on; hap('sel'); render();
+  try { DAILY = (await settingsApi({ daily: on })).daily; } catch (e) { DAILY = !on; toast(t('error')); }
+  if (cur().v === 'profile') render();
+}
 let mainCb = null, secCb = null;
 const cur = () => stack[stack.length - 1];
 
@@ -484,9 +517,14 @@ function topicRows() {
   return `<div class="topics">${TOPICS.map((tp) => {
     const ids = topicIds(tp.id), m = ids.filter(mastered).length, p = Math.round((m / ids.length) * 100);
     const h = ids.filter(halfway).length, hp = Math.round((h / ids.length) * 100);
-    const cls = p >= 100 ? ' done' : WEAK.has(tp.id) ? ' weak' : '';
-    return `<div class="topic${cls}" data-act="setup" data-t="${tp.id}"><span class="ico">${p >= 100 ? svg('check', 18) : svg(tp.icon || TOPIC_ICON[tp.id] || 'book', 18)}</span>` +
-      `<span class="card-title">${esc(tp.title)}</span><span class="n"><b>${m}/${ids.length}</b>${h ? `<span class="acc">${t('halfwayN', h)}</span>` : t('mastered')}</span><span class="bar"><i style="width:${p}%"></i><i class="half" style="left:${p}%;width:${hp}%"></i></span></div>`;
+    const seen = topicSeen(tp.id), right = ids.filter((id) => rec(id)[0].endsWith('1')).length;
+    const sp = Math.max(0, Math.round((seen / ids.length) * 100) - p - hp); // seen, not yet right: the third, grey step
+    const weak = p < 100 && WEAK.has(tp.id);
+    const cls = p >= 100 ? ' done' : weak ? ' weak' : '';
+    const line = seen && p < 100 ? `<span class="tmeta${weak ? ' bad-t' : ''}">${t('seenRight', seen, right)}</span>` : '';
+    return `<div class="topic${cls}${line ? ' x3' : ''}" data-act="setup" data-t="${tp.id}"><span class="ico">${p >= 100 ? svg('check', 18) : svg(tp.icon || TOPIC_ICON[tp.id] || 'book', 18)}</span>` +
+      `<span class="card-title">${esc(tp.title)}</span>${line}<span class="n"><b>${m}/${ids.length}</b>${h ? `<span class="acc">${t('halfwayN', h)}</span>` : t('mastered')}</span>` +
+      `<span class="bar"><i style="width:${p}%"></i><i class="half" style="left:${p}%;width:${hp}%"></i><i class="seen" style="left:${p + hp}%;width:${sp}%"></i></span></div>`;
   }).join('')}</div>`;
 }
 function tbars(per, limit = 60) {
@@ -592,21 +630,26 @@ const VIEWS = {
     const pct = done.length ? Math.round((ok / done.length) * 100) : 0;
     const wrong = done.filter((id) => P.res[id] === 'bad');
     const plus = P.ids.filter((id) => mastered(id) && !P.before[id]).length;
-    const half = P.ids.filter(halfway).length;
+    const half = P.ids.filter(halfway).length, fresh = done.filter((id) => !P.seen.has(id)).length;
     const per = perTopic(done, (id) => P.res[id] === 'ok');
     const worst = Object.entries(per).filter(([, [a, b]]) => a < b).sort((x, y) => (x[1][0] - x[1][1]) - (y[1][0] - y[1][1]))[0];
     const heads = t('heads');
     const head = heads[pct >= 90 ? 0 : pct >= 70 ? 1 : pct >= 50 ? 2 : 3];
-    const copy = (wrong.length ? t('worst', short(worst[0]), worst[1][1] - worst[1][0], wrong.length) : t('noMistakes')) + (plus ? t('movedMastered', plus) : '');
+    const copy = (wrong.length ? t('worst', short(worst[0]), worst[1][1] - worst[1][0], wrong.length) : t('noMistakes')) + t('timeSpent', fmt(P.secs * 1000));
+    // what the next sessions will do with this one's answers
+    const nextRow = (icon, title, meta) => `<div class="r"><span>${svg(icon, 16)}</span><div><div class="card-title">${title}</div><div class="card-meta">${meta}</div></div></div>`;
+    const next = (plus ? nextRow('trophy', t('nextMastered', plus), t('nextMasteredMeta')) : '') +
+      (half ? nextRow('check', t('nextHalf', half), t('nextHalfMeta')) : '') +
+      (wrong.length ? nextRow('refresh', t('nextWrong', wrong.length), t('nextWrongMeta')) : '');
     return {
       title: t('results'),
       main: wrong.length ? { text: t('practiseTopic', lower(short(worst[0]))), act: () => startPractice(pickFor(topicIds(worst[0]), 10)) } : { text: t('practiseMore'), act: () => openSetup() },
       second: wrong.length ? { pos: 'bottom', text: t('mistakesN', wrong.length), icon: 'refresh', act: () => go('review', { items: wrong.map((id) => ({ id, pick: P.picks[id] })), label: 'thisSession', from: 'session' }) } : null,
       body: `<div class="score"><span class="ring l" style="--v:${pct}"><b>${ok}/${done.length}</b><small>${t('correct')}</small></span>
           <h2 class="display" style="font-size:34px">${head}</h2><p class="body-muted">${esc(copy)}</p></div>
-        <div class="stats"><div class="stat"><b>${pct}%</b><span class="meta">${t('score')}</span></div><div class="stat"><b>${fmt(P.secs * 1000)}</b><span class="meta">${t('time')}</span></div>${plus ? `<div class="stat"><b>+${plus}</b><span class="meta">${t('mastered')}</span></div>` : `<div class="stat"><b>${half}</b><span class="meta">${t('halfway')}</span></div>`}</div>
+        <div class="stats"><div class="stat"><b>+${fresh}</b><span class="meta">${t('statNew')}</span></div><div class="stat"><b>${half}</b><span class="meta">${t('halfway')}</span></div><div class="stat"><b>${wrong.length}</b><span class="meta">${t('statWrong')}</span></div></div>
         <div class="stack g8"><span class="kicker">${t('byTopic')}</span>${tbars(per)}</div>
-        <p class="hint hint-line">${half ? t('halfwayHint', half) : t('masteryMove', P.lvlBefore, levelPct())}</p>`,
+        ${next ? `<div class="band next-band"><span class="kicker">${t('whatNext')}</span>${next}</div>` : ''}`,
     };
   },
 
@@ -733,12 +776,19 @@ const VIEWS = {
     const seg = (act, val, on, inner) => `<button class="lang${on ? ' lang-on' : ''}" data-act="${act}" data-t="${val}">${inner}</button>`;
     const tog = (k) => `<button class="toggle${S.set[k] ? ' on' : ''}" data-act="set" data-k="${k}" aria-pressed="${S.set[k]}"></button>`;
     const partial = LANG !== 'en' && BANK.translated < BANK.questions.length ? t('partEnglish') : '';
+    loadDaily();
+    // with several levels the row opens the level list on Home; with one it is plain text
+    const lvl = ready().length > 1
+      ? `<div class="set" data-act="tab" data-v="home"><div class="card-title">${t('currentLevel')}</div><span class="val">${esc(LEVEL.title)}${svg('next', 16)}</span></div>`
+      : `<div class="set"><div class="card-title">${t('currentLevel')}</div><span class="val">${esc(LEVEL.title)}</span></div>`;
+    const daily = typeof DAILY === 'boolean'
+      ? `<div class="set"><div><div class="card-title">${t('daily')}</div><div class="card-meta">${t('dailyMeta')}</div></div><button class="toggle${DAILY ? ' on' : ''}" data-act="daily" aria-pressed="${DAILY}"></button></div>` : '';
     return {
       title: 'IYT Test', nav: 'profile',
       body: `<div class="row" style="gap:14px"><span class="tg-ava" style="width:52px;height:52px;font-size:16px">${ava}</span><div><div class="card-title" style="font-size:18px">${esc(name)}</div>
           <div class="card-meta">${u ? (u.username ? '@' + esc(u.username) + ' · ' : '') + t('syncedTg') : t('savedBrowser')}</div></div></div>
         <div class="stack">
-          <div class="set"><div class="card-title">${t('currentLevel')}</div><span class="chip chip-on">${LEVEL.title}</span></div>
+          ${daily}${lvl}
           <div class="set"><div class="card-title">${t('language')}</div><div class="langs">${LANGS.map((l) => seg('lang', l, LANG === l, l.toUpperCase())).join('')}</div></div>
           <div class="set"><div class="card-title">${t('theme')}</div><div class="langs">${seg('theme', 'day', th === 'day', svg('sun', 14))}${seg('theme', 'night', th === 'night', svg('moon', 14))}${seg('theme', 'auto', th === 'auto', t('auto'))}</div></div>
           <div class="set"><div><div class="card-title">${t('shuffle')}</div><div class="card-meta">${t('shuffleMeta')}</div></div>${tog('shuffle')}</div>
@@ -794,9 +844,15 @@ function setupPool(s) {
   return s.mis ? ids.filter(isMistake) : ids;
 }
 // Mistakes first, then questions not yet mastered, then the rest; the chosen ones come in random order.
+// A session mixes mistakes (up to 40 %), questions answered right once (up to 30 %, so the second right answer comes
+// and they become mastered) and new ones; empty slots are filled in that order, then from the rest.
 function pickFor(pool, n) {
-  const groups = [pool.filter(isMistake), pool.filter((id) => !isMistake(id) && !mastered(id)), pool.filter(mastered)];
-  return shuffle(groups.flatMap(shuffle).slice(0, n));
+  const mis = shuffle(pool.filter(isMistake)), half = shuffle(pool.filter((id) => halfway(id) && !isMistake(id)));
+  const fresh = shuffle(pool.filter((id) => !touched(id))), done = shuffle(pool.filter(mastered));
+  const rest = shuffle(pool.filter((id) => touched(id) && !mastered(id) && !isMistake(id) && !halfway(id)));
+  const out = [...mis.splice(0, Math.ceil(n * 0.4)), ...half.splice(0, Math.ceil(n * 0.3))];
+  for (const g of [fresh, mis, half, rest, done]) out.push(...g.splice(0, n - out.length));
+  return shuffle(out.slice(0, n));
 }
 function startPractice(ids, fb = S.set.feedback) {
   ids = ids.filter((id) => Q[id]);
@@ -804,7 +860,7 @@ function startPractice(ids, fb = S.set.feedback) {
   P = {
     ids, i: 0, res: {}, picks: {}, sel: null, checked: false, fb, t0: Date.now(), done: false,
     orders: Object.fromEntries(ids.map((id) => [id, S.set.shuffle ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3]])),
-    before: Object.fromEntries(ids.map((id) => [id, mastered(id)])), lvlBefore: levelPct(),
+    before: Object.fromEntries(ids.map((id) => [id, mastered(id)])), seen: new Set(ids.filter(touched)),
   };
   if (['results', 'review', 'examResult'].includes(cur().v)) replace('question'); else go('question');
 }
@@ -944,6 +1000,7 @@ const ACT = {
   lang: async (d) => { if (!TG_LANG) { S.set.lang = d.t; save(); } await setLang(d.t); render(); },
   theme: (d) => { S.set.theme = d.t; save(); applyTheme(); render(); },
   set: (d) => { S.set[d.k] = !S.set[d.k]; save(); render(); },
+  daily: () => toggleDaily(),
   reset: async () => {
     if (!(await confirmBox(t('confirmReset')))) return;
     const set = S.set;
