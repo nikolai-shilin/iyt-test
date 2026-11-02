@@ -12,7 +12,7 @@ day and night).
 **Hi-fi user flows:** [docs/design/flows.html](design/flows.html) — 21 screens (mini app practice A1–A9, mock exam
 B1–B5, progress/profile/bot C1–C3, website D1–D4), one per page with an index, or all at once in "Overview", day and
 night. Open the file directly or serve `docs/design` (`npx serve docs/design` → `/flows.html#A4`). The viewer is in `flows.js`,
-the base icon set in `icons.js`, test-specific glyphs in `flows.js`.
+the icon set in `test-icons.js` (sheet: `icons.html`).
 
 **Question bank:** [data/questions/bareboat-skipper.json](../data/questions/bareboat-skipper.json), built by
 `data/build_bank.py` — 100 scenario questions ("you see this — what do you do?"), 10 topics × 10, 62 with a drawn

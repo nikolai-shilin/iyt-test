@@ -34,8 +34,15 @@ const LEVELS = [
 ];
 const DEFAULT_LEVEL = 'bareboat-skipper';
 let LEVEL = LEVELS.find((l) => l.id === DEFAULT_LEVEL); // the current level
-// Bareboat topics have no icon in the bank; the other banks carry topics[].icon.
-const TOPIC_ICON = { terms: 'yacht', ropework: 'rope', safety: 'ring', colregs: 'compass', navigation: 'map', buoyage: 'buoy', weather: 'wind', anchoring: 'anchor', systems: 'wrench', emergency: 'radio' };
+// One glyph per topic of every level (docs/design/test-icons.js, the sheet is design/icons.html). Kept here, not only in the
+// banks: a bank saved before a glyph was drawn still gets it. A topic not listed falls back to the bank's own icon, then a book.
+const TOPIC_ICONS = {
+  'bareboat-skipper': { terms: 'yacht', ropework: 'knot', safety: 'lifebuoy', colregs: 'rules', navigation: 'dividers', buoyage: 'buoy', weather: 'wind', anchoring: 'anchor', systems: 'gear', emergency: 'vhf' },
+  'vhf-radio-operator': { set: 'vhf', channels: 'radio', calls: 'mic', phonetic: 'flag-alpha', dsc: 'mmsi', distress: 'flare', urgency: 'megaphone', sar: 'lifebuoy', gmdss: 'beacon', licences: 'licence' },
+  'international-crew': { boat: 'yacht', sailing: 'sail', knots: 'knot', deck: 'cleat', helming: 'wheel', safety: 'lifejacket', lookout: 'binoculars', weather: 'cloud', aboard: 'mug', emergency: 'medkit' },
+  'flotilla-skipper': { power: 'propeller', mooring: 'anchor', sailing: 'sail', colregs: 'rules', buoyage: 'buoy', pilotage: 'lighthouse', weather: 'barometer', systems: 'gear', skipper: 'captain', emergency: 'lifebuoy' },
+};
+const topicIcon = (tp, level = LEVEL) => (TOPIC_ICONS[level.id] || {})[tp.id] || tp.icon || 'book';
 const LANGS = ['en', 'ru'];
 
 const BASES = {};   // level id → the bank as loaded (English); a level whose bank failed to load is left out
@@ -693,7 +700,7 @@ function topicRows(list = TOPICS) {
     const weak = p < 100 && WEAK.has(tp.id);
     const cls = p >= 100 ? ' done' : weak ? ' weak' : '';
     const line = seen && p < 100 ? `<span class="tmeta${weak ? ' bad-t' : ''}">${t('seenRight', seen, right)}</span>` : '';
-    return `<div class="topic${cls}${line ? ' x3' : ''}" data-act="setup" data-t="${tp.id}"><span class="ico">${p >= 100 ? svg('check', 18) : svg(tp.icon || TOPIC_ICON[tp.id] || 'book', 18)}</span>` +
+    return `<div class="topic${cls}${line ? ' x3' : ''}" data-act="setup" data-t="${tp.id}"><span class="ico">${p >= 100 ? svg('check', 18) : svg(topicIcon(tp), 18)}</span>` +
       `<span class="card-title">${esc(tp.title)}</span>${line}<span class="n"><b>${m}/${ids.length}</b>${h ? `<span class="acc">${t('halfwayN', h)}</span>` : ''}</span>` +
       `<span class="bar"><i style="width:${p}%"></i><i class="half" style="left:${p}%;width:${hp}%"></i><i class="seen" style="left:${p + hp}%;width:${sp}%"></i></span></div>`;
   }).join('')}</div>`;
@@ -891,7 +898,7 @@ const VIEWS = {
         <div class="qhead"><span class="meta meta-ink">${t('nOf', E.i + 1, n)}</span><span class="timer${left < 300000 ? ' low' : ''}"><span data-i="timer" data-s="16"></span><b>${fmt(left)}</b></span></div>
         ${figHtml(q)}<p class="q">${esc(q.q)}</p><div class="opts">${opts}</div>
         <div class="qtools"><button class="mini${fl ? ' on' : ''}" data-act="eflag"><span data-i="flag" data-s="14"></span>${fl ? t('flagged') : t('flag')}</button>
-          <button class="mini" data-act="grid"><span data-i="board-view" data-s="14"></span>${t('allQuestions')}</button></div>`,
+          <button class="mini" data-act="grid"><span data-i="grid" data-s="14"></span>${t('allQuestions')}</button></div>`,
     };
   },
 

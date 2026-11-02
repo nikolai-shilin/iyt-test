@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>IYT Test · icons</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Carlito:wght@400;700&display=swap">
+<link rel="stylesheet" href="app.css">
+<style>
+  body { margin: 0; padding: 24px 20px 48px; font-family: 'Carlito', Arial, sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; box-sizing: border-box; }
+  h1 { font: 700 22px Merriweather, serif; margin: 0 0 4px; }
+  .lead { color: var(--muted); margin: 0 0 20px; max-width: 60ch; }
+  h2 { font: 700 12px 'Carlito', Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 28px 0 10px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 10px; max-width: 660px; }
+  .i { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 6px 10px; border: 1px solid var(--line); border-radius: 12px; }
+  .i .row { display: flex; align-items: center; gap: 10px; }
+  .i .ico { width: 36px; height: 36px; border-radius: 50%; background: var(--band); display: flex; align-items: center; justify-content: center; }
+  .i .name { font-size: 12px; color: var(--muted); }
+  .bar { position: fixed; top: 12px; right: 16px; display: flex; gap: 8px; }
+  .bar button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); cursor: pointer; }
+</style>
+</head>
+<body class="tgcard">
+<div class="bar"><button onclick="document.body.classList.toggle('theme-night')">Day / night</button></div>
+<h1>IYT Test icons</h1>
+<p class="lead">24 grid, 2 px line, round caps, 2 px clear of the edges. Each shown at 24 px and at 18 px in the topic circle, the way the app draws it.</p>
+<div id="sheet"></div>
+<script src="icons.js"></script>
+<script src="test-icons.js"></script>
+<script>
+  // ?size=64 draws the big copy larger, for checking a glyph's construction
+  const big = +(new URLSearchParams(location.search).get('size')) || 24;
+  document.getElementById('sheet').innerHTML = TEST_ICON_GROUPS.map(([g, names]) =>
+    `<h2>${g} · ${names.length}</h2><div class="grid">${names.map(n =>
+      `<div class="i"><div class="row">${svg(n, big)}<span class="ico">${svg(n, 18)}</span></div><span class="name">${n}</span></div>`).join('')}</div>`).join('');
+</script>
+</body>
+</html>

@@ -22,10 +22,11 @@ docs/
     questions.html              the whole bank as the student sees it, filter by topic
     flows.css  flows.js         viewer + test UI pieces
     app.css                     app tokens and base components (day and night)
-    icons.js                    base icon set (24 grid, 2 px line)
+    test-icons.js               the app's icon set (24 grid, 2 px line) + svg()/paintIcons(), shared by the viewer and the app
+    icons.html                  the icon sheet: every glyph at 24 px and in the topic circle, day / night
+    icons.js                    older base set (Telegram chrome in the mockups; a few basics follow Lucide)
     figures.js                  figure generator (JSON spec → SVG)
     logo-black.svg              RYC logo
-    test-icons.js               test glyphs + svg()/paintIcons(), shared by the viewer and the app
 data/
   build_bank.py                 source of the Bareboat Skipper bank — edit here, then run
   build_level.py                builds the other levels from bank/<level>/<topic>.json (+ .ru.json)

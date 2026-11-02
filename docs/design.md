@@ -89,7 +89,20 @@ with the right one marked, the note and the reference. It fetches `../../data/qu
 
 ## Icons
 
-`icons.js` is the base set (24 grid, 2 px stroke, round caps; some glyphs follow Lucide, ISC — see
-`LICENSE-lucide.txt`). Test-specific glyphs (compass, book, trophy, flag, timer, rope, buoy, wind, wrench, radio,
-chart, fire, …) are in `TEST_ICONS` in `flows.js`. Use `<span data-i="name" data-s="18"></span>`; `paintIcons()`
-fills them.
+`test-icons.js` is the app's own set: 24 grid, 2 px stroke, round caps and joins, 2 px clear of the edges — the same
+hand as the figures. `icons.html` is the sheet (every glyph at 24 px and at 18 px in the topic circle; `?size=72`
+to inspect a construction; the day / night button switches the theme). The set has three parts:
+
+- the app: tabs (book, timer, chart, user), buttons (play, next, back, check, x, refresh, share), exam (flag, grid,
+  trophy), streak (fire), theme (sun, moon), language (globe);
+- the boat, safety, rules and navigation, weather, radio: one glyph per topic of every level — yacht, sail, wheel,
+  propeller, gear, cleat, knot, anchor; lifebuoy, lifejacket, medkit, flare, binoculars, captain, mug; rules
+  (the give-way arrow), dividers, compass, map, buoy, lighthouse; wind, cloud, barometer; vhf, radio, mic,
+  flag-alpha, mmsi, megaphone, beacon, licence;
+- old names (ring, rope, light, wrench, board-view) kept as aliases so banks saved before the set keep working.
+
+Which topic gets which glyph is `TOPIC_ICONS` in `miniapp/app.js` (per level) and the icon column of
+`data/build_level.py` (the banks carry the same names). Use `<span data-i="name" data-s="18"></span>`;
+`paintIcons()` fills them; `svg(name, size)` returns the markup. A few basic glyphs follow Lucide (ISC — see
+`LICENSE-lucide.txt`); `icons.js` is the older base set the viewer still loads first for the Telegram chrome in the
+mockups (dots, clip, status).

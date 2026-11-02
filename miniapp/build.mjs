@@ -1,5 +1,6 @@
 // Assembles the mini app into miniapp/dist — a plain static folder to host anywhere over HTTPS
-// (Telegram only opens mini apps from https URLs). Copies the app, the shared design files and the question banks.
+// (Telegram only opens mini apps from https URLs). Copies the app, the shared design files (with the icon sheet at
+// design/icons.html) and the question banks.
 //
 //   node miniapp/build.mjs            # build once
 //   node miniapp/build.mjs --serve    # build and serve on http://localhost:5173 (rebuilds on every request)
@@ -20,6 +21,7 @@ const FILES = [
   ['docs/design/flows.css', 'design/flows.css'],
   ['docs/design/icons.js', 'design/icons.js'],
   ['docs/design/test-icons.js', 'design/test-icons.js'],
+  ['docs/design/icons.html', 'design/icons.html'],
   ['docs/design/figures.js', 'design/figures.js'],
   ['docs/design/logo-black.svg', 'design/logo-black.svg'],
   ['docs/design/LICENSE-lucide.txt', 'design/LICENSE-lucide.txt'],
