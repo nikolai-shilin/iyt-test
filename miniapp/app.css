@@ -216,11 +216,19 @@ body { -webkit-tap-highlight-color: transparent; }
 
 /* ---- skeletons: grey shapes in the layout of what is loading, with a slow sheen ---- */
 .app .sk { display: block; flex: none; border-radius: 8px; background: var(--band); position: relative; overflow: hidden; }
+.app .band .sk, .app .stat .sk { background: color-mix(in srgb, var(--ink) 7%, var(--band)); }
 .app .sk::after { content: ''; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--ink) 7%, transparent), transparent); animation: sheen 1.6s linear infinite; }
 @keyframes sheen { to { transform: translateX(100%); } }
 .app .sk-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.app .sk-wrap { display: contents; }
 .app .boot-sk { pointer-events: none; }
 .app .boot-sk .lvl { border-color: var(--line); }
+/* a line of text: the bar stands for the letters, the margins pad it to the line box of the real style */
+.app .sk-display { height: 34px; margin: 4px 0; }
+.app .sk-line { height: 13px; margin: 4px 0; }
+.app .sk-t { height: 16px; margin: 2px 0; }
+.app .sk-m { height: 12px; margin: 2px 0; }
+.app .sk-k { height: 13px; margin: 1.5px 0; }
+.app .sk-ring { width: 52px; height: 52px; border-radius: 50%; }
 .app .topic .ico.sk { border-radius: 50%; }
-.app .topic .n .sk { display: block; }
-.app .stat .sk + .sk { margin-top: 2px; }
+.app .topic .n .sk { margin-left: auto; }

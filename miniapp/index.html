@@ -15,11 +15,26 @@
 </head>
 <body>
 <div class="screen app" id="app">
-<!-- the home screen's skeleton, shown until the banks and the saved progress are in (app.js replaces it) -->
+<!-- the home screen's skeleton (a first visit, in English), shown until the banks and the saved progress are in.
+     Shapes are sized to the real screen; app.js (bootSkeleton) adds the header outside Telegram and the tab bar,
+     and swaps the pitch for the "continue" band of a returning student. -->
 <div class="scroll wrap boot-sk" aria-busy="true"><span class="sk-label">Loading…</span>
-  <div class="row sb-between" style="min-height:40px"><span class="sk" style="width:64px;height:22px"></span></div>
-  <div class="stack g12"><span class="sk" style="width:110px;height:11px"></span><span class="sk" style="width:72%;height:38px"></span><span class="sk" style="width:100%;height:13px"></span><span class="sk" style="width:84%;height:13px"></span></div>
-  <div class="stack" style="gap:10px"><div class="lvl"><span class="sk" style="width:52px;height:52px;border-radius:50%"></span><div class="stack g8"><span class="sk" style="width:58%;height:15px"></span><span class="sk" style="width:42%;height:11px"></span></div></div><div class="lvl"><span class="sk" style="width:52px;height:52px;border-radius:50%"></span><div class="stack g8"><span class="sk" style="width:58%;height:15px"></span><span class="sk" style="width:42%;height:11px"></span></div></div><div class="lvl"><span class="sk" style="width:52px;height:52px;border-radius:50%"></span><div class="stack g8"><span class="sk" style="width:58%;height:15px"></span><span class="sk" style="width:42%;height:11px"></span></div></div><div class="lvl"><span class="sk" style="width:52px;height:52px;border-radius:50%"></span><div class="stack g8"><span class="sk" style="width:58%;height:15px"></span><span class="sk" style="width:42%;height:11px"></span></div></div></div>
+  <div class="row sb-between" style="min-height:40px"><span class="sk" style="width:50px;height:25px"></span></div>
+  <div class="stack g12 sk-hero"><span class="sk" style="width:110px;height:11px;margin:2px 0"></span>
+    <div class="stack"><span class="sk sk-display" style="width:55%"></span><span class="sk sk-display" style="width:56%"></span></div>
+    <div class="stack"><span class="sk sk-line" style="width:96%"></span><span class="sk sk-line" style="width:93%"></span><span class="sk sk-line" style="width:49%"></span></div></div>
+  <div class="stack sk-levels" style="gap:10px">
+    <div class="lvl"><span class="sk sk-ring"></span><div class="stack"><span class="sk sk-t" style="width:68%"></span><span class="sk sk-m" style="width:72%;margin-top:5px"></span></div><span class="chev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    <div class="lvl"><span class="sk sk-ring"></span><div class="stack"><span class="sk sk-t" style="width:66%"></span><span class="sk sk-m" style="width:70%;margin-top:5px"></span></div><span class="chev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    <div class="lvl"><span class="sk sk-ring"></span><div class="stack"><span class="sk sk-t" style="width:58%"></span><span class="sk sk-m" style="width:70%;margin-top:5px"></span></div><span class="chev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    <div class="lvl"><span class="sk sk-ring"></span><div class="stack"><span class="sk sk-t" style="width:60%"></span><span class="sk sk-m" style="width:74%;margin-top:5px"></span></div><span class="chev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+  <div class="band soonlist"><span class="sk sk-k" style="width:96px;margin-bottom:3.5px"></span>
+    <div class="att"><span class="sk" style="width:21px;height:14px;margin:2px 0"></span><span class="sk" style="width:43px;height:12px;margin:3px 0"></span></div>
+    <div class="att"><span class="sk" style="width:131px;height:14px;margin:2px 0"></span><span class="sk" style="width:69px;height:12px;margin:3px 0"></span></div>
+    <div class="att"><span class="sk" style="width:140px;height:14px;margin:2px 0"></span><span class="sk" style="width:82px;height:12px;margin:3px 0"></span></div>
+    <div class="att"><span class="sk" style="width:125px;height:14px;margin:2px 0"></span><span class="sk" style="width:43px;height:12px;margin:3px 0"></span></div>
+  </div>
 </div>
 </div>
 <script src="design/icons.js"></script>

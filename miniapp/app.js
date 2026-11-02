@@ -532,15 +532,43 @@ function sortedStudents() {
   else list.sort((a, b) => pct(b) - pct(a) || b.total - a.total || Date.parse(b.active) - Date.parse(a.active));
   return list;
 }
-// Grey shapes in the layout of what is loading (the boot skeleton of the home screen is in index.html).
+// Grey shapes in the layout of what is loading, sized to the real screen: a bar stands for a line of text, its
+// margins pad it to the line box of the real style. The boot skeleton of the home screen is in index.html.
 const sk = (w, h, more = '') => `<span class="sk" style="width:${w};height:${h}${more}"></span>`;
 function skeleton(kind) {
-  if (kind === 'students') {
-    const stat = `<div class="stat">${sk('40%', '22px')}${sk('70%', '10px')}</div>`;
-    const row = `<div class="topic x3"><span class="ico sk"></span>${sk('55%', '15px', ';grid-column:2')}${sk('70%', '11px', ';grid-column:2')}<span class="n">${sk('44px', '16px', ';margin-left:auto')}${sk('64px', '11px', ';margin:4px 0 0 auto')}</span></div>`;
-    return `<div aria-busy="true"><span class="sk-label">${t('loading')}</span><div class="stats">${stat.repeat(3)}</div><div class="topics" style="margin-top:16px">${row.repeat(5)}</div></div>`;
+  if (kind !== 'students') return '';
+  const cx = document.createElement('canvas').getContext('2d');
+  cx.font = '14px Merriweather, Georgia, serif';
+  const chip = (k) => sk(Math.round(cx.measureText(t(k)).width + 28) + 'px', '36px', ';border-radius:18px'); // a sort chip, as wide as its label
+  const stat = (w, two) => `<div class="stat">${sk(w, '18px', ';margin:4.5px 0')}<div class="stack" style="align-self:stretch">${sk('80%', '11px', ';margin:1.75px 0')}${two ? sk('55%', '11px', ';margin:1.75px 0') : ''}</div></div>`;
+  const n = (bar) => `<span class="n">${bar ? sk('38px', '16px', ';margin:2.25px 0') + sk('66px', '11px', ';margin:2.5px 0') : sk('80px', '11px', ';margin:2.5px 0')}</span>`;
+  const row = (tw, mw, bar) => `<div class="topic stu${bar ? ' x3' : ''}"><span class="ico sk"></span>${sk(tw, '14px', ';grid-column:2;margin:2px 0')}${sk(mw, '12px', ';grid-column:2;margin:2px 0')}${bar ? sk('100%', '4px', ';grid-column:2;grid-row:3;border-radius:2px') : ''}${n(bar)}</div>`;
+  const rows = [['150px', '180px', 1], ['110px', '120px', 1], ['170px', '190px', 1], ['95px', '150px', 1], ['135px', '60px', 0], ['120px', '70px', 0]].map((r) => row(...r)).join('');
+  return `<div class="sk-wrap" aria-busy="true"><span class="sk-label">${t('loading')}</span>
+    <div class="stats">${stat('24px')}${stat('16px', true)}${stat('30px')}</div>
+    <div class="tags" style="margin-top:4px">${chip('sortProgress')}${chip('sortName')}${chip('sortJoined')}</div>
+    <div class="topics">${rows}</div>
+    <div class="stack g8" style="margin-top:8px"><div>${sk('130px', '13px', ';margin:1.5px 0')}${sk('85%', '12px', ';margin:6px 0 2px')}</div>${sk('60%', '12px', ';margin:2px 0')}</div></div>`;
+}
+// Makes the static boot skeleton (index.html) match this student's home screen before anything has loaded: the
+// header outside Telegram, the tab bar, the title's shape in their language, and for a returning student the
+// "continue" band and the streak instead of the pitch.
+function bootSkeleton() {
+  const b = $app.querySelector('.boot-sk');
+  if (!b) return;
+  b.querySelector('.sk-label').textContent = t('loading');
+  if (LANG === 'ru') {
+    const [a, c] = b.querySelectorAll('.sk-display'); a.style.width = '44%'; c.style.width = '75%';
+    b.querySelectorAll('.sk-line')[2].style.width = '80%';
   }
-  return '';
+  if (S.total > 0) {
+    if (streak()) b.querySelector('.row').insertAdjacentHTML('beforeend', sk('140px', '40px', ';border-radius:20px'));
+    b.querySelector('.sk-hero').outerHTML = `<div class="band resume">${sk('80px', '13px', ';margin:1.5px 0')}<div class="row" style="gap:14px"><span class="sk sk-ring"></span><div class="stack">${sk('120px', '15px', ';margin:2px 0')}${sk('140px', '12px', ';margin:2px 0')}</div></div>${sk('100%', '50px', ';border-radius:25px')}</div>`;
+    b.querySelector('.sk-levels').insertAdjacentHTML('afterbegin', sk('60px', '13px', ';margin:1.5px 0'));
+  }
+  if (!IN_TG) $app.insertAdjacentHTML('afterbegin', '<div class="tgh"><span></span><b>IYT Test</b><span></span></div>');
+  $app.insertAdjacentHTML('beforeend', navHtml('home', false));
+  paintIcons($app);
 }
 const levelOfPrefix = (p) => LEVELS.find((l) => l.prefix === p);
 // A student's mastery of a level, in % of its bank; the level they work on, or the one they have seen most of.
@@ -634,6 +662,7 @@ function countUp(el) {
 /* ---------- rendering ---------- */
 const NAV = [['home', 'book', 'learn'], ['examIntro', 'timer', 'exam'], ['progress', 'chart', 'progress'], ['profile', 'user', 'profile']];
 
+const navHtml = (on, live = true) => `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}"${live ? ` data-act="tab" data-v="${v}"` : ''}${v === on ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
 function render(toTop) {
   if (cur().v === 'exam' && !S.exam) stack[stack.length - 1] = { v: 'examIntro' };
   const c = cur();
@@ -656,7 +685,7 @@ function render(toTop) {
         (B.main ? b(B.main, 'main', '') : '') + (B.second ? b(B.second, 'second', 'b2') : '')) + '</div>';
   }
   // the tab bar is the lowest thing on screen; a screen's button bar sits just above it
-  if (V.nav && stack.length === 1) h += `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === V.nav ? 'on' : ''}" data-act="tab" data-v="${v}"${v === V.nav ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
+  if (V.nav && stack.length === 1) h += navHtml(V.nav);
   if (sheet) h += `<div class="scrim" data-act="back"></div><div class="sheet"><div class="grip"></div><div class="wrap stack g16">${SHEETS[sheet.v](sheet)}</div></div>`;
   $app.innerHTML = h;
   $app.querySelectorAll('[data-act]:not(button):not(.scrim)').forEach((el) => {
@@ -1322,8 +1351,7 @@ async function init() {
   applyTheme();
   LANG = pickLang();
   document.documentElement.lang = LANG;
-  const boot = $app.querySelector('.sk-label');
-  if (boot) boot.textContent = t('loading');
+  bootSkeleton();
   const server = serverLoad(); // in parallel with the banks
   const banks = await Promise.all(LEVELS.filter((l) => l.id).map((l) =>
     fetchBank(l.id).catch(() => 0).then((b) => [l.id, b])));
