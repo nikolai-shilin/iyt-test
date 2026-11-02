@@ -1,0 +1,19 @@
+// Vercel cron (vercel.json "crons"): sends the question of the day once each morning — see bot/daily.mjs.
+// Vercel calls it with "Authorization: Bearer $CRON_SECRET"; anything else is refused, so nobody else can
+// trigger a send to every user. Env on Vercel: CRON_SECRET, SUPABASE_URL, SUPABASE_SECRET_KEY, TELEGRAM_BOT_TOKEN,
+// WEBAPP_URL, and optionally DAILY_QUESTION=off to stop the send for everyone.
+
+import { sendDaily } from '../bot/daily.mjs';
+
+export async function GET(request) {
+  const secret = process.env.CRON_SECRET;
+  if (!secret || request.headers.get('authorization') !== `Bearer ${secret}`) return new Response('forbidden', { status: 403 });
+  try {
+    const result = await sendDaily();
+    console.log('daily', JSON.stringify(result));
+    return Response.json(result);
+  } catch (e) {
+    console.error('daily', e.message);
+    return Response.json({ error: e.message }, { status: 500 });
+  }
+}

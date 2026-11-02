@@ -114,7 +114,7 @@ const STR = {
     explain: 'Explain after each answer', explainMeta: 'Off = exam style, results at the end',
     reset: 'Reset progress', resetMeta: 'Mastery, mistakes, streak and exams', resetBtn: 'Reset',
     confirmReset: 'Reset all progress? Mastery, mistakes, streak and exam history will be cleared.', resetDone: 'Progress reset',
-    disclaimer: (v) => `Questions are written for study and are not official IYT exam content. Bank version ${v}.`, partEnglish: '',
+    disclaimer: (v) => `Questions are written for study and are not official IYT exam content. Bank version ${v}.`, partEnglish: '', loading: 'Loading…',
     whatToPractise: 'What to practise?', all: 'All', none: 'None', weakPre: 'Weak topics are preselected. ', tapToggle: 'Tap to add or remove.',
     questionsK: 'Questions', allN: (n) => `All ${n}`, mistakesOnly: 'Mistakes only', showAnswer: 'Show the answer after each question',
     start: (n) => `Start · ${pl(n, 'question')}`, pickTopic: 'Pick a topic',
@@ -181,6 +181,7 @@ const STR = {
     reset: 'Сбросить прогресс', resetMeta: 'Освоение, ошибки, серия дней и экзамены', resetBtn: 'Сбросить',
     confirmReset: 'Сбросить весь прогресс? Освоение, ошибки, серия дней и история экзаменов будут удалены.', resetDone: 'Прогресс сброшен',
     disclaimer: (v) => `Вопросы написаны для подготовки и не являются официальными вопросами экзамена IYT. Версия банка ${v}.`,
+    loading: 'Загрузка…',
     partEnglish: ' Перевод вопросов готовится — пока часть из них на английском.',
     whatToPractise: 'Что тренируем?', all: 'Все', none: 'Снять все', weakPre: 'Слабые темы уже выбраны. ', tapToggle: 'Нажмите, чтобы добавить или убрать.',
     questionsK: 'Вопросы', allN: (n) => `Все ${n}`, mistakesOnly: 'Только ошибки', showAnswer: 'Показывать ответ после каждого вопроса',
@@ -310,10 +311,13 @@ function streak() {
 function prune() { const c = new Date(); c.setDate(c.getDate() - 90); const k = dkey(c); for (const d in S.days) if (d < k) delete S.days[d]; }
 
 /* ---------- language: interface strings + the bank overlay ---------- */
+// Inside Telegram the language follows the user's Telegram app (initData user.language_code) on every launch; the
+// EN/RU switch in the profile changes it for this visit only. In a plain browser the switch is saved and wins over
+// the browser language. Same rule as the bot (bot/core.mjs RU).
+const TG_LANG = (IN_TG && TG.initDataUnsafe?.user?.language_code) || '';
 function pickLang() {
-  if (LANGS.includes(S.set.lang)) return S.set.lang;
-  const code = (IN_TG && TG.initDataUnsafe?.user?.language_code) || navigator.language || '';
-  return /^(ru|uk|be|kk)\b/i.test(code) ? 'ru' : 'en';
+  if (!TG_LANG && LANGS.includes(S.set.lang)) return S.set.lang;
+  return /^(ru|uk|be|kk)\b/i.test(TG_LANG || navigator.language || '') ? 'ru' : 'en';
 }
 // Banks come from Supabase (docs/data-model.md: bank() and bank_overlay() return the same shape as the files);
 // the JSON files shipped next to the app are the fallback when the database is slow, down or lacks the level.
@@ -937,7 +941,7 @@ const ACT = {
   jump: (d) => { S.exam.i = +d.n; sheet = null; save(false); render(true); },
   submit: () => submitExam(false),
   // profile
-  lang: async (d) => { S.set.lang = d.t; save(); await setLang(d.t); render(); },
+  lang: async (d) => { if (!TG_LANG) { S.set.lang = d.t; save(); } await setLang(d.t); render(); },
   theme: (d) => { S.set.theme = d.t; save(); applyTheme(); render(); },
   set: (d) => { S.set[d.k] = !S.set[d.k]; save(); render(); },
   reset: async () => {
@@ -994,6 +998,9 @@ async function init() {
   loadLocal();
   applyTheme();
   LANG = pickLang();
+  document.documentElement.lang = LANG;
+  const boot = $app.querySelector('.boot .meta');
+  if (boot) boot.textContent = t('loading');
   const banks = await Promise.all(LEVELS.filter((l) => l.id).map((l) =>
     fetchBank(l.id).catch(() => 0).then((b) => [l.id, b])));
   for (const [id, b] of banks) if (b && b.questions) BASES[id] = b;

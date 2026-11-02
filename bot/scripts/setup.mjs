@@ -62,8 +62,9 @@ Tap Start to pick your level.`,
     ],
   },
 };
-// English is the default for every client; Russian overrides it for clients with a Russian Telegram.
-const LANGS = [['en', undefined], ['ru', 'ru']];
+// English is the default for every client; the Russian texts go to the Telegram languages the bot and the mini app
+// answer in Russian (bot/core.mjs RU): ru, uk, be, kk.
+const LANGS = [['en', undefined], ...['ru', 'uk', 'be', 'kk'].map((code) => ['ru', code])];
 
 const me = await call('getMe');
 console.log(`@${me.username} (${me.id})`);
@@ -71,7 +72,7 @@ console.log(`@${me.username} (${me.id})`);
 if (process.argv.includes('--check')) {
   for (const [l, code] of LANGS) {
     const p = code ? { language_code: code } : {};
-    console.log(`\n[${l}]`, (await call('getMyName', p)).name);
+    console.log(`\n[${code || l}]`, (await call('getMyName', p)).name);
     console.log((await call('getMyShortDescription', p)).short_description);
     console.log((await call('getMyCommands', p)).map((c) => `/${c.command} — ${c.description}`).join('\n'));
   }
@@ -87,7 +88,7 @@ for (const [l, code] of LANGS) {
   await call('setMyDescription', { description: t.description, ...p });
   await call('setMyShortDescription', { short_description: t.short_description, ...p });
   await call('setMyCommands', { commands: t.commands, ...p });
-  console.log(`[${l}] name, descriptions, ${t.commands.length} commands`);
+  console.log(`[${code || l}] name, descriptions, ${t.commands.length} commands`);
 }
 
 if (webapp) {

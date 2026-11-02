@@ -1,34 +1,51 @@
 # Data model
 
-Proposed schema (Postgres / Supabase), one database behind the mini app, the bot and the website. Not created yet.
+One Postgres database behind the mini app, the bot and the website: Supabase project **iyt-test**
+(`xpdhkahgvusuicynssxq`, eu-north-1, https://xpdhkahgvusuicynssxq.supabase.co). Created 2026-11-02.
+
+The schema lives in `supabase/migrations/` (apply new files in order with the Supabase dashboard SQL editor, the MCP
+`apply_migration` tool or `supabase db push`).
+
+**What is in it now:** the catalogue — 8 levels (Bareboat Skipper `available`, the rest `planned`/`soon`), its 10 topics,
+1000 questions and their Russian translations, loaded from `data/questions/*.json`. The progress tables exist but are
+empty: progress still lives on each student's device (Telegram CloudStorage), so there is nothing to move until the
+app writes to the database.
+
+**Who reads it:** the mini app (`fetchBank` in `miniapp/app.js`, with the publishable key) and the bot (`read` in
+`bot/core.mjs`, with `SUPABASE_URL` + a key from the env) call `bank(level)` and `bank_overlay(level, lang)`, which
+return exactly the shape of the JSON files. If the database does not answer within 8 s or has no such level, both fall
+back to the JSON files (the app's static `data/` folder, the files bundled into the Vercel functions).
+
+**Source of truth:** still the JSON files built by `data/build_bank.py` / `data/build_level.py`. After changing a bank,
+run `npm run db:load` — until then the apps keep showing the old version from the database.
 
 ## Tables
 
 ```sql
--- catalogue (read-only for users; filled from data/questions/*.json)
-levels               id text pk, title text, sort int, pass_mark int, exam_questions int, exam_minutes int, available bool
-topics               id text pk, level_id → levels, title text, sort int
-questions            id text pk, level_id → levels, topic_id → topics, difficulty int, q text,
-                     figure jsonb null, options jsonb (text[4]), answer int, why text, ref text, version text
-question_translations question_id → questions, lang text, q text, options jsonb, why text, figure_text jsonb,
-                     pk (question_id, lang)
-theory_notes         id serial, topic_id → topics, lang text, title text, body_md text
+-- catalogue (anyone may read it with the publishable key; written only by load_bank())
+levels                id text pk, prefix text, link text, title, sort, status ('available'|'planned'|'soon'|'soon2027'),
+                      pass_mark, exam_questions, exam_minutes, version, note, updated_at
+topics                (level_id, id) pk, title, icon, sort
+questions             id text pk, level_id, topic_id → topics, sort, difficulty 1–3, q, figure jsonb null,
+                      options jsonb (text[4]), answer 0–3, why, ref, active bool, updated_at
+level_languages       (level_id, lang) pk, source_version, note            -- one row per overlay file
+topic_translations    (level_id, topic_id, lang) pk, title, short
+question_translations (question_id, lang) pk, q, options, why, ref, figure  -- null field = use English;
+                                                                            -- figure = translated text fields only
 
--- people
-users                id bigint pk (telegram id), name text, username text, lang text default 'en',
-                     theme text, level_id → levels, daily_question bool default true, reminder bool default true,
-                     shuffle bool default true, created_at
-web_sessions         id uuid pk, user_id → users null, created_at            -- anonymous website progress until login
-
--- activity
-answers              id bigserial, user_id → users, question_id → questions, option int, correct bool,
-                     mode text ('practice' | 'exam' | 'daily'), session_id uuid null, at timestamptz
-sessions             id uuid pk, user_id, level_id, mode text, topic_ids text[], size int, feedback bool,
-                     started_at, finished_at null, score int null
-exam_sessions        id uuid pk, user_id, level_id, question_ids text[40], flags text[], started_at,
-                     paused_at null, submitted_at null, score int null, passed bool null
-flags                user_id, question_id, at   pk (user_id, question_id)
+-- progress (RLS on, no policies yet: only the server with the secret key can read or write)
+users                 id bigint pk (telegram id), name, username, lang, theme, level_id, shuffle, feedback,
+                      daily_question, reminder, created_at, updated_at
+answers               id bigint identity, user_id, question_id, option 0–3 null, correct, mode ('practice'|'exam'|'daily'),
+                      exam_id → exam_sessions null, at
+exam_sessions         id uuid pk, user_id, level_id, question_ids text[], flags text[], started_at, paused_at,
+                      submitted_at, score, passed
+flags                 (user_id, question_id) pk, at
+reports               id, user_id null, question_id, text, at, resolved_at
 ```
+
+Not created yet (add when a feature needs them): `theory_notes`, `web_sessions` (anonymous website progress),
+practice `sessions`, the `mastery` materialised view.
 
 ## Derived values
 
@@ -57,9 +74,19 @@ flags                user_id, question_id, at   pk (user_id, question_id)
 
 ## Loading the bank
 
-A script (`data/load.py`, to write) upserts `levels`, `topics`, `questions` from the JSON files and bumps
-`questions.version`. The apps cache the catalogue by `version`. Figures are stored as the JSON spec and rendered on
-the client by `figures.js` — no image files.
+`data/load.mjs` sends each `data/questions/<level>.json` with its `<level>.<lang>.json` overlays to the database
+function `load_bank(bank, overlays)`. It sets the level `available` with its exam settings and version, upserts topics,
+questions and translations, and marks questions that left the bank `active = false` (answers keep pointing at them).
+Rerunning it changes nothing if the files did not change.
+
+```
+npm run db:load                       # every level in data/questions
+npm run db:load -- flotilla-skipper   # one level
+```
+
+It needs `SUPABASE_URL` and `SUPABASE_SECRET_KEY` (dashboard → Project Settings → API keys) in `.env.local`. Only
+the secret key may run `load_bank`. A new level must first have a row in `levels` (the eight IYT levels are there).
+Figures are stored as the JSON spec and rendered on the client by `figures.js` — no image files.
 
 ## Notes
 
