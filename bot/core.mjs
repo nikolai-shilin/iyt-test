@@ -96,8 +96,8 @@ const T = {
   progressBtn: (ru) => (ru ? 'Мой прогресс' : 'My progress'),
   settings: (ru) => (ru ? '⚙️ Тема, перемешивание вариантов и сброс прогресса — в профиле.' : '⚙️ Theme, option shuffling and progress reset are in your profile.'),
   settingsDaily: (ru) => (ru
-    ? '🔔 <b>Вопрос дня</b>: каждое утро один вопрос в этом чате, ответ одной кнопкой. Кнопка ниже включает и выключает его.\n\n'
-    : '🔔 <b>Question of the day</b>: one question in this chat every morning, answered with one tap. The button below turns it on or off.\n\n'),
+    ? '🔔 <b>Вопрос дня</b>: каждый день в обед один вопрос в этом чате, ответ одной кнопкой. Кнопка ниже включает и выключает его.\n\n'
+    : '🔔 <b>Question of the day</b>: one question in this chat every day at lunchtime, answered with one tap. The button below turns it on or off.\n\n'),
   dailyOn: (ru) => (ru ? '🔔 Вопрос дня: включён' : '🔔 Question of the day: on'),
   dailyOff: (ru) => (ru ? '🔕 Вопрос дня: выключен' : '🔕 Question of the day: off'),
   turnedOn: (ru) => (ru ? 'Вопрос дня включён — до завтра!' : 'Question of the day is on — see you tomorrow!'),

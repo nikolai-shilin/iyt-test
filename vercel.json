@@ -9,7 +9,7 @@
     "api/telegram.mjs": { "includeFiles": "data/questions/*.json" },
     "api/daily.mjs": { "includeFiles": "data/questions/*.json", "maxDuration": 300 }
   },
-  "crons": [{ "path": "/api/daily", "schedule": "0 6 * * *" }],
+  "crons": [{ "path": "/api/daily", "schedule": "0 9 * * *" }],
   "headers": [
     { "source": "/data/(.*)", "headers": [{ "key": "cache-control", "value": "public, max-age=0, must-revalidate" }] }
   ]

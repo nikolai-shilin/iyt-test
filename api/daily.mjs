@@ -1,4 +1,4 @@
-// Vercel cron (vercel.json "crons"): sends the question of the day once each morning — see bot/daily.mjs.
+// Vercel cron (vercel.json "crons"): sends the question of the day once a day at 09:00 UTC (13:00 Dubai) — see bot/daily.mjs.
 // Vercel calls it with "Authorization: Bearer $CRON_SECRET"; anything else is refused, so nobody else can
 // trigger a send to every user. Env on Vercel: CRON_SECRET, SUPABASE_URL, SUPABASE_SECRET_KEY, TELEGRAM_BOT_TOKEN,
 // WEBAPP_URL, and optionally DAILY_QUESTION=off to stop the send for everyone.
