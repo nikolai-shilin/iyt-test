@@ -1,0 +1,345 @@
+/* IYT Test app — shared look (shared tokens):
+   Merriweather Light display, uppercase sans kickers (Carlito: Lato-derived, has Cyrillic), one blue accent on pills,
+   red and yellow only in warnings and flags. Two themes share every rule through tokens:
+   the default (white, as the site) and .theme-night (black ground). */
+body { margin: 0; font-family: 'Merriweather', Georgia, serif; -webkit-font-smoothing: antialiased; }
+.screen, .desk, .tgcard {
+  --bg: #ffffff; --ink: #000000; --muted: #6d7a7e; --faint: #b8c2c6;
+  --band: #f2f7f9; --line: #eef2f4; --tag-line: #dfe5e8; --photo-bg: #e6ebee;
+  --accent: #0290d7; --on-accent: #ffffff; --sel-bg: #000000; --sel-ink: #ffffff; --sel-muted: #b8c2c6;
+  --chart-1: #0290d7; --chart-2: #1aa39a; --chart-3: #ffa800; --chart-4: #7b5cc9;
+  --danger: #d40000; --scrim: rgba(0,0,0,0.35); --sheet-shadow: rgba(0,0,0,0.18);
+  --sk-shine: rgba(255,255,255,0.75); --tg-bg: #e9eef2; --tg-bar: #ffffff; --tg-in: #ffffff; --tg-out: #dcf1c9; --tg-ink: #000000; --tg-muted: #6d7a7e; --tg-field: #f2f7f9; --tg-date: rgba(0,0,0,0.25);
+}
+.theme-night {
+  --bg: #000000; --ink: #ffffff; --muted: #a8b9c9; --faint: #5c6f80;
+  --band: #14191e; --line: #1f2830; --tag-line: #43586b; --photo-bg: #14191e;
+  --accent: #35b0f2; --on-accent: #00131f; --sel-bg: #ffffff; --sel-ink: #000000; --sel-muted: #5c6f80;
+  --chart-1: #35b0f2; --chart-2: #3fcfc4; --chart-3: #ffa800; --chart-4: #a98cf0;
+  --danger: #ff6a5c; --scrim: rgba(0,0,0,0.6); --sheet-shadow: rgba(0,0,0,0.6);
+  --sk-shine: rgba(255,255,255,0.07); --tg-bg: #0e1621; --tg-bar: #17212b; --tg-in: #182533; --tg-out: #2b5278; --tg-ink: #ffffff; --tg-muted: #7f91a4; --tg-field: #242f3d; --tg-date: rgba(255,255,255,0.14);
+}
+.screen a, .desk a { color: var(--accent); text-decoration: none; }
+.screen { width: 390px; min-height: 844px; box-sizing: border-box; background: var(--bg); color: var(--ink); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.desk { width: 1280px; min-height: 800px; box-sizing: border-box; background: var(--bg); color: var(--ink); padding: 48px 72px; display: flex; flex-direction: column; gap: 56px; position: relative; overflow: hidden; }
+.pad { padding: 0 24px; }
+.grow { flex: 1 0 32px; }
+.top { display: flex; align-items: center; justify-content: space-between; padding: 56px 24px 0; }
+.brand { font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 900; font-size: 11px; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ink); line-height: 1.2; }
+.screen a.brand, .desk a.brand { color: var(--ink); }
+.logo { color: var(--ink); display: block; width: 50px; height: 25px; flex: none; }
+.kicker { font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: -0.02em; text-transform: uppercase; color: var(--ink); }
+.meta { font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.02em; color: var(--muted); }
+.meta-ink { color: var(--ink); }
+.danger { color: var(--danger); }
+.display { font-family: 'Merriweather', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 0.95; letter-spacing: -0.025em; color: var(--ink); margin: 0; }
+.display-s { font-family: 'Merriweather', Georgia, serif; font-weight: 300; font-size: 32px; line-height: 1; letter-spacing: -0.02em; color: var(--ink); margin: 0; }
+.body { font-family: 'Merriweather', Georgia, serif; font-size: 17px; line-height: 1.4; color: var(--ink); margin: 0; }
+.body-muted { font-family: 'Merriweather', Georgia, serif; font-size: 15px; line-height: 1.45; color: var(--muted); margin: 0; }
+.muted { color: var(--muted); }
+.ink { color: var(--ink); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag, .screen a.tag { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 54px; border: 2px solid var(--tag-line); background: var(--bg); color: var(--ink); font-family: 'Merriweather', Georgia, serif; font-size: 17px; line-height: 1; cursor: pointer; box-sizing: border-box; }
+.tag-on, .screen a.tag-on { background: var(--sel-bg); border-color: var(--sel-bg); color: var(--sel-ink); }
+.tag-accent, .screen a.tag-accent { border-color: var(--accent); color: var(--accent); }
+.tag-count { font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 12px; color: var(--muted); }
+.tag-on .tag-count { color: var(--sel-muted); }
+.pill, .screen a.pill, .desk a.pill { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 56px; padding: 0 28px; border-radius: 54px; border: 2px solid var(--accent); color: var(--accent); background: var(--bg); font-family: 'Merriweather', Georgia, serif; font-size: 20px; line-height: 1; white-space: nowrap; cursor: pointer; box-sizing: border-box; }
+.pill-primary, .screen a.pill-primary, .desk a.pill-primary { background: var(--accent); color: var(--on-accent); }
+.pill-quiet, .screen a.pill-quiet { border-color: var(--tag-line); color: var(--ink); height: 52px; font-size: 18px; }
+.pill-wide { width: 100%; }
+/* Round buttons never shrink or stretch: fixed box on both axes, whatever flex row they sit in. */
+.round, .screen a.round, .desk a.round { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; min-width: 52px; min-height: 52px; max-width: 52px; max-height: 52px; flex: 0 0 52px; align-self: center; aspect-ratio: 1 / 1; padding: 0; line-height: 0; border-radius: 50%; border: 2px solid var(--accent); color: var(--accent); background: var(--bg); cursor: pointer; box-sizing: border-box; }
+.round svg { flex: none; display: block; }
+.round-s, .screen a.round-s, .desk a.round-s { width: 40px; height: 40px; min-width: 40px; min-height: 40px; max-width: 40px; max-height: 40px; flex: 0 0 40px; }
+.round-muted, .screen a.round-muted, .desk a.round-muted { border-color: var(--tag-line); color: var(--muted); }
+.round-fill { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.dots { display: flex; gap: 6px; align-items: center; }
+.dot { width: 22px; height: 4px; border-radius: 2px; background: var(--tag-line); }
+.dot-on { background: var(--ink); }
+.band { background: var(--band); border-radius: 28px; }
+.band-line { background: var(--bg); border: 2px solid var(--line); border-radius: 28px; }
+.photo { border-radius: 28px; overflow: hidden; background: var(--photo-bg); position: relative; }
+.photo-thumb { border-radius: 22px; }
+.photo-hero { border-radius: 72px; }
+/* Squircle: superellipse corners where the engine draws them; the plain radii above are the fallback. */
+@supports (corner-shape: squircle) { .photo { corner-shape: squircle; border-radius: 48px; } .photo-thumb { border-radius: 34px; } .photo-hero { border-radius: 120px; } }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo-pick { border: 3px solid transparent; display: block; height: 190px; }
+.photo-pick-on { border-color: var(--ink); }
+.pick-check { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; border-radius: 50%; background: var(--sel-bg); color: var(--sel-ink); display: flex; align-items: center; justify-content: center; }
+.note { background: var(--accent); color: var(--on-accent); font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 900; font-size: 13px; line-height: 1; padding: 6px 8px; border-radius: 6px; flex: none; }
+.card-title { font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); line-height: 1.15; }
+.card-meta { font-family: 'Carlito', 'Lato', Arial, sans-serif; font-size: 13px; color: var(--muted); line-height: 1.28; }
+.photo .on-photo { color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.6), 0 2px 14px rgba(0,0,0,0.55); }
+.photo .on-photo-muted { color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.6), 0 2px 14px rgba(0,0,0,0.55); }
+.bottom p { min-width: 0; }
+.bottom { padding: 16px 24px 34px; background: var(--bg); border-top: 1px solid var(--line); display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+.bottom-col { flex-direction: column; align-items: stretch; }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; background: var(--bg); border-radius: 28px 28px 0 0; box-shadow: 0 -12px 40px var(--sheet-shadow); padding: 12px 24px 34px; display: flex; flex-direction: column; gap: 16px; border-top: 1px solid var(--line); }
+.grip { width: 44px; height: 4px; border-radius: 2px; background: var(--tag-line); margin: 0 auto 2px; }
+.scrim { position: absolute; inset: 0; background: var(--scrim); }
+.dim { opacity: 0.4; }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px 30px; background: var(--bg); border-top: 1px solid var(--line); }
+.nav a, .screen .nav a { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.02em; color: var(--muted); }
+.nav a.on, .screen .nav a.on { color: var(--ink); }
+.row { display: flex; align-items: center; gap: 12px; }
+/* Source of an offer: always named, always a link to the source. */
+.src, .screen a.src { display: inline-flex; align-items: center; gap: 5px; font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.02em; color: var(--accent); white-space: nowrap; }
+.src-plain { color: var(--muted); font-size: 11px; }
+.src-row { justify-content: space-between; gap: 12px; }
+.tg-link { color: var(--accent); text-decoration: underline; }
+.col { display: flex; flex-direction: column; }
+.hr { height: 1px; background: var(--line); }
+.chip-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip, .screen a.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 16px; background: var(--band); color: var(--ink); font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 12px; }
+.band .chip, .screen .band a.chip { background: var(--bg); }
+.chip-on, .screen a.chip-on, .screen .band a.chip-on { background: var(--sel-bg); color: var(--sel-ink); }
+/* No horizontal gap: a selected range must read as one unbroken bar; rows keep 4px between them. */
+.cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px 0; }
+.cal div { height: 40px; display: flex; align-items: center; justify-content: center; font-family: 'Carlito', 'Lato', Arial, sans-serif; font-size: 14px; color: var(--ink); border-radius: 20px; }
+.cal .wd { font-weight: 700; font-size: 11px; color: var(--muted); text-transform: uppercase; height: 24px; }
+.cal .mute { color: var(--faint); }
+.cal .in { background: var(--band); border-radius: 0; }
+.cal .edge { background: var(--sel-bg); color: var(--sel-ink); }
+.cal .edge-l { border-radius: 20px 0 0 20px; }
+.cal .edge-r { border-radius: 0 20px 20px 0; }
+
+/* Price tag: yellow discount over a red price block (old price struck, new price, per person).
+   Square overall, square corners and Calibri-like bold caps. Same in both themes. */
+.ptag { display: inline-flex; flex-direction: column; flex: none; box-sizing: border-box; width: var(--ptag); height: var(--ptag); text-align: center; line-height: 1; font-family: 'Carlito', Calibri, 'Lato', Arial, sans-serif; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,0.22); }
+/* The tag as a whole is a square, split in two equal halves: yellow on top, red below.
+   Lines in the red half sit tight (no gaps, line-height 0.95). */
+.ptag-off { flex: 0 0 50%; display: flex; align-items: center; justify-content: center; background: #ffa800; color: #000000; }
+.ptag-price { flex: 0 0 50%; min-height: 0; line-height: 0.95; gap: 0; background: #d40000; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ptag-old { text-decoration: line-through; }
+.ptag-per { text-transform: uppercase; }
+.ptag-s { --ptag: 84px; box-shadow: none; }
+.ptag-s .ptag-off { font-size: 24px; }
+.ptag-s .ptag-old { font-size: 10px; } .ptag-s .ptag-now { font-size: 18px; } .ptag-s .ptag-per { font-size: 9.5px; }
+.ptag-m { --ptag: 112px; }
+.ptag-m .ptag-off { font-size: 32px; }
+.ptag-m .ptag-old { font-size: 13px; } .ptag-m .ptag-now { font-size: 25px; } .ptag-m .ptag-per { font-size: 12px; }
+.ptag-l { --ptag: 152px; }
+.ptag-l .ptag-off { font-size: 44px; }
+.ptag-l .ptag-old { font-size: 16px; } .ptag-l .ptag-now { font-size: 35px; } .ptag-l .ptag-per { font-size: 15px; }
+/* Placement on a photo: the tag hangs off the top-right corner, overlapping above and to the right
+   of the image (). .shot is the unclipped wrapper around a .photo. */
+.shot { position: relative; display: block; width: max-content; }
+.ptag-corner { position: absolute; top: -24px; right: -12px; box-shadow: 0 10px 28px rgba(0,0,0,0.28); }
+.ptag-l.ptag-corner { top: -32px; right: -12px; }
+/* Same overhang on cards without a large photo: the tag (or a marker) hangs off the card's top-right corner. */
+.tagged { position: relative; }
+.ptag-s.ptag-corner { top: -14px; right: -10px; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+.note-corner { position: absolute; top: -10px; right: -8px; font-size: 15px; padding: 8px 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+.desk .ptag-l.ptag-corner { top: -40px; right: -36px; }
+
+/* Telegram chat mock (the digest screen): Telegram's own light and dark looks. */
+.tg { background: var(--tg-bg); font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; color: var(--tg-ink); }
+.tg-head { padding: 54px 16px 12px; background: var(--tg-bar); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; }
+.tg-ava { width: 40px; height: 40px; border-radius: 50%; background: var(--sel-bg); color: var(--sel-ink); display: flex; align-items: center; justify-content: center; font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 900; font-size: 12px; flex: none; }
+.tg-feed { padding: 18px 12px; display: flex; flex-direction: column; gap: 10px; }
+.tg-date { align-self: center; background: var(--tg-date); color: #ffffff; font-size: 12px; padding: 4px 10px; border-radius: 10px; }
+.tg-in { max-width: 320px; background: var(--tg-in); border-radius: 18px 18px 18px 4px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.35; color: var(--tg-ink); }
+.tg-out { max-width: 300px; align-self: flex-end; background: var(--tg-out); border-radius: 18px 18px 4px 18px; padding: 12px 14px; font-size: 15px; line-height: 1.35; color: var(--tg-ink); }
+.tg-btn { max-width: 320px; background: var(--tg-in); border-radius: 12px; padding: 12px; text-align: center; color: var(--accent); font-weight: 600; font-size: 15px; }
+.tg-time { display: flex; justify-content: flex-end; font-size: 11px; color: var(--tg-muted); }
+.tg-muted { color: var(--tg-muted); }
+.tg-input { padding: 10px 12px 30px; background: var(--tg-bar); border-top: 1px solid var(--line); display: flex; align-items: center; gap: 10px; }
+.tg-field { flex-grow: 1; height: 38px; border-radius: 19px; background: var(--tg-field); display: flex; align-items: center; padding: 0 14px; color: var(--tg-muted); font-size: 15px; }
+
+/* Loading skeletons: grey blocks in the shape of the content, with a slow sweep. */
+.sk { background: var(--band); position: relative; overflow: hidden; flex: none; max-width: 100%; }
+.sk::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, var(--sk-shine), transparent); transform: translateX(-100%); animation: sk-sweep 1.5s ease-in-out infinite; }
+.sk-on-band .band .sk { background: var(--tag-line); }
+.bottom .sk { background: var(--band); }
+.sk-tag { position: absolute; top: -24px; right: -12px; width: 112px; height: 112px; background: var(--tag-line); }
+.sk-tag-l { top: -32px; width: 152px; height: 152px; }
+@keyframes sk-sweep { to { transform: translateX(100%); } }
+
+/* Search agent at work: sources feed the agent, the agent feeds the list. */
+.agent-art { display: flex; flex-direction: column; align-items: stretch; }
+.node { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 4px; border: 2px solid var(--tag-line); border-radius: 18px; font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.02em; color: var(--muted); }
+.node span { font-size: 22px; line-height: 1; color: var(--muted); }
+.node-done { border-color: var(--ink); color: var(--ink); } .node-done span { color: var(--ink); }
+.node-now { border-color: var(--accent); border-style: dashed; color: var(--accent); } .node-now span { color: var(--accent); }
+.agent-core { align-self: center; width: 72px; height: 72px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: flex; align-items: center; justify-content: center; flex: none; box-shadow: 0 0 0 8px var(--band); }
+.steps { display: flex; flex-direction: column; }
+.step { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 14px; padding: 12px 0; position: relative; }
+.step:not(:last-child)::before { content: ""; position: absolute; left: 13px; top: 44px; bottom: -8px; width: 2px; background: var(--tag-line); }
+.step-ico { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+.step-done .step-ico { background: var(--sel-bg); color: var(--sel-ink); }
+.step-wait .step-ico { border: 2px solid var(--tag-line); }
+.step-wait .card-title { color: var(--muted); }
+.spin { width: 24px; height: 24px; border-radius: 50%; border: 3px solid var(--tag-line); border-top-color: var(--accent); box-sizing: border-box; animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.bar { height: 4px; border-radius: 2px; background: var(--tag-line); overflow: hidden; }
+.bar i { display: block; height: 100%; width: 60%; background: var(--accent); border-radius: 2px; }
+/* Aggregators, one line each: state mark, name as a link to the site, result. */
+.agg-list { display: flex; flex-direction: column; margin-top: 12px; border-top: 1px solid var(--tag-line); }
+.agg { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--tag-line); }
+.agg:last-child { border-bottom: 0; padding-bottom: 2px; }
+.agg-ico { width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; color: var(--ink); }
+.agg-dot { width: 8px; height: 8px; border-radius: 50%; border: 2px solid var(--tag-line); box-sizing: border-box; }
+.agg-wait .src, .screen .agg-wait a.src { color: var(--muted); }
+.spin-s { width: 14px; height: 14px; border-width: 2px; }
+@media (prefers-reduced-motion: reduce) { .sk::after, .spin { animation: none; } }
+
+/* Numbered steps (start page, payment) reuse the step rows of the agent screen. */
+.step-num .step-ico, .num-ico { background: var(--sel-bg); color: var(--sel-ink); font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 14px; }
+.num-ico { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex: none; }
+.steps-plain .step { padding: 14px 0; }
+/* FAQ: one question per row, the answer opens under it. */
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { padding: 16px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
+.faq-item:last-child { border-bottom: 0; }
+.faq-q { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; font-family: 'Merriweather', Georgia, serif; font-size: 17px; line-height: 1.3; color: var(--ink); }
+.faq-q span { flex: none; margin-top: 2px; }
+.faq-a { margin: 0; font-family: 'Merriweather', Georgia, serif; font-size: 15px; line-height: 1.5; color: var(--muted); }
+
+/* Long web page: one column of sections, each explaining one part of the product. */
+.desk-long { gap: 112px; padding: 48px 72px 56px; }
+.d-h2 { font-family: 'Merriweather', Georgia, serif; font-weight: 300; font-size: 52px; line-height: 0.98; letter-spacing: -0.025em; color: var(--ink); margin: 0; max-width: 900px; }
+.d-h3 { font-family: 'Merriweather', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+.d-text { font-family: 'Merriweather', Georgia, serif; font-size: 18px; line-height: 1.45; color: var(--muted); margin: 0; }
+.d-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; align-items: stretch; }
+.d-card { background: var(--band); border-radius: 40px; padding: 32px; display: flex; flex-direction: column; gap: 18px; }
+.d-band { background: var(--band); border-radius: 56px; padding: 64px; }
+.d-band .band-line, .d-band .chip { background: var(--bg); }
+.d-band .chip-on { background: var(--sel-bg); }
+.d-band-accent { padding: 80px 64px; }
+.chip-l, .desk a.chip-l { height: 40px; padding: 0 18px; border-radius: 20px; font-size: 15px; }
+.desk a.chip { color: var(--ink); } .desk a.chip-on { color: var(--sel-ink); }
+.desk a.src { color: var(--accent); }
+
+/* Small action on a card (pause / resume a subscription). */
+.mini { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 18px; border: 2px solid var(--tag-line); background: var(--bg); color: var(--ink); font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.02em; cursor: pointer; flex: none; }
+.mini-accent { border-color: var(--accent); color: var(--accent); }
+
+/* Quiet hint under a group of options. */
+.hint { margin: 0; font-family: 'Carlito', 'Lato', Arial, sans-serif; font-size: 13px; line-height: 1.3; color: var(--muted); }
+
+.langs { display: inline-flex; align-items: center; gap: 2px; padding: 2px; border: 2px solid var(--tag-line); border-radius: 22px; }
+.lang, .desk a.lang { display: inline-flex; align-items: center; justify-content: center; height: 30px; padding: 0 11px; border-radius: 16px; font-family: 'Carlito', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .06em; color: var(--muted); }
+.lang-on, .desk a.lang-on { background: var(--sel-bg); color: var(--sel-ink); }
+
+/* Caption over a photo: dark scrim under the text so white type stays readable on bright water and sky. */
+.photo:has(.cap)::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 62%; background: linear-gradient(to bottom, rgba(6,12,18,0) 0%, rgba(6,12,18,0.5) 45%, rgba(6,12,18,0.82) 100%); pointer-events: none; z-index: 1; }
+.photo .cap { z-index: 2; }
+
+.mini-danger { border-color: var(--danger); color: var(--danger); }
+.mini-ico { width: 36px; padding: 0; justify-content: center; flex: none; }
+
+.d-band .band { background: var(--bg); }
+.d-band .band-line .chip { background: var(--band); }
+
+/* icon + value pairs (subscription summary) and icon badges (FAQ sections) */
+.facts { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.fact { display: inline-flex; align-items: center; gap: 5px; font-family: 'Carlito', 'Lato', Arial, sans-serif; font-size: 13px; line-height: 1.2; color: var(--muted); white-space: nowrap; }
+.fact svg { flex: none; }
+.ico-badge { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: none; border-radius: 50%; background: var(--bg); color: var(--ink); }
+
+/* favourite button over the top-left corner of a photo; .gone = a saved offer that has expired */
+.fav { position: absolute; top: 12px; left: 12px; z-index: 3; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,0.94); color: #0c1015; box-shadow: 0 4px 14px rgba(0,0,0,0.22); cursor: pointer; }
+.fav:not(.fav-on) { opacity: 0.5; }
+.fav-on { color: #d40000; }
+.gone { opacity: 0.4; filter: grayscale(1); }
+
+.sk-fav { position: absolute; top: 12px; left: 12px; width: 40px; height: 40px; border-radius: 50%; background: var(--bg); opacity: 0.6; }
+
+/* subscription trends: two small charts side by side */
+.trends { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+.trend { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.trend-val { font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 20px; line-height: 1; color: var(--ink); }
+.trend-d { font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 12px; color: var(--accent); }
+.spark { display: block; margin-top: 4px; overflow: visible; }
+.theme-night .sk-on-band .band .sk { opacity: 0.45; }
+
+/* web page hero: the aggregation scheme as a collage, the boat card on top, the sources below */
+.collage { width: 560px; display: flex; flex-direction: column; align-items: stretch; }
+.collage .agent-core { align-self: center; }
+.collage .node { padding: 14px 6px; font-size: 13px; }
+.collage .node span { font-size: 24px; }
+
+/* Telegram channel card, 1080 x 1080 */
+.tgcard { box-sizing: border-box; width: 1080px; height: 1080px; padding: 48px 48px 40px; background: var(--bg); color: var(--ink); font-family: 'Merriweather', Georgia, serif; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; overflow: hidden; position: relative; }
+.tgcard .logo { width: 90px; height: 45px; }
+.ptag-xl { --ptag: 240px; }
+.ptag-xl .ptag-off { font-size: 74px; }
+.ptag-xl .ptag-old { font-size: 28px; } .ptag-xl .ptag-now { font-size: 56px; } .ptag-xl .ptag-per { font-size: 25px; }
+.ptag-xl.ptag-corner { top: -52px; right: -26px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+.ptag-corner-br.ptag-corner { top: auto; bottom: -56px; right: -24px; }
+/* channel card photo: the mobile card's rounding scaled to 984px (28/342 -> 80px; squircle 48/342 -> 138px) */
+.photo-tg { border-radius: 80px; }
+@supports (corner-shape: squircle) { .photo-tg { border-radius: 138px; } }
+.tg-row { gap: 22px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.tg-row:last-child { border-bottom: 0; }
+.tg-num { width: 36px; flex: none; font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 22px; color: var(--muted); }
+.tg-off { display: inline-flex; align-items: center; justify-content: center; min-width: 84px; height: 36px; padding: 0 10px; background: #ffa800; color: #000000; font-family: 'Carlito', Calibri, 'Lato', Arial, sans-serif; font-weight: 700; font-size: 24px; }
+/* Button text never wraps: one line, cut with an ellipsis when it does not fit. .btn-t wraps the bare label (added by the generator). */
+.pill, .mini, .tag, .tg-btn { max-width: 100%; min-width: 0; box-sizing: border-box; overflow: hidden; white-space: nowrap; }
+.pill svg, .mini svg, .tag svg { flex: none; }
+.btn-t, .tag > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 1.25; }
+.tag > .tag-count, .tag > .row { flex: none; overflow: visible; }
+.tag > .row { flex: 0 1 auto; min-width: 0; overflow: hidden; } .tag > .row > .col { min-width: 0; } .tag > .row > .col > span { overflow: hidden; text-overflow: ellipsis; }
+.tg-btn { text-overflow: ellipsis; display: block; }
+/* short (table) view of the finds list */
+.ptag-xs { --ptag: 60px; box-shadow: none; }
+.ptag-xs .ptag-off { font-size: 18px; }
+.ptag-xs .ptag-old, .ptag-xs .ptag-per { display: none; } .ptag-xs .ptag-now { font-size: 15px; }
+.ttable { border-top: 1px solid var(--line); }
+.trow, .screen a.trow { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--ink); }
+.trow-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trow-m { font-family: 'Carlito', 'Lato', Arial, sans-serif; font-size: 13px; line-height: 1.2; color: var(--muted); min-width: 0; }
+.trow-m svg { vertical-align: -1px; }
+.screen a.lang { color: var(--muted); } .screen a.lang-on { color: var(--sel-ink); }
+.fav-s { top: -7px; left: -7px; width: 28px; height: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.28); }
+.fav-s::after { content: ""; position: absolute; inset: -8px; }
+.fav-s:not(.fav-on) { opacity: 0.85; color: #6d7a7e; }
+.trow .card-title { color: var(--ink); }
+.pill.pill-wide, .screen a.pill-wide, .screen button.pill-wide { padding: 0 14px; gap: 8px; font-size: 18px; }
+/* Photo placeholder, "sea chart": a boat with no photo of its own, or whose photo failed to load. Faint depth
+   contours and a pale-blue shoal on --photo-bg, as on a nautical chart; the boat type's silhouette in the middle; in the
+   bottom-left corner a credit saying where the photos are (aggregators only: their terms forbid copying photos).
+   That corner is the slot of «Фото модели» on a loaded photo, and the two never show together; the top corners are
+   left to the heart and the price tag. The chart is two masks (::before shoal, ::after contours) filled with theme
+   tokens, so one rule serves day and night. Nothing animates. The contours are our own generated vector (no listing
+   imagery), inlined as data URIs. isolation keeps the boat's and credit's z-index inside the frame.
+   .photo-load is the same chart without boat or credit under a photo that is still loading. */
+.photo-ph, .photo-load { position: absolute; inset: 0; overflow: hidden; isolation: isolate; background: var(--photo-bg); color: var(--muted); --ph-iso: .2; --ph-shoal: .13;
+  --ph-shoal-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 210' preserveAspectRatio='xMaxYMax slice' fill-rule='evenodd'%3E%3Cpath fill-opacity='.5' d='M36.6 -64Q39.3 -70 129.3 -70Q219.2 -70 228.4 -64Q237.5 -58 242.4 -53Q247.3 -48 250.1 -42Q252.9 -36 252.8 -30Q252.8 -24 251.1 -20Q249.5 -16 246.8 -13Q244.1 -10 241.1 -8.3Q238 -6.5 234 -5.5Q230 -4.6 224 -4.6Q218 -4.6 197 -7Q176 -9.4 146 -3.9Q116 1.6 103 1.6Q90 1.6 79 0.2Q68 -1.2 62 -3Q56 -4.8 51.2 -7.4Q46.4 -10 42.3 -14Q38.1 -18 35.9 -22Q33.7 -26 32.4 -31Q31.1 -36 31.2 -41Q31.2 -46 32.6 -52Q33.9 -58 36.6 -64ZM350 106.5Q360.1 104 368 103.8Q376 103.7 383 105.6Q390 107.4 396 111.7Q401.9 116 407 122.6Q412 129.2 412 204.6Q412 280 323.3 280Q234.6 280 231.6 263Q228.7 246 228.1 237Q227.5 228 228.9 219Q230.3 210 233.6 203Q237 196 243.5 189.6Q250 183.2 265 175.8Q280 168.5 285 165Q290 161.5 294.3 156.7Q298.5 152 307.3 139.4Q316 126.7 321 121.7Q326 116.8 333 112.9Q340 108.9 350 106.5Z'/%3E%3Cpath fill-opacity='.5' d='M58.6 -64Q61.3 -68 62.2 -69Q63.2 -70 100.5 -70Q137.8 -70 151.6 -63Q165.5 -56 167.6 -54Q169.7 -52 170.1 -50Q170.5 -48 168.8 -46Q167 -44 155.2 -36Q143.3 -28 133.7 -23.1Q124 -18.2 114 -16Q104 -13.8 94 -14.3Q84 -14.7 79 -16.1Q74 -17.5 69.6 -19.7Q65.2 -22 61.9 -25Q58.6 -28 56.8 -31Q54.9 -34 53.8 -38Q52.7 -42 53 -47Q53.2 -52 54.6 -56Q56 -60 58.6 -64ZM349.2 128Q355.7 126 362.9 126.4Q370 126.8 376 129.5Q382 132.2 387.9 138.1Q393.7 144 398.1 152Q402.5 160 407.2 175.3Q412 190.6 412 224.7Q412 258.8 410 261.4Q408 264.1 404.2 267Q400.4 270 388.2 275Q376.1 280 321.4 280Q266.7 280 259.8 271Q252.9 262 248.4 252Q244 242 242.9 233Q241.7 224 244.2 216Q246.6 208 249.3 204.6Q252 201.1 256 198.1Q260 195 275 189.2Q290 183.4 295 180.7Q300 178 305 173Q310 168.1 321 152.8Q332 137.6 337.3 133.8Q342.6 130 349.2 128Z'/%3E%3C/svg%3E");
+  --ph-iso-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 210' preserveAspectRatio='xMaxYMax slice' fill='none' stroke='black' stroke-width='1'%3E%3Cpath stroke-opacity='0.6' d='M323.6 -70Q327 -50 326.4 -46Q325.8 -42 323.9 -38.1Q322 -34.2 311 -23.1Q300 -12.1 289.8 4Q279.6 20 275.8 24.6Q272 29.3 267 32.4Q262 35.5 255 36.5Q248 37.6 224 35Q200 32.3 180 33.4Q160 34.5 139 30.8Q118 27.2 107 26.3Q96 25.3 84 26.3Q72 27.2 56 31.7Q40 36.1 34 35.3Q28 34.5 23 31.2Q18 27.9 12.4 20.9Q6.8 14 1.4 4.1Q-4 -5.8 -8.5 -16.9Q-13 -28 -15.3 -36Q-17.5 -44 -17.8 -49Q-18.2 -54 -16.8 -58Q-15.5 -62 -11.5 -66L-7.6 -70M177.6 280Q176.9 262 178.1 256Q179.2 250 187.6 236.2Q196 222.4 206 194.4Q216 166.5 220 160.3Q224 154 228 151.6Q232 149.2 244 146Q256 142.8 262 139.9Q268 137 273.7 131.5Q279.3 126 287.7 112.3Q296 98.7 300 94.2Q304 89.7 309 86.6Q314 83.6 327.7 78.8Q341.4 74 347.6 71Q353.9 68 368.9 55.6Q384 43.1 387 42.3Q390 41.4 394 41.9Q398 42.4 405 47L412 51.6'/%3E%3Cpath stroke-opacity='0.6' d='M277.1 -70Q288 -63.4 290.5 -58.7Q292.9 -54 292.7 -48Q292.4 -42 289.8 -34Q287.2 -26 281.6 -14Q276.1 -2 271 5Q266 12 260 16Q254 20 247 21.2Q240 22.3 213 18.7Q186 15.2 161 16.8Q136 18.5 93 17.7Q50 16.9 42 15.3Q34 13.8 29 10.7Q24 7.6 20 3.1Q16 -1.3 12.5 -7.7Q9 -14 7.1 -20Q5.1 -26 4.5 -32Q3.9 -38 4.6 -43Q5.2 -48 10.4 -59L15.5 -70M195.3 280Q197.7 268 201.9 255.9Q206 243.8 211.2 221.9Q216.5 200 220.5 191Q224.5 182 229.2 175.8Q234 169.7 238 166.8Q242 163.8 254.9 157.9Q267.9 152 272.9 148.5Q278 145 282.9 139.5Q287.9 134 296.9 120.6Q306 107.1 309.7 103.6Q313.3 100 317.7 97.2Q322 94.4 355 82.3Q388 70.1 394 70.7Q400 71.3 406 75.5L412 79.6'/%3E%3Cpath stroke-opacity='1' d='M241.2 -70Q254.1 -62 258.6 -58Q263.1 -54 265.6 -50Q268.2 -46 269.3 -42Q270.4 -38 270.3 -32Q270.1 -26 268.4 -20Q266.7 -14 263.3 -8.3Q260 -2.7 256 0.9Q252 4.5 247.9 6.2Q243.9 8 237.9 8.7Q232 9.4 212 6.4Q192 3.5 184 3.1Q176 2.7 156 5.6Q136 8.6 124 9.1Q112 9.7 85 8Q58 6.4 50.5 4.2Q43 2 37.5 -1.6Q32 -5.3 27.4 -11.6Q22.8 -18 20.7 -26Q18.6 -34 19.6 -43Q20.6 -52 24.3 -61L28.1 -70M214.6 280Q221.7 212 225.1 203Q228.5 194 234.2 186.6Q240 179.2 245 175.7Q250 172.2 261 166.9Q272 161.7 277 158.4Q282 155.1 287 149.9Q292 144.7 303 129.3Q314 113.9 318.7 109.9Q323.3 106 328.7 103.2Q334 100.3 347 96.5Q360 92.6 372 91Q384 89.4 391 91Q398 92.6 405 98.4L412 104.1'/%3E%3Cpath stroke-opacity='1' d='M219.2 -70Q240 -55.9 243.7 -51.9Q247.3 -48 249.5 -44Q251.7 -40 252.6 -36Q253.4 -32 252.8 -27Q252.2 -22 250.2 -18Q248.1 -14 245 -11.3Q242 -8.5 238 -6.9Q234 -5.3 229 -4.8Q224 -4.3 206 -6.6Q188 -8.9 180 -9Q172 -9.2 150 -4.5Q128 0.2 115 1.1Q102 2 91 1.4Q80 0.8 71 -1Q62 -2.7 55.7 -5.4Q49.5 -8 44.6 -12Q39.7 -16 36.3 -22Q32.9 -28 31.9 -34Q30.9 -40 31.8 -47Q32.7 -54 36 -62L39.3 -70M234.6 280Q229 248 228.2 239Q227.5 230 228.3 222Q229.2 214 231.8 207Q234.5 200 238.2 195Q241.9 190 245.9 186.6Q250 183.2 265 175.8Q280 168.5 285 165Q290 161.5 294.3 156.7Q298.5 152 306.8 140Q315 128 319.5 123.2Q324 118.4 329 115Q334 111.7 340 109.3Q346 106.9 354 105.3Q362 103.8 369 103.7Q376 103.7 381 104.8Q386 105.8 391 108.4Q396 111 400 114.6Q404 118.2 408 123.7L412 129.2'/%3E%3Cpath stroke-opacity='1' d='M193.4 -70Q216 -58 222.5 -52Q229 -46 231.3 -40Q233.6 -34 233 -31Q232.4 -28 230.2 -25.5Q228 -23 225 -21.6Q222 -20.3 218 -19.8Q214 -19.4 199 -20.7Q184 -22 177 -21.9Q170 -21.7 147.2 -14.8Q124.4 -8 112.2 -6.6Q100 -5.3 91 -5.9Q82 -6.6 75 -8.2Q68 -9.9 62 -12.8Q56 -15.8 52 -19.6Q48 -23.4 45.4 -28.7Q42.8 -34 42.2 -40Q41.6 -46 42.8 -52Q44 -58 47.1 -64L50.1 -70M250.9 280Q241.5 260 238.5 249Q235.4 238 235.2 229Q235.1 220 237.2 213Q239.4 206 242.7 201.3Q246 196.6 250 193.2Q254 189.9 269.3 182.9Q284.7 176 290.3 172.3Q296 168.6 300 164.2Q304 159.8 312.1 147.9Q320.2 136 325.1 130.9Q330 125.8 336 122.2Q342 118.6 348 116.9Q354 115.2 361 114.9Q368 114.6 374 115.9Q380 117.3 385 120.1Q390 122.8 394 126.7Q398 130.5 401.9 136.3Q405.8 142 408.9 148.6L412 155.2'/%3E%3Cpath stroke-opacity='1' d='M137.8 -70Q165.5 -56 168.1 -53Q170.7 -50 169.9 -48Q169.2 -46 157.8 -38Q146.5 -30 138.2 -25.3Q130 -20.6 122 -18Q114 -15.3 106 -14.4Q98 -13.5 91 -14.1Q84 -14.7 78.3 -16.4Q72.7 -18 68.3 -20.4Q64 -22.9 60.6 -26.4Q57.2 -30 55.1 -35Q53.1 -40 53 -45Q52.9 -50 54.4 -55Q56 -60 59.6 -65L63.2 -70M266.7 280Q252.9 262 248.4 252Q244 242 242.9 233Q241.7 224 243.6 217Q245.5 210 248.3 206Q251.1 202 255.6 198.5Q260 195 276 188.8Q292 182.5 297.3 179.3Q302.6 176 306.3 172Q310.1 168 319 155Q327.9 142 333.9 136.7Q340 131.4 345 129.3Q350 127.1 356 126.4Q362 125.7 368 126.9Q374 128.1 379.2 131Q384.4 134 388.3 138Q392.2 142 396.1 148.3Q400 154.6 403.1 162.3Q406.2 170 409.1 180.3L412 190.6'/%3E%3Cpath stroke-opacity='1' d='M77.9 -64.6Q83.8 -68 88.9 -68.6Q94 -69.2 98.9 -68.6Q103.9 -68 112.9 -64Q122 -60 126 -55Q129.9 -50 130.1 -47Q130.2 -44 128.9 -41Q127.6 -38 122.8 -33.8Q118 -29.5 111 -27.1Q104 -24.6 96 -24.6Q88 -24.7 81.4 -27.3Q74.8 -30 71.3 -34Q67.8 -38 67 -44Q66.2 -50 69.1 -55.6Q72 -61.2 77.9 -64.6ZM285.9 280Q268 266.1 261.4 257Q254.8 248 252 239Q249.2 230 249.4 226Q249.5 222 250.8 218Q252.1 214 255.1 210.1Q258 206.1 262 203.3Q266 200.5 282 195.6Q298 190.6 303 188.2Q308 185.8 312.2 181.9Q316.4 178 327.2 162.8Q338 147.6 343 144.2Q348 140.9 354 139.6Q360 138.4 365 139.4Q370 140.4 374 142.7Q378 145 382 149.2Q386 153.3 389 158.4Q392 163.4 394.8 170.7Q397.7 178 399.8 187Q402 196 403 205Q404.1 214 403.9 221Q403.7 228 401.8 235Q399.9 242 396 247.1Q392 252.1 376 260.3Q360 268.4 350.7 274.2L341.4 280'/%3E%3C/svg%3E"); }
+.photo-ph-s, .photo-load-s { --ph-iso: .26;
+  --ph-iso-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='150 18 192 192' preserveAspectRatio='xMaxYMax slice' fill='none' stroke='black' stroke-width='3'%3E%3Cpath stroke-opacity='0.6' d='M286.8 8Q272 29.3 264 33.1Q256 37 248 37.1Q240 37.2 219 34.7Q198 32.2 180 33.4Q162 34.6 151 32.9L140 31.2M197.1 220Q216 166.5 220 160.3Q224 154 228 151.6Q232 149.2 244 146Q256 142.8 262 139.9Q268 137 273.7 131.5Q279.3 126 287.7 112.3Q296 98.7 300 94.2Q304 89.7 310 86.2Q316 82.7 334 75.9L352 69.1'/%3E%3Cpath stroke-opacity='0.6' d='M269.5 8Q258 18.2 251 20.1Q244 22.1 215 18.7Q186 15.2 163 16.8L140 18.5M211.1 220Q220.4 190 227 180Q233.7 170 255.8 157.5Q278 145 282.9 139.5Q287.9 134 295.9 121.8Q304 109.6 309 104.5Q314 99.5 321 95.5Q328 91.6 340 87.5L352 83.3'/%3E%3Cpath stroke-opacity='1' d='M243.9 8 L218 8M220.1 220Q226.5 198 232.8 189Q239.1 180 261.6 166.7Q284 153.4 297 135.9Q310 118.5 315.3 113.2Q320.5 108 327.3 104.2Q334 100.3 343 97.4L352 94.5'/%3E%3Cpath stroke-opacity='1' d='M228.1 220Q233.5 202 238.7 195Q244 187.9 249 184.3Q254 180.7 270.5 172.4Q286.9 164 291.9 159Q297 154 309.6 137Q322.2 120 329.1 115.3Q336 110.7 344 108L352 105.4'/%3E%3Cpath stroke-opacity='1' d='M235.1 220Q239.4 206 244 200Q248.7 194 254.3 190.2Q260 186.4 277 178.3Q294 170.3 310.7 149.1Q327.5 128 332.7 124.3Q338 120.5 345 118L352 115.6'/%3E%3Cpath stroke-opacity='1' d='M242 221.5Q246 209.1 250 204.2Q254 199.3 259 196.1Q264 192.9 282 185.5Q300 178 305 173Q310 168.1 320.8 153Q331.6 138 336.8 134.2Q342 130.3 347 128.5L352 126.6'/%3E%3Cpath stroke-opacity='1' d='M249.9 220Q254.6 210 259.3 205.8Q264 201.6 281.8 195.8Q299.7 190 304.8 187.2Q310 184.4 323 167Q336 149.6 344 144.5L352 139.5'/%3E%3C/svg%3E"); }
+/* the photo paints over the loading chart */
+.photo-load + img { position: relative; }
+/* without masks (very old WebViews) there is no chart: the ground, boat and credit remain */
+@supports ((-webkit-mask-image: none) or (mask-image: none)) {
+  .photo-ph::before, .photo-ph::after, .photo-load::before, .photo-load::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; }
+  /* shoal: a pale accent fill of two shallow bands */
+  .photo-ph::before, .photo-load::before { background: var(--accent); opacity: var(--ph-shoal); -webkit-mask-image: var(--ph-shoal-img); mask-image: var(--ph-shoal-img); }
+  /* contours: thin --muted lines; a thumbnail has its own drawing, the bottom-right corner enlarged, with thicker lines */
+  .photo-ph::after, .photo-load::after { background: currentColor; opacity: var(--ph-iso); -webkit-mask-image: var(--ph-iso-img); mask-image: var(--ph-iso-img); }
+  .photo-ph-s::before, .photo-load-s::before { -webkit-mask-size: 178.125% 109.375%; mask-size: 178.125% 109.375%; -webkit-mask-position: 100% 100%; mask-position: 100% 100%; }
+}
+/* silhouette: hull denser than sails; height is a share of the frame (card 342×210 → 76 px, 320 phone → 60, boat page → 88).
+   Centred at every regular size; in a frame narrower than 300 px (320 phone) the boat moves left to stay clear of
+   the price tag: its centre is never closer than 150 px to the right edge */
+.ph-boat { position: absolute; z-index: 1; left: min(50%, calc(100% - 150px)); top: 45%; height: min(36%, 88px); width: auto; aspect-ratio: 1 / 1; transform: translate(-50%, -50%); display: block; }
+.ph-boat .ph-sail { fill: currentColor; fill-opacity: .34; }
+.ph-boat .ph-hull { fill: currentColor; fill-opacity: .58; }
+.ph-boat .ph-water { fill: none; stroke: currentColor; stroke-opacity: .42; stroke-width: 1.3; stroke-linecap: round; }
+/* credit: the .meta kicker says where, the aggregator's name is Carlito caps 16px in ink (as loud as the 16px card title
+   below it; only the price tag is louder); the arrow, as on .src, only when the frame itself links to the aggregator */
+.ph-credit { position: absolute; z-index: 1; left: 20px; right: 20px; bottom: 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; pointer-events: none; }
+/* --muted on --photo-bg is 3.7:1 by day, so the kicker is a quarter darker towards --ink (5.5:1); at night barely lighter */
+.photo-ph .ph-credit-k { line-height: 1; color: var(--muted); color: color-mix(in srgb, var(--muted) 75%, var(--ink)); }
+.ph-credit-n { display: inline-flex; align-items: center; gap: 5px; max-width: 100%; font-family: 'Carlito', 'Lato', Arial, sans-serif; font-weight: 700; font-size: 16px; line-height: 1; letter-spacing: .03em; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
+.ph-credit-n > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; padding-bottom: 1px; }
+/* plain --accent is 2.9:1 on the light --photo-bg; 15% towards --ink gives 3.9:1 (night 8.3:1) */
+.ph-credit-n svg { flex: none; color: var(--accent); color: color-mix(in srgb, var(--accent) 85%, var(--ink)); }
+/* 56–60 px thumbnails: no credit (it is in aria-label), the boat larger and centred */
+.photo-ph-s .ph-boat { left: 50%; top: 50%; height: 62%; }
+.photo-ph-s .ph-boat .ph-water { stroke-width: 1.8; }

@@ -1,0 +1,59 @@
+/* Mini app layer over the design files (design/app.css + design/flows.css): the mock 390×844 screen becomes the
+   whole Telegram viewport, the lists scroll, and every card that is a link in the mock-ups is a real button. */
+html, body { height: 100%; overscroll-behavior: none; }
+html, body { background: #fff; }
+html[data-theme="dark"], html[data-theme="dark"] body { background: #000; }
+body { -webkit-tap-highlight-color: transparent; }
+.theme-night img.logo { filter: invert(1); }
+
+.screen.app { position: fixed; inset: 0; width: auto; min-height: 0; height: auto; }
+.app .scroll { overflow-y: auto; -webkit-overflow-scrolling: touch; padding-top: 12px; padding-bottom: 28px; }
+.app .scroll > :last-child { margin-bottom: 4px; }
+.app .boot { flex: 1; display: flex; align-items: center; justify-content: center; }
+.app .wrap { width: 100%; max-width: 560px; margin: 0 auto; box-sizing: border-box; }
+.app .scroll.wrap, .app .tgmain.wrap, .app .sheet .wrap { max-width: 560px; }
+
+/* tappable things */
+:where(.app) button { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; text-align: inherit; cursor: pointer; }
+.app [data-act] { cursor: pointer; user-select: none; -webkit-user-select: none; }
+.app .lvl, .app .topic, .app .opt, .app .tag, .app .mini, .app .pill, .app .grid40 span, .app .lang, .app .toggle, .app .tgmain .b { transition: transform .08s ease, opacity .15s ease; }
+.app .lvl:active, .app .topic:active, .app .opt:not(.locked):active, .app .tag:active, .app .mini:active, .app .pill:active, .app .grid40 span:active, .app .tgmain .b:active { transform: scale(.98); }
+.app .opt.locked { cursor: default; }
+.app .lvl.soon { cursor: default; }
+.app .tag.off, .app .mini.off { opacity: .4; pointer-events: none; }
+
+/* figures: a bit taller than the mock so chart extracts stay readable */
+.app .fig { height: auto; min-height: 150px; max-height: 240px; aspect-ratio: 16 / 10; padding: 10px 12px; box-sizing: border-box; }
+
+/* header and bottom bar are drawn only outside Telegram (inside, Telegram draws its own) */
+.app .tgh { border-bottom: 1px solid var(--line); }
+.app .tgh > :first-child, .app .tgh > :last-child { width: 72px; }
+.app .tgh > :last-child { text-align: right; }
+.app .tgh b { flex: 1; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.app .tgmain { padding-bottom: max(14px, env(safe-area-inset-bottom)); }
+.app .tgmain .b.off { pointer-events: none; }
+.app .tgmain .b { padding: 0 14px; min-width: 0; text-align: center; }
+.app .tgmain .b svg { flex: none; }
+.app .tgmain .b .t { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.app .nav { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+.app .nav a { cursor: pointer; }
+.app .hint-line { text-align: center; }
+
+/* bottom sheet over the current screen */
+.app .scrim { z-index: 10; animation: fade .18s ease; }
+.app .sheet { z-index: 11; max-height: 88%; overflow-y: auto; animation: up .22s cubic-bezier(.2, .8, .2, 1); padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+.app .sheet .grip { width: 40px; height: 5px; border-radius: 3px; background: var(--tag-line); margin: 0 auto; flex: none; }
+@keyframes up { from { transform: translateY(40px); opacity: 0; } }
+@keyframes fade { from { opacity: 0; } }
+
+/* small pieces the mock-ups did not need */
+.app .empty { padding: 28px 8px; text-align: center; }
+.app .tg-ava { overflow: hidden; }
+.app .tg-ava img { width: 100%; height: 100%; object-fit: cover; }
+.app .att { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.app .att:last-child { border-bottom: 0; }
+.app .bad-t { color: var(--danger); }
+.app .danger-link { color: var(--danger); font: 700 13px 'Carlito', Arial, sans-serif; text-transform: uppercase; letter-spacing: .02em; }
+.app .continue { border: 2px solid var(--ink); border-radius: 24px; padding: 16px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; }
+.app .rev .ans.ok.plain .l { background: var(--accent); }
+.app .toast { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 20; background: var(--sel-bg); color: var(--sel-ink); font: 700 14px 'Carlito', Arial, sans-serif; padding: 10px 16px; border-radius: 18px; animation: fade .2s ease; white-space: nowrap; }

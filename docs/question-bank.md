@@ -1,0 +1,117 @@
+# Question bank
+
+One JSON file per level in `data/questions/`. The Bareboat Skipper bank is generated from `data/build_bank.py`;
+the JSON is what the app, the website and `docs/design/questions.html` read.
+
+## File format
+
+```json
+{
+  "level": "bareboat-skipper",
+  "title": "IYT Bareboat Skipper",
+  "lang": "en",
+  "passMark": 70,
+  "examQuestions": 40,
+  "examMinutes": 60,
+  "version": "2026-11-02b",
+  "note": "…",
+  "topics": [ { "id": "colregs", "title": "Rules of the road (COLREGs)", "count": 10 }, … ],
+  "questions": [
+    {
+      "id": "bs-035",
+      "topic": "colregs",
+      "difficulty": 1,
+      "q": "Two motor yachts are meeting head-on in a channel. What do you do?",
+      "figure": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 0, "dist": 90, "hdg": 180 }, "bearingLine": true },
+      "options": [ "Stop and wait", "Hold course — the bigger one moves", "Alter course to starboard; pass port side to port side", "Alter to port" ],
+      "answer": 2,
+      "why": "Rule 14: both turn to starboard.",
+      "ref": "COLREGs Rule 14"
+    }
+  ]
+}
+```
+
+| Field | Meaning |
+|---|---|
+| `level`, `title`, `lang` | Level slug (also the file name), display title, language of this file (`en` is the source; translations go in `question_translations`, see data-model.md). |
+| `passMark`, `examQuestions`, `examMinutes` | Mock-exam defaults for the level. **To verify against the current IYT exam.** |
+| `version` | Date of the last edit; bump it when questions change so the apps can re-sync. |
+| `topics[]` | Ordered list; `count` is derived by the build script. Topic ids are stable — progress is keyed by them. |
+| `questions[].id` | Stable id, `<level prefix>-<nnn>`. Never renumber: answers and mastery are keyed by it. |
+| `difficulty` | 1 recall · 2 apply · 3 combine (a calculation, two rules at once, a judgement call). |
+| `q` | The situation, written to the student ("You are…", "You see…"). Second person, present tense, no definitions. |
+| `figure` | A spec for `docs/design/figures.js`, or `null` for a text-only question. See figures.md. |
+| `options[]` | Exactly four. The build script shuffles the three wrong ones and places the right one so that A/B/C/D are used equally across the bank. The apps may shuffle again per session. |
+| `answer` | Index of the right option (0–3). |
+| `why` | One line, shown after answering. Names the rule or the reason — the situation was in the figure. |
+| `ref` | Short reference: a COLREGs rule, a syllabus heading, a chart topic. Links to the theory note for the topic. |
+
+## Topics of the Bareboat Skipper bank
+
+| id | Title | Figures used |
+|---|---|---|
+| `terms` | Nautical terms & parts of the boat | sail, anchor, rope |
+| `ropework` | Ropework & knots | rope |
+| `safety` | Safety equipment & procedures | card, encounter |
+| `colregs` | Rules of the road (COLREGs) | encounter, lights, dayshape |
+| `navigation` | Charts, compass & position | compass, chart |
+| `buoyage` | Buoyage & lights | buoy, lights |
+| `weather` | Weather | isobars, bay, card |
+| `anchoring` | Anchoring & mooring | anchor, bay, chart, dayshape |
+| `systems` | Engine, electrics & boat systems | panel, card, encounter |
+| `emergency` | VHF, distress & emergencies | card, encounter |
+
+## Authoring rules
+
+1. **A situation, not a definition.** "The anchorage shows 2.4 m at low water, your draft is 1.9 m — can you stay?"
+   rather than "What is draft?". If the question could be answered by someone who has only read a glossary, rewrite it.
+2. **Draw it when it can be drawn.** A mark, a set of lights, the other boat's bearing, a compass rose, a chart
+   extract, a gauge panel. Use `card` for situations that are a short list of facts (fire below, barometer readings,
+   what flares you have). Leave `figure` null only for procedures and choices with nothing to see (which knot, which
+   rope, which VHF call).
+3. **Put the facts in the figure, not in the question.** If the figure says "Height of tide 1.2 m", the question does
+   not repeat it. The question asks; the figure tells.
+4. **Four options, one clearly right.** Wrong options are plausible mistakes a beginner makes (the opposite rule, the
+   right idea at the wrong moment), never jokes. Keep options the same length and shape so the right one does not stand
+   out. No "all of the above".
+5. **`why` is one line.** The rule and nothing else: "Rule 12: port tack keeps clear of starboard tack." The place for
+   a paragraph is the theory note the `ref` points to.
+6. **Mediterranean first.** Examples use IALA region A, Med mooring, Meltemi, Greek and Turkish harbours — where the
+   students sail. Region B is mentioned where it matters (lateral marks).
+7. **Spread difficulty.** About 2 × difficulty 1, 6 × difficulty 2, 2 × difficulty 3 per topic of ten.
+8. **Never claim exam content.** The bank is close to the syllabus, written from scratch. No question is copied from an
+   IYT paper, and the apps show the disclaimer once (profile / footer).
+
+## Building
+
+```
+python3 data/build_bank.py
+```
+
+The bank has 1000 questions, 100 per topic. The first 100 (`bs-001`–`bs-100`, ten per topic) are
+`q(topic, difficulty, text, right, [wrong ×3], why, ref, figure)` calls in the script. The other 90 per topic live in
+`data/bank/<topic>.json`: an array of `{topic, difficulty, q, a, o, why, ref, fig}` objects with the same meaning. The
+script appends the topic files in topic order (`bs-101`–`bs-190` terms, `bs-191`–`bs-280` ropework, … ), asserts there
+are 1000, places the right answer at position `i % 4`, and writes the JSON. It prints the count, how many have figures,
+and the answer distribution. Edit the script or the topic files, not the built JSON. Ids come from position, so fix a
+question in place but never insert, delete or reorder one in a topic file — that renumbers everything after it. More
+questions go in a new batch appended after the current ones.
+
+Before building, check a topic file:
+
+```
+python3 data/check_topic.py <topic>
+```
+
+It checks the shape, the difficulty spread (about 18/54/18 of 90), near-duplicates within the file and against the
+first 100, right answers that stand out by length, and that every figure renders with `figures.js` (needs Node).
+
+To add a level: copy the script to `build_<level>.py` with its own `TOPICS` and id prefix, write it to
+`data/questions/<level>.json`, and add the level to the home screens and the landing page.
+
+## Translations
+
+The source language is English (the exam language). Translations keep the same ids and option order; only `q`,
+`options`, `why` and figure text fields (`note`, `title`, `lines`, `labels`, `t`) are translated. Storage: the
+`question_translations` table (data-model.md) or `data/questions/<level>.<lang>.json` with the same shape.

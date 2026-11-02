@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>IYT Test · Bareboat Skipper question bank</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Carlito:wght@400;700&display=swap">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="flows.css">
+<style>
+  .qpage { max-width: 1240px; margin: 0 auto; padding: 28px 24px 80px; }
+  .qpage h1 { font: 300 40px/1 'Merriweather', Georgia, serif; letter-spacing: -.025em; margin: 10px 0 10px; }
+  .qpage .lead { font-size: 16px; line-height: 1.55; color: var(--page-muted); max-width: 760px; margin: 0 0 18px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+  .filters button { font: 700 12px 'Carlito', Arial, sans-serif; text-transform: uppercase; letter-spacing: .02em; border: 1px solid var(--page-line); background: var(--page-card); color: var(--page-muted); border-radius: 40px; height: 34px; padding: 0 14px; cursor: pointer; }
+  .filters button.on { background: var(--page-ink); color: var(--page); border-color: var(--page-ink); }
+  .qgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; }
+  .qcard { background: var(--page-card); border: 1px solid var(--page-line); border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+  .qcard .screen { min-height: 0; width: auto; border-radius: 0; box-shadow: none; display: contents; }
+  .qcard .fig { padding: 12px; }
+  .qcard .q { font-size: 18px; }
+  .qcard .opt { font-size: 14px; padding: 10px 12px; border-radius: 14px; }
+  .qcard .opt .l { width: 24px; height: 24px; font-size: 11px; }
+  .qcard .why { padding: 12px 14px; border-radius: 16px; }
+  .qcard .why .body-s { font-size: 13.5px; }
+  .qcard .qhead .meta { font-size: 11px; }
+  .qcard .diff { display: inline-flex; gap: 2px; } .qcard .diff i { width: 5px; height: 5px; border-radius: 50%; background: var(--page-line); } .qcard .diff i.on { background: var(--page-ink); }
+  .count { font: 700 12px 'Carlito', Arial, sans-serif; text-transform: uppercase; color: var(--page-muted); margin-left: auto; align-self: center; }
+  /* the cards use app tokens: give them a themed scope */
+  .qcard { --bg: #ffffff; --ink: #000000; --muted: #6d7a7e; --faint: #b8c2c6; --band: #f2f7f9; --line: #eef2f4; --tag-line: #dfe5e8; --accent: #0290d7; --on-accent: #fff; --sel-bg: #000; --sel-ink: #fff; --danger: #d40000; }
+  :root[data-theme="dark"] .qcard { --bg: #151a1f; --ink: #ffffff; --muted: #a8b9c9; --faint: #5c6f80; --band: #1b2229; --line: #252d34; --tag-line: #43586b; --accent: #35b0f2; --on-accent: #00131f; --sel-bg: #fff; --sel-ink: #000; --danger: #ff6a5c; }
+</style>
+</head>
+<body>
+<header class="vbar">
+  <span class="ttl">IYT Test · Bareboat Skipper · 100 questions</span>
+  <nav class="vtabs"><a href="flows.html">Flows</a><a href="questions.html" class="on">Questions</a></nav>
+  <span class="sp"></span>
+  <div class="switch" role="group" aria-label="Theme"><button type="button" data-theme-btn="day" class="on">Day</button><button type="button" data-theme-btn="night">Night</button></div>
+</header>
+<main class="qpage">
+  <div class="k">data/questions/bareboat-skipper.json · figures drawn by figures.js</div>
+  <h1>Bareboat Skipper — the bank as the student sees it</h1>
+  <p class="lead">Every question is a situation: what you see, what the instruments say, where the other boat is. Where the situation can be drawn it is a figure, not a paragraph. The right answer is marked; the one-line note under it is what the app shows after answering.</p>
+  <div class="filters" id="filters"></div>
+  <div class="qgrid" id="grid"></div>
+</main>
+<script src="icons.js"></script>
+<script src="test-icons.js"></script>
+<script src="figures.js"></script>
+<script>
+
+let bank, topic = 'all';
+function setTheme(t) { document.documentElement.dataset.theme = t === 'night' ? 'dark' : 'light'; document.querySelectorAll('[data-theme-btn]').forEach(b => b.classList.toggle('on', b.dataset.themeBtn === t)); try { localStorage.setItem('iyt-test-theme', t); } catch (e) {} }
+document.querySelectorAll('[data-theme-btn]').forEach(b => b.addEventListener('click', () => setTheme(b.dataset.themeBtn)));
+function render() {
+  const qs = bank.questions.filter(q => topic === 'all' || q.topic === topic);
+  const tt = Object.fromEntries(bank.topics.map(t => [t.id, t.title]));
+  document.getElementById('grid').innerHTML = qs.map(q => `<div class="qcard">
+    <div class="qhead"><span class="meta meta-ink">${q.id}</span><span class="chip">${tt[q.topic]}</span><span class="diff">${[1, 2, 3].map(i => `<i class="${i <= q.difficulty ? 'on' : ''}"></i>`).join('')}</span></div>
+    ${q.figure ? `<div class="fig" data-fig='${JSON.stringify(q.figure).replace(/'/g, '&#39;')}'></div>` : ''}
+    <p class="q">${q.q}</p>
+    <div class="opts">${q.options.map((o, i) => `<div class="opt${i === q.answer ? ' ok' : ''}"><span class="l">${i === q.answer ? svg('check', 14) : 'ABCD'[i]}</span><span>${o}</span></div>`).join('')}</div>
+    <div class="band why"><p class="body-s">${q.why}</p><span class="chip ref">${svg('book', 12)} ${q.ref}</span></div>
+  </div>`).join('');
+  paintFigures(document.getElementById('grid'));
+  document.querySelectorAll('#filters button').forEach(b => b.classList.toggle('on', b.dataset.t === topic));
+  document.getElementById('count').textContent = `${qs.length} questions · ${qs.filter(q => q.figure).length} with figures`;
+}
+async function load() {
+  for (const p of ['../../data/questions/bareboat-skipper.json', 'bareboat-skipper.json']) { try { const r = await fetch(p); if (r.ok) { bank = await r.json(); break; } } catch (e) {} }
+  if (!bank) { document.getElementById('grid').innerHTML = '<p>Serve this folder over HTTP (e.g. <code>npx serve docs/design</code>) so the bank JSON can be loaded.</p>'; return; }
+  document.getElementById('filters').innerHTML = `<button data-t="all">All 100</button>` + bank.topics.map(t => `<button data-t="${t.id}">${t.title} · ${t.count}</button>`).join('') + `<span class="count" id="count"></span>`;
+  document.getElementById('filters').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { topic = b.dataset.t; render(); } });
+  render();
+}
+setTheme((() => { try { return localStorage.getItem('iyt-test-theme') || 'day'; } catch (e) { return 'day'; } })());
+load();
+</script>
+</body>
+</html>

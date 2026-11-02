@@ -1,0 +1,2547 @@
+{
+  "level": "bareboat-skipper",
+  "title": "IYT Bareboat Skipper",
+  "lang": "en",
+  "passMark": 70,
+  "examQuestions": 40,
+  "examMinutes": 60,
+  "version": "2026-11-02b",
+  "note": "Scenario questions written for study, close to the IYT Bareboat Skipper theory syllabus. Not official IYT exam content. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.",
+  "topics": [
+    {
+      "id": "terms",
+      "title": "Nautical terms & parts of the boat",
+      "count": 10
+    },
+    {
+      "id": "ropework",
+      "title": "Ropework & knots",
+      "count": 10
+    },
+    {
+      "id": "safety",
+      "title": "Safety equipment & procedures",
+      "count": 10
+    },
+    {
+      "id": "colregs",
+      "title": "Rules of the road (COLREGs)",
+      "count": 10
+    },
+    {
+      "id": "navigation",
+      "title": "Charts, compass & position",
+      "count": 10
+    },
+    {
+      "id": "buoyage",
+      "title": "Buoyage & lights",
+      "count": 10
+    },
+    {
+      "id": "weather",
+      "title": "Weather",
+      "count": 10
+    },
+    {
+      "id": "anchoring",
+      "title": "Anchoring & mooring",
+      "count": 10
+    },
+    {
+      "id": "systems",
+      "title": "Engine, electrics & boat systems",
+      "count": 10
+    },
+    {
+      "id": "emergency",
+      "title": "VHF, distress & emergencies",
+      "count": 10
+    }
+  ],
+  "questions": [
+    {
+      "id": "bs-001",
+      "topic": "terms",
+      "difficulty": 1,
+      "q": "You are at the helm, sailing with the wind over your right shoulder and the boom out to the left. Which tack are you on?",
+      "figure": {
+        "type": "sail",
+        "wind": 45,
+        "hdg": 0,
+        "note": "Wind over the starboard side, boom to port"
+      },
+      "options": [
+        "Starboard tack",
+        "Lee tack",
+        "Windward tack",
+        "Port tack"
+      ],
+      "answer": 0,
+      "why": "The tack is named after the side the wind comes over.",
+      "ref": "Sailing terms"
+    },
+    {
+      "id": "bs-002",
+      "topic": "terms",
+      "difficulty": 1,
+      "q": "The skipper shouts \"fender on the port quarter!\". Where do you hang it?",
+      "figure": null,
+      "options": [
+        "Left side, near the bow",
+        "Left side, near the stern",
+        "Right side, near the bow",
+        "Right side, near the stern"
+      ],
+      "answer": 1,
+      "why": "Port = left; quarter = the side near the stern.",
+      "ref": "Nautical terms"
+    },
+    {
+      "id": "bs-003",
+      "topic": "terms",
+      "difficulty": 2,
+      "q": "From this point of sail you want to turn to sail downwind. Which way do you turn the boat?",
+      "figure": {
+        "type": "sail",
+        "wind": 0,
+        "hdg": 45,
+        "nogo": true,
+        "note": "Close-hauled on starboard tack"
+      },
+      "options": [
+        "Heave to",
+        "Tack",
+        "Bear away — turn the bow away from the wind",
+        "Luff up — turn the bow towards the wind"
+      ],
+      "answer": 2,
+      "why": "Bearing away takes you from close-hauled towards a run.",
+      "ref": "Points of sail"
+    },
+    {
+      "id": "bs-004",
+      "topic": "terms",
+      "difficulty": 2,
+      "q": "The boat is on this heading relative to the wind. What point of sail is it?",
+      "figure": {
+        "type": "sail",
+        "wind": 270,
+        "hdg": 0,
+        "nogo": true
+      },
+      "options": [
+        "Close-hauled",
+        "Broad reach",
+        "Run",
+        "Beam reach"
+      ],
+      "answer": 3,
+      "why": "Wind on the beam, about 90° off the bow.",
+      "ref": "Points of sail"
+    },
+    {
+      "id": "bs-005",
+      "topic": "terms",
+      "difficulty": 2,
+      "q": "The boat is pointing into the shaded sector. What happens?",
+      "figure": {
+        "type": "sail",
+        "wind": 0,
+        "hdg": 15,
+        "nogo": true,
+        "note": "Red sector: about 45° either side of the wind"
+      },
+      "options": [
+        "The sails flap and the boat stops — it is the no-go zone",
+        "The boat sails fastest",
+        "The boat gybes",
+        "The boat heels the most"
+      ],
+      "answer": 0,
+      "why": "A yacht cannot sail closer than about 40–45° to the wind.",
+      "ref": "Points of sail"
+    },
+    {
+      "id": "bs-006",
+      "topic": "terms",
+      "difficulty": 2,
+      "q": "The anchorage shows 2.4 m on the sounder at low water. The boat's draft is 1.9 m. Can you stay?",
+      "figure": {
+        "type": "anchor",
+        "depth": "2.4 m",
+        "tide": "low water",
+        "title": "Sounder at low water",
+        "lines": [
+          "Draft 1.9 m",
+          "Swell about 0.3 m"
+        ]
+      },
+      "options": [
+        "No — draft must be at least twice the depth",
+        "Yes — 0.5 m under the keel, but allow for swell",
+        "Only if you lift the keel",
+        "No — the mast is too tall"
+      ],
+      "answer": 1,
+      "why": "Draft is the keel depth below the waterline; compare it with depth at low water.",
+      "ref": "Nautical terms"
+    },
+    {
+      "id": "bs-007",
+      "topic": "terms",
+      "difficulty": 1,
+      "q": "The genoa is flapping on a beam reach. Which line do you pull in?",
+      "figure": {
+        "type": "rope",
+        "kind": "winch",
+        "labels": [
+          [
+            80,
+            86,
+            "genoa sheet",
+            "middle"
+          ],
+          [
+            255,
+            90,
+            "pull",
+            "middle"
+          ]
+        ]
+      },
+      "options": [
+        "The topping lift",
+        "The genoa halyard",
+        "The genoa sheet",
+        "The mainsheet"
+      ],
+      "answer": 2,
+      "why": "Sheets trim sails; halyards only hoist them.",
+      "ref": "Rigging"
+    },
+    {
+      "id": "bs-008",
+      "topic": "terms",
+      "difficulty": 3,
+      "q": "Downwind the mainsail twists and the top spills wind. Which control pulls the boom down?",
+      "figure": null,
+      "options": [
+        "The backstay",
+        "The outhaul",
+        "The Cunningham",
+        "The kicker (boom vang)"
+      ],
+      "answer": 3,
+      "why": "Off the wind the mainsheet no longer holds the boom down; the vang does.",
+      "ref": "Rigging"
+    },
+    {
+      "id": "bs-009",
+      "topic": "terms",
+      "difficulty": 2,
+      "q": "You are about to turn the stern through the wind on a run. What do you do first?",
+      "figure": {
+        "type": "sail",
+        "wind": 180,
+        "hdg": 170,
+        "note": "Running, about to gybe"
+      },
+      "options": [
+        "Centre the mainsheet and warn the crew: \"Gybe-ho\"",
+        "Drop the headsail",
+        "Release the kicker",
+        "Ease the mainsheet fully"
+      ],
+      "answer": 0,
+      "why": "A controlled gybe keeps the boom from slamming across.",
+      "ref": "Sailing manoeuvres"
+    },
+    {
+      "id": "bs-010",
+      "topic": "terms",
+      "difficulty": 2,
+      "q": "Berthing in a marina with a strong crosswind, which yacht is harder to keep off the pontoon?",
+      "figure": null,
+      "options": [
+        "Freeboard makes no difference",
+        "The one with high freeboard — more hull for the wind to push",
+        "The one with a longer keel",
+        "The one with low freeboard"
+      ],
+      "answer": 1,
+      "why": "Freeboard is the hull above the water: more freeboard, more windage.",
+      "ref": "Nautical terms"
+    },
+    {
+      "id": "bs-011",
+      "topic": "ropework",
+      "difficulty": 1,
+      "q": "You need to put a loop in the end of a mooring line to drop over a bollard. Which knot?",
+      "figure": {
+        "type": "rope",
+        "kind": "ring",
+        "labels": [
+          [
+            160,
+            40,
+            "bollard"
+          ]
+        ],
+        "note": "Loop in the end of a line"
+      },
+      "options": [
+        "Clove hitch",
+        "Reef knot",
+        "Bowline",
+        "Figure of eight"
+      ],
+      "answer": 2,
+      "why": "A bowline makes a fixed loop that will not slip and unties after loading.",
+      "ref": "Knots"
+    },
+    {
+      "id": "bs-012",
+      "topic": "ropework",
+      "difficulty": 1,
+      "q": "The jib sheet has run out through the block and is flogging. What stops this happening again?",
+      "figure": {
+        "type": "rope",
+        "kind": "sheet",
+        "labels": [
+          [
+            90,
+            180,
+            "sheet end"
+          ],
+          [
+            220,
+            180,
+            "block"
+          ]
+        ]
+      },
+      "options": [
+        "A reef knot",
+        "A clove hitch",
+        "A bowline",
+        "A figure-of-eight stopper knot in the end of the sheet"
+      ],
+      "answer": 3,
+      "why": "The stopper will not pass through the block.",
+      "ref": "Knots"
+    },
+    {
+      "id": "bs-013",
+      "topic": "ropework",
+      "difficulty": 2,
+      "q": "Hanging fenders on the guardrail before berthing, you want to adjust their height quickly. Which knot?",
+      "figure": {
+        "type": "rope",
+        "kind": "rail",
+        "labels": [
+          [
+            160,
+            80,
+            "guardrail"
+          ]
+        ]
+      },
+      "options": [
+        "Clove hitch",
+        "Bowline",
+        "Sheet bend",
+        "Round turn and two half hitches"
+      ],
+      "answer": 0,
+      "why": "Quick to tie and slide; not for anything that must not work loose.",
+      "ref": "Knots"
+    },
+    {
+      "id": "bs-014",
+      "topic": "ropework",
+      "difficulty": 2,
+      "q": "You must join the thin dinghy painter to a thick mooring line. Which knot?",
+      "figure": null,
+      "options": [
+        "Reef knot",
+        "Sheet bend",
+        "Bowline",
+        "Clove hitch"
+      ],
+      "answer": 1,
+      "why": "A sheet bend holds ropes of different sizes; a reef knot can capsize.",
+      "ref": "Knots"
+    },
+    {
+      "id": "bs-015",
+      "topic": "ropework",
+      "difficulty": 2,
+      "q": "The dinghy is tugging hard on its painter and you must tie it to a ring on the quay. Which knot can you tie under load?",
+      "figure": {
+        "type": "rope",
+        "kind": "ring",
+        "labels": [
+          [
+            160,
+            40,
+            "quay ring"
+          ]
+        ],
+        "note": "Dinghy pulling on the line"
+      },
+      "options": [
+        "Figure of eight",
+        "Reef knot",
+        "Round turn and two half hitches",
+        "Sheet bend"
+      ],
+      "answer": 2,
+      "why": "The round turn takes the load while you tie the hitches.",
+      "ref": "Knots"
+    },
+    {
+      "id": "bs-016",
+      "topic": "ropework",
+      "difficulty": 2,
+      "q": "This line is being made fast to a cleat. What completes it correctly?",
+      "figure": {
+        "type": "rope",
+        "kind": "cleat",
+        "labels": [
+          [
+            160,
+            150,
+            "cleat"
+          ]
+        ]
+      },
+      "options": [
+        "Five round turns and no hitch",
+        "A bowline round the cleat",
+        "Two half hitches on the horn",
+        "A full turn round the base, figure-of-eight turns, one locking hitch"
+      ],
+      "answer": 3,
+      "why": "The turn takes the load; the locking hitch holds without jamming.",
+      "ref": "Deckwork"
+    },
+    {
+      "id": "bs-017",
+      "topic": "ropework",
+      "difficulty": 3,
+      "q": "A riding turn has jammed the genoa sheet on the winch under full load. How do you free it?",
+      "figure": {
+        "type": "rope",
+        "kind": "winch",
+        "labels": [
+          [
+            80,
+            86,
+            "jammed"
+          ],
+          [
+            255,
+            90,
+            "load"
+          ],
+          [
+            160,
+            170,
+            "riding turn on the drum"
+          ]
+        ]
+      },
+      "options": [
+        "Tie a rolling hitch on the sheet with a spare line, take the load on another winch, then clear the turns",
+        "Tack immediately",
+        "Release the halyard",
+        "Cut the sheet"
+      ],
+      "answer": 0,
+      "why": "The rolling hitch grips the loaded sheet and lets you transfer the load.",
+      "ref": "Knots"
+    },
+    {
+      "id": "bs-018",
+      "topic": "ropework",
+      "difficulty": 2,
+      "q": "You are choosing rope for a new anchor rode. Which material?",
+      "figure": null,
+      "options": [
+        "Polyester — low stretch",
+        "Nylon — it stretches and absorbs shock loads",
+        "Dyneema — strongest",
+        "Polypropylene — it floats"
+      ],
+      "answer": 1,
+      "why": "Elastic nylon protects the boat and fittings in gusts and waves.",
+      "ref": "Rope types"
+    },
+    {
+      "id": "bs-019",
+      "topic": "ropework",
+      "difficulty": 2,
+      "q": "The dinghy painter keeps sinking and nearly fouled the propeller. Which rope should it be?",
+      "figure": null,
+      "options": [
+        "Wire",
+        "Polyester",
+        "Polypropylene — it floats",
+        "Nylon"
+      ],
+      "answer": 2,
+      "why": "A floating painter stays clear of the prop.",
+      "ref": "Rope types"
+    },
+    {
+      "id": "bs-020",
+      "topic": "ropework",
+      "difficulty": 2,
+      "q": "You are loading the genoa sheet onto a winch in a fresh breeze. How many turns before you start winding?",
+      "figure": {
+        "type": "rope",
+        "kind": "winch",
+        "labels": [
+          [
+            80,
+            86,
+            "sheet"
+          ],
+          [
+            255,
+            90,
+            "tail"
+          ]
+        ]
+      },
+      "options": [
+        "As many as fit",
+        "Five, anticlockwise",
+        "One, anticlockwise",
+        "Two or three, clockwise, fingers clear of the drum"
+      ],
+      "answer": 3,
+      "why": "Yacht winches turn clockwise; three turns give grip without a riding turn.",
+      "ref": "Deckwork"
+    },
+    {
+      "id": "bs-021",
+      "topic": "safety",
+      "difficulty": 1,
+      "q": "You are crossing to the next island at night in 20 knots. Who wears a lifejacket?",
+      "figure": {
+        "type": "card",
+        "title": "Night passage",
+        "lines": [
+          "Wind 20 kn, sea moderate",
+          "Crew of 5, two have never sailed",
+          "14 miles to go"
+        ],
+        "tag": "2:10 am"
+      },
+      "options": [
+        "Everyone on deck, clipped on when going forward",
+        "Only non-swimmers",
+        "Nobody — the sea is moderate",
+        "Only the helm"
+      ],
+      "answer": 0,
+      "why": "Night, fresh wind and deck work are the standard triggers.",
+      "ref": "Personal safety"
+    },
+    {
+      "id": "bs-022",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "A pan of oil has caught fire on the galley stove. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "Galley fire",
+        "lines": [
+          "Pan of oil burning on the stove",
+          "Fire blanket beside the companionway",
+          "Extinguisher in the saloon"
+        ],
+        "tag": "FIRE"
+      },
+      "options": [
+        "Open all hatches",
+        "Turn off the gas, smother it with the fire blanket",
+        "Throw water on it",
+        "Carry the pan on deck"
+      ],
+      "answer": 1,
+      "why": "Water turns to steam and spreads burning fat.",
+      "ref": "Fire"
+    },
+    {
+      "id": "bs-023",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "Before lighting the stove you notice a faint gas smell in the cabin. What first?",
+      "figure": null,
+      "options": [
+        "Light the stove quickly to burn it off",
+        "Switch on the cabin fan",
+        "No flames or switches — ventilate, pump the bilge by hand, check the system",
+        "Start the engine to ventilate"
+      ],
+      "answer": 2,
+      "why": "LPG sinks into the bilge; any spark can ignite it.",
+      "ref": "Gas safety"
+    },
+    {
+      "id": "bs-024",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "You are driving the dinghy alone to the beach. Where is the kill cord?",
+      "figure": null,
+      "options": [
+        "Left on the yacht",
+        "In your pocket",
+        "Tied to the dinghy handle",
+        "Attached to your leg or lifejacket"
+      ],
+      "answer": 3,
+      "why": "If you fall out, the cord pulls and the engine stops.",
+      "ref": "Dinghy safety"
+    },
+    {
+      "id": "bs-025",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "A crew member goes over the side on a broad reach. What is the very first thing you shout and do?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0,
+          "sail": true,
+          "boom": -14
+        },
+        "other": {
+          "bearing": 165,
+          "dist": 70,
+          "hdg": 0,
+          "scale": 0.3,
+          "label": "MOB"
+        },
+        "wind": 225,
+        "note": "Casualty astern to port"
+      },
+      "options": [
+        "\"Man overboard!\" — throw the danbuoy and horseshoe, point at the casualty",
+        "Send a Mayday",
+        "Start the engine",
+        "Drop the sails"
+      ],
+      "answer": 0,
+      "why": "Flotation first and a spotter who never looks away.",
+      "ref": "Man overboard"
+    },
+    {
+      "id": "bs-026",
+      "topic": "safety",
+      "difficulty": 3,
+      "q": "The yacht has hit a rock and is taking water, but the pumps are keeping up for now. The liferaft?",
+      "figure": null,
+      "options": [
+        "Launch and board it immediately",
+        "Prepare it on deck on its painter, but stay aboard while the yacht floats",
+        "Inflate it in the cockpit",
+        "Leave it stowed until the deck is awash"
+      ],
+      "answer": 1,
+      "why": "\"Step up into the liferaft\" — the yacht is the better survival platform.",
+      "ref": "Abandoning ship"
+    },
+    {
+      "id": "bs-027",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "The charter check-out is done and the crew are aboard. Before leaving the marina you…",
+      "figure": null,
+      "options": [
+        "Set the sails",
+        "Hand out the cabins",
+        "Give the safety briefing: lifejackets, gas, heads, fire, MOB, VHF, flares",
+        "Check their passports"
+      ],
+      "answer": 2,
+      "why": "Everyone must know where the gear is and how to call for help.",
+      "ref": "Skipper's responsibilities"
+    },
+    {
+      "id": "bs-028",
+      "topic": "safety",
+      "difficulty": 3,
+      "q": "You have recovered a crew member after 15 minutes in 16° water. They shiver, mumble and cannot grip. What do you do?",
+      "figure": null,
+      "options": [
+        "Make them walk around the deck",
+        "Give brandy to warm them",
+        "Put them in a hot shower immediately",
+        "Handle gently and horizontally, strip wet clothes, insulate, warm slowly"
+      ],
+      "answer": 3,
+      "why": "Hypothermia: gradual rewarming, no alcohol, no rough handling.",
+      "ref": "First aid"
+    },
+    {
+      "id": "bs-029",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "During check-in you find the spare gas bottle stowed under the aft bunk. Where should it be?",
+      "figure": null,
+      "options": [
+        "In the gas locker that drains overboard",
+        "In the engine bay",
+        "Under the bunk is fine",
+        "In the cockpit locker with the fuel"
+      ],
+      "answer": 0,
+      "why": "Leaking gas must drain over the side, not into the bilge.",
+      "ref": "Gas safety"
+    },
+    {
+      "id": "bs-030",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "Reefing in a rising wind, the foredeck crew goes forward. What is clipped where?",
+      "figure": null,
+      "options": [
+        "Nothing — it only takes a minute",
+        "Harness tether to the jackstay before leaving the cockpit",
+        "Tether to the halyard",
+        "Tether to the guardrail"
+      ],
+      "answer": 1,
+      "why": "Jackstays run the length of the deck; guardrails are not strong points.",
+      "ref": "Personal safety"
+    },
+    {
+      "id": "bs-031",
+      "topic": "colregs",
+      "difficulty": 1,
+      "q": "Both yachts are sailing. Who gives way?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 45,
+          "sail": true,
+          "boom": -14
+        },
+        "other": {
+          "bearing": 300,
+          "dist": 85,
+          "hdg": 315,
+          "sail": true,
+          "boom": 14
+        },
+        "wind": 0,
+        "bearingLine": true
+      },
+      "options": [
+        "The windward boat",
+        "She gives way",
+        "You — you are on port tack, she is on starboard",
+        "Neither"
+      ],
+      "answer": 2,
+      "why": "Rule 12: port tack keeps clear of starboard tack.",
+      "ref": "COLREGs Rule 12"
+    },
+    {
+      "id": "bs-032",
+      "topic": "colregs",
+      "difficulty": 2,
+      "q": "Both yachts are on starboard tack. Who gives way?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 60,
+          "sail": true,
+          "boom": 14
+        },
+        "other": {
+          "bearing": -80,
+          "dist": 80,
+          "hdg": 60,
+          "sail": true,
+          "boom": 14
+        },
+        "wind": 330,
+        "bearingLine": true
+      },
+      "options": [
+        "She gives way",
+        "The faster boat",
+        "The one to port",
+        "You — you are the windward boat"
+      ],
+      "answer": 3,
+      "why": "Rule 12: same tack, windward keeps clear of leeward.",
+      "ref": "COLREGs Rule 12"
+    },
+    {
+      "id": "bs-033",
+      "topic": "colregs",
+      "difficulty": 2,
+      "q": "You are motor-sailing with the engine in gear. A yacht under sail alone is crossing from your starboard. Who gives way?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0,
+          "sail": true,
+          "boom": -14
+        },
+        "other": {
+          "bearing": 60,
+          "dist": 85,
+          "hdg": 270,
+          "sail": true,
+          "boom": 14
+        },
+        "wind": 45,
+        "bearingLine": true,
+        "note": "Your engine is running and in gear"
+      },
+      "options": [
+        "You — under power you are a power-driven vessel",
+        "The one on port tack",
+        "She does — you have sails up",
+        "Nobody, both are sailing"
+      ],
+      "answer": 0,
+      "why": "Rule 3: sail plus engine = power-driven; show the cone by day.",
+      "ref": "COLREGs Rule 3 / 18"
+    },
+    {
+      "id": "bs-034",
+      "topic": "colregs",
+      "difficulty": 2,
+      "q": "Motoring, you see a motorboat crossing on this bearing, which has not changed for five minutes. What do you do?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0
+        },
+        "other": {
+          "bearing": 50,
+          "dist": 90,
+          "hdg": 270
+        },
+        "bearingLine": true,
+        "note": "Bearing steady at 050° relative"
+      },
+      "options": [
+        "Alter course to port",
+        "Give way — alter course to starboard, early and clearly, and pass astern of her",
+        "Hold course, she is to starboard so she gives way",
+        "Speed up to cross ahead"
+      ],
+      "answer": 1,
+      "why": "Rule 15: she is on your starboard side, so you keep clear; avoid crossing ahead.",
+      "ref": "COLREGs Rule 15"
+    },
+    {
+      "id": "bs-035",
+      "topic": "colregs",
+      "difficulty": 1,
+      "q": "Two motor yachts are meeting head-on in a channel. What do you do?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0
+        },
+        "other": {
+          "bearing": 0,
+          "dist": 90,
+          "hdg": 180
+        },
+        "bearingLine": true
+      },
+      "options": [
+        "Stop and wait",
+        "Hold course — the bigger one moves",
+        "Alter course to starboard; pass port side to port side",
+        "Alter to port"
+      ],
+      "answer": 2,
+      "why": "Rule 14: both turn to starboard.",
+      "ref": "COLREGs Rule 14"
+    },
+    {
+      "id": "bs-036",
+      "topic": "colregs",
+      "difficulty": 2,
+      "q": "Under sail you are catching up a slow motorboat from astern. Who gives way?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0,
+          "sail": true,
+          "boom": 14
+        },
+        "other": {
+          "bearing": 5,
+          "dist": 85,
+          "hdg": 0
+        },
+        "wind": 120,
+        "bearingLine": true,
+        "note": "You are faster, approaching from well abaft her beam"
+      },
+      "options": [
+        "The motorboat — sail has priority",
+        "Neither",
+        "The one to starboard",
+        "You — the overtaking vessel always keeps clear"
+      ],
+      "answer": 3,
+      "why": "Rule 13 overrides sail-over-power.",
+      "ref": "COLREGs Rule 13"
+    },
+    {
+      "id": "bs-037",
+      "topic": "colregs",
+      "difficulty": 2,
+      "q": "Under sail you meet a vessel with these shapes, towing nets. Who gives way?",
+      "figure": {
+        "type": "dayshape",
+        "shape": "two-cones",
+        "note": "Two cones apexes together: vessel engaged in fishing"
+      },
+      "options": [
+        "You — sail keeps clear of a vessel engaged in fishing",
+        "The fishing vessel",
+        "Whoever is on port tack",
+        "Neither, pass at a distance"
+      ],
+      "answer": 0,
+      "why": "Rule 18: sail gives way to fishing, NUC and RAM.",
+      "ref": "COLREGs Rule 18"
+    },
+    {
+      "id": "bs-038",
+      "topic": "colregs",
+      "difficulty": 2,
+      "q": "In sight of a ship, you hear one short blast from her. What is she telling you?",
+      "figure": null,
+      "options": [
+        "I am altering to port",
+        "I am altering my course to starboard",
+        "I am going astern",
+        "I do not understand your intentions"
+      ],
+      "answer": 1,
+      "why": "One short: starboard; two: port; three: astern; five: doubt.",
+      "ref": "COLREGs Rule 34"
+    },
+    {
+      "id": "bs-039",
+      "topic": "colregs",
+      "difficulty": 2,
+      "q": "You are sailing up a narrow channel with a ferry coming behind you. Where do you keep?",
+      "figure": null,
+      "options": [
+        "In the middle, you have right of way under sail",
+        "On the port side",
+        "As far to the starboard side of the channel as is safe, and do not impede the ferry",
+        "Tack across the channel freely"
+      ],
+      "answer": 2,
+      "why": "Rule 9: keep right and do not hamper vessels confined to the channel.",
+      "ref": "COLREGs Rule 9"
+    },
+    {
+      "id": "bs-040",
+      "topic": "colregs",
+      "difficulty": 3,
+      "q": "Motoring at night you see these lights on a steady bearing, closing. What vessel is it and what do you do?",
+      "figure": {
+        "type": "lights",
+        "lights": [
+          {
+            "c": "w",
+            "x": 200,
+            "y": 78,
+            "t": "white"
+          },
+          {
+            "c": "r",
+            "x": 196,
+            "y": 118,
+            "t": "red"
+          }
+        ],
+        "note": "Night · bearing 045° relative, steady"
+      },
+      "options": [
+        "A sailing vessel — hold course",
+        "A vessel at anchor — pass either side",
+        "A vessel overtaking you — hold course",
+        "A power-driven vessel crossing from your starboard — give way, turn to starboard"
+      ],
+      "answer": 3,
+      "why": "Red sidelight with a masthead light above: a power vessel showing you her port side.",
+      "ref": "COLREGs Rules 15 / 23"
+    },
+    {
+      "id": "bs-041",
+      "topic": "navigation",
+      "difficulty": 1,
+      "q": "You need the distance between two headlands on the chart. Where do you measure it?",
+      "figure": null,
+      "options": [
+        "On the latitude scale at the side, level with the position",
+        "On the longitude scale along the bottom",
+        "With the compass rose",
+        "Anywhere on the border"
+      ],
+      "answer": 0,
+      "why": "One minute of latitude = one nautical mile; longitude minutes shrink with latitude.",
+      "ref": "Chartwork"
+    },
+    {
+      "id": "bs-042",
+      "topic": "navigation",
+      "difficulty": 3,
+      "q": "The chart gives this variation. Your plotted true course is 090°. What do you steer by the compass?",
+      "figure": {
+        "type": "compass",
+        "variation": -4,
+        "course": 90
+      },
+      "options": [
+        "098°M",
+        "094°M",
+        "090°M",
+        "086°M"
+      ],
+      "answer": 1,
+      "why": "True to magnetic: add west (\"west is best\").",
+      "ref": "Compass conversion"
+    },
+    {
+      "id": "bs-043",
+      "topic": "navigation",
+      "difficulty": 3,
+      "q": "The compass reads 215°C. Deviation on this heading is 3°E, variation 2°W. What is the true course?",
+      "figure": {
+        "type": "compass",
+        "variation": -2,
+        "deviation": 3,
+        "course": 215,
+        "courseLabel": "Compass course",
+        "note": "C → M → T"
+      },
+      "options": [
+        "220°T",
+        "210°T",
+        "216°T",
+        "214°T"
+      ],
+      "answer": 2,
+      "why": "Compass → true: add east, subtract west: 215 + 3 − 2 = 216.",
+      "ref": "Compass conversion"
+    },
+    {
+      "id": "bs-044",
+      "topic": "navigation",
+      "difficulty": 2,
+      "q": "The hand-bearing compass agrees with the steering compass on some headings but differs by 5° on others. What is this error?",
+      "figure": null,
+      "options": [
+        "Leeway",
+        "Tidal set",
+        "Variation",
+        "Deviation — the boat's own magnetic field"
+      ],
+      "answer": 3,
+      "why": "Deviation changes with heading; variation does not.",
+      "ref": "Compass"
+    },
+    {
+      "id": "bs-045",
+      "topic": "navigation",
+      "difficulty": 2,
+      "q": "You left the marina at 09:30 and the log reads 12.0 M at 12:00. What has your average speed been?",
+      "figure": null,
+      "options": [
+        "4.8 knots",
+        "6.0 knots",
+        "5.2 knots",
+        "4.0 knots"
+      ],
+      "answer": 0,
+      "why": "12 miles in 2.5 hours.",
+      "ref": "Speed, time, distance"
+    },
+    {
+      "id": "bs-046",
+      "topic": "navigation",
+      "difficulty": 2,
+      "q": "Your draft is 1.9 m. Can you cross the shoal on the track at the time shown?",
+      "figure": {
+        "type": "chart",
+        "depths": [
+          [
+            60,
+            60,
+            "8"
+          ],
+          [
+            110,
+            90,
+            "5"
+          ],
+          [
+            150,
+            118,
+            "1.5"
+          ],
+          [
+            120,
+            150,
+            "4"
+          ],
+          [
+            220,
+            150,
+            "7"
+          ],
+          [
+            90,
+            170,
+            "12"
+          ]
+        ],
+        "track": "M30 170 L150 118 L260 60",
+        "boat": [
+          40,
+          168,
+          45
+        ],
+        "panel": [
+          "Now 14:00",
+          "Height of tide 1.2 m",
+          "Draft 1.9 m"
+        ],
+        "note": "Depths in metres below chart datum"
+      },
+      "options": [
+        "No — 1.5 m is less than the draft",
+        "Yes — 1.5 m charted + 1.2 m tide = 2.7 m, about 0.8 m clearance",
+        "Only at low water",
+        "Only if the tide is falling"
+      ],
+      "answer": 1,
+      "why": "Depth now = charted depth + height of tide.",
+      "ref": "Charts / tides"
+    },
+    {
+      "id": "bs-047",
+      "topic": "navigation",
+      "difficulty": 2,
+      "q": "Which of the depths on this chart will dry at low water?",
+      "figure": {
+        "type": "chart",
+        "depths": [
+          [
+            60,
+            60,
+            "8"
+          ],
+          [
+            120,
+            100,
+            "4"
+          ],
+          [
+            170,
+            130,
+            "0.8",
+            true
+          ],
+          [
+            230,
+            90,
+            "1.5"
+          ],
+          [
+            90,
+            160,
+            "12"
+          ]
+        ],
+        "note": "Depths in metres · underlined = drying height"
+      },
+      "options": [
+        "None of them",
+        "The 1.5",
+        "The underlined 0.8 — a drying height above chart datum",
+        "The 4"
+      ],
+      "answer": 2,
+      "why": "Underlined figures are heights above datum that uncover.",
+      "ref": "Charts"
+    },
+    {
+      "id": "bs-048",
+      "topic": "navigation",
+      "difficulty": 2,
+      "q": "Entering harbour, the two beacons must be kept in line. What are they called and what do they give you?",
+      "figure": {
+        "type": "chart",
+        "land": "M0 0 H320 V40 H200 V100 H120 V40 H0 Z",
+        "marks": [
+          [
+            160,
+            30,
+            "w",
+            "rear"
+          ],
+          [
+            160,
+            70,
+            "w",
+            "front"
+          ]
+        ],
+        "track": "M160 190 L160 80",
+        "boat": [
+          160,
+          180,
+          0
+        ],
+        "labels": [
+          [
+            160,
+            125,
+            "keep in line",
+            "middle"
+          ]
+        ],
+        "note": "Leading marks into the harbour"
+      },
+      "options": [
+        "A cardinal pair — safe water between them",
+        "A traffic lane",
+        "A range marker for distance",
+        "A transit (leading line) — a precise position line without a compass"
+      ],
+      "answer": 3,
+      "why": "Two charted objects in line = one accurate position line.",
+      "ref": "Pilotage"
+    },
+    {
+      "id": "bs-049",
+      "topic": "navigation",
+      "difficulty": 3,
+      "q": "You take bearings of the lighthouse, the tower and the headland and plot them. They form a small triangle. Where are you?",
+      "figure": {
+        "type": "chart",
+        "land": "M0 0 H320 V36 H0 Z",
+        "marks": [
+          [
+            40,
+            30,
+            "k",
+            "lighthouse"
+          ],
+          [
+            160,
+            30,
+            "k",
+            "tower"
+          ],
+          [
+            290,
+            30,
+            "k",
+            "headland"
+          ]
+        ],
+        "track": "M40 36 L170 150 M160 36 L172 160 M290 36 L166 156",
+        "labels": [
+          [
+            200,
+            170,
+            "cocked hat",
+            "middle"
+          ]
+        ],
+        "note": "Three bearings plotted"
+      },
+      "options": [
+        "Inside the cocked hat — take the corner nearest danger as your position",
+        "At the lighthouse bearing",
+        "You cannot tell without GPS",
+        "Halfway to the tower"
+      ],
+      "answer": 0,
+      "why": "A three-bearing fix; the triangle shows the error.",
+      "ref": "Position fixing"
+    },
+    {
+      "id": "bs-050",
+      "topic": "navigation",
+      "difficulty": 2,
+      "q": "High water is 3.6 m, low water 1.2 m. What is the range, and what does the rule of twelfths say about the third hour of the rise?",
+      "figure": null,
+      "options": [
+        "Range 1.2 m; 3/12 in the third hour",
+        "Range 2.4 m; 3/12 of it (0.6 m) rises in the third hour",
+        "Range 4.8 m; 1/12 in the third hour",
+        "Range 2.4 m; half of it in the third hour"
+      ],
+      "answer": 1,
+      "why": "Range = HW − LW; twelfths: 1, 2, 3, 3, 2, 1.",
+      "ref": "Tides"
+    },
+    {
+      "id": "bs-051",
+      "topic": "buoyage",
+      "difficulty": 1,
+      "q": "Entering a Mediterranean harbour from seaward you see this buoy. Which side do you leave it on?",
+      "figure": {
+        "type": "buoy",
+        "kind": "lat-port",
+        "topmark": true,
+        "rhythm": "Fl R",
+        "note": "Entering harbour from seaward"
+      },
+      "options": [
+        "To starboard",
+        "Pass astern of it",
+        "To port",
+        "Either side"
+      ],
+      "answer": 2,
+      "why": "Region A: red can to port when returning.",
+      "ref": "IALA buoyage"
+    },
+    {
+      "id": "bs-052",
+      "topic": "buoyage",
+      "difficulty": 2,
+      "q": "This mark is ahead. Where is the safe water?",
+      "figure": {
+        "type": "buoy",
+        "kind": "card-n",
+        "rhythm": "Q",
+        "rhythmNote": "continuous quick"
+      },
+      "options": [
+        "West of the mark",
+        "South of the mark",
+        "Either side",
+        "North of the mark"
+      ],
+      "answer": 3,
+      "why": "North cardinal: black over yellow, both cones up.",
+      "ref": "Cardinal marks"
+    },
+    {
+      "id": "bs-053",
+      "topic": "buoyage",
+      "difficulty": 2,
+      "q": "At night you see a white light flashing six times then one long flash. What is it and where do you pass?",
+      "figure": {
+        "type": "buoy",
+        "kind": "card-s",
+        "rhythm": "Q(6)+LFl",
+        "rhythmNote": "six quick + one long"
+      },
+      "options": [
+        "A south cardinal — pass south of it",
+        "A north cardinal — pass north",
+        "An isolated danger — any side",
+        "A west cardinal — pass west"
+      ],
+      "answer": 0,
+      "why": "Clock face: 6 o'clock plus a long flash = south.",
+      "ref": "Cardinal marks"
+    },
+    {
+      "id": "bs-054",
+      "topic": "buoyage",
+      "difficulty": 2,
+      "q": "You see this mark. Which way round do you go?",
+      "figure": {
+        "type": "buoy",
+        "kind": "iso",
+        "rhythm": "Fl(2)",
+        "rhythmNote": "white, group of two"
+      },
+      "options": [
+        "Through the middle",
+        "Keep clear, but you may pass on any side",
+        "Only to the north",
+        "Only to the east"
+      ],
+      "answer": 1,
+      "why": "Isolated danger: black with red bands, two balls; danger right under it.",
+      "ref": "Isolated danger marks"
+    },
+    {
+      "id": "bs-055",
+      "topic": "buoyage",
+      "difficulty": 2,
+      "q": "This buoy is at the harbour approach. What does it tell you?",
+      "figure": {
+        "type": "buoy",
+        "kind": "safe",
+        "rhythm": "Iso / LFl 10s",
+        "rhythmNote": "white"
+      },
+      "options": [
+        "Danger right here",
+        "An anchorage limit",
+        "Safe water all round — a landfall or mid-channel mark",
+        "Keep to the west"
+      ],
+      "answer": 2,
+      "why": "Red and white vertical stripes, red ball: safe water.",
+      "ref": "Safe water marks"
+    },
+    {
+      "id": "bs-056",
+      "topic": "buoyage",
+      "difficulty": 2,
+      "q": "A yellow buoy with this topmark sits off the beach. What is it?",
+      "figure": {
+        "type": "buoy",
+        "kind": "special",
+        "rhythm": "Fl Y"
+      },
+      "options": [
+        "A lateral mark",
+        "A wreck mark",
+        "A cardinal mark",
+        "A special mark — check the chart (swimming area, pipeline, spoil ground)"
+      ],
+      "answer": 3,
+      "why": "Yellow with an X: not a navigation mark in itself.",
+      "ref": "Special marks"
+    },
+    {
+      "id": "bs-057",
+      "topic": "buoyage",
+      "difficulty": 2,
+      "q": "At night you see these lights ahead and no others. What is it?",
+      "figure": {
+        "type": "lights",
+        "lights": [
+          {
+            "c": "r",
+            "x": 160,
+            "y": 60,
+            "t": "red"
+          },
+          {
+            "c": "g",
+            "x": 160,
+            "y": 84,
+            "t": "green"
+          },
+          {
+            "c": "r",
+            "x": 140,
+            "y": 124
+          },
+          {
+            "c": "g",
+            "x": 180,
+            "y": 124
+          }
+        ]
+      },
+      "options": [
+        "A sailing vessel under sail (red over green masthead lights optional)",
+        "A trawler",
+        "A vessel aground",
+        "A pilot vessel"
+      ],
+      "answer": 0,
+      "why": "Red over green at the masthead plus sidelights is a sailing vessel.",
+      "ref": "Navigation lights"
+    },
+    {
+      "id": "bs-058",
+      "topic": "buoyage",
+      "difficulty": 2,
+      "q": "You see a single white light low down, its bearing slowly changing. What is most likely?",
+      "figure": {
+        "type": "lights",
+        "lights": [
+          {
+            "c": "w",
+            "x": 160,
+            "y": 122,
+            "t": "white"
+          }
+        ],
+        "note": "Night · single white light, bearing drawing slowly left"
+      },
+      "options": [
+        "A lighthouse",
+        "The sternlight of a vessel moving away — or an anchored vessel; watch the bearing",
+        "A fishing vessel",
+        "A vessel coming straight at you"
+      ],
+      "answer": 1,
+      "why": "One white light: stern view or at anchor; only the bearing tells you which.",
+      "ref": "Navigation lights"
+    },
+    {
+      "id": "bs-059",
+      "topic": "buoyage",
+      "difficulty": 3,
+      "q": "At night you see these lights. What vessel, and who gives way?",
+      "figure": {
+        "type": "lights",
+        "lights": [
+          {
+            "c": "g",
+            "x": 160,
+            "y": 58,
+            "t": "green"
+          },
+          {
+            "c": "w",
+            "x": 160,
+            "y": 82,
+            "t": "white"
+          },
+          {
+            "c": "r",
+            "x": 140,
+            "y": 124
+          },
+          {
+            "c": "g",
+            "x": 180,
+            "y": 124
+          }
+        ]
+      },
+      "options": [
+        "A pilot vessel — hold course",
+        "A vessel not under command",
+        "A trawler — green over white; you keep clear under sail or power",
+        "A vessel towing"
+      ],
+      "answer": 2,
+      "why": "Green over white = trawling; fishing has priority over sail.",
+      "ref": "Navigation lights"
+    },
+    {
+      "id": "bs-060",
+      "topic": "buoyage",
+      "difficulty": 3,
+      "q": "You are switching from sail to engine at night. Which lights do you turn on and off?",
+      "figure": {
+        "type": "lights",
+        "lights": [
+          {
+            "c": "r",
+            "x": 140,
+            "y": 46
+          },
+          {
+            "c": "g",
+            "x": 180,
+            "y": 46
+          },
+          {
+            "c": "w",
+            "x": 160,
+            "y": 40,
+            "t": "tricolour (masthead)"
+          }
+        ],
+        "note": "Yacht under sail — about to start the engine"
+      },
+      "options": [
+        "Only the all-round white",
+        "Tricolour and anchor light",
+        "Leave the tricolour on and add the steaming light",
+        "Off: tricolour. On: steaming light plus deck-level sidelights and sternlight"
+      ],
+      "answer": 3,
+      "why": "Tricolour is for sail only; never with the steaming light.",
+      "ref": "Navigation lights"
+    },
+    {
+      "id": "bs-061",
+      "topic": "weather",
+      "difficulty": 1,
+      "q": "The forecast chart shows isobars packed tightly over your area tomorrow. What do you expect?",
+      "figure": {
+        "type": "isobars",
+        "center": "L",
+        "tight": true,
+        "values": [
+          "996",
+          "1000",
+          "1004"
+        ],
+        "boat": [
+          250,
+          150,
+          0
+        ]
+      },
+      "options": [
+        "Strong wind — stay in port or reef early",
+        "Light variable winds",
+        "A sea breeze only",
+        "Calm and fog"
+      ],
+      "answer": 0,
+      "why": "Close isobars = steep pressure gradient = strong wind.",
+      "ref": "Synoptic charts"
+    },
+    {
+      "id": "bs-062",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "The low is to the north-west of you. From which direction will the wind blow?",
+      "figure": {
+        "type": "isobars",
+        "center": "L",
+        "boat": [
+          260,
+          160,
+          0
+        ],
+        "note": "Low centre to the NW of the yacht"
+      },
+      "options": [
+        "Straight towards the low",
+        "From the south-west, backing as the low passes",
+        "From the east, steady",
+        "From the north-east"
+      ],
+      "answer": 1,
+      "why": "Northern hemisphere: wind anticlockwise round a low; Buys Ballot — back to wind, low on the left.",
+      "ref": "Pressure systems"
+    },
+    {
+      "id": "bs-063",
+      "topic": "weather",
+      "difficulty": 1,
+      "q": "The forecast says \"F6, occasionally 7\". What wind speed is that?",
+      "figure": null,
+      "options": [
+        "4–6 knots",
+        "11–16 knots",
+        "About 22–33 knots",
+        "40–47 knots"
+      ],
+      "answer": 2,
+      "why": "F6 is 22–27 kn, F7 28–33 kn — the limit for comfortable cruising.",
+      "ref": "Beaufort scale"
+    },
+    {
+      "id": "bs-064",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "In three hours the barometer has fallen from 1012 to 1006 hPa. What does it mean for your afternoon passage?",
+      "figure": {
+        "type": "card",
+        "title": "Barometer",
+        "lines": [
+          "09:00  1012 hPa",
+          "12:00  1006 hPa",
+          "Sky: high cloud thickening from the west"
+        ],
+        "tag": "−6 hPa / 3 h"
+      },
+      "options": [
+        "Fog is likely",
+        "Fine settled weather",
+        "No change",
+        "A depression is approaching — expect strengthening wind; reconsider"
+      ],
+      "answer": 3,
+      "why": "A fall of 6 hPa in 3 h is a strong warning.",
+      "ref": "Barometer"
+    },
+    {
+      "id": "bs-065",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "A hot sunny morning, calm. By 14:00 a steady 15-knot onshore wind has set in. What is it?",
+      "figure": {
+        "type": "bay",
+        "wind": 180,
+        "spots": [],
+        "labels": [
+          [
+            160,
+            30,
+            "LAND — hot",
+            "middle"
+          ],
+          [
+            160,
+            170,
+            "SEA — cool",
+            "middle"
+          ]
+        ],
+        "note": "Afternoon, clear sky, wind onshore"
+      },
+      "options": [
+        "A sea breeze — it will die at sunset",
+        "The Meltemi",
+        "A land breeze",
+        "A front passing"
+      ],
+      "answer": 0,
+      "why": "Warm land draws air in from the sea on sunny afternoons.",
+      "ref": "Local winds"
+    },
+    {
+      "id": "bs-066",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "Aegean, July. The forecast shows this pattern for a week. What wind?",
+      "figure": {
+        "type": "isobars",
+        "center": "H",
+        "boat": [
+          250,
+          170,
+          0
+        ],
+        "hemisphere": "Aegean · July",
+        "note": "High to the NW, low over Anatolia to the E"
+      },
+      "options": [
+        "Sea fog",
+        "The Meltemi — strong dry northerly, F5–7, strongest in the afternoon",
+        "A warm southerly",
+        "Thunderstorms"
+      ],
+      "answer": 1,
+      "why": "High over the Balkans, low over Turkey: the Meltemi.",
+      "ref": "Mediterranean winds"
+    },
+    {
+      "id": "bs-067",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "Thin high cloud is thickening from the west, a halo rings the sun, the glass is falling. What is coming?",
+      "figure": null,
+      "options": [
+        "A sea breeze",
+        "Settled high pressure",
+        "A warm front — rain and strengthening wind within hours",
+        "A squall line in minutes"
+      ],
+      "answer": 2,
+      "why": "Cirrus → cirrostratus → altostratus is the warm-front sequence.",
+      "ref": "Fronts"
+    },
+    {
+      "id": "bs-068",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "You have no internet. Where do you get a reliable marine forecast?",
+      "figure": null,
+      "options": [
+        "Yesterday's newspaper",
+        "A crew member's guess",
+        "The marina bar",
+        "Navtex, the coastal VHF broadcast or the harbour office"
+      ],
+      "answer": 3,
+      "why": "Use current official sources and note the time of issue.",
+      "ref": "Forecast sources"
+    },
+    {
+      "id": "bs-069",
+      "topic": "weather",
+      "difficulty": 3,
+      "q": "Wind F5 blowing against a 2-knot current in the strait you are about to enter. What sea do you expect?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0
+        },
+        "other": {
+          "bearing": 0,
+          "dist": 0,
+          "hdg": 0,
+          "scale": 0.01
+        },
+        "wind": 0,
+        "note": "Wind from the north · current setting north at 2 kn"
+      },
+      "options": [
+        "Short, steep breaking seas — worse than the wind suggests",
+        "A long smooth swell",
+        "No change",
+        "Flatter water"
+      ],
+      "answer": 0,
+      "why": "Wind against tide shortens and steepens the waves.",
+      "ref": "Sea state"
+    },
+    {
+      "id": "bs-070",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "The forecast says visibility \"poor\". What does that mean for your passage?",
+      "figure": null,
+      "options": [
+        "Under 100 m",
+        "1000 m to 2 miles — post a lookout, slow down, sound fog signals if it closes",
+        "Normal summer haze",
+        "More than 5 miles"
+      ],
+      "answer": 1,
+      "why": "Fog <1000 m; poor 1000 m–2 M; moderate 2–5 M; good >5 M.",
+      "ref": "Forecast terms"
+    },
+    {
+      "id": "bs-071",
+      "topic": "anchoring",
+      "difficulty": 1,
+      "q": "You anchor in 5 m at high water with all chain, settled weather. How much chain do you let out?",
+      "figure": {
+        "type": "anchor",
+        "depth": "5 m",
+        "tide": "high water",
+        "title": "Settled evening, F2",
+        "lines": [
+          "All-chain rode",
+          "Bow roller 1 m above water"
+        ]
+      },
+      "options": [
+        "10 m",
+        "5 m",
+        "At least 20 m (4 × depth), more if wind is expected",
+        "50 m"
+      ],
+      "answer": 2,
+      "why": "Chain scope 4:1 minimum; 6:1 or more in strong wind.",
+      "ref": "Anchoring"
+    },
+    {
+      "id": "bs-072",
+      "topic": "anchoring",
+      "difficulty": 2,
+      "q": "Wind is forecast to go round to the south overnight. Which spot do you anchor in?",
+      "figure": {
+        "type": "bay",
+        "wind": 180,
+        "land": "M0 200 H320 V140 C 260 130 230 90 200 70 C 170 50 120 60 80 80 C 50 95 20 110 0 100 Z",
+        "spots": [
+          [
+            150,
+            150,
+            "A"
+          ],
+          [
+            240,
+            60,
+            "B"
+          ],
+          [
+            60,
+            40,
+            "C"
+          ]
+        ],
+        "labels": [
+          [
+            160,
+            185,
+            "LAND (south)",
+            "middle"
+          ]
+        ],
+        "note": "Forecast: wind backing south overnight, F5"
+      },
+      "options": [
+        "Spot C — in the channel",
+        "Spot B — open to the south",
+        "Any, the bay is calm now",
+        "Spot A — sheltered by the land to the south"
+      ],
+      "answer": 3,
+      "why": "Choose shelter from the forecast wind, not the present one.",
+      "ref": "Anchoring"
+    },
+    {
+      "id": "bs-073",
+      "topic": "anchoring",
+      "difficulty": 2,
+      "q": "The chart shows these seabeds. Where will the anchor hold best?",
+      "figure": {
+        "type": "chart",
+        "depths": [
+          [
+            60,
+            80,
+            "S"
+          ],
+          [
+            140,
+            60,
+            "Wd"
+          ],
+          [
+            220,
+            90,
+            "R"
+          ],
+          [
+            120,
+            150,
+            "Sh"
+          ],
+          [
+            240,
+            160,
+            "M"
+          ]
+        ],
+        "note": "Chart seabed abbreviations"
+      },
+      "options": [
+        "Sand (S)",
+        "Shingle (Sh)",
+        "Weed (Wd)",
+        "Rock (R)"
+      ],
+      "answer": 0,
+      "why": "Sand and mud let the anchor dig in; weed and rock do not.",
+      "ref": "Anchoring"
+    },
+    {
+      "id": "bs-074",
+      "topic": "anchoring",
+      "difficulty": 2,
+      "q": "The anchor is down and the chain paid out. What next?",
+      "figure": null,
+      "options": [
+        "Go below for dinner",
+        "Reverse gently to dig it in, then check transits ashore or the anchor alarm",
+        "Motor ahead over the anchor",
+        "Tie the chain to the pulpit"
+      ],
+      "answer": 1,
+      "why": "Set the anchor and prove it is holding before relaxing.",
+      "ref": "Anchoring"
+    },
+    {
+      "id": "bs-075",
+      "topic": "anchoring",
+      "difficulty": 2,
+      "q": "You are anchored in a busy bay by day. What do you hoist?",
+      "figure": {
+        "type": "dayshape",
+        "shape": "ball",
+        "note": "Day shape forward"
+      },
+      "options": [
+        "Nothing by day",
+        "A yellow flag",
+        "A black ball forward",
+        "A black cone"
+      ],
+      "answer": 2,
+      "why": "Rule 30: ball by day, all-round white light at night.",
+      "ref": "COLREGs Rule 30"
+    },
+    {
+      "id": "bs-076",
+      "topic": "anchoring",
+      "difficulty": 3,
+      "q": "The anchor is fouled under a rock and will not come up. What would have made this easy?",
+      "figure": null,
+      "options": [
+        "A second anchor",
+        "A longer chain",
+        "A heavier anchor",
+        "A trip line and buoy on the anchor crown"
+      ],
+      "answer": 3,
+      "why": "Pull the crown and the anchor comes out backwards.",
+      "ref": "Anchoring"
+    },
+    {
+      "id": "bs-077",
+      "topic": "anchoring",
+      "difficulty": 2,
+      "q": "Berthing stern-to with your own anchor in a Greek harbour. When do you drop the anchor?",
+      "figure": {
+        "type": "chart",
+        "land": "M0 0 H320 V40 H0 Z",
+        "track": "M160 180 L160 60",
+        "marks": [
+          [
+            160,
+            170,
+            "k",
+            "drop here"
+          ]
+        ],
+        "boat": [
+          160,
+          90,
+          180
+        ],
+        "labels": [
+          [
+            160,
+            30,
+            "QUAY",
+            "middle"
+          ],
+          [
+            200,
+            130,
+            "3–4 boat lengths",
+            "start"
+          ]
+        ],
+        "note": "Stern-to, reversing towards the quay"
+      },
+      "options": [
+        "About 3–4 boat lengths out, reversing towards the quay, paying out as you go",
+        "After the stern lines are on",
+        "Before turning, at the harbour entrance",
+        "When the stern touches the quay"
+      ],
+      "answer": 0,
+      "why": "Drop early, keep tension, stern lines ashore, then snug the chain.",
+      "ref": "Med mooring"
+    },
+    {
+      "id": "bs-078",
+      "topic": "anchoring",
+      "difficulty": 2,
+      "q": "The marinero hands you a slimy line from the quay as you reverse in. What is it and where does it go?",
+      "figure": null,
+      "options": [
+        "A spring — tie it to the midship cleat",
+        "A lazy line — walk it forward and make the heavy end fast on the bow cleat",
+        "The stern line — cleat it aft",
+        "A fender line"
+      ],
+      "answer": 1,
+      "why": "The lazy line replaces your anchor; it holds the bow.",
+      "ref": "Med mooring"
+    },
+    {
+      "id": "bs-079",
+      "topic": "anchoring",
+      "difficulty": 2,
+      "q": "Alongside a pontoon the boat surges back and forth with the wash. Which line stops it?",
+      "figure": null,
+      "options": [
+        "A second stern line",
+        "A breast line",
+        "A spring — run diagonally from bow aft or from stern forward",
+        "The bow line"
+      ],
+      "answer": 2,
+      "why": "Breasts and bow/stern lines hold the boat in; springs stop fore-and-aft movement.",
+      "ref": "Mooring alongside"
+    },
+    {
+      "id": "bs-080",
+      "topic": "anchoring",
+      "difficulty": 3,
+      "q": "The wind is pinning you against the pontoon. How do you leave?",
+      "figure": {
+        "type": "bay",
+        "wind": 270,
+        "land": "M0 0 H40 V200 H0 Z",
+        "spots": [],
+        "labels": [
+          [
+            20,
+            100,
+            "PONTOON",
+            "middle"
+          ],
+          [
+            130,
+            100,
+            "yacht pinned on",
+            "middle"
+          ]
+        ],
+        "note": "Wind onto the pontoon, F4"
+      },
+      "options": [
+        "Push off by hand and hope",
+        "Full ahead with full rudder",
+        "Wait for the wind to change",
+        "Spring off: stern spring, helm towards the pontoon, motor gently ahead until the bow swings out, then astern"
+      ],
+      "answer": 3,
+      "why": "The engine against a single line levers one end away.",
+      "ref": "Boat handling"
+    },
+    {
+      "id": "bs-081",
+      "topic": "systems",
+      "difficulty": 1,
+      "q": "Before starting the engine for the day, what do you check?",
+      "figure": null,
+      "options": [
+        "Oil, coolant, belt, raw-water seacock open, bilge, gear in neutral",
+        "That the sails are furled",
+        "Fuel level only",
+        "Battery voltage only"
+      ],
+      "answer": 0,
+      "why": "A daily engine check takes two minutes and prevents most breakdowns.",
+      "ref": "Engine checks"
+    },
+    {
+      "id": "bs-082",
+      "topic": "systems",
+      "difficulty": 2,
+      "q": "The engine has just started. What is wrong here?",
+      "figure": {
+        "type": "panel",
+        "gauges": [
+          [
+            "Temp",
+            "40°",
+            false
+          ],
+          [
+            "Oil",
+            "OK",
+            false
+          ],
+          [
+            "Volts",
+            "13.8",
+            false
+          ]
+        ],
+        "lines": [
+          "Exhaust: dry, no water pulsing out",
+          "Seacock: ?"
+        ]
+      },
+      "options": [
+        "The battery is flat",
+        "No cooling water at the exhaust — stop, check the seacock and strainer",
+        "The oil pressure is too high",
+        "Nothing, it needs to warm up"
+      ],
+      "answer": 1,
+      "why": "Running dry overheats the engine and shreds the impeller.",
+      "ref": "Engine cooling"
+    },
+    {
+      "id": "bs-083",
+      "topic": "systems",
+      "difficulty": 2,
+      "q": "Half an hour into the passage you see this. What do you do?",
+      "figure": {
+        "type": "panel",
+        "gauges": [
+          [
+            "Temp",
+            "110°",
+            true
+          ],
+          [
+            "Oil",
+            "OK",
+            false
+          ],
+          [
+            "Volts",
+            "14.1",
+            false
+          ]
+        ],
+        "lines": [
+          "Alarm sounding",
+          "Exhaust water: a trickle"
+        ]
+      },
+      "options": [
+        "Open the coolant cap and add cold water now",
+        "Rev it to clear the blockage",
+        "Stop the engine, sail or anchor, let it cool and find the cause",
+        "Keep going to the marina"
+      ],
+      "answer": 2,
+      "why": "An overheating engine can seize; never open a hot pressurised cap.",
+      "ref": "Engine troubleshooting"
+    },
+    {
+      "id": "bs-084",
+      "topic": "systems",
+      "difficulty": 2,
+      "q": "Morning after a night at anchor with fridge and lights on. Can you start the engine?",
+      "figure": {
+        "type": "panel",
+        "gauges": [
+          [
+            "House",
+            "11.8 V",
+            true
+          ],
+          [
+            "Engine",
+            "12.7 V",
+            false
+          ],
+          [
+            "Solar",
+            "2 A",
+            false
+          ]
+        ],
+        "lines": [
+          "Fridge and anchor light ran all night"
+        ]
+      },
+      "options": [
+        "No — all batteries are flat",
+        "Only by hand crank",
+        "Only after an hour of solar",
+        "Yes — the engine battery was isolated; the house bank is low"
+      ],
+      "answer": 3,
+      "why": "Separate banks keep starting power away from house loads.",
+      "ref": "Electrics"
+    },
+    {
+      "id": "bs-085",
+      "topic": "systems",
+      "difficulty": 2,
+      "q": "The engine loses power, surges and stops after you refuelled at a dusty quay. Most likely?",
+      "figure": null,
+      "options": [
+        "Dirty or watery fuel — drain the separator, change the filter",
+        "A flat battery",
+        "A fouled propeller",
+        "A broken belt"
+      ],
+      "answer": 0,
+      "why": "Fuel contamination is the commonest cause of stopping.",
+      "ref": "Fuel system"
+    },
+    {
+      "id": "bs-086",
+      "topic": "systems",
+      "difficulty": 2,
+      "q": "A loud bang, the engine stops; the dinghy painter is no longer in the water. What now?",
+      "figure": null,
+      "options": [
+        "Restart in reverse to unwind it",
+        "Do not restart; try to free the rope from the prop from the dinghy, engine off and key out",
+        "Keep trying to start",
+        "Send a Mayday"
+      ],
+      "answer": 1,
+      "why": "A line round the prop; a spinning prop and a swimmer never mix.",
+      "ref": "Propeller"
+    },
+    {
+      "id": "bs-087",
+      "topic": "systems",
+      "difficulty": 2,
+      "q": "Water is coming in at the heads inlet hose. What do you do first?",
+      "figure": null,
+      "options": [
+        "Open all seacocks",
+        "Switch off the batteries",
+        "Close that seacock",
+        "Pump the heads faster"
+      ],
+      "answer": 2,
+      "why": "Every through-hull has a seacock; know where they are.",
+      "ref": "Hull fittings"
+    },
+    {
+      "id": "bs-088",
+      "topic": "systems",
+      "difficulty": 2,
+      "q": "Briefing the crew on the marine toilet, what are the rules?",
+      "figure": null,
+      "options": [
+        "Use bleach daily",
+        "Pump once only",
+        "Flush with the inlet closed",
+        "Nothing but what you have eaten, a little paper, pump plenty, close the seacocks at sea"
+      ],
+      "answer": 3,
+      "why": "Blocked heads are the number-one charter complaint.",
+      "ref": "Heads"
+    },
+    {
+      "id": "bs-089",
+      "topic": "systems",
+      "difficulty": 3,
+      "q": "Reversing out of the berth the stern swings to port by itself. What is happening and how do you use it?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0
+        },
+        "other": {
+          "bearing": 0,
+          "dist": 0,
+          "hdg": 0,
+          "scale": 0.01
+        },
+        "note": "Engine astern, rudder centred: stern walks to port"
+      },
+      "options": [
+        "Prop walk from a right-handed propeller — berth port-side-to and use a burst astern to pull the stern in",
+        "The bow thruster is stuck",
+        "A crosswind",
+        "Rudder failure"
+      ],
+      "answer": 0,
+      "why": "A right-handed prop kicks the stern to port in astern.",
+      "ref": "Boat handling under power"
+    },
+    {
+      "id": "bs-090",
+      "topic": "systems",
+      "difficulty": 2,
+      "q": "At the fuel berth with two deck fillers side by side. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "Fuel berth",
+        "lines": [
+          "Deck fillers: WATER · DIESEL · WASTE",
+          "Engine running, cabin lights on",
+          "Crew smoking on the quay"
+        ],
+        "tag": "check"
+      },
+      "options": [
+        "Fill to the brim",
+        "Check the cap says DIESEL, engine and electrics off, no smoking, fill slowly",
+        "Fill the nearer one",
+        "Keep the engine running to save time"
+      ],
+      "answer": 1,
+      "why": "Diesel in the water tank ruins the trip; a spill is a fine.",
+      "ref": "Fuelling"
+    },
+    {
+      "id": "bs-091",
+      "topic": "emergency",
+      "difficulty": 1,
+      "q": "You want to call the marina for a berth. Which channel do you call on, and where do you move to?",
+      "figure": null,
+      "options": [
+        "Channel 70",
+        "Channel 6 only",
+        "Call on 16 (or the marina's working channel if known), then switch to the working channel",
+        "Call and talk on 16"
+      ],
+      "answer": 2,
+      "why": "Channel 16 is for calling and distress; routine talk moves off it.",
+      "ref": "VHF"
+    },
+    {
+      "id": "bs-092",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Which call is right for this situation?",
+      "figure": {
+        "type": "card",
+        "title": "Fire below",
+        "lines": [
+          "Engine-bay fire spreading to the saloon",
+          "Extinguishers used, smoke everywhere",
+          "5 people aboard, 6 miles offshore"
+        ],
+        "tag": "MAYDAY?"
+      },
+      "options": [
+        "PAN-PAN",
+        "A routine call to the coastguard",
+        "SÉCURITÉ",
+        "MAYDAY — grave and imminent danger to the vessel and crew"
+      ],
+      "answer": 3,
+      "why": "Fire spreading below with people aboard is grave and imminent danger.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "bs-093",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "After \"MAYDAY ×3, this is Aurora ×3\", what comes next?",
+      "figure": null,
+      "options": [
+        "MAYDAY Aurora, position, nature of distress, help required, persons aboard, OVER",
+        "Switch to channel 70",
+        "Weather and destination",
+        "The charter company's phone number"
+      ],
+      "answer": 0,
+      "why": "Position early so rescue starts even if you are cut off.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "bs-094",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Your DSC radio has a red button under a flap. What happens when you hold it for five seconds?",
+      "figure": null,
+      "options": [
+        "The EPIRB activates",
+        "A digital distress alert with your MMSI and position goes out on channel 70; the radio switches to 16 for the voice Mayday",
+        "A flare fires",
+        "It calls the marina"
+      ],
+      "answer": 1,
+      "why": "DSC first, then voice on 16.",
+      "ref": "DSC"
+    },
+    {
+      "id": "bs-095",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Which signal for this situation?",
+      "figure": {
+        "type": "card",
+        "title": "Night, 10 miles offshore",
+        "lines": [
+          "Radio dead, lights of a ship on the horizon",
+          "Taking water, pumps barely coping",
+          "Flares: 2 parachute, 2 hand, 1 smoke"
+        ],
+        "tag": "02:30"
+      },
+      "options": [
+        "Orange smoke",
+        "A white hand flare",
+        "A red parachute flare",
+        "A green flare"
+      ],
+      "answer": 2,
+      "why": "Parachute flares are seen from far away at night; hand flares when help is close.",
+      "ref": "Distress signals"
+    },
+    {
+      "id": "bs-096",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Smoke is coming from the engine compartment hatch. What do you do?",
+      "figure": null,
+      "options": [
+        "Pour sea water in",
+        "Abandon ship at once",
+        "Open the hatch wide to see",
+        "Stop the engine, do not open the hatch, discharge an extinguisher through the fire port"
+      ],
+      "answer": 3,
+      "why": "Opening the hatch feeds the fire with air.",
+      "ref": "Fire"
+    },
+    {
+      "id": "bs-097",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Water is rising fast in the bilge. First action?",
+      "figure": null,
+      "options": [
+        "Find and stop the inflow — seacocks, hoses, stern gland — while pumping",
+        "Head for deep water",
+        "Send a Mayday and wait",
+        "Launch the liferaft"
+      ],
+      "answer": 0,
+      "why": "Taste it: fresh = tank; salt = hull or fitting. Bungs ready.",
+      "ref": "Flooding"
+    },
+    {
+      "id": "bs-098",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Which call for this?",
+      "figure": {
+        "type": "card",
+        "title": "Engine failure",
+        "lines": [
+          "No wind, drifting at 0.5 kn towards rocks 3 miles off",
+          "Anchor ready, 60 m depth — too deep",
+          "Crew well, boat sound"
+        ],
+        "tag": "PAN-PAN?"
+      },
+      "options": [
+        "SÉCURITÉ",
+        "PAN-PAN — urgent, not yet life-threatening",
+        "No call needed",
+        "MAYDAY"
+      ],
+      "answer": 1,
+      "why": "Engine failure drifting slowly with time in hand: urgency, not distress.",
+      "ref": "Urgency procedure"
+    },
+    {
+      "id": "bs-099",
+      "topic": "emergency",
+      "difficulty": 3,
+      "q": "You are coming back to the man overboard under power. Where do you stop, and what about the engine?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0
+        },
+        "other": {
+          "bearing": -20,
+          "dist": 60,
+          "hdg": 0,
+          "scale": 0.3,
+          "label": "MOB"
+        },
+        "wind": 0,
+        "note": "Final approach under power, wind from ahead"
+      },
+      "options": [
+        "Under full sail",
+        "Downwind, engine ahead to hold position",
+        "Stop to windward of the casualty, bow into the wind, engine in neutral at the moment of contact",
+        "At full speed from astern"
+      ],
+      "answer": 2,
+      "why": "Drift down gently; a turning prop next to a swimmer is lethal.",
+      "ref": "Man overboard"
+    },
+    {
+      "id": "bs-100",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "The yacht has an EPIRB in the cockpit locker. When do you use it?",
+      "figure": null,
+      "options": [
+        "When the VHF is busy",
+        "To test the batteries each morning",
+        "To call the marina",
+        "In a real emergency when the vessel or crew are in grave danger — it alerts rescue services by satellite"
+      ],
+      "answer": 3,
+      "why": "Cospas-Sarsat alerts rescue worldwide; false alerts cost real rescues.",
+      "ref": "Distress signals"
+    }
+  ]
+}

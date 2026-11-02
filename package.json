@@ -1,0 +1,12 @@
+{
+  "name": "iyt-test",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20.6" },
+  "scripts": {
+    "dev": "node miniapp/build.mjs --serve",
+    "build": "node miniapp/build.mjs",
+    "bot": "node --env-file=.env.local bot/bot.mjs",
+    "bot:setup": "node --env-file=.env.local bot/scripts/setup.mjs"
+  }
+}

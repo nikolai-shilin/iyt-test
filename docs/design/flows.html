@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>IYT Test · hi-fi user flows</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Carlito:wght@400;700&display=swap">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="flows.css">
+</head>
+<body>
+
+<header class="vbar">
+  <button type="button" class="menu-btn">Screens</button>
+  <span class="ttl">IYT Test · user flows</span>
+  <nav class="vtabs"><a href="flows.html" class="on">Flows</a><a href="questions.html">Questions</a></nav>
+  <span class="sp"></span>
+  <div class="switch" role="group" aria-label="View"><button type="button" data-mode-btn="pages" class="on">Pages</button><button type="button" data-mode-btn="overview">Overview</button></div>
+  <div class="switch" role="group" aria-label="Theme"><button type="button" data-theme-btn="day" class="on">Day</button><button type="button" data-theme-btn="night">Night</button></div>
+</header>
+
+<main class="pages">
+  <nav class="index" aria-label="Screens"></nav>
+  <div class="stage"><div class="stage-box"><div class="scaler"></div></div></div>
+  <aside class="notes">
+    <div class="notes-body stack g12"></div>
+    <div class="pager"><button type="button" data-prev>← Back</button><button type="button" class="next" data-next>Next →</button></div>
+    <span class="kbd">← → keys turn pages. Link to a screen: #A4, #D1…</span>
+  </aside>
+</main>
+
+<div class="overview">
+<div class="doc">
+  <div class="k">IYT Test · Telegram mini app + website · hi-fi user flows · 02.11.2026</div>
+  <h1>Practice questions for IYT certification levels</h1>
+  <p>A student picks a level (Bareboat Skipper first), practises by topic with an explanation after every answer, then sits a timed mock exam.
+    Questions are situations — what you see, what the instruments say, where the other boat is — drawn as figures. Mistakes are collected for review; mastery per topic drives what to practise next. The website shows the same bank with a landing page per level
+    and short theory notes for every topic.</p>
+  <div class="legend">
+    <div><b>Look</b>Website: Merriweather Light display, Carlito caps kickers, one blue accent, 28px bands. Mini app: the same tokens in Telegram mini-app chrome (<code>app.css</code>), day and night.</div>
+    <div><b>Bank</b><code>data/questions/bareboat-skipper.json</code>: 100 scenario questions, 10 topics × 10, 62 with a drawn figure, four options, a one-line note and reference. All of them: <a href="questions.html">questions.html</a>. Levels next: International Crew, Yachtmaster Coastal, Offshore.</div>
+    <div><b>Modes</b>Practice (feedback after each question, any topics, 10/20/all) · Mock exam (40 questions, 60 min, pass 70%, feedback at the end) · Review mistakes · Daily question in the bot.</div>
+    <div><b>Colour code</b>Correct — accent blue; wrong — red; flagged — yellow dot; mastered — black. No green anywhere (the palette has none), so a correct answer reads by the check mark as well as the colour.</div>
+  </div>
+</div>
+
+<!-- ================= A: mini app — practice ================= -->
+<section class="flow" data-who="app">
+  <div class="flow-head"><div class="k">Mini app · flow A</div><h2>Practice by topic</h2>
+    <p>Home → level → set up a session → answer → see why → results → review mistakes. Every screen fits the phone without scrolling except the long lists.</p></div>
+  <div class="lane">
+
+    <div class="art" data-id="A1">
+      <div class="screen long">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>Close</span><b>IYT Test</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="padding-top:12px">
+          <div class="row sb-between"><img class="logo" src="logo-black.svg" alt="RYC"><span class="streak"><span class="fire" data-i="fire" data-s="14"></span>6-day streak</span></div>
+          <div class="stack g12">
+            <span class="meta">IYT theory · free</span>
+            <h1 class="display">Pass your IYT&nbsp;exam</h1>
+            <p class="body-muted">Close-to-real questions for every certification level, with an explanation after each answer. Pick a level to continue.</p>
+          </div>
+          <div class="stack g10" style="gap:10px">
+            <a class="lvl on"><span class="ring" style="--v:62"><b>62%</b></span><div><div class="card-title">Bareboat Skipper</div><div class="card-meta">10 topics · 100 questions · 3 exams taken</div></div><span class="chev" data-i="next" data-s="20"></span></a>
+            <a class="lvl"><span class="ring" style="--v:100"><b data-i="check" data-s="16"></b></span><div><div class="card-title">International Crew</div><div class="card-meta">6 topics · 60 questions · passed 92%</div></div><span class="chev" data-i="next" data-s="20"></span></a>
+            <a class="lvl"><span class="ring" style="--v:0"><b>0%</b></span><div><div class="card-title">Yachtmaster Coastal</div><div class="card-meta">12 topics · 120 questions</div></div><span class="chev" data-i="next" data-s="20"></span></a>
+            <a class="lvl soon"><span class="ring" style="--v:0"><b>—</b></span><div><div class="card-title">Yachtmaster Offshore</div><div class="card-meta">Coming in 2027</div></div></a>
+          </div>
+          <div class="band promo">
+            <div><span class="meta">Theory notes</span><div class="card-title" style="margin-top:4px">Short notes for all ten topics, with the rules behind the questions</div><a class="src">Read <span data-i="next" data-s="14"></span></a></div>
+            <div class="photo"><div class="photo-ph photo-ph-s"></div></div>
+          </div>
+        </div>
+        <div class="nav"><a class="on"><span data-i="book"></span>Learn</a><a><span data-i="timer"></span>Exam</a><a><span data-i="chart"></span>Progress</a><a><span data-i="user"></span>Profile</a></div>
+      </div>
+      <div class="cap"><b>A1 Home</b>Opens from the bot menu, a channel post (<code>startapp=bareboat</code>) or the website's "Open in Telegram". One card per level with the mastery ring; the current level is outlined. Streak at the top keeps people coming back; the band below the levels opens the theory notes.</div>
+    </div>
+
+    <div class="art" data-id="A2">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Back</span><b>Bareboat Skipper</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:18px">
+          <div class="row" style="gap:18px;align-items:center">
+            <span class="ring l" style="--v:62"><b>62%</b><small>mastered</small></span>
+            <div class="stack g8"><span class="meta">IYT Bareboat Skipper</span><p class="body-s">62 of 100 questions answered right twice in a row. Weakest: Buoyage &amp; lights, Engine &amp; systems.</p></div>
+          </div>
+          <div class="row" style="gap:10px"><span class="pill pill-primary" style="flex:1;padding:0 14px;font-size:18px"><span data-i="play" data-s="20"></span>Practice</span><span class="pill" style="flex:1;padding:0 14px;font-size:18px"><span data-i="timer" data-s="20"></span>Mock exam</span></div>
+          <div class="stack g8">
+            <div class="row sb-between"><span class="kicker">Topics</span><span class="meta">mastered / total</span></div>
+            <div class="topics" data-fill="topics" data-link></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><b>A2 Level</b>Mastery is counted per question (right twice in a row = mastered) and rolled up per topic. Red bars are topics under 50 % — they are preselected in the practice set-up (A3). Tap a topic row to practise only that topic.</div>
+    </div>
+
+    <div class="art" data-id="A3">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Back</span><b>Bareboat Skipper</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll dim" style="gap:18px">
+          <div class="row" style="gap:18px;align-items:center">
+            <span class="ring l" style="--v:62"><b>62%</b><small>mastered</small></span>
+            <div class="stack g8"><span class="meta">IYT Bareboat Skipper</span><p class="body-s">62 of 100 questions answered right twice in a row.</p></div>
+          </div>
+          <div class="row" style="gap:10px"><span class="pill pill-primary" style="flex:1;padding:0 14px;font-size:18px">Practice</span><span class="pill" style="flex:1;padding:0 14px;font-size:18px">Mock exam</span></div>
+          <div class="topics" data-fill="topics" data-limit="3"></div>
+        </div>
+        <div class="scrim"></div>
+        <div class="sheet">
+          <div class="grip"></div>
+          <div class="stack g4"><span class="meta">Practice</span><h2 class="display-s">What to practise?</h2></div>
+          <div class="stack g8"><span class="kicker">Topics</span><div class="tags" data-fill="chips" data-on="buoyage,systems,emergency,colregs"></div><span class="hint">Weak topics are preselected. Tap to add or remove.</span></div>
+          <div class="stack g8"><span class="kicker">Questions</span><div class="tags"><span class="tag tag-on" style="min-height:40px;font-size:15px">10</span><span class="tag" style="min-height:40px;font-size:15px">20</span><span class="tag" style="min-height:40px;font-size:15px">All 40</span><span class="tag" style="min-height:40px;font-size:15px"><span data-i="refresh" data-s="16"></span>Mistakes only</span></div></div>
+          <div class="set" style="border:0;padding:6px 0 0"><div><div class="card-title">Show the answer after each question</div><div class="card-meta">Off = exam style, results at the end</div></div><span class="toggle on"></span></div>
+          <span class="pill pill-primary pill-wide">Start · 10 questions</span>
+        </div>
+      </div>
+      <div class="cap"><b>A3 Set up a session</b>Bottom sheet over the level page. Chips are the ten topics with their question counts; the weak ones come preselected. "Mistakes only" takes the questions answered wrong before. The toggle switches between learning mode (A4–A6) and silent mode (results only).</div>
+    </div>
+
+    <div class="art" data-id="A4">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Quit</span><b>Practice</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:18px">
+          <div class="progress"><span class="ok"></span><span class="ok"></span><span class="bad"></span><span class="now"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="qhead"><span class="meta meta-ink">Question 4 of 10</span><span class="chip">Rules of the road</span></div>
+          <div class="fig" data-fig='{"type":"encounter","you":{"hdg":0},"other":{"bearing":0,"dist":90,"hdg":180},"bearingLine":true}'></div>
+          <p class="q">Two motor yachts are meeting head-on in a channel. What do you do?</p>
+          <div class="opts">
+            <div class="opt"><span class="l">A</span><span>Alter to port</span></div>
+            <div class="opt sel"><span class="l">B</span><span>Alter course to starboard; pass port side to port side</span></div>
+            <div class="opt"><span class="l">C</span><span>Hold course — the bigger one moves</span></div>
+            <div class="opt"><span class="l">D</span><span>Stop and wait</span></div>
+          </div>
+          <div class="qtools"><span class="mini"><span data-i="flag" data-s="14"></span>Flag</span><span class="mini"><span data-i="next" data-s="14"></span>Skip</span></div>
+        </div>
+        <div class="tgmain"><div class="b">Check</div></div>
+      </div>
+      <div class="cap"><b>A4 Question</b>One question per screen. The segment bar shows the session: blue — right, red — wrong, black — current. Options are tappable cards with the letter in a circle; the chosen one gets a black outline. Telegram's main button says "Check" (disabled until an option is chosen). Flag saves the question to "flagged" for later; Skip moves it to the end of the session.</div>
+    </div>
+
+    <div class="art" data-id="A5">
+      <div class="screen long">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Quit</span><b>Practice</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:16px">
+          <div class="progress"><span class="ok"></span><span class="ok"></span><span class="bad"></span><span class="ok"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="qhead"><span class="meta meta-ink">Question 4 of 10</span><span class="chip">Rules of the road</span></div>
+          <div class="fig" data-fig='{"type":"encounter","you":{"hdg":0},"other":{"bearing":0,"dist":90,"hdg":180},"bearingLine":true}'></div>
+          <p class="q">Two motor yachts are meeting head-on in a channel. What do you do?</p>
+          <div class="opts">
+            <div class="opt dim"><span class="l">A</span><span>Alter to port</span></div>
+            <div class="opt ok"><span class="l" data-i="check"></span><span>Alter course to starboard; pass port side to port side</span></div>
+            <div class="opt dim"><span class="l">C</span><span>Hold course — the bigger one moves</span></div>
+            <div class="opt dim"><span class="l">D</span><span>Stop and wait</span></div>
+          </div>
+          <div class="verdict ok"><span class="ico" data-i="check" data-s="16"></span>Correct</div>
+          <div class="band why"><span class="kicker">Why</span><p class="body-s">Rule 14: both turn to starboard.</p><span class="chip ref"><span data-i="book" data-s="12"></span>COLREGs Rule 14</span></div>
+        </div>
+        <div class="tgmain"><div class="b">Next</div></div>
+      </div>
+      <div class="cap"><b>A5 Correct</b>The chosen option turns accent blue with a check mark, the others fade. A one-line "why" appears, right or wrong — the situation was in the figure, the note only names the rule. The reference chip opens the topic's theory note (<code>/theory/colregs</code>).</div>
+    </div>
+
+    <div class="art" data-id="A6">
+      <div class="screen long">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Quit</span><b>Practice</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:16px">
+          <div class="progress"><span class="ok"></span><span class="ok"></span><span class="bad"></span><span class="ok"></span><span class="bad"></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="qhead"><span class="meta meta-ink">Question 5 of 10</span><span class="chip">Charts, compass &amp; position</span></div>
+          <div class="fig" data-fig='{"type":"compass","variation":-4,"course":90}'></div>
+          <p class="q">The chart gives this variation. Your plotted true course is 090°. What do you steer by the compass?</p>
+          <div class="opts">
+            <div class="opt bad"><span class="l" data-i="x"></span><span>086°M</span></div>
+            <div class="opt ok"><span class="l" data-i="check"></span><span>094°M</span></div>
+            <div class="opt dim"><span class="l">C</span><span>090°M</span></div>
+            <div class="opt dim"><span class="l">D</span><span>098°M</span></div>
+          </div>
+          <div class="verdict bad"><span class="ico" data-i="x" data-s="16"></span>Not quite</div>
+          <div class="band why"><span class="kicker">Why</span><p class="body-s">True to magnetic: add west ("west is best").</p><span class="chip ref"><span data-i="book" data-s="12"></span>Compass conversion</span></div>
+        </div>
+        <div class="tgmain"><div class="b">Next</div></div>
+      </div>
+      <div class="cap"><b>A6 Wrong</b>Your answer gets a red ring with a cross, the right one blue with a check. The question goes to the mistakes list and will come back in a later session until answered right twice. No streak is lost for a wrong answer — only for a missed day.</div>
+    </div>
+
+    <div class="art" data-id="A7">
+      <div class="screen long">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Quit</span><b>Practice</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:16px">
+          <div class="progress"><span class="ok"></span><span class="ok"></span><span class="bad"></span><span class="ok"></span><span class="bad"></span><span class="ok"></span><span class="now"></span><span></span><span></span><span></span></div>
+          <div class="qhead"><span class="meta meta-ink">Question 7 of 10</span><span class="chip">Buoyage &amp; lights</span></div>
+          <div class="fig" data-fig='{"type":"buoy","kind":"card-n","rhythm":"Q","rhythmNote":"continuous quick"}'></div>
+          <p class="q">You see this mark ahead. On which side of it is the safe water?</p>
+          <div class="opts">
+            <div class="opt"><span class="l">A</span><span>To the south of the mark</span></div>
+            <div class="opt"><span class="l">B</span><span>To the north of the mark</span></div>
+            <div class="opt"><span class="l">C</span><span>Either side — it is a safe water mark</span></div>
+            <div class="opt"><span class="l">D</span><span>To the west of the mark</span></div>
+          </div>
+        </div>
+        <div class="tgmain"><div class="b off">Check</div></div>
+      </div>
+      <div class="cap"><b>A7 Question with a figure</b>Buoyage, lights and chart-symbol questions carry a drawing in a band above the text: here a north cardinal with its light rhythm. Figures are generated from a JSON spec in the bank by <code>figures.js</code> (buoys, lights at night, encounters, compass, chart extracts, anchoring, isobars, engine panel…) in theme colours plus buoy red, green and yellow — they read at night too. The main button stays grey until an option is picked.</div>
+    </div>
+
+    <div class="art" data-id="A8">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>Close</span><b>Results</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:20px">
+          <div class="score">
+            <span class="ring l" style="--v:80"><b>8/10</b><small>correct</small></span>
+            <h2 class="display" style="font-size:34px">Good session</h2>
+            <p class="body-muted">Buoyage still needs work — both mistakes were there. 3 questions moved to mastered.</p>
+          </div>
+          <div class="stats"><div class="stat"><b>80%</b><span class="meta">score</span></div><div class="stat"><b>6:12</b><span class="meta">time</span></div><div class="stat"><b>+3</b><span class="meta">mastered</span></div></div>
+          <div class="stack g8"><span class="kicker">By topic</span><div class="tbars" data-fill="tbars" data-scores="colregs:3/3,navigation:2/3,buoyage:1/3,systems:2/2"></div></div>
+        </div>
+        <div class="tgmain"><div class="row2"><div class="b b2"><span data-i="refresh" data-s="18"></span>Mistakes · 2</div><div class="b">Practise buoyage</div></div><span class="hint">Mastery: 62% → 65%</span></div>
+      </div>
+      <div class="cap"><b>A8 Results</b>Score ring, three numbers, bars per topic in the session (red under 60 %). The main button suggests the next useful step — practise the weakest topic of this session; the second button opens the mistakes (A9). The hint shows how the level's mastery moved.</div>
+    </div>
+
+    <div class="art" data-id="A9">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Back</span><b>Mistakes</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:14px">
+          <div class="stack g4"><span class="meta">This session · 2</span><h2 class="display-s">Review mistakes</h2></div>
+          <div class="rev">
+            <span class="chip">Buoyage &amp; lights</span>
+            <p class="q">A south cardinal mark shows which light rhythm?</p>
+            <div class="ans bad"><span class="l" data-i="x" data-s="12"></span><span>Nine quick flashes</span></div>
+            <div class="ans ok"><span class="l" data-i="check" data-s="12"></span><span>Six quick flashes followed by one long flash</span></div>
+            <p class="body-muted" style="font-size:14px">Think of a clock face: north — continuous; east — 3; south — 6 + long flash; west — 9.</p>
+          </div>
+          <div class="rev">
+            <span class="chip">Buoyage &amp; lights</span>
+            <p class="q">A buoy with red and white vertical stripes and a single red sphere topmark is a…</p>
+            <div class="ans bad"><span class="l" data-i="x" data-s="12"></span><span>isolated danger mark</span></div>
+            <div class="ans ok"><span class="l" data-i="check" data-s="12"></span><span>safe water mark, e.g. a landfall or mid-channel buoy</span></div>
+            <p class="body-muted" style="font-size:14px">Safe water: navigable water all round. Its light is white — isophase, occulting, one long flash every 10 s or Morse "A".</p>
+          </div>
+          <div class="row sb-between" style="padding-top:4px"><span class="kicker">All mistakes</span><a class="meta acc">14 questions ›</a></div>
+        </div>
+        <div class="tgmain"><div class="b b2">Practise these again</div></div>
+      </div>
+      <div class="cap"><b>A9 Review mistakes</b>Each card: topic, question, your answer struck through in red, the right answer in blue, the explanation. "All mistakes" is the running list across sessions (also reachable from Progress). The button starts a session of exactly these questions.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= B: mini app — mock exam ================= -->
+<section class="flow" data-who="app">
+  <div class="flow-head"><div class="k">Mini app · flow B</div><h2>Mock exam</h2>
+    <p>Timed, no feedback until the end, flag and jump between questions, pass/fail with a certificate-style result. Mirrors the real exam so the first real one is not the first timed one.</p></div>
+  <div class="lane">
+
+    <div class="art" data-id="B1">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Back</span><b>Mock exam</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:20px">
+          <div class="stack g8"><span class="meta">Bareboat Skipper</span><h2 class="display">Mock exam</h2><p class="body-muted">Like the real one: random questions from all ten topics, a timer, and the answers only at the end.</p></div>
+          <div class="stats"><div class="stat"><b>40</b><span class="meta">questions</span></div><div class="stat"><b>60</b><span class="meta">minutes</span></div><div class="stat"><b>70%</b><span class="meta">to pass</span></div></div>
+          <div class="steps steps-plain">
+            <div class="step step-num"><span class="step-ico">1</span><div><div class="card-title">Answer in any order</div><div class="card-meta">Flag a question and come back to it from the overview grid.</div></div></div>
+            <div class="step step-num"><span class="step-ico">2</span><div><div class="card-title">No explanations until you submit</div><div class="card-meta">Afterwards every question shows the right answer and why.</div></div></div>
+            <div class="step step-num"><span class="step-ico">3</span><div><div class="card-title">Leaving pauses the timer once</div><div class="card-meta">Close the app and the exam waits up to 24 hours.</div></div></div>
+          </div>
+          <div class="band" style="padding:16px 18px"><div class="row sb-between"><div><div class="card-title">Last attempts</div><div class="card-meta">28 Oct · 62% · failed  ·  30 Oct · 68% · failed</div></div><span class="meta acc">All ›</span></div></div>
+        </div>
+        <div class="tgmain"><div class="b"><span data-i="timer" data-s="18"></span>Start the exam</div></div>
+      </div>
+      <div class="cap"><b>B1 Exam intro</b>The three numbers of the exam are up front (defaults — verify against the current IYT exam before release). Three rules, previous attempts, one button. Starting creates an <code>exam_sessions</code> row with the 40 question ids, so a reopened app resumes the same paper.</div>
+    </div>
+
+    <div class="art" data-id="B2">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Quit</span><b>Mock exam</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:18px">
+          <div class="bar ink"><i style="width:30%"></i></div>
+          <div class="qhead"><span class="meta meta-ink">12 of 40</span><span class="timer"><span data-i="timer" data-s="16"></span>41:08</span></div>
+          <p class="q">What is the minimum scope (length of chain to depth) usually recommended for an all-chain rode in settled conditions?</p>
+          <div class="opts">
+            <div class="opt"><span class="l">A</span><span>1:1</span></div>
+            <div class="opt"><span class="l">B</span><span>2:1</span></div>
+            <div class="opt sel"><span class="l">C</span><span>4:1 (more in strong winds)</span></div>
+            <div class="opt"><span class="l">D</span><span>10:1</span></div>
+          </div>
+          <div class="qtools"><span class="mini on"><span data-i="flag" data-s="14"></span>Flagged</span><span class="mini"><span data-i="board-view" data-s="14"></span>All questions</span></div>
+        </div>
+        <div class="tgmain"><div class="row2"><div class="b b2">‹ Previous</div><div class="b">Next ›</div></div></div>
+      </div>
+      <div class="cap"><b>B2 Exam question</b>No topic chip and no segment colours — the thin black bar only shows how far along you are. Timer top right, red under five minutes. The answer is saved on tap; Previous/Next move freely. "All questions" opens the grid (B3).</div>
+    </div>
+
+    <div class="art" data-id="B3">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>‹ Quit</span><b>Mock exam</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll dim" style="gap:18px">
+          <div class="bar ink"><i style="width:30%"></i></div>
+          <div class="qhead"><span class="meta meta-ink">12 of 40</span><span class="timer">41:08</span></div>
+          <p class="q">What is the minimum scope usually recommended for an all-chain rode?</p>
+        </div>
+        <div class="scrim"></div>
+        <div class="sheet">
+          <div class="grip"></div>
+          <div class="row sb-between"><div class="stack g4"><span class="meta">Overview</span><h2 class="display-s">11 answered · 29 left</h2></div><span class="timer"><span data-i="timer" data-s="16"></span>41:08</span></div>
+          <div class="grid40" data-fill="grid40" data-a="11" data-f="4,12" data-now="12"></div>
+          <div class="legend-row"><span><i class="a"></i>Answered</span><span><i></i>Not yet</span><span><i class="f"></i>Flagged</span></div>
+          <span class="pill pill-quiet pill-wide">Submit exam</span>
+          <span class="hint" style="text-align:center">Submitting with 29 unanswered counts them as wrong.</span>
+        </div>
+      </div>
+      <div class="cap"><b>B3 Question grid</b>Forty cells: black — answered, outline — not yet, yellow dot — flagged, blue outline — the one you are on. Tap a cell to jump. "Submit" is quiet (grey) while questions remain and asks to confirm; it turns primary once all forty are answered.</div>
+    </div>
+
+    <div class="art" data-id="B4">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>Close</span><b>Result</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:20px">
+          <div class="score">
+            <span class="pass"><span data-i="trophy" data-s="16"></span>Passed</span>
+            <span class="ring l" style="--v:85"><b>85%</b><small>34 of 40</small></span>
+            <h2 class="display" style="font-size:34px">Ready for the&nbsp;exam</h2>
+            <p class="body-muted">Third attempt, first pass. Time used 48:30 of 60:00. Two topics under 70% — worth one more look.</p>
+          </div>
+          <div class="stack g8"><span class="kicker">By topic</span><div class="tbars" data-fill="tbars" data-scores="terms:4/4,ropework:4/4,safety:4/4,colregs:3/4,navigation:4/4,buoyage:2/4,weather:4/4,anchoring:4/4,systems:2/4,emergency:3/4"></div></div>
+          <div class="band promo">
+            <div><span class="meta">Next step</span><div class="card-title" style="margin-top:4px">Start Yachtmaster Coastal — 120 questions, 12 topics</div><a class="src">Open level <span data-i="next" data-s="14"></span></a></div>
+            <div class="photo"><div class="photo-ph photo-ph-s"></div></div>
+          </div>
+        </div>
+        <div class="tgmain"><div class="row2"><div class="b b2"><span data-i="share" data-s="18"></span>Share</div><div class="b">Review 6 mistakes</div></div></div>
+      </div>
+      <div class="cap"><b>B4 Passed</b>"Passed" badge, score ring, time, all ten topics. Share posts a result card to a chat (the bot renders a 1080×1080 image with score and level). The next-level band appears only on a pass.</div>
+    </div>
+
+    <div class="art" data-id="B5">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>Close</span><b>Result</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:20px">
+          <div class="score">
+            <span class="pass no"><span data-i="x" data-s="16"></span>Not yet · 70% to pass</span>
+            <span class="ring l bad" style="--v:62"><b>62%</b><small>25 of 40</small></span>
+            <h2 class="display" style="font-size:34px">Close — three topics short</h2>
+            <p class="body-muted">You ran out of time with 4 questions unanswered. Buoyage, COLREGs and engine systems cost you 11 points.</p>
+          </div>
+          <div class="stack g8"><span class="kicker">Work on these first</span><div class="tbars" data-fill="tbars" data-scores="buoyage:1/4,colregs:1/4,systems:2/4,navigation:2/4"></div></div>
+          <div class="stack g8"><span class="kicker">Fine</span><div class="tbars" data-fill="tbars" data-scores="terms:4/4,ropework:4/4,safety:3/4,weather:3/4,anchoring:3/4,emergency:2/4"></div></div>
+        </div>
+        <div class="tgmain"><div class="b"><span data-i="play" data-s="18"></span>Practise the 3 weak topics</div><div class="b b2">Review 15 mistakes</div></div>
+      </div>
+      <div class="cap"><b>B5 Not passed</b>The ring goes red, the badge says how far the pass mark is, the copy names the topics that cost the most points and the main button starts a practice session on exactly those. Weak topics are split from the fine ones so the list is actionable, not a wall of bars.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= C: mini app — progress, profile, bot ================= -->
+<section class="flow" data-who="app">
+  <div class="flow-head"><div class="k">Mini app · flow C</div><h2>Progress, profile and the bot</h2>
+    <p>Why people come back: a streak, a daily question in Telegram, mastery that visibly grows. Settings keep the language and theme in sync with the website.</p></div>
+  <div class="lane">
+
+    <div class="art" data-id="C1">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>Close</span><b>IYT Test</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:20px;padding-top:8px">
+          <div class="stack g4"><span class="meta">Bareboat Skipper</span><h2 class="display-s">Progress</h2></div>
+          <div class="stats"><div class="stat"><b>65%</b><span class="meta">mastered</span></div><div class="stat"><b>412</b><span class="meta">answered</span></div><div class="stat"><b>6</b><span class="meta">day streak</span></div></div>
+          <div class="band" style="padding:16px 18px">
+            <div class="row sb-between" style="margin-bottom:12px"><span class="kicker">This week</span><span class="meta">84 questions</span></div>
+            <div class="days">
+              <div><i style="height:40%"></i><span>Tu</span></div><div><i style="height:70%"></i><span>We</span></div><div><i style="height:25%"></i><span>Th</span></div><div><i style="height:100%"></i><span>Fr</span></div><div><i style="height:55%"></i><span>Sa</span></div><div><i style="height:35%"></i><span>Su</span></div><div class="today"><i style="height:45%"></i><span>Mo</span></div>
+            </div>
+          </div>
+          <div class="stack g8"><div class="row sb-between"><span class="kicker">Mastery by topic</span><span class="meta acc">Practise weakest ›</span></div><div class="topics" data-fill="topics"></div></div>
+          <div class="row sb-between"><div><div class="card-title">Mistakes to clear</div><div class="card-meta">14 questions answered wrong at least once</div></div><span class="mini mini-accent">Review</span></div>
+        </div>
+        <div class="nav"><a><span data-i="book"></span>Learn</a><a><span data-i="timer"></span>Exam</a><a class="on"><span data-i="chart"></span>Progress</a><a><span data-i="user"></span>Profile</a></div>
+      </div>
+      <div class="cap"><b>C1 Progress</b>Three numbers, the week's activity, the same topic rows as the level page, and the mistakes count. Everything here is a shortcut into a practice session. Data: <code>answers</code> (question, user, correct, at) rolled up per user and topic.</div>
+    </div>
+
+    <div class="art" data-id="C2">
+      <div class="screen">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tgh"><span>Close</span><b>IYT Test</b><span class="dots" data-i="dots"></span></div>
+        <div class="scroll" style="gap:18px;padding-top:8px">
+          <div class="row" style="gap:14px"><span class="tg-ava" style="width:52px;height:52px;font-size:16px">NS</span><div><div class="card-title" style="font-size:18px">Nikolai</div><div class="card-meta">@nikolai_shilin · since Oct 2026</div></div></div>
+          <div class="stack">
+            <div class="set"><div class="card-title">Current level</div><span class="chip chip-on">Bareboat Skipper</span></div>
+            <div class="set"><div class="card-title">Language</div><div class="langs"><span class="lang lang-on">EN</span><span class="lang">RU</span><span class="lang">DE</span><span class="lang">ES</span></div></div>
+            <div class="set"><div class="card-title">Theme</div><div class="langs"><span class="lang lang-on"><span data-i="sun" data-s="14"></span></span><span class="lang"><span data-i="moon" data-s="14"></span></span><span class="lang">Auto</span></div></div>
+            <div class="set"><div><div class="card-title">Daily question</div><div class="card-meta">One question in the chat at 9:00</div></div><span class="toggle on"></span></div>
+            <div class="set"><div><div class="card-title">Streak reminder</div><div class="card-meta">In the evening if you have not practised</div></div><span class="toggle on"></span></div>
+            <div class="set"><div><div class="card-title">Shuffle options</div><div class="card-meta">Different order each time</div></div><span class="toggle on"></span></div>
+          </div>
+          <div class="band promo">
+            <div><span class="meta">Theory notes</span><div class="card-title" style="margin-top:4px">Short notes for every topic</div><a class="src">Read <span data-i="next" data-s="14"></span></a></div>
+            <div class="photo"><div class="photo-ph photo-ph-s"></div></div>
+          </div>
+          <span class="hint">Questions are written for study and are not official IYT exam content. Report a question from its ••• menu.</span>
+        </div>
+        <div class="nav"><a><span data-i="book"></span>Learn</a><a><span data-i="timer"></span>Exam</a><a><span data-i="chart"></span>Progress</a><a class="on"><span data-i="user"></span>Profile</a></div>
+      </div>
+      <div class="cap"><b>C2 Profile</b>Name and avatar come from Telegram. Four languages (en, ru, de, es; the bank is translated in <code>question_translations</code>). Two notifications only; both default on and both are one tap off. The disclaimer sits here, not on every question.</div>
+    </div>
+
+    <div class="art" data-id="C3">
+      <div class="screen tg">
+        <div class="sb">9:41<i data-i="status"></i></div>
+        <div class="tg-head"><span class="tg-ava">IYT</span><div><div style="font-weight:600;font-size:16px">IYT Test</div><div class="tg-muted" style="font-size:13px">bot</div></div></div>
+        <div class="tg-feed" style="flex:1">
+          <span class="tg-date">Today</span>
+          <div class="tg-in"><div>Good morning! Question of the day · Bareboat Skipper · Weather</div><div class="tg-q">Beaufort force 6 corresponds to roughly what wind speed?</div><div class="tg-time">9:00</div></div>
+          <div class="tg-kb row2"><span class="tg-btn">4–6 kn</span><span class="tg-btn">11–16 kn</span></div>
+          <div class="tg-kb row2"><span class="tg-btn">22–27 kn</span><span class="tg-btn">34–40 kn</span></div>
+          <div class="tg-out">22–27 kn<div class="tg-time">9:04</div></div>
+          <div class="tg-in"><div>✓ Correct. F6 "strong breeze" is 22–27 knots — the practical upper limit for comfortable family cruising. F4 is 11–16, F8 (gale) 34–40.</div><div class="tg-muted" style="font-size:13px">Streak: 7 days 🔥 · Mastery 65%</div><div class="tg-time">9:04</div></div>
+          <div class="tg-kb"><span class="tg-btn app">Practise 10 more in the app</span><span class="tg-btn">Explain more · theory article</span></div>
+        </div>
+        <div class="tg-input"><span class="tg-field">Message</span><span data-i="mic" data-s="22" class="tg-muted"></span></div>
+      </div>
+      <div class="cap"><b>C3 Bot · daily question</b>One question a day as an inline keyboard; the answer comes back in the chat with the explanation and the streak, and a button into the mini app. Works without opening the app, which is where most streaks are kept alive. <code>/start</code> shows the levels as buttons; <code>/exam</code> opens B1 directly.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= D: website ================= -->
+<section class="flow" data-who="web">
+  <div class="flow-head"><div class="k">Website · flow D</div><h2>iyt-test on the web</h2>
+    <p>Same bank: a landing page per level for search traffic ("IYT Bareboat Skipper test questions"), practice in the browser without logging in, progress kept locally or via Telegram login. Every level page carries the theory notes for its topics.</p></div>
+  <div class="lane">
+
+    <div class="art wide" data-id="D1">
+      <div class="desk">
+        <div class="d-wrap">
+          <div class="d-head"><img class="logo" src="logo-black.svg" alt="RYC" style="width:56px;height:28px"><span class="brand" style="font-size:12px;margin-left:-14px">IYT Test</span><nav><a class="on">Levels</a><a>Theory</a><a>Mock exam</a><a>Courses</a></nav><span class="sp"></span><div class="langs"><span class="lang lang-on">EN</span><span class="lang">RU</span><span class="lang">DE</span><span class="lang">ES</span></div><span class="pill pill-quiet" style="height:44px;font-size:16px;margin-left:16px">Open in Telegram</span></div>
+          <div class="d-hero">
+            <div class="stack g24"><span class="kicker">IYT theory test · free · no sign-up</span><h1 class="display">Practice questions for every IYT level</h1><p class="d-lead">Real situations drawn as figures — the mark ahead, the lights at night, the other boat's bearing — with a one-line note after each answer, a timed mock exam and progress by topic. Start with Bareboat Skipper — 100 questions across the ten syllabus topics.</p>
+              <div class="d-pills"><span class="pill pill-primary"><span data-i="play" data-s="20"></span>Start Bareboat Skipper</span><span class="pill">All levels</span></div>
+              <div class="facts"><span class="fact"><span data-i="check" data-s="15"></span>62 of 100 questions drawn</span><span class="fact"><span data-i="timer" data-s="15"></span>Mock exam · 40 questions · 60 min</span><span class="fact"><span data-i="globe" data-s="15"></span>EN · RU · DE · ES</span></div></div>
+            <div class="d-sample">
+              <div class="qhead"><span class="meta meta-ink">Try one</span><span class="chip">Rules of the road</span></div>
+              <p class="q">Two sailing vessels are approaching with the wind on different sides. Which gives way?</p>
+              <div class="opts"><div class="opt dim"><span class="l">A</span><span>The one with the wind on the starboard side</span></div><div class="opt ok"><span class="l" data-i="check"></span><span>The one with the wind on the port side</span></div><div class="opt dim"><span class="l">C</span><span>The smaller vessel</span></div><div class="opt dim"><span class="l">D</span><span>The faster vessel</span></div></div>
+              <div class="verdict ok"><span class="ico" data-i="check" data-s="14"></span>Correct · Rule 12: port tack gives way to starboard tack</div>
+            </div>
+          </div>
+          <div class="d-sec">
+            <div class="row sb-between" style="align-items:flex-end"><h2 class="d-h2 display">Four levels, one way of learning</h2><span class="meta">IYT · International Yacht Training</span></div>
+            <div class="d-grid4">
+              <div class="d-lv on"><span class="ring" style="--v:62"><b>62%</b></span><div><div class="card-title">Bareboat Skipper</div><div class="card-meta" style="margin-top:6px">Charter a yacht up to 24 m by day, in fair weather, in familiar waters.</div></div><div class="facts"><span class="fact">10 topics</span><span class="fact">100 questions</span></div><span class="pill pill-primary">Continue</span></div>
+              <div class="d-lv"><span class="ring" style="--v:100"><b data-i="check" data-s="16"></b></span><div><div class="card-title">International Crew</div><div class="card-meta" style="margin-top:6px">First step: terms, safety, ropework and helping on deck.</div></div><div class="facts"><span class="fact">6 topics</span><span class="fact">60 questions</span></div><span class="pill">Practise</span></div>
+              <div class="d-lv"><span class="ring" style="--v:0"><b>0%</b></span><div><div class="card-title">Yachtmaster Coastal</div><div class="card-meta" style="margin-top:6px">Night passages, tidal navigation, up to 60 miles offshore.</div></div><div class="facts"><span class="fact">12 topics</span><span class="fact">120 questions</span></div><span class="pill">Start</span></div>
+              <div class="d-lv soon"><span class="ring" style="--v:0"><b>—</b></span><div><div class="card-title">Yachtmaster Offshore</div><div class="card-meta" style="margin-top:6px">Ocean passages, astro, heavy weather.</div></div><div class="facts"><span class="fact">2027</span></div><span class="pill pill-quiet">Notify me</span></div>
+            </div>
+          </div>
+          <div class="d-sec">
+            <h2 class="d-h2 display">How it works</h2>
+            <div class="d-grid3">
+              <div class="d-step"><span class="num-ico">1</span><div><h3>Practise by topic</h3><p>Ten topics per level. Situations, not definitions: you see the figure and decide. A one-line note names the rule.</p></div></div>
+              <div class="d-step"><span class="num-ico">2</span><div><h3>Sit a mock exam</h3><p>Forty random questions, sixty minutes, no feedback until you submit — like the real thing.</p></div></div>
+              <div class="d-step"><span class="num-ico">3</span><div><h3>Clear your mistakes</h3><p>Wrong answers come back until you get them right twice. Mastery per topic shows what to do next.</p></div></div>
+            </div>
+          </div>
+          <div class="d-sec">
+            <div class="band promo" style="grid-template-columns:minmax(0,1fr) 260px;padding:32px 40px;border-radius:40px">
+              <div class="stack g12"><span class="kicker">Theory notes</span><h3 class="display" style="font-size:34px">The rules behind every question</h3><p class="d-text" style="max-width:52ch">Each topic has a short note — COLREGs rules, the IALA system, compass conversion, the Beaufort scale — written to be read in ten minutes before practising. Every explanation links back to its note.</p><div class="d-pills"><span class="pill">Read the notes</span><a class="src" style="align-self:center">All ten topics <span data-i="next" data-s="14"></span></a></div></div>
+              <div class="photo" style="width:260px;height:180px;border-radius:28px"><div class="photo-ph"></div></div>
+            </div>
+          </div>
+          <div class="d-foot"><span>IYT Test · theory practice for IYT levels</span><span>Questions are study material, not official IYT content · Report a question · Privacy</span></div>
+        </div>
+      </div>
+      <div class="cap"><b>D1 Landing</b>Page grammar: 1180 wrap, 76px header, display headline in Merriweather Light, Carlito lead, pills, a band with 28–40px radii. The hero's right column is a live sample question — the first interaction happens before any click. Level cards share the mastery ring with the app. Footer carries the disclaimer once.</div>
+    </div>
+
+    <div class="art wide" data-id="D2">
+      <div class="desk">
+        <div class="d-wrap">
+          <div class="d-head"><img class="logo" src="logo-black.svg" alt="RYC" style="width:56px;height:28px"><span class="brand" style="font-size:12px;margin-left:-14px">IYT Test</span><nav><a class="on">Levels</a><a>Theory</a><a>Mock exam</a><a>Courses</a></nav><span class="sp"></span><div class="langs"><span class="lang lang-on">EN</span><span class="lang">RU</span><span class="lang">DE</span><span class="lang">ES</span></div><span class="pill pill-quiet" style="height:44px;font-size:16px;margin-left:16px">Open in Telegram</span></div>
+          <div class="d-hero" style="grid-template-columns:minmax(0,1fr);padding-bottom:8px"><div class="stack g20"><span class="kicker">Levels · Bareboat Skipper</span><h1 class="display" style="font-size:52px">IYT Bareboat Skipper test questions</h1><p class="d-lead">What the Bareboat Skipper theory exam asks: rules of the road, buoyage and lights, chartwork and compass, weather, anchoring, engine and systems, VHF and emergencies. 100 questions, 10 per topic, written close to the real paper.</p></div></div>
+          <div class="d-two" style="margin-top:40px">
+            <div class="stack g24">
+              <div class="d-topics"><div class="row sb-between" style="margin-bottom:8px"><span class="kicker">Ten topics</span><span class="meta">your mastery</span></div><div class="topics" data-fill="topics" data-link></div></div>
+              <div class="d-sample">
+                <div class="qhead"><span class="meta meta-ink">Sample · Anchoring &amp; mooring</span><span class="chip">1 of 100</span></div>
+                <p class="q">What is a "lazy line" (slime line) in a marina?</p>
+                <div class="opts"><div class="opt"><span class="l">A</span><span>A line to hang laundry</span></div><div class="opt"><span class="l">B</span><span>A light line from the quay that leads to a heavy mooring chain for the bow, used instead of your own anchor</span></div><div class="opt"><span class="l">C</span><span>A spare halyard</span></div><div class="opt"><span class="l">D</span><span>A line to the harbour master</span></div></div>
+                <div class="row sb-between"><span class="hint">Pick an answer to see the explanation.</span><span class="mini mini-accent">Next sample ›</span></div>
+              </div>
+            </div>
+            <div class="band d-box">
+              <div class="card-title" style="font-size:19px">Bareboat Skipper</div>
+              <div class="ow-facts" style="display:grid;gap:9px;border-top:1px solid var(--line);padding-top:14px"><div class="row sb-between"><span class="card-meta">Questions</span><b class="card-title">100 · 10 topics</b></div><div class="row sb-between"><span class="card-meta">Mock exam</span><b class="card-title">40 · 60 min · 70%</b></div><div class="row sb-between"><span class="card-meta">Your mastery</span><b class="card-title">62%</b></div><div class="row sb-between"><span class="card-meta">Languages</span><b class="card-title">EN RU DE ES</b></div></div>
+              <span class="pill pill-primary pill-wide"><span data-i="play" data-s="20"></span>Practise</span>
+              <span class="pill pill-wide"><span data-i="timer" data-s="20"></span>Mock exam</span>
+              <span class="hint">Progress is saved in this browser. Log in with Telegram to keep it across devices and the mini app.</span>
+              <div class="hr"></div>
+              <div class="stack g8"><span class="meta">Theory notes</span><div class="card-title">Ten short notes, one per topic</div><a class="src">Read before practising <span data-i="next" data-s="14"></span></a></div>
+            </div>
+          </div>
+          <div class="d-foot"><span>IYT Test · theory practice for IYT levels</span><span>Questions are study material, not official IYT content</span></div>
+        </div>
+      </div>
+      <div class="cap"><b>D2 Level page</b>Body left, sticky box right with the facts and two buttons. The topic list is the same component as the app (a row links to practice in that topic). A rotating sample question keeps the page useful for search visitors who never log in.</div>
+    </div>
+
+    <div class="art wide" data-id="D3">
+      <div class="desk">
+        <div class="d-wrap">
+          <div class="d-head"><img class="logo" src="logo-black.svg" alt="RYC" style="width:56px;height:28px"><span class="brand" style="font-size:12px;margin-left:-14px">IYT Test</span><nav><a>Levels</a><a>Theory</a><a>Mock exam</a><a>Courses</a></nav><span class="sp"></span><span class="meta meta-ink">Bareboat Skipper · Practice · 4 of 10</span><span class="pill pill-quiet" style="height:44px;font-size:16px;margin-left:16px">Quit</span></div>
+          <div class="d-two" style="margin-top:32px;grid-template-columns:minmax(0,1fr) 300px">
+            <div class="d-q stack g24">
+              <div class="progress" style="max-width:760px"><span class="ok"></span><span class="ok"></span><span class="bad"></span><span class="now"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="qhead" style="max-width:760px"><span class="chip">Buoyage &amp; lights</span><span class="mini"><span data-i="flag" data-s="14"></span>Flag</span></div>
+              <div class="row" style="gap:40px;align-items:flex-start">
+                <div class="fig" style="width:300px;flex:none" data-fig='{"type":"buoy","kind":"card-n","rhythm":"Q","rhythmNote":"continuous quick"}'></div>
+                <p class="q">You see this mark ahead. On which side of it is the safe water?</p>
+              </div>
+              <div class="opts"><div class="opt"><span class="l">A</span><span>To the south of the mark</span></div><div class="opt sel"><span class="l">B</span><span>To the north of the mark</span></div><div class="opt"><span class="l">C</span><span>Either side — it is a safe water mark</span></div><div class="opt"><span class="l">D</span><span>To the west of the mark</span></div></div>
+              <div class="row" style="gap:12px"><span class="pill pill-primary">Check</span><span class="pill pill-quiet">Skip</span><span class="hint" style="margin-left:8px">Keys 1–4 choose, Enter checks</span></div>
+            </div>
+            <div class="d-side">
+              <div class="band" style="padding:20px"><div class="row" style="gap:14px"><span class="ring" style="--v:62;--sz:56px"><b>62%</b></span><div><div class="card-title">Bareboat Skipper</div><div class="card-meta">This session: 2 right · 1 wrong</div></div></div></div>
+              <div class="stack g8"><span class="kicker">Topics in this session</span><div class="topics"><div class="topic"><span class="card-title">Rules of the road</span><span class="n">1/1</span></div><div class="topic"><span class="card-title">Charts, compass &amp; position</span><span class="n">1/2</span></div><div class="topic now"><span class="card-title">Buoyage &amp; lights</span><span class="n">0/0</span></div><div class="topic"><span class="card-title">Engine &amp; systems</span><span class="n">—</span></div></div></div>
+              <span class="hint">Answered questions can be revisited from the results page. Flagged ones go to your list.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><b>D3 Question (web)</b>The same question component at desktop width: figure beside the text, options capped at 760px so they stay readable, keyboard shortcuts. The right rail is the compact level ring and the topics touched in this session. Header shows where you are instead of the menu.</div>
+    </div>
+
+    <div class="art wide" data-id="D4">
+      <div class="desk">
+        <div class="d-wrap">
+          <div class="d-head"><img class="logo" src="logo-black.svg" alt="RYC" style="width:56px;height:28px"><span class="brand" style="font-size:12px;margin-left:-14px">IYT Test</span><nav><a>Levels</a><a>Theory</a><a>Mock exam</a><a>Courses</a></nav><span class="sp"></span><div class="langs"><span class="lang lang-on">EN</span><span class="lang">RU</span><span class="lang">DE</span><span class="lang">ES</span></div></div>
+          <div class="d-res" style="margin-top:40px">
+            <div class="band" style="padding:32px;display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+              <span class="pass"><span data-i="trophy" data-s="16"></span>Passed</span>
+              <span class="ring l" style="--v:85;--sz:180px;--w:12px"><b style="font-size:44px">85%</b><small style="bottom:40px">34 of 40</small></span>
+              <div class="stack g8"><h2 class="display" style="font-size:36px">Ready for the&nbsp;exam</h2><p class="body-muted">Mock exam · 2 Nov 2026 · 48:30 of 60:00</p></div>
+              <div class="stats" style="width:100%"><div class="stat" style="background:var(--bg)"><b>34</b><span class="meta">right</span></div><div class="stat" style="background:var(--bg)"><b>6</b><span class="meta">wrong</span></div></div>
+              <span class="pill pill-primary pill-wide">Review 6 mistakes</span>
+              <span class="pill pill-wide"><span data-i="share" data-s="18"></span>Share result</span>
+            </div>
+            <div class="stack g24">
+              <div class="stack g12"><span class="kicker">By topic</span><div class="tbars" data-fill="tbars" data-scores="terms:4/4,ropework:4/4,safety:4/4,colregs:3/4,navigation:4/4,buoyage:2/4,weather:4/4,anchoring:4/4,systems:2/4,emergency:3/4"></div></div>
+              <div class="band promo" style="grid-template-columns:minmax(0,1fr) 120px;padding:24px 28px"><div><span class="meta">Next step</span><div class="card-title" style="font-size:19px;margin-top:6px">Yachtmaster Coastal — 120 questions, 12 topics, night passages and tidal navigation</div><a class="src">Open level <span data-i="next" data-s="14"></span></a></div><div class="photo" style="width:120px;height:90px;border-radius:22px"><div class="photo-ph photo-ph-s"></div></div></div>
+            </div>
+          </div>
+          <div class="d-foot"><span>IYT Test · theory practice for IYT levels</span><span>Questions are study material, not official IYT content</span></div>
+        </div>
+      </div>
+      <div class="cap"><b>D4 Exam result (web)</b>Result card on the left in a band — ring, two numbers, the two actions; the topic bars on the right at full width where the long topic names fit on one line. The next-level band is the same band as everywhere else. Share produces the same 1080×1080 card as the app.</div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+<script src="icons.js"></script>
+<script src="test-icons.js"></script>
+<script src="figures.js"></script>
+<script src="flows.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Upload only what the mini app build needs — never .env.local or the bot.
+/*
+!/miniapp
+!/docs
+!/data
+!/package.json
+!/vercel.json
+/miniapp/dist
+/data/build_bank.py
