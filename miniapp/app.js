@@ -624,7 +624,6 @@ function render(toTop) {
   if (!IN_TG) h += `<div class="tgh"><span>${stack.length > 1 || sheet ? `<button data-act="back">${t('back')}</button>` : ''}</span><b>${esc(V.title)}</b><span></span></div>`;
   const enter = toTop ? (enterTab ? ' in in-tab' : ' in') : ''; enterTab = false;
   h += `<div class="scroll wrap${enter}">${V.body}</div>`;
-  if (V.nav && stack.length === 1) h += `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === V.nav ? 'on' : ''}" data-act="tab" data-v="${v}"${v === V.nav ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
   const B = sheet ? {} : V;
   mainCb = B.main ? B.main.act : null;
   secCb = B.second ? B.second.act : null;
@@ -635,6 +634,8 @@ function render(toTop) {
       (both && B.second.pos !== 'bottom' ? `<div class="row2">${b(B.second, 'second', 'b2')}${b(B.main, 'main', '')}</div>` :
         (B.main ? b(B.main, 'main', '') : '') + (B.second ? b(B.second, 'second', 'b2') : '')) + '</div>';
   }
+  // the tab bar is the lowest thing on screen; a screen's button bar sits just above it
+  if (V.nav && stack.length === 1) h += `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === V.nav ? 'on' : ''}" data-act="tab" data-v="${v}"${v === V.nav ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
   if (sheet) h += `<div class="scrim" data-act="back"></div><div class="sheet"><div class="grip"></div><div class="wrap stack g16">${SHEETS[sheet.v](sheet)}</div></div>`;
   $app.innerHTML = h;
   $app.querySelectorAll('[data-act]:not(button):not(.scrim)').forEach((el) => {
