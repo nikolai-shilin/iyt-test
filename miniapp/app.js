@@ -137,7 +137,7 @@ const STR = {
     students: 'Students', studentsMeta: 'Results of everyone who uses the app', studentsFail: 'Could not load the results', studentsEmpty: 'Nobody has opened the app yet',
     studentsW: (n) => word(n, 'student'), activeWeek: 'active this week', examsTaken: (n) => word(n, 'exam') + ' taken', answeredN: (n) => `${n} answered`,
     noProgress: 'No answers yet', lastActive: 'Last active', joined: 'Joined', dailyOn: 'Question of the day on', dailyOff: 'Question of the day off',
-    noExamsAdmin: 'No mock exam yet', reload: 'Reload',
+    noExamsAdmin: 'No mock exam yet', reload: 'Reload', sortProgress: 'Progress', sortName: 'Name', sortJoined: 'Date joined',
   },
   ru: {
     learn: 'Учёба', exam: 'Экзамен', progress: 'Прогресс', profile: 'Профиль', back: '‹ Назад',
@@ -218,7 +218,7 @@ const STR = {
     students: 'Ученики', studentsMeta: 'Результаты всех, кто пользуется приложением', studentsFail: 'Не удалось загрузить результаты', studentsEmpty: 'Приложение ещё никто не открывал',
     studentsW: (n) => word(n, 'student'), activeWeek: 'активны за неделю', examsTaken: (n) => word(n, 'exam') + ' пройдено', answeredN: (n) => `${n} отвечено`,
     noProgress: 'Ответов ещё нет', lastActive: 'Последняя активность', joined: 'В приложении с', dailyOn: 'Вопрос дня включён', dailyOff: 'Вопрос дня выключен',
-    noExamsAdmin: 'Экзаменов ещё не было', reload: 'Обновить',
+    noExamsAdmin: 'Экзаменов ещё не было', reload: 'Обновить', sortProgress: 'Прогресс', sortName: 'Имя', sortJoined: 'Дата',
   },
 };
 const t = (k, ...a) => { const v = STR[LANG][k] ?? STR.en[k]; return typeof v === 'function' ? v(...a) : v; };
@@ -489,7 +489,39 @@ function loadStudents(again) {
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
     .then((j) => { ADM = Array.isArray(j.users) ? j.users : null; })
     .catch(() => { ADM = null; })
-    .then(() => { if (cur().v === 'admin') render(true); });
+    .then(() => { if (cur().v === 'admin') render(true); if (ADM) loadPhotos(); });
+}
+// Students' Telegram photos, fetched one by one through api/admin.mjs (?photo=id) with the same launch data; a
+// student with no photo the bot may see gets null and keeps their initials. Each photo is put into the page as it
+// arrives, so the list does not re-render.
+const PHOTOS = {};
+let photoQueue = [];
+function loadPhotos() {
+  photoQueue = ADM.filter((u) => !(u.id in PHOTOS)).map((u) => u.id);
+  for (let k = 0; k < 3; k++) nextPhoto();
+}
+function nextPhoto() {
+  const id = photoQueue.shift();
+  if (id == null) return;
+  PHOTOS[id] = undefined;
+  fetch(`/api/admin?photo=${id}`, { headers: { 'x-telegram-init-data': IN_TG ? TG.initData : '' } })
+    .then((r) => (r.status === 200 ? r.blob() : null))
+    .then((b) => { PHOTOS[id] = b ? URL.createObjectURL(b) : null; })
+    .catch(() => { PHOTOS[id] = null; })
+    .then(() => {
+      if (PHOTOS[id]) $app.querySelectorAll(`[data-ava="${id}"]`).forEach((el) => { el.innerHTML = `<img src="${PHOTOS[id]}" alt="">`; });
+      nextPhoto();
+    });
+}
+const avatar = (u, cls, style = '') => `<span class="${cls}" data-ava="${u.id}" style="${style}">${PHOTOS[u.id] ? `<img src="${PHOTOS[u.id]}" alt="">` : esc(initials(studentName(u)))}</span>`;
+let ADM_SORT = 'progress'; // 'progress' | 'name' | 'joined'
+function sortedStudents() {
+  const list = ADM.slice(), pct = (u) => { const L = studentLevel(u); return L ? L.pct : -1; };
+  const plain = (u) => studentName(u).replace(/^@/, ''); // a username stands in for a missing name; sort it by its letters
+  if (ADM_SORT === 'name') list.sort((a, b) => plain(a).localeCompare(plain(b), t('locale')));
+  else if (ADM_SORT === 'joined') list.sort((a, b) => Date.parse(b.joined) - Date.parse(a.joined));
+  else list.sort((a, b) => pct(b) - pct(a) || b.total - a.total || Date.parse(b.active) - Date.parse(a.active));
+  return list;
 }
 // Grey shapes in the layout of what is loading (the boot skeleton of the home screen is in index.html).
 const sk = (w, h, more = '') => `<span class="sk" style="width:${w};height:${h}${more}"></span>`;
@@ -949,14 +981,16 @@ const VIEWS = {
     else if (!ADM.length) body = `<div class="empty"><p class="body-muted">${t('studentsEmpty')}</p></div>`;
     else {
       const active = ADM.filter((u) => u.week > 0).length, exams = ADM.reduce((a, u) => a + u.exams.length, 0);
-      const rows = ADM.map((u) => {
+      const chip = (k) => `<button class="tag${ADM_SORT === k ? ' tag-on' : ''}" style="min-height:36px;font-size:14px;padding:0 12px" data-act="sort" data-s="${k}">${t('sort' + k[0].toUpperCase() + k.slice(1))}</button>`;
+      const rows = sortedStudents().map((u) => {
         const name = studentName(u), L = studentLevel(u);
         const meta = [u.username && u.name ? '@' + u.username : '', L && L.seen ? L.lv.title : '', day(u.active)].filter(Boolean).join(' · ');
         const right = u.total ? `<b>${L ? L.pct + '%' : '–'}</b>${t('answeredN', u.total)}` : t('noProgress');
         const bar = L && L.seen ? `<span class="bar"><i style="width:${L.pct}%"></i><i class="seen" style="left:${L.pct}%;width:${Math.max(0, L.seenPct - L.pct)}%"></i></span>` : '';
-        return `<div class="topic${bar ? ' x3' : ''} stu" data-act="student" data-id="${u.id}"><span class="ico">${esc(initials(name))}</span><span class="card-title">${esc(name)}</span><span class="tmeta">${esc(meta)}</span>${bar}<span class="n">${right}</span></div>`;
+        return `<div class="topic${bar ? ' x3' : ''} stu" data-act="student" data-id="${u.id}">${avatar(u, 'ico')}<span class="card-title">${esc(name)}</span><span class="tmeta">${esc(meta)}</span>${bar}<span class="n">${right}</span></div>`;
       }).join('');
       body = `<div class="stats"><div class="stat"><b data-count="${ADM.length}">${ADM.length}</b><span class="meta">${t('studentsW', ADM.length)}</span></div><div class="stat"><b>${active}</b><span class="meta">${t('activeWeek')}</span></div><div class="stat"><b>${exams}</b><span class="meta">${t('examsTaken', exams)}</span></div></div>
+        <div class="tags" style="margin-top:4px">${chip('progress')}${chip('name')}${chip('joined')}</div>
         <div class="topics">${rows}</div>`;
     }
     return {
@@ -977,7 +1011,7 @@ const SHEETS = {
     const bars = Object.keys(per).map((id) => { const [a, b] = per[id], p = Math.round((a / b) * 100), L = u.levels[LEVELS.find((l) => l.id === id).prefix];
       return `<div class="tbar"><span class="card-title">${esc(LEVELS.find((l) => l.id === id).title)}</span><span class="n">${p}%</span><span class="bar"><i style="width:${p}%"></i></span><span class="card-meta" style="grid-column:1/-1">${t('levelText', a, b, 0, L.seen)}${L.mistakes ? ' ' + t('misMeta', L.mistakes) + '.' : ''}</span></div>`; }).join('');
     const exams = u.exams.map((e) => `<div class="att"><span class="card-meta">${day(e.at)} · ${esc((LEVELS.find((l) => l.id === e.lv) || {}).title || e.lv)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
-    return `<div class="row" style="gap:14px"><span class="tg-ava" style="width:52px;height:52px;font-size:16px">${esc(initials(name))}</span><div><div class="card-title" style="font-size:18px">${esc(name)}</div>
+    return `<div class="row" style="gap:14px">${avatar(u, 'tg-ava', 'width:52px;height:52px;font-size:16px')}<div><div class="card-title" style="font-size:18px">${esc(name)}</div>
         <div class="card-meta">${u.username ? '@' + esc(u.username) + ' · ' : ''}${u.lang.toUpperCase()} · ${u.daily ? t('dailyOn') : t('dailyOff')}</div></div></div>
       <div class="stats"><div class="stat"><b>${u.total}</b><span class="meta">${t('answeredW')}</span></div><div class="stat"><b>${u.streak}</b><span class="meta">${t('dayStreak', u.streak)}</span></div><div class="stat"><b>${u.week}</b><span class="meta">${t('thisWeek').toLowerCase()}</span></div></div>
       <div class="att"><span class="card-meta">${t('joined')}</span><span class="card-meta">${day(u.joined)}</span></div>
@@ -1189,6 +1223,7 @@ const ACT = {
   admin: () => go('admin'),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
+  sort: (d) => { ADM_SORT = d.s; hap('sel'); render(); },
   reset: async () => {
     if (!(await confirmBox(t('confirmReset')))) return;
     const set = S.set;

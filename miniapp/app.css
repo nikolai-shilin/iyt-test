@@ -152,7 +152,8 @@ body { -webkit-tap-highlight-color: transparent; }
 }
 
 /* admin: one row per student (a topic row with initials, the level bar and the mastery % on the right) */
-.app .stu .ico { font: 700 13px 'Carlito', Arial, sans-serif; letter-spacing: -.02em; }
+.app .stu .ico { font: 700 13px 'Carlito', Arial, sans-serif; letter-spacing: -.02em; overflow: hidden; }
+.app .stu .ico img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .app .stu .n { max-width: 96px; white-space: nowrap; }
 .app .stu:not(.x3) .tmeta { grid-column: 2; grid-row: 2; font: 400 13px 'Carlito', Arial, sans-serif; color: var(--muted); }
 .app .stu:not(.x3) .ico, .app .stu:not(.x3) .n { grid-row: 1 / span 2; }
