@@ -7,6 +7,9 @@
 //
 // Needs TELEGRAM_BOT_TOKEN in .env.local (from @BotFather). WEBAPP_URL is optional: when set, the menu button
 // opens the mini app; until then the menu shows the commands.
+//
+// The Main Mini App (the "Open" button on the bot's profile, t.me/<bot>?startapp links, the app catalogue) has no
+// Bot API method: it is switched on in @BotFather. The script reports whether it is on and prints the steps if not.
 
 import { readFile } from 'node:fs/promises';
 
@@ -68,6 +71,11 @@ const LANGS = [['en', undefined], ...['ru', 'uk', 'be', 'kk'].map((code) => ['ru
 
 const me = await call('getMe');
 console.log(`@${me.username} (${me.id})`);
+const mainApp = () => {
+  if (me.has_main_web_app) return console.log(`main mini app: on — t.me/${me.username}?startapp`);
+  console.log(`main mini app: off. To turn it on: @BotFather → /mybots → @${me.username} → Bot Settings →
+  Configure Mini App → Enable Mini App, and send ${webapp || 'the app URL (WEBAPP_URL)'}`);
+};
 
 if (process.argv.includes('--check')) {
   for (const [l, code] of LANGS) {
@@ -77,6 +85,7 @@ if (process.argv.includes('--check')) {
     console.log((await call('getMyCommands', p)).map((c) => `/${c.command} — ${c.description}`).join('\n'));
   }
   console.log('\nmenu:', JSON.stringify(await call('getChatMenuButton')));
+  mainApp();
   process.exit(0);
 }
 
@@ -109,4 +118,5 @@ if (process.argv.includes('--photo')) {
   if (!data.ok) throw new Error(`setMyProfilePhoto: ${data.description}`);
   console.log('profile photo uploaded');
 }
+mainApp();
 console.log('done');

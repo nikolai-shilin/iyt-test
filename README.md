@@ -72,6 +72,9 @@ To set it up again from scratch:
    and the same three in the Vercel project's Production env.
 2. `npx vercel deploy --prod` — builds `miniapp/dist` and deploys the webhook function next to it.
 3. `npm run bot:setup` — name, descriptions, commands, menu button → the app.
+   Then make it the bot's Main Mini App in @BotFather (Bot Settings → Configure Mini App → Enable Mini App,
+   send `WEBAPP_URL`): the bot's profile gets an Open button and `t.me/iyt_test_bot?startapp=<screen>` links
+   open the app straight away. Telegram has no API for this; `npm run bot:setup -- --check` shows whether it is on.
 4. `npm run bot:webhook` — tells Telegram to send updates to `WEBAPP_URL/api/telegram` (`-- --check` shows its state).
 
 To try bot changes locally: `npm run bot:webhook -- --delete`, then `npm run bot` (long polling), and
