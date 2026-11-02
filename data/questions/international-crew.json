@@ -1,0 +1,4168 @@
+{
+  "level": "international-crew",
+  "title": "IYT International Crew",
+  "lang": "en",
+  "passMark": 70,
+  "examQuestions": 30,
+  "examMinutes": 45,
+  "version": "2026-11-02a",
+  "note": "Scenario questions written for study, close to the IYT International Crew syllabus. Not official IYT exam content. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.",
+  "topics": [
+    {
+      "id": "boat",
+      "title": "Parts of the boat & terms",
+      "icon": "yacht",
+      "count": 20
+    },
+    {
+      "id": "sailing",
+      "title": "Points of sail & sail handling",
+      "icon": "wind",
+      "count": 20
+    },
+    {
+      "id": "knots",
+      "title": "Knots & line handling",
+      "icon": "rope",
+      "count": 20
+    },
+    {
+      "id": "deck",
+      "title": "Deck work — winches, fenders & lines",
+      "icon": "wrench",
+      "count": 20
+    },
+    {
+      "id": "helming",
+      "title": "Helming & manoeuvres",
+      "icon": "compass",
+      "count": 20
+    },
+    {
+      "id": "safety",
+      "title": "Safety gear & personal safety",
+      "icon": "ring",
+      "count": 20
+    },
+    {
+      "id": "lookout",
+      "title": "Lookout & rules of the road",
+      "icon": "light",
+      "count": 20
+    },
+    {
+      "id": "weather",
+      "title": "Weather basics",
+      "icon": "sun",
+      "count": 20
+    },
+    {
+      "id": "aboard",
+      "title": "Life aboard",
+      "icon": "user",
+      "count": 20
+    },
+    {
+      "id": "emergency",
+      "title": "Emergencies & first aid",
+      "icon": "radio",
+      "count": 20
+    }
+  ],
+  "questions": [
+    {
+      "id": "ic-001",
+      "topic": "boat",
+      "difficulty": 1,
+      "q": "A motor yacht is keeping pace with you, as shown. How do you tell the skipper where it is?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0,
+          "sail": true,
+          "boom": 14
+        },
+        "other": {
+          "bearing": 90,
+          "dist": 85,
+          "hdg": 0,
+          "label": "Motor yacht"
+        }
+      },
+      "options": [
+        "Abeam to starboard",
+        "On the starboard quarter",
+        "On the starboard bow",
+        "Abeam to port"
+      ],
+      "answer": 0,
+      "why": "Abeam is at right angles to the boat; starboard is the right-hand side, facing forward.",
+      "ref": "Boat terms"
+    },
+    {
+      "id": "ic-002",
+      "topic": "boat",
+      "difficulty": 1,
+      "q": "Snorkelling under the boat at anchor, you find a plastic bag wrapped round the blade right aft, just behind the propeller. What is it caught on?",
+      "figure": null,
+      "options": [
+        "The bow thruster",
+        "The rudder",
+        "The keel",
+        "The depth transducer"
+      ],
+      "answer": 1,
+      "why": "The rudder is the steering blade at the stern, just behind the propeller.",
+      "ref": "Parts of the boat"
+    },
+    {
+      "id": "ic-003",
+      "topic": "boat",
+      "difficulty": 1,
+      "q": "A guest from the next boat asks if they may use your heads. Where do you take them?",
+      "figure": null,
+      "options": [
+        "To the forepeak locker",
+        "To the chart table",
+        "To the toilet compartment",
+        "To the galley"
+      ],
+      "answer": 2,
+      "why": "On a boat the toilet is called the heads.",
+      "ref": "Boat terms"
+    },
+    {
+      "id": "ic-004",
+      "topic": "boat",
+      "difficulty": 1,
+      "q": "After a bumpy crossing the skipper asks you to check the bilge. Where do you look?",
+      "figure": null,
+      "options": [
+        "In the cockpit lockers under the seats",
+        "In the anchor locker at the bow",
+        "In the fresh-water tank under a berth",
+        "Under the saloon floorboards, at the lowest point"
+      ],
+      "answer": 3,
+      "why": "The bilge is the lowest part inside the hull, where any water collects.",
+      "ref": "Parts of the boat"
+    },
+    {
+      "id": "ic-005",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "The skipper asks you where the wind is coming from, relative to the boat. What do you answer?",
+      "figure": {
+        "type": "sail",
+        "wind": 0,
+        "hdg": 225
+      },
+      "options": [
+        "Over the starboard quarter",
+        "Over the port quarter",
+        "Over the starboard bow",
+        "From dead astern"
+      ],
+      "answer": 0,
+      "why": "The quarter lies between abeam and astern; here the wind comes from aft on the right-hand side.",
+      "ref": "Boat terms"
+    },
+    {
+      "id": "ic-006",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "You have just cleared into Turkey and the skipper hands you the Turkish courtesy flag. Where do you hoist it?",
+      "figure": null,
+      "options": [
+        "On the stern flagstaff",
+        "Under the starboard spreader",
+        "At the top of the forestay",
+        "Under the port spreader"
+      ],
+      "answer": 1,
+      "why": "A courtesy flag flies under the starboard spreader; the stern is for your own ensign.",
+      "ref": "Rigging"
+    },
+    {
+      "id": "ic-007",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "Entering a shallow bay, the skipper asks you to watch the depth sounder. Which figure tells you how much depth the boat needs?",
+      "figure": {
+        "type": "card",
+        "title": "Your yacht — charter papers",
+        "lines": [
+          "LOA 14.3 m",
+          "Beam 4.35 m",
+          "Draft 2.1 m",
+          "Freeboard 1.3 m"
+        ]
+      },
+      "options": [
+        "The freeboard",
+        "The beam",
+        "The draft",
+        "The LOA"
+      ],
+      "answer": 2,
+      "why": "Draft is how far the keel reaches below the waterline.",
+      "ref": "Boat dimensions"
+    },
+    {
+      "id": "ic-008",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "The marina office asks for the boat's size to find you a berth between two other yachts. Which two figures do they need?",
+      "figure": null,
+      "options": [
+        "Draft and freeboard",
+        "Beam and freeboard",
+        "LOA and draft",
+        "LOA and beam"
+      ],
+      "answer": 3,
+      "why": "A berth between boats must fit the overall length and the width (beam).",
+      "ref": "Boat dimensions"
+    },
+    {
+      "id": "ic-009",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "Waves are starting to slop into the cockpit and the skipper asks you to put the washboards in. Which opening do they close?",
+      "figure": null,
+      "options": [
+        "The companionway into the cabin",
+        "The forward hatch over the berth",
+        "The cockpit drains",
+        "The anchor locker at the bow"
+      ],
+      "answer": 0,
+      "why": "Washboards slot into the companionway so water in the cockpit cannot pour below.",
+      "ref": "Parts of the boat"
+    },
+    {
+      "id": "ic-010",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "Before a windy crossing, the skipper asks you to check the wires that hold the mast up from the sides for broken strands. Which do you check?",
+      "figure": null,
+      "options": [
+        "The halyards",
+        "The shrouds",
+        "The backstay",
+        "The forestay"
+      ],
+      "answer": 1,
+      "why": "Shrouds support the mast sideways; the forestay and backstay hold it fore and aft.",
+      "ref": "Rigging"
+    },
+    {
+      "id": "ic-011",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "Motoring slowly into a sandy bay, you feel a soft bump from below and the boat stops. Which part has most likely touched the bottom?",
+      "figure": null,
+      "options": [
+        "The bow at the waterline",
+        "The propeller blades",
+        "The bottom of the keel",
+        "The top of the rudder"
+      ],
+      "answer": 2,
+      "why": "The keel is the deepest part of the boat; draft is measured to its bottom.",
+      "ref": "Parts of the boat"
+    },
+    {
+      "id": "ic-012",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "The skipper says: \"We'll anchor in the lee of the island tonight.\" Which spot does she mean?",
+      "figure": {
+        "type": "bay",
+        "wind": 0,
+        "land": "M110 85 C 125 60 195 58 215 82 C 235 108 205 130 165 128 C 125 126 98 110 110 85 Z",
+        "spots": [
+          [
+            162,
+            32,
+            "A"
+          ],
+          [
+            162,
+            158,
+            "B"
+          ],
+          [
+            62,
+            96,
+            "C"
+          ]
+        ],
+        "note": "Wind N 20 kn, sea from the north"
+      },
+      "options": [
+        "A or C, whichever is closer",
+        "C, on the west side",
+        "A, on the north side",
+        "B, on the south side"
+      ],
+      "answer": 3,
+      "why": "The lee is the side sheltered from the wind: with a north wind, the south side.",
+      "ref": "Boat terms"
+    },
+    {
+      "id": "ic-013",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "You come back in the tender. The yacht's sides are high, and it has a low bathing platform at the stern. Where do you climb aboard?",
+      "figure": null,
+      "options": [
+        "At the stern, where the freeboard is lowest",
+        "At the bow, holding on to the forestay",
+        "At the bow, up the anchor chain",
+        "Amidships, over the top of the guardrail"
+      ],
+      "answer": 0,
+      "why": "Freeboard is the height of the deck above the water; board where it is lowest.",
+      "ref": "Boat dimensions"
+    },
+    {
+      "id": "ic-014",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "As you approach the berth, the skipper calls: \"Two crew aft, please!\" Where do you go?",
+      "figure": null,
+      "options": [
+        "Towards the bow",
+        "Towards the stern",
+        "Down below to the saloon",
+        "To the mast"
+      ],
+      "answer": 1,
+      "why": "Aft means towards the stern; forward means towards the bow.",
+      "ref": "Boat terms"
+    },
+    {
+      "id": "ic-015",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "You come on deck at night and see the boom eased out over the starboard side. Which side is windward?",
+      "figure": null,
+      "options": [
+        "Starboard: the side the boat heels to",
+        "Starboard: the boom points into the wind",
+        "Port: the boom goes out to leeward",
+        "You cannot tell without a compass"
+      ],
+      "answer": 2,
+      "why": "The wind pushes the boom away from it, so the boom is always on the leeward side.",
+      "ref": "Boat terms"
+    },
+    {
+      "id": "ic-016",
+      "topic": "boat",
+      "difficulty": 2,
+      "q": "You are helping to unfurl the genoa. Which wire is the sail rolled round?",
+      "figure": null,
+      "options": [
+        "The backstay, from the stern up the mast",
+        "A shroud, from the side deck up the mast",
+        "The main halyard, inside the mast",
+        "The forestay, from the bow up the mast"
+      ],
+      "answer": 3,
+      "why": "A roller-furling genoa rolls up round the forestay at the bow.",
+      "ref": "Rigging"
+    },
+    {
+      "id": "ic-017",
+      "topic": "boat",
+      "difficulty": 3,
+      "q": "The skipper asks how much water there is under the keel. What do you answer?",
+      "figure": {
+        "type": "card",
+        "title": "Depth sounder",
+        "lines": [
+          "Set to show depth below the waterline",
+          "Reading now: 2.6 m",
+          "Our draft: 2.1 m"
+        ]
+      },
+      "options": [
+        "About 0.5 m",
+        "About 2.1 m",
+        "About 4.7 m",
+        "About 2.6 m"
+      ],
+      "answer": 0,
+      "why": "2.6 m below the waterline minus 2.1 m of draft leaves 0.5 m under the keel.",
+      "ref": "Boat dimensions"
+    },
+    {
+      "id": "ic-018",
+      "topic": "boat",
+      "difficulty": 3,
+      "q": "With the wind as shown, the skipper asks you to sit on the windward side, and later to tip a bucket of washing-up water over the side. Which sides do you use?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0,
+          "sail": true,
+          "boom": -14
+        },
+        "other": {
+          "dist": 0
+        },
+        "wind": 90
+      },
+      "options": [
+        "Sit to port; tip the bucket to starboard",
+        "Sit to starboard; tip the bucket to port",
+        "Sit to starboard; tip it to starboard",
+        "Sit to port; tip the bucket to port"
+      ],
+      "answer": 1,
+      "why": "Windward is the side the wind comes from (starboard); anything thrown out goes to leeward.",
+      "ref": "Boat terms"
+    },
+    {
+      "id": "ic-019",
+      "topic": "boat",
+      "difficulty": 3,
+      "q": "You spot this while going forward. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "Under way, port tack",
+        "lines": [
+          "Wind 18 kn over the port side",
+          "Starboard shroud: split pin missing",
+          "Skipper plans to tack in 10 minutes"
+        ]
+      },
+      "options": [
+        "Wait for the tack, then take a closer look",
+        "Mention it in harbour this evening",
+        "Tell the skipper before the tack: it takes the load then",
+        "Nothing: that shroud is slack, so it is safe"
+      ],
+      "answer": 2,
+      "why": "After the tack the starboard shroud is to windward and holds the mast up; a loose fitting can fail.",
+      "ref": "Rigging"
+    },
+    {
+      "id": "ic-020",
+      "topic": "boat",
+      "difficulty": 3,
+      "q": "You are sitting in the cockpit facing aft, towards the stern. The skipper asks you to hang a fender on the port side. Which side is that from where you sit?",
+      "figure": null,
+      "options": [
+        "The side the wind comes from",
+        "Whichever side faces the quay",
+        "Your left-hand side",
+        "Your right-hand side"
+      ],
+      "answer": 3,
+      "why": "Port and starboard belong to the boat, seen facing forward; facing aft, port is on your right.",
+      "ref": "Boat terms"
+    },
+    {
+      "id": "ic-021",
+      "topic": "sailing",
+      "difficulty": 1,
+      "q": "The skipper asks you to name this point of sail for the logbook. What is it?",
+      "figure": {
+        "type": "sail",
+        "wind": 270,
+        "hdg": 45,
+        "nogo": true
+      },
+      "options": [
+        "Broad reach",
+        "Beam reach",
+        "Run",
+        "Close reach"
+      ],
+      "answer": 0,
+      "why": "With the wind about 135° off the bow, over the quarter, you are on a broad reach.",
+      "ref": "Points of sail"
+    },
+    {
+      "id": "ic-022",
+      "topic": "sailing",
+      "difficulty": 1,
+      "q": "The helm turns onto this heading. The sails flap and the boat slows to a stop. Why?",
+      "figure": {
+        "type": "sail",
+        "wind": 0,
+        "hdg": 340,
+        "nogo": true
+      },
+      "options": [
+        "The genoa has been furled too far",
+        "The boat is pointing into the no-go zone",
+        "The sheets are pulled in too tight",
+        "The wind has suddenly dropped"
+      ],
+      "answer": 1,
+      "why": "No sail can drive the boat within about 45° of the wind: the no-go zone.",
+      "ref": "Points of sail"
+    },
+    {
+      "id": "ic-023",
+      "topic": "sailing",
+      "difficulty": 1,
+      "q": "The skipper asks you to \"ease the main\". Which line do you let out?",
+      "figure": null,
+      "options": [
+        "The main halyard",
+        "The genoa furling line",
+        "The mainsheet",
+        "The genoa sheet"
+      ],
+      "answer": 2,
+      "why": "The mainsheet sets the angle of the boom; easing it lets the sail out.",
+      "ref": "Sail handling"
+    },
+    {
+      "id": "ic-024",
+      "topic": "sailing",
+      "difficulty": 1,
+      "q": "You are trimming the genoa on a steady reach. How do you find the right setting for the sheet?",
+      "figure": null,
+      "options": [
+        "Pull in until the tell-tales droop, then leave it",
+        "Ease until the whole sail flaps, then cleat it there",
+        "Pull in until the sail is hard and flat, then cleat it",
+        "Ease until the luff starts to flap, then pull back just enough to stop it"
+      ],
+      "answer": 3,
+      "why": "The best trim is just short of luffing: ease till it flaps, then sheet in a touch.",
+      "ref": "Sail trim"
+    },
+    {
+      "id": "ic-025",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "You are trimming the genoa and see this on the tell-tales. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "Genoa tell-tales",
+        "lines": [
+          "Close reach, helm on a steady course",
+          "Windward tell-tale: lifting, spinning",
+          "Leeward tell-tale: streaming aft"
+        ]
+      },
+      "options": [
+        "Pull the sheet in a little",
+        "Ease the sheet out a little",
+        "Leave it: the trim is right",
+        "Ease the genoa halyard a little"
+      ],
+      "answer": 0,
+      "why": "A lifting windward tell-tale means the sail is eased too far: sheet in.",
+      "ref": "Sail trim"
+    },
+    {
+      "id": "ic-026",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "The skipper asks you to sort out the genoa trim. What do you do with the sheet?",
+      "figure": {
+        "type": "card",
+        "title": "Genoa tell-tales",
+        "lines": [
+          "Beam reach, steady course",
+          "Windward tell-tale: streaming aft",
+          "Leeward tell-tale: fluttering, drooping"
+        ]
+      },
+      "options": [
+        "Pull it in a little",
+        "Ease it a little",
+        "Let it fly right out",
+        "Cleat it and leave it"
+      ],
+      "answer": 1,
+      "why": "A drooping leeward tell-tale means the sail is stalled, sheeted too hard: ease it.",
+      "ref": "Sail trim"
+    },
+    {
+      "id": "ic-027",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "In a tack you are on the new genoa sheet. As the genoa blows across, what do you do?",
+      "figure": null,
+      "options": [
+        "Wait until the sail fills, then start winding",
+        "Winch it in from the start, with all turns on",
+        "Pull the slack in fast by hand, then winch the last part",
+        "Wait until the old sheet has been coiled"
+      ],
+      "answer": 2,
+      "why": "Slack comes in fastest by hand before the sail fills; the winch takes the last, loaded part.",
+      "ref": "Tacking"
+    },
+    {
+      "id": "ic-028",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "The helm calls \"Ready to gybe\". You are on the mainsheet. What do you do?",
+      "figure": null,
+      "options": [
+        "Cleat it where it is and keep clear of the boom",
+        "Let the mainsheet run free so the boom can swing",
+        "Ease it out further to spill the wind first",
+        "Pull the main in to the centre, then ease it out on the new side"
+      ],
+      "answer": 3,
+      "why": "Hauling the boom in first keeps its swing short and controlled; then ease it out.",
+      "ref": "Gybing"
+    },
+    {
+      "id": "ic-029",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "The skipper asks you to furl the genoa. What do you do with the furling line and the sheet?",
+      "figure": null,
+      "options": [
+        "Pull the furling line; ease the sheet with some tension",
+        "Pull the furling line; let the sheet fly free",
+        "Pull the sheet; ease the furling line slowly",
+        "Pull the genoa halyard; ease the sheet"
+      ],
+      "answer": 0,
+      "why": "Light tension on the sheet rolls the sail up tightly and stops it flogging.",
+      "ref": "Furling"
+    },
+    {
+      "id": "ic-030",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "You are unfurling the genoa in a fresh breeze. What do you do with the furling line?",
+      "figure": null,
+      "options": [
+        "Pull it in to help the sail start turning",
+        "Ease it out under control, with a turn round a winch",
+        "Cleat it firmly before you pull the sheet",
+        "Let it go completely so the sail opens fast"
+      ],
+      "answer": 1,
+      "why": "A furling line let go runs wild and tangles on the drum; ease it with a turn on.",
+      "ref": "Furling"
+    },
+    {
+      "id": "ic-031",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "The boat is head to wind and you are about to hoist the main. Which line must be eased before you pull the halyard?",
+      "figure": null,
+      "options": [
+        "The topping lift",
+        "The genoa sheet",
+        "The mainsheet",
+        "The genoa furling line"
+      ],
+      "answer": 2,
+      "why": "A tight mainsheet holds the boom and leech down, so the sail cannot go up freely.",
+      "ref": "Hoisting the main"
+    },
+    {
+      "id": "ic-032",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "Halfway up, the main fills with wind and the halyard suddenly becomes very heavy. What do you ask the helm?",
+      "figure": null,
+      "options": [
+        "To bear away so the sail fills properly",
+        "To speed up so the halyard runs easier",
+        "To tack so the sail moves across",
+        "To bring the bow back head to wind"
+      ],
+      "answer": 3,
+      "why": "With the bow head to wind the main hangs empty and slides up easily.",
+      "ref": "Hoisting the main"
+    },
+    {
+      "id": "ic-033",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "Why does the instrument show a breeze?",
+      "figure": {
+        "type": "card",
+        "title": "Motoring in a flat calm",
+        "lines": [
+          "Boat speed 6 kn",
+          "Wind instrument: 6 kn from dead ahead",
+          "Sea glassy, flags ashore hanging limp"
+        ]
+      },
+      "options": [
+        "It is apparent wind made by the boat's speed",
+        "The current is dragging the air along",
+        "A sea breeze is starting to blow",
+        "The instrument needs calibrating"
+      ],
+      "answer": 0,
+      "why": "Moving through still air at 6 kn makes a 6 kn apparent wind from ahead.",
+      "ref": "Apparent wind"
+    },
+    {
+      "id": "ic-034",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "On this course the genoa keeps collapsing and flapping. Why?",
+      "figure": {
+        "type": "sail",
+        "wind": 0,
+        "hdg": 180,
+        "note": "Run, main eased right out"
+      },
+      "options": [
+        "The wind is too strong for a genoa",
+        "The mainsail is blocking its wind",
+        "The boat is in the no-go zone",
+        "The genoa halyard is too tight"
+      ],
+      "answer": 1,
+      "why": "Dead downwind the main shades the genoa; goose-wing it or come up a little.",
+      "ref": "Points of sail"
+    },
+    {
+      "id": "ic-035",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "How does the boat get to the harbour under sail?",
+      "figure": {
+        "type": "sail",
+        "wind": 0,
+        "hdg": 315,
+        "nogo": true,
+        "note": "The harbour lies dead upwind"
+      },
+      "options": [
+        "It cannot: yachts only sail across the wind",
+        "By gybing back and forth downwind",
+        "By tacking: close-hauled on one tack, then the other",
+        "Straight at it, with both sheets eased"
+      ],
+      "answer": 2,
+      "why": "No boat sails inside the no-go zone, so you zigzag upwind close-hauled.",
+      "ref": "Points of sail"
+    },
+    {
+      "id": "ic-036",
+      "topic": "sailing",
+      "difficulty": 2,
+      "q": "What does the skipper want you to do with the mainsheet?",
+      "figure": {
+        "type": "card",
+        "title": "Gusty afternoon",
+        "lines": [
+          "Close-hauled, 15 kn, gusts to 25 kn",
+          "You are on the mainsheet",
+          "Skipper: \"Play the main!\""
+        ]
+      },
+      "options": [
+        "Keep it cleated so the boat stays steady",
+        "Pull in harder in each gust for more power",
+        "Ease it right out and leave it there",
+        "Ease in each gust, pull back in as it passes"
+      ],
+      "answer": 3,
+      "why": "Easing in a gust spills wind and cuts the heel; sheeting back in keeps the drive.",
+      "ref": "Heeling"
+    },
+    {
+      "id": "ic-037",
+      "topic": "sailing",
+      "difficulty": 3,
+      "q": "What happens to the wind you feel on board?",
+      "figure": {
+        "type": "card",
+        "title": "Bearing away",
+        "lines": [
+          "From close-hauled to a broad reach",
+          "True wind steady at 15 kn",
+          "Boat speed rises from 6 to 7 kn"
+        ]
+      },
+      "options": [
+        "It gets lighter and comes from further aft",
+        "It gets stronger and comes from further forward",
+        "It gets lighter and comes from further forward",
+        "It stays the same: only the true wind counts"
+      ],
+      "answer": 0,
+      "why": "Upwind the boat's speed adds to the wind you feel; downwind it subtracts, and the wind moves aft.",
+      "ref": "Apparent wind"
+    },
+    {
+      "id": "ic-038",
+      "topic": "sailing",
+      "difficulty": 3,
+      "q": "The helm gybes onto starboard tack. Which genoa sheet takes the load afterwards?",
+      "figure": {
+        "type": "sail",
+        "wind": 0,
+        "hdg": 170,
+        "note": "Run on port tack, genoa out to starboard"
+      },
+      "options": [
+        "The starboard sheet: it stays the working one",
+        "The port sheet: the sails are now to port",
+        "Both sheets equally until the next tack",
+        "Neither: the genoa is furled for every gybe"
+      ],
+      "answer": 1,
+      "why": "In a gybe the sails cross to the other side, so the other sheet becomes the working sheet.",
+      "ref": "Gybing"
+    },
+    {
+      "id": "ic-039",
+      "topic": "sailing",
+      "difficulty": 3,
+      "q": "You are trimming the sails. Which wind do they actually feel?",
+      "figure": {
+        "type": "card",
+        "title": "Wind instruments",
+        "lines": [
+          "True wind angle: 90°",
+          "Apparent wind angle: 60°",
+          "Boat speed 7 kn"
+        ]
+      },
+      "options": [
+        "The true wind, at about 90°",
+        "A mix of both, at about 75°",
+        "The apparent wind, at about 60°",
+        "Whichever is stronger at the time"
+      ],
+      "answer": 2,
+      "why": "Sails feel the wind on the moving boat: the apparent wind, forward of the true wind.",
+      "ref": "Apparent wind"
+    },
+    {
+      "id": "ic-040",
+      "topic": "sailing",
+      "difficulty": 3,
+      "q": "During a tack, the crew on the old genoa sheet lets it go the moment \"Ready about\" is called, before the boat starts to turn. What is the result?",
+      "figure": null,
+      "options": [
+        "The boat turns faster with less load on the sail",
+        "Nothing: the timing of the release makes no difference",
+        "The genoa backs and pushes the bow through the wind",
+        "The genoa flaps, the boat loses speed and may stall head to wind"
+      ],
+      "answer": 3,
+      "why": "Released early, the genoa stops driving and the boat may stop in irons; let go as the bow passes the wind.",
+      "ref": "Tacking"
+    },
+    {
+      "id": "ic-041",
+      "topic": "knots",
+      "difficulty": 1,
+      "q": "The skipper wants a loop in the end of a line that a swimmer can slip over their head and under their arms. It must not tighten. Which knot?",
+      "figure": null,
+      "options": [
+        "Bowline",
+        "Clove hitch",
+        "Reef knot",
+        "Rolling hitch"
+      ],
+      "answer": 0,
+      "why": "A bowline makes a fixed loop that does not slip or tighten under load.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-042",
+      "topic": "knots",
+      "difficulty": 1,
+      "q": "The mainsheet runs through several blocks to the cockpit. What do you tie in its tail so it can never run out through them?",
+      "figure": null,
+      "options": [
+        "Sheet bend",
+        "Figure-of-eight",
+        "Clove hitch",
+        "Bowline"
+      ],
+      "answer": 1,
+      "why": "A figure-of-eight is the stopper knot: too fat to pass through a block.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-043",
+      "topic": "knots",
+      "difficulty": 1,
+      "q": "The lazy-bag zip has broken, so you tie the furled main to the boom with sail ties. Which knot?",
+      "figure": null,
+      "options": [
+        "Clove hitch",
+        "Sheet bend",
+        "Reef knot",
+        "Rolling hitch"
+      ],
+      "answer": 2,
+      "why": "Tying round a bundle is the reef knot's job: it lies flat and unties easily.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-044",
+      "topic": "knots",
+      "difficulty": 1,
+      "q": "You are on fender duty, and the skipper will want the fenders raised or lowered as you come in. What do you tie them on with?",
+      "figure": {
+        "type": "rope",
+        "kind": "rail",
+        "labels": [
+          [
+            60,
+            80,
+            "guardrail"
+          ],
+          [
+            200,
+            160,
+            "fender line"
+          ]
+        ]
+      },
+      "options": [
+        "Reef knot",
+        "Sheet bend",
+        "Bowline",
+        "Clove hitch"
+      ],
+      "answer": 3,
+      "why": "A clove hitch is quick to tie and easy to slide up or down to change the height.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-045",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "The tender's painter is too short to reach the ring on the quay, and the only spare is a thinner line. Which knot joins them?",
+      "figure": null,
+      "options": [
+        "Sheet bend",
+        "Reef knot",
+        "Clove hitch",
+        "Figure-of-eight"
+      ],
+      "answer": 0,
+      "why": "A sheet bend joins two lines and holds even when they are different thicknesses.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-046",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "The snubber must grip the chain when it is pulled along it. Which knot do you tie?",
+      "figure": {
+        "type": "card",
+        "title": "At anchor on all chain",
+        "lines": [
+          "No chain hook aboard",
+          "Snubber line ready on the foredeck",
+          "Skipper: \"Tie it on to the chain\""
+        ]
+      },
+      "options": [
+        "Clove hitch",
+        "Rolling hitch",
+        "Reef knot",
+        "Bowline"
+      ],
+      "answer": 1,
+      "why": "A rolling hitch grips a rope, spar or chain against a pull along its length.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-047",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "You tied this fender on with a clove hitch. How do you stop it slipping?",
+      "figure": {
+        "type": "rope",
+        "kind": "rail",
+        "labels": [
+          [
+            60,
+            80,
+            "guardrail"
+          ]
+        ],
+        "note": "The fender slips lower each time the boat rolls"
+      },
+      "options": [
+        "Tie a figure-of-eight at the fender end",
+        "Wet the line so it grips the rail",
+        "Add a half hitch round the standing part",
+        "Re-tie it as a sheet bend"
+      ],
+      "answer": 2,
+      "why": "A half hitch round the standing part locks a clove hitch that works loose.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-048",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "You leave the tender on this ring while you have dinner ashore. Which knot will not shake loose as the tender jerks all evening?",
+      "figure": {
+        "type": "rope",
+        "kind": "ring",
+        "labels": [
+          [
+            160,
+            40,
+            "quay ring"
+          ]
+        ],
+        "note": "Wash from passing boats all evening"
+      },
+      "options": [
+        "Clove hitch",
+        "Sheet bend",
+        "Reef knot",
+        "Round turn and two half hitches"
+      ],
+      "answer": 3,
+      "why": "The round turn takes the jerks and the two half hitches stay put.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-049",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "You are making the stern line fast on this cleat. What does the line do first?",
+      "figure": {
+        "type": "rope",
+        "kind": "cleat",
+        "labels": [
+          [
+            160,
+            150,
+            "cleat"
+          ],
+          [
+            40,
+            50,
+            "load"
+          ]
+        ]
+      },
+      "options": [
+        "A full turn round the base of the cleat",
+        "A figure-of-eight over the horns",
+        "A bowline round one of the horns",
+        "A locking hitch over one horn"
+      ],
+      "answer": 0,
+      "why": "The turn round the base takes the load; then figure-eights and one locking hitch.",
+      "ref": "Cleat hitch"
+    },
+    {
+      "id": "ic-050",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "A new crew member finishes a cleat hitch with three locking hitches piled on top. Why does the skipper ask for it to be re-tied?",
+      "figure": null,
+      "options": [
+        "It makes the line too short to reach",
+        "It can jam and is slow to free in a hurry",
+        "Three hitches can slip off under load",
+        "It wears out the cleat's horns faster"
+      ],
+      "answer": 1,
+      "why": "One locking hitch holds; more can jam just when you need to let the line go fast.",
+      "ref": "Cleat hitch"
+    },
+    {
+      "id": "ic-051",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "You have coiled a mooring line and want to hang it in the locker without it coming undone. How do you finish the coil?",
+      "figure": null,
+      "options": [
+        "Tie the two ends together with a reef knot",
+        "Wind the coil tightly round your elbow first",
+        "Wrap the end round the coil, push a loop through and over the top",
+        "Tuck the loose end in among the loops"
+      ],
+      "answer": 2,
+      "why": "Turns round the coil and a loop over the top hold it neat, and it is quick to free.",
+      "ref": "Line handling"
+    },
+    {
+      "id": "ic-052",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "You are about to throw the stern line to a marinero on the quay. What do you do with the boat's end of the line?",
+      "figure": null,
+      "options": [
+        "Tie it to the guardrail with a clove hitch",
+        "Hold it in your other hand as you throw",
+        "Leave it loose on deck so it can pay out",
+        "Make it fast on the stern cleat first"
+      ],
+      "answer": 3,
+      "why": "If the boat's end is not made fast, a good throw can send the whole line ashore or into the sea.",
+      "ref": "Line handling"
+    },
+    {
+      "id": "ic-053",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "How do you hold the coiled line to throw it ashore?",
+      "figure": null,
+      "options": [
+        "Split the coil: throw one half, let the other run from your open hand",
+        "Throw the whole coil in one bundle",
+        "Throw the loose end first, then the coil",
+        "Wrap the coil round your hand and throw"
+      ],
+      "answer": 0,
+      "why": "Half the coil carries the line; the rest runs out freely from your open hand without tangling.",
+      "ref": "Line handling"
+    },
+    {
+      "id": "ic-054",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "You cannot hold the boat by hand. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "Med mooring, crosswind",
+        "lines": [
+          "You are on the quay with a stern line",
+          "A gust pushes the boat sideways",
+          "The line goes bar-tight in your hands"
+        ]
+      },
+      "options": [
+        "Loop it round your waist and lean back",
+        "Take a turn round a bollard and hold the tail",
+        "Wrap the line round your hand for grip",
+        "Brace your feet and pull harder"
+      ],
+      "answer": 1,
+      "why": "A turn round a bollard takes the load; a line wrapped round you can drag you in.",
+      "ref": "Line handling"
+    },
+    {
+      "id": "ic-055",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "Ashore, you tie a mooring line to a post with a round turn and two half hitches while the wind pulls the boat away. Why take the round turn first?",
+      "figure": null,
+      "options": [
+        "It lets the knot slip off in a hurry",
+        "It locks the hitches so they never undo",
+        "It holds the strain while you tie the hitches",
+        "It makes the line shorter and neater"
+      ],
+      "answer": 2,
+      "why": "The friction of the full turn holds the load, so the half hitches are tied in slack line.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-056",
+      "topic": "knots",
+      "difficulty": 2,
+      "q": "You have just left the marina and the mooring lines lie in a heap in the cockpit. What do you do?",
+      "figure": null,
+      "options": [
+        "Throw them down below into the saloon",
+        "Hang them over the guardrail to dry",
+        "Leave them out, ready for tonight's berth",
+        "Coil and stow them so none can trail over the side"
+      ],
+      "answer": 3,
+      "why": "A loose line can slip over the side and wrap round the propeller, or trip someone.",
+      "ref": "Line handling"
+    },
+    {
+      "id": "ic-057",
+      "topic": "knots",
+      "difficulty": 3,
+      "q": "You have these three jobs to do. Which knots do you tie, in order?",
+      "figure": {
+        "type": "card",
+        "title": "Three jobs",
+        "lines": [
+          "1. Join two lines of different thickness",
+          "2. Hang a fender on the guardrail",
+          "3. A fixed loop to drop over a bollard"
+        ]
+      },
+      "options": [
+        "Sheet bend, clove hitch, bowline",
+        "Reef knot, clove hitch, bowline",
+        "Reef knot, rolling hitch, bowline",
+        "Sheet bend, bowline, clove hitch"
+      ],
+      "answer": 0,
+      "why": "A sheet bend joins unequal lines, a clove hitch hangs fenders, a bowline makes a fixed loop.",
+      "ref": "Knots"
+    },
+    {
+      "id": "ic-058",
+      "topic": "knots",
+      "difficulty": 3,
+      "q": "You are about to throw the stern line. Where do you aim?",
+      "figure": {
+        "type": "card",
+        "title": "Throwing a line ashore",
+        "lines": [
+          "Strong wind blowing from your left",
+          "Marinero on the quay, 4 m away",
+          "Line coiled, boat's end made fast"
+        ]
+      },
+      "options": [
+        "Straight at the marinero's chest",
+        "A little to the left of the marinero, upwind",
+        "High over the marinero's head",
+        "A little to the right of the marinero, downwind"
+      ],
+      "answer": 1,
+      "why": "The wind carries the line sideways as it flies, so aim upwind of your target.",
+      "ref": "Line handling"
+    },
+    {
+      "id": "ic-059",
+      "topic": "knots",
+      "difficulty": 3,
+      "q": "The line on this cleat is heavily loaded. How do you let out a metre safely?",
+      "figure": {
+        "type": "rope",
+        "kind": "cleat",
+        "labels": [
+          [
+            160,
+            150,
+            "cleat"
+          ],
+          [
+            40,
+            50,
+            "load"
+          ]
+        ],
+        "note": "Skipper: \"Ease the bow line a metre\""
+      },
+      "options": [
+        "Throw off every turn and let the line run",
+        "Wrap the tail round your hand, then uncleat",
+        "Take off the hitch and figure-eights, keep a turn on, ease it round",
+        "Untie it and tie a fresh bowline further along"
+      ],
+      "answer": 2,
+      "why": "A turn round the base keeps control while you surge the line out against the friction.",
+      "ref": "Cleat hitch"
+    },
+    {
+      "id": "ic-060",
+      "topic": "knots",
+      "difficulty": 3,
+      "q": "You are on the stern line as the boat reverses in. What do you do now?",
+      "figure": {
+        "type": "card",
+        "title": "Stern-to, reversing in",
+        "lines": [
+          "Your stern line fell short, into the sea",
+          "It is sinking close to the stern",
+          "Engine in gear astern"
+        ]
+      },
+      "options": [
+        "Ask the marinero to fish it out",
+        "Leave it there and throw a second line",
+        "Throw the rest of the coil after it",
+        "Warn the helm and haul the line in fast"
+      ],
+      "answer": 3,
+      "why": "A line in the water by the stern can wrap round the propeller: the helm must know, and it must come out fast.",
+      "ref": "Line handling"
+    },
+    {
+      "id": "ic-061",
+      "topic": "deck",
+      "difficulty": 1,
+      "q": "You are putting the genoa sheet on this winch. Which way do the turns go round the drum?",
+      "figure": {
+        "type": "rope",
+        "kind": "winch",
+        "labels": [
+          [
+            70,
+            86,
+            "genoa sheet"
+          ],
+          [
+            250,
+            90,
+            "tail"
+          ]
+        ]
+      },
+      "options": [
+        "Clockwise",
+        "Clockwise to port, anticlockwise to starboard",
+        "Either way: the drum turns both ways",
+        "Anticlockwise"
+      ],
+      "answer": 0,
+      "why": "Yacht winches turn clockwise only, so the sheet goes on clockwise.",
+      "ref": "Winches"
+    },
+    {
+      "id": "ic-062",
+      "topic": "deck",
+      "difficulty": 1,
+      "q": "You have finished winding in the genoa sheet. What do you do with the winch handle?",
+      "figure": null,
+      "options": [
+        "Lay it on the cockpit seat nearby",
+        "Take it out and put it in its pocket",
+        "Leave it in, turned to point aft",
+        "Leave it in the winch for next time"
+      ],
+      "answer": 1,
+      "why": "A handle left in the winch fouls sheets and people, and is easily knocked overboard.",
+      "ref": "Winches"
+    },
+    {
+      "id": "ic-063",
+      "topic": "deck",
+      "difficulty": 1,
+      "q": "You have motored out of the harbour and the sails are going up. What do you do with the fenders?",
+      "figure": null,
+      "options": [
+        "Lower them to touch the water",
+        "Leave them out for the next harbour",
+        "Take them in and stow them",
+        "Tie them up higher on the guardrail"
+      ],
+      "answer": 2,
+      "why": "Fenders hanging at sea bang the hull and get lost; bring them in once clear of the harbour.",
+      "ref": "Fenders"
+    },
+    {
+      "id": "ic-064",
+      "topic": "deck",
+      "difficulty": 1,
+      "q": "Coming alongside, you stand by with the bow line coiled. When do you get off onto the pontoon?",
+      "figure": null,
+      "options": [
+        "When the bow first touches the pontoon",
+        "As soon as you can jump the gap",
+        "Before the boat slows, to save time",
+        "When the boat is close and nearly stopped, by stepping"
+      ],
+      "answer": 3,
+      "why": "Step, never jump: a jump can end between the boat and the pontoon.",
+      "ref": "Coming alongside"
+    },
+    {
+      "id": "ic-065",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "A crew member is winding the winch and you are tailing. What is your job?",
+      "figure": null,
+      "options": [
+        "Keep steady tension on the tail as it comes off",
+        "Push the turns down the drum with your hand",
+        "Let go of the tail whenever they pause",
+        "Hold the tail loosely so it can slip"
+      ],
+      "answer": 0,
+      "why": "Without tension on the tail the sheet slips on the drum and the winding is wasted.",
+      "ref": "Winches"
+    },
+    {
+      "id": "ic-066",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "This winch is a self-tailer. How do you load the sheet so you can wind with both hands?",
+      "figure": {
+        "type": "rope",
+        "kind": "winch",
+        "labels": [
+          [
+            70,
+            86,
+            "sheet"
+          ],
+          [
+            160,
+            50,
+            "self-tailing jaws"
+          ]
+        ]
+      },
+      "options": [
+        "Straight into the jaws with no turns",
+        "A few turns clockwise, then into the jaws on top",
+        "One turn anticlockwise, then into the jaws",
+        "Turns clockwise, then cleat the tail below"
+      ],
+      "answer": 1,
+      "why": "The turns grip the drum; the jaws on top hold the tail, so no one needs to tail.",
+      "ref": "Winches"
+    },
+    {
+      "id": "ic-067",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "Winding in the genoa sheet, you see this, and the sheet will neither come in nor ease. What do you do?",
+      "figure": {
+        "type": "rope",
+        "kind": "winch",
+        "labels": [
+          [
+            80,
+            86,
+            "loaded"
+          ],
+          [
+            160,
+            170,
+            "turns crossed on the drum"
+          ]
+        ]
+      },
+      "options": [
+        "Keep winding: it will free itself",
+        "Pull the crossed turns off by hand",
+        "Stop, keep your hands clear and call the skipper",
+        "Take the handle out and spin the drum back"
+      ],
+      "answer": 2,
+      "why": "A riding turn locks a loaded sheet; fingers near the drum can be trapped.",
+      "ref": "Riding turn"
+    },
+    {
+      "id": "ic-068",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "The skipper asks you to ease the loaded genoa sheet a little. How do you do it?",
+      "figure": null,
+      "options": [
+        "Take all the turns off and hold the tail",
+        "Wind the winch handle backwards",
+        "Wrap the tail once round your hand for grip",
+        "Ease the tail out slowly, fingers clear of the turns"
+      ],
+      "answer": 3,
+      "why": "A loaded sheet can jerk, and fingers near the drum get pulled into the turns.",
+      "ref": "Winches"
+    },
+    {
+      "id": "ic-069",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "You are getting the fenders ready for tonight's berth. Where do you hang them?",
+      "figure": {
+        "type": "card",
+        "title": "Stern-to tonight",
+        "lines": [
+          "Town quay, Med mooring",
+          "Yachts already berthed on both sides",
+          "Quay about 1 m above the water"
+        ]
+      },
+      "options": [
+        "Both sides, at the widest part, level with the neighbours' hulls",
+        "At the bow only, to protect the anchor",
+        "One side only, the side the wind comes from",
+        "At the stern only, low down by the water"
+      ],
+      "answer": 0,
+      "why": "Stern-to, your sides lie against the yachts next to you, so the fenders go on both sides.",
+      "ref": "Fenders"
+    },
+    {
+      "id": "ic-070",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "The skipper points at your fenders as you come in. What do you change?",
+      "figure": {
+        "type": "card",
+        "title": "Coming alongside",
+        "lines": [
+          "Low floating pontoon, 0.3 m high",
+          "Your fenders hang at deck level",
+          "Skipper: \"Check the fenders!\""
+        ]
+      },
+      "options": [
+        "Nothing: at deck level they guard the rail",
+        "Lower them to where the pontoon will touch the hull",
+        "Take them in: a pontoon is soft",
+        "Raise them higher, to the top of the rail"
+      ],
+      "answer": 1,
+      "why": "Fenders hang where the hull meets the pontoon edge, here close to the water.",
+      "ref": "Fenders"
+    },
+    {
+      "id": "ic-071",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "Alongside, the skipper asks you to rig a spring from the bow cleat. Where does it lead ashore?",
+      "figure": null,
+      "options": [
+        "Forward along the quay, ahead of the bow",
+        "Straight across, to the nearest bollard",
+        "Aft along the quay, to a bollard near the stern",
+        "Back to the boat's own stern cleat"
+      ],
+      "answer": 2,
+      "why": "A spring runs diagonally: from the bow it leads aft, from the stern it leads forward.",
+      "ref": "Mooring lines"
+    },
+    {
+      "id": "ic-072",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "Med mooring, you have walked the lazy line up to the bow cleat. What do you do before making it fast?",
+      "figure": null,
+      "options": [
+        "Pass it back to the marinero to hold",
+        "Leave some slack so the boat can swing",
+        "Cleat it slack: it is only a back-up",
+        "Haul it in hard until it is taut, then cleat it"
+      ],
+      "answer": 3,
+      "why": "The lazy line does the anchor's job: pulled taut, it holds the bow off and the stern clear of the quay.",
+      "ref": "Med mooring"
+    },
+    {
+      "id": "ic-073",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "You are at the stern as the boat backs in. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "Stern-to, the last metre",
+        "lines": [
+          "The stern swings towards the quay corner",
+          "No fender hangs at that spot",
+          "You are standing at the stern"
+        ]
+      },
+      "options": [
+        "Put a loose fender in the gap and keep your hands out",
+        "Jump onto the quay and push the boat off",
+        "Push the boat off the quay with your foot",
+        "Hold the stern off with both hands"
+      ],
+      "answer": 0,
+      "why": "Never put hands or feet between boat and quay: tonnes of boat will crush them.",
+      "ref": "Coming alongside"
+    },
+    {
+      "id": "ic-074",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "The tender is towed astern on a long painter, and the skipper is about to reverse into a berth. What do you do with the painter?",
+      "figure": null,
+      "options": [
+        "Let it out longer so the tender trails clear",
+        "Shorten it or bring the tender alongside, clear of the prop",
+        "Leave it: going astern, the tender drifts away",
+        "Hand it to the helm to hold while reversing"
+      ],
+      "answer": 1,
+      "why": "Going astern the boat runs over a slack painter, and it can wrap round the propeller.",
+      "ref": "Dinghy"
+    },
+    {
+      "id": "ic-075",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "Before leaving, the skipper asks you to rig the stern line as a slip line, so you can let it go from on board. What do you do?",
+      "figure": null,
+      "options": [
+        "Tie a bowline round the bollard instead",
+        "Put two cleat hitches on the boat's cleat",
+        "Lead it round the bollard and back, both ends cleated aboard",
+        "Tie a second line to the same bollard"
+      ],
+      "answer": 2,
+      "why": "With both ends aboard, you let one end go and pull the line back round the bollard.",
+      "ref": "Mooring lines"
+    },
+    {
+      "id": "ic-076",
+      "topic": "deck",
+      "difficulty": 2,
+      "q": "The tender is alongside and the crew are climbing down into it. When do you untie the painter?",
+      "figure": null,
+      "options": [
+        "When the first person is in",
+        "First, so it is ready to go",
+        "Before boarding, then hold it by hand",
+        "Last, when everyone is in and seated"
+      ],
+      "answer": 3,
+      "why": "While the painter is tied on, the tender cannot drift off as people climb in.",
+      "ref": "Dinghy"
+    },
+    {
+      "id": "ic-077",
+      "topic": "deck",
+      "difficulty": 3,
+      "q": "You are helping the skipper clear a riding turn. What is the next step?",
+      "figure": {
+        "type": "card",
+        "title": "Riding turn",
+        "lines": [
+          "Genoa sheet jammed on the winch",
+          "Spare line tied on with a rolling hitch",
+          "Spare line led to the other winch"
+        ]
+      },
+      "options": [
+        "Winch in the spare line, then clear the slack turns",
+        "Untie the spare line now it has gripped",
+        "Wind the jammed winch harder to free it",
+        "Cut the jammed sheet, as it is backed up"
+      ],
+      "answer": 0,
+      "why": "The spare line takes the load; only an unloaded sheet can be unwound safely.",
+      "ref": "Riding turn"
+    },
+    {
+      "id": "ic-078",
+      "topic": "deck",
+      "difficulty": 3,
+      "q": "The wind pushes the boat along the quay. Which lines take the strain?",
+      "figure": {
+        "type": "card",
+        "title": "Alongside, starboard side-to",
+        "lines": [
+          "Strong wind from astern",
+          "The boat is pushed forward along the quay",
+          "Lines: bow, stern and two springs"
+        ]
+      },
+      "options": [
+        "The bow line and the spring led forward from the stern",
+        "The stern line and the spring led aft from the bow",
+        "Only the bow line, as the boat moves forward",
+        "All four lines share the load equally"
+      ],
+      "answer": 1,
+      "why": "Lines leading aft from the boat stop it moving forward: the stern line and the spring from the bow.",
+      "ref": "Mooring lines"
+    },
+    {
+      "id": "ic-079",
+      "topic": "deck",
+      "difficulty": 3,
+      "q": "Coming alongside, you are to step ashore with a line. Where on deck do you step off from?",
+      "figure": null,
+      "options": [
+        "From the coachroof, for extra height",
+        "Right at the bow, as it arrives first",
+        "By the shrouds, where the boat is widest and closest",
+        "From the bathing platform at the stern"
+      ],
+      "answer": 2,
+      "why": "At the shrouds the boat is widest and steadiest, and there is something to hold as you step.",
+      "ref": "Coming alongside"
+    },
+    {
+      "id": "ic-080",
+      "topic": "deck",
+      "difficulty": 3,
+      "q": "Which stern line do you pass ashore first?",
+      "figure": {
+        "type": "card",
+        "title": "Reversing stern-to",
+        "lines": [
+          "Crosswind from port, 15 kn",
+          "Two stern lines ready, one each side",
+          "Marinero waiting on the quay"
+        ]
+      },
+      "options": [
+        "Both together, one in each hand",
+        "The starboard one, on the leeward side",
+        "Whichever is nearer the marinero",
+        "The port one, on the windward side"
+      ],
+      "answer": 3,
+      "why": "The windward line stops the stern blowing downwind onto the neighbours.",
+      "ref": "Med mooring"
+    },
+    {
+      "id": "ic-081",
+      "topic": "helming",
+      "difficulty": 1,
+      "q": "You are steering with a tiller and want the bow to turn to port. Which way do you move the tiller?",
+      "figure": null,
+      "options": [
+        "To starboard",
+        "Hold it central and wait",
+        "To port",
+        "Straight back towards you"
+      ],
+      "answer": 0,
+      "why": "A tiller works the opposite way: push it to starboard and the bow swings to port.",
+      "ref": "Helming"
+    },
+    {
+      "id": "ic-082",
+      "topic": "helming",
+      "difficulty": 1,
+      "q": "You are steering with a wheel and want to turn to starboard. Which way do you turn it?",
+      "figure": null,
+      "options": [
+        "Anticlockwise, then back to the centre",
+        "Clockwise, like a car",
+        "Either way: the rudder finds the course",
+        "Anticlockwise, the opposite way"
+      ],
+      "answer": 1,
+      "why": "A wheel steers like a car: turn it to starboard to go to starboard.",
+      "ref": "Helming"
+    },
+    {
+      "id": "ic-083",
+      "topic": "helming",
+      "difficulty": 1,
+      "q": "You call \"Ready about\" and the crew answer \"Ready\". What do you call as you put the helm over?",
+      "figure": null,
+      "options": [
+        "\"Ready about!\" again",
+        "\"Let go!\"",
+        "\"Lee-oh!\"",
+        "\"Gybe-oh!\""
+      ],
+      "answer": 2,
+      "why": "\"Lee-oh\" (or \"Helm's a-lee\") tells the crew the bow is now turning through the wind.",
+      "ref": "Helm's calls"
+    },
+    {
+      "id": "ic-084",
+      "topic": "helming",
+      "difficulty": 1,
+      "q": "The engine is off, there is no wind and the boat is drifting. You turn the wheel but the bow does not answer. Why?",
+      "figure": null,
+      "options": [
+        "The wheel needs turning much faster",
+        "The wheel has come off the rudder",
+        "The rudder only works under engine",
+        "No water is flowing past the rudder"
+      ],
+      "answer": 3,
+      "why": "A rudder steers only when water flows over it: no way on, no steering.",
+      "ref": "Helming"
+    },
+    {
+      "id": "ic-085",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "You have just taken the wheel. Which way do you turn?",
+      "figure": {
+        "type": "card",
+        "title": "At the wheel",
+        "lines": [
+          "Skipper: \"Steer 140°\"",
+          "Steering compass shows 130°"
+        ]
+      },
+      "options": [
+        "To starboard, about 10°",
+        "To starboard, about 140°",
+        "Neither: the compass will catch up",
+        "To port, about 10°"
+      ],
+      "answer": 0,
+      "why": "Headings grow clockwise: to go from 130° to 140°, turn 10° to starboard.",
+      "ref": "Steering a course"
+    },
+    {
+      "id": "ic-086",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "The skipper gives you 090° towards a headland 8 miles away. The compass swings in the waves and is tiring to watch. What helps?",
+      "figure": null,
+      "options": [
+        "Chase every swing of the compass card",
+        "Steer for a landmark on 090° and check the compass now and then",
+        "Steer by the wake astern, keeping it straight",
+        "Steer for the nearest boat on that side"
+      ],
+      "answer": 1,
+      "why": "A fixed landmark is steadier to steer for; the compass confirms you are still on course.",
+      "ref": "Steering a course"
+    },
+    {
+      "id": "ic-087",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "You are steering and see this on the genoa. What do you do with the helm?",
+      "figure": {
+        "type": "card",
+        "title": "Close-hauled, sheets cleated",
+        "lines": [
+          "Windward tell-tale: lifting",
+          "Leeward tell-tale: streaming",
+          "Skipper: \"Steer by the tell-tales\""
+        ]
+      },
+      "options": [
+        "Luff up a little until both stream",
+        "Tack at once onto the other tack",
+        "Bear away a little until both stream",
+        "Hold this heading: all is well"
+      ],
+      "answer": 2,
+      "why": "A lifting windward tell-tale means you are too close to the wind: bear away.",
+      "ref": "Steering by the wind"
+    },
+    {
+      "id": "ic-088",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "The skipper asks you to sail as close to the wind as you can. How do you find the limit?",
+      "figure": {
+        "type": "sail",
+        "wind": 0,
+        "hdg": 45,
+        "nogo": true,
+        "note": "Close-hauled, sheets in tight"
+      },
+      "options": [
+        "Head up until the boat stops, then hold that heading",
+        "Steer straight into the wind and wait",
+        "Bear away until the boat heels hard, then hold it",
+        "Head up slowly until the genoa luff lifts, then bear away a touch"
+      ],
+      "answer": 3,
+      "why": "The edge of the no-go zone is where the luff starts to lift; just below it the sails drive.",
+      "ref": "Steering by the wind"
+    },
+    {
+      "id": "ic-089",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "On a run, the skipper asks you to gybe. What do you call, and when?",
+      "figure": null,
+      "options": [
+        "\"Ready to gybe\", wait for \"Ready\", then \"Gybe-oh\" as you turn",
+        "\"Ready to gybe\", then turn without waiting",
+        "\"Ready about\", wait for \"Ready\", then \"Lee-oh\"",
+        "\"Gybe-oh\", turn at once, then \"Ready to gybe\""
+      ],
+      "answer": 0,
+      "why": "Warn, wait for every crew member to answer, then call as the stern goes through the wind.",
+      "ref": "Helm's calls"
+    },
+    {
+      "id": "ic-090",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "You are helming into a crowded marina under engine. What speed do you keep?",
+      "figure": null,
+      "options": [
+        "Whatever the skipper set out at sea",
+        "Slow, but enough to keep steering",
+        "Brisk, for good control in the wind",
+        "None: engine in neutral, drifting in"
+      ],
+      "answer": 1,
+      "why": "Go no faster than you would be happy to hit something at, but keep enough way to steer.",
+      "ref": "Under power"
+    },
+    {
+      "id": "ic-091",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "Motoring slowly astern, you want the stern to swing to starboard. Which way do you turn the wheel?",
+      "figure": null,
+      "options": [
+        "Amidships: going astern you cannot steer",
+        "To port, then give a burst ahead",
+        "To starboard: astern, the stern follows the wheel",
+        "To port: astern, the steering is reversed"
+      ],
+      "answer": 2,
+      "why": "Going astern with a wheel, turn it the way you want the stern to go.",
+      "ref": "Under power"
+    },
+    {
+      "id": "ic-092",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "You are at the wheel and put the engine into reverse. What do you expect first?",
+      "figure": {
+        "type": "card",
+        "title": "Skipper's briefing",
+        "lines": [
+          "\"Astern, her stern kicks to port\"",
+          "Now: stopped, wheel amidships"
+        ]
+      },
+      "options": [
+        "The stern swings to starboard at first",
+        "Nothing until you turn the wheel",
+        "The bow swings to port at first",
+        "The stern swings to port before she gathers way"
+      ],
+      "answer": 3,
+      "why": "Prop walk pushes the stern sideways in reverse, most of all before the boat is moving.",
+      "ref": "Under power"
+    },
+    {
+      "id": "ic-093",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "Two crew are working at the mast, sorting out a halyard. You are on the helm. What do you do?",
+      "figure": null,
+      "options": [
+        "Hold a steady course and warn them before any turn",
+        "Leave the helm for a moment to help them",
+        "Steer for the smoothest water, turning often",
+        "Speed up so they are finished sooner"
+      ],
+      "answer": 0,
+      "why": "Sudden turns or heel throw crew on deck off balance; keep her steady and call any change.",
+      "ref": "Helming"
+    },
+    {
+      "id": "ic-094",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "Under engine, the skipper asks you to hold the boat head to wind while the crew hoist the main. How do you know you are head to wind?",
+      "figure": null,
+      "options": [
+        "The genoa sheet goes tight",
+        "The masthead wind arrow points dead ahead",
+        "The boom swings out to one side",
+        "The wind is on the back of your neck"
+      ],
+      "answer": 1,
+      "why": "Head to wind, the wind comes over the bow, so the masthead arrow points straight forward.",
+      "ref": "Helming"
+    },
+    {
+      "id": "ic-095",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "On your first spell at the wheel, the boat wanders 20° either side of the course. What helps most?",
+      "figure": null,
+      "options": [
+        "Big turns of the wheel to get back quickly",
+        "Holding the wheel rigid, never moving it",
+        "Small, early corrections, then wait for her to answer",
+        "Steering by the compass only, never ahead"
+      ],
+      "answer": 2,
+      "why": "A boat answers the helm slowly; small early corrections stop you over-steering.",
+      "ref": "Steering a course"
+    },
+    {
+      "id": "ic-096",
+      "topic": "helming",
+      "difficulty": 2,
+      "q": "You call \"Ready about\". One crew answers \"Ready\", but the one on the other sheet is still putting turns on the winch. What do you do?",
+      "figure": null,
+      "options": [
+        "Call \"Lee-oh\" louder and start the turn",
+        "Tack, and let them catch up after",
+        "Tack anyway: one crew member is enough",
+        "Wait until everyone has answered \"Ready\""
+      ],
+      "answer": 3,
+      "why": "Only start the turn when every crew member has answered \"Ready\".",
+      "ref": "Helm's calls"
+    },
+    {
+      "id": "ic-097",
+      "topic": "helming",
+      "difficulty": 3,
+      "q": "A wave pushes the stern on this course. Which turn of the bow risks an accidental gybe?",
+      "figure": {
+        "type": "sail",
+        "wind": 90,
+        "hdg": 260,
+        "note": "Run, boom out to starboard"
+      },
+      "options": [
+        "A turn to starboard, towards the boom",
+        "Any turn at all, either way",
+        "A turn to port, away from the boom",
+        "None: on a run the boom cannot cross"
+      ],
+      "answer": 0,
+      "why": "Turning towards the boom side takes the stern through the wind, and the boom slams across.",
+      "ref": "Steering downwind"
+    },
+    {
+      "id": "ic-098",
+      "topic": "helming",
+      "difficulty": 3,
+      "q": "You are steering with a tiller from the windward side. The skipper says \"Bear away a little\". Which way do you move the tiller?",
+      "figure": {
+        "type": "sail",
+        "wind": 0,
+        "hdg": 60,
+        "note": "Close reach, tiller steering"
+      },
+      "options": [
+        "It depends which tack you are on",
+        "Towards you, to windward",
+        "Hold it central: the sheets steer",
+        "Away from you, towards the boom"
+      ],
+      "answer": 1,
+      "why": "Tiller to windward turns the bow to leeward, away from the wind: that is bearing away.",
+      "ref": "Helming"
+    },
+    {
+      "id": "ic-099",
+      "topic": "helming",
+      "difficulty": 3,
+      "q": "The skipper beside you asks what you would do. What is the best answer?",
+      "figure": {
+        "type": "card",
+        "title": "Entering the marina",
+        "lines": [
+          "Speed 1 kn, strong crosswind",
+          "The bow is blowing off sideways",
+          "Wheel hard over, no response"
+        ]
+      },
+      "options": [
+        "A long burst astern to stop the boat",
+        "Engine to neutral, and wait for the wind to drop",
+        "A short burst ahead, to push water over the rudder",
+        "Turn the wheel hard over the other way"
+      ],
+      "answer": 2,
+      "why": "Too slow, the rudder has no grip; a burst of propeller wash over it brings the steering back.",
+      "ref": "Under power"
+    },
+    {
+      "id": "ic-100",
+      "topic": "helming",
+      "difficulty": 3,
+      "q": "Anna is taking over the helm from you. What do you tell her?",
+      "figure": {
+        "type": "card",
+        "title": "Handing over the helm",
+        "lines": [
+          "Course 220°, close reach",
+          "Wind NW 18 kn, rising",
+          "Ferry crossing ahead, 2 miles off"
+        ]
+      },
+      "options": [
+        "How long you steered, and the boat speed",
+        "Only the course: she can see the rest",
+        "Only the ferry: the course can wait",
+        "The course, the wind, and the ferry ahead"
+      ],
+      "answer": 3,
+      "why": "A handover gives the course, the wind and sail trim, and any traffic to watch.",
+      "ref": "Handing over"
+    },
+    {
+      "id": "ic-101",
+      "topic": "safety",
+      "difficulty": 1,
+      "q": "You arrive late on the first evening and miss the skipper's safety briefing. What do you do before the boat leaves?",
+      "figure": null,
+      "options": [
+        "Ask the skipper to walk you through it",
+        "Ask another guest to sum it up on your watch",
+        "Nothing — you will pick it up as you go",
+        "Read the boat's manual once you are under way"
+      ],
+      "answer": 0,
+      "why": "You must know where the safety gear is before you sail, and only the skipper's briefing covers this boat.",
+      "ref": "Safety briefing"
+    },
+    {
+      "id": "ic-102",
+      "topic": "safety",
+      "difficulty": 1,
+      "q": "You are packing for a week's charter from Lefkada. Which shoes do you take for deck work?",
+      "figure": null,
+      "options": [
+        "Flip-flops that dry quickly",
+        "Deck shoes with non-slip, non-marking soles",
+        "Black-soled trainers with a deep tread",
+        "Leather shoes with smooth soles"
+      ],
+      "answer": 1,
+      "why": "Soft non-slip soles grip a wet deck and leave no black marks; flip-flops come off your feet.",
+      "ref": "Personal safety"
+    },
+    {
+      "id": "ic-103",
+      "topic": "safety",
+      "difficulty": 1,
+      "q": "You must carry two fenders forward along the side deck while the boat rolls in a ferry's wake. How do you do it?",
+      "figure": null,
+      "options": [
+        "Both at once, walking quickly forward",
+        "One at a time, steadying yourself on the boom",
+        "One at a time, holding on with your free hand",
+        "Both at once, hugged to your chest"
+      ],
+      "answer": 2,
+      "why": "One hand for yourself, one for the boat — and the boom is no handhold, it swings.",
+      "ref": "Moving on deck"
+    },
+    {
+      "id": "ic-104",
+      "topic": "safety",
+      "difficulty": 1,
+      "q": "What do you do to stay fit for your watches today?",
+      "figure": {
+        "type": "card",
+        "title": "Passage day, August",
+        "lines": [
+          "Air 35 °C, little shade in the cockpit",
+          "Six hours under way",
+          "Coffee at breakfast, nothing since"
+        ]
+      },
+      "options": [
+        "Drink only once you feel really thirsty",
+        "Save the water until the end of the day",
+        "Swap water for cold beer — it is still fluid",
+        "Drink water often, before you feel thirsty"
+      ],
+      "answer": 3,
+      "why": "In heat you lose water all the time; thirst comes late, and alcohol dries you out further.",
+      "ref": "Heat and dehydration"
+    },
+    {
+      "id": "ic-105",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "This is what you find on your lifejacket. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "Pre-sail lifejacket check",
+        "lines": [
+          "Automatic lifejacket, cover opened",
+          "Arming indicator: red, not green",
+          "Gas cylinder: screwed in"
+        ]
+      },
+      "options": [
+        "Hand it to the skipper and take another one",
+        "Wear it — red shows it is ready to fire",
+        "Blow it up by mouth to test, then wear it",
+        "Wear it and rely on the oral tube instead"
+      ],
+      "answer": 0,
+      "why": "A red indicator means the inflator may not fire; the jacket must be re-armed before use.",
+      "ref": "Lifejackets"
+    },
+    {
+      "id": "ic-106",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "A wave fills the cockpit and your automatic lifejacket inflates. Later you let the air out. Can you wear it on your next watch?",
+      "figure": null,
+      "options": [
+        "Yes — a spare charge fires next time",
+        "No — it needs a re-arming kit fitted first",
+        "Yes, once it has dried in the sun",
+        "Yes — just let the air out and fold it"
+      ],
+      "answer": 1,
+      "why": "A fired jacket has an empty cylinder; it will not inflate again until it is re-armed.",
+      "ref": "Lifejackets"
+    },
+    {
+      "id": "ic-107",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "Your friend finds her lifejacket's crotch strap uncomfortable and leaves it undone. What happens if she goes over the side?",
+      "figure": null,
+      "options": [
+        "Nothing — the waist belt alone holds it in place",
+        "The jacket will not inflate on contact with water",
+        "The jacket rides up over her face as it inflates",
+        "The cylinder fires early as she moves about"
+      ],
+      "answer": 2,
+      "why": "Without the crotch strap an inflated jacket slides up and can cover the face or come off.",
+      "ref": "Lifejackets"
+    },
+    {
+      "id": "ic-108",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "Your skipper says lifejackets go on whenever there is a real risk of ending up in the water. In which of these do you wear yours?",
+      "figure": null,
+      "options": [
+        "Hosing down the deck while tied up in the marina",
+        "Sitting in the cockpit while moored stern-to in harbour",
+        "Sleeping in your bunk during your off watch",
+        "The tender ride back to the boat after dinner ashore"
+      ],
+      "answer": 3,
+      "why": "Night tender trips, often after a drink, are a classic way to drown — wear a lifejacket.",
+      "ref": "Lifejackets"
+    },
+    {
+      "id": "ic-109",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "The skipper sends you forward to free a jammed furling line. Which side deck do you use?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 45,
+          "sail": true,
+          "boom": 14
+        },
+        "other": {
+          "dist": 0
+        },
+        "wind": 0,
+        "note": "Close-hauled, Force 5, heeling"
+      },
+      "options": [
+        "Port — the high, windward side",
+        "Starboard — the low, leeward side",
+        "Either — the heel makes no difference",
+        "Starboard, holding the boom as you go"
+      ],
+      "answer": 0,
+      "why": "On the windward side a slip throws you onto the deck, not over the low guardrail.",
+      "ref": "Moving on deck"
+    },
+    {
+      "id": "ic-110",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "You need to cross the cockpit to reach the cool box. What is the main danger to you?",
+      "figure": {
+        "type": "card",
+        "title": "Downwind run",
+        "lines": [
+          "Wind F4 from astern, following sea",
+          "Boat rolling, main out to starboard",
+          "No preventer rigged"
+        ]
+      },
+      "options": [
+        "The genoa backing and stopping the boat",
+        "An accidental gybe swinging the boom across",
+        "The boat suddenly luffing head to wind",
+        "The mainsheet jamming in its block"
+      ],
+      "answer": 1,
+      "why": "Running in a rolling sea, the boom can gybe without warning at head height — keep low.",
+      "ref": "Boom awareness"
+    },
+    {
+      "id": "ic-111",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "You check this list after the skipper's briefing. What is still missing from it?",
+      "figure": {
+        "type": "card",
+        "title": "Briefing — what you were shown",
+        "lines": [
+          "Lifejackets and harnesses: saloon locker",
+          "Extinguishers, fire blanket: galley",
+          "Flares and liferaft: cockpit and stern",
+          "Gas shut-off and seacocks: shown"
+        ]
+      },
+      "options": [
+        "Where the spare bedding and towels are kept",
+        "Which marina the boat will use tonight",
+        "Where the first-aid kit and the bilge pump are",
+        "How the plotter's tide page works"
+      ],
+      "answer": 2,
+      "why": "A safety briefing covers the first-aid kit and the bilge pump too — ask if they were missed.",
+      "ref": "Safety briefing"
+    },
+    {
+      "id": "ic-112",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "You are on deck all day in July with a cool breeze blowing. How do you protect yourself from the sun?",
+      "figure": null,
+      "options": [
+        "Cover up only at the first sign of redness",
+        "No cover needed — the breeze stops sunburn",
+        "Sunscreen once in the morning is enough",
+        "Hat, long sleeves, sunglasses, sunscreen topped up"
+      ],
+      "answer": 3,
+      "why": "Wind cools the skin but does not stop UV; the sun and its glare off the water burn all day.",
+      "ref": "Sun protection"
+    },
+    {
+      "id": "ic-113",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "You are helming at night as the wind rises, and the skipper tells you to clip on. Where do you clip your tether?",
+      "figure": null,
+      "options": [
+        "A strong point in the cockpit meant for it",
+        "The guardwire beside the wheel",
+        "The mainsheet traveller car",
+        "A stanchion next to the helm"
+      ],
+      "answer": 0,
+      "why": "Use a proper strong point: guardwires and stanchions can fail and the traveller car moves.",
+      "ref": "Harness and tether"
+    },
+    {
+      "id": "ic-114",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "Your tether has two hooks. Clipped to the jackstay, you reach the mast and must move to the strong point there. How?",
+      "figure": null,
+      "options": [
+        "Unclip and hold the mast — it is only a minute",
+        "Clip the second hook on, then unclip the first",
+        "Unclip from the jackstay, then clip to the mast",
+        "Hold a shroud while you move the one hook"
+      ],
+      "answer": 1,
+      "why": "With two hooks you are never unclipped: always clip on before you unclip.",
+      "ref": "Harness and tether"
+    },
+    {
+      "id": "ic-115",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "Rain starts and you put on your foul-weather jacket. Where does your lifejacket go?",
+      "figure": null,
+      "options": [
+        "Under the jacket, to keep it dry",
+        "Under the jacket, so it cannot snag on lines",
+        "Over the jacket, so it can inflate freely",
+        "Either way — it inflates the same"
+      ],
+      "answer": 2,
+      "why": "Under a jacket it cannot inflate properly and squeezes your chest; wear it on top.",
+      "ref": "Lifejackets"
+    },
+    {
+      "id": "ic-116",
+      "topic": "safety",
+      "difficulty": 2,
+      "q": "The skipper's standing order is 'clip on at night'. You come up for your 22:00 watch on a calm, starry night. What do you do?",
+      "figure": null,
+      "options": [
+        "Clip on only if you go forward of the mast",
+        "Skip it — the moon gives enough light",
+        "Skip it — the rule is meant for rough weather",
+        "Clip on before you step out of the companionway"
+      ],
+      "answer": 3,
+      "why": "A night rule has no exceptions: someone who falls over in the dark is very hard to find.",
+      "ref": "Harness and tether"
+    },
+    {
+      "id": "ic-117",
+      "topic": "safety",
+      "difficulty": 3,
+      "q": "What do you do before you leave the cockpit?",
+      "figure": {
+        "type": "card",
+        "title": "Reefing at night",
+        "tag": "F6",
+        "lines": [
+          "Skipper needs you at the mast",
+          "Spray over the deck, boat heeling",
+          "Jackstays rigged both sides"
+        ]
+      },
+      "options": [
+        "Lifejacket fastened, clip on, tell the helmsman",
+        "Harness on; no lifejacket needed when clipped",
+        "Lifejacket on; clip on only if it gets worse",
+        "Lifejacket on, clip on once you reach the mast"
+      ],
+      "answer": 0,
+      "why": "Clip on in the cockpit before you move, and let the helm know you are going forward.",
+      "ref": "Harness and tether"
+    },
+    {
+      "id": "ic-118",
+      "topic": "safety",
+      "difficulty": 3,
+      "q": "You want to go forward and secure the halyard. What do you do first?",
+      "figure": {
+        "type": "card",
+        "title": "Alone on watch",
+        "tag": "02:30",
+        "lines": [
+          "Others asleep below",
+          "A halyard has come loose at the mast",
+          "Wind F4, steady, autopilot on"
+        ]
+      },
+      "options": [
+        "Go once the deck lights are switched on",
+        "Wake another crew member before you go",
+        "Go quickly unclipped, wearing your lifejacket",
+        "Go forward clipped on, without waking anyone"
+      ],
+      "answer": 1,
+      "why": "Never leave the cockpit alone at night: if you fell in, nobody would know you were gone.",
+      "ref": "Personal safety"
+    },
+    {
+      "id": "ic-119",
+      "topic": "safety",
+      "difficulty": 3,
+      "q": "At night, in a moderate sea, your friend is seasick and needs to be sick over the side. What do you do?",
+      "figure": null,
+      "options": [
+        "Take her to the windward rail, the high side",
+        "Let her use the leeward rail, unclipped",
+        "Take her to the leeward rail, clipped on, and stay",
+        "Let her go to the leeward rail alone, for privacy"
+      ],
+      "answer": 2,
+      "why": "Be sick to leeward so it blows away — but clipped on and watched: that is the rail people fall over.",
+      "ref": "Personal safety"
+    },
+    {
+      "id": "ic-120",
+      "topic": "safety",
+      "difficulty": 3,
+      "q": "What do you advise your cousin?",
+      "figure": {
+        "type": "card",
+        "title": "A guest aboard",
+        "lines": [
+          "Calm and sunny, motoring along the coast",
+          "Your cousin cannot swim",
+          "Skipper: 'lifejackets optional today'"
+        ]
+      },
+      "options": [
+        "Put one on only once the wind gets up",
+        "None needed in calm water in daylight",
+        "None needed if she stays in the cockpit",
+        "Wear a lifejacket on deck whenever under way"
+      ],
+      "answer": 3,
+      "why": "A non-swimmer wears a lifejacket on deck at all times under way, whatever the weather.",
+      "ref": "Lifejackets"
+    },
+    {
+      "id": "ic-121",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "You are the lookout on this yacht. Where is your blind spot?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 315,
+          "sail": true,
+          "boom": -14
+        },
+        "other": {
+          "dist": 0
+        },
+        "wind": 0,
+        "note": "Starboard tack, big genoa"
+      },
+      "options": [
+        "On the port bow, behind the genoa",
+        "Straight ahead, behind the mast",
+        "Abeam to starboard, by the shrouds",
+        "On the starboard bow, to windward"
+      ],
+      "answer": 0,
+      "why": "The genoa hides the leeward bow — on starboard tack that is to port, so look under it often.",
+      "ref": "Lookout"
+    },
+    {
+      "id": "ic-122",
+      "topic": "lookout",
+      "difficulty": 1,
+      "q": "You are motoring at 6 knots and keeping a careful watch ahead. How often do you look astern?",
+      "figure": null,
+      "options": [
+        "Only at night, when lights show up",
+        "Regularly — fast boats come up from behind",
+        "Only when the skipper asks you to",
+        "Never — an overtaking boat must keep clear"
+      ],
+      "answer": 1,
+      "why": "A lookout covers all round; fast ferries and RIBs overtake quickly and quietly.",
+      "ref": "Lookout"
+    },
+    {
+      "id": "ic-123",
+      "topic": "lookout",
+      "difficulty": 1,
+      "q": "You spot this ship. How do you report it to the skipper?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0
+        },
+        "other": {
+          "bearing": 90,
+          "dist": 95,
+          "hdg": 0,
+          "label": "Ship"
+        },
+        "note": "About 2 miles off"
+      },
+      "options": [
+        "'Ship at twelve o'clock, about two miles'",
+        "'Ship at nine o'clock, about two miles'",
+        "'Ship at three o'clock, about two miles'",
+        "'Ship at six o'clock, about two miles'"
+      ],
+      "answer": 2,
+      "why": "Clock bearings count from your own bow: 12 is dead ahead, 3 is abeam to starboard.",
+      "ref": "Reporting"
+    },
+    {
+      "id": "ic-124",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "You have been taking bearings of this ship. What do you tell the skipper?",
+      "figure": {
+        "type": "card",
+        "title": "Hand-bearing compass",
+        "lines": [
+          "Ship on the starboard bow",
+          "12:00 — 075°",
+          "12:04 — 075°",
+          "12:08 — 075°, and closer"
+        ]
+      },
+      "options": [
+        "Risk only once the bearing starts to change",
+        "No risk while it is more than a mile away",
+        "No risk — the ship is holding a steady course",
+        "Bearing steady and closing — risk of collision"
+      ],
+      "answer": 3,
+      "why": "A steady bearing on a vessel that is getting closer means you are on a collision course.",
+      "ref": "COLREGs Rule 7"
+    },
+    {
+      "id": "ic-125",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "You check a yacht three times with the compass. What do you report?",
+      "figure": {
+        "type": "card",
+        "title": "Hand-bearing compass",
+        "lines": [
+          "Yacht on the port bow",
+          "15:00 — 310°",
+          "15:05 — 296°",
+          "15:10 — 281°"
+        ]
+      },
+      "options": [
+        "Bearing changing — it should pass clear, keep watching",
+        "It will hit us — the helm must tack at once",
+        "Bearing steady — there is a risk of collision",
+        "Bearings tell you nothing about the risk"
+      ],
+      "answer": 0,
+      "why": "A clearly changing bearing usually means you will pass clear — but keep checking until it is past.",
+      "ref": "COLREGs Rule 7"
+    },
+    {
+      "id": "ic-126",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "You are sailing towards this boat. Who keeps clear?",
+      "figure": {
+        "type": "dayshape",
+        "shape": "two-cones",
+        "sail": false,
+        "note": "Trawler towing its nets, ahead"
+      },
+      "options": [
+        "The trawler — power gives way to sail",
+        "You do — a boat fishing comes first",
+        "Neither — both turn to starboard",
+        "The smaller of the two boats"
+      ],
+      "answer": 1,
+      "why": "Rule 18: a sailing vessel keeps out of the way of a vessel engaged in fishing.",
+      "ref": "COLREGs Rule 18"
+    },
+    {
+      "id": "ic-127",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "You see these lights. Which way is the vessel heading?",
+      "figure": {
+        "type": "lights",
+        "lights": [
+          {
+            "c": "w",
+            "x": 222,
+            "y": 78
+          },
+          {
+            "c": "r",
+            "x": 224,
+            "y": 120
+          }
+        ],
+        "note": "Night · on your starboard bow"
+      },
+      "options": [
+        "Crossing ahead of you from left to right",
+        "Coming straight towards you",
+        "Crossing ahead of you from right to left",
+        "Moving directly away from you"
+      ],
+      "answer": 2,
+      "why": "You see its red port side, so its bow points to your left; the white light shows it is under power.",
+      "ref": "Navigation lights"
+    },
+    {
+      "id": "ic-128",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "At night you are motoring up behind a slower yacht to overtake it. What do you see of its lights?",
+      "figure": null,
+      "options": [
+        "A green light only",
+        "A red and a green light side by side",
+        "A white light above a red one",
+        "One white light, low down"
+      ],
+      "answer": 3,
+      "why": "From astern you see only the white sternlight; the sidelights are hidden from behind.",
+      "ref": "Navigation lights"
+    },
+    {
+      "id": "ic-129",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "You see only these two lights, close together at masthead height. What are they?",
+      "figure": {
+        "type": "lights",
+        "lights": [
+          {
+            "c": "g",
+            "x": 154,
+            "y": 60,
+            "r": 4
+          },
+          {
+            "c": "r",
+            "x": 166,
+            "y": 60,
+            "r": 4
+          }
+        ],
+        "note": "Night · almost dead ahead, high up"
+      },
+      "options": [
+        "A sailing yacht heading towards you",
+        "A fishing boat working its nets",
+        "A yacht lying at anchor for the night",
+        "A motor boat heading away from you"
+      ],
+      "answer": 0,
+      "why": "A masthead tricolour: red and green together mean a sailing boat is bows-on to you.",
+      "ref": "Navigation lights"
+    },
+    {
+      "id": "ic-130",
+      "topic": "lookout",
+      "difficulty": 1,
+      "q": "A motor boat ahead of you gives one short blast on its horn. What is it telling you?",
+      "figure": null,
+      "options": [
+        "'I doubt that you are keeping clear'",
+        "'I am altering my course to starboard'",
+        "'I am operating astern propulsion'",
+        "'I am altering my course to port'"
+      ],
+      "answer": 1,
+      "why": "Rule 34: one short blast — altering to starboard; two — to port; three — going astern.",
+      "ref": "COLREGs Rule 34"
+    },
+    {
+      "id": "ic-131",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "You are sailing across a ferry route, holding your course. The approaching ferry sounds five short, rapid blasts. What does it mean, and what do you do?",
+      "figure": null,
+      "options": [
+        "It is going astern — carry on as you are",
+        "It is giving way to you — carry on as you are",
+        "It doubts your intentions — tell the skipper now",
+        "It is turning to port — carry on as you are"
+      ],
+      "answer": 2,
+      "why": "Rule 34(d): five or more short blasts signal doubt or a warning — act at once.",
+      "ref": "COLREGs Rule 34"
+    },
+    {
+      "id": "ic-132",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "In the harbour, a large motor yacht leaving the quay sounds three short blasts. What is it doing?",
+      "figure": null,
+      "options": [
+        "It is turning to starboard",
+        "It is turning to port",
+        "It doubts what you are doing",
+        "Its engines are going astern"
+      ],
+      "answer": 3,
+      "why": "Rule 34: three short blasts mean 'I am operating astern propulsion'.",
+      "ref": "COLREGs Rule 34"
+    },
+    {
+      "id": "ic-133",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "This motor boat is closing on a steady bearing. Who should keep clear?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0,
+          "sail": true,
+          "boom": 14
+        },
+        "other": {
+          "bearing": 50,
+          "dist": 85,
+          "hdg": 270,
+          "label": "Motor boat"
+        },
+        "wind": 270,
+        "bearingLine": true,
+        "note": "Engine off, under sail"
+      },
+      "options": [
+        "Usually the motor boat — power gives way to sail",
+        "Whichever boat is going faster",
+        "You — a boat on your starboard side has priority",
+        "Neither — both boats turn to port"
+      ],
+      "answer": 0,
+      "why": "Rule 18: a power-driven vessel keeps out of the way of a sailing vessel, with a few exceptions.",
+      "ref": "COLREGs Rule 18"
+    },
+    {
+      "id": "ic-134",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "You are sailing faster than a yacht ahead on the same course and slowly catching it up. Who keeps clear?",
+      "figure": null,
+      "options": [
+        "Whichever boat is on port tack",
+        "You — the overtaking boat keeps clear",
+        "The yacht ahead — it must let you pass",
+        "The yacht with the bigger sails"
+      ],
+      "answer": 1,
+      "why": "Rule 13: an overtaking vessel keeps clear, whatever its type or tack.",
+      "ref": "COLREGs Rule 13"
+    },
+    {
+      "id": "ic-135",
+      "topic": "lookout",
+      "difficulty": 2,
+      "q": "You are motoring and this boat is coming straight at you. What should happen?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0
+        },
+        "other": {
+          "bearing": 0,
+          "dist": 90,
+          "hdg": 180,
+          "label": "Motor boat"
+        },
+        "bearingLine": true,
+        "note": "Both under power"
+      },
+      "options": [
+        "Both boats turn to port",
+        "The smaller boat stops",
+        "Both boats turn to starboard",
+        "You hold course; it turns"
+      ],
+      "answer": 2,
+      "why": "Rule 14: head-on under power, each turns to starboard and they pass port to port.",
+      "ref": "COLREGs Rule 14"
+    },
+    {
+      "id": "ic-136",
+      "topic": "lookout",
+      "difficulty": 3,
+      "q": "Your friend says the ferry must give way because you are sailing. What do you say?",
+      "figure": {
+        "type": "card",
+        "title": "Harbour entrance",
+        "lines": [
+          "Big ferry leaving the narrow entrance",
+          "Little room for it to turn",
+          "You are under sail, about to cross its bow"
+        ]
+      },
+      "options": [
+        "Stop in the entrance and let it go round",
+        "Right — power always gives way to sail",
+        "Cross quickly ahead before it speeds up",
+        "No — in a narrow entrance we keep clear of it"
+      ],
+      "answer": 3,
+      "why": "Rule 9: a sailing yacht must not impede a big ship that can only use a narrow channel.",
+      "ref": "COLREGs Rule 9"
+    },
+    {
+      "id": "ic-137",
+      "topic": "lookout",
+      "difficulty": 1,
+      "q": "You are on night watch and need to check something on the chart. Which light do you use?",
+      "figure": null,
+      "options": [
+        "A dim red light",
+        "A bright white torch, briefly",
+        "Your phone screen on full brightness",
+        "The saloon lights, switched on fully"
+      ],
+      "answer": 0,
+      "why": "Red light keeps your night vision; white light can spoil it for many minutes.",
+      "ref": "Night lookout"
+    },
+    {
+      "id": "ic-138",
+      "topic": "lookout",
+      "difficulty": 3,
+      "q": "You are watching this vessel at night. What has it done?",
+      "figure": {
+        "type": "card",
+        "title": "Night watch",
+        "lines": [
+          "21:10 — a white light above a green one",
+          "21:15 — a red light appears by the green",
+          "The lights are getting brighter"
+        ]
+      },
+      "options": [
+        "Switched its engine off and set sail",
+        "Turned towards you — it now heads straight at you",
+        "Stopped and dropped anchor for the night",
+        "Turned away from you — it is now moving off"
+      ],
+      "answer": 1,
+      "why": "Seeing both sidelights means its bow points at you — report it to the skipper at once.",
+      "ref": "Navigation lights"
+    },
+    {
+      "id": "ic-139",
+      "topic": "lookout",
+      "difficulty": 3,
+      "q": "You see this group of lights. What do you tell the skipper?",
+      "figure": {
+        "type": "lights",
+        "lights": [
+          {
+            "c": "w",
+            "x": 196,
+            "y": 84
+          },
+          {
+            "c": "w",
+            "x": 244,
+            "y": 62
+          },
+          {
+            "c": "r",
+            "x": 192,
+            "y": 120
+          }
+        ],
+        "note": "Night · starboard bow, far off"
+      },
+      "options": [
+        "A large ship moving away from you",
+        "Two small boats, one behind the other",
+        "A large ship crossing from right to left",
+        "A sailing yacht heading towards you"
+      ],
+      "answer": 2,
+      "why": "Two masthead lights mean a ship over 50 m; the lower one is forward, and red is its port side.",
+      "ref": "Navigation lights"
+    },
+    {
+      "id": "ic-140",
+      "topic": "lookout",
+      "difficulty": 3,
+      "q": "As lookout, how do you handle this motor boat?",
+      "figure": {
+        "type": "card",
+        "title": "Your watch, 14:00",
+        "lines": [
+          "Motor boat on the port bow",
+          "Bearing steady for 5 minutes",
+          "No sign of it turning",
+          "You are under sail, skipper below"
+        ]
+      },
+      "options": [
+        "Steer away yourself without telling anyone",
+        "Say nothing — power gives way to sail",
+        "Wait until it is close enough to be sure",
+        "Call the skipper now, with bearing and distance"
+      ],
+      "answer": 3,
+      "why": "Report early: a steady bearing means risk of collision, and the skipper needs time to decide.",
+      "ref": "Reporting"
+    },
+    {
+      "id": "ic-141",
+      "topic": "weather",
+      "difficulty": 1,
+      "q": "The morning forecast says 'northerly, Force 5'. Which way is the wind blowing?",
+      "figure": null,
+      "options": [
+        "From the north, towards the south",
+        "From the south, towards the north",
+        "From the west, turning north later",
+        "From the sea, towards the north"
+      ],
+      "answer": 0,
+      "why": "Wind is always named by the direction it blows from.",
+      "ref": "Wind direction"
+    },
+    {
+      "id": "ic-142",
+      "topic": "weather",
+      "difficulty": 1,
+      "q": "The forecast for your day sail is Force 4. What kind of day is that for a yacht?",
+      "figure": null,
+      "options": [
+        "A gale, 34–40 knots — stay in harbour",
+        "A moderate breeze, 11–16 knots — good sailing",
+        "A strong breeze, 22–27 knots — reefs needed",
+        "Near calm — expect to motor most of the day"
+      ],
+      "answer": 1,
+      "why": "Force 4 is a moderate breeze, 11–16 knots, small waves with some white horses.",
+      "ref": "Beaufort scale"
+    },
+    {
+      "id": "ic-143",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "The afternoon forecast is north-west Force 6, and your crossing is 18 miles of open water. What does this mean for you as crew?",
+      "figure": null,
+      "options": [
+        "Moderate breeze — full sail and a gentle ride",
+        "Storm force — no yacht could put to sea",
+        "Strong wind — expect reefs, spray and a lively ride",
+        "Light airs — expect to motor most of the way"
+      ],
+      "answer": 2,
+      "why": "Force 6 is a strong breeze, 22–27 knots: reefs, rough water and lifejackets on.",
+      "ref": "Beaufort scale"
+    },
+    {
+      "id": "ic-144",
+      "topic": "weather",
+      "difficulty": 1,
+      "q": "The skipper decides to stay in port because the forecast is Force 8. What does that mean?",
+      "figure": null,
+      "options": [
+        "A moderate breeze, about 11–16 knots",
+        "A light breeze, about 4–6 knots",
+        "A fresh breeze, about 17–21 knots",
+        "A gale, about 34–40 knots"
+      ],
+      "answer": 3,
+      "why": "Force 8 is a gale — too much for a charter yacht and her crew.",
+      "ref": "Beaufort scale"
+    },
+    {
+      "id": "ic-145",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "What wind do you expect by mid-afternoon?",
+      "figure": {
+        "type": "card",
+        "title": "Hot summer day, Saronic Gulf",
+        "lines": [
+          "09:00 — flat calm, clear sky",
+          "The land is heating up fast",
+          "No big weather system nearby"
+        ]
+      },
+      "options": [
+        "A breeze blowing in from the sea onto the land",
+        "Flat calm until sunset",
+        "A wind that dies away by noon",
+        "A breeze blowing off the land out to sea"
+      ],
+      "answer": 0,
+      "why": "Land heats faster than sea; the air over it rises and a sea breeze blows in by the afternoon.",
+      "ref": "Sea and land breeze"
+    },
+    {
+      "id": "ic-146",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "You are on anchor watch at 02:00 in a calm bay below hills. A light breeze springs up. Where does it most likely come from?",
+      "figure": null,
+      "options": [
+        "Off the sea, blowing onto the land",
+        "Off the land, blowing out to sea",
+        "Along the shore, from the east",
+        "Any side — night winds are random"
+      ],
+      "answer": 1,
+      "why": "At night the land cools faster than the sea, so a light land breeze blows offshore.",
+      "ref": "Sea and land breeze"
+    },
+    {
+      "id": "ic-147",
+      "topic": "weather",
+      "difficulty": 1,
+      "q": "You are sailing in the Cyclades in August. From which direction does the Meltemi usually blow?",
+      "figure": null,
+      "options": [
+        "From the south, strongest at night",
+        "From the west, only after rain",
+        "From the north, strongest in the afternoon",
+        "From the east, only in early spring"
+      ],
+      "answer": 2,
+      "why": "The Meltemi is the Aegean's summer north wind, usually at its strongest in the afternoon.",
+      "ref": "Meltemi"
+    },
+    {
+      "id": "ic-148",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "Your next hop is 20 miles north across open water, and the Meltemi is forecast at Force 6–7 for three days. When is the crossing likely to be easiest?",
+      "figure": null,
+      "options": [
+        "Leave mid-afternoon, after lunch",
+        "Leave at noon, when it is warm",
+        "Any time — the Meltemi is steady",
+        "Leave early, around dawn"
+      ],
+      "answer": 3,
+      "why": "The Meltemi often eases overnight and builds through the day — cross early.",
+      "ref": "Meltemi"
+    },
+    {
+      "id": "ic-149",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "Close under the cliffs the water looks calm. What do you expect there?",
+      "figure": {
+        "type": "bay",
+        "wind": 0,
+        "land": "M0 0 H320 V50 C 240 72 120 72 0 50 Z",
+        "labels": [
+          [
+            160,
+            30,
+            "High cliffs",
+            "middle"
+          ]
+        ],
+        "note": "South of the island · N 6"
+      },
+      "options": [
+        "Sudden strong gusts falling off the cliffs",
+        "A steady light breeze — it is sheltered",
+        "A steady wind, just like offshore",
+        "Flat calm — a safe place to drift"
+      ],
+      "answer": 0,
+      "why": "Wind spilling over high land drops down the lee side in violent gusts.",
+      "ref": "Local winds"
+    },
+    {
+      "id": "ic-150",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "You are about to sail through the gap at A. What do you expect?",
+      "figure": {
+        "type": "bay",
+        "wind": 0,
+        "land": "M0 0 H120 C 132 60 132 140 110 200 H0 Z M320 0 H200 C 188 60 188 140 210 200 H320 Z",
+        "spots": [
+          [
+            160,
+            100,
+            "A"
+          ]
+        ],
+        "note": "Channel between two islands · N 5"
+      },
+      "options": [
+        "The wind swinging round to the south",
+        "Stronger wind, squeezed through the gap",
+        "Lighter wind, sheltered by both islands",
+        "No change from the open sea"
+      ],
+      "answer": 1,
+      "why": "Wind funnels between islands and round headlands — expect it to be stronger there.",
+      "ref": "Local winds"
+    },
+    {
+      "id": "ic-151",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "You are keeping the barometer log. What do you tell the skipper?",
+      "figure": {
+        "type": "card",
+        "title": "Barometer log",
+        "lines": [
+          "08:00 — 1016 hPa",
+          "11:00 — 1010 hPa",
+          "14:00 — 1004 hPa"
+        ]
+      },
+      "options": [
+        "It is steady — settled weather ahead",
+        "It is rising — the wind should ease",
+        "It is falling fast — strong wind may be on the way",
+        "Pressure means little in summer"
+      ],
+      "answer": 2,
+      "why": "A fall of several hPa in three hours is a warning that strong wind is coming.",
+      "ref": "Barometer"
+    },
+    {
+      "id": "ic-152",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "What is most likely on the way?",
+      "figure": {
+        "type": "card",
+        "title": "Afternoon, near the coast",
+        "lines": [
+          "Hot and sticky since the morning",
+          "Tall cauliflower clouds over the hills",
+          "Tops spreading out flat, like an anvil",
+          "A distant rumble"
+        ]
+      },
+      "options": [
+        "A long spell of settled calm weather",
+        "A steady sea breeze, slowly building",
+        "Fog rolling in from the open sea",
+        "A thunderstorm with sudden violent gusts"
+      ],
+      "answer": 3,
+      "why": "Towering clouds with anvil tops are thunderstorm clouds: squalls, lightning and heavy rain.",
+      "ref": "Thunderstorms"
+    },
+    {
+      "id": "ic-153",
+      "topic": "weather",
+      "difficulty": 3,
+      "q": "The skipper asks what to get ready. What do you suggest?",
+      "figure": {
+        "type": "card",
+        "title": "Squall line ahead",
+        "tag": "10 min",
+        "lines": [
+          "Dark wall of cloud, rain below it",
+          "Dark ruffled water coming your way",
+          "Full main and genoa set"
+        ]
+      },
+      "options": [
+        "Reduce sail now and put lifejackets on",
+        "Keep full sail and try to outrun it",
+        "Wait for the first gust, then reef",
+        "Go below and leave the sails as they are"
+      ],
+      "answer": 0,
+      "why": "Reef before a squall arrives — its first gust can be far stronger than the wind ahead of it.",
+      "ref": "Thunderstorms"
+    },
+    {
+      "id": "ic-154",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "What does the visibility part of this forecast warn you about?",
+      "figure": {
+        "type": "card",
+        "title": "Coastal forecast",
+        "lines": [
+          "Wind: S 3, becoming variable",
+          "Sea: slight",
+          "Visibility: moderate, poor in fog patches"
+        ]
+      },
+      "options": [
+        "Visibility will stay over 10 miles",
+        "In places you may see less than 1 km",
+        "Fog only over land, not at sea",
+        "Rain, with good visibility in between"
+      ],
+      "answer": 1,
+      "why": "In forecasts 'fog' means visibility under 1000 m; 'poor' means under 2 miles.",
+      "ref": "Forecasts"
+    },
+    {
+      "id": "ic-155",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "What will the afternoon be like?",
+      "figure": {
+        "type": "card",
+        "title": "Today's forecast",
+        "lines": [
+          "Wind: NW 4 to 5, increasing 6 later",
+          "Sea: moderate, becoming rough",
+          "Weather: fair",
+          "Visibility: good"
+        ]
+      },
+      "options": [
+        "A south-easterly wind, easing later",
+        "Rain showers and poor visibility",
+        "A stronger north-westerly and a rougher sea",
+        "Lighter wind and a calming sea"
+      ],
+      "answer": 2,
+      "why": "'Increasing 6 later' and 'becoming rough': more wind and bigger waves as the day goes on.",
+      "ref": "Forecasts"
+    },
+    {
+      "id": "ic-156",
+      "topic": "weather",
+      "difficulty": 3,
+      "q": "What will this leg be like?",
+      "figure": {
+        "type": "card",
+        "title": "Plan for today",
+        "tag": "August",
+        "lines": [
+          "Paros → Mykonos, heading north-east",
+          "Leaving at 14:00",
+          "Forecast: N 6, Meltemi"
+        ]
+      },
+      "options": [
+        "Calm — you will motor all the way",
+        "Downwind with the wind behind — easy",
+        "Wind on the beam — fast and comfortable",
+        "Upwind into wind and waves — slow and wet"
+      ],
+      "answer": 3,
+      "why": "A north-easterly course into a north wind is close-hauled, at the windiest time of day.",
+      "ref": "Meltemi"
+    },
+    {
+      "id": "ic-157",
+      "topic": "weather",
+      "difficulty": 3,
+      "q": "If the boat is still here at 15:00, which way is it being pushed?",
+      "figure": {
+        "type": "card",
+        "title": "Lunch stop",
+        "lines": [
+          "Anchored close off a south-facing beach",
+          "10:00 — calm, hot and sunny",
+          "Plan: stay until 16:00"
+        ]
+      },
+      "options": [
+        "Towards the beach — the sea breeze blows onshore",
+        "Away from the beach — a land breeze blows out",
+        "Nowhere — it will stay calm all day",
+        "Along the beach — a westerly sets in"
+      ],
+      "answer": 0,
+      "why": "The afternoon sea breeze blows onshore — off a south-facing beach it comes from the south.",
+      "ref": "Sea and land breeze"
+    },
+    {
+      "id": "ic-158",
+      "topic": "weather",
+      "difficulty": 3,
+      "q": "What do these signs together suggest?",
+      "figure": {
+        "type": "card",
+        "title": "Watch log",
+        "lines": [
+          "Barometer down 7 hPa in 3 hours",
+          "High wispy cloud thickening from the west",
+          "A long swell starting to arrive"
+        ]
+      },
+      "options": [
+        "Only a light shower, then sunshine",
+        "A depression with strong wind is approaching",
+        "A local sea breeze is about to start",
+        "A settled high is building over you"
+      ],
+      "answer": 1,
+      "why": "Fast-falling pressure, thickening high cloud and a new swell all point to an approaching low.",
+      "ref": "Barometer"
+    },
+    {
+      "id": "ic-159",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "In the marina, the flag on the harbour office streams out towards the south-east. What wind is blowing?",
+      "figure": null,
+      "options": [
+        "A south-easterly",
+        "A south-westerly",
+        "A north-westerly",
+        "A north-easterly"
+      ],
+      "answer": 2,
+      "why": "A flag streams downwind, so the wind comes from the opposite side — the north-west.",
+      "ref": "Wind direction"
+    },
+    {
+      "id": "ic-160",
+      "topic": "weather",
+      "difficulty": 2,
+      "q": "Which Force on the Beaufort scale is this?",
+      "figure": {
+        "type": "panel",
+        "gauges": [
+          [
+            "True wind",
+            "24 kn",
+            false
+          ]
+        ],
+        "lines": [
+          "Steady for the last 20 minutes"
+        ]
+      },
+      "options": [
+        "Force 8",
+        "Force 4",
+        "Force 5",
+        "Force 6"
+      ],
+      "answer": 3,
+      "why": "Force 6 is 22–27 knots, a strong breeze.",
+      "ref": "Beaufort scale"
+    },
+    {
+      "id": "ic-161",
+      "topic": "aboard",
+      "difficulty": 1,
+      "q": "You are about to boil water on the galley stove. What is the right order?",
+      "figure": null,
+      "options": [
+        "Strike the match first, then open the burner",
+        "Open the burner, then look for the matches",
+        "Open all the burners, then light the one you need",
+        "Open the burner, wait a moment, then light it"
+      ],
+      "answer": 0,
+      "why": "Have the flame ready first so no unburnt gas escapes — it sinks and collects in the bilge.",
+      "ref": "Gas safety"
+    },
+    {
+      "id": "ic-162",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "You have finished cooking dinner at anchor. Besides closing the burner knob, what do you do?",
+      "figure": null,
+      "options": [
+        "Light the oven to burn off the spare gas",
+        "Turn the gas off at the solenoid or the bottle",
+        "Leave the bottle on, ready for breakfast",
+        "Just open a hatch to air the galley"
+      ],
+      "answer": 1,
+      "why": "Shutting off at the source leaves no gas in the pipe to leak out overnight.",
+      "ref": "Gas safety"
+    },
+    {
+      "id": "ic-163",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "You come down the companionway and notice this. How do you deal with it?",
+      "figure": {
+        "type": "card",
+        "title": "Below, at anchor",
+        "lines": [
+          "Faint smell of gas in the saloon",
+          "Nobody has cooked for hours",
+          "Two crew below, one asleep"
+        ]
+      },
+      "options": [
+        "Switch on the cabin fan to clear the smell",
+        "Light the stove to find where it leaks",
+        "No flames or switches, gas off, tell the skipper",
+        "Start the engine to run the blower"
+      ],
+      "answer": 2,
+      "why": "Bottled gas is heavier than air and pools low down — any spark can set it off.",
+      "ref": "Gas safety"
+    },
+    {
+      "id": "ic-164",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "The skipper asks you to cook pasta while the boat sails heeled in a lively sea. How do you set up?",
+      "figure": null,
+      "options": [
+        "Gimbals locked, no strap, oilskin trousers on",
+        "Gimbals free, no strap, swimwear on",
+        "Gimbals locked, galley strap on, shorts on",
+        "Gimbals free, galley strap on, oilskin trousers on"
+      ],
+      "answer": 3,
+      "why": "A swinging stove keeps pans level, the strap holds you, and clothing guards against scalds.",
+      "ref": "Cooking under way"
+    },
+    {
+      "id": "ic-165",
+      "topic": "aboard",
+      "difficulty": 1,
+      "q": "On your first day aboard, a guest asks what can go down the marine toilet. What do you tell them?",
+      "figure": null,
+      "options": [
+        "Only what you have eaten, plus toilet paper",
+        "Anything small enough to fit the bowl",
+        "Wet wipes, if the pack says 'flushable'",
+        "Paper towels and cotton pads as well"
+      ],
+      "answer": 0,
+      "why": "Marine heads block easily — everything else goes in the bin.",
+      "ref": "Marine heads"
+    },
+    {
+      "id": "ic-166",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "You have used the heads and pumped until the bowl looks clean. What do you do next?",
+      "figure": null,
+      "options": [
+        "Pour in some bleach and close the lid",
+        "Keep pumping a while longer to clear the pipe",
+        "Close the lid and pump again tomorrow",
+        "Stop — a clean bowl means a clear pipe"
+      ],
+      "answer": 1,
+      "why": "Waste still sits in the pipe after the bowl clears; extra strokes push it out to sea or the tank.",
+      "ref": "Marine heads"
+    },
+    {
+      "id": "ic-167",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "You need to use the heads. What do you do first?",
+      "figure": {
+        "type": "card",
+        "title": "Marina berth, evening",
+        "lines": [
+          "Moored stern-to, neighbours close by",
+          "Heads valve: set to 'overboard'",
+          "Holding tank: nearly empty"
+        ]
+      },
+      "options": [
+        "Use it, then pump extra sea water through",
+        "Use it as set — the outlet is well under water",
+        "Set the valve to the holding tank",
+        "Use it as it is — the tank is nearly empty"
+      ],
+      "answer": 2,
+      "why": "In harbour, waste goes into the holding tank, never overboard.",
+      "ref": "Marine heads"
+    },
+    {
+      "id": "ic-168",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "Under sail the skipper asks you to close the toilet seacocks after each use. Why?",
+      "figure": null,
+      "options": [
+        "So the toilet pump wears out less quickly",
+        "So the boat saves fresh water on passage",
+        "So smells from the tank stay out of the cabin",
+        "So sea water cannot siphon in and flood the boat"
+      ],
+      "answer": 3,
+      "why": "When heeled, a toilet below the waterline can siphon sea water in through open seacocks.",
+      "ref": "Marine heads"
+    },
+    {
+      "id": "ic-169",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "How do you help the water last?",
+      "figure": {
+        "type": "card",
+        "title": "Three days at anchor",
+        "lines": [
+          "Water tanks: about half full",
+          "Six crew aboard",
+          "No marina until Friday"
+        ]
+      },
+      "options": [
+        "Turn the tap off while you soap and scrub",
+        "Run the tap until the water comes out warm",
+        "Rinse the deck with fresh water each day",
+        "Shower as usual — the tanks will refill"
+      ],
+      "answer": 0,
+      "why": "With no top-up, every litre counts: tap off while soaping, rinse sparingly.",
+      "ref": "Fresh water"
+    },
+    {
+      "id": "ic-170",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "You are at anchor overnight with no shore power and the engine off. How do you help the batteries?",
+      "figure": null,
+      "options": [
+        "Leave the saloon lights on until morning",
+        "Switch off lights and chargers nobody is using",
+        "Charge all the phones and laptops overnight",
+        "Keep the fridge door open to cool the cabin"
+      ],
+      "answer": 1,
+      "why": "With no charging, the house battery only holds what you save — switch off what you don't need.",
+      "ref": "Batteries"
+    },
+    {
+      "id": "ic-171",
+      "topic": "aboard",
+      "difficulty": 1,
+      "q": "The skipper says 'stow everything, we sail in ten minutes'. Your laptop is on the saloon table. What do you do?",
+      "figure": null,
+      "options": [
+        "Move it onto the chart table instead",
+        "Leave it — the table has a raised edge",
+        "Put it in a locker or wedge it so it can't move",
+        "Put it on a cockpit seat to keep an eye on it"
+      ],
+      "answer": 2,
+      "why": "When the boat heels, anything loose flies about — and breaks or hurts someone.",
+      "ref": "Stowage"
+    },
+    {
+      "id": "ic-172",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "What do you do about the hatch?",
+      "figure": {
+        "type": "card",
+        "title": "Beating to windward",
+        "lines": [
+          "Wind F5, spray coming over the bow",
+          "Forward cabin hatch open for air",
+          "Heeling 20°"
+        ]
+      },
+      "options": [
+        "Leave it — it is cooler with air below",
+        "Close it only if a wave comes right in",
+        "Close it halfway so some air still gets in",
+        "Close it now, before water comes below"
+      ],
+      "answer": 3,
+      "why": "Hatches and portholes stay shut under way — one wave through the forehatch soaks the cabin.",
+      "ref": "Stowage"
+    },
+    {
+      "id": "ic-173",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "The skipper warns of a lumpy crossing tomorrow, and you get seasick easily. What do you do?",
+      "figure": null,
+      "options": [
+        "Take a tablet before you sail and skip the wine",
+        "Take a tablet once you start to feel sick",
+        "Stay up late so you sleep through the crossing",
+        "Eat a big greasy breakfast to settle your stomach"
+      ],
+      "answer": 0,
+      "why": "Seasickness pills work best taken in advance; alcohol and tiredness make it worse.",
+      "ref": "Seasickness"
+    },
+    {
+      "id": "ic-174",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "Halfway across, you start to feel queasy. Where is the best place for you?",
+      "figure": null,
+      "options": [
+        "At the chart table, checking the plotter",
+        "On deck in fresh air, watching the horizon",
+        "In the forward cabin, lying down",
+        "Below, reading to take your mind off it"
+      ],
+      "answer": 1,
+      "why": "Fresh air and a steady horizon help; below decks, and above all forward, the motion is worst.",
+      "ref": "Seasickness"
+    },
+    {
+      "id": "ic-175",
+      "topic": "aboard",
+      "difficulty": 2,
+      "q": "After a sail change at anchor, sheets and halyard tails lie in a tangle across the cockpit floor. What do you do?",
+      "figure": null,
+      "options": [
+        "Kick them under the cockpit table",
+        "Leave them — they will be needed tomorrow",
+        "Coil them and stow them clear of feet",
+        "Drop them over the side to trail"
+      ],
+      "answer": 2,
+      "why": "Loose lines trip people, and a line over the side can foul the propeller.",
+      "ref": "Life aboard"
+    },
+    {
+      "id": "ic-176",
+      "topic": "aboard",
+      "difficulty": 1,
+      "q": "At anchor, a guest is about to drop an empty plastic bottle over the side. What do you tell them?",
+      "figure": null,
+      "options": [
+        "Fine, if we are more than a mile offshore",
+        "Fine at night, when the beach is empty",
+        "Fine, as long as it is filled so it sinks",
+        "Keep it aboard and take it to the bins ashore"
+      ],
+      "answer": 3,
+      "why": "Plastic never goes overboard: all rubbish stays aboard until you reach bins ashore.",
+      "ref": "Rubbish"
+    },
+    {
+      "id": "ic-177",
+      "topic": "aboard",
+      "difficulty": 3,
+      "q": "Roughly how much can each person use per day?",
+      "figure": {
+        "type": "card",
+        "title": "Water check",
+        "lines": [
+          "Tanks: about 200 litres left",
+          "Six crew aboard",
+          "Three more days to the next marina"
+        ]
+      },
+      "options": [
+        "About 11 litres",
+        "About 66 litres",
+        "About 33 litres",
+        "About 3.5 litres"
+      ],
+      "answer": 0,
+      "why": "200 litres ÷ 6 people ÷ 3 days ≈ 11 litres each per day, cooking and washing included.",
+      "ref": "Fresh water"
+    },
+    {
+      "id": "ic-178",
+      "topic": "aboard",
+      "difficulty": 3,
+      "q": "With no charging, roughly how long until that is used up?",
+      "figure": {
+        "type": "card",
+        "title": "House battery",
+        "lines": [
+          "About 100 Ah usable left",
+          "Fridge: averages 4 A",
+          "Anchor light and cabin lights: 2 A"
+        ]
+      },
+      "options": [
+        "About 25 hours",
+        "About 17 hours",
+        "About 50 hours",
+        "About 6 hours"
+      ],
+      "answer": 1,
+      "why": "4 A + 2 A = 6 A; 100 Ah ÷ 6 A ≈ 17 hours.",
+      "ref": "Batteries"
+    },
+    {
+      "id": "ic-179",
+      "topic": "aboard",
+      "difficulty": 3,
+      "q": "How do you spend the next three hours?",
+      "figure": {
+        "type": "card",
+        "title": "Night passage",
+        "lines": [
+          "Watches: 3 hours on, 3 hours off",
+          "Your next watch: 00:00–03:00",
+          "21:00 — the others chat in the cockpit"
+        ]
+      },
+      "options": [
+        "Keep the helm company until your watch",
+        "Stay up with them and sleep after your watch",
+        "Go below and sleep, to be rested for midnight",
+        "Have a strong coffee so you stay awake later"
+      ],
+      "answer": 2,
+      "why": "Off watch, sleep when you can — a tired watchkeeper misses things.",
+      "ref": "Watch system"
+    },
+    {
+      "id": "ic-180",
+      "topic": "aboard",
+      "difficulty": 3,
+      "q": "What is the problem?",
+      "figure": {
+        "type": "card",
+        "title": "Stove won't light",
+        "lines": [
+          "Bottle valve in the gas locker: open",
+          "Solenoid switch on the panel: off",
+          "Burner open and match lit, no flame"
+        ]
+      },
+      "options": [
+        "The burner needs to stay open for longer",
+        "The gas locker lid has to be propped open",
+        "The bottle must be empty — change it now",
+        "The solenoid is off, so no gas reaches the stove"
+      ],
+      "answer": 3,
+      "why": "With the solenoid off no gas flows: close the burner, switch the solenoid on, then light again.",
+      "ref": "Gas safety"
+    },
+    {
+      "id": "ic-181",
+      "topic": "emergency",
+      "difficulty": 1,
+      "q": "You see a crew member fall over the side. What do you do first?",
+      "figure": null,
+      "options": [
+        "Shout 'Man overboard!' and point at them",
+        "Start the engine before anything else",
+        "Go below to wake the skipper",
+        "Jump in after them straight away"
+      ],
+      "answer": 0,
+      "why": "Raise the alarm and keep them in sight — a head in the waves is very easy to lose.",
+      "ref": "Man overboard"
+    },
+    {
+      "id": "ic-182",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "The skipper makes you the spotter while the boat turns back. What is your job?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 90,
+          "sail": true,
+          "boom": 14
+        },
+        "other": {
+          "bearing": 200,
+          "dist": 70,
+          "hdg": 0,
+          "scale": 0.3,
+          "label": "MOB"
+        },
+        "wind": 0,
+        "note": "Skipper turning the boat to come back"
+      },
+      "options": [
+        "Point once, then help with the sheets",
+        "Point at the person and never look away",
+        "Fetch the first-aid kit from below",
+        "Call the coastguard on the VHF"
+      ],
+      "answer": 1,
+      "why": "The spotter keeps eyes and an arm on the casualty until they are back alongside.",
+      "ref": "Man overboard"
+    },
+    {
+      "id": "ic-183",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Seconds after the shout of 'Man overboard!', you are next to the lifebuoy and danbuoy at the stern. What do you do?",
+      "figure": null,
+      "options": [
+        "Keep them aboard until the boat turns back",
+        "Wait for the skipper to tell you to throw",
+        "Throw them out towards the person at once",
+        "Throw them only once the person is close"
+      ],
+      "answer": 2,
+      "why": "Thrown at once, they give the casualty something to hold and mark the spot.",
+      "ref": "Man overboard"
+    },
+    {
+      "id": "ic-184",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Why do you press the MOB button on the plotter now?",
+      "figure": {
+        "type": "card",
+        "title": "Chart plotter",
+        "lines": [
+          "Big red MOB button on the screen",
+          "Someone went overboard 10 seconds ago",
+          "Buoy thrown, spotter pointing"
+        ]
+      },
+      "options": [
+        "It switches on all the deck lights",
+        "It stops the engine and the propeller",
+        "It sounds the horn to warn other boats",
+        "It marks the spot so you can steer back to it"
+      ],
+      "answer": 3,
+      "why": "The plotter saves the position where the person went in and shows the way back.",
+      "ref": "Man overboard"
+    },
+    {
+      "id": "ic-185",
+      "topic": "emergency",
+      "difficulty": 1,
+      "q": "A pan of cooking oil catches fire on the stove. What do you do?",
+      "figure": null,
+      "options": [
+        "Turn off the gas and cover it with the fire blanket",
+        "Carry the pan out to the cockpit",
+        "Throw a cup of water over the flames",
+        "Spray it with the cockpit hose"
+      ],
+      "answer": 0,
+      "why": "Smother a fat fire; water makes burning oil erupt out of the pan.",
+      "ref": "Fire"
+    },
+    {
+      "id": "ic-186",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Spilt diesel is burning in the bilge under the engine. Which do you reach for?",
+      "figure": null,
+      "options": [
+        "The deck wash hose on full",
+        "A powder extinguisher, aimed at the base",
+        "A towel to fan the flames down",
+        "A bucket of seawater thrown over it"
+      ],
+      "answer": 1,
+      "why": "Never water on a fuel fire — it spreads the burning fuel. Use powder, CO2 or foam.",
+      "ref": "Fire"
+    },
+    {
+      "id": "ic-187",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "A candle has set a bunk cushion smouldering in the forward cabin. Your friend says 'never use water on a boat fire'. Is she right here?",
+      "figure": null,
+      "options": [
+        "Yes — water is never used below decks",
+        "Yes — only powder works on cushions",
+        "No — water is fine on burning fabric",
+        "Yes — water makes any fire spread"
+      ],
+      "answer": 2,
+      "why": "Water suits solids such as fabric and wood; keep it off burning fat, fuel and wiring.",
+      "ref": "Fire"
+    },
+    {
+      "id": "ic-188",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "You go below and find this. What do you do first?",
+      "figure": {
+        "type": "card",
+        "title": "Below, under sail",
+        "lines": [
+          "Water over the saloon floorboards",
+          "Bilge alarm sounding",
+          "Skipper on deck at the helm"
+        ]
+      },
+      "options": [
+        "Bail quietly so as not to worry anyone",
+        "Call MAYDAY on the VHF straight away",
+        "Lift your bags onto the bunks to keep them dry",
+        "Tell the skipper, then help find where it comes in"
+      ],
+      "answer": 3,
+      "why": "The skipper must know at once; finding the source matters more than pumping.",
+      "ref": "Flooding"
+    },
+    {
+      "id": "ic-189",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Water is rising slowly in the bilge. You taste it: fresh, not salty. What does that suggest?",
+      "figure": null,
+      "options": [
+        "A leak from the fresh water tank or its pipes",
+        "A failed toilet seacock letting the sea in",
+        "Waves coming in through the cockpit drains",
+        "A hole in the hull below the waterline"
+      ],
+      "answer": 0,
+      "why": "Fresh water means the boat's own system is leaking, not the sea coming in.",
+      "ref": "Flooding"
+    },
+    {
+      "id": "ic-190",
+      "topic": "emergency",
+      "difficulty": 1,
+      "q": "The skipper is hurt and cannot use the radio; you must send a MAYDAY by voice. How do you set the VHF?",
+      "figure": null,
+      "options": [
+        "Channel 70, high power",
+        "Channel 16, high power",
+        "Channel 16, low power",
+        "The marina's working channel"
+      ],
+      "answer": 1,
+      "why": "Distress voice calls go on channel 16, at full power for the best range.",
+      "ref": "VHF distress"
+    },
+    {
+      "id": "ic-191",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "Under a flap on the VHF you find a red button marked DISTRESS. What does pressing and holding it do?",
+      "figure": null,
+      "options": [
+        "Turns on the strobe light at the masthead",
+        "Calls the nearest marina on its own channel",
+        "Sends an automatic alert with the boat's ID and position",
+        "Locks the radio on channel 16 for listening"
+      ],
+      "answer": 2,
+      "why": "The DSC distress button sends a digital MAYDAY alert, with the GPS position if one is connected.",
+      "ref": "VHF distress"
+    },
+    {
+      "id": "ic-192",
+      "topic": "emergency",
+      "difficulty": 3,
+      "q": "After 'MAYDAY MAYDAY MAYDAY, this is yacht ORCA…', what do you say?",
+      "figure": {
+        "type": "card",
+        "title": "You are on the radio",
+        "tag": "MAYDAY",
+        "lines": [
+          "Yacht ORCA, 4 people aboard",
+          "Skipper injured, boat taking water",
+          "Position shown on the plotter"
+        ]
+      },
+      "options": [
+        "The boat's name again, until someone answers",
+        "The time, the weather and the sea state",
+        "Your names, home port and next harbour",
+        "Position, what is wrong, help needed, people aboard"
+      ],
+      "answer": 3,
+      "why": "Where you are comes first, then the problem, the help you need and how many are aboard.",
+      "ref": "VHF distress"
+    },
+    {
+      "id": "ic-193",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "How do you look after this crew member?",
+      "figure": {
+        "type": "card",
+        "title": "Just pulled from the water",
+        "lines": [
+          "15 minutes in the sea",
+          "Shivering hard, lips blue",
+          "Awake and talking"
+        ]
+      },
+      "options": [
+        "Shelter, dry clothes, blankets, a warm sweet drink",
+        "A hot shower straight away and a brandy",
+        "Rub their arms and legs hard to warm them",
+        "Leave them in wet clothes in the wind to dry"
+      ],
+      "answer": 0,
+      "why": "Warm them gently: out of the wind, dry layers, a warm drink if alert — never alcohol.",
+      "ref": "First aid: hypothermia"
+    },
+    {
+      "id": "ic-194",
+      "topic": "emergency",
+      "difficulty": 1,
+      "q": "Boiling water from the kettle spills over a crew member's forearm. What do you do?",
+      "figure": null,
+      "options": [
+        "Spread butter or oil on it at once",
+        "Cool it under cool running water for 20 minutes",
+        "Pop the blisters so the skin can dry",
+        "Hold ice straight against the skin"
+      ],
+      "answer": 1,
+      "why": "Cool running water for 20 minutes limits the burn; then cover it loosely with cling film.",
+      "ref": "First aid: burns"
+    },
+    {
+      "id": "ic-195",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "How do you look after Anna?",
+      "figure": {
+        "type": "card",
+        "title": "Accidental gybe",
+        "lines": [
+          "The boom hit Anna on the side of the head",
+          "She says she is fine",
+          "Later: confused, asking the same thing"
+        ]
+      },
+      "options": [
+        "Put her on the helm to keep her busy",
+        "Give her painkillers and a cold beer",
+        "Keep her still, watch her and tell the skipper now",
+        "Let her sleep it off alone in her bunk"
+      ],
+      "answer": 2,
+      "why": "Confusion after a blow to the head is a sign of serious injury — she needs watching and medical advice.",
+      "ref": "First aid: head injury"
+    },
+    {
+      "id": "ic-196",
+      "topic": "emergency",
+      "difficulty": 3,
+      "q": "How do you help your friend?",
+      "figure": {
+        "type": "card",
+        "title": "Day two of a rough passage",
+        "lines": [
+          "Your friend has been sick for 12 hours",
+          "Cannot keep water down",
+          "Weak, dizzy, passing very little urine"
+        ]
+      },
+      "options": [
+        "Give her strong coffee to perk her up",
+        "Let her sleep — seasickness passes on its own",
+        "Give her a large glass of water in one go",
+        "Keep giving small sips and tell the skipper"
+      ],
+      "answer": 3,
+      "why": "Long seasickness dehydrates: small frequent sips, and the skipper may need to get medical advice.",
+      "ref": "First aid: seasickness"
+    },
+    {
+      "id": "ic-197",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "What do you do for the helmsman?",
+      "figure": {
+        "type": "card",
+        "title": "At the helm since noon",
+        "lines": [
+          "35 °C, no shade",
+          "Headache, dizzy, sweating heavily",
+          "Pale, cool and clammy skin"
+        ]
+      },
+      "options": [
+        "Shade, lie down, cool with water, sip fluids",
+        "Strong coffee, then back to the helm",
+        "Move into full sun to sweat it out",
+        "Keep steering — it will pass by evening"
+      ],
+      "answer": 0,
+      "why": "Heat exhaustion: get them cool and shaded and give fluids before it turns into heatstroke.",
+      "ref": "First aid: heat"
+    },
+    {
+      "id": "ic-198",
+      "topic": "emergency",
+      "difficulty": 2,
+      "q": "A crew member collapses in the saloon. They are unconscious but breathing normally. How do you lay them while you wait for help?",
+      "figure": null,
+      "options": [
+        "Flat on their back, head on a pillow",
+        "On their side, in the recovery position",
+        "Face down, arms by their sides",
+        "Sitting up, propped against a bunk"
+      ],
+      "answer": 1,
+      "why": "On their side the airway stays open and any vomit can drain out.",
+      "ref": "First aid"
+    },
+    {
+      "id": "ic-199",
+      "topic": "emergency",
+      "difficulty": 3,
+      "q": "A guest wants to get into the raft right now. When do you get in?",
+      "figure": {
+        "type": "card",
+        "title": "Abandon ship?",
+        "lines": [
+          "Liferaft inflated alongside",
+          "Yacht still afloat, water rising slowly",
+          "Skipper: 'not yet'"
+        ]
+      },
+      "options": [
+        "Now — a liferaft is always the safer place",
+        "Now, by jumping down into it from the deck",
+        "When the yacht is going down — step up into it",
+        "Once you have swum across to it"
+      ],
+      "answer": 2,
+      "why": "Stay aboard as long as you can: you should step up into the raft as the yacht sinks.",
+      "ref": "Liferaft"
+    },
+    {
+      "id": "ic-200",
+      "topic": "emergency",
+      "difficulty": 3,
+      "q": "In what order do you act?",
+      "figure": {
+        "type": "card",
+        "title": "Night, sailing, F4",
+        "lines": [
+          "The skipper falls over the side",
+          "Only you and one guest aboard",
+          "Lifebuoy, danbuoy, plotter MOB button"
+        ]
+      },
+      "options": [
+        "Press MOB, call MAYDAY, then throw the buoys",
+        "Call MAYDAY, then shout, then throw the buoys",
+        "Turn the boat, then shout, throw the buoys",
+        "Shout, throw the buoys, press MOB, guest points"
+      ],
+      "answer": 3,
+      "why": "Alarm, something to float on and a marked position come first — then the radio call.",
+      "ref": "Man overboard"
+    }
+  ]
+}

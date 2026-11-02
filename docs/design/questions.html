@@ -34,14 +34,15 @@
 </head>
 <body>
 <header class="vbar">
-  <span class="ttl">IYT Test · Bareboat Skipper · 100 questions</span>
+  <span class="ttl" id="ttl">IYT Test · Questions</span>
   <nav class="vtabs"><a href="flows.html">Flows</a><a href="questions.html" class="on">Questions</a></nav>
   <span class="sp"></span>
   <div class="switch" role="group" aria-label="Theme"><button type="button" data-theme-btn="day" class="on">Day</button><button type="button" data-theme-btn="night">Night</button></div>
 </header>
 <main class="qpage">
-  <div class="k">data/questions/bareboat-skipper.json · figures drawn by figures.js</div>
-  <h1>Bareboat Skipper — the bank as the student sees it</h1>
+  <div class="k"><span id="src">data/questions/bareboat-skipper.json</span> · figures drawn by figures.js · level:
+    <a href="?level=vhf-radio-operator">VHF</a> · <a href="?level=international-crew">Crew</a> · <a href="?level=flotilla-skipper">Flotilla</a> · <a href="?level=bareboat-skipper">Bareboat</a></div>
+  <h1 id="h1">Bareboat Skipper — the bank as the student sees it</h1>
   <p class="lead">Every question is a situation: what you see, what the instruments say, where the other boat is. Where the situation can be drawn it is a figure, not a paragraph. The right answer is marked; the one-line note under it is what the app shows after answering.</p>
   <div class="filters" id="filters"></div>
   <div class="qgrid" id="grid"></div>
@@ -69,9 +70,14 @@ function render() {
   document.getElementById('count').textContent = `${qs.length} questions · ${qs.filter(q => q.figure).length} with figures`;
 }
 async function load() {
-  for (const p of ['../../data/questions/bareboat-skipper.json', 'bareboat-skipper.json']) { try { const r = await fetch(p); if (r.ok) { bank = await r.json(); break; } } catch (e) {} }
+  const lv = (new URLSearchParams(location.search).get('level') || 'bareboat-skipper').replace(/[^a-z-]/g, '');
+  for (const p of [`../../data/questions/${lv}.json`, `${lv}.json`]) { try { const r = await fetch(p); if (r.ok) { bank = await r.json(); break; } } catch (e) {} }
   if (!bank) { document.getElementById('grid').innerHTML = '<p>Serve this folder over HTTP (e.g. <code>npx serve docs/design</code>) so the bank JSON can be loaded.</p>'; return; }
-  document.getElementById('filters').innerHTML = `<button data-t="all">All 100</button>` + bank.topics.map(t => `<button data-t="${t.id}">${t.title} · ${t.count}</button>`).join('') + `<span class="count" id="count"></span>`;
+  const name = bank.title.replace(/^IYT /, '');
+  document.getElementById('src').textContent = `data/questions/${lv}.json`;
+  document.getElementById('h1').textContent = `${name} — the bank as the student sees it`;
+  document.getElementById('ttl').textContent = `IYT Test · ${name} · ${bank.questions.length} questions`;
+  document.getElementById('filters').innerHTML = `<button data-t="all">All ${bank.questions.length}</button>` + bank.topics.map(t => `<button data-t="${t.id}">${t.title} · ${t.count}</button>`).join('') + `<span class="count" id="count"></span>`;
   document.getElementById('filters').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { topic = b.dataset.t; render(); } });
   render();
 }

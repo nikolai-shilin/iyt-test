@@ -28,8 +28,10 @@ docs/
     test-icons.js               test glyphs + svg()/paintIcons(), shared by the viewer and the app
 data/
   build_bank.py                 source of the Bareboat Skipper bank — edit here, then run
-  questions/bareboat-skipper.json
-  questions/bareboat-skipper.ru.json   Russian translation of the bank (overlay)
+  build_level.py                builds the other levels from bank/<level>/<topic>.json (+ .ru.json)
+  bank/<level>/<topic>.json     VHF Radio Operator, International Crew, Flotilla Skipper: 20 questions per topic
+  questions/<level>.json        the built banks the apps read
+  questions/<level>.ru.json     Russian translation of each bank (overlay)
   i18n.py                       extract strings to translate / check an overlay
 miniapp/
   index.html  app.js  app.css   the Telegram mini app (static, no framework, no backend)
@@ -102,10 +104,17 @@ Figure types: [docs/figures.md](docs/figures.md).
 
 | Level | Questions | Status |
 |---|---|---|
-| Bareboat Skipper | 100 (10 topics × 10) | done — `data/questions/bareboat-skipper.json` |
-| International Crew | 60 planned | — |
+| VHF Radio Operator | 200 (10 topics × 20) | done — `data/questions/vhf-radio-operator.json` |
+| International Crew | 200 (10 topics × 20) | done — `data/questions/international-crew.json` |
+| Flotilla Skipper | 200 (10 topics × 20) | done — `data/questions/flotilla-skipper.json` |
+| Bareboat Skipper | 1000 (10 topics × 100) | done — `data/questions/bareboat-skipper.json` |
+| ICC (International Certificate of Competency) | — | planned |
 | Yachtmaster Coastal | 120 planned | — |
 | Yachtmaster Offshore | — | 2027 |
+| Yachtmaster Ocean | — | planned |
 
-Questions are written for study and are not official IYT exam content. The exam defaults in the app (40 questions,
-60 minutes, 70 % to pass) must be verified against the current IYT exam before release.
+Order follows the [IYT course progression](https://www.iytworld.com/students/recreational/iyt-course-progression/).
+
+Questions are written for study and are not official IYT exam content. The mock-exam defaults (Bareboat and Flotilla
+Skipper 40 questions in 60 minutes, VHF and International Crew 30 in 45; 70 % to pass) must be verified against the
+current IYT exams before release.

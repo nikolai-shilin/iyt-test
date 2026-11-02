@@ -1,0 +1,435 @@
+[
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "You are the lookout on this yacht. Where is your blind spot?",
+  "a": "On the port bow, behind the genoa",
+  "o": [
+   "On the starboard bow, to windward",
+   "Abeam to starboard, by the shrouds",
+   "Straight ahead, behind the mast"
+  ],
+  "why": "The genoa hides the leeward bow — on starboard tack that is to port, so look under it often.",
+  "ref": "Lookout",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 315,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "dist": 0
+   },
+   "wind": 0,
+   "note": "Starboard tack, big genoa"
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 1,
+  "q": "You are motoring at 6 knots and keeping a careful watch ahead. How often do you look astern?",
+  "a": "Regularly — fast boats come up from behind",
+  "o": [
+   "Never — an overtaking boat must keep clear",
+   "Only when the skipper asks you to",
+   "Only at night, when lights show up"
+  ],
+  "why": "A lookout covers all round; fast ferries and RIBs overtake quickly and quietly.",
+  "ref": "Lookout",
+  "fig": null
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 1,
+  "q": "You spot this ship. How do you report it to the skipper?",
+  "a": "'Ship at three o'clock, about two miles'",
+  "o": [
+   "'Ship at nine o'clock, about two miles'",
+   "'Ship at twelve o'clock, about two miles'",
+   "'Ship at six o'clock, about two miles'"
+  ],
+  "why": "Clock bearings count from your own bow: 12 is dead ahead, 3 is abeam to starboard.",
+  "ref": "Reporting",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 90,
+    "dist": 95,
+    "hdg": 0,
+    "label": "Ship"
+   },
+   "note": "About 2 miles off"
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "You have been taking bearings of this ship. What do you tell the skipper?",
+  "a": "Bearing steady and closing — risk of collision",
+  "o": [
+   "No risk — the ship is holding a steady course",
+   "No risk while it is more than a mile away",
+   "Risk only once the bearing starts to change"
+  ],
+  "why": "A steady bearing on a vessel that is getting closer means you are on a collision course.",
+  "ref": "COLREGs Rule 7",
+  "fig": {
+   "type": "card",
+   "title": "Hand-bearing compass",
+   "lines": [
+    "Ship on the starboard bow",
+    "12:00 — 075°",
+    "12:04 — 075°",
+    "12:08 — 075°, and closer"
+   ]
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "You check a yacht three times with the compass. What do you report?",
+  "a": "Bearing changing — it should pass clear, keep watching",
+  "o": [
+   "Bearing steady — there is a risk of collision",
+   "It will hit us — the helm must tack at once",
+   "Bearings tell you nothing about the risk"
+  ],
+  "why": "A clearly changing bearing usually means you will pass clear — but keep checking until it is past.",
+  "ref": "COLREGs Rule 7",
+  "fig": {
+   "type": "card",
+   "title": "Hand-bearing compass",
+   "lines": [
+    "Yacht on the port bow",
+    "15:00 — 310°",
+    "15:05 — 296°",
+    "15:10 — 281°"
+   ]
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "You are sailing towards this boat. Who keeps clear?",
+  "a": "You do — a boat fishing comes first",
+  "o": [
+   "The trawler — power gives way to sail",
+   "Neither — both turn to starboard",
+   "The smaller of the two boats"
+  ],
+  "why": "Rule 18: a sailing vessel keeps out of the way of a vessel engaged in fishing.",
+  "ref": "COLREGs Rule 18",
+  "fig": {
+   "type": "dayshape",
+   "shape": "two-cones",
+   "sail": false,
+   "note": "Trawler towing its nets, ahead"
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "You see these lights. Which way is the vessel heading?",
+  "a": "Crossing ahead of you from right to left",
+  "o": [
+   "Crossing ahead of you from left to right",
+   "Coming straight towards you",
+   "Moving directly away from you"
+  ],
+  "why": "You see its red port side, so its bow points to your left; the white light shows it is under power.",
+  "ref": "Navigation lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 222,
+     "y": 78
+    },
+    {
+     "c": "r",
+     "x": 224,
+     "y": 120
+    }
+   ],
+   "note": "Night · on your starboard bow"
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "At night you are motoring up behind a slower yacht to overtake it. What do you see of its lights?",
+  "a": "One white light, low down",
+  "o": [
+   "A red and a green light side by side",
+   "A green light only",
+   "A white light above a red one"
+  ],
+  "why": "From astern you see only the white sternlight; the sidelights are hidden from behind.",
+  "ref": "Navigation lights",
+  "fig": null
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "You see only these two lights, close together at masthead height. What are they?",
+  "a": "A sailing yacht heading towards you",
+  "o": [
+   "A motor boat heading away from you",
+   "A yacht lying at anchor for the night",
+   "A fishing boat working its nets"
+  ],
+  "why": "A masthead tricolour: red and green together mean a sailing boat is bows-on to you.",
+  "ref": "Navigation lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 154,
+     "y": 60,
+     "r": 4
+    },
+    {
+     "c": "r",
+     "x": 166,
+     "y": 60,
+     "r": 4
+    }
+   ],
+   "note": "Night · almost dead ahead, high up"
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 1,
+  "q": "A motor boat ahead of you gives one short blast on its horn. What is it telling you?",
+  "a": "'I am altering my course to starboard'",
+  "o": [
+   "'I am altering my course to port'",
+   "'I am operating astern propulsion'",
+   "'I doubt that you are keeping clear'"
+  ],
+  "why": "Rule 34: one short blast — altering to starboard; two — to port; three — going astern.",
+  "ref": "COLREGs Rule 34",
+  "fig": null
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "You are sailing across a ferry route, holding your course. The approaching ferry sounds five short, rapid blasts. What does it mean, and what do you do?",
+  "a": "It doubts your intentions — tell the skipper now",
+  "o": [
+   "It is turning to port — carry on as you are",
+   "It is going astern — carry on as you are",
+   "It is giving way to you — carry on as you are"
+  ],
+  "why": "Rule 34(d): five or more short blasts signal doubt or a warning — act at once.",
+  "ref": "COLREGs Rule 34",
+  "fig": null
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "In the harbour, a large motor yacht leaving the quay sounds three short blasts. What is it doing?",
+  "a": "Its engines are going astern",
+  "o": [
+   "It is turning to port",
+   "It is turning to starboard",
+   "It doubts what you are doing"
+  ],
+  "why": "Rule 34: three short blasts mean 'I am operating astern propulsion'.",
+  "ref": "COLREGs Rule 34",
+  "fig": null
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "This motor boat is closing on a steady bearing. Who should keep clear?",
+  "a": "Usually the motor boat — power gives way to sail",
+  "o": [
+   "You — a boat on your starboard side has priority",
+   "Neither — both boats turn to port",
+   "Whichever boat is going faster"
+  ],
+  "why": "Rule 18: a power-driven vessel keeps out of the way of a sailing vessel, with a few exceptions.",
+  "ref": "COLREGs Rule 18",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 50,
+    "dist": 85,
+    "hdg": 270,
+    "label": "Motor boat"
+   },
+   "wind": 270,
+   "bearingLine": true,
+   "note": "Engine off, under sail"
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "You are sailing faster than a yacht ahead on the same course and slowly catching it up. Who keeps clear?",
+  "a": "You — the overtaking boat keeps clear",
+  "o": [
+   "The yacht ahead — it must let you pass",
+   "Whichever boat is on port tack",
+   "The yacht with the bigger sails"
+  ],
+  "why": "Rule 13: an overtaking vessel keeps clear, whatever its type or tack.",
+  "ref": "COLREGs Rule 13",
+  "fig": null
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 2,
+  "q": "You are motoring and this boat is coming straight at you. What should happen?",
+  "a": "Both boats turn to starboard",
+  "o": [
+   "Both boats turn to port",
+   "The smaller boat stops",
+   "You hold course; it turns"
+  ],
+  "why": "Rule 14: head-on under power, each turns to starboard and they pass port to port.",
+  "ref": "COLREGs Rule 14",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 90,
+    "hdg": 180,
+    "label": "Motor boat"
+   },
+   "bearingLine": true,
+   "note": "Both under power"
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 3,
+  "q": "Your friend says the ferry must give way because you are sailing. What do you say?",
+  "a": "No — in a narrow entrance we keep clear of it",
+  "o": [
+   "Right — power always gives way to sail",
+   "Cross quickly ahead before it speeds up",
+   "Stop in the entrance and let it go round"
+  ],
+  "why": "Rule 9: a sailing yacht must not impede a big ship that can only use a narrow channel.",
+  "ref": "COLREGs Rule 9",
+  "fig": {
+   "type": "card",
+   "title": "Harbour entrance",
+   "lines": [
+    "Big ferry leaving the narrow entrance",
+    "Little room for it to turn",
+    "You are under sail, about to cross its bow"
+   ]
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 1,
+  "q": "You are on night watch and need to check something on the chart. Which light do you use?",
+  "a": "A dim red light",
+  "o": [
+   "A bright white torch, briefly",
+   "The saloon lights, switched on fully",
+   "Your phone screen on full brightness"
+  ],
+  "why": "Red light keeps your night vision; white light can spoil it for many minutes.",
+  "ref": "Night lookout",
+  "fig": null
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 3,
+  "q": "You are watching this vessel at night. What has it done?",
+  "a": "Turned towards you — it now heads straight at you",
+  "o": [
+   "Turned away from you — it is now moving off",
+   "Stopped and dropped anchor for the night",
+   "Switched its engine off and set sail"
+  ],
+  "why": "Seeing both sidelights means its bow points at you — report it to the skipper at once.",
+  "ref": "Navigation lights",
+  "fig": {
+   "type": "card",
+   "title": "Night watch",
+   "lines": [
+    "21:10 — a white light above a green one",
+    "21:15 — a red light appears by the green",
+    "The lights are getting brighter"
+   ]
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 3,
+  "q": "You see this group of lights. What do you tell the skipper?",
+  "a": "A large ship crossing from right to left",
+  "o": [
+   "Two small boats, one behind the other",
+   "A sailing yacht heading towards you",
+   "A large ship moving away from you"
+  ],
+  "why": "Two masthead lights mean a ship over 50 m; the lower one is forward, and red is its port side.",
+  "ref": "Navigation lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 196,
+     "y": 84
+    },
+    {
+     "c": "w",
+     "x": 244,
+     "y": 62
+    },
+    {
+     "c": "r",
+     "x": 192,
+     "y": 120
+    }
+   ],
+   "note": "Night · starboard bow, far off"
+  }
+ },
+ {
+  "topic": "lookout",
+  "difficulty": 3,
+  "q": "As lookout, how do you handle this motor boat?",
+  "a": "Call the skipper now, with bearing and distance",
+  "o": [
+   "Wait until it is close enough to be sure",
+   "Say nothing — power gives way to sail",
+   "Steer away yourself without telling anyone"
+  ],
+  "why": "Report early: a steady bearing means risk of collision, and the skipper needs time to decide.",
+  "ref": "Reporting",
+  "fig": {
+   "type": "card",
+   "title": "Your watch, 14:00",
+   "lines": [
+    "Motor boat on the port bow",
+    "Bearing steady for 5 minutes",
+    "No sign of it turning",
+    "You are under sail, skipper below"
+   ]
+  }
+ }
+]

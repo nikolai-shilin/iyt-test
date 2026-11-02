@@ -1,6 +1,7 @@
 """Checks one topic file in data/bank/ before it goes into the bank.
 
-Usage: python3 data/check_topic.py <topic>
+Usage: python3 data/check_topic.py <topic>              # Bareboat Skipper, data/bank/<topic>.json (90 questions)
+       python3 data/check_topic.py <level> <topic>      # other levels, data/bank/<level>/<topic>.json (20 questions)
 Checks shape, the difficulty spread, near-duplicates (within the file and against data/build_bank.py),
 answers that stand out by length, and that every figure renders with docs/design/figures.js.
 Exit code 1 if there are errors; warnings are printed but do not fail.
@@ -24,8 +25,13 @@ def norm(s):
     return re.sub(r'[^a-z0-9 ]', '', s.lower())
 
 
-def main(topic):
-    path = os.path.join(HERE, 'bank', f'{topic}.json')
+def main(topic, level=None):
+    global WANT
+    if level:
+        WANT = 20
+        path = os.path.join(HERE, 'bank', level, f'{topic}.json')
+    else:
+        path = os.path.join(HERE, 'bank', f'{topic}.json')
     items = json.load(open(path))
     err, warn = [], []
     if len(items) != WANT:
@@ -51,12 +57,17 @@ def main(topic):
             if not isinstance(f, dict) or f.get('type') not in FIG_TYPES: err.append(f'{tag}: bad figure type {f!r:.60}')
     d = [x.get('difficulty') for x in items]
     spread = [d.count(k) for k in (1, 2, 3)]
-    if not (12 <= spread[0] <= 24 and 45 <= spread[1] <= 63 and 12 <= spread[2] <= 24):
-        err.append(f'difficulty spread {spread}, want about 18/54/18')
+    lo, hi = round(WANT * .2 * .67), round(WANT * .2 * 1.34)
+    if not (lo <= spread[0] <= hi and round(WANT * .6 * .83) <= spread[1] <= round(WANT * .6 * 1.17) and lo <= spread[2] <= hi):
+        err.append(f'difficulty spread {spread}, want about {round(WANT * .2)}/{round(WANT * .6)}/{round(WANT * .2)}')
     nfig = sum(1 for x in items if x.get('fig'))
     # near-duplicates
     texts = [norm(x['q']) for x in items]
-    base = [norm(t.replace("\\'", "'")) for t in base_questions()]
+    if level:  # the other topic files of the same level
+        base = [norm(x['q']) for f in os.listdir(os.path.dirname(path)) if f.endswith('.json') and f.count('.') == 1 and f != f'{topic}.json'
+                for x in json.load(open(os.path.join(os.path.dirname(path), f)))]
+    else:
+        base = [norm(t.replace("\\'", "'")) for t in base_questions()]
     for i, t in enumerate(texts):
         for j in range(i):
             if difflib.SequenceMatcher(None, t, texts[j]).ratio() > .82:
@@ -72,6 +83,8 @@ def main(topic):
     r = subprocess.run(['node', '-e', js, os.path.join(ROOT, 'docs', 'design', 'figures.js')], input=json.dumps(figs), capture_output=True, text=True)
     for line in (r.stdout + r.stderr).strip().splitlines():
         err.append('figure ' + line)
+    if level:
+        check_ru(path, items, err)
     print(f'{topic}: {len(items)} questions, difficulty {spread}, {nfig} with figures')
     for w in warn: print('  warn:', w)
     for e in err: print('  ERROR:', e)
@@ -79,6 +92,36 @@ def main(topic):
     sys.exit(1 if err else 0)
 
 
+def check_ru(path, items, err):
+    """The Russian file next to a topic file: same length, same shape, figure paths as i18n.figure_texts, translated."""
+    rp = path[:-5] + '.ru.json'
+    if not os.path.exists(rp):
+        err.append('no Russian file ' + os.path.basename(rp)); return
+    sys.path.insert(0, HERE)
+    from i18n import figure_texts
+    ru = json.load(open(rp))
+    if len(ru) != len(items):
+        err.append(f'ru: {len(ru)} entries for {len(items)} questions'); return
+    for i, (x, r) in enumerate(zip(items, ru)):
+        tag = f'ru #{i + 1}'
+        if set(r) - {'q', 'a', 'o', 'why', 'ref', 'fig'} or not all(r.get(k) for k in ('q', 'a', 'o', 'why', 'ref')):
+            err.append(f'{tag}: keys {sorted(r)}, want q a o why ref fig'); continue
+        if not isinstance(r['o'], list) or len(r['o']) != 3: err.append(f'{tag}: need exactly 3 wrong options')
+        if not re.search('[а-яё]', r['q'], re.I): err.append(f'{tag}: q is not in Russian')
+        if r['q'] == x['q'] or r['why'] == x['why']: err.append(f'{tag}: untranslated')
+        want, got = set(figure_texts(x['fig'])), set(r.get('fig') or {})
+        if want != got: err.append(f'{tag}: figure paths {sorted(got)}, want {sorted(want)}')
+
+
 if __name__ == '__main__':
-    if len(sys.argv) != 2 or sys.argv[1] not in TOPICS: sys.exit('usage: check_topic.py <' + '|'.join(TOPICS) + '>')
-    main(sys.argv[1])
+    a = sys.argv[1:]
+    if len(a) == 2:
+        sys.path.insert(0, HERE)
+        from build_level import LEVELS
+        if a[0] not in LEVELS or a[1] not in [t[0] for t in LEVELS[a[0]]['topics']]:
+            sys.exit('usage: check_topic.py <level> <topic> — levels and topics are in data/build_level.py')
+        main(a[1], a[0])
+    elif len(a) == 1 and a[0] in TOPICS:
+        main(a[0])
+    else:
+        sys.exit('usage: check_topic.py <' + '|'.join(TOPICS) + '>  or  check_topic.py <level> <topic>')

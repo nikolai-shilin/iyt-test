@@ -1,0 +1,434 @@
+[
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "Tomorrow's forecast for your area is northwest force 7. What does that mean for your 12 m charter yacht?",
+  "a": "Near gale, 28–33 kn — stay in harbour",
+  "o": [
+   "Moderate breeze, 11–16 kn — full sail",
+   "Fresh breeze, 17–21 kn — one reef",
+   "Strong breeze, 22–27 kn — two reefs"
+  ],
+  "why": "Force 7 is a near gale, 28–33 knots: more than a flotilla boat should go out in.",
+  "ref": "Beaufort scale",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "Your flotilla is in the Cyclades in August and the lead crew warns of the Meltemi. Where will it blow from?",
+  "a": "From the north",
+  "o": [
+   "From the south",
+   "From the west",
+   "From the east"
+  ],
+  "why": "The Meltemi is the Aegean's summer northerly: NE in the north, N in the Cyclades, NW in the Dodecanese.",
+  "ref": "Meltemi",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "This is tomorrow's forecast chart, and you are where the boat is drawn. What wind do you expect?",
+  "a": "Strong wind — the isobars are packed close",
+  "o": [
+   "Light wind — you are near the centre of the low",
+   "Light wind — close isobars mean a calm area",
+   "No change — isobars show pressure, not wind"
+  ],
+  "why": "The closer together the isobars, the stronger the wind.",
+  "ref": "Isobars",
+  "fig": {
+   "type": "isobars",
+   "center": "L",
+   "tight": true,
+   "values": [
+    "992",
+    "996",
+    "1000"
+   ],
+   "boat": [
+    205,
+    150,
+    0
+   ],
+   "note": "Forecast chart for tomorrow"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are in a remote Ionian anchorage with no phone signal. How do you get tomorrow's official forecast?",
+  "a": "Listen to the coast station's VHF broadcasts or read NAVTEX",
+  "o": [
+   "Call the coastguard on channel 16 and ask for it",
+   "Read the barometer and the clouds — that is enough",
+   "Use yesterday's forecast — it covers three days"
+  ],
+  "why": "Coast stations broadcast forecasts and warnings on VHF at set times; NAVTEX prints them aboard.",
+  "ref": "Forecast sources",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You must make this leg today. When do you go?",
+  "a": "At first light, to arrive before midday",
+  "o": [
+   "After lunch, once the wind has settled",
+   "In the late afternoon, when the peak has passed",
+   "At midday, when the morning breeze has gone"
+  ],
+  "why": "The Meltemi is usually lightest in the early morning and strongest in the afternoon.",
+  "ref": "Meltemi",
+  "fig": {
+   "type": "card",
+   "title": "Meltemi forecast",
+   "lines": [
+    "Morning: N 4",
+    "Afternoon: N 6, locally 7",
+    "Your leg: 15 M north to the next island"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "Your crew hopes it will blow itself out overnight. How do you plan?",
+  "a": "Expect it to last — sheltered legs only, or stay put",
+  "o": [
+   "Go at dawn — it always dies after one day",
+   "Go tomorrow afternoon, once it has peaked",
+   "Go now — it will only get worse later"
+  ],
+  "why": "A Meltemi often blows for days: plan on the forecast, not on hope, and ask the lead crew for a sheltered route.",
+  "ref": "Meltemi",
+  "fig": {
+   "type": "card",
+   "title": "Cyclades, late July",
+   "lines": [
+    "Meltemi set in yesterday: N 6–7",
+    "Forecast: the same for 3 more days",
+    "Plan: open crossing north tomorrow"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "It is a calm, sunny July morning in the Ionian. What wind do you plan on for the afternoon?",
+  "a": "A northwest breeze, building to about force 4",
+  "o": [
+   "Calm all day — sunny days bring no wind",
+   "A south wind, building through the night",
+   "A gale — a calm morning comes before a storm"
+  ],
+  "why": "In summer the Ionian's northwesterly builds from late morning and dies away around sunset.",
+  "ref": "Local winds",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are anchored off a beach on a hot, settled day. In the early afternoon a breeze sets in from the sea. What does it mean for you?",
+  "a": "It blows onshore — the beach is now a lee shore",
+  "o": [
+   "It blows offshore — the beach gives you shelter",
+   "It will die within minutes — sea breezes are brief",
+   "A front is coming — expect rain by evening"
+  ],
+  "why": "On hot days the sea breeze blows from sea to land, putting boats off a beach on a lee shore until evening.",
+  "ref": "Sea breezes",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are choosing where to anchor for the night in this bay. Where do you go?",
+  "a": "B — well clear of the valley mouth",
+  "o": [
+   "A — right off the valley, closest to the beach",
+   "Either — the gusts hit the whole bay equally",
+   "Mid-bay, as far from the land as you can"
+  ],
+  "why": "At night gusts pour down valleys off high land; anchor away from the valley mouth.",
+  "ref": "Gusts off high land",
+  "fig": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V70 C280 75 250 60 225 30 L205 30 C185 70 150 90 100 85 C60 82 30 95 0 100 Z",
+   "spots": [
+    [
+     215,
+     70,
+     "A"
+    ],
+    [
+     95,
+     118,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     215,
+     22,
+     "valley",
+     "middle"
+    ],
+    [
+     100,
+     40,
+     "high hills",
+     "middle"
+    ]
+   ],
+   "note": "Pilot book: violent gusts down the valley at night"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "The cloud will reach you before you reach harbour. What do you do with the sails now?",
+  "a": "Reef or drop sail now, before the squall arrives",
+  "o": [
+   "Keep full sail and race the cloud to harbour",
+   "Wait for the first gust, then decide",
+   "Head out to sea, away from the lightning"
+  ],
+  "why": "Thunderstorms bring sudden violent squalls; reduce sail before they hit, not during.",
+  "ref": "Thunderstorms & squalls",
+  "fig": {
+   "type": "card",
+   "title": "Late afternoon, August",
+   "lines": [
+    "Tall dark cloud building over the mainland",
+    "Thunder heard, the cloud is coming your way",
+    "4 M to harbour, full sail set"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are anchored here for the night. What does the forecast mean for you?",
+  "a": "The wind swings into the open west — move before dark",
+  "o": [
+   "The wind swings to the east — better shelter still",
+   "Nothing — veering changes only the wind's strength",
+   "It falls calm — veering means the wind dies away"
+  ],
+  "why": "Veering is a clockwise shift: south to west turns this bay into a lee shore.",
+  "ref": "Wind shifts",
+  "fig": {
+   "type": "bay",
+   "wind": 180,
+   "land": "M60 0 H320 V200 H60 C90 185 140 150 230 145 C250 120 250 80 230 55 C140 50 90 15 60 0 Z",
+   "spots": [
+    [
+     195,
+     100,
+     "•"
+    ]
+   ],
+   "labels": [
+    [
+     176,
+     104,
+     "your anchorage",
+     "end"
+    ],
+    [
+     30,
+     104,
+     "open sea",
+     "middle"
+    ]
+   ],
+   "note": "Forecast: S 4, veering W 5 tonight"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are in harbour planning tomorrow's leg. What do these readings suggest?",
+  "a": "A low is approaching — expect the wind to rise",
+  "o": [
+   "A high is building — settled weather to come",
+   "A normal daily swing — nothing to note",
+   "The wind will drop — a falling glass means calm"
+  ],
+  "why": "A steady fall of 1 hPa an hour with thickening cloud points to a low and stronger wind.",
+  "ref": "Barometer",
+  "fig": {
+   "type": "card",
+   "title": "Barometer log",
+   "lines": [
+    "08:00   1014 hPa",
+    "11:00   1011 hPa",
+    "14:00   1008 hPa",
+    "Sky: high cloud thickening from the west"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You read the wind instrument before slipping your lines. How do you set up the boat?",
+  "a": "Force 5 — take in a reef before you go",
+  "o": [
+   "Force 3 — shake out every reef, full sail",
+   "Force 7 — stay in harbour, a near gale",
+   "Force 9 — stay in and double the lines"
+  ],
+  "why": "18 kn mean is force 5 (17–21 kn); reef in harbour, not out in the gusts.",
+  "ref": "Beaufort scale",
+  "fig": {
+   "type": "card",
+   "title": "Wind instrument at the quay",
+   "lines": [
+    "Mean 18 kn, gusts 23 kn",
+    "Your leg: 12 M on a beam reach",
+    "Crew: two who have sailed before"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Tomorrow's chart puts you here, under this pattern. What do you plan for the day?",
+  "a": "Light winds — plan to motor part of the way",
+  "o": [
+   "A gale — stay in harbour all day",
+   "Strong winds — reef before you leave",
+   "Thunderstorms — a high always brings them"
+  ],
+  "why": "Widely spaced isobars round a high mean light winds; allow time and fuel for motoring.",
+  "ref": "Isobars",
+  "fig": {
+   "type": "isobars",
+   "center": "H",
+   "values": [
+    "1024",
+    "1020",
+    "1016"
+   ],
+   "boat": [
+    160,
+    140,
+    0
+   ],
+   "note": "Forecast chart for tomorrow"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You are deciding whether to sail today. What do you choose?",
+  "a": "Stay in harbour — it is too much for this crew",
+  "o": [
+   "Leave now under full sail to beat the rise",
+   "Leave at midday, once the wind has peaked",
+   "Leave now and reef only when it reaches 7"
+  ],
+  "why": "14 M upwind takes over four hours, into force 6–7 with a new crew: the safe call is to stay.",
+  "ref": "Go / no-go decision",
+  "fig": {
+   "type": "card",
+   "title": "Forecast at 07:00",
+   "lines": [
+    "Now: NW 5",
+    "By midday: NW 6–7",
+    "Your leg: 14 M, all upwind",
+    "Crew: first week sailing"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "The forecast reads: 'Northwest 4 to 5, locally 6.' Your route rounds a high cape and goes through a channel between islands. What do you expect there?",
+  "a": "Force 6 in places — round capes and in channels",
+  "o": [
+   "Force 6 only at night, when the land cools",
+   "Force 6 only far offshore, out of sight of land",
+   "Force 6 for a few minutes in every hour"
+  ],
+  "why": "'Locally' means stronger in places — typically where the wind is squeezed round capes and between islands.",
+  "ref": "Reading a forecast",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "The marine forecast gives 'wind 15 knots, gusts 25 knots' for your afternoon leg. What do you set your sails for?",
+  "a": "The 25 kn gusts, not the 15 kn mean",
+  "o": [
+   "The 15 kn mean — gusts pass quickly",
+   "Full sail — gusts are only felt at anchor",
+   "A reef for 15 kn, shaken out in the gusts"
+  ],
+  "why": "Your sail plan must cope with the gusts, and 25 kn is already force 6.",
+  "ref": "Gusts",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are sailing with the VHF on channel 16 and hear a SÉCURITÉ call announcing a gale warning on another channel. What do you do?",
+  "a": "Switch to the channel given and listen to the warning",
+  "o": [
+   "Reply on 16 to confirm you have heard it",
+   "Ignore it — gale warnings are for ships",
+   "Wait for the full warning to be read on 16"
+  ],
+  "why": "SÉCURITÉ is announced on 16 and read out on a working channel: switch over, listen, then go back to 16.",
+  "ref": "Forecast sources",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "Your crew prefers the phone app. Which forecast do you plan on?",
+  "a": "The official one — plan for force 6–7",
+  "o": [
+   "The app — it is more detailed for your spot",
+   "An average of the two — plan for force 5",
+   "The app, unless the barometer starts to fall"
+  ],
+  "why": "Plan on the official forecast and warnings, and on the worse of two forecasts that disagree.",
+  "ref": "Forecast sources",
+  "fig": {
+   "type": "card",
+   "title": "Two forecasts for tomorrow",
+   "lines": [
+    "Phone app: W 3, sunny",
+    "National met service: NW 6, locally 7",
+    "NAVTEX: warning, NW 7 in your area"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "Your crew says nothing can blow from a sky like this. Are they right?",
+  "a": "No — the Meltemi blows hard under clear skies",
+  "o": [
+   "Yes — strong wind always comes with cloud",
+   "Yes — a steady barometer means light winds",
+   "Only if the barometer starts to fall later"
+  ],
+  "why": "The Meltemi is a fair-weather wind: clear sky, steady barometer, and still force 6–7.",
+  "ref": "Meltemi",
+  "fig": {
+   "type": "card",
+   "title": "Paros, early August",
+   "lines": [
+    "Sky clear blue, not a cloud",
+    "Barometer steady, not falling",
+    "Forecast: N 6–7, Aegean"
+   ]
+  }
+ }
+]

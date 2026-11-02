@@ -1,0 +1,390 @@
+[
+ {
+  "topic": "distress",
+  "difficulty": 1,
+  "q": "Does this situation justify a MAYDAY?",
+  "a": "Yes — grave and imminent danger to boat and crew",
+  "o": [
+   "No — not until the crew has to abandon ship",
+   "No — first ask the coastguard if it qualifies",
+   "Only if another vessel is in sight to help"
+  ],
+  "why": "MAYDAY is for grave and imminent danger needing immediate help — an uncontrolled fire is exactly that.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "Fire aboard",
+   "lines": [
+    "Engine-bay fire, spreading fast",
+    "Both extinguishers used, no effect",
+    "Four crew, 8 miles offshore"
+   ],
+   "tag": "Now"
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 1,
+  "q": "Your yacht Blue Dolphin is sinking and you pick up the microphone on channel 16. How does your distress call begin?",
+  "a": "MAYDAY ×3, THIS IS, Blue Dolphin ×3",
+  "o": [
+   "THIS IS, Blue Dolphin ×3, then MAYDAY ×3",
+   "MAYDAY once, THIS IS, Blue Dolphin once",
+   "ALL STATIONS ×3, THIS IS, Blue Dolphin ×3"
+  ],
+  "why": "Distress call: MAYDAY three times, THIS IS, the boat's name three times (with call sign or MMSI).",
+  "ref": "Distress call",
+  "fig": null
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "You have said MAYDAY three times and THIS IS Blue Dolphin three times, with your call sign. What do you say next?",
+  "a": "MAYDAY, Blue Dolphin, then your position",
+  "o": [
+   "Your problem first, then your position",
+   "Number of people aboard, then position",
+   "OVER, and wait for a reply first"
+  ],
+  "why": "The message opens with MAYDAY and the name once more; position comes first — rescuers need it most.",
+  "ref": "Distress message",
+  "fig": null
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "In which order do you give these four items in your message?",
+  "a": "Position, distress, help, persons",
+  "o": [
+   "Persons, position, distress, help",
+   "Distress, help, position, persons",
+   "Position, persons, help, distress"
+  ],
+  "why": "Order: position, nature of distress, assistance required, persons on board, then other useful information.",
+  "ref": "Distress message",
+  "fig": {
+   "type": "card",
+   "title": "Your MAYDAY message",
+   "lines": [
+    "Persons: five aboard",
+    "Position: 2 miles S of Poros",
+    "Distress: holed, taking water fast",
+    "Help: need pumps and a tow"
+   ]
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "Your plotter has died and you will give your position relative to something on the chart. Which reference do you choose?",
+  "a": "A charted lighthouse or headland nearby",
+  "o": [
+   "The nearest anchored yacht you can see",
+   "The name of the beach taverna ashore",
+   "The marina you left this morning"
+  ],
+  "why": "Bearing and distance must be from a charted point that rescuers can find on their own chart.",
+  "ref": "Distress message",
+  "fig": null
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "You read this off the plotter for your MAYDAY. How do you say the position on air?",
+  "a": "Latitude first, then longitude, N and E",
+  "o": [
+   "Longitude first, then latitude, E and N",
+   "Latitude only — that is enough at sea",
+   "Rounded to whole degrees: 38 N 24 E"
+  ],
+  "why": "Position by coordinates: latitude first, then longitude, each with N/S or E/W.",
+  "ref": "Distress message",
+  "fig": {
+   "type": "card",
+   "title": "Plotter screen",
+   "lines": [
+    "LAT 37°38.4' N",
+    "LON 023°55.2' E",
+    "SOG 0.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 1,
+  "q": "Is a MAYDAY the right call?",
+  "a": "No — there is no grave and imminent danger",
+  "o": [
+   "Yes — any engine failure at sea is distress",
+   "Yes — but sent on low power only",
+   "Yes — if you cannot reach port by dark"
+  ],
+  "why": "No grave and imminent danger, no MAYDAY: sail on, or ask for help with a lower-priority call.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "Engine won't start",
+   "lines": [
+    "Wind F2, sea calm",
+    "5 miles offshore, open water",
+    "Sails working, nobody hurt"
+   ]
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "You have sent your MAYDAY on 16 and, after listening for a while, nobody answers. What do you do?",
+  "a": "Repeat it, and use other means: flares, EPIRB",
+  "o": [
+   "Wait a full hour before calling again",
+   "Move to channel 6 and call only there",
+   "Stop transmitting to save the battery"
+  ],
+  "why": "An unanswered MAYDAY is repeated; meanwhile raise the alarm by every other means you have.",
+  "ref": "Distress procedure",
+  "fig": null
+ },
+ {
+  "topic": "distress",
+  "difficulty": 1,
+  "q": "After your MAYDAY you hear: \"MAYDAY Blue Dolphin, this is Olympia Radio, RECEIVED MAYDAY\". What does it tell you?",
+  "a": "Your distress call has been received",
+  "o": [
+   "Your call was unclear — send it again",
+   "You must now downgrade to PAN-PAN",
+   "Olympia Radio is calling another vessel"
+  ],
+  "why": "RECEIVED MAYDAY is the acknowledgement: your distress has been heard and help is being organised.",
+  "ref": "Distress acknowledgement",
+  "fig": null
+ },
+ {
+  "topic": "distress",
+  "difficulty": 3,
+  "q": "Nobody else seems to be responding to this call. What do you do on the radio now?",
+  "a": "Send a MAYDAY RELAY on 16 for Selene",
+  "o": [
+   "Acknowledge Selene and keep to your course",
+   "Keep silent — it is not your distress",
+   "Call Selene on channel 6 to check first"
+  ],
+  "why": "A MAYDAY that nobody acknowledges, when you cannot help yourself: relay it with MAYDAY RELAY.",
+  "ref": "MAYDAY RELAY",
+  "fig": {
+   "type": "card",
+   "title": "Heard on 16",
+   "lines": [
+    "MAYDAY from yacht Selene: sinking",
+    "No coast station has answered",
+    "Selene is 30 miles off — too far for you"
+   ],
+   "tag": "5 min"
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "You are relaying another yacht's distress from your own yacht, Aura. How does your call begin?",
+  "a": "MAYDAY RELAY ×3, THIS IS, Aura ×3",
+  "o": [
+   "MAYDAY ×3, THIS IS, the other yacht ×3",
+   "MAYDAY RELAY ×3, THIS IS, the other yacht ×3",
+   "PAN-PAN ×3, THIS IS, Aura ×3"
+  ],
+  "why": "A relay opens MAYDAY RELAY three times, then THIS IS and your own name — never pose as the casualty.",
+  "ref": "MAYDAY RELAY",
+  "fig": null
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "You are sure this was a distress signal. Which radio call do you send?",
+  "a": "MAYDAY RELAY, with what you saw and where",
+  "o": [
+   "MAYDAY in your own boat's name",
+   "PAN-PAN, as you do not know her name",
+   "Nothing until you know who fired it"
+  ],
+  "why": "A vessel in distress that cannot call for herself: you send a MAYDAY RELAY on her behalf.",
+  "ref": "MAYDAY RELAY",
+  "fig": {
+   "type": "card",
+   "title": "Night watch",
+   "lines": [
+    "Red parachute flare, 4 miles east",
+    "Nothing heard on channel 16",
+    "No other vessel in sight"
+   ]
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "Before you step into the raft, what do you do about the VHF radios?",
+  "a": "Take the handheld into the raft with you",
+  "o": [
+   "Stay below on the fixed set to the end",
+   "Leave the handheld — it won't work in a raft",
+   "Leave the handheld aboard, still calling"
+  ],
+  "why": "A handheld in the raft lets you talk to rescuers as they close in.",
+  "ref": "Abandon ship",
+  "fig": {
+   "type": "card",
+   "title": "Abandoning ship",
+   "lines": [
+    "Liferaft inflated alongside",
+    "Fixed VHF below, water rising",
+    "Waterproof handheld, charged"
+   ]
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 3,
+  "q": "The anchor will not hold again in time. Which call do you make, and when?",
+  "a": "MAYDAY now — the danger is grave and imminent",
+  "o": [
+   "PAN-PAN now, MAYDAY once she hits the rocks",
+   "A routine call to the marina for a tow",
+   "Wait — try to re-anchor first, then call"
+  ],
+  "why": "Do not wait for the impact: grave and imminent danger means MAYDAY now.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "Lee shore",
+   "lines": [
+    "Engine dead, anchor dragging",
+    "Rocks 400 m downwind",
+    "Six aboard, no room to sail off"
+   ],
+   "tag": "F7"
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "Which call do you make?",
+  "a": "MAYDAY — a person in the water is in grave danger",
+  "o": [
+   "PAN-PAN — the yacht itself is not in danger",
+   "No call until you have searched for an hour",
+   "SÉCURITÉ asking boats to keep a lookout"
+  ],
+  "why": "A person overboard and lost from sight is in grave and imminent danger: MAYDAY.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "Crew overboard",
+   "lines": [
+    "Lost sight of her in the waves",
+    "Wind F5, water 18 °C",
+    "Searching under engine"
+   ],
+   "tag": "Night"
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "The skipper is unconscious, the boat is on fire, and you have no radio certificate. May you send the MAYDAY?",
+  "a": "Yes — anyone aboard may send a distress call",
+  "o": [
+   "No — only a certificate holder may transmit",
+   "Only with the owner's consent by phone",
+   "Only from the handheld, not the fixed set"
+  ],
+  "why": "In distress anyone may use the radio; the certificate rule never stops a MAYDAY.",
+  "ref": "Distress procedure",
+  "fig": null
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "The coast station is handling your MAYDAY for a fire, but you have now put the fire out and need no help. What do you do?",
+  "a": "Tell the coast station at once that you need no help",
+  "o": [
+   "Say nothing — the coastguard will work it out",
+   "Switch the radio off to keep 16 clear",
+   "Send a SÉCURITÉ saying that you are safe"
+  ],
+  "why": "Rescuers keep coming until told: tell the station controlling the distress that you are safe.",
+  "ref": "Distress procedure",
+  "fig": null
+ },
+ {
+  "topic": "distress",
+  "difficulty": 3,
+  "q": "Which important items are missing from this message?",
+  "a": "Help needed and number of persons aboard",
+  "o": [
+   "The skipper's name and home port",
+   "The time and the weather at the scene",
+   "Destination and last port of call"
+  ],
+  "why": "A distress message gives position, nature of distress, assistance required and persons on board.",
+  "ref": "Distress message",
+  "fig": {
+   "type": "card",
+   "title": "Overheard MAYDAY",
+   "lines": [
+    "MAYDAY ×3, this is Aura ×3",
+    "MAYDAY Aura, 2 miles south of Poros",
+    "Hit a rock, sinking fast",
+    "OVER"
+   ]
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 3,
+  "q": "With no GPS fix, you use the lighthouse to find your place. How do you report your position in the MAYDAY?",
+  "a": "150° from the lighthouse, 4 miles",
+  "o": [
+   "330° from the lighthouse, 4 miles",
+   "4 miles from the lighthouse, no bearing",
+   "Your last GPS fix, an hour old"
+  ],
+  "why": "Bearing is given FROM the landmark: the reciprocal of your bearing to it (330° − 180° = 150°).",
+  "ref": "Distress message",
+  "fig": {
+   "type": "chart",
+   "land": "M95 42 Q130 16 176 34 Q188 60 160 76 Q120 82 100 66 Z",
+   "marks": [
+    [
+     150,
+     60,
+     "w",
+     "Lt"
+    ]
+   ],
+   "boat": [
+    200,
+    147,
+    270
+   ],
+   "panel": [
+    "GPS lost",
+    "Light 330° T",
+    "Range about 4 M"
+   ],
+   "note": "Bearing from your boat to the light"
+  }
+ },
+ {
+  "topic": "distress",
+  "difficulty": 2,
+  "q": "You have just finished giving your MAYDAY message. How do you end it, and then what?",
+  "a": "Say OVER, then listen on 16 for an answer",
+  "o": [
+   "Say OUT, then switch off to save power",
+   "Say OVER, then change to a working channel",
+   "Repeat it at once, without listening"
+  ],
+  "why": "End with OVER and listen: the coast station or a nearby vessel will acknowledge on 16.",
+  "ref": "Distress procedure",
+  "fig": null
+ }
+]

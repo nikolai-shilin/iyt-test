@@ -1,0 +1,375 @@
+[
+ {
+  "topic": "deck",
+  "difficulty": 1,
+  "q": "You are putting the genoa sheet on this winch. Which way do the turns go round the drum?",
+  "a": "Clockwise",
+  "o": [
+   "Anticlockwise",
+   "Clockwise to port, anticlockwise to starboard",
+   "Either way: the drum turns both ways"
+  ],
+  "why": "Yacht winches turn clockwise only, so the sheet goes on clockwise.",
+  "ref": "Winches",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     70,
+     86,
+     "genoa sheet"
+    ],
+    [
+     250,
+     90,
+     "tail"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "deck",
+  "difficulty": 1,
+  "q": "You have finished winding in the genoa sheet. What do you do with the winch handle?",
+  "a": "Take it out and put it in its pocket",
+  "o": [
+   "Leave it in the winch for next time",
+   "Leave it in, turned to point aft",
+   "Lay it on the cockpit seat nearby"
+  ],
+  "why": "A handle left in the winch fouls sheets and people, and is easily knocked overboard.",
+  "ref": "Winches",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 1,
+  "q": "You have motored out of the harbour and the sails are going up. What do you do with the fenders?",
+  "a": "Take them in and stow them",
+  "o": [
+   "Leave them out for the next harbour",
+   "Lower them to touch the water",
+   "Tie them up higher on the guardrail"
+  ],
+  "why": "Fenders hanging at sea bang the hull and get lost; bring them in once clear of the harbour.",
+  "ref": "Fenders",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 1,
+  "q": "Coming alongside, you stand by with the bow line coiled. When do you get off onto the pontoon?",
+  "a": "When the boat is close and nearly stopped, by stepping",
+  "o": [
+   "As soon as you can jump the gap",
+   "When the bow first touches the pontoon",
+   "Before the boat slows, to save time"
+  ],
+  "why": "Step, never jump: a jump can end between the boat and the pontoon.",
+  "ref": "Coming alongside",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "A crew member is winding the winch and you are tailing. What is your job?",
+  "a": "Keep steady tension on the tail as it comes off",
+  "o": [
+   "Hold the tail loosely so it can slip",
+   "Push the turns down the drum with your hand",
+   "Let go of the tail whenever they pause"
+  ],
+  "why": "Without tension on the tail the sheet slips on the drum and the winding is wasted.",
+  "ref": "Winches",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "This winch is a self-tailer. How do you load the sheet so you can wind with both hands?",
+  "a": "A few turns clockwise, then into the jaws on top",
+  "o": [
+   "One turn anticlockwise, then into the jaws",
+   "Straight into the jaws with no turns",
+   "Turns clockwise, then cleat the tail below"
+  ],
+  "why": "The turns grip the drum; the jaws on top hold the tail, so no one needs to tail.",
+  "ref": "Winches",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     70,
+     86,
+     "sheet"
+    ],
+    [
+     160,
+     50,
+     "self-tailing jaws"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "Winding in the genoa sheet, you see this, and the sheet will neither come in nor ease. What do you do?",
+  "a": "Stop, keep your hands clear and call the skipper",
+  "o": [
+   "Keep winding: it will free itself",
+   "Pull the crossed turns off by hand",
+   "Take the handle out and spin the drum back"
+  ],
+  "why": "A riding turn locks a loaded sheet; fingers near the drum can be trapped.",
+  "ref": "Riding turn",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     80,
+     86,
+     "loaded"
+    ],
+    [
+     160,
+     170,
+     "turns crossed on the drum"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "The skipper asks you to ease the loaded genoa sheet a little. How do you do it?",
+  "a": "Ease the tail out slowly, fingers clear of the turns",
+  "o": [
+   "Take all the turns off and hold the tail",
+   "Wind the winch handle backwards",
+   "Wrap the tail once round your hand for grip"
+  ],
+  "why": "A loaded sheet can jerk, and fingers near the drum get pulled into the turns.",
+  "ref": "Winches",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "You are getting the fenders ready for tonight's berth. Where do you hang them?",
+  "a": "Both sides, at the widest part, level with the neighbours' hulls",
+  "o": [
+   "At the stern only, low down by the water",
+   "At the bow only, to protect the anchor",
+   "One side only, the side the wind comes from"
+  ],
+  "why": "Stern-to, your sides lie against the yachts next to you, so the fenders go on both sides.",
+  "ref": "Fenders",
+  "fig": {
+   "type": "card",
+   "title": "Stern-to tonight",
+   "lines": [
+    "Town quay, Med mooring",
+    "Yachts already berthed on both sides",
+    "Quay about 1 m above the water"
+   ]
+  }
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "The skipper points at your fenders as you come in. What do you change?",
+  "a": "Lower them to where the pontoon will touch the hull",
+  "o": [
+   "Nothing: at deck level they guard the rail",
+   "Raise them higher, to the top of the rail",
+   "Take them in: a pontoon is soft"
+  ],
+  "why": "Fenders hang where the hull meets the pontoon edge, here close to the water.",
+  "ref": "Fenders",
+  "fig": {
+   "type": "card",
+   "title": "Coming alongside",
+   "lines": [
+    "Low floating pontoon, 0.3 m high",
+    "Your fenders hang at deck level",
+    "Skipper: \"Check the fenders!\""
+   ]
+  }
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "Alongside, the skipper asks you to rig a spring from the bow cleat. Where does it lead ashore?",
+  "a": "Aft along the quay, to a bollard near the stern",
+  "o": [
+   "Straight across, to the nearest bollard",
+   "Forward along the quay, ahead of the bow",
+   "Back to the boat's own stern cleat"
+  ],
+  "why": "A spring runs diagonally: from the bow it leads aft, from the stern it leads forward.",
+  "ref": "Mooring lines",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "Med mooring, you have walked the lazy line up to the bow cleat. What do you do before making it fast?",
+  "a": "Haul it in hard until it is taut, then cleat it",
+  "o": [
+   "Leave some slack so the boat can swing",
+   "Pass it back to the marinero to hold",
+   "Cleat it slack: it is only a back-up"
+  ],
+  "why": "The lazy line does the anchor's job: pulled taut, it holds the bow off and the stern clear of the quay.",
+  "ref": "Med mooring",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "You are at the stern as the boat backs in. What do you do?",
+  "a": "Put a loose fender in the gap and keep your hands out",
+  "o": [
+   "Push the boat off the quay with your foot",
+   "Hold the stern off with both hands",
+   "Jump onto the quay and push the boat off"
+  ],
+  "why": "Never put hands or feet between boat and quay: tonnes of boat will crush them.",
+  "ref": "Coming alongside",
+  "fig": {
+   "type": "card",
+   "title": "Stern-to, the last metre",
+   "lines": [
+    "The stern swings towards the quay corner",
+    "No fender hangs at that spot",
+    "You are standing at the stern"
+   ]
+  }
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "The tender is towed astern on a long painter, and the skipper is about to reverse into a berth. What do you do with the painter?",
+  "a": "Shorten it or bring the tender alongside, clear of the prop",
+  "o": [
+   "Let it out longer so the tender trails clear",
+   "Leave it: going astern, the tender drifts away",
+   "Hand it to the helm to hold while reversing"
+  ],
+  "why": "Going astern the boat runs over a slack painter, and it can wrap round the propeller.",
+  "ref": "Dinghy",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "Before leaving, the skipper asks you to rig the stern line as a slip line, so you can let it go from on board. What do you do?",
+  "a": "Lead it round the bollard and back, both ends cleated aboard",
+  "o": [
+   "Tie a second line to the same bollard",
+   "Put two cleat hitches on the boat's cleat",
+   "Tie a bowline round the bollard instead"
+  ],
+  "why": "With both ends aboard, you let one end go and pull the line back round the bollard.",
+  "ref": "Mooring lines",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 2,
+  "q": "The tender is alongside and the crew are climbing down into it. When do you untie the painter?",
+  "a": "Last, when everyone is in and seated",
+  "o": [
+   "First, so it is ready to go",
+   "When the first person is in",
+   "Before boarding, then hold it by hand"
+  ],
+  "why": "While the painter is tied on, the tender cannot drift off as people climb in.",
+  "ref": "Dinghy",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 3,
+  "q": "You are helping the skipper clear a riding turn. What is the next step?",
+  "a": "Winch in the spare line, then clear the slack turns",
+  "o": [
+   "Cut the jammed sheet, as it is backed up",
+   "Wind the jammed winch harder to free it",
+   "Untie the spare line now it has gripped"
+  ],
+  "why": "The spare line takes the load; only an unloaded sheet can be unwound safely.",
+  "ref": "Riding turn",
+  "fig": {
+   "type": "card",
+   "title": "Riding turn",
+   "lines": [
+    "Genoa sheet jammed on the winch",
+    "Spare line tied on with a rolling hitch",
+    "Spare line led to the other winch"
+   ]
+  }
+ },
+ {
+  "topic": "deck",
+  "difficulty": 3,
+  "q": "The wind pushes the boat along the quay. Which lines take the strain?",
+  "a": "The stern line and the spring led aft from the bow",
+  "o": [
+   "The bow line and the spring led forward from the stern",
+   "Only the bow line, as the boat moves forward",
+   "All four lines share the load equally"
+  ],
+  "why": "Lines leading aft from the boat stop it moving forward: the stern line and the spring from the bow.",
+  "ref": "Mooring lines",
+  "fig": {
+   "type": "card",
+   "title": "Alongside, starboard side-to",
+   "lines": [
+    "Strong wind from astern",
+    "The boat is pushed forward along the quay",
+    "Lines: bow, stern and two springs"
+   ]
+  }
+ },
+ {
+  "topic": "deck",
+  "difficulty": 3,
+  "q": "Coming alongside, you are to step ashore with a line. Where on deck do you step off from?",
+  "a": "By the shrouds, where the boat is widest and closest",
+  "o": [
+   "Right at the bow, as it arrives first",
+   "From the bathing platform at the stern",
+   "From the coachroof, for extra height"
+  ],
+  "why": "At the shrouds the boat is widest and steadiest, and there is something to hold as you step.",
+  "ref": "Coming alongside",
+  "fig": null
+ },
+ {
+  "topic": "deck",
+  "difficulty": 3,
+  "q": "Which stern line do you pass ashore first?",
+  "a": "The port one, on the windward side",
+  "o": [
+   "The starboard one, on the leeward side",
+   "Both together, one in each hand",
+   "Whichever is nearer the marinero"
+  ],
+  "why": "The windward line stops the stern blowing downwind onto the neighbours.",
+  "ref": "Med mooring",
+  "fig": {
+   "type": "card",
+   "title": "Reversing stern-to",
+   "lines": [
+    "Crosswind from port, 15 kn",
+    "Two stern lines ready, one each side",
+    "Marinero waiting on the quay"
+   ]
+  }
+ }
+]

@@ -1,0 +1,345 @@
+[
+ {
+  "topic": "dsc",
+  "difficulty": 1,
+  "q": "What do the first three figures of this MMSI, 237, tell a rescue centre?",
+  "a": "The country where the yacht is registered",
+  "o": [
+   "The type and size of the vessel",
+   "The sea area the yacht is sailing in",
+   "The year the radio was installed"
+  ],
+  "why": "The first three figures are the MID, the country code of the ship's flag.",
+  "ref": "MMSI",
+  "fig": {
+   "type": "card",
+   "title": "Charter yacht Aurora",
+   "lines": [
+    "MMSI 237012340",
+    "Flag: Greece"
+   ]
+  }
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 1,
+  "q": "You are looking through your DSC directory. Which of these numbers belongs to a coast station?",
+  "a": "002371000",
+  "o": [
+   "023712340",
+   "237012340",
+   "237100000"
+  ],
+  "why": "A coast station MMSI starts with 00; a group MMSI with a single 0; a ship's with its MID.",
+  "ref": "MMSI",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 1,
+  "q": "You buy a DSC handheld and the shop asks for the MMSI to programme it. How many figures will it have?",
+  "a": "Nine",
+  "o": [
+   "Seven",
+   "Eleven",
+   "Six"
+  ],
+  "why": "Every MMSI has nine figures.",
+  "ref": "MMSI",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 1,
+  "q": "Your DSC set has no GPS connected and no position has been entered. If you send a distress alert, what will be missing?",
+  "a": "Your position",
+  "o": [
+   "Your MMSI",
+   "The word distress",
+   "Your flag country"
+  ],
+  "why": "Without a GPS feed or a manual position, the alert says who you are but not where.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "A guest on your charter yacht wants to put \"his own MMSI\" into the radio for the week. What do you tell him?",
+  "a": "No — the MMSI belongs to the yacht and its radio licence",
+  "o": [
+   "Yes — the MMSI belongs to whoever is skipper aboard",
+   "Yes, but only for the length of the charter",
+   "Yes, if he also changes the yacht's call sign"
+  ],
+  "why": "An MMSI is issued to the vessel with its ship radio licence, not to a person.",
+  "ref": "MMSI",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "You know your friend's MMSI and want to call her yacht by DSC for a chat. What do you do?",
+  "a": "Individual call to her MMSI, proposing 72; talk on 72",
+  "o": [
+   "All-ships call proposing 72, then talk on 72",
+   "Individual call to her MMSI, then talk on 70",
+   "Group call to her MMSI, then talk on 16"
+  ],
+  "why": "A routine individual call goes to one MMSI and proposes an intership channel for the voice part.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "Your friend's set acknowledges your DSC call, which proposed channel 72. What happens next?",
+  "a": "Both sets go to 72 and you talk by voice",
+  "o": [
+   "You carry on the chat as DSC text on 70",
+   "Both sets go to 16 and you talk there",
+   "You must now call her again by voice on 16"
+  ],
+  "why": "After the acknowledgement both sets switch to the proposed channel for the voice call.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "Your set rings and shows this. What do you do?",
+  "a": "Go to 72 (the set may switch itself) and listen for the lead",
+  "o": [
+   "Ignore it — group calls are only used for tests",
+   "Reply to the lead by voice on channel 70",
+   "Call the lead on 16 to ask what it is about"
+  ],
+  "why": "A group call reaches every set with that group MMSI and sends them all to the proposed channel.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "DSC: incoming call",
+   "lines": [
+    "GROUP CALL to your flotilla",
+    "From: the lead boat",
+    "Category: ROUTINE · channel 72"
+   ]
+  }
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "You want to ask the boats around you whether anyone has a spare impeller. Should you send an all-ships DSC call?",
+  "a": "No — all-ships DSC calls are kept for emergencies and safety",
+  "o": [
+   "Yes — an all-ships routine call is the right tool",
+   "Yes, as long as you select low power first",
+   "Yes, if you propose channel 16 for the replies"
+  ],
+  "why": "All-ships DSC calls are for distress, urgency and safety; routine calls go to one MMSI or a group.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "Before leaving harbour you see this on the DSC set. What do you do?",
+  "a": "Switch on the GPS feed, or enter the position by hand",
+  "o": [
+   "Nothing — the MMSI tells rescuers where you are",
+   "Test the link by pressing the distress button",
+   "Move the DSC watch from channel 70 to 16"
+  ],
+  "why": "A distress alert carries your position only if the set has a GPS feed or an up-to-date manual entry.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "DSC display",
+   "lines": [
+    "NO POSITION · NO TIME",
+    "Plotter switched off at the breaker"
+   ]
+  }
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "You have decided to send a DSC distress alert. How do you work the red button?",
+  "a": "Lift the cover, then press and hold it for about 5 seconds",
+  "o": [
+   "Press it once briefly, like a doorbell",
+   "Hold it down while you speak the MAYDAY",
+   "Press it three times quickly in a row"
+  ],
+  "why": "The distress button sits under a cover and must be held for a few seconds, which prevents accidents.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "You are about to send a DSC distress alert and have a minute to spare. How do you use it on the set?",
+  "a": "Select \"Flooding\" as the nature of distress, then send",
+  "o": [
+   "Enter the coastguard's MMSI, then send",
+   "Choose an intership channel, then send",
+   "Select \"All ships, routine\", then send"
+  ],
+  "why": "If there is time, choose the nature of distress from the menu so rescuers know what to bring.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "Holed below the waterline",
+   "lines": [
+    "Water coming in faster than the pumps",
+    "Crew in lifejackets",
+    "About a minute before you must act"
+   ]
+  }
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "No acknowledgement has arrived yet. What is the set doing, and where should you be listening?",
+  "a": "It repeats the alert by itself; you stay on 16",
+  "o": [
+   "It has given up; you resend the alert by hand",
+   "It waits on 70; you speak your MAYDAY there",
+   "It has stopped DSC; you call for help on 72"
+  ],
+  "why": "A DSC set repeats a distress alert every few minutes until acknowledged, and sits on 16 for voice.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "DSC display",
+   "lines": [
+    "DISTRESS ALERT SENT",
+    "Waiting for acknowledgement",
+    "Next repeat in 3:58 · CH 16"
+   ]
+  }
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "You are deep in a chat on 72 with dual watch switched off. Will your fixed DSC set still receive a distress alert?",
+  "a": "Yes — it keeps a separate watch on channel 70",
+  "o": [
+   "No — DSC only works while the set is on 16",
+   "No — only if dual watch includes channel 70",
+   "Only if the alert comes from a coast station"
+  ],
+  "why": "A fixed DSC set has its own receiver that listens on 70 whatever voice channel you use.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "You want to check that your DSC works before a passage. How do you test it?",
+  "a": "Send an individual call to a friend's MMSI and see it arrive",
+  "o": [
+   "Send a distress alert, then cancel it at once",
+   "Make an all-ships call proposing channel 72",
+   "Call your friend by voice on channel 70"
+  ],
+  "why": "Test DSC with a routine individual call; never test with the distress button.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 2,
+  "q": "There is no time to choose anything from the menu: you lift the cover and hold the button. What does the alert carry?",
+  "a": "An undesignated distress, with your MMSI and position",
+  "o": [
+   "Nothing — it will not go without a nature chosen",
+   "Only your position, without your MMSI",
+   "A routine call to the nearest coast station"
+  ],
+  "why": "Sent straight from the button, the alert goes as undesignated distress with your MMSI and position.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 3,
+  "q": "What do you do now?",
+  "a": "Cancel it on the set if it can, then tell all stations on 16",
+  "o": [
+   "Switch the radio off and say nothing more",
+   "Wait for the coastguard to call you first",
+   "Send a second alert to cancel the first"
+  ],
+  "why": "Cancel a false alert by DSC where the set allows, then by voice to all stations on 16.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "False alert",
+   "lines": [
+    "A child pressed the red button",
+    "Display: DISTRESS ALERT SENT",
+    "No emergency aboard"
+   ],
+   "tag": "2 min ago"
+  }
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 3,
+  "q": "Your DSC set sent a false distress alert at 1420 UTC. Which voice message do you send on 16?",
+  "a": "\"All stations ×3, this is Aurora, MMSI and position, cancel my distress alert of 1420 UTC\"",
+  "o": [
+   "\"MAYDAY ×3, this is Aurora, MMSI and position, our MAYDAY of 1420 UTC is cancelled\"",
+   "\"PAN-PAN ×3, this is Aurora, MMSI and position, our alert of 1420 UTC was a mistake\"",
+   "\"SÉCURITÉ ×3, this is Aurora, MMSI and position, disregard our alert of 1420 UTC\""
+  ],
+  "why": "A false alert is cancelled to ALL STATIONS with your name, MMSI, position and the time of the alert.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 3,
+  "q": "Your set sounds an alarm and shows this. What do you do first?",
+  "a": "Silence the alarm, note the details, listen on 16",
+  "o": [
+   "Acknowledge the alert by DSC straight away",
+   "Relay the alert by DSC to all ships at once",
+   "Call the yacht by voice on channel 70"
+  ],
+  "why": "Note the alert and listen on 16; acknowledging a DSC distress alert is normally left to the coast station.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "DSC: DISTRESS received",
+   "lines": [
+    "From MMSI 271043210",
+    "Nature: FLOODING",
+    "36°50′N 027°20′E at 10:12 UTC"
+   ]
+  }
+ },
+ {
+  "topic": "dsc",
+  "difficulty": 3,
+  "q": "What does this mean, and what do you do?",
+  "a": "No DSC call or alert can go out; have the base fix it before you sail",
+  "o": [
+   "Alerts still go, just without a name; sail as planned",
+   "Enter any nine figures yourself so the button works",
+   "Use the flotilla's group MMSI as your own for the week"
+  ],
+  "why": "Without the yacht's MMSI a DSC set cannot send calls or alerts; the base must programme it.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "Check-out at the charter base",
+   "lines": [
+    "DSC display: MMSI NOT SET",
+    "GPS connected, position shown",
+    "You sail for a week tomorrow"
+   ]
+  }
+ }
+]

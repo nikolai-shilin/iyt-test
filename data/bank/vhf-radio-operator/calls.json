@@ -1,0 +1,315 @@
+[
+ {
+  "topic": "calls",
+  "difficulty": 1,
+  "q": "You want to call the yacht Blue Star. Which call is correctly built?",
+  "a": "\"Blue Star, Blue Star, Blue Star, this is Aurora, Aurora, Aurora, OVER\"",
+  "o": [
+   "\"Aurora, Aurora, Aurora, calling Blue Star, Blue Star, OVER\"",
+   "\"Blue Star, this is Aurora, please answer, OVER AND OUT\"",
+   "\"Hello Blue Star, it's Aurora here, do you read me? Over\""
+  ],
+  "why": "The station called first (up to three times), then THIS IS and your own name, then OVER.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 1,
+  "q": "You have finished talking to the marina and need no reply. How do you end your last transmission?",
+  "a": "OUT",
+  "o": [
+   "OVER AND OUT",
+   "OVER",
+   "OVER, STANDING BY"
+  ],
+  "why": "OVER asks for a reply, OUT ends the exchange; the two never go together.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 1,
+  "q": "You switch to 72 to call a friend and hear two other boats in the middle of a conversation. What do you do?",
+  "a": "Wait until they finish, then make your call",
+  "o": [
+   "Make your call at once — 72 is open to all",
+   "Break in with BREAK, BREAK and then call",
+   "Call your friend on 16 and stay there to talk"
+  ],
+  "why": "Always listen before you transmit and never talk over a conversation in progress.",
+  "ref": "Radio discipline",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 1,
+  "q": "From your berth you want to call the fuel dock, 200 m across the marina. The set is on 25 W. What do you do first?",
+  "a": "Switch to low power, 1 W — it is plenty at this range",
+  "o": [
+   "Leave it on 25 W, so they hear you clearly",
+   "Leave it on 25 W, but keep the call very short",
+   "Switch to dual watch so you hear their reply"
+  ],
+  "why": "In port use 1 W: it reaches the dock without blocking the channel for boats further away.",
+  "ref": "Radio discipline",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "On 16 you hear: \"Aurora, this is Blue Star, OVER\" in reply to your call. What do you say next?",
+  "a": "\"Blue Star, this is Aurora, channel seven two, OVER\"",
+  "o": [
+   "\"Blue Star, this is Aurora, we are anchoring tonight in…\"",
+   "Nothing — just switch to 72 and wait for them there",
+   "\"Blue Star, this is Aurora, channel seven zero, OVER\""
+  ],
+  "why": "Once contact is made on 16, propose an intership working channel and move there to talk.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "Blue Star has agreed to move to 72. You switch over. What do you do there?",
+  "a": "Listen a moment, then call: \"Blue Star, this is Aurora, OVER\"",
+  "o": [
+   "Start your message at once without calling them",
+   "Wait in silence until Blue Star calls you first",
+   "Call \"All stations, this is Aurora\" so they find you"
+  ],
+  "why": "On the new channel, check it is free, then call the station again before your message.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "You want a berth for tonight. How do you make the first call?",
+  "a": "On the marina's channel: \"Vega Marina, this is Aurora, OVER\"",
+  "o": [
+   "On 16, giving your whole request in one transmission",
+   "On 70 by voice, as marinas keep watch on it",
+   "On 72: \"Any marina staff, this is Aurora, OVER\""
+  ],
+  "why": "Call a marina on its own working channel with a short call; the request follows once it answers.",
+  "ref": "VHF procedure",
+  "fig": {
+   "type": "card",
+   "title": "Arriving at Vega Marina",
+   "lines": [
+    "Pilot book lists the marina's VHF channel",
+    "You are 1 mile off the entrance",
+    "Radio set to 1 W"
+   ]
+  }
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "You call the marina on its working channel and get no answer. What do you do?",
+  "a": "Wait a few minutes before you call again",
+  "o": [
+   "Call again straight away, a little louder",
+   "Keep calling every 15 seconds until they answer",
+   "Call them by voice on 70 to get attention"
+  ],
+  "why": "Leave a gap of a few minutes between calls; non-stop calling blocks the channel.",
+  "ref": "Radio discipline",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "The marina answers your call. What do you say?",
+  "a": "Your request in one short message: boat, length, nights",
+  "o": [
+   "The whole story first, so they see why you need it",
+   "Nothing yet — wait for them to ask each detail",
+   "Your request on 16 instead, so others hear it too"
+  ],
+  "why": "Keep calls short and to the point so others can use the channel.",
+  "ref": "Radio discipline",
+  "fig": {
+   "type": "card",
+   "title": "Marina channel, a busy evening",
+   "lines": [
+    "Three yachts waiting to call",
+    "You: Aurora, 12 m, one night",
+    "Marina: \"Aurora, this is Vega Marina, OVER\""
+   ]
+  }
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "The marina asks you to pay in advance for the berth. Your crew starts to read the credit card number over the radio. What do you do?",
+  "a": "Stop him — anyone listening can hear it; pay in the office",
+  "o": [
+   "Let him, as long as he spells it phonetically",
+   "Let him, but switch to low power, 1 W, first",
+   "Let him, but on a duplex channel, which is private"
+  ],
+  "why": "VHF is open to everyone in range; never give card numbers or other private data on air.",
+  "ref": "Radio discipline",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "You hear: \"Aurora, Aurora, this is Blue Star, OVER\". How do you answer?",
+  "a": "\"Blue Star, this is Aurora, OVER\"",
+  "o": [
+   "\"Aurora here, go ahead, OVER AND OUT\"",
+   "\"This is Aurora, Aurora, Aurora, OUT\"",
+   "\"Blue Star, Blue Star, Aurora receiving\""
+  ],
+  "why": "Answer with the caller's name, THIS IS, your name and OVER.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "You have just asked the marina whether they have a berth for a 12 m yacht. How do you end this transmission?",
+  "a": "OVER — you are waiting for their answer",
+  "o": [
+   "OUT — the marina will answer when ready",
+   "OVER AND OUT — to be extra clear",
+   "Just release the button and say nothing"
+  ],
+  "why": "End every transmission that needs a reply with OVER so the other station knows to speak.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "You proposed 72 to Blue Star. They reply: \"Aurora, this is Blue Star, seven seven, OVER\". What do you do?",
+  "a": "Reply \"seven seven\", switch to 77 and call them there",
+  "o": [
+   "Insist on 72, since you proposed it first",
+   "Stay on 16 and talk there until you agree",
+   "Go to 72 anyway and wait for them there"
+  ],
+  "why": "The called station may propose another channel; agree it briefly and move.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "At anchor, the children ask to play with the handheld and call each other on 16. What do you say?",
+  "a": "No — 16 must be kept clear and the radio is not a toy",
+  "o": [
+   "Yes, as long as the handheld is on low power",
+   "Yes, as long as each call is kept short",
+   "Yes, but on channel 70 rather than 16"
+  ],
+  "why": "Channel 16 must stay free for distress and calling; needless transmissions are not allowed.",
+  "ref": "Radio discipline",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "The marina ends with: \"…we will meet you at the fuel dock, OUT\". What do you do?",
+  "a": "Nothing more — the exchange is over; go back to watching 16",
+  "o": [
+   "Reply \"Vega Marina, this is Aurora, OUT\"",
+   "Reply \"Received, OVER\" and wait for an answer",
+   "Reply \"OVER AND OUT\" to close it properly"
+  ],
+  "why": "OUT means the exchange is finished; no reply is expected.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 2,
+  "q": "Entering harbour, you hear: \"Yacht entering harbour, this is Port Authority, state your name and intentions, OVER\". How do you answer?",
+  "a": "\"Port Authority, this is Aurora, mooring at the town quay, OVER\"",
+  "o": [
+   "\"Port Authority, this is Aurora, standing by, OUT\"",
+   "\"Received, Aurora entering harbour, OVER AND OUT\"",
+   "\"All stations, this is Aurora, mooring at the quay, OUT\""
+  ],
+  "why": "Answer the station that called you, give what it asked for and end with OVER.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 3,
+  "q": "Which line of this exchange breaks radio procedure?",
+  "a": "Line 4",
+  "o": [
+   "Line 1",
+   "Line 2",
+   "Line 3"
+  ],
+  "why": "OVER asks for a reply and OUT ends the exchange; \"OVER AND OUT\" contradicts itself.",
+  "ref": "VHF procedure",
+  "fig": {
+   "type": "card",
+   "title": "Your call to the marina",
+   "lines": [
+    "1 You: Vega Marina ×3, this is Aurora, OVER",
+    "2 Marina: Aurora, this is Vega Marina, OVER",
+    "3 You: a berth for one night, 12 m, OVER",
+    "4 You: thanks, see you soon, OVER AND OUT"
+   ]
+  }
+ },
+ {
+  "topic": "calls",
+  "difficulty": 3,
+  "q": "What is the sensible next step?",
+  "a": "Try again later, when you are closer to the marina",
+  "o": [
+   "Keep calling every minute until someone answers",
+   "Send a PAN-PAN so the marina takes notice",
+   "Ask all stations on 16 to pass your request on"
+  ],
+  "why": "No reply at long range usually means out of range or busy; call again nearer, not more often.",
+  "ref": "Radio discipline",
+  "fig": {
+   "type": "card",
+   "title": "Calling ahead for a berth",
+   "lines": [
+    "Marina 18 miles ahead, behind a cape",
+    "Two calls 10 minutes apart: no reply",
+    "Power 25 W, radio check fine this morning"
+   ]
+  }
+ },
+ {
+  "topic": "calls",
+  "difficulty": 3,
+  "q": "In a crowded bay a motor yacht is dropping its anchor across your chain. You do not know its name. How do you call it?",
+  "a": "\"Motor yacht anchoring north of me in Vathi Bay, this is Aurora, OVER\"",
+  "o": [
+   "\"All stations, all stations, this is Aurora, a boat is on my chain, OVER\"",
+   "\"PAN-PAN ×3, motor yacht in Vathi Bay, you are over my chain, OVER\"",
+   "\"Hello, the boat anchoring now, are you there? Aurora, OVER AND OUT\""
+  ],
+  "why": "If you do not know a vessel's name, identify it by type and position instead.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "calls",
+  "difficulty": 3,
+  "q": "Blue Star agreed on 16 to move to 72. On 72 you call them twice, a minute apart, with no reply. What do you do?",
+  "a": "Go back to 16 and call them once more",
+  "o": [
+   "Keep calling on 72 every few seconds",
+   "Call them by voice on 70 instead",
+   "Wait on 72 in silence for an hour"
+  ],
+  "why": "If the other station does not appear on the working channel, return to where you last had contact.",
+  "ref": "VHF procedure",
+  "fig": null
+ }
+]

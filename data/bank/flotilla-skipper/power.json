@@ -1,0 +1,369 @@
+[
+ {
+  "topic": "power",
+  "difficulty": 1,
+  "q": "You engage astern from rest. Which way does the stern kick?",
+  "a": "To port",
+  "o": [
+   "To starboard",
+   "Neither — she backs straight",
+   "Towards the nearer pontoon"
+  ],
+  "why": "A right-handed propeller walks the stern to port when going astern.",
+  "ref": "Prop walk",
+  "fig": {
+   "type": "card",
+   "title": "Charter yacht, 12 m",
+   "lines": [
+    "Right-handed propeller",
+    "Calm, no wind, no current"
+   ]
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "You must turn the boat round in this fairway. Which way do you turn?",
+  "a": "To starboard — prop walk astern helps",
+  "o": [
+   "To port — prop walk astern helps",
+   "Either way — prop walk has no effect",
+   "To port — the rudder works best that way"
+  ],
+  "why": "Astern, a right-handed prop kicks the stern to port, which swings the bow to starboard.",
+  "ref": "Prop walk",
+  "fig": {
+   "type": "card",
+   "title": "Tight marina fairway",
+   "lines": [
+    "About two boat lengths wide",
+    "Right-handed propeller",
+    "Light wind"
+   ]
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "Leaving the pontoon, you steer to starboard to move away. What does your stern do?",
+  "a": "Swings to port, towards the pontoon",
+  "o": [
+   "Swings to starboard, away from it",
+   "Stays put; only the bow moves",
+   "Follows the bow out to starboard"
+  ],
+  "why": "Going ahead a boat pivots well forward, so the stern swings the opposite way to the bow.",
+  "ref": "Pivot point",
+  "fig": {
+   "type": "card",
+   "title": "Leaving along the pontoon",
+   "lines": [
+    "Pontoon close on your port side",
+    "Moving slowly ahead"
+   ]
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 1,
+  "q": "You are drifting almost stopped, engine in neutral, and turn the wheel hard over. Why does the boat not turn?",
+  "a": "No water is flowing past the rudder",
+  "o": [
+   "The rudder only works in reverse",
+   "The wheel must turn twice as far",
+   "The keel stops her turning at rest"
+  ],
+  "why": "A rudder steers only when water flows over it — from boat speed or prop wash.",
+  "ref": "Steering",
+  "fig": null
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "You are stopped in a marina and want the bow to swing to starboard without gathering speed. What do you do?",
+  "a": "Wheel to starboard, short burst ahead",
+  "o": [
+   "Wheel to starboard, steady slow astern",
+   "Wheel amidships, long burst ahead",
+   "Wheel to port, short burst ahead"
+  ],
+  "why": "Prop wash over the turned rudder swings the boat before she picks up way.",
+  "ref": "Prop wash",
+  "fig": null
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "You are reversing down the fairway when the wheel suddenly spins out of your hand and the boat swerves. What should you have done?",
+  "a": "Held the wheel firmly and gone slower",
+  "o": [
+   "Let the wheel centre itself",
+   "Gone astern faster to steer better",
+   "Locked the wheel with the autopilot"
+  ],
+  "why": "Going astern the rudder tries to slam over; hold the wheel firmly and keep the speed low.",
+  "ref": "Steering astern",
+  "fig": null
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "You slow right down in this fairway. What does the bow do?",
+  "a": "Blows off downwind, to port",
+  "o": [
+   "Turns up into the wind, to starboard",
+   "Holds straight — the keel stops it",
+   "Stays put while the stern blows off"
+  ],
+  "why": "At low speed the high bow catches more wind than the keel can resist, so it blows off downwind.",
+  "ref": "Windage",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "dist": 0
+   },
+   "wind": 90,
+   "note": "Slowing down in the fairway"
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 1,
+  "q": "You are about to come alongside the fuel berth. How fast do you approach?",
+  "a": "No faster than you'd want to hit it",
+  "o": [
+   "Fast, then full astern at the last moment",
+   "At cruising speed, to keep steering",
+   "Any speed — the fenders take the knock"
+  ],
+  "why": "Approach at a speed you could accept hitting at — slow, with just enough way to steer.",
+  "ref": "Coming alongside",
+  "fig": null
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "You use the bow thruster to push the bow off the pontoon. How do you use it?",
+  "a": "In short bursts, with pauses between",
+  "o": [
+   "Held on until you are well clear",
+   "Only at cruising speed, to help a turn",
+   "Switched rapidly left and right"
+  ],
+  "why": "Bow thrusters overheat and cut out if run for long; use short bursts.",
+  "ref": "Bow thruster",
+  "fig": null
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "You reverse out of this berth. How do you start?",
+  "a": "Gently astern, letting the rudder take over",
+  "o": [
+   "A hard burst astern to get out quickly",
+   "Wheel hard over first, then full astern",
+   "Ahead first, to swing the stern to port"
+  ],
+  "why": "Prop walk is strongest from rest at high revs; go gently so way builds and the rudder steers.",
+  "ref": "Prop walk",
+  "fig": {
+   "type": "card",
+   "title": "Bow-in finger berth",
+   "lines": [
+    "Neighbour close on your port side",
+    "Right-handed propeller",
+    "No wind"
+   ]
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 3,
+  "q": "You can lie either side of this pontoon and will stop with a touch of astern. Which side do you choose?",
+  "a": "Port side to — astern pulls the stern in",
+  "o": [
+   "Starboard side to — astern pulls the stern in",
+   "Port side to — astern pushes the stern out",
+   "Either — prop walk only acts from rest"
+  ],
+  "why": "Going astern to stop, a right-handed prop walks the stern to port — onto a port-side berth.",
+  "ref": "Prop walk",
+  "fig": {
+   "type": "card",
+   "title": "Fuel pontoon, Gouvia",
+   "lines": [
+    "Free on both sides",
+    "Right-handed propeller",
+    "Calm"
+   ]
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "A boat is leaving a berth ahead and you must wait in this fairway. How do you hold position?",
+  "a": "Head to wind, with short bursts ahead",
+  "o": [
+   "In neutral, letting her drift",
+   "Beam-on to the wind, in neutral",
+   "Circling the fairway at cruising speed"
+  ],
+  "why": "Head to wind the bow cannot blow off, and short bursts ahead hold you in place.",
+  "ref": "Holding station",
+  "fig": {
+   "type": "card",
+   "title": "Waiting to enter",
+   "lines": [
+    "Wind F4 straight down the fairway",
+    "Boats moored on both sides",
+    "Fairway about 25 m wide"
+   ]
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "You are coming alongside here. How do you approach?",
+  "a": "At a steeper angle, getting a line on fast",
+  "o": [
+   "Parallel, stopping off to drift in",
+   "Stern first, with plenty of speed",
+   "Very slowly, in neutral from far out"
+  ],
+  "why": "When the wind blows you off, come in at a steeper angle and get the bow line on quickly.",
+  "ref": "Coming alongside",
+  "fig": {
+   "type": "card",
+   "title": "Coming alongside",
+   "lines": [
+    "Pontoon on your port side",
+    "Wind F4 blowing off the pontoon"
+   ]
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 3,
+  "q": "You are reversing slowly down this fairway with the wind on your port beam. What do you expect?",
+  "a": "The stern swings to port, into the wind",
+  "o": [
+   "The stern swings to starboard, downwind",
+   "She backs straight; the two cancel out",
+   "The bow swings to port, into the wind"
+  ],
+  "why": "The bow blows off downwind and prop walk kicks the stern to port: both swing the stern to port.",
+  "ref": "Prop walk / windage",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "dist": 0
+   },
+   "wind": 270,
+   "note": "Going astern · right-handed propeller"
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 1,
+  "q": "You are motoring slowly ahead and need to go astern. How do you shift?",
+  "a": "Pause in neutral, then engage astern",
+  "o": [
+   "Straight from ahead into astern",
+   "Stop the engine, then restart astern",
+   "Rev up in neutral, then go astern"
+  ],
+  "why": "A pause in neutral lets the propeller slow down and saves the gearbox.",
+  "ref": "Gear changes",
+  "fig": null
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "You are turning to starboard in your own length. After the short burst ahead, what comes next?",
+  "a": "Neutral, short burst astern, wheel unchanged",
+  "o": [
+   "A long burst astern to build sternway",
+   "Wheel to port, then full ahead",
+   "Engine off — let the wind finish it"
+  ],
+  "why": "Short bursts ahead and astern turn her in her own length; prop walk astern adds to the turn.",
+  "ref": "Turning in a tight space",
+  "fig": null
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "Coming into your berth, a gust pushes you off line towards a neighbour's bow. What do you do?",
+  "a": "Abort, motor clear and try again",
+  "o": [
+   "Push on faster to force your way in",
+   "Fend off with a foot between boats",
+   "Stop there and wait for the gust to pass"
+  ],
+  "why": "If an approach goes wrong, go round again — never fend off with hands or feet.",
+  "ref": "Berthing under power",
+  "fig": null
+ },
+ {
+  "topic": "power",
+  "difficulty": 2,
+  "q": "Going astern at 2 knots, you want the stern to move to starboard. Which way do you turn the wheel?",
+  "a": "To starboard — the stern follows the wheel",
+  "o": [
+   "To port — the stern goes against the wheel",
+   "Amidships, and wait for prop walk",
+   "Either way — it makes no difference astern"
+  ],
+  "why": "With a wheel, going astern the stern moves the way you turn the wheel.",
+  "ref": "Steering astern",
+  "fig": null
+ },
+ {
+  "topic": "power",
+  "difficulty": 3,
+  "q": "Your crew want to motor in fast \"so the wind can't push us about\". What is your call?",
+  "a": "Just enough speed to steer, no more",
+  "o": [
+   "Fast, to be through before it acts",
+   "Dead slow in neutral, drifting through",
+   "Cruising speed, thruster on all the way"
+  ],
+  "why": "Too slow and the wind takes the bow; too fast and you cannot stop — keep just steerage way.",
+  "ref": "Boat handling in wind",
+  "fig": {
+   "type": "card",
+   "title": "Entering the marina",
+   "lines": [
+    "Fresh crosswind, F5",
+    "Narrow fairways, boats on both sides"
+   ]
+  }
+ },
+ {
+  "topic": "power",
+  "difficulty": 3,
+  "q": "You reverse out of this berth and turn down the fairway. What do you watch most closely?",
+  "a": "Your bow swinging to starboard",
+  "o": [
+   "Your stern swinging to starboard",
+   "Your bow swinging to port",
+   "Nothing — she backs out straight"
+  ],
+  "why": "Going astern the pivot point moves aft, so the bow swings wide the opposite way to the stern.",
+  "ref": "Pivot point",
+  "fig": {
+   "type": "card",
+   "title": "Reversing out",
+   "lines": [
+    "Neighbours' bows close on both sides",
+    "You steer the stern to port"
+   ]
+  }
+ }
+]

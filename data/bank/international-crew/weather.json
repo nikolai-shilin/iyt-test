@@ -1,0 +1,395 @@
+[
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "The morning forecast says 'northerly, Force 5'. Which way is the wind blowing?",
+  "a": "From the north, towards the south",
+  "o": [
+   "From the south, towards the north",
+   "From the sea, towards the north",
+   "From the west, turning north later"
+  ],
+  "why": "Wind is always named by the direction it blows from.",
+  "ref": "Wind direction",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "The forecast for your day sail is Force 4. What kind of day is that for a yacht?",
+  "a": "A moderate breeze, 11–16 knots — good sailing",
+  "o": [
+   "Near calm — expect to motor most of the day",
+   "A gale, 34–40 knots — stay in harbour",
+   "A strong breeze, 22–27 knots — reefs needed"
+  ],
+  "why": "Force 4 is a moderate breeze, 11–16 knots, small waves with some white horses.",
+  "ref": "Beaufort scale",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "The afternoon forecast is north-west Force 6, and your crossing is 18 miles of open water. What does this mean for you as crew?",
+  "a": "Strong wind — expect reefs, spray and a lively ride",
+  "o": [
+   "Light airs — expect to motor most of the way",
+   "Moderate breeze — full sail and a gentle ride",
+   "Storm force — no yacht could put to sea"
+  ],
+  "why": "Force 6 is a strong breeze, 22–27 knots: reefs, rough water and lifejackets on.",
+  "ref": "Beaufort scale",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "The skipper decides to stay in port because the forecast is Force 8. What does that mean?",
+  "a": "A gale, about 34–40 knots",
+  "o": [
+   "A fresh breeze, about 17–21 knots",
+   "A light breeze, about 4–6 knots",
+   "A moderate breeze, about 11–16 knots"
+  ],
+  "why": "Force 8 is a gale — too much for a charter yacht and her crew.",
+  "ref": "Beaufort scale",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "What wind do you expect by mid-afternoon?",
+  "a": "A breeze blowing in from the sea onto the land",
+  "o": [
+   "A breeze blowing off the land out to sea",
+   "Flat calm until sunset",
+   "A wind that dies away by noon"
+  ],
+  "why": "Land heats faster than sea; the air over it rises and a sea breeze blows in by the afternoon.",
+  "ref": "Sea and land breeze",
+  "fig": {
+   "type": "card",
+   "title": "Hot summer day, Saronic Gulf",
+   "lines": [
+    "09:00 — flat calm, clear sky",
+    "The land is heating up fast",
+    "No big weather system nearby"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are on anchor watch at 02:00 in a calm bay below hills. A light breeze springs up. Where does it most likely come from?",
+  "a": "Off the land, blowing out to sea",
+  "o": [
+   "Off the sea, blowing onto the land",
+   "Along the shore, from the east",
+   "Any side — night winds are random"
+  ],
+  "why": "At night the land cools faster than the sea, so a light land breeze blows offshore.",
+  "ref": "Sea and land breeze",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are sailing in the Cyclades in August. From which direction does the Meltemi usually blow?",
+  "a": "From the north, strongest in the afternoon",
+  "o": [
+   "From the south, strongest at night",
+   "From the east, only in early spring",
+   "From the west, only after rain"
+  ],
+  "why": "The Meltemi is the Aegean's summer north wind, usually at its strongest in the afternoon.",
+  "ref": "Meltemi",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Your next hop is 20 miles north across open water, and the Meltemi is forecast at Force 6–7 for three days. When is the crossing likely to be easiest?",
+  "a": "Leave early, around dawn",
+  "o": [
+   "Leave at noon, when it is warm",
+   "Leave mid-afternoon, after lunch",
+   "Any time — the Meltemi is steady"
+  ],
+  "why": "The Meltemi often eases overnight and builds through the day — cross early.",
+  "ref": "Meltemi",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Close under the cliffs the water looks calm. What do you expect there?",
+  "a": "Sudden strong gusts falling off the cliffs",
+  "o": [
+   "A steady light breeze — it is sheltered",
+   "Flat calm — a safe place to drift",
+   "A steady wind, just like offshore"
+  ],
+  "why": "Wind spilling over high land drops down the lee side in violent gusts.",
+  "ref": "Local winds",
+  "fig": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V50 C 240 72 120 72 0 50 Z",
+   "labels": [
+    [
+     160,
+     30,
+     "High cliffs",
+     "middle"
+    ]
+   ],
+   "note": "South of the island · N 6"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are about to sail through the gap at A. What do you expect?",
+  "a": "Stronger wind, squeezed through the gap",
+  "o": [
+   "Lighter wind, sheltered by both islands",
+   "The wind swinging round to the south",
+   "No change from the open sea"
+  ],
+  "why": "Wind funnels between islands and round headlands — expect it to be stronger there.",
+  "ref": "Local winds",
+  "fig": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H120 C 132 60 132 140 110 200 H0 Z M320 0 H200 C 188 60 188 140 210 200 H320 Z",
+   "spots": [
+    [
+     160,
+     100,
+     "A"
+    ]
+   ],
+   "note": "Channel between two islands · N 5"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are keeping the barometer log. What do you tell the skipper?",
+  "a": "It is falling fast — strong wind may be on the way",
+  "o": [
+   "It is steady — settled weather ahead",
+   "It is rising — the wind should ease",
+   "Pressure means little in summer"
+  ],
+  "why": "A fall of several hPa in three hours is a warning that strong wind is coming.",
+  "ref": "Barometer",
+  "fig": {
+   "type": "card",
+   "title": "Barometer log",
+   "lines": [
+    "08:00 — 1016 hPa",
+    "11:00 — 1010 hPa",
+    "14:00 — 1004 hPa"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "What is most likely on the way?",
+  "a": "A thunderstorm with sudden violent gusts",
+  "o": [
+   "A steady sea breeze, slowly building",
+   "Fog rolling in from the open sea",
+   "A long spell of settled calm weather"
+  ],
+  "why": "Towering clouds with anvil tops are thunderstorm clouds: squalls, lightning and heavy rain.",
+  "ref": "Thunderstorms",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon, near the coast",
+   "lines": [
+    "Hot and sticky since the morning",
+    "Tall cauliflower clouds over the hills",
+    "Tops spreading out flat, like an anvil",
+    "A distant rumble"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "The skipper asks what to get ready. What do you suggest?",
+  "a": "Reduce sail now and put lifejackets on",
+  "o": [
+   "Keep full sail and try to outrun it",
+   "Wait for the first gust, then reef",
+   "Go below and leave the sails as they are"
+  ],
+  "why": "Reef before a squall arrives — its first gust can be far stronger than the wind ahead of it.",
+  "ref": "Thunderstorms",
+  "fig": {
+   "type": "card",
+   "title": "Squall line ahead",
+   "tag": "10 min",
+   "lines": [
+    "Dark wall of cloud, rain below it",
+    "Dark ruffled water coming your way",
+    "Full main and genoa set"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "What does the visibility part of this forecast warn you about?",
+  "a": "In places you may see less than 1 km",
+  "o": [
+   "Visibility will stay over 10 miles",
+   "Fog only over land, not at sea",
+   "Rain, with good visibility in between"
+  ],
+  "why": "In forecasts 'fog' means visibility under 1000 m; 'poor' means under 2 miles.",
+  "ref": "Forecasts",
+  "fig": {
+   "type": "card",
+   "title": "Coastal forecast",
+   "lines": [
+    "Wind: S 3, becoming variable",
+    "Sea: slight",
+    "Visibility: moderate, poor in fog patches"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "What will the afternoon be like?",
+  "a": "A stronger north-westerly and a rougher sea",
+  "o": [
+   "A south-easterly wind, easing later",
+   "Lighter wind and a calming sea",
+   "Rain showers and poor visibility"
+  ],
+  "why": "'Increasing 6 later' and 'becoming rough': more wind and bigger waves as the day goes on.",
+  "ref": "Forecasts",
+  "fig": {
+   "type": "card",
+   "title": "Today's forecast",
+   "lines": [
+    "Wind: NW 4 to 5, increasing 6 later",
+    "Sea: moderate, becoming rough",
+    "Weather: fair",
+    "Visibility: good"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "What will this leg be like?",
+  "a": "Upwind into wind and waves — slow and wet",
+  "o": [
+   "Downwind with the wind behind — easy",
+   "Wind on the beam — fast and comfortable",
+   "Calm — you will motor all the way"
+  ],
+  "why": "A north-easterly course into a north wind is close-hauled, at the windiest time of day.",
+  "ref": "Meltemi",
+  "fig": {
+   "type": "card",
+   "title": "Plan for today",
+   "tag": "August",
+   "lines": [
+    "Paros → Mykonos, heading north-east",
+    "Leaving at 14:00",
+    "Forecast: N 6, Meltemi"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "If the boat is still here at 15:00, which way is it being pushed?",
+  "a": "Towards the beach — the sea breeze blows onshore",
+  "o": [
+   "Away from the beach — a land breeze blows out",
+   "Nowhere — it will stay calm all day",
+   "Along the beach — a westerly sets in"
+  ],
+  "why": "The afternoon sea breeze blows onshore — off a south-facing beach it comes from the south.",
+  "ref": "Sea and land breeze",
+  "fig": {
+   "type": "card",
+   "title": "Lunch stop",
+   "lines": [
+    "Anchored close off a south-facing beach",
+    "10:00 — calm, hot and sunny",
+    "Plan: stay until 16:00"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "What do these signs together suggest?",
+  "a": "A depression with strong wind is approaching",
+  "o": [
+   "A settled high is building over you",
+   "A local sea breeze is about to start",
+   "Only a light shower, then sunshine"
+  ],
+  "why": "Fast-falling pressure, thickening high cloud and a new swell all point to an approaching low.",
+  "ref": "Barometer",
+  "fig": {
+   "type": "card",
+   "title": "Watch log",
+   "lines": [
+    "Barometer down 7 hPa in 3 hours",
+    "High wispy cloud thickening from the west",
+    "A long swell starting to arrive"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "In the marina, the flag on the harbour office streams out towards the south-east. What wind is blowing?",
+  "a": "A north-westerly",
+  "o": [
+   "A south-easterly",
+   "A south-westerly",
+   "A north-easterly"
+  ],
+  "why": "A flag streams downwind, so the wind comes from the opposite side — the north-west.",
+  "ref": "Wind direction",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Which Force on the Beaufort scale is this?",
+  "a": "Force 6",
+  "o": [
+   "Force 4",
+   "Force 5",
+   "Force 8"
+  ],
+  "why": "Force 6 is 22–27 knots, a strong breeze.",
+  "ref": "Beaufort scale",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "True wind",
+     "24 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Steady for the last 20 minutes"
+   ]
+  }
+ }
+]

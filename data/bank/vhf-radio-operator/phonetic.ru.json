@@ -1,0 +1,254 @@
+[
+ {
+  "q": "Марина просит продиктовать название вашей яхты, KIRA. Что вы говорите?",
+  "a": "«Kilo India Romeo Alfa»",
+  "o": [
+   "«Kilo Italy Romeo Alfa»",
+   "«King Item Roger Able»",
+   "«Kilo India Roger Apple»"
+  ],
+  "why": "Фонетический алфавит: K — Kilo, I — India, R — Romeo, A — Alfa.",
+  "ref": "Фонетический алфавит",
+  "fig": null
+ },
+ {
+  "q": "Ответ марины заглушил запустившийся рядом двигатель; вы ничего не поняли. Что вы передаёте?",
+  "a": "SAY AGAIN",
+  "o": [
+   "REPEAT",
+   "CORRECTION",
+   "WAIT"
+  ],
+  "why": "SAY AGAIN — просьба повторить; REPEAT в эфире для этого не используют.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Марина сообщает ваше место и код душевой. Вы всё поняли. Каким словом вы это подтверждаете?",
+  "a": "RECEIVED",
+  "o": [
+   "AFFIRMATIVE",
+   "CORRECTION",
+   "I SPELL"
+  ],
+  "why": "RECEIVED означает: сообщение принято и понято.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Вы подтверждаете марине, что ваше место — номер 9. Как вы произносите эту цифру?",
+  "a": "«Niner»",
+  "o": [
+   "«November»",
+   "«Nina»",
+   "«Nine-zero»"
+  ],
+  "why": "В эфире цифру 9 произносят «niner», чтобы её не спутали с другими словами.",
+  "ref": "Цифры в эфире",
+  "fig": null
+ },
+ {
+  "q": "Марина спрашивает вашу осадку. Она 2,9 м. Что вы говорите?",
+  "a": "«Two decimal niner metres»",
+  "o": [
+   "«Two niner metres»",
+   "«Twenty-nine metres»",
+   "«Two and nine metres»"
+  ],
+  "why": "Цифры называют по одной, точку — словом «decimal», 9 — «niner».",
+  "ref": "Цифры в эфире",
+  "fig": null
+ },
+ {
+  "q": "Вы слышите: «Aurora, this is Vega Marina, go to pontoon Charlie…», а остальное тонет в шуме. Что вы передаёте?",
+  "a": "«SAY AGAIN ALL AFTER Charlie»",
+  "o": [
+   "«SAY AGAIN ALL BEFORE Charlie»",
+   "«SAY AGAIN WORD AFTER Charlie»",
+   "«I SPELL Charlie»"
+  ],
+  "why": "ALL AFTER — просьба повторить всё, что шло после названного слова.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Вы сказали марине: «Berth for one night, catamaran, twelve metres, OVER». Они отвечают: «Aurora, SAY AGAIN ALL BEFORE twelve metres, OVER». Что вы повторяете?",
+  "a": "Слова перед «twelve metres»",
+  "o": [
+   "Только слова «twelve metres»",
+   "Всё, что после «twelve metres»",
+   "Название яхты по буквам"
+  ],
+  "why": "ALL BEFORE — просьба повторить всё, что шло до названного слова.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Марина не может разобрать название вашей яхты, Xenia. Как вы его передаёте?",
+  "a": "«Xenia, I SPELL, X-ray Echo November India Alfa»",
+  "o": [
+   "«Xenia, CORRECTION, X-ray Echo November India Alfa»",
+   "«Xenia, SAY AGAIN, X-ray Echo November India Alfa»",
+   "«Xenia, I SPELL, Xylophone Echo Nancy India Alfa»"
+  ],
+  "why": "I SPELL предупреждает, что дальше идут буквы фонетического алфавита.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Вы только что сказали «length one four metres», а длина Aurora 12 м. Что вы сразу говорите?",
+  "a": "«CORRECTION, length one two metres»",
+  "o": [
+   "«SAY AGAIN, length one two metres»",
+   "«I SPELL, length one two metres»",
+   "«WAIT, length one two metres»"
+  ],
+  "why": "CORRECTION отменяет последнее слово или фразу; следом идёт правильный вариант.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Марина спрашивает регистрационный номер яхты. Он в документах внизу, искать — пару минут. С какого процедурного слова вы начинаете?",
+  "a": "WAIT",
+  "o": [
+   "SAY AGAIN",
+   "STATION CALLING",
+   "AFFIRMATIVE"
+  ],
+  "why": "WAIT, по возможности с числом минут, сообщает, что вам нужна пауза.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Марина спрашивает: «Aurora, do you need shore power, OVER?» Электричество вам нужно. Что вы отвечаете?",
+  "a": "«AFFIRMATIVE, OVER»",
+  "o": [
+   "«RECEIVED, OVER»",
+   "«CORRECTION, OVER»",
+   "«I SPELL, OVER»"
+  ],
+  "why": "AFFIRMATIVE — «да»; RECEIVED лишь подтверждает, что вопрос услышан.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Вы слышите «Aurora, Aurora, this is …», но название вызывающего тонет в шуме. Как вы отвечаете?",
+  "a": "«Station calling Aurora, this is Aurora, OVER»",
+  "o": [
+   "«Who is calling Aurora? Identify yourself, OVER»",
+   "«All stations, this is Aurora, SAY AGAIN, OVER»",
+   "«Aurora, this is Aurora, SAY AGAIN, OUT»"
+  ],
+  "why": "STATION CALLING — ответ на вызов, когда вы не разобрали, кто вызывает.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Вам нужно передать свою широту. Как вы её произносите?",
+  "a": "«Three seven degrees five two decimal four minutes north»",
+  "o": [
+   "«Thirty-seven degrees fifty-two point four minutes north»",
+   "«Three seven degrees fifty-two decimal four minutes north»",
+   "«Five two decimal four minutes, three seven degrees north»"
+  ],
+  "why": "Координаты читают по одной цифре: градусы, минуты с «decimal», затем north или south.",
+  "ref": "Цифры в эфире",
+  "fig": {
+   "title": "Картплоттер",
+   "lines.0": "Широта 37°52.4′N"
+  }
+ },
+ {
+  "q": "Береговая охрана спрашивает ваш MMSI, 237012340. Как вы его произносите?",
+  "a": "«Two three seven zero one two three four zero»",
+  "o": [
+   "«Two hundred thirty-seven, twelve, three-forty»",
+   "«Twenty-three, seventy, one two, thirty-four, zero»",
+   "«Two three seven one two three four»"
+  ],
+  "why": "Длинные числа передают по одной цифре, включая нули.",
+  "ref": "Цифры в эфире",
+  "fig": null
+ },
+ {
+  "q": "Марина сказала, что ваше место «fifteen», а вы пошли на место 50. Как надо передавать числа, чтобы этого не было?",
+  "a": "По одной цифре: «one five»",
+  "o": [
+   "Словом, медленно: «fif-teen»",
+   "Словом, дважды: «fifteen, fifteen»",
+   "По буквам: «Foxtrot India Foxtrot…»"
+  ],
+  "why": "Цифры по одной — и «fifteen» не спутать с «fifty».",
+  "ref": "Цифры в эфире",
+  "fig": null
+ },
+ {
+  "q": "Матрос вызывает: «Vega Marina, Aurora, OVER». В марине не поняли, кто кого вызывает. Чего не хватает?",
+  "a": "THIS IS — между вызываемой станцией и своим названием",
+  "o": [
+   "OVER AND OUT — в самом конце вызова",
+   "I SPELL — перед названием вашей яхты",
+   "RECEIVED — перед названием марины"
+  ],
+  "why": "THIS IS отделяет вызываемую станцию от вызывающей.",
+  "ref": "Процедурные слова",
+  "fig": null
+ },
+ {
+  "q": "Ответ марины доходит до вас вот так. Что вы передаёте?",
+  "a": "«SAY AGAIN WORD AFTER pontoon, OVER»",
+  "o": [
+   "«SAY AGAIN ALL AFTER berth, OVER»",
+   "«SAY AGAIN WORD BEFORE pontoon, OVER»",
+   "«CORRECTION pontoon, OVER»"
+  ],
+  "why": "WORD AFTER — просьба повторить одно слово, шедшее после названного.",
+  "ref": "Процедурные слова",
+  "fig": {
+   "title": "Что вы услышали",
+   "lines.0": "«Aurora, your berth is pontoon …",
+   "lines.1": "(одно слово пропало в шуме)",
+   "lines.2": "… berth niner, OVER»"
+  }
+ },
+ {
+  "q": "Береговая охрана спрашивает ваши координаты. Как вы их передаёте?",
+  "a": "«Three six degrees two seven decimal niner minutes north, zero two five degrees zero eight decimal three minutes east»",
+  "o": [
+   "«Thirty-six degrees twenty-seven decimal nine north, twenty-five degrees eight decimal three east»",
+   "«Three six degrees two seven decimal niner minutes north, two five degrees eight decimal three minutes east»",
+   "«Three six degrees two seven decimal niner minutes east, zero two five degrees zero eight decimal three minutes north»"
+  ],
+  "why": "Сначала широта, затем долгота с тремя цифрами градусов; все цифры по одной.",
+  "ref": "Цифры в эфире",
+  "fig": {
+   "title": "Координаты GPS",
+   "lines.0": "36°27.9′N",
+   "lines.1": "025°08.3′E"
+  }
+ },
+ {
+  "q": "Марина даёт вам понтон B, место 19. Вы повторяете для подтверждения. Как правильно?",
+  "a": "«Pontoon Bravo, berth one niner»",
+  "o": [
+   "«Pontoon Bravo, berth nineteen»",
+   "«Pontoon Baker, berth one niner»",
+   "«Pontoon Beta, berth one niner»"
+  ],
+  "why": "Буквы — фонетическим алфавитом (B — Bravo), цифры по одной, 9 — «niner».",
+  "ref": "Фонетический алфавит",
+  "fig": null
+ },
+ {
+  "q": "Марина говорит: «Aurora, berth one five, CORRECTION, berth one six, pontoon Charlie, OVER». Куда вы идёте?",
+  "a": "Понтон C, место 16",
+  "o": [
+   "Понтон C, место 15",
+   "Понтон C, место 15 или 16",
+   "Понтон C, место 56"
+  ],
+  "why": "CORRECTION отменяет сказанное перед ним; действует то, что после.",
+  "ref": "Процедурные слова",
+  "fig": null
+ }
+]

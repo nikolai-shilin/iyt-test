@@ -12,17 +12,23 @@ const token = process.env.TELEGRAM_BOT_TOKEN;
 if (!token) throw new Error('TELEGRAM_BOT_TOKEN is not set');
 export const webapp = (process.env.WEBAPP_URL || '').replace(/\/$/, '');
 
-const bank = JSON.parse(await readFile(new URL('../data/questions/bareboat-skipper.json', import.meta.url), 'utf8'));
-// Russian overlay (data/i18n.py): translated questions and topic titles; anything missing stays English.
-const RU_BANK = await readFile(new URL('../data/questions/bareboat-skipper.ru.json', import.meta.url), 'utf8').then(JSON.parse).catch(() => ({}));
-const byId = Object.fromEntries(bank.questions.map((q) => [q.id, q]));
-const daily = bank.questions.filter((q) => !q.figure);
-const N = bank.questions.length, NT = bank.topics.length;
-// The question and its topic title in the reader's language.
+// The levels with a bank, in IYT order; `link` is the mini app deep link that opens the level (miniapp/app.js LEVELS).
+const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], ['flotilla-skipper', 'flotilla'], ['bareboat-skipper', 'bareboat']];
+const read = (name) => readFile(new URL(`../data/questions/${name}.json`, import.meta.url), 'utf8').then(JSON.parse);
+// Each bank with its Russian overlay (data/i18n.py): translated questions and topic titles; anything missing stays English.
+const banks = await Promise.all(LEVELS.map(async ([id, link]) => ({ id, link, bank: await read(id), ru: await read(`${id}.ru`).catch(() => ({})) })));
+const byId = {};
+for (const b of banks) for (const q of b.bank.questions) byId[q.id] = { q, b };
+const daily = Object.values(byId).filter(({ q }) => !q.figure).map(({ q }) => q);
+const N = Object.keys(byId).length;
+const names = banks.map((b) => b.bank.title.replace(/^IYT /, ''));
+// The question, its topic title and level in the reader's language.
 function local(q, isRu) {
-  const tr = isRu && RU_BANK.questions && RU_BANK.questions[q.id];
-  const title = (isRu && RU_BANK.topics && RU_BANK.topics[q.topic]) || bank.topics.find((t) => t.id === q.topic).title;
-  return tr && tr.q && tr.options?.length === 4 ? { ...q, ...tr, title } : { ...q, title };
+  const { b } = byId[q.id], RU_BANK = (isRu && b.ru) || {};
+  const title = (RU_BANK.topics && RU_BANK.topics[q.topic]) || b.bank.topics.find((t) => t.id === q.topic).title;
+  const tr = RU_BANK.questions && RU_BANK.questions[q.id];
+  const lv = b.bank.title.replace(/^IYT /, '');
+  return tr && tr.q && tr.options?.length === 4 ? { ...q, ...tr, title, lv, link: b.link } : { ...q, title, lv, link: b.link };
 }
 
 export const api = async (method, params = {}) => {
@@ -39,10 +45,10 @@ const send = (chat_id, text, reply_markup) => api('sendMessage', { chat_id, text
 const RU = (from) => (from?.language_code || '').startsWith('ru');
 const T = {
   start: (ru) => ru
-    ? `⚓️ <b>IYT Test</b> — вопросы для подготовки к экзаменам IYT. Сейчас доступен <b>Bareboat Skipper</b>: ${N} ситуаций в ${NT} темах, пробный экзамен на ${bank.examQuestions} вопросов.\n\nНажмите «Открыть», чтобы начать.`
-    : `⚓️ <b>IYT Test</b> — practice questions for IYT certification levels. <b>Bareboat Skipper</b> is ready: ${N} situations over ${NT} topics and a ${bank.examQuestions}-question mock exam.\n\nTap Open to start.`,
+    ? `⚓️ <b>IYT Test</b> — вопросы для подготовки к экзаменам IYT. Уже доступны: <b>${names.join('</b>, <b>')}</b> — ${N} ситуаций, тренировка по темам и пробный экзамен.\n\nНажмите «Открыть» и выберите уровень.`
+    : `⚓️ <b>IYT Test</b> — practice questions for IYT certification levels. Ready now: <b>${names.join('</b>, <b>')}</b> — ${N} situations, practice by topic and a mock exam.\n\nTap Open and pick your level.`,
   open: (ru) => (ru ? 'Открыть' : 'Open'),
-  exam: (ru) => (ru ? '⏱ Пробный экзамен: 40 вопросов, 60 минут, 70 % для сдачи.' : '⏱ Mock exam: 40 questions, 60 minutes, 70 % to pass.'),
+  exam: (ru) => (ru ? '⏱ Пробный экзамен по вашему уровню: случайные вопросы из всех тем, таймер, ответы в конце, 70 % для сдачи.' : '⏱ Mock exam for your level: random questions from every topic, a timer, answers at the end, 70 % to pass.'),
   examBtn: (ru) => (ru ? 'Начать экзамен' : 'Start the exam'),
   progress: (ru) => (ru ? '📊 Прогресс по темам, ошибки и серия дней — в приложении.' : '📊 Your mastery by topic, mistakes and streak are in the app.'),
   progressBtn: (ru) => (ru ? 'Мой прогресс' : 'My progress'),
@@ -54,7 +60,7 @@ const T = {
 const head = (isRu) => (isRu ? 'Вопрос дня' : 'Question of the day');
 function dailyMessage(src, isRu) {
   const q = local(src, isRu);
-  const text = `<b>${head(isRu)}</b> · ${esc(q.title)}\n\n${esc(q.q)}\n\n` + q.options.map((o, i) => `<b>${'ABCD'[i]}</b>  ${esc(o)}`).join('\n');
+  const text = `<b>${head(isRu)}</b> · ${esc(q.lv)} · ${esc(q.title)}\n\n${esc(q.q)}\n\n` + q.options.map((o, i) => `<b>${'ABCD'[i]}</b>  ${esc(o)}`).join('\n');
   return { text, reply_markup: kb(q.options.map((_, i) => ({ text: 'ABCD'[i], callback_data: `d:${q.id}:${i}` }))) };
 }
 
@@ -71,12 +77,12 @@ async function onMessage(m) {
 async function onCallback(c) {
   const [kind, id, pick] = (c.data || '').split(':');
   if (kind !== 'd' || !byId[id] || !c.message) return api('answerCallbackQuery', { callback_query_id: c.id });
-  const isRu = RU(c.from), q = local(byId[id], isRu), ok = +pick === q.answer;
+  const isRu = RU(c.from), q = local(byId[id].q, isRu), ok = +pick === q.answer;
   await api('answerCallbackQuery', { callback_query_id: c.id, text: ok ? (isRu ? 'Верно ✓' : 'Correct ✓') : (isRu ? 'Неверно' : 'Not quite') });
-  const text = `<b>${head(isRu)}</b> · ${esc(q.title)}\n\n${esc(q.q)}\n\n` +
+  const text = `<b>${head(isRu)}</b> · ${esc(q.lv)} · ${esc(q.title)}\n\n${esc(q.q)}\n\n` +
     q.options.map((o, i) => `${i === q.answer ? '✅' : i === +pick ? '❌' : '▫️'}  ${esc(o)}`).join('\n') +
     `\n\n<b>${ok ? (isRu ? 'Верно.' : 'Correct.') : (isRu ? 'Неверно.' : 'Not quite.')}</b> ${esc(q.why)}\n<i>${esc(q.ref)}</i>`;
-  await api('editMessageText', { chat_id: c.message.chat.id, message_id: c.message.message_id, text, parse_mode: 'HTML', reply_markup: kb(open(T.practise(isRu), 'practice')) });
+  await api('editMessageText', { chat_id: c.message.chat.id, message_id: c.message.message_id, text, parse_mode: 'HTML', reply_markup: kb(open(T.practise(isRu), q.link)) });
 }
 
 // The update types the bot asks Telegram for (getUpdates and setWebhook).

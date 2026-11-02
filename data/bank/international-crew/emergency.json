@@ -1,0 +1,371 @@
+[
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You see a crew member fall over the side. What do you do first?",
+  "a": "Shout 'Man overboard!' and point at them",
+  "o": [
+   "Jump in after them straight away",
+   "Go below to wake the skipper",
+   "Start the engine before anything else"
+  ],
+  "why": "Raise the alarm and keep them in sight — a head in the waves is very easy to lose.",
+  "ref": "Man overboard",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The skipper makes you the spotter while the boat turns back. What is your job?",
+  "a": "Point at the person and never look away",
+  "o": [
+   "Point once, then help with the sheets",
+   "Fetch the first-aid kit from below",
+   "Call the coastguard on the VHF"
+  ],
+  "why": "The spotter keeps eyes and an arm on the casualty until they are back alongside.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 200,
+    "dist": 70,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 0,
+   "note": "Skipper turning the boat to come back"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Seconds after the shout of 'Man overboard!', you are next to the lifebuoy and danbuoy at the stern. What do you do?",
+  "a": "Throw them out towards the person at once",
+  "o": [
+   "Keep them aboard until the boat turns back",
+   "Throw them only once the person is close",
+   "Wait for the skipper to tell you to throw"
+  ],
+  "why": "Thrown at once, they give the casualty something to hold and mark the spot.",
+  "ref": "Man overboard",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Why do you press the MOB button on the plotter now?",
+  "a": "It marks the spot so you can steer back to it",
+  "o": [
+   "It stops the engine and the propeller",
+   "It sounds the horn to warn other boats",
+   "It switches on all the deck lights"
+  ],
+  "why": "The plotter saves the position where the person went in and shows the way back.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "card",
+   "title": "Chart plotter",
+   "lines": [
+    "Big red MOB button on the screen",
+    "Someone went overboard 10 seconds ago",
+    "Buoy thrown, spotter pointing"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "A pan of cooking oil catches fire on the stove. What do you do?",
+  "a": "Turn off the gas and cover it with the fire blanket",
+  "o": [
+   "Throw a cup of water over the flames",
+   "Carry the pan out to the cockpit",
+   "Spray it with the cockpit hose"
+  ],
+  "why": "Smother a fat fire; water makes burning oil erupt out of the pan.",
+  "ref": "Fire",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Spilt diesel is burning in the bilge under the engine. Which do you reach for?",
+  "a": "A powder extinguisher, aimed at the base",
+  "o": [
+   "A bucket of seawater thrown over it",
+   "The deck wash hose on full",
+   "A towel to fan the flames down"
+  ],
+  "why": "Never water on a fuel fire — it spreads the burning fuel. Use powder, CO2 or foam.",
+  "ref": "Fire",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "A candle has set a bunk cushion smouldering in the forward cabin. Your friend says 'never use water on a boat fire'. Is she right here?",
+  "a": "No — water is fine on burning fabric",
+  "o": [
+   "Yes — water is never used below decks",
+   "Yes — only powder works on cushions",
+   "Yes — water makes any fire spread"
+  ],
+  "why": "Water suits solids such as fabric and wood; keep it off burning fat, fuel and wiring.",
+  "ref": "Fire",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You go below and find this. What do you do first?",
+  "a": "Tell the skipper, then help find where it comes in",
+  "o": [
+   "Bail quietly so as not to worry anyone",
+   "Lift your bags onto the bunks to keep them dry",
+   "Call MAYDAY on the VHF straight away"
+  ],
+  "why": "The skipper must know at once; finding the source matters more than pumping.",
+  "ref": "Flooding",
+  "fig": {
+   "type": "card",
+   "title": "Below, under sail",
+   "lines": [
+    "Water over the saloon floorboards",
+    "Bilge alarm sounding",
+    "Skipper on deck at the helm"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Water is rising slowly in the bilge. You taste it: fresh, not salty. What does that suggest?",
+  "a": "A leak from the fresh water tank or its pipes",
+  "o": [
+   "A hole in the hull below the waterline",
+   "A failed toilet seacock letting the sea in",
+   "Waves coming in through the cockpit drains"
+  ],
+  "why": "Fresh water means the boat's own system is leaking, not the sea coming in.",
+  "ref": "Flooding",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "The skipper is hurt and cannot use the radio; you must send a MAYDAY by voice. How do you set the VHF?",
+  "a": "Channel 16, high power",
+  "o": [
+   "Channel 16, low power",
+   "Channel 70, high power",
+   "The marina's working channel"
+  ],
+  "why": "Distress voice calls go on channel 16, at full power for the best range.",
+  "ref": "VHF distress",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Under a flap on the VHF you find a red button marked DISTRESS. What does pressing and holding it do?",
+  "a": "Sends an automatic alert with the boat's ID and position",
+  "o": [
+   "Calls the nearest marina on its own channel",
+   "Locks the radio on channel 16 for listening",
+   "Turns on the strobe light at the masthead"
+  ],
+  "why": "The DSC distress button sends a digital MAYDAY alert, with the GPS position if one is connected.",
+  "ref": "VHF distress",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "After 'MAYDAY MAYDAY MAYDAY, this is yacht ORCA…', what do you say?",
+  "a": "Position, what is wrong, help needed, people aboard",
+  "o": [
+   "Your names, home port and next harbour",
+   "The boat's name again, until someone answers",
+   "The time, the weather and the sea state"
+  ],
+  "why": "Where you are comes first, then the problem, the help you need and how many are aboard.",
+  "ref": "VHF distress",
+  "fig": {
+   "type": "card",
+   "title": "You are on the radio",
+   "tag": "MAYDAY",
+   "lines": [
+    "Yacht ORCA, 4 people aboard",
+    "Skipper injured, boat taking water",
+    "Position shown on the plotter"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "How do you look after this crew member?",
+  "a": "Shelter, dry clothes, blankets, a warm sweet drink",
+  "o": [
+   "A hot shower straight away and a brandy",
+   "Rub their arms and legs hard to warm them",
+   "Leave them in wet clothes in the wind to dry"
+  ],
+  "why": "Warm them gently: out of the wind, dry layers, a warm drink if alert — never alcohol.",
+  "ref": "First aid: hypothermia",
+  "fig": {
+   "type": "card",
+   "title": "Just pulled from the water",
+   "lines": [
+    "15 minutes in the sea",
+    "Shivering hard, lips blue",
+    "Awake and talking"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Boiling water from the kettle spills over a crew member's forearm. What do you do?",
+  "a": "Cool it under cool running water for 20 minutes",
+  "o": [
+   "Spread butter or oil on it at once",
+   "Pop the blisters so the skin can dry",
+   "Hold ice straight against the skin"
+  ],
+  "why": "Cool running water for 20 minutes limits the burn; then cover it loosely with cling film.",
+  "ref": "First aid: burns",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "How do you look after Anna?",
+  "a": "Keep her still, watch her and tell the skipper now",
+  "o": [
+   "Let her sleep it off alone in her bunk",
+   "Give her painkillers and a cold beer",
+   "Put her on the helm to keep her busy"
+  ],
+  "why": "Confusion after a blow to the head is a sign of serious injury — she needs watching and medical advice.",
+  "ref": "First aid: head injury",
+  "fig": {
+   "type": "card",
+   "title": "Accidental gybe",
+   "lines": [
+    "The boom hit Anna on the side of the head",
+    "She says she is fine",
+    "Later: confused, asking the same thing"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "How do you help your friend?",
+  "a": "Keep giving small sips and tell the skipper",
+  "o": [
+   "Let her sleep — seasickness passes on its own",
+   "Give her a large glass of water in one go",
+   "Give her strong coffee to perk her up"
+  ],
+  "why": "Long seasickness dehydrates: small frequent sips, and the skipper may need to get medical advice.",
+  "ref": "First aid: seasickness",
+  "fig": {
+   "type": "card",
+   "title": "Day two of a rough passage",
+   "lines": [
+    "Your friend has been sick for 12 hours",
+    "Cannot keep water down",
+    "Weak, dizzy, passing very little urine"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "What do you do for the helmsman?",
+  "a": "Shade, lie down, cool with water, sip fluids",
+  "o": [
+   "Strong coffee, then back to the helm",
+   "Keep steering — it will pass by evening",
+   "Move into full sun to sweat it out"
+  ],
+  "why": "Heat exhaustion: get them cool and shaded and give fluids before it turns into heatstroke.",
+  "ref": "First aid: heat",
+  "fig": {
+   "type": "card",
+   "title": "At the helm since noon",
+   "lines": [
+    "35 °C, no shade",
+    "Headache, dizzy, sweating heavily",
+    "Pale, cool and clammy skin"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "A crew member collapses in the saloon. They are unconscious but breathing normally. How do you lay them while you wait for help?",
+  "a": "On their side, in the recovery position",
+  "o": [
+   "Flat on their back, head on a pillow",
+   "Sitting up, propped against a bunk",
+   "Face down, arms by their sides"
+  ],
+  "why": "On their side the airway stays open and any vomit can drain out.",
+  "ref": "First aid",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "A guest wants to get into the raft right now. When do you get in?",
+  "a": "When the yacht is going down — step up into it",
+  "o": [
+   "Now — a liferaft is always the safer place",
+   "Now, by jumping down into it from the deck",
+   "Once you have swum across to it"
+  ],
+  "why": "Stay aboard as long as you can: you should step up into the raft as the yacht sinks.",
+  "ref": "Liferaft",
+  "fig": {
+   "type": "card",
+   "title": "Abandon ship?",
+   "lines": [
+    "Liferaft inflated alongside",
+    "Yacht still afloat, water rising slowly",
+    "Skipper: 'not yet'"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "In what order do you act?",
+  "a": "Shout, throw the buoys, press MOB, guest points",
+  "o": [
+   "Press MOB, call MAYDAY, then throw the buoys",
+   "Call MAYDAY, then shout, then throw the buoys",
+   "Turn the boat, then shout, throw the buoys"
+  ],
+  "why": "Alarm, something to float on and a marked position come first — then the radio call.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "card",
+   "title": "Night, sailing, F4",
+   "lines": [
+    "The skipper falls over the side",
+    "Only you and one guest aboard",
+    "Lifebuoy, danbuoy, plotter MOB button"
+   ]
+  }
+ }
+]

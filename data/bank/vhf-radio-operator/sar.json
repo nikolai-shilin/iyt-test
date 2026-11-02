@@ -1,0 +1,340 @@
+[
+ {
+  "topic": "sar",
+  "difficulty": 1,
+  "q": "You hear a MAYDAY on 16 from a yacht you cannot see. What do you do first?",
+  "a": "Listen, write it down, wait for the coast station",
+  "o": [
+   "Answer at once to say you heard her",
+   "Change channel to keep 16 clear",
+   "Call her back to ask for her position"
+  ],
+  "why": "First listen and record: a coast station normally acknowledges and coordinates.",
+  "ref": "SAR communications",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 3,
+  "q": "You can reach the sinking yacht in half an hour. What do you do on the radio?",
+  "a": "Acknowledge, then tell the coastguard you are going",
+  "o": [
+   "Keep listening — only coast stations acknowledge",
+   "Send a MAYDAY RELAY and keep your course",
+   "Head there in silence to keep 16 clear"
+  ],
+  "why": "If no coast station answers and you can help, acknowledge the MAYDAY and inform the coastguard.",
+  "ref": "SAR communications",
+  "fig": {
+   "type": "card",
+   "title": "MAYDAY heard",
+   "lines": [
+    "Yacht Thalassa: holed, sinking",
+    "She is 3 miles from you",
+    "No coast station has answered"
+   ],
+   "tag": "3 min"
+  }
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "You, on yacht Aura, acknowledge a MAYDAY from yacht Thalassa. Which form is right?",
+  "a": "MAYDAY, Thalassa ×3, THIS IS, Aura ×3, RECEIVED MAYDAY",
+  "o": [
+   "Thalassa, THIS IS Aura, ROGER your message, OVER",
+   "RECEIVED MAYDAY, with no names given at all",
+   "SEELONCE MAYDAY, Thalassa, THIS IS Aura"
+  ],
+  "why": "Acknowledgement: MAYDAY, the casualty's name ×3, THIS IS, your name ×3, RECEIVED MAYDAY.",
+  "ref": "Distress acknowledgement",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 1,
+  "q": "During a rescue you hear the station controlling it say \"SEELONCE MAYDAY\". What does it require of you?",
+  "a": "Keep off the channel unless you are in the rescue",
+  "o": [
+   "Use low power for any routine calls",
+   "Switch your radio off until morning",
+   "Repeat it so that more boats hear it"
+  ],
+  "why": "SEELONCE MAYDAY imposes silence: only stations taking part in the distress may transmit.",
+  "ref": "Radio silence",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 1,
+  "q": "You have kept quiet on 16 all afternoon during a rescue. Now you hear \"SEELONCE FEENEE\". What has changed?",
+  "a": "Distress traffic is over; normal use resumes",
+  "o": [
+   "Only short, essential calls are allowed",
+   "The silence is extended for another hour",
+   "A second distress has begun nearby"
+  ],
+  "why": "SEELONCE FEENEE lifts radio silence: the distress traffic is over.",
+  "ref": "Radio silence",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "During a rescue you have kept off 16. Now the station controlling the distress traffic announces \"PRUDONCE\". What does it tell you?",
+  "a": "The distress is not over, but restricted working may resume",
+  "o": [
+   "The distress is over and normal working resumes",
+   "Total silence on 16 until further notice",
+   "Only the vessel in distress may transmit"
+  ],
+  "why": "PRUDONCE: restricted working may resume; full normal working comes only with SEELONCE FEENEE.",
+  "ref": "Radio silence",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "You normally reach your friend on 16 first. With this going on, how do you get your message to her?",
+  "a": "Leave 16 alone: wait, or reach her another way",
+  "o": [
+   "Call quickly between the distress messages",
+   "Call on 16 on low power so nobody minds",
+   "Call her by voice on channel 70 instead"
+  ],
+  "why": "No routine traffic on a channel carrying distress working: wait, or find another way.",
+  "ref": "Radio silence",
+  "fig": {
+   "type": "card",
+   "title": "On channel 16",
+   "lines": [
+    "Distress traffic in progress",
+    "You want to tell a friend's yacht",
+    "that you will be late for dinner"
+   ],
+   "tag": "1 h"
+  }
+ },
+ {
+  "topic": "sar",
+  "difficulty": 1,
+  "q": "A yacht's MAYDAY has been acknowledged and a search begins. Who coordinates it?",
+  "a": "The coastguard's rescue centre (MRCC)",
+  "o": [
+   "The first yacht to reach the scene",
+   "The yacht that sent the MAYDAY",
+   "The office of the nearest marina"
+  ],
+  "why": "Search and rescue is coordinated by the MRCC, usually through a coast station.",
+  "ref": "SAR organisation",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "You are searching with other yachts, and the coastguard tells everyone on scene to work on channel 6. What do you do?",
+  "a": "Use 6 for search talk, as directed",
+  "o": [
+   "Stay on 16 — distress talk never leaves it",
+   "Pick your own quiet channel with the lifeboat",
+   "Use channel 70 so the talk goes by DSC"
+  ],
+  "why": "On-scene talk uses the channel the coordinator directs, often 16 or 6.",
+  "ref": "On-scene communications",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "You hear a MAYDAY and reach for the log book. What do you write down?",
+  "a": "Name, position, problem, help needed, persons, time",
+  "o": [
+   "Only the name of the vessel in distress",
+   "Only the channel and the time you heard it",
+   "Nothing — the coast station records it all"
+  ],
+  "why": "Note everything: you may have to relay it or help, and the coast station may not have heard.",
+  "ref": "SAR communications",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "A helicopter lowers its winch wire towards your cockpit. What must happen before anyone touches it?",
+  "a": "It touches the water or deck first, to earth it",
+  "o": [
+   "Someone ties it to a cleat to hold it steady",
+   "The crew turns the VHF off to avoid sparks",
+   "The engine stops so the boat lies still"
+  ],
+  "why": "The wire carries a static charge: let it earth on the sea or deck first, and never tie it to the boat.",
+  "ref": "Helicopter rescue",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "A rescue helicopter is hovering overhead and the noise is deafening. How do you get its instructions?",
+  "a": "Listen on VHF and do what the crew tells you",
+  "o": [
+   "Shout up to the winchman as he comes down",
+   "Wait for a written note sent down the wire",
+   "By hand signals only — VHF is not used"
+  ],
+  "why": "Helicopter crews brief the yacht by VHF; follow their instructions exactly.",
+  "ref": "Helicopter rescue",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "The helicopter will arrive in ten minutes. How do you prepare the deck?",
+  "a": "Stow or lash down loose gear, clear a space",
+  "o": [
+   "Hoist every sail so you are easy to see",
+   "Keep all crew on deck to catch the wire",
+   "Leave it — the downdraft will clear it"
+  ],
+  "why": "Downdraft blows loose gear into the rotor and wire: secure everything and clear the pick-up area.",
+  "ref": "Helicopter rescue",
+  "fig": {
+   "type": "card",
+   "title": "Helicopter on its way",
+   "lines": [
+    "To lift an injured crew member",
+    "Mainsail up, boom swinging",
+    "Cushions and towels on deck"
+   ]
+  }
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "You are much too far away to help this vessel. What do you do on the radio?",
+  "a": "Keep listening and noting, but stay silent",
+  "o": [
+   "Acknowledge too, so she knows you heard",
+   "Send a MAYDAY RELAY to make sure",
+   "Call her and offer your position"
+  ],
+  "why": "Once a coast station has it, distant yachts keep quiet and listen — they may be asked to help later.",
+  "ref": "SAR communications",
+  "fig": {
+   "type": "card",
+   "title": "Heard on 16",
+   "lines": [
+    "MAYDAY from a motor yacht",
+    "Coast station acknowledged at once",
+    "You are 40 miles away"
+   ]
+  }
+ },
+ {
+  "topic": "sar",
+  "difficulty": 3,
+  "q": "You are close and could help the burning yacht. What do you do on the radio?",
+  "a": "Offer help to the coast station, with your position",
+  "o": [
+   "Nothing — the coast station has it in hand",
+   "Acknowledge the burning yacht's MAYDAY yourself",
+   "Head there without a word to keep 16 clear"
+  ],
+  "why": "Offer your help to the station controlling the distress, with your position and ETA.",
+  "ref": "SAR communications",
+  "fig": {
+   "type": "card",
+   "title": "MAYDAY nearby",
+   "lines": [
+    "Yacht on fire, 2 miles ahead",
+    "Coast station has acknowledged",
+    "You can be there in 20 minutes"
+   ]
+  }
+ },
+ {
+  "topic": "sar",
+  "difficulty": 3,
+  "q": "Radio silence has been imposed, yet the rescue centre is calling you. May you answer?",
+  "a": "Yes — you are part of the distress traffic",
+  "o": [
+   "No — SEELONCE MAYDAY silences everyone",
+   "Only after SEELONCE FEENEE is given",
+   "Only on channel 6, never on 16"
+  ],
+  "why": "Radio silence binds stations not involved; those taking part in the rescue keep talking.",
+  "ref": "Radio silence",
+  "fig": {
+   "type": "card",
+   "title": "Silence imposed",
+   "lines": [
+    "You are the yacht nearest the casualty",
+    "The MRCC calls you by name on 16"
+   ],
+   "tag": "SEELONCE"
+  }
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "During a long rescue you hear three signals over several hours. In which order do they normally come?",
+  "a": "SEELONCE MAYDAY, PRUDONCE, SEELONCE FEENEE",
+  "o": [
+   "PRUDONCE, SEELONCE MAYDAY, SEELONCE FEENEE",
+   "SEELONCE FEENEE, PRUDONCE, SEELONCE MAYDAY",
+   "SEELONCE MAYDAY, SEELONCE FEENEE, PRUDONCE"
+  ],
+  "why": "Silence imposed, then restricted working allowed, then silence lifted.",
+  "ref": "Radio silence",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 3,
+  "q": "You might have found what everyone is looking for. What do you do on the radio?",
+  "a": "Report it to the coordinator on the channel in use",
+  "o": [
+   "Send a new MAYDAY for the person in the water",
+   "Wait until you are sure before saying anything",
+   "Put out a SÉCURITÉ to all stations on 16"
+  ],
+  "why": "Report sightings at once to whoever coordinates the search, on the channel they set.",
+  "ref": "On-scene communications",
+  "fig": {
+   "type": "card",
+   "title": "Searching",
+   "lines": [
+    "Looking for a yacht's crew overboard",
+    "The MRCC gave you a search area",
+    "Something orange in the water ahead"
+   ]
+  }
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "You are heading to help a yacht in distress. The coastguard calls to say a lifeboat is there and you are not needed. What do you do?",
+  "a": "Acknowledge the message and resume your passage",
+  "o": [
+   "Carry on anyway in case they need you",
+   "Ignore it — you already said you were going",
+   "Ask for SEELONCE FEENEE before you turn"
+  ],
+  "why": "Acknowledge your release by the coordinator; your help is no longer needed.",
+  "ref": "SAR communications",
+  "fig": null
+ },
+ {
+  "topic": "sar",
+  "difficulty": 2,
+  "q": "The lifeboat cannot hear the yacht in distress, but you hear both. The MRCC asks you to pass messages between them. How?",
+  "a": "Pass each message on exactly as you heard it",
+  "o": [
+   "Shorten them in your own words to save time",
+   "Refuse — only coast stations may relay",
+   "Tell the yacht to shout louder into her set"
+  ],
+  "why": "When relaying, pass messages on accurately and in full — the coordinator relies on them.",
+  "ref": "SAR communications",
+  "fig": null
+ }
+]

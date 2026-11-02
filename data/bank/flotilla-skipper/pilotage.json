@@ -1,0 +1,519 @@
+[
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are planning a short cut across the bay. One figure on the chart is underlined. What does it tell you?",
+  "a": "A rock or bank dries 1.2 m above datum",
+  "o": [
+   "There is 1.2 m of water over it at datum",
+   "There is 12 m of water — the line is a decimal",
+   "There is 1.2 m more water than the chart shows"
+  ],
+  "why": "An underlined sounding is a drying height: it stands that much above chart datum. Keep well clear.",
+  "ref": "Chart symbols",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V36 C250 50 200 30 140 44 C90 54 40 40 0 50 Z",
+   "depths": [
+    [
+     50,
+     110,
+     "14"
+    ],
+    [
+     120,
+     150,
+     "9"
+    ],
+    [
+     150,
+     86,
+     "1.2",
+     true
+    ],
+    [
+     230,
+     110,
+     "6"
+    ],
+    [
+     270,
+     160,
+     "11"
+    ]
+   ],
+   "boat": [
+    60,
+    165,
+    45
+   ],
+   "note": "Depths in metres below chart datum"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You have drawn today's leg on the paper chart and spanned it with dividers. Where do you read off the distance in miles?",
+  "a": "On the latitude scale at the side, level with the leg",
+  "o": [
+   "On the longitude scale along the top or bottom",
+   "On the outer ring of the compass rose",
+   "On the kilometre scale bar under the title"
+  ],
+  "why": "One minute of latitude is one nautical mile; minutes of longitude shrink as you go north.",
+  "ref": "Chartwork",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You have a 1:50 000 chart of the area and a 1:10 000 harbour plan in the pilot book. Which do you use to pick your way into the harbour?",
+  "a": "The 1:10 000 plan — larger scale, more detail",
+  "o": [
+   "The 1:50 000 chart — bigger number, more detail",
+   "Either — same detail, only drawn at another size",
+   "Neither — only the plotter shows harbour detail"
+  ],
+  "why": "1:10 000 is a larger scale than 1:50 000: a smaller area drawn in more detail.",
+  "ref": "Charts & pilot books",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are coming in to this town quay to berth stern-to. Which spot do you ask for?",
+  "a": "C — 4.0 m leaves water under the keel",
+  "o": [
+   "A — the root of the quay is most sheltered",
+   "B — 2.0 m, the tide will add the rest",
+   "Any — depths on a plan are only a guide"
+  ],
+  "why": "Pick a berth deeper than your draft, with a margin; the Med tide adds almost nothing.",
+  "ref": "Harbour plans",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V30 H0 Z M60 30 H80 V160 H60 Z",
+   "depths": [
+    [
+     100,
+     62,
+     "1.5"
+    ],
+    [
+     100,
+     102,
+     "2.0"
+    ],
+    [
+     100,
+     142,
+     "4.0"
+    ]
+   ],
+   "labels": [
+    [
+     125,
+     62,
+     "A",
+     "start"
+    ],
+    [
+     125,
+     102,
+     "B",
+     "start"
+    ],
+    [
+     125,
+     142,
+     "C",
+     "start"
+    ],
+    [
+     70,
+     22,
+     "town quay",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Pilot book plan",
+    "Your draft 2.1 m"
+   ],
+   "note": "Depths in metres alongside the quay"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You want a swim stop before the afternoon leg. What is the latest time you can leave the swim stop?",
+  "a": "14:00",
+  "o": [
+   "15:00",
+   "13:00",
+   "16:00"
+  ],
+  "why": "12 M at 6 kn takes 2 hours; with an hour in hand you arrive at 16:00, so leave by 14:00.",
+  "ref": "Time, speed & distance",
+  "fig": {
+   "type": "card",
+   "title": "Lead crew briefing",
+   "lines": [
+    "Next harbour: 12 M",
+    "Your speed under engine: about 6 kn",
+    "Be in by 17:00 — keep an hour in hand"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The lead crew wants every boat at the lunch stop, 14 miles away, by 13:00. You leave at 09:30. What average speed do you need?",
+  "a": "4 knots",
+  "o": [
+   "3.5 knots",
+   "4.5 knots",
+   "5 knots"
+  ],
+  "why": "09:30 to 13:00 is 3.5 hours; 14 M ÷ 3.5 h = 4 knots.",
+  "ref": "Time, speed & distance",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You have drawn the course to the next headland on the chart. What do you steer by the compass?",
+  "a": "136°",
+  "o": [
+   "144°",
+   "140°",
+   "316°"
+  ],
+  "why": "True to magnetic: subtract easterly variation — 140° − 4° = 136°.",
+  "ref": "Compass & variation",
+  "fig": {
+   "type": "compass",
+   "variation": 4,
+   "course": 140,
+   "courseLabel": "True course",
+   "note": "Ignore deviation"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You take this bearing of a lighthouse with the hand-bearing compass. Which true bearing do you draw on the chart?",
+  "a": "035°",
+  "o": [
+   "025°",
+   "030°",
+   "215°"
+  ],
+  "why": "Magnetic to true: add easterly variation — 030° + 5° = 035°.",
+  "ref": "Compass & variation",
+  "fig": {
+   "type": "compass",
+   "variation": 5,
+   "course": 30,
+   "courseLabel": "Bearing (M)",
+   "note": "Plot it as true"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are entering harbour on a leading line. The rear beacon has moved a little to the right of the front one. What do you do?",
+  "a": "Alter to port until they are in line again",
+  "o": [
+   "Alter to starboard until they are in line again",
+   "Hold course — they will line up as you close",
+   "Steer straight for the rear beacon instead"
+  ],
+  "why": "Rear mark open to the right of the front means you are right of the line: come back to port.",
+  "ref": "Transits & leading lines",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The pilot book says: 'Enter with the chapel in line with the white house, 320°.' Why follow the transit rather than steer 320° on the compass?",
+  "a": "It shows at once if wind or current set you off",
+  "o": [
+   "It allows for variation, so no sums are needed",
+   "It still works when the visibility closes in",
+   "It also tells you how far off the entrance you are"
+  ],
+  "why": "A transit is a line on the ground: if the marks open, you are off it, whatever your heading.",
+  "ref": "Transits & leading lines",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You plan to spend the night at anchor here. How much water do you plan on?",
+  "a": "About 3 m — the charted depth, give or take a little",
+  "o": [
+   "About 1.5 m — half the charted depth at low water",
+   "Under 1.9 m — you will touch at low water",
+   "About 6 m — double the charted depth at high water"
+  ],
+  "why": "Med tides are tiny and chart datum is near the lowest level, so the charted depth is about what you get.",
+  "ref": "Chart datum & Med tide",
+  "fig": {
+   "type": "card",
+   "title": "Ionian anchorage",
+   "lines": [
+    "Charted depth 3.0 m",
+    "Pilot book: tidal range about 0.3 m",
+    "Your draft 1.9 m"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are motoring along the coast in clear weather. What do you make of this?",
+  "a": "The chart on the plotter is offset — trust your eyes",
+  "o": [
+   "The headland is nearer than it looks — trust the plotter",
+   "The sounder is faulty — the plotter is always right",
+   "The GPS has lost its fix — stop the boat at once"
+  ],
+  "why": "Electronic charts can be offset by tens or hundreds of metres; what you see and the sounder come first.",
+  "ref": "Chartplotter & GPS",
+  "fig": {
+   "type": "card",
+   "title": "Plotter vs. what you see",
+   "lines": [
+    "Plotter: your boat drawn on the land",
+    "Headland about 300 m off to port",
+    "Echo sounder: 25 m, steady"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Today's route takes you through a narrow pass between an island and a reef. The plotter is working well. How do you take the pass?",
+  "a": "Follow the plotter, checking it against marks and depth",
+  "o": [
+   "Zoom the plotter right in and follow its line exactly",
+   "Engage the autopilot on the plotter's route",
+   "Trust the GPS alone — it is accurate to a few metres"
+  ],
+  "why": "The GPS is good, but the chart under it may not be: confirm with transits, bearings and the sounder.",
+  "ref": "Chartplotter & GPS",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are at anchor at 38°31'N. The next anchorage is due north at 38°43'N. How long does it take at 6 knots?",
+  "a": "2 hours",
+  "o": [
+   "12 minutes",
+   "1 hour 12 minutes",
+   "3 hours"
+  ],
+  "why": "12 minutes of latitude = 12 M; 12 M ÷ 6 kn = 2 hours.",
+  "ref": "Latitude & distance",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You check the route you drew for this afternoon against the chart. What do you do?",
+  "a": "Redraw the leg to pass clear of the 1.8 m patch",
+  "o": [
+   "Go as drawn — 1.8 m is near enough your draft",
+   "Go as drawn, but slow down over the patch",
+   "Go as drawn — the tide will give you more water"
+  ],
+  "why": "The track crosses a sounding shallower than your draft; plan every leg clear of it with a margin.",
+  "ref": "Passage planning",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H120 C100 30 60 50 0 60 Z M250 200 C240 170 260 140 320 130 V200 Z",
+   "depths": [
+    [
+     90,
+     140,
+     "12"
+    ],
+    [
+     165,
+     118,
+     "1.8"
+    ],
+    [
+     120,
+     92,
+     "8"
+    ],
+    [
+     215,
+     150,
+     "10"
+    ],
+    [
+     250,
+     80,
+     "14"
+    ]
+   ],
+   "track": "M40 170 L170 104 L300 90",
+   "boat": [
+    40,
+    170,
+    60
+   ],
+   "panel": [
+    "Planned track",
+    "Your draft 2.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You enter the lead crew's lunch-stop waypoint into the plotter and press 'Go to'. What must you do before following the line?",
+  "a": "Check the straight line on the chart for land and shoals",
+  "o": [
+   "Nothing — the plotter steers round any danger",
+   "Check only that the waypoint name is right",
+   "Set the autopilot first so you hold the line"
+  ],
+  "why": "'Go to' draws a straight line, and it will cross headlands, rocks and shallows if they are in the way.",
+  "ref": "Chartplotter & GPS",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are motoring along this coast toward the headland. The pilot book gives the clearing bearing shown. What do you do?",
+  "a": "Turn offshore until the bearing drops below 070°",
+  "o": [
+   "Hold on — over 070° means you are well clear",
+   "Turn inshore until the bearing reads 070°",
+   "Hold course and check again at the headland"
+  ],
+  "why": "078° is on the wrong side of the clearing line, toward the rocks: turn away until it is below 070°.",
+  "ref": "Clearing bearings",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 L290 40 L270 78 L245 52 L150 48 L60 44 L0 46 Z",
+   "marks": [
+    [
+     270,
+     70,
+     "w",
+     "Lt"
+    ]
+   ],
+   "depths": [
+    [
+     120,
+     64,
+     "0.4",
+     true
+    ],
+    [
+     150,
+     70,
+     "1.1",
+     true
+    ],
+    [
+     200,
+     104,
+     "18"
+    ],
+    [
+     140,
+     176,
+     "25"
+    ]
+   ],
+   "track": "M270 72 L35 157",
+   "labels": [
+    [
+     90,
+     152,
+     "070°",
+     "middle"
+    ]
+   ],
+   "boat": [
+    74,
+    114,
+    70
+   ],
+   "note": "Keep Lt bearing under 070°M · now 078°M"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "When do you expect to arrive in the evening harbour?",
+  "a": "14:30",
+  "o": [
+   "13:30",
+   "15:00",
+   "12:30"
+  ],
+  "why": "9 M ÷ 6 kn = 1 h 30: 09:30 → 11:00; lunch to 13:00; 6 M ÷ 4 kn = 1 h 30 → 14:30.",
+  "ref": "Passage planning",
+  "fig": {
+   "type": "card",
+   "title": "Today's plan",
+   "lines": [
+    "Leave 09:30",
+    "Leg 1: 9 M at 6 kn to the lunch bay",
+    "Lunch and swim: 2 hours",
+    "Leg 2: 6 M at 4 kn under sail"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are motoring in exactly on the leading line from the pilot book. What does the steering compass tell you?",
+  "a": "It is right — 312° true is 307° magnetic",
+  "o": [
+   "It reads 5° low — have it checked",
+   "You are 5° off the line — alter course",
+   "The pilot book's line is 5° wrong"
+  ],
+  "why": "Easterly variation is subtracted: 312° − 5° = 307°M, so the compass has no deviation on this heading.",
+  "ref": "Compass & variation",
+  "fig": {
+   "type": "compass",
+   "variation": 5,
+   "course": 312,
+   "courseLabel": "Line (true)",
+   "note": "Compass reads 307°"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You want to put your position on the paper chart. What latitude do you plot?",
+  "a": "38°42.5'N",
+  "o": [
+   "38°57.5'N",
+   "38°45.0'N",
+   "38°35.0'N"
+  ],
+  "why": "1.5 h × 5 kn = 7.5 M south = 7.5' of latitude: 38°50.0' − 7.5' = 38°42.5'N.",
+  "ref": "Dead reckoning",
+  "fig": {
+   "type": "card",
+   "title": "Plotter has gone blank",
+   "lines": [
+    "Left harbour (38°50.0'N) at 10:00",
+    "Course 180°T, speed 5 kn, no current",
+    "Time now 11:30"
+   ]
+  }
+ }
+]
