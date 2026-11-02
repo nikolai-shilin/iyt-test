@@ -5,6 +5,9 @@
   "buildCommand": "node miniapp/build.mjs",
   "outputDirectory": "miniapp/dist",
   "cleanUrls": true,
+  "functions": {
+    "api/telegram.mjs": { "includeFiles": "data/questions/*.json" }
+  },
   "headers": [
     { "source": "/data/(.*)", "headers": [{ "key": "cache-control", "value": "public, max-age=0, must-revalidate" }] }
   ]

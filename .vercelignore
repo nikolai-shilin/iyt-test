@@ -1,9 +1,12 @@
-# Upload only what the mini app build needs — never .env.local or the bot.
+# Upload only what the mini app and the bot webhook need — never .env.local.
 /*
 !/miniapp
 !/docs
 !/data
 !/package.json
 !/vercel.json
+!/api
+!/bot
+/bot/assets
 /miniapp/dist
 /data/build_bank.py

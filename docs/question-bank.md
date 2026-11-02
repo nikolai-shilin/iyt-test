@@ -112,6 +112,20 @@ To add a level: copy the script to `build_<level>.py` with its own `TOPICS` and 
 
 ## Translations
 
-The source language is English (the exam language). Translations keep the same ids and option order; only `q`,
-`options`, `why` and figure text fields (`note`, `title`, `lines`, `labels`, `t`) are translated. Storage: the
-`question_translations` table (data-model.md) or `data/questions/<level>.<lang>.json` with the same shape.
+The source language is English (the exam language). A translation is an overlay file
+`data/questions/<level>.<lang>.json` holding only translated text, keyed by question id, in the source's option
+order (so answers, progress and exams keyed by option index stay valid). Figure text is addressed by its path inside
+the figure spec — `note`, `lines.1`, `labels.0.2`, `lights.1.t`, `gauges.0.0`, `you.label` — so a translation can
+never move a coordinate. `topics` gives the topic titles, `short` the short names used on chips and buttons.
+
+```
+python3 data/i18n.py extract bareboat-skipper > /tmp/to-translate.json   # every string, in overlay shape
+python3 data/i18n.py check bareboat-skipper ru                           # what is missing, wrong or out of date
+```
+
+The mini app and the bot load the overlay for the reader's language and fall back to English per question, so a
+partial translation is safe to ship. `source` records the bank version the overlay was made from; `check` warns
+when the bank has moved on. Built-in figure labels ("You", "wind", "Variation"…) are translated in the app
+(`FIG_RU` in `miniapp/app.js`, via `FIG_TEXT` in figures.js) and used only on translated questions.
+
+Status: `bareboat-skipper.ru.json` has the topic names; the questions are to be translated once the bank is final.

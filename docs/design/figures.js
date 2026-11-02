@@ -1,6 +1,9 @@
 /* IYT Test figures: every drawn question is a small JSON spec rendered to SVG here (one renderer per type).
    320×200 viewBox, theme tokens for ink/muted/bg; fixed colours only for lights and buoys (red, green, yellow, white).
-   Usage: figSvg(spec) → svg string; paintFigures(root) fills every [data-fig] element. */
+   Usage: figSvg(spec) → svg string; paintFigures(root) fills every [data-fig] element.
+   Built-in labels go through ft(); fill FIG_TEXT ({ 'You': 'Вы', … }) to draw them in another language. */
+const FIG_TEXT = {};
+const ft = (s) => FIG_TEXT[s] ?? s;
 
 const FIG = {};
 const NS = (w = 320, h = 200, extra = '') => `<svg viewBox="0 0 ${w} ${h}" width="100%" preserveAspectRatio="xMidYMid meet" font-family="Carlito, Arial, sans-serif" ${extra}>`;
@@ -28,9 +31,9 @@ function arrow(x1, y1, x2, y2, o = {}) {
 /* wind arrow in a corner: wind FROM direction deg */
 function windArrow(deg, x = 290, y = 34) {
   const [ax, ay] = pol(x, y, 22, deg), [bx, by] = pol(x, y, 22, deg + 180);
-  return `<g>${arrow(ax, ay, bx, by, { c: 'var(--accent)', w: 2.5 })}${txt(x, y + 40, 'wind', { s: 10, f: 'var(--accent)' })}</g>`;
+  return `<g>${arrow(ax, ay, bx, by, { c: 'var(--accent)', w: 2.5 })}${txt(x, y + 40, ft('wind'), { s: 10, f: 'var(--accent)' })}</g>`;
 }
-function compassN(x = 30, y = 30) { return `<g>${arrow(x, y + 14, x, y - 14, { c: 'var(--muted)' })}${txt(x, y - 18, 'N', { s: 11 })}</g>`; }
+function compassN(x = 30, y = 30) { return `<g>${arrow(x, y + 14, x, y - 14, { c: 'var(--muted)' })}${txt(x, y - 18, ft('N'), { s: 11 })}</g>`; }
 
 /* ---------- encounter: own boat centre, other vessel by relative bearing; headings; optional wind ---------- */
 FIG.encounter = f => {
@@ -44,8 +47,8 @@ FIG.encounter = f => {
   if (f.bearingLine) s += `<line x1="${cx}" y1="${cy}" x2="${ox}" y2="${oy}" stroke="var(--tag-line)" stroke-width="2" stroke-dasharray="4 5"/>`;
   const hl = (x, y, hdg, L) => { const [tx, ty] = pol(x, y, L, hdg); return arrow(x, y, tx, ty, { c: 'var(--muted)', dash: true }); };
   s += hl(cx, cy, yh, 58) + (solo ? '' : hl(ox, oy, oth.hdg ?? 180, 58));
-  s += boat(cx, cy, yh, { sail: you.sail, boom: you.boom, you: true, label: you.label || 'You' });
-  if (!solo) s += boat(ox, oy, oth.hdg ?? 180, { sail: oth.sail, boom: oth.boom, label: oth.label || 'Other', scale: oth.scale || 1 });
+  s += boat(cx, cy, yh, { sail: you.sail, boom: you.boom, you: true, label: you.label || ft('You') });
+  if (!solo) s += boat(ox, oy, oth.hdg ?? 180, { sail: oth.sail, boom: oth.boom, label: oth.label || ft('Other'), scale: oth.scale || 1 });
   if (f.note) s += txt(160, 192, f.note, { s: 11, w: 400 });
   return s + '</svg>';
 };
@@ -60,7 +63,7 @@ FIG.lights = f => {
     s += `<circle cx="${l.x}" cy="${l.y}" r="${r * 2.2}" fill="${c}" opacity=".18"/><circle cx="${l.x}" cy="${l.y}" r="${r}" fill="${c}"/>`;
     if (l.t) s += txt(l.x + r * 2.2 + 4, l.y + 4, l.t, { s: 10, f: '#8aa0b8', w: 400, a: 'start' });
   });
-  s += txt(160, 188, f.note || 'Night · lights seen ahead', { s: 11, f: '#8aa0b8', w: 400 });
+  s += txt(160, 188, f.note || ft('Night · lights seen ahead'), { s: 11, f: '#8aa0b8', w: 400 });
   return s + '</svg>';
 };
 
@@ -91,7 +94,7 @@ FIG.buoy = f => {
   if (f.rhythm) {
     const lc = { 'lat-port': B ? COL.g : COL.r, 'lat-stbd': B ? COL.r : COL.g, 'special': COL.y }[k] || '#fff';
     s += `<rect x="196" y="60" width="114" height="80" rx="14" fill="#07101a"/><circle cx="222" cy="92" r="9" fill="${lc}"/><circle cx="222" cy="92" r="18" fill="${lc}" opacity=".18"/>`;
-    s += txt(236, 88, 'Light at night', { s: 10, f: '#8aa0b8', w: 400, a: 'start' }) + txt(236, 104, f.rhythm, { s: 13, f: '#fff', a: 'start' });
+    s += txt(236, 88, ft('Light at night'), { s: 10, f: '#8aa0b8', w: 400, a: 'start' }) + txt(236, 104, f.rhythm, { s: 13, f: '#fff', a: 'start' });
     if (f.rhythmNote) s += txt(253, 128, f.rhythmNote, { s: 10, f: '#8aa0b8', w: 400 });
   }
   if (f.note) s += txt(160, 194, f.note, { s: 11, w: 400 });
@@ -103,14 +106,14 @@ FIG.compass = f => {
   const cx = 110, cy = 100, r = 72, v = f.variation || 0; // variation: +E, −W (degrees)
   let s = NS() + `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--tag-line)" stroke-width="2"/>`;
   for (let d = 0; d < 360; d += 30) { const [a, b] = pol(cx, cy, r, d), [c, e] = pol(cx, cy, r - (d % 90 ? 6 : 12), d); s += `<line x1="${a}" y1="${b}" x2="${c}" y2="${e}" stroke="var(--muted)" stroke-width="2"/>`; }
-  const [tx, ty] = pol(cx, cy, r + 14, 0); s += txt(tx + (v < 0 ? 8 : -8), ty + 4, 'N (true)', { s: 11, a: v < 0 ? 'start' : 'end' });
+  const [tx, ty] = pol(cx, cy, r + 14, 0); s += txt(tx + (v < 0 ? 8 : -8), ty + 4, ft('N (true)'), { s: 11, a: v < 0 ? 'start' : 'end' });
   const [mx, my] = pol(cx, cy, r - 2, v); s += arrow(cx, cy, mx, my, { c: 'var(--accent)', w: 2.5 });
-  const [lx, ly] = pol(cx, cy, r + 16, v); s += txt(lx + (v < 0 ? -10 : 10), ly + 4, 'MN', { s: 11, f: 'var(--accent)', a: v < 0 ? 'end' : 'start' });
+  const [lx, ly] = pol(cx, cy, r + 16, v); s += txt(lx + (v < 0 ? -10 : 10), ly + 4, ft('MN'), { s: 11, f: 'var(--accent)', a: v < 0 ? 'end' : 'start' });
   if (f.course != null) { const [qx, qy] = pol(cx, cy, r - 2, f.course); s += arrow(cx, cy, qx, qy, { c: 'var(--ink)', w: 3 }); }
   s += `<rect x="206" y="52" width="104" height="96" rx="16" fill="var(--band)"/>`;
-  s += txt(258, 74, `Variation ${Math.abs(v)}°${v < 0 ? 'W' : 'E'}`, { s: 13, f: 'var(--ink)' });
-  if (f.course != null) s += txt(258, 96, `${f.courseLabel || 'True course'} ${String(f.course).padStart(3, '0')}°`, { s: 12, f: 'var(--ink)', w: 400 });
-  if (f.deviation != null) s += txt(258, 116, `Deviation ${Math.abs(f.deviation)}°${f.deviation < 0 ? 'W' : 'E'}`, { s: 12, f: 'var(--ink)', w: 400 });
+  s += txt(258, 74, `${ft('Variation')} ${Math.abs(v)}°${ft(v < 0 ? 'W' : 'E')}`, { s: 13, f: 'var(--ink)' });
+  if (f.course != null) s += txt(258, 96, `${f.courseLabel || ft('True course')} ${String(f.course).padStart(3, '0')}°`, { s: 12, f: 'var(--ink)', w: 400 });
+  if (f.deviation != null) s += txt(258, 116, `${ft('Deviation')} ${Math.abs(f.deviation)}°${ft(f.deviation < 0 ? 'W' : 'E')}`, { s: 12, f: 'var(--ink)', w: 400 });
   if (f.note) s += txt(258, 138, f.note, { s: 10, w: 400 });
   return s + '</svg>';
 };
@@ -125,7 +128,7 @@ FIG.chart = f => {
   (f.labels || []).forEach(l => s += txt(l[0], l[1], l[2], { s: 11, f: 'var(--muted)', w: 700, a: l[3] || 'middle' }));
   if (f.boat) s += boat(f.boat[0], f.boat[1], f.boat[2], { you: true, scale: .7 });
   if (f.panel) { s += `<rect x="190" y="12" width="118" height="${18 + 18 * f.panel.length}" rx="12" fill="var(--bg)" stroke="var(--line)"/>`; f.panel.forEach((p, i) => s += txt(200, 30 + 18 * i, p, { s: 12, f: 'var(--ink)', w: i ? 400 : 700, a: 'start' })); }
-  s += txt(26, 190, f.note || 'Depths in metres below chart datum', { s: 10, w: 400, a: 'start' });
+  s += txt(26, 190, f.note || ft('Depths in metres below chart datum'), { s: 10, w: 400, a: 'start' });
   return s + '</svg>';
 };
 
@@ -139,7 +142,7 @@ FIG.anchor = f => {
   s += `<path d="M${ax} ${ay - 14} v16 M${ax - 10} ${ay - 2} q10 10 20 0" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>`;
   s += `<line x1="292" y1="${wl}" x2="292" y2="${bed}" stroke="var(--accent)" stroke-width="2"/>` + txt(300, (wl + bed) / 2 + 4, f.depth, { s: 12, f: 'var(--accent)', a: 'start' });
   if (f.tide) s += txt(300, wl + 14, f.tide, { s: 10, f: 'var(--accent)', a: 'start', w: 400 });
-  s += txt(16, 30, f.title || 'Anchoring', { s: 13, f: 'var(--ink)', a: 'start' });
+  s += txt(16, 30, f.title || ft('Anchoring'), { s: 13, f: 'var(--ink)', a: 'start' });
   (f.lines || []).forEach((l, i) => s += txt(16, 50 + 16 * i, l, { s: 12, f: 'var(--ink)', a: 'start', w: 400 }));
   if (f.wind != null) s += windArrow(f.wind, 150, 30);
   return s + '</svg>';
@@ -154,7 +157,7 @@ FIG.isobars = f => {
   s += txt(cx, cy + 8, f.center || 'L', { s: 28, f: 'var(--ink)' });
   (f.values || []).forEach((v, i) => s += txt(cx + 8, cy - 30 - i * 24, v, { s: 10, a: 'start', w: 400 }));
   if (f.boat) s += boat(f.boat[0], f.boat[1], f.boat[2] || 0, { you: true, scale: .75 });
-  s += txt(300, 24, f.hemisphere || 'Northern hemisphere', { s: 11, a: 'end' });
+  s += txt(300, 24, f.hemisphere || ft('Northern hemisphere'), { s: 11, a: 'end' });
   if (f.note) s += `<rect x="150" y="172" width="160" height="22" rx="11" fill="var(--bg)" opacity=".85"/>` + txt(230, 187, f.note, { s: 10.5, w: 400 });
   return s + '</svg>';
 };
