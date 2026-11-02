@@ -14,7 +14,9 @@
 const TG = window.Telegram && window.Telegram.WebApp;
 const IN_TG = !!(TG && TG.initData);
 const tgv = (v) => IN_TG && TG.isVersionAtLeast(v);
-const NATIVE_BUTTONS = tgv('7.10'); // MainButton + SecondaryButton; older clients get the in-page bar
+// Telegram's own MainButton + SecondaryButton (clients 7.10+) are square-cornered and cannot be styled, so every
+// client gets the app's in-page bar with pill buttons instead; set to tgv('7.10') to go back to the native ones.
+const NATIVE_BUTTONS = false;
 const BOT_LINK = 'https://t.me/iyt_test_bot';
 const $app = document.getElementById('app');
 
