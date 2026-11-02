@@ -161,8 +161,15 @@ body { -webkit-tap-highlight-color: transparent; }
 .app .stu:not(.x3) .tmeta { grid-column: 2; grid-row: 2; font: 400 13px 'Carlito', Arial, sans-serif; color: var(--muted); }
 .app .stu:not(.x3) .ico, .app .stu:not(.x3) .n { grid-row: 1 / span 2; }
 .app .sheet .tbar .card-meta { margin-top: 2px; }
-/* admin: the flagged questions (a topic row with the question on two lines; the sheet shows the whole card and who flagged it) */
+/* the two flags under a question: the plain one (come back to it) and the red one (this question is wrong) */
+.app .qflags { display: flex; gap: 8px; min-width: 0; }
+.app .mini.red svg { color: var(--danger); }
+.app .mini.red.on { background: var(--danger); border-color: var(--danger); color: #fff; }
+.app .mini.red.on svg { color: inherit; }
+
+/* admin: the flagged and reported questions (a topic row with the question on two lines; the sheet shows the whole card and who marked it) */
 .app .flq .ico { color: var(--muted); }
+.app .flq.bad .ico { color: var(--danger); }
 .app .flq .card-title { font-size: 15px; font-weight: 400; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .app .flq .n { max-width: 96px; white-space: nowrap; }
 .app .flq-card { border: 0; padding: 0; }

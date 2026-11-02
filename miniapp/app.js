@@ -1,6 +1,7 @@
 /* IYT Test — Telegram mini app.
    Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile); C4 Students
-   (every student's results and the questions they flagged, api/admin.mjs) opens from the profile for the admins only.
+   (every student's results, the questions they flagged and the ones they reported as wrong, api/admin.mjs) opens from
+   the profile for the admins only.
    Banks are read from Supabase (fetchBank), with the static JSON files as fallback; progress lives on the device
    (localStorage + Telegram CloudStorage) and, inside Telegram, on the server (serverSave → api/progress.mjs), so the
    same code also runs in a plain browser for testing.
@@ -88,7 +89,7 @@ const STR = {
     mistakesToClear: 'Mistakes to clear', toAnswerTwice: (n) => `${pl(n, 'question')} to answer right twice`, review: 'Review',
     topics: 'Topics', masteredTotal: 'mastered / total',
     questionOf: (i, n) => `Question ${i} of ${n}`, correct: 'Correct', notQuite: 'Not quite', why: 'Why',
-    flag: 'Flag', flagged: 'Flagged', skip: 'Skip', check: 'Check', next: 'Next', finish: 'Finish', seeResults: 'See results',
+    flag: 'Flag', flagged: 'Flagged', wrong: 'Wrong?', wrongOn: 'Reported', skip: 'Skip', check: 'Check', next: 'Next', finish: 'Finish', seeResults: 'See results',
     results: 'Results', heads: ['Excellent', 'Good session', 'Getting there', 'Keep going'],
     noMistakes: 'No mistakes this time.',
     score: 'score', time: 'time', byTopic: 'By topic', timeSpent: (s) => ` Time ${s}.`, statNew: 'first seen', statWrong: 'mistakes',
@@ -137,6 +138,7 @@ const STR = {
     questionsK: 'Questions', allN: (n) => `All ${n}`, mistakesOnly: 'Mistakes only', showAnswer: 'Show the answer after each question',
     start: (n) => `Start · ${pl(n, 'question')}`, pickTopic: 'Pick a topic',
     noQuestions: 'No questions to practise', unflagged: 'Removed from flagged', flaggedToast: 'Flagged — find it in Progress',
+    wrongToast: 'Reported — the admins will check this question', unwrong: 'Report withdrawn',
     confirmQuit: 'Quit this session? Your answers so far are kept.',
     error: 'Something went wrong', bankError: (s) => `Could not load the question bank (${s})`,
     days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], locale: 'en-GB',
@@ -146,6 +148,7 @@ const STR = {
     noProgress: 'No answers yet', lastActive: 'Last active', joined: 'Joined', dailyOn: 'Question of the day on', dailyOff: 'Question of the day off',
     noExamsAdmin: 'No mock exam yet', reload: 'Reload', sortProgress: 'Progress', sortName: 'Name', sortJoined: 'Date joined',
     flaggedMeta: 'Questions students marked to come back to', flaggedNone: 'Nobody has flagged a question yet', flaggedBy: 'Flagged by',
+    reportedQ: 'Reported as wrong', reportedMeta: 'Questions students say have a mistake', reportedNone: 'No question has been reported yet', reportedBy: 'Reported by',
   },
   ru: {
     learn: 'Учёба', exam: 'Экзамен', progress: 'Прогресс', profile: 'Профиль', back: '‹ Назад',
@@ -168,7 +171,7 @@ const STR = {
     mistakesToClear: 'Ошибки к разбору', toAnswerTwice: (n) => `${pl(n, 'question')} — ответьте верно дважды`, review: 'Разобрать',
     topics: 'Темы', masteredTotal: 'освоено / всего',
     questionOf: (i, n) => `Вопрос ${i} из ${n}`, correct: 'Верно', notQuite: 'Неверно', why: 'Почему',
-    flag: 'Отметить', flagged: 'Отмечен', skip: 'Пропустить', check: 'Проверить', next: 'Далее', finish: 'Закончить', seeResults: 'Результаты',
+    flag: 'Отметить', flagged: 'Отмечен', wrong: 'Ошибка?', wrongOn: 'Сообщено', skip: 'Пропустить', check: 'Проверить', next: 'Далее', finish: 'Закончить', seeResults: 'Результаты',
     results: 'Результаты', heads: ['Отлично', 'Хорошая тренировка', 'Почти получилось', 'Продолжайте'],
     noMistakes: 'Ни одной ошибки.',
     score: 'результат', time: 'время', byTopic: 'По темам', timeSpent: (s) => ` Время ${s}.`, statNew: 'впервые', statWrong: 'ошибок',
@@ -219,6 +222,7 @@ const STR = {
     questionsK: 'Вопросы', allN: (n) => `Все ${n}`, mistakesOnly: 'Только ошибки', showAnswer: 'Показывать ответ после каждого вопроса',
     start: (n) => `Начать · ${pl(n, 'question')}`, pickTopic: 'Выберите тему',
     noQuestions: 'Нет вопросов для тренировки', unflagged: 'Отметка снята', flaggedToast: 'Отмечен — он в разделе «Прогресс»',
+    wrongToast: 'Сообщили — администраторы проверят вопрос', unwrong: 'Сообщение отозвано',
     confirmQuit: 'Выйти из тренировки? Ответы сохранятся.',
     error: 'Что-то пошло не так', bankError: (s) => `Не удалось загрузить вопросы (${s})`,
     days: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'], locale: 'ru-RU',
@@ -228,6 +232,7 @@ const STR = {
     noProgress: 'Ответов ещё нет', lastActive: 'Последняя активность', joined: 'В приложении с', dailyOn: 'Вопрос дня включён', dailyOff: 'Вопрос дня выключен',
     noExamsAdmin: 'Экзаменов ещё не было', reload: 'Обновить', sortProgress: 'Прогресс', sortName: 'Имя', sortJoined: 'Дата',
     flaggedMeta: 'Вопросы, которые ученики отметили, чтобы вернуться', flaggedNone: 'Отмеченных вопросов пока нет', flaggedBy: 'Отметили',
+    reportedQ: 'Вопросы с ошибкой', reportedMeta: 'Вопросы, в которых ученики нашли ошибку', reportedNone: 'Об ошибках пока не сообщали', reportedBy: 'Сообщили',
   },
 };
 const t = (k, ...a) => { const v = STR[LANG][k] ?? STR.en[k]; return typeof v === 'function' ? v(...a) : v; };
@@ -275,7 +280,7 @@ function toast(text) {
 /* ---------- state: mastery per question, activity per day, exams; saved locally and to CloudStorage ---------- */
 // q[id] = [last two results as '0'/'1', wrong count]. Mastered = right twice in a row (docs/data-model.md).
 const KEY = 'iyt-test-state-v1';
-const fresh = () => ({ v: 1, ts: 0, q: {}, days: {}, total: 0, flags: [], exams: [], exam: null, held: {}, last: null, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
+const fresh = () => ({ v: 1, ts: 0, q: {}, days: {}, total: 0, flags: [], wrong: [], exams: [], exam: null, held: {}, last: null, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
 let S = fresh();
 const merge = (o) => { const f = fresh(); return { ...f, ...o, set: { ...f.set, ...(o && o.set) } }; };
 
@@ -571,6 +576,11 @@ function bootSkeleton() {
   paintIcons($app);
 }
 const levelOfPrefix = (p) => LEVELS.find((l) => l.prefix === p);
+// The red flag on a question screen: "this question is wrong"; on once the student reported it (S.wrong).
+function wrongBtn(id) {
+  const on = S.wrong.includes(id);
+  return `<button class="mini red${on ? ' on' : ''}" data-act="wrong" data-id="${id}"><span data-i="flag" data-s="14"></span>${on ? t('wrongOn') : t('wrong')}</button>`;
+}
 // A student's mastery of a level, in % of its bank; the level they work on, or the one they have seen most of.
 function studentLevel(u) {
   const lv = (u.level && LEVELS.find((l) => l.id === u.level && BASES[l.id])) ||
@@ -586,10 +596,11 @@ function anyQ(id) {
   const lv = levelOfPrefix(String(id).split('-')[0]), b = lv && BASES[lv.id], q = b && b.questions.find((x) => x.id === id);
   return q ? { q, lv, topic: (b.topics.find((tp) => tp.id === q.topic) || {}).title || '' } : null;
 }
-// The questions the students flagged, most flagged first: [{ id, users }]. Ids no bank knows are left out.
-function flaggedByStudents() {
+// The questions the students flagged (key 'flags') or reported as wrong ('wrong'), most marked first: [{ id, users }].
+// Ids no bank knows are left out.
+function flaggedByStudents(key) {
   const by = {};
-  ADM.forEach((u) => (u.flags || []).forEach((id) => { (by[id] = by[id] || []).push(u); }));
+  ADM.forEach((u) => (u[key] || []).forEach((id) => { (by[id] = by[id] || []).push(u); }));
   return Object.keys(by).filter(anyQ).map((id) => ({ id, users: by[id] })).sort((a, b) => b.users.length - a.users.length || a.id.localeCompare(b.id));
 }
 const initials = (name) => name.replace(/^@/, '').split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
@@ -823,7 +834,7 @@ const VIEWS = {
         <div class="band why" id="why"><span class="kicker">${t('why')}</span><p class="body-s">${esc(q.why)}</p><span class="chip ref">${svg('book', 12)}${esc(q.ref)}</span></div>`;
     }
     const flagged = S.flags.includes(id);
-    const tools = `<div class="qtools"><button class="mini${flagged ? ' on' : ''}" data-act="flag"><span data-i="flag" data-s="14"></span>${flagged ? t('flagged') : t('flag')}</button>` +
+    const tools = `<div class="qtools"><span class="qflags"><button class="mini${flagged ? ' on' : ''}" data-act="flag"><span data-i="flag" data-s="14"></span>${flagged ? t('flagged') : t('flag')}</button>${wrongBtn(id)}</span>` +
       (!P.checked && !last ? `<button class="mini" data-act="skip"><span data-i="next" data-s="14"></span>${t('skip')}</button>` : '') + '</div>';
     let main;
     if (!P.checked && P.fb) main = { text: t('check'), off: P.sel == null, act: check };
@@ -926,7 +937,7 @@ const VIEWS = {
       body: `<div class="bar ink"><i style="width:${((E.i + 1) / n) * 100}%"></i></div>
         <div class="qhead"><span class="meta meta-ink">${t('nOf', E.i + 1, n)}</span><span class="timer${left < 300000 ? ' low' : ''}"><span data-i="timer" data-s="16"></span><b>${fmt(left)}</b></span></div>
         ${figHtml(q)}<p class="q">${esc(q.q)}</p><div class="opts">${opts}</div>
-        <div class="qtools"><button class="mini${fl ? ' on' : ''}" data-act="eflag"><span data-i="flag" data-s="14"></span>${fl ? t('flagged') : t('flag')}</button>
+        <div class="qtools"><span class="qflags"><button class="mini${fl ? ' on' : ''}" data-act="eflag"><span data-i="flag" data-s="14"></span>${fl ? t('flagged') : t('flag')}</button>${wrongBtn(id)}</span>
           <button class="mini" data-act="grid"><span data-i="grid" data-s="14"></span>${t('allQuestions')}</button></div>`,
     };
   },
@@ -1040,15 +1051,19 @@ const VIEWS = {
         const bar = L && L.seen ? `<span class="bar"><i style="width:${L.pct}%"></i><i class="seen" style="left:${L.pct}%;width:${Math.max(0, L.seenPct - L.pct)}%"></i></span>` : '';
         return `<div class="topic${bar ? ' x3' : ''} stu" data-act="student" data-id="${u.id}">${avatar(u, 'ico')}<span class="card-title">${esc(name)}</span><span class="tmeta">${esc(meta)}</span>${bar}<span class="n">${right}</span></div>`;
       }).join('');
-      // the questions they flagged, grouped by question; a tap opens the question and who flagged it
-      const fl = flaggedByStudents();
-      const frows = fl.map(({ id, users }) => { const { q, lv, topic } = anyQ(id);
-        return `<div class="topic flq" data-act="flagq" data-id="${id}"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span><span class="n"><b>${users.length}</b>${t('studentsW', users.length)}</span></div>`; }).join('');
+      // the questions they reported as wrong and the ones they flagged, grouped by question; a tap opens the question and who marked it
+      const section = (key, title, meta, none) => {
+        const list = flaggedByStudents(key);
+        const rows = list.map(({ id, users }) => { const { q, lv, topic } = anyQ(id);
+          return `<div class="topic flq${key === 'wrong' ? ' bad' : ''}" data-act="flagq" data-id="${id}" data-k="${key}"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span><span class="n"><b>${users.length}</b>${t('studentsW', users.length)}</span></div>`; }).join('');
+        return `<div class="stack g8" style="margin-top:8px"><div><span class="kicker">${t(title)}</span><p class="card-meta" style="margin:4px 0 0">${t(meta)}</p></div>
+          ${list.length ? `<div class="topics">${rows}</div>` : `<p class="card-meta" style="margin:0">${t(none)}</p>`}</div>`;
+      };
       body = `<div class="stats"><div class="stat"><b data-count="${ADM.length}">${ADM.length}</b><span class="meta">${t('studentsW', ADM.length)}</span></div><div class="stat"><b>${active}</b><span class="meta">${t('activeWeek')}</span></div><div class="stat"><b>${exams}</b><span class="meta">${t('examsTaken', exams)}</span></div></div>
         <div class="tags" style="margin-top:4px">${chip('progress')}${chip('name')}${chip('joined')}</div>
         <div class="topics">${rows}</div>
-        <div class="stack g8" style="margin-top:8px"><div><span class="kicker">${t('flaggedQ')}</span><p class="card-meta" style="margin:4px 0 0">${t('flaggedMeta')}</p></div>
-          ${fl.length ? `<div class="topics">${frows}</div>` : `<p class="card-meta" style="margin:0">${t('flaggedNone')}</p>`}</div>`;
+        ${section('wrong', 'reportedQ', 'reportedMeta', 'reportedNone')}
+        ${section('flags', 'flaggedQ', 'flaggedMeta', 'flaggedNone')}`;
     }
     return {
       title: t('students'),
@@ -1057,17 +1072,18 @@ const VIEWS = {
   },
 };
 
-/* A3 Set up a session · B3 Exam grid · C4 one student, one flagged question */
+/* A3 Set up a session · B3 Exam grid · C4 one student, one flagged or reported question */
 const SHEETS = {
   flagq(s) {
     const f = anyQ(s.id);
     if (!f || !Array.isArray(ADM)) return `<div class="empty"><span class="meta">${t('studentsFail')}</span></div>`;
-    const { q, lv, topic } = f, users = ADM.filter((u) => (u.flags || []).includes(s.id));
+    const key = s.k === 'wrong' ? 'wrong' : 'flags';
+    const { q, lv, topic } = f, users = ADM.filter((u) => (u[key] || []).includes(s.id));
     const opts = q.options.map((o, i) => `<div class="ans${i === q.answer ? ' ok' : ' plain'}"><span class="l">${i === q.answer ? svg('check', 12) : ''}</span><span>${esc(o)}</span></div>`).join('');
     const who = users.map((u) => `<div class="att who" data-act="student" data-id="${u.id}">${avatar(u, 'tg-ava', 'width:32px;height:32px;font-size:12px')}<span class="card-title">${esc(studentName(u))}</span>${svg('next', 16)}</div>`).join('');
     return `<span class="meta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span>
       <div class="rev flq-card"><p class="q">${esc(q.q)}</p>${figHtml(q)}${opts}<p class="body-muted" style="font-size:14px">${esc(q.why)}</p></div>
-      <div class="stack g8"><span class="kicker">${t('flaggedBy')} · ${users.length}</span><div>${who}</div></div>`;
+      <div class="stack g8"><span class="kicker">${t(key === 'wrong' ? 'reportedBy' : 'flaggedBy')} · ${users.length}</span><div>${who}</div></div>`;
   },
   student(s) {
     const u = Array.isArray(ADM) && ADM.find((x) => x.id === s.id);
@@ -1274,6 +1290,12 @@ const ACT = {
     k >= 0 ? S.flags.splice(k, 1) : S.flags.push(id);
     save(); render(); toast(k >= 0 ? t('unflagged') : t('flaggedToast'));
   },
+  // the red flag: this question is wrong (practice and exam); the admins see these on the Students page
+  wrong: (d) => {
+    const k = S.wrong.indexOf(d.id);
+    k >= 0 ? S.wrong.splice(k, 1) : S.wrong.push(d.id);
+    save(); render(); toast(k >= 0 ? t('unwrong') : t('wrongToast'));
+  },
   skip: () => { const [id] = P.ids.splice(P.i, 1); P.ids.push(id); P.sel = null; render(true); },
   // exam
   eopt: (d) => { const E = S.exam, id = E.ids[E.i]; E.ans[id] = E.ord[id][+d.n]; hap('sel'); save(false); render(); },
@@ -1290,7 +1312,7 @@ const ACT = {
   admin: () => go('admin'),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
-  flagq: (d) => { sheet = { v: 'flagq', id: d.id }; render(); },
+  flagq: (d) => { sheet = { v: 'flagq', id: d.id, k: d.k }; render(); },
   sort: (d) => { ADM_SORT = d.s; hap('sel'); render(); },
   reset: async () => {
     if (!(await confirmBox(t('confirmReset')))) return;

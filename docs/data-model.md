@@ -21,8 +21,8 @@ browser) nothing is sent.
 
 **Who sees the students:** the Students page in the mini app (profile → Students, admins only) calls `GET /api/admin`
 (`api/admin.mjs`), which sums each `progress.state` per level (mastered, seen, mistakes), the last exams and the
-streak, and joins them to `users`, with the question ids each student flagged (`state.flags`; the page groups them by
-question — the `flags` table stays empty for now). Who is an admin: `ADMINS` in `api/settings.mjs` (Telegram usernames; the
+streak, and joins them to `users`, with the question ids each student flagged (`state.flags`) and reported as wrong with the red
+flag (`state.wrong`); the page groups both by question — the `flags` and `reports` tables stay empty for now. Who is an admin: `ADMINS` in `api/settings.mjs` (Telegram usernames; the
 `ADMIN_USERNAMES` env adds more), checked against the signed launch data.
 
 **Who reads it:** the mini app (`fetchBank` in `miniapp/app.js`, with the publishable key) and the bot (`read` in

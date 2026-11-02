@@ -3,7 +3,7 @@
 //
 //   GET /api/admin            → { users: [ { id, name, username, lang, daily, joined, active, level, total, streak, lastDay,
 //                                 week, levels: { fs: { mastered, seen, mistakes }, … }, exams: [{ lv, at, pct, passed }],
-//                                 flags: ['bs-012', …] } ] }
+//                                 flags: ['bs-012', …], wrong: ['bs-034', …] } ] }
 //   GET /api/admin?photo=<id> → the student's Telegram profile photo (JPEG, smallest size), 204 when they have none
 //                               that the bot may see. The bot fetches it (getUserProfilePhotos + getFile) because the file
 //                               link carries the bot token, so the app never sees that link.
@@ -11,8 +11,9 @@
 // One entry per row of public.users (people who wrote to the bot or opened the app), newest activity first. The
 // numbers come from public.progress — the app's own state (see fresh() in miniapp/app.js), summed up here per level
 // prefix (fs = Flotilla Skipper, bs = Bareboat Skipper, …; the app knows the bank sizes and turns counts into %).
-// flags are the question ids the student marked to come back to (state.flags); the app groups them by question on
-// the Students page, so the admins see which questions people get stuck on.
+// flags are the question ids the student marked to come back to (state.flags) and wrong the ones they reported as
+// having a mistake (state.wrong, the red flag); the app groups both by question on the Students page, so the admins
+// see which questions people get stuck on and which need a fix.
 // The caller proves who they are with Telegram.WebApp.initData in the x-telegram-init-data header (as api/settings.mjs);
 // anyone who is not an admin gets 403, exactly like a bad signature. Env on Vercel: TELEGRAM_BOT_TOKEN, SUPABASE_URL,
 // SUPABASE_SECRET_KEY. Without the database it answers 503.
@@ -21,7 +22,9 @@ import { verifyInitData, isAdmin, db, SB, SB_KEY } from './settings.mjs';
 
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
 const MAX_USERS = 1000;
-const MAX_FLAGS = 500; // per student
+const MAX_FLAGS = 500; // per student, per kind
+// Question ids out of a state list: well-formed, no repeats (the app never sends anything else; the state is the app's).
+const cleanIds = (list) => [...new Set((Array.isArray(list) ? list : []).filter((id) => typeof id === 'string' && /^[a-z]{1,8}-\d{1,5}$/.test(id)))].slice(0, MAX_FLAGS);
 
 const pad = (n) => String(n).padStart(2, '0');
 const dkey = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
@@ -40,7 +43,7 @@ export function summarise(u, p) {
   const out = {
     id: u.id, name: u.name || null, username: u.username || null, lang: u.lang || 'en', daily: !!(u.daily_question && !u.blocked_at),
     joined: u.created_at, active: p ? p.updated_at : u.updated_at,
-    level: null, total: 0, streak: 0, lastDay: null, week: 0, levels: {}, exams: [], flags: [],
+    level: null, total: 0, streak: 0, lastDay: null, week: 0, levels: {}, exams: [], flags: [], wrong: [],
   };
   if (!p) return out;
   const q = p.q && typeof p.q === 'object' ? p.q : {}, days = p.days && typeof p.days === 'object' ? p.days : {};
@@ -62,7 +65,8 @@ export function summarise(u, p) {
   out.exams = (Array.isArray(p.exams) ? p.exams : []).slice(0, 10)
     .filter((e) => e && Number.isFinite(e.at) && Number.isFinite(e.pct))
     .map((e) => ({ lv: e.lv || 'bareboat-skipper', at: e.at, pct: e.pct, passed: !!e.passed }));
-  out.flags = [...new Set((Array.isArray(p.flags) ? p.flags : []).filter((id) => typeof id === 'string' && /^[a-z]{1,8}-\d{1,5}$/.test(id)))].slice(0, MAX_FLAGS);
+  out.flags = cleanIds(p.flags);
+  out.wrong = cleanIds(p.wrong);
   return out;
 }
 
@@ -96,7 +100,7 @@ export async function GET(request) {
     const [users, progress] = await Promise.all([
       db(`users?select=id,name,username,lang,daily_question,blocked_at,created_at,updated_at&order=updated_at.desc&limit=${MAX_USERS}`),
       // only the parts of the state the summary needs; the whole state can be ~100 KB per student
-      db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags&limit=${MAX_USERS}`),
+      db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags,wrong:state->wrong&limit=${MAX_USERS}`),
     ]);
     const byUser = new Map(progress.map((p) => [p.user_id, p]));
     const list = users.map((u) => summarise(u, byUser.get(u.id)));
