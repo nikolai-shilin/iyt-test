@@ -61,7 +61,7 @@ pass/fail), C1 progress, C2 profile (theme, shuffle, reset). Mastery = right twi
 user in Telegram CloudStorage (localStorage in a browser), so there is no server or database yet. Inside Telegram
 the app uses the native Back, Main and Secondary buttons and haptics; outside it draws the same bar itself.
 Deep links: `?screen=exam|progress|profile|practice|level`, or `startapp=` with the same values.
-Languages: English and Russian interface (picked from the Telegram language, switch in Profile). All 1000 questions
+Languages: English and Russian interface (follows the Telegram language until switched in Profile; the choice is saved, like the theme). All 1000 questions
 are translated in `data/questions/bareboat-skipper.ru.json` (terms: [docs/glossary-ru.md](docs/glossary-ru.md)); see
 [docs/question-bank.md](docs/question-bank.md#translations).
 

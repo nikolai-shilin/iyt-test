@@ -375,12 +375,12 @@ function streak() {
 function prune() { const c = new Date(); c.setDate(c.getDate() - 90); const k = dkey(c); for (const d in S.days) if (d < k) delete S.days[d]; }
 
 /* ---------- language: interface strings + the bank overlay ---------- */
-// Inside Telegram the language follows the user's Telegram app (initData user.language_code) on every launch; the
-// EN/RU switch in the profile changes it for this visit only. In a plain browser the switch is saved and wins over
-// the browser language. Same rule as the bot (bot/core.mjs RU).
+// The language follows the user's Telegram app (initData user.language_code; the browser outside Telegram) until
+// they pick one with the EN/RU switch in the profile: that choice is saved with the progress and wins from then on,
+// on every device. The default is the bot's rule (bot/core.mjs RU).
 const TG_LANG = (IN_TG && TG.initDataUnsafe?.user?.language_code) || '';
 function pickLang() {
-  if (!TG_LANG && LANGS.includes(S.set.lang)) return S.set.lang;
+  if (LANGS.includes(S.set.lang)) return S.set.lang;
   return /^(ru|uk|be|kk)\b/i.test(TG_LANG || navigator.language || '') ? 'ru' : 'en';
 }
 // Banks come from Supabase (docs/data-model.md: bank() and bank_overlay() return the same shape as the files);
@@ -1182,7 +1182,7 @@ const ACT = {
   submit: () => submitExam(false),
   restart: () => restartExam(),
   // profile
-  lang: async (d) => { if (!TG_LANG) { S.set.lang = d.t; save(); } await setLang(d.t); render(); },
+  lang: async (d) => { S.set.lang = d.t; save(); await setLang(d.t); render(); },
   theme: (d) => { S.set.theme = d.t; save(); applyTheme(); render(); },
   set: (d, el) => { S.set[d.k] = !S.set[d.k]; save(); el.classList.toggle('on', S.set[d.k]); setTimeout(render, 220); },
   daily: (d, el) => toggleDaily(el),
