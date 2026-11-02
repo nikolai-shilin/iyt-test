@@ -19,6 +19,11 @@ uploaded the first time they open the app. After that it sends the state plus th
 and when the app closes. Telegram CloudStorage and localStorage stay as the on-device copies; outside Telegram (a plain
 browser) nothing is sent.
 
+**Who sees the students:** the Students page in the mini app (profile → Students, admins only) calls `GET /api/admin`
+(`api/admin.mjs`), which sums each `progress.state` per level (mastered, seen, mistakes), the last exams and the
+streak, and joins them to `users`. Who is an admin: `ADMINS` in `api/settings.mjs` (Telegram usernames; the
+`ADMIN_USERNAMES` env adds more), checked against the signed launch data.
+
 **Who reads it:** the mini app (`fetchBank` in `miniapp/app.js`, with the publishable key) and the bot (`read` in
 `bot/core.mjs`, with `SUPABASE_URL` + a key from the env) call `bank(level)` and `bank_overlay(level, lang)`, which
 return exactly the shape of the JSON files. If the database does not answer within 8 s or has no such level, both fall

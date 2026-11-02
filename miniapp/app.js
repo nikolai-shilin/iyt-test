@@ -1,5 +1,6 @@
 /* IYT Test — Telegram mini app.
-   Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile).
+   Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile); C4 Students
+   (every student's results, api/admin.mjs) opens from the profile for the admins only.
    Banks are read from Supabase (fetchBank), with the static JSON files as fallback; progress lives on the device
    (localStorage + Telegram CloudStorage) and, inside Telegram, on the server (serverSave → api/progress.mjs), so the
    same code also runs in a plain browser for testing.
@@ -45,8 +46,8 @@ let LANG = 'en';
 /* ---------- interface strings ---------- */
 // Plural forms: en [one, many]; ru [one, few, many] (1 вопрос, 2 вопроса, 5 вопросов).
 const PL = {
-  en: { question: ['question', 'questions'], topic: ['topic', 'topics'], mistake: ['mistake', 'mistakes'], exam: ['exam', 'exams'], day: ['day', 'days'], minute: ['minute', 'minutes'] },
-  ru: { question: ['вопрос', 'вопроса', 'вопросов'], topic: ['тема', 'темы', 'тем'], topicAcc: ['тему', 'темы', 'тем'], mistake: ['ошибка', 'ошибки', 'ошибок'], exam: ['экзамен', 'экзамена', 'экзаменов'], day: ['день', 'дня', 'дней'], minute: ['минута', 'минуты', 'минут'] },
+  en: { question: ['question', 'questions'], topic: ['topic', 'topics'], mistake: ['mistake', 'mistakes'], exam: ['exam', 'exams'], day: ['day', 'days'], minute: ['minute', 'minutes'], student: ['student', 'students'] },
+  ru: { question: ['вопрос', 'вопроса', 'вопросов'], topic: ['тема', 'темы', 'тем'], topicAcc: ['тему', 'темы', 'тем'], mistake: ['ошибка', 'ошибки', 'ошибок'], exam: ['экзамен', 'экзамена', 'экзаменов'], day: ['день', 'дня', 'дней'], minute: ['минута', 'минуты', 'минут'], student: ['ученик', 'ученика', 'учеников'] },
 };
 function word(n, key) {
   const f = (PL[LANG][key] || PL.en[key] || PL[LANG][key.replace(/Acc$/, '')]);
@@ -130,6 +131,11 @@ const STR = {
     confirmQuit: 'Quit this session? Your answers so far are kept.',
     error: 'Something went wrong', bankError: (s) => `Could not load the question bank (${s})`,
     days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], locale: 'en-GB',
+    // admin: students' results
+    students: 'Students', studentsMeta: 'Results of everyone who uses the app', studentsFail: 'Could not load the results', studentsEmpty: 'Nobody has opened the app yet',
+    studentsW: (n) => word(n, 'student'), activeWeek: 'active this week', examsTaken: (n) => word(n, 'exam') + ' taken', answeredN: (n) => `${n} answered`,
+    noProgress: 'No answers yet', lastActive: 'Last active', joined: 'Joined', dailyOn: 'Question of the day on', dailyOff: 'Question of the day off',
+    noExamsAdmin: 'No mock exam yet', reload: 'Reload',
   },
   ru: {
     learn: 'Учёба', exam: 'Экзамен', progress: 'Прогресс', profile: 'Профиль', back: '‹ Назад',
@@ -206,6 +212,11 @@ const STR = {
     confirmQuit: 'Выйти из тренировки? Ответы сохранятся.',
     error: 'Что-то пошло не так', bankError: (s) => `Не удалось загрузить вопросы (${s})`,
     days: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'], locale: 'ru-RU',
+    // admin: students' results
+    students: 'Ученики', studentsMeta: 'Результаты всех, кто пользуется приложением', studentsFail: 'Не удалось загрузить результаты', studentsEmpty: 'Приложение ещё никто не открывал',
+    studentsW: (n) => word(n, 'student'), activeWeek: 'активны за неделю', examsTaken: (n) => word(n, 'exam') + ' пройдено', answeredN: (n) => `${n} отвечено`,
+    noProgress: 'Ответов ещё нет', lastActive: 'Последняя активность', joined: 'В приложении с', dailyOn: 'Вопрос дня включён', dailyOff: 'Вопрос дня выключен',
+    noExamsAdmin: 'Экзаменов ещё не было', reload: 'Обновить',
   },
 };
 const t = (k, ...a) => { const v = STR[LANG][k] ?? STR.en[k]; return typeof v === 'function' ? v(...a) : v; };
@@ -452,7 +463,7 @@ let sheet = null;
 let P = null; // the running practice session (memory only)
 // The question-of-the-day switch lives on the server (api/settings.mjs, the same flag as the bot's /settings).
 // undefined = not asked yet, null = unavailable (outside Telegram, no database, request failed) and the row is hidden.
-let DAILY;
+let DAILY, ADMIN = false; // ADMIN: the server said this user may see every student's results (ADMINS in api/settings.mjs)
 const settingsApi = (body) => fetch('/api/settings', {
   method: body ? 'POST' : 'GET', body: body && JSON.stringify(body),
   headers: { 'x-telegram-init-data': TG.initData, ...(body && { 'content-type': 'application/json' }) },
@@ -462,10 +473,32 @@ function loadDaily() {
   DAILY = null;
   settingsApi().then((j) => {
     if (typeof j.daily !== 'boolean') return;
-    DAILY = j.daily;
+    DAILY = j.daily; ADMIN = j.admin === true;
     if (cur().v === 'profile' && !sheet) render();
   }).catch(() => {});
 }
+// Admin: every student's results from api/admin.mjs. undefined = not asked, 'loading', null = failed, or the list.
+let ADM;
+function loadStudents(again) {
+  if (ADM !== undefined && !again) return; // a failure stays on screen until Reload is tapped
+  ADM = 'loading';
+  fetch('/api/admin', { headers: { 'x-telegram-init-data': IN_TG ? TG.initData : '' } })
+    .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
+    .then((j) => { ADM = Array.isArray(j.users) ? j.users : null; })
+    .catch(() => { ADM = null; })
+    .then(() => { if (cur().v === 'admin') render(); });
+}
+const levelOfPrefix = (p) => LEVELS.find((l) => l.prefix === p);
+// A student's mastery of a level, in % of its bank; the level they work on, or the one they have seen most of.
+function studentLevel(u) {
+  const lv = (u.level && LEVELS.find((l) => l.id === u.level && BASES[l.id])) ||
+    ready().slice().sort((a, b) => ((u.levels[b.prefix] || {}).seen || 0) - ((u.levels[a.prefix] || {}).seen || 0))[0];
+  if (!lv || !BASES[lv.id]) return null;
+  const n = BASES[lv.id].questions.length, L = u.levels[lv.prefix] || { mastered: 0, seen: 0, mistakes: 0 };
+  return { lv, n, ...L, pct: Math.round((L.mastered / n) * 100), seenPct: Math.round((L.seen / n) * 100) };
+}
+const studentName = (u) => u.name || (u.username ? '@' + u.username : String(u.id));
+const initials = (name) => name.replace(/^@/, '').split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
 async function toggleDaily() {
   if (typeof DAILY !== 'boolean') return;
   const on = !DAILY;
@@ -846,12 +879,14 @@ const VIEWS = {
       : `<div class="set"><div class="card-title">${t('currentLevel')}</div><span class="val">${esc(LEVEL.title)}</span></div>`;
     const daily = typeof DAILY === 'boolean'
       ? `<div class="set"><div><div class="card-title">${t('daily')}</div><div class="card-meta">${t('dailyMeta')}</div></div><button class="toggle${DAILY ? ' on' : ''}" data-act="daily" aria-pressed="${DAILY}" aria-label="${esc(t('daily'))}"></button></div>` : '';
+    // admins get the students' results page (api/admin.mjs says who)
+    const admin = ADMIN ? `<div class="set" data-act="admin"><div><div class="card-title">${t('students')}</div><div class="card-meta">${t('studentsMeta')}</div></div><span class="val">${svg('next', 16)}</span></div>` : '';
     return {
       title: 'IYT Test', nav: 'profile',
       body: `<div class="row" style="gap:14px"><span class="tg-ava" style="width:52px;height:52px;font-size:16px">${ava}</span><div><div class="card-title" style="font-size:18px">${esc(name)}</div>
           <div class="card-meta">${u ? (u.username ? '@' + esc(u.username) + ' · ' : '') + t('syncedTg') : t('savedBrowser')}</div></div></div>
         <div class="stack">
-          ${daily}${lvl}
+          ${daily}${lvl}${admin}
           <div class="set"><div class="card-title">${t('language')}</div><div class="langs">${LANGS.map((l) => seg('lang', l, LANG === l, l.toUpperCase())).join('')}</div></div>
           <div class="set"><div class="card-title">${t('theme')}</div><div class="langs">${seg('theme', 'day', th === 'day', svg('sun', 14) + t('themeDay'))}${seg('theme', 'night', th === 'night', svg('moon', 14) + t('themeNight'))}${seg('theme', 'auto', th === 'auto', t('auto'))}</div></div>
           <div class="set"><div><div class="card-title">${t('shuffle')}</div><div class="card-meta">${t('shuffleMeta')}</div></div>${tog('shuffle')}</div>
@@ -861,10 +896,52 @@ const VIEWS = {
         <p class="hint">${esc(t('disclaimer', BANK.version) + partial)}</p>`,
     };
   },
+
+  /* C4 Students (admins only): every student's results */
+  admin() {
+    loadStudents();
+    let body;
+    if (ADM === 'loading' || ADM === undefined) body = `<div class="empty"><span class="meta">${t('loading')}</span></div>`;
+    else if (ADM === null) body = `<div class="empty stack g12"><p class="body-muted">${t('studentsFail')}</p><button class="pill" style="margin:0 auto" data-act="adminReload">${t('reload')}</button></div>`;
+    else if (!ADM.length) body = `<div class="empty"><p class="body-muted">${t('studentsEmpty')}</p></div>`;
+    else {
+      const active = ADM.filter((u) => u.week > 0).length, exams = ADM.reduce((a, u) => a + u.exams.length, 0);
+      const rows = ADM.map((u) => {
+        const name = studentName(u), L = studentLevel(u);
+        const meta = [u.username && u.name ? '@' + u.username : '', L && L.seen ? L.lv.title : '', day(u.active)].filter(Boolean).join(' · ');
+        const right = u.total ? `<b>${L ? L.pct + '%' : '–'}</b>${t('answeredN', u.total)}` : t('noProgress');
+        const bar = L && L.seen ? `<span class="bar"><i style="width:${L.pct}%"></i><i class="seen" style="left:${L.pct}%;width:${Math.max(0, L.seenPct - L.pct)}%"></i></span>` : '';
+        return `<div class="topic${bar ? ' x3' : ''} stu" data-act="student" data-id="${u.id}"><span class="ico">${esc(initials(name))}</span><span class="card-title">${esc(name)}</span><span class="tmeta">${esc(meta)}</span>${bar}<span class="n">${right}</span></div>`;
+      }).join('');
+      body = `<div class="stats"><div class="stat"><b>${ADM.length}</b><span class="meta">${t('studentsW', ADM.length)}</span></div><div class="stat"><b>${active}</b><span class="meta">${t('activeWeek')}</span></div><div class="stat"><b>${exams}</b><span class="meta">${t('examsTaken', exams)}</span></div></div>
+        <div class="topics">${rows}</div>`;
+    }
+    return {
+      title: t('students'),
+      body: `<div class="stack g4"><span class="meta">${t('profile')}</span><h2 class="display-s">${t('students')}</h2><p class="body-muted">${t('studentsMeta')}</p></div>${body}`,
+    };
+  },
 };
 
-/* A3 Set up a session · B3 Exam grid */
+/* A3 Set up a session · B3 Exam grid · C4 one student */
 const SHEETS = {
+  student(s) {
+    const u = Array.isArray(ADM) && ADM.find((x) => x.id === s.id);
+    if (!u) return `<div class="empty"><span class="meta">${t('studentsFail')}</span></div>`;
+    const name = studentName(u);
+    const per = {};
+    ready().forEach((l) => { const L = u.levels[l.prefix]; if (L && L.seen) per[l.id] = [L.mastered, BASES[l.id].questions.length]; });
+    const bars = Object.keys(per).map((id) => { const [a, b] = per[id], p = Math.round((a / b) * 100), L = u.levels[LEVELS.find((l) => l.id === id).prefix];
+      return `<div class="tbar"><span class="card-title">${esc(LEVELS.find((l) => l.id === id).title)}</span><span class="n">${p}%</span><span class="bar"><i style="width:${p}%"></i></span><span class="card-meta" style="grid-column:1/-1">${t('levelText', a, b, 0, L.seen)}${L.mistakes ? ' ' + t('misMeta', L.mistakes) + '.' : ''}</span></div>`; }).join('');
+    const exams = u.exams.map((e) => `<div class="att"><span class="card-meta">${day(e.at)} · ${esc((LEVELS.find((l) => l.id === e.lv) || {}).title || e.lv)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
+    return `<div class="row" style="gap:14px"><span class="tg-ava" style="width:52px;height:52px;font-size:16px">${esc(initials(name))}</span><div><div class="card-title" style="font-size:18px">${esc(name)}</div>
+        <div class="card-meta">${u.username ? '@' + esc(u.username) + ' · ' : ''}${u.lang.toUpperCase()} · ${u.daily ? t('dailyOn') : t('dailyOff')}</div></div></div>
+      <div class="stats"><div class="stat"><b>${u.total}</b><span class="meta">${t('answeredW')}</span></div><div class="stat"><b>${u.streak}</b><span class="meta">${t('dayStreak', u.streak)}</span></div><div class="stat"><b>${u.week}</b><span class="meta">${t('thisWeek').toLowerCase()}</span></div></div>
+      <div class="att"><span class="card-meta">${t('joined')}</span><span class="card-meta">${day(u.joined)}</span></div>
+      <div class="att"><span class="card-meta">${t('lastActive')}</span><span class="card-meta">${day(u.active)}</span></div>
+      ${bars ? `<div class="stack g8"><span class="kicker">${t('levelsK')}</span><div class="tbars">${bars}</div></div>` : `<p class="body-muted">${t('noProgress')}</p>`}
+      <div class="stack g8"><span class="kicker">${t('mockExams')}</span>${exams || `<p class="card-meta" style="margin:0">${t('noExamsAdmin')}</p>`}</div>`;
+  },
   setup(s) {
     const pool = setupPool(s), N = pool.length, size = s.size === 'all' ? N : Math.min(s.size, N);
     const misAll = allMistakes();
@@ -1066,6 +1143,9 @@ const ACT = {
   theme: (d) => { S.set.theme = d.t; save(); applyTheme(); render(); },
   set: (d) => { S.set[d.k] = !S.set[d.k]; save(); render(); },
   daily: () => toggleDaily(),
+  admin: () => go('admin'),
+  adminReload: () => { loadStudents(true); render(); },
+  student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
   reset: async () => {
     if (!(await confirmBox(t('confirmReset')))) return;
     const set = S.set;
@@ -1102,6 +1182,7 @@ function deepLink() {
   if (p === 'exam') stack = [{ v: 'examIntro' }];
   else if (p === 'progress') stack = [{ v: 'progress' }];
   else if (p === 'profile' || p === 'settings') stack = [{ v: 'profile' }];
+  else if (p === 'admin' || p === 'students') stack = [{ v: 'profile' }, { v: 'admin' }];
   else if (p === 'level' || LEVELS.some((l) => l.link === p && BASES[l.id])) stack = [{ v: 'home' }, { v: 'level' }];
   else if (p === 'practice') { stack = [{ v: 'home' }, { v: 'level' }]; return 'setup'; }
   return null;

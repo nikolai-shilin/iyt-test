@@ -1,8 +1,10 @@
 // The mini app's own settings that live on the server — for now only the question-of-the-day switch
 // (Supabase users.daily_question, the same column the bot's /settings button flips; see bot/daily.mjs).
 //
-//   GET  /api/settings                 → { daily: true | false }
+//   GET  /api/settings                 → { daily: true | false, admin?: true }
 //   POST /api/settings  { daily: bool } → { daily: true | false }
+//
+// admin: true is sent to the people in ADMINS (below) — the app then shows the students' results page (api/admin.mjs).
 //
 // The caller proves who they are with the mini app's launch data (Telegram.WebApp.initData) in the
 // x-telegram-init-data header: it is signed with the bot token, so nobody can read or change another user's switch.
@@ -28,8 +30,13 @@ export function verifyInitData(initData, token, now = Date.now() / 1000) {
   try { const u = JSON.parse(p.get('user') || 'null'); return u && Number.isInteger(u.id) ? u : null; } catch { return null; }
 }
 
-const SB = (process.env.SUPABASE_URL || '').replace(/\/$/, ''), SB_KEY = process.env.SUPABASE_SECRET_KEY || '';
-async function db(path, { method = 'GET', body, prefer } = {}) {
+// Who may see every student's results (api/admin.mjs): Telegram usernames, without the @, case does not matter.
+// ADMIN_USERNAMES in the env (comma-separated) adds more without a deploy of the code.
+export const ADMINS = ['fullcrimp', ...(process.env.ADMIN_USERNAMES || '').split(',')].map((u) => u.trim().replace(/^@/, '').toLowerCase()).filter(Boolean);
+export const isAdmin = (user) => !!(user && user.username) && ADMINS.includes(user.username.toLowerCase());
+
+export const SB = (process.env.SUPABASE_URL || '').replace(/\/$/, ''), SB_KEY = process.env.SUPABASE_SECRET_KEY || '';
+export async function db(path, { method = 'GET', body, prefer } = {}) {
   // New secret keys (sb_secret_…) go in apikey only; a legacy service_role JWT also goes in Authorization.
   const headers = { apikey: SB_KEY, 'content-type': 'application/json', ...(SB_KEY.startsWith('eyJ') && { authorization: `Bearer ${SB_KEY}` }), ...(prefer && { prefer }) };
   const res = await fetch(`${SB}/rest/v1/${path}`, { method, headers, body: body && JSON.stringify(body) });
@@ -48,7 +55,7 @@ async function handle(request, write) {
     if (!write) {
       const [row] = await db(`users?id=eq.${user.id}&select=daily_question,blocked_at`);
       // no row yet: the user never wrote to the bot, so nothing is sent until they switch it on here
-      return json({ daily: !!(row && row.daily_question && !row.blocked_at) });
+      return json({ daily: !!(row && row.daily_question && !row.blocked_at), ...(isAdmin(user) && { admin: true }) });
     }
     let on;
     try { on = (await request.json()).daily; } catch { return json({ error: 'bad request' }, 400); }
