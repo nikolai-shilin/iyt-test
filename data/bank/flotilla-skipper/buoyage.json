@@ -1,0 +1,404 @@
+[
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Entering Argostoli from the sea, you pass this buoy. On which side do you leave it?",
+  "a": "On your port side",
+  "o": [
+   "On your starboard side",
+   "On either side",
+   "Close on its seaward side"
+  ],
+  "why": "Region A: a red can marks the port side of the channel going in.",
+  "ref": "IALA lateral marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "lat-port",
+   "topmark": true,
+   "note": "Entering harbour from seaward"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "You see this mark off a headland. Where is the safe water?",
+  "a": "To the north of it",
+  "o": [
+   "To the south of it",
+   "To the east of it",
+   "All around it"
+  ],
+  "why": "North cardinal: both cones point up; pass to the north of it.",
+  "ref": "Cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-n"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Approaching Lefkas at night, you see a white light: six quick flashes, then one long flash. Where do you pass the mark?",
+  "a": "To the south of it",
+  "o": [
+   "To the north of it",
+   "To the east of it",
+   "To the west of it"
+  ],
+  "why": "Q(6)+LFl is a south cardinal; the long flash tells it apart from Q(3) and Q(9).",
+  "ref": "Cardinal marks",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Your planned track passes 100 m west of this mark. Is that safe?",
+  "a": "No — pass on its east side",
+  "o": [
+   "Yes — west is its safe side",
+   "Yes — 100 m is enough either side",
+   "No — pass on its north side"
+  ],
+  "why": "East cardinal: cones base to base, light Q(3); the safe water is to the east.",
+  "ref": "Cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-e",
+   "rhythm": "Q(3) 10s"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Your pilot book says this mark guards a reef. Where is the reef?",
+  "a": "To the east of the mark",
+  "o": [
+   "To the west of the mark",
+   "To the north of the mark",
+   "Right underneath the mark"
+  ],
+  "why": "West cardinal: the safe water is to the west, so the danger lies to the east.",
+  "ref": "Cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-w"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Off a point near Sivota you see this mark. How do you pass it?",
+  "a": "Either side, giving it a good berth",
+  "o": [
+   "Close by — it marks deep water",
+   "Leave it to port, like a lateral",
+   "Only to its north, like a cardinal"
+  ],
+  "why": "Isolated danger: a small danger with navigable water all round — keep well off.",
+  "ref": "Isolated danger mark",
+  "fig": {
+   "type": "buoy",
+   "kind": "iso",
+   "rhythm": "Fl(2) 5s"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Approaching a harbour, you find this mark ahead. What does it tell you?",
+  "a": "Safe water all round it",
+  "o": [
+   "A danger — keep well clear",
+   "The port side of the channel",
+   "A swimming area — keep out"
+  ],
+  "why": "Safe water mark: red and white stripes, a red ball; it often marks a fairway or landfall.",
+  "ref": "Safe water mark",
+  "fig": {
+   "type": "buoy",
+   "kind": "safe",
+   "rhythm": "LFl 10s"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Off a beach near Kos you see a line of these. What are they?",
+  "a": "Special marks — check the chart",
+  "o": [
+   "Lateral marks — keep them to starboard",
+   "Cardinal marks — pass to their north",
+   "Safe water marks — sail between them"
+  ],
+  "why": "Yellow with an X: a special mark, often a bathing area limit; the chart says which.",
+  "ref": "Special marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "special",
+   "rhythm": "Fl Y 5s",
+   "note": "One of a line off the beach"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "The pilot book gives the harbour entrance light as Fl(2) R 6s. What will you see?",
+  "a": "Two red flashes every 6 seconds",
+  "o": [
+   "Two red flashes, each 6 seconds long",
+   "A red flash every 2 seconds",
+   "Six red flashes, then 2 s dark"
+  ],
+  "why": "Fl(2) = groups of two flashes; R = red; 6s = the whole cycle repeats every 6 seconds.",
+  "ref": "Light characteristics",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "At a harbour entrance you time a white light: on for 3 seconds, off for 1, repeating. How is it shown on the chart?",
+  "a": "Oc 4s — light longer than dark",
+  "o": [
+   "Fl 4s — light shorter than dark",
+   "Iso 4s — light and dark equal",
+   "LFl 4s — one long flash"
+  ],
+  "why": "Occulting: the light is on longer than it is off; the period is 3 + 1 = 4 s.",
+  "ref": "Light characteristics",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Entering an unfamiliar harbour at night, you see these lights on the pierheads. Where do you steer?",
+  "a": "Between them: red to port, green to starboard",
+  "o": [
+   "Leave both lights on your port side",
+   "Leave both lights on your starboard side",
+   "Head for the red light, then turn"
+  ],
+  "why": "Region A: the red light marks the port side going in, the green the starboard side.",
+  "ref": "Harbour entrance lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 120,
+     "y": 128,
+     "t": "red"
+    },
+    {
+     "c": "g",
+     "x": 200,
+     "y": 128,
+     "t": "green"
+    }
+   ],
+   "note": "Night · harbour entrance ahead"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Next year you charter in the Caribbean, in IALA region B. Entering harbour from sea, on which side do you leave a red lateral mark?",
+  "a": "On your starboard side",
+  "o": [
+   "On your port side, as in the Med",
+   "On either side — it marks a danger",
+   "On the side away from the land"
+  ],
+  "why": "Region B (the Americas) reverses the colours: red is left to starboard going in.",
+  "ref": "IALA region B",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "In a channel between two islands, you meet this mark. On which side do you leave it?",
+  "a": "On your port side",
+  "o": [
+   "On your starboard side",
+   "On either side",
+   "Close on its east side"
+  ],
+  "why": "Lateral marks follow the direction of buoyage; heading against it, a green cone goes to port.",
+  "ref": "Direction of buoyage",
+  "fig": {
+   "type": "buoy",
+   "kind": "lat-stbd",
+   "topmark": true,
+   "note": "Buoyage direction: north · you head south"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "At night you count nine quick white flashes, then darkness, repeating. On which side of the mark is the safe water?",
+  "a": "To the west of it",
+  "o": [
+   "To the east of it",
+   "To the south of it",
+   "All around it"
+  ],
+  "why": "Q(9) or VQ(9) is a west cardinal: think of nine o'clock on a clock face.",
+  "ref": "Cardinal marks",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "How do you pass this mark?",
+  "a": "Alter to port, leaving it to starboard",
+  "o": [
+   "Alter to starboard, leaving it to port",
+   "Hold course and pass close alongside",
+   "Turn back — the danger lies beyond it"
+  ],
+  "why": "Pass north of a north cardinal: heading east, north is to port, so the mark stays to starboard.",
+  "ref": "Cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-n",
+   "rhythm": "Q",
+   "note": "Dead ahead · you are heading 090°"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "On the chart, a buoy's light is shown just as \"Q\" — no colour letter. What do you look for at night?",
+  "a": "A white light flashing quickly, non-stop",
+  "o": [
+   "A yellow light flashing quickly, non-stop",
+   "A red light flashing quickly, non-stop",
+   "A white light, one long flash every 10 s"
+  ],
+  "why": "No colour letter means white; Q alone is continuous quick flashing — a north cardinal.",
+  "ref": "Light characteristics",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Entering the channel at night, you find this light close on your starboard bow. What does it tell you?",
+  "a": "You are on the wrong side — keep it to port",
+  "o": [
+   "Fine — leave it to starboard as you pass",
+   "It is a starboard mark — keep it there",
+   "It is an isolated danger — pass either side"
+  ],
+  "why": "Going in, a red light is left to port; having it to starboard puts you outside the channel.",
+  "ref": "IALA lateral marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 240,
+     "y": 128,
+     "t": "Fl R 4s"
+    }
+   ],
+   "note": "Night · entering from seaward"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Your planned track runs between these two marks. Is it safe?",
+  "a": "No — the danger lies between them",
+  "o": [
+   "Yes — keep exactly halfway between",
+   "Yes — cardinals mark the channel edges",
+   "Only by day, with both marks in sight"
+  ],
+  "why": "A north cardinal lies north of a danger and a south cardinal south of it, so the danger is between.",
+  "ref": "Cardinal marks",
+  "fig": {
+   "type": "chart",
+   "depths": [
+    [
+     60,
+     40,
+     "18"
+    ],
+    [
+     260,
+     40,
+     "15"
+    ],
+    [
+     70,
+     172,
+     "16"
+    ],
+    [
+     260,
+     165,
+     "20"
+    ]
+   ],
+   "marks": [
+    [
+     160,
+     58,
+     "y",
+     "N cardinal"
+    ],
+    [
+     160,
+     152,
+     "y",
+     "S cardinal"
+    ]
+   ],
+   "track": "M20 105 H300",
+   "boat": [
+    30,
+    105,
+    90
+   ],
+   "note": "Your planned track"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Leaving Gouvia marina for the open sea at night, you see a flashing red light ahead, low on the water. On which side do you leave it?",
+  "a": "On your starboard side",
+  "o": [
+   "On your port side",
+   "On either side, 50 m off",
+   "Steer straight for it"
+  ],
+  "why": "Heading out to sea the lateral rule reverses: red marks stay on your starboard side.",
+  "ref": "IALA lateral marks",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Coming in on the safe white sector of this light, you see it change. What does it mean?",
+  "a": "You have left the safe sector — check the chart",
+  "o": [
+   "You are closer — red means nearly in",
+   "The light is faulty — ignore it",
+   "The red sector is the deepest water"
+  ],
+  "why": "A sector light shows white over the safe approach; a coloured sector means you are off the line.",
+  "ref": "Sector lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 118,
+     "t": "was white, now red"
+    }
+   ],
+   "note": "Night · the entrance sector light"
+  }
+ }
+]

@@ -1,0 +1,367 @@
+[
+ {
+  "topic": "channels",
+  "difficulty": 1,
+  "q": "You are under way along the coast and not talking to anyone. Which channel do you keep the radio on?",
+  "a": "Channel 16, the distress, safety and calling channel",
+  "o": [
+   "Channel 70, so you hear the coastguard by voice",
+   "Channel 6, the intership channel for yachts",
+   "Channel 13, the channel used by all leisure craft"
+  ],
+  "why": "Under way, keep watch on 16 so you hear distress and safety calls and anyone calling you.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 1,
+  "q": "Your crew scrolls to channel 70 to call a friend, but the set will not let him talk there. Why?",
+  "a": "Channel 70 carries only DSC digital calls, never voice",
+  "o": [
+   "Channel 70 is kept for the coastguard's voice traffic",
+   "Channel 70 only works for voice on high power, 25 W",
+   "Channel 70 is for marinas and needs their permission"
+  ],
+  "why": "Channel 70 is reserved for DSC data; voice there would block distress alerts.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 1,
+  "q": "A ship crossing ahead calls you on 16 and asks you to go to channel 13. What is 13 for?",
+  "a": "Bridge-to-bridge navigation safety between vessels",
+  "o": [
+   "DSC alerts and calls between ships",
+   "Port operations inside the harbour",
+   "Public calls to telephones ashore"
+  ],
+  "why": "Channel 13 is the international bridge-to-bridge channel for navigation safety.",
+  "ref": "VHF channels",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 85,
+    "hdg": 270,
+    "label": "Ship",
+    "scale": 1.4
+   },
+   "note": "The ship calls you on 16: \"go to 13\""
+  }
+ },
+ {
+  "topic": "channels",
+  "difficulty": 1,
+  "q": "You want to call a yacht you met yesterday. You do not know which channel they listen to. Where do you make the first call?",
+  "a": "On 16, then move to a working channel",
+  "o": [
+   "On 70, then move to a working channel",
+   "On 13, then stay there to talk",
+   "On the nearest marina's channel"
+  ],
+  "why": "16 is the calling channel; once in contact, both move off it.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "Your friend answers your call on 16. Which channel do you suggest for the conversation?",
+  "a": "An intership channel such as 72 or 77",
+  "o": [
+   "Channel 70, because it is always quiet",
+   "Stay on 16, as the chat will be short",
+   "The marina's port operations channel"
+  ],
+  "why": "Yacht-to-yacht talk goes on an intership simplex channel, not 16, 70 or a port channel.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "You and a friend want a long chat about tomorrow's route. Both 6 and 72 are free. Which do you choose?",
+  "a": "72 — keep 6 clear, as it is also used in search and rescue",
+  "o": [
+   "6 — it is the intership channel meant for chats",
+   "6 — it carries further than 72 at the same power",
+   "72 — channel 6 is only for DSC data and alerts"
+  ],
+  "why": "Channel 6 is also the on-scene channel for search and rescue; use 72 or 77 for social talk.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "You and your friend both select the same duplex channel. You can hear the coast station on it, but not each other. Why?",
+  "a": "Each yacht sends on one frequency and listens on another",
+  "o": [
+   "Duplex channels are receive-only for small craft",
+   "Your squelch is set too high for a duplex channel",
+   "Duplex channels need both sets on high power"
+  ],
+  "why": "On duplex a ship sends on one frequency and receives the shore's; two ships cannot hear each other.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "The coast station asks you to switch to its working channel, which is duplex. Can you talk to it there?",
+  "a": "Yes — duplex works between a ship and a shore station",
+  "o": [
+   "No — yachts may only use simplex channels",
+   "No — duplex works only between two ships",
+   "Only if you first send a DSC call on 70"
+  ],
+  "why": "Duplex channels are made for ship-to-shore calls; only ship-to-ship fails on them.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "On channel 72 you and your friend press the transmit button at the same moment. What happens?",
+  "a": "Neither of you is heard clearly, as on simplex only one can talk",
+  "o": [
+   "Both are heard, as in a telephone conversation",
+   "The set holds the second call until the first ends",
+   "The stronger signal is passed on to the other boat"
+  ],
+  "why": "Simplex is one frequency: while you transmit you cannot receive, so talk in turn and end with OVER.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "You are approaching an island port in Greece and want the port authority's working channel. Where do you find it?",
+  "a": "In the pilot book, almanac or port details on the chart",
+  "o": [
+   "It is always channel 12 in every Greek port",
+   "It is always channel 70, as for all port calls",
+   "Ask any yacht on 72 which channel they think it is"
+  ],
+  "why": "Port channels differ from port to port; look them up rather than guess.",
+  "ref": "Port operations",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "Your friend cannot hear you, although you are only 6 miles apart. Why?",
+  "a": "VHF works roughly in line of sight, and the island is in the way",
+  "o": [
+   "Six miles is beyond the range of any yacht VHF",
+   "The island's harbour channel jams the intership one",
+   "VHF bends around islands only on channel 16"
+  ],
+  "why": "VHF travels roughly in straight lines; high land between the antennas blocks it.",
+  "ref": "VHF range",
+  "fig": {
+   "type": "bay",
+   "land": "M130 60 C145 35 190 38 205 70 C215 100 205 140 172 146 C140 150 118 118 130 60 Z",
+   "spots": [
+    [
+     50,
+     100,
+     "A"
+    ],
+    [
+     272,
+     70,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     168,
+     98,
+     "island, 300 m high",
+     "middle"
+    ]
+   ],
+   "note": "A: you · B: your friend, 6 miles away"
+  }
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "Which of these may stay on channel 16 instead of moving to another channel?",
+  "a": "Distress traffic: a MAYDAY and the replies to it",
+  "o": [
+   "A friendly chat between two yachts",
+   "Booking a berth with the marina",
+   "The coastguard's full weather forecast"
+  ],
+  "why": "16 is for distress, urgency, safety and calling; only distress traffic normally stays on it.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "You are approaching a busy commercial port where large ships manoeuvre. Which channel do you listen to as well as 16?",
+  "a": "The port's own operations or traffic channel",
+  "o": [
+   "Channel 70, to hear the ships' DSC alerts",
+   "Channel 72, where ships give way to yachts",
+   "No other channel — 16 is enough in a port"
+  ],
+  "why": "Near a busy port, listen on its listed port or traffic channel to know what ships will do.",
+  "ref": "Port operations",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "On your charter yacht in Croatia, the VHF display shows \"USA\" next to the channel number. What do you do?",
+  "a": "Set the channel mode to international (INT)",
+  "o": [
+   "Leave it: channel modes only matter for DSC",
+   "Leave it: USA mode gives the longest range",
+   "Set the mode to CAN, as used in Europe"
+  ],
+  "why": "Outside North America use the international channel plan; some channels differ in USA mode.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "You and your friend move to 72, but two other boats are already talking there. What do you do?",
+  "a": "Agree another free intership channel, such as 77",
+  "o": [
+   "Talk over them — 72 is open to everyone",
+   "Go back to 16 and have your chat there",
+   "Use channel 70, which is always free"
+  ],
+  "why": "Never talk over others; pick another free intership channel.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 2,
+  "q": "Your flotilla agreed this morning to keep a watch on 72 as well as 16. You want to reach the lead boat. Where do you call?",
+  "a": "Directly on 72, as agreed beforehand",
+  "o": [
+   "On 16 first, then move to 72",
+   "On 70, then talk on 72",
+   "On 6, then move to 72"
+  ],
+  "why": "A pre-arranged working channel can be used for the call itself, keeping 16 clear.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 3,
+  "q": "Which set of channels fits these three jobs, in order?",
+  "a": "13 · 72 · 70",
+  "o": [
+   "16 · 70 · 72",
+   "70 · 16 · 13",
+   "6 · 13 · 16"
+  ],
+  "why": "13 bridge-to-bridge safety, 72 intership chat, 70 DSC only.",
+  "ref": "VHF channels",
+  "fig": {
+   "type": "card",
+   "title": "Three jobs",
+   "lines": [
+    "1. Agree how to pass a ship that called you",
+    "2. A long chat with a friend's yacht",
+    "3. The channel your DSC uses for alerts"
+   ]
+  }
+ },
+ {
+  "topic": "channels",
+  "difficulty": 3,
+  "q": "From A you talk easily to the coast station, but your friends at B cannot hear you. Why?",
+  "a": "The coast station's antenna is very high; the headland blocks B",
+  "o": [
+   "The coast station is on duplex, which carries further",
+   "Friends' sets need DSC to hear a yacht nearby",
+   "Short distances are weaker than long ones on VHF"
+  ],
+  "why": "Range depends on antenna height and a clear line; high stations reach far, land in between blocks.",
+  "ref": "VHF range",
+  "fig": {
+   "type": "bay",
+   "land": "M118 200 C128 150 140 90 162 52 C172 38 190 42 193 60 C197 100 192 150 212 200 Z",
+   "spots": [
+    [
+     70,
+     120,
+     "A"
+    ],
+    [
+     245,
+     110,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     163,
+     140,
+     "headland",
+     "middle"
+    ],
+    [
+     163,
+     30,
+     "coast station on a mountain, 30 miles north",
+     "middle"
+    ]
+   ],
+   "note": "A: you · B: your friends, 3 miles away"
+  }
+ },
+ {
+  "topic": "channels",
+  "difficulty": 3,
+  "q": "Channel 16 is busy with a long MAYDAY exchange between the coastguard and a yacht. You need to tell the marina you will be late. What do you do?",
+  "a": "Call the marina directly on its working channel",
+  "o": [
+   "Wait for a gap and call the marina on 16",
+   "Call the marina briefly on 16 at low power",
+   "Call the marina on 70, which stays free"
+  ],
+  "why": "Keep off 16 during distress traffic; routine calls go straight to the working channel.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "channels",
+  "difficulty": 3,
+  "q": "Your three flotilla friends are at sea in these places. Both your boats have masthead antennas. Whom can you count on reaching by voice?",
+  "a": "A only",
+  "o": [
+   "A and B",
+   "A and C",
+   "All three"
+  ],
+  "why": "Yacht to yacht reaches roughly 10–20 miles over open water; high land between blocks it.",
+  "ref": "VHF range",
+  "fig": {
+   "type": "card",
+   "title": "Where they are",
+   "lines": [
+    "A: 8 miles away, open water between",
+    "B: 12 miles, behind a 400 m island",
+    "C: 40 miles away, open water between"
+   ]
+  }
+ }
+]

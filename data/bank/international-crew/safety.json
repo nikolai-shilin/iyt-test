@@ -1,0 +1,353 @@
+[
+ {
+  "topic": "safety",
+  "difficulty": 1,
+  "q": "You arrive late on the first evening and miss the skipper's safety briefing. What do you do before the boat leaves?",
+  "a": "Ask the skipper to walk you through it",
+  "o": [
+   "Read the boat's manual once you are under way",
+   "Ask another guest to sum it up on your watch",
+   "Nothing — you will pick it up as you go"
+  ],
+  "why": "You must know where the safety gear is before you sail, and only the skipper's briefing covers this boat.",
+  "ref": "Safety briefing",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 1,
+  "q": "You are packing for a week's charter from Lefkada. Which shoes do you take for deck work?",
+  "a": "Deck shoes with non-slip, non-marking soles",
+  "o": [
+   "Black-soled trainers with a deep tread",
+   "Flip-flops that dry quickly",
+   "Leather shoes with smooth soles"
+  ],
+  "why": "Soft non-slip soles grip a wet deck and leave no black marks; flip-flops come off your feet.",
+  "ref": "Personal safety",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 1,
+  "q": "You must carry two fenders forward along the side deck while the boat rolls in a ferry's wake. How do you do it?",
+  "a": "One at a time, holding on with your free hand",
+  "o": [
+   "Both at once, hugged to your chest",
+   "Both at once, walking quickly forward",
+   "One at a time, steadying yourself on the boom"
+  ],
+  "why": "One hand for yourself, one for the boat — and the boom is no handhold, it swings.",
+  "ref": "Moving on deck",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 1,
+  "q": "What do you do to stay fit for your watches today?",
+  "a": "Drink water often, before you feel thirsty",
+  "o": [
+   "Drink only once you feel really thirsty",
+   "Swap water for cold beer — it is still fluid",
+   "Save the water until the end of the day"
+  ],
+  "why": "In heat you lose water all the time; thirst comes late, and alcohol dries you out further.",
+  "ref": "Heat and dehydration",
+  "fig": {
+   "type": "card",
+   "title": "Passage day, August",
+   "lines": [
+    "Air 35 °C, little shade in the cockpit",
+    "Six hours under way",
+    "Coffee at breakfast, nothing since"
+   ]
+  }
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "This is what you find on your lifejacket. What do you do?",
+  "a": "Hand it to the skipper and take another one",
+  "o": [
+   "Wear it — red shows it is ready to fire",
+   "Wear it and rely on the oral tube instead",
+   "Blow it up by mouth to test, then wear it"
+  ],
+  "why": "A red indicator means the inflator may not fire; the jacket must be re-armed before use.",
+  "ref": "Lifejackets",
+  "fig": {
+   "type": "card",
+   "title": "Pre-sail lifejacket check",
+   "lines": [
+    "Automatic lifejacket, cover opened",
+    "Arming indicator: red, not green",
+    "Gas cylinder: screwed in"
+   ]
+  }
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "A wave fills the cockpit and your automatic lifejacket inflates. Later you let the air out. Can you wear it on your next watch?",
+  "a": "No — it needs a re-arming kit fitted first",
+  "o": [
+   "Yes — just let the air out and fold it",
+   "Yes, once it has dried in the sun",
+   "Yes — a spare charge fires next time"
+  ],
+  "why": "A fired jacket has an empty cylinder; it will not inflate again until it is re-armed.",
+  "ref": "Lifejackets",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "Your friend finds her lifejacket's crotch strap uncomfortable and leaves it undone. What happens if she goes over the side?",
+  "a": "The jacket rides up over her face as it inflates",
+  "o": [
+   "The jacket will not inflate on contact with water",
+   "The cylinder fires early as she moves about",
+   "Nothing — the waist belt alone holds it in place"
+  ],
+  "why": "Without the crotch strap an inflated jacket slides up and can cover the face or come off.",
+  "ref": "Lifejackets",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "Your skipper says lifejackets go on whenever there is a real risk of ending up in the water. In which of these do you wear yours?",
+  "a": "The tender ride back to the boat after dinner ashore",
+  "o": [
+   "Sitting in the cockpit while moored stern-to in harbour",
+   "Sleeping in your bunk during your off watch",
+   "Hosing down the deck while tied up in the marina"
+  ],
+  "why": "Night tender trips, often after a drink, are a classic way to drown — wear a lifejacket.",
+  "ref": "Lifejackets",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "The skipper sends you forward to free a jammed furling line. Which side deck do you use?",
+  "a": "Port — the high, windward side",
+  "o": [
+   "Starboard — the low, leeward side",
+   "Starboard, holding the boom as you go",
+   "Either — the heel makes no difference"
+  ],
+  "why": "On the windward side a slip throws you onto the deck, not over the low guardrail.",
+  "ref": "Moving on deck",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "dist": 0
+   },
+   "wind": 0,
+   "note": "Close-hauled, Force 5, heeling"
+  }
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "You need to cross the cockpit to reach the cool box. What is the main danger to you?",
+  "a": "An accidental gybe swinging the boom across",
+  "o": [
+   "The genoa backing and stopping the boat",
+   "The mainsheet jamming in its block",
+   "The boat suddenly luffing head to wind"
+  ],
+  "why": "Running in a rolling sea, the boom can gybe without warning at head height — keep low.",
+  "ref": "Boom awareness",
+  "fig": {
+   "type": "card",
+   "title": "Downwind run",
+   "lines": [
+    "Wind F4 from astern, following sea",
+    "Boat rolling, main out to starboard",
+    "No preventer rigged"
+   ]
+  }
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "You check this list after the skipper's briefing. What is still missing from it?",
+  "a": "Where the first-aid kit and the bilge pump are",
+  "o": [
+   "Where the spare bedding and towels are kept",
+   "How the plotter's tide page works",
+   "Which marina the boat will use tonight"
+  ],
+  "why": "A safety briefing covers the first-aid kit and the bilge pump too — ask if they were missed.",
+  "ref": "Safety briefing",
+  "fig": {
+   "type": "card",
+   "title": "Briefing — what you were shown",
+   "lines": [
+    "Lifejackets and harnesses: saloon locker",
+    "Extinguishers, fire blanket: galley",
+    "Flares and liferaft: cockpit and stern",
+    "Gas shut-off and seacocks: shown"
+   ]
+  }
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "You are on deck all day in July with a cool breeze blowing. How do you protect yourself from the sun?",
+  "a": "Hat, long sleeves, sunglasses, sunscreen topped up",
+  "o": [
+   "Sunscreen once in the morning is enough",
+   "No cover needed — the breeze stops sunburn",
+   "Cover up only at the first sign of redness"
+  ],
+  "why": "Wind cools the skin but does not stop UV; the sun and its glare off the water burn all day.",
+  "ref": "Sun protection",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "You are helming at night as the wind rises, and the skipper tells you to clip on. Where do you clip your tether?",
+  "a": "A strong point in the cockpit meant for it",
+  "o": [
+   "The guardwire beside the wheel",
+   "The mainsheet traveller car",
+   "A stanchion next to the helm"
+  ],
+  "why": "Use a proper strong point: guardwires and stanchions can fail and the traveller car moves.",
+  "ref": "Harness and tether",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "Your tether has two hooks. Clipped to the jackstay, you reach the mast and must move to the strong point there. How?",
+  "a": "Clip the second hook on, then unclip the first",
+  "o": [
+   "Unclip from the jackstay, then clip to the mast",
+   "Hold a shroud while you move the one hook",
+   "Unclip and hold the mast — it is only a minute"
+  ],
+  "why": "With two hooks you are never unclipped: always clip on before you unclip.",
+  "ref": "Harness and tether",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "Rain starts and you put on your foul-weather jacket. Where does your lifejacket go?",
+  "a": "Over the jacket, so it can inflate freely",
+  "o": [
+   "Under the jacket, to keep it dry",
+   "Under the jacket, so it cannot snag on lines",
+   "Either way — it inflates the same"
+  ],
+  "why": "Under a jacket it cannot inflate properly and squeezes your chest; wear it on top.",
+  "ref": "Lifejackets",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 2,
+  "q": "The skipper's standing order is 'clip on at night'. You come up for your 22:00 watch on a calm, starry night. What do you do?",
+  "a": "Clip on before you step out of the companionway",
+  "o": [
+   "Skip it — the rule is meant for rough weather",
+   "Clip on only if you go forward of the mast",
+   "Skip it — the moon gives enough light"
+  ],
+  "why": "A night rule has no exceptions: someone who falls over in the dark is very hard to find.",
+  "ref": "Harness and tether",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 3,
+  "q": "What do you do before you leave the cockpit?",
+  "a": "Lifejacket fastened, clip on, tell the helmsman",
+  "o": [
+   "Lifejacket on, clip on once you reach the mast",
+   "Harness on; no lifejacket needed when clipped",
+   "Lifejacket on; clip on only if it gets worse"
+  ],
+  "why": "Clip on in the cockpit before you move, and let the helm know you are going forward.",
+  "ref": "Harness and tether",
+  "fig": {
+   "type": "card",
+   "title": "Reefing at night",
+   "tag": "F6",
+   "lines": [
+    "Skipper needs you at the mast",
+    "Spray over the deck, boat heeling",
+    "Jackstays rigged both sides"
+   ]
+  }
+ },
+ {
+  "topic": "safety",
+  "difficulty": 3,
+  "q": "You want to go forward and secure the halyard. What do you do first?",
+  "a": "Wake another crew member before you go",
+  "o": [
+   "Go forward clipped on, without waking anyone",
+   "Go quickly unclipped, wearing your lifejacket",
+   "Go once the deck lights are switched on"
+  ],
+  "why": "Never leave the cockpit alone at night: if you fell in, nobody would know you were gone.",
+  "ref": "Personal safety",
+  "fig": {
+   "type": "card",
+   "title": "Alone on watch",
+   "tag": "02:30",
+   "lines": [
+    "Others asleep below",
+    "A halyard has come loose at the mast",
+    "Wind F4, steady, autopilot on"
+   ]
+  }
+ },
+ {
+  "topic": "safety",
+  "difficulty": 3,
+  "q": "At night, in a moderate sea, your friend is seasick and needs to be sick over the side. What do you do?",
+  "a": "Take her to the leeward rail, clipped on, and stay",
+  "o": [
+   "Take her to the windward rail, the high side",
+   "Let her use the leeward rail, unclipped",
+   "Let her go to the leeward rail alone, for privacy"
+  ],
+  "why": "Be sick to leeward so it blows away — but clipped on and watched: that is the rail people fall over.",
+  "ref": "Personal safety",
+  "fig": null
+ },
+ {
+  "topic": "safety",
+  "difficulty": 3,
+  "q": "What do you advise your cousin?",
+  "a": "Wear a lifejacket on deck whenever under way",
+  "o": [
+   "None needed in calm water in daylight",
+   "None needed if she stays in the cockpit",
+   "Put one on only once the wind gets up"
+  ],
+  "why": "A non-swimmer wears a lifejacket on deck at all times under way, whatever the weather.",
+  "ref": "Lifejackets",
+  "fig": {
+   "type": "card",
+   "title": "A guest aboard",
+   "lines": [
+    "Calm and sunny, motoring along the coast",
+    "Your cousin cannot swim",
+    "Skipper: 'lifejackets optional today'"
+   ]
+  }
+ }
+]

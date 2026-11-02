@@ -1,0 +1,3870 @@
+{
+  "level": "vhf-radio-operator",
+  "title": "IYT VHF Radio Operator",
+  "lang": "en",
+  "passMark": 70,
+  "examQuestions": 30,
+  "examMinutes": 45,
+  "version": "2026-11-02a",
+  "note": "Scenario questions written for study, close to the IYT VHF Radio Operator syllabus. Not official IYT exam content. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.",
+  "topics": [
+    {
+      "id": "set",
+      "title": "The VHF set & its controls",
+      "icon": "wrench",
+      "count": 20
+    },
+    {
+      "id": "channels",
+      "title": "Channels & range",
+      "icon": "radio",
+      "count": 20
+    },
+    {
+      "id": "calls",
+      "title": "Routine calls & radio discipline",
+      "icon": "user",
+      "count": 20
+    },
+    {
+      "id": "phonetic",
+      "title": "Phonetic alphabet & procedure words",
+      "icon": "book",
+      "count": 20
+    },
+    {
+      "id": "dsc",
+      "title": "DSC & MMSI",
+      "icon": "target",
+      "count": 20
+    },
+    {
+      "id": "distress",
+      "title": "Distress — MAYDAY",
+      "icon": "flag",
+      "count": 20
+    },
+    {
+      "id": "urgency",
+      "title": "Urgency & safety — PAN-PAN, SÉCURITÉ",
+      "icon": "light",
+      "count": 20
+    },
+    {
+      "id": "sar",
+      "title": "Search & rescue communications",
+      "icon": "ring",
+      "count": 20
+    },
+    {
+      "id": "gmdss",
+      "title": "GMDSS, EPIRB, SART, NAVTEX & AIS",
+      "icon": "globe",
+      "count": 20
+    },
+    {
+      "id": "licences",
+      "title": "Licences & regulations",
+      "icon": "book",
+      "count": 20
+    }
+  ],
+  "questions": [
+    {
+      "id": "vhf-001",
+      "topic": "set",
+      "difficulty": 1,
+      "q": "A new crew member asks which control keeps the radio quiet between calls without cutting anyone out. What do you show them?",
+      "figure": null,
+      "options": [
+        "The squelch, set just past the point where the hiss stops",
+        "The dual watch button, so it listens less",
+        "The power switch, set to low power, 1 W",
+        "The volume, turned right down until it is silent"
+      ],
+      "answer": 0,
+      "why": "Squelch mutes background hiss; set just past the hiss so weak stations still open it.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-002",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "A friend says he called you twice this afternoon, but you heard nothing. What is the most likely reason?",
+      "figure": {
+        "type": "card",
+        "title": "Your VHF since lunch",
+        "lines": [
+          "Squelch: turned fully up",
+          "Volume: half way",
+          "Power: 25 W, channel 16",
+          "Not a sound for three hours"
+        ]
+      },
+      "options": [
+        "Half volume mutes stations more than 5 miles away",
+        "The squelch is so high that weaker signals cannot open it",
+        "The 25 W setting drowns out stations that call you",
+        "Channel 16 stays silent unless DSC is switched on"
+      ],
+      "answer": 1,
+      "why": "Squelch turned right up cuts out everything but strong signals; back it off to just past the hiss.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-003",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "Your friend's yacht does not answer. What do you change first?",
+      "figure": {
+        "type": "card",
+        "title": "Calling a friend",
+        "lines": [
+          "Her yacht: 12 miles away, open water",
+          "She is listening on 72",
+          "Your set: channel 72, power 1 W",
+          "Two calls, no reply"
+        ]
+      },
+      "options": [
+        "Switch to dual watch and call again on 1 W",
+        "Stay on 1 W and call again straight away",
+        "Switch to high power, 25 W, and call again",
+        "Turn the squelch up and call again on 1 W"
+      ],
+      "answer": 2,
+      "why": "Low power, 1 W, is for short range; at 12 miles you need 25 W.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-004",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "You expect calls from the marina on its working channel and from your friend on 72, and you must keep listening to 16. Which function do you use?",
+      "figure": null,
+      "options": [
+        "Dual watch on 16 and channel 72 only",
+        "Low power with the squelch turned fully up",
+        "Channel 70 set to receive voice calls",
+        "Tri-watch: 16 plus the two channels you choose"
+      ],
+      "answer": 3,
+      "why": "Tri-watch checks 16 and two other channels in turn; dual watch covers only one besides 16.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-005",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "The marina says your calls arrive as \"…is Aurora, OVER\" — the start is always missing. What are you doing wrong?",
+      "figure": null,
+      "options": [
+        "Speaking the instant you press; pause a moment, then speak",
+        "Holding the microphone a hand's width from your mouth",
+        "Calling with the squelch set too low on your own set",
+        "Transmitting on 25 W instead of 1 W so close by"
+      ],
+      "answer": 0,
+      "why": "The set needs a moment after you press the button; words spoken at once are clipped.",
+      "ref": "VHF technique"
+    },
+    {
+      "id": "vhf-006",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "Your crew calls the marina, shouting with the microphone pressed to his lips. The marina cannot understand him. What do you tell him?",
+      "figure": null,
+      "options": [
+        "Keep it at his lips but switch to high power, 25 W",
+        "Hold it a few centimetres away and speak in a normal voice",
+        "Keep it at his lips and turn the squelch down",
+        "Hold it at arm's length and shout a little louder"
+      ],
+      "answer": 1,
+      "why": "Shouting into a mic held at the lips distorts speech; a few centimetres and a normal voice is clearest.",
+      "ref": "VHF technique"
+    },
+    {
+      "id": "vhf-007",
+      "topic": "set",
+      "difficulty": 3,
+      "q": "The marina complains that someone has blocked its working channel for ten minutes. Then you notice the scene in the figure. What is happening?",
+      "figure": {
+        "type": "card",
+        "title": "In the cockpit",
+        "lines": [
+          "Handheld on the marina channel",
+          "Jammed in a locker under fenders",
+          "Its TX light is on",
+          "You hear nothing from the marina"
+        ]
+      },
+      "options": [
+        "Low power on the fixed set leaks onto other channels",
+        "The fixed set is relaying 16 onto the marina channel",
+        "The handheld's transmit button is pressed in the locker",
+        "The handheld's low battery makes it send a carrier"
+      ],
+      "answer": 2,
+      "why": "A jammed press-to-talk button transmits non-stop and blocks the channel for everyone.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-008",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "Your charter yacht has its VHF antenna on the pushpit rail, not at the masthead. What do you expect compared with a masthead antenna?",
+      "figure": null,
+      "options": [
+        "Better range on 16 but shorter on working channels",
+        "The same range, as height does not matter on VHF",
+        "Longer range, because the cable to the set is shorter",
+        "Shorter range, because the antenna is much lower"
+      ],
+      "answer": 3,
+      "why": "VHF range depends mainly on antenna height; a low antenna sees a closer horizon.",
+      "ref": "VHF range"
+    },
+    {
+      "id": "vhf-009",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "Your radio checks now reach only a mile or two. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "After the winter",
+        "lines": [
+          "Antenna cable joint at the mast foot",
+          "Connector green with corrosion",
+          "Range: 1–2 miles instead of 20"
+        ]
+      },
+      "options": [
+        "Clean or replace the connector before relying on the set",
+        "Use channel 70 by voice, as it carries further",
+        "Turn the squelch to minimum to hear stations better",
+        "Switch to low power to protect the set from damage"
+      ],
+      "answer": 0,
+      "why": "A corroded antenna connection loses most of the signal; fix the coax and connectors.",
+      "ref": "VHF range"
+    },
+    {
+      "id": "vhf-010",
+      "topic": "set",
+      "difficulty": 3,
+      "q": "You call the coast station and it reports your signal as weak. What do you do first?",
+      "figure": {
+        "type": "panel",
+        "gauges": [
+          [
+            "Volts",
+            "11.2",
+            true
+          ],
+          [
+            "VHF",
+            "25 W",
+            false
+          ]
+        ],
+        "lines": [
+          "Coast station: \"Aurora, you are weak\"",
+          "Engine off since yesterday, fridge running"
+        ]
+      },
+      "options": [
+        "Switch to channel 70 and repeat the call by voice",
+        "Run the engine to charge the battery, then call again",
+        "Turn your own squelch up and call again at once",
+        "Lower the antenna, as you are too close to the station"
+      ],
+      "answer": 1,
+      "why": "A fixed set needs a healthy supply; at low voltage it cannot transmit at full power.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-011",
+      "topic": "set",
+      "difficulty": 1,
+      "q": "You are 20 miles offshore and need to reach the coast station. You have the fixed set with a masthead antenna and a handheld. Which do you use?",
+      "figure": null,
+      "options": [
+        "The handheld: it is closer to your mouth and clearer",
+        "The handheld, held up as high as you can in the cockpit",
+        "The fixed set: more power and a much higher antenna",
+        "Either: both reach the same distance on channel 16"
+      ],
+      "answer": 2,
+      "why": "A masthead antenna and 25 W reach far beyond a handheld's few miles.",
+      "ref": "VHF range"
+    },
+    {
+      "id": "vhf-012",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "You are going ashore in the dinghy for the afternoon. The handheld shows one bar of battery. What do you do?",
+      "figure": null,
+      "options": [
+        "Leave it aboard and rely on someone's mobile phone",
+        "Take it on scan mode, which uses less battery",
+        "Take it as it is — one bar lasts a whole afternoon",
+        "Charge it or fit a charged battery pack before you leave"
+      ],
+      "answer": 3,
+      "why": "Transmitting drains a handheld fast; one bar may die when you press the button.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-013",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "Your handheld is marked IPX7. What may you rely on?",
+      "figure": null,
+      "options": [
+        "It survives a short dunking, about 1 m for 30 minutes",
+        "It floats if it is dropped over the side",
+        "It needs no fresh-water rinse after spray",
+        "It can be used under water to about 10 m"
+      ],
+      "answer": 0,
+      "why": "IPX7 means protected against brief immersion; it does not mean it floats.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-014",
+      "topic": "set",
+      "difficulty": 3,
+      "q": "The marina is about 6 miles away over open water. How do you give the handheld its best chance?",
+      "figure": {
+        "type": "card",
+        "title": "Handheld only",
+        "lines": [
+          "Fixed set out of action",
+          "Called from the cockpit: no reply",
+          "Handheld: 5 W high, 1 W low"
+        ]
+      },
+      "options": [
+        "Go below to the chart table, out of the wind",
+        "Stand up on deck, high power, antenna straight up",
+        "Hold it flat with the antenna aimed at the marina",
+        "Stay in the cockpit and switch to low power"
+      ],
+      "answer": 1,
+      "why": "Range comes from height and a vertical antenna; cabin and cockpit coamings block the signal.",
+      "ref": "VHF range"
+    },
+    {
+      "id": "vhf-015",
+      "topic": "set",
+      "difficulty": 1,
+      "q": "You want to check that the radio on your new charter yacht works. How do you do it?",
+      "figure": null,
+      "options": [
+        "Make a short voice call on channel 70 to all ships",
+        "Call \"radio check, all stations\" on 16 at low power",
+        "Ask the marina or another boat for a check on a working channel",
+        "Call \"radio check, all stations\" on 16 at high power"
+      ],
+      "answer": 2,
+      "why": "Radio checks go on a working channel, never on 16 or 70.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-016",
+      "topic": "set",
+      "difficulty": 1,
+      "q": "You switch on the fixed VHF before leaving and the display stays blank. What do you check first?",
+      "figure": null,
+      "options": [
+        "The antenna cable connector at the top of the mast",
+        "The squelch, in case it is turned fully up",
+        "The DSC settings, in case the MMSI is missing",
+        "The VHF breaker on the switch panel and the battery switch"
+      ],
+      "answer": 3,
+      "why": "No display means no power: check the breaker, fuse and battery switch before anything else.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-017",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "The antenna cable is unplugged from the set while you fix the connector. Your crew wants to press the button \"just to test it\". What do you say?",
+      "figure": null,
+      "options": [
+        "No — transmitting without an antenna can damage the set",
+        "Fine — it simply transmits a shorter range",
+        "Fine, as long as it is on channel 16",
+        "Fine on low power, 1 W, for a few seconds"
+      ],
+      "answer": 0,
+      "why": "With no antenna the power has nowhere to go and can damage the transmitter.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-018",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "You are about to abandon ship into the liferaft. The fixed VHF and a charged waterproof handheld are aboard. Which radio goes with you?",
+      "figure": null,
+      "options": [
+        "The fixed set, unplugged and wrapped in a bin bag",
+        "The waterproof handheld, kept in the grab bag or on you",
+        "The fixed set's handset, unplugged from the set",
+        "Neither: the liferaft has its own radio built in"
+      ],
+      "answer": 1,
+      "why": "Only a handheld works away from the boat's antenna and batteries.",
+      "ref": "VHF set"
+    },
+    {
+      "id": "vhf-019",
+      "topic": "set",
+      "difficulty": 2,
+      "q": "You call the marina from the helm in a strong wind. They hear mostly a roar. What do you do?",
+      "figure": null,
+      "options": [
+        "Turn the squelch down so your voice opens it",
+        "Switch to high power so the voice cuts through",
+        "Shield the microphone from the wind and speak normally",
+        "Shout louder with the microphone held further away"
+      ],
+      "answer": 2,
+      "why": "Wind across the microphone drowns speech; shelter it with your hand or body.",
+      "ref": "VHF technique"
+    },
+    {
+      "id": "vhf-020",
+      "topic": "set",
+      "difficulty": 3,
+      "q": "Which pair can usually talk over the longest distance?",
+      "figure": null,
+      "options": [
+        "Two handhelds, each held up in a cockpit",
+        "A handheld in a cockpit and a masthead set",
+        "Two yachts, each with a masthead antenna",
+        "A yacht's masthead set and a coast station on a hill"
+      ],
+      "answer": 3,
+      "why": "Range grows with the height of both antennas; a hilltop coast station sees furthest.",
+      "ref": "VHF range"
+    },
+    {
+      "id": "vhf-021",
+      "topic": "channels",
+      "difficulty": 1,
+      "q": "You are under way along the coast and not talking to anyone. Which channel do you keep the radio on?",
+      "figure": null,
+      "options": [
+        "Channel 16, the distress, safety and calling channel",
+        "Channel 70, so you hear the coastguard by voice",
+        "Channel 13, the channel used by all leisure craft",
+        "Channel 6, the intership channel for yachts"
+      ],
+      "answer": 0,
+      "why": "Under way, keep watch on 16 so you hear distress and safety calls and anyone calling you.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-022",
+      "topic": "channels",
+      "difficulty": 1,
+      "q": "Your crew scrolls to channel 70 to call a friend, but the set will not let him talk there. Why?",
+      "figure": null,
+      "options": [
+        "Channel 70 is for marinas and needs their permission",
+        "Channel 70 carries only DSC digital calls, never voice",
+        "Channel 70 is kept for the coastguard's voice traffic",
+        "Channel 70 only works for voice on high power, 25 W"
+      ],
+      "answer": 1,
+      "why": "Channel 70 is reserved for DSC data; voice there would block distress alerts.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-023",
+      "topic": "channels",
+      "difficulty": 1,
+      "q": "A ship crossing ahead calls you on 16 and asks you to go to channel 13. What is 13 for?",
+      "figure": {
+        "type": "encounter",
+        "you": {
+          "hdg": 0,
+          "sail": true,
+          "boom": 14
+        },
+        "other": {
+          "bearing": 40,
+          "dist": 85,
+          "hdg": 270,
+          "label": "Ship",
+          "scale": 1.4
+        },
+        "note": "The ship calls you on 16: \"go to 13\""
+      },
+      "options": [
+        "DSC alerts and calls between ships",
+        "Public calls to telephones ashore",
+        "Bridge-to-bridge navigation safety between vessels",
+        "Port operations inside the harbour"
+      ],
+      "answer": 2,
+      "why": "Channel 13 is the international bridge-to-bridge channel for navigation safety.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-024",
+      "topic": "channels",
+      "difficulty": 1,
+      "q": "You want to call a yacht you met yesterday. You do not know which channel they listen to. Where do you make the first call?",
+      "figure": null,
+      "options": [
+        "On the nearest marina's channel",
+        "On 13, then stay there to talk",
+        "On 70, then move to a working channel",
+        "On 16, then move to a working channel"
+      ],
+      "answer": 3,
+      "why": "16 is the calling channel; once in contact, both move off it.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-025",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "Your friend answers your call on 16. Which channel do you suggest for the conversation?",
+      "figure": null,
+      "options": [
+        "An intership channel such as 72 or 77",
+        "Channel 70, because it is always quiet",
+        "Stay on 16, as the chat will be short",
+        "The marina's port operations channel"
+      ],
+      "answer": 0,
+      "why": "Yacht-to-yacht talk goes on an intership simplex channel, not 16, 70 or a port channel.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-026",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "You and a friend want a long chat about tomorrow's route. Both 6 and 72 are free. Which do you choose?",
+      "figure": null,
+      "options": [
+        "6 — it is the intership channel meant for chats",
+        "72 — keep 6 clear, as it is also used in search and rescue",
+        "72 — channel 6 is only for DSC data and alerts",
+        "6 — it carries further than 72 at the same power"
+      ],
+      "answer": 1,
+      "why": "Channel 6 is also the on-scene channel for search and rescue; use 72 or 77 for social talk.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-027",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "You and your friend both select the same duplex channel. You can hear the coast station on it, but not each other. Why?",
+      "figure": null,
+      "options": [
+        "Duplex channels are receive-only for small craft",
+        "Duplex channels need both sets on high power",
+        "Each yacht sends on one frequency and listens on another",
+        "Your squelch is set too high for a duplex channel"
+      ],
+      "answer": 2,
+      "why": "On duplex a ship sends on one frequency and receives the shore's; two ships cannot hear each other.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-028",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "The coast station asks you to switch to its working channel, which is duplex. Can you talk to it there?",
+      "figure": null,
+      "options": [
+        "No — duplex works only between two ships",
+        "No — yachts may only use simplex channels",
+        "Only if you first send a DSC call on 70",
+        "Yes — duplex works between a ship and a shore station"
+      ],
+      "answer": 3,
+      "why": "Duplex channels are made for ship-to-shore calls; only ship-to-ship fails on them.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-029",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "On channel 72 you and your friend press the transmit button at the same moment. What happens?",
+      "figure": null,
+      "options": [
+        "Neither of you is heard clearly, as on simplex only one can talk",
+        "The set holds the second call until the first ends",
+        "Both are heard, as in a telephone conversation",
+        "The stronger signal is passed on to the other boat"
+      ],
+      "answer": 0,
+      "why": "Simplex is one frequency: while you transmit you cannot receive, so talk in turn and end with OVER.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-030",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "You are approaching an island port in Greece and want the port authority's working channel. Where do you find it?",
+      "figure": null,
+      "options": [
+        "It is always channel 70, as for all port calls",
+        "In the pilot book, almanac or port details on the chart",
+        "Ask any yacht on 72 which channel they think it is",
+        "It is always channel 12 in every Greek port"
+      ],
+      "answer": 1,
+      "why": "Port channels differ from port to port; look them up rather than guess.",
+      "ref": "Port operations"
+    },
+    {
+      "id": "vhf-031",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "Your friend cannot hear you, although you are only 6 miles apart. Why?",
+      "figure": {
+        "type": "bay",
+        "land": "M130 60 C145 35 190 38 205 70 C215 100 205 140 172 146 C140 150 118 118 130 60 Z",
+        "spots": [
+          [
+            50,
+            100,
+            "A"
+          ],
+          [
+            272,
+            70,
+            "B"
+          ]
+        ],
+        "labels": [
+          [
+            168,
+            98,
+            "island, 300 m high",
+            "middle"
+          ]
+        ],
+        "note": "A: you · B: your friend, 6 miles away"
+      },
+      "options": [
+        "The island's harbour channel jams the intership one",
+        "Six miles is beyond the range of any yacht VHF",
+        "VHF works roughly in line of sight, and the island is in the way",
+        "VHF bends around islands only on channel 16"
+      ],
+      "answer": 2,
+      "why": "VHF travels roughly in straight lines; high land between the antennas blocks it.",
+      "ref": "VHF range"
+    },
+    {
+      "id": "vhf-032",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "Which of these may stay on channel 16 instead of moving to another channel?",
+      "figure": null,
+      "options": [
+        "A friendly chat between two yachts",
+        "Booking a berth with the marina",
+        "The coastguard's full weather forecast",
+        "Distress traffic: a MAYDAY and the replies to it"
+      ],
+      "answer": 3,
+      "why": "16 is for distress, urgency, safety and calling; only distress traffic normally stays on it.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-033",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "You are approaching a busy commercial port where large ships manoeuvre. Which channel do you listen to as well as 16?",
+      "figure": null,
+      "options": [
+        "The port's own operations or traffic channel",
+        "No other channel — 16 is enough in a port",
+        "Channel 70, to hear the ships' DSC alerts",
+        "Channel 72, where ships give way to yachts"
+      ],
+      "answer": 0,
+      "why": "Near a busy port, listen on its listed port or traffic channel to know what ships will do.",
+      "ref": "Port operations"
+    },
+    {
+      "id": "vhf-034",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "On your charter yacht in Croatia, the VHF display shows \"USA\" next to the channel number. What do you do?",
+      "figure": null,
+      "options": [
+        "Set the mode to CAN, as used in Europe",
+        "Set the channel mode to international (INT)",
+        "Leave it: channel modes only matter for DSC",
+        "Leave it: USA mode gives the longest range"
+      ],
+      "answer": 1,
+      "why": "Outside North America use the international channel plan; some channels differ in USA mode.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-035",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "You and your friend move to 72, but two other boats are already talking there. What do you do?",
+      "figure": null,
+      "options": [
+        "Use channel 70, which is always free",
+        "Go back to 16 and have your chat there",
+        "Agree another free intership channel, such as 77",
+        "Talk over them — 72 is open to everyone"
+      ],
+      "answer": 2,
+      "why": "Never talk over others; pick another free intership channel.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-036",
+      "topic": "channels",
+      "difficulty": 2,
+      "q": "Your flotilla agreed this morning to keep a watch on 72 as well as 16. You want to reach the lead boat. Where do you call?",
+      "figure": null,
+      "options": [
+        "On 16 first, then move to 72",
+        "On 70, then talk on 72",
+        "On 6, then move to 72",
+        "Directly on 72, as agreed beforehand"
+      ],
+      "answer": 3,
+      "why": "A pre-arranged working channel can be used for the call itself, keeping 16 clear.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-037",
+      "topic": "channels",
+      "difficulty": 3,
+      "q": "Which set of channels fits these three jobs, in order?",
+      "figure": {
+        "type": "card",
+        "title": "Three jobs",
+        "lines": [
+          "1. Agree how to pass a ship that called you",
+          "2. A long chat with a friend's yacht",
+          "3. The channel your DSC uses for alerts"
+        ]
+      },
+      "options": [
+        "13 · 72 · 70",
+        "16 · 70 · 72",
+        "70 · 16 · 13",
+        "6 · 13 · 16"
+      ],
+      "answer": 0,
+      "why": "13 bridge-to-bridge safety, 72 intership chat, 70 DSC only.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-038",
+      "topic": "channels",
+      "difficulty": 3,
+      "q": "From A you talk easily to the coast station, but your friends at B cannot hear you. Why?",
+      "figure": {
+        "type": "bay",
+        "land": "M118 200 C128 150 140 90 162 52 C172 38 190 42 193 60 C197 100 192 150 212 200 Z",
+        "spots": [
+          [
+            70,
+            120,
+            "A"
+          ],
+          [
+            245,
+            110,
+            "B"
+          ]
+        ],
+        "labels": [
+          [
+            163,
+            140,
+            "headland",
+            "middle"
+          ],
+          [
+            163,
+            30,
+            "coast station on a mountain, 30 miles north",
+            "middle"
+          ]
+        ],
+        "note": "A: you · B: your friends, 3 miles away"
+      },
+      "options": [
+        "The coast station is on duplex, which carries further",
+        "The coast station's antenna is very high; the headland blocks B",
+        "Friends' sets need DSC to hear a yacht nearby",
+        "Short distances are weaker than long ones on VHF"
+      ],
+      "answer": 1,
+      "why": "Range depends on antenna height and a clear line; high stations reach far, land in between blocks.",
+      "ref": "VHF range"
+    },
+    {
+      "id": "vhf-039",
+      "topic": "channels",
+      "difficulty": 3,
+      "q": "Channel 16 is busy with a long MAYDAY exchange between the coastguard and a yacht. You need to tell the marina you will be late. What do you do?",
+      "figure": null,
+      "options": [
+        "Wait for a gap and call the marina on 16",
+        "Call the marina briefly on 16 at low power",
+        "Call the marina directly on its working channel",
+        "Call the marina on 70, which stays free"
+      ],
+      "answer": 2,
+      "why": "Keep off 16 during distress traffic; routine calls go straight to the working channel.",
+      "ref": "VHF channels"
+    },
+    {
+      "id": "vhf-040",
+      "topic": "channels",
+      "difficulty": 3,
+      "q": "Your three flotilla friends are at sea in these places. Both your boats have masthead antennas. Whom can you count on reaching by voice?",
+      "figure": {
+        "type": "card",
+        "title": "Where they are",
+        "lines": [
+          "A: 8 miles away, open water between",
+          "B: 12 miles, behind a 400 m island",
+          "C: 40 miles away, open water between"
+        ]
+      },
+      "options": [
+        "A and B",
+        "A and C",
+        "All three",
+        "A only"
+      ],
+      "answer": 3,
+      "why": "Yacht to yacht reaches roughly 10–20 miles over open water; high land between blocks it.",
+      "ref": "VHF range"
+    },
+    {
+      "id": "vhf-041",
+      "topic": "calls",
+      "difficulty": 1,
+      "q": "You want to call the yacht Blue Star. Which call is correctly built?",
+      "figure": null,
+      "options": [
+        "\"Blue Star, Blue Star, Blue Star, this is Aurora, Aurora, Aurora, OVER\"",
+        "\"Aurora, Aurora, Aurora, calling Blue Star, Blue Star, OVER\"",
+        "\"Hello Blue Star, it's Aurora here, do you read me? Over\"",
+        "\"Blue Star, this is Aurora, please answer, OVER AND OUT\""
+      ],
+      "answer": 0,
+      "why": "The station called first (up to three times), then THIS IS and your own name, then OVER.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-042",
+      "topic": "calls",
+      "difficulty": 1,
+      "q": "You have finished talking to the marina and need no reply. How do you end your last transmission?",
+      "figure": null,
+      "options": [
+        "OVER, STANDING BY",
+        "OUT",
+        "OVER",
+        "OVER AND OUT"
+      ],
+      "answer": 1,
+      "why": "OVER asks for a reply, OUT ends the exchange; the two never go together.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-043",
+      "topic": "calls",
+      "difficulty": 1,
+      "q": "You switch to 72 to call a friend and hear two other boats in the middle of a conversation. What do you do?",
+      "figure": null,
+      "options": [
+        "Call your friend on 16 and stay there to talk",
+        "Make your call at once — 72 is open to all",
+        "Wait until they finish, then make your call",
+        "Break in with BREAK, BREAK and then call"
+      ],
+      "answer": 2,
+      "why": "Always listen before you transmit and never talk over a conversation in progress.",
+      "ref": "Radio discipline"
+    },
+    {
+      "id": "vhf-044",
+      "topic": "calls",
+      "difficulty": 1,
+      "q": "From your berth you want to call the fuel dock, 200 m across the marina. The set is on 25 W. What do you do first?",
+      "figure": null,
+      "options": [
+        "Leave it on 25 W, but keep the call very short",
+        "Switch to dual watch so you hear their reply",
+        "Leave it on 25 W, so they hear you clearly",
+        "Switch to low power, 1 W — it is plenty at this range"
+      ],
+      "answer": 3,
+      "why": "In port use 1 W: it reaches the dock without blocking the channel for boats further away.",
+      "ref": "Radio discipline"
+    },
+    {
+      "id": "vhf-045",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "On 16 you hear: \"Aurora, this is Blue Star, OVER\" in reply to your call. What do you say next?",
+      "figure": null,
+      "options": [
+        "\"Blue Star, this is Aurora, channel seven two, OVER\"",
+        "\"Blue Star, this is Aurora, we are anchoring tonight in…\"",
+        "Nothing — just switch to 72 and wait for them there",
+        "\"Blue Star, this is Aurora, channel seven zero, OVER\""
+      ],
+      "answer": 0,
+      "why": "Once contact is made on 16, propose an intership working channel and move there to talk.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-046",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "Blue Star has agreed to move to 72. You switch over. What do you do there?",
+      "figure": null,
+      "options": [
+        "Start your message at once without calling them",
+        "Listen a moment, then call: \"Blue Star, this is Aurora, OVER\"",
+        "Wait in silence until Blue Star calls you first",
+        "Call \"All stations, this is Aurora\" so they find you"
+      ],
+      "answer": 1,
+      "why": "On the new channel, check it is free, then call the station again before your message.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-047",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "You want a berth for tonight. How do you make the first call?",
+      "figure": {
+        "type": "card",
+        "title": "Arriving at Vega Marina",
+        "lines": [
+          "Pilot book lists the marina's VHF channel",
+          "You are 1 mile off the entrance",
+          "Radio set to 1 W"
+        ]
+      },
+      "options": [
+        "On 72: \"Any marina staff, this is Aurora, OVER\"",
+        "On 16, giving your whole request in one transmission",
+        "On the marina's channel: \"Vega Marina, this is Aurora, OVER\"",
+        "On 70 by voice, as marinas keep watch on it"
+      ],
+      "answer": 2,
+      "why": "Call a marina on its own working channel with a short call; the request follows once it answers.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-048",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "You call the marina on its working channel and get no answer. What do you do?",
+      "figure": null,
+      "options": [
+        "Call again straight away, a little louder",
+        "Call them by voice on 70 to get attention",
+        "Keep calling every 15 seconds until they answer",
+        "Wait a few minutes before you call again"
+      ],
+      "answer": 3,
+      "why": "Leave a gap of a few minutes between calls; non-stop calling blocks the channel.",
+      "ref": "Radio discipline"
+    },
+    {
+      "id": "vhf-049",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "The marina answers your call. What do you say?",
+      "figure": {
+        "type": "card",
+        "title": "Marina channel, a busy evening",
+        "lines": [
+          "Three yachts waiting to call",
+          "You: Aurora, 12 m, one night",
+          "Marina: \"Aurora, this is Vega Marina, OVER\""
+        ]
+      },
+      "options": [
+        "Your request in one short message: boat, length, nights",
+        "The whole story first, so they see why you need it",
+        "Your request on 16 instead, so others hear it too",
+        "Nothing yet — wait for them to ask each detail"
+      ],
+      "answer": 0,
+      "why": "Keep calls short and to the point so others can use the channel.",
+      "ref": "Radio discipline"
+    },
+    {
+      "id": "vhf-050",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "The marina asks you to pay in advance for the berth. Your crew starts to read the credit card number over the radio. What do you do?",
+      "figure": null,
+      "options": [
+        "Let him, but on a duplex channel, which is private",
+        "Stop him — anyone listening can hear it; pay in the office",
+        "Let him, as long as he spells it phonetically",
+        "Let him, but switch to low power, 1 W, first"
+      ],
+      "answer": 1,
+      "why": "VHF is open to everyone in range; never give card numbers or other private data on air.",
+      "ref": "Radio discipline"
+    },
+    {
+      "id": "vhf-051",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "You hear: \"Aurora, Aurora, this is Blue Star, OVER\". How do you answer?",
+      "figure": null,
+      "options": [
+        "\"Aurora here, go ahead, OVER AND OUT\"",
+        "\"Blue Star, Blue Star, Aurora receiving\"",
+        "\"Blue Star, this is Aurora, OVER\"",
+        "\"This is Aurora, Aurora, Aurora, OUT\""
+      ],
+      "answer": 2,
+      "why": "Answer with the caller's name, THIS IS, your name and OVER.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-052",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "You have just asked the marina whether they have a berth for a 12 m yacht. How do you end this transmission?",
+      "figure": null,
+      "options": [
+        "Just release the button and say nothing",
+        "OUT — the marina will answer when ready",
+        "OVER AND OUT — to be extra clear",
+        "OVER — you are waiting for their answer"
+      ],
+      "answer": 3,
+      "why": "End every transmission that needs a reply with OVER so the other station knows to speak.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-053",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "You proposed 72 to Blue Star. They reply: \"Aurora, this is Blue Star, seven seven, OVER\". What do you do?",
+      "figure": null,
+      "options": [
+        "Reply \"seven seven\", switch to 77 and call them there",
+        "Insist on 72, since you proposed it first",
+        "Go to 72 anyway and wait for them there",
+        "Stay on 16 and talk there until you agree"
+      ],
+      "answer": 0,
+      "why": "The called station may propose another channel; agree it briefly and move.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-054",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "At anchor, the children ask to play with the handheld and call each other on 16. What do you say?",
+      "figure": null,
+      "options": [
+        "Yes, but on channel 70 rather than 16",
+        "No — 16 must be kept clear and the radio is not a toy",
+        "Yes, as long as the handheld is on low power",
+        "Yes, as long as each call is kept short"
+      ],
+      "answer": 1,
+      "why": "Channel 16 must stay free for distress and calling; needless transmissions are not allowed.",
+      "ref": "Radio discipline"
+    },
+    {
+      "id": "vhf-055",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "The marina ends with: \"…we will meet you at the fuel dock, OUT\". What do you do?",
+      "figure": null,
+      "options": [
+        "Reply \"Vega Marina, this is Aurora, OUT\"",
+        "Reply \"OVER AND OUT\" to close it properly",
+        "Nothing more — the exchange is over; go back to watching 16",
+        "Reply \"Received, OVER\" and wait for an answer"
+      ],
+      "answer": 2,
+      "why": "OUT means the exchange is finished; no reply is expected.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-056",
+      "topic": "calls",
+      "difficulty": 2,
+      "q": "Entering harbour, you hear: \"Yacht entering harbour, this is Port Authority, state your name and intentions, OVER\". How do you answer?",
+      "figure": null,
+      "options": [
+        "\"All stations, this is Aurora, mooring at the quay, OUT\"",
+        "\"Received, Aurora entering harbour, OVER AND OUT\"",
+        "\"Port Authority, this is Aurora, standing by, OUT\"",
+        "\"Port Authority, this is Aurora, mooring at the town quay, OVER\""
+      ],
+      "answer": 3,
+      "why": "Answer the station that called you, give what it asked for and end with OVER.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-057",
+      "topic": "calls",
+      "difficulty": 3,
+      "q": "Which line of this exchange breaks radio procedure?",
+      "figure": {
+        "type": "card",
+        "title": "Your call to the marina",
+        "lines": [
+          "1 You: Vega Marina ×3, this is Aurora, OVER",
+          "2 Marina: Aurora, this is Vega Marina, OVER",
+          "3 You: a berth for one night, 12 m, OVER",
+          "4 You: thanks, see you soon, OVER AND OUT"
+        ]
+      },
+      "options": [
+        "Line 4",
+        "Line 1",
+        "Line 3",
+        "Line 2"
+      ],
+      "answer": 0,
+      "why": "OVER asks for a reply and OUT ends the exchange; \"OVER AND OUT\" contradicts itself.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-058",
+      "topic": "calls",
+      "difficulty": 3,
+      "q": "What is the sensible next step?",
+      "figure": {
+        "type": "card",
+        "title": "Calling ahead for a berth",
+        "lines": [
+          "Marina 18 miles ahead, behind a cape",
+          "Two calls 10 minutes apart: no reply",
+          "Power 25 W, radio check fine this morning"
+        ]
+      },
+      "options": [
+        "Send a PAN-PAN so the marina takes notice",
+        "Try again later, when you are closer to the marina",
+        "Ask all stations on 16 to pass your request on",
+        "Keep calling every minute until someone answers"
+      ],
+      "answer": 1,
+      "why": "No reply at long range usually means out of range or busy; call again nearer, not more often.",
+      "ref": "Radio discipline"
+    },
+    {
+      "id": "vhf-059",
+      "topic": "calls",
+      "difficulty": 3,
+      "q": "In a crowded bay a motor yacht is dropping its anchor across your chain. You do not know its name. How do you call it?",
+      "figure": null,
+      "options": [
+        "\"All stations, all stations, this is Aurora, a boat is on my chain, OVER\"",
+        "\"PAN-PAN ×3, motor yacht in Vathi Bay, you are over my chain, OVER\"",
+        "\"Motor yacht anchoring north of me in Vathi Bay, this is Aurora, OVER\"",
+        "\"Hello, the boat anchoring now, are you there? Aurora, OVER AND OUT\""
+      ],
+      "answer": 2,
+      "why": "If you do not know a vessel's name, identify it by type and position instead.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-060",
+      "topic": "calls",
+      "difficulty": 3,
+      "q": "Blue Star agreed on 16 to move to 72. On 72 you call them twice, a minute apart, with no reply. What do you do?",
+      "figure": null,
+      "options": [
+        "Wait on 72 in silence for an hour",
+        "Call them by voice on 70 instead",
+        "Keep calling on 72 every few seconds",
+        "Go back to 16 and call them once more"
+      ],
+      "answer": 3,
+      "why": "If the other station does not appear on the working channel, return to where you last had contact.",
+      "ref": "VHF procedure"
+    },
+    {
+      "id": "vhf-061",
+      "topic": "phonetic",
+      "difficulty": 1,
+      "q": "The marina asks you to spell your yacht's name, KIRA. What do you say?",
+      "figure": null,
+      "options": [
+        "\"Kilo India Romeo Alfa\"",
+        "\"King Item Roger Able\"",
+        "\"Kilo India Roger Apple\"",
+        "\"Kilo Italy Romeo Alfa\""
+      ],
+      "answer": 0,
+      "why": "The phonetic alphabet: K Kilo, I India, R Romeo, A Alfa.",
+      "ref": "Phonetic alphabet"
+    },
+    {
+      "id": "vhf-062",
+      "topic": "phonetic",
+      "difficulty": 1,
+      "q": "The marina's reply is drowned out by an engine starting nearby; you understood nothing. What do you send?",
+      "figure": null,
+      "options": [
+        "WAIT",
+        "SAY AGAIN",
+        "CORRECTION",
+        "REPEAT"
+      ],
+      "answer": 1,
+      "why": "SAY AGAIN asks for the whole message again; REPEAT is not used for this on the radio.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-063",
+      "topic": "phonetic",
+      "difficulty": 1,
+      "q": "The marina gives you your berth and the code for the shower block. You have understood it all. Which word confirms that?",
+      "figure": null,
+      "options": [
+        "CORRECTION",
+        "AFFIRMATIVE",
+        "RECEIVED",
+        "I SPELL"
+      ],
+      "answer": 2,
+      "why": "RECEIVED means the message has been heard and understood.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-064",
+      "topic": "phonetic",
+      "difficulty": 1,
+      "q": "You confirm to the marina that your berth is number 9. How do you say the figure?",
+      "figure": null,
+      "options": [
+        "\"Nina\"",
+        "\"November\"",
+        "\"Nine-zero\"",
+        "\"Niner\""
+      ],
+      "answer": 3,
+      "why": "On the radio the figure 9 is spoken \"niner\" so it is not confused with other words.",
+      "ref": "Numbers on the radio"
+    },
+    {
+      "id": "vhf-065",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "The marina asks your draft. It is 2.9 m. What do you say?",
+      "figure": null,
+      "options": [
+        "\"Two decimal niner metres\"",
+        "\"Twenty-nine metres\"",
+        "\"Two and nine metres\"",
+        "\"Two niner metres\""
+      ],
+      "answer": 0,
+      "why": "Figures are spoken one by one, with \"decimal\" for the point and \"niner\" for 9.",
+      "ref": "Numbers on the radio"
+    },
+    {
+      "id": "vhf-066",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "You hear: \"Aurora, this is Vega Marina, go to pontoon Charlie…\" and the rest is lost in noise. What do you send?",
+      "figure": null,
+      "options": [
+        "\"SAY AGAIN WORD AFTER Charlie\"",
+        "\"SAY AGAIN ALL AFTER Charlie\"",
+        "\"SAY AGAIN ALL BEFORE Charlie\"",
+        "\"I SPELL Charlie\""
+      ],
+      "answer": 1,
+      "why": "ALL AFTER asks for everything that followed the word you name.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-067",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "You told the marina: \"Berth for one night, catamaran, twelve metres, OVER\". They reply: \"Aurora, SAY AGAIN ALL BEFORE twelve metres, OVER\". What do you repeat?",
+      "figure": null,
+      "options": [
+        "Only the words \"twelve metres\"",
+        "Everything after \"twelve metres\"",
+        "The words before \"twelve metres\"",
+        "Your yacht's name, spelled out"
+      ],
+      "answer": 2,
+      "why": "ALL BEFORE asks for everything that came before the word named.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-068",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "The marina cannot catch your yacht's name, Xenia. How do you give it?",
+      "figure": null,
+      "options": [
+        "\"Xenia, CORRECTION, X-ray Echo November India Alfa\"",
+        "\"Xenia, SAY AGAIN, X-ray Echo November India Alfa\"",
+        "\"Xenia, I SPELL, Xylophone Echo Nancy India Alfa\"",
+        "\"Xenia, I SPELL, X-ray Echo November India Alfa\""
+      ],
+      "answer": 3,
+      "why": "I SPELL tells the listener the next words are letters of the phonetic alphabet.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-069",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "You have just said \"length one four metres\", but Aurora is 12 m long. What do you say at once?",
+      "figure": null,
+      "options": [
+        "\"CORRECTION, length one two metres\"",
+        "\"I SPELL, length one two metres\"",
+        "\"WAIT, length one two metres\"",
+        "\"SAY AGAIN, length one two metres\""
+      ],
+      "answer": 0,
+      "why": "CORRECTION cancels your last word or phrase; the right version follows.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-070",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "The marina asks for your boat's registration number. It is in the papers below and will take you a couple of minutes to find. Which proword do you use first?",
+      "figure": null,
+      "options": [
+        "SAY AGAIN",
+        "WAIT",
+        "AFFIRMATIVE",
+        "STATION CALLING"
+      ],
+      "answer": 1,
+      "why": "WAIT, with the minutes if you can, tells the other station you need a pause.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-071",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "The marina asks: \"Aurora, do you need shore power, OVER?\" You do. What do you reply?",
+      "figure": null,
+      "options": [
+        "\"CORRECTION, OVER\"",
+        "\"RECEIVED, OVER\"",
+        "\"AFFIRMATIVE, OVER\"",
+        "\"I SPELL, OVER\""
+      ],
+      "answer": 2,
+      "why": "AFFIRMATIVE means yes; RECEIVED only says you heard the question.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-072",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "You hear \"Aurora, Aurora, this is …\" but the caller's name is lost in noise. How do you answer?",
+      "figure": null,
+      "options": [
+        "\"All stations, this is Aurora, SAY AGAIN, OVER\"",
+        "\"Who is calling Aurora? Identify yourself, OVER\"",
+        "\"Aurora, this is Aurora, SAY AGAIN, OUT\"",
+        "\"Station calling Aurora, this is Aurora, OVER\""
+      ],
+      "answer": 3,
+      "why": "STATION CALLING answers a call when you did not catch who made it.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-073",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "You must read out your latitude. How do you say it?",
+      "figure": {
+        "type": "card",
+        "title": "Plotter",
+        "lines": [
+          "Latitude 37°52.4′N"
+        ]
+      },
+      "options": [
+        "\"Three seven degrees five two decimal four minutes north\"",
+        "\"Five two decimal four minutes, three seven degrees north\"",
+        "\"Thirty-seven degrees fifty-two point four minutes north\"",
+        "\"Three seven degrees fifty-two decimal four minutes north\""
+      ],
+      "answer": 0,
+      "why": "Positions are read figure by figure: degrees, minutes with \"decimal\", then north or south.",
+      "ref": "Numbers on the radio"
+    },
+    {
+      "id": "vhf-074",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "The coastguard asks for your MMSI, 237012340. How do you say it?",
+      "figure": null,
+      "options": [
+        "\"Two hundred thirty-seven, twelve, three-forty\"",
+        "\"Two three seven zero one two three four zero\"",
+        "\"Twenty-three, seventy, one two, thirty-four, zero\"",
+        "\"Two three seven one two three four\""
+      ],
+      "answer": 1,
+      "why": "Long numbers are given figure by figure, zeros included.",
+      "ref": "Numbers on the radio"
+    },
+    {
+      "id": "vhf-075",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "The marina said your berth was \"fifteen\", and you went to berth 50. How should numbers be given to avoid this?",
+      "figure": null,
+      "options": [
+        "Spelled out: \"Foxtrot India Foxtrot…\"",
+        "As a word, said twice: \"fifteen, fifteen\"",
+        "Figure by figure: \"one five\"",
+        "As a word, said slowly: \"fif-teen\""
+      ],
+      "answer": 2,
+      "why": "Saying figures one by one stops \"fifteen\" and \"fifty\" being confused.",
+      "ref": "Numbers on the radio"
+    },
+    {
+      "id": "vhf-076",
+      "topic": "phonetic",
+      "difficulty": 2,
+      "q": "Your crew calls: \"Vega Marina, Aurora, OVER\". The marina is unsure who is calling whom. What is missing?",
+      "figure": null,
+      "options": [
+        "I SPELL, before the name of your yacht",
+        "OVER AND OUT, at the very end of the call",
+        "RECEIVED, before the name of the marina",
+        "THIS IS, between the name called and your own name"
+      ],
+      "answer": 3,
+      "why": "THIS IS separates the station called from the station calling.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-077",
+      "topic": "phonetic",
+      "difficulty": 3,
+      "q": "The marina's reply reaches you like this. What do you send?",
+      "figure": {
+        "type": "card",
+        "title": "What you heard",
+        "lines": [
+          "\"Aurora, your berth is pontoon …",
+          "(one word lost in noise)",
+          "… berth niner, OVER\""
+        ]
+      },
+      "options": [
+        "\"SAY AGAIN WORD AFTER pontoon, OVER\"",
+        "\"CORRECTION pontoon, OVER\"",
+        "\"SAY AGAIN WORD BEFORE pontoon, OVER\"",
+        "\"SAY AGAIN ALL AFTER berth, OVER\""
+      ],
+      "answer": 0,
+      "why": "WORD AFTER asks for the single word that followed the one you name.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-078",
+      "topic": "phonetic",
+      "difficulty": 3,
+      "q": "The coastguard asks your position. How do you read it out?",
+      "figure": {
+        "type": "card",
+        "title": "GPS position",
+        "lines": [
+          "36°27.9′N",
+          "025°08.3′E"
+        ]
+      },
+      "options": [
+        "\"Thirty-six degrees twenty-seven decimal nine north, twenty-five degrees eight decimal three east\"",
+        "\"Three six degrees two seven decimal niner minutes north, zero two five degrees zero eight decimal three minutes east\"",
+        "\"Three six degrees two seven decimal niner minutes north, two five degrees eight decimal three minutes east\"",
+        "\"Three six degrees two seven decimal niner minutes east, zero two five degrees zero eight decimal three minutes north\""
+      ],
+      "answer": 1,
+      "why": "Latitude first, then longitude with three figures of degrees; all figures one by one.",
+      "ref": "Numbers on the radio"
+    },
+    {
+      "id": "vhf-079",
+      "topic": "phonetic",
+      "difficulty": 3,
+      "q": "The marina gives you pontoon B, berth 19. You read it back to confirm. Which is right?",
+      "figure": null,
+      "options": [
+        "\"Pontoon Beta, berth one niner\"",
+        "\"Pontoon Bravo, berth nineteen\"",
+        "\"Pontoon Bravo, berth one niner\"",
+        "\"Pontoon Baker, berth one niner\""
+      ],
+      "answer": 2,
+      "why": "Letters in the phonetic alphabet (B = Bravo), figures one by one with \"niner\".",
+      "ref": "Phonetic alphabet"
+    },
+    {
+      "id": "vhf-080",
+      "topic": "phonetic",
+      "difficulty": 3,
+      "q": "The marina says: \"Aurora, berth one five, CORRECTION, berth one six, pontoon Charlie, OVER\". Where do you go?",
+      "figure": null,
+      "options": [
+        "Pontoon C, berth 15 or 16",
+        "Pontoon C, berth 15",
+        "Pontoon C, berth 56",
+        "Pontoon C, berth 16"
+      ],
+      "answer": 3,
+      "why": "CORRECTION cancels what came just before it; the version after it stands.",
+      "ref": "Procedure words"
+    },
+    {
+      "id": "vhf-081",
+      "topic": "dsc",
+      "difficulty": 1,
+      "q": "What do the first three figures of this MMSI, 237, tell a rescue centre?",
+      "figure": {
+        "type": "card",
+        "title": "Charter yacht Aurora",
+        "lines": [
+          "MMSI 237012340",
+          "Flag: Greece"
+        ]
+      },
+      "options": [
+        "The country where the yacht is registered",
+        "The year the radio was installed",
+        "The type and size of the vessel",
+        "The sea area the yacht is sailing in"
+      ],
+      "answer": 0,
+      "why": "The first three figures are the MID, the country code of the ship's flag.",
+      "ref": "MMSI"
+    },
+    {
+      "id": "vhf-082",
+      "topic": "dsc",
+      "difficulty": 1,
+      "q": "You are looking through your DSC directory. Which of these numbers belongs to a coast station?",
+      "figure": null,
+      "options": [
+        "237100000",
+        "002371000",
+        "237012340",
+        "023712340"
+      ],
+      "answer": 1,
+      "why": "A coast station MMSI starts with 00; a group MMSI with a single 0; a ship's with its MID.",
+      "ref": "MMSI"
+    },
+    {
+      "id": "vhf-083",
+      "topic": "dsc",
+      "difficulty": 1,
+      "q": "You buy a DSC handheld and the shop asks for the MMSI to programme it. How many figures will it have?",
+      "figure": null,
+      "options": [
+        "Eleven",
+        "Six",
+        "Nine",
+        "Seven"
+      ],
+      "answer": 2,
+      "why": "Every MMSI has nine figures.",
+      "ref": "MMSI"
+    },
+    {
+      "id": "vhf-084",
+      "topic": "dsc",
+      "difficulty": 1,
+      "q": "Your DSC set has no GPS connected and no position has been entered. If you send a distress alert, what will be missing?",
+      "figure": null,
+      "options": [
+        "Your MMSI",
+        "Your flag country",
+        "The word distress",
+        "Your position"
+      ],
+      "answer": 3,
+      "why": "Without a GPS feed or a manual position, the alert says who you are but not where.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-085",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "A guest on your charter yacht wants to put \"his own MMSI\" into the radio for the week. What do you tell him?",
+      "figure": null,
+      "options": [
+        "No — the MMSI belongs to the yacht and its radio licence",
+        "Yes, but only for the length of the charter",
+        "Yes, if he also changes the yacht's call sign",
+        "Yes — the MMSI belongs to whoever is skipper aboard"
+      ],
+      "answer": 0,
+      "why": "An MMSI is issued to the vessel with its ship radio licence, not to a person.",
+      "ref": "MMSI"
+    },
+    {
+      "id": "vhf-086",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "You know your friend's MMSI and want to call her yacht by DSC for a chat. What do you do?",
+      "figure": null,
+      "options": [
+        "All-ships call proposing 72, then talk on 72",
+        "Individual call to her MMSI, proposing 72; talk on 72",
+        "Individual call to her MMSI, then talk on 70",
+        "Group call to her MMSI, then talk on 16"
+      ],
+      "answer": 1,
+      "why": "A routine individual call goes to one MMSI and proposes an intership channel for the voice part.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-087",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "Your friend's set acknowledges your DSC call, which proposed channel 72. What happens next?",
+      "figure": null,
+      "options": [
+        "You carry on the chat as DSC text on 70",
+        "You must now call her again by voice on 16",
+        "Both sets go to 72 and you talk by voice",
+        "Both sets go to 16 and you talk there"
+      ],
+      "answer": 2,
+      "why": "After the acknowledgement both sets switch to the proposed channel for the voice call.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-088",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "Your set rings and shows this. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "DSC: incoming call",
+        "lines": [
+          "GROUP CALL to your flotilla",
+          "From: the lead boat",
+          "Category: ROUTINE · channel 72"
+        ]
+      },
+      "options": [
+        "Ignore it — group calls are only used for tests",
+        "Call the lead on 16 to ask what it is about",
+        "Reply to the lead by voice on channel 70",
+        "Go to 72 (the set may switch itself) and listen for the lead"
+      ],
+      "answer": 3,
+      "why": "A group call reaches every set with that group MMSI and sends them all to the proposed channel.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-089",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "You want to ask the boats around you whether anyone has a spare impeller. Should you send an all-ships DSC call?",
+      "figure": null,
+      "options": [
+        "No — all-ships DSC calls are kept for emergencies and safety",
+        "Yes, if you propose channel 16 for the replies",
+        "Yes, as long as you select low power first",
+        "Yes — an all-ships routine call is the right tool"
+      ],
+      "answer": 0,
+      "why": "All-ships DSC calls are for distress, urgency and safety; routine calls go to one MMSI or a group.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-090",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "Before leaving harbour you see this on the DSC set. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "DSC display",
+        "lines": [
+          "NO POSITION · NO TIME",
+          "Plotter switched off at the breaker"
+        ]
+      },
+      "options": [
+        "Move the DSC watch from channel 70 to 16",
+        "Switch on the GPS feed, or enter the position by hand",
+        "Nothing — the MMSI tells rescuers where you are",
+        "Test the link by pressing the distress button"
+      ],
+      "answer": 1,
+      "why": "A distress alert carries your position only if the set has a GPS feed or an up-to-date manual entry.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-091",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "You have decided to send a DSC distress alert. How do you work the red button?",
+      "figure": null,
+      "options": [
+        "Hold it down while you speak the MAYDAY",
+        "Press it three times quickly in a row",
+        "Lift the cover, then press and hold it for about 5 seconds",
+        "Press it once briefly, like a doorbell"
+      ],
+      "answer": 2,
+      "why": "The distress button sits under a cover and must be held for a few seconds, which prevents accidents.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-092",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "You are about to send a DSC distress alert and have a minute to spare. How do you use it on the set?",
+      "figure": {
+        "type": "card",
+        "title": "Holed below the waterline",
+        "lines": [
+          "Water coming in faster than the pumps",
+          "Crew in lifejackets",
+          "About a minute before you must act"
+        ]
+      },
+      "options": [
+        "Enter the coastguard's MMSI, then send",
+        "Select \"All ships, routine\", then send",
+        "Choose an intership channel, then send",
+        "Select \"Flooding\" as the nature of distress, then send"
+      ],
+      "answer": 3,
+      "why": "If there is time, choose the nature of distress from the menu so rescuers know what to bring.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-093",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "No acknowledgement has arrived yet. What is the set doing, and where should you be listening?",
+      "figure": {
+        "type": "card",
+        "title": "DSC display",
+        "lines": [
+          "DISTRESS ALERT SENT",
+          "Waiting for acknowledgement",
+          "Next repeat in 3:58 · CH 16"
+        ]
+      },
+      "options": [
+        "It repeats the alert by itself; you stay on 16",
+        "It has stopped DSC; you call for help on 72",
+        "It has given up; you resend the alert by hand",
+        "It waits on 70; you speak your MAYDAY there"
+      ],
+      "answer": 0,
+      "why": "A DSC set repeats a distress alert every few minutes until acknowledged, and sits on 16 for voice.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-094",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "You are deep in a chat on 72 with dual watch switched off. Will your fixed DSC set still receive a distress alert?",
+      "figure": null,
+      "options": [
+        "No — only if dual watch includes channel 70",
+        "Yes — it keeps a separate watch on channel 70",
+        "No — DSC only works while the set is on 16",
+        "Only if the alert comes from a coast station"
+      ],
+      "answer": 1,
+      "why": "A fixed DSC set has its own receiver that listens on 70 whatever voice channel you use.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-095",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "You want to check that your DSC works before a passage. How do you test it?",
+      "figure": null,
+      "options": [
+        "Send a distress alert, then cancel it at once",
+        "Make an all-ships call proposing channel 72",
+        "Send an individual call to a friend's MMSI and see it arrive",
+        "Call your friend by voice on channel 70"
+      ],
+      "answer": 2,
+      "why": "Test DSC with a routine individual call; never test with the distress button.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-096",
+      "topic": "dsc",
+      "difficulty": 2,
+      "q": "There is no time to choose anything from the menu: you lift the cover and hold the button. What does the alert carry?",
+      "figure": null,
+      "options": [
+        "Only your position, without your MMSI",
+        "A routine call to the nearest coast station",
+        "Nothing — it will not go without a nature chosen",
+        "An undesignated distress, with your MMSI and position"
+      ],
+      "answer": 3,
+      "why": "Sent straight from the button, the alert goes as undesignated distress with your MMSI and position.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-097",
+      "topic": "dsc",
+      "difficulty": 3,
+      "q": "What do you do now?",
+      "figure": {
+        "type": "card",
+        "title": "False alert",
+        "lines": [
+          "A child pressed the red button",
+          "Display: DISTRESS ALERT SENT",
+          "No emergency aboard"
+        ],
+        "tag": "2 min ago"
+      },
+      "options": [
+        "Cancel it on the set if it can, then tell all stations on 16",
+        "Wait for the coastguard to call you first",
+        "Switch the radio off and say nothing more",
+        "Send a second alert to cancel the first"
+      ],
+      "answer": 0,
+      "why": "Cancel a false alert by DSC where the set allows, then by voice to all stations on 16.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-098",
+      "topic": "dsc",
+      "difficulty": 3,
+      "q": "Your DSC set sent a false distress alert at 1420 UTC. Which voice message do you send on 16?",
+      "figure": null,
+      "options": [
+        "\"PAN-PAN ×3, this is Aurora, MMSI and position, our alert of 1420 UTC was a mistake\"",
+        "\"All stations ×3, this is Aurora, MMSI and position, cancel my distress alert of 1420 UTC\"",
+        "\"SÉCURITÉ ×3, this is Aurora, MMSI and position, disregard our alert of 1420 UTC\"",
+        "\"MAYDAY ×3, this is Aurora, MMSI and position, our MAYDAY of 1420 UTC is cancelled\""
+      ],
+      "answer": 1,
+      "why": "A false alert is cancelled to ALL STATIONS with your name, MMSI, position and the time of the alert.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-099",
+      "topic": "dsc",
+      "difficulty": 3,
+      "q": "Your set sounds an alarm and shows this. What do you do first?",
+      "figure": {
+        "type": "card",
+        "title": "DSC: DISTRESS received",
+        "lines": [
+          "From MMSI 271043210",
+          "Nature: FLOODING",
+          "36°50′N 027°20′E at 10:12 UTC"
+        ]
+      },
+      "options": [
+        "Call the yacht by voice on channel 70",
+        "Acknowledge the alert by DSC straight away",
+        "Silence the alarm, note the details, listen on 16",
+        "Relay the alert by DSC to all ships at once"
+      ],
+      "answer": 2,
+      "why": "Note the alert and listen on 16; acknowledging a DSC distress alert is normally left to the coast station.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-100",
+      "topic": "dsc",
+      "difficulty": 3,
+      "q": "What does this mean, and what do you do?",
+      "figure": {
+        "type": "card",
+        "title": "Check-out at the charter base",
+        "lines": [
+          "DSC display: MMSI NOT SET",
+          "GPS connected, position shown",
+          "You sail for a week tomorrow"
+        ]
+      },
+      "options": [
+        "Use the flotilla's group MMSI as your own for the week",
+        "Alerts still go, just without a name; sail as planned",
+        "Enter any nine figures yourself so the button works",
+        "No DSC call or alert can go out; have the base fix it before you sail"
+      ],
+      "answer": 3,
+      "why": "Without the yacht's MMSI a DSC set cannot send calls or alerts; the base must programme it.",
+      "ref": "DSC"
+    },
+    {
+      "id": "vhf-101",
+      "topic": "distress",
+      "difficulty": 1,
+      "q": "Does this situation justify a MAYDAY?",
+      "figure": {
+        "type": "card",
+        "title": "Fire aboard",
+        "lines": [
+          "Engine-bay fire, spreading fast",
+          "Both extinguishers used, no effect",
+          "Four crew, 8 miles offshore"
+        ],
+        "tag": "Now"
+      },
+      "options": [
+        "Yes — grave and imminent danger to boat and crew",
+        "No — first ask the coastguard if it qualifies",
+        "Only if another vessel is in sight to help",
+        "No — not until the crew has to abandon ship"
+      ],
+      "answer": 0,
+      "why": "MAYDAY is for grave and imminent danger needing immediate help — an uncontrolled fire is exactly that.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "vhf-102",
+      "topic": "distress",
+      "difficulty": 1,
+      "q": "Your yacht Blue Dolphin is sinking and you pick up the microphone on channel 16. How does your distress call begin?",
+      "figure": null,
+      "options": [
+        "MAYDAY once, THIS IS, Blue Dolphin once",
+        "MAYDAY ×3, THIS IS, Blue Dolphin ×3",
+        "THIS IS, Blue Dolphin ×3, then MAYDAY ×3",
+        "ALL STATIONS ×3, THIS IS, Blue Dolphin ×3"
+      ],
+      "answer": 1,
+      "why": "Distress call: MAYDAY three times, THIS IS, the boat's name three times (with call sign or MMSI).",
+      "ref": "Distress call"
+    },
+    {
+      "id": "vhf-103",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "You have said MAYDAY three times and THIS IS Blue Dolphin three times, with your call sign. What do you say next?",
+      "figure": null,
+      "options": [
+        "Number of people aboard, then position",
+        "OVER, and wait for a reply first",
+        "MAYDAY, Blue Dolphin, then your position",
+        "Your problem first, then your position"
+      ],
+      "answer": 2,
+      "why": "The message opens with MAYDAY and the name once more; position comes first — rescuers need it most.",
+      "ref": "Distress message"
+    },
+    {
+      "id": "vhf-104",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "In which order do you give these four items in your message?",
+      "figure": {
+        "type": "card",
+        "title": "Your MAYDAY message",
+        "lines": [
+          "Persons: five aboard",
+          "Position: 2 miles S of Poros",
+          "Distress: holed, taking water fast",
+          "Help: need pumps and a tow"
+        ]
+      },
+      "options": [
+        "Persons, position, distress, help",
+        "Position, persons, help, distress",
+        "Distress, help, position, persons",
+        "Position, distress, help, persons"
+      ],
+      "answer": 3,
+      "why": "Order: position, nature of distress, assistance required, persons on board, then other useful information.",
+      "ref": "Distress message"
+    },
+    {
+      "id": "vhf-105",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "Your plotter has died and you will give your position relative to something on the chart. Which reference do you choose?",
+      "figure": null,
+      "options": [
+        "A charted lighthouse or headland nearby",
+        "The nearest anchored yacht you can see",
+        "The marina you left this morning",
+        "The name of the beach taverna ashore"
+      ],
+      "answer": 0,
+      "why": "Bearing and distance must be from a charted point that rescuers can find on their own chart.",
+      "ref": "Distress message"
+    },
+    {
+      "id": "vhf-106",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "You read this off the plotter for your MAYDAY. How do you say the position on air?",
+      "figure": {
+        "type": "card",
+        "title": "Plotter screen",
+        "lines": [
+          "LAT 37°38.4' N",
+          "LON 023°55.2' E",
+          "SOG 0.0 kn"
+        ]
+      },
+      "options": [
+        "Rounded to whole degrees: 38 N 24 E",
+        "Latitude first, then longitude, N and E",
+        "Latitude only — that is enough at sea",
+        "Longitude first, then latitude, E and N"
+      ],
+      "answer": 1,
+      "why": "Position by coordinates: latitude first, then longitude, each with N/S or E/W.",
+      "ref": "Distress message"
+    },
+    {
+      "id": "vhf-107",
+      "topic": "distress",
+      "difficulty": 1,
+      "q": "Is a MAYDAY the right call?",
+      "figure": {
+        "type": "card",
+        "title": "Engine won't start",
+        "lines": [
+          "Wind F2, sea calm",
+          "5 miles offshore, open water",
+          "Sails working, nobody hurt"
+        ]
+      },
+      "options": [
+        "Yes — if you cannot reach port by dark",
+        "Yes — any engine failure at sea is distress",
+        "No — there is no grave and imminent danger",
+        "Yes — but sent on low power only"
+      ],
+      "answer": 2,
+      "why": "No grave and imminent danger, no MAYDAY: sail on, or ask for help with a lower-priority call.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "vhf-108",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "You have sent your MAYDAY on 16 and, after listening for a while, nobody answers. What do you do?",
+      "figure": null,
+      "options": [
+        "Stop transmitting to save the battery",
+        "Wait a full hour before calling again",
+        "Move to channel 6 and call only there",
+        "Repeat it, and use other means: flares, EPIRB"
+      ],
+      "answer": 3,
+      "why": "An unanswered MAYDAY is repeated; meanwhile raise the alarm by every other means you have.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "vhf-109",
+      "topic": "distress",
+      "difficulty": 1,
+      "q": "After your MAYDAY you hear: \"MAYDAY Blue Dolphin, this is Olympia Radio, RECEIVED MAYDAY\". What does it tell you?",
+      "figure": null,
+      "options": [
+        "Your distress call has been received",
+        "Your call was unclear — send it again",
+        "Olympia Radio is calling another vessel",
+        "You must now downgrade to PAN-PAN"
+      ],
+      "answer": 0,
+      "why": "RECEIVED MAYDAY is the acknowledgement: your distress has been heard and help is being organised.",
+      "ref": "Distress acknowledgement"
+    },
+    {
+      "id": "vhf-110",
+      "topic": "distress",
+      "difficulty": 3,
+      "q": "Nobody else seems to be responding to this call. What do you do on the radio now?",
+      "figure": {
+        "type": "card",
+        "title": "Heard on 16",
+        "lines": [
+          "MAYDAY from yacht Selene: sinking",
+          "No coast station has answered",
+          "Selene is 30 miles off — too far for you"
+        ],
+        "tag": "5 min"
+      },
+      "options": [
+        "Acknowledge Selene and keep to your course",
+        "Send a MAYDAY RELAY on 16 for Selene",
+        "Call Selene on channel 6 to check first",
+        "Keep silent — it is not your distress"
+      ],
+      "answer": 1,
+      "why": "A MAYDAY that nobody acknowledges, when you cannot help yourself: relay it with MAYDAY RELAY.",
+      "ref": "MAYDAY RELAY"
+    },
+    {
+      "id": "vhf-111",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "You are relaying another yacht's distress from your own yacht, Aura. How does your call begin?",
+      "figure": null,
+      "options": [
+        "MAYDAY ×3, THIS IS, the other yacht ×3",
+        "PAN-PAN ×3, THIS IS, Aura ×3",
+        "MAYDAY RELAY ×3, THIS IS, Aura ×3",
+        "MAYDAY RELAY ×3, THIS IS, the other yacht ×3"
+      ],
+      "answer": 2,
+      "why": "A relay opens MAYDAY RELAY three times, then THIS IS and your own name — never pose as the casualty.",
+      "ref": "MAYDAY RELAY"
+    },
+    {
+      "id": "vhf-112",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "You are sure this was a distress signal. Which radio call do you send?",
+      "figure": {
+        "type": "card",
+        "title": "Night watch",
+        "lines": [
+          "Red parachute flare, 4 miles east",
+          "Nothing heard on channel 16",
+          "No other vessel in sight"
+        ]
+      },
+      "options": [
+        "Nothing until you know who fired it",
+        "PAN-PAN, as you do not know her name",
+        "MAYDAY in your own boat's name",
+        "MAYDAY RELAY, with what you saw and where"
+      ],
+      "answer": 3,
+      "why": "A vessel in distress that cannot call for herself: you send a MAYDAY RELAY on her behalf.",
+      "ref": "MAYDAY RELAY"
+    },
+    {
+      "id": "vhf-113",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "Before you step into the raft, what do you do about the VHF radios?",
+      "figure": {
+        "type": "card",
+        "title": "Abandoning ship",
+        "lines": [
+          "Liferaft inflated alongside",
+          "Fixed VHF below, water rising",
+          "Waterproof handheld, charged"
+        ]
+      },
+      "options": [
+        "Take the handheld into the raft with you",
+        "Stay below on the fixed set to the end",
+        "Leave the handheld — it won't work in a raft",
+        "Leave the handheld aboard, still calling"
+      ],
+      "answer": 0,
+      "why": "A handheld in the raft lets you talk to rescuers as they close in.",
+      "ref": "Abandon ship"
+    },
+    {
+      "id": "vhf-114",
+      "topic": "distress",
+      "difficulty": 3,
+      "q": "The anchor will not hold again in time. Which call do you make, and when?",
+      "figure": {
+        "type": "card",
+        "title": "Lee shore",
+        "lines": [
+          "Engine dead, anchor dragging",
+          "Rocks 400 m downwind",
+          "Six aboard, no room to sail off"
+        ],
+        "tag": "F7"
+      },
+      "options": [
+        "Wait — try to re-anchor first, then call",
+        "MAYDAY now — the danger is grave and imminent",
+        "PAN-PAN now, MAYDAY once she hits the rocks",
+        "A routine call to the marina for a tow"
+      ],
+      "answer": 1,
+      "why": "Do not wait for the impact: grave and imminent danger means MAYDAY now.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "vhf-115",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "Which call do you make?",
+      "figure": {
+        "type": "card",
+        "title": "Crew overboard",
+        "lines": [
+          "Lost sight of her in the waves",
+          "Wind F5, water 18 °C",
+          "Searching under engine"
+        ],
+        "tag": "Night"
+      },
+      "options": [
+        "PAN-PAN — the yacht itself is not in danger",
+        "No call until you have searched for an hour",
+        "MAYDAY — a person in the water is in grave danger",
+        "SÉCURITÉ asking boats to keep a lookout"
+      ],
+      "answer": 2,
+      "why": "A person overboard and lost from sight is in grave and imminent danger: MAYDAY.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "vhf-116",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "The skipper is unconscious, the boat is on fire, and you have no radio certificate. May you send the MAYDAY?",
+      "figure": null,
+      "options": [
+        "Only with the owner's consent by phone",
+        "Only from the handheld, not the fixed set",
+        "No — only a certificate holder may transmit",
+        "Yes — anyone aboard may send a distress call"
+      ],
+      "answer": 3,
+      "why": "In distress anyone may use the radio; the certificate rule never stops a MAYDAY.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "vhf-117",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "The coast station is handling your MAYDAY for a fire, but you have now put the fire out and need no help. What do you do?",
+      "figure": null,
+      "options": [
+        "Tell the coast station at once that you need no help",
+        "Switch the radio off to keep 16 clear",
+        "Send a SÉCURITÉ saying that you are safe",
+        "Say nothing — the coastguard will work it out"
+      ],
+      "answer": 0,
+      "why": "Rescuers keep coming until told: tell the station controlling the distress that you are safe.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "vhf-118",
+      "topic": "distress",
+      "difficulty": 3,
+      "q": "Which important items are missing from this message?",
+      "figure": {
+        "type": "card",
+        "title": "Overheard MAYDAY",
+        "lines": [
+          "MAYDAY ×3, this is Aura ×3",
+          "MAYDAY Aura, 2 miles south of Poros",
+          "Hit a rock, sinking fast",
+          "OVER"
+        ]
+      },
+      "options": [
+        "Destination and last port of call",
+        "Help needed and number of persons aboard",
+        "The time and the weather at the scene",
+        "The skipper's name and home port"
+      ],
+      "answer": 1,
+      "why": "A distress message gives position, nature of distress, assistance required and persons on board.",
+      "ref": "Distress message"
+    },
+    {
+      "id": "vhf-119",
+      "topic": "distress",
+      "difficulty": 3,
+      "q": "With no GPS fix, you use the lighthouse to find your place. How do you report your position in the MAYDAY?",
+      "figure": {
+        "type": "chart",
+        "land": "M95 42 Q130 16 176 34 Q188 60 160 76 Q120 82 100 66 Z",
+        "marks": [
+          [
+            150,
+            60,
+            "w",
+            "Lt"
+          ]
+        ],
+        "boat": [
+          200,
+          147,
+          270
+        ],
+        "panel": [
+          "GPS lost",
+          "Light 330° T",
+          "Range about 4 M"
+        ],
+        "note": "Bearing from your boat to the light"
+      },
+      "options": [
+        "330° from the lighthouse, 4 miles",
+        "4 miles from the lighthouse, no bearing",
+        "150° from the lighthouse, 4 miles",
+        "Your last GPS fix, an hour old"
+      ],
+      "answer": 2,
+      "why": "Bearing is given FROM the landmark: the reciprocal of your bearing to it (330° − 180° = 150°).",
+      "ref": "Distress message"
+    },
+    {
+      "id": "vhf-120",
+      "topic": "distress",
+      "difficulty": 2,
+      "q": "You have just finished giving your MAYDAY message. How do you end it, and then what?",
+      "figure": null,
+      "options": [
+        "Repeat it at once, without listening",
+        "Say OUT, then switch off to save power",
+        "Say OVER, then change to a working channel",
+        "Say OVER, then listen on 16 for an answer"
+      ],
+      "answer": 3,
+      "why": "End with OVER and listen: the coast station or a nearby vessel will acknowledge on 16.",
+      "ref": "Distress procedure"
+    },
+    {
+      "id": "vhf-121",
+      "topic": "urgency",
+      "difficulty": 1,
+      "q": "You need help, but nobody aboard is in danger yet. Which call do you make on channel 16?",
+      "figure": {
+        "type": "card",
+        "title": "Drifting",
+        "lines": [
+          "Engine failed, no wind",
+          "6 miles offshore, open sea",
+          "Boat sound, crew well",
+          "You need a tow"
+        ]
+      },
+      "options": [
+        "PAN-PAN",
+        "MAYDAY RELAY",
+        "SÉCURITÉ",
+        "MAYDAY"
+      ],
+      "answer": 0,
+      "why": "Urgent help needed but no grave and imminent danger: PAN-PAN.",
+      "ref": "Urgency call"
+    },
+    {
+      "id": "vhf-122",
+      "topic": "urgency",
+      "difficulty": 1,
+      "q": "You are about to send an urgency call to every station in range from your yacht Nefeli. How does it begin?",
+      "figure": null,
+      "options": [
+        "PAN-PAN ×3, THIS IS, Nefeli ×3, ALL STATIONS ×3",
+        "PAN-PAN ×3, ALL STATIONS ×3, THIS IS, Nefeli ×3",
+        "PAN-PAN once, ALL STATIONS once, THIS IS, Nefeli once",
+        "ALL STATIONS ×3, PAN-PAN ×3, THIS IS, Nefeli ×3"
+      ],
+      "answer": 1,
+      "why": "Urgency call: PAN-PAN three times, the station(s) called, THIS IS, your name three times.",
+      "ref": "Urgency call"
+    },
+    {
+      "id": "vhf-123",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "Your crew member needs a doctor's view on what to do next. Which call do you make?",
+      "figure": {
+        "type": "card",
+        "title": "Fall below",
+        "lines": [
+          "Crew fell down the companionway",
+          "Arm probably broken, in pain",
+          "Conscious, breathing normally",
+          "12 miles from Kos"
+        ]
+      },
+      "options": [
+        "SÉCURITÉ, warning other yachts",
+        "MAYDAY, asking for a helicopter",
+        "PAN-PAN, asking for medical advice",
+        "A routine call to the Kos marina"
+      ],
+      "answer": 2,
+      "why": "Medical help needed but no immediate threat to life: PAN-PAN with medical advice requested.",
+      "ref": "Urgency — medical"
+    },
+    {
+      "id": "vhf-124",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "You want a tow and only Olympia Radio needs to hear it. How do you address your PAN-PAN?",
+      "figure": null,
+      "options": [
+        "PAN-PAN ×3 with no address at all",
+        "Olympia Radio by voice on channel 70",
+        "PAN-PAN ×3, then ALL STATIONS ×3 only",
+        "PAN-PAN ×3, then Olympia Radio ×3"
+      ],
+      "answer": 3,
+      "why": "An urgency call may go to all stations or to one named station, three times after PAN-PAN.",
+      "ref": "Urgency call"
+    },
+    {
+      "id": "vhf-125",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "Your problem has gone away on its own. What do you do about your earlier call?",
+      "figure": {
+        "type": "card",
+        "title": "An hour ago",
+        "lines": [
+          "You sent PAN-PAN: engine failure",
+          "Engine now running again",
+          "Heading for Paros under power"
+        ],
+        "tag": "PAN-PAN"
+      },
+      "options": [
+        "Cancel the PAN-PAN: tell all stations you need no help",
+        "Send SEELONCE FEENEE on channel 16",
+        "Nothing — an urgency call expires by itself",
+        "Send a SÉCURITÉ that your engine runs"
+      ],
+      "answer": 0,
+      "why": "Cancel an urgency call once the urgency is over, so nobody keeps looking for you.",
+      "ref": "Urgency call"
+    },
+    {
+      "id": "vhf-126",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "You pass this hazard in a busy channel. Which call warns the other vessels about it?",
+      "figure": {
+        "type": "card",
+        "title": "In the fairway",
+        "lines": [
+          "Floating container, half submerged",
+          "Drifting in the channel",
+          "Between Paros and Naxos"
+        ]
+      },
+      "options": [
+        "PAN-PAN",
+        "SÉCURITÉ",
+        "MAYDAY",
+        "MAYDAY RELAY"
+      ],
+      "answer": 1,
+      "why": "A danger to navigation is a safety message: SÉCURITÉ.",
+      "ref": "Safety call"
+    },
+    {
+      "id": "vhf-127",
+      "topic": "urgency",
+      "difficulty": 1,
+      "q": "You hear a coast station on 16 begin: \"SÉCURITÉ, SÉCURITÉ, SÉCURITÉ, all stations…\". What kind of message follows?",
+      "figure": null,
+      "options": [
+        "A call for help from a vessel in danger",
+        "A distress call — 16 goes silent",
+        "A navigational or weather warning",
+        "A list of calls waiting for ships"
+      ],
+      "answer": 2,
+      "why": "SÉCURITÉ introduces a safety message: a navigational or weather warning.",
+      "ref": "Safety call"
+    },
+    {
+      "id": "vhf-128",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "A coast station announces a SÉCURITÉ on 16 and says the gale warning follows on another channel, which it names. What do you do?",
+      "figure": null,
+      "options": [
+        "Stay on 16 — the warning comes there",
+        "Reply on 16 to acknowledge the warning",
+        "Ignore it unless your boat is named",
+        "Switch to the channel it named and listen"
+      ],
+      "answer": 3,
+      "why": "The SÉCURITÉ is only announced on 16; the message itself goes out on the working channel given.",
+      "ref": "Safety call"
+    },
+    {
+      "id": "vhf-129",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "You have finished the opening of your PAN-PAN to all stations. What comes next?",
+      "figure": null,
+      "options": [
+        "Your position, the problem and help needed",
+        "Nothing — wait for the coastguard to ask",
+        "The word MAYDAY, then your position",
+        "Only your MMSI, then wait to be called"
+      ],
+      "answer": 0,
+      "why": "After the opening comes the message: position, nature of the urgency, assistance wanted.",
+      "ref": "Urgency call"
+    },
+    {
+      "id": "vhf-130",
+      "topic": "urgency",
+      "difficulty": 3,
+      "q": "Things have changed since your urgency call went out. What do you do on the radio now?",
+      "figure": {
+        "type": "card",
+        "title": "Still drifting",
+        "lines": [
+          "You sent PAN-PAN for a tow",
+          "Wind now F6, onshore",
+          "Rocks 1 mile downwind",
+          "Too deep to anchor"
+        ],
+        "tag": "1 h later"
+      },
+      "options": [
+        "Send a SÉCURITÉ warning of the rocks",
+        "Upgrade to MAYDAY — the danger is now grave",
+        "Cancel the PAN-PAN and call a marina",
+        "Repeat the PAN-PAN every 15 minutes"
+      ],
+      "answer": 1,
+      "why": "When the danger becomes grave and imminent, the urgency call is upgraded to MAYDAY.",
+      "ref": "Urgency call"
+    },
+    {
+      "id": "vhf-131",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "You have announced a SÉCURITÉ on 16 about a drifting container. Where do you give the warning itself?",
+      "figure": null,
+      "options": [
+        "On channel 70, as a DSC text message",
+        "Only to the coastguard, by phone",
+        "On a working channel you named on 16",
+        "On 16, straight after the announcement"
+      ],
+      "answer": 2,
+      "why": "Keep 16 clear: announce there, then give the safety message on a working channel.",
+      "ref": "Safety call"
+    },
+    {
+      "id": "vhf-132",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "The coast station acknowledges your medical PAN-PAN on 16 and asks you to change to a working channel. What do you do?",
+      "figure": null,
+      "options": [
+        "Refuse — medical calls need channel 16",
+        "Stay on 16 — urgency talk must stay there",
+        "Cancel the PAN-PAN before you change",
+        "Change channel and continue the talk there"
+      ],
+      "answer": 3,
+      "why": "Long urgency traffic moves off 16 when the coast station asks, keeping 16 free.",
+      "ref": "Urgency — medical"
+    },
+    {
+      "id": "vhf-133",
+      "topic": "urgency",
+      "difficulty": 1,
+      "q": "Which of these situations calls for a PAN-PAN?",
+      "figure": null,
+      "options": [
+        "Engine dead, drifting offshore, no danger yet",
+        "Booking a berth at the marina for tonight",
+        "Fire in the cabin that you cannot put out",
+        "A big log floating in the harbour approach"
+      ],
+      "answer": 0,
+      "why": "PAN-PAN: urgent, but no grave and imminent danger. The fire is MAYDAY, the log SÉCURITÉ.",
+      "ref": "Urgency call"
+    },
+    {
+      "id": "vhf-134",
+      "topic": "urgency",
+      "difficulty": 3,
+      "q": "You need a tow to the nearest port. Which call fits, and why?",
+      "figure": {
+        "type": "card",
+        "title": "Dismasted",
+        "lines": [
+          "Mast down, rig cut free and sunk",
+          "Hull sound, nobody hurt",
+          "Rope round the propeller",
+          "8 miles off, wind F4 offshore"
+        ]
+      },
+      "options": [
+        "SÉCURITÉ — warn others of the lost rig",
+        "PAN-PAN — urgent, but no grave and imminent danger",
+        "MAYDAY — a dismasting is always a distress",
+        "No call — hail a passing yacht instead"
+      ],
+      "answer": 1,
+      "why": "Help is needed urgently, but boat and crew are not in grave and imminent danger: PAN-PAN.",
+      "ref": "Urgency call"
+    },
+    {
+      "id": "vhf-135",
+      "topic": "urgency",
+      "difficulty": 3,
+      "q": "Your guest is getting worse by the minute. Which call do you make?",
+      "figure": {
+        "type": "card",
+        "title": "Allergic reaction",
+        "lines": [
+          "Guest stung by a wasp",
+          "Face and throat swelling fast",
+          "Struggling to breathe",
+          "No adrenaline pen aboard"
+        ]
+      },
+      "options": [
+        "PAN-PAN — medical cases are always urgency",
+        "PAN-PAN, asking for medical advice only",
+        "MAYDAY — a life is in grave and imminent danger",
+        "SÉCURITÉ, asking any doctor to call you"
+      ],
+      "answer": 2,
+      "why": "A life-threatening condition is grave and imminent danger to a person: MAYDAY.",
+      "ref": "Urgency or distress"
+    },
+    {
+      "id": "vhf-136",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "A coast station is reading a SÉCURITÉ announcement on 16 just as you want to call a friend's yacht. What do you do?",
+      "figure": null,
+      "options": [
+        "Wait an hour before any routine call",
+        "Stay off 16 until SEELONCE FEENEE",
+        "Call over it — safety is low priority",
+        "Wait until it ends, then make your call"
+      ],
+      "answer": 3,
+      "why": "Safety traffic comes before routine calls but imposes no silence: wait until it is over.",
+      "ref": "Safety call"
+    },
+    {
+      "id": "vhf-137",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "The coast station answers your medical PAN-PAN and puts you through to a doctor. Which information helps the doctor most?",
+      "figure": null,
+      "options": [
+        "Age, symptoms and the first aid given",
+        "Passport number and nationality",
+        "The boat's insurance details",
+        "The name of their doctor at home"
+      ],
+      "answer": 0,
+      "why": "Medical advice by radio needs the patient's age, symptoms and the treatment given so far.",
+      "ref": "Urgency — medical"
+    },
+    {
+      "id": "vhf-138",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "You see that a big mooring buoy has broken free and is drifting into the harbour approach. May your yacht send a SÉCURITÉ?",
+      "figure": null,
+      "options": [
+        "Only by DSC, never by voice",
+        "Yes — any station may warn of a danger",
+        "Only with the coastguard's permission",
+        "No — only coast stations send SÉCURITÉ"
+      ],
+      "answer": 1,
+      "why": "Any station may send a safety message about a danger to navigation.",
+      "ref": "Safety call"
+    },
+    {
+      "id": "vhf-139",
+      "topic": "urgency",
+      "difficulty": 3,
+      "q": "Halfway through your own message, someone else breaks in on channel 16. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "On channel 16",
+        "lines": [
+          "You are giving a SÉCURITÉ",
+          "A weak PAN-PAN breaks in"
+        ]
+      },
+      "options": [
+        "Answer the PAN-PAN with your position",
+        "Finish your SÉCURITÉ — you started first",
+        "Stop, listen, and finish later if 16 is clear",
+        "Switch to high power and talk over it"
+      ],
+      "answer": 2,
+      "why": "Urgency outranks safety: give way to the PAN-PAN, note it, and resume afterwards.",
+      "ref": "Priority of calls"
+    },
+    {
+      "id": "vhf-140",
+      "topic": "urgency",
+      "difficulty": 2,
+      "q": "The coast station has your PAN-PAN; a lifeboat will reach you in an hour. How do you use the radio while you wait?",
+      "figure": null,
+      "options": [
+        "Switch to 70 and wait for a DSC call",
+        "Call every five minutes for an update",
+        "Switch off to save the battery till it comes",
+        "Keep a listening watch on 16 and as told"
+      ],
+      "answer": 3,
+      "why": "Stay reachable: keep watch on 16 or on the channel the coast station gave you.",
+      "ref": "Urgency call"
+    },
+    {
+      "id": "vhf-141",
+      "topic": "sar",
+      "difficulty": 1,
+      "q": "You hear a MAYDAY on 16 from a yacht you cannot see. What do you do first?",
+      "figure": null,
+      "options": [
+        "Listen, write it down, wait for the coast station",
+        "Answer at once to say you heard her",
+        "Call her back to ask for her position",
+        "Change channel to keep 16 clear"
+      ],
+      "answer": 0,
+      "why": "First listen and record: a coast station normally acknowledges and coordinates.",
+      "ref": "SAR communications"
+    },
+    {
+      "id": "vhf-142",
+      "topic": "sar",
+      "difficulty": 3,
+      "q": "You can reach the sinking yacht in half an hour. What do you do on the radio?",
+      "figure": {
+        "type": "card",
+        "title": "MAYDAY heard",
+        "lines": [
+          "Yacht Thalassa: holed, sinking",
+          "She is 3 miles from you",
+          "No coast station has answered"
+        ],
+        "tag": "3 min"
+      },
+      "options": [
+        "Send a MAYDAY RELAY and keep your course",
+        "Acknowledge, then tell the coastguard you are going",
+        "Head there in silence to keep 16 clear",
+        "Keep listening — only coast stations acknowledge"
+      ],
+      "answer": 1,
+      "why": "If no coast station answers and you can help, acknowledge the MAYDAY and inform the coastguard.",
+      "ref": "SAR communications"
+    },
+    {
+      "id": "vhf-143",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "You, on yacht Aura, acknowledge a MAYDAY from yacht Thalassa. Which form is right?",
+      "figure": null,
+      "options": [
+        "RECEIVED MAYDAY, with no names given at all",
+        "SEELONCE MAYDAY, Thalassa, THIS IS Aura",
+        "MAYDAY, Thalassa ×3, THIS IS, Aura ×3, RECEIVED MAYDAY",
+        "Thalassa, THIS IS Aura, ROGER your message, OVER"
+      ],
+      "answer": 2,
+      "why": "Acknowledgement: MAYDAY, the casualty's name ×3, THIS IS, your name ×3, RECEIVED MAYDAY.",
+      "ref": "Distress acknowledgement"
+    },
+    {
+      "id": "vhf-144",
+      "topic": "sar",
+      "difficulty": 1,
+      "q": "During a rescue you hear the station controlling it say \"SEELONCE MAYDAY\". What does it require of you?",
+      "figure": null,
+      "options": [
+        "Repeat it so that more boats hear it",
+        "Switch your radio off until morning",
+        "Use low power for any routine calls",
+        "Keep off the channel unless you are in the rescue"
+      ],
+      "answer": 3,
+      "why": "SEELONCE MAYDAY imposes silence: only stations taking part in the distress may transmit.",
+      "ref": "Radio silence"
+    },
+    {
+      "id": "vhf-145",
+      "topic": "sar",
+      "difficulty": 1,
+      "q": "You have kept quiet on 16 all afternoon during a rescue. Now you hear \"SEELONCE FEENEE\". What has changed?",
+      "figure": null,
+      "options": [
+        "Distress traffic is over; normal use resumes",
+        "The silence is extended for another hour",
+        "A second distress has begun nearby",
+        "Only short, essential calls are allowed"
+      ],
+      "answer": 0,
+      "why": "SEELONCE FEENEE lifts radio silence: the distress traffic is over.",
+      "ref": "Radio silence"
+    },
+    {
+      "id": "vhf-146",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "During a rescue you have kept off 16. Now the station controlling the distress traffic announces \"PRUDONCE\". What does it tell you?",
+      "figure": null,
+      "options": [
+        "The distress is over and normal working resumes",
+        "The distress is not over, but restricted working may resume",
+        "Total silence on 16 until further notice",
+        "Only the vessel in distress may transmit"
+      ],
+      "answer": 1,
+      "why": "PRUDONCE: restricted working may resume; full normal working comes only with SEELONCE FEENEE.",
+      "ref": "Radio silence"
+    },
+    {
+      "id": "vhf-147",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "You normally reach your friend on 16 first. With this going on, how do you get your message to her?",
+      "figure": {
+        "type": "card",
+        "title": "On channel 16",
+        "lines": [
+          "Distress traffic in progress",
+          "You want to tell a friend's yacht",
+          "that you will be late for dinner"
+        ],
+        "tag": "1 h"
+      },
+      "options": [
+        "Call quickly between the distress messages",
+        "Call her by voice on channel 70 instead",
+        "Leave 16 alone: wait, or reach her another way",
+        "Call on 16 on low power so nobody minds"
+      ],
+      "answer": 2,
+      "why": "No routine traffic on a channel carrying distress working: wait, or find another way.",
+      "ref": "Radio silence"
+    },
+    {
+      "id": "vhf-148",
+      "topic": "sar",
+      "difficulty": 1,
+      "q": "A yacht's MAYDAY has been acknowledged and a search begins. Who coordinates it?",
+      "figure": null,
+      "options": [
+        "The yacht that sent the MAYDAY",
+        "The first yacht to reach the scene",
+        "The office of the nearest marina",
+        "The coastguard's rescue centre (MRCC)"
+      ],
+      "answer": 3,
+      "why": "Search and rescue is coordinated by the MRCC, usually through a coast station.",
+      "ref": "SAR organisation"
+    },
+    {
+      "id": "vhf-149",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "You are searching with other yachts, and the coastguard tells everyone on scene to work on channel 6. What do you do?",
+      "figure": null,
+      "options": [
+        "Use 6 for search talk, as directed",
+        "Stay on 16 — distress talk never leaves it",
+        "Use channel 70 so the talk goes by DSC",
+        "Pick your own quiet channel with the lifeboat"
+      ],
+      "answer": 0,
+      "why": "On-scene talk uses the channel the coordinator directs, often 16 or 6.",
+      "ref": "On-scene communications"
+    },
+    {
+      "id": "vhf-150",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "You hear a MAYDAY and reach for the log book. What do you write down?",
+      "figure": null,
+      "options": [
+        "Only the channel and the time you heard it",
+        "Name, position, problem, help needed, persons, time",
+        "Only the name of the vessel in distress",
+        "Nothing — the coast station records it all"
+      ],
+      "answer": 1,
+      "why": "Note everything: you may have to relay it or help, and the coast station may not have heard.",
+      "ref": "SAR communications"
+    },
+    {
+      "id": "vhf-151",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "A helicopter lowers its winch wire towards your cockpit. What must happen before anyone touches it?",
+      "figure": null,
+      "options": [
+        "Someone ties it to a cleat to hold it steady",
+        "The crew turns the VHF off to avoid sparks",
+        "It touches the water or deck first, to earth it",
+        "The engine stops so the boat lies still"
+      ],
+      "answer": 2,
+      "why": "The wire carries a static charge: let it earth on the sea or deck first, and never tie it to the boat.",
+      "ref": "Helicopter rescue"
+    },
+    {
+      "id": "vhf-152",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "A rescue helicopter is hovering overhead and the noise is deafening. How do you get its instructions?",
+      "figure": null,
+      "options": [
+        "By hand signals only — VHF is not used",
+        "Shout up to the winchman as he comes down",
+        "Wait for a written note sent down the wire",
+        "Listen on VHF and do what the crew tells you"
+      ],
+      "answer": 3,
+      "why": "Helicopter crews brief the yacht by VHF; follow their instructions exactly.",
+      "ref": "Helicopter rescue"
+    },
+    {
+      "id": "vhf-153",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "The helicopter will arrive in ten minutes. How do you prepare the deck?",
+      "figure": {
+        "type": "card",
+        "title": "Helicopter on its way",
+        "lines": [
+          "To lift an injured crew member",
+          "Mainsail up, boom swinging",
+          "Cushions and towels on deck"
+        ]
+      },
+      "options": [
+        "Stow or lash down loose gear, clear a space",
+        "Hoist every sail so you are easy to see",
+        "Keep all crew on deck to catch the wire",
+        "Leave it — the downdraft will clear it"
+      ],
+      "answer": 0,
+      "why": "Downdraft blows loose gear into the rotor and wire: secure everything and clear the pick-up area.",
+      "ref": "Helicopter rescue"
+    },
+    {
+      "id": "vhf-154",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "You are much too far away to help this vessel. What do you do on the radio?",
+      "figure": {
+        "type": "card",
+        "title": "Heard on 16",
+        "lines": [
+          "MAYDAY from a motor yacht",
+          "Coast station acknowledged at once",
+          "You are 40 miles away"
+        ]
+      },
+      "options": [
+        "Acknowledge too, so she knows you heard",
+        "Keep listening and noting, but stay silent",
+        "Send a MAYDAY RELAY to make sure",
+        "Call her and offer your position"
+      ],
+      "answer": 1,
+      "why": "Once a coast station has it, distant yachts keep quiet and listen — they may be asked to help later.",
+      "ref": "SAR communications"
+    },
+    {
+      "id": "vhf-155",
+      "topic": "sar",
+      "difficulty": 3,
+      "q": "You are close and could help the burning yacht. What do you do on the radio?",
+      "figure": {
+        "type": "card",
+        "title": "MAYDAY nearby",
+        "lines": [
+          "Yacht on fire, 2 miles ahead",
+          "Coast station has acknowledged",
+          "You can be there in 20 minutes"
+        ]
+      },
+      "options": [
+        "Nothing — the coast station has it in hand",
+        "Head there without a word to keep 16 clear",
+        "Offer help to the coast station, with your position",
+        "Acknowledge the burning yacht's MAYDAY yourself"
+      ],
+      "answer": 2,
+      "why": "Offer your help to the station controlling the distress, with your position and ETA.",
+      "ref": "SAR communications"
+    },
+    {
+      "id": "vhf-156",
+      "topic": "sar",
+      "difficulty": 3,
+      "q": "Radio silence has been imposed, yet the rescue centre is calling you. May you answer?",
+      "figure": {
+        "type": "card",
+        "title": "Silence imposed",
+        "lines": [
+          "You are the yacht nearest the casualty",
+          "The MRCC calls you by name on 16"
+        ],
+        "tag": "SEELONCE"
+      },
+      "options": [
+        "Only on channel 6, never on 16",
+        "No — SEELONCE MAYDAY silences everyone",
+        "Only after SEELONCE FEENEE is given",
+        "Yes — you are part of the distress traffic"
+      ],
+      "answer": 3,
+      "why": "Radio silence binds stations not involved; those taking part in the rescue keep talking.",
+      "ref": "Radio silence"
+    },
+    {
+      "id": "vhf-157",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "During a long rescue you hear three signals over several hours. In which order do they normally come?",
+      "figure": null,
+      "options": [
+        "SEELONCE MAYDAY, PRUDONCE, SEELONCE FEENEE",
+        "PRUDONCE, SEELONCE MAYDAY, SEELONCE FEENEE",
+        "SEELONCE FEENEE, PRUDONCE, SEELONCE MAYDAY",
+        "SEELONCE MAYDAY, SEELONCE FEENEE, PRUDONCE"
+      ],
+      "answer": 0,
+      "why": "Silence imposed, then restricted working allowed, then silence lifted.",
+      "ref": "Radio silence"
+    },
+    {
+      "id": "vhf-158",
+      "topic": "sar",
+      "difficulty": 3,
+      "q": "You might have found what everyone is looking for. What do you do on the radio?",
+      "figure": {
+        "type": "card",
+        "title": "Searching",
+        "lines": [
+          "Looking for a yacht's crew overboard",
+          "The MRCC gave you a search area",
+          "Something orange in the water ahead"
+        ]
+      },
+      "options": [
+        "Put out a SÉCURITÉ to all stations on 16",
+        "Report it to the coordinator on the channel in use",
+        "Wait until you are sure before saying anything",
+        "Send a new MAYDAY for the person in the water"
+      ],
+      "answer": 1,
+      "why": "Report sightings at once to whoever coordinates the search, on the channel they set.",
+      "ref": "On-scene communications"
+    },
+    {
+      "id": "vhf-159",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "You are heading to help a yacht in distress. The coastguard calls to say a lifeboat is there and you are not needed. What do you do?",
+      "figure": null,
+      "options": [
+        "Carry on anyway in case they need you",
+        "Ignore it — you already said you were going",
+        "Acknowledge the message and resume your passage",
+        "Ask for SEELONCE FEENEE before you turn"
+      ],
+      "answer": 2,
+      "why": "Acknowledge your release by the coordinator; your help is no longer needed.",
+      "ref": "SAR communications"
+    },
+    {
+      "id": "vhf-160",
+      "topic": "sar",
+      "difficulty": 2,
+      "q": "The lifeboat cannot hear the yacht in distress, but you hear both. The MRCC asks you to pass messages between them. How?",
+      "figure": null,
+      "options": [
+        "Tell the yacht to shout louder into her set",
+        "Shorten them in your own words to save time",
+        "Refuse — only coast stations may relay",
+        "Pass each message on exactly as you heard it"
+      ],
+      "answer": 3,
+      "why": "When relaying, pass messages on accurately and in full — the coordinator relies on them.",
+      "ref": "SAR communications"
+    },
+    {
+      "id": "vhf-161",
+      "topic": "gmdss",
+      "difficulty": 1,
+      "q": "Your 406 MHz EPIRB has been switched on. Which system carries its alert to a rescue centre?",
+      "figure": null,
+      "options": [
+        "Cospas-Sarsat satellites",
+        "NAVTEX coast stations",
+        "AIS shore stations",
+        "VHF DSC coast stations"
+      ],
+      "answer": 0,
+      "why": "406 MHz EPIRBs are detected by the Cospas-Sarsat satellite system, which passes alerts to MRCCs.",
+      "ref": "EPIRB"
+    },
+    {
+      "id": "vhf-162",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "A lifeboat is closing in on your liferaft, guided by your EPIRB. Which of its signals does she use for the final approach?",
+      "figure": null,
+      "options": [
+        "A 518 kHz NAVTEX signal",
+        "The 121.5 MHz homing signal",
+        "The 406 MHz satellite burst",
+        "A voice call on channel 16"
+      ],
+      "answer": 1,
+      "why": "EPIRBs also send 121.5 MHz so rescuers can home in on them; 406 MHz goes to the satellites.",
+      "ref": "EPIRB"
+    },
+    {
+      "id": "vhf-163",
+      "topic": "gmdss",
+      "difficulty": 3,
+      "q": "You are buying an EPIRB for the boat. Why choose B?",
+      "figure": {
+        "type": "card",
+        "title": "Choosing an EPIRB",
+        "lines": [
+          "A: 406 MHz, no GPS",
+          "B: 406 MHz with built-in GPS",
+          "Same price, same battery life"
+        ]
+      },
+      "options": [
+        "It also makes voice calls on channel 16",
+        "It works without being registered",
+        "Its position reaches rescuers faster and more precisely",
+        "It needs no 121.5 MHz homing signal"
+      ],
+      "answer": 2,
+      "why": "A GPS EPIRB sends its own position in the alert; without GPS the satellites must work it out.",
+      "ref": "EPIRB"
+    },
+    {
+      "id": "vhf-164",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "You buy a used yacht whose EPIRB is still registered to the previous owner. What do you do?",
+      "figure": null,
+      "options": [
+        "Switch it on once so the system learns you",
+        "Register it only if you sail offshore",
+        "Nothing — the registration stays with the beacon",
+        "Update the registration with your and the boat's details"
+      ],
+      "answer": 3,
+      "why": "Rescuers use the registration to phone the owner and identify the boat: keep it current.",
+      "ref": "EPIRB"
+    },
+    {
+      "id": "vhf-165",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "What happens to this beacon if the yacht sinks before anyone can reach it?",
+      "figure": {
+        "type": "card",
+        "title": "EPIRB on the pushpit",
+        "lines": [
+          "Category I",
+          "In a bracket with a hydrostatic release"
+        ]
+      },
+      "options": [
+        "It floats free and switches itself on",
+        "It sends a DSC alert on channel 70",
+        "It stays in its bracket until someone frees it",
+        "It sinks with the boat, sealed in its bracket"
+      ],
+      "answer": 0,
+      "why": "Category I: the hydrostatic release frees it at depth; it floats up and activates automatically.",
+      "ref": "EPIRB"
+    },
+    {
+      "id": "vhf-166",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "At the start of the season you want to check that the EPIRB works. How?",
+      "figure": null,
+      "options": [
+        "Drop it in a bucket of water to see it start",
+        "Run its self-test, as the maker's manual says",
+        "Leave it on overnight and see if anyone calls",
+        "Switch it on for a minute and call the coastguard"
+      ],
+      "answer": 1,
+      "why": "Use only the built-in self-test, per the instructions; a real activation sends a live alert.",
+      "ref": "EPIRB"
+    },
+    {
+      "id": "vhf-167",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "You find the beacon has been transmitting by accident. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "In the cockpit locker",
+        "lines": [
+          "EPIRB light flashing",
+          "Knocked on by a fender",
+          "Noticed 20 minutes later"
+        ]
+      },
+      "options": [
+        "Leave it on until the coastguard calls you",
+        "Send SEELONCE FEENEE on channel 16",
+        "Switch it off and tell the coastguard / MRCC",
+        "Switch it off and say nothing — it was brief"
+      ],
+      "answer": 2,
+      "why": "A false alert may already be in the system: switch off and inform the coastguard at once.",
+      "ref": "EPIRB"
+    },
+    {
+      "id": "vhf-168",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "Your yacht has an EPIRB, and a crew member wears a PLB on her lifejacket. What is the key difference?",
+      "figure": null,
+      "options": [
+        "The PLB works only with a VHF DSC radio",
+        "The EPIRB is meant for inland waters only",
+        "The PLB uses only 121.5 MHz, no satellites",
+        "The EPIRB is registered to the boat, the PLB to a person"
+      ],
+      "answer": 3,
+      "why": "Both alert via 406 MHz satellites; the EPIRB identifies the vessel, the PLB a person.",
+      "ref": "EPIRB & PLB"
+    },
+    {
+      "id": "vhf-169",
+      "topic": "gmdss",
+      "difficulty": 1,
+      "q": "You are in the liferaft and switch on the SART. What does it do?",
+      "figure": null,
+      "options": [
+        "Shows as a line of dots on a ship's radar",
+        "Sends your position to the satellites",
+        "Calls nearby ships by voice on 16",
+        "Flashes a light seen 10 miles away"
+      ],
+      "answer": 0,
+      "why": "A SART answers a ship's 9 GHz (X-band) radar and paints a line of 12 dots on its screen.",
+      "ref": "SART"
+    },
+    {
+      "id": "vhf-170",
+      "topic": "gmdss",
+      "difficulty": 3,
+      "q": "The rescue ship's radar shows this. Where exactly is the SART?",
+      "figure": {
+        "type": "card",
+        "title": "Radar screen",
+        "lines": [
+          "A line of 12 dots appears",
+          "Running outwards, away from the ship"
+        ]
+      },
+      "options": [
+        "Anywhere along the line of dots",
+        "At the dot nearest the ship",
+        "In the middle of the line of dots",
+        "At the dot farthest from the ship"
+      ],
+      "answer": 1,
+      "why": "The SART is at the first dot, the one closest to the ship; the line runs on beyond it.",
+      "ref": "SART"
+    },
+    {
+      "id": "vhf-171",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "Your liferaft carries an AIS-SART instead of a radar SART. Who will see it?",
+      "figure": null,
+      "options": [
+        "Only the Cospas-Sarsat satellites",
+        "Only ships with a 9 GHz radar",
+        "Any vessel showing AIS targets",
+        "Only coast stations with NAVTEX"
+      ],
+      "answer": 2,
+      "why": "An AIS-SART sends AIS messages with its position, shown on any AIS display nearby.",
+      "ref": "AIS-SART"
+    },
+    {
+      "id": "vhf-172",
+      "topic": "gmdss",
+      "difficulty": 1,
+      "q": "You fit a NAVTEX receiver at the chart table. Which frequency does it listen on?",
+      "figure": null,
+      "options": [
+        "406 MHz",
+        "156.8 MHz",
+        "121.5 MHz",
+        "518 kHz"
+      ],
+      "answer": 3,
+      "why": "International NAVTEX broadcasts go out on 518 kHz, in English.",
+      "ref": "NAVTEX"
+    },
+    {
+      "id": "vhf-173",
+      "topic": "gmdss",
+      "difficulty": 3,
+      "q": "Your NAVTEX prints this header. What does the letter B tell you about the message?",
+      "figure": {
+        "type": "card",
+        "title": "NAVTEX printout",
+        "lines": [
+          "Header: ZCZC HB45",
+          "H = transmitting station"
+        ]
+      },
+      "options": [
+        "It is a meteorological warning",
+        "It is a navigational warning",
+        "It is search-and-rescue news",
+        "It is a routine weather forecast"
+      ],
+      "answer": 0,
+      "why": "The second letter is the subject: A navigational warning, B meteorological warning, D SAR, E forecast.",
+      "ref": "NAVTEX"
+    },
+    {
+      "id": "vhf-174",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "Your NAVTEX prints warnings from stations far from where you sail. How do you limit it to your area?",
+      "figure": null,
+      "options": [
+        "Set it to the local VHF channel",
+        "Select the letters of the local stations",
+        "Enter the local station's MMSI",
+        "Tune it to the local station's frequency"
+      ],
+      "answer": 1,
+      "why": "All stations share 518 kHz; you choose which station letters (and message types) to print.",
+      "ref": "NAVTEX"
+    },
+    {
+      "id": "vhf-175",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "A ferry nearby carries Class A AIS; your yacht has Class B. Which is true?",
+      "figure": null,
+      "options": [
+        "Class B only receives and never transmits",
+        "Class B gets priority over A in busy areas",
+        "Class B sends less often and at lower power",
+        "Class A is meant for yachts, B for ships"
+      ],
+      "answer": 2,
+      "why": "Class A is the ship standard; Class B is a simpler small-craft set with lower power and slower reports.",
+      "ref": "AIS"
+    },
+    {
+      "id": "vhf-176",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "Does this mean the way ahead is clear of other vessels?",
+      "figure": {
+        "type": "card",
+        "title": "Night passage",
+        "lines": [
+          "Plotter: no AIS targets ahead",
+          "Visibility good, wind F4"
+        ]
+      },
+      "options": [
+        "Yes — within 12 miles of the coast",
+        "Yes — only small fishing boats lack AIS",
+        "Yes — every vessel must transmit AIS",
+        "No — many boats have no AIS; keep a lookout"
+      ],
+      "answer": 3,
+      "why": "AIS is an aid, not a lookout: many craft carry none or have it switched off.",
+      "ref": "AIS"
+    },
+    {
+      "id": "vhf-177",
+      "topic": "gmdss",
+      "difficulty": 1,
+      "q": "Your instructor says GMDSS changed rescue at sea. What is its main idea?",
+      "figure": null,
+      "options": [
+        "Distress alerts reach rescue centres automatically",
+        "Coast stations no longer listen on VHF",
+        "Every yacht must carry a satellite phone",
+        "Morse code is used for every distress alert"
+      ],
+      "answer": 0,
+      "why": "GMDSS: automatic alerting (DSC, EPIRB) so a distress reaches shore even if no one hears a voice call.",
+      "ref": "GMDSS"
+    },
+    {
+      "id": "vhf-178",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "Which GMDSS sea area are you sailing in?",
+      "figure": {
+        "type": "card",
+        "title": "Your cruising area",
+        "lines": [
+          "Island-hopping in the Ionian",
+          "In range of VHF DSC coast stations"
+        ]
+      },
+      "options": [
+        "A2",
+        "A1",
+        "A3",
+        "A4"
+      ],
+      "answer": 1,
+      "why": "Sea area A1 is defined by the range of VHF DSC coast stations.",
+      "ref": "GMDSS sea areas"
+    },
+    {
+      "id": "vhf-179",
+      "topic": "gmdss",
+      "difficulty": 3,
+      "q": "Your passage takes you 80 miles offshore, beyond the range of VHF DSC coast stations. Which means can still alert a rescue centre from there?",
+      "figure": null,
+      "options": [
+        "AIS Class B, which alerts the MRCC",
+        "VHF DSC on high power — range doubles",
+        "A 406 MHz EPIRB, through the satellites",
+        "The NAVTEX receiver, which sends alerts"
+      ],
+      "answer": 2,
+      "why": "Beyond A1 your VHF will not reach shore; a 406 MHz EPIRB alerts via satellite from anywhere.",
+      "ref": "GMDSS"
+    },
+    {
+      "id": "vhf-180",
+      "topic": "gmdss",
+      "difficulty": 2,
+      "q": "You are in the liferaft with a radar SART. Where do you put it?",
+      "figure": null,
+      "options": [
+        "Inside the canopy, on the floor",
+        "Under the raft, in a ballast pocket",
+        "In the water, tied to the raft",
+        "As high as possible, on its pole"
+      ],
+      "answer": 3,
+      "why": "SART range depends on height: hold or mount it as high as you can.",
+      "ref": "SART"
+    },
+    {
+      "id": "vhf-181",
+      "topic": "licences",
+      "difficulty": 1,
+      "q": "You charter a yacht with a fixed VHF. Which document covers the radio set itself?",
+      "figure": null,
+      "options": [
+        "The ship station radio licence",
+        "The boat's insurance policy",
+        "The charter contract",
+        "Your VHF operator's certificate"
+      ],
+      "answer": 0,
+      "why": "The ship station licence covers the boat's radio equipment; the certificate covers the operator.",
+      "ref": "Radio licences"
+    },
+    {
+      "id": "vhf-182",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "You read through your boat's ship station licence. What does it list?",
+      "figure": null,
+      "options": [
+        "The skipper's name and qualification",
+        "The boat's call sign, MMSI and radio equipment",
+        "The crew list with passport numbers",
+        "The cruising area and the season dates"
+      ],
+      "answer": 1,
+      "why": "The ship station licence names the vessel, its call sign, MMSI and licensed equipment.",
+      "ref": "Radio licences"
+    },
+    {
+      "id": "vhf-183",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "You sell your yacht and buy a different one. What happens to your VHF operator's certificate?",
+      "figure": null,
+      "options": [
+        "It passes to the buyer with the boat",
+        "It lapses when the old boat is sold",
+        "It stays with you — it is personal",
+        "It must be reissued for the new boat"
+      ],
+      "answer": 2,
+      "why": "The operator's certificate belongs to the person; the station licence belongs to the boat.",
+      "ref": "Radio licences"
+    },
+    {
+      "id": "vhf-184",
+      "topic": "licences",
+      "difficulty": 1,
+      "q": "Your crew want to use the VHF to chat with friends on another yacht. Whose decision is it?",
+      "figure": null,
+      "options": [
+        "The coastguard's, by permission on air",
+        "Anyone's who holds a radio certificate",
+        "The owner's, even when not aboard",
+        "The skipper's — the radio is under their authority"
+      ],
+      "answer": 3,
+      "why": "The ship's radio station is under the authority of the master or skipper.",
+      "ref": "Radio regulations"
+    },
+    {
+      "id": "vhf-185",
+      "topic": "licences",
+      "difficulty": 1,
+      "q": "On a working channel you overhear two yachts discussing a private family matter. May you tell others what you heard?",
+      "figure": null,
+      "options": [
+        "No — overheard traffic must stay secret",
+        "Yes, but only to your own crew",
+        "Yes — it was on an open channel",
+        "Yes, once their conversation has ended"
+      ],
+      "answer": 0,
+      "why": "Secrecy of correspondence: you may not pass on what you overhear (distress traffic aside).",
+      "ref": "Secrecy of correspondence"
+    },
+    {
+      "id": "vhf-186",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "You noted down a MAYDAY that the coast station seems not to have heard. May you pass its details on to the coastguard?",
+      "figure": null,
+      "options": [
+        "Only with the casualty's permission",
+        "Yes — distress traffic is the exception",
+        "Only after SEELONCE FEENEE is given",
+        "No — secrecy covers all radio traffic"
+      ],
+      "answer": 1,
+      "why": "Secrecy never stops you passing on distress traffic.",
+      "ref": "Secrecy of correspondence"
+    },
+    {
+      "id": "vhf-187",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "Your guest is about to press the transmit key. What do you tell him?",
+      "figure": {
+        "type": "card",
+        "title": "On deck",
+        "lines": [
+          "A teenage guest picks up the mic",
+          "Wants to say MAYDAY \"as a test\""
+        ]
+      },
+      "options": [
+        "Fine, as long as he uses low power",
+        "Fine, if he says \"test\" afterwards",
+        "No — a false distress call is prohibited",
+        "Fine on a working channel, not 16"
+      ],
+      "answer": 2,
+      "why": "False or deceptive distress signals are forbidden and may launch a real rescue.",
+      "ref": "Prohibited transmissions"
+    },
+    {
+      "id": "vhf-188",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "Which of these transmissions breaks the radio rules?",
+      "figure": null,
+      "options": [
+        "A short radio check with the marina",
+        "A SÉCURITÉ about a drifting container",
+        "Calling the marina on its working channel",
+        "Calling the marina without giving your boat's name"
+      ],
+      "answer": 3,
+      "why": "Every transmission must identify the station; transmissions without identification are prohibited.",
+      "ref": "Prohibited transmissions"
+    },
+    {
+      "id": "vhf-189",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "Bored on night watch, a crew member keeps clicking the transmit key on 16 to \"say hello\" to a friend's boat. What is wrong?",
+      "figure": null,
+      "options": [
+        "Unnecessary signals are prohibited",
+        "Nothing, since it is done at night",
+        "Nothing, if the set is on low power",
+        "Nothing, if the clicks are short"
+      ],
+      "answer": 0,
+      "why": "Unnecessary transmissions and signals are prohibited — and they can mask a weak distress call.",
+      "ref": "Prohibited transmissions"
+    },
+    {
+      "id": "vhf-190",
+      "topic": "licences",
+      "difficulty": 1,
+      "q": "Several calls are waiting for a quiet channel. In which order of priority do they go?",
+      "figure": null,
+      "options": [
+        "Distress, safety, urgency, routine",
+        "Distress, urgency, safety, routine",
+        "Urgency, distress, safety, routine",
+        "Safety, distress, urgency, routine"
+      ],
+      "answer": 1,
+      "why": "Priority: distress (MAYDAY), urgency (PAN-PAN), safety (SÉCURITÉ), then routine.",
+      "ref": "Order of priority"
+    },
+    {
+      "id": "vhf-191",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "Which radio traffic should you note in your log, like these entries?",
+      "figure": {
+        "type": "card",
+        "title": "Radio log",
+        "lines": [
+          "14:05 MAYDAY heard, yacht Selene",
+          "14:07 Acknowledged by coast station",
+          "14:40 PAN-PAN heard, MV Ionian"
+        ]
+      },
+      "options": [
+        "Nothing — logs are only for big ships",
+        "Every routine call you make all day",
+        "Distress and urgency traffic you send or hear",
+        "Only the calls that coast stations make"
+      ],
+      "answer": 2,
+      "why": "Record distress and urgency traffic heard or sent, with times — it may be needed later.",
+      "ref": "Radio log"
+    },
+    {
+      "id": "vhf-192",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "You sail your own yacht, licensed in your home country, into Greek waters. Can you use her VHF there?",
+      "figure": null,
+      "options": [
+        "Only on channel 16, for nothing else",
+        "Only after registering at each port",
+        "No — she needs a Greek ship licence first",
+        "Yes, under her licence and the local rules"
+      ],
+      "answer": 3,
+      "why": "A ship station licence is valid internationally; in foreign waters you also follow local regulations.",
+      "ref": "Radio regulations"
+    },
+    {
+      "id": "vhf-193",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "Your crew member has no radio certificate. You hold one and stand beside her. May she call the marina?",
+      "figure": null,
+      "options": [
+        "Yes — under your supervision",
+        "No — only you may touch the set",
+        "Yes, but only on low power",
+        "Only calls to a coast station"
+      ],
+      "answer": 0,
+      "why": "Someone without a certificate may operate the radio under the supervision of a certificate holder.",
+      "ref": "Radio licences"
+    },
+    {
+      "id": "vhf-194",
+      "topic": "licences",
+      "difficulty": 3,
+      "q": "May Anna make the routine call to the marina herself?",
+      "figure": {
+        "type": "card",
+        "title": "Afternoon at anchor",
+        "lines": [
+          "Anna: no radio certificate",
+          "You (certificate holder): ashore",
+          "Anna wants to book a berth by VHF"
+        ]
+      },
+      "options": [
+        "Yes — routine calls need no certificate",
+        "Not alone — she must wait for you",
+        "Yes, if she gives your certificate number",
+        "Yes, if she keeps the set on low power"
+      ],
+      "answer": 1,
+      "why": "Without a certificate she may only operate under a holder's supervision (distress excepted).",
+      "ref": "Radio licences"
+    },
+    {
+      "id": "vhf-195",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "Your crew member is losing his temper on the radio. What do you do?",
+      "figure": {
+        "type": "card",
+        "title": "Berth dispute",
+        "lines": [
+          "Another skipper took your booked berth",
+          "Your crew grabs the VHF, furious",
+          "Starts swearing at him on air"
+        ]
+      },
+      "options": [
+        "Let him finish, then apologise yourself",
+        "Let him, as long as he gives the boat name",
+        "Stop him — obscene language is prohibited",
+        "Let him — it is only a working channel"
+      ],
+      "answer": 2,
+      "why": "Obscene or abusive language on the radio is prohibited.",
+      "ref": "Prohibited transmissions"
+    },
+    {
+      "id": "vhf-196",
+      "topic": "licences",
+      "difficulty": 3,
+      "q": "Three messages are waiting to go out. In which order should they be sent?",
+      "figure": {
+        "type": "card",
+        "title": "Waiting to transmit",
+        "lines": [
+          "A: tow needed, engine dead, no danger",
+          "B: warning of an unlit buoy",
+          "C: booking a table ashore"
+        ]
+      },
+      "options": [
+        "A, C, B",
+        "B, A, C",
+        "C, A, B",
+        "A, B, C"
+      ],
+      "answer": 3,
+      "why": "Urgency (the tow, PAN-PAN) before safety (the buoy, SÉCURITÉ) before routine.",
+      "ref": "Order of priority"
+    },
+    {
+      "id": "vhf-197",
+      "topic": "licences",
+      "difficulty": 3,
+      "q": "Ashore at a taverna, you want to call your crew on the boat with the yacht's handheld marine VHF. Is that allowed?",
+      "figure": null,
+      "options": [
+        "No — marine VHF is not for use from land",
+        "Yes, on low power only",
+        "Yes, within a mile of the boat",
+        "Yes, on channel 16 only"
+      ],
+      "answer": 0,
+      "why": "Marine VHF is licensed for the maritime service; using it from land generally needs special permission.",
+      "ref": "Radio regulations"
+    },
+    {
+      "id": "vhf-198",
+      "topic": "licences",
+      "difficulty": 3,
+      "q": "With these papers aboard, may you use the charter yacht's VHF?",
+      "figure": {
+        "type": "card",
+        "title": "Charter yacht",
+        "lines": [
+          "Ship licence: in the charter firm's name",
+          "You: VHF operator's certificate"
+        ]
+      },
+      "options": [
+        "No — the licence must be in your own name",
+        "Yes — her licence and your certificate cover it",
+        "Only once the firm informs the coastguard",
+        "Only on channel 16, and only in distress"
+      ],
+      "answer": 1,
+      "why": "The boat's station licence covers the set; your certificate covers you as the operator.",
+      "ref": "Radio licences"
+    },
+    {
+      "id": "vhf-199",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "A port official inspecting your yacht asks for her radio documents. What do you show?",
+      "figure": null,
+      "options": [
+        "Only your passport and the crew list",
+        "The VHF's manual and its receipt",
+        "Ship station licence and operator's certificate",
+        "The charter contract and insurance"
+      ],
+      "answer": 2,
+      "why": "Keep the station licence and the operator's certificate aboard, ready for inspection.",
+      "ref": "Radio licences"
+    },
+    {
+      "id": "vhf-200",
+      "topic": "licences",
+      "difficulty": 2,
+      "q": "A friend suggests you use his boat's name on your radio so that your own boat stays \"off the air\". What do you say?",
+      "figure": null,
+      "options": [
+        "Fine, if his boat is not at sea today",
+        "Fine, as long as you use low power",
+        "Fine, but only on working channels",
+        "No — false identification is prohibited"
+      ],
+      "answer": 3,
+      "why": "You must identify your own station correctly; false identification is prohibited.",
+      "ref": "Prohibited transmissions"
+    }
+  ]
+}

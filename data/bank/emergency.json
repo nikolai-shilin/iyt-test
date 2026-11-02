@@ -1,0 +1,1803 @@
+[
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You are leaving the marina, talking to the fuel dock on its working channel, but you must not miss a call on 16. Which radio function do you use?",
+  "a": "Dual watch",
+  "o": [
+   "Low power",
+   "Full squelch",
+   "DSC call log"
+  ],
+  "why": "Dual watch listens to 16 and one working channel at the same time.",
+  "ref": "VHF operation",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Your VHF hisses loudly on 16 although nobody is talking. How do you set it?",
+  "a": "Turn the squelch up until the hiss just stops",
+  "o": [
+   "Turn the squelch right up to maximum",
+   "Turn the volume right down to zero",
+   "Switch the set to low power, 1 W"
+  ],
+  "why": "Squelch set just past the hiss; any higher and weak stations are cut out.",
+  "ref": "VHF operation",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are about to call the marina office. Which transmit power do you use?",
+  "a": "Low power, 1 W",
+  "o": [
+   "High power, 25 W",
+   "High power to call, low to reply",
+   "Either — power changes nothing"
+  ],
+  "why": "Use 1 W for short range so you do not block the channel for everyone nearby.",
+  "ref": "VHF operation",
+  "fig": {
+   "type": "card",
+   "title": "Calling the marina",
+   "lines": [
+    "Marina office 300 m away",
+    "Ten yachts waiting to berth nearby",
+    "Radio currently set to 25 W"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The coast station answers your fixed set but not the handheld. Why?",
+  "a": "Lower antenna and less power: VHF is line of sight",
+  "o": [
+   "Handhelds cannot transmit on channel 16",
+   "Handhelds only work on intership channels",
+   "Coast stations do not answer handhelds"
+  ],
+  "why": "VHF range depends mostly on antenna height; a handheld reaches a few miles.",
+  "ref": "VHF range",
+  "fig": {
+   "type": "card",
+   "title": "Two radios",
+   "lines": [
+    "Fixed VHF: 25 W, antenna at the masthead",
+    "Handheld: 5 W, held in the cockpit",
+    "Coast station 25 miles away"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "You need to call the coastguard. How do you get the best range now?",
+  "a": "Emergency antenna on the fixed set, rigged up high",
+  "o": [
+   "Fixed set with no antenna, on high power",
+   "Handheld on high power, from inside the cabin",
+   "Fixed set on low power to save the battery"
+  ],
+  "why": "With the masthead antenna gone, range depends on getting a new antenna up high.",
+  "ref": "VHF range",
+  "fig": {
+   "type": "card",
+   "title": "Dismasted",
+   "lines": [
+    "Mast down, masthead antenna lost",
+    "Fixed VHF works, handheld charged",
+    "Emergency antenna in the chart table"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "A friend suggests chatting on channel 70 because it is always quiet. What do you tell them?",
+  "a": "No — 70 is for DSC data, never for voice",
+  "o": [
+   "Fine, as long as you use low power",
+   "Fine, but only inside the marina",
+   "Only after asking the coastguard"
+  ],
+  "why": "Channel 70 carries only DSC alerts and calls; voice would block distress alerts.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You call a friend's yacht on 16 and they answer. What do you do next?",
+  "a": "Agree an intership channel such as 72 and move to it",
+  "o": [
+   "Stay on 16 but keep the chat under a minute",
+   "Move both radios to channel 70 for the chat",
+   "Move to the marina's port channel for the chat"
+  ],
+  "why": "Channel 16 is for calling and distress; conversations move to an intership channel.",
+  "ref": "VHF channels",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You want to call the yacht Thalassa from your yacht Kalliope. Which call is correct?",
+  "a": "Thalassa ×3, this is Kalliope ×3, over",
+  "o": [
+   "Kalliope ×3, calling Thalassa, over",
+   "Hello Thalassa, Kalliope here, over and out",
+   "This is Thalassa ×3, Kalliope ×3, out"
+  ],
+  "why": "Name the station called, then \"this is\" and your own name, end with OVER.",
+  "ref": "Radio procedure",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "The marina has given you your berth. You have nothing more to say and expect no reply. Which proword ends the call?",
+  "a": "OUT",
+  "o": [
+   "OVER",
+   "OVER AND OUT",
+   "ROGER"
+  ],
+  "why": "OVER asks for a reply, OUT ends the call; never both together.",
+  "ref": "Prowords",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "The marina asks you to wait outside the fuel dock until called. You understand and will do as asked. Which single proword says both?",
+  "a": "WILCO",
+  "o": [
+   "ROGER",
+   "AFFIRMATIVE",
+   "SAY AGAIN"
+  ],
+  "why": "WILCO = received, understood and will comply; ROGER only means received.",
+  "ref": "Prowords",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "The marina's reply was broken up and you missed the berth number. What do you say?",
+  "a": "SAY AGAIN",
+  "o": [
+   "REPEAT",
+   "WAIT",
+   "CORRECTION"
+  ],
+  "why": "SAY AGAIN asks for the message again; REPEAT is not a VHF proword.",
+  "ref": "Prowords",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You have fitted a new VHF antenna and want to check that the radio transmits. What do you do?",
+  "a": "Ask the marina or a nearby yacht on a working channel",
+  "o": [
+   "Call the coastguard on 16 for a radio check",
+   "Press the DSC distress button briefly to test",
+   "Make a voice test call on channel 70"
+  ],
+  "why": "Radio checks go on a working channel; 16 and 70 must stay clear for distress.",
+  "ref": "Radio procedure",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You must spell your yacht's name, Hydra, over the radio. Which is correct?",
+  "a": "Hotel Yankee Delta Romeo Alpha",
+  "o": [
+   "Hotel Yellow Delta Romeo Alpha",
+   "Hotel Yankee Delta Roger Alpha",
+   "Harbour Yankee Delta Romeo Alpha"
+  ],
+  "why": "Use the international phonetic alphabet so names survive a bad signal.",
+  "ref": "Phonetic alphabet",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Reading out your MMSI, how do you say the digits 3, 5 and 9?",
+  "a": "Tree, fife, niner",
+  "o": [
+   "Three, five, nine",
+   "Tree, five, nein",
+   "Trey, fife, nine"
+  ],
+  "why": "Radio numbers: tree, fower, fife, niner — they cannot be confused.",
+  "ref": "Phonetic alphabet",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You give your position by radio from this landmark. What do you say?",
+  "a": "180° from Cape Sounion light, 2 miles",
+  "o": [
+   "000° from Cape Sounion light, 2 miles",
+   "180° to Cape Sounion light, 2 miles",
+   "Cape Sounion light 2 miles, heading 180°"
+  ],
+  "why": "A position by landmark is the true bearing FROM the landmark, then the distance.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 H150 L110 72 L80 40 H0 Z",
+   "marks": [
+    [
+     110,
+     66,
+     "w",
+     "Sounion lt"
+    ]
+   ],
+   "track": "M110 74 L110 148",
+   "labels": [
+    [
+     120,
+     114,
+     "2 miles",
+     "start"
+    ]
+   ],
+   "boat": [
+    110,
+    160,
+    270
+   ],
+   "panel": [
+    "Chart, north up",
+    "You: 2 M due",
+    "south of the light"
+   ],
+   "note": "Giving your position by radio"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Can you use the yacht's VHF for routine calls this week?",
+  "a": "No — routine use needs an operator's certificate (SRC)",
+  "o": [
+   "Yes — the ship's licence covers anyone aboard",
+   "Yes — no licence is needed within 12 miles",
+   "Yes — if the charter base gives permission"
+  ],
+  "why": "The ship licence covers the set; the operator needs a certificate such as the SRC.",
+  "ref": "Radio licences",
+  "fig": {
+   "type": "card",
+   "title": "Charter check-in",
+   "lines": [
+    "Fixed DSC VHF and a handheld aboard",
+    "Ship radio licence in the papers",
+    "You hold no radio certificate"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your DSC radio shows this incoming call. Who is calling you?",
+  "a": "A coast station",
+  "o": [
+   "Another yacht",
+   "A group of ships",
+   "An EPIRB"
+  ],
+  "why": "An MMSI starting 00 is a coast station; a single 0 is a group; ships start with the country code.",
+  "ref": "MMSI",
+  "fig": {
+   "type": "card",
+   "title": "DSC call received",
+   "lines": [
+    "From MMSI 002391000",
+    "Category: SAFETY",
+    "Addressed to your yacht"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You have a few seconds to spare before you send the DSC alert. How do you send it?",
+  "a": "Select \"flooding\" as the nature, then hold the red button",
+  "o": [
+   "Send it undesignated — DSC cannot carry the nature",
+   "Send an individual call to the nearest yacht",
+   "Send an all-ships routine call on channel 70"
+  ],
+  "why": "With time in hand, give the nature of distress so rescuers know what to bring.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "Flooding",
+   "lines": [
+    "Water over the floorboards",
+    "Inflow faster than the pumps",
+    "Crew in lifejackets, DSC radio on"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "What is the quickest correct way to raise the alarm now?",
+  "a": "Hold the red button: an undesignated alert",
+  "o": [
+   "Select the nature of distress first, then send it",
+   "Make an individual DSC call to the coastguard",
+   "Speak the MAYDAY on 70 first, then on 16"
+  ],
+  "why": "An undesignated alert still sends your MMSI and position; seconds count.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "Knocked down",
+   "lines": [
+    "Yacht on her side, water pouring in",
+    "She will sink within a minute",
+    "DSC radio at the chart table"
+   ],
+   "tag": "SECONDS"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your DSC distress alert has gone out. What do you do next?",
+  "a": "Send the voice MAYDAY on channel 16",
+  "o": [
+   "Wait silently until the coastguard calls back",
+   "Give the voice MAYDAY on channel 70",
+   "Send the alert again by hand every minute"
+  ],
+  "why": "DSC raises the alarm; the details follow by voice on 16. The radio repeats the alert itself.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your DSC radio sounds this alarm. What do you do first?",
+  "a": "Listen on 16 for the voice MAYDAY that follows",
+  "o": [
+   "Acknowledge the alert with your own DSC",
+   "Relay the alert to all ships by DSC",
+   "Silence the alarm and carry on"
+  ],
+  "why": "Coast stations acknowledge DSC alerts; yachts listen on 16 and help by voice.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "DSC alarm",
+   "lines": [
+    "DISTRESS from MMSI 271004512",
+    "Nature: fire / explosion",
+    "Position: about 20 miles south of you"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Your crew tells you what just happened at the chart table. How do you put it right?",
+  "a": "Cancel it on the set, then tell all stations on 16",
+  "o": [
+   "Switch the radio off and say nothing more",
+   "Wait for the coastguard to call you back on 16",
+   "Send a second DSC alert to cancel the first"
+  ],
+  "why": "Cancel at once: \"All stations, this is…, cancel my distress alert of [time] UTC\".",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "False alert",
+   "lines": [
+    "A child pressed the red DSC button",
+    "Alert went out at 10:42 UTC",
+    "No emergency aboard"
+   ],
+   "tag": "10:43"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "What will a distress alert from this radio tell the rescue centre?",
+  "a": "Your MMSI, but not your position",
+  "o": [
+   "Your MMSI and your satellite position",
+   "Nothing — the alert will not send",
+   "Your position, but not your MMSI"
+  ],
+  "why": "DSC takes the position from the GPS; without it, enter it by hand or give it by voice.",
+  "ref": "DSC",
+  "fig": {
+   "type": "card",
+   "title": "DSC radio display",
+   "lines": [
+    "POSITION: ---",
+    "TIME: --:--",
+    "GPS: no data"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You want to talk to a friend's yacht whose MMSI you know, without calling on 16. How?",
+  "a": "An individual DSC call to their MMSI",
+  "o": [
+   "An all-ships DSC call",
+   "A DSC distress call with their MMSI",
+   "A voice call on channel 70"
+  ],
+  "why": "An individual call rings only their set and proposes a working channel.",
+  "ref": "DSC",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Which radio call do you make now?",
+  "a": "MAYDAY",
+  "o": [
+   "PAN-PAN",
+   "SÉCURITÉ",
+   "A routine call to the coastguard"
+  ],
+  "why": "A person in the water and out of sight is in grave and imminent danger.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "Man overboard",
+   "lines": [
+    "Night, wind 22 kn, rough sea",
+    "The crew have lost sight of the casualty",
+    "Danbuoy thrown, MOB button pressed"
+   ],
+   "tag": "02:10"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "What call do you make in this situation?",
+  "a": "PAN-PAN",
+  "o": [
+   "MAYDAY",
+   "SÉCURITÉ",
+   "No call — wait for the wind"
+  ],
+  "why": "Urgent help needed but no immediate danger to life: urgency, not distress.",
+  "ref": "Urgency procedure",
+  "fig": {
+   "type": "card",
+   "title": "Dismasted",
+   "lines": [
+    "Rig cut away, no injuries, hull sound",
+    "Engine unusable: lines round the prop",
+    "Drifting 1 kn towards a coast 6 miles off"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "What call do you make about this?",
+  "a": "SÉCURITÉ",
+  "o": [
+   "PAN-PAN",
+   "MAYDAY",
+   "MAYDAY RELAY"
+  ],
+  "why": "A danger to navigation is a safety message: SÉCURITÉ.",
+  "ref": "Safety procedure",
+  "fig": {
+   "type": "card",
+   "title": "Container adrift",
+   "lines": [
+    "Half-sunk container, no lights",
+    "In the ferry route off Mykonos",
+    "Your own yacht is not at risk"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Which call gets this crew member medical advice and help?",
+  "a": "PAN-PAN medico to the coastguard",
+  "o": [
+   "MAYDAY to all stations",
+   "SÉCURITÉ to all stations",
+   "An undesignated DSC alert"
+  ],
+  "why": "Serious but not life-threatening: an urgency (PAN-PAN) call for medical help.",
+  "ref": "Urgency procedure",
+  "fig": {
+   "type": "card",
+   "title": "Injury aboard",
+   "lines": [
+    "Crew fell in the cabin: arm likely broken",
+    "Conscious, pain controlled, no bleeding",
+    "15 miles from port, wants a doctor"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Which call do you make for this crew member?",
+  "a": "MAYDAY",
+  "o": [
+   "PAN-PAN medico",
+   "SÉCURITÉ",
+   "A routine call to a doctor in Kos"
+  ],
+  "why": "A life in immediate danger is distress, even when the yacht itself is fine.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "Collapse in the cockpit",
+   "lines": [
+    "Crew member, 58, chest pain, collapsed",
+    "Barely breathing, CPR may be needed",
+    "8 miles off Kos"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You want to warn other boats about a large log drifting in the channel. How do you transmit it?",
+  "a": "Announce SÉCURITÉ on 16, details on a working channel",
+  "o": [
+   "Give the whole warning on 16 every 10 minutes",
+   "Read the warning out by voice on channel 70",
+   "Send an undesignated DSC distress alert about it"
+  ],
+  "why": "Safety messages are announced on 16 and passed on a working channel.",
+  "ref": "Safety procedure",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "What is missing from this message?",
+  "a": "The position",
+  "o": [
+   "The weather",
+   "The skipper's name",
+   "The yacht's home port"
+  ],
+  "why": "MIPDANIO: MMSI, identity, position, distress, assistance, number, information, over.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "Your MAYDAY draft",
+   "lines": [
+    "MAYDAY ×3, this is Kalliope ×3, MMSI…",
+    "MAYDAY Kalliope, MMSI…",
+    "Holed and sinking, need immediate help",
+    "4 persons aboard, liferaft ready, OVER"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your MAYDAY has given position, nature, help needed and number aboard. What goes in the last part before OVER?",
+  "a": "Other useful facts: liferaft, EPIRB, hull colour",
+  "o": [
+   "The charter company's name and phone number",
+   "Your home port, last port and destination",
+   "The skipper's full name and licence number"
+  ],
+  "why": "The \"I\" in MIPDANIO: anything that helps rescuers find and help you.",
+  "ref": "Distress procedure",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Nobody has answered. What is your next step to raise help?",
+  "a": "Activate the EPIRB and keep repeating the MAYDAY",
+  "o": [
+   "Wait an hour, then try the radio again",
+   "Switch to channel 70 and call by voice",
+   "Abandon ship into the liferaft at once"
+  ],
+  "why": "Use every means of alerting: EPIRB by satellite, VHF, then visual signals.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "No reply",
+   "lines": [
+    "MAYDAY sent three times on 16",
+    "No answer, the radio seems to work",
+    "Still afloat, 30 miles offshore"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You hear this on channel 16. What is your part?",
+  "a": "Stay off 16, keep listening, note the details",
+  "o": [
+   "Call the burning yacht on 16 to offer advice",
+   "Acknowledge the MAYDAY yourself, then stand by",
+   "Send a MAYDAY RELAY to all stations at once"
+  ],
+  "why": "The coast station is in control; keep the channel clear and be ready to help.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "MAYDAY heard",
+   "lines": [
+    "Yacht on fire 30 miles north of you",
+    "Olympia Radio has acknowledged",
+    "Rescue boat on its way"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "No one has answered this MAYDAY. What do you do?",
+  "a": "Acknowledge, head there, inform the coast station",
+  "o": [
+   "Stay silent — only coast stations may reply to it",
+   "Send your own DSC distress alert for them",
+   "Switch to channel 70 and call them by voice"
+  ],
+  "why": "If no coast station answers and you can help, acknowledge: \"RECEIVED MAYDAY\".",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "MAYDAY, no answer",
+   "lines": [
+    "Yacht sinking 3 miles from you",
+    "No coast station answers after 3 minutes",
+    "You can be there in 30 minutes"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "How do you help from here?",
+  "a": "Send a MAYDAY RELAY to the coast station",
+  "o": [
+   "Acknowledge it and say you are coming",
+   "Stay silent — you are too far to help",
+   "Call the yacht on 16 for more details"
+  ],
+  "why": "If you cannot help yourself, pass the distress on to someone who can.",
+  "ref": "MAYDAY relay",
+  "fig": {
+   "type": "card",
+   "title": "Faint MAYDAY",
+   "lines": [
+    "Weak MAYDAY from a yacht 40 miles away",
+    "No station has answered for 5 minutes",
+    "You cannot reach them in time"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You see this and hear nothing on the radio. What do you do?",
+  "a": "MAYDAY RELAY on 16, then go to help",
+  "o": [
+   "Wait to see if they send a MAYDAY",
+   "Assume someone is testing old flares",
+   "Sound five short blasts to reply"
+  ],
+  "why": "A vessel that cannot call for itself needs you to relay and assist.",
+  "ref": "MAYDAY relay",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 85,
+    "hdg": 270,
+    "sail": true,
+    "boom": 14,
+    "label": "Yacht"
+   },
+   "wind": 90,
+   "note": "Red hand flare from this yacht"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You must pass on a distress message for a yacht that cannot transmit. How does your call begin?",
+  "a": "MAYDAY RELAY ×3, all stations ×3, this is [your yacht] ×3",
+  "o": [
+   "MAYDAY ×3, this is [their yacht] ×3",
+   "PAN-PAN ×3, all stations ×3, this is [your yacht] ×3",
+   "SÉCURITÉ ×3, all stations ×3, [their yacht] in distress"
+  ],
+  "why": "MAYDAY RELAY, then your own identity; the distressed vessel's details follow.",
+  "ref": "MAYDAY relay",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are about to call the marina on 16 when you hear \"SEELONCE MAYDAY\". What do you do?",
+  "a": "Stay off 16 until you hear SEELONCE FEENEE",
+  "o": [
+   "Make your call quickly — it is short",
+   "Reply ROGER, then make your call",
+   "Wait five minutes, then call"
+  ],
+  "why": "SEELONCE MAYDAY imposes silence on the channel for all but the distress traffic.",
+  "ref": "Prowords",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "After a long rescue you hear \"SEELONCE FEENEE\" on 16. What does it mean?",
+  "a": "The distress is over; normal use of 16 resumes",
+  "o": [
+   "Silence: distress traffic still in progress",
+   "Restricted working may resume with care",
+   "The casualty is found but not yet rescued"
+  ],
+  "why": "SEELONCE FEENEE ends the distress traffic and the radio silence.",
+  "ref": "Prowords",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "During a long search you hear \"PRUDONCE\", and you need to arrange a berth. What may you do?",
+  "a": "Short, essential calls only — the distress is not over",
+  "o": [
+   "Any call you like — the distress is over now",
+   "Nothing at all until you hear SEELONCE FEENEE",
+   "Calls by voice on channel 70 only, not on 16"
+  ],
+  "why": "PRUDONCE: restricted working allowed while the distress continues.",
+  "ref": "Prowords",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Mid-crossing, which equipment can still alert a rescue centre on its own?",
+  "a": "The EPIRB, by satellite",
+  "o": [
+   "The DSC VHF, through a coast station",
+   "The handheld VHF on high power",
+   "The DSC VHF, on channel 70"
+  ],
+  "why": "Beyond VHF coast range (GMDSS area A1), satellite alerting is what reaches a rescue centre.",
+  "ref": "GMDSS",
+  "fig": {
+   "type": "card",
+   "title": "Passage plan",
+   "lines": [
+    "Crossing 90 miles of open sea",
+    "Middle 40 miles beyond VHF coast range",
+    "Aboard: DSC VHF, EPIRB, handheld VHF"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Before a night passage you want the latest navigational warnings for the area — lights out, drifting objects, firing exercises. Where do you look?",
+  "a": "Navtex",
+  "o": [
+   "The AIS display",
+   "The DSC call log",
+   "Channel 70"
+  ],
+  "why": "Navtex prints navigational, weather and SAR warnings automatically.",
+  "ref": "Navtex",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are sailing near Paros when your Navtex shows this. What does it ask of you?",
+  "a": "Keep a sharp lookout and report any sighting",
+  "o": [
+   "Send a MAYDAY RELAY at once",
+   "Nothing — it is for coastguard vessels",
+   "Return to port until the search ends"
+  ],
+  "why": "SAR messages ask all vessels in the area to watch and report.",
+  "ref": "Navtex",
+  "fig": {
+   "type": "card",
+   "title": "Navtex message",
+   "lines": [
+    "SAR: yacht overdue, 12 m, white hull",
+    "Last seen leaving Paros",
+    "Vessels in the area keep a lookout"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Which signal shows the lifeboat where you are?",
+  "a": "Orange smoke",
+  "o": [
+   "Red parachute rocket",
+   "Red hand flare",
+   "White hand flare"
+  ],
+  "why": "Orange smoke is the daylight signal when help is close.",
+  "ref": "Distress signals",
+  "fig": {
+   "type": "card",
+   "title": "Daylight search",
+   "lines": [
+    "Light wind, good visibility",
+    "Lifeboat in sight 1 mile away, searching",
+    "Flares: parachute, hand, orange smoke"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Which flare do you light to guide the lifeboat in?",
+  "a": "Red hand flare",
+  "o": [
+   "Red parachute rocket",
+   "Orange smoke",
+   "White hand flare"
+  ],
+  "why": "At night with help close, a red hand flare pinpoints you.",
+  "ref": "Distress signals",
+  "fig": {
+   "type": "card",
+   "title": "Night search",
+   "lines": [
+    "Lifeboat searchlight 1 mile away",
+    "It has not seen you yet",
+    "Flares: parachute, hand, orange smoke"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Which signal must you not use now?",
+  "a": "Red parachute rocket",
+  "o": [
+   "Red hand flare",
+   "Orange smoke",
+   "A torch shone on the sails"
+  ],
+  "why": "A rocket can hit the helicopter; use hand flares or smoke.",
+  "ref": "Distress signals",
+  "fig": {
+   "type": "card",
+   "title": "Helicopter overhead",
+   "lines": [
+    "Helicopter searching close to you",
+    "Pilot asks you to show your position",
+    "Flares: parachute, hand, orange smoke"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You must light a red hand flare on a yacht in 15 knots of wind. How do you hold it?",
+  "a": "At arm's length over the leeward side",
+  "o": [
+   "At arm's length over the windward side",
+   "Upright in the middle of the cockpit",
+   "Above your head, pointing upwind"
+  ],
+  "why": "Leeward, so hot drips and smoke blow away from you and the boat.",
+  "ref": "Distress signals",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You find these flares aboard during the charter check-out. What do you do?",
+  "a": "Ask for new flares; hand the old ones in for disposal",
+  "o": [
+   "Keep them — dry, sealed flares never expire",
+   "Fire a couple off at sea to test the rest",
+   "Throw them overboard well outside the marina"
+  ],
+  "why": "Out-of-date flares may fail; never fire or dump them except in distress.",
+  "ref": "Distress signals",
+  "fig": {
+   "type": "card",
+   "title": "Flare check",
+   "lines": [
+    "Flare pack expiry date: 03/2025",
+    "Seal intact, flares look dry",
+    "This season: 2026"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "What is the person in the dinghy telling you?",
+  "a": "They are in distress and need help",
+  "o": [
+   "They are waving hello",
+   "Keep clear — divers below",
+   "They want you to slow down"
+  ],
+  "why": "Slowly raising and lowering outstretched arms is a distress signal.",
+  "ref": "Distress signals",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 30,
+    "dist": 80,
+    "hdg": 200,
+    "label": "Dinghy",
+    "scale": 0.5
+   },
+   "note": "Person slowly raising and lowering both arms"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "At night your radio is dead and you have only a torch. Which signal asks for help?",
+  "a": "SOS: three short, three long, three short",
+  "o": [
+   "Three long flashes, repeated every minute",
+   "One long flash, repeated every minute",
+   "Five short flashes, repeated every minute"
+  ],
+  "why": "SOS by light or sound is a recognised distress signal.",
+  "ref": "Distress signals",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "What is this yacht asking for?",
+  "a": "Assistance — but it is not in distress",
+  "o": [
+   "Immediate help — grave and imminent danger",
+   "Keep clear — manoeuvring with difficulty",
+   "Help — I have a man overboard"
+  ],
+  "why": "Flag V: \"I require assistance\". Distress is NC, flares, MAYDAY.",
+  "ref": "Distress signals",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -35,
+    "dist": 85,
+    "hdg": 90,
+    "label": "Flag V"
+   },
+   "wind": 90,
+   "note": "Yacht flying code flag V (white, red X)"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "What do you do with the EPIRB?",
+  "a": "Take it, switch it on, tie it to the raft",
+  "o": [
+   "Leave it — it will float free by itself",
+   "Keep it off to save the battery",
+   "Throw it clear of the raft to float"
+  ],
+  "why": "An activated EPIRB with you is how rescuers find the raft.",
+  "ref": "EPIRB",
+  "fig": {
+   "type": "card",
+   "title": "Abandoning ship",
+   "lines": [
+    "Liferaft inflated alongside",
+    "EPIRB in its bracket, not activated",
+    "Handheld VHF in the grab bag"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Clearing the cockpit locker, you accidentally set off the EPIRB. What do you do?",
+  "a": "Switch it off and tell the coastguard at once",
+  "o": [
+   "Switch it off and say nothing",
+   "Leave it on until the battery runs out",
+   "Wait for the coastguard to call you"
+  ],
+  "why": "Report a false alert at once so a rescue is not launched.",
+  "ref": "EPIRB",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You buy a PLB to wear on your lifejacket. What must you do before you go sailing?",
+  "a": "Register it with your details",
+  "o": [
+   "Test it by setting it off once",
+   "Have the charter base program it",
+   "Nothing — it works straight from the box"
+  ],
+  "why": "Registration tells the rescue centre who you are and whom to call.",
+  "ref": "PLB",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Which device does what you want?",
+  "a": "An AIS MOB beacon",
+  "o": [
+   "A PLB",
+   "A 406 MHz EPIRB",
+   "A radar reflector"
+  ],
+  "why": "An AIS MOB beacon alarms on AIS sets nearby, including your own plotter.",
+  "ref": "AIS MOB beacon",
+  "fig": {
+   "type": "card",
+   "title": "Choosing a beacon",
+   "lines": [
+    "One beacon for each lifejacket",
+    "Must alarm on your own chartplotter",
+    "And on nearby boats if someone falls in"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Which beacon on your lifejacket is most likely to bring rescue?",
+  "a": "A PLB — it alerts a rescue centre by satellite",
+  "o": [
+   "An AIS MOB beacon — it alarms on nearby AIS",
+   "A strobe light — it is easy to see at night",
+   "A whistle — it carries over the water"
+  ],
+  "why": "With nobody nearby, only a satellite alert reaches a rescue centre.",
+  "ref": "PLB",
+  "fig": {
+   "type": "card",
+   "title": "Delivery trip",
+   "lines": [
+    "Sailing the yacht alone",
+    "20 miles offshore, no ships in sight",
+    "You fall overboard"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "What does this target on your plotter mean, and what do you do?",
+  "a": "Survivors in distress: tell the coastguard and go",
+  "o": [
+   "A wreck buoy: alter course to pass well clear",
+   "A test transmission: note it and carry on",
+   "A fishing-net marker: keep well clear of it"
+  ],
+  "why": "An AIS-SART marks survivors; report it and assist.",
+  "ref": "AIS-SART",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -25,
+    "dist": 80,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "SART"
+   },
+   "note": "Plotter: \"SART ACTIVE\", 3 miles"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Why is the EPIRB mounted like this?",
+  "a": "It floats free and switches on if she sinks",
+  "o": [
+   "So the crew can test it every morning",
+   "So it transmits all the time at sea",
+   "So it stays dry in the cockpit locker"
+  ],
+  "why": "A float-free EPIRB alerts even if the crew had no time to grab it.",
+  "ref": "EPIRB",
+  "fig": {
+   "type": "card",
+   "title": "Check-out",
+   "lines": [
+    "EPIRB on the pushpit",
+    "In a bracket with a hydrostatic release"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You activated the EPIRB an hour ago. A ship is now coming towards you, 2 miles away. What about the EPIRB?",
+  "a": "Leave it on until you are rescued",
+  "o": [
+   "Switch it off — help has arrived",
+   "Switch it off to save the battery",
+   "Switch it off and on for a new fix"
+  ],
+  "why": "Its 121.5 MHz signal homes the rescuers in until you are safe.",
+  "ref": "EPIRB",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Which alert do you send first?",
+  "a": "DSC alert and voice MAYDAY on the VHF",
+  "o": [
+   "The EPIRB only — it is the most reliable",
+   "A red parachute rocket only",
+   "A phone call to the charter base"
+  ],
+  "why": "Near the coast VHF reaches the coastguard and nearby boats at once; add the EPIRB too.",
+  "ref": "Distress procedure",
+  "fig": {
+   "type": "card",
+   "title": "Sinking near the coast",
+   "lines": [
+    "Holed, sinking slowly, 5 miles off Naxos",
+    "DSC VHF working, EPIRB aboard",
+    "Two yachts and a ferry in sight"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Which chartplotter button do you press at once?",
+  "a": "MOB",
+  "o": [
+   "Route",
+   "Track log",
+   "AIS targets"
+  ],
+  "why": "The MOB button marks the spot where the casualty went in.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "card",
+   "title": "Man overboard at night",
+   "lines": [
+    "Crew member falls over the side",
+    "Spotter pointing, danbuoy thrown"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You want to stay close to the casualty. What do you do at once?",
+  "a": "Tack at once, leaving the headsail backed",
+  "o": [
+   "Bear away onto a run to gain sea room",
+   "Hold course and drop all the sails first",
+   "Start the engine and go hard astern"
+  ],
+  "why": "The quick-stop keeps the boat near the casualty.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 160,
+    "dist": 55,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 315,
+   "note": "Close reach, crew has just gone over"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are sailing back to the casualty. On which point of sail do you make the final approach?",
+  "a": "Close reach, easing the sheets to slow down",
+  "o": [
+   "Run, dropping the sails at the last moment",
+   "Beam reach at speed, then luff up hard",
+   "Head to wind from 200 m away"
+  ],
+  "why": "On a close reach you can spill wind to stop and fill the sails to go.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 60,
+    "dist": 85,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 0,
+   "note": "Returning to the casualty under sail"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "How do you get the casualty aboard?",
+  "a": "Halyard to the lifting loop, winched up at the side",
+  "o": [
+   "Up the stern bathing ladder, as it is lowest",
+   "Two crew haul him in by the arms at the side",
+   "Tow him slowly alongside to calmer water"
+  ],
+  "why": "A pitching stern can injure; a winched halyard does the lifting.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "card",
+   "title": "Getting him back aboard",
+   "lines": [
+    "Casualty alongside, conscious, 95 kg",
+    "Lifejacket with a lifting loop",
+    "Choppy sea, the stern is pitching"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "This casualty must come out of the water. Which way do you lift him?",
+  "a": "Lift him horizontally, e.g. in a sail parbuckle",
+  "o": [
+   "Lift him upright on the halyard, fast",
+   "Have him climb the stern ladder",
+   "Let him rest in the water first"
+  ],
+  "why": "A cold casualty lifted upright can collapse as blood pressure drops.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "card",
+   "title": "Long immersion",
+   "lines": [
+    "In the water 40 minutes",
+    "Very cold, confused, cannot help himself",
+    "Halyard and a spare sail ready"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The casualty is alongside at the shrouds. What is your first job?",
+  "a": "Get a line on them so they stay attached",
+  "o": [
+   "Put the engine astern to stop",
+   "Lower the stern bathing ladder",
+   "Start lifting them by the arms"
+  ],
+  "why": "Once attached, the boat cannot drift away from the casualty.",
+  "ref": "Man overboard",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "What is the quickest fix?",
+  "a": "Close the seacock",
+  "o": [
+   "Wrap the hose with tape",
+   "Run the bilge pump and wait",
+   "Send a MAYDAY first"
+  ],
+  "why": "Close the valve and the leak stops; then repair.",
+  "ref": "Flooding",
+  "fig": {
+   "type": "card",
+   "title": "Water in the heads",
+   "lines": [
+    "Water spraying from a split hose",
+    "Hose runs to the heads inlet seacock",
+    "Seacock lever within reach"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Which action stops most of the water fastest?",
+  "a": "Hammer a softwood bung into the hole",
+  "o": [
+   "Try to screw the seacock back on",
+   "Stuff a towel in and keep sailing",
+   "Pump and head for port as it is"
+  ],
+  "why": "Tapered softwood bungs tied at each seacock are for exactly this.",
+  "ref": "Flooding",
+  "fig": {
+   "type": "card",
+   "title": "Broken through-hull",
+   "lines": [
+    "Seacock snapped off at the hull",
+    "Water gushing in through the hole",
+    "Softwood bungs tied beside it"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "How can the engine help here?",
+  "a": "Make it pump the bilge: intake hose into the bilge",
+  "o": [
+   "Run it flat out to reach port before she sinks",
+   "Stop it at once so it does not flood",
+   "Open its cooling seacock wider for more flow"
+  ],
+  "why": "Close the raw-water seacock, lead the intake hose into the bilge: the engine pump bails.",
+  "ref": "Flooding",
+  "fig": {
+   "type": "card",
+   "title": "Losing the battle",
+   "lines": [
+    "Water rising faster than all pumps",
+    "Inflow not found yet",
+    "Engine running normally"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Where is the water most likely coming from?",
+  "a": "A leak in the fresh-water tank or pipes",
+  "o": [
+   "A crack in the hull below the waterline",
+   "A leaking stern gland on the shaft",
+   "A split hose on a cockpit drain seacock"
+  ],
+  "why": "Taste it: fresh water comes from the tanks, salt water from the sea.",
+  "ref": "Flooding",
+  "fig": {
+   "type": "card",
+   "title": "Bilge check",
+   "lines": [
+    "Water in the bilge tastes fresh",
+    "Fresh-water pump keeps cutting in"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "How do you stop the water while you plug the hole?",
+  "a": "Tack onto starboard so the hole lifts clear",
+  "o": [
+   "Bear away and sail faster",
+   "Ease the sheets but stay on port tack",
+   "Motor straight into the waves"
+  ],
+  "why": "On starboard tack she heels to port, lifting the starboard bow out of the water.",
+  "ref": "Flooding",
+  "fig": {
+   "type": "card",
+   "title": "Hole in the bow",
+   "lines": [
+    "Hole just above the waterline, starboard bow",
+    "On port tack, heeled to starboard",
+    "Water pours in with each wave"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "How do you reduce the draft to get off?",
+  "a": "Heel her: crew to one side, boom swung out",
+  "o": [
+   "Move all the crew and weight to the bow",
+   "Fill the water tanks to settle her",
+   "Drop the mainsail and wait for help"
+  ],
+  "why": "Heeling lifts the keel and reduces the draft.",
+  "ref": "Grounding",
+  "fig": {
+   "type": "card",
+   "title": "Aground on sand",
+   "lines": [
+    "Gently aground, soft sand, calm",
+    "Engine astern alone will not free her",
+    "Crew of six aboard"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "What is your next step?",
+  "a": "Take the kedge out astern by dinghy and winch off",
+  "o": [
+   "Lay the kedge ahead, on the sand bank",
+   "Go full ahead to push her over the bank",
+   "Wait aboard for the tide to float her off"
+  ],
+  "why": "Kedge towards deep water; in the Med the tide will not float you off.",
+  "ref": "Grounding",
+  "fig": {
+   "type": "card",
+   "title": "Still aground",
+   "lines": [
+    "Bow on sand, deep water astern",
+    "Engine astern not enough",
+    "Dinghy and kedge anchor aboard"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You have just come off a rock you touched at slow speed. What do you check first?",
+  "a": "Bilges, keel bolts and steering",
+  "o": [
+   "The anchor and windlass",
+   "The sails and halyards",
+   "The fuel and water levels"
+  ],
+  "why": "A grounding can loosen keel bolts and damage the rudder.",
+  "ref": "Grounding",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Before you try to reverse off, what do you do?",
+  "a": "Find the damage — off the rock she may sink",
+  "o": [
+   "Full astern at once before it gets worse",
+   "Abandon ship into the liferaft",
+   "Heel her over and motor ahead"
+  ],
+  "why": "The rock may be plugging the hole; check before deep water.",
+  "ref": "Grounding",
+  "fig": {
+   "type": "card",
+   "title": "Hard on the rocks",
+   "lines": [
+    "Hit rocks at 6 knots, stuck fast",
+    "Water coming in forward",
+    "Calm sea, 1 mile from a harbour"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The mast may hole the hull. What do you do?",
+  "a": "Cut it away: pull the pins, cut the shrouds",
+  "o": [
+   "Lash it alongside and keep it with you",
+   "Start the engine and motor clear of it",
+   "Haul it back aboard by hand with the crew"
+  ],
+  "why": "In a sea a mast in the water acts as a battering ram.",
+  "ref": "Dismasting",
+  "fig": {
+   "type": "card",
+   "title": "Dismasted",
+   "lines": [
+    "Mast broken, over the side to port",
+    "Rough sea, it is hammering the hull",
+    "Bolt cutters and tools at hand"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The broken rig has been cut away. Before you start the engine, what do you check?",
+  "a": "No lines or wires are left in the water",
+  "o": [
+   "The engine oil level is correct",
+   "The batteries are fully charged",
+   "The fuel tank is full"
+  ],
+  "why": "A rope round the propeller leaves you without an engine.",
+  "ref": "Dismasting",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "How do you get steering back?",
+  "a": "Fit the emergency tiller to the rudder stock",
+  "o": [
+   "Call for a tow at once and wait for it",
+   "Lock the wheel amidships with a line",
+   "Drop the sails and wait for help to come"
+  ],
+  "why": "The emergency tiller bypasses the wheel steering.",
+  "ref": "Loss of steering",
+  "fig": {
+   "type": "card",
+   "title": "Steering failure",
+   "lines": [
+    "Wheel spins freely",
+    "Rudder seems undamaged",
+    "Emergency tiller in the cockpit locker"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "How do you steer the yacht home?",
+  "a": "Tow a drogue on a bridle, steering with the winches",
+  "o": [
+   "Motor at full speed and steer with the throttle",
+   "Lash the wheel amidships and motor",
+   "Stream the anchor from the bow"
+  ],
+  "why": "A drogue pulled to one side or the other steers the stern.",
+  "ref": "Loss of steering",
+  "fig": {
+   "type": "card",
+   "title": "Rudder lost",
+   "lines": [
+    "Rudder gone, emergency tiller useless",
+    "15 miles to port, wind F4",
+    "Spare warps, a bucket, two winches"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Before you take their line, what do you do?",
+  "a": "Agree the terms: a tow, not salvage",
+  "o": [
+   "Take the line at once, talk later",
+   "Pay in cash once you are towed",
+   "Refuse — only the coastguard may tow"
+  ],
+  "why": "Without an agreement the helper may claim salvage on the yacht.",
+  "ref": "Towing",
+  "fig": {
+   "type": "card",
+   "title": "Tow offered",
+   "lines": [
+    "Engine failed, calm, drifting safely",
+    "Fishing boat offers to tow you in",
+    "No price mentioned"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Where do you make the towline fast on your yacht?",
+  "a": "To a bridle between both bow cleats",
+  "o": [
+   "To a single bow cleat, well secured",
+   "Round the anchor windlass drum",
+   "To the pulpit rail at the bow"
+  ],
+  "why": "A bridle spreads the load over two strong points.",
+  "ref": "Towing",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 85,
+    "hdg": 0,
+    "label": "Tow"
+   },
+   "note": "Being towed by the boat ahead"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "When may you touch the wire?",
+  "a": "After it has touched the water or deck",
+  "o": [
+   "As soon as you can reach it",
+   "Only once it stops swinging",
+   "Never — the winchman grabs you"
+  ],
+  "why": "The wire carries a static charge until it earths.",
+  "ref": "Helicopter rescue",
+  "fig": {
+   "type": "card",
+   "title": "Helicopter lift",
+   "lines": [
+    "Winchman being lowered on the wire",
+    "Wire swinging over your cockpit"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The helicopter lowers a weighted hi-line to your yacht. What do you do with it?",
+  "a": "Pull it in by hand, keep it loose — never tie it",
+  "o": [
+   "Make it fast to a strong cleat to steady it",
+   "Tie it to the casualty's harness at once",
+   "Let it trail in the water until the lift"
+  ],
+  "why": "The helicopter must be able to break away at any moment.",
+  "ref": "Helicopter rescue",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "How do you prepare the deck?",
+  "a": "Drop the main, secure the boom and loose gear",
+  "o": [
+   "Hoist full sail so the yacht rolls less",
+   "Hoist the ensign so the crew can see you",
+   "Send all the crew below out of the way"
+  ],
+  "why": "The downdraught catches anything loose; the winchman needs a clear area.",
+  "ref": "Helicopter rescue",
+  "fig": {
+   "type": "card",
+   "title": "Helicopter coming",
+   "lines": [
+    "Helicopter 5 minutes away",
+    "Mainsail up, boom swinging",
+    "Cushions and sail bags on deck"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "In what order do you act?",
+  "a": "MAYDAY first, then launch the raft",
+  "o": [
+   "Launch the raft, then MAYDAY from it",
+   "Launch the raft and stay off the radio",
+   "Stay aboard until the deck is under"
+  ],
+  "why": "The MAYDAY goes from the yacht's fixed VHF while it still works.",
+  "ref": "Abandoning ship",
+  "fig": {
+   "type": "card",
+   "title": "Sinking",
+   "lines": [
+    "Deck nearly awash, she is going down",
+    "Crew in lifejackets",
+    "Liferaft in its cradle, grab bag ready"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You have one minute before stepping into the liferaft. What do you take?",
+  "a": "The grab bag and the EPIRB",
+  "o": [
+   "Passports and phones",
+   "The ship's papers",
+   "Spare fuel"
+  ],
+  "why": "The grab bag and EPIRB are what get you found and kept alive.",
+  "ref": "Abandoning ship",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "How do you place the yacht to the wind?",
+  "a": "Bow to the wind, so the smoke blows aft",
+  "o": [
+   "Stern to the wind, to stop her rolling",
+   "Beam on to the wind, to keep her steady",
+   "It makes no difference once sails are down"
+  ],
+  "why": "Keep the fire downwind of the crew.",
+  "ref": "Fire",
+  "fig": {
+   "type": "card",
+   "title": "Fire aft",
+   "lines": [
+    "Fire under the cockpit, out of control",
+    "Crew gathered on the foredeck",
+    "MAYDAY sent, liferaft forward"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You are anchored off Hvar with no VHF and need sea rescue. Which phone number goes straight to MRCC Rijeka?",
+  "a": "195",
+  "o": [
+   "108",
+   "158",
+   "911"
+  ],
+  "why": "In Croatia 195 is the sea search-and-rescue number; 112 also works.",
+  "ref": "Calling the coastguard",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "How do you call for help first?",
+  "a": "MAYDAY on VHF: coastguard and boats nearby hear it",
+  "o": [
+   "Phone the hospital in Bodrum for an ambulance",
+   "Phone the charter base and ask for advice",
+   "Wait a few minutes to see if he recovers"
+  ],
+  "why": "A VHF MAYDAY reaches every station in range at once; a phone call reaches one.",
+  "ref": "Calling the coastguard",
+  "fig": {
+   "type": "card",
+   "title": "Medical emergency",
+   "lines": [
+    "Crew collapsed, not responding",
+    "4 miles off Bodrum, phone has signal",
+    "VHF working, other yachts nearby"
+   ]
+  }
+ }
+]

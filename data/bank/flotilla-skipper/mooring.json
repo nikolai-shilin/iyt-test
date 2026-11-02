@@ -1,0 +1,445 @@
+[
+ {
+  "topic": "mooring",
+  "difficulty": 1,
+  "q": "You are anchoring on sand in 5 m. How do you let the chain go?",
+  "a": "Pay it out as the boat drifts back",
+  "o": [
+   "Drop it all at once in a heap",
+   "Pay it out while motoring ahead",
+   "Lower the anchor, keep the rest aboard"
+  ],
+  "why": "Laying the chain along the bottom as you move astern lets the anchor dig in.",
+  "ref": "Anchoring",
+  "fig": null
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 1,
+  "q": "You look down through clear water to pick a spot. Where do you drop the anchor?",
+  "a": "A — on the sand",
+  "o": [
+   "B — in the thick weed",
+   "C — on the flat rock",
+   "B — the weed cushions the chain"
+  ],
+  "why": "Sand gives good holding; anchors skate on weed and cannot dig into rock.",
+  "ref": "Holding ground",
+  "fig": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V40 C 220 55 100 35 0 50 Z",
+   "spots": [
+    [
+     70,
+     115,
+     "A"
+    ],
+    [
+     160,
+     100,
+     "B"
+    ],
+    [
+     235,
+     115,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     70,
+     143,
+     "sand"
+    ],
+    [
+     160,
+     128,
+     "thick weed"
+    ],
+    [
+     235,
+     143,
+     "flat rock"
+    ]
+   ],
+   "note": "Seen through clear water, depth 5–7 m"
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 1,
+  "q": "Going stern-to in a marina, your crew pick up the lazy line at the stern. What do they do with it?",
+  "a": "Walk it forward and cleat it at the bow",
+  "o": [
+   "Cleat it at the stern with the stern line",
+   "Drop it once the stern lines are on",
+   "Hold it by hand until you leave"
+  ],
+  "why": "The lazy line replaces your anchor: lead it forward and cleat it tight at the bow.",
+  "ref": "Lazy lines",
+  "fig": null
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 1,
+  "q": "The anchor is down and the chain laid out. How do you make sure it is holding?",
+  "a": "Go astern gently, then harder, watching a transit",
+  "o": [
+   "Wait — it will dig in by itself overnight",
+   "Motor ahead over it to press it in",
+   "Jerk the chain by hand at the bow"
+  ],
+  "why": "Set the anchor with steady astern power; a fixed transit ashore shows if you are moving.",
+  "ref": "Setting the anchor",
+  "fig": null
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "You are going stern-to here. Where do you let go the anchor?",
+  "a": "About 3–4 boat lengths off the quay",
+  "o": [
+   "About one boat length off the quay",
+   "About half a length off the quay",
+   "About ten boat lengths off the quay"
+  ],
+  "why": "Three to four lengths out leaves enough chain on the bottom to hold you off the quay.",
+  "ref": "Med mooring",
+  "fig": {
+   "type": "card",
+   "title": "Stern-to, Fiskardo quay",
+   "lines": [
+    "Your yacht: 12 m",
+    "Depth off the quay 6–8 m",
+    "Gap between two yachts"
+   ]
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "Reversing stern-to the quay with your anchor down, when do you take the chain up tight?",
+  "a": "Once the stern lines are made fast",
+  "o": [
+   "As soon as the anchor hits the bottom",
+   "Before the crew throw the stern lines",
+   "Only if the wind gets up overnight"
+  ],
+  "why": "Pay out freely while reversing; with the stern lines on, tighten the chain to hold you off.",
+  "ref": "Med mooring",
+  "fig": null
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "Leaving the quay in the morning, your windlass lifts a neighbour's chain hooked over your anchor. What do you do?",
+  "a": "Hold their chain on a line, lower yours clear",
+  "o": [
+   "Motor hard ahead to drag both free",
+   "Keep winching until both anchors are up",
+   "Motor astern to pull yours out from under"
+  ],
+  "why": "Take the other chain's weight on a slip line, drop your anchor clear, then slip the line.",
+  "ref": "Crossed anchors",
+  "fig": null
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "Lying alongside the town quay, the wash from passing boats makes you surge fore and aft. Which lines stop it?",
+  "a": "The springs",
+  "o": [
+   "The bow and stern lines",
+   "The breast lines",
+   "Extra fenders along the side"
+  ],
+  "why": "Springs run fore and aft along the quay and stop the boat surging forward and back.",
+  "ref": "Berthing alongside",
+  "fig": null
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 3,
+  "q": "You need to get the stern out first. How do you leave?",
+  "a": "Ahead against a bow spring, bow fendered",
+  "o": [
+   "Astern against a bow spring, bow fendered",
+   "Ahead against a stern spring, stern fendered",
+   "Push the stern off by hand, then go ahead"
+  ],
+  "why": "Motoring ahead against a spring from the bow pivots the bow in and swings the stern out.",
+  "ref": "Springing off",
+  "fig": {
+   "type": "card",
+   "title": "Alongside the quay",
+   "lines": [
+    "Wind F4 pinning you onto the quay",
+    "Yachts close ahead and astern"
+   ]
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "You choose a spot for the night. Where do you anchor?",
+  "a": "B — in the lee, south of the island",
+  "o": [
+   "A — close under the north shore",
+   "C — off the west end, in open water",
+   "A — the wind will hold you off the shore"
+  ],
+  "why": "Anchor in the lee of the land; a north wind blows onto the north shore and across open water.",
+  "ref": "Choosing an anchorage",
+  "fig": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M90 80 C 120 50 220 50 240 80 C 255 105 210 125 165 122 C 120 120 75 105 90 80 Z",
+   "spots": [
+    [
+     165,
+     30,
+     "A"
+    ],
+    [
+     165,
+     158,
+     "B"
+    ],
+    [
+     40,
+     95,
+     "C"
+    ]
+   ],
+   "note": "Forecast tonight: N F5–6"
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "Is this a good place to drop your anchor?",
+  "a": "No — your swinging circles overlap",
+  "o": [
+   "Yes — boats on chain swing together",
+   "Yes — 30 m is more than your length",
+   "Yes, if you lay less chain to fit"
+  ],
+  "why": "In shifting wind boats swing differently; leave room for both swinging circles.",
+  "ref": "Swinging room",
+  "fig": {
+   "type": "card",
+   "title": "Crowded bay, Sivota",
+   "lines": [
+    "Depth 5 m, you plan 25 m of chain",
+    "Yacht anchored about 30 m away",
+    "Wind light and shifting"
+   ]
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "What is happening, and what do you do?",
+  "a": "You are dragging — start the engine",
+  "o": [
+   "You are swinging — go back to bed",
+   "The GPS lost its fix — reset it",
+   "The alarm radius is small — enlarge it"
+  ],
+  "why": "A straight track downwind away from the swinging arcs means the anchor is dragging.",
+  "ref": "Anchor watch",
+  "fig": {
+   "type": "card",
+   "title": "02:30 at anchor",
+   "lines": [
+    "Anchor alarm sounding",
+    "Track: arcs, then a line downwind",
+    "Wind now N F6"
+   ]
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "How do you lie here for the night?",
+  "a": "Anchor out, stern line to a rock or tree",
+  "o": [
+   "Anchor in the middle on a long scope",
+   "Bow line to a tree, no anchor at all",
+   "Two anchors off the bow, no line ashore"
+  ],
+  "why": "In a narrow cove, anchor and take a stern line ashore so the boat cannot swing.",
+  "ref": "Line ashore",
+  "fig": {
+   "type": "card",
+   "title": "Narrow cove, Turkey",
+   "lines": [
+    "Steep wooded shore",
+    "Too narrow to swing at anchor",
+    "Depth 10 m close in"
+   ]
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "Leaving the anchorage, your crew start the windlass. How do you help them?",
+  "a": "Motor gently towards the anchor as they signal",
+  "o": [
+   "Let the windlass pull the boat up to it",
+   "Motor astern to keep the chain tight",
+   "Motor hard ahead to break it out first"
+  ],
+  "why": "Motor slowly up to the chain as the crew point; a windlass is not built to haul the boat.",
+  "ref": "Weighing anchor",
+  "fig": null
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "Leaving a lazy-line berth, how do you handle the lazy line?",
+  "a": "Drop it at the bow and let it sink first",
+  "o": [
+   "Drop it over the stern as you go ahead",
+   "Keep it aboard until clear of the berth",
+   "Lead it aft and hand it to the quay"
+  ],
+  "why": "Let the lazy line sink clear before you motor ahead, or it can wrap round the propeller.",
+  "ref": "Lazy lines",
+  "fig": null
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "You wake to find this. What do you do?",
+  "a": "Tighten the chain and ease the stern lines",
+  "o": [
+   "Tighten the stern lines to hold her in",
+   "Ease the chain so she can ride it out",
+   "Add a fender and leave the lines alone"
+  ],
+  "why": "Bring in chain to pull the stern off the quay, easing the stern lines to match.",
+  "ref": "Med mooring",
+  "fig": {
+   "type": "card",
+   "title": "Stern-to, 03:00",
+   "lines": [
+    "Wind has swung onto the quay, F5",
+    "Stern now 0.5 m from the stone"
+   ]
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 2,
+  "q": "Where do you anchor?",
+  "a": "B — about 6 m of water",
+  "o": [
+   "A — about 25 m of water",
+   "C — about 2.2 m of water",
+   "A — well clear of the beach"
+  ],
+  "why": "50 m of chain gives only 2:1 in 25 m; 2.2 m leaves no margin under a 1.9 m keel.",
+  "ref": "Choosing depth",
+  "fig": {
+   "type": "bay",
+   "wind": 180,
+   "land": "M0 0 H320 V35 C 220 50 100 30 0 45 Z",
+   "spots": [
+    [
+     70,
+     135,
+     "A"
+    ],
+    [
+     160,
+     100,
+     "B"
+    ],
+    [
+     250,
+     70,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     70,
+     163,
+     "25 m"
+    ],
+    [
+     160,
+     128,
+     "6 m"
+    ],
+    [
+     250,
+     98,
+     "2.2 m"
+    ]
+   ],
+   "note": "You carry 50 m of chain, draft 1.9 m"
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 3,
+  "q": "You are going stern-to with a fresh wind blowing across the line of berths. Where do you drop the anchor?",
+  "a": "A little upwind of the line of your berth",
+  "o": [
+   "A little downwind of the line of your berth",
+   "Exactly in line, then reverse in harder",
+   "Close in, so the wind has less effect"
+  ],
+  "why": "The wind will sag the boat downwind, leaving the chain running straight out from your berth.",
+  "ref": "Med mooring in a crosswind",
+  "fig": null
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 3,
+  "q": "Where do you spend the night?",
+  "a": "B — sheltered from the stronger southerly",
+  "o": [
+   "A — it is sheltered from the wind now",
+   "A — the southerly will hold you off",
+   "Either — any anchor holds in F5"
+  ],
+  "why": "Pick shelter from the strongest forecast wind, not just the wind blowing now.",
+  "ref": "Choosing an anchorage",
+  "fig": {
+   "type": "card",
+   "title": "Choosing tonight's cove",
+   "lines": [
+    "Now: N F3, settled",
+    "Forecast: S F5 from 02:00",
+    "Cove A: open to the south",
+    "Cove B: open to the north"
+   ]
+  }
+ },
+ {
+  "topic": "mooring",
+  "difficulty": 3,
+  "q": "What is the least chain you let out?",
+  "a": "About 32 m",
+  "o": [
+   "About 28 m",
+   "About 24 m",
+   "About 16 m"
+  ],
+  "why": "Measure from the bow roller: (7 m + 1 m) × 4 = 32 m.",
+  "ref": "Scope",
+  "fig": {
+   "type": "anchor",
+   "depth": "7 m",
+   "title": "Planning your scope",
+   "lines": [
+    "Bow roller 1 m above water",
+    "All chain, scope 4:1"
+   ]
+  }
+ }
+]

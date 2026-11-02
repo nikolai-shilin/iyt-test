@@ -5,7 +5,7 @@ situation ("you see this mark ahead — where is the safe water?"), drawn as a f
 options and a one-line note naming the rule. First level: **Bareboat Skipper** (100 questions, 10 topics).
 
 Status (2026-11-02): design and question bank done; the Telegram mini app (practice, mock exam, progress, profile)
-and a small bot are built, not yet deployed. Website not started.
+and a small bot are built and deployed (Vercel). Website not started.
 
 ## What is in the repo
 
@@ -28,13 +28,23 @@ docs/
     test-icons.js               test glyphs + svg()/paintIcons(), shared by the viewer and the app
 data/
   build_bank.py                 source of the Bareboat Skipper bank — edit here, then run
-  questions/bareboat-skipper.json
+  build_level.py                builds the other levels from bank/<level>/<topic>.json (+ .ru.json)
+  bank/<level>/<topic>.json     VHF Radio Operator, International Crew, Flotilla Skipper: 20 questions per topic
+  questions/<level>.json        the built banks the apps read
+  questions/<level>.ru.json     Russian translation of each bank (overlay)
+  i18n.py                       extract strings to translate / check an overlay
 miniapp/
   index.html  app.js  app.css   the Telegram mini app (static, no framework, no backend)
   build.mjs                     copies the app + design files + banks into miniapp/dist (the folder to host)
 bot/
-  bot.mjs                       long-polling bot: /start /exam /progress /settings open the app, /daily asks a question
+  core.mjs                      the bot's replies: /start /exam /progress /settings open the app, /daily asks a question
+  daily.mjs                     the morning question of the day to everyone who has it on
+  bot.mjs                       runs core.mjs by long polling (local testing)
   scripts/setup.mjs             sets the bot's name, descriptions, commands and menu button
+  scripts/webhook.mjs           points Telegram at the Vercel webhook, or removes it
+api/
+  telegram.mjs                  Vercel function: Telegram's webhook, runs core.mjs
+  daily.mjs                     Vercel cron (06:00 UTC daily): runs bot/daily.mjs
 ```
 
 ## Mini app
@@ -49,15 +59,39 @@ pass/fail), C1 progress, C2 profile (theme, shuffle, reset). Mastery = right twi
 user in Telegram CloudStorage (localStorage in a browser), so there is no server or database yet. Inside Telegram
 the app uses the native Back, Main and Secondary buttons and haptics; outside it draws the same bar itself.
 Deep links: `?screen=exam|progress|profile|practice|level`, or `startapp=` with the same values.
+Languages: English and Russian interface (picked from the Telegram language, switch in Profile). All 1000 questions
+are translated in `data/questions/bareboat-skipper.ru.json` (terms: [docs/glossary-ru.md](docs/glossary-ru.md)); see
+[docs/question-bank.md](docs/question-bank.md#translations).
 
-To put it in Telegram:
+It is live at https://iyt-test.vercel.app and connected to [@iyt_test_bot](https://t.me/iyt_test_bot): the bot's
+menu button opens the app, and the bot itself runs as a webhook on the same Vercel project (`api/telegram.mjs`).
+To set it up again from scratch:
 
-1. `npm run build` and host `miniapp/dist` on any HTTPS static host (e.g. `npx vercel deploy miniapp/dist`).
-2. Put the URL in `.env.local` as `WEBAPP_URL`, then `npm run bot:setup` — the bot's menu button opens the app.
-3. Optional: `npm run bot` on a machine that stays on, so the commands and the daily question answer.
+1. Put `TELEGRAM_BOT_TOKEN`, `WEBAPP_URL` and `TELEGRAM_WEBHOOK_SECRET` (`openssl rand -hex 32`) in `.env.local`,
+   and the same three in the Vercel project's Production env.
+2. `npx vercel deploy --prod` — builds `miniapp/dist` and deploys the webhook function next to it.
+3. `npm run bot:setup` — name, descriptions, commands, menu button → the app.
+4. `npm run bot:webhook` — tells Telegram to send updates to `WEBAPP_URL/api/telegram` (`-- --check` shows its state).
 
-Not in this version (needs the Supabase backend in `docs/data-model.md`): translations, scheduled daily question
-and streak reminder, cross-device sync with the website, theory notes, the share image.
+To try bot changes locally: `npm run bot:webhook -- --delete`, then `npm run bot` (long polling), and
+`npm run bot:webhook` again when done — Telegram delivers to a webhook or to polling, not both.
+
+### Question of the day
+
+Every morning (Vercel cron, `0 6 * * *` UTC — 09:00 Moscow, 10:00 Dubai) the bot sends one text question with A–D
+buttons to each user who has it on; the answer and the note come back in the same message. Everyone gets the same
+question that day. The bot saves each user who writes to it in Supabase `users` (`daily_question` on by default).
+
+- **Per user**: a switch button under the morning question and in `/settings` ("Question of the day: on/off").
+- **Whole bot**: `DAILY_QUESTION=off` in the Vercel env stops the send for everyone (users' own switches stay).
+- Users who block the bot are marked (`blocked_at`) and skipped until they write again.
+
+Needs on Vercel: `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `CRON_SECRET` (`openssl rand -hex 32`), and the migration
+`supabase/migrations/20261102150000_daily_question.sql`. Try it: `npm run bot:daily -- --to <your chat id>` (add
+`--ru` for Russian) sends today's question to one chat; `npm run bot:daily -- --dry` counts who would get it.
+
+Not in this version (needs the Supabase backend in `docs/data-model.md`): DE/ES, the
+streak reminder, cross-device sync with the website, theory notes, the share image.
 
 ## Look at it
 
@@ -86,10 +120,17 @@ Figure types: [docs/figures.md](docs/figures.md).
 
 | Level | Questions | Status |
 |---|---|---|
-| Bareboat Skipper | 100 (10 topics × 10) | done — `data/questions/bareboat-skipper.json` |
-| International Crew | 60 planned | — |
+| VHF Radio Operator | 200 (10 topics × 20) | done — `data/questions/vhf-radio-operator.json` |
+| International Crew | 200 (10 topics × 20) | done — `data/questions/international-crew.json` |
+| Flotilla Skipper | 200 (10 topics × 20) | done — `data/questions/flotilla-skipper.json` |
+| Bareboat Skipper | 1000 (10 topics × 100) | done — `data/questions/bareboat-skipper.json` |
+| ICC (International Certificate of Competency) | — | planned |
 | Yachtmaster Coastal | 120 planned | — |
 | Yachtmaster Offshore | — | 2027 |
+| Yachtmaster Ocean | — | planned |
 
-Questions are written for study and are not official IYT exam content. The exam defaults in the app (40 questions,
-60 minutes, 70 % to pass) must be verified against the current IYT exam before release.
+Order follows the [IYT course progression](https://www.iytworld.com/students/recreational/iyt-course-progression/).
+
+Questions are written for study and are not official IYT exam content. The mock-exam defaults (Bareboat and Flotilla
+Skipper 40 questions in 60 minutes, VHF and International Crew 30 in 45; 70 % to pass) must be verified against the
+current IYT exams before release.

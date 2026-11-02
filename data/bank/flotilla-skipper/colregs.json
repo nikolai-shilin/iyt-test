@@ -1,0 +1,449 @@
+[
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You are following the flotilla lead boat across to Kalamos. Your crew say, \"Just follow them — they keep watch.\" What does Rule 5 require?",
+  "a": "You keep your own lookout at all times",
+  "o": [
+   "The lead boat keeps lookout for all",
+   "A lookout only in poor visibility",
+   "The AIS alarm counts as a lookout"
+  ],
+  "why": "Rule 5: every vessel keeps a proper lookout by sight and hearing at all times.",
+  "ref": "COLREGs Rule 5",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "Motoring across the Saronic Gulf, you take a compass bearing of a ferry: 040°, and again 040° five minutes later, and she is closer. What does it mean?",
+  "a": "Risk of collision exists",
+  "o": [
+   "She will pass safely ahead",
+   "She will pass safely astern",
+   "She is stopped in the water"
+  ],
+  "why": "Rule 7: a steady compass bearing with the range closing means risk of collision.",
+  "ref": "COLREGs Rule 7",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are the give-way boat in a crossing with a motor yacht a mile off. How do you alter course?",
+  "a": "Early and boldly, so she clearly sees it",
+  "o": [
+   "A few degrees at a time, gradually",
+   "At the last moment, to keep options open",
+   "A little, then speed up to cross ahead"
+  ],
+  "why": "Rule 8: action is early, large enough to be obvious, and leaves a safe distance.",
+  "ref": "COLREGs Rule 8",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are motoring through the narrow Lefkas canal and a tripper boat is coming the other way. Where do you keep?",
+  "a": "To the starboard side of the channel",
+  "o": [
+   "In the middle, where it is deepest",
+   "To the port side, facing the traffic",
+   "Either side, as long as you go slowly"
+  ],
+  "why": "Rule 9: keep as near the starboard edge of a narrow channel as is safe.",
+  "ref": "COLREGs Rule 9",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Sailing through the narrow strait at Poros, you meet this ferry. Who keeps clear?",
+  "a": "You — do not impede her in the channel",
+  "o": [
+   "She does — power gives way to sail",
+   "She does — she can stop more easily",
+   "Neither — both hold course and speed"
+  ],
+  "why": "Rule 9(b): a sailing vessel must not impede a vessel that can only navigate in the channel.",
+  "ref": "COLREGs Rule 9",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 6,
+    "dist": 78,
+    "hdg": 180,
+    "label": "Ferry",
+    "scale": 1.25
+   },
+   "wind": 270,
+   "note": "Narrow channel · she can only use the channel"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Both yachts are under sail and converging. Who keeps clear?",
+  "a": "You — you are on port tack",
+  "o": [
+   "She does — she is on port tack",
+   "Neither — both alter to starboard",
+   "Whichever boat is to windward"
+  ],
+  "why": "Rule 12(a)(i): on different tacks, the port-tack boat keeps clear.",
+  "ref": "COLREGs Rule 12",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 45,
+    "dist": 85,
+    "hdg": 315,
+    "sail": true,
+    "boom": -14
+   },
+   "wind": 0,
+   "bearingLine": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Under sail, you are converging with this yacht. Who keeps clear?",
+  "a": "She does — she is to windward",
+  "o": [
+   "You do — you are to leeward",
+   "You do — she is on your starboard side",
+   "Neither — same tack, both hold on"
+  ],
+  "why": "Rule 12(a)(ii): on the same tack, the windward boat keeps clear of the leeward one.",
+  "ref": "COLREGs Rule 12",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 300,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 60,
+    "dist": 80,
+    "hdg": 270,
+    "sail": true,
+    "boom": -14
+   },
+   "wind": 0,
+   "bearingLine": true,
+   "note": "Bearing steady"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are motoring at night and see these lights. What do you do?",
+  "a": "Alter to starboard — she is head-on",
+  "o": [
+   "Alter to port, passing starboard to starboard",
+   "Hold course — she must keep clear of you",
+   "Stop and wait for her to go past"
+  ],
+  "why": "Rule 14: a masthead light and both sidelights dead ahead mean head-on; both turn to starboard.",
+  "ref": "COLREGs Rules 14 / 23",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 155,
+     "y": 75,
+     "t": "white"
+    },
+    {
+     "c": "g",
+     "x": 120,
+     "y": 122,
+     "t": "green"
+    },
+    {
+     "c": "r",
+     "x": 190,
+     "y": 122,
+     "t": "red"
+    }
+   ],
+   "note": "Night · dead ahead, bearing steady"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are motoring. What do you do?",
+  "a": "Hold your course and speed",
+  "o": [
+   "Alter to port and pass ahead of her",
+   "Slow right down and let her pass ahead",
+   "Alter to starboard and pass astern"
+  ],
+  "why": "Rule 15: she has you on her starboard side, so she gives way; you stand on (Rule 17).",
+  "ref": "COLREGs Rules 15 / 17",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -45,
+    "dist": 85,
+    "hdg": 90,
+    "label": "Motor boat"
+   },
+   "bearingLine": true,
+   "note": "Bearing steady"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "You are motoring and should stand on, but this yacht is not giving way. What do you do?",
+  "a": "Sound five short blasts and be ready to act",
+  "o": [
+   "Hold on regardless — the rules protect you",
+   "Turn hard to port across her bow",
+   "Speed up to get across ahead of her"
+  ],
+  "why": "Rules 17 and 34(d): signal doubt, then act yourself — but not by turning to port for her.",
+  "ref": "COLREGs Rules 17 / 34",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -40,
+    "dist": 50,
+    "hdg": 90,
+    "label": "Motor yacht"
+   },
+   "bearingLine": true,
+   "note": "She has not altered · now close"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Sailing off Preveza, you are converging with a boat showing this shape. Who keeps clear?",
+  "a": "You — she is engaged in fishing",
+  "o": [
+   "She does — power gives way to sail",
+   "She does — she is on your starboard side",
+   "Neither — she is at anchor"
+  ],
+  "why": "Rule 18: a sailing vessel keeps clear of a vessel engaged in fishing.",
+  "ref": "COLREGs Rule 18",
+  "fig": {
+   "type": "dayshape",
+   "shape": "two-cones",
+   "note": "Nets streaming astern"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You see this yacht with her sails up and this shape hoisted forward. What does it tell you?",
+  "a": "She is motoring as well as sailing",
+  "o": [
+   "She is at anchor",
+   "She is fishing with nets",
+   "She cannot manoeuvre easily"
+  ],
+  "why": "Rule 25(e): a cone point down shows a yacht under sail and power — treat her as power.",
+  "ref": "COLREGs Rule 25",
+  "fig": {
+   "type": "dayshape",
+   "shape": "cone-down",
+   "sail": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "This yacht is under sail only. Who keeps clear?",
+  "a": "You — motor-sailing, you count as power",
+  "o": [
+   "She does — she is on port tack",
+   "She does — she is on your port side",
+   "Neither — both of you have sails up"
+  ],
+  "why": "Rule 3: with the engine in gear you are power-driven, so you keep clear of sail (Rule 18).",
+  "ref": "COLREGs Rules 3 / 18",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 315,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -50,
+    "dist": 85,
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 0,
+   "bearingLine": true,
+   "note": "Your engine is running, in gear"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Under sail alone, a motor yacht crosses from your starboard side on a steady bearing. Your crew say she has right of way because she is on your starboard side. Who keeps clear?",
+  "a": "She does — power gives way to sail",
+  "o": [
+   "You do — she is on your starboard side",
+   "You do — she is bigger and faster",
+   "Both alter course to starboard"
+  ],
+  "why": "Rule 18: power keeps clear of sail; the starboard-side rule is for two power vessels.",
+  "ref": "COLREGs Rule 18",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are motoring at night with the sails stowed. Your yacht has a masthead tricolour, a steaming light on the mast and navigation lights at bow and stern. What do you switch on?",
+  "a": "Steaming light, sidelights and sternlight",
+  "o": [
+   "The masthead tricolour only",
+   "The tricolour and the steaming light",
+   "Sidelights and sternlight only"
+  ],
+  "why": "Rule 23: under power you show a masthead (steaming) light, sidelights and a sternlight.",
+  "ref": "COLREGs Rules 23 / 25",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are motoring at night and see this single light high up. What is it, and what do you do?",
+  "a": "A yacht under sail — you keep clear",
+  "o": [
+   "A power boat — you stand on",
+   "A starboard-hand buoy — leave it to starboard",
+   "A yacht at anchor — pass either side"
+  ],
+  "why": "A lone light high on a mast is a tricolour: a yacht under sail, so you, under power, keep clear.",
+  "ref": "COLREGs Rules 18 / 25",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 170,
+     "y": 70,
+     "t": "green"
+    }
+   ],
+   "note": "Night · bearing steady, closing"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "In Poros harbour, a ferry near the quay sounds three short blasts. What does she mean?",
+  "a": "I am operating astern propulsion",
+  "o": [
+   "I am altering my course to starboard",
+   "I am altering my course to port",
+   "I doubt that you are keeping clear"
+  ],
+  "why": "Rule 34(a): one short = to starboard, two = to port, three = astern propulsion.",
+  "ref": "COLREGs Rule 34",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "In fog off the Croatian coast you hear one prolonged blast about every two minutes, getting closer. What is it?",
+  "a": "A power-driven vessel making way",
+  "o": [
+   "A sailing vessel under way",
+   "A vessel at anchor",
+   "A vessel aground"
+  ],
+  "why": "Rule 35(a): a power vessel making way sounds one prolonged blast at least every 2 minutes.",
+  "ref": "COLREGs Rule 35",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "You are catching up this yacht from astern. Who keeps clear?",
+  "a": "You — you are overtaking her",
+  "o": [
+   "She does — she is on port tack",
+   "Neither — both hold course and speed",
+   "Whichever of you is the larger"
+  ],
+  "why": "Rule 13 overrides Rule 12: an overtaking vessel keeps clear, whatever the tacks.",
+  "ref": "COLREGs Rules 12 / 13",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 70,
+    "hdg": 340,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 180,
+   "note": "You are faster, closing from astern"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "Crossing to Paxos at night under engine, you watch these lights for five minutes. What do you do?",
+  "a": "Give way — turn to starboard, pass astern",
+  "o": [
+   "Stand on — she must turn to starboard",
+   "Turn to port and pass ahead of her",
+   "Speed up and cross ahead of her"
+  ],
+  "why": "Her red sidelight shows her port side: she is crossing from your starboard, so you give way.",
+  "ref": "COLREGs Rules 15 / 23",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 232,
+     "y": 80,
+     "t": "white"
+    },
+    {
+     "c": "r",
+     "x": 226,
+     "y": 122,
+     "t": "red"
+    }
+   ],
+   "note": "Night · on your starboard bow, bearing steady"
+  }
+ }
+]

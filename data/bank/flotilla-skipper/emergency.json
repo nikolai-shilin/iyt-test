@@ -1,0 +1,391 @@
+[
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "A crew member falls over the side while you are sailing. What are the first things you do?",
+  "a": "Shout 'man overboard', throw the lifebuoy, keep pointing",
+  "o": [
+   "Go below and send a MAYDAY before anything else",
+   "Start the engine and put it in gear at once",
+   "Turn hard toward them at full speed"
+  ],
+  "why": "Raise the alarm, give them buoyancy, and never lose sight: one crew member does nothing but point.",
+  "ref": "Man overboard",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Which signal do you use to show them where you are?",
+  "a": "Orange smoke, on the downwind side",
+  "o": [
+   "A red parachute rocket, fired straight up",
+   "A red hand flare, held up to windward",
+   "Nothing — wait until they are overhead"
+  ],
+  "why": "In daylight orange smoke shows an aircraft your position and the wind; never fire a rocket near a helicopter.",
+  "ref": "Distress flares",
+  "fig": {
+   "type": "card",
+   "title": "Daytime, engine dead, drifting",
+   "lines": [
+    "Rescue helicopter now in sight",
+    "Aboard: parachute rockets, red hand flares,",
+    "orange smoke"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Your yacht is damaged and taking water, but it is still afloat. When do you get into the liferaft?",
+  "a": "Only when the yacht is sinking under you — step up into it",
+  "o": [
+   "As soon as water comes in — the raft is safer",
+   "Straight after the MAYDAY, whatever the boat does",
+   "Once the lead boat is in sight, to be ready"
+  ],
+  "why": "A yacht afloat is a better liferaft: abandon only as a last resort, stepping up into the raft.",
+  "ref": "Abandon ship",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "A pan of oil catches fire on the galley stove. What do you do?",
+  "a": "Turn off the gas and smother it with the fire blanket",
+  "o": [
+   "Throw a jug of water over the pan",
+   "Carry the burning pan up to the cockpit",
+   "Open the hatch above to let the smoke out"
+  ],
+  "why": "Water makes burning fat explode; cut the gas and smother the flames with the blanket.",
+  "ref": "Fire",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You have dropped the sails and motored back to the casualty. How do you make the final approach?",
+  "a": "Slowly into the wind, engine off as you reach them",
+  "o": [
+   "Downwind at speed, then hard astern beside them",
+   "Across the wind, with them close to the stern",
+   "Circle them fast until they catch a line"
+  ],
+  "why": "Heading into the wind gives control at low speed; the propeller must be stopped near a person in the water.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90
+   },
+   "other": {
+    "bearing": 300,
+    "dist": 80,
+    "hdg": 0,
+    "label": "MOB",
+    "scale": 0.3
+   },
+   "wind": 0,
+   "note": "Sails down, under engine"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are returning to a man overboard under sail. On which point of sail do you make the final approach?",
+  "a": "A close reach, easing sheets to stop beside them",
+  "o": [
+   "A run, coming straight down onto them",
+   "Close-hauled at full speed, sheets in hard",
+   "A broad reach, sails full until alongside"
+  ],
+  "why": "On a close reach you can spill wind to slow down and sheet in to speed up: full control of speed.",
+  "ref": "Man overboard",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 330,
+    "dist": 80,
+    "hdg": 0,
+    "label": "MOB",
+    "scale": 0.3
+   },
+   "wind": 0,
+   "note": "Under sail, coming back to the casualty"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You smell burning and see this as you motor along. How do you tackle the fire?",
+  "a": "Stop the engine, shut the fuel, discharge through the port",
+  "o": [
+   "Open the engine box wide to see the fire",
+   "Keep the engine running to reach harbour",
+   "Pour sea water into the box with a bucket"
+  ],
+  "why": "Stopping the engine and the fuel starves the fire; opening the box feeds it air.",
+  "ref": "Fire",
+  "fig": {
+   "type": "card",
+   "title": "Engine compartment",
+   "lines": [
+    "Smoke coming from round the engine box",
+    "Engine still running",
+    "Extinguisher port in the box lid"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Where do you look first for the leak?",
+  "a": "Seacocks, hoses and the stern gland",
+  "o": [
+   "The deck hatches and the portlights",
+   "The mast foot and the anchor locker",
+   "The cockpit lockers and the swim ladder"
+  ],
+  "why": "Water gets in fast through fittings below the waterline: seacocks, hose clips, the stern gland.",
+  "ref": "Flooding",
+  "fig": {
+   "type": "card",
+   "title": "Water over the floorboards",
+   "lines": [
+    "No collision, no grounding",
+    "Engine running all morning",
+    "Bilge pump running"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You find a hose has come off a seacock below the waterline and the sea is pouring in. What do you do?",
+  "a": "Close the seacock, or drive in the wooden bung",
+  "o": [
+   "Start the bilge pump and head for harbour",
+   "Stuff a towel round it and keep sailing",
+   "Call the lead boat and wait for advice"
+  ],
+  "why": "Stop the water at the source: close the valve; if it will not close, hammer in the tapered softwood bung.",
+  "ref": "Flooding",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You hit an uncharted rock at 5 knots and stop, sitting on it. Nobody is hurt. What do you do before trying to get off?",
+  "a": "Check the bilge and hull for water coming in",
+  "o": [
+   "Reverse off at full power straight away",
+   "Drive on ahead at full power over it",
+   "Send the crew swimming to push her off"
+  ],
+  "why": "If the hull is holed, the rock may be plugging it: find out before you pull off into deep water.",
+  "ref": "Grounding",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The propeller is fouled and the engine has stopped. How do you carry on?",
+  "a": "Leave the engine off, sail on and call the lead boat",
+  "o": [
+   "Restart in reverse to unwind the rope",
+   "Restart and run ahead hard to cut it free",
+   "Dive under at once with the engine idling"
+  ],
+  "why": "Restarting can wreck the shaft or gearbox: keep it off, sail, and get help to clear the rope.",
+  "ref": "Fouled propeller",
+  "fig": {
+   "type": "card",
+   "title": "Rope round the propeller",
+   "lines": [
+    "Engine stalled after a thump",
+    "Floating line trailing astern",
+    "Wind F3 off the land; harbour 2 M away"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "A shroud breaks and the mast goes over the side, banging against the hull. You want to use the engine. What do you do first?",
+  "a": "Get every rope and wire out of the water",
+  "o": [
+   "Start the engine and motor away from the rig",
+   "Start the engine and tow the mast to harbour",
+   "Start the engine and hold her head to the sea"
+  ],
+  "why": "A trailing rope or wire will foul the propeller; start the engine only when nothing is in the water near it.",
+  "ref": "Dismasting",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You call the coastguard. Which call do you make?",
+  "a": "PAN-PAN — urgent, but no grave and imminent danger",
+  "o": [
+   "MAYDAY — any injury aboard is a distress",
+   "SÉCURITÉ — it is a safety message",
+   "No call — wait for the evening harbour"
+  ],
+  "why": "PAN-PAN is for urgent help, medical included; MAYDAY is for grave and imminent danger to life or vessel.",
+  "ref": "Distress & urgency calls",
+  "fig": {
+   "type": "card",
+   "title": "Crew injury",
+   "lines": [
+    "Deep cut to the leg from a winch handle",
+    "Bleeding controlled with a pressure pad",
+    "Needs a doctor; the boat is fine"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You need to raise the alarm. Which flare do you use?",
+  "a": "A red parachute rocket",
+  "o": [
+   "A red hand flare",
+   "An orange smoke signal",
+   "A white hand flare"
+  ],
+  "why": "A parachute rocket goes up about 300 m and is seen from far off; hand flares pinpoint you once help is near.",
+  "ref": "Distress flares",
+  "fig": {
+   "type": "card",
+   "title": "Night, disabled and drifting",
+   "lines": [
+    "8 M off the coast, VHF dead",
+    "No vessels in sight",
+    "Aboard: rockets, hand flares, smoke"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your crew member has just been pulled back aboard. How do you warm them up?",
+  "a": "Shelter, dry clothes, wrap them up, warm sweet drinks",
+  "o": [
+   "A good tot of brandy to warm them up",
+   "Rub their arms and legs hard to warm them",
+   "Walk them briskly round the deck"
+  ],
+  "why": "Warm gradually: out of the wind, dry layers and a sleeping bag; drinks only if alert, never alcohol.",
+  "ref": "First aid — hypothermia",
+  "fig": {
+   "type": "card",
+   "title": "Recovered from the water",
+   "lines": [
+    "April, sea 16 °C, 30 minutes in the water",
+    "Shivering hard, conscious and talking"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "A crew member scalds a forearm with boiling water from the kettle. What do you do?",
+  "a": "Cool it under cool running water for 20 minutes",
+  "o": [
+   "Smear butter or oil on it to soothe it",
+   "Burst the blisters, then cover it tightly",
+   "Hold ice straight on the skin for an hour"
+  ],
+  "why": "Cool running water for 20 minutes limits the damage; then cover loosely with cling film or a clean dressing.",
+  "ref": "First aid — burns",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "You have run gently aground on sand. How do you try to get off?",
+  "a": "Reverse gently the way you came, crew to one side",
+  "o": [
+   "Full ahead to drive over the bank",
+   "Full astern and hold it, crew sitting still",
+   "Wait for the tide to float you off tonight"
+  ],
+  "why": "Back out along your own track; heeling the boat reduces draft. If that fails, call the lead boat — the Med tide will not help.",
+  "ref": "Grounding",
+  "fig": {
+   "type": "card",
+   "title": "Aground",
+   "lines": [
+    "Touched a sandbank at 3 kn",
+    "Bilge dry, no damage",
+    "Lead boat 1 M away, wind light"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "The boom swings across in a gybe and strikes a crew member's head. They are knocked out for a few seconds, then say they feel fine. What do you do?",
+  "a": "Get medical advice and watch them closely for hours",
+  "o": [
+   "Nothing — they say they feel fine now",
+   "Painkillers and let them sleep it off alone",
+   "A stiff drink to help them over the shock"
+  ],
+  "why": "Any knock-out needs medical advice; drowsiness, vomiting or confusion later can mean bleeding inside the skull.",
+  "ref": "First aid — head injury",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "A crew member who has been on deck all day is in this state. What do you do for them?",
+  "a": "Shade, cool with water and fanning, call for medical help",
+  "o": [
+   "Give salt tablets and let them rest in the sun",
+   "Wrap them in a blanket to stop the shivering",
+   "Let them sleep it off in the forecabin"
+  ],
+  "why": "Hot dry skin and confusion mean heat stroke, a medical emergency: cool them fast and get help (PAN-PAN).",
+  "ref": "First aid — heat stroke",
+  "fig": {
+   "type": "card",
+   "title": "August, midday, no shade",
+   "lines": [
+    "Crew member hot, red and dry-skinned",
+    "Confused, slurring, has stopped sweating",
+    "Headache since the morning"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "The fire is now beyond your extinguishers. Which actions come next?",
+  "a": "MAYDAY on 16, all on deck in lifejackets, raft ready",
+  "o": [
+   "Call the lead boat on the working channel and wait",
+   "Open all hatches to clear the smoke below",
+   "Everyone into the liferaft before any call"
+  ],
+  "why": "A fire you cannot control is grave and imminent danger: MAYDAY first, then prepare to abandon.",
+  "ref": "Distress & urgency calls",
+  "fig": {
+   "type": "card",
+   "title": "Fire out of control",
+   "lines": [
+    "Engine fire spreading, extinguishers used",
+    "Thick smoke below",
+    "2 M offshore; lead boat 3 M away"
+   ]
+  }
+ }
+]

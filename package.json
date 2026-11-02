@@ -7,6 +7,9 @@
     "dev": "node miniapp/build.mjs --serve",
     "build": "node miniapp/build.mjs",
     "bot": "node --env-file=.env.local bot/bot.mjs",
-    "bot:setup": "node --env-file=.env.local bot/scripts/setup.mjs"
+    "bot:setup": "node --env-file=.env.local bot/scripts/setup.mjs",
+    "bot:webhook": "node --env-file=.env.local bot/scripts/webhook.mjs",
+    "bot:daily": "node --env-file=.env.local bot/scripts/daily.mjs",
+    "db:load": "node --env-file=.env.local data/load.mjs"
   }
 }

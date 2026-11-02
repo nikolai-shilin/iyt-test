@@ -84,7 +84,7 @@ q('safety', 2, 'You are driving the dinghy alone to the beach. Where is the kill
   'Attached to your leg or lifejacket', ['Tied to the dinghy handle', 'In your pocket', 'Left on the yacht'], 'If you fall out, the cord pulls and the engine stops.', 'Dinghy safety')
 q('safety', 2, 'A crew member goes over the side on a broad reach. What is the very first thing you shout and do?',
   '"Man overboard!" — throw the danbuoy and horseshoe, point at the casualty', ['Send a Mayday', 'Start the engine', 'Drop the sails'], 'Flotation first and a spotter who never looks away.', 'Man overboard',
-  E(you=dict(hdg=0, sail=True, boom=-14), other=dict(bearing=165, dist=70, hdg=0, scale=.3, label='MOB'), wind=225, note='Casualty astern to port'))
+  E(you=dict(hdg=0, sail=True, boom=14), other=dict(bearing=165, dist=70, hdg=0, scale=.3, label='MOB'), wind=225, note='Casualty astern to port'))
 q('safety', 3, 'The yacht has hit a rock and is taking water, but the pumps are keeping up for now. The liferaft?',
   'Prepare it on deck on its painter, but stay aboard while the yacht floats', ['Launch and board it immediately', 'Leave it stowed until the deck is awash', 'Inflate it in the cockpit'], '"Step up into the liferaft" — the yacht is the better survival platform.', 'Abandoning ship')
 q('safety', 2, 'The charter check-out is done and the crew are aboard. Before leaving the marina you…',
@@ -99,13 +99,13 @@ q('safety', 2, 'Reefing in a rising wind, the foredeck crew goes forward. What i
 # ---------------- COLREGs (10) ----------------
 q('colregs', 1, 'Both yachts are sailing. Who gives way?',
   'You — you are on port tack, she is on starboard', ['She gives way', 'The windward boat', 'Neither'], 'Rule 12: port tack keeps clear of starboard tack.', 'COLREGs Rule 12',
-  E(you=dict(hdg=45, sail=True, boom=-14), other=dict(bearing=300, dist=85, hdg=315, sail=True, boom=14), wind=0, bearingLine=True))
+  E(you=dict(hdg=45, sail=True, boom=14), other=dict(bearing=300, dist=85, hdg=315, sail=True, boom=-14), wind=0, bearingLine=True))
 q('colregs', 2, 'Both yachts are on starboard tack. Who gives way?',
   'You — you are the windward boat', ['She gives way', 'The faster boat', 'The one to port'], 'Rule 12: same tack, windward keeps clear of leeward.', 'COLREGs Rule 12',
-  E(you=dict(hdg=60, sail=True, boom=14), other=dict(bearing=-80, dist=80, hdg=60, sail=True, boom=14), wind=330, bearingLine=True))
+  E(you=dict(hdg=60, sail=True, boom=-14), other=dict(bearing=-80, dist=80, hdg=60, sail=True, boom=-14), wind=150, bearingLine=True))
 q('colregs', 2, 'You are motor-sailing with the engine in gear. A yacht under sail alone is crossing from your starboard. Who gives way?',
   'You — under power you are a power-driven vessel', ['She does — you have sails up', 'Nobody, both are sailing', 'The one on port tack'], 'Rule 3: sail plus engine = power-driven; show the cone by day.', 'COLREGs Rule 3 / 18',
-  E(you=dict(hdg=0, sail=True, boom=-14), other=dict(bearing=60, dist=85, hdg=270, sail=True, boom=14), wind=45, bearingLine=True, note='Your engine is running and in gear'))
+  E(you=dict(hdg=0, sail=True, boom=-14), other=dict(bearing=60, dist=85, hdg=270, sail=True, boom=-14), wind=45, bearingLine=True, note='Your engine is running and in gear'))
 q('colregs', 2, 'Motoring, you see a motorboat crossing on this bearing, which has not changed for five minutes. What do you do?',
   'Give way — alter course to starboard, early and clearly, and pass astern of her', ['Hold course, she is to starboard so she gives way', 'Speed up to cross ahead', 'Alter course to port'], 'Rule 15: she is on your starboard side, so you keep clear; avoid crossing ahead.', 'COLREGs Rule 15',
   E(you=dict(hdg=0), other=dict(bearing=50, dist=90, hdg=270), bearingLine=True, note='Bearing steady at 050° relative'))
@@ -114,7 +114,7 @@ q('colregs', 1, 'Two motor yachts are meeting head-on in a channel. What do you 
   E(you=dict(hdg=0), other=dict(bearing=0, dist=90, hdg=180), bearingLine=True))
 q('colregs', 2, 'Under sail you are catching up a slow motorboat from astern. Who gives way?',
   'You — the overtaking vessel always keeps clear', ['The motorboat — sail has priority', 'Neither', 'The one to starboard'], 'Rule 13 overrides sail-over-power.', 'COLREGs Rule 13',
-  E(you=dict(hdg=0, sail=True, boom=14), other=dict(bearing=5, dist=85, hdg=0), wind=120, bearingLine=True, note='You are faster, approaching from well abaft her beam'))
+  E(you=dict(hdg=0, sail=True, boom=-14), other=dict(bearing=5, dist=85, hdg=0), wind=120, bearingLine=True, note='You are faster, approaching from well abaft her beam'))
 q('colregs', 2, 'Under sail you meet a vessel with these shapes, towing nets. Who gives way?',
   'You — sail keeps clear of a vessel engaged in fishing', ['The fishing vessel', 'Whoever is on port tack', 'Neither, pass at a distance'], 'Rule 18: sail gives way to fishing, NUC and RAM.', 'COLREGs Rule 18',
   dict(type='dayshape', shape='two-cones', note='Two cones apexes together: vessel engaged in fishing'))
@@ -175,13 +175,13 @@ q('buoyage', 2, 'A yellow buoy with this topmark sits off the beach. What is it?
   B(kind='special', rhythm='Fl Y'))
 q('buoyage', 2, 'At night you see these lights ahead and no others. What is it?',
   'A sailing vessel under sail (red over green masthead lights optional)', ['A trawler', 'A pilot vessel', 'A vessel aground'], 'Red over green at the masthead plus sidelights is a sailing vessel.', 'Navigation lights',
-  L(lights=[dict(c='r', x=160, y=60, t='red'), dict(c='g', x=160, y=84, t='green'), dict(c='r', x=140, y=124), dict(c='g', x=180, y=124)]))
+  L(lights=[dict(c='r', x=160, y=60, t='red'), dict(c='g', x=160, y=84, t='green'), dict(c='g', x=140, y=124), dict(c='r', x=180, y=124)]))
 q('buoyage', 2, 'You see a single white light low down, its bearing slowly changing. What is most likely?',
   'The sternlight of a vessel moving away — or an anchored vessel; watch the bearing', ['A vessel coming straight at you', 'A lighthouse', 'A fishing vessel'], 'One white light: stern view or at anchor; only the bearing tells you which.', 'Navigation lights',
   L(lights=[dict(c='w', x=160, y=122, t='white')], note='Night · single white light, bearing drawing slowly left'))
 q('buoyage', 3, 'At night you see these lights. What vessel, and who gives way?',
   'A trawler — green over white; you keep clear under sail or power', ['A pilot vessel — hold course', 'A vessel not under command', 'A vessel towing'], 'Green over white = trawling; fishing has priority over sail.', 'Navigation lights',
-  L(lights=[dict(c='g', x=160, y=58, t='green'), dict(c='w', x=160, y=82, t='white'), dict(c='r', x=140, y=124), dict(c='g', x=180, y=124)]))
+  L(lights=[dict(c='g', x=160, y=58, t='green'), dict(c='w', x=160, y=82, t='white'), dict(c='g', x=140, y=124), dict(c='r', x=180, y=124)]))
 q('buoyage', 3, 'You are switching from sail to engine at night. Which lights do you turn on and off?',
   'Off: tricolour. On: steaming light plus deck-level sidelights and sternlight', ['Leave the tricolour on and add the steaming light', 'Tricolour and anchor light', 'Only the all-round white'], 'Tricolour is for sail only; never with the steaming light.', 'Navigation lights',
   L(lights=[dict(c='r', x=140, y=46), dict(c='g', x=180, y=46), dict(c='w', x=160, y=40, t='tricolour (masthead)')], note='Yacht under sail — about to start the engine'))
@@ -222,8 +222,8 @@ q('anchoring', 2, 'Wind is forecast to go round to the south overnight. Which sp
   'Spot A — sheltered by the land to the south', ['Spot B — open to the south', 'Spot C — in the channel', 'Any, the bay is calm now'], 'Choose shelter from the forecast wind, not the present one.', 'Anchoring',
   dict(type='bay', wind=180, land='M0 200 H320 V140 C 260 130 230 90 200 70 C 170 50 120 60 80 80 C 50 95 20 110 0 100 Z', spots=[[150, 150, 'A'], [240, 60, 'B'], [60, 40, 'C']], labels=[[160, 185, 'LAND (south)', 'middle']], note='Forecast: wind backing south overnight, F5'))
 q('anchoring', 2, 'The chart shows these seabeds. Where will the anchor hold best?',
-  'Sand (S)', ['Weed (Wd)', 'Rock (R)', 'Shingle (Sh)'], 'Sand and mud let the anchor dig in; weed and rock do not.', 'Anchoring',
-  dict(type='chart', depths=[[60, 80, 'S'], [140, 60, 'Wd'], [220, 90, 'R'], [120, 150, 'Sh'], [240, 160, 'M']], note='Chart seabed abbreviations'))
+  'Sand (S)', ['Weed (Wd)', 'Rock (R)', 'Shingle (Sn)'], 'Sand and mud let the anchor dig in; weed and rock do not.', 'Anchoring',
+  dict(type='chart', depths=[[60, 80, 'S'], [140, 60, 'Wd'], [220, 90, 'R'], [120, 150, 'Sn'], [240, 160, 'M']], note='Chart seabed abbreviations'))
 q('anchoring', 2, 'The anchor is down and the chain paid out. What next?',
   'Reverse gently to dig it in, then check transits ashore or the anchor alarm', ['Go below for dinner', 'Motor ahead over the anchor', 'Tie the chain to the pulpit'], 'Set the anchor and prove it is holding before relaxing.', 'Anchoring')
 q('anchoring', 2, 'You are anchored in a busy bay by day. What do you hoist?',
@@ -239,8 +239,8 @@ q('anchoring', 2, 'The marinero hands you a slimy line from the quay as you reve
 q('anchoring', 2, 'Alongside a pontoon the boat surges back and forth with the wash. Which line stops it?',
   'A spring — run diagonally from bow aft or from stern forward', ['A breast line', 'The bow line', 'A second stern line'], 'Breasts and bow/stern lines hold the boat in; springs stop fore-and-aft movement.', 'Mooring alongside')
 q('anchoring', 3, 'The wind is pinning you against the pontoon. How do you leave?',
-  'Spring off: stern spring, helm towards the pontoon, motor gently ahead until the bow swings out, then astern', ['Full ahead with full rudder', 'Push off by hand and hope', 'Wait for the wind to change'], 'The engine against a single line levers one end away.', 'Boat handling',
-  dict(type='bay', wind=270, land='M0 0 H40 V200 H0 Z', spots=[], labels=[[20, 100, 'PONTOON', 'middle'], [130, 100, 'yacht pinned on', 'middle']], note='Wind onto the pontoon, F4'))
+  'Spring the stern out: bow spring led aft, fender the bow, helm towards the pontoon, gently ahead, then astern clear', ['Full ahead with full rudder', 'Push off by hand and hope', 'Wait for the wind to change'], 'Ahead against a bow spring pivots the boat on the bow and swings the stern out into the wind.', 'Boat handling',
+  dict(type='bay', wind=90, land='M0 0 H40 V200 H0 Z', spots=[], labels=[[20, 100, 'PONTOON', 'middle'], [130, 100, 'yacht pinned on', 'middle']], note='Wind onto the pontoon, F4'))
 
 # ---------------- systems (10) ----------------
 q('systems', 1, 'Before starting the engine for the day, what do you check?',
@@ -289,8 +289,8 @@ q('emergency', 2, 'Water is rising fast in the bilge. First action?',
 q('emergency', 2, 'Which call for this?',
   'PAN-PAN — urgent, not yet life-threatening', ['MAYDAY', 'SÉCURITÉ', 'No call needed'], 'Engine failure drifting slowly with time in hand: urgency, not distress.', 'Urgency procedure',
   dict(type='card', title='Engine failure', lines=['No wind, drifting at 0.5 kn towards rocks 3 miles off', 'Anchor ready, 60 m depth — too deep', 'Crew well, boat sound'], tag='PAN-PAN?'))
-q('emergency', 3, 'You are coming back to the man overboard under power. Where do you stop, and what about the engine?',
-  'Stop to windward of the casualty, bow into the wind, engine in neutral at the moment of contact', ['Downwind, engine ahead to hold position', 'At full speed from astern', 'Under full sail'], 'Drift down gently; a turning prop next to a swimmer is lethal.', 'Man overboard',
+q('emergency', 3, 'You are coming back to the man overboard under power. How do you make the final approach?',
+  'Slowly, heading into the wind; neutral as they come alongside near the bow', ['Downwind, engine ahead to hold position', 'Stern-first, so they can reach the ladder', 'Fast, then a burst astern beside them'], 'Into the wind you stop easily; a turning prop next to a swimmer is lethal.', 'Man overboard',
   E(you=dict(hdg=0), other=dict(bearing=-20, dist=60, hdg=0, scale=.3, label='MOB'), wind=0, note='Final approach under power, wind from ahead'))
 q('emergency', 2, 'The yacht has an EPIRB in the cockpit locker. When do you use it?',
   'In a real emergency when the vessel or crew are in grave danger — it alerts rescue services by satellite', ['To test the batteries each morning', 'To call the marina', 'When the VHF is busy'], 'Cospas-Sarsat alerts rescue worldwide; false alerts cost real rescues.', 'Distress signals')

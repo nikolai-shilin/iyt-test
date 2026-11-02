@@ -1,0 +1,336 @@
+[
+ {
+  "topic": "helming",
+  "difficulty": 1,
+  "q": "You are steering with a tiller and want the bow to turn to port. Which way do you move the tiller?",
+  "a": "To starboard",
+  "o": [
+   "To port",
+   "Straight back towards you",
+   "Hold it central and wait"
+  ],
+  "why": "A tiller works the opposite way: push it to starboard and the bow swings to port.",
+  "ref": "Helming",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 1,
+  "q": "You are steering with a wheel and want to turn to starboard. Which way do you turn it?",
+  "a": "Clockwise, like a car",
+  "o": [
+   "Anticlockwise, the opposite way",
+   "Either way: the rudder finds the course",
+   "Anticlockwise, then back to the centre"
+  ],
+  "why": "A wheel steers like a car: turn it to starboard to go to starboard.",
+  "ref": "Helming",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 1,
+  "q": "You call \"Ready about\" and the crew answer \"Ready\". What do you call as you put the helm over?",
+  "a": "\"Lee-oh!\"",
+  "o": [
+   "\"Gybe-oh!\"",
+   "\"Ready about!\" again",
+   "\"Let go!\""
+  ],
+  "why": "\"Lee-oh\" (or \"Helm's a-lee\") tells the crew the bow is now turning through the wind.",
+  "ref": "Helm's calls",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 1,
+  "q": "The engine is off, there is no wind and the boat is drifting. You turn the wheel but the bow does not answer. Why?",
+  "a": "No water is flowing past the rudder",
+  "o": [
+   "The wheel needs turning much faster",
+   "The rudder only works under engine",
+   "The wheel has come off the rudder"
+  ],
+  "why": "A rudder steers only when water flows over it: no way on, no steering.",
+  "ref": "Helming",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "You have just taken the wheel. Which way do you turn?",
+  "a": "To starboard, about 10°",
+  "o": [
+   "To port, about 10°",
+   "To starboard, about 140°",
+   "Neither: the compass will catch up"
+  ],
+  "why": "Headings grow clockwise: to go from 130° to 140°, turn 10° to starboard.",
+  "ref": "Steering a course",
+  "fig": {
+   "type": "card",
+   "title": "At the wheel",
+   "lines": [
+    "Skipper: \"Steer 140°\"",
+    "Steering compass shows 130°"
+   ]
+  }
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "The skipper gives you 090° towards a headland 8 miles away. The compass swings in the waves and is tiring to watch. What helps?",
+  "a": "Steer for a landmark on 090° and check the compass now and then",
+  "o": [
+   "Chase every swing of the compass card",
+   "Steer by the wake astern, keeping it straight",
+   "Steer for the nearest boat on that side"
+  ],
+  "why": "A fixed landmark is steadier to steer for; the compass confirms you are still on course.",
+  "ref": "Steering a course",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "You are steering and see this on the genoa. What do you do with the helm?",
+  "a": "Bear away a little until both stream",
+  "o": [
+   "Luff up a little until both stream",
+   "Hold this heading: all is well",
+   "Tack at once onto the other tack"
+  ],
+  "why": "A lifting windward tell-tale means you are too close to the wind: bear away.",
+  "ref": "Steering by the wind",
+  "fig": {
+   "type": "card",
+   "title": "Close-hauled, sheets cleated",
+   "lines": [
+    "Windward tell-tale: lifting",
+    "Leeward tell-tale: streaming",
+    "Skipper: \"Steer by the tell-tales\""
+   ]
+  }
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "The skipper asks you to sail as close to the wind as you can. How do you find the limit?",
+  "a": "Head up slowly until the genoa luff lifts, then bear away a touch",
+  "o": [
+   "Head up until the boat stops, then hold that heading",
+   "Bear away until the boat heels hard, then hold it",
+   "Steer straight into the wind and wait"
+  ],
+  "why": "The edge of the no-go zone is where the luff starts to lift; just below it the sails drive.",
+  "ref": "Steering by the wind",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 45,
+   "nogo": true,
+   "note": "Close-hauled, sheets in tight"
+  }
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "On a run, the skipper asks you to gybe. What do you call, and when?",
+  "a": "\"Ready to gybe\", wait for \"Ready\", then \"Gybe-oh\" as you turn",
+  "o": [
+   "\"Gybe-oh\", turn at once, then \"Ready to gybe\"",
+   "\"Ready about\", wait for \"Ready\", then \"Lee-oh\"",
+   "\"Ready to gybe\", then turn without waiting"
+  ],
+  "why": "Warn, wait for every crew member to answer, then call as the stern goes through the wind.",
+  "ref": "Helm's calls",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "You are helming into a crowded marina under engine. What speed do you keep?",
+  "a": "Slow, but enough to keep steering",
+  "o": [
+   "Brisk, for good control in the wind",
+   "None: engine in neutral, drifting in",
+   "Whatever the skipper set out at sea"
+  ],
+  "why": "Go no faster than you would be happy to hit something at, but keep enough way to steer.",
+  "ref": "Under power",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "Motoring slowly astern, you want the stern to swing to starboard. Which way do you turn the wheel?",
+  "a": "To starboard: astern, the stern follows the wheel",
+  "o": [
+   "To port: astern, the steering is reversed",
+   "Amidships: going astern you cannot steer",
+   "To port, then give a burst ahead"
+  ],
+  "why": "Going astern with a wheel, turn it the way you want the stern to go.",
+  "ref": "Under power",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "You are at the wheel and put the engine into reverse. What do you expect first?",
+  "a": "The stern swings to port before she gathers way",
+  "o": [
+   "The stern swings to starboard at first",
+   "The bow swings to port at first",
+   "Nothing until you turn the wheel"
+  ],
+  "why": "Prop walk pushes the stern sideways in reverse, most of all before the boat is moving.",
+  "ref": "Under power",
+  "fig": {
+   "type": "card",
+   "title": "Skipper's briefing",
+   "lines": [
+    "\"Astern, her stern kicks to port\"",
+    "Now: stopped, wheel amidships"
+   ]
+  }
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "Two crew are working at the mast, sorting out a halyard. You are on the helm. What do you do?",
+  "a": "Hold a steady course and warn them before any turn",
+  "o": [
+   "Steer for the smoothest water, turning often",
+   "Speed up so they are finished sooner",
+   "Leave the helm for a moment to help them"
+  ],
+  "why": "Sudden turns or heel throw crew on deck off balance; keep her steady and call any change.",
+  "ref": "Helming",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "Under engine, the skipper asks you to hold the boat head to wind while the crew hoist the main. How do you know you are head to wind?",
+  "a": "The masthead wind arrow points dead ahead",
+  "o": [
+   "The boom swings out to one side",
+   "The genoa sheet goes tight",
+   "The wind is on the back of your neck"
+  ],
+  "why": "Head to wind, the wind comes over the bow, so the masthead arrow points straight forward.",
+  "ref": "Helming",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "On your first spell at the wheel, the boat wanders 20° either side of the course. What helps most?",
+  "a": "Small, early corrections, then wait for her to answer",
+  "o": [
+   "Big turns of the wheel to get back quickly",
+   "Holding the wheel rigid, never moving it",
+   "Steering by the compass only, never ahead"
+  ],
+  "why": "A boat answers the helm slowly; small early corrections stop you over-steering.",
+  "ref": "Steering a course",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 2,
+  "q": "You call \"Ready about\". One crew answers \"Ready\", but the one on the other sheet is still putting turns on the winch. What do you do?",
+  "a": "Wait until everyone has answered \"Ready\"",
+  "o": [
+   "Tack anyway: one crew member is enough",
+   "Call \"Lee-oh\" louder and start the turn",
+   "Tack, and let them catch up after"
+  ],
+  "why": "Only start the turn when every crew member has answered \"Ready\".",
+  "ref": "Helm's calls",
+  "fig": null
+ },
+ {
+  "topic": "helming",
+  "difficulty": 3,
+  "q": "A wave pushes the stern on this course. Which turn of the bow risks an accidental gybe?",
+  "a": "A turn to starboard, towards the boom",
+  "o": [
+   "A turn to port, away from the boom",
+   "Any turn at all, either way",
+   "None: on a run the boom cannot cross"
+  ],
+  "why": "Turning towards the boom side takes the stern through the wind, and the boom slams across.",
+  "ref": "Steering downwind",
+  "fig": {
+   "type": "sail",
+   "wind": 90,
+   "hdg": 260,
+   "note": "Run, boom out to starboard"
+  }
+ },
+ {
+  "topic": "helming",
+  "difficulty": 3,
+  "q": "You are steering with a tiller from the windward side. The skipper says \"Bear away a little\". Which way do you move the tiller?",
+  "a": "Towards you, to windward",
+  "o": [
+   "Away from you, towards the boom",
+   "It depends which tack you are on",
+   "Hold it central: the sheets steer"
+  ],
+  "why": "Tiller to windward turns the bow to leeward, away from the wind: that is bearing away.",
+  "ref": "Helming",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 60,
+   "note": "Close reach, tiller steering"
+  }
+ },
+ {
+  "topic": "helming",
+  "difficulty": 3,
+  "q": "The skipper beside you asks what you would do. What is the best answer?",
+  "a": "A short burst ahead, to push water over the rudder",
+  "o": [
+   "Engine to neutral, and wait for the wind to drop",
+   "Turn the wheel hard over the other way",
+   "A long burst astern to stop the boat"
+  ],
+  "why": "Too slow, the rudder has no grip; a burst of propeller wash over it brings the steering back.",
+  "ref": "Under power",
+  "fig": {
+   "type": "card",
+   "title": "Entering the marina",
+   "lines": [
+    "Speed 1 kn, strong crosswind",
+    "The bow is blowing off sideways",
+    "Wheel hard over, no response"
+   ]
+  }
+ },
+ {
+  "topic": "helming",
+  "difficulty": 3,
+  "q": "Anna is taking over the helm from you. What do you tell her?",
+  "a": "The course, the wind, and the ferry ahead",
+  "o": [
+   "Only the course: she can see the rest",
+   "Only the ferry: the course can wait",
+   "How long you steered, and the boat speed"
+  ],
+  "why": "A handover gives the course, the wind and sail trim, and any traffic to watch.",
+  "ref": "Handing over",
+  "fig": {
+   "type": "card",
+   "title": "Handing over the helm",
+   "lines": [
+    "Course 220°, close reach",
+    "Wind NW 18 kn, rising",
+    "Ferry crossing ahead, 2 miles off"
+   ]
+  }
+ }
+]

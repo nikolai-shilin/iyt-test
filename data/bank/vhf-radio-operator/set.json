@@ -1,0 +1,343 @@
+[
+ {
+  "topic": "set",
+  "difficulty": 1,
+  "q": "A new crew member asks which control keeps the radio quiet between calls without cutting anyone out. What do you show them?",
+  "a": "The squelch, set just past the point where the hiss stops",
+  "o": [
+   "The volume, turned right down until it is silent",
+   "The power switch, set to low power, 1 W",
+   "The dual watch button, so it listens less"
+  ],
+  "why": "Squelch mutes background hiss; set just past the hiss so weak stations still open it.",
+  "ref": "VHF set",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "A friend says he called you twice this afternoon, but you heard nothing. What is the most likely reason?",
+  "a": "The squelch is so high that weaker signals cannot open it",
+  "o": [
+   "The 25 W setting drowns out stations that call you",
+   "Half volume mutes stations more than 5 miles away",
+   "Channel 16 stays silent unless DSC is switched on"
+  ],
+  "why": "Squelch turned right up cuts out everything but strong signals; back it off to just past the hiss.",
+  "ref": "VHF set",
+  "fig": {
+   "type": "card",
+   "title": "Your VHF since lunch",
+   "lines": [
+    "Squelch: turned fully up",
+    "Volume: half way",
+    "Power: 25 W, channel 16",
+    "Not a sound for three hours"
+   ]
+  }
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "Your friend's yacht does not answer. What do you change first?",
+  "a": "Switch to high power, 25 W, and call again",
+  "o": [
+   "Turn the squelch up and call again on 1 W",
+   "Stay on 1 W and call again straight away",
+   "Switch to dual watch and call again on 1 W"
+  ],
+  "why": "Low power, 1 W, is for short range; at 12 miles you need 25 W.",
+  "ref": "VHF set",
+  "fig": {
+   "type": "card",
+   "title": "Calling a friend",
+   "lines": [
+    "Her yacht: 12 miles away, open water",
+    "She is listening on 72",
+    "Your set: channel 72, power 1 W",
+    "Two calls, no reply"
+   ]
+  }
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "You expect calls from the marina on its working channel and from your friend on 72, and you must keep listening to 16. Which function do you use?",
+  "a": "Tri-watch: 16 plus the two channels you choose",
+  "o": [
+   "Dual watch on 16 and channel 72 only",
+   "Low power with the squelch turned fully up",
+   "Channel 70 set to receive voice calls"
+  ],
+  "why": "Tri-watch checks 16 and two other channels in turn; dual watch covers only one besides 16.",
+  "ref": "VHF set",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "The marina says your calls arrive as \"…is Aurora, OVER\" — the start is always missing. What are you doing wrong?",
+  "a": "Speaking the instant you press; pause a moment, then speak",
+  "o": [
+   "Holding the microphone a hand's width from your mouth",
+   "Calling with the squelch set too low on your own set",
+   "Transmitting on 25 W instead of 1 W so close by"
+  ],
+  "why": "The set needs a moment after you press the button; words spoken at once are clipped.",
+  "ref": "VHF technique",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "Your crew calls the marina, shouting with the microphone pressed to his lips. The marina cannot understand him. What do you tell him?",
+  "a": "Hold it a few centimetres away and speak in a normal voice",
+  "o": [
+   "Hold it at arm's length and shout a little louder",
+   "Keep it at his lips but switch to high power, 25 W",
+   "Keep it at his lips and turn the squelch down"
+  ],
+  "why": "Shouting into a mic held at the lips distorts speech; a few centimetres and a normal voice is clearest.",
+  "ref": "VHF technique",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 3,
+  "q": "The marina complains that someone has blocked its working channel for ten minutes. Then you notice the scene in the figure. What is happening?",
+  "a": "The handheld's transmit button is pressed in the locker",
+  "o": [
+   "The fixed set is relaying 16 onto the marina channel",
+   "Low power on the fixed set leaks onto other channels",
+   "The handheld's low battery makes it send a carrier"
+  ],
+  "why": "A jammed press-to-talk button transmits non-stop and blocks the channel for everyone.",
+  "ref": "VHF set",
+  "fig": {
+   "type": "card",
+   "title": "In the cockpit",
+   "lines": [
+    "Handheld on the marina channel",
+    "Jammed in a locker under fenders",
+    "Its TX light is on",
+    "You hear nothing from the marina"
+   ]
+  }
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "Your charter yacht has its VHF antenna on the pushpit rail, not at the masthead. What do you expect compared with a masthead antenna?",
+  "a": "Shorter range, because the antenna is much lower",
+  "o": [
+   "Longer range, because the cable to the set is shorter",
+   "The same range, as height does not matter on VHF",
+   "Better range on 16 but shorter on working channels"
+  ],
+  "why": "VHF range depends mainly on antenna height; a low antenna sees a closer horizon.",
+  "ref": "VHF range",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "Your radio checks now reach only a mile or two. What do you do?",
+  "a": "Clean or replace the connector before relying on the set",
+  "o": [
+   "Switch to low power to protect the set from damage",
+   "Turn the squelch to minimum to hear stations better",
+   "Use channel 70 by voice, as it carries further"
+  ],
+  "why": "A corroded antenna connection loses most of the signal; fix the coax and connectors.",
+  "ref": "VHF range",
+  "fig": {
+   "type": "card",
+   "title": "After the winter",
+   "lines": [
+    "Antenna cable joint at the mast foot",
+    "Connector green with corrosion",
+    "Range: 1–2 miles instead of 20"
+   ]
+  }
+ },
+ {
+  "topic": "set",
+  "difficulty": 3,
+  "q": "You call the coast station and it reports your signal as weak. What do you do first?",
+  "a": "Run the engine to charge the battery, then call again",
+  "o": [
+   "Lower the antenna, as you are too close to the station",
+   "Turn your own squelch up and call again at once",
+   "Switch to channel 70 and repeat the call by voice"
+  ],
+  "why": "A fixed set needs a healthy supply; at low voltage it cannot transmit at full power.",
+  "ref": "VHF set",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "11.2",
+     true
+    ],
+    [
+     "VHF",
+     "25 W",
+     false
+    ]
+   ],
+   "lines": [
+    "Coast station: \"Aurora, you are weak\"",
+    "Engine off since yesterday, fridge running"
+   ]
+  }
+ },
+ {
+  "topic": "set",
+  "difficulty": 1,
+  "q": "You are 20 miles offshore and need to reach the coast station. You have the fixed set with a masthead antenna and a handheld. Which do you use?",
+  "a": "The fixed set: more power and a much higher antenna",
+  "o": [
+   "The handheld: it is closer to your mouth and clearer",
+   "The handheld, held up as high as you can in the cockpit",
+   "Either: both reach the same distance on channel 16"
+  ],
+  "why": "A masthead antenna and 25 W reach far beyond a handheld's few miles.",
+  "ref": "VHF range",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "You are going ashore in the dinghy for the afternoon. The handheld shows one bar of battery. What do you do?",
+  "a": "Charge it or fit a charged battery pack before you leave",
+  "o": [
+   "Take it as it is — one bar lasts a whole afternoon",
+   "Take it on scan mode, which uses less battery",
+   "Leave it aboard and rely on someone's mobile phone"
+  ],
+  "why": "Transmitting drains a handheld fast; one bar may die when you press the button.",
+  "ref": "VHF set",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "Your handheld is marked IPX7. What may you rely on?",
+  "a": "It survives a short dunking, about 1 m for 30 minutes",
+  "o": [
+   "It floats if it is dropped over the side",
+   "It can be used under water to about 10 m",
+   "It needs no fresh-water rinse after spray"
+  ],
+  "why": "IPX7 means protected against brief immersion; it does not mean it floats.",
+  "ref": "VHF set",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 3,
+  "q": "The marina is about 6 miles away over open water. How do you give the handheld its best chance?",
+  "a": "Stand up on deck, high power, antenna straight up",
+  "o": [
+   "Go below to the chart table, out of the wind",
+   "Stay in the cockpit and switch to low power",
+   "Hold it flat with the antenna aimed at the marina"
+  ],
+  "why": "Range comes from height and a vertical antenna; cabin and cockpit coamings block the signal.",
+  "ref": "VHF range",
+  "fig": {
+   "type": "card",
+   "title": "Handheld only",
+   "lines": [
+    "Fixed set out of action",
+    "Called from the cockpit: no reply",
+    "Handheld: 5 W high, 1 W low"
+   ]
+  }
+ },
+ {
+  "topic": "set",
+  "difficulty": 1,
+  "q": "You want to check that the radio on your new charter yacht works. How do you do it?",
+  "a": "Ask the marina or another boat for a check on a working channel",
+  "o": [
+   "Call \"radio check, all stations\" on 16 at low power",
+   "Make a short voice call on channel 70 to all ships",
+   "Call \"radio check, all stations\" on 16 at high power"
+  ],
+  "why": "Radio checks go on a working channel, never on 16 or 70.",
+  "ref": "VHF procedure",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 1,
+  "q": "You switch on the fixed VHF before leaving and the display stays blank. What do you check first?",
+  "a": "The VHF breaker on the switch panel and the battery switch",
+  "o": [
+   "The antenna cable connector at the top of the mast",
+   "The squelch, in case it is turned fully up",
+   "The DSC settings, in case the MMSI is missing"
+  ],
+  "why": "No display means no power: check the breaker, fuse and battery switch before anything else.",
+  "ref": "VHF set",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "The antenna cable is unplugged from the set while you fix the connector. Your crew wants to press the button \"just to test it\". What do you say?",
+  "a": "No — transmitting without an antenna can damage the set",
+  "o": [
+   "Fine on low power, 1 W, for a few seconds",
+   "Fine, as long as it is on channel 16",
+   "Fine — it simply transmits a shorter range"
+  ],
+  "why": "With no antenna the power has nowhere to go and can damage the transmitter.",
+  "ref": "VHF set",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "You are about to abandon ship into the liferaft. The fixed VHF and a charged waterproof handheld are aboard. Which radio goes with you?",
+  "a": "The waterproof handheld, kept in the grab bag or on you",
+  "o": [
+   "The fixed set, unplugged and wrapped in a bin bag",
+   "Neither: the liferaft has its own radio built in",
+   "The fixed set's handset, unplugged from the set"
+  ],
+  "why": "Only a handheld works away from the boat's antenna and batteries.",
+  "ref": "VHF set",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 2,
+  "q": "You call the marina from the helm in a strong wind. They hear mostly a roar. What do you do?",
+  "a": "Shield the microphone from the wind and speak normally",
+  "o": [
+   "Shout louder with the microphone held further away",
+   "Switch to high power so the voice cuts through",
+   "Turn the squelch down so your voice opens it"
+  ],
+  "why": "Wind across the microphone drowns speech; shelter it with your hand or body.",
+  "ref": "VHF technique",
+  "fig": null
+ },
+ {
+  "topic": "set",
+  "difficulty": 3,
+  "q": "Which pair can usually talk over the longest distance?",
+  "a": "A yacht's masthead set and a coast station on a hill",
+  "o": [
+   "Two yachts, each with a masthead antenna",
+   "A handheld in a cockpit and a masthead set",
+   "Two handhelds, each held up in a cockpit"
+  ],
+  "why": "Range grows with the height of both antennas; a hilltop coast station sees furthest.",
+  "ref": "VHF range",
+  "fig": null
+ }
+]

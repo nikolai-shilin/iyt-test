@@ -107,11 +107,40 @@ python3 data/check_topic.py <topic>
 It checks the shape, the difficulty spread (about 18/54/18 of 90), near-duplicates within the file and against the
 first 100, right answers that stand out by length, and that every figure renders with `figures.js` (needs Node).
 
-To add a level: copy the script to `build_<level>.py` with its own `TOPICS` and id prefix, write it to
-`data/questions/<level>.json`, and add the level to the home screens and the landing page.
+## Other levels
+
+VHF Radio Operator (`vhf-`), International Crew (`ic-`) and Flotilla Skipper (`fs-`) are built by
+`data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each topic is
+`data/bank/<level>/<topic>.json` (20 questions, about 4/12/4 by difficulty) with its Russian text beside it in
+`<topic>.ru.json`: the same order, `{q, a, o, why, ref, fig}`, where `o` keeps the English order of the wrong options and
+`fig` maps figure text paths to the translation. The build shuffles the options once and writes both
+`data/questions/<level>.json` and the overlay `data/questions/<level>.ru.json` in that same order.
+
+```
+python3 data/check_topic.py <level> <topic>    # shape, spread, duplicates in the level, figures, the Russian file
+python3 data/build_level.py [<level>]
+```
+
+To add a level: add it to `LEVELS` in `build_level.py`, write its topic files, build, then add its `id`, `prefix` and
+deep-link name to `LEVELS` in `miniapp/app.js` and `bot/core.mjs`.
 
 ## Translations
 
-The source language is English (the exam language). Translations keep the same ids and option order; only `q`,
-`options`, `why` and figure text fields (`note`, `title`, `lines`, `labels`, `t`) are translated. Storage: the
-`question_translations` table (data-model.md) or `data/questions/<level>.<lang>.json` with the same shape.
+The source language is English (the exam language). A translation is an overlay file
+`data/questions/<level>.<lang>.json` holding only translated text, keyed by question id, in the source's option
+order (so answers, progress and exams keyed by option index stay valid). Figure text is addressed by its path inside
+the figure spec — `note`, `lines.1`, `labels.0.2`, `lights.1.t`, `gauges.0.0`, `you.label` — so a translation can
+never move a coordinate. `topics` gives the topic titles, `short` the short names used on chips and buttons.
+
+```
+python3 data/i18n.py extract bareboat-skipper > /tmp/to-translate.json   # every string, in overlay shape
+python3 data/i18n.py check bareboat-skipper ru                           # what is missing, wrong or out of date
+```
+
+The mini app and the bot load the overlay for the reader's language and fall back to English per question, so a
+partial translation is safe to ship. `source` records the bank version the overlay was made from; `check` warns
+when the bank has moved on. Built-in figure labels ("You", "wind", "Variation"…) are translated in the app
+(`FIG_RU` in `miniapp/app.js`, via `FIG_TEXT` in figures.js) and used only on translated questions.
+
+Status: `bareboat-skipper.ru.json` covers all 1000 questions (bank version 2026-11-02c). Terms and style for new or
+changed questions: [glossary-ru.md](glossary-ru.md). After editing the bank, run `check` — it lists what to translate.

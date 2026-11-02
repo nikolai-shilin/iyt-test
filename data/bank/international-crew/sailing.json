@@ -1,0 +1,356 @@
+[
+ {
+  "topic": "sailing",
+  "difficulty": 1,
+  "q": "The skipper asks you to name this point of sail for the logbook. What is it?",
+  "a": "Broad reach",
+  "o": [
+   "Beam reach",
+   "Close reach",
+   "Run"
+  ],
+  "why": "With the wind about 135° off the bow, over the quarter, you are on a broad reach.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 270,
+   "hdg": 45,
+   "nogo": true
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 1,
+  "q": "The helm turns onto this heading. The sails flap and the boat slows to a stop. Why?",
+  "a": "The boat is pointing into the no-go zone",
+  "o": [
+   "The sheets are pulled in too tight",
+   "The wind has suddenly dropped",
+   "The genoa has been furled too far"
+  ],
+  "why": "No sail can drive the boat within about 45° of the wind: the no-go zone.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 340,
+   "nogo": true
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 1,
+  "q": "The skipper asks you to \"ease the main\". Which line do you let out?",
+  "a": "The mainsheet",
+  "o": [
+   "The main halyard",
+   "The genoa sheet",
+   "The genoa furling line"
+  ],
+  "why": "The mainsheet sets the angle of the boom; easing it lets the sail out.",
+  "ref": "Sail handling",
+  "fig": null
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 1,
+  "q": "You are trimming the genoa on a steady reach. How do you find the right setting for the sheet?",
+  "a": "Ease until the luff starts to flap, then pull back just enough to stop it",
+  "o": [
+   "Pull in until the sail is hard and flat, then cleat it",
+   "Ease until the whole sail flaps, then cleat it there",
+   "Pull in until the tell-tales droop, then leave it"
+  ],
+  "why": "The best trim is just short of luffing: ease till it flaps, then sheet in a touch.",
+  "ref": "Sail trim",
+  "fig": null
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "You are trimming the genoa and see this on the tell-tales. What do you do?",
+  "a": "Pull the sheet in a little",
+  "o": [
+   "Ease the sheet out a little",
+   "Leave it: the trim is right",
+   "Ease the genoa halyard a little"
+  ],
+  "why": "A lifting windward tell-tale means the sail is eased too far: sheet in.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "card",
+   "title": "Genoa tell-tales",
+   "lines": [
+    "Close reach, helm on a steady course",
+    "Windward tell-tale: lifting, spinning",
+    "Leeward tell-tale: streaming aft"
+   ]
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "The skipper asks you to sort out the genoa trim. What do you do with the sheet?",
+  "a": "Ease it a little",
+  "o": [
+   "Pull it in a little",
+   "Cleat it and leave it",
+   "Let it fly right out"
+  ],
+  "why": "A drooping leeward tell-tale means the sail is stalled, sheeted too hard: ease it.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "card",
+   "title": "Genoa tell-tales",
+   "lines": [
+    "Beam reach, steady course",
+    "Windward tell-tale: streaming aft",
+    "Leeward tell-tale: fluttering, drooping"
+   ]
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "In a tack you are on the new genoa sheet. As the genoa blows across, what do you do?",
+  "a": "Pull the slack in fast by hand, then winch the last part",
+  "o": [
+   "Wait until the sail fills, then start winding",
+   "Wait until the old sheet has been coiled",
+   "Winch it in from the start, with all turns on"
+  ],
+  "why": "Slack comes in fastest by hand before the sail fills; the winch takes the last, loaded part.",
+  "ref": "Tacking",
+  "fig": null
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "The helm calls \"Ready to gybe\". You are on the mainsheet. What do you do?",
+  "a": "Pull the main in to the centre, then ease it out on the new side",
+  "o": [
+   "Let the mainsheet run free so the boom can swing",
+   "Cleat it where it is and keep clear of the boom",
+   "Ease it out further to spill the wind first"
+  ],
+  "why": "Hauling the boom in first keeps its swing short and controlled; then ease it out.",
+  "ref": "Gybing",
+  "fig": null
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "The skipper asks you to furl the genoa. What do you do with the furling line and the sheet?",
+  "a": "Pull the furling line; ease the sheet with some tension",
+  "o": [
+   "Pull the sheet; ease the furling line slowly",
+   "Pull the furling line; let the sheet fly free",
+   "Pull the genoa halyard; ease the sheet"
+  ],
+  "why": "Light tension on the sheet rolls the sail up tightly and stops it flogging.",
+  "ref": "Furling",
+  "fig": null
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "You are unfurling the genoa in a fresh breeze. What do you do with the furling line?",
+  "a": "Ease it out under control, with a turn round a winch",
+  "o": [
+   "Let it go completely so the sail opens fast",
+   "Pull it in to help the sail start turning",
+   "Cleat it firmly before you pull the sheet"
+  ],
+  "why": "A furling line let go runs wild and tangles on the drum; ease it with a turn on.",
+  "ref": "Furling",
+  "fig": null
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "The boat is head to wind and you are about to hoist the main. Which line must be eased before you pull the halyard?",
+  "a": "The mainsheet",
+  "o": [
+   "The genoa sheet",
+   "The topping lift",
+   "The genoa furling line"
+  ],
+  "why": "A tight mainsheet holds the boom and leech down, so the sail cannot go up freely.",
+  "ref": "Hoisting the main",
+  "fig": null
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "Halfway up, the main fills with wind and the halyard suddenly becomes very heavy. What do you ask the helm?",
+  "a": "To bring the bow back head to wind",
+  "o": [
+   "To bear away so the sail fills properly",
+   "To speed up so the halyard runs easier",
+   "To tack so the sail moves across"
+  ],
+  "why": "With the bow head to wind the main hangs empty and slides up easily.",
+  "ref": "Hoisting the main",
+  "fig": null
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "Why does the instrument show a breeze?",
+  "a": "It is apparent wind made by the boat's speed",
+  "o": [
+   "A sea breeze is starting to blow",
+   "The instrument needs calibrating",
+   "The current is dragging the air along"
+  ],
+  "why": "Moving through still air at 6 kn makes a 6 kn apparent wind from ahead.",
+  "ref": "Apparent wind",
+  "fig": {
+   "type": "card",
+   "title": "Motoring in a flat calm",
+   "lines": [
+    "Boat speed 6 kn",
+    "Wind instrument: 6 kn from dead ahead",
+    "Sea glassy, flags ashore hanging limp"
+   ]
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "On this course the genoa keeps collapsing and flapping. Why?",
+  "a": "The mainsail is blocking its wind",
+  "o": [
+   "The boat is in the no-go zone",
+   "The genoa halyard is too tight",
+   "The wind is too strong for a genoa"
+  ],
+  "why": "Dead downwind the main shades the genoa; goose-wing it or come up a little.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 180,
+   "note": "Run, main eased right out"
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "How does the boat get to the harbour under sail?",
+  "a": "By tacking: close-hauled on one tack, then the other",
+  "o": [
+   "Straight at it, with both sheets eased",
+   "By gybing back and forth downwind",
+   "It cannot: yachts only sail across the wind"
+  ],
+  "why": "No boat sails inside the no-go zone, so you zigzag upwind close-hauled.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 315,
+   "nogo": true,
+   "note": "The harbour lies dead upwind"
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 2,
+  "q": "What does the skipper want you to do with the mainsheet?",
+  "a": "Ease in each gust, pull back in as it passes",
+  "o": [
+   "Keep it cleated so the boat stays steady",
+   "Pull in harder in each gust for more power",
+   "Ease it right out and leave it there"
+  ],
+  "why": "Easing in a gust spills wind and cuts the heel; sheeting back in keeps the drive.",
+  "ref": "Heeling",
+  "fig": {
+   "type": "card",
+   "title": "Gusty afternoon",
+   "lines": [
+    "Close-hauled, 15 kn, gusts to 25 kn",
+    "You are on the mainsheet",
+    "Skipper: \"Play the main!\""
+   ]
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 3,
+  "q": "What happens to the wind you feel on board?",
+  "a": "It gets lighter and comes from further aft",
+  "o": [
+   "It gets stronger and comes from further forward",
+   "It gets lighter and comes from further forward",
+   "It stays the same: only the true wind counts"
+  ],
+  "why": "Upwind the boat's speed adds to the wind you feel; downwind it subtracts, and the wind moves aft.",
+  "ref": "Apparent wind",
+  "fig": {
+   "type": "card",
+   "title": "Bearing away",
+   "lines": [
+    "From close-hauled to a broad reach",
+    "True wind steady at 15 kn",
+    "Boat speed rises from 6 to 7 kn"
+   ]
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 3,
+  "q": "The helm gybes onto starboard tack. Which genoa sheet takes the load afterwards?",
+  "a": "The port sheet: the sails are now to port",
+  "o": [
+   "The starboard sheet: it stays the working one",
+   "Both sheets equally until the next tack",
+   "Neither: the genoa is furled for every gybe"
+  ],
+  "why": "In a gybe the sails cross to the other side, so the other sheet becomes the working sheet.",
+  "ref": "Gybing",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 170,
+   "note": "Run on port tack, genoa out to starboard"
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 3,
+  "q": "You are trimming the sails. Which wind do they actually feel?",
+  "a": "The apparent wind, at about 60°",
+  "o": [
+   "The true wind, at about 90°",
+   "A mix of both, at about 75°",
+   "Whichever is stronger at the time"
+  ],
+  "why": "Sails feel the wind on the moving boat: the apparent wind, forward of the true wind.",
+  "ref": "Apparent wind",
+  "fig": {
+   "type": "card",
+   "title": "Wind instruments",
+   "lines": [
+    "True wind angle: 90°",
+    "Apparent wind angle: 60°",
+    "Boat speed 7 kn"
+   ]
+  }
+ },
+ {
+  "topic": "sailing",
+  "difficulty": 3,
+  "q": "During a tack, the crew on the old genoa sheet lets it go the moment \"Ready about\" is called, before the boat starts to turn. What is the result?",
+  "a": "The genoa flaps, the boat loses speed and may stall head to wind",
+  "o": [
+   "The boat turns faster with less load on the sail",
+   "Nothing: the timing of the release makes no difference",
+   "The genoa backs and pushes the bow through the wind"
+  ],
+  "why": "Released early, the genoa stops driving and the boat may stop in irons; let go as the bow passes the wind.",
+  "ref": "Tacking",
+  "fig": null
+ }
+]

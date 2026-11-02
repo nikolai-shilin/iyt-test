@@ -1,0 +1,2441 @@
+[
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "Your plotted position lies three-quarters of the way up from the lower parallel to the upper one. What is your latitude?",
+  "a": "37°47.5'N",
+  "o": [
+   "37°42.5'N",
+   "37°45.0'N",
+   "37°57.5'N"
+  ],
+  "why": "The parallels are 10' apart; three-quarters up is 7.5' north of 37°40'.",
+  "ref": "Latitude & longitude",
+  "fig": {
+   "type": "chart",
+   "labels": [
+    [
+     8,
+     22,
+     "37°50'N",
+     "start"
+    ],
+    [
+     8,
+     170,
+     "37°40'N",
+     "start"
+    ]
+   ],
+   "track": "M60 26 H300 M60 174 H300",
+   "boat": [
+    180,
+    63,
+    0
+   ],
+   "note": "Parallels of latitude on the chart"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You span the dividers between the harbour and tonight's anchorage, then move them to the side of the chart. How far is it?",
+  "a": "18 nautical miles",
+  "o": [
+   "18 kilometres",
+   "About 10 nautical miles",
+   "About 33 nautical miles"
+  ],
+  "why": "On the latitude scale one minute = one nautical mile: 43' − 25' = 18'.",
+  "ref": "Chartwork",
+  "fig": {
+   "type": "card",
+   "title": "Dividers on the latitude scale",
+   "lines": [
+    "From 37°25'N to 37°43'N"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Your crew reads a position off a phone app. What latitude do you plot on the paper chart?",
+  "a": "37°45.0'N",
+  "o": [
+   "37°75.0'N",
+   "37°07.5'N",
+   "37°57.5'N"
+  ],
+  "why": "0.75 of a degree × 60 = 45 minutes.",
+  "ref": "Latitude & longitude",
+  "fig": {
+   "type": "card",
+   "title": "Phone app",
+   "lines": [
+    "Position 37.75°N 023.50°E",
+    "Paper chart: degrees and minutes"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "The log shows a steady 6 knots. How far through the water do you go in one hour?",
+  "a": "6 nautical miles",
+  "o": [
+   "6 kilometres",
+   "6 statute miles",
+   "11 nautical miles"
+  ],
+  "why": "A knot is one nautical mile (1,852 m) per hour.",
+  "ref": "Speed, time, distance",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You sail due north as shown, with no tide or leeway. What latitude do you reach?",
+  "a": "37°02.0'N",
+  "o": [
+   "36°38.0'N",
+   "36°62.0'N",
+   "37°12.0'N"
+  ],
+  "why": "12 M north = 12' of latitude: 36°50' + 12' = 37°02'.",
+  "ref": "Latitude & longitude",
+  "fig": {
+   "type": "chart",
+   "boat": [
+    150,
+    168,
+    0
+   ],
+   "track": "M150 155 L150 40",
+   "panel": [
+    "Start 36°50.0'N",
+    "Course 000°T",
+    "Distance run 12 M"
+   ],
+   "depths": [
+    [
+     80,
+     70,
+     "45"
+    ],
+    [
+     240,
+     150,
+     "52"
+    ],
+    [
+     90,
+     150,
+     "38"
+    ]
+   ],
+   "note": "No tide, no leeway"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "A navigation warning reports a drifting container. Is its position on the chart you have open?",
+  "a": "No — just west of the chart's left edge",
+  "o": [
+   "Yes — in the upper half of the chart",
+   "No — just north of the top edge",
+   "No — just east of the right edge"
+  ],
+  "why": "019°55'E is 5' west of 020°00'E, the chart's western limit.",
+  "ref": "Latitude & longitude",
+  "fig": {
+   "type": "card",
+   "title": "Navigation warning",
+   "lines": [
+    "Container adrift 39°12'N 019°55'E",
+    "Your chart covers:",
+    "39°00'N to 39°20'N",
+    "020°00'E to 020°30'E"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You anchor at high water. How much water will be under the keel at low water tonight?",
+  "a": "0.6 m",
+  "o": [
+   "2.2 m",
+   "1.4 m",
+   "2.4 m"
+  ],
+  "why": "At LW the depth falls by the range: 4.0 − 1.6 = 2.4 m, then minus the 1.8 m draft.",
+  "ref": "Tides",
+  "fig": {
+   "type": "card",
+   "title": "Anchored at high water",
+   "lines": [
+    "Depth below the surface 4.0 m",
+    "Range tonight 1.6 m",
+    "Draft 1.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "The rock off the point carries this drying height. What do you see as you pass at the time shown?",
+  "a": "The rock showing 0.9 m above water",
+  "o": [
+   "0.9 m of water over the rock",
+   "2.1 m of water over the rock",
+   "The rock just awash"
+  ],
+  "why": "Drying height 1.5 m above datum − 0.6 m of tide = 0.9 m still uncovered.",
+  "ref": "Chart datum",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H120 V30 C 90 50 60 60 0 70 Z",
+   "depths": [
+    [
+     150,
+     104,
+     "1.5",
+     true
+    ],
+    [
+     70,
+     110,
+     "6"
+    ],
+    [
+     230,
+     150,
+     "9"
+    ],
+    [
+     110,
+     160,
+     "12"
+    ]
+   ],
+   "labels": [
+    [
+     150,
+     88,
+     "rock",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Now 10:00",
+    "Height of tide 0.6 m"
+   ],
+   "note": "Underlined = drying height"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Your track crosses this drying patch. How much water is over it at the time shown?",
+  "a": "1.2 m",
+  "o": [
+   "2.0 m",
+   "0.4 m",
+   "None — it is dry"
+  ],
+  "why": "Depth over a drying patch = height of tide − drying height: 1.6 − 0.4.",
+  "ref": "Chart datum",
+  "fig": {
+   "type": "chart",
+   "depths": [
+    [
+     160,
+     106,
+     "0.4",
+     true
+    ],
+    [
+     70,
+     70,
+     "5"
+    ],
+    [
+     250,
+     150,
+     "7"
+    ],
+    [
+     110,
+     172,
+     "3"
+    ]
+   ],
+   "track": "M30 160 L160 112 L300 120",
+   "boat": [
+    40,
+    156,
+    70
+   ],
+   "panel": [
+    "Now 15:30",
+    "Height of tide 1.6 m"
+   ],
+   "note": "Underlined = drying height"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You approach a fixed bridge in the northern Adriatic. What is the clearance under it right now?",
+  "a": "12.7 m",
+  "o": [
+   "11.3 m",
+   "12.4 m",
+   "13.1 m"
+  ],
+  "why": "Clearance = charted clearance + (HAT − height of tide) = 12.0 + 0.7.",
+  "ref": "Chart datum",
+  "fig": {
+   "type": "card",
+   "title": "Fixed bridge",
+   "lines": [
+    "Charted clearance 12.0 m above HAT",
+    "HAT is 1.1 m above chart datum",
+    "Height of tide now 0.4 m",
+    "Your air draft 12.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "Feeling your way into a shallow bay, how much water is really under your keel?",
+  "a": "0.9 m",
+  "o": [
+   "0.4 m",
+   "2.8 m",
+   "2.3 m"
+  ],
+  "why": "Depth = 2.3 + 0.5 = 2.8 m below the surface; minus the 1.9 m draft.",
+  "ref": "Echo sounder",
+  "fig": {
+   "type": "card",
+   "title": "Echo sounder",
+   "lines": [
+    "Reads 2.3 m below the transducer",
+    "Transducer 0.5 m below waterline",
+    "Draft 1.9 m"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "On your metric chart a depth is printed as a large 2 with a small 5 set low beside it. What depth is that?",
+  "a": "2.5 m",
+  "o": [
+   "2.05 m",
+   "0.25 m",
+   "2 fathoms 5 feet"
+  ],
+  "why": "Metric charts show decimetres as a small figure: 2 with a small 5 = 2.5 m below chart datum.",
+  "ref": "Chart symbols",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "Planning where to anchor, you find this printed in the bay. What is the seabed?",
+  "a": "Sand and shells",
+  "o": [
+   "Soft shingle",
+   "Shallow shoal",
+   "Stones and shingle"
+  ],
+  "why": "Seabed abbreviations: S = sand, Sh = shells.",
+  "ref": "Chart symbols",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V170 C 270 160 250 60 160 60 C 70 60 50 160 0 170 Z",
+   "depths": [
+    [
+     160,
+     112,
+     "S.Sh"
+    ],
+    [
+     120,
+     142,
+     "6"
+    ],
+    [
+     200,
+     150,
+     "8"
+    ],
+    [
+     160,
+     175,
+     "12"
+    ]
+   ],
+   "note": "Depths in metres"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Off the headland the chart shows a small rock with this figure beside it. What is it?",
+  "a": "A rock that never covers, 4 m high",
+  "o": [
+   "A rock 4 m below the surface",
+   "A rock that dries 4 m at low water",
+   "A wreck with 4 m of water over it"
+  ],
+  "why": "A height in brackets beside a rock marks an islet that never covers.",
+  "ref": "Chart symbols",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 H0 Z",
+   "marks": [
+    [
+     140,
+     98,
+     "k",
+     ""
+    ]
+   ],
+   "depths": [
+    [
+     166,
+     103,
+     "(4)"
+    ],
+    [
+     90,
+     80,
+     "7"
+    ],
+    [
+     230,
+     130,
+     "11"
+    ],
+    [
+     110,
+     155,
+     "15"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "The chart prints 'Foul' in the corner of the bay where you planned to drop anchor. What do you do?",
+  "a": "Anchor elsewhere — debris may trap the anchor",
+  "o": [
+   "Anchor there — 'Foul' means soft mud",
+   "Anchor there with extra scope for weed",
+   "Avoid it at low water only — it dries"
+  ],
+  "why": "Foul ground is no danger to passing boats but is to be avoided for anchoring.",
+  "ref": "Chart symbols",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V170 C 270 160 250 60 160 60 C 70 60 50 160 0 170 Z",
+   "labels": [
+    [
+     205,
+     116,
+     "Foul",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     120,
+     130,
+     "5"
+    ],
+    [
+     170,
+     150,
+     "7"
+    ],
+    [
+     150,
+     178,
+     "11"
+    ]
+   ],
+   "note": "Depths in metres"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "The best-sheltered spot in the bay lies on this charted line. Where do you anchor?",
+  "a": "Well clear of the cable",
+  "o": [
+   "On it — cables are buried",
+   "On it, with a tripping line",
+   "On it, if you leave at dawn"
+  ],
+  "why": "Never anchor over a charted cable: the anchor can snag or damage it.",
+  "ref": "Chart symbols",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V170 C 270 160 250 60 160 60 C 70 60 50 160 0 170 Z",
+   "labels": [
+    [
+     160,
+     128,
+     "~ ~ ~ submarine cable ~ ~ ~",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     115,
+     110,
+     "6"
+    ],
+    [
+     205,
+     108,
+     "5"
+    ],
+    [
+     140,
+     160,
+     "9"
+    ],
+    [
+     200,
+     170,
+     "10"
+    ]
+   ],
+   "note": "Depths in metres"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "Well offshore you pass the buoy labelled on the chart like this. What is it?",
+  "a": "A data buoy recording weather and sea",
+  "o": [
+   "A wreck marker buoy",
+   "A diving-area buoy",
+   "An offshore mooring buoy"
+  ],
+  "why": "ODAS = Ocean Data Acquisition System: a yellow data buoy; keep clear of it.",
+  "ref": "Chart symbols",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     170,
+     96,
+     "y",
+     "ODAS"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     60,
+     "850"
+    ],
+    [
+     250,
+     150,
+     "1100"
+    ],
+    [
+     100,
+     160,
+     "920"
+    ]
+   ],
+   "boat": [
+    70,
+    140,
+    60
+   ],
+   "note": "Depths in metres · 20 M off the coast"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Your planned route crosses this charted area. What do you do before you go?",
+  "a": "Check navigational warnings for firing times",
+  "o": [
+   "Nothing — yachts may always cross",
+   "Cross only at night when it is quiet",
+   "Call the charter base for permission"
+  ],
+  "why": "Firing areas are live only at notified times: check NAVTEX and coast radio warnings.",
+  "ref": "Chart symbols",
+  "fig": {
+   "type": "chart",
+   "labels": [
+    [
+     160,
+     92,
+     "FIRING PRACTICE AREA",
+     "middle"
+    ]
+   ],
+   "track": "M20 170 L300 120",
+   "boat": [
+    30,
+    166,
+    75
+   ],
+   "depths": [
+    [
+     70,
+     60,
+     "120"
+    ],
+    [
+     250,
+     70,
+     "140"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Entering an unfamiliar harbour with rocks off the entrance, which of these charts do you use?",
+  "a": "Chart 3 — the largest scale, most detail",
+  "o": [
+   "Chart 1 — the bigger number, more detail",
+   "Chart 2 — a balance of area and detail",
+   "Any — they all show the same dangers"
+  ],
+  "why": "Use the largest-scale chart for pilotage: 1:12 500 shows the most.",
+  "ref": "Chart scale",
+  "fig": {
+   "type": "card",
+   "title": "Charts aboard",
+   "lines": [
+    "Chart 1 — 1:250 000",
+    "Chart 2 — 1:50 000",
+    "Chart 3 — 1:12 500"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Your charter boat's chart and this season's pilot book disagree about the harbour. Which do you trust?",
+  "a": "The newer pilot book — and check by eye",
+  "o": [
+   "The chart — it is the official document",
+   "Neither — follow the plotter track",
+   "The chart — pilot books are not surveyed"
+  ],
+  "why": "Harbours change: use the most recent information and confirm it visually.",
+  "ref": "Chart corrections",
+  "fig": {
+   "type": "card",
+   "title": "Harbour of Vathi",
+   "lines": [
+    "Chart (edition 2006): no breakwater",
+    "Pilot book (2025): new breakwater",
+    "with a light on its head"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "You want to know how up to date the paper chart aboard is. Where do you look?",
+  "a": "The edition date and corrections in the margin",
+  "o": [
+   "The year printed on the compass rose",
+   "The scale line in the title block",
+   "The latitude scale on the side"
+  ],
+  "why": "Edition date and Notices to Mariners corrections are printed in the bottom margin.",
+  "ref": "Chart corrections",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Your chart of a remote Dodecanese bay gives this source information. How do you treat its depths?",
+  "a": "With caution — unsurveyed rocks may exist",
+  "o": [
+   "As exact — seabeds never change",
+   "As exact — old charts are re-checked",
+   "As too shallow — old surveys under-read"
+  ],
+  "why": "Old lead-line surveys can miss isolated rocks between soundings.",
+  "ref": "Chart reliability",
+  "fig": {
+   "type": "card",
+   "title": "Source diagram",
+   "lines": [
+    "Surveyed in the 1880s by lead line",
+    "Soundings sparse"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You take the variation from the chart's compass rose. What variation do you use?",
+  "a": "4°38'E",
+  "o": [
+   "1°42'E",
+   "3°18'E",
+   "3°10'E"
+  ],
+  "why": "11 years × 8'E = 88' = 1°28' more east: 3°10' + 1°28'.",
+  "ref": "Variation",
+  "fig": {
+   "type": "card",
+   "title": "Compass rose",
+   "lines": [
+    "Var 3°10'E 2015 (8'E)",
+    "Year now 2026"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Your chart's compass rose reads as shown. What variation do you use?",
+  "a": "2°32'W",
+  "o": [
+   "6°08'W",
+   "4°29'W",
+   "4°20'W"
+  ],
+  "why": "12 years × 9'E = 1°48' less west: 4°20' − 1°48'.",
+  "ref": "Variation",
+  "fig": {
+   "type": "card",
+   "title": "Compass rose",
+   "lines": [
+    "Var 4°20'W 2014 (9'E)",
+    "Year now 2026"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Close to your track the chart shows a small cross inside a dotted circle, with no depth given. What is it?",
+  "a": "A rock of unknown depth, dangerous to you",
+  "o": [
+   "A rock awash at chart datum",
+   "A wreck with over 20 m on it",
+   "A former buoy position"
+  ],
+  "why": "A dotted danger line round a symbol marks a danger to surface navigation: keep clear.",
+  "ref": "Chart symbols",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "An isolated rock near your route is marked 'PA' on the chart. How do you treat it?",
+  "a": "Its position is approximate — give it room",
+  "o": [
+   "Its depth is approximate — pass close",
+   "It has been removed — ignore it",
+   "It is a private area — keep out"
+  ],
+  "why": "PA = position approximate: the danger may lie some way from where it is drawn.",
+  "ref": "Chart symbols",
+  "fig": {
+   "type": "chart",
+   "labels": [
+    [
+     160,
+     100,
+     "+ PA",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     60,
+     "18"
+    ],
+    [
+     240,
+     70,
+     "22"
+    ],
+    [
+     250,
+     160,
+     "25"
+    ]
+   ],
+   "track": "M20 150 L300 118",
+   "boat": [
+    34,
+    148,
+    80
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Near the strait the chart shows a stream arrow with feathers on one side of its shaft and '2kn' beside it. What does it tell you?",
+  "a": "Flood stream, about 2 knots that way",
+  "o": [
+   "Ebb stream, about 2 knots that way",
+   "Ocean current, 2 knots all year",
+   "Prevailing wind, force 2 that way"
+  ],
+  "why": "Feathered arrow = flood stream, plain arrow = ebb; the figure is the spring rate.",
+  "ref": "Tidal streams",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "Your plotted course is shown. What compass course do you give the helmsman?",
+  "a": "119°C",
+  "o": [
+   "125°C",
+   "121°C",
+   "115°C"
+  ],
+  "why": "True to compass: subtract east, add west: 120 − 3 + 2 = 119.",
+  "ref": "Compass conversion",
+  "fig": {
+   "type": "compass",
+   "variation": 3,
+   "deviation": -2,
+   "course": 120,
+   "note": "T → M → C"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You take a bearing of the lighthouse for a fix. What true bearing do you plot?",
+  "a": "314°T",
+  "o": [
+   "311°T",
+   "306°T",
+   "310°T"
+  ],
+  "why": "The deviation card is for the steering compass only: 310 + 4°E variation = 314.",
+  "ref": "Compass conversion",
+  "fig": {
+   "type": "card",
+   "title": "Fix at 10:40",
+   "lines": [
+    "Hand-bearing compass: light 310°",
+    "Variation 4°E",
+    "Deviation card, this heading: 3°W",
+    "You stand aft, clear of the engine"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You are steering 090° by the steering compass. What is your true heading?",
+  "a": "097°T",
+  "o": [
+   "093°T",
+   "095°T",
+   "083°T"
+  ],
+  "why": "Compass to true: add easterly errors: 090 + 2°E deviation + 5°E variation.",
+  "ref": "Deviation",
+  "fig": {
+   "type": "card",
+   "title": "Deviation card",
+   "lines": [
+    "000° 1°E · 045° 3°E · 090° 2°E",
+    "135° 0° · 180° 2°W · 225° 3°W",
+    "270° 1°W · 315° 0°",
+    "Variation 5°E"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "In flat calm with no tide, the steering compass and the GPS disagree as shown. What is the likely cause?",
+  "a": "Deviation from the metal and magnets stowed",
+  "o": [
+   "Variation has changed since this morning",
+   "Leeway pushing the boat sideways",
+   "The GPS has lost its satellite fix"
+  ],
+  "why": "Iron and magnets near the compass add deviation: keep them well away.",
+  "ref": "Deviation",
+  "fig": {
+   "type": "card",
+   "title": "Motoring in flat calm",
+   "lines": [
+    "Steering compass 090°",
+    "GPS COG 078° (set to magnetic)",
+    "Toolbox and speaker just stowed",
+    "in the locker under the compass"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "You arrive in a new sailing area and need the local magnetic variation. Where do you find it?",
+  "a": "On the compass rose of the chart",
+  "o": [
+   "On the boat's deviation card",
+   "In the tide tables",
+   "On the steering compass card"
+  ],
+  "why": "Variation depends on place and year; the compass rose gives both.",
+  "ref": "Variation",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You motor straight down this transit to check the steering compass. What is the deviation on this heading?",
+  "a": "5°W",
+  "o": [
+   "5°E",
+   "2°W",
+   "1°E"
+  ],
+  "why": "315°T − 3°E = 312°M; the compass reads 317°, 5° more, so deviation is 5°W.",
+  "ref": "Deviation",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H170 L130 40 L90 80 L0 100 Z",
+   "marks": [
+    [
+     40,
+     24,
+     "w",
+     "rear"
+    ],
+    [
+     80,
+     64,
+     "w",
+     "front"
+    ]
+   ],
+   "track": "M195 179 L90 74",
+   "boat": [
+    185,
+    169,
+    315
+   ],
+   "panel": [
+    "On the transit",
+    "Chart: 315°T",
+    "Compass: 317°",
+    "Variation 3°E"
+   ],
+   "note": "Two beacons in line"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You take this bearing of the lighthouse. Which line do you draw from the light on the chart?",
+  "a": "A line from the light on 230°T",
+  "o": [
+   "A line from the light on 050°T",
+   "A line from the light on 140°T",
+   "A line from the light on 320°T"
+  ],
+  "why": "You lie on the reciprocal as seen from the light: 050 + 180 = 230.",
+  "ref": "Position fixing",
+  "fig": {
+   "type": "card",
+   "title": "Hand-bearing compass",
+   "lines": [
+    "Lighthouse bears 050°T (corrected)"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You can identify these four objects. Which three give the best fix?",
+  "a": "A, C and D",
+  "o": [
+   "B, C and D",
+   "A, B and C",
+   "A, B and D"
+  ],
+  "why": "Choose objects near you and about 60°–120° apart; A and B lie on one line.",
+  "ref": "Position fixing",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V120 L270 100 L220 50 L120 45 L40 130 L0 140 Z",
+   "marks": [
+    [
+     62,
+     96,
+     "k",
+     "A"
+    ],
+    [
+     13,
+     66,
+     "k",
+     "B"
+    ],
+    [
+     165,
+     30,
+     "k",
+     "C"
+    ],
+    [
+     275,
+     93,
+     "k",
+     "D"
+    ]
+   ],
+   "boat": [
+    160,
+    155,
+    0
+   ],
+   "note": "B is a summit far inland, directly behind A"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You are motoring east along the coast to take a three-point fix. In what order do you take the bearings?",
+  "a": "P and R first, Q on the beam last",
+  "o": [
+   "Q on the beam first, then P and R",
+   "Nearest first: Q, then P, then R",
+   "Any order — speed matters more"
+  ],
+  "why": "Beam bearings change fastest, so take them last; ahead and astern change slowly.",
+  "ref": "Position fixing",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V140 L280 120 L270 60 L0 50 Z",
+   "marks": [
+    [
+     300,
+     100,
+     "k",
+     "P"
+    ],
+    [
+     160,
+     40,
+     "k",
+     "Q"
+    ],
+    [
+     20,
+     40,
+     "k",
+     "R"
+    ]
+   ],
+   "boat": [
+    160,
+    112,
+    90
+   ],
+   "depths": [
+    [
+     90,
+     150,
+     "14"
+    ],
+    [
+     220,
+     160,
+     "16"
+    ]
+   ],
+   "note": "Heading 090°T"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "Your three bearings off Kythnos plot like this, a triangle almost a mile across. What do you do?",
+  "a": "Re-take the bearings; assume the worst position",
+  "o": [
+   "Plot the centre and carry on",
+   "Average it with the GPS position",
+   "Drop one bearing and use the other two"
+  ],
+  "why": "A large cocked hat means an error: wrong object, misread compass or deviation.",
+  "ref": "Position fixing",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V30 C 220 50 120 20 0 40 Z",
+   "marks": [
+    [
+     50,
+     36,
+     "k",
+     "church"
+    ],
+    [
+     170,
+     34,
+     "k",
+     "mast"
+    ],
+    [
+     280,
+     30,
+     "k",
+     "light"
+    ]
+   ],
+   "track": "M50 42 L230 152 M170 40 L144 186 M280 36 L130 176",
+   "labels": [
+    [
+     95,
+     152,
+     "rocks",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     100,
+     134,
+     "+"
+    ],
+    [
+     114,
+     128,
+     "+"
+    ]
+   ],
+   "note": "Three bearings plotted"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "To pass safely south of the reef, what bearing of the church do you keep?",
+  "a": "Less than 060°T",
+  "o": [
+   "More than 060°T",
+   "Exactly 060°T all the way",
+   "Between 060°T and 090°T"
+  ],
+  "why": "South of the line the church bears less than 060°; more means you are on the reef side.",
+  "ref": "Clearing bearings",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V38 C 250 44 200 36 150 42 C 100 48 50 40 0 44 Z",
+   "marks": [
+    [
+     260,
+     30,
+     "k",
+     "church"
+    ]
+   ],
+   "track": "M260 30 L87 130",
+   "depths": [
+    [
+     110,
+     86,
+     "0.6",
+     true
+    ],
+    [
+     215,
+     150,
+     "14"
+    ],
+    [
+     280,
+     120,
+     "18"
+    ],
+    [
+     140,
+     172,
+     "9"
+    ]
+   ],
+   "labels": [
+    [
+     110,
+     72,
+     "reef",
+     "middle"
+    ],
+    [
+     200,
+     96,
+     "clearing line 060°T",
+     "start"
+    ]
+   ],
+   "boat": [
+    40,
+    172,
+    90
+   ],
+   "note": "Church on 060°T clears the reef"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Approaching on a leading line at night, you see the two lights like this. Which way do you alter?",
+  "a": "To starboard, until they line up",
+  "o": [
+   "To port, until they line up",
+   "Hold course; they line up closer in",
+   "Slow down until they line up"
+  ],
+  "why": "Move towards the front light: rear showing left of front means you are left of the line.",
+  "ref": "Pilotage",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 146,
+     "y": 76,
+     "t": "rear (high)"
+    },
+    {
+     "c": "w",
+     "x": 178,
+     "y": 112,
+     "t": "front (low)"
+    }
+   ],
+   "note": "Night · leading lights ahead"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You have only one landmark in sight. How do you turn these bearings into a running fix?",
+  "a": "Move the 10:00 line 5 M along 060°T",
+  "o": [
+   "Move the 10:00 line 5 M along 030°T",
+   "Cross the two bearings as they are",
+   "Move the 10:00 line 5 M along 240°T"
+  ],
+  "why": "Transfer the first position line by the run between bearings, then cross it with the second.",
+  "ref": "Position fixing",
+  "fig": {
+   "type": "card",
+   "title": "Running fix",
+   "lines": [
+    "10:00 lighthouse bears 030°T",
+    "Course 060°T at 5.0 kn, no tide",
+    "11:00 lighthouse bears 330°T"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You have this range and bearing of the headland. Where are you?",
+  "a": "2.5 M due west of the headland",
+  "o": [
+   "2.5 M due east of the headland",
+   "2.5 M due north of the headland",
+   "Somewhere on a 2.5 M circle"
+  ],
+  "why": "The headland bears 090° from you, so you lie 2.5 M along 270° from it.",
+  "ref": "Position fixing",
+  "fig": {
+   "type": "card",
+   "title": "Headland",
+   "lines": [
+    "Radar range 2.5 M",
+    "Hand-bearing compass 090°T"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Your pilotage plan uses this clearing bearing. What does the bearing you have just taken tell you?",
+  "a": "You are on the dangerous side — alter away",
+  "o": [
+   "You are safe — 5° is within error",
+   "You are exactly on the clearing line",
+   "Your compass needs a deviation check"
+  ],
+  "why": "NLT 190°: anything less than 190° puts you on the shoal side of the line.",
+  "ref": "Clearing bearings",
+  "fig": {
+   "type": "card",
+   "title": "Clearing bearing",
+   "lines": [
+    "Plan: keep the lighthouse NLT 190°T",
+    "(not less than) to clear the shoal",
+    "Bearing now: 185°T"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "In haze you get one bearing of the light, and the echo sounder (corrected to chart datum) reads 20 m. What do you have?",
+  "a": "A rough fix where the bearing meets the 20 m line",
+  "o": [
+   "Only a position line — depth adds nothing",
+   "A full fix, as good as three bearings",
+   "A dead-reckoning position"
+  ],
+  "why": "A sounding gives a depth-contour position line; crossed with a bearing it gives a rough fix.",
+  "ref": "Position fixing",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V30 H0 Z",
+   "marks": [
+    [
+     200,
+     34,
+     "k",
+     "light"
+    ]
+   ],
+   "track": "M200 40 L130 180",
+   "depths": [
+    [
+     60,
+     120,
+     "20"
+    ],
+    [
+     115,
+     125,
+     "20"
+    ],
+    [
+     215,
+     128,
+     "20"
+    ],
+    [
+     270,
+     122,
+     "20"
+    ],
+    [
+     90,
+     75,
+     "10"
+    ],
+    [
+     250,
+     80,
+     "10"
+    ],
+    [
+     80,
+     170,
+     "30"
+    ],
+    [
+     240,
+     170,
+     "32"
+    ]
+   ],
+   "labels": [
+    [
+     165,
+     92,
+     "bearing",
+     "end"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "You take one bearing of a lighthouse and draw it on the chart. What do you have?",
+  "a": "A position line — you are somewhere on it",
+  "o": [
+   "A fix — your exact position",
+   "An estimated position",
+   "A course to steer"
+  ],
+  "why": "One bearing gives one position line; you need a second line to cross it.",
+  "ref": "Position fixing",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V24 H0 Z",
+   "marks": [
+    [
+     200,
+     30,
+     "k",
+     "lighthouse"
+    ]
+   ],
+   "track": "M200 36 L115 177",
+   "labels": [
+    [
+     135,
+     120,
+     "light bears 030°T",
+     "end"
+    ]
+   ],
+   "depths": [
+    [
+     260,
+     120,
+     "25"
+    ],
+    [
+     60,
+     80,
+     "18"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "Your crew has marked the 14:00 position on the chart as a small circle round a dot. What kind of position is it?",
+  "a": "A fix — an observed position",
+  "o": [
+   "An estimated position",
+   "A dead-reckoning position",
+   "A waypoint"
+  ],
+  "why": "Chartwork symbols: circled dot = fix, triangle = EP, square = waypoint.",
+  "ref": "Chartwork",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "You plot your course and log distance from the last fix, then add the tidal stream and leeway. What do you have?",
+  "a": "An estimated position (EP)",
+  "o": [
+   "A dead-reckoning (DR) position",
+   "A fix",
+   "A running fix"
+  ],
+  "why": "DR uses course and distance only; an EP adds tidal stream and leeway.",
+  "ref": "Dead reckoning",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You leave the 10:00 fix as shown. Where is your 11:00 estimated position?",
+  "a": "6 M east and 1.5 M south of the fix",
+  "o": [
+   "6 M east and 1.5 M north of the fix",
+   "4.5 M east of the fix",
+   "7.5 M east of the fix"
+  ],
+  "why": "Plot the water track 6 M along 090°, then the tide 1.5 M towards 180°.",
+  "ref": "Estimated position",
+  "fig": {
+   "type": "chart",
+   "boat": [
+    40,
+    120,
+    90
+   ],
+   "track": "M55 120 L290 120",
+   "panel": [
+    "10:00 – 11:00",
+    "Course 090°T",
+    "Log 6.0 M",
+    "Tide 180°T 1.5 kn"
+   ],
+   "depths": [
+    [
+     100,
+     60,
+     "40"
+    ],
+    [
+     200,
+     170,
+     "55"
+    ]
+   ],
+   "note": "Fix at the boat · no leeway"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You leave at the time shown. When do you arrive?",
+  "a": "12:51",
+  "o": [
+   "12:21",
+   "12:15",
+   "13:15"
+  ],
+  "why": "18 ÷ 5 = 3.6 h = 3 h 36 min; 09:15 + 3:36 = 12:51.",
+  "ref": "Speed, time, distance",
+  "fig": {
+   "type": "card",
+   "title": "Passage",
+   "lines": [
+    "Depart 09:15",
+    "Distance 18 M",
+    "Speed over ground 5.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You must reach the anchorage before dark. What average speed do you need?",
+  "a": "6.0 knots",
+  "o": [
+   "7.0 knots",
+   "6.4 knots",
+   "5.3 knots"
+  ],
+  "why": "Speed = distance ÷ time = 21 ÷ 3.5 h.",
+  "ref": "Speed, time, distance",
+  "fig": {
+   "type": "card",
+   "title": "Before sunset",
+   "lines": [
+    "Distance 21 M",
+    "Time available 3 h 30 min"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You are close-hauled as shown. What water track do you make?",
+  "a": "045°T",
+  "o": [
+   "035°T",
+   "040°T",
+   "050°T"
+  ],
+  "why": "Leeway pushes you downwind: wind on the port bow sets you to starboard, 040 + 5.",
+  "ref": "Leeway",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 40,
+   "nogo": true,
+   "note": "Heading 040°T · leeway 5°"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You want to make good the water track shown. What heading do you steer?",
+  "a": "096°T",
+  "o": [
+   "084°T",
+   "090°T",
+   "102°T"
+  ],
+  "why": "Leeway sets you north, downwind; steer 6° up into the wind to compensate.",
+  "ref": "Leeway",
+  "fig": {
+   "type": "card",
+   "title": "Beam reach",
+   "lines": [
+    "Water track wanted 090°T",
+    "Wind from the south, F5",
+    "Expected leeway 6°"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Over an hour in open water, on several different headings, you see these readings. What is wrong?",
+  "a": "The log under-reads — clean or calibrate it",
+  "o": [
+   "A 1.2 kn current is helping you",
+   "The GPS over-reads in open water",
+   "Leeway is adding to your speed"
+  ],
+  "why": "A difference that stays the same on every heading is a log error, not a current.",
+  "ref": "Log",
+  "fig": {
+   "type": "card",
+   "title": "Open water, no current",
+   "lines": [
+    "Log (speed through water) 4.0 kn",
+    "GPS speed over ground 5.2 kn",
+    "The same on every heading"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "Where is your DR position at 15:30?",
+  "a": "6.0 M west of the fix",
+  "o": [
+   "4.0 M west of the fix",
+   "5.2 M west of the fix",
+   "6.0 M east of the fix"
+  ],
+  "why": "1.5 h × 4 kn = 6 M along the course; a DR ignores tide and leeway.",
+  "ref": "Dead reckoning",
+  "fig": {
+   "type": "chart",
+   "boat": [
+    270,
+    140,
+    270
+   ],
+   "track": "M255 140 L40 140",
+   "panel": [
+    "14:00 fix",
+    "Course 270°T",
+    "Speed 4.0 kn"
+   ],
+   "depths": [
+    [
+     80,
+     70,
+     "35"
+    ],
+    [
+     150,
+     175,
+     "42"
+    ]
+   ],
+   "note": "Fix at the boat · no tide, no leeway"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Which tidal stream do you take from this table?",
+  "a": "270°T at 0.9 knots",
+  "o": [
+   "270°T at 1.8 knots",
+   "090°T at 0.9 knots",
+   "280°T at 1.1 knots"
+  ],
+  "why": "Read the HW−2 line at the neap rate; the direction is where the stream goes.",
+  "ref": "Tidal streams",
+  "fig": {
+   "type": "card",
+   "title": "Tidal diamond A",
+   "lines": [
+    "HW−3 · 255° · 1.2 / 0.6 kn",
+    "HW−2 · 270° · 1.8 / 0.9 kn",
+    "HW−1 · 280° · 2.2 / 1.1 kn",
+    "(springs / neaps)",
+    "Now: HW−2, neap tides"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "You want to cross the channel along the track shown. What course do you steer?",
+  "a": "About 070°T",
+  "o": [
+   "About 110°T",
+   "090°T",
+   "About 080°T"
+  ],
+  "why": "Aim up-tide about 20°: 2 kn ÷ 6 kn × 60 (1-in-60), so 090 − 20.",
+  "ref": "Course to steer",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H24 V200 H0 Z M296 0 H320 V200 H296 Z",
+   "boat": [
+    44,
+    120,
+    90
+   ],
+   "track": "M58 120 L290 120",
+   "panel": [
+    "Track 090°T",
+    "Boat speed 6.0 kn",
+    "Tide 180°T 2.0 kn"
+   ],
+   "depths": [
+    [
+     120,
+     170,
+     "45"
+    ],
+    [
+     220,
+     165,
+     "50"
+    ]
+   ],
+   "note": "Same stream for the whole crossing"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Steering exactly the planned heading, you see the cross-track error grow as shown. What do you do?",
+  "a": "Steer a few degrees to port to regain the track",
+  "o": [
+   "Steer a few degrees to starboard of the track",
+   "Hold the heading; XTE corrects itself",
+   "Turn 90° to port until XTE is zero"
+  ],
+  "why": "A steady drift to starboard is a set; aim off to port to counter it.",
+  "ref": "Cross-track error",
+  "fig": {
+   "type": "card",
+   "title": "Chartplotter",
+   "lines": [
+    "Planned track 000°T, heading 000°T",
+    "XTE 0.3 M, right of the track",
+    "XTE growing every 10 minutes"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "The plotter and the compass show this. What is happening?",
+  "a": "A stream or leeway is setting you east",
+  "o": [
+   "A stream or leeway is setting you west",
+   "The compass has 15° of deviation",
+   "The GPS has lost its satellite fix"
+  ],
+  "why": "COG is your track over the ground; it lies to starboard of the heading, so you are set east.",
+  "ref": "COG and heading",
+  "fig": {
+   "type": "card",
+   "title": "Motoring at 5 kn",
+   "lines": [
+    "Compass heading, corrected: 000°T",
+    "COG 015°T, SOG 5.4 kn"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Motoring north through a narrow strait, you read these speeds. What is the current doing?",
+  "a": "About 1.7 kn against you",
+  "o": [
+   "About 1.7 kn with you",
+   "About 3.8 kn against you",
+   "About 9.3 kn against you"
+  ],
+  "why": "SOG = speed through water ± current: 5.5 − 3.8 = 1.7 kn on the nose.",
+  "ref": "SOG and STW",
+  "fig": {
+   "type": "card",
+   "title": "Speeds",
+   "lines": [
+    "Log (through the water) 5.5 kn",
+    "GPS SOG 3.8 kn",
+    "Heading and COG both 000°T"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "How long will this passage take?",
+  "a": "3 h 00 min",
+  "o": [
+   "2 h 00 min",
+   "2 h 24 min",
+   "2 h 45 min"
+  ],
+  "why": "Speed over ground = 5 − 1 = 4 kn; 12 ÷ 4 = 3 h.",
+  "ref": "Speed, time, distance",
+  "fig": {
+   "type": "card",
+   "title": "Passage up the channel",
+   "lines": [
+    "Distance 12 M",
+    "Speed through the water 5.0 kn",
+    "Foul stream 1.0 kn all the way"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You check the tidal stream atlas for your route. What do the figures beside the arrow mean?",
+  "a": "1.2 kn at neaps, 2.4 kn at springs",
+  "o": [
+   "1.2 kn at springs, 2.4 kn at neaps",
+   "1.2 kn at HW, 2.4 kn at LW",
+   "Stream turns from 120° to 240°"
+  ],
+  "why": "Atlas rates are in tenths of a knot, neap rate first, then spring rate.",
+  "ref": "Tidal streams",
+  "fig": {
+   "type": "card",
+   "title": "Tidal stream atlas, HW+2",
+   "lines": [
+    "Arrow near your route: 12,24"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Planning a cruise in Greece, where do you most need to work out the tidal stream before you go through?",
+  "a": "The narrow Evripos strait at Chalkis",
+  "o": [
+   "The open Aegean between Mykonos and Naxos",
+   "Any large bay, such as the Saronic Gulf",
+   "Nowhere — the Mediterranean has no tide"
+  ],
+  "why": "Med tides are small, but in narrow straits like the Evripos the stream runs at several knots.",
+  "ref": "Tidal streams",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "Full moon was two days ago. What tides do you expect this week?",
+  "a": "Springs — bigger range, stronger streams",
+  "o": [
+   "Neaps — smaller range, weaker streams",
+   "Springs — smaller range, weaker streams",
+   "Neaps — bigger range, stronger streams"
+  ],
+  "why": "Spring tides follow new and full moon by a day or two.",
+  "ref": "Tides",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "You must cross a shallow bar near low water. At which low water is there least water over it?",
+  "a": "Low water at springs",
+  "o": [
+   "Low water at neaps",
+   "Low water between springs and neaps",
+   "There is no difference"
+  ],
+  "why": "Springs have the biggest range: the highest highs and the lowest lows.",
+  "ref": "Tides",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "Using the rule of twelfths, what is the height of tide now?",
+  "a": "0.85 m",
+  "o": [
+   "1.00 m",
+   "0.45 m",
+   "0.70 m"
+  ],
+  "why": "Range 1.8 m; two hours after LW = 3/12 of it (0.45 m) + 0.4 m LW.",
+  "ref": "Rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Tide today",
+   "lines": [
+    "LW 08:00 0.4 m",
+    "HW 14:00 2.2 m",
+    "Now 10:00"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "What is the earliest time you can cross the bar with the clearance you want?",
+  "a": "09:00",
+  "o": [
+   "09:30",
+   "08:20",
+   "09:50"
+  ],
+  "why": "Tide needed 2.0 + 0.5 − 0.6 = 1.9 m: a 1.5 m rise, half the range, 3 h after LW.",
+  "ref": "Rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Harbour bar",
+   "lines": [
+    "Charted depth 0.6 m",
+    "Draft 2.0 m, clearance wanted 0.5 m",
+    "LW 06:00 0.4 m · HW 12:00 3.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Heading into a marina in the Venetian lagoon, what do you expect of the water level compared with the tide tables?",
+  "a": "Higher than predicted — a surge",
+  "o": [
+   "Lower — the wind blows water out",
+   "Exactly as predicted",
+   "Lower — low pressure lowers the sea"
+  ],
+  "why": "Low pressure and a long scirocco pile water into the northern Adriatic: acqua alta.",
+  "ref": "Tides",
+  "fig": {
+   "type": "card",
+   "title": "Northern Adriatic",
+   "lines": [
+    "Pressure 990 hPa and falling",
+    "Strong scirocco (SE) for two days"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "When is high water at your harbour?",
+  "a": "10:05",
+  "o": [
+   "11:15",
+   "10:19",
+   "10:40"
+  ],
+  "why": "Apply the time difference to the standard port: 10:40 − 35 min.",
+  "ref": "Tides",
+  "fig": {
+   "type": "card",
+   "title": "Tide tables",
+   "lines": [
+    "Standard port: HW 10:40",
+    "Your harbour: HW difference −0:35"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You plot GPS positions on this paper chart. What do you do?",
+  "a": "Apply the shift in the note before plotting",
+  "o": [
+   "Nothing — every chart uses WGS84",
+   "Apply the magnetic variation first",
+   "Move them 0.05' S and 0.07' W"
+  ],
+  "why": "GPS gives WGS84 positions; on an older-datum chart apply the stated shift.",
+  "ref": "GPS & chart datum",
+  "fig": {
+   "type": "card",
+   "title": "Chart note",
+   "lines": [
+    "Positions: European Datum 1950",
+    "WGS84 positions must be moved",
+    "0.05' N and 0.07' E to agree"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Entering this Cycladic bay, the plotter shows your boat here. What do you do?",
+  "a": "Navigate by eye, depth and bearings",
+  "o": [
+   "Trust the plotter and turn back out",
+   "Reboot the plotter and wait",
+   "Steer until the screen shows water"
+  ],
+  "why": "Electronic charts of small Greek bays can be offset; the depth and the view are real.",
+  "ref": "Electronic navigation",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V200 H250 C 240 140 200 110 160 110 C 120 110 80 140 70 200 H0 Z",
+   "boat": [
+    60,
+    70,
+    150
+   ],
+   "depths": [
+    [
+     160,
+     140,
+     "8"
+    ],
+    [
+     125,
+     166,
+     "10"
+    ],
+    [
+     200,
+     166,
+     "12"
+    ]
+   ],
+   "panel": [
+    "Echo sounder",
+    "Depth 8.0 m"
+   ],
+   "note": "Plotter screen"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "Why do you write the position, log reading and course in the logbook every hour?",
+  "a": "To plot a DR if the electronics fail",
+  "o": [
+   "The charter company bills by distance",
+   "To calibrate the GPS each hour",
+   "The coastguard needs an hourly report"
+  ],
+  "why": "Hourly positions let you navigate on from the last known point if the GPS dies.",
+  "ref": "Dead reckoning",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Planning the route on the plotter zoomed out, you see clear water all the way. What do you do before you rely on it?",
+  "a": "Zoom in along every leg to check for dangers",
+  "o": [
+   "Nothing — dangers show at every zoom",
+   "Move the route closer to the coast",
+   "Switch the display to 3D view"
+  ],
+  "why": "Plotters hide small rocks and soundings at small zoom levels.",
+  "ref": "Electronic navigation",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You set a GPS waypoint for a night arrival at a small harbour. Where do you put it?",
+  "a": "In safe water off the entrance",
+  "o": [
+   "Exactly on the harbour entrance",
+   "On the end of the breakwater",
+   "On the charted position of the light"
+  ],
+  "why": "Waypoints go in clear water; pilot the last part in by eye and by the lights.",
+  "ref": "Electronic navigation",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "The plotter shows this bearing to the next waypoint. Ignoring deviation, what magnetic course do you steer?",
+  "a": "195°M",
+  "o": [
+   "205°M",
+   "200°M",
+   "190°M"
+  ],
+  "why": "True to magnetic: subtract easterly variation, 200 − 5.",
+  "ref": "Compass conversion",
+  "fig": {
+   "type": "compass",
+   "variation": 5,
+   "course": 200,
+   "courseLabel": "GPS bearing",
+   "note": "Plotter set to true"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Creeping through the marina at half a knot, you see the plotter's COG swing wildly from second to second. Why?",
+  "a": "GPS course is unreliable at very low speed",
+  "o": [
+   "The marina's steel pontoons cause deviation",
+   "Variation changes inside harbours",
+   "The tidal stream keeps changing direction"
+  ],
+  "why": "COG comes from successive GPS positions; at walking pace small position errors swamp it.",
+  "ref": "Electronic navigation",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You will enter an unfamiliar harbour at dusk. What do you prepare beforehand?",
+  "a": "A plan of marks, bearings and turning points",
+  "o": [
+   "Nothing — the plotter route is enough",
+   "Only the harbour's VHF channel",
+   "A course straight at the entrance light"
+  ],
+  "why": "Write the plan before you arrive: what you will see, bearings to hold, where to turn.",
+  "ref": "Pilotage",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "What do you do about tonight's anchorage?",
+  "a": "Choose another one sheltered from the south",
+  "o": [
+   "Go anyway with extra chain out",
+   "Go anyway — pilot books are cautious",
+   "Anchor further in, close to the beach"
+  ],
+  "why": "A pilot-book warning matching the forecast: pick shelter from the forecast wind.",
+  "ref": "Passage planning",
+  "fig": {
+   "type": "card",
+   "title": "Planning tonight's stop",
+   "lines": [
+    "Pilot book: 'untenable in southerly",
+    "winds, swell rolls into the bay'",
+    "Forecast tonight: S 5 to 6"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You plan a long passage along a rocky coast with few harbours. What must your passage plan include?",
+  "a": "Ports of refuge along the way",
+  "o": [
+   "Only the departure and arrival ports",
+   "A route as close inshore as possible",
+   "Only the waypoints for the autopilot"
+  ],
+  "why": "A plan needs bolt-holes in case of weather, breakdown or injury.",
+  "ref": "Passage planning",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "How do you round this breakwater head to enter the harbour?",
+  "a": "Wide, then turn in",
+  "o": [
+   "Close, to save time",
+   "Close, on its outer side",
+   "Stern-first, for control"
+  ],
+  "why": "Breakwater heads often have rubble and shoals off them: round them wide.",
+  "ref": "Pilotage",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 H140 V118 H120 V40 H0 Z",
+   "marks": [
+    [
+     130,
+     112,
+     "r",
+     ""
+    ]
+   ],
+   "depths": [
+    [
+     130,
+     140,
+     "1.2"
+    ],
+    [
+     105,
+     134,
+     "1.8"
+    ],
+    [
+     210,
+     150,
+     "6"
+    ],
+    [
+     230,
+     90,
+     "5"
+    ],
+    [
+     60,
+     100,
+     "3"
+    ]
+   ],
+   "labels": [
+    [
+     146,
+     142,
+     "shoal",
+     "start"
+    ]
+   ],
+   "boat": [
+    250,
+    160,
+    300
+   ],
+   "note": "Harbour plan from the pilot book"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "How do you know when to make the turn in this plan?",
+  "a": "When the light bears 090°M by hand-bearing compass",
+  "o": [
+   "When the plotter shows half a mile to go",
+   "When the echo sounder falls below 10 m",
+   "When the chapel comes abeam to port"
+  ],
+  "why": "A planned bearing of an object on the beam is a precise, independent turning cue.",
+  "ref": "Pilotage",
+  "fig": {
+   "type": "card",
+   "title": "Pilotage plan",
+   "lines": [
+    "Steer 020°M, chapel right ahead",
+    "Turn to 110°M when the light",
+    "bears 090°M (on the beam)"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "The pilot book says to approach the harbour from the south-west. Roughly what heading do you steer on the final approach?",
+  "a": "About 045°",
+  "o": [
+   "About 225°",
+   "About 135°",
+   "About 315°"
+  ],
+  "why": "Coming from the south-west means heading north-east, 045°.",
+  "ref": "Pilotage",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "You lay your plotting instrument along the course line and line its grid up with a meridian. What kind of course do you read?",
+  "a": "True",
+  "o": [
+   "Magnetic",
+   "Compass",
+   "Relative to the bow"
+  ],
+  "why": "Meridians run to true north, so the course is true; then apply variation and deviation.",
+  "ref": "Chartwork",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "You read your course off the inner magnetic ring of the chart's compass rose, which is up to date. What must you still apply?",
+  "a": "Deviation for that heading",
+  "o": [
+   "Variation for the area",
+   "Variation, then deviation",
+   "Nothing — it is ready to steer"
+  ],
+  "why": "The inner ring already includes variation; only deviation remains.",
+  "ref": "Compass",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Your GPS position and the echo sounder disagree like this. What do you do?",
+  "a": "Slow down, head for deep water, take bearings",
+  "o": [
+   "Trust the GPS — the sounder is wrong",
+   "Carry on — 8 m is plenty for you",
+   "Reset the echo sounder offset"
+  ],
+  "why": "When GPS and depth disagree, doubt the position and check it another way.",
+  "ref": "Electronic navigation",
+  "fig": {
+   "type": "card",
+   "title": "Cross-check",
+   "lines": [
+    "Chart depth at GPS position: 30 m",
+    "Echo sounder: 8 m and shoaling",
+    "Coast in sight but hazy"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Your track passes over this charted wreck. What do you do?",
+  "a": "Carry on, but don't anchor near it",
+  "o": [
+   "Alter course — every wreck is a danger",
+   "Pass only at high water",
+   "Stop and sound the depth by hand"
+  ],
+  "why": "A wreck with 25 m over it is no danger to a yacht; just keep your anchor off it.",
+  "ref": "Chart symbols",
+  "fig": {
+   "type": "chart",
+   "depths": [
+    [
+     168,
+     98,
+     "25 Wk"
+    ],
+    [
+     80,
+     60,
+     "38"
+    ],
+    [
+     250,
+     150,
+     "41"
+    ],
+    [
+     90,
+     160,
+     "35"
+    ]
+   ],
+   "track": "M20 140 L300 80",
+   "boat": [
+    34,
+    137,
+    78
+   ],
+   "panel": [
+    "Draft 2.0 m"
+   ],
+   "note": "Depths in metres below chart datum"
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "How far off the light are you when it comes abeam?",
+  "a": "3.0 M",
+  "o": [
+   "6.0 M",
+   "1.5 M",
+   "4.2 M"
+  ],
+  "why": "Doubling the angle (45° to 90°): distance off = distance run = 0.5 h × 6 kn.",
+  "ref": "Position fixing",
+  "fig": {
+   "type": "card",
+   "title": "Doubling the angle",
+   "lines": [
+    "10:00 light 45° on starboard bow",
+    "10:30 light abeam (90°)",
+    "Speed over ground 6.0 kn, no stream"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "The chart prints 'Local magnetic anomaly' beside the island you are passing. What do you do?",
+  "a": "Distrust the compass; cross-check by GPS and marks",
+  "o": [
+   "Add an extra degree of variation",
+   "Re-swing the compass on arrival",
+   "Nothing — it affects only big ships"
+  ],
+  "why": "A local anomaly can throw the compass several degrees off; navigate by other means.",
+  "ref": "Compass",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "Can you motor under this cable?",
+  "a": "No — your air draft is 17.5 m",
+  "o": [
+   "Yes — the mast is only 16.5 m",
+   "Yes — at low water you gain enough",
+   "Yes — mid-span the cable is higher"
+  ],
+  "why": "Air draft includes aerials, and the safe clearance must exceed it with room to spare.",
+  "ref": "Chart datum",
+  "fig": {
+   "type": "card",
+   "title": "Overhead power cable",
+   "lines": [
+    "Charted safe clearance 17 m",
+    "Mast height above water 16.5 m",
+    "VHF aerial on top 1.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 1,
+  "q": "Sailing to windward, how do you estimate your leeway?",
+  "a": "Angle between the wake and the centreline",
+  "o": [
+   "Log speed compared with GPS speed",
+   "From the deviation card",
+   "Compass heading compared with variation"
+  ],
+  "why": "Leeway is the angle between heading and water track, shown by the wake.",
+  "ref": "Leeway",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 2,
+  "q": "The marina's website says the next bay is 9 km away. How far is that in nautical miles?",
+  "a": "About 4.9 M",
+  "o": [
+   "About 16.7 M",
+   "About 5.6 M",
+   "About 9.0 M"
+  ],
+  "why": "One nautical mile = 1.852 km: 9 ÷ 1.852 ≈ 4.9.",
+  "ref": "Chartwork",
+  "fig": null
+ },
+ {
+  "topic": "navigation",
+  "difficulty": 3,
+  "q": "How far off the intended track will you be at the end of the run?",
+  "a": "About 1 M",
+  "o": [
+   "About 3 M",
+   "About 0.15 M",
+   "About 6 M"
+  ],
+  "why": "1-in-60 rule: 3° off over 60 M = 3 M off, so over 20 M = 1 M.",
+  "ref": "Cross-track error",
+  "fig": {
+   "type": "card",
+   "title": "Compass error",
+   "lines": [
+    "Steering compass 3° out",
+    "Distance run 20 M"
+   ]
+  }
+ }
+]

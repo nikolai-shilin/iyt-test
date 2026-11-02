@@ -1,0 +1,467 @@
+[
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "It is your first morning on the charter yacht. What do you check before you start the engine?",
+  "a": "Oil, coolant, belt and the raw-water strainer",
+  "o": [
+   "Fuel gauge only — the base checks the rest",
+   "Battery water and the spark plug leads",
+   "Gearbox oil and the shaft anode only"
+  ],
+  "why": "Daily check: oil and coolant levels, belt tension, strainer clear, bilge dry, fuel on.",
+  "ref": "Daily engine check",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "At the fuel quay the attendant reaches for the nozzle marked 'Unleaded 95'. What do you do?",
+  "a": "Stop him — the engine takes diesel only",
+  "o": [
+   "Let him — any fuel will do for one fill",
+   "Let him, then add a bottle of additive",
+   "Let him if the tank is half full of diesel"
+  ],
+  "why": "Yacht engines are diesels; petrol in the tank means draining it, with a fire risk and engine damage.",
+  "ref": "Fuel",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You have just started the engine. What do you check at the stern before casting off?",
+  "a": "Cooling water spurting out with the exhaust",
+  "o": [
+   "Black smoke coming out with the exhaust",
+   "Bubbles rising from the propeller",
+   "A thin film of oil on the water astern"
+  ],
+  "why": "No water from the exhaust means no cooling flow: stop the engine and check the seacock and strainer.",
+  "ref": "Engine cooling",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You are settling in for the evening at anchor. Which battery do you run the boat from?",
+  "a": "The house battery, keeping the engine one for starting",
+  "o": [
+   "The engine battery, saving the house one for the night",
+   "Both together, so they share the load evenly",
+   "Whichever one shows the higher voltage"
+  ],
+  "why": "Domestic loads run from the house bank; the engine battery stays isolated so you can always start.",
+  "ref": "Batteries",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "House",
+     "12.6 V",
+     false
+    ],
+    [
+     "Engine",
+     "12.7 V",
+     false
+    ]
+   ],
+   "lines": [
+    "Evening at anchor",
+    "Fridge, lights and music to run"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You are motoring in open water, well clear of other boats, when this happens. What do you do?",
+  "a": "Stop the engine, then check the cooling water intake",
+  "o": [
+   "Raise the revs to pump more water through",
+   "Carry on — the harbour is only 2 miles away",
+   "Open the coolant cap at once to top it up"
+  ],
+  "why": "Overheating with little exhaust water means the raw-water flow has failed: stop before the engine is damaged.",
+  "ref": "Engine alarms",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "105°",
+     true
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ],
+    [
+     "RPM",
+     "2200",
+     false
+    ]
+   ],
+   "lines": [
+    "Alarm sounding",
+    "Exhaust: steam, very little water"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "This alarm goes off as you motor across the bay. What do you do?",
+  "a": "Stop the engine at once and check the oil level",
+  "o": [
+   "Carry on at low revs to the next harbour",
+   "Top up the coolant, then carry on",
+   "Ignore it — the temperature is normal"
+  ],
+  "why": "Low oil pressure can wreck a diesel within minutes; stop it and find out why.",
+  "ref": "Engine alarms",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "82°",
+     false
+    ],
+    [
+     "Oil",
+     "LOW",
+     true
+    ],
+    [
+     "RPM",
+     "1800",
+     false
+    ]
+   ],
+   "lines": [
+    "Oil pressure alarm and warning light"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You are going to clean the strainer. What is the right order?",
+  "a": "Close the seacock, clean the strainer, open the seacock",
+  "o": [
+   "Open the strainer lid with the seacock left open",
+   "Clean it with the engine running to flush it",
+   "Clean it, then leave the seacock shut to be safe"
+  ],
+  "why": "Close the seacock first or the sea pours in; reopen it before starting or the engine overheats again.",
+  "ref": "Engine cooling",
+  "fig": {
+   "type": "card",
+   "title": "Raw-water strainer",
+   "lines": [
+    "Engine stopped after overheating",
+    "Strainer bowl packed with sea grass",
+    "Seacock open"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "How much fuel will be left when you arrive?",
+  "a": "30 litres — well above the reserve",
+  "o": [
+   "20 litres — just above the reserve",
+   "10 litres — below the reserve",
+   "45 litres — well above the reserve"
+  ],
+  "why": "30 M ÷ 6 kn = 5 h; 5 h × 4 L/h = 20 L used; 50 − 20 = 30 L left.",
+  "ref": "Fuel planning",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "50 L",
+     false
+    ],
+    [
+     "Burn",
+     "4 L/h",
+     false
+    ],
+    [
+     "Speed",
+     "6 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Today's leg: 30 M under engine, calm",
+    "Keep at least 15 L in reserve"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "What do you do about the house battery?",
+  "a": "Run the engine to charge it, or plug in to shore power",
+  "o": [
+   "Switch to BOTH and leave it there overnight",
+   "Nothing — 11.9 V means it is fully charged",
+   "Switch off the engine battery to save power"
+  ],
+  "why": "11.9 V at rest is a well-flattened house bank; recharge it from the alternator or shore power.",
+  "ref": "Charging",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "House",
+     "11.9 V",
+     true
+    ],
+    [
+     "Engine",
+     "12.7 V",
+     false
+    ]
+   ],
+   "lines": [
+    "Second night at anchor, fridge on",
+    "Cabin lights dim"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You arrive in a marina and want shore power. In what order do you connect the cable?",
+  "a": "Boat end first, then the shore pillar",
+  "o": [
+   "Shore pillar first, then the boat end",
+   "Either way — the cable is waterproof",
+   "Both ends at once, with the breaker on"
+  ],
+  "why": "Plug in at the boat first so there is never a live loose end; unplug at the pillar first.",
+  "ref": "Shore power",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Your crew is in the shower when this happens. What is wrong?",
+  "a": "Tank 1 is empty — switch off the pump, change tanks",
+  "o": [
+   "The pump fuse has blown — replace it",
+   "The water heater has an air lock — run the engine",
+   "The shower drain is blocked — clear it"
+  ],
+  "why": "A pump that runs on while the taps spit air has emptied its tank; a pump running dry can burn out.",
+  "ref": "Fresh water system",
+  "fig": {
+   "type": "card",
+   "title": "Fresh water",
+   "lines": [
+    "Pump runs and does not stop",
+    "Taps spit air, then nothing",
+    "Two tanks, selector set to tank 1"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You are moored stern-to in a busy town harbour. Where should the heads empty to?",
+  "a": "Into the holding tank, to be emptied well offshore",
+  "o": [
+   "Straight overboard — the harbour flushes it out",
+   "Into the bilge — the bilge pump clears it later",
+   "Into the grey-water drain under the galley"
+  ],
+  "why": "In harbours and anchorages the heads go to the holding tank; empty it well out at sea or at a pump-out.",
+  "ref": "Marine heads",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Your crew has finished cooking pasta. How do they turn off the gas?",
+  "a": "Solenoid off, let the flame die, then the burner knob",
+  "o": [
+   "Burner knob off first, then the solenoid",
+   "Burner knob only — the solenoid stays on all week",
+   "Bottle valve only, the next morning"
+  ],
+  "why": "Shutting the supply first lets the flame burn off the gas left in the pipe, so none sits in the line.",
+  "ref": "Gas system",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You come below and smell gas in the saloon. What do you do?",
+  "a": "Turn off the bottle, no switches or flames, air the boat",
+  "o": [
+   "Turn on the cabin fan to blow the gas out",
+   "Run the electric bilge pump to clear it",
+   "Light the stove to burn off what is left"
+  ],
+  "why": "Gas is heavier than air and any spark can ignite it: shut the supply, leave the switches alone, ventilate.",
+  "ref": "Gas system",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "The bilge is fuller than usual. The electric bilge pump is on AUTO but stays silent. What do you do?",
+  "a": "Pump by hand, then check the fuse and float switch",
+  "o": [
+   "Wait — on AUTO it will start by itself",
+   "Run the engine — it pumps the bilge as it cools",
+   "Turn the battery switch off and on again"
+  ],
+  "why": "Use the manual pump to keep up, then look for a blown fuse or a jammed float switch.",
+  "ref": "Bilge pumps",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "The engine note changes suddenly as you motor along. What has most likely happened?",
+  "a": "A rope has wrapped round the propeller",
+  "o": [
+   "Air has got into the fuel system",
+   "The raw-water intake has blocked",
+   "The gearbox has slipped into neutral"
+  ],
+  "why": "A thump, vibration and lost speed near floats point to a rope round the prop: neutral, and stop the engine.",
+  "ref": "Fouled propeller",
+  "fig": {
+   "type": "card",
+   "title": "Motoring past fishing floats",
+   "lines": [
+    "A thump under the stern",
+    "Heavy vibration, the engine labours",
+    "Speed drops, though the revs are the same"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "The engine is running, yet the battery is not charging. What is the likely cause?",
+  "a": "The alternator belt is slack or broken",
+  "o": [
+   "The house battery is fully charged",
+   "The fuel filter is partly blocked",
+   "The shore power cable is still plugged in"
+  ],
+  "why": "No charge plus a squealing belt means a slipping belt; on many engines it also drives the water pump.",
+  "ref": "Charging",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.2 V",
+     true
+    ],
+    [
+     "Temp",
+     "88°",
+     false
+    ],
+    [
+     "RPM",
+     "1800",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine running, charge warning light on",
+    "A squeal from the engine box at start-up"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "You turn the key to leave the anchorage. Why will the engine not start?",
+  "a": "On BOTH the fridge drained the engine battery too",
+  "o": [
+   "The house battery is fine, so the starter has failed",
+   "Overnight the fuel has drained back to the tank",
+   "The engine battery charges only from shore power"
+  ],
+  "why": "BOTH joins the banks, so domestic loads flatten the starting battery as well; keep it isolated.",
+  "ref": "Batteries",
+  "fig": {
+   "type": "card",
+   "title": "Morning at anchor",
+   "lines": [
+    "Battery switch left on BOTH all night",
+    "Fridge and lights ran from 18:00",
+    "Starter clicks but will not turn the engine"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "The overheat alarm goes off close to this rocky shore. What do you do first?",
+  "a": "Unroll the genoa and sail clear, then stop the engine",
+  "o": [
+   "Stop the engine at once and drift while you check it",
+   "Keep motoring flat out to get clear quickly",
+   "Go below and clear the strainer with it running"
+  ],
+  "why": "The boat's safety first: get sea room under sail, then stop the engine before it is damaged.",
+  "ref": "Engine alarms",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "102°",
+     true
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Overheat alarm, little exhaust water",
+    "Rocky shore 0.3 M downwind, F4 onshore"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "You have cleared the strainer, but the problem remains. What do you suspect, and what do you do?",
+  "a": "A failed impeller — stop and call the lead crew",
+  "o": [
+   "An empty fuel tank — refill and restart",
+   "A full holding tank — pump it out at sea",
+   "A flat battery — switch to BOTH and restart"
+  ],
+  "why": "With the intake clear, no flow points to the raw-water pump impeller; the lead crew's engineer can change it.",
+  "ref": "Engine cooling",
+  "fig": {
+   "type": "card",
+   "title": "After clearing the strainer",
+   "lines": [
+    "Seacock open, strainer clean",
+    "Engine restarted: still no water at the exhaust",
+    "Lead boat 3 M away, calm sea"
+   ]
+  }
+ }
+]

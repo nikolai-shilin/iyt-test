@@ -1,0 +1,2618 @@
+[
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Leaving the marina at Kalamata for the open sea, you have this buoy ahead. On which side do you leave it?",
+  "a": "On your port side",
+  "o": [
+   "On your starboard side",
+   "Either side, it is a safe water mark",
+   "On whichever side is deeper"
+  ],
+  "why": "Region A: a green cone marks the starboard side going in, so it stays on your port side going out.",
+  "ref": "IALA lateral marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "lat-stbd",
+   "topmark": true,
+   "note": "You are heading out to sea"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "You are returning to Road Town, Tortola (BVI), from sea. This buoy is ahead. Which side do you leave it?",
+  "a": "On your starboard side",
+  "o": [
+   "On your port side",
+   "Either side, it marks a danger",
+   "Pass close north of it"
+  ],
+  "why": "Region B (the Americas): red, conical, kept to starboard returning — \"red right returning\".",
+  "ref": "IALA region B",
+  "fig": {
+   "type": "buoy",
+   "kind": "lat-stbd",
+   "region": "B",
+   "topmark": true,
+   "rhythm": "Fl R 4s",
+   "note": "IALA region B · returning from sea"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Entering English Harbour, Antigua, from the sea, you see this buoy. What is it?",
+  "a": "A port-hand mark: leave it to port",
+  "o": [
+   "A starboard-hand mark: leave it to starboard",
+   "A wreck mark: keep well clear",
+   "A special mark: check the chart"
+  ],
+  "why": "Region B: green and can-shaped marks the port side when entering.",
+  "ref": "IALA region B",
+  "fig": {
+   "type": "buoy",
+   "kind": "lat-port",
+   "region": "B",
+   "topmark": true,
+   "rhythm": "Fl G 4s",
+   "note": "IALA region B · entering from sea"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Entering Kos harbour at night, you see this light ahead, low on the water. On which side do you leave it?",
+  "a": "On your starboard side",
+  "o": [
+   "On your port side",
+   "Either side, keeping 50 m off",
+   "Steer for it, it marks mid-channel"
+  ],
+  "why": "Region A: a green light is a starboard-hand mark; keep it to starboard going in.",
+  "ref": "IALA lateral marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 160,
+     "y": 128,
+     "t": "Fl G 5s"
+    }
+   ],
+   "note": "Night · entering from seaward"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Near the entrance to Fethiye at night, you see this light low on the water. What is it?",
+  "a": "A port-hand lateral mark",
+  "o": [
+   "An isolated danger mark",
+   "A yacht at anchor",
+   "A preferred-channel mark"
+  ],
+  "why": "A red light of any rhythm except Fl(2+1) is a port-hand mark; isolated danger is white Fl(2).",
+  "ref": "IALA lateral marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 128,
+     "t": "Fl(2) R 6s"
+    }
+   ],
+   "note": "Night · light low on the water"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "At dusk you cannot make out colours. Coming in from sea, the buoy ahead is conical with a cone-shaped topmark. On which side do you leave it?",
+  "a": "On your starboard side",
+  "o": [
+   "On your port side",
+   "Either side",
+   "On the side away from the shore"
+  ],
+  "why": "Shape gives the side without colour: a cone is a starboard-hand mark, in region A and B alike.",
+  "ref": "IALA lateral marks",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "You are sailing south through a channel between two islands, with no harbour at either end. How do you know which lateral marks are \"port-hand\"?",
+  "a": "From the direction-of-buoyage arrow on the chart",
+  "o": [
+   "Port is the side nearer the mainland",
+   "Port marks are always on the west side",
+   "From the direction you happen to sail"
+  ],
+  "why": "Lateral marks follow the direction of buoyage: from seaward, or as shown by the arrow on the chart.",
+  "ref": "IALA lateral marks",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Coming in from sea, you reach this mark where the channel divides. Where is the main (preferred) channel?",
+  "a": "To starboard: leave the mark to port",
+  "o": [
+   "To port: leave the mark to starboard",
+   "Either way: both are equal",
+   "Straight past it: it is a safe water mark"
+  ],
+  "why": "Region A: red with a broad green band, Fl(2+1) R, is a modified port mark; the preferred channel is to starboard.",
+  "ref": "Preferred channel marks",
+  "fig": {
+   "type": "card",
+   "title": "Channel fork, entering from sea",
+   "lines": [
+    "Red buoy with one broad green band",
+    "Red can topmark",
+    "Light: Fl(2+1) R 10s"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Coming in from sea, this light marks a fork in the channel. What does it tell you?",
+  "a": "Preferred channel to port: leave it to starboard",
+  "o": [
+   "Preferred channel to starboard: leave it to port",
+   "Isolated danger: pass on any side",
+   "Special mark: check the chart"
+  ],
+  "why": "Region A: Fl(2+1) G is a modified starboard-hand mark, so the main channel is to port.",
+  "ref": "Preferred channel marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 160,
+     "y": 128,
+     "t": "Fl(2+1) G 10s"
+    }
+   ],
+   "note": "Night · channel junction, entering from sea"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Your next charter is in the Philippines. Entering a harbour from sea, what colour are the lateral marks you keep on your starboard side?",
+  "a": "Red",
+  "o": [
+   "Green",
+   "Yellow",
+   "Black and yellow"
+  ],
+  "why": "The Philippines, like the Americas, Japan and Korea, use IALA region B: red to starboard returning.",
+  "ref": "IALA region B",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Entering harbour at night, you have this light fine on your starboard bow. What do you do?",
+  "a": "Alter to starboard and leave it to port",
+  "o": [
+   "Hold on and leave it to starboard",
+   "Alter to port and pass close to it",
+   "Steer straight for it"
+  ],
+  "why": "Region A: a red light is a port-hand mark, so going in it must pass down your port side.",
+  "ref": "IALA lateral marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 196,
+     "y": 128,
+     "t": "Fl R 4s"
+    }
+   ],
+   "note": "Night · entering from sea · light fine to starboard"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "On the way into a marina at night, you see this light. What is it?",
+  "a": "A starboard-hand lateral mark",
+  "o": [
+   "A north cardinal mark",
+   "A special mark",
+   "A safe water mark"
+  ],
+  "why": "Quick flashing is not only for cardinals: the colour decides, and green is starboard-hand in region A.",
+  "ref": "IALA lateral marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 160,
+     "y": 128,
+     "t": "Q G"
+    }
+   ],
+   "note": "Night · channel into the marina"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Sailing along the coast of Lefkada, you see this mark. On which side of it is the safe water?",
+  "a": "East of it",
+  "o": [
+   "West of it",
+   "North of it",
+   "Any side, the danger is right under it"
+  ],
+  "why": "East cardinal: black–yellow–black, cones base to base; pass to the east.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-e"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "This mark stands off a reef near Hvar. Where do you pass it?",
+  "a": "To the west of it",
+  "o": [
+   "To the east of it",
+   "To the south of it",
+   "Close on either side"
+  ],
+  "why": "West cardinal: yellow–black–yellow, cones point to point; safe water to the west.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-w"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "At night you see this light low on the water ahead. Which side of it is safe?",
+  "a": "The east side",
+  "o": [
+   "The west side",
+   "The south side",
+   "Any side"
+  ],
+  "why": "Three quick flashes = 3 o'clock = east cardinal.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 128,
+     "t": "Q(3) 10s"
+    }
+   ],
+   "note": "Night · light low on the water"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Your track north runs close past this mark. How do you get by it safely?",
+  "a": "Alter to port and leave it to starboard",
+  "o": [
+   "Hold course and leave it to port",
+   "Alter to starboard and pass east of it",
+   "Pass close on either side"
+  ],
+  "why": "West cardinal: safe water to the west, danger to the east, which is where your track goes.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "chart",
+   "depths": [
+    [
+     70,
+     60,
+     "12"
+    ],
+    [
+     60,
+     130,
+     "9"
+    ],
+    [
+     178,
+     80,
+     "0.6",
+     true
+    ],
+    [
+     205,
+     115,
+     "1.2"
+    ],
+    [
+     250,
+     160,
+     "15"
+    ]
+   ],
+   "marks": [
+    [
+     135,
+     75,
+     "y",
+     "W cardinal"
+    ]
+   ],
+   "track": "M150 148 L150 30",
+   "boat": [
+    150,
+    160,
+    0
+   ],
+   "note": "Depths in metres · heading 000°"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Approaching the Kornati islands at night, you see this light marking a shoal. Where do you pass it?",
+  "a": "To the north",
+  "o": [
+   "To the south",
+   "To the east",
+   "Either side"
+  ],
+  "why": "Uninterrupted quick or very quick flashing: north cardinal.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 128,
+     "t": "VQ"
+    }
+   ],
+   "note": "Night · continuous, about two flashes a second"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "At dusk you can only see a dark silhouette on the buoy: two cones, one above the other, base to base. What mark is it?",
+  "a": "An east cardinal",
+  "o": [
+   "A west cardinal",
+   "A north cardinal",
+   "An isolated danger mark"
+  ],
+  "why": "Base to base looks like an egg: E. Point to point: W. Both up: N. Both down: S.",
+  "ref": "IALA cardinal marks",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Counting the quick flashes of a white light, you are not sure whether there were six or nine. What tells you it is a south cardinal?",
+  "a": "A long flash follows the quick ones",
+  "o": [
+   "The flashes are red",
+   "There is no pause between groups",
+   "The pause after the group is shorter"
+  ],
+  "why": "South cardinal: Q(6) + LFl; the long flash stops it being mistaken for a west (Q(9)).",
+  "ref": "IALA cardinal marks",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Bound west along the coast, which way do you take this mark?",
+  "a": "Alter to starboard and leave it to port",
+  "o": [
+   "Hold course and leave it to starboard",
+   "Alter to port and pass close south of it",
+   "Pass close on either side"
+  ],
+  "why": "North cardinal: safe water to the north; the danger lies south of it, on your track.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "chart",
+   "depths": [
+    [
+     60,
+     50,
+     "14"
+    ],
+    [
+     230,
+     50,
+     "11"
+    ],
+    [
+     140,
+     132,
+     "1.2"
+    ],
+    [
+     175,
+     126,
+     "0.4",
+     true
+    ],
+    [
+     70,
+     165,
+     "8"
+    ]
+   ],
+   "marks": [
+    [
+     140,
+     98,
+     "y",
+     "N cardinal"
+    ]
+   ],
+   "track": "M245 112 L30 112",
+   "boat": [
+    262,
+    112,
+    270
+   ],
+   "note": "Depths in metres · heading 270°"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Sailing in the Bahamas (IALA region B), you see this mark. What does it mean there?",
+  "a": "Pass to the east, as in region A",
+  "o": [
+   "Pass to the west, colours are reversed in B",
+   "It is a starboard-hand mark in B",
+   "Pass to the north"
+  ],
+  "why": "Only lateral marks differ between regions A and B; cardinals are the same worldwide.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-e",
+   "region": "B",
+   "note": "IALA region B"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "You want to continue east. Can you pass between these two marks?",
+  "a": "No: go north of the N mark or south of the S mark",
+  "o": [
+   "Yes: the gap between them is the channel",
+   "Yes, but only at slow speed",
+   "No: go west of both marks"
+  ],
+  "why": "Cardinals are named for where the safe water is, so the shoal lies between them.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "chart",
+   "depths": [
+    [
+     160,
+     100,
+     "0.8",
+     true
+    ],
+    [
+     200,
+     92,
+     "1.5"
+    ],
+    [
+     120,
+     108,
+     "1.1"
+    ],
+    [
+     60,
+     40,
+     "15"
+    ],
+    [
+     60,
+     170,
+     "13"
+    ],
+    [
+     270,
+     120,
+     "12"
+    ]
+   ],
+   "marks": [
+    [
+     160,
+     48,
+     "y",
+     "N cardinal"
+    ],
+    [
+     160,
+     152,
+     "y",
+     "S cardinal"
+    ]
+   ],
+   "boat": [
+    40,
+    100,
+    90
+   ],
+   "note": "Depths in metres · you are heading east"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Rounding a headland in the Gulf of Corinth, you see this mark off the point. Where is the danger?",
+  "a": "North of the mark",
+  "o": [
+   "South of the mark",
+   "Right under the mark",
+   "East of the mark"
+  ],
+  "why": "South cardinal: safe water to the south, so the danger lies to the north of it.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-s"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "You time this light on a buoy off Paros. Where do you pass it?",
+  "a": "To the west",
+  "o": [
+   "To the east",
+   "To the north",
+   "To the south"
+  ],
+  "why": "Nine quick flashes = 9 o'clock = west cardinal.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 128
+    }
+   ],
+   "note": "Night · 9 quick flashes, then dark, every 15 s"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "The topmark of this buoy has been knocked off. It is painted yellow above black. Which mark is it?",
+  "a": "A south cardinal: pass south",
+  "o": [
+   "A north cardinal: pass north",
+   "A west cardinal: pass west",
+   "An isolated danger: any side"
+  ],
+  "why": "Cones point to the black: black at the bottom means both points down, south.",
+  "ref": "IALA cardinal marks",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "At night this light marks a rock in the middle of a bay. What is it?",
+  "a": "An isolated danger mark: pass well clear, any side",
+  "o": [
+   "A south cardinal: pass south of it",
+   "A port-hand mark: leave it to port",
+   "A safe water mark: steer for it"
+  ],
+  "why": "White Fl(2): isolated danger, with navigable water all round.",
+  "ref": "Isolated danger marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 124,
+     "t": "Fl(2) 5s"
+    }
+   ],
+   "note": "Night · light on a beacon in the bay"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Making landfall at night, you see this light ahead, low on the water, alone in open sea. What is it?",
+  "a": "A safe water mark",
+  "o": [
+   "An isolated danger mark",
+   "A north cardinal mark",
+   "A special mark"
+  ],
+  "why": "White Iso, Oc, LFl 10s or Mo(A): safe water — landfall or mid-channel.",
+  "ref": "Safe water marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 128,
+     "t": "LFl 10s"
+    }
+   ],
+   "note": "Night · approaching from offshore"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "At dusk you see a pillar buoy with a single ball as its topmark. What kind of mark is it?",
+  "a": "A safe water mark",
+  "o": [
+   "An isolated danger mark",
+   "A special mark",
+   "A port-hand mark"
+  ],
+  "why": "One red ball: safe water. Two black balls: isolated danger.",
+  "ref": "Safe water marks",
+  "fig": null
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Anchoring off a beach in Zakynthos, you see a line of these buoys between you and the shore. What do they usually mark?",
+  "a": "The edge of a swimming area: stay outside",
+  "o": [
+   "A channel for yachts to the beach",
+   "Moorings you may pick up",
+   "The edge of a dredged channel"
+  ],
+  "why": "Yellow special marks along beaches usually mark the bathing zone; check the chart or local rules.",
+  "ref": "Special marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "special",
+   "note": "Small buoys in a line parallel to the beach"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Entering a quiet bay in the Gulf of Corinth at night, you see several of these lights in a rough square. What are they most likely marking?",
+  "a": "A fish farm: keep outside them",
+  "o": [
+   "A safe channel: steer between them",
+   "Yachts at anchor",
+   "An isolated danger"
+  ],
+  "why": "Yellow lights are special marks; in Greek and Turkish bays they often mark fish farms.",
+  "ref": "Special marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "y",
+     "x": 110,
+     "y": 112
+    },
+    {
+     "c": "y",
+     "x": 205,
+     "y": 112
+    },
+    {
+     "c": "y",
+     "x": 90,
+     "y": 134
+    },
+    {
+     "c": "y",
+     "x": 225,
+     "y": 134,
+     "t": "Fl(4) Y 12s"
+    }
+   ],
+   "note": "Night · four lights, low on the water"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Off Piraeus you see this new buoy, which is not on your chart. What does it mark?",
+  "a": "A recent wreck, not yet charted",
+  "o": [
+   "A traffic separation lane",
+   "A diving area",
+   "A ferry waiting position"
+  ],
+  "why": "Blue and yellow stripes: an emergency wreck-marking buoy over a new, uncharted wreck.",
+  "ref": "Emergency wreck marking buoy",
+  "fig": {
+   "type": "buoy",
+   "kind": "wreck"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "At night you see this light, low on the water, where your chart shows nothing. What is it?",
+  "a": "An emergency wreck-marking buoy",
+  "o": [
+   "A police patrol boat",
+   "A special mark on a fish farm",
+   "A hovercraft"
+  ],
+  "why": "Alternating blue and yellow flashes: emergency wreck-marking buoy; treat it as a new danger.",
+  "ref": "Emergency wreck marking buoy",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "#2a5bd7",
+     "x": 130,
+     "y": 126,
+     "t": "Bu"
+    },
+    {
+     "c": "y",
+     "x": 190,
+     "y": 126,
+     "t": "Y"
+    }
+   ],
+   "note": "Night · one light: blue, then yellow, then blue…"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "You see two of these marks close together where your up-to-date chart shows clear water. What does it mean?",
+  "a": "A newly found danger, marked with a duplicate",
+  "o": [
+   "One of them has dragged: ignore it",
+   "A practice area for buoy tenders",
+   "The channel runs between them"
+  ],
+  "why": "IALA: a serious new danger may be marked by duplicating one of the marks until it is charted.",
+  "ref": "New dangers",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-e",
+   "note": "Two of these, side by side; chart shows clear water"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "The chart shows this light on the cape. What will you see at night?",
+  "a": "One flash every 5 seconds",
+  "o": [
+   "Five flashes, then a pause",
+   "Light on 5 s, then off 5 s",
+   "One flash lasting 5 seconds"
+  ],
+  "why": "Fl 5s: a single flash, repeated every 5 s (the period).",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     238,
+     60,
+     "w",
+     "Fl 5s 18m 12M"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     60,
+     "45"
+    ],
+    [
+     150,
+     140,
+     "30"
+    ]
+   ],
+   "note": "Chart extract"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "You are trying to pick out this harbour light among the lights of the town. What pattern do you look for?",
+  "a": "Mostly on, with two short eclipses every 8 s",
+  "o": [
+   "Mostly dark, with two short flashes every 8 s",
+   "Equal light and dark, twice every 8 s",
+   "Two long flashes, each lasting 8 s"
+  ],
+  "why": "Oc: light longer than dark; Oc(2) 8s puts two eclipses in each 8-second period.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     245,
+     110,
+     "w",
+     "Oc(2) 8s"
+    ]
+   ],
+   "depths": [
+    [
+     90,
+     80,
+     "20"
+    ],
+    [
+     160,
+     150,
+     "12"
+    ]
+   ],
+   "note": "Chart extract"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Which chart abbreviation matches the harbour light your crew is timing?",
+  "a": "Iso 6s",
+  "o": [
+   "Oc 3s",
+   "Fl 3s",
+   "LFl 6s"
+  ],
+  "why": "Iso = equal light and dark; the period is the whole cycle, 3 + 3 = 6 s.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 112
+    }
+   ],
+   "note": "Night · 3 s on, 3 s off, repeating"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "What does the \"23m\" in this light's description on the chart tell you?",
+  "a": "The height of the light above sea level",
+  "o": [
+   "The height of the tower from its base",
+   "The least depth off the cape",
+   "The width of the red sector"
+  ],
+  "why": "Elevation: the height of the light itself above sea level (above MHWS on tidal charts).",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     240,
+     70,
+     "w",
+     "Fl(3) WR 15s 23m 18/15M"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     80,
+     "40"
+    ],
+    [
+     140,
+     150,
+     "25"
+    ]
+   ],
+   "note": "Chart extract"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Planning a night landfall, you read this light on the chart. What is meant by 18/15M?",
+  "a": "The nominal range of its white and red light",
+  "o": [
+   "The distance to the next light",
+   "It is seen only from 15 to 18 miles",
+   "The width of its white and red sectors"
+  ],
+  "why": "Nominal range in 10 M visibility: 18 M for the white, 15 M for the weaker red.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     240,
+     130,
+     "w",
+     "Fl(3) WR 15s 23m 18/15M"
+    ]
+   ],
+   "depths": [
+    [
+     70,
+     60,
+     "38"
+    ],
+    [
+     150,
+     100,
+     "27"
+    ]
+   ],
+   "note": "Chart extract"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "You time the light you can see. Which lighthouse is it?",
+  "a": "B",
+  "o": [
+   "A",
+   "C",
+   "You cannot tell without its colour"
+  ],
+  "why": "Fl(3) 15s: a group of three flashes, then dark, the whole cycle taking 15 s.",
+  "ref": "Lighthouse identification",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 Q240 55 160 42 Q80 30 0 50 Z",
+   "marks": [
+    [
+     50,
+     58,
+     "w",
+     "A  Fl 5s"
+    ],
+    [
+     160,
+     56,
+     "w",
+     "B  Fl(3) 15s"
+    ],
+    [
+     270,
+     62,
+     "w",
+     "C  Fl(2) 10s"
+    ]
+   ],
+   "boat": [
+    160,
+    160,
+    0
+   ],
+   "labels": [
+    [
+     160,
+     120,
+     "3 flashes, then dark · 15 s per cycle",
+     "middle"
+    ]
+   ],
+   "note": "Night · what you time"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Approaching at night, the light ahead behaves as described. Which charted light is it?",
+  "a": "B",
+  "o": [
+   "A",
+   "C",
+   "Any of the three"
+  ],
+  "why": "Occulting: the light is on longer than it is off; Fl is mostly dark, Iso is half and half.",
+  "ref": "Lighthouse identification",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 Q240 55 160 42 Q80 30 0 50 Z",
+   "marks": [
+    [
+     50,
+     58,
+     "w",
+     "A  Fl 10s"
+    ],
+    [
+     160,
+     56,
+     "w",
+     "B  Oc 10s"
+    ],
+    [
+     270,
+     62,
+     "w",
+     "C  Iso 10s"
+    ]
+   ],
+   "boat": [
+    160,
+    160,
+    0
+   ],
+   "labels": [
+    [
+     160,
+     120,
+     "Steady light, briefly dark every 10 s",
+     "middle"
+    ]
+   ],
+   "note": "Night · what you see"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "The light shows green. What do you do?",
+  "a": "Alter to port until it shows white",
+  "o": [
+   "Alter to starboard until it shows white",
+   "Hold course: green means safe water",
+   "Stop and wait until it shows red"
+  ],
+  "why": "Sectored light: you are in the green sector south of the white channel; north is to port.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "card",
+   "title": "Light ahead: Fl WRG 4s",
+   "lines": [
+    "White sector: the safe channel in",
+    "Red sector: rocks to the north",
+    "Green sector: shoal to the south",
+    "You are heading east, towards it"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "You take a bearing of the light and correct it to true. Which colour do you see?",
+  "a": "Red",
+  "o": [
+   "White",
+   "Red and white alternately",
+   "Nothing: you are in an obscured arc"
+  ],
+  "why": "Sector limits are true bearings of the light as seen from seaward; 120° lies inside 095°–140°.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "card",
+   "title": "Chart: Fl WR 5s on the point",
+   "lines": [
+    "Red sector 095°–140°",
+    "White sector elsewhere",
+    "Your bearing of the light: 120°T"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "You are coming in on these leading lights and they look like this. Which way do you steer to get back on the line?",
+  "a": "To port",
+  "o": [
+   "To starboard",
+   "Hold course: near enough",
+   "Steer straight at the rear light"
+  ],
+  "why": "Move towards the side the front (lower) light has moved to: front left of rear, so go left.",
+  "ref": "Leading lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 148,
+     "y": 120,
+     "t": "front"
+    },
+    {
+     "c": "w",
+     "x": 172,
+     "y": 82,
+     "t": "rear"
+    }
+   ],
+   "note": "Night · leading lights into the harbour"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Approaching a Greek harbour at night, you see these two lights on the breakwater ends. What do you do?",
+  "a": "Enter between them, green to starboard",
+  "o": [
+   "Keep both lights on your port side",
+   "Keep both lights on your starboard side",
+   "Wait outside: red means the port is closed"
+  ],
+  "why": "Region A: red marks the port side and green the starboard side of the entrance.",
+  "ref": "IALA lateral marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 120,
+     "y": 126,
+     "t": "Fl R 3s"
+    },
+    {
+     "c": "g",
+     "x": 200,
+     "y": 126,
+     "t": "Fl G 3s"
+    }
+   ],
+   "note": "Night · harbour entrance ahead"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "At what distance off do you first see the light itself, not just its loom?",
+  "a": "About 19 M",
+  "o": [
+   "22 M, its nominal range",
+   "About 12 M",
+   "About 30 M"
+  ],
+  "why": "Geographical range ≈ 2.08 × (√49 + √4) ≈ 18.7 M, less than the 22 M nominal range.",
+  "ref": "Range of lights",
+  "fig": {
+   "type": "card",
+   "title": "Making landfall at night",
+   "lines": [
+    "Lighthouse: Fl 10s 49m 22M",
+    "Your eye: 4 m above the sea",
+    "Clear night, excellent visibility"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "What are you seeing?",
+  "a": "The loom of a lighthouse below the horizon",
+  "o": [
+   "A distant ship's searchlight",
+   "Lightning far away",
+   "A light buoy in a swell"
+  ],
+  "why": "The beam lights the sky before the light itself rises above the horizon.",
+  "ref": "Range of lights",
+  "fig": {
+   "type": "card",
+   "title": "Night passage, 25 M offshore",
+   "lines": [
+    "A pale glow sweeps the sky over the horizon",
+    "It repeats every 10 s",
+    "No light is visible yet"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "You see this light change colour as you hold your course. What does that tell you?",
+  "a": "Nothing about your position: it alternates",
+  "o": [
+   "You have entered its red sector",
+   "The light is faulty",
+   "A vessel is passing in front of it"
+  ],
+  "why": "Al WR: the light alternates white and red wherever you are; a sector light changes only with your bearing.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     245,
+     110,
+     "w",
+     "Al WR 10s"
+    ]
+   ],
+   "depths": [
+    [
+     90,
+     80,
+     "18"
+    ],
+    [
+     160,
+     150,
+     "11"
+    ]
+   ],
+   "note": "Chart extract"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "What colour is this light on the end of the mole?",
+  "a": "White",
+  "o": [
+   "Red",
+   "Green",
+   "Yellow"
+  ],
+  "why": "No colour letter in the chart description means a white light.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     240,
+     100,
+     "w",
+     "Fl(2) 10s 15m 10M"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     70,
+     "14"
+    ],
+    [
+     150,
+     140,
+     "9"
+    ]
+   ],
+   "note": "Chart extract"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "How is this light written on the chart?",
+  "a": "Fl(2) 10s",
+  "o": [
+   "Oc(2) 10s",
+   "Q(2) 10s",
+   "Fl(2) 5s"
+  ],
+  "why": "Group flashing, two flashes; the period runs from the start of one group to the start of the next.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 112
+    }
+   ],
+   "note": "Night · 2 flashes, then dark; start to start 10 s"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Your crew says you should see the light by now. Should you?",
+  "a": "Probably not: in haze its range is far less",
+  "o": [
+   "Yes: it is well within 15 M",
+   "Yes: nominal range already allows for haze",
+   "No: lights are never seen beyond 5 M"
+  ],
+  "why": "Nominal range assumes 10 M visibility; in 3 M visibility the luminous range is much shorter.",
+  "ref": "Range of lights",
+  "fig": {
+   "type": "card",
+   "title": "Night, hazy",
+   "lines": [
+    "Lighthouse ahead: Fl 5s, nominal range 15 M",
+    "Meteorological visibility: 3 M",
+    "GPS: 9 M from the light"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Sailing along the coast at night, the lighthouse you are watching changes colour. What has happened?",
+  "a": "You have crossed into its red sector",
+  "o": [
+   "The lighthouse has a fault",
+   "A ship has passed in front of it",
+   "You are too close to see the white"
+  ],
+  "why": "Sectored light: the colour depends on your bearing; red sectors usually cover a danger.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 110,
+     "t": "red"
+    }
+   ],
+   "note": "Night · white for the last hour, now red"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "What do you do?",
+  "a": "Alter to starboard until it shows white",
+  "o": [
+   "Alter to port until it shows white",
+   "Hold course: red is the safe side",
+   "Stop: red means the port is closed"
+  ],
+  "why": "You are in the red sector, which lies to port of the approach line; come back to starboard.",
+  "ref": "Directional lights",
+  "fig": {
+   "type": "card",
+   "title": "Directional light ahead: Dir WRG",
+   "lines": [
+    "Seen from seaward:",
+    "red sector to the left of the white,",
+    "green sector to the right",
+    "You see: red"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Motoring at night, you see these lights ahead. What are you looking at?",
+  "a": "A power-driven vessel heading towards you",
+  "o": [
+   "A sailing vessel heading towards you",
+   "A power-driven vessel heading away",
+   "A vessel at anchor"
+  ],
+  "why": "A masthead light over both sidelights: power-driven, bow on.",
+  "ref": "COLREGs Rule 23",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 70,
+     "t": "white"
+    },
+    {
+     "c": "g",
+     "x": 146,
+     "y": 120
+    },
+    {
+     "c": "r",
+     "x": 174,
+     "y": 120
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "What is this vessel, and which side of her are you seeing?",
+  "a": "Power-driven; her port side",
+  "o": [
+   "Power-driven; her starboard side",
+   "Sailing; her port side",
+   "At anchor; her stern"
+  ],
+  "why": "A white masthead light with a red sidelight: power-driven, port side towards you.",
+  "ref": "COLREGs Rule 23",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 150,
+     "y": 72,
+     "t": "white"
+    },
+    {
+     "c": "r",
+     "x": 138,
+     "y": 120,
+     "t": "red"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "What do these lights tell you?",
+  "a": "A large power vessel showing her starboard side",
+  "o": [
+   "A large power vessel showing her port side",
+   "Two small vessels in company",
+   "A vessel towing, seen from ahead"
+  ],
+  "why": "Two masthead lights, the aft one higher, and a green sidelight: big ship, starboard side on.",
+  "ref": "COLREGs Rule 23",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 120,
+     "y": 62
+    },
+    {
+     "c": "w",
+     "x": 200,
+     "y": 82
+    },
+    {
+     "c": "g",
+     "x": 212,
+     "y": 122
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "This light is moving slowly from left to right across your bow. What is it?",
+  "a": "A sailing vessel showing her starboard side",
+  "o": [
+   "A power vessel showing her starboard side",
+   "A starboard-hand buoy",
+   "A sailing vessel showing her port side"
+  ],
+  "why": "A sidelight with no masthead light above it: a vessel under sail.",
+  "ref": "COLREGs Rule 25",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 170,
+     "y": 122
+    }
+   ],
+   "note": "Night · no white light above it"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Close inshore at night, you see only this light, moving slowly from right to left. What is it?",
+  "a": "A yacht under sail with a tricolour",
+  "o": [
+   "A vessel not under command",
+   "A port-hand mark",
+   "A power vessel, port side on"
+  ],
+  "why": "A red sector high at the masthead: the tricolour of a sailing vessel under 20 m, port side on.",
+  "ref": "COLREGs Rule 25",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 46
+    }
+   ],
+   "note": "Night · single red light, high up"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "These lights are coming towards you. What is it?",
+  "a": "A yacht under sail, bow on",
+  "o": [
+   "A power vessel, bow on",
+   "A yacht under sail, seen from astern",
+   "A vessel at anchor"
+  ],
+  "why": "Green and red together at the masthead with no white: a tricolour seen from ahead.",
+  "ref": "COLREGs Rule 25",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 151,
+     "y": 48
+    },
+    {
+     "c": "r",
+     "x": 169,
+     "y": 48
+    }
+   ],
+   "note": "Night · high up, close together, no white light"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Through binoculars you see a yacht with her sails set, showing these lights. What is she under the rules?",
+  "a": "A power-driven vessel",
+  "o": [
+   "A sailing vessel",
+   "A vessel restricted in her ability to manoeuvre",
+   "A vessel not under command"
+  ],
+  "why": "A steaming light means the engine is running: motor-sailing counts as power-driven.",
+  "ref": "COLREGs Rules 3 / 25",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 80,
+     "t": "white"
+    },
+    {
+     "c": "g",
+     "x": 146,
+     "y": 124
+    },
+    {
+     "c": "r",
+     "x": 174,
+     "y": 124
+    }
+   ],
+   "note": "Night · yacht with sails up"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "In the anchorage off Piraeus you see these lights. What is the ship doing, and which way does she lie?",
+  "a": "At anchor, bow to the left",
+  "o": [
+   "At anchor, bow to the right",
+   "Under way, bow to the right",
+   "Aground, bow to the left"
+  ],
+  "why": "Rule 30: the forward anchor light is the higher one; under way, the forward masthead light is the lower.",
+  "ref": "COLREGs Rule 30",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 96,
+     "y": 86
+    },
+    {
+     "c": "w",
+     "x": 236,
+     "y": 108
+    },
+    {
+     "c": "w",
+     "x": 120,
+     "y": 128,
+     "r": 2
+    },
+    {
+     "c": "w",
+     "x": 145,
+     "y": 128,
+     "r": 2
+    },
+    {
+     "c": "w",
+     "x": 170,
+     "y": 128,
+     "r": 2
+    },
+    {
+     "c": "w",
+     "x": 195,
+     "y": 128,
+     "r": 2
+    },
+    {
+     "c": "w",
+     "x": 220,
+     "y": 128,
+     "r": 2
+    }
+   ],
+   "hull": "M80 132 L250 132 L240 148 L90 148 Z",
+   "note": "Night · deck lights on, no sidelights"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Off a reef in the Dodecanese you see these lights. What do they tell you?",
+  "a": "A vessel aground",
+  "o": [
+   "A vessel not under command, under way",
+   "A fishing vessel at anchor",
+   "A pilot vessel at anchor"
+  ],
+  "why": "Two all-round reds plus anchor lights: a vessel aground.",
+  "ref": "COLREGs Rule 30",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 46,
+     "t": "red"
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 68,
+     "t": "red"
+    },
+    {
+     "c": "w",
+     "x": 110,
+     "y": 92
+    },
+    {
+     "c": "w",
+     "x": 220,
+     "y": 108
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "What is this vessel?",
+  "a": "Not under command, making way",
+  "o": [
+   "Aground",
+   "Constrained by her draught",
+   "Restricted in her ability to manoeuvre"
+  ],
+  "why": "Two all-round reds with sidelights and no masthead light: NUC, moving through the water.",
+  "ref": "COLREGs Rule 27",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 150,
+     "y": 50,
+     "t": "red"
+    },
+    {
+     "c": "r",
+     "x": 150,
+     "y": 72,
+     "t": "red"
+    },
+    {
+     "c": "g",
+     "x": 205,
+     "y": 122,
+     "t": "green"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "In open water you see only these lights. What is the vessel doing?",
+  "a": "Not under command, stopped in the water",
+  "o": [
+   "Aground on a shoal",
+   "Not under command, making way",
+   "Lying at anchor"
+  ],
+  "why": "NUC shows sidelights only when making way; aground she would add anchor lights.",
+  "ref": "COLREGs Rule 27",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 60,
+     "t": "red"
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 82,
+     "t": "red"
+    }
+   ],
+   "note": "Night · no other lights"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Crossing the Saronic Gulf at night, you see these lights. What is the vessel?",
+  "a": "Restricted in her ability to manoeuvre, under way",
+  "o": [
+   "Not under command, under way",
+   "A pilot vessel on duty",
+   "Constrained by her draught"
+  ],
+  "why": "Red-white-red all-round plus masthead light and sidelights: RAM, making way.",
+  "ref": "COLREGs Rule 27",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 130,
+     "y": 38
+    },
+    {
+     "c": "w",
+     "x": 130,
+     "y": 60
+    },
+    {
+     "c": "r",
+     "x": 130,
+     "y": 82
+    },
+    {
+     "c": "w",
+     "x": 205,
+     "y": 84
+    },
+    {
+     "c": "g",
+     "x": 216,
+     "y": 124
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "These lights belong to a ship off Rhodes. What is her status?",
+  "a": "Restricted in ability to manoeuvre, at anchor",
+  "o": [
+   "Aground",
+   "Not under command, stopped",
+   "Restricted in ability to manoeuvre, under way"
+  ],
+  "why": "Red-white-red with an anchor light and no sidelights: RAM at anchor.",
+  "ref": "COLREGs Rules 27 / 30",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 140,
+     "y": 38
+    },
+    {
+     "c": "w",
+     "x": 140,
+     "y": 60
+    },
+    {
+     "c": "r",
+     "x": 140,
+     "y": 82
+    },
+    {
+     "c": "w",
+     "x": 215,
+     "y": 100
+    }
+   ],
+   "note": "Night · no sidelights"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "A dredger is working in the channel into Lefkas. On which side can you pass her?",
+  "a": "On the side with the two green lights",
+  "o": [
+   "On the side with the two red lights",
+   "Either side, keeping well clear",
+   "Neither: wait until she moves"
+  ],
+  "why": "Rule 27(d): two reds mark the obstructed side, two greens the side where you may pass.",
+  "ref": "COLREGs Rule 27",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 36
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 58
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 80
+    },
+    {
+     "c": "r",
+     "x": 100,
+     "y": 96
+    },
+    {
+     "c": "r",
+     "x": 100,
+     "y": 118
+    },
+    {
+     "c": "g",
+     "x": 220,
+     "y": 96
+    },
+    {
+     "c": "g",
+     "x": 220,
+     "y": 118
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "About a mile off you see these lights and no others. What is the vessel?",
+  "a": "A trawler, not making way",
+  "o": [
+   "A trawler making way towards you",
+   "A vessel fishing with nets, stopped",
+   "A pilot vessel on duty"
+  ],
+  "why": "Green over white = trawling; no sidelights means she is not making way.",
+  "ref": "COLREGs Rule 26",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 160,
+     "y": 56,
+     "t": "green"
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 78,
+     "t": "white"
+    }
+   ],
+   "note": "Night · no sidelights"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Off Kalymnos at night, a boat shows these lights. What is she?",
+  "a": "Fishing (not trawling), making way",
+  "o": [
+   "Trawling, making way",
+   "Not under command, making way",
+   "A pilot vessel under way"
+  ],
+  "why": "Red over white: fishing other than trawling; the sidelight shows she is making way.",
+  "ref": "COLREGs Rule 26",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 135,
+     "y": 52,
+     "t": "red"
+    },
+    {
+     "c": "w",
+     "x": 135,
+     "y": 74,
+     "t": "white"
+    },
+    {
+     "c": "r",
+     "x": 118,
+     "y": 122
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "This fishing boat off Sifnos is not making way. Where is her gear?",
+  "a": "Out towards the lower white light",
+  "o": [
+   "On the side away from the lower light",
+   "Under her: she is trawling",
+   "Nowhere: that is her anchor light"
+  ],
+  "why": "Rule 26(c): gear out more than 150 m is shown by an all-round white light towards it.",
+  "ref": "COLREGs Rule 26",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 140,
+     "y": 50,
+     "t": "red"
+    },
+    {
+     "c": "w",
+     "x": 140,
+     "y": 72,
+     "t": "white"
+    },
+    {
+     "c": "w",
+     "x": 230,
+     "y": 110
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Coming up astern of a vessel at night, you see these lights. What is she doing?",
+  "a": "Towing",
+  "o": [
+   "Fishing",
+   "Lying at anchor",
+   "Restricted in her ability to manoeuvre"
+  ],
+  "why": "A yellow towing light above the sternlight: a vessel towing.",
+  "ref": "COLREGs Rule 24",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "y",
+     "x": 160,
+     "y": 96,
+     "t": "yellow"
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 118,
+     "t": "white"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "What do these lights tell you about the vessel and what is behind her?",
+  "a": "She is towing, and the tow is over 200 m",
+  "o": [
+   "She is towing, and the tow is under 200 m",
+   "She is constrained by her draught",
+   "She is a large ship of over 50 m"
+  ],
+  "why": "Three masthead lights in a vertical line: towing, with a tow longer than 200 m.",
+  "ref": "COLREGs Rule 24",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 130,
+     "y": 40
+    },
+    {
+     "c": "w",
+     "x": 130,
+     "y": 62
+    },
+    {
+     "c": "w",
+     "x": 130,
+     "y": 84
+    },
+    {
+     "c": "r",
+     "x": 116,
+     "y": 124
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "The tug on the left shows a tow of over 200 m. What must you assume the lone red light on the right is?",
+  "a": "The tow: do not cross between them",
+  "o": [
+   "A yacht: the gap is safe to cross",
+   "A port-hand buoy: leave it to port",
+   "A second tug: pass astern of it"
+  ],
+  "why": "A towed vessel shows only sidelights and sternlight; the tow line lies between it and the tug.",
+  "ref": "COLREGs Rule 24",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 60,
+     "y": 44
+    },
+    {
+     "c": "w",
+     "x": 60,
+     "y": 66
+    },
+    {
+     "c": "w",
+     "x": 60,
+     "y": 88
+    },
+    {
+     "c": "r",
+     "x": 48,
+     "y": 124
+    },
+    {
+     "c": "r",
+     "x": 240,
+     "y": 126
+    }
+   ],
+   "note": "Night · the right-hand light is about 400 m astern of the tug"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "A boat is heading for a ship waiting outside the port of Piraeus. These are its lights. What is it?",
+  "a": "A pilot vessel on duty, under way",
+  "o": [
+   "A vessel fishing, under way",
+   "A vessel not under command",
+   "A vessel towing"
+  ],
+  "why": "White over red: pilot on duty (\"white hat, red nose\"); the sidelight shows she is under way.",
+  "ref": "COLREGs Rule 29",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 135,
+     "y": 52,
+     "t": "white"
+    },
+    {
+     "c": "r",
+     "x": 135,
+     "y": 74,
+     "t": "red"
+    },
+    {
+     "c": "r",
+     "x": 118,
+     "y": 122
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "A loaded tanker is approaching Agioi Theodoroi at night with these lights. What is she showing?",
+  "a": "Constrained by her draught",
+  "o": [
+   "Not under command",
+   "Aground",
+   "Restricted in her ability to manoeuvre"
+  ],
+  "why": "Three all-round reds in a vertical line, plus power-driven lights: constrained by draught.",
+  "ref": "COLREGs Rule 28",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 26
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 48
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 70
+    },
+    {
+     "c": "w",
+     "x": 110,
+     "y": 64
+    },
+    {
+     "c": "w",
+     "x": 210,
+     "y": 84
+    },
+    {
+     "c": "g",
+     "x": 222,
+     "y": 124
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "A naval vessel shows these lights. How close may you approach?",
+  "a": "No closer than 1000 m",
+  "o": [
+   "No closer than 100 m",
+   "No closer than 500 m",
+   "As close as you like astern of her"
+  ],
+  "why": "Three all-round greens: mine clearance; it is dangerous to come within 1000 m.",
+  "ref": "COLREGs Rule 27",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 160,
+     "y": 36
+    },
+    {
+     "c": "g",
+     "x": 134,
+     "y": 52
+    },
+    {
+     "c": "g",
+     "x": 186,
+     "y": 52
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 82
+    },
+    {
+     "c": "g",
+     "x": 146,
+     "y": 122
+    },
+    {
+     "c": "r",
+     "x": 174,
+     "y": 122
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Far out at sea you first see the white light alone; about ten minutes later the red appears below it. What was the white light?",
+  "a": "The masthead light of a power vessel",
+  "o": [
+   "An anchor light, then a second vessel",
+   "A sternlight that became a sidelight",
+   "A lighthouse behind a yacht"
+  ],
+  "why": "Masthead lights carry 5–6 M, sidelights only 2–3 M, so the masthead light shows first.",
+  "ref": "COLREGs Rule 22",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 70,
+     "t": "first"
+    },
+    {
+     "c": "r",
+     "x": 150,
+     "y": 120,
+     "t": "later"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "A minute ago this vessel showed both sidelights. What has she just done?",
+  "a": "Altered course to her port",
+  "o": [
+   "Altered course to her starboard",
+   "Stopped in the water",
+   "Turned to come straight at you"
+  ],
+  "why": "Bow on she showed red and green; now only green, so her bow has swung to her port (your right).",
+  "ref": "COLREGs Rule 21",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 180,
+     "y": 74,
+     "t": "white"
+    },
+    {
+     "c": "g",
+     "x": 192,
+     "y": 122,
+     "t": "green"
+    }
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Which navigation lights may you show?",
+  "a": "Sidelights and sternlight, or a tricolour",
+  "o": [
+   "Steaming light, sidelights and sternlight",
+   "Tricolour plus steaming light",
+   "One all-round white light only"
+  ],
+  "why": "Rule 25: a sailing vessel under 20 m may combine sidelights and sternlight in a masthead tricolour.",
+  "ref": "COLREGs Rule 25",
+  "fig": {
+   "type": "card",
+   "title": "Your yacht tonight",
+   "lines": [
+    "13 m sloop",
+    "Under sail, engine off",
+    "Night passage Paros to Naxos"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Which lights do you switch on?",
+  "a": "Steaming light, sidelights and sternlight",
+  "o": [
+   "Tricolour and sternlight",
+   "Tricolour only",
+   "Anchor light and sidelights"
+  ],
+  "why": "Rule 23: under engine you are a power-driven vessel.",
+  "ref": "COLREGs Rule 23",
+  "fig": {
+   "type": "card",
+   "title": "Leaving Gouvia marina at dusk",
+   "lines": [
+    "12 m yacht",
+    "Sails furled, motoring"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Anchored here for the night, what light must you show?",
+  "a": "One all-round white light where best seen",
+  "o": [
+   "Your tricolour",
+   "Sidelights and sternlight",
+   "Two all-round red lights"
+  ],
+  "why": "Rule 30: at anchor, under 50 m, one all-round white light.",
+  "ref": "COLREGs Rule 30",
+  "fig": {
+   "type": "card",
+   "title": "Overnight at anchor",
+   "lines": [
+    "14 m yacht",
+    "Bay on Kefalonia, other boats around",
+    "Engine off, sails stowed"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Which lights should you have on?",
+  "a": "Steaming light, sidelights and sternlight",
+  "o": [
+   "None: it is daytime",
+   "Tricolour only",
+   "Tricolour and steaming light"
+  ],
+  "why": "Rule 20: lights in restricted visibility too; with the engine in gear you show power-driven lights.",
+  "ref": "COLREGs Rules 20 / 23",
+  "fig": {
+   "type": "card",
+   "title": "Fog bank, 15:00",
+   "lines": [
+    "Mainsail up, engine in gear",
+    "Visibility 300 m",
+    "Ferry route nearby"
+   ],
+   "tag": "fog"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "What is the least light you must show?",
+  "a": "An all-round white light",
+  "o": [
+   "A torch, only if a boat comes near",
+   "Red and green sidelights only",
+   "None: no light is needed in a bay"
+  ],
+  "why": "Rule 23(d): power-driven, under 7 m and 7 kn max: an all-round white (sidelights if practicable).",
+  "ref": "COLREGs Rule 23",
+  "fig": {
+   "type": "card",
+   "title": "Back from the taverna",
+   "lines": [
+    "Dinghy 2.8 m, 6 hp outboard",
+    "Top speed about 6 knots",
+    "Dark, boats moving in the bay"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "What light do you need?",
+  "a": "A white torch, ready to show in time",
+  "o": [
+   "Red and green sidelights",
+   "An all-round red light",
+   "None: rowing boats are exempt"
+  ],
+  "why": "Rule 25(d): under oars, a white torch or lantern shown in time to prevent collision.",
+  "ref": "COLREGs Rule 25",
+  "fig": {
+   "type": "card",
+   "title": "Rowing ashore at night",
+   "lines": [
+    "Dinghy, oars only",
+    "Two yachts motoring in the anchorage"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Is that allowed?",
+  "a": "No: red over green is not used with a tricolour",
+  "o": [
+   "Yes: it shows clearly you are sailing",
+   "Yes, but only offshore",
+   "No: red over green is for fishing vessels"
+  ],
+  "why": "Rule 25(c): the optional red-over-green goes only with separate sidelights and sternlight.",
+  "ref": "COLREGs Rule 25",
+  "fig": {
+   "type": "card",
+   "title": "Under sail at night",
+   "lines": [
+    "Your tricolour is on",
+    "Crew wants to add the all-round",
+    "red-over-green masthead lights too"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 3,
+  "q": "Drifting like this in the dark, what lights do you display?",
+  "a": "Two all-round red lights, one above the other",
+  "o": [
+   "Your tricolour",
+   "Two all-round reds plus sidelights and sternlight",
+   "An all-round white anchor light"
+  ],
+  "why": "Rule 27(a): NUC shows two all-round reds; sidelights and sternlight only when making way.",
+  "ref": "COLREGs Rule 27",
+  "fig": {
+   "type": "card",
+   "title": "Dismasted, engine fouled",
+   "lines": [
+    "14 m yacht, drifting at night",
+    "Not making way through the water",
+    "Ferry route 2 M away"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Stuck on the sand until morning, what do you show at night?",
+  "a": "Anchor light plus two all-round red lights",
+  "o": [
+   "Two all-round red lights only",
+   "Tricolour and anchor light",
+   "Sidelights and sternlight"
+  ],
+  "why": "Rule 30(d): aground = anchor light(s) plus two all-round reds (not required under 12 m).",
+  "ref": "COLREGs Rule 30",
+  "fig": {
+   "type": "card",
+   "title": "Aground at night",
+   "lines": [
+    "13 m yacht on a sandbank",
+    "Waiting for a tow at first light"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "At night, which of your lights can this ship see?",
+  "a": "Only your sternlight",
+  "o": [
+   "Your green sidelight and sternlight",
+   "Only your green sidelight",
+   "Your red and green sidelights"
+  ],
+  "why": "The sternlight covers 135° astern; sidelights stop 22.5° abaft the beam.",
+  "ref": "COLREGs Rule 21",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 140,
+    "dist": 85,
+    "hdg": 270,
+    "label": "Ship"
+   },
+   "bearingLine": true,
+   "note": "Ship bearing 140° relative"
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Waiting like this until dawn, which lights must you show?",
+  "a": "Sail lights: tricolour, or sidelights and sternlight",
+  "o": [
+   "An all-round white anchor light",
+   "Two all-round red lights",
+   "No lights while you are stopped"
+  ],
+  "why": "Hove-to you are still under way under sail, not anchored or disabled.",
+  "ref": "COLREGs Rule 25",
+  "fig": {
+   "type": "card",
+   "title": "Hove-to at night",
+   "lines": [
+    "13 m yacht, headsail backed",
+    "Engine off",
+    "Waiting for daylight off Monemvasia"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 1,
+  "q": "Should your navigation lights be on?",
+  "a": "Yes: they are required from sunset",
+  "o": [
+   "No: only once it is fully dark",
+   "No: only in poor visibility",
+   "Only if another vessel is near"
+  ],
+  "why": "Rule 20: lights from sunset to sunrise, whatever the twilight.",
+  "ref": "COLREGs Rule 20",
+  "fig": {
+   "type": "card",
+   "title": "August, Saronic Gulf",
+   "lines": [
+    "Sunset 20:15",
+    "Now 20:30, still light enough to see",
+    "Under sail"
+   ]
+  }
+ },
+ {
+  "topic": "buoyage",
+  "difficulty": 2,
+  "q": "Your tricolour has gone out. What do you use instead?",
+  "a": "Deck-level sidelights and sternlight",
+  "o": [
+   "The steaming light",
+   "The anchor light",
+   "Steaming light and sidelights"
+  ],
+  "why": "Rule 25: the tricolour and the deck-level sidelights and sternlight are alternatives under sail.",
+  "ref": "COLREGs Rule 25",
+  "fig": {
+   "type": "card",
+   "title": "Under sail at night",
+   "lines": [
+    "13 m yacht",
+    "Deck-level lights are working",
+    "Engine off"
+   ]
+  }
+ }
+]

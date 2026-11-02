@@ -1,0 +1,352 @@
+[
+ {
+  "topic": "urgency",
+  "difficulty": 1,
+  "q": "You need help, but nobody aboard is in danger yet. Which call do you make on channel 16?",
+  "a": "PAN-PAN",
+  "o": [
+   "MAYDAY",
+   "SÉCURITÉ",
+   "MAYDAY RELAY"
+  ],
+  "why": "Urgent help needed but no grave and imminent danger: PAN-PAN.",
+  "ref": "Urgency call",
+  "fig": {
+   "type": "card",
+   "title": "Drifting",
+   "lines": [
+    "Engine failed, no wind",
+    "6 miles offshore, open sea",
+    "Boat sound, crew well",
+    "You need a tow"
+   ]
+  }
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 1,
+  "q": "You are about to send an urgency call to every station in range from your yacht Nefeli. How does it begin?",
+  "a": "PAN-PAN ×3, ALL STATIONS ×3, THIS IS, Nefeli ×3",
+  "o": [
+   "ALL STATIONS ×3, PAN-PAN ×3, THIS IS, Nefeli ×3",
+   "PAN-PAN once, ALL STATIONS once, THIS IS, Nefeli once",
+   "PAN-PAN ×3, THIS IS, Nefeli ×3, ALL STATIONS ×3"
+  ],
+  "why": "Urgency call: PAN-PAN three times, the station(s) called, THIS IS, your name three times.",
+  "ref": "Urgency call",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "Your crew member needs a doctor's view on what to do next. Which call do you make?",
+  "a": "PAN-PAN, asking for medical advice",
+  "o": [
+   "MAYDAY, asking for a helicopter",
+   "SÉCURITÉ, warning other yachts",
+   "A routine call to the Kos marina"
+  ],
+  "why": "Medical help needed but no immediate threat to life: PAN-PAN with medical advice requested.",
+  "ref": "Urgency — medical",
+  "fig": {
+   "type": "card",
+   "title": "Fall below",
+   "lines": [
+    "Crew fell down the companionway",
+    "Arm probably broken, in pain",
+    "Conscious, breathing normally",
+    "12 miles from Kos"
+   ]
+  }
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "You want a tow and only Olympia Radio needs to hear it. How do you address your PAN-PAN?",
+  "a": "PAN-PAN ×3, then Olympia Radio ×3",
+  "o": [
+   "PAN-PAN ×3, then ALL STATIONS ×3 only",
+   "Olympia Radio by voice on channel 70",
+   "PAN-PAN ×3 with no address at all"
+  ],
+  "why": "An urgency call may go to all stations or to one named station, three times after PAN-PAN.",
+  "ref": "Urgency call",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "Your problem has gone away on its own. What do you do about your earlier call?",
+  "a": "Cancel the PAN-PAN: tell all stations you need no help",
+  "o": [
+   "Nothing — an urgency call expires by itself",
+   "Send SEELONCE FEENEE on channel 16",
+   "Send a SÉCURITÉ that your engine runs"
+  ],
+  "why": "Cancel an urgency call once the urgency is over, so nobody keeps looking for you.",
+  "ref": "Urgency call",
+  "fig": {
+   "type": "card",
+   "title": "An hour ago",
+   "lines": [
+    "You sent PAN-PAN: engine failure",
+    "Engine now running again",
+    "Heading for Paros under power"
+   ],
+   "tag": "PAN-PAN"
+  }
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "You pass this hazard in a busy channel. Which call warns the other vessels about it?",
+  "a": "SÉCURITÉ",
+  "o": [
+   "PAN-PAN",
+   "MAYDAY",
+   "MAYDAY RELAY"
+  ],
+  "why": "A danger to navigation is a safety message: SÉCURITÉ.",
+  "ref": "Safety call",
+  "fig": {
+   "type": "card",
+   "title": "In the fairway",
+   "lines": [
+    "Floating container, half submerged",
+    "Drifting in the channel",
+    "Between Paros and Naxos"
+   ]
+  }
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 1,
+  "q": "You hear a coast station on 16 begin: \"SÉCURITÉ, SÉCURITÉ, SÉCURITÉ, all stations…\". What kind of message follows?",
+  "a": "A navigational or weather warning",
+  "o": [
+   "A call for help from a vessel in danger",
+   "A distress call — 16 goes silent",
+   "A list of calls waiting for ships"
+  ],
+  "why": "SÉCURITÉ introduces a safety message: a navigational or weather warning.",
+  "ref": "Safety call",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "A coast station announces a SÉCURITÉ on 16 and says the gale warning follows on another channel, which it names. What do you do?",
+  "a": "Switch to the channel it named and listen",
+  "o": [
+   "Reply on 16 to acknowledge the warning",
+   "Stay on 16 — the warning comes there",
+   "Ignore it unless your boat is named"
+  ],
+  "why": "The SÉCURITÉ is only announced on 16; the message itself goes out on the working channel given.",
+  "ref": "Safety call",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "You have finished the opening of your PAN-PAN to all stations. What comes next?",
+  "a": "Your position, the problem and help needed",
+  "o": [
+   "Only your MMSI, then wait to be called",
+   "The word MAYDAY, then your position",
+   "Nothing — wait for the coastguard to ask"
+  ],
+  "why": "After the opening comes the message: position, nature of the urgency, assistance wanted.",
+  "ref": "Urgency call",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 3,
+  "q": "Things have changed since your urgency call went out. What do you do on the radio now?",
+  "a": "Upgrade to MAYDAY — the danger is now grave",
+  "o": [
+   "Repeat the PAN-PAN every 15 minutes",
+   "Cancel the PAN-PAN and call a marina",
+   "Send a SÉCURITÉ warning of the rocks"
+  ],
+  "why": "When the danger becomes grave and imminent, the urgency call is upgraded to MAYDAY.",
+  "ref": "Urgency call",
+  "fig": {
+   "type": "card",
+   "title": "Still drifting",
+   "lines": [
+    "You sent PAN-PAN for a tow",
+    "Wind now F6, onshore",
+    "Rocks 1 mile downwind",
+    "Too deep to anchor"
+   ],
+   "tag": "1 h later"
+  }
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "You have announced a SÉCURITÉ on 16 about a drifting container. Where do you give the warning itself?",
+  "a": "On a working channel you named on 16",
+  "o": [
+   "On 16, straight after the announcement",
+   "On channel 70, as a DSC text message",
+   "Only to the coastguard, by phone"
+  ],
+  "why": "Keep 16 clear: announce there, then give the safety message on a working channel.",
+  "ref": "Safety call",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "The coast station acknowledges your medical PAN-PAN on 16 and asks you to change to a working channel. What do you do?",
+  "a": "Change channel and continue the talk there",
+  "o": [
+   "Stay on 16 — urgency talk must stay there",
+   "Refuse — medical calls need channel 16",
+   "Cancel the PAN-PAN before you change"
+  ],
+  "why": "Long urgency traffic moves off 16 when the coast station asks, keeping 16 free.",
+  "ref": "Urgency — medical",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 1,
+  "q": "Which of these situations calls for a PAN-PAN?",
+  "a": "Engine dead, drifting offshore, no danger yet",
+  "o": [
+   "Fire in the cabin that you cannot put out",
+   "A big log floating in the harbour approach",
+   "Booking a berth at the marina for tonight"
+  ],
+  "why": "PAN-PAN: urgent, but no grave and imminent danger. The fire is MAYDAY, the log SÉCURITÉ.",
+  "ref": "Urgency call",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 3,
+  "q": "You need a tow to the nearest port. Which call fits, and why?",
+  "a": "PAN-PAN — urgent, but no grave and imminent danger",
+  "o": [
+   "MAYDAY — a dismasting is always a distress",
+   "SÉCURITÉ — warn others of the lost rig",
+   "No call — hail a passing yacht instead"
+  ],
+  "why": "Help is needed urgently, but boat and crew are not in grave and imminent danger: PAN-PAN.",
+  "ref": "Urgency call",
+  "fig": {
+   "type": "card",
+   "title": "Dismasted",
+   "lines": [
+    "Mast down, rig cut free and sunk",
+    "Hull sound, nobody hurt",
+    "Rope round the propeller",
+    "8 miles off, wind F4 offshore"
+   ]
+  }
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 3,
+  "q": "Your guest is getting worse by the minute. Which call do you make?",
+  "a": "MAYDAY — a life is in grave and imminent danger",
+  "o": [
+   "PAN-PAN — medical cases are always urgency",
+   "PAN-PAN, asking for medical advice only",
+   "SÉCURITÉ, asking any doctor to call you"
+  ],
+  "why": "A life-threatening condition is grave and imminent danger to a person: MAYDAY.",
+  "ref": "Urgency or distress",
+  "fig": {
+   "type": "card",
+   "title": "Allergic reaction",
+   "lines": [
+    "Guest stung by a wasp",
+    "Face and throat swelling fast",
+    "Struggling to breathe",
+    "No adrenaline pen aboard"
+   ]
+  }
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "A coast station is reading a SÉCURITÉ announcement on 16 just as you want to call a friend's yacht. What do you do?",
+  "a": "Wait until it ends, then make your call",
+  "o": [
+   "Stay off 16 until SEELONCE FEENEE",
+   "Call over it — safety is low priority",
+   "Wait an hour before any routine call"
+  ],
+  "why": "Safety traffic comes before routine calls but imposes no silence: wait until it is over.",
+  "ref": "Safety call",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "The coast station answers your medical PAN-PAN and puts you through to a doctor. Which information helps the doctor most?",
+  "a": "Age, symptoms and the first aid given",
+  "o": [
+   "Passport number and nationality",
+   "The name of their doctor at home",
+   "The boat's insurance details"
+  ],
+  "why": "Medical advice by radio needs the patient's age, symptoms and the treatment given so far.",
+  "ref": "Urgency — medical",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "You see that a big mooring buoy has broken free and is drifting into the harbour approach. May your yacht send a SÉCURITÉ?",
+  "a": "Yes — any station may warn of a danger",
+  "o": [
+   "No — only coast stations send SÉCURITÉ",
+   "Only with the coastguard's permission",
+   "Only by DSC, never by voice"
+  ],
+  "why": "Any station may send a safety message about a danger to navigation.",
+  "ref": "Safety call",
+  "fig": null
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 3,
+  "q": "Halfway through your own message, someone else breaks in on channel 16. What do you do?",
+  "a": "Stop, listen, and finish later if 16 is clear",
+  "o": [
+   "Finish your SÉCURITÉ — you started first",
+   "Switch to high power and talk over it",
+   "Answer the PAN-PAN with your position"
+  ],
+  "why": "Urgency outranks safety: give way to the PAN-PAN, note it, and resume afterwards.",
+  "ref": "Priority of calls",
+  "fig": {
+   "type": "card",
+   "title": "On channel 16",
+   "lines": [
+    "You are giving a SÉCURITÉ",
+    "A weak PAN-PAN breaks in"
+   ]
+  }
+ },
+ {
+  "topic": "urgency",
+  "difficulty": 2,
+  "q": "The coast station has your PAN-PAN; a lifeboat will reach you in an hour. How do you use the radio while you wait?",
+  "a": "Keep a listening watch on 16 and as told",
+  "o": [
+   "Switch off to save the battery till it comes",
+   "Call every five minutes for an update",
+   "Switch to 70 and wait for a DSC call"
+  ],
+  "why": "Stay reachable: keep watch on 16 or on the channel the coast station gave you.",
+  "ref": "Urgency call",
+  "fig": null
+ }
+]

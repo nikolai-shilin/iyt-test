@@ -1,0 +1,333 @@
+[
+ {
+  "topic": "gmdss",
+  "difficulty": 1,
+  "q": "Your 406 MHz EPIRB has been switched on. Which system carries its alert to a rescue centre?",
+  "a": "Cospas-Sarsat satellites",
+  "o": [
+   "NAVTEX coast stations",
+   "VHF DSC coast stations",
+   "AIS shore stations"
+  ],
+  "why": "406 MHz EPIRBs are detected by the Cospas-Sarsat satellite system, which passes alerts to MRCCs.",
+  "ref": "EPIRB",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "A lifeboat is closing in on your liferaft, guided by your EPIRB. Which of its signals does she use for the final approach?",
+  "a": "The 121.5 MHz homing signal",
+  "o": [
+   "The 406 MHz satellite burst",
+   "A voice call on channel 16",
+   "A 518 kHz NAVTEX signal"
+  ],
+  "why": "EPIRBs also send 121.5 MHz so rescuers can home in on them; 406 MHz goes to the satellites.",
+  "ref": "EPIRB",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 3,
+  "q": "You are buying an EPIRB for the boat. Why choose B?",
+  "a": "Its position reaches rescuers faster and more precisely",
+  "o": [
+   "It also makes voice calls on channel 16",
+   "It works without being registered",
+   "It needs no 121.5 MHz homing signal"
+  ],
+  "why": "A GPS EPIRB sends its own position in the alert; without GPS the satellites must work it out.",
+  "ref": "EPIRB",
+  "fig": {
+   "type": "card",
+   "title": "Choosing an EPIRB",
+   "lines": [
+    "A: 406 MHz, no GPS",
+    "B: 406 MHz with built-in GPS",
+    "Same price, same battery life"
+   ]
+  }
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "You buy a used yacht whose EPIRB is still registered to the previous owner. What do you do?",
+  "a": "Update the registration with your and the boat's details",
+  "o": [
+   "Nothing — the registration stays with the beacon",
+   "Switch it on once so the system learns you",
+   "Register it only if you sail offshore"
+  ],
+  "why": "Rescuers use the registration to phone the owner and identify the boat: keep it current.",
+  "ref": "EPIRB",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "What happens to this beacon if the yacht sinks before anyone can reach it?",
+  "a": "It floats free and switches itself on",
+  "o": [
+   "It stays in its bracket until someone frees it",
+   "It sends a DSC alert on channel 70",
+   "It sinks with the boat, sealed in its bracket"
+  ],
+  "why": "Category I: the hydrostatic release frees it at depth; it floats up and activates automatically.",
+  "ref": "EPIRB",
+  "fig": {
+   "type": "card",
+   "title": "EPIRB on the pushpit",
+   "lines": [
+    "Category I",
+    "In a bracket with a hydrostatic release"
+   ]
+  }
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "At the start of the season you want to check that the EPIRB works. How?",
+  "a": "Run its self-test, as the maker's manual says",
+  "o": [
+   "Switch it on for a minute and call the coastguard",
+   "Drop it in a bucket of water to see it start",
+   "Leave it on overnight and see if anyone calls"
+  ],
+  "why": "Use only the built-in self-test, per the instructions; a real activation sends a live alert.",
+  "ref": "EPIRB",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "You find the beacon has been transmitting by accident. What do you do?",
+  "a": "Switch it off and tell the coastguard / MRCC",
+  "o": [
+   "Switch it off and say nothing — it was brief",
+   "Leave it on until the coastguard calls you",
+   "Send SEELONCE FEENEE on channel 16"
+  ],
+  "why": "A false alert may already be in the system: switch off and inform the coastguard at once.",
+  "ref": "EPIRB",
+  "fig": {
+   "type": "card",
+   "title": "In the cockpit locker",
+   "lines": [
+    "EPIRB light flashing",
+    "Knocked on by a fender",
+    "Noticed 20 minutes later"
+   ]
+  }
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "Your yacht has an EPIRB, and a crew member wears a PLB on her lifejacket. What is the key difference?",
+  "a": "The EPIRB is registered to the boat, the PLB to a person",
+  "o": [
+   "The PLB uses only 121.5 MHz, no satellites",
+   "The EPIRB is meant for inland waters only",
+   "The PLB works only with a VHF DSC radio"
+  ],
+  "why": "Both alert via 406 MHz satellites; the EPIRB identifies the vessel, the PLB a person.",
+  "ref": "EPIRB & PLB",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 1,
+  "q": "You are in the liferaft and switch on the SART. What does it do?",
+  "a": "Shows as a line of dots on a ship's radar",
+  "o": [
+   "Sends your position to the satellites",
+   "Calls nearby ships by voice on 16",
+   "Flashes a light seen 10 miles away"
+  ],
+  "why": "A SART answers a ship's 9 GHz (X-band) radar and paints a line of 12 dots on its screen.",
+  "ref": "SART",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 3,
+  "q": "The rescue ship's radar shows this. Where exactly is the SART?",
+  "a": "At the dot nearest the ship",
+  "o": [
+   "At the dot farthest from the ship",
+   "In the middle of the line of dots",
+   "Anywhere along the line of dots"
+  ],
+  "why": "The SART is at the first dot, the one closest to the ship; the line runs on beyond it.",
+  "ref": "SART",
+  "fig": {
+   "type": "card",
+   "title": "Radar screen",
+   "lines": [
+    "A line of 12 dots appears",
+    "Running outwards, away from the ship"
+   ]
+  }
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "Your liferaft carries an AIS-SART instead of a radar SART. Who will see it?",
+  "a": "Any vessel showing AIS targets",
+  "o": [
+   "Only ships with a 9 GHz radar",
+   "Only the Cospas-Sarsat satellites",
+   "Only coast stations with NAVTEX"
+  ],
+  "why": "An AIS-SART sends AIS messages with its position, shown on any AIS display nearby.",
+  "ref": "AIS-SART",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 1,
+  "q": "You fit a NAVTEX receiver at the chart table. Which frequency does it listen on?",
+  "a": "518 kHz",
+  "o": [
+   "406 MHz",
+   "121.5 MHz",
+   "156.8 MHz"
+  ],
+  "why": "International NAVTEX broadcasts go out on 518 kHz, in English.",
+  "ref": "NAVTEX",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 3,
+  "q": "Your NAVTEX prints this header. What does the letter B tell you about the message?",
+  "a": "It is a meteorological warning",
+  "o": [
+   "It is a navigational warning",
+   "It is a routine weather forecast",
+   "It is search-and-rescue news"
+  ],
+  "why": "The second letter is the subject: A navigational warning, B meteorological warning, D SAR, E forecast.",
+  "ref": "NAVTEX",
+  "fig": {
+   "type": "card",
+   "title": "NAVTEX printout",
+   "lines": [
+    "Header: ZCZC HB45",
+    "H = transmitting station"
+   ]
+  }
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "Your NAVTEX prints warnings from stations far from where you sail. How do you limit it to your area?",
+  "a": "Select the letters of the local stations",
+  "o": [
+   "Tune it to the local station's frequency",
+   "Enter the local station's MMSI",
+   "Set it to the local VHF channel"
+  ],
+  "why": "All stations share 518 kHz; you choose which station letters (and message types) to print.",
+  "ref": "NAVTEX",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "A ferry nearby carries Class A AIS; your yacht has Class B. Which is true?",
+  "a": "Class B sends less often and at lower power",
+  "o": [
+   "Class B gets priority over A in busy areas",
+   "Class B only receives and never transmits",
+   "Class A is meant for yachts, B for ships"
+  ],
+  "why": "Class A is the ship standard; Class B is a simpler small-craft set with lower power and slower reports.",
+  "ref": "AIS",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "Does this mean the way ahead is clear of other vessels?",
+  "a": "No — many boats have no AIS; keep a lookout",
+  "o": [
+   "Yes — every vessel must transmit AIS",
+   "Yes — within 12 miles of the coast",
+   "Yes — only small fishing boats lack AIS"
+  ],
+  "why": "AIS is an aid, not a lookout: many craft carry none or have it switched off.",
+  "ref": "AIS",
+  "fig": {
+   "type": "card",
+   "title": "Night passage",
+   "lines": [
+    "Plotter: no AIS targets ahead",
+    "Visibility good, wind F4"
+   ]
+  }
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 1,
+  "q": "Your instructor says GMDSS changed rescue at sea. What is its main idea?",
+  "a": "Distress alerts reach rescue centres automatically",
+  "o": [
+   "Every yacht must carry a satellite phone",
+   "Coast stations no longer listen on VHF",
+   "Morse code is used for every distress alert"
+  ],
+  "why": "GMDSS: automatic alerting (DSC, EPIRB) so a distress reaches shore even if no one hears a voice call.",
+  "ref": "GMDSS",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "Which GMDSS sea area are you sailing in?",
+  "a": "A1",
+  "o": [
+   "A2",
+   "A3",
+   "A4"
+  ],
+  "why": "Sea area A1 is defined by the range of VHF DSC coast stations.",
+  "ref": "GMDSS sea areas",
+  "fig": {
+   "type": "card",
+   "title": "Your cruising area",
+   "lines": [
+    "Island-hopping in the Ionian",
+    "In range of VHF DSC coast stations"
+   ]
+  }
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 3,
+  "q": "Your passage takes you 80 miles offshore, beyond the range of VHF DSC coast stations. Which means can still alert a rescue centre from there?",
+  "a": "A 406 MHz EPIRB, through the satellites",
+  "o": [
+   "VHF DSC on high power — range doubles",
+   "The NAVTEX receiver, which sends alerts",
+   "AIS Class B, which alerts the MRCC"
+  ],
+  "why": "Beyond A1 your VHF will not reach shore; a 406 MHz EPIRB alerts via satellite from anywhere.",
+  "ref": "GMDSS",
+  "fig": null
+ },
+ {
+  "topic": "gmdss",
+  "difficulty": 2,
+  "q": "You are in the liferaft with a radar SART. Where do you put it?",
+  "a": "As high as possible, on its pole",
+  "o": [
+   "In the water, tied to the raft",
+   "Inside the canopy, on the floor",
+   "Under the raft, in a ballast pocket"
+  ],
+  "why": "SART range depends on height: hold or mount it as high as you can.",
+  "ref": "SART",
+  "fig": null
+ }
+]
