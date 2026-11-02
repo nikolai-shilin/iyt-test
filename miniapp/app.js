@@ -254,6 +254,34 @@ function save(cloud = true) {
   const s = JSON.stringify(S);
   try { localStorage.setItem(KEY, s); } catch (e) {}
   if (cloud && CLOUD) { clearTimeout(cloudTimer); cloudTimer = setTimeout(() => cloudSave(s), 500); }
+  if (cloud) serverSave();
+}
+
+// Server copy of the progress, inside Telegram only (api/progress.mjs → Supabase public.progress): the newest state
+// wins, as with CloudStorage, and each answer since the last sync goes to the answers log. Unsent answers wait in
+// localStorage. serverOn turns off when the server cannot help (no database, launch data refused).
+const OUTBOX = 'iyt-test-outbox';
+let outbox = [];
+try { outbox = JSON.parse(localStorage.getItem(OUTBOX) || '[]'); } catch (e) {}
+const keepOutbox = () => { try { localStorage.setItem(OUTBOX, JSON.stringify(outbox)); } catch (e) {} };
+let serverOn = IN_TG, serverTimer = null;
+function progressApi(body, keepalive = false) {
+  return fetch('/api/progress', { method: 'POST', keepalive, body, headers: { 'x-telegram-init-data': TG.initData, 'content-type': 'application/json' } })
+    .then((r) => { if (r.status === 403 || r.status === 503) serverOn = false; return r.ok ? r.json() : Promise.reject(new Error(r.status)); });
+}
+function serverSave(now = false) {
+  if (!serverOn) return;
+  clearTimeout(serverTimer);
+  if (!now) { serverTimer = setTimeout(() => serverSave(true), 3000); return; }
+  const answers = outbox.slice(0, 500), body = JSON.stringify({ state: S, answers });
+  progressApi(body, body.length < 60000) // keepalive lets the last save finish while the app closes (64 KB cap)
+    .then(() => { outbox = outbox.slice(answers.length); keepOutbox(); if (outbox.length) serverSave(); })
+    .catch(() => {});
+}
+// The server's copy, or null (outside Telegram, no database, or no answer within 5 s — the app starts anyway).
+function serverLoad() {
+  if (!serverOn) return Promise.resolve(null);
+  return Promise.race([progressApi('{}').catch(() => null), new Promise((res) => setTimeout(() => res(null), 5000))]);
 }
 function cloudSave(s = JSON.stringify(S)) {
   if (!CLOUD) return;
@@ -287,12 +315,13 @@ const mastered = (id) => rec(id)[0] === '11';
 const isMistake = (id) => rec(id)[1] > 0 && !mastered(id);
 const touched = (id) => !!S.q[id];
 const halfway = (id) => !mastered(id) && rec(id)[0].endsWith('1');
-function record(id, ok) {
+function record(id, ok, mode = 'practice', option = null) {
   const [h, w] = rec(id);
   S.q[id] = [(h + (ok ? '1' : '0')).slice(-2), w + (ok ? 0 : 1)];
   const d = dkey();
   S.days[d] = (S.days[d] || 0) + 1;
   S.total++;
+  if (serverOn) { outbox.push({ q: id, ok, o: option, m: mode, at: new Date().toISOString() }); outbox = outbox.slice(-5000); keepOutbox(); }
 }
 let BY_TOPIC = {};
 const topicIds = (tp) => BY_TOPIC[tp] || [];
@@ -867,7 +896,7 @@ function startPractice(ids, fb = S.set.feedback) {
 function check() {
   if (P.sel == null || P.checked) return;
   const id = P.ids[P.i], oi = P.orders[id][P.sel], ok = oi === Q[id].answer;
-  record(id, ok);
+  record(id, ok, 'practice', oi);
   P.res[id] = ok ? 'ok' : 'bad';
   P.picks[id] = oi;
   P.checked = true;
@@ -879,7 +908,7 @@ function check() {
 function silentNext() {
   if (P.sel == null) return;
   const id = P.ids[P.i], oi = P.orders[id][P.sel], ok = oi === Q[id].answer;
-  record(id, ok);
+  record(id, ok, 'practice', oi);
   P.res[id] = ok ? 'ok' : 'bad';
   P.picks[id] = oi;
   save();
@@ -945,7 +974,7 @@ async function submitExam(auto) {
     if (!Q[id]) return;
     const a = E.ans[id], c = a === Q[id].answer;
     if (c) ok++;
-    if (a != null) record(id, c); // unanswered questions do not touch mastery
+    if (a != null) record(id, c, 'exam', a); // unanswered questions do not touch mastery
   });
   const n = E.ids.length, pct = Math.round((ok / n) * 100), passed = pct >= BANK.passMark;
   const R = { at: Date.now(), ok, n, pct, passed, secs: Math.round(E.el / 1000), left, auto: !!auto, ids: E.ids, ans: E.ans };
@@ -1024,7 +1053,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && mainCb) { e.preventDefault(); ACT.main(); }
 });
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'hidden') { if (timerInt) tick(); save(false); cloudSave(); }
+  if (document.visibilityState === 'hidden') { if (timerInt) tick(); save(false); cloudSave(); serverSave(true); }
   else lastTick = Date.now(); // time spent away does not count
 });
 
@@ -1058,12 +1087,17 @@ async function init() {
   document.documentElement.lang = LANG;
   const boot = $app.querySelector('.boot .meta');
   if (boot) boot.textContent = t('loading');
+  const server = serverLoad(); // in parallel with the banks
   const banks = await Promise.all(LEVELS.filter((l) => l.id).map((l) =>
     fetchBank(l.id).catch(() => 0).then((b) => [l.id, b])));
   for (const [id, b] of banks) if (b && b.questions) BASES[id] = b;
   if (!BASES[DEFAULT_LEVEL]) throw new Error(t('bankError', banks.find(([id]) => id === DEFAULT_LEVEL)[1]));
   const remote = await cloudLoad();
   if (remote && remote.ts > S.ts) { S = merge(remote); applyTheme(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  // The server copy wins when newer (another phone); progress made only on this device is sent up once now.
+  const srv = await server;
+  if (srv && srv.state && srv.ts > S.ts) { S = merge(srv.state); applyTheme(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  else if (srv && S.ts > srv.ts) serverSave(true);
   const link = (IN_TG && TG.initDataUnsafe && TG.initDataUnsafe.start_param) || new URLSearchParams(location.search).get('screen') || '';
   const want = (LEVELS.find((l) => l.link === link) || {}).id || S.set.level;
   LEVEL = LEVELS.find((l) => l.id === want && BASES[l.id]) || LEVELS.find((l) => l.id === DEFAULT_LEVEL);
