@@ -5,7 +5,7 @@
   "passMark": 70,
   "examQuestions": 30,
   "examMinutes": 45,
-  "version": "2026-11-02a",
+  "version": "2026-11-02b",
   "note": "Scenario questions written for study, close to the IYT VHF Radio Operator syllabus. Not official IYT exam content. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.",
   "topics": [
     {
@@ -601,7 +601,7 @@
       "q": "On channel 72 you and your friend press the transmit button at the same moment. What happens?",
       "figure": null,
       "options": [
-        "Neither of you is heard clearly, as on simplex only one can talk",
+        "Neither hears the other — on simplex only one can transmit at a time",
         "The set holds the second call until the first ends",
         "Both are heard, as in a telephone conversation",
         "The stronger signal is passed on to the other boat"
@@ -1560,7 +1560,7 @@
         "title": "Charter yacht Aurora",
         "lines": [
           "MMSI 237012340",
-          "Flag: Greece"
+          "Call sign SVB4321"
         ]
       },
       "options": [
@@ -2122,7 +2122,7 @@
         "lines": [
           "MAYDAY from yacht Selene: sinking",
           "No coast station has answered",
-          "Selene is 30 miles off — too far for you"
+          "Selene is 18 miles off — too far for you"
         ],
         "tag": "5 min"
       },
@@ -3684,11 +3684,11 @@
       "options": [
         "Nothing — logs are only for big ships",
         "Every routine call you make all day",
-        "Distress and urgency traffic you send or hear",
+        "Distress, urgency and safety traffic sent or heard",
         "Only the calls that coast stations make"
       ],
       "answer": 2,
-      "why": "Record distress and urgency traffic heard or sent, with times — it may be needed later.",
+      "why": "Record distress, urgency and safety traffic heard or sent, with times — it may be needed later.",
       "ref": "Radio log"
     },
     {
@@ -3780,7 +3780,7 @@
         "type": "card",
         "title": "Waiting to transmit",
         "lines": [
-          "A: tow needed, engine dead, no danger",
+          "A: engine dead, drifting, tow needed",
           "B: warning of an unlit buoy",
           "C: booking a table ashore"
         ]
@@ -3792,7 +3792,7 @@
         "A, B, C"
       ],
       "answer": 3,
-      "why": "Urgency (the tow, PAN-PAN) before safety (the buoy, SÉCURITÉ) before routine.",
+      "why": "Urgency (drifting without engine, PAN-PAN) before safety (the buoy, SÉCURITÉ) before routine.",
       "ref": "Order of priority"
     },
     {

@@ -32,13 +32,12 @@ q('terms', 2, 'The anchorage shows 2.4 m on the sounder at low water. The boat\'
   'Yes — 0.5 m under the keel, but allow for swell', ['No — the mast is too tall', 'No — draft must be at least twice the depth', 'Only if you lift the keel'], 'Draft is the keel depth below the waterline; compare it with depth at low water.', 'Nautical terms',
   dict(type='anchor', depth='2.4 m', tide='low water', title='Sounder at low water', lines=['Draft 1.9 m', 'Swell about 0.3 m']))
 q('terms', 1, 'The genoa is flapping on a beam reach. Which line do you pull in?',
-  'The genoa sheet', ['The genoa halyard', 'The topping lift', 'The mainsheet'], 'Sheets trim sails; halyards only hoist them.', 'Rigging',
-  dict(type='rope', kind='winch', labels=[[80, 86, 'genoa sheet', 'middle'], [255, 90, 'pull', 'middle']]))
+  'The genoa sheet', ['The genoa halyard', 'The topping lift', 'The mainsheet'], 'Sheets trim sails; halyards only hoist them.', 'Rigging')
 q('terms', 3, 'Downwind the mainsail twists and the top spills wind. Which control pulls the boom down?',
   'The kicker (boom vang)', ['The Cunningham', 'The outhaul', 'The backstay'], 'Off the wind the mainsheet no longer holds the boom down; the vang does.', 'Rigging')
 q('terms', 2, 'You are about to turn the stern through the wind on a run. What do you do first?',
   'Centre the mainsheet and warn the crew: "Gybe-ho"', ['Ease the mainsheet fully', 'Release the kicker', 'Drop the headsail'], 'A controlled gybe keeps the boom from slamming across.', 'Sailing manoeuvres',
-  dict(type='sail', wind=180, hdg=170, note='Running, about to gybe'))
+  {'type': 'sail', 'wind': 180, 'hdg': 350, 'note': 'Running, about to gybe'})
 q('terms', 2, 'Berthing in a marina with a strong crosswind, which yacht is harder to keep off the pontoon?',
   'The one with high freeboard — more hull for the wind to push', ['The one with low freeboard', 'The one with a longer keel', 'Freeboard makes no difference'], 'Freeboard is the hull above the water: more freeboard, more windage.', 'Nautical terms')
 
@@ -47,8 +46,8 @@ q('ropework', 1, 'You need to put a loop in the end of a mooring line to drop ov
   'Bowline', ['Clove hitch', 'Reef knot', 'Figure of eight'], 'A bowline makes a fixed loop that will not slip and unties after loading.', 'Knots',
   dict(type='rope', kind='ring', labels=[[160, 40, 'bollard']], note='Loop in the end of a line'))
 q('ropework', 1, 'The jib sheet has run out through the block and is flogging. What stops this happening again?',
-  'A figure-of-eight stopper knot in the end of the sheet', ['A bowline', 'A clove hitch', 'A reef knot'], 'The stopper will not pass through the block.', 'Knots',
-  dict(type='rope', kind='sheet', labels=[[90, 180, 'sheet end'], [220, 180, 'block']]))
+  'A figure of eight in the end of the sheet', ['A bowline tied to the clew', 'A clove hitch round the block', 'A reef knot in the end of the sheet'], 'The stopper will not pass through the block.', 'Knots',
+  {'type': 'rope', 'kind': 'sheet', 'labels': [[90, 180, 'sheet end'], [220, 180, 'block']]})
 q('ropework', 2, 'Hanging fenders on the guardrail before berthing, you want to adjust their height quickly. Which knot?',
   'Clove hitch', ['Bowline', 'Round turn and two half hitches', 'Sheet bend'], 'Quick to tie and slide; not for anything that must not work loose.', 'Knots',
   dict(type='rope', kind='rail', labels=[[160, 80, 'guardrail']]))
@@ -61,8 +60,8 @@ q('ropework', 2, 'This line is being made fast to a cleat. What completes it cor
   'A full turn round the base, figure-of-eight turns, one locking hitch', ['Five round turns and no hitch', 'A bowline round the cleat', 'Two half hitches on the horn'], 'The turn takes the load; the locking hitch holds without jamming.', 'Deckwork',
   dict(type='rope', kind='cleat', labels=[[160, 150, 'cleat']]))
 q('ropework', 3, 'A riding turn has jammed the genoa sheet on the winch under full load. How do you free it?',
-  'Tie a rolling hitch on the sheet with a spare line, take the load on another winch, then clear the turns', ['Cut the sheet', 'Release the halyard', 'Tack immediately'], 'The rolling hitch grips the loaded sheet and lets you transfer the load.', 'Knots',
-  dict(type='rope', kind='winch', labels=[[80, 86, 'jammed'], [255, 90, 'load'], [160, 170, 'riding turn on the drum']]))
+  'Tie a rolling hitch on the sheet with a spare line, take the load on another winch, then clear the turns', ['Cut the sheet', 'Release the halyard', 'Pull the tail harder to drag the riding turn through'], 'The rolling hitch grips the loaded sheet and lets you transfer the load.', 'Knots',
+  {'type': 'rope', 'kind': 'winch', 'labels': [[80, 86, 'loaded sheet'], [255, 90, 'tail'], [160, 170, 'riding turn on the drum']]})
 q('ropework', 2, 'You are choosing rope for a new anchor rode. Which material?',
   'Nylon — it stretches and absorbs shock loads', ['Polyester — low stretch', 'Polypropylene — it floats', 'Dyneema — strongest'], 'Elastic nylon protects the boat and fittings in gusts and waves.', 'Rope types')
 q('ropework', 2, 'The dinghy painter keeps sinking and nearly fouled the propeller. Which rope should it be?',
@@ -84,12 +83,12 @@ q('safety', 2, 'You are driving the dinghy alone to the beach. Where is the kill
   'Attached to your leg or lifejacket', ['Tied to the dinghy handle', 'In your pocket', 'Left on the yacht'], 'If you fall out, the cord pulls and the engine stops.', 'Dinghy safety')
 q('safety', 2, 'A crew member goes over the side on a broad reach. What is the very first thing you shout and do?',
   '"Man overboard!" — throw the danbuoy and horseshoe, point at the casualty', ['Send a Mayday', 'Start the engine', 'Drop the sails'], 'Flotation first and a spotter who never looks away.', 'Man overboard',
-  E(you=dict(hdg=0, sail=True, boom=14), other=dict(bearing=165, dist=70, hdg=0, scale=.3, label='MOB'), wind=225, note='Casualty astern to port'))
+  {'type': 'encounter', 'you': {'hdg': 0, 'sail': True, 'boom': 14}, 'other': {'bearing': -165, 'dist': 70, 'hdg': 0, 'scale': 0.3, 'label': 'MOB'}, 'wind': 225, 'note': 'Casualty astern to port'})
 q('safety', 3, 'The yacht has hit a rock and is taking water, but the pumps are keeping up for now. The liferaft?',
   'Prepare it on deck on its painter, but stay aboard while the yacht floats', ['Launch and board it immediately', 'Leave it stowed until the deck is awash', 'Inflate it in the cockpit'], '"Step up into the liferaft" — the yacht is the better survival platform.', 'Abandoning ship')
 q('safety', 2, 'The charter check-out is done and the crew are aboard. Before leaving the marina you…',
   'Give the safety briefing: lifejackets, gas, heads, fire, MOB, VHF, flares', ['Set the sails', 'Check their passports', 'Hand out the cabins'], 'Everyone must know where the gear is and how to call for help.', 'Skipper\'s responsibilities')
-q('safety', 3, 'You have recovered a crew member after 15 minutes in 16° water. They shiver, mumble and cannot grip. What do you do?',
+q('safety', 3, 'You have recovered a crew member after 15 minutes in 16 °C water. They shiver, mumble and cannot grip. What do you do?',
   'Handle gently and horizontally, strip wet clothes, insulate, warm slowly', ['Give brandy to warm them', 'Make them walk around the deck', 'Put them in a hot shower immediately'], 'Hypothermia: gradual rewarming, no alcohol, no rough handling.', 'First aid')
 q('safety', 2, 'During check-in you find the spare gas bottle stowed under the aft bunk. Where should it be?',
   'In the gas locker that drains overboard', ['Under the bunk is fine', 'In the engine bay', 'In the cockpit locker with the fuel'], 'Leaking gas must drain over the side, not into the bilge.', 'Gas safety')
@@ -129,9 +128,9 @@ q('colregs', 3, 'Motoring at night you see these lights on a steady bearing, clo
 # ---------------- navigation (10) ----------------
 q('navigation', 1, 'You need the distance between two headlands on the chart. Where do you measure it?',
   'On the latitude scale at the side, level with the position', ['On the longitude scale along the bottom', 'Anywhere on the border', 'With the compass rose'], 'One minute of latitude = one nautical mile; longitude minutes shrink with latitude.', 'Chartwork')
-q('navigation', 3, 'The chart gives this variation. Your plotted true course is 090°. What do you steer by the compass?',
+q('navigation', 3, 'The chart gives this variation; your compass has no deviation. Your plotted true course is 090°. What do you steer?',
   '094°M', ['086°M', '090°M', '098°M'], 'True to magnetic: add west ("west is best").', 'Compass conversion',
-  dict(type='compass', variation=-4, course=90))
+  {'type': 'compass', 'variation': -4, 'course': 90})
 q('navigation', 3, 'The compass reads 215°C. Deviation on this heading is 3°E, variation 2°W. What is the true course?',
   '216°T', ['210°T', '214°T', '220°T'], 'Compass → true: add east, subtract west: 215 + 3 − 2 = 216.', 'Compass conversion',
   dict(type='compass', variation=-2, deviation=3, course=215, courseLabel='Compass course', note='C → M → T'))
@@ -141,7 +140,7 @@ q('navigation', 2, 'You left the marina at 09:30 and the log reads 12.0 M at 12:
   '4.8 knots', ['6.0 knots', '5.2 knots', '4.0 knots'], '12 miles in 2.5 hours.', 'Speed, time, distance')
 q('navigation', 2, 'Your draft is 1.9 m. Can you cross the shoal on the track at the time shown?',
   'Yes — 1.5 m charted + 1.2 m tide = 2.7 m, about 0.8 m clearance', ['No — 1.5 m is less than the draft', 'Only at low water', 'Only if the tide is falling'], 'Depth now = charted depth + height of tide.', 'Charts / tides',
-  dict(type='chart', depths=[[60, 60, '8'], [110, 90, '5'], [150, 118, '1.5'], [120, 150, '4'], [220, 150, '7'], [90, 170, '12']], track='M30 170 L150 118 L260 60', boat=[40, 168, 45], panel=['Now 14:00', 'Height of tide 1.2 m', 'Draft 1.9 m'], note='Depths in metres below chart datum'))
+  {'type': 'chart', 'depths': [[60, 60, '8'], [110, 90, '5'], [150, 118, '1.5'], [120, 150, '4'], [220, 150, '7'], [90, 170, '12']], 'track': 'M30 170 L150 118 L260 60', 'boat': [40, 168, 67], 'panel': ['Now 14:00', 'Height of tide 1.2 m', 'Draft 1.9 m'], 'note': 'Depths in metres below chart datum'})
 q('navigation', 2, 'Which of the depths on this chart will dry at low water?',
   'The underlined 0.8 — a drying height above chart datum', ['The 1.5', 'The 4', 'None of them'], 'Underlined figures are heights above datum that uncover.', 'Charts',
   dict(type='chart', depths=[[60, 60, '8'], [120, 100, '4'], [170, 130, '0.8', True], [230, 90, '1.5'], [90, 160, '12']], note='Depths in metres · underlined = drying height'))
@@ -162,8 +161,8 @@ q('buoyage', 2, 'This mark is ahead. Where is the safe water?',
   'North of the mark', ['South of the mark', 'Either side', 'West of the mark'], 'North cardinal: black over yellow, both cones up.', 'Cardinal marks',
   B(kind='card-n', rhythm='Q', rhythmNote='continuous quick'))
 q('buoyage', 2, 'At night you see a white light flashing six times then one long flash. What is it and where do you pass?',
-  'A south cardinal — pass south of it', ['A north cardinal — pass north', 'A west cardinal — pass west', 'An isolated danger — any side'], 'Clock face: 6 o\'clock plus a long flash = south.', 'Cardinal marks',
-  B(kind='card-s', rhythm='Q(6)+LFl', rhythmNote='six quick + one long'))
+  'A south cardinal — pass south of it', ['A north cardinal — pass north', 'A west cardinal — pass west', 'An isolated danger — any side'], "Clock face: 6 o'clock plus a long flash = south.", 'Cardinal marks',
+  {'type': 'lights', 'lights': [{'c': 'w', 'x': 160, 'y': 128, 't': 'Q(6)+LFl 15s'}], 'note': 'Night · six quick flashes, then one long'})
 q('buoyage', 2, 'You see this mark. Which way round do you go?',
   'Keep clear, but you may pass on any side', ['Only to the north', 'Only to the east', 'Through the middle'], 'Isolated danger: black with red bands, two balls; danger right under it.', 'Isolated danger marks',
   B(kind='iso', rhythm='Fl(2)', rhythmNote='white, group of two'))
@@ -176,9 +175,9 @@ q('buoyage', 2, 'A yellow buoy with this topmark sits off the beach. What is it?
 q('buoyage', 2, 'At night you see these lights ahead and no others. What is it?',
   'A sailing vessel under sail (red over green masthead lights optional)', ['A trawler', 'A pilot vessel', 'A vessel aground'], 'Red over green at the masthead plus sidelights is a sailing vessel.', 'Navigation lights',
   L(lights=[dict(c='r', x=160, y=60, t='red'), dict(c='g', x=160, y=84, t='green'), dict(c='g', x=140, y=124), dict(c='r', x=180, y=124)]))
-q('buoyage', 2, 'You see a single white light low down, its bearing slowly changing. What is most likely?',
+q('buoyage', 2, 'You see a single steady white light low down, its bearing slowly changing. What is most likely?',
   'The sternlight of a vessel moving away — or an anchored vessel; watch the bearing', ['A vessel coming straight at you', 'A lighthouse', 'A fishing vessel'], 'One white light: stern view or at anchor; only the bearing tells you which.', 'Navigation lights',
-  L(lights=[dict(c='w', x=160, y=122, t='white')], note='Night · single white light, bearing drawing slowly left'))
+  {'type': 'lights', 'lights': [{'c': 'w', 'x': 160, 'y': 122, 't': 'white'}], 'note': 'Night · steady white light, bearing drawing slowly left'})
 q('buoyage', 3, 'At night you see these lights. What vessel, and who gives way?',
   'A trawler — green over white; you keep clear under sail or power', ['A pilot vessel — hold course', 'A vessel not under command', 'A vessel towing'], 'Green over white = trawling; fishing has priority over sail.', 'Navigation lights',
   L(lights=[dict(c='g', x=160, y=58, t='green'), dict(c='w', x=160, y=82, t='white'), dict(c='g', x=140, y=124), dict(c='r', x=180, y=124)]))
@@ -191,10 +190,10 @@ q('weather', 1, 'The forecast chart shows isobars packed tightly over your area 
   'Strong wind — stay in port or reef early', ['Calm and fog', 'Light variable winds', 'A sea breeze only'], 'Close isobars = steep pressure gradient = strong wind.', 'Synoptic charts',
   dict(type='isobars', center='L', tight=True, values=['996', '1000', '1004'], boat=[250, 150, 0]))
 q('weather', 2, 'The low is to the north-west of you. From which direction will the wind blow?',
-  'From the south-west, backing as the low passes', ['From the north-east', 'From the east, steady', 'Straight towards the low'], 'Northern hemisphere: wind anticlockwise round a low; Buys Ballot — back to wind, low on the left.', 'Pressure systems',
-  dict(type='isobars', center='L', boat=[260, 160, 0], note='Low centre to the NW of the yacht'))
+  'From the south-west, veering as the low passes', ['From the north-east', 'From the east, steady', 'Straight towards the low'], 'Northern hemisphere: wind anticlockwise round a low; Buys Ballot — back to wind, low on the left.', 'Pressure systems',
+  {'type': 'isobars', 'center': 'L', 'boat': [260, 160, 0], 'note': 'Low centre to the NW of the yacht'})
 q('weather', 1, 'The forecast says "F6, occasionally 7". What wind speed is that?',
-  'About 22–33 knots', ['11–16 knots', '4–6 knots', '40–47 knots'], 'F6 is 22–27 kn, F7 28–33 kn — the limit for comfortable cruising.', 'Beaufort scale')
+  'About 22–33 knots', ['11–16 knots', '4–6 knots', '41–47 knots'], 'F6 is 22–27 kn, F7 28–33 kn — the limit for comfortable cruising.', 'Beaufort scale')
 q('weather', 2, 'In three hours the barometer has fallen from 1012 to 1006 hPa. What does it mean for your afternoon passage?',
   'A depression is approaching — expect strengthening wind; reconsider', ['Fine settled weather', 'Fog is likely', 'No change'], 'A fall of 6 hPa in 3 h is a strong warning.', 'Barometer',
   dict(type='card', title='Barometer', lines=['09:00  1012 hPa', '12:00  1006 hPa', 'Sky: high cloud thickening from the west'], tag='−6 hPa / 3 h'))
@@ -216,11 +215,11 @@ q('weather', 2, 'The forecast says visibility "poor". What does that mean for yo
 
 # ---------------- anchoring & mooring (10) ----------------
 q('anchoring', 1, 'You anchor in 5 m at high water with all chain, settled weather. How much chain do you let out?',
-  'At least 20 m (4 × depth), more if wind is expected', ['5 m', '10 m', '50 m'], 'Chain scope 4:1 minimum; 6:1 or more in strong wind.', 'Anchoring',
-  dict(type='anchor', depth='5 m', tide='high water', title='Settled evening, F2', lines=['All-chain rode', 'Bow roller 1 m above water']))
+  'At least 24 m (4 × depth to the roller), more if wind is expected', ['5 m', '10 m', '50 m'], 'Chain scope 4:1 minimum, measured from the bow roller; 6:1 or more in strong wind.', 'Anchoring',
+  {'type': 'anchor', 'depth': '5 m', 'tide': 'high water', 'title': 'Settled evening, F2', 'lines': ['All-chain rode', 'Bow roller 1 m above water']})
 q('anchoring', 2, 'Wind is forecast to go round to the south overnight. Which spot do you anchor in?',
   'Spot A — sheltered by the land to the south', ['Spot B — open to the south', 'Spot C — in the channel', 'Any, the bay is calm now'], 'Choose shelter from the forecast wind, not the present one.', 'Anchoring',
-  dict(type='bay', wind=180, land='M0 200 H320 V140 C 260 130 230 90 200 70 C 170 50 120 60 80 80 C 50 95 20 110 0 100 Z', spots=[[150, 150, 'A'], [240, 60, 'B'], [60, 40, 'C']], labels=[[160, 185, 'LAND (south)', 'middle']], note='Forecast: wind backing south overnight, F5'))
+  {'type': 'bay', 'wind': 180, 'land': 'M0 200 H190 V135 C 150 120 60 125 0 130 Z M250 200 H320 V110 C 300 120 270 140 250 150 Z', 'spots': [[90, 95, 'A'], [220, 60, 'B'], [220, 150, 'C']], 'labels': [[95, 165, 'LAND (south)', 'middle'], [220, 128, 'channel', 'middle']], 'note': 'Forecast: wind backing south overnight, F5'})
 q('anchoring', 2, 'The chart shows these seabeds. Where will the anchor hold best?',
   'Sand (S)', ['Weed (Wd)', 'Rock (R)', 'Shingle (Sn)'], 'Sand and mud let the anchor dig in; weed and rock do not.', 'Anchoring',
   dict(type='chart', depths=[[60, 80, 'S'], [140, 60, 'Wd'], [220, 90, 'R'], [120, 150, 'Sn'], [240, 160, 'M']], note='Chart seabed abbreviations'))
@@ -253,7 +252,7 @@ q('systems', 2, 'Half an hour into the passage you see this. What do you do?',
   dict(type='panel', gauges=[['Temp', '110°', True], ['Oil', 'OK', False], ['Volts', '14.1', False]], lines=['Alarm sounding', 'Exhaust water: a trickle']))
 q('systems', 2, 'Morning after a night at anchor with fridge and lights on. Can you start the engine?',
   'Yes — the engine battery was isolated; the house bank is low', ['No — all batteries are flat', 'Only after an hour of solar', 'Only by hand crank'], 'Separate banks keep starting power away from house loads.', 'Electrics',
-  dict(type='panel', gauges=[['House', '11.8 V', True], ['Engine', '12.7 V', False], ['Solar', '2 A', False]], lines=['Fridge and anchor light ran all night']))
+  {'type': 'panel', 'gauges': [['House', '11.8 V', True], ['Engine', '12.7 V', False], ['Solar', '2 A', False]], 'lines': ['Fridge and anchor light ran all night']})
 q('systems', 2, 'The engine loses power, surges and stops after you refuelled at a dusty quay. Most likely?',
   'Dirty or watery fuel — drain the separator, change the filter', ['A broken belt', 'A flat battery', 'A fouled propeller'], 'Fuel contamination is the commonest cause of stopping.', 'Fuel system')
 q('systems', 2, 'A loud bang, the engine stops; the dinghy painter is no longer in the water. What now?',
@@ -285,7 +284,7 @@ q('emergency', 2, 'Which signal for this situation?',
 q('emergency', 2, 'Smoke is coming from the engine compartment hatch. What do you do?',
   'Stop the engine, do not open the hatch, discharge an extinguisher through the fire port', ['Open the hatch wide to see', 'Pour sea water in', 'Abandon ship at once'], 'Opening the hatch feeds the fire with air.', 'Fire')
 q('emergency', 2, 'Water is rising fast in the bilge. First action?',
-  'Find and stop the inflow — seacocks, hoses, stern gland — while pumping', ['Send a Mayday and wait', 'Head for deep water', 'Launch the liferaft'], 'Taste it: fresh = tank; salt = hull or fitting. Bungs ready.', 'Flooding')
+  'Find and stop the inflow — seacocks, hoses, stern gland — while pumping', ['Send a Mayday and wait', 'Head for deep water', 'Launch the liferaft'], 'Pumps only buy time: find the inflow and stop it. Taste the water — fresh = tank, salt = hull or fitting; bungs ready.', 'Flooding')
 q('emergency', 2, 'Which call for this?',
   'PAN-PAN — urgent, not yet life-threatening', ['MAYDAY', 'SÉCURITÉ', 'No call needed'], 'Engine failure drifting slowly with time in hand: urgency, not distress.', 'Urgency procedure',
   dict(type='card', title='Engine failure', lines=['No wind, drifting at 0.5 kn towards rocks 3 miles off', 'Anchor ready, 60 m depth — too deep', 'Crew well, boat sound'], tag='PAN-PAN?'))
@@ -314,7 +313,7 @@ for i, x in enumerate(Q):
     wrong = x['o'][:]; rnd.shuffle(wrong); target = i % 4
     opts = wrong[:]; opts.insert(target, x['a'])
     out.append(dict(id=f'bs-{i + 1:03d}', topic=x['topic'], difficulty=x['difficulty'], q=x['q'], figure=x['fig'], options=opts, answer=target, why=x['why'], ref=x['ref']))
-bank = dict(level='bareboat-skipper', title='IYT Bareboat Skipper', lang='en', passMark=70, examQuestions=40, examMinutes=60, version='2026-11-02c',
+bank = dict(level='bareboat-skipper', title='IYT Bareboat Skipper', lang='en', passMark=70, examQuestions=40, examMinutes=60, version='2026-11-02d',
             note='Scenario questions written for study, close to the IYT Bareboat Skipper theory syllabus. Not official IYT exam content. '
                  'figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.',
             topics=[dict(id=t, title=n, count=sum(1 for x in Q if x['topic'] == t)) for t, n in TOPICS], questions=out)
