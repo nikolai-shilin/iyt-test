@@ -1,0 +1,1951 @@
+[
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "Your diesel cranks at normal speed but will not fire. Which three things must it have to run?",
+  "a": "Fuel, air and compression",
+  "o": [
+   "Fuel, spark and compression",
+   "Spark, air and oil pressure",
+   "Fuel, spark and a full battery"
+  ],
+  "why": "A diesel has no spark: compression heats the air enough to ignite the injected fuel.",
+  "ref": "Diesel engine basics",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You trace the fuel line from the tank to the engine to find a leak. In what order do you meet the parts?",
+  "a": "Water separator, lift pump, fine filter, injectors",
+  "o": [
+   "Fine filter, lift pump, water separator, injectors",
+   "Lift pump, injectors, fine filter, water separator",
+   "Injectors, water separator, lift pump, fine filter"
+  ],
+  "why": "Fuel is cleaned twice on its way: coarse primary filter first, fine filter just before the injection pump.",
+  "ref": "Fuel system",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "During the morning check you look at the primary fuel filter bowl. What do you do?",
+  "a": "Drain the water from the bowl until clean fuel runs",
+  "o": [
+   "Leave it — it settles out by the next service",
+   "Top up the coolant — it is leaking into the bowl",
+   "Bleed the injectors — it is air in the fuel"
+  ],
+  "why": "Water is heavier than diesel and collects at the bottom of the separator; drain it before it reaches the engine.",
+  "ref": "Fuel system",
+  "fig": {
+   "type": "card",
+   "title": "Primary filter / water separator",
+   "lines": [
+    "Clear bowl under the filter",
+    "Bottom 2 cm: a clear, separate layer",
+    "Fuel sits above it with a sharp line between"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "The engine has stopped twice in a week with a blocked filter. This is what you find. What is it?",
+  "a": "Diesel bug growing where fuel meets water",
+  "o": [
+   "Engine oil leaking into the fuel tank",
+   "Soot from the exhaust blown back in",
+   "Wax from the fuel in cold weather"
+  ],
+  "why": "Microbes live at the fuel–water layer and make sludge that blocks filters; keep tanks dry and treated.",
+  "ref": "Fuel system",
+  "fig": {
+   "type": "card",
+   "title": "Fuel filter bowl",
+   "lines": [
+    "Black-brown slimy sludge in the bowl",
+    "Boat little used, tank kept half empty",
+    "August in the Dodecanese, 30 °C"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You ran the tank dry yesterday and have just put 60 litres in. The engine cranks strongly but will not start. Why?",
+  "a": "Air in the fuel lines — bleed the system",
+  "o": [
+   "Flat battery — switch to the house bank",
+   "Cold engine — hold the preheat longer",
+   "Blocked air filter — take it off and retry"
+  ],
+  "why": "Running dry pulls air into the fuel system; the injectors cannot spray air, so it must be bled.",
+  "ref": "Fuel system",
+  "fig": {
+   "type": "card",
+   "title": "After running out of fuel",
+   "lines": [
+    "Tank refilled: 60 litres",
+    "Starter turns the engine briskly",
+    "No firing, no smoke at the exhaust"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Bleeding the engine, you have opened the bleed screw on the fine filter. The lift pump has a hand lever. What next?",
+  "a": "Pump the lever until fuel comes out bubble-free, then close",
+  "o": [
+   "Crank the starter until diesel sprays out, then close",
+   "Close it at the first drop of diesel you see",
+   "Leave it open and start the engine to clear it"
+  ],
+  "why": "Bleed in the direction of the fuel flow and close each screw only when solid, bubble-free fuel runs.",
+  "ref": "Fuel system",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "You plan to motor through a calm day to the next fuel quay. How far can you go without touching your reserve?",
+  "a": "90 miles",
+  "o": [
+   "120 miles",
+   "60 miles",
+   "15 miles"
+  ],
+  "why": "(80 − 20) ÷ 4 = 15 hours; 15 h × 6 kn = 90 miles.",
+  "ref": "Fuel consumption and range",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "80 L",
+     false
+    ],
+    [
+     "Burn",
+     "4 L/h",
+     false
+    ],
+    [
+     "Speed",
+     "6 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Keep 20 L in reserve",
+    "Calm sea, same revs all the way"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "Your next leg is 54 miles at 6 knots, at the same revs as before. How much fuel will you use?",
+  "a": "27 litres",
+  "o": [
+   "36 litres",
+   "18 litres",
+   "54 litres"
+  ],
+  "why": "36 L ÷ 12 h = 3 L/h; 54 miles ÷ 6 kn = 9 h; 9 × 3 = 27 L.",
+  "ref": "Fuel consumption and range",
+  "fig": {
+   "type": "card",
+   "title": "Fuel log",
+   "lines": [
+    "Last fill-up: tank brimmed",
+    "Since then: 12 engine hours, cruising revs",
+    "Today the tank took 36 litres to brim"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Fuel is getting low and the next fuel quay is 20 miles away into a short headsea. How do you stretch your range?",
+  "a": "Ease back the revs a little",
+  "o": [
+   "Run at full revs to get there sooner",
+   "Shift into neutral every half hour",
+   "Switch off the alternator to save power"
+  ],
+  "why": "Fuel use rises steeply near full throttle while speed barely does; a few hundred rpm less saves the most.",
+  "ref": "Fuel consumption and range",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "Motor-sailing hard on the wind, the engine stutters and stops. What is the most likely cause?",
+  "a": "Low fuel sloshing away from the pickup",
+  "o": [
+   "The engine overheated and cut out",
+   "The gearbox has seized under load",
+   "The raw-water impeller has broken"
+  ],
+  "why": "With a low tank and a big heel the pickup sucks air; level the boat, refuel and bleed.",
+  "ref": "Fuel system",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "1/4",
+     false
+    ],
+    [
+     "Heel",
+     "25°",
+     false
+    ],
+    [
+     "Temp",
+     "82°",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine stuttered, then stopped",
+    "Oil alarm only after it stopped"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You are about to start the engine at the berth. What is the right sequence?",
+  "a": "Neutral, battery on, preheat, start, check exhaust water",
+  "o": [
+   "Start, preheat, select neutral, then check the oil",
+   "Battery on, start in gear, then preheat if needed",
+   "Preheat, start, then open the raw-water seacock"
+  ],
+  "why": "Start in neutral so the boat cannot move, preheat a cold diesel, and confirm cooling water at once.",
+  "ref": "Starting and stopping",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Early April in Croatia, you turn the key straight to start. What do you do differently?",
+  "a": "Hold the preheat 10–15 seconds, then crank",
+  "o": [
+   "Crank for a full minute without a break",
+   "Spray easy-start into the air intake",
+   "Open the throttle fully and keep cranking"
+  ],
+  "why": "Glow plugs heat the chambers so a cold diesel fires; ether with glow plugs can wreck the engine.",
+  "ref": "Glow plugs and preheat",
+  "fig": {
+   "type": "card",
+   "title": "Cold start",
+   "lines": [
+    "Air temperature 7 °C",
+    "Engine cranks well but does not catch",
+    "Puffs of white smoke at the exhaust"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "After three hours at cruising revs you reach the anchorage. How do you stop the engine?",
+  "a": "Idle in neutral a few minutes, then stop",
+  "o": [
+   "Stop it at once to save fuel",
+   "Rev it hard, then stop to clear soot",
+   "Turn the battery isolator off to stop it"
+  ],
+  "why": "A short idle lets heat even out before shutdown; never stop an engine with the isolator.",
+  "ref": "Starting and stopping",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "With the engine running, a crew member reaches for the battery isolator to turn it off and save power. What do you say?",
+  "a": "Stop — it can blow the alternator diodes",
+  "o": [
+   "Fine — the engine runs without the battery",
+   "Fine — the alternator then charges faster",
+   "Fine — but only at high revs"
+  ],
+  "why": "Opening the circuit while the alternator charges causes a voltage spike that destroys it.",
+  "ref": "Electrics",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You turn the key and hear one click, but the engine does not turn. What do you do?",
+  "a": "Parallel the banks, then start the engine",
+  "o": [
+   "Wait a day for the solar to charge it",
+   "Disconnect the house bank and keep trying",
+   "Turn the key to preheat for a full minute"
+  ],
+  "why": "The emergency parallel switch lets the house bank start the engine; separate the banks once it runs.",
+  "ref": "Electrics",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Engine",
+     "11.4 V",
+     true
+    ],
+    [
+     "House",
+     "12.7 V",
+     false
+    ]
+   ],
+   "lines": [
+    "Key turned: a click, no cranking"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Motoring along the coast, you see this. What do you do?",
+  "a": "Stop the engine at once and check the oil",
+  "o": [
+   "Reduce revs and carry on to port",
+   "Top up the coolant and carry on",
+   "Ignore it — oil alarms are often false"
+  ],
+  "why": "Without oil pressure the bearings are destroyed within minutes; stop first, then investigate.",
+  "ref": "Engine alarms and gauges",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Oil",
+     "LOW",
+     true
+    ],
+    [
+     "Temp",
+     "82°",
+     false
+    ],
+    [
+     "RPM",
+     "1800",
+     false
+    ]
+   ],
+   "lines": [
+    "Buzzer sounding, oil light on"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You turn the key to ON before starting. This is what you see and hear. What does it mean?",
+  "a": "Normal — they go out once the engine runs",
+  "o": [
+   "Low oil — top up before starting",
+   "Flat battery — switch to the house bank",
+   "Broken alternator — call the base"
+  ],
+  "why": "With the engine stopped there is no oil pressure and no charge, so both lights and the buzzer come on.",
+  "ref": "Engine alarms and gauges",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Oil",
+     "ON",
+     true
+    ],
+    [
+     "Charge",
+     "ON",
+     true
+    ],
+    [
+     "RPM",
+     "0",
+     false
+    ]
+   ],
+   "lines": [
+    "Key at ON, engine not yet started",
+    "Buzzer sounding"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Ten minutes after leaving the marina you see this. What do you check first?",
+  "a": "The alternator drive belt",
+  "o": [
+   "The raw-water strainer",
+   "The engine oil level",
+   "The glow-plug relay"
+  ],
+  "why": "A charge light on with the engine running means the alternator is not charging; a slipping or broken belt is the usual cause.",
+  "ref": "Engine alarms and gauges",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.3",
+     true
+    ],
+    [
+     "Temp",
+     "78°",
+     false
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Cruising revs for ten minutes",
+    "Charge warning light still on"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "Motoring out of Kos, you hear a squeal, then quiet. Soon after the panel looks like this. Most likely cause?",
+  "a": "The belt has broken",
+  "o": [
+   "The raw-water strainer is blocked",
+   "The engine oil is low",
+   "The propeller is fouled"
+  ],
+  "why": "One belt drives both the alternator and the coolant pump, so no charge plus rising heat points to it.",
+  "ref": "Engine troubleshooting",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "96°",
+     true
+    ],
+    [
+     "Volts",
+     "12.2",
+     true
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Charge light on",
+    "Plenty of water at the exhaust"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You follow the raw-water cooling circuit through the boat. In what order does the seawater go?",
+  "a": "Seacock, strainer, impeller pump, heat exchanger, exhaust",
+  "o": [
+   "Strainer, seacock, heat exchanger, impeller pump, exhaust",
+   "Seacock, impeller pump, exhaust, strainer, heat exchanger",
+   "Heat exchanger, seacock, strainer, exhaust, impeller pump"
+  ],
+  "why": "Seawater is filtered, pumped through the heat exchanger and then injected into the exhaust to cool it.",
+  "ref": "Engine cooling",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You have stopped the engine and let it cool. Where do you look first?",
+  "a": "The raw-water strainer",
+  "o": [
+   "The fuel filter",
+   "The engine oil level",
+   "The battery terminals"
+  ],
+  "why": "Floating weed or plastic is the commonest cause of lost cooling water; the strainer catches it.",
+  "ref": "Engine cooling",
+  "fig": {
+   "type": "card",
+   "title": "Overheat",
+   "lines": [
+    "Motored through a bay full of floating weed",
+    "Temperature alarm, little water at exhaust",
+    "Engine now stopped and cool"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You take out the raw-water impeller. This is what you find. What do you do?",
+  "a": "Find the missing pieces before fitting the new one",
+  "o": [
+   "Fit the new one; the pieces wash out the exhaust",
+   "Refit the old one; four vanes are still enough",
+   "Fit the new one and run at high revs to clear it"
+  ],
+  "why": "Broken vanes travel on and block the heat exchanger inlet; recover every piece.",
+  "ref": "Engine cooling",
+  "fig": {
+   "type": "card",
+   "title": "Old impeller",
+   "lines": [
+    "Rubber impeller with six vanes",
+    "Two vanes broken off and missing",
+    "Pump cover and gasket intact"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "The coolant level is low on a freshwater-cooled engine. Where and how do you top it up?",
+  "a": "Header tank, engine cold, with coolant mix",
+  "o": [
+   "Raw-water strainer, engine running, with seawater",
+   "Header tank, engine hot, with seawater",
+   "Oil filler, engine cold, with fresh water"
+  ],
+  "why": "The closed circuit holds antifreeze coolant under pressure; open the cap only when cold.",
+  "ref": "Engine cooling",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "The engine will not fire. Before you crank again, what do you do?",
+  "a": "Close the raw-water seacock until it fires",
+  "o": [
+   "Keep cranking — it will catch once warm",
+   "Open the strainer lid to let air out",
+   "Give it full throttle and crank a minute"
+  ],
+  "why": "Cranking without firing keeps pumping water into the waterlock until it floods the engine; reopen once it runs.",
+  "ref": "Wet exhaust",
+  "fig": {
+   "type": "card",
+   "title": "Hard start",
+   "lines": [
+    "Four 15-second cranks, no start",
+    "Wet exhaust with a waterlock",
+    "Raw-water seacock open"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "The temperature keeps rising. What is the most likely cause?",
+  "a": "Low coolant on the freshwater side",
+  "o": [
+   "Weed blocking the raw-water strainer",
+   "An impeller with missing vanes",
+   "A raw-water seacock half closed"
+  ],
+  "why": "Raw-water faults show as weak exhaust water; a strong flow points to the freshwater circuit.",
+  "ref": "Overheating causes",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "100°",
+     true
+    ],
+    [
+     "Volts",
+     "14.0",
+     false
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Exhaust water: strong flow",
+    "Belt tight, charge light off"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Motoring into a headsea at cruising revs, what does this tell you?",
+  "a": "The engine is overloaded or short of air",
+  "o": [
+   "Water has got into the fuel",
+   "The engine is burning its own oil",
+   "Coolant is leaking into the cylinders"
+  ],
+  "why": "Black smoke is unburnt fuel: too much load (fouled hull or prop, headsea) or a blocked air intake.",
+  "ref": "Exhaust smoke",
+  "fig": {
+   "type": "card",
+   "title": "Exhaust",
+   "lines": [
+    "Thick black smoke",
+    "Revs drop when you open the throttle",
+    "Water flow at the exhaust normal"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "After an hour at cruising revs you see this. What does it tell you?",
+  "a": "Burning oil — report it to the base",
+  "o": [
+   "Overloaded — ease back the throttle",
+   "Water in the fuel — drain the bowl",
+   "Warming up — it will clear soon"
+  ],
+  "why": "Blue smoke is oil burning in the cylinders: worn rings or valve seals, or an overfilled sump.",
+  "ref": "Exhaust smoke",
+  "fig": {
+   "type": "card",
+   "title": "Exhaust",
+   "lines": [
+    "Blue-grey smoke",
+    "Oil on the dipstick lower than this morning",
+    "Temperature normal"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "On a cool morning the engine starts with white smoke that clears within a minute. What do you do?",
+  "a": "Nothing — normal for a cold diesel",
+  "o": [
+   "Stop — the head gasket has failed",
+   "Stop — there is water in the fuel",
+   "Rev it hard to burn the smoke off"
+  ],
+  "why": "Some unburnt fuel and vapour are normal until the cylinders warm up.",
+  "ref": "Exhaust smoke",
+  "fig": {
+   "type": "card",
+   "title": "Start-up",
+   "lines": [
+    "Air 10 °C, first start of the day",
+    "White smoke, gone after 40 seconds",
+    "Good water flow at the exhaust"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "During the daily check, the oil on the dipstick looks like this. What do you do?",
+  "a": "Do not start it — call the base",
+  "o": [
+   "Run it to dry the oil out",
+   "Top up with fresh oil and go",
+   "Drain the fuel filter bowl"
+  ],
+  "why": "Milky oil means water in the engine (head gasket, cooler or siphoning exhaust); running it wrecks the bearings.",
+  "ref": "Daily engine checks",
+  "fig": {
+   "type": "card",
+   "title": "Dipstick",
+   "lines": [
+    "Level slightly above the max mark",
+    "Oil light brown and milky, like latte"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You want an accurate reading of the engine oil level. When do you check it?",
+  "a": "Engine stopped a while, boat level",
+  "o": [
+   "Engine running at idle, boat level",
+   "Straight after stopping a long motor",
+   "Any time, even heeled under sail"
+  ],
+  "why": "Oil must drain back to the sump and lie level for the dipstick to read true.",
+  "ref": "Daily engine checks",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "During the daily check you press the alternator belt. What does this tell you?",
+  "a": "Slack and wearing — get it tensioned",
+  "o": [
+   "Normal — belts loosen when warm",
+   "Too tight — slacken it off a little",
+   "Normal — the dust is from the exhaust"
+  ],
+  "why": "A belt should deflect about 1 cm under thumb pressure; black dust is rubber worn off a slipping belt.",
+  "ref": "Daily engine checks",
+  "fig": {
+   "type": "card",
+   "title": "Alternator belt",
+   "lines": [
+    "Deflects about 3 cm under your thumb",
+    "Shiny sides, black dust around the pulleys"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "Coming into the berth you need to go from ahead to astern. How do you shift?",
+  "a": "Throttle to idle, pause in neutral, then astern",
+  "o": [
+   "Straight from ahead to astern at cruising revs",
+   "Shift at any revs once the boat is slow",
+   "Stop the engine, then select astern"
+  ],
+  "why": "Shifting at idle through neutral protects the gearbox and the clutch.",
+  "ref": "Gearbox",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Motoring along the coast off Paros, you notice this. What is the most likely cause?",
+  "a": "A line or net round the propeller",
+  "o": [
+   "The fuel filter is partly blocked",
+   "The gearbox oil level is too low",
+   "The raw-water strainer is blocked"
+  ],
+  "why": "Vibration with lost speed at normal revs is a fouled prop; stop and check before it damages the shaft.",
+  "ref": "Propeller",
+  "fig": {
+   "type": "card",
+   "title": "Under power",
+   "lines": [
+    "Strong vibration through the hull",
+    "Speed 3 kn at your usual cruising revs",
+    "Temperature and oil normal",
+    "You crossed a line of fishing floats"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "In astern your stern walks to port. You must turn round in a narrow marina fairway. Which way do you turn?",
+  "a": "To starboard — astern kicks the stern to port",
+  "o": [
+   "To port — astern bursts kick the bow to port",
+   "Either way — prop walk only matters at speed",
+   "To port — the bow follows the prop walk"
+  ],
+  "why": "Short bursts ahead with full starboard helm and astern in between both rotate the boat clockwise.",
+  "ref": "Boat handling under power",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "label": "You"
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "note": "Narrow fairway · stern walks to port in astern"
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Reversing towards the quay with sternway on, you want the stern to go to port. Which way do you turn the wheel?",
+  "a": "To port — astern, the stern follows the wheel",
+  "o": [
+   "To starboard — astern, steering is reversed",
+   "Amidships — steer with prop walk only",
+   "To starboard — then a burst ahead"
+  ],
+  "why": "With sternway on, the stern moves the way you turn the wheel.",
+  "ref": "Boat handling under power",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Stopped in a tight marina, you want to swing the stern sideways without gaining much speed. What do you do?",
+  "a": "Rudder hard over, a short burst ahead",
+  "o": [
+   "Rudder hard over, a long gentle push astern",
+   "Rudder amidships, a short burst astern",
+   "Rudder hard over, coast in neutral"
+  ],
+  "why": "Prop wash over the rudder turns the boat before she gathers way.",
+  "ref": "Boat handling under power",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Motoring slowly ahead, you turn to port. Which part of your boat swings towards the moored yacht?",
+  "a": "The stern — it swings out opposite the turn",
+  "o": [
+   "The bow — the boat pivots round the stern",
+   "Neither — the boat pivots round its middle",
+   "The bow — it always swings towards the wind"
+  ],
+  "why": "Going ahead a yacht pivots about a third from the bow, so the stern swings wide.",
+  "ref": "Boat handling under power",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 100,
+    "dist": 48,
+    "hdg": 0,
+    "label": "Moored"
+   },
+   "note": "Turning to port, moored yacht close to starboard"
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "You approach the fuel quay at 4 knots, planning a hard burst astern at the last moment. What is the problem?",
+  "a": "She carries way and the stern kicks sideways",
+  "o": [
+   "None — astern stops a yacht in her own length",
+   "The engine always stalls when shifted astern",
+   "The rudder locks hard over when you go astern"
+  ],
+  "why": "A heavy yacht needs several lengths to stop, and prop walk swings the stern; come in slowly.",
+  "ref": "Boat handling under power",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Your charter catamaran is stopped in the marina. You want to spin her to starboard on the spot. What do you do?",
+  "a": "Port engine ahead, starboard engine astern",
+  "o": [
+   "Starboard engine ahead, port engine astern",
+   "Both engines ahead, wheel hard to starboard",
+   "Port engine astern, starboard in neutral"
+  ],
+  "why": "Twin screws far apart give a turning couple: push one side forward and pull the other back.",
+  "ref": "Twin engines",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "label": "Catamaran"
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "note": "Catamaran, twin engines · turn to starboard"
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You check the stern gland of a traditional packed shaft. What do you do?",
+  "a": "Nothing — a slow drip keeps it cool",
+  "o": [
+   "Tighten it until it is fully dry",
+   "Close the cockpit drain seacock",
+   "Stop the engine and call the base"
+  ],
+  "why": "Packing needs a few drops a minute with the shaft turning to lubricate and cool it.",
+  "ref": "Shaft seal",
+  "fig": {
+   "type": "card",
+   "title": "Stern gland, engine in gear",
+   "lines": [
+    "Packed gland on a turning shaft",
+    "Two or three drops a minute",
+    "No drips with the shaft stopped"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "This is your morning check on a saildrive boat. What do you do?",
+  "a": "Seawater is in the leg — report it now",
+  "o": [
+   "Normal condensation — top it up later",
+   "Coolant leak — top up the header tank",
+   "Diesel bug — drain the fuel filter bowl"
+  ],
+  "why": "Milky saildrive oil means the lower seals let seawater in; the leg can fail and must be inspected.",
+  "ref": "Saildrive",
+  "fig": {
+   "type": "card",
+   "title": "Saildrive check",
+   "lines": [
+    "Saildrive oil: milky grey",
+    "Engine oil: clean, at the mark",
+    "Bilge under the leg: dry"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "At check-in you lift the floor over the saildrive. What do you do?",
+  "a": "Report it — the hull seal may be leaking",
+  "o": [
+   "Normal — the seal is meant to weep",
+   "Normal — it is rain from the cockpit",
+   "Sponge it dry and check again next week"
+  ],
+  "why": "The rubber diaphragm is the only seal round a big hole in the hull; any seawater there is serious.",
+  "ref": "Saildrive",
+  "fig": {
+   "type": "card",
+   "title": "Saildrive well",
+   "lines": [
+    "Rubber diaphragm round the leg",
+    "Seawater pooled on top of it",
+    "Bilge elsewhere dry"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Holding the bow off the berth against a crosswind, you have run the bow thruster without a break. It now stops. Why?",
+  "a": "It overheated and cut out — use short bursts",
+  "o": [
+   "The engine is off — the thruster needs it in gear",
+   "The thruster's shear pin has broken",
+   "The thruster fuse is meant to blow each time"
+  ],
+  "why": "Thrusters are built for short bursts; a thermal cut-out stops them when they overheat.",
+  "ref": "Bow thruster",
+  "fig": {
+   "type": "card",
+   "title": "Bow thruster",
+   "lines": [
+    "Run continuously for about 3 minutes",
+    "Now silent, button does nothing",
+    "Breaker still on"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Motor-sailing off Lefkada, this happens. What do you do?",
+  "a": "Fit the emergency tiller and steer with it",
+  "o": [
+   "Press Standby — the autopilot is slipping",
+   "Turn the wheel harder to free the jam",
+   "Call Mayday — the rudder has fallen off"
+  ],
+  "why": "A slack wheel means the cable or linkage has failed; the emergency tiller goes straight on the rudder stock.",
+  "ref": "Steering",
+  "fig": {
+   "type": "card",
+   "title": "Steering",
+   "lines": [
+    "Wheel suddenly spins freely",
+    "Boat rounds up, no response to the wheel",
+    "No bang, no water coming in"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You are on autopilot when a fishing boat appears ahead. You need to steer by hand at once. What do you do?",
+  "a": "Press Standby, then take the wheel",
+  "o": [
+   "Turn the wheel hard; the pilot gives way",
+   "Switch off the main battery isolator",
+   "Press Auto again to cancel the course"
+  ],
+  "why": "Standby releases the autopilot drive so the wheel answers you.",
+  "ref": "Autopilot",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "label": "You (autopilot)"
+   },
+   "other": {
+    "bearing": 5,
+    "dist": 80,
+    "hdg": 200,
+    "label": "Fishing"
+   },
+   "bearingLine": true
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "At check-in the base points out the emergency tiller in the lazarette. What do you do?",
+  "a": "Try it on the rudder stock and stow it handy",
+  "o": [
+   "Leave it there — it is for the surveyor",
+   "Put it ashore — the wheel has a spare cable",
+   "Nothing — the autopilot steers if needed"
+  ],
+  "why": "The emergency tiller is useless if nobody knows where it fits or where it lives.",
+  "ref": "Charter check-in",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Raising the anchor, the windlass stops and its breaker has tripped. What do you do?",
+  "a": "Let it cool, find the cause, reset it once",
+  "o": [
+   "Hold the breaker on and keep winding",
+   "Fit a bigger breaker from the spares",
+   "Switch off the engine and try again"
+  ],
+  "why": "The breaker protects the motor and wiring; something is overloading it.",
+  "ref": "Windlass",
+  "fig": {
+   "type": "card",
+   "title": "Windlass",
+   "lines": [
+    "Breaker at the panel tripped",
+    "Chain bar-tight, leading steeply down",
+    "Engine running"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You are about to raise the anchor with the electric windlass. What do you do first?",
+  "a": "Start the engine to support the battery",
+  "o": [
+   "Stop the engine to save the battery",
+   "Turn the battery isolator off",
+   "Switch on the bow thruster too"
+  ],
+  "why": "A windlass draws over 100 A; the running alternator keeps the voltage up.",
+  "ref": "Windlass",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "The chain has jumped off the gypsy. A crew member reaches in to free it while another stands on the foot switch. What do you say?",
+  "a": "Switch the windlass off at the breaker",
+  "o": [
+   "Keep winding slowly while he frees it",
+   "Let him wear gloves and carry on",
+   "Use the up switch in short bursts only"
+  ],
+  "why": "A windlass can take a finger in an instant; switch it off at the breaker before hands go near the gypsy.",
+  "ref": "Windlass",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "The boat has rested all afternoon with nothing switched on. What does the house bank reading tell you?",
+  "a": "About half charged — time to charge",
+  "o": [
+   "About 90 % — no need to charge",
+   "About 10 % — the bank is ruined",
+   "Fully charged — 12 V is the target"
+  ],
+  "why": "Resting 12.7 V ≈ full, 12.2 V ≈ 50 %, below 12.0 V deeply discharged.",
+  "ref": "Battery state of charge",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "House",
+     "12.2 V",
+     false
+    ],
+    [
+     "Load",
+     "0 A",
+     false
+    ]
+   ],
+   "lines": [
+    "Resting for 4 hours, no charging"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "The engine is running. A crew member says the batteries are being overcharged. Are they right?",
+  "a": "No — it is normal while charging",
+  "o": [
+   "Yes — stop the engine at once",
+   "Yes — turn the isolator off now",
+   "Yes — 12.7 V is the safe maximum"
+  ],
+  "why": "While charging a 12 V bank reads 13.8–14.4 V.",
+  "ref": "Alternator charging",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "14.2",
+     false
+    ],
+    [
+     "Charge",
+     "35 A",
+     false
+    ],
+    [
+     "RPM",
+     "1600",
+     false
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "At anchor, how many amp-hours does the house bank supply in a day?",
+  "a": "About 120 Ah",
+  "o": [
+   "About 12 Ah",
+   "About 96 Ah",
+   "About 240 Ah"
+  ],
+  "why": "Amps × hours for each: 96 + 10 + 10 + 5 = 121 Ah.",
+  "ref": "Energy budget",
+  "fig": {
+   "type": "card",
+   "title": "Daily loads at anchor",
+   "lines": [
+    "Fridge: 4 A average × 24 h",
+    "Anchor light: 1 A × 10 h",
+    "Cabin lights: 2 A × 5 h",
+    "Water pump: 5 A × 1 h"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "Starting full, how many days can you stay at anchor before you must charge?",
+  "a": "2 days",
+  "o": [
+   "4 days",
+   "1 day",
+   "3 days"
+  ],
+  "why": "Half of 400 Ah = 200 Ah usable; 200 ÷ 100 = 2 days.",
+  "ref": "Energy budget",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "House",
+     "400 Ah",
+     false
+    ],
+    [
+     "Use",
+     "100 Ah",
+     false
+    ]
+   ],
+   "lines": [
+    "Daily use per 24 h, no solar",
+    "Lead-acid: do not go below 50 %"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "The house bank is 100 Ah down. Roughly how long must you run the engine to put it back?",
+  "a": "At least 2½ hours, more as it tapers",
+  "o": [
+   "About 40 minutes at cruising revs",
+   "About 10 minutes at high revs",
+   "About 1 hour if you rev it up"
+  ],
+  "why": "100 Ah ÷ 40 A = 2.5 h, and the current falls as the bank fills.",
+  "ref": "Alternator charging",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Charge",
+     "40 A",
+     false
+    ],
+    [
+     "Down",
+     "100 Ah",
+     false
+    ]
+   ],
+   "lines": [
+    "Alternator current into the house bank"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "It is a sunny midday at anchor. Why is the solar giving so little?",
+  "a": "The boom shades part of the panel",
+  "o": [
+   "The controller stops above 50 %",
+   "Med heat stops panels working",
+   "Solar only charges the engine bank"
+  ],
+  "why": "Even a small shadow across one cell cuts a panel's output sharply.",
+  "ref": "Solar charging",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Solar",
+     "1.5 A",
+     true
+    ],
+    [
+     "House",
+     "12.3 V",
+     false
+    ]
+   ],
+   "lines": [
+    "200 W panel on the stern arch",
+    "Boom swinging across it at anchor"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You arrive at a marina in Croatia and connect shore power. In what order?",
+  "a": "Boat end first, then the pedestal",
+  "o": [
+   "Pedestal end first, then the boat",
+   "Either order with the RCD on",
+   "Pedestal first, boat breakers on"
+  ],
+  "why": "The live end goes in last and comes out first, so you never handle a live plug.",
+  "ref": "Shore power",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "On shore power, the RCD trips every time you switch on the water heater. What do you do?",
+  "a": "Leave the heater off — it leaks to earth",
+  "o": [
+   "Hold the RCD in until the heater warms",
+   "Bypass the RCD for the heater circuit",
+   "Run a second shore cable for the heater"
+  ],
+  "why": "An RCD trips on current leaking to earth, a shock risk; find the fault, never bypass it.",
+  "ref": "Shore power",
+  "fig": {
+   "type": "card",
+   "title": "Shore power",
+   "lines": [
+    "RCD trips when heater switched on",
+    "Everything else works",
+    "Same at two different pedestals"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "The base tells you this at the end of the week. What is the most likely cause?",
+  "a": "Galvanic current through the shore earth",
+  "o": [
+   "Normal wear in warm Med water",
+   "Stray current from the bow thruster",
+   "The batteries overcharging the hull"
+  ],
+  "why": "The shore earth links your underwater metals to other boats; a galvanic isolator blocks that current.",
+  "ref": "Shore power",
+  "fig": {
+   "type": "card",
+   "title": "Anodes",
+   "lines": [
+    "Week on shore power in a busy marina",
+    "Shaft anode half gone in one week",
+    "Neighbouring boats plugged in too"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "At anchor a crew member wants to use a 2000 W hair dryer. Can they?",
+  "a": "No — it overloads the inverter",
+  "o": [
+   "Yes — once the bank shows 12.7 V",
+   "Yes — with the engine idling",
+   "Yes — in bursts under a minute"
+  ],
+  "why": "An inverter cannot supply more than its rating; it trips or fails.",
+  "ref": "Inverter",
+  "fig": {
+   "type": "card",
+   "title": "Inverter",
+   "lines": [
+    "12 V to 230 V inverter, 1000 W",
+    "House bank 12.6 V",
+    "Engine off"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "Roughly what current does this draw from the 12 V house bank?",
+  "a": "About 90 A",
+  "o": [
+   "About 4 A",
+   "About 9 A",
+   "About 900 A"
+  ],
+  "why": "1000 W ÷ 12 V ≈ 83 A, plus inverter losses.",
+  "ref": "Inverter",
+  "fig": {
+   "type": "card",
+   "title": "Microwave at anchor",
+   "lines": [
+    "Microwave 1000 W",
+    "Through the inverter",
+    "House bank 12 V"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Before a night passage the navigation lights do not work. You reset the breaker and it trips again at once. What do you do?",
+  "a": "Leave it off and look for a short",
+  "o": [
+   "Hold the breaker on until it stays",
+   "Fit a higher-rated breaker",
+   "Switch to the other battery bank"
+  ],
+  "why": "A breaker that trips straight away is protecting the wiring from a short; find it first.",
+  "ref": "Fuses and breakers",
+  "fig": {
+   "type": "card",
+   "title": "Panel",
+   "lines": [
+    "Nav lights breaker tripped",
+    "Reset: trips again at once",
+    "Other circuits fine"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "The fridge fuse has blown. Which do you fit from the spares box?",
+  "a": "The 10 A fuse",
+  "o": [
+   "The 20 A fuse",
+   "The 5 A fuse",
+   "A strip of foil"
+  ],
+  "why": "Replace like with like; a bigger fuse lets the wiring overheat.",
+  "ref": "Fuses and breakers",
+  "fig": {
+   "type": "card",
+   "title": "Spares box",
+   "lines": [
+    "Blown fuse marked 10 A",
+    "Spares: 5 A, 10 A, 20 A"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Anchored overnight with the fridge on, where do you set the battery selector?",
+  "a": "House bank only",
+  "o": [
+   "Both banks together",
+   "Engine bank only",
+   "Off for the night"
+  ],
+  "why": "Keep the engine battery out of the house loads so you can always start in the morning.",
+  "ref": "Battery switches",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "This is the house bank first thing in the morning. What do you do?",
+  "a": "Cut loads and charge now",
+  "o": [
+   "Nothing — a normal reading",
+   "Run the fridge off the engine bank",
+   "Top up the cells with seawater"
+  ],
+  "why": "Below 12.0 V the bank is deeply discharged and damaged if left there.",
+  "ref": "Battery state of charge",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "House",
+     "11.6 V",
+     true
+    ],
+    [
+     "Load",
+     "4 A",
+     false
+    ]
+   ],
+   "lines": [
+    "Fridge ran all night"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "Motoring for two hours, you smell rotten eggs near the battery locker. What is happening?",
+  "a": "Overcharging — stop charging, ventilate",
+  "o": [
+   "Normal fast charge — open the locker",
+   "Holding tank smell — pump out soon",
+   "Diesel leak — check the fuel filter"
+  ],
+  "why": "Above about 14.8 V a faulty regulator boils the batteries and they give off gas.",
+  "ref": "Alternator charging",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "15.2",
+     true
+    ],
+    [
+     "Charge",
+     "30 A",
+     false
+    ],
+    [
+     "Temp",
+     "80°",
+     false
+    ]
+   ],
+   "lines": [
+    "Battery cases warm to the touch"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "The water pump keeps running but the tap only spits air. What do you do?",
+  "a": "Switch off the pump and change tanks",
+  "o": [
+   "Leave the pump on to clear the air",
+   "Fit a bigger fuse to the pump",
+   "Prime it with the galley tap open"
+  ],
+  "why": "The tank is empty; a pump running dry burns out.",
+  "ref": "Fresh water",
+  "fig": {
+   "type": "card",
+   "title": "Galley tap",
+   "lines": [
+    "Pump running non-stop",
+    "Air and spluttering from the tap",
+    "Tank gauge reads low"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "At night, with every tap closed, you hear the water pump run for a few seconds every few minutes. Why?",
+  "a": "A leak or a dripping tap somewhere",
+  "o": [
+   "Normal — it keeps the pressure up",
+   "The tanks are full and overflowing",
+   "The water heater is warming up"
+  ],
+  "why": "A pressure pump only runs when water leaves the system; look in the bilge too.",
+  "ref": "Fresh water",
+  "fig": {
+   "type": "card",
+   "title": "Water pump",
+   "lines": [
+    "All taps closed, no one using water",
+    "Pump runs 3 seconds every 5 minutes"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "How many days can you go before refilling the tanks?",
+  "a": "3 days",
+  "o": [
+   "6 days",
+   "2 days",
+   "5 days"
+  ],
+  "why": "6 × 20 = 120 L a day; 360 ÷ 120 = 3 days.",
+  "ref": "Fresh water",
+  "fig": {
+   "type": "card",
+   "title": "Water",
+   "lines": [
+    "Tanks: 360 litres, full",
+    "Six crew",
+    "Careful use: 20 litres each a day"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Two days from the next water quay, the tanks are a quarter full. Which habit saves the most?",
+  "a": "Washing up in seawater first",
+  "o": [
+   "Switching off the water heater",
+   "Drinking bottled water instead",
+   "Pumping the heads less often"
+  ],
+  "why": "Washing up and showers use the most fresh water; the heads already flush with seawater.",
+  "ref": "Fresh water",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Your charter boat has a watermaker. Where do you avoid running it?",
+  "a": "In the marina, where oily water fouls it",
+  "o": [
+   "Offshore, where the water is saltier",
+   "At anchor over clean sand",
+   "Under sail, while the boat heels"
+  ],
+  "why": "Oil and dirt in harbour water ruin the membrane; make water in clean sea.",
+  "ref": "Watermaker",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "At anchor with no shore power, the crew want hot showers. When will the water be hot?",
+  "a": "After motoring — the engine heats it",
+  "o": [
+   "Any time — the heater runs off the batteries",
+   "Only after the gas boiler is lit",
+   "Only once the solar has charged"
+  ],
+  "why": "The calorifier is heated by engine coolant, or by its 230 V element on shore power.",
+  "ref": "Hot water",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You arrive in a Croatian marina for the night. Where do you set the heads Y-valve?",
+  "a": "Holding tank — nothing overboard",
+  "o": [
+   "Overboard, with plenty of flushing",
+   "Overboard — the marina is flushed",
+   "Either — rules apply at anchor only"
+  ],
+  "why": "No sewage goes overboard in marinas and harbours; use the holding tank and a pump-out.",
+  "ref": "Heads and holding tanks",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Your holding tank is full and you are anchored in a small crowded bay. What do you do?",
+  "a": "Empty it at a pump-out or far offshore",
+  "o": [
+   "Empty it now — the tide carries it away",
+   "Empty it at night when nobody swims",
+   "Empty it here if you add a cleaner"
+  ],
+  "why": "Only discharge at a pump-out station or well out to sea where local rules allow.",
+  "ref": "Heads and holding tanks",
+  "fig": {
+   "type": "card",
+   "title": "Holding tank",
+   "lines": [
+    "Tank full",
+    "Small bay, 20 boats, swimmers around",
+    "Pump-out station 8 miles away"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "In Göcek a Turkish coastguard officer asks to see your blue card. What is it?",
+  "a": "A log of your holding-tank pump-outs",
+  "o": [
+   "Your VHF radio operator's licence",
+   "Proof of the boat's third-party cover",
+   "Your cruising permit for Turkey"
+  ],
+  "why": "Turkey's blue card logs each pump-out; boats without a record risk a heavy fine.",
+  "ref": "Heads and holding tanks",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "Sailing heeled, you find the heads bowl slowly filling with seawater. What is happening?",
+  "a": "Seawater siphons in through the inlet",
+  "o": [
+   "The holding tank is overflowing back",
+   "Rain from the deck is draining in",
+   "The bilge pump is pushing water back"
+  ],
+  "why": "Heeled, the inlet can siphon if its seacock is open; close heads seacocks after use.",
+  "ref": "Heads and holding tanks",
+  "fig": {
+   "type": "card",
+   "title": "Heads",
+   "lines": [
+    "Beating on port tack, heeled 20°",
+    "Bowl slowly filling with clean seawater",
+    "Y-valve set to the holding tank"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You check the engine-intake seacock. Is it open or closed?",
+  "a": "Closed",
+  "o": [
+   "Open",
+   "Half open",
+   "It depends on the maker"
+  ],
+  "why": "A ball-valve seacock is open when the handle lies along the pipe, closed when across it.",
+  "ref": "Seacocks",
+  "fig": {
+   "type": "card",
+   "title": "Seacock",
+   "lines": [
+    "Ball-valve seacock",
+    "Handle lies across the pipe"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "At check-in, the galley sink seacock will not turn. What do you do?",
+  "a": "Report it to the base before you sail",
+  "o": [
+   "Leave it — seacocks are meant to stay fixed",
+   "Hammer the handle until it moves",
+   "Grease the handle and sail anyway"
+  ],
+  "why": "Every seacock must close in an emergency; exercise them and get a seized one fixed.",
+  "ref": "Charter check-in",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "This is what you find under the aft cabin. What do you do first?",
+  "a": "Hammer in the softwood bung",
+  "o": [
+   "Close the seacock above the break",
+   "Run the bilge pump and wait",
+   "Stuff a towel in and keep sailing"
+  ],
+  "why": "A tapered softwood bung, tied beside each through-hull, plugs a broken fitting.",
+  "ref": "Seacocks",
+  "fig": {
+   "type": "card",
+   "title": "Leak",
+   "lines": [
+    "Through-hull snapped off below its seacock",
+    "Water pouring in through the hole",
+    "Tapered wooden bung tied beside it"
+   ],
+   "tag": "now"
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "Sailing on a beam reach, the electric bilge pump runs every ten minutes. What do you do?",
+  "a": "Find the source — start by tasting it",
+  "o": [
+   "Nothing — pumps cycle when boats heel",
+   "Switch the pump off to save the battery",
+   "Close all seacocks and keep sailing"
+  ],
+  "why": "Fresh means a tank or pipe; salt means a through-hull, stern gland or rudder seal.",
+  "ref": "Bilge pumps",
+  "fig": {
+   "type": "card",
+   "title": "Bilge",
+   "lines": [
+    "Electric pump on auto",
+    "Runs about every 10 minutes",
+    "Never ran at the berth"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "The bilge is full, but the manual pump moves almost no water. What do you check first?",
+  "a": "The strum box at the end of the hose",
+  "o": [
+   "The cockpit drain seacock",
+   "The electric pump's float switch",
+   "The pump handle's locking pin"
+  ],
+  "why": "The strum box keeps debris out of the pump; when it clogs, the pump sucks nothing.",
+  "ref": "Bilge pumps",
+  "fig": {
+   "type": "card",
+   "title": "Manual bilge pump",
+   "lines": [
+    "Bilge water over the floor boards",
+    "Handle pumps easily, little water out"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "At the berth, the electric bilge pump runs non-stop, but the bilge is dry. What is wrong?",
+  "a": "The float switch is stuck up",
+  "o": [
+   "The pump is blocked by debris",
+   "Normal — it keeps the bilge dry",
+   "The hull is leaking into the keel"
+  ],
+  "why": "A jammed float switch runs the pump dry until it burns out or flattens the battery.",
+  "ref": "Bilge pumps",
+  "fig": {
+   "type": "card",
+   "title": "Bilge pump",
+   "lines": [
+    "Pump humming continuously",
+    "Bilge dry, nothing coming out",
+    "Switch set to AUTO"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You light the cooker but no gas comes through. What do you do?",
+  "a": "Switch on the gas solenoid",
+  "o": [
+   "Change the bottle for a new one",
+   "Open the burner knob wider",
+   "Bleed the gas line at the cooker"
+  ],
+  "why": "The solenoid valve at the bottle shuts the gas off until switched on at its panel.",
+  "ref": "Gas installation",
+  "fig": {
+   "type": "card",
+   "title": "Cooker",
+   "lines": [
+    "Bottle valve open, bottle heavy",
+    "Solenoid panel light: off",
+    "Burner knob turned, no hiss"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You have finished cooking. How do you turn the gas off?",
+  "a": "Solenoid off first, then the burner knob",
+  "o": [
+   "Burner knob off, then the solenoid",
+   "Burner knob only; leave the solenoid on",
+   "Bottle valve only; leave the knob open"
+  ],
+  "why": "Shutting the supply first burns off the gas left in the pipe.",
+  "ref": "Gas installation",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "At check-in you find the gas locker's drain hole blocked with rubbish. Why does it matter?",
+  "a": "Leaked gas cannot drain overboard",
+  "o": [
+   "Rainwater will rust the bottle",
+   "The solenoid cannot vent heat",
+   "The regulator will freeze up"
+  ],
+  "why": "Bottled gas is heavier than air; the locker drain lets any leak run out over the side.",
+  "ref": "Gas installation",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "You are filling the tender's outboard. Which do you use?",
+  "a": "Plain unleaded petrol",
+  "o": [
+   "Petrol mixed with 2T oil",
+   "Diesel from the yacht",
+   "Any of the three"
+  ],
+  "why": "A four-stroke has its own oil sump; only two-strokes take oil mixed in the fuel.",
+  "ref": "Outboard engine",
+  "fig": {
+   "type": "card",
+   "title": "Tender",
+   "lines": [
+    "Outboard: 4-stroke, 6 hp",
+    "Cans aboard: petrol · 2T mix · diesel"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "You have just started the tender's outboard alongside the yacht. What do you do?",
+  "a": "Stop it — no cooling water flowing",
+  "o": [
+   "Normal — it only flows at full throttle",
+   "Normal — the jet is for the exhaust",
+   "Carry on and check it at the beach"
+  ],
+  "why": "The tell-tale stream shows the water pump is working; without it the engine overheats.",
+  "ref": "Outboard engine",
+  "fig": {
+   "type": "card",
+   "title": "Outboard",
+   "lines": [
+    "Engine idling, warming up",
+    "No water from the tell-tale hole"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "On the beach, the outboard refuses to start. What is the fix?",
+  "a": "Clip on the kill cord",
+  "o": [
+   "Take out the spark plug",
+   "Pull with more choke",
+   "Tip the engine up"
+  ],
+  "why": "With the kill cord off, the stop switch keeps the engine from running.",
+  "ref": "Outboard engine",
+  "fig": {
+   "type": "card",
+   "title": "Outboard",
+   "lines": [
+    "Fuel tap open, tank half full",
+    "Choke out, ten pulls, no firing",
+    "Kill-cord clip in your pocket"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 3,
+  "q": "Heading back from the beach, the outboard does this. What is the likely cause?",
+  "a": "The fuel tank vent is closed",
+  "o": [
+   "The spark plug is fouled",
+   "The kill cord is too long",
+   "The fuel mix is too rich"
+  ],
+  "why": "A closed vent builds a vacuum in the tank until fuel stops; a pause lets air in again.",
+  "ref": "Outboard engine",
+  "fig": {
+   "type": "card",
+   "title": "Outboard",
+   "lines": [
+    "Starts fine, runs 5 minutes, dies",
+    "Restarts after a rest, then dies again",
+    "Fuel in the tank, choke off"
+   ]
+  }
+ },
+ {
+  "topic": "systems",
+  "difficulty": 1,
+  "q": "First start of the day, the outboard is cold. How do you use the choke?",
+  "a": "Pull it out, push it in as it warms",
+  "o": [
+   "Leave it in — choke is for hot engines",
+   "Pull it out and leave it all day",
+   "Use it only after the engine stalls"
+  ],
+  "why": "Choke richens the mixture for a cold start; left out, it floods and stalls the engine.",
+  "ref": "Outboard engine",
+  "fig": null
+ },
+ {
+  "topic": "systems",
+  "difficulty": 2,
+  "q": "At the fuel berth, how do you stop diesel spraying out of the tank breather?",
+  "a": "Fill slowly and hold a rag at the vent",
+  "o": [
+   "Fill fast so the nozzle cuts out",
+   "Fill to the brim so no air is left",
+   "Tape over the breather before filling"
+  ],
+  "why": "The breather lets air out; when fuel comes up it, the tank is full. Spills are fined.",
+  "ref": "Refuelling",
+  "fig": null
+ }
+]

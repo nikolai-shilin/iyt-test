@@ -1,0 +1,2523 @@
+[
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "Crossing the Saronic Gulf at midday, the whole crew wants to eat lunch below. What does Rule 5 require?",
+  "a": "Someone keeps a lookout on deck at all times",
+  "o": [
+   "The autopilot alarm is enough in daylight",
+   "A quick look round every 15 minutes will do",
+   "A lookout is only required at night"
+  ],
+  "why": "Rule 5: a proper lookout by sight and hearing at all times.",
+  "ref": "COLREGs Rule 5",
+  "fig": {
+   "type": "card",
+   "title": "Midday passage",
+   "lines": [
+    "Motoring on autopilot at 6 knots",
+    "Ferries and fast boats on the route",
+    "Crew of four, all hungry"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "How do you keep a proper lookout, sailing like this?",
+  "a": "Look under the genoa to leeward regularly",
+  "o": [
+   "Watch ahead and to windward only",
+   "Leave it to others — they can see you",
+   "Rely on the AIS alarm to warn you"
+  ],
+  "why": "Rule 5: the genoa hides the leeward bow — that is where you must look.",
+  "ref": "COLREGs Rule 5",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 315,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -45,
+    "dist": 80,
+    "hdg": 60,
+    "label": "?"
+   },
+   "wind": 0,
+   "note": "Deck-sweeping genoa, starboard tack"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are approaching this harbour at night. What does the scene mean for your speed?",
+  "a": "Slow down — shore lights hide other vessels",
+  "o": [
+   "Keep speed to clear the entrance quickly",
+   "Speed only matters in poor visibility",
+   "Keep to the harbour limit, nothing more"
+  ],
+  "why": "Rule 6: background light is a factor in choosing a safe speed.",
+  "ref": "COLREGs Rule 6",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "y",
+     "x": 60,
+     "y": 132,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 78,
+     "y": 138,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 96,
+     "y": 130,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 112,
+     "y": 141,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 126,
+     "y": 134,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 196,
+     "y": 133,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 212,
+     "y": 140,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 230,
+     "y": 131,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 248,
+     "y": 139,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 266,
+     "y": 134,
+     "r": 2.5
+    },
+    {
+     "c": "y",
+     "x": 284,
+     "y": 142,
+     "r": 2.5
+    },
+    {
+     "c": "r",
+     "x": 140,
+     "y": 138,
+     "r": 5
+    },
+    {
+     "c": "g",
+     "x": 180,
+     "y": 138,
+     "r": 5
+    },
+    {
+     "c": "w",
+     "x": 222,
+     "y": 120,
+     "r": 3
+    }
+   ],
+   "note": "Night · harbour entrance against the town lights"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "Fog comes down while you are motoring along the Croatian coast. What speed do you choose?",
+  "a": "Slow enough to stop well within 200 m",
+  "o": [
+   "Full speed to get out of it sooner",
+   "Exactly half your usual cruising speed",
+   "Any speed — others must avoid you"
+  ],
+  "why": "Rules 6 and 19: a safe speed lets you stop within the distance you can see.",
+  "ref": "COLREGs Rules 6 / 19",
+  "fig": {
+   "type": "card",
+   "title": "Visibility drops",
+   "lines": [
+    "Visibility about 200 m",
+    "No radar aboard",
+    "Motoring at 6 knots"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You are entering this harbour under power. How fast do you go?",
+  "a": "Slowly — traffic density sets a safe speed",
+  "o": [
+   "Cruising speed — the visibility is good",
+   "Fast, to spend less time in everyone's way",
+   "Any speed you like — others will avoid you"
+  ],
+  "why": "Rule 6: the density of traffic is a key factor in safe speed.",
+  "ref": "COLREGs Rule 6",
+  "fig": {
+   "type": "card",
+   "title": "Hvar town, August evening",
+   "lines": [
+    "Water taxis, ferries and tenders",
+    "Swimmers near the harbour wall",
+    "Wind light, visibility good"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are motoring in fog with this radar picture. What does Rule 6 say about relying on it?",
+  "a": "Small boats may hide in the clutter — go slower",
+  "o": [
+   "Nothing is there — keep your speed",
+   "Turn up the gain until the clutter clears",
+   "With radar on you may keep cruising speed"
+  ],
+  "why": "Rule 6(b): radar limits, sea state and clutter count in choosing a safe speed.",
+  "ref": "COLREGs Rule 6",
+  "fig": {
+   "type": "card",
+   "title": "Fog, short steep sea",
+   "lines": [
+    "Radar: sea clutter out to 0.5 M",
+    "No echoes showing beyond it",
+    "Motoring at 6 knots"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "How do you keep a proper lookout by hearing in these conditions?",
+  "a": "Post someone forward and stop now and then to listen",
+  "o": [
+   "Keep the engine loud so that others can hear you",
+   "Listen from the cockpit, right beside the engine",
+   "Hearing does not count — only sight matters"
+  ],
+  "why": "Rule 5: lookout by sight and hearing — get away from the engine noise.",
+  "ref": "COLREGs Rule 5",
+  "fig": {
+   "type": "card",
+   "title": "Thick fog",
+   "lines": [
+    "Visibility 50 m",
+    "Engine running, cockpit noisy",
+    "No radar aboard"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You take three hand-bearing compass bearings of a ship. What do they tell you?",
+  "a": "Risk of collision exists",
+  "o": [
+   "She will pass ahead of you",
+   "She will pass astern of you",
+   "No risk — the bearing moved 1°"
+  ],
+  "why": "Rule 7: a steady compass bearing with the range closing means risk of collision.",
+  "ref": "COLREGs Rule 7",
+  "fig": {
+   "type": "card",
+   "title": "Bearings of the ship",
+   "lines": [
+    "10:00   072°",
+    "10:03   072°",
+    "10:06   071°",
+    "Range closing"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You take these bearings of a ship on your port bow. What will she do?",
+  "a": "Pass astern of you — the bearing is drawing aft",
+  "o": [
+   "Pass ahead of you — the bearing is drawing forward",
+   "Hit you — the bearing is steady",
+   "Cross ahead — she is on your port bow"
+  ],
+  "why": "Rule 7: a bearing drawing aft means she will pass astern; keep checking.",
+  "ref": "COLREGs Rule 7",
+  "fig": {
+   "type": "card",
+   "title": "Ship on your port bow",
+   "lines": [
+    "Your heading 000°",
+    "10:00   320°",
+    "10:04   312°",
+    "10:08   303°"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "The bearing of this cruise ship is changing. Can you relax?",
+  "a": "No — so close to a big ship, risk may still exist",
+  "o": [
+   "Yes — any change of bearing means there is no risk",
+   "Yes — a ship that size is bound to have seen you",
+   "Only once the bearing has moved by 10° or more"
+  ],
+  "why": "Rule 7(d)(ii): risk can exist with a changing bearing when close to a large vessel.",
+  "ref": "COLREGs Rule 7",
+  "fig": {
+   "type": "card",
+   "title": "Cruise ship, 300 m long",
+   "lines": [
+    "Range 0.6 M and closing",
+    "Bearings 052°, 054°, 056° in 3 min"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "What does Rule 7 say about this radar echo?",
+  "a": "Plot it over time before deciding it will pass",
+  "o": [
+   "It is far off — ignore it until it is seen",
+   "Assume it is a buoy until it moves",
+   "Turn to port now to open the range"
+  ],
+  "why": "Rule 7(c): no assumptions on scanty information, especially radar.",
+  "ref": "COLREGs Rule 7",
+  "fig": {
+   "type": "card",
+   "title": "Radar, haze at dusk",
+   "lines": [
+    "One echo at 4 M on the starboard bow",
+    "Seen once, no plot yet",
+    "Visibility about 1 mile"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You cannot tell whether the bearing of this motorboat is changing. What do you assume?",
+  "a": "That risk of collision exists",
+  "o": [
+   "That she will pass clear",
+   "That she has seen you",
+   "Nothing until you are sure"
+  ],
+  "why": "Rule 7(a): if in doubt, risk of collision is deemed to exist.",
+  "ref": "COLREGs Rule 7",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 85,
+    "hdg": 280
+   },
+   "bearingLine": true,
+   "note": "Bearing hard to read in the swell"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Your plotter shows this AIS target. What do you make of it?",
+  "a": "Risk of collision — plan early action now",
+  "o": [
+   "No risk — 0.1 M is a clear pass",
+   "Wait until she is in sight to decide",
+   "She has AIS, so she has seen you"
+  ],
+  "why": "Rules 7 and 8: a CPA near zero means risk of collision; act early.",
+  "ref": "COLREGs Rules 7 / 8",
+  "fig": {
+   "type": "card",
+   "title": "AIS target",
+   "lines": [
+    "Cargo ship, 14 knots",
+    "CPA 0.1 M in 12 minutes",
+    "Not yet in sight in the haze"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Can you rely on the AIS screen for your lookout here?",
+  "a": "No — many boats carry no AIS at all",
+  "o": [
+   "Yes — every vessel must carry AIS",
+   "Yes, for anything inside 10 M",
+   "Yes, as long as it is daylight"
+  ],
+  "why": "Rules 5 and 7: AIS is only an aid; yachts and fishing boats often have none.",
+  "ref": "COLREGs Rules 5 / 7",
+  "fig": {
+   "type": "card",
+   "title": "Haze, visibility 1 mile",
+   "lines": [
+    "AIS screen: no targets within 10 M",
+    "Radar: switched off to save power",
+    "Fishing boats often work this coast"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You must give way to this ship. What kind of alteration does Rule 8 want?",
+  "a": "One early turn, big enough to see on radar",
+  "o": [
+   "Several small 5° nudges as she closes",
+   "A late turn once she is close",
+   "A small change of speed only"
+  ],
+  "why": "Rule 8: early, substantial, readily apparent — not a series of small alterations.",
+  "ref": "COLREGs Rule 8",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 50,
+    "dist": 90,
+    "hdg": 270,
+    "label": "Ship",
+    "scale": 1.5
+   },
+   "bearingLine": true,
+   "note": "Bearing steady, range 3 miles"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "You are the give-way vessel but cannot turn to starboard. What do you do?",
+  "a": "Slow down or stop and let her pass ahead",
+  "o": [
+   "Turn to port and cross ahead of her",
+   "Hold course and speed — you have no choice",
+   "Speed up to get across her bow"
+  ],
+  "why": "Rules 8(e) and 16: slowing or stopping is a proper give-way action.",
+  "ref": "COLREGs Rules 8 / 16",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 55,
+    "dist": 85,
+    "hdg": 270,
+    "label": "Ship",
+    "scale": 1.4
+   },
+   "bearingLine": true,
+   "note": "Shoal water close on your starboard side"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You have turned 40° to starboard to pass astern of this boat. What does Rule 8 require now?",
+  "a": "Check her bearing until she is past and clear",
+  "o": [
+   "Return to your original course at once",
+   "Nothing more — the turn itself was enough",
+   "Sound one short blast every minute until clear"
+  ],
+  "why": "Rule 8(d): check the action until the other vessel is finally past and clear.",
+  "ref": "COLREGs Rule 8",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 40
+   },
+   "other": {
+    "bearing": -20,
+    "dist": 80,
+    "hdg": 270
+   },
+   "bearingLine": true,
+   "note": "After your alteration"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "Under sail in this channel, risk of collision with the tanker now exists. Does your duty change?",
+  "a": "No — you must still act early not to impede her",
+  "o": [
+   "Yes — you become stand-on and hold course",
+   "Yes — the duty ends once she is close",
+   "No — but only if she sounds five short"
+  ],
+  "why": "Rule 8(f): the duty not to impede continues when risk of collision develops.",
+  "ref": "COLREGs Rules 8 / 9",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 10,
+    "dist": 85,
+    "hdg": 185,
+    "label": "Tanker",
+    "scale": 1.5
+   },
+   "wind": 270,
+   "bearingLine": true,
+   "note": "Narrow channel · she can only use the deep water"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You want to cross this buoyed channel ahead of the ship. What does Rule 9 say?",
+  "a": "Do not cross if it will impede her — wait",
+  "o": [
+   "Cross now — she must give way to you",
+   "Cross at speed — she can slow down",
+   "Cross diagonally to save time"
+  ],
+  "why": "Rule 9(d): do not cross a narrow channel if it impedes a vessel confined to it.",
+  "ref": "COLREGs Rule 9",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90
+   },
+   "other": {
+    "bearing": -60,
+    "dist": 85,
+    "hdg": 190,
+    "label": "Ship",
+    "scale": 1.5
+   },
+   "bearingLine": true,
+   "note": "Narrow channel · she can only use the channel"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You are motoring up a winding channel and nearing a bend where high ground hides what is coming. What sound signal do you give?",
+  "a": "One prolonged blast",
+  "o": [
+   "Five short blasts",
+   "Two prolonged blasts",
+   "One short blast"
+  ],
+  "why": "Rule 34(e): one prolonged blast when nearing a bend that may hide other vessels.",
+  "ref": "COLREGs Rule 34",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Close to a blind bend in a narrow channel, you hear a prolonged blast from behind the headland. What do you do?",
+  "a": "Reply with one prolonged blast and keep right",
+  "o": [
+   "Reply with five short blasts",
+   "Stay silent and speed up round the bend",
+   "Reply with one short blast and cut the corner"
+  ],
+  "why": "Rule 34(e): a prolonged blast from round the bend is answered with one prolonged.",
+  "ref": "COLREGs Rules 9 / 34",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "In this narrow channel you want to overtake on her port side. What do you sound first?",
+  "a": "Two prolonged then two short blasts",
+  "o": [
+   "Two prolonged then one short blast",
+   "Two short blasts",
+   "Long, short, long, short"
+  ],
+  "why": "Rule 34(c): two prolonged + two short = I intend to overtake on your port side.",
+  "ref": "COLREGs Rule 34",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 5,
+    "dist": 70,
+    "hdg": 0,
+    "label": "Slow boat"
+   },
+   "bearingLine": true,
+   "note": "Narrow channel · you are the faster boat"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "After your overtaking signal in a channel, the boat ahead replies like this. What does it mean?",
+  "a": "She agrees — overtake with care",
+  "o": [
+   "She objects — stay astern",
+   "She is altering to starboard",
+   "She is going astern"
+  ],
+  "why": "Rule 34(c)(ii): prolonged, short, prolonged, short = agreement.",
+  "ref": "COLREGs Rule 34",
+  "fig": {
+   "type": "card",
+   "title": "Reply from the boat ahead",
+   "lines": [
+    "She sounds:",
+    "prolonged · short · prolonged · short"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "In a narrow channel you signal that you want to overtake. The boat ahead answers with five short blasts. What now?",
+  "a": "Stay astern until it is safe and she agrees",
+  "o": [
+   "Overtake at once — she has heard your signal",
+   "Overtake her on the other side instead",
+   "Sound five short back, then overtake"
+  ],
+  "why": "Rule 34(d): five short = doubt; do not overtake yet.",
+  "ref": "COLREGs Rules 9 / 34",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "In a narrow channel this motor vessel astern sounds two prolonged and two short blasts. What do you do?",
+  "a": "Sound agreement and move over to starboard",
+  "o": [
+   "Move to port and hold your speed",
+   "Speed up so she cannot pass",
+   "Nothing — she must keep clear of you"
+  ],
+  "why": "Rule 9(e): if you agree, answer long-short-long-short and make room.",
+  "ref": "COLREGs Rules 9 / 34",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90
+   },
+   "other": {
+    "bearing": 180,
+    "dist": 62,
+    "hdg": 90,
+    "label": "Motor vessel"
+   },
+   "note": "Narrow channel · she is closing from astern"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You must cross this traffic separation scheme. How do you steer?",
+  "a": "On a heading at right angles, whatever the stream",
+  "o": [
+   "On a track at right angles, heading into the stream",
+   "At a shallow angle, going with the traffic flow",
+   "Straight across towards your destination"
+  ],
+  "why": "Rule 10(c): cross on a heading as nearly as practicable at right angles to the flow.",
+  "ref": "COLREGs Rule 10",
+  "fig": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    210,
+    176,
+    0
+   ],
+   "note": "Traffic separation scheme",
+   "panel": [
+    "Crossing",
+    "Stream 2 kn east"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You want to follow the eastbound lane along the coast. How do you join it?",
+  "a": "At its end, or from the side at a small angle",
+  "o": [
+   "From the side, at right angles to the lane",
+   "Straight across the separation zone into it",
+   "Anywhere along it, in either direction"
+  ],
+  "why": "Rule 10(b)(iii): join at the end, or from the side at as small an angle as practicable.",
+  "ref": "COLREGs Rule 10",
+  "fig": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    210,
+    176,
+    45
+   ],
+   "note": "Traffic separation scheme",
+   "panel": [
+    "Joining",
+    "Bound east"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "Your 13 m yacht is going from one bay to the next along this coast. May you use the inshore traffic zone?",
+  "a": "Yes — under 20 m and sailing vessels may",
+  "o": [
+   "No — it is for fishing vessels only",
+   "Only with permission from VTS",
+   "No — you must use the lane"
+  ],
+  "why": "Rule 10(d): vessels under 20 m, sailing vessels and fishing vessels may use it.",
+  "ref": "COLREGs Rule 10",
+  "fig": {
+   "type": "chart",
+   "land": "M0 70 H320 V88 H0 Z M0 176 H320 V200 H0 Z",
+   "labels": [
+    [
+     160,
+     62,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     160,
+     83,
+     "separation zone",
+     "middle"
+    ],
+    [
+     160,
+     112,
+     "eastbound lane →",
+     "middle"
+    ],
+    [
+     200,
+     160,
+     "inshore traffic zone",
+     "middle"
+    ]
+   ],
+   "boat": [
+    60,
+    160,
+    90
+   ],
+   "note": "Coast to the south"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Your planned track runs straight down the middle of the separation zone. Is that acceptable?",
+  "a": "No — enter it only to cross or in an emergency",
+  "o": [
+   "Yes — it is the safe space between the ships",
+   "Yes, provided you show a cone by day",
+   "Yes, but only in good daylight visibility"
+  ],
+  "why": "Rule 10(e): keep out of a separation zone except to cross, join, leave or in an emergency.",
+  "ref": "COLREGs Rule 10",
+  "fig": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    30,
+    118,
+    90
+   ],
+   "note": "Traffic separation scheme",
+   "panel": [
+    "Planned track"
+   ],
+   "track": "M30 118 H300"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You are in this lane of a traffic separation scheme. What is wrong?",
+  "a": "You are going against the traffic flow",
+  "o": [
+   "Nothing — lanes are two-way for yachts",
+   "You should be in the separation zone",
+   "Nothing, if you keep to the edge"
+  ],
+  "why": "Rule 10(b)(i): in a lane, go in the general direction of traffic flow.",
+  "ref": "COLREGs Rule 10",
+  "fig": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    230,
+    146,
+    270
+   ],
+   "note": "Traffic separation scheme"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Your route passes close to where this scheme ends. What do you expect there?",
+  "a": "Ships changing course and converging",
+  "o": [
+   "No traffic — ships have left the lanes",
+   "Ships slowing down to anchor",
+   "Ships giving way to yachts there"
+  ],
+  "why": "Rule 10(f): navigate with particular caution near the ends of a scheme.",
+  "ref": "COLREGs Rule 10",
+  "fig": {
+   "type": "chart",
+   "land": "M0 108 H200 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ],
+    [
+     255,
+     112,
+     "scheme ends",
+     "middle"
+    ]
+   ],
+   "boat": [
+    265,
+    176,
+    0
+   ],
+   "note": "Traffic separation scheme"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "Crossing the lane under sail, this ship following the lane is closing on a steady bearing. Who keeps clear?",
+  "a": "You — you must not impede a ship in the lane",
+  "o": [
+   "The ship — power always gives way to sail",
+   "Nobody — both hold course inside the scheme",
+   "The ship — you are crossing at right angles"
+  ],
+  "why": "Rule 10(j): sail and vessels under 20 m must not impede power vessels in a lane.",
+  "ref": "COLREGs Rules 10 / 18",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": -65,
+    "dist": 85,
+    "hdg": 90,
+    "label": "Ship in lane",
+    "scale": 1.6
+   },
+   "wind": 270,
+   "bearingLine": true,
+   "note": "Crossing a TSS lane under sail"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "To cross this scheme at right angles under sail you would be head to wind. What do you do?",
+  "a": "Motor-sail to hold a heading near right angles",
+  "o": [
+   "Tack across at whatever angle the wind allows",
+   "Sail along the lane until the wind frees",
+   "Cross on a diagonal — ships give way to sail"
+  ],
+  "why": "Rule 10(c): cross as nearly at right angles as practicable — use the engine.",
+  "ref": "COLREGs Rule 10",
+  "fig": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    210,
+    176,
+    0
+   ],
+   "note": "Traffic separation scheme",
+   "panel": [
+    "Under sail",
+    "Wind from north",
+    "Engine working"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "This yacht to windward is running downwind and you cannot see her mainsail. Who keeps clear?",
+  "a": "You — you cannot be sure of her tack",
+  "o": [
+   "She does — she is to windward",
+   "She does — she is running free",
+   "Neither, until you know her tack"
+  ],
+  "why": "Rule 12(a)(iii): on port tack, if unsure of a windward boat's tack, keep clear.",
+  "ref": "COLREGs Rule 12",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 60,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": -80,
+    "dist": 80,
+    "hdg": 180,
+    "sail": true,
+    "boom": 0
+   },
+   "wind": 0,
+   "bearingLine": true,
+   "note": "Her mainsail is hidden behind the genoa"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Both yachts are close-hauled on port tack and converging. What do you do?",
+  "a": "Hold course and speed — she is to windward",
+  "o": [
+   "Bear away — you are the leeward boat",
+   "Tack at once onto starboard",
+   "Give way — she is on your port side"
+  ],
+  "why": "Rule 12(a)(ii): on the same tack, windward keeps clear; you stand on (Rule 17).",
+  "ref": "COLREGs Rules 12 / 17",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 60,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": -70,
+    "dist": 80,
+    "hdg": 90,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 0,
+   "bearingLine": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are to windward of this yacht. Who gives way?",
+  "a": "She does — she is on port tack",
+  "o": [
+   "You do — you are to windward",
+   "You do — she is close-hauled",
+   "Whichever boat is faster"
+  ],
+  "why": "Rule 12(a)(i): on different tacks, port keeps clear; windward only counts on the same tack.",
+  "ref": "COLREGs Rule 12",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -22,
+    "dist": 80,
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 0,
+   "bearingLine": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "You are running dead downwind with the mainsail out to port. This yacht is converging. Who keeps clear?",
+  "a": "She does — you count as starboard tack",
+  "o": [
+   "You do — running, you have no tack",
+   "You do — she is on your starboard side",
+   "Neither — pass each other port to port"
+  ],
+  "why": "Rule 12(b): the windward side is opposite the mainsail, so main to port = starboard tack.",
+  "ref": "COLREGs Rule 12",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 45,
+    "dist": 80,
+    "hdg": 270,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 180,
+   "bearingLine": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are stand-on to this port-tack yacht a mile away. Your crew want to tack away now, just in case. What do you do?",
+  "a": "Hold course and speed so she can keep clear",
+  "o": [
+   "Tack now so as to be on the safe side",
+   "Bear away now to pass astern of her",
+   "Luff up and slow right down for her"
+  ],
+  "why": "Rule 17(a)(i): the stand-on vessel keeps her course and speed.",
+  "ref": "COLREGs Rules 12 / 17",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 315,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -45,
+    "dist": 85,
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 0,
+   "bearingLine": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "This motor yacht is coming up from here, faster than you. Who keeps clear?",
+  "a": "She does — she is overtaking you",
+  "o": [
+   "You do — she is on your starboard side",
+   "Both alter course to starboard",
+   "You do — she is the faster boat"
+  ],
+  "why": "Rule 13: from more than 22.5° abaft your beam she is overtaking, whatever the side.",
+  "ref": "COLREGs Rule 13",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270
+   },
+   "other": {
+    "bearing": 140,
+    "dist": 75,
+    "hdg": 260,
+    "label": "Motor yacht"
+   },
+   "bearingLine": true,
+   "note": "She is closing from your starboard quarter"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "You are catching this motorboat up and cannot be sure whether you are overtaking or crossing. What do you do?",
+  "a": "Assume you are overtaking and keep clear",
+  "o": [
+   "Treat it as crossing: she gives way to you",
+   "Hold course and speed until it is clear",
+   "Pass close ahead of her as stand-on"
+  ],
+  "why": "Rule 13(c): in doubt, assume you are overtaking and keep out of the way.",
+  "ref": "COLREGs Rule 13",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -30,
+    "dist": 75,
+    "hdg": 40,
+    "label": "Motorboat"
+   },
+   "bearingLine": true,
+   "note": "You are faster · about 20° abaft her beam"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You started overtaking this boat from astern; now she is converging with you. Who keeps clear?",
+  "a": "You — until you are past and clear",
+  "o": [
+   "She does — she is now crossing from port",
+   "Neither — you are now abreast",
+   "She does — she is the slower boat"
+  ],
+  "why": "Rule 13(d): a later change of bearing does not end the overtaking vessel's duty.",
+  "ref": "COLREGs Rule 13",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -60,
+    "dist": 60,
+    "hdg": 20,
+    "label": "Motor-sailer"
+   },
+   "bearingLine": true,
+   "note": "Bearing now forward of your beam"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "Motoring at night, this is the only light ahead and you are gaining on it. What do you do?",
+  "a": "Keep clear — you are coming up from astern",
+  "o": [
+   "Hold course — it must get out of your way",
+   "Pass close down either side at speed",
+   "Stand on and flash your spotlight"
+  ],
+  "why": "Rule 13: seeing only her sternlight, you are overtaking and keep clear.",
+  "ref": "COLREGs Rule 13",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 124,
+     "t": "white"
+    }
+   ],
+   "note": "Night · fine ahead, range closing"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "Sailing downwind, you are catching up this yacht. Who keeps clear?",
+  "a": "You — overtaking beats the tack rules",
+  "o": [
+   "She does — she is on port tack",
+   "She does — she is to leeward",
+   "Neither — both boats are running"
+  ],
+  "why": "Rule 13 overrides Rule 12: an overtaking sailing vessel keeps clear.",
+  "ref": "COLREGs Rules 12 / 13",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 15,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 5,
+    "dist": 75,
+    "hdg": 345,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 180,
+   "bearingLine": true,
+   "note": "You are faster"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Under sail, you see this motor yacht coming up from astern. What do you do?",
+  "a": "Hold course and speed — she keeps clear",
+  "o": [
+   "Alter course to let her pass",
+   "Slow down so she passes quickly",
+   "Give way — she is the faster vessel"
+  ],
+  "why": "Rules 13 and 17: she is overtaking and keeps clear; you stand on.",
+  "ref": "COLREGs Rules 13 / 17",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 170,
+    "dist": 62,
+    "hdg": 95,
+    "label": "Motor yacht"
+   },
+   "wind": 180,
+   "bearingLine": true,
+   "note": "She is faster, closing from astern"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "Looking astern at night, you see these lights closing on you. What do you do?",
+  "a": "Hold course and speed and watch her",
+  "o": [
+   "Turn to starboard as for head-on",
+   "Turn to port to let her pass",
+   "Speed up to stay ahead of her"
+  ],
+  "why": "Rules 13 and 17: a vessel coming up from astern is overtaking; you stand on.",
+  "ref": "COLREGs Rules 13 / 17",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 50
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 74
+    },
+    {
+     "c": "g",
+     "x": 146,
+     "y": 120
+    },
+    {
+     "c": "r",
+     "x": 174,
+     "y": 120
+    }
+   ],
+   "note": "Night · dead astern of you, closing fast"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Motoring at night, these lights appear fine ahead on a steady bearing. What do you do?",
+  "a": "Alter course to starboard",
+  "o": [
+   "Alter course to port",
+   "Hold course and speed",
+   "Stop and wait for her to act"
+  ],
+  "why": "Rule 14: masthead lights in line and both sidelights = head-on; both turn to starboard.",
+  "ref": "COLREGs Rule 14",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 48
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 74
+    },
+    {
+     "c": "g",
+     "x": 146,
+     "y": 120
+    },
+    {
+     "c": "r",
+     "x": 174,
+     "y": 120
+    }
+   ],
+   "note": "Night · fine ahead, bearing steady"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Motoring, you meet this yacht under sail end-on. Who takes action?",
+  "a": "You alone — power keeps clear of sail",
+  "o": [
+   "Both of you — each turns to starboard",
+   "She does — sail is more agile than power",
+   "Neither — you pass port to port as you are"
+  ],
+  "why": "Rule 14 is for two power vessels; Rule 18 makes power keep clear of sail.",
+  "ref": "COLREGs Rules 14 / 18",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 82,
+    "hdg": 180,
+    "sail": true,
+    "boom": -14
+   },
+   "wind": 270,
+   "bearingLine": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "This vessel is nearly ahead and her red light comes and goes. What do you do?",
+  "a": "Treat it as head-on and alter to starboard",
+  "o": [
+   "Alter to port to open the gap",
+   "Hold on for a starboard-to-starboard pass",
+   "Wait until both sidelights are steady"
+  ],
+  "why": "Rule 14(c): if in doubt whether it is head-on, assume it is and act.",
+  "ref": "COLREGs Rule 14",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 168,
+     "y": 50
+    },
+    {
+     "c": "w",
+     "x": 164,
+     "y": 74
+    },
+    {
+     "c": "g",
+     "x": 150,
+     "y": 120
+    },
+    {
+     "c": "r",
+     "x": 178,
+     "y": 120,
+     "t": "on and off"
+    }
+   ],
+   "note": "Night · fine on your starboard bow, closing"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "Motoring by day, you see this ship ahead with her masts in line. What do you do?",
+  "a": "Alter course to starboard",
+  "o": [
+   "Alter course to port",
+   "Hold your course and speed",
+   "Stop and wait for her"
+  ],
+  "why": "Rule 14: masts in line by day = head-on; both turn to starboard.",
+  "ref": "COLREGs Rule 14",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 2,
+    "dist": 82,
+    "hdg": 182,
+    "label": "Ship",
+    "scale": 1.3
+   },
+   "bearingLine": true,
+   "note": "Her masts are in line"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Motoring, you see this boat crossing. What do you do?",
+  "a": "Hold course and speed, and watch her",
+  "o": [
+   "Turn to port to pass astern of her",
+   "Slow down to let her cross ahead",
+   "Turn to starboard to give way"
+  ],
+  "why": "Rules 15 and 17: you are on her starboard side, so you stand on.",
+  "ref": "COLREGs Rules 15 / 17",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90
+   },
+   "other": {
+    "bearing": -45,
+    "dist": 85,
+    "hdg": 180,
+    "label": "Motorboat"
+   },
+   "bearingLine": true,
+   "note": "Bearing steady, range closing"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "In open water, this high-speed ferry is closing on a steady bearing. Who gives way?",
+  "a": "The ferry — you are on her starboard side",
+  "o": [
+   "You — high-speed craft have priority",
+   "You — the bigger vessel has right of way",
+   "Both of you alter to starboard"
+  ],
+  "why": "Rule 15: a high-speed craft is a power-driven vessel with no special priority.",
+  "ref": "COLREGs Rule 15",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -68,
+    "dist": 88,
+    "hdg": 100,
+    "label": "Fast ferry",
+    "scale": 1.3
+   },
+   "bearingLine": true,
+   "note": "Ferry at 30 knots · you are motoring"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are motoring. These lights are on your port bow on a steady bearing. Your action?",
+  "a": "Hold course and speed, ready to act",
+  "o": [
+   "Turn to port to pass astern of her",
+   "Turn to starboard and give way",
+   "Stop — she has the right of way"
+  ],
+  "why": "Rules 15 and 17: you see her green, so she has you to starboard and gives way.",
+  "ref": "COLREGs Rules 15 / 17",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 110,
+     "y": 74
+    },
+    {
+     "c": "g",
+     "x": 112,
+     "y": 120
+    }
+   ],
+   "note": "Night · port bow, bearing steady"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are the stand-on vessel and she shows no sign of giving way. What do you do first?",
+  "a": "Sound at least five short blasts",
+  "o": [
+   "Turn to port across her bow",
+   "Sound one prolonged blast",
+   "Keep silent and hold on"
+  ],
+  "why": "Rule 34(d): five short blasts when in doubt the other is taking enough action.",
+  "ref": "COLREGs Rules 17 / 34",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -50,
+    "dist": 85,
+    "hdg": 80,
+    "label": "Motor yacht"
+   },
+   "bearingLine": true,
+   "note": "Steady bearing, half a mile, no action"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "She still does nothing after your five short blasts. You decide to act. Which way?",
+  "a": "Turn to starboard, not to port",
+  "o": [
+   "Turn to port to pass astern of her",
+   "Speed up to cross ahead of her",
+   "Hold on — stand-on may never act"
+  ],
+  "why": "Rule 17(c): do not turn to port for a power vessel on your own port side.",
+  "ref": "COLREGs Rule 17",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -50,
+    "dist": 70,
+    "hdg": 80,
+    "label": "Motor yacht"
+   },
+   "bearingLine": true,
+   "note": "Bearing still steady, closing"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "She is now so close that her action alone cannot avoid a collision. What does Rule 17 require?",
+  "a": "You must take the best action to avoid her",
+  "o": [
+   "Hold course and speed to the end",
+   "Sound five short and do nothing else",
+   "Wait — she is the give-way vessel"
+  ],
+  "why": "Rule 17(b): when the give-way vessel alone cannot avoid collision, you must act.",
+  "ref": "COLREGs Rule 17",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -45,
+    "dist": 62,
+    "hdg": 90,
+    "label": "Motorboat"
+   },
+   "bearingLine": true,
+   "note": "Very close, still not altering"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Under sail, you are stand-on to this container ship. Why do you still watch her closely and act early if she does not alter?",
+  "a": "She may not see you, and can't turn or stop fast",
+  "o": [
+   "Ships always have the right of way over yachts",
+   "Because she is crossing from your starboard side",
+   "Ships are not allowed to alter course for yachts"
+  ],
+  "why": "Rules 2 and 17: big ships have blind arcs and long stopping distances.",
+  "ref": "COLREGs Rules 2 / 17",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 50,
+    "dist": 88,
+    "hdg": 270,
+    "label": "Container ship",
+    "scale": 1.8
+   },
+   "wind": 270,
+   "bearingLine": true,
+   "note": "Open water · she is not restricted"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You are under sail and converging with a ship showing these shapes. Who keeps clear?",
+  "a": "You — she is not under command",
+  "o": [
+   "She does — power gives way to sail",
+   "Whoever has the other on her port side",
+   "Neither — she is at anchor"
+  ],
+  "why": "Rule 18: sail keeps clear of a vessel not under command (two balls).",
+  "ref": "COLREGs Rule 18",
+  "fig": {
+   "type": "dayshape",
+   "note": "Day shapes, ship converging",
+   "shape": "two-balls"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "Motoring past a dredger working in the harbour approach, you see these shapes. What do you do?",
+  "a": "Keep clear — she is restricted in manoeuvre",
+  "o": [
+   "Hold course — she is just a power vessel",
+   "Pass close to read her signals",
+   "Keep clear only if she is to starboard"
+  ],
+  "why": "Rule 18: ball-diamond-ball = restricted in ability to manoeuvre.",
+  "ref": "COLREGs Rule 18",
+  "fig": {
+   "type": "dayshape",
+   "note": "Day shapes on the dredger",
+   "shape": "ball-diamond-ball"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Under sail, you are converging with a deep-laden tanker showing this shape. What do you do?",
+  "a": "Keep out of her way — avoid impeding her",
+  "o": [
+   "Hold on — she gives way to sail",
+   "Pass close ahead — she can slow down",
+   "Nothing — the shape is for fishing boats"
+  ],
+  "why": "Rule 18(d): all but NUC and RAM avoid impeding a vessel constrained by her draught.",
+  "ref": "COLREGs Rule 18",
+  "fig": {
+   "type": "dayshape",
+   "note": "Day shape on the tanker",
+   "shape": "cylinder"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "Motoring, you see this boat crossing on a steady bearing. Who keeps clear?",
+  "a": "She does — trolling is not \"engaged in fishing\"",
+  "o": [
+   "You — fishing boats always have the priority",
+   "You — she has fishing lines in the water",
+   "Neither — both of you should slow down"
+  ],
+  "why": "Rule 3(d): trolling lines do not restrict manoeuvring, so Rule 15 applies.",
+  "ref": "COLREGs Rules 3 / 15",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -55,
+    "dist": 75,
+    "hdg": 70,
+    "label": "Trolling"
+   },
+   "bearingLine": true,
+   "note": "Trolling lines astern, no day shape"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Under sail near Corfu, this seaplane is taxiing towards your track. Who keeps clear?",
+  "a": "The seaplane — it keeps clear of vessels",
+  "o": [
+   "You — aircraft always have priority",
+   "You — it is on your starboard side",
+   "Neither — it is about to take off"
+  ],
+  "why": "Rule 18(e): a seaplane on the water keeps well clear of all vessels.",
+  "ref": "COLREGs Rule 18",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 82,
+    "hdg": 250,
+    "label": "Seaplane"
+   },
+   "wind": 90,
+   "bearingLine": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You are sailing like this with the engine running in gear. What do you hoist?",
+  "a": "A cone, point down, forward",
+  "o": [
+   "A black ball forward",
+   "Two cones, points together",
+   "Nothing — the sails say you are sailing"
+  ],
+  "why": "Rule 25(e): under sail and engine, show a cone apex down; you are power-driven.",
+  "ref": "COLREGs Rules 3 / 25",
+  "fig": {
+   "type": "dayshape",
+   "note": "Mainsail up, engine in gear",
+   "sail": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You are under sail alone, on port tack. This yacht on starboard tack is crossing your course. Who keeps clear?",
+  "a": "She does — she is power-driven",
+  "o": [
+   "You do — she is on starboard tack",
+   "Neither — both have sails up",
+   "Whichever boat is to windward"
+  ],
+  "why": "Rule 18: the cone shows she is motor-sailing, so she keeps clear of sail.",
+  "ref": "COLREGs Rules 3 / 18",
+  "fig": {
+   "type": "dayshape",
+   "note": "Cone point down forward",
+   "shape": "cone-down",
+   "sail": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "This vessel lies across your planned route into a Croatian bay. What do you do?",
+  "a": "Keep well clear — she is aground in shallows",
+  "o": [
+   "Pass close astern — she is only at anchor",
+   "Pass either side — she is fishing",
+   "Stand by — she is not under command"
+  ],
+  "why": "Rule 30(d): three balls = aground; there is shallow water round her.",
+  "ref": "COLREGs Rule 30",
+  "fig": {
+   "type": "dayshape",
+   "note": "Day shapes, vessel not moving",
+   "shape": "three-balls"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Motoring at night, you see these lights. Where do you pass?",
+  "a": "Well astern of the tow, never between",
+  "o": [
+   "Close ahead of the tug, then clear",
+   "Between the tug and the lit tow",
+   "Just astern of the tug, ahead of the tow"
+  ],
+  "why": "Three masthead lights: a tow over 200 m long, behind the tug — never cut between.",
+  "ref": "COLREGs Rule 24",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 150,
+     "y": 48
+    },
+    {
+     "c": "w",
+     "x": 150,
+     "y": 68
+    },
+    {
+     "c": "w",
+     "x": 150,
+     "y": 88
+    },
+    {
+     "c": "r",
+     "x": 146,
+     "y": 120
+    },
+    {
+     "c": "r",
+     "x": 252,
+     "y": 126,
+     "t": "tow",
+     "r": 5
+    }
+   ],
+   "note": "Night · starboard bow, bearing steady"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Off this beach, what does good seamanship ask of you?",
+  "a": "Slow down, keep well off and watch them",
+  "o": [
+   "Hold course — they must keep clear",
+   "Sound five short and carry on",
+   "Speed up to get through quickly"
+  ],
+  "why": "Rules 2, 5 and 6: fast, unpredictable craft call for a wide berth and safe speed.",
+  "ref": "COLREGs Rules 2 / 6",
+  "fig": {
+   "type": "card",
+   "title": "Off a beach on Paros",
+   "lines": [
+    "Afternoon Meltemi, force 5",
+    "Dozens of kitesurfers close inshore",
+    "Your route passes 300 m off the beach"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Motoring, you meet this windsurfer crossing ahead. Who keeps clear?",
+  "a": "You — treat her as a sailing vessel",
+  "o": [
+   "She does — she is far more agile",
+   "She does — she is on your port side",
+   "Neither — she is not a vessel"
+  ],
+  "why": "Rule 18: power keeps clear of sail; give boards a wide berth.",
+  "ref": "COLREGs Rule 18",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -40,
+    "dist": 70,
+    "hdg": 30,
+    "scale": 0.5,
+    "label": "Windsurfer",
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 270,
+   "bearingLine": true
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Motoring, you see this trawler crossing from your port side. Who keeps clear?",
+  "a": "You — she is engaged in fishing",
+  "o": [
+   "She does — you are on her starboard side",
+   "She does — she is power-driven too",
+   "Both of you alter to starboard"
+  ],
+  "why": "Rule 18(a): power keeps clear of a vessel engaged in fishing, from any side.",
+  "ref": "COLREGs Rule 18",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -50,
+    "dist": 78,
+    "hdg": 85,
+    "label": "Trawler"
+   },
+   "bearingLine": true,
+   "note": "Two cones, points together"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Motoring at night, you see only these two lights, close together, on a steady bearing. What do you do?",
+  "a": "Keep clear — she is a yacht under sail",
+  "o": [
+   "Hold course — she must give way to you",
+   "Turn to port across her bow",
+   "Stand on — she is only a small boat"
+  ],
+  "why": "No masthead light: a sailing vessel; power keeps clear of sail (Rule 18).",
+  "ref": "COLREGs Rules 18 / 25",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 196,
+     "y": 120,
+     "r": 5
+    },
+    {
+     "c": "r",
+     "x": 208,
+     "y": 120,
+     "r": 5
+    }
+   ],
+   "note": "Night · starboard bow, bearing steady"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "You are under sail alone and see these lights on a steady bearing. What do you do?",
+  "a": "Hold course and speed, watching her closely",
+  "o": [
+   "Give way — she is on your starboard side",
+   "Turn to port to pass astern of her",
+   "Tack at once to keep clear of her"
+  ],
+  "why": "Masthead light and red = power vessel crossing; she keeps clear of sail (Rule 18).",
+  "ref": "COLREGs Rules 17 / 18",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 204,
+     "y": 72
+    },
+    {
+     "c": "r",
+     "x": 200,
+     "y": 120
+    }
+   ],
+   "note": "Night · on your starboard bow"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Under sail at night, you see these lights converging. Who keeps clear?",
+  "a": "You — she is restricted in manoeuvre",
+  "o": [
+   "She does — power gives way to sail",
+   "She does — she is on your port side",
+   "Neither — she is at anchor"
+  ],
+  "why": "Red-white-red all-round = restricted in ability to manoeuvre; sail keeps clear.",
+  "ref": "COLREGs Rules 18 / 27",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 130,
+     "y": 46
+    },
+    {
+     "c": "w",
+     "x": 130,
+     "y": 70
+    },
+    {
+     "c": "r",
+     "x": 130,
+     "y": 94
+    },
+    {
+     "c": "w",
+     "x": 178,
+     "y": 60
+    },
+    {
+     "c": "g",
+     "x": 128,
+     "y": 122
+    }
+   ],
+   "note": "Night · on your port bow"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "You must pass this fishing vessel. Which side do you choose?",
+  "a": "The right-hand side, away from the extra white",
+  "o": [
+   "The left-hand side, by the extra white",
+   "Either side — she is not making way",
+   "Close past her, whichever side is shorter"
+  ],
+  "why": "Rule 26(c): an extra all-round white shows the direction of outlying gear.",
+  "ref": "COLREGs Rule 26",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 170,
+     "y": 56,
+     "t": "red"
+    },
+    {
+     "c": "w",
+     "x": 170,
+     "y": 80,
+     "t": "white"
+    },
+    {
+     "c": "w",
+     "x": 118,
+     "y": 108,
+     "t": "white"
+    }
+   ],
+   "note": "Night · ahead, not making way"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You hear this signal. What does Rule 19 require you to do?",
+  "a": "Slow to steerage way, and stop if needed",
+  "o": [
+   "Keep speed and sound one short blast",
+   "Turn to starboard and keep your speed",
+   "Hold course and speed — you stand on"
+  ],
+  "why": "Rule 19(e): a fog signal heard forward of the beam — cut to bare steerage way.",
+  "ref": "COLREGs Rule 19",
+  "fig": {
+   "type": "card",
+   "title": "Fog, no radar",
+   "lines": [
+    "Visibility under 100 m",
+    "Heard: one prolonged blast every 2 min",
+    "It seems to come from your port bow"
+   ]
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "In fog, radar shows this target closing. Which alteration is right?",
+  "a": "A bold turn to starboard, or slow down",
+  "o": [
+   "A turn to port, away from the target",
+   "None — hold on as the stand-on vessel",
+   "Speed up to pass ahead of the target"
+  ],
+  "why": "Rule 19(d)(i): avoid turning to port for a vessel forward of the beam.",
+  "ref": "COLREGs Rule 19",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 20,
+    "dist": 85,
+    "hdg": 200,
+    "label": "Radar target"
+   },
+   "bearingLine": true,
+   "note": "Fog · radar only, bearing steady, closing"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "In fog, radar shows this target closing from your starboard quarter. What do you do?",
+  "a": "Alter to port, away from her",
+  "o": [
+   "Alter to starboard, the usual way",
+   "Hold on — she is overtaking, so she keeps clear",
+   "Turn towards her to pass under her stern"
+  ],
+  "why": "Rule 19(d)(ii): avoid turning towards a vessel abeam or abaft the beam.",
+  "ref": "COLREGs Rule 19",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270
+   },
+   "other": {
+    "bearing": 130,
+    "dist": 75,
+    "hdg": 240,
+    "label": "Radar target"
+   },
+   "bearingLine": true,
+   "note": "Fog · not in sight, she is faster"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "In fog, radar shows this vessel closing from your port bow. Are you the stand-on vessel?",
+  "a": "No — out of sight, both must act",
+  "o": [
+   "Yes — she is on your port side",
+   "No — you are the give-way vessel",
+   "Yes, until she is within a mile"
+  ],
+  "why": "Rule 19: vessels not in sight have no stand-on or give-way; each avoids close quarters.",
+  "ref": "COLREGs Rule 19",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -40,
+    "dist": 80,
+    "hdg": 100,
+    "label": "Radar target"
+   },
+   "bearingLine": true,
+   "note": "Fog · not in sight of each other"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "You were tracking this motor yacht by radar in fog. Now she is in sight. Which rule applies?",
+  "a": "The crossing rule — you give way to her",
+  "o": [
+   "Still Rule 19 — nobody is stand-on",
+   "You stand on — she is the faster boat",
+   "Both of you turn to port to open up"
+  ],
+  "why": "Rules 11 and 15: once in sight of each other, the steering rules apply.",
+  "ref": "COLREGs Rules 15 / 19",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 45,
+    "dist": 80,
+    "hdg": 270,
+    "label": "Motor yacht"
+   },
+   "bearingLine": true,
+   "note": "She has just come into sight, 200 m off"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "Motoring at 5 knots in fog, what sound signal do you make?",
+  "a": "One prolonged blast every 2 minutes or less",
+  "o": [
+   "Two prolonged blasts every 2 minutes",
+   "One prolonged and two short every 2 minutes",
+   "Five short blasts every minute"
+  ],
+  "why": "Rule 35(a): power-driven, making way — one prolonged at intervals of 2 minutes or less.",
+  "ref": "COLREGs Rule 35",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "Fog closes in while you are under sail alone. Which signal do you give, and how often?",
+  "a": "One prolonged and two short, every 2 minutes",
+  "o": [
+   "One prolonged, every 2 minutes",
+   "Two prolonged, every 2 minutes",
+   "Rapid ringing of the bell, every minute"
+  ],
+  "why": "Rule 35(c): a sailing vessel sounds one prolonged followed by two short.",
+  "ref": "COLREGs Rule 35",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "In thick fog you stop the engine and drift, sails furled, to listen. What signal now?",
+  "a": "Two prolonged blasts every 2 minutes or less",
+  "o": [
+   "One prolonged blast every 2 minutes or less",
+   "One prolonged, two short, every 2 minutes",
+   "None — you are not making way through the water"
+  ],
+  "why": "Rule 35(b): under way but not making way — two prolonged blasts.",
+  "ref": "COLREGs Rule 35",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "In fog you hear three separate strokes of a bell, rapid ringing, then three strokes again, ahead of you. What do you do?",
+  "a": "Keep well clear — a vessel aground, shoal water",
+  "o": [
+   "Pass close — it is just a vessel at anchor",
+   "Hold on — a vessel under way must give way",
+   "Ignore it — it is a church bell ashore"
+  ],
+  "why": "Rule 35(h): three strokes, rapid ringing, three strokes = vessel aground.",
+  "ref": "COLREGs Rule 35",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Motoring slowly along the coast in fog, you hear rapid ringing of a bell for about five seconds, once a minute. What is it?",
+  "a": "A boat at anchor — slow down and avoid her",
+  "o": [
+   "A vessel aground — the water is shallow",
+   "A sailing vessel under way",
+   "A fishing boat hauling her nets"
+  ],
+  "why": "Rule 35(g): rapid bell ringing for 5 seconds each minute = vessel at anchor.",
+  "ref": "COLREGs Rule 35",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Creeping into a bay in fog, you hear one short, one prolonged and one short blast close ahead. What does it mean?",
+  "a": "An anchored boat warns you are closing on her",
+  "o": [
+   "A vessel aground somewhere ahead of you",
+   "A ship astern intending to overtake you",
+   "A sailing vessel under way close by"
+  ],
+  "why": "Rule 35(g): an anchored vessel may sound short-prolonged-short as a warning.",
+  "ref": "COLREGs Rule 35",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "A motor yacht you can see clearly sounds two short blasts. What is she doing?",
+  "a": "Altering her course to port",
+  "o": [
+   "Altering her course to starboard",
+   "Going astern",
+   "Asking you to keep clear"
+  ],
+  "why": "Rule 34(a): two short = I am altering my course to port.",
+  "ref": "COLREGs Rule 34",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "In a busy island harbour, a ferry near the quay sounds three short blasts. What does it mean?",
+  "a": "Her engines are going astern",
+  "o": [
+   "She is altering course to starboard",
+   "She doubts what you are doing",
+   "She is about to leave — clear the way"
+  ],
+  "why": "Rule 34(a): three short = I am operating astern propulsion.",
+  "ref": "COLREGs Rule 34",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 1,
+  "q": "You are near a ship in clear weather when she sounds five short, rapid blasts. What does she mean?",
+  "a": "She doubts you are keeping clear",
+  "o": [
+   "She is altering course to port",
+   "She is going astern",
+   "She is about to overtake you"
+  ],
+  "why": "Rule 34(d): at least five short = I doubt your intentions or action.",
+  "ref": "COLREGs Rule 34",
+  "fig": null
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "Motoring in sight of this ship, you are about to alter to starboard to give way. What signal do you give?",
+  "a": "One short blast as you turn",
+  "o": [
+   "Two short blasts as you turn",
+   "One prolonged blast",
+   "None — signals are for ships only"
+  ],
+  "why": "Rule 34(a): power vessels in sight signal alterations — one short = to starboard.",
+  "ref": "COLREGs Rule 34",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 88,
+    "hdg": 240,
+    "label": "Ship",
+    "scale": 1.4
+   },
+   "bearingLine": true,
+   "note": "Clear weather, bearing steady"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "You have not yet altered for this ship. She flashes a white light five times, rapidly. What does she mean?",
+  "a": "She doubts you are keeping clear — act now",
+  "o": [
+   "She is altering her course to port",
+   "She is turning to starboard to avoid you",
+   "She wants you to hold course and speed"
+  ],
+  "why": "Rule 34(d): five short, rapid flashes = doubt; give way clearly now.",
+  "ref": "COLREGs Rule 34",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 192,
+     "y": 72
+    },
+    {
+     "c": "r",
+     "x": 188,
+     "y": 120
+    },
+    {
+     "c": "w",
+     "x": 196,
+     "y": 48,
+     "t": "5 rapid flashes",
+     "r": 4
+    }
+   ],
+   "note": "Night · starboard bow, bearing steady"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 2,
+  "q": "This ship flashes her all-round white light twice. What is she doing?",
+  "a": "Altering her course to port",
+  "o": [
+   "Altering her course to starboard",
+   "Operating astern propulsion",
+   "Warning you of danger ahead"
+  ],
+  "why": "Rule 34(b): two flashes, like two short blasts = altering to port.",
+  "ref": "COLREGs Rule 34",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 122,
+     "y": 72
+    },
+    {
+     "c": "g",
+     "x": 124,
+     "y": 120
+    },
+    {
+     "c": "w",
+     "x": 126,
+     "y": 48,
+     "t": "2 flashes",
+     "r": 4
+    }
+   ],
+   "note": "Night · on your port bow"
+  }
+ },
+ {
+  "topic": "colregs",
+  "difficulty": 3,
+  "q": "There is no room to turn to starboard for this motorboat. What do you do?",
+  "a": "Slow down or stop until she has passed",
+  "o": [
+   "Turn to starboard anyway — Rule 14",
+   "Turn to port and pass starboard to starboard",
+   "Hold course and speed — she will move"
+  ],
+  "why": "Rules 2(b) and 8(e): when the rule cannot be followed, slow or stop.",
+  "ref": "COLREGs Rules 2 / 8",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 80,
+    "hdg": 180,
+    "label": "Motorboat"
+   },
+   "bearingLine": true,
+   "note": "Narrow passage · rocks close to starboard"
+  }
+ }
+]

@@ -1,0 +1,1717 @@
+[
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "You are sailing from Paros to Naxos on this heading. What point of sail are you on?",
+  "a": "Broad reach",
+  "o": [
+   "Beam reach",
+   "Close reach",
+   "Dead run"
+  ],
+  "why": "Wind on the quarter, about 135° off the bow, is a broad reach.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 135,
+   "nogo": true
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "The genoa and main are sheeted in hard and you cannot steer any closer to the wind. What point of sail is this?",
+  "a": "Close-hauled",
+  "o": [
+   "Close reach",
+   "Beam reach",
+   "In irons"
+  ],
+  "why": "Close-hauled is the closest course to the wind that keeps the sails full, about 45°.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 315,
+   "nogo": true
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You were close-hauled and have borne away a little to this heading. What point of sail are you on now?",
+  "a": "Close reach",
+  "o": [
+   "Beam reach",
+   "Broad reach",
+   "Still close-hauled"
+  ],
+  "why": "Between close-hauled (45°) and a beam reach (90°) is a close reach.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 60,
+   "nogo": true
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You settle on this heading for the long leg down to Kos. Where do you set the mainsail, and what is the main risk?",
+  "a": "Eased right out; an accidental gybe",
+  "o": [
+   "Sheeted in hard; the sails stalling",
+   "Centred; the boat going into irons",
+   "Half out; the boat tacking by itself"
+  ],
+  "why": "On a run the main is eased fully, and a wind shift or wave can swing the boom across.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 180
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You have just borne away from close-hauled onto this heading. What do you do with the sheets?",
+  "a": "Ease both until the sails just stop luffing",
+  "o": [
+   "Pull both in harder to keep the speed",
+   "Leave them — the sails trim themselves",
+   "Ease the main and pull in the genoa"
+  ],
+  "why": "As you bear away, ease the sheets: trim each sail to the edge of luffing.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 90,
+   "note": "Now on a beam reach"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "You were close-hauled on 045°. Now the sails start to lift and flap. What has happened and what do you do?",
+  "a": "You are headed: bear away to keep the sails full",
+  "o": [
+   "You are lifted: luff up and point higher",
+   "Nothing has changed: hold your heading",
+   "You are headed: ease the sheets and hold course"
+  ],
+  "why": "A veer of 20° puts 045° inside the no-go zone; bear away or tack.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 20,
+   "hdg": 45,
+   "nogo": true,
+   "note": "Wind has veered from 000° to 020°"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "The skipper calls \"luff up 20 degrees\". What heading do you steer?",
+  "a": "070°",
+  "o": [
+   "110°",
+   "020°",
+   "090° with the sheets eased"
+  ],
+  "why": "Luffing up turns the bow towards the wind: 090° − 20° = 070°.",
+  "ref": "Sailing manoeuvres",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 90,
+   "note": "Heading 090°, wind from the north"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "You bear away 45° from this heading. What is your new heading and point of sail?",
+  "a": "270°, beam reach",
+  "o": [
+   "270°, broad reach",
+   "000°, in irons",
+   "225°, beam reach"
+  ],
+  "why": "Bearing away turns from the wind: 315° − 45° = 270°, wind now on the beam.",
+  "ref": "Points of sail",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 315,
+   "nogo": true,
+   "note": "Close-hauled, heading 315°, wind from the north"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Your boat tacks through 90°. After tacking from this heading, what course will you be steering?",
+  "a": "045°",
+  "o": [
+   "225°",
+   "000°",
+   "090°"
+  ],
+  "why": "Close-hauled 45° each side of a northerly wind: 315° tacks to 045°.",
+  "ref": "Sailing manoeuvres",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 315,
+   "nogo": true,
+   "note": "Close-hauled, heading 315°, wind from the north"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "You need to know which tack you are on. On this heading, what is it?",
+  "a": "Port tack",
+  "o": [
+   "Starboard tack",
+   "Leeward tack",
+   "Neither — you are on a reach"
+  ],
+  "why": "The tack is named after the side the wind comes over; tacks apply on every point of sail.",
+  "ref": "Sailing terms",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0.01,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 270
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You are on a dead run with the main boom out to starboard. Which tack are you on?",
+  "a": "Port tack",
+  "o": [
+   "Starboard tack",
+   "No tack — the wind is dead astern",
+   "Whichever side the genoa is on"
+  ],
+  "why": "On a run the tack is the side opposite the main boom.",
+  "ref": "Sailing terms",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0.01,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 180,
+   "note": "Dead run, main boom to starboard"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "The skipper asks where the other yacht is. How do you call it?",
+  "a": "Abeam to starboard",
+  "o": [
+   "On the starboard bow",
+   "On the starboard quarter",
+   "Abeam to port"
+  ],
+  "why": "Abeam is 90° from the bow; starboard is the right-hand side facing forward.",
+  "ref": "Directions on board",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 90,
+    "dist": 85,
+    "hdg": 0,
+    "label": "Yacht",
+    "scale": 1,
+    "sail": true
+   }
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "A ferry is coming up from this direction to overtake you. How do you call its position to the crew?",
+  "a": "On the starboard quarter",
+  "o": [
+   "On the starboard bow",
+   "Abeam to starboard",
+   "On the port quarter"
+  ],
+  "why": "The quarter is about 45° abaft the beam, between the beam and the stern.",
+  "ref": "Directions on board",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 135,
+    "dist": 85,
+    "hdg": 0,
+    "label": "Ferry",
+    "scale": 1.3
+   }
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Your lookout spots a fishing boat here. How should she call it out?",
+  "a": "On the port bow",
+  "o": [
+   "On the port quarter",
+   "On the starboard bow",
+   "Abeam to port"
+  ],
+  "why": "The bow is about 45° either side of dead ahead; port is the left side.",
+  "ref": "Directions on board",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 315,
+    "dist": 85,
+    "hdg": 90,
+    "label": "Fishing boat",
+    "scale": 1
+   }
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "A small motorboat is close to your heading line, a little to the right. How do you report it?",
+  "a": "Fine on the starboard bow",
+  "o": [
+   "Broad on the starboard bow",
+   "Fine on the port bow",
+   "Abeam to starboard"
+  ],
+  "why": "\"Fine\" means close to the bow line; \"broad\" means nearer the beam.",
+  "ref": "Directions on board",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 20,
+    "dist": 85,
+    "hdg": 180,
+    "label": "Motorboat",
+    "scale": 0.6
+   }
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "A RIB is following in your wake. Where is it?",
+  "a": "Dead astern",
+  "o": [
+   "Dead ahead",
+   "On the port quarter",
+   "Abaft the beam to starboard"
+  ],
+  "why": "Directly behind the stern is dead astern.",
+  "ref": "Directions on board",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 180,
+    "dist": 80,
+    "hdg": 0,
+    "label": "RIB",
+    "scale": 0.7
+   }
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You and another yacht are sailing side by side. Which boat is the windward boat?",
+  "a": "The other yacht",
+  "o": [
+   "Your yacht",
+   "Whichever boat is ahead",
+   "Whichever boat is on starboard tack"
+  ],
+  "why": "The windward boat is the one nearer the wind, upwind of the other.",
+  "ref": "Directions on board",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 270,
+    "dist": 70,
+    "hdg": 90,
+    "sail": true,
+    "boom": 14,
+    "label": "Other"
+   },
+   "wind": 0
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You are on the foredeck facing aft, towards the cockpit. Which side of the boat is port?",
+  "a": "On your right",
+  "o": [
+   "On your left",
+   "In front of you",
+   "It depends on the tack"
+  ],
+  "why": "Port is the left side when facing forward, so it is on your right when you face aft.",
+  "ref": "Directions on board",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "The skipper asks you to lay the passerelle \"fore-and-aft\" on the side deck. How do you place it?",
+  "a": "Lengthways, along the boat",
+  "o": [
+   "Across the boat, side to side",
+   "Upright against the mast",
+   "Hanging over the transom"
+  ],
+  "why": "Fore-and-aft means lengthways, bow to stern; athwartships means across.",
+  "ref": "Directions on board",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "A crew member feels seasick and wants to be sick over the side. Which side do you send them to?",
+  "a": "Port, the leeward side",
+  "o": [
+   "Starboard, the windward side",
+   "Over the transom, behind the helm",
+   "Whichever side is higher"
+  ],
+  "why": "Always to leeward, downwind, so it blows away from the boat.",
+  "ref": "Directions on board",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0.01,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 90
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "A gust heels the boat hard. The skipper calls \"everyone to windward!\". Where does the crew sit?",
+  "a": "Port side, the high side",
+  "o": [
+   "Starboard side, the low side",
+   "In the middle of the cockpit",
+   "Down below, on the saloon sole"
+  ],
+  "why": "Windward is the side the wind comes from; crew weight there reduces heel.",
+  "ref": "Directions on board",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0.01,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 270
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Reversing into the berth, the skipper calls \"helm amidships!\". What do you do?",
+  "a": "Centre the wheel so the rudder is straight",
+  "o": [
+   "Steer for the middle of the gap",
+   "Put the engine into neutral",
+   "Hand the wheel to the crew in the middle"
+  ],
+  "why": "Amidships on the helm means the rudder is centred, in line with the keel.",
+  "ref": "Directions on board",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You are sailing along this coast towards the next harbour. What is it called, and how far off do you keep?",
+  "a": "A lee shore; keep well off",
+  "o": [
+   "A weather shore; keep well off",
+   "A lee shore; close in for shelter",
+   "A weather shore; close in for flat water"
+  ],
+  "why": "A lee shore has the wind blowing onto it; a failure there drives you onto the rocks.",
+  "ref": "Directions on board",
+  "fig": {
+   "type": "bay",
+   "wind": 180,
+   "labels": [
+    [
+     160,
+     40,
+     "ROCKY COAST",
+     "middle"
+    ]
+   ],
+   "note": "Wind blowing onto the coast"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "You are trimming the genoa on this winch. The skipper calls \"ease the genoa\". What do you do?",
+  "a": "Let the sheet out a little, under control",
+  "o": [
+   "Wind the sheet in a little",
+   "Roll the genoa away a little",
+   "Take the sheet off the winch"
+  ],
+  "why": "To ease is to let a line out gradually; to trim or sheet in is to pull it in.",
+  "ref": "Sailing terms",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     80,
+     86,
+     "genoa sheet",
+     "middle"
+    ],
+    [
+     255,
+     90,
+     "tail",
+     "middle"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Before a tack, the skipper asks you to put two turns of the lazy sheet on a winch. Which line do you load?",
+  "a": "The unused one on the windward side",
+  "o": [
+   "The loaded one on the leeward side",
+   "The mainsheet on the traveller",
+   "The furling line for the genoa"
+  ],
+  "why": "The lazy sheet is the one not working; it becomes the working sheet after the tack.",
+  "ref": "Running rigging",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     80,
+     86,
+     "lazy sheet",
+     "middle"
+    ],
+    [
+     255,
+     90,
+     "tail",
+     "middle"
+    ]
+   ],
+   "note": "Windward winch, before the tack"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You call \"lee-ho\" and turn the boat. When does the crew release the old genoa sheet?",
+  "a": "As the bow comes through the wind",
+  "o": [
+   "As soon as you call \"lee-ho\"",
+   "Once settled on the new tack",
+   "Before you start to turn"
+  ],
+  "why": "Too early and the genoa flogs; too late and it is backed and stops the turn.",
+  "ref": "Sailing manoeuvres",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "Your destination is upwind, to the north-west. Which manoeuvre puts you on the other close-hauled course?",
+  "a": "Tack: turn the bow through the wind",
+  "o": [
+   "Gybe: turn the stern through the wind",
+   "Bear away onto a run",
+   "Heave to and wait"
+  ],
+  "why": "Changing from one close-hauled course to the other means tacking.",
+  "ref": "Sailing manoeuvres",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 45,
+   "nogo": true,
+   "note": "Close-hauled, wind from the north"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "You are outside the harbour and about to hoist the mainsail under engine. How do you point the boat?",
+  "a": "Head to wind, motoring slowly",
+  "o": [
+   "Downwind, so the sail fills",
+   "Beam-on to the wind",
+   "Straight for the next headland"
+  ],
+  "why": "Head to wind the sail does not fill or snag while it goes up.",
+  "ref": "Sailing manoeuvres",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "At check-in you find a bent post holding up the guardwires next to the cockpit. Which part is damaged?",
+  "a": "A stanchion",
+  "o": [
+   "A shroud",
+   "A spreader",
+   "The pushpit"
+  ],
+  "why": "Stanchions are the posts that carry the guardwires along the deck.",
+  "ref": "Parts of the boat",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "The bow navigation lights on your yacht are fixed to the steel rail around the bow. What is that rail?",
+  "a": "The pulpit",
+  "o": [
+   "The pushpit",
+   "The toerail",
+   "The bow roller"
+  ],
+  "why": "The pulpit is the rail at the bow; the pushpit is the rail at the stern.",
+  "ref": "Parts of the boat",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "The dinghy outboard is clamped to a bracket on the steel rail around the stern. What is that rail?",
+  "a": "The pushpit",
+  "o": [
+   "The pulpit",
+   "The transom",
+   "The coaming"
+  ],
+  "why": "The pushpit (stern rail) surrounds the cockpit at the stern.",
+  "ref": "Parts of the boat",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "A big following sea is starting to break into the cockpit. Which opening do you close so it cannot flood the cabin?",
+  "a": "The companionway, with the washboards",
+  "o": [
+   "The cockpit drains",
+   "The anchor locker lid",
+   "The heads seacock"
+  ],
+  "why": "Washboards close the companionway; the cockpit drains must stay open to empty it.",
+  "ref": "Parts of the boat",
+  "fig": {
+   "type": "card",
+   "title": "Running in a big sea",
+   "lines": [
+    "Waves breaking over the transom",
+    "Water sloshing in the cockpit",
+    "Companionway open, hatch slid back"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Your charter yacht has a deep fin keel with a bulb. Compared with a long-keeled boat, how does she handle?",
+  "a": "Turns tightly but tracks less steadily",
+  "o": [
+   "Tracks steadily but turns slowly",
+   "Can dry out upright on a beach",
+   "Heels less and needs no ballast"
+  ],
+  "why": "A short fin pivots easily; a long keel holds a straight course.",
+  "ref": "Keel types",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "A friend's boat sits upright on the mud at low tide in her UK harbour. What keel does she most likely have?",
+  "a": "Twin (bilge) keels",
+  "o": [
+   "A deep fin keel",
+   "A fin keel with a bulb",
+   "A long full keel"
+  ],
+  "why": "Twin keels let a boat take the ground upright; fin and long keels fall over.",
+  "ref": "Keel types",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Your yacht has twin rudders and a wide stern. Heeled over upwind, what do they give you?",
+  "a": "The leeward rudder stays deep and keeps grip",
+  "o": [
+   "The boat can turn in its own length",
+   "Strong prop wash over both rudders",
+   "Better steering when going astern"
+  ],
+  "why": "A single central rudder lifts out as a wide boat heels; the lee rudder of a pair stays in.",
+  "ref": "Parts of the boat",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "Your charter yacht has twin rudders and one central propeller. Manoeuvring slowly in the marina, what do you notice?",
+  "a": "Little steering until she has way on",
+  "o": [
+   "Prop wash kicks the stern very hard",
+   "She pivots on the spot like a cat",
+   "Steering astern is easier than ahead"
+  ],
+  "why": "The rudders are off-centre, out of the prop wash, so they only work with water flowing past.",
+  "ref": "Parts of the boat",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Water drips into the cabin where a shroud passes through the deck. Which fitting is leaking?",
+  "a": "The chainplate",
+  "o": [
+   "The gooseneck",
+   "The spreader root",
+   "The stanchion base"
+  ],
+  "why": "Shrouds are anchored to chainplates that pass through the deck to the hull.",
+  "ref": "Parts of the rig",
+  "fig": {
+   "type": "card",
+   "title": "Below decks, after rain",
+   "lines": [
+    "Drip from the deckhead beside the saloon",
+    "Directly under where a shroud meets the deck",
+    "Stains around the bolts"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "You roll the genoa away with the furling line. Which wire does the sail wrap around?",
+  "a": "The forestay",
+  "o": [
+   "The backstay",
+   "A cap shroud",
+   "The topping lift"
+  ],
+  "why": "A roller-furling genoa rolls round a foil over the forestay.",
+  "ref": "Parts of the rig",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "At check-in you find damage on this wire. What is it and what do you do?",
+  "a": "A shroud: report it and do not sail",
+  "o": [
+   "A shroud: tape it and sail gently",
+   "A halyard: turn it end for end",
+   "The forestay: keep the genoa furled"
+  ],
+  "why": "Shrouds hold the mast up sideways; a damaged one can bring the rig down.",
+  "ref": "Parts of the rig",
+  "fig": {
+   "type": "card",
+   "title": "Check-in: rig",
+   "lines": [
+    "Wire from the mast to the side deck",
+    "Three strands broken at the lower end",
+    "Boat due to leave in an hour"
+   ],
+   "tag": "Check-in"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "At check-in you see a split pin missing from the threaded fitting at the foot of a shroud. What is the fitting and what do you do?",
+  "a": "A bottlescrew: fit and tape a new pin",
+  "o": [
+   "A gooseneck: leave it, it needs no pin",
+   "A clutch: tape over the gap",
+   "A chainplate: tighten it by hand"
+  ],
+  "why": "Bottlescrews (turnbuckles) adjust the rigging; without a pin they can unscrew.",
+  "ref": "Parts of the rig",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "The mainsail has chafe marks halfway up, where it rubbed on the struts sticking out sideways from the mast. What rubbed it?",
+  "a": "The spreaders",
+  "o": [
+   "The cap shrouds",
+   "The gooseneck",
+   "The kicker"
+  ],
+  "why": "Spreaders hold the shrouds out from the mast; downwind the main presses on them.",
+  "ref": "Parts of the rig",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "The pin joining the boom to the mast has worked loose. Which fitting is it?",
+  "a": "The gooseneck",
+  "o": [
+   "The clew",
+   "The kicker",
+   "The spreader"
+  ],
+  "why": "The gooseneck is the hinge between the boom and the mast.",
+  "ref": "Parts of the rig",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "On your fractional-rigged yacht the wind is building. What does pulling on the backstay adjuster do?",
+  "a": "Bends the mast and flattens the main",
+  "o": [
+   "Makes the main fuller and more powerful",
+   "Lifts the boom and opens the leech",
+   "Moves the genoa sheet car forward"
+  ],
+  "why": "Backstay tension bends a fractional mast, flattening the main and tightening the forestay.",
+  "ref": "Sail trim",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "Close-hauled on starboard tack, a windward shroud parts with a bang. What do you do at once?",
+  "a": "Tack, to put the broken side to leeward",
+  "o": [
+   "Bear away onto a run",
+   "Luff up head to wind and stop",
+   "Ease all sheets and hold the course"
+  ],
+  "why": "Tacking takes the load onto the intact leeward shroud before the mast falls.",
+  "ref": "Parts of the rig",
+  "fig": {
+   "type": "card",
+   "title": "Bang from the rig",
+   "lines": [
+    "Close-hauled, starboard tack, F4",
+    "Starboard cap shroud hanging loose",
+    "Mast still standing"
+   ],
+   "tag": "Now"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "Beating up to Hydra, the forestay fitting breaks at the bow. Which way do you turn?",
+  "a": "Bear away onto a run",
+  "o": [
+   "Tack straight away",
+   "Luff up head to wind",
+   "Hold course and ease the main"
+  ],
+  "why": "Running puts the wind load on the backstay and takes it off the forestay.",
+  "ref": "Parts of the rig",
+  "fig": {
+   "type": "card",
+   "title": "Forestay failure",
+   "lines": [
+    "Close-hauled, F4",
+    "Forestay pulled out at the stemhead",
+    "Genoa still furled on it"
+   ],
+   "tag": "Now"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "You are bending on the genoa at check-in. To which corner do you attach the sheets?",
+  "a": "The clew",
+  "o": [
+   "The tack",
+   "The head",
+   "The luff"
+  ],
+  "why": "The clew is the lower aft corner, where the sheets go.",
+  "ref": "Parts of a sail",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Putting in a slab reef, you hook the reef cringle at the front of the sail onto the hook by the gooseneck. Which cringle is it?",
+  "a": "The tack cringle",
+  "o": [
+   "The clew cringle",
+   "The head cringle",
+   "The leech cringle"
+  ],
+  "why": "The new tack goes on the reefing hook; the reef line pulls the new clew to the boom.",
+  "ref": "Reefing",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "The back edge of the genoa vibrates with a buzzing noise. Which edge is it and what fixes it?",
+  "a": "The leech: tighten the leech line a little",
+  "o": [
+   "The luff: tighten the genoa halyard",
+   "The foot: ease the genoa sheet",
+   "The leech: ease the sheet right out"
+  ],
+  "why": "The leech is the trailing edge; the leech line stops it fluttering.",
+  "ref": "Parts of a sail",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "A batten falls out of its pocket as you hoist the main. What will the sail lack without it?",
+  "a": "Support for the curved leech",
+  "o": [
+   "Tension along the luff",
+   "Shape along the foot",
+   "A mark for the reef points"
+  ],
+  "why": "Battens hold out the roach, the curve of the leech beyond a straight line.",
+  "ref": "Parts of a sail",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Your charter yacht has an in-mast furling main and the wind is rising. How do you reduce it?",
+  "a": "Ease the outhaul and wind in the furling line",
+  "o": [
+   "Lower the halyard and tie in the reef points",
+   "Tighten the outhaul and ease the furling line",
+   "Roll the sail round the boom"
+  ],
+  "why": "The main rolls into the mast; keep a little outhaul tension so it rolls tightly.",
+  "ref": "Reefing",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Your new charter boat has a self-tacking jib. What does the crew do with the jib sheet when you tack?",
+  "a": "Nothing — it crosses on its own track",
+  "o": [
+   "Release it and winch in the other sheet",
+   "Ease it fully before the tack",
+   "Move the car to the new side by hand"
+  ],
+  "why": "A self-tacking jib has one sheet on a track across the foredeck.",
+  "ref": "Parts of a sail",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You drop the main and it falls neatly into the bag on the boom. Next morning, hoisting, the battens catch on lines either side. What helps?",
+  "a": "Point head to wind and watch the battens",
+  "o": [
+   "Hoist on a reach so the sail fills",
+   "Tighten the lazy jacks hard first",
+   "Pull the kicker on before hoisting"
+  ],
+  "why": "The lazy jacks guide the sail down; head to wind the battens clear them.",
+  "ref": "Running rigging",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "On a dead run in light wind the genoa keeps collapsing behind the main. What can you do?",
+  "a": "Goose-wing it on the opposite side",
+  "o": [
+   "Sheet the genoa in hard amidships",
+   "Tighten the genoa halyard",
+   "Ease the main outhaul fully"
+  ],
+  "why": "Set the genoa on the side away from the main, ideally held out by a pole.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 180,
+   "note": "Light wind, dead run"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Upwind in 18 knots, the lower part of the main is too full and the boat heels. Which line do you pull?",
+  "a": "The outhaul",
+  "o": [
+   "The topping lift",
+   "The lazy jack",
+   "The furling line"
+  ],
+  "why": "Outhaul tension flattens the foot of the main and depowers it.",
+  "ref": "Running rigging",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "As the wind rises the deepest part of the main moves back towards the leech. Which control pulls it forward again?",
+  "a": "The cunningham",
+  "o": [
+   "The outhaul",
+   "The topping lift",
+   "The traveller"
+  ],
+  "why": "More luff tension (cunningham or halyard) moves the draft forward.",
+  "ref": "Running rigging",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You are about to drop the main for the night. The boom is not held up by a rigid vang. What do you do first?",
+  "a": "Take up the topping lift",
+  "o": [
+   "Tighten the kicker hard",
+   "Ease the outhaul right off",
+   "Tighten the cunningham"
+  ],
+  "why": "The topping lift holds the boom up so it does not fall into the cockpit or bimini.",
+  "ref": "Running rigging",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "Close-hauled, the boom rides high and the main leech stays loose even with the mainsheet hard in. What is the likely cause?",
+  "a": "The topping lift is still tight",
+  "o": [
+   "The outhaul is too loose",
+   "The traveller is to leeward",
+   "The cunningham is too tight"
+  ],
+  "why": "A tight topping lift holds the boom up; ease it once the sail is hoisted.",
+  "ref": "Running rigging",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Close-hauled in a gusty F5, the boat heels hard in each gust. Which quick move depowers the main?",
+  "a": "Let the traveller down to leeward",
+  "o": [
+   "Pull the traveller up to windward",
+   "Ease the outhaul to make it fuller",
+   "Tighten the topping lift"
+  ],
+  "why": "Dropping the traveller opens the main's angle to the wind without changing its shape.",
+  "ref": "Running rigging",
+  "fig": {
+   "type": "card",
+   "title": "Gusty beat",
+   "lines": [
+    "Close-hauled, F5 gusting 6",
+    "Heeling hard in every gust",
+    "Main sheeted in, traveller centred"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "The halyard is in a clutch, loaded by the hoisted main. You need to ease it. What do you do before opening the clutch?",
+  "a": "Put it on a winch and take the load",
+  "o": [
+   "Open the clutch and hold the tail",
+   "Uncleat the mainsheet first",
+   "Pull the halyard tail tight by hand"
+  ],
+  "why": "Opening a loaded clutch lets the line run; the winch must hold it first.",
+  "ref": "Running rigging",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     80,
+     86,
+     "halyard",
+     "middle"
+    ],
+    [
+     255,
+     90,
+     "tail",
+     "middle"
+    ]
+   ],
+   "note": "Halyard from a closed clutch"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "The wind has risen to 25 knots and you must roll the genoa away. How do you handle the sheet?",
+  "a": "Ease it slowly, keeping some tension",
+  "o": [
+   "Let it run free, then furl",
+   "Keep it cleated while you furl",
+   "Ease the halyard, then furl"
+  ],
+  "why": "A little sheet tension stops the sail flogging and rolls it tightly.",
+  "ref": "Running rigging",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "During slab reefing, which line pulls the new clew down to the boom?",
+  "a": "The reefing line",
+  "o": [
+   "The outhaul",
+   "The cunningham",
+   "The topping lift"
+  ],
+  "why": "Each reef has its own clew line (pennant) led along the boom.",
+  "ref": "Reefing",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Close-hauled in a rising Meltemi, you decide to reef the main. What do you ease before lowering the halyard?",
+  "a": "The mainsheet and the kicker",
+  "o": [
+   "The outhaul and the cunningham",
+   "The genoa sheet and the traveller",
+   "The topping lift and the backstay"
+  ],
+  "why": "Easing the main spills wind; easing the kicker lets the boom rise as the sail comes down.",
+  "ref": "Reefing",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You are leaving the harbour at Mykonos with this forecast. When do you reef?",
+  "a": "Before you leave the shelter of the harbour",
+  "o": [
+   "When the rail first goes under",
+   "When the gusts reach F6",
+   "Only if the genoa will not furl"
+  ],
+  "why": "Reef early: it is easiest in sheltered water before the wind arrives.",
+  "ref": "Reefing",
+  "fig": {
+   "type": "card",
+   "title": "Forecast, Cyclades",
+   "lines": [
+    "Now: NW F3",
+    "This afternoon: NW F5–6, gusts 7",
+    "Passage: 4 hours, open water"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "The wind has dropped and you want to shake out the reef. What is the right order?",
+  "a": "Untie the ties, ease the reef line, then hoist",
+  "o": [
+   "Hoist, then untie the ties and reef line",
+   "Ease the reef line, hoist, then untie the ties",
+   "Tighten the kicker, then hoist hard"
+  ],
+  "why": "Hoisting against tied reef points tears the sail.",
+  "ref": "Reefing",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Close-hauled, you check the genoa telltales. Which way do you move the sheet car?",
+  "a": "Forward",
+  "o": [
+   "Aft",
+   "Inboard towards the mast",
+   "Leave it; ease the halyard"
+  ],
+  "why": "If the top luffs first the leech is too open; moving the car forward closes it.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "card",
+   "title": "Genoa telltales",
+   "lines": [
+    "Close-hauled, sheet trimmed",
+    "Top telltale lifts first",
+    "Middle and bottom still streaming"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Steering close-hauled, you watch the genoa telltales. Which way do you steer?",
+  "a": "Bear away a little",
+  "o": [
+   "Luff up a little",
+   "Hold this heading",
+   "Tack at once"
+  ],
+  "why": "Windward telltales lifting mean you are pinching; bear away until they stream.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "card",
+   "title": "Genoa telltales",
+   "lines": [
+    "Close-hauled, sheet trimmed",
+    "Windward (inside): lifting",
+    "Leeward (outside): streaming",
+    "Speed dropping"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "On a beam reach, you watch the genoa telltales. What do you do with the sheet?",
+  "a": "Ease it until both stream",
+  "o": [
+   "Pull it in harder",
+   "Leave it; bear away",
+   "Leave it; ease the halyard"
+  ],
+  "why": "A fluttering leeward telltale means the sail is stalled: over-sheeted.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "card",
+   "title": "Genoa telltales",
+   "lines": [
+    "Beam reach, course to keep",
+    "Windward (inside): streaming",
+    "Leeward (outside): drooping, fluttering"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "On a beam reach the sails are pinned in tight, the boat heels and slows. What is happening?",
+  "a": "The sails are stalled: over-sheeted",
+  "o": [
+   "The sails are luffing: under-sheeted",
+   "The boat is in irons",
+   "The boat is about to gybe"
+  ],
+  "why": "Sheeted too tight for the course, the airflow breaks away and drive drops.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "card",
+   "title": "Beam reach",
+   "lines": [
+    "Main and genoa sheeted in hard",
+    "Heeling, speed dropping",
+    "Leeward telltales hanging limp"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "The top leech telltale on the main keeps disappearing behind the sail. What do you do?",
+  "a": "Ease the mainsheet or kicker a little",
+  "o": [
+   "Pull the mainsheet in harder",
+   "Tighten the topping lift",
+   "Ease the outhaul right off"
+  ],
+  "why": "A hidden top telltale means the leech is too closed and stalled; twist it open.",
+  "ref": "Sail trim",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "A light F2 breeze on a flat sea, beam reaching to Antiparos. How do you set the main?",
+  "a": "Fuller: ease the outhaul a little",
+  "o": [
+   "Flat: outhaul and cunningham hard on",
+   "Reefed, to keep the boat upright",
+   "Boom hard down with the kicker"
+  ],
+  "why": "Light wind wants a fuller sail; flatten it as the wind rises.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "card",
+   "title": "Light airs",
+   "lines": [
+    "Wind 6 knots, flat sea",
+    "Beam reach",
+    "Speed 3 knots"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "Reaching in a gusty F6, you want the top of the main to spill the gusts by itself. What do you adjust?",
+  "a": "Ease the kicker a little to let it twist",
+  "o": [
+   "Tighten the kicker to stop any twist",
+   "Pull the traveller up to windward",
+   "Ease the outhaul to make it fuller"
+  ],
+  "why": "More twist lets the top of the main open and spill wind in the gusts.",
+  "ref": "Sail trim",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "Beating in this breeze, the boat keeps rounding up and you are fighting the wheel. What do you reduce first?",
+  "a": "Reef the main",
+  "o": [
+   "Roll away the genoa",
+   "Pull the traveller to windward",
+   "Move the genoa cars aft"
+  ],
+  "why": "Weather helm comes from too much drive aft; reducing the main moves it forward.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "card",
+   "title": "Overpowered",
+   "lines": [
+    "Close-hauled, F5 gusting 6",
+    "Full main and genoa",
+    "Heavy weather helm, rounding up"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "You roll away a third of the genoa as the wind builds. Now the top of the sail luffs early. What do you do with the sheet car?",
+  "a": "Move it forward",
+  "o": [
+   "Move it aft",
+   "Leave it; tighten the halyard",
+   "Leave it; ease the sheet"
+  ],
+  "why": "Furling moves the clew up and forward, so the lead must follow it forward.",
+  "ref": "Sail trim",
+  "fig": {
+   "type": "card",
+   "title": "Reefed genoa",
+   "lines": [
+    "Genoa one-third furled",
+    "Car where it was for full sail",
+    "Top telltales lifting first"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "Broad reaching in a Meltemi with full main, the boat suddenly rounds up and heels hard, the wheel loose in your hands. What was it?",
+  "a": "A broach: ease the main, then reef",
+  "o": [
+   "A gybe: centre the boom quickly",
+   "In irons: back the genoa",
+   "A broach: sheet the main in hard"
+  ],
+  "why": "Too much sail off the wind overpowers the rudder; dump the main, then reduce sail.",
+  "ref": "Sailing manoeuvres",
+  "fig": {
+   "type": "card",
+   "title": "Broad reach, F6",
+   "lines": [
+    "Full main, genoa partly furled",
+    "Gusts to 28 knots",
+    "Rudder losing grip in the gusts"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "After a slow tack the boat has stopped like this and will not turn either way. What is it and what do you do?",
+  "a": "In irons: back the genoa to push the bow off",
+  "o": [
+   "Hove-to: wait for the wind to shift",
+   "In irons: sheet the main in hard",
+   "Luffing: steer further into the wind"
+  ],
+  "why": "Head to wind with no way on; backing the headsail turns the bow.",
+  "ref": "Sailing manoeuvres",
+  "fig": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 0,
+   "nogo": true,
+   "note": "Speed 0 knots, sails flapping"
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You want to stop under sail off Poros to sort out a tangled line. How do you heave to?",
+  "a": "Tack, leave the genoa sheet, lash the helm to turn up",
+  "o": [
+   "Drop both sails and leave the helm free",
+   "Gybe and sheet the main in hard",
+   "Tack, release the genoa, sheet the main hard"
+  ],
+  "why": "The backed genoa and the rudder turning up balance each other; the boat lies quietly.",
+  "ref": "Sailing manoeuvres",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "You have hove-to to sort out a jammed reef line. Is this a good place to stay?",
+  "a": "No: you drift downwind towards the rocks",
+  "o": [
+   "Yes: a hove-to boat makes no leeway",
+   "Yes: the backed genoa drives you upwind",
+   "No: the boat will tack by itself"
+  ],
+  "why": "Hove-to, the boat drifts slowly to leeward; you need sea room downwind.",
+  "ref": "Sailing manoeuvres",
+  "fig": {
+   "type": "card",
+   "title": "Hove-to",
+   "lines": [
+    "Starboard tack, wind N F5",
+    "Rocky island 0.5 M to the south",
+    "Drifting about 1.5 knots"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Running in a swell, the boom keeps threatening to swing across. What prevents an accidental gybe?",
+  "a": "Rig a preventer and steer a little higher",
+  "o": [
+   "Tighten the topping lift hard",
+   "Ease the kicker right off",
+   "Pull the traveller up to windward"
+  ],
+  "why": "A preventer holds the boom forward, and a broad reach keeps the wind clear of the leech.",
+  "ref": "Sailing manoeuvres",
+  "fig": {
+   "type": "card",
+   "title": "Downwind in a swell",
+   "lines": [
+    "Wind dead astern, F4",
+    "Boat rolling, boom lifting",
+    "Helm hard to hold steady"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "You need to change to the other broad reach. With this crew, how do you do it?",
+  "a": "Luff up, tack round, bear away again",
+  "o": [
+   "Gybe with the mainsheet fully eased",
+   "Gybe quickly between two gusts",
+   "Drop the genoa and gybe the main alone"
+  ],
+  "why": "In strong wind a tack round avoids a violent gybe; it costs only a little ground.",
+  "ref": "Sailing manoeuvres",
+  "fig": {
+   "type": "card",
+   "title": "Broad reach, Meltemi",
+   "lines": [
+    "NW F6, gusts 30 knots",
+    "Full crew of beginners",
+    "Plenty of sea room"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "You plan to motor under this bridge. Can you pass?",
+  "a": "No: your air draft is 17.5 m",
+  "o": [
+   "Yes, with 1.5 m to spare",
+   "Yes, with 0.3 m to spare",
+   "Yes, the aerial will bend"
+  ],
+  "why": "Air draft is the height of the highest point above the water: 15.5 + 1.2 + 0.8 = 17.5 m.",
+  "ref": "Hull measurements",
+  "fig": {
+   "type": "card",
+   "title": "Bridge ahead",
+   "lines": [
+    "Clearance under the bridge: 17.0 m",
+    "Mast, deck to masthead: 15.5 m",
+    "Deck above the waterline: 1.2 m",
+    "VHF aerial on the masthead: 0.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "Your yacht's figures are below. Roughly what is her maximum speed through the water, short of surfing?",
+  "a": "About 8 knots",
+  "o": [
+   "About 6 knots",
+   "About 10 knots",
+   "About 12 knots"
+  ],
+  "why": "Hull speed ≈ 1.34 × √LWL in feet: 1.34 × √36 ≈ 8 knots.",
+  "ref": "Hull measurements",
+  "fig": {
+   "type": "card",
+   "title": "Yacht data",
+   "lines": [
+    "LOA 12.2 m (40 ft)",
+    "LWL 11 m (36 ft)",
+    "Displacement 9 t"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "This season you move up to a bigger, heavier yacht. Coming into a berth, what changes most?",
+  "a": "She carries her way longer: slow down earlier",
+  "o": [
+   "She stops sooner because she is heavier",
+   "She turns in a much tighter circle",
+   "She draws less water at the bow"
+  ],
+  "why": "More displacement means more momentum: she takes longer to stop and to start.",
+  "ref": "Hull measurements",
+  "fig": {
+   "type": "card",
+   "title": "Last season / this season",
+   "lines": [
+    "Last: 36 ft, displacement 7 t",
+    "This: 45 ft, displacement 12 t"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "The bay is 2.0 m deep near the beach. Which of the two charter boats can anchor there?",
+  "a": "Only the catamaran",
+  "o": [
+   "Only the monohull",
+   "Both boats",
+   "Neither boat"
+  ],
+  "why": "Draft is the depth of the hull below the waterline; the cat's 1.25 m leaves 0.75 m.",
+  "ref": "Hull measurements",
+  "fig": {
+   "type": "card",
+   "title": "Two charter boats",
+   "lines": [
+    "Monohull 45 ft: draft 2.1 m",
+    "Catamaran 42 ft: draft 1.25 m",
+    "Calm, no swell"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "The quay attendant offers you this gap. What is the problem?",
+  "a": "The beam: the cat will not fit",
+  "o": [
+   "The LOA: too long for stern-to",
+   "The draft: too deep at the quay",
+   "None: cats squeeze in with fenders"
+  ],
+  "why": "Beam is the widest point of the boat; a 42 ft cat is about 7.7 m wide.",
+  "ref": "Catamaran terms",
+  "fig": {
+   "type": "card",
+   "title": "Stern-to on the town quay",
+   "lines": [
+    "Gap between two monohulls: 5 m",
+    "Your catamaran: LOA 12.8 m",
+    "Beam 7.7 m, draft 1.25 m"
+   ]
+  }
+ },
+ {
+  "topic": "terms",
+  "difficulty": 1,
+  "q": "On your catamaran the skipper sends you forward across the netting between the two bows. What is the netting called?",
+  "a": "The trampoline",
+  "o": [
+   "The bridgedeck",
+   "The pulpit",
+   "The foredeck locker"
+  ],
+  "why": "The trampoline spans the forward beam between the hulls.",
+  "ref": "Catamaran terms",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Beating into a short Meltemi chop, the catamaran shudders with loud bangs under the saloon. What is happening and what do you do?",
+  "a": "Bridgedeck slamming: bear away and slow down",
+  "o": [
+   "Bridgedeck slamming: point higher",
+   "Rudder stall: centre the wheel",
+   "Keels touching: tack at once"
+  ],
+  "why": "Waves hit the underside of the bridgedeck; a freer, slower course eases it.",
+  "ref": "Catamaran terms",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "You swap a monohull for a cruising catamaran on the same upwind leg. What do you expect?",
+  "a": "She points lower, so you need more tacks",
+  "o": [
+   "She points higher, so fewer tacks",
+   "She heels more than the monohull",
+   "She tacks faster and more easily"
+  ],
+  "why": "A cruising cat without daggerboards sails wider of the wind and makes more leeway.",
+  "ref": "Catamaran terms",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "On a cruising catamaran, how do you decide when to reef?",
+  "a": "By the wind speed, using the reefing table",
+  "o": [
+   "By the angle of heel",
+   "When the windward hull starts to lift",
+   "When the helm gets heavy"
+  ],
+  "why": "A cat barely heels, so it gives no warning; reef by the wind speed.",
+  "ref": "Catamaran terms",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 3,
+  "q": "A crew member asks why the catamaran has no heavy keel. Which is true about the stability of the two types?",
+  "a": "A monohull rights itself; a capsized cat does not",
+  "o": [
+   "Both right themselves after a capsize",
+   "A cat rights itself; a monohull does not",
+   "A cat heels further than a monohull first"
+  ],
+  "why": "The ballast keel brings a monohull back up; an inverted cat is stable upside down.",
+  "ref": "Catamaran terms",
+  "fig": null
+ },
+ {
+  "topic": "terms",
+  "difficulty": 2,
+  "q": "Tacking your charter catamaran in light wind, it keeps stopping head to wind. What helps it round?",
+  "a": "Build speed, keep the jib backed briefly",
+  "o": [
+   "Slow down and release the jib early",
+   "Ease the main fully, then tack",
+   "Tack from a broad reach"
+  ],
+  "why": "A cat carries little way; speed and a backed jib push the bows through.",
+  "ref": "Catamaran terms",
+  "fig": null
+ }
+]
