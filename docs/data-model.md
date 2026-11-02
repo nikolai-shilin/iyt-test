@@ -6,10 +6,18 @@ One Postgres database behind the mini app, the bot and the website: Supabase pro
 The schema lives in `supabase/migrations/` (apply new files in order with the Supabase dashboard SQL editor, the MCP
 `apply_migration` tool or `supabase db push`).
 
-**What is in it now:** the catalogue — 8 levels (Bareboat Skipper `available`, the rest `planned`/`soon`), its 10 topics,
-1000 questions and their Russian translations, loaded from `data/questions/*.json`. The progress tables exist but are
-empty: progress still lives on each student's device (Telegram CloudStorage), so there is nothing to move until the
-app writes to the database.
+**What is in it:**
+- the catalogue — 8 levels (4 `available`, the rest `planned`/`soon`), their topics, questions and Russian
+  translations, loaded from `data/questions/*.json`;
+- students — `users` (written by the bot, `api/settings.mjs` and `api/progress.mjs`), `progress` (each student's whole
+  app state) and `answers` (every answer given in the mini app).
+
+**How progress gets there:** inside Telegram the mini app syncs with `POST /api/progress` (`api/progress.mjs`), which
+checks the signed launch data (`Telegram.WebApp.initData`) and calls `sync_progress()`. At start the app loads the
+server copy and keeps whichever state is newer (`state.ts`) — so a student's progress made before this existed is
+uploaded the first time they open the app. After that it sends the state plus the new answers 3 s after each change
+and when the app closes. Telegram CloudStorage and localStorage stay as the on-device copies; outside Telegram (a plain
+browser) nothing is sent.
 
 **Who reads it:** the mini app (`fetchBank` in `miniapp/app.js`, with the publishable key) and the bot (`read` in
 `bot/core.mjs`, with `SUPABASE_URL` + a key from the env) call `bank(level)` and `bank_overlay(level, lang)`, which
@@ -33,16 +41,25 @@ topic_translations    (level_id, topic_id, lang) pk, title, short
 question_translations (question_id, lang) pk, q, options, why, ref, figure  -- null field = use English;
                                                                             -- figure = translated text fields only
 
--- progress (RLS on, no policies yet: only the server with the secret key can read or write)
+-- students (RLS on, no policies: only the server with the secret key can read or write)
 users                 id bigint pk (telegram id), name, username, lang, theme, level_id, shuffle, feedback,
-                      daily_question, reminder, created_at, updated_at
-answers               id bigint identity, user_id, question_id, option 0–3 null, correct, mode ('practice'|'exam'|'daily'),
-                      exam_id → exam_sessions null, at
+                      daily_question, reminder, daily_sent_on, blocked_at, created_at, updated_at
+progress              user_id pk → users, state jsonb (the app's state, see fresh() in miniapp/app.js), ts bigint
+                      (state.ts in ms; the newer copy wins), updated_at
+answers               id bigint identity, user_id, question_id, option 0–3 null (the option picked, in bank order),
+                      correct, mode ('practice'|'exam'|'daily'), exam_id → exam_sessions null, at;
+                      unique (user_id, question_id, at) so a resent answer is stored once
+
+-- not used yet
+
 exam_sessions         id uuid pk, user_id, level_id, question_ids text[], flags text[], started_at, paused_at,
                       submitted_at, score, passed
 flags                 (user_id, question_id) pk, at
 reports               id, user_id null, question_id, text, at, resolved_at
 ```
+
+Mastery, mistakes, streak and exam history are read from `progress.state` today (the app computes them); the
+`answers` log is there so they can later be computed on the server (the website, the bot's weak-topic question).
 
 Not created yet (add when a feature needs them): `theory_notes`, `web_sessions` (anonymous website progress),
 practice `sessions`, the `mastery` materialised view.
