@@ -259,7 +259,8 @@ const confirmBox = (msg) => new Promise((res) => (tgv('6.2') ? TG.showConfirm(ms
 function toast(text) {
   $app.querySelector('.toast')?.remove();
   $app.insertAdjacentHTML('beforeend', `<div class="toast" role="status" aria-live="polite">${esc(text)}</div>`);
-  setTimeout(() => $app.querySelector('.toast')?.remove(), 1400);
+  const el = $app.querySelector('.toast');
+  setTimeout(() => { el.classList.add('out'); setTimeout(() => el.remove(), 200); }, 1400);
 }
 
 /* ---------- state: mastery per question, activity per day, exams; saved locally and to CloudStorage ---------- */
@@ -488,7 +489,17 @@ function loadStudents(again) {
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
     .then((j) => { ADM = Array.isArray(j.users) ? j.users : null; })
     .catch(() => { ADM = null; })
-    .then(() => { if (cur().v === 'admin') render(); });
+    .then(() => { if (cur().v === 'admin') render(true); });
+}
+// Grey shapes in the layout of what is loading (the boot skeleton of the home screen is in index.html).
+const sk = (w, h, more = '') => `<span class="sk" style="width:${w};height:${h}${more}"></span>`;
+function skeleton(kind) {
+  if (kind === 'students') {
+    const stat = `<div class="stat">${sk('40%', '22px')}${sk('70%', '10px')}</div>`;
+    const row = `<div class="topic x3"><span class="ico sk"></span>${sk('55%', '15px', ';grid-column:2')}${sk('70%', '11px', ';grid-column:2')}<span class="n">${sk('44px', '16px', ';margin-left:auto')}${sk('64px', '11px', ';margin:4px 0 0 auto')}</span></div>`;
+    return `<div aria-busy="true"><span class="sk-label">${t('loading')}</span><div class="stats">${stat.repeat(3)}</div><div class="topics" style="margin-top:16px">${row.repeat(5)}</div></div>`;
+  }
+  return '';
 }
 const levelOfPrefix = (p) => LEVELS.find((l) => l.prefix === p);
 // A student's mastery of a level, in % of its bank; the level they work on, or the one they have seen most of.
@@ -501,12 +512,12 @@ function studentLevel(u) {
 }
 const studentName = (u) => u.name || (u.username ? '@' + u.username : String(u.id));
 const initials = (name) => name.replace(/^@/, '').split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
-async function toggleDaily() {
+async function toggleDaily(el) {
   if (typeof DAILY !== 'boolean') return;
   const on = !DAILY;
   // the bot can only message people who allowed it; Telegram asks once and remembers
   if (on && tgv('6.9') && !(await new Promise((res) => TG.requestWriteAccess(res)))) return toast(t('dailyAccess'));
-  DAILY = on; hap('sel'); render();
+  DAILY = on; hap('sel'); el?.classList.toggle('on', on); await new Promise((res) => setTimeout(res, 220)); render();
   try { DAILY = (await settingsApi({ daily: on })).daily; } catch (e) { DAILY = !on; toast(t('error')); }
   if (cur().v === 'profile') render();
 }
@@ -515,9 +526,18 @@ const cur = () => stack[stack.length - 1];
 
 function go(v, p = {}) { stack.push({ v, ...p }); sheet = null; render(true); }
 function replace(v, p = {}) { stack[stack.length - 1] = { v, ...p }; sheet = null; render(true); }
-function tab(v) { stack = [{ v }]; sheet = null; P = null; render(true); }
+function tab(v) { stack = [{ v }]; sheet = null; P = null; enterTab = true; render(true); }
+let enterTab = false; // the next render(true) is a tab switch: fade only, no stagger
+// Closes the sheet with its exit animation, then rebuilds the screen without it.
+function closeSheet() {
+  const sh = $app.querySelector('.sheet');
+  sheet = null;
+  if (!sh) return render();
+  sh.classList.add('out'); $app.querySelector('.scrim')?.classList.add('out');
+  setTimeout(() => { if (!sheet) render(); }, 180);
+}
 async function back() {
-  if (sheet) { sheet = null; return render(); }
+  if (sheet) return closeSheet();
   const c = cur();
   if (c.v === 'question' && P && !P.done) {
     if (!(await confirmBox(t('confirmQuit')))) return;
@@ -545,6 +565,18 @@ function applyTheme() {
   }
 }
 const tok = (name) => getComputedStyle($app).getPropertyValue(name).trim();
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// A number that counts up to its value when its screen opens (data-count="82" data-suffix="%").
+function countUp(el) {
+  const to = +el.dataset.count, suffix = el.dataset.suffix || '', t0 = performance.now(), dur = 600;
+  if (!(to > 0)) return;
+  const step = (now) => {
+    const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(to * e) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
 
 /* ---------- rendering ---------- */
 const NAV = [['home', 'book', 'learn'], ['examIntro', 'timer', 'exam'], ['progress', 'chart', 'progress'], ['profile', 'user', 'profile']];
@@ -558,7 +590,8 @@ function render(toTop) {
   const keep = !toTop && old ? old.scrollTop : 0;
   let h = '';
   if (!IN_TG) h += `<div class="tgh"><span>${stack.length > 1 || sheet ? `<button data-act="back">${t('back')}</button>` : ''}</span><b>${esc(V.title)}</b><span></span></div>`;
-  h += `<div class="scroll wrap">${V.body}</div>`;
+  const enter = toTop ? (enterTab ? ' in in-tab' : ' in') : ''; enterTab = false;
+  h += `<div class="scroll wrap${enter}">${V.body}</div>`;
   if (V.nav && stack.length === 1) h += `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === V.nav ? 'on' : ''}" data-act="tab" data-v="${v}"${v === V.nav ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
   const B = sheet ? {} : V;
   mainCb = B.main ? B.main.act : null;
@@ -566,7 +599,7 @@ function render(toTop) {
   if (!NATIVE_BUTTONS && (B.main || B.second)) {
     const b = (x, k, cls) => `<button class="b ${cls}${x.off ? ' off' : ''}" data-act="${k}">${x.icon ? `<span data-i="${x.icon}" data-s="18"></span>` : ''}<span class="t">${esc(x.text)}</span></button>`;
     const both = B.main && B.second;
-    h += '<div class="tgmain wrap">' +
+    h += `<div class="tgmain wrap${enter}">` +
       (both && B.second.pos !== 'bottom' ? `<div class="row2">${b(B.second, 'second', 'b2')}${b(B.main, 'main', '')}</div>` :
         (B.main ? b(B.main, 'main', '') : '') + (B.second ? b(B.second, 'second', 'b2') : '')) + '</div>';
   }
@@ -579,6 +612,14 @@ function render(toTop) {
   paintIcons($app);
   const sc = $app.querySelector('.scroll');
   if (keep) sc.scrollTop = keep;
+  if (enter && !REDUCED) {
+    // rows of a list rise one after another (--i is the row's place in its list, capped so long lists stay quick)
+    const idx = new Map();
+    $app.querySelectorAll('.in .lvl, .in .topic, .in .opt, .in .stat, .in .set, .in .att, .in .tbar, .in .step').forEach((el) => {
+      const i = idx.get(el.parentElement) || 0; idx.set(el.parentElement, i + 1); el.style.setProperty('--i', Math.min(i, 8));
+    });
+    $app.querySelectorAll('.in [data-count]').forEach(countUp);
+  }
   if (NATIVE_BUTTONS) nativeButtons(B);
   if (tgv('6.1')) (stack.length > 1 || sheet ? TG.BackButton.show() : TG.BackButton.hide());
   if (c.v === 'exam' && S.exam) { startTimer(); if (tgv('6.2')) TG.enableClosingConfirmation(); }
@@ -666,7 +707,7 @@ const VIEWS = {
     const mis = allMistakes().length;
     return {
       title: LEVEL.title,
-      body: `<div class="row" style="gap:18px;align-items:center">${ring(lp, seenPct(), ' l', `<b>${lp}%</b><small>${t('mastered')}</small>`)}
+      body: `<div class="row" style="gap:18px;align-items:center">${ring(lp, seenPct(), ' l', `<b data-count="${lp}" data-suffix="%">${lp}%</b><small>${t('mastered')}</small>`)}
           <p class="body-s">${esc(text)}</p></div>
         <div class="row" style="gap:10px"><button class="pill pill-primary lvl-btn" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
           <button class="pill lvl-btn" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
@@ -837,7 +878,7 @@ const VIEWS = {
         : { text: weak.length ? t('practiseWeak', weak.length) : t('practise'), icon: 'play', act: () => startPractice(pickFor(weak.flatMap(topicIds), 20)) },
       second: R.passed ? { text: t('share'), icon: 'share', act: () => share(R) } : (wrong.length ? { text: t('reviewN', wrong.length), act: reviewAct, pos: 'bottom' } : null),
       body: `<div class="score">${R.passed ? `<span class="pass">${svg('trophy', 16)}${t('passed')}</span>` : `<span class="pass no">${svg('x', 16)}${t('notYetPass', BANK.passMark)}</span>`}
-          <span class="ring l${R.passed ? '' : ' bad'}" style="--v:${R.pct}"><b>${R.pct}%</b><small>${t('okOf', R.ok, R.n)}</small></span>
+          <span class="ring l${R.passed ? '' : ' bad'}" style="--v:${R.pct}"><b data-count="${R.pct}" data-suffix="%">${R.pct}%</b><small>${t('okOf', R.ok, R.n)}</small></span>
           <h2 class="display" style="font-size:34px">${head}</h2><p class="body-muted">${esc(copy)}</p></div>${bars}`,
     };
   },
@@ -855,7 +896,7 @@ const VIEWS = {
     return {
       title: 'IYT Test', nav: 'progress',
       body: `<div class="stack g4"><span class="meta">${LEVEL.title}</span><h2 class="display-s">${t('progress')}</h2></div>
-        <div class="stats"><div class="stat"><b>${lp}%</b><span class="meta">${t('mastered')}</span></div><div class="stat"><b>${S.total}</b><span class="meta">${t('answeredW')}</span></div><div class="stat"><b>${st}</b><span class="meta">${t('dayStreak', st)}</span></div></div>
+        <div class="stats"><div class="stat"><b data-count="${lp}" data-suffix="%">${lp}%</b><span class="meta">${t('mastered')}</span></div><div class="stat"><b data-count="${S.total}">${S.total}</b><span class="meta">${t('answeredW')}</span></div><div class="stat"><b data-count="${st}">${st}</b><span class="meta">${t('dayStreak', st)}</span></div></div>
         <div class="band" style="padding:16px 18px"><div class="row sb-between" style="margin-bottom:12px"><span class="kicker">${t('thisWeek')}</span><span class="meta">${pl(sum, 'question')}</span></div><div class="days">${days}</div></div>
         <div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${mis ? t('misMeta', mis) : t('noneNow')}</div></div><button class="mini mini-accent${mis ? '' : ' off'}" data-act="allMistakes">${t('review')}</button></div>
         <div class="row sb-between"><div><div class="card-title">${t('flaggedQ')}</div><div class="card-meta">${fl ? pl(fl, 'question') : t('flagHint')}</div></div><button class="mini mini-accent${fl ? '' : ' off'}" data-act="flagged">${t('practise')}</button></div>
@@ -903,7 +944,7 @@ const VIEWS = {
   admin() {
     loadStudents();
     let body;
-    if (ADM === 'loading' || ADM === undefined) body = `<div class="empty"><span class="meta">${t('loading')}</span></div>`;
+    if (ADM === 'loading' || ADM === undefined) body = skeleton('students');
     else if (ADM === null) body = `<div class="empty stack g12"><p class="body-muted">${t('studentsFail')}</p><button class="pill" style="margin:0 auto" data-act="adminReload">${t('reload')}</button></div>`;
     else if (!ADM.length) body = `<div class="empty"><p class="body-muted">${t('studentsEmpty')}</p></div>`;
     else {
@@ -915,7 +956,7 @@ const VIEWS = {
         const bar = L && L.seen ? `<span class="bar"><i style="width:${L.pct}%"></i><i class="seen" style="left:${L.pct}%;width:${Math.max(0, L.seenPct - L.pct)}%"></i></span>` : '';
         return `<div class="topic${bar ? ' x3' : ''} stu" data-act="student" data-id="${u.id}"><span class="ico">${esc(initials(name))}</span><span class="card-title">${esc(name)}</span><span class="tmeta">${esc(meta)}</span>${bar}<span class="n">${right}</span></div>`;
       }).join('');
-      body = `<div class="stats"><div class="stat"><b>${ADM.length}</b><span class="meta">${t('studentsW', ADM.length)}</span></div><div class="stat"><b>${active}</b><span class="meta">${t('activeWeek')}</span></div><div class="stat"><b>${exams}</b><span class="meta">${t('examsTaken', exams)}</span></div></div>
+      body = `<div class="stats"><div class="stat"><b data-count="${ADM.length}">${ADM.length}</b><span class="meta">${t('studentsW', ADM.length)}</span></div><div class="stat"><b>${active}</b><span class="meta">${t('activeWeek')}</span></div><div class="stat"><b>${exams}</b><span class="meta">${t('examsTaken', exams)}</span></div></div>
         <div class="topics">${rows}</div>`;
     }
     return {
@@ -1143,8 +1184,8 @@ const ACT = {
   // profile
   lang: async (d) => { if (!TG_LANG) { S.set.lang = d.t; save(); } await setLang(d.t); render(); },
   theme: (d) => { S.set.theme = d.t; save(); applyTheme(); render(); },
-  set: (d) => { S.set[d.k] = !S.set[d.k]; save(); render(); },
-  daily: () => toggleDaily(),
+  set: (d, el) => { S.set[d.k] = !S.set[d.k]; save(); el.classList.toggle('on', S.set[d.k]); setTimeout(render, 220); },
+  daily: (d, el) => toggleDaily(el),
   admin: () => go('admin'),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
@@ -1207,7 +1248,7 @@ async function init() {
   applyTheme();
   LANG = pickLang();
   document.documentElement.lang = LANG;
-  const boot = $app.querySelector('.boot .meta');
+  const boot = $app.querySelector('.sk-label');
   if (boot) boot.textContent = t('loading');
   const server = serverLoad(); // in parallel with the banks
   const banks = await Promise.all(LEVELS.filter((l) => l.id).map((l) =>

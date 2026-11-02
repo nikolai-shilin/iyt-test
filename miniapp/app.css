@@ -145,7 +145,9 @@ body { -webkit-tap-highlight-color: transparent; }
 .app .tgmain.wrap { padding-left: 24px; padding-right: 24px; }
 .app .sheet { overscroll-behavior: contain; }
 @media (prefers-reduced-motion: reduce) {
-  .app .sheet, .app .scrim, .app .toast { animation: none; }
+  .app .sheet, .app .scrim, .app .toast, .app .scroll.in, .app .tgmain.in, .app .in *, .app .opt, .app .verdict, .app .why { animation: none !important; }
+  .app .ring { transition: none; }
+  .app .sk::after { animation: none; }
   .app .lvl, .app .topic, .app .opt, .app .tag, .app .mini, .app .pill, .app .grid40 span, .app .lang, .app .toggle, .app .tgmain .b { transition: none; }
 }
 
@@ -155,3 +157,56 @@ body { -webkit-tap-highlight-color: transparent; }
 .app .stu:not(.x3) .tmeta { grid-column: 2; grid-row: 2; font: 400 13px 'Carlito', Arial, sans-serif; color: var(--muted); }
 .app .stu:not(.x3) .ico, .app .stu:not(.x3) .n { grid-row: 1 / span 2; }
 .app .sheet .tbar .card-meta { margin-top: 2px; }
+
+/* ---- motion: screens rise in, lists stagger, bars and rings fill, state changes answer the tap ---- */
+.app { --ease-out: cubic-bezier(.23, 1, .32, 1); --ease-drawer: cubic-bezier(.32, .72, 0, 1); }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+@keyframes fadeIn { from { opacity: 0; } }
+@keyframes growX { from { transform: scaleX(0); } }
+@keyframes growY { from { transform: scaleY(0); } }
+@keyframes pop { 50% { transform: scale(.97); } }
+@keyframes shake { 20%, 60% { transform: translateX(-3px); } 40%, 80% { transform: translateX(3px); } }
+@keyframes down { to { transform: translateY(24px); opacity: 0; } }
+/* a screen just navigated to (render(true)): the content rises; a tab switch only fades, it happens too often */
+.app .scroll.in, .app .tgmain.in { animation: rise .22s var(--ease-out) both; }
+.app .scroll.in-tab, .app .tgmain.in-tab { animation: fadeIn .16s ease both; }
+.app .in:not(.in-tab) .lvl, .app .in:not(.in-tab) .topic, .app .in:not(.in-tab) .opt, .app .in:not(.in-tab) .stat, .app .in:not(.in-tab) .set,
+.app .in:not(.in-tab) .att, .app .in:not(.in-tab) .tbar, .app .in:not(.in-tab) .step { animation: rise .26s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 35ms); }
+/* bars fill from the left and the week's columns grow up, after the row has landed */
+.app .in .bar i { transform-origin: left; animation: growX .5s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 35ms + 120ms); }
+.app .in .days i { transform-origin: bottom; animation: growY .5s var(--ease-out) both; }
+/* rings sweep up to their value (browsers without @property / @starting-style show them filled at once) */
+@property --v { syntax: '<number>'; inherits: false; initial-value: 0; }
+@property --s { syntax: '<number>'; inherits: false; initial-value: 0; }
+.app .in .ring { transition: --v .6s var(--ease-out), --s .6s var(--ease-out); }
+@starting-style { .app .in .ring { --v: 0; --s: 0; } }
+/* practice: the picked option presses in, the wrong one shakes, the verdict and explanation rise */
+.app .opt.sel { animation: pop .16s var(--ease-out); }
+.app .opt.bad { animation: shake .3s var(--ease-out); }
+.app .verdict { animation: rise .24s var(--ease-out) both; }
+.app .why { animation: rise .24s var(--ease-out) both; animation-delay: 60ms; }
+/* sheet: iOS drawer curve in, quick drop out; the scrim follows */
+.app .sheet { animation: up .28s var(--ease-drawer); }
+.app .sheet.out { animation: down .18s var(--ease-out) both; }
+.app .scrim.out { animation: fadeIn .18s ease both reverse; }
+/* toast: rises from below, fades away */
+@keyframes toastIn { from { opacity: 0; transform: translate(-50%, 10px); } }
+.app .toast { animation: toastIn .22s var(--ease-out); transition: opacity .18s ease, transform .18s ease; }
+.app .toast.out { opacity: 0; transform: translate(-50%, 6px); }
+/* toggles slide their knob (the screen is rebuilt only after the knob has moved) */
+.app .toggle { transition: background-color .2s ease; }
+.app .toggle::after { left: 3px; transition: transform .2s var(--ease-out); }
+.app .toggle.on::after { left: 3px; transform: translateX(20px); }
+/* press feedback a touch longer, with the same curve */
+.app .lvl, .app .topic, .app .opt, .app .tag, .app .mini, .app .pill, .app .grid40 span, .app .lang, .app .toggle, .app .tgmain .b { transition-duration: .12s; transition-timing-function: var(--ease-out), ease; }
+
+/* ---- skeletons: grey shapes in the layout of what is loading, with a slow sheen ---- */
+.app .sk { display: block; flex: none; border-radius: 8px; background: var(--band); position: relative; overflow: hidden; }
+.app .sk::after { content: ''; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--ink) 7%, transparent), transparent); animation: sheen 1.6s linear infinite; }
+@keyframes sheen { to { transform: translateX(100%); } }
+.app .sk-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.app .boot-sk { pointer-events: none; }
+.app .boot-sk .lvl { border-color: var(--line); }
+.app .topic .ico.sk { border-radius: 50%; }
+.app .topic .n .sk { display: block; }
+.app .stat .sk + .sk { margin-top: 2px; }
