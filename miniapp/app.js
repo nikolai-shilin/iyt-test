@@ -550,7 +550,7 @@ function skeleton(kind) {
   const cx = document.createElement('canvas').getContext('2d');
   cx.font = '14px Merriweather, Georgia, serif';
   const chip = (k) => sk(Math.round(cx.measureText(t(k)).width + 28) + 'px', '36px', ';border-radius:18px'); // a sort chip, as wide as its label
-  const stat = (w, two) => `<div class="stat">${sk(w, '18px', ';margin:4.5px 0')}<div class="stack" style="align-self:stretch">${sk('80%', '11px', ';margin:1.75px 0')}${two ? sk('55%', '11px', ';margin:1.75px 0') : ''}</div></div>`;
+  const stat = (w, two) => `<div class="stat">${sk(w, '18px', ';margin:4.5px 0')}<div class="stack" style="align-self:stretch;align-items:center">${sk('80%', '11px', ';margin:1.75px 0')}${two ? sk('55%', '11px', ';margin:1.75px 0') : ''}</div></div>`;
   const n = (bar) => `<span class="n">${bar ? sk('38px', '16px', ';margin:2.25px 0') + sk('66px', '11px', ';margin:2.5px 0') : sk('80px', '11px', ';margin:2.5px 0')}</span>`;
   const row = (tw, mw, bar) => `<div class="topic stu${bar ? ' x3' : ''}"><span class="ico sk"></span>${sk(tw, '14px', ';grid-column:2;margin:2px 0')}${sk(mw, '12px', ';grid-column:2;margin:2px 0')}${bar ? sk('100%', '4px', ';grid-column:2;grid-row:3;border-radius:2px') : ''}${n(bar)}</div>`;
   const rows = [['150px', '180px', 1], ['110px', '120px', 1], ['170px', '190px', 1], ['95px', '150px', 1], ['135px', '60px', 0], ['120px', '70px', 0]].map((r) => row(...r)).join('');

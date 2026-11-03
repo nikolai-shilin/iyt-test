@@ -195,7 +195,7 @@ body.mode-overview .overview { display: block; }
 .score { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; padding: 10px 0 0; }
 .score .display { font-size: 40px; }
 .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.stat { background: var(--band); border-radius: 20px; padding: 14px 12px; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.stat { background: var(--band); border-radius: 20px; padding: 14px 12px; display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center; text-align: center; }
 .stat b { font: 700 22px 'Carlito', Arial, sans-serif; color: var(--ink); letter-spacing: -.02em; }
 .stat .meta { font-size: 11px; }
 .tbars { display: flex; flex-direction: column; gap: 10px; }
