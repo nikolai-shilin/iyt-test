@@ -81,6 +81,14 @@ const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt
 const open = (text, screen) => (webapp ? [{ text, web_app: { url: screen ? `${webapp}/?screen=${screen}` : `${webapp}/` } }] : null);
 const kb = (...rows) => ({ inline_keyboard: rows.filter(Boolean) });
 const send = (chat_id, text, reply_markup) => api('sendMessage', { chat_id, text, parse_mode: 'HTML', reply_markup, link_preview_options: { is_disabled: true } });
+// The /start welcome: a photo of a fleet beating upwind (miniapp/intro.jpg, served with the mini app) with the
+// introduction as its caption. Without WEBAPP_URL, or if Telegram cannot fetch the photo, the same text goes alone.
+async function welcome(chat_id, ru) {
+  const text = T.start(ru), reply_markup = kb(open(T.open(ru)), open(T.examBtn(ru), 'exam'));
+  if (webapp) try { return await api('sendPhoto', { chat_id, photo: `${webapp}/intro.jpg`, caption: text, parse_mode: 'HTML', reply_markup }); }
+  catch (e) { console.warn('welcome photo failed, sending text:', e.message); }
+  return send(chat_id, text, reply_markup);
+}
 
 // The reply language follows the sender's Telegram app language (language_code on every update), with the same rule
 // as the mini app (miniapp/app.js pickLang): Russian for ru, uk, be and kk, English for everyone else.
@@ -129,7 +137,7 @@ async function onMessage(m) {
   const cmd = (m.text || '').split(/[\s@]/)[0];
   const ru = RU(m.from), chat = m.chat.id;
   const user = await remember(m.from, m.chat);
-  if (cmd === '/start') return send(chat, T.start(ru), kb(open(T.open(ru)), open(T.examBtn(ru), 'exam')));
+  if (cmd === '/start') return welcome(chat, ru);
   if (cmd === '/exam') return send(chat, T.exam(ru), kb(open(T.examBtn(ru), 'exam')));
   if (cmd === '/progress') return send(chat, T.progress(ru), kb(open(T.progressBtn(ru), 'progress')));
   if (cmd === '/settings') return user

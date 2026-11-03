@@ -17,6 +17,7 @@ const FILES = [
   ['miniapp/index.html', 'index.html'],
   ['miniapp/app.js', 'app.js'],
   ['miniapp/app.css', 'app.css'],
+  ['miniapp/intro.jpg', 'intro.jpg'], // the photo on the bot's /start welcome (bot/core.mjs)
   ['docs/design/app.css', 'design/app.css'],
   ['docs/design/flows.css', 'design/flows.css'],
   ['docs/design/icons.js', 'design/icons.js'],
@@ -39,7 +40,7 @@ console.log('built', out);
 
 if (process.argv.includes('--serve')) {
   const port = +(process.env.PORT || 5173);
-  const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.txt': 'text/plain' };
+  const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.txt': 'text/plain' };
   createServer(async (req, res) => {
     try {
       const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);

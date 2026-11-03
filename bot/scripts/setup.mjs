@@ -10,6 +10,9 @@
 //
 // The Main Mini App (the "Open" button on the bot's profile, t.me/<bot>?startapp links, the app catalogue) has no
 // Bot API method: it is switched on in @BotFather. The script reports whether it is on and prints the steps if not.
+//
+// The picture above the description ("What can this bot do?", seen before the first Start) has no Bot API method
+// either: it is bot/assets/description.jpg (640×360), set once in @BotFather; the script prints the steps.
 
 import { readFile } from 'node:fs/promises';
 
@@ -119,4 +122,6 @@ if (process.argv.includes('--photo')) {
   console.log('profile photo uploaded');
 }
 mainApp();
+console.log(`description picture: @BotFather → /mybots → @${me.username} → Edit Bot → Edit Description Picture,
+  and send bot/assets/description.jpg (640×360)`);
 console.log('done');
