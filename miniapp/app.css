@@ -268,3 +268,56 @@ body { -webkit-tap-highlight-color: transparent; }
 .app .grid40 span.a.now { color: var(--sel-ink); border-color: var(--sel-bg); }
 /* the inert screen behind a sheet does not react */
 .app [inert] { pointer-events: none; }
+
+/* ---- motion, second pass (2026-11-03): one authored moment (the verdict), state that moves from where it was,
+   cause → effect on the theme switch ---- */
+:root { --ease-out: cubic-bezier(.23, 1, .32, 1); --ease-drawer: cubic-bezier(.32, .72, 0, 1); }
+
+/* 1 · The theme switch: the new theme spreads from the tapped segment (view transitions; app.js render(…, true)). */
+html[data-nav="theme"]::view-transition-image-pair(root) { isolation: auto; }
+html[data-nav="theme"]::view-transition-old(root) { animation: none; mix-blend-mode: normal; }
+html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var(--ease-out) both; mix-blend-mode: normal; }
+@keyframes vt-theme { from { clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%)); } to { clip-path: circle(150% at var(--tx, 50%) var(--ty, 50%)); } }
+
+/* 2 · The verdict (practice, Check). The picked option answers first: a check stamps into its letter, or the row shakes
+   with a cross. If it was wrong, the right answer lights up a beat later, so the eye is led from the mistake to the
+   answer. The other options step back, the explanation follows. The answered progress segment fills, the main button's
+   new label rises in. */
+@keyframes stamp { from { transform: scale(.3); opacity: 0; } 60% { transform: scale(1.2); opacity: 1; } }
+@keyframes light { from { border-color: var(--tag-line); background: var(--bg); } }
+@keyframes lightL { from { background: transparent; border-color: var(--tag-line); } }
+@keyframes stepBack { from { color: var(--ink); border-color: var(--tag-line); } }
+@keyframes fillX { from { transform: scaleX(0); } }
+@keyframes wake { from { background: var(--band); color: var(--muted); } }
+.app .opt.picked .l svg { animation: stamp .3s var(--ease-out) both; }
+.app .opt.ok.picked { animation: light .3s var(--ease-out) both; }
+.app .opt.ok:not(.picked) { animation: light .3s var(--ease-out) .3s both; }
+.app .opt.ok:not(.picked) .l { animation: lightL .3s var(--ease-out) .3s both; }
+.app .opt.ok:not(.picked) .l svg { animation: stamp .3s var(--ease-out) .3s both; }
+.app .opt.dim { animation: stepBack .25s ease both; }
+.app .why { animation-delay: .12s; }
+.app .verdict.bad ~ .why { animation-delay: .42s; }
+.app .progress span.just { transform-origin: left; animation: fillX .35s var(--ease-out) .1s both; }
+.app .tgmain .b .t.swap { animation: rise .2s var(--ease-out) both; }
+.app .tgmain .b.wake { animation: wake .25s ease both; }
+
+/* 3 · Bars and rings move from the value they last showed (app.js, PREV), not from zero, and keep still when nothing
+   changed; only a first view grows from zero. The topic bars are driven by app.js; the ring's starting style reads the
+   previous value. */
+.app .in .bar[data-k] i { animation: none; }
+@starting-style { .app .in .ring { --v: var(--v0, 0); --s: var(--s0, 0); } }
+
+/* 4 · Small acknowledgements: the streak pill on Home after the first answer of the day; the exam timer when the last
+   five minutes begin; the sheet's scrim softens the screen behind it. */
+@keyframes flare { 30% { transform: scale(1.3) rotate(-10deg); } 60% { transform: scale(1.1) rotate(8deg); } }
+.app .streak.grew { animation: rise .3s var(--ease-out) .2s both; }
+.app .streak.grew .fire { animation: flare .6s var(--ease-out) .45s both; }
+@keyframes beat { 40% { transform: scale(1.2); } }
+.app .timer.beat { animation: beat .5s var(--ease-out); }
+.app .scrim { backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+  .app .opt.picked .l svg, .app .opt.ok, .app .opt.ok .l, .app .opt.ok .l svg, .app .opt.dim, .app .progress span.just,
+  .app .tgmain .b .t.swap, .app .tgmain .b.wake, .app .streak.grew, .app .streak.grew .fire, .app .timer.beat { animation: none; }
+}

@@ -377,6 +377,7 @@ function record(id, ok, mode = 'practice', option = null) {
   const [h, w] = rec(id);
   S.q[id] = [(h + (ok ? '1' : '0')).slice(-2), w + (ok ? 0 : 1)];
   const d = dkey();
+  if (!S.days[d]) streakGrew = true;
   S.days[d] = (S.days[d] || 0) + 1;
   S.total++;
   if (serverOn) { outbox.push({ q: id, ok, o: option, m: mode, at: new Date().toISOString() }); outbox = outbox.slice(-5000); keepOutbox(); }
@@ -388,7 +389,7 @@ const levelPct = (b = BANK) => Math.round((b.questions.filter((q) => mastered(q.
 const seenPct = (b = BANK) => Math.round((b.questions.filter((q) => touched(q.id)).length / b.questions.length) * 100);
 // progress ring: the number and the full arc are the share of the level seen, the darker inner step is mastered.
 // Mastery alone would read 0% for the first sessions (right twice in a row), while the student has clearly moved.
-const ring = (lp, sp, cls = '', inner = `<b>${Math.max(lp, sp)}%</b>`) => `<span class="ring seen${cls}" role="img" aria-label="${t('ringLabel', Math.max(lp, sp), lp)}" style="--v:${lp};--s:${Math.max(lp, sp)}">${inner}</span>`;
+const ring = (lp, sp, cls = '', inner = `<b>${Math.max(lp, sp)}%</b>`, k = '') => `<span class="ring seen${cls}" role="img" aria-label="${t('ringLabel', Math.max(lp, sp), lp)}"${k ? ` data-k="ring:${k}"` : ''} style="--v:${lp};--s:${Math.max(lp, sp)}">${inner}</span>`;
 const ready = () => LEVELS.filter((l) => l.id && BASES[l.id]);
 // Exams are kept per level; records from before levels existed have no lv and are Bareboat Skipper's.
 const lvOf = (x) => (x && x.lv) || DEFAULT_LEVEL;
@@ -681,23 +682,69 @@ function applyTheme() {
 }
 const tok = (name) => getComputedStyle($app).getPropertyValue(name).trim();
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
-// A number that counts up to its value when its screen opens (data-count="82" data-suffix="%").
+// The theme switch runs in a view transition where the browser has one (iOS 18+, Chrome 111+): the new theme spreads
+// from the tapped segment. Elsewhere it switches at once.
+const VT = !REDUCED && typeof document.startViewTransition === 'function';
+// Bars, rings and counted numbers remember what they showed last (by data-k), so on the next screen they move from there
+// to the new value — and keep still when nothing changed. Only the first view of a value grows from zero.
+const PREV = new Map();
+const EASE = 'cubic-bezier(.23, 1, .32, 1)';
+let lastMain = null;     // the main button's label and state at the last render: a change animates
+let streakGrew = false;  // the first answer of the day: the streak pill on Home celebrates once
+// A number that counts up to its value when its screen opens (data-count="82" data-suffix="%") — from the value it
+// showed last when it has a data-k.
 function countUp(el) {
   const to = +el.dataset.count, suffix = el.dataset.suffix || '', t0 = performance.now(), dur = 600;
-  if (!(to > 0)) return;
+  const k = el.dataset.k, from = (k && PREV.get(k)) || 0;
+  if (!(to > 0) || from === to) return;
   const step = (now) => {
     const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(to * e) + suffix;
+    el.textContent = Math.round(from + (to - from) * e) + suffix;
     if (p < 1) requestAnimationFrame(step);
   };
   requestAnimationFrame(step);
+}
+
+// Bars and rings on a screen just opened move from the value they showed last (PREV) to the new one.
+function moveFromPrev() {
+  $app.querySelectorAll('.in .bar[data-k]').forEach((bar) => {
+    const segs = [...bar.children], now = segs.map((i) => [i.style.left || '0%', i.style.width || '0%']), was = PREV.get(bar.dataset.k);
+    if (was && was.join() === now.join()) return;
+    const row = bar.closest('[style*="--i"]'), delay = 120 + 35 * +(row ? row.style.getPropertyValue('--i') : 0);
+    segs.forEach((i, j) => {
+      const from = (was && was[j]) || ['0%', '0%'];
+      i.animate([{ left: from[0], width: from[1] }, { left: now[j][0], width: now[j][1] }], { duration: 500, delay, easing: EASE, fill: 'backwards' });
+    });
+  });
+  // the ring's @starting-style reads --v0 / --s0 (app.css), so the sweep starts where the ring was, not at zero
+  $app.querySelectorAll('.in .ring[data-k]').forEach((r) => {
+    const was = PREV.get(r.dataset.k);
+    if (was) { r.style.setProperty('--v0', was[0]); r.style.setProperty('--s0', was[1]); }
+  });
+}
+function remember() {
+  $app.querySelectorAll('.bar[data-k]').forEach((bar) => PREV.set(bar.dataset.k, [...bar.children].map((i) => [i.style.left || '0%', i.style.width || '0%'])));
+  $app.querySelectorAll('.ring[data-k]').forEach((r) => PREV.set(r.dataset.k, [r.style.getPropertyValue('--v'), r.style.getPropertyValue('--s')]));
+  $app.querySelectorAll('[data-count][data-k]').forEach((el) => PREV.set(el.dataset.k, +el.dataset.count));
+}
+// The main button answers a change on the same screen: a new label rises in; a button that just woke up (an option was
+// picked) colours in.
+function mainButtonChange(toTop) {
+  const b = $app.querySelector('.tgmain [data-act="main"]'), tx = b && b.querySelector('.t');
+  if (b && lastMain && !toTop) {
+    if (lastMain.text !== tx.textContent) tx.classList.add('swap');
+    if (lastMain.off && !b.classList.contains('off')) b.classList.add('wake');
+  }
+  lastMain = b ? { text: tx.textContent, off: b.classList.contains('off') } : null;
 }
 
 /* ---------- rendering ---------- */
 const NAV = [['home', 'book', 'learn'], ['examIntro', 'timer', 'exam'], ['progress', 'chart', 'progress'], ['profile', 'user', 'profile']];
 
 const navHtml = (on, live = true) => `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}"${live ? ` data-act="tab" data-v="${v}"` : ''}${v === on ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
-function render(toTop) {
+// theme: the new theme spreads from the tapped segment (--tx/--ty), the DOM swap running inside a view transition;
+// pre runs just before the swap, inside it (applyTheme).
+function render(toTop, theme = false, pre = null) {
   if (cur().v === 'exam' && !S.exam) stack[stack.length - 1] = { v: 'examIntro' };
   const c = cur();
   WEAK = new Set(weakTopics());
@@ -722,29 +769,42 @@ function render(toTop) {
   // the tab bar is the lowest thing on screen; a screen's button bar sits just above it
   if (V.nav && stack.length === 1) h += navHtml(V.nav).replace('<nav ', `<nav${inert} `);
   if (sheet) h += `<div class="scrim" data-act="back"></div><div class="sheet" role="dialog" aria-modal="true"><div class="grip"></div><div class="wrap stack g16">${SHEETS[sheet.v](sheet)}</div></div>`;
-  $app.innerHTML = h;
-  $app.querySelectorAll('[data-act]:not(button):not(.scrim)').forEach((el) => {
-    if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
-    if (!el.classList.contains('locked') && !el.classList.contains('off')) el.tabIndex = 0;
-  });
-  paintIcons($app);
-  const sc = $app.querySelector('.scroll');
-  if (keep) sc.scrollTop = keep;
-  // a sheet that has just opened takes the focus (the screen behind it is inert until it closes)
-  if (sheet && !sheetWasOpen) $app.querySelector('.sheet button, .sheet [data-act]')?.focus({ preventScroll: true });
-  sheetWasOpen = !!sheet;
-  if (enter && !REDUCED) {
-    // rows of a list rise one after another (--i is the row's place in its list, capped so long lists stay quick)
-    const idx = new Map();
-    $app.querySelectorAll('.in .lvl, .in .topic, .in .opt, .in .stat, .in .set, .in .att, .in .tbar, .in .step').forEach((el) => {
-      const i = idx.get(el.parentElement) || 0; idx.set(el.parentElement, i + 1); el.style.setProperty('--i', Math.min(i, 8));
+  const vt = VT && theme && $app.querySelector('.scroll');
+  const swap = () => {
+    if (pre) pre();
+    $app.innerHTML = h;
+    $app.querySelectorAll('[data-act]:not(button):not(.scrim)').forEach((el) => {
+      if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+      if (!el.classList.contains('locked') && !el.classList.contains('off')) el.tabIndex = 0;
     });
-    $app.querySelectorAll('.in [data-count]').forEach(countUp);
-  }
-  if (NATIVE_BUTTONS) nativeButtons(B);
-  if (tgv('6.1')) (stack.length > 1 || sheet ? TG.BackButton.show() : TG.BackButton.hide());
-  if (c.v === 'exam' && S.exam) { startTimer(); if (tgv('6.2')) TG.enableClosingConfirmation(); }
-  else { stopTimer(); if (tgv('6.2')) TG.disableClosingConfirmation(); }
+    paintIcons($app);
+    const sc = $app.querySelector('.scroll');
+    if (keep) sc.scrollTop = keep;
+    // a sheet that has just opened takes the focus (the screen behind it is inert until it closes)
+    if (sheet && !sheetWasOpen) $app.querySelector('.sheet button, .sheet [data-act]')?.focus({ preventScroll: true });
+    sheetWasOpen = !!sheet;
+    if (enter && !REDUCED) {
+      // rows of a list rise one after another (--i is the row's place in its list, capped so long lists stay quick)
+      const idx = new Map();
+      $app.querySelectorAll('.in .lvl, .in .topic, .in .opt, .in .stat, .in .set, .in .att, .in .tbar, .in .step').forEach((el) => {
+        const i = idx.get(el.parentElement) || 0; idx.set(el.parentElement, i + 1); el.style.setProperty('--i', Math.min(i, 8));
+      });
+      moveFromPrev();
+      $app.querySelectorAll('.in [data-count]').forEach(countUp);
+    }
+    mainButtonChange(!!toTop);
+    remember();
+    if (NATIVE_BUTTONS) nativeButtons(B);
+    if (tgv('6.1')) (stack.length > 1 || sheet ? TG.BackButton.show() : TG.BackButton.hide());
+    if (c.v === 'exam' && S.exam) { startTimer(); if (tgv('6.2')) TG.enableClosingConfirmation(); }
+    else { stopTimer(); if (tgv('6.2')) TG.disableClosingConfirmation(); }
+  };
+  if (!vt) return swap();
+  const root = document.documentElement;
+  root.dataset.nav = 'theme';
+  const tr = document.startViewTransition(swap);
+  const done = () => { delete root.dataset.nav; };
+  tr.finished.then(done, done);
 }
 
 function nativeButtons(B) {
@@ -769,7 +829,7 @@ function topicRows(list = TOPICS) {
     const line = seen && p < 100 ? `<span class="tmeta${weak ? ' bad-t' : ''}">${t('seenRight', seen, right)}</span>` : '';
     return `<div class="topic${cls}${line ? ' x3' : ''}" data-act="setup" data-t="${tp.id}"><span class="ico">${p >= 100 ? svg('check', 18) : svg(topicIcon(tp), 18)}</span>` +
       `<span class="card-title">${esc(tp.title)}</span>${line}<span class="n"><b>${m}/${ids.length}</b>${h ? `<span class="acc">${t('halfwayN', h)}</span>` : ''}</span>` +
-      `<span class="bar"><i style="width:${p}%"></i><i class="half" style="left:${p}%;width:${hp}%"></i><i class="seen" style="left:${p + hp}%;width:${sp}%"></i></span></div>`;
+      `<span class="bar" data-k="bar:${tp.id}"><i style="width:${p}%"></i><i class="half" style="left:${p}%;width:${hp}%"></i><i class="seen" style="left:${p + hp}%;width:${sp}%"></i></span></div>`;
   }).join('')}</div>`;
 }
 function tbars(per, limit = 60) {
@@ -793,24 +853,24 @@ function examLine() {
 const VIEWS = {
   /* A1 Home */
   home() {
-    const st = streak();
+    const st = streak(), grew = streakGrew; streakGrew = false;
     const returning = S.total > 0;
     const lv = LEVELS.filter((l) => l.id && BASES[l.id]).map((l) => {
       const b = BASES[l.id], lp = levelPct(b);
-      return `<div class="lvl${l === LEVEL && returning ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, seenPct(b))}<div><div class="card-title">${l.title}</div>` +
+      return `<div class="lvl${l === LEVEL && returning ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, seenPct(b), '', undefined, l.id)}<div><div class="card-title">${l.title}</div>` +
         `<div class="card-meta">${t('levelMeta', b.topics.length, b.questions.length, myExams(l.id).length)}</div></div><span class="chev" data-i="next" data-s="20"></span></div>`;
     }).join('');
     // first visit: the pitch; afterwards: pick up where you left off
     const lp = levelPct(), mis = allMistakes().length;
     const top = returning
       ? `<div class="band resume"><span class="kicker">${t('resumeK')}</span>
-          <div class="row" style="gap:14px;align-items:center">${ring(lp, seenPct())}<div><div class="card-title">${esc(LEVEL.title)}</div><div class="card-meta">${t('resumeMeta', BANK.questions.filter((q) => touched(q.id)).length, BANK.questions.length, mis)}</div></div></div>
+          <div class="row" style="gap:14px;align-items:center">${ring(lp, seenPct(), '', undefined, LEVEL.id)}<div><div class="card-title">${esc(LEVEL.title)}</div><div class="card-meta">${t('resumeMeta', BANK.questions.filter((q) => touched(q.id)).length, BANK.questions.length, mis)}</div></div></div>
           <button class="pill pill-primary pill-wide" data-act="resume"><span data-i="play" data-s="18"></span>${t('practiseN', 10)}</button></div>`
       : `<div class="stack g12"><span class="meta">${t('homeKicker')}</span><h1 class="display">${t('homeTitle')}</h1>
         <p class="body-muted">${t('homeLead')}</p></div>`;
     return {
       title: 'IYT Test', nav: 'home',
-      body: `<div class="row sb-between" style="min-height:40px"><img class="logo" src="design/logo-black.svg" alt="RYC">${st ? `<span class="streak"><span class="fire" data-i="fire" data-s="14"></span>${t('streak', st)}</span>` : ''}</div>
+      body: `<div class="row sb-between" style="min-height:40px"><img class="logo" src="design/logo-black.svg" alt="RYC">${st ? `<span class="streak${grew ? ' grew' : ''}"><span class="fire" data-i="fire" data-s="14"></span>${t('streak', st)}</span>` : ''}</div>
         ${top}
         ${S.exam ? `<div class="continue" data-act="resumeExam"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
         <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
@@ -829,7 +889,7 @@ const VIEWS = {
     return {
       title: LEVEL.title,
       body: `<div class="stack g4"><span class="meta">${LANG === 'ru' && LEVEL_RU[LEVEL.id] ? LEVEL_RU[LEVEL.id] : t('levelMeta', TOPICS.length, BANK.questions.length, myExams().length)}</span><h2 class="display-s">${esc(LEVEL.title)}</h2></div>
-        <div class="row" style="gap:18px;align-items:center">${ring(lp, sp, ' l', `<b data-count="${sp}" data-suffix="%">${sp}%</b><small>${t('covered')}</small>`)}
+        <div class="row" style="gap:18px;align-items:center">${ring(lp, sp, ' l', `<b data-count="${sp}" data-suffix="%" data-k="seen:${LEVEL.id}">${sp}%</b><small>${t('covered')}</small>`, LEVEL.id)}
           <p class="body-s">${esc(text)}</p></div>
         <div class="row" style="gap:10px"><button class="pill pill-primary lvl-btn" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
           <button class="pill lvl-btn" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
@@ -843,7 +903,7 @@ const VIEWS = {
     const id = P.ids[P.i], q = Q[id], ord = P.orders[id], n = P.ids.length, last = P.i === n - 1;
     const segs = P.ids.map((x, k) => {
       const r = P.res[x];
-      return `<span class="${r ? (P.fb ? r : 'on') : k === P.i ? 'now' : ''}"></span>`;
+      return `<span class="${r ? (P.fb ? r : 'on') + (k === P.i && P.checked ? ' just' : '') : k === P.i ? 'now' : ''}"></span>`;
     }).join('');
     const opts = ord.map((oi, k) => {
       let cls = '', l = 'ABCD'[k];
@@ -851,6 +911,7 @@ const VIEWS = {
         if (oi === q.answer) { cls = 'ok'; l = svg('check', 16); }
         else if (k === P.sel) { cls = 'bad'; l = svg('x', 16); }
         else cls = 'dim';
+        if (k === P.sel) cls += ' picked';
         cls += ' locked';
       } else if (k === P.sel) cls = 'sel';
       return `<div class="opt ${cls}" data-act="opt" data-n="${k}" role="radio" aria-checked="${k === P.sel}"${P.checked ? ' aria-disabled="true"' : ''}><span class="l">${l}</span><span>${esc(q.options[oi])}</span></div>`;
@@ -1020,7 +1081,7 @@ const VIEWS = {
     return {
       title: 'IYT Test', nav: 'progress',
       body: `<div class="stack g4"><span class="meta">${LEVEL.title}${S.total ? ' · ' + t('answeredN', S.total) : ''}</span><h2 class="display-s">${t('progress')}</h2></div>
-        <div class="stats"><div class="stat"><b data-count="${sp}" data-suffix="%">${sp}%</b><span class="meta">${t('covered')}</span></div><div class="stat"><b data-count="${m}">${m}</b><span class="meta">${t('mastered')}</span></div><div class="stat"><b data-count="${st}">${st}</b><span class="meta">${t('dayStreak', st)}</span></div></div>
+        <div class="stats"><div class="stat"><b data-count="${sp}" data-suffix="%" data-k="seen:${LEVEL.id}">${sp}%</b><span class="meta">${t('covered')}</span></div><div class="stat"><b data-count="${m}" data-k="m:${LEVEL.id}">${m}</b><span class="meta">${t('mastered')}</span></div><div class="stat"><b data-count="${st}" data-k="streak">${st}</b><span class="meta">${t('dayStreak', st)}</span></div></div>
         <div class="band" style="padding:16px 18px"><div class="row sb-between" style="margin-bottom:12px"><span class="kicker">${t('thisWeek')}</span><span class="meta">${pl(sum, 'question')}</span></div><div class="days">${days}</div></div>
         <div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${mis ? t('misMeta', mis) : t('noneNow')}</div></div><button class="mini mini-accent${mis ? '' : ' off'}" data-act="allMistakes">${t('review')}</button></div>
         <div class="row sb-between"><div><div class="card-title">${t('flaggedQ')}</div><div class="card-meta">${fl ? pl(fl, 'question') : t('flagHint')}</div></div><button class="mini mini-accent${fl ? '' : ' off'}" data-act="flagged">${t('practise')}</button></div>
@@ -1239,7 +1300,7 @@ function tick() {
   const left = remaining();
   $app.querySelectorAll('.timer b').forEach((b) => { b.textContent = fmt(left); });
   $app.querySelectorAll('.timer').forEach((el) => el.classList.toggle('low', left < 300000));
-  if (left < 300000 && left > 0 && !S.exam.warned) { S.exam.warned = true; hap('warning'); toast(t('fiveLeft')); }
+  if (left < 300000 && left > 0 && !S.exam.warned) { S.exam.warned = true; hap('warning'); toast(t('fiveLeft')); $app.querySelectorAll('.timer').forEach((el) => el.classList.add('beat')); }
   if (left <= 0) return submitExam(true);
   if (++ticks % 5 === 0) save(false);
 }
@@ -1349,7 +1410,13 @@ const ACT = {
   restart: () => restartExam(),
   // profile
   lang: async (d) => { S.set.lang = d.t; save(); await setLang(d.t); render(); },
-  theme: (d) => { S.set.theme = d.t; save(); applyTheme(); render(); },
+  // the new theme spreads over the screen from the segment that was tapped
+  theme: (d, el) => {
+    S.set.theme = d.t; save();
+    const r = el.getBoundingClientRect(), st = document.documentElement.style;
+    st.setProperty('--tx', `${Math.round(r.left + r.width / 2)}px`); st.setProperty('--ty', `${Math.round(r.top + r.height / 2)}px`);
+    render(false, true, applyTheme);
+  },
   set: (d, el) => { S.set[d.k] = !S.set[d.k]; save(); el.classList.toggle('on', S.set[d.k]); setTimeout(render, 220); },
   daily: (d, el) => toggleDaily(el),
   admin: () => go('admin'),
