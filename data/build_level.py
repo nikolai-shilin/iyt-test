@@ -92,8 +92,8 @@ LEVELS = {
         ]),
     # Not an IYT course: the charter check-in — taking over a bareboat at the base, Saturday to Saturday, and handing it back.
     'charter-checkin': dict(
-        prefix='ci', name='Charter Check-in', title='Charter Check-in', note=CHECKIN_NOTE,
-        passMark=70, examQuestions=30, examMinutes=45, version='2026-11-03',
+        prefix='ci', name='Charter Check-in', title='Charter Check-in', note=CHECKIN_NOTE, per=50,
+        passMark=70, examQuestions=40, examMinutes=60, version='2026-11-03b',
         topics=[
             ('papers', 'Documents, contract & base briefing', 'Документы, договор и брифинг на базе', 'Документы', 'licence'),
             ('hull', 'Hull, deck & rigging walk-round', 'Осмотр корпуса, палубы и такелажа', 'Корпус', 'yacht'),

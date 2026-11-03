@@ -509,5 +509,712 @@
     "Keys: to the office, not left aboard"
    ]
   }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "On a 42 ft catamaran the inventory says only 'cockpit and flybridge cushions 10'. You count ten. What do you do before you sign?",
+  "a": "Write the torn seams and the broken zip on the list, with photos",
+  "o": [
+   "Sign it — ten out of ten is all the list asks for",
+   "Turn the torn cushions over so the seams don't open further",
+   "Tell the technician and leave the list as it is"
+  ],
+  "why": "A count proves the item is there, not its state; a tear not written down is charged as new at check-out.",
+  "ref": "Check-in: inventory — condition",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran — deck inventory",
+   "lines": [
+    "Cockpit cushions 6 · flybridge 4",
+    "Two flybridge cushions: torn seams",
+    "Bimini: side-panel zip broken",
+    "List: counts only, no condition"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Saturday 18:00, the technician says the inventory is always complete and he has no time to wait while you count. What do you do?",
+  "a": "Count it with the crew this evening and hand the list in, with what is short, before you sail",
+  "o": [
+   "Sign page 4 — the base would not hand over an incomplete boat",
+   "Sign it, and count on Monday so you know what you have",
+   "Count the galley only — the deck gear is seen on the walk-round"
+  ],
+  "why": "What you sign uncounted is what you owe at check-out; the count can wait for the evening, the signature waits for the count.",
+  "ref": "Check-in: inventory list",
+  "fig": {
+   "type": "card",
+   "title": "Inventory list — 4 pages",
+   "lines": [
+    "Galley: 62 items",
+    "Deck: winch handles, boat hook, cushions",
+    "Dinghy: oars, pump, painter, cable",
+    "Technician: 'just sign page 4'"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "The check-in form of your catamaran has one line for engine hours. You look at the two engine panels. What do you do?",
+  "a": "Have both meters written on the form and photograph each panel",
+  "o": [
+   "Leave it — the base only tracks the port engine's hours",
+   "Add the two together and have the total written on the form",
+   "Write the starboard figure in your own log and say nothing"
+  ],
+  "why": "Each engine is read against the form at check-out; a meter that is not on it is your word against the base's.",
+  "ref": "Check-in: engine hours",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Port h",
+     "2 214",
+     false
+    ],
+    [
+     "Stbd h",
+     "2 187",
+     false
+    ],
+    [
+     "Fuel",
+     "Full",
+     false
+    ]
+   ],
+   "lines": [
+    "Form: 'Engine hours: 2 214'",
+    "No line for the starboard engine"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Thursday at Sivota, a crew member drops the key ring into the harbour. What do you do?",
+  "a": "Phone the base now so they can arrange spares, and expect the €80 at check-out",
+  "o": [
+   "Say nothing — a set of keys is not worth a call mid-week",
+   "Cut the dinghy padlock with the bolt cutters and buy a new one",
+   "Wait for the check-out and see whether the technician asks for them"
+  ],
+  "why": "Report a loss when it happens: the base can get spares to you, and the list price is all you pay.",
+  "ref": "Check-out: lost keys",
+  "fig": {
+   "type": "card",
+   "title": "Key ring — lost Thursday",
+   "lines": [
+    "Companionway padlock key",
+    "Dinghy padlock key",
+    "Engine: push-button start, no key",
+    "Contract: lost keys €80 a set"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Tuesday the gas runs out in Vathi and you swap the bottle at a shop. At the check-out the technician sees a different bottle in the locker. What do you show him?",
+  "a": "The shop's receipt, so the swap and the bottle deposit are on record",
+  "o": [
+   "Nothing — the bottle in the locker is full, which is all he needs",
+   "Your card statement — the €32 comes back to you from the deposit",
+   "The log entry for Tuesday — gas needs no receipt"
+  ],
+  "why": "A swapped bottle is accounted for by its receipt; without one the base may charge its own bottle as lost.",
+  "ref": "Check-out: gas",
+  "fig": {
+   "type": "card",
+   "title": "Gas — the week",
+   "lines": [
+    "Tue: bottle swapped at a shop, €32",
+    "Receipt: gas €22 + bottle deposit €10",
+    "Contract: gas used is the charterer's",
+    "Locker now: the shop's bottle, full"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "Wednesday night in Kioni the outboard is stolen from the dinghy, tied astern with its cable locked. What do you do?",
+  "a": "Report it to the port police that morning, take their report, and call the base",
+  "o": [
+   "Call the base only — they deal with the police and the insurer",
+   "Buy a second-hand outboard ashore so the inventory is complete",
+   "Tell the base at the check-out, with the cut cable as proof"
+  ],
+  "why": "The insurer pays only for a locked motor and a timely police report; without them its full value comes off your deposit.",
+  "ref": "Check-out: theft of the outboard",
+  "fig": {
+   "type": "card",
+   "title": "Contract — theft",
+   "lines": [
+    "Outboard theft: insured if locked on",
+    "Police report needed within 24 h",
+    "Otherwise: full value, €2,200",
+    "Cut cable: keep it for the base"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Friday, a crew member admits he cracked the forward hatch lens with a winch handle on Tuesday and asks you to keep it quiet. What do you tell him?",
+  "a": "That you will report it now: reported it costs €180, hidden it voids the waiver",
+  "o": [
+   "Fine — tape over it and the technician won't see it from the deck",
+   "Fine — if it is found you will say it happened on Friday",
+   "Fine, as long as he pays the €180 himself if it is found"
+  ],
+  "why": "The crack will be found at check-out anyway; reported, it is a list-price repair, hidden, it breaks the reporting clause.",
+  "ref": "Charter contract — damage",
+  "fig": {
+   "type": "card",
+   "title": "Contract — damage",
+   "lines": [
+    "Damage reported to the base at once",
+    "Damage not reported: waiver void",
+    "Hatch lens: €180, list price",
+    "Check-out: every hatch, from below too"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "With a gale due on Friday you are back at the base on Thursday afternoon. Your crew want to fly home on Friday morning. What do you arrange with the base?",
+  "a": "An early check-out with the technician before you leave on Friday",
+  "o": [
+   "Nothing — leave the keys at the office and let them inspect on Saturday",
+   "A refund of Friday's charter, since the boat is back a day early",
+   "Nothing — the boat must be sailed until Friday 18:00, gale or not"
+  ],
+  "why": "The boat is yours until it is inspected; leave before the check-out and you have no say in what is found.",
+  "ref": "Check-out: early return",
+  "fig": {
+   "type": "card",
+   "title": "Contract — early return",
+   "lines": [
+    "No refund for unused days",
+    "Early check-out: by arrangement",
+    "Boat stays on the base's berth",
+    "Disembark by Saturday 09:00 at the latest"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Friday 13:00, the breeze is dying and your crew want to drift home under sail. What do you do?",
+  "a": "Motor now, to be at the fuel dock and alongside well before 18:00",
+  "o": [
+   "Sail on — the base cannot charge you for a calm",
+   "Sail until 16:00 and motor the rest if you are still out",
+   "Sail on and call the base at 18:00 to say you are late"
+  ],
+  "why": "At 2–3 kn the 22 M run past 18:00; a calm is not weather that excuses a late return, and fuelling takes time too.",
+  "ref": "Check-out: return time",
+  "fig": {
+   "type": "card",
+   "title": "Friday 13:00",
+   "tag": "22 M to the base",
+   "lines": [
+    "Wind: W 2, dropping",
+    "Under sail 2–3 kn · motoring 6 kn",
+    "Contract: alongside at the base by 18:00",
+    "Base fuel dock open until 19:00"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Friday you fill up at Nidri and motor two hours to the base. The technician reads the gauge and wants to top up at the base's price. What do you show him?",
+  "a": "The Nidri receipt — the contract takes it as full from within 20 miles",
+  "o": [
+   "Nothing — pay the top-up; the gauge reading is what counts",
+   "The engine hours — two hours of motoring is not an eighth",
+   "Your log — it shows you left Nidri straight after fuelling"
+  ],
+  "why": "Read the fuel clause: a receipt from close by counts as full, and most fuel gauges are too coarse to argue over.",
+  "ref": "Check-out: fuel",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "7/8",
+     false
+    ],
+    [
+     "Hours",
+     "1 455",
+     false
+    ]
+   ],
+   "lines": [
+    "Receipt: Nidri, 11:40, 96 l",
+    "Contract: full, or a receipt within 20 M",
+    "Nidri to the base: 12 M"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Friday 17:30, berthing stern-to at the base in a crosswind, your quarter touches the next charter yacht. Nobody is aboard her. What do you do?",
+  "a": "Photograph both boats and tell the base office now, before the check-out",
+  "o": [
+   "Rub the scuff off and say nothing — it may be an old mark",
+   "Leave a note with your phone number on her wheel and go",
+   "Mention it at tomorrow's check-out if the technician asks"
+  ],
+  "why": "Damage to another boat is a third-party claim: your base reports it to the insurer and needs to hear it from you first.",
+  "ref": "Charter contract — third-party damage",
+  "fig": {
+   "type": "card",
+   "title": "Friday 17:30, base pontoon",
+   "lines": [
+    "Your stbd quarter touched her topsides",
+    "Her: gelcoat scuff, 10 cm",
+    "Yours: nothing visible",
+    "Her: another company's boat, nobody aboard"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "Friday 20:00 at the base, a marina attendant comes along the pontoon asking for tonight's berthing fee. What do you tell him?",
+  "a": "That the night is included for base boats, to be settled with the base office",
+  "o": [
+   "Nothing — pay him; the base marina is a harbour like any other",
+   "Pay him, and ask the base to refund it at the check-out",
+   "Nothing — move out and anchor off for the night instead"
+  ],
+  "why": "The last night in the base marina is in the charter price; a fee asked for it is for the base to settle with the marina.",
+  "ref": "Charter price — base marina",
+  "fig": {
+   "type": "card",
+   "title": "Charter price",
+   "lines": [
+    "Included: base marina, first and last night",
+    "Showers: marina block, code at the office",
+    "Not included: other harbours and marinas",
+    "Base office: open until 21:00"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Friday 18:30, you are alongside at the base and the crew want to go straight to dinner. What do you do first?",
+  "a": "Count the inventory against the list with the crew and hunt for what is missing",
+  "o": [
+   "Go to dinner — the technician counts it all in the morning anyway",
+   "Buy a bucket and a boat hook in town in the morning before eight",
+   "Count it at 07:30 tomorrow while the crew are packing"
+  ],
+  "why": "Your own count the evening before finds the boat hook under a berth, not on the settlement; by morning there is no time.",
+  "ref": "Check-out: your own count",
+  "fig": {
+   "type": "card",
+   "title": "Friday 18:30 at the base",
+   "lines": [
+    "Check-out: Saturday 08:00",
+    "Inventory list: in the chart table",
+    "Not seen today: a bucket, the boat hook",
+    "Restaurant booked for 20:00"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Friday night a glass of red wine goes over the saloon cushion. What do you do?",
+  "a": "Blot and rinse it with cold fresh water now, and show the technician in the morning",
+  "o": [
+   "Turn the cushion over and leave it for the base's cleaners",
+   "Scrub it with the galley bleach until the stain is gone",
+   "Leave it till the morning and ask the technician what to use"
+  ],
+  "why": "Treated at once a stain is often a cleaning; left to set or bleached it is a new cover — and it is shown either way.",
+  "ref": "Check-out: damage & cleaning",
+  "fig": {
+   "type": "card",
+   "title": "Saloon cushion, 23:00",
+   "lines": [
+    "Cream cover, red wine across it",
+    "Fresh water and a sponge aboard",
+    "Price list: cover cleaning €40",
+    "Price list: new cover €220"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "Friday evening, the fridge and lockers still hold food and drink. Your crew suggest leaving it all for the next crew. What do you do?",
+  "a": "Empty the fridge and lockers: unopened food to the office box, the rest ashore",
+  "o": [
+   "Leave it in the fridge — the next crew will be glad of it",
+   "Leave the unopened food in the lockers and bin the fridge's",
+   "Wipe the fridge out and leave the drinks for the technician"
+  ],
+  "why": "The fridge goes back empty and clean; food left aboard becomes the base's rubbish and your cleaning charge.",
+  "ref": "Check-out: provisions",
+  "fig": {
+   "type": "card",
+   "title": "Base note — food aboard",
+   "lines": [
+    "Fridge emptied, cleaned, door left open",
+    "Food left aboard is thrown away",
+    "Unopened food: the box at the office",
+    "Fridge not emptied: €50 cleaning"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "Saturday 07:00, your last morning aboard. This note is taped inside the companionway. What do you do with the beds?",
+  "a": "Strip them, bag sheets and towels by cabin, and leave duvets and pillows on the berths",
+  "o": [
+   "Make them up again neatly so the next crew finds them ready",
+   "Leave them as slept in — the cleaners strip them anyway",
+   "Strip everything, duvets and pillows too, and pile it on deck"
+  ],
+  "why": "The base's note says how bedding goes back; following it avoids a cleaning charge and a sheet counted as missing.",
+  "ref": "Check-out: bedding",
+  "fig": {
+   "type": "card",
+   "title": "Base note — departure",
+   "lines": [
+    "Beds stripped, sheets and pillowcases bagged",
+    "Towels in the same bag, one bag per cabin",
+    "Duvets and pillows left on the berths",
+    "Bags in the saloon by 09:00"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "Saturday 08:45, no technician yet; the office says the base is short-staffed and he will be 'an hour or two'. What do you do?",
+  "a": "Photograph the boat, and have the office sign 'returned 08:45, not yet inspected'",
+  "o": [
+   "Leave the keys on the chart table and go — the base is late, not you",
+   "Miss the flight and wait — leaving before the check-out admits the damage",
+   "Leave a crew member behind to do the check-out and sign for you"
+  ],
+  "why": "A timed note signed by the office and your photos record the boat as you left it; a late inspection is then the base's to justify.",
+  "ref": "Check-out: a short-staffed base",
+  "fig": {
+   "type": "card",
+   "title": "Saturday at the base",
+   "tag": "Taxi 09:30",
+   "lines": [
+    "Disembark by 09:00 (contract)",
+    "Technician: 'an hour or two'",
+    "Flight 12:15, airport 40 min away",
+    "Boat: clean, full, on berth B12"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Saturday 08:00, the technician starts the check-out walk-round. A crew mate says you can wait in the café: 'they'll message if anything's wrong'. What do you do?",
+  "a": "Go round with him, phone in hand, and see each point as he finds it",
+  "o": [
+   "Wait in the café — the inspection is the base's job, not yours",
+   "Send the crew mate to watch and meet them both at the office",
+   "Leave your number and the photos with him and go to breakfast"
+  ],
+  "why": "A point you see found you can answer on the spot with a check-in photo; one reported to you later is harder to dispute.",
+  "ref": "Check-out: inspection",
+  "fig": {
+   "type": "card",
+   "title": "Check-out, Saturday 08:00",
+   "lines": [
+    "Technician: walk-round, engine, inventory",
+    "Diver: under the hull at 08:30",
+    "Your check-in photos: on your phone",
+    "Taxi: 10:00"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "At the check-out the technician finds the genoa's UV strip coming away along the leech and wants €250 from the deposit. What do you say?",
+  "a": "That rotten stitching is wear, not damage, and the contract does not charge it",
+  "o": [
+   "Nothing — pay; 'sails OK' on the form means the strip was sound",
+   "Offer half — you did not photograph the strip at check-in",
+   "Agree, and offer to have it restitched by a sailmaker at home"
+  ],
+  "why": "Rotten thread is sun and age, not misuse; the wear-and-tear clause covers it even without a check-in photo.",
+  "ref": "Check-out: wear or damage",
+  "fig": {
+   "type": "card",
+   "title": "Check-out — genoa",
+   "lines": [
+    "UV strip: stitching rotten, 2 m loose",
+    "Sail cloth: no tear",
+    "Check-in form: 'sails OK', no photo",
+    "Contract: fair wear and tear not charged"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "At the check-out the technician offers to settle the broken saloon locker hinge 'off the books'. What do you do?",
+  "a": "Take it through the settlement at €90, with a receipt",
+  "o": [
+   "Pay the €50 — cheaper, and the hinge gets fixed either way",
+   "Pay the €50 and have him strike the line from the form",
+   "Pay nothing — a reported hinge is the base's to repair"
+  ],
+  "why": "Cash with no paper leaves the damage open on the base's books; a receipted line on the settlement closes it.",
+  "ref": "Check-out: deposit settlement",
+  "fig": {
+   "type": "card",
+   "title": "Check-out — saloon locker",
+   "lines": [
+    "Hinge broke on Wednesday, reported",
+    "Settlement: €90 from the deposit",
+    "Technician: '€50 cash, no paperwork'",
+    "Deposit: €2,500 held on your card"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "The settlement charges both of the week's incidents. You bought the waiver. What should come off the deposit?",
+  "a": "€850 — the chip in full, the pulpit up to the excess",
+  "o": [
+   "€500 — one excess covers the whole charter",
+   "€1,000 — the full excess for each incident",
+   "€1,250 — the waiver covers the first incident only"
+  ],
+  "why": "Per incident, each repair is charged up to the excess: the €350 chip in full, the €900 pulpit capped at €500.",
+  "ref": "Damage waiver — the excess",
+  "fig": {
+   "type": "card",
+   "title": "Settlement — damage",
+   "lines": [
+    "Mon: gelcoat chip at the bow — €350",
+    "Thu: pulpit bent on a quay — €900",
+    "Waiver bought: excess €500 per incident",
+    "Base proposes: €1,250"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "On Wednesday a motorboat hit your bow; you took her details and reported it. At the check-out the base takes the pulpit repair from your deposit. What do you ask for?",
+  "a": "A written note on the settlement that it is refunded when her insurer pays",
+  "o": [
+   "Nothing — the deposit settles it, whoever was at fault",
+   "That the base drops it now and chases the motorboat itself",
+   "Nothing yet — you will claim from her insurer once you are home"
+  ],
+  "why": "Damage caused by a third party is held, not lost: put the refund on recovery in writing before you sign.",
+  "ref": "Check-out: third-party damage",
+  "fig": {
+   "type": "card",
+   "title": "Check-out — pulpit",
+   "lines": [
+    "Wed: hit by a motorboat, reported at once",
+    "You have: her name, insurer, photos",
+    "Settlement: pulpit €1,100 from the deposit",
+    "Base: claim against her insurer opened"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "At the settlement the base charges a late-return fee. You came in on Saturday morning after the base told you to stay in harbour. What do you do?",
+  "a": "Show the base's messages and ask for the fee to be struck before you sign",
+  "o": [
+   "Pay it — the deadline was Friday 18:00, whatever the reason",
+   "Sign, then dispute it by e-mail with the messages from home",
+   "Offer half — the weather was neither your fault nor the base's"
+  ],
+  "why": "You were late on the base's own instruction; its messages settle that, at the desk and before you sign.",
+  "ref": "Check-out: late-return fee",
+  "fig": {
+   "type": "card",
+   "title": "Settlement — late return",
+   "lines": [
+    "Late return, Saturday 10:00: €300",
+    "Thu 17:12, base SMS: 'stay in Vathi'",
+    "Fri 08:05, base SMS: 'come when NW < 5'",
+    "Your log: left Vathi Sat 06:00, NW 4"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Saturday 08:30, the office is busy and the manager hands you a check-out form with nothing filled in: 'sign here, the technician will do it after you've gone'. What do you do?",
+  "a": "Sign only after the inspection, on the completed form, and keep a copy",
+  "o": [
+   "Sign it — the check-in form protects you from anything unfair",
+   "Sign it, and photograph the boat before you leave just in case",
+   "Leave it unsigned and go — no signature means no charge"
+  ],
+  "why": "A blank signed form lets anything be written in later; you sign what was found, with you there.",
+  "ref": "Check-out: the form",
+  "fig": {
+   "type": "card",
+   "title": "Check-out form",
+   "lines": [
+    "Damage: —",
+    "Missing items: —",
+    "Fuel: — · engine hours: —",
+    "Skipper's signature: ________"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "The technician has signed the check-out form 'no damage, nothing missing'. What do you photograph before you leave the boat?",
+  "a": "The signed form, the hull from the pontoon, the fuel gauge and the hour meter",
+  "o": [
+   "Nothing more — the signed form is all the proof you need",
+   "Only the form — the hull photos were taken at check-in",
+   "The cabins and the galley, to show they were left clean"
+  ],
+  "why": "Your copy and photos of the boat as handed back answer any later claim of damage 'found after you left'.",
+  "ref": "Check-out: photos",
+  "fig": {
+   "type": "card",
+   "title": "Check-out — signed",
+   "lines": [
+    "Form: no damage, nothing missing",
+    "Fuel: full · engine hours 1 452",
+    "Both signatures, Sat 09:10",
+    "Boat on berth B12, keys at the office"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "Saturday, the check-out is signed and the document folder is still at the chart table. What do you do with it?",
+  "a": "Check it is complete and hand it in at the office with the keys",
+  "o": [
+   "Leave it at the chart table — it lives with the boat",
+   "Keep the transit log and crew list as your record of the week",
+   "Hand it to the next crew's skipper when they board tonight"
+  ],
+  "why": "The papers are the base's and go back with the keys, as the contract says; one that goes missing is your problem.",
+  "ref": "Check-out: boat papers",
+  "fig": {
+   "type": "card",
+   "title": "Document folder",
+   "lines": [
+    "Transit log, stamped at the base",
+    "Crew list, stamped",
+    "Boat's papers and insurance",
+    "Contract: folder to the office at check-out"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "You left the deposit in cash at check-in, and the check-out is clean and signed. What do you get back at the office?",
+  "a": "The €2,500 in cash, against the receipt you were given at check-in",
+  "o": [
+   "A bank transfer in 30 days — cash is never paid back in cash",
+   "The €2,500 less a fee for keeping the cash for a week",
+   "Nothing yet — the base waits a week in case the diver finds more"
+  ],
+  "why": "A cash deposit with a clean signed check-out comes back in full against its receipt; the signed form closes the inspection.",
+  "ref": "Check-out: cash deposit",
+  "fig": {
+   "type": "card",
+   "title": "Deposit — cash",
+   "lines": [
+    "Paid in cash at check-in: €2,500",
+    "Your receipt: no. 0417",
+    "Check-out form: no damage, nothing missing",
+    "Office: 08:00–10:00"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Three weeks after a clean check-out your card still shows the deposit blocked. What do you do?",
+  "a": "Write to the base with the signed form and ask them to cancel the hold",
+  "o": [
+   "Wait — a hold always clears by itself, however long it takes",
+   "Dispute the €3,000 with your bank as a fraudulent charge",
+   "Phone the technician who signed the form and ask him to release it"
+  ],
+  "why": "Only the base can cancel its hold early; the signed clean form is your proof that it owes you that.",
+  "ref": "Check-out: deposit release",
+  "fig": {
+   "type": "card",
+   "title": "Your card, three weeks on",
+   "lines": [
+    "Hold: €3,000, 'pending'",
+    "Check-out form: signed, no damage",
+    "Base at check-out: 'released Saturday'",
+    "Card issuer: holds lapse within 30 days"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "Ten days after a clean check-out, the base e-mails a €400 charge for a keel scratch 'found when the boat was lifted'. What do you reply?",
+  "a": "That the signed clean check-out closed your charter, and you refuse the charge in writing",
+  "o": [
+   "Accept — a lift shows what the diver could not see",
+   "Offer half, since the keel was under water at check-out",
+   "Nothing — they cannot charge a card once the hold is released"
+  ],
+  "why": "The signed check-out ends your liability; damage found after later charters is not yours, and you say so in writing.",
+  "ref": "Check-out: claims after you leave",
+  "fig": {
+   "type": "card",
+   "title": "E-mail from the base",
+   "lines": [
+    "Keel scratch found at haul-out, Tuesday",
+    "Charge: €400 to your card",
+    "Your check-out form: 'no damage', signed",
+    "Two crews have sailed her since"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "Back home, you write an online review of the base. What goes in it?",
+  "a": "Facts: the boat's state, the check-in, the help mid-week, the deposit's return",
+  "o": [
+   "Only the problems — the good parts are what you paid for",
+   "The technician's name and your dispute, to make the base pay",
+   "A star rating only — written details can be used against you"
+  ],
+  "why": "A factual review helps the next crew and the base; a dispute goes to the base in writing, not into a review.",
+  "ref": "After the charter: a review",
+  "fig": null
  }
 ]

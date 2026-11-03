@@ -506,5 +506,731 @@
     "Harbour 2 miles ahead, wind F3"
    ]
   }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "Key on, not yet cranked: the panel lights up and the buzzer sounds. Your crew member at the chart table says 'it's broken before we start'. What do you tell them?",
+  "a": "This is normal — the lamps and buzzer prove themselves on key-on and go out seconds after the engine fires",
+  "o": [
+   "Turn the key off — an oil alarm before starting means the sump is empty",
+   "Hold the key in start until the lamps go out; the buzzer is the glow-plug timer",
+   "Press the stop button to silence it, then crank; the buzzer is the stop circuit"
+  ],
+  "why": "On key-on the oil and charge lamps and the buzzer come on and stay on until the engine runs and pressure builds — a lamp test, not a fault.",
+  "ref": "Engine panel: key-on test",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Oil",
+     "LOW",
+     true
+    ],
+    [
+     "Batt",
+     "12.4",
+     true
+    ],
+    [
+     "RPM",
+     "0",
+     false
+    ]
+   ],
+   "lines": [
+    "Key ON, not yet cranked",
+    "Buzzer sounding"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "The technician lifts the aft-cabin bunk and shows the whole crew a lever on the tank top. Your crew ask why everyone has to see it. What do you tell them?",
+  "a": "It is the fuel shut-off: in an engine fire you stop the engine, close it, then open the extinguisher port",
+  "o": [
+   "It is closed every night at anchor so the lines stay full and the engine starts clean",
+   "It is closed before refuelling so the tank cannot overflow into the engine bay",
+   "It is the base mechanic's valve for changing the filter; the crew never touch it"
+  ],
+  "why": "The fuel shut-off starves a fire of fuel; everyone who may be nearest to it should know where it is and which way is closed.",
+  "ref": "Check-in: fuel shut-off",
+  "fig": {
+   "type": "card",
+   "title": "Fuel shut-off",
+   "lines": [
+    "Lever valve on the tank top, aft cabin",
+    "Open: handle in line with the pipe",
+    "Closed: handle across",
+    "Technician: 'show everyone'"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "A 36 ft boat with a shaft and a packed stuffing box. The technician points at a brass cup on the bulkhead: 'a turn a day'. What is the cup for?",
+  "a": "Greasing the packing: half a turn each day of motoring; a drip or two a minute with the shaft turning is right",
+  "o": [
+   "Tightening the gland: screw it in until the dripping stops completely",
+   "A spare grease reserve for the winches; it has nothing to do with the shaft",
+   "Sealing the shaft for the week: fill it once at the base and forget it"
+  ],
+  "why": "A packed gland is kept greased from the remote greaser and is meant to drip a little when turning; tightened dry, it overheats and scores the shaft.",
+  "ref": "Check-in: stern gland greaser",
+  "fig": {
+   "type": "card",
+   "title": "Shaft seal — 36 ft",
+   "lines": [
+    "Stuffing box with packing",
+    "Remote greaser cup on the bulkhead",
+    "Drips with shaft turning: 1–2 a minute",
+    "Shaft after 10 min in gear: cool"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "Monday, 07:30, cold start in the bay: white smoke from the exhaust for the first minute, then it clears and the water flows. Your crew want to stop the engine. What do you say?",
+  "a": "Carry on — a cold diesel smokes white for a minute; white smoke that stays with a rising temperature is the one to stop for",
+  "o": [
+   "Stop it — white smoke is steam, the engine is already overheating",
+   "Stop it and bleed the fuel system; white smoke is air in the lines",
+   "Carry on but at full throttle, to burn the smoke off faster"
+  ],
+  "why": "White smoke on a cold start is unburnt fuel and clears as it warms; persistent white smoke with a hot engine or no water is steam — stop.",
+  "ref": "Exhaust smoke: white",
+  "fig": null
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "The technician shows you the raw-water seacock under the sole and says 'leave it open'. When, during the week, do you close it?",
+  "a": "Before opening the strainer to clear it, and whenever the boat is left unattended for long",
+  "o": [
+   "Every evening at anchor, so the engine bay stays dry overnight",
+   "Never — the base opened it in spring and closes it at the end of the season",
+   "Before every start, and open it once the exhaust water is flowing"
+  ],
+  "why": "A raw-water seacock is closed to work on the strainer and when leaving the boat; closed at start, the impeller runs dry in seconds.",
+  "ref": "Check-in: raw-water seacock",
+  "fig": {
+   "type": "card",
+   "title": "Raw-water seacock",
+   "lines": [
+    "Under the sole, forward of the strainer",
+    "Handle in line with the pipe: open",
+    "Technician: 'leave it open'",
+    "Strainer lid: hand-tight"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "The panel has a key and a red button beside it; there is no pull handle at the companionway. Your crew ask how the engine is stopped. What do you tell them?",
+  "a": "Hold the red button until the engine dies, then turn the key off — the key alone does not stop a diesel",
+  "o": [
+   "Turn the key to off — it cuts the fuel pump, as on a petrol engine",
+   "Lever to neutral and key off; the red button is only for emergencies",
+   "Close the raw-water seacock and wait; the engine stops on temperature"
+  ],
+  "why": "A diesel is stopped by cutting its fuel — the stop button or pull handle; the key off afterwards saves the battery and the alarm.",
+  "ref": "Base briefing: stopping the engine",
+  "fig": null
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "Monday, leaving the bay, your crew on the stern calls that the exhaust is blowing black smoke each time the throttle goes past 2,500. What do you do?",
+  "a": "Ease back to 2,200 and have someone look at the prop at the next stop — black smoke at high revs is an overloaded engine",
+  "o": [
+   "Keep it at 2,800 for ten minutes — black smoke clears the injectors on a charter engine",
+   "Stop the engine at once and sail — black smoke is a fire in the exhaust hose",
+   "Change the fuel filter now — black smoke is water in the diesel"
+  ],
+  "why": "Black smoke is unburnt fuel from overload: a fouled prop, a carboned elbow or too much throttle; drop the revs and find the load.",
+  "ref": "Exhaust smoke: black",
+  "fig": {
+   "type": "card",
+   "title": "Monday, 10:00, leaving the bay",
+   "lines": [
+    "2,800 rpm: black smoke, 5.4 kn",
+    "2,200 rpm: clean, 5.6 kn",
+    "Boat sat in the marina two weeks before you",
+    "Exhaust water: strong"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "Monday, 08:00, in a bay, your daily engine check. What do you do?",
+  "a": "Top up to the upper mark, write the litre in the log and tell the base — an engine using that much oil is theirs to look at",
+  "o": [
+   "Carry on — oil between the marks is fine, and the base tops it up at check-out",
+   "Fill to the top of the dipstick tube so it lasts the rest of the week",
+   "Add the litre and say nothing — every charter engine uses a little oil"
+  ],
+  "why": "A litre in six hours with a blue haze is an engine burning oil; top up to the mark, never above, and tell the base before it gets worse.",
+  "ref": "Daily engine check: oil",
+  "fig": {
+   "type": "card",
+   "title": "Daily check, Monday 08:00",
+   "lines": [
+    "Dipstick: just below the lower mark",
+    "Coolant: at MAX",
+    "Yesterday: 6 h motoring, blue haze at the exhaust",
+    "Oil aboard: 1 L from the base"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "Monday, 09:00, in a bay: you turn the key and the panel stays dark. What do you check first?",
+  "a": "The engine battery switch — someone turned it off last night; then the parallel switch if the starter bank is flat",
+  "o": [
+   "The primary fuel filter bowl and the fuel shut-off under the bunk",
+   "The stop handle and the neutral position of the lever",
+   "Nothing — call the base: a dark panel is a failed control box"
+  ],
+  "why": "No lamps at key-on means no power to the panel: the engine battery switch or a flat starter bank, before anything to do with fuel.",
+  "ref": "Engine will not start: battery switch",
+  "fig": {
+   "type": "card",
+   "title": "Monday, 09:00, in the bay",
+   "lines": [
+    "Key ON: panel dark, no buzzer",
+    "Cabin lights and fridge: working",
+    "Last night: switches 'all off' before bed",
+    "Battery switches: engine / house / both"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "Tuesday, 08:30, leaving a town quay: the engine cranks strongly but does not fire. Where do you look first?",
+  "a": "The stop handle — it was pulled last night and is still out, so the engine is cranking with no fuel",
+  "o": [
+   "The air in the fuel lines — bleed it at the filter before cranking again",
+   "The raw-water seacock — close it and crank again so the engine does not flood",
+   "The glow plugs — crank for a full minute, a cold diesel needs it"
+  ],
+  "why": "A strong crank with no fire after an evening stop is almost always the stop handle left out; push it fully home before anything else.",
+  "ref": "Engine will not start: stop handle",
+  "fig": {
+   "type": "card",
+   "title": "Tuesday, 08:30, at the town quay",
+   "lines": [
+    "Key ON: lamps and buzzer normal",
+    "Cranks strongly, does not fire",
+    "Last night: stopped with the pull handle",
+    "Fuel 3/4, shut-off open"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "Wednesday at the fuel quay. The attendant hands your crew the nozzle. What do you tell them?",
+  "a": "Hold it in the filler you marked, ask for a slow flow and stop at the first gurgle — the overflow goes into the sea",
+  "o": [
+   "Let the attendant fill it to the brim — he knows the tanks of charter boats",
+   "Fill until diesel shows at the deck filler, so you know the tank is full",
+   "Fill the jerrycans first and pour them into the tank below decks later"
+  ],
+  "why": "Charter tanks vent to the deck or over the side: fill slowly, listen for the gurgle, and stop — a diesel spill at a quay is a fine and a mess.",
+  "ref": "Refuelling at the fuel quay",
+  "fig": {
+   "type": "card",
+   "title": "Fuel quay, Wednesday",
+   "lines": [
+    "Fuel and water fillers 30 cm apart",
+    "Your tape mark on the fuel cap",
+    "High-pressure quay nozzle",
+    "About 50 L to take"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "You find this in the lazarette, next to the engine bay. What do you ask the base?",
+  "a": "Where the petrol goes on deck — its vapour sinks into the bilge and a diesel engine bay has no blower; lash the diesel can",
+  "o": [
+   "Nothing — diesel and petrol are both fuels and both cans are sealed",
+   "To empty the petrol into the dinghy tank so there is no can aboard at all",
+   "To move the petrol to a cabin locker, away from the engine's heat"
+  ],
+  "why": "Petrol vapour is heavier than air and collects in the bilge next to a hot engine; it lives on deck in a vented locker, never below.",
+  "ref": "Fuel cans: stowage and ventilation",
+  "fig": {
+   "type": "card",
+   "title": "Lazarette",
+   "lines": [
+    "Diesel jerrycan 20 L, full, loose",
+    "Petrol can 5 L (outboard), half full",
+    "Engine-bay vent hose runs through here",
+    "No fume detector"
+   ],
+   "tag": "Petrol below"
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "Monday, 19:00, at anchor, the batteries are low. Your crew suggests leaving the engine ticking over until bedtime. What do you do?",
+  "a": "Run it at about 1,500 rpm for an hour — a diesel idled for hours glazes its bores and charges little",
+  "o": [
+   "Leave it at tick-over till bedtime — a slow charge is what the battery needs",
+   "Put it in gear at idle so the engine pulls against the anchor and works",
+   "Switch everything off instead — a charter engine must not run at anchor"
+  ],
+  "why": "A diesel is charged under some load and revs, not at idle for hours; an hour at 1,500 does more than four at 800 and keeps the engine healthy.",
+  "ref": "Charging under way vs idling",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "800",
+     false
+    ],
+    [
+     "Volts",
+     "12.2",
+     true
+    ],
+    [
+     "Temp",
+     "62°",
+     false
+    ]
+   ],
+   "lines": [
+    "At anchor, fridge on",
+    "Crew: 'leave it ticking over'"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "42 ft catamaran. The technician shows the generator: 'run it for the batteries and the air-con'. What do you check with him before you sign?",
+  "a": "Its own seacock and strainer, water at its exhaust when running, its hours on the form and the base's rule on when it may run",
+  "o": [
+   "Only its hours — a generator has no cooling of its own to check",
+   "Nothing — it is the base's machine; it charges like the engines do",
+   "That it starts from the engine battery, so it can never go flat"
+  ],
+  "why": "A generator is a third engine: raw water, exhaust water, hours and a stop of its own — and marinas forbid it at night.",
+  "ref": "Check-in: generator",
+  "fig": {
+   "type": "card",
+   "title": "Generator",
+   "lines": [
+    "Own seacock and strainer: under the saloon sole",
+    "Hours: 612 — not on the form",
+    "Exhaust: port quarter, at the waterline",
+    "Base: 'not in marinas, not after 22:00'"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "Monday, an hour out. Your crew at the helm says the engine must be down on power. What do you tell them?",
+  "a": "Nothing is wrong yet: wind and chop take two knots; the test is speed at 2,200 in flat water, and a drop there means a fouled prop",
+  "o": [
+   "Push to 2,800 — the base promised six knots at 2,200, so the engine is faulty",
+   "Stop and check the impeller — low speed at the right revs is a cooling fault",
+   "Call the base — the tachometer is misreading and needs replacing"
+  ],
+  "why": "SOG on the plotter is speed through water plus wind, chop and current; rpm-to-speed in flat water is the baseline you note on day one.",
+  "ref": "Tachometer vs plotter SOG",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "2200",
+     false
+    ],
+    [
+     "Temp",
+     "80°",
+     false
+    ],
+    [
+     "Volts",
+     "14.1",
+     false
+    ]
+   ],
+   "lines": [
+    "Plotter: SOG 4.1 kn, 15 kn wind on the nose",
+    "Technician: 'about 6 kn at 2,200'"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The technician points at the rubber around the saildrive leg: 'diaphragm changed, nothing to see'. What do you do?",
+  "a": "Ask why the well is damp and whether there is an ingress alarm; photograph it and have it written on the form",
+  "o": [
+   "Nothing — salt in the well is condensation off the cold leg",
+   "Ask for a new diaphragm — seven years is the limit and this one is due",
+   "Ask to close the saildrive seacock at night so the well stays dry"
+  ],
+  "why": "A damp saildrive well means a seal weeping; it is the base's answer, in writing, before you sign — not your discovery on Thursday.",
+  "ref": "Check-in: saildrive diaphragm",
+  "fig": {
+   "type": "card",
+   "title": "Saildrive, from the engine bay",
+   "lines": [
+    "Rubber diaphragm around the leg",
+    "Sticker: replaced 03/2023",
+    "Well around the leg: damp, salt crust",
+    "Ingress alarm: not shown"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The technician skips the gearbox: 'it's sealed, nothing to check'. What do you do?",
+  "a": "Pull its dipstick yourself — level at the mark, oil clear not milky — and write the reading on the form",
+  "o": [
+   "Take his word — a charter gearbox is never opened between services",
+   "Ask for a litre of gearbox oil aboard in case it runs low this week",
+   "Run the engine in gear and listen — a quiet gearbox has oil in it"
+  ],
+  "why": "A gearbox has a dipstick like the engine; milky oil there means water from the oil cooler, and a low level means a leaking seal.",
+  "ref": "Check-in: gearbox oil",
+  "fig": {
+   "type": "card",
+   "title": "Gearbox",
+   "lines": [
+    "Dipstick under a hose, on the gearbox top",
+    "Technician: 'sealed'",
+    "Last service: 'in spring'",
+    "Oil on the tray below: none"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "You press the alternator belt with your thumb while the technician waits. What do you ask for?",
+  "a": "The belt tensioned or changed now and the dust wiped off — a slipping belt stops the charging and the coolant pump",
+  "o": [
+   "Belt dressing sprayed on it so it grips until the first service",
+   "'Belt loose' on the form; you will tighten it yourself on Monday",
+   "Nothing — a little dust is normal and the spare belt is in the locker"
+  ],
+  "why": "About 10 mm of give is right; 20 mm and black dust is a belt slipping on polished pulleys — the base's job at the pontoon.",
+  "ref": "Check-in: alternator belt",
+  "fig": {
+   "type": "card",
+   "title": "Belt",
+   "lines": [
+    "Press midway: about 20 mm of give",
+    "Black dust on the alternator and the tray",
+    "Pulley grooves: polished",
+    "Spare belt: in the locker"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The single lever on this 36 ft boat has no click at neutral, and the technician starts the engine with it 'about in the middle'. What do you do?",
+  "a": "Have the cable adjusted until neutral clicks and the engine starts only there — you must find neutral by feel at a quay",
+  "o": [
+   "Mark neutral with tape and leave it — cables stretch on every boat",
+   "Start it in ahead with the lines on; it is quicker to leave the pontoon",
+   "Accept it — a starter interlock is an option on newer engines only"
+  ],
+  "why": "A neutral detent and a neutral-start interlock are safety: no engine starting in gear and no hunting for neutral while mooring.",
+  "ref": "Check-in: throttle and gear lever",
+  "fig": {
+   "type": "card",
+   "title": "Throttle / gear lever",
+   "lines": [
+    "Single lever, cable",
+    "Neutral: no click, 'about the middle'",
+    "Engine started with the lever a little ahead",
+    "Technician: 'they all do that'"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "Monday, 17:00, mooring stern-to at a town quay in a crosswind. Your crew holds the thruster to port for 30 seconds and it stops dead. What do you do?",
+  "a": "Finish with the engine and lines; it is the thermal cut-out — rest it ten minutes, reset its breaker, and use short bursts from now on",
+  "o": [
+   "Abort and anchor off — the thruster fuse has blown and the base must replace it",
+   "Run the engine at 2,000 for five minutes to charge the thruster battery, then try",
+   "Hold the joystick longer — the motor needs to warm up before it bites"
+  ],
+  "why": "A bow thruster is rated for seconds, not half a minute: the thermal cut-out trips, and it resets after cooling and the breaker.",
+  "ref": "Bow thruster: time limit",
+  "fig": {
+   "type": "card",
+   "title": "Town quay, Monday 17:00",
+   "lines": [
+    "Crosswind 15 kn off the quay",
+    "Thruster held 30 s to port, then dead",
+    "Panel light out",
+    "Breaker: forward cabin, under the bunk"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "Thursday, 08:30, in a bay. Your crew has cranked the engine six times without a fire. What do you do before anyone tries again?",
+  "a": "Close the raw-water seacock, then find the cause — every crank pumps water into the silencer and towards the engine",
+  "o": [
+   "Keep cranking — raw water only flows once the engine is running",
+   "Open the seacock fully so the engine does not overheat when it fires",
+   "Pull the stop and crank — it blows the water out of the exhaust"
+  ],
+  "why": "The raw-water pump works on every crank; after a few, the water-lock fills and the next crank can draw water into a cylinder.",
+  "ref": "Engine will not start: cranking and raw water",
+  "fig": {
+   "type": "card",
+   "title": "Thursday 08:30, in the bay",
+   "lines": [
+    "Six cranks of 15 s: no fire",
+    "Water spurts from the exhaust on each crank",
+    "Battery 12.1 V",
+    "Base: a phone call away"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "Your crew ask why a hose from the engine loops up to the deckhead and back down. What do you tell them?",
+  "a": "It is the anti-siphon loop: it stops seawater siphoning into the engine when it is stopped, and the valve on top must stay clear of salt",
+  "o": [
+   "It is the exhaust bypass: you open it if the elbow blocks at sea",
+   "It is where the coolant is filled on this engine, above the header tank",
+   "It is a spare hose the base left; it does nothing and can be ignored"
+  ],
+  "why": "A raw-water outlet below the waterline needs a siphon break; a blocked vent valve lets water fill the exhaust and reach the engine.",
+  "ref": "Engine cooling: anti-siphon loop",
+  "fig": null
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "Wednesday, 14:00, F6 on the nose, 6 miles from harbour. The engine surges and dies, restarts, dies again after five minutes. What do you do?",
+  "a": "Sail or anchor, drain the bowl and fit a spare element, then call the base — a chop stirs the tank and blocks the filter",
+  "o": [
+   "Motor on at low revs — the fuel will settle once the sea is flatter",
+   "Pour the bottle of biocide from the locker into the tank and restart",
+   "Bleed the injectors at sea — it is air in the lines, not dirt"
+  ],
+  "why": "Surging and dying in a seaway is a filter blocking on a dirty tank (diesel bug); the spare element gets you in, the tank is the base's.",
+  "ref": "Engine at sea: fuel starvation",
+  "fig": {
+   "type": "card",
+   "title": "Wednesday 14:00, F6 on the nose",
+   "lines": [
+    "Surges, dies; restarts, dies after 5 min",
+    "Primary filter bowl: black flakes",
+    "Spare elements: 2 (inventory)",
+    "Harbour 6 miles upwind"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "Tuesday, catamaran, 8 miles to go: the port engine's buzzer sounds. What do you do?",
+  "a": "Stop port and carry on at moderate revs on starboard, allowing for the pull; tell the base, and port stays off till the cause is found",
+  "o": [
+   "Keep both running at low revs so the boat stays balanced for the mooring",
+   "Stop both and sail — a catamaran must not be motored on one engine",
+   "Swap engines every fifteen minutes so neither of them gets hot"
+  ],
+  "why": "A cat's second engine is why it can carry on; an overheated engine is stopped, not nursed, and the base is told before the next start.",
+  "ref": "Catamaran: running on one engine",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Port temp",
+     "108°",
+     true
+    ],
+    [
+     "Stbd temp",
+     "82°",
+     false
+    ],
+    [
+     "RPM",
+     "2000",
+     false
+    ]
+   ],
+   "lines": [
+    "Port buzzer sounding",
+    "Tuesday, 8 miles to the harbour"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "Thursday evening, anchored 28 miles from the base; tomorrow is forecast calm. What do you decide about fuel?",
+  "a": "Plan on the lower figure: the gauge's 40 L leaves nothing over the 20 L reserve for a five-hour run — top up at the first fuel quay",
+  "o": [
+   "Trust the hours: 72 L left is three times the run, and the gauge sticks",
+   "Motor-sail at 1,500 rpm all the way and let the base refill at check-out",
+   "Sail the whole way and keep the engine for the marina only"
+  ],
+  "why": "Gauge and hours disagree: plan on the worse one. 28 miles at 6 kn is 5 h ≈ 20 L, and the reserve is not for planning.",
+  "ref": "Fuel: range later in the week",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "1/4",
+     false
+    ],
+    [
+     "Hours",
+     "2334.1",
+     false
+    ],
+    [
+     "Volts",
+     "12.6",
+     false
+    ]
+   ],
+   "lines": [
+    "22 h since check-in at ≈4 L/h; tank 160 L, reserve 20 L",
+    "Friday: 28 miles to the base, calm forecast"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "You look at the exhaust elbow with a torch while the technician talks about the fridge. What do you ask for?",
+  "a": "The elbow and the joint looked at and written on the form — soot at the joint is exhaust gas leaking into the boat",
+  "o": [
+   "Tape round the joint — it is only soot, and the water flow is good",
+   "Nothing — elbows rust from the outside; it is the exhaust water you watch",
+   "A spare elbow in the spares locker, in case this one goes this week"
+  ],
+  "why": "A corroded elbow leaks exhaust (CO) into the bay and, when it fails, blocks the water: the base checks it, not you on Wednesday.",
+  "ref": "Check-in: exhaust elbow",
+  "fig": {
+   "type": "card",
+   "title": "Exhaust elbow",
+   "lines": [
+    "Rust and white salt crust on the elbow",
+    "Black soot ring at the hose joint",
+    "Hose clip: one, rusted",
+    "Exhaust water at the pontoon: strong"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "Wednesday, 07:00. The catamaran lay stern to a swell all night. The port engine cranks half a turn and locks solid. What do you do?",
+  "a": "Do not crank again — water has come up the exhaust into a cylinder; call the base, the engine must be drained before it turns",
+  "o": [
+   "Crank longer with the stop pulled; it clears the water out through the exhaust",
+   "Run on starboard and keep trying port under way — the movement frees it",
+   "Pour a little oil into the air intake and crank it over gently"
+  ],
+  "why": "A locked engine is a hydrolock: water does not compress, and forcing it bends a conrod. The base drains it; you do not.",
+  "ref": "Water in the engine after a swell",
+  "fig": {
+   "type": "card",
+   "title": "Wednesday 07:00, after a night of swell",
+   "lines": [
+    "Port engine: half a turn, then solid",
+    "Starboard: starts normally",
+    "Port exhaust: low, at the waterline",
+    "Bilge under port engine: dry"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "You find the tool roll in the locker while the technician reads the inventory. What do you ask for before you sign?",
+  "a": "An impeller puller, spare hose clips and the engine manual, and the inventory list corrected to what is there",
+  "o": [
+   "Nothing — the base's mechanic comes out to any engine fault within the day",
+   "A full socket set, so any repair at sea can be done properly",
+   "A note on the form that the tool roll was not checked"
+  ],
+  "why": "Spares are no use without the tools to fit them: a puller for the impeller, clips for a hose, the manual for the belt route and filters.",
+  "ref": "Check-in: tools and the manual",
+  "fig": {
+   "type": "card",
+   "title": "Tool roll (inventory: 'complete')",
+   "lines": [
+    "Spanners ×3, pliers, two screwdrivers",
+    "Impeller puller: none",
+    "Spare hose clips: none",
+    "Engine manual: not aboard"
+   ],
+   "tag": "'Complete'"
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "Your crew member takes the helm to leave the pontoon: 'I'll give it 2,000 and click it into gear so we get away cleanly.' What do you tell them?",
+  "a": "Gear at idle only: idle, click into gear, then throttle — shifting under revs wrecks the gearbox cone and the damper plate",
+  "o": [
+   "Fine, as long as the lines are off first and the bow is clear",
+   "Better 1,500 — 2,000 is too much for a marina, but the gear will take it",
+   "Use the throttle-only button first, then drop into gear at those revs"
+  ],
+  "why": "A marine gearbox is shifted at idle; a clunk under revs is a cone clutch or damper plate going, and that is your deposit.",
+  "ref": "Base briefing: gear changes",
+  "fig": null
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "On the 36 ft boat the hour meter reads 1,000.0 and has not moved after ten minutes running. The technician says 'we go by fuel'. What do you do before you sign?",
+  "a": "Have 'hour meter not working' written on the form and the base's way of charging engine use agreed in writing",
+  "o": [
+   "Sign — if the meter does not count, the base cannot charge for hours",
+   "Note the time you run the engine each day in the log and argue from that",
+   "Ask for the contract's hours clause struck out, as it cannot be checked"
+  ],
+  "why": "A meter that does not count is written on the form, with how the base will measure instead; otherwise it is their estimate at check-out.",
+  "ref": "Check-in form: hour meter",
+  "fig": {
+   "type": "card",
+   "title": "36 ft, mechanical panel",
+   "lines": [
+    "Hour meter: 1,000.0 — not moving",
+    "Engine running 10 min",
+    "Contract: engine max 4 h/day",
+    "Technician: 'we go by fuel'"
+   ]
+  }
  }
 ]

@@ -111,8 +111,8 @@ first 100, right answers that stand out by length, and that every figure renders
 
 VHF Radio Operator (`vhf-`), International Crew (`ic-`), Flotilla Skipper (`fs-`), Racing Rules of Sailing
 (`rr-`) and Charter Check-in (`ci-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
-topic is `data/bank/<level>/<topic>.json` (20 questions, about 4/12/4 by difficulty; 100 and 20/60/20 for the
-Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
+topic is `data/bank/<level>/<topic>.json` (20 questions, about 4/12/4 by difficulty; 50 and 10/30/10 for the
+Charter Check-in, 100 and 20/60/20 for the Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
 `<topic>.ru.json`: the same order, `{q, a, o, why, ref, fig}`, where `o` keeps the English order of the wrong options and
 `fig` maps figure text paths to the translation. The build shuffles the options once and writes both
 `data/questions/<level>.json` and the overlay `data/questions/<level>.ru.json` in that same order.
@@ -139,7 +139,7 @@ app's disclaimer and share text name World Sailing instead of IYT for it.
 ### Charter Check-in
 
 Not an IYT course: the Saturday at a Mediterranean charter base, as the skipper taking over a bareboat, 10 topics
-× 20 — documents, contract and briefing; the hull, deck and rigging walk-round; sails and furling; engine and fuel;
+× 50 — documents, contract and briefing; the hull, deck and rigging walk-round; sails and furling; engine and fuel;
 batteries and shore power; water, gas, heads and bilge; instruments and VHF; safety equipment; anchor, mooring gear
 and dinghy; inventory, deposit and the Friday check-out. The right answer is what a careful skipper does at the
 base — tests it, notes it on the form, photographs it, has the base fix it before leaving, signs last. Anything that
