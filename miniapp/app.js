@@ -80,7 +80,7 @@ const STR = {
     levelMeta: (t, q, ex) => `${pl(t, 'topic')} · ${pl(q, 'question')}${ex ? ' · ' + pl(ex, 'exam') + ' taken' : ''}`,
     examOpen: 'Mock exam in progress', continue: 'Continue',
     examLine: (a, n, left) => `${a} of ${n} answered · ${left} left`,
-    mastered: 'mastered', halfway: 'halfway', halfwayN: (n) => `+${n} halfway`, moreLevels: 'More levels',
+    mastered: 'mastered', covered: 'covered', halfway: 'halfway', halfwayN: (n) => `+${n} halfway`, moreLevels: 'More levels',
     levelText: (m, n, h, sn) => `${m} of ${n} mastered${h ? `, ${h} halfway there (right once)` : ''}. ${sn} seen so far.`,
     resumeK: 'Continue', resumeMeta: (sn, n, mis) => `${sn} of ${n} seen${mis ? ` · ${pl(mis, 'mistake')} to clear` : ''}`,
     practiseN: (n) => `Practise ${pl(n, 'question')}`, levelsK: 'Levels',
@@ -162,7 +162,7 @@ const STR = {
     levelMeta: (t, q, ex) => `${pl(t, 'topic')} · ${pl(q, 'question')}${ex ? ' · ' + pl(ex, 'exam') : ''}`,
     examOpen: 'Пробный экзамен не закончен', continue: 'Продолжить',
     examLine: (a, n, left) => `отвечено ${a} из ${n} · осталось ${left}`,
-    mastered: 'освоено', halfway: 'на полпути', halfwayN: (n) => `+${n} на полпути`, moreLevels: 'Другие уровни',
+    mastered: 'освоено', covered: 'пройдено', halfway: 'на полпути', halfwayN: (n) => `+${n} на полпути`, moreLevels: 'Другие уровни',
     levelText: (m, n, h, sn) => `Освоено ${m} из ${n}${h ? `, на полпути ${h} (верно один раз)` : ''}. Уже видели: ${sn}.`,
     resumeK: 'Продолжить', resumeMeta: (sn, n, mis) => `Видели ${sn} из ${n}${mis ? ` · ошибок к разбору: ${mis}` : ''}`,
     practiseN: (n) => `Тренировка · ${pl(n, 'question')}`, levelsK: 'Уровни',
@@ -370,8 +370,9 @@ const topicIds = (tp) => BY_TOPIC[tp] || [];
 const topicPct = (tp) => { const ids = topicIds(tp); return Math.round((ids.filter(mastered).length / ids.length) * 100); };
 const levelPct = (b = BANK) => Math.round((b.questions.filter((q) => mastered(q.id)).length / b.questions.length) * 100);
 const seenPct = (b = BANK) => Math.round((b.questions.filter((q) => touched(q.id)).length / b.questions.length) * 100);
-// mastery ring; a lighter second step shows questions seen but not yet mastered, so early sessions show up
-const ring = (lp, sp, cls = '', inner = `<b>${lp}%</b>`) => `<span class="ring seen${cls}" style="--v:${lp};--s:${Math.max(lp, sp)}">${inner}</span>`;
+// progress ring: the number and the full arc are the share of the level seen, the darker inner step is mastered.
+// Mastery alone would read 0% for the first sessions (right twice in a row), while the student has clearly moved.
+const ring = (lp, sp, cls = '', inner = `<b>${Math.max(lp, sp)}%</b>`) => `<span class="ring seen${cls}" style="--v:${lp};--s:${Math.max(lp, sp)}">${inner}</span>`;
 const ready = () => LEVELS.filter((l) => l.id && BASES[l.id]);
 // Exams are kept per level; records from before levels existed have no lv and are Bareboat Skipper's.
 const lvOf = (x) => (x && x.lv) || DEFAULT_LEVEL;
@@ -534,7 +535,7 @@ function nextPhoto() {
 const avatar = (u, cls, style = '') => `<span class="${cls}" data-ava="${u.id}" style="${style}">${PHOTOS[u.id] ? `<img src="${PHOTOS[u.id]}" alt="">` : esc(initials(studentName(u)))}</span>`;
 let ADM_SORT = 'progress'; // 'progress' | 'name' | 'joined'
 function sortedStudents() {
-  const list = ADM.slice(), pct = (u) => { const L = studentLevel(u); return L ? L.pct : -1; };
+  const list = ADM.slice(), pct = (u) => { const L = studentLevel(u); return L ? L.seenPct * 1000 + L.pct : -1; };
   const plain = (u) => studentName(u).replace(/^@/, ''); // a username stands in for a missing name; sort it by its letters
   if (ADM_SORT === 'name') list.sort((a, b) => plain(a).localeCompare(plain(b), t('locale')));
   else if (ADM_SORT === 'joined') list.sort((a, b) => Date.parse(b.joined) - Date.parse(a.joined));
@@ -585,7 +586,8 @@ function wrongBtn(id) {
   const on = S.wrong.includes(id);
   return `<button class="mini red${on ? ' on' : ''}" data-act="wrong" data-id="${id}"><span data-i="flag" data-s="14"></span>${on ? t('wrongOn') : t('wrong')}</button>`;
 }
-// A student's mastery of a level, in % of its bank; the level they work on, or the one they have seen most of.
+// A student's progress in a level, in % of its bank (pct = mastered, seenPct = seen); the level they work on, or the one
+// they have seen most of. The list shows seenPct as the number, like the student's own ring, and pct as the dark bar.
 function studentLevel(u) {
   const lv = (u.level && LEVELS.find((l) => l.id === u.level && BASES[l.id])) ||
     ready().slice().sort((a, b) => ((u.levels[b.prefix] || {}).seen || 0) - ((u.levels[a.prefix] || {}).seen || 0))[0];
@@ -797,7 +799,7 @@ const VIEWS = {
 
   /* A2 Level */
   level() {
-    const lp = levelPct(), m = BANK.questions.filter((q) => mastered(q.id)).length;
+    const lp = levelPct(), sp = seenPct(), m = BANK.questions.filter((q) => mastered(q.id)).length;
     const any = BANK.questions.some((q) => touched(q.id));
     const weakest = weakTopics().sort((a, b) => topicAcc(a) - topicAcc(b)).slice(0, 2).map(short);
     const sn = BANK.questions.filter((q) => touched(q.id)).length;
@@ -805,7 +807,7 @@ const VIEWS = {
     const mis = allMistakes().length;
     return {
       title: LEVEL.title,
-      body: `<div class="row" style="gap:18px;align-items:center">${ring(lp, seenPct(), ' l', `<b data-count="${lp}" data-suffix="%">${lp}%</b><small>${t('mastered')}</small>`)}
+      body: `<div class="row" style="gap:18px;align-items:center">${ring(lp, sp, ' l', `<b data-count="${sp}" data-suffix="%">${sp}%</b><small>${t('covered')}</small>`)}
           <p class="body-s">${esc(text)}</p></div>
         <div class="row" style="gap:10px"><button class="pill pill-primary lvl-btn" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
           <button class="pill lvl-btn" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
@@ -1051,7 +1053,7 @@ const VIEWS = {
       const rows = sortedStudents().map((u) => {
         const name = studentName(u), L = studentLevel(u);
         const meta = [u.username && u.name ? '@' + u.username : '', L && L.seen ? L.lv.title : '', day(u.active)].filter(Boolean).join(' · ');
-        const right = u.total ? `<b>${L ? L.pct + '%' : '–'}</b>${t('answeredN', u.total)}` : t('noProgress');
+        const right = u.total ? `<b>${L ? L.seenPct + '%' : '–'}</b>${t('answeredN', u.total)}` : t('noProgress');
         const bar = L && L.seen ? `<span class="bar"><i style="width:${L.pct}%"></i><i class="seen" style="left:${L.pct}%;width:${Math.max(0, L.seenPct - L.pct)}%"></i></span>` : '';
         return `<div class="topic${bar ? ' x3' : ''} stu" data-act="student" data-id="${u.id}">${avatar(u, 'ico')}<span class="card-title">${esc(name)}</span><span class="tmeta">${esc(meta)}</span>${bar}<span class="n">${right}</span></div>`;
       }).join('');

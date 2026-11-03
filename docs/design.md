@@ -28,7 +28,7 @@ One system for the mini app and the website.
 | Class | What |
 |---|---|
 | `.lvl` | Level card: mastery ring, title, meta, chevron. `.on` = current level, `.soon` = not yet available. |
-| `.ring` | Mastery ring, `--v` = percent; `.l` large; `.bad` red; `.ink` black. |
+| `.ring` | Progress ring: the number and full arc are the share seen (`--s`), the darker step is mastered (`--v`); `.l` large; `.bad` red; `.ink` black. |
 | `.topics .topic` | Topic row: icon, title, mastered/total, bar. `.weak` (< 50 %) red bar, `.done` black icon. |
 | `.progress` | Session segments: `.ok` blue, `.bad` red, `.now` black; `.bar.ink` is the exam's thin bar. |
 | `.q` + `.opts .opt` | Question text and option cards; `.sel` chosen, `.ok` right, `.bad` wrong, `.dim` faded. |
