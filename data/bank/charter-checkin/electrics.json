@@ -1,0 +1,1215 @@
+[
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "The technician opens the battery lockers of the catamaran and shows you this. What do you want to be sure of before he closes them?",
+  "a": "That each engine has its own starter battery and the house bank is separate from both",
+  "o": [
+   "That all five batteries are wired as one bank, for the most capacity",
+   "That the house bank starts the engines when the starter batteries are low",
+   "That the port engine battery also runs the fridge, being the strongest one"
+  ],
+  "why": "Separate banks: a flat house bank after a night at anchor still leaves each engine its own battery to start.",
+  "ref": "Check-in: batteries",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran 42 ft — batteries",
+   "lines": [
+    "Port engine: 1 × 80 Ah",
+    "Stbd engine: 1 × 80 Ah",
+    "House bank: 3 × 100 Ah",
+    "Fitted 2022 (base)"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "The technician shows you the battery switches and gives you this advice. How will you actually run them?",
+  "a": "ENGINE and HOUSE on at sea and at anchor; BOTH only for a flat-battery start; all off leaving the boat",
+  "o": [
+   "BOTH on all week, as he says, so the fridge and the lights can draw on both banks together",
+   "HOUSE off under way so the alternator puts the whole charge into the engine battery",
+   "ENGINE off at anchor so the fridge and the lights cannot flatten the starter battery"
+  ],
+  "why": "Both banks on keeps them separate; BOTH joins them, so a flat house bank takes the engine battery with it.",
+  "ref": "Check-in: battery switches",
+  "fig": {
+   "type": "card",
+   "title": "Battery switches",
+   "lines": [
+    "Two red switches: ENGINE, HOUSE",
+    "A third: BOTH (parallel)",
+    "Technician: \"just leave BOTH on all week\""
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "First morning at anchor; you read the battery monitor before switching anything on. What state is the house bank in?",
+  "a": "Full — a rested bank at 12.7 V is near 100 %",
+  "o": [
+   "Half — 12.7 V is midway between flat and full",
+   "Flat — anything under 13 V needs the engine now",
+   "Overcharged — a bank at rest should read 12.0 V"
+  ],
+  "why": "Rested, no load: 12.7 V full, 12.4 V about 75 %, 12.2 V half, 12.0 V or less flat.",
+  "ref": "Battery monitor",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.7",
+     false
+    ],
+    [
+     "Amps",
+     "0",
+     false
+    ]
+   ],
+   "lines": [
+    "Sunday 07:00, at anchor",
+    "Nothing switched on since 23:00"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "At check-in the technician points at the voltmeter and says the batteries are 'perfect'. What does this reading actually tell you?",
+  "a": "Only that the charger is working — the state of the bank shows after a rest off the charger",
+  "o": [
+   "That the bank is full and will hold 13.8 V all night at anchor",
+   "That the bank is being overcharged and the charger must go off now",
+   "That the batteries are new — an old bank never gets up to 13.8 V"
+  ],
+  "why": "On charge the charger sets the volts (13.8 float, 14.4 bulk); the bank's own voltage is read after an hour at rest.",
+  "ref": "Battery monitor — charging",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "13.8",
+     false
+    ],
+    [
+     "Amps",
+     "+4",
+     false
+    ]
+   ],
+   "lines": [
+    "Shore power connected",
+    "Charger on, Saturday 16:00"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "You are going through the panel with the technician and see this. What do you do?",
+  "a": "Note it on the form and ask the base to sort it before you sail — the charger is off or the bank is dead",
+  "o": [
+   "Accept it — the bank will come up once you run the engine on Sunday morning",
+   "Switch to BOTH so the engine battery carries the house bank for the week",
+   "Move the cable to another pedestal socket, see the light come on and sign"
+  ],
+  "why": "Plugged in, the bank should read 13.8–14.4 V; 11.8 V with current going out means no charge — and ask how old the bank is.",
+  "ref": "Check-in: batteries",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "11.8",
+     true
+    ],
+    [
+     "Amps",
+     "-6",
+     false
+    ]
+   ],
+   "lines": [
+    "Shore power connected",
+    "Check-in, Saturday 15:00",
+    "House bank"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "The technician waves at the panel, says 'all the usual' and heads for the engine bay. What do you ask him to do first?",
+  "a": "Switch on each breaker in turn and show you what it feeds",
+  "o": [
+   "Leave every breaker on so you can find out as you go",
+   "Explain the 230 V side only — the 12 V side is obvious",
+   "Hand you the boat manual to read the panel on passage"
+  ],
+  "why": "You will be finding these at night in a blow; VHF, instruments and the windlass each have their own breaker.",
+  "ref": "Check-in: electrical panel",
+  "fig": {
+   "type": "card",
+   "title": "DC panel",
+   "lines": [
+    "NAV LIGHTS · ANCHOR LIGHT · INSTRUMENTS",
+    "FRIDGE · WATER PUMP · BILGE PUMP",
+    "WINDLASS · VHF · AUTOPILOT",
+    "CABIN LIGHTS · FANS · USB"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Your crew asks whether the kettle and the hairdryer will work in the bays. What do you tell them?",
+  "a": "Only on shore power — at anchor the 230 V outlets are dead and the inverter runs a laptop, not a kettle",
+  "o": [
+   "Yes — flip the 230 V main breaker and the batteries feed the outlets directly",
+   "Yes with the engine running — the alternator powers the 230 V side of the panel",
+   "Yes — switch the charger on and it converts 12 V into 230 V for the outlets"
+  ],
+  "why": "The 230 V side is live only on shore power or a generator; a 300 W inverter will not run a 2 kW kettle.",
+  "ref": "12 V and 230 V systems",
+  "fig": {
+   "type": "card",
+   "title": "Main panel",
+   "lines": [
+    "Left: 12 V DC — breakers, voltmeter",
+    "Right: 230 V AC — RCD, charger, outlets, water heater",
+    "Inverter 300 W: one socket at the chart table"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "The technician plugs the shore cable in and goes to fetch the inventory list. You look at the 230 V panel. What do you do?",
+  "a": "Unplug it and tell the base — the pedestal is miswired; no 230 V until it is fixed",
+  "o": [
+   "Press the RCD test button to clear the warning and carry on",
+   "Ignore it — polarity only matters on American 110 V boats",
+   "Turn the plug the other way round in the pedestal socket"
+  ],
+  "why": "Reverse polarity leaves the live side on breakers that should be neutral; an RCD does not make it safe.",
+  "ref": "Shore power — polarity and RCD",
+  "fig": {
+   "type": "card",
+   "title": "230 V panel after plugging in",
+   "lines": [
+    "Shore power: green light on",
+    "Reverse polarity: red light on",
+    "RCD: holding"
+   ],
+   "tag": "Red"
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Sunday 10:00, the technician has gone and you are ready to cast off from the pontoon. In what order do you deal with the shore power?",
+  "a": "Charger and 230 V main off, pedestal switch off, unplug the pedestal end first, then the boat end, stow the cable",
+  "o": [
+   "Unplug the boat end first, hand the live cable to a crew on the pontoon, then the pedestal end",
+   "Leave it plugged in until the engine is running for a last charge, then pull both ends at once",
+   "Pull both ends, leave the cable on the pontoon for the base to collect, cast off"
+  ],
+  "why": "Dead before you touch it, pedestal end first so no live plug lies on deck; the cable is on the inventory.",
+  "ref": "Shore power — leaving the berth",
+  "fig": null
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "You ask the technician to start the engine and watch the battery monitor. What do you tell him?",
+  "a": "It is not charging — the alternator or belt needs looking at before you leave",
+  "o": [
+   "All good — volts must drop a little when the engine takes its load",
+   "All good — the alternator only starts charging above 2000 rpm",
+   "All good — it charges the engine battery, which is not on this monitor"
+  ],
+  "why": "With the engine running the monitor should show about 14 V and current going in; 12.3 V and −8 A is no charge.",
+  "ref": "Check-in: alternator",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.3",
+     false
+    ],
+    [
+     "Amps",
+     "-8",
+     false
+    ],
+    [
+     "RPM",
+     "1500",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine running 3 min",
+    "Started at 12.4 V"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "The technician resets the breaker, the windlass runs, and he moves on. What rule do you take away, and what do you ask before he goes?",
+  "a": "Engine running whenever you use it; and where the spare fuses are, for anything that blows instead of tripping",
+  "o": [
+   "Breaker on all week so the remote always works; and whether the base will come out if it trips again",
+   "Use it with the engine off at anchor so the alternator is unloaded; and the make of the motor",
+   "Start the engine only if it stalls; and whether the house bank can be switched in to help it"
+  ],
+  "why": "The windlass draws 80–100 A; the alternator covers it and the engine is ready. A breaker resets, a fuse needs a spare.",
+  "ref": "Check-in: windlass",
+  "fig": {
+   "type": "card",
+   "title": "Windlass",
+   "lines": [
+    "Breaker 80 A at the chart table",
+    "Fed from the engine battery",
+    "Remote in the anchor locker",
+    "Tripped on the first test, reset"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "Evening in the bay, the fridge is the only thing running. Do you leave it on overnight?",
+  "a": "Yes — about 5 A for 10 h is 50 Ah, a quarter of the bank; charge with the engine in the morning",
+  "o": [
+   "No — switch it off at night; 5 A will flatten 200 Ah well before dawn",
+   "Yes, and the lights and the inverter too — 200 Ah is enough for the week",
+   "Only with BOTH selected so the engine battery shares the night's load"
+  ],
+  "why": "Amps × hours = amp-hours; a lead-acid bank should not go below half, so 50 Ah of 200 is fine.",
+  "ref": "Power budget — fridge",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.5",
+     false
+    ],
+    [
+     "Amps",
+     "-5",
+     false
+    ]
+   ],
+   "lines": [
+    "Evening at anchor, fridge only",
+    "House bank 2 × 100 Ah"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Saturday night you switch on NAV LIGHTS and walk out along the pontoon to look at the bow. This is what you see. What do you do?",
+  "a": "Note the dead starboard light on the form and ask the base to replace the bulb before you sail",
+  "o": [
+   "Sail with the tricolour instead — it shows the same arcs",
+   "Buy a bulb in town on Monday and fit it yourself",
+   "Accept it — you plan to be in a harbour every night"
+  ],
+  "why": "Test the lights at the pontoon, at night, from outside; the base replaces what is dead.",
+  "ref": "Check-in: navigation lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 62,
+     "t": "steaming"
+    },
+    {
+     "c": "r",
+     "x": 118,
+     "y": 118,
+     "t": "port"
+    }
+   ],
+   "note": "Pontoon, 21:00 — seen from ahead, NAV LIGHTS on"
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "You switch on the ANCHOR breaker and look up from the pontoon. What have you confirmed?",
+  "a": "The all-round white anchor light works — the one to show every night at anchor",
+  "o": [
+   "The steaming light works — the one to show at anchor with the engine off",
+   "The tricolour works — show it at anchor to save the battery",
+   "The deck light works — enough for a quiet bay with no traffic"
+  ],
+  "why": "At anchor at night a vessel shows an all-round white light (Rule 30); test it where you can see it.",
+  "ref": "COLREGs Rule 30 — anchor light",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 58,
+     "t": "white, masthead"
+    }
+   ],
+   "note": "Pontoon, 21:10 — ANCHOR breaker on"
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "The technician reads this off the inventory list without opening the floor. How do you check it before you sign?",
+  "a": "Switch to ON and hear it run, lift the float for AUTO, find the hand-pump handle",
+  "o": [
+   "Trust the panel light — it only comes on if the pump is wired",
+   "Leave it on AUTO and look at the bilge again at check-out",
+   "Set it to OFF so it cannot drain the batteries at anchor"
+  ],
+  "why": "A pump that was never heard is a pump that may not run; AUTO stays selected all week.",
+  "ref": "Check-in: bilge pump",
+  "fig": {
+   "type": "card",
+   "title": "Bilge pump",
+   "lines": [
+    "Electric: float switch in the bilge",
+    "Panel switch: AUTO / OFF / ON",
+    "Hand pump in the cockpit, handle in the locker"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "What do you do with these two before you sign, and what do you ask?",
+  "a": "Press TEST on each and hear it; ask what to do when the gas alarm sounds",
+  "o": [
+   "Take the battery out of the CO alarm so it does not chirp at night",
+   "Note that they are fitted — testing them trips the panel breaker",
+   "Ask for a spare detector in case this one goes off falsely"
+  ],
+  "why": "Gas alarm: close the bottle valve, no switches, ventilate; a dead CO alarm goes on the form.",
+  "ref": "Gas detector and CO alarm",
+  "fig": {
+   "type": "card",
+   "title": "Alarms",
+   "lines": [
+    "Gas detector: sensor in the bilge, panel at the galley",
+    "CO alarm in the saloon, 9 V battery",
+    "Test button on both"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "The technician says 'you will not need these' and skips them. What do you ask him to show you anyway?",
+  "a": "The solar controller charging, and the generator started with water at its exhaust; note the hours",
+  "o": [
+   "Nothing — extras you do not use are not your problem at check-out",
+   "The generator fuel level only; a solar panel has nothing to check",
+   "The panel wiring under the bimini, with the controller switched off"
+  ],
+  "why": "Anything on the inventory is yours for the week; a generator is checked like the engine — hours and raw water.",
+  "ref": "Check-in: solar and generator",
+  "fig": {
+   "type": "card",
+   "title": "Also fitted",
+   "lines": [
+    "Solar 200 W on the bimini, controller at the chart table",
+    "Generator 4 kVA, hours 1,240",
+    "Generator strainer under the aft bunk"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "The technician brings this cable to plug you in. What do you do?",
+  "a": "Refuse it and ask for another — a damaged 230 V cable on a wet pontoon can kill",
+  "o": [
+   "Tape over the cut and plug in — the RCD will trip if anything leaks",
+   "Use it with dry hands and keep the cut end on the boat, not the pontoon",
+   "Plug it in only at night when nobody is walking along the pontoon"
+  ],
+  "why": "230 V, seawater and bare copper: no tape, no dry hands; the base has another cable.",
+  "ref": "Shore power — 230 V safety",
+  "fig": {
+   "type": "card",
+   "title": "Shore cable",
+   "lines": [
+    "Outer sheath cut, copper showing near the plug",
+    "Pontoon wet, rain forecast",
+    "Pedestal RCD: unknown"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "The technician lifts the bunk and shows you the batteries. What do you do?",
+  "a": "Ask him to show you the master switches and fit terminal covers; you do not touch the terminals",
+  "o": [
+   "Check the terminals are tight with the winch handle while he watches",
+   "Note it and plan to buy terminal covers in town on Monday",
+   "Ask him to disconnect the bank so you can inspect each battery"
+  ],
+  "why": "A dropped spanner across the terminals is a fire; in a fire you must find the master switch in the dark.",
+  "ref": "Check-in: batteries and master switch",
+  "fig": {
+   "type": "card",
+   "title": "Battery compartment",
+   "lines": [
+    "Under the aft bunk, terminals uncovered",
+    "Master switches: behind the companionway steps",
+    "Technician: \"check they are tight if you like\""
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "The technician asks how you plan to run the boat for the week. What is your plan?",
+  "a": "Engine an hour morning and evening, fridge on, instruments and autopilot off when not needed",
+  "o": [
+   "Run everything — 200 Ah will see the week out without charging",
+   "Keep the engine idling all night so the fridge never drains the bank",
+   "Fridge off, autopilot on all night — the autopilot matters more"
+  ],
+  "why": "About 100 Ah usable; a day's draw is near that, so charge twice a day and cut what is not in use.",
+  "ref": "Power budget for the week",
+  "fig": {
+   "type": "card",
+   "title": "Power budget",
+   "lines": [
+    "Fridge 5 A · instruments 2 A · lights 2 A · autopilot 4 A",
+    "House bank 2 × 100 Ah, usable half",
+    "No solar, no generator",
+    "Four nights at anchor planned"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "Tuesday, 08:00, at anchor. You read the battery monitor before breakfast. What does the third figure tell you?",
+  "a": "That 76 Ah have been drawn from the bank since it was last full",
+  "o": [
+   "That 76 Ah are left in the bank before it is completely flat",
+   "That the bank has lost 76 Ah of its capacity with age",
+   "That the alternator will put back 76 Ah in the next hour"
+  ],
+  "why": "The monitor counts amp-hours out and in since the last full charge; 76 drawn from 200 Ah matches the 62 %.",
+  "ref": "Battery monitor — amp-hours",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Charge",
+     "62%",
+     false
+    ],
+    [
+     "Amps",
+     "-3",
+     false
+    ],
+    [
+     "Used Ah",
+     "-76",
+     false
+    ]
+   ],
+   "lines": [
+    "House bank 2 × 100 Ah",
+    "Last full: Sunday at the base"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "Saturday night on shore power, a crew member in the aft cabin complains of a humming box under the bunk. You read its display. What do you tell them?",
+  "a": "It is the charger holding a full bank; the fan hum is normal",
+  "o": [
+   "It is the charger failing; switch it off until the morning",
+   "It is the bank still flat; FLOAT means a slow first charge",
+   "It is the inverter; it runs whenever shore power is in"
+  ],
+  "why": "Bulk, absorption, float: float is the last stage — the bank is full and the charger just keeps it there.",
+  "ref": "Battery charger — stages",
+  "fig": {
+   "type": "card",
+   "title": "Charger display",
+   "lines": [
+    "Mode: FLOAT",
+    "Output 13.6 V, 1 A",
+    "Fan running"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "Monday, the plotter and the depth go dead together. Behind the panel you find this. What do you fit?",
+  "a": "A 10 A spare; if it blows again, leave it out and call the base",
+  "o": [
+   "A 15 A spare, so that it does not blow again on the same load",
+   "A 20 A spare, since a bigger fuse protects the plotter better",
+   "Any spare that fits the holder, since the rating is only a guide"
+  ],
+  "why": "A fuse protects the wire; a bigger one lets the wire burn before it blows. A second blow means a fault, not a weak fuse.",
+  "ref": "Fuses — spares",
+  "fig": {
+   "type": "card",
+   "title": "Fuse holder: INSTRUMENTS",
+   "lines": [
+    "Fuse 10 A, blown",
+    "Spares box: 5 A, 10 A, 15 A, 20 A"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "Wednesday, 18:00, you are berthed in a marina in Kos and want shore power. In which order do you connect?",
+  "a": "Boat end first, then the pedestal end, then the pedestal switch and the 230 V main",
+  "o": [
+   "Pedestal end first and switched on, then carry the live plug to the boat",
+   "Boat's 230 V main on first, so the panel is ready when the cable goes live",
+   "Both ends at once, one crew at each, then switch the pedestal on"
+  ],
+  "why": "Never hold a live plug: the cable goes live last, from the pedestal, once both ends are in.",
+  "ref": "Shore power — connecting",
+  "fig": {
+   "type": "card",
+   "title": "Marina berth",
+   "lines": [
+    "Pedestal: 16 A socket with its own switch",
+    "Boat inlet: in the cockpit locker",
+    "Boat's 230 V main: off"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "Monday noon in a bay, engine off. You read the solar controller at the chart table. What is it doing?",
+  "a": "Charging the house bank at 7 A from the panels",
+  "o": [
+   "Nothing yet — 19.5 V is the panels' voltage with no load",
+   "Drawing 7 A from the bank to run the controller",
+   "Overcharging — a bank should never read above 12.7 V"
+  ],
+  "why": "The controller turns the panels' higher voltage into a charge: +7 A is going in, and 13.9 V is a bank on charge.",
+  "ref": "Solar controller",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Panel V",
+     "19.5",
+     false
+    ],
+    [
+     "Battery V",
+     "13.9",
+     false
+    ],
+    [
+     "Amps",
+     "+7",
+     false
+    ]
+   ],
+   "lines": [
+    "Solar 200 W on the bimini",
+    "Sky clear"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 1,
+  "q": "Your crew want to stuff a towel into the small vent by the battery box under the bunk to stop a draught. What do you tell them?",
+  "a": "Leave it open — batteries on charge give off hydrogen that must get out",
+  "o": [
+   "Fine at anchor — the vent only matters on shore power",
+   "Fine — the vent is there only to let the batteries' heat out",
+   "Fine — modern batteries are sealed and give off nothing at all"
+  ],
+  "why": "Lead-acid batteries gas hydrogen on charge, more when overcharged; with the vent blocked it collects where a spark can light it.",
+  "ref": "Batteries — ventilation",
+  "fig": null
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Saturday, 18:00, on shore power since noon. You lift the aft bunk and find this. What do you do?",
+  "a": "Charger off, hatches open, no switches or sparks near it, and call the base",
+  "o": [
+   "Loosen the hot battery's terminals with a spanner and lift it out",
+   "Leave it — the smell is the holding tank next to the batteries",
+   "Lay a wet towel over it and let the charger finish its cycle"
+  ],
+  "why": "A battery cooking on charge gives off hydrogen sulphide and hydrogen: stop the charge, ventilate, no sparks.",
+  "ref": "Batteries — overcharging",
+  "fig": {
+   "type": "card",
+   "title": "Battery compartment",
+   "lines": [
+    "Smell of rotten eggs",
+    "One battery hot to the touch, case bulging",
+    "Charger: BULK for 6 h"
+   ],
+   "tag": "Hot"
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Wednesday, under sail, engine off. Smoke and a hot smell come from behind the DC panel. What do you do first?",
+  "a": "Battery switches off, then the powder extinguisher at the panel if it still burns",
+  "o": [
+   "A bucket of seawater on the panel, then the battery switches",
+   "Open the panel and find the burning wire before switching off",
+   "Switch the breakers off one by one to find the faulty circuit"
+  ],
+  "why": "Cut the source first: with the batteries isolated most electrical fires die; never water on a live panel.",
+  "ref": "Electrical fire",
+  "fig": {
+   "type": "card",
+   "title": "Chart table",
+   "lines": [
+    "Smoke from behind the DC panel",
+    "Battery switches: behind the steps",
+    "Extinguisher: powder, by the companionway"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "42 ft catamaran at anchor. A crew member asks to use her hairdryer on the inverter socket. What do you say?",
+  "a": "Yes, for a few minutes, with the generator or an engine running",
+  "o": [
+   "Yes, as long as she likes — 400 Ah does not notice a hairdryer",
+   "No — an inverter cannot run anything that heats up",
+   "Only with the charger on, so that it feeds the inverter"
+  ],
+  "why": "1,600 W from 12 V is about 140 A; ten minutes is over 20 Ah — fine with a charge going in, not every morning off the bank.",
+  "ref": "Inverter — big loads",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran 42 ft — power",
+   "lines": [
+    "Inverter 2,000 W",
+    "House bank: lithium 400 Ah",
+    "Hairdryer: 1,600 W",
+    "Generator fitted"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Tuesday, motoring along the coast, the INSTRUMENTS breaker trips. You reset it and it trips again at once. What do you do?",
+  "a": "Leave it off, navigate by compass and paper chart, and call the base",
+  "o": [
+   "Hold the breaker in by hand until the instruments come back",
+   "Tape the breaker on so that a wave cannot trip it again",
+   "Move the instruments onto the fridge's 15 A breaker"
+  ],
+  "why": "A breaker that trips at once has found a short; forcing it on heats the wiring. Paper chart, compass, and the base's help.",
+  "ref": "Breakers — a short circuit",
+  "fig": {
+   "type": "card",
+   "title": "DC panel",
+   "lines": [
+    "INSTRUMENTS 10 A: tripped twice",
+    "Plotter, depth, wind: dead",
+    "Daylight, coast in sight"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "The technician shows you the electric winch for the main halyard. What do you ask him before he moves on?",
+  "a": "Where its isolator is, so anyone can stop it if a hand is caught",
+  "o": [
+   "Whether the button can be held while you go forward to watch the sail",
+   "Whether it runs off the starter battery so the house bank is spared",
+   "How many turns to put on so that the line can never slip off"
+  ],
+  "why": "A powered winch does not feel a finger or a fouled line; the button at the helm and the isolator below must be known to all.",
+  "ref": "Electric winches",
+  "fig": {
+   "type": "card",
+   "title": "Electric winch",
+   "lines": [
+    "Push button at the helm",
+    "Draws up to 100 A",
+    "Isolator: not shown"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Thursday in the marina. Your shore cable sags into the water between the pontoon and the transom, and the crew want to swim off the stern. What do you do?",
+  "a": "Lift the cable clear and tie it up; nobody swims in the marina",
+  "o": [
+   "Nothing — the RCD on the pedestal makes it safe to swim",
+   "Switch the boat's charger off and let them swim",
+   "Let them swim on the far side of the boat from the cable"
+  ],
+  "why": "Stray 230 V in marina water can kill a swimmer; keep cables out of the water and do not swim between pontoons.",
+  "ref": "Shore power — 230 V and water",
+  "fig": null
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Thursday, 15:00, the catamaran at anchor. The generator runs for the air-con and the crew are jumping off the stern steps. What do you do?",
+  "a": "Stop the generator while anyone is swimming near the stern",
+  "o": [
+   "Nothing — the exhaust goes into the water, not the air",
+   "Ask them to swim off the starboard hull only",
+   "Run it faster so that the exhaust clears away quicker"
+  ],
+  "why": "Generator exhaust carries carbon monoxide; at the stern, in still air, a swimmer breathes it at the waterline. Swim with it off.",
+  "ref": "Generator — carbon monoxide",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran at anchor",
+   "lines": [
+    "Generator running, exhaust at the port transom",
+    "Swimmers at the stern steps",
+    "Wind light, from ahead"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Monday, 08:00: the starter battery was flat, you switched to BOTH and the engine is now running. What do you do with the switches?",
+  "a": "BOTH off now, and an hour's charge before you trust the starter alone",
+  "o": [
+   "Leave BOTH on all day so the starter charges from the house bank",
+   "BOTH off and stop the engine — it has started, the job is done",
+   "Stop the engine and restart it on ENGINE alone to test it"
+  ],
+  "why": "Left in parallel, the two banks drain together again overnight; separate them and give the starter time to charge.",
+  "ref": "Battery switches — after a parallel start",
+  "fig": {
+   "type": "card",
+   "title": "Battery switches now",
+   "lines": [
+    "ENGINE: on · HOUSE: on",
+    "BOTH (parallel): on",
+    "Engine running, 1,500 rpm"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Wednesday evening on shore power in Split. Each time the water-heater breaker goes on, the RCD trips. What do you do?",
+  "a": "Leave the water heater off and tell the base — it is leaking to earth",
+  "o": [
+   "Reset the RCD and hold it up until the water has warmed",
+   "Plug into another pedestal socket and try it again",
+   "Run the water heater from the inverter instead"
+  ],
+  "why": "An RCD trips on current leaking to earth; a heater element that trips it is faulty and could make the water live.",
+  "ref": "Shore power — RCD",
+  "fig": {
+   "type": "card",
+   "title": "230 V panel",
+   "lines": [
+    "RCD trips when WATER HEATER goes on",
+    "Charger and sockets: fine without it"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Thursday, 08:00, in a marina in Trogir: the pedestal trips each morning as breakfast starts. What is happening, and what do you do?",
+  "a": "Heater, kettle and charger together pass 10 A — one big load at a time",
+  "o": [
+   "The pedestal is faulty — ask the marina for another berth",
+   "The kettle leaks to earth — throw it out and use the stove",
+   "Morning damp in the cable — dry the plug and reset it"
+  ],
+  "why": "Watts ÷ 230 = amps: 3,700 W is about 16 A on a 10 A pedestal. Water heater off while the kettle boils.",
+  "ref": "Shore power — load",
+  "fig": {
+   "type": "card",
+   "title": "Shore power",
+   "lines": [
+    "Pedestal: 10 A",
+    "Water heater 1,200 W · kettle 2,000 W",
+    "Charger 500 W"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Tuesday, a town marina: your plug does not fit the pedestal socket. A crew member offers to cut the plug off and push the bare wires in. What do you do?",
+  "a": "Ask the marina office for an adapter; no bare wires in a pedestal",
+  "o": [
+   "Let him do it, as long as he switches the pedestal off first",
+   "Do it, and tape the wires in so that they cannot pull out",
+   "Run an extension lead across from the neighbour's boat"
+  ],
+  "why": "Bare wires in a 230 V socket on a wet pontoon can kill, and a cut plug is charged to your deposit; ask the office for an adapter.",
+  "ref": "Shore power — adapters",
+  "fig": {
+   "type": "card",
+   "title": "Pedestal",
+   "lines": [
+    "Sockets: a type your plug does not fit",
+    "Marina office: open till 20:00"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Wednesday, 21:00, at anchor in a bay where boats are still coming in: the anchor light has failed and you cannot fix it tonight. What do you do?",
+  "a": "Hang an all-round white lamp in the foretriangle and call the base in the morning",
+  "o": [
+   "Go up the mast in the dark and change the bulb",
+   "Show the steaming light instead until the morning",
+   "Leave the cabin lights on so that boats see the glow"
+  ],
+  "why": "The rule wants an all-round white light where it is best seen; a lamp hung forward does that. Nobody climbs the mast at night.",
+  "ref": "Anchor light — failure",
+  "fig": null
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Your crew, keen to save power, are about to switch off every breaker for the night at anchor. Which stay on?",
+  "a": "Anchor light, bilge pump and gas alarm; the rest is your choice",
+  "o": [
+   "Only the fridge — the food matters more than the alarms",
+   "None — the bilge pump runs straight off the battery",
+   "Anchor light only — the gas alarm has its own battery"
+  ],
+  "why": "Seen, kept afloat, warned of gas: these three keep the boat safe overnight; the fridge or the VHF is a choice.",
+  "ref": "Breakers — overnight at anchor",
+  "fig": {
+   "type": "card",
+   "title": "DC panel",
+   "lines": [
+    "ANCHOR LIGHT · BILGE PUMP · GAS ALARM",
+    "FRIDGE · INSTRUMENTS · VHF",
+    "CABIN LIGHTS · WATER PUMP · USB"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "You shine a torch on the starter battery while the technician waits. What do you ask for?",
+  "a": "The post cleaned and the lug tightened before you sail",
+  "o": [
+   "A tin of grease, so you can clean it yourself on Monday",
+   "Nothing — the crust is normal on a working battery",
+   "A note on the form, and you will take it from there"
+  ],
+  "why": "A loose, corroded lug fails under the starter's load — the engine will not turn on the very morning you need it.",
+  "ref": "Check-in: battery terminals",
+  "fig": {
+   "type": "card",
+   "title": "Starter battery",
+   "lines": [
+    "White-green crust on the positive post",
+    "Cable lug turns by hand"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "42 ft catamaran with a lithium house bank, Tuesday evening at anchor. Your crew say the volts 'look fine'. What do you tell them?",
+  "a": "Trust the 25 % — a lithium bank stays near 13 V until it is almost empty",
+  "o": [
+   "Trust the 13.1 V — the percentage is only the monitor's guess",
+   "Both are fine — 13.1 V on any bank means three-quarters full",
+   "Neither — read the starter battery to judge the house bank"
+  ],
+  "why": "Lithium holds a flat 13.0–13.3 V over most of its charge, so the volts say little; the monitor's amp-hour count is the gauge.",
+  "ref": "Lithium house bank",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "13.1",
+     false
+    ],
+    [
+     "Charge",
+     "25%",
+     true
+    ]
+   ],
+   "lines": [
+    "House bank: lithium 400 Ah",
+    "Fridges and lights on"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Wednesday on the catamaran, a long calm passage under power; you decide to run one engine to save fuel. Which one?",
+  "a": "The starboard — only its alternator charges the house bank",
+  "o": [
+   "The port — its alternator has less to charge, so it lasts longer",
+   "Either — each alternator charges every battery aboard",
+   "Swap every hour so that both starters stay equally charged"
+  ],
+  "why": "On many cats only one engine charges the house bank, and the base's sheet says which; run the other and the fridge sits on a falling bank.",
+  "ref": "Catamaran — charging",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran charging (base's sheet)",
+   "lines": [
+    "Port alternator: port starter only",
+    "Stbd alternator: stbd starter + house bank",
+    "House bank at 55 %"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Sunday evening at anchor you find the inverter on with nothing plugged in; your crew left it 'just in case'. What do you tell them?",
+  "a": "Off unless something is plugged in — idling, it takes about 24 Ah a day",
+  "o": [
+   "Leave it — with nothing plugged in it draws nothing",
+   "Leave it — at anchor it keeps the house bank topped up",
+   "Leave it — switching it on and off wears out its fan"
+  ],
+  "why": "An inverter draws power just standing by; a day of idling is over a tenth of a 200 Ah bank, for nothing.",
+  "ref": "Inverter — standby",
+  "fig": {
+   "type": "card",
+   "title": "Inverter",
+   "lines": [
+    "Switch: ON",
+    "Nothing plugged in",
+    "Standby draw: about 1 A (label)"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 2,
+  "q": "Motoring out of the bay, a crew member tidying the chart table turns the ENGINE battery switch off 'because the alternator is running now'. What do you do?",
+  "a": "Switch it back on at once — cutting it with the engine running can wreck the alternator",
+  "o": [
+   "Leave it — once running, a diesel needs no battery at all",
+   "Leave it, and switch it back on before you stop the engine",
+   "Switch it back on only if the battery light comes on"
+  ],
+  "why": "With the battery cut the alternator's output has nowhere to go; the spike can blow its diodes. Battery switches stay on under way.",
+  "ref": "Battery switches — under way",
+  "fig": null
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "Monday, 07:00, in a bay. The fridge was the only thing on overnight. You compare the readings. What do you do?",
+  "a": "The bank has lost much of its capacity — call the base for new batteries on your route",
+  "o": [
+   "Nothing — a fridge always takes a bank down to 11.9 V by morning",
+   "Switch the fridge off each night and carry on with the plan",
+   "Run the engine all day; a full charge will restore the old bank"
+  ],
+  "why": "40 Ah from 200 should still read about 12.4 V; 11.9 V means the old bank holds far less than its label. The base can swap it midweek.",
+  "ref": "Battery capacity — an old bank",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Sun 22:00",
+     "12.6",
+     false
+    ],
+    [
+     "Mon 07:00",
+     "11.9",
+     true
+    ]
+   ],
+   "lines": [
+    "House bank 2 × 100 Ah, fitted 2017",
+    "Fridge overnight: about 40 Ah"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "Catamaran, three nights at anchor planned. Reading the power figures at the briefing, what do you decide?",
+  "a": "Cockpit fridge off and an engine run twice a day — 12 A round the clock outruns the sun",
+  "o": [
+   "All three on — 400 Ah and the solar will cover any week at anchor",
+   "Solar alone will do — 400 W is more than the fridges use",
+   "Freezer off, nothing else — the fridges barely draw at night"
+  ],
+  "why": "12 A × 24 h is about 290 Ah a day; 100 Ah of sun and 200 usable last about a day. Cut a load and charge twice a day.",
+  "ref": "Power budget — catamaran",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran 42 ft — power budget",
+   "lines": [
+    "Galley fridge, cockpit fridge, freezer: 12 A together",
+    "House 4 × 100 Ah AGM, half usable",
+    "Solar 400 W: about 100 Ah on a sunny day",
+    "No generator"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "Thursday evening in a bay: strong wind is forecast for Friday's passage back to the base. You read this. What do you do tonight?",
+  "a": "Charge it full tonight and in the morning — tomorrow everything runs on it",
+  "o": [
+   "Save the engine for tomorrow — it will charge on the way back",
+   "Switch the house bank off tonight to hold it at 55 %",
+   "Nothing — the starter battery takes over if the house runs low"
+  ],
+  "why": "Go into a blow with a full bank: autopilot, plotter, VHF and bilge pump all draw on it, and the engine may yet stop.",
+  "ref": "Power budget — before a blow",
+  "fig": {
+   "type": "card",
+   "title": "Thursday 19:00",
+   "lines": [
+    "House bank at 55 %",
+    "Friday: F6–7, 25 miles to the base",
+    "Autopilot, VHF, plotter, bilge pump: house bank"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "Saturday 14:00, shore power off since the morning cleaning. The technician says 'the monitor says full'. What do you do?",
+  "a": "Believe the volts — have the bank tested and the monitor reset before you sign",
+  "o": [
+   "Believe the monitor — it counts every amp, the voltmeter only guesses",
+   "Accept it — 12.1 V with the fridge running is a full bank",
+   "Plug the charger back in for an hour, see 100 % again and sign"
+  ],
+  "why": "A monitor that has lost count shows whatever it was last set to; 12.1 V under a small load is a bank near half or below.",
+  "ref": "Battery monitor — out of step",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Charge",
+     "100%",
+     false
+    ],
+    [
+     "Volts",
+     "12.1",
+     true
+    ],
+    [
+     "Amps",
+     "-4",
+     false
+    ]
+   ],
+   "lines": [
+    "House bank 2 × 100 Ah",
+    "Fridge on since 08:00"
+   ]
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "Tuesday, 02:00, at anchor: a hum under the saloon floor wakes you. You find this. What do you do?",
+  "a": "Pump to OFF, look in the bilge every few hours, and call the base in the morning",
+  "o": [
+   "Leave it on AUTO — better a pump running dry than a flooded bilge",
+   "Pull its fuse for the rest of the week, since the bilge is dry",
+   "Set it to ON so that it runs steadily rather than cycling"
+  ],
+  "why": "A pump running dry burns out and drains the bank; switch it off and check the bilge by hand until the base fixes the float.",
+  "ref": "Bilge pump — stuck float switch",
+  "fig": {
+   "type": "card",
+   "title": "Bilge",
+   "lines": [
+    "Bilge pump running, panel light on",
+    "Bilge dry",
+    "Float switch stuck up, will not free"
+   ],
+   "tag": "02:00"
+  }
+ },
+ {
+  "topic": "electrics",
+  "difficulty": 3,
+  "q": "Wednesday, 11:00, motoring between islands, you check the monitor. What do you do for the rest of the week?",
+  "a": "Call the base, make for a marina with shore power tonight, and cut every load you can",
+  "o": [
+   "Carry on — the house bank will last till Friday on its own",
+   "Tighten the belt hard yourself and keep motoring as planned",
+   "Switch to BOTH so that the starter battery charges the house"
+  ],
+  "why": "No charge means the bank only falls; the base can send a technician, and shore power keeps the fridge and lights going until then.",
+  "ref": "Alternator failure mid-week",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.4",
+     true
+    ],
+    [
+     "Amps",
+     "-6",
+     false
+    ],
+    [
+     "RPM",
+     "1800",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine running 2 h",
+    "Battery light on since this morning"
+   ]
+  }
+ }
+]

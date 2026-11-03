@@ -22,7 +22,7 @@ const BOT_LINK = 'https://t.me/iyt_test_bot';
 const $app = document.getElementById('app');
 
 // IYT recreational levels in course-progression order (iytworld.com/students/recreational/iyt-course-progression),
-// then the Racing Rules of Sailing (not an IYT course). A level with an id has a bank (data/<id>.json, question ids
+// then the Racing Rules of Sailing and the Charter Check-in (not IYT courses). A level with an id has a bank (data/<id>.json, question ids
 // <prefix>-nnn); the others show as coming.
 const LEVELS = [
   { id: 'vhf-radio-operator', prefix: 'vhf', link: 'vhf', title: 'VHF Radio Operator' },
@@ -30,6 +30,7 @@ const LEVELS = [
   { id: 'flotilla-skipper', prefix: 'fs', link: 'flotilla', title: 'Flotilla Skipper' },
   { id: 'bareboat-skipper', prefix: 'bs', link: 'bareboat', title: 'Bareboat Skipper' },
   { id: 'racing-rules', prefix: 'rr', link: 'racing', title: 'Racing Rules of Sailing' },
+  { id: 'charter-checkin', prefix: 'ci', link: 'checkin', title: 'Charter Check-in' },
   { title: 'ICC', soon: 'planned' },
   { title: 'Yachtmaster Coastal', soon: 'soon' },
   { title: 'Yachtmaster Offshore', soon: 'soon2027' },
@@ -45,9 +46,14 @@ const TOPIC_ICONS = {
   'international-crew': { boat: 'yacht', sailing: 'sail', knots: 'knot', deck: 'cleat', helming: 'wheel', safety: 'lifejacket', lookout: 'binoculars', weather: 'cloud', aboard: 'mug', emergency: 'medkit' },
   'flotilla-skipper': { power: 'propeller', mooring: 'anchor', sailing: 'sail', colregs: 'rules', buoyage: 'buoy', pilotage: 'lighthouse', weather: 'barometer', systems: 'gear', skipper: 'captain', emergency: 'lifebuoy' },
   'racing-rules': { definitions: 'book', rightofway: 'sail', limits: 'wheel', marks: 'buoy', obstructions: 'lighthouse', starting: 'timer', course: 'map', propulsion: 'wind', penalties: 'refresh', protests: 'trophy' },
+  'charter-checkin': { papers: 'licence', hull: 'yacht', sails: 'sail', engine: 'propeller', electrics: 'battery', plumbing: 'drop', nav: 'compass', safety: 'lifejacket', ground: 'anchor', return: 'clipboard' },
 };
 const topicIcon = (tp, level = LEVEL) => (TOPIC_ICONS[level.id] || {})[tp.id] || tp.icon || 'book';
 const LANGS = ['en', 'ru'];
+// What each level is, in Russian; the English title stays (it is the name on the certificate), the gloss sits above it.
+const LEVEL_RU = { 'vhf-radio-operator': 'Оператор УКВ-радиосвязи', 'international-crew': 'Матрос международного класса', 'flotilla-skipper': 'Шкипер флотилии',
+  'bareboat-skipper': 'Шкипер бербоут-чартера', 'racing-rules': 'Правила парусных гонок', 'charter-checkin': 'Приёмка чартерной яхты' };
+const NON_IYT = new Set(['racing-rules', 'charter-checkin']); // banks that are not steps of the IYT course progression
 
 const BASES = {};   // level id → the bank as loaded (English); a level whose bank failed to load is left out
 let BASE = null;    // BASES of the current level
@@ -75,13 +81,17 @@ const STR = {
     learn: 'Learn', exam: 'Exam', progress: 'Progress', profile: 'Profile', back: '‹ Back',
     soon: 'Coming soon', soon2027: 'Coming in 2027', planned: 'Planned',
     homeKicker: 'IYT theory · free', homeTitle: 'Pass your IYT&nbsp;exam',
-    homeLead: 'Close-to-real questions for every certification level, with an explanation after each answer. Pick a level to continue.',
+    homeLead: 'Close-to-real questions for every certification level, with an explanation after each answer. Pick the level you are studying for.',
     streak: (n) => `${n}-day streak`,
     levelMeta: (t, q, ex) => `${pl(t, 'topic')} · ${pl(q, 'question')}${ex ? ' · ' + pl(ex, 'exam') + ' taken' : ''}`,
     examOpen: 'Mock exam in progress', continue: 'Continue',
     examLine: (a, n, left) => `${a} of ${n} answered · ${left} left`,
-    mastered: 'mastered', covered: 'covered', halfway: 'halfway', halfwayN: (n) => `+${n} halfway`, moreLevels: 'More levels',
-    levelText: (m, n, h, sn) => `${m} of ${n} mastered${h ? `, ${h} halfway there (right once)` : ''}. ${sn} seen so far.`,
+    mastered: 'mastered', covered: 'covered', halfway: 'right once', halfwayN: (n) => `+${n} right once`, moreLevels: 'More levels',
+    ringLabel: (s, m) => `${s}% seen · ${m}% mastered`, answers: 'Answer options', figure: 'Figure',
+    figNames: { anchor: 'Anchorage sketch', bay: 'Bay chart', buoy: 'Buoy', card: 'Notes', chart: 'Chart extract', compass: 'Compass rose', dayshape: 'Day shape', encounter: 'Two vessels meeting', isobars: 'Weather map', lights: 'Navigation lights', panel: 'Instrument panel', rope: 'Rope and knot', sail: 'Sailing boat and wind' }, timeLeft: 'Time left', fiveLeft: '5 minutes left',
+    nextLevelK: 'Next level', open: 'Open', resetNothing: 'Nothing to reset yet', retry: 'Try again', allTopicsChip: 'All topics',
+    longSession: 'A long one — quit any time, your answers are kept.', reportHint: 'Report a mistake in this question',
+    levelText: (m, n, h, sn) => `${sn} of ${n} seen so far. ${h ? `${h} right once, ` : ''}${m} mastered — right twice in a row.`,
     resumeK: 'Continue', resumeMeta: (sn, n, mis) => `${sn} of ${n} seen${mis ? ` · ${pl(mis, 'mistake')} to clear` : ''}`,
     practiseN: (n) => `Practise ${pl(n, 'question')}`, levelsK: 'Levels',
     mockExams: 'Mock exams', noExams: 'No mock exam yet — take one when you feel ready.', weakestTopics: 'Weakest topics', allTopics: 'All topics ›',
@@ -92,7 +102,7 @@ const STR = {
     mistakesToClear: 'Mistakes to clear', toAnswerTwice: (n) => `${pl(n, 'question')} to answer right twice`, review: 'Review',
     topics: 'Topics', masteredTotal: 'mastered / total',
     questionOf: (i, n) => `Question ${i} of ${n}`, correct: 'Correct', notQuite: 'Not quite', why: 'Why',
-    flag: 'Flag', flagged: 'Flagged', wrong: 'Wrong?', wrongOn: 'Reported', skip: 'Skip', check: 'Check', next: 'Next', finish: 'Finish', seeResults: 'See results',
+    flag: 'Flag', flagged: 'Flagged', wrong: 'Report', wrongOn: 'Reported', skip: 'Skip', check: 'Check', next: 'Next', finish: 'Finish', seeResults: 'See results',
     results: 'Results', heads: ['Excellent', 'Good session', 'Getting there', 'Keep going'],
     noMistakes: 'No mistakes this time.',
     score: 'score', time: 'time', byTopic: 'By topic', timeSpent: (s) => ` Time ${s}.`, statNew: 'first seen', statWrong: 'mistakes',
@@ -110,7 +120,7 @@ const STR = {
       ['No explanations until you submit', 'Afterwards every mistake shows the right answer and why.'],
       ['Leaving pauses the timer', 'Close the app and the exam waits for you, up to 24 hours.']],
     lastAttempts: 'Last attempts', passedW: 'passed', notPassedW: 'not passed',
-    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Exam size, time and pass mark are app defaults — there is no official rules exam.' : 'Exam size, time and pass mark are app defaults, not confirmed IYT figures.'),
+    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Exam size, time and pass mark are app defaults — there is no official rules exam.' : LEVEL.id === 'charter-checkin' ? 'Exam size, time and pass mark are app defaults — there is no check-in exam, only a boat to take over.' : 'Exam size, time and pass mark are app defaults, not confirmed IYT figures.'),
     startExam: 'Start the exam', continueExam: 'Continue the exam', startOver: 'Start over',
     confirmRestart: 'Start a new exam? The one in progress will be dropped.',
     nOf: (i, n) => `${i} of ${n}`, nextArrow: 'Next ›', finishDots: 'Finish…', prevArrow: '‹ Previous', allQuestions: 'All questions',
@@ -125,7 +135,7 @@ const STR = {
     costMost: (list) => `${list} cost you the most points.`, workFirst: 'Work on these first', fine: 'Fine',
     backToLevel: 'Back to the level', practiseWeak: (w) => `Practise the ${pl(w, 'topic')}`.replace('topic', 'weak topic'), practise: 'Practise', share: 'Share',
     reviewN: (n) => `Review ${pl(n, 'mistake')}`,
-    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `I scored ${p}% on the ${lv} mock exam — situations on the race course, by the rules:` : `I scored ${p}% on the IYT ${lv} mock exam — practice questions for IYT levels:`), copied: 'Copied to the clipboard',
+    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `I scored ${p}% on the ${lv} mock exam — situations on the race course, by the rules:` : LEVEL.id === 'charter-checkin' ? `I scored ${p}% on the ${lv} mock exam — taking over a charter yacht, step by step:` : `I scored ${p}% on the IYT ${lv} mock exam — practice questions for IYT levels:`), copied: 'Copied to the clipboard',
     thisWeek: 'This week', answeredW: 'answered', dayStreak: 'day streak', masteryByTopic: 'Mastery by topic', practiseWeakest: 'Practise weakest ›',
     misMeta: (n) => `${pl(n, 'question')} answered wrong and not yet mastered`, noneNow: 'None right now',
     flaggedQ: 'Flagged questions', flagHint: 'Flag a question to keep it here',
@@ -136,14 +146,14 @@ const STR = {
     explain: 'Explain after each answer', explainMeta: 'Off = exam style, results at the end',
     reset: 'Reset progress', resetMeta: 'Mastery, mistakes, streak and exams', resetBtn: 'Reset',
     confirmReset: 'Reset all progress? Mastery, mistakes, streak and exam history will be cleared.', resetDone: 'Progress reset',
-    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Questions are written for study from the Racing Rules of Sailing 2025–2028 and are not a World Sailing publication; the rules themselves are the authority. Bank version ${v}.` : `Questions are written for study and are not official IYT exam content. Bank version ${v}.`), partEnglish: '', loading: 'Loading…',
-    whatToPractise: 'What to practise?', all: 'All', none: 'None', weakPre: 'Weak topics are preselected. ', tapToggle: 'Tap to add or remove.',
-    questionsK: 'Questions', allN: (n) => `All ${n}`, mistakesOnly: 'Mistakes only', showAnswer: 'Show the answer after each question',
+    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Questions are written for study from the Racing Rules of Sailing 2025–2028 and are not a World Sailing publication; the rules themselves are the authority. Bank version ${v}.` : LEVEL.id === 'charter-checkin' ? `Questions are written for study and are not any charter company's procedure; your contract and the base's briefing are the authority. Bank version ${v}.` : `Questions are written for study and are not official IYT exam content. Bank version ${v}.`), partEnglish: '', loading: 'Loading…',
+    whatToPractise: 'What to practise?', all: 'All', none: 'None', weakPre: 'Weak topics are preselected. ', tapToggle: 'Tap a topic to practise just that; tap more to add.',
+    questionsK: 'Questions', allN: (n) => `All ${n}`, mistakesOnly: 'Mistakes only', showAnswer: 'Explain after each answer',
     start: (n) => `Start · ${pl(n, 'question')}`, pickTopic: 'Pick a topic',
     noQuestions: 'No questions to practise', unflagged: 'Removed from flagged', flaggedToast: 'Flagged — find it in Progress',
     wrongToast: 'Reported — the admins will check this question', unwrong: 'Report withdrawn',
     confirmQuit: 'Quit this session? Your answers so far are kept.',
-    error: 'Something went wrong', bankError: (s) => `Could not load the question bank (${s})`,
+    error: 'Something went wrong', bankError: () => 'Could not load the questions. Check the connection and try again.',
     days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], locale: 'en-GB',
     // admin: students' results
     students: 'Students', studentsMeta: 'Results of everyone who uses the app', studentsFail: 'Could not load the results', studentsEmpty: 'Nobody has opened the app yet',
@@ -157,13 +167,17 @@ const STR = {
     learn: 'Учёба', exam: 'Экзамен', progress: 'Прогресс', profile: 'Профиль', back: '‹ Назад',
     soon: 'Скоро', soon2027: 'В 2027 году', planned: 'В планах',
     homeKicker: 'Теория IYT · бесплатно', homeTitle: 'Сдайте экзамен&nbsp;IYT',
-    homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа. Выберите уровень.',
+    homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа. Выберите уровень, к которому готовитесь.',
     streak: (n) => `${pl(n, 'day')} подряд`,
     levelMeta: (t, q, ex) => `${pl(t, 'topic')} · ${pl(q, 'question')}${ex ? ' · ' + pl(ex, 'exam') : ''}`,
     examOpen: 'Пробный экзамен не закончен', continue: 'Продолжить',
     examLine: (a, n, left) => `отвечено ${a} из ${n} · осталось ${left}`,
-    mastered: 'освоено', covered: 'пройдено', halfway: 'на полпути', halfwayN: (n) => `+${n} на полпути`, moreLevels: 'Другие уровни',
-    levelText: (m, n, h, sn) => `Освоено ${m} из ${n}${h ? `, на полпути ${h} (верно один раз)` : ''}. Уже видели: ${sn}.`,
+    mastered: 'освоено', covered: 'пройдено', halfway: 'верно 1 раз', halfwayN: (n) => `+${n} верно 1 раз`, moreLevels: 'Другие уровни',
+    ringLabel: (s, m) => `${s}% пройдено · ${m}% освоено`, answers: 'Варианты ответа', figure: 'Рисунок',
+    figNames: { anchor: 'Схема якорной стоянки', bay: 'Карта бухты', buoy: 'Буй', card: 'Заметки', chart: 'Фрагмент карты', compass: 'Картушка компаса', dayshape: 'Дневной знак', encounter: 'Расхождение двух судов', isobars: 'Карта погоды', lights: 'Навигационные огни', panel: 'Приборная панель', rope: 'Трос и узел', sail: 'Парусная яхта и ветер' }, timeLeft: 'Осталось времени', fiveLeft: 'Осталось 5 минут',
+    nextLevelK: 'Следующий уровень', open: 'Открыть', resetNothing: 'Сбрасывать пока нечего', retry: 'Повторить', allTopicsChip: 'Все темы',
+    longSession: 'Долгая тренировка — выйти можно в любой момент, ответы сохранятся.', reportHint: 'Сообщить об ошибке в вопросе',
+    levelText: (m, n, h, sn) => `Видели ${sn} из ${n}. ${h ? `Верно один раз: ${h}, ` : ''}освоено: ${m} — верно дважды подряд.`,
     resumeK: 'Продолжить', resumeMeta: (sn, n, mis) => `Видели ${sn} из ${n}${mis ? ` · ошибок к разбору: ${mis}` : ''}`,
     practiseN: (n) => `Тренировка · ${pl(n, 'question')}`, levelsK: 'Уровни',
     mockExams: 'Пробные экзамены', noExams: 'Пробных экзаменов ещё не было — попробуйте, когда будете готовы.', weakestTopics: 'Самые слабые темы', allTopics: 'Все темы ›',
@@ -174,7 +188,7 @@ const STR = {
     mistakesToClear: 'Ошибки к разбору', toAnswerTwice: (n) => `${pl(n, 'question')} — ответьте верно дважды`, review: 'Разобрать',
     topics: 'Темы', masteredTotal: 'освоено / всего',
     questionOf: (i, n) => `Вопрос ${i} из ${n}`, correct: 'Верно', notQuite: 'Неверно', why: 'Почему',
-    flag: 'Отметить', flagged: 'Отмечен', wrong: 'Ошибка?', wrongOn: 'Сообщено', skip: 'Пропустить', check: 'Проверить', next: 'Далее', finish: 'Закончить', seeResults: 'Результаты',
+    flag: 'Отметить', flagged: 'Отмечен', wrong: 'Сообщить', wrongOn: 'Сообщено', skip: 'Пропустить', check: 'Проверить', next: 'Далее', finish: 'Закончить', seeResults: 'Результаты',
     results: 'Результаты', heads: ['Отлично', 'Хорошая тренировка', 'Почти получилось', 'Продолжайте'],
     noMistakes: 'Ни одной ошибки.',
     score: 'результат', time: 'время', byTopic: 'По темам', timeSpent: (s) => ` Время ${s}.`, statNew: 'впервые', statWrong: 'ошибок',
@@ -192,7 +206,7 @@ const STR = {
       ['Пояснения — только после сдачи', 'Потом у каждой ошибки будет верный ответ и пояснение.'],
       ['Выход ставит таймер на паузу', 'Закройте приложение — экзамен подождёт до 24 часов.']],
     lastAttempts: 'Последние попытки', passedW: 'сдан', notPassedW: 'не сдан',
-    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Число вопросов, время и проходной балл — настройки приложения: официального экзамена по правилам нет.' : 'Число вопросов, время и проходной балл — настройки приложения, а не подтверждённые данные IYT.'),
+    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Число вопросов, время и проходной балл — настройки приложения: официального экзамена по правилам нет.' : LEVEL.id === 'charter-checkin' ? 'Число вопросов, время и проходной балл — настройки приложения: экзамена по приёмке яхты нет, есть только сама яхта.' : 'Число вопросов, время и проходной балл — настройки приложения, а не подтверждённые данные IYT.'),
     startExam: 'Начать экзамен', continueExam: 'Продолжить экзамен', startOver: 'Начать заново',
     confirmRestart: 'Начать новый экзамен? Текущий будет сброшен.',
     nOf: (i, n) => `${i} из ${n}`, nextArrow: 'Далее ›', finishDots: 'Завершить…', prevArrow: '‹ Назад', allQuestions: 'Все вопросы',
@@ -207,7 +221,7 @@ const STR = {
     costMost: (list) => `Больше всего баллов потеряно в темах: ${list}.`, workFirst: 'Сначала подтяните', fine: 'В порядке',
     backToLevel: 'К уровню', practiseWeak: (w) => `Тренировать слабые темы (${w})`, practise: 'Тренировка', share: 'Поделиться',
     reviewN: (n) => `Разобрать ошибки (${n})`,
-    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `Мой результат на пробном экзамене по правилам парусных гонок — ${p}%. Ситуации на дистанции по ППГ-25:` : `Мой результат на пробном экзамене IYT ${lv} — ${p}%. Вопросы для подготовки к IYT:`), copied: 'Скопировано',
+    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `Мой результат на пробном экзамене по правилам парусных гонок — ${p}%. Ситуации на дистанции по ППГ-25:` : LEVEL.id === 'charter-checkin' ? `Мой результат на пробном экзамене по приёмке чартерной яхты — ${p}%. Чек-ин шаг за шагом:` : `Мой результат на пробном экзамене IYT ${lv} — ${p}%. Вопросы для подготовки к IYT:`), copied: 'Скопировано',
     thisWeek: 'Эта неделя', answeredW: 'отвечено', dayStreak: (n) => `${word(n, 'day')} подряд`, masteryByTopic: 'Освоение по темам', practiseWeakest: 'Тренировать слабые ›',
     misMeta: (n) => `Вопросов с ошибкой, ещё не освоенных: ${n}`, noneNow: 'Сейчас нет',
     flaggedQ: 'Отмеченные вопросы', flagHint: 'Отметьте вопрос — он появится здесь',
@@ -218,16 +232,16 @@ const STR = {
     explain: 'Пояснение после ответа', explainMeta: 'Выкл. — как на экзамене, итог в конце',
     reset: 'Сбросить прогресс', resetMeta: 'Освоение, ошибки, серия дней и экзамены', resetBtn: 'Сбросить',
     confirmReset: 'Сбросить весь прогресс? Освоение, ошибки, серия дней и история экзаменов будут удалены.', resetDone: 'Прогресс сброшен',
-    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Вопросы написаны для подготовки по Правилам парусных гонок 2025–2028 и не являются публикацией World Sailing; сами правила — единственный источник. Версия банка ${v}.` : `Вопросы написаны для подготовки и не являются официальными вопросами экзамена IYT. Версия банка ${v}.`),
+    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Вопросы написаны для подготовки по Правилам парусных гонок 2025–2028 и не являются публикацией World Sailing; сами правила — единственный источник. Версия банка ${v}.` : LEVEL.id === 'charter-checkin' ? `Вопросы написаны для подготовки и не являются процедурой какой-либо чартерной компании; ваш договор и брифинг на базе — единственный источник. Версия банка ${v}.` : `Вопросы написаны для подготовки и не являются официальными вопросами экзамена IYT. Версия банка ${v}.`),
     loading: 'Загрузка…',
     partEnglish: ' Перевод вопросов готовится — пока часть из них на английском.',
-    whatToPractise: 'Что тренируем?', all: 'Все', none: 'Снять все', weakPre: 'Слабые темы уже выбраны. ', tapToggle: 'Нажмите, чтобы добавить или убрать.',
-    questionsK: 'Вопросы', allN: (n) => `Все ${n}`, mistakesOnly: 'Только ошибки', showAnswer: 'Показывать ответ после каждого вопроса',
+    whatToPractise: 'Что тренируем?', all: 'Все', none: 'Снять все', weakPre: 'Слабые темы уже выбраны. ', tapToggle: 'Нажмите тему, чтобы тренировать только её; ещё одну — чтобы добавить.',
+    questionsK: 'Вопросы', allN: (n) => `Все ${n}`, mistakesOnly: 'Только ошибки', showAnswer: 'Пояснение после ответа',
     start: (n) => `Начать · ${pl(n, 'question')}`, pickTopic: 'Выберите тему',
     noQuestions: 'Нет вопросов для тренировки', unflagged: 'Отметка снята', flaggedToast: 'Отмечен — он в разделе «Прогресс»',
     wrongToast: 'Сообщили — администраторы проверят вопрос', unwrong: 'Сообщение отозвано',
     confirmQuit: 'Выйти из тренировки? Ответы сохранятся.',
-    error: 'Что-то пошло не так', bankError: (s) => `Не удалось загрузить вопросы (${s})`,
+    error: 'Что-то пошло не так', bankError: () => 'Не удалось загрузить вопросы. Проверьте связь и попробуйте ещё раз.',
     days: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'], locale: 'ru-RU',
     // admin: students' results
     students: 'Ученики', studentsMeta: 'Результаты всех, кто пользуется приложением', studentsFail: 'Не удалось загрузить результаты', studentsEmpty: 'Приложение ещё никто не открывал',
@@ -266,7 +280,8 @@ function figHtml(q) {
   const f = q.figure;
   if (f.type === 'card') return `<div class="figcard">${f.tag ? `<span class="figtag">${esc(f.tag)}</span>` : ''}<span class="kicker">${esc(f.title || '')}</span>` +
     `<ul>${(f.lines || []).map((l) => `<li>${esc(l)}</li>`).join('')}</ul></div>`;
-  return `<div class="fig">${figSvg(q.figure)}</div>`;
+  const label = f.note || f.title || t('figNames')[f.type] || t('figure');
+  return `<div class="fig" role="img" aria-label="${esc(label)}">${figSvg(f).replace('<svg ', '<svg aria-hidden="true" focusable="false" ')}</div>`;
 }
 
 function hap(kind) {
@@ -277,8 +292,9 @@ const confirmBox = (msg) => new Promise((res) => (tgv('6.2') ? TG.showConfirm(ms
 function toast(text) {
   $app.querySelector('.toast')?.remove();
   $app.insertAdjacentHTML('beforeend', `<div class="toast" role="status" aria-live="polite">${esc(text)}</div>`);
-  const el = $app.querySelector('.toast');
-  setTimeout(() => { el.classList.add('out'); setTimeout(() => el.remove(), 200); }, 1400);
+  const el = $app.querySelector('.toast'), hdr = $app.querySelector('.tgh');
+  el.style.top = `${hdr ? hdr.offsetHeight + 10 : 12}px`;
+  setTimeout(() => { el.classList.add('out'); setTimeout(() => el.remove(), 200); }, 1800);
 }
 
 /* ---------- state: mastery per question, activity per day, exams; saved locally and to CloudStorage ---------- */
@@ -361,6 +377,7 @@ function record(id, ok, mode = 'practice', option = null) {
   const [h, w] = rec(id);
   S.q[id] = [(h + (ok ? '1' : '0')).slice(-2), w + (ok ? 0 : 1)];
   const d = dkey();
+  if (!S.days[d]) streakGrew = true;
   S.days[d] = (S.days[d] || 0) + 1;
   S.total++;
   if (serverOn) { outbox.push({ q: id, ok, o: option, m: mode, at: new Date().toISOString() }); outbox = outbox.slice(-5000); keepOutbox(); }
@@ -372,7 +389,7 @@ const levelPct = (b = BANK) => Math.round((b.questions.filter((q) => mastered(q.
 const seenPct = (b = BANK) => Math.round((b.questions.filter((q) => touched(q.id)).length / b.questions.length) * 100);
 // progress ring: the number and the full arc are the share of the level seen, the darker inner step is mastered.
 // Mastery alone would read 0% for the first sessions (right twice in a row), while the student has clearly moved.
-const ring = (lp, sp, cls = '', inner = `<b>${Math.max(lp, sp)}%</b>`) => `<span class="ring seen${cls}" style="--v:${lp};--s:${Math.max(lp, sp)}">${inner}</span>`;
+const ring = (lp, sp, cls = '', inner = `<b>${Math.max(lp, sp)}%</b>`, k = '') => `<span class="ring seen${cls}" role="img" aria-label="${t('ringLabel', Math.max(lp, sp), lp)}"${k ? ` data-k="ring:${k}"` : ''} style="--v:${lp};--s:${Math.max(lp, sp)}">${inner}</span>`;
 const ready = () => LEVELS.filter((l) => l.id && BASES[l.id]);
 // Exams are kept per level; records from before levels existed have no lv and are Bareboat Skipper's.
 const lvOf = (x) => (x && x.lv) || DEFAULT_LEVEL;
@@ -584,7 +601,7 @@ const levelOfPrefix = (p) => LEVELS.find((l) => l.prefix === p);
 // The red flag on a question screen: "this question is wrong"; on once the student reported it (S.wrong).
 function wrongBtn(id) {
   const on = S.wrong.includes(id);
-  return `<button class="mini red${on ? ' on' : ''}" data-act="wrong" data-id="${id}"><span data-i="flag" data-s="14"></span>${on ? t('wrongOn') : t('wrong')}</button>`;
+  return `<button class="mini red${on ? ' on' : ''}" data-act="wrong" data-id="${id}" aria-pressed="${on}" title="${esc(t('reportHint'))}"><span data-i="flag" data-s="14"></span>${on ? t('wrongOn') : t('wrong')}</button>`;
 }
 // A student's progress in a level, in % of its bank (pct = mastered, seenPct = seen); the level they work on, or the one
 // they have seen most of. The list shows seenPct as the number, like the student's own ring, and pct as the dark bar.
@@ -626,6 +643,7 @@ function go(v, p = {}) { stack.push({ v, ...p }); sheet = null; render(true); }
 function replace(v, p = {}) { stack[stack.length - 1] = { v, ...p }; sheet = null; render(true); }
 function tab(v) { stack = [{ v }]; sheet = null; P = null; enterTab = true; render(true); }
 let enterTab = false; // the next render(true) is a tab switch: fade only, no stagger
+let sheetWasOpen = false;
 // Closes the sheet with its exit animation, then rebuilds the screen without it.
 function closeSheet() {
   const sh = $app.querySelector('.sheet');
@@ -664,23 +682,69 @@ function applyTheme() {
 }
 const tok = (name) => getComputedStyle($app).getPropertyValue(name).trim();
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
-// A number that counts up to its value when its screen opens (data-count="82" data-suffix="%").
+// The theme switch runs in a view transition where the browser has one (iOS 18+, Chrome 111+): the new theme spreads
+// from the tapped segment. Elsewhere it switches at once.
+const VT = !REDUCED && typeof document.startViewTransition === 'function';
+// Bars, rings and counted numbers remember what they showed last (by data-k), so on the next screen they move from there
+// to the new value — and keep still when nothing changed. Only the first view of a value grows from zero.
+const PREV = new Map();
+const EASE = 'cubic-bezier(.23, 1, .32, 1)';
+let lastMain = null;     // the main button's label and state at the last render: a change animates
+let streakGrew = false;  // the first answer of the day: the streak pill on Home celebrates once
+// A number that counts up to its value when its screen opens (data-count="82" data-suffix="%") — from the value it
+// showed last when it has a data-k.
 function countUp(el) {
   const to = +el.dataset.count, suffix = el.dataset.suffix || '', t0 = performance.now(), dur = 600;
-  if (!(to > 0)) return;
+  const k = el.dataset.k, from = (k && PREV.get(k)) || 0;
+  if (!(to > 0) || from === to) return;
   const step = (now) => {
     const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(to * e) + suffix;
+    el.textContent = Math.round(from + (to - from) * e) + suffix;
     if (p < 1) requestAnimationFrame(step);
   };
   requestAnimationFrame(step);
+}
+
+// Bars and rings on a screen just opened move from the value they showed last (PREV) to the new one.
+function moveFromPrev() {
+  $app.querySelectorAll('.in .bar[data-k]').forEach((bar) => {
+    const segs = [...bar.children], now = segs.map((i) => [i.style.left || '0%', i.style.width || '0%']), was = PREV.get(bar.dataset.k);
+    if (was && was.join() === now.join()) return;
+    const row = bar.closest('[style*="--i"]'), delay = 120 + 35 * +(row ? row.style.getPropertyValue('--i') : 0);
+    segs.forEach((i, j) => {
+      const from = (was && was[j]) || ['0%', '0%'];
+      i.animate([{ left: from[0], width: from[1] }, { left: now[j][0], width: now[j][1] }], { duration: 500, delay, easing: EASE, fill: 'backwards' });
+    });
+  });
+  // the ring's @starting-style reads --v0 / --s0 (app.css), so the sweep starts where the ring was, not at zero
+  $app.querySelectorAll('.in .ring[data-k]').forEach((r) => {
+    const was = PREV.get(r.dataset.k);
+    if (was) { r.style.setProperty('--v0', was[0]); r.style.setProperty('--s0', was[1]); }
+  });
+}
+function remember() {
+  $app.querySelectorAll('.bar[data-k]').forEach((bar) => PREV.set(bar.dataset.k, [...bar.children].map((i) => [i.style.left || '0%', i.style.width || '0%'])));
+  $app.querySelectorAll('.ring[data-k]').forEach((r) => PREV.set(r.dataset.k, [r.style.getPropertyValue('--v'), r.style.getPropertyValue('--s')]));
+  $app.querySelectorAll('[data-count][data-k]').forEach((el) => PREV.set(el.dataset.k, +el.dataset.count));
+}
+// The main button answers a change on the same screen: a new label rises in; a button that just woke up (an option was
+// picked) colours in.
+function mainButtonChange(toTop) {
+  const b = $app.querySelector('.tgmain [data-act="main"]'), tx = b && b.querySelector('.t');
+  if (b && lastMain && !toTop) {
+    if (lastMain.text !== tx.textContent) tx.classList.add('swap');
+    if (lastMain.off && !b.classList.contains('off')) b.classList.add('wake');
+  }
+  lastMain = b ? { text: tx.textContent, off: b.classList.contains('off') } : null;
 }
 
 /* ---------- rendering ---------- */
 const NAV = [['home', 'book', 'learn'], ['examIntro', 'timer', 'exam'], ['progress', 'chart', 'progress'], ['profile', 'user', 'profile']];
 
 const navHtml = (on, live = true) => `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}"${live ? ` data-act="tab" data-v="${v}"` : ''}${v === on ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
-function render(toTop) {
+// theme: the new theme spreads from the tapped segment (--tx/--ty), the DOM swap running inside a view transition;
+// pre runs just before the swap, inside it (applyTheme).
+function render(toTop, theme = false, pre = null) {
   if (cur().v === 'exam' && !S.exam) stack[stack.length - 1] = { v: 'examIntro' };
   const c = cur();
   WEAK = new Set(weakTopics());
@@ -690,40 +754,57 @@ function render(toTop) {
   let h = '';
   if (!IN_TG) h += `<div class="tgh"><span>${stack.length > 1 || sheet ? `<button data-act="back">${t('back')}</button>` : ''}</span><b>${esc(V.title)}</b><span></span></div>`;
   const enter = toTop ? (enterTab ? ' in in-tab' : ' in') : ''; enterTab = false;
-  h += `<div class="scroll wrap${enter}">${V.body}</div>`;
+  const inert = sheet ? ' inert' : '';
+  h += `<div class="scroll wrap${enter}"${inert}><h1 class="sr-only">${esc(V.title)}</h1>${V.body}</div>`;
   const B = sheet ? {} : V;
   mainCb = B.main ? B.main.act : null;
   secCb = B.second ? B.second.act : null;
   if (!NATIVE_BUTTONS && (B.main || B.second)) {
     const b = (x, k, cls) => `<button class="b ${cls}${x.off ? ' off' : ''}" data-act="${k}">${x.icon ? `<span data-i="${x.icon}" data-s="18"></span>` : ''}<span class="t">${esc(x.text)}</span></button>`;
     const both = B.main && B.second;
-    h += `<div class="tgmain wrap${enter}">` +
+    h += `<div class="tgmain wrap${enter}"${inert}>` +
       (both && B.second.pos !== 'bottom' ? `<div class="row2">${b(B.second, 'second', 'b2')}${b(B.main, 'main', '')}</div>` :
         (B.main ? b(B.main, 'main', '') : '') + (B.second ? b(B.second, 'second', 'b2') : '')) + '</div>';
   }
   // the tab bar is the lowest thing on screen; a screen's button bar sits just above it
-  if (V.nav && stack.length === 1) h += navHtml(V.nav);
-  if (sheet) h += `<div class="scrim" data-act="back"></div><div class="sheet"><div class="grip"></div><div class="wrap stack g16">${SHEETS[sheet.v](sheet)}</div></div>`;
-  $app.innerHTML = h;
-  $app.querySelectorAll('[data-act]:not(button):not(.scrim)').forEach((el) => {
-    if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
-    if (!el.classList.contains('locked') && !el.classList.contains('off')) el.tabIndex = 0;
-  });
-  paintIcons($app);
-  const sc = $app.querySelector('.scroll');
-  if (keep) sc.scrollTop = keep;
-  if (enter && !REDUCED) {
-    // rows of a list rise one after another (--i is the row's place in its list, capped so long lists stay quick)
-    const idx = new Map();
-    $app.querySelectorAll('.in .lvl, .in .topic, .in .opt, .in .stat, .in .set, .in .att, .in .tbar, .in .step').forEach((el) => {
-      const i = idx.get(el.parentElement) || 0; idx.set(el.parentElement, i + 1); el.style.setProperty('--i', Math.min(i, 8));
+  if (V.nav && stack.length === 1) h += navHtml(V.nav).replace('<nav ', `<nav${inert} `);
+  if (sheet) h += `<div class="scrim" data-act="back"></div><div class="sheet" role="dialog" aria-modal="true"><div class="grip"></div><div class="wrap stack g16">${SHEETS[sheet.v](sheet)}</div></div>`;
+  const vt = VT && theme && $app.querySelector('.scroll');
+  const swap = () => {
+    if (pre) pre();
+    $app.innerHTML = h;
+    $app.querySelectorAll('[data-act]:not(button):not(.scrim)').forEach((el) => {
+      if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+      if (!el.classList.contains('locked') && !el.classList.contains('off')) el.tabIndex = 0;
     });
-    $app.querySelectorAll('.in [data-count]').forEach(countUp);
-  }
-  if (NATIVE_BUTTONS) nativeButtons(B);
-  if (tgv('6.1')) (stack.length > 1 || sheet ? TG.BackButton.show() : TG.BackButton.hide());
-  if (c.v === 'exam' && S.exam) { startTimer(); if (tgv('6.2')) TG.enableClosingConfirmation(); }
-  else { stopTimer(); if (tgv('6.2')) TG.disableClosingConfirmation(); }
+    paintIcons($app);
+    const sc = $app.querySelector('.scroll');
+    if (keep) sc.scrollTop = keep;
+    // a sheet that has just opened takes the focus (the screen behind it is inert until it closes)
+    if (sheet && !sheetWasOpen) $app.querySelector('.sheet button, .sheet [data-act]')?.focus({ preventScroll: true });
+    sheetWasOpen = !!sheet;
+    if (enter && !REDUCED) {
+      // rows of a list rise one after another (--i is the row's place in its list, capped so long lists stay quick)
+      const idx = new Map();
+      $app.querySelectorAll('.in .lvl, .in .topic, .in .opt, .in .stat, .in .set, .in .att, .in .tbar, .in .step').forEach((el) => {
+        const i = idx.get(el.parentElement) || 0; idx.set(el.parentElement, i + 1); el.style.setProperty('--i', Math.min(i, 8));
+      });
+      moveFromPrev();
+      $app.querySelectorAll('.in [data-count]').forEach(countUp);
+    }
+    mainButtonChange(!!toTop);
+    remember();
+    if (NATIVE_BUTTONS) nativeButtons(B);
+    if (tgv('6.1')) (stack.length > 1 || sheet ? TG.BackButton.show() : TG.BackButton.hide());
+    if (c.v === 'exam' && S.exam) { startTimer(); if (tgv('6.2')) TG.enableClosingConfirmation(); }
+    else { stopTimer(); if (tgv('6.2')) TG.disableClosingConfirmation(); }
+  };
+  if (!vt) return swap();
+  const root = document.documentElement;
+  root.dataset.nav = 'theme';
+  const tr = document.startViewTransition(swap);
+  const done = () => { delete root.dataset.nav; };
+  tr.finished.then(done, done);
 }
 
 function nativeButtons(B) {
@@ -748,7 +829,7 @@ function topicRows(list = TOPICS) {
     const line = seen && p < 100 ? `<span class="tmeta${weak ? ' bad-t' : ''}">${t('seenRight', seen, right)}</span>` : '';
     return `<div class="topic${cls}${line ? ' x3' : ''}" data-act="setup" data-t="${tp.id}"><span class="ico">${p >= 100 ? svg('check', 18) : svg(topicIcon(tp), 18)}</span>` +
       `<span class="card-title">${esc(tp.title)}</span>${line}<span class="n"><b>${m}/${ids.length}</b>${h ? `<span class="acc">${t('halfwayN', h)}</span>` : ''}</span>` +
-      `<span class="bar"><i style="width:${p}%"></i><i class="half" style="left:${p}%;width:${hp}%"></i><i class="seen" style="left:${p + hp}%;width:${sp}%"></i></span></div>`;
+      `<span class="bar" data-k="bar:${tp.id}"><i style="width:${p}%"></i><i class="half" style="left:${p}%;width:${hp}%"></i><i class="seen" style="left:${p + hp}%;width:${sp}%"></i></span></div>`;
   }).join('')}</div>`;
 }
 function tbars(per, limit = 60) {
@@ -772,26 +853,26 @@ function examLine() {
 const VIEWS = {
   /* A1 Home */
   home() {
-    const st = streak();
+    const st = streak(), grew = streakGrew; streakGrew = false;
     const returning = S.total > 0;
     const lv = LEVELS.filter((l) => l.id && BASES[l.id]).map((l) => {
       const b = BASES[l.id], lp = levelPct(b);
-      return `<div class="lvl${l === LEVEL ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, seenPct(b))}<div><div class="card-title">${l.title}</div>` +
+      return `<div class="lvl${l === LEVEL && returning ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, seenPct(b), '', undefined, l.id)}<div><div class="card-title">${l.title}</div>` +
         `<div class="card-meta">${t('levelMeta', b.topics.length, b.questions.length, myExams(l.id).length)}</div></div><span class="chev" data-i="next" data-s="20"></span></div>`;
     }).join('');
     // first visit: the pitch; afterwards: pick up where you left off
     const lp = levelPct(), mis = allMistakes().length;
     const top = returning
       ? `<div class="band resume"><span class="kicker">${t('resumeK')}</span>
-          <div class="row" style="gap:14px;align-items:center">${ring(lp, seenPct())}<div><div class="card-title">${esc(LEVEL.title)}</div><div class="card-meta">${t('resumeMeta', BANK.questions.filter((q) => touched(q.id)).length, BANK.questions.length, mis)}</div></div></div>
+          <div class="row" style="gap:14px;align-items:center">${ring(lp, seenPct(), '', undefined, LEVEL.id)}<div><div class="card-title">${esc(LEVEL.title)}</div><div class="card-meta">${t('resumeMeta', BANK.questions.filter((q) => touched(q.id)).length, BANK.questions.length, mis)}</div></div></div>
           <button class="pill pill-primary pill-wide" data-act="resume"><span data-i="play" data-s="18"></span>${t('practiseN', 10)}</button></div>`
       : `<div class="stack g12"><span class="meta">${t('homeKicker')}</span><h1 class="display">${t('homeTitle')}</h1>
         <p class="body-muted">${t('homeLead')}</p></div>`;
     return {
       title: 'IYT Test', nav: 'home',
-      body: `<div class="row sb-between" style="min-height:40px"><img class="logo" src="design/logo-black.svg" alt="RYC">${st ? `<span class="streak"><span class="fire" data-i="fire" data-s="14"></span>${t('streak', st)}</span>` : ''}</div>
+      body: `<div class="row sb-between" style="min-height:40px"><img class="logo" src="design/logo-black.svg" alt="RYC">${st ? `<span class="streak${grew ? ' grew' : ''}"><span class="fire" data-i="fire" data-s="14"></span>${t('streak', st)}</span>` : ''}</div>
         ${top}
-        ${S.exam ? `<div class="continue" data-act="examIntro"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
+        ${S.exam ? `<div class="continue" data-act="resumeExam"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
         <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
         <div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${LEVELS.filter((l) => !(l.id && BASES[l.id])).map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>`,
     };
@@ -807,7 +888,8 @@ const VIEWS = {
     const mis = allMistakes().length;
     return {
       title: LEVEL.title,
-      body: `<div class="row" style="gap:18px;align-items:center">${ring(lp, sp, ' l', `<b data-count="${sp}" data-suffix="%">${sp}%</b><small>${t('covered')}</small>`)}
+      body: `<div class="stack g4"><span class="meta">${LANG === 'ru' && LEVEL_RU[LEVEL.id] ? LEVEL_RU[LEVEL.id] : t('levelMeta', TOPICS.length, BANK.questions.length, myExams().length)}</span><h2 class="display-s">${esc(LEVEL.title)}</h2></div>
+        <div class="row" style="gap:18px;align-items:center">${ring(lp, sp, ' l', `<b data-count="${sp}" data-suffix="%" data-k="seen:${LEVEL.id}">${sp}%</b><small>${t('covered')}</small>`, LEVEL.id)}
           <p class="body-s">${esc(text)}</p></div>
         <div class="row" style="gap:10px"><button class="pill pill-primary lvl-btn" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
           <button class="pill lvl-btn" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
@@ -821,7 +903,7 @@ const VIEWS = {
     const id = P.ids[P.i], q = Q[id], ord = P.orders[id], n = P.ids.length, last = P.i === n - 1;
     const segs = P.ids.map((x, k) => {
       const r = P.res[x];
-      return `<span class="${r ? (P.fb ? r : 'on') : k === P.i ? 'now' : ''}"></span>`;
+      return `<span class="${r ? (P.fb ? r : 'on') + (k === P.i && P.checked ? ' just' : '') : k === P.i ? 'now' : ''}"></span>`;
     }).join('');
     const opts = ord.map((oi, k) => {
       let cls = '', l = 'ABCD'[k];
@@ -829,18 +911,19 @@ const VIEWS = {
         if (oi === q.answer) { cls = 'ok'; l = svg('check', 16); }
         else if (k === P.sel) { cls = 'bad'; l = svg('x', 16); }
         else cls = 'dim';
+        if (k === P.sel) cls += ' picked';
         cls += ' locked';
       } else if (k === P.sel) cls = 'sel';
-      return `<div class="opt ${cls}" data-act="opt" data-n="${k}" role="button"><span class="l">${l}</span><span>${esc(q.options[oi])}</span></div>`;
+      return `<div class="opt ${cls}" data-act="opt" data-n="${k}" role="radio" aria-checked="${k === P.sel}"${P.checked ? ' aria-disabled="true"' : ''}><span class="l">${l}</span><span>${esc(q.options[oi])}</span></div>`;
     }).join('');
     let after = '';
     if (P.checked) {
       const ok = P.res[id] === 'ok';
-      after = `<div class="verdict ${ok ? 'ok' : 'bad'}"><span class="ico">${svg(ok ? 'check' : 'x', 16)}</span>${ok ? t('correct') : t('notQuite')}</div>
+      after = `<div class="verdict ${ok ? 'ok' : 'bad'}" role="status" tabindex="-1"><span class="ico">${svg(ok ? 'check' : 'x', 16)}</span>${ok ? t('correct') : t('notQuite')}</div>
         <div class="band why" id="why"><span class="kicker">${t('why')}</span><p class="body-s">${esc(q.why)}</p><span class="chip ref">${svg('book', 12)}${esc(q.ref)}</span></div>`;
     }
     const flagged = S.flags.includes(id);
-    const tools = `<div class="qtools"><span class="qflags"><button class="mini${flagged ? ' on' : ''}" data-act="flag"><span data-i="flag" data-s="14"></span>${flagged ? t('flagged') : t('flag')}</button>${wrongBtn(id)}</span>` +
+    const tools = `<div class="qtools"><span class="qflags"><button class="mini${flagged ? ' on' : ''}" data-act="flag" aria-pressed="${flagged}"><span data-i="flag" data-s="14"></span>${flagged ? t('flagged') : t('flag')}</button>${wrongBtn(id)}</span>` +
       (!P.checked && !last ? `<button class="mini" data-act="skip"><span data-i="next" data-s="14"></span>${t('skip')}</button>` : '') + '</div>';
     let main;
     if (!P.checked && P.fb) main = { text: t('check'), off: P.sel == null, act: check };
@@ -850,7 +933,7 @@ const VIEWS = {
       title: t('practice'), main,
       body: `<div class="progress">${segs}</div>
         <div class="qhead"><span class="meta meta-ink">${t('questionOf', P.i + 1, n)}</span><span class="chip">${esc(short(q.topic))}</span></div>
-        ${figHtml(q)}<p class="q">${esc(q.q)}</p><div class="opts">${opts}</div>${after}${tools}`,
+        ${figHtml(q)}<h2 class="q">${esc(q.q)}</h2><div class="opts" role="radiogroup" aria-label="${t('answers')}">${opts}</div>${after}${tools}`,
     };
   },
 
@@ -922,7 +1005,7 @@ const VIEWS = {
       body: `<div class="stack g8"><span class="meta">${LEVEL.title}</span><h2 class="display">${t('mockExam')}</h2>
           <p class="body-muted">${t('examLead', TOPICS.length)}</p></div>
         <div class="stats"><div class="stat"><b>${BANK.examQuestions}</b><span class="meta">${t('questionsW', BANK.examQuestions)}</span></div><div class="stat"><b>${BANK.examMinutes}</b><span class="meta">${t('minutesW', BANK.examMinutes)}</span></div><div class="stat"><b>${BANK.passMark}%</b><span class="meta">${t('toPass')}</span></div></div>
-        ${S.exam ? `<div class="row sb-between"><div><span class="meta">${t('inProgress')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><button class="mini mini-danger" data-act="restart">${t('startOver')}</button></div>` : ''}
+        ${S.exam ? `<div class="row sb-between"><div><span class="meta">${t('inProgress')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><button class="meta bad-t" data-act="restart">${t('startOver')}</button></div>` : ''}
         <div class="steps steps-plain">${rules}</div>
         ${atts ? `<div class="band" style="padding:16px 18px"><div class="card-title" style="margin-bottom:4px">${t('lastAttempts')}</div>${atts}</div>` : ''}
         <p class="hint">${t('examDefaults')}</p>`,
@@ -934,16 +1017,16 @@ const VIEWS = {
     const E = S.exam, n = E.ids.length, id = E.ids[E.i], q = Q[id], ord = E.ord[id];
     const sel = E.ans[id] == null ? -1 : ord.indexOf(E.ans[id]);
     const left = remaining();
-    const opts = ord.map((oi, k) => `<div class="opt${k === sel ? ' sel' : ''}" data-act="eopt" data-n="${k}" role="button"><span class="l">${'ABCD'[k]}</span><span>${esc(q.options[oi])}</span></div>`).join('');
+    const opts = ord.map((oi, k) => `<div class="opt${k === sel ? ' sel' : ''}" data-act="eopt" data-n="${k}" role="radio" aria-checked="${k === sel}"><span class="l">${'ABCD'[k]}</span><span>${esc(q.options[oi])}</span></div>`).join('');
     const fl = E.flags.includes(E.i);
     return {
       title: t('mockExam'),
-      main: E.i < n - 1 ? { text: t('nextArrow'), act: () => examMove(1) } : { text: t('finishDots'), act: () => { sheet = { v: 'grid' }; render(); } },
+      main: E.i < n - 1 ? { text: sel < 0 ? `${t('skip')} ›` : t('nextArrow'), act: () => examMove(1) } : { text: t('finishDots'), act: () => { sheet = { v: 'grid' }; render(); } },
       second: E.i > 0 ? { text: t('prevArrow'), act: () => examMove(-1) } : null,
       body: `<div class="bar ink"><i style="width:${((E.i + 1) / n) * 100}%"></i></div>
-        <div class="qhead"><span class="meta meta-ink">${t('nOf', E.i + 1, n)}</span><span class="timer${left < 300000 ? ' low' : ''}"><span data-i="timer" data-s="16"></span><b>${fmt(left)}</b></span></div>
-        ${figHtml(q)}<p class="q">${esc(q.q)}</p><div class="opts">${opts}</div>
-        <div class="qtools"><span class="qflags"><button class="mini${fl ? ' on' : ''}" data-act="eflag"><span data-i="flag" data-s="14"></span>${fl ? t('flagged') : t('flag')}</button>${wrongBtn(id)}</span>
+        <div class="qhead"><span class="meta meta-ink">${t('nOf', E.i + 1, n)}</span><span class="timer${left < 300000 ? ' low' : ''}" role="timer" aria-label="${t('timeLeft')}"><span data-i="timer" data-s="16"></span><b>${fmt(left)}</b></span></div>
+        ${figHtml(q)}<h2 class="q">${esc(q.q)}</h2><div class="opts" role="radiogroup" aria-label="${t('answers')}">${opts}</div>
+        <div class="qtools"><span class="qflags"><button class="mini${fl ? ' on' : ''}" data-act="eflag" aria-pressed="${fl}"><span data-i="flag" data-s="14"></span>${fl ? t('flagged') : t('flag')}</button>${wrongBtn(id)}</span>
           <button class="mini" data-act="grid"><span data-i="grid" data-s="14"></span>${t('allQuestions')}</button></div>`,
     };
   },
@@ -958,14 +1041,16 @@ const VIEWS = {
     const wrong = ids.filter((id) => R.ans[id] !== Q[id].answer);
     const names = weak.slice().sort((a, b) => (per[a][0] - per[a][1]) - (per[b][0] - per[b][1])).slice(0, 3).map(short);
     const reviewAct = () => go('review', { items: wrong.map((id) => ({ id, pick: R.ans[id] })), label: 'mockExam', from: 'exam' });
-    let head, copy, bars;
+    let head, copy, bars, nextBand = '';
     if (R.passed) {
+      const nextLv = NON_IYT.has(LEVEL.id) ? null : LEVELS.slice(LEVELS.indexOf(LEVEL) + 1).find((l) => l.id && BASES[l.id] && !NON_IYT.has(l.id));
+      if (nextLv) nextBand = `<div class="continue" data-act="level" data-id="${nextLv.id}"><div><span class="meta">${t('nextLevelK')}</span><div class="card-title" style="margin-top:4px">${esc(nextLv.title)}</div></div><span class="mini mini-accent">${t('open')}</span></div>`;
       head = R.pct >= 85 ? t('readyForExam') : t('passed');
       copy = t('timeUsed', fmt(R.secs * 1000), BANK.examMinutes) + (weak.length ? t('weakUnder', weak.length, BANK.passMark) : t('allAbove', BANK.passMark));
       bars = `<div class="stack g8"><span class="kicker">${t('byTopic')}</span>${tbars(per, BANK.passMark)}</div>`;
     } else {
       head = R.pct >= BANK.passMark - 10 && weak.length ? t('closeShort', weak.length) : t('notPassedHead');
-      copy = (R.left ? t('leftUnanswered', R.left, R.auto) : '') + (names.length ? t('costMost', names.join(', ')) : '');
+      copy = (R.left ? t('leftUnanswered', R.left, R.auto) : '') + (names.length ? t('costMost', names.join(' · ')) : '');
       const fine = {}, bad = {};
       for (const tp in per) (weak.includes(tp) ? bad : fine)[tp] = per[tp];
       bars = (weak.length ? `<div class="stack g8"><span class="kicker">${t('workFirst')}</span>${tbars(bad, BANK.passMark)}</div>` : '') +
@@ -979,13 +1064,13 @@ const VIEWS = {
       second: R.passed ? { text: t('share'), icon: 'share', act: () => share(R) } : (wrong.length ? { text: t('reviewN', wrong.length), act: reviewAct, pos: 'bottom' } : null),
       body: `<div class="score">${R.passed ? `<span class="pass">${svg('trophy', 16)}${t('passed')}</span>` : `<span class="pass no">${svg('x', 16)}${t('notYetPass', BANK.passMark)}</span>`}
           <span class="ring l${R.passed ? '' : ' bad'}" style="--v:${R.pct}"><b data-count="${R.pct}" data-suffix="%">${R.pct}%</b><small>${t('okOf', R.ok, R.n)}</small></span>
-          <h2 class="display" style="font-size:34px">${head}</h2><p class="body-muted">${esc(copy)}</p></div>${bars}`,
+          <h2 class="display" style="font-size:34px">${head}</h2><p class="body-muted">${esc(copy)}</p></div>${bars}${nextBand}`,
     };
   },
 
   /* C1 Progress */
   progress() {
-    const lp = levelPct(), st = streak();
+    const lp = levelPct(), sp = seenPct(), st = streak(), m = BANK.questions.filter((q) => mastered(q.id)).length;
     const week = Array.from({ length: 7 }, (_, k) => { const d = new Date(); d.setDate(d.getDate() - 6 + k); return { d, n: S.days[dkey(d)] || 0 }; });
     const max = Math.max(1, ...week.map((w) => w.n)), sum = week.reduce((a, w) => a + w.n, 0);
     const names = t('days');
@@ -995,8 +1080,8 @@ const VIEWS = {
     const weakest = TOPICS.filter((tp) => topicSeen(tp.id)).sort((a, b) => topicAcc(a.id) - topicAcc(b.id) || topicPct(a.id) - topicPct(b.id)).slice(0, 3);
     return {
       title: 'IYT Test', nav: 'progress',
-      body: `<div class="stack g4"><span class="meta">${LEVEL.title}</span><h2 class="display-s">${t('progress')}</h2></div>
-        <div class="stats"><div class="stat"><b data-count="${lp}" data-suffix="%">${lp}%</b><span class="meta">${t('mastered')}</span></div><div class="stat"><b data-count="${S.total}">${S.total}</b><span class="meta">${t('answeredW')}</span></div><div class="stat"><b data-count="${st}">${st}</b><span class="meta">${t('dayStreak', st)}</span></div></div>
+      body: `<div class="stack g4"><span class="meta">${LEVEL.title}${S.total ? ' · ' + t('answeredN', S.total) : ''}</span><h2 class="display-s">${t('progress')}</h2></div>
+        <div class="stats"><div class="stat"><b data-count="${sp}" data-suffix="%" data-k="seen:${LEVEL.id}">${sp}%</b><span class="meta">${t('covered')}</span></div><div class="stat"><b data-count="${m}" data-k="m:${LEVEL.id}">${m}</b><span class="meta">${t('mastered')}</span></div><div class="stat"><b data-count="${st}" data-k="streak">${st}</b><span class="meta">${t('dayStreak', st)}</span></div></div>
         <div class="band" style="padding:16px 18px"><div class="row sb-between" style="margin-bottom:12px"><span class="kicker">${t('thisWeek')}</span><span class="meta">${pl(sum, 'question')}</span></div><div class="days">${days}</div></div>
         <div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${mis ? t('misMeta', mis) : t('noneNow')}</div></div><button class="mini mini-accent${mis ? '' : ' off'}" data-act="allMistakes">${t('review')}</button></div>
         <div class="row sb-between"><div><div class="card-title">${t('flaggedQ')}</div><div class="card-meta">${fl ? pl(fl, 'question') : t('flagHint')}</div></div><button class="mini mini-accent${fl ? '' : ' off'}" data-act="flagged">${t('practise')}</button></div>
@@ -1012,8 +1097,9 @@ const VIEWS = {
     const ini = name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
     const ava = u && u.photo_url ? `<img src="${esc(u.photo_url)}" alt="">` : esc(ini);
     const th = S.set.theme;
-    const seg = (act, val, on, inner) => `<button class="lang${on ? ' lang-on' : ''}" data-act="${act}" data-t="${val}">${inner}</button>`;
-    const tog = (k) => `<button class="toggle${S.set[k] ? ' on' : ''}" data-act="set" data-k="${k}" aria-pressed="${S.set[k]}" aria-label="${esc(t(k === 'shuffle' ? 'shuffle' : 'explain'))}"></button>`;
+    const seg = (act, val, on, inner) => `<button class="lang${on ? ' lang-on' : ''}" data-act="${act}" data-t="${val}" role="radio" aria-checked="${on}">${inner}</button>`;
+    const tog = (k) => `<button class="toggle${S.set[k] ? ' on' : ''}" data-act="set" data-k="${k}" role="switch" aria-checked="${S.set[k]}" aria-label="${esc(t(k === 'shuffle' ? 'shuffle' : 'explain'))}"></button>`;
+    const nothing = !S.total && !S.exams.length && !Object.keys(S.q).length;
     const partial = LANG !== 'en' && BANK.translated < BANK.questions.length ? t('partEnglish') : '';
     loadDaily();
     // with several levels the row opens the level list on Home; with one it is plain text
@@ -1021,7 +1107,7 @@ const VIEWS = {
       ? `<div class="set" data-act="tab" data-v="home"><div class="card-title">${t('currentLevel')}</div><span class="val">${esc(LEVEL.title)}${svg('next', 16)}</span></div>`
       : `<div class="set"><div class="card-title">${t('currentLevel')}</div><span class="val">${esc(LEVEL.title)}</span></div>`;
     const daily = typeof DAILY === 'boolean'
-      ? `<div class="set"><div><div class="card-title">${t('daily')}</div><div class="card-meta">${t('dailyMeta')}</div></div><button class="toggle${DAILY ? ' on' : ''}" data-act="daily" aria-pressed="${DAILY}" aria-label="${esc(t('daily'))}"></button></div>` : '';
+      ? `<div class="set"><div><div class="card-title">${t('daily')}</div><div class="card-meta">${t('dailyMeta')}</div></div><button class="toggle${DAILY ? ' on' : ''}" data-act="daily" role="switch" aria-checked="${DAILY}" aria-label="${esc(t('daily'))}"></button></div>` : '';
     // admins get the students' results page (api/admin.mjs says who)
     const admin = ADMIN ? `<div class="set" data-act="admin"><div><div class="card-title">${t('students')}</div><div class="card-meta">${t('studentsMeta')}</div></div><span class="val">${svg('next', 16)}</span></div>` : '';
     return {
@@ -1030,11 +1116,11 @@ const VIEWS = {
           <div class="card-meta">${u ? (u.username ? '@' + esc(u.username) + ' · ' : '') + t('syncedTg') : t('savedBrowser')}</div></div></div>
         <div class="stack">
           ${daily}${lvl}${admin}
-          <div class="set"><div class="card-title">${t('language')}</div><div class="langs">${LANGS.map((l) => seg('lang', l, LANG === l, l.toUpperCase())).join('')}</div></div>
-          <div class="set"><div class="card-title">${t('theme')}</div><div class="langs">${seg('theme', 'day', th === 'day', svg('sun', 14) + t('themeDay'))}${seg('theme', 'night', th === 'night', svg('moon', 14) + t('themeNight'))}${seg('theme', 'auto', th === 'auto', t('auto'))}</div></div>
+          <div class="set"><div class="card-title">${t('language')}</div><div class="langs" role="radiogroup" aria-label="${t('language')}">${LANGS.map((l) => seg('lang', l, LANG === l, l.toUpperCase())).join('')}</div></div>
+          <div class="set"><div class="card-title">${t('theme')}</div><div class="langs" role="radiogroup" aria-label="${t('theme')}">${seg('theme', 'day', th === 'day', svg('sun', 14) + t('themeDay'))}${seg('theme', 'night', th === 'night', svg('moon', 14) + t('themeNight'))}${seg('theme', 'auto', th === 'auto', t('auto'))}</div></div>
           <div class="set"><div><div class="card-title">${t('shuffle')}</div><div class="card-meta">${t('shuffleMeta')}</div></div>${tog('shuffle')}</div>
           <div class="set"><div><div class="card-title">${t('explain')}</div><div class="card-meta">${t('explainMeta')}</div></div>${tog('feedback')}</div>
-          <div class="set"><div><div class="card-title">${t('reset')}</div><div class="card-meta">${t('resetMeta')}</div></div><button class="mini mini-danger" data-act="reset">${t('resetBtn')}</button></div>
+          <div class="set"><div><div class="card-title">${t('reset')}</div><div class="card-meta">${nothing ? t('resetNothing') : t('resetMeta')}</div></div><button class="mini mini-danger${nothing ? ' off' : ''}" data-act="reset">${t('resetBtn')}</button></div>
         </div>
         <p class="hint">${esc(t('disclaimer', BANK.version) + partial)}</p>`,
     };
@@ -1111,17 +1197,19 @@ const SHEETS = {
   setup(s) {
     const pool = setupPool(s), N = pool.length, size = s.size === 'all' ? N : Math.min(s.size, N);
     const misAll = allMistakes();
-    const chips = TOPICS.map((tp) => {
-      const c = s.mis ? topicIds(tp.id).filter(isMistake).length : topicIds(tp.id).length;
-      return `<button class="tag${s.on.has(tp.id) ? ' tag-on' : ''}${s.mis && !c ? ' off' : ''}" style="min-height:40px;font-size:14px;padding:0 12px;gap:6px" data-act="chip" data-t="${tp.id}">${esc(short(tp.id))}<span class="tag-count">${c}</span></button>`;
+    const allOn = s.on.size === TOPICS.length; // every topic: the one "All topics" chip is on, the topics are not
+    const chips = `<button class="tag${allOn ? ' tag-on' : ''}" style="min-height:40px;font-size:14px;padding:0 12px;gap:6px" data-act="chipsAll" aria-pressed="${allOn}">${t('allTopicsChip')}<span class="tag-count">${s.mis ? misAll.length : BANK.questions.length}</span></button>` + TOPICS.map((tp) => {
+      const c = s.mis ? topicIds(tp.id).filter(isMistake).length : topicIds(tp.id).length, on = !allOn && s.on.has(tp.id);
+      return `<button class="tag${on ? ' tag-on' : ''}${s.mis && !c ? ' off' : ''}" style="min-height:40px;font-size:14px;padding:0 12px;gap:6px" data-act="chip" data-t="${tp.id}" aria-pressed="${on}">${esc(short(tp.id))}<span class="tag-count">${c}</span></button>`;
     }).join('');
     const sz = (v, label) => `<button class="tag${s.size === v ? ' tag-on' : ''}" style="min-height:40px;font-size:15px" data-act="size" data-s="${v}">${label}</button>`;
     return `<div class="stack g4"><span class="meta">${t('practice')}</span><h2 class="display-s">${t('whatToPractise')}</h2></div>
-      <div class="stack g8"><div class="row sb-between"><span class="kicker">${t('topics')}</span><button class="meta acc" data-act="chipsAll">${s.on.size === TOPICS.length ? t('none') : t('all')}</button></div>
-        <div class="tags">${chips}</div><span class="hint">${weakTopics().length ? t('weakPre') : ''}${t('tapToggle')}</span></div>
+      <div class="stack g8"><span class="kicker">${t('topics')}</span>
+        <div class="tags">${chips}</div><span class="hint">${!allOn && weakTopics().length ? t('weakPre') : ''}${t('tapToggle')}</span></div>
       <div class="stack g8"><span class="kicker">${t('questionsK')}</span><div class="tags">${N > 10 ? sz(10, '10') : ''}${N > 20 ? sz(20, '20') : ''}${sz('all', t('allN', N))}
-        ${misAll.length ? `<button class="tag${s.mis ? ' tag-on' : ''}" style="min-height:40px;font-size:15px" data-act="mis"><span data-i="refresh" data-s="16"></span>${t('mistakesOnly')}<span class="tag-count">${misAll.length}</span></button>` : ''}</div></div>
-      <div class="set" style="border:0;padding:6px 0 0"><div><div class="card-title">${t('showAnswer')}</div><div class="card-meta">${t('explainMeta')}</div></div><button class="toggle${s.fb ? ' on' : ''}" data-act="fb" aria-pressed="${s.fb}" aria-label="${esc(t('showAnswer'))}"></button></div>
+        ${misAll.length ? `<button class="tag${s.mis ? ' tag-on' : ''}" style="min-height:40px;font-size:15px" data-act="mis" aria-pressed="${s.mis}"><span data-i="refresh" data-s="16"></span>${t('mistakesOnly')}<span class="tag-count">${misAll.length}</span></button>` : ''}</div>
+        ${size > 50 ? `<span class="hint">${t('longSession')}</span>` : ''}</div>
+      <div class="set" style="border:0;padding:6px 0 0"><div><div class="card-title">${t('showAnswer')}</div><div class="card-meta">${t('explainMeta')}</div></div><button class="toggle${s.fb ? ' on' : ''}" data-act="fb" role="switch" aria-checked="${s.fb}" aria-label="${esc(t('showAnswer'))}"></button></div>
       <div class="sheet-foot"><button class="pill pill-primary pill-wide${size ? '' : ' off'}" data-act="start">${size ? t('start', size) : t('pickTopic')}</button></div>`;
   },
   grid() {
@@ -1180,6 +1268,7 @@ function check() {
   hap(ok ? 'success' : 'error');
   save();
   render();
+  $app.querySelector('.verdict')?.focus({ preventScroll: true }); // the verdict is announced, and Enter goes on to Next
   $app.querySelector('#why')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
 function silentNext() {
@@ -1211,6 +1300,7 @@ function tick() {
   const left = remaining();
   $app.querySelectorAll('.timer b').forEach((b) => { b.textContent = fmt(left); });
   $app.querySelectorAll('.timer').forEach((el) => el.classList.toggle('low', left < 300000));
+  if (left < 300000 && left > 0 && !S.exam.warned) { S.exam.warned = true; hap('warning'); toast(t('fiveLeft')); $app.querySelectorAll('.timer').forEach((el) => el.classList.add('beat')); }
   if (left <= 0) return submitExam(true);
   if (++ticks % 5 === 0) save(false);
 }
@@ -1279,12 +1369,20 @@ const ACT = {
   level: async (d) => { if (d.id) await setLevel(d.id); go('level'); },
   resume: () => startPractice(pickFor(BANK.questions.map((q) => q.id), 10)),
   examIntro: () => (cur().v === 'examIntro' ? null : go('examIntro')),
+  resumeExam: () => startExam(),
+  reload: () => location.reload(),
   setup: (d) => openSetup(d.t ? [d.t] : undefined),
   allMistakes: () => go('review', { items: allMistakes().map((id) => ({ id })), label: 'allMistakes', from: 'all' }),
   flagged: () => startPractice(pickFor(S.flags.filter((id) => Q[id]), 20)),
   // set-up sheet
-  chip: (d) => { const s = sheet; s.on.has(d.t) ? s.on.delete(d.t) : s.on.add(d.t); hap('sel'); render(); },
-  chipsAll: () => { sheet.on = new Set(sheet.on.size === TOPICS.length ? [] : TOPICS.map((tp) => tp.id)); render(); },
+  // with every topic on, a tap narrows the session to that one topic; the last topic off puts every topic back
+  chip: (d) => {
+    const s = sheet, all = TOPICS.map((tp) => tp.id);
+    if (s.on.size === all.length) s.on = new Set([d.t]); else s.on.has(d.t) ? s.on.delete(d.t) : s.on.add(d.t);
+    if (!s.on.size) s.on = new Set(all);
+    hap('sel'); render();
+  },
+  chipsAll: () => { sheet.on = new Set(TOPICS.map((tp) => tp.id)); hap('sel'); render(); },
   size: (d) => { sheet.size = d.s === 'all' ? 'all' : +d.s; hap('sel'); render(); },
   mis: () => { sheet.mis = !sheet.mis; if (sheet.mis) sheet.size = 'all'; render(); },
   fb: () => { sheet.fb = !sheet.fb; S.set.feedback = sheet.fb; save(); render(); },
@@ -1312,7 +1410,13 @@ const ACT = {
   restart: () => restartExam(),
   // profile
   lang: async (d) => { S.set.lang = d.t; save(); await setLang(d.t); render(); },
-  theme: (d) => { S.set.theme = d.t; save(); applyTheme(); render(); },
+  // the new theme spreads over the screen from the segment that was tapped
+  theme: (d, el) => {
+    S.set.theme = d.t; save();
+    const r = el.getBoundingClientRect(), st = document.documentElement.style;
+    st.setProperty('--tx', `${Math.round(r.left + r.width / 2)}px`); st.setProperty('--ty', `${Math.round(r.top + r.height / 2)}px`);
+    render(false, true, applyTheme);
+  },
   set: (d, el) => { S.set[d.k] = !S.set[d.k]; save(); el.classList.toggle('on', S.set[d.k]); setTimeout(render, 220); },
   daily: (d, el) => toggleDaily(el),
   admin: () => go('admin'),
@@ -1324,7 +1428,7 @@ const ACT = {
     if (!(await confirmBox(t('confirmReset')))) return;
     const set = S.set;
     S = fresh(); S.set = set;
-    save(); cloudSave(); toast(t('resetDone')); render();
+    save(); cloudSave(); render(); toast(t('resetDone'));
   },
 };
 $app.addEventListener('click', (e) => {
@@ -1340,7 +1444,7 @@ document.addEventListener('keydown', (e) => {
   if ((e.key === 'Enter' || e.key === ' ') && f && f !== document.body && f.matches('[data-act]:not(button)') && $app.contains(f)) { e.preventDefault(); f.click(); return; }
   const c = cur();
   if (sheet || (c.v !== 'question' && c.v !== 'exam')) return;
-  const k = 'abcd'.indexOf(e.key.toLowerCase()), num = '1234'.indexOf(e.key);
+  const key = e.key.toLowerCase(), k = Math.max('abcd'.indexOf(key), 'фыва'.indexOf(key)), num = '1234'.indexOf(e.key);
   const n = k >= 0 ? k : num;
   if (n >= 0) ACT[c.v === 'exam' ? 'eopt' : 'opt']({ n });
   if (e.key === 'Enter' && mainCb) { e.preventDefault(); ACT.main(); }
@@ -1384,7 +1488,7 @@ async function init() {
   const banks = await Promise.all(LEVELS.filter((l) => l.id).map((l) =>
     fetchBank(l.id).catch(() => 0).then((b) => [l.id, b])));
   for (const [id, b] of banks) if (b && b.questions) BASES[id] = b;
-  if (!BASES[DEFAULT_LEVEL]) throw new Error(t('bankError', banks.find(([id]) => id === DEFAULT_LEVEL)[1]));
+  if (!BASES[DEFAULT_LEVEL]) throw new Error(t('bankError'));
   const remote = await cloudLoad();
   if (remote && remote.ts > S.ts) { S = merge(remote); applyTheme(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   // The server copy wins when newer (another phone); progress made only on this device is sent up once now.
@@ -1404,6 +1508,6 @@ async function init() {
   if (then === 'setup') openSetup();
 }
 init().catch((e) => {
-  $app.innerHTML = `<div class="boot"><div class="stack g8" style="padding:24px;text-align:center"><span class="meta">${t('error')}</span><p class="body-muted">${esc(e.message)}</p></div></div>`;
+  $app.innerHTML = `<div class="boot"><div class="stack g12" style="padding:24px;text-align:center;align-items:center"><span class="meta">${t('error')}</span><p class="body-muted">${esc(e.message)}</p><button class="pill" data-act="reload">${t('retry')}</button></div></div>`;
   console.error(e);
 });

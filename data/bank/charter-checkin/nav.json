@@ -1,0 +1,1211 @@
+[
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "The technician switches on the chartplotter, waits for the fix, shows you this and turns to the VHF. What do you ask before he moves on?",
+  "a": "Whether the card covers the whole cruising ground, and how old the chart is",
+  "o": [
+   "Nothing — a plotter with a fix is a working plotter",
+   "Whether the screen can be dimmed for night passages",
+   "Whether the plotter also drives the autopilot"
+  ],
+  "why": "Check the chart covers everywhere you will go and ask its edition: an old card misses new marinas, moles and shoals.",
+  "ref": "Check-in: chartplotter",
+  "fig": {
+   "type": "card",
+   "title": "Chartplotter",
+   "lines": [
+    "Power on · fix: 9 satellites",
+    "Chart card: Greece — Ionian",
+    "Edition date: not shown",
+    "Position: the berth"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "At the berth the instruments show this, and the base's harbour plan gives 3.0 m here. What has happened?",
+  "a": "The sounder is set to feet — 9.8 ft is 3.0 m; switch the units to metres",
+  "o": [
+   "The transducer is fouled — the reading is random",
+   "It shows the depth at the harbour mouth, not the berth",
+   "The offset is set below the keel — add the draught"
+  ],
+  "why": "9.8 ft = 3.0 m. Greek and Croatian charts are in metres: set depth to metres and distance to nautical miles before you sail.",
+  "ref": "Check-in: instrument units",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Depth",
+     "9.8",
+     false
+    ],
+    [
+     "SOG",
+     "0.0",
+     false
+    ],
+    [
+     "Wind",
+     "6 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Depth display: no unit shown",
+    "Harbour plan: 3.0 m at the berth"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "You check the sounder against the harbour plan at the berth. How much water is under the keel right now?",
+  "a": "About 1.6 m — the sounder reads from the transducer, not from the keel",
+  "o": [
+   "3.3 m — the reading is already the water below the keel",
+   "1.4 m — take the draught off the reading",
+   "3.5 m — the plan is right and the sounder is 0.2 m out"
+  ],
+  "why": "No offset: the reading is depth below the transducer, 0.2 m under the surface here. Below the keel: 3.5 − 1.9 ≈ 1.6 m.",
+  "ref": "Check-in: depth sounder offset",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Depth",
+     "3.3",
+     false
+    ],
+    [
+     "SOG",
+     "0.0",
+     false
+    ],
+    [
+     "Log",
+     "0.0",
+     false
+    ]
+   ],
+   "lines": [
+    "Harbour plan: 3.5 m at the berth",
+    "Draught 1.9 m · offset: none set"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "Going through the plotter, the technician points at the MOB key and moves on. What do you do with it?",
+  "a": "Ask him to show how it marks and how it clears, then brief the crew on it",
+  "o": [
+   "Leave it — a casualty is recovered by eye, not from a screen",
+   "Note that it is the red button on the VHF handset",
+   "Press and hold it now to test the DSC distress alert"
+  ],
+  "why": "MOB on the plotter drops a waypoint and shows bearing and distance back; the crew must know where it is before it is needed.",
+  "ref": "Check-in: MOB function",
+  "fig": null
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "On the test run outside the harbour the display shows this. What do you write on the check-in form?",
+  "a": "Log reads zero — paddle wheel fouled; ask the base to clear it",
+  "o": [
+   "GPS fault — SOG shows a speed with no log input",
+   "Nothing — SOG from the plotter does for the week",
+   "Plotter has lost its fix — reboot it at the berth"
+  ],
+  "why": "A fouled paddle wheel reads 0; the base pulls and cleans it in the harbour. Note it: speed through the water feeds true wind and the log book.",
+  "ref": "Check-in: log and speed",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "SOG",
+     "4.8",
+     false
+    ],
+    [
+     "Log",
+     "0.0",
+     true
+    ],
+    [
+     "Depth",
+     "12",
+     false
+    ]
+   ],
+   "lines": [
+    "Motoring at cruising revs",
+    "Paddle-wheel log under the hull"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "A steady breeze blows across the marina and the burgee flies at the masthead, yet the instruments show this. What do you do?",
+  "a": "Note it — masthead unit dead; ask the base to look at it before you leave",
+  "o": [
+   "Accept it — the wind shows only once the boat is sailing",
+   "Go up in the bosun's chair and check the sensor yourself",
+   "Tap the display — it needs some minutes to warm up"
+  ],
+  "why": "The wind instrument should show direction and speed at the berth; a dead one is logged and fixed by the base, not by you aloft.",
+  "ref": "Check-in: wind instrument",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Wind",
+     "---",
+     true
+    ],
+    [
+     "AWS",
+     "0 kn",
+     false
+    ],
+    [
+     "Depth",
+     "3.4",
+     false
+    ]
+   ],
+   "lines": [
+    "Masthead unit: no data",
+    "Breeze F3 across the pontoon"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "This is the whole of the technician's autopilot briefing. What do you do?",
+  "a": "Ask to see Standby, a course change and the alarms, and try it on the test run",
+  "o": [
+   "Accept it — AUTO is the only button you will need",
+   "Read the manual the first time you need it at sea",
+   "Leave it switched off and hand-steer for the week"
+  ],
+  "why": "Know how to engage, disengage and what the alarm means before you rely on it — and never in harbours or close quarters.",
+  "ref": "Check-in: autopilot",
+  "fig": {
+   "type": "card",
+   "title": "Autopilot",
+   "lines": [
+    "“Press AUTO and it steers”",
+    "Not tried on the test run",
+    "Alarm: “you will hear it”"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "The technician finishes his radio check and leaves the set like this. What do you set before leaving the berth?",
+  "a": "Channel 16, dual watch on the base's working channel, squelch just above the hiss",
+  "o": [
+   "Leave 72 — the base calls you on it all week",
+   "Channel 16 with squelch fully up to keep it quiet",
+   "Channel 16 alone — dual watch drains the battery"
+  ],
+  "why": "Under way you keep a watch on 16; dual watch adds the working channel. Squelch fully up mutes weak calls.",
+  "ref": "VHF watch — channel 16",
+  "fig": {
+   "type": "card",
+   "title": "Fixed VHF",
+   "lines": [
+    "Channel 72",
+    "Squelch: fully up, no hiss",
+    "Dual watch: off",
+    "Volume: 2"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "The technician asks you to do the radio check yourself. How do you make the call?",
+  "a": "Call the base on its working channel with the boat's name and ask for a readability report",
+  "o": [
+   "Call the base on channel 16 — a check must be heard by all",
+   "Send a DSC test call to the base on channel 70",
+   "Call the coastguard on channel 16 and ask for a check"
+  ],
+  "why": "Radio checks go on a working channel, not on 16, which is kept for distress, safety and calling.",
+  "ref": "Radio check — working channel",
+  "fig": null
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "You open the DSC page of the fixed VHF and look at the front of the set. What do you do?",
+  "a": "Ask for the boat's MMSI to be programmed and the cover replaced before you sign",
+  "o": [
+   "Enter the MMSI printed on your own SRC certificate",
+   "Program the base's phone number in as the MMSI",
+   "Ignore it — DSC is for ships, not charter yachts"
+  ],
+  "why": "Without the ship's MMSI a DSC alert carries no identity; the cover prevents false alerts. Both are the base's job.",
+  "ref": "VHF DSC — MMSI",
+  "fig": {
+   "type": "card",
+   "title": "Fixed VHF — DSC",
+   "lines": [
+    "MMSI: 000000000",
+    "Distress button: cover missing",
+    "Position from plotter: yes"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "The inventory lists a handheld VHF. This is what you find in the chart-table drawer. What do you do?",
+  "a": "Ask for the charger and a full charge before you sign, and note it on the form",
+  "o": [
+   "Leave it — the fixed set is the one that matters",
+   "Take it as it is — one bar lasts a week on standby",
+   "Have it struck off the inventory to avoid a deposit claim"
+  ],
+  "why": "The handheld is the radio for the dinghy and the liferaft; flat and without a charger it is useless. Have it charged and listed.",
+  "ref": "Check-in: handheld VHF",
+  "fig": {
+   "type": "card",
+   "title": "Handheld VHF",
+   "lines": [
+    "Battery: 1 bar",
+    "Charger: not found",
+    "Inventory: “VHF portable, 1”"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "The plotter's AIS page shows the harbour traffic. What do you ask the technician?",
+  "a": "Whether it is receive-only or a transponder — can the ferries see you?",
+  "o": [
+   "Whether it shows yachts as well as ships",
+   "Whether the targets also appear on the VHF screen",
+   "Whether the CPA alarm can be switched off at night"
+  ],
+  "why": "A receiver shows others to you; only a transponder shows you to them. Know which before you cross a ferry route at night.",
+  "ref": "AIS — receiver or transponder",
+  "fig": {
+   "type": "card",
+   "title": "AIS",
+   "lines": [
+    "14 targets in harbour",
+    "Ferry: 2.1 M, CPA 0.8 M",
+    "CPA alarm: 0.5 M"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "On the test run, in flat water with no current, you compare the steering compass with the plotter's course over the ground. What do you do?",
+  "a": "Look for a phone or speaker by the binnacle, then note the deviation that remains",
+  "o": [
+   "Set the plotter to magnetic north so that the two agree",
+   "Accept 8° — that is the variation in the Ionian",
+   "Swing the compass yourself before leaving the harbour"
+  ],
+  "why": "Compass 090° + 3°E variation = 093° true; the other 5° is deviation — often a phone on the binnacle. Note it; the plotter steers by GPS.",
+  "ref": "Check-in: compass and plotter heading",
+  "fig": {
+   "type": "compass",
+   "variation": 3,
+   "course": 90,
+   "courseLabel": "Steering compass",
+   "note": "Plotter COG 098° T"
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "You tick the navigation kit off against the inventory. What do you ask the base for?",
+  "a": "A pilot book of the area and a current chart, before you sign",
+  "o": [
+   "Nothing — the chartplotter replaces all of it",
+   "A second pair of binoculars for the crew",
+   "A tide table and a set of tidal-stream atlases"
+  ],
+  "why": "Paper chart and pilot book are the backup and the harbour detail the plotter lacks; an old chart misses new moles and depths.",
+  "ref": "Check-in: charts and pilot book",
+  "fig": {
+   "type": "card",
+   "title": "Nav kit",
+   "lines": [
+    "Chart: Ionian, one sheet, 2014",
+    "Pilot book: none aboard",
+    "Dividers, Portland plotter: yes",
+    "Hand-bearing compass, binoculars: yes"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "In the chart-table drawer you find this. The technician says nobody uses it any more. What do you do with it during the week?",
+  "a": "Keep it: each day's departure and arrival, positions and times, engine hours, weather, anything that broke",
+  "o": [
+   "Leave it — the plotter's track is the boat's record",
+   "Fill it in on Friday evening from memory before the check-out",
+   "Use it only if the port police ask to see a log"
+  ],
+  "why": "The log is your record for the base, the insurer and the port police: when you were where, the engine hours, the damage you reported.",
+  "ref": "Ship's log",
+  "fig": {
+   "type": "card",
+   "title": "Log book",
+   "lines": [
+    "Last entry: May, previous crew",
+    "Columns: time, position, course, log, wind, engine hours",
+    "Pencil on a string, half the pages left"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "Your mate, who has no radio certificate, asks whether she may use the VHF during the week. What do you tell her?",
+  "a": "Yes, under your supervision as the certificated operator — and anyone may call in distress",
+  "o": [
+   "No — only the holder of the SRC may touch the set",
+   "Yes, freely — the boat's ship licence covers the crew",
+   "Only the handheld, never the fixed DSC set"
+  ],
+  "why": "The ship licence covers the set; an SRC holder is in charge of it and crew operate under supervision. Distress may be sent by anyone.",
+  "ref": "VHF licence — operator and ship station",
+  "fig": null
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "The base's briefing has a weather page. What do you take from it when you plan the week?",
+  "a": "Sail early, reef before the afternoon, allow for the current in the channel",
+  "o": [
+   "Ignore tide and current — there is none in the Med",
+   "Plan the long legs for the afternoon, when the wind is up",
+   "Stay in the marina on every day the Meltemi blows"
+  ],
+  "why": "The Med has little tide, but wind-driven currents in channels are real; the Meltemi builds by afternoon, so passages go early.",
+  "ref": "Base briefing — weather and currents",
+  "fig": {
+   "type": "card",
+   "title": "Briefing — weather",
+   "lines": [
+    "Tide: negligible",
+    "Meltemi: F6–7 afternoons, Jul–Aug",
+    "Kos–Kalymnos channel: current 2 kn"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "You switch the plotter on at the berth in the base and it shows this. What do you do?",
+  "a": "Treat it as a stale fix — wait for a lock, then check the position against the berth",
+  "o": [
+   "Enter a position correction so the boat sits on the berth",
+   "Assume the base moved the boat overnight",
+   "Accept it — plotters are good to about half a mile"
+  ],
+  "why": "Until it has satellites the plotter shows the last stored position. Check the fix time and that the boat sits on its berth before trusting it.",
+  "ref": "Check-in: GPS fix at the berth",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V50 H0 Z M118 50 V98 H130 V50 Z",
+   "depths": [
+    [
+     200,
+     125,
+     "9"
+    ],
+    [
+     80,
+     150,
+     "12"
+    ]
+   ],
+   "labels": [
+    [
+     124,
+     112,
+     "Base pontoon",
+     "middle"
+    ],
+    [
+     30,
+     34,
+     "Town",
+     "start"
+    ]
+   ],
+   "boat": [
+    240,
+    150,
+    0
+   ],
+   "panel": [
+    "No fix",
+    "Last: Fri 18:10",
+    "Off berth: 0.4 M"
+   ],
+   "note": "Plotter screen at the berth, Sat 17:00"
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "You set up the sounder's shallow-water alarm from these figures. What do you set it to?",
+  "a": "About 3 m — the keel touches at 1.7 m on this sounder, plus a margin",
+  "o": [
+   "1.0 m as found — the alarm is about the hull, not the keel",
+   "2.1 m — the draught, exactly",
+   "5 m — anything closer is a nuisance in Greek bays"
+  ],
+  "why": "The keel touches when the sounder reads 2.1 − 0.4 = 1.7 m; add a metre or so of margin. Set it, and tell the crew what the alarm means.",
+  "ref": "Depth sounder — shallow-water alarm",
+  "fig": {
+   "type": "card",
+   "title": "Depth sounder set-up",
+   "lines": [
+    "Draught 2.1 m",
+    "Transducer 0.4 m below the waterline",
+    "Offset: none (reads below transducer)",
+    "Alarm as found: 1.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "The depth sounder is blank and the base answers as shown. What do you do?",
+  "a": "Have it written on the form as unserviceable and ask for a fix or a lead line before you sail",
+  "o": [
+   "Sail anyway — the Ionian is deep and you know the bays",
+   "Refuse the boat and demand the deposit back",
+   "Sign now and raise it by phone with the base on Monday"
+  ],
+  "why": "A dead instrument is noted at hand-over so it is not charged to you, and a boat without depth is not fit to anchor: push for a fix.",
+  "ref": "Check-in: defects on the form",
+  "fig": {
+   "type": "card",
+   "title": "Check-in, Saturday 17:30",
+   "lines": [
+    "Depth sounder: blank",
+    "Base: “the electrician comes Monday”",
+    "Sunday: Lefkas → Meganisi"
+   ],
+   "tag": "No depth"
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "The plotter's display menu looks like this, and Tuesday's plan is to leave Kos at 03:00 for Astypalaia. What do you set up now, at the berth?",
+  "a": "Find the night palette and the dimmer and try them, so that you can set them in the dark",
+  "o": [
+   "Leave it at 100 % — the brighter the screen, the safer the night",
+   "Set AUTO and forget it — the plotter knows when it gets dark",
+   "Switch the plotter off at night and steer by the compass alone"
+  ],
+  "why": "At 100 % the screen kills your night vision; the night colours and the dimmer are found in daylight, not fumbled for at 03:00.",
+  "ref": "Check-in: plotter at night",
+  "fig": {
+   "type": "card",
+   "title": "Plotter — display",
+   "lines": [
+    "Palette: Day",
+    "Backlight: 100 %",
+    "Night mode key: not shown",
+    "Tuesday: Kos → Astypalaia, 03:00"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Reading the plotter again on Sunday morning, before the lines come off, you find this. What do you do?",
+  "a": "Clear the active route and the old waypoints, then build your own from the chart",
+  "o": [
+   "Follow it — the previous crew clearly knew the area",
+   "Keep it and mute the two alarms for the week",
+   "Delete everything, including the base's own harbour marks"
+  ],
+  "why": "A stranger's route steers you to their anchorages with their alarms; a plotter left clean shows only what you put in it.",
+  "ref": "Check-in: plotter routes and waypoints",
+  "fig": {
+   "type": "card",
+   "title": "Plotter — routes",
+   "lines": [
+    "Active route: “Leg 3 → Fiskardo”, 7 waypoints",
+    "XTE alarm: on · arrival alarm: 0.1 M",
+    "Waypoints stored: 48, previous crew",
+    "Base marks: “Lefkas fuel”, “Base berth”"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "The contract allows the Turkish coast from Bodrum to Datça, and the plotter shows this. What do you do before you sign?",
+  "a": "Ask the base for a card that covers Turkey, or paper charts of that coast — before you sign",
+  "o": [
+   "Rely on the phone app — it streams the Turkish coast when you need it",
+   "Sail by the base map — the harbours over there are easy",
+   "Cross anyway — the AIS and the depth sounder will show the shoals"
+  ],
+  "why": "A base map has no depths or hazards; for every mile the contract lets you sail you need a chart, electronic or paper.",
+  "ref": "Check-in: chart coverage vs cruising area",
+  "fig": {
+   "type": "card",
+   "title": "Plotter — cartography",
+   "lines": [
+    "Card: Greece — Dodecanese, 2024",
+    "Turkey coast: base map only, no depths",
+    "Contract: Dodecanese + Bodrum–Datça"
+   ],
+   "tag": "No chart"
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "The technician calls the tablet in the chart table 'the backup plotter'. What do you check before it earns that name?",
+  "a": "That the charts are downloaded for offline use and that it charges from the boat's 12 V",
+  "o": [
+   "That it has a SIM card — the charts stream from the internet",
+   "That it shows AIS targets like the fixed plotter does",
+   "Nothing — a backup is only looked at when the plotter dies"
+  ],
+  "why": "A backup that needs a phone signal and a wall socket is no backup: offline charts of the whole area and a 12 V lead, checked now.",
+  "ref": "Check-in: tablet as backup",
+  "fig": {
+   "type": "card",
+   "title": "Tablet",
+   "lines": [
+    "Charts app: Ionian — “download pending”",
+    "Battery: 15 %",
+    "Charger: USB lead, no 12 V plug",
+    "Inventory: “tablet, charts, 1”"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Your crew's navigator says she will do the week on her phone app and the paper chart is 'for the port police'. What do you tell her?",
+  "a": "Fine as a third source — the plotter is the primary and the paper chart the backup",
+  "o": [
+   "Fine — a modern app is more up to date than any plotter card",
+   "No — phones are banned from navigation on a charter boat",
+   "Fine, as long as she keeps it in a waterproof case at the helm"
+  ],
+  "why": "A phone overheats, goes flat and dies with the signal; its crowd-sourced depths are not surveyed. Use it, but not alone.",
+  "ref": "Phone apps and their limits",
+  "fig": {
+   "type": "card",
+   "title": "Phone chart app",
+   "lines": [
+    "Depths: crowd-sourced, “not for navigation”",
+    "Offline area: not downloaded",
+    "Battery: 40 % · in the sun at the helm"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Monday, 11:00, motoring north in the Kos–Kalymnos channel at cruising revs, the displays show this. What is happening?",
+  "a": "Nearly 2 kn of current against you — the log is through the water, SOG over the ground",
+  "o": [
+   "The log is over-reading — the paddle wheel needs calibrating",
+   "The GPS has a stale fix — SOG lags behind the real speed",
+   "The engine is losing power — check the fuel filter"
+  ],
+  "why": "STW is what the paddle wheel sees; SOG is what the ground sees. The difference is the current — the briefing warned of 2 kn here.",
+  "ref": "SOG vs speed through the water",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "SOG",
+     "4.2",
+     false
+    ],
+    [
+     "Log",
+     "6.0",
+     false
+    ],
+    [
+     "Depth",
+     "42",
+     false
+    ]
+   ],
+   "lines": [
+    "Cruising revs, flat water, no wind",
+    "Briefing: current in the channel"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "Sunday, at anchor in a bay you came into in daylight, your crew ask what the thin line behind the boat on the plotter is. What do you tell them?",
+  "a": "The track — where the boat has been; it is your way back out in the dark",
+  "o": [
+   "The route — where the plotter wants to take you next",
+   "The chart's depth contour — the boat sits on the 5 m line",
+   "The anchor circle — the plotter's drag alarm"
+  ],
+  "why": "The track records your positions; following it back out is the safest line in a bay you have already crossed.",
+  "ref": "Plotter: the track",
+  "fig": null
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Thursday's plan is a night passage across the Piraeus ferry route. You set the plotter up on Wednesday evening. What do you set?",
+  "a": "A CPA alarm on AIS targets at a range that leaves time to act, and test that it sounds",
+  "o": [
+   "Alarms off — they wake the off-watch for every fishing boat",
+   "CPA 0.1 M, so that only a real collision course sounds",
+   "Nothing — with a transponder the ferries will avoid you"
+  ],
+  "why": "A guard zone or CPA alarm is your second lookout at night; set it wide enough to act on and check that you can hear it from the helm.",
+  "ref": "AIS — CPA alarm and guard zone",
+  "fig": {
+   "type": "card",
+   "title": "Plotter — alarms",
+   "lines": [
+    "AIS: transponder, 14 targets",
+    "CPA alarm: off",
+    "Guard zone: off",
+    "Thursday: Aegina → Alimos, 22:00–02:00"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Monday, 09:30, weighing anchor in a crowded bay. The crew member at the wheel presses AUTO so that he can go forward and help. What do you do?",
+  "a": "Take him off it and keep a hand on the wheel — nobody leaves the helm in a crowded anchorage",
+  "o": [
+   "Let him — AUTO holds a heading better than a hand does",
+   "Let him, but set the heading at the gap between the boats",
+   "Have him use wind mode instead — it reacts faster to gusts"
+  ],
+  "why": "The autopilot steers a heading, not round boats and chains; in harbours and anchorages a person steers and the pilot stays on Standby.",
+  "ref": "Autopilot — not in close quarters",
+  "fig": {
+   "type": "card",
+   "title": "Bay, Monday 09:30",
+   "lines": [
+    "14 boats anchored, chains short",
+    "Wind F2, boats swinging",
+    "Chain up-and-down, 2 crew forward"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "Running home under main and genoa with a preventer rigged, the pilot is in wind mode. What happens when the wind veers 20° — and what do you do?",
+  "a": "The pilot follows the wind 20° to starboard; check the new heading on the chart, then alter or change mode",
+  "o": [
+   "Nothing changes — wind mode holds the course over the ground",
+   "The pilot gybes the boat — switch to compass mode at once",
+   "The pilot alarms and drops to Standby — hand-steer until it settles"
+  ],
+  "why": "Wind mode keeps the apparent wind angle, so it will not gybe you — but it steers where the wind goes; someone must watch the course.",
+  "ref": "Autopilot — wind mode",
+  "fig": {
+   "type": "card",
+   "title": "Autopilot — WIND",
+   "lines": [
+    "AWA 150° starboard, held",
+    "Course needed: 270° to the base",
+    "Preventer on the boom",
+    "Wind veering 20° over the hour"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "On the test run the autopilot's heading agrees with neither the steering compass nor the plotter. The technician's answer is shown. What do you do?",
+  "a": "Ask the base to do the calibration and the heading alignment now, in calm water, and check again",
+  "o": [
+   "Do the circles yourself after leaving the harbour on Sunday",
+   "Ignore it — the pilot holds a course even if its number is wrong",
+   "Set the plotter's heading source to the pilot so that they agree"
+  ],
+  "why": "A pilot with an uncalibrated fluxgate steers badly, especially on turns; calibration is the base's job, done before the boat is signed for.",
+  "ref": "Autopilot — compass calibration",
+  "fig": {
+   "type": "card",
+   "title": "Test run, headings",
+   "lines": [
+    "Autopilot: 274°",
+    "Steering compass: 262°",
+    "Plotter COG: 263°",
+    "Technician: “do a couple of circles, it learns”"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "The technician leaves the VHF on low power 'because the base is close'. Thursday you will be 20 miles offshore. What do you do with the setting?",
+  "a": "1 W in harbour for the base, 25 W for calling at sea — and a distress call always on 25 W",
+  "o": [
+   "Leave 1 W all week — 25 W drains the batteries",
+   "Set 25 W now for everything — more power is always better",
+   "25 W only on channel 16; the working channels stay on 1 W"
+  ],
+  "why": "Low power keeps a harbour chat local; at sea and in distress you want the full 25 W. Know which key switches it before you need it.",
+  "ref": "VHF — power output 1 W / 25 W",
+  "fig": {
+   "type": "card",
+   "title": "Fixed VHF",
+   "lines": [
+    "TX power: LO (1 W)",
+    "Base: “leave it, we are 200 m away”",
+    "Thursday: passage 20 M offshore"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "Sunday evening, stern-to in Fiskardo, the VHF chatters on 16 all evening and your crew want it off. What do you tell them?",
+  "a": "In harbour it may go off or down; the watch on 16 is for when you are under way",
+  "o": [
+   "It stays on 16 at full volume all week — that is the law",
+   "Switch it to the base's channel — they may call you",
+   "Leave it on 16 at the lowest volume so that nobody hears it"
+  ],
+  "why": "A listening watch on 16 is kept under way; alongside at night the set may be off or turned down — the harbour office has its own channel.",
+  "ref": "VHF — watch on channel 16",
+  "fig": null
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "Tuesday, 15:00, at anchor off Vathi. You come below to the alarm and this screen; your seven-year-old is at the chart table. What do you do, in order?",
+  "a": "Cancel on the set, then call the coastguard on 16: boat's name, MMSI, position, 'false alert, cancel'",
+  "o": [
+   "Switch the set off — the alert stops when the power goes",
+   "Nothing — it was undesignated, so nobody will respond to it",
+   "Call the base on the working channel and ask them to cancel it"
+  ],
+  "why": "A DSC distress alert is live until cancelled by voice on 16; the coastguard needs your name, MMSI and position to stand down.",
+  "ref": "DSC — cancelling a false distress alert",
+  "fig": {
+   "type": "card",
+   "title": "Fixed VHF — DSC",
+   "lines": [
+    "DISTRESS SENT — undesignated",
+    "MMSI 239xxxxxx · pos 38°22'N 020°43'E",
+    "Repeating every 4 min until acknowledged"
+   ],
+   "tag": "15:02"
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "The technician does the radio check from the office 50 m away and gets 'loud and clear'. What does that tell you about the masthead antenna?",
+  "a": "Little — at 50 m a broken antenna cable still gets through; ask for a check from a station miles away",
+  "o": [
+   "Everything — if it reaches the office, it reaches the coastguard",
+   "That the antenna is at the masthead, so the range is 25 miles",
+   "That the set is on 25 W — on 1 W the office would not hear it"
+  ],
+  "why": "Range comes from the antenna and its cable; a check across the pontoon proves only that the set transmits. Call a station on the horizon.",
+  "ref": "Radio check — antenna and range",
+  "fig": {
+   "type": "card",
+   "title": "Radio check",
+   "lines": [
+    "Base office: 50 m, readability 5",
+    "Antenna: masthead; deck plug taped up",
+    "Coastguard station: 12 M"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "At the helm the depth display is blank, while the one at the chart table shows the depth. What do you tell the base?",
+  "a": "The helm display or its network plug has failed — the sounder is fine; fix it or note it on the form",
+  "o": [
+   "The transducer is dead — a diver must look at the hull before you sail",
+   "Nothing — the chart-table display is enough for the week",
+   "Switch everything off and on again; it will come back by itself"
+  ],
+  "why": "One instrument reading at one display and not at another is the network, not the sensor: the connector at the helm is the usual culprit.",
+  "ref": "Instruments — the network",
+  "fig": {
+   "type": "card",
+   "title": "Instruments",
+   "lines": [
+    "Helm: depth “—”, wind 8 kn",
+    "Chart table: depth 3.4 m, wind 8 kn",
+    "One network backbone, two displays"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "Wednesday morning after a rolly night at anchor, the spare halyard has been slapping the mast and the wind display shows this in a flat calm. What do you do?",
+  "a": "Look up — the halyard has likely fouled the masthead unit; free it from the deck, tell the base, sail by eye",
+  "o": [
+   "Switch the instrument off — a reading like this means the electronics are failing",
+   "Reef now and keep it in — the instrument knows better than your eye",
+   "Stay put and call the base for a replacement unit before you move"
+  ],
+  "why": "A halyard wrapped on the masthead unit jams the cups or bends the vane; free it, tell the base, and sail without the number until it is fixed.",
+  "ref": "Wind instrument — the masthead unit",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Wind",
+     "38 kn",
+     true
+    ],
+    [
+     "AWA",
+     "jumping",
+     false
+    ],
+    [
+     "Depth",
+     "6.2",
+     false
+    ]
+   ],
+   "lines": [
+    "Flat calm, 07:00, Wednesday",
+    "Spare halyard slapping all night"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "Sunday evening you motor-sail into the dusk with the main up and the engine on. Which switches go on?",
+  "a": "NAV and STEAMING — sidelights, sternlight and the masthead steaming light",
+  "o": [
+   "TRICOLOUR and STEAMING — the two brightest, at the top",
+   "TRICOLOUR alone — the sail is up, so you are a sailing vessel",
+   "NAV alone — the engine is only helping the sail"
+  ],
+  "why": "Engine on means power-driven: sidelights, sternlight and the steaming light (Rule 23). The tricolour is for sail alone.",
+  "ref": "COLREGs Rules 23/25 — motor-sailing",
+  "fig": {
+   "type": "card",
+   "title": "Panel — lights",
+   "lines": [
+    "NAV (sidelights + stern)",
+    "STEAMING",
+    "TRICOLOUR",
+    "ANCHOR · DECK"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Monday, 22:00, under sail alone, your crew set the panel like this 'to be seen'. What do you change?",
+  "a": "Tricolour alone, or NAV alone — never both — and the deck light off; it blinds the helm",
+  "o": [
+   "Add STEAMING as well — the more light, the better you are seen",
+   "Leave it — an extra light never hurt anyone at night",
+   "Add ANCHOR too, so that the ferries see a white light"
+  ],
+  "why": "Rule 25: a sailing vessel shows either the deck-level set or the tricolour, not both; a deck light hides your lights and your night vision.",
+  "ref": "COLREGs Rule 25 — tricolour or sidelights",
+  "fig": {
+   "type": "card",
+   "title": "Panel, 22:00, under sail",
+   "lines": [
+    "NAV: on",
+    "TRICOLOUR: on",
+    "DECK: on",
+    "STEAMING: off"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Tuesday, 23:00, anchored in a bay with dinghies crossing to the taverna. The panel is set like this. What do you change?",
+  "a": "NAV off — at anchor you show only the all-round white; sidelights say you are under way",
+  "o": [
+   "Add STEAMING — a second white at the top is seen further",
+   "Leave it — in a busy bay more lights are safer",
+   "Swap ANCHOR for TRICOLOUR — it is higher and brighter"
+  ],
+  "why": "Rule 30: an anchored vessel shows an all-round white; sidelights and sternlight are for a vessel under way and confuse a dinghy at night.",
+  "ref": "COLREGs Rule 30 — at anchor",
+  "fig": {
+   "type": "card",
+   "title": "Panel, 23:00, at anchor",
+   "lines": [
+    "ANCHOR: on",
+    "NAV: on",
+    "DECK: off",
+    "Cockpit light: on"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 1,
+  "q": "Ticking off the inventory, your crew ask why the panel has a HORN button when there is an aerosol foghorn in the locker. What do you tell them?",
+  "a": "The electric horn is the boat's whistle for manoeuvring and fog signals; the aerosol is the backup — test both",
+  "o": [
+   "The button is for the anchor-drag alarm — the aerosol is the horn",
+   "The aerosol is for fog only; the button is for calling the marina",
+   "Either will do — a sailing yacht is not required to carry a whistle"
+  ],
+  "why": "A vessel over 12 m carries a whistle (Rule 33); the electric horn is it, and a can that sounds without power is the sensible spare.",
+  "ref": "COLREGs Rule 33 — sound signals",
+  "fig": null
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "The radar display says this and the contract forbids night sailing. The base cannot fix it this week. Do you accept the boat?",
+  "a": "Yes — written on the form as unserviceable so it is not charged to you; your plan needs no radar",
+  "o": [
+   "No — refuse the boat, a radar on the list must work",
+   "Yes, but only after they fit a working scanner, whatever it takes",
+   "Yes, and say nothing — an unused radar is not your problem"
+  ],
+  "why": "Weigh a dead item against your plan: no night or fog passages, so radar is not needed — but it goes on the form, or the check-out charges it to you.",
+  "ref": "Check-in: radar and defects on the form",
+  "fig": {
+   "type": "card",
+   "title": "Radar",
+   "lines": [
+    "Display: “no scanner detected”",
+    "Technician: “nobody ever uses it”",
+    "Contract: no night sailing",
+    "Forecast: visibility good all week"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "Your crew plot the plotter's position on the paper chart and it lands 100 m inland. Reading the chart's title block you find this. What is going on?",
+  "a": "The chart is on another datum — apply the printed shift to GPS positions, or set the plotter to the chart's datum",
+  "o": [
+   "The GPS is 100 m out — normal for a charter plotter",
+   "The chart is old and the coast has been built out since",
+   "The plotter's position offset is wrong — reset it to zero"
+  ],
+  "why": "GPS positions are WGS84; an older chart on ED50 needs the shift printed in its title block before a GPS position goes on it.",
+  "ref": "Chart datum and GPS — WGS84",
+  "fig": {
+   "type": "card",
+   "title": "Chart — title block",
+   "lines": [
+    "Datum: European 1950 (ED50)",
+    "“Positions from GPS (WGS84) move 0.06′ N, 0.08′ E”",
+    "Plotter datum: WGS84",
+    "Edition: 2009, corrected 2015"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 3,
+  "q": "Thursday, 07:00, anchored in a bay with no phone signal and a hard sky to the north. How do you get a forecast before deciding to move?",
+  "a": "Keep 16 on for the coastguard's announcement, listen on the channel the briefing gave, and ask the base on 72",
+  "o": [
+   "Motor towards the base until the phone finds a signal, then open the app",
+   "Go by the barometer — a Med summer has no fronts to speak of",
+   "Call the coastguard on 16 and ask them to read you the forecast"
+  ],
+  "why": "Coast stations announce their weather broadcasts on 16 and read them on a working channel; the base knows the local pattern. Both are on the VHF.",
+  "ref": "Forecast sources — VHF weather broadcasts",
+  "fig": {
+   "type": "card",
+   "title": "Briefing — forecast sources",
+   "lines": [
+    "Coastguard weather: announced on 16, read on a working channel",
+    "Times: 06:00, 10:00, 16:00, 22:00 local",
+    "Base: ch 72, 08:00–20:00",
+    "No phone signal in the northern bays"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "You take the hand-bearing compass from the drawer and try it on the way out of the harbour, as shown. What does it tell you?",
+  "a": "Use it well away from the binnacle and the winches — at the bow it agrees with the steering compass",
+  "o": [
+   "The steering compass is 11° out — ask for it to be swung",
+   "Take bearings from the plotter's cursor from now on",
+   "Average the two readings and use 098° for the week"
+  ],
+  "why": "A hand-bearing compass has no deviation card: it is read where there is no iron or magnet — the bow, the pushpit — never beside the wheel.",
+  "ref": "Hand-bearing compass",
+  "fig": {
+   "type": "card",
+   "title": "Hand-bearing compass — harbour mole",
+   "lines": [
+    "At the binnacle: 104°",
+    "At the bow: 093°",
+    "Steering compass, bow on the mole: 093°"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "On the 42 ft catamaran the technician briefs the instruments at the starboard helm and heads for the galley. What do you ask?",
+  "a": "Which readouts repeat at the port helm — you will steer from there when the quay is to port",
+  "o": [
+   "Whether the two helms can run the plotter at the same time",
+   "Nothing — a catamaran is steered the same from either side",
+   "Whether the port wheel can be locked for the week"
+  ],
+  "why": "On a cat you moor from the helm nearest the quay; if depth, engine revs and the pilot's Standby are only to starboard, you need to know it now.",
+  "ref": "Catamaran — two helms",
+  "fig": {
+   "type": "card",
+   "title": "42 ft catamaran — helms",
+   "lines": [
+    "Starboard: plotter, pilot, depth, both tachos",
+    "Port: compass, engine levers, ?",
+    "Base berth: quay to port"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Reading the plotter's set-up page on Sunday morning you find this, left by the last crew. What do you change?",
+  "a": "Distance to nautical miles and speed to knots — the chart, the log and the forecast all use them",
+  "o": [
+   "Nothing — kilometres are more precise than miles",
+   "Position to decimal degrees, to match the phone app",
+   "Depth to feet, to match the depth sounder's display"
+  ],
+  "why": "One mile is one minute of latitude on the chart; km on the plotter and miles on the chart is how distances get doubled or halved.",
+  "ref": "Plotter — units",
+  "fig": {
+   "type": "card",
+   "title": "Plotter — units",
+   "lines": [
+    "Distance: km",
+    "Speed: km/h",
+    "Depth: m",
+    "Position: ddd°mm.mmm′"
+   ]
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Tuesday, in a bay, your crew mark 'the good spot for tomorrow' by pressing the plotter's MOB key. What do you do?",
+  "a": "Clear it and explain: MOB starts a man-overboard display, on some sets an alert; a spot is a normal waypoint",
+  "o": [
+   "Leave it — a waypoint is a waypoint, whatever key put it there",
+   "Rename it to “anchor spot” in the waypoint list and keep it",
+   "Press MOB again — the second press turns it into a waypoint"
+  ],
+  "why": "The MOB key is for one thing; a plotter left in MOB mode steers back to a false casualty and, with DSC linked, can send an alert.",
+  "ref": "Plotter — MOB key",
+  "fig": {
+   "type": "card",
+   "title": "Plotter",
+   "lines": [
+    "MOB active · 14:22",
+    "Bearing 000°, 0.00 M",
+    "Route and alarms suspended"
+   ],
+   "tag": "MOB"
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Tuesday afternoon, under way, the VHF shrieks and shows this. What do you do?",
+  "a": "Silence it, listen on 16 and note the position; call the coastguard if nobody answers and you can help",
+  "o": [
+   "Press Acknowledge — it stops the alert for everybody at once",
+   "Switch the set off — the alarm resets itself on power-up",
+   "Send your own distress relay at once on DSC"
+  ],
+  "why": "A received alert is answered by the coast station; a yacht listens on 16, logs the position and acts only if nobody else does.",
+  "ref": "DSC — a distress alert received",
+  "fig": {
+   "type": "card",
+   "title": "Fixed VHF — DSC",
+   "lines": [
+    "DISTRESS RECEIVED — undesignated",
+    "MMSI 237xxxxxx · 3 M west of you",
+    "Acknowledge? YES / NO"
+   ],
+   "tag": "Alarm"
+  }
+ },
+ {
+  "topic": "nav",
+  "difficulty": 2,
+  "q": "Thursday, 11:00, 24 miles from the base, the displays show this and the base closes at 18:00. When do you arrive, and what do you do?",
+  "a": "About 17:00 — plan by SOG, six hours at 4 kn; call the base now and say so",
+  "o": [
+   "About 15:00 — the log gives the speed, four hours at 6 kn",
+   "About 13:00 — allow for the current easing as you go",
+   "No way to tell — the current changes every hour"
+  ],
+  "why": "Time to go is distance over speed over the ground: 24 M / 4 kn = 6 h. Tell the base early — a late boat is a late check-out.",
+  "ref": "Passage planning — SOG",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "SOG",
+     "4.0",
+     false
+    ],
+    [
+     "Log",
+     "6.0",
+     false
+    ],
+    [
+     "Depth",
+     "55",
+     false
+    ]
+   ],
+   "lines": [
+    "24 M to the base, 11:00",
+    "Base office closes 18:00"
+   ]
+  }
+ }
+]

@@ -30,7 +30,7 @@ docs/
 data/
   build_bank.py                 source of the Bareboat Skipper bank — edit here, then run
   build_level.py                builds the other levels from bank/<level>/<topic>.json (+ .ru.json)
-  bank/<level>/<topic>.json     VHF Radio Operator, International Crew, Flotilla Skipper: 20 questions per topic; Racing Rules of Sailing: 100
+  bank/<level>/<topic>.json     VHF Radio Operator, International Crew, Flotilla Skipper: 20 questions per topic; Charter Check-in: 50; Racing Rules of Sailing: 100
   questions/<level>.json        the built banks the apps read
   questions/<level>.ru.json     Russian translation of each bank (overlay)
   i18n.py                       extract strings to translate / check an overlay
@@ -131,6 +131,7 @@ Figure types: [docs/figures.md](docs/figures.md).
 | Flotilla Skipper | 200 (10 topics × 20) | done — `data/questions/flotilla-skipper.json` |
 | Bareboat Skipper | 1000 (10 topics × 100) | done — `data/questions/bareboat-skipper.json` |
 | Racing Rules of Sailing (not an IYT course) | 1000 (10 topics × 100) | done — `data/questions/racing-rules.json` |
+| Charter Check-in (not an IYT course) | 500 (10 topics × 50) | done — `data/questions/charter-checkin.json` |
 | ICC (International Certificate of Competency) | — | planned |
 | Yachtmaster Coastal | 120 planned | — |
 | Yachtmaster Offshore | — | 2027 |
@@ -138,7 +139,9 @@ Figure types: [docs/figures.md](docs/figures.md).
 
 Order follows the [IYT course progression](https://www.iytworld.com/students/recreational/iyt-course-progression/);
 the Racing Rules of Sailing (World Sailing, 2025–2028; Russian text ППГ-25 by the Russian Sailing Federation) come
-after the IYT levels as situations on the race course — right of way, mark-room, starts, penalties, protests.
+after the IYT levels as situations on the race course — right of way, mark-room, starts, penalties, protests. The
+Charter Check-in is the Saturday at the base: papers and contract, the walk-round, sails, engine, electrics, water and
+gas, instruments, safety gear, ground tackle and dinghy, inventory, deposit and the Friday check-out.
 
 Questions are written for study and are not official IYT exam content. The mock-exam defaults (Bareboat and Flotilla
 Skipper 40 questions in 60 minutes, VHF and International Crew 30 in 45; 70 % to pass) must be verified against the

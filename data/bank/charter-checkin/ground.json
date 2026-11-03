@@ -1,0 +1,1272 @@
+[
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "The technician reads you the ground-tackle line of the inventory in the office and offers you the pen. What do you do?",
+    "a": "Go to the bow first and see the anchor and the chain yourself",
+    "o": [
+      "Sign — the inventory is the base's own record of the boat",
+      "Sign, and check the anchor on the first evening at anchor",
+      "Ask for a heavier anchor; 25 kg is too light for 45 ft"
+    ],
+    "why": "You sign for what you have seen: anchor type and size on the roller, chain in the locker.",
+    "ref": "Check-in: ground tackle",
+    "fig": {
+      "type": "card",
+      "title": "Inventory — ground tackle",
+      "lines": [
+        "Main anchor: Delta 25 kg",
+        "Chain: 10 mm, 70 m, all chain",
+        "Boat: 45 ft monohull"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "You ask about the chain marks. 'Every ten metres, you will see them,' says the technician. What do you do?",
+    "a": "Ask for the colour code and write it on the check-in form",
+    "o": [
+      "Take his word — paint marks are the same across the fleet",
+      "Count the marks yourself the first time you anchor",
+      "Ask for the chain to be re-marked before departure"
+    ],
+    "why": "Scope is laid by the marks; without the code you do not know how much chain is out.",
+    "ref": "Check-in: anchor chain",
+    "fig": {
+      "type": "card",
+      "title": "Anchor chain",
+      "lines": [
+        "Length: 70 m",
+        "Marks: paint every 10 m",
+        "Colour code: not on the form"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "You lift the locker lid and trace the chain to its end. What do you ask for?",
+    "a": "A rope lashing at the bitter end that you can cut in an emergency",
+    "o": [
+      "A bigger shackle — the last link takes the whole load",
+      "Nothing — a shackled end can never be lost overboard",
+      "Ten metres of rope spliced on to make the chain longer"
+    ],
+    "why": "The bitter end is tied with rope so the whole rode can be cut away if you must leave the anchor fast.",
+    "ref": "Check-in: anchor locker",
+    "fig": {
+      "type": "card",
+      "title": "Anchor locker",
+      "lines": [
+        "Bitter end: shackled hard to the eye bolt",
+        "Lashing: none",
+        "Chain: 70 m, all chain"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "On the foredeck the technician points at the two foot switches and hands you the windlass remote. What do you do before you leave the bow?",
+    "a": "Run the chain out and in from both switches and from the remote",
+    "o": [
+      "Try the remote only — the foot switches are a backup",
+      "Note 'windlass OK' — he has just shown you the controls",
+      "Try it on the first anchorage, with a real load on the chain"
+    ],
+    "why": "Test every control both ways at the pontoon; a dead 'up' switch is found at the base, not in a bay.",
+    "ref": "Check-in: windlass",
+    "fig": null
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "During the test the windlass motor hums and runs, but the gypsy does not turn and the chain stays where it is. What do you do?",
+    "a": "Tighten the clutch with the windlass handle and try again",
+    "o": [
+      "Reset the breaker at the panel and try again",
+      "Ask for the windlass motor replaced before departure",
+      "Note the windlass as faulty and plan to anchor by hand"
+    ],
+    "why": "A slipping clutch: the gypsy is not locked to the shaft. The handle tightens it — and frees it to lower by hand.",
+    "ref": "Check-in: windlass clutch",
+    "fig": null
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "You press the foot switch and nothing happens. You go below and find the panel like this. What do you do?",
+    "a": "Switch the windlass breaker on, start the engine and try again",
+    "o": [
+      "Write 'windlass dead' on the check-in form and ask for an electrician",
+      "Ask the base to charge the batteries overnight before you test it",
+      "Lower the anchor on the clutch to test the chain run instead"
+    ],
+    "why": "The windlass has its own breaker and is used with the engine running — its current would flatten the house bank.",
+    "ref": "Check-in: windlass power",
+    "fig": {
+      "type": "panel",
+      "gauges": [
+        [
+          "Volts",
+          "12.6",
+          false
+        ],
+        [
+          "Engine",
+          "stopped",
+          false
+        ],
+        [
+          "Windlass",
+          "OFF",
+          true
+        ]
+      ],
+      "lines": [
+        "Foot switch: nothing",
+        "Remote: nothing"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "The technician showed you the snubber at check-in. On your first night you are anchored as drawn and the wind is building. What do you do with the chain?",
+    "a": "Hook the snubber on, take the load to a cleat and slacken the chain on the gypsy",
+    "o": [
+      "Leave the chain on the gypsy — the windlass brake is made for it",
+      "Set the chain stopper and keep the snubber for a real gale",
+      "Lead the chain round the mast foot and make it fast there"
+    ],
+    "why": "The windlass is not a mooring point: the snubber takes the snatch loads, the chain stopper backs it up.",
+    "ref": "Base briefing: anchoring",
+    "fig": {
+      "type": "anchor",
+      "depth": "6 m",
+      "title": "First night, F5 forecast",
+      "lines": [
+        "All chain, 30 m out",
+        "Chain held on the gypsy",
+        "Snubber and hook: bow locker"
+      ],
+      "wind": 180
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "At the bow the technician opens the locker and you see this. He says the shower hose does the chain. What do you do?",
+    "a": "Ask for the drain cleared and the washdown shown working, and note both",
+    "o": [
+      "Accept the shower hose — it rinses the chain just as well",
+      "Accept it — the locker empties itself once you are sailing",
+      "Ask for a bucket and bail the locker out once a day"
+    ],
+    "why": "Standing water and mud in the locker rot the chain and the boat; the washdown is listed, so it must work.",
+    "ref": "Check-in: anchor locker",
+    "fig": {
+      "type": "card",
+      "title": "Anchor locker, bow",
+      "lines": [
+        "Drain: blocked, water standing",
+        "Washdown pump: no pressure",
+        "Cockpit shower hose: works"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "You find the bow roller like this. 'It has been that way all season,' says the technician. What do you do?",
+    "a": "Photograph it, write it on the check-in form and ask for a pin before you leave",
+    "o": [
+      "Take his word — a season of use shows that it holds",
+      "Refuse the boat until the roller is replaced with a new one",
+      "Say nothing now and call it pre-existing damage at check-out"
+    ],
+    "why": "Damage not on the form is yours at check-out; the pin keeps the anchor from jumping the roller at sea.",
+    "ref": "Check-in: bow roller",
+    "fig": {
+      "type": "card",
+      "title": "Bow roller",
+      "lines": [
+        "Starboard cheek: cracked",
+        "Roller: turns stiffly",
+        "Pin through the shank: missing"
+      ],
+      "tag": "All season"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "The technician ticks the second anchor without going aft: 'It is in the lazarette.' What do you do?",
+    "a": "Ask him to dig it out and show you the anchor, the warp and the shackle together",
+    "o": [
+      "Tick it — a kedge is hardly ever used on a week's charter",
+      "Ask for a second all-chain rode in place of the rope warp",
+      "Check the warp length only; the anchor is a standard item"
+    ],
+    "why": "A kedge without its warp or shackle is no anchor; see the whole kit and where it lives.",
+    "ref": "Check-in: second anchor",
+    "fig": {
+      "type": "card",
+      "title": "Inventory — second anchor",
+      "lines": [
+        "Kedge: aluminium 7 kg",
+        "Warp: 8 m chain + 50 m rope",
+        "Stowed: lazarette, under the fenders"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "You anchor for lunch where the figure shows, the way the briefing described. How much chain do you lay, counting the marks?",
+    "a": "Three marks, 30 m: 4–5 × the 7 m from roller to seabed",
+    "o": [
+      "One mark, 10 m: the chain's own weight holds in F3",
+      "Two marks, 20 m: three times the charted depth",
+      "Seven marks, 70 m: all of it, nothing held back"
+    ],
+    "why": "Med scope with all chain is 4–5 × the depth measured from the bow roller, not the waterline.",
+    "ref": "Base briefing: anchoring",
+    "fig": {
+      "type": "anchor",
+      "depth": "6 m",
+      "title": "Lunch stop, Ionian, F3",
+      "lines": [
+        "All chain, marked every 10 m",
+        "Bow roller 1 m above water",
+        "Briefing: scope 4–5 × depth"
+      ],
+      "wind": 0
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "You read the mooring kit against your week. What do you ask the base for before you sign?",
+    "a": "Stern lines of at least a boat length, and a long line for taking lines ashore",
+    "o": [
+      "Nothing — the lazy lines take the load, and 10 m reaches any quay",
+      "A second pair of springs; stern-to is held by the anchor chain",
+      "Only the long line — 10 m stern lines are the standard kit"
+    ],
+    "why": "A stern line goes to the quay and back; in a bay or at a quay without lazy lines you need a long line ashore.",
+    "ref": "Check-in: mooring lines",
+    "fig": {
+      "type": "card",
+      "title": "Mooring lines on board",
+      "lines": [
+        "4 lines × 10 m",
+        "2 springs × 8 m",
+        "Long line: none",
+        "Week: Greek town quays, stern-to"
+      ],
+      "tag": "Boat 14 m"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "The technician makes a stern line up on the midships cleat to show you the cleat hitch. The line looks like this. What do you do?",
+    "a": "Ask for it replaced before departure and note the swap on the form",
+    "o": [
+      "Accept it — a stiff line is a strong line, it has not stretched",
+      "Accept it and turn it end for end so the chafe sits inboard",
+      "Tape over the worn part and keep that line as a spring only"
+    ],
+    "why": "A chafed, hardened line parts in the first Meltemi night; mooring lines are the base's to replace, not yours.",
+    "ref": "Check-in: mooring lines",
+    "fig": {
+      "type": "rope",
+      "kind": "cleat",
+      "labels": [
+        [
+          60,
+          50,
+          "stern line"
+        ],
+        [
+          255,
+          158,
+          "chafed, stiff"
+        ]
+      ],
+      "note": "Hard, kinked; cover worn through in one place"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "The technician counts the fenders out on the pontoon. What do you do?",
+    "a": "Ask for the flat one pumped or swapped, and note the torn cover on the form",
+    "o": [
+      "Accept them all — fenders are consumables and the deposit covers them",
+      "Ask for all the fenders replaced with new ones for a 45 ft boat",
+      "Say nothing — a half-flat fender still works against a quay"
+    ],
+    "why": "Count, size and condition go on the form; a flat fender is a scraped hull you will pay for.",
+    "ref": "Check-in: fenders",
+    "fig": {
+      "type": "card",
+      "title": "Fenders",
+      "lines": [
+        "6 fenders 20 × 60 cm, 1 ball fender",
+        "One fender: half flat",
+        "Covers: one torn",
+        "Fender step: cockpit locker"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "The passerelle is lying on the coachroof, untied. The technician says you will rig it at the first quay. What do you do?",
+    "a": "Have him show you the fitting and the lashing, and lash it down before you leave",
+    "o": [
+      "Leave it — a passerelle does not move on a coachroof",
+      "Tie it to the guardrail with its own bungee for the passage",
+      "Ask for it stowed in the base until you need it at a quay"
+    ],
+    "why": "A loose plank goes overboard on the first heel; see how it fits and how it is lashed for a passage.",
+    "ref": "Check-in: passerelle",
+    "fig": null
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "At the quay demonstration the technician hauls the lazy line up bare-handed. You will also pick up buoys in the bays. What do you check is aboard before you sign?",
+    "a": "Gloves for the slime line and a boat hook that locks when extended",
+    "o": [
+      "A second boat hook and a bucket for the mud off the line",
+      "Spare lazy lines of your own for quays that have none",
+      "A long lanyard so the lazy line can be tied to the pulpit"
+    ],
+    "why": "Lazy lines are slimy and cut hands; the boat hook that does the buoys and lines must lock, not telescope back.",
+    "ref": "Check-in: deck gear",
+    "fig": {
+      "type": "rope",
+      "kind": "ring",
+      "labels": [
+        [
+          160,
+          40,
+          "quay ring"
+        ],
+        [
+          245,
+          150,
+          "lazy line"
+        ]
+      ],
+      "note": "Slime line hauled up by hand"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "The dinghy is in the water at the pontoon. The technician goes through it with you and you note this. What do you do?",
+    "a": "Ask for a plug and the boat's name on the tubes before you sign for it",
+    "o": [
+      "Sign — a missing plug only matters when you tow it",
+      "Sign and buy a plug and a marker pen in town",
+      "Refuse the dinghy and ask for the deposit reduced"
+    ],
+    "why": "No plug means a swamped dinghy; without the boat's name a stolen or drifted tender cannot be returned.",
+    "ref": "Check-in: dinghy",
+    "fig": {
+      "type": "card",
+      "title": "Dinghy on the inventory",
+      "lines": [
+        "Inflated hard, valves tight",
+        "Oars 2, pump 1, painter 1",
+        "Drain plug: missing",
+        "Boat name: not on the tubes"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "First evening, stern-to on the Lefkas town quay on your 42 ft catamaran. You read this clause again. What do you do with the dinghy?",
+    "a": "Dinghy up on the davits, lifting lines cleated, cable and padlock on",
+    "o": [
+      "Leave it afloat on its painter — the quay is lit and busy all night",
+      "Tie it alongside, outboard on, with the kill cord in your pocket",
+      "Tow it tomorrow and padlock it only in the empty bays"
+    ],
+    "why": "The dinghy is the first thing stolen and the one thing the deposit does not cover; lift it and lock it every night.",
+    "ref": "Charter contract — dinghy",
+    "fig": {
+      "type": "card",
+      "title": "Contract — dinghy & outboard",
+      "lines": [
+        "Not covered by the damage waiver",
+        "Theft: full value, €2,500",
+        "Lifted at night; not towed at sea",
+        "Cable and padlock: on board"
+      ],
+      "tag": "€2,500"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "The technician lifts the outboard onto the dinghy and says it 'runs fine'. What do you do?",
+    "a": "Start it at the pontoon yourself, in neutral, and pull the kill cord to see it stop",
+    "o": [
+      "Take his word and start it the first time you need to go ashore",
+      "Ask him to start it and watch from the pontoon",
+      "Check the fuel level only — the engine was serviced over the winter"
+    ],
+    "why": "An outboard is tested where help is: it starts, it stops on the cord, and you have seen fuel in the tank.",
+    "ref": "Check-in: outboard",
+    "fig": {
+      "type": "card",
+      "title": "Outboard 5 hp",
+      "lines": [
+        "Fuel tank: 12 l, half full",
+        "Fuel line and bulb: fitted",
+        "Kill cord: on the hook",
+        "Pushpit bracket: fitted"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "The base manager shows you the plan for Friday. Where and how do you bring the boat back?",
+    "a": "Stern-to at B on the lazy line, by 17:00 on Friday",
+    "o": [
+      "Stern-to at C on your own anchor, as at a town quay",
+      "Alongside at A for fuel, and leave the boat there",
+      "On a buoy at D and wait for the base to call you in"
+    ],
+    "why": "The base takes the boat back where and how the briefing says: its own berth, the lazy line, no anchor, on time.",
+    "ref": "Base briefing: return",
+    "fig": {
+      "type": "bay",
+      "wind": 180,
+      "land": "M0 0 H320 V48 H0 Z M0 48 H60 V200 H0 Z",
+      "spots": [
+        [
+          110,
+          72,
+          "A"
+        ],
+        [
+          215,
+          80,
+          "B"
+        ],
+        [
+          95,
+          150,
+          "C"
+        ],
+        [
+          230,
+          150,
+          "D"
+        ]
+      ],
+      "labels": [
+        [
+          110,
+          30,
+          "fuel quay"
+        ],
+        [
+          215,
+          30,
+          "base pontoon · lazy lines"
+        ],
+        [
+          30,
+          100,
+          "town quay"
+        ],
+        [
+          230,
+          178,
+          "buoys"
+        ]
+      ],
+      "note": "Briefing: back by 17:00 on Friday"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "You find this in the cockpit locker during the inventory count. When does it go up during your week?",
+    "a": "Hoisted forward whenever you lie at anchor by day",
+    "o": [
+      "Hoisted at the masthead when you motor-sail by day",
+      "Hoisted at night with the anchor light, as a pair",
+      "Only in a channel, where ships must see you anchored"
+    ],
+    "why": "COLREGs Rule 30: a vessel at anchor shows one ball forward by day and the all-round white light at night.",
+    "ref": "COLREGs Rule 30",
+    "fig": {
+      "type": "card",
+      "title": "Cockpit locker",
+      "lines": [
+        "Black ball, folding",
+        "Line: 3 m",
+        "Inventory: 'anchor ball 1'"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "Sunday, 09:00, you are leaving the base for a 20-mile passage. What do you do at the bow before you go?",
+    "a": "Close the stopper, fit the pin and switch the windlass breaker off",
+    "o": [
+      "Leave all three as they are — you may need the anchor in a hurry",
+      "Tie the anchor to the pulpit and leave the breaker on",
+      "Switch the breaker off and leave the chain on the gypsy"
+    ],
+    "why": "At sea the chain sits on the stopper and the pin, not the gypsy; a live breaker lets a kicked foot switch drop the anchor.",
+    "ref": "Base briefing: anchoring",
+    "fig": {
+      "type": "card",
+      "title": "Bow, leaving the base",
+      "lines": [
+        "Anchor: home on the roller",
+        "Chain stopper: open",
+        "Roller pin: in its bag",
+        "Windlass breaker: ON"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "Your crew ask how to tie the fenders on before the first quay. What do you show them?",
+    "a": "A clove hitch with a slipped half hitch, so the height changes fast",
+    "o": [
+      "A bowline round the guardrail, so the fender can never slip down",
+      "A reef knot round the stanchion, pulled tight",
+      "Two half hitches on the top wire, pulled hard by hand"
+    ],
+    "why": "A clove hitch is re-set in seconds for a quay or a pontoon; the slipped half hitch stops it shaking loose.",
+    "ref": "Seamanship: fenders",
+    "fig": {
+      "type": "rope",
+      "kind": "rail",
+      "labels": [
+        [
+          60,
+          50,
+          "guardrail"
+        ],
+        [
+          250,
+          150,
+          "fender line"
+        ]
+      ],
+      "note": "Height set for the quay, then made fast"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "The technician hands you the boat's keyring. On the dinghy's transom you find this. What do you do?",
+    "a": "Try the key in the lock now, and lock it whenever the dinghy is left",
+    "o": [
+      "Take the lock bar off — it gets in the way of lifting the outboard",
+      "Lock it only at night, when the dinghy is up on the davits",
+      "Keep the key in the dinghy so any of the crew can unlock it"
+    ],
+    "why": "An outboard on open clamp screws is lifted off in a minute; a key that will not turn is found at the pontoon, not ashore.",
+    "ref": "Check-in: outboard",
+    "fig": {
+      "type": "card",
+      "title": "Outboard on the dinghy",
+      "lines": [
+        "Clamp screws: lock bar fitted",
+        "Lock key: on the boat's keyring",
+        "Contract: outboard theft not covered"
+      ],
+      "tag": "€1,800"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "The catamaran's dinghy hangs on the davits at the base, and rain is forecast tonight. What do you do with the drain plug?",
+    "a": "Pull it out so the rain drains, and fit it again before launching",
+    "o": [
+      "Leave it in and bail the dinghy out in the morning",
+      "Leave it in — the water steadies the dinghy on the davits",
+      "Lower the dinghy into the water for the night instead"
+    ],
+    "why": "Rain in a hanging dinghy weighs hundreds of kilos on the davits; the plug goes back in before it touches the water.",
+    "ref": "Check-in: davits",
+    "fig": {
+      "type": "card",
+      "title": "Davits, at the base",
+      "lines": [
+        "Bow and stern lifting lines: cleated",
+        "Drain plug: in",
+        "Forecast tonight: heavy rain"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 1,
+    "q": "Monday afternoon the crew take the dinghy to a shingle beach. The one at the tiller asks you how to land. What do you tell him?",
+    "a": "Stop the outboard and tilt it up before the shallows, then row or wade in",
+    "o": [
+      "Keep it running in gear until the bow touches the shingle",
+      "Come in fast so the dinghy slides up the beach clear of the waves",
+      "Tilt it halfway and leave it idling so you can back off later"
+    ],
+    "why": "A propeller in shingle loses its blades and its shear pin; the motor is stopped and lifted, the dinghy walked in.",
+    "ref": "Dinghy handling",
+    "fig": null
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Your first anchoring on the 42 ft catamaran: the chain is out and the boat is lying back. What do you do with this from the locker?",
+    "a": "Hook it on and ease chain until both legs take the load, chain slack behind",
+    "o": [
+      "Keep it for a gale — in a settled bay the chain alone is enough",
+      "Make one leg fast on the windlass side and leave the other loose",
+      "Hook it on, then winch the chain tight so the bridle stays slack"
+    ],
+    "why": "The bridle spreads the load to both bows and stops the cat sheering about; the chain behind it carries nothing.",
+    "ref": "Base briefing: catamaran anchoring",
+    "fig": {
+      "type": "card",
+      "title": "Anchor locker, catamaran",
+      "lines": [
+        "Bridle: two legs, one to each bow",
+        "Chain hook at the apex",
+        "Chain: 60 m, all chain"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Tuesday, 18:00, a paid buoy field in a Croatian bay. Your crew member at the bow has the buoy's ring on the boat hook. What does he do next?",
+    "a": "Pass a line through the ring and back to the same cleat, then a second one",
+    "o": [
+      "Hook the boat hook on and tie its handle to the pulpit",
+      "Lead the buoy's pick-up line onto the gypsy and take it in",
+      "Hold the ring while you motor gently to keep the boat on it"
+    ],
+    "why": "A line doubled through the ring is let go from aboard; two lines share the gusts, and none goes on the windlass or the hook.",
+    "ref": "Base briefing: mooring buoys",
+    "fig": {
+      "type": "card",
+      "title": "Buoy field, Croatia",
+      "lines": [
+        "Buoy with a ring on top",
+        "Your boat: 45 ft monohull",
+        "Wind: F4, gusts at night"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "This week's boat is a 36 ft monohull with a mixed rode. You look at the bow fitting and the locker. What do you ask for before you sign?",
+    "a": "The sharp cheek smoothed, and a chafe sleeve where the rope meets the roller",
+    "o": [
+      "Nothing — rope stretches and takes the snatch better than chain",
+      "Twenty more metres of chain, so the rope never leaves the boat",
+      "A second rope rode, in case the first one parts"
+    ],
+    "why": "A rope rode on a sharp roller chafes through in one windy night; the edge and the sleeve are sorted before you sign.",
+    "ref": "Check-in: anchor rode",
+    "fig": {
+      "type": "card",
+      "title": "36 ft — ground tackle",
+      "lines": [
+        "Chain: 25 m, then 40 m of rope",
+        "Chain-to-rope splice: in the locker",
+        "Bow roller: sharp edge on the cheek"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Thursday night, stern-to at a town quay with a swell running in. The stern lines are creaking and you see this. What do you do?",
+    "a": "Fit chafe guards at the fairlead and the quay edge, and ease the line a little",
+    "o": [
+      "Take the line in hard so it stops working on the fairlead",
+      "Leave it — the base replaces worn lines at check-out",
+      "Swap it for a spring line until the swell dies down"
+    ],
+    "why": "Chafe, not strain, parts mooring lines; a sleeve or a length of hose where the line moves keeps it whole till morning.",
+    "ref": "Mooring: chafe",
+    "fig": {
+      "type": "rope",
+      "kind": "cleat",
+      "labels": [
+        [
+          60,
+          50,
+          "stern line"
+        ],
+        [
+          250,
+          150,
+          "fairlead: chafing"
+        ]
+      ],
+      "note": "Line sawing on the fairlead and the quay edge"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Monday, 17:00, your crew have hung the fenders as they were on the base pontoon. You are coming alongside this quay for fuel. What do you tell them?",
+    "a": "Raise the fenders to where the topsides will touch the quay face",
+    "o": [
+      "Leave them low — the boat touches a quay at the waterline",
+      "Take them in — the tyres on the quay do the fenders' job",
+      "Lay them on deck and hold one by hand at the bow"
+    ],
+    "why": "Fenders go where hull and quay meet; at a high quay that is up the topsides, and tyres leave black marks you pay for.",
+    "ref": "Mooring: fenders",
+    "fig": {
+      "type": "card",
+      "title": "Fuel quay, Lefkas",
+      "lines": [
+        "Stone quay: top 1.2 m above water",
+        "Fenders: hung low, as at the pontoon",
+        "Face: rough, old tyres"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Wednesday evening, stern-to at a quay. You plan to leave at 06:00, when nobody will be ashore. How do you get the stern lines back aboard?",
+    "a": "Just before leaving, double each one back through its ring and slip it from aboard",
+    "o": [
+      "A crew member casts off and jumps aboard as the boat moves away",
+      "Untie them tonight and lie on the anchor alone till morning",
+      "Leave them on the rings and ask the base to collect them later"
+    ],
+    "why": "A line doubled through the ring is let go from the boat: nobody jumps a widening gap, and nothing is left on the quay.",
+    "ref": "Mooring: slip lines",
+    "fig": {
+      "type": "rope",
+      "kind": "ring",
+      "labels": [
+        [
+          160,
+          40,
+          "quay ring"
+        ],
+        [
+          245,
+          150,
+          "stern line"
+        ]
+      ],
+      "note": "Leaving at 06:00, nobody on the quay"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Monday, 18:00, a Croatian marina with lazy lines. Your crew member lifts the lazy line off the quay and walks it forward while you hold the boat in reverse. What do you tell him first?",
+    "a": "Keep the slack out of the water and away from the stern — it fouls the propeller",
+    "o": [
+      "Make it fast on the stern cleat first and walk it forward later",
+      "Let it sink as he walks, so it does not catch on the keel",
+      "Take it to the windlass and haul the bow down onto it"
+    ],
+    "why": "A slack lazy line under a boat in reverse wraps the propeller; keep it taut and high until it is on the bow cleat.",
+    "ref": "Mooring: lazy lines",
+    "fig": {
+      "type": "card",
+      "title": "Lazy line, marina",
+      "lines": [
+        "Line from the quay to a block on the seabed",
+        "Stern 2 m off, engine in reverse",
+        "Crew walking it forward, slack in the water"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Monday, 17:00, a town quay with no lazy lines; you will go in stern-to between two boats. Where do you drop the anchor?",
+    "a": "At B: about four boat lengths out, square to the gap, then reverse in",
+    "o": [
+      "At A: close in, so your chain stays clear of the others' anchors",
+      "At C: far out, so you have all the scope there is",
+      "At A, and pay out more chain once the stern lines are on"
+    ],
+    "why": "Four boat lengths in 5 m gives real scope and still reaches the quay with chain to spare; too close and it never bites.",
+    "ref": "Base briefing: stern-to with the anchor",
+    "fig": {
+      "type": "bay",
+      "wind": 90,
+      "land": "M0 0 H320 V40 H0 Z",
+      "spots": [
+        [
+          160,
+          72,
+          "A"
+        ],
+        [
+          160,
+          128,
+          "B"
+        ],
+        [
+          160,
+          182,
+          "C"
+        ]
+      ],
+      "labels": [
+        [
+          160,
+          25,
+          "town quay · gap between two boats"
+        ],
+        [
+          200,
+          72,
+          "15 m"
+        ],
+        [
+          200,
+          128,
+          "50 m"
+        ],
+        [
+          200,
+          182,
+          "100 m"
+        ]
+      ],
+      "note": "Boat 14 m · depth 5 m · chain 70 m"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Monday, 13:00, your first anchoring of the week: the chain is out and the boat is lying back. How do you know the anchor holds before the crew swim?",
+    "a": "Reverse slowly, then to about 1,500 rpm, and watch a transit on the shore",
+    "o": [
+      "Look at the chain: tight and straight down means it holds",
+      "Wait ten minutes; if the boat has not moved, it is set",
+      "Read the depth twice; if it has not changed, it holds"
+    ],
+    "why": "An anchor is set by backing down on it under power; a transit or the plotter shows a drag before the crew are in the water.",
+    "ref": "Base briefing: anchoring",
+    "fig": {
+      "type": "anchor",
+      "depth": "6 m",
+      "title": "First anchoring, F3",
+      "lines": [
+        "30 m of chain out",
+        "Sand, patches of weed"
+      ],
+      "wind": 270
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Tuesday, 09:00, leaving a bay in F4. Your crew member on the remote starts the windlass with the chain bar-tight and the boat lying well back. What do you do?",
+    "a": "Motor slowly up towards the chain so the windlass only lifts the slack",
+    "o": [
+      "Let him carry on — the windlass is rated to pull the boat",
+      "Have him lift in short bursts so the motor can cool between them",
+      "Give more revs astern to break the anchor out first"
+    ],
+    "why": "The windlass lifts chain, it does not haul the boat; motor up gently while the bow shows the helm where the chain leads.",
+    "ref": "Base briefing: anchoring",
+    "fig": {
+      "type": "anchor",
+      "depth": "8 m",
+      "title": "Weighing anchor, F4",
+      "lines": [
+        "40 m of chain out",
+        "Chain bar-tight ahead",
+        "Windlass straining"
+      ],
+      "wind": 0
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Your crew member at the bow guides the chain onto the gypsy with his hand while you press the remote. What do you tell him?",
+    "a": "Hands clear: stop the windlass, clear the chain with it off, then carry on",
+    "o": [
+      "Gloves on, and then it is safe to guide the chain by hand",
+      "Fine at slow speed — the motor stops itself if it jams",
+      "Fine, as long as your thumb stays near the up button"
+    ],
+    "why": "A gypsy takes a finger off with one link; chain is cleared with the windlass stopped, never by hand while it runs.",
+    "ref": "Windlass safety",
+    "fig": null
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "In the windlass test the anchor comes up the wrong way round and jams in the roller; the last metres of chain are twisted. What do you ask the base for?",
+    "a": "A swivel at the anchor, its pin moused, before you leave",
+    "o": [
+      "Nothing — you will turn the anchor by hand at the bow each time",
+      "A heavier anchor, which settles the right way up",
+      "The chain turned end for end in the locker"
+    ],
+    "why": "A swivel lets the anchor turn as it comes home; a twisted chain jams the roller and the gypsy just when you need them.",
+    "ref": "Check-in: anchor swivel",
+    "fig": {
+      "type": "card",
+      "title": "Windlass test",
+      "lines": [
+        "Anchor arrives upside down",
+        "Last 3 m of chain: twisted",
+        "Anchor to chain: plain shackle"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Tuesday, 22:00, anchored for the night. You set the plotter's anchor alarm. What radius do you give it?",
+    "a": "About 55 m: the chain out plus a boat length, with a little margin",
+    "o": [
+      "15 m: tight, so it warns you as soon as the boat moves",
+      "200 m: wide, so the swinging at night does not wake you",
+      "35 m: the chain out, nothing added for the boat"
+    ],
+    "why": "The GPS swings on the chain plus the boat's length; tighter wakes you all night, wider tells you too late.",
+    "ref": "Anchoring: drag alarm",
+    "fig": {
+      "type": "anchor",
+      "depth": "5 m",
+      "title": "Night anchorage, F4",
+      "lines": [
+        "35 m of chain out",
+        "Boat 14 m, GPS at the stern",
+        "Alarm centred on the drop point"
+      ],
+      "wind": 90
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "The dinghy is on the pontoon, soft. The technician hands you the foot pump and goes off to another boat. What do you check as you pump it up?",
+    "a": "Each valve in the inflate position, every chamber hard, then listen for a leak",
+    "o": [
+      "Pump one chamber hard — the others share the same air",
+      "Pump until just soft to the touch — the sun will do the rest",
+      "Leave the valves as they are and pump until the pump goes stiff"
+    ],
+    "why": "A valve left open empties as fast as you pump; each chamber is filled on its own and checked for a slow leak before you sign.",
+    "ref": "Check-in: dinghy",
+    "fig": {
+      "type": "card",
+      "title": "Dinghy, soft on the pontoon",
+      "lines": [
+        "Three chambers, one valve each",
+        "Valve stems: some up, some down",
+        "Foot pump: hose and adaptor"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Monday, 12:30, you come into a clear-water bay for lunch. Where do you drop the anchor?",
+    "a": "B: on the pale sand, where the anchor digs in and you can see it",
+    "o": [
+      "A: in the dark weed, which holds the anchor like a net",
+      "C: close under the rocks, sheltered from the wind",
+      "Anywhere — in 6–8 m all chain holds on any bottom"
+    ],
+    "why": "An anchor skids over thick weed and jams in rock; in clear water the pale sand is the holding ground.",
+    "ref": "Base briefing: anchoring",
+    "fig": {
+      "type": "bay",
+      "wind": 0,
+      "land": "M0 0 H320 V30 H0 Z M0 30 H40 V200 H0 Z M280 30 H320 V200 H280 Z",
+      "spots": [
+        [
+          110,
+          95,
+          "A"
+        ],
+        [
+          200,
+          130,
+          "B"
+        ],
+        [
+          160,
+          55,
+          "C"
+        ]
+      ],
+      "labels": [
+        [
+          110,
+          118,
+          "dark weed"
+        ],
+        [
+          200,
+          153,
+          "pale sand"
+        ],
+        [
+          200,
+          55,
+          "rocks, 3 m"
+        ]
+      ],
+      "note": "Depth 6–8 m across the bay"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Wednesday, a 4-mile hop in a calm on your 36 ft monohull, which has no davits. Your crew want to tow the dinghy as it is, outboard on. What do you do?",
+    "a": "Outboard onto the pushpit bracket, then tow on a painter clear of the propeller",
+    "o": [
+      "Tow it as it is — 4 miles in a calm is too short to matter",
+      "Tilt the outboard up and leave it on the dinghy's transom",
+      "Tow it on a 1 m painter, tight to the stern, outboard on"
+    ],
+    "why": "A towed dinghy can flip and drown its outboard, which the deposit does not cover; the motor rides on the pushpit.",
+    "ref": "Charter contract — dinghy",
+    "fig": {
+      "type": "card",
+      "title": "Contract — dinghy",
+      "lines": [
+        "Towing: short hops, calm only",
+        "Outboard: on the pushpit when towing",
+        "Painter: 6 m"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Monday, at anchor, you move the outboard from the pushpit bracket onto the dinghy for the first time. How do you do it?",
+    "a": "On a lanyard, one person in the dinghy, clamps tight before letting go",
+    "o": [
+      "Pass it down by hand, then climb in and fit it on the transom",
+      "Carry it down the swim ladder and step into the dinghy holding it",
+      "Lower it on its own fuel line and do the clamps up once afloat"
+    ],
+    "why": "Outboards are dropped between boat and dinghy; a lanyard, and the clamps tight before anyone lets go, keep it out of the sea.",
+    "ref": "Dinghy handling: outboard",
+    "fig": null
+  },
+  {
+    "topic": "ground",
+    "difficulty": 2,
+    "q": "Monday, 10:00, at anchor. The outboard ran at the base; now it coughs and dies after a few seconds every time. You find this. What do you do?",
+    "a": "Open the vent on the tank cap, squeeze the bulb firm, then start it again",
+    "o": [
+      "Pull the cord until it catches — it runs once it is warm",
+      "Call the base for a mechanic before you pull it again",
+      "Take the plug out, dry it and try again on full choke"
+    ],
+    "why": "A closed vent starves the motor of fuel within seconds; open it and prime the bulb until it is firm.",
+    "ref": "Dinghy handling: outboard",
+    "fig": {
+      "type": "card",
+      "title": "Outboard, Monday",
+      "lines": [
+        "Kill cord: clipped on",
+        "Fuel tank: half full",
+        "Tank cap vent: closed",
+        "Fuel bulb: soft, flat"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "Thursday, 16:00, a northerly F5–6 is forecast overnight and you have 70 m of chain. Which bay do you choose for the night?",
+    "a": "B: 7 m of sand, sheltered, with chain for five times the depth and more",
+    "o": [
+      "A: the deep water gives the boat room to swing in the gusts",
+      "C: the same depth as B, and the weed holds well",
+      "A: 70 m of chain is enough for any depth in these bays"
+    ],
+    "why": "70 m in 18 m is under 4:1 in a blow; shelter, sand and a depth where the chain gives 5:1 or more win.",
+    "ref": "Base briefing: anchoring",
+    "fig": {
+      "type": "card",
+      "title": "Bays within reach",
+      "lines": [
+        "A: 18 m, sand, open to the S",
+        "B: 7 m, sand, open to the S",
+        "C: 7 m, weed, open to the N",
+        "Forecast tonight: N 5–6"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "Friday, 08:00, leaving a town quay. As your anchor comes up, the neighbour's chain comes up with it, lying across the shank. What do you do?",
+    "a": "Pass a line under their chain, lower your anchor clear, then let the line go",
+    "o": [
+      "Motor ahead hard so your anchor drags their chain off",
+      "Lower both back down and wait for the neighbour to leave first",
+      "Unshackle your anchor, leave it, and call the base about it"
+    ],
+    "why": "Take their chain's weight on a line of your own, drop your anchor clear, then slip the line — their anchor never moves.",
+    "ref": "Mooring: crossed anchors",
+    "fig": {
+      "type": "card",
+      "title": "Weighing at the town quay",
+      "lines": [
+        "Your anchor at the surface",
+        "Neighbour's chain draped over it",
+        "Neighbour's crew: asleep"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "Monday, 18:00, the briefing's notes on tonight's bay are in front of you. How do you anchor?",
+    "a": "In the SW half, with a buoyed trip line on the anchor's crown",
+    "o": [
+      "In the NE half — old chains hold an anchor like a hook",
+      "In the SW half; if it fouls, power it out with the windlass",
+      "In the NE half, with all 70 m out so the anchor lies flat"
+    ],
+    "why": "Keep clear of known chains; a trip line pulls a fouled anchor out backwards without a diver or a cut chain.",
+    "ref": "Base briefing: anchoring",
+    "fig": {
+      "type": "card",
+      "title": "Briefing — tonight's bay",
+      "lines": [
+        "Old ground chains: NE half",
+        "Anchors fouled here every season",
+        "SW half: sand, 6 m"
+      ],
+      "tag": "Diver €150"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "Wednesday, 17:00, near Göcek. The bay is filling up and the boats along the shore lie on anchors with lines ashore. Where do you go?",
+    "a": "B: drop well out and back in, with a long line to the shore like the others",
+    "o": [
+      "A: swing free among them — they hold still, so there is room",
+      "C: in the entrance, 30 m deep, where nobody else is",
+      "B: anchor in the gap and swing free, with no line ashore"
+    ],
+    "why": "Boats on lines ashore do not swing; a free-swinging boat among them hits one at the first wind shift — do as they do.",
+    "ref": "Base briefing: lines ashore",
+    "fig": {
+      "type": "bay",
+      "wind": 180,
+      "land": "M0 0 H320 V45 H0 Z M0 45 H35 V200 H0 Z M285 45 H320 V200 H285 Z",
+      "spots": [
+        [
+          110,
+          85,
+          "A"
+        ],
+        [
+          230,
+          75,
+          "B"
+        ],
+        [
+          160,
+          165,
+          "C"
+        ]
+      ],
+      "labels": [
+        [
+          160,
+          28,
+          "shore · boats on lines ashore"
+        ],
+        [
+          255,
+          98,
+          "gap"
+        ],
+        [
+          160,
+          188,
+          "entrance · 30 m"
+        ]
+      ],
+      "note": "Long line: 50 m, on board"
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "Thursday, 07:00, on the catamaran: 25 miles back to the base with F6 and a short sea forecast. The dinghy is on the davits as it has hung all week. What do you do before you leave?",
+    "a": "Outboard to the pushpit, dinghy drained, hauled up tight and strapped to the davit bar",
+    "o": [
+      "Leave it as it is — the davits are built to carry it at sea",
+      "Lower it and tow it on a long painter for the passage",
+      "Lash the outboard tighter and leave the water in as ballast"
+    ],
+    "why": "In a seaway a hanging dinghy swings and fills; weight off, water out, and strapped so it cannot work the davits loose.",
+    "ref": "Catamaran: dinghy on the davits",
+    "fig": {
+      "type": "card",
+      "title": "Dinghy on the davits",
+      "lines": [
+        "Hung on its two lifting lines only",
+        "Outboard on its transom",
+        "Plug in, 20 l of rainwater inside",
+        "Forecast: F6, short steep sea"
+      ]
+    }
+  },
+  {
+    "topic": "ground",
+    "difficulty": 3,
+    "q": "Thursday, 21:00, stern-to on a town quay. The wind has turned onshore and is building, and the stern is surging towards the stones. What do you do?",
+    "a": "Passerelle up, chain in to pull the stern off, stern lines eased to match",
+    "o": [
+      "Tighten the stern lines to hold the boat hard on the fenders",
+      "Pay out more chain so the boat rides softer on its lines",
+      "Leave it as it is and put every fender on the transom"
+    ],
+    "why": "In an onshore wind the anchor keeps you off the stones: chain in, stern lines eased, the gangway up before it is crushed.",
+    "ref": "Mooring: stern-to in an onshore wind",
+    "fig": {
+      "type": "card",
+      "title": "Town quay, Thursday night",
+      "lines": [
+        "Wind: onshore, F5 and rising",
+        "Stern 1.5 m off the quay",
+        "Chain: 40 m out, slack",
+        "Passerelle: down"
+      ]
+    }
+  }
+]

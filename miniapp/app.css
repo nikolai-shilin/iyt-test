@@ -238,3 +238,86 @@ body { -webkit-tap-highlight-color: transparent; }
 .app .sk-ring { width: 52px; height: 52px; border-radius: 50%; }
 .app .topic .ico.sk { border-radius: 50%; }
 .app .topic .n .sk { margin-left: auto; }
+
+/* ---- critique fixes (2026-11-03) ---- */
+/* a heading for every screen (inside Telegram the page has no header of its own) */
+.app .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* the flag / report / skip row wraps instead of running off the screen (Russian labels, "Flagged") */
+.app .qtools { flex-wrap: wrap; gap: 8px; }
+.app .qflags { flex-wrap: wrap; }
+/* tap targets: 44 px pills, 40 px segments, a 44 px hit area around the 30 px switch */
+.app .mini { height: 44px; }
+.app .lang { height: 40px; }
+.app .toggle::before { content: ''; position: absolute; inset: -8px -4px; }
+/* options ruled out after Check: muted by colour, not opacity (4.5:1 stays) */
+.app .opt.dim { opacity: 1; color: var(--muted); border-color: var(--line); }
+.app .opt.dim .l { color: var(--muted); border-color: var(--line); }
+/* two-line metadata breathes */
+.app .card-meta { line-height: 1.35; }
+/* figures: nothing pokes out of the rounded box; shorter on short screens so option D stays in reach */
+.app .fig { overflow: hidden; }
+@media (max-height: 760px) { .app .fig { max-height: 190px; } }
+/* the toast drops in from the top, clear of the flag / report row it talks about */
+.app .toast { top: 12px; bottom: auto; }
+@keyframes toastIn { from { opacity: 0; transform: translate(-50%, -10px); } }
+.app .toast.out { transform: translate(-50%, -6px); }
+/* a weak topic at 0 right still shows a red stub */
+.app .tbar.weak .bar i { min-width: 6px; }
+/* exam grid: the current cell is ringed, answered or not */
+.app .grid40 span.now { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent-ink); }
+.app .grid40 span.a.now { color: var(--sel-ink); border-color: var(--sel-bg); }
+/* the inert screen behind a sheet does not react */
+.app [inert] { pointer-events: none; }
+
+/* ---- motion, second pass (2026-11-03): one authored moment (the verdict), state that moves from where it was,
+   cause → effect on the theme switch ---- */
+:root { --ease-out: cubic-bezier(.23, 1, .32, 1); --ease-drawer: cubic-bezier(.32, .72, 0, 1); }
+
+/* 1 · The theme switch: the new theme spreads from the tapped segment (view transitions; app.js render(…, true)). */
+html[data-nav="theme"]::view-transition-image-pair(root) { isolation: auto; }
+html[data-nav="theme"]::view-transition-old(root) { animation: none; mix-blend-mode: normal; }
+html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var(--ease-out) both; mix-blend-mode: normal; }
+@keyframes vt-theme { from { clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%)); } to { clip-path: circle(150% at var(--tx, 50%) var(--ty, 50%)); } }
+
+/* 2 · The verdict (practice, Check). The picked option answers first: a check stamps into its letter, or the row shakes
+   with a cross. If it was wrong, the right answer lights up a beat later, so the eye is led from the mistake to the
+   answer. The other options step back, the explanation follows. The answered progress segment fills, the main button's
+   new label rises in. */
+@keyframes stamp { from { transform: scale(.3); opacity: 0; } 60% { transform: scale(1.2); opacity: 1; } }
+@keyframes light { from { border-color: var(--tag-line); background: var(--bg); } }
+@keyframes lightL { from { background: transparent; border-color: var(--tag-line); } }
+@keyframes stepBack { from { color: var(--ink); border-color: var(--tag-line); } }
+@keyframes fillX { from { transform: scaleX(0); } }
+@keyframes wake { from { background: var(--band); color: var(--muted); } }
+.app .opt.picked .l svg { animation: stamp .3s var(--ease-out) both; }
+.app .opt.ok.picked { animation: light .3s var(--ease-out) both; }
+.app .opt.ok:not(.picked) { animation: light .3s var(--ease-out) .3s both; }
+.app .opt.ok:not(.picked) .l { animation: lightL .3s var(--ease-out) .3s both; }
+.app .opt.ok:not(.picked) .l svg { animation: stamp .3s var(--ease-out) .3s both; }
+.app .opt.dim { animation: stepBack .25s ease both; }
+.app .why { animation-delay: .12s; }
+.app .verdict.bad ~ .why { animation-delay: .42s; }
+.app .progress span.just { transform-origin: left; animation: fillX .35s var(--ease-out) .1s both; }
+.app .tgmain .b .t.swap { animation: rise .2s var(--ease-out) both; }
+.app .tgmain .b.wake { animation: wake .25s ease both; }
+
+/* 3 · Bars and rings move from the value they last showed (app.js, PREV), not from zero, and keep still when nothing
+   changed; only a first view grows from zero. The topic bars are driven by app.js; the ring's starting style reads the
+   previous value. */
+.app .in .bar[data-k] i { animation: none; }
+@starting-style { .app .in .ring { --v: var(--v0, 0); --s: var(--s0, 0); } }
+
+/* 4 · Small acknowledgements: the streak pill on Home after the first answer of the day; the exam timer when the last
+   five minutes begin; the sheet's scrim softens the screen behind it. */
+@keyframes flare { 30% { transform: scale(1.3) rotate(-10deg); } 60% { transform: scale(1.1) rotate(8deg); } }
+.app .streak.grew { animation: rise .3s var(--ease-out) .2s both; }
+.app .streak.grew .fire { animation: flare .6s var(--ease-out) .45s both; }
+@keyframes beat { 40% { transform: scale(1.2); } }
+.app .timer.beat { animation: beat .5s var(--ease-out); }
+.app .scrim { backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+  .app .opt.picked .l svg, .app .opt.ok, .app .opt.ok .l, .app .opt.ok .l svg, .app .opt.dim, .app .progress span.just,
+  .app .tgmain .b .t.swap, .app .tgmain .b.wake, .app .streak.grew, .app .streak.grew .fire, .app .timer.beat { animation: none; }
+}
