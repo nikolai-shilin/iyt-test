@@ -19,6 +19,8 @@ const tgv = (v) => IN_TG && TG.isVersionAtLeast(v);
 // client gets the app's in-page bar with pill buttons instead; set to tgv('7.10') to go back to the native ones.
 const NATIVE_BUTTONS = false;
 const BOT_LINK = 'https://t.me/iyt_test_bot';
+// RYC Rentals: yacht charter, as a mini app of its own bot (Profile links to it)
+const RENTALS_LINK = 'https://t.me/rycrentals_bot?startapp';
 const $app = document.getElementById('app');
 
 // IYT recreational levels in course-progression order (iytworld.com/students/recreational/iyt-course-progression),
@@ -155,6 +157,7 @@ const STR = {
     confirmQuit: 'Quit this session? Your answers so far are kept.',
     error: 'Something went wrong', bankError: () => 'Could not load the questions. Check the connection and try again.',
     days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], locale: 'en-GB',
+    rentals: 'RYC Rentals', rentalsMeta: 'Charter a yacht: boats, prices and hot offers',
     // admin: students' results
     students: 'Students', studentsMeta: 'Results of everyone who uses the app', studentsFail: 'Could not load the results', studentsEmpty: 'Nobody has opened the app yet',
     studentsW: (n) => word(n, 'student'), activeWeek: 'active this week', examsTaken: (n) => word(n, 'exam') + ' taken', answeredN: (n) => `${n} answered`,
@@ -243,6 +246,7 @@ const STR = {
     confirmQuit: 'Выйти из тренировки? Ответы сохранятся.',
     error: 'Что-то пошло не так', bankError: () => 'Не удалось загрузить вопросы. Проверьте связь и попробуйте ещё раз.',
     days: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'], locale: 'ru-RU',
+    rentals: 'RYC Rentals', rentalsMeta: 'Аренда яхт: лодки, цены и горящие предложения',
     // admin: students' results
     students: 'Ученики', studentsMeta: 'Результаты всех, кто пользуется приложением', studentsFail: 'Не удалось загрузить результаты', studentsEmpty: 'Приложение ещё никто не открывал',
     studentsW: (n) => word(n, 'student'), activeWeek: 'активны за неделю', examsTaken: (n) => word(n, 'exam') + ' пройдено', answeredN: (n) => `${n} отвечено`,
@@ -1120,6 +1124,7 @@ const VIEWS = {
           <div class="set"><div class="card-title">${t('theme')}</div><div class="langs" role="radiogroup" aria-label="${t('theme')}">${seg('theme', 'day', th === 'day', svg('sun', 14) + t('themeDay'))}${seg('theme', 'night', th === 'night', svg('moon', 14) + t('themeNight'))}${seg('theme', 'auto', th === 'auto', t('auto'))}</div></div>
           <div class="set"><div><div class="card-title">${t('shuffle')}</div><div class="card-meta">${t('shuffleMeta')}</div></div>${tog('shuffle')}</div>
           <div class="set"><div><div class="card-title">${t('explain')}</div><div class="card-meta">${t('explainMeta')}</div></div>${tog('feedback')}</div>
+          <div class="set" data-act="rentals" role="link"><div><div class="card-title">${t('rentals')}</div><div class="card-meta">${t('rentalsMeta')}</div></div><span class="val">${svg('next', 16)}</span></div>
           <div class="set"><div><div class="card-title">${t('reset')}</div><div class="card-meta">${nothing ? t('resetNothing') : t('resetMeta')}</div></div><button class="mini mini-danger${nothing ? ' off' : ''}" data-act="reset">${t('resetBtn')}</button></div>
         </div>
         <p class="hint">${esc(t('disclaimer', BANK.version) + partial)}</p>`,
@@ -1420,6 +1425,7 @@ const ACT = {
   set: (d, el) => { S.set[d.k] = !S.set[d.k]; save(); el.classList.toggle('on', S.set[d.k]); setTimeout(render, 220); },
   daily: (d, el) => toggleDaily(el),
   admin: () => go('admin'),
+  rentals: () => (IN_TG ? TG.openTelegramLink(RENTALS_LINK) : window.open(RENTALS_LINK, '_blank', 'noopener')),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
   flagq: (d) => { sheet = { v: 'flagq', id: d.id, k: d.k }; render(); },
