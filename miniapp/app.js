@@ -922,7 +922,7 @@ const VIEWS = {
       body: `<div class="stack g8"><span class="meta">${LEVEL.title}</span><h2 class="display">${t('mockExam')}</h2>
           <p class="body-muted">${t('examLead', TOPICS.length)}</p></div>
         <div class="stats"><div class="stat"><b>${BANK.examQuestions}</b><span class="meta">${t('questionsW', BANK.examQuestions)}</span></div><div class="stat"><b>${BANK.examMinutes}</b><span class="meta">${t('minutesW', BANK.examMinutes)}</span></div><div class="stat"><b>${BANK.passMark}%</b><span class="meta">${t('toPass')}</span></div></div>
-        ${S.exam ? `<div class="row sb-between"><div><span class="meta">${t('inProgress')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><button class="danger-link" data-act="restart">${t('startOver')}</button></div>` : ''}
+        ${S.exam ? `<div class="row sb-between"><div><span class="meta">${t('inProgress')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><button class="mini mini-danger" data-act="restart">${t('startOver')}</button></div>` : ''}
         <div class="steps steps-plain">${rules}</div>
         ${atts ? `<div class="band" style="padding:16px 18px"><div class="card-title" style="margin-bottom:4px">${t('lastAttempts')}</div>${atts}</div>` : ''}
         <p class="hint">${t('examDefaults')}</p>`,
@@ -1034,7 +1034,7 @@ const VIEWS = {
           <div class="set"><div class="card-title">${t('theme')}</div><div class="langs">${seg('theme', 'day', th === 'day', svg('sun', 14) + t('themeDay'))}${seg('theme', 'night', th === 'night', svg('moon', 14) + t('themeNight'))}${seg('theme', 'auto', th === 'auto', t('auto'))}</div></div>
           <div class="set"><div><div class="card-title">${t('shuffle')}</div><div class="card-meta">${t('shuffleMeta')}</div></div>${tog('shuffle')}</div>
           <div class="set"><div><div class="card-title">${t('explain')}</div><div class="card-meta">${t('explainMeta')}</div></div>${tog('feedback')}</div>
-          <div class="set"><div><div class="card-title">${t('reset')}</div><div class="card-meta">${t('resetMeta')}</div></div><button class="danger-link" data-act="reset">${t('resetBtn')}</button></div>
+          <div class="set"><div><div class="card-title">${t('reset')}</div><div class="card-meta">${t('resetMeta')}</div></div><button class="mini mini-danger" data-act="reset">${t('resetBtn')}</button></div>
         </div>
         <p class="hint">${esc(t('disclaimer', BANK.version) + partial)}</p>`,
     };

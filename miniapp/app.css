@@ -56,7 +56,6 @@ body { -webkit-tap-highlight-color: transparent; }
 .app .att { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .app .att:last-child { border-bottom: 0; }
 .app .bad-t { color: var(--danger); }
-.app .danger-link { color: var(--danger); font: 700 13px 'Carlito', Arial, sans-serif; text-transform: uppercase; letter-spacing: .02em; }
 .app .continue { border: 2px solid var(--ink); border-radius: 24px; padding: 16px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; }
 .app .rev .ans.ok.plain .l { background: var(--accent); }
 .app .toast { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%); z-index: 20; background: var(--sel-bg); color: var(--sel-ink); font: 700 14px 'Carlito', Arial, sans-serif; padding: 10px 16px; border-radius: 18px; animation: fade .2s ease; white-space: nowrap; }
@@ -126,8 +125,8 @@ body { -webkit-tap-highlight-color: transparent; }
 
 /* ---- audit fixes: tap targets ---- */
 /* text links keep their size but get a 44 px hit area */
-.app button.meta, .app .danger-link, .app .tgh button { position: relative; }
-.app button.meta::after, .app .danger-link::after, .app .tgh button::after { content: ''; position: absolute; left: -8px; right: -8px; top: 50%; height: 44px; transform: translateY(-50%); }
+.app button.meta, .app .tgh button { position: relative; }
+.app button.meta::after, .app .tgh button::after { content: ''; position: absolute; left: -8px; right: -8px; top: 50%; height: 44px; transform: translateY(-50%); }
 .app .mini { height: 40px; }
 .app .lang { height: 36px; }
 .app .grid40 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
