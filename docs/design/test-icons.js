@@ -74,6 +74,11 @@ const TEST_ICONS = {
   beacon: '<rect x="9" y="12" width="6" height="9" rx="1.5"/><path d="M12 12V3"/><path d="M8.5 2.5a4 4 0 0 0 0 5M15.5 2.5a4 4 0 0 1 0 5"/>',
   licence: '<rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M5.5 15.5c.5-1.3 1.4-2 2.5-2s2 .7 2.5 2M14 10h4M14 14h3"/>',
 
+  /* ---- the charter check-in: electrics, water and gas, the inventory ---- */
+  battery: '<rect x="2" y="7" width="17" height="10" rx="2"/><path d="M19 10h1.5a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H19"/><path d="M6 10v4M9.5 10v4M13 10v4"/>',
+  drop: '<path d="M12 2.5c3.5 4.5 7 8 7 12a7 7 0 0 1-14 0c0-4 3.5-7.5 7-12z"/><path d="M8.5 14.5a3.5 3.5 0 0 0 3 3.5"/>',
+  clipboard: '<rect x="4" y="4" width="16" height="18" rx="2"/><path d="M9 4V2.5h6V4"/><path d="M9 4a1.5 1.5 0 0 0 0 3h6a1.5 1.5 0 0 0 0-3"/><path d="m8 13 2 2 4-4M8 18h8"/>',
+
   /* ---- old names (banks saved before this set) ---- */
   ring: null, rope: null, light: null, wrench: null, 'board-view': null,
 };
@@ -91,6 +96,7 @@ const TEST_ICON_GROUPS = [
   ['Rules, navigation, buoyage', ['rules', 'dividers', 'compass', 'map', 'buoy', 'lighthouse']],
   ['Weather', ['wind', 'cloud', 'barometer']],
   ['Radio', ['vhf', 'radio', 'mic', 'flag-alpha', 'mmsi', 'megaphone', 'beacon', 'licence']],
+  ['Charter check-in', ['battery', 'drop', 'clipboard']],
 ];
 
 const appIcon = (n, s = 24) => rycIcon(n, s);

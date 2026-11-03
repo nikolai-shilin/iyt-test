@@ -25,6 +25,11 @@ RRS_NOTE = ('Scenario questions on the Racing Rules of Sailing 2025–2028 (Worl
             'course, at the start, at marks, in protests. Not an official World Sailing publication; the rules themselves are the authority. '
             'figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults.')
 
+CHECKIN_NOTE = ('Scenario questions on the charter check-in, written for study: taking over a bareboat at the base — papers, the walk-round, '
+                'engine, electrics, water and gas, instruments, safety gear, ground tackle — and handing it back. Not an IYT course and not '
+                'any charter company\'s procedure; the contract and the base\'s briefing are the authority. figure is a spec for '
+                'docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults.')
+
 # topics: (id, English title, Russian title, Russian short name, icon for the mini app)
 LEVELS = {
     'vhf-radio-operator': dict(
@@ -84,6 +89,22 @@ LEVELS = {
             ('propulsion', 'Propulsion & other requirements when racing', 'Движущая сила и другие требования во время гонки', 'Правило 42', 'wind'),
             ('penalties', 'Penalties at the time of an incident', 'Наказания в момент инцидента', 'Наказания', 'refresh'),
             ('protests', 'Protests, hearings, redress & scoring', 'Протесты, рассмотрение, исправление результата и очки', 'Протесты', 'trophy'),
+        ]),
+    # Not an IYT course: the charter check-in — taking over a bareboat at the base, Saturday to Saturday, and handing it back.
+    'charter-checkin': dict(
+        prefix='ci', name='Charter Check-in', title='Charter Check-in', note=CHECKIN_NOTE,
+        passMark=70, examQuestions=30, examMinutes=45, version='2026-11-03',
+        topics=[
+            ('papers', 'Documents, contract & base briefing', 'Документы, договор и брифинг на базе', 'Документы', 'licence'),
+            ('hull', 'Hull, deck & rigging walk-round', 'Осмотр корпуса, палубы и такелажа', 'Корпус', 'yacht'),
+            ('sails', 'Sails, furling & reefing gear', 'Паруса, закрутки и рифы', 'Паруса', 'sail'),
+            ('engine', 'Engine, fuel & propulsion', 'Двигатель, топливо и движитель', 'Двигатель', 'propeller'),
+            ('electrics', 'Batteries, electrics & shore power', 'Аккумуляторы, электрика и береговое питание', 'Электрика', 'battery'),
+            ('plumbing', 'Water, gas, heads & bilge', 'Вода, газ, гальюны и трюм', 'Вода и газ', 'drop'),
+            ('nav', 'Navigation, electronics & VHF', 'Навигация, электроника и УКВ', 'Навигация', 'compass'),
+            ('safety', 'Safety equipment', 'Спасательное снаряжение', 'Безопасность', 'lifejacket'),
+            ('ground', 'Anchor, mooring gear & dinghy', 'Якорь, швартовное имущество и тузик', 'Якорь', 'anchor'),
+            ('return', 'Inventory, deposit & check-out', 'Инвентарь, депозит и сдача яхты', 'Сдача', 'clipboard'),
         ]),
 }
 PER_TOPIC = 20

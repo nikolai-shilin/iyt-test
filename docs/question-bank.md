@@ -109,8 +109,8 @@ first 100, right answers that stand out by length, and that every figure renders
 
 ## Other levels
 
-VHF Radio Operator (`vhf-`), International Crew (`ic-`), Flotilla Skipper (`fs-`) and Racing Rules of Sailing
-(`rr-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
+VHF Radio Operator (`vhf-`), International Crew (`ic-`), Flotilla Skipper (`fs-`), Racing Rules of Sailing
+(`rr-`) and Charter Check-in (`ci-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
 topic is `data/bank/<level>/<topic>.json` (20 questions, about 4/12/4 by difficulty; 100 and 20/60/20 for the
 Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
 `<topic>.ru.json`: the same order, `{q, a, o, why, ref, fig}`, where `o` keeps the English order of the wrong options and
@@ -135,6 +135,18 @@ Russian text follows the official translation ППГ-25 (Russian Sailing Federat
 `ППГ 18.2(b)`. Most drawn questions use the `race` figure (figures.md): wind, boats on their tacks, a mark with its
 zone, a start line, an obstruction. The level's title and note are its own (`title`, `note` in `LEVELS`), and the
 app's disclaimer and share text name World Sailing instead of IYT for it.
+
+### Charter Check-in
+
+Not an IYT course: the Saturday at a Mediterranean charter base, as the skipper taking over a bareboat, 10 topics
+× 20 — documents, contract and briefing; the hull, deck and rigging walk-round; sails and furling; engine and fuel;
+batteries and shore power; water, gas, heads and bilge; instruments and VHF; safety equipment; anchor, mooring gear
+and dinghy; inventory, deposit and the Friday check-out. The right answer is what a careful skipper does at the
+base — tests it, notes it on the form, photographs it, has the base fix it before leaving, signs last. Anything that
+varies by company (deposit, cruising limits, fuel policy, return time) is stated inside the figure as the contract
+or the briefing, never as a general fact. Figures are mostly `card` (the form, the inventory, the readings),
+`panel` (gauges), `rope`, `anchor`, `bay` and `lights` (the navigation-light test at the pontoon). The app's
+disclaimer, exam note and share text name the contract and the base's briefing as the authority for it.
 
 ## Translations
 

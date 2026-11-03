@@ -1,0 +1,513 @@
+[
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "The technician hands you the inventory list and you count the galley gear together. What do you do before you sign?",
+  "a": "Have him write 'forks 6, pans 2' on the list and sign that",
+  "o": [
+   "Sign it — two forks and a pan are not worth the time",
+   "Sign it and buy the missing ones in town for the base",
+   "Sign it and count again properly on the first evening"
+  ],
+  "why": "What is written as missing at check-in cannot be charged as lost at check-out.",
+  "ref": "Check-in: inventory list",
+  "fig": {
+   "type": "card",
+   "title": "Inventory list — galley",
+   "lines": [
+    "Forks 8 · knives 8 · spoons 8",
+    "Plates 8 · bowls 8 · mugs 8",
+    "Pans 3 · kettle 1",
+    "You count: forks 6, pans 2, the rest OK"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Three items on the deck inventory are not aboard. The technician says they are in the store and will be brought before you leave. What do you do?",
+  "a": "Note all three as missing on the list now; strike them out when they arrive",
+  "o": [
+   "Sign the list as it is — he said he will bring them before you leave",
+   "Sign the list and remind him again on Monday by phone from the first bay",
+   "Refuse to take the boat until the store has delivered all three"
+  ],
+  "why": "The list you sign is the check-out baseline; a promised item that never comes is charged at list price.",
+  "ref": "Check-in: inventory list",
+  "fig": {
+   "type": "card",
+   "title": "Deck inventory",
+   "lines": [
+    "Winch handles 2 — found 1",
+    "Cockpit table 1 — not aboard",
+    "Washboards 1 set — not aboard",
+    "Technician: 'in the store, I'll bring them'"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "You look into the cabins while the technician is on deck. What do you do?",
+  "a": "Ask for the mattress dried or changed and the latch fixed, and note both on the form",
+  "o": [
+   "Air the mattress at sea and tape the door; neither is deposit material",
+   "Note the latch only — a damp mattress is normal on a boat",
+   "Say nothing now and raise both at check-out so they are not charged"
+  ],
+  "why": "Faults you accept silently become yours at check-out; the base can still fix them on Saturday.",
+  "ref": "Check-in: cabins",
+  "fig": {
+   "type": "card",
+   "title": "Cabins",
+   "lines": [
+    "Fwd cabin: bedding for 2, OK",
+    "Port aft: mattress damp underneath",
+    "Stbd aft: door latch broken, door swings",
+    "Towels: 6 listed, 6 found"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "The technician points at the galley and says everything in it works. What do you do?",
+  "a": "Switch the fridge on, light every burner and the oven, boil the kettle before he leaves",
+  "o": [
+   "Take his word for it — galley gear is not part of the deposit anyway",
+   "Light one burner; the fridge needs hours to get cold anyway",
+   "Test it all on the first evening and call the base if anything fails"
+  ],
+  "why": "Test what you are told works while the technician is aboard; a failure at sea is yours to live with.",
+  "ref": "Check-in: galley",
+  "fig": {
+   "type": "card",
+   "title": "Galley",
+   "lines": [
+    "Fridge: 'works' — switched off",
+    "Stove 2 burners + oven: 'works'",
+    "Kettle 1 · gas bottle: in use",
+    "Technician is leaving in 10 min"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "On Wednesday you touch the quay at Fiskardo and chip the gelcoat at the bow. What do you do?",
+  "a": "Photograph it and phone the base the same day; the repair comes off the deposit at check-out",
+  "o": [
+   "Say nothing — a chip that size is either found at check-out or it is not",
+   "Touch it up with a repair kit from the chandler so that it is not found",
+   "Wait and point it out yourself at the check-out, which is honest enough"
+  ],
+  "why": "Reporting at once keeps the insurance and the waiver valid; hidden or late damage can cost the whole deposit.",
+  "ref": "Charter contract — damage",
+  "fig": {
+   "type": "card",
+   "title": "Wednesday, Fiskardo quay",
+   "lines": [
+    "Gelcoat chip at the bow, 3 cm",
+    "No water ingress, hull sound",
+    "Contract: any damage reported at once",
+    "Deposit €3,000 · waiver bought"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "Thursday evening you are in an anchorage 30 miles from the base and see this forecast. What do you do?",
+  "a": "Call the base now, say where you are, and decide with their advice: move tonight or sit it out",
+  "o": [
+   "Leave Friday morning regardless — the penalty is worse than a rough passage",
+   "Stay put and call the base on Saturday morning once it has eased",
+   "Slip at 04:00 without telling anyone and hope to beat the wind"
+  ],
+  "why": "The decision is the skipper's, but a base warned the day before can plan; a penalty is never a reason to sail into a gale.",
+  "ref": "Check-out: late return & weather",
+  "fig": {
+   "type": "card",
+   "title": "Thursday 18:00",
+   "tag": "30 M to go",
+   "lines": [
+    "Forecast Fri: NW 7, gusts 8, easing Sat noon",
+    "Contract: back at base Fri by 18:00",
+    "Late return: €500 a day + next crew's costs",
+    "Tonight: F3, clear, moon"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Friday afternoon you are approaching the base. The briefing said return berths are assigned on arrival. What do you do?",
+  "a": "Call the base on the VHF or phone before entering and take the berth they give you",
+  "o": [
+   "Take the first empty berth on the base pontoon — their boats all come back tonight",
+   "Anchor off at C tonight and come in at 08:00 for the check-out",
+   "Go alongside the fuel dock at A and wait there for a marinero"
+  ],
+  "why": "The return berth, the time and the mooring are the base's; 'back at the base' means alongside, before the deadline.",
+  "ref": "Check-out: return to base",
+  "fig": {
+   "type": "bay",
+   "wind": 315,
+   "land": "M0 0 H320 V45 H0 Z M0 45 H60 V72 H0 Z M150 45 H160 V130 H150 Z M300 45 H320 V175 H300 Z",
+   "spots": [
+    [
+     30,
+     92,
+     "A"
+    ],
+    [
+     185,
+     92,
+     "B"
+    ],
+    [
+     230,
+     162,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     30,
+     114,
+     "fuel dock"
+    ],
+    [
+     185,
+     114,
+     "base pontoon"
+    ],
+    [
+     230,
+     143,
+     "anchorage"
+    ]
+   ],
+   "note": "Friday 16:30 · contract: alongside at the base by 18:00"
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Friday 15:30, the fuel gauge shows half. The base has given you berth B for the night. Where do you go first?",
+  "a": "Fuel dock A: fill the tank and keep the receipt, then berth B",
+  "o": [
+   "Berth B — the base refuels every boat and takes it from the deposit",
+   "Berth B now, fuel dock A at 08:00 before the technician comes",
+   "Berth B — half a tank is enough for the base's next crew"
+  ],
+  "why": "'Returned full' is in the contract; the base's own refuelling adds a service charge, and the receipt is your proof.",
+  "ref": "Check-out: fuel",
+  "fig": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V40 H0 Z M0 40 H70 V66 H0 Z M140 40 H150 V140 H140 Z M290 40 H320 V180 H290 Z",
+   "spots": [
+    [
+     62,
+     90,
+     "A"
+    ],
+    [
+     180,
+     100,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     64,
+     112,
+     "fuel dock · to 20:00"
+    ],
+    [
+     180,
+     122,
+     "your berth tonight"
+    ]
+   ],
+   "note": "Contract: full tank, or pump price + €50 service"
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "You are three miles from the base on Friday afternoon with these tanks. What do you do before the check-out?",
+  "a": "Pump the holding tank out where allowed offshore or at the base, and fill the water at the berth",
+  "o": [
+   "Leave both as they are — filling water and pumping out are part of the final cleaning",
+   "Pump the holding tank out in the base marina after dark, when nobody is watching",
+   "Fill the water from jerry cans and leave the holding tank for the next crew to empty"
+  ],
+  "why": "Water full and holding tank empty are check-out items; discharge only offshore where the local rules allow, or at a pump-out.",
+  "ref": "Check-out: tanks",
+  "fig": {
+   "type": "card",
+   "title": "Check-out form — tanks",
+   "lines": [
+    "Contract: water full, holding tank empty",
+    "Your water: ¼ · holding tank: ½",
+    "Gas: in use ⅓, spare full — write it down",
+    "Pump-out at the base: €30"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "It is Friday evening at the base and the crew asks how much cleaning the boat needs. What do you tell them?",
+  "a": "Clean the galley, fridge and heads and take the rubbish ashore; the base does the rest",
+  "o": [
+   "Scrub the whole boat inside and out — cleaning is the charterer's job",
+   "Leave it all — the final cleaning is paid for in the price",
+   "Pay the €80 — it is cheaper than the crew's last evening"
+  ],
+  "why": "Read the clause: the included cleaning covers the boat, not your rubbish or a dirty fridge and heads.",
+  "ref": "Charter contract — cleaning",
+  "fig": {
+   "type": "card",
+   "title": "Contract — cleaning",
+   "lines": [
+    "Final cleaning: included in the price",
+    "Galley, fridge and heads left clean",
+    "Rubbish taken ashore",
+    "Otherwise: €80 extra cleaning charge"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "You are back at the base on Friday with the dinghy still in the water and the outboard on it. What do you do before the check-out?",
+  "a": "Rinse both with fresh water and lift them back to where they were at check-in",
+  "o": [
+   "Leave both in the water at the berth — the base lifts them with the crane",
+   "Deflate the dinghy and stow it with the outboard in the aft locker",
+   "Tie them off astern and tell the technician at check-out where they are"
+  ],
+  "why": "The dinghy and outboard go back washed, lifted and stowed as at check-in; they are inventory, checked like the rest.",
+  "ref": "Check-out: dinghy & outboard",
+  "fig": null
+ },
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "Saturday 07:30, the technician is due at eight. The crew is still in their bunks and the saloon is full of bags. What do you do?",
+  "a": "Get the crew up, bags into the cockpit, cabins stripped and clear by eight",
+  "o": [
+   "Let them sleep — the check-out is the skipper's business",
+   "Ask the technician to come back at eleven when the boat is empty",
+   "Pack after the inspection — the boat is yours until the next crew boards"
+  ],
+  "why": "The inspection needs empty cabins and lockers; the base turns the boat round the same day.",
+  "ref": "Check-out: handover times",
+  "fig": {
+   "type": "card",
+   "title": "Contract — handover",
+   "tag": "Sat 07:30",
+   "lines": [
+    "Boat back at base: Friday by 18:00",
+    "Check-out inspection: Saturday 08:00",
+    "Disembark: by 09:00",
+    "Next crew boards: Saturday 17:00"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "At the check-out the technician fills in the engine hours on the form. What do you do?",
+  "a": "Read the meter with him and have the form corrected to 1 412 before you sign",
+  "o": [
+   "Let it go — nine hours matter only to the base's service schedule",
+   "Write 1 371 plus the hours you logged each day instead of the meter",
+   "Sign it — the figure is the base's, not yours, and the fuel is full"
+  ],
+  "why": "Both readings are compared on the form you sign; a wrong figure is argued later only with your photo.",
+  "ref": "Check-out: engine hours",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Hours",
+     "1 412",
+     false
+    ],
+    [
+     "Fuel",
+     "Full",
+     false
+    ],
+    [
+     "Volts",
+     "12.6",
+     false
+    ]
+   ],
+   "lines": [
+    "Check-in form: 1 371 h",
+    "Your check-in photo: 1 371 h",
+    "Technician writes: 1 421 h"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "The technician's walk-round finds nothing new. Then the diver comes up. What do you do?",
+  "a": "Ask for the diver's photo and compare it with your check-in photos of the keel before agreeing",
+  "o": [
+   "Accept the €350 — at every base the diver's word on the hull is final",
+   "Refuse outright — the check-in form already says the keel has scratches",
+   "Sign now and dispute the €350 by e-mail with the base once you are home"
+  ],
+  "why": "New damage is settled against the check-in form and photos; 'old scratches' on the form only covers what the photos show.",
+  "ref": "Check-out: inspection & deposit",
+  "fig": {
+   "type": "card",
+   "title": "Check-out inspection",
+   "tag": "Deposit €3,000",
+   "lines": [
+    "Walk-round: nothing new",
+    "Diver: scratch on the keel, 20 cm, 'fresh'",
+    "Check-in form: 'keel — old scratches, photos'",
+    "Technician: 'we'll estimate it, €350'"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "At the check-out the technician marks a scratch on the starboard quarter as new. What do you do?",
+  "a": "Show the dated check-in photo and ask for the charge to be withdrawn and the form amended now",
+  "o": [
+   "Pay the €200 — you signed 'hull OK' and the form you signed is the contract",
+   "Offer to split it — the form is against you but the photo is for you",
+   "Pay now and claim it back from your deposit insurance when you are home"
+  ],
+  "why": "A dated check-in photo is the evidence the base itself asked you to take; a charge is disputed at the base, before signing.",
+  "ref": "Check-out: disputing a charge",
+  "fig": {
+   "type": "card",
+   "title": "Check-out — hull",
+   "lines": [
+    "Technician: 'stbd quarter, 15 cm, new — €200'",
+    "Check-in form you signed: 'hull OK'",
+    "Your photo, Sat 15:42: the same scratch",
+    "Technician: 'but the form says OK'"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 3,
+  "q": "The cockpit table came off its hinge on Thursday. At the check-out the base wants a new table. What do you do?",
+  "a": "Point to the check-in note: a fault recorded as old is wear, not new damage, and not yours",
+  "o": [
+   "Pay — it broke on your watch and the deposit covers wear and tear",
+   "Pay half — the hinge was old but the break happened to you",
+   "Refuse to sign anything and leave the base with the deposit still held"
+  ],
+  "why": "The check-in form is the baseline: what was noted as old or defective at check-in cannot be charged as new damage.",
+  "ref": "Check-in form — the baseline",
+  "fig": {
+   "type": "card",
+   "title": "Check-out — cockpit table",
+   "lines": [
+    "Check-in form: 'table hinge — old, loose'",
+    "Thursday: hinge broke, table off",
+    "Base: new table €420 from the deposit",
+    "You reported it on Thursday by phone"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 1,
+  "q": "A winch handle and a fender went overboard during the week. What do you expect at the check-out?",
+  "a": "A €150 deduction at the base's list prices, shown on the settlement",
+  "o": [
+   "No deduction — the deposit covers damage, not lost gear",
+   "A deduction at the chandler's retail price plus the base's time",
+   "A claim on the deposit insurance, which pays for losses too"
+  ],
+  "why": "Lost inventory is charged from the deposit at the base's list price; deposit insurance normally excludes it.",
+  "ref": "Check-out: lost items",
+  "fig": {
+   "type": "card",
+   "title": "Inventory at check-out",
+   "lines": [
+    "Winch handles: 2 listed, 1 aboard",
+    "Fenders: 8 listed, 7 aboard",
+    "Price list: winch handle €90",
+    "Price list: fender €60"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "The technician shows you this settlement and asks you to sign. What do you ask for first?",
+  "a": "An itemised receipt with the repair estimate, and the date the card hold is released",
+  "o": [
+   "The €2,590 in cash — a hold on the card can take weeks to come back",
+   "Only the keel estimate — the fender is a fixed price from the list",
+   "Nothing more — the settlement is written out and signed by the base"
+  ],
+  "why": "Every deduction comes with a receipt and the repair cost; the pre-authorisation is released by the base, not by your bank on its own.",
+  "ref": "Check-out: deposit refund",
+  "fig": {
+   "type": "card",
+   "title": "Deposit settlement",
+   "tag": "Refund €2,590",
+   "lines": [
+    "Deposit €3,000 pre-authorised on card",
+    "Fender lost — €60 (list price)",
+    "Keel scratch — €350 (estimate)",
+    "Release of the rest: 'in a few days'"
+   ]
+  }
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "During the week you noted the autopilot dropping out above 20 knots, a stiff heads pump and a flickering port light. Nobody is charging you for any of it. What do you do at the check-out?",
+  "a": "Give the technician a short written list for the base's job sheet",
+  "o": [
+   "Keep it to yourself — anything you report may end as a deduction",
+   "Post it in an online review so the next crew is warned",
+   "Mention the port light only — the rest is normal charter wear"
+  ],
+  "why": "A fault list costs you nothing, gets fixed before the next crew and shows the base you sailed with care.",
+  "ref": "Check-out: fault report",
+  "fig": null
+ },
+ {
+  "topic": "return",
+  "difficulty": 2,
+  "q": "Saturday morning you lock the boat. A crew mate says to switch everything off, as on his own boat. What do you do?",
+  "a": "Follow the base's note: shore power on, house on, engine off, hatches shut, keys to the office",
+  "o": [
+   "Switch everything off and unplug the shore cable, as on his boat",
+   "Leave everything on, instruments too, so the base sees they work",
+   "Switch everything off and leave the key in the ignition for the technician"
+  ],
+  "why": "The base's note is what the next check-in depends on: the charger keeps the batteries up and the fridge cold.",
+  "ref": "Check-out: leaving the boat",
+  "fig": {
+   "type": "card",
+   "title": "Base note — leaving the boat",
+   "lines": [
+    "Shore power: connected, charger on",
+    "Battery switches: house ON, engine OFF",
+    "Hatches and ports closed, bimini folded",
+    "Keys: to the office, not left aboard"
+   ]
+  }
+ }
+]

@@ -1,0 +1,436 @@
+[
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "The technician says both water tanks are full. The panel shows this. What do you do before you sign?",
+    "a": "Switch the selector to tank 2 and look into both fillers yourself",
+    "o": [
+      "Sign — the gauge reads the tank not in use",
+      "Ask him to top up tank 1 and sign",
+      "Note 'gauge faulty' on the form and sign"
+    ],
+    "why": "A gauge reads the selected tank; a quarter-full tank 1 is the first thing to see — check both tanks at the filler before signing.",
+    "ref": "Check-in: fresh water",
+    "fig": {
+      "type": "panel",
+      "gauges": [
+        [
+          "Water",
+          "1/4",
+          true
+        ]
+      ],
+      "lines": [
+        "Tank selector: on tank 1",
+        "Water 2 × 300 l"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "On the side deck you find three deck caps; the lettering has worn off. Your crew is already uncoiling the pontoon hose. What do you do?",
+    "a": "Have the technician identify each cap and mark it before any hose goes in",
+    "o": [
+      "Try each cap — water goes in the one that gurgles",
+      "Fill the aft one; water fillers are always aft",
+      "Fill the biggest cap; the water tank is the largest"
+    ],
+    "why": "Water in the diesel tank or the holding tank ends the week; caps are marked WATER, DIESEL, WASTE — if they are not, mark them.",
+    "ref": "Check-in: deck fillers",
+    "fig": {
+      "type": "card",
+      "title": "Deck caps, starboard side",
+      "lines": [
+        "Three caps, lettering worn",
+        "Water, diesel and waste pump-out",
+        "Crew: hose ready"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 1,
+    "q": "You are filling the water tanks at the pontoon with the marina hose. How do you do it?",
+    "a": "Run the hose clear first, then fill each tank until it overflows at the filler",
+    "o": [
+      "Put the hose in, go to the shop and come back in an hour",
+      "Fill only the tank the selector is on; the other fills by itself",
+      "Fill through the galley tap so the pump stays primed"
+    ],
+    "why": "A hose that has lain in the sun holds stale water; fill to overflow, tank by tank, and stay with it.",
+    "ref": "Filling water",
+    "fig": null
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "Every tap is closed, yet the pressure pump keeps running. The technician says it is just priming. What do you do?",
+    "a": "Switch the pump off and ask the base to find the leak before you leave",
+    "o": [
+      "Leave it; a pump stops by itself once it finds pressure",
+      "Open a tap to let the air out and let it run on",
+      "Sign and switch it off at night to save the batteries"
+    ],
+    "why": "A pump that runs with the taps closed is pumping into a leak or from an empty tank — on a full tank, that water is going into the bilge.",
+    "ref": "Pressure water pump",
+    "fig": {
+      "type": "panel",
+      "gauges": [
+        [
+          "Water",
+          "Full",
+          false
+        ]
+      ],
+      "lines": [
+        "All taps closed",
+        "Pump: running 5 min, won't stop"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "Monday morning at anchor. Your crew report this. What do you do?",
+    "a": "Run the engine for half an hour — the heater element only works on shore power",
+    "o": [
+      "Switch on the inverter so the heater element can run",
+      "Open the hot tap and wait; the element takes an hour",
+      "Report it to the base as a broken water heater"
+    ],
+    "why": "The calorifier is heated by the engine's cooling water or by a 230 V element on shore power; at anchor only the engine heats it.",
+    "ref": "Hot water",
+    "fig": {
+      "type": "card",
+      "title": "Monday 08:00, at anchor",
+      "lines": [
+        "Shower: cold",
+        "'Water heater' switch: on",
+        "Engine: not run since Saturday"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 1,
+    "q": "You are leaving the pontoon. The heads bowl is full of water and the pump lever is on 'wet'. What do you do?",
+    "a": "Pump the bowl dry and set the lever to 'dry'",
+    "o": [
+      "Leave it; the water keeps the smell down",
+      "Set the lever to 'dry' and leave the bowl full",
+      "Pump the bowl full so the seal stays wet at sea"
+    ],
+    "why": "A full bowl slops and can siphon when the boat heels; at sea the bowl is pumped dry and the lever left on dry.",
+    "ref": "Marine toilet",
+    "fig": null
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 1,
+    "q": "A crew member reads the sign over the heads and asks whether the wipes she bought can go in. What do you answer?",
+    "a": "No — only what has been eaten and a little paper; wipes go in the bin",
+    "o": [
+      "Yes, if the packet says 'flushable' and you pump well",
+      "Yes, one at a time with plenty of pumping after it",
+      "Yes, in the electric heads but not in the manual one"
+    ],
+    "why": "Wipes do not break up; they block the pump and the holding tank, and the contract charges you for the unblocking.",
+    "ref": "Marine toilet",
+    "fig": {
+      "type": "card",
+      "title": "Sign over the heads",
+      "lines": [
+        "Only what you have eaten",
+        "and a little toilet paper",
+        "Everything else: the bin"
+      ],
+      "tag": "€250 to unblock"
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 3,
+    "q": "Sunday afternoon in a bay. The crew are going ashore for lunch and the boat will be empty for three hours. This is how you leave it. What do you change?",
+    "a": "Close the heads seacocks and the gas valve, and switch the pump off",
+    "o": [
+      "Close the gas valve; the rest is fine for three hours",
+      "Switch the pump off; seacocks stay open to vent the heads",
+      "Close the seacocks; the pump must stay on for the fridge"
+    ],
+    "why": "An empty boat is left with seacocks shut, gas off at the bottle and the pressure pump off: nothing can flood or leak while nobody is aboard.",
+    "ref": "Leaving the boat",
+    "fig": {
+      "type": "card",
+      "title": "Leaving the boat, 13:00",
+      "lines": [
+        "Heads seacocks: open",
+        "Pressure pump: on",
+        "Gas valve at the bottle: open",
+        "Hatches: closed"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "The technician shows you the holding-tank valve in this position, in the marina. What do you do?",
+    "a": "Set it to 'tank' now and open it only when you are well offshore",
+    "o": [
+      "Leave it; direct overboard saves pumping the tank out",
+      "Set it to 'tank' and never open it; the base pumps out",
+      "Leave it in the marina; switch to 'tank' once at sea"
+    ],
+    "why": "In harbour and in bays everything goes to the tank; the valve is opened only offshore, where the briefing allows discharge.",
+    "ref": "Holding tank",
+    "fig": {
+      "type": "card",
+      "title": "Holding tank 80 l",
+      "lines": [
+        "Y-valve: 'direct overboard'",
+        "Briefing: discharge 3 M offshore only",
+        "Pump-out: at the fuel quay"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 3,
+    "q": "At check-in the holding tank reads this. The technician suggests you empty it at sea tomorrow. What do you do?",
+    "a": "Ask the base to pump it out before you sign; a full tank is not an accepted boat",
+    "o": [
+      "Sign and open the valve at the first bay tomorrow",
+      "Sign, and empty it over the side tonight after dark",
+      "Sign and note 'tank full' so the return check is fair"
+    ],
+    "why": "You take over a boat with an empty holding tank; discharging in a bay or a harbour is illegal, and the full tank is the base's job to fix.",
+    "ref": "Check-in: holding tank",
+    "fig": {
+      "type": "card",
+      "title": "Holding tank",
+      "lines": [
+        "Gauge: full",
+        "Technician: 'empty it at sea tomorrow'",
+        "Pump-out: fuel quay, closes 18:00"
+      ],
+      "tag": "Saturday 17:10"
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "The electric heads flush weakly and the bowl empties slowly. The technician says they are all like that. What do you do?",
+    "a": "Write it on the check-in form and ask for it to be checked before you leave",
+    "o": [
+      "Accept it; a slow flush is normal for a macerator",
+      "Sign, and use the forward heads all week",
+      "Sign; you will clear it yourself with vinegar"
+    ],
+    "why": "A weak flush is a blocked or tired pump that will fail mid-week; note every fault on the form and ask for the fix at the base.",
+    "ref": "Check-in form",
+    "fig": {
+      "type": "card",
+      "title": "Electric heads, aft cabin",
+      "lines": [
+        "Breaker 'Toilet': on",
+        "Flush: a trickle, bowl empties in 30 s",
+        "Manual heads forward: works"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "The technician hands you this list and says the seacocks are 'all fine'. What do you ask for?",
+    "a": "To be shown each one, turn it yourself, and have a bung tied beside each",
+    "o": [
+      "To be shown the engine one; the others are small",
+      "To have the bungs counted in the tool bag",
+      "To have the list signed by him as checked"
+    ],
+    "why": "You need to know where every seacock is and that it turns; a bung tied to the fitting is found in the dark, one in a bag is not.",
+    "ref": "Seacocks and bungs",
+    "fig": {
+      "type": "card",
+      "title": "Seacocks",
+      "lines": [
+        "Galley sink · shower drain",
+        "Heads inlet × 2 · heads outlet × 2",
+        "Engine intake · log",
+        "Bungs: 'in the tool bag'"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "You lift the sole boards and find this. The technician says it is the fridge drain. What do you do?",
+    "a": "Have it dried out and the fridge drain shown to you, then check it stays dry",
+    "o": [
+      "Sponge it out yourself and sign; fresh water is harmless",
+      "Sign; the automatic pump will take it when it rises",
+      "Note 'fridge drain' on the form and sign"
+    ],
+    "why": "A dry bilge at check-in is your baseline: any water later is news; a fridge that drains to the bilge is a known source, but it is checked first.",
+    "ref": "Check-in: bilge",
+    "fig": {
+      "type": "card",
+      "title": "Bilge at check-in",
+      "lines": [
+        "Water: 3 cm, fresh, no smell",
+        "Automatic pump: float switch dry",
+        "Technician: 'the fridge drains there'"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "The technician says the bilge pumping is 'automatic, you never need it'. How do you check the bilge pumps?",
+    "a": "Lift the float until the pump runs, then find the handle and work the manual pump",
+    "o": [
+      "Switch the electric pump to 'manual' on the panel and listen for it",
+      "Pour a bucket into the bilge and wait for the float to start it",
+      "Ask for the pumps' last service date to be written on the form"
+    ],
+    "why": "The float switch is tested by lifting it, the manual pump by pumping it — and its handle must be where you can find it with water over the sole.",
+    "ref": "Bilge pumps",
+    "fig": {
+      "type": "card",
+      "title": "Bilge pumps",
+      "lines": [
+        "Electric: float switch under the sole",
+        "Manual: pump in the cockpit",
+        "Handle: 'somewhere in the lazarette'"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 3,
+    "q": "The technician opens the gas locker and shows you this. What do you ask for before you sign?",
+    "a": "A full spare bottle and the locker drain cleared",
+    "o": [
+      "A full spare bottle; the drain can wait for the base",
+      "The drain cleared; you will buy a bottle in town",
+      "A note on the form that the locker holds water"
+    ],
+    "why": "Gas is heavier than air: the locker must drain overboard, not into the boat; and a half bottle with no spare runs out mid-week.",
+    "ref": "Gas installation",
+    "fig": {
+      "type": "card",
+      "title": "Gas locker, cockpit",
+      "lines": [
+        "Bottle: 3 kg, feels half full",
+        "Spare bottle: none",
+        "Locker drain: blocked, 2 cm of water",
+        "Regulator: fitted"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "Tuesday evening at anchor: there is a smell of gas in the galley. What do you do first?",
+    "a": "Shut the valve at the bottle, ventilate, no flames or switches until the smell is gone",
+    "o": [
+      "Switch on the fan and the lights to look for the leak at the stove",
+      "Light a burner to burn off the gas left in the pipe and hose",
+      "Pump the bilge and open the gas valve fully to flush the line"
+    ],
+    "why": "Gas sinks into the bilge: isolate at the bottle, ventilate, no sparks; then find the leak with soapy water on the joints.",
+    "ref": "Gas leak",
+    "fig": {
+      "type": "card",
+      "title": "Galley, 19:30",
+      "lines": [
+        "Smell of gas by the stove",
+        "Stove: off, gas valve at the bottle: open",
+        "Gas alarm: silent",
+        "Crew: 4 below"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "In the galley you find this. The technician says the alarm 'kept going off, so we disconnected it'. What do you do?",
+    "a": "Ask for it reconnected and tested before departure",
+    "o": [
+      "Accept it; the solenoid switch is your safety",
+      "Sign and plug it in yourself later",
+      "Note it and rely on your nose for the week"
+    ],
+    "why": "A gas alarm that trips may be finding a real leak; it goes back on and is tested, and the leak is looked for, before you sign.",
+    "ref": "Gas alarm",
+    "fig": {
+      "type": "card",
+      "title": "Gas alarm",
+      "lines": [
+        "Sensor: in the bilge under the stove",
+        "Panel light: off, wire unplugged",
+        "Solenoid switch at the stove: works"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 1,
+    "q": "First evening in the marina, your crew start cooking. The stove swings on its gimbals as soon as a pan goes on. What do you tell them?",
+    "a": "Lock the gimbals in harbour; free them only at sea so the pan stays level",
+    "o": [
+      "Free the gimbals at all times; that is what they are for",
+      "Lock the gimbals at sea; free them in harbour",
+      "Wedge the stove with a cloth; the lock is for the oven"
+    ],
+    "why": "Gimbals keep the pan level when the boat heels; in a flat harbour the lock stops the stove tipping when someone leans on it.",
+    "ref": "Stove and oven",
+    "fig": null
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 2,
+    "q": "After a night of rain the cockpit looks like this. What do you ask for before you leave the base?",
+    "a": "The cockpit drains and the anchor-locker drain cleared and shown to run free",
+    "o": [
+      "A bucket; you will bail the cockpit after rain",
+      "The scuppers checked; cockpit water drains over the sole",
+      "The anchor locker pumped out and the lid taped shut"
+    ],
+    "why": "A cockpit that does not drain fills in a sea; a blocked anchor-locker drain puts the water in the forepeak. Both are cleared at the base.",
+    "ref": "Cockpit and locker drains",
+    "fig": {
+      "type": "card",
+      "title": "Cockpit, Sunday 08:00",
+      "lines": [
+        "Cockpit: 5 cm of rainwater",
+        "Drains: gurgle, do not clear",
+        "Anchor locker: half full of water",
+        "Side-deck scuppers: clear"
+      ]
+    }
+  },
+  {
+    "topic": "plumbing",
+    "difficulty": 3,
+    "q": "You take over the catamaran with this. How do you plan the week's water?",
+    "a": "Fill at every marina and make water only at sea, in clean water; 600 l will not last the week",
+    "o": [
+      "Rely on the watermaker; run it every morning while in the marina",
+      "Fill once at the base; 600 l is plenty for 8 people for a week",
+      "Shower ashore only and never touch the watermaker all week"
+    ],
+    "why": "600 l is under 11 l a day each for 8 people; a watermaker sucks oil and sewage in a harbour — it runs offshore in clean water.",
+    "ref": "Water budget",
+    "fig": {
+      "type": "card",
+      "title": "Fresh water",
+      "lines": [
+        "Tanks: 2 × 300 l, full",
+        "Crew: 8, 7 days",
+        "Watermaker: fitted, 60 l/h",
+        "Briefing: 'never run it in harbour'"
+      ]
+    }
+  }
+]

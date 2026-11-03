@@ -1,0 +1,510 @@
+[
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The technician lifts the companionway steps and lets you pull the dipstick and open the header tank yourself. What do you ask for before you sign?",
+  "a": "The base to find why the oil is milky and to fill the coolant before you leave",
+  "o": [
+   "A litre of coolant to top up yourself, with the oil colour noted on the form",
+   "Nothing — oil goes grey after a season of short runs in the marina",
+   "To run the engine hot for ten minutes and look at the dipstick again"
+  ],
+  "why": "Milky oil is water in the oil — a heat exchanger or gasket fault; the base fixes it, not you at sea.",
+  "ref": "Check-in: engine bay",
+  "fig": {
+   "type": "card",
+   "title": "Engine bay, before starting",
+   "lines": [
+    "Dipstick: at the top mark, milky grey",
+    "Header tank: below MIN",
+    "Belt: firm, a little black dust",
+    "Tray under engine: dry"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "You look round the engine with a torch while the technician waits. What do you ask for?",
+  "a": "The clip tightened and the tray wiped dry, so a new leak will show this week",
+  "o": [
+   "A rag over the tray so the oil does not reach the bilge pump",
+   "The seacock closed while in port and opened before each start",
+   "Nothing — a stain and a film of oil are normal on a charter engine"
+  ],
+  "why": "Small leaks are noted and fixed at the base; a dry tray is how you spot a new one on day three.",
+  "ref": "Check-in: engine bay",
+  "fig": {
+   "type": "card",
+   "title": "Engine bay — hoses and tray",
+   "lines": [
+    "Coolant stain under one hose clip",
+    "Raw-water seacock: under the sole, open",
+    "Strainer: lid off, basket clear",
+    "Tray: a film of old oil"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "The technician has already filled in the engine hours on the check-in form. You look at the panel. What do you do?",
+  "a": "Have the form corrected to the panel reading and photograph the panel",
+  "o": [
+   "Sign the form — the base counts hours from its own log",
+   "Write both numbers on the form and let the base manager choose",
+   "Note the difference and raise it at check-out if hours are charged"
+  ],
+  "why": "Engine hours on the form are what you are charged against at check-out; write what the panel shows, with a photo.",
+  "ref": "Check-in form: engine hours",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Hours",
+     "2312.1",
+     false
+    ],
+    [
+     "Volts",
+     "12.6",
+     false
+    ],
+    [
+     "Fuel",
+     "4/4",
+     false
+    ]
+   ],
+   "lines": [
+    "Form says: engine hours 2,290"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "The technician hands you the key: 'Start it yourself.' In what order do you do it?",
+  "a": "Lever in neutral, key on, wait for the glow-plug light to go out, then crank",
+  "o": [
+   "Lever a little ahead so it does not stall, key on, crank at once",
+   "Key on and crank straight away — a warm Greek engine needs no preheat",
+   "Throttle wide open in neutral, crank until it fires, then back off"
+  ],
+  "why": "Neutral, preheat, crank: a diesel starts in neutral and the glow plugs need their seconds, even in summer.",
+  "ref": "Base briefing: starting the engine",
+  "fig": null
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The engine has started under the technician's eye and you watch the panel. What do you do?",
+  "a": "Pull the stop handle now — the alarm should stop within seconds as oil pressure rises",
+  "o": [
+   "Rev it to 1,500 so the pressure builds faster and the buzzer stops",
+   "Turn the key off and on again to reset the alarm and carry on",
+   "Let it idle five minutes; the buzzer stops once the oil is warm"
+  ],
+  "why": "The oil alarm sounds until pressure builds — a second or two; longer than that, stop the engine before it damages itself.",
+  "ref": "Base briefing: starting the engine",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "900",
+     false
+    ],
+    [
+     "Oil",
+     "LOW",
+     true
+    ],
+    [
+     "Temp",
+     "40°",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine fired 15 s ago",
+    "Buzzer still sounding"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The engine is running at the pontoon. You step aft and look at the exhaust outlet: a puff of smoke, no water. The technician says 'give it a minute'. What do you do?",
+  "a": "Have the engine stopped now and the seacock, strainer and impeller checked before it restarts",
+  "o": [
+   "Give it the minute — raw water takes time to come up through the strainer",
+   "Rev it to 2,000 for a moment so the pump pulls the water through",
+   "Note 'no exhaust water' on the form and check again at the fuel quay"
+  ],
+  "why": "No water at the exhaust means no cooling: a closed seacock, a blocked strainer or a dead impeller — stop first, find out second.",
+  "ref": "Check-in: exhaust water",
+  "fig": null
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The technician reads the spares list off the inventory. What do you ask for before departure?",
+  "a": "A spare impeller and the tools to fit it, and where the puller is kept",
+  "o": [
+   "A second belt — belts go more often than impellers in the heat",
+   "A bottle of coolant and a funnel for the header tank",
+   "Nothing — the base's mechanic comes out if anything fails"
+  ],
+  "why": "The impeller is the usual cause of overheating; without a spare aboard a failure ends the day's sailing where you are.",
+  "ref": "Check-in: engine spares",
+  "fig": {
+   "type": "card",
+   "title": "Spares locker (inventory)",
+   "lines": [
+    "Alternator belt ×1",
+    "Fuel filter element ×2",
+    "Fuses: box, assorted",
+    "Impeller: —"
+   ],
+   "tag": "No impeller"
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The contract says the boat is handed over with a full tank. What do you do?",
+  "a": "Ask to see it dipped or topped up at the fuel quay, and write the gauge reading on the form",
+  "o": [
+   "Accept his word — gauges on charter boats are never trusted anyway",
+   "Sign for full and put in a claim at check-out if it runs short",
+   "Fill it yourself on the first day and keep the receipt for the base"
+  ],
+  "why": "'Full on handover, full on return' only works if you see it full: a dip, a sight glass or a visit to the fuel quay.",
+  "ref": "Charter contract — fuel",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "3/4",
+     false
+    ],
+    [
+     "Volts",
+     "12.7",
+     false
+    ],
+    [
+     "Temp",
+     "28°",
+     false
+    ]
+   ],
+   "lines": [
+    "Technician: 'full — the gauge sticks'",
+    "No fuel receipt shown"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "Your plan for the week is about 6 hours of motoring a day for six days. What do you decide at the briefing?",
+  "a": "Plan a fuel stop around midweek — 36 hours is about 144 litres of a 160-litre tank",
+  "o": [
+   "Nothing — a 160-litre tank is more than a week of motoring on a 45-footer",
+   "Refuel only when the gauge first shows a quarter, as on a car",
+   "Run the tank down and fill it once on the way back on the last day"
+  ],
+  "why": "36 h × 4 L/h = 144 L: the week's plan uses the whole tank minus reserve, and the gauge cannot be trusted to warn you.",
+  "ref": "Base briefing: fuel and consumption",
+  "fig": {
+   "type": "card",
+   "title": "Base briefing — fuel",
+   "lines": [
+    "Tank 160 L (keep 20 L reserve)",
+    "Cruising 2,200 rpm: about 4 L/h",
+    "Gauge reads in quarters, sticks"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The technician shows you the deck fillers on the side deck. What do you do?",
+  "a": "Open the port one and smell it, mark it with tape and show the crew which is which",
+  "o": [
+   "Remember 'fuel is port' — the technician knows his boats",
+   "Ask for both caps to be changed to marked ones before departure",
+   "Let the fuel attendant find the right one; it is his job at the quay"
+  ],
+  "why": "Diesel in the water tank ruins the week's water and the tank; mark the fuel filler and brief the crew before anyone fills anything.",
+  "ref": "Check-in: deck fillers",
+  "fig": {
+   "type": "card",
+   "title": "Deck fillers (port and starboard aft)",
+   "lines": [
+    "Two identical caps, no marking",
+    "Same key opens both",
+    "Technician: 'fuel is the port one'"
+   ],
+   "tag": "Same caps"
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "You look at the primary filter with a torch while the technician talks you through the fuel shut-off. What do you ask for before you sign?",
+  "a": "The bowl drained and the element changed now, and the change written on the form",
+  "o": [
+   "A spare element so you can change it yourself if the engine falters",
+   "The shut-off closed overnight to keep water out of the lines",
+   "Nothing — a little sediment in the bowl is normal after a season"
+  ],
+  "why": "The dark layer is water or sludge; it reaches the injectors in the first rough sea — the base deals with it at the pontoon.",
+  "ref": "Check-in: fuel filter / water separator",
+  "fig": {
+   "type": "card",
+   "title": "Fuel system",
+   "lines": [
+    "Primary filter: glass bowl",
+    "Bowl: dark layer at the bottom",
+    "Fuel shut-off: on the tank, open",
+    "Last filter change: not recorded"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "At the pontoon with the lines on, the technician clicks the lever ahead: the revs rise, the boat hardly pulls and something clunks under the stern. What do you ask him to do?",
+  "a": "Go to neutral, give a burst astern to open the folding propeller, then try ahead again",
+  "o": [
+   "Pull the button on the lever hub — it is in throttle-only mode and needs the gear in",
+   "Rev harder in ahead until the clunking stops and the lines come tight",
+   "Sign for it — the gear works, the boat is just held by the lines"
+  ],
+  "why": "A folding prop's blades can stick half-open from the marina; astern opens them. Test ahead and astern with the lines on, before you leave.",
+  "ref": "Check-in: propeller and gear test",
+  "fig": null
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "After ten minutes running at the pontoon the panel looks like this. The technician says 'the light always does that'. What do you do?",
+  "a": "Ask for the belt and alternator checked before you leave — it is not charging",
+  "o": [
+   "Accept it — a 12.1 reading with the engine running is a healthy battery",
+   "Switch to the house bank and let the charger pick it up on shore power",
+   "Idle the engine an hour at tick-over tonight and see if the light goes out"
+  ],
+  "why": "A battery light with the engine running means no charge: a slipping belt or a dead alternator. With it, the week ends on day two.",
+  "ref": "Engine panel: charging",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "1500",
+     false
+    ],
+    [
+     "Volts",
+     "12.1",
+     true
+    ],
+    [
+     "Temp",
+     "82°",
+     false
+    ]
+   ],
+   "lines": [
+    "Battery light on",
+    "Engine warm, running 10 min"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The technician runs the engine in gear against the lines while you look under the aft cabin bunk. What do you say?",
+  "a": "A dripless seal should be dry — ask the base to look at it and amend the form before you sign",
+  "o": [
+   "A few drips a minute are normal on a stern gland — write 'OK' on the form",
+   "Ask for the bilge pump set to automatic and sail; the seal is doing its job",
+   "Tighten the seal's collar a quarter turn yourself until the trickle stops"
+  ],
+  "why": "A packed gland drips a little; a dripless seal does not. A trickle plus a cycling pump is a fault for the base to fix at the pontoon.",
+  "ref": "Check-in: stern gland",
+  "fig": {
+   "type": "card",
+   "title": "Shaft and gearbox",
+   "lines": [
+    "Shaft seal: dripless (face seal)",
+    "Engine running: a steady trickle at the seal",
+    "Bilge: 2 cm of water, pump cycling",
+    "Gearbox oil: at the mark, clear"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "The boat is afloat; the technician ticks the underwater lines from memory and asks you to sign. What do you write?",
+  "a": "'Not seen' against each underwater line, and sign only for what you were shown",
+  "o": [
+   "'OK' — the base lifted the boat in the spring and knows the anode",
+   "Nothing extra — you will check it on the first swim and amend then",
+   "'Checked by base' so the responsibility stays with them"
+  ],
+  "why": "You sign for what you saw. An anode or a prop you did not see is 'not seen' on the form, or it is yours at check-out.",
+  "ref": "Check-in form: not seen",
+  "fig": {
+   "type": "card",
+   "title": "Check-in form — underwater",
+   "lines": [
+    "Saildrive anode: OK",
+    "Propeller: OK",
+    "Hull antifouling: OK"
+   ],
+   "tag": "Not shown"
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 2,
+  "q": "The technician closes the port engine hatch and moves on to the electrics. What do you ask?",
+  "a": "To see the starboard engine too — it has its own strainer, filter, stop and start battery",
+  "o": [
+   "Which engine to run alone on passage to keep the hours even",
+   "Whether the two hour counters can be reset to match for the form",
+   "Nothing — twin engines are the same; one is a spare for the other"
+  ],
+  "why": "Two engines means two of everything: each is checked, each hours reading goes on the form, and each stop is found before you leave.",
+  "ref": "Check-in: catamaran engines",
+  "fig": {
+   "type": "card",
+   "title": "42 ft catamaran — engines",
+   "lines": [
+    "Port engine bay: opened, shown",
+    "Starboard: 'same as port' — not opened",
+    "Hours: port 1,840 / starboard 1,795",
+    "Stops: pull handle at each panel"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 1,
+  "q": "The technician points at the bow-thruster switch at the helm: 'Test it yourself.' How do you test it at the pontoon?",
+  "a": "Switch it on, a short burst each way with the lines on, watch the bow wash, then switch it off",
+  "o": [
+   "Run it a full minute each way so you know the battery can take it",
+   "Leave the test until you are clear of the pontoon with room to move",
+   "Take his word for it — a thruster is either fine or the base knows"
+  ],
+  "why": "Short bursts: a thruster overheats in a minute of running. Its own breaker and battery are shown to you at the same time.",
+  "ref": "Check-in: bow thruster",
+  "fig": null
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "You read the clause before signing. Your plan has two long motoring days. What do you do?",
+  "a": "Ask the base manager whether the 4 hours is per day or averaged over the week, and get the answer on the form",
+  "o": [
+   "Sign as it is — most days you will sail, so the two long days are covered",
+   "Ask for the clause to be struck out since a sailing yacht is not a motorboat",
+   "Sign and keep your own log of hours to argue from at check-out"
+  ],
+  "why": "A clause means what the base says it means — in writing, before you sign, not at check-out when the excess is on the bill.",
+  "ref": "Charter contract — engine hours",
+  "fig": {
+   "type": "card",
+   "title": "Contract, clause 11 — engine",
+   "lines": [
+    "Engine use: max 4 h per day",
+    "Excess: €40 per hour",
+    "Hours at check-in: 2,312.1 (form)",
+    "Your plan: two 8-hour motoring days"
+   ],
+   "tag": "Max 4 h/day"
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "The engine has been running a quarter of an hour at the pontoon. The technician says the sender has been like that all season. Do you accept the boat?",
+  "a": "Not until the base proves the oil pressure, replaces the sender or gauge, and writes it on the form",
+  "o": [
+   "Yes — the base knows its engine; note 'oil alarm, faulty sender' on the form",
+   "Yes, if he pulls the buzzer fuse so the crew are not alarmed at sea",
+   "Yes, with a discount on the charter price written into the contract"
+  ],
+  "why": "An oil alarm you cannot tell from a real one is no alarm: you would not know at sea. Not a boat to sign for.",
+  "ref": "Check-in: engine alarms",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "1800",
+     false
+    ],
+    [
+     "Oil",
+     "LOW",
+     true
+    ],
+    [
+     "Temp",
+     "85°",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine warm, 15 min running",
+    "Buzzer sounding; 'faulty sender'"
+   ]
+  }
+ },
+ {
+  "topic": "engine",
+  "difficulty": 3,
+  "q": "Day three, motoring towards the harbour, the panel changes to this. What do you do?",
+  "a": "Throttle back, neutral, stop; let it cool, then check strainer, impeller and belt before restarting",
+  "o": [
+   "Keep going at 2,200 — the engine will last the last two miles to the harbour",
+   "Slow to tick-over and carry on; the temperature will fall at low revs",
+   "Sail the last miles and restart the engine only for the mooring"
+  ],
+  "why": "Overheat: stop before it seizes. Sail or anchor, find the cause (strainer, impeller, belt), call the base if it is beyond you.",
+  "ref": "Engine alarm at sea",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "2200",
+     false
+    ],
+    [
+     "Temp",
+     "105°",
+     true
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Buzzer sounding; steam at the exhaust",
+    "Harbour 2 miles ahead, wind F3"
+   ]
+  }
+ }
+]
