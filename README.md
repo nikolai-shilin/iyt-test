@@ -30,7 +30,7 @@ docs/
 data/
   build_bank.py                 source of the Bareboat Skipper bank — edit here, then run
   build_level.py                builds the other levels from bank/<level>/<topic>.json (+ .ru.json)
-  bank/<level>/<topic>.json     VHF Radio Operator, International Crew, Flotilla Skipper: 20 questions per topic; Charter Check-in: 50; Racing Rules of Sailing: 100
+  bank/<level>/<topic>.json     VHF Radio Operator, International Crew, Flotilla Skipper: 20 questions per topic; Charter Check-in: 50; Yachtmaster Coastal, Racing Rules of Sailing: 100
   questions/<level>.json        the built banks the apps read
   questions/<level>.ru.json     Russian translation of each bank (overlay)
   i18n.py                       extract strings to translate / check an overlay
@@ -133,7 +133,7 @@ Figure types: [docs/figures.md](docs/figures.md).
 | Racing Rules of Sailing (not an IYT course) | 1000 (10 topics × 100) | done — `data/questions/racing-rules.json` |
 | Charter Check-in (not an IYT course) | 500 (10 topics × 50) | done — `data/questions/charter-checkin.json` |
 | ICC (International Certificate of Competency) | — | planned |
-| Yachtmaster Coastal | 120 planned | — |
+| Yachtmaster Coastal | 1000 (10 topics × 100) | done — `data/questions/yachtmaster-coastal.json` |
 | Yachtmaster Offshore | — | 2027 |
 | Yachtmaster Ocean | — | planned |
 
@@ -144,5 +144,5 @@ Charter Check-in is the Saturday at the base: papers and contract, the walk-roun
 gas, instruments, safety gear, ground tackle and dinghy, inventory, deposit and the Friday check-out.
 
 Questions are written for study and are not official IYT exam content. The mock-exam defaults (Bareboat and Flotilla
-Skipper 40 questions in 60 minutes, VHF and International Crew 30 in 45; 70 % to pass) must be verified against the
+Skipper 40 questions in 60 minutes, Yachtmaster Coastal 50 in 90, VHF and International Crew 30 in 45; 70 % to pass) must be verified against the
 current IYT exams before release.

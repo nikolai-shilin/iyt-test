@@ -74,6 +74,23 @@ LEVELS = {
             ('skipper', 'Skipper duties & flotilla routine', 'Обязанности шкипера и порядок во флотилии', 'Шкипер', 'captain'),
             ('emergency', 'Safety & emergencies', 'Безопасность и аварии', 'Аварии', 'lifebuoy'),
         ]),
+    # IYT Yachtmaster Coastal (iytworld.com/courses/yachtmaster-coastal): the course outline's 13 headings as ten topics of 100 —
+    # charts and publications; DR and EP; position fixing; tides; pilotage; passage planning; COLREGs; meteorology; safety;
+    # ropework, anchoring, boat handling and docking. IYT does not publish the theory exam's size, time or pass mark.
+    'yachtmaster-coastal': dict(
+        prefix='yc', name='Yachtmaster Coastal', per=100, passMark=70, examQuestions=50, examMinutes=90, version='2026-11-03',
+        topics=[
+            ('charts', 'Navigational charts & publications', 'Навигационные карты и пособия', 'Карты', 'map'),
+            ('dr', 'Dead reckoning, estimated position & course to steer', 'Счисление, счислимое место и курс, которым править', 'Счисление', 'dividers'),
+            ('fixing', 'Position fixing & the compass', 'Определение места и компас', 'Обсервация', 'compass'),
+            ('tides', 'Tides & tidal streams', 'Приливы и приливо-отливные течения', 'Приливы', 'tide'),
+            ('pilotage', 'Pilotage, buoyage & lights', 'Лоцманская проводка, навигационное ограждение и огни', 'Проводка', 'lighthouse'),
+            ('passage', 'Passage planning & passage making', 'Планирование и выполнение перехода', 'Переход', 'route'),
+            ('colregs', 'International collision regulations (COLREGs)', 'Международные правила предупреждения столкновений (МППСС-72)', 'МППСС', 'rules'),
+            ('weather', 'Meteorology', 'Метеорология', 'Погода', 'barometer'),
+            ('safety', 'Safety at sea & emergencies', 'Безопасность на море и аварийные ситуации', 'Безопасность', 'lifebuoy'),
+            ('seamanship', 'Ropework, anchoring, boat handling & docking', 'Работа с тросами, якорная стоянка, управление и швартовка', 'Морская практика', 'cleat'),
+        ]),
     # Not an IYT course: the Racing Rules of Sailing (World Sailing, 2025–2028), as situations on the race course.
     'racing-rules': dict(
         prefix='rr', name='Racing Rules of Sailing', title='Racing Rules of Sailing', note=RRS_NOTE, per=100,

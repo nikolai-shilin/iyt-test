@@ -109,10 +109,10 @@ first 100, right answers that stand out by length, and that every figure renders
 
 ## Other levels
 
-VHF Radio Operator (`vhf-`), International Crew (`ic-`), Flotilla Skipper (`fs-`), Racing Rules of Sailing
-(`rr-`) and Charter Check-in (`ci-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
+VHF Radio Operator (`vhf-`), International Crew (`ic-`), Flotilla Skipper (`fs-`), Yachtmaster Coastal (`yc-`), Racing
+Rules of Sailing (`rr-`) and Charter Check-in (`ci-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
 topic is `data/bank/<level>/<topic>.json` (20 questions, about 4/12/4 by difficulty; 50 and 10/30/10 for the
-Charter Check-in, 100 and 20/60/20 for the Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
+Charter Check-in, 100 and 20/60/20 for Yachtmaster Coastal and the Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
 `<topic>.ru.json`: the same order, `{q, a, o, why, ref, fig}`, where `o` keeps the English order of the wrong options and
 `fig` maps figure text paths to the translation. The build shuffles the options once and writes both
 `data/questions/<level>.json` and the overlay `data/questions/<level>.ru.json` in that same order.
@@ -125,6 +125,18 @@ python3 data/build_level.py [<level>]
 To add a level: add it to `LEVELS` in `build_level.py`, write its topic files, build, then add its `id`, `prefix` and
 deep-link name to `LEVELS` in `miniapp/app.js` and `bot/core.mjs`, a row to `public.levels` (a migration, as
 `20261103120000_racing_rules_level.sql`) and its topic icons to `TOPIC_ICONS` in the app.
+
+### Yachtmaster Coastal
+
+IYT's course outline for Yachtmaster Coastal (iytworld.com/courses/yachtmaster-coastal: command up to 24 m, up to 60 nm
+offshore, moderate conditions) has 13 headings; the bank groups them into 10 topics × 100 — charts and publications; dead
+reckoning, EP and course to steer; position fixing and the compass; tides and tidal streams; pilotage, buoyage and lights;
+passage planning and making; COLREGs; meteorology; safety at sea; ropework, anchoring, boat handling and docking. It sits
+above Bareboat Skipper: chartwork with numbers, night and fog, the skipper's judgement. Every computed answer (compass
+conversions, DR/EP, course to steer, tidal heights and clearances, dipping ranges) was checked by a script while writing.
+Tidal questions are set in tidal waters (Channel, Solent, Brittany) with the almanac figures given in the figure, invented
+but realistic. IYT does not publish the theory exam's size, time or pass mark: 50 questions, 90 minutes and 70 % are app
+defaults. Written from the syllabus; no question is taken from an IYT paper.
 
 ### Racing Rules of Sailing
 

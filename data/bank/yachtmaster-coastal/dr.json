@@ -1,0 +1,3234 @@
+[
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You are motoring out of Dartmouth on a calm morning with the log speed steady. How far through the water have you run by now?",
+  "a": "10.5 M",
+  "o": [
+   "8.7 M",
+   "11.0 M",
+   "9.0 M"
+  ],
+  "why": "0915 to 1100 is 1 h 45 min = 1.75 h; 6.0 × 1.75 = 10.5 M. Not 1.45 h.",
+  "ref": "Chartwork — speed, time, distance",
+  "fig": {
+   "type": "card",
+   "title": "Log extract",
+   "lines": [
+    "Left the breakwater 0915",
+    "Log speed steady 6.0 kn",
+    "Now 1100"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You time the boat between two log readings to check her speed under the new sail plan. What is your speed through the water?",
+  "a": "7.8 kn",
+  "o": [
+   "13.0 kn",
+   "5.2 kn",
+   "3.9 kn"
+  ],
+  "why": "2.6 M in 20 min, a third of an hour: 2.6 × 3 = 7.8 kn. 20 min is 0.33 h, not 0.20 h.",
+  "ref": "Chartwork — speed, time, distance",
+  "fig": {
+   "type": "card",
+   "title": "Log readings",
+   "lines": [
+    "1420  log 31.4",
+    "1440  log 34.0",
+    "Steady breeze, flat water"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You are running along the north coast of Brittany at a steady speed over the ground. When do you reach the fairway buoy?",
+  "a": "1214",
+  "o": [
+   "1230",
+   "1220",
+   "1204"
+  ],
+  "why": "13.2 ÷ 5.5 = 2.4 h = 2 h 24 min; 0950 + 2 h 24 min = 1214. 0.4 h is 24 min, not 40.",
+  "ref": "Chartwork — speed made good and ETA",
+  "fig": {
+   "type": "card",
+   "title": "Passage leg",
+   "lines": [
+    "Fairway buoy 13.2 M ahead",
+    "Speed over the ground 5.5 kn",
+    "Departed 0950"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You check the log against the plotter at slack water before a long passage. What does the difference tell you?",
+  "a": "The log under-reads: clear the paddlewheel",
+  "o": [
+   "A fair stream of 1.5 kn is running",
+   "The plotter over-reads: trust the log",
+   "Leeway is adding 1.5 kn over the ground"
+  ],
+  "why": "At slack water SOG should equal log speed; a log 1.5 kn low with weed about is a fouled paddlewheel.",
+  "ref": "Navigation — the log and its error",
+  "fig": {
+   "type": "card",
+   "title": "Log check, 0700",
+   "lines": [
+    "Slack water at the diamond",
+    "Log speed 4.0 kn",
+    "Plotter SOG 5.5 kn, heading = COG",
+    "Weed seen round the hull"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your log over-read on the measured run. Since the 0800 fix it shows this reading. What distance through the water do you lay off?",
+  "a": "15.0 M",
+  "o": [
+   "18.2 M",
+   "16.5 M",
+   "14.9 M"
+  ],
+  "why": "The log reads 2.2 for 2.0: divide by 1.1. 16.5 ÷ 1.1 = 15.0 M (not 16.5 less 10%).",
+  "ref": "Navigation — the log and its error",
+  "fig": {
+   "type": "card",
+   "title": "Log calibration",
+   "lines": [
+    "Measured run: true 2.0 M, log 2.2 M",
+    "Log at the 0800 fix: 104.0",
+    "Log now: 120.5"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You leave the fix steering a steady course, with no stream and no leeway. Where do you mark the 1412 DR?",
+  "a": "6.0 M along 060°T from the fix",
+  "o": [
+   "5.6 M along 060°T from the fix",
+   "6.0 M along 240°T from the fix",
+   "5.0 M along 060°T from the fix"
+  ],
+  "why": "1300 to 1412 is 1 h 12 min = 1.2 h; 5.0 × 1.2 = 6.0 M along the course steered.",
+  "ref": "Chartwork — DR position",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H60 C50 40 30 80 0 110 Z",
+   "depths": [
+    [
+     110,
+     70,
+     "32"
+    ],
+    [
+     160,
+     150,
+     "41"
+    ],
+    [
+     250,
+     130,
+     "45"
+    ]
+   ],
+   "marks": [
+    [
+     70,
+     160,
+     "k",
+     "1300 fix"
+    ]
+   ],
+   "track": "M70 160 L170 102",
+   "boat": [
+    70,
+    160,
+    60
+   ],
+   "panel": [
+    "1300 fix",
+    "Steering 060°T",
+    "Log 5.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "The plotter has failed. From the log entries, where is your 1000 DR from the 0800 fix?",
+  "a": "131°T, 11.5 M",
+  "o": [
+   "131°T, 14.0 M",
+   "125°T, 11.5 M",
+   "311°T, 11.5 M"
+  ],
+  "why": "6.0 M on 090°T, then 8.0 M on 160°T, end to end: the DR is 11.5 M on 131°T. Distances don't add.",
+  "ref": "Chartwork — DR position",
+  "fig": {
+   "type": "card",
+   "title": "Log book",
+   "lines": [
+    "0800  fix · log 20.0 · 090°T",
+    "0900  log 26.0 · altered to 160°T",
+    "1000  log 34.0",
+    "No stream, no leeway"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You have laid off the course to the next waypoint on the chart. The boat has no deviation on this heading. What course do you give the helmsman?",
+  "a": "250°M",
+  "o": [
+   "244°M",
+   "247°M",
+   "070°M"
+  ],
+  "why": "True to magnetic: add westerly variation — 247° + 3° = 250°M.",
+  "ref": "Chartwork — compass conversions",
+  "fig": {
+   "type": "compass",
+   "variation": -3,
+   "course": 247,
+   "courseLabel": "Course (T)",
+   "note": "No deviation"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You give the helmsman the course for the next leg across Lyme Bay. Which compass course do you write on the board?",
+  "a": "135°C",
+  "o": [
+   "141°C",
+   "131°C",
+   "137°C"
+  ],
+  "why": "136°T + 2°W = 138°M; the card gives 3°E for 138°M; 138° − 3° = 135°C.",
+  "ref": "Chartwork — compass conversions",
+  "fig": {
+   "type": "card",
+   "title": "Deviation card (ship's head M)",
+   "lines": [
+    "090°M 1°E · 135°M 3°E · 180°M 4°E",
+    "Variation 2°W",
+    "Course to steer 136°T"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your helmsman has steered a steady compass course all watch. Which true course do you lay off for the DR?",
+  "a": "309°T",
+  "o": [
+   "317°T",
+   "307°T",
+   "315°T"
+  ],
+  "why": "Read the card for the ship's head: 312°C − 4°W = 308°M; + 1°E = 309°T.",
+  "ref": "Chartwork — compass conversions",
+  "fig": {
+   "type": "card",
+   "title": "Watch log",
+   "lines": [
+    "Steered 312°C all watch",
+    "Deviation at 270°C: 2°W",
+    "Deviation at 315°C: 4°W",
+    "Variation 1°E"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Off Start Point you alter course for the next leg. Which true course do you plot for the new leg?",
+  "a": "198°T",
+  "o": [
+   "204°T",
+   "196°T",
+   "202°T"
+  ],
+  "why": "Read the card again for the new heading: 200°C − 3°W = 197°M; + 1°E = 198°T.",
+  "ref": "Chartwork — compass conversions",
+  "fig": {
+   "type": "card",
+   "title": "Deviation card (ship's head C)",
+   "lines": [
+    "045°C: 1°E",
+    "200°C: 3°W",
+    "Variation 1°E",
+    "Altered from 045°C to 200°C"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "In the Aegean, you work out the compass course for the night leg from Kos. What do you give the helmsman?",
+  "a": "056°C",
+  "o": [
+   "052°C",
+   "064°C",
+   "060°C"
+  ],
+  "why": "058°T − 4°E = 054°M; + 2°W deviation = 056°C. East is least, west is best.",
+  "ref": "Chartwork — compass conversions",
+  "fig": {
+   "type": "compass",
+   "variation": 4,
+   "deviation": -2,
+   "course": 58,
+   "courseLabel": "Course (T)",
+   "note": "Find compass"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "The plotter is set to show magnetic. You want to draw your ground track on the paper chart. Which line do you draw?",
+  "a": "082°T",
+  "o": [
+   "088°T",
+   "085°T",
+   "262°T"
+  ],
+  "why": "Magnetic to true: subtract westerly variation — 085°M − 3°W = 082°T.",
+  "ref": "Navigation — the plotter: heading, COG, SOG",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "COG",
+     "085°M",
+     false
+    ],
+    [
+     "SOG",
+     "5.1 kn",
+     false
+    ],
+    [
+     "HDG",
+     "091°M",
+     false
+    ]
+   ],
+   "lines": [
+    "Plotter set to magnetic",
+    "Chart variation 3°W"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You are close-hauled on port tack with the wind as shown. Which water track do you plot?",
+  "a": "092°T",
+  "o": [
+   "078°T",
+   "085°T",
+   "099°T"
+  ],
+  "why": "Leeway pushes you away from the wind: wind on the port side, so 085° + 7° = 092°T.",
+  "ref": "Chartwork — leeway",
+  "fig": {
+   "type": "sail",
+   "wind": 40,
+   "hdg": 85,
+   "nogo": true,
+   "note": "Heading 085°T · leeway 7°"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You take a bearing of your wake with the hand-bearing compass to measure leeway. What do you plot?",
+  "a": "8° leeway: water track 202°M",
+  "o": [
+   "8° leeway: water track 218°M",
+   "22° leeway: water track 232°M",
+   "No leeway: water track 210°M"
+  ],
+  "why": "Dead astern the wake would bear 030°; it bears 022°, so 8° leeway, to port on starboard tack: 202°M.",
+  "ref": "Chartwork — leeway",
+  "fig": {
+   "type": "card",
+   "title": "Leeway check",
+   "lines": [
+    "Close-hauled, starboard tack, F5",
+    "Heading 210°M",
+    "Wake bears 022°M, astern"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You plan three legs for tomorrow under sail. Which leeway do you allow for each?",
+  "a": "A 8° · B 3° · C 0°",
+  "o": [
+   "A 0° · B 3° · C 8°",
+   "A 3° · B 3° · C 3°",
+   "A 8° · B 8° · C 8°"
+  ],
+  "why": "Leeway is greatest close-hauled in a breeze, small on a reach and nil running before the wind.",
+  "ref": "Chartwork — leeway",
+  "fig": {
+   "type": "card",
+   "title": "Tomorrow's legs",
+   "lines": [
+    "A  close-hauled, F5, one reef",
+    "B  beam reach, F3",
+    "C  running before a F4"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "A Meltemi leg in the Aegean, with no stream to apply. Where do you plot the 1200 position from the 1000 fix?",
+  "a": "12.0 M along 126°T",
+  "o": [
+   "12.0 M along 114°T",
+   "12.0 M along 120°T",
+   "6.0 M along 126°T"
+  ],
+  "why": "Wind on the port beam pushes you to starboard: 120° + 6° = 126°T; 6.0 kn × 2 h = 12.0 M.",
+  "ref": "Chartwork — leeway",
+  "fig": {
+   "type": "card",
+   "title": "Meltemi leg",
+   "lines": [
+    "Heading 120°T, log 6.0 kn",
+    "Wind NNE F5, leeway 6°",
+    "1000 fix, now 1200, no stream"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You plan a cross-tide leg past a drying ledge. Which line do you check against the ledge?",
+  "a": "The ground track, with the stream applied",
+  "o": [
+   "The water track you will steer along",
+   "The heading line given to the helmsman",
+   "The DR line from the course and the log"
+  ],
+  "why": "The boat moves over the ground: only the ground track shows where the stream takes you.",
+  "ref": "Chartwork — ground track and water track",
+  "fig": {
+   "type": "chart",
+   "land": "M220 0 H320 V70 C290 76 260 62 240 40 Z",
+   "depths": [
+    [
+     150,
+     92,
+     "2.1",
+     true
+    ],
+    [
+     172,
+     104,
+     "1.4",
+     true
+    ],
+    [
+     70,
+     70,
+     "18"
+    ],
+    [
+     90,
+     150,
+     "24"
+    ],
+    [
+     250,
+     150,
+     "21"
+    ]
+   ],
+   "track": "M30 170 L290 110",
+   "labels": [
+    [
+     160,
+     80,
+     "ledge",
+     "middle"
+    ]
+   ],
+   "note": "Stream sets towards the ledge"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You draw the one-hour triangle for an EP and mark each line with its arrowheads. Which line gets three?",
+  "a": "B: the stream's set and rate",
+  "o": [
+   "A: the heading and the log distance",
+   "C: the course and speed over ground",
+   "A: the course steered through the water"
+  ],
+  "why": "Convention: water track one arrowhead, ground track two, tidal stream three.",
+  "ref": "Chartwork — estimated position",
+  "fig": {
+   "type": "chart",
+   "track": "M50 60 L210 60 L210 125 Z",
+   "marks": [
+    [
+     50,
+     60,
+     "k",
+     "fix"
+    ]
+   ],
+   "labels": [
+    [
+     130,
+     50,
+     "A",
+     "middle"
+    ],
+    [
+     222,
+     96,
+     "B",
+     "start"
+    ],
+    [
+     120,
+     106,
+     "C",
+     "middle"
+    ]
+   ],
+   "note": "Heading 090°T, log 6.0 kn · stream 180°T 2.0 kn"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You cross with a stream that runs east for the first two hours and west for the last two, equally. What does your ground track look like?",
+  "a": "A curve bowing east, back on the line at the end",
+  "o": [
+   "A straight line along the rhumb line",
+   "A straight line east of the rhumb line",
+   "A curve ending east of the destination"
+  ],
+  "why": "Steering one course, you are set east, then set back west by the same amount; you meet the line again at the end.",
+  "ref": "Chartwork — cross-tide passages",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V22 H0 Z",
+   "marks": [
+    [
+     110,
+     170,
+     "k",
+     "A"
+    ],
+    [
+     110,
+     40,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M110 170 L110 40",
+   "panel": [
+    "Crossing 4 h",
+    "h1–2: stream E",
+    "h3–4: stream W",
+    "Same rates"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You are crossing the Channel south of the Isle of Wight with no leeway. Where do you plot the 0800 EP?",
+  "a": "108°T, 6.3 M from the fix",
+  "o": [
+   "072°T, 6.3 M from the fix",
+   "090°T, 6.0 M from the fix",
+   "108°T, 8.0 M from the fix"
+  ],
+  "why": "Water track 6.0 M east, then the hour's stream 2.0 M south from its end: 108°T, 6.3 M.",
+  "ref": "Chartwork — estimated position",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     50,
+     120,
+     "k",
+     "0700 fix"
+    ]
+   ],
+   "track": "M50 120 L170 120",
+   "boat": [
+    50,
+    120,
+    90
+   ],
+   "depths": [
+    [
+     90,
+     160,
+     "55"
+    ],
+    [
+     240,
+     150,
+     "62"
+    ],
+    [
+     120,
+     60,
+     "48"
+    ]
+   ],
+   "panel": [
+    "0700 fix",
+    "Heading 090°T",
+    "Log 6.0 kn",
+    "Set 180°T 2.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You work up the EP from the log book after two hours on the wind. Where do you plot the 1200 EP?",
+  "a": "049°T, 8.3 M from the fix",
+  "o": [
+   "043°T, 8.3 M from the fix",
+   "042°T, 13.7 M from the fix",
+   "036°T, 8.2 M from the fix"
+  ],
+  "why": "Wind on the port side: water track 045°T, 11.0 M; add both hours' streams end to end: 049°T, 8.3 M.",
+  "ref": "Chartwork — estimated position",
+  "fig": {
+   "type": "card",
+   "title": "Since the 1000 fix",
+   "lines": [
+    "Heading 040°T, log 5.5 kn, 2 h",
+    "Wind NW · leeway 5°",
+    "1000–1100 stream 200°T 1.2 kn",
+    "1100–1200 stream 220°T 1.6 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "The almanac shows this diamond near your track. Where is your EP at the end of the hour, from its start?",
+  "a": "223°T, 5.4 M",
+  "o": [
+   "227°T, 5.6 M",
+   "177°T, 5.4 M",
+   "200°T, 5.0 M"
+  ],
+  "why": "Rate: 1.4 + (1.8 ÷ 3.0) × 1.2 = 2.1 kn. Water track 5.0 M, then 2.1 M on 290°T: 223°T, 5.4 M.",
+  "ref": "Chartwork — estimated position",
+  "fig": {
+   "type": "card",
+   "title": "Diamond D, HW+1",
+   "lines": [
+    "Set 290°T · springs 2.6 kn · neaps 1.4 kn",
+    "Range today 4.4 m (springs 5.6, neaps 2.6)",
+    "Water track 200°T, 5.0 M this hour"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You work up an EP for the 40 minutes since the fix. What length of stream do you lay off?",
+  "a": "1.2 M",
+  "o": [
+   "1.8 M",
+   "0.7 M",
+   "0.9 M"
+  ],
+  "why": "Stream for 40 min: 1.8 × 40/60 = 1.2 M. Not 1.8 × 0.4.",
+  "ref": "Chartwork — estimated position",
+  "fig": {
+   "type": "card",
+   "title": "EP since the 1520 fix",
+   "lines": [
+    "Now 1600",
+    "Water track 155°T, log 3.6 M",
+    "Stream this hour 250°T 1.8 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You want to make good the track from A to B. Which course do you steer, and what SOG do you expect?",
+  "a": "107°T, SOG 4.8 kn",
+  "o": [
+   "073°T, SOG 4.8 kn",
+   "107°T, SOG 6.5 kn",
+   "090°T, SOG 5.2 kn"
+  ],
+  "why": "Aim up-tide: sin⁻¹(1.5 ÷ 5.0) = 17°, so 090° + 17° = 107°T; SOG along the track = 5.0 × cos 17° = 4.8 kn.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     40,
+     140,
+     "k",
+     "A"
+    ],
+    [
+     280,
+     140,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M40 140 L280 140",
+   "depths": [
+    [
+     100,
+     170,
+     "38"
+    ],
+    [
+     220,
+     175,
+     "44"
+    ],
+    [
+     80,
+     60,
+     "35"
+    ]
+   ],
+   "panel": [
+    "1-hour triangle",
+    "Track 090°T",
+    "Speed 5.0 kn",
+    "Set 000°T 1.5 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You must make good 180°T to the harbour entrance on a beam reach. What compass course do you give the helmsman?",
+  "a": "197°C",
+  "o": [
+   "187°C",
+   "173°C",
+   "193°C"
+  ],
+  "why": "Stream: steer 191.5°T; wind from W, so 5° up into it = 196.5°T; + 2°W = 198.5°M; − 2°E = 197°C.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "land": "M0 178 H320 V200 H0 Z",
+   "marks": [
+    [
+     100,
+     30,
+     "k",
+     "you"
+    ],
+    [
+     100,
+     168,
+     "y",
+     "entrance"
+    ]
+   ],
+   "track": "M100 30 L100 168",
+   "boat": [
+    100,
+    30,
+    180
+   ],
+   "panel": [
+    "Track 180°T",
+    "Speed 5.0 kn",
+    "Set 090°T 1.0 kn",
+    "Wind W · leeway 5°",
+    "Var 2°W · dev 2°E"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You plan the crossing from A to B as a single two-hour triangle. Which course do you steer?",
+  "a": "028°T",
+  "o": [
+   "062°T",
+   "045°T",
+   "024°T"
+  ],
+  "why": "Two hours of stream add to 3.6 M on 146°T; a 12.0 M arc from its end meets the track: steer 028°T.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     60,
+     160,
+     "k",
+     "A"
+    ],
+    [
+     160,
+     60,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M60 160 L160 60",
+   "depths": [
+    [
+     230,
+     160,
+     "52"
+    ],
+    [
+     70,
+     70,
+     "47"
+    ]
+   ],
+   "panel": [
+    "A→B 045°T 10.8 M",
+    "Speed 6.0 kn",
+    "h1 150°T 2.2 kn",
+    "h2 140°T 1.4 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "In a cross-stream you keep turning to point the bow straight at the waypoint on the plotter. What happens to your track?",
+  "a": "It curves down-tide and you sail further",
+  "o": [
+   "It stays on the rhumb line as you correct",
+   "It curves up-tide and you arrive early",
+   "It is the same as steering one CTS"
+  ],
+  "why": "Chasing the bearing turns you up-tide late: you are set down-tide on a curve and cover more ground. Steer the worked CTS.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     40,
+     150,
+     "k",
+     "you"
+    ],
+    [
+     280,
+     150,
+     "y",
+     "WP"
+    ]
+   ],
+   "track": "M40 150 L280 150",
+   "panel": [
+    "Waypoint 12 M E",
+    "Stream sets N",
+    "Rate 2.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your 1400 EP lies 2 M east of the planned track. From where do you work the new course to steer?",
+  "a": "From the EP, to the next waypoint",
+  "o": [
+   "From the DR, which leaves out the stream",
+   "From the departure point, as planned",
+   "From the planned track, abeam the EP"
+  ],
+  "why": "Always start a new triangle from your best position, here the EP, not from where you meant to be.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     70,
+     170,
+     "k",
+     "start"
+    ],
+    [
+     70,
+     40,
+     "y",
+     "WP"
+    ],
+    [
+     130,
+     105,
+     "k",
+     "1400 EP"
+    ]
+   ],
+   "track": "M70 170 L70 40",
+   "labels": [
+    [
+     60,
+     110,
+     "plan",
+     "end"
+    ]
+   ],
+   "panel": [
+    "EP 2 M E of track",
+    "Stream still E"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You plan this crossing. How do you steer it?",
+  "a": "One course all the way: the streams cancel",
+  "o": [
+   "A new course each hour against that hour's stream",
+   "The rhumb line, steering to keep XTE at zero",
+   "Down-tide first, to be up-tide at the end"
+  ],
+  "why": "Sum the hours' streams: they cancel, so one course on the track is the shortest way through the water.",
+  "ref": "Chartwork — cross-tide passages",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V22 H0 Z",
+   "marks": [
+    [
+     110,
+     170,
+     "k",
+     "A"
+    ],
+    [
+     110,
+     40,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M110 170 L110 40",
+   "depths": [
+    [
+     50,
+     120,
+     "64"
+    ],
+    [
+     160,
+     100,
+     "71"
+    ]
+   ],
+   "panel": [
+    "Crossing 4 h",
+    "h1–2: E 2.0 kn",
+    "h3–4: W 2.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You will cross the Channel on one course for the whole four hours. Which course do you steer?",
+  "a": "356°T",
+  "o": [
+   "004°T",
+   "000°T",
+   "351°T"
+  ],
+  "why": "Net stream over 4 h: 3.4 M east − 1.8 M west = 1.6 M east; aim off sin⁻¹(1.6 ÷ 22) ≈ 4° up-tide: 356°T.",
+  "ref": "Chartwork — cross-tide passages",
+  "fig": {
+   "type": "card",
+   "title": "Crossing, 4 hours",
+   "lines": [
+    "Destination 22.0 M on 000°T, speed 5.5 kn",
+    "Stream h1 090°T 2.0 kn · h2 090°T 1.4 kn",
+    "Stream h3 270°T 0.6 kn · h4 270°T 1.2 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "What speed have you made good over the ground on this leg?",
+  "a": "5.0 kn",
+  "o": [
+   "5.6 kn",
+   "5.4 kn",
+   "6.1 kn"
+  ],
+  "why": "Speed made good uses the ground distance: 12.5 M in 2 h 30 min = 5.0 kn. The log's 14.0 M is through the water.",
+  "ref": "Chartwork — speed made good and ETA",
+  "fig": {
+   "type": "card",
+   "title": "Log book",
+   "lines": [
+    "0815  fix off Salcombe",
+    "1045  fix, 12.5 M from the first",
+    "Log run between them 14.0 M"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You head straight into the stream for the harbour. When do you arrive?",
+  "a": "1657",
+  "o": [
+   "1610",
+   "1542",
+   "1701"
+  ],
+  "why": "Foul stream: SOG 6.0 − 1.5 = 4.5 kn; 14.0 ÷ 4.5 = 3.11 h = 3 h 07 min; 1350 + 3 h 07 = 1657.",
+  "ref": "Chartwork — speed made good and ETA",
+  "fig": {
+   "type": "card",
+   "title": "Next leg",
+   "lines": [
+    "Harbour 14.0 M dead ahead on 270°T",
+    "Boat speed 6.0 kn",
+    "Stream 090°T 1.5 kn all the way",
+    "Departed 1350"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your course-to-steer triangle is drawn. When do you expect to reach the next waypoint?",
+  "a": "2346",
+  "o": [
+   "0007",
+   "2331",
+   "2355"
+  ],
+  "why": "Use the SOG from the triangle: 7.0 ÷ 4.6 = 1.52 h = 1 h 31 min; 2215 + 1 h 31 = 2346.",
+  "ref": "Chartwork — speed made good and ETA",
+  "fig": {
+   "type": "card",
+   "title": "Night leg",
+   "lines": [
+    "Next waypoint 7.0 M along the track",
+    "Boat speed 5.5 kn · stream 1.3 kn",
+    "The triangle gives SOG 4.6 kn",
+    "Now 2215"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You have worked out a course to steer of 095°T for this cross-tide leg. What does the helmsman hold at 095°?",
+  "a": "Heading: COG will differ by the stream",
+  "o": [
+   "COG: it shows where the boat is going",
+   "COG: steer until it reads 095°",
+   "Bearing to waypoint: keep it at 095°"
+  ],
+  "why": "A course to steer is a heading through the water; the COG is its result over the ground.",
+  "ref": "Navigation — the plotter: heading, COG, SOG",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "HDG",
+     "095°",
+     false
+    ],
+    [
+     "COG",
+     "081°",
+     false
+    ],
+    [
+     "SOG",
+     "4.6 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Cross-tide leg",
+    "Course to steer 095°T"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "From these steady readings, what set and rate is the stream giving you?",
+  "a": "Set 313°T, 2.0 kn",
+  "o": [
+   "Set 133°T, 2.0 kn",
+   "Set 313°T, 1.4 kn",
+   "Set 017°T, 1.4 kn"
+  ],
+  "why": "Stream = ground vector − water vector: 078°T 4.2 kn minus 095°T 5.6 kn leaves 2.0 kn setting 313°T.",
+  "ref": "Navigation — the plotter: heading, COG, SOG",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "HDG",
+     "095°",
+     false
+    ],
+    [
+     "COG",
+     "078°",
+     false
+    ],
+    [
+     "SOG",
+     "4.2 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Log 5.6 kn · no leeway",
+    "Heading and COG in true"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "It is two hours before HW at the reference port. What stream do you use at this diamond for the hour?",
+  "a": "245°T, 2.0 kn",
+  "o": [
+   "245°T, 2.4 kn",
+   "065°T, 2.0 kn",
+   "245°T, 1.8 kn"
+  ],
+  "why": "Range 4.0 m is 2/3 of the way from neaps (2.0 m) to springs (5.0 m): 1.2 + 2/3 × 1.2 = 2.0 kn; set as given.",
+  "ref": "Tidal streams — diamonds and atlases",
+  "fig": {
+   "type": "card",
+   "title": "Tidal diamond B",
+   "lines": [
+    "HW−2: set 245°T, springs 2.4, neaps 1.2 kn",
+    "Range today 4.0 m",
+    "Springs range 5.0 m, neaps 2.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You are planning a leg in the Solent. Which atlas page gives the stream for it?",
+  "a": "HW+3",
+  "o": [
+   "HW+2",
+   "HW+4",
+   "HW+1"
+  ],
+  "why": "Each page covers half an hour either side of its time: 1400–1500 is centred on 1430, HW + 3 h.",
+  "ref": "Tidal streams — diamonds and atlases",
+  "fig": {
+   "type": "card",
+   "title": "Tidal stream atlas",
+   "lines": [
+    "HW Portsmouth 1130",
+    "One page per hour, HW−6 to HW+6",
+    "Your leg: 1400–1500"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "The atlas page shows this arrow off the headland. What rate do you apply there this hour?",
+  "a": "2.3 kn",
+  "o": [
+   "3.0 kn",
+   "1.6 kn",
+   "1.4 kn"
+  ],
+  "why": "16,30 means neaps 1.6, springs 3.0 kn. 3.5 m is halfway from 2.2 to 4.8 m: 1.6 + 0.7 = 2.3 kn.",
+  "ref": "Tidal streams — diamonds and atlases",
+  "fig": {
+   "type": "card",
+   "title": "Atlas page HW+1",
+   "lines": [
+    "Arrow off the headland: 16,30",
+    "Range today 3.5 m",
+    "Mean ranges: springs 4.8 m, neaps 2.2 m"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your two-hour leg runs from 1000 to 1200. Which streams do you apply?",
+  "a": "Half of HW+2, all of HW+3, half of HW+4",
+  "o": [
+   "All of HW+2 and all of HW+3",
+   "All of HW+3 and all of HW+4",
+   "HW+2 only, taken for two hours"
+  ],
+  "why": "HW 0800: the HW+2 page covers 0930–1030, HW+3 1030–1130, HW+4 1130–1230. Take each for the time it applies.",
+  "ref": "Tidal streams — diamonds and atlases",
+  "fig": {
+   "type": "card",
+   "title": "Tidal stream atlas",
+   "lines": [
+    "HW at the reference port 0800",
+    "Pages centred on each whole hour",
+    "Leg: 1000 to 1200"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Looking at tomorrow's legs, on which one is a plain DR, without an EP, good enough?",
+  "a": "A: no stream and no leeway to apply",
+  "o": [
+   "B: the streams cancel over six hours",
+   "C: the race runs too fast to plot",
+   "D: the ebb is along the track"
+  ],
+  "why": "DR leaves out stream and leeway. Only where both are nil, as motoring in a calm with no stream, is it enough.",
+  "ref": "Chartwork — accuracy of DR and EP",
+  "fig": {
+   "type": "card",
+   "title": "Tomorrow's legs",
+   "lines": [
+    "A  Ionian, motoring in a calm, 2 h",
+    "B  across the Channel, 2 kn stream, 6 h",
+    "C  past the Alderney Race at night, 3 h",
+    "D  up the Solent against the spring ebb"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "It is 0600 on a night passage. How far from the 0600 EP could you really be?",
+  "a": "Up to about 2.4 M",
+  "o": [
+   "Up to about 0.6 M",
+   "Up to about 1.2 M",
+   "No more than 0.3 M"
+  ],
+  "why": "Errors grow with time: up to 0.3 + 0.3 = 0.6 M each hour, four hours since the fix = 2.4 M. The shoal is inside it.",
+  "ref": "Chartwork — accuracy of DR and EP",
+  "fig": {
+   "type": "card",
+   "title": "0600, night passage",
+   "lines": [
+    "Last fix 0200; EP worked hourly since",
+    "Stream data good to ±0.3 kn",
+    "Log and leeway good to ±0.3 kn",
+    "Shoal 2 M to leeward of the EP track"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "At night you close this headland. Your EP comes from a fix four hours old. What do you do?",
+  "a": "Open the distance off and get a fix before turning",
+  "o": [
+   "Turn at the EP time: the plot allows for the stream",
+   "Close the headland to pick up its light sooner",
+   "Turn when the log shows the planned distance"
+  ],
+  "why": "An old EP is an area, not a point. Keep sea room until a fix (a light, the depth) shows where you are.",
+  "ref": "Chartwork — accuracy of DR and EP",
+  "fig": {
+   "type": "chart",
+   "land": "M320 0 V200 H270 C250 160 230 130 250 100 C265 70 290 40 300 0 Z",
+   "depths": [
+    [
+     238,
+     112,
+     "0.8",
+     true
+    ],
+    [
+     226,
+     132,
+     "1.5",
+     true
+    ],
+    [
+     150,
+     60,
+     "28"
+    ],
+    [
+     120,
+     150,
+     "34"
+    ]
+   ],
+   "marks": [
+    [
+     255,
+     95,
+     "w",
+     "light"
+    ],
+    [
+     170,
+     120,
+     "k",
+     "0300 EP"
+    ]
+   ],
+   "boat": [
+    140,
+    160,
+    20
+   ],
+   "note": "Plotter out since 2300 · last fix 2300"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your fix does not match your EP. What do you allow for on the next leg?",
+  "a": "About 0.5 kn more stream setting NE",
+  "o": [
+   "About 1.5 kn more stream setting NE",
+   "About 0.5 kn more stream setting SW",
+   "No change: one fix proves nothing"
+  ],
+  "why": "1.5 M of unexplained set in 3 h is about 0.5 kn towards the NE: add it to the next EP and check it at the next fix.",
+  "ref": "Chartwork — accuracy of DR and EP",
+  "fig": {
+   "type": "card",
+   "title": "Noon check",
+   "lines": [
+    "0900 fix; EP worked hourly",
+    "1200 fix lies 1.5 M NE of the 1200 EP",
+    "Log and compass both checked"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "On your night watch the plotter dies. Which entries in the log let you carry on the plot?",
+  "a": "Time, log reading and heading steered",
+  "o": [
+   "Time, SOG and COG from the plotter",
+   "Barometer, wind and sea state",
+   "Engine hours and fuel used"
+  ],
+  "why": "DR is rebuilt from time, distance run by the log and the heading; plotter COG/SOG are gone with it.",
+  "ref": "Navigation — the log book",
+  "fig": {
+   "type": "card",
+   "title": "Night watch, 0300",
+   "lines": [
+    "The plotter screen goes blank",
+    "Last entry in the log: 0200",
+    "Paper chart on the chart table"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Between the hourly entries you bear away to clear a fishing fleet. What do you write in the log?",
+  "a": "The time, log reading and new heading, now",
+  "o": [
+   "Nothing until the next hourly entry",
+   "The new heading only, at the next hour",
+   "The plotter position, at the next hour"
+  ],
+  "why": "Every change of course is a new DR leg: it needs the time and log at the moment of the change.",
+  "ref": "Navigation — the log book",
+  "fig": {
+   "type": "card",
+   "title": "0240, night",
+   "lines": [
+    "Bear away to clear a fishing fleet",
+    "New heading 230°C",
+    "Log 52.7",
+    "Next hourly entry due 0300"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "On a night passage the plotter works well. How do you keep the paper plot?",
+  "a": "Mark a position each hour, with time and log",
+  "o": [
+   "Plot only at the change of watch",
+   "Leave it until dawn: the plotter logs the track",
+   "Plot only if the plotter shows a fault"
+  ],
+  "why": "An hourly position on paper means a failure at 0300 costs one hour of DR, not the whole night.",
+  "ref": "Navigation — keeping the plot at night",
+  "fig": null
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "At 0200 the plotter freezes on a night passage. Which DR do you plot for 0200?",
+  "a": "252°T, 4.8 M from the 0100 position",
+  "o": [
+   "258°T, 4.8 M from the 0100 position",
+   "256°T, 4.8 M from the 0100 position",
+   "254°T, 4.8 M from the 0100 position"
+  ],
+  "why": "255°C − 2°W = 253°M; − 1°W = 252°T. Distance: 46.0 − 41.2 = 4.8 M.",
+  "ref": "Navigation — keeping the plot at night",
+  "fig": {
+   "type": "card",
+   "title": "0200, plotter frozen",
+   "lines": [
+    "Last plot 0100, log 41.2",
+    "Log now 46.0, heading 255°C all hour",
+    "Deviation 2°W · variation 1°W",
+    "No stream, light wind"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You are motor-sailing along the coast to the next harbour. When do you arrive?",
+  "a": "1348",
+  "o": [
+   "1300",
+   "1430",
+   "1224"
+  ],
+  "why": "To 1300 at 6.0 − 2.0 = 4.0 kn: 12.0 M. The last 6.0 M at 6.0 + 1.5 = 7.5 kn take 48 min: 1348.",
+  "ref": "Passage making — motor-sailing against the tide",
+  "fig": {
+   "type": "card",
+   "title": "Motor-sailing leg",
+   "lines": [
+    "18.0 M along the coast, depart 1000",
+    "Speed through the water 6.0 kn",
+    "Stream foul 2.0 kn until 1300",
+    "Then fair 1.5 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You are motor-sailing into a foul stream. What does running at 2600 rpm buy you on this leg?",
+  "a": "48 min sooner for 4.4 l more fuel",
+  "o": [
+   "48 min sooner for 2.0 l more fuel",
+   "27 min sooner for 3.8 l more fuel",
+   "48 min sooner for the same fuel"
+  ],
+  "why": "SOG 4.0 vs 5.0 kn: 4 h 00 × 2.5 = 10.0 l against 3 h 12 × 4.5 = 14.4 l — 48 min sooner, 4.4 l more.",
+  "ref": "Passage making — motor-sailing against the tide",
+  "fig": {
+   "type": "card",
+   "title": "Motor-sailing, main up",
+   "lines": [
+    "Leg 16.0 M, stream foul 1.5 kn",
+    "2000 rpm: 5.5 kn, 2.5 l/h",
+    "2600 rpm: 6.5 kn, 4.5 l/h"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You time the boat between two transits on the chart, motoring in flat water. What is your speed?",
+  "a": "8.0 kn",
+  "o": [
+   "1.3 kn",
+   "13.3 kn",
+   "0.8 kn"
+  ],
+  "why": "4 cables = 0.4 M; 3 min is 1/20 of an hour: 0.4 × 20 = 8.0 kn. A cable is a tenth of a mile.",
+  "ref": "Chartwork — speed, time, distance",
+  "fig": {
+   "type": "card",
+   "title": "Timed run",
+   "lines": [
+    "Transit 1 passed at 1012",
+    "Transit 2 passed at 1015",
+    "Charted distance between them: 4 cables"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "At night you close a rocky shore and plot a position every six minutes. How far do you lay off between plots?",
+  "a": "5.5 cables",
+  "o": [
+   "3.3 cables",
+   "9.2 cables",
+   "6.0 cables"
+  ],
+  "why": "Six minutes is a tenth of an hour: a tenth of 5.5 M is 0.55 M, 5.5 cables. Not 0.06 h.",
+  "ref": "Navigation — keeping the plot at night",
+  "fig": {
+   "type": "card",
+   "title": "Night, inshore",
+   "lines": [
+    "Rocks 1 M to port",
+    "Speed 5.5 kn, no stream",
+    "A plot every 6 minutes"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "Fog closes in and you slow right down for the fairway buoy. When do you expect to reach it?",
+  "a": "0840",
+  "o": [
+   "0900",
+   "0815",
+   "0850"
+  ],
+  "why": "9.5 ÷ 3.8 = 2.5 h = 2 h 30 min; 0610 + 2 h 30 = 0840. Half an hour, not 50 minutes.",
+  "ref": "Navigation — DR in fog",
+  "fig": {
+   "type": "card",
+   "title": "Fog, visibility 200 m",
+   "lines": [
+    "Fairway buoy 9.5 M ahead on the DR",
+    "Speed 3.8 kn from 0610",
+    "No stream"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You run a measured distance both ways at the same revs to check the log in a steady stream. What is your real speed through the water at these revs?",
+  "a": "6.5 kn",
+  "o": [
+   "7.0 kn",
+   "6.2 kn",
+   "8.0 kn"
+  ],
+  "why": "Run speeds 8.0 and 5.0 kn: the stream adds to one and takes from the other, so their mean, 6.5 kn, is the speed through the water.",
+  "ref": "Navigation — the log and its error",
+  "fig": {
+   "type": "card",
+   "title": "Log check, 2200 rpm",
+   "lines": [
+    "Run 1, with the stream: 2.0 M in 15 min",
+    "Run 2, against it: 2.0 M in 24 min",
+    "Log showed 7.0 kn on both runs"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "The paddlewheel jams at 1400 in a tidal stream and the log reads zero. How do you carry on the EP until it is cleared?",
+  "a": "5.5 kn from the rpm, then add the stream",
+  "o": [
+   "7.1 kn from the plotter, then add the stream",
+   "5.5 kn from the rpm, with no stream added",
+   "Stop the EP until the log is working"
+  ],
+  "why": "SOG already holds the stream: use it as the log speed and the stream counts twice. Take the speed through the water from the rpm.",
+  "ref": "Navigation — the log and its error",
+  "fig": {
+   "type": "card",
+   "title": "1400, log reads 0.0",
+   "lines": [
+    "Plotter: SOG 7.1 kn, COG 064°T",
+    "Stream from the diamond: 060°T 1.5 kn",
+    "2200 rpm gives about 5.5 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "The log has failed and fog makes you slow down. How far north of the 0700 fix is your 0830 DR?",
+  "a": "6.5 M",
+  "o": [
+   "9.0 M",
+   "4.5 M",
+   "3.9 M"
+  ],
+  "why": "40 min at 6.0 kn = 4.0 M; 50 min at 3.0 kn = 2.5 M; 4.0 + 2.5 = 6.5 M. Not 0.4 h and 0.5 h.",
+  "ref": "Navigation — DR in fog",
+  "fig": {
+   "type": "card",
+   "title": "Fog, log out of action",
+   "lines": [
+    "0700 fix, heading 000°T, no stream",
+    "0700–0740: 6.0 kn by the rpm table",
+    "0740 fog: slowed to 3.0 kn",
+    "Now 0830, same heading"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "The electrics fail at 0300. The log book has a gap: the 0130 alteration has no log reading. Where is your 0300 DR from the 0100 fix?",
+  "a": "092°T, 9.5 M",
+  "o": [
+   "065°T, 8.5 M",
+   "038°T, 9.5 M",
+   "092°T, 12.0 M"
+  ],
+  "why": "12.0 M in 2 h is 6.0 kn: 3.0 M on 020°T to 0130, then 9.0 M on 110°T. End to end the DR is 9.5 M on 092°T.",
+  "ref": "Navigation — the log book",
+  "fig": {
+   "type": "card",
+   "title": "Log book, night",
+   "lines": [
+    "0100  fix · log 31.0 · heading 020°T",
+    "0130  altered to 110°T (no log noted)",
+    "0300  electrics fail · log 43.0",
+    "Speed steady all night · no stream"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "After 30 M you find you applied the deviation for 045° to this whole leg. With no stream, where is the boat against the planned track?",
+  "a": "2.6 M NE of the track",
+  "o": [
+   "2.6 M SW of the track",
+   "0.5 M NE of the track",
+   "5.2 M NE of the track"
+  ],
+  "why": "3°E used where 2°W applies: you headed 5° to port. 30 × sin 5° = 2.6 M, to the left of a SE track: NE.",
+  "ref": "Chartwork — compass conversions",
+  "fig": {
+   "type": "card",
+   "title": "Deviation card (ship's head)",
+   "lines": [
+    "045°C: 3°E · 135°C: 2°W",
+    "Leg 135°T, 30 M · var 1°W",
+    "You gave 133°C, using 3°E",
+    "No stream, no leeway"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You are close-hauled on port tack, steering this compass course. Which water track do you plot?",
+  "a": "048°T",
+  "o": [
+   "036°T",
+   "052°T",
+   "040°T"
+  ],
+  "why": "040°C + 4°E = 044°M; − 2°W = 042°T. Port tack: leeway takes you to starboard, 042° + 6° = 048°T.",
+  "ref": "Chartwork — leeway",
+  "fig": {
+   "type": "compass",
+   "variation": -2,
+   "deviation": 4,
+   "course": 40,
+   "courseLabel": "Compass",
+   "note": "Port tack · leeway 6°"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "Handing over, your helmsman admits holding 3° to port of the course all leg. Roughly how far off the track are you?",
+  "a": "1.0 M",
+  "o": [
+   "3.0 M",
+   "0.3 M",
+   "6.7 M"
+  ],
+  "why": "1 in 60 rule: 1° off puts you 1 M off in 60 M. 3° over 20 M: 20 × 3 ÷ 60 = 1.0 M, to port.",
+  "ref": "Chartwork — accuracy of DR and EP",
+  "fig": {
+   "type": "card",
+   "title": "End of the leg",
+   "lines": [
+    "Leg 20 M by the log",
+    "Steered 3° to port of the course",
+    "No stream, no leeway"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "At the 0300 handover the helmsman tells you what he really steered. Which true heading do you lay off for the last hour's DR?",
+  "a": "219°T",
+  "o": [
+   "214°T",
+   "221°T",
+   "225°T"
+  ],
+  "why": "Plot what was steered, not what was ordered: 220°C + 2°E = 222°M; − 3°W = 219°T.",
+  "ref": "Navigation — keeping the plot at night",
+  "fig": {
+   "type": "card",
+   "title": "Night watch, 0200–0300",
+   "lines": [
+    "Course ordered 215°C",
+    "Mean heading steered 220°C, in gusts",
+    "Deviation 2°E · variation 3°W"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "On a charter catamaran you check the leeway by the wake. Which water track do you plot?",
+  "a": "289°T",
+  "o": [
+   "311°T",
+   "294°T",
+   "300°T"
+  ],
+  "why": "Wind on the starboard side pushes you to port: 300° − 11° = 289°T. A cat with stub keels slips far more than 6°.",
+  "ref": "Chartwork — leeway",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran, close-hauled, F5",
+   "lines": [
+    "Starboard tack, heading 300°T",
+    "Mini keels, no daggerboards",
+    "Wake 11° off the centreline"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "Your catamaran's daggerboards are jammed up as you beat to windward. What leeway do you expect compared with boards down?",
+  "a": "Much more: allow extra and check it by the wake",
+  "o": [
+   "Less: the hulls grip better without boards",
+   "The same: leeway depends on the wind only",
+   "None: a catamaran makes no leeway"
+  ],
+  "why": "The boards are the cat's grip on the water: raised, she slides sideways far more. Measure it, don't guess.",
+  "ref": "Chartwork — leeway",
+  "fig": null
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "At slack water, close-hauled on starboard tack, you read the plotter. What leeway is she making, and which water track do you plot?",
+  "a": "7°: water track 243°T",
+  "o": [
+   "7°: water track 257°T",
+   "None: water track 250°T",
+   "14°: water track 236°T"
+  ],
+  "why": "With no stream, heading and COG differ by leeway alone: 250° − 243° = 7°, to port on starboard tack.",
+  "ref": "Navigation — the plotter: heading, COG, SOG",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "HDG",
+     "250°T",
+     false
+    ],
+    [
+     "COG",
+     "243°T",
+     false
+    ],
+    [
+     "SOG",
+     "5.2 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Slack water at the diamond",
+    "Close-hauled, starboard tack, F4"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Off the Brittany coast you work up the EP for 1130 from the 1000 fix. Where do you plot it?",
+  "a": "295°T, 6.4 M from the fix",
+  "o": [
+   "307°T, 6.0 M from the fix",
+   "301°T, 6.7 M from the fix",
+   "320°T, 9.0 M from the fix"
+  ],
+  "why": "Wind on the starboard beam: water track 310°T, 7.5 M in 1 h 30; then 1.5 h of stream, 2.1 M south: 295°T, 6.4 M.",
+  "ref": "Chartwork — estimated position",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     250,
+     172,
+     "k",
+     "1000 fix"
+    ]
+   ],
+   "boat": [
+    250,
+    172,
+    315
+   ],
+   "track": "M250 172 L170 92",
+   "depths": [
+    [
+     60,
+     60,
+     "42"
+    ],
+    [
+     90,
+     140,
+     "38"
+    ],
+    [
+     150,
+     175,
+     "45"
+    ]
+   ],
+   "panel": [
+    "1000 fix",
+    "Heading 315°T",
+    "Log 5.0 kn",
+    "Wind NE",
+    "Leeway 5°",
+    "Set 180°T 1.4 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "You steer north for an hour and leave the stream out of the plot. Where are you really at the end of the hour?",
+  "a": "1.8 M west of the DR",
+  "o": [
+   "1.8 M east of the DR",
+   "5.0 M west of the DR",
+   "1.8 M south of the DR"
+  ],
+  "why": "A set is the direction the stream flows towards: 270°T carries you west, 1.8 M in the hour.",
+  "ref": "Chartwork — estimated position",
+  "fig": {
+   "type": "chart",
+   "boat": [
+    90,
+    165,
+    0
+   ],
+   "track": "M90 165 L90 55",
+   "labels": [
+    [
+     90,
+     44,
+     "DR",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     40,
+     120,
+     "33"
+    ],
+    [
+     150,
+     150,
+     "29"
+    ],
+    [
+     140,
+     70,
+     "36"
+    ]
+   ],
+   "panel": [
+    "Diamond A",
+    "Set 270°T",
+    "Rate 1.8 kn",
+    "Heading 000°T 5 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Today's tide is bigger than a mean spring. What rate do you use at this diamond for the hour?",
+  "a": "2.7 kn",
+  "o": [
+   "2.5 kn",
+   "1.9 kn",
+   "1.3 kn"
+  ],
+  "why": "1.3 + (3.6 ÷ 3.0) × 1.2 = 2.7 kn: carry the interpolation on past springs rather than stopping at them.",
+  "ref": "Tidal streams — diamonds and atlases",
+  "fig": {
+   "type": "card",
+   "title": "Diamond B, HW+1",
+   "lines": [
+    "Set 105°T · springs 2.5 kn · neaps 1.3 kn",
+    "Mean ranges: springs 5.0 m · neaps 2.0 m",
+    "Today's range 5.6 m"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your last fix was 1 h 30 min ago, and today's tide decides the rate at the diamond. How far has the stream carried you since?",
+  "a": "3.3 M",
+  "o": [
+   "2.2 M",
+   "4.4 M",
+   "4.2 M"
+  ],
+  "why": "Range 4.6 − 1.2 = 3.4 m: 1.4 + (1.4 ÷ 2.4) × 1.4 = 2.2 kn; for 1.5 h, 3.3 M. Use the range, not the HW height.",
+  "ref": "Tidal streams — diamonds and atlases",
+  "fig": {
+   "type": "card",
+   "title": "Tidal data for today",
+   "lines": [
+    "Tide table: HW 4.6 m, LW 1.2 m",
+    "Diamond: springs 2.8 kn · neaps 1.4 kn",
+    "Mean ranges: springs 4.4 m · neaps 2.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "The atlas and a diamond disagree for the same hour, at a spot right on your track. Which rate do you plot?",
+  "a": "1.8 kn, from the diamond on the spot",
+  "o": [
+   "1.2 kn, from the atlas for the area",
+   "1.5 kn, the mean of the two",
+   "1.2 kn, the atlas arrow nearest you"
+  ],
+  "why": "A diamond is the stream measured at that spot; the atlas draws the general pattern. On your track the diamond wins.",
+  "ref": "Tidal streams — diamonds and atlases",
+  "fig": {
+   "type": "card",
+   "title": "HW−2, today's range",
+   "lines": [
+    "Atlas page: about 1.2 kn here",
+    "Diamond F, on your track: 1.8 kn",
+    "Both from the same almanac"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "Motoring with no leeway, you work up the EP two hours after the 0830 fix. Where do you plot it?",
+  "a": "141°T, 10.5 M from the fix",
+  "o": [
+   "135°T, 10.9 M from the fix",
+   "179°T, 10.7 M from the fix",
+   "143°T, 9.9 M from the fix"
+  ],
+  "why": "Halfway rates 1.5 then 2.0 kn: 10.0 M on 160°T, then 1.5 M on 060°T and 2.0 M on 075°T: 141°T, 10.5 M.",
+  "ref": "Chartwork — estimated position",
+  "fig": {
+   "type": "card",
+   "title": "Diamond C · HW 1030",
+   "lines": [
+    "HW−2: 060°T, sp 2.0, np 1.0 kn",
+    "HW−1: 075°T, sp 2.6, np 1.4 kn",
+    "Today: halfway between springs and neaps",
+    "Water track 160°T, log 5.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your crew plotted the 1100 EP this way: an hour of the plotter's COG and SOG from the fix, then the hour's stream from its end. What do you tell them?",
+  "a": "The stream is in twice: COG and SOG hold it",
+  "o": [
+   "Correct: COG and SOG are through the water",
+   "Correct, but add the leeway on top",
+   "Wrong order: lay the stream off first"
+  ],
+  "why": "COG and SOG are over the ground, stream included. Plot them alone, or the heading and log plus the stream.",
+  "ref": "Navigation — the plotter: heading, COG, SOG",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     50,
+     160,
+     "k",
+     "1000 fix"
+    ],
+    [
+     196,
+     142,
+     "w",
+     "their EP"
+    ]
+   ],
+   "track": "M50 160 L170 110 L196 142",
+   "depths": [
+    [
+     90,
+     70,
+     "51"
+    ],
+    [
+     120,
+     180,
+     "47"
+    ],
+    [
+     260,
+     170,
+     "55"
+    ]
+   ],
+   "panel": [
+    "Crew's 1100 EP",
+    "COG 072°T",
+    "SOG 6.4 kn",
+    "Set 140°T 1.6 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "On the paper chart you mark the 0300 position worked from the log, the heading and the tidal stream. Which symbol do you draw?",
+  "a": "A triangle round the dot, with the time",
+  "o": [
+   "A circle round the dot, with the time",
+   "A short line across the track, with the time",
+   "A square round the dot, with the time"
+  ],
+  "why": "By convention a fix is a circled dot, an EP a dot in a triangle, a DR a line across the track; always add the time.",
+  "ref": "Chartwork — plotting symbols",
+  "fig": null
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You plan two legs at the same speed, with the same strength of stream on each. Which leg needs the bigger aim-off, and which loses more speed?",
+  "a": "B more aim-off; A loses more speed",
+  "o": [
+   "A more aim-off; B loses more speed",
+   "The same aim-off and speed on both",
+   "B more aim-off and more speed lost"
+  ],
+  "why": "A: aim 9° but SOG 3.6 kn; B: aim 17° but SOG 4.8 kn. A stream across costs angle; one on the bow costs speed.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     50,
+     172,
+     "k",
+     "A"
+    ],
+    [
+     140,
+     172,
+     "k",
+     "B"
+    ]
+   ],
+   "track": "M50 172 L50 40 M140 172 L140 40",
+   "depths": [
+    [
+     90,
+     110,
+     "44"
+    ],
+    [
+     250,
+     160,
+     "48"
+    ]
+   ],
+   "panel": [
+    "Both legs 000°T",
+    "Speed 5.0 kn",
+    "Stream 1.5 kn",
+    "A: set 210°T",
+    "B: set 270°T"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You must make good 045°T to the next mark against this stream. Which course do you steer, and what SOG do you expect?",
+  "a": "038°T, SOG 4.3 kn",
+  "o": [
+   "052°T, SOG 4.3 kn",
+   "038°T, SOG 7.6 kn",
+   "045°T, SOG 4.2 kn"
+  ],
+  "why": "Its cross part sets you to starboard: aim 7° to port, 038°T. Most of it is on the bow: SOG only 4.3 kn.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     50,
+     165,
+     "k",
+     "A"
+    ],
+    [
+     160,
+     55,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M50 165 L160 55",
+   "depths": [
+    [
+     230,
+     160,
+     "39"
+    ],
+    [
+     60,
+     80,
+     "33"
+    ],
+    [
+     130,
+     175,
+     "41"
+    ]
+   ],
+   "panel": [
+    "1-hour triangle",
+    "Track 045°T",
+    "Speed 6.0 kn",
+    "Set 200°T 1.8 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Running south down the coast with the stream on your quarter, you want to make good 180°T. Which course do you steer, and what SOG?",
+  "a": "196°T, SOG 6.2 kn",
+  "o": [
+   "164°T, SOG 6.2 kn",
+   "196°T, SOG 3.4 kn",
+   "180°T, SOG 7.0 kn"
+  ],
+  "why": "The stream sets you east, so aim 16° west of the track: 196°T. Its along-track part is fair: SOG 6.2 kn.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H34 C44 60 30 130 42 200 H0 Z",
+   "marks": [
+    [
+     90,
+     30,
+     "k",
+     "A"
+    ],
+    [
+     90,
+     172,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M90 30 L90 172",
+   "depths": [
+    [
+     150,
+     120,
+     "27"
+    ],
+    [
+     130,
+     60,
+     "31"
+    ],
+    [
+     250,
+     160,
+     "35"
+    ]
+   ],
+   "panel": [
+    "1-hour triangle",
+    "Track 180°T",
+    "Speed 5.0 kn",
+    "Set 135°T 2.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "The engine overheats and you throttle back to 3.0 kn on this cross-tide leg. Which course do you now steer, and what SOG?",
+  "a": "120°T, SOG 2.6 kn",
+  "o": [
+   "107°T, SOG 2.6 kn",
+   "120°T, SOG 3.0 kn",
+   "060°T, SOG 2.6 kn"
+  ],
+  "why": "Slower boat, same stream, bigger angle: sin⁻¹(1.5 ÷ 3.0) = 30°, 090° + 30° = 120°T; SOG 3.0 × cos 30° = 2.6 kn.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     40,
+     145,
+     "k",
+     "A"
+    ],
+    [
+     280,
+     145,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M40 145 L280 145",
+   "depths": [
+    [
+     90,
+     175,
+     "52"
+    ],
+    [
+     200,
+     178,
+     "49"
+    ],
+    [
+     80,
+     60,
+     "46"
+    ]
+   ],
+   "panel": [
+    "Track 090°T",
+    "Set 000°T 1.5 kn",
+    "At 5.0 kn: 107°T",
+    "Now only 3.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "With the engine out and light airs, you try to draw the course to steer across this stream. What do you find?",
+  "a": "The arc can't reach the track: no course works",
+  "o": [
+   "Steer 090°T: square into the stream",
+   "Steer 053°T: the arc just meets it",
+   "Steer 000°T: the set evens out"
+  ],
+  "why": "Across the track the stream (3.0 kn) is faster than the boat (2.5 kn): the boat-speed arc never reaches the line.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     140,
+     175,
+     "k",
+     "A"
+    ],
+    [
+     140,
+     40,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M140 175 L140 40",
+   "depths": [
+    [
+     60,
+     100,
+     "37"
+    ],
+    [
+     250,
+     150,
+     "42"
+    ]
+   ],
+   "panel": [
+    "Track 000°T",
+    "Boat speed 2.5 kn",
+    "Set 270°T 3.0 kn"
+   ],
+   "note": "Engine out · light airs"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You draw two hours of stream and the two-hour boat-speed arc. It cuts the track line 1.4 M beyond B. What does it tell you?",
+  "a": "You reach B early: rework for the shorter time",
+  "o": [
+   "Steer it: the extra miles are a margin",
+   "Steer it, and stop the clock at B",
+   "Add a third hour of stream to fit"
+  ],
+  "why": "You will reach B in under 2 h, so two hours of stream is too much. Rework with the time to B and its stream.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     40,
+     160,
+     "k",
+     "A"
+    ],
+    [
+     215,
+     160,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M40 160 L255 160",
+   "labels": [
+    [
+     255,
+     180,
+     "arc",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     100,
+     110,
+     "58"
+    ],
+    [
+     70,
+     60,
+     "54"
+    ]
+   ],
+   "panel": [
+    "2-hour triangle",
+    "A→B 11.0 M",
+    "Arc cuts the track",
+    "1.4 M beyond B"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "Three hours of hourly streams lie across this leg. Laying them all off in one triangle, which course do you steer?",
+  "a": "325°T",
+  "o": [
+   "320°T",
+   "355°T",
+   "340°T"
+  ],
+  "why": "The three hours add to 4.6 M on 090°T; a 16.5 M arc from its end meets the track: steer 325°T, 15° up-tide.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     130,
+     178,
+     "k",
+     "A"
+    ],
+    [
+     79,
+     37,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M130 178 L79 37",
+   "depths": [
+    [
+     40,
+     120,
+     "61"
+    ],
+    [
+     170,
+     160,
+     "58"
+    ],
+    [
+     250,
+     170,
+     "64"
+    ]
+   ],
+   "panel": [
+    "Track 340°T",
+    "A→B 14.3 M",
+    "Speed 5.5 kn",
+    "h1 080°T 1.2 kn",
+    "h2 090°T 2.0 kn",
+    "h3 100°T 1.4 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You must make good 270°T to B on a close reach, with the wind as given. Which course do you steer?",
+  "a": "250°T",
+  "o": [
+   "262°T",
+   "256°T",
+   "264°T"
+  ],
+  "why": "Stream: water track 256°T. The south wind on your port side pushes you north too, so steer 6° more into it: 250°T.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     280,
+     145,
+     "k",
+     "A"
+    ],
+    [
+     40,
+     145,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M280 145 L40 145",
+   "depths": [
+    [
+     100,
+     170,
+     "23"
+    ],
+    [
+     200,
+     175,
+     "26"
+    ],
+    [
+     70,
+     60,
+     "21"
+    ]
+   ],
+   "panel": [
+    "Track 270°T",
+    "Speed 5.0 kn",
+    "Set 000°T 1.2 kn",
+    "Wind S",
+    "Leeway 6°"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "On a catamaran you must make good 090°T on a beam reach in this stream. Which course do you steer?",
+  "a": "090°T",
+  "o": [
+   "070°T",
+   "080°T",
+   "086°T"
+  ],
+  "why": "Stream: water track 080°T. The south wind pushes the cat 10° north, so steer 10° to starboard of it: 090°T.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     40,
+     145,
+     "k",
+     "A"
+    ],
+    [
+     280,
+     145,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M40 145 L280 145",
+   "depths": [
+    [
+     90,
+     178,
+     "34"
+    ],
+    [
+     200,
+     180,
+     "38"
+    ],
+    [
+     80,
+     60,
+     "31"
+    ]
+   ],
+   "panel": [
+    "Catamaran, 6.0 kn",
+    "Track 090°T",
+    "Set 180°T 1.0 kn",
+    "Wind S",
+    "Leeway 10°"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "Motoring this leg, you lay off both hours' streams in one triangle. Which compass course do you give the helmsman?",
+  "a": "189°C",
+  "o": [
+   "213°C",
+   "183°C",
+   "193°C"
+  ],
+  "why": "2.6 M of stream on 296°T; a 12.0 M arc meets the track: 188°T. + 3°W = 191°M; − 2°E = 189°C.",
+  "ref": "Chartwork — course to steer",
+  "fig": {
+   "type": "card",
+   "title": "Two-hour leg, motoring",
+   "lines": [
+    "A→B 200°T 11.4 M · speed 6.0 kn",
+    "h1 290°T 1.0 kn · h2 300°T 1.6 kn",
+    "Var 3°W · dev 2°E on 180°–200°C"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You planned this crossing on one course, but you leave an hour late. Which course do you now steer?",
+  "a": "175°T",
+  "o": [
+   "182°T",
+   "185°T",
+   "180°T"
+  ],
+  "why": "0900–1400 the streams net 3.0 M E − 5.0 M W = 2.0 M W; aim off sin⁻¹(2 ÷ 25) ≈ 5° east of south: 175°T.",
+  "ref": "Chartwork — cross-tide passages",
+  "fig": {
+   "type": "card",
+   "title": "Channel crossing, one course",
+   "lines": [
+    "25.0 M due south at 5.0 kn: 5 h",
+    "Stream E 1.5, 2.0, 1.0 kn from 0800",
+    "Then W 1.5, 2.0, 1.5 kn to 1400",
+    "Planned 0800 · you leave at 0900"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Halfway across, the crew want to steer west to get back on the line. What do you tell them?",
+  "a": "Hold 182°T: the west-going stream brings you back",
+  "o": [
+   "Steer west of 182°T until the XTE is zero",
+   "Add the XTE to the course, in degrees",
+   "Follow the plotter's steer to the waypoint"
+  ],
+  "why": "One CTS is meant to drift off and come back. Steering for zero XTE fights the stream both ways and costs miles.",
+  "ref": "Chartwork — cross-tide passages",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "XTE (E)",
+     "3.5 M",
+     false
+    ],
+    [
+     "HDG",
+     "182°T",
+     false
+    ],
+    [
+     "Time",
+     "1030",
+     false
+    ]
+   ],
+   "lines": [
+    "One CTS 182°T for the 5 h crossing",
+    "Stream sets E until 1100, then W"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your single course to steer for this crossing gives a ground track bowing east, over a drying bank halfway. What do you do?",
+  "a": "Work a CTS each hour to keep the track off the bank",
+  "o": [
+   "Steer the one CTS: it ends on the line anyway",
+   "Steer the rhumb line and correct at the end",
+   "Steer the one CTS and watch the depth"
+  ],
+  "why": "One CTS is shortest only if the whole curve is safe. Where it crosses a hazard, plan each hour's course to keep clear.",
+  "ref": "Chartwork — cross-tide passages",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     140,
+     182,
+     "k",
+     "A"
+    ],
+    [
+     140,
+     28,
+     "y",
+     "B"
+    ]
+   ],
+   "track": "M140 182 Q232 105 140 28",
+   "depths": [
+    [
+     170,
+     104,
+     "0.6",
+     true
+    ],
+    [
+     180,
+     118,
+     "1.1",
+     true
+    ],
+    [
+     70,
+     80,
+     "27"
+    ],
+    [
+     90,
+     150,
+     "31"
+    ],
+    [
+     250,
+     160,
+     "29"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     88,
+     "bank",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "One CTS, 6 h",
+    "Bows 1.8 M east",
+    "Bank 1.0 M east"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Two hours after the last fix, your new fix lies on the track line but 1.0 M short of the EP. What do you suspect first?",
+  "a": "Distance: the log or the stream's rate",
+  "o": [
+   "Direction: the compass deviation",
+   "Direction: leeway on the wrong side",
+   "Direction: the stream's set"
+  ],
+  "why": "An error along the track is one of distance: a log over-reading, or a foul stream stronger than plotted.",
+  "ref": "Chartwork — EP against the fix",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     40,
+     150,
+     "k",
+     "0900 fix"
+    ],
+    [
+     232,
+     150,
+     "k"
+    ],
+    [
+     207,
+     150,
+     "w"
+    ]
+   ],
+   "track": "M40 150 L280 150",
+   "labels": [
+    [
+     232,
+     138,
+     "EP",
+     "middle"
+    ],
+    [
+     207,
+     172,
+     "fix",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     80,
+     "44"
+    ],
+    [
+     140,
+     185,
+     "47"
+    ],
+    [
+     270,
+     185,
+     "51"
+    ]
+   ],
+   "panel": [
+    "0900 → 1100",
+    "Track 090°T",
+    "Fix 1.0 M short",
+    "of the EP, on track"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "At the end of the leg your fix lies off the DR as shown. What heading error explains it?",
+  "a": "5° to starboard of the course set",
+  "o": [
+   "5° to port of the course set",
+   "8° to starboard of the course set",
+   "1.5° to starboard of the course set"
+  ],
+  "why": "1 in 60: 1.5 M off in 18 M is 1.5 × 60 ÷ 18 = 5°. East of a northerly track means you headed to starboard.",
+  "ref": "Chartwork — EP against the fix",
+  "fig": {
+   "type": "card",
+   "title": "Motoring at slack water",
+   "lines": [
+    "Leg 000°T, 18.0 M by the log",
+    "No wind, no stream",
+    "Fix lies 1.5 M east of the DR"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You kept a plain DR from the 1000 fix. The 1200 fix lies as shown. What mean stream did you have?",
+  "a": "Set 200°T, 1.2 kn",
+  "o": [
+   "Set 020°T, 1.2 kn",
+   "Set 200°T, 2.4 kn",
+   "Set 020°T, 2.4 kn"
+  ],
+  "why": "DR to fix is the stream's work over 2 h: 2.4 M towards 200°T, so 1.2 kn setting 200°T.",
+  "ref": "Chartwork — EP against the fix",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     110,
+     80,
+     "k",
+     "1200 DR"
+    ],
+    [
+     90,
+     136,
+     "w",
+     "1200 fix"
+    ]
+   ],
+   "track": "M110 80 L90 136",
+   "depths": [
+    [
+     40,
+     160,
+     "36"
+    ],
+    [
+     170,
+     170,
+     "41"
+    ],
+    [
+     50,
+     40,
+     "33"
+    ]
+   ],
+   "panel": [
+    "1000 → 1200",
+    "DR: heading, log",
+    "Fix bears 200°T",
+    "2.4 M from the DR",
+    "No leeway"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "Motoring along the coast, you compare the plotter with the log. What is the stream doing?",
+  "a": "1.3 kn fair, along your track",
+  "o": [
+   "1.3 kn foul, against your track",
+   "1.3 kn across, from port",
+   "6.8 kn fair, along your track"
+  ],
+  "why": "Heading and COG agree, so there is no cross set; SOG 6.8 against log 5.5 kn: a fair stream of 1.3 kn.",
+  "ref": "Navigation — the plotter: heading, COG, SOG",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "HDG",
+     "090°T",
+     false
+    ],
+    [
+     "COG",
+     "090°T",
+     false
+    ],
+    [
+     "SOG",
+     "6.8 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Log 5.5 kn, checked last week",
+    "Steady for the last half hour"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "Motoring slowly in a swell, you watch the plotter's COG and SOG jump about. What do you use for the DR?",
+  "a": "The compass heading and the log",
+  "o": [
+   "The mean of the plotter's COG and SOG",
+   "The last steady COG and SOG you saw",
+   "The bearing and distance to the waypoint"
+  ],
+  "why": "At low speed in a seaway COG and SOG swing with every wave; the heading and the log give a steady DR.",
+  "ref": "Navigation — the plotter: heading, COG, SOG",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "COG",
+     "040–080°",
+     false
+    ],
+    [
+     "SOG",
+     "1.5–3.0",
+     false
+    ],
+    [
+     "HDG",
+     "062°M",
+     false
+    ]
+   ],
+   "lines": [
+    "Motoring slowly in a big swell",
+    "Log steady at 2.4 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You join a cross-tide leg and the plotter shows this. What does its CTS figure give you?",
+  "a": "A steer back to the line, with no stream in it",
+  "o": [
+   "The heading that allows for the stream",
+   "The COG you will make good over the ground",
+   "The compass course, deviation applied"
+  ],
+  "why": "With no tidal data the plotter's CTS is only the steer back to the route line. Work the stream yourself.",
+  "ref": "Navigation — the plotter: heading, COG, SOG",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "BTW",
+     "082°M",
+     false
+    ],
+    [
+     "XTE",
+     "0.0 M",
+     false
+    ],
+    [
+     "CTS",
+     "082°M",
+     false
+    ]
+   ],
+   "lines": [
+    "Stream 2 kn across the leg",
+    "No tidal data in the plotter"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your heading points well clear of the rocks, but the plotter's COG line runs onto them. Where is the boat going?",
+  "a": "Along the COG line: alter up-tide now",
+  "o": [
+   "Along the heading: the COG line lags",
+   "Between the two: they average out",
+   "Along the heading, once the stream eases"
+  ],
+  "why": "COG is the track over the ground, stream included; the heading only shows where the bow points.",
+  "ref": "Navigation — the plotter: heading, COG, SOG",
+  "fig": {
+   "type": "chart",
+   "land": "M320 0 V200 H300 C268 150 250 104 268 58 C278 34 288 14 290 0 Z",
+   "boat": [
+    90,
+    165,
+    30
+   ],
+   "track": "M90 165 L232 72",
+   "depths": [
+    [
+     238,
+     80,
+     "1.2",
+     true
+    ],
+    [
+     226,
+     96,
+     "0.4",
+     true
+    ],
+    [
+     60,
+     70,
+     "19"
+    ],
+    [
+     170,
+     170,
+     "24"
+    ]
+   ],
+   "labels": [
+    [
+     150,
+     140,
+     "COG line",
+     "middle"
+    ]
+   ],
+   "note": "Heading 030°T · stream sets east"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "The plotter gives this ETA at the next harbour. When do you really expect to arrive?",
+  "a": "1438",
+  "o": [
+   "1400",
+   "1418",
+   "1451"
+  ],
+  "why": "To 1300 at 6.5 kn: 6.5 M. The last 6.5 M at 5.0 − 1.0 = 4.0 kn take 1 h 38: 1438. The plotter assumes today's SOG.",
+  "ref": "Chartwork — speed made good and ETA",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "DTW",
+     "13.0 M",
+     false
+    ],
+    [
+     "SOG",
+     "6.5 kn",
+     false
+    ],
+    [
+     "ETA",
+     "1400",
+     false
+    ]
+   ],
+   "lines": [
+    "1200 now · log 5.0 kn, stream fair 1.5 kn",
+    "From 1300 the stream runs foul at 1.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 1,
+  "q": "In thick fog the plotter screen goes blank. Where do you start the DR from?",
+  "a": "The 0700 fix written in the log",
+  "o": [
+   "The last plotter position you recall",
+   "The next waypoint on the route",
+   "The spot where the depth fits best"
+  ],
+  "why": "Restart from the last position you wrote down with its time and log: here 1.7 M on 270°M from the 0700 fix.",
+  "ref": "Navigation — DR in fog",
+  "fig": {
+   "type": "card",
+   "title": "0715, fog",
+   "lines": [
+    "Plotter screen blank",
+    "Log book 0700: fix, log 22.4",
+    "Log now 24.1 · heading 270°M"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Your next fix is hours away. Which possible error moves your EP furthest from the truth?",
+  "a": "The stream rate, 1 kn out",
+  "o": [
+   "The heading, 5° out",
+   "The log, 3% out",
+   "The leeway, 3° out"
+  ],
+  "why": "Over 4 h: stream 1 kn × 4 = 4.0 M; heading 24 M × sin 5° = 2.1 M; leeway 1.3 M; log 3% of 24 M = 0.7 M.",
+  "ref": "Chartwork — accuracy of DR and EP",
+  "fig": {
+   "type": "card",
+   "title": "4 h at 6 kn since the fix",
+   "lines": [
+    "Stream rate: could be 1 kn out",
+    "Heading: could be 5° out",
+    "Log: could be 3% out",
+    "Leeway: could be 3° out"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "In fog with no radar you close this coast to find the harbour, your EP good to about a mile. Where do you aim?",
+  "a": "2 M east of it, then follow the coast west",
+  "o": [
+   "Straight at it, then search either side",
+   "0.5 M east of it, then follow the coast west",
+   "2 M west of it, then follow the coast west"
+  ],
+  "why": "Aim off by more than the EP error: when you meet the coast or the depth line, you know which way to turn.",
+  "ref": "Navigation — DR in fog",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V48 C260 54 200 44 168 50 L160 62 L152 50 C110 56 60 46 0 54 Z",
+   "marks": [
+    [
+     160,
+     64,
+     "k",
+     "harbour"
+    ]
+   ],
+   "boat": [
+    160,
+    152,
+    0
+   ],
+   "depths": [
+    [
+     60,
+     90,
+     "12"
+    ],
+    [
+     250,
+     90,
+     "14"
+    ],
+    [
+     100,
+     140,
+     "21"
+    ],
+    [
+     230,
+     150,
+     "23"
+    ]
+   ],
+   "note": "EP good to ±1 M · fog, no radar"
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "You have beaten towards the windward mark for two hours. What speed have you made good towards it?",
+  "a": "4.2 kn",
+  "o": [
+   "6.0 kn",
+   "3.0 kn",
+   "8.5 kn"
+  ],
+  "why": "Each 6.0 M tack runs 45° off the bearing: 6.0 × cos 45° = 4.24 M towards the mark, twice: 8.5 M in 2 h = 4.2 kn.",
+  "ref": "Chartwork — speed made good and ETA",
+  "fig": {
+   "type": "card",
+   "title": "Beating to the mark, no stream",
+   "lines": [
+    "0800 fix · the mark bears 045°T",
+    "Port tack: water track 090°T, 6.0 M",
+    "Starboard tack: water track 000°T, 6.0 M",
+    "Now 1000, back on the bearing"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 2,
+  "q": "Against a foul stream, how much time does hoisting the main save you on this leg?",
+  "a": "36 min",
+  "o": [
+   "20 min",
+   "13 min",
+   "60 min"
+  ],
+  "why": "SOG 4.0 vs 5.0 kn: 12.0 ÷ 4.0 = 3 h 00, 12.0 ÷ 5.0 = 2 h 24 — 36 min. Against the stream each knot counts for more.",
+  "ref": "Passage making — motor-sailing against the tide",
+  "fig": {
+   "type": "card",
+   "title": "Motor-sailing leg",
+   "lines": [
+    "Leg 12.0 M, stream foul 1.5 kn",
+    "Engine alone: 5.5 kn",
+    "Main up, same rpm: 6.5 kn",
+    "Same fuel per hour either way"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You can leave now into the foul stream or wait for the fair one. What does leaving at 1000 buy you?",
+  "a": "1 h 30 sooner for 3.6 l more fuel",
+  "o": [
+   "3 h 00 sooner for 3.6 l more fuel",
+   "1 h 30 sooner for 7.2 l more fuel",
+   "1 h 30 sooner for the same fuel"
+  ],
+  "why": "Leave 1000: 10.5 M by 1300, 9.5 M more at 7.0 kn, in at 1421. Wait: 20 ÷ 7.0, in at 1551. 1 h 30 longer running: 3.6 l.",
+  "ref": "Passage making — motor-sailing against the tide",
+  "fig": {
+   "type": "card",
+   "title": "Motoring to the next port",
+   "lines": [
+    "Leg 20.0 M · 5.5 kn · 2.4 l/h",
+    "Stream foul 2.0 kn until 1300",
+    "Then fair 1.5 kn all afternoon",
+    "Leave at 1000, or wait until 1300?"
+   ]
+  }
+ },
+ {
+  "topic": "dr",
+  "difficulty": 3,
+  "q": "You are motoring the catamaran across to the next harbour. What does running both engines buy you?",
+  "a": "1 h 07 sooner for 9.0 l more fuel",
+  "o": [
+   "56 min sooner for 7.5 l more fuel",
+   "1 h 38 sooner for 8.6 l more fuel",
+   "1 h 07 sooner for 20.4 l more fuel"
+  ],
+  "why": "Both: 16.5 M in 3 h, 7.5 M more in 1 h 04, 20.4 l. One: 12.0 M, then 12.0 M in 2 h 11, 11.4 l. 1 h 07 sooner, 9.0 l more.",
+  "ref": "Passage making — motor-sailing against the tide",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran, flat calm",
+   "lines": [
+    "Leg 24.0 M · foul 1.5 kn for 3 h, then slack",
+    "Both engines: 7.0 kn, 5.0 l/h",
+    "One engine: 5.5 kn, 2.2 l/h"
+   ]
+  }
+ }
+]

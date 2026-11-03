@@ -1,0 +1,3157 @@
+[
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You want to dry out against the harbour wall to scrub the hull, and you need the lowest low waters of the fortnight. Which days do you pick?",
+  "a": "Monday–Tuesday, a day or two after full moon",
+  "o": [
+   "The following Sunday, at the last quarter",
+   "Wednesday–Thursday, as the range builds",
+   "Friday–Saturday, just before the full moon"
+  ],
+  "why": "Springs, with the lowest LWs, come a day or two after new and full moon; neaps follow the quarters.",
+  "ref": "Tides — springs and neaps",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — moon",
+   "lines": [
+    "Today: Friday",
+    "Full moon: Sunday",
+    "Last quarter: the following Sunday"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "This morning's high water was at 0640. You plan to cross the bar on the next high water. About when is it?",
+  "a": "About 1905",
+  "o": [
+   "About 1840",
+   "About 1255",
+   "About 0730 tomorrow"
+  ],
+  "why": "Semi-diurnal tides: two HWs a day about 12 h 25 min apart. 0640 + 12:25 = 1905.",
+  "ref": "Tides — the semi-diurnal cycle",
+  "fig": {
+   "type": "card",
+   "title": "Tide table",
+   "lines": [
+    "HW this morning: 0640",
+    "Semi-diurnal port",
+    "No table aboard for later today"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Springs are today. You want the weakest streams for a passage through the Chenal du Four with an inexperienced crew. When is the best window in the coming fortnight?",
+  "a": "In about 7 days, at neaps",
+  "o": [
+   "In about 14 days, when the cycle repeats",
+   "In about 3 days, as the range falls",
+   "In about 11 days, before the new moon"
+  ],
+  "why": "Springs to neaps is about 7 days, half the ~14.8-day cycle; neap streams run at roughly half the springs rate.",
+  "ref": "Tides — springs and neaps",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — Brest",
+   "lines": [
+    "Today: springs, range 6.9 m",
+    "Moon: full last night",
+    "Wanted: the weakest streams"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You want the lowest low water of the year to scrub on a drying grid. Why does the almanac show bigger spring ranges in March than in June?",
+  "a": "Equinoctial springs — sun and moon near the equator",
+  "o": [
+   "Winter gales push extra water into the Channel",
+   "The moon is always nearest the earth in March",
+   "Low winter pressure deepens every tidal range"
+  ],
+  "why": "Near the equinoxes the sun and moon both lie over the equator: equinoctial springs bring the year's largest ranges.",
+  "ref": "Tides — causes",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — spring ranges",
+   "lines": [
+    "Late March springs: range 6.4 m",
+    "Late June springs: range 5.3 m",
+    "Plan: scrub on a drying grid at LW"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "The chart shows 1.8 m where you plan to anchor, and the title panel says soundings are reduced to LAT. With ordinary weather, how often will you find less water than that?",
+  "a": "Hardly ever — LAT is the lowest predicted tide",
+  "o": [
+   "At every low water, twice a day",
+   "At every spring low water",
+   "At every neap low water"
+  ],
+  "why": "Chart datum is about LAT: predicted tides almost never fall below it; only high pressure or offshore winds take it lower.",
+  "ref": "Tides — chart datum",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 C250 55 200 35 140 50 C90 60 40 45 0 55 Z",
+   "depths": [
+    [
+     60,
+     110,
+     "4.5"
+    ],
+    [
+     150,
+     120,
+     "1.8"
+    ],
+    [
+     240,
+     150,
+     "6"
+    ],
+    [
+     100,
+     160,
+     "3.2"
+    ],
+    [
+     250,
+     90,
+     "2.6"
+    ]
+   ],
+   "boat": [
+    180,
+    132,
+    330
+   ],
+   "note": "Soundings in metres below LAT"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You plan to spend the night over a charted 1.5 m patch with the low water near springs. What depth do you expect at an average spring low water?",
+  "a": "2.2 m — 0.4 m under the keel",
+  "o": [
+   "1.5 m — you ground by 0.3 m",
+   "0.8 m — you dry out at low water",
+   "3.4 m — 1.6 m under the keel"
+  ],
+  "why": "Depth = charted depth + height of tide: 1.5 + MLWS 0.7 = 2.2 m; minus 1.8 m draft leaves 0.4 m.",
+  "ref": "Tides — tidal levels",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — tidal levels",
+   "lines": [
+    "MHWS 5.4 m · MHWN 4.1 m",
+    "MLWN 1.9 m · MLWS 0.7 m",
+    "Charted depth 1.5 m · draft 1.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You have today's tide table for the port and the almanac's mean levels. Is today nearer springs or neaps?",
+  "a": "Neaps — 2.4 m range, close to the 2.2 m neap range",
+  "o": [
+   "Springs — HW 4.2 m is close to the spring HW",
+   "Midway — 2.4 m is half the 4.7 m spring range",
+   "Springs — 2.4 m is above the 2.2 m neap range"
+  ],
+  "why": "Compare ranges: today 4.2 − 1.8 = 2.4 m; springs 5.4 − 0.7 = 4.7 m; neaps 4.1 − 1.9 = 2.2 m. Near neaps.",
+  "ref": "Tides — tide tables",
+  "fig": {
+   "type": "card",
+   "title": "Today and the means",
+   "lines": [
+    "Today: HW 4.2 m · LW 1.8 m",
+    "MHWS 5.4 m · MLWS 0.7 m",
+    "MHWN 4.1 m · MLWN 1.9 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are in Saint-Malo, and the almanac gives these times and heights for today. What is the range of this morning's flood?",
+  "a": "8.7 m",
+  "o": [
+   "10.9 m",
+   "8.4 m",
+   "9.8 m"
+  ],
+  "why": "Range = HW − LW of the same tide: 9.8 − 1.1 = 8.7 m.",
+  "ref": "Tides — tide tables",
+  "fig": {
+   "type": "card",
+   "title": "Tide table — today",
+   "lines": [
+    "0412  LW  1.1 m",
+    "1035  HW  9.8 m",
+    "1640  LW  1.4 m",
+    "2258  HW  9.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are at anchor waiting for the flood. What is the height of tide at 0600?",
+  "a": "3.4 m",
+  "o": [
+   "2.2 m",
+   "4.6 m",
+   "2.4 m"
+  ],
+  "why": "Range 4.8 m. After 3 h the tide has risen 1 + 2 + 3 = 6/12: 1.0 + 2.4 = 3.4 m.",
+  "ref": "Tides — rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Tide table",
+   "lines": [
+    "LW 0300  1.0 m",
+    "HW 0900  5.8 m",
+    "Use the rule of twelfths"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You leave the marina at 1320 on the ebb. What height of tide do you have at that time?",
+  "a": "4.2 m",
+  "o": [
+   "5.0 m",
+   "1.8 m",
+   "3.0 m"
+  ],
+  "why": "Range 4.8 m. Two hours after HW it has fallen 1 + 2 = 3/12 = 1.2 m: 5.4 − 1.2 = 4.2 m.",
+  "ref": "Tides — rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Tide table",
+   "lines": [
+    "HW 1120  5.4 m",
+    "LW 1720  0.6 m",
+    "Use the rule of twelfths"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are over the charted 1.4 m sounding at 0800. Using the rule of twelfths, what depth of water is there?",
+  "a": "3.1 m",
+  "o": [
+   "2.3 m",
+   "1.7 m",
+   "4.0 m"
+  ],
+  "why": "Height = 0.8 + 3/12 × 3.6 = 1.7 m; depth = 1.4 charted + 1.7 = 3.1 m.",
+  "ref": "Tides — depth of water",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H150 C130 40 90 60 60 70 C30 76 10 80 0 90 Z",
+   "depths": [
+    [
+     60,
+     120,
+     "2.6"
+    ],
+    [
+     140,
+     150,
+     "1.4"
+    ],
+    [
+     90,
+     175,
+     "3.0"
+    ],
+    [
+     250,
+     160,
+     "5"
+    ],
+    [
+     200,
+     120,
+     "2.2"
+    ]
+   ],
+   "boat": [
+    165,
+    140,
+    60
+   ],
+   "panel": [
+    "Tide",
+    "LW 0600  0.8 m",
+    "HW 1200  4.4 m",
+    "Now 0800"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You have dried out on a sandbank and want to float off as early as possible. In which hours of the flood does the water rise fastest?",
+  "a": "0800–1000, the third and fourth hours",
+  "o": [
+   "0600–0800, the first two hours",
+   "1000–1200, the last two hours",
+   "Evenly — the same amount each hour"
+  ],
+  "why": "Rule of twelfths 1-2-3-3-2-1: the 3rd and 4th hours each bring 3/12 of the range.",
+  "ref": "Tides — rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Aground on the sand",
+   "lines": [
+    "LW 0600 · HW 1200",
+    "Flood: six hours",
+    "Keel in soft sand, no swell"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are anchoring over the charted 3.2 m sounding. What depth of water do you expect from the surface to the seabed?",
+  "a": "5.7 m",
+  "o": [
+   "0.7 m",
+   "3.2 m",
+   "2.5 m"
+  ],
+  "why": "Depth of water = charted depth + height of tide: 3.2 + 2.5 = 5.7 m.",
+  "ref": "Tides — depth of water",
+  "fig": {
+   "type": "chart",
+   "land": "M0 200 V150 C60 140 120 165 180 150 C240 138 280 160 320 145 V200 Z",
+   "depths": [
+    [
+     60,
+     70,
+     "7"
+    ],
+    [
+     125,
+     100,
+     "3.2"
+    ],
+    [
+     80,
+     130,
+     "2.1"
+    ],
+    [
+     240,
+     110,
+     "4.4"
+    ]
+   ],
+   "boat": [
+    150,
+    112,
+    200
+   ],
+   "panel": [
+    "Now 1400",
+    "Tide now 2.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "The short cut to the harbour crosses the bank with the underlined 1.8. How much water is over the bank now?",
+  "a": "1.2 m — less than your 1.5 m draft",
+  "o": [
+   "4.8 m — ample for your draft",
+   "3.0 m — 1.5 m under the keel",
+   "1.8 m — 0.3 m under the keel"
+  ],
+  "why": "An underlined figure is a drying height above datum: water over it = 3.0 − 1.8 = 1.2 m, less than 1.5 m.",
+  "ref": "Tides — drying heights",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H70 C80 60 60 120 75 200 H0 Z",
+   "depths": [
+    [
+     200,
+     130,
+     "4"
+    ],
+    [
+     170,
+     70,
+     "6"
+    ],
+    [
+     120,
+     165,
+     "3"
+    ],
+    [
+     140,
+     103,
+     "1.8",
+     true
+    ]
+   ],
+   "track": "M255 165 L140 112 L80 100",
+   "boat": [
+    262,
+    168,
+    300
+   ],
+   "labels": [
+    [
+     36,
+     100,
+     "harbour",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Now 1030",
+    "Tide 3.0 m",
+    "Draft 1.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You want to cross the bank with the underlined 1.2 and keep 0.5 m under the keel. By the rule of twelfths, what is the earliest time on the flood?",
+  "a": "1000",
+  "o": [
+   "0900",
+   "1100",
+   "0830"
+  ],
+  "why": "Need 1.2 + 1.2 + 0.5 = 2.9 m of tide. Three hours after LW: 0.5 + 6/12 × 4.8 = 2.9 m — at 1000.",
+  "ref": "Tides — drying heights",
+  "fig": {
+   "type": "chart",
+   "land": "M0 200 V160 C60 150 120 175 180 160 C240 148 280 170 320 155 V200 Z",
+   "depths": [
+    [
+     150,
+     95,
+     "1.2",
+     true
+    ],
+    [
+     60,
+     120,
+     "3"
+    ],
+    [
+     230,
+     135,
+     "4"
+    ],
+    [
+     110,
+     50,
+     "5"
+    ]
+   ],
+   "track": "M45 65 L150 100 L240 125",
+   "boat": [
+    40,
+    62,
+    110
+   ],
+   "labels": [
+    [
+     150,
+     80,
+     "sand",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Tide",
+    "LW 0700  0.5 m",
+    "HW 1300  5.3 m",
+    "Draft 1.2 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are leaving over the bar, charted 0.8 m, on the ebb and want 0.6 m under the keel. By the rule of twelfths, what is the latest time to cross?",
+  "a": "1415",
+  "o": [
+   "1315",
+   "1515",
+   "1245"
+  ],
+  "why": "Need 1.8 + 0.6 − 0.8 = 1.6 m of tide. HW + 4 h: 5.2 − 9/12 × 4.8 = 1.6 m — at 1415.",
+  "ref": "Tides — crossing a bar",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H140 V55 C120 68 100 70 0 78 Z M180 0 H320 V75 C230 70 200 68 180 55 Z",
+   "depths": [
+    [
+     160,
+     92,
+     "0.8"
+    ],
+    [
+     100,
+     140,
+     "3"
+    ],
+    [
+     225,
+     150,
+     "5"
+    ],
+    [
+     205,
+     180,
+     "4"
+    ]
+   ],
+   "boat": [
+    160,
+    36,
+    180
+   ],
+   "labels": [
+    [
+     160,
+     108,
+     "bar",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Tide",
+    "HW 1015  5.2 m",
+    "LW 1615  0.4 m",
+    "Draft 1.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "The marina sill dries 2.0 m above chart datum. How much water is over the sill now, and what is left under the keel?",
+  "a": "2.1 m over the sill, 0.3 m under the keel",
+  "o": [
+   "6.1 m over the sill, 4.3 m under the keel",
+   "4.1 m over the sill, 2.3 m under the keel",
+   "2.3 m over the sill, 0.5 m under the keel"
+  ],
+  "why": "Water over the sill = 4.1 − 2.0 = 2.1 m; minus the 1.8 m draft leaves 0.3 m. Tight: most skippers want 0.5 m or more.",
+  "ref": "Tides — marina sill",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V110 H200 V40 H120 V110 H0 Z",
+   "depths": [
+    [
+     160,
+     112,
+     "2.0",
+     true
+    ],
+    [
+     100,
+     150,
+     "3"
+    ],
+    [
+     230,
+     160,
+     "4"
+    ]
+   ],
+   "marks": [
+    [
+     123,
+     114,
+     "r",
+     ""
+    ],
+    [
+     197,
+     114,
+     "g",
+     ""
+    ]
+   ],
+   "boat": [
+    160,
+    165,
+    0
+   ],
+   "labels": [
+    [
+     160,
+     70,
+     "marina",
+     "middle"
+    ],
+    [
+     160,
+     132,
+     "sill",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Now 1130",
+    "Tide 4.1 m",
+    "Draft 1.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You want 0.6 m under the keel crossing the marina sill on the flood. Using the port's tidal curve, what is the earliest time?",
+  "a": "1230",
+  "o": [
+   "1130",
+   "1330",
+   "1030"
+  ],
+  "why": "Need 2.1 + 1.9 + 0.6 = 4.6 m: factor (4.6 − 1.0) ÷ 5.0 = 0.72, which is HW−2 — 1230.",
+  "ref": "Tides — tidal curve",
+  "fig": {
+   "type": "card",
+   "title": "Marina sill — tidal curve",
+   "lines": [
+    "HW 1430  6.0 m · LW 0830  1.0 m",
+    "Factor: HW−4 0.28 · HW−3 0.50",
+    "Factor: HW−2 0.72 · HW−1 0.92",
+    "Sill dries 2.1 m · draft 1.9 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Using the port's tidal curve, what is the height of tide at 1400?",
+  "a": "3.8 m",
+  "o": [
+   "3.5 m",
+   "2.8 m",
+   "2.2 m"
+  ],
+  "why": "Height = LW + range × factor = 1.0 + 4.0 × 0.70 = 3.8 m.",
+  "ref": "Tides — tidal curve",
+  "fig": {
+   "type": "card",
+   "title": "Tidal curve — standard port",
+   "lines": [
+    "HW 1600  5.0 m · LW 0950  1.0 m",
+    "Curve factor at HW−2: 0.70",
+    "Time of interest: 1400"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You need the height of tide two hours before LW to enter a shallow creek, and your crew has worked it by the rule of twelfths. What do you do?",
+  "a": "Read it off the port's own tidal curve",
+  "o": [
+   "Accept it — the rule works for every port",
+   "Add 10% to the answer to be safe",
+   "Use the mean of the HW and LW heights"
+  ],
+  "why": "The rule of twelfths assumes a symmetrical 6-hour tide. With a double HW or a stand, use the port's curve.",
+  "ref": "Tides — tidal curve",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — Solent port",
+   "lines": [
+    "Double high water, long stand",
+    "Rise about 7 h, fall about 5 h",
+    "Crew: twelfths give 1.9 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are lying to a buoy where the charted depth is 1.8 m. What depth will you have at this morning's low water?",
+  "a": "1.6 m — 0.1 m less than your draft",
+  "o": [
+   "2.0 m — 0.3 m under the keel",
+   "1.8 m — 0.1 m under the keel",
+   "1.4 m — 0.3 m into the mud"
+  ],
+  "why": "A minus height means the tide falls below chart datum: 1.8 + (−0.2) = 1.6 m, under your 1.7 m draft.",
+  "ref": "Tides — chart datum",
+  "fig": {
+   "type": "card",
+   "title": "Tide table",
+   "lines": [
+    "LW 0525  −0.2 m",
+    "Charted depth at the buoy 1.8 m",
+    "Draft 1.7 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are bound for the secondary port. What are the time and height of its high water?",
+  "a": "0837, 5.2 m",
+  "o": [
+   "0947, 5.2 m",
+   "0837, 6.4 m",
+   "0947, 6.4 m"
+  ],
+  "why": "Apply the differences with their signs: 0912 − 0035 = 0837; 5.8 − 0.6 = 5.2 m.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port",
+   "lines": [
+    "Standard port HW 0912  5.8 m",
+    "Secondary: HW time −0035",
+    "Secondary: HW height −0.6 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You will use the rule of twelfths at the secondary port this afternoon. What range do you work with?",
+  "a": "4.3 m",
+  "o": [
+   "4.0 m",
+   "4.5 m",
+   "3.7 m"
+  ],
+  "why": "Correct both heights first: HW 4.9 + 0.4 = 5.3 m, LW 0.9 + 0.1 = 1.0 m; range 4.3 m.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port",
+   "lines": [
+    "Standard port: HW 4.9 m · LW 0.9 m",
+    "Height diff: HW +0.4 m · LW +0.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "Interpolate the height difference for today. What are the time and height of HW at the secondary port?",
+  "a": "0950, 6.1 m",
+  "o": [
+   "0950, 6.3 m",
+   "0950, 5.9 m",
+   "1050, 6.1 m"
+  ],
+  "why": "5.5 m is halfway from MHWN to MHWS, so the difference is +0.6: 6.1 m. Time 1020 − 0030 = 0950.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port",
+   "lines": [
+    "Standard port HW today 1020  5.5 m",
+    "Standard: MHWS 6.2 m · MHWN 4.8 m",
+    "HW height diff: springs +0.8, neaps +0.4",
+    "HW time diff: −0030"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You need the height of tide at the secondary port at 1500. By the rule of twelfths, what is it?",
+  "a": "3.8 m",
+  "o": [
+   "2.8 m",
+   "4.0 m",
+   "4.5 m"
+  ],
+  "why": "Secondary HW 1300 4.8 m, LW 1900 0.8 m, range 4.0 m. At HW+2 it has fallen 3/12 = 1.0 m: 3.8 m.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port",
+   "lines": [
+    "Standard: HW 1200 5.0 m · LW 1800 1.0 m",
+    "Diff: HW and LW times +0100",
+    "Diff: HW and LW heights −0.2 m",
+    "Time of interest: 1500"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "It is HW−1 at the reference port and today is a spring tide. What stream do you plot from the diamond's table?",
+  "a": "Set 045°T, rate 2.4 kn",
+  "o": [
+   "Set 225°T, rate 2.4 kn",
+   "Set 045°T, rate 1.2 kn",
+   "Set 060°T, rate 1.8 kn"
+  ],
+  "why": "Read the HW−1 row and the springs column: the stream sets towards 045°T at 2.4 kn.",
+  "ref": "Tides — tidal diamonds",
+  "fig": {
+   "type": "card",
+   "title": "Tidal diamond C",
+   "lines": [
+    "Hour · set · springs · neaps (kn)",
+    "HW−1   045°   2.4   1.2",
+    "HW      060°   1.8   0.9",
+    "HW+1   070°   0.9   0.4"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are about to plot the stream for your EP. Which row of the diamond's table covers the time now?",
+  "a": "HW+3 — 1415 is 2 h 45 min after HW",
+  "o": [
+   "HW+2 — round down to the whole hour",
+   "HW−3 — count to the next high water",
+   "HW+2 — 1415 − 1130 is 2.85 hours"
+  ],
+  "why": "1415 is HW+2h45. Each row covers half an hour either side of its hour, so HW+3 (HW+2h30 to HW+3h30).",
+  "ref": "Tides — tidal diamonds",
+  "fig": {
+   "type": "card",
+   "title": "Tidal diamond F",
+   "lines": [
+    "HW at the reference port: 1130",
+    "Time now: 1415",
+    "HW+2   230°   1.6   0.8",
+    "HW+3   240°   2.2   1.1"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "The diamond gives the spring and neap rates for the hour. What rate do you use for today's stream?",
+  "a": "2.5 kn",
+  "o": [
+   "3.0 kn",
+   "1.4 kn",
+   "2.2 kn"
+  ],
+  "why": "(4.1 − 2.0) ÷ (5.0 − 2.0) = 0.7 of the way to springs: 1.4 + 0.7 × 1.6 = 2.5 kn.",
+  "ref": "Tides — springs/neaps interpolation",
+  "fig": {
+   "type": "card",
+   "title": "Diamond and ranges",
+   "lines": [
+    "Rate: springs 3.0 kn · neaps 1.4 kn",
+    "Mean spring range 5.0 m",
+    "Mean neap range 2.0 m",
+    "Today's range 4.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are working up an EP and need the stream at diamond D for the time now. What do you plot?",
+  "a": "080°T at 1.7 kn",
+  "o": [
+   "080°T at 2.4 kn",
+   "075°T at 1.3 kn",
+   "260°T at 1.7 kn"
+  ],
+  "why": "1140 is HW+2h35, so the HW+3 row. Today is halfway from neaps to springs: 1.0 + 0.5 × 1.4 = 1.7 kn, setting 080°T.",
+  "ref": "Tides — tidal diamonds",
+  "fig": {
+   "type": "card",
+   "title": "Tidal diamond D",
+   "lines": [
+    "HW reference port 0905 · now 1140",
+    "HW+2   075°   1.8   0.8",
+    "HW+3   080°   2.4   1.0",
+    "Range today 4.0 · sp 5.6 · np 2.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are reading the tidal stream atlas for the next hour and today is a neap tide. What stream do you take from the page?",
+  "a": "East-going at 0.6 kn",
+  "o": [
+   "East-going at 6 kn",
+   "East-going at 1.2 kn",
+   "West-going at 0.6 kn"
+  ],
+  "why": "Atlas figures give neaps,springs in tenths of a knot: 06,12 is 0.6 kn at neaps and 1.2 kn at springs.",
+  "ref": "Tides — tidal stream atlas",
+  "fig": {
+   "type": "card",
+   "title": "Tidal stream atlas",
+   "lines": [
+    "Page: HW Plymouth −3",
+    "Arrow near you: pointing east",
+    "Figures by the arrow: 06,12"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You will reach the headland at 1100 and want the stream there from the atlas. Which page do you open?",
+  "a": "HW−3 — 2 h 40 min before HW Dover",
+  "o": [
+   "HW−1 — 1 h 15 min before local HW",
+   "HW+3 — 2 h 40 min after HW Dover",
+   "HW−2 — rounded down to whole hours"
+  ],
+  "why": "Count from the atlas's own reference port: 1100 is 2 h 40 min before HW Dover, so the HW−3 page.",
+  "ref": "Tides — tidal stream atlas",
+  "fig": {
+   "type": "card",
+   "title": "Atlas and tide times",
+   "lines": [
+    "Atlas pages: hours from HW Dover",
+    "HW Dover: 1340",
+    "HW at the local port: 1215",
+    "At the headland: 1100"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are motoring north through the sound against the foul stream. Where do you expect the weakest stream?",
+  "a": "Near the edges, out of the mid-channel stream",
+  "o": [
+   "In mid-channel, where the water is deepest",
+   "In the narrowest part of the sound",
+   "Off the points at each end of the sound"
+  ],
+  "why": "Streams run hardest in the deep middle of a channel, in the narrows and off points; friction slows them at the edges.",
+  "ref": "Tides — streams in channels",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H115 C130 60 105 140 122 200 H0 Z M320 0 H205 C190 70 215 130 198 200 H320 Z",
+   "depths": [
+    [
+     138,
+     150,
+     "5"
+    ],
+    [
+     160,
+     105,
+     "18"
+    ],
+    [
+     182,
+     150,
+     "6"
+    ],
+    [
+     136,
+     45,
+     "4"
+    ],
+    [
+     186,
+     45,
+     "3"
+    ]
+   ],
+   "boat": [
+    160,
+    172,
+    0
+   ],
+   "labels": [
+    [
+     160,
+     75,
+     "stream S-going",
+     "middle"
+    ]
+   ],
+   "note": "Depths in metres"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are beating west along the coast against a 2 kn foul stream, and the pilot book mentions an eddy in the bay. Where do you sail?",
+  "a": "Close inshore across the bay, in the eddy",
+  "o": [
+   "Well offshore, where the stream is weaker",
+   "On the rhumb line between the headlands",
+   "In mid-bay, clear of both shores"
+  ],
+  "why": "Bays often hold an eddy or a counter-current inshore; the main stream runs strongest offshore and off the headlands.",
+  "ref": "Tides — counter-currents",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V75 L270 82 C230 30 110 25 60 82 L0 75 Z",
+   "depths": [
+    [
+     120,
+     62,
+     "4"
+    ],
+    [
+     205,
+     58,
+     "5"
+    ],
+    [
+     160,
+     110,
+     "12"
+    ],
+    [
+     60,
+     140,
+     "20"
+    ],
+    [
+     250,
+     165,
+     "18"
+    ]
+   ],
+   "boat": [
+    285,
+    125,
+    260
+   ],
+   "labels": [
+    [
+     160,
+     45,
+     "bay",
+     "middle"
+    ],
+    [
+     150,
+     160,
+     "main stream 2 kn E-going",
+     "middle"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are heading west and plan to round the headland while the spring stream runs west against the westerly F6. What do you do?",
+  "a": "Wait for slack water before rounding",
+  "o": [
+   "Go now, while the stream is fair for you",
+   "Round close along the edge of the overfalls",
+   "Motor straight through at full speed"
+  ],
+  "why": "Wind against a spring stream off a headland raises steep, breaking overfalls. Round at slack, or well outside them.",
+  "ref": "Tides — races and overfalls",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V50 C240 55 200 60 175 125 C160 70 120 55 0 60 Z",
+   "depths": [
+    [
+     90,
+     110,
+     "25"
+    ],
+    [
+     250,
+     100,
+     "22"
+    ],
+    [
+     120,
+     180,
+     "30"
+    ]
+   ],
+   "boat": [
+    285,
+    120,
+    260
+   ],
+   "labels": [
+    [
+     175,
+     150,
+     "overfalls",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Forecast W F6",
+    "Spring stream",
+    "W-going 4 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are crossing the channel today. When do you expect the steepest, most uncomfortable sea?",
+  "a": "1700–2300, with the stream against the wind",
+  "o": [
+   "1100–1700, with the stream and wind together",
+   "At 1700, while the stream is slack",
+   "All day the same — only the wind matters"
+  ],
+  "why": "A SW wind blows towards the NE; the SW-going stream runs into it. Wind against tide shortens and steepens the waves.",
+  "ref": "Tides — wind against tide",
+  "fig": {
+   "type": "card",
+   "title": "Channel crossing",
+   "lines": [
+    "Forecast: SW F5",
+    "Stream NE-going 1100–1700",
+    "Stream SW-going 1700–2300"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are heading SW through the race with a family crew. The stream is fair for you from 0900. What do you decide?",
+  "a": "Postpone — wind against a spring stream in the race",
+  "o": [
+   "Go at 0900 to carry the fair stream",
+   "Go at 1500, once the stream turns foul",
+   "Go now and motor-sail hard through it"
+  ],
+  "why": "A SW F6 against the spring SW-going stream makes the race dangerous: here a fair stream means wind against tide.",
+  "ref": "Tides — races and overfalls",
+  "fig": {
+   "type": "card",
+   "title": "Race passage plan",
+   "lines": [
+    "Fair stream (SW-going): 0900–1500",
+    "Forecast: SW F6, gusts 7",
+    "Pilot book: dangerous in wind v tide",
+    "Neaps in 5 days"
+   ],
+   "tag": "Springs"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You want to arrive at the headland just as the stream there turns fair. When do you leave?",
+  "a": "0730",
+  "o": [
+   "0930",
+   "0830",
+   "1130"
+  ],
+  "why": "Fair from HW Dover −1 = 0930; 12 M at 6 kn takes 2 h, so leave at 0730.",
+  "ref": "Tides — tidal gates",
+  "fig": {
+   "type": "card",
+   "title": "Tidal gate",
+   "lines": [
+    "Headland 12 M ahead · speed 6 kn",
+    "Fair stream there from HW Dover −1",
+    "HW Dover: 1030"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are waiting to pass under the bridge on the ebb with your margin. By the rule of twelfths, what is the earliest time?",
+  "a": "1200",
+  "o": [
+   "1100",
+   "1300",
+   "1030"
+  ],
+  "why": "Clearance = 11.5 + 4.8 − height; you need 13.6 m, so height ≤ 2.7 m. HW+3: 5.1 − 6/12 × 4.8 = 2.7 m at 1200.",
+  "ref": "Tides — bridge clearance",
+  "fig": {
+   "type": "card",
+   "title": "Bridge and tide",
+   "lines": [
+    "Bridge: 11.5 m above MHWS (4.8 m)",
+    "HW 0900  5.1 m · LW 1500  0.3 m",
+    "Air draught 13.1 m · margin 0.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are motoring up the river towards the bridge. Can you pass under it now, and with how much room?",
+  "a": "Yes — 14.8 m clearance, 1.0 m to spare",
+  "o": [
+   "No — 12.0 m is less than your 13.8 m",
+   "No — 9.0 m clearance (12.0 − 3.0)",
+   "Yes — 20.8 m clearance, 7.0 m to spare"
+  ],
+  "why": "Clearance now = charted 12.0 + (HAT 5.8 − tide 3.0) = 14.8 m: 1.0 m over your 13.8 m air draught.",
+  "ref": "Tides — bridge clearance",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V70 H0 Z M0 130 H320 V200 H0 Z",
+   "depths": [
+    [
+     100,
+     88,
+     "4"
+    ],
+    [
+     250,
+     118,
+     "5"
+    ]
+   ],
+   "marks": [
+    [
+     150,
+     73,
+     "k",
+     ""
+    ],
+    [
+     150,
+     127,
+     "k",
+     ""
+    ]
+   ],
+   "track": "M70 100 L130 100",
+   "boat": [
+    50,
+    100,
+    90
+   ],
+   "labels": [
+    [
+     150,
+     115,
+     "bridge",
+     "middle"
+    ],
+    [
+     160,
+     160,
+     "clearance 12.0 m above HAT",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Now",
+    "Tide 3.0 m",
+    "HAT 5.8 m",
+    "Air draught 13.8 m"
+   ],
+   "note": "Clearances above HAT"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "The chart gives 9.5 m under the bridge, and your air draught is 9.0 m. What does the 9.5 m tell you about the room under it?",
+  "a": "At least 9.5 m at almost any state of tide",
+  "o": [
+   "Exactly 9.5 m at every high water",
+   "9.5 m at chart datum, less at high water",
+   "9.5 m only at mean high water springs"
+  ],
+  "why": "HAT is the highest predicted tide, so the real clearance is 9.5 m or more, except in a surge.",
+  "ref": "Tides — bridge clearance",
+  "fig": {
+   "type": "card",
+   "title": "Chart title panel",
+   "lines": [
+    "Vertical clearances: above HAT",
+    "Bridge: 9.5 m",
+    "Your air draught: 9.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You need to pass under the power cable across the channel. Can you pass under it now?",
+  "a": "Yes — 21.0 m clearance, 2.8 m to spare",
+  "o": [
+   "No — 18.2 m tops the charted 18 m",
+   "Yes — 18 m clears the 17.2 m mast",
+   "No — 16.0 m clearance (18 − 2.0)"
+  ],
+  "why": "Safe clearance is above HAT: 18 + (5.0 − 2.0) = 21.0 m. Count the aerial: 18.2 m, so 2.8 m to spare.",
+  "ref": "Tides — overhead clearance",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H110 V200 H0 Z M210 0 H320 V200 H210 Z",
+   "depths": [
+    [
+     140,
+     70,
+     "6"
+    ],
+    [
+     185,
+     110,
+     "7"
+    ]
+   ],
+   "marks": [
+    [
+     90,
+     150,
+     "k",
+     "pylon"
+    ],
+    [
+     230,
+     150,
+     "k",
+     "pylon"
+    ]
+   ],
+   "boat": [
+    185,
+    175,
+    0
+   ],
+   "note": "Clearances above HAT",
+   "labels": [
+    [
+     160,
+     142,
+     "power cable",
+     "middle"
+    ],
+    [
+     55,
+     60,
+     "safe clearance",
+     "middle"
+    ],
+    [
+     55,
+     74,
+     "18 m above HAT",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Now",
+    "Tide 2.0 m",
+    "HAT 5.0 m",
+    "Mast 17.2 m",
+    "VHF aerial 1.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are about to drop anchor here for the night. Will you stay afloat at low water?",
+  "a": "No — 1.4 m at LW, under your draft",
+  "o": [
+   "Yes — 4.0 m at LW (5.0 − 1.0)",
+   "No — 0.4 m at LW (5.0 − 4.6)",
+   "Yes — 5.0 m now, and it is near HW"
+  ],
+  "why": "The tide will drop 4.6 − 1.0 = 3.6 m: 5.0 − 3.6 = 1.4 m at LW, less than the 1.7 m draft.",
+  "ref": "Tides — anchoring depth",
+  "fig": {
+   "type": "anchor",
+   "depth": "5 m",
+   "title": "Anchoring at dusk",
+   "lines": [
+    "Depth now 5.0 m, near HW",
+    "Tide now 4.6 m",
+    "Next LW 0230: 1.0 m",
+    "Draft 1.7 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You want 1.0 m under the keel at low water. Using the rule of twelfths, what is the least depth you should anchor in now?",
+  "a": "6.4 m",
+  "o": [
+   "7.6 m",
+   "5.2 m",
+   "3.4 m"
+  ],
+  "why": "Now 5.4 − 3/12 × 4.8 = 4.2 m, so it will drop 3.6 m more: 1.8 + 1.0 + 3.6 = 6.4 m.",
+  "ref": "Tides — anchoring depth",
+  "fig": {
+   "type": "anchor",
+   "depth": "?",
+   "title": "Choosing the spot",
+   "lines": [
+    "Now: HW+2",
+    "HW 5.4 m · LW 0.6 m",
+    "Draft 1.8 m",
+    "Want 1.0 m at LW"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are off the bar at low water with a swell running. The bar's charted depth is 1.4 m. Do you cross?",
+  "a": "No — about 1.6 m in the troughs, under your draft",
+  "o": [
+   "Yes — 2.2 m gives 0.4 m under the keel",
+   "Yes — the crests add 0.6 m of water",
+   "Yes — 3.4 m of water with the swell"
+  ],
+  "why": "Depth 1.4 + 0.8 = 2.2 m, but the boat drops about half the 1.2 m swell in a trough: 1.6 m. Wait for the flood.",
+  "ref": "Tides — clearance under the keel",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H140 V50 C120 62 100 66 0 72 Z M180 0 H320 V70 C230 66 200 62 180 50 Z",
+   "depths": [
+    [
+     160,
+     88,
+     "1.4"
+    ],
+    [
+     95,
+     140,
+     "4"
+    ],
+    [
+     230,
+     150,
+     "6"
+    ],
+    [
+     160,
+     178,
+     "8"
+    ]
+   ],
+   "boat": [
+    160,
+    150,
+    0
+   ],
+   "labels": [
+    [
+     160,
+     104,
+     "bar",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "LW now",
+    "Tide 0.8 m",
+    "Draft 1.8 m",
+    "Swell 1.2 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are about to cross the bar at low water after a week of settled weather. What depth do you allow for on the bar?",
+  "a": "About 1.8 m",
+  "o": [
+   "About 2.2 m",
+   "About 2.0 m",
+   "About 1.6 m"
+  ],
+  "why": "20 hPa above 1013 lowers the sea about 0.2 m: 1.6 + 0.4 − 0.2 = 1.8 m.",
+  "ref": "Tides — weather effects",
+  "fig": {
+   "type": "card",
+   "title": "Before crossing the bar",
+   "lines": [
+    "Barometer 1033 hPa, steady for days",
+    "Predicted LW height 0.4 m",
+    "Charted depth on the bar 1.6 m",
+    "Rule: about 1 cm per hPa from 1013"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You plan to pass under a bridge near high water tonight, with 0.6 m of margin at the predicted height. What do you expect?",
+  "a": "A higher HW than predicted — the margin may go",
+  "o": [
+   "A lower HW than predicted — more room",
+   "The predicted HW — the tables allow for weather",
+   "A higher LW only — the HW is unchanged"
+  ],
+  "why": "Onshore gales and low pressure (982 hPa, about +0.3 m) pile water up: a surge lifts HW above the tables.",
+  "ref": "Tides — weather effects",
+  "fig": {
+   "type": "card",
+   "title": "Bristol Channel, springs",
+   "lines": [
+    "SW gale F8 for two days",
+    "Barometer 982 hPa",
+    "Bridge margin at predicted HW: 0.6 m"
+   ],
+   "tag": "Gale"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are lying on a mooring in a shallow harbour, and the wind has blown hard off the land for three days. What do you expect at low water?",
+  "a": "Less water than predicted — you may touch",
+  "o": [
+   "More water than predicted — the wind holds it in",
+   "The predicted depth — the tables include weather",
+   "Less water only at neaps, not at springs"
+  ],
+  "why": "Offshore winds and high pressure lower the sea below the prediction; a 0.3 m margin can disappear.",
+  "ref": "Tides — weather effects",
+  "fig": {
+   "type": "card",
+   "title": "Before the morning LW",
+   "lines": [
+    "Strong E wind, offshore, for 3 days",
+    "Barometer 1030 hPa",
+    "Your margin at predicted LW: 0.3 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are in the north of the Adriatic, used to tideless Greek harbours, and moor stern-to for the night. Can you ignore the tide at this quay?",
+  "a": "No — about 1.7 m at LW, under your draft",
+  "o": [
+   "Yes — Mediterranean tides are too small",
+   "Yes — charted depths are always at LW",
+   "No — about 2.7 m at LW, the tide adds"
+  ],
+  "why": "Ranges here are near 1 m; with depths from mean sea level, LW is about 0.5 m lower: 2.2 − 0.5 = 1.7 m.",
+  "ref": "Tides — the Mediterranean",
+  "fig": {
+   "type": "card",
+   "title": "Northern Adriatic quay",
+   "lines": [
+    "Pilot book: spring range about 1 m",
+    "Depths from mean sea level",
+    "Quay depth 2.2 m · draft 1.9 m",
+    "Spring LW tonight"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You have sailed from the Ionian to the Gulf of Gabès and anchored at high water on a wide shallow bank. What do you expect at low water?",
+  "a": "Aground — the depth falls by about 2 m",
+  "o": [
+   "Afloat — Mediterranean tides are tiny",
+   "Afloat — the drop is only about 0.2 m",
+   "Afloat — the bank dries only in a gale"
+  ],
+  "why": "The Gulf of Gabès has the Mediterranean's largest tides, up to about 2 m at springs: 2.5 − 2.0 = 0.5 m.",
+  "ref": "Tides — the Mediterranean",
+  "fig": {
+   "type": "card",
+   "title": "Gulf of Gabès, Tunisia",
+   "lines": [
+    "Almanac: spring range here up to 2 m",
+    "Anchored at HW in 2.5 m · draft 1.9 m",
+    "Last week: Ionian, range 0.2 m"
+   ],
+   "tag": "Springs"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are in a shallow Ionian harbour with little water under the keel, and a deep low is coming. What will change the water level most over the next day?",
+  "a": "The weather — the pressure and the wind",
+  "o": [
+   "The tide — its 0.2 m range twice a day",
+   "The tide — tonight is the full moon",
+   "Nothing — the harbour is enclosed"
+  ],
+  "why": "Where the range is 0.2 m, a deep low (about +0.2 m) and a gale's surge or set-down move the level more than the tide.",
+  "ref": "Tides — the Mediterranean",
+  "fig": {
+   "type": "card",
+   "title": "Ionian harbour",
+   "lines": [
+    "Almanac: tidal range 0.2 m",
+    "Coming: low 990 hPa, S gale",
+    "Keel 0.4 m off the bottom"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "The boatyard up the drying creek can only take you on a big spring high water. Today the moon is at first quarter. When do you book the lift?",
+  "a": "In about 8–9 days, just after the full moon",
+  "o": [
+   "Today, while the moon is at first quarter",
+   "In about 4 days, as the moon waxes",
+   "In about 15 days, at the next first quarter"
+  ],
+  "why": "First quarter brings neaps; the full moon comes about 7 days later and springs a day or two after it — in about 8–9 days.",
+  "ref": "Tides — springs and neaps",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — moon",
+   "lines": [
+    "Today: first quarter",
+    "Full moon: in 7 days",
+    "Boatyard: spring HW only"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You went out over the bar on this morning's high water at 1015. You want to come back in on tomorrow morning's high water. About when will it be?",
+  "a": "About 1105",
+  "o": [
+   "About 1015",
+   "About 1040",
+   "About 1215"
+  ],
+  "why": "Two tides a day of about 12 h 25 min each: the same HW tomorrow is about 24 h 50 min later — 1015 + 0050 = 1105.",
+  "ref": "Tides — the semi-diurnal cycle",
+  "fig": {
+   "type": "card",
+   "title": "Tide table",
+   "lines": [
+    "HW this morning: 1015",
+    "Semi-diurnal port",
+    "Tomorrow's page is missing"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You plan to anchor this weekend in a bay with a small margin at low water. The almanac shows the moon at perigee on the day of the full moon. What do you expect of these springs?",
+  "a": "A bigger range than usual — lower low waters",
+  "o": [
+   "A smaller range — perigee damps the tide",
+   "The usual range — perigee makes no difference",
+   "Higher low waters — the moon lifts the sea"
+  ],
+  "why": "At perigee the moon is nearest and pulls hardest: perigean springs have larger ranges, so LW falls below its mean.",
+  "ref": "Tides — causes",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — this weekend",
+   "lines": [
+    "Full moon: Saturday",
+    "Moon at perigee: Saturday",
+    "Your margin at mean spring LW: 0.3 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You want to avoid the day when the streams in the sound run hardest this week. Which day is that, from the port's tide table?",
+  "a": "Friday — the largest range, 5.0 m",
+  "o": [
+   "Saturday — the highest HW, 5.6 m",
+   "Thursday — the first HW over 5 m",
+   "Sunday — the day after the highest HW"
+  ],
+  "why": "Stream rates follow the range, not the HW height: Friday 5.5 − 0.5 = 5.0 m beats Saturday 5.6 − 0.8 = 4.8 m.",
+  "ref": "Tides — tide tables",
+  "fig": {
+   "type": "card",
+   "title": "Tide table — this week",
+   "lines": [
+    "Thu  HW 5.2 m · LW 0.9 m",
+    "Fri  HW 5.5 m · LW 0.5 m",
+    "Sat  HW 5.6 m · LW 0.8 m",
+    "Sun  HW 5.4 m · LW 1.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You want to take the boat into the creek behind the drying bank at high water. On which tides can you get in with your margin?",
+  "a": "Springs only — 2.6 m over the bank, 1.2 m at neaps",
+  "o": [
+   "Neaps only — the stream over the bank is weaker",
+   "Springs and neaps — 4.2 m is plenty for 1.5 m",
+   "Neither — the bank dries higher than your draft"
+  ],
+  "why": "Water over the bank at HW = HW − 3.0: springs 2.6 m (1.1 m under the keel); neaps 1.2 m, less than the 1.5 m draft.",
+  "ref": "Tides — drying heights",
+  "fig": {
+   "type": "card",
+   "title": "The creek over the bank",
+   "lines": [
+    "Bank dries 3.0 m",
+    "MHWS 5.6 m · MHWN 4.2 m",
+    "Draft 1.5 m · want 0.5 m under the keel"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "At neaps you lie here comfortably, with water under the keel at low water. You plan to stay on into springs. What will you have at a spring low water?",
+  "a": "0.1 m of water — the keel is on the bottom",
+  "o": [
+   "1.5 m of water — the same as at neaps",
+   "2.3 m of water — springs bring more water",
+   "0.9 m of water — the drying height added"
+  ],
+  "why": "Water over a drying height = tide − 0.4: neaps 1.9 − 0.4 = 1.5 m; springs 0.5 − 0.4 = 0.1 m — the 1.2 m keel sits on the sand.",
+  "ref": "Tides — springs and neaps",
+  "fig": {
+   "type": "chart",
+   "land": "M0 200 V165 C70 150 130 175 200 162 C250 152 290 168 320 160 V200 Z",
+   "depths": [
+    [
+     176,
+     126,
+     "0.4",
+     true
+    ],
+    [
+     80,
+     140,
+     "1.1",
+     true
+    ],
+    [
+     60,
+     80,
+     "3"
+    ],
+    [
+     140,
+     60,
+     "5"
+    ],
+    [
+     250,
+     120,
+     "2"
+    ]
+   ],
+   "boat": [
+    150,
+    112,
+    200
+   ],
+   "labels": [
+    [
+     265,
+     186,
+     "beach",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Levels",
+    "MLWN 1.9 m",
+    "MLWS 0.5 m",
+    "Draft 1.2 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You plan to lock out of the marina at high water. What time is high water on the ship's clock?",
+  "a": "1346",
+  "o": [
+   "1146",
+   "1246",
+   "0946"
+  ],
+  "why": "The almanac gives UT: add 2 h for French summer time — 1146 + 2 h = 1346.",
+  "ref": "Tides — tide tables",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — Saint-Quay",
+   "lines": [
+    "Times in UT",
+    "HW 1146 UT · 9.9 m",
+    "Ship's clock: French summer time, UT+2"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are at anchor waiting for the flood to carry you over the shallows. Using the rule of twelfths, what is the height of tide at 1100?",
+  "a": "3.8 m",
+  "o": [
+   "3.4 m",
+   "4.0 m",
+   "2.5 m"
+  ],
+  "why": "Range = 5.2 − (−0.3) = 5.5 m. LW+4: −0.3 + 9/12 × 5.5 = 3.8 m.",
+  "ref": "Tides — rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Tide table — springs",
+   "lines": [
+    "LW 0700  −0.3 m",
+    "HW 1300  5.2 m",
+    "Use the rule of twelfths"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are leaving the marina on the ebb and need 3.0 m of tide for the sill. Until what time is there that much?",
+  "a": "1115",
+  "o": [
+   "1100",
+   "1130",
+   "1000"
+  ],
+  "why": "3.0 m is mid-range, (5.4 + 0.6) ÷ 2, reached at mid-ebb: half of 6 h 30 min after HW — 0800 + 3 h 15 min = 1115.",
+  "ref": "Tides — rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Tide table",
+   "lines": [
+    "HW 0800  5.4 m",
+    "LW 1430  0.6 m",
+    "Sill: you need 3.0 m of tide"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You reach the shallow entrance to the anchorage at 1030 on the ebb. Using the rule of twelfths, what height of tide do you expect?",
+  "a": "4.8 m",
+  "o": [
+   "4.4 m",
+   "5.2 m",
+   "5.0 m"
+  ],
+  "why": "First hour 1/12 × 4.8 = 0.4 m; half the second hour, another 1/12 = 0.4 m: 5.6 − 0.8 = 4.8 m.",
+  "ref": "Tides — rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Tide table",
+   "lines": [
+    "HW 0900  5.6 m",
+    "LW 1500  0.8 m",
+    "At the entrance: 1030"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are working out heights for a day in this port. When is your crew's rule-of-twelfths answer most likely to be wrong?",
+  "a": "Near HW, while the level hardly changes",
+  "o": [
+   "At mid-flood, in the third and fourth hours",
+   "At LW, as the flood begins",
+   "Evenly, through every hour of the tide"
+  ],
+  "why": "Twelfths assume a smooth, sine-shaped curve; through a long stand the level barely moves, so twelfths overstate the change near HW.",
+  "ref": "Tides — rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — port notes",
+   "lines": [
+    "Tidal curve: flat top",
+    "Stand of the tide at HW: about 2 h",
+    "Crew works heights by twelfths"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You want to leave over the sill at 1400. Your crew's rule of twelfths says there isn't enough water. Can you go?",
+  "a": "Yes — the curve gives 5.1 m at 1400",
+  "o": [
+   "No — the twelfths give 4.4 m at 1400",
+   "No — the curve gives 4.4 m at 1400",
+   "Yes — the twelfths give 5.1 m at 1400"
+  ],
+  "why": "Use the curve where there is a stand: 0.8 + 0.90 × 4.8 = 5.1 m, enough for the 4.8 m needed. Twelfths give 5.6 − 1.2 = 4.4 m.",
+  "ref": "Tides — tidal curves",
+  "fig": {
+   "type": "card",
+   "title": "Leaving over the sill",
+   "lines": [
+    "HW 1200  5.6 m · LW 1800  0.8 m",
+    "Port curve: HW+1 0.98 · HW+2 0.90",
+    "Sill: you need 4.8 m of tide"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "Your crew wants a late breakfast before you go. The tide is falling, and you want 0.5 m under the keel over the marina sill. By the rule of twelfths, until when can you still leave?",
+  "a": "1030",
+  "o": [
+   "1130",
+   "0930",
+   "1100"
+  ],
+  "why": "Need 1.8 + 2.1 + 0.5 = 4.4 m of tide. HW+2: 5.6 − 3/12 × 4.8 = 4.4 m — at 1030; then it falls 1.2 m in the next hour.",
+  "ref": "Tides — sills and bars",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V110 H200 V40 H120 V110 H0 Z",
+   "depths": [
+    [
+     160,
+     112,
+     "1.8",
+     true
+    ],
+    [
+     100,
+     150,
+     "3"
+    ],
+    [
+     230,
+     160,
+     "4"
+    ]
+   ],
+   "marks": [
+    [
+     123,
+     114,
+     "r",
+     ""
+    ],
+    [
+     197,
+     114,
+     "g",
+     ""
+    ]
+   ],
+   "boat": [
+    160,
+    80,
+    180
+   ],
+   "labels": [
+    [
+     160,
+     56,
+     "marina",
+     "middle"
+    ],
+    [
+     160,
+     132,
+     "sill",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Tide",
+    "HW 0830  5.6 m",
+    "LW 1430  0.8 m",
+    "Draft 2.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You will cross the bar on the way out at 1600. By the rule of twelfths, what depth will you find over it?",
+  "a": "2.9 m — 1.1 m under the keel",
+  "o": [
+   "1.9 m — 0.1 m under the keel",
+   "3.2 m — 1.4 m under the keel",
+   "3.8 m — 2.0 m under the keel"
+  ],
+  "why": "HW+4: 4.6 − 9/12 × 3.6 = 1.9 m of tide; + 1.0 m charted = 2.9 m, 1.1 m under a 1.8 m keel.",
+  "ref": "Tides — sills and bars",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H140 V55 C120 68 100 70 0 78 Z M180 0 H320 V75 C230 70 200 68 180 55 Z",
+   "depths": [
+    [
+     160,
+     92,
+     "1.0"
+    ],
+    [
+     100,
+     140,
+     "3"
+    ],
+    [
+     70,
+     175,
+     "5"
+    ],
+    [
+     230,
+     165,
+     "6"
+    ]
+   ],
+   "boat": [
+    160,
+    36,
+    180
+   ],
+   "labels": [
+    [
+     160,
+     108,
+     "bar",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Tide",
+    "HW 1200  4.6 m",
+    "LW 1800  1.0 m",
+    "Bar at 1600",
+    "Draft 1.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your plan gives 0.3 m under the keel crossing the bar at 2200 on the falling tide, in the dark. What do you do?",
+  "a": "Cross at 2130 — about 0.5 m under the keel",
+  "o": [
+   "Cross at 2200 — 0.3 m is enough at night",
+   "Cross at 2230 — the ebb will have eased",
+   "Cross at 2200 — and slow right down on the bar"
+  ],
+  "why": "On a falling tide every minute late costs water: half an hour earlier adds 0.4 × 0.5 = 0.2 m — 0.5 m under the keel.",
+  "ref": "Tides — clearance under the keel",
+  "fig": {
+   "type": "card",
+   "title": "Bar crossing tonight",
+   "lines": [
+    "Ebb · tide falling about 0.4 m an hour",
+    "Planned 2200: 0.3 m under the keel",
+    "Dark, slight swell on the bar"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "The crew are taking the tender ashore from the anchorage. They need 0.4 m of water at the foot of the slipway to get back off. By the rule of twelfths, when must they be back?",
+  "a": "By 1500",
+  "o": [
+   "By 1600",
+   "By 1400",
+   "By 1430"
+  ],
+  "why": "Need 2.4 + 0.4 = 2.8 m of tide. HW+3: 5.2 − 6/12 × 4.8 = 2.8 m — at 1500.",
+  "ref": "Tides — drying heights",
+  "fig": {
+   "type": "card",
+   "title": "Shore trip",
+   "lines": [
+    "HW 1200  5.2 m · LW 1800  0.4 m",
+    "Foot of the slipway dries 2.4 m",
+    "Tender needs 0.4 m of water"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are working the height of tide from the port's curve diagram, which has a spring and a neap curve. Which curve do you read today?",
+  "a": "The spring curve — today is close to springs",
+  "o": [
+   "The neap curve — it is the safer, lower one",
+   "Halfway between the two, every day",
+   "Either — the two curves give the same"
+  ],
+  "why": "Today's 5.8 m range is almost the 5.9 m mean spring range: read the spring curve; interpolate only for ranges in between.",
+  "ref": "Tides — tidal curves",
+  "fig": {
+   "type": "card",
+   "title": "Tidal curves — standard port",
+   "lines": [
+    "Two curves: springs and neaps",
+    "Mean ranges: springs 5.9 m · neaps 2.6 m",
+    "Today's range 5.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are going up river on the flood and must pass under the bridge before the tide gets too high. From the port's curve, what is the latest time?",
+  "a": "0900",
+  "o": [
+   "1000",
+   "0800",
+   "0930"
+  ],
+  "why": "Room = 10.6 + 5.0 − tide must be at least 13.5 m, so tide ≤ 2.1 m: factor (2.1 − 0.8) ÷ 5.0 = 0.26 — HW−4, 0900.",
+  "ref": "Tides — overhead clearance",
+  "fig": {
+   "type": "card",
+   "title": "Bridge on the flood",
+   "lines": [
+    "Bridge 10.6 m above MHWS (5.0 m)",
+    "LW 0700  0.8 m · HW 1300  5.8 m",
+    "Curve: HW−5 0.10 · HW−4 0.26 · HW−3 0.50",
+    "Air draught 13.0 m · margin 0.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You will cross the drying bar of the secondary port at its high water. When is that, and what will you have under the keel?",
+  "a": "1120 — 1.2 m under the keel",
+  "o": [
+   "1200 — 1.2 m under the keel",
+   "1120 — 1.6 m under the keel",
+   "1120 — 0.8 m under the keel"
+  ],
+  "why": "HW there 1140 − 0020 = 1120, 4.8 − 0.4 = 4.4 m; over the bar 4.4 − 1.5 = 2.9 m: 1.2 m under a 1.7 m keel.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port — bar",
+   "lines": [
+    "Standard port HW 1140  4.8 m",
+    "Diff: HW time −0020 · height −0.4 m",
+    "Bar dries 1.5 m · draft 1.7 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are anchored off the secondary port over a charted 1.2 m. When is low water there, and what depth will you have then?",
+  "a": "0655 — 2.2 m",
+  "o": [
+   "0525 — 2.2 m",
+   "0655 — 2.8 m",
+   "0655 — 1.0 m"
+  ],
+  "why": "LW there 0610 + 0045 = 0655, 1.3 − 0.3 = 1.0 m; depth = 1.2 charted + 1.0 = 2.2 m.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port — LW",
+   "lines": [
+    "Standard port LW 0610  1.3 m",
+    "Diff: LW time +0045 · height −0.3 m",
+    "Charted depth where you lie 1.2 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You need the time of high water at the secondary port for an early start. Interpolating the time difference, when is it?",
+  "a": "0330",
+  "o": [
+   "0350",
+   "0320",
+   "0430"
+  ],
+  "why": "0400 is 4/6 of the way from 0000 to 0600: −0010 + 4/6 × (−0030) = −0030, so HW there is at 0330.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port — HW times",
+   "lines": [
+    "Standard port HW today 0400",
+    "Diff when std HW 0000 or 1200: −0010",
+    "Diff when std HW 0600 or 1800: −0040"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are anchored for lunch over the underlined 0.4 in the bay and want 0.3 m under the keel when you weigh. By the rule of twelfths, what is the latest time to leave?",
+  "a": "1450",
+  "o": [
+   "1350",
+   "1550",
+   "1420"
+  ],
+  "why": "Need 0.4 + 1.5 + 0.3 = 2.2 m of tide. HW+4: 5.8 − 9/12 × 4.8 = 2.2 m — at 1450; after that the spot dries.",
+  "ref": "Tides — anchoring and LW",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V60 C260 70 250 150 160 160 C70 150 60 70 0 60 Z",
+   "depths": [
+    [
+     176,
+     128,
+     "0.4",
+     true
+    ],
+    [
+     100,
+     115,
+     "1.6",
+     true
+    ],
+    [
+     160,
+     92,
+     "2"
+    ],
+    [
+     80,
+     175,
+     "4"
+    ],
+    [
+     250,
+     180,
+     "6"
+    ]
+   ],
+   "boat": [
+    150,
+    116,
+    200
+   ],
+   "labels": [
+    [
+     75,
+     30,
+     "sand and dunes",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Tide",
+    "HW 1050  5.8 m",
+    "LW 1650  1.0 m",
+    "Draft 1.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You anchored at this evening's low water and are happy with the depth. What will you have under the keel at the next low water?",
+  "a": "0.2 m — 0.4 m less than tonight",
+  "o": [
+   "0.6 m — the same as tonight",
+   "1.0 m — 0.4 m more than tonight",
+   "0.5 m — the next LW height"
+  ],
+  "why": "Springs are building: the next LW is 0.4 m lower (0.5 v 0.9 m), so 2.4 − 0.4 = 2.0 m — 0.2 m under a 1.8 m keel.",
+  "ref": "Tides — anchoring and LW",
+  "fig": {
+   "type": "anchor",
+   "depth": "2.4 m",
+   "title": "Anchored at LW, 1930",
+   "lines": [
+    "Depth now 2.4 m",
+    "LW now 0.9 m",
+    "Next LW 0805: 0.5 m",
+    "Draft 1.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You must pass under the bridge near tonight's high water, and a surge is forecast. How much room will you have?",
+  "a": "14.1 m — 0.5 m to spare",
+  "o": [
+   "14.4 m — 0.8 m to spare",
+   "14.7 m — 1.1 m to spare",
+   "13.7 m — 0.1 m to spare"
+  ],
+  "why": "Room = 14.0 + (HAT 5.6 − HW 5.2 − surge 0.3) = 14.1 m: the surge eats into the HAT margin, leaving 0.5 m over 13.6 m.",
+  "ref": "Tides — overhead clearance",
+  "fig": {
+   "type": "card",
+   "title": "Bridge tonight",
+   "lines": [
+    "Clearance 14.0 m above HAT (5.6 m)",
+    "Predicted HW 2140: 5.2 m",
+    "Surge forecast: +0.3 m",
+    "Air draught 13.6 m"
+   ],
+   "tag": "Surge"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your old chart gives the bridge clearance above MHWS. You plan to pass under it at today's high water. Can you?",
+  "a": "No — 11.6 m at HW, under your 11.8 m",
+  "o": [
+   "Yes — 12.0 m is more than your 11.8 m",
+   "Yes — 12.4 m at HW (12.0 + 0.4)",
+   "No — 7.0 m at HW (12.0 − 5.0)"
+  ],
+  "why": "A clearance above MHWS shrinks when HW tops MHWS: 12.0 − (5.0 − 4.6) = 11.6 m, less than the 11.8 m air draught.",
+  "ref": "Tides — overhead clearance",
+  "fig": {
+   "type": "card",
+   "title": "Old chart — bridge",
+   "lines": [
+    "Clearance 12.0 m above MHWS (4.6 m)",
+    "HW today 5.0 m (equinoctial springs)",
+    "Air draught 11.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your crew wants to go under the bridge at high water, counting on the high pressure to lower the tide. What do you do?",
+  "a": "Wait for the ebb to give real room",
+  "o": [
+   "Go — 1038 hPa lowers HW by 0.25 m",
+   "Go slowly, watching the masthead",
+   "Go — the tables already allow for it"
+  ],
+  "why": "Pressure effects are rough estimates, not predictions: with no margin at the predicted HW, wait for the falling tide.",
+  "ref": "Tides — meteorological effects",
+  "fig": {
+   "type": "card",
+   "title": "Bridge at HW",
+   "lines": [
+    "0.1 m short at the predicted HW",
+    "Barometer 1038 hPa, steady",
+    "Crew: “the high gives us 0.25 m”"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are working up the EP at the end of a two-hour leg, 1100 to 1300, at springs. What total tide vector do you lay off?",
+  "a": "076°T, 3.6 M",
+  "o": [
+   "075°T, 1.8 M",
+   "256°T, 3.6 M",
+   "080°T, 4.0 M"
+  ],
+  "why": "Lay off each hour: 1.6 M towards 070° (HW+1), then 2.0 M towards 080° (HW+2) — together about 3.6 M towards 076°T.",
+  "ref": "Tides — tidal diamonds",
+  "fig": {
+   "type": "card",
+   "title": "Tidal diamond B (springs)",
+   "lines": [
+    "HW at the reference port: 1030",
+    "HW+1   070°   1.6 kn",
+    "HW+2   080°   2.0 kn",
+    "Leg: 1100–1300"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "The next two hours of your leg fall in the HW−2 and HW−1 rows of the diamond. How far does the stream carry you over the two hours?",
+  "a": "3.7 M towards 255°T",
+  "o": [
+   "5.0 M towards 255°T",
+   "2.4 M towards 255°T",
+   "1.9 M towards 255°T"
+  ],
+  "why": "Today is midway between neaps and springs: 1.6 + 2.1 = 3.7 M, both hours setting 255°T.",
+  "ref": "Tides — tidal diamonds",
+  "fig": {
+   "type": "card",
+   "title": "Tidal diamond E",
+   "lines": [
+    "Hour · set · springs · neaps (kn)",
+    "HW−2   255°   2.2   1.0",
+    "HW−1   255°   2.8   1.4",
+    "Range today 4.0 · sp 5.2 · np 2.8 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You will cross the bay from 1000 to 1200 and take the streams from the atlas. Which two pages do you use?",
+  "a": "HW, then HW+1",
+  "o": [
+   "HW−1, then HW",
+   "HW−1, then HW+1",
+   "HW+1, then HW+2"
+  ],
+  "why": "Each page covers the hour centred on its time: 1030 is 20 min before HW Dover (the HW page), 1130 is 40 min after (HW+1).",
+  "ref": "Tides — tidal stream atlas",
+  "fig": {
+   "type": "card",
+   "title": "Atlas and the passage",
+   "lines": [
+    "Atlas pages: HW−6 … HW+6 Dover",
+    "HW Dover: 1050",
+    "Hour 1: 1000–1100 · hour 2: 1100–1200"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are reading the tidal stream atlas for your next hour. What rate do you use today?",
+  "a": "1.8 kn",
+  "o": [
+   "2.2 kn",
+   "1.0 kn",
+   "1.6 kn"
+  ],
+  "why": "10,22 means 1.0 kn at neaps, 2.2 kn at springs. Today is 2/3 of the way from neaps to springs: 1.0 + 2/3 × 1.2 = 1.8 kn.",
+  "ref": "Tides — tidal stream atlas",
+  "fig": {
+   "type": "card",
+   "title": "Tidal stream atlas",
+   "lines": [
+    "Page: HW Dover +2",
+    "Figures by your arrow: 10,22",
+    "Ranges: sp 5.4 m · np 2.4 m · today 4.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Today's range is bigger than the mean spring range. What rate do you use for the stream at the diamond?",
+  "a": "3.3 kn",
+  "o": [
+   "3.0 kn",
+   "4.6 kn",
+   "2.2 kn"
+  ],
+  "why": "Extend the line past springs: 3.0 + (5.6 − 5.0) ÷ 3.0 × 1.6 = 3.3 kn. Capping it at 3.0 kn underestimates it.",
+  "ref": "Tides — tidal diamonds",
+  "fig": {
+   "type": "card",
+   "title": "Equinoctial springs",
+   "lines": [
+    "Rate: springs 3.0 kn · neaps 1.4 kn",
+    "Mean ranges: sp 5.0 m · np 2.0 m",
+    "Today's range 5.6 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are plotting the stream at the diamond for the time now. Which row of the table do you use?",
+  "a": "HW−5 — 5 h 25 min before the 1635 HW",
+  "o": [
+   "HW+6 — the last row after the 0410 HW",
+   "HW+7 — 7 h after the 0410 HW",
+   "HW−6 — 6 h before the 1635 HW"
+  ],
+  "why": "1110 is 7 h after the 0410 HW, past the last row: count back from the next HW — 5 h 25 min before 1635 is the HW−5 row.",
+  "ref": "Tides — tidal diamonds",
+  "fig": {
+   "type": "card",
+   "title": "Tidal diamond G",
+   "lines": [
+    "Reference port HW: 0410 and 1635",
+    "Time now: 1110",
+    "Table rows: HW−6 … HW+6"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You see these two arrows off the harbour entrance on the chart. What does the feathered arrow tell you?",
+  "a": "The flood stream, 2.5 kn at springs",
+  "o": [
+   "The ebb stream, 2.5 kn at springs",
+   "The flood stream, 2.5 kn at neaps",
+   "A current of 2.5 kn at all times"
+  ],
+  "why": "On the chart a feathered arrow is the flood stream and a plain one the ebb; the rate shown is the mean spring rate.",
+  "ref": "Tides — tidal streams",
+  "fig": {
+   "type": "card",
+   "title": "Chart — stream arrows",
+   "lines": [
+    "Arrow with a feathered tail: 2.5 kn",
+    "Plain arrow, the other way: 2 kn",
+    "Off the harbour entrance"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You want to cross the race off the point at slack water. From the diamond beside it, about when do you go?",
+  "a": "About 1240",
+  "o": [
+   "About 0940",
+   "About 1140",
+   "About 1340"
+  ],
+  "why": "The rate falls to 0.1 kn at HW+3 before the set reverses: HW Dover 0940 + 3 h = about 1240.",
+  "ref": "Tides — tidal races",
+  "fig": {
+   "type": "card",
+   "title": "Tidal diamond K (springs)",
+   "lines": [
+    "HW Dover 0940",
+    "HW+2   190°   1.4 kn",
+    "HW+3   200°   0.1 kn",
+    "HW+4   020°   1.1 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You want to leave harbour just as the stream outside turns west in your favour. When do you go?",
+  "a": "About 1530",
+  "o": [
+   "About 1130",
+   "About 1430",
+   "About 1230"
+  ],
+  "why": "Local HW 1130 is HW Dover −3, so HW Dover is 1430; the stream turns at HW Dover +1 — 1530, four hours after local HW.",
+  "ref": "Tides — tidal streams",
+  "fig": {
+   "type": "card",
+   "title": "Leaving harbour",
+   "lines": [
+    "Local HW 1130",
+    "Local HW is HW Dover −0300",
+    "Stream outside turns W-going: HW Dover +1"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are beating west along the coast against the last of the foul stream. Where does the stream turn fair first?",
+  "a": "Close inshore, in the shallower water",
+  "o": [
+   "Offshore, where the stream is strongest",
+   "Everywhere at once, at local HW",
+   "Off the headlands, where it runs fastest"
+  ],
+  "why": "The stream turns earlier close inshore, where it is weaker and the water shallower, than out in the offing.",
+  "ref": "Tides — streams along the shore",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V45 C260 60 220 40 160 55 C100 68 50 48 0 58 Z",
+   "depths": [
+    [
+     80,
+     80,
+     "3"
+    ],
+    [
+     170,
+     82,
+     "4"
+    ],
+    [
+     260,
+     78,
+     "3"
+    ],
+    [
+     90,
+     130,
+     "12"
+    ],
+    [
+     230,
+     130,
+     "15"
+    ],
+    [
+     160,
+     170,
+     "25"
+    ]
+   ],
+   "boat": [
+    250,
+    100,
+    270
+   ],
+   "labels": [
+    [
+     160,
+     155,
+     "foul stream E-going",
+     "middle"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are motoring up the winding river against the ebb. Where do you steer through each bend?",
+  "a": "The inside of the bend, out of the main stream",
+  "o": [
+   "The outside of the bend, in the deepest water",
+   "Mid-river, on the line of the channel",
+   "Wherever the river is narrowest"
+  ],
+  "why": "The stream runs hardest round the outside of a bend, where the water is deepest; it is weaker on the inside, depth permitting.",
+  "ref": "Tides — streams in channels",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 C200 40 120 70 110 200 H0 Z M320 200 V125 C250 125 195 140 190 200 Z",
+   "depths": [
+    [
+     140,
+     78,
+     "9"
+    ],
+    [
+     128,
+     135,
+     "8"
+    ],
+    [
+     215,
+     112,
+     "3"
+    ],
+    [
+     178,
+     165,
+     "3"
+    ],
+    [
+     260,
+     82,
+     "5"
+    ],
+    [
+     155,
+     110,
+     "6"
+    ]
+   ],
+   "boat": [
+    150,
+    158,
+    0
+   ],
+   "labels": [
+    [
+     250,
+     60,
+     "ebb 3 kn",
+     "middle"
+    ]
+   ],
+   "note": "Draft 1.6 m · mid-tide"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your Mediterranean passage plan takes you north through the strait under motor. What do you time the passage by?",
+  "a": "The strait's streams — go with the north-going one",
+  "o": [
+   "Nothing — Mediterranean tides are too small",
+   "The wind only — the streams follow the wind",
+   "Night — the streams are weakest after dark"
+  ],
+  "why": "The range there is small, but the streams through the narrows run to about 3 kn: time the passage for the north-going stream.",
+  "ref": "Tides — the Mediterranean",
+  "fig": {
+   "type": "card",
+   "title": "Strait of Messina",
+   "lines": [
+    "Pilot book: streams up to about 3 kn",
+    "They turn roughly every 6 h",
+    "Your speed under motor 5 kn, bound N"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are moored stern-to on a low quay at the north end of the Adriatic, and a two-day Sirocco is forecast. What do you expect of the water level?",
+  "a": "Higher than predicted — watch the lines",
+  "o": [
+   "Lower than predicted — the wind blows it out",
+   "As predicted — the tide here is too small",
+   "Lower than predicted — the low pressure"
+  ],
+  "why": "A SE Sirocco piles water into the closed north end of the Adriatic, and the falling barometer adds more: expect well above predictions.",
+  "ref": "Tides — meteorological effects",
+  "fig": {
+   "type": "card",
+   "title": "North Adriatic, Sirocco",
+   "lines": [
+    "Forecast: SE F7 for two days",
+    "Barometer 998 hPa, falling",
+    "Moored stern-to on a low quay"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "Your old boat barely out-motors the foul stream off the point. When do you leave for it?",
+  "a": "1030 — reach the point as it turns fair",
+  "o": [
+   "0930 — reach the point an hour early",
+   "1430 — leave as the point turns fair",
+   "1230 — leave two hours before the turn"
+  ],
+  "why": "18 M at 4.5 kn = 4 h: leave at 1030 to arrive at 1430. An hour early you would make about 0.5 kn against the 4 kn stream.",
+  "ref": "Tides — tidal gates",
+  "fig": {
+   "type": "card",
+   "title": "Tidal gate — slow boat",
+   "lines": [
+    "Point 18 M ahead · your speed 4.5 kn",
+    "Little stream on the way there",
+    "At the point: foul 4 kn until 1430",
+    "Fair there 1430–2030"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are heading up the channel to the harbour, and the crew wants to wait at anchor for the fair stream. What do you decide?",
+  "a": "Go now — you arrive about 40 min sooner",
+  "o": [
+   "Wait 2 h — you arrive about 40 min sooner",
+   "Wait 2 h — the foul stream halves your speed",
+   "Go now — you arrive about 2 h sooner"
+  ],
+  "why": "Now: 5 M in 2 h, then 7 M at 7.5 kn = 56 min — 2 h 56. Waiting: 2 h + 12 M at 7.5 kn = 3 h 36.",
+  "ref": "Tides — tidal gates",
+  "fig": {
+   "type": "card",
+   "title": "Up the channel to harbour",
+   "lines": [
+    "Harbour 12 M · your speed 5 kn",
+    "Now: foul stream 2.5 kn for 2 h",
+    "Then: fair stream 2.5 kn",
+    "Crew: “wait 2 h for the fair tide”"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You plan to cross the bar at tomorrow morning's spring low water. What depth do you really expect on it?",
+  "a": "About 1.5 m — you would touch",
+  "o": [
+   "About 1.9 m — 0.3 m under the keel",
+   "About 2.3 m — the weather adds water",
+   "About 1.8 m — only the pressure counts"
+  ],
+  "why": "1.6 + 0.3 = 1.9 m predicted; −0.1 m for 1023 hPa, −0.3 m of set-down: about 1.5 m, under the 1.6 m draft.",
+  "ref": "Tides — meteorological effects",
+  "fig": {
+   "type": "card",
+   "title": "Spring LW tomorrow",
+   "lines": [
+    "Predicted LW 0.3 m · bar charted 1.6 m",
+    "Barometer 1023 hPa (1 cm per hPa)",
+    "Offshore gale for 2 days: set-down 0.3 m",
+    "Draft 1.6 m"
+   ],
+   "tag": "Springs"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are drying out your catamaran on the sand over the underlined 1.8 for a scrub. By the rule of twelfths, when do both keels take the ground?",
+  "a": "1200",
+  "o": [
+   "1300",
+   "1100",
+   "1030"
+  ],
+  "why": "She grounds when the tide = 1.8 + 1.1 = 2.9 m. HW+3: 5.3 − 6/12 × 4.8 = 2.9 m — at 1200.",
+  "ref": "Tides — drying heights",
+  "fig": {
+   "type": "chart",
+   "land": "M0 200 V170 C80 160 160 178 240 165 C280 160 300 168 320 165 V200 Z",
+   "depths": [
+    [
+     176,
+     132,
+     "1.8",
+     true
+    ],
+    [
+     80,
+     150,
+     "2.2",
+     true
+    ],
+    [
+     70,
+     90,
+     "1"
+    ],
+    [
+     140,
+     60,
+     "4"
+    ],
+    [
+     250,
+     120,
+     "3"
+    ]
+   ],
+   "boat": [
+    150,
+    120,
+    180
+   ],
+   "labels": [
+    [
+     262,
+     186,
+     "sandy beach",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Tide",
+    "HW 0900  5.3 m",
+    "LW 1500  0.5 m",
+    "Cat draft 1.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You want to dry out your catamaran to scrub both hulls at low water. Where do you put her?",
+  "a": "On level, firm sand — both keels land together",
+  "o": [
+   "Against the harbour wall, a line from the mast",
+   "On soft mud, so the keels sink in gently",
+   "On the sloping beach, bows up the slope"
+  ],
+  "why": "A catamaran stands on her own keels: choose firm, level ground clear of rocks so she settles evenly — no wall or legs needed.",
+  "ref": "Tides — drying out",
+  "fig": {
+   "type": "card",
+   "title": "Drying out a catamaran",
+   "lines": [
+    "Twin keels, draft 1.1 m",
+    "Plan: scrub both hulls at LW",
+    "Spots: the harbour wall, sand, soft mud"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are rounding the headland at 0200 with a fair spring stream, and the pilot book warns that it sets onto the point. How do you pass?",
+  "a": "Well off, outside the overfalls, fixing often",
+  "o": [
+   "Close in to the point, inside the overfalls",
+   "Straight for the light, then turn away late",
+   "On the plotter track, keeping the speed up"
+  ],
+  "why": "At night you can't see the race or judge the set: give the point a wide berth and fix often, as the stream speeds up round it.",
+  "ref": "Tides — streams round headlands",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H180 C175 60 160 100 150 120 C140 100 110 70 0 60 Z",
+   "marks": [
+    [
+     150,
+     118,
+     "y",
+     "Fl 5s"
+    ]
+   ],
+   "depths": [
+    [
+     60,
+     100,
+     "18"
+    ],
+    [
+     250,
+     70,
+     "20"
+    ],
+    [
+     240,
+     175,
+     "30"
+    ]
+   ],
+   "boat": [
+    292,
+    108,
+    245
+   ],
+   "labels": [
+    [
+     150,
+     145,
+     "overfalls",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "0200 · night",
+    "Spring stream",
+    "W-going 3.5 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are approaching the river bar from seaward with an onshore swell running. When do you cross it?",
+  "a": "Late in the flood, before HW at 1420",
+  "o": [
+   "Early in the ebb, just after HW at 1420",
+   "At LW, once the ebb has finished",
+   "Any time — the swell decides, not the stream"
+  ],
+  "why": "The ebb running out against an onshore swell makes the bar steep and breaking; cross on the last of the flood, with the most water.",
+  "ref": "Tides — wind against tide",
+  "fig": {
+   "type": "card",
+   "title": "River bar, W swell",
+   "lines": [
+    "Onshore swell 1.5 m · wind W F5",
+    "Ebb runs out over the bar at 3 kn",
+    "HW 1420"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your EP is in the bay, close to diamond B; diamond A is out in the main channel. Which stream do you use?",
+  "a": "B — the nearer, in the same water as you",
+  "o": [
+   "A — the main channel's stream is stronger",
+   "The mean of A and B, to be safe",
+   "Neither — a bay has no tidal stream"
+  ],
+  "why": "Use the diamond nearest you and in the same kind of water; average two only when they are about equally near.",
+  "ref": "Tides — tidal diamonds",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 C250 50 230 110 150 115 C80 110 60 50 0 45 Z",
+   "marks": [
+    [
+     120,
+     100,
+     "w",
+     "B"
+    ],
+    [
+     200,
+     175,
+     "w",
+     "A"
+    ]
+   ],
+   "depths": [
+    [
+     200,
+     100,
+     "6"
+    ],
+    [
+     80,
+     75,
+     "4"
+    ],
+    [
+     70,
+     165,
+     "22"
+    ],
+    [
+     270,
+     140,
+     "25"
+    ]
+   ],
+   "boat": [
+    155,
+    84,
+    90
+   ],
+   "labels": [
+    [
+     200,
+     150,
+     "main channel",
+     "middle"
+    ]
+   ],
+   "note": "Diamonds A and B · depths in metres"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "In fog you are following the 5 m contour into the bay by echo sounder. What reading keeps you on it?",
+  "a": "5.5 m",
+  "o": [
+   "7.3 m",
+   "5.0 m",
+   "0.9 m"
+  ],
+  "why": "Depth over the 5 m contour = 5.0 + 2.3 = 7.3 m; the sounder reads below the keel: 7.3 − 1.8 = 5.5 m.",
+  "ref": "Tides — depth of water",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V45 C240 55 200 40 140 55 C80 68 40 50 0 58 Z",
+   "depths": [
+    [
+     60,
+     85,
+     "3"
+    ],
+    [
+     110,
+     105,
+     "5"
+    ],
+    [
+     170,
+     110,
+     "5"
+    ],
+    [
+     230,
+     100,
+     "5"
+    ],
+    [
+     140,
+     160,
+     "9"
+    ],
+    [
+     60,
+     140,
+     "7"
+    ]
+   ],
+   "track": "M300 115 L230 105 L170 115 L110 110 L50 100",
+   "boat": [
+    298,
+    116,
+    275
+   ],
+   "labels": [
+    [
+     200,
+     135,
+     "5 m contour",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Fog",
+    "Tide now 2.3 m",
+    "Sounder below keel",
+    "Draft 1.8 m"
+   ],
+   "note": "Depths below chart datum"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are alongside a quay wall in a big-tide harbour, with your lines led up to the bollards. How much will the level fall in the next hour?",
+  "a": "1.5 m",
+  "o": [
+   "1.0 m",
+   "0.5 m",
+   "3.0 m"
+  ],
+  "why": "1100–1200 is the fourth hour of the ebb: 3/12 of the 6.0 m range, 1.5 m — the lines need easing as she drops.",
+  "ref": "Tides — rule of twelfths",
+  "fig": {
+   "type": "card",
+   "title": "Alongside the wall",
+   "lines": [
+    "HW 0800 · LW 1400 · range 6.0 m",
+    "Now 1100",
+    "Lines led up to bollards on the quay"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are using an old chart of a quiet anchorage, and tomorrow brings a big spring low water. What may you find there?",
+  "a": "Less water than the chart shows",
+  "o": [
+   "Never less than the charted depth",
+   "Exactly the charted depth",
+   "Always more water than charted"
+  ],
+  "why": "MLWS is a mean, not the lowest level: a big spring LW falls below it, so you can find less than charted. Modern charts use LAT.",
+  "ref": "Tides — chart datum",
+  "fig": {
+   "type": "card",
+   "title": "Old chart — title panel",
+   "lines": [
+    "Soundings reduced to MLWS",
+    "Tomorrow: a big spring LW",
+    "Planned anchorage: charted 2.0 m"
+   ]
+  }
+ }
+]

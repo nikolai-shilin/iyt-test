@@ -74,6 +74,10 @@ const TEST_ICONS = {
   beacon: '<rect x="9" y="12" width="6" height="9" rx="1.5"/><path d="M12 12V3"/><path d="M8.5 2.5a4 4 0 0 0 0 5M15.5 2.5a4 4 0 0 1 0 5"/>',
   licence: '<rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M5.5 15.5c.5-1.3 1.4-2 2.5-2s2 .7 2.5 2M14 10h4M14 14h3"/>',
 
+  /* ---- Yachtmaster Coastal: tides, the passage ---- */
+  tide: '<path d="M3 17c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/><path d="M3 21c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/><path d="M12 13V3M8.5 6.5 12 3l3.5 3.5"/>',
+  route: '<circle cx="5" cy="19" r="2"/><circle cx="19" cy="5" r="2"/><path d="M7 19h6a3 3 0 0 0 0-6h-2a3 3 0 0 1 0-6h6"/>',
+
   /* ---- the charter check-in: electrics, water and gas, the inventory ---- */
   battery: '<rect x="2" y="7" width="17" height="10" rx="2"/><path d="M19 10h1.5a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H19"/><path d="M6 10v4M9.5 10v4M13 10v4"/>',
   drop: '<path d="M12 2.5c3.5 4.5 7 8 7 12a7 7 0 0 1-14 0c0-4 3.5-7.5 7-12z"/><path d="M8.5 14.5a3.5 3.5 0 0 0 3 3.5"/>',
@@ -97,6 +101,7 @@ const TEST_ICON_GROUPS = [
   ['Weather', ['wind', 'cloud', 'barometer']],
   ['Radio', ['vhf', 'radio', 'mic', 'flag-alpha', 'mmsi', 'megaphone', 'beacon', 'licence']],
   ['Charter check-in', ['battery', 'drop', 'clipboard']],
+  ['Yachtmaster Coastal', ['tide', 'route']],
 ];
 
 const appIcon = (n, s = 24) => rycIcon(n, s);

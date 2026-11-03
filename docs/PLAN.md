@@ -45,7 +45,7 @@ app defaults to verify against the current IYT exam before release.
 ## Next
 
 - Question banks done: VHF Radio Operator, International Crew, Flotilla Skipper (200 each, English + Russian),
-  Charter Check-in (500), Bareboat Skipper and Racing Rules of Sailing (1000 each). Next: Yachtmaster Coastal; review the new banks with an instructor.
+  Charter Check-in (500), Bareboat Skipper, Yachtmaster Coastal and Racing Rules of Sailing (1000 each). Next: ICC, Yachtmaster Offshore; review the new banks with an instructor.
 - Schema: `levels`, `topics`, `questions`, `question_translations`, `answers`, `exam_sessions`, `users` (Supabase).
 - Deploy `miniapp/dist` over HTTPS, set `WEBAPP_URL`, run `npm run bot:setup`.
 - Backend (Supabase) for the daily question schedule, reminders, translations and website sync; then the website.

@@ -31,10 +31,10 @@ const LEVELS = [
   { id: 'international-crew', prefix: 'ic', link: 'crew', title: 'International Crew' },
   { id: 'flotilla-skipper', prefix: 'fs', link: 'flotilla', title: 'Flotilla Skipper' },
   { id: 'bareboat-skipper', prefix: 'bs', link: 'bareboat', title: 'Bareboat Skipper' },
+  { id: 'yachtmaster-coastal', prefix: 'yc', link: 'coastal', title: 'Yachtmaster Coastal' },
   { id: 'racing-rules', prefix: 'rr', link: 'racing', title: 'Racing Rules of Sailing' },
   { id: 'charter-checkin', prefix: 'ci', link: 'checkin', title: 'Charter Check-in' },
   { title: 'ICC', soon: 'planned' },
-  { title: 'Yachtmaster Coastal', soon: 'soon' },
   { title: 'Yachtmaster Offshore', soon: 'soon2027' },
   { title: 'Yachtmaster Ocean', soon: 'planned' },
 ];
@@ -47,6 +47,7 @@ const TOPIC_ICONS = {
   'vhf-radio-operator': { set: 'vhf', channels: 'radio', calls: 'mic', phonetic: 'flag-alpha', dsc: 'mmsi', distress: 'flare', urgency: 'megaphone', sar: 'lifebuoy', gmdss: 'beacon', licences: 'licence' },
   'international-crew': { boat: 'yacht', sailing: 'sail', knots: 'knot', deck: 'cleat', helming: 'wheel', safety: 'lifejacket', lookout: 'binoculars', weather: 'cloud', aboard: 'mug', emergency: 'medkit' },
   'flotilla-skipper': { power: 'propeller', mooring: 'anchor', sailing: 'sail', colregs: 'rules', buoyage: 'buoy', pilotage: 'lighthouse', weather: 'barometer', systems: 'gear', skipper: 'captain', emergency: 'lifebuoy' },
+  'yachtmaster-coastal': { charts: 'map', dr: 'dividers', fixing: 'compass', tides: 'tide', pilotage: 'lighthouse', passage: 'route', colregs: 'rules', weather: 'barometer', safety: 'lifebuoy', seamanship: 'cleat' },
   'racing-rules': { definitions: 'book', rightofway: 'sail', limits: 'wheel', marks: 'buoy', obstructions: 'lighthouse', starting: 'timer', course: 'map', propulsion: 'wind', penalties: 'refresh', protests: 'trophy' },
   'charter-checkin': { papers: 'licence', hull: 'yacht', sails: 'sail', engine: 'propeller', electrics: 'battery', plumbing: 'drop', nav: 'compass', safety: 'lifejacket', ground: 'anchor', return: 'clipboard' },
 };

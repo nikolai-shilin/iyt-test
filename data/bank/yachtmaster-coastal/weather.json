@@ -1,0 +1,2557 @@
+[
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "This is the synoptic picture at noon. Where does the wind come from at your position?",
+  "a": "From about WSW",
+  "o": [
+   "From about ENE",
+   "From about S",
+   "From about N"
+  ],
+  "why": "In the north air circles a low anticlockwise, angled in towards the centre: south of it the wind is about WSW.",
+  "ref": "Pressure systems — wind round a low",
+  "fig": {
+   "type": "isobars",
+   "center": "L",
+   "values": [
+    "996",
+    "1000",
+    "1004"
+   ],
+   "boat": [
+    120,
+    166,
+    90
+   ],
+   "note": "You: south of the centre"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You want to know where the low centre lies. Where is it?",
+  "a": "On your left, a little ahead — NNW",
+  "o": [
+   "On your right, a little ahead — E",
+   "Straight ahead of you — NE",
+   "On your left, a little behind — W"
+  ],
+  "why": "Buys Ballot: back to the wind, the low is on your left in the north — a little ahead, as the wind angles in.",
+  "ref": "Buys Ballot's law",
+  "fig": {
+   "type": "card",
+   "title": "No forecast for two days",
+   "lines": [
+    "True wind: SW 5, steady",
+    "Northern hemisphere",
+    "You stand with your back to the wind"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Nothing else changes between the two charts. What mean wind do you plan for at 1200?",
+  "a": "About 24 kn — F6",
+  "o": [
+   "About 6 kn — F2",
+   "About 12 kn — F4",
+   "About 48 kn — F10"
+  ],
+  "why": "Wind goes inversely with isobar spacing: half the spacing, twice the wind — 12 × 120/60 = 24 kn, force 6.",
+  "ref": "Isobar spacing and wind strength",
+  "fig": {
+   "type": "card",
+   "title": "Two synoptic charts",
+   "lines": [
+    "Isobars every 4 hPa in your area",
+    "0000: isobars 120 M apart, SW 12 kn",
+    "1200: isobars 60 M apart"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are where the boat is drawn, on the east side of this high. Where does the wind come from?",
+  "a": "From about NNW",
+  "o": [
+   "From about SSE",
+   "From about W",
+   "From about E"
+  ],
+  "why": "Round a high in the north air turns clockwise and slightly outwards: on its east side the wind is about NNW.",
+  "ref": "Pressure systems — wind round a high",
+  "fig": {
+   "type": "isobars",
+   "center": "H",
+   "values": [
+    "1028",
+    "1024",
+    "1020"
+   ],
+   "boat": [
+    200,
+    92,
+    180
+   ],
+   "note": "You: east of the centre"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are planning the week from this chart. Where is this low in its life?",
+  "a": "Occluded and mature — it will slowly fill",
+  "o": [
+   "A young wave — it will deepen fast now",
+   "Just forming — a new low on the front",
+   "Still deepening — the warm sector widens"
+  ],
+  "why": "When the cold front catches the warm front the low occludes: its deepening is over and it begins to fill.",
+  "ref": "Polar front depression — life cycle",
+  "fig": {
+   "type": "card",
+   "title": "Synoptic chart, 1200 UTC",
+   "lines": [
+    "Low 976 hPa west of Ireland",
+    "Cold front has caught the warm front",
+    "Occlusion wrapped round the centre",
+    "Centre slowing, pressure rising slowly"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are on a day sail along the coast. What is coming, and what follows it?",
+  "a": "A warm front — rain, poorer visibility, then a veer",
+  "o": [
+   "A cold front — squalls, then clear cold air",
+   "A ridge — the cloud will clear by evening",
+   "A sea breeze — the wind dies at sunset"
+  ],
+  "why": "Cirrus, a halo, lowering altostratus, a falling glass and a backing wind: the classic approach of a warm front.",
+  "ref": "Warm front — weather sequence",
+  "fig": {
+   "type": "card",
+   "title": "Logbook, Brittany coast",
+   "lines": [
+    "0600 cirrus from W, 1016 hPa, S 3",
+    "0900 halo round the sun, 1014, S 4",
+    "1200 altostratus, sun watery, 1011",
+    "1300 wind backing SE 5"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You kept the log through the afternoon. What happened between 1600 and 1900?",
+  "a": "The warm front passed — you are in the warm sector",
+  "o": [
+   "The cold front passed — the low is behind you",
+   "The low centre passed overhead — it will clear",
+   "An occlusion passed — the wind will now die"
+  ],
+  "why": "As a warm front passes the rain eases to drizzle, the wind veers, the glass stops falling and the air turns warm and damp.",
+  "ref": "Warm front — passage",
+  "fig": {
+   "type": "card",
+   "title": "Logbook, later the same day",
+   "lines": [
+    "1600 heavy rain, SE 6, 1004 hPa",
+    "1900 rain easing to drizzle",
+    "1900 wind SW 5, 1003, steady",
+    "1900 air feels warm and damp"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You will be at sea when the front arrives. What does the front itself bring?",
+  "a": "Squalls and heavy rain, a sharp veer, the glass rising",
+  "o": [
+   "Hours of steady rain and a slow back to SE",
+   "A slow clearance and the wind dying to calm",
+   "Thickening fog and a back to the south"
+  ],
+  "why": "A cold front brings a line of squalls and heavy rain, a sudden veer to W or NW and a rising barometer.",
+  "ref": "Cold front — weather sequence",
+  "fig": {
+   "type": "card",
+   "title": "Forecast for your area",
+   "lines": [
+    "Now: SW 5, drizzle, 1003 steady",
+    "Cold front due through at 1500",
+    "Behind it: NW 6, showers"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You need a quiet night at anchor off this island. Where do you go?",
+  "a": "A — the east side, in the lee of W and NW",
+  "o": [
+   "C — the north side, best shelter from the S",
+   "B — the west side, clear of the southerly sea",
+   "Off the south beach, then move at midnight"
+  ],
+  "why": "Veering is clockwise: S to W to NW puts B and C on a lee shore tonight, while the east side is sheltered from it.",
+  "ref": "Forecast terms — veering",
+  "fig": {
+   "type": "bay",
+   "wind": 180,
+   "land": "M110 62 C140 42 200 46 216 72 C232 102 222 140 190 150 C150 162 110 146 100 116 C92 92 96 74 110 62 Z",
+   "spots": [
+    [
+     256,
+     106,
+     "A"
+    ],
+    [
+     62,
+     104,
+     "B"
+    ],
+    [
+     162,
+     24,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     108,
+     "island",
+     "middle"
+    ]
+   ],
+   "note": "Forecast: S 5, veering W then NW 6 tonight"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "The centre passes south of you during the night. How does the wind shift?",
+  "a": "It backs through E and NE to N",
+  "o": [
+   "It veers through S and SW to W",
+   "It stays SE and dies as it passes",
+   "It veers to S, then backs to E"
+  ],
+  "why": "With the low passing to the south of you the wind backs: anticlockwise, from SE through E and NE to N.",
+  "ref": "Pressure systems — wind shifts",
+  "fig": {
+   "type": "card",
+   "title": "Synoptic forecast, Channel",
+   "lines": [
+    "Low 990 moving E along 48°N",
+    "You: anchored near 50°N",
+    "Wind now: SE 5"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "There is no front on the chart. What do you prepare for at about 1500?",
+  "a": "Squalls and a sudden veer as the trough passes",
+  "o": [
+   "A slow back to S with steady rain",
+   "Nothing much — without a front it stays mild",
+   "A slow fall to calm as the pressure rises"
+  ],
+  "why": "A trough is a line of low pressure: like a weak front it brings showers, squalls and a sharp veer as it passes.",
+  "ref": "Troughs and ridges",
+  "fig": {
+   "type": "card",
+   "title": "Inshore forecast, 0600",
+   "lines": [
+    "Trough moving E, through by 1500",
+    "Ahead of it: SW 4",
+    "With it: heavy showers, squalls",
+    "Behind it: NW 5"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "When do you sail the leg?",
+  "a": "At first light, to be in by mid-afternoon",
+  "o": [
+   "Tonight, on the easing NW wind",
+   "Mid-afternoon, once the ridge settles",
+   "Tomorrow evening, on the new S breeze"
+  ],
+  "why": "A ridge between two lows gives a short fair spell: use it early, because the next low's wind follows quickly.",
+  "ref": "Troughs and ridges",
+  "fig": {
+   "type": "card",
+   "title": "Forecast, North Brittany",
+   "lines": [
+    "Tonight: NW 7, easing 4 by dawn",
+    "Tomorrow 0600–1500: ridge, W 3, fair",
+    "Tomorrow evening: S 6–7, rain by 2100",
+    "Your leg: 35 M, about 6 h"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "Your crew says the main low is too far away to matter. What do you tell them?",
+  "a": "The secondary may bring the strongest wind of all",
+  "o": [
+   "A secondary is always weaker than the main low",
+   "At 1002 hPa the secondary is too high to matter",
+   "A secondary fills before it reaches the Channel"
+  ],
+  "why": "A secondary low on the trailing front can deepen fast and bring gales stronger than the primary's.",
+  "ref": "Secondary depressions",
+  "fig": {
+   "type": "card",
+   "title": "Synoptic chart, 0000 UTC",
+   "lines": [
+    "Primary low 975 near Iceland",
+    "Secondary 1002 forming SW of Ireland",
+    "Secondary: deepening rapidly, moving NE",
+    "Your passage: the Channel, tomorrow"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are 15 M out on a coastal passage. What does the log tell you?",
+  "a": "A fast fall — strong wind or a gale is near",
+  "o": [
+   "A normal swing — nothing to note yet",
+   "A slow fall — a little rain later today",
+   "A fall that means the low has passed"
+  ],
+  "why": "6 hPa in 3 hours is well past the 3 hPa warning sign: expect strong wind or a gale within hours.",
+  "ref": "Barometer — tendency",
+  "fig": {
+   "type": "card",
+   "title": "Barometer log",
+   "lines": [
+    "0600   1012 hPa",
+    "0700   1010.5 hPa",
+    "0800   1008.5 hPa",
+    "0900   1006 hPa"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Your crew wants to leave at 0600 now that the glass is rising. What do you say?",
+  "a": "Wait — a fast rise brings strong wind for hours",
+  "o": [
+   "Go — a rising glass always means less wind",
+   "Go — the low has passed, the sea drops at once",
+   "Wait — the glass will fall again within the hour"
+  ],
+  "why": "A quick rise behind a low means a steep gradient: strong, gusty NW wind for some hours yet.",
+  "ref": "Barometer — tendency",
+  "fig": {
+   "type": "card",
+   "title": "Night at anchor, a low passing",
+   "lines": [
+    "0200   994 hPa, lowest, SW 6",
+    "0300   996 hPa, veered NW 6",
+    "0500   1000 hPa, NW 7, squally"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You write the wind in the log. What force is it?",
+  "a": "Force 7 — near gale",
+  "o": [
+   "Force 6 — strong breeze",
+   "Force 8 — gale",
+   "Force 9 — severe gale"
+  ],
+  "why": "Beaufort goes by the mean wind: 28–33 kn is force 7. Log the gusts beside it.",
+  "ref": "Beaufort scale",
+  "fig": {
+   "type": "card",
+   "title": "Wind instrument, 10-minute mean",
+   "lines": [
+    "Mean 30 kn",
+    "Gusts 38 kn",
+    "Sea heaps up, foam blown in streaks"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "What wave height do you plan for on the open leg?",
+  "a": "2.5 to 4 m",
+  "o": [
+   "1.25 to 2.5 m",
+   "0.5 to 1.25 m",
+   "4 to 6 m"
+  ],
+  "why": "Forecast terms: slight 0.5–1.25 m, moderate 1.25–2.5 m, rough 2.5–4 m, very rough 4–6 m.",
+  "ref": "Forecast terms — sea state",
+  "fig": {
+   "type": "card",
+   "title": "Offshore forecast, next 24 h",
+   "lines": [
+    "Wind SW 6",
+    "Sea state rough",
+    "Visibility good"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "How will the sea change during your crossing?",
+  "a": "It keeps building — the wind is still young",
+  "o": [
+   "It peaks at once — the fetch alone sets it",
+   "It eases as the wind settles in",
+   "It stays slight — 80 M is a short fetch"
+  ],
+  "why": "Waves grow with wind strength, fetch and duration: a new force 6 over 80 M of open water builds the sea for hours.",
+  "ref": "Waves — fetch and duration",
+  "fig": {
+   "type": "card",
+   "title": "Crossing the gulf",
+   "lines": [
+    "N 6 set in at 0600 after a calm",
+    "Open water to the N: 80 M",
+    "Your crossing: 0800 to 1400"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You plan a leg down the open coast tomorrow. What does the swell tell you?",
+  "a": "A deep low far to the NW — get a fresh forecast",
+  "o": [
+   "Nothing — swell only follows the local wind",
+   "A sea breeze is building from the NW",
+   "The high is strengthening over you"
+  ],
+  "why": "Long-period swell runs far ahead of a deep low: get the latest forecast before any open-coast leg.",
+  "ref": "Swell",
+  "fig": {
+   "type": "card",
+   "title": "Galicia, September, 0800",
+   "lines": [
+    "Wind NE 3, sky clear",
+    "Barometer steady, 1021 hPa",
+    "New long swell from the NW, 14 s",
+    "Swell growing through the morning"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "When and how do you round the Bill?",
+  "a": "Near slack water, well outside the race",
+  "o": [
+   "At the peak of the fair SW-going stream",
+   "In the foul stream, close under the cliffs",
+   "Any time — a race only runs at neaps"
+  ],
+  "why": "The fair stream runs against the wind: SW 6 over 4 kn makes the race dangerous. Round near slack and give it a wide berth.",
+  "ref": "Wind against tide",
+  "fig": {
+   "type": "card",
+   "title": "Bound SW round the Bill",
+   "lines": [
+    "Wind SW 6, you are beating",
+    "Race off the Bill: 4 kn at springs",
+    "SW-going stream: HW+1 to HW+6",
+    "Springs today"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "How will the breeze behave through the afternoon?",
+  "a": "Build to F3–4, veer a little, die at dusk",
+  "o": [
+   "Back a little and build through the night",
+   "Die by 1300 as the land heats up",
+   "Swing off the land by 1500 and freshen"
+  ],
+  "why": "A sea breeze builds as the land heats, peaks in mid-afternoon, veers through the day in the north and dies at sunset.",
+  "ref": "Sea and land breezes",
+  "fig": {
+   "type": "card",
+   "title": "Turkish coast, July, settled",
+   "lines": [
+    "Coast runs E–W, open sea to the S",
+    "0800 calm, sky clear",
+    "1100 first ripples from the S",
+    "Cumulus forming over the hills"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are anchored at A in midsummer, in settled weather. How will this breeze change after sunrise?",
+  "a": "It dies, then a sea breeze sets in from the S",
+  "o": [
+   "It builds to F5 from the N by noon",
+   "It veers to the E and builds all day",
+   "It holds all day — it is the gradient wind"
+  ],
+  "why": "A land breeze blows off the cool land at night and dies as the sun heats it; by late morning the sea breeze takes over.",
+  "ref": "Sea and land breezes",
+  "fig": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V58 C270 70 220 50 170 66 C120 82 70 64 0 74 Z",
+   "spots": [
+    [
+     160,
+     108,
+     "A"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     30,
+     "hot, dry island",
+     "middle"
+    ]
+   ],
+   "note": "0500: light breeze off the land"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "What is this wind, and when will it ease?",
+  "a": "Katabatic — it eases after sunrise",
+  "o": [
+   "Anabatic — it builds until sunrise",
+   "A sea breeze — it eases at noon",
+   "Gradient wind — it lasts until a front"
+  ],
+  "why": "On clear nights cold air slides down the slopes: a katabatic wind, strongest before dawn, gone once the sun warms them.",
+  "ref": "Katabatic and anabatic winds",
+  "fig": {
+   "type": "card",
+   "title": "Gulf of Kotor, April, 0200",
+   "lines": [
+    "Clear, starry sky, no gradient wind",
+    "Steep slopes, snow on the peaks",
+    "Gusts to F5 pouring off the mountains"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Why is it blowing harder than forecast close inshore?",
+  "a": "Anabatic flow up the hot slopes adds to it",
+  "o": [
+   "Katabatic flow down the slopes adds to it",
+   "A land breeze off the slopes adds to it",
+   "Funnelling between two islands adds to it"
+  ],
+  "why": "On sunny afternoons warm air rises up the slopes — an anabatic wind — and strengthens the onshore sea breeze.",
+  "ref": "Katabatic and anabatic winds",
+  "fig": {
+   "type": "card",
+   "title": "Sunny afternoon, south coast of Crete",
+   "lines": [
+    "Forecast: S 3 sea breeze",
+    "Steep sun-baked slopes above the shore",
+    "Close inshore: S 4–5, towards the hills"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You plan to motor-sail through the strait at A. What wind do you expect there?",
+  "a": "Stronger, blowing along the strait from N",
+  "o": [
+   "Weaker, sheltered by the islands each side",
+   "The same NE 5 as in the open sea",
+   "Stronger, blowing across the strait from E"
+  ],
+  "why": "A strait between high land squeezes and turns the wind: it blows along the channel, and harder than outside.",
+  "ref": "Local effects — funnelling",
+  "fig": {
+   "type": "bay",
+   "wind": 45,
+   "land": "M0 0 H132 C138 50 136 140 128 200 H0 Z M320 0 H184 C178 60 182 140 190 200 H320 Z",
+   "spots": [
+    [
+     158,
+     100,
+     "A"
+    ]
+   ],
+   "labels": [
+    [
+     62,
+     100,
+     "high island",
+     "middle"
+    ],
+    [
+     256,
+     90,
+     "high island",
+     "middle"
+    ]
+   ],
+   "note": "Open sea: NE 5"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are bound east along this coast. Where do you expect the most wind and the worst sea?",
+  "a": "A — off the tip of the headland",
+  "o": [
+   "B — in open water, clear of the land",
+   "C — in the bay past the headland",
+   "Equal at A, B and C — same gradient"
+  ],
+  "why": "Wind bends and speeds up round a headland, and the stream runs hardest there: expect more wind and a confused sea off the tip.",
+  "ref": "Local effects — headlands",
+  "fig": {
+   "type": "bay",
+   "wind": 270,
+   "land": "M0 0 H320 V44 C260 48 210 50 186 60 C172 96 160 138 150 152 C140 138 128 96 114 62 C80 50 40 46 0 48 Z",
+   "spots": [
+    [
+     156,
+     176,
+     "A"
+    ],
+    [
+     54,
+     128,
+     "B"
+    ],
+    [
+     256,
+     104,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     150,
+     24,
+     "high headland",
+     "middle"
+    ]
+   ],
+   "note": "W 5 along the coast"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You motor west in calm water at A, close under the cliffs, heading for B. How do you set up?",
+  "a": "Reef before B — the full N 6 returns there",
+  "o": [
+   "Set full sail at A to use the first puffs",
+   "Full sail — the lee reaches well past B",
+   "Keep close under the cliffs — no gusts there"
+  ],
+  "why": "A high island casts a wind shadow, but its edge is sharp: the full wind returns at once, and gusts fall off the cliffs.",
+  "ref": "Local effects — wind shadow",
+  "fig": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M40 0 H280 C276 40 240 70 160 76 C80 70 44 40 40 0 Z",
+   "spots": [
+    [
+     160,
+     102,
+     "A"
+    ],
+    [
+     80,
+     154,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     30,
+     "island, cliffs 600 m",
+     "middle"
+    ],
+    [
+     20,
+     128,
+     "dark water, white horses",
+     "start"
+    ]
+   ],
+   "note": "Open sea: N 6"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You plan the coming days in the Cyclades. What do you expect?",
+  "a": "Meltemi — N 6–7 under clear skies",
+  "o": [
+   "Sirocco — S 5–6 with haze and rain",
+   "Light sea breezes only, as under a high",
+   "A S gale ahead of a cold front"
+  ],
+  "why": "High over the Balkans, low over Turkey: the gradient drives the Meltemi, N in the Cyclades, often force 6–7 for days.",
+  "ref": "Local winds — Meltemi",
+  "fig": {
+   "type": "card",
+   "title": "Synoptic chart, late July",
+   "lines": [
+    "High 1024 hPa over the Balkans",
+    "Thermal low 1004 hPa over Turkey",
+    "Isobars run N–S over the Aegean"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Kvarner, January. Where do you spend the night?",
+  "a": "B — in the lee of the island, to its SW",
+  "o": [
+   "A — under the mainland, which is upwind",
+   "A — the channel is too narrow for a sea",
+   "Either — the Bora always dies at night"
+  ],
+  "why": "The Bora falls off the mountains in violent gusts, worst right under them: shelter behind an island, well away from them.",
+  "ref": "Local winds — Bora",
+  "fig": {
+   "type": "bay",
+   "wind": 45,
+   "land": "M190 0 H320 V100 C296 84 262 56 230 30 C214 18 200 8 190 0 Z M56 96 C74 66 130 62 150 84 C166 104 146 136 108 138 C74 140 46 122 56 96 Z",
+   "spots": [
+    [
+     194,
+     74,
+     "A"
+    ],
+    [
+     78,
+     164,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     282,
+     30,
+     "mountains",
+     "middle"
+    ],
+    [
+     104,
+     104,
+     "island",
+     "middle"
+    ]
+   ],
+   "note": "Forecast: Bora NE 7, gusts 50 kn, tonight"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Which wind is setting in, and how will it develop?",
+  "a": "Sirocco — builds over a day or two, big SE seas",
+  "o": [
+   "Bora — sudden NE gusts within the hour",
+   "Mistral — cold NW wind under clear skies",
+   "Meltemi — N 6 by afternoon, then calm"
+  ],
+  "why": "Hazy humid air, Saharan dust and a slowly building SE wind: the Sirocco (Jugo), raising long seas up the Adriatic.",
+  "ref": "Local winds — Sirocco",
+  "fig": {
+   "type": "card",
+   "title": "Southern Adriatic, October",
+   "lines": [
+    "Sky milky, horizon hazy",
+    "Red dust on deck after a shower",
+    "Wind SE 4, building slowly",
+    "Barometer falling slowly; SE swell"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "Your crew says the sky is perfect and the wind is fair. What do you decide?",
+  "a": "Stay — a Mistral is building to NW 7–8",
+  "o": [
+   "Go — the front has passed, it will settle",
+   "Go — a NW wind is fair for going east",
+   "Go after the sea breeze sets in at noon"
+  ],
+  "why": "High over Biscay and low over Genoa after a cold front: the Mistral, NW 7–8 or more under clear skies, often for days.",
+  "ref": "Local winds — Mistral",
+  "fig": {
+   "type": "card",
+   "title": "Port-Camargue, April, 0700",
+   "lines": [
+    "Cold front passed at 0300",
+    "High 1030 Biscay, low 1002 Genoa",
+    "Sky clear, air cold and dry, NW 4",
+    "Plan: 40 M E across the open gulf"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Which wind is this, and what does the strait do to it?",
+  "a": "Levante — the strait squeezes and speeds it",
+  "o": [
+   "Poniente — the strait turns it to the E",
+   "Sirocco — it blows across from Africa",
+   "Mistral — it pours down from the Pyrenees"
+  ],
+  "why": "The Levante is the E wind of the Alborán Sea; the strait funnels it, so it blows far harder there than outside.",
+  "ref": "Local winds — Levante",
+  "fig": {
+   "type": "card",
+   "title": "Estepona, bound W for Cádiz",
+   "lines": [
+    "Cloud banner streaming W off the Rock",
+    "Málaga: E 3; in the strait: E 6–7",
+    "Air humid, patches of fog"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are choosing a berth for the night. From which direction must it be sheltered?",
+  "a": "North-east",
+  "o": [
+   "South-west",
+   "South-east",
+   "North-west"
+  ],
+  "why": "Poyraz is the Turkish name for the NE wind — cold and strong in winter in the Marmara and the north Aegean.",
+  "ref": "Local winds — Poyraz",
+  "fig": {
+   "type": "card",
+   "title": "Turkish forecast, Çanakkale, January",
+   "lines": [
+    "Poyraz 6–7, cold, gusty",
+    "Tomorrow: easing 4"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Your crew hopes the breeze will blow the fog away. Will it?",
+  "a": "No — sea fog lasts until the air mass changes",
+  "o": [
+   "Yes — any wind over F3 clears fog",
+   "Yes — the sun will burn it off by noon",
+   "No — but it will lift at dusk as it cools"
+  ],
+  "why": "Warm moist air over a colder sea makes advection (sea) fog: wind does not clear it — only a change of air mass does.",
+  "ref": "Fog — sea fog",
+  "fig": {
+   "type": "card",
+   "title": "Western Channel, May",
+   "lines": [
+    "Wind SW 4–5, warm moist air",
+    "Air 14°C, dew point 13°C",
+    "Sea temperature 11°C",
+    "Visibility: fog banks, 200 m"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You want to leave for a 20-mile coastal leg. When will the fog clear?",
+  "a": "By mid-morning, as the sun warms the land",
+  "o": [
+   "Not until a front brings new air",
+   "Only at nightfall, as the air cools",
+   "Not today — it drifts out and thickens"
+  ],
+  "why": "Radiation fog forms over land on clear calm nights and burns off as the sun warms the ground, usually by mid-morning.",
+  "ref": "Fog — radiation fog",
+  "fig": {
+   "type": "card",
+   "title": "River harbour, October, 0700",
+   "lines": [
+    "Clear, calm night, heavy dew",
+    "Thick fog over the river and town",
+    "Outside the bar: clear, wind W 2"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "What is cutting the visibility, and when will it improve?",
+  "a": "Frontal fog in the rain — once the front passes",
+  "o": [
+   "Radiation fog — once the sun is up",
+   "Sea fog — when the wind drops to calm",
+   "Haze from a high — not for several days"
+  ],
+  "why": "Rain falling into cold air ahead of a warm front saturates it: frontal fog, which lifts once the front has gone through.",
+  "ref": "Fog — frontal fog",
+  "fig": {
+   "type": "card",
+   "title": "Approaching the coast at night",
+   "lines": [
+    "Steady rain for six hours",
+    "Wind SE 5, barometer falling",
+    "Visibility now under 1000 m in rain",
+    "Forecast: front through by 0600"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "What is the worst visibility you plan for on the leg?",
+  "a": "Between 1000 m and 2 M",
+  "o": [
+   "Between 2 and 5 M",
+   "Less than 1000 m",
+   "More than 5 M"
+  ],
+  "why": "Forecast terms: good is over 5 M, moderate 2–5 M, poor 1000 m to 2 M, fog under 1000 m.",
+  "ref": "Forecast terms — visibility",
+  "fig": {
+   "type": "card",
+   "title": "Coastal forecast",
+   "lines": [
+    "Wind W 4–5",
+    "Visibility moderate, occasionally poor"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "How long have you got, and what do you do?",
+  "a": "About 15 min — reef down and secure now",
+  "o": [
+   "About 24 min — finish the leg first",
+   "About 40 min — reef once it is close",
+   "About 4 min — too late to reef now"
+  ],
+  "why": "6 M at 25 kn is 0.24 h = 14.4 min, about 15 min. A squall line hits hard: reef and secure before it arrives.",
+  "ref": "Thunderstorms and squall lines",
+  "fig": {
+   "type": "card",
+   "title": "Radar, 1510",
+   "lines": [
+    "Squall line on radar 6 M to the W",
+    "Moving E at about 25 kn",
+    "Your sail: full main and genoa"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "What reaches you first, and how do you prepare?",
+  "a": "A cold gust from the W, ahead of the rain — reef",
+  "o": [
+   "The rain, then the wind dies — keep full sail",
+   "A fresher SE breeze into the cell — ease sheets",
+   "Lightning only — the wind stays a light SE"
+  ],
+  "why": "Downdraughts spread out ahead of a cumulonimbus as a gust front: a sudden cold squall from the storm's side before the rain.",
+  "ref": "Thunderstorms — gust fronts",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon, Ionian",
+   "lines": [
+    "Cumulonimbus 5 M to the W, moving E",
+    "Anvil top spreading towards you",
+    "Your wind: light SE",
+    "Dark curtain of rain under the base"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "What do you check first?",
+  "a": "The through-hulls and the hull for leaks",
+  "o": [
+   "The VHF aerial lead at the masthead",
+   "The fridge and the cabin lights",
+   "The engine oil and coolant levels"
+  ],
+  "why": "A strike can blow out a through-hull or crack the hull as it leaves: look for water first, then check compass and electronics.",
+  "ref": "Thunderstorms — lightning on a yacht",
+  "fig": {
+   "type": "card",
+   "title": "Lightning strike, 1530",
+   "lines": [
+    "Strike at the masthead, crew all well",
+    "Wind instruments and VHF dead",
+    "Engine starts, no smoke below"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You plan to sail along the coast under the mountains. What do these clouds warn you of?",
+  "a": "Strong wind aloft — hard gusts off the high land",
+  "o": [
+   "Fair weather — light winds all day",
+   "Fog forming over the sea by evening",
+   "A warm front with rain within the hour"
+  ],
+  "why": "Lenticular clouds form in a strong airflow over mountains: expect violent gusts down the lee slopes, even with light wind at sea.",
+  "ref": "Clouds — lenticular",
+  "fig": {
+   "type": "card",
+   "title": "Corsica, morning",
+   "lines": [
+    "Smooth lens-shaped clouds over the peaks",
+    "They stay put while others drift by",
+    "At sea: wind W 3"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are setting up the NAVTEX receiver before a coastal passage. Which message types can you never switch off?",
+  "a": "A, B and D — nav and met warnings, SAR",
+  "o": [
+   "E only — the weather forecasts",
+   "A and E — nav warnings and forecasts",
+   "B and L — met warnings and extra nav"
+  ],
+  "why": "NAVTEX on 518 kHz: types A (navigational warnings), B (met warnings) and D (search and rescue) cannot be rejected.",
+  "ref": "Forecast sources — NAVTEX",
+  "fig": null
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are the skipper, on watch at the chart table. What do you do?",
+  "a": "Switch to Ch 23, write it down, then replan",
+  "o": [
+   "Note the time and wait for the 0700 forecast",
+   "Reply on Ch 16 to say you have received it",
+   "Stay on Ch 16 — the text is repeated there"
+  ],
+  "why": "A SÉCURITÉ on 16 announces safety information on a working channel: go there, copy it word for word, then act on it.",
+  "ref": "Forecast sources — VHF broadcasts",
+  "fig": {
+   "type": "card",
+   "title": "Night passage, 0310",
+   "lines": [
+    "Ch 16: SÉCURITÉ ×3",
+    "“Gale warning for your area”",
+    "“Listen on channel 23”"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "Until when, local time, could the gale arrive?",
+  "a": "Any time up to 2300 local",
+  "o": [
+   "Any time up to 2100 local",
+   "Any time up to 2330 local",
+   "Not before 2300 local"
+  ],
+  "why": "Imminent means within 6 h of issue: 1500 + 6 = 2100 UTC = 2300 local, and it can come at any time before that.",
+  "ref": "Forecast terms — timing",
+  "fig": {
+   "type": "card",
+   "title": "Galicia, local time UTC+2",
+   "lines": [
+    "Gale warning issued 1500 UTC",
+    "“N gale 8 imminent”",
+    "You read it at 1730 local, at sea"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "What mean wind does the warning give?",
+  "a": "41 to 47 kn",
+  "o": [
+   "34 to 40 kn",
+   "48 to 55 kn",
+   "28 to 33 kn"
+  ],
+  "why": "Severe gale is force 9: a mean of 41–47 kn. Gale 8 is 34–40 kn, storm 10 is 48–55 kn.",
+  "ref": "Forecast terms — gale warnings",
+  "fig": {
+   "type": "card",
+   "title": "Gale warning, 0500 UTC",
+   "lines": [
+    "“SW severe gale 9 later”"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "How do you set the boat up for the leg?",
+  "a": "Reef for gusts of about 25 kn",
+  "o": [
+   "Full sail — 18 kn is only force 5",
+   "Full sail, and reef if the GRIB tops 22",
+   "One reef at 1500, when the GRIB says 18"
+  ],
+  "why": "A GRIB gives a model's mean wind, without gusts or local effects: 18 kn + 40 % = 25 kn in the gusts — reef for that.",
+  "ref": "GRIB files — limits",
+  "fig": {
+   "type": "card",
+   "title": "GRIB, 0.25°, 3-hourly",
+   "lines": [
+    "1200 W 16 kn, 1500 W 18 kn",
+    "Pilot: gusts under the cliffs +40 %",
+    "Leg: 18 M along the cliffs, 1200–1500",
+    "Crew: 4, two on their first passage"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "What do you expect inside the strait?",
+  "a": "More wind, along the strait — the grid misses it",
+  "o": [
+   "NW 12 kn — the model covers the strait",
+   "Less wind — the islands shelter the strait",
+   "NW 12 kn, but backing W by evening"
+  ],
+  "why": "A 15-mile grid cannot see a 1-mile strait: funnelling between high islands is smoothed out of the GRIB.",
+  "ref": "GRIB files — resolution",
+  "fig": {
+   "type": "card",
+   "title": "GRIB for the afternoon",
+   "lines": [
+    "Model grid: 0.25° (about 15 M)",
+    "Whole area: NW 12 kn",
+    "Your route: a strait 1 M wide",
+    "Both sides: islands 500 m high"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "When does the front reach you, and what changes then?",
+  "a": "About 1800 — a veer to NW, squalls",
+  "o": [
+   "About 1800 — a back to SE and fog",
+   "About 1600 — a veer to NW, squalls",
+   "About 2400 — a veer to NW, squalls"
+  ],
+  "why": "120 M at 20 kn = 6 h: about 1800 UTC. A cold front brings squalls and a sharp veer from SW to NW.",
+  "ref": "Reading a synoptic chart",
+  "fig": {
+   "type": "card",
+   "title": "Synoptic chart, 1200 UTC",
+   "lines": [
+    "Low 984 over Scotland",
+    "Cold front 120 M W of you",
+    "Front moving E at 20 kn",
+    "You: SW 6 in the warm sector"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You can leave at 0600. Do you go?",
+  "a": "Go — in by about 1420, the refuge as plan B",
+  "o": [
+   "Stay — “later” means within 6 hours",
+   "Go at 1000 — in before the wind rises",
+   "Go — “later” means not until tomorrow"
+  ],
+  "why": "50 M at 6 kn = 8 h 20 min: in by 1420. “Later” is over 12 h after issue — after 1700 — and force 6 is within this crew.",
+  "ref": "Go/no-go decision",
+  "fig": {
+   "type": "card",
+   "title": "Forecast issued 0500",
+   "lines": [
+    "W 4–5, increasing 6 later",
+    "Your leg: 50 M at about 6 kn",
+    "Port of refuge halfway along",
+    "Crew: 4, all with night miles"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "What do you do?",
+  "a": "Bear away for the refuge and reef now",
+  "o": [
+   "Press on — the forecast gave 6 only later",
+   "Heave to and wait for the 0600 forecast",
+   "Press on, logging the barometer hourly"
+  ],
+  "why": "5 hPa in 3 hours is ahead of the forecast: the wind is coming sooner and harder. Take the short, lit refuge off the wind.",
+  "ref": "Barometer — passage decisions",
+  "fig": {
+   "type": "card",
+   "title": "Night passage, 0300",
+   "lines": [
+    "Baro: 0000 1008, 0300 1003 hPa",
+    "Forecast at 1800: SW 5, 6 later",
+    "Destination: 24 M upwind",
+    "Refuge: 9 M on a reach, lit entrance"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are in the Cyclades in late July and must make a 30-mile leg due north tomorrow. When do you leave?",
+  "a": "At 0500 — in by about 1100, ahead of the worst",
+  "o": [
+   "At 1100 — once it has settled in for the day",
+   "At 1500 — after the midday peak has passed",
+   "At 1900 — in by 0100, as it eases off"
+  ],
+  "why": "The Meltemi builds from late morning to an afternoon peak: 30 M at 5 kn = 6 h, so leave at 0500 and be in by 1100.",
+  "ref": "Local winds — Meltemi timing",
+  "fig": {
+   "type": "card",
+   "title": "Cyclades, late July",
+   "lines": [
+    "Meltemi: N 4 at dawn",
+    "Builds to N 7 from about noon",
+    "Eases to N 5 after dark",
+    "Your leg: 30 M due N, 5 kn into it"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are in Senj in February, planning to cross 15 miles south-west to Rab today, and your crew points out that a NE wind is fair. What do you decide?",
+  "a": "Stay — the Bora can hit within the hour",
+  "o": [
+   "Go now — get across before it sets in",
+   "Go — NE 3 is light and fair for Rab",
+   "Go, close under the mainland for shelter"
+  ],
+  "why": "A cap on the Velebit, a rising glass and cold air herald the Bora: its gusts come suddenly and are worst under the mountains.",
+  "ref": "Local winds — Bora signs",
+  "fig": {
+   "type": "card",
+   "title": "Senj, February, 0700",
+   "lines": [
+    "Cloud cap sitting on the Velebit ridge",
+    "Barometer rising, air turning cold",
+    "Here: NE 3, gusty; forecast: Bora",
+    "Plan: 15 M SW across to Rab"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are in Kvarner, and the coastal forecast gives the Bora gusts in km/h. What do they mean in knots and on the Beaufort scale?",
+  "a": "About 54 kn — storm force 10",
+  "o": [
+   "About 62 kn — violent storm 11",
+   "About 28 kn — near gale 7",
+   "About 45 kn — severe gale 9"
+  ],
+  "why": "100 km/h ÷ 1.852 = 54 kn: force 10 in the gusts. 62 is the figure in mph (÷ 1.609), 28 in m/s (÷ 3.6).",
+  "ref": "Local winds — Bora gusts",
+  "fig": {
+   "type": "card",
+   "title": "Coastal forecast, Kvarner",
+   "lines": [
+    "Bora NE 5–6, at times 7",
+    "Gusts up to 100 km/h under Velebit",
+    "Your leg: 12 M along the channel"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You plan a 30-mile leg outside the outer Croatian islands, and either of two forecasts of the same force is possible for the day. Which raises the bigger sea out there?",
+  "a": "The Jugo — its fetch runs the length of the sea",
+  "o": [
+   "The Bora — its gusts are far stronger",
+   "Neither — the same force gives the same sea",
+   "The Bora — cold air raises a steeper sea"
+  ],
+  "why": "Sea grows with fetch and duration: the Jugo blows over hundreds of miles of open Adriatic, the Bora over a few miles off the coast.",
+  "ref": "Local winds — the sea they raise",
+  "fig": {
+   "type": "card",
+   "title": "Two forecasts, same force",
+   "lines": [
+    "Bora NE 7: blows off the mainland",
+    "Jugo (Sirocco) SE 7: up the Adriatic",
+    "Your leg: outside the outer islands"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are weatherbound in a northern Adriatic harbour after two days of Jugo. What do you prepare for next?",
+  "a": "A sudden NE Bora on top of the old SE sea",
+  "o": [
+   "The Jugo building again as the low deepens",
+   "A slow fall to calm and a flat sea",
+   "A SW wind veering steadily into the NW"
+  ],
+  "why": "When the low moves off SE, cold air pours over the mountains: a Jugo often ends in a sudden Bora, with the SE sea still running.",
+  "ref": "Local winds — Jugo and Bora",
+  "fig": {
+   "type": "card",
+   "title": "Northern Adriatic, November",
+   "lines": [
+    "Jugo SE 6 for two days, big SE sea",
+    "Low over Italy now moving away SE",
+    "Barometer rising, air turning colder",
+    "Cloud cap forming on the mountains"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are bound east along this coast in a Mistral, and there are no dangers off it. Where do you meet the easiest sea?",
+  "a": "A — close inshore, where the fetch is short",
+  "o": [
+   "B — halfway out, clear of the gusts off the land",
+   "C — well offshore, where the wind is steady",
+   "The same everywhere — the wind is the same"
+  ],
+  "why": "An offshore wind has little fetch near the coast: the sea is slight close in and grows the further out you go.",
+  "ref": "Local winds — Mistral and fetch",
+  "fig": {
+   "type": "bay",
+   "wind": 315,
+   "land": "M0 0 H320 V50 C250 58 170 44 100 56 C60 62 30 60 0 64 Z",
+   "spots": [
+    [
+     140,
+     80,
+     "A"
+    ],
+    [
+     140,
+     120,
+     "B"
+    ],
+    [
+     140,
+     160,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     28,
+     "low coast, no dangers off",
+     "middle"
+    ],
+    [
+     162,
+     84,
+     "1 M off",
+     "start"
+    ],
+    [
+     162,
+     124,
+     "8 M off",
+     "start"
+    ],
+    [
+     162,
+     164,
+     "20 M off",
+     "start"
+    ]
+   ],
+   "note": "Mistral NW 7, off the land"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "A Mistral has kept you in Marseille since dawn, and your crew is sure it will be gone by tonight. How long do you plan to stay?",
+  "a": "Days, not hours — until the Genoa low fills",
+  "o": [
+   "Until tonight — a Mistral dies at sunset",
+   "Until tomorrow's sea breeze takes over",
+   "A few hours — it is only a passing squall"
+  ],
+  "why": "A Mistral lasts as long as the Genoa low and the high behind it hold the gradient — often several days.",
+  "ref": "Local winds — Mistral duration",
+  "fig": {
+   "type": "card",
+   "title": "Marseille, March, 1000",
+   "lines": [
+    "Mistral NW 7–8 since dawn",
+    "Cold front passed overnight",
+    "Low deepening over the Gulf of Genoa"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are coasting south on the Costa Blanca after two days of Levante and must choose a harbour for tonight. Which do you enter?",
+  "a": "B — its entrance is sheltered from the swell",
+  "o": [
+   "A — it is closer, and 2.5 m is only moderate",
+   "A — run in fast on the back of a wave",
+   "Anchor off A and wait for the swell to drop"
+  ],
+  "why": "A long Levante swell breaks on a shallow, exposed entrance: go on to the harbour whose entrance is shielded from the E.",
+  "ref": "Local winds — Levante",
+  "fig": {
+   "type": "card",
+   "title": "Costa Blanca, November",
+   "lines": [
+    "Levante E 6 for two days, still blowing",
+    "Long E swell, 2.5 m and building",
+    "A: 5 M on, entrance faces E over a bar",
+    "B: 13 M on, S-facing entrance behind mole"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are at Bozcaada in August, planning to motor 30 miles north-east up the Dardanelles this morning. Do you set off?",
+  "a": "No — a head wind on top of a foul current",
+  "o": [
+   "Yes — the current sets you up the strait",
+   "Yes — the strait is sheltered from the NE",
+   "Yes, keeping to mid-channel in the lane"
+  ],
+  "why": "The Dardanelles current runs out to the SW; a NE Poyraz adds to it and raises a steep sea. You would make little over the ground.",
+  "ref": "Local winds — Poyraz",
+  "fig": {
+   "type": "card",
+   "title": "Bozcaada, August, 0700",
+   "lines": [
+    "Forecast: Poyraz NE 6–7 for two days",
+    "Plan: 30 M NE up the Dardanelles",
+    "Surface current there: SW, 1–3 kn",
+    "Boat: 6 kn under engine in flat water"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "Your route tomorrow runs through the strait between two Cycladic islands. Where do you expect the “locally 8” of this forecast?",
+  "a": "In the straits and off the capes",
+  "o": [
+   "In the lee of the high islands",
+   "In the open sea, far from land",
+   "Only in the hours before dawn"
+  ],
+  "why": "The Meltemi accelerates where the land squeezes it: “locally 8” falls in the straits between islands and round the capes.",
+  "ref": "Forecast terms — locally",
+  "fig": {
+   "type": "card",
+   "title": "Greek forecast, Cyclades",
+   "lines": [
+    "N 6 to 7, locally 8",
+    "Sea 2.5 to 4 m in the open",
+    "Your route: the strait between two islands"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You anchor at A for the night, in the lee of this high island, with a Meltemi blowing outside. What do you prepare for?",
+  "a": "Hard gusts down the slopes — dig in, ample scope",
+  "o": [
+   "A calm night — the island blocks the wind",
+   "A swell wrapping round from the south side",
+   "The wind backing to S as the land cools"
+  ],
+  "why": "In a strong Meltemi the wind spills over a high island and falls down its lee slopes in violent gusts, often worst at night.",
+  "ref": "Local effects — lee of a high island",
+  "fig": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M60 0 H260 C262 40 232 74 190 84 C160 90 130 88 106 78 C76 66 58 36 60 0 Z",
+   "spots": [
+    [
+     160,
+     122,
+     "A"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     40,
+     "high island, 900 m",
+     "middle"
+    ]
+   ],
+   "note": "Meltemi N 7; anchored at A from dusk"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are in a river marina in October and plan to leave down the river at 0700 tomorrow. What do you expect at dawn?",
+  "a": "Radiation fog lying in the river valley",
+  "o": [
+   "Sea fog rolling in from the coast",
+   "Frontal fog in steady rain",
+   "Clear air, as a high brings fine weather"
+  ],
+  "why": "A clear, calm autumn night cools the land and the air over it to the dew point: radiation fog fills the valleys by dawn.",
+  "ref": "Fog — radiation fog",
+  "fig": {
+   "type": "card",
+   "title": "Evening forecast, 1800",
+   "lines": [
+    "High pressure, sky clearing",
+    "Wind: calm overnight",
+    "Air 14°C, dew point 10°C, cooling"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "On this spring evening you are heading towards colder water, with warm moist air blowing along your route. Where do you first expect fog?",
+  "a": "At C — the sea there is below the dew point",
+  "o": [
+   "At A — the sea is already cooler than the air",
+   "At B — within a degree of the dew point",
+   "At D — the sea must be 2°C below the dew point"
+  ],
+  "why": "Air over the sea cools to the sea temperature: fog forms where the sea is at or below the 12°C dew point — first at C, 11.5°C.",
+  "ref": "Fog — advection (sea) fog",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H34 C44 60 30 140 44 200 H0 Z",
+   "depths": [
+    [
+     88,
+     162,
+     "14°C"
+    ],
+    [
+     124,
+     128,
+     "13°C"
+    ],
+    [
+     166,
+     98,
+     "11.5°C"
+    ],
+    [
+     174,
+     60,
+     "10°C"
+    ]
+   ],
+   "marks": [
+    [
+     62,
+     158,
+     "y",
+     "A"
+    ],
+    [
+     98,
+     124,
+     "y",
+     "B"
+    ],
+    [
+     130,
+     94,
+     "y",
+     "C"
+    ],
+    [
+     150,
+     56,
+     "y",
+     "D"
+    ]
+   ],
+   "track": "M62 158 L98 124 L130 94 L150 56",
+   "panel": [
+    "SW wind, F4",
+    "Air 16°C",
+    "Dew pt 12°C"
+   ],
+   "note": "Sea temperature at each mark"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You plan to sail out of a Galician ría at 1400 for a short coastal hop. What happens to the visibility at the mouth by then?",
+  "a": "The sea breeze carries the fog bank in",
+  "o": [
+   "The sun burns the bank off by noon",
+   "The air off the land holds it out",
+   "It clears as the sea breeze freshens"
+  ],
+  "why": "The fog lies over the cold sea; the afternoon sea breeze blows it in towards the hot land and fills the mouth of the ría.",
+  "ref": "Fog — sea fog and the sea breeze",
+  "fig": {
+   "type": "card",
+   "title": "Galician ría, August, 1000",
+   "lines": [
+    "Ría clear and hot, light air off the land",
+    "Fog bank lying 3 M off the mouth",
+    "Cold sea offshore, 15°C",
+    "Sea breeze due from about 1300"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "On a night passage across the western Channel in May you log the air temperature and the dew point each hour. What do you prepare for?",
+  "a": "Fog soon — radar on, fix the position, horn ready",
+  "o": [
+   "Rain soon — a front is close behind",
+   "A calm soon — the breeze dies at dawn",
+   "Clearer air — the spread shows it drying"
+  ],
+  "why": "The air temperature has closed to within 1°C of the dew point: the air is near saturation and fog is close. Fix and prepare now.",
+  "ref": "Fog — dew point",
+  "fig": {
+   "type": "card",
+   "title": "Night log",
+   "lines": [
+    "2200 air 15.0°C, dew point 12°C",
+    "0000 air 14.0°C, dew point 12°C",
+    "0200 air 13.0°C, dew point 12°C",
+    "Wind S 3, colder water ahead"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are on passage in the Channel, and a low will pass north of you tonight, fronts and all. In which order do you expect your log entries?",
+  "a": "Rain, veer SW; drizzle; veer NW, showers",
+  "o": [
+   "Rain, back SE; back E; back NE, showers",
+   "Showers, veer NW; drizzle; back SW, rain",
+   "Fog, back SE; rain; veer SW, drizzle"
+  ],
+  "why": "North of you, the warm front veers the wind S to SW with rain, the warm sector brings drizzle, the cold front a veer to NW and showers.",
+  "ref": "Fronts — the sequence on board",
+  "fig": {
+   "type": "card",
+   "title": "Forecast for your area, 1800",
+   "lines": [
+    "Low 988 moving E, centre 150 M N of you",
+    "Warm front, then cold front tonight",
+    "Wind now: S 5, barometer falling"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You and a friend sailed through the same night, 60 miles apart on a north–south line. Comparing logs in the morning, where did the low centre pass?",
+  "a": "Between the two boats, moving E",
+  "o": [
+   "North of both boats, moving E",
+   "South of both boats, moving E",
+   "Over your boat, then turning N"
+  ],
+  "why": "A veering wind puts the centre to your north, a backing one to your south: you veered, your friend backed — it passed between you.",
+  "ref": "Depressions — the track of the centre",
+  "fig": {
+   "type": "card",
+   "title": "Same night, two boats",
+   "lines": [
+    "You (south): S 6 → SW 6 → NW 7",
+    "Friend, 60 M N: SE 6 → E 6 → NE 7",
+    "Both barometers fell, then rose"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are where the boat is drawn, and this low tracks east over the next 12 hours. How does your wind change?",
+  "a": "It veers from about SSW through W to WNW",
+  "o": [
+   "It backs from about SSW through SE to E",
+   "It stays about SSW and eases as it passes",
+   "It veers to N, then backs through W to S"
+  ],
+  "why": "South of a low moving E the centre goes by to your north: the wind veers, from about SSW now to W and WNW behind it.",
+  "ref": "Depressions — passing north of you",
+  "fig": {
+   "type": "isobars",
+   "center": "L",
+   "values": [
+    "992",
+    "996",
+    "1000"
+   ],
+   "boat": [
+    200,
+    150,
+    0
+   ],
+   "note": "Low moving E, north of you"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "Your position on this morning's chart is west of the low centre. From which direction do you expect the wind?",
+  "a": "From about NNW",
+  "o": [
+   "From about SSE",
+   "From about ENE",
+   "From about WSW"
+  ],
+  "why": "Air turns anticlockwise round a northern low, angled in: on its west side it flows south, so the wind is about NNW.",
+  "ref": "Pressure systems — wind round a low",
+  "fig": {
+   "type": "isobars",
+   "center": "L",
+   "values": [
+    "1000",
+    "1004",
+    "1008"
+   ],
+   "boat": [
+    36,
+    100,
+    0
+   ],
+   "note": "You: west of the centre"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are planning the next two days from this chart. Which way do you expect the low centre to move?",
+  "a": "ENE — along the warm-sector isobars",
+  "o": [
+   "WSW — into the warm-sector wind",
+   "N — towards the cold air",
+   "SSE — across the warm-sector isobars"
+  ],
+  "why": "A frontal low tends to move along the isobars of its warm sector, the way the warm-sector wind blows: here to the ENE.",
+  "ref": "Reading a synoptic chart — movement of a low",
+  "fig": {
+   "type": "card",
+   "title": "Synoptic chart, 0000 UTC",
+   "lines": [
+    "Low 990 hPa west of Ireland",
+    "Warm-sector isobars run WSW–ENE",
+    "Warm-sector wind: WSW 6",
+    "Fronts not yet occluded"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are on an overnight coastal passage, and an occluded front will cross you around midnight. What do you expect as it passes?",
+  "a": "Rain for some hours, then a veer to W and showers",
+  "o": [
+   "A sudden calm and fog for the rest of the night",
+   "Steady rain, with the wind backing all night",
+   "Clear skies at once, and no rain at all"
+  ],
+  "why": "An occlusion acts like a warm front and a cold front together: a band of rain, then a veer and brighter, showery air.",
+  "ref": "Fronts — occlusion",
+  "fig": {
+   "type": "card",
+   "title": "Forecast, 1800",
+   "lines": [
+    "Occlusion through your area near 0000",
+    "Ahead of it: SE 5, barometer falling",
+    "Behind it: W 5, showers"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are on a night passage, and the log shows this since midnight. What weather do you plan for the rest of the night?",
+  "a": "Gusty NW with showers and good visibility",
+  "o": [
+   "Steady rain, with the SW wind returning",
+   "Fog, as the clear air cools over the sea",
+   "A calm, then a slow back to the SE"
+  ],
+  "why": "A squall, a sharp veer and a jump in pressure: the cold front has passed. Behind it comes cold, gusty NW air with showers.",
+  "ref": "Barometer — a night passage",
+  "fig": {
+   "type": "card",
+   "title": "Night log",
+   "lines": [
+    "0100 SW 6, rain, 1002 hPa steady",
+    "0300 heavy rain, squall, SW 7",
+    "0330 veered NW 6, 1004 hPa rising",
+    "0400 rain stopped, stars to the W"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You must make a 45-mile leg to the south-east some time in the next three days. Which day do you sail?",
+  "a": "Day 2 — a fair NW 4–5 and good visibility",
+  "o": [
+   "Day 1 — sail before the front arrives",
+   "Night 1 — ride the front through fast",
+   "Day 3 — once the next low has settled"
+  ],
+  "why": "Behind the cold front a NW wind is on your quarter for a SE leg, in clear air; day 1 runs into the front, day 3 into the next low.",
+  "ref": "Reading a synoptic chart — a 48 h plan",
+  "fig": {
+   "type": "card",
+   "title": "Forecast for the next 3 days",
+   "lines": [
+    "Day 1: warm sector, SW 6, poor vis",
+    "Night 1: cold front, squalls, veer NW",
+    "Day 2: NW 4–5, showers, vis good",
+    "Day 3: next low, S 6–7, rain"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You are anchored off the coast and read this at midnight. Between which times could the low centre reach you?",
+  "a": "From about 1130 to 1600 UTC",
+  "o": [
+   "From about 0900 to 1130 UTC",
+   "From about 1600 to 0240 UTC",
+   "Not before about 0300 UTC tomorrow"
+  ],
+  "why": "“Rather quickly” is 25–35 kn: 400 M takes 11.4 to 16 h, so about 1130 to 1600 UTC. 15–25 kn would be “steadily”.",
+  "ref": "Forecast terms — speed of movement",
+  "fig": {
+   "type": "card",
+   "title": "Synoptic chart, 0000 UTC",
+   "lines": [
+    "Low 980 hPa, 400 M to the W of you",
+    "“Moving E, rather quickly”",
+    "You: anchored, open to the S and W"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are reading the forecast for your area before a coastal passage. What does the word “cyclonic” warn you of?",
+  "a": "Big, quick shifts of wind near a passing centre",
+  "o": [
+   "A steady wind from one direction all day",
+   "Light winds circling a high over you",
+   "A tropical storm on its way to you"
+  ],
+  "why": "“Cyclonic” means the centre of a low passes over or close to the area: the wind changes direction a lot, and quickly.",
+  "ref": "Forecast terms — cyclonic",
+  "fig": {
+   "type": "card",
+   "title": "Forecast for your area",
+   "lines": [
+    "“Cyclonic 6 to gale 8”",
+    "Rain, then showers",
+    "Moderate or poor"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You hear this gale warning just before leaving on a 7-hour coastal leg. Could the gale catch you at sea?",
+  "a": "Yes — it could arrive from about 1200 UTC",
+  "o": [
+   "No — not before 1800 UTC at the earliest",
+   "No — “soon” means 12 to 24 hours ahead",
+   "Yes — at any moment in the next hour"
+  ],
+  "why": "“Soon” is 6 to 12 hours from issue: from 1200 to 1800 UTC — well inside your time at sea.",
+  "ref": "Forecast terms — timing",
+  "fig": {
+   "type": "card",
+   "title": "Gale warning, issued 0600 UTC",
+   "lines": [
+    "“W gale 8 soon”",
+    "Your leg: 0800 to 1500 UTC"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You measure the isobar spacing over your area on the synoptic chart. What surface wind do you plan for at sea?",
+  "a": "About 32 kn — F7",
+  "o": [
+   "About 48 kn — F10",
+   "About 16 kn — F4",
+   "About 8 kn — F3"
+  ],
+  "why": "Half the spacing doubles the wind: 24 × 100/50 = 48 kn geostrophic; × ⅔ at the surface = 32 kn, force 7.",
+  "ref": "Isobars — the geostrophic scale",
+  "fig": {
+   "type": "card",
+   "title": "Synoptic chart, isobars every 4 hPa",
+   "lines": [
+    "Scale: 100 M apart = 24 kn geostrophic",
+    "Surface wind at sea: about ⅔ of that",
+    "Over your area: isobars 50 M apart"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Your chart's geostrophic scale is drawn for 50°N, but you are sailing at 40°N in the Mediterranean. What does the same isobar spacing give you?",
+  "a": "More — about 24 kn",
+  "o": [
+   "Less — about 17 kn",
+   "The same — 20 kn",
+   "Less — about 13 kn"
+  ],
+  "why": "The same gradient blows harder nearer the equator: 20 × 0.77 / 0.64 = 24 kn at 40°N.",
+  "ref": "Isobars — latitude and the scale",
+  "fig": {
+   "type": "card",
+   "title": "Geostrophic scale, drawn for 50°N",
+   "lines": [
+    "This spacing at 50°N: 20 kn",
+    "You: 40°N, the same spacing",
+    "Wind goes as 1 / sin(latitude)",
+    "sin 50° = 0.77, sin 40° = 0.64"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are writing up the log at midnight and must describe the barometer in forecast terms. Which word fits the tendency?",
+  "a": "Falling quickly",
+  "o": [
+   "Falling slowly",
+   "Falling",
+   "Falling very rapidly"
+  ],
+  "why": "4.5 hPa in 3 h: “slowly” is under 1.6, “falling” 1.6–3.5, “quickly” 3.6–6.0, “very rapidly” over 6.0.",
+  "ref": "Barometer — tendency terms",
+  "fig": {
+   "type": "card",
+   "title": "Barometer log",
+   "lines": [
+    "2100   1014.0 hPa",
+    "2230   1011.5 hPa",
+    "0000   1009.5 hPa"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Your crew says the boat's barometer reads wrong, so its fall tonight means nothing. What do you tell them?",
+  "a": "The 5 hPa fall in 3 h is real — prepare now",
+  "o": [
+   "It reads 3 high, so the fall is only 2 hPa",
+   "An aneroid that reads high is no use at all",
+   "Wait for the coastguard's next report"
+  ],
+  "why": "A constant error does not change the tendency: 1011 to 1006 is 5 hPa in 3 h, well past 3 — strong wind is on its way.",
+  "ref": "Barometer — the tendency",
+  "fig": {
+   "type": "card",
+   "title": "Night at anchor, 0100",
+   "lines": [
+    "2200: yours 1011, coastguard 1008 hPa",
+    "0100: yours 1006 hPa",
+    "Forecast at 1800: W 4–5"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are on a night passage with 20 miles to go at about 5 knots, and you read back the barometer log at 0500. What does it tell you?",
+  "a": "A slow fall — carry on, in by 0900, keep logging",
+  "o": [
+   "A fast fall — run for shelter now",
+   "A rise — the low has already passed",
+   "No change — stop logging it until dawn"
+  ],
+  "why": "1.5 hPa every 3 h is “falling slowly”: the change is many hours off. 20 M at 5 kn = 4 h, in by 0900 — but keep watching.",
+  "ref": "Barometer — the night log",
+  "fig": {
+   "type": "card",
+   "title": "Barometer log",
+   "lines": [
+    "2000   1018.0 hPa",
+    "2300   1016.5 hPa",
+    "0200   1015.0 hPa",
+    "0500   1013.5 hPa"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are anchored at A at dusk, lying to a light breeze off the beach, as a thunderstorm comes in from the west over the sea. What do you do?",
+  "a": "Re-anchor further out before the gust arrives",
+  "o": [
+   "Stay — the anchor is well set for the E breeze",
+   "Shorten the chain so that you swing less",
+   "Take everyone ashore until it has passed"
+  ],
+  "why": "The gust front will swing you 180° towards the beach: 30 m of chain from 40 m off leaves no room. Move out now.",
+  "ref": "Thunderstorms — at anchor",
+  "fig": {
+   "type": "bay",
+   "wind": 90,
+   "land": "M250 0 H320 V200 H240 C226 150 232 60 250 0 Z",
+   "spots": [
+    [
+     200,
+     100,
+     "A"
+    ]
+   ],
+   "labels": [
+    [
+     284,
+     96,
+     "beach",
+     "middle"
+    ],
+    [
+     200,
+     130,
+     "40 m off, 30 m chain",
+     "middle"
+    ],
+    [
+     70,
+     80,
+     "thunderstorm →",
+     "middle"
+    ]
+   ],
+   "note": "Dusk: E 2 off the beach"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You are anchored for the night and time the thunder after each flash. How far off is the storm now, and is it closing?",
+  "a": "About 3 km, closing at about 16 kn",
+  "o": [
+   "About 9 km, closing at about 48 kn",
+   "About 3 km, and moving away from you",
+   "About 5 km, closing at about 16 kn"
+  ],
+  "why": "9 s ÷ 3 = 3 km now, 15 s ÷ 3 = 5 km before: 2 km in 4 min is 30 km/h, about 16 kn towards you.",
+  "ref": "Thunderstorms — range and closing speed",
+  "fig": {
+   "type": "card",
+   "title": "Storm to the W, you at anchor",
+   "lines": [
+    "2010: flash, thunder 15 s later",
+    "2014: flash, thunder 9 s later",
+    "Sound: about 1 km every 3 s"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are anchored in a bay under high mountains on a still August day. When, and from where, do you expect trouble?",
+  "a": "Late afternoon — squalls off the mountains",
+  "o": [
+   "At dawn — squalls from the open sea",
+   "At noon — as the sea breeze peaks",
+   "Not today — the sky clears by 1600"
+  ],
+  "why": "Daytime heating builds cumulonimbus over high ground; the storms break late in the day and their gusts pour down off the hills.",
+  "ref": "Thunderstorms — over high ground",
+  "fig": {
+   "type": "card",
+   "title": "Montenegro coast, August",
+   "lines": [
+    "1100 cumulus building over the peaks",
+    "1400 towers growing, tops spreading out",
+    "No gradient wind",
+    "Forecast: isolated thunderstorms"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are alone on watch at 0200 under full sail and notice these signs to windward. What is your first move?",
+  "a": "Call the skipper and reef now",
+  "o": [
+   "Hold on — the wind drops under the cloud",
+   "Wait until lightning shows you the cloud",
+   "Bear away to outrun the cloud"
+  ],
+  "why": "A black, starless sky to windward with cold air and lightning is a squall on its way: reef before it, not in it.",
+  "ref": "Squalls — at night",
+  "fig": {
+   "type": "card",
+   "title": "Night watch, 0200",
+   "lines": [
+    "Stars vanishing to windward",
+    "Air suddenly colder",
+    "Lightning flickering inside the cloud"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Before a 30-mile leg along a coast of headlands, the GRIB on your tablet and the official coastal forecast disagree. Which do you plan on?",
+  "a": "The official forecast — reef for F6–7",
+  "o": [
+   "The GRIB — its numbers are more precise",
+   "The average of the two — about F5",
+   "The GRIB — it shows the wind hour by hour"
+  ],
+  "why": "The official forecast is a forecaster's reading of several models and local effects; a raw GRIB is one model's mean wind.",
+  "ref": "GRIB files vs the official forecast",
+  "fig": {
+   "type": "card",
+   "title": "Two forecasts for this afternoon",
+   "lines": [
+    "GRIB: W 14–16 kn all afternoon",
+    "Coastal forecast: W 6, locally 7",
+    "“Locally 7”: near the headlands"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You plan to leave at 0800 tomorrow on a 60-mile leg, and two weather models disagree about the cold front. How do you plan?",
+  "a": "Wait — on model A the front meets your arrival",
+  "o": [
+   "Go — model B gives you the whole day",
+   "Go — split them, the front comes at midnight",
+   "Go — the model with the finer grid is right"
+  ],
+  "why": "60 M at 6 kn = 10 h: in at 1800, just as model A brings the front. When models disagree, plan on the earlier one.",
+  "ref": "GRIB files — when models disagree",
+  "fig": {
+   "type": "card",
+   "title": "Two models, the same cold front",
+   "lines": [
+    "Model A: front through at 1800 tomorrow",
+    "Model B: front through at 0600 next day",
+    "Squalls and a veer to NW 7 with it",
+    "Your leg: 60 M at 6 kn from 0800"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "Your crew shows you the GRIB they downloaded in port three days ago. Which forecast do you plan today's leg on?",
+  "a": "The NAVTEX — it is the newest forecast",
+  "o": [
+   "The GRIB — it was made for today",
+   "The GRIB — it gives one exact number",
+   "Neither — the sky and the barometer"
+  ],
+  "why": "A forecast loses accuracy with age: a three-day-old model run is out of date. Plan on the latest official forecast.",
+  "ref": "GRIB files — age of the forecast",
+  "fig": {
+   "type": "card",
+   "title": "Chart table, 0700",
+   "lines": [
+    "GRIB from 3 days ago: NW 10 kn today",
+    "NAVTEX at 0400: NW 6–7 today"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You zoom in on the GRIB at your next waypoint and read this wind barb. What wind does it show?",
+  "a": "SW 25 kn",
+  "o": [
+   "NE 25 kn",
+   "SW 30 kn",
+   "SW 15 kn"
+  ],
+  "why": "A barb points into the wind, here from the SW; each long feather is 10 kn and a short one 5: 10 + 10 + 5 = 25 kn.",
+  "ref": "GRIB files — wind barbs",
+  "fig": {
+   "type": "card",
+   "title": "GRIB wind barb at the waypoint",
+   "lines": [
+    "Shaft runs from the dot towards the SW",
+    "Two long feathers, one short feather",
+    "Feathers at the far end of the shaft"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are planning an open-water leg of six hours under this forecast. What are the biggest waves you should be ready for?",
+  "a": "About 6 m, now and then",
+  "o": [
+   "About 3 m, as forecast",
+   "About 4 m, now and then",
+   "About 9 m, now and then"
+  ],
+  "why": "The forecast height is the significant wave height; over a few hours single waves of nearly twice that will come through.",
+  "ref": "Sea state — significant wave height",
+  "fig": {
+   "type": "card",
+   "title": "Offshore forecast",
+   "lines": [
+    "Wind W 7",
+    "Significant wave height 3 m",
+    "Sea state rough"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are working out the sea you will meet on the leg from the two parts of this forecast. About how high is the combined sea?",
+  "a": "About 2.5 m",
+  "o": [
+   "About 3.5 m",
+   "About 2.0 m",
+   "About 0.5 m"
+  ],
+  "why": "√(2.0² + 1.5²) = √6.25 = 2.5 m. The two heights do not simply add, and the swell alone is not the whole sea.",
+  "ref": "Sea state — swell and wind sea",
+  "fig": {
+   "type": "card",
+   "title": "Forecast, Galician coast",
+   "lines": [
+    "Swell NW 2.0 m",
+    "Wind sea N 1.5 m",
+    "Combined sea ≈ √(swell² + wind sea²)"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You are running dead downwind in a 12 m catamaran, and the instrument shows the apparent wind. What does the reefing chart tell you to do?",
+  "a": "Reef 1 now — the true wind is about 23 kn",
+  "o": [
+   "No reef — 14 kn is under the first reef",
+   "Reef 2 now — the true wind is about 28 kn",
+   "No reef — the true wind is about 5 kn"
+  ],
+  "why": "Dead downwind the true wind is the apparent plus boat speed: 14 + 9 = 23 kn, past the 18 kn first reef but short of 24.",
+  "ref": "Beaufort — true and apparent wind",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran, running dead downwind",
+   "lines": [
+    "Boat speed 9 kn, apparent wind 14 kn",
+    "Reef chart: 1st reef at 18 kn true",
+    "2nd reef at 24 kn true",
+    "A cat does not heel to warn you"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You are beating at night and must log the true wind force from the instruments. What do you write?",
+  "a": "About 19 kn — F5",
+  "o": [
+   "About 24 kn — F6",
+   "About 30 kn — F7",
+   "About 14 kn — F4"
+  ],
+  "why": "Take the boat's speed out of the apparent wind: along the bow 24 × 0.82 − 6 = 13.7, across 24 × 0.57 = 13.7; √ = 19 kn.",
+  "ref": "Beaufort — the true wind at night",
+  "fig": {
+   "type": "card",
+   "title": "Night, close-hauled",
+   "lines": [
+    "Apparent wind 24 kn, 35° off the bow",
+    "Boat speed 6 kn",
+    "cos 35° = 0.82, sin 35° = 0.57"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Your crew thinks a rise from 16 to 24 knots adds only half as much again to the load on the rig. What do you tell them?",
+  "a": "About 2¼ times — reef now",
+  "o": [
+   "About 1½ times — no change yet",
+   "About 3½ times — drop all sail",
+   "About the same — the boat heels it off"
+  ],
+  "why": "Wind load goes with the square of the speed: (24 / 16)² = 2.25, not 1.5. Reef for it.",
+  "ref": "Beaufort — wind and load",
+  "fig": {
+   "type": "card",
+   "title": "Wind rising on passage",
+   "lines": [
+    "1400: true wind 16 kn, full sail",
+    "1600: true wind 24 kn",
+    "Force on the sails goes as wind²"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "Your track crosses this offshore bank, and the forecast has just been upgraded. What do you do?",
+  "a": "Route round the bank — the sea may break on it",
+  "o": [
+   "Cross it — 6 m is plenty for a 2 m draft",
+   "Cross it near high water, for more depth",
+   "Cross it fast, to be over it sooner"
+  ],
+  "why": "Waves steepen and break where the depth falls to about their height: 3–4 m seas, and the bigger ones, will break on a 6 m bank.",
+  "ref": "Sea state — shoal water",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H70 C60 30 30 44 0 50 Z",
+   "depths": [
+    [
+     40,
+     90,
+     "32"
+    ],
+    [
+     80,
+     160,
+     "30"
+    ],
+    [
+     150,
+     104,
+     "6"
+    ],
+    [
+     128,
+     122,
+     "7"
+    ],
+    [
+     172,
+     124,
+     "8"
+    ],
+    [
+     250,
+     150,
+     "28"
+    ],
+    [
+     290,
+     120,
+     "30"
+    ]
+   ],
+   "track": "M20 128 L300 104",
+   "boat": [
+    30,
+    127,
+    85
+   ],
+   "labels": [
+    [
+     150,
+     144,
+     "bank",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "New forecast",
+    "W 7, sea rough",
+    "Waves 3–4 m",
+    "Draft 2.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 3,
+  "q": "You are bound west round the Point today with a westerly force 6 blowing. At which of these times off the Point would the sea be worst?",
+  "a": "1440",
+  "o": [
+   "0840",
+   "1140",
+   "1740"
+  ],
+  "why": "The W-going stream runs against a W wind, at its strongest at HW+4: 1040 + 4 h = 1440. At 0840 the stream runs with the wind.",
+  "ref": "Wind against tide — timing at a headland",
+  "fig": {
+   "type": "card",
+   "title": "Off the Point, springs",
+   "lines": [
+    "HW at the standard port: 1040",
+    "E-going stream: HW−5 to HW+1",
+    "W-going stream: HW+1 to HW+7, max HW+4",
+    "Wind W 6"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You will round this headland at A this afternoon, while the spring stream runs west. What sea do you expect there?",
+  "a": "Short, steep and breaking — rough, not moderate",
+  "o": [
+   "Moderate, as forecast — the stream makes no odds",
+   "Flatter than forecast — the stream smooths it",
+   "A long, low swell rolling in from the W"
+  ],
+  "why": "A W wind over a W-going stream is wind against tide: the waves shorten and steepen, and off a headland they break.",
+  "ref": "Wind against tide — sea state",
+  "fig": {
+   "type": "bay",
+   "wind": 270,
+   "land": "M0 0 H320 V40 C250 44 214 50 196 64 C182 96 176 124 160 136 C144 124 138 96 124 64 C106 50 70 44 0 40 Z",
+   "spots": [
+    [
+     160,
+     164,
+     "A"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     24,
+     "headland",
+     "middle"
+    ],
+    [
+     200,
+     124,
+     "← W-going stream, 3 kn",
+     "start"
+    ]
+   ],
+   "note": "Forecast: W 5, sea moderate"
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You plan to sail 8 miles out from this south-facing coast and back this afternoon. What wind do you expect out there?",
+  "a": "A calm belt offshore, where the two winds meet",
+  "o": [
+   "A strong S breeze — the N wind adds to it",
+   "The N 3 all day — it stops the sea breeze",
+   "A sea breeze from the N, off the land"
+  ],
+  "why": "A light offshore gradient holds the sea breeze back; where the two meet, a few miles out, lies a belt of calm, fickle air.",
+  "ref": "Sea breeze — against an offshore wind",
+  "fig": {
+   "type": "card",
+   "title": "South-facing coast, July",
+   "lines": [
+    "Gradient wind: N 3, off the land",
+    "Sky clear, land heating fast",
+    "Sea breeze expected from the S by 1300"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 2,
+  "q": "You are coasting towards a harbour whose entrance faces south over a shallow bar. When do you plan to arrive?",
+  "a": "In the morning, before the sea breeze sets in",
+  "o": [
+   "Mid-afternoon, with the breeze behind you",
+   "At 1300, while the breeze is still young",
+   "At dusk, while the sea is still running"
+  ],
+  "why": "The sea breeze blows onshore through the afternoon and builds a short sea on the bar: arrive in the calm of the morning.",
+  "ref": "Sea breeze — timing an arrival",
+  "fig": {
+   "type": "card",
+   "title": "Approach, Turkish coast, August",
+   "lines": [
+    "Entrance faces S, over a shallow bar",
+    "Mornings: calm or light N off the land",
+    "Sea breeze S 5 from about 1200 to 1800",
+    "Short steep sea builds on the bar"
+   ]
+  }
+ },
+ {
+  "topic": "weather",
+  "difficulty": 1,
+  "q": "You are cruising in Greek waters and want the NAVTEX weather in English. Which frequency do you select on the receiver?",
+  "a": "518 kHz",
+  "o": [
+   "490 kHz",
+   "4209.5 kHz",
+   "156.8 MHz"
+  ],
+  "why": "518 kHz is the international NAVTEX service, in English; 490 kHz carries the national-language broadcasts.",
+  "ref": "Forecast sources — NAVTEX",
+  "fig": null
+ }
+]

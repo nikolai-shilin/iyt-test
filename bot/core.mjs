@@ -15,7 +15,7 @@ if (!token) throw new Error('TELEGRAM_BOT_TOKEN is not set');
 export const webapp = (process.env.WEBAPP_URL || '').replace(/\/$/, '');
 
 // The levels with a bank, in IYT order, then the Racing Rules and the Charter Check-in; `link` is the mini app deep link that opens the level (miniapp/app.js LEVELS).
-const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], ['flotilla-skipper', 'flotilla'], ['bareboat-skipper', 'bareboat'], ['racing-rules', 'racing'], ['charter-checkin', 'checkin']];
+const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], ['flotilla-skipper', 'flotilla'], ['bareboat-skipper', 'bareboat'], ['yachtmaster-coastal', 'coastal'], ['racing-rules', 'racing'], ['charter-checkin', 'checkin']];
 // A bank comes from Supabase — bank() / bank_overlay() return the same shape as the files (docs/data-model.md) —
 // or, when the database is not configured or does not answer, from data/questions/<name>.json bundled with the function.
 async function read(name) {

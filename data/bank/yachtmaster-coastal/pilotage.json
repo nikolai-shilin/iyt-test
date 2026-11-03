@@ -1,0 +1,3279 @@
+[
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are checking the pilotage plan your mate wrote for tonight's entry. What is the most useful thing to add to it?",
+  "a": "What you will see at each turn and the danger past it",
+  "o": [
+   "The opening hours of the marina office",
+   "The full tidal curve for the whole day",
+   "The latitude and longitude of every mark"
+  ],
+  "why": "A pilotage plan is what you expect to see, when, and what lies beyond if you miss it — not data to look up.",
+  "ref": "Pilotage plan",
+  "fig": {
+   "type": "card",
+   "title": "Pilotage plan — Porto Vecchio",
+   "lines": [
+    "1  Fairway buoy → 047°M, 1.3 M",
+    "2  Fl G 3s abeam → 012°M, 0.6 M",
+    "3  Pier head → turn to port for the marina",
+    "Marina VHF 9"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are writing the pilotage plan card for tomorrow's entry. Why do you write every heading and bearing in degrees magnetic?",
+  "a": "The helm's compass and the hand-bearing compass read magnetic",
+  "o": [
+   "The compass rose on the chart shows magnetic only",
+   "Magnetic bearings are free of variation and deviation",
+   "The plotter can display magnetic bearings only"
+  ],
+  "why": "In the cockpit you steer and take bearings by magnetic compass — the card must need no arithmetic.",
+  "ref": "Pilotage plan",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are on leg 2 of your plan. When do you expect the turning mark abeam?",
+  "a": "2157",
+  "o": [
+   "2154",
+   "2209",
+   "2203"
+  ],
+  "why": "Use speed over the ground: 1.3 M ÷ 4.5 kn = 0.29 h = 17 min; 2140 + 17 min = 2157.",
+  "ref": "Pilotage plan — timing",
+  "fig": {
+   "type": "card",
+   "title": "Log — night entry",
+   "lines": [
+    "2140  Fairway buoy abeam",
+    "Leg 2: 047°M, 1.3 M to the Fl G 3s",
+    "Log speed 5.5 kn",
+    "SOG 4.5 kn (foul tide)"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Your plan says the turning mark should be fine to starboard by now. What do you do?",
+  "a": "Stop, fix your position and go back to the fairway buoy",
+  "o": [
+   "Press on along the heading — it will show up soon",
+   "Turn to starboard and search for the green light",
+   "Speed up to get in before the night gets darker"
+  ],
+  "why": "A mark not seen when the plan expects it means you may not be where you think: stop, fix, return to the last safe point.",
+  "ref": "Pilotage plan",
+  "fig": {
+   "type": "card",
+   "title": "Night entry",
+   "lines": [
+    "2215  Fairway buoy abeam; leg 2 is 1.0 M",
+    "Plan: Fl(2) G 6s fine to stbd by 2228",
+    "Rocks 2 cables beyond the turn",
+    "Now 2234: no green light seen"
+   ],
+   "tag": "2234"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are entering on the leading lights at night and see them like this. What do you do?",
+  "a": "You are to port of the line: come to starboard",
+  "o": [
+   "You are to starboard of the line: come to port",
+   "You are on the line: hold your heading",
+   "You are to port of the line: come further to port"
+  ],
+  "why": "Rear light open to the left of the front means you are left of the line — steer right until they are one above the other.",
+  "ref": "Leading lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 146,
+     "y": 70,
+     "t": "rear"
+    },
+    {
+     "c": "w",
+     "x": 166,
+     "y": 122,
+     "t": "front"
+    }
+   ],
+   "note": "Leading lights ahead · rear light open to the left"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "There are no leading marks into the bay, so you pick a natural transit to hold your line clear of the reef. Which pair do you choose?",
+  "a": "A chapel high on the hill behind the end of the jetty",
+  "o": [
+   "Two trees on the beach a few metres apart",
+   "A yacht at anchor in line with the beach bar",
+   "The end of the jetty in line with a moored boat"
+  ],
+  "why": "A good transit uses two fixed, easy-to-see objects far apart: the farther the rear from the front, the sooner it shows you are off.",
+  "ref": "Transits",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are entering on the charted leading line with the marks exactly in line, yet the plotter shows you here. What do you trust?",
+  "a": "The transit — the plotter's chart may be offset",
+  "o": [
+   "The plotter — GPS is good to a few metres",
+   "Neither — stop until the two agree again",
+   "The plotter — steer west to put it on the line"
+  ],
+  "why": "Marks in line put you on the line whatever the screen says; a plotter chart can be offset from GPS by tens of metres.",
+  "ref": "Pilotage with the plotter",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 C230 60 210 30 160 36 C110 42 60 30 0 46 Z",
+   "depths": [
+    [
+     120,
+     120,
+     "6"
+    ],
+    [
+     216,
+     128,
+     "1.5"
+    ],
+    [
+     190,
+     170,
+     "8"
+    ],
+    [
+     100,
+     160,
+     "9"
+    ]
+   ],
+   "marks": [
+    [
+     160,
+     30,
+     "w",
+     "rear"
+    ],
+    [
+     160,
+     60,
+     "w",
+     "front"
+    ]
+   ],
+   "track": "M160 196 L160 60",
+   "boat": [
+    196,
+    140,
+    0
+   ],
+   "labels": [
+    [
+     104,
+     96,
+     "marks in line",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Plotter",
+    "40 m east of line",
+    "over the 1.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are motoring in on the 045°M transit and keep the marks in line, but the compass shows 055°M. What does it mean?",
+  "a": "A cross-stream sets you to port; holding the transit is right",
+  "o": [
+   "A cross-stream sets you to starboard; steer 045°M",
+   "The compass has 10° of deviation; steer 045°M",
+   "The transit is wrong; steer by the compass instead"
+  ],
+  "why": "On a transit the heading is whatever keeps the marks in line: bow 10° to starboard of it means the stream sets you to port.",
+  "ref": "Transits",
+  "fig": {
+   "type": "chart",
+   "land": "M110 0 H190 C186 30 172 52 146 60 C126 64 116 30 110 0 Z",
+   "marks": [
+    [
+     170,
+     34,
+     "w",
+     "rear"
+    ],
+    [
+     140,
+     64,
+     "w",
+     "front"
+    ]
+   ],
+   "track": "M30 174 L140 64",
+   "boat": [
+    70,
+    134,
+    55
+   ],
+   "depths": [
+    [
+     60,
+     70,
+     "8"
+    ],
+    [
+     150,
+     150,
+     "11"
+    ]
+   ],
+   "labels": [
+    [
+     236,
+     130,
+     "stream ←",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Transit 045°M",
+    "Heading 055°M",
+    "Marks in line"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "What does this line of your pilotage plan tell you?",
+  "a": "The light must bear 125°T or less to keep clear",
+  "o": [
+   "The light must bear 125°T or more to keep clear",
+   "Steer 125°T straight for the light on this leg",
+   "Pass the light no more than 1.25 M off"
+  ],
+  "why": "NMT = not more than: the clearing bearing is a limit, and the plan says which side of it is safe.",
+  "ref": "Clearing bearings",
+  "fig": {
+   "type": "card",
+   "title": "Pilotage plan — leg 2",
+   "lines": [
+    "Clear of Kavos shoal:",
+    "Ak. Kavos light NMT 125°T",
+    "(shoal lies on the far side of the line)"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are coasting east at night past the shoal, using the clearing bearing on the lighthouse. Your hand-bearing compass gives the light 084°M. What do you do?",
+  "a": "Alter to starboard until it bears 080°M or less",
+  "o": [
+   "Alter to port until it bears 080°M or less",
+   "Hold course — over 080°M is the safe side",
+   "Alter to port until it bears 090°M or more"
+  ],
+  "why": "The shoal lies where the light bears more than 080°M; heading east, moving south (to starboard) brings the bearing down.",
+  "ref": "Clearing bearings",
+  "fig": {
+   "type": "chart",
+   "land": "M320 0 V200 H300 C290 170 276 140 288 116 C296 90 300 40 320 0 Z",
+   "depths": [
+    [
+     170,
+     124,
+     "1.8"
+    ],
+    [
+     205,
+     116,
+     "0.6",
+     true
+    ],
+    [
+     100,
+     60,
+     "14"
+    ],
+    [
+     230,
+     178,
+     "15"
+    ]
+   ],
+   "marks": [
+    [
+     284,
+     120,
+     "w",
+     "Lt"
+    ]
+   ],
+   "track": "M90 154 L284 120",
+   "boat": [
+    110,
+    138,
+    90
+   ],
+   "labels": [
+    [
+     150,
+     178,
+     "NMT 080°M",
+     "middle"
+    ],
+    [
+     182,
+     102,
+     "shoal",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Plan",
+    "Lt NMT 080°M",
+    "Now Lt 084°M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are heading north into the bay between two reefs. Where are you and what do you do?",
+  "a": "009°T — west of the safe corridor; come to starboard",
+  "o": [
+   "005°T — inside the corridor; hold your course",
+   "009°T — east of the safe corridor; come to port",
+   "007°T — inside the corridor; hold your course"
+  ],
+  "why": "007°M + 2°E = 009°T, over the NMT 008°T limit: the church bears too far right, so you are west — move east.",
+  "ref": "Clearing bearings",
+  "fig": {
+   "type": "card",
+   "title": "Pilotage plan — Ormos Vathi",
+   "lines": [
+    "Church bearing NLT 352°T and NMT 008°T",
+    "Variation 2°E",
+    "Hand-bearing compass: church 007°M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You want a clearing line past a reef that runs parallel to your course. Which object makes the best one?",
+  "a": "A fixed light near ahead, whose line clears the reef",
+  "o": [
+   "A tower on the beam, whose bearing changes fastest",
+   "A ship at anchor ahead, lying on the right line",
+   "Any object at all — the plotter checks the line"
+  ],
+  "why": "A clearing line runs from a fixed, charted object past the danger's edge, roughly along your track — ahead or astern.",
+  "ref": "Clearing bearings",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You leave harbour at night along the leading line, steering 040°M with the lights astern. What should they bear by hand-bearing compass?",
+  "a": "220°M",
+  "o": [
+   "040°M",
+   "140°M",
+   "320°M"
+  ],
+  "why": "A back bearing is the reciprocal: 040° + 180° = 220°.",
+  "ref": "Back bearings",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 76,
+     "t": "rear"
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 124,
+     "t": "front"
+    }
+   ],
+   "note": "Looking astern · leading lights in line"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Leaving the harbour on the planned track, you take a back bearing of the harbour light. Where are you and what do you do?",
+  "a": "East of the line: alter to port",
+  "o": [
+   "West of the line: alter to starboard",
+   "East of the line: alter to starboard",
+   "On the line: 5° is within the margin"
+  ],
+  "why": "Light astern at 205°M puts you on its 025° line, east of the 020° track — to starboard, so come to port.",
+  "ref": "Back bearings",
+  "fig": {
+   "type": "card",
+   "title": "Leaving Ermoupoli",
+   "lines": [
+    "Track 020°M away from the harbour light",
+    "Plan: light astern bearing 200°M",
+    "Now: light bears 205°M",
+    "Rocks 2 cables either side of the track"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are following the 10 m contour north at night, the land to starboard. Where are you and what do you do?",
+  "a": "6.8 m charted — inshore of it; alter to port",
+  "o": [
+   "9.6 m charted — on it; hold your course",
+   "8.2 m charted — inshore of it; alter to starboard",
+   "6.8 m charted — offshore of it; alter to starboard"
+  ],
+  "why": "Charted depth = sounding − height of tide: 8.2 − 1.4 = 6.8 m, shallower than 10 m, so you are inshore — head out.",
+  "ref": "Depth contours as a handrail",
+  "fig": {
+   "type": "chart",
+   "land": "M320 0 V200 H250 C236 160 262 120 240 80 C228 50 252 24 240 0 Z",
+   "depths": [
+    [
+     150,
+     60,
+     "14"
+    ],
+    [
+     216,
+     96,
+     "10"
+    ],
+    [
+     216,
+     150,
+     "6"
+    ],
+    [
+     100,
+     120,
+     "18"
+    ]
+   ],
+   "track": "M196 196 C204 150 186 110 200 70 C206 50 200 20 204 0",
+   "boat": [
+    200,
+    130,
+    0
+   ],
+   "labels": [
+    [
+     184,
+     158,
+     "10 m line",
+     "end"
+    ]
+   ],
+   "panel": [
+    "Sounder 8.2 m",
+    "Tide 1.4 m",
+    "(depth of water)"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You plan to follow a depth contour along this coast for a night approach. Which do you choose?",
+  "a": "The 20 m line — clean, steep and with margin",
+  "o": [
+   "The 5 m line — closest to the harbour mouth",
+   "The 2 m line — the sounder reads it most clearly",
+   "Any of them — every contour is equally good"
+  ],
+  "why": "A good handrail is a steep, even contour well outside the dangers, so the sounder shows at once when you cross it.",
+  "ref": "Depth contours as a handrail",
+  "fig": {
+   "type": "chart",
+   "land": "M320 0 V200 H270 C256 150 280 100 262 50 C256 30 270 10 268 0 Z",
+   "depths": [
+    [
+     236,
+     50,
+     "4"
+    ],
+    [
+     226,
+     96,
+     "2.1"
+    ],
+    [
+     244,
+     130,
+     "0.4",
+     true
+    ],
+    [
+     222,
+     168,
+     "3"
+    ],
+    [
+     150,
+     40,
+     "20"
+    ],
+    [
+     146,
+     90,
+     "21"
+    ],
+    [
+     150,
+     140,
+     "19"
+    ],
+    [
+     148,
+     172,
+     "20"
+    ],
+    [
+     80,
+     110,
+     "38"
+    ]
+   ],
+   "labels": [
+    [
+     234,
+     116,
+     "broken",
+     "middle"
+    ],
+    [
+     110,
+     66,
+     "steep, even",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Night approach",
+    "Draft 2.0 m",
+    "Sounder OK"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are coasting east past an estuary mouth and this red can buoy lies ahead. Which side do you leave it?",
+  "a": "To starboard — you are going against the buoyage",
+  "o": [
+   "To port — you are going with the buoyage",
+   "To port — a red mark is always kept to port",
+   "Either side — it only marks the estuary"
+  ],
+  "why": "Lateral marks follow the charted direction of buoyage; heading against it (east, arrow west), red is left to starboard.",
+  "ref": "IALA direction of buoyage",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V50 C260 60 220 44 190 56 L180 0 L150 0 L140 58 C100 48 50 60 0 52 Z",
+   "depths": [
+    [
+     60,
+     110,
+     "7"
+    ],
+    [
+     250,
+     110,
+     "8"
+    ],
+    [
+     160,
+     150,
+     "12"
+    ]
+   ],
+   "marks": [
+    [
+     220,
+     100,
+     "r",
+     "Fl R 4s"
+    ]
+   ],
+   "boat": [
+    70,
+    140,
+    90
+   ],
+   "labels": [
+    [
+     160,
+     172,
+     "← direction of buoyage",
+     "middle"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are leaving harbour in the Caribbean (IALA region B) and see this buoy ahead. Which side do you leave it?",
+  "a": "On your port side",
+  "o": [
+   "On your starboard side",
+   "On either side, keeping well off",
+   "Close on your starboard side"
+  ],
+  "why": "Region B: red marks the starboard side going in (\"red right returning\"), so going out it stays to port.",
+  "ref": "IALA region B",
+  "fig": {
+   "type": "buoy",
+   "kind": "lat-stbd",
+   "region": "B",
+   "topmark": true,
+   "rhythm": "Fl R 4s",
+   "note": "IALA region B · heading out to sea"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Heading upstream with the buoyage, you want to stay in the main channel. How do you pass this mark?",
+  "a": "Leave it to port; the main channel lies to starboard",
+  "o": [
+   "Leave it to starboard; the main channel lies to port",
+   "Either side; both channels are the same",
+   "Leave it to port; the main channel lies to port"
+  ],
+  "why": "Region A: red with a green band, Fl(2+1) R, is a port-hand mark with the preferred channel to starboard.",
+  "ref": "IALA preferred channel marks",
+  "fig": {
+   "type": "card",
+   "title": "Mark at the fork",
+   "lines": [
+    "IALA region A, going with the buoyage",
+    "Red can, one broad green band",
+    "Red can topmark",
+    "Light Fl(2+1) R 10s"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "The marina you are bound for lies up the minor branch of the river. Which side of the mark at the fork do you leave it?",
+  "a": "Leave it to port, then follow the minor channel's marks",
+  "o": [
+   "Leave it to starboard — green is kept to starboard",
+   "Leave it to starboard, then turn right behind it",
+   "Either side — it only marks the junction"
+  ],
+  "why": "Fl(2+1) G with a red band: preferred channel to port. The minor branch is on its other side, so the mark goes to port.",
+  "ref": "IALA preferred channel marks",
+  "fig": {
+   "type": "card",
+   "title": "River fork, IALA region A",
+   "lines": [
+    "Going upstream, with the buoyage",
+    "Green cone, broad red band, Fl(2+1) G",
+    "Main channel: the left-hand branch",
+    "Marina: up the right-hand branch"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Coasting by day along a broken Croatian shore, you see this mark fine on the bow, between you and a group of islets. Where is the safe water?",
+  "a": "East of the mark",
+  "o": [
+   "West of the mark",
+   "North of the mark",
+   "South of the mark"
+  ],
+  "why": "East cardinal: black-yellow-black, cones point away from each other; the safe water is to its east.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-e",
+   "note": "Fine on the bow, islets beyond"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "On watch at night you time an unlit mark's light ahead. What is it and how do you pass it?",
+  "a": "A west cardinal: pass west of it",
+  "o": [
+   "An east cardinal: pass east of it",
+   "A south cardinal: pass south of it",
+   "A west cardinal: pass east of it"
+  ],
+  "why": "Nine quick flashes every 15 s is Q(9) 15s — a west cardinal, like nine o'clock; the safe water is to its west.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "card",
+   "title": "Night watch",
+   "lines": [
+    "White light fine on the starboard bow",
+    "Quick flashes: counted nine, then dark",
+    "Stopwatch: repeats every 15 s"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your crew has drawn the night route on the plotter past this mark. What do you tell them?",
+  "a": "Re-route east of it — it is an east cardinal",
+  "o": [
+   "Fine — keep the mark close on your starboard side",
+   "Re-route north of it — it is a north cardinal",
+   "Fine — a cardinal may be passed on either side"
+  ],
+  "why": "Q(3) is an east cardinal, three o'clock: the danger lies west of it, where the route goes.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H110 C90 30 100 60 70 80 C40 96 20 90 0 100 Z",
+   "depths": [
+    [
+     150,
+     96,
+     "0.8",
+     true
+    ],
+    [
+     130,
+     120,
+     "2.4"
+    ],
+    [
+     240,
+     110,
+     "15"
+    ],
+    [
+     220,
+     170,
+     "18"
+    ]
+   ],
+   "marks": [
+    [
+     190,
+     92,
+     "y",
+     "Q(3) 10s"
+    ]
+   ],
+   "track": "M60 190 L150 120 L160 20",
+   "boat": [
+    80,
+    174,
+    50
+   ],
+   "labels": [
+    [
+     168,
+     40,
+     "plotter route",
+     "start"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your crew asks why this light adds a long flash after its quick flashes. What do you tell them?",
+  "a": "So that six can't be miscounted as three or nine",
+  "o": [
+   "To show that the danger lies to the north of it",
+   "To show that it marks a new, uncharted danger",
+   "To show that it is the last mark of the channel"
+  ],
+  "why": "South cardinal Q(6)+LFl: the long flash makes the group of six unmistakable next to the E (3) and W (9) marks.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-s",
+   "rhythm": "Q(6)+LFl",
+   "note": "South cardinal"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "At night you identify this mark off a shoal and take its bearing: 200°M. Where are you?",
+  "a": "North-north-east of it — on its safe side",
+  "o": [
+   "South-south-west of it — on its danger side",
+   "North-north-east of it — on its danger side",
+   "South-south-west of it — on its safe side"
+  ],
+  "why": "It bears 200° from you, so you are on its 020° side; a north cardinal has its safe water to the north.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-n",
+   "rhythm": "Q",
+   "rhythmNote": "continuous",
+   "note": "Bearing from you 200°M"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "On watch you count an unbroken white light ahead. Which mark is it and where is its safe water?",
+  "a": "The north cardinal: pass north of it",
+  "o": [
+   "The east cardinal: pass east of it",
+   "The west cardinal: pass west of it",
+   "The north cardinal: pass south of it"
+  ],
+  "why": "Twenty flashes in 10 s is 120 a minute — very quick, unbroken: VQ, the north cardinal.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "card",
+   "title": "Night watch",
+   "lines": [
+    "White light ahead, flashing without a break",
+    "Count: 20 flashes in 10 s",
+    "Chart nearby: N card VQ · E card VQ(3) 5s",
+    "W card VQ(9) 10s"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Your route between two Ionian islands passes this mark, alone in open water. How do you pass it?",
+  "a": "Either side, with a good berth — it sits on the danger",
+  "o": [
+   "Close on either side — it marks safe water",
+   "Keep it to port — it is a lateral mark",
+   "Keep north of it — it is a north cardinal"
+  ],
+  "why": "Isolated danger mark: black with a red band, two balls, Fl(2) — navigable water all round, the danger under it.",
+  "ref": "IALA isolated danger mark",
+  "fig": {
+   "type": "buoy",
+   "kind": "iso",
+   "rhythm": "Fl(2) 5s",
+   "note": "Alone in open water"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Arriving at night off an unfamiliar harbour, your pilotage plan starts from this mark. What does it tell you?",
+  "a": "Safe water all round — the landfall for the approach",
+  "o": [
+   "A danger under it — pass at least a cable off",
+   "The port side of the channel — keep it to port",
+   "A restricted zone — do not pass inside it"
+  ],
+  "why": "Safe water mark: red and white stripes, red ball, Iso, Oc, LFl 10s or Mo(A) — a landfall or fairway mark.",
+  "ref": "IALA safe water mark",
+  "fig": {
+   "type": "buoy",
+   "kind": "safe",
+   "rhythm": "Mo(A) 6s",
+   "note": "Start of the pilotage plan"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Looking for an anchorage off a beach in July, you see a line of small yellow buoys about 150 m off it. What do you do?",
+  "a": "Anchor outside the line — it marks a bathing zone",
+  "o": [
+   "Anchor inside the line — it marks a quiet zone",
+   "Pass inside the line — yellow marks safe water",
+   "Keep north of each buoy — they are cardinals"
+  ],
+  "why": "Yellow special marks show a feature the chart or pilot book describes — here a bathing zone where craft may not go.",
+  "ref": "IALA special marks",
+  "fig": {
+   "type": "chart",
+   "land": "M0 160 C80 150 160 166 240 154 C280 150 300 156 320 152 V200 H0 Z",
+   "depths": [
+    [
+     60,
+     90,
+     "6"
+    ],
+    [
+     160,
+     80,
+     "8"
+    ],
+    [
+     260,
+     104,
+     "7"
+    ],
+    [
+     150,
+     40,
+     "11"
+    ]
+   ],
+   "marks": [
+    [
+     40,
+     128,
+     "y",
+     ""
+    ],
+    [
+     100,
+     124,
+     "y",
+     ""
+    ],
+    [
+     160,
+     126,
+     "y",
+     ""
+    ],
+    [
+     220,
+     122,
+     "y",
+     ""
+    ],
+    [
+     280,
+     124,
+     "y",
+     ""
+    ]
+   ],
+   "boat": [
+    96,
+    60,
+    180
+   ],
+   "labels": [
+    [
+     270,
+     182,
+     "beach",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Pilot book:",
+    "bathing zones",
+    "marked yellow"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "On passage at night you see this light. The mark is on no chart and in no notice you have. What do you do?",
+  "a": "Keep well clear — it marks a new, uncharted wreck",
+  "o": [
+   "Pass close — it marks the safe water",
+   "Ignore it until it appears on the chart",
+   "Keep it to port — it marks a channel"
+  ],
+  "why": "Emergency wreck marking buoy: blue and yellow stripes, yellow cross, Al Bu Y — laid on a new danger before notices catch up.",
+  "ref": "IALA emergency wreck marking buoy",
+  "fig": {
+   "type": "buoy",
+   "kind": "wreck",
+   "rhythm": "Al Bu Y 3s",
+   "note": "Not on the chart"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Entering at night, you see two red lights on the north side. Which one is the breakwater head?",
+  "a": "The one lit most of the time, with two short eclipses",
+  "o": [
+   "The one that flashes twice, then stays dark",
+   "The one that alternates red and white",
+   "The one that is lit 4 s and dark 4 s"
+  ],
+  "why": "Oc(2) = occulting in groups of two: light longer than dark, with two short eclipses in each 8 s.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "card",
+   "title": "Pilot book — Limenas",
+   "lines": [
+    "N breakwater head: Oc(2) R 8s",
+    "S breakwater head: Fl G 4s",
+    "Tonight: two red lights on the N side"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "The inner harbour light is shown on the chart like this. What will you see when you time it?",
+  "a": "Light for 2 s and dark for 2 s, over and over",
+  "o": [
+   "A short flash every 4 s, dark in between",
+   "Light for 4 s with a short eclipse",
+   "Steady light, never dark at all"
+  ],
+  "why": "Iso = isophase: equal periods of light and dark; the period 4 s gives 2 s of each.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 120,
+     "t": "Iso 4s"
+    }
+   ],
+   "note": "Inner harbour light, ahead"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your bearing of the light on the islet holds steady, but its colour goes white–red–white–red. What does the change tell you?",
+  "a": "Nothing about your position — it is an alternating light",
+  "o": [
+   "You keep crossing a sector edge — alter away",
+   "The red marks a danger sector — turn back",
+   "The light is faulty — report it to the coastguard"
+  ],
+  "why": "Al WR shows white and red in turn on every bearing; a sector light changes colour only as your bearing changes.",
+  "ref": "Light characteristics",
+  "fig": {
+   "type": "card",
+   "title": "Night watch",
+   "lines": [
+    "Light on the islet: bearing steady 295°M",
+    "Colour: white, red, white, red …",
+    "Chart: Al WR 6s, no sectors shown"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are 9 M off this lighthouse tonight. Do you expect to see it?",
+  "a": "Probably not — 16M assumes 10 M visibility",
+  "o": [
+   "Yes — it shows 16 M in any visibility",
+   "Yes — a light 24 m high is seen from 24 M",
+   "Yes — lights are seen further at night"
+  ],
+  "why": "Nominal range is for a meteorological visibility of 10 M; in 2 M visibility the luminous range is far shorter.",
+  "ref": "Light characteristics — range",
+  "fig": {
+   "type": "chart",
+   "land": "M200 0 H320 V200 H260 C240 150 230 100 250 60 C260 30 220 20 200 0 Z",
+   "marks": [
+    [
+     240,
+     128,
+     "w",
+     "Fl(3) 15s 24m 16M"
+    ]
+   ],
+   "boat": [
+    60,
+    150,
+    60
+   ],
+   "depths": [
+    [
+     110,
+     60,
+     "45"
+    ],
+    [
+     150,
+     160,
+     "38"
+    ]
+   ],
+   "panel": [
+    "Tonight",
+    "Visibility 2 M",
+    "Distance 9 M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Heading in on about 000°T towards the directional light, you see it red. What do you do?",
+  "a": "You are west of the white sector: come to starboard",
+  "o": [
+   "You are east of the white sector: come to port",
+   "You are west of the white sector: come to port",
+   "Red means danger ahead: stop and turn back"
+  ],
+  "why": "Red shows on bearings 004°–009°: the light bears east of north, so you lie west of the line — turn east.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "card",
+   "title": "List of Lights",
+   "lines": [
+    "Dir Oc WRG 6s, harbour entrance",
+    "Sectors (bearings from seaward, °T):",
+    "G 351°–356°  W 356°–004°  R 004°–009°"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Approaching on the directional light, you take its bearing. Which sector are you in and what do you do?",
+  "a": "130°T — in the white sector; hold your heading",
+  "o": [
+   "136°T — in the red sector; come to starboard",
+   "133°T — in the red sector; come to starboard",
+   "130°T — in the green sector; come to port"
+  ],
+  "why": "Sectors are true bearings from seaward: 133°M − 3°W = 130°T, inside the white 128.5°–131.5°.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "card",
+   "title": "Dir WRG light — approach",
+   "lines": [
+    "G 124°–128.5°  W 128.5°–131.5°",
+    "R 131.5°–137° (bearings from seaward, °T)",
+    "Variation 3°W",
+    "Hand-bearing compass: light 133°M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Coasting west at night, you see the light on the point turn from white to red. What does it mean?",
+  "a": "You have entered the sector over the shoal: get back into white",
+  "o": [
+   "You are on the leading line into the harbour",
+   "It is an alternating light: ignore the colour",
+   "You are past the shoal: you can close the coast"
+  ],
+  "why": "A red sector of a coastal light covers a danger; seeing red means you are in it — move until the light is white again.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "chart",
+   "land": "M0 200 V160 C40 150 80 170 110 140 C130 120 150 150 200 158 C260 166 290 150 320 156 V200 Z",
+   "depths": [
+    [
+     150,
+     112,
+     "1.6"
+    ],
+    [
+     178,
+     102,
+     "0.9",
+     true
+    ],
+    [
+     60,
+     60,
+     "14"
+    ],
+    [
+     120,
+     36,
+     "16"
+    ]
+   ],
+   "marks": [
+    [
+     110,
+     140,
+     "w",
+     "Fl WR 5s"
+    ]
+   ],
+   "boat": [
+    262,
+    112,
+    270
+   ],
+   "labels": [
+    [
+     120,
+     96,
+     "red sector",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Light",
+    "W over the coast",
+    "R over the shoal"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Entering a Greek harbour at night, you see the two breakwater lights. Where do you steer?",
+  "a": "Between them, the red to port and the green to starboard",
+  "o": [
+   "Between them, the red to starboard and the green to port",
+   "Outside the red light, keeping it to starboard",
+   "Outside the green light, keeping it to port"
+  ],
+  "why": "Region A harbour lights follow the lateral rule: red on the port side going in, green on the starboard side.",
+  "ref": "Harbour lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 118,
+     "y": 124,
+     "t": "Fl R 4s"
+    },
+    {
+     "c": "g",
+     "x": 206,
+     "y": 124,
+     "t": "Fl G 4s"
+    }
+   ],
+   "note": "Harbour entrance ahead · IALA region A"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Approaching the road bridge at night, your crew points at the brightest arch, lit by street lamps. Which arch do you take?",
+  "a": "The arch between the two green lights",
+  "o": [
+   "The brightest arch, lit by the street lamps",
+   "Any arch between two red lights",
+   "The arch with the single white light"
+  ],
+  "why": "The pilot book gives the bridge's own lights: the navigable arch is the one between the green pair; red marks the piers.",
+  "ref": "Lights on bridges",
+  "fig": {
+   "type": "card",
+   "title": "Pilot book — road bridge",
+   "lines": [
+    "Navigable arch: F G on each side of it",
+    "Other arches: F R on the piers",
+    "Clearance 14 m above MHWS",
+    "Street lamps along the deck"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Approaching the harbour entrance, you see this on the signal mast, as the pilot book describes. What do you do?",
+  "a": "Hold off clear of the entrance and wait",
+  "o": [
+   "Enter with care — it signals one-way traffic",
+   "Enter — the signal is for big ships only",
+   "Stop and anchor in the entrance itself"
+  ],
+  "why": "IALA port traffic signals: three fixed red lights, vertical — vessels shall not proceed.",
+  "ref": "Port traffic signals",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 58
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 84
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 110
+    }
+   ],
+   "note": "Signal mast at the entrance · steady lights"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are a mile off the port when the signal mast shows this. What does it mean?",
+  "a": "A serious emergency: stop or divert as instructed",
+  "o": [
+   "One-way traffic: enter with care",
+   "The port is closed for the night: anchor off",
+   "A ship is leaving: wait to starboard of it"
+  ],
+  "why": "IALA port traffic signals: three red lights flashing — serious emergency, all vessels stop or divert as instructed.",
+  "ref": "Port traffic signals",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 58
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 84
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 110
+    }
+   ],
+   "note": "Signal mast · all three flashing"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Arriving at a busy commercial port, you see these lights on the signal mast. What do you do?",
+  "a": "Enter only when port control tells you to",
+  "o": [
+   "Enter — the signal means two-way traffic",
+   "Enter — the signal means one-way traffic",
+   "Stay out — the port is closed to yachts"
+  ],
+  "why": "IALA port traffic signals: green, white, green — a vessel may proceed only when she has specific orders to do so.",
+  "ref": "Port traffic signals",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 160,
+     "y": 58
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 84
+    },
+    {
+     "c": "g",
+     "x": 160,
+     "y": 110
+    }
+   ],
+   "note": "Signal mast · steady lights"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Arriving at night, you can't pick out the breakwater lights against the town. What do you do?",
+  "a": "Stand off and time each light until both heads are certain",
+  "o": [
+   "Head for the first red and green pair you see",
+   "Steer for the middle of the town lights",
+   "Go in fast before the confusion gets worse"
+  ],
+  "why": "Background lights hide harbour lights: stay in safe water, identify each by its characteristic, then commit.",
+  "ref": "Harbour entry at night",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 60,
+     "y": 140,
+     "r": 3
+    },
+    {
+     "c": "w",
+     "x": 84,
+     "y": 136,
+     "r": 3
+    },
+    {
+     "c": "y",
+     "x": 104,
+     "y": 142,
+     "r": 3
+    },
+    {
+     "c": "w",
+     "x": 128,
+     "y": 134,
+     "r": 3
+    },
+    {
+     "c": "r",
+     "x": 140,
+     "y": 128,
+     "r": 4
+    },
+    {
+     "c": "w",
+     "x": 168,
+     "y": 138,
+     "r": 3
+    },
+    {
+     "c": "g",
+     "x": 186,
+     "y": 132,
+     "r": 4
+    },
+    {
+     "c": "w",
+     "x": 204,
+     "y": 140,
+     "r": 3
+    },
+    {
+     "c": "r",
+     "x": 226,
+     "y": 136,
+     "r": 3
+    },
+    {
+     "c": "y",
+     "x": 248,
+     "y": 138,
+     "r": 3
+    },
+    {
+     "c": "w",
+     "x": 270,
+     "y": 134,
+     "r": 3
+    }
+   ],
+   "note": "Town ahead · breakwaters: Fl R 5s, Fl G 5s"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are planning a night entry on the plotter and are about to put the turning waypoint on the buoy itself. Why don't you?",
+  "a": "On autopilot it would steer you straight onto the buoy",
+  "o": [
+   "The plotter can't store a waypoint on a mark",
+   "A waypoint on a buoy upsets the AIS display",
+   "Buoys are charted exactly, so it isn't needed"
+  ],
+  "why": "Put waypoints a safe distance off marks and hazards: a route to a buoy leads onto it, as it does for everyone else.",
+  "ref": "Pilotage with the plotter",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Feeling your way into a cove, you zoom right in on the plotter. What do you trust?",
+  "a": "The pilot book — zooming in adds no detail",
+  "o": [
+   "The plotter — it is zoomed to the finest detail",
+   "The plotter — electronic charts are always newer",
+   "Neither — you go by the echo sounder alone"
+  ],
+  "why": "Over-zoom only enlarges a small-scale survey; rocks too small for it are simply not there on the screen.",
+  "ref": "Pilotage with the plotter",
+  "fig": {
+   "type": "card",
+   "title": "Entering the cove",
+   "lines": [
+    "Plotter: zoomed ×8, clear to the beach",
+    "Source of the chart cell: 1:50 000",
+    "Pilot book plan: rocks 50 m off the point"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You decide to go into harbour rather than wait for the fog to lift. How do you set the boat up?",
+  "a": "Slow speed, fog signal, lookout forward, radar and sounder watched",
+  "o": [
+   "Cruising speed, to spend less time in the fog",
+   "Slow speed, crew below out of the way, autopilot on",
+   "Full speed on the plotter route, radar off to save power"
+  ],
+  "why": "In fog: safe speed, the sound signal, a lookout and every aid — radar, sounder, plotter — cross-checked.",
+  "ref": "Pilotage in fog",
+  "fig": {
+   "type": "card",
+   "title": "Fog",
+   "lines": [
+    "Visibility 200 m",
+    "1 M from the entrance, radar on",
+    "Crew of four, all on deck"
+   ],
+   "tag": "Fog"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Fog closes in 3 M from the harbour. You have no radar. What is the safest way in?",
+  "a": "Along the 20 m line to the fairway buoy, slow, then its bearing in",
+  "o": [
+   "A straight line for the entrance at cruising speed",
+   "Anchor where you are, in 45 m of water",
+   "Follow a fishing boat that seems to know the way"
+  ],
+  "why": "Without radar use what you can check: a clean contour as a handrail to a known mark, then a short leg in from it.",
+  "ref": "Pilotage in fog",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V36 C250 46 200 30 170 50 L160 50 C140 30 80 44 0 40 Z",
+   "depths": [
+    [
+     60,
+     90,
+     "20"
+    ],
+    [
+     120,
+     96,
+     "21"
+    ],
+    [
+     230,
+     96,
+     "20"
+    ],
+    [
+     150,
+     160,
+     "45"
+    ],
+    [
+     210,
+     60,
+     "6"
+    ]
+   ],
+   "marks": [
+    [
+     166,
+     96,
+     "r",
+     ""
+    ]
+   ],
+   "track": "M280 180 C250 120 220 100 170 98 L166 54",
+   "boat": [
+    276,
+    172,
+    330
+   ],
+   "labels": [
+    [
+     56,
+     130,
+     "20 m line",
+     "middle"
+    ],
+    [
+     140,
+     116,
+     "fairway",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Fog, vis 100 m",
+    "No radar",
+    "Sounder OK"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Arriving at dusk at this harbour for the first time, what do you assume about the breakwater?",
+  "a": "It may run further out than charted: give it a wide berth",
+  "o": [
+   "The chart is right — it is the official document",
+   "The plotter is right — it shows the light where it is",
+   "The work was never finished — ignore the note"
+  ],
+  "why": "When sources disagree, plan for the worse case: the newest note may be right and the old chart out of date.",
+  "ref": "Arriving in an unknown port",
+  "fig": {
+   "type": "card",
+   "title": "Arriving at Kamari",
+   "lines": [
+    "Pilot book plan (2019): breakwater",
+    "\"extension under construction\"",
+    "Your chart: older edition, no extension",
+    "Plotter: the light at the old head"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You and one crew bring the boat into a strange harbour at night. How do you split the work?",
+  "a": "One steers the headings called; the other navigates and calls the marks",
+  "o": [
+   "Both watch the plotter while the autopilot steers",
+   "The skipper steers and navigates; the crew does fenders",
+   "The crew navigates from below; the skipper steers by eye"
+  ],
+  "why": "In pilotage one person steers and one navigates from the cockpit, calling headings and marks and checking each one.",
+  "ref": "Pilotage — the cockpit team",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Entering an unfamiliar harbour at night, your navigator stays at the chart table calling \"turn now\" from the plotter. Why is this a poor set-up?",
+  "a": "Nobody on deck checks the marks against the plan",
+  "o": [
+   "The plotter is less accurate below decks",
+   "The helm should be the one at the plotter",
+   "The skipper should be below instead"
+  ],
+  "why": "The navigator belongs in the cockpit with the plan, eyes on the marks; the plotter is a cross-check, not the pilot.",
+  "ref": "Pilotage — the cockpit team",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are rounding a headland at night on radar, with a parallel index line set to pass it 0.6 M off. The echo looks like this. What do you do?",
+  "a": "Alter to port — you would pass inside 0.6 M",
+  "o": [
+   "Alter to starboard — you would pass outside 0.6 M",
+   "Hold on — the echo sits on the index line",
+   "Alter to starboard — you would pass inside 0.6 M"
+  ],
+  "why": "On track the echo slides down the index line; inside the line, your track passes closer than planned — turn away from it.",
+  "ref": "Radar — parallel indexing",
+  "fig": {
+   "type": "chart",
+   "land": "M320 92 C280 92 240 96 200 106 C190 110 192 120 206 124 C250 134 290 132 320 136 Z",
+   "track": "M214 92 V176",
+   "boat": [
+    160,
+    160,
+    0
+   ],
+   "labels": [
+    [
+     150,
+     116,
+     "headland echo",
+     "end"
+    ],
+    [
+     222,
+     162,
+     "index line",
+     "start"
+    ]
+   ],
+   "panel": [
+    "Radar",
+    "Heading 000°T",
+    "Index 0.6 M stbd"
+   ],
+   "note": "Radar, north-up · plan: pass the headland 0.6 M off"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Before you set a parallel index line, you check where your present COG takes you. How far off the headland will you pass?",
+  "a": "1.0 M",
+  "o": [
+   "1.7 M",
+   "2.0 M",
+   "0.8 M"
+  ],
+  "why": "Passing distance = range × sin(angle off the COG): 2.0 × sin(075° − 045°) = 2.0 × 0.5 = 1.0 M.",
+  "ref": "Radar — parallel indexing",
+  "fig": {
+   "type": "card",
+   "title": "Radar and plotter, 0120",
+   "lines": [
+    "Headland echo: 075°T, range 2.0 M",
+    "COG 045°T, steady",
+    "Plan: pass the headland 0.8 M off"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Rounding a headland at night, you keep the coast outside a VRM ring, as your plan says. The echo now cuts inside the ring on the port bow. What do you do?",
+  "a": "Alter to starboard until the echo is outside the ring",
+  "o": [
+   "Alter to port to put the echo back on the ring",
+   "Hold on — the ring shows the rocks are past",
+   "Shorten the range scale and hold on"
+  ],
+  "why": "The VRM is a clearing range: coast inside the ring means you are closer than the safe distance — open it out.",
+  "ref": "Radar — clearing ranges",
+  "fig": {
+   "type": "chart",
+   "land": "M0 14 C50 18 104 52 118 88 C122 102 70 112 0 112 Z",
+   "track": "M92 120 A58 58 0 1 1 208 120 A58 58 0 1 1 92 120",
+   "boat": [
+    150,
+    120,
+    0
+   ],
+   "labels": [
+    [
+     46,
+     60,
+     "coast echo",
+     "middle"
+    ],
+    [
+     212,
+     156,
+     "VRM ring",
+     "start"
+    ]
+   ],
+   "panel": [
+    "Radar, head-up",
+    "VRM 0.8 M"
+   ],
+   "note": "Plan: keep the coast outside 0.8 M · rocks 0.3 M off"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your radar is head-up and you want it to show the moment of the turn in your plan. Where do you set the EBL?",
+  "a": "290° relative — 70° on the port bow",
+  "o": [
+   "070° relative — 70° on the starboard bow",
+   "310° relative — 50° on the port bow",
+   "300° relative — 60° on the port bow"
+  ],
+  "why": "A head-up EBL reads relative to the bow: 300° − 010° = 290° relative, i.e. 70° to port.",
+  "ref": "Radar — EBL",
+  "fig": {
+   "type": "card",
+   "title": "Radar — entering at night",
+   "lines": [
+    "Radar head-up; heading 010°M",
+    "Plan: turn to 300°M for the entrance",
+    "when the breakwater head bears 300°M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are writing a pilotage plan for a harbour you may have to enter in fog, using the radar. What do you add for each turn?",
+  "a": "The range and bearing of a steep echo there",
+  "o": [
+   "The colour and rhythm of each buoy's light",
+   "The VHF channel of the harbour office",
+   "The lat/long of each turn for the radar"
+  ],
+  "why": "In fog each turn needs a radar check: the range and bearing of a good echo, ready to set on the VRM and EBL.",
+  "ref": "Radar — the pilotage plan",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Crossing at night, you see this on the radar. What does it tell you, and what do you do?",
+  "a": "A new-wreck buoy's racon — keep well clear",
+  "o": [
+   "A fairway buoy's racon — steer for it",
+   "A ship's radar beacon — ignore it",
+   "Interference — retune the gain and carry on"
+  ],
+  "why": "An emergency wreck marking buoy carries a racon coding Morse D: a new danger, not yet on the chart.",
+  "ref": "Emergency wreck marking buoy",
+  "fig": {
+   "type": "card",
+   "title": "Radar, crossing at night",
+   "lines": [
+    "Echo 1.5 M ahead with a racon:",
+    "Morse D  ( — · · )",
+    "Chart: clear water, no mark",
+    "Notices: nothing for this area"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are copying the entry line from the pilot book onto your pilotage card. What do you write?",
+  "a": "046°M",
+  "o": [
+   "050°M",
+   "228°M",
+   "048°M"
+  ],
+  "why": "Pilot books give true bearings from seaward: 048°T − 2°E = 046°M (east is least).",
+  "ref": "Pilot book — bearings",
+  "fig": {
+   "type": "card",
+   "title": "Pilot book — Vathy",
+   "lines": [
+    "Enter on 048° with the church",
+    "in line with the mole head",
+    "(bearings true, from seaward)",
+    "Chart: variation 2°E"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are timing your run inside the harbour from the pilot-book plan. How long will it take from the mole head to the fuel berth at the speed limit?",
+  "a": "9 min",
+  "o": [
+   "15 min",
+   "1½ min",
+   "6 min"
+  ],
+  "why": "4.5 cables = 0.45 M; 0.45 ÷ 3 kn = 0.15 h = 9 min.",
+  "ref": "Pilot book — the harbour plan",
+  "fig": {
+   "type": "card",
+   "title": "Pilot book plan — Kastela",
+   "lines": [
+    "Scale bar: 0–5 cables",
+    "Mole head to the fuel berth: 4.5 cables",
+    "Speed limit in the harbour 3 kn"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The pilot book's plan of tonight's harbour looks like this. Which line do you take through the entrance?",
+  "a": "Favour the east side, clear of the W head's rocks",
+  "o": [
+   "Hug the W head — the deep water is close in",
+   "Midway, then round the W head close in",
+   "Close to the W head, rocks to starboard"
+  ],
+  "why": "The plan shows rocks running out from the W head: keep to the side of the entrance away from them, in the charted depth.",
+  "ref": "Pilot book — the harbour plan",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V50 H166 V130 H150 V50 H56 V130 H40 V50 H0 Z",
+   "depths": [
+    [
+     66,
+     146,
+     "0.4",
+     true
+    ],
+    [
+     76,
+     160,
+     "1.2"
+    ],
+    [
+     118,
+     162,
+     "6"
+    ],
+    [
+     104,
+     96,
+     "4"
+    ],
+    [
+     250,
+     140,
+     "9"
+    ]
+   ],
+   "marks": [
+    [
+     48,
+     130,
+     "r",
+     "Fl R 3s"
+    ],
+    [
+     158,
+     130,
+     "g",
+     "Fl G 3s"
+    ]
+   ],
+   "boat": [
+    236,
+    172,
+    320
+   ],
+   "labels": [
+    [
+     40,
+     176,
+     "rocks",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Pilot book plan",
+    "Entrance 80 m"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are 4 M off your planned harbour at dusk and check the pilot book. What do you do?",
+  "a": "Divert to a harbour sheltered from the south",
+  "o": [
+   "Run in fast on the back of a wave",
+   "Anchor off the entrance until it eases",
+   "Go in slowly down the middle of it"
+  ],
+  "why": "The pilot book's warning fits tonight's wind exactly: an entrance with breaking swell is no place to try — go elsewhere.",
+  "ref": "Pilot book — arriving",
+  "fig": {
+   "type": "card",
+   "title": "Pilot book — Ag. Nikolaos",
+   "lines": [
+    "Entrance open to the south",
+    "S winds over F5: heavy swell breaks",
+    "across the entrance — do not enter",
+    "Forecast now: S 6, sea rough"
+   ],
+   "tag": "1900"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Approaching at night, you point the bow at the directional light and read the steering compass. Which sector are you in?",
+  "a": "128°T — the white",
+  "o": [
+   "130°T — the red",
+   "122°T — the green",
+   "132°T — the red"
+  ],
+  "why": "127°C − 2°W deviation = 125°M; + 3°E variation = 128°T: inside the white, 124°–129°.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "card",
+   "title": "Dir Fl WRG 4s — approach",
+   "lines": [
+    "G 115°–124°  W 124°–129°  R 129°–140°",
+    "(bearings from seaward, °T)",
+    "Bow on the light: compass 127°C",
+    "Deviation 2°W on this heading · Var 3°E"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Motoring upstream with the buoyage at night, you see these lights on the bridge ahead. Where do you pass under it?",
+  "a": "Under the white light, midway between red and green",
+  "o": [
+   "Close by the red light, leaving it to starboard",
+   "Under the next span, away from the lights",
+   "Close by the green light, leaving it to port"
+  ],
+  "why": "Bridge marking: red and green lights mark the sides of the navigable span; a white light marks the centre of the channel.",
+  "ref": "Bridge lights",
+  "fig": {
+   "type": "lights",
+   "hull": "M20 70 H300 V82 H20 Z M96 82 H112 V150 H96 Z M208 82 H224 V150 H208 Z",
+   "lights": [
+    {
+     "c": "r",
+     "x": 104,
+     "y": 118,
+     "t": "F R"
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 94,
+     "t": "Iso W"
+    },
+    {
+     "c": "g",
+     "x": 216,
+     "y": 118,
+     "t": "F G"
+    }
+   ],
+   "note": "Road bridge ahead · heading upstream, region A"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are waiting at a lifting bridge whose signals follow the IALA port traffic signals. As the span lifts, it shows this. What do you do?",
+  "a": "Go through — one-way traffic, your way",
+  "o": [
+   "Go through, ready to meet boats coming the other way",
+   "Wait for orders on VHF, then go through",
+   "Hold off — the span is about to come down"
+  ],
+  "why": "IALA port traffic signals: three fixed green lights — vessels may proceed, one-way traffic.",
+  "ref": "Bridge and port traffic signals",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 160,
+     "y": 58
+    },
+    {
+     "c": "g",
+     "x": 160,
+     "y": 84
+    },
+    {
+     "c": "g",
+     "x": 160,
+     "y": 110
+    }
+   ],
+   "note": "Lifting bridge · steady lights (IALA port signals)"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "At 2200 you reach the commercial port where you will spend the night, and its signal mast shows this. What does it allow?",
+  "a": "Entry now — with two-way traffic in the entrance",
+  "o": [
+   "Entry now — one-way traffic, your way only",
+   "Entry only once port control orders it",
+   "No entry — wait outside the port"
+  ],
+  "why": "IALA port traffic signals: green, green, white — vessels may proceed; two-way traffic.",
+  "ref": "Port traffic signals",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 160,
+     "y": 58
+    },
+    {
+     "c": "g",
+     "x": 160,
+     "y": 84
+    },
+    {
+     "c": "w",
+     "x": 160,
+     "y": 110
+    }
+   ],
+   "note": "Port signal mast · steady lights"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Your 12 m yacht can keep safely outside the dredged channel, as the pilot book allows small craft to. The signal mast shows this. What may you do?",
+  "a": "Go in outside the main channel, keeping clear",
+  "o": [
+   "Nothing — no vessel may move in the port",
+   "Go in down the main channel with care",
+   "Go in only once port control orders it"
+  ],
+  "why": "Three fixed red: do not proceed — but a yellow light beside the top one exempts vessels able to keep outside the main channel.",
+  "ref": "Port traffic signals",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "y",
+     "x": 132,
+     "y": 58
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 58
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 84
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 110
+    }
+   ],
+   "note": "Signal mast · steady lights"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "On your first charter in the Caribbean (IALA region B), you meet this mark off a reef. Where is its safe water?",
+  "a": "East of it — cardinals are the same in A and B",
+  "o": [
+   "West of it — region B reverses the cardinals",
+   "Either side — it stands on the reef itself",
+   "West of it — the topmarks point at the reef"
+  ],
+  "why": "Region B changes only the colours of lateral marks; cardinal marks are the same: an east cardinal has safe water to the east.",
+  "ref": "IALA region B",
+  "fig": {
+   "type": "buoy",
+   "kind": "card-e",
+   "rhythm": "Q(3) 10s",
+   "region": "B",
+   "note": "IALA region B · Caribbean charter"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Coming in from sea at night in IALA region B, you see this light ahead marking the channel. Which side do you leave it?",
+  "a": "To starboard — red right returning",
+  "o": [
+   "To port — red is the port side, as in Europe",
+   "Either side — it marks the channel's centre",
+   "To port — you are going with the buoyage"
+  ],
+  "why": "In region B red marks are starboard-hand when entering from sea: 'red right returning'.",
+  "ref": "IALA region B",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 180,
+     "y": 120,
+     "t": "Fl R 4s"
+    }
+   ],
+   "note": "Entering from sea · IALA region B (Bahamas)"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Your marina lies up the main channel. Which side of this mark at the fork do you leave it?",
+  "a": "To port — the main channel lies to starboard",
+  "o": [
+   "To starboard — the main channel lies to port",
+   "To starboard — green is the starboard-hand colour",
+   "Either side — both branches are main channels"
+  ],
+  "why": "In region B green is port-hand; a green can with a red band, Fl(2+1) G, marks the preferred channel to starboard.",
+  "ref": "IALA region B — preferred channel",
+  "fig": {
+   "type": "card",
+   "title": "Region B · heading in from sea",
+   "lines": [
+    "At the fork: green can,",
+    "one broad red band,",
+    "light Fl(2+1) G 10s"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Heading west towards your next waypoint, your stopwatch gives this for the light dead ahead. Which mark is it, and how do you pass it?",
+  "a": "South cardinal — pass south, leaving it to starboard",
+  "o": [
+   "South cardinal — pass north, leaving it to port",
+   "West cardinal — pass west, holding your course",
+   "North cardinal — pass north, leaving it to port"
+  ],
+  "why": "VQ(6)+LFl 10s is a south cardinal: safe water to the south — heading west, that leaves the mark to starboard.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "card",
+   "title": "Night watch · heading 270°T",
+   "lines": [
+    "White light dead ahead",
+    "Very quick flashes: six, then a long one",
+    "Repeats every 10 s",
+    "Your plan: pass north of the mark"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Crossing between two islands at night, you time this light. What mark is it on?",
+  "a": "An isolated danger mark",
+  "o": [
+   "A safe water mark",
+   "A south cardinal mark",
+   "A preferred channel mark"
+  ],
+  "why": "A white Fl(2) is the isolated danger light: the danger is right under the mark — pass with a good berth.",
+  "ref": "IALA isolated danger mark",
+  "fig": {
+   "type": "card",
+   "title": "Night passage between islands",
+   "lines": [
+    "White light, alone in open water",
+    "Two flashes, then dark",
+    "Repeats every 10 s"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Making your landfall at night, you time the light your plan starts from. What does it tell you?",
+  "a": "A safe water mark — Morse A",
+  "o": [
+   "An isolated danger — Fl(2)",
+   "A south cardinal — Q(6)+LFl",
+   "An east cardinal — Q(3)"
+  ],
+  "why": "Mo(A), dot-dash, is a safe water light, like Iso, Oc or LFl 10s: open water all round the mark.",
+  "ref": "IALA safe water mark",
+  "fig": {
+   "type": "card",
+   "title": "Landfall at night",
+   "lines": [
+    "White light fine on the bow",
+    "A short flash, then a long one",
+    "Repeats every 8 s"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Your crew notices on the chart that these two marks flash at different speeds and asks why. What do you tell them?",
+  "a": "So the two can be told apart at night",
+  "o": [
+   "The very quick one marks the worse danger",
+   "The very quick one is to be passed closer",
+   "The quick one is a beacon, the other a buoy"
+  ],
+  "why": "Neighbouring cardinals of the same kind use Q and VQ, so you can tell which one you are looking at.",
+  "ref": "IALA cardinal marks",
+  "fig": {
+   "type": "card",
+   "title": "Chart — the Ploce approach",
+   "lines": [
+    "Two east cardinals 4 cables apart",
+    "Inner mark: Q(3) 10s",
+    "Outer mark: VQ(3) 5s"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Heading downriver to the sea at night, you see this channel light ahead. Which side do you leave it?",
+  "a": "To port — you are going against the buoyage",
+  "o": [
+   "To starboard — green is starboard-hand",
+   "To starboard — you are going with the buoyage",
+   "Either side — it marks mid-channel"
+  ],
+  "why": "Buoyage runs from seaward; heading out to sea, the starboard-hand (green) marks are left to port.",
+  "ref": "IALA lateral marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "g",
+     "x": 130,
+     "y": 118,
+     "t": "Fl G 5s"
+    }
+   ],
+   "note": "Leaving the river for the sea · region A"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Approaching an anchorage at night, you see a row of these lights across the bay. What are they?",
+  "a": "Special marks — the chart says what they mark",
+  "o": [
+   "Fishing nets — pass between them",
+   "Cardinal marks — pass to seaward",
+   "Port-hand marks — leave them to port"
+  ],
+  "why": "Yellow lights are special marks — a zone, a pipe, a bathing area: find on the chart what they mark.",
+  "ref": "IALA special marks",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "y",
+     "x": 60,
+     "y": 128,
+     "r": 4
+    },
+    {
+     "c": "y",
+     "x": 110,
+     "y": 130,
+     "r": 4
+    },
+    {
+     "c": "y",
+     "x": 160,
+     "y": 131,
+     "r": 4
+    },
+    {
+     "c": "y",
+     "x": 210,
+     "y": 130,
+     "r": 4
+    },
+    {
+     "c": "y",
+     "x": 250,
+     "y": 128,
+     "r": 4,
+     "t": "Fl Y 4s"
+    }
+   ],
+   "note": "Across the bay ahead, at night"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are shading the red sector of this light onto your chart. Which water does it cover?",
+  "a": "The sea between 065°T and 080°T from the light",
+  "o": [
+   "The sea between 245°T and 260°T from the light",
+   "The sea between 080°T and 245°T from the light",
+   "The sea between 260°T and 065°T from the light"
+  ],
+  "why": "Sector limits are bearings of the light from seaward: seen from the light, the red runs out on 065°–080°.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "card",
+   "title": "List of Lights — Ak. Pounta",
+   "lines": [
+    "Fl WR 5s 18m 10M",
+    "R 245°–260° (over Pounta reef)",
+    "W elsewhere",
+    "Bearings from seaward, °T"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are holding the white sector of the directional light, 4 M out. How far can you stray from its centre line here before the colour changes?",
+  "a": "About 1 cable either side",
+  "o": [
+   "About 2 cables either side",
+   "About 3 cables either side",
+   "About ½ cable either side"
+  ],
+  "why": "1 in 60: 1.5° each side at 4 M ≈ 4 × 1.5 ÷ 60 = 0.1 M, one cable; the sector narrows as you close.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "card",
+   "title": "Dir Oc WRG 6s — approach",
+   "lines": [
+    "White sector 128.5°–131.5°T (3° wide)",
+    "You: in the white, 4.0 M out",
+    "Plan: stay well inside the white"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Approaching the harbour on its sectored light, you see it like this, the colour never settling. What do you do?",
+  "a": "Move well into the white — you are on the edge",
+  "o": [
+   "Hold on — the edge is the leading line",
+   "Slow down — the light is faulty",
+   "Hold on — it is an alternating light"
+  ],
+  "why": "At a sector boundary the colours mix over a degree or two: the edge is uncertain — get into the middle of the white.",
+  "ref": "Sectored lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "#ffc2c2",
+     "x": 160,
+     "y": 118,
+     "t": "white / red, flickering"
+    }
+   ],
+   "note": "Sectored light ahead · the colour won't settle"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Entering at night on the directional light, you see it turn green. Where are you, and what do you do?",
+  "a": "West of the line: come to port, then steer east of 160°",
+  "o": [
+   "East of the line: come to starboard, then steer west of 160°",
+   "West of the line: come to starboard, then steer east of 160°",
+   "East of the line: come to port, then hold 160° exactly"
+  ],
+  "why": "Green = bearing under 158.5°T: you are west of the line, to starboard; come back to port and head up into the westerly set.",
+  "ref": "Sectored lights — entering at night",
+  "fig": {
+   "type": "card",
+   "title": "Dir Oc WRG 6s — entering",
+   "lines": [
+    "Sectors °T: G 155–158.5, W –161.5, R –165",
+    "You were steering 160°T on the white",
+    "Stream sets west across the line",
+    "Now: the light shows green"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are about to join this transit with the stream across it. What heading do you give the helm to hold the marks in line?",
+  "a": "110°M",
+  "o": [
+   "104°M",
+   "076°M",
+   "093°M"
+  ],
+  "why": "sin⁻¹(1.5 ÷ 5.0) = 17° into the stream: 090° + 17° = 107°T; + 3°W = 110°M.",
+  "ref": "Transits — cross-stream",
+  "fig": {
+   "type": "card",
+   "title": "Transit — Ormos Kalami",
+   "lines": [
+    "Transit 090°T (beacon over the chapel)",
+    "Stream sets 000°T, 1.5 kn",
+    "Speed through the water 5.0 kn",
+    "Variation 3°W"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are on the transit, crabbing to hold it. How long until you reach the entrance?",
+  "a": "13 min",
+  "o": [
+   "12 min",
+   "18 min",
+   "21 min"
+  ],
+  "why": "Along the transit you make 6.0 × cos 20° = 5.6 kn: 1.2 ÷ 5.64 = 0.21 h = 13 min.",
+  "ref": "Transits — cross-stream",
+  "fig": {
+   "type": "card",
+   "title": "Entering on the transit",
+   "lines": [
+    "Transit to the entrance: 1.2 M",
+    "Speed through the water 6.0 kn",
+    "Stream straight across the transit",
+    "Heading 20° upstream holds the marks"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "A pot line round the prop stops you near a clearing line. If you lie stopped, how long until the stream carries you over it?",
+  "a": "9 min",
+  "o": [
+   "15 min",
+   "18 min",
+   "6 min"
+  ],
+  "why": "0.3 M ÷ 2.0 kn = 0.15 h = 9 min — a clearing line is a limit, not a margin.",
+  "ref": "Clearing bearings — the stream",
+  "fig": {
+   "type": "card",
+   "title": "Pot line round the prop",
+   "lines": [
+    "Engine in neutral to clear it",
+    "Clearing line 0.3 M away",
+    "Stream 2.0 kn straight towards it",
+    "Shoal beyond the line"
+   ],
+   "tag": "0.3 M"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Leaving the bay northward at night, you check the clearing bearing on the light astern. What do you do?",
+  "a": "Alter to starboard until it reads 185°M or more",
+  "o": [
+   "Alter to port until it reads 185°M or more",
+   "Hold on — under 185°M is the safe side",
+   "Alter to starboard until it reads 181°M or less"
+  ],
+  "why": "With the light astern, a westward drift lowers its bearing: 181°M is on the shoal side of 185°M — move east.",
+  "ref": "Clearing bearings — astern",
+  "fig": {
+   "type": "chart",
+   "land": "M0 200 V176 C60 172 120 178 150 172 L190 172 C240 178 280 172 320 176 V200 Z",
+   "depths": [
+    [
+     110,
+     90,
+     "0.8",
+     true
+    ],
+    [
+     128,
+     108,
+     "1.6"
+    ],
+    [
+     240,
+     112,
+     "12"
+    ],
+    [
+     60,
+     40,
+     "15"
+    ]
+   ],
+   "marks": [
+    [
+     170,
+     170,
+     "w",
+     "Lt"
+    ]
+   ],
+   "track": "M170 170 L182 30",
+   "boat": [
+    168,
+    120,
+    0
+   ],
+   "labels": [
+    [
+     110,
+     74,
+     "shoal",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Light astern",
+    "NLT 185°M",
+    "Now 181°M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are short-tacking north up the channel, with the church ahead as your head mark. At what hand-bearing compass reading do you tack?",
+  "a": "007°M",
+  "o": [
+   "013°M",
+   "347°M",
+   "353°M"
+  ],
+  "why": "Heading NW the church's bearing rises towards the NMT 010°T limit: 010°T − 3°E = 007°M — tack on it.",
+  "ref": "Clearing bearings — tacking",
+  "fig": {
+   "type": "card",
+   "title": "Beating up the Steno channel",
+   "lines": [
+    "Head mark: church, ahead to the north",
+    "Church NLT 350°T and NMT 010°T",
+    "Variation 3°E",
+    "Now on starboard tack, heading NW"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Leaving harbour at night, you take a back bearing of the harbour light every five minutes. What is happening, and what do you do?",
+  "a": "Set to port: come to starboard and aim right of 015°M",
+  "o": [
+   "Set to starboard: come to port and aim left of 015°M",
+   "On track: back bearings always fall as you go",
+   "Set to port: come to port and aim left of 015°M"
+  ],
+  "why": "A falling back bearing puts you west of the 015° line, to port of it: get back, then steer up into the stream.",
+  "ref": "Back bearings",
+  "fig": {
+   "type": "card",
+   "title": "Leaving harbour — back bearings",
+   "lines": [
+    "Track out 015°M; light astern 195°M",
+    "0105  light 195°M",
+    "0110  light 192°M",
+    "0115  light 189°M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are following the 5 m contour north at night, the land to port. What should the sounder read while you stay on it?",
+  "a": "6.9 m",
+  "o": [
+   "7.7 m",
+   "7.3 m",
+   "2.7 m"
+  ],
+  "why": "Depth of water = 5.0 + 2.3 = 7.3 m; the sounder reads below its transducer, 0.4 m down: 7.3 − 0.4 = 6.9 m.",
+  "ref": "Depth contours as a handrail",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 V200 H56 C70 160 50 120 64 80 C74 50 58 20 70 0 Z",
+   "track": "M104 176 C94 150 112 110 100 70 C96 40 108 20 102 0",
+   "depths": [
+    [
+     82,
+     100,
+     "3"
+    ],
+    [
+     150,
+     140,
+     "8"
+    ],
+    [
+     230,
+     160,
+     "12"
+    ],
+    [
+     160,
+     70,
+     "9"
+    ]
+   ],
+   "boat": [
+    104,
+    132,
+    0
+   ],
+   "labels": [
+    [
+     112,
+     40,
+     "5 m line",
+     "start"
+    ]
+   ],
+   "panel": [
+    "Now 0230",
+    "Tide 2.3 m"
+   ],
+   "note": "Sounder: no offset, transducer 0.4 m below waterline"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Feeling your way towards the harbour in fog, you hear the breakwater's fog signal. How do you use it?",
+  "a": "As a sign you're near, not a bearing to steer",
+  "o": [
+   "Steer straight for it until it is loud",
+   "Judge your distance by how loud it is",
+   "Turn away until you can't hear it"
+  ],
+  "why": "Sound in fog bends and fades: a fog signal says the mark is near, never its exact bearing or range.",
+  "ref": "Pilotage in fog",
+  "fig": {
+   "type": "card",
+   "title": "Fog, approaching the harbour",
+   "lines": [
+    "Visibility 50 m, no radar",
+    "Breakwater fog signal Horn(2) 30s",
+    "Heard faintly, fine on the stbd bow",
+    "Sounder 18 m"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Fog, no radar, and the stream across your approach is uncertain. How do you plan the landfall on this harbour?",
+  "a": "Aim well east of it, then follow the 10 m line west",
+  "o": [
+   "Aim straight at it, slowing as you near",
+   "Aim west of it, then follow the 10 m line east",
+   "Aim straight at it; turn away if it shoals"
+  ],
+  "why": "Aiming off tells you which side you are on when you find the contour: then turn the known way along clean water.",
+  "ref": "Pilotage in fog — aiming off",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V50 C280 54 220 48 176 52 L172 22 L148 22 L144 52 C110 48 60 58 0 52 Z",
+   "depths": [
+    [
+     100,
+     68,
+     "0.6",
+     true
+    ],
+    [
+     74,
+     74,
+     "1.2"
+    ],
+    [
+     120,
+     84,
+     "3"
+    ],
+    [
+     160,
+     120,
+     "18"
+    ],
+    [
+     250,
+     126,
+     "20"
+    ],
+    [
+     220,
+     96,
+     "10"
+    ],
+    [
+     290,
+     96,
+     "10"
+    ]
+   ],
+   "marks": [
+    [
+     160,
+     56,
+     "r",
+     "entrance"
+    ]
+   ],
+   "boat": [
+    150,
+    160,
+    0
+   ],
+   "labels": [
+    [
+     80,
+     96,
+     "rocks",
+     "middle"
+    ],
+    [
+     250,
+     76,
+     "clean 10 m line",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Fog, no radar",
+    "Stream uncertain"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Fog closes in halfway through your pilotage between the islets, with two turns still to go. What do you do?",
+  "a": "Anchor on the 6 m sand and wait for it to lift",
+  "o": [
+   "Carry on, timing each leg from the plan",
+   "Follow the plotter through both turns",
+   "Turn back the way you came, at speed"
+  ],
+  "why": "With no radar and rocks at each turn, the safe pilotage is to stop: anchor in good holding and wait.",
+  "ref": "Pilotage in fog",
+  "fig": {
+   "type": "chart",
+   "land": "M0 40 C30 30 70 50 80 80 C86 110 40 130 0 120 Z M320 100 C280 102 250 120 252 146 C256 170 300 184 320 180 Z",
+   "depths": [
+    [
+     160,
+     112,
+     "6"
+    ],
+    [
+     112,
+     52,
+     "0.5",
+     true
+    ],
+    [
+     210,
+     168,
+     "1.1"
+    ],
+    [
+     240,
+     100,
+     "12"
+    ]
+   ],
+   "boat": [
+    150,
+    98,
+    20
+   ],
+   "labels": [
+    [
+     176,
+     128,
+     "S",
+     "middle"
+    ],
+    [
+     112,
+     36,
+     "rocks",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Fog: vis 30 m",
+    "No radar",
+    "Two turns to go"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The stream has set you east of your planned track, and your crew presses 'go to' on the entrance waypoint again. What is the risk?",
+  "a": "The new straight line crosses the shoal",
+  "o": [
+   "None — the waypoint is in deep water",
+   "The plotter will now route round the shoal",
+   "The autopilot will steer the old track"
+  ],
+  "why": "'Go to' draws a straight line from where you are now; it knows nothing of the dangers your original track avoided.",
+  "ref": "Pilotage with the plotter",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V24 C240 30 160 20 110 34 L96 40 L84 40 C60 30 30 34 0 30 Z",
+   "depths": [
+    [
+     130,
+     110,
+     "0.8",
+     true
+    ],
+    [
+     144,
+     126,
+     "1.5"
+    ],
+    [
+     50,
+     120,
+     "9"
+    ],
+    [
+     250,
+     90,
+     "11"
+    ]
+   ],
+   "marks": [
+    [
+     90,
+     52,
+     "y",
+     "WP"
+    ]
+   ],
+   "track": "M66 176 L90 52",
+   "boat": [
+    176,
+    160,
+    330
+   ],
+   "labels": [
+    [
+     150,
+     98,
+     "shoal",
+     "start"
+    ]
+   ],
+   "panel": [
+    "Set east",
+    "by the stream"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Creeping towards your berth at night, you glance at the plotter. Which do you steer by?",
+  "a": "The compass and the marks — COG is noise here",
+  "o": [
+   "The COG — it shows your real track",
+   "The average of the COG readings",
+   "The plotter's heading line, zoomed in"
+  ],
+  "why": "At low speed the GPS COG wanders by tens of degrees: steer by compass and by eye; COG settles only with speed.",
+  "ref": "Pilotage with the plotter",
+  "fig": {
+   "type": "card",
+   "title": "Plotter, inside the harbour",
+   "lines": [
+    "Speed 1.5 kn",
+    "COG flicks between 290° and 340°",
+    "Compass heading 310°M, steady"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Approaching at night, you see a mark on the plotter where nothing is in the water. What do you make of it?",
+  "a": "A virtual AIS mark — obey it as a real one",
+  "o": [
+   "A plotter fault — ignore it",
+   "A buoy off station — report it",
+   "An unlit buoy — pass close to see it"
+  ],
+  "why": "A virtual aid to navigation exists only as an AIS signal; it marks a real danger and is obeyed like a buoy.",
+  "ref": "Pilotage with the plotter",
+  "fig": {
+   "type": "card",
+   "title": "Plotter at night",
+   "lines": [
+    "Cardinal mark symbol tagged 'V-AIS'",
+    "Nothing seen in the water there",
+    "Navtex: new shoal, temporary marking"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are writing leg 2 onto your pilotage card from the chart. What heading do you write?",
+  "a": "250°M",
+  "o": [
+   "244°M",
+   "067°M",
+   "247°M"
+  ],
+  "why": "True to magnetic, west is best: 247°T + 3°W = 250°M.",
+  "ref": "Pilotage plan",
+  "fig": {
+   "type": "card",
+   "title": "Pilotage plan — leg 2",
+   "lines": [
+    "Chart: leg 247°T, 1.4 M",
+    "Variation 3°W"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your arrival in the bay has slipped from the afternoon to 0300. What do you change in the pilotage plan?",
+  "a": "Use the directional light's white sector instead",
+  "o": [
+   "Keep the transit — it will show by moonlight",
+   "Steer 312° on the compass alone",
+   "Nothing — the plotter covers the transit"
+  ],
+  "why": "A daylight transit vanishes at night: re-plan on lit marks — here the directional light shows the same line.",
+  "ref": "Pilotage plan — at night",
+  "fig": {
+   "type": "card",
+   "title": "Plan for Ormos Vathy",
+   "lines": [
+    "Day plan: white chapel in line",
+    "with the old mill, 312°",
+    "Lights: Dir WRG 312° on the mole",
+    "Arrival now 0300"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Running west along the coast, you will turn into the bay on a bearing of the church, as your plan says. Do you turn now?",
+  "a": "Not yet — hold on until it rises to 340°M",
+  "o": [
+   "Yes — 330°M means the turn is past",
+   "Yes — turn now and steer 330°M for it",
+   "Not yet — wait until it is abeam to starboard"
+  ],
+  "why": "Running west, a mark on the starboard bow draws aft: its bearing rises from 330° towards 340° — turn when it reaches it.",
+  "ref": "Pilotage plan — turning bearings",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V70 C240 64 160 70 140 48 C130 36 106 36 96 46 C80 60 40 66 0 60 Z",
+   "depths": [
+    [
+     118,
+     72,
+     "6"
+    ],
+    [
+     240,
+     110,
+     "14"
+    ],
+    [
+     60,
+     120,
+     "16"
+    ]
+   ],
+   "marks": [
+    [
+     120,
+     26,
+     "w",
+     "church"
+    ]
+   ],
+   "track": "M300 150 L165 150 L134 66",
+   "boat": [
+    192,
+    150,
+    270
+   ],
+   "labels": [
+    [
+     165,
+     172,
+     "turn: church 340°M",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Now",
+    "Church 330°M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are on the helm for a night entry and the navigator calls \"steer 047\". What do you do?",
+  "a": "Repeat \"047\" and call when steady on it",
+  "o": [
+   "Steer 047 and stay quiet to keep it calm",
+   "Ask why before you turn",
+   "Turn and watch the COG reach 047"
+  ],
+  "why": "Closed-loop calls: the helm repeats the heading and reports when steady, so a misheard figure is caught at once.",
+  "ref": "Pilotage — the cockpit team",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your crew, on the helm, plans to pass this green beacon 5 m off to stay in the deep channel. What do you tell them?",
+  "a": "Leave it well to starboard — it stands on the rock",
+  "o": [
+   "Pass it close to starboard — it marks the channel edge",
+   "Leave it to port — you are heading with the buoyage",
+   "Pass close either side — beacons stand in deep water"
+  ],
+  "why": "A beacon is built on the danger itself and the rocks run out round it: give it a berth, green to starboard going in.",
+  "ref": "IALA lateral marks — beacons",
+  "fig": {
+   "type": "chart",
+   "land": "M320 40 V200 H284 C270 160 292 130 272 112 C262 104 300 80 320 40 Z",
+   "depths": [
+    [
+     252,
+     100,
+     "0.5",
+     true
+    ],
+    [
+     228,
+     120,
+     "1.0",
+     true
+    ],
+    [
+     186,
+     126,
+     "2"
+    ],
+    [
+     140,
+     100,
+     "9"
+    ],
+    [
+     100,
+     160,
+     "11"
+    ]
+   ],
+   "marks": [
+    [
+     206,
+     104,
+     "g",
+     "Fl G 3s"
+    ]
+   ],
+   "boat": [
+    150,
+    170,
+    0
+   ],
+   "labels": [
+    [
+     80,
+     60,
+     "↑ buoyage",
+     "middle"
+    ]
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Closing the coast on a clear night, you are 6 M off the harbour. What do you expect to see of its lights now?",
+  "a": "Only the main light — the heads show from 3 M",
+  "o": [
+   "All three, the heads a little dimmer",
+   "The heads first — they're lower and nearer",
+   "Nothing until you are within 3 M"
+  ],
+  "why": "The nominal range is the range in clear weather: 3M head lights won't show at 6 M — find the main light first.",
+  "ref": "Light characteristics — range",
+  "fig": {
+   "type": "card",
+   "title": "Approach to Kissamos",
+   "lines": [
+    "Main light Fl(3) 15s 25m 18M",
+    "Breakwater heads: Fl R 3s 3M, Fl G 3s 3M",
+    "You: 6 M off, visibility good"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are approaching your planned harbour in the small hours. What do you do?",
+  "a": "Anchor in the bay and enter at first light",
+  "o": [
+   "Enter on the E light, keeping it close aboard",
+   "Enter with the spotlight on the W head",
+   "Enter on the plotter at dead slow"
+  ],
+  "why": "A narrow rocky entrance with one head unlit and town lights behind is a daylight job — and a safe anchorage is close.",
+  "ref": "Harbour entry at night",
+  "fig": {
+   "type": "card",
+   "title": "0140, 3 M off Kaladi",
+   "lines": [
+    "Entrance 50 m wide, rocks each side",
+    "Navtex: W breakwater light unlit",
+    "No moon; town lights behind",
+    "Anchorage 2 M back: 8 m sand, sheltered"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Heading in with the buoyage at night, you reach the fork. Which side of this mark do you leave to stay in the main channel?",
+  "a": "To starboard — the main channel lies to port",
+  "o": [
+   "To port — the main channel lies to starboard",
+   "To port — green lights are left to port at night",
+   "Either side — it marks the middle of the fork"
+  ],
+  "why": "In region A, Fl(2+1) G is a modified starboard-hand mark — preferred channel to port: leave it to starboard.",
+  "ref": "IALA preferred channel marks",
+  "fig": {
+   "type": "card",
+   "title": "Night · region A, heading in",
+   "lines": [
+    "Light at the fork: Fl(2+1) G 10s",
+    "Your marina: up the main channel"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Heading north into the bay, you follow the pilot book's directions. What do you see while you keep to them?",
+  "a": "Lighthouse just left of the point — you are west of the transit",
+  "o": [
+   "Lighthouse just right of the point — you are east of the transit",
+   "Lighthouse hidden behind the point — you are on the transit",
+   "Lighthouse just left of the point — you are east of the transit"
+  ],
+  "why": "'Open' means not in line: with the far light showing west (left) of the near point, you are a little west of their transit.",
+  "ref": "Transits — open and closed",
+  "fig": {
+   "type": "card",
+   "title": "Pilot book — Ormos Agrilia",
+   "lines": [
+    "Heading N into the bay: keep the",
+    "lighthouse just open west of",
+    "Ak. Mavro until the chapel is abeam"
+   ]
+  }
+ }
+]

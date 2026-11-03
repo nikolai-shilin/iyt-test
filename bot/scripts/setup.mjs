@@ -33,14 +33,14 @@ const LIMITS = { name: 64, description: 512, short_description: 120 };
 const TEXTS = {
   en: {
     name: 'IYT Test — exam practice',
-    description: `⚓️ Practice questions for IYT certification levels — VHF Radio Operator, International Crew, Flotilla Skipper and Bareboat Skipper.
+    description: `⚓️ Practice questions for IYT certification levels — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper and Yachtmaster Coastal.
 
 Real situations, drawn: the mark ahead, the lights at night, the other boat's bearing, the engine panel. Four options, a one-line note naming the rule.
 
 📚 Practise by topic · ⏱ Timed mock exam · 🔁 Mistakes come back until you get them right · 🔥 A question a day in this chat
 
 Tap Start to pick your level.`,
-    short_description: 'Practice questions for IYT levels: drawn situations, mock exam, daily question. From VHF to Bareboat Skipper.',
+    short_description: 'Practice questions for IYT levels: drawn situations, mock exam, daily question. From VHF to Yachtmaster Coastal.',
     commands: [
       { command: 'start', description: 'Pick a level and practise' },
       { command: 'exam', description: 'Start a mock exam' },
@@ -51,14 +51,14 @@ Tap Start to pick your level.`,
   },
   ru: {
     name: 'IYT Test — подготовка к экзамену',
-    description: `⚓️ Вопросы для подготовки к экзаменам IYT — VHF Radio Operator, International Crew, Flotilla Skipper и Bareboat Skipper.
+    description: `⚓️ Вопросы для подготовки к экзаменам IYT — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper и Yachtmaster Coastal.
 
 Реальные ситуации, в картинках: знак по курсу, огни ночью, пеленг на другую яхту, приборы двигателя. Четыре варианта и одна строка с правилом.
 
 📚 Тренировка по темам · ⏱ Пробный экзамен на время · 🔁 Ошибки возвращаются, пока не ответите верно · 🔥 Вопрос дня прямо в чате
 
 Нажмите «Старт» и выберите уровень.`,
-    short_description: 'Вопросы для подготовки к IYT: ситуации в картинках, пробный экзамен, вопрос дня. От VHF до Bareboat Skipper.',
+    short_description: 'Вопросы для подготовки к IYT: ситуации в картинках, пробный экзамен, вопрос дня. От VHF до Yachtmaster Coastal.',
     commands: [
       { command: 'start', description: 'Выбрать уровень и тренироваться' },
       { command: 'exam', description: 'Пробный экзамен' },
