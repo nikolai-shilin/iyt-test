@@ -135,8 +135,9 @@ body.mode-overview .overview { display: block; }
   background: conic-gradient(var(--accent) calc(var(--v) * 1%), var(--tag-line) 0); }
 .ring::before { content: ''; position: absolute; inset: var(--w); border-radius: 50%; background: var(--bg); z-index: -1; }
 .ring b { font: 700 13px 'Carlito', Arial, sans-serif; color: var(--ink); letter-spacing: -.02em; }
-.ring.l { --sz: 140px; --w: 10px; } .ring.l b { font-size: 34px; }
-.ring.l small { position: absolute; bottom: 30px; font: 700 11px 'Carlito', Arial, sans-serif; text-transform: uppercase; letter-spacing: .02em; color: var(--muted); }
+/* large: number and label stacked and centred as one block */
+.ring.l { --sz: 140px; --w: 10px; flex-direction: column; gap: 3px; } .ring.l b { font-size: 34px; line-height: 1; }
+.ring.l small { font: 700 11px 'Carlito', Arial, sans-serif; line-height: 1; text-transform: uppercase; letter-spacing: .02em; color: var(--muted); }
 .ring.bad { background: conic-gradient(var(--danger) calc(var(--v) * 1%), var(--tag-line) 0); }
 .ring.ink { background: conic-gradient(var(--ink) calc(var(--v) * 1%), var(--tag-line) 0); }
 .band .ring::before { background: var(--band); }
