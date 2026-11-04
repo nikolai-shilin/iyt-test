@@ -1,7 +1,8 @@
 /* IYT Test — Telegram mini app.
-   Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile); C4 Students
-   (every student's results, the questions they flagged and the ones they reported as wrong, api/admin.mjs) opens from
-   the profile for the admins only.
+   Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile); C4 Admin
+   (four pages under one tab strip: Overview with joins, answers and wrong answers per day; Students; the questions
+   reported as wrong; the flagged ones — api/admin.mjs) opens from the profile for the admins only. C1b lists the
+   questions the student reported as wrong, so they can withdraw a report.
    Banks are read from Supabase (fetchBank), with the static JSON files as fallback; progress lives on the device
    (localStorage + Telegram CloudStorage) and, inside Telegram, on the server (serverSave → api/progress.mjs), so the
    same code also runs in a plain browser for testing.
@@ -168,6 +169,14 @@ const STR = {
     noExamsAdmin: 'No mock exam yet', reload: 'Reload', sortProgress: 'Progress', sortName: 'Name', sortJoined: 'Date joined',
     flaggedMeta: 'Questions students marked to come back to', flaggedNone: 'Nobody has flagged a question yet', flaggedBy: 'Flagged by',
     reportedQ: 'Reported as wrong', reportedMeta: 'Questions students say have a mistake', reportedNone: 'No question has been reported yet', reportedBy: 'Reported by',
+    adminT: 'Admin', adminMeta: 'Students, charts and reported questions',
+    tabOverview: 'Overview', tabStudents: 'Students', tabReported: 'Reported', tabFlagged: 'Flagged',
+    overviewMeta: 'How the app is used, day by day',
+    chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chNone: 'No numbers for the charts yet',
+    chLast: (n) => `in the last ${pl(n, 'day')}`, chOf: (p) => `${p}% of answers`,
+    // the student's own reports (C1b)
+    reportedMine: 'Reported as wrong', reportedMineMeta: 'Questions you said have a mistake. Withdraw a report if the question turns out to be fine.',
+    reportedMineNone: 'Nothing reported. If a question looks wrong, tap Report under it.', withdraw: 'Withdraw',
   },
   ru: {
     learn: 'Учёба', exam: 'Экзамен', progress: 'Прогресс', profile: 'Профиль', back: '‹ Назад',
@@ -257,6 +266,13 @@ const STR = {
     noExamsAdmin: 'Экзаменов ещё не было', reload: 'Обновить', sortProgress: 'Прогресс', sortName: 'Имя', sortJoined: 'Дата',
     flaggedMeta: 'Вопросы, которые ученики отметили, чтобы вернуться', flaggedNone: 'Отмеченных вопросов пока нет', flaggedBy: 'Отметили',
     reportedQ: 'Вопросы с ошибкой', reportedMeta: 'Вопросы, в которых ученики нашли ошибку', reportedNone: 'Об ошибках пока не сообщали', reportedBy: 'Сообщили',
+    adminT: 'Админ-панель', adminMeta: 'Ученики, графики и вопросы с ошибками',
+    tabOverview: 'Обзор', tabStudents: 'Ученики', tabReported: 'Ошибки', tabFlagged: 'Отмечены',
+    overviewMeta: 'Как пользуются приложением, по дням',
+    chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chNone: 'Для графиков пока нет данных',
+    chLast: (n) => `за ${pl(n, 'day')}`, chOf: (p) => `${p}% ответов`,
+    reportedMine: 'Сообщено об ошибке', reportedMineMeta: 'Вопросы, в которых вы нашли ошибку. Отзовите сообщение, если вопрос оказался верным.',
+    reportedMineNone: 'Сообщений нет. Если вопрос кажется неверным, нажмите «Сообщить» под ним.', withdraw: 'Отозвать',
   },
 };
 const t = (k, ...a) => { const v = STR[LANG][k] ?? STR.en[k]; return typeof v === 'function' ? v(...a) : v; };
@@ -535,15 +551,19 @@ function loadDaily() {
   }).catch(() => {});
 }
 // Admin: every student's results from api/admin.mjs. undefined = not asked, 'loading', null = failed, or the list.
-let ADM;
+// ADM_DAILY: joins, answers and wrong answers per UTC day for the Overview charts (null when the server had none).
+let ADM, ADM_DAILY = null;
+// The admin pages, in the order of their tab strip: [view, tab label]
+const ADMIN_TABS = [['admin', 'tabOverview'], ['adminUsers', 'tabStudents'], ['adminWrong', 'tabReported'], ['adminFlags', 'tabFlagged']];
+const isAdminView = (v) => ADMIN_TABS.some(([k]) => k === v);
 function loadStudents(again) {
   if (ADM !== undefined && !again) return; // a failure stays on screen until Reload is tapped
   ADM = 'loading';
   fetch('/api/admin', { headers: { 'x-telegram-init-data': IN_TG ? TG.initData : '' } })
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
-    .then((j) => { ADM = Array.isArray(j.users) ? j.users : null; })
+    .then((j) => { ADM = Array.isArray(j.users) ? j.users : null; ADM_DAILY = Array.isArray(j.daily) ? j.daily : null; })
     .catch(() => { ADM = null; })
-    .then(() => { if (cur().v === 'admin') render(true); if (ADM) loadPhotos(); });
+    .then(() => { if (isAdminView(cur().v)) render(true); if (ADM) loadPhotos(); });
 }
 // Students' Telegram photos, fetched one by one through api/admin.mjs (?photo=id) with the same launch data; a
 // student with no photo the bot may see gets null and keeps their initials. Each photo is put into the page as it
@@ -581,19 +601,19 @@ function sortedStudents() {
 // margins pad it to the line box of the real style. The boot skeleton of the home screen is in index.html.
 const sk = (w, h, more = '') => `<span class="sk" style="width:${w};height:${h}${more}"></span>`;
 function skeleton(kind) {
-  if (kind !== 'students') return '';
+  if (!isAdminView(kind)) return '';
   const cx = document.createElement('canvas').getContext('2d');
   cx.font = '14px Merriweather, Georgia, serif';
   const chip = (k) => sk(Math.round(cx.measureText(t(k)).width + 28) + 'px', '36px', ';border-radius:18px'); // a sort chip, as wide as its label
   const stat = (w, two) => `<div class="stat">${sk(w, '18px', ';margin:4.5px 0')}<div class="stack" style="align-self:stretch;align-items:center">${sk('80%', '11px', ';margin:1.75px 0')}${two ? sk('55%', '11px', ';margin:1.75px 0') : ''}</div></div>`;
   const n = (bar) => `<span class="n">${bar ? sk('38px', '16px', ';margin:2.25px 0') + sk('66px', '11px', ';margin:2.5px 0') : sk('80px', '11px', ';margin:2.5px 0')}</span>`;
   const row = (tw, mw, bar) => `<div class="topic stu${bar ? ' x3' : ''}"><span class="ico sk"></span>${sk(tw, '14px', ';grid-column:2;margin:2px 0')}${sk(mw, '12px', ';grid-column:2;margin:2px 0')}${bar ? sk('100%', '4px', ';grid-column:2;grid-row:3;border-radius:2px') : ''}${n(bar)}</div>`;
-  const rows = [['150px', '180px', 1], ['110px', '120px', 1], ['170px', '190px', 1], ['95px', '150px', 1], ['135px', '60px', 0], ['120px', '70px', 0]].map((r) => row(...r)).join('');
-  return `<div class="sk-wrap" aria-busy="true"><span class="sk-label">${t('loading')}</span>
-    <div class="stats">${stat('24px')}${stat('16px', true)}${stat('30px')}</div>
-    <div class="tags" style="margin-top:4px">${chip('sortProgress')}${chip('sortName')}${chip('sortJoined')}</div>
-    <div class="topics">${rows}</div>
-    <div class="stack g8" style="margin-top:8px"><div>${sk('130px', '13px', ';margin:1.5px 0')}${sk('85%', '12px', ';margin:6px 0 2px')}</div>${sk('60%', '12px', ';margin:2px 0')}</div></div>`;
+  const rows = (list) => `<div class="topics">${list.map((r) => row(...r)).join('')}</div>`;
+  const chart = `<div class="band dchart">${sk('90px', '13px', ';margin:1.5px 0')}${sk('100%', '96px', ';border-radius:8px')}</div>`;
+  const inner = kind === 'admin' ? `<div class="stats">${stat('24px')}${stat('16px', true)}${stat('30px')}</div>${chart}${chart}${chart}`
+    : kind === 'adminUsers' ? `<div class="tags">${chip('sortProgress')}${chip('sortName')}${chip('sortJoined')}</div>${rows([['150px', '180px', 1], ['110px', '120px', 1], ['170px', '190px', 1], ['95px', '150px', 1], ['135px', '60px', 0], ['120px', '70px', 0]])}`
+    : rows([['85%', '140px', 0], ['70%', '120px', 0], ['80%', '150px', 0]]);
+  return `<div class="sk-wrap" aria-busy="true"><span class="sk-label">${t('loading')}</span>${inner}</div>`;
 }
 // Makes the static boot skeleton (index.html) match this student's home screen before anything has loaded: the
 // header outside Telegram, the tab bar, the title's shape in their language, and for a returning student the
@@ -645,6 +665,68 @@ function flaggedByStudents(key) {
   return Object.keys(by).filter(anyQ).map((id) => ({ id, users: by[id] })).sort((a, b) => b.users.length - a.users.length || a.id.localeCompare(b.id));
 }
 const initials = (name) => name.replace(/^@/, '').split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
+// One admin page: the tab strip, the heading, then the page itself once the results are in (inner builds it).
+function adminPage(v, title, meta, inner) {
+  loadStudents();
+  let body;
+  if (ADM === 'loading' || ADM === undefined) body = skeleton(v);
+  else if (ADM === null) body = `<div class="empty stack g12"><p class="body-muted">${t('studentsFail')}</p><button class="pill" style="margin:0 auto" data-act="adminReload">${t('reload')}</button></div>`;
+  else if (!ADM.length) body = `<div class="empty"><p class="body-muted">${t('studentsEmpty')}</p></div>`;
+  else body = inner();
+  const tabs = ADMIN_TABS.map(([k, label]) => `<button class="lang${k === v ? ' lang-on' : ''}" role="tab" aria-selected="${k === v}" data-act="atab" data-v="${k}">${t(label)}</button>`).join('');
+  return {
+    title: t('adminT'),
+    body: `<div class="langs atabs" role="tablist" aria-label="${esc(t('adminT'))}">${tabs}</div>
+      <div class="stack g4"><span class="meta">${t('adminT')}</span><h2 class="display-s">${t(title)}</h2><p class="body-muted">${t(meta)}</p></div>${body}`,
+  };
+}
+// The questions the students reported as wrong (key 'wrong') or flagged ('flags'), grouped by question; a tap opens
+// the question and who marked it.
+function flaggedList(key, none) {
+  const list = flaggedByStudents(key);
+  if (!list.length) return `<div class="empty"><p class="body-muted">${t(none)}</p></div>`;
+  return `<div class="topics">${list.map(({ id, users }) => { const { q, lv, topic } = anyQ(id);
+    return `<div class="topic flq${key === 'wrong' ? ' bad' : ''}" data-act="flagq" data-id="${id}" data-k="${key}"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span><span class="n"><b>${users.length}</b>${t('studentsW', users.length)}</span></div>`; }).join('')}</div>`;
+}
+// The Overview charts: one bar per UTC day, from the first day anybody joined or answered (a week at least) to today.
+const uday = (k) => new Date(k + 'T00:00:00Z').toLocaleDateString(t('locale'), { day: 'numeric', month: 'short', timeZone: 'UTC' });
+function dailyCharts() {
+  if (!Array.isArray(ADM_DAILY) || !ADM_DAILY.length) return `<p class="card-meta">${t('chNone')}</p>`;
+  let first = ADM_DAILY.findIndex((r) => r.joined || r.answers);
+  if (first < 0) first = ADM_DAILY.length;
+  const rows = ADM_DAILY.slice(Math.max(0, Math.min(first, ADM_DAILY.length - 7)));
+  const ans = rows.reduce((a, r) => a + r.answers, 0), bad = rows.reduce((a, r) => a + r.wrong, 0);
+  const last = t('chLast', rows.length);
+  return dayChart('joined', t('chJoined'), rows, '', last) + dayChart('answers', t('chAnswers'), rows, '', last) +
+    dayChart('wrong', t('chWrong'), rows, ' bad', ans ? t('chOf', Math.round((bad / ans) * 100)) : last);
+}
+// One chart: a bar per day, the highest day marked on a dashed line, the first and last day under it. Pointing at
+// (or tapping) a bar puts its day and number in the top right corner (chartPoint); a hidden table reads it out.
+function dayChart(key, title, rows, cls, note) {
+  const vals = rows.map((r) => r[key]), max = Math.max(1, ...vals), total = vals.reduce((a, b) => a + b, 0);
+  const share = (r) => (key === 'wrong' && r.answers ? ` · ${Math.round((r.wrong / r.answers) * 100)}%` : '');
+  const cols = rows.map((r) => `<div data-l="${esc(uday(r.day))}" data-n="${r[key]}${share(r)}"><i class="${r[key] ? '' : 'z'}" style="height:${r[key] ? Math.max(3, (r[key] / max) * 100) : 0}%"></i></div>`).join('');
+  const read = `<b>${total}</b> · ${esc(note)}`;
+  return `<div class="band dchart${cls}" data-read="${esc(read)}">
+    <div class="row sb-between"><span class="kicker">${esc(title)}</span><span class="meta dread" aria-hidden="true">${read}</span></div>
+    <div class="dplot" style="--n:${rows.length}" aria-hidden="true"><span class="dmax">${max}</span>${cols}</div>
+    <div class="row sb-between dx" aria-hidden="true"><span>${uday(rows[0].day)}</span><span>${uday(rows[rows.length - 1].day)}</span></div>
+    <table class="sr-only"><caption>${esc(title)}, ${esc(note)}: ${total}</caption>${rows.map((r) => `<tr><th>${uday(r.day)}</th><td>${r[key]}</td></tr>`).join('')}</table></div>`;
+}
+function chartPoint(e) {
+  const ch = e.target.closest && e.target.closest('.dchart[data-read]');
+  if (!ch) return;
+  const col = e.target.closest('.dplot > div'), r = ch.querySelector('.dread');
+  ch.querySelectorAll('.dplot > .on').forEach((x) => x.classList.remove('on'));
+  if (col) { col.classList.add('on'); r.innerHTML = `${esc(col.dataset.l)} · <b>${esc(col.dataset.n)}</b>`; }
+  else r.innerHTML = ch.dataset.read;
+}
+function chartLeave(e) {
+  const ch = e.target.closest && e.target.closest('.dchart[data-read]');
+  if (!ch || (e.relatedTarget && ch.contains(e.relatedTarget))) return;
+  ch.querySelectorAll('.dplot > .on').forEach((x) => x.classList.remove('on'));
+  ch.querySelector('.dread').innerHTML = ch.dataset.read;
+}
 async function toggleDaily(el) {
   if (typeof DAILY !== 'boolean') return;
   const on = !DAILY;
@@ -1093,7 +1175,7 @@ const VIEWS = {
     const max = Math.max(1, ...week.map((w) => w.n)), sum = week.reduce((a, w) => a + w.n, 0);
     const names = t('days');
     const days = week.map((w, k) => `<div class="${k === 6 ? 'today' : ''}"><i class="${w.n ? '' : 'z'}" style="height:${w.n ? Math.max(8, (w.n / max) * 100) : 4}%"></i><span>${names[w.d.getDay()]}</span></div>`).join('');
-    const mis = allMistakes().length, fl = S.flags.filter((id) => Q[id]).length;
+    const mis = allMistakes().length, fl = S.flags.filter((id) => Q[id]).length, rep = S.wrong.filter(anyQ).length;
     const exams = myExams().slice(0, 5).map((e) => `<div class="att"><span class="card-meta">${day(e.at)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
     const weakest = TOPICS.filter((tp) => topicSeen(tp.id)).sort((a, b) => topicAcc(a.id) - topicAcc(b.id) || topicPct(a.id) - topicPct(b.id)).slice(0, 3);
     return {
@@ -1103,6 +1185,7 @@ const VIEWS = {
         <div class="band" style="padding:16px 18px"><div class="row sb-between" style="margin-bottom:12px"><span class="kicker">${t('thisWeek')}</span><span class="meta">${pl(sum, 'question')}</span></div><div class="days">${days}</div></div>
         <div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${mis ? t('misMeta', mis) : t('noneNow')}</div></div><button class="mini mini-accent${mis ? '' : ' off'}" data-act="allMistakes">${t('review')}</button></div>
         <div class="row sb-between"><div><div class="card-title">${t('flaggedQ')}</div><div class="card-meta">${fl ? pl(fl, 'question') : t('flagHint')}</div></div><button class="mini mini-accent${fl ? '' : ' off'}" data-act="flagged">${t('practise')}</button></div>
+        ${rep ? `<div class="row sb-between"><div><div class="card-title">${t('reportedMine')}</div><div class="card-meta">${pl(rep, 'question')}</div></div><button class="mini mini-accent" data-act="reported">${t('open')}</button></div>` : ''}
         <div class="band" style="padding:16px 18px"><div class="row sb-between" style="margin-bottom:4px"><span class="kicker">${t('mockExams')}</span><button class="meta acc" data-act="examIntro">${t('mockShort')} ›</button></div>${exams || `<p class="card-meta" style="margin:6px 0 0">${t('noExams')}</p>`}</div>
         ${weakest.length ? `<div class="stack g8"><div class="row sb-between"><span class="kicker">${t('weakestTopics')}</span><button class="meta acc" data-act="level">${t('allTopics')}</button></div>${topicRows(weakest)}</div>` : ''}`,
     };
@@ -1126,8 +1209,8 @@ const VIEWS = {
       : `<div class="set"><div class="card-title">${t('currentLevel')}</div><span class="val">${esc(LEVEL.title)}</span></div>`;
     const daily = typeof DAILY === 'boolean'
       ? `<div class="set"><div><div class="card-title">${t('daily')}</div><div class="card-meta">${t('dailyMeta')}</div></div><button class="toggle${DAILY ? ' on' : ''}" data-act="daily" role="switch" aria-checked="${DAILY}" aria-label="${esc(t('daily'))}"></button></div>` : '';
-    // admins get the students' results page (api/admin.mjs says who)
-    const admin = ADMIN ? `<div class="set" data-act="admin"><div><div class="card-title">${t('students')}</div><div class="card-meta">${t('studentsMeta')}</div></div><span class="val">${svg('next', 16)}</span></div>` : '';
+    // admins get the admin pages (api/admin.mjs says who)
+    const admin = ADMIN ? `<div class="set" data-act="admin"><div><div class="card-title">${t('adminT')}</div><div class="card-meta">${t('adminMeta')}</div></div><span class="val">${svg('next', 16)}</span></div>` : '';
     return {
       title: 'IYT Test', nav: 'profile',
       body: `<div class="row" style="gap:14px"><span class="tg-ava" style="width:52px;height:52px;font-size:16px">${ava}</span><div><div class="card-title" style="font-size:18px">${esc(name)}</div>
@@ -1145,15 +1228,17 @@ const VIEWS = {
     };
   },
 
-  /* C4 Students (admins only): every student's results */
+  /* C4 Admin (admins only), four pages under one tab strip. Overview: the totals and the charts per day */
   admin() {
-    loadStudents();
-    let body;
-    if (ADM === 'loading' || ADM === undefined) body = skeleton('students');
-    else if (ADM === null) body = `<div class="empty stack g12"><p class="body-muted">${t('studentsFail')}</p><button class="pill" style="margin:0 auto" data-act="adminReload">${t('reload')}</button></div>`;
-    else if (!ADM.length) body = `<div class="empty"><p class="body-muted">${t('studentsEmpty')}</p></div>`;
-    else {
+    return adminPage('admin', 'overview', 'overviewMeta', () => {
       const active = ADM.filter((u) => u.week > 0).length, exams = ADM.reduce((a, u) => a + u.exams.length, 0);
+      return `<div class="stats"><div class="stat"><b data-count="${ADM.length}">${ADM.length}</b><span class="meta">${t('studentsW', ADM.length)}</span></div><div class="stat"><b>${active}</b><span class="meta">${t('activeWeek')}</span></div><div class="stat"><b>${exams}</b><span class="meta">${t('examsTaken', exams)}</span></div></div>
+        ${dailyCharts()}`;
+    });
+  },
+  /* C4 Students: every student's results */
+  adminUsers() {
+    return adminPage('adminUsers', 'students', 'studentsMeta', () => {
       const chip = (k) => `<button class="tag${ADM_SORT === k ? ' tag-on' : ''}" style="min-height:36px;font-size:14px;padding:0 12px" data-act="sort" data-s="${k}">${t('sort' + k[0].toUpperCase() + k.slice(1))}</button>`;
       const rows = sortedStudents().map((u) => {
         const name = studentName(u), L = studentLevel(u);
@@ -1162,23 +1247,23 @@ const VIEWS = {
         const bar = L && L.seen ? `<span class="bar"><i style="width:${L.pct}%"></i><i class="seen" style="left:${L.pct}%;width:${Math.max(0, L.seenPct - L.pct)}%"></i></span>` : '';
         return `<div class="topic${bar ? ' x3' : ''} stu" data-act="student" data-id="${u.id}">${avatar(u, 'ico')}<span class="card-title">${esc(name)}</span><span class="tmeta">${esc(meta)}</span>${bar}<span class="n">${right}</span></div>`;
       }).join('');
-      // the questions they reported as wrong and the ones they flagged, grouped by question; a tap opens the question and who marked it
-      const section = (key, title, meta, none) => {
-        const list = flaggedByStudents(key);
-        const rows = list.map(({ id, users }) => { const { q, lv, topic } = anyQ(id);
-          return `<div class="topic flq${key === 'wrong' ? ' bad' : ''}" data-act="flagq" data-id="${id}" data-k="${key}"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span><span class="n"><b>${users.length}</b>${t('studentsW', users.length)}</span></div>`; }).join('');
-        return `<div class="stack g8" style="margin-top:8px"><div><span class="kicker">${t(title)}</span><p class="card-meta" style="margin:4px 0 0">${t(meta)}</p></div>
-          ${list.length ? `<div class="topics">${rows}</div>` : `<p class="card-meta" style="margin:0">${t(none)}</p>`}</div>`;
-      };
-      body = `<div class="stats"><div class="stat"><b data-count="${ADM.length}">${ADM.length}</b><span class="meta">${t('studentsW', ADM.length)}</span></div><div class="stat"><b>${active}</b><span class="meta">${t('activeWeek')}</span></div><div class="stat"><b>${exams}</b><span class="meta">${t('examsTaken', exams)}</span></div></div>
-        <div class="tags" style="margin-top:4px">${chip('progress')}${chip('name')}${chip('joined')}</div>
-        <div class="topics">${rows}</div>
-        ${section('wrong', 'reportedQ', 'reportedMeta', 'reportedNone')}
-        ${section('flags', 'flaggedQ', 'flaggedMeta', 'flaggedNone')}`;
-    }
+      return `<div class="tags">${chip('progress')}${chip('name')}${chip('joined')}</div><div class="topics">${rows}</div>`;
+    });
+  },
+  /* C4 Questions the students reported as wrong (the red flag) */
+  adminWrong() { return adminPage('adminWrong', 'reportedQ', 'reportedMeta', () => flaggedList('wrong', 'reportedNone')); },
+  /* C4 Questions the students flagged to come back to */
+  adminFlags() { return adminPage('adminFlags', 'flaggedQ', 'flaggedMeta', () => flaggedList('flags', 'flaggedNone')); },
+
+  /* C1b The questions this student reported as wrong (S.wrong, every level), each with a button to withdraw it */
+  reported() {
+    const list = S.wrong.filter(anyQ);
+    const rows = list.map((id) => { const { q, lv, topic } = anyQ(id);
+      return `<div class="topic flq bad mine"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span><span class="n"><button class="mini" data-act="unreport" data-id="${id}">${t('withdraw')}</button></span></div>`; }).join('');
     return {
-      title: t('students'),
-      body: `<div class="stack g4"><span class="meta">${t('profile')}</span><h2 class="display-s">${t('students')}</h2><p class="body-muted">${t('studentsMeta')}</p></div>${body}`,
+      title: t('reportedMine'),
+      body: `<div class="stack g4"><span class="meta">${t('progress')}</span><h2 class="display-s">${t('reportedMine')}</h2><p class="body-muted">${t('reportedMineMeta')}</p></div>
+        ${list.length ? `<div class="topics">${rows}</div>` : `<div class="empty"><p class="body-muted">${t('reportedMineNone')}</p></div>`}`,
     };
   },
 };
@@ -1439,6 +1524,15 @@ const ACT = {
   set: (d, el) => { S.set[d.k] = !S.set[d.k]; save(); el.classList.toggle('on', S.set[d.k]); setTimeout(render, 220); },
   daily: (d, el) => toggleDaily(el),
   admin: () => go('admin'),
+  // the admin tab strip swaps the page in place, so Back still goes to the profile
+  atab: (d) => { if (cur().v === d.v || !isAdminView(d.v)) return; stack[stack.length - 1] = { v: d.v }; hap('sel'); enterTab = true; render(true); },
+  reported: () => go('reported'),
+  // C1b: withdraw a report (the same as tapping the red flag again under the question)
+  unreport: (d) => {
+    const k = S.wrong.indexOf(d.id);
+    if (k < 0) return;
+    S.wrong.splice(k, 1); hap('sel'); save(); render(); toast(t('unwrong'));
+  },
   rentals: () => (IN_TG ? TG.openTelegramLink(RENTALS_LINK) : window.open(RENTALS_LINK, '_blank', 'noopener')),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
@@ -1457,6 +1551,9 @@ $app.addEventListener('click', (e) => {
   const fn = ACT[el.dataset.act];
   if (fn) fn(el.dataset, el);
 });
+$app.addEventListener('pointerover', chartPoint);
+$app.addEventListener('click', chartPoint);
+$app.addEventListener('pointerout', chartLeave);
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') back();
   // Enter / Space on a focused card or row acts like a tap (buttons do this on their own)
@@ -1480,7 +1577,9 @@ function deepLink() {
   if (p === 'exam') stack = [{ v: 'examIntro' }];
   else if (p === 'progress') stack = [{ v: 'progress' }];
   else if (p === 'profile' || p === 'settings') stack = [{ v: 'profile' }];
-  else if (p === 'admin' || p === 'students') stack = [{ v: 'profile' }, { v: 'admin' }];
+  else if (p === 'admin') stack = [{ v: 'profile' }, { v: 'admin' }];
+  else if (p === 'students') stack = [{ v: 'profile' }, { v: 'adminUsers' }];
+  else if (p === 'reported') stack = [{ v: 'progress' }, { v: 'reported' }];
   else if (p === 'level' || LEVELS.some((l) => l.link === p && BASES[l.id])) stack = [{ v: 'home' }, { v: 'level' }];
   else if (p === 'practice') { stack = [{ v: 'home' }, { v: 'level' }]; return 'setup'; }
   return null;

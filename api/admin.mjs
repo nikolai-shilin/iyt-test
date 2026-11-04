@@ -3,7 +3,8 @@
 //
 //   GET /api/admin            → { users: [ { id, name, username, lang, daily, joined, active, level, total, streak, lastDay,
 //                                 week, levels: { fs: { mastered, seen, mistakes }, … }, exams: [{ lv, at, pct, passed }],
-//                                 flags: ['bs-012', …], wrong: ['bs-034', …] } ] }
+//                                 flags: ['bs-012', …], wrong: ['bs-034', …] } ],
+//                               daily: [ { day: '2026-11-04', joined, answers, wrong }, … ] | null }
 //   GET /api/admin?photo=<id> → the student's Telegram profile photo (JPEG, smallest size), 204 when they have none
 //                               that the bot may see. The bot fetches it (getUserProfilePhotos + getFile) because the file
 //                               link carries the bot token, so the app never sees that link.
@@ -14,6 +15,10 @@
 // flags are the question ids the student marked to come back to (state.flags) and wrong the ones they reported as
 // having a mistake (state.wrong, the red flag); the app groups both by question on the Students page, so the admins
 // see which questions people get stuck on and which need a fix.
+// daily is the last DAYS days (UTC), oldest first, for the charts on the Overview page: people who joined (users.created_at),
+// answers given and the wrong ones among them (public.answers). It comes from public.admin_daily()
+// (supabase/migrations/20261104170000_admin_daily.sql); until that function is in the database the same numbers are
+// counted here from the answer rows. null when neither worked — the rest of the page still loads.
 // The caller proves who they are with Telegram.WebApp.initData in the x-telegram-init-data header (as api/settings.mjs);
 // anyone who is not an admin gets 403, exactly like a bad signature. Env on Vercel: TELEGRAM_BOT_TOKEN, SUPABASE_URL,
 // SUPABASE_SECRET_KEY. Without the database it answers 503.
@@ -28,6 +33,28 @@ const cleanIds = (list) => [...new Set((Array.isArray(list) ? list : []).filter(
 
 const pad = (n) => String(n).padStart(2, '0');
 const dkey = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
+
+const DAYS = 30;
+const MAX_ANSWER_ROWS = 50_000; // the fallback below reads the rows themselves; past this the database function is a must
+// Joins, answers and wrong answers per UTC day, oldest first (see the header).
+async function perDay(users) {
+  try {
+    const rows = await db('rpc/admin_daily', { method: 'POST', body: { p_days: DAYS } });
+    return rows.map((r) => ({ day: r.day, joined: +r.joined || 0, answers: +r.answers || 0, wrong: +r.wrong || 0 }));
+  } catch (e) {
+    if (!/: 404 /.test(e.message)) throw e; // anything but "no such function" is a real failure
+  }
+  const from = new Date(); from.setUTCHours(0, 0, 0, 0); from.setUTCDate(from.getUTCDate() - (DAYS - 1));
+  const out = [], at = {};
+  for (let d = new Date(from); out.length < DAYS; d.setUTCDate(d.getUTCDate() + 1)) out.push(at[dkey(d)] = { day: dkey(d), joined: 0, answers: 0, wrong: 0 });
+  for (const u of users) { const r = at[dkey(new Date(u.created_at))]; if (r) r.joined++; }
+  for (let off = 0; off < MAX_ANSWER_ROWS; off += 1000) {
+    const page = await db(`answers?select=at,correct&at=gte.${from.toISOString()}&order=id.asc&limit=1000&offset=${off}`);
+    for (const a of page) { const r = at[dkey(new Date(a.at))]; if (r) { r.answers++; if (!a.correct) r.wrong++; } }
+    if (page.length < 1000) break;
+  }
+  return out;
+}
 
 // Consecutive days with answers up to today (UTC; the app keys days by the student's local date, so this can be a day off).
 function streakOf(days) {
@@ -105,7 +132,8 @@ export async function GET(request) {
     const byUser = new Map(progress.map((p) => [p.user_id, p]));
     const list = users.map((u) => summarise(u, byUser.get(u.id)));
     list.sort((a, b) => Date.parse(b.active) - Date.parse(a.active));
-    return json({ users: list });
+    const daily = await perDay(users).catch((e) => { console.error('admin daily', e.message); return null; });
+    return json({ users: list, daily });
   } catch (e) {
     console.error('admin', user.id, e.message);
     return json({ error: 'failed' }, 500);
