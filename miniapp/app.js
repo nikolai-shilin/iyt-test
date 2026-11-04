@@ -25,6 +25,9 @@ const NATIVE_BUTTONS = false;
 const BOT_LINK = 'https://t.me/iyt_test_bot';
 // RYC Rentals: yacht charter, as a mini app of its own bot (Profile links to it)
 const RENTALS_LINK = 'https://t.me/rycrentals_bot?startapp';
+// Feedback on Home: a Telegram chat with the author (photo: miniapp/fullcrimp.jpg)
+const FEEDBACK_HANDLE = 'fullcrimp';
+const FEEDBACK_LINK = `https://t.me/${FEEDBACK_HANDLE}`;
 const $app = document.getElementById('app');
 
 // IYT recreational levels in course-progression order (iytworld.com/students/recreational/iyt-course-progression),
@@ -99,6 +102,7 @@ const STR = {
     examOpen: 'Mock exam in progress', continue: 'Continue',
     examLine: (a, n, left) => `${a} of ${n} answered · ${left} left`,
     mastered: 'mastered', covered: 'covered', halfway: 'right once', halfwayN: (n) => `+${n} right once`, moreLevels: 'More levels',
+    fbK: 'Feedback?', fbRole: 'Author of IYT Test', fbText: 'Found a mistake in a question, missing a topic or have an idea? Write to me on Telegram, I read every message.', fbBtn: 'Write on Telegram',
     ringLabel: (s, m) => `${s}% seen · ${m}% mastered`, answers: 'Answer options', figure: 'Figure',
     figNames: { anchor: 'Anchorage sketch', bay: 'Bay chart', buoy: 'Buoy', card: 'Notes', chart: 'Chart extract', compass: 'Compass rose', dayshape: 'Day shape', encounter: 'Two vessels meeting', isobars: 'Weather map', lights: 'Navigation lights', panel: 'Instrument panel', rope: 'Rope and knot', sail: 'Sailing boat and wind' }, timeLeft: 'Time left', fiveLeft: '5 minutes left',
     nextLevelK: 'Next level', open: 'Open', resetNothing: 'Nothing to reset yet', retry: 'Try again', allTopicsChip: 'All topics',
@@ -198,6 +202,7 @@ const STR = {
     examOpen: 'Пробный экзамен не закончен', continue: 'Продолжить',
     examLine: (a, n, left) => `отвечено ${a} из ${n} · осталось ${left}`,
     mastered: 'освоено', covered: 'пройдено', halfway: 'верно 1 раз', halfwayN: (n) => `+${n} верно 1 раз`, moreLevels: 'Другие уровни',
+    fbK: 'Есть отзыв?', fbRole: 'Автор IYT Test', fbText: 'Нашли ошибку в вопросе, не хватает темы или есть идея? Напишите мне в Telegram — читаю каждое сообщение.', fbBtn: 'Написать в Telegram',
     ringLabel: (s, m) => `${s}% пройдено · ${m}% освоено`, answers: 'Варианты ответа', figure: 'Рисунок',
     figNames: { anchor: 'Схема якорной стоянки', bay: 'Карта бухты', buoy: 'Буй', card: 'Заметки', chart: 'Фрагмент карты', compass: 'Картушка компаса', dayshape: 'Дневной знак', encounter: 'Расхождение двух судов', isobars: 'Карта погоды', lights: 'Навигационные огни', panel: 'Приборная панель', rope: 'Трос и узел', sail: 'Парусная яхта и ветер' }, timeLeft: 'Осталось времени', fiveLeft: 'Осталось 5 минут',
     nextLevelK: 'Следующий уровень', open: 'Открыть', resetNothing: 'Сбрасывать пока нечего', retry: 'Повторить', allTopicsChip: 'Все темы',
@@ -1078,7 +1083,11 @@ const VIEWS = {
         ${top}
         ${S.exam ? `<div class="continue" data-act="resumeExam"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
         <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
-        ${more.length ? `<div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${more.map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>` : ''}`,
+        ${more.length ? `<div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${more.map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>` : ''}
+        <div class="band fback"><span class="kicker">${t('fbK')}</span>
+          <div class="row fb-who"><img class="fb-face" src="fullcrimp.jpg" alt="" width="56" height="56" decoding="async"><div><div class="fb-nick">@${FEEDBACK_HANDLE}</div><div class="card-meta">${t('fbRole')}</div></div></div>
+          <p class="body-muted">${t('fbText')}</p>
+          <button class="pill pill-quiet pill-wide fb-go" data-act="feedback" role="link"><span data-i="send" data-s="18"></span>${t('fbBtn')}</button></div>`,
     };
   },
 
@@ -1656,6 +1665,7 @@ const ACT = {
     S.wrong.splice(k, 1); hap('sel'); save(); render(); toast(t('unwrong'));
   },
   rentals: () => (IN_TG ? TG.openTelegramLink(RENTALS_LINK) : window.open(RENTALS_LINK, '_blank', 'noopener')),
+  feedback: () => (IN_TG ? TG.openTelegramLink(FEEDBACK_LINK) : window.open(FEEDBACK_LINK, '_blank', 'noopener')),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
   flagq: (d) => { sheet = { v: 'flagq', id: d.id, k: d.k }; render(); },

@@ -27,6 +27,7 @@ const FILES = [
   ['miniapp/app.js', 'app.js'],
   ['miniapp/app.css', 'app.css'],
   ['miniapp/intro.jpg', 'intro.jpg'], // the photo on the bot's /start welcome (bot/core.mjs)
+  ['miniapp/fullcrimp.jpg', 'fullcrimp.jpg'], // the author's photo on the Home feedback card
   ['miniapp/fonts', 'fonts'],
   ['docs/design/app.css', 'design/app.css'],
   ['docs/design/flows.css', 'design/flows.css'],
