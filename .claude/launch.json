@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "miniapp", "runtimeExecutable": "node", "runtimeArgs": ["miniapp/build.mjs", "--serve"], "port": 5173 }
+    { "name": "miniapp", "runtimeExecutable": "node", "runtimeArgs": ["miniapp/build.mjs", "--serve"], "port": 5173 },
+    { "name": "figure-style", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "5182", "--directory", "docs/design"], "port": 5182 }
   ]
 }

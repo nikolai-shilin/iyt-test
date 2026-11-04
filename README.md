@@ -15,6 +15,7 @@ docs/
   PLAN.md                       goal, decisions, next steps
   question-bank.md              JSON format of a bank, authoring rules, how to build it
   figures.md                    the figure spec: every type, its fields, an example
+  figure-style.md               the agreed look of the rendered figures (cameras, looks, own boat, lights, annotations)
   design.md                     look & feel, components, the 21 screens, how to use the viewer
   data-model.md                 proposed database (Supabase) and how progress is computed
   design/
@@ -26,6 +27,9 @@ docs/
     icons.html                  the icon sheet: every glyph at 24 px and in the topic circle, day / night
     icons.js                    older base set (Telegram chrome in the mockups; a few basics follow Lucide)
     figures.js                  figure generator (JSON spec → SVG)
+    figure-style-spike.html     reference renderer for figure-style.md (three.js from a CDN; open over HTTP)
+    figure-schematic.js         plan-view schematic renderer (the companion diagram to every realistic figure)
+    figure-style/               sample renders of the ten example questions; hires/ at 2560 × 1600, schematic/ their plan views
     logo-black.svg              RYC logo
 data/
   build_bank.py                 source of the Bareboat Skipper bank — edit here, then run
