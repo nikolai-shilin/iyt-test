@@ -3,11 +3,14 @@
    (four pages under one tab strip: Overview with joins, answers and wrong answers per day; Students; the questions
    reported as wrong; the flagged ones — api/admin.mjs) opens from the profile for the admins only. C1b lists the
    questions the student reported as wrong, so they can withdraw a report.
-   Banks are read from Supabase (fetchBank), with the static JSON files as fallback; progress lives on the device
+   Banks are static JSON files named after their content (build.mjs lists them in window.BANKS), so a phone keeps them
+   once downloaded; Supabase is the fallback (fetchBank). Progress lives on the device
    (localStorage + Telegram CloudStorage) and, inside Telegram, on the server (serverSave → api/progress.mjs), so the
    same code also runs in a plain browser for testing.
-   Levels: every level with an `id` in LEVELS has a bank (bank() in the database, or data/<id>.json); all of them load at start (the home screen
-   shows mastery for each), the one picked last (S.set.level) is the current level the other screens work on.
+   Levels: every level with an `id` in LEVELS has a bank (window.BANKS gives its file and size). Only the current level's
+   bank loads at start — the home screen counts each level's mastery from the progress (lvPcts) — another one when it is
+   opened, and all of them for the pages that list questions of any level. The one picked last (S.set.level) is the
+   current level the other screens work on.
    Languages: English and Russian. Interface strings are in STR below; question text comes from the bank plus an
    optional overlay data/<level>.<lang>.json (see data/i18n.py) — questions it does not cover stay in English.
    Globals from the design files: rycIcon (icons.js), svg / paintIcons (test-icons.js), figSvg / FIG_TEXT (figures.js). */
@@ -65,6 +68,10 @@ const BASES = {};   // level id → the bank as loaded (English); a level whose 
 let BASE = null;    // BASES of the current level
 let BANK = null;    // the current level's bank in the current language
 let OVERLAY = {};   // '<level>.<lang>' → overlay JSON (or null when there is none)
+// What build.mjs wrote into index.html: level id → { en, ru: the bank files, n: questions, t: topics }.
+const MANIFEST = window.BANKS || null;
+// A level's size with or without its bank: { n: questions, t: topics }, or null for a level with no bank.
+const lvMeta = (id) => (MANIFEST && MANIFEST[id]) || (BASES[id] && { n: BASES[id].questions.length, t: BASES[id].topics.length }) || null;
 let Q = {}, TOPICS = [], TT = {}, TS = {};
 let LANG = 'en';
 
@@ -424,7 +431,17 @@ const seenPct = (b = BANK) => Math.round((b.questions.filter((q) => touched(q.id
 // progress ring: the number and the full arc are the share of the level seen, the darker inner step is mastered.
 // Mastery alone would read 0% for the first sessions (right twice in a row), while the student has clearly moved.
 const ring = (lp, sp, cls = '', inner = `<b>${Math.max(lp, sp)}%</b>`, k = '') => `<span class="ring seen${cls}" role="img" aria-label="${t('ringLabel', Math.max(lp, sp), lp)}"${k ? ` data-k="ring:${k}"` : ''} style="--v:${lp};--s:${Math.max(lp, sp)}">${inner}</span>`;
-const ready = () => LEVELS.filter((l) => l.id && BASES[l.id]);
+const ready = () => LEVELS.filter((l) => l.id && lvMeta(l.id));
+// A level's [mastered %, seen %]: exact from its bank once that is in, else from the progress alone (question ids are
+// <prefix>-nnn), which is the same while the bank keeps its ids.
+function lvPcts(l) {
+  const b = BASES[l.id];
+  if (b) return [levelPct(b), seenPct(b)];
+  const n = lvMeta(l.id).n, pre = l.prefix + '-';
+  let m = 0, s = 0;
+  for (const id in S.q) if (id.startsWith(pre)) { s++; if (mastered(id)) m++; }
+  return [Math.min(100, Math.round((m / n) * 100)), Math.min(100, Math.round((s / n) * 100))];
+}
 // Exams are kept per level; records from before levels existed have no lv and are Bareboat Skipper's.
 const lvOf = (x) => (x && x.lv) || DEFAULT_LEVEL;
 const myExams = (id = LEVEL.id) => S.exams.filter((e) => lvOf(e) === id);
@@ -458,6 +475,12 @@ function pickLang() {
 // The publishable key only reads the catalogue.
 const SUPABASE = { url: 'https://xpdhkahgvusuicynssxq.supabase.co', key: 'sb_publishable_WKUQdLYP62nam72_h4p5QA_Sz8nxD_Y' };
 async function fetchBank(level, lang = 'en') {
+  const file = MANIFEST && MANIFEST[level] && MANIFEST[level][lang];
+  try {
+    // a content-named file can come from the browser's cache as it is; a plain name is checked with the server
+    const r = await fetch(file || `data/${lang === 'en' ? level : `${level}.${lang}`}.json`, file ? {} : { cache: 'no-cache' });
+    if (r.ok) return await r.json();
+  } catch (e) {}
   const fn = lang === 'en' ? `bank?p_level=${level}` : `bank_overlay?p_level=${level}&p_lang=${lang}`;
   try {
     const ctl = typeof AbortController === 'function' ? new AbortController() : null;
@@ -465,18 +488,34 @@ async function fetchBank(level, lang = 'en') {
     const r = await fetch(`${SUPABASE.url}/rest/v1/rpc/${fn}`, { headers: { apikey: SUPABASE.key }, signal: ctl && ctl.signal });
     const b = r.ok ? await r.json() : null;
     clearTimeout(timer);
-    if (b) return b;
-  } catch (e) {}
-  const r = await fetch(`data/${lang === 'en' ? level : `${level}.${lang}`}.json`, { cache: 'no-cache' });
-  return r.ok ? r.json() : r.status;
+    return b;
+  } catch (e) { return null; }
 }
+// A level's English bank into BASES, downloaded once however many screens ask; resolves true when it is in.
+const BANK_LOADS = {};
+function loadBank(id) {
+  if (BASES[id]) return Promise.resolve(true);
+  return (BANK_LOADS[id] = BANK_LOADS[id] || fetchBank(id).catch(() => null).then((b) => {
+    delete BANK_LOADS[id]; // only a download under way is shared; a failure may be tried again
+    if (b && b.questions) BASES[id] = b;
+    return !!BASES[id];
+  }));
+}
+// Every level's bank, for the pages that list questions of any level (ALL_LEVEL_VIEWS): asked for once, and the page
+// draws again when they are in.
+const ALL_LEVEL_VIEWS = new Set(['reported', 'admin', 'adminUsers', 'adminWrong', 'adminFlags']);
+let allAsked = false;
+function loadAllBanks() {
+  if (allAsked) return;
+  allAsked = true;
+  const missing = ready().filter((l) => !BASES[l.id]);
+  if (missing.length) Promise.all(missing.map((l) => loadBank(l.id))).then(() => { if (ALL_LEVEL_VIEWS.has(cur().v)) render(); });
+}
+const OVERLAY_LOADS = {};
 async function loadOverlay(lang, lv = LEVEL.id) {
   const k = `${lv}.${lang}`;
   if (lang === 'en' || k in OVERLAY) return;
-  try {
-    const o = await fetchBank(lv, lang);
-    OVERLAY[k] = o && o.questions ? o : null;
-  } catch (e) { OVERLAY[k] = null; }
+  await (OVERLAY_LOADS[k] = OVERLAY_LOADS[k] || fetchBank(lv, lang).catch(() => null).then((o) => { OVERLAY[k] = o && o.questions ? o : null; }));
 }
 function setPath(obj, path, val) {
   const k = path.split('.');
@@ -512,16 +551,18 @@ async function setLang(lang) {
 }
 // Makes another level current. An exam in progress is put aside and comes back when you return to its level.
 async function setLevel(id) {
-  const l = LEVELS.find((x) => x.id === id && BASES[x.id]);
-  if (!l || l === LEVEL) return;
+  const l = LEVELS.find((x) => x.id === id && lvMeta(x.id));
+  if (!l || l === LEVEL) return true;
+  const [ok] = await Promise.all([loadBank(id), loadOverlay(LANG, id)]);
+  if (!ok) return false;
   stopTimer();
   LEVEL = l;
   S.set.level = id;
   swapExam();
-  await loadOverlay(LANG);
   localise();
   expireExam();
   save();
+  return true;
 }
 // Keeps S.exam for the current level only; exams of other levels wait in S.held.
 function swapExam() {
@@ -644,10 +685,10 @@ function wrongBtn(id) {
 // A student's progress in a level, in % of its bank (pct = mastered, seenPct = seen); the level they work on, or the one
 // they have seen most of. The list shows seenPct as the number, like the student's own ring, and pct as the dark bar.
 function studentLevel(u) {
-  const lv = (u.level && LEVELS.find((l) => l.id === u.level && BASES[l.id])) ||
+  const lv = (u.level && LEVELS.find((l) => l.id === u.level && lvMeta(l.id))) ||
     ready().slice().sort((a, b) => ((u.levels[b.prefix] || {}).seen || 0) - ((u.levels[a.prefix] || {}).seen || 0))[0];
-  if (!lv || !BASES[lv.id]) return null;
-  const n = BASES[lv.id].questions.length, L = u.levels[lv.prefix] || { mastered: 0, seen: 0, mistakes: 0 };
+  if (!lv || !lvMeta(lv.id)) return null;
+  const n = lvMeta(lv.id).n, L = u.levels[lv.prefix] || { mastered: 0, seen: 0, mistakes: 0 };
   return { lv, n, ...L, pct: Math.round((L.mastered / n) * 100), seenPct: Math.round((L.seen / n) * 100) };
 }
 const studentName = (u) => u.name || (u.username ? '@' + u.username : String(u.id));
@@ -847,6 +888,7 @@ const navHtml = (on, live = true) => `<nav class="nav">${NAV.map(([v, i, k]) => 
 function render(toTop, theme = false, pre = null) {
   if (cur().v === 'exam' && !S.exam) stack[stack.length - 1] = { v: 'examIntro' };
   const c = cur();
+  if (ALL_LEVEL_VIEWS.has(c.v)) loadAllBanks();
   WEAK = new Set(weakTopics());
   const V = VIEWS[c.v](c);
   const old = $app.querySelector('.scroll');
@@ -950,15 +992,16 @@ function examLine() {
 }
 
 /* ---------- views ---------- */
+let switching = false; // a level's bank is on its way (ACT.level)
 const VIEWS = {
   /* A1 Home */
   home() {
     const st = streak(), grew = streakGrew; streakGrew = false;
     const returning = S.total > 0;
-    const lv = LEVELS.filter((l) => l.id && BASES[l.id]).map((l) => {
-      const b = BASES[l.id], lp = levelPct(b);
-      return `<div class="lvl${l === LEVEL && returning ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, seenPct(b), '', undefined, l.id)}<div><div class="card-title">${l.title}</div>` +
-        `<div class="card-meta">${t('levelMeta', b.topics.length, b.questions.length, myExams(l.id).length)}</div></div><span class="chev" data-i="next" data-s="20"></span></div>`;
+    const lv = ready().map((l) => {
+      const m = lvMeta(l.id), [lp, sp] = lvPcts(l);
+      return `<div class="lvl${l === LEVEL && returning ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, sp, '', undefined, l.id)}<div><div class="card-title">${l.title}</div>` +
+        `<div class="card-meta">${t('levelMeta', m.t, m.n, myExams(l.id).length)}</div></div><span class="chev" data-i="next" data-s="20"></span></div>`;
     }).join('');
     // first visit: the pitch; afterwards: pick up where you left off
     const lp = levelPct(), mis = allMistakes().length;
@@ -974,7 +1017,7 @@ const VIEWS = {
         ${top}
         ${S.exam ? `<div class="continue" data-act="resumeExam"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
         <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
-        <div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${LEVELS.filter((l) => !(l.id && BASES[l.id])).map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>`,
+        <div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${LEVELS.filter((l) => !(l.id && lvMeta(l.id))).map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>`,
     };
   },
 
@@ -1143,7 +1186,7 @@ const VIEWS = {
     const reviewAct = () => go('review', { items: wrong.map((id) => ({ id, pick: R.ans[id] })), label: 'mockExam', from: 'exam' });
     let head, copy, bars, nextBand = '';
     if (R.passed) {
-      const nextLv = NON_IYT.has(LEVEL.id) ? null : LEVELS.slice(LEVELS.indexOf(LEVEL) + 1).find((l) => l.id && BASES[l.id] && !NON_IYT.has(l.id));
+      const nextLv = NON_IYT.has(LEVEL.id) ? null : LEVELS.slice(LEVELS.indexOf(LEVEL) + 1).find((l) => l.id && lvMeta(l.id) && !NON_IYT.has(l.id));
       if (nextLv) nextBand = `<div class="continue" data-act="level" data-id="${nextLv.id}"><div><span class="meta">${t('nextLevelK')}</span><div class="card-title" style="margin-top:4px">${esc(nextLv.title)}</div></div><span class="mini mini-accent">${t('open')}</span></div>`;
       head = R.pct >= 85 ? t('readyForExam') : t('passed');
       copy = t('timeUsed', fmt(R.secs * 1000), BANK.examMinutes) + (weak.length ? t('weakUnder', weak.length, BANK.passMark) : t('allAbove', BANK.passMark));
@@ -1286,7 +1329,7 @@ const SHEETS = {
     if (!u) return `<div class="empty"><span class="meta">${t('studentsFail')}</span></div>`;
     const name = studentName(u);
     const per = {};
-    ready().forEach((l) => { const L = u.levels[l.prefix]; if (L && L.seen) per[l.id] = [L.mastered, BASES[l.id].questions.length]; });
+    ready().forEach((l) => { const L = u.levels[l.prefix]; if (L && L.seen) per[l.id] = [L.mastered, lvMeta(l.id).n]; });
     const bars = Object.keys(per).map((id) => { const [a, b] = per[id], p = Math.round((a / b) * 100), L = u.levels[LEVELS.find((l) => l.id === id).prefix];
       return `<div class="tbar"><span class="card-title">${esc(LEVELS.find((l) => l.id === id).title)}</span><span class="n">${p}%</span><span class="bar"><i style="width:${p}%"></i></span><span class="card-meta" style="grid-column:1/-1">${t('levelText', a, b, 0, L.seen)}${L.mistakes ? ' ' + t('misMeta', L.mistakes) + '.' : ''}</span></div>`; }).join('');
     const exams = u.exams.map((e) => `<div class="att"><span class="card-meta">${day(e.at)} · ${esc((LEVELS.find((l) => l.id === e.lv) || {}).title || e.lv)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
@@ -1470,7 +1513,17 @@ const ACT = {
   main: () => mainCb && mainCb(),
   second: () => secCb && secCb(),
   tab: (d) => tab(d.v),
-  level: async (d) => { if (d.id) await setLevel(d.id); go('level'); },
+  level: async (d) => {
+    if (switching) return;
+    // a bank not downloaded yet: the row dims while it comes
+    const row = d.id && !BASES[d.id] && $app.querySelector(`[data-act="level"][data-id="${d.id}"]`);
+    if (row) row.style.opacity = '0.55';
+    switching = true;
+    const ok = !d.id || (await setLevel(d.id));
+    switching = false;
+    if (!ok) { if (row) row.style.opacity = ''; return toast(t('bankError')); }
+    go('level');
+  },
   resume: () => startPractice(pickFor(BANK.questions.map((q) => q.id), 10)),
   examIntro: () => (cur().v === 'examIntro' ? null : go('examIntro')),
   resumeExam: () => startExam(),
@@ -1580,7 +1633,7 @@ function deepLink() {
   else if (p === 'admin') stack = [{ v: 'profile' }, { v: 'admin' }];
   else if (p === 'students') stack = [{ v: 'profile' }, { v: 'adminUsers' }];
   else if (p === 'reported') stack = [{ v: 'progress' }, { v: 'reported' }];
-  else if (p === 'level' || LEVELS.some((l) => l.link === p && BASES[l.id])) stack = [{ v: 'home' }, { v: 'level' }];
+  else if (p === 'level' || LEVELS.some((l) => l.link === p && lvMeta(l.id))) stack = [{ v: 'home' }, { v: 'level' }];
   else if (p === 'practice') { stack = [{ v: 'home' }, { v: 'level' }]; return 'setup'; }
   return null;
 }
@@ -1603,20 +1656,24 @@ async function init() {
   LANG = pickLang();
   document.documentElement.lang = LANG;
   bootSkeleton();
-  const server = serverLoad(); // in parallel with the banks
-  const banks = await Promise.all(LEVELS.filter((l) => l.id).map((l) =>
-    fetchBank(l.id).catch(() => 0).then((b) => [l.id, b])));
-  for (const [id, b] of banks) if (b && b.questions) BASES[id] = b;
-  if (!BASES[DEFAULT_LEVEL]) throw new Error(t('bankError'));
-  const remote = await cloudLoad();
+  // No list of banks (an index.html from before build.mjs wrote one): every bank, as it used to be.
+  if (!MANIFEST) await Promise.all(LEVELS.filter((l) => l.id).map((l) => loadBank(l.id)));
+  // The level to open: a deep link to a level (?screen=racing, start_param), else the one picked last.
+  const link = (IN_TG && TG.initDataUnsafe && TG.initDataUnsafe.start_param) || new URLSearchParams(location.search).get('screen') || '';
+  const pick = () => { const id = (LEVELS.find((l) => l.link === link) || {}).id || S.set.level; return LEVELS.some((l) => l.id === id && lvMeta(l.id)) ? id : DEFAULT_LEVEL; };
+  // The progress copies and that level's bank (with its overlay) all at once; no other bank is needed for Home.
+  const server = serverLoad(), cloud = cloudLoad(), guess = pick();
+  loadBank(guess); loadOverlay(pickLang(), guess);
+  const remote = await cloud;
   if (remote && remote.ts > S.ts) { S = merge(remote); applyTheme(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   // The server copy wins when newer (another phone); progress made only on this device is sent up once now.
   const srv = await server;
   if (srv && srv.state && srv.ts > S.ts) { S = merge(srv.state); applyTheme(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   else if (srv && S.ts > srv.ts) serverSave(true);
-  const link = (IN_TG && TG.initDataUnsafe && TG.initDataUnsafe.start_param) || new URLSearchParams(location.search).get('screen') || '';
-  const want = (LEVELS.find((l) => l.link === link) || {}).id || S.set.level;
-  LEVEL = LEVELS.find((l) => l.id === want && BASES[l.id]) || LEVELS.find((l) => l.id === DEFAULT_LEVEL);
+  let want = pick(); // the saved progress may have picked another level
+  if (!(await loadBank(want))) want = DEFAULT_LEVEL;
+  if (!(await loadBank(want))) throw new Error(t('bankError'));
+  LEVEL = LEVELS.find((l) => l.id === want);
   S.set.level = LEVEL.id;
   swapExam();
   await setLang(pickLang());
@@ -1625,6 +1682,8 @@ async function init() {
   const then = deepLink();
   render(true);
   if (then === 'setup') openSetup();
+  // a little later, the banks of the other levels this student has worked on, so switching to them is instant
+  setTimeout(() => ready().filter((l) => !BASES[l.id] && Object.keys(S.q).some((id) => id.startsWith(l.prefix + '-'))).forEach((l) => loadBank(l.id)), 3000);
 }
 init().catch((e) => {
   $app.innerHTML = `<div class="boot"><div class="stack g12" style="padding:24px;text-align:center;align-items:center"><span class="meta">${t('error')}</span><p class="body-muted">${esc(e.message)}</p><button class="pill" data-act="reload">${t('retry')}</button></div></div>`;

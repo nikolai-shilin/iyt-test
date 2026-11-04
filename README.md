@@ -36,7 +36,10 @@ data/
   i18n.py                       extract strings to translate / check an overlay
 miniapp/
   index.html  app.js  app.css   the Telegram mini app (static, no framework, no backend)
-  build.mjs                     copies the app + design files + banks into miniapp/dist (the folder to host)
+  build.mjs                     builds miniapp/dist (the folder to host): the app, design files, fonts and minified banks,
+                                each linked file renamed after its content (h/…) so phones cache it for good, and the
+                                list of banks written into index.html so only the current level's bank loads at start
+  fonts/                        Merriweather and Carlito (woff2, Latin + Cyrillic, OFL), served with the app
 bot/
   core.mjs                      the bot's replies: /start /exam /progress /settings open the app, /daily asks a question
   daily.mjs                     the daily question of the day to everyone who has it on

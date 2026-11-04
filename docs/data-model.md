@@ -25,13 +25,13 @@ streak, and joins them to `users`, with the question ids each student flagged (`
 flag (`state.wrong`); the page groups both by question — the `flags` and `reports` tables stay empty for now. Who is an admin: `ADMINS` in `api/settings.mjs` (Telegram usernames; the
 `ADMIN_USERNAMES` env adds more), checked against the signed launch data.
 
-**Who reads it:** the mini app (`fetchBank` in `miniapp/app.js`, with the publishable key) and the bot (`read` in
-`bot/core.mjs`, with `SUPABASE_URL` + a key from the env) call `bank(level)` and `bank_overlay(level, lang)`, which
-return exactly the shape of the JSON files. If the database does not answer within 8 s or has no such level, both fall
-back to the JSON files (the app's static `data/` folder, the files bundled into the Vercel functions).
+**Who reads it:** `bank(level)` and `bank_overlay(level, lang)` return exactly the shape of the JSON files, and are the
+fallback for both apps. The mini app reads the JSON files deployed with it first (`fetchBank` in `miniapp/app.js`:
+content-named copies a phone caches for good, see `miniapp/build.mjs`), and the bot reads the copies bundled into its
+Vercel functions (`read` in `bot/core.mjs`); either asks the database (8 s limit) only when a file is missing.
 
-**Source of truth:** still the JSON files built by `data/build_bank.py` / `data/build_level.py`. After changing a bank,
-run `npm run db:load` — until then the apps keep showing the old version from the database.
+**Source of truth:** the JSON files built by `data/build_bank.py` / `data/build_level.py`; a deploy puts a changed bank
+in front of students. Run `npm run db:load` as well, to keep the database copy (and the fallback) the same.
 
 ## Tables
 

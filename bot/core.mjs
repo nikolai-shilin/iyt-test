@@ -16,18 +16,20 @@ export const webapp = (process.env.WEBAPP_URL || '').replace(/\/$/, '');
 
 // The levels with a bank, in IYT order, then the Racing Rules and the Charter Check-in; `link` is the mini app deep link that opens the level (miniapp/app.js LEVELS).
 const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], ['flotilla-skipper', 'flotilla'], ['bareboat-skipper', 'bareboat'], ['yachtmaster-coastal', 'coastal'], ['yachtmaster-offshore', 'offshore'], ['yachtmaster-ocean', 'ocean'], ['racing-rules', 'racing'], ['charter-checkin', 'checkin']];
-// A bank comes from Supabase — bank() / bank_overlay() return the same shape as the files (docs/data-model.md) —
-// or, when the database is not configured or does not answer, from data/questions/<name>.json bundled with the function.
+// A bank comes from data/questions/<name>.json, bundled with the function (vercel.json includeFiles): all 18 files
+// read and parse in under 0.1 s, where fetching them from Supabase held up a cold start for seconds. Supabase —
+// bank() / bank_overlay() return the same shape as the files (docs/data-model.md) — is the fallback for a missing file.
 async function read(name) {
+  try { return JSON.parse(await readFile(new URL(`../data/questions/${name}.json`, import.meta.url), 'utf8')); }
+  catch (e) { if (e.code !== 'ENOENT') throw e; }
   const [level, lang] = name.split('.');
   const url = (process.env.SUPABASE_URL || '').replace(/\/$/, ''), key = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || '';
-  if (url && key) try {
-    const fn = lang ? `bank_overlay?p_level=${level}&p_lang=${lang}` : `bank?p_level=${level}`;
-    const res = await fetch(`${url}/rest/v1/rpc/${fn}`, { headers: { apikey: key, ...(key.startsWith('eyJ') && { authorization: `Bearer ${key}` }) }, signal: AbortSignal.timeout(8000) });
-    const b = res.ok ? await res.json() : null;
-    if (b) return b;
-  } catch (e) { console.warn(`bank ${name} from Supabase failed, using the file:`, e.message); }
-  return JSON.parse(await readFile(new URL(`../data/questions/${name}.json`, import.meta.url), 'utf8'));
+  if (!url || !key) throw new Error(`no bank ${name}`);
+  const fn = lang ? `bank_overlay?p_level=${level}&p_lang=${lang}` : `bank?p_level=${level}`;
+  const res = await fetch(`${url}/rest/v1/rpc/${fn}`, { headers: { apikey: key, ...(key.startsWith('eyJ') && { authorization: `Bearer ${key}` }) }, signal: AbortSignal.timeout(8000) });
+  const b = res.ok ? await res.json() : null;
+  if (!b) throw new Error(`no bank ${name}`);
+  return b;
 }
 // Each bank with its Russian overlay (data/i18n.py): translated questions and topic titles; anything missing stays English.
 // A level with no bank in the database or in the files yet is left out.
@@ -83,10 +85,16 @@ const kb = (...rows) => ({ inline_keyboard: rows.filter(Boolean) });
 const send = (chat_id, text, reply_markup) => api('sendMessage', { chat_id, text, parse_mode: 'HTML', reply_markup, link_preview_options: { is_disabled: true } });
 // The /start welcome: a photo of a fleet beating upwind (miniapp/intro.jpg, served with the mini app) with the
 // introduction as its caption. Without WEBAPP_URL, or if Telegram cannot fetch the photo, the same text goes alone.
+// After the first send the photo goes by Telegram's file_id (kept while the function instance lives), so Telegram
+// does not download it from the site again for every /start.
+let introPhoto = null;
 async function welcome(chat_id, ru) {
   const text = T.start(ru), reply_markup = kb(open(T.open(ru)), open(T.examBtn(ru), 'exam'));
-  if (webapp) try { return await api('sendPhoto', { chat_id, photo: `${webapp}/intro.jpg`, caption: text, parse_mode: 'HTML', reply_markup }); }
-  catch (e) { console.warn('welcome photo failed, sending text:', e.message); }
+  if (webapp) try {
+    const sent = await api('sendPhoto', { chat_id, photo: introPhoto || `${webapp}/intro.jpg`, caption: text, parse_mode: 'HTML', reply_markup });
+    introPhoto = sent.photo?.at(-1)?.file_id || introPhoto;
+    return sent;
+  } catch (e) { introPhoto = null; console.warn('welcome photo failed, sending text:', e.message); }
   return send(chat_id, text, reply_markup);
 }
 
