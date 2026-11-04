@@ -40,7 +40,6 @@ const LEVELS = [
   { id: 'yachtmaster-ocean', prefix: 'yo', link: 'ocean', title: 'Yachtmaster Ocean' },
   { id: 'racing-rules', prefix: 'rr', link: 'racing', title: 'Racing Rules of Sailing' },
   { id: 'charter-checkin', prefix: 'ci', link: 'checkin', title: 'Charter Check-in' },
-  { title: 'ICC', soon: 'planned' },
 ];
 const DEFAULT_LEVEL = 'bareboat-skipper';
 let LEVEL = LEVELS.find((l) => l.id === DEFAULT_LEVEL); // the current level
@@ -1011,13 +1010,14 @@ const VIEWS = {
           <button class="pill pill-primary pill-wide" data-act="resume"><span data-i="play" data-s="18"></span>${t('practiseN', 10)}</button></div>`
       : `<div class="stack g12"><span class="meta">${t('homeKicker')}</span><h1 class="display">${t('homeTitle')}</h1>
         <p class="body-muted">${t('homeLead')}</p></div>`;
+    const more = LEVELS.filter((l) => !(l.id && lvMeta(l.id)));
     return {
       title: 'IYT Test', nav: 'home',
       body: `<div class="row sb-between" style="min-height:40px"><img class="logo" src="design/logo-black.svg" alt="RYC">${st ? `<span class="streak${grew ? ' grew' : ''}"><span class="fire" data-i="fire" data-s="14"></span>${t('streak', st)}</span>` : ''}</div>
         ${top}
         ${S.exam ? `<div class="continue" data-act="resumeExam"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
         <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
-        <div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${LEVELS.filter((l) => !(l.id && lvMeta(l.id))).map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>`,
+        ${more.length ? `<div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${more.map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>` : ''}`,
     };
   },
 
