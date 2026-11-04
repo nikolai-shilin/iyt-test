@@ -4,7 +4,10 @@
 //   GET /api/admin            → { users: [ { id, name, username, lang, daily, joined, active, level, total, streak, lastDay,
 //                                 week, levels: { fs: { mastered, seen, mistakes }, … }, exams: [{ lv, at, pct, passed }],
 //                                 flags: ['bs-012', …], wrong: ['bs-034', …] } ],
-//                               daily: [ { day: '2026-11-04', joined, answers, wrong }, … ] | null }
+//                               series: { hour: [ { at, joined, answers, wrong } × 24 ], day: [ … × 91 ] } | null }
+//   POST /api/admin { unflag: { q: 'bs-012', k: 'flags' | 'wrong', users: [id, …] } } → { ok: true, users: [id, …] }
+//                             takes that flag off those students' question (public.flag_clears, see below); 501 when the
+//                             table is not in the database yet
 //   GET /api/admin?photo=<id> → the student's Telegram profile photo (JPEG, smallest size), 204 when they have none
 //                               that the bot may see. The bot fetches it (getUserProfilePhotos + getFile) because the file
 //                               link carries the bot token, so the app never sees that link.
@@ -15,10 +18,13 @@
 // flags are the question ids the student marked to come back to (state.flags) and wrong the ones they reported as
 // having a mistake (state.wrong, the red flag); the app groups both by question on the Students page, so the admins
 // see which questions people get stuck on and which need a fix.
-// daily is the last DAYS days (UTC), oldest first, for the charts on the Overview page: people who joined (users.created_at),
-// answers given and the wrong ones among them (public.answers). It comes from public.admin_daily()
-// (supabase/migrations/20261104170000_admin_daily.sql); until that function is in the database the same numbers are
-// counted here from the answer rows. null when neither worked — the rest of the page still loads.
+// series is for the charts on the Overview page, per UTC hour (the last 24) and per UTC day (the last 91), oldest first:
+// people who joined (users.created_at), answers given and the wrong ones among them (public.answers); the app cuts its
+// 24h / 7d / 30d / 3m views out of it. It comes from public.admin_series()
+// (supabase/migrations/20261104190000_admin_series_flag_clears.sql); until that function is in the database the same
+// numbers are counted here from the answer rows. null when neither worked — the rest of the page still loads.
+// An admin taking a flag off writes public.flag_clears; the student's app drops the flag on its next sync
+// (api/progress.mjs), and until then the lists here leave it out.
 // The caller proves who they are with Telegram.WebApp.initData in the x-telegram-init-data header (as api/settings.mjs);
 // anyone who is not an admin gets 403, exactly like a bad signature. Env on Vercel: TELEGRAM_BOT_TOKEN, SUPABASE_URL,
 // SUPABASE_SECRET_KEY. Without the database it answers 503.
@@ -34,27 +40,41 @@ const cleanIds = (list) => [...new Set((Array.isArray(list) ? list : []).filter(
 const pad = (n) => String(n).padStart(2, '0');
 const dkey = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
 
-const DAYS = 30;
+const UNITS = { hour: [24, 3600e3], day: [91, 86400e3] }; // buckets in the series, and their length in ms
 const MAX_ANSWER_ROWS = 50_000; // the fallback below reads the rows themselves; past this the database function is a must
-// Joins, answers and wrong answers per UTC day, oldest first (see the header).
-async function perDay(users) {
+// Joins, answers and wrong answers per UTC hour and per UTC day, oldest first (see the header).
+async function series(users) {
   try {
-    const rows = await db('rpc/admin_daily', { method: 'POST', body: { p_days: DAYS } });
-    return rows.map((r) => ({ day: r.day, joined: +r.joined || 0, answers: +r.answers || 0, wrong: +r.wrong || 0 }));
+    const units = Object.keys(UNITS);
+    const rows = await Promise.all(units.map((u) => db('rpc/admin_series', { method: 'POST', body: { p_unit: u, p_count: UNITS[u][0] } })));
+    const out = {};
+    units.forEach((u, i) => { out[u] = rows[i].map((r) => ({ at: new Date(r.at).toISOString(), joined: +r.joined || 0, answers: +r.answers || 0, wrong: +r.wrong || 0 })); });
+    return out;
   } catch (e) {
     if (!/: 404 /.test(e.message)) throw e; // anything but "no such function" is a real failure
   }
-  const from = new Date(); from.setUTCHours(0, 0, 0, 0); from.setUTCDate(from.getUTCDate() - (DAYS - 1));
-  const out = [], at = {};
-  for (let d = new Date(from); out.length < DAYS; d.setUTCDate(d.getUTCDate() + 1)) out.push(at[dkey(d)] = { day: dkey(d), joined: 0, answers: 0, wrong: 0 });
-  for (const u of users) { const r = at[dkey(new Date(u.created_at))]; if (r) r.joined++; }
+  const out = {}, starts = {};
+  for (const [u, [n, step]] of Object.entries(UNITS)) {
+    const s = new Date();
+    if (u === 'hour') s.setUTCMinutes(0, 0, 0); else s.setUTCHours(0, 0, 0, 0);
+    starts[u] = +s - (n - 1) * step;
+    out[u] = Array.from({ length: n }, (_, i) => ({ at: new Date(starts[u] + i * step).toISOString(), joined: 0, answers: 0, wrong: 0 }));
+  }
+  const add = (time, f) => { for (const u in UNITS) { const i = Math.floor((time - starts[u]) / UNITS[u][1]); if (i >= 0 && i < out[u].length) f(out[u][i]); } };
+  for (const u of users) add(Date.parse(u.created_at), (r) => r.joined++);
+  const from = new Date(starts.day).toISOString();
   for (let off = 0; off < MAX_ANSWER_ROWS; off += 1000) {
-    const page = await db(`answers?select=at,correct&at=gte.${from.toISOString()}&order=id.asc&limit=1000&offset=${off}`);
-    for (const a of page) { const r = at[dkey(new Date(a.at))]; if (r) { r.answers++; if (!a.correct) r.wrong++; } }
+    const page = await db(`answers?select=at,correct&at=gte.${from}&order=id.asc&limit=1000&offset=${off}`);
+    for (const a of page) add(Date.parse(a.at), (r) => { r.answers++; if (!a.correct) r.wrong++; });
     if (page.length < 1000) break;
   }
   return out;
 }
+// The flags admins took off that the students' apps have not dropped yet ([] while the table is not there).
+const pendingClears = () => db('flag_clears?select=user_id,question_id,kind&limit=10000').catch((e) => {
+  if (!/: 404 /.test(e.message)) console.error('admin clears', e.message);
+  return [];
+});
 
 // Consecutive days with answers up to today (UTC; the app keys days by the student's local date, so this can be a day off).
 function streakOf(days) {
@@ -124,18 +144,45 @@ export async function GET(request) {
     try { return await photo(+id); } catch (e) { console.error('admin photo', id, e.message); return json({ error: 'failed' }, 500); }
   }
   try {
-    const [users, progress] = await Promise.all([
+    const [users, progress, clears] = await Promise.all([
       db(`users?select=id,name,username,lang,daily_question,blocked_at,created_at,updated_at&order=updated_at.desc&limit=${MAX_USERS}`),
       // only the parts of the state the summary needs; the whole state can be ~100 KB per student
       db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags,wrong:state->wrong&limit=${MAX_USERS}`),
+      pendingClears(),
     ]);
     const byUser = new Map(progress.map((p) => [p.user_id, p]));
     const list = users.map((u) => summarise(u, byUser.get(u.id)));
     list.sort((a, b) => Date.parse(b.active) - Date.parse(a.active));
-    const daily = await perDay(users).catch((e) => { console.error('admin daily', e.message); return null; });
-    return json({ users: list, daily });
+    const byId = new Map(list.map((u) => [u.id, u]));
+    for (const c of clears) { const u = byId.get(c.user_id); if (u && (c.kind === 'flags' || c.kind === 'wrong')) u[c.kind] = u[c.kind].filter((id) => id !== c.question_id); }
+    const data = await series(users).catch((e) => { console.error('admin series', e.message); return null; });
+    return json({ users: list, series: data });
   } catch (e) {
     console.error('admin', user.id, e.message);
+    return json({ error: 'failed' }, 500);
+  }
+}
+
+// An admin takes a flag off some students' question: one flag_clears row per student (a repeat just renews it).
+export async function POST(request) {
+  if (!SB || !SB_KEY) return json({ error: 'no database' }, 503);
+  const user = verifyInitData(request.headers.get('x-telegram-init-data'), TOKEN);
+  if (!user || !isAdmin(user)) return json({ error: 'forbidden' }, 403);
+  let body;
+  try { body = await request.json(); } catch { return json({ error: 'bad request' }, 400); }
+  const u = body && body.unflag, k = u && u.k, q = u && u.q;
+  const ids = [...new Set((Array.isArray(u && u.users) ? u.users : []).filter(Number.isSafeInteger))].slice(0, MAX_USERS);
+  if (!['flags', 'wrong'].includes(k) || typeof q !== 'string' || !/^[a-z]{1,8}-\d{1,5}$/.test(q) || !ids.length) return json({ error: 'bad request' }, 400);
+  try {
+    const at = new Date().toISOString();
+    await db('flag_clears?on_conflict=user_id,question_id,kind', {
+      method: 'POST', prefer: 'resolution=merge-duplicates,return=representation',
+      body: ids.map((id) => ({ user_id: id, question_id: q, kind: k, by_user: user.id, at })),
+    });
+    return json({ ok: true, users: ids });
+  } catch (e) {
+    if (/: 404 /.test(e.message)) return json({ error: 'not set up' }, 501); // the migration is not in the database yet
+    console.error('admin unflag', user.id, e.message);
     return json({ error: 'failed' }, 500);
   }
 }

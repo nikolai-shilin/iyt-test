@@ -50,7 +50,7 @@ api/
   telegram.mjs                  Vercel function: Telegram's webhook, runs core.mjs
   daily.mjs                     Vercel cron (09:00 UTC daily): runs bot/daily.mjs
   settings.mjs                  the app's question-of-the-day switch (users.daily_question), checked with Telegram initData
-  admin.mjs                     every student's results, flagged and reported questions, joins/answers/wrong answers per day for the admins (ADMINS in settings.mjs — @fullcrimp; ADMIN_USERNAMES adds more)
+  admin.mjs                     every student's results, flagged and reported questions (admins can take a flag off), joins/answers/wrong answers per hour and day for the admins (ADMINS in settings.mjs — @fullcrimp; ADMIN_USERNAMES adds more)
 ```
 
 ## Mini app

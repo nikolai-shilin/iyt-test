@@ -4,13 +4,15 @@
 //
 //   POST /api/progress  {}                         → { ts, state }   read: the server copy (state null if none)
 //   POST /api/progress  { state, answers: [...] }  → { ts, state }   state is null unless the server's copy is newer
+//   Both may also carry clear: [{ q: 'bs-012', k: 'flags' | 'wrong' }] — flags an admin took off (public.flag_clears,
+//   api/admin.mjs). The app drops them and syncs; a row is deleted once a state comes in without that flag.
 //
 // answers: [{ q: 'bs-001', ok: true, o: 0–3 | null, m: 'practice' | 'exam' | 'daily', at: ISO time }]
 // The caller proves who they are with Telegram.WebApp.initData in the x-telegram-init-data header (as api/settings.mjs).
 // Env on Vercel: TELEGRAM_BOT_TOKEN, SUPABASE_URL, SUPABASE_SECRET_KEY. Without the database it answers 503 and the
 // app keeps its progress on the device as before.
 
-import { verifyInitData } from './settings.mjs';
+import { verifyInitData, db } from './settings.mjs';
 
 const SB = (process.env.SUPABASE_URL || '').replace(/\/$/, ''), SB_KEY = process.env.SUPABASE_SECRET_KEY || '';
 const MAX_ANSWERS = 2000;     // per request; the app sends at most 500
@@ -18,6 +20,22 @@ const MAX_STATE = 1_000_000;  // chars of JSON; a full state for every level is 
 
 const RU = (u) => /^(ru|uk|be|kk)\b/i.test(u?.language_code || ''); // same rule as the bot and the app
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
+
+// The flags admins took off this student that their app still has to drop (see the header). With a state sent, the
+// ones it no longer holds are done and deleted; a read returns them all. Never fails the sync ([] on any error).
+async function clears(userId, state) {
+  try {
+    const rows = await db(`flag_clears?user_id=eq.${userId}&select=question_id,kind`);
+    if (!rows.length) return [];
+    const has = (r) => !state || (Array.isArray(state[r.kind]) && state[r.kind].includes(r.question_id));
+    const done = rows.filter((r) => !has(r));
+    await Promise.all(done.map((r) => db(`flag_clears?user_id=eq.${userId}&question_id=eq.${encodeURIComponent(r.question_id)}&kind=eq.${r.kind}`, { method: 'DELETE', prefer: 'return=representation' })));
+    return rows.filter(has).map((r) => ({ q: r.question_id, k: r.kind }));
+  } catch (e) {
+    if (!/: 404 /.test(e.message)) console.error('progress clears', userId, e.message);
+    return [];
+  }
+}
 
 // Keeps only well-formed answers, so one bad item cannot fail the whole sync in the database.
 function cleanAnswers(list) {
@@ -54,7 +72,7 @@ export async function POST(request) {
     const res = await fetch(`${SB}/rest/v1/rpc/sync_progress`, { method: 'POST', headers, body: JSON.stringify(args) });
     if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
     const r = await res.json();
-    return json({ ts: r.ts, state: r.state, answers: r.answers });
+    return json({ ts: r.ts, state: r.state, answers: r.answers, clear: await clears(user.id, state) });
   } catch (e) {
     console.error('progress', user.id, e.message);
     return json({ error: 'failed' }, 500);

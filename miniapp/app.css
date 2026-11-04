@@ -333,23 +333,35 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .tgmain .b .t { line-height: 1; text-box: trim-both cap alphabetic; padding: .3em 0; margin: -.3em 0; } /* the padding keeps descenders out of the ellipsis clip */
 .app .tgmain .b > [data-i] { display: flex; }
 
-/* C4 Admin: the tab strip over the four pages (a segmented control, as Language and Theme on the profile) */
-.app .atabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; box-sizing: border-box; }
-.app .atabs .lang { padding: 0 4px; letter-spacing: .02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-/* Overview charts: a bar per day, rounded at the top, on a baseline; the highest day on a dashed line */
-.app .dchart { padding: 16px 18px 14px; display: flex; flex-direction: column; gap: 10px; }
-.app .dread { font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* C4 Admin: the four pages share a bottom menu like the app's; the question lists carry a count */
+.app .anav .ai { position: relative; display: flex; }
+.app .anav .badge { position: absolute; top: -6px; left: calc(100% - 8px); min-width: 16px; height: 16px; padding: 0 4px; box-sizing: border-box; border-radius: 8px; background: var(--ink); color: var(--bg); font: 700 10px/16px 'Carlito', Arial, sans-serif; text-align: center; letter-spacing: 0; }
+.app .anav .badge.bad { background: var(--danger); color: #fff; }
+.app .anav a { white-space: nowrap; }
+/* Overview charts: no background, a hairline above each; a bar per hour, day or week on a baseline, rounded at the top,
+   the highest one on a dashed line. Each has a small segmented switch for its range. */
+.app .dchart { display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px solid var(--line); }
+.app .dhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.app .dhead .stack { gap: 2px; min-width: 0; }
+.app .dread { font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .app .dread b { color: var(--ink); }
-.app .dplot { position: relative; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 2px; align-items: end; height: 110px; padding-top: 16px; border-bottom: 1px solid var(--tag-line); }
-.app .dplot::before { content: ''; position: absolute; left: 0; right: 0; top: 16px; border-top: 1px dashed var(--tag-line); }
+.app .dsw { flex: none; }
+.app .dsw .lang { height: 28px; padding: 0 8px; font-size: 12px; letter-spacing: .02em; }
+.app .dplot { position: relative; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 2px; align-items: end; height: 64px; padding-top: 14px; border-bottom: 1px solid var(--tag-line); }
+.app .dplot::before { content: ''; position: absolute; left: 0; right: 0; top: 14px; border-top: 1px dashed var(--tag-line); }
 .app .dplot .dmax { position: absolute; top: 0; left: 0; font: 400 11px/12px 'Carlito', Arial, sans-serif; color: var(--muted); font-variant-numeric: tabular-nums; }
 .app .dplot > div { height: 100%; display: flex; align-items: flex-end; justify-content: center; cursor: default; }
-.app .dplot i { display: block; width: 100%; max-width: 32px; background: var(--accent); border-radius: 4px 4px 0 0; transition: opacity .15s ease; }
+.app .dplot i { display: block; width: 100%; max-width: 32px; background: var(--accent); border-radius: 3px 3px 0 0; transition: opacity .15s ease; }
 .app .dchart.bad .dplot i { background: var(--danger); }
 .app .dplot:has(> .on) > div:not(.on) i { opacity: .35; }
+.app .dx { margin-top: -2px; }
 .app .dx span { font: 700 11px 'Carlito', Arial, sans-serif; text-transform: uppercase; color: var(--muted); }
-.app .in .dplot i { transform-origin: bottom; animation: growY .5s var(--ease-out) both; }
-@media (prefers-reduced-motion: reduce) { .app .in .dplot i { animation: none; } }
+.app .in .dplot i, .app .dchart.grow .dplot i { transform-origin: bottom; animation: growY .45s var(--ease-out) both; }
+@media (prefers-reduced-motion: reduce) { .app .in .dplot i, .app .dchart.grow .dplot i { animation: none; } }
+/* C4 a flagged question's sheet: each student opens their results; Remove takes the flag off */
+.app .sheet .att.who .whob { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; }
+.app .sheet .att.who .whob .card-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.app .sheet .att.who .mini { flex: none; height: 36px; padding: 0 14px; font-size: 14px; }
 /* C1b the student's own reports: the whole question, and a button to withdraw it */
 .app .flq.mine .card-title { display: block; -webkit-line-clamp: unset; overflow: visible; }
 .app .flq.mine .n { max-width: none; }

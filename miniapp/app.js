@@ -179,7 +179,11 @@ const STR = {
     tabOverview: 'Overview', tabStudents: 'Students', tabReported: 'Reported', tabFlagged: 'Flagged',
     overviewMeta: 'How the app is used, day by day',
     chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chNone: 'No numbers for the charts yet',
-    chLast: (n) => `in the last ${pl(n, 'day')}`, chOf: (p) => `${p}% of answers`,
+    rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
+    chNote: (r) => ({ '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '3m': 'last 3 months' })[r],
+    unflagOne: 'Remove', unflagAll: (n) => `Remove from all ${n}`, confirmUnflagAll: (n) => `Remove this flag for all ${pl(n, 'student')}?`,
+    unflagDone: 'Flag removed', unflagDoneAll: 'Flag removed for everyone', unflagSetup: 'Needs the latest database migration',
+    unflagHint: 'A removed flag also goes from the student’s app the next time it syncs.',
     // the student's own reports (C1b)
     reportedMine: 'Reported as wrong', reportedMineMeta: 'Questions you said have a mistake. Withdraw a report if the question turns out to be fine.',
     reportedMineNone: 'Nothing reported. If a question looks wrong, tap Report under it.', withdraw: 'Withdraw',
@@ -276,7 +280,11 @@ const STR = {
     tabOverview: 'Обзор', tabStudents: 'Ученики', tabReported: 'Ошибки', tabFlagged: 'Отмечены',
     overviewMeta: 'Как пользуются приложением, по дням',
     chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chNone: 'Для графиков пока нет данных',
-    chLast: (n) => `за ${pl(n, 'day')}`, chOf: (p) => `${p}% ответов`,
+    rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
+    chNote: (r) => ({ '24h': 'за 24 часа', '7d': 'за 7 дней', '30d': 'за 30 дней', '3m': 'за 3 месяца' })[r],
+    unflagOne: 'Снять', unflagAll: (n) => `Снять у всех (${n})`, confirmUnflagAll: (n) => `Снять эту отметку у всех (${pl(n, 'student')})?`,
+    unflagDone: 'Отметка снята', unflagDoneAll: 'Отметка снята у всех', unflagSetup: 'Нужна последняя миграция базы данных',
+    unflagHint: 'Снятая отметка пропадёт и в приложении ученика при следующей синхронизации.',
     reportedMine: 'Сообщено об ошибке', reportedMineMeta: 'Вопросы, в которых вы нашли ошибку. Отзовите сообщение, если вопрос оказался верным.',
     reportedMineNone: 'Сообщений нет. Если вопрос кажется неверным, нажмите «Сообщить» под ним.', withdraw: 'Отозвать',
   },
@@ -373,8 +381,21 @@ function serverSave(now = false) {
   if (!now) { serverTimer = setTimeout(() => serverSave(true), 3000); return; }
   const answers = outbox.slice(0, 500), body = JSON.stringify({ state: S, answers });
   progressApi(body, body.length < 60000) // keepalive lets the last save finish while the app closes (64 KB cap)
-    .then(() => { outbox = outbox.slice(answers.length); keepOutbox(); if (outbox.length) serverSave(); })
+    .then((j) => { applyClears(j && j.clear); outbox = outbox.slice(answers.length); keepOutbox(); if (outbox.length) serverSave(); })
     .catch(() => {});
+}
+// Flags an admin took off (api/progress.mjs → clear: [{ q, k: 'flags' | 'wrong' }]): dropped here and synced, which
+// tells the server they are done. draw = false while the app is still starting.
+function applyClears(list, draw = true) {
+  if (!Array.isArray(list) || !list.length) return;
+  let n = 0;
+  for (const c of list) {
+    const a = c && (c.k === 'flags' || c.k === 'wrong') ? S[c.k] : null, i = a ? a.indexOf(c.q) : -1;
+    if (i >= 0) { a.splice(i, 1); n++; }
+  }
+  if (!n) return;
+  save();
+  if (draw && !sheet) render();
 }
 // The server's copy, or null (outside Telegram, no database, or no answer within 5 s — the app starts anyway).
 function serverLoad() {
@@ -591,17 +612,17 @@ function loadDaily() {
   }).catch(() => {});
 }
 // Admin: every student's results from api/admin.mjs. undefined = not asked, 'loading', null = failed, or the list.
-// ADM_DAILY: joins, answers and wrong answers per UTC day for the Overview charts (null when the server had none).
-let ADM, ADM_DAILY = null;
-// The admin pages, in the order of their tab strip: [view, tab label]
-const ADMIN_TABS = [['admin', 'tabOverview'], ['adminUsers', 'tabStudents'], ['adminWrong', 'tabReported'], ['adminFlags', 'tabFlagged']];
+// ADM_SERIES: joins, answers and wrong answers per UTC hour (24) and day (91) for the Overview charts, or null.
+let ADM, ADM_SERIES = null;
+// The admin pages, in the order of their bottom menu: [view, icon, label]
+const ADMIN_TABS = [['admin', 'chart', 'tabOverview'], ['adminUsers', 'users', 'tabStudents'], ['adminWrong', 'alert', 'tabReported'], ['adminFlags', 'flag', 'tabFlagged']];
 const isAdminView = (v) => ADMIN_TABS.some(([k]) => k === v);
 function loadStudents(again) {
   if (ADM !== undefined && !again) return; // a failure stays on screen until Reload is tapped
   ADM = 'loading';
   fetch('/api/admin', { headers: { 'x-telegram-init-data': IN_TG ? TG.initData : '' } })
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
-    .then((j) => { ADM = Array.isArray(j.users) ? j.users : null; ADM_DAILY = Array.isArray(j.daily) ? j.daily : null; })
+    .then((j) => { ADM = Array.isArray(j.users) ? j.users : null; ADM_SERIES = j.series && Array.isArray(j.series.hour) && Array.isArray(j.series.day) ? j.series : null; })
     .catch(() => { ADM = null; })
     .then(() => { if (isAdminView(cur().v)) render(true); if (ADM) loadPhotos(); });
 }
@@ -649,7 +670,7 @@ function skeleton(kind) {
   const n = (bar) => `<span class="n">${bar ? sk('38px', '16px', ';margin:2.25px 0') + sk('66px', '11px', ';margin:2.5px 0') : sk('80px', '11px', ';margin:2.5px 0')}</span>`;
   const row = (tw, mw, bar) => `<div class="topic stu${bar ? ' x3' : ''}"><span class="ico sk"></span>${sk(tw, '14px', ';grid-column:2;margin:2px 0')}${sk(mw, '12px', ';grid-column:2;margin:2px 0')}${bar ? sk('100%', '4px', ';grid-column:2;grid-row:3;border-radius:2px') : ''}${n(bar)}</div>`;
   const rows = (list) => `<div class="topics">${list.map((r) => row(...r)).join('')}</div>`;
-  const chart = `<div class="band dchart">${sk('90px', '13px', ';margin:1.5px 0')}${sk('100%', '96px', ';border-radius:8px')}</div>`;
+  const chart = `<div class="dchart">${sk('90px', '13px', ';margin:1.5px 0')}${sk('100%', '64px', ';border-radius:6px')}</div>`;
   const inner = kind === 'admin' ? `<div class="stats">${stat('24px')}${stat('16px', true)}${stat('30px')}</div>${chart}${chart}${chart}`
     : kind === 'adminUsers' ? `<div class="tags">${chip('sortProgress')}${chip('sortName')}${chip('sortJoined')}</div>${rows([['150px', '180px', 1], ['110px', '120px', 1], ['170px', '190px', 1], ['95px', '150px', 1], ['135px', '60px', 0], ['120px', '70px', 0]])}`
     : rows([['85%', '140px', 0], ['70%', '120px', 0], ['80%', '150px', 0]]);
@@ -705,7 +726,8 @@ function flaggedByStudents(key) {
   return Object.keys(by).filter(anyQ).map((id) => ({ id, users: by[id] })).sort((a, b) => b.users.length - a.users.length || a.id.localeCompare(b.id));
 }
 const initials = (name) => name.replace(/^@/, '').split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
-// One admin page: the tab strip, the heading, then the page itself once the results are in (inner builds it).
+// One admin page: the heading, then the page itself once the results are in (inner builds it); render() adds the
+// admin bottom menu (anav).
 function adminPage(v, title, meta, inner) {
   loadStudents();
   let body;
@@ -713,11 +735,9 @@ function adminPage(v, title, meta, inner) {
   else if (ADM === null) body = `<div class="empty stack g12"><p class="body-muted">${t('studentsFail')}</p><button class="pill" style="margin:0 auto" data-act="adminReload">${t('reload')}</button></div>`;
   else if (!ADM.length) body = `<div class="empty"><p class="body-muted">${t('studentsEmpty')}</p></div>`;
   else body = inner();
-  const tabs = ADMIN_TABS.map(([k, label]) => `<button class="lang${k === v ? ' lang-on' : ''}" role="tab" aria-selected="${k === v}" data-act="atab" data-v="${k}">${t(label)}</button>`).join('');
   return {
-    title: t('adminT'),
-    body: `<div class="langs atabs" role="tablist" aria-label="${esc(t('adminT'))}">${tabs}</div>
-      <div class="stack g4"><span class="meta">${t('adminT')}</span><h2 class="display-s">${t(title)}</h2><p class="body-muted">${t(meta)}</p></div>${body}`,
+    title: t('adminT'), anav: v,
+    body: `<div class="stack g4"><span class="meta">${t('adminT')}</span><h2 class="display-s">${t(title)}</h2><p class="body-muted">${t(meta)}</p></div>${body}`,
   };
 }
 // The questions the students reported as wrong (key 'wrong') or flagged ('flags'), grouped by question; a tap opens
@@ -728,30 +748,64 @@ function flaggedList(key, none) {
   return `<div class="topics">${list.map(({ id, users }) => { const { q, lv, topic } = anyQ(id);
     return `<div class="topic flq${key === 'wrong' ? ' bad' : ''}" data-act="flagq" data-id="${id}" data-k="${key}"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span><span class="n"><b>${users.length}</b>${t('studentsW', users.length)}</span></div>`; }).join('')}</div>`;
 }
-// The Overview charts: one bar per UTC day, from the first day anybody joined or answered (a week at least) to today.
-const uday = (k) => new Date(k + 'T00:00:00Z').toLocaleDateString(t('locale'), { day: 'numeric', month: 'short', timeZone: 'UTC' });
-function dailyCharts() {
-  if (!Array.isArray(ADM_DAILY) || !ADM_DAILY.length) return `<p class="card-meta">${t('chNone')}</p>`;
-  let first = ADM_DAILY.findIndex((r) => r.joined || r.answers);
-  if (first < 0) first = ADM_DAILY.length;
-  const rows = ADM_DAILY.slice(Math.max(0, Math.min(first, ADM_DAILY.length - 7)));
-  const ans = rows.reduce((a, r) => a + r.answers, 0), bad = rows.reduce((a, r) => a + r.wrong, 0);
-  const last = t('chLast', rows.length);
-  return dayChart('joined', t('chJoined'), rows, '', last) + dayChart('answers', t('chAnswers'), rows, '', last) +
-    dayChart('wrong', t('chWrong'), rows, ' bad', ans ? t('chOf', Math.round((bad / ans) * 100)) : last);
+// The Overview charts. Each has its own range (CH_RANGE): 24h = the last 24 UTC hours, 7d and 30d = UTC days, 3m = the
+// last 91 days in 13 weeks. CH_GROW is the chart whose range just changed, so only its bars grow in.
+const RANGES = ['24h', '7d', '30d', '3m'];
+const CH_RANGE = { joined: '7d', answers: '7d', wrong: '7d' };
+let CH_GROW = null;
+const uday = (iso) => new Date(iso).toLocaleDateString(t('locale'), { day: 'numeric', month: 'short', timeZone: 'UTC' });
+const uhour = (iso) => new Date(iso).toLocaleTimeString(t('locale'), { hour: '2-digit', minute: '2-digit' });
+// One range as bars: [{ l: its label in the readout, x: on the axis, joined, answers, wrong }]
+function buckets(range) {
+  if (range === '24h') return ADM_SERIES.hour.map((r) => ({ ...r, l: uhour(r.at), x: uhour(r.at) }));
+  if (range !== '3m') return ADM_SERIES.day.slice(range === '7d' ? -7 : -30).map((r) => ({ ...r, l: uday(r.at), x: uday(r.at) }));
+  const days = ADM_SERIES.day.slice(-91), out = [], add = (wk, k) => wk.reduce((a, r) => a + r[k], 0);
+  for (let i = days.length % 7; i < days.length; i += 7) {
+    const wk = days.slice(i, i + 7);
+    out.push({ joined: add(wk, 'joined'), answers: add(wk, 'answers'), wrong: add(wk, 'wrong'), l: `${uday(wk[0].at)} – ${uday(wk[wk.length - 1].at)}`, x: uday(wk[0].at) });
+  }
+  return out;
 }
-// One chart: a bar per day, the highest day marked on a dashed line, the first and last day under it. Pointing at
-// (or tapping) a bar puts its day and number in the top right corner (chartPoint); a hidden table reads it out.
-function dayChart(key, title, rows, cls, note) {
+function dailyCharts() {
+  if (!ADM_SERIES || !ADM_SERIES.day.length) return `<p class="card-meta">${t('chNone')}</p>`;
+  return dayChart('joined', t('chJoined'), '') + dayChart('answers', t('chAnswers'), '') + dayChart('wrong', t('chWrong'), ' bad');
+}
+// One chart: the title, its total and the range switch; a bar per bucket, the highest marked on a dashed line, the first
+// and last bucket under it. Pointing at (or tapping) a bar puts its label and number in place of the total
+// (chartPoint); a hidden table reads it out.
+function dayChart(key, title, cls) {
+  const range = CH_RANGE[key], rows = buckets(range);
+  if (!rows.length) return '';
   const vals = rows.map((r) => r[key]), max = Math.max(1, ...vals), total = vals.reduce((a, b) => a + b, 0);
+  const ans = rows.reduce((a, r) => a + r.answers, 0);
+  const note = key === 'wrong' && ans ? t('chOf', Math.round((total / ans) * 100)) : t('chNote', range);
   const share = (r) => (key === 'wrong' && r.answers ? ` · ${Math.round((r.wrong / r.answers) * 100)}%` : '');
-  const cols = rows.map((r) => `<div data-l="${esc(uday(r.day))}" data-n="${r[key]}${share(r)}"><i class="${r[key] ? '' : 'z'}" style="height:${r[key] ? Math.max(3, (r[key] / max) * 100) : 0}%"></i></div>`).join('');
+  const cols = rows.map((r) => `<div data-l="${esc(r.l)}" data-n="${r[key]}${share(r)}"><i class="${r[key] ? '' : 'z'}" style="height:${r[key] ? Math.max(3, (r[key] / max) * 100) : 0}%"></i></div>`).join('');
   const read = `<b>${total}</b> · ${esc(note)}`;
-  return `<div class="band dchart${cls}" data-read="${esc(read)}">
-    <div class="row sb-between"><span class="kicker">${esc(title)}</span><span class="meta dread" aria-hidden="true">${read}</span></div>
+  const sw = RANGES.map((r) => `<button class="lang${r === range ? ' lang-on' : ''}" role="radio" aria-checked="${r === range}" data-act="range" data-k="${key}" data-r="${r}">${t('rg' + r)}</button>`).join('');
+  return `<div class="dchart${cls}${CH_GROW === key ? ' grow' : ''}" data-read="${esc(read)}">
+    <div class="dhead"><div class="stack"><span class="kicker">${esc(title)}</span><span class="meta dread" aria-hidden="true">${read}</span></div>
+      <div class="langs dsw" role="radiogroup" aria-label="${esc(title)}">${sw}</div></div>
     <div class="dplot" style="--n:${rows.length}" aria-hidden="true"><span class="dmax">${max}</span>${cols}</div>
-    <div class="row sb-between dx" aria-hidden="true"><span>${uday(rows[0].day)}</span><span>${uday(rows[rows.length - 1].day)}</span></div>
-    <table class="sr-only"><caption>${esc(title)}, ${esc(note)}: ${total}</caption>${rows.map((r) => `<tr><th>${uday(r.day)}</th><td>${r[key]}</td></tr>`).join('')}</table></div>`;
+    <div class="row sb-between dx" aria-hidden="true"><span>${esc(rows[0].x)}</span><span>${esc(rows[rows.length - 1].x)}</span></div>
+    <table class="sr-only"><caption>${esc(title)}, ${esc(t('chNote', range))}: ${total}</caption>${rows.map((r) => `<tr><th>${esc(r.l)}</th><td>${r[key]}</td></tr>`).join('')}</table></div>`;
+}
+// An admin takes a flag (kind 'flags' or 'wrong') off question q for these students (api/admin.mjs POST); the lists
+// update here at once, the students' apps on their next sync.
+async function unflag(q, k, ids, el) {
+  if ((k !== 'flags' && k !== 'wrong') || !ids.length || !Array.isArray(ADM)) return;
+  el?.classList.add('off');
+  try {
+    const r = await fetch('/api/admin', {
+      method: 'POST', body: JSON.stringify({ unflag: { q, k, users: ids } }),
+      headers: { 'x-telegram-init-data': IN_TG ? TG.initData : '', 'content-type': 'application/json' },
+    });
+    if (r.status === 501) { el?.classList.remove('off'); return toast(t('unflagSetup')); }
+    if (!r.ok) throw new Error(r.status);
+  } catch (e) { el?.classList.remove('off'); return toast(t('error')); }
+  ADM.forEach((u) => { if (ids.includes(u.id)) u[k] = (u[k] || []).filter((id) => id !== q); });
+  if (!ADM.some((u) => (u[k] || []).includes(q))) sheet = null; // nobody left on this question
+  hap('success'); render(); toast(t(ids.length > 1 ? 'unflagDoneAll' : 'unflagDone'));
 }
 function chartPoint(e) {
   const ch = e.target.closest && e.target.closest('.dchart[data-read]');
@@ -881,6 +935,12 @@ function mainButtonChange(toTop) {
 /* ---------- rendering ---------- */
 const NAV = [['home', 'book', 'learn'], ['examIntro', 'timer', 'exam'], ['progress', 'chart', 'progress'], ['profile', 'user', 'profile']];
 
+// The admin pages' own bottom menu, built like the app's: Overview, Students, Reported, Flagged. The two question
+// lists carry how many questions are on them.
+function adminNavHtml(on) {
+  const n = { adminWrong: Array.isArray(ADM) ? flaggedByStudents('wrong').length : 0, adminFlags: Array.isArray(ADM) ? flaggedByStudents('flags').length : 0 };
+  return `<nav class="nav anav" aria-label="${esc(t('adminT'))}">${ADMIN_TABS.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}" data-act="atab" data-v="${v}"${v === on ? ' aria-current="page"' : ''}><span class="ai"><span data-i="${i}" aria-hidden="true"></span>${n[v] ? `<b class="badge${v === 'adminWrong' ? ' bad' : ''}">${n[v] > 99 ? '99+' : n[v]}</b>` : ''}</span>${t(k)}</a>`).join('')}</nav>`;
+}
 const navHtml = (on, live = true) => `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}"${live ? ` data-act="tab" data-v="${v}"` : ''}${v === on ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
 // theme: the new theme spreads from the tapped segment (--tx/--ty), the DOM swap running inside a view transition;
 // pre runs just before the swap, inside it (applyTheme).
@@ -909,6 +969,7 @@ function render(toTop, theme = false, pre = null) {
   }
   // the tab bar is the lowest thing on screen; a screen's button bar sits just above it
   if (V.nav && stack.length === 1) h += navHtml(V.nav).replace('<nav ', `<nav${inert} `);
+  else if (V.anav) h += adminNavHtml(V.anav).replace('<nav ', `<nav${inert} `);
   if (sheet) h += `<div class="scrim" data-act="back"></div><div class="sheet" role="dialog" aria-modal="true"><div class="grip"></div><div class="wrap stack g16">${SHEETS[sheet.v](sheet)}</div></div>`;
   const vt = VT && theme && $app.querySelector('.scroll');
   const swap = () => {
@@ -1218,7 +1279,7 @@ const VIEWS = {
     const max = Math.max(1, ...week.map((w) => w.n)), sum = week.reduce((a, w) => a + w.n, 0);
     const names = t('days');
     const days = week.map((w, k) => `<div class="${k === 6 ? 'today' : ''}"><i class="${w.n ? '' : 'z'}" style="height:${w.n ? Math.max(8, (w.n / max) * 100) : 4}%"></i><span>${names[w.d.getDay()]}</span></div>`).join('');
-    const mis = allMistakes().length, fl = S.flags.filter((id) => Q[id]).length, rep = S.wrong.filter(anyQ).length;
+    const mis = allMistakes().length, fl = S.flags.filter((id) => Q[id]).length, rep = S.wrong.filter((id) => levelOfPrefix(id.split('-')[0])).length;
     const exams = myExams().slice(0, 5).map((e) => `<div class="att"><span class="card-meta">${day(e.at)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
     const weakest = TOPICS.filter((tp) => topicSeen(tp.id)).sort((a, b) => topicAcc(a.id) - topicAcc(b.id) || topicPct(a.id) - topicPct(b.id)).slice(0, 3);
     return {
@@ -1319,10 +1380,11 @@ const SHEETS = {
     const key = s.k === 'wrong' ? 'wrong' : 'flags';
     const { q, lv, topic } = f, users = ADM.filter((u) => (u[key] || []).includes(s.id));
     const opts = q.options.map((o, i) => `<div class="ans${i === q.answer ? ' ok' : ' plain'}"><span class="l">${i === q.answer ? svg('check', 12) : ''}</span><span>${esc(o)}</span></div>`).join('');
-    const who = users.map((u) => `<div class="att who" data-act="student" data-id="${u.id}">${avatar(u, 'tg-ava', 'width:32px;height:32px;font-size:12px')}<span class="card-title">${esc(studentName(u))}</span>${svg('next', 16)}</div>`).join('');
+    const who = users.map((u) => `<div class="att who"><button class="whob" data-act="student" data-id="${u.id}">${avatar(u, 'tg-ava', 'width:32px;height:32px;font-size:12px')}<span class="card-title">${esc(studentName(u))}</span>${svg('next', 16)}</button><button class="mini mini-danger" data-act="unflagOne" data-id="${u.id}" data-q="${s.id}" data-k="${key}">${t('unflagOne')}</button></div>`).join('');
+    const all = users.length > 1 ? `<button class="pill pill-quiet" style="margin-top:4px" data-act="unflagAll" data-q="${s.id}" data-k="${key}">${t('unflagAll', users.length)}</button>` : '';
     return `<span class="meta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span>
       <div class="rev flq-card"><p class="q">${esc(q.q)}</p>${figHtml(q)}${opts}<p class="body-muted" style="font-size:14px">${esc(q.why)}</p></div>
-      <div class="stack g8"><span class="kicker">${t(key === 'wrong' ? 'reportedBy' : 'flaggedBy')} · ${users.length}</span><div>${who}</div></div>`;
+      <div class="stack g8"><span class="kicker">${t(key === 'wrong' ? 'reportedBy' : 'flaggedBy')} · ${users.length}</span><div>${who}</div>${all}<p class="hint" style="margin:0">${t('unflagHint')}</p></div>`;
   },
   student(s) {
     const u = Array.isArray(ADM) && ADM.find((x) => x.id === s.id);
@@ -1580,6 +1642,13 @@ const ACT = {
   // the admin tab strip swaps the page in place, so Back still goes to the profile
   atab: (d) => { if (cur().v === d.v || !isAdminView(d.v)) return; stack[stack.length - 1] = { v: d.v }; hap('sel'); enterTab = true; render(true); },
   reported: () => go('reported'),
+  range: (d) => { if (!RANGES.includes(d.r) || !(d.k in CH_RANGE) || CH_RANGE[d.k] === d.r) return; CH_RANGE[d.k] = d.r; CH_GROW = d.k; hap('sel'); render(); CH_GROW = null; },
+  unflagOne: (d, el) => unflag(d.q, d.k, [+d.id], el),
+  unflagAll: async (d, el) => {
+    const ids = Array.isArray(ADM) ? ADM.filter((u) => (u[d.k] || []).includes(d.q)).map((u) => u.id) : [];
+    if (!ids.length || !(await confirmBox(t('confirmUnflagAll', ids.length)))) return;
+    unflag(d.q, d.k, ids, el);
+  },
   // C1b: withdraw a report (the same as tapping the red flag again under the question)
   unreport: (d) => {
     const k = S.wrong.indexOf(d.id);
@@ -1670,6 +1739,7 @@ async function init() {
   const srv = await server;
   if (srv && srv.state && srv.ts > S.ts) { S = merge(srv.state); applyTheme(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   else if (srv && S.ts > srv.ts) serverSave(true);
+  applyClears(srv && srv.clear, false);
   let want = pick(); // the saved progress may have picked another level
   if (!(await loadBank(want))) want = DEFAULT_LEVEL;
   if (!(await loadBank(want))) throw new Error(t('bankError'));
