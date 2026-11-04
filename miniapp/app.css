@@ -321,3 +321,14 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
   .app .opt.picked .l svg, .app .opt.ok, .app .opt.ok .l, .app .opt.ok .l svg, .app .opt.dim, .app .progress span.just,
   .app .tgmain .b .t.swap, .app .tgmain .b.wake, .app .streak.grew, .app .streak.grew .fire, .app .timer.beat { animation: none; }
 }
+
+/* UI pass 04.11 */
+/* the night-lights picture fills its card edge to edge */
+.app .fig.night { background: #07101a; }
+/* narrow phones (320–360 px): wide pills and the bottom buttons shrink their text instead of cutting it */
+.app .pill.pill-wide { font-size: clamp(14px, 4.6vw, 18px); }
+.app .tgmain .b { font-size: clamp(14px, 4.4vw, 17px); }
+.app .tgmain .row2 .b { padding: 0 10px; gap: 6px; }
+/* the label's letters (not its line box) and the icon sit on the button's centre line */
+.app .tgmain .b .t { line-height: 1; text-box: trim-both cap alphabetic; padding: .3em 0; margin: -.3em 0; } /* the padding keeps descenders out of the ellipsis clip */
+.app .tgmain .b > [data-i] { display: flex; }

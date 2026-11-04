@@ -6,7 +6,7 @@ const FIG_TEXT = {};
 const ft = (s) => FIG_TEXT[s] ?? s;
 
 const FIG = {};
-const NS = (w = 320, h = 200, extra = '') => `<svg viewBox="0 0 ${w} ${h}" width="100%" preserveAspectRatio="xMidYMid meet" font-family="Carlito, Arial, sans-serif" ${extra}>`;
+const NS = (w = 320, h = 200, extra = '', y0 = 0) => `<svg viewBox="0 ${y0} ${w} ${h}" width="100%" preserveAspectRatio="xMidYMid meet" font-family="Carlito, Arial, sans-serif" ${extra}>`;
 const RAD = Math.PI / 180;
 const pol = (cx, cy, r, deg) => [cx + r * Math.sin(deg * RAD), cy - r * Math.cos(deg * RAD)];
 const txt = (x, y, s, o = {}) => `<text x="${x}" y="${y}" font-size="${o.s || 11}" font-weight="${o.w || 700}" fill="${o.f || 'var(--muted)'}" text-anchor="${o.a || 'middle'}" ${o.extra || ''}>${s}</text>`;
@@ -41,7 +41,12 @@ FIG.encounter = f => {
   const yh = you.hdg ?? 0;
   const solo = (oth.dist ?? 80) < 1;  /* dist 0: a single-boat picture, no other vessel */
   const [ox, oy] = pol(cx, cy, oth.dist ?? 80, yh + (oth.bearing ?? 45));
-  let s = NS();
+  // a vessel near the top or bottom edge, with its label 38 below its centre, would be cut off: grow the frame
+  const otherLabel = !solo && (oth.label || ft('Other'));
+  const bottom = Math.max(cy + 44, solo ? 0 : oy + (otherLabel ? 44 : 26));
+  const top = solo ? 0 : Math.min(0, Math.floor(oy - 28));
+  const H = Math.max(200, Math.ceil(bottom + (f.note ? 16 : 4)));
+  let s = NS(320, H - top, '', top);
   s += compassN();
   if (f.wind != null) s += windArrow(f.wind);
   if (f.bearingLine) s += `<line x1="${cx}" y1="${cy}" x2="${ox}" y2="${oy}" stroke="var(--tag-line)" stroke-width="2" stroke-dasharray="4 5"/>`;
@@ -49,7 +54,7 @@ FIG.encounter = f => {
   s += hl(cx, cy, yh, 58) + (solo ? '' : hl(ox, oy, oth.hdg ?? 180, 58));
   s += boat(cx, cy, yh, { sail: you.sail, boom: you.boom, you: true, label: you.label || ft('You') });
   if (!solo) s += boat(ox, oy, oth.hdg ?? 180, { sail: oth.sail, boom: oth.boom, label: oth.label || ft('Other'), scale: oth.scale || 1 });
-  if (f.note) s += txt(160, 192, f.note, { s: 11, w: 400 });
+  if (f.note) s += txt(160, H - 8, f.note, { s: 11, w: 400 });
   return s + '</svg>';
 };
 
@@ -121,7 +126,7 @@ FIG.compass = f => {
 
 /* ---------- chart: soundings, a drying patch, a track; tide and draft in a panel ---------- */
 FIG.chart = f => {
-  let s = NS() + `<rect width="320" height="200" fill="var(--band)" rx="16"/>`;
+  let s = NS(320, 214) + `<rect width="320" height="200" fill="var(--band)" rx="16"/>`;
   if (f.land) s += `<path d="${f.land}" fill="var(--tag-line)" opacity=".9"/>`;
   (f.depths || []).forEach(d => s += txt(d[0], d[1], d[2], { s: 13, f: 'var(--ink)', w: 400, extra: d[3] ? 'text-decoration="underline"' : '' }));
   (f.marks || []).forEach(m => s += `<circle cx="${m[0]}" cy="${m[1]}" r="5" fill="${COL[m[2]] || 'var(--ink)'}" stroke="var(--ink)" stroke-width="1"/>` + (m[3] ? txt(m[0], m[1] - 9, m[3], { s: 10 }) : ''));
@@ -129,7 +134,7 @@ FIG.chart = f => {
   (f.labels || []).forEach(l => s += txt(l[0], l[1], l[2], { s: 11, f: 'var(--muted)', w: 700, a: l[3] || 'middle' }));
   if (f.boat) s += boat(f.boat[0], f.boat[1], f.boat[2], { you: true, scale: .7 });
   if (f.panel) { s += `<rect x="190" y="12" width="118" height="${18 + 18 * f.panel.length}" rx="12" fill="var(--bg)" stroke="var(--line)"/>`; f.panel.forEach((p, i) => s += txt(200, 30 + 18 * i, p, { s: 12, f: 'var(--ink)', w: i ? 400 : 700, a: 'start' })); }
-  s += txt(26, 190, f.note || ft('Depths in metres below chart datum'), { s: 10, w: 400, a: 'start' });
+  s += txt(26, 210, f.note || ft('Depths in metres below chart datum'), { s: 10, w: 400, a: 'start' });
   return s + '</svg>';
 };
 
