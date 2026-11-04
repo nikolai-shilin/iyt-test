@@ -279,15 +279,26 @@ const fmt = (ms) => { const s = Math.max(0, Math.round(ms / 1000)); return `${Ma
 const short = (id) => TS[id] || TT[id].split(' (')[0].split(' & ')[0];
 const lower = (s) => (LANG === 'en' && /^[A-Z][a-z]/.test(s) ? s[0].toLowerCase() + s.slice(1) : s);
 const day = (at) => new Date(at).toLocaleDateString(t('locale'), { day: 'numeric', month: 'short' });
+// A card line that carries on the one before it (that one ends in ':' or ',', or this one starts in lower case,
+// with a space, a bracket or a quote) stays under the same bullet, on a new line.
+function cardItems(lines) {
+  const out = [];
+  lines.forEach((l, i) => {
+    const prev = lines[i - 1];
+    const cont = i > 0 && (/[:,]\s*$/.test(prev) || /^[\s(«"'“‘a-zа-яё]/u.test(l));
+    if (cont) out[out.length - 1].push(l.trim()); else out.push([l]);
+  });
+  return out;
+}
 function figHtml(q) {
   if (!q.figure) return '';
   for (const k in FIG_TEXT) delete FIG_TEXT[k];
   if (q._tr && LANG === 'ru') Object.assign(FIG_TEXT, FIG_RU);
   const f = q.figure;
   if (f.type === 'card') return `<div class="figcard">${f.tag ? `<span class="figtag">${esc(f.tag)}</span>` : ''}<span class="kicker">${esc(f.title || '')}</span>` +
-    `<ul>${(f.lines || []).map((l) => `<li>${esc(l)}</li>`).join('')}</ul></div>`;
+    `<ul>${cardItems(f.lines || []).map((l) => `<li>${l.map(esc).join('<br>')}</li>`).join('')}</ul></div>`;
   const label = f.note || f.title || t('figNames')[f.type] || t('figure');
-  return `<div class="fig" role="img" aria-label="${esc(label)}">${figSvg(f).replace('<svg ', '<svg aria-hidden="true" focusable="false" ')}</div>`;
+  return `<div class="fig${f.type === 'lights' ? ' night' : ''}" role="img" aria-label="${esc(label)}">${figSvg(f).replace('<svg ', '<svg aria-hidden="true" focusable="false" ')}</div>`;
 }
 
 function hap(kind) {
