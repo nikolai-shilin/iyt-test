@@ -109,10 +109,10 @@ first 100, right answers that stand out by length, and that every figure renders
 
 ## Other levels
 
-VHF Radio Operator (`vhf-`), International Crew (`ic-`), Flotilla Skipper (`fs-`), Yachtmaster Coastal (`yc-`), Racing
-Rules of Sailing (`rr-`) and Charter Check-in (`ci-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
+VHF Radio Operator (`vhf-`), International Crew (`ic-`), Flotilla Skipper (`fs-`), Yachtmaster Coastal (`yc-`), Yachtmaster
+Ocean (`yo-`), Racing Rules of Sailing (`rr-`) and Charter Check-in (`ci-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
 topic is `data/bank/<level>/<topic>.json` (20 questions, about 4/12/4 by difficulty; 50 and 10/30/10 for the
-Charter Check-in, 100 and 20/60/20 for Yachtmaster Coastal and the Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
+Charter Check-in, 100 and 20/60/20 for Yachtmaster Coastal, Yachtmaster Ocean and the Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
 `<topic>.ru.json`: the same order, `{q, a, o, why, ref, fig}`, where `o` keeps the English order of the wrong options and
 `fig` maps figure text paths to the translation. The build shuffles the options once and writes both
 `data/questions/<level>.json` and the overlay `data/questions/<level>.ru.json` in that same order.
@@ -137,6 +137,18 @@ conversions, DR/EP, course to steer, tidal heights and clearances, dipping range
 Tidal questions are set in tidal waters (Channel, Solent, Brittany) with the almanac figures given in the figure, invented
 but realistic. IYT does not publish the theory exam's size, time or pass mark: 50 questions, 90 minutes and 70 % are app
 defaults. Written from the syllabus; no question is taken from an IYT paper.
+
+### Yachtmaster Ocean
+
+IYT's outline for Yachtmaster Ocean (iytworld.com/courses/yachtmaster-ocean: celestial navigation to take a 24 m yacht
+anywhere, ocean routing and meteorology; entry Yachtmaster Offshore) has 16 headings, grouped as 10 topics × 100 — the celestial
+sphere and the PZX triangle; the sextant and altitude corrections; time; meridian altitudes and the pole star; sun sights;
+planets, moon and stars; compass checking and satellite navigation; great circle sailing; ocean meteorology; ocean passage
+planning. Almanac data is given in the figure — the Sun's declination and equation of time consistent with the date, the
+navigational stars at their real SHA and Dec; every reduction (Hs → Ho, GHA/LHA, Hc and Zn by the cosine and atan2 formulas,
+intercepts, amplitudes, great-circle distance and vertex) was recomputed by a script while writing. The Russian keeps the
+English abbreviations (Hs, Ho, GHA, LHA, Zn…) because the exam is in English. Exam defaults (50 questions, 120 minutes, 70 %)
+are the app's: IYT does not publish them.
 
 ### Racing Rules of Sailing
 

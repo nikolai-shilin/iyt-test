@@ -1,0 +1,2631 @@
+[
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "You are 600 miles west of the Canaries on the ARC route and have just reduced this sight. What does it give you?",
+  "a": "A position line running 038°–218°, not a fix",
+  "o": [
+   "A fix 3.1 M from the DR along 128°",
+   "Your latitude, as the Sun is still rising",
+   "A position line along 128° through the DR"
+  ],
+  "why": "One sight gives one position line, at right angles to the azimuth: 128° ± 90° = 038°/218°. A fix needs a second line.",
+  "ref": "Sun sights — the position line",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun sight",
+   "lines": [
+    "0945 ship's time, Sun's lower limb",
+    "Reduced from the DR as the AP",
+    "Intercept 3.1 M towards, Zn 128°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "Your DR longitude is in doubt after two days of cloud. At which of these times does a sun sight do most for your longitude?",
+  "a": "0845 — the Sun is well clear of the meridian and above 15°",
+  "o": [
+   "0715 — the Sun is nearest east, so the line is nearest north–south",
+   "1145 — the Sun is highest, so the sight is most accurate",
+   "1215 — just after noon, when the Sun's bearing is steady"
+  ],
+  "why": "A line lies at right angles to the azimuth, so a Sun well east or west of the meridian gives longitude; below 15° refraction is large and uncertain.",
+  "ref": "Sun sights — choosing the time",
+  "fig": {
+   "type": "card",
+   "title": "Sun, 28 Nov, DR 17°20′N 38°45′W",
+   "lines": [
+    "0715 LMT · altitude 13° · Zn 117°",
+    "0845 LMT · altitude 31° · Zn 129°",
+    "1145 LMT · altitude 51° · Zn 179°",
+    "1215 LMT · altitude 51° · Zn 190°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "The watch leader wants to take the first sun sight of the day right now. What do you tell him?",
+  "a": "Wait until the Sun is above about 15°: refraction is large and uncertain",
+  "o": [
+   "Take it now: the bearing is nearest east, the best for longitude",
+   "Take it now and apply twice the refraction to be safe",
+   "Wait until noon: morning sights are never usable"
+  ],
+  "why": "Low down, refraction is big and varies with air temperature and pressure; above about 15° its uncertainty is small.",
+  "ref": "Sun sights — choosing the time",
+  "fig": {
+   "type": "card",
+   "title": "Just after sunrise",
+   "lines": [
+    "Sun's lower limb 6° above the horizon",
+    "Refraction at 6°: about 8.5′",
+    "Refraction at 30°: about 1.7′",
+    "Cool air, slight haze to the east"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You take a sun sight in the trade winds and time it with this watch. What UT do you take into the almanac?",
+  "a": "14:23:30 UT",
+  "o": [
+   "08:23:30 UT",
+   "14:23:52 UT",
+   "08:23:52 UT"
+  ],
+  "why": "Remove the error (fast: subtract 11 s) = 11:23:30 ship's time; UT = zone time + ZD (+3) = 14:23:30.",
+  "ref": "Sight reduction — UT from the watch",
+  "fig": {
+   "type": "card",
+   "title": "Timing the sight",
+   "lines": [
+    "Watch kept on ship's time, ZD +3",
+    "Watch 11 s fast by the GPS check",
+    "Watch at the sight 11:23:41"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You are three weeks out from the Galápagos on the Puddle Jump. Which almanac page and hour do you open for this sight?",
+  "a": "15 April, the 01h line",
+  "o": [
+   "14 April, the 07h line",
+   "14 April, the 01h line",
+   "15 April, the 07h line"
+  ],
+  "why": "UT = zone time + ZD = 1648 + 9 h = 2548, i.e. 0148 on the next day: the 01h line of 15 April.",
+  "ref": "Sight reduction — UT from the watch",
+  "fig": {
+   "type": "card",
+   "title": "Ship's clock",
+   "lines": [
+    "1648 on 14 April",
+    "Zone description +9",
+    "Sun sight taken now"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You work an afternoon sight on the ARC route. What is the Sun's GHA at the moment of the sight?",
+  "a": "038°49.7′",
+  "o": [
+   "038°50.6′",
+   "038°48.0′",
+   "027°11.1′"
+  ],
+  "why": "23m 17s at 15° an hour = 5°49.3′; 33°00.4′ + 5°49.3′ = 38°49.7′.",
+  "ref": "Sight reduction — GHA and increments",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 28 November 2026",
+   "lines": [
+    "Sight at 14h 23m 17s UT",
+    "GHA Sun at 14h: 033°00.4′",
+    "Sun increments: 15° per hour"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You work this morning sight on passage to St Lucia from your DR longitude. What is the LHA?",
+  "a": "319°11.1′",
+  "o": [
+   "040°48.9′",
+   "041°41.1′",
+   "306°24.1′"
+  ],
+  "why": "GHA 347°39.1′ + 12°47.0′ = 360°26.1′ → 0°26.1′; 0°26.1′ + 360° − 41°15.0′ W = LHA 319°11.1′.",
+  "ref": "Sight reduction — LHA",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 2 December 2026",
+   "lines": [
+    "Sight at 11h 51m 08s UT",
+    "GHA Sun at 11h: 347°39.1′",
+    "Increments 51m 08s: 12°47.0′",
+    "DR longitude 41°15.0′W"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You take an afternoon sun sight between the Galápagos and the Marquesas on the day of the equinox. What declination do you use?",
+  "a": "N0°00.3′",
+  "o": [
+   "S0°01.1′",
+   "S0°00.3′",
+   "N0°00.6′"
+  ],
+  "why": "d correction for 42 min = 0.7′ northward: S0°00.4′ → N0°00.3′ — the Sun has crossed the equator, so the name changes.",
+  "ref": "Sight reduction — declination",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 20 March 2027",
+   "lines": [
+    "Dec Sun at 20h: S0°00.4′",
+    "d 1.0′ an hour, Sun moving north",
+    "Sight at 20h 42m UT"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "Your GPS has failed mid-Atlantic. How far east or west could your sun-sight longitude be wrong because of the watch alone?",
+  "a": "Up to 3′ of longitude",
+  "o": [
+   "Up to 12′ of longitude",
+   "Up to 48′ of longitude",
+   "Up to 3′ of latitude"
+  ],
+  "why": "The Earth turns 15′ of arc a minute: 4 s of time = 1′ of longitude, so 12 s = 3′.",
+  "ref": "Sight errors — time",
+  "fig": {
+   "type": "card",
+   "title": "The watch",
+   "lines": [
+    "Quartz watch kept on UT",
+    "Last checked by GPS 9 days ago",
+    "Error now unknown: up to ±12 s"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You take a morning sun sight from the cockpit, 400 miles west of the Cape Verdes. What is Ho?",
+  "a": "35°25.2′",
+  "o": [
+   "35°28.2′",
+   "35°30.8′",
+   "34°55.4′"
+  ],
+  "why": "Hs 35°14.6′ − 1.5′ IE on the arc − 2.8′ dip + 14.9′ = Ho 35°25.2′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun, lower limb",
+   "lines": [
+    "Hs 35°14.6′",
+    "Index error 1.5′ on the arc",
+    "Height of eye 2.5 m: dip 2.8′",
+    "Main correction (LL) +14.9′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Only the Sun's upper limb shows clearly above a bank of low cloud, so you take that. What is Ho?",
+  "a": "28°22.7′",
+  "o": [
+   "28°55.1′",
+   "28°17.9′",
+   "28°29.3′"
+  ],
+  "why": "Hs 28°41.6′ + 2.4′ IE off − 3.3′ dip − 1.8′ refraction − 16.2′ SD (upper limb) = Ho 28°22.7′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun, upper limb",
+   "lines": [
+    "Hs UL 28°41.6′ · IE 2.4′ off the arc",
+    "Height of eye 3.5 m: dip 3.3′",
+    "Refraction 1.8′ · semi-diameter 16.2′",
+    "Lower limb lost in low cloud"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "You are in the trade winds 1000 miles from Antigua and work the sight from your DR. What is the LHA?",
+  "a": "267°20.2′",
+  "o": [
+   "358°00.2′",
+   "092°39.8′",
+   "312°40.2′"
+  ],
+  "why": "LHA = GHA − longitude West (+ longitude East): 312°40.2′ − 45°20.0′ = 267°20.2′.",
+  "ref": "Sight reduction — LHA",
+  "fig": {
+   "type": "card",
+   "title": "Almanac and DR",
+   "lines": [
+    "GHA Sun at the sight 312°40.2′",
+    "DR longitude 45°20.0′W"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Checking the crew's working of the 1530 sight on the way to the Marquesas, you find this. What has gone wrong?",
+  "a": "The longitude was added instead of subtracted",
+  "o": [
+   "Nothing: an afternoon LHA is always over 180°",
+   "The watch error was applied the wrong way",
+   "The GHA was taken for the wrong day"
+  ],
+  "why": "In the afternoon the Sun is west of you, so LHA is 0–180°: 180°36.2′ − 128°05.0′ W = 52°31.2′, not 308°41.2′.",
+  "ref": "Sight reduction — LHA",
+  "fig": {
+   "type": "card",
+   "title": "Crew's working, 1530 ship's time",
+   "lines": [
+    "GHA Sun 180°36.2′",
+    "DR longitude 128°05.0′W",
+    "LHA 308°41.2′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You work this ARC morning sight by calculator from the AP. What Hc do you get?",
+  "a": "30°50.5′",
+  "o": [
+   "46°28.8′",
+   "40°52.2′",
+   "60°05.4′"
+  ],
+  "why": "LHA = 352°41.6′ − 38°41.6′ = 314°; Dec S is negative against a north latitude: sin Hc = sin L sin D + cos L cos D cos LHA → 30°50.5′.",
+  "ref": "Sight reduction — Hc and Zn",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, ARC route",
+   "lines": [
+    "AP 17°00′N 38°41.6′W",
+    "GHA Sun 352°41.6′",
+    "Dec S21°18.4′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You reduce this afternoon sight half-way from Bermuda to the Azores. What is the Sun's true azimuth, Zn?",
+  "a": "266°",
+  "o": [
+   "094°",
+   "086°",
+   "274°"
+  ],
+  "why": "LHA 48° (under 180°) puts the Sun west of the meridian: azimuth angle N 094° W, so Zn = 360° − 094° = 266°.",
+  "ref": "Sight reduction — Hc and Zn",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon sight, June",
+   "lines": [
+    "AP 36°00′N",
+    "LHA 48°",
+    "Dec N22°35.2′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You are crossing the Indian Ocean from Cocos Keeling to Rodrigues. What is the Sun's Zn for this afternoon sight?",
+  "a": "276°",
+  "o": [
+   "264°",
+   "096°",
+   "084°"
+  ],
+  "why": "South latitude, LHA under 180°: Zn = 180° + Z = 180° + 96° = 276°.",
+  "ref": "Sight reduction — HO 249",
+  "fig": {
+   "type": "card",
+   "title": "HO 249, south latitude",
+   "lines": [
+    "AP 12°S · LHA 41° · Dec S5°",
+    "Tables give Z 96°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You reduce a sight from a chosen AP on passage from Bermuda to the Azores. What is Hc?",
+  "a": "43°16.9′",
+  "o": [
+   "42°43.1′",
+   "43°10.2′",
+   "43°29.0′"
+  ],
+  "why": "d correction = +29′ × 35/60 = +16.9′; 43°00.0′ + 16.9′ = 43°16.9′.",
+  "ref": "Sight reduction — HO 249",
+  "fig": {
+   "type": "card",
+   "title": "HO 249, Lat 36°N",
+   "lines": [
+    "LHA 52°, Dec 22° same name",
+    "Hc 43°00′ · d +29 · Z 93",
+    "Your Dec N22°35′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "You have no calculator aboard, only HO 249 sight reduction tables. Why do you work the sight from a chosen AP rather than from the DR?",
+  "a": "The tables are entered with whole degrees of latitude and LHA",
+  "o": [
+   "The tables only work for west longitudes",
+   "The DR is always less accurate than an AP",
+   "A chosen AP removes the need for an intercept"
+  ],
+  "why": "HO 249 tabulates whole degrees: take the AP's latitude to the nearest degree and its longitude so that the LHA comes out whole.",
+  "ref": "Sight reduction — assumed position",
+  "fig": null
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You want to reduce this ARC morning sight with HO 249. Which AP and LHA do you use?",
+  "a": "AP 17°N 38°50.3′W, LHA 318°",
+  "o": [
+   "AP 17°N 38°09.7′W, LHA 319°",
+   "AP 17°N 37°50.3′W, LHA 319°",
+   "AP 17°12′N 38°37.5′W, LHA 318°"
+  ],
+  "why": "In west longitude give the AP the GHA's minutes (50.3′), within 30′ of the DR: 356°50.3′ − 38°50.3′ = LHA 318°.",
+  "ref": "Sight reduction — assumed position",
+  "fig": {
+   "type": "card",
+   "title": "Choosing the AP (HO 249)",
+   "lines": [
+    "DR 17°12′N 38°37.5′W",
+    "GHA Sun at the sight 356°50.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Your co-skipper works the morning sight from the DR by calculator; you work the same sight with HO 249. Which position line do you plot?",
+  "a": "Either: both give the same line on the sheet",
+  "o": [
+   "The DR one: an AP is further from the boat",
+   "The AP one: tables are more exact than a calculator",
+   "Neither: different intercepts mean an error"
+  ],
+  "why": "Moving the AP along the azimuth changes the intercept by the same amount, so both workings plot the same position line.",
+  "ref": "Sight reduction — assumed position",
+  "fig": {
+   "type": "card",
+   "title": "One sight, two workings",
+   "lines": [
+    "From the DR 17°20′N 38°45′W:",
+    "   6.4 M towards, Zn 130°",
+    "From AP 17°N 38°50.3′W, LHA 315°:",
+    "   2.4 M away, Zn 129°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "You reduce this morning sun sight from your DR. What is the intercept?",
+  "a": "6.3 M towards the Sun",
+  "o": [
+   "6.3 M away from the Sun",
+   "6.3 M along the position line",
+   "3.2 M towards the Sun"
+  ],
+  "why": "Ho − Hc = 42°18.4′ − 42°12.1′ = +6.3′ = 6.3 M; Ho greater than Hc means towards.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Sight worked from the DR",
+   "lines": [
+    "Ho 42°18.4′",
+    "Hc 42°12.1′",
+    "Zn 144°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You are plotting this afternoon sight on the plotting sheet. How do you lay off the intercept from the AP?",
+  "a": "5.4 M away — along 056°",
+  "o": [
+   "5.4 M towards — along 236°",
+   "5.4 M away — along 236°",
+   "5.4 M towards — along 056°"
+  ],
+  "why": "Ho is less than Hc: 5.4′ away, so lay it off from the AP on the reciprocal of Zn, 236° − 180° = 056°.",
+  "ref": "Plotting the position line",
+  "fig": {
+   "type": "card",
+   "title": "Sight reduction",
+   "lines": [
+    "Ho 27°48.2′",
+    "Hc 27°53.6′",
+    "Zn 236°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "On the plotting sheet you have marked the AP and drawn the Sun's azimuth. How do you plot this sight?",
+  "a": "Measure 6 M from the AP towards 130° and draw the line at right angles there",
+  "o": [
+   "Measure 6 M from the AP towards 310° and draw the line at right angles there",
+   "Measure 6 M from the AP towards 130° and draw the line along the azimuth",
+   "Draw the line at right angles to the azimuth through the AP itself"
+  ],
+  "why": "Lay off the intercept along the azimuth (towards the Sun for 'towards'); the position line is drawn at right angles to the azimuth there.",
+  "ref": "Plotting the position line",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     120,
+     112,
+     "k",
+     "AP"
+    ]
+   ],
+   "track": "M82 80 L181 163",
+   "labels": [
+    [
+     185,
+     177,
+     "to the Sun",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Sun sight 0930",
+    "Zn 130°",
+    "6 M towards"
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You plot this sun sight from the AP shown. Which line is its position line?",
+  "a": "Line B",
+  "o": [
+   "Line A",
+   "Line C",
+   "Line D"
+  ],
+  "why": "Ho 32°14.0′ < Hc 32°22.0′: 8.0 M away, so lay off 8 M along 240° and draw the line at right angles to the azimuth: line B.",
+  "ref": "Plotting the position line",
+  "fig": {
+   "type": "chart",
+   "land": "M140.5 72.7 L170.5 124.6 L172.8 123.3 L142.8 71.4 Z M71.2 112.7 L101.2 164.6 L103.5 163.3 L73.5 111.4 Z M76.7 99.5 L128.6 69.5 L127.3 67.2 L75.4 97.2 Z M107.9 96.1 L133.9 141.2 L136.1 139.9 L110.1 94.8 Z",
+   "marks": [
+    [
+     122,
+     118,
+     "k",
+     "AP"
+    ]
+   ],
+   "track": "M61 153 L179 85",
+   "labels": [
+    [
+     179,
+     133,
+     "A",
+     "middle"
+    ],
+    [
+     109,
+     173,
+     "B",
+     "middle"
+    ],
+    [
+     83,
+     107,
+     "C",
+     "middle"
+    ],
+    [
+     142,
+     150,
+     "D",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Sun sight",
+    "Ho 32°14.0′",
+    "Hc 32°22.0′",
+    "Zn 060°"
+   ],
+   "note": "Plotting sheet · azimuth dashed"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "You are plotting a 9-mile intercept on a plotting sheet in 40°N. Where do you measure the 9 miles with the dividers?",
+  "a": "On the latitude scale, where 1′ = 1 M",
+  "o": [
+   "On the longitude scale, where 1′ = 1 M",
+   "On the longitude scale, corrected by cos 40°",
+   "On either scale: they are the same at 40°N"
+  ],
+  "why": "Distance is measured on the latitude scale; a minute of longitude is only cos 40° × 1 M ≈ 0.77 M here.",
+  "ref": "Plotting the position line",
+  "fig": null
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Your afternoon sight, 600 miles east of Bermuda, has the Sun exactly due west. Combined with the noon latitude, what does it give you?",
+  "a": "Longitude 52°22.5′W",
+  "o": [
+   "Longitude 52°21.0′W",
+   "Longitude 52°07.5′W",
+   "Longitude 52°09.0′W"
+  ],
+  "why": "Sun due west: the line runs north–south, a meridian. 6.0 M west at 36°40′N = 6.0 / cos 36.7° = 7.5′ of longitude: 52°22.5′W.",
+  "ref": "Sun sights — a line and a latitude",
+  "fig": {
+   "type": "card",
+   "title": "Sun due west, June",
+   "lines": [
+    "DR 36°40′N 52°15.0′W (as AP)",
+    "Intercept 6.0 M towards",
+    "Zn 270°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You cross the noon latitude with your afternoon sun line. What latitude do you run the noon line on to?",
+  "a": "16°41.8′N",
+  "o": [
+   "16°48.0′N",
+   "16°54.2′N",
+   "16°30.0′N"
+  ],
+  "why": "dLat = 18 × cos 250° = 6.2′ S: 16°48.0′ − 6.2′ = 16°41.8′N.",
+  "ref": "Sun sights — a line and a latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon latitude, run on",
+   "lines": [
+    "Noon latitude 16°48.0′N",
+    "Run to the 1530 sight: 250° T, 18 M",
+    "1530 sun line: Zn 236°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "You are mid-ARC, the GPS has gone dark, and you work this morning sight from your DR. What do you plot?",
+  "a": "6.4 M towards, Zn 130°",
+  "o": [
+   "6.4 M away, Zn 130°",
+   "6.4 M towards, Zn 230°",
+   "4.0 M towards, Zn 130°"
+  ],
+  "why": "Ho 31°31.1′; GHA 353°50.3′, LHA 315°05.3′; Hc 31°24.7′, Zn 130°: 6.4 M towards.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 28 November 2026",
+   "lines": [
+    "DR 17°20′N 38°45′W · UT 11h 23m 17s",
+    "Hs LL 31°18.0′ · IE 1.2′ off the arc",
+    "Dip 2.8′ · main correction +14.7′",
+    "GHA 11h 348°01.0′ · Dec S21°20.9′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Six days out of Bermuda for the Azores you take an afternoon sun sight and work it from the DR. What do you plot?",
+  "a": "7.3 M away, Zn 275°",
+  "o": [
+   "7.3 M towards, Zn 275°",
+   "7.3 M away, Zn 085°",
+   "6.1 M away, Zn 275°"
+  ],
+  "why": "Ho 32°59.5′; GHA 114°39.5′, LHA 064°49.5′; Hc 33°06.8′, Zn 275°: 7.3 M away.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 8 June 2027",
+   "lines": [
+    "DR 36°30′N 49°50′W · UT 19h 37m 44s",
+    "Hs LL 32°49.9′ · IE 2.0′ on the arc",
+    "Dip 2.7′ · main correction +14.3′",
+    "GHA 19h 105°13.5′ · Dec N22°52.6′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "On the Puddle Jump, 900 miles west of the Galápagos, you work this morning sight from the DR. What do you plot?",
+  "a": "3.9 M towards, Zn 075°",
+  "o": [
+   "3.9 M away, Zn 075°",
+   "3.9 M towards, Zn 105°",
+   "1.7 M away, Zn 075°"
+  ],
+  "why": "Ho 30°51.1′; GHA 055°09.5′, LHA 302°54.5′; Lat S, Dec N: Hc 30°47.2′, Zn 075°: 3.9 M towards.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 12 April 2027",
+   "lines": [
+    "DR 7°40′S 112°15′W · UT 15h 41m 26s",
+    "Hs LL 30°38.7′ · IE 0.8′ off the arc",
+    "Dip 2.8′ · main correction +14.4′",
+    "GHA 15h 044°48.0′ · Dec N8°45.6′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Bound from Cocos Keeling to Rodrigues, you work this afternoon sight from a chosen AP. What do you plot from that AP?",
+  "a": "9.4 M away, Zn 303°",
+  "o": [
+   "9.4 M towards, Zn 303°",
+   "9.4 M away, Zn 237°",
+   "3.6 M away, Zn 303°"
+  ],
+  "why": "AP 15°S 79°22.3′E, LHA 24°; Ho 60°44.8′, Hc 60°54.2′: 9.4 M away, Zn 303°.",
+  "ref": "Sight reduction — assumed position",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 18 September 2026",
+   "lines": [
+    "DR 15°18′S 79°26′E · UT 08h 12m 44s",
+    "Hs LL 60°32.3′ · IE nil",
+    "Dip 2.9′ · main correction +15.4′",
+    "GHA 304°37.7′ · Dec N1°48.7′",
+    "Reduce from an AP for HO 249"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "You take an afternoon sun sight on the final approach to the Marquesas. What LHA do you use?",
+  "a": "068°39.1′",
+  "o": [
+   "158°36.3′",
+   "068°45.1′",
+   "345°19.1′"
+  ],
+  "why": "UT 01:48:08 on 15 April; GHA 194°57.1′ + 12°02.0′ = 206°59.1′; − 138°20.0′ W = LHA 068°39.1′.",
+  "ref": "Sight reduction — LHA",
+  "fig": {
+   "type": "card",
+   "title": "Sight on the way to Hiva Oa",
+   "lines": [
+    "Ship's clock 16:48:20 on 14 April 2027",
+    "ZD +9 · ship's clock 12 s fast",
+    "DR longitude 138°20′W",
+    "GHA 15 Apr 01h 194°57.1′",
+    "GHA 14 Apr 07h 284°54.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "You have an 0900 sun line and will take a noon sight for a running fix. Between the two you sail 245° T, 26 M by the log. What do you do with the 0900 line?",
+  "a": "Move it 26 M along 245° and redraw it parallel to itself",
+  "o": [
+   "Move it 26 M along the Sun's 0900 azimuth",
+   "Turn it to the noon azimuth through the noon DR",
+   "Leave it: a position line holds all day"
+  ],
+  "why": "A position line is carried forward by the run (course and distance through the water) and stays parallel to itself.",
+  "ref": "Running fix — sun-run-sun",
+  "fig": null
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You carry the morning sun line forward by moving its AP. Where is the AP after the run?",
+  "a": "16°54.3′N 39°12.5′W",
+  "o": [
+   "17°05.7′N 38°28.1′W",
+   "16°54.3′N 39°11.6′W",
+   "17°05.7′N 39°12.5′W"
+  ],
+  "why": "dLat = 22 × cos 255° = 5.7′ S; departure = 22 × sin 255° = 21.3′ W; dLong = 21.3 / cos 17° = 22.2′ W → 16°54.3′N 39°12.5′W.",
+  "ref": "Running fix — sun-run-sun",
+  "fig": {
+   "type": "card",
+   "title": "Running the line on",
+   "lines": [
+    "0915 AP 17°00′N 38°50.3′W",
+    "Run to noon: 255° T, 22 M",
+    "Zn and intercept stay the same"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You want a sun-run-sun fix whose lines cut at 45° or more, but with as short a run as possible. When do you take the second sight?",
+  "a": "1130 — the azimuth has changed by 46°",
+  "o": [
+   "0930 — the azimuth has changed by 11°",
+   "1030 — the azimuth has changed by 26°",
+   "1230 — the azimuth has changed by 68°"
+  ],
+  "why": "Two lines cut at the change of azimuth: 173° − 127° = 46° at 1130; a longer run only adds run error.",
+  "ref": "Running fix — sun-run-sun",
+  "fig": {
+   "type": "card",
+   "title": "Sun's azimuth, 28 November",
+   "lines": [
+    "0830 LMT first sight, Zn 127°",
+    "0930 Zn 138° · 1030 Zn 153°",
+    "1130 Zn 173° · 1230 Zn 195°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You plot a sun-run-sun fix on the passage to St Lucia. Which point is your noon position?",
+  "a": "Point A",
+  "o": [
+   "Point B",
+   "Point C",
+   "Point D"
+  ],
+  "why": "Run the 0915 line on by the run (252°, 31 M) and cross it with the noon latitude: A. B uses the line before it was run on.",
+  "ref": "Running fix — sun-run-sun",
+  "fig": {
+   "type": "chart",
+   "land": "M134.2 158.7 L205.4 76.7 L203.8 75.3 L132.5 157.3 Z M56.3 160.7 L111.9 96.7 L110.2 95.3 L54.6 159.3 Z M20.0 151.1 L300.0 151.1 L300.0 148.9 L20.0 148.9 Z",
+   "marks": [
+    [
+     64,
+     150,
+     "k",
+     "A"
+    ],
+    [
+     140,
+     150,
+     "k",
+     "B"
+    ],
+    [
+     70,
+     118,
+     "k",
+     "C"
+    ],
+    [
+     176,
+     84,
+     "k",
+     "D"
+    ]
+   ],
+   "track": "M176 84 L70 118",
+   "labels": [
+    [
+     214,
+     92,
+     "0915 line",
+     "start"
+    ],
+    [
+     58,
+     172,
+     "0915 line run on",
+     "start"
+    ],
+    [
+     300,
+     143,
+     "noon latitude",
+     "end"
+    ]
+   ],
+   "panel": [
+    "Run to noon",
+    "252° T, 31 M"
+   ],
+   "note": "Plotting sheet · C noon DR · D 0915 DR"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "You run the morning sun line on to noon and cross it with the noon latitude. What is the longitude of your noon fix?",
+  "a": "39°10.2′W",
+  "o": [
+   "39°23.0′W",
+   "38°48.1′W",
+   "39°32.0′W"
+  ],
+  "why": "Transferred AP 16°50.4′N 39°21.1′W; the line through 4.6 M towards 131° meets 16°55.4′N 10.9′ east of it: 39°10.2′W.",
+  "ref": "Running fix — sun-run-sun",
+  "fig": {
+   "type": "card",
+   "title": "Sun-run-sun to noon, ARC",
+   "lines": [
+    "0915 AP 17°00′N 38°50.3′W",
+    "0915 line: 4.6 M towards, Zn 131°",
+    "Run 0915 to noon: 252° T, 31 M",
+    "Noon latitude 16°55.4′N"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You are crossing the Equatorial Current with a four-hour run between two sun sights. How far out could your running fix be from the current alone?",
+  "a": "About 3.2 M",
+  "o": [
+   "About 0.8 M",
+   "About 0.2 M",
+   "About 6.4 M"
+  ],
+  "why": "The earlier line is carried by the run through the water: 0.8 kn × 4 h = 3.2 M of set that the run does not include.",
+  "ref": "Running fix — sun-run-sun",
+  "fig": {
+   "type": "card",
+   "title": "Sun-run-sun",
+   "lines": [
+    "0900 sight and 1300 sight",
+    "Run by log and compass",
+    "Unknown current up to 0.8 kn"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You are south of Bermuda with the Moon in a clear afternoon sky. What do these two sights give you?",
+  "a": "A fix from two lines cutting at 54°, with no run between them",
+  "o": [
+   "Only one line: the Moon cannot be used in daylight",
+   "A running fix once the Moon line is run on 24 hours",
+   "Two lines cutting at 126°, too wide to give a fix"
+  ],
+  "why": "Simultaneous sun and Moon lines need no run; they cross at 238° − 112° = 126°, the same as 54° — a fair cut.",
+  "ref": "Sun and Moon by day",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon, first-quarter Moon",
+   "lines": [
+    "Sun: Zn 238°, altitude 34°",
+    "Moon: Zn 112°, altitude 41°",
+    "Horizon sharp, sights 2 min apart"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You are sailing from the Canaries to Mindelo in the Cape Verdes. Which sight tells you best whether you are left or right of your track?",
+  "a": "0900 — the Sun is abeam, so the line runs along the track",
+  "o": [
+   "1430 — the Sun is ahead, so the line crosses the track",
+   "1200 — the Sun is highest, so the line is most accurate",
+   "0730 — the Sun is lowest, so its bearing is steadiest"
+  ],
+  "why": "Sun abeam (134° ≈ 225° − 90°): the line lies parallel to the course — a course line, showing any offset to either side.",
+  "ref": "Course and speed lines",
+  "fig": {
+   "type": "card",
+   "title": "Course 225° to Mindelo, 20 Nov",
+   "lines": [
+    "0730 LMT · altitude 14° · Zn 119°",
+    "0900 LMT · altitude 30° · Zn 134°",
+    "1200 LMT · altitude 46° · Zn 185°",
+    "1430 LMT · altitude 31° · Zn 226°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You are steering 265° on the Puddle Jump in April, and the morning Sun rises almost dead astern. What does your first sun line of the day tell you best?",
+  "a": "How far you have run along the track",
+  "o": [
+   "Whether you are north or south of the track",
+   "Your latitude, as the Sun is near the east",
+   "Your compass error, as the Sun is astern"
+  ],
+  "why": "Sun astern: the position line lies across the track — a speed line that checks the distance run, not your offset to either side.",
+  "ref": "Course and speed lines",
+  "fig": null
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Bound from Bermuda to the Azores, you plot this morning sun line. What does it tell you?",
+  "a": "About 7 hours to go, but nothing about your offset north or south",
+  "o": [
+   "Your exact position: a sun line along the track is a fix",
+   "That you are 46 M south of the track and must alter north",
+   "Your latitude, because the Sun is on the prime vertical"
+  ],
+  "why": "The Sun dead ahead gives a speed line across the track: 46 M ÷ 6.5 kn ≈ 7 h to go; it says nothing about your offset to either side.",
+  "ref": "Course and speed lines",
+  "fig": {
+   "type": "card",
+   "title": "Approaching Faial, 10 June",
+   "lines": [
+    "Course 080° T for Horta, 6.5 kn",
+    "0700 LMT sun sight: Zn 080°, altitude 26°",
+    "Sun line crosses the track 46 M short",
+    "of Horta"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You are approaching Tobago in May, with the Sun passing nearly overhead. Why are these two sights, 40 minutes apart, worth taking?",
+  "a": "The bearing swings 66° in 40 minutes: a quick running fix with almost no run",
+  "o": [
+   "The altitude barely changes, so they average to a better latitude",
+   "The Sun is north of you, so each gives longitude directly",
+   "Two sights cancel the index error, so no corrections are needed"
+  ],
+  "why": "With the Sun near the zenith its azimuth swings fast past noon: two lines 40 min apart cut at 66° after a run of only a few miles.",
+  "ref": "Sun sights in the tropics",
+  "fig": {
+   "type": "card",
+   "title": "16 May, DR 12°00′N 58°00′W",
+   "lines": [
+    "1140 LMT: Ho 81°50′, Zn 028°",
+    "1220 LMT: Ho 80°52′, Zn 322°",
+    "Boat speed 6 kn"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "250 miles east of Martinique you get a sight with the Sun almost overhead and plot it as a circle round the Sun's geographical position. What centre and radius do you use?",
+  "a": "15°08.8′N 60°43.3′W, radius 235 M",
+  "o": [
+   "15°08.8′N 60°43.3′E, radius 235 M",
+   "15°08.8′N 60°43.3′W, radius 245 M",
+   "15°08.8′S 60°43.3′W, radius 235 M"
+  ],
+  "why": "GP: latitude = Dec N15°08.8′, longitude = GHA 60°43.3′ west; radius = 90° − 86°05.0′ = 3°55.0′ = 235 M.",
+  "ref": "Sun sights in the tropics",
+  "fig": {
+   "type": "card",
+   "title": "Sun nearly overhead, 1 May 2027",
+   "lines": [
+    "UT 16h 00m 00s",
+    "GHA Sun 060°43.3′",
+    "Dec N15°08.8′",
+    "Ho 86°05.0′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You find this mistake after plotting the morning line. Where does the correct position line lie?",
+  "a": "2 M further towards the Sun, along 112°",
+  "o": [
+   "2 M further away from the Sun, along 292°",
+   "2 M along the line itself, to the north",
+   "8 M further west, along 270°"
+  ],
+  "why": "Off the arc is added: the true Ho is 2.0′ higher, so the intercept grows by 2 M towards the Sun; 1′ of altitude = 1 M.",
+  "ref": "Sight errors — altitude",
+  "fig": {
+   "type": "card",
+   "title": "Morning sight, rechecked",
+   "lines": [
+    "Sun's azimuth (Zn) 112°",
+    "Index error 2.0′ off the arc",
+    "IE was not applied to Hs"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Your morning sun-run-sun fix was worked with the watch as read. How is the fix wrong?",
+  "a": "2′ of longitude too far west",
+  "o": [
+   "2′ of longitude too far east",
+   "8′ of longitude too far west",
+   "2′ of latitude too far south"
+  ],
+  "why": "A fast watch gives a UT that is too late, so GHA is 2′ too big (8 s × 15′ a minute): the fix is 2′ of longitude too far west.",
+  "ref": "Sight errors — time",
+  "fig": {
+   "type": "card",
+   "title": "Noon time check",
+   "lines": [
+    "Radio time signal: watch 8 s fast",
+    "Morning sights used the watch as read"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You take a quick series of morning sights in a lumpy sea. Which one do you throw out?",
+  "a": "The third, 1136:20",
+  "o": [
+   "The first, 1135:00",
+   "The fifth, 1137:40",
+   "None: average all five"
+  ],
+  "why": "The Sun climbs evenly, about 7′ every 40 s here; the third jumps 11′ then 3′, so it is off the line — reject it.",
+  "ref": "Sun sights — a series of sights",
+  "fig": {
+   "type": "card",
+   "title": "Five sights, 28 November",
+   "lines": [
+    "1135:00 UT · Hs 33°31.9′",
+    "1135:40 UT · Hs 33°39.1′",
+    "1136:20 UT · Hs 33°50.2′",
+    "1137:00 UT · Hs 33°53.3′",
+    "1137:40 UT · Hs 34°00.4′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You decide to reduce one sight from this series instead of all four. Which time and altitude do you use?",
+  "a": "10:15:02, Hs 41°27.6′",
+  "o": [
+   "10:15:49, Hs 41°27.6′",
+   "10:15:02, Hs 41°29.3′",
+   "10:14:12, Hs 41°27.6′"
+  ],
+  "why": "Average the times (10:15:02) and the altitudes (41°27.55′ ≈ 41°27.6′) and reduce once; it works because the altitude rises steadily.",
+  "ref": "Sun sights — a series of sights",
+  "fig": {
+   "type": "card",
+   "title": "Four good sights",
+   "lines": [
+    "10:14:12 UT · Hs 41°25.8′",
+    "10:14:46 UT · Hs 41°27.0′",
+    "10:15:21 UT · Hs 41°28.1′",
+    "10:15:49 UT · Hs 41°29.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You cross three sun lines from one day on the passage. What most likely makes the triangle?",
+  "a": "Errors in the course and distance used to run the lines on",
+  "o": [
+   "The Sun's declination changing between sights",
+   "Using a different AP for each sight",
+   "Refraction being greater at noon"
+  ],
+  "why": "Each line is good to about a mile; the hours of run (leeway, current, log error) carried by the earlier lines open the hat.",
+  "ref": "Sun sights — a cocked hat",
+  "fig": {
+   "type": "card",
+   "title": "Three sun lines run on to 1600",
+   "lines": [
+    "0900 line run on 7 hours",
+    "Noon line run on 4 hours",
+    "1600 line as taken",
+    "Cocked hat 5 M across"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Your three sun lines of the day make a small, neat triangle. If all three altitudes carry the same unknown error, where can you be?",
+  "a": "Possibly outside the triangle: the azimuths span less than 180°",
+  "o": [
+   "Inside it, at the centre of the triangle",
+   "At the corner made by the two latest lines",
+   "On the noon line, since it needs no run"
+  ],
+  "why": "A constant error moves every line the same way along its azimuth; with azimuths spanning only 100° the true spot can lie outside.",
+  "ref": "Sun sights — a cocked hat",
+  "fig": {
+   "type": "card",
+   "title": "Three sun lines, run on to 1500",
+   "lines": [
+    "0900 Zn 132° · 1145 Zn 179° · 1500 Zn 232°",
+    "Cocked hat 3 M across",
+    "Index error checked once, at dawn"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "Bound from the Canaries to the Cape Verdes, you reduce an afternoon sight and the intercept comes out nil. What do you plot?",
+  "a": "A line through the AP itself, running 124°–304°",
+  "o": [
+   "No line: a nil intercept means a slip",
+   "A line through the AP along 034°–214°",
+   "The AP itself, as a fix"
+  ],
+  "why": "Ho = Hc puts you on the circle through the AP: draw the line through the AP at right angles to Zn 214°, i.e. 124°–304°.",
+  "ref": "Plotting the position line",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon sun sight",
+   "lines": [
+    "Worked from the DR as the AP",
+    "Ho 38°56.6′ · Hc 38°56.6′",
+    "Zn 214°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "You are working a sun sight timed at 14h 36m 20s UT. Which increment do you add to the Sun's GHA for 14h?",
+  "a": "9°05.0′, from the Sun and planets column",
+  "o": [
+   "9°06.5′, from the Aries column",
+   "8°40.2′, from the Moon column",
+   "9°03.0′, taking 36m 20s as 36.20 min"
+  ],
+  "why": "The Sun's GHA grows exactly 15° an hour: 36m 20s = 36.33 min × 15′ = 545′ = 9°05.0′ — the Sun and planets column.",
+  "ref": "Sight reduction — GHA and increments",
+  "fig": {
+   "type": "card",
+   "title": "Increments page, 36m 20s",
+   "lines": [
+    "Sun and planets: 9°05.0′",
+    "Aries: 9°06.5′",
+    "Moon: 8°40.2′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "Crossing the Indian Ocean from Mauritius towards the Chagos, you work this sight from your DR. What is the LHA?",
+  "a": "017°03.6′",
+  "o": [
+   "248°33.6′",
+   "377°03.6′",
+   "111°26.4′"
+  ],
+  "why": "LHA = GHA + longitude East: 312°48.6′ + 64°15.0′ = 377°03.6′; take away 360° → 017°03.6′.",
+  "ref": "Sight reduction — LHA",
+  "fig": {
+   "type": "card",
+   "title": "Almanac and DR",
+   "lines": [
+    "GHA Sun at the sight 312°48.6′",
+    "DR longitude 64°15.0′E"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "On a February delivery from Antigua to Bermuda, you check the crew's GHA roughly before going on. Which GHA is about right for this sight?",
+  "a": "048°57.5′",
+  "o": [
+   "228°57.5′",
+   "108°57.5′",
+   "348°57.5′"
+  ],
+  "why": "GHA ≈ (UT − 12 h) × 15°, give or take the EoT: 3.5 h × 15° = 52.5°, less 3.6° for an EoT of −14 min → about 049°.",
+  "ref": "Sight reduction — GHA and increments",
+  "fig": {
+   "type": "card",
+   "title": "Timing the sight",
+   "lines": [
+    "Sight at 15h 30m 00s UT",
+    "14 February 2027",
+    "Ship's clock on ZD +4"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "Your crew, on their first passage south of the equator, say the towards/away rule is reversed down here. How do you lay off this intercept?",
+  "a": "5.5 M towards, along 028°",
+  "o": [
+   "5.5 M away, along 208°",
+   "5.5 M towards, along 208°",
+   "5.5 M away, along 028°"
+  ],
+  "why": "Ho greater than Hc is towards the Sun in either hemisphere: lay off 5.5 M from the AP along Zn 028°.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Sight at 28°S, Sun to the north",
+   "lines": [
+    "Ho 38°14.6′",
+    "Hc 38°09.1′",
+    "Zn 028°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "You will reduce this sight with HO 249 on the approach to Rio de Janeiro from St Helena. What latitude do you give the AP?",
+  "a": "24°S — the nearest whole degree",
+  "o": [
+   "23°S — the degree you are in",
+   "23°38′S — the DR latitude",
+   "23°30′S — the nearest half degree"
+  ],
+  "why": "HO 249 is entered with a whole degree of latitude: take the one nearest the DR, 23°38′S → 24°S.",
+  "ref": "Sight reduction — assumed position",
+  "fig": {
+   "type": "card",
+   "title": "Choosing the AP (HO 249)",
+   "lines": [
+    "DR 23°38′S 41°52.0′W",
+    "GHA Sun at the sight 18°30.6′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "Your HO 249 tables are soaked, and you now reduce sights by calculator with the cosine formula. Which position do you work them from?",
+  "a": "The DR as it is — the formula takes any position",
+  "o": [
+   "A whole-degree AP, as you would for the tables",
+   "The Sun's geographical position",
+   "Yesterday's noon fix, unchanged all day"
+  ],
+  "why": "The formula needs no whole-degree LHA, so work from the DR: one point to plot from and the shortest intercept.",
+  "ref": "Sight reduction — assumed position",
+  "fig": null
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "On passage from Samoa to Fiji you cross 180° during the night. What changes in the way you work the morning sun sight?",
+  "a": "The longitude is now east: add it to the GHA",
+  "o": [
+   "UT jumps a day too: open the almanac a day later",
+   "Nothing, until you reset the ship's clock",
+   "The longitude is now east: subtract it from the GHA"
+  ],
+  "why": "The date line changes the ship's date and the longitude's name, not UT: in east longitude LHA = GHA + longitude.",
+  "ref": "Sight reduction — LHA",
+  "fig": null
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "The navigator wants to shift this morning's sun line for the current before he plots it. What do you tell him?",
+  "a": "Leave it: at its own time the line is where the sight puts it",
+  "o": [
+   "Move it 1.2 M along 270°, for the hour",
+   "Move it 1.2 M along the Sun's azimuth",
+   "Draw it through the DR moved for the current"
+  ],
+  "why": "Current matters only when a line is carried forward in time; a sun line plotted for its own time needs no allowance.",
+  "ref": "Sun sights — the position line",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun line, 0915",
+   "lines": [
+    "Plotted from the AP for 0915",
+    "Estimated current 270°, 1.2 kn",
+    "No second sight yet"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 1,
+  "q": "In the Tuamotus you are passing a long reef that runs 150°–330° on your port hand. At what Sun bearing does a sun line best show your distance off it?",
+  "a": "060° or 240° — the line then runs along the reef",
+  "o": [
+   "150° or 330° — the Sun is along the reef",
+   "Overhead at noon — the latitude is exact",
+   "Any bearing, once the line is run on"
+  ],
+  "why": "A line lies at right angles to the azimuth: with the Sun on 060° or 240° it runs 150°–330°, parallel to the reef — your distance off.",
+  "ref": "Sun sights — clearing a danger",
+  "fig": null
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "A few hours out of Cape Town for St Helena, you reduce a morning sight with HO 249. What is the Sun's Zn?",
+  "a": "082°",
+  "o": [
+   "278°",
+   "098°",
+   "262°"
+  ],
+  "why": "South latitude, LHA over 180°: Zn = 180° − Z = 180° − 98° = 082°.",
+  "ref": "Sight reduction — HO 249",
+  "fig": {
+   "type": "card",
+   "title": "HO 249, south latitude",
+   "lines": [
+    "AP 34°S · LHA 318° · Dec S21° same name",
+    "Tables give Z 98°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Bound from Bali to Cocos Keeling, you reduce this sight with HO 249. Which AP and LHA do you use?",
+  "a": "AP 12°S 102°32.6′E, LHA 074°",
+  "o": [
+   "AP 12°S 102°27.4′E, LHA 074°",
+   "AP 11°S 102°32.6′E, LHA 074°",
+   "AP 12°S 103°32.6′E, LHA 075°"
+  ],
+  "why": "In east longitude the AP's minutes are 60′ − the GHA's: 331°27.4′ + 102°32.6′E = 434° → LHA 074°; 11°40′S → 12°S.",
+  "ref": "Sight reduction — assumed position",
+  "fig": {
+   "type": "card",
+   "title": "Choosing the AP (HO 249)",
+   "lines": [
+    "DR 11°40′S 102°48.0′E",
+    "GHA Sun at the sight 331°27.4′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Two days out of Tonga for Fiji, past the date line, you take a morning sun sight. Which almanac page and hour do you open?",
+  "a": "13 August, the 21h line",
+  "o": [
+   "14 August, the 21h line",
+   "15 August, the 21h line",
+   "14 August, the 09h line"
+  ],
+  "why": "UT = zone time + ZD = 0915 − 12 h = 2115 on the day before: 13 August, the 21h line.",
+  "ref": "Sight reduction — UT from the watch",
+  "fig": {
+   "type": "card",
+   "title": "Ship's clock",
+   "lines": [
+    "0915 on 14 August 2026",
+    "Zone description −12",
+    "DR 17°30′S 179°10′E"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Off Madeira, bound for Las Palmas, you find the crew took the Sun's Dec for this sight from yesterday's page. Where does that put the line?",
+  "a": "About 19 M too far north",
+  "o": [
+   "About 19 M too far south",
+   "About 19 M too far east",
+   "Less than a mile out: the Dec barely moves in a day"
+  ],
+  "why": "Yesterday's Dec is 18.8′ further north, so Hc comes out 18.6′ too high: the line sits 19 M too far from the Sun — north.",
+  "ref": "Sight errors — the almanac",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 3 November 2026",
+   "lines": [
+    "1120 LMT · Sun's Zn 172°",
+    "Dec 3 Nov: S15°09.4′",
+    "Dec 2 Nov: S14°50.6′ (used)"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "On a February delivery from Cape Town to Salvador, you take a sun sight at 14h 47m UT. What Dec do you use?",
+  "a": "S14°17.7′",
+  "o": [
+   "S14°18.9′",
+   "S14°17.5′",
+   "S14°19.1′"
+  ],
+  "why": "d 0.8′ × 47/60 = 0.6′; the Dec is getting smaller (S14°18.3′ → S14°17.5′), so subtract it: S14°17.7′.",
+  "ref": "Sight reduction — declination",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 10 February 2027",
+   "lines": [
+    "Dec Sun at 14h: S14°18.3′",
+    "Dec Sun at 15h: S14°17.5′",
+    "d 0.8′ · sight at 14h 47m UT"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You are going to reduce a July sight with HO 249 on the passage from Tahiti to Rarotonga. Which page and declination do you enter?",
+  "a": "Contrary name, Dec 21°",
+  "o": [
+   "Same name, Dec 21°",
+   "Contrary name, Dec 22°",
+   "Same name, Dec 22°"
+  ],
+  "why": "Lat S with Dec N is contrary name; enter the whole degree below the Dec (21°) and take the 14′ with the d correction.",
+  "ref": "Sight reduction — HO 249",
+  "fig": {
+   "type": "card",
+   "title": "HO 249, 16 July 2026",
+   "lines": [
+    "AP 22°S · LHA 318°",
+    "Sun's Dec N21°14′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Bound from New Zealand for Cape Horn, you lay off this intercept from the AP. Where is the end of the intercept?",
+  "a": "46°56.5′S 112°21.1′W",
+  "o": [
+   "47°03.5′S 112°21.1′W",
+   "46°56.5′S 112°38.9′W",
+   "46°56.5′S 112°23.9′W"
+  ],
+  "why": "dLat = 7.0 × cos 60° = 3.5′ N, so the south latitude gets smaller; dLong = 6.06 / cos 47° = 8.9′ E, so the west longitude gets smaller.",
+  "ref": "Plotting the position line",
+  "fig": {
+   "type": "card",
+   "title": "Plotting from the AP",
+   "lines": [
+    "AP 47°00′S 112°30.0′W",
+    "Intercept 7.0 M towards",
+    "Zn 060°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "In the Southern Ocean you make up a plotting sheet for 47°S. How far apart do you draw meridians one degree apart?",
+  "a": "82 mm",
+  "o": [
+   "120 mm",
+   "88 mm",
+   "176 mm"
+  ],
+  "why": "A degree of longitude is a degree of latitude × cos lat: 120 mm × cos 47° = 82 mm.",
+  "ref": "Plotting the position line",
+  "fig": {
+   "type": "card",
+   "title": "Plotting sheet",
+   "lines": [
+    "Mid-latitude 47°S",
+    "Latitude scale: 1° = 120 mm"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "On the way from Cape Town to Punta del Este, a new crew member works her first sight and gets this. What is most likely wrong?",
+  "a": "The latitude went in as north, not south",
+  "o": [
+   "The index error went in the wrong way",
+   "The dip was added, not subtracted",
+   "The SD was taken for the wrong limb"
+  ],
+  "why": "A slip in a correction moves a line a few miles; an intercept of 1316 M is a blunder in the entries — here sin L with the wrong sign.",
+  "ref": "Sight errors — blunders",
+  "fig": {
+   "type": "card",
+   "title": "Crew's working",
+   "lines": [
+    "AP 34°S · LHA 058° · Dec S17°52.6′",
+    "Ho 36°12.0′ · Hc 14°16.1′",
+    "Intercept 1315.9 M towards"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Heading west from Hawaii, you time an afternoon sight with this watch. Which almanac line do you use?",
+  "a": "1 December, the 00h line",
+  "o": [
+   "30 November, the 23h line",
+   "30 November, the 00h line",
+   "1 December, the 23h line"
+  ],
+  "why": "Slow: add 35 s: 23:59:40 + 35 s = 00:00:15 UT on 1 December — the next day's 00h line, plus 15 s of increments.",
+  "ref": "Sight reduction — UT from the watch",
+  "fig": {
+   "type": "card",
+   "title": "Timing the sight",
+   "lines": [
+    "Watch kept on UT, 35 s slow",
+    "Watch at the sight 23:59:40",
+    "UT date: 30 November 2026"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You correct a July sun sight with the almanac's Sun table. Which main correction do you apply?",
+  "a": "+14.6′ — the Apr–Sep lower-limb column",
+  "o": [
+   "+14.9′ — the Oct–Mar lower-limb column",
+   "−17.2′ — the Apr–Sep upper-limb column",
+   "−17.5′ — the Oct–Mar upper-limb column"
+  ],
+  "why": "The table has two seasons because the Sun's SD changes through the year: in July use Apr–Sep, and the limb you brought down.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun table, Ha 35°",
+   "lines": [
+    "Oct–Mar: LL +14.9′ · UL −17.5′",
+    "Apr–Sep: LL +14.6′ · UL −17.2′",
+    "Sight on 12 July, lower limb"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "After three days of gale with no sights, your first sun sight, worked from the DR, gives a very large intercept. What do you do with it?",
+  "a": "Plot it, then rework it from a point on that line",
+  "o": [
+   "Throw it out: an intercept over 30 M is a blunder",
+   "Plot it as it is: an intercept of any length is exact",
+   "Retake the sight until it agrees with the DR"
+  ],
+  "why": "A long intercept is not wrong, but the straight line is only a tangent to the circle near its foot: rework from a point on it.",
+  "ref": "Sight reduction — assumed position",
+  "fig": {
+   "type": "card",
+   "title": "First sight after the gale",
+   "lines": [
+    "DR from log and compass only",
+    "Intercept 34.6 M away, Zn 248°",
+    "Sextant and IE checked"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "After plotting a sun-run-sun fix you find the index error was left out of both sights. Where is the true fix?",
+  "a": "4.0 M from it along 170°",
+  "o": [
+   "2.0 M from it along 170°",
+   "4.0 M from it along 350°",
+   "Where it is: the error cancels out"
+  ],
+  "why": "Both Ho were 2′ low, so each line moves 2 M towards its Sun; with azimuths 120° apart the fix moves 2 / cos 60° = 4 M along 170°.",
+  "ref": "Sight errors — altitude",
+  "fig": {
+   "type": "card",
+   "title": "Sun-run-sun fix",
+   "lines": [
+    "0900 sight Zn 110° · 1300 sight Zn 230°",
+    "IE 2.0′ off the arc, not applied",
+    "Same sextant for both sights"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "At landfall you find the log under-read on the run between your sun sights. How far out was the morning line after you ran it on?",
+  "a": "About 1.9 M",
+  "o": [
+   "About 3.0 M",
+   "About 2.3 M",
+   "About 0.3 M"
+  ],
+  "why": "A run error moves the line only by its part along the azimuth: 3.0 M × cos (250° − 120°) = 3.0 × 0.64 ≈ 1.9 M.",
+  "ref": "Sight errors — the run",
+  "fig": {
+   "type": "card",
+   "title": "The run you used",
+   "lines": [
+    "Morning sun line: Zn 120°",
+    "Run by log: 250° T, 30.0 M",
+    "Real run: 250° T, 33.0 M"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Practising with the GPS still working, you compare five days of sun lines with the GPS position. What do they tell you?",
+  "a": "A constant error of about 1′: recheck the IE and your eye",
+  "o": [
+   "Normal scatter: there is nothing to correct",
+   "The GPS is about 1 M out: trust the sextant",
+   "A watch error: reset the watch to UT"
+  ],
+  "why": "Random errors scatter both ways; lines always about a mile 'away' point to a constant altitude error — index or personal.",
+  "ref": "Sight errors — altitude",
+  "fig": {
+   "type": "card",
+   "title": "Sun lines against the GPS",
+   "lines": [
+    "5 days, 3 sights a day",
+    "Each line 0.5–1.5 M from the GPS fix,",
+    "always on the side away from the Sun",
+    "Azimuths from 095° to 265°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "In the tropics in August you get three sun lines spread over the day. Allowing for a constant sextant error you cannot rule out, where in this cocked hat are you?",
+  "a": "Inside it: the azimuths span more than 180°",
+  "o": [
+   "Outside it, beyond the side of the noon line",
+   "At the corner where the two latest lines cross",
+   "Anywhere outside it: a constant error moves you out"
+  ],
+  "why": "A constant error shifts all three lines alike; with azimuths spanning 187° (086° to 273°), the true spot lies inside.",
+  "ref": "Sun sights — a cocked hat",
+  "fig": {
+   "type": "card",
+   "title": "Three sun lines, 27 August, 15°N",
+   "lines": [
+    "0745 Zn 086° · 1200 Zn 176° · 1615 Zn 273°",
+    "Lines run on to 1615 · triangle 2 M across",
+    "Index error checked once, at dawn"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Running east in the Southern Ocean in June, you want a sun-run-sun fix today. Which pair of sights do you take?",
+  "a": "1000 and 1400 — high enough, and 57° apart",
+  "o": [
+   "0900 and 1500 — the widest cut of the day",
+   "1130 and 1230 — the Sun at its highest",
+   "1000 and 1130 — the shortest run"
+  ],
+  "why": "Refraction is unreliable below about 10°, and the Sun barely tops 18° at noon: 1000 and 1400 (14°, 57° apart) give the best usable cut.",
+  "ref": "Sun sights — choosing the time",
+  "fig": {
+   "type": "card",
+   "title": "Sun at 48°S, 21 June (LMT)",
+   "lines": [
+    "0900 8° Zn 041° · 1000 14° Zn 029°",
+    "1130 18° Zn 008° · 1230 18° Zn 353°",
+    "1400 14° Zn 332° · 1500 8° Zn 319°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "On a June morning between Bermuda and the Azores the Moon is up in daylight. When do you take the Sun and the Moon together for a fix?",
+  "a": "0700 — the lines cut at 49°",
+  "o": [
+   "0900 — the lines cut at 29°",
+   "1100 — the lines cut at 42°",
+   "1200 — the lines cut at 82°"
+  ],
+  "why": "Take the best cut with both bodies above about 15°: at 1200 the Moon is only 7° up, so 0700 (49°) is best.",
+  "ref": "Sun and Moon — a fix by day",
+  "fig": {
+   "type": "card",
+   "title": "Sun and Moon, 27 June, 36°N 40°W",
+   "lines": [
+    "0700 Sun 25° Zn 078° · Moon 58° Zn 209°",
+    "0900 Sun 49° Zn 095° · Moon 41° Zn 246°",
+    "1100 Sun 71° Zn 129° · Moon 18° Zn 267°",
+    "1200 Sun 77° Zn 177° · Moon 7° Zn 275°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "You take a Moon sight 25 minutes after your Sun sight. How do you get the fix for 1505?",
+  "a": "Run the Sun line on 2.9 M along 255°",
+  "o": [
+   "Cross them as they are: 25 minutes is simultaneous",
+   "Run the Moon line back 2.9 M along 255°",
+   "Move both lines 1.45 M along 255°"
+  ],
+  "why": "Lines from different times need a run: carry the 1440 Sun line forward by the 25-minute run (255°, 2.9 M) and cross it with the Moon's.",
+  "ref": "Sun and Moon — a fix by day",
+  "fig": {
+   "type": "card",
+   "title": "Sun and Moon, afternoon",
+   "lines": [
+    "1440 Sun line · 1505 Moon line",
+    "Course 255° T at 7.0 kn",
+    "Fix wanted for 1505"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Between your two sun sights you altered course for a squall line. What run do you carry the first line by?",
+  "a": "222° T, 21.2 M",
+  "o": [
+   "220° T, 23.4 M",
+   "245° T, 23.4 M",
+   "195° T, 21.2 M"
+  ],
+  "why": "Add the legs as vectors, not their courses and distances: 245° 12.4 M + 195° 11.0 M = 222° T, 21.2 M.",
+  "ref": "Running fix — sun-run-sun",
+  "fig": {
+   "type": "card",
+   "title": "Run between the sights",
+   "lines": [
+    "0900 sun sight",
+    "0900–1100: 245° T, 12.4 M",
+    "1100–1300: 195° T, 11.0 M",
+    "1300 sun sight"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Beating north from Antigua to Bermuda, you will run the 0900 sun line on to noon. Along which direction do you move it?",
+  "a": "007° T",
+  "o": [
+   "023° T",
+   "015° T",
+   "110° T"
+  ],
+  "why": "Leeway sets you away from the wind: on starboard tack, heading 015°, the water track is 015° − 8° = 007°; carry the line along that.",
+  "ref": "Running fix — sun-run-sun",
+  "fig": {
+   "type": "card",
+   "title": "Run to noon",
+   "lines": [
+    "Starboard tack, heading 015° T",
+    "Wind ENE · leeway 8°",
+    "0900 sun line: Zn 110°",
+    "Log 20.5 M to noon"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "On day 12 of the ARC your noon sun-run-sun fix lies away from the noon DR worked up from yesterday's noon fix. What current has the boat had?",
+  "a": "260° at about 0.6 kn",
+  "o": [
+   "080° at about 0.6 kn",
+   "260° at about 1.2 kn",
+   "260° at about 0.3 kn"
+  ],
+  "why": "The set runs from the DR to the fix, and the drift is spread over the time since the last fix: 14 M ÷ 24 h ≈ 0.6 kn on 260°.",
+  "ref": "Running fix — current",
+  "fig": {
+   "type": "card",
+   "title": "Noon, day 12",
+   "lines": [
+    "24 h since yesterday's noon fix",
+    "Noon DR from log and compass",
+    "Noon fix: 14 M on 260° from the DR"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Bound for Bermuda from the Virgin Islands, you plot an afternoon sun line that runs along your course. What do you do?",
+  "a": "Alter about 4° to port: you are 9 M east of the track",
+  "o": [
+   "Alter about 4° to starboard: you are 9 M west of it",
+   "Hold 000°: a course line shows no offset",
+   "Slow down: the line puts you 9 M ahead"
+  ],
+  "why": "Sun abeam: the line lies along the course and shows the offset — 9 M east with 140 M to go is about 4° (9/140): alter to port.",
+  "ref": "Sun sights — a course line",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon sun line",
+   "lines": [
+    "Course 000° T for Bermuda, 140 M to go",
+    "Sun bearing 270°: line runs 000°–180°",
+    "The line passes 9 M east of Bermuda"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "South of Bermuda you work a Sun and a Moon sight taken together, each from its own AP for HO 249. Which point is your fix?",
+  "a": "Point C",
+  "o": [
+   "Point A",
+   "Point B",
+   "Point D"
+  ],
+  "why": "Lay off each intercept from its own AP — the Sun's 4 M towards 232°, the Moon's 6 M away from 128° — and the two lines cross at C.",
+  "ref": "Sun and Moon — a fix by day",
+  "fig": {
+   "type": "chart",
+   "land": "M164.1 67.7 L244.5 170.6 L246.2 169.3 L165.8 66.4 Z M187.4 37.8 L273.5 148.0 L275.2 146.6 L189.2 36.5 Z M127.3 142.3 L208.9 37.8 L207.1 36.5 L125.5 140.9 Z M170.8 176.3 L243.9 82.7 L242.2 81.3 L169.0 174.9 Z",
+   "marks": [
+    [
+     250,
+     146,
+     "w",
+     "Sun"
+    ],
+    [
+     158,
+     146,
+     "w",
+     "Moon"
+    ],
+    [
+     175,
+     80,
+     "k",
+     "C"
+    ],
+    [
+     210,
+     124,
+     "k",
+     "D"
+    ],
+    [
+     198,
+     50,
+     "k",
+     "B"
+    ],
+    [
+     233,
+     95,
+     "k",
+     "A"
+    ]
+   ],
+   "track": "M274 128L226 164 M134 128L182 164",
+   "labels": [
+    [
+     18,
+     26,
+     "Sun: 4.0 M towards",
+     "start"
+    ],
+    [
+     18,
+     40,
+     "Zn 232°",
+     "start"
+    ],
+    [
+     18,
+     60,
+     "Moon: 6.0 M away",
+     "start"
+    ],
+    [
+     18,
+     74,
+     "Zn 128°",
+     "start"
+    ]
+   ],
+   "note": "Plotting sheet · APs ringed · azimuths dashed"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Bound from the Galápagos to the Marquesas, you run the 0800 sun line on to the noon latitude in the South Equatorial Current. Which point is your noon fix?",
+  "a": "Point B",
+  "o": [
+   "Point A",
+   "Point C",
+   "Point D"
+  ],
+  "why": "Carry the line by the run and the current together — 250° 26 M plus 280° 6 M — then cross it with the noon latitude: B.",
+  "ref": "Running fix — current",
+  "fig": {
+   "type": "chart",
+   "land": "M122.5 166.4 L159.6 64.4 L157.6 63.6 L120.4 165.6 Z M16.0 151.1 L304.0 151.1 L304.0 148.9 L16.0 148.9 Z",
+   "marks": [
+    [
+     39,
+     150,
+     "k",
+     "B"
+    ],
+    [
+     59,
+     150,
+     "k",
+     "C"
+    ],
+    [
+     80,
+     150,
+     "k",
+     "D"
+    ],
+    [
+     127,
+     150,
+     "k",
+     "A"
+    ],
+    [
+     144,
+     76,
+     "w",
+     "0800 DR"
+    ],
+    [
+     66,
+     104,
+     "w",
+     "noon DR"
+    ]
+   ],
+   "track": "M144 76L66 104 M66 104L47 101",
+   "labels": [
+    [
+     127,
+     172,
+     "0800 line",
+     "start"
+    ],
+    [
+     300,
+     144,
+     "noon latitude",
+     "end"
+    ]
+   ],
+   "panel": [
+    "Run to noon",
+    "250° T, 26 M",
+    "Current 280°",
+    "1.5 kn, 4 h"
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Cloud closes in after your only sun sight of the morning, worked from a chosen AP for HO 249. Which point do you log as your best position?",
+  "a": "Point B",
+  "o": [
+   "Point A",
+   "Point C",
+   "Point D"
+  ],
+  "why": "With one line, the most likely position is the foot of the perpendicular from the DR to the line; the AP's end point is only a plotting point.",
+  "ref": "Sight reduction — assumed position",
+  "fig": {
+   "type": "chart",
+   "land": "M73.4 134.5 L163.9 44.0 L162.2 42.3 L71.7 132.8 Z",
+   "marks": [
+    [
+     40,
+     70,
+     "w",
+     "AP"
+    ],
+    [
+     108,
+     59,
+     "w",
+     "DR"
+    ],
+    [
+     147,
+     59,
+     "k",
+     "A"
+    ],
+    [
+     128,
+     78,
+     "k",
+     "B"
+    ],
+    [
+     88,
+     118,
+     "k",
+     "C"
+    ],
+    [
+     108,
+     98,
+     "k",
+     "D"
+    ]
+   ],
+   "track": "M30 60L99 129",
+   "panel": [
+    "Zn 135°",
+    "17 M towards"
+   ],
+   "note": "Plotting sheet · AP chosen for HO 249"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "In a short swell you take five sights of the morning Sun and plot them against time. What do you take into the reduction?",
+  "a": "16:43:00 with Hs 42°20.8′, read off the line",
+  "o": [
+   "16:43:00 with Hs 42°21.9′, the mean of all five",
+   "16:43:34 with Hs 42°33.3′, sight 4 as taken",
+   "16:44:09 with Hs 42°36.5′, the last sight as taken"
+  ],
+  "why": "Draw the best line through the sights, ignore the one off it, and take a round time with its altitude off the line.",
+  "ref": "Sun sights — a series of sights",
+  "fig": {
+   "type": "chart",
+   "land": "M50.0 154.8 L300.0 154.8 L300.0 153.2 L50.0 153.2 Z M50.8 154.0 L50.8 26.0 L49.2 26.0 L49.2 154.0 Z",
+   "marks": [
+    [
+     77,
+     131,
+     "k",
+     "1"
+    ],
+    [
+     128,
+     110,
+     "k",
+     "2"
+    ],
+    [
+     180,
+     86,
+     "k",
+     "3"
+    ],
+    [
+     230,
+     50,
+     "k",
+     "4"
+    ],
+    [
+     283,
+     40,
+     "k",
+     "5"
+    ]
+   ],
+   "track": "M65 137L291 37",
+   "labels": [
+    [
+     86,
+     168,
+     "1642",
+     "middle"
+    ],
+    [
+     178,
+     168,
+     "1643",
+     "middle"
+    ],
+    [
+     270,
+     168,
+     "1644",
+     "middle"
+    ],
+    [
+     46,
+     152,
+     "42°00′",
+     "end"
+    ],
+    [
+     46,
+     123,
+     "42°10′",
+     "end"
+    ],
+    [
+     46,
+     93,
+     "42°20′",
+     "end"
+    ],
+    [
+     46,
+     64,
+     "42°30′",
+     "end"
+    ],
+    [
+     46,
+     34,
+     "42°40′",
+     "end"
+    ],
+    [
+     54,
+     20,
+     "Hs",
+     "middle"
+    ],
+    [
+     300,
+     144,
+     "UT",
+     "end"
+    ]
+   ],
+   "note": "Five sights · the line drawn by eye"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Coming down on the Tuamotus from the Marquesas, you work a morning sight with the Sun at right angles to the reef. How far off the reef edge are you?",
+  "a": "About 8.8 M",
+  "o": [
+   "About 19.2 M",
+   "About 14.0 M",
+   "About 5.2 M"
+  ],
+  "why": "The line runs parallel to the reef: the AP is 14.0 M off it, and the line lies 5.2 M towards the Sun and the reef — 14.0 − 5.2 = 8.8 M.",
+  "ref": "Sun sights — clearing a danger",
+  "fig": {
+   "type": "chart",
+   "land": "M53 -61 L213 216 L340 216 L340 -61 Z M67.8 43.5 L129.8 150.9 L131.9 149.7 L69.9 42.3 Z",
+   "marks": [
+    [
+     80,
+     108,
+     "w",
+     "AP"
+    ]
+   ],
+   "track": "M66 116L133 77",
+   "labels": [
+    [
+     137,
+     152,
+     "sun line",
+     "start"
+    ],
+    [
+     250,
+     176,
+     "REEF",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Sun Zn 060°",
+    "AP–reef 14.0 M",
+    "5.2 M towards"
+   ],
+   "note": "Plotting sheet · azimuth dashed"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Approaching Falmouth from the Azores, your deep-water sounder first finds bottom at 190 m just as you take a sun sight. Where are you?",
+  "a": "Point D",
+  "o": [
+   "Point A",
+   "Point B",
+   "Point C"
+  ],
+  "why": "Cross the sun line with the 200 m contour, the edge of the shelf: D. Where the bottom rises steeply, a sounding is a position line of its own.",
+  "ref": "Sun sights — a line and a sounding",
+  "fig": {
+   "type": "chart",
+   "land": "M60.9 176.9 L186.8 49.5 L185.0 47.7 L59.1 175.1 Z",
+   "marks": [
+    [
+     173,
+     61,
+     "k",
+     "A"
+    ],
+    [
+     110,
+     136,
+     "k",
+     "B"
+    ],
+    [
+     176,
+     150,
+     "k",
+     "C"
+    ],
+    [
+     145,
+     90,
+     "k",
+     "D"
+    ]
+   ],
+   "track": "M30 34 L92 70 L150 92 L206 128 L262 176 M96 22 L156 54 L212 78 L266 112 L306 142",
+   "depths": [
+    [
+     44,
+     54,
+     "200"
+    ],
+    [
+     120,
+     30,
+     "100"
+    ],
+    [
+     40,
+     150,
+     "2000"
+    ]
+   ],
+   "labels": [
+    [
+     191.89909323252903,
+     58.631151297715505,
+     "sun line",
+     "start"
+    ]
+   ],
+   "panel": [
+    "Echo sounder",
+    "bottom at 190 m"
+   ],
+   "note": "Depths in metres · contours dashed · B the AP · C the DR"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 2,
+  "q": "Making landfall on the Marquesas, you have a radar range of Ua Huka and a sun line at the same moment. Where are you?",
+  "a": "Point B",
+  "o": [
+   "Point A",
+   "Point C",
+   "Point D"
+  ],
+  "why": "A range and a line cross twice; the DR decides which cut you are at — here B, close to the DR, not A on the far side of the island.",
+  "ref": "Sun sights — a line and a range",
+  "fig": {
+   "type": "chart",
+   "land": "M140 70 L148 62 L160 66 L164 78 L156 88 L142 86 Z M74.2 105.0 L189.4 147.0 L190.2 144.7 L75.0 102.8 Z",
+   "marks": [
+    [
+     167,
+     138,
+     "k",
+     "A"
+    ],
+    [
+     97,
+     112,
+     "k",
+     "B"
+    ],
+    [
+     80,
+     129,
+     "w",
+     "D"
+    ],
+    [
+     150,
+     76,
+     "k",
+     "C"
+    ]
+   ],
+   "track": "M86 76 A64 64 0 1 0 214 76 A64 64 0 1 0 86 76",
+   "labels": [
+    [
+     194,
+     160,
+     "sun line",
+     "middle"
+    ]
+   ],
+   "note": "Radar range 16 M, dashed · C Ua Huka · D the DR"
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Five days out of Cape Town for St Helena, only the Sun's upper limb is sharp above a haze bank. You work this morning sight from the DR. What do you plot?",
+  "a": "5.8 M towards, Zn 098°",
+  "o": [
+   "5.8 M away, Zn 098°",
+   "5.8 M towards, Zn 082°",
+   "38.4 M towards, Zn 098°"
+  ],
+  "why": "Upper limb: SD subtracted. Ho 37°01.9′; LHA 302°04.4′; Hc 36°56.1′, Zn 098°: 5.8 M towards.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 16 January 2027",
+   "lines": [
+    "DR 25°10′S 6°25′E · UT 07h 52m 13s",
+    "Hs UL 37°24.0′ · IE 1.6′ on the arc",
+    "Dip 2.9′ · refraction 1.3′ · SD 16.3′",
+    "GHA 07h 282°36.1′ · Dec S20°57.4′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Running before the SW monsoon from the Seychelles to the Maldives, you work this early-afternoon sight from the DR. What do you plot?",
+  "a": "4.6 M away, Zn 299°",
+  "o": [
+   "4.6 M towards, Zn 299°",
+   "4.6 M away, Zn 061°",
+   "3.8 M away, Zn 299°"
+  ],
+  "why": "Dec N11°03.1′ − 0.8′ = N11°02.3′; Ho 71°12.8′; LHA 016°36.1′; Hc 71°17.4′, Zn 299°: 4.6 M away.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 24 August 2026",
+   "lines": [
+    "DR 2°10′N 63°40′E · UT 08h 54m 10s",
+    "Hs LL 70°59.6′ · IE 0.6′ off the arc",
+    "Dip 2.9′ · main correction +15.5′",
+    "GHA 08h 299°23.6′",
+    "Dec 08h N11°03.1′ · d 0.9′, decreasing"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Bound from Hawaii to San Francisco, north of the Pacific High, you time this morning sight on a watch kept on UT. What do you plot?",
+  "a": "6.7 M towards, Zn 107°",
+  "o": [
+   "6.7 M away, Zn 107°",
+   "6.7 M towards, Zn 253°",
+   "20.6 M towards, Zn 107°"
+  ],
+  "why": "Slow: add 37 s → UT 19:18:29; GHA 108°01.0′, LHA 321°21.0′; Ho 52°25.1′, Hc 52°18.4′, Zn 107°: 6.7 M towards.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 20 July 2026",
+   "lines": [
+    "DR 38°20′N 146°40′W · watch on UT",
+    "Watch 19:17:52, 37 s slow",
+    "Hs LL 52°13.9′ · IE 1.0′ on the arc",
+    "Dip 2.8′ · main correction +15.0′",
+    "GHA 19h 103°23.7′ · Dec N20°32.5′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Running down the forties from New Zealand to Cape Horn, you work this afternoon sight from the DR. What do you plot?",
+  "a": "6.2 M away, Zn 294°",
+  "o": [
+   "6.2 M towards, Zn 294°",
+   "6.2 M away, Zn 246°",
+   "27.4 M away, Zn 294°"
+  ],
+  "why": "UT 00:34:20 on 22 March — the next day's page. GHA 186°49.1′, LHA 058°19.1′; Ho 20°47.9′, Hc 20°54.1′: 6.2 M away.",
+  "ref": "Sight reduction — UT from the watch",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight (Dec at the sight)",
+   "lines": [
+    "DR 46°20′S 128°30′W · clock on ZD +9",
+    "Clock 15:34:20 on 21 March 2027",
+    "Hs LL 20°37.1′ · IE nil · dip 2.8′ · +13.6′",
+    "22 Mar 00h GHA 178°14.1′ · Dec N0°27.8′",
+    "21 Mar 00h GHA 178°09.7′ · Dec N0°04.1′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Bound from Tonga to Fiji, you crossed 180° in the night. You work this morning sight from the DR. What do you plot?",
+  "a": "4.4 M towards, Zn 056°",
+  "o": [
+   "4.4 M away, Zn 056°",
+   "4.4 M towards, Zn 124°",
+   "24.0 M away, Zn 055°"
+  ],
+  "why": "East longitude is added: 137°27.1′ + 179°42.0′ = LHA 317°09.1′; Ho 37°19.5′, Hc 37°15.1′, Zn 056°: 4.4 M towards.",
+  "ref": "Sight reduction — LHA",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight after crossing 180°",
+   "lines": [
+    "DR 17°05′S 179°42′E · ship's date 14 Aug",
+    "UT 21h 14m 37s on 13 August 2026",
+    "Hs LL 37°06.2′ · IE 1.4′ off the arc",
+    "Dip 2.7′ · main correction +14.6′",
+    "GHA 21h 133°47.8′ · Dec N14°27.1′"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "In the forties between Cape Town and Fremantle in July, you reduce this afternoon sight with HO 249 from a chosen AP. What do you plot from the AP?",
+  "a": "7.8 M away, Zn 334°",
+  "o": [
+   "7.8 M towards, Zn 334°",
+   "7.8 M away, Zn 026°",
+   "24.9 M away, Zn 334°"
+  ],
+  "why": "AP 41°S 48°11.4′E, LHA 025°; Hc = 23°48′ − 57 × 9/60 = 23°39.5′: 7.8 M away; Zn = 180° + 154° = 334°.",
+  "ref": "Sight reduction — HO 249",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 17 July 2026",
+   "lines": [
+    "DR 41°12′S 47°54′E · GHA 336°48.6′",
+    "Dec N21°09.1′ · Ho 23°31.7′",
+    "HO 249, Lat 41° contrary, LHA 25°:",
+    "Dec 21°: Hc 23°48′ · d −57 · Z 154°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "On the NE-monsoon run from Phuket to Galle, you work this morning sight from a chosen AP for HO 249. What do you plot, and from where?",
+  "a": "From AP 7°N 88°22.1′E: 8.2 M away, Zn 122°",
+  "o": [
+   "From the DR 6°50′N 88°40′E: 8.2 M away, Zn 122°",
+   "From AP 7°N 88°22.1′E: 8.2 M towards, Zn 122°",
+   "From AP 7°N 88°22.1′E: 8.2 M away, Zn 238°"
+  ],
+  "why": "AP 7°N 88°22.1′E makes the LHA 314°; Ho 36°54.7′, Hc 37°02.9′: 8.2 M away, Zn 122°, laid off from the AP.",
+  "ref": "Sight reduction — assumed position",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 18 January 2027",
+   "lines": [
+    "DR 6°50′N 88°40′E · UT 03h 12m 44s",
+    "Hs LL 36°43.4′ · IE 0.8′ on the arc",
+    "Dip 2.9′ · main correction +15.0′",
+    "GHA 03h 222°26.9′ · Dec S20°36.2′",
+    "Reduce from an AP for HO 249"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Between Bermuda and the Azores you take the Sun and the crescent Moon together and work both from the DR. Where is your fix?",
+  "a": "38°13.0′N 40°21.6′W",
+  "o": [
+   "38°41.9′N 40°18.3′W",
+   "38°04.9′N 40°22.5′W",
+   "38°46.6′N 40°17.7′W"
+  ],
+  "why": "Moon Ho = Hs − dip − R + SD + HP × cos Ha (27.9′) = 62°48.0′: 3.9 M away; crossed with the Sun line → 38°13.0′N 40°21.6′W.",
+  "ref": "Sun and Moon — a fix by day",
+  "fig": {
+   "type": "card",
+   "title": "Sun and Moon, 9 June 2027",
+   "lines": [
+    "DR 38°10′N 40°15′W · both worked from it",
+    "Sun line: 5.4 M towards, Zn 275°",
+    "Moon LL Hs 62°07.2′ · dip 2.8′ · R 0.5′",
+    "Moon SD 16.2′ · HP 59.5′",
+    "Moon Hc 62°51.9′ · Zn 169°"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Bound from Tonga to New Zealand, you will pass Minerva Reef after dark and want at least 5 M off it. What does this afternoon sun line tell you?",
+  "a": "About 4.8 M abeam: alter away now",
+  "o": [
+   "About 7.2 M abeam: hold your course",
+   "About 9.6 M abeam: hold your course",
+   "About 3.8 M abeam: alter away now"
+  ],
+  "why": "The line is 11.0 − 3.8 = 7.2 M off; four hours of 0.6 kn set towards the reef take 2.4 M: 4.8 M abeam, inside your margin.",
+  "ref": "Sun sights — clearing a danger",
+  "fig": {
+   "type": "card",
+   "title": "1500 sun line, reef to the west",
+   "lines": [
+    "Reef edge 020°–200°, parallel to the line",
+    "AP 11.0 M east of the reef edge",
+    "Intercept 3.8 M towards, Zn 290°",
+    "Current 290°, 0.6 kn · reef abeam at 1900"
+   ]
+  }
+ },
+ {
+  "topic": "sun",
+  "difficulty": 3,
+  "q": "Crossing the Gulf Stream from Newport to Bermuda, you run the 0900 sun line on to the 1300 sight. Where is your 1300 fix?",
+  "a": "36°42.3′N 69°36.1′W",
+  "o": [
+   "36°49.0′N 69°43.9′W",
+   "36°55.6′N 69°51.6′W",
+   "36°58.5′N 69°55.0′W"
+  ],
+  "why": "Carry the 0900 line by the run and the stream together — over the ground 148° 26.5 M — and cross it with the 1300 line: 36°42.3′N 69°36.1′W.",
+  "ref": "Running fix — current",
+  "fig": {
+   "type": "card",
+   "title": "Sun-run-sun in the Gulf Stream",
+   "lines": [
+    "0900 AP 37°N 69°48.2′W: 5.2 M away, Zn 098°",
+    "1300 AP 37°N 69°51.6′W: 3.0 M towards, Zn 227°",
+    "Run by log: 165° T, 26 M",
+    "Gulf Stream: 070°, 2.0 kn for 4 h"
+   ]
+  }
+ }
+]

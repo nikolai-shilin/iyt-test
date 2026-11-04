@@ -1,0 +1,2397 @@
+[
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "You are on the ARC route, the GPS has failed and you want a noon latitude. At what UT is the Sun on your meridian?",
+  "a": "1409 UT",
+  "o": [
+   "0927 UT",
+   "1421 UT",
+   "1148 UT"
+  ],
+  "why": "Mer Pass 1148 LMT + 35°20′ of west longitude in time (2h21m) = 1409 UT; longitude west is added.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight, 28 Nov 2026",
+   "lines": [
+    "DR at noon 17°40′N 035°20′W",
+    "Almanac: Sun Mer Pass 1148",
+    "Ship's clock keeps UT"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "On passage from Cocos Keeling to Mauritius you plan the noon sight. At what UT do you expect the Sun on your meridian?",
+  "a": "0714 UT",
+  "o": [
+   "1656 UT",
+   "1205 UT",
+   "0709 UT"
+  ],
+  "why": "Mer Pass 1205 LMT − 72°45′ of east longitude in time (4h51m) = 0714 UT; longitude east is subtracted.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight, 15 Aug 2027",
+   "lines": [
+    "DR at noon 12°10′S 072°45′E",
+    "Almanac: Sun Mer Pass 1205"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Your ship's clock keeps zone time +3 and you want to call the navigator on deck for noon. What will the ship's clock show at meridian passage?",
+  "a": "1202 by the ship's clock",
+  "o": [
+   "1502 by the ship's clock",
+   "1802 by the ship's clock",
+   "1153 by the ship's clock"
+  ],
+  "why": "1153 + 3h09m for 47°10′W = 1502 UT; zone +3 means ship's time = UT − 3 h = 1202.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 10 Dec 2026",
+   "lines": [
+    "DR at noon 15°10′N 047°10′W",
+    "Almanac: Sun Mer Pass 1153",
+    "Ship's clock: zone +3 (UT − 3 h)"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "You are running west in the trades and want the UT of noon, allowing for your run. When will the Sun be on your meridian?",
+  "a": "1431 UT",
+  "o": [
+   "1429 UT",
+   "1427 UT",
+   "1440 UT"
+  ],
+  "why": "First guess 1149 + 2h40m = 1429; 4.5 h at 7 kn = 31 M = 33′ of longitude W → 40°33′W → 1149 + 2h42m = 1431 UT.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": {
+   "type": "card",
+   "title": "Noon planning, 2 Dec 2026",
+   "lines": [
+    "1000 UT: DR 15°50′N 040°00′W",
+    "Course 270°, speed 7.0 kn",
+    "Almanac: Sun Mer Pass 1149"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "Your noon is predicted for 1409 UT. How do you take the meridian altitude?",
+  "a": "Start ten minutes early and follow the Sun up until it stops rising",
+  "o": [
+   "Take one sight at exactly 1409 UT, timed to the second",
+   "Start at 1409 UT and average the sights of the next ten minutes",
+   "Take sights from 1400 to 1420 UT and use the last one"
+  ],
+  "why": "Before noon the Sun climbs ever more slowly: keep it on the horizon until it stops rising — that highest altitude is the meridian altitude.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight",
+   "lines": [
+    "Sun bearing south, about 51° high",
+    "Watch checked against UT this morning"
+   ],
+   "tag": "1409 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "You follow the Sun up to noon and note these sextant readings. Which Hs do you reduce for your latitude?",
+  "a": "50°46.4′ — the highest reading",
+  "o": [
+   "50°44.9′ — the last reading",
+   "50°45.3′ — the mean of all six",
+   "50°45.1′ — when it began to slow"
+  ],
+  "why": "The meridian altitude is the maximum: 50°46.4′ at 1410. A mean of readings either side of noon always comes out low.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": {
+   "type": "card",
+   "title": "Sextant readings (Hs), UT",
+   "lines": [
+    "1401 Hs 50°43.3′ · 1404 Hs 50°45.1′",
+    "1407 Hs 50°46.2′ · 1410 Hs 50°46.4′",
+    "1412 Hs 50°46.0′ · 1415 Hs 50°44.9′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Cloud covers the Sun through your predicted noon. At 1427 UT it comes out and you take a sight. What do you do with it?",
+  "a": "Reduce it as an ordinary sun sight for a position line",
+  "o": [
+   "Use it as the meridian altitude — the top is flat",
+   "Add 18′ to it, a minute of arc for each minute late",
+   "Discard it — after noon a sight gives nothing"
+  ],
+  "why": "18 minutes after noon the Sun has dropped some 15′: work it with LHA, Hc and an intercept as a normal sun line.",
+  "ref": "Meridian altitude — near the meridian",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight lost",
+   "lines": [
+    "Noon (LAN) predicted 1409 UT",
+    "Cloud from 1355 to 1425 UT",
+    "Clear sight at 1427 UT: Hs 50°31.9′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Your noon sight on the ARC route gives this. Which working gives your latitude?",
+  "a": "z 38°59.1′ − Dec 21°22.1′ = 17°37.0′N",
+  "o": [
+   "z 38°59.1′ + Dec 21°22.1′ = 60°21.2′N",
+   "Ho 51°00.9′ − Dec 21°22.1′ = 29°38.8′N",
+   "Dec 21°22.1′ − z 38°59.1′ = 17°37.0′S"
+  ],
+  "why": "Sun south of you: Lat = Dec + z. With Dec south (−21°22.1′): −21°22.1′ + 38°59.1′ = 17°37.0′N.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 28 Nov 2026",
+   "lines": [
+    "Ho 51°00.9′, Sun bearing south",
+    "Dec S21°22.1′"
+   ],
+   "tag": "1409 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Halfway from Bermuda to the Azores you take the noon sight on the longest day. What is your latitude?",
+  "a": "36°12.4′N",
+  "o": [
+   "10°40.2′N",
+   "12°46.1′N",
+   "53°47.6′N"
+  ],
+  "why": "z = 90° − 77°13.9′ = 12°46.1′; the Sun is south of you, so Lat = Dec + z = 23°26.3′ + 12°46.1′ = 36°12.4′N.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 21 Jun 2026",
+   "lines": [
+    "Ho 77°13.9′, Sun bearing south",
+    "Dec N23°26.3′"
+   ],
+   "tag": "1502 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Bound for Hawaii in July, you find the noon Sun bearing north of you. What is your latitude?",
+  "a": "14°17.6′N",
+  "o": [
+   "31°08.2′N",
+   "14°17.6′S",
+   "58°51.8′N"
+  ],
+  "why": "z = 90° − 81°34.7′ = 8°25.3′; the Sun is north of you, so Lat = Dec − z = 22°42.9′ − 8°25.3′ = 14°17.6′N.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 5 Jul 2026",
+   "lines": [
+    "Ho 81°34.7′, Sun bearing north",
+    "Dec N22°42.9′"
+   ],
+   "tag": "2125 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "On the Puddle Jump, well out from the Galápagos, you take the noon sight. Where are you?",
+  "a": "4°43.2′S",
+  "o": [
+   "4°43.2′N",
+   "20°55.0′N",
+   "12°49.1′S"
+  ],
+  "why": "z = 12°49.1′; the Sun is north of you: Lat = Dec − z = 8°05.9′ − 12°49.1′ = −4°43.2′, i.e. 4°43.2′S.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 10 Apr 2027",
+   "lines": [
+    "Ho 77°10.9′, Sun bearing north",
+    "Dec N8°05.9′"
+   ],
+   "tag": "2021 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Sailing from St Helena to Ascension just before Christmas, you see the noon Sun south of you. What is your latitude?",
+  "a": "10°07.5′S",
+  "o": [
+   "36°44.9′S",
+   "13°18.7′S",
+   "10°07.5′N"
+  ],
+  "why": "z = 13°18.7′; the Sun is south of you: Lat = Dec + z = −23°26.2′ + 13°18.7′ = −10°07.5′, i.e. 10°07.5′S.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 21 Dec 2026",
+   "lines": [
+    "Ho 76°41.3′, Sun bearing south",
+    "Dec S23°26.2′"
+   ],
+   "tag": "1240 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Two days out of Cape Town for St Helena, the noon Sun bears north. What latitude do you plot?",
+  "a": "30°16.8′S",
+  "o": [
+   "11°57.0′S",
+   "9°09.9′S",
+   "30°16.8′N"
+  ],
+  "why": "z = 9°09.9′; the Sun is north of you: Lat = Dec − z = −21°06.9′ − 9°09.9′ = −30°16.8′, i.e. 30°16.8′S.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 15 Jan 2027",
+   "lines": [
+    "Ho 80°50.1′, Sun bearing north",
+    "Dec S21°06.9′"
+   ],
+   "tag": "1133 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Crossing the Bay of Bengal from Phuket to Sri Lanka in the NE monsoon, you take this noon sight but forget to note the Sun's bearing. What is your latitude?",
+  "a": "7°08.3′N",
+  "o": [
+   "49°26.7′N",
+   "28°17.5′N",
+   "7°08.3′S"
+  ],
+  "why": "Dec is south and you are north of the equator, so the Sun bears south: Lat = Dec + z = −21°09.2′ + 28°17.5′ = 7°08.3′N.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 15 Jan 2027",
+   "lines": [
+    "DR 7°10′N 085°00′E",
+    "Ho 61°42.5′",
+    "Dec S21°09.2′"
+   ],
+   "tag": "0629 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Your noon on the ARC route falls at 1409 UT. Which Dec do you use?",
+  "a": "S21°22.1′",
+  "o": [
+   "S21°22.0′",
+   "S21°22.4′",
+   "S21°21.9′"
+  ],
+  "why": "Dec changes 0.4′ an hour and is increasing: for 9 minutes add 0.4′ × 9/60 = 0.06′, so S21°22.0′ becomes S21°22.1′.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, Sun, 28 Nov 2026",
+   "lines": [
+    "14h  Dec S21°22.0′",
+    "15h  Dec S21°22.4′",
+    "d 0.4′ an hour"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "You are three minutes late for noon and take the sight anyway, treating it as the meridian altitude. How much lower than the true maximum is it?",
+  "a": "About 0.4′ — the top of the curve is flat",
+  "o": [
+   "About 4.4′ — over a minute of arc per minute",
+   "About 45′ — 15′ of arc per minute of time",
+   "About 1.3′ — it falls as fast as it rose"
+  ],
+  "why": "Near noon the altitude changes as the square of the time from noon: three minutes off costs only about 0.4′ here.",
+  "ref": "Meridian altitude — near the meridian",
+  "fig": {
+   "type": "card",
+   "title": "ARC route, 28 Nov 2026",
+   "lines": [
+    "Noon (LAN) 1409 UT, you sight at 1412 UT",
+    "Lat about 17½°N, Dec S21°22′",
+    "Meridian altitude about 51°"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "At dusk between Bermuda and the Azores, Arcturus crosses your meridian bearing south. What is your latitude?",
+  "a": "37°08.2′N",
+  "o": [
+   "1°03.8′N",
+   "18°02.2′N",
+   "52°51.8′N"
+  ],
+  "why": "z = 90° − 71°57.8′ = 18°02.2′; the star is south of you: Lat = Dec + z = 19°06.0′ + 18°02.2′ = 37°08.2′N.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, 20 Jun 2026",
+   "lines": [
+    "Arcturus on the meridian, bearing south",
+    "Ho 71°57.8′",
+    "Almanac: Arcturus Dec N19°06.0′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "North of the Caribbean at evening twilight, you catch Capella on your meridian, bearing north. What is your latitude?",
+  "a": "21°53.7′N",
+  "o": [
+   "70°08.3′N",
+   "24°07.3′N",
+   "21°53.7′S"
+  ],
+  "why": "z = 90° − 65°52.7′ = 24°07.3′; the star is north of you: Lat = Dec − z = 46°01.0′ − 24°07.3′ = 21°53.7′N.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, 1 Mar 2027",
+   "lines": [
+    "Capella on the meridian, bearing north",
+    "Ho 65°52.7′",
+    "Almanac: Capella Dec N46°01.0′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Bound for the Azores in early May, you take Jupiter on the meridian at dusk, bearing south. What is your latitude?",
+  "a": "35°14.9′N",
+  "o": [
+   "0°58.1′S",
+   "18°06.5′N",
+   "54°45.1′N"
+  ],
+  "why": "A planet on the meridian works like the Sun: z = 18°06.5′, south of you, so Lat = Dec + z = 17°08.4′ + 18°06.5′ = 35°14.9′N.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": {
+   "type": "card",
+   "title": "Jupiter at dusk, 3 May 2027",
+   "lines": [
+    "Jupiter on the meridian, bearing south",
+    "Ho 71°53.5′",
+    "Almanac: Jupiter Dec N17°08.4′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "On the long leg to the Marquesas, Canopus crosses your meridian in evening twilight, bearing south. Where are you?",
+  "a": "4°06.4′S",
+  "o": [
+   "4°06.4′N",
+   "48°36.6′N",
+   "11°19.6′S"
+  ],
+  "why": "z = 90° − 41°23.4′ = 48°36.6′; the star is south of you: Lat = Dec + z = −52°43.0′ + 48°36.6′ = −4°06.4′, i.e. 4°06.4′S.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, 15 Mar 2027",
+   "lines": [
+    "Canopus on the meridian, bearing south",
+    "Ho 41°23.4′",
+    "Almanac: Canopus Dec S52°43.0′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Between the Azores and Lisbon at morning twilight, you take Kochab on the meridian below the pole. What is your latitude?",
+  "a": "38°11.5′N",
+  "o": [
+   "6°19.5′N",
+   "51°48.5′N",
+   "67°44.5′N"
+  ],
+  "why": "Below the pole Lat = Ho + polar distance: 22°15.5′ + (90° − 74°04.0′ = 15°56.0′) = 38°11.5′N.",
+  "ref": "Meridian altitude — lower transit",
+  "fig": {
+   "type": "card",
+   "title": "Morning twilight, 25 Aug 2027",
+   "lines": [
+    "Kochab at lower transit, bearing north",
+    "Ho 22°15.5′",
+    "Almanac: Kochab Dec N74°04.0′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Leaving Newport, Rhode Island, for the Azores, you want a star to take below the pole at twilight. Which of these is circumpolar at your latitude?",
+  "a": "Dubhe",
+  "o": [
+   "Capella",
+   "Deneb",
+   "Vega"
+  ],
+  "why": "Circumpolar when Dec exceeds the co-latitude, 90° − 41°30′ = 48°30′: only Dubhe (N61°38′) stays above the horizon below the pole.",
+  "ref": "Meridian altitude — lower transit",
+  "fig": {
+   "type": "card",
+   "title": "Stars, DR 41°30′N",
+   "lines": [
+    "Capella  Dec N46°01′",
+    "Deneb  Dec N45°22′",
+    "Dubhe  Dec N61°38′",
+    "Vega  Dec N38°48′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Bound from the BVI to Bermuda, you take Polaris at evening twilight. What is your latitude?",
+  "a": "25°41.7′N",
+  "o": [
+   "26°41.7′N",
+   "24°32.0′N",
+   "23°22.3′N"
+  ],
+  "why": "Lat = Ho − 1° + a0 + a1 + a2 = 25°32.0′ − 60′ + 68.8′ + 0.5′ + 0.4′ = 25°41.7′N.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Polaris, 5 May 2027",
+   "lines": [
+    "Ho 25°32.0′",
+    "Almanac: a0 1°08.8′, a1 0.5′, a2 0.4′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "At morning twilight on the ARC route you take Polaris. With which LHA Aries do you enter the a0 table?",
+  "a": "149°30.8′",
+  "o": [
+   "193°58.8′",
+   "210°29.2′",
+   "171°44.8′"
+  ],
+  "why": "LHA = GHA − west longitude: 171°44.8′ − 22°14′ = 149°30.8′. a0 comes from LHA Aries, a1 from latitude, a2 from the month.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Polaris, 25 Nov 2026",
+   "lines": [
+    "GHA Aries 171°44.8′",
+    "DR 24°30′N 022°14′W"
+   ],
+   "tag": "0710 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "At dusk you want Polaris, but it is faint and the sky is still bright. How do you find it in the sextant?",
+  "a": "Set your DR latitude on the sextant and sweep the horizon due north",
+  "o": [
+   "Wait for full darkness, when it is the brightest star in the north",
+   "Bring it down from overhead, as you would a bright star",
+   "Take the brightest star low in the north and use that"
+  ],
+  "why": "Polaris is only magnitude 2: preset its altitude (about your latitude), look due north, and it shows near the horizon in the scope.",
+  "ref": "Pole star",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "On the leg from Panama to the Galápagos, a crew member suggests a Polaris sight for latitude. What do you decide?",
+  "a": "Not worth it — a low, hazy sight with large refraction",
+  "o": [
+   "Take it — Polaris gives latitude anywhere north of the equator",
+   "Take it, and add the refraction instead of subtracting it",
+   "Take it — at low latitude a0, a1 and a2 are all zero"
+  ],
+  "why": "Below about 10° refraction is large and uncertain and the horizon poor: use the noon Sun or a star well up for latitude.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Polaris, DR 4°10′N 084°W",
+   "lines": [
+    "Polaris about 4° above the horizon",
+    "Haze low on the northern horizon",
+    "Refraction at 4°: about 12′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "In the South Pacific you find the south celestial pole by eye from the Southern Cross and the Pointers. What does its altitude give you?",
+  "a": "A rough check on your south latitude, not a fix",
+  "o": [
+   "Your latitude to the minute, as Polaris does in the north",
+   "Your longitude, if you note the time of the sight",
+   "Your south latitude, after the a0, a1 and a2 corrections"
+  ],
+  "why": "The pole's altitude equals your latitude, but with no bright star on it an estimate by eye can be a degree or more out.",
+  "ref": "Southern Cross",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "On your plotting sheet you have run the morning sun line up to noon and drawn the noon latitude. Which point is your noon position?",
+  "a": "A",
+  "o": [
+   "B",
+   "C",
+   "D"
+  ],
+  "why": "The noon fix is where the run-up morning line (blue) cuts the noon latitude: A. B uses the line before it was run up.",
+  "ref": "Noon position",
+  "fig": {
+   "type": "chart",
+   "land": "M170.9 162.8 L274.9 34.8 L273.1 33.2 L169.1 161.2 Z M20.0 141.2 L300.0 141.2 L300.0 138.8 L20.0 138.8 Z M219.9 99.2 L130.9 115.2 L131.1 116.8 L220.1 100.8 Z",
+   "track": "M78 182 L182 53",
+   "marks": [
+    [
+     112,
+     140,
+     "k",
+     "A"
+    ],
+    [
+     188,
+     140,
+     "k",
+     "B"
+    ],
+    [
+     158,
+     124,
+     "k",
+     "C"
+    ],
+    [
+     220,
+     100,
+     "k",
+     "D"
+    ]
+   ],
+   "labels": [
+    [
+     262,
+     26,
+     "1130 sun line"
+    ],
+    [
+     90,
+     84,
+     "run up to noon"
+    ],
+    [
+     298,
+     156,
+     "noon latitude",
+     "end"
+    ]
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "You want a noon position from this morning's sun line. How do you bring the morning line up to noon?",
+  "a": "Move it 18.4 M along 250°, keeping its direction",
+  "o": [
+   "Move it 18.4 M along the Sun's azimuth, 118°",
+   "Slide it 18.4 M along itself, 028°–208°",
+   "Turn it east–west to lie like the noon line"
+  ],
+  "why": "A position line is transferred by the run between the sights — course and distance made good — and keeps its direction.",
+  "ref": "Noon position",
+  "fig": {
+   "type": "card",
+   "title": "Morning line to noon",
+   "lines": [
+    "0900 sun line, Sun's Zn 118°",
+    "Log 0900–1200: 18.4 M",
+    "Course made good 250°"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "You are running down the latitude of Hiva Oa on the Puddle Jump, and today's noon sight puts you here. What do you do?",
+  "a": "Make good 12 M to the south",
+  "o": [
+   "Make good 12 M to the north",
+   "Make good 6 M to the south",
+   "Make good 24 M to the south"
+  ],
+  "why": "In the south 9°48′S is 12′ further from the equator than 9°36′S: 12′ of latitude is 12 M to make good to the south.",
+  "ref": "Latitude sailing",
+  "fig": {
+   "type": "card",
+   "title": "Noon, latitude sailing",
+   "lines": [
+    "Noon latitude 9°36′S",
+    "Atuona, Hiva Oa 9°48′S",
+    "About 400 M still to the west"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "You have reached the latitude of Bridgetown, Barbados, and are running down it to the west. How far have you still to go?",
+  "a": "147 M",
+  "o": [
+   "151 M",
+   "155 M",
+   "34 M"
+  ],
+  "why": "Departure = DLo × cos lat = 151′ × cos 13°06′ = 147 M along the parallel.",
+  "ref": "Latitude sailing",
+  "fig": {
+   "type": "card",
+   "title": "On the latitude",
+   "lines": [
+    "Noon 13°06′N 057°06′W",
+    "Bridgetown 13°06′N 059°37′W",
+    "Course 270°"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Later in the day you find you never applied the index error to your noon sight. How does that move your noon latitude?",
+  "a": "2.4′ too far south",
+  "o": [
+   "2.4′ too far north",
+   "4.8′ too far south",
+   "4.8′ too far north"
+  ],
+  "why": "On the arc is subtracted, so your Ho was 2.4′ high and z 2.4′ small: Lat = Dec + z came out 2.4′ too far south.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight, 36°N",
+   "lines": [
+    "Sun bearing south at noon",
+    "Index error 2.4′ on the arc",
+    "Not applied in the working"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "On the ARC route you want a star on the meridian for a latitude at dusk. Which of these can you take?",
+  "a": "Fomalhaut — between civil and nautical twilight",
+  "o": [
+   "Altair — the brightest and highest of them",
+   "Enif — as soon as it crosses the meridian",
+   "Alpheratz — in full darkness, stars are sharpest"
+  ],
+  "why": "A star sight needs both the star and the horizon: only Fomalhaut crosses the meridian between 1750 and 1817.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": {
+   "type": "card",
+   "title": "Evening, 4 Dec 2026, LMT",
+   "lines": [
+    "Sunset 1727, civil twilight ends 1750",
+    "Nautical twilight ends 1817",
+    "Mer Pass: Altair 1458, Enif 1651",
+    "Fomalhaut 1804, Alpheratz 1915"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "Bound from the Galápagos to the Marquesas, a crew member suggests a Polaris sight for latitude tonight. What do you tell them?",
+  "a": "It is below the horizon south of the equator",
+  "o": [
+   "Fine — it gives latitude anywhere on Earth",
+   "Fine, but add the 1° instead of subtracting it",
+   "Only at midnight, when it is highest"
+  ],
+  "why": "Polaris' altitude is about your north latitude: in south latitudes it is below the horizon.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Tonight's plan",
+   "lines": [
+    "DR 8°20′S 105°00′W",
+    "Clear sky, good horizon expected"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "On a clear night north of the Azores you look for Polaris. Which star is it?",
+  "a": "A",
+  "o": [
+   "B",
+   "C",
+   "D"
+  ],
+  "why": "Follow the Plough's pointers, Merak to Dubhe, about five times their gap: Polaris sits alone in a dim patch of sky.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     235,
+     170,
+     "w",
+     ""
+    ],
+    [
+     215,
+     148,
+     "w",
+     ""
+    ],
+    [
+     241,
+     124,
+     "w",
+     ""
+    ],
+    [
+     263,
+     144,
+     "w",
+     ""
+    ],
+    [
+     262,
+     108,
+     "w",
+     ""
+    ],
+    [
+     282,
+     95,
+     "w",
+     ""
+    ],
+    [
+     305,
+     92,
+     "w",
+     ""
+    ],
+    [
+     115,
+     38,
+     "w",
+     "A"
+    ],
+    [
+     60,
+     95,
+     "w",
+     "B"
+    ],
+    [
+     200,
+     40,
+     "w",
+     "C"
+    ],
+    [
+     175,
+     104,
+     "w",
+     "D"
+    ]
+   ],
+   "labels": [
+    [
+     235,
+     188,
+     "Merak"
+    ],
+    [
+     205,
+     152,
+     "Dubhe",
+     "end"
+    ],
+    [
+     290,
+     168,
+     "Plough"
+    ]
+   ],
+   "note": "Looking north after dark"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "On a night watch in the South Pacific you look for the south celestial pole. Which point is it?",
+  "a": "A",
+  "o": [
+   "B",
+   "C",
+   "D"
+  ],
+  "why": "Extend the Cross's long axis, Gacrux to Acrux, about 4½ times its length; the Pointers' perpendicular bisector meets it there.",
+  "ref": "Southern Cross",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     70,
+     15,
+     "w",
+     ""
+    ],
+    [
+     77,
+     40,
+     "w",
+     ""
+    ],
+    [
+     83,
+     25,
+     "w",
+     ""
+    ],
+    [
+     64,
+     30,
+     "w",
+     ""
+    ],
+    [
+     136,
+     63,
+     "w",
+     ""
+    ],
+    [
+     174,
+     87,
+     "w",
+     ""
+    ],
+    [
+     108,
+     152,
+     "k",
+     "A"
+    ],
+    [
+     90,
+     85,
+     "k",
+     "B"
+    ],
+    [
+     210,
+     150,
+     "k",
+     "C"
+    ],
+    [
+     35,
+     110,
+     "k",
+     "D"
+    ]
+   ],
+   "labels": [
+    [
+     120,
+     20,
+     "Southern Cross",
+     "start"
+    ],
+    [
+     190,
+     70,
+     "Pointers",
+     "start"
+    ]
+   ],
+   "note": "Looking south after dark"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "A new crew member asks why a single Polaris sight gives you your latitude. What do you tell them?",
+  "a": "It sits within 1° of the pole, whose altitude equals your latitude",
+  "o": [
+   "It is always on your meridian, like the Sun at noon",
+   "Its declination equals your latitude every night",
+   "Its altitude depends only on the date, as in the almanac"
+  ],
+  "why": "The celestial pole's altitude equals your latitude; Polaris is within 1° of it, and a0, a1, a2 correct for the difference.",
+  "ref": "Pole star",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "You are making for Barbados across the Atlantic without GPS, by latitude sailing. Where do you plan to reach the island's latitude?",
+  "a": "Well east of it, then run down the latitude to the west",
+  "o": [
+   "Right at the island, on the great circle",
+   "A little north of it, then search either way",
+   "Well west of it, then work back to the east"
+  ],
+  "why": "Reach the latitude well up-wind and up-stream of the island: it is then dead ahead, and noon sights keep you on the parallel.",
+  "ref": "Latitude sailing",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "You are at 12°N in the southern Caribbean in mid-June. Where will you see the Sun at noon?",
+  "a": "North of you, about 79° up",
+  "o": [
+   "South of you, about 79° up",
+   "Directly overhead, at 90°",
+   "South of you, about 55° up"
+  ],
+  "why": "Dec N23°20′ is north of your 12°10′N, so at noon the Sun bears north: altitude 90° − (23°20′ − 12°10′) ≈ 79°.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, mid-June",
+   "lines": [
+    "DR 12°10′N 061°40′W",
+    "Almanac: Sun Dec N23°20′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "Low cloud hides the Plough, but Cassiopeia's W is clear high in the north-east. Where do you look for Polaris?",
+  "a": "About midway between Cassiopeia and the Plough",
+  "o": [
+   "In the middle of Cassiopeia's W",
+   "On the far side of Cassiopeia from the Plough",
+   "At the end of the Plough's handle"
+  ],
+  "why": "Cassiopeia and the Plough lie on opposite sides of Polaris at about the same distance, so either one leads you to it.",
+  "ref": "Pole star",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "Mid-Atlantic, your only watch has stopped and the GPS is dead. Which sight still gives you a reliable position line?",
+  "a": "A noon latitude — it needs only the date's Dec",
+  "o": [
+   "A morning sun line for longitude",
+   "A three-star fix at twilight",
+   "A Sun and Moon fix by day"
+  ],
+  "why": "A meridian altitude needs no accurate time (Dec moves under 1′ an hour); every other sight needs UT to the second.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "You cross the run-up morning sun line with your noon latitude, working by plane sailing. What is the longitude of your noon position?",
+  "a": "41°30.0′W",
+  "o": [
+   "40°52.9′W",
+   "41°11.4′W",
+   "40°43.2′W"
+  ],
+  "why": "Run the point 21.2 M on 260° → 15°19.4′N 41°25.5′W; down the line (219°) to 15°14.0′N is 4.4 M of westing → 41°30.0′W.",
+  "ref": "Noon position",
+  "fig": {
+   "type": "card",
+   "title": "Noon position, 6 Dec 2026",
+   "lines": [
+    "1130 UT sun line through",
+    "15°23.1′N 041°03.8′W, Sun's Zn 129°",
+    "Run to noon (1437 UT): 260°, 21.2 M",
+    "Noon latitude 15°14.0′N"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "With the Sun nearly overhead, a crew member takes the noon sight at 1927 UT, four minutes early, and you work it as a meridian altitude. How far out is your latitude?",
+  "a": "About 9′ too far south",
+  "o": [
+   "About 9′ too far north",
+   "About 1′ too far south",
+   "About 0.1′ — the top is flat"
+  ],
+  "why": "With the Sun 3° from the zenith the top is sharp: 4 min early it is 9′ low, so z is 9′ too big and Lat = Dec − z 9′ too far south.",
+  "ref": "Meridian altitude — near the meridian",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 5 Mar 2027",
+   "lines": [
+    "DR 9°S 110°W, noon (LAN) 1931 UT",
+    "Dec S5°54.6′",
+    "Sun about 87° up, bearing north"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Crossing from Cocos Keeling to Mauritius, you reduce this noon sight. What is your latitude?",
+  "a": "12°14.0′S",
+  "o": [
+   "12°17.6′S",
+   "12°08.4′S",
+   "12°45.6′S"
+  ],
+  "why": "Ho = 63°26.4′ + 1.8′ − 2.8′ dip + 15.3′ = 63°40.7′; z = 26°19.3′; Sun north: Lat = 14°05.3′ − 26°19.3′ = 12°14.0′S.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight, 15 Aug 2027",
+   "lines": [
+    "Hs (LL) 63°26.4′, Sun bearing north",
+    "IE 1.8′ off the arc, height of eye 2.5 m",
+    "Main correction +15.3′",
+    "Dec N14°05.3′"
+   ],
+   "tag": "0714 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Between Bermuda and the Azores you take Polaris at dusk. What is your latitude?",
+  "a": "36°27.9′N",
+  "o": [
+   "36°31.9′N",
+   "36°33.9′N",
+   "37°27.9′N"
+  ],
+  "why": "Ho = 35°58.3′ − 2.0′ IE − 3.0′ dip − 1.4′ = 35°51.9′; Lat = Ho − 1° + 95.2′ + 0.5′ + 0.3′ = 36°27.9′N.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Polaris, 21 Jun 2026",
+   "lines": [
+    "Hs 35°58.3′, IE 2.0′ on the arc",
+    "Height of eye 3.0 m, refraction −1.4′",
+    "Almanac: a0 1°35.2′, a1 0.5′, a2 0.3′"
+   ],
+   "tag": "2305 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Bound from the Azores to Falmouth, you take Dubhe below the pole at morning twilight. What is your latitude?",
+  "a": "47°05.3′N",
+  "o": [
+   "47°02.3′N",
+   "47°10.9′N",
+   "47°09.5′N"
+  ],
+  "why": "Ho = 18°47.5′ + 1.5′ − 2.8′ dip − 2.9′ = 18°43.3′; below the pole Lat = Ho + p = 18°43.3′ + 28°22.0′ = 47°05.3′N.",
+  "ref": "Meridian altitude — lower transit",
+  "fig": {
+   "type": "card",
+   "title": "Dubhe, 15 Jul 2027",
+   "lines": [
+    "Lower transit, bearing north",
+    "Hs 18°47.5′, IE 1.5′ off the arc",
+    "Height of eye 2.5 m, refraction −2.9′",
+    "Almanac: Dubhe Dec N61°38.0′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "South of the Azores you want Vega on the meridian at dusk. At what UT will it cross your meridian?",
+  "a": "2043 UT",
+  "o": [
+   "1720 UT",
+   "0726 UT",
+   "1917 UT"
+  ],
+  "why": "On the meridian LHA★ = 0, so GHA Aries = 25° − 80°33′ = 304°27′: 10°52.8′ past 2000 at 15°02.5′ an hour is 43 min → 2043 UT.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": {
+   "type": "card",
+   "title": "Vega, 14 Sep 2027",
+   "lines": [
+    "GHA Aries at 2000 UT 293°34.2′",
+    "Aries moves 15°02.5′ an hour",
+    "Almanac: Vega SHA 80°33′",
+    "DR longitude 025°00′W"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Mid-Pacific, just east of the date line, you work the noon sight for the ship's date. For which date and UT do you take the Sun's Dec?",
+  "a": "11 March, 0002 UT",
+  "o": [
+   "10 March, 0002 UT",
+   "10 March, 1210 UT",
+   "9 March, 2358 UT"
+  ],
+  "why": "1210 LMT + 11h52m for 178°W = 2402 on 10 March, which is 0002 UT on 11 March: use the 11 March page.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": {
+   "type": "card",
+   "title": "Noon, ship's date 10 Mar 2027",
+   "lines": [
+    "DR 4°20′S 178°00′W",
+    "Ship's clock: zone +12",
+    "Almanac: Sun Mer Pass 1210"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "At the spring equinox your noon latitude disagrees with the GPS, which has just come back. Which slip explains it?",
+  "a": "Dec named N instead of S",
+  "o": [
+   "Dip added instead of subtracted",
+   "SD for the upper limb used",
+   "Sight taken 4 min after noon"
+  ],
+  "why": "The error is 59.8′ = 2 × 29.9′: Dec S was used as N. Dip added costs a few minutes, the wrong limb 32′, a late sight a fraction.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 19 Mar 2027",
+   "lines": [
+    "Ho 65°26.5′, Sun bearing south",
+    "Dec S0°29.9′",
+    "Your working: 25°03.4′N",
+    "GPS: 24°03.6′N"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Your noon fix puts you north of Barbados' latitude. You want to reach 13°06′N 120 M to the west of you and then run down it. What true course do you steer?",
+  "a": "263°",
+  "o": [
+   "277°",
+   "270°",
+   "257°"
+  ],
+  "why": "Lose 14′ (14 M) of latitude over 120 M of departure: tan C = 14/120, 6.7° south of west → 263°.",
+  "ref": "Latitude sailing",
+  "fig": {
+   "type": "chart",
+   "land": "M30 112 C45 104 70 108 78 118 C82 130 62 140 44 136 C30 132 24 120 30 112 Z M20.0 126.2 L300.0 126.2 L300.0 123.8 L20.0 123.8 Z",
+   "track": "M170 95 L100 125",
+   "boat": [
+    170,
+    95,
+    250
+   ],
+   "labels": [
+    [
+     55,
+     156,
+     "Barbados"
+    ],
+    [
+     298,
+     142,
+     "13°06′N",
+     "end"
+    ]
+   ],
+   "panel": [
+    "Noon fix",
+    "13°20.0′N",
+    "Target 13°06′N",
+    "120 M to the west"
+   ],
+   "note": "Not to scale"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "On passage from Tonga to New Zealand you bring the Sun's upper limb down to the horizon at noon. What is your latitude?",
+  "a": "27°36.4′S",
+  "o": [
+   "27°32.0′S",
+   "27°04.2′S",
+   "27°30.6′S"
+  ],
+  "why": "Hs 80°06.3′ − 2.2′ IE − 2.9′ dip − 16.3′ (UL) = Ho 79°44.9′; z 10°15.1′; Sun north: Lat = Dec − z = S17°21.3′ − 10°15.1′ = S27°36.4′.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight, 10 Nov 2026",
+   "lines": [
+    "Hs (UL) 80°06.3′, Sun bearing north",
+    "IE 2.2′ on the arc, height of eye 2.8 m",
+    "Main correction (UL) −16.3′",
+    "Dec S17°21.3′"
+   ],
+   "tag": "2332 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Between Mauritius and the Seychelles you take the noon Sun by its upper limb. What Ho do you work your latitude from?",
+  "a": "55°10.2′",
+  "o": [
+   "55°41.6′",
+   "55°07.4′",
+   "55°15.2′"
+  ],
+  "why": "Hs 55°27.7′ + 1.4′ IE off the arc − 2.5′ dip − 0.7′ refraction − 15.7′ SD (upper limb) = Ho 55°10.2′.",
+  "ref": "Meridian altitude — from Hs to Ho",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight, 20 Jul 2026",
+   "lines": [
+    "Hs (UL) 55°27.7′",
+    "IE 1.4′ off the arc, height of eye 2.0 m",
+    "Refraction −0.7′, SD 15.7′"
+   ],
+   "tag": "0814 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Two days out of the Canaries for Cape Verde, you take the noon sight at 1325 UT. What is your latitude?",
+  "a": "22°18.6′N",
+  "o": [
+   "22°15.4′N",
+   "22°13.2′N",
+   "22°19.0′N"
+  ],
+  "why": "Dec S10°27.5′ + 0.9′ × 25/60 = S10°27.9′; Hs 57°02.3′ − 1.6′ − 2.7′ + 15.5′ = Ho 57°13.5′; Lat = Dec + z = −10°27.9′ + 32°46.5′ = 22°18.6′N.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight, 20 Oct 2026",
+   "lines": [
+    "Hs (LL) 57°02.3′, Sun bearing south",
+    "IE 1.6′ on the arc, height of eye 2.4 m",
+    "Main correction (LL) +15.5′",
+    "Almanac: Dec 13h S10°27.5′, 14h S10°28.4′"
+   ],
+   "tag": "1325 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Bound from Fremantle to Mauritius, you took the noon Sun by its upper limb but worked it with the lower-limb correction. How does that move your latitude?",
+  "a": "32.6′ too far north",
+  "o": [
+   "32.6′ too far south",
+   "16.3′ too far north",
+   "16.3′ too far south"
+  ],
+  "why": "+SD instead of −SD makes Ho 2 × 16.3′ = 32.6′ too high; z is that much too small, and with the Sun north of you Lat = Dec − z comes out 32.6′ too far north.",
+  "ref": "Meridian altitude — from Hs to Ho",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 12 Jan 2027",
+   "lines": [
+    "Upper limb observed, Sun bearing north",
+    "Worked with the lower-limb correction",
+    "SD 16.3′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "At noon thin cloud covers the lower half of the Sun, but its upper edge is sharp against the sky. What do you do?",
+  "a": "Bring the upper limb to the horizon and subtract the SD",
+  "o": [
+   "Bring the centre to the horizon and apply no SD",
+   "Guess where the lower limb is and use that",
+   "Give up the noon sight until tomorrow"
+  ],
+  "why": "Use the limb you can see: the upper limb's correction subtracts the semi-diameter (about 16′) where the lower limb's adds it.",
+  "ref": "Meridian altitude — from Hs to Ho",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight",
+   "lines": [
+    "Thin cloud over the Sun's lower half",
+    "Upper limb sharp, horizon clear"
+   ],
+   "tag": "LAN"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "A day short of Rio on passage from Cape Town, you find the noon Sun will pass almost overhead. How do you get your latitude today?",
+  "a": "Time sights either side of noon and plot each as a circle round the GP",
+  "o": [
+   "Take the maximum as usual — a high Sun gives the best noon",
+   "Average the sights taken ten minutes either side of noon",
+   "Note the Sun's bearing at noon and take your latitude as the Dec"
+  ],
+  "why": "Within a degree of the zenith the bearing swings fast and the peak is hard to catch: each timed sight is a small circle, radius z, round the GP.",
+  "ref": "Meridian altitude — Sun near the zenith",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 8 Jan 2027",
+   "lines": [
+    "DR 22°40′S 040°10′W",
+    "LAN 1447 UT, Dec S22°13.0′",
+    "Expected Ho about 89½°"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Bound from Tahiti to Hawaii, you plot a sight taken four minutes after noon as a circle round the Sun's GP. What radius do you draw?",
+  "a": "130.0 M",
+  "o": [
+   "50.0 M",
+   "2.2 M",
+   "65.0 M"
+  ],
+  "why": "Radius = zenith distance: 90° − 87°50.0′ = 2°10.0′ = 130 minutes of arc = 130.0 M, centred on the GP.",
+  "ref": "Meridian altitude — Sun near the zenith",
+  "fig": {
+   "type": "card",
+   "title": "High Sun, 25 May 2027",
+   "lines": [
+    "Sight at 2200 UT: Ho 87°50.0′",
+    "Sun's GP 21°02.1′N 151°00.0′W",
+    "DR 19°05′N 150°00′W"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "South of Bermuda, bound for the Virgin Islands, the crew hand you this noon altitude but cannot say which way they faced. Which latitude can it give?",
+  "a": "18°04.5′N or 20°41.3′N",
+  "o": [
+   "19°22.9′N whichever way",
+   "18°43.7′N or 20°02.1′N",
+   "18°04.5′N only — in May the Sun bears north"
+  ],
+  "why": "z = 90° − 88°41.6′ = 1°18.4′: Sun north gives Dec − z = 18°04.5′N, Sun south Dec + z = 20°41.3′N. Only the bearing or a good DR decides.",
+  "ref": "Meridian altitude — Sun near the zenith",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 17 May 2027",
+   "lines": [
+    "Ho 88°41.6′, bearing not noted",
+    "Dec N19°22.9′",
+    "DR about 19½°N"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "You are delivering a motor yacht from Newport to Bermuda at 24 knots, heading south towards the noon Sun. When will the sextant show the greatest altitude?",
+  "a": "A few minutes after LAN — you are closing the Sun",
+  "o": [
+   "A few minutes before LAN — your speed brings noon forward",
+   "At LAN exactly — the boat's speed makes no difference",
+   "At 1200 ship's time, whatever the longitude"
+  ],
+  "why": "Running towards the Sun adds about 24′ of altitude an hour, so it keeps rising after LAN: the peak comes late, and a little too high.",
+  "ref": "Meridian altitude — fast boat",
+  "fig": {
+   "type": "card",
+   "title": "Motor yacht, 20 Nov 2026",
+   "lines": [
+    "Course 180°, 24 kn",
+    "Sun bearing south, about 34° up",
+    "LAN 1609 UT"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Bound north from Bermuda to Newport at 25 knots, you follow the Sun up at noon. When will you see its greatest altitude?",
+  "a": "About 7 min before LAN",
+  "o": [
+   "About 7 min after LAN",
+   "About 14 min before LAN",
+   "At LAN, as on any boat"
+  ],
+  "why": "Running away from the Sun costs 25′/h = 0.42′ a minute; the curve falls 0.030′ × t², so the top comes 0.42 ÷ (2 × 0.030) ≈ 7 min early.",
+  "ref": "Meridian altitude — fast boat",
+  "fig": {
+   "type": "card",
+   "title": "Motor yacht, 20 Nov 2026",
+   "lines": [
+    "Course 000°, 25 kn, Sun bearing south",
+    "LAN 1609 UT",
+    "Near LAN the altitude falls 0.030′ × t²",
+    "(t in minutes from LAN)"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "On a fast motor yacht running north or south, how do you get a true meridian altitude at noon?",
+  "a": "Take the altitude at the predicted time of LAN by the watch",
+  "o": [
+   "Take the maximum, as on any boat — it always falls at LAN",
+   "Take the maximum and add your speed in minutes of arc",
+   "Take the sight ten minutes after LAN, when it settles"
+  ],
+  "why": "A fast north–south run shifts the peak off the meridian: take the sight at the computed LAN by the watch, or slow down for it.",
+  "ref": "Meridian altitude — fast boat",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Between Bermuda and the Azores in June, the first-quarter Moon crosses your meridian at dusk, bearing south. What is your latitude?",
+  "a": "35°40.0′N",
+  "o": [
+   "36°12.8′N",
+   "36°11.8′N",
+   "35°42.0′N"
+  ],
+  "why": "Ha 55°50.4′ − 0.7′ + parallax 32.8′ (58.4′ × cos Ha) + SD 15.9′ = Ho 56°38.4′; Lat = Dec + z = 2°18.4′ + 33°21.6′ = 35°40.0′N.",
+  "ref": "Meridian altitude — Moon",
+  "fig": {
+   "type": "card",
+   "title": "Moon at dusk, June",
+   "lines": [
+    "Moon (LL) on the meridian, bearing south",
+    "Hs 55°52.2′, IE 1.0′ off, eye 2.5 m",
+    "HP 58.4′, SD 15.9′, refraction −0.7′",
+    "Moon's Dec N2°18.4′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "In the Marquesas you want the Moon on your meridian tonight. At what UT will it cross?",
+  "a": "0331 UT on 15 July",
+  "o": [
+   "0312 UT on 15 July",
+   "0851 UT on 14 July",
+   "0331 UT on 14 July"
+  ],
+  "why": "The Moon is 49 min later each day: 1752 + 49 × 140/360 = 1811 LMT at 140°W; + 9h20m = 2731, i.e. 0331 UT on 15 July.",
+  "ref": "Meridian altitude — Moon",
+  "fig": {
+   "type": "card",
+   "title": "Moon, 14 Jul 2027",
+   "lines": [
+    "Almanac Mer Pass: 14 Jul 1752",
+    "Almanac Mer Pass: 15 Jul 1841",
+    "DR 9°00′S 140°00′W"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Crossing from Mauritius to Durban in late February, you catch Venus on the meridian in the afternoon sky, bearing north. What is your latitude?",
+  "a": "28°20.6′S",
+  "o": [
+   "40°49.0′N",
+   "28°20.6′N",
+   "49°11.0′S"
+  ],
+  "why": "z = 90° − 55°25.2′ = 34°34.8′; Venus is north of you: Lat = Dec − z = 6°14.2′ − 34°34.8′ = −28°20.6′, i.e. 28°20.6′S.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": {
+   "type": "card",
+   "title": "Venus by day",
+   "lines": [
+    "Venus on the meridian, bearing north",
+    "Ho 55°25.2′",
+    "Almanac: Venus Dec N6°14.2′"
+   ],
+   "tag": "1440 LMT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "You take Jupiter on the meridian at dusk. From which Ho do you work your latitude?",
+  "a": "44°31.2′",
+  "o": [
+   "44°47.0′",
+   "44°36.8′",
+   "44°33.6′"
+  ],
+  "why": "A planet takes IE, dip and refraction only: 44°36.2′ − 1.2′ − 2.8′ − 1.0′ = 44°31.2′. No semi-diameter: it is a point of light.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": {
+   "type": "card",
+   "title": "Jupiter at dusk",
+   "lines": [
+    "Hs 44°36.2′, IE 1.2′ on the arc",
+    "Height of eye 2.6 m",
+    "Refraction at 44½°: −1.0′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "You took the Moon on the meridian at 0352 UT but worked it with the Dec for 03h. How far out is your latitude?",
+  "a": "11.7′ too far south",
+  "o": [
+   "11.7′ too far north",
+   "13.5′ too far south",
+   "0.2′ — as small as the Sun’s"
+  ],
+  "why": "The Moon's Dec moves 13.5′ an hour: 52 minutes is 11.7′. The Dec you used is that much too far south, and so is your latitude.",
+  "ref": "Meridian altitude — Moon",
+  "fig": {
+   "type": "card",
+   "title": "Moon on the meridian",
+   "lines": [
+    "Sight at 0352 UT",
+    "Almanac 03h: Dec N14°10.2′",
+    "Almanac 04h: Dec N14°23.7′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Hove-to for a day in a winter gale south of the Azores, with no almanac to hand, you take Kochab at both its transits. What is your latitude?",
+  "a": "34°18.4′N",
+  "o": [
+   "15°56.0′N",
+   "39°45.6′N",
+   "50°14.4′N"
+  ],
+  "why": "Above and below the pole the star is the same distance from it, so Lat = (50°14.4′ + 18°22.4′) ÷ 2 = 34°18.4′N, with no Dec needed.",
+  "ref": "Meridian altitude — lower transit",
+  "fig": {
+   "type": "card",
+   "title": "Kochab, 29 Jan 2027",
+   "lines": [
+    "Upper transit 0809 UT: Ho 50°14.4′",
+    "Lower transit 2007 UT: Ho 18°22.4′",
+    "Both bearing north; drift negligible"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Approaching Svalbard at midsummer, you have lost the almanac overboard. You take the Sun at noon, bearing south, and at midnight, bearing north. What is your latitude?",
+  "a": "77°11.7′N",
+  "o": [
+   "23°24.2′N",
+   "64°23.4′N",
+   "53°47.5′N"
+  ],
+  "why": "The Sun crosses on both sides of the zenith: Lat = 90° − (36°12.5′ − 10°35.9′) ÷ 2 = 77°11.7′N. The mean, 23°24.2′, is its Dec.",
+  "ref": "Meridian altitude — lower transit",
+  "fig": {
+   "type": "card",
+   "title": "Midnight Sun, 24 Jun 2027",
+   "lines": [
+    "1102 UT, bearing south: Ho 36°12.5′",
+    "2302 UT, bearing north: Ho 10°35.9′",
+    "Drift between the sights negligible"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "North of Norway in July, a crew member plans a Polaris sight for tonight's latitude. What do you tell them?",
+  "a": "No darkness, no Polaris — take the midnight Sun bearing north",
+  "o": [
+   "Take it at local midnight, the darkest moment",
+   "Take it — at 76°N it is nearly overhead, so z is tiny",
+   "Take it, but this far north skip a0, a1 and a2"
+  ],
+  "why": "At 76°N in July the Sun stays about 8° up at midnight: no stars. Its lower transit gives latitude: Lat = Ho + (90° − Dec).",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Barents Sea, 10 Jul 2027",
+   "lines": [
+    "DR 76°N 020°E",
+    "Sun at local midnight: 8° up, bearing north"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "On the southern route from Cape Verde to Grenada, you take Polaris low in the north at dusk. What is your latitude?",
+  "a": "11°31.6′N",
+  "o": [
+   "11°40.8′N",
+   "11°28.0′N",
+   "12°31.6′N"
+  ],
+  "why": "Hs 11°57.2′ + 1.8′ − 2.8′ − 4.6′ = Ho 11°51.6′; Lat = Ho − 1° + a0 38.6′ + 0.5′ + 0.9′ = 11°31.6′N.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Polaris, 8 Dec 2026",
+   "lines": [
+    "Hs 11°57.2′, IE 1.8′ off the arc",
+    "Height of eye 2.5 m, refraction −4.6′",
+    "Almanac: a0 0°38.6′, a1 0.5′, a2 0.9′"
+   ],
+   "tag": "2125 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "You have taken Polaris near 10°N and, on another passage, near 50°N. What is true of the low sight?",
+  "a": "Its refraction is larger and less certain — the horizon needs care",
+  "o": [
+   "Its a0 correction is larger, as the star circles wider",
+   "It gives you longitude as well as latitude",
+   "It needs no dip correction, being so low"
+  ],
+  "why": "a0 depends on LHA Aries, not on latitude. Polaris 10° up carries about 5′ of refraction, which haze and temperature can upset.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Two Polaris sights",
+   "lines": [
+    "Near 10°N: Polaris about 10° up",
+    "Near 50°N: Polaris about 50° up",
+    "Same sextant, same height of eye"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Bound from Oman to India in January, you take Polaris at dusk. With which LHA Aries do you enter the a0 table?",
+  "a": "21°51.7′",
+  "o": [
+   "381°51.7′",
+   "252°51.7′",
+   "338°08.3′"
+  ],
+  "why": "LHA = GHA + east longitude: 317°21.7′ + 64°30′ = 381°51.7′; take off 360° to enter the table at 21°51.7′.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Polaris, 10 Jan 2027",
+   "lines": [
+    "GHA Aries 317°21.7′",
+    "DR 18°00′N 064°30′E"
+   ],
+   "tag": "1350 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "At dusk on the ARC route you take Polaris. What is your latitude?",
+  "a": "19°47.3′N",
+  "o": [
+   "18°17.5′N",
+   "20°47.3′N",
+   "19°25.0′N"
+  ],
+  "why": "LHA = 19°27.7′ − 41°20′ + 360° = 338°07.7′; a0 = 45.0′ − 0.6′ × 0.13 = 44.9′; Lat = 20°01.1′ − 60′ + 44.9′ + 1.3′ = 19°47.3′N.",
+  "ref": "Pole star",
+  "fig": {
+   "type": "card",
+   "title": "Polaris, 1 Dec 2026",
+   "lines": [
+    "GHA Aries 19°27.7′, DR long. 041°20′W",
+    "Ho 20°01.1′",
+    "a0: LHA 338° 0°45.0′, LHA 339° 0°44.4′",
+    "a1 0.5′, a2 0.8′"
+   ],
+   "tag": "2035 UT"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "Sailing the South Atlantic, a new crew member asks how you will get a latitude at dusk with no pole star. What do you tell them?",
+  "a": "A bright star's meridian altitude, such as Achernar or Canopus",
+  "o": [
+   "The south celestial pole's altitude, corrected by a0",
+   "Polaris, low on the northern horizon",
+   "The Southern Cross's altitude at any time"
+  ],
+  "why": "No bright star marks the south pole: take a bright star as it crosses your meridian in twilight and use Lat = Dec ± z.",
+  "ref": "Southern Cross",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Between Rodrigues and Mauritius at dusk just after Christmas, Achernar crosses your meridian, bearing south. What is your latitude?",
+  "a": "20°04.2′S",
+  "o": [
+   "20°04.2′N",
+   "37°01.8′S",
+   "4°07.8′S"
+  ],
+  "why": "z = 90° − 52°58.2′ = 37°01.8′; the star is south of you: Lat = Dec + z = −57°06.0′ + 37°01.8′ = −20°04.2′, i.e. 20°04.2′S.",
+  "ref": "Southern Cross",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, 28 Dec 2026",
+   "lines": [
+    "Achernar on the meridian, bearing south",
+    "Ho 52°58.2′",
+    "Almanac: Achernar Dec S57°06.0′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Crossing the Tasman from Hobart to New Zealand in early December, you take Acrux below the south pole at dusk. What is your latitude?",
+  "a": "41°08.5′S",
+  "o": [
+   "12°23.5′S",
+   "41°08.5′N",
+   "48°51.5′S"
+  ],
+  "why": "Below the pole Lat = Ho + polar distance: 14°22.5′ + (90° − 63°14.0′ = 26°46.0′) = 41°08.5′, named like the pole: S.",
+  "ref": "Meridian altitude — lower transit",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, 1 Dec 2026",
+   "lines": [
+    "Acrux at lower transit, bearing south",
+    "Ho 14°22.5′",
+    "Almanac: Acrux Dec S63°14.0′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "At evening twilight in the Indian Ocean you see the Southern Cross standing upright like this. What does it tell you?",
+  "a": "Acrux is on your meridian — time for its meridian altitude",
+  "o": [
+   "The Cross is due east — a good star for longitude",
+   "Acrux is at its lowest, at lower transit",
+   "The Cross is setting — too low to use"
+  ],
+  "why": "With Gacrux straight above Acrux the long axis is vertical: the Cross is at upper transit, bearing south, on your meridian.",
+  "ref": "Southern Cross",
+  "fig": {
+   "type": "chart",
+   "land": "M0 160 H320 V200 H0 Z",
+   "marks": [
+    [
+     160,
+     46,
+     "w",
+     "Gacrux"
+    ],
+    [
+     160,
+     122,
+     "w",
+     "Acrux"
+    ],
+    [
+     136,
+     86,
+     "w",
+     ""
+    ],
+    [
+     182,
+     78,
+     "w",
+     ""
+    ],
+    [
+     52,
+     132,
+     "w",
+     ""
+    ],
+    [
+     86,
+     120,
+     "w",
+     ""
+    ]
+   ],
+   "labels": [
+    [
+     70,
+     108,
+     "Pointers"
+    ],
+    [
+     160,
+     176,
+     "S"
+    ]
+   ],
+   "note": "Looking south at dusk"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "Your crew points out a cross of stars, larger and dimmer than you expected, with no bright pair beside it. What is it most likely to be?",
+  "a": "The False Cross — the true one is smaller, with the Pointers by it",
+  "o": [
+   "The Southern Cross, looking larger near the horizon",
+   "The Southern Cross upside down, at lower transit",
+   "The Northern Cross, seen from the south"
+  ],
+  "why": "The False Cross (in Carina and Vela) is bigger and fainter; the real Cross is compact, with α and β Centauri pointing to it.",
+  "ref": "Southern Cross",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "A crew member asks for the 'southern Polaris' to take for latitude tonight. What do you tell them?",
+  "a": "There is none to use — Sigma Octantis is too faint",
+  "o": [
+   "Acrux — it sits on the south pole",
+   "Canopus — work it with the a0 tables",
+   "Achernar — it never moves in the sky"
+  ],
+  "why": "Sigma Octantis, about 1° from the south pole, is only magnitude 5.4, too faint for a sextant. Use a bright star's meridian altitude.",
+  "ref": "Southern Cross",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Two days out of Fremantle for Mauritius, at 30°S, you want a star to take below the south pole at twilight. Which of these stays above your horizon all night?",
+  "a": "Acrux",
+  "o": [
+   "Canopus",
+   "Achernar",
+   "Antares"
+  ],
+  "why": "Circumpolar when the Dec exceeds the co-latitude, 90° − 30° = 60°: only Acrux (S63°14′) stays up; Achernar (S57°06′) just sets.",
+  "ref": "Meridian altitude — lower transit",
+  "fig": {
+   "type": "card",
+   "title": "Stars, DR 30°00′S",
+   "lines": [
+    "Acrux  Dec S63°14′",
+    "Canopus  Dec S52°43′",
+    "Achernar  Dec S57°06′",
+    "Antares  Dec S26°29′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Running down the latitude of Antigua, you find the noon sights creeping north. Which course now keeps you on the latitude?",
+  "a": "267°",
+  "o": [
+   "273°",
+   "270°",
+   "263°"
+  ],
+  "why": "A set of 7 M a day to the north is 0.29 kn; at 6.5 kn that needs asin(0.29/6.5) ≈ 3°: steer 3° south of west, 267°.",
+  "ref": "Latitude sailing",
+  "fig": {
+   "type": "card",
+   "title": "Latitude sailing to Antigua",
+   "lines": [
+    "Steering 270°: noon 17°00′N, then 17°07′N",
+    "Back on 17°00′N today after a correction",
+    "Speed 6.5 kn"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Bound for Bermuda from the Azores, your noon fix puts you north of the latitude you want, with a current setting north. What course do you steer?",
+  "a": "256°",
+  "o": [
+   "261°",
+   "265°",
+   "270°"
+  ],
+  "why": "The track to the target is 261° (25 M south in 150 M west); to cancel 0.5 kn of set to the north at 6 kn, steer about 5° further south: 256°.",
+  "ref": "Latitude sailing",
+  "fig": {
+   "type": "chart",
+   "land": "M30 128 C40 120 58 122 62 132 C64 140 48 144 38 141 C28 138 24 132 30 128 Z M20.0 151.2 L300.0 151.2 L300.0 148.8 L20.0 148.8 Z",
+   "track": "M275 118 L70 150",
+   "boat": [
+    275,
+    118,
+    256
+   ],
+   "labels": [
+    [
+     46,
+     114,
+     "Bermuda"
+    ],
+    [
+     298,
+     166,
+     "32°15′N",
+     "end"
+    ]
+   ],
+   "panel": [
+    "Noon fix",
+    "32°40′N",
+    "Target 32°15′N",
+    "150 M to the west"
+   ],
+   "note": "Current 000° 0.5 kn · speed 6 kn · not to scale"
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "On the run from the Marquesas to the Tuamotus, today's noon latitude differs from your DR. What does it tell you about the current?",
+  "a": "About 0.5 kn setting south",
+  "o": [
+   "About 0.5 kn setting north",
+   "About 1.1 kn setting south",
+   "Nothing — a latitude cannot show current"
+  ],
+  "why": "13′ south of the DR after 24 h of good steering and log: 13 M ÷ 24 h ≈ 0.5 kn of southerly set. The east–west part stays unknown.",
+  "ref": "Latitude sailing",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 24 h after the last fix",
+   "lines": [
+    "DR latitude 14°36′S",
+    "Noon latitude 14°49′S",
+    "Log and steering reliable"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Running down the latitude of Ascension with no good longitude, at noon you have the island 60 M ahead by DR, give or take 25 M. What is your plan?",
+  "a": "Slow down and close the island at first light",
+  "o": [
+   "Hold 6 kn — its light will show you at night",
+   "Speed up to arrive before dark",
+   "Alter 30° north to be sure of passing clear"
+  ],
+  "why": "With 25 M of doubt you could arrive any time from dusk to the small hours: slow down, keep to the latitude, close the island in daylight.",
+  "ref": "Latitude sailing",
+  "fig": {
+   "type": "card",
+   "title": "Noon, latitude sailing",
+   "lines": [
+    "On 7°56′S, Ascension 60 M ahead by DR",
+    "Longitude doubt ±25 M",
+    "Speed 6 kn, sunset at about 1800"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "You advance your noon latitude to dusk and cross it with this star line. What is the longitude of the fix?",
+  "a": "45°21.6′W",
+  "o": [
+   "45°29.7′W",
+   "45°08.1′W",
+   "45°37.8′W"
+  ],
+  "why": "Noon lat run 39 M on 225° → 23°42.4′N; intercept point 23°58.4′N 45°26.3′W; along 165° to 23°42.4′N is 4.3 M east → 45°21.6′W.",
+  "ref": "Noon position",
+  "fig": {
+   "type": "card",
+   "title": "Dusk fix, 1 Dec 2026",
+   "lines": [
+    "Noon latitude 24°10.0′N",
+    "Run noon to dusk: 225°, 39.0 M",
+    "Star: AP 24°00′N 045°20′W, Zn 255°",
+    "Intercept 6.0′ towards"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "At dusk on the ARC route you want one star to cross with your noon latitude, run up to the time of the sight. Which do you choose?",
+  "a": "Altair",
+  "o": [
+   "Fomalhaut",
+   "Deneb",
+   "Polaris"
+  ],
+  "why": "A latitude runs east–west, so the best cut comes from a star bearing near east or west: Altair at 256° crosses it at 76°.",
+  "ref": "Noon position",
+  "fig": {
+   "type": "card",
+   "title": "Stars at dusk, 1 Dec 2026",
+   "lines": [
+    "Altair  Zn 256°, 49° up",
+    "Fomalhaut  Zn 173°, 36° up",
+    "Deneb  Zn 321°, 59° up",
+    "Polaris  Zn 001°, 24° up"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Two days out of Cape Town for St Helena, you advance your noon latitude to dusk for a star fix. Where does the advanced latitude lie?",
+  "a": "25°16.5′S",
+  "o": [
+   "26°07.5′S",
+   "25°06.0′S",
+   "25°42.0′S"
+  ],
+  "why": "A latitude line moves only by the run's change of latitude: 36.0 M × cos 315° = 25.5′ north, so 25°42.0′S becomes 25°16.5′S.",
+  "ref": "Noon position",
+  "fig": {
+   "type": "card",
+   "title": "Noon to dusk",
+   "lines": [
+    "Noon latitude 25°42.0′S",
+    "Run to dusk: 315°, 36.0 M"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Cloud hides the Sun from mid-morning until 1530, when it comes out. You have a 0900 sun line. How do you get a fix?",
+  "a": "Run the 0900 line up to 1530 and cross it with a 1530 sun line",
+  "o": [
+   "Work the 1530 sight as a late meridian altitude",
+   "Cross the 0900 and 1530 lines without running up",
+   "Wait for tomorrow's noon — one sun line is worthless"
+  ],
+  "why": "Sun–run–sun: transfer the morning line by the run and cross it with the afternoon line; the Sun's bearing has swung 135°.",
+  "ref": "Noon sight lost",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight lost",
+   "lines": [
+    "0900 sun line, Sun's Zn 112°",
+    "Overcast 1000 to 1500",
+    "1530 sight possible, Sun's Zn 247°"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 3,
+  "q": "Bound from Bermuda to Antigua, with cloud closing in, you take the Sun six minutes before noon and reduce it as an ex-meridian. What is your latitude?",
+  "a": "30°10.0′N",
+  "o": [
+   "30°12.8′N",
+   "30°11.4′N",
+   "30°11.2′N"
+  ],
+  "why": "Correction 2.3″ × 6² = 83″ = 1.4′: Ho 47°12.8′ + 1.4′ = 47°14.2′ on the meridian; Lat = Dec + z = −12°35.8′ + 42°45.8′ = 30°10.0′N.",
+  "ref": "Meridian altitude — near the meridian",
+  "fig": {
+   "type": "card",
+   "title": "Ex-meridian, 26 Oct 2026",
+   "lines": [
+    "1549 UT: Ho 47°12.8′, Sun bearing south",
+    "LAN 1555 UT, Dec S12°35.8′",
+    "Altitude change near noon: 2.3″ × t²",
+    "(t in minutes from LAN)"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Cloud hid the Sun at its peak, but you caught the same sextant altitude before and after noon. What is your longitude?",
+  "a": "130°15.1′W",
+  "o": [
+   "130°15.1′E",
+   "126°26.4′W",
+   "136°51.5′W"
+  ],
+  "why": "LAN is midway, 2025:45½ UT. The Sun crosses Greenwich at 1144:45, so 8h41m00½s × 15 = 130°15.1′ of west longitude.",
+  "ref": "Noon sight lost",
+  "fig": {
+   "type": "card",
+   "title": "Equal altitudes, 20 Oct 2026",
+   "lines": [
+    "Hs 75°10.2′ at 1959:20 UT",
+    "Hs 75°10.2′ again at 2052:11 UT",
+    "Sun crosses Greenwich at 1144:45 UT",
+    "DR 24°S 130°W"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "Leaving Fiji for Vanuatu, the ship's clock still on Fiji time (zone −12), you plan the noon sight at 177°30′E. When, in UT, is the Sun on your meridian?",
+  "a": "15 January, 0019 UT",
+  "o": [
+   "14 January, 0019 UT",
+   "16 January, 0019 UT",
+   "15 January, 1209 UT"
+  ],
+  "why": "1209 LMT − 11h50m for 177°30′E = 0019 UT on the same date, 15 January: east longitude is subtracted, and no day is crossed.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": {
+   "type": "card",
+   "title": "Noon, ship's date 15 Jan 2027",
+   "lines": [
+    "DR 18°40′S 177°30′E",
+    "Ship's clock: zone −12",
+    "Almanac: Sun Mer Pass 1209"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "On the ARC route the crew took today's noon sight standing on the coachroof, but you reduced it for your usual cockpit height. How does that move your latitude?",
+  "a": "0.8′ too far south",
+  "o": [
+   "0.8′ too far north",
+   "5.8′ too far south",
+   "1.5′ too far south"
+  ],
+  "why": "Dip for 3.5 m is 3.3′, for 2.0 m 2.5′: Ho came out 0.8′ too high and z too small, so with the Sun south Lat = Dec + z is 0.8′ too far south.",
+  "ref": "Meridian altitude — from Hs to Ho",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight",
+   "lines": [
+    "Sun bearing south, you in north latitude",
+    "Eye on the coachroof: 3.5 m",
+    "Reduced for the cockpit: 2.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "A new watchkeeper offers to take the noon sight 'at 1200 by the ship's clock'. What do you tell them?",
+  "a": "Noon is when the Sun crosses our meridian — from Mer Pass and longitude",
+  "o": [
+   "Fine — the ship's clock is set to local noon",
+   "Fine, as long as the clock is checked against UT",
+   "Take it at 1200 UT, the almanac's noon"
+  ],
+  "why": "Local noon is the Sun's meridian passage: Mer Pass in LMT plus or minus your longitude in time — rarely 1200 on any clock.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "On the South Atlantic crossing from Cape Town to Brazil in July, a crew member used to the Med starts the noon sight facing south. Where should they look?",
+  "a": "North, about 39° up",
+  "o": [
+   "South, about 39° up",
+   "North, about 81° up",
+   "South, about 51° up"
+  ],
+  "why": "Dec N21° is north of your 30°S, so the noon Sun bears north at 90° − (30° + 21°) = 39°.",
+  "ref": "Meridian altitude — latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, July",
+   "lines": [
+    "DR 30°S 010°W",
+    "Almanac: Sun Dec N21°"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "Jupiter crosses your meridian at 0130 local time, high and brilliant in a moonless sky. Do you take it for latitude?",
+  "a": "No — there is no horizon to bring it down to",
+  "o": [
+   "Yes — a planet is bright enough at any hour",
+   "Yes, and add 15′ for the dark horizon",
+   "Only if it bears north of you"
+  ],
+  "why": "A sextant sight needs a sharp horizon: stars and planets are taken in twilight, when both the body and the horizon can be seen.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "A day out of Cape Town in mid-April, you preset the sextant before noon so the Sun is ready in the telescope. What do you set, and where do you look?",
+  "a": "About 45°, looking north",
+  "o": [
+   "About 45°, looking south",
+   "About 68°, looking north",
+   "About 22°, looking north"
+  ],
+  "why": "Dec N11°20′ and your 33°40′S are on opposite sides of the equator: z = 33°40′ + 11°20′ = 45°, so the Sun is about 45° up, to the north.",
+  "ref": "Meridian altitude — time of noon",
+  "fig": {
+   "type": "card",
+   "title": "Before noon",
+   "lines": [
+    "DR 33°40′S 017°30′E",
+    "Almanac: Sun Dec N11°20′"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "Overcast all day has cost you the noon sight, but the sky is clearing from the west at dusk. What is the next best latitude tonight?",
+  "a": "A star on the meridian, or Polaris, in evening twilight",
+  "o": [
+   "The Moon at midnight, whatever the horizon",
+   "Tomorrow's noon — no other sight gives latitude",
+   "A star low in the east, as soon as it rises"
+  ],
+  "why": "Any body on your meridian gives latitude, and Polaris does at any hour in the north — in twilight, with a sharp horizon.",
+  "ref": "Noon sight lost",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight lost",
+   "lines": [
+    "Overcast from 0800",
+    "Clearing from the west at dusk",
+    "DR 24°N on the ARC route"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 1,
+  "q": "You plan to take the Moon on the meridian. Which almanac figure do you need that you never use for the Sun?",
+  "a": "The horizontal parallax, HP",
+  "o": [
+   "The semi-diameter, SD",
+   "The declination, Dec",
+   "The time of meridian passage"
+  ],
+  "why": "The Moon is so close that its parallax reaches a degree: parallax in altitude = HP × cos Ha. The Sun's is only about 0.1′.",
+  "ref": "Meridian altitude — Moon",
+  "fig": null
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "At dusk in early March you take Capella and Rigel on the meridian minutes apart, and the two latitudes disagree. Which do you plot?",
+  "a": "25°17.4′N",
+  "o": [
+   "25°20.2′N",
+   "25°14.6′N",
+   "25°23.0′N"
+  ],
+  "why": "An error common to both sights (IE, dip) moves a north star's latitude one way and a south star's the other: their mean cancels it.",
+  "ref": "Meridian altitude — stars and planets",
+  "fig": {
+   "type": "card",
+   "title": "Meridian stars, 5 Mar 2027",
+   "lines": [
+    "Capella, bearing north: Lat 25°20.2′N",
+    "Rigel, bearing south: Lat 25°14.6′N",
+    "Taken 3 min apart, same sextant"
+   ]
+  }
+ },
+ {
+  "topic": "meridian",
+  "difficulty": 2,
+  "q": "After plotting your noon fix from the run-up morning line, you find the noon latitude was 4.0′ too far north. How does the fix move?",
+  "a": "4.6 M along 210°",
+  "o": [
+   "4.6 M along 030°",
+   "4.0 M along 180°",
+   "2.3 M along 270°"
+  ],
+  "why": "The fix slides along the run-up line (030°–210°): 4.0′ of latitude south along it is 4.0 ÷ cos 30° = 4.6 M towards 210°.",
+  "ref": "Noon position",
+  "fig": {
+   "type": "card",
+   "title": "Noon fix",
+   "lines": [
+    "Morning sun line run up: 030°–210°",
+    "Noon latitude found 4.0′ too far north",
+    "Fix = run-up line × noon latitude"
+   ]
+  }
+ }
+]

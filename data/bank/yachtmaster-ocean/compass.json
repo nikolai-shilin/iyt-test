@@ -1,0 +1,2227 @@
+[
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "You plan a compass check by amplitude at sunrise on the ARC route. At which moment do you take the Sun's bearing?",
+  "a": "Lower limb half a diameter above the visible horizon",
+  "o": [
+   "Lower limb just touching the visible horizon",
+   "Upper limb just clearing the visible horizon",
+   "Sun's centre about 5° above the visible horizon"
+  ],
+  "why": "The amplitude is for the Sun's centre on the celestial horizon: with refraction and dip, the lower limb then shows about half a diameter up.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunrise amplitude",
+   "lines": [
+    "ARC route, 16°N 32°W",
+    "Clear eastern horizon, light trade wind",
+    "Hand-bearing compass at the ready"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You check the steering compass by the Sun's amplitude at sunrise. What is the compass error?",
+  "a": "6°W",
+  "o": [
+   "6°E",
+   "7°W",
+   "8°W"
+  ],
+  "why": "sin Amp = sin 20°46′ / cos 17° → Amp E21.8°S, true bearing 111.8°; error = true − compass = 111.8° − 118° = 6°W.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunrise, 25 November",
+   "lines": [
+    "DR 17°N 30°W, ARC route",
+    "Almanac: Dec S20°46′",
+    "Sun's centre on the celestial horizon",
+    "Bearing over the steering compass 118°C"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You are on the Pacific Puddle Jump and take an amplitude at sunset. What true bearing do you compare with the compass?",
+  "a": "278°T",
+  "o": [
+   "262°T",
+   "082°T",
+   "098°T"
+  ],
+  "why": "sin Amp = sin 8°11′ / cos 12° → Amp 8.4°, from west toward the Dec's name (N): 270° + 8° = 278°T.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunset, 10 April",
+   "lines": [
+    "DR 12°S 125°W, Galápagos to the Marquesas",
+    "Almanac: Dec N8°11′",
+    "Sun's centre on the celestial horizon"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "You want to catch the sunrise for an amplitude. Where on the horizon do you look for the Sun?",
+  "a": "About 065° — 25° north of east",
+  "o": [
+   "About 115° — 25° south of east",
+   "About 067° — 23° north of east",
+   "About 090° — due east in winter"
+  ],
+  "why": "The Sun rises toward the name of its Dec in either hemisphere: sin Amp = sin 23°26′ / cos 20° → E25°N, about 065°.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Indian Ocean, 21 June",
+   "lines": [
+    "DR 20°S 70°E, bound for Mauritius",
+    "Almanac: Dec N23°26′",
+    "Clear sky, flat eastern horizon"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You take an amplitude at sunset to check the compass. Which true bearing do you use?",
+  "a": "270°T, whatever your latitude",
+  "o": [
+   "270°T, but only on the equator",
+   "302°T — 270° plus the latitude",
+   "238°T — 270° minus the latitude"
+  ],
+  "why": "With Dec 0° sin Amp = 0: at the equinox the Sun's centre sets due west, 270°T, in any latitude.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunset, 20 March",
+   "lines": [
+    "DR 32°N 50°W, Bermuda to the Azores",
+    "Almanac: Dec N0°01′",
+    "Sun's centre on the celestial horizon"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "You check the steering compass by amplitude on your present heading. What deviation do you log?",
+  "a": "3°E",
+  "o": [
+   "3°W",
+   "8°W",
+   "19°W"
+  ],
+  "why": "Amp W23.4°S → 246.6°T; error 246.6° − 255° = 8°W; deviation = error − variation = 8°W − 11°W = 3°E.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunset, 1 December",
+   "lines": [
+    "DR 20°N 30°W",
+    "Almanac: Dec S21°54′",
+    "Sun's centre bears 255°C (steering compass)",
+    "Pilot chart: variation 11°W"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You take a sunrise amplitude on the way to the Azores. What is the Sun's true bearing?",
+  "a": "060°T",
+  "o": [
+   "067°T",
+   "072°T",
+   "120°T"
+  ],
+  "why": "sin Amp = sin 23°26′ / cos 38° → Amp 30.3°, east toward N: 090° − 30° = 060°T. The higher the latitude, the bigger the amplitude.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunrise, 21 June",
+   "lines": [
+    "DR 38°N 40°W, Bermuda to the Azores",
+    "Almanac: Dec N23°26′",
+    "Sun's centre on the celestial horizon"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You take the Sun's bearing mid-morning for a compass check. Which true azimuth do you compare it with?",
+  "a": "127°T",
+  "o": [
+   "233°T",
+   "053°T",
+   "307°T"
+  ],
+  "why": "Zn = atan2(−cos Dec sin LHA, cos Lat sin Dec − sin Lat cos Dec cos LHA) = 127°; LHA over 180° puts the Sun in the east.",
+  "ref": "Compass check — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun, 10 February",
+   "lines": [
+    "DR 25°N 20°W, Canaries to Cape Verde",
+    "Almanac: Dec S14°20′",
+    "LHA of the Sun 315°"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "You check the compass by the Sun's azimuth on your way to Antigua. What is the deviation on this heading?",
+  "a": "2°E",
+  "o": [
+   "2°W",
+   "13°W",
+   "28°W"
+  ],
+  "why": "LHA = 92°43′ − 45°20′W = 47°23′ → Zn 233°T; error 233° − 246° = 13°W; deviation 13°W − 15°W = 2°E.",
+  "ref": "Compass check — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon sun, 1 December",
+   "lines": [
+    "DR 14°10′N 45°20′W",
+    "Almanac 1800 UT: GHA 92°43′, Dec S21°53′",
+    "Sun bears 246°C over the steering compass",
+    "Pilot chart: variation 15°W"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You want the Sun's azimuth for a compass check today. Which of these times do you choose?",
+  "a": "0730 — the Sun is low, its bearing easy to take",
+  "o": [
+   "1145 — the Sun is high and bright to sight",
+   "1215 — just after noon, the Sun is steady",
+   "Any of them — the azimuth is computed anyway"
+  ],
+  "why": "A high Sun is hard to bear accurately and near noon in the tropics its bearing swings fast: take the azimuth with the Sun low.",
+  "ref": "Compass check — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Compass check, 10°N in June",
+   "lines": [
+    "0730 LMT: altitude 25°, bearing 069°",
+    "1145 LMT: altitude 76°, bearing 014°",
+    "1215 LMT: altitude 76°, bearing 346°"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Bound for Cape Town, you use HO 249 for the Sun's azimuth to check the compass. What Zn do you take?",
+  "a": "277°T",
+  "o": [
+   "263°T",
+   "097°T",
+   "083°T"
+  ],
+  "why": "South latitude, LHA less than 180°: Zn = 180° + Z = 180° + 97° = 277°T.",
+  "ref": "Compass check — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "HO 249, southern hemisphere",
+   "lines": [
+    "AP 30°S, LHA 50°",
+    "Dec S15° (same name as Lat)",
+    "Tables: Hc 41°51′, Z 097°"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "At evening twilight you take Sirius over the steering compass. What deviation do you log for this heading?",
+  "a": "3°E",
+  "o": [
+   "3°W",
+   "11°W",
+   "25°W"
+  ],
+  "why": "LHA = 115°41′ + 258°27′ − 50°W = 324°08′ → Zn 134°T; error 134° − 145° = 11°W; deviation 11°W − 14°W = 3°E.",
+  "ref": "Compass check — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, 15 February",
+   "lines": [
+    "DR 20°N 50°W, pilot chart variation 14°W",
+    "Almanac 2200 UT: GHA Aries 115°41′",
+    "Sirius: SHA 258°27′, Dec S16°45′",
+    "Sirius bears 145°C over the steering compass"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "You check the compass by the Sun's azimuth in the South Atlantic. What is the compass error?",
+  "a": "4°E",
+  "o": [
+   "4°W",
+   "8°E",
+   "12°W"
+  ],
+  "why": "LHA = GHA + longitude east = 297°41′ + 6° = 303°41′ → Zn 098°T; error = 098° − 094° = 4°E (compass least, error east).",
+  "ref": "Compass check — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun, 15 January",
+   "lines": [
+    "DR 25°S 6°E, Cape Town to St Helena",
+    "Almanac 0800 UT: GHA 297°41′, Dec S21°09′",
+    "Sun bears 094°C over the steering compass"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Two days from Saint Lucia you check the steering compass on Polaris. What is the compass error?",
+  "a": "3°E — the compass reads low",
+  "o": [
+   "3°W — the compass reads low",
+   "3°E — the compass reads high",
+   "3°W — the compass reads high"
+  ],
+  "why": "In low latitudes Polaris is within about 1° of true north: error = 000° − 357° = 3°E; the compass reads low.",
+  "ref": "Compass check — Polaris",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, ARC route",
+   "lines": [
+    "DR 14°N 55°W",
+    "Polaris bears 357° by the steering compass",
+    "Take Polaris as true north"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "You plan your compass checks for the next week on this passage. Which of these is no use to you here?",
+  "a": "A bearing of Polaris",
+  "o": [
+   "The Sun's amplitude at sunset",
+   "The Sun's azimuth in the morning",
+   "The azimuth of a bright star"
+  ],
+  "why": "Polaris lies within about 1° of the north celestial pole: south of the equator it is below your horizon.",
+  "ref": "Compass check — Polaris",
+  "fig": {
+   "type": "card",
+   "title": "Marquesas to the Tuamotus",
+   "lines": [
+    "DR 10°S 140°W",
+    "Clear nights, sharp horizon at twilight",
+    "Sextant, almanac and hand-bearing compass"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "You use Polaris to check the steering compass on this heading. What deviation do you log?",
+  "a": "5°E",
+  "o": [
+   "5°W",
+   "6°E",
+   "19°W"
+  ],
+  "why": "Error = 359.2° − 006° = 6.8°W; deviation = error − variation = 6.8°W − 12°W = 5.2°, about 5°E.",
+  "ref": "Compass check — Polaris",
+  "fig": {
+   "type": "card",
+   "title": "Polaris check, 40°N",
+   "lines": [
+    "Bermuda to the Azores, evening twilight",
+    "Almanac Polaris table: azimuth 359.2°",
+    "Polaris bears 006° by the steering compass",
+    "Pilot chart: variation 12°W"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Making landfall in the Azores, you steer along this transit. What deviation do you log for this heading?",
+  "a": "3°E",
+  "o": [
+   "3°W",
+   "4°W",
+   "11°W"
+  ],
+  "why": "A transit needs no almanac: error = 248° − 252° = 4°W; deviation = error − variation = 4°W − 7°W = 3°E.",
+  "ref": "Compass error, variation & deviation",
+  "fig": {
+   "type": "card",
+   "title": "Landfall, the Azores",
+   "lines": [
+    "Two charted lights in transit: 248°T",
+    "Over the steering compass: 252°C",
+    "Chart: variation 7°W"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Crossing the Indian Ocean, the Sun's azimuth this morning gives this compass error on your present heading. What is the deviation?",
+  "a": "2°W",
+  "o": [
+   "2°E",
+   "10°W",
+   "10°E"
+  ],
+  "why": "Deviation = error − variation = 6°W − 4°W = 2°W (west counted negative).",
+  "ref": "Compass error, variation & deviation",
+  "fig": {
+   "type": "compass",
+   "variation": -4,
+   "course": 205,
+   "courseLabel": "Compass",
+   "note": "Error 6°W (Sun)"
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You have steered this compass course all watch on the ARC. What true course do you plot on the plotting sheet?",
+  "a": "249°T",
+  "o": [
+   "245°T",
+   "277°T",
+   "281°T"
+  ],
+  "why": "True = compass + deviation + variation, east +, west −: 263° + 2°E − 16°W = 249°T.",
+  "ref": "Compass error, variation & deviation",
+  "fig": {
+   "type": "compass",
+   "variation": -16,
+   "deviation": 2,
+   "course": 263,
+   "courseLabel": "Compass",
+   "note": "ARC, mid-Atlantic"
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "In the trades you gybe onto a new heading. What do you now take as the deviation?",
+  "a": "Unknown until you check it on 200°C",
+  "o": [
+   "1°E — it was found only this morning",
+   "1°W — it reverses after a gybe",
+   "0° — deviation is negligible at sea"
+  ],
+  "why": "Deviation changes with the ship's head: a value found on 260°C does not hold on 200°C — check again or use the card for that heading.",
+  "ref": "Compass — the deviation log",
+  "fig": {
+   "type": "card",
+   "title": "Deviation log, day 6",
+   "lines": [
+    "0730: amplitude on 260°C, deviation 1°E",
+    "1100: wind veers, you gybe onto 200°C",
+    "No check yet on the new heading"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You load the boat in Las Palmas for the Atlantic crossing. What do you do about the steering compass?",
+  "a": "Check its deviation again on several headings",
+  "o": [
+   "Use last spring's card — the compass hasn't moved",
+   "Allow a flat 5° on every heading for the steel",
+   "Rely on the fluxgate — it ignores nearby steel"
+  ],
+  "why": "New steel near the compass changes its deviation: move it away if you can, then check the deviation afresh on several headings.",
+  "ref": "Compass — the deviation log",
+  "fig": {
+   "type": "card",
+   "title": "Las Palmas, the day before the start",
+   "lines": [
+    "Spare anchor and chain in the cockpit locker",
+    "Two dive tanks lashed beside the binnacle",
+    "Compass checked and carded last spring"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You fill in the deviation log on the crossing. What else do you need to find the deviation?",
+  "a": "The variation at your position",
+  "o": [
+   "The Sun's altitude at the time",
+   "The log reading at the time",
+   "The height of eye on deck"
+  ],
+  "why": "Deviation = error − variation: read the variation for your DR position from the pilot chart or the chart.",
+  "ref": "Compass — the deviation log",
+  "fig": {
+   "type": "card",
+   "title": "Deviation log entry",
+   "lines": [
+    "Ship's head 245°C, 1 December, 0715",
+    "Sun's true bearing (amplitude) 113°T",
+    "Sun's bearing over the compass 119°C",
+    "Error 6°W"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "Crossing westward from the Canaries, you check the compass on the same heading. What does the log tell you?",
+  "a": "Deviation steady at 1°W; variation changes",
+  "o": [
+   "Deviation growing from 7°W to 16°W",
+   "Deviation steady at 1°E; variation changes",
+   "The compass is failing and needs a swing"
+  ],
+  "why": "Deviation = error − variation: 7 − 6, 12 − 11 and 16 − 15 all give 1°W. The growing error is the variation across the ocean.",
+  "ref": "Compass — the deviation log",
+  "fig": {
+   "type": "card",
+   "title": "Deviation log, ship's head 255°C",
+   "lines": [
+    "Day 3: error 7°W, variation 6°W",
+    "Day 8: error 12°W, variation 11°W",
+    "Day 14: error 16°W, variation 15°W"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You need the variation for tonight's compass check. What value do you use?",
+  "a": "13°W",
+  "o": [
+   "11°W",
+   "12°W",
+   "15°W"
+  ],
+  "why": "Interpolate between the isogonic lines: 10° + 3/5 × 5° = 13°W.",
+  "ref": "Magnetic variation on the ocean",
+  "fig": {
+   "type": "card",
+   "title": "Pilot chart, North Atlantic",
+   "lines": [
+    "Isogonic lines: 10°W and 15°W",
+    "Your DR: 3/5 of the way from 10°W to 15°W",
+    "This year's edition"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You take the variation for your compass checks from the chart's compass rose. What do you use?",
+  "a": "2°29′W",
+  "o": [
+   "5°11′W",
+   "3°41′W",
+   "2°38′W"
+  ],
+  "why": "9 years × 9′ = 81′ = 1°21′ less: 3°50′ − 1°21′ = 2°29′W.",
+  "ref": "Magnetic variation on the ocean",
+  "fig": {
+   "type": "card",
+   "title": "Chart compass rose",
+   "lines": [
+    "Variation 3°50′W (2018)",
+    "Decreasing about 9′ annually",
+    "Your crossing: 2027"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You fit a new autopilot with a fluxgate compass before an ocean passage and find this. What do you do?",
+  "a": "Run its calibration turns in calm water, then compare",
+  "o": [
+   "Apply 8° to every heading shown on the fluxgate",
+   "Move the steering compass until the two agree",
+   "Trust the fluxgate — electronic compasses have no deviation"
+  ],
+  "why": "A fluxgate also senses the boat's magnetism: its calibration (slow full circles) compensates it; then check it against the steering compass.",
+  "ref": "Fluxgate & steering compass",
+  "fig": {
+   "type": "card",
+   "title": "New fluxgate autopilot",
+   "lines": [
+    "Fluxgate heading vs steering compass:",
+    "Heading north: the same",
+    "Heading east: fluxgate 8° higher",
+    "Calibration turns not yet done"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "With the electrics down for the rest of the passage, what do you steer by?",
+  "a": "The magnetic steering compass",
+  "o": [
+   "The handheld GPS's COG",
+   "The fluxgate on the engine battery",
+   "The wind instrument's angle"
+  ],
+  "why": "The magnetic steering compass needs no power: keep it lit at night with a torch and keep checking its error.",
+  "ref": "Fluxgate & steering compass",
+  "fig": {
+   "type": "card",
+   "title": "Day 12, 900 miles to go",
+   "lines": [
+    "House batteries flat, alternator failed",
+    "Plotter, fluxgate and autopilot dark",
+    "Steady trade wind, crew hand-steering"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "The autopilot shows true heading. What is the steering compass's deviation on this heading?",
+  "a": "3°E",
+  "o": [
+   "3°W",
+   "9°W",
+   "21°W"
+  ],
+  "why": "True to magnetic: 253°T + 12°W = 265°M; deviation = magnetic − compass = 265° − 262° = 3°E.",
+  "ref": "Fluxgate & steering compass",
+  "fig": {
+   "type": "card",
+   "title": "Heading check",
+   "lines": [
+    "Fluxgate (autopilot): 253°T",
+    "Auto-variation from GPS: 12°W",
+    "Steering compass: 262°C",
+    "Fluxgate calibrated last week"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "You switch on the backup GPS mid-ocean and see this. Why is there no position yet?",
+  "a": "It needs a fourth satellite to solve its clock error",
+  "o": [
+   "Three satellites give only a line, not a point",
+   "It needs one satellite in each quadrant of the sky",
+   "It needs six — two for each of three axes"
+  ],
+  "why": "Each satellite gives a range from the signal's travel time; with the receiver's clock unknown, three ranges and the clock need four.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "GNSS status page",
+   "lines": [
+    "Satellites tracked: 3",
+    "Status: searching — no fix",
+    "Antenna clear of the rig, open sky"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You plan to enter the lagoon using the plotter. What does this GNSS status tell you?",
+  "a": "Poor geometry: the fix may be tens of metres out",
+  "o": [
+   "An HDOP over 5 means the fix is good to 5 m",
+   "The fix is good; HDOP affects only height",
+   "The plotter would warn you of any bad fix"
+  ],
+  "why": "HDOP multiplies the range error and bunched satellites give a high HDOP: enter the pass by eye in good light, not by the plotter.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "Approaching a Tuamotu pass",
+   "lines": [
+    "Satellites used: 5, all low to the north",
+    "HDOP 7.8",
+    "Pass 150 m wide, reef on both sides"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "You fit this receiver for the ocean passage. What do you gain by leaving all the systems on?",
+  "a": "More satellites: better geometry, fewer gaps",
+  "o": [
+   "A separate datum for each system",
+   "An accurate fix without any clock",
+   "A fix that cannot be jammed"
+  ],
+  "why": "GPS (USA), Galileo (EU), GLONASS (Russia) and BeiDou (China) all give ranges: more satellites mean a lower DOP and more resilience.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "New multi-GNSS receiver",
+   "lines": [
+    "Systems: GPS, Galileo, GLONASS, BeiDou",
+    "Satellites in view: 31",
+    "Setting: all systems on"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Approaching the atoll at dusk, the plotter shows you safely 0.4 M off the reef. What do you do?",
+  "a": "Stand off until daylight: the chart may be a mile out",
+  "o": [
+   "Carry on: GPS is accurate to a few metres",
+   "Shift the GPS position 1 M and carry on",
+   "Change the plotter's datum and carry on"
+  ],
+  "why": "GPS is good to metres, but an old survey can put the reef a mile from where it lies: keep sea room, use radar and your eyes.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "Chart of a Pacific atoll",
+   "lines": [
+    "Source: survey of 1840",
+    "Note: positions may be 1 M in error",
+    "Plotter: boat 0.4 M from the reef"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "Your old paper chart of a Pacific island uses a local datum and carries this note. Which position do you plot?",
+  "a": "17°26.25′S 149°36.52′W",
+  "o": [
+   "17°26.55′S 149°36.52′W",
+   "17°26.25′S 149°35.68′W",
+   "17°26.55′S 149°35.68′W"
+  ],
+  "why": "In south latitude moving north reduces the latitude; in west longitude moving west increases it: 26.40′ − 0.15′, 36.10′ + 0.42′.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "Datum shift",
+   "lines": [
+    "GPS (WGS 84): 17°26.40′S 149°36.10′W",
+    "Chart note: move satellite positions",
+    "0.15′ northward and 0.42′ westward"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Bound for the Indian Ocean, you see this at night. What do you do?",
+  "a": "Treat it as jamming: DR from the last fix, radar, log it",
+  "o": [
+   "Restart all the receivers until one gets a fix",
+   "Heave to until the GPS signal comes back",
+   "Steer for the last waypoint on the plotter"
+  ],
+  "why": "Every receiver losing the fix at once points to jamming: navigate by DR, radar and sights, and report and log the outage.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "Southern Red Sea, 0300",
+   "lines": [
+    "Plotter: 'No fix'",
+    "Handheld GPS: 'No fix'",
+    "AIS: own position lost",
+    "Radar, log and compass working"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "Crossing the Arabian Sea at night, you see this. What do you do?",
+  "a": "Treat all GNSS as spoofed: DR, radar ranges, sights",
+  "o": [
+   "Trust the GPS position — the log must be fouled",
+   "Reboot the plotter and carry on navigating by it",
+   "Average the GPS and DR positions and carry on"
+  ],
+  "why": "A frozen, plausible position that disagrees with the log and radar is spoofing: navigate independently of GNSS and report it.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "Gulf of Oman approach, 0200",
+   "lines": [
+    "GPS: SOG 0.0 kn, position frozen",
+    "Log: 6.5 kn through the water",
+    "AIS: two ships shown at an airport ashore",
+    "Radar: coast 12 M off, not as on the plotter"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Halfway across the Atlantic, the receiver shows this. How far can you trust the position?",
+  "a": "To within about 10 m — ample for the ocean",
+  "o": [
+   "Only to about a mile without SBAS",
+   "To 1 cm — SBAS is no longer needed",
+   "Not at all until SBAS comes back"
+  ],
+  "why": "SBAS (EGNOS, WAAS) corrects only within its service area; plain GPS with a good HDOP is good to metres — ample offshore.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "GNSS status, mid-Atlantic",
+   "lines": [
+    "SBAS (EGNOS/WAAS): not available",
+    "Satellites used: 11, HDOP 0.9",
+    "Fix: 3D GPS"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "On passage from the Bahamas to Beaufort, North Carolina, you receive this warning. What do you plan?",
+  "a": "A good fix before, then DR, and the sextant ready",
+  "o": [
+   "Nothing — the warning is for ships, not yachts",
+   "Reset the receiver at 1300 to clear the fault",
+   "Steer by GPS COG, which is not affected"
+  ],
+  "why": "In an outage window, start DR from a known fix, keep the log and compass courses, and check with sights or radar.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "NAVAREA IV warning",
+   "lines": [
+    "GPS testing: signals may be unreliable",
+    "or unavailable within 300 M of 30°N 77°W",
+    "Tomorrow 1300–1900 UT"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Crossing the doldrums at night, what do you do with the handheld GPS and the spare VHF?",
+  "a": "Put them in the oven, disconnected",
+  "o": [
+   "Plug them into ship's power to stay charged",
+   "Keep them on deck in the grab bag",
+   "Switch them on to log the position"
+  ],
+  "why": "A strike can kill everything wired to the boat: a closed metal box like the oven shields unconnected spares as a Faraday cage.",
+  "ref": "Satellite navigation — single-source risk",
+  "fig": {
+   "type": "card",
+   "title": "ITCZ, 0100",
+   "lines": [
+    "Thunderstorm cells all round",
+    "Lightning every few seconds, 2–3 M off",
+    "Handheld GPS and VHF on the chart table"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You find this on the watch log. What is the most likely fault?",
+  "a": "The shared GPS antenna or its cable",
+  "o": [
+   "The whole GPS system is down",
+   "The plotter's chart card has failed",
+   "The AIS transponder is being jammed"
+  ],
+  "why": "The handheld has a fix, so the satellites are fine; plotter and AIS share one antenna, so check it and its cable first.",
+  "ref": "Satellite navigation — single-source risk",
+  "fig": {
+   "type": "card",
+   "title": "Watch log, 1400",
+   "lines": [
+    "Plotter: 'No fix' for two hours",
+    "AIS: 'No position' alarm",
+    "Handheld GPS: fix, 9 satellites"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "You review the boat's systems before a 3,000-mile passage. What is the best change?",
+  "a": "Give the DSC VHF its own GPS and carry a handheld",
+  "o": [
+   "Add a second plotter on the same antenna",
+   "Fit a bigger house battery bank instead",
+   "Carry a spare antenna cable, nothing else"
+  ],
+  "why": "One antenna and one battery feed everything, even the DSC distress position: add an independent source and a handheld.",
+  "ref": "Satellite navigation — single-source risk",
+  "fig": {
+   "type": "card",
+   "title": "Navigation wiring",
+   "lines": [
+    "One GPS antenna on the stern arch",
+    "It feeds plotter, AIS, autopilot, DSC VHF",
+    "All on one house battery bank"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "You check the grab bag before leaving the Canaries. What do you add for the handheld GPS?",
+  "a": "Spare lithium batteries, sealed in the bag",
+  "o": [
+   "A charging lead for the ship's 12 V",
+   "A paper chart of the destination",
+   "Nothing — it lasts weeks on one set"
+  ],
+  "why": "There is no charging in the raft: a tested handheld GPS with sealed spare batteries gives your position to rescuers.",
+  "ref": "Satellite navigation — single-source risk",
+  "fig": {
+   "type": "card",
+   "title": "Ocean grab bag check",
+   "lines": [
+    "Handheld VHF, flares, water, first-aid kit",
+    "Handheld GPS in a waterproof pouch",
+    "Batteries: only those inside it"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Mid-Atlantic, your family sees your AIS position online. How does it reach them?",
+  "a": "Satellites pick up your AIS signal and relay it",
+  "o": [
+   "Ships within VHF range relay it by DSC",
+   "Your AIS sends it by HF radio every hour",
+   "Your EPIRB transmits it every six hours"
+  ],
+  "why": "Satellites in orbit receive AIS transmissions and pass them ashore; ships still see you only within VHF range, some 20 M.",
+  "ref": "Satellite communications at sea",
+  "fig": {
+   "type": "card",
+   "title": "Message from home, day 9",
+   "lines": [
+    "Family: 'We see you on a tracking website'",
+    "Nearest ship on your AIS: none for 2 days",
+    "1,100 M from the nearest land"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "Mid-ocean, how do you get the next GRIB file?",
+  "a": "Request a small GRIB by email over the Iridium link",
+  "o": [
+   "Download it by VHF from the nearest coast station",
+   "Receive it on NAVTEX at 518 kHz",
+   "Wait for the GPS to update the forecast"
+  ],
+  "why": "Iridium covers the whole globe: a small compressed GRIB by email arrives in minutes; NAVTEX and VHF reach only near the coast.",
+  "ref": "Satellite communications at sea",
+  "fig": {
+   "type": "card",
+   "title": "Weather at sea",
+   "lines": [
+    "Aboard: Iridium satellite terminal, laptop",
+    "Need: GRIB for the next 5 days",
+    "2,000 M from land"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You plan this high-latitude summer passage. What do you do about communications?",
+  "a": "Add Iridium: Inmarsat's satellites sit over the equator",
+  "o": [
+   "Keep Inmarsat alone: it covers the whole globe",
+   "Rely on VHF DSC: it reaches satellites overhead",
+   "Rely on NAVTEX: it carries email up there"
+  ],
+  "why": "Inmarsat's geostationary satellites sit low on the horizon and are lost beyond about 75° of latitude; Iridium's polar orbits cover the poles.",
+  "ref": "Satellite communications at sea",
+  "fig": {
+   "type": "card",
+   "title": "Summer passage to Svalbard",
+   "lines": [
+    "Route north of 75°N for two weeks",
+    "Aboard: Inmarsat terminal only",
+    "Need: weather and messages throughout"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "You check the EPIRB before the Atlantic crossing. What must you do?",
+  "a": "Register it to you and this boat",
+  "o": [
+   "Nothing — it sends your position anyway",
+   "Test it with a full activation in harbour",
+   "Reprogramme it to transmit on 121.5 MHz only"
+  ],
+  "why": "Cospas-Sarsat decodes the beacon's ID: the MRCC uses the registration to know the boat, the crew and whom to call ashore.",
+  "ref": "EPIRB & Cospas-Sarsat",
+  "fig": {
+   "type": "card",
+   "title": "Pre-departure check",
+   "lines": [
+    "406 MHz EPIRB, came with the boat",
+    "Registration: previous owner's name and boat",
+    "Battery and hydrostatic release in date"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You are choosing an EPIRB for an ocean passage. What does model B give you?",
+  "a": "Your position in its first bursts, within minutes",
+  "o": [
+   "A stronger signal for ships close by",
+   "Two-way messages with the MRCC",
+   "No need to register the beacon"
+  ],
+  "why": "Without GNSS the satellites must work out the position from the signal, more slowly and coarsely; with GNSS it goes out in the alert.",
+  "ref": "EPIRB & Cospas-Sarsat",
+  "fig": {
+   "type": "card",
+   "title": "Choosing an EPIRB",
+   "lines": [
+    "Model A: 406 MHz, no GNSS receiver",
+    "Model B: 406 MHz with built-in GNSS",
+    "Same size and battery life"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Adrift in the liferaft, how does the search aircraft find you in the last few miles?",
+  "a": "It homes on the EPIRB's 121.5 MHz signal",
+  "o": [
+   "It follows the 406 MHz position alone",
+   "It hears you on VHF channel 16 by itself",
+   "It reads your AIS signal by satellite"
+  ],
+  "why": "The 406 MHz alert goes via Cospas-Sarsat to the MRCC; the 121.5 MHz homing signal leads aircraft and ships to the raft.",
+  "ref": "EPIRB & Cospas-Sarsat",
+  "fig": {
+   "type": "card",
+   "title": "Day 3 in the liferaft",
+   "lines": [
+    "EPIRB on since day 1",
+    "Search aircraft heard, not yet seen",
+    "Overcast, visibility 3 M"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "A crew member asks why the GPS position goes in the logbook every hour. What do you answer?",
+  "a": "If the GPS fails, DR starts from a recent known position",
+  "o": [
+   "The insurer needs it to settle any claim",
+   "The plotter needs it to check its datum",
+   "It keeps the GPS receiver calibrated"
+  ],
+  "why": "With an hourly position, course and log reading on paper, a GPS failure costs you less than an hour of DR.",
+  "ref": "Celestial navigation as the backup",
+  "fig": {
+   "type": "card",
+   "title": "Skipper's standing orders",
+   "lines": [
+    "Every hour: time, GPS position, log",
+    "Course steered (compass), wind, barometer",
+    "Noon: sun sight compared with GPS"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Your crew questions the daily sun sight. What do you tell them?",
+  "a": "It keeps the skill and the kit ready for a failure",
+  "o": [
+   "It is more accurate than GPS offshore",
+   "The almanac must be used once a day",
+   "It corrects the GPS for its datum"
+  ],
+  "why": "Celestial navigation is the backup: practise it daily and compare with GPS, so you can trust it when the electronics fail.",
+  "ref": "Celestial navigation as the backup",
+  "fig": {
+   "type": "card",
+   "title": "Day 4, GPS working well",
+   "lines": [
+    "Crew: 'Why bother with the sextant?'",
+    "Noon sight vs GPS: 1.8 M apart",
+    "Next landfall: 1,900 M"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Your only GPS failed after the last hourly entry. What DR position do you plot at 1500?",
+  "a": "15°16.4′N 42°31.4′W",
+  "o": [
+   "15°16.4′N 42°30.7′W",
+   "15°23.6′N 42°31.4′W",
+   "15°16.4′N 41°48.6′W"
+  ],
+  "why": "21 M on 260°: d.lat 3.6′S; departure 20.7′W ÷ cos 15.3° = d.long 21.4′W.",
+  "ref": "Celestial navigation as the backup",
+  "fig": {
+   "type": "card",
+   "title": "Logbook",
+   "lines": [
+    "1200 GPS: 15°20.0′N 42°10.0′W",
+    "Since then: 260°T, 7.0 kn, no current",
+    "GPS lost at 1230; now 1500"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "You are south of the equator and want a night check on the compass. What do you use where you once used Polaris?",
+  "a": "The Southern Cross when its long axis is vertical",
+  "o": [
+   "Sigma Octantis, the faint south pole star",
+   "Canopus whenever it is in the south",
+   "The Pointers at any time of the night"
+  ],
+  "why": "With its long axis vertical the Cross is on your meridian and bears 180°T; σ Octantis, at the pole, is too faint to take.",
+  "ref": "Compass check — stars & planets",
+  "fig": {
+   "type": "card",
+   "title": "Night check, Rio to Cape Town",
+   "lines": [
+    "DR 28°S 15°W",
+    "Polaris below the northern horizon",
+    "Clear sky, Southern Cross well up"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "On passage from New Zealand to Tonga you take this bearing of Acrux. What deviation do you log?",
+  "a": "4°W",
+  "o": [
+   "4°E",
+   "15°E",
+   "34°E"
+  ],
+  "why": "On the meridian Acrux bears 180°T; error 180° − 165° = 15°E; deviation = error − variation = 15°E − 19°E = 4°W.",
+  "ref": "Compass check — stars & planets",
+  "fig": {
+   "type": "card",
+   "title": "Night, 33°S 176°E",
+   "lines": [
+    "Southern Cross upside down, low in the south",
+    "Acrux on your meridian, below the pole",
+    "Acrux bears 165°C (steering compass)",
+    "Pilot chart: variation 19°E"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "Bound from Tahiti to Rarotonga, you check the steering compass on Canopus, low in the south-east. What deviation do you log?",
+  "a": "3°W",
+  "o": [
+   "3°E",
+   "10°E",
+   "23°E"
+  ],
+  "why": "LHA = 167°12′ + 263°52′ − 152°30′W = 278°34′ → Zn 140°T; error 140° − 130° = 10°E; deviation 10°E − 13°E = 3°W.",
+  "ref": "Compass check — stars & planets",
+  "fig": {
+   "type": "card",
+   "title": "Evening of 11 December (local)",
+   "lines": [
+    "DR 18°40′S 152°30′W, variation 13°E",
+    "Almanac 12 Dec 0545 UT: GHA Aries 167°11.7′",
+    "Canopus: SHA 263°52′, Dec S52°43′",
+    "Canopus bears 130°C (steering compass)"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Bound for Mauritius, you want a star to check the compass tonight. Which one do you take?",
+  "a": "Acrux — low enough to bear over the compass",
+  "o": [
+   "Sirius — the brightest star in the sky",
+   "Canopus — nearly due south, easy to use",
+   "Rigel — high and clear of any haze"
+  ],
+  "why": "A bearing is good only of a low body: at 60°–80° you cannot hold the compass level and sight the star. Acrux at 19° is right.",
+  "ref": "Compass check — stars & planets",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, 22°S 62°E",
+   "lines": [
+    "Sirius: altitude 82°, bearing 050°",
+    "Rigel: altitude 69°, bearing 309°",
+    "Canopus: altitude 59°, bearing 179°",
+    "Acrux: altitude 19°, bearing 152°"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Bound from Panama to New Zealand, you find the steering compass card tilting and dragging as you go south. Why?",
+  "a": "It is balanced for the north: magnetic dip pulls it",
+  "o": [
+   "Its fluid is too cold in the southern winter",
+   "Variation is too large for it near New Zealand",
+   "Its magnets weakened as it crossed the equator"
+  ],
+  "why": "A compass card is balanced for one magnetic zone; far south the dip of the field tilts a northern card. Fit a southern or global one.",
+  "ref": "Compass error, variation & deviation",
+  "fig": {
+   "type": "card",
+   "title": "Steering compass, 38°S",
+   "lines": [
+    "Card tilted, sticks on one side",
+    "Bought and balanced in Florida",
+    "Fine in the Caribbean and on the equator"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Jupiter is setting over a clear western horizon. At what moment do you take its bearing for an amplitude?",
+  "a": "With it about a Sun's diameter above the horizon",
+  "o": [
+   "As it touches the visible horizon",
+   "With it half a Sun's diameter above the horizon",
+   "With it 5° up, well clear of the haze"
+  ],
+  "why": "On the celestial horizon, refraction (34′) and dip (3′) lift a point body about 0.6° — one Sun's diameter — above the visible horizon.",
+  "ref": "Compass check — stars & planets",
+  "fig": {
+   "type": "card",
+   "title": "Jupiter setting",
+   "lines": [
+    "Bright, low over a clear western horizon",
+    "Height of eye 2.5 m",
+    "Hand-bearing compass at the ready"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "On the way to the Azores you take the amplitude of Venus as it sets. What true bearing do you use?",
+  "a": "297°T",
+  "o": [
+   "292°T",
+   "243°T",
+   "063°T"
+  ],
+  "why": "sin Amp = sin 22°10′ / cos 35° → Amp 27.4°, from west toward N: 270° + 27° = 297°T. Amp ≈ Dec only near the equator.",
+  "ref": "Compass check — stars & planets",
+  "fig": {
+   "type": "card",
+   "title": "Venus setting, May",
+   "lines": [
+    "DR 35°N 45°W, Bermuda to the Azores",
+    "Almanac: Venus Dec N22°10′",
+    "Venus on the celestial horizon"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "In mid-Atlantic you check the steering compass as Rigel rises. What deviation do you log?",
+  "a": "5°E",
+  "o": [
+   "5°W",
+   "7°W",
+   "19°W"
+  ],
+  "why": "sin Amp = sin 8°10′ / cos 30° → E9.4°S, 099.4°T; error 099.4° − 106° = 6.6°W; deviation 6.6°W − 12°W = 5.4°E, about 5°E.",
+  "ref": "Compass check — stars & planets",
+  "fig": {
+   "type": "card",
+   "title": "Rigel rising, 30°N 40°W",
+   "lines": [
+    "Almanac: Rigel Dec S8°10′",
+    "Rigel on the celestial horizon",
+    "Bears 106°C over the steering compass",
+    "Pilot chart: variation 12°W"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Approaching the Western Approaches from the Azores on 21 June, you take a sunrise amplitude. What true bearing do you use?",
+  "a": "052°T",
+  "o": [
+   "067°T",
+   "038°T",
+   "128°T"
+  ],
+  "why": "sin Amp = sin 23°26′ / cos 50° → Amp 38.2°, from east toward N: 090° − 38° = 052°T. At 50°N the amplitude is far more than the Dec.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunrise, 21 June",
+   "lines": [
+    "DR 50°N 12°W, bound for Falmouth",
+    "Almanac: Dec N23°26′",
+    "Sun's centre on the celestial horizon"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "Bound for Norway, you take the sunrise bearing late, with the Sun's centre about 1° higher than it should be. How far out is your check?",
+  "a": "About 2½°: the Sun climbs at a slant up here",
+  "o": [
+   "About ¼°: as it would be near the equator",
+   "About 1°: one degree for each degree up",
+   "None: the Sun rises at a fixed bearing"
+  ],
+  "why": "At 58°N the Sun's path is oblique: its Zn goes from 041.4° on the horizon to 043.7° at 1° up; near the equator it would move 0.2°.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunrise, 21 June, 58°N",
+   "lines": [
+    "Almanac: Dec N23°26′",
+    "Amplitude for the centre: 041°T",
+    "Here the Sun takes 11 minutes to climb 1°"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "On the Cape to Rio route you take an amplitude at sunset. What is the compass error?",
+  "a": "8°W",
+  "o": [
+   "8°E",
+   "3°W",
+   "3°E"
+  ],
+  "why": "sin Amp = sin 23°26′ / cos 33° → W28.3°S, 241.7°T; error = true − compass = 241.7° − 250° = 8°W.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunset, 21 December",
+   "lines": [
+    "DR 33°S 5°W, Cape Town to Rio",
+    "Almanac: Dec S23°26′",
+    "Sun's centre bears 250°C (hand-bearing)"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "You take the Sun's bearing for this compass check. How far out could the azimuth you work for it be?",
+  "a": "About 3°: near the zenith the bearing swings fast",
+  "o": [
+   "Under 0.1°: the azimuth hardly changes with time",
+   "About ½°: 2 minutes is ½° of hour angle",
+   "About 1°: as for any Sun on a morning check"
+  ],
+  "why": "At 84° up the Sun's Zn goes from 057° to 055° in 2 minutes (LHA 355° → 355.5°); mid-morning it moves under 0.1°. Use a low Sun.",
+  "ref": "Compass check — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Compass check, 15°N",
+   "lines": [
+    "Almanac: Dec N18°00′",
+    "20 minutes before noon: altitude 84°",
+    "Sun bears about 057°",
+    "Watch error unknown, up to 2 minutes"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "South of the equator on the Puddle Jump, the Sun is north of you after noon. What is its true azimuth for your compass check?",
+  "a": "327°T",
+  "o": [
+   "033°T",
+   "213°T",
+   "147°T"
+  ],
+  "why": "LHA = 150°51.5′ − 131°20′W = 19°31.5′; LHA under 180° puts the Sun west of your meridian: Zn = 327°T, to the north-west.",
+  "ref": "Compass check — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon sun, 20 May",
+   "lines": [
+    "DR 9°50′S 131°20′W",
+    "Almanac 2200 UT: GHA 150°51.5′",
+    "Dec N20°04.7′"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "On passage from Fiji to Vanuatu you check the steering compass on the morning Sun. What deviation do you log?",
+  "a": "2°W",
+  "o": [
+   "2°E",
+   "5°W",
+   "22°E"
+  ],
+  "why": "UT 2000 on 11 Oct; LHA = 123°19.5′ + 176°30′E = 299°49.5′ → Zn 088°T; error 088° − 078° = 10°E; deviation 10°E − 12°E = 2°W.",
+  "ref": "Compass check — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun, west of the date line",
+   "lines": [
+    "Ship's date 12 October, 0800 (ZD −12)",
+    "DR 17°50′S 176°30′E, variation 12°E",
+    "Almanac 11 Oct 2000 UT: GHA 123°19.5′",
+    "Dec S7°10.0′; Sun bears 078°C"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "At evening twilight on the way to the Azores you take Jupiter over the steering compass. What deviation do you log?",
+  "a": "5°E",
+  "o": [
+   "5°W",
+   "9°W",
+   "23°W"
+  ],
+  "why": "LHA = 338°15′ − 52°10′W = 286°05′ → Zn 086°T; error 086° − 095° = 9°W; deviation 9°W − 14°W = 5°E.",
+  "ref": "Compass check — stars & planets",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, 10 February",
+   "lines": [
+    "DR 34°30′N 52°10′W, variation 14°W",
+    "Almanac 2230 UT: Jupiter GHA 338°15′",
+    "Jupiter: Dec N14°50′",
+    "Jupiter bears 095°C (steering compass)"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "On the ARC you use HO 249 Volume 1 for a star's azimuth at dusk. What is the compass error?",
+  "a": "7°W",
+  "o": [
+   "7°E",
+   "4°E",
+   "18°W"
+  ],
+  "why": "Volume 1 gives Zn directly for its selected stars: error = true − compass = 091° − 098° = 7°W (the deviation would be 4°E).",
+  "ref": "Compass check — stars & planets",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight, ARC route",
+   "lines": [
+    "Lat 20°N, LHA Aries 237°",
+    "HO 249 Vol 1: Altair Hc 30°13′, Zn 091°",
+    "Altair bears 098°C; variation 11°W"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "Mid-ocean, you want a fresh deviation card for the main headings. How do you get it?",
+  "a": "Steer each heading in turn and bear the Sun on each",
+  "o": [
+   "Take one Sun bearing and apply it to every heading",
+   "Compare the compass with the GPS track for a day",
+   "Wait for a transit at the landfall to swing it"
+  ],
+  "why": "Deviation changes with heading: steer each heading, bear the Sun, work its Zn for that time and log error − variation.",
+  "ref": "Compass — swinging at sea",
+  "fig": {
+   "type": "card",
+   "title": "Compass swing at sea",
+   "lines": [
+    "Calm sea, clear sky, morning Sun",
+    "Almanac and sight-reduction tables aboard",
+    "No land or transit for 1,500 M"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You swing the compass on four headings between 0900 and 0940. A crew member wants to use the 0900 azimuth for every bearing. What do you tell them?",
+  "a": "Work an azimuth for each bearing: the Sun moves 7°",
+  "o": [
+   "Fine: the Sun's bearing changes little in 40 minutes",
+   "Fine: use the mean azimuth of 133° for all four",
+   "Take all four bearings at 0900 on the same heading"
+  ],
+  "why": "The Sun's Zn moves 7.3° in those 40 minutes: one azimuth for all would put up to 7° of false deviation into the card.",
+  "ref": "Compass — swinging at sea",
+  "fig": {
+   "type": "card",
+   "title": "Compass swing, 15 January",
+   "lines": [
+    "DR 20°N 25°W, Dec S21°07′",
+    "Sun Zn at 0900 LMT: 129.0°",
+    "Sun Zn at 0940 LMT: 136.3°"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You swing the compass in the Indian Ocean with the morning Sun. What is the deviation on 090°C?",
+  "a": "4°W",
+  "o": [
+   "4°E",
+   "6°W",
+   "2°W"
+  ],
+  "why": "On 090°C: error = 066° − 071° = 5°W; deviation = 5°W − 1°W = 4°W. Use each time's own Zn, not the 0800 one.",
+  "ref": "Compass — swinging at sea",
+  "fig": {
+   "type": "card",
+   "title": "Swing, 20 Aug, 12°S 96°E, var. 1°W",
+   "lines": [
+    "0800 head 000°C: Sun 067°C, Zn 068°",
+    "0810 head 090°C: Sun 071°C, Zn 066°",
+    "0820 head 180°C: Sun 067°C, Zn 065°",
+    "0830 head 270°C: Sun 062°C, Zn 064°"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Your new deviation card has the four cardinal headings. What deviation do you apply steering 045°C?",
+  "a": "About 2°W",
+  "o": [
+   "About 2°E",
+   "About 4°W",
+   "About 7°W"
+  ],
+  "why": "Deviation runs smoothly between headings: halfway from 000°C (2°E) to 090°C (5°W) it is (+2° − 5°) ÷ 2, about 1½–2°W.",
+  "ref": "Compass — swinging at sea",
+  "fig": {
+   "type": "card",
+   "title": "Deviation card",
+   "lines": [
+    "Head 000°C: 2°E",
+    "Head 090°C: 5°W",
+    "Head 180°C: 2°W",
+    "Head 270°C: 5°E"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Your swing at sea shows large deviation on east and west headings. A crew member offers to adjust the corrector magnets now. What do you do?",
+  "a": "Steer by the card; leave the magnets to an adjuster",
+  "o": [
+   "Turn the correctors until the Sun's bearing agrees",
+   "Move the compass to where the error is smallest",
+   "Take the correctors out and start again from zero"
+  ],
+  "why": "Adjusting at sea without a full swing can make it worse: steer by the card, keep checking, and have it adjusted in port.",
+  "ref": "Compass — swinging at sea",
+  "fig": {
+   "type": "card",
+   "title": "Deviation found at sea",
+   "lines": [
+    "Head 090°C: 7°W",
+    "Head 270°C: 6°E",
+    "North and south: under 1°",
+    "Next port: 1,300 M"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You check the compass twice on the same heading and get these results. What explains them?",
+  "a": "Heeling error: heel shifts the boat's magnetism",
+  "o": [
+   "Variation changed with the boat's heel",
+   "The Sun's azimuth was worked wrongly once",
+   "The compass card sticks when she heels"
+  ],
+  "why": "Heel moves the keel, engine and rig relative to the compass: deviation changes with heel as well as heading — log it per tack.",
+  "ref": "Compass error, variation & deviation",
+  "fig": {
+   "type": "card",
+   "title": "Same heading, 240°C",
+   "lines": [
+    "Motoring upright: error 6°W (Sun)",
+    "Next day, heeled 20° to port: error 2°W",
+    "Variation unchanged, nothing moved"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "Beating to windward, you go about onto port tack. What true course do you plot?",
+  "a": "300°T",
+  "o": [
+   "307°T",
+   "312°T",
+   "320°T"
+  ],
+  "why": "Port-tack deviation 4°W and variation 6°W are both west, so subtract: 310°C − 4° − 6° = 300°T.",
+  "ref": "Compass — the deviation log",
+  "fig": {
+   "type": "card",
+   "title": "Deviation log, close-hauled",
+   "lines": [
+    "Starboard tack, heeled to port: 3°E",
+    "Port tack, heeled to starboard: 4°W",
+    "Variation 6°W",
+    "Now steering 310°C on port tack"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "On the night watch the compass error on the same heading has jumped by 10°. What do you check first?",
+  "a": "What has been stowed near the compass",
+  "o": [
+   "Whether the variation has changed",
+   "Whether the Sun's tables are right",
+   "Whether the compass fluid has leaked"
+  ],
+  "why": "Steel, magnets or electronics moved near the compass change its deviation at once: move them away, then check again.",
+  "ref": "Compass — the deviation log",
+  "fig": {
+   "type": "card",
+   "title": "Compass check, 0400",
+   "lines": [
+    "Yesterday: error 3°W on 250°C",
+    "Tonight: error 13°W on 250°C",
+    "Crew restowed the cockpit lockers at dusk"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Six days out of Cape Town you notice you still apply the departure variation. What true course have you been steering?",
+  "a": "296°T",
+  "o": [
+   "290°T",
+   "284°T",
+   "334°T"
+  ],
+  "why": "True = compass − westerly variation: 315° − 19°W = 296°T, not the 290°T you planned — 6° to the right of your track.",
+  "ref": "Magnetic variation on the ocean",
+  "fig": {
+   "type": "card",
+   "title": "Cape Town to St Helena, day 6",
+   "lines": [
+    "Steering 315°C, deviation nil",
+    "Applied: departure variation 25°W",
+    "Pilot chart at DR: variation 19°W"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "A crew member suggests checking the compass against the GPS course over ground instead of the Sun. When is that good enough?",
+  "a": "Only with no current and no leeway",
+  "o": [
+   "Always: COG is the boat's true heading",
+   "Always, if the GPS shows a good HDOP",
+   "Never: GPS COG is a magnetic value"
+  ],
+  "why": "COG is the track over the ground: current and leeway set it off the heading, so the difference is not the compass error.",
+  "ref": "Compass error, variation & deviation",
+  "fig": {
+   "type": "card",
+   "title": "Mid-Atlantic, day 9",
+   "lines": [
+    "COG 262°T, heading 258°C",
+    "Trade wind F5, 1 kn of current likely",
+    "Leeway on a broad reach: unknown"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Your new satellite compass gives true heading from two GNSS antennas. What is its weak point on an ocean passage?",
+  "a": "It loses its heading when GNSS is lost or jammed",
+  "o": [
+   "It needs swinging for deviation like a compass",
+   "It shows only magnetic heading, never true",
+   "It drifts and must be reset each day at noon"
+  ],
+  "why": "A GNSS compass needs satellite signals: jamming or an antenna fault kills its heading, so keep the magnetic compass checked.",
+  "ref": "Fluxgate & steering compass",
+  "fig": {
+   "type": "card",
+   "title": "Satellite compass",
+   "lines": [
+    "Two GNSS antennas 0.5 m apart",
+    "True heading: no deviation, no variation",
+    "Feeds the autopilot and the radar overlay"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "After a wave fills the cockpit, the EPIRB in its bracket starts flashing. What does that mean?",
+  "a": "It has activated and is sending a distress alert",
+  "o": [
+   "It is running a self-test after getting wet",
+   "Its battery is low and needs replacing",
+   "It is only showing that its GPS has a fix"
+  ],
+  "why": "A water-activated EPIRB switches on when it gets wet in its bracket: the strobe means a 406 MHz distress alert is going out.",
+  "ref": "EPIRB & Cospas-Sarsat",
+  "fig": {
+   "type": "card",
+   "title": "EPIRB in the cockpit bracket",
+   "lines": [
+    "Water-activated, 406 MHz with GPS",
+    "Strobe flashing since the wave",
+    "Nobody touched the switch"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Your EPIRB has gone off by accident, 900 miles from land. What do you do?",
+  "a": "Call an MRCC at once and report the false alert",
+  "o": [
+   "Switch it off quietly: no harm has been done",
+   "Leave it on until a ship comes to check",
+   "Take out its battery and note it in the log"
+  ],
+  "why": "A false alert launches a search: switch the beacon off and call an MRCC at once by satphone with its ID, your position and time.",
+  "ref": "EPIRB & Cospas-Sarsat",
+  "fig": {
+   "type": "card",
+   "title": "False alert, day 12",
+   "lines": [
+    "EPIRB set off by a wave 20 min ago",
+    "No emergency on board",
+    "Iridium phone working"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You call the MRCC to cancel your false EPIRB alert. What do they need from you?",
+  "a": "The beacon's hex ID, boat's name, position and time",
+  "o": [
+   "Only the boat's name and her home port",
+   "The EPIRB's make and battery expiry date",
+   "Your MMSI and the VHF channel you keep"
+  ],
+  "why": "The hex ID matches the alert to your beacon; with the time, position and 'all well', the MRCC can stand the search down.",
+  "ref": "EPIRB & Cospas-Sarsat",
+  "fig": {
+   "type": "card",
+   "title": "Cancelling a false alert",
+   "lines": [
+    "MRCC on the satellite phone",
+    "EPIRB label: 15-character hex ID",
+    "Boat at 24°N 38°W, all well"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "Adrift after abandoning ship, you watch the EPIRB. This blue light comes on. What does it tell you?",
+  "a": "The system has received your alert and position",
+  "o": [
+   "A rescue unit is now on its way to you",
+   "The battery is half used and failing",
+   "The beacon has just found a GPS fix"
+  ],
+  "why": "Galileo's Return Link Service only confirms that Cospas-Sarsat has your alert and position; it does not mean help is close.",
+  "ref": "EPIRB & Cospas-Sarsat",
+  "fig": {
+   "type": "card",
+   "title": "EPIRB with Return Link Service",
+   "lines": [
+    "Activated 25 minutes ago",
+    "Blue light now on",
+    "Label beside the light: \"RLS\""
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "In the liferaft, an aircraft flies over and rocks its wings. A crew member wants to switch off the EPIRB to save its battery. What do you do?",
+  "a": "Leave it on until you are picked up",
+  "o": [
+   "Switch it off now that they have found you",
+   "Switch it off and on again every hour",
+   "Switch it off until night falls"
+  ],
+  "why": "The ship sent to you homes on 121.5 MHz and the 406 MHz position: leave the EPIRB on until you are aboard.",
+  "ref": "EPIRB & Cospas-Sarsat",
+  "fig": {
+   "type": "card",
+   "title": "Liferaft, day 2",
+   "lines": [
+    "EPIRB transmitting for 30 hours",
+    "Search aircraft overhead, rocking wings",
+    "No ship in sight yet"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "At night you have one radar target and one AIS target ahead. What do you navigate by?",
+  "a": "Radar and your eyes: her AIS position is wrong",
+  "o": [
+   "Her AIS: it is more accurate than radar",
+   "The mean of the radar and AIS positions",
+   "Her AIS: the radar target is sea clutter"
+  ],
+  "why": "AIS shows where the ship's own GPS puts her; when it disagrees with radar and eyes, the AIS may be wrong (Rule 7: no scanty data).",
+  "ref": "AIS — position errors",
+  "fig": {
+   "type": "card",
+   "title": "Night, 0230, 40 M off Cape Verde",
+   "lines": [
+    "Radar: one target, 4.2 M, bearing 045°",
+    "AIS: 'Ocean Star', 5.8 M, bearing 052°",
+    "No other target on radar or AIS",
+    "Masthead lights seen at about 045°"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "A ship's compass bearing has been steady for 12 minutes, but her AIS shows a comfortable CPA. What do you do?",
+  "a": "Treat it as a risk of collision and act early",
+  "o": [
+   "Stand on: the AIS says she passes 1.8 M off",
+   "Wait for the AIS CPA to update, then decide",
+   "Call her to correct her AIS, then stand on"
+  ],
+  "why": "A steady compass bearing means risk of collision (Rule 7); AIS CPA rests on GPS and heading data that may be wrong. Act in ample time.",
+  "ref": "AIS — position errors",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 85,
+    "hdg": 280
+   },
+   "bearingLine": true,
+   "note": "Bearing 040° steady 12 min · AIS CPA 1.8 M"
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "A ship calls you on VHF about your AIS. What do you do?",
+  "a": "Give her your position, then check the AIS's GPS",
+  "o": [
+   "Switch the AIS off for the rest of the passage",
+   "Ignore it: ships see you on radar anyway",
+   "Re-enter your MMSI so the error clears"
+  ],
+  "why": "Your AIS sends its own GPS's position: tell the ship where you are, then check the AIS GPS antenna and its status page.",
+  "ref": "AIS — position errors",
+  "fig": {
+   "type": "card",
+   "title": "VHF call, mid-Atlantic",
+   "lines": [
+    "Ship: 'Your AIS puts you on Barbados'",
+    "Your plotter: 280 M east of Barbados",
+    "The AIS transponder has its own GPS"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You plan to cross ahead of this container ship using her AIS. Where is her bow relative to the AIS position?",
+  "a": "About 260 m ahead of it",
+  "o": [
+   "At the AIS position itself",
+   "About 70 m ahead of it",
+   "About 165 m ahead of it"
+  ],
+  "why": "AIS reports the position of the ship's GPS antenna; A is the distance from it to the bow, so her bow is 260 m ahead of the dot.",
+  "ref": "AIS — position errors",
+  "fig": {
+   "type": "card",
+   "title": "AIS target: container ship, 330 m",
+   "lines": [
+    "Static data: A 260, B 70, C 20, D 28 (m)",
+    "Plotter draws a dot at her AIS position",
+    "Night, she is end-on to you"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You compare the noon-to-noon runs. What do they tell you?",
+  "a": "A current of about ¾ kn setting with you",
+  "o": [
+   "A current of about ¾ kn setting against you",
+   "A current of about 1½ kn setting with you",
+   "A GPS error of about 18 M in the fix"
+  ],
+  "why": "158 M over the ground − 140 M through the water = 18 M in 24 h: a favourable current of 0.75 kn.",
+  "ref": "Satellite navigation — single-source risk",
+  "fig": {
+   "type": "card",
+   "title": "Noon to noon, day 7",
+   "lines": [
+    "GPS: 158 M made good on 265°T",
+    "Log: 140 M through the water",
+    "Log checked against GPS in slack water"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "Today's noon latitude is 14 miles from the GPS, after a week of agreement within 2 miles. What do you do first?",
+  "a": "Recheck the sight: the Dec, index error, arithmetic",
+  "o": [
+   "Navigate by the sextant: the GPS has failed",
+   "Average the two and plot 14°29′N",
+   "Reset the GPS and accept its next fix"
+  ],
+  "why": "A sudden 14′ gap after a week of agreement usually means a slip in the sight — wrong Dec, IE, a misread degree. Check before doubting GPS.",
+  "ref": "Celestial navigation as the backup",
+  "fig": {
+   "type": "card",
+   "title": "Noon, day 8, ARC route",
+   "lines": [
+    "Sextant latitude: 14°22′N",
+    "GPS at noon: 14°36′N, HDOP 1.0",
+    "Days 1–7: sight and GPS within 2 M"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "The main GPS and the handheld now disagree by 4 miles. How do you decide which to trust?",
+  "a": "Check both against your DR, and a sight if you can",
+  "o": [
+   "Trust the main set: it has the bigger antenna",
+   "Trust the handheld: it has its own antenna",
+   "Plot the mean of the two and carry on"
+  ],
+  "why": "Two sources that disagree cannot tell you which is wrong: a third — your DR from log and compass, or a sun line — decides.",
+  "ref": "Satellite navigation — single-source risk",
+  "fig": {
+   "type": "card",
+   "title": "Position check, 1400",
+   "lines": [
+    "Main GPS: 16°02′N 48°31′W",
+    "Handheld GPS: 15°58′N 48°31′W",
+    "Both report a good fix"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "The GPS loses its fix every time you send email over the satellite terminal. What is the likely cause?",
+  "a": "The satcom antenna transmits too close to the GPS one",
+  "o": [
+   "The satellites are below the horizon at those times",
+   "The email software resets the GPS receiver",
+   "The batteries sag under the satcom's load"
+  ],
+  "why": "Iridium and Inmarsat transmit just above the GPS L1 band: mount the GPS antenna well away from the satcom one, not level with it.",
+  "ref": "Satellite navigation — single-source risk",
+  "fig": {
+   "type": "card",
+   "title": "Watch log, day 5",
+   "lines": [
+    "GPS fix lost: 0602, 1205, 1810",
+    "Satellite email sent: 0601, 1204, 1809",
+    "Both antennas on the same pushpit rail"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You suspect jamming. A crew member wants to set the receiver to Galileo only. Will it help?",
+  "a": "Little: all the systems share the same L-band",
+  "o": [
+   "Yes: Galileo signals cannot be jammed",
+   "Yes: Galileo uses a separate datum",
+   "Yes: one system needs fewer satellites"
+  ],
+  "why": "GPS, Galileo, GLONASS and BeiDou all send weak L-band signals near 1.2–1.6 GHz: a jammer blocks them all. Navigate by DR and radar.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "GNSS receiver, Red Sea",
+   "lines": [
+    "GPS, Galileo and GLONASS all lost",
+    "Signal strength low on every satellite",
+    "Radar and log working"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "The plotter's boat symbol is still moving, but the status reads 'No fix — DR'. What is the position shown?",
+  "a": "An estimate from the last fix, COG and SOG",
+  "o": [
+   "A GNSS fix from fewer satellites",
+   "A fix from the AIS transponder's GPS",
+   "A fix corrected by the SBAS signal"
+  ],
+  "why": "Without a fix the plotter dead-reckons on the last COG and SOG: note the time of the last real fix and start your own DR from it.",
+  "ref": "Satellite navigation — single-source risk",
+  "fig": {
+   "type": "card",
+   "title": "Plotter at 0315",
+   "lines": [
+    "Status: 'No fix — DR'",
+    "Boat symbol moving: 6.8 kn, 255°",
+    "Last fix: 0240"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "You receive this warning on the way to Antigua. What do you plan for the next day?",
+  "a": "A fix before it, then DR and sights; expect HF gaps",
+  "o": [
+   "Nothing: space weather affects only aircraft",
+   "Switch every receiver off until it passes",
+   "Rely on HF weatherfax instead of satellites"
+  ],
+  "why": "A geomagnetic storm upsets the ionosphere: GNSS fixes may jump or drop out and HF fades. Keep DR going and the sextant ready.",
+  "ref": "Satellite navigation — GNSS",
+  "fig": {
+   "type": "card",
+   "title": "Space weather warning",
+   "lines": [
+    "Severe geomagnetic storm, next 24 h",
+    "GNSS errors and outages possible",
+    "HF radio blackouts possible"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "Your Iridium terminal shows no signal tonight. What do you check first?",
+  "a": "That the antenna has a clear view of the sky",
+  "o": [
+   "That the antenna points towards the equator",
+   "That the next satellite pass is due at noon",
+   "That the SIM card has not expired"
+  ],
+  "why": "Iridium satellites cross the whole sky in low orbits: the antenna needs a clear view overhead. Pointing at the equator is for Inmarsat.",
+  "ref": "Satellite communications at sea",
+  "fig": {
+   "type": "card",
+   "title": "Iridium terminal, day 3",
+   "lines": [
+    "No signal since 1900",
+    "Antenna moved under the hard top",
+    "Worked well on deck yesterday"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "The Inmarsat terminal drops out on one heading only. What is the likely cause?",
+  "a": "The mast and sails block its view of the satellite",
+  "o": [
+   "The satellite sets below the horizon at sea",
+   "The heel tilts the dome beyond its range",
+   "The radar beam jams it on that heading"
+  ],
+  "why": "An Inmarsat satellite sits over the equator: with it dead ahead, the mast and mainsail stand between the stern dome and the satellite.",
+  "ref": "Satellite communications at sea",
+  "fig": {
+   "type": "card",
+   "title": "Inmarsat dome on the stern arch",
+   "lines": [
+    "Satellite: bearing 160°, elevation 22°",
+    "Drops out when heading about 160°",
+    "Works on every other heading"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 2,
+  "q": "The satellite phone has died mid-Atlantic. How do you still get the forecast?",
+  "a": "High-seas bulletins and weatherfax on the SSB",
+  "o": [
+   "NAVTEX, which reaches into mid-ocean",
+   "VHF forecasts from the nearest coast station",
+   "GRIB files over the GPS receiver"
+  ],
+  "why": "Mid-ocean only HF reaches you without a satellite: high-seas forecasts and weatherfax charts on the SSB receiver. NAVTEX reaches ~300 M.",
+  "ref": "Satellite communications at sea",
+  "fig": {
+   "type": "card",
+   "title": "Day 11, 1,400 M to go",
+   "lines": [
+    "Satphone dead, no spare",
+    "SSB receiver with weatherfax software",
+    "VHF and NAVTEX working"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 3,
+  "q": "Your satcom has failed and your shore contact expects a daily email. What do you do?",
+  "a": "Ask the ship on VHF to email your shore contact",
+  "o": [
+   "Set off the EPIRB briefly so they see you are well",
+   "Send a DSC distress alert, then cancel it",
+   "Nothing: they will call the MRCC on day 7 anyway"
+  ],
+  "why": "Any ship can relay a routine message; never use an EPIRB or a distress alert for it. Your float plan should say a missed email is no distress.",
+  "ref": "Satellite communications at sea",
+  "fig": {
+   "type": "card",
+   "title": "Day 6 of 20, mid-Atlantic",
+   "lines": [
+    "Satcom dead since yesterday",
+    "Float plan: daily email by 1800 UT",
+    "A ship passing 3 M off"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "Just south of the equator you get ready for a sunrise amplitude. Where do you expect the Sun to rise?",
+  "a": "About 105° — 15° south of east",
+  "o": [
+   "About 075° — 15° north of east",
+   "About 090° — due east on the equator",
+   "About 107° — Dec plus your latitude"
+  ],
+  "why": "Near the equator cos Lat ≈ 1, so the amplitude ≈ the Dec: the Sun rises about E15°S, 105°T.",
+  "ref": "Compass check — amplitude",
+  "fig": {
+   "type": "card",
+   "title": "Sunrise, 3 November",
+   "lines": [
+    "DR 2°S 28°W, bound for Salvador",
+    "Almanac: Dec S15°05′",
+    "Clear eastern horizon"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "The pilot chart shows no variation at your position. What does today's Sun check give you?",
+  "a": "The deviation on 190°C: 3°E",
+  "o": [
+   "The variation here: 3°E",
+   "The deviation on 190°C: 3°W",
+   "Nothing until you know the variation"
+  ],
+  "why": "Error = variation + deviation; with variation 0° the whole 3°E error is deviation on this heading.",
+  "ref": "Compass error, variation & deviation",
+  "fig": {
+   "type": "card",
+   "title": "Compass check on the agonic line",
+   "lines": [
+    "Pilot chart: variation 0°",
+    "Sun's azimuth: error 3°E",
+    "Ship's head 190°C"
+   ]
+  }
+ },
+ {
+  "topic": "compass",
+  "difficulty": 1,
+  "q": "Your watches have stopped and you know UT only to about 20 minutes. Which compass check can you still make?",
+  "a": "The Sun's amplitude at sunrise or sunset",
+  "o": [
+   "The Sun's azimuth in mid-morning",
+   "A star's azimuth at evening twilight",
+   "A planet's azimuth in the night"
+  ],
+  "why": "The amplitude needs only the Dec, which changes slowly; an azimuth needs the hour angle, and so the exact time.",
+  "ref": "Celestial navigation as the backup",
+  "fig": {
+   "type": "card",
+   "title": "No reliable time",
+   "lines": [
+    "Deck watch and GPS both dead",
+    "UT known only to about ±20 min",
+    "Almanac aboard, sky clear"
+   ]
+  }
+ }
+]

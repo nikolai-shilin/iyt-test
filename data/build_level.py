@@ -91,6 +91,23 @@ LEVELS = {
             ('safety', 'Safety at sea & emergencies', 'Безопасность на море и аварийные ситуации', 'Безопасность', 'lifebuoy'),
             ('seamanship', 'Ropework, anchoring, boat handling & docking', 'Работа с тросами, якорная стоянка, управление и швартовка', 'Морская практика', 'cleat'),
         ]),
+    # IYT Yachtmaster Ocean (iytworld.com/courses/yachtmaster-ocean): celestial navigation, great circles, ocean weather and
+    # passage planning — the course outline's 16 headings as ten topics of 100. Requires Yachtmaster Offshore; any ocean, up to
+    # 24 m. IYT does not publish the exam's size, time or pass mark.
+    'yachtmaster-ocean': dict(
+        prefix='yo', name='Yachtmaster Ocean', per=100, passMark=70, examQuestions=50, examMinutes=120, version='2026-11-04',
+        topics=[
+            ('sphere', 'The Earth, the celestial sphere & the PZX triangle', 'Земля, небесная сфера и параллактический треугольник', 'Небесная сфера', 'globe'),
+            ('sextant', 'The sextant & altitude corrections', 'Секстан и поправки высот', 'Секстан', 'sextant'),
+            ('time', 'Measurement of time', 'Измерение времени', 'Время', 'timer'),
+            ('meridian', 'Meridian altitudes & the pole star', 'Высота в меридиане и Полярная звезда', 'Меридиан', 'meridian'),
+            ('sun', 'Sun sights', 'Наблюдения Солнца', 'Солнце', 'sun'),
+            ('stars', 'Planets, moon & stars', 'Планеты, Луна и звёзды', 'Звёзды', 'star'),
+            ('compass', 'Compass checking & satellite navigation', 'Проверка компаса и спутниковая навигация', 'Компас и GNSS', 'compass'),
+            ('greatcircle', 'Great circle sailing', 'Плавание по дуге большого круга', 'Ортодромия', 'map'),
+            ('weather', 'Ocean meteorology', 'Метеорология океана', 'Погода', 'wind'),
+            ('passage', 'Ocean passage planning', 'Планирование океанского перехода', 'Переход', 'route'),
+        ]),
     # Not an IYT course: the Racing Rules of Sailing (World Sailing, 2025–2028), as situations on the race course.
     'racing-rules': dict(
         prefix='rr', name='Racing Rules of Sailing', title='Racing Rules of Sailing', note=RRS_NOTE, per=100,

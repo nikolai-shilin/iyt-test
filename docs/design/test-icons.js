@@ -78,6 +78,11 @@ const TEST_ICONS = {
   tide: '<path d="M3 17c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/><path d="M3 21c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/><path d="M12 13V3M8.5 6.5 12 3l3.5 3.5"/>',
   route: '<circle cx="5" cy="19" r="2"/><circle cx="19" cy="5" r="2"/><path d="M7 19h6a3 3 0 0 0 0-6h-2a3 3 0 0 1 0-6h6"/>',
 
+  /* ---- Yachtmaster Ocean: the sextant, the meridian, the stars ---- */
+  sextant: '<path d="M5 4h14"/><path d="M12 4 5.5 18M12 4l6.5 14"/><path d="M4 17.5c5 3 11 3 16 0"/><path d="M12 4v6"/><circle cx="12" cy="12" r="1.5"/>',
+  meridian: '<path d="M3 19h18"/><path d="M5 19a7 7 0 0 1 14 0"/><path d="M12 19V6"/><circle cx="12" cy="4.5" r="2"/>',
+  star: '<path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/>',
+
   /* ---- the charter check-in: electrics, water and gas, the inventory ---- */
   battery: '<rect x="2" y="7" width="17" height="10" rx="2"/><path d="M19 10h1.5a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H19"/><path d="M6 10v4M9.5 10v4M13 10v4"/>',
   drop: '<path d="M12 2.5c3.5 4.5 7 8 7 12a7 7 0 0 1-14 0c0-4 3.5-7.5 7-12z"/><path d="M8.5 14.5a3.5 3.5 0 0 0 3 3.5"/>',
@@ -102,6 +107,7 @@ const TEST_ICON_GROUPS = [
   ['Radio', ['vhf', 'radio', 'mic', 'flag-alpha', 'mmsi', 'megaphone', 'beacon', 'licence']],
   ['Charter check-in', ['battery', 'drop', 'clipboard']],
   ['Yachtmaster Coastal', ['tide', 'route']],
+  ['Yachtmaster Ocean', ['sextant', 'meridian', 'star']],
 ];
 
 const appIcon = (n, s = 24) => rycIcon(n, s);

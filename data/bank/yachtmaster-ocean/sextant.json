@@ -1,0 +1,2222 @@
+[
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You are showing a new crew member the sextant before her first sun sight on the ARC. What moves when she turns the micrometer drum?",
+  "a": "The index arm, with the index mirror on it",
+  "o": [
+   "The horizon mirror on the frame",
+   "The telescope in its collar",
+   "The shade glasses in front of the mirrors"
+  ],
+  "why": "The drum drives the index arm along the arc and the index mirror turns with it; the horizon mirror and telescope are fixed to the frame.",
+  "ref": "Sextant — parts",
+  "fig": null
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You read your micrometer sextant after a sun sight. What is Hs?",
+  "a": "41°58.6′",
+  "o": [
+   "42°58.6′",
+   "41°01.4′",
+   "42°01.4′"
+  ],
+  "why": "Degrees from the arc (the last whole degree passed, 41°), minutes from the drum (58′), tenths from the vernier (0.6′).",
+  "ref": "Sextant — reading the micrometer",
+  "fig": {
+   "type": "card",
+   "title": "Your sextant after the sight",
+   "lines": [
+    "Index mark on the arc: just past 41°",
+    "Micrometer drum: 58",
+    "Drum vernier: line 6 coincides"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You are about to bring the Sun down to the horizon. What do you swing in first?",
+  "a": "Index shades, enough to dim the Sun's image",
+  "o": [
+   "Horizon shades only — the Sun is seen direct",
+   "No shades — the telescope cuts the glare",
+   "One light horizon shade, no index shade"
+  ],
+  "why": "The Sun's image comes via the index mirror: dim it with index shades before you look. Horizon shades only cut the glare on the sea.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, late morning",
+   "lines": [
+    "Clear sky, the Sun very bright",
+    "Sea glittering under the Sun",
+    "Sextant set near 0°, all shades up"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "The sea is lumpy and you take the sextant out of its box for the noon sight. How do you lift it?",
+  "a": "By the handle or frame — never the arc or arm",
+  "o": [
+   "By the arc — the strongest part of the frame",
+   "By the index arm, with the clamp released",
+   "By the telescope — it is bolted to the frame"
+  ],
+  "why": "Lifting by the arc or the index arm can bend it and add an error; hold the frame or handle, and put it straight back in the box.",
+  "ref": "Sextant — care",
+  "fig": null
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You are working up a sun sight. Which altitude do you enter the main correction table with?",
+  "a": "Ha — Hs after index error and dip",
+  "o": [
+   "Hs — the reading straight off the arc",
+   "Ho — the altitude after every correction",
+   "Hc — the altitude from the sight reduction"
+  ],
+  "why": "Hs ± IE − dip = Ha (apparent altitude); refraction and SD depend on Ha, so the main table is entered with Ha to give Ho.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun LL — working",
+   "lines": [
+    "Hs 46°18.2′",
+    "Index error 1.0′ on the arc",
+    "Height of eye 2.6 m",
+    "Main correction: enter the table with ?"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You bought a second-hand sextant for a Pacific crossing and want to adjust it. In what order do you remove the errors?",
+  "a": "Perpendicularity, side error, then index error",
+  "o": [
+   "Index error, side error, then perpendicularity",
+   "Side error, perpendicularity, then index error",
+   "Index error, perpendicularity, then side error"
+  ],
+  "why": "Each adjustment can upset the next: the index mirror first (perpendicularity), then the horizon mirror for side error, then index error.",
+  "ref": "Sextant — adjustments",
+  "fig": null
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "Your crew asks why you swing the sextant from side to side as the Sun touches the horizon. What are you doing?",
+  "a": "Finding the bottom of the arc — the sextant upright",
+  "o": [
+   "Shaking water drops off the horizon mirror",
+   "Averaging out the boat's roll",
+   "Checking the sextant for side error"
+  ],
+  "why": "Rocking swings the Sun in an arc; at its lowest point the sextant is vertical. Set the lower limb to kiss the horizon there.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight from the deck",
+   "lines": [
+    "Sun's lower limb near the horizon",
+    "You swing the sextant gently left and right",
+    "The Sun's image swings in an arc"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You are alone on watch and want the time of your sight to the second. How do you get it?",
+  "a": "Start a stopwatch at the sight, then read the watch",
+  "o": [
+   "Read the watch after you have read the sextant",
+   "Note the time as you go on deck to take it",
+   "Read the watch first, then take the sight"
+  ],
+  "why": "Start the stopwatch at the instant of the sight; at the chart table read the watch and subtract the stopwatch's run.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Single-handed sight",
+   "lines": [
+    "GPS-checked watch at the chart table",
+    "Stopwatch round your neck",
+    "No one on deck to call 'mark'"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You take the sight on the Sun's upper limb. How does the semi-diameter go into the correction?",
+  "a": "Subtracted — the centre is below the upper limb",
+  "o": [
+   "Added, as for every sun sight",
+   "Ignored — it is part of the dip",
+   "Added twice — for the whole diameter"
+  ],
+  "why": "The tables give the altitude of the Sun's centre: add SD to a lower-limb sight, subtract it from an upper-limb sight.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon sun sight",
+   "lines": [
+    "Low cloud hides the Sun's lower half",
+    "Upper limb sharp above the cloud",
+    "You bring the upper limb to the horizon"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You take a sight with the plastic backup sextant. What do you do about its index error?",
+  "a": "Measure it again now, just before the sight",
+  "o": [
+   "Use the 2.0′ off the arc from breakfast",
+   "Ignore it — plastic sextants have none",
+   "Use the metal sextant's index error"
+  ],
+  "why": "A plastic frame bends with temperature, so its index error changes within hours: check it at every sight.",
+  "ref": "Sextant — index error",
+  "fig": {
+   "type": "card",
+   "title": "Backup sextant",
+   "lines": [
+    "Plastic sextant from the grab bag",
+    "Left in the sun in the cockpit for an hour",
+    "IE was 2.0′ off the arc at breakfast"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You take your sights standing at the shrouds of a 15 m ketch. What dip do you apply?",
+  "a": "3.1′",
+  "o": [
+   "5.6′",
+   "1.8′",
+   "6.3′"
+  ],
+  "why": "Dip = 1.76 × √3.2 = 1.76 × 1.79 = 3.1′, always subtracted from Hs.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Height of eye",
+   "lines": [
+    "Eye 3.2 m above the sea",
+    "Dip (′) = 1.76 √h, h in metres"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You check the index error on the horizon before the morning sights. What is it, and how do you apply it?",
+  "a": "3.0′ off the arc: add it",
+  "o": [
+   "3.0′ on the arc: subtract it",
+   "57.0′ off the arc: add it",
+   "3.0′ off the arc: subtract it"
+  ],
+  "why": "Below zero the drum reads 60′ minus the error: 60 − 57.0 = 3.0′ off the arc, and off the arc is added to Hs.",
+  "ref": "Sextant — index error",
+  "fig": {
+   "type": "card",
+   "title": "Index error on the horizon",
+   "lines": [
+    "Clear horizon, sextant set near 0°",
+    "Direct and reflected horizon in one line",
+    "Index just below 0°, drum reads 57.0′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "At twilight you check the index error on a bright star. What correction do you apply to tonight's sights?",
+  "a": "Subtract 2.4′",
+  "o": [
+   "Add 2.4′",
+   "Subtract 1.2′",
+   "Add 4.8′"
+  ],
+  "why": "A reading on the arc for a zero angle means the sextant reads too high: subtract 2.4′ from every Hs.",
+  "ref": "Sextant — index error",
+  "fig": {
+   "type": "card",
+   "title": "Index error on a star",
+   "lines": [
+    "Telescope on Sirius, in focus",
+    "Reflected and direct star made one",
+    "Reading: 0°02.4′ on the arc"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You read the sextant after a sight of Arcturus. What is the altitude after the index error?",
+  "a": "52°16.0′",
+  "o": [
+   "52°13.2′",
+   "52°15.4′",
+   "52°14.6′"
+  ],
+  "why": "The reading is 52°14.6′; off the arc is added: 52°14.6′ + 1.4′ = 52°16.0′.",
+  "ref": "Sextant — reading the micrometer",
+  "fig": {
+   "type": "card",
+   "title": "Star sight reading",
+   "lines": [
+    "Arc: 52°",
+    "Drum: 14′, vernier: 0.6′",
+    "Index error 1.4′ off the arc"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You are 1300 miles from St Lucia on the ARC and take this sight of the Sun. What is Ho?",
+  "a": "34°21.8′",
+  "o": [
+   "34°27.6′",
+   "34°25.8′",
+   "33°49.4′"
+  ],
+  "why": "Hs 34°12.0′ − 2.0′ IE on − 2.9′ dip + 14.7′ = Ho 34°21.8′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun LL, 20 November",
+   "lines": [
+    "Hs 34°12.0′",
+    "IE 2.0′ on the arc · eye 2.7 m (dip 2.9′)",
+    "Almanac main correction (LL): +14.7′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Bound from Bermuda to the Azores, you catch the Sun's upper limb between clouds. What is Ho?",
+  "a": "52°21.6′",
+  "o": [
+   "52°53.2′",
+   "52°19.2′",
+   "52°27.6′"
+  ],
+  "why": "52°40.0′ + 1.2′ IE off − 3.0′ dip − 16.6′ (upper limb) = Ho 52°21.6′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun UL, 15 June",
+   "lines": [
+    "Hs 52°40.0′, upper limb",
+    "IE 1.2′ off the arc · dip 3.0′",
+    "Main corr.: LL +15.0′, UL −16.6′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "In mid-Atlantic you take Vega at nautical twilight. What is Ho?",
+  "a": "41°14.7′",
+  "o": [
+   "41°30.7′",
+   "41°17.9′",
+   "41°19.9′"
+  ],
+  "why": "41°20.0′ − 1.6′ IE − 2.6′ dip − 1.1′ refraction = Ho 41°14.7′; a star has no semi-diameter.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Vega at dusk",
+   "lines": [
+    "Hs 41°20.0′",
+    "IE 1.6′ on the arc · dip 2.6′",
+    "Star table: refraction −1.1′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You add Jupiter to your evening star fix. Which corrections take its Hs to Ho?",
+  "a": "IE, dip and refraction — as for a star",
+  "o": [
+   "IE, dip, refraction and the Sun's SD",
+   "IE, dip, refraction and the Moon's parallax",
+   "Dip and refraction — IE is for the Sun only"
+  ],
+  "why": "Jupiter is a point of light like a star: index error, dip and star refraction. Only Venus and Mars get a small additional correction.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Dusk sights",
+   "lines": [
+    "Jupiter bright in the east, Ha 33°",
+    "Almanac: no additional correction for Jupiter",
+    "IE 0.5′ off the arc · dip 2.8′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You take the Moon in the afternoon to cross with a sun line. What is the parallax correction?",
+  "a": "Add 49.4′",
+  "o": [
+   "Add 28.5′",
+   "Add 57.0′",
+   "Subtract 49.4′"
+  ],
+  "why": "HP × cos Ha = 57.0′ × 0.866 = 49.4′, always added: seen from the Earth's centre the Moon stands higher.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Moon sight",
+   "lines": [
+    "Ha 30°00′",
+    "Almanac: HP 57.0′",
+    "Parallax in altitude = HP × cos Ha"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You want a Moon sight just after sunset. Which limb do you bring to the horizon?",
+  "a": "The lower limb — it is the lit edge",
+  "o": [
+   "The upper limb — the tips of the crescent",
+   "The centre, judged by eye",
+   "Either — the semi-diameter is the same"
+  ],
+  "why": "Only the lit, round limb is a true edge of the Moon's disc; here it faces down, so take the lower limb and add SD.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Evening, west sky",
+   "lines": [
+    "Thin crescent Moon above the sunset",
+    "Lit edge facing down, towards the Sun",
+    "Horizon sharp under the Moon"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You take the Sun soon after sunrise because cloud is coming in. What is Ho?",
+  "a": "7°46.4′",
+  "o": [
+   "7°30.3′",
+   "7°51.8′",
+   "7°52.0′"
+  ],
+  "why": "7°40.0′ − 2.8′ = Ha 7°37.2′; + 9.2′ (SD 16.1′ − refraction 6.9′) = Ho 7°46.4′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun LL, 20 March, early",
+   "lines": [
+    "Hs 7°40.0′ · IE 0 · dip 2.8′",
+    "Almanac main correction here: +9.2′",
+    "(refraction 6.9′, SD 16.1′)"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Off the west coast of Barbados at 0800 you want a sun line, but the Sun is over the island. What do you do with the shoreline under it?",
+  "a": "Don't use it — its dip is not the table's",
+  "o": [
+   "Use it with the dip from the table",
+   "Use it and double the table's dip",
+   "Use it with no dip — land is level"
+  ],
+  "why": "The shoreline lies inside the sea horizon, so it dips more than the table gives; take a body over open sea instead.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight off Barbados",
+   "lines": [
+    "Sun bearing 095°, over the island",
+    "Coast 1.5 M away, under the Sun",
+    "Eye 2.5 m: sea horizon 3.3 M off"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "In a big Southern Ocean swell you bring the Sun down to the crest of a nearby wave. What does that do, and what do you do?",
+  "a": "Hs reads low — sight from the top of a swell",
+  "o": [
+   "Hs reads high — sight from the trough",
+   "No effect — the dip allows for it",
+   "Hs reads low — add the wave height to the dip"
+  ],
+  "why": "A crest above your eye stands higher than the true horizon, so Hs reads low; wait for the boat to lift and sight from the top.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Southern Ocean swell, 4 m",
+   "lines": [
+    "Eye 2.5 m above the water",
+    "In the troughs a crest hides the horizon",
+    "The boat lifts to each swell"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "On the ARC route the horizon under the Sun is blurred by dust. What gives you a better sight?",
+  "a": "Sight from lower down, with the dip for that height",
+  "o": [
+   "Sight from higher up — the horizon is further off",
+   "Keep the height and add 2′ for the haze",
+   "Use the top of the haze as the horizon"
+  ],
+  "why": "A lower eye brings the horizon nearer and sharper in haze; use the dip for the new height of eye.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Hazy horizon, 0700",
+   "lines": [
+    "Saharan dust in the trade wind",
+    "Horizon fuzzy from the coachroof (3.5 m)",
+    "Visibility about 4 M"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You take four quick sights of the rising Sun to average. Which time and Hs do you work up?",
+  "a": "09:42:20 UT, Hs 31°14.0′",
+  "o": [
+   "09:42:20 UT, Hs 31°11.0′",
+   "09:41:12 UT, Hs 31°14.0′",
+   "09:43:30 UT, Hs 31°14.0′"
+  ],
+  "why": "Mean of the times 09:42:20, mean of the altitudes 31°14.0′ — fine while the altitude changes steadily over a few minutes.",
+  "ref": "Sextant — averaging sights",
+  "fig": {
+   "type": "card",
+   "title": "Four sun sights",
+   "lines": [
+    "09:41:12 UT  Hs 31°05.2′",
+    "09:41:58 UT  Hs 31°11.0′",
+    "09:42:40 UT  Hs 31°16.6′",
+    "09:43:30 UT  Hs 31°23.2′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You plot five altitudes against time before averaging them. Which sight do you discard?",
+  "a": "No. 3",
+  "o": [
+   "No. 1",
+   "No. 4",
+   "No. 5"
+  ],
+  "why": "The Sun rises about 3′ every 30 s: No. 3 should be near 40°08.0′, not 40°11.9′ — a bad sight; average the other four.",
+  "ref": "Sextant — averaging sights",
+  "fig": {
+   "type": "card",
+   "title": "Five sun sights, 30 s apart",
+   "lines": [
+    "No. 1  40°02.0′    No. 2  40°05.1′",
+    "No. 3  40°11.9′    No. 4  40°10.9′",
+    "No. 5  40°14.1′",
+    "Sun rising steadily"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You need a morning sun line in this sea. Where and how do you take the sight?",
+  "a": "Wedged in the companionway, clipped on, on a crest",
+  "o": [
+   "Standing on the coachroof, holding the boom",
+   "Sitting low in the cockpit, in the troughs",
+   "At the stern, eye as high as the pushpit"
+  ],
+  "why": "Brace yourself near the middle of the boat, hands free and clipped on, and take the sight as she lifts on a swell and the horizon clears.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Trade-wind sight",
+   "lines": [
+    "Wind 25 kn, 3 m swell on the beam",
+    "Boat rolling 20° each way",
+    "Two crew on deck, one at the helm"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You check your sextant before the passage and see this. What is wrong, and what do you adjust?",
+  "a": "Perpendicularity — the index mirror's screw",
+  "o": [
+   "Side error — the horizon mirror's screw",
+   "Index error — the horizon mirror's second screw",
+   "Collimation — the telescope collar"
+  ],
+  "why": "If the arc and its reflection in the index mirror do not run on as one line, the index mirror is not perpendicular to the frame.",
+  "ref": "Sextant — adjustments",
+  "fig": {
+   "type": "card",
+   "title": "Checking the sextant",
+   "lines": [
+    "Sextant flat, arc away from you, arm at 60°",
+    "You look into the index mirror at the arc",
+    "The reflected arc steps up from the real arc"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You check the sextant on a star and see this. What does it show, and what do you adjust?",
+  "a": "Side error — the horizon mirror's side screw",
+  "o": [
+   "Index error — the index mirror's screw",
+   "Perpendicularity — the index mirror's screw",
+   "Collimation — the telescope collar"
+  ],
+  "why": "If the reflected star passes beside, not through, the direct one, the horizon mirror is not perpendicular to the frame: side error.",
+  "ref": "Sextant — adjustments",
+  "fig": {
+   "type": "card",
+   "title": "Checking on a star",
+   "lines": [
+    "Index set at 0°, telescope on a star",
+    "You turn the drum slowly",
+    "The reflected star passes beside the real one"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You check the telescope like this. What does the difference tell you?",
+  "a": "The telescope is not parallel to the frame",
+  "o": [
+   "The index mirror is not perpendicular",
+   "The horizon mirror has side error",
+   "The index error is 1.5′ on the arc"
+  ],
+  "why": "Collimation error: the line of sight is tilted to the frame, so large angles read too big. Adjust the collar, or keep bodies centred.",
+  "ref": "Sextant — adjustments",
+  "fig": {
+   "type": "card",
+   "title": "Collimation check",
+   "lines": [
+    "Two stars 100° apart brought into contact",
+    "Contact at the top, then at the bottom edge",
+    "The two readings differ by 1.5′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You find this in the workbook. How far out is each position line?",
+  "a": "6 miles",
+  "o": [
+   "3 miles",
+   "12 miles",
+   "1.5 miles"
+  ],
+  "why": "The right +3.0′ became −3.0′: a 6.0′ altitude error, and 1′ of altitude is 1 M, so each line is 6 M out (away from its star).",
+  "ref": "Sextant — index error",
+  "fig": {
+   "type": "card",
+   "title": "Last night's star fix",
+   "lines": [
+    "IE measured: 3.0′ off the arc",
+    "Crew subtracted it from every Hs",
+    "All other corrections right"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You check the crew's working of a sun sight. What does the mistake do to the sun line?",
+  "a": "6 M too far towards the Sun",
+  "o": [
+   "6 M too far away from the Sun",
+   "3 M too far towards the Sun",
+   "3 M too far away from the Sun"
+  ],
+  "why": "Dip is always subtracted; adding 3.0′ makes Ho 6.0′ too large, so the intercept is 6 M too far towards.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun line check",
+   "lines": [
+    "Eye 2.9 m, dip 3.0′",
+    "Crew added the dip to Hs",
+    "IE and main correction right"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "A crew member works up this star sight. How far out is the position line?",
+  "a": "16 M too far towards the star",
+  "o": [
+   "16 M too far away from the star",
+   "8 M too far towards the star",
+   "32 M too far towards the star"
+  ],
+  "why": "+14.5′ − (−1.7′) = 16.2′, the Sun's SD: Ho is 16.2′ too large, so the line lies about 16 M too far towards.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Star sight worked up",
+   "lines": [
+    "Altair, Ha 30°00′",
+    "Corrected with the Sun's LL table: +14.5′",
+    "Star table at that Ha: −1.7′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You time a sun sight with the stopwatch. What is the UT of your sight?",
+  "a": "14:23:19",
+  "o": [
+   "14:23:27",
+   "14:26:33",
+   "14:23:23"
+  ],
+  "why": "14:25:00 − 1 min 37.4 s = 14:23:22.6 by the watch; it is 4 s fast, so subtract: 14:23:18.6 ≈ 14:23:19 UT.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Timing the sight",
+   "lines": [
+    "Stopwatch started at the sight",
+    "Stopped as the watch showed 14:25:00",
+    "Stopwatch reads 1 min 37.4 s",
+    "Watch 4 s fast on UT"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You measure the index error on the Sun's two limbs. What is it?",
+  "a": "0.8′ off the arc: add 0.8′",
+  "o": [
+   "0.8′ on the arc: subtract 0.8′",
+   "1.6′ off the arc: add 1.6′",
+   "1.6′ on the arc: subtract 1.6′"
+  ],
+  "why": "IE = (on − off) ÷ 2 = (31.6 − 33.2) ÷ 2 = −0.8′: off the arc, add. Check: (31.6 + 33.2) ÷ 4 = 16.2′, the almanac SD.",
+  "ref": "Sextant — index error",
+  "fig": {
+   "type": "card",
+   "title": "Index error by the Sun, November",
+   "lines": [
+    "Limbs touching, on the arc: 31.6′",
+    "Limbs touching, off the arc: 33.2′",
+    "Almanac Sun SD 16.2′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You take the Sun's upper limb and work it with the almanac's table. What is Ho?",
+  "a": "26°59.6′",
+  "o": [
+   "27°32.0′",
+   "27°35.8′",
+   "27°05.2′"
+  ],
+  "why": "27°20.0′ + 0.5′ − 2.8′ = Ha 27°17.7′, inside the row; UL −18.1′ gives Ho 26°59.6′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun UL, November",
+   "lines": [
+    "Hs 27°20.0′ · IE 0.5′ off · dip 2.8′",
+    "Almanac, Sun Oct–Mar, row for",
+    "Ha 26°55′–28°10′: LL +14.3′, UL −18.1′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You stand in the cockpit for your sights. What dip do you use?",
+  "a": "2.8′",
+  "o": [
+   "2.2′",
+   "1.8′",
+   "4.6′"
+  ],
+  "why": "Height of eye is above the sea, not the deck: 1.0 + 1.6 = 2.6 m, and dip = 1.76 × √2.6 = 2.8′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Where is your eye?",
+   "lines": [
+    "Cockpit sole 1.0 m above the waterline",
+    "Your eye 1.6 m above the cockpit sole",
+    "Dip (′) = 1.76 √h"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "How do you find Capella in the sextant before you can see it?",
+  "a": "Preset 31° and sweep the horizon near 040°",
+  "o": [
+   "Set 0°, aim at the star and bring it down",
+   "Wait until it shows, then bring it down",
+   "Preset 59° and look along 220°"
+  ],
+  "why": "With Hc and Zn worked out in advance, preset the altitude and look along the bearing: the star shows in the mirror while the horizon is sharp.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Evening twilight",
+   "lines": [
+    "Planned: Capella, Hc 31°, Zn 040°",
+    "Sky still bright, horizon sharp",
+    "Capella not yet visible to the eye"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Spray came over during the noon sight. What do you do before you stow the sextant?",
+  "a": "Dab the salt off, dry it, then stow it in its box",
+  "o": [
+   "Leave it on the chart table to dry",
+   "Rub the mirrors hard with a paper towel",
+   "Box it as it is and clean it in port"
+  ],
+  "why": "Salt corrodes the mirrors and arc: dab the mirrors with lens tissue (a little fresh water), dry the frame, and keep it in its box.",
+  "ref": "Sextant — care",
+  "fig": {
+   "type": "card",
+   "title": "After the noon sight",
+   "lines": [
+    "Spray over the cockpit during the sight",
+    "Salt drops on both mirrors and the arc",
+    "Sextant going back below"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Cloud clears and you could take the Sun now at 5°, or wait an hour for 15°. Why is waiting better?",
+  "a": "Refraction is large and uncertain near the horizon",
+  "o": [
+   "Dip is larger when the Sun is low",
+   "The Sun's semi-diameter grows near the horizon",
+   "The Sun's parallax is largest when low"
+  ],
+  "why": "Refraction grows fast below 10° and varies with temperature and pressure, so its error is uncertain; keep sights above about 10–15°.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Refraction, standard air",
+   "lines": [
+    "Ha 60°: 0.6′    Ha 30°: 1.7′",
+    "Ha 10°: 5.4′    Ha 5°: 9.9′",
+    "Ha 3°: 14.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "Bound for the Marquesas, you cross a sun line with this Moon sight. What is Ho?",
+  "a": "27°18.3′",
+  "o": [
+   "26°46.1′",
+   "27°24.4′",
+   "25°32.3′"
+  ],
+  "why": "Ha 26°11.2′ − 2.0′ + 53.0′ parallax (59.1 × cos 26.2°) + 16.1′ SD = Ho 27°18.3′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Moon LL, afternoon",
+   "lines": [
+    "Hs 26°15.4′ · IE 1.5′ on · dip 2.7′",
+    "Almanac: HP 59.1′, SD 16.1′",
+    "Refraction at this Ha: 2.0′",
+    "Parallax in altitude = HP × cos Ha"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "In the Indian Ocean you take the Moon by day to cross with the Sun. What is Ho?",
+  "a": "48°48.5′",
+  "o": [
+   "49°18.5′",
+   "47°35.3′",
+   "48°46.9′"
+  ],
+  "why": "Ha 48°27.8′ − 0.9′ + 36.6′ (55.2 × cos 48.5°) − 15.0′ SD for the upper limb = Ho 48°48.5′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Moon UL, morning",
+   "lines": [
+    "Hs 48°30.0′ · IE 0.8′ off · dip 3.0′",
+    "Almanac: HP 55.2′, SD 15.0′",
+    "Refraction at this Ha: 0.9′",
+    "Only the upper limb is lit"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "You measure the index error on the Sun, then take your sight. What is Ho?",
+  "a": "22°56.8′",
+  "o": [
+   "22°55.2′",
+   "22°57.6′",
+   "22°54.4′"
+  ],
+  "why": "IE = (31.6 − 33.2) ÷ 2 = 0.8′ off, add: 22°45.0′ + 0.8′ − 2.8′ + 13.8′ = Ho 22°56.8′.",
+  "ref": "Sextant — index error",
+  "fig": {
+   "type": "card",
+   "title": "Sun, 25 November",
+   "lines": [
+    "IE on the Sun: on 31.6′, off 33.2′",
+    "Sun LL Hs 22°45.0′ · dip 2.8′",
+    "Almanac main correction (LL): +13.8′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "With the lower limb in cloud, you take the setting Sun's upper limb. What is Ho?",
+  "a": "8°48.3′",
+  "o": [
+   "9°19.9′",
+   "8°59.9′",
+   "8°46.3′"
+  ],
+  "why": "9°12.0′ + 1.0′ − 3.1′ = Ha 9°09.9′; − 5.8′ refraction − 15.8′ SD (upper limb) = Ho 8°48.3′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun UL, 20 June, near sunset",
+   "lines": [
+    "Hs 9°12.0′ · IE 1.0′ off the arc",
+    "Eye 3.1 m, dip 3.1′",
+    "Refraction at this Ha: 5.8′",
+    "Almanac Sun SD 15.8′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "You check the crew's sun line. How far, and which way, is their position line out?",
+  "a": "2.8 M too far towards",
+  "o": [
+   "2.8 M too far away",
+   "8.8 M too far towards",
+   "4.4 M too far away"
+  ],
+  "why": "IE −1.5′ instead of +1.5′ = −3.0′; dip +2.9′ instead of −2.9′ = +5.8′. Ho is 2.8′ too large: 2.8 M too far towards.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Checking the crew's sun line",
+   "lines": [
+    "IE 1.5′ off the arc — crew subtracted it",
+    "Dip 2.9′ — crew added it",
+    "Main correction right"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "You plot this series against time, drop the bad sight and average the rest. What do you work up?",
+  "a": "16:06:20 UT, Hs 28°48.3′",
+  "o": [
+   "16:06:30 UT, Hs 28°48.7′",
+   "16:06:20 UT, Hs 28°48.7′",
+   "16:06:30 UT, Hs 28°48.3′"
+  ],
+  "why": "The Sun climbs about 4.6′ in 40 s, so 16:07:10 should be near 28°54′: drop it. The other four average 16:06:20, 28°48.3′.",
+  "ref": "Sextant — averaging sights",
+  "fig": {
+   "type": "card",
+   "title": "Five sights, 40 s apart",
+   "lines": [
+    "16:05:10  28°40.3′ · 16:05:50  28°44.9′",
+    "16:06:30  28°49.5′ · 16:07:10  28°50.1′",
+    "16:07:50  28°58.6′",
+    "UT and Hs; the Sun climbing steadily"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "The same sextant error is suspected in all three star sights. Where on the plotting sheet do you put your fix?",
+  "a": "A — the centre, equally far from all three lines",
+  "o": [
+   "B — the corner where two lines cross",
+   "C — on the line of the brightest star",
+   "D — outside the triangle, past corner B"
+  ],
+  "why": "A constant error moves every line the same distance towards or away; with bodies 120° apart the true fix is equidistant from all three.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "chart",
+   "track": "M55 134 L205 134 M148 36 L73 166 M187 166 L112 36",
+   "marks": [
+    [
+     130,
+     112,
+     "k",
+     "A"
+    ],
+    [
+     92,
+     134,
+     "k",
+     "B"
+    ],
+    [
+     149,
+     101,
+     "k",
+     "C"
+    ],
+    [
+     61,
+     152,
+     "k",
+     "D"
+    ]
+   ],
+   "labels": [
+    [
+     130,
+     22,
+     "Kochab 000°"
+    ],
+    [
+     262,
+     176,
+     "Altair 120°"
+    ],
+    [
+     40,
+     176,
+     "Arcturus 240°",
+     "start"
+    ]
+   ],
+   "panel": [
+    "Star fix 1940",
+    "Cocked hat 4 M",
+    "IE in doubt"
+   ],
+   "note": "Plotting sheet · star bearings"
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "You practise sights on the way to the Azores. When the GPS later fails, what do you do with this result?",
+  "a": "Subtract 2.6′ from each Ho",
+  "o": [
+   "Add 2.6′ to each Ho",
+   "Set the IE to 3.6′ off the arc",
+   "Ignore it — it is under 3′"
+  ],
+  "why": "A steady +2.6′ over five sights is a personal error: subtract 2.6′ from each Ho, and keep checking it while the GPS still works.",
+  "ref": "Sextant — averaging sights",
+  "fig": {
+   "type": "card",
+   "title": "Practice while the GPS works",
+   "lines": [
+    "Five sun sights; Hc from the GPS position",
+    "Ho − Hc: +2.4, +2.8, +2.5, +2.6, +2.7′",
+    "IE 1.0′ off, checked and applied"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "You check the crew's Moon sight. How far out is their position line?",
+  "a": "About 47 M too far away",
+  "o": [
+   "About 47 M too far towards",
+   "About 58 M too far away",
+   "About 24 M too far towards"
+  ],
+  "why": "The Sun table leaves out the Moon's parallax: 47.4′ + 15.8′ − 15.9′ = 47.3′ too small an Ho, so about 47 M too far away.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Moon LL worked by the crew",
+   "lines": [
+    "Ha 35°10.0′ · HP 58.0′ · Moon SD 15.8′",
+    "Crew used the Sun LL table (SD 15.9′)",
+    "Refraction 1.4′ in both tables",
+    "Parallax in altitude = HP × cos Ha"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "What do you do before the dusk star sights?",
+  "a": "Remove the side error, then measure IE again",
+  "o": [
+   "Use 3.5′ on the arc and ignore the side error",
+   "Zero the index error first, then side error",
+   "Average the two: use 1.5′ on the arc"
+  ],
+  "why": "Side error is set on the horizon mirror, which moves the index error: remove side error first, then measure IE again and apply it.",
+  "ref": "Sextant — adjustments",
+  "fig": {
+   "type": "card",
+   "title": "Sextant knocked off the chart table",
+   "lines": [
+    "IE before: 0.5′ off the arc",
+    "IE now: 3.5′ on the arc",
+    "At 0° a star passes beside its reflection",
+    "Star sights due in 40 minutes"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "Your crew looks through the sextant for the first time: the horizon in one half of the field, the Sun beside it. Where does the Sun's image come from?",
+  "a": "The index mirror, via the horizon mirror's silvered half",
+  "o": [
+   "The horizon mirror's clear half, seen direct",
+   "The telescope's lens, without any mirror",
+   "The shade glasses, by their own reflection"
+  ],
+  "why": "Sunlight hits the index mirror, then the silvered half of the horizon mirror, then the telescope; the clear half shows the horizon direct.",
+  "ref": "Sextant — parts",
+  "fig": {
+   "type": "card",
+   "title": "First look through the sextant",
+   "lines": [
+    "One half of the field: the sea horizon",
+    "The other half: the Sun, dimmed by shades",
+    "Telescope fixed to the frame"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "Twilight is coming and you fit a telescope for the star sights. Which do you choose?",
+  "a": "The low-power, wide-field star telescope",
+  "o": [
+   "The 7× telescope, for the most magnification",
+   "The Sun telescope, with its dark filter on",
+   "The 7× telescope, a little out of focus"
+  ],
+  "why": "A low power (about 3×) with a wide field finds the star, holds it in a rolling boat and shows it while the horizon is still sharp.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "In the sextant box",
+   "lines": [
+    "3× wide-field telescope",
+    "7× telescope, narrow field",
+    "Boat rolling in the trade-wind swell"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "At night the horizon is lost in the dark but the stars are bright. A crew member suggests the old aircraft bubble sextant aboard. What is the catch at sea?",
+  "a": "The boat's motion moves the bubble: errors of miles",
+  "o": [
+   "None — it is more accurate than a marine sextant",
+   "It needs a larger dip than a marine sextant",
+   "It works only on the Sun, never on stars"
+  ],
+  "why": "A bubble sextant needs no horizon and no dip, but the yacht's roll and pitch throw the bubble about: a single sight can be many miles out.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Night sights?",
+   "lines": [
+    "Horizon invisible, stars bright",
+    "Aircraft bubble sextant in a locker",
+    "Boat rolling 15° each way"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You are stowing the gear for a three-week Atlantic crossing. Where does the sextant box live?",
+  "a": "Wedged low near the middle of the boat, in a dry locker",
+  "o": [
+   "In the forepeak, out of everyone's way",
+   "On the chart table, ready for the next sight",
+   "In a cockpit locker, close to where you sight"
+  ],
+  "why": "Low and amidships the motion is least; wedge the box so it cannot slide, and keep it dry and out of the sun.",
+  "ref": "Sextant — care",
+  "fig": null
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "In the tropics the Sun will pass about 87° high at noon. What makes this sight hard?",
+  "a": "Finding the vertical — the Sun sweeps along the horizon",
+  "o": [
+   "Refraction is largest near the zenith",
+   "Dip grows as the Sun climbs higher",
+   "No shade is dark enough for a high Sun"
+  ],
+  "why": "Near the zenith the Sun's azimuth swings fast and rocking shows no clear bottom of the arc, so it is hard to tell where the vertical meets the horizon.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 18 June, 20°N",
+   "lines": [
+    "Sun's declination N23°25′",
+    "Meridian altitude about 87°",
+    "Azimuth changing fast around noon"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "The almanac gives Venus an additional altitude correction that Jupiter does not get. Why?",
+  "a": "Venus comes close: its parallax and its phase",
+  "o": [
+   "Venus has a semi-diameter like the Sun's",
+   "Venus is refracted more than a star",
+   "Venus is so bright that it dazzles the eye"
+  ],
+  "why": "Venus passes close to the Earth, so it has a small parallax, and its phase shifts the centre of its light: the almanac lists a small extra correction.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Dusk sights",
+   "lines": [
+    "Venus bright in the west, Ha 18°",
+    "Almanac: Venus additional corr. +0.2′",
+    "Jupiter: no additional correction"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "Bound for Svalbard, the air is far colder than the almanac's standard. When does its temperature and pressure correction matter?",
+  "a": "At low altitudes — below about 10°",
+  "o": [
+   "At high altitudes — above about 60°",
+   "Only for the Moon, never for the Sun",
+   "At every altitude by the same amount"
+  ],
+  "why": "The extra correction scales with refraction itself: up to a minute at 5°, nothing worth applying above about 10–15°.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Cold air, 74°N",
+   "lines": [
+    "Air −6 °C, pressure 1032 hPa",
+    "Almanac standard: 10 °C, 1010 hPa",
+    "Sights planned at Ha 5° and Ha 40°"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You move from the cockpit up onto the coachroof to see over the swell. What happens to the dip you apply?",
+  "a": "It is larger — subtract more",
+  "o": [
+   "It is smaller — the horizon is clearer",
+   "It is the same — dip depends on the sea",
+   "It is larger — and now it is added"
+  ],
+  "why": "Dip grows with height of eye (1.76 √h): the higher you stand, the lower the horizon looks, so more is subtracted.",
+  "ref": "Sextant — altitude corrections",
+  "fig": null
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You can buy one sextant for an ocean crossing and already own a plastic one. Which do you make the main instrument?",
+  "a": "A metal one — its index error stays steady",
+  "o": [
+   "The plastic one — light, and it never corrodes",
+   "The plastic one — it needs no adjustment",
+   "Either — both hold their errors equally"
+  ],
+  "why": "A metal frame keeps its shape through heat and knocks, so its errors stay put; a plastic one drifts with temperature — keep it as the backup.",
+  "ref": "Sextant — care",
+  "fig": null
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 1,
+  "q": "You call 'mark!' at the instant of the sight and your crew reads the watch. What does she note first?",
+  "a": "The seconds, then the minutes and hour",
+  "o": [
+   "The hour, then the minutes and seconds",
+   "The minutes, then the seconds",
+   "The stopwatch, then the watch"
+  ],
+  "why": "The seconds change while she reads; note them first and the minutes and hour after, which will not have moved.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Sight with a timekeeper",
+   "lines": [
+    "You at the shrouds with the sextant",
+    "Crew at the chart table with the watch",
+    "You call 'Stand by… mark!'"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "The morning horizon is too hazy for an index check, so you use the Sun's two limbs instead. What is the index error, and which way does it go?",
+  "a": "1.9′ on the arc: subtract it",
+  "o": [
+   "1.9′ off the arc: add it",
+   "3.8′ on the arc: subtract it",
+   "1.9′ on the arc: add it"
+  ],
+  "why": "IE = (on − off) ÷ 2 = (34.1 − 30.3) ÷ 2 = +1.9′: on the arc, subtract. Check: (34.1 + 30.3) ÷ 4 = 16.1′, the SD.",
+  "ref": "Sextant — index error",
+  "fig": {
+   "type": "card",
+   "title": "Index error by the Sun, 15 October",
+   "lines": [
+    "Limbs touching, on the arc: 34.1′",
+    "Limbs touching, off the arc: 30.3′",
+    "Almanac Sun SD 16.1′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You measure the index error on the Sun twice, a few minutes apart. Which measurement do you trust, and what is the error?",
+  "a": "The first — IE 0.3′ on the arc",
+  "o": [
+   "The second — IE 1.7′ on the arc",
+   "The first — IE 0.3′ off the arc",
+   "The second — IE 1.7′ off the arc"
+  ],
+  "why": "(on + off) ÷ 4 should be the SD: 64.4 ÷ 4 = 16.1′, good; 62.8 ÷ 4 = 15.7′, a poor contact. IE = (32.5 − 31.9) ÷ 2 = 0.3′ on.",
+  "ref": "Sextant — index error",
+  "fig": {
+   "type": "card",
+   "title": "Index error by the Sun, 10 March",
+   "lines": [
+    "First: on 32.5′, off 31.9′",
+    "Second: on 33.1′, off 29.7′",
+    "Almanac Sun SD 16.1′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You step up from the cockpit onto the coachroof for the sight. What dip do you apply now?",
+  "a": "3.2′",
+  "o": [
+   "2.7′",
+   "4.4′",
+   "5.8′"
+  ],
+  "why": "Height of eye 2.4 + 0.9 = 3.3 m above the sea; dip = 1.76 × √3.3 = 1.76 × 1.82 = 3.2′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Height of eye",
+   "lines": [
+    "Cockpit: eye 2.4 m above the sea",
+    "Coachroof: 0.9 m higher",
+    "Dip (′) = 1.76 √h, h in metres"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You and a crew member take the Sun's lower limb at the same moment. Whose Hs reads higher, and by how much?",
+  "a": "Yours, higher by 0.8′",
+  "o": [
+   "Yours, lower by 0.8′",
+   "Yours, higher by 2.6′",
+   "Neither — they read the same"
+  ],
+  "why": "A higher eye sees the horizon lower: dip 3.4′ at 3.7 m against 2.6′ at 2.2 m, so your Hs is 0.8′ more; after dip both give the same Ho.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Two observers, one Sun",
+   "lines": [
+    "You: coachroof, eye 3.7 m",
+    "Crew: cockpit, eye 2.2 m",
+    "Both sextants: IE 0",
+    "Dip (′) = 1.76 √h"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You are crossing to the Marquesas on a 14 m catamaran in a big swell. Where do you take the morning sun sight, and with what dip?",
+  "a": "The flybridge, with the dip for 4.8 m (3.9′)",
+  "o": [
+   "The flybridge, with the cockpit dip (2.6′)",
+   "The cockpit, with the nearest crest as horizon",
+   "The flybridge, no dip — the horizon is clear"
+  ],
+  "why": "Sight where the horizon is clear and use the dip for that height: 1.76 × √4.8 = 3.9′. A nearby crest is not the horizon.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran, 4 m swell",
+   "lines": [
+    "Cockpit: eye 2.1 m, crests hide the horizon",
+    "Flybridge: eye 4.8 m, horizon clear",
+    "Dip (′) = 1.76 √h"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Crossing the Arabian Sea in May, you take the Sun just after sunrise, before the haze thickens. What is Ho?",
+  "a": "5°21.7′",
+  "o": [
+   "5°19.9′",
+   "5°20.8′",
+   "5°23.3′"
+  ],
+  "why": "5°18.0′ − 0.8′ − 2.8′ = Ha 5°14.4′; + 6.4′ main + 0.9′ T/P (hot air refracts less) = Ho 5°21.7′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun LL, 12 May, air 36 °C, 1004 hPa",
+   "lines": [
+    "Hs 5°18.0′ · IE 0.8′ on · dip 2.8′",
+    "Almanac main correction (LL): +6.4′",
+    "T/P table, additional: +0.9′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Cold air lies over the warm Gulf Stream and you suspect the dip is not what the table says. How do you plan the dusk star sights?",
+  "a": "All four — two opposite pairs",
+  "o": [
+   "A and B only — 90° apart cuts best",
+   "Only the two highest, clear of the dip",
+   "A, B and C — three are always enough"
+  ],
+  "why": "A dip error moves every line the same way, towards or away; in opposite pairs it cancels — the fix lies midway between each pair.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Dusk stars available",
+   "lines": [
+    "A: Zn 010°   B: Zn 100°",
+    "C: Zn 190°   D: Zn 280°",
+    "All between 25° and 50° high",
+    "Air 6 °C colder than the sea"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Off the Cape Verdes you take Venus at dusk to add to the star fix. What is Ho?",
+  "a": "22°30.7′",
+  "o": [
+   "22°30.1′",
+   "22°32.9′",
+   "22°46.6′"
+  ],
+  "why": "22°36.4′ − 1.1′ − 2.5′ = Ha 22°32.8′; − 2.4′ refraction + 0.3′ Venus = Ho 22°30.7′. A planet takes no SD.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Venus at dusk",
+   "lines": [
+    "Hs 22°36.4′ · IE 1.1′ on the arc",
+    "Eye 2.0 m: dip 2.5′",
+    "Star refraction at this Ha: 2.4′",
+    "Venus additional correction: +0.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "In the early afternoon you want the Moon to cross with your sun line. Which limb do you bring to the horizon, and what happens to the SD?",
+  "a": "The upper limb — subtract the SD",
+  "o": [
+   "The lower limb — add the SD",
+   "The upper limb — add the SD",
+   "The centre — no SD at all"
+  ],
+  "why": "Take the lit, round limb: with the Sun higher than the Moon it is the upper one, and an upper-limb sight takes the SD off.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon sky",
+   "lines": [
+    "Sun 55° high, bearing 235°",
+    "Half Moon 25° high, bearing 110°",
+    "The Moon's lit side faces up, to the Sun"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Going over the crew's Moon sight at the chart table, you spot this slip with the parallax. Where does it put their Moon line?",
+  "a": "About 31 M too far towards the Moon",
+  "o": [
+   "About 31 M too far away from the Moon",
+   "About 58 M too far towards the Moon",
+   "About 27 M too far towards the Moon"
+  ],
+  "why": "Parallax in altitude = HP × cos Ha = 58.4 × 0.466 = 27.2′; adding 58.4′ makes Ho 31.2′ too large: about 31 M too far towards.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Moon sight, crew's working",
+   "lines": [
+    "Ha 62°15′, almanac HP 58.4′",
+    "Crew added the whole HP as parallax",
+    "Everything else right"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "A crew member took the Moon's HP and SD from the wrong day's page. How far out is her Moon line?",
+  "a": "About 6 M too far away from the Moon",
+  "o": [
+   "About 6 M too far towards the Moon",
+   "About 4 M too far away from the Moon",
+   "About 2 M too far away from the Moon"
+  ],
+  "why": "Parallax 60.1 × 0.766 = 46.0′ vs 41.8′ (4.2′) and the SD 1.5′ short: Ho 5.7′ too small, so the line is about 6 M too far away.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Moon LL, Ha 40°00′",
+   "lines": [
+    "Right day: HP 60.1′, SD 16.4′",
+    "Used: HP 54.6′, SD 14.9′",
+    "Parallax in altitude = HP × cos Ha"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Bound from the Caribbean to the Azores in May, you take the Sun a few minutes before it crosses your meridian. How do you plot this sight?",
+  "a": "A circle of 160 M radius round the Sun's GP",
+  "o": [
+   "A straight position line from an AP, as usual",
+   "A circle of 320 M radius round the Sun's GP",
+   "A circle of 160 M radius round your DR"
+  ],
+  "why": "At 87°20′ the circle of equal altitude is small: radius = zenith distance 2°40′ = 160 M. Plot it as a circle round the GP, not a straight line.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Sun near the zenith, 25 May, 1512 UT",
+   "lines": [
+    "Ho 87°20.0′",
+    "Almanac: Dec N21°01.7′, GHA 48°45.4′",
+    "Azimuth changing about 5° a minute"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You plot five sun sights against time and draw the line of best fit. What Hs do you take off the line for 10:24:00 UT?",
+  "a": "Hs 33°19.3′",
+  "o": [
+   "Hs 33°14.6′",
+   "Hs 33°20.6′",
+   "Hs 33°17.4′"
+  ],
+  "why": "The line follows the steady climb (about 8.6′ a minute); at 10:24:00 it reads 33°19.3′, smoother than any single sight.",
+  "ref": "Sextant — averaging sights",
+  "fig": {
+   "type": "card",
+   "title": "Five sights of the rising Sun",
+   "lines": [
+    "10:22:14  33°04.1′ · 10:22:47  33°09.0′",
+    "10:23:25  33°14.2′ · 10:24:08  33°20.6′",
+    "10:24:40  33°25.0′",
+    "UT and Hs; the Sun climbing steadily"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Last night's three star lines: two cross neatly, the third is far off. What most likely went wrong with the third?",
+  "a": "The arc misread by a whole degree",
+  "o": [
+   "The index error applied the wrong way",
+   "The dip added instead of subtracted",
+   "The drum misread by ten minutes"
+  ],
+  "why": "With the drum near 60′ the index sits almost on the next degree: an Hs read 1° high gives an intercept near 60′ instead of the real one.",
+  "ref": "Sextant — reading the micrometer",
+  "fig": {
+   "type": "card",
+   "title": "Star intercepts, same AP",
+   "lines": [
+    "Capella: 2.1′ towards",
+    "Alphard: 1.4′ away",
+    "Hamal: 58.9′ towards · drum 57.6"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Checking the sextant after your sun sight, you see that the reading you wrote down is wrong. What had that done to your sun line?",
+  "a": "It was 10 M too far towards the Sun",
+  "o": [
+   "It was 10 M too far away from the Sun",
+   "It was 1 M too far towards the Sun",
+   "It was 20 M too far towards the Sun"
+  ],
+  "why": "The true Hs is 23°32.6′, 10′ less than worked: Ho was 10′ too large, so the line was 10 M too far towards the Sun.",
+  "ref": "Sextant — reading the micrometer",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, rechecked",
+   "lines": [
+    "Written in the log: Hs 23°42.6′",
+    "Sextant still shows: 23° on the arc",
+    "Drum 32, vernier 6"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "The sextant slid off the cockpit seat. You check it as below. What do you do with the index error?",
+  "a": "Apply 2.2′ on the arc, rechecked at each sight",
+  "o": [
+   "Apply the old 0.4′ off the arc",
+   "Apply the mean, 0.9′ on the arc",
+   "Apply 2.6′ on the arc — the change"
+  ],
+  "why": "A small new index error is simply measured and applied; adjusting it at sea risks upsetting the side error. Recheck it before each sight.",
+  "ref": "Sextant — adjustments",
+  "fig": {
+   "type": "card",
+   "title": "Checks after the knock",
+   "lines": [
+    "Perpendicularity: good",
+    "Side error: none",
+    "IE now 2.2′ on the arc (was 0.4′ off)"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Evening twilight is starting and the horizon is still sharp all round. Which star do you take first?",
+  "a": "A — bright, over the eastern horizon",
+  "o": [
+   "B — bright, over the western horizon",
+   "C — faint, over the eastern horizon",
+   "D — faint, over the western horizon"
+  ],
+  "why": "At dusk the eastern horizon fades first, and only bright stars show in the telescope yet: bright eastern stars first, western ones last.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Dusk stars: magnitude and Zn",
+   "lines": [
+    "A (0.0) Zn 075° · B (0.1) Zn 255°",
+    "C (2.1) Zn 085° · D (1.3) Zn 260°",
+    "Sun set 20 minutes ago"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Morning twilight: the horizon is just showing in the east, still dark in the west. Which star do you take first?",
+  "a": "B — fainter, over the eastern horizon",
+  "o": [
+   "A — brighter, over the eastern horizon",
+   "C — brighter, over the western horizon",
+   "D — fainter, over the western horizon"
+  ],
+  "why": "At dawn the eastern horizon sharpens first and faint stars fade first: start with faint eastern stars, finish with bright ones in the west.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Dawn stars: magnitude and Zn",
+   "lines": [
+    "A (0.4) Zn 080° · B (1.9) Zn 095°",
+    "C (0.0) Zn 265° · D (2.0) Zn 280°",
+    "Sunrise in 40 minutes"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "At 0300 a bright Moon lights the sea to the south; elsewhere the horizon is lost in the dark. Which body gives you a usable sight?",
+  "a": "Star P — its horizon is lit by the Moon",
+  "o": [
+   "Star Q — the brightest star in the sky",
+   "Star R — farthest from the Moon's glare",
+   "Stars Q and R — the best angle of cut"
+  ],
+  "why": "At night a sight needs a horizon you can see, and only the sea under the Moon shows one: take the Moon and stars near its bearing.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Night sky, 0300",
+   "lines": [
+    "Moon: Zn 185°, 38° high",
+    "Star P: Zn 175°, 31° high",
+    "Star Q: Zn 060° · Star R: Zn 300°"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Ashore before the voyage, you practise with an artificial horizon, bringing the Sun and its reflection together. What is the apparent altitude of the Sun's centre?",
+  "a": "35°47.6′",
+  "o": [
+   "35°48.8′",
+   "35°47.0′",
+   "71°35.2′"
+  ],
+  "why": "Correct the reading for IE first, then halve it: (71°36.4′ − 1.2′) ÷ 2 = 35°47.6′. No dip — the oil surface is truly level.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Artificial horizon on the quay",
+   "lines": [
+    "Tray of oil, sheltered from the wind",
+    "Sun and its reflection made to coincide",
+    "Reading 71°36.4′ · IE 1.2′ on the arc"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Bound from Cape Town to St Helena, you take Canopus at dusk and correct it with the almanac's tables. What is Ho?",
+  "a": "38°38.7′",
+  "o": [
+   "38°36.9′",
+   "38°44.7′",
+   "38°41.1′"
+  ],
+  "why": "38°42.0′ + 0.9′ − 3.0′ = Ha 38°39.9′, inside the row; − 1.2′ = Ho 38°38.7′. A star needs no SD or parallax.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Canopus at dusk",
+   "lines": [
+    "Hs 38°42.0′ · IE 0.9′ off the arc",
+    "Dip table, eye 2.9 m: −3.0′",
+    "Star table, Ha 38°30′–40°50′: −1.2′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "In the South Atlantic in January it is high summer. Which column of the almanac's Sun table do you use?",
+  "a": "Oct–Mar — the column goes by the date",
+  "o": [
+   "Apr–Sept — it is summer in the south",
+   "Apr–Sept — the Sun stands higher",
+   "Either — the two columns are the same"
+  ],
+  "why": "The columns follow the Earth–Sun distance, not the local season: in January the Sun is nearest and its SD largest, in both hemispheres.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, Sun altitude correction",
+   "lines": [
+    "Column Oct–Mar: SD about 16.1–16.3′",
+    "Column Apr–Sept: SD about 15.8–16.0′",
+    "Date: 14 January, 30°S"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "The horizon is a little soft, so you measure the index error four times. What correction do you apply?",
+  "a": "Add 0.4′",
+  "o": [
+   "Subtract 0.4′",
+   "Add 0.5′",
+   "Add 0.8′"
+  ],
+  "why": "Give each reading its sign (on −, off +): (+0.6 − 0.2 + 0.8 + 0.4) ÷ 4 = +0.4′, a mean of 0.4′ off the arc, so add it.",
+  "ref": "Sextant — index error",
+  "fig": {
+   "type": "card",
+   "title": "Index error on the horizon",
+   "lines": [
+    "0.6′ off · 0.2′ on",
+    "0.8′ off · 0.4′ off",
+    "Same horizon, a minute apart"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You watch a new crew member take the Sun without rocking the sextant; it leans a little to one side. What does that do to her sun line?",
+  "a": "Hs too large — the line too far towards",
+  "o": [
+   "Hs too small — the line too far away",
+   "Hs too large — the line too far away",
+   "No effect while the limb touches"
+  ],
+  "why": "A tilted sextant measures down to a point of the horizon off to one side, a larger angle than the altitude: Ho too big, the line towards the Sun.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Watching the crew's sight",
+   "lines": [
+    "Sextant tilted about 10° from vertical",
+    "Lower limb set on the horizon there",
+    "No rocking before the reading"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Each time you bring Sirius down from the sky you lose it in the mirror. What is the other way to get it onto the horizon?",
+  "a": "Hold the sextant upside down and bring the horizon up",
+  "o": [
+   "Bring it down faster, before the boat rolls",
+   "Use more index shades so the star stands out",
+   "Defocus the telescope so the star looks bigger"
+  ],
+  "why": "Inverted, the sextant shows the star direct and the horizon reflected: lift the horizon to the star, turn the sextant upright and fine-tune.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Twilight star sight",
+   "lines": [
+    "Sirius bright, about 40° high",
+    "Index at 0°, star in the telescope",
+    "Lost each time you swing the arm"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "In the morning the Sun climbs quickly. How do you get a clean contact of the lower limb?",
+  "a": "Set the limb just below the horizon; mark as it rises to touch",
+  "o": [
+   "Keep turning the drum until you see it touch",
+   "Set the limb just above and wait for it to sink",
+   "Bring it down fast and mark the first contact"
+  ],
+  "why": "A rising Sun brings itself to the horizon: set the limb a touch low, keep rocking, and mark the instant it just kisses the horizon.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun sight",
+   "lines": [
+    "Sun 25° high, climbing fast",
+    "Boat rolling gently",
+    "Stopwatch ready"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "With the index error removed, you look at the horizon and tilt the sextant like this. What does it show?",
+  "a": "No side error",
+  "o": [
+   "No index error",
+   "No perpendicularity error",
+   "No collimation error"
+  ],
+  "why": "If the horizon mirror leans, tilting the sextant breaks the horizon into a step. An unbroken line at any tilt means no side error.",
+  "ref": "Sextant — adjustments",
+  "fig": {
+   "type": "card",
+   "title": "Checking on the horizon",
+   "lines": [
+    "Set so the horizon is one line",
+    "Tilted 45° to the left, then the right",
+    "The horizon stays one unbroken line"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "In mid-Pacific the micrometer drum turns stiffly and feels gritty. What do you do?",
+  "a": "Clean the rack and worm, then a drop of light oil",
+  "o": [
+   "Spray water-repellent along the arc",
+   "Tighten the clamp until it runs smoothly",
+   "Leave it — the grit beds in after a while"
+  ],
+  "why": "Salt and grit on the rack wear the worm and spoil readings: brush them off, wipe clean, and put a trace of light oil on the worm and rack.",
+  "ref": "Sextant — care",
+  "fig": {
+   "type": "card",
+   "title": "Sextant after a month at sea",
+   "lines": [
+    "Drum stiff, a gritty feel",
+    "Salt crystals on the rack teeth",
+    "Mirrors clean"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "You borrow an older vernier sextant for the passage. What does it read?",
+  "a": "46°43.3′",
+  "o": [
+   "46°43.2′",
+   "46°40.3′",
+   "46°33.3′"
+  ],
+  "why": "The arc to the last division passed, 46°40′, plus the vernier's 3′20″: 46°43′20″, and 20″ = 0.3′, so 46°43.3′.",
+  "ref": "Sextant — reading the micrometer",
+  "fig": {
+   "type": "card",
+   "title": "Vernier sextant",
+   "lines": [
+    "Arc divided every 10′",
+    "Index just past the 46°40′ mark",
+    "Vernier: the 3′20″ line coincides"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 2,
+  "q": "Through dark index shades and a horizon shade the Sun is a crisp disc, but the horizon under it has almost vanished. What do you change?",
+  "a": "Lift the horizon shade; try a lighter index shade",
+  "o": [
+   "Add a darker horizon shade for contrast",
+   "Lift the index shades, keep the horizon one",
+   "Fit the star telescope to gather more light"
+  ],
+  "why": "Horizon shades darken the sea too: use them only against glare. Dim the Sun with index shades just enough to see both images clearly.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, late afternoon",
+   "lines": [
+    "Index shades: the two darkest in",
+    "Horizon shade: one in",
+    "Horizon under the Sun: barely visible"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "On a catamaran bound for Tahiti, you measure the index error on the Sun, then take the sight from the flybridge. What is Ho?",
+  "a": "44°28.8′",
+  "o": [
+   "44°31.2′",
+   "44°36.4′",
+   "44°24.5′"
+  ],
+  "why": "IE (33.6 − 31.2) ÷ 2 = 1.2′ on, subtract; dip 1.76 × √4.6 = 3.8′: 44°18.6′ − 1.2′ − 3.8′ + 15.2′ = Ho 44°28.8′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun, 5 March, flybridge",
+   "lines": [
+    "IE by the Sun: on 33.6′, off 31.2′",
+    "Sun LL Hs 44°18.6′ · eye 4.6 m",
+    "Almanac main correction (LL): +15.2′",
+    "Dip (′) = 1.76 √h"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "Bound for Greenland through the Denmark Strait, you take Mars low in the twilight. What is Ho?",
+  "a": "7°03.9′",
+  "o": [
+   "7°05.1′",
+   "7°04.5′",
+   "7°02.7′"
+  ],
+  "why": "7°14.0′ + 0.6′ − 2.9′ = Ha 7°11.7′; − 7.3′ − 0.6′ (cold air refracts more) + 0.1′ Mars = Ho 7°03.9′.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Mars, air −4 °C, 1034 hPa",
+   "lines": [
+    "Hs 7°14.0′ · IE 0.6′ off · dip 2.9′",
+    "Star refraction at this Ha: 7.3′",
+    "T/P table, additional: −0.6′",
+    "Mars additional correction: +0.1′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "Off the Galápagos a crew member works up this Moon sight to cross with the morning sun line. What should Ho be?",
+  "a": "33°38.0′",
+  "o": [
+   "34°11.2′",
+   "33°54.6′",
+   "33°41.0′"
+  ],
+  "why": "Upper limb: the SD is subtracted. 33°05.0′ − 1.5′ + 51.1′ − 16.6′ = Ho 33°38.0′; the crew's line was 33 M too far towards the Moon.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Moon UL, the crew's working",
+   "lines": [
+    "Ha 33°05.0′ · HP 61.0′ · SD 16.6′",
+    "− 1.5′ refr. + 51.1′ par. + 16.6′ SD",
+    "Crew's Ho 34°11.2′",
+    "Only the upper limb is lit"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "At dawn you take six sights of a setting star, plot them against time and fit a line. What Hs do you take off the line for 06:48:00 UT?",
+  "a": "Hs 27°35.6′",
+  "o": [
+   "Hs 27°37.0′",
+   "Hs 27°43.6′",
+   "Hs 27°44.3′"
+  ],
+  "why": "The star drops about 8.8′ a minute; 06:47:19 sits 6′ off the line — drop it. The line through the other five reads 27°35.6′ at 06:48:00.",
+  "ref": "Sextant — averaging sights",
+  "fig": {
+   "type": "card",
+   "title": "Six sights of a setting star",
+   "lines": [
+    "06:46:08 27°52.0′ · 06:46:31 27°48.7′",
+    "06:46:55 27°45.2′ · 06:47:19 27°47.9′",
+    "06:47:44 27°37.9′ · 06:48:10 27°34.2′",
+    "UT and Hs; the star dropping steadily"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "On 18 June, some minutes before local noon near the Tropic of Cancer, you work up this sight of a very high Sun. What radius do you draw round the Sun's GP?",
+  "a": "177 M",
+  "o": [
+   "193 M",
+   "171 M",
+   "354 M"
+  ],
+  "why": "86°50.4′ − 0.4′ − 2.9′ + 15.7′ = Ho 87°02.8′; zenith distance 90° − Ho = 2°57.2′ = 177′, so a 177 M circle round the GP.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Sun LL, 18 June, before noon",
+   "lines": [
+    "Hs 86°50.4′ · IE 0.4′ on the arc",
+    "Eye 2.7 m: dip 2.9′",
+    "Almanac main correction (LL): +15.7′",
+    "1′ of arc = 1 nautical mile"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "You check the crew's star sight against the sextant, still untouched since the sight. What intercept should they plot?",
+  "a": "4.6 M towards",
+  "o": [
+   "64.6 M towards",
+   "4.6 M away",
+   "55.4 M away"
+  ],
+  "why": "The index is short of 42°, so Hs is 41°57.3′: + 0.8′ − 2.8′ − 1.1′ = Ho 41°54.2′; minus Hc 41°49.6′ = 4.6 M towards.",
+  "ref": "Sextant — reading the micrometer",
+  "fig": {
+   "type": "card",
+   "title": "Capella, the crew's working",
+   "lines": [
+    "Crew wrote Hs 42°57.3′",
+    "Index just short of 42°, drum 57.3",
+    "IE 0.8′ off · dip 2.8′ · refraction 1.1′",
+    "Hc 41°49.6′ from the AP"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "A breaking wave threw the open sextant box across the saloon. Star sights are due soon. Which instrument do you use?",
+  "a": "The plastic backup, its IE checked at each sight",
+  "o": [
+   "The metal one, with the mean IE of 6.5′ on",
+   "The metal one, after adjusting its index mirror",
+   "Both, and average the two sextants' altitudes"
+  ],
+  "why": "An IE that wanders and a loose arm mean damage the mirror screws can't fix: use the steady backup tonight and get the metal sextant repaired.",
+  "ref": "Sextant — adjustments",
+  "fig": {
+   "type": "card",
+   "title": "After the fall",
+   "lines": [
+    "Metal sextant: IE 5.8′ to 7.2′ on, unsteady",
+    "Its index arm wobbles on the arc",
+    "Plastic backup: IE 2.0′ off, steady 3 times",
+    "Star sights in 30 minutes"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "Early in the dusk the sky is still bright. Which three stars do you take for the fix?",
+  "a": "A, E and D",
+  "o": [
+   "A, B and D",
+   "A, C and D",
+   "B, C and E"
+  ],
+  "why": "Bright enough for the telescope (A, E, D), between 15° and 70° high (not C at 72°), and about 120° apart in bearing: A 050°, E 180°, D 290°.",
+  "ref": "Sextant — taking a sight",
+  "fig": {
+   "type": "card",
+   "title": "Dusk: magnitude, Zn, Hc",
+   "lines": [
+    "Telescope shows mag 1.0 or brighter now",
+    "A (0.1) 050° 35° · B (2.0) 170° 40°",
+    "C (0.8) 175° 72° · D (1.0) 290° 28°",
+    "E (0.5) 180° 45°"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "You and a crew member take the Sun's lower limb at the same moment, each with your own sextant. After IE and dip, how far apart are your altitudes?",
+  "a": "0.3′",
+  "o": [
+   "1.7′",
+   "0.7′",
+   "5.1′"
+  ],
+  "why": "You: 50°14.6′ + 0.6′ − 3.5′ = 50°11.7′. Crew: 50°16.3′ − 1.8′ − 2.5′ = 50°12.0′. They agree to 0.3′: two good sights.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Two sights, one moment",
+   "lines": [
+    "You: eye 3.9 m (dip 3.5′), IE 0.6′ off",
+    "Your Hs 50°14.6′",
+    "Crew: eye 2.0 m (dip 2.5′), IE 1.8′ on",
+    "Her Hs 50°16.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sextant",
+  "difficulty": 3,
+  "q": "With the dip in doubt over the Gulf Stream, you take two stars on opposite bearings from the same AP. What do the intercepts tell you?",
+  "a": "Ho 3.0′ too high; 1.2 M towards 010°",
+  "o": [
+   "Ho 3.0′ too low; 1.2 M towards 010°",
+   "Ho 1.2′ too high; 3.0 M towards 010°",
+   "Ho 3.0′ too high; 1.2 M towards 190°"
+  ],
+  "why": "A common error e adds to both: e = (4.2 + 1.8) ÷ 2 = 3.0′ too high; the true position is (4.2 − 1.8) ÷ 2 = 1.2 M from the AP towards 010°.",
+  "ref": "Sextant — altitude corrections",
+  "fig": {
+   "type": "card",
+   "title": "Two stars, opposite bearings",
+   "lines": [
+    "Star A, Zn 010°: intercept 4.2′ towards",
+    "Star C, Zn 190°: intercept 1.8′ towards",
+    "Same AP, same moment",
+    "Cold air over warm water"
+   ]
+  }
+ }
+]

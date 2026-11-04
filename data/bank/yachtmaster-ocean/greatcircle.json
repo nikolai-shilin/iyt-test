@@ -1,0 +1,2591 @@
+[
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "Before the Indian Ocean crossing a crew member looks at the plotter and asks why the great-circle track, which curves far south of the straight line on the chart, is the shorter one. What do you tell them?",
+  "a": "Its plane passes through the Earth's centre — the shortest way on a sphere",
+  "o": [
+   "It keeps one course, so no miles are lost in turns",
+   "The plotter allows for the east-going current in the forties",
+   "It follows the line along which magnetic variation stays the same"
+  ],
+  "why": "A great circle is cut by a plane through the Earth's centre; its shorter arc is the shortest route between two points on the globe.",
+  "ref": "Great circle sailing — the shortest route",
+  "fig": {
+   "type": "card",
+   "title": "Plotter: Cape Town → Fremantle",
+   "lines": [
+    "Chart view: Mercator",
+    "GC track bows south to about 44½°S",
+    "GC 4,686 M · rhumb line 4,900 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You draw a straight line from Halifax to Falmouth on this gnomonic chart. What does the line show?",
+  "a": "The great-circle track between the two ports",
+  "o": [
+   "The rhumb line — one course all the way",
+   "The track along the parallel of mean latitude",
+   "The route the pilot chart recommends for June"
+  ],
+  "why": "On a gnomonic chart every great circle is a straight line; a rhumb line on it is curved.",
+  "ref": "Great circle sailing — the gnomonic chart",
+  "fig": {
+   "type": "chart",
+   "land": "M-40 200 L70 0 L71 0 L-38.5 200 Z M10 200 L92 0 L94 0 L11.5 200 Z M60 200 L115 0 L116 0 L61.5 200 Z M110 200 L138 0 L139 0 L111.5 200 Z M160 200 L160 0 L161 0 L161.5 200 Z M210 200 L182 0 L184 0 L211.5 200 Z M260 200 L205 0 L206 0 L261.5 200 Z M310 200 L228 0 L229 0 L311.5 200 Z",
+   "marks": [
+    [
+     24,
+     140,
+     "k",
+     "Halifax"
+    ],
+    [
+     255,
+     112,
+     "k",
+     "Falmouth"
+    ]
+   ],
+   "track": "M24 140 L255 112",
+   "note": "Gnomonic chart, North Atlantic"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "With the great circle drawn on the gnomonic chart, a crew member picks up the protractor and dividers to take the course and the distance off it. What do you tell them?",
+  "a": "Neither is true on this chart: transfer the points or compute",
+  "o": [
+   "Fine — courses and distances are both true on it",
+   "The course is true; measure the distance on the edge",
+   "The distance is true; take the course from the rose"
+  ],
+  "why": "A gnomonic chart shows great circles as straight lines but distorts angles and distances; use it only to pick the points.",
+  "ref": "Great circle sailing — the gnomonic chart",
+  "fig": {
+   "type": "chart",
+   "land": "M-40 200 L70 0 L71 0 L-38.5 200 Z M10 200 L92 0 L94 0 L11.5 200 Z M60 200 L115 0 L116 0 L61.5 200 Z M110 200 L138 0 L139 0 L111.5 200 Z M160 200 L160 0 L161 0 L161.5 200 Z M210 200 L182 0 L184 0 L211.5 200 Z M260 200 L205 0 L206 0 L261.5 200 Z M310 200 L228 0 L229 0 L311.5 200 Z",
+   "marks": [
+    [
+     24,
+     140,
+     "k",
+     "Halifax"
+    ],
+    [
+     255,
+     112,
+     "k",
+     "Falmouth"
+    ]
+   ],
+   "track": "M24 140 L255 112",
+   "labels": [
+    [
+     150,
+     112,
+     "great circle",
+     "middle"
+    ]
+   ],
+   "note": "Gnomonic chart, North Atlantic"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Which of the three tracks on this Mercator chart is the great circle from Cape Town to Fremantle?",
+  "a": "C — it bows south, towards the pole",
+  "o": [
+   "A — it bows north, towards the equator",
+   "B — the straight line between the ports",
+   "A or C — it depends on the way you sail"
+  ],
+  "why": "On a Mercator chart a great circle bows towards the nearer pole — south in the southern hemisphere; the straight line B is the rhumb line.",
+  "ref": "Great circle sailing — on the Mercator chart",
+  "fig": {
+   "type": "chart",
+   "land": "M40 0 H41 V200 H40 Z M100 0 H101 V200 H100 Z M160 0 H161 V200 H160 Z M220 0 H221 V200 H220 Z M280 0 H281 V200 H280 Z M0 40 H320 V41 H0 Z M0 90 H320 V91 H0 Z M0 140 H320 V141 H0 Z",
+   "marks": [
+    [
+     40,
+     90,
+     "k",
+     "Cape Town"
+    ],
+    [
+     280,
+     96,
+     "k",
+     "Fremantle"
+    ]
+   ],
+   "track": "M40 90 Q160 22 280 96 M40 90 L280 96 M40 90 Q160 172 280 96",
+   "labels": [
+    [
+     160,
+     46,
+     "A",
+     "middle"
+    ],
+    [
+     170,
+     88,
+     "B",
+     "middle"
+    ],
+    [
+     160,
+     124,
+     "C",
+     "middle"
+    ]
+   ],
+   "note": "Mercator chart, south Indian Ocean (north up)"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You have drawn the great circle from Halifax to Falmouth on the gnomonic chart. How do you put it on the Mercator chart you navigate by?",
+  "a": "Read its latitude on every 10° meridian and plot those points",
+  "o": [
+   "Measure the initial course and lay it off from Halifax",
+   "Copy the straight line across at the same angle",
+   "Lay off the distance along the rhumb line"
+  ],
+  "why": "Take the latitude where the GC crosses each meridian 5° or 10° apart, plot the points on the Mercator chart and join them with short rhumb lines.",
+  "ref": "Great circle sailing — waypoints",
+  "fig": {
+   "type": "chart",
+   "land": "M-40 200 L70 0 L71 0 L-38.5 200 Z M10 200 L92 0 L94 0 L11.5 200 Z M60 200 L115 0 L116 0 L61.5 200 Z M110 200 L138 0 L139 0 L111.5 200 Z M160 200 L160 0 L161 0 L161.5 200 Z M210 200 L182 0 L184 0 L211.5 200 Z M260 200 L205 0 L206 0 L261.5 200 Z M310 200 L228 0 L229 0 L311.5 200 Z",
+   "marks": [
+    [
+     24,
+     140,
+     "k",
+     "Halifax"
+    ],
+    [
+     255,
+     112,
+     "k",
+     "Falmouth"
+    ]
+   ],
+   "track": "M24 140 L255 112",
+   "labels": [
+    [
+     22,
+     172,
+     "60°W",
+     "middle"
+    ],
+    [
+     68,
+     172,
+     "50°W",
+     "middle"
+    ],
+    [
+     114,
+     172,
+     "40°W",
+     "middle"
+    ],
+    [
+     160,
+     172,
+     "30°W",
+     "middle"
+    ],
+    [
+     206,
+     172,
+     "20°W",
+     "middle"
+    ],
+    [
+     252,
+     172,
+     "10°W",
+     "middle"
+    ]
+   ],
+   "note": "Gnomonic chart, North Atlantic"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You rule this straight line from Mindelo to Barbados on the Mercator chart and set the autopilot to the one course it gives. What track are you sailing?",
+  "a": "A rhumb line, crossing every meridian at the same angle",
+  "o": [
+   "A great circle, the shortest track",
+   "A composite track along a limiting latitude",
+   "A parallel sailing along one latitude"
+  ],
+  "why": "A straight line on a Mercator chart is a rhumb line: one course, the same angle with every meridian — but not the shortest track.",
+  "ref": "Rhumb line — the Mercator chart",
+  "fig": {
+   "type": "chart",
+   "land": "M40 0 H41 V200 H40 Z M100 0 H101 V200 H100 Z M160 0 H161 V200 H160 Z M220 0 H221 V200 H220 Z M280 0 H281 V200 H280 Z M0 40 H320 V41 H0 Z M0 90 H320 V91 H0 Z M0 140 H320 V141 H0 Z",
+   "marks": [
+    [
+     280,
+     70,
+     "k",
+     "Mindelo"
+    ],
+    [
+     40,
+     120,
+     "k",
+     "Barbados"
+    ]
+   ],
+   "track": "M280 70 L40 120",
+   "labels": [
+    [
+     160,
+     110,
+     "one course",
+     "middle"
+    ]
+   ],
+   "note": "Mercator chart, tropical North Atlantic"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "Heading south through the Atlantic you have this leg in the plotter. Your watch leader suggests switching it to GC to save miles. How much does it save?",
+  "a": "Nothing — a meridian is itself a great circle",
+  "o": [
+   "About 12 M — about 1 % of the leg",
+   "About 60 M — about 5 % of the leg",
+   "About 120 M — about 10 % of the leg"
+  ],
+  "why": "Meridians and the equator are great circles and rhumb lines at once: on a due north–south leg GC and RL are the same track.",
+  "ref": "Great circle sailing — the saving",
+  "fig": {
+   "type": "card",
+   "title": "Route leg in the plotter",
+   "lines": [
+    "WP1 05°00′S 030°00′W",
+    "WP2 25°00′S 030°00′W",
+    "Leg type: RL · 1,200 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You compare four ocean passages. On which does the great circle save the most miles over the rhumb line?",
+  "a": "Cape Town → Fremantle",
+  "o": [
+   "St John's → Falmouth",
+   "Las Palmas → St Lucia",
+   "Mindelo → Salvador"
+  ],
+  "why": "The saving grows with latitude and east–west distance: about 214 M Cape Town–Fremantle, 32 M St John's–Falmouth, 10 M ARC, 0 M north–south.",
+  "ref": "Great circle sailing — the saving",
+  "fig": {
+   "type": "card",
+   "title": "Four ocean passages",
+   "lines": [
+    "Cape Town → Fremantle: 33°S, DLo 97°",
+    "St John's → Falmouth: 48–50°N, DLo 48°",
+    "Las Palmas → St Lucia: 28–14°N, DLo 46°",
+    "Mindelo → Salvador: 17°N–13°S, DLo 14°"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "From this waypoint you could run due east along the parallel to Falmouth or take the great circle. How much shorter is the great circle?",
+  "a": "8 M",
+  "o": [
+   "48 M",
+   "0 M",
+   "2 M"
+  ],
+  "why": "Parallel: 1,796′ of DLo × cos 50.15° = 1,151 M; the GC is 1,143 M. Even a due-east leg is not the shortest away from the equator.",
+  "ref": "Great circle sailing — the saving",
+  "fig": {
+   "type": "card",
+   "title": "Along the parallel to Falmouth",
+   "lines": [
+    "Waypoint 50°09′N 035°00′W",
+    "Falmouth 50°09′N 005°04′W",
+    "Parallel sailing: 1,151 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "On the Puddle Jump you wonder whether to switch the plotter to GC. How much shorter is the great circle?",
+  "a": "About 1 M",
+  "o": [
+   "About 30 M",
+   "About 120 M",
+   "About 300 M"
+  ],
+  "why": "GC 2,996 M against RL 2,997 M: so close to the equator the two tracks almost coincide.",
+  "ref": "Great circle sailing — the saving",
+  "fig": {
+   "type": "card",
+   "title": "Galápagos → Hiva Oa",
+   "lines": [
+    "Wreck Bay 00°54′S 089°37′W",
+    "Atuona 09°48′S 139°02′W",
+    "Plotter, leg type RL: 2,997 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You are about to leave St John's for Falmouth with the plotter set as shown. How many miles would the great circle save?",
+  "a": "31 M",
+  "o": [
+   "91 M",
+   "16 M",
+   "0 M"
+  ],
+  "why": "GC by cos d = sin L1 sin L2 + cos L1 cos L2 cos DLo: 1,855 M; 1,886 − 1,855 = 31 M saved.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "St John's → Falmouth",
+   "lines": [
+    "St John's 47°34′N 052°42′W",
+    "Falmouth 50°09′N 005°04′W",
+    "Plotter, leg type RL: 1,886 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You are planning the ARC crossing and want the great-circle distance from Las Palmas to Rodney Bay. What is it?",
+  "a": "2,666 M",
+  "o": [
+   "2,676 M",
+   "2,655 M",
+   "2,858 M"
+  ],
+  "why": "DLo 45°31′; cos d = sin 28.13° sin 14.08° + cos 28.13° cos 14.08° cos 45.52° → d = 44.43° × 60 = 2,666 M.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "Las Palmas → St Lucia",
+   "lines": [
+    "Las Palmas 28°08′N 015°26′W",
+    "Rodney Bay 14°05′N 060°57′W",
+    "Plotter leg type: GC"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You leave Las Palmas on the great circle for Rodney Bay. What initial course do you set?",
+  "a": "261°T",
+  "o": [
+   "252°T",
+   "244°T",
+   "279°T"
+  ],
+  "why": "GC formula: S 81.3° W = 261°T, north of the rhumb-line course 252°T; it ends at 244°T off St Lucia.",
+  "ref": "Great circle sailing — initial course",
+  "fig": {
+   "type": "card",
+   "title": "Las Palmas → St Lucia",
+   "lines": [
+    "Las Palmas 28°08′N 015°26′W",
+    "Rodney Bay 14°05′N 060°57′W",
+    "Plotter leg type: GC"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You are planning the South Atlantic crossing from Cape Town to Brazil. What is the great-circle distance?",
+  "a": "3,330 M",
+  "o": [
+   "3,354 M",
+   "1,668 M",
+   "4,295 M"
+  ],
+  "why": "DLo = 18°25′E + 38°31′W = 56°56′ (east and west add); cos d = sin L1 sin L2 + cos L1 cos L2 cos DLo → 55.50° = 3,330 M.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "Cape Town → Salvador",
+   "lines": [
+    "Cape Town 33°55′S 018°25′E",
+    "Salvador 12°58′S 038°31′W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You plan the trade-wind crossing from Cocos (Keeling) to Mauritius. What is the great-circle distance?",
+  "a": "2,315 M",
+  "o": [
+   "2,363 M",
+   "2,319 M",
+   "3,025 M"
+  ],
+  "why": "DLo 39°23′W; cos d = sin 12.08° sin 20.17° + cos 12.08° cos 20.17° cos 39.38° (both S) → 38.59° = 2,315 M.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "Indian Ocean crossing",
+   "lines": [
+    "Direction Island, Cocos 12°05′S 096°53′E",
+    "Port Louis, Mauritius 20°10′S 057°30′E"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "You plan the long leg from Panama to the Marquesas, across the equator. What is the great-circle distance?",
+  "a": "3,773 M",
+  "o": [
+   "3,585 M",
+   "3,633 M",
+   "3,541 M"
+  ],
+  "why": "Contrary names: L2 = −8.92°; cos d = sin 8.92° × sin(−8.92°) + cos² 8.92° × cos 60.55° → 62.88° = 3,773 M.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "Panama → Marquesas",
+   "lines": [
+    "Balboa 08°55′N 079°33′W",
+    "Taiohae, Nuku Hiva 08°55′S 140°06′W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You leave St George's, Bermuda, for Horta on the great circle. What initial course do you steer?",
+  "a": "068°T",
+  "o": [
+   "078°T",
+   "089°T",
+   "112°T"
+  ],
+  "why": "DLo 36°02′E; GC formula → N 67.9° E = 068°T. The rhumb line is 078°T; the GC course reaches 089°T at Horta.",
+  "ref": "Great circle sailing — initial course",
+  "fig": {
+   "type": "card",
+   "title": "Bermuda → Horta",
+   "lines": [
+    "St George's 32°23′N 064°40′W",
+    "Horta 38°32′N 028°38′W",
+    "Plotter leg type: GC"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You leave Cape Town on the great circle for Fremantle. What initial course do you steer?",
+  "a": "121°T",
+  "o": [
+   "089°T",
+   "059°T",
+   "239°T"
+  ],
+  "why": "Both latitudes south; GC formula → S 59.2° E = 121°T, south of the rhumb line (089°T): the track bows towards the South Pole.",
+  "ref": "Great circle sailing — initial course",
+  "fig": {
+   "type": "card",
+   "title": "Cape Town → Fremantle",
+   "lines": [
+    "Cape Town 33°55′S 018°25′E",
+    "Fremantle 32°03′S 115°45′E",
+    "Plotter leg type: GC"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You leave Falmouth westbound on the great circle for Newport, Rhode Island. What initial course do you steer?",
+  "a": "286°T",
+  "o": [
+   "259°T",
+   "235°T",
+   "254°T"
+  ],
+  "why": "GC formula: N 74.3° W = 286°T — north of the rhumb line 259°T: in the north the great circle bows towards the pole.",
+  "ref": "Great circle sailing — initial course",
+  "fig": {
+   "type": "card",
+   "title": "Falmouth → Newport",
+   "lines": [
+    "Falmouth 50°09′N 005°04′W",
+    "Newport 41°29′N 071°19′W",
+    "Rhumb-line course 259°T"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You set off from Auckland on the great circle for Tahiti. What initial course do you steer?",
+  "a": "068°T",
+  "o": [
+   "058°T",
+   "292°T",
+   "051°T"
+  ],
+  "why": "DLo across the date line: 5°14′ + 30°26′ = 35°40′ east; GC formula → N 68.1° E = 068°T, 2,209 M to Papeete.",
+  "ref": "Great circle sailing — initial course",
+  "fig": {
+   "type": "card",
+   "title": "Auckland → Papeete",
+   "lines": [
+    "Auckland 36°51′S 174°46′E",
+    "Papeete 17°32′S 149°34′W",
+    "The track crosses the 180° meridian"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You are sailing the great circle from Newport to Falmouth and reach V, its most northerly point. What is your course there?",
+  "a": "090°T — due east",
+  "o": [
+   "000°T — due north",
+   "045°T — halfway round",
+   "055°T — the initial course"
+  ],
+  "why": "At the vertex the great circle runs at right angles to the meridian: the course is 090° or 270°.",
+  "ref": "Great circle sailing — the vertex",
+  "fig": {
+   "type": "chart",
+   "land": "M40 0 H41 V200 H40 Z M100 0 H101 V200 H100 Z M160 0 H161 V200 H160 Z M220 0 H221 V200 H220 Z M280 0 H281 V200 H280 Z M0 40 H320 V41 H0 Z M0 90 H320 V91 H0 Z M0 140 H320 V141 H0 Z",
+   "marks": [
+    [
+     30,
+     150,
+     "k",
+     "Newport"
+    ],
+    [
+     177,
+     77,
+     "k",
+     "V"
+    ],
+    [
+     290,
+     120,
+     "k",
+     "Falmouth"
+    ]
+   ],
+   "track": "M30 150 Q160 20 290 120",
+   "note": "Mercator chart: GC Newport → Falmouth"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Before leaving Halifax you work out the vertex of the great circle to Falmouth. Where is it?",
+  "a": "51°47′N 024°37′W",
+  "o": [
+   "51°47′N 102°31′W",
+   "69°26′N 024°37′W",
+   "48°13′N 024°37′W"
+  ],
+  "why": "cos Lv = cos 44.65° × sin 60.4° → 51°47′N; cos DLo = tan 44.65° / tan Lv → DLo 38°57′E, so 024°37′W.",
+  "ref": "Great circle sailing — the vertex",
+  "fig": {
+   "type": "card",
+   "title": "GC Halifax → Falmouth",
+   "lines": [
+    "Halifax 44°39′N 063°34′W",
+    "Initial course 060.4°T"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Leaving Cape Town for Fremantle on the great circle, you check how far south it will take you. What is the latitude of the vertex?",
+  "a": "44°32′S",
+  "o": [
+   "44°32′N",
+   "64°51′S",
+   "45°28′S"
+  ],
+  "why": "cos Lv = cos 33.92° × sin 120.8° (= sin 59.2°) → Lv 44°32′S — on the polar side, so named like the start: south.",
+  "ref": "Great circle sailing — the vertex",
+  "fig": {
+   "type": "card",
+   "title": "GC Cape Town → Fremantle",
+   "lines": [
+    "Cape Town 33°55′S 018°25′E",
+    "Initial course 120.8°T"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Sailing this great circle from Bermuda, where on the track are you furthest north?",
+  "a": "At Horta — the vertex lies just beyond it",
+  "o": [
+   "Halfway, near 46°W, at about 41°N",
+   "Near Bermuda — the track runs south of east",
+   "North of the Azores, at about 45°N"
+  ],
+  "why": "The course is still north of east (089°T) on arrival, so the track climbs all the way: the vertex (38°32′N 027°26′W) is past Horta.",
+  "ref": "Great circle sailing — the vertex",
+  "fig": {
+   "type": "card",
+   "title": "GC Bermuda → Horta",
+   "lines": [
+    "Course leaving Bermuda 068°T",
+    "Course arriving at Horta 089°T",
+    "Horta 38°32′N 028°38′W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You set great-circle waypoints every 10° of longitude for the passage to Falmouth. What latitude does the waypoint on 40°W get?",
+  "a": "50°46′N",
+  "o": [
+   "51°47′N",
+   "48°58′N",
+   "49°15′N"
+  ],
+  "why": "tan L = tan Lv × cos (DLo from the vertex) = tan 51.78° × cos 15.38° → 50°46′N.",
+  "ref": "Great circle sailing — waypoints",
+  "fig": {
+   "type": "card",
+   "title": "GC Halifax → Falmouth",
+   "lines": [
+    "Vertex 51°47′N 024°37′W",
+    "Next waypoint on the 40°W meridian"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "With only the two ports' positions to go on, you work out the great-circle waypoint on the 40°W meridian. What is its latitude?",
+  "a": "50°58′N",
+  "o": [
+   "45°45′N",
+   "51°55′N",
+   "49°33′N"
+  ],
+  "why": "Initial course 55.4°; cos Lv = cos 41.48° sin 55.4° → 51°55′N at 025°11′W; tan L = tan Lv cos 14.82° → 50°58′N.",
+  "ref": "Great circle sailing — waypoints",
+  "fig": {
+   "type": "card",
+   "title": "GC Newport → Falmouth",
+   "lines": [
+    "Newport 41°29′N 071°19′W",
+    "Falmouth 50°09′N 005°04′W",
+    "Waypoint wanted on 40°W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "You sail the great circle as rhumb-line legs between waypoints every 10° of longitude. How much farther is that than the true great circle?",
+  "a": "About 2 M",
+  "o": [
+   "About 59 M",
+   "About 20 M",
+   "None at all"
+  ],
+  "why": "Short rhumb legs hug the curve: about 1.5 M over 2,337 M, against 59 M for one rhumb line all the way.",
+  "ref": "Great circle sailing — waypoints",
+  "fig": {
+   "type": "card",
+   "title": "GC Halifax → Falmouth",
+   "lines": [
+    "Waypoints on 60°, 50° … 10°W",
+    "Rhumb-line legs between them",
+    "GC 2,337 M · one rhumb line 2,396 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "On the great circle from Halifax the plotter's course to steer creeps round day by day, with no current and no wind shift. Why?",
+  "a": "The great circle cuts each meridian at a different angle",
+  "o": [
+   "Magnetic variation changes along the route",
+   "The plotter corrects for the Gulf Stream each hour",
+   "The Earth's rotation pulls the track to the right"
+  ],
+  "why": "Only a rhumb line keeps one angle to the meridians; on a great circle the course changes all the way, here from 060° to 105°.",
+  "ref": "Great circle sailing — the course changes",
+  "fig": {
+   "type": "card",
+   "title": "GC Halifax → Falmouth, 2,337 M",
+   "lines": [
+    "Course leaving Halifax 060°T",
+    "Course arriving at Falmouth 105°T",
+    "No current, autopilot on track"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Reaching the waypoint on 50°W, you check the great-circle course from here. What is it?",
+  "a": "070°T",
+  "o": [
+   "110°T",
+   "020°T",
+   "090°T"
+  ],
+  "why": "sin C = cos Lv / cos L = cos 51.78° / cos 48.93° → N 70.3° E = 070°T: 060° at Halifax, 090° at the vertex.",
+  "ref": "Great circle sailing — the course changes",
+  "fig": {
+   "type": "card",
+   "title": "GC Halifax → Falmouth",
+   "lines": [
+    "Vertex 51°47′N 024°37′W",
+    "Waypoint 48°56′N 050°00′W",
+    "You are at the waypoint now"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "Three days out of Bermuda a gale has pushed you south of the planned great circle. What great-circle course do you now steer for Horta?",
+  "a": "071°T",
+  "o": [
+   "068°T",
+   "079°T",
+   "065°T"
+  ],
+  "why": "Start a new great circle from the fix: DLo 26°42′E; GC formula → N 70.7° E = 071°T, 1,312 M to go.",
+  "ref": "Great circle sailing — the course changes",
+  "fig": {
+   "type": "card",
+   "title": "Bermuda → Horta, day 3",
+   "lines": [
+    "Fix 34°10′N 055°20′W",
+    "Horta 38°32′N 028°38′W",
+    "GC course out of Bermuda was 068°T"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You plan the passage from Cape Town to Hobart. Which track do you lay off?",
+  "a": "GC to 45°S, along the parallel, then GC to Hobart",
+  "o": [
+   "The great circle — the shortest track is the best",
+   "The rhumb line — it is shorter at this latitude",
+   "Two rhumb lines that meet at the vertex"
+  ],
+  "why": "Composite sailing: great circles to and from the limiting latitude, joined along it — the shortest track that keeps out of the ice.",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "card",
+   "title": "Cape Town → Hobart",
+   "lines": [
+    "GC 5,408 M",
+    "GC vertex 61°46′S, among icebergs",
+    "Your limit: no further south than 45°S"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You plan a composite track to Fremantle with 40°S as the limit. What initial course do you steer out of Cape Town?",
+  "a": "113°T",
+  "o": [
+   "121°T",
+   "089°T",
+   "067°T"
+  ],
+  "why": "The first GC has its vertex on 40°S: sin C = cos 40° / cos 33.92° → S 67.4° E = 113°T.",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "card",
+   "title": "Composite, Cape Town → Fremantle",
+   "lines": [
+    "Cape Town 33°55′S 018°25′E",
+    "Limiting latitude 40°S",
+    "Direct GC: vertex 44°32′S, course 121°T"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "On your composite track to Fremantle, at what longitude does the first great circle bring you down to the 40°S limit?",
+  "a": "055°10′E",
+  "o": [
+   "018°20′W",
+   "048°11′E",
+   "065°17′E"
+  ],
+  "why": "The vertex is on 40°S: cos DLo = tan 33.92° / tan 40° → DLo 36°45′E; 018°25′E + 36°45′ = 055°10′E.",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "card",
+   "title": "Composite, Cape Town → Fremantle",
+   "lines": [
+    "Cape Town 33°55′S 018°25′E",
+    "Limiting latitude 40°S",
+    "First GC: its vertex on 40°S"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "On your composite track to Hobart, how far do you sail along the 45°S parallel?",
+  "a": "2,520 M",
+  "o": [
+   "3,564 M",
+   "2,958 M",
+   "5,040 M"
+  ],
+  "why": "DLo 59°24′ = 3,564′; departure = DLo × cos 45° = 2,520 M.",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "card",
+   "title": "Composite, Cape Town → Hobart",
+   "lines": [
+    "Reach 45°S at 066°10′E",
+    "Leave 45°S at 125°34′E",
+    "Along the parallel in between"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "You decide not to go south of 45°S on the way to Hobart. What is the total distance of the composite track?",
+  "a": "5,740 M",
+  "o": [
+   "5,408 M",
+   "6,784 M",
+   "6,072 M"
+  ],
+  "why": "GC legs: cos d = sin L / sin 45° → 2,274 + 946 M; along 45°S 2,520 M; total 5,740 M (direct GC 5,408 M).",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "card",
+   "title": "Composite, Cape Town → Hobart",
+   "lines": [
+    "Cape Town 33°55′S 018°25′E",
+    "Hobart 42°53′S 147°20′E",
+    "Limiting latitude 45°S"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "On the last night before landfall you lay off the short leg to the channel waypoint by plane sailing. What course and distance?",
+  "a": "255°T, 85 M",
+  "o": [
+   "255°T, 88 M",
+   "075°T, 85 M",
+   "255°T, 107 M"
+  ],
+  "why": "dLat 22′S; DLo 85′W × cos 14.35° = departure 82.4′; C = S 75.0° W = 255°T; d = √(22² + 82.4²) = 85 M.",
+  "ref": "Plane sailing",
+  "fig": {
+   "type": "card",
+   "title": "Landfall, St Lucia Channel",
+   "lines": [
+    "DR 14°32′N 059°20′W",
+    "Channel waypoint 14°10′N 060°45′W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "The sky is overcast at noon, so you work up the noon DR by plane sailing. Where is it?",
+  "a": "17°17′N 034°52′W",
+  "o": [
+   "17°17′N 034°44′W",
+   "17°17′N 029°38′W",
+   "17°17′N 034°37′W"
+  ],
+  "why": "dLat 162 cos 247° = 63.3′S; dep 149.1′W; DLo = dep / cos 17.8° = 156.6′W.",
+  "ref": "Plane sailing",
+  "fig": {
+   "type": "card",
+   "title": "Noon to noon in the trades",
+   "lines": [
+    "Noon fix yesterday: 18°20′N 032°15′W",
+    "Course 247°T, no current, no leeway",
+    "Log distance 162 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "On passage from Cape Town to St Helena you have these two noon fixes. What course and distance have you made good?",
+  "a": "304°T, 162 M",
+  "o": [
+   "338°T, 97 M",
+   "301°T, 175 M",
+   "236°T, 162 M"
+  ],
+  "why": "dLat 90′N; DLo 2°30′W (east and west add across Greenwich) × cos 25.9° = dep 135′; C = N 56.3° W = 304°T, 162 M.",
+  "ref": "Plane sailing",
+  "fig": {
+   "type": "card",
+   "title": "Two noon fixes",
+   "lines": [
+    "Yesterday 26°40′S 001°35′E",
+    "Today 25°10′S 000°55′W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "Bound across the South Pacific, you have sailed these two legs since noon. By plane sailing, where is your DR now?",
+  "a": "15°26′S 132°55′W",
+  "o": [
+   "15°54′S 132°55′W",
+   "15°26′S 132°50′W",
+   "15°26′S 127°55′W"
+  ],
+  "why": "dLat −16.6′ + 30.1′ = 13.5′N; dep 61.8′ + 82.7′ = 144.5′W; DLo = dep / cos 15.55° = 150′W.",
+  "ref": "Plane sailing",
+  "fig": {
+   "type": "card",
+   "title": "Two legs since noon, Pacific",
+   "lines": [
+    "Noon fix: 15°40′S 130°25′W",
+    "Course 255°T, 64 M",
+    "Then course 290°T, 88 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You want the single rhumb-line course from Mindelo to Bridgetown by Mercator sailing. What is it?",
+  "a": "264°T",
+  "o": [
+   "268°T",
+   "276°T",
+   "084°T"
+  ],
+  "why": "DLo 34°38′W = 2,078′; DMP 233.5; tan C = DLo / DMP → S 83.6° W = 264°T.",
+  "ref": "Mercator sailing",
+  "fig": {
+   "type": "card",
+   "title": "Mindelo → Bridgetown, rhumb line",
+   "lines": [
+    "Mindelo 16°53′N 024°59′W · MP 1021.2",
+    "Bridgetown 13°06′N 059°37′W · MP 787.7"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Working the rhumb line from Horta to Falmouth by Mercator sailing, what distance do you get?",
+  "a": "1,227 M",
+  "o": [
+   "1,718 M",
+   "396 M",
+   "1,220 M"
+  ],
+  "why": "tan C = DLo 1,414′ / DMP 976.1 → C N 55.4° E; distance = dLat 697′ / cos C = 1,227 M.",
+  "ref": "Mercator sailing",
+  "fig": {
+   "type": "card",
+   "title": "Horta → Falmouth, rhumb line",
+   "lines": [
+    "Horta 38°32′N 028°38′W · MP 2494.5",
+    "Falmouth 50°09′N 005°04′W · MP 3470.6"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You lay off the rhumb line from Cape Town to Jamestown, St Helena. What course and distance does Mercator sailing give?",
+  "a": "309°T, 1,700 M",
+  "o": [
+   "051°T, 1,700 M",
+   "309°T, 1,875 M",
+   "307°T, 1,806 M"
+  ],
+  "why": "DLo 24°08′W = 1,448′; DMP 1191.4; C = N 50.6° W = 309°T; d = dLat 1,080′ / cos C = 1,700 M.",
+  "ref": "Mercator sailing",
+  "fig": {
+   "type": "card",
+   "title": "Cape Town → St Helena, rhumb line",
+   "lines": [
+    "Cape Town 33°55′S 018°25′E · MP 2152.5",
+    "Jamestown 15°55′S 005°43′W · MP 961.1"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "Bound from Cape Verde to Brazil across the equator, you work the rhumb line by Mercator sailing. What course and distance do you get?",
+  "a": "204°T, 1,965 M",
+  "o": [
+   "253°T, 824 M",
+   "204°T, 258 M",
+   "024°T, 1,965 M"
+  ],
+  "why": "Contrary names add: dLat 1,791′, DMP 1021.2 + 779.5 = 1800.7; DLo 812′W; C = S 24.3° W; d = 1,791 / cos C.",
+  "ref": "Mercator sailing",
+  "fig": {
+   "type": "card",
+   "title": "Mindelo → Salvador, rhumb line",
+   "lines": [
+    "Mindelo 16°53′N 024°59′W · MP 1021.2",
+    "Salvador 12°58′S 038°31′W · MP 779.5"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You have reached Bermuda's latitude and will run due west along it to St George's. How far do you have to go?",
+  "a": "329 M",
+  "o": [
+   "390 M",
+   "209 M",
+   "462 M"
+  ],
+  "why": "Parallel sailing: distance = DLo × cos lat = 390′ × cos 32.38° = 329 M.",
+  "ref": "Parallel sailing",
+  "fig": {
+   "type": "card",
+   "title": "Running down the latitude",
+   "lines": [
+    "You 32°23′N 058°10′W",
+    "St George's 32°23′N 064°40′W",
+    "Course 270°T along the parallel"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You run your easting down along 40°S for a day. What is your longitude at noon tomorrow?",
+  "a": "062°19′E",
+  "o": [
+   "061°28′E",
+   "060°49′E",
+   "055°01′E"
+  ],
+  "why": "168 M of departure; DLo = departure / cos lat = 168 / cos 40° = 219.3′ = 03°39′E → 062°19′E.",
+  "ref": "Parallel sailing",
+  "fig": {
+   "type": "card",
+   "title": "Indian Ocean, along 40°S",
+   "lines": [
+    "Noon 40°00′S 058°40′E",
+    "Course 090°T, 24 h at 7.0 kn",
+    "No current"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You leave Las Palmas for St Lucia in late November. Why does your route head SSW for days instead of following the great circle?",
+  "a": "To find the steady NE trade wind further south",
+  "o": [
+   "To sail a shorter track than the great circle",
+   "To keep clear of the Canary Current",
+   "To pass the vertex of the great circle"
+  ],
+  "why": "The GC runs through light, fickle winds north of the trades; going south first ('until the butter melts') finds the steady NE trade.",
+  "ref": "Great circle sailing — when not to use it",
+  "fig": {
+   "type": "card",
+   "title": "The ARC route",
+   "lines": [
+    "Las Palmas → St Lucia",
+    "GC 2,666 M · rhumb line 2,676 M",
+    "Route chosen: SSW to about 20°N",
+    "Then west to St Lucia"
+   ],
+   "tag": "Late Nov"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "You leave Honolulu for San Francisco in July. The NE trade blows straight down the great circle (054°T, 2,078 M) and the Pacific High lies across its middle. How do you route?",
+  "a": "North on starboard tack round the high's west side, then east",
+  "o": [
+   "Along the great circle — the shortest is the fastest",
+   "South of the high, then north up the Californian coast",
+   "Along the rhumb line, then motor through the calms"
+  ],
+  "why": "Calms at the high's centre and a beat on the GC: sail north on the trade round the high, then east in the westerlies — more miles, fewer days.",
+  "ref": "Great circle sailing — when not to use it",
+  "fig": {
+   "type": "isobars",
+   "center": "H",
+   "values": [
+    "1032",
+    "1028",
+    "1024"
+   ],
+   "boat": [
+    60,
+    175,
+    45
+   ],
+   "hemisphere": "Northern hemisphere",
+   "note": "GC: on the wind, then calms"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "You plan the passage from Cape Town to Salvador in February. The great circle runs close to the centre of the South Atlantic high. Which route do you choose?",
+  "a": "North with the SE trade towards St Helena, then west to Brazil",
+  "o": [
+   "The great circle — the shortest track is the quickest",
+   "South into the westerlies, then north up the Brazilian coast",
+   "West along 34°S, then north along the coast to Salvador"
+  ],
+  "why": "Calms at the high's centre; the SE trade and the South Equatorial Current to its north give a fast run — more miles, fewer days.",
+  "ref": "Great circle sailing — when not to use it",
+  "fig": {
+   "type": "card",
+   "title": "Cape Town → Salvador, February",
+   "lines": [
+    "GC 3,330 M, crossing 008°W at 28°S",
+    "South Atlantic high near 28°S 008°W",
+    "SE trade and current north of 25°S"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You enter the passage from Horta to Falmouth into the plotter as one leg. Which leg setting gives the shorter track?",
+  "a": "GC — the plotter follows the great circle",
+  "o": [
+   "RL — the straight line on the screen is shorter",
+   "Either — both settings give the same miles",
+   "RL — GC works only on a gnomonic chart"
+  ],
+  "why": "GC makes the plotter compute the great circle; RL keeps one course — a straight line on its Mercator screen, but longer.",
+  "ref": "Great circle sailing — the plotter",
+  "fig": {
+   "type": "card",
+   "title": "Route: Horta → Falmouth",
+   "lines": [
+    "Leg type: RL",
+    "One leg, no waypoints",
+    "Clear of all dangers"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Checking the route before leaving Newport, you see the plotter leg is set to RL. How many extra miles does that cost over the great circle?",
+  "a": "86 M",
+  "o": [
+   "0 M",
+   "172 M",
+   "29 M"
+  ],
+  "why": "GC by cos d = sin L1 sin L2 + cos L1 cos L2 cos DLo: 2,725 M; RL 2,811 M — 86 M, about half a day's run.",
+  "ref": "Great circle sailing — the plotter",
+  "fig": {
+   "type": "card",
+   "title": "Plotter: Newport → Falmouth",
+   "lines": [
+    "Newport 41°29′N 071°19′W",
+    "Falmouth 50°09′N 005°04′W",
+    "Leg type: RL · 2,811 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "A new crew member asks why the great circle from Yokohama to Victoria, the shorter track, swings up towards the Aleutians on this chart. What is the reason?",
+  "a": "Mercator stretches latitude towards the poles, so a GC plots as a curve",
+  "o": [
+   "The plotter bends the track for the set of the Kuroshio current",
+   "A great circle is drawn curved on every kind of chart",
+   "The track is bent to keep inside the Aleutian ice limit"
+  ],
+  "why": "Only rhumb lines are straight on a Mercator chart; the GC (4,104 M) bows poleward of the rhumb line (4,374 M).",
+  "ref": "Great circle sailing — on the Mercator chart",
+  "fig": {
+   "type": "chart",
+   "land": "M40 0 H41 V200 H40 Z M100 0 H101 V200 H100 Z M160 0 H161 V200 H160 Z M220 0 H221 V200 H220 Z M280 0 H281 V200 H280 Z M0 40 H320 V41 H0 Z M0 90 H320 V91 H0 Z M0 140 H320 V141 H0 Z",
+   "marks": [
+    [
+     30,
+     160,
+     "k",
+     "Yokohama"
+    ],
+    [
+     290,
+     112,
+     "k",
+     "Victoria"
+    ]
+   ],
+   "track": "M30 160 Q150 10 290 112 M30 160 L290 112",
+   "labels": [
+    [
+     150,
+     66,
+     "great circle",
+     "middle"
+    ],
+    [
+     170,
+     150,
+     "rhumb line",
+     "middle"
+    ]
+   ],
+   "note": "Mercator chart, North Pacific"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You compare four legs, each 40° of longitude long and each sailed along a parallel. On which does switching the plotter to GC save nothing at all?",
+  "a": "Leg A, along the equator",
+  "o": [
+   "Leg B, along 10°S",
+   "Leg C, along 30°S",
+   "Leg D, along 50°S"
+  ],
+  "why": "Only the equator is a great circle: the GC saves 0 M on A, 1.5 M on B, 10.9 M on C and 18.7 M on D.",
+  "ref": "Great circle sailing — the saving",
+  "fig": {
+   "type": "card",
+   "title": "Four legs in the plotter, type RL",
+   "lines": [
+    "A: along the equator, 160°W → 120°W",
+    "B: along 10°S, 160°W → 120°W",
+    "C: along 30°S, 160°W → 120°W",
+    "D: along 50°S, 160°W → 120°W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "Running your easting down in the Southern Ocean, a crew member says that holding 50°S, with the latitude never changing, must be the shortest track. What do you tell them?",
+  "a": "No — a parallel is a small circle; the great circle is shorter",
+  "o": [
+   "Yes — every parallel of latitude is a great circle",
+   "Yes — a steady course is always the shortest track",
+   "No — the rhumb line along 50°S is shorter still"
+  ],
+  "why": "Only the equator is both a parallel and a great circle: along 50°S from 080°E to 120°E the parallel is 1,543 M, the GC 1,524 M.",
+  "ref": "Parallel sailing — and the great circle",
+  "fig": {
+   "type": "card",
+   "title": "Southern Ocean, along the parallel",
+   "lines": [
+    "From 50°00′S 080°00′E",
+    "To 50°00′S 120°00′E",
+    "Course 090°T all the way"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "On this gnomonic chart centred on the South Pole you rule the great circle from Bluff to Cape Horn. Which of the marked points is its vertex?",
+  "a": "B — the point of the line nearest the pole",
+  "o": [
+   "A — where the line first crosses 60°S",
+   "C — where the line climbs back over 60°S",
+   "None — the vertex is off this chart"
+  ],
+  "why": "On a gnomonic chart the vertex is where the GC line comes nearest the pole — here about 69°53′S, deep in the ice.",
+  "ref": "Great circle sailing — the vertex",
+  "fig": {
+   "type": "chart",
+   "land": "M34.1 120.0 a125.9 125.9 0 1 0 251.7 0 a125.9 125.9 0 1 0 -251.7 0 Z M35.3 120.0 a124.7 124.7 0 1 1 249.3 0 a124.7 124.7 0 1 1 -249.3 0 Z M73.4 120.0 a86.6 86.6 0 1 0 173.2 0 a86.6 86.6 0 1 0 -173.2 0 Z M74.6 120.0 a85.4 85.4 0 1 1 170.8 0 a85.4 85.4 0 1 1 -170.8 0 Z M105.4 120.0 a54.6 54.6 0 1 0 109.2 0 a54.6 54.6 0 1 0 -109.2 0 Z M106.6 120.0 a53.4 53.4 0 1 1 106.8 0 a53.4 53.4 0 1 1 -106.8 0 Z M160.1 119.4 L-254.2 50.3 L-254.4 51.5 L159.9 120.6 Z M160.4 119.5 L-163.9 -147.4 L-164.6 -146.5 L159.6 120.5 Z M160.6 119.8 L13.2 -273.5 L12.1 -273.1 L159.4 120.2 Z M160.6 120.1 L229.7 -294.2 L228.5 -294.4 L159.4 119.9 Z M160.5 120.4 L427.4 -203.9 L426.5 -204.6 L159.5 119.6 Z M160.2 120.6 L553.5 -26.8 L553.1 -27.9 L159.8 119.4 Z",
+   "marks": [
+    [
+     34.5,
+     53.8,
+     "k",
+     "Bluff"
+    ],
+    [
+     249.5,
+     72.8,
+     "k",
+     "Cape Horn"
+    ],
+    [
+     160,
+     120,
+     "k",
+     "South Pole"
+    ],
+    [
+     98.1,
+     59.4,
+     "k"
+    ],
+    [
+     164.8,
+     65.3,
+     "k"
+    ],
+    [
+     231.5,
+     71.2,
+     "k"
+    ]
+   ],
+   "track": "M34.5 53.8 L249.5 72.8",
+   "labels": [
+    [
+     98.1,
+     75.4,
+     "A",
+     "middle"
+    ],
+    [
+     164.8,
+     81.3,
+     "B",
+     "middle"
+    ],
+    [
+     231.5,
+     87.2,
+     "C",
+     "middle"
+    ],
+    [
+     244,
+     172,
+     "60°S",
+     "middle"
+    ],
+    [
+     199,
+     160,
+     "70°S",
+     "middle"
+    ]
+   ],
+   "note": "Gnomonic chart centred on the South Pole"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "On this gnomonic chart you have ruled the great circle from Sydney to Nelson and run the line on to its vertex X. Where on the passage itself are you furthest south?",
+  "a": "At Nelson — the vertex lies beyond it, off the track",
+  "o": [
+   "At X, the vertex, at about 43°45′S",
+   "Halfway across, where the line dips lowest",
+   "At Sydney — the track climbs north all the way"
+  ],
+  "why": "The course is still south of east at Nelson (106°T), so the track descends all the way; the vertex 43°45′S 163°10′W is beyond.",
+  "ref": "Great circle sailing — the vertex",
+  "fig": {
+   "type": "chart",
+   "land": "M-54.2 300.0 a214.2 214.2 0 1 0 428.4 0 a214.2 214.2 0 1 0 -428.4 0 Z M-53.0 300.0 a213.0 213.0 0 1 1 426.0 0 a213.0 213.0 0 1 1 -426.0 0 Z M-18.8 300.0 a178.8 178.8 0 1 0 357.5 0 a178.8 178.8 0 1 0 -357.5 0 Z M-17.6 300.0 a177.6 177.6 0 1 1 355.1 0 a177.6 177.6 0 1 1 -355.1 0 Z M10.0 300.0 a150.0 150.0 0 1 0 300.0 0 a150.0 150.0 0 1 0 -300.0 0 Z M11.2 300.0 a148.8 148.8 0 1 1 297.6 0 a148.8 148.8 0 1 1 -297.6 0 Z M160.6 299.9 L73.3 -110.9 L72.1 -110.7 L159.4 300.1 Z M160.6 300.0 L145.9 -119.8 L144.7 -119.7 L159.4 300.0 Z M160.6 300.1 L219.0 -115.8 L217.9 -116.0 L159.4 299.9 Z M160.6 300.2 L290.4 -99.3 L289.2 -99.6 L159.4 299.8 Z M160.5 300.3 L357.7 -70.6 L356.6 -71.1 L159.5 299.7 Z",
+   "marks": [
+    [
+     118.4,
+     80.1,
+     "k",
+     "Sydney"
+    ],
+    [
+     193.4,
+     132.4,
+     "k",
+     "Nelson"
+    ],
+    [
+     249.5,
+     171.4,
+     "k",
+     "X"
+    ]
+   ],
+   "track": "M118.4 80.1 L260.0 178.7",
+   "labels": [
+    [
+     90,
+     94.5,
+     "35°S",
+     "middle"
+    ],
+    [
+     90,
+     132.5,
+     "40°S",
+     "middle"
+    ],
+    [
+     90,
+     164.3,
+     "45°S",
+     "middle"
+    ]
+   ],
+   "note": "Gnomonic chart, the Tasman Sea"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Bound from Salvador in Brazil to Grenada, you cross the equator. Which of the three tracks on this Mercator chart is the great circle?",
+  "a": "A — south of the straight line, then north of it",
+  "o": [
+   "B — the straight line between the two ports",
+   "C — bowed north of the straight line all the way",
+   "C — bowed towards the pole you are heading for"
+  ],
+  "why": "A GC bows towards the nearer pole: south of the rhumb line in the south, north of it past the equator — an S on the Mercator chart.",
+  "ref": "Great circle sailing — across the equator",
+  "fig": {
+   "type": "chart",
+   "land": "M40 0 H41 V200 H40 Z M100 0 H101 V200 H100 Z M160 0 H161 V200 H160 Z M220 0 H221 V200 H220 Z M280 0 H281 V200 H280 Z M0 40 H320 V41 H0 Z M0 160 H320 V161 H0 Z M0 99 H320 V102 H0 Z",
+   "marks": [
+    [
+     280,
+     160,
+     "k",
+     "Salvador"
+    ],
+    [
+     40,
+     40,
+     "k",
+     "Grenada"
+    ]
+   ],
+   "track": "M280 160 Q250 175 160 100 Q70 25 40 40 M280 160 L40 40 M280 160 Q190 40 40 40",
+   "labels": [
+    [
+     246,
+     176,
+     "A",
+     "middle"
+    ],
+    [
+     96,
+     82,
+     "B",
+     "middle"
+    ],
+    [
+     190,
+     58,
+     "C",
+     "middle"
+    ],
+    [
+     312,
+     96,
+     "Equator",
+     "end"
+    ]
+   ],
+   "note": "Mercator chart, western tropical Atlantic"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You plan the South Indian Ocean crossing from Durban to Fremantle. What is the great-circle distance?",
+  "a": "4,236 M",
+  "o": [
+   "4,360 M",
+   "6,079 M",
+   "5,084 M"
+  ],
+  "why": "DLo 84°42′E, both latitudes south: cos d = sin L1 sin L2 + cos L1 cos L2 cos DLo → 70.60° × 60 = 4,236 M.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "Durban → Fremantle",
+   "lines": [
+    "Durban 29°52′S 031°03′E",
+    "Fremantle 32°03′S 115°45′E"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Clearing the breakwater at Durban, bound for Fremantle by the great circle, you want the first course to steer. What is it?",
+  "a": "117°T",
+  "o": [
+   "092°T",
+   "063°T",
+   "243°T"
+  ],
+  "why": "Both latitudes south: GC formula → S 63.5° E = 117°T, south of the rhumb line 092°T: the track bows towards the pole.",
+  "ref": "Great circle sailing — initial course",
+  "fig": {
+   "type": "card",
+   "title": "Durban → Fremantle",
+   "lines": [
+    "Durban 29°52′S 031°03′E",
+    "Fremantle 32°03′S 115°45′E",
+    "Plotter leg type: GC"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You leave Durban on the great circle for Fremantle with no current and no wind shift. How will the course to steer change on the way?",
+  "a": "It comes round through 090° at the vertex to north of east",
+  "o": [
+   "It stays at 117°T — a great circle holds one course",
+   "It swings further south of east than 117°T",
+   "It comes round through 180° to west of south"
+  ],
+  "why": "Eastbound in the south the GC bows to the pole: 117°T at Durban, 090° at the vertex (39°06′S), 066°T at Fremantle.",
+  "ref": "Great circle sailing — the course changes",
+  "fig": {
+   "type": "card",
+   "title": "GC Durban → Fremantle",
+   "lines": [
+    "Course leaving Durban 117°T",
+    "Distance 4,236 M",
+    "No current, autopilot on track"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "To see how far south the great circle to Fremantle will take you, you work out its vertex. Where is it?",
+  "a": "39°06′S 076°05′E",
+  "o": [
+   "39°06′N 076°05′E",
+   "39°06′S 013°59′W",
+   "67°14′S 076°05′E"
+  ],
+  "why": "cos Lv = cos 29.87° × sin 116.5° → 39°06′S; cos DLo = tan 29.87° / tan Lv → DLo 45°02′E, so 076°05′E.",
+  "ref": "Great circle sailing — the vertex",
+  "fig": {
+   "type": "card",
+   "title": "GC Durban → Fremantle",
+   "lines": [
+    "Durban 29°52′S 031°03′E",
+    "Initial course 116.5°T"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Before the Indian Ocean crossing you list the great-circle waypoints from the vertex. What latitude goes against the 060°E meridian?",
+  "a": "37°59′S",
+  "o": [
+   "39°06′S",
+   "37°59′N",
+   "35°48′S"
+  ],
+  "why": "tan L = tan Lv × cos DLo from the vertex = tan 39.10° × cos 16.08° → 37°59′S, named south like the vertex.",
+  "ref": "Great circle sailing — waypoints",
+  "fig": {
+   "type": "card",
+   "title": "GC Durban → Fremantle",
+   "lines": [
+    "Vertex 39°06′S 076°05′E",
+    "Waypoint wanted on the 060°E meridian"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Coming up to the 100°E waypoint on this sheet, you check the great-circle course onward from it. What is it?",
+  "a": "075°T",
+  "o": [
+   "105°T",
+   "015°T",
+   "090°T"
+  ],
+  "why": "sin C = cos Lv / cos L = cos 39.10° / cos 36.62° → 75.2°; past the vertex in the south it is N 75° E = 075°T.",
+  "ref": "Great circle sailing — the course changes",
+  "fig": {
+   "type": "chart",
+   "land": "M115.6 0 H116.6 V200 H115.6 Z M178.9 0 H179.9 V200 H178.9 Z M242.2 0 H243.2 V200 H242.2 Z M0 41.7 H320 V42.7 H0 Z M0 106.5 H320 V107.5 H0 Z M0 175.3 H320 V176.3 H0 Z",
+   "marks": [
+    [
+     24.0,
+     40.0,
+     "k",
+     "Durban"
+    ],
+    [
+     166.5,
+     162.6,
+     "k"
+    ],
+    [
+     242.2,
+     128.2,
+     "k",
+     "WP 36°37′S 100°E"
+    ],
+    [
+     292.0,
+     67.8,
+     "k",
+     "Fremantle"
+    ]
+   ],
+   "track": "M24.0 40.0 L36.5 60.6 L52.3 84.0 L68.1 104.3 L84.0 121.6 L99.8 135.8 L115.6 147.0 L131.4 155.2 L147.2 160.4 L163.1 162.5 L178.9 161.7 L194.7 157.8 L210.5 150.9 L226.3 141.0 L242.2 128.1 L258.0 112.2 L273.8 93.1 L292.0 67.8",
+   "labels": [
+    [
+     166.5,
+     177.6,
+     "V 39°06′S 076°05′E",
+     "middle"
+    ],
+    [
+     115.6,
+     24,
+     "060°E",
+     "middle"
+    ],
+    [
+     178.9,
+     24,
+     "080°E",
+     "middle"
+    ]
+   ],
+   "note": "Mercator sheet: GC Durban → Fremantle"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "After days of southerly gales you are far north of the planned track. Rather than claw back to it, you start a fresh great circle from the fix. What course does it begin on?",
+  "a": "103°T",
+  "o": [
+   "117°T",
+   "086°T",
+   "100°T"
+  ],
+  "why": "New GC from the fix: DLo 55°25′E; GC formula → S 77.3° E = 103°T, 2,740 M to go; the old GC ran 100°T at 060°E.",
+  "ref": "Great circle sailing — the course changes",
+  "fig": {
+   "type": "card",
+   "title": "Durban → Fremantle, day 9",
+   "lines": [
+    "Fix 35°10′S 060°20′E",
+    "Fremantle 32°03′S 115°45′E",
+    "Planned GC crosses 060°E 169 M further south"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Planning the North Pacific crossing from Japan to British Columbia, you need the great-circle distance. What is it?",
+  "a": "4,104 M",
+  "o": [
+   "4,374 M",
+   "1,060 M",
+   "5,871 M"
+  ],
+  "why": "DLo across 180°: 40°21′ + 56°38′ = 96°59′E; cos d = sin L1 sin L2 + cos L1 cos L2 cos DLo → 68.40° = 4,104 M.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "Yokohama → Victoria, BC",
+   "lines": [
+    "Yokohama 35°27′N 139°39′E",
+    "Victoria 48°25′N 123°22′W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Your first course out of Yokohama on the great circle for Victoria, across the date line — what is it?",
+  "a": "045°T",
+  "o": [
+   "080°T",
+   "120°T",
+   "315°T"
+  ],
+  "why": "DLo 96°59′ east across 180°; GC formula → N 45.1° E = 045°T, far north of the rhumb line 080°T; 120°T on arrival.",
+  "ref": "Great circle sailing — initial course",
+  "fig": {
+   "type": "card",
+   "title": "Yokohama → Victoria, BC",
+   "lines": [
+    "Yokohama 35°27′N 139°39′E",
+    "Victoria 48°25′N 123°22′W",
+    "Plotter leg type: GC"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Checking how close the great circle to Victoria runs to the Aleutians, you work out its vertex. Where is it?",
+  "a": "54°45′N 160°33′W",
+  "o": [
+   "54°45′N 079°51′E",
+   "54°45′N 171°52′W",
+   "35°15′N 160°33′W"
+  ],
+  "why": "cos Lv = cos 35.45° × sin 45.1° → 54°45′N; cos DLo = tan 35.45° / tan Lv → 59°48′ east of Yokohama = 160°33′W.",
+  "ref": "Great circle sailing — the vertex",
+  "fig": {
+   "type": "card",
+   "title": "GC Yokohama → Victoria",
+   "lines": [
+    "Yokohama 35°27′N 139°39′E",
+    "Initial course 045.1°T"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Your next great-circle waypoint is where the track to Victoria crosses the date line. What latitude do you give it?",
+  "a": "53°09′N",
+  "o": [
+   "54°45′N",
+   "50°21′N",
+   "41°10′N"
+  ],
+  "why": "DLo from the vertex to 180° = 19°27′; tan L = tan 54.75° × cos 19.45° → 53°09′N.",
+  "ref": "Great circle sailing — waypoints",
+  "fig": {
+   "type": "card",
+   "title": "GC Yokohama → Victoria",
+   "lines": [
+    "Vertex 54°45′N 160°33′W",
+    "Waypoint wanted on the 180° meridian"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "A crew member sets the autopilot to the plotter's first course on this great circle and means to hold it all the way to Victoria. What happens?",
+  "a": "You sail a rhumb line that passes far north of Victoria",
+  "o": [
+   "You stay on the great circle — it starts on 045°T",
+   "You reach Victoria by a longer, southern route",
+   "You end up south of Victoria, off Oregon"
+  ],
+  "why": "A steady 045°T is a rhumb line, not the GC: it crosses every meridian at 45° and would reach 60°N near 177°E, in the Bering Sea.",
+  "ref": "Great circle sailing — the course changes",
+  "fig": {
+   "type": "chart",
+   "land": "M40 0 H41 V200 H40 Z M100 0 H101 V200 H100 Z M160 0 H161 V200 H160 Z M220 0 H221 V200 H220 Z M280 0 H281 V200 H280 Z M0 40 H320 V41 H0 Z M0 90 H320 V91 H0 Z M0 140 H320 V141 H0 Z",
+   "marks": [
+    [
+     30,
+     160,
+     "k",
+     "Yokohama"
+    ],
+    [
+     290,
+     112,
+     "k",
+     "Victoria"
+    ]
+   ],
+   "track": "M30 160 Q150 10 290 112",
+   "labels": [
+    [
+     66,
+     132,
+     "045°T",
+     "middle"
+    ],
+    [
+     160,
+     66,
+     "great circle",
+     "middle"
+    ]
+   ],
+   "note": "Mercator chart, North Pacific"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "Planning Japan to British Columbia, you look at the great circle running up past the Aleutians. Which route do you choose?",
+  "a": "South of the GC, along about 40–45°N in summer, then east",
+  "o": [
+   "The great circle past the Aleutians — the shortest",
+   "South to the trades near 20°N, then north up the coast",
+   "The great circle in January, for the strongest westerlies"
+  ],
+  "why": "By the Aleutians the GC meets fog, cold and gales; a summer route along 40–45°N has steady westerlies and a fair current for a few more miles.",
+  "ref": "Great circle sailing — when it is not the best route",
+  "fig": {
+   "type": "card",
+   "title": "Yokohama → Victoria, routing",
+   "lines": [
+    "GC runs close south of the Aleutians",
+    "Near the Aleutians: fog, cold, frequent gales",
+    "40–45°N in summer: westerlies, fair current",
+    "Winter: deep lows across the whole route"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "Before working the great circle from Nouméa to Rarotonga, you need the difference of longitude. What is it?",
+  "a": "33°47′ east",
+  "o": [
+   "326°13′ west",
+   "6°39′ east",
+   "33°47′ west"
+  ],
+  "why": "Across 180° add the two distances from it: (180° − 166°26′) + (180° − 159°47′) = 13°34′ + 20°13′ = 33°47′, eastbound.",
+  "ref": "Great circle sailing — DLo across the date line",
+  "fig": {
+   "type": "card",
+   "title": "Nouméa → Rarotonga",
+   "lines": [
+    "Nouméa 22°16′S 166°26′E",
+    "Rarotonga 21°12′S 159°47′W",
+    "The track crosses the 180° meridian"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Crossing the Tasman from Sydney Heads to Nelson on the great circle, what course do you set first?",
+  "a": "120°T",
+  "o": [
+   "113°T",
+   "106°T",
+   "060°T"
+  ],
+  "why": "Both south: GC formula → S 60.4° E = 120°T; the rhumb line is 113°T and the GC course is 106°T on arrival.",
+  "ref": "Great circle sailing — initial course",
+  "fig": {
+   "type": "card",
+   "title": "Sydney → Nelson",
+   "lines": [
+    "Sydney Heads 33°50′S 151°17′E",
+    "Nelson 41°16′S 173°17′E",
+    "Plotter leg type: GC"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Bound from Mauritius to Durban on the great circle, you work out the vertex to see how far south the track goes. Where is it?",
+  "a": "33°28′S 001°14′E",
+  "o": [
+   "33°28′S 113°46′E",
+   "33°28′N 001°14′E",
+   "64°30′S 001°14′E"
+  ],
+  "why": "cos Lv = cos 20.17° × sin 62.7° → 33°28′S; DLo 56°16′ west of Port Louis → 001°14′E: beyond Durban, off the track.",
+  "ref": "Great circle sailing — the vertex",
+  "fig": {
+   "type": "card",
+   "title": "GC Port Louis → Durban",
+   "lines": [
+    "Port Louis 20°10′S 057°30′E",
+    "Initial course 242.7°T",
+    "Durban 29°52′S 031°03′E"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Planning the great circle from Cabo San Lucas to the Marquesas, which crosses the equator, you work out its northern vertex. Where is it?",
+  "a": "48°14′N 042°03′W",
+  "o": [
+   "48°14′N 177°45′W",
+   "48°14′S 042°03′W",
+   "50°28′N 042°03′W"
+  ],
+  "why": "cos Lv = cos 22.88° × sin 46.3° → 48°14′N; it lies 67°51′ east of Cabo, behind you: from the start the track only descends.",
+  "ref": "Great circle sailing — across the equator",
+  "fig": {
+   "type": "card",
+   "title": "GC Cabo San Lucas → Nuku Hiva",
+   "lines": [
+    "Cabo San Lucas 22°53′N 109°54′W",
+    "Initial course 226.3°T",
+    "Taiohae, Nuku Hiva 08°55′S 140°06′W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "On the same great circle from Cabo San Lucas, where do you cross the equator, and on what course?",
+  "a": "132°03′W, 222°T",
+  "o": [
+   "087°45′W, 222°T",
+   "132°03′W, 226°T",
+   "132°03′W, 228°T"
+  ],
+  "why": "Lv 48°14′N at 042°03′W; the GC cuts the equator 90° of longitude from the vertex: 132°03′W; sin C = cos Lv → S 41.8° W.",
+  "ref": "Great circle sailing — across the equator",
+  "fig": {
+   "type": "card",
+   "title": "GC Cabo San Lucas → Nuku Hiva",
+   "lines": [
+    "Cabo San Lucas 22°53′N 109°54′W",
+    "Initial course 226.3°T",
+    "Course and longitude wanted at 00°00′"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You leave Honolulu for Fiji on the great circle, across both the equator and the date line. What course do you set first?",
+  "a": "212°T",
+  "o": [
+   "148°T",
+   "266°T",
+   "032°T"
+  ],
+  "why": "DLo 22°08′ + 1°34′ = 23°42′ west across 180°; Suva's latitude negative; GC formula → S 32.2° W = 212°T.",
+  "ref": "Great circle sailing — initial course",
+  "fig": {
+   "type": "card",
+   "title": "Honolulu → Suva",
+   "lines": [
+    "Honolulu 21°18′N 157°52′W",
+    "Suva 18°08′S 178°26′E",
+    "Plotter leg type: GC"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "You plan the long leg from Hawaii to New Caledonia, across both the equator and the date line. What is the great-circle distance?",
+  "a": "3,346 M",
+  "o": [
+   "1,985 M",
+   "2,662 M",
+   "3,380 M"
+  ],
+  "why": "DLo 22°08′ + 13°34′ = 35°42′W; Nouméa's latitude negative; cos d = sin L1 sin L2 + cos L1 cos L2 cos DLo → 55.77° = 3,346 M.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "Honolulu → Nouméa",
+   "lines": [
+    "Honolulu 21°18′N 157°52′W",
+    "Nouméa 22°16′S 166°26′E"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Before the Southern Ocean leg from New Zealand to Cape Horn, you compute the great-circle distance. What is it?",
+  "a": "4,040 M",
+  "o": [
+   "4,679 M",
+   "3,486 M",
+   "8,700 M"
+  ],
+  "why": "DLo 11°39′ + 112°43′ = 124°22′E across 180°; both south; cos d = sin L1 sin L2 + cos L1 cos L2 cos DLo → 67.34° = 4,040 M.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "Bluff → Cape Horn",
+   "lines": [
+    "Bluff 46°36′S 168°21′E",
+    "Cape Horn 55°59′S 067°17′W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You are on this composite track from Bluff to Cape Horn and have come down to the limiting latitude. What course do you steer along it?",
+  "a": "090°T — due east along the parallel",
+  "o": [
+   "130°T — the course leaving Bluff",
+   "071°T — the course into Cape Horn",
+   "097°T — the rhumb-line course"
+  ],
+  "why": "Between the two great circles you run along the parallel: course 090°, distance = DLo × cos 58°.",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "chart",
+   "land": "M40 0 H41 V200 H40 Z M100 0 H101 V200 H100 Z M160 0 H161 V200 H160 Z M220 0 H221 V200 H220 Z M280 0 H281 V200 H280 Z M0 40 H320 V41 H0 Z M0 90 H320 V91 H0 Z M0 140 H320 V141 H0 Z",
+   "marks": [
+    [
+     30,
+     40,
+     "k",
+     "Bluff"
+    ],
+    [
+     290,
+     100,
+     "k",
+     "Cape Horn"
+    ]
+   ],
+   "track": "M30 40 Q55 130 110 140 L230 140 Q275 135 290 100",
+   "labels": [
+    [
+     170,
+     132,
+     "58°S — the limit",
+     "middle"
+    ]
+   ],
+   "note": "Mercator chart, Southern Ocean (north up)"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "With 58°S as your ice limit, what course do you steer out of Bluff on the composite track?",
+  "a": "130°T",
+  "o": [
+   "150°T",
+   "097°T",
+   "050°T"
+  ],
+  "why": "The first GC has its vertex on 58°S: sin C = cos 58° / cos 46.60° → S 50.5° E = 130°T.",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "card",
+   "title": "Composite, Bluff → Cape Horn",
+   "lines": [
+    "Bluff 46°36′S 168°21′E",
+    "Limiting latitude 58°S",
+    "Direct GC: 150°T, vertex 69°53′S"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "You will turn east along 58°S where the first great circle out of Bluff touches it. Which meridian is that?",
+  "a": "143°01′W",
+  "o": [
+   "119°43′E",
+   "160°36′W",
+   "124°26′W"
+  ],
+  "why": "cos DLo = tan 46.60° / tan 58° → 48°38′E; 168°21′E + 48°38′ = 216°59′E, past the date line: 143°01′W.",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "card",
+   "title": "Composite, Bluff → Cape Horn",
+   "lines": [
+    "Bluff 46°36′S 168°21′E",
+    "Limiting latitude 58°S",
+    "First GC: its vertex on 58°S"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "How many miles of the composite track to Cape Horn do you spend running along 58°S?",
+  "a": "1,702 M",
+  "o": [
+   "3,212 M",
+   "2,207 M",
+   "6,061 M"
+  ],
+  "why": "DLo 53°32′ = 3,212′; departure = DLo × cos 58° = 1,702 M.",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "card",
+   "title": "Composite, Bluff → Cape Horn",
+   "lines": [
+    "Limiting latitude 58°S",
+    "Along the parallel for 53°32′ of DLo",
+    "Then a GC up to the Horn"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "Keeping north of 58°S all the way to the Horn, how long is your composite track?",
+  "a": "4,297 M",
+  "o": [
+   "4,040 M",
+   "5,806 M",
+   "4,679 M"
+  ],
+  "why": "GC legs: cos d = sin L / sin 58° → 1,863 + 732 M; along 58°S 1,702 M; total 4,297 M (direct GC 4,040 M).",
+  "ref": "Composite sailing",
+  "fig": {
+   "type": "card",
+   "title": "Composite, Bluff → Cape Horn",
+   "lines": [
+    "Bluff 46°36′S 168°21′E",
+    "Cape Horn 55°59′S 067°17′W",
+    "Limiting latitude 58°S"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Your plotter route to Cape Horn is a single GC leg, but your ice limit is 58°S. How do you set up the route?",
+  "a": "Two GC legs to and from 58°S, joined by an RL along it",
+  "o": [
+   "Leave it — a GC leg keeps north of the ice",
+   "Switch the leg to RL — the shortest that clears 58°S",
+   "Add one waypoint at the vertex, with RL legs to it"
+  ],
+  "why": "Composite sailing: GC to the limit, a rhumb line along the parallel, GC to the Horn — the shortest track that stays north of 58°S.",
+  "ref": "Composite sailing — the plotter",
+  "fig": {
+   "type": "card",
+   "title": "Plotter: Bluff → Cape Horn",
+   "lines": [
+    "One leg, leg type GC",
+    "GC vertex 69°53′S 124°26′W",
+    "Ice: keep north of 58°S"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "Planning your great-circle waypoints, you can space them every 10° of longitude or closer. Where does closer spacing matter most?",
+  "a": "In high latitudes, where the course changes fastest",
+  "o": [
+   "Near the equator, where the course changes fastest",
+   "At the start, whatever the latitude",
+   "Nowhere — the extra miles are the same"
+  ],
+  "why": "The course turns by about DLo × sin lat: over 10° of DLo it turns 1.7° at 10° but 8.2° at 55°, so long rhumb legs cut more corner there.",
+  "ref": "Great circle sailing — waypoints",
+  "fig": {
+   "type": "card",
+   "title": "Waypoints for a great circle",
+   "lines": [
+    "Passage: Bluff → Cape Horn",
+    "Waypoints every 10° of longitude",
+    "Option: every 5° on part of the route"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "From the positions of the two ports alone, you work out where the great circle from Rio crosses the Greenwich meridian. What latitude?",
+  "a": "34°01′S",
+  "o": [
+   "34°19′S",
+   "30°45′S",
+   "33°52′S"
+  ],
+  "why": "Initial course 116.3°; cos Lv = cos 22.90° sin 63.7° → 34°19′S at 008°35′E; tan L = tan Lv cos 8.59° → 34°01′S.",
+  "ref": "Great circle sailing — waypoints",
+  "fig": {
+   "type": "card",
+   "title": "GC Rio de Janeiro → Cape Town",
+   "lines": [
+    "Rio 22°54′S 043°10′W",
+    "Cape Town 33°55′S 018°25′E",
+    "Waypoint wanted on the 0° meridian"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "From the Falklands you are heading for Cape Town on the great circle. How far is it?",
+  "a": "3,356 M",
+  "o": [
+   "3,487 M",
+   "2,001 M",
+   "6,503 M"
+  ],
+  "why": "DLo = 57°50′W + 18°25′E = 76°15′ (west and east add); cos d = sin L1 sin L2 + cos L1 cos L2 cos DLo → 55.94° = 3,356 M.",
+  "ref": "Great circle sailing — distance",
+  "fig": {
+   "type": "card",
+   "title": "Stanley → Cape Town",
+   "lines": [
+    "Stanley 51°41′S 057°50′W",
+    "Cape Town 33°55′S 018°25′E"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You work the single rhumb line from Fremantle to Mauritius by Mercator sailing. What course and distance do you get?",
+  "a": "283°T, 3,227 M",
+  "o": [
+   "313°T, 1,047 M",
+   "257°T, 3,227 M",
+   "268°T, 3,181 M"
+  ],
+  "why": "Same names: DMP = 2019.6 − 1227.8 = 791.8; DLo 58°15′W = 3,495′; C = N 77.2° W; d = dLat 713′ / cos C.",
+  "ref": "Mercator sailing",
+  "fig": {
+   "type": "card",
+   "title": "Fremantle → Port Louis, rhumb line",
+   "lines": [
+    "Fremantle 32°03′S 115°45′E · MP 2019.6",
+    "Port Louis 20°10′S 057°30′E · MP 1227.8"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Across the date line from Fiji to the Cook Islands, you want the rhumb line by Mercator sailing. What course and distance?",
+  "a": "098°T, 1,252 M",
+  "o": [
+   "100°T, 1,076 M",
+   "262°T, 1,252 M",
+   "098°T, 1,320 M"
+  ],
+  "why": "DLo 1°34′ + 20°13′ = 21°47′E = 1,307′; DMP 194.2; C = S 81.5° E = 098°T; d = dLat 184′ / cos C.",
+  "ref": "Mercator sailing",
+  "fig": {
+   "type": "card",
+   "title": "Suva → Rarotonga, rhumb line",
+   "lines": [
+    "Suva 18°08′S 178°26′E · MP 1099.4",
+    "Rarotonga 21°12′S 159°47′W · MP 1293.6"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "You want one rhumb-line course from Honolulu to Suva by Mercator sailing, across the equator and the date line. What course and distance?",
+  "a": "211°T, 2,750 M",
+  "o": [
+   "262°T, 1,360 M",
+   "149°T, 2,750 M",
+   "031°T, 2,750 M"
+  ],
+  "why": "Contrary names add: DMP 2399.4, dLat 2,366′S; DLo 23°42′W = 1,422′; C = S 30.7° W; d = 2,366′ / cos C.",
+  "ref": "Mercator sailing",
+  "fig": {
+   "type": "card",
+   "title": "Honolulu → Suva, rhumb line",
+   "lines": [
+    "Honolulu 21°18′N 157°52′W · MP 1300.0",
+    "Suva 18°08′S 178°26′E · MP 1099.4"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Your mate has worked the long rhumb line to Cape Town by plane sailing. You check it by Mercator sailing with the MPs. What do you find?",
+  "a": "Same course; 24 M too long",
+  "o": [
+   "Same course and distance — both exact",
+   "Same course; 24 M too short",
+   "Same course; 142 M too long"
+  ],
+  "why": "Mercator: DMP 1463.7, DLo 4,575′ → 072°T, 3,498 M. Over a long leg the mean-latitude departure goes wrong.",
+  "ref": "Plane sailing — its limits",
+  "fig": {
+   "type": "card",
+   "title": "Stanley → Cape Town, rhumb line",
+   "lines": [
+    "Stanley 51°41′S 057°50′W · MP 3616.2",
+    "Cape Town 33°55′S 018°25′E · MP 2152.5",
+    "Mate's plane sailing: 072°T, 3,522 M"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You are about to cross the Bay of Biscay from Ushant to Cape Finisterre. Which sailing do you use to work the course and distance?",
+  "a": "Plane sailing — on a leg this short it is close enough",
+  "o": [
+   "Great circle sailing — nothing else is accurate",
+   "Composite sailing — to keep out of the bay",
+   "Parallel sailing — along the mean latitude"
+  ],
+  "why": "Plane sailing gives 208°T, 378 M and the GC is 378 M: over a few hundred miles the difference is a fraction of a mile.",
+  "ref": "Plane sailing",
+  "fig": {
+   "type": "card",
+   "title": "Ushant → Cape Finisterre",
+   "lines": [
+    "Ushant 48°28′N 005°05′W",
+    "Cape Finisterre 42°53′N 009°16′W",
+    "About 380 M across the Bay of Biscay"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You work the Biscay crossing from Falmouth to A Coruña by plane sailing, with no current or leeway to allow for. What course and distance?",
+  "a": "199°T, 429 M",
+  "o": [
+   "206°T, 453 M",
+   "019°T, 429 M",
+   "161°T, 429 M"
+  ],
+  "why": "dLat 407′S; DLo 200′W × cos 46.76° = dep 137.0′; C = S 18.6° W = 199°T; d = √(407² + 137²) = 429 M.",
+  "ref": "Plane sailing",
+  "fig": {
+   "type": "card",
+   "title": "Biscay crossing",
+   "lines": [
+    "Falmouth 50°09′N 005°04′W",
+    "A Coruña 43°22′N 008°24′W"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You work the overnight hop from Sydney to Lord Howe Island by plane sailing. What course and distance do you get?",
+  "a": "071°T, 417 M",
+  "o": [
+   "073°T, 487 M",
+   "109°T, 417 M",
+   "289°T, 417 M"
+  ],
+  "why": "dLat 139′N; DLo 467′E × cos 32.67° = dep 393.1′; C = N 70.5° E; d = √(139² + 393²) = 417 M.",
+  "ref": "Plane sailing",
+  "fig": {
+   "type": "card",
+   "title": "Sydney → Lord Howe Island",
+   "lines": [
+    "Sydney Heads 33°50′S 151°17′E",
+    "Lord Howe 31°31′S 159°04′E"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Westbound from Tonga, you have these two noon fixes, either side of the date line. What course and distance have you made good?",
+  "a": "294°T, 110 M",
+  "o": [
+   "311°T, 69 M",
+   "066°T, 110 M",
+   "293°T, 114 M"
+  ],
+  "why": "dLat 45′N; DLo 1°20′ + 0°25′ = 1°45′W × cos 17.46° = dep 100.2′; C = N 65.8° W = 294°T, 110 M.",
+  "ref": "Plane sailing",
+  "fig": {
+   "type": "card",
+   "title": "Two noon fixes, Tonga to Fiji",
+   "lines": [
+    "Yesterday 17°50′S 178°40′W",
+    "Today 17°05′S 179°35′E"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "East of Fiji you are on the parallel of Savusavu and will keep to it, across the 180° meridian, into the harbour. What distance is left?",
+  "a": "182 M",
+  "o": [
+   "105 M",
+   "190 M",
+   "198 M"
+  ],
+  "why": "DLo 2°30′ + 0°40′ = 3°10′ = 190′ across 180°; distance = DLo × cos lat = 190 × cos 16.78° = 182 M.",
+  "ref": "Parallel sailing",
+  "fig": {
+   "type": "card",
+   "title": "Running down 16°47′S",
+   "lines": [
+    "You 16°47′S 177°30′W",
+    "Savusavu 16°47′S 179°20′E",
+    "Course 270°T along the parallel"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 1,
+  "q": "You plan to cross the Bay of Bengal westbound from Phuket to Galle in Sri Lanka. When do you go?",
+  "a": "January — with the NE monsoon on the quarter",
+  "o": [
+   "July — with the SW monsoon behind you",
+   "August — the SW monsoon is easing by then",
+   "Any month — the miles are the same"
+  ],
+  "why": "Westbound at 265°T the NE monsoon is on the quarter; in the SW monsoon the same great circle is a beat into F6–7 and rain.",
+  "ref": "Great circle sailing — when it is not the best route",
+  "fig": {
+   "type": "card",
+   "title": "Phuket → Galle, Sri Lanka",
+   "lines": [
+    "GC 1,085 M, course about 265°T",
+    "NE monsoon Dec–Mar: fair, NE F3–5",
+    "SW monsoon Jun–Sep: W–SW F6–7, rain"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "In early June you are in Galle, bound for Salalah and the Red Sea. The great circle runs straight into the monsoon. What do you do?",
+  "a": "Wait for the NE monsoon and go in January or February",
+  "o": [
+   "Go now on the great circle — it is the shortest",
+   "Go now and motor close along the Indian coast",
+   "Go in August, when the monsoon has eased"
+  ],
+  "why": "In the SW monsoon the 295° track is a beat into F6–8 for 1,672 M; from December to March the NE monsoon puts the wind on the quarter.",
+  "ref": "Great circle sailing — when it is not the best route",
+  "fig": {
+   "type": "card",
+   "title": "Galle → Salalah, early June",
+   "lines": [
+    "GC 1,672 M, course about 295°T",
+    "SW monsoon setting in: W–SW F6–8",
+    "Seas 3–4 m on the bow",
+    "July–August: the monsoon at its strongest"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "Leaving Fremantle for Mauritius in October, you compare the great circle with the trade-wind belt to the north. Which way do you route?",
+  "a": "North-west into the SE trade, then west with it on the quarter",
+  "o": [
+   "The great circle, due west along about 32°S",
+   "South into the westerlies, then north to Mauritius",
+   "North to the equator, then west along it"
+  ],
+  "why": "The GC runs through the light variables under the high; the SE trade to the north gives a fast reach — a few more miles, fewer days.",
+  "ref": "Great circle sailing — when it is not the best route",
+  "fig": {
+   "type": "card",
+   "title": "Fremantle → Mauritius, October",
+   "lines": [
+    "GC 3,181 M, first course 268°T",
+    "Along 32°S: variable winds under the high",
+    "SE trade north of about 25°S"
+   ]
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 2,
+  "q": "You plan Rio de Janeiro to Cape Town. The great circle runs east-south-east under the South Atlantic high, shown here. Which route do you take?",
+  "a": "South of the high into the westerlies, then east to the Cape",
+  "o": [
+   "The great circle — the shortest is the fastest",
+   "North of the high with the SE trade, then south",
+   "The rhumb line, motoring through the calms"
+  ],
+  "why": "Light winds lie under the high; to its south, near 35–40°S by Tristan da Cunha, the westerlies carry you east to the Cape.",
+  "ref": "Great circle sailing — when it is not the best route",
+  "fig": {
+   "type": "isobars",
+   "center": "H",
+   "values": [
+    "1026",
+    "1022",
+    "1018"
+   ],
+   "boat": [
+    40,
+    160,
+    110
+   ],
+   "hemisphere": "Southern hemisphere",
+   "note": "GC Rio → Cape Town 3,269 M"
+  }
+ },
+ {
+  "topic": "greatcircle",
+  "difficulty": 3,
+  "q": "In May you leave New Zealand for Tahiti. The great circle heads north-east, straight into the SE trade. How do you route?",
+  "a": "East in the westerlies to about 150°W, then north to Tahiti",
+  "o": [
+   "The great circle — beat up it through the trade",
+   "North into the trade first, then east along 20°S",
+   "North to Tonga, then east along 18°S to Tahiti"
+  ],
+  "why": "Make your easting in the westerlies south of 30°S, then turn north and reach up through the SE trade: more miles, but no long beat.",
+  "ref": "Great circle sailing — when it is not the best route",
+  "fig": {
+   "type": "card",
+   "title": "Opua → Papeete, May",
+   "lines": [
+    "GC: north-east, into the SE trade",
+    "SE trade: from about 25°S northwards",
+    "Westerlies south of about 30°S",
+    "Tahiti 17°32′S 149°34′W"
+   ]
+  }
+ }
+]

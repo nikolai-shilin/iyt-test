@@ -1,0 +1,2310 @@
+[
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "You are running down the trades at 20°N and want a dawn star fix. When do you have both the stars and a usable horizon?",
+  "a": "From about 0541 to 0607 LMT",
+  "o": [
+   "From about 0607 to 0630 LMT",
+   "Before 0541 LMT, in full darkness",
+   "From 0630 LMT, once the Sun is up"
+  ],
+  "why": "Between nautical twilight (Sun 12° down: the horizon appears) and civil twilight (6° down: the stars fade) you have both.",
+  "ref": "Star sights — twilight",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 14 Feb, lat 20°N",
+   "lines": [
+    "Nautical twilight begins 0541 LMT",
+    "Civil twilight begins 0607 LMT",
+    "Sunrise 0630 LMT"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You are on the ARC route at 16°N, planning the evening stars. What time do you take for the end of civil twilight?",
+  "a": "1750",
+  "o": [
+   "1800",
+   "1744",
+   "1754"
+  ],
+  "why": "Interpolate between the rows: 16°N is 0.6 of the way from 10°N to 20°N; 1800 − 0.6 × 16 min = 1750 LMT.",
+  "ref": "Star sights — twilight times",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 5 Dec: civil twilight ends",
+   "lines": [
+    "Lat 10°N: 1800 LMT",
+    "Lat 20°N: 1744 LMT",
+    "Your DR: 16°00′N 47°15′W"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "You have sailed from the Channel down to 10°N. What does this almanac extract mean for your evening star sights?",
+  "a": "The window is shorter — be on deck and ready early",
+  "o": [
+   "The window is longer — there is no need to hurry",
+   "The window is the same — only the clock changes",
+   "Stars can be taken only after nautical twilight here"
+  ],
+  "why": "In low latitudes the Sun sinks steeply: civil to nautical twilight takes 24 min at 10°N against 38 min at 50°N.",
+  "ref": "Star sights — twilight",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 10 Oct, evening (LMT)",
+   "lines": [
+    "50°N: civil ends 1752, nautical 1830",
+    "10°N: civil ends 1807, nautical 1831"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "Your crew wants one more star before supper. What do you tell them?",
+  "a": "Stop — the horizon is too dim to trust",
+  "o": [
+   "Go on — the stars are at their brightest now",
+   "Go on, with a darker shade on the telescope",
+   "Go on, and add 5′ for the dim horizon"
+  ],
+  "why": "After nautical twilight the horizon fades; an altitude measured to a blurred horizon can put the line miles out.",
+  "ref": "Star sights — twilight",
+  "fig": {
+   "type": "card",
+   "title": "Dusk, 20 Jan, lat 14°N",
+   "lines": [
+    "Sunset 1754, civil twilight ends 1816",
+    "Nautical twilight ends 1842",
+    "Now 1849: the horizon is a grey blur"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "You are 600 miles west of the Cape Verdes at dusk with time for three stars before the horizon goes. Which three do you take?",
+  "a": "Hamal, Fomalhaut and Deneb",
+  "o": [
+   "Hamal, Peacock and Deneb",
+   "Altair, Deneb and Hamal",
+   "Fomalhaut, Altair and Deneb"
+  ],
+  "why": "Altitudes 20°–70°, azimuths about 120° apart: 073°, 168°, 330°. Peacock is too low; the other sets lie within 180°.",
+  "ref": "Star sight planning",
+  "fig": {
+   "type": "card",
+   "title": "Star finder, dusk 28 Nov",
+   "lines": [
+    "Hamal — Hc 36°, Zn 073°",
+    "Fomalhaut — Hc 41°, Zn 168°",
+    "Peacock — Hc 12°, Zn 195°",
+    "Altair — Hc 54°, Zn 260°",
+    "Deneb — Hc 56°, Zn 330°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Your star finder offers six stars, all between 25° and 60° high. Which three azimuths give you the best three-star fix?",
+  "a": "Zn 035°, 155° and 275°",
+  "o": [
+   "Zn 035°, 075° and 115°",
+   "Zn 035°, 215° and 275°",
+   "Zn 075°, 095° and 115°"
+  ],
+  "why": "Three lines cut best with the bodies about 120° apart; reciprocal bearings give parallel lines, a narrow fan gives shallow cuts.",
+  "ref": "Star sight planning",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Bound for St Helena, you have planned these four stars for the evening fix. In what order do you shoot them?",
+  "a": "Sirius first, Aldebaran last",
+  "o": [
+   "Aldebaran first, Sirius last",
+   "Canopus first, Achernar last",
+   "Achernar first, Canopus last"
+  ],
+  "why": "At dusk the brightest stars show first while the horizon is still sharp: take Sirius first and leave fainter Aldebaran for last.",
+  "ref": "Star sights — dawn and dusk",
+  "fig": {
+   "type": "card",
+   "title": "Dusk, 15 Feb, planned stars",
+   "lines": [
+    "Sirius, mag −1.5, Zn 079°",
+    "Canopus, mag −0.7, Zn 153°",
+    "Achernar, mag 0.5, Zn 213°",
+    "Aldebaran, mag 0.9, Zn 356°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Before dawn you work out where Arcturus will be, so you can find it in the half-light. What do you preset on the sextant, and where do you look?",
+  "a": "Hc 43°28′, Zn 080°",
+  "o": [
+   "Hc 43°28′, Zn 280°",
+   "Hc 43°28′, Zn 100°",
+   "Hc 46°32′, Zn 080°"
+  ],
+  "why": "LHA = 217°09.0′ + 145°48′ − 52° = 310°57.0′; the formula gives Hc 43°28′, Zn 080°, east of you (LHA over 180°).",
+  "ref": "Star sight planning — precomputation",
+  "fig": {
+   "type": "card",
+   "title": "Planning the dawn stars, 8 Dec",
+   "lines": [
+    "DR 17°00′N 52°00′W, sight at 0920 UT",
+    "GHA Aries 0920 UT 217°09.0′",
+    "Arcturus SHA 145°48′, Dec N19°06′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "Before evening twilight you set up the star finder to see which stars will be up. Which two things do you set it for?",
+  "a": "Your latitude and LHA Aries at twilight",
+  "o": [
+   "Your longitude and the Sun's GHA",
+   "Your latitude and the Sun's declination",
+   "LHA Aries and the Moon's declination"
+  ],
+  "why": "Take the template for your latitude and set it to LHA Aries at twilight; it then shows each star's altitude and azimuth.",
+  "ref": "Star finder",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You want the star finder set for tonight's twilight on the Puddle Jump. Which LHA Aries do you set?",
+  "a": "119°",
+  "o": [
+   "118°",
+   "15°",
+   "351°"
+  ],
+  "why": "1832 LMT + 8h32m (128°W) = 0304 UT on 13 Apr; GHA Aries 246°04.9′ + 1°00.2′ − 128° = LHA Aries 119°.",
+  "ref": "Star finder",
+  "fig": {
+   "type": "card",
+   "title": "Galápagos to the Marquesas, 12 Apr",
+   "lines": [
+    "DR 9°S 128°W",
+    "Civil twilight ends 1832 LMT",
+    "GHA Aries 13 Apr 0300 UT 246°04.9′",
+    "Increment 4m 00s: 1°00.2′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "You plan tonight's stars with HO 249 Volume 1. What do you enter the table with?",
+  "a": "Your latitude and LHA Aries",
+  "o": [
+   "Your latitude and each star's SHA",
+   "Your longitude and the time in UT",
+   "Each star's LHA and its Dec"
+  ],
+  "why": "Vol 1 is entered with Lat and LHA Aries: it lists seven selected stars with Hc and Zn, the best three for a fix marked ◆.",
+  "ref": "Sight reduction tables — HO 249 Vol 1",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You have plotted a fix from Volume 1's selected stars. What must you still do to it?",
+  "a": "Move it by the precession correction in Table 5",
+  "o": [
+   "Nothing — star positions never change",
+   "Apply the v and d corrections to each Hc",
+   "Correct each Hc by 1′ for every year"
+  ],
+  "why": "Precession slowly shifts the stars; Table 5 gives the small move of the fix for years either side of the tables' epoch.",
+  "ref": "Sight reduction tables — HO 249 Vol 1",
+  "fig": {
+   "type": "card",
+   "title": "HO 249 Volume 1",
+   "lines": [
+    "Tables computed for epoch 2025",
+    "Sights taken in 2027",
+    "Fix plotted from three selected stars"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Halfway from Bermuda to the Azores, the cloud clears for a moment and you shoot a bright star you cannot name. Which star was it?",
+  "a": "Regulus — SHA 208°, N12°",
+  "o": [
+   "Spica — SHA 158°, S11°",
+   "Arcturus — SHA 146°, N19°",
+   "Procyon — SHA 245°, N05°"
+  ],
+  "why": "sin Dec = sin Lat sin Ho + cos Lat cos Ho cos Zn: Dec N11°44′; LHA 43° (west), SHA = LHA − LHA Aries ≈ 207°.",
+  "ref": "Star identification",
+  "fig": {
+   "type": "card",
+   "title": "Unknown star, through cloud",
+   "lines": [
+    "Lat 36°N, LHA Aries 195°34′",
+    "Ho 44°20′, Zn 249°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "On the trade-wind route at 24°N, an unknown star crosses your meridian due south. Which star is it?",
+  "a": "Spica — SHA 158°, S11°",
+  "o": [
+   "Regulus — SHA 208°, N12°",
+   "Antares — SHA 112°, S26°",
+   "Arcturus — SHA 146°, N19°"
+  ],
+  "why": "z = 90° − 54°32′ = 35°28′; star bearing south: Dec = Lat − z = S11°18′. On the meridian LHA = 0, so SHA = 360° − 201°36′ = 158°24′.",
+  "ref": "Star identification",
+  "fig": {
+   "type": "card",
+   "title": "Star on the meridian",
+   "lines": [
+    "Lat N24°10′, LHA Aries 201°36′",
+    "Bearing 180°, Ho 54°32′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "At dusk a gap in the cloud shows a bright star you do not recognise, and you take its altitude. What else do you note to identify it afterwards?",
+  "a": "The exact time and its compass bearing",
+  "o": [
+   "Its colour and how much it twinkles",
+   "The Moon's bearing at the same moment",
+   "The Sun's bearing at sunset"
+  ],
+  "why": "Altitude, azimuth and time give its Dec and SHA by formula or the star finder; then you find it in the almanac's star list.",
+  "ref": "Star identification",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Off the Leeward Islands, you reduce a dawn sight of Sirius from the DR. What is the star's LHA?",
+  "a": "47°02.3′",
+  "o": [
+   "151°22.3′",
+   "43°22.7′",
+   "250°08.3′"
+  ],
+  "why": "GHA = 197°05.7′ + 3°39.6′ + 258°27′ − 360° = 99°12.3′; longitude west is subtracted: − 52°10′ = 47°02.3′.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Sirius, 8 Dec, 0814:36 UT",
+   "lines": [
+    "GHA Aries 0800 UT 197°05.7′",
+    "Increment 14m 36s: 3°39.6′",
+    "Sirius SHA 258°27′",
+    "DR longitude 52°10′W"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You have already worked LHA Aries for your AP and now want Regulus's LHA. What is it?",
+  "a": "159°46.4′",
+  "o": [
+   "104°34.4′",
+   "519°46.4′",
+   "200°13.6′"
+  ],
+  "why": "LHA★ = LHA Aries + SHA: 312°10.4′ + 207°36′ = 519°46.4′; take off 360°: 159°46.4′ (the star is west of you).",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Regulus, evening sight",
+   "lines": [
+    "LHA Aries at the AP 312°10.4′",
+    "Regulus SHA 207°36′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You are crossing the Indian Ocean from Chagos towards the Seychelles. What is Rigel's LHA?",
+  "a": "10°47.7′",
+  "o": [
+   "226°18.7′",
+   "370°47.7′",
+   "349°12.3′"
+  ],
+  "why": "Longitude east is added: 298°33.2′ + 72°14.5′ = 370°47.7′; take off 360°: LHA 10°47.7′.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Rigel, morning sight",
+   "lines": [
+    "GHA Rigel 298°33.2′",
+    "DR longitude 72°14.5′E"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Bound from Bermuda to the Azores, you reduce your evening sight of Vega from the DR. What intercept and azimuth do you plot?",
+  "a": "6.2′ towards, Zn 060°",
+  "o": [
+   "6.2′ away, Zn 060°",
+   "6.2′ towards, Zn 300°",
+   "6.2′ away, Zn 300°"
+  ],
+  "why": "LHA 240°39.7′ + 80°33′ − 44°48′ = 276°24.7′; Hc 26°07.4′; Ho is greater: 6.2′ towards, Zn 060°.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Vega, 10 Jun, 2246:24 UT",
+   "lines": [
+    "DR 36°12′N 44°48′W",
+    "GHA Aries 240°39.7′ (with increment)",
+    "Vega SHA 80°33′, Dec N38°48′",
+    "Ho 26°13.6′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "On passage from Cape Town to St Helena, you reduce an evening sight of Canopus from the DR. What do you plot?",
+  "a": "4.6′ away, Zn 153°",
+  "o": [
+   "4.6′ towards, Zn 153°",
+   "4.6′ away, Zn 207°",
+   "4.6′ away, Zn 027°"
+  ],
+  "why": "LHA 68°42.1′ + 263°52′ + 3°25′ = 335°59.1′; Hc 56°36.2′; Ho is smaller: 4.6′ away, Zn 153°.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Canopus, 15 Feb, 1852:36 UT",
+   "lines": [
+    "DR 24°40′S 03°25′E",
+    "GHA Aries 68°42.1′ (with increment)",
+    "Canopus SHA 263°52′, Dec S52°43′",
+    "Ho 56°31.6′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You compare your observed and calculated altitudes of Spica. What is the intercept?",
+  "a": "6.7′ towards",
+  "o": [
+   "6.7′ away",
+   "53.3′ away",
+   "53.3′ towards"
+  ],
+  "why": "Ho 37°02.6′ − Hc 36°55.9′ = 6.7′; Ho is greater, so the intercept is towards the star.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Spica, dawn sight",
+   "lines": [
+    "Ho 37°02.6′",
+    "Hc 36°55.9′ (from the DR)"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Bound from Tahiti for Rarotonga, at 23°S, you take Z from the tables for a star. What is its true azimuth Zn?",
+  "a": "086°",
+  "o": [
+   "094°",
+   "266°",
+   "274°"
+  ],
+  "why": "South latitude with LHA over 180°: Zn = 180° − Z = 180° − 094° = 086°.",
+  "ref": "Sight reduction — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "HO 249, Lat 23°S",
+   "lines": [
+    "LHA 318°",
+    "Tabulated Z 094°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You shot an unnamed star and want to identify it with the star finder. How do you use it?",
+  "a": "Set 118°; look at 52° high, 103°",
+  "o": [
+   "Set 118°; look at 52° high, 107°",
+   "Set 118°; look at 38° high, 103°",
+   "Set 103°; look at 52° high, 118°"
+  ],
+  "why": "Set the template to LHA Aries at the sight; the star is under Ho 52° and the true bearing, 105° − 2°W = 103°.",
+  "ref": "Star identification",
+  "fig": {
+   "type": "card",
+   "title": "Unknown star, 1912:30 UT",
+   "lines": [
+    "Ho 52°, bearing 105° by compass",
+    "Compass error 2°W",
+    "LHA Aries at the sight 118°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You will reduce a sight of Antares off the coast of Brazil with HO 249. Which assumed position do you use?",
+  "a": "AP 14°S 36°36.8′W — LHA 215°",
+  "o": [
+   "AP 13°S 36°36.8′W — LHA 215°",
+   "AP 14°S 35°36.8′W — LHA 216°",
+   "AP 14°S 36°23.2′W — LHA 215°"
+  ],
+  "why": "AP latitude: the nearest whole degree. AP longitude: the one nearest the DR that makes LHA whole: 251°36.8′ − 36°36.8′ = 215°.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Antares, for HO 249",
+   "lines": [
+    "DR 13°42′S 36°20′W",
+    "GHA Antares 251°36.8′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You plot your Deneb sight from its assumed position. Where do you draw the position line?",
+  "a": "At right angles to the azimuth, 6 M towards Deneb",
+  "o": [
+   "Along the azimuth line, through the AP",
+   "At right angles to the azimuth, 6 M away from Deneb",
+   "At right angles to the azimuth, through the AP"
+  ],
+  "why": "Measure the intercept from the AP along the azimuth (towards the body), then draw the position line at right angles there.",
+  "ref": "Star fix — plotting",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     90,
+     160,
+     "k",
+     "AP"
+    ]
+   ],
+   "track": "M90 160 L208 105",
+   "labels": [
+    [
+     214,
+     109,
+     "Zn 065°",
+     "start"
+    ]
+   ],
+   "panel": [
+    "Deneb",
+    "Intercept 6.0′ T"
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "All three of your stars lie in the eastern sky, and their lines give this cocked hat. What do you make of it?",
+  "a": "You may be outside it — add a star in the west",
+  "o": [
+   "You are at its centre — plot it and go on",
+   "You are at the corner nearest the DR",
+   "It is small, so the fix is good to a mile"
+  ],
+  "why": "With all the bodies on one side, a constant error moves every line the same way, so the true position can lie outside the triangle.",
+  "ref": "Star fix — cocked hat",
+  "fig": {
+   "type": "chart",
+   "track": "M71 68 L249 132 M155 4 L188 191 M226 31 L81 153",
+   "labels": [
+    [
+     48,
+     64,
+     "Zn 020°"
+    ],
+    [
+     206,
+     188,
+     "Zn 080°",
+     "start"
+    ],
+    [
+     246,
+     30,
+     "Zn 140°",
+     "start"
+    ]
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Four star lines give this plot: three meet in a point and the Spica line passes 8 miles off. What do you do?",
+  "a": "Take the point where three meet; recheck Spica",
+  "o": [
+   "Average all four and take the middle",
+   "Trust Spica — it was the brightest star",
+   "Discard the lot and wait for noon"
+  ],
+  "why": "Three lines agreeing in a point outweigh one; the odd line is likely the wrong star, a mistimed sight or a slip in the working.",
+  "ref": "Star fix — cocked hat",
+  "fig": {
+   "type": "chart",
+   "track": "M105 22 L195 178 M228 55 L72 145 M150 190 L150 10 M223 164 L53 102",
+   "labels": [
+    [
+     112,
+     30,
+     "Vega"
+    ],
+    [
+     236,
+     62,
+     "Altair"
+    ],
+    [
+     162,
+     18,
+     "Arcturus",
+     "start"
+    ],
+    [
+     62,
+     92,
+     "Spica"
+    ]
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "You reduce three stars with HO 249, so each has its own assumed position with a different longitude. How do you plot them?",
+  "a": "Plot each intercept from its own AP",
+  "o": [
+   "Plot every intercept from the DR",
+   "Average the three APs and plot from that",
+   "Use the first star's AP for all three"
+  ],
+  "why": "Each intercept belongs to the AP it was worked from; plot each from its own AP and the lines cross at the fix.",
+  "ref": "Star fix — plotting",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Your Antares sight comes out 4.5′ away. How do you lay off the intercept?",
+  "a": "Measure 4.5 M from the AP towards 321°",
+  "o": [
+   "Measure 4.5 M from the AP towards 141°",
+   "Measure 4.5 M from the AP towards 051°",
+   "Measure 4.5 M from the AP towards 231°"
+  ],
+  "why": "Away: measure from the AP in the reciprocal of Zn, 141° + 180° = 321°, and draw the position line at right angles there.",
+  "ref": "Star fix — plotting",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     120,
+     60,
+     "k",
+     "AP"
+    ]
+   ],
+   "track": "M120 60 L202 161",
+   "labels": [
+    [
+     208,
+     168,
+     "Zn 141°",
+     "start"
+    ]
+   ],
+   "panel": [
+    "Antares",
+    "Intercept 4.5′ A"
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You want the fix for 1911, the time of your last sight. What do you do with the Capella line?",
+  "a": "Move it 2.1 M along 250°",
+  "o": [
+   "Move it 2.1 M along 070°",
+   "Move it 1.0 M along 250°",
+   "Move it 7.5 M along 250°"
+  ],
+  "why": "1854 to 1911 is 17 min at 7.5 kn = 2.1 M: transfer the Capella line 2.1 M along the course, 250°.",
+  "ref": "Star fix — advancing the lines",
+  "fig": {
+   "type": "card",
+   "title": "Dusk stars, course 250°, 7.5 kn",
+   "lines": [
+    "Capella at 1854 UT",
+    "Sirius at 1903 UT",
+    "Procyon at 1911 UT"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Instead of moving the Deneb line on the plot, you correct its intercept for the run to 1916. What intercept do you plot?",
+  "a": "5.0′ towards",
+  "o": [
+   "1.8′ towards",
+   "6.6′ towards",
+   "3.4′ towards"
+  ],
+  "why": "Run 24 min at 8 kn = 3.2 M; its part towards Deneb is 3.2 × cos 60° = 1.6 M; 3.4′ + 1.6′ = 5.0′ towards.",
+  "ref": "Star fix — advancing the lines",
+  "fig": {
+   "type": "card",
+   "title": "Advancing by the intercept",
+   "lines": [
+    "Deneb at 1852 UT: 3.4′ towards, Zn 310°",
+    "Last star at 1916 UT",
+    "Course 250°, speed 8.0 kn"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You reduce an evening sight of Venus taken at 1823:40 UT. What is its GHA?",
+  "a": "148°12.2′",
+  "o": [
+   "148°13.0′",
+   "148°12.6′",
+   "148°11.7′"
+  ],
+  "why": "142°17.6′ + 5°55.0′ = 148°12.6′; v −0.9 for 24 min gives −0.4′: GHA 148°12.2′. Venus's v can be negative.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Venus, 1823:40 UT",
+   "lines": [
+    "GHA 1800 UT 142°17.6′, v −0.9",
+    "Increment 23m 40s: 5°55.0′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Working a sight of Mars taken at 2142:08 UT, you open the increments page. What is Mars's GHA?",
+  "a": "88°04.2′",
+  "o": [
+   "88°05.9′",
+   "88°03.4′",
+   "88°02.6′"
+  ],
+  "why": "Planets use the Sun/planets column: 77°31.4′ + 10°32.0′ + v 0.8′ (1.1 × 42/60) = 88°04.2′.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Mars, 2142:08 UT",
+   "lines": [
+    "GHA 2100 UT 77°31.4′, v 1.1",
+    "Increments for 42m 08s:",
+    "Sun/planets 10°32.0′, Aries 10°33.7′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You want a fix this afternoon, not at dusk. What do you do?",
+  "a": "Preset Venus's Hc and sweep along its Zn",
+  "o": [
+   "Wait for dusk — planets cannot be seen by day",
+   "Take a second sun line five minutes later",
+   "Take the Sun's upper limb for a second line"
+  ],
+  "why": "Bright Venus can be found by day with the sextant preset to its Hc on its Zn; its line crosses the sun line for a fix.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon, mid-Atlantic",
+   "lines": [
+    "1430: sun line, Zn 235°",
+    "Venus mag −4.6, 45° east of the Sun",
+    "Clear sky; Venus's Hc and Zn worked out"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "Jupiter is the bright, steady light in the east at dusk, and you have shot it. Where do you find its GHA and Dec?",
+  "a": "In its own column on the almanac's daily page",
+  "o": [
+   "In the star list, from its SHA",
+   "In HO 249 Volume 1's selected stars",
+   "From the Sun's GHA and declination"
+  ],
+  "why": "Planets move against the stars, so each has GHA and Dec hourly in its own daily-page column; only stars are worked from SHA.",
+  "ref": "Planet sights",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Bound from Cocos Keeling to Rodrigues, you take Jupiter at dawn and work it from the DR. What intercept and azimuth do you plot?",
+  "a": "3.8′ towards, Zn 068°",
+  "o": [
+   "3.8′ away, Zn 068°",
+   "3.8′ towards, Zn 292°",
+   "3.8′ towards, Zn 112°"
+  ],
+  "why": "LHA 222°34.1′ + 76°35′ = 299°09.1′; Hc 23°34.1′ (Dec N, Lat S); Ho is greater: 3.8′ towards, Zn 068°.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Jupiter, Indian Ocean",
+   "lines": [
+    "DR 14°20′S 76°35′E",
+    "GHA 222°34.1′, Dec N13°42.5′ (v, d applied)",
+    "Ho 23°37.9′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "At 0930 you want a Moon sight to cross with the Sun. Which limb do you bring down to the horizon?",
+  "a": "The upper limb — the lit edge",
+  "o": [
+   "The lower limb — it is always the lower",
+   "The centre — judge it by eye",
+   "The lower limb — the dark edge is sharper"
+  ],
+  "why": "Always use the lit limb, and the lit side faces the Sun: with the Sun higher than the Moon, the top edge is lit.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "Morning Moon",
+   "lines": [
+    "Last-quarter Moon, low in the west",
+    "Sun well up in the east",
+    "The Moon's bright side faces up"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You correct an upper-limb Moon sight with the almanac's Moon tables. What is Ho?",
+  "a": "41°43.8′",
+  "o": [
+   "42°13.8′",
+   "41°45.8′",
+   "41°40.4′"
+  ],
+  "why": "Ha + first part 54.1′ + second part, U column 1.7′ − 30′ for the upper limb = 41°43.8′.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "Moon, upper limb",
+   "lines": [
+    "Ha 41°18.0′",
+    "Moon table, first part: +54.1′",
+    "Second part, HP 57.6′: L 3.7′, U 1.7′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Approaching Fernando de Noronha, you work your afternoon Moon sight from the DR. What intercept and azimuth do you plot?",
+  "a": "2.7′ away, Zn 276°",
+  "o": [
+   "2.7′ towards, Zn 276°",
+   "2.7′ away, Zn 084°",
+   "2.7′ away, Zn 264°"
+  ],
+  "why": "LHA 61°27.3′ − 30°15′ = 31°12.3′ (west); Hc 58°43.2′; Ho is smaller: 2.7′ away, Zn 276°.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "Moon, afternoon",
+   "lines": [
+    "DR 8°20′S 30°15′W",
+    "GHA 61°27.3′, Dec S4°12.6′ (v, d applied)",
+    "Ho 58°40.5′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You need Venus's declination for a sight at 1845 UT. What is it?",
+  "a": "S21°14.9′",
+  "o": [
+   "S21°13.5′",
+   "S21°15.1′",
+   "S21°14.2′"
+  ],
+  "why": "The next hour shows Dec increasing: d 0.9′ × 45/60 = 0.7′; S21°14.2′ + 0.7′ = S21°14.9′.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Venus, 1845 UT",
+   "lines": [
+    "Dec 1800 UT S21°14.2′, d 0.9",
+    "Dec 1900 UT S21°15.1′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You take the Sun and the half Moon within minutes of each other in the afternoon. What do the two position lines give you?",
+  "a": "They cut at about 74° — a good fix",
+  "o": [
+   "They cut at about 16° — too fine to use",
+   "They run parallel — no fix by day",
+   "They cut at about 37° — latitude only"
+  ],
+  "why": "Lines cut at the angle between the azimuths: 238° − 132° = 106°, i.e. 74°. Near the quarters the Moon is about 90° from the Sun.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "1530, Sun and Moon",
+   "lines": [
+    "Sun line, Zn 238°",
+    "Moon (first quarter) line, Zn 132°",
+    "Taken three minutes apart"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "What is the Moon's GHA for your sight at 1531:20 UT?",
+  "a": "94°49.5′",
+  "o": [
+   "94°43.2′",
+   "94°36.9′",
+   "95°10.9′"
+  ],
+  "why": "87°14.6′ + 7°28.6′ (Moon column) + v 6.3′ (12.1 × 31/60) = 94°49.5′.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "Moon, 1531:20 UT",
+   "lines": [
+    "GHA 1500 UT 87°14.6′, v 12.1",
+    "Increment 31m 20s, Moon column: 7°28.6′",
+    "Sun/planets column: 7°50.0′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Your GPS has failed mid-ocean and you want Sun–Moon fixes by day. Around which days of this month do you plan them?",
+  "a": "Around the 16th and the 31st — the quarters",
+  "o": [
+   "Around the 9th — the new Moon",
+   "Around the 24th — the full Moon",
+   "Any day the Moon is in the sky"
+  ],
+  "why": "Near the quarters the Moon is about 90° from the Sun and up by day; at new Moon it is lost in the glare, at full Moon up only at night.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "This month's Moon",
+   "lines": [
+    "New Moon on the 9th",
+    "First quarter on the 16th",
+    "Full Moon on the 24th",
+    "Last quarter on the 31st"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "One of your three dawn sights gives this. What do you do with it?",
+  "a": "Leave it out — it was not Sirius",
+  "o": [
+   "Plot it — the DR must be 128 miles out",
+   "Move the fix halfway towards its line",
+   "Rework the other two from its AP"
+  ],
+  "why": "A huge intercept and a bearing 40° off the prediction mean the wrong body; fix from the two good lines and a re-shot star.",
+  "ref": "Star identification — the wrong body",
+  "fig": {
+   "type": "card",
+   "title": "“Sirius”",
+   "lines": [
+    "Intercept 128′ away",
+    "Bearing by compass about 160°",
+    "Predicted Zn of Sirius 120°",
+    "The other two stars agree within 1.5′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "At dusk you look for Capella where you predicted it and see this. Which light do you bring down?",
+  "a": "The star at 043°, 31° up",
+  "o": [
+   "The brilliant light at 046°, 28° up",
+   "Whichever is easier to hold in the mirror",
+   "Neither — Capella cannot be up yet"
+  ],
+  "why": "Capella matches the predicted Hc and Zn and is about as bright as Vega; a brilliant steady light near it is a planet.",
+  "ref": "Star identification — the wrong body",
+  "fig": {
+   "type": "card",
+   "title": "Dusk, looking for Capella",
+   "lines": [
+    "Predicted: Hc 31°, Zn 044°",
+    "At 046°: a brilliant steady light, 28° up",
+    "At 043°: a star as bright as Vega, 31° up"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Your star finder still has Jupiter marked where you plotted it a month ago. What do you do before tonight's planning?",
+  "a": "Re-plot it from this week's almanac SHA and Dec",
+  "o": [
+   "Nothing — a planet keeps its SHA like a star",
+   "Move it by the Table 5 precession correction",
+   "Leave it off — planets cannot go on a star finder"
+  ],
+  "why": "Planets wander among the stars; the almanac's daily pages give their current SHA and Dec to plot them afresh.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Star finder, before twilight",
+   "lines": [
+    "Jupiter plotted a month ago",
+    "Venus and Mars not yet plotted"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Cloud let you have only one star at dawn. You want a running fix at 0935 with your sun line. What do you do?",
+  "a": "Advance the star line 21 M along 260°",
+  "o": [
+   "Advance the star line 21 M along 080°",
+   "Advance the sun line 21 M along 260°",
+   "Advance the star line 6 M along 260°"
+  ],
+  "why": "0605 to 0935 is 3h30m at 6 kn = 21 M: advance the earlier star line 21 M along 260° to cross the sun line.",
+  "ref": "Star and sun lines",
+  "fig": {
+   "type": "card",
+   "title": "Course 260°, 6 kn",
+   "lines": [
+    "0605: one star through cloud, Zn 210°",
+    "0935: sun line, Zn 105°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Cloud is building and you may get only one star at dusk to cross with your advanced afternoon sun line. Which star do you take first?",
+  "a": "Deneb",
+  "o": [
+   "Altair",
+   "Hamal",
+   "Mirfak"
+  ],
+  "why": "Deneb's line cuts the sun line at about 91°; the others bear within 30° of the Sun's azimuth or its reciprocal.",
+  "ref": "Star and sun lines",
+  "fig": {
+   "type": "card",
+   "title": "Sun line 1530, Zn 239°",
+   "lines": [
+    "Dusk stars from the star finder:",
+    "Deneb Zn 330°, Altair Zn 260°",
+    "Hamal Zn 073°, Mirfak Zn 043°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "You come on deck for dawn sights and the stars are still bright. What are you waiting for before the first sight?",
+  "a": "The horizon to sharpen below the stars",
+  "o": [
+   "The stars to grow brighter in the dark",
+   "The Sun's upper limb to show",
+   "The Moon to light up the horizon"
+  ],
+  "why": "At dawn the stars are there first and you wait for the horizon; at dusk the horizon is sharp and you wait for the stars.",
+  "ref": "Star sights — dawn and dusk",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "At dawn you plan these four stars. In what order do you take them?",
+  "a": "Dubhe first, Arcturus last",
+  "o": [
+   "Arcturus first, Dubhe last",
+   "Spica first, Procyon last",
+   "Procyon first, Spica last"
+  ],
+  "why": "At dawn the faintest stars fade first: start with Dubhe and keep bright Arcturus for last, as the sky lightens.",
+  "ref": "Star sights — dawn and dusk",
+  "fig": {
+   "type": "card",
+   "title": "Dawn, 8 Dec",
+   "lines": [
+    "Dubhe, mag 1.8, Zn 000°",
+    "Spica, mag 1.0, Zn 126°",
+    "Procyon, mag 0.4, Zn 263°",
+    "Arcturus, mag 0.0, Zn 080°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "A crew member on her first ocean passage asks which planets she can use for sights. Which four have their own columns in the almanac?",
+  "a": "Venus, Mars, Jupiter and Saturn",
+  "o": [
+   "Mercury, Venus, Mars and Jupiter",
+   "Venus, Jupiter, Saturn and Uranus",
+   "Mars, Jupiter, Saturn and Neptune"
+  ],
+  "why": "The almanac tabulates GHA and Dec for the four navigational planets: Venus, Mars, Jupiter, Saturn. Mercury keeps too close to the Sun.",
+  "ref": "Planet sights",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Bound from Rio for Cape Town, you take Achernar at dusk and work it from the DR. What Hc and Zn do you get?",
+  "a": "Hc 35°23.9′, Zn 141°",
+  "o": [
+   "Hc 58°14.5′, Zn 153°",
+   "Hc 47°34.8′, Zn 142°",
+   "Hc 35°23.9′, Zn 219°"
+  ],
+  "why": "LHA = 335°27.5′ + 335°21′ − 22°40′ = 288°08.5′: west longitude is subtracted. The formula then gives Hc 35°23.9′, Zn 141°.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Achernar, 20 Oct, 2024:36 UT",
+   "lines": [
+    "DR 31°10′S 22°40′W",
+    "GHA Aries 335°27.5′ (with increment)",
+    "Achernar SHA 335°21′, Dec S57°07′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Bound from Shetland to Norway at midsummer, you want a star fix tonight. When do you take it?",
+  "a": "Between 2314 and 0049 LMT, bright stars only",
+  "o": [
+   "Between 2128 and 2314 LMT, in civil twilight",
+   "After nautical twilight ends, as usual",
+   "Not tonight — no star will show at all"
+  ],
+  "why": "The Sun never gets 12° down, so the horizon stays all night; between the two civil twilights only the brightest stars and planets show.",
+  "ref": "Star sight planning — high latitudes",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 21 Jun, lat 60°N",
+   "lines": [
+    "Sunset 2128, civil twilight ends 2314",
+    "Nautical twilight: //// (lasts all night)",
+    "Civil twilight begins 0049",
+    "Sunrise 0236 (all LMT)"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "South of St Helena in July, you will have a noon latitude today. Which dawn star gives the best line to cross with it?",
+  "a": "Rigel",
+  "o": [
+   "Achernar",
+   "Fomalhaut",
+   "Hamal"
+  ],
+  "why": "The noon Sun bears north, so its line runs east–west; Rigel at Zn 086° gives a north–south line that cuts it near 90°.",
+  "ref": "Star and sun lines",
+  "fig": {
+   "type": "card",
+   "title": "Dawn stars, 5 Jul, 25°S 10°W",
+   "lines": [
+    "Rigel — Hc 28°, Zn 086°",
+    "Achernar — Hc 57°, Zn 171°",
+    "Fomalhaut — Hc 62°, Zn 254°",
+    "Hamal — Hc 39°, Zn 020°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "It is 0200 under a bright Moon and you doubt your DR. What is the catch if you take star sights now?",
+  "a": "The bright horizon under the Moon may be false",
+  "o": [
+   "Moonlight doubles the dip correction",
+   "Stars near the Moon need its parallax",
+   "The stars are too faint to find by moonlight"
+  ],
+  "why": "The Moon's glitter can show a line short of the true horizon: trust a moonlit horizon only when other lines confirm it.",
+  "ref": "Star sights — dawn and dusk",
+  "fig": {
+   "type": "card",
+   "title": "0200, mid-ocean",
+   "lines": [
+    "Full Moon 50° up in the south-west",
+    "Horizon sharp under the Moon",
+    "Elsewhere the horizon is black"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Leaving Cape Town for Brazil, you plan the first dusk fix. Which three stars do you take?",
+  "a": "Canopus, Fomalhaut and Aldebaran",
+  "o": [
+   "Canopus, Achernar and Fomalhaut",
+   "Acrux, Fomalhaut and Aldebaran",
+   "Canopus, Peacock and Aldebaran"
+  ],
+  "why": "The bright southern stars bunch in the south: take Canopus 137°, Fomalhaut 252° and Aldebaran 012°. Acrux and Peacock are low.",
+  "ref": "Star sight planning — southern sky",
+  "fig": {
+   "type": "card",
+   "title": "Star finder, dusk 20 Jan, 34°S 18°E",
+   "lines": [
+    "Achernar — Hc 57°, Zn 215°",
+    "Canopus — Hc 58°, Zn 137°",
+    "Acrux — Hc 16°, Zn 158°",
+    "Peacock — Hc 17°, Zn 212°",
+    "Fomalhaut — Hc 28°, Zn 252°",
+    "Aldebaran — Hc 39°, Zn 012°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Bound from Sydney for Lord Howe Island at 33°S, you work Antares with HO 249. What is its true azimuth?",
+  "a": "275°",
+  "o": [
+   "085°",
+   "095°",
+   "265°"
+  ],
+  "why": "South latitude, LHA under 180° (the star is west of you): Zn = 180° + Z = 180° + 095° = 275°.",
+  "ref": "Sight reduction — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Antares, HO 249, Lat 33°S",
+   "lines": [
+    "LHA 32°",
+    "Tabulated Z 095°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "At dawn off the Marquesas the eastern horizon is sharp but the west is still dark and hazy. In what order do you take these four stars?",
+  "a": "Altair first, Spica last",
+  "o": [
+   "Spica first, Altair last",
+   "Spica first, Vega last",
+   "Arcturus first, Altair last"
+  ],
+  "why": "At dawn the eastern horizon sharpens first and the western last: start with Altair in the east and leave Spica, in the west, till last.",
+  "ref": "Star sights — dawn and dusk",
+  "fig": {
+   "type": "card",
+   "title": "Dawn, 15 Mar, 15°S 140°W",
+   "lines": [
+    "Altair Zn 063°, Vega Zn 022°",
+    "Arcturus Zn 309°, Spica Zn 267°",
+    "Horizon: sharp in the east, hazy in the west"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Crossing the Arabian Sea from Salalah towards Cochin, you take Fomalhaut at dusk and work it from the DR. What Hc and Zn do you get?",
+  "a": "Hc 36°55.4′, Zn 145°",
+  "o": [
+   "Hc 57°10.2′, Zn 057°",
+   "Hc 57°10.2′, Zn 123°",
+   "Hc 36°55.4′, Zn 035°"
+  ],
+  "why": "LHA = 252°58.7′ + 15°18′ + 60°18′ = 328°34.7′. Dec S with Lat N: contrary names, so Dec goes in negative: Hc 36°55.4′, Zn 145°.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Fomalhaut, 1 Nov, 1408:24 UT",
+   "lines": [
+    "DR 14°05′N 60°18′E",
+    "GHA Aries 252°58.7′ (with increment)",
+    "Fomalhaut SHA 15°18′, Dec S29°29′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "On passage from the Faroes to Iceland in October, you plan the dusk fix at 62°N. Which three stars do you take?",
+  "a": "Arcturus, Altair and Mirfak",
+  "o": [
+   "Deneb, Vega and Kochab",
+   "Altair, Vega and Arcturus",
+   "Kochab, Mirfak and Deneb"
+  ],
+  "why": "High in the north many stars stand near the zenith: Deneb is 71° up. Arcturus, Altair and Mirfak are 20°–70° up and about 120° apart.",
+  "ref": "Star sight planning — high latitudes",
+  "fig": {
+   "type": "card",
+   "title": "Star finder, dusk 20 Oct, 62°N 7°W",
+   "lines": [
+    "Vega — Hc 65°, Zn 209°",
+    "Deneb — Hc 71°, Zn 144°",
+    "Arcturus — Hc 21°, Zn 271°",
+    "Altair — Hc 37°, Zn 176°",
+    "Kochab — Hc 63°, Zn 325°",
+    "Mirfak — Hc 33°, Zn 043°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Hove-to in a gale in the Agulhas Current, you get two stars 39 minutes apart. How do you bring the first line up to the time of the second?",
+  "a": "Move it 1.0 M along 225°",
+  "o": [
+   "Move it 1.0 M along 045°",
+   "Move it 1.5 M along 225°",
+   "Leave it — she is hove-to"
+  ],
+  "why": "Hove-to, the boat still drifts: 39 min at 1.5 kn = 1.0 M. Move the first line 1.0 M along the drift, 225°.",
+  "ref": "Star fix — advancing for current",
+  "fig": {
+   "type": "card",
+   "title": "Hove-to off South Africa, dusk",
+   "lines": [
+    "1912: Sirius",
+    "1951: Achernar",
+    "Drift from the last fixes: 225°, 1.5 kn"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "On your first night in the South Pacific, you want Acrux for the dusk fix. Where on the Southern Cross do you look?",
+  "a": "At the foot — the bright star nearest the pole",
+  "o": [
+   "At the head — the top of the long arm",
+   "At the east end of the cross-bar",
+   "In the middle, where the two arms meet"
+  ],
+  "why": "Acrux is the foot of the Cross; the long arm, from the head through Acrux, points towards the south celestial pole.",
+  "ref": "Star identification",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Leaving Fremantle for Mauritius, you will reduce Spica with HO 249. Which assumed position do you use?",
+  "a": "AP 31°S 115°36.4′E — LHA 43°",
+  "o": [
+   "AP 31°S 115°23.6′E — LHA 43°",
+   "AP 32°S 115°36.4′E — LHA 43°",
+   "AP 31°S 114°36.4′E — LHA 42°"
+  ],
+  "why": "East longitude is added: choose the minutes that make LHA whole, 287°23.6′ + 115°36.4′ = 403° = LHA 43°, and the latitude nearest the DR.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Spica, for HO 249",
+   "lines": [
+    "DR 31°20′S 115°10′E",
+    "GHA Spica 287°23.6′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "In the afternoon mid-Atlantic, you have a sun line and two other bodies in the sky. Which do you take to cross with the Sun?",
+  "a": "The Moon — its line cuts the sun line at 85°",
+  "o": [
+   "Venus — it is the brighter of the two",
+   "Venus — it is nearer the Sun in the sky",
+   "Neither — wait for the dusk stars"
+  ],
+  "why": "Lines cut at the difference in azimuth: Sun–Moon 85°, Sun–Venus 49°. The Moon, near first quarter, gives the better fix.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "1520 LMT, 16 Sep, 25°N 50°W",
+   "lines": [
+    "Sun Zn 257°",
+    "Moon, first quarter: Hc 39°, Zn 172°",
+    "Venus mag −4.5: Hc 42°, Zn 208°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Crossing the trades, you shoot three stars over 32 minutes while the North Equatorial Current sets you west. How do you move the first line to the time of the last?",
+  "a": "4.0 M along 258°",
+  "o": [
+   "3.5 M along 255°",
+   "0.5 M along 280°",
+   "4.0 M along 078°"
+  ],
+  "why": "Advance by the run over the ground: 3.5 M along 255° plus 0.5 M along 280° = 4.0 M along 258°.",
+  "ref": "Star fix — advancing for current",
+  "fig": {
+   "type": "card",
+   "title": "Dusk stars, 1850 to 1922 UT",
+   "lines": [
+    "Course 255°, 6.5 kn through the water",
+    "Current 280°, 1.0 kn",
+    "First star 1850, last star 1922"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "Bound for Tristan da Cunha, you look over tonight's planned stars. Which one do you leave out?",
+  "a": "Fomalhaut — it is almost overhead",
+  "o": [
+   "Hamal — it is only 21° up",
+   "Achernar — it is too near the meridian",
+   "Peacock — it is too far south"
+  ],
+  "why": "At 87° the azimuth is hard to judge and the sextant hard to swing; keep to 20°–70° — Hamal at 21° still serves.",
+  "ref": "Star sight planning",
+  "fig": {
+   "type": "card",
+   "title": "Star finder, dusk 18 Nov, 31°S 22°W",
+   "lines": [
+    "Fomalhaut — Hc 87°, Zn 298°",
+    "Achernar — Hc 54°, Zn 147°",
+    "Peacock — Hc 52°, Zn 216°",
+    "Hamal — Hc 21°, Zn 043°",
+    "Altair — Hc 28°, Zn 301°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You plot three star intercepts from one AP. Which point is the fix?",
+  "a": "C",
+  "o": [
+   "A",
+   "B",
+   "D"
+  ],
+  "why": "Lay off 3.5′ towards 040°, 0.9′ away from 160° and 2.6′ away from 280°: the lines meet 3 M east and 2 M north of the AP.",
+  "ref": "Star fix — plotting",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     112,
+     118,
+     "k",
+     "AP"
+    ],
+    [
+     76,
+     142,
+     "k",
+     "A"
+    ],
+    [
+     148,
+     142,
+     "k",
+     "B"
+    ],
+    [
+     148,
+     94,
+     "k",
+     "C"
+    ],
+    [
+     76,
+     94,
+     "k",
+     "D"
+    ]
+   ],
+   "track": "M112 118 L145 78 M112 118 L130 167 M112 118 L61 109",
+   "labels": [
+    [
+     153,
+     73,
+     "040°",
+     "middle"
+    ],
+    [
+     134,
+     182,
+     "160°",
+     "middle"
+    ],
+    [
+     49,
+     111,
+     "280°",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "From the AP",
+    "040°: 3.5′ T",
+    "160°: 0.9′ A",
+    "280°: 2.6′ A"
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "You want the fix for 1910, the time of your middle star. What do you do with the Rigel line taken at 1920?",
+  "a": "Move it 1.2 M along 075°",
+  "o": [
+   "Move it 1.2 M along 255°",
+   "Move it 2.6 M along 075°",
+   "Leave it — it is the last sight"
+  ],
+  "why": "Retire it to 1910: 10 min at 7 kn = 1.2 M back along the track, 075°. The 1858 line goes 1.4 M forward along 255°.",
+  "ref": "Star fix — advancing the lines",
+  "fig": {
+   "type": "card",
+   "title": "Dusk stars, course 255°, 7 kn",
+   "lines": [
+    "1858 UT: Pollux",
+    "1910 UT: Sirius",
+    "1920 UT: Rigel"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Halfway along the ARC to St Lucia, you add Saturn to the dusk fix and work it from the DR. What do you plot?",
+  "a": "3.4′ towards, Zn 114°",
+  "o": [
+   "5.2′ towards, Zn 114°",
+   "7.0′ towards, Zn 114°",
+   "1.7′ towards, Zn 114°"
+  ],
+  "why": "Sun/planets column: 356°32.9′ + 11°58.0′ + v 2.0′ = 8°32.9′; LHA 328°47.9′; Hc 55°30.9′; Ho is greater: 3.4′ towards, Zn 114°.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Saturn, 25 Nov, 2047:52 UT",
+   "lines": [
+    "DR 16°20′N 39°45′W",
+    "GHA 2000 UT 356°32.9′, v 2.5, Dec N0°42.8′",
+    "Incr. 47m 52s: 11°58.0′ (Aries 12°00.0′)",
+    "Ho 55°34.3′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Approaching the Virgin Islands, you want Venus in tonight's dusk fix. When do you take it?",
+  "a": "First, at about 1800, while it is over 10° up",
+  "o": [
+   "Last, at the end of nautical twilight",
+   "With the stars, once they all show",
+   "Never — a planet is too bright to use"
+  ],
+  "why": "Venus shows long before the stars and sinks fast: take it first, above 10°, before the large and uncertain refraction near the horizon.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Dusk, 1 Oct, 18°N 62°W",
+   "lines": [
+    "Sunset 1749, civil twilight ends 1811",
+    "Nautical twilight ends 1836",
+    "Venus mag −4.6, Zn 242°",
+    "Venus Hc 13° at 1800, 6° at 1836"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "The dusk sky is clear and you have time for five stars. A crew member says three is enough. Why take all five?",
+  "a": "An odd line shows up and can be left out",
+  "o": [
+   "Five lines always make the hat smaller",
+   "Each extra star halves the error of the fix",
+   "The almanac's corrections need five sights"
+  ],
+  "why": "With three lines a bad sight hides inside the hat; with four or five, the lines that agree show up the one that does not.",
+  "ref": "Star fix — cocked hat",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Venus is crossing the equator this morning. What declination do you use for your sight at 1145 UT?",
+  "a": "N0°00.2′",
+  "o": [
+   "S0°00.2′",
+   "S0°01.6′",
+   "N0°00.5′"
+  ],
+  "why": "Dec moves 1.2′ an hour northward: S0°00.7′ + 0.9′ north (45/60 of 1.2′) crosses the equator: N0°00.2′.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Venus, 23 Apr",
+   "lines": [
+    "Dec 1100 UT S0°00.7′, d 1.2",
+    "Dec 1200 UT N0°00.5′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Your afternoon sun line, run up to dusk, passes 5 miles south of a neat three-star fix. What do you make of it?",
+  "a": "Trust the stars — the 22 M run carries the error",
+  "o": [
+   "Move the fix halfway to the sun line",
+   "Trust the sun line — the Sun is the surer body",
+   "Rework the stars — three lines cannot all be wrong"
+  ],
+  "why": "The stars were taken together, with no run; the sun line was carried 22 M on the log and compass, so any current or leeway sits in it.",
+  "ref": "Star and sun lines",
+  "fig": {
+   "type": "card",
+   "title": "Dusk, 1840",
+   "lines": [
+    "Three-star fix: cocked hat 0.5 M",
+    "Sun line at 1500, run up 22 M (6 kn)",
+    "It passes 5 M south of the star fix"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "You will correct tonight's Moon sight. Where do you find the Moon's horizontal parallax?",
+  "a": "On the daily page, beside its GHA and Dec for the hour",
+  "o": [
+   "In the star list at the back of the almanac",
+   "In HO 249 Volume 1, with the selected stars",
+   "On the increments page, beside v and d"
+  ],
+  "why": "The Moon's HP changes through the month (about 54′ to 61′), so the daily page gives it hour by hour with GHA, v, Dec and d.",
+  "ref": "Moon sights",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "South of Madagascar, bound for Durban, you take the Moon at dusk and work it from the DR. What do you plot?",
+  "a": "2.8′ away, Zn 040°",
+  "o": [
+   "21.6′ away, Zn 040°",
+   "2.5′ towards, Zn 041°",
+   "16.3′ away, Zn 040°"
+  ],
+  "why": "Moon column: 269°57.2′ + 11°18.6′ + v 9.1′ = 281°24.9′; LHA 331°14.9′; Hc 43°16.0′; Ho is smaller: 2.8′ away, Zn 040°.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "Moon, 21 Nov, 1547:24 UT",
+   "lines": [
+    "DR 26°10′S 49°50′E",
+    "GHA 1500 UT 269°57.2′, v 11.5",
+    "Incr. 47m 24s: Moon 11°18.6′, Sun 11°51.0′",
+    "Dec N11°16.8′ (d applied), Ho 43°13.2′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Working tonight's Moon sight, what declination do you take for 0438 UT?",
+  "a": "N23°29.7′",
+  "o": [
+   "N23°41.7′",
+   "N23°35.7′",
+   "N23°26.2′"
+  ],
+  "why": "The next hour shows Dec falling: d 9.5′ × 38/60 = 6.0′; N23°35.7′ − 6.0′ = N23°29.7′. The Moon's d is large: never skip it.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "Moon, 28 Nov",
+   "lines": [
+    "Dec 0400 UT N23°35.7′, d 9.5",
+    "Dec 0500 UT N23°26.2′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Mid-Atlantic at dusk, your Rigel sight comes out 87 miles away. What do you make of it?",
+  "a": "You took Betelgeuse — rework it as Betelgeuse",
+  "o": [
+   "The DR is 87 miles out — plot it",
+   "The horizon was poor — leave it out",
+   "Rework it as Rigel from a new AP"
+  ],
+  "why": "Its altitude and bearing fit Betelgeuse, Orion's other bright star, about 20° from Rigel: rework it with Betelgeuse's SHA and Dec.",
+  "ref": "Star identification — the wrong body",
+  "fig": {
+   "type": "card",
+   "title": "“Rigel”, 15 Jan, 2032 UT",
+   "lines": [
+    "Ho 29°26′, true bearing about 095°",
+    "Worked as Rigel: 87′ away",
+    "Predicted Rigel: Hc 30°53′, Zn 117°",
+    "Predicted Betelgeuse: Hc 29°24′, Zn 095°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Your mate's three-star plot gives a 7-mile cocked hat, and you find he plotted Altair's intercept the wrong way. How far does the Altair line move when you correct it?",
+  "a": "7.0 M towards Altair",
+  "o": [
+   "3.5 M towards Altair",
+   "7.0 M away from Altair",
+   "3.5 M away from Altair"
+  ],
+  "why": "The line lay 3.5 M on the wrong side of the AP; corrected, it moves 2 × 3.5 = 7.0 M towards Altair.",
+  "ref": "Star fix — errors",
+  "fig": {
+   "type": "card",
+   "title": "Mate's plot",
+   "lines": [
+    "Altair 3.5′ towards — plotted away",
+    "Deneb and Arcturus plotted correctly",
+    "Cocked hat about 7 M across"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "At dawn between the Azores and the Caribbean, you work Jupiter and Rigel from the same DR. Where is your fix?",
+  "a": "28°12.9′N 40°20.6′W",
+  "o": [
+   "28°07.1′N 40°20.6′W",
+   "28°12.9′N 40°29.4′W",
+   "28°07.1′N 40°29.4′W"
+  ],
+  "why": "Rigel away at 181°: 2.9′ north. Jupiter towards at 088°: 3.9 M east = 4.4′ of longitude at 28°N: 28°12.9′N 40°20.6′W.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Dawn, 23 Sep",
+   "lines": [
+    "DR 28°10′N 40°25′W",
+    "Jupiter: 4.0′ towards, Zn 088°",
+    "Rigel: 3.0′ away, Zn 181°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "Planning tonight's dusk fix, you read the almanac's planet notes for the month. Which planets can you add to your stars?",
+  "a": "Jupiter and Saturn",
+  "o": [
+   "Venus and Jupiter",
+   "Mars and Saturn",
+   "All four planets"
+  ],
+  "why": "Only planets above the horizon at dusk help: Jupiter and Saturn. Venus rises before dawn and Mars is lost in the Sun's glare.",
+  "ref": "Planet sights",
+  "fig": {
+   "type": "card",
+   "title": "Planet notes, this month",
+   "lines": [
+    "Venus: a morning star, rises before the Sun",
+    "Mars: too close to the Sun to observe",
+    "Jupiter: visible all night",
+    "Saturn: in the evening sky"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Approaching the Tuamotus from the Marquesas at dusk, you most want your distance off the atolls. Which star do you take first?",
+  "a": "Canopus",
+  "o": [
+   "Spica",
+   "Sirius",
+   "Procyon"
+  ],
+  "why": "A position line runs at 90° to the bearing: Canopus at 214° gives a line along the chain, 124°–304°, so your distance off it.",
+  "ref": "Star sight planning",
+  "fig": {
+   "type": "card",
+   "title": "Dusk, 11 May, 30 M from the Tuamotus",
+   "lines": [
+    "The chain of atolls runs 120°–300°",
+    "Canopus Zn 214°, Spica Zn 094°",
+    "Sirius Zn 262°, Procyon Zn 304°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "Your three stars were spread about 120° apart and their lines give this small cocked hat. Where do you put the fix?",
+  "a": "In the middle of the triangle",
+  "o": [
+   "At the corner nearest the DR",
+   "Outside the triangle, towards the stars",
+   "On the line of the brightest star"
+  ],
+  "why": "With the bodies spread round the horizon, the true position most likely lies inside a small hat: take its centre.",
+  "ref": "Star fix — cocked hat",
+  "fig": {
+   "type": "chart",
+   "track": "M65 57 L203 137 M203 71 L65 151 M122 184 L122 24",
+   "labels": [
+    [
+     209,
+     141,
+     "Zn 030°",
+     "start"
+    ],
+    [
+     209,
+     75,
+     "Zn 150°",
+     "start"
+    ],
+    [
+     128,
+     28,
+     "Zn 270°",
+     "start"
+    ]
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "At dawn you chose two stars on almost opposite bearings, and their lines lie parallel, 3 miles apart. What does that tell you?",
+  "a": "You are near the line midway between them",
+  "o": [
+   "You are on the line of the brighter star",
+   "Nothing — parallel lines are of no use",
+   "You are 3 M beyond the farther line"
+  ],
+  "why": "A constant error (dip, index error) moves the two lines opposite ways; the mean line between them is free of it.",
+  "ref": "Star fix — angle of cut",
+  "fig": {
+   "type": "card",
+   "title": "Dawn, 3 Oct, 30°N 40°W",
+   "lines": [
+    "Procyon Hc 57°, Zn 134°",
+    "Mirfak Hc 54°, Zn 315°",
+    "Lines parallel, 3 M apart"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Bound from Fiji to Tonga, you have just crossed the 180th meridian eastbound. You take Rigil Kent at dusk and work it from the DR. What do you plot?",
+  "a": "2.6′ towards, Zn 208°",
+  "o": [
+   "23.3′ away, Zn 207°",
+   "36.8′ away, Zn 207°",
+   "23.3′ towards, Zn 207°"
+  ],
+  "why": "At 179°W UT runs 12 h ahead: 0632 UT is on 15 Sep. LHA 84°13.1′ + 8°05.8′ + 139°40′ − 179°15′ = 52°43.9′; Hc 33°39.3′: 2.6′ towards, Zn 208°.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Rigil Kent, 0632:18 UT",
+   "lines": [
+    "Ship's date 14 Sep, dusk",
+    "DR 18°20′S 179°15′W",
+    "GHA Aries 0600 UT 14 Sep: 83°14.0′",
+    "GHA Aries 0600 UT 15 Sep: 84°13.1′",
+    "Incr. 32m 18s: 8°05.8′; SHA 139°40′",
+    "Dec S60°56′, Ho 33°41.9′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "You plan dawn stars on the way from the Marquesas to Tahiti. When do you come on deck?",
+  "a": "Before 0516, to find the stars in the dark",
+  "o": [
+   "At 0541, as civil twilight begins",
+   "At 0602, as the Sun rises",
+   "After 0602, once the horizon is bright"
+  ],
+  "why": "Find the stars and preset the sextant while it is still dark; shoot as the horizon sharpens, between nautical and civil twilight.",
+  "ref": "Star sights — dawn and dusk",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 9 Mar, lat 15°S",
+   "lines": [
+    "Nautical twilight begins 0516 LMT",
+    "Civil twilight begins 0541 LMT",
+    "Sunrise 0602 LMT"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "At 0300 you took three stars by the light of a nearly full Moon and plotted them. Which line do you distrust?",
+  "a": "Hamal's — it bore under the Moon",
+  "o": [
+   "Dubhe's — it was the lowest of the three",
+   "Sirius's — it was taken last",
+   "None — moonlight gives a true horizon"
+  ],
+  "why": "The horizon under the Moon's glitter may be false; the line of the star taken beneath it is the one to doubt and re-shoot at dawn.",
+  "ref": "Star sights — dawn and dusk",
+  "fig": {
+   "type": "chart",
+   "track": "M64 84 L172 152 M175 89 L61 147 M145 179 L151 60",
+   "labels": [
+    [
+     178,
+     156,
+     "Dubhe",
+     "start"
+    ],
+    [
+     181,
+     93,
+     "Sirius",
+     "start"
+    ],
+    [
+     157,
+     64,
+     "Hamal",
+     "start"
+    ]
+   ],
+   "panel": [
+    "26 Oct, 0300",
+    "Full Moon Zn 266°"
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "After two cloudy days your DR may be 40 miles out. How far from your preset Hc may Sirius appear when you look for it?",
+  "a": "Up to about 40′ — sweep a little up and down",
+  "o": [
+   "Up to about 4′ — it will be in the eyepiece",
+   "Up to about 4° — use the star finder instead",
+   "Not at all — a DR error does not change Hc"
+  ],
+  "why": "1′ of altitude is 1 M of distance: a 40 M error in the DR can put the star up to 40′ off the preset Hc, and its Zn a little out too.",
+  "ref": "Star sight planning",
+  "fig": {
+   "type": "card",
+   "title": "After two cloudy days",
+   "lines": [
+    "DR uncertain by up to 40 M",
+    "Sirius preset: Hc 41°20′, Zn 112°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Four dusk stars from one AP: three lines meet within a mile, but Regulus comes out like this. What most likely went wrong?",
+  "a": "Its sextant reading was 1° out — add 1° and rework",
+  "o": [
+   "Its time was a minute out — rework the GHA",
+   "It was the wrong star — leave it out",
+   "Refraction was left out — add it to Hs"
+  ],
+  "why": "58.7′ away, against 1.3′ towards that fits the other three, is 60′: Hs was read or written 1° low.",
+  "ref": "Star fix — errors",
+  "fig": {
+   "type": "card",
+   "title": "Four-star fix from one AP",
+   "lines": [
+    "Capella 1.7′ T, Zn 040°",
+    "Sirius 0.2′ T, Zn 140°",
+    "Aldebaran 1.7′ A, Zn 260°",
+    "Regulus 58.7′ A, Zn 100°",
+    "Regulus's bearing as predicted"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Leaving the Bay of Islands for Tonga, you list the dusk stars. Which two would give almost the same position line?",
+  "a": "Acrux and Rigil Kent — 3° apart",
+  "o": [
+   "Canopus and Sirius — 67° apart",
+   "Spica and Regulus — 64° apart",
+   "Regulus and Sirius — 90° apart"
+  ],
+  "why": "Two stars on almost the same bearing give almost the same line; keep the higher one and spend the time on another bearing.",
+  "ref": "Star sight planning — southern sky",
+  "fig": {
+   "type": "card",
+   "title": "Star finder, dusk 10 May, 35°S 175°E",
+   "lines": [
+    "Acrux — Hc 48°, Zn 148°",
+    "Rigil Kent — Hc 33°, Zn 145°",
+    "Canopus — Hc 57°, Zn 225°",
+    "Spica — Hc 26°, Zn 086°",
+    "Regulus — Hc 41°, Zn 022°",
+    "Sirius — Hc 55°, Zn 292°"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "At 0100 LMT a brilliant, steady white light stands high in the sky, and your crew calls it Venus. Which planet is it?",
+  "a": "Jupiter — Venus is never far from the Sun",
+  "o": [
+   "Venus — it is the brightest planet",
+   "Mars — it is brightest at midnight",
+   "Saturn — it is the slowest planet"
+  ],
+  "why": "Venus is never more than about 47° from the Sun, so it is never high in the middle of the night; a brilliant white planet there is Jupiter.",
+  "ref": "Star identification — the wrong body",
+  "fig": {
+   "type": "card",
+   "title": "15 Jan, 20°N 60°W, 0100 LMT",
+   "lines": [
+    "A brilliant, steady white light",
+    "Hc 72°, Zn 281°",
+    "The Sun set seven hours ago"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Cloud leaves you only two stars, and their lines cut at 30°. If one line is a mile out, how far can that move the fix?",
+  "a": "About 2.0 M along the other line",
+  "o": [
+   "About 1.0 M along the other line",
+   "About 0.5 M along the other line",
+   "About 1.2 M along the other line"
+  ],
+  "why": "Moving one line 1 M shifts the cut 1 / sin 30° = 2 M along the other line; at a 90° cut it would be only 1 M.",
+  "ref": "Star fix — angle of cut",
+  "fig": {
+   "type": "card",
+   "title": "Two-star fix",
+   "lines": [
+    "The lines cut at 30°",
+    "Each line good to about 1 M"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "After two days of cloud your star intercepts are all about 30 miles, though the lines meet in a small hat. What do you do next?",
+  "a": "Rework the sights with the fix as a new DR",
+  "o": [
+   "Plot it as it is — the hat is small",
+   "Take a point halfway back to the DR",
+   "Shorten each intercept by a tenth"
+  ],
+  "why": "A position line is a short straight piece of a large circle; with intercepts over about 30′ the curve tells, so rework from the new position.",
+  "ref": "Sight reduction — intercept",
+  "fig": {
+   "type": "card",
+   "title": "Dusk fix from the DR",
+   "lines": [
+    "Intercepts 34′, 28′ and 31′",
+    "Cocked hat 1.5 M across",
+    "Fix 31 M from the DR"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Bound from Iceland for Newfoundland, you take Kochab at dusk at 58°N and work it from the DR. What Hc and Zn do you get?",
+  "a": "Hc 53°22.1′, Zn 333°",
+  "o": [
+   "Hc 42°23.3′, Zn 001°",
+   "Hc 68°00.6′, Zn 029°",
+   "Hc 53°22.1′, Zn 027°"
+  ],
+  "why": "GHA★ = GHA Aries + SHA: LHA = 349°10.8′ + 137°18′ − 30°10′ = 96°18.8′. Kochab never sets here, so a slip still gives a believable Hc.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Kochab, 1 Dec, 1834:12 UT",
+   "lines": [
+    "DR 58°20′N 30°10′W",
+    "GHA Aries 349°10.8′ (with increment)",
+    "Kochab SHA 137°18′, Dec N74°03′"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Your dusk and dawn star fixes are 11 hours apart. The dawn fix lies here against your DR. What current has set you overnight?",
+  "a": "Setting 290° at 0.6 kn",
+  "o": [
+   "Setting 110° at 0.6 kn",
+   "Setting 290° at 6.6 kn",
+   "Setting 290° at 1.2 kn"
+  ],
+  "why": "DR to fix over the 11 h is the current: 6.6 M ÷ 11 h = 0.6 kn, setting 290°, from the DR towards the fix.",
+  "ref": "Star fix — advancing for current",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     236,
+     140,
+     "k",
+     "DR 0600"
+    ],
+    [
+     137,
+     104,
+     "k",
+     "Fix 0600"
+    ]
+   ],
+   "track": "M236 140 L137 104",
+   "labels": [
+    [
+     164,
+     146,
+     "6.6 M, 290°",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Dusk fix 1900",
+    "DR run on to 0600",
+    "Dawn fix 0600"
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 1,
+  "q": "You will reduce tonight's Jupiter and Moon sights with HO 249. Which volume do you open?",
+  "a": "Vol 2 or 3, with Lat, LHA and Dec",
+  "o": [
+   "Vol 1, with Lat and LHA Aries",
+   "Vol 1 for Jupiter, Vol 3 for the Moon",
+   "None — HO 249 is for stars only"
+  ],
+  "why": "Vol 1 holds selected stars only; Vols 2 (Lat 0°–39°) and 3 (40°–89°) take any body with Dec up to 29°, planets and the Moon included.",
+  "ref": "Sight reduction — stars",
+  "fig": null
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Before dawn you want a Moon sight to go with the stars. Which limb do you expect to bring down to the horizon?",
+  "a": "The upper limb — the lit side faces up",
+  "o": [
+   "The lower limb — the Sun is below the horizon",
+   "The lower limb — it is the one used at night",
+   "Either — a gibbous Moon is lit all round"
+  ],
+  "why": "The lit limb faces the Sun along the great circle to it; from a Moon high in the west that circle runs up over the zenith, so the top is lit.",
+  "ref": "Moon sights",
+  "fig": {
+   "type": "card",
+   "title": "0330, three days after full Moon",
+   "lines": [
+    "Moon 50° up in the west",
+    "The Sun rises at 0610, in the east"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "On your first night in the southern sky, you look for the Southern Cross to find Acrux and see this. Is it the Cross?",
+  "a": "Probably the False Cross — find the Pointers first",
+  "o": [
+   "Yes — it is the only cross in the sky",
+   "Yes — take its brightest star as Acrux",
+   "No — that shape is Orion's Belt"
+  ],
+  "why": "The False Cross is bigger and fainter; the real Cross is small, with two bright Pointers, Rigil Kent and Hadar, leading to it.",
+  "ref": "Star identification",
+  "fig": {
+   "type": "card",
+   "title": "Looking south at dusk",
+   "lines": [
+    "A cross of four stars, mag about 2",
+    "Larger than you expected",
+    "No bright pair of stars beside it"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 3,
+  "q": "Bound for Nouméa at night, your three-star fix gives this large cocked hat, with the barrier reef to the south-west. What do you do?",
+  "a": "Assume the corner nearest the reef and rework",
+  "o": [
+   "Take the centre and hold your course",
+   "Take the corner nearest the DR and hold on",
+   "Ignore the fix and trust the DR"
+  ],
+  "why": "A big hat means a bad sight or a slip: until you find it, navigate from the most dangerous corner, keep sea room, and rework or re-shoot.",
+  "ref": "Star fix — cocked hat",
+  "fig": {
+   "type": "chart",
+   "land": "M0 60 C 40 96 70 140 120 174 L0 174 Z",
+   "track": "M120 35 L298 100 M289 51 L144 173 M191 190 L158 3",
+   "labels": [
+    [
+     30,
+     150,
+     "Reef",
+     "middle"
+    ],
+    [
+     214,
+     182,
+     "Hat about 8 M across",
+     "middle"
+    ]
+   ],
+   "note": "Plotting sheet"
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Cloud closes in after Jupiter and Spica, whose lines cut at about 90°. How far do you trust this fix?",
+  "a": "A good cut, but no check against a bad sight",
+  "o": [
+   "Fully — two lines at 90° cannot be wrong",
+   "Not at all — a planet and a star do not mix",
+   "For latitude only — Spica is near the meridian"
+  ],
+  "why": "Two lines always meet somewhere, so a blunder in either goes unseen; use the fix with care and add a third body as soon as you can.",
+  "ref": "Star fix — angle of cut",
+  "fig": {
+   "type": "card",
+   "title": "Dusk, 14 Jun, cloud closing in",
+   "lines": [
+    "Jupiter line, Zn 268°",
+    "Spica line, Zn 178°",
+    "No other body in sight"
+   ]
+  }
+ },
+ {
+  "topic": "stars",
+  "difficulty": 2,
+  "q": "Off the Queensland coast, bound for New Caledonia, you work Achernar at dusk. What is its LHA?",
+  "a": "24°55.9′",
+  "o": [
+   "384°55.9′",
+   "84°07.9′",
+   "335°04.1′"
+  ],
+  "why": "East longitude is added: 259°10.9′ + 335°21′ + 150°24.0′ = 744°55.9′; take off 720°: LHA 24°55.9′.",
+  "ref": "Sight reduction — stars",
+  "fig": {
+   "type": "card",
+   "title": "Achernar, 20 Jan, 0918:36 UT",
+   "lines": [
+    "GHA Aries 259°10.9′ (with increment)",
+    "Achernar SHA 335°21′",
+    "DR 20°05′S 150°24.0′E"
+   ]
+  }
+ }
+]

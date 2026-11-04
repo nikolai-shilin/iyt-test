@@ -1,0 +1,2296 @@
+[
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "You are halfway across on the ARC, converting the almanac's LMT to UT by hand. What is your longitude in time?",
+  "a": "3h 30m",
+  "o": [
+   "3h 52m",
+   "3h 15m",
+   "4h 30m"
+  ],
+  "why": "52.5° × 4 min = 210 min = 3h 30m (15° = 1 h, 1° = 4 min, 15′ = 1 min).",
+  "ref": "Time — arc and time",
+  "fig": {
+   "type": "card",
+   "title": "DR at 0800 UT",
+   "lines": [
+    "Lat 16°40′N",
+    "Long 52°30′W",
+    "Almanac times are LMT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Your ship's clocks keep the Caribbean zone time. What do you write in the UT column of the log?",
+  "a": "1930 UT",
+  "o": [
+   "1130 UT",
+   "1530 UT",
+   "2330 UT"
+  ],
+  "why": "West longitude, ZD +4: UT = zone time + ZD = 1530 + 4 h = 1930.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "card",
+   "title": "Ship's clock",
+   "lines": [
+    "Zone description +4",
+    "Ship's time 1530",
+    "Log the event in UT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "You take a sun sight on the passage from Bermuda to the Azores. What UT goes into the reduction?",
+  "a": "14 22 58",
+  "o": [
+   "14 23 22",
+   "14 23 10",
+   "14 22 46"
+  ],
+  "why": "A fast watch shows too much: UT = 14 23 10 − 12 s = 14 22 58.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Deck watch",
+   "lines": [
+    "Watch at the sight 14 23 10",
+    "Error on GPS this morning: 12 s fast"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Checking the watch after landfall, you find it was 8 seconds out during the last day's sights. How much longitude error did that put in your sun lines?",
+  "a": "2′ of longitude",
+  "o": [
+   "8′ of longitude",
+   "0.5′ of longitude",
+   "32′ of longitude"
+  ],
+  "why": "The Earth turns 15′ of arc per minute of time: 4 s = 1′ of longitude, so 8 s = 2′.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "After landfall",
+   "lines": [
+    "Watch error found: 8 s",
+    "Not applied to the last day's sights"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Bound west from Tonga to Fiji, you cross the 180th meridian at 2100 on Tuesday 9 June, ship's time. What do you write in the log a moment later?",
+  "a": "2100 Wednesday 10 June",
+  "o": [
+   "2100 Monday 8 June",
+   "0900 Wednesday 10 June",
+   "2100 Tuesday 9 June"
+  ],
+  "why": "Westbound across 180° the date goes forward a day (ZD +12 becomes −12); the clock time stays the same.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "chart",
+   "land": "M159 0 H161 V200 H159 Z",
+   "track": "M290 120 C 230 130 120 130 50 120",
+   "boat": [
+    50,
+    120,
+    270
+   ],
+   "labels": [
+    [
+     172,
+     112,
+     "180°",
+     "start"
+    ],
+    [
+     60,
+     150,
+     "Fiji"
+    ],
+    [
+     270,
+     150,
+     "Tonga"
+    ]
+   ],
+   "panel": [
+    "Ship's clock",
+    "2100 Tue 9 June",
+    "ZD +12"
+   ],
+   "note": "Westbound across the date line"
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Your logs hold noon sights from passages all through the year, and the almanac's Mer Pass for the Sun moves. Why?",
+  "a": "The true Sun runs ahead of or behind the mean Sun",
+  "o": [
+   "The ship's clocks are changed for summer time",
+   "Refraction changes with the season",
+   "The Earth's spin speeds up and slows down"
+  ],
+  "why": "Mean time runs evenly, the true Sun does not (elliptic orbit, tilted axis): the difference is the equation of time, up to ~16 min.",
+  "ref": "Time — equation of time",
+  "fig": {
+   "type": "card",
+   "title": "Almanac: Sun's Mer Pass (LMT)",
+   "lines": [
+    "4 November   1144",
+    "12 February   1214",
+    "13 June   1200"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Your crew asks whether the radio's UTC must be corrected before you open the almanac. What do you tell them?",
+  "a": "Use it as UT; the difference is under a second",
+  "o": [
+   "Add 18 s to it to get UT",
+   "Add 37 s to it to get UT",
+   "Apply the zone description to it first"
+  ],
+  "why": "UTC is kept within 0.9 s of UT; 0.9 s is about 0.2′ of longitude, below what a sextant can give.",
+  "ref": "Time — time signals",
+  "fig": {
+   "type": "card",
+   "title": "Time sources aboard",
+   "lines": [
+    "Radio time signal: UTC",
+    "Almanac argument: UT",
+    "UT − UTC: under 0.9 s"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Your crew keeps the deck log in ship's time, which changes as you go west. Which time do you write against every sight and fix?",
+  "a": "UT, read from the deck watch",
+  "o": [
+   "Ship's time, as the crew does",
+   "The LMT of each position",
+   "The zone time of the port you left"
+  ],
+  "why": "Sights and fixes are worked in UT; ship's time jumps an hour at every zone change, UT never does.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "card",
+   "title": "Nav log, day 9",
+   "lines": [
+    "Ship's clocks retarded 1 h last night",
+    "Crew log events in ship's time"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "You are alone on deck at dawn with the sextant, and the deck watch is below at the chart table. How do you time the star sight?",
+  "a": "Start a stopwatch at the sight; compare it with the watch later",
+  "o": [
+   "Read the watch when you get back to the chart table",
+   "Note the minute only; the seconds hardly matter",
+   "Take the time of the plotter's last GPS fix"
+  ],
+  "why": "Start the stopwatch at the instant of the sight, then subtract its reading from the watch time; never guess the seconds.",
+  "ref": "Time — timing a sight",
+  "fig": null
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "You work a sun sight by hand. How do you get the GHA for the moment of the sight?",
+  "a": "The 14h GHA plus the increment for 23m 10s",
+  "o": [
+   "The 14h GHA alone; minutes are below sextant accuracy",
+   "The 14h GHA plus 0°23′10″ for the minutes",
+   "The 14h GHA plus the v correction for 23m"
+  ],
+  "why": "The daily page gives GHA for each whole hour; the increments page adds the minutes and seconds (15° an hour for the Sun).",
+  "ref": "Time — the almanac's daily pages",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 5 November",
+   "lines": [
+    "Sun 14h: GHA 34°06.9′",
+    "Sight at 14 23 10 UT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "South of Hispaniola with the GPS down, you time the moment the Sun stops rising at noon. What longitude does that give you?",
+  "a": "69°20′W",
+  "o": [
+   "69°20′E",
+   "65°35′W",
+   "69°05′W"
+  ],
+  "why": "16 37 20 − 12 00 00 = 4h 37m 20s: 60° + 9°15′ + 5′ = 69°20′, west because local noon comes after Greenwich's.",
+  "ref": "Time — arc and time",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 25 December",
+   "lines": [
+    "Almanac Mer Pass 1200 (LMT)",
+    "The Sun hangs at 16 37 20 UT",
+    "Watch checked on GPS yesterday"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You plan the evening star sights off the Queensland coast. At what UT does the Sun set?",
+  "a": "0744 UT, 14 May",
+  "o": [
+   "0735 UT, 14 May",
+   "0326 UT, 15 May",
+   "1735 UT, 14 May"
+  ],
+  "why": "147°45′ = 9h 51m; east longitude: UT = LMT − 9h 51m = 1735 − 0951 = 0744 UT, the same date.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "Coral Sea, 14 May",
+   "lines": [
+    "Lat 18°S, long 147°45′E",
+    "Almanac sunset 1735 LMT",
+    "Ship's clock: ZD −10"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You keep ship's time by the zone you are in. Which zone description belongs to this noon position?",
+  "a": "+3, add 3 h to get UT",
+  "o": [
+   "+2, add 2 h to get UT",
+   "−3, subtract 3 h to get UT",
+   "−2, subtract 2 h to get UT"
+  ],
+  "why": "Zone +3 runs from 37°30′W to 52°30′W, centred on 45°W; 37°40′W is just inside it.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "card",
+   "title": "Noon position",
+   "lines": [
+    "Lat 24°10′N, long 37°40′W",
+    "Bound west on the ARC"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You want to compare the deck watch with a radio time signal. What UT and date is it now?",
+  "a": "2330 UT, 13 May",
+  "o": [
+   "1930 UT, 14 May",
+   "2330 UT, 14 May",
+   "1930 UT, 13 May"
+  ],
+  "why": "East longitude, ZD −10: UT = 0930 − 10 h = 2330 on the day before, 13 May.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "card",
+   "title": "Coral Sea, ship's clock",
+   "lines": [
+    "0930, 14 May",
+    "Zone description −10",
+    "Deck watch to be checked"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You sail the ARC from Las Palmas to Rodney Bay and keep ship's time by the zone you are in. How do the clocks change on the way?",
+  "a": "Retard 3 h, an hour each at 22°30′W, 37°30′W and 52°30′W",
+  "o": [
+   "Advance 3 h, an hour each at 22°30′W, 37°30′W and 52°30′W",
+   "Retard 4 h, an hour each at 15°W, 30°W, 45°W and 60°W",
+   "Retard 3 h, an hour each at 30°W, 45°W and 60°W"
+  ],
+  "why": "Westbound the zones go from +1 to +4: retard an hour at each boundary, 7°30′ past each multiple of 15°.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "chart",
+   "track": "M285 100 C 220 140 120 145 35 115",
+   "marks": [
+    [
+     285,
+     100,
+     "k",
+     "Las Palmas"
+    ],
+    [
+     35,
+     115,
+     "k",
+     "Rodney Bay"
+    ]
+   ],
+   "labels": [
+    [
+     262,
+     125,
+     "15°25′W · ZD +1"
+    ],
+    [
+     62,
+     140,
+     "61°W · ZD +4"
+    ]
+   ],
+   "boat": [
+    160,
+    138,
+    265
+   ],
+   "note": "ARC route, westbound"
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You keep zone time on the passage east. What do you do with the ship's clocks now?",
+  "a": "Advance to 0300; now ZD +3",
+  "o": [
+   "Retard to 0100; now ZD +5",
+   "Retard to 0100; now ZD +3",
+   "Advance to 0300; now ZD +5"
+  ],
+  "why": "Eastbound you enter zone +3 at 52°30′W: advance the clocks an hour; the ZD falls by one.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "card",
+   "title": "Bermuda to the Azores",
+   "lines": [
+    "Ship's clock: ZD +4",
+    "0200: crossing 52°30′W eastbound"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You clear in at Horta, and the office closes at 1730 local time. What time is it ashore as you tie up?",
+  "a": "1700",
+  "o": [
+   "1300",
+   "1600",
+   "1500"
+  ],
+  "why": "UT = 1500 + 2 h = 1700; the Azores keep UT +0 in summer, so it is 1700 ashore.",
+  "ref": "Time — shore time and ship's time",
+  "fig": {
+   "type": "card",
+   "title": "Arriving at Horta, July",
+   "lines": [
+    "Ship's clock: ZD +2 (long 28°38′W)",
+    "Horta keeps summer time, UT +0",
+    "Alongside at 1500 ship's time"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "After the Puddle Jump you anchor in Taiohae Bay. What is the local time ashore?",
+  "a": "1330",
+  "o": [
+   "1430",
+   "1400",
+   "1300"
+  ],
+  "why": "UT = 1400 + 9 h = 2300; the Marquesas keep UT −9 h 30 m: 2300 − 0930 = 1330 local.",
+  "ref": "Time — shore time and ship's time",
+  "fig": {
+   "type": "card",
+   "title": "Landfall, Nuku Hiva",
+   "lines": [
+    "Ship's clock: ZD +9",
+    "The Marquesas keep UT −9½",
+    "Anchored at 1400 ship's time"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You are on passage to Fiji and join the cruisers' SSB net. When do you switch the radio on, by ship's time?",
+  "a": "1500 Thursday",
+  "o": [
+   "1500 Wednesday",
+   "1500 Friday",
+   "0300 Thursday"
+  ],
+  "why": "ZD −12: ship's time = UT + 12 h = 0300 + 12 h = 1500 on the same Thursday.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "card",
+   "title": "SSB net schedule",
+   "lines": [
+    "Net opens 0300 UT, Thursday 14 May",
+    "You: long 178°E, ZD −12"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "On 16 November you still have no time signal. What are the watch's daily rate and its error now?",
+  "a": "Gaining 2 s a day; 31 s fast",
+  "o": [
+   "Gaining 14 s a day; 115 s fast",
+   "Losing 2 s a day; 3 s fast",
+   "Gaining 2.4 s a day; 34 s fast"
+  ],
+  "why": "(17 − 3) s / 7 days = gaining 2 s a day; 17 s + 7 × 2 s = 31 s fast on 16 Nov.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Rate book",
+   "lines": [
+    "2 Nov: 3 s fast",
+    "9 Nov: 17 s fast",
+    "No GPS after 9 Nov"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You check the deck watch against the GPS just before a morning sun sight. What UT do you use for the sight?",
+  "a": "09 41 11",
+  "o": [
+   "09 41 25",
+   "09 41 18",
+   "09 34 18"
+  ],
+  "why": "The watch is 7 s ahead of the GPS, so 7 s fast: 09 41 18 − 7 s = 09 41 11 UT.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Watch check and sight",
+   "lines": [
+    "GPS 09:00:00, watch 09 00 07",
+    "Sun sight at watch 09 41 18"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Mid-Atlantic, your watch is 20 seconds fast and you do not know it. Where does that put your positions from sun lines?",
+  "a": "5′ of longitude too far west",
+  "o": [
+   "5′ of longitude too far east",
+   "20′ of longitude too far west",
+   "20′ of longitude too far east"
+  ],
+  "why": "Too late a UT gives too big a GHA; west longitude = GHA − LHA comes out 20 s × 15″ = 5′ too far west.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Celestial-only passage",
+   "lines": [
+    "Watch 20 s fast, not known",
+    "Sun lines worked with that time"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Your crew set the deck watch from the plotter, which shows GPS time. What error does that put in your longitude?",
+  "a": "4.5′ of longitude",
+  "o": [
+   "18′ of longitude",
+   "1.2′ of longitude",
+   "None — GPS time is UT"
+  ],
+  "why": "GPS time runs 18 s ahead of UTC (no leap seconds); 18 s × 15″ = 270″ = 4.5′ of longitude.",
+  "ref": "Time — time signals",
+  "fig": {
+   "type": "card",
+   "title": "Plotter clock setting",
+   "lines": [
+    "Time display: GPS time",
+    "UTC = GPS time − 18 s",
+    "Watch set from the plotter"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You need a reliable time check for your sights. Where do you get it?",
+  "a": "Time signals on the SSB, e.g. WWV on 10 MHz",
+  "o": [
+   "The bulkhead clock, set before departure",
+   "The laptop clock, synced in port",
+   "The VHF's log of the last DSC call"
+  ],
+  "why": "Shortwave time stations (WWV/WWVH on 5, 10, 15 MHz) give UTC to the second; clocks set weeks ago have unknown errors.",
+  "ref": "Time — time signals",
+  "fig": {
+   "type": "card",
+   "title": "Day 12, no GPS",
+   "lines": [
+    "Plotter and both GPS sets dead",
+    "Watch rate unknown since day 5",
+    "The SSB receiver works"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Alone on deck, you time a sun sight this way. What is the UT of the sight?",
+  "a": "10 13 19",
+  "o": [
+   "10 13 27",
+   "10 16 33",
+   "10 13 23"
+  ],
+  "why": "10 15 00 − 1m 37s = 10 13 23 by the watch; it is 4 s fast, so UT 10 13 19.",
+  "ref": "Time — timing a sight",
+  "fig": {
+   "type": "card",
+   "title": "Stopwatch timing",
+   "lines": [
+    "Stopwatch started at the sight",
+    "Stopped as the watch read 10 15 00",
+    "Stopwatch 1m 37s; watch 4 s fast"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Your crew misread the minute when calling the time of a sun sight. How big an error does that put in your longitude?",
+  "a": "15′ of longitude",
+  "o": [
+   "1′ of longitude",
+   "4′ of longitude",
+   "60′ of longitude"
+  ],
+  "why": "The Sun's GHA moves 15° an hour, 15′ a minute: one minute of time wrong moves the line 15′ of longitude.",
+  "ref": "Time — timing a sight",
+  "fig": {
+   "type": "card",
+   "title": "Sight log, Indian Ocean",
+   "lines": [
+    "Written: 14 23 10",
+    "The watch read 14 24 10"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Bound east from New Zealand to Tahiti, you cross the 180th meridian on Friday 15 May, ship's time. What date goes in the log after the next midnight?",
+  "a": "Friday 15 May, again",
+  "o": [
+   "Saturday 16 May",
+   "Sunday 17 May",
+   "Thursday 14 May"
+  ],
+  "why": "Eastbound across 180° you repeat a day (ZD −12 becomes +12): Friday 15 May comes twice.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "chart",
+   "land": "M159 0 H161 V200 H159 Z",
+   "track": "M40 125 C 110 135 210 135 280 125",
+   "boat": [
+    280,
+    125,
+    90
+   ],
+   "labels": [
+    [
+     172,
+     112,
+     "180°",
+     "start"
+    ],
+    [
+     60,
+     155,
+     "New Zealand"
+    ],
+    [
+     270,
+     155,
+     "Tahiti"
+    ]
+   ],
+   "panel": [
+    "Ship's clock",
+    "Fri 15 May",
+    "ZD −12"
+   ],
+   "note": "Eastbound across the date line"
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Bound west from Suwarrow to Samoa, you take a star sight at dusk. Which almanac page and hour do you open?",
+  "a": "5 May, 05h",
+  "o": [
+   "4 May, 05h",
+   "4 May, 07h",
+   "5 May, 18h"
+  ],
+  "why": "ZD +11: UT = 1850 + 11 h = 0550 the next day: the 5 May page, the 05h row.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "card",
+   "title": "Star sight on passage",
+   "lines": [
+    "Ship's time 1850, Monday 4 May",
+    "Long 170°W, ZD +11"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Approaching Suva, you take a morning sun sight. With which date and time do you enter the almanac?",
+  "a": "14 March, 19h 45m 12s",
+  "o": [
+   "15 March, 19h 45m 12s",
+   "15 March, 07h 45m 12s",
+   "14 March, 07h 45m 12s"
+  ],
+  "why": "ZD −12: UT = 0745 − 12 h = 1945 on 14 March; the almanac is entered with the UT date, not the ship's.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun off Fiji",
+   "lines": [
+    "Ship's time 0745, 15 March",
+    "ZD −12",
+    "Deck watch (UT) 19 45 12"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Between Tahiti and the Cook Islands you download a GRIB file. At what ship's time is this forecast valid?",
+  "a": "0200, 5 May",
+  "o": [
+   "2200, 5 May",
+   "0200, 6 May",
+   "2200, 4 May"
+  ],
+  "why": "ZD +10: ship's time = UT − 10 h = 1200 − 10 h = 0200 on the same date.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "card",
+   "title": "GRIB file",
+   "lines": [
+    "Forecast valid 1200 UT, 5 May",
+    "Ship's clock: ZD +10"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "On the ARC you work a sun sight by hand. What is the Sun's GHA at the moment of the sight?",
+  "a": "42°36.4′",
+  "o": [
+   "33°48.1′",
+   "38°44.4′",
+   "42°38.0′"
+  ],
+  "why": "Increment for 37m 44s at 15° an hour = 9°26.0′; GHA = 33°10.4′ + 9°26.0′ = 42°36.4′.",
+  "ref": "Time — the almanac's daily pages",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 26 November",
+   "lines": [
+    "Sun 14h: GHA 33°10.4′",
+    "Sight at 14 37 44 UT",
+    "Sun: exactly 15° per hour"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "In the Indian Ocean at dawn you take a star sight. What is GHA Aries at the moment of the sight?",
+  "a": "243°40.7′",
+  "o": [
+   "243°39.0′",
+   "258°43.2′",
+   "233°15.0′"
+  ],
+  "why": "Aries' increment for 41m 36s is 10°25.7′, not the Sun's 10°24.0′: 233°15.0′ + 10°25.7′ = 243°40.7′.",
+  "ref": "Time — the almanac's daily pages",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 15 April",
+   "lines": [
+    "Aries 02h: GHA 233°15.0′",
+    "Star sight at 02 41 36 UT",
+    "Aries moves 15°02.46′ per hour"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "In the trade winds on the day of the equinox you work a sun sight. Which declination do you use?",
+  "a": "N 0°00.2′",
+  "o": [
+   "S 0°00.2′",
+   "S 0°01.4′",
+   "N 0°01.4′"
+  ],
+  "why": "d 1.0′ an hour × 48/60 = 0.8′ northward: S 0°00.6′ − 0.8′ crosses the equator, Dec N 0°00.2′.",
+  "ref": "Time — the almanac's daily pages",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 20 March",
+   "lines": [
+    "Sun 14h: Dec S 0°00.6′",
+    "Sun 15h: Dec N 0°00.4′, d 1.0",
+    "Sight at 14 48 00 UT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "West of the Cape Verdes you plan the noon sight. At what UT does the Sun cross your meridian?",
+  "a": "1317 UT",
+  "o": [
+   "1011 UT",
+   "1144 UT",
+   "1117 UT"
+  ],
+  "why": "Mer Pass is LMT: 23°15′W = 1h 33m; west, so UT = 1144 + 0133 = 1317 UT.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight, 4 November",
+   "lines": [
+    "Almanac Mer Pass 1144",
+    "DR long 23°15′W, ZD +2"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Leaving Cape Town for St Helena, you want a noon sight. What is the UT of local noon?",
+  "a": "1100 UT",
+  "o": [
+   "1328 UT",
+   "1214 UT",
+   "1014 UT"
+  ],
+  "why": "18°25′E = 1h 13.7m; east, so UT = 1214 − 0114 = 1100 UT.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "Cape Town, 12 February",
+   "lines": [
+    "Almanac Mer Pass 1214",
+    "Long 18°25′E, ZD −2"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "A crew member says you must also apply the equation of time to the Mer Pass to get local noon. When is local noon, in LMT?",
+  "a": "1214 LMT",
+  "o": [
+   "1200 LMT",
+   "1228 LMT",
+   "1146 LMT"
+  ],
+  "why": "The Mer Pass is already 1200 + 14m 13s with the EoT applied; only your longitude is left, to turn it into UT.",
+  "ref": "Time — equation of time",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 12 February",
+   "lines": [
+    "Sun: EoT 14m 13s",
+    "Mer Pass 1214"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "On the ARC you want the watch called for sunrise. At what ship's time does the Sun rise?",
+  "a": "0609",
+  "o": [
+   "0625",
+   "0641",
+   "0909"
+  ],
+  "why": "UT = 0625 + 2h 44m = 0909; ship's time = 0909 − 3 h = 0609, 16 min before LMT since you are east of 45°W.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "Dawn, 20 January",
+   "lines": [
+    "Lat 12°N, long 41°W",
+    "Almanac sunrise 0625 LMT",
+    "Ship's clock: ZD +3"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You want to be on deck with the sextant when morning nautical twilight begins. What ship's time is that?",
+  "a": "0546",
+  "o": [
+   "0536",
+   "0526",
+   "0146"
+  ],
+  "why": "UT = 0536 − 3h 50m = 0146; ship's time = 0146 + 4 h = 0546, 10 min after LMT since you are west of 60°E.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "Off Mauritius, 10 August",
+   "lines": [
+    "Lat 20°S, long 57°30′E",
+    "Nautical twilight 0536 LMT",
+    "Ship's clock: ZD −4"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Bound from Rio towards Tristan da Cunha, you plan the dusk star sights. At what UT does the Sun set?",
+  "a": "2151 UT",
+  "o": [
+   "1611 UT",
+   "2201 UT",
+   "1901 UT"
+  ],
+  "why": "42°30′W = 2h 50m; west, so UT = 1901 + 0250 = 2151 UT.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "South Atlantic, 10 December",
+   "lines": [
+    "Lat 33°S, long 42°30′W",
+    "Almanac sunset 1901 LMT",
+    "Ship's clock: ZD +3"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You arrive at the marina in Mindelo. What time is it ashore?",
+  "a": "1100",
+  "o": [
+   "0900",
+   "1000",
+   "1200"
+  ],
+  "why": "UT = 1000 + 2 h = 1200; the islands keep UT −1, so 1100 ashore: legal time need not match the nautical zone.",
+  "ref": "Time — shore time and ship's time",
+  "fig": {
+   "type": "card",
+   "title": "Mindelo, Cape Verde",
+   "lines": [
+    "Ship's clock: ZD +2 (long 24°59′W)",
+    "Cape Verde keeps UT −1 all year",
+    "Ship's time 1000"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "Between the Cook Islands and Niue you plan the dusk star sights. What are the UT and the date of sunset?",
+  "a": "0523 UT, 4 March",
+  "o": [
+   "0523 UT, 3 March",
+   "0723 UT, 3 March",
+   "1823 UT, 3 March"
+  ],
+  "why": "165° = 11h 00m; west, so UT = 1823 + 11 h = 0523 UT on the next day, 4 March.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "South Pacific, 3 March",
+   "lines": [
+    "Lat 15°S, long 165°W",
+    "Almanac sunset 1823 LMT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "The GPS has been dead since 1 December. What UT do you use for this sight?",
+  "a": "10 14 08",
+  "o": [
+   "10 14 02",
+   "10 15 08",
+   "10 14 56"
+  ],
+  "why": "6 s slow, then 20 days × 1.5 s gained = 30 s: now 24 s fast; UT = 10 14 32 − 24 s = 10 14 08.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Rate book and sight",
+   "lines": [
+    "1 Dec: 6 s slow (GPS check)",
+    "Daily rate: gaining 1.5 s",
+    "21 Dec: sight at watch 10 14 32"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "Approaching the Bay of Biscay you find the watch was 30 seconds slow for the whole crossing. How far, and which way, is your fix wrong?",
+  "a": "5.0 M too far east",
+  "o": [
+   "7.5 M too far east",
+   "5.0 M too far west",
+   "7.5 M too far west"
+  ],
+  "why": "30 s = 7.5′ of longitude; a slow watch puts you east; 7.5′ × cos 48° = 5.0 M on the ground.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Bound for Brittany, lat 48°N",
+   "lines": [
+    "Watch 30 s slow, not known",
+    "Fix from sun and star lines"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "You plan your arrival in Tonga and book the customs officer. What will the local time and date be when you arrive?",
+  "a": "0900, 9 June",
+  "o": [
+   "0900, 8 June",
+   "1000, 8 June",
+   "0700, 8 June"
+  ],
+  "why": "UT out 1800 on 1 June + 7 d 2 h = 2000 UT on 8 June; Tonga keeps UT +13: 0900 on 9 June.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "card",
+   "title": "Papeete to Nuku'alofa",
+   "lines": [
+    "Depart 0800 Mon 1 June, ZD +10",
+    "Time at sea: 7 days 2 hours",
+    "Tonga keeps UT +13"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "You take the first star of the morning round. Which almanac entries do you use?",
+  "a": "7 Nov, 00h, plus 0m 01s",
+  "o": [
+   "6 Nov, 23h, plus 59m 55s",
+   "6 Nov, 23h, plus 59m 58s",
+   "7 Nov, 23h, plus 59m 58s"
+  ],
+  "why": "23 59 58 + 3 s = 00 00 01 UT on 7 Nov: the 00h row of 7 Nov plus the increment for 1 second.",
+  "ref": "Time — the almanac's daily pages",
+  "fig": {
+   "type": "card",
+   "title": "Dawn stars, Indian Ocean",
+   "lines": [
+    "Deck watch keeps UT, 3 s slow",
+    "It reads 23 59 58 on 6 Nov",
+    "Ship's date: 7 Nov"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "On your way into the South Atlantic you plan the dusk star sights. At what ship's time does the Sun set?",
+  "a": "1802",
+  "o": [
+   "1742",
+   "1722",
+   "1809"
+  ],
+  "why": "5°N is halfway: 1742 LMT; UT = 1742 + 2h 20m = 2002; ship's time = 2002 − 2 h = 1802.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "Doldrums, 20 November",
+   "lines": [
+    "Lat 5°N, long 35°W, ZD +2",
+    "Sunset LMT: 10°N 1735, 0° 1749"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "You want to time the noon sight exactly, to get a longitude from it. At what UT does the Sun cross your meridian?",
+  "a": "14 01 31",
+  "o": [
+   "14 34 29",
+   "09 25 31",
+   "11 43 31"
+  ],
+  "why": "LMT = 12 00 00 − 16m 29s = 11 43 31; 34°30′W = 2h 18m 00s: UT = 14 01 31.",
+  "ref": "Time — equation of time",
+  "fig": {
+   "type": "card",
+   "title": "Noon to the second, 4 November",
+   "lines": [
+    "EoT 16m 29s, Sun ahead of mean time",
+    "DR long 34°30′W"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "At the end of the ARC you work a sun sight timed by the cockpit watch. What is the Sun's GHA?",
+  "a": "22°37.8′",
+  "o": [
+   "337°38.7′",
+   "22°35.3′",
+   "22°36.6′"
+  ],
+  "why": "UT = 10 23 15 + 5 s + 3 h = 13 23 20; GHA = 16°47.8′ + 5°50.0′ for 23m 20s = 22°37.8′.",
+  "ref": "Time — the almanac's daily pages",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 10 December",
+   "lines": [
+    "Sun GHA: 10h 331°48.7′, 13h 16°47.8′",
+    "Watch on ship's time (ZD +3), 5 s slow",
+    "Sight at watch 10 23 15"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "You want to close the coast after sunrise. What will the ship's clock show when the Sun rises?",
+  "a": "0716",
+  "o": [
+   "0616",
+   "0612",
+   "0508"
+  ],
+  "why": "UT = 0612 + 4h 04m = 1016; on ZD +3 the clock shows 1016 − 3 h = 0716 (0616 only after you go to ZD +4).",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "Landfall, St Lucia, 8 December",
+   "lines": [
+    "Lat 14°N, long 61°W",
+    "Almanac sunrise 0612 LMT",
+    "Ship's clock still on ZD +3"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "You plan the evening star sights for the window between civil and nautical twilight. What is that window by ship's time?",
+  "a": "1831 to 1855",
+  "o": [
+   "1820 to 1844",
+   "1809 to 1833",
+   "1331 to 1355"
+  ],
+  "why": "72°15′E = 4h 49m: UT 1331 to 1355; ship's time = UT + 5 h = 1831 to 1855.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "Chagos, 15 April, dusk",
+   "lines": [
+    "Lat 7°S, long 72°15′E, ZD −5",
+    "Civil twilight 1820, nautical 1844 LMT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Closing Western Australia from Mauritius, you turn the almanac's LMT of sunrise into UT. How much time does your longitude give, and which way do you apply it?",
+  "a": "7h 43m, subtracted from LMT",
+  "o": [
+   "7h 43m, added to LMT",
+   "8h 25m, subtracted from LMT",
+   "7h 40m, subtracted from LMT"
+  ],
+  "why": "115° × 4 min = 460 min, 45′ = 3 min: 7h 43m. East of Greenwich LMT is ahead of UT, so UT = LMT − 7h 43m.",
+  "ref": "Time — arc and time",
+  "fig": {
+   "type": "card",
+   "title": "DR, approaching Fremantle",
+   "lines": [
+    "Lat 32°10′S, long 115°45′E",
+    "Almanac sunrise is given in LMT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "On passage to the Maldives you log a fix taken at this time. What UT goes beside it?",
+  "a": "0900 UT",
+  "o": [
+   "1900 UT",
+   "1400 UT",
+   "0904 UT"
+  ],
+  "why": "East longitude, ZD −5: UT = zone time + ZD = 1400 − 5 h = 0900. The ZD, not the exact longitude, sets ship's time.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "card",
+   "title": "Ship's clock",
+   "lines": [
+    "Zone description −5",
+    "Ship's time 1400",
+    "DR long 74°E"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Running south well off the Brazilian coast, you take an afternoon sun sight. What UT goes into the reduction?",
+  "a": "16 06 03",
+  "o": [
+   "16 05 45",
+   "16 05 54",
+   "16 06 12"
+  ],
+  "why": "A slow watch shows too little: add the error. UT = 16 05 54 + 9 s = 16 06 03.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Deck watch",
+   "lines": [
+    "Compared with GPS at noon: 9 s slow",
+    "Watch at the sight 16 05 54"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Bound west from Niue for Fiji, you cross the 180th meridian tonight and change the ship's date. What do you do with the deck watch you keep on UT?",
+  "a": "Nothing — UT and its date run on unchanged",
+  "o": [
+   "Put its date forward a day with the ship's",
+   "Put its date back a day for the crossing",
+   "Reset it to the new zone time, ZD −12"
+  ],
+  "why": "The date line changes zone time and the ship's date only; UT is the same on both sides, so the deck watch and its date are left alone.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "chart",
+   "land": "M159 0 H161 V200 H159 Z",
+   "track": "M290 120 C 230 130 120 130 50 120",
+   "boat": [
+    120,
+    128,
+    270
+   ],
+   "labels": [
+    [
+     172,
+     112,
+     "180°",
+     "start"
+    ],
+    [
+     60,
+     150,
+     "Fiji"
+    ],
+    [
+     270,
+     150,
+     "Niue"
+    ]
+   ],
+   "panel": [
+    "Deck watch: UT",
+    "Ship: ZD +12",
+    "then ZD −12"
+   ],
+   "note": "Westbound across the date line"
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "You check the deck watch against the hourly time signal on the radio. At which moment is it exactly the hour?",
+  "a": "At the start of the sixth, long pip",
+  "o": [
+   "At the start of the first pip",
+   "At the end of the sixth, long pip",
+   "At the end of the fifth, short pip"
+  ],
+  "why": "The pips count down the last five seconds; the hour is the start of the last, longer pip.",
+  "ref": "Time — time signals",
+  "fig": {
+   "type": "card",
+   "title": "Broadcast time signal",
+   "lines": [
+    "Six pips mark each hour",
+    "Five short pips, then one long one"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Last night you watched the Moon cross your meridian. About when will it cross tonight?",
+  "a": "About 2155, some 50 minutes later",
+  "o": [
+   "About 2105, at the same time",
+   "About 2101, 4 minutes earlier",
+   "About 2015, 50 minutes earlier"
+  ],
+  "why": "The Moon moves east round the sky about 13° a day, so it reaches your meridian some 50 min later each day (40–66 min).",
+  "ref": "Time — the Moon's meridian passage",
+  "fig": {
+   "type": "card",
+   "title": "Moon on the meridian",
+   "lines": [
+    "Last night: 2105 ship's time",
+    "Same longitude, no clock change"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Your rate book shows the deck watch gaining faster since you reached the tropics. What is the likely cause, and what do you do?",
+  "a": "Heat; use the new rate from recent checks",
+  "o": [
+   "Zone changes; add 1 s per hour retarded",
+   "A failing battery; average the two rates",
+   "Magnetism; move it from the chart table"
+  ],
+  "why": "A quartz watch's rate changes with temperature: predict its error with the rate measured in the present climate.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Rate book",
+   "lines": [
+    "Falmouth to Madeira: gaining 0.4 s a day",
+    "Since the Cape Verdes: gaining 1.6 s a day",
+    "Watch kept in the chart table"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "You work a dawn sight of Canopus by hand. Which increment do you add to the 03h GHA of Aries?",
+  "a": "The Aries column for 41m 26s",
+  "o": [
+   "The Sun/Planets column for 41m 26s",
+   "The Moon column for 41m 26s",
+   "The Aries column for 41m 00s"
+  ],
+  "why": "Stars go through GHA Aries, which turns 15°02.46′ an hour, so it has its own column; the seconds count too (4 s = 1′).",
+  "ref": "Time — the almanac's increments page",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, increments page 41m",
+   "lines": [
+    "Columns: Sun/Planets · Aries · Moon",
+    "Then: v or d corrections",
+    "Sight at 03 41 26 UT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Westbound on the trade-wind crossing, you retard the clocks tonight. How long is watch B on deck?",
+  "a": "5 hours",
+  "o": [
+   "3 hours",
+   "4 hours",
+   "4 hours 20 minutes"
+  ],
+  "why": "At 0200 the clock goes back to 0100: B stands 0000 to 0400 by the clock, which is 5 hours of real time.",
+  "ref": "Time — ship's time and the watch rota",
+  "fig": {
+   "type": "card",
+   "title": "Night watches",
+   "lines": [
+    "A 2000–2400 · B 0000–0400 · C 0400–0800",
+    "Tonight: clocks back 1 h at 0200"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 1,
+  "q": "Your old handheld GPS from the grab bag shows this. What do you take from its display?",
+  "a": "Its time of day; the date comes from the log",
+  "o": [
+   "Nothing; its clock is corrupt as well",
+   "Its date and time; a GPS is never wrong",
+   "Its time less 19 years of leap seconds"
+  ],
+  "why": "An old receiver's week counter rolls over after 1024 weeks: the date jumps back 19.6 years, but the time of day stays right.",
+  "ref": "Time — time signals",
+  "fig": {
+   "type": "card",
+   "title": "Spare handheld GPS",
+   "lines": [
+    "Shows 21 March 2007, 14:22:07",
+    "Time agrees with the radio signal",
+    "Today is 4 November 2026"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Between Cocos Keeling and Christmas Island with the GPS down, you time the Sun at its highest. What longitude does that give?",
+  "a": "100°36′E",
+  "o": [
+   "97°04′E",
+   "93°32′E",
+   "100°36′W"
+  ],
+  "why": "Local noon = 12 00 00 + 14m 08s = 12 14 08 LMT; less 05 31 44 UT = 6h 42m 24s east = 100°36′E.",
+  "ref": "Time — arc and time",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 15 February",
+   "lines": [
+    "EoT 14m 08s, Sun behind mean time",
+    "The Sun hangs at 05 31 44 UT",
+    "Watch checked on the radio today"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Crossing the Indian Ocean from Cocos Keeling to Rodrigues, you plan the ship's clock changes for the crew. What are they?",
+  "a": "Retard 2 h, at 82°30′E and 67°30′E",
+  "o": [
+   "Advance 2 h, at 82°30′E and 67°30′E",
+   "Retard 2 h, at 90°E and 75°E",
+   "Retard 3 h, at 90°E, 75°E and 60°E"
+  ],
+  "why": "Westbound the zones go from −6 to −4: retard an hour at each boundary, 82°30′E and 67°30′E (7°30′ past 75° and 60°).",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "chart",
+   "track": "M285 95 C 220 130 120 140 35 110",
+   "marks": [
+    [
+     285,
+     95,
+     "k",
+     "Cocos"
+    ],
+    [
+     35,
+     110,
+     "k",
+     "Rodrigues"
+    ]
+   ],
+   "labels": [
+    [
+     258,
+     122,
+     "96°50′E · ZD −6"
+    ],
+    [
+     66,
+     138,
+     "63°25′E · ZD −4"
+    ]
+   ],
+   "boat": [
+    160,
+    132,
+    265
+   ],
+   "note": "Indian Ocean, westbound"
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "On the last clock change watch B stood five hours, and three more changes come before St Lucia. How do you plan them?",
+  "a": "Retard 20 minutes in each of the three night watches",
+  "o": [
+   "Retard the full hour at 0200 each time, as before",
+   "Advance the clocks instead, and catch up at landfall",
+   "Give B the extra hour each time, then a lie-in"
+  ],
+  "why": "Retarding 20 min in each night watch shares the hour: each watch stands 4h 20m, and no one stands five hours.",
+  "ref": "Time — ship's time and the watch rota",
+  "fig": {
+   "type": "card",
+   "title": "ARC rota, westbound",
+   "lines": [
+    "Three night watches of 4 h, 2000–0800",
+    "Clocks back 1 h four times on passage",
+    "Last change at 0200: B stood 5 h"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "On passage from Richards Bay to Mauritius the boat crosses a zone boundary on this watch. What happens to the ship's clocks?",
+  "a": "Advance to 0400; now ZD −3",
+  "o": [
+   "Retard to 0200; now ZD −1",
+   "Retard to 0200; now ZD −3",
+   "Advance to 0400; now ZD −1"
+  ],
+  "why": "Eastbound the clocks go forward an hour at each boundary; in east longitude the ZD grows more negative: −2 becomes −3.",
+  "ref": "Time — zone time",
+  "fig": {
+   "type": "card",
+   "title": "Richards Bay to Mauritius",
+   "lines": [
+    "Ship's clock: ZD −2",
+    "0300: crossing 37°30′E eastbound"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Off New Caledonia on New Year's morning you take a sun sight. Which almanac and which page do you open?",
+  "a": "The 2026 almanac, 31 December, 20h",
+  "o": [
+   "The 2027 almanac, 1 January, 20h",
+   "The 2027 almanac, 1 January, 07h",
+   "The 2026 almanac, 31 December, 07h"
+  ],
+  "why": "ZD −11: UT = 0730 − 11 h = 2030 on 31 December 2026 — the last page of last year's almanac.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "card",
+   "title": "New Year's morning",
+   "lines": [
+    "Ship's time 0730, 1 January 2027",
+    "ZD −11",
+    "Aboard: the 2026 and 2027 almanacs"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Approaching Port Vila, you note the time of sunrise in the log in UT. What UT and date do you write?",
+  "a": "1823 UT, 9 October",
+  "o": [
+   "1823 UT, 10 October",
+   "1647 UT, 10 October",
+   "1835 UT, 9 October"
+  ],
+  "why": "168°E = 11h 12m; UT = 0535 − 11h 12m = 1823 on the day before, 9 October. East of Greenwich, UT is behind.",
+  "ref": "Time — sunrise, sunset and twilight in UT",
+  "fig": {
+   "type": "card",
+   "title": "Vanuatu, 10 October",
+   "lines": [
+    "Lat 17°S, long 168°E",
+    "Almanac sunrise 0535 LMT",
+    "Ship's clock: ZD −11"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Off the Brazilian coast at 20°S you plan the evening star sights. Which planets can you add to them?",
+  "a": "Saturn and Jupiter",
+  "o": [
+   "Venus and Mars",
+   "Venus and Saturn",
+   "Mars and Jupiter"
+  ],
+  "why": "Venus and Mars cross with the Sun and are lost in its glare; at dusk Saturn is high in the west and Jupiter low in the east.",
+  "ref": "Time — planets' and stars' meridian passage",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 15 January: Mer Pass",
+   "lines": [
+    "Venus 1218 · Mars 1202",
+    "Jupiter 2341 · Saturn 1612",
+    "Dusk star sights about 1910 LMT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Bound for Reykjavik in June, you look up tonight's star sights in the almanac. What does it tell you?",
+  "a": "The sky never gets dark: plan on sun lines, not stars",
+  "o": [
+   "Twilight lasts all night: shoot stars at any hour",
+   "The data is missing: interpolate from 60°N",
+   "The Sun stays up: take sun lines all night too"
+  ],
+  "why": "//// means the Sun never gets 6° below the horizon at 64°N: no dark sky with a horizon for stars; the Sun is up 21 hours.",
+  "ref": "Time — high latitudes",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 20 June, lat 64°N",
+   "lines": [
+    "Sunrise 0131, sunset 2232 LMT",
+    "Civil twilight: ////",
+    "Nautical twilight: ////"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You arrive at Puerto Williams in the Beagle Channel for Christmas. At what time by the clocks ashore does the Sun set?",
+  "a": "2209",
+  "o": [
+   "2009",
+   "2039",
+   "2109"
+  ],
+  "why": "UT = 2039 + 4h 30m = 0109 the next day; ashore UT − 3 h = 2209: far south at midsummer, on a zone east of its longitude.",
+  "ref": "Time — shore time and ship's time",
+  "fig": {
+   "type": "card",
+   "title": "Puerto Williams, 20 December",
+   "lines": [
+    "Lat 55°S, long 67°37′W",
+    "Almanac sunset 2039 LMT",
+    "Ship's clock ZD +5; Chile keeps UT −3"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "In the Bay of Bengal you want the Moon on your meridian for a latitude. At what UT does it cross tonight?",
+  "a": "1414 UT",
+  "o": [
+   "1436 UT",
+   "1425 UT",
+   "0225 UT"
+  ],
+  "why": "East: use the difference from the day before, 45 min × 90/360 = 11 min earlier: 2014 LMT; UT = 2014 − 6 h = 1414.",
+  "ref": "Time — the Moon's meridian passage",
+  "fig": {
+   "type": "card",
+   "title": "Almanac: Moon Mer Pass",
+   "lines": [
+    "19 November 1940 · 20 November 2025",
+    "DR long 90°00′E, 20 November",
+    "Ship's clock: ZD −6"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Under the midnight sun off Svalbard you want to time the Sun at its lowest, due north. At what UT does that come?",
+  "a": "2303 UT, 24 June",
+  "o": [
+   "0003 UT, 25 June",
+   "0103 UT, 25 June",
+   "2257 UT, 24 June"
+  ],
+  "why": "Lower transit at 0000 LMT + 2m 35s = 0003 LMT on 25 June; 15°E is 1 h, so UT = 2303 on 24 June.",
+  "ref": "Time — high latitudes",
+  "fig": {
+   "type": "card",
+   "title": "Off Svalbard, night of 24–25 June",
+   "lines": [
+    "Lat 76°N, long 15°00′E",
+    "EoT 2m 35s, Sun behind mean time",
+    "The Sun stays about 9° up all night"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Off Mauritius before dawn you want Jupiter on your meridian for a latitude. At what ship's time does it cross?",
+  "a": "0429",
+  "o": [
+   "0421",
+   "0029",
+   "0813"
+  ],
+  "why": "A planet's Mer Pass is LMT, much the same at any longitude: UT = 0421 − 3h 52m = 0029; ship's time = UT + 4 h = 0429.",
+  "ref": "Time — planets' and stars' meridian passage",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 15 December",
+   "lines": [
+    "Jupiter Mer Pass 0421",
+    "DR long 58°00′E",
+    "Ship's clock: ZD −4"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "In the Indian Ocean in February you plan to catch Sirius as it crosses your meridian. When is that by the ship's clock?",
+  "a": "2132",
+  "o": [
+   "2122",
+   "1732",
+   "0112"
+  ],
+  "why": "Sirius trails Aries by 360° − 258°27′ = 101°33′, about 6h 45m: 2122 LMT; UT = 2122 − 3h 50m = 1732; ZD −4: 2132.",
+  "ref": "Time — planets' and stars' meridian passage",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 10 February",
+   "lines": [
+    "Aries Mer Pass 1437",
+    "Sirius SHA 258°27′",
+    "DR long 57°30′E, ship's clock ZD −4"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "The GPS failed a week ago. Before the morning sights you compare your three watches. Which one do you set aside, and what is UT?",
+  "a": "Watch C; UT 10 00 00",
+  "o": [
+   "Watch A; UT 10 00 30",
+   "Watch C; UT 10 00 10",
+   "Watch B; UT 09 59 55"
+  ],
+  "why": "Corrected, A and B both give 10 00 00 and C gives 10 00 30: C has jumped, and the two that agree give UT.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Watch comparison",
+   "lines": [
+    "Rate book (+ fast): A +20 s, B −5 s, C +8 s",
+    "Read at one moment: A 10 00 20",
+    "B 09 59 55, C 10 00 38"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You carry two deck watches and compare them every morning. Today they disagree. What do you conclude?",
+  "a": "One has jumped 30 s; a time signal must decide",
+  "o": [
+   "A has jumped 30 s; it has the bigger rate",
+   "Each is 15 s out; split the difference",
+   "Both are right; the heat changed the rates"
+  ],
+  "why": "Two watches show only their difference: one has jumped 30 s, but which one takes a third clock or a radio time signal.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Two watches, day 10 without GPS",
+   "lines": [
+    "A gains 1.0 s a day, B loses 0.5 s a day",
+    "Both rates steady for weeks",
+    "Predicted A − B = 22 s; today 52 s"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Six days after the last GPS check, deep in the trades, you need the deck watch error for a sight. What is it now?",
+  "a": "15 s fast",
+  "o": [
+   "7 s fast",
+   "11 s fast",
+   "7 s slow"
+  ],
+  "why": "Use the rate for the temperature it is running at: 4 s + 6 × 1.8 s = 14.8 s, so 15 s fast.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Rate book",
+   "lines": [
+    "Last GPS check: 4 s fast",
+    "Rate at 15 °C: gaining 0.5 s a day",
+    "Rate in the tropics: gaining 1.8 s a day",
+    "Six warm days since the check"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "In the Indian Ocean at 70°E your watch is 12 seconds fast and you do not know it. What does that do to the longitude of your fixes?",
+  "a": "3′ too small — the fix lies too far west",
+  "o": [
+   "3′ too large — the fix lies too far east",
+   "12′ too small — the fix lies too far west",
+   "12′ too large — the fix lies too far east"
+  ],
+  "why": "Too late a time makes GHA too big; LHA = GHA + long E, so the east longitude comes out 3′ (12 s ÷ 4) too small: too far west.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Indian Ocean, no GPS",
+   "lines": [
+    "DR long about 70°E",
+    "Watch 12 s fast, not known",
+    "Sun and star lines worked with it"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "In the Southern Ocean at 60°S you want each sun line good to a mile east–west. How large a watch error can you accept?",
+  "a": "8 s",
+  "o": [
+   "4 s",
+   "2 s",
+   "16 s"
+  ],
+  "why": "At 60° a mile of easting is 1′ ÷ cos 60° = 2′ of longitude, and 2′ of longitude is 8 s of time.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Southern Ocean",
+   "lines": [
+    "DR lat 60°S, long 140°E",
+    "Aim: within 1 M east–west"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Checking the watch on a radio signal, you find it was two minutes wrong all yesterday. Which of yesterday's results can you still trust?",
+  "a": "The noon latitude",
+  "o": [
+   "The morning sun line",
+   "The afternoon sun line",
+   "The running fix from all three"
+  ],
+  "why": "A meridian altitude needs no exact time, only the Dec, which barely moves in 2 min; the sun lines are 30′ of longitude out.",
+  "ref": "Time — timing a sight",
+  "fig": {
+   "type": "card",
+   "title": "Yesterday's sights",
+   "lines": [
+    "Morning sun line, 0900",
+    "Noon latitude by meridian altitude",
+    "Afternoon sun line, 1500",
+    "Watch found 2 min wrong"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "At dawn you shoot three stars alone, timing them with the stopwatch's lap button. What UT do you write for the second star?",
+  "a": "06 16 54",
+  "o": [
+   "06 16 48",
+   "06 07 12",
+   "06 16 51"
+  ],
+  "why": "The watch read 06 12 00 at UT 06 12 03; the second lap adds 4m 51s: UT 06 16 54.",
+  "ref": "Time — timing a sight",
+  "fig": {
+   "type": "card",
+   "title": "Stopwatch with laps",
+   "lines": [
+    "Started as the watch read 06 12 00",
+    "Watch 3 s slow on UT",
+    "Laps: 2m 14s, 4m 51s, 7m 02s"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You take a star at the very end of the hour. What is GHA Aries for the sight?",
+  "a": "98°13.8′",
+  "o": [
+   "113°16.3′",
+   "98°11.4′",
+   "97°30.4′"
+  ],
+  "why": "02h row plus the Aries increment for 59m 59s, 15°02.2′: 83°11.6′ + 15°02.2′ = 98°13.8′, a hair short of the 03h value.",
+  "ref": "Time — the almanac's increments page",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 14 November",
+   "lines": [
+    "Aries 02h: GHA 83°11.6′",
+    "Aries 03h: GHA 98°14.1′",
+    "Star sight at 02 59 59 UT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Heading for the Cape Verdes in February you work a sun sight. Which declination do you use?",
+  "a": "S 16°42.5′",
+  "o": [
+   "S 16°43.3′",
+   "S 16°42.2′",
+   "S 16°42.1′"
+  ],
+  "why": "The d correction for 37m at d 0.7 is 0.4′; the Dec is falling, so subtract: S 16°42.9′ − 0.4′ = S 16°42.5′.",
+  "ref": "Time — the almanac's increments page",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 2 February",
+   "lines": [
+    "Sun 13h: Dec S 16°42.9′, d 0.7",
+    "Sun 14h: Dec S 16°42.1′",
+    "Sight at 13 37 00 UT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Arriving in the Galápagos from Panama, you want to enter Academy Bay after sunrise. When does the Sun rise ashore, and by your ship's clock?",
+  "a": "0611 ashore; 0711 by your clock",
+  "o": [
+   "0611 ashore; 0511 by your clock",
+   "0711 ashore; 0611 by your clock",
+   "0511 ashore; 0611 by your clock"
+  ],
+  "why": "UT = 0610 + 6h 01m = 1211; ashore UT − 6 h = 0611; your clock, still on Panama's UT − 5, shows 0711.",
+  "ref": "Time — shore time and ship's time",
+  "fig": {
+   "type": "card",
+   "title": "Santa Cruz, Galápagos, 15 Feb",
+   "lines": [
+    "Lat 1°S, long 90°18′W",
+    "Almanac sunrise 0610 LMT",
+    "Islands keep UT −6; ship still UT −5"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "After the passage from Tonga you berth at the Opua quarantine dock in November. Customs want you before 1700 New Zealand time. What is the time ashore now?",
+  "a": "1600",
+  "o": [
+   "1400",
+   "1500",
+   "0300"
+  ],
+  "why": "UT = 1500 − 12 h = 0300; New Zealand summer time is UT + 13: 1600 ashore, an hour ahead of your zone time.",
+  "ref": "Time — shore time and ship's time",
+  "fig": {
+   "type": "card",
+   "title": "Arriving at Opua, November",
+   "lines": [
+    "Ship's clock: ZD −12 (long 174°E)",
+    "New Zealand summer time: UT +13",
+    "Alongside at 1500 ship's time"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Looking at the almanac's Sun column in July, a crew member asks why the GHA at 12h is not 0°. When is the Sun actually on the Greenwich meridian?",
+  "a": "12 06 34 UT",
+  "o": [
+   "11 53 26 UT",
+   "12 00 00 UT",
+   "12 01 38 UT"
+  ],
+  "why": "It still needs 1°38.4′ to reach 360°: at 15° an hour that is 6m 34s, so 12 06 34 UT. That gap is the equation of time.",
+  "ref": "Time — equation of time",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 26 July",
+   "lines": [
+    "Sun 12h: GHA 358°21.6′",
+    "The Sun moves 15° per hour"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Two yachts in company talk on the SSB either side of 180°, each keeping its zone time. At 0003 UT on Thursday 12 November, what does each write in its log?",
+  "a": "West of 180°: Thu 1203 · east: Wed 1203",
+  "o": [
+   "West of 180°: Wed 1203 · east: Thu 1203",
+   "Both: Thu 12 Nov, 1203",
+   "Both: Wed 11 Nov, 1203"
+  ],
+  "why": "West of 180° (ZD −12): 0003 + 12 h = 1203 Thursday; east of it (ZD +12): 0003 − 12 h = 1203 Wednesday. Same clock, a day apart.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "card",
+   "title": "Either side of the date line",
+   "lines": [
+    "Yacht West: long 178°E, ZD −12",
+    "Yacht East: long 178°W, ZD +12",
+    "Radio call at 0003 UT, Thu 12 Nov"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Running east at 48°S towards New Zealand at midsummer, you plan the evening stars. What window between civil and nautical twilight do you plan for?",
+  "a": "60 minutes, 2042 to 2142",
+  "o": [
+   "27 minutes, 2042 to 2109",
+   "50 minutes, 2024 to 2114",
+   "66 minutes, 2054 to 2200"
+  ],
+  "why": "Interpolate 3/5 of the way from 45°S to 50°S: civil 2042, nautical 2142 LMT. An hour, twice the tropics: the Sun sets at a slant.",
+  "ref": "Time — high latitudes",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 21 December, evening",
+   "lines": [
+    "Twilight ends (civil / nautical), LMT",
+    "45°S 2024 / 2114",
+    "50°S 2054 / 2200",
+    "DR lat 48°S"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "You keep a rate book from the radio time signals. What daily rate do you write in it?",
+  "a": "Gaining 1.6 s a day",
+  "o": [
+   "Gaining 1.8 s a day",
+   "Gaining 1.4 s a day",
+   "Losing 1.6 s a day"
+  ],
+  "why": "7.2 s gained in 4½ days, from 3 Nov 0800 to 7 Nov 2000: 7.2 ÷ 4.5 = gaining 1.6 s a day.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Rate book, time signals",
+   "lines": [
+    "3 Nov 0800 UT: watch 2.0 s fast",
+    "7 Nov 2000 UT: watch 9.2 s fast"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Your morning sun sight works out to this LHA. How long until the Sun crosses your meridian for the noon sight?",
+  "a": "1h 15m",
+  "o": [
+   "22h 45m",
+   "1h 14m",
+   "1h 45m"
+  ],
+  "why": "The Sun is 360° − 341°15′ = 18°45′ east of your meridian; at 15° an hour, 18°45′ is 1h 15m.",
+  "ref": "Time — arc and time",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun sight, worked",
+   "lines": [
+    "LHA Sun 341°15′",
+    "The Sun's LHA grows 15° an hour"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 2,
+  "q": "Mid-Pacific, you take the time from WWV some 4000 miles away. How much does the radio signal's travel time matter?",
+  "a": "About 0.02 s, far below sight accuracy",
+  "o": [
+   "About 2 s, half a minute of longitude",
+   "About 0.5 s; subtract it from UT",
+   "About 4 s, a whole minute of longitude"
+  ],
+  "why": "4000 M is about 7400 km; ÷ 300 000 km/s ≈ 0.025 s ≈ 0.006′ of longitude: ignore it.",
+  "ref": "Time — time signals",
+  "fig": {
+   "type": "card",
+   "title": "Time signal by HF radio",
+   "lines": [
+    "WWV, Colorado, about 4000 M away",
+    "Radio waves: 300 000 km a second"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "Bound for the Marquesas, you plan a Sun–Moon fix with the Moon on your meridian. At what time by the ship's clock does it cross?",
+  "a": "0831",
+  "o": [
+   "0814",
+   "0757",
+   "0819"
+  ],
+  "why": "West: 44 min × 138/360 = 17 min later: 0819 LMT; UT = 0819 + 9h 12m = 1731; ZD +9: 1731 − 9 h = 0831.",
+  "ref": "Time — the Moon's meridian passage",
+  "fig": {
+   "type": "card",
+   "title": "Almanac: Moon Mer Pass",
+   "lines": [
+    "4 November 0802 · 5 November 0846",
+    "DR long 138°W, 4 November",
+    "Ship's clock: ZD +9"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "The GPS has been dead since 1 November, and you have sailed from Biscay into the trades. What UT do you use for this sight?",
+  "a": "14 05 21",
+  "o": [
+   "14 05 33",
+   "14 05 07",
+   "14 05 17"
+  ],
+  "why": "−2 s + 9 × 0.6 s + 8 × 2.1 s = 20.2 s: now 20 s fast. UT = 14 05 41 − 20 s = 14 05 21.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Rate book, Biscay to the trades",
+   "lines": [
+    "1 Nov: watch 2 s slow (last GPS check)",
+    "1–10 Nov, cool: gaining 0.6 s a day",
+    "From 10 Nov, tropics: gaining 2.1 s a day",
+    "18 Nov: sight at watch 14 05 41"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "Bound west from Tonga for the Lau group of Fiji, you keep ZD +12 and plan the noon sight. At what UT is local noon, and on which almanac date?",
+  "a": "0007 UT, 27 January",
+  "o": [
+   "0007 UT, 26 January",
+   "2341 UT, 26 January",
+   "1213 UT, 26 January"
+  ],
+  "why": "UT = 1213 + 11h 54m = 2407, so 0007 UT on 27 January: just past UT midnight, the almanac date is a day ahead of the ship's.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "card",
+   "title": "Noon sight, ship's date 26 Jan",
+   "lines": [
+    "Almanac Mer Pass 1213",
+    "DR long 178°30′W",
+    "Ship's clock: ZD +12"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "Approaching Orkney from the Atlantic at midsummer, you want the time of sunrise for the morning sights. What is it in UT?",
+  "a": "0302 UT",
+  "o": [
+   "0314 UT",
+   "0226 UT",
+   "0254 UT"
+  ],
+  "why": "59°10′N is 70/120 of the way to 60°N: 0256 − 11.7 min ≈ 0244 LMT; 4°30′W = 18 min, so 0302 UT. Up here it moves fast.",
+  "ref": "Time — high latitudes",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 21 June, sunrise LMT",
+   "lines": [
+    "58°N 0256 · 60°N 0236",
+    "DR lat 59°10′N, long 4°30′W",
+    "Ship's clock on UT"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "Closing Rodrigues from Cocos, you want a dawn star fix before the reef pass. When does morning nautical twilight begin by your ship's clock, and what time is it ashore then?",
+  "a": "0654 by your clock, 0454 ashore",
+  "o": [
+   "0454 by your clock, 0654 ashore",
+   "0508 by your clock, 0508 ashore",
+   "0654 by your clock, 0508 ashore"
+  ],
+  "why": "63°25′E = 4h 14m: UT = 0508 − 4h 14m = 0054; ship's clock UT + 6 = 0654; ashore UT + 4 = 0454.",
+  "ref": "Time — shore time and ship's time",
+  "fig": {
+   "type": "card",
+   "title": "Rodrigues, 15 September",
+   "lines": [
+    "Lat 20°S, long 63°25′E",
+    "Nautical twilight begins 0508 LMT",
+    "Ship still on ZD −6; island keeps UT +4"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "You have sailed from Opua to Papeete and want the true passage time for the log's summary. How long were you at sea?",
+  "a": "14 days 22 hours",
+  "o": [
+   "14 days exactly",
+   "13 days 2 hours",
+   "15 days 22 hours"
+  ],
+  "why": "In UT you left at 2000 on 30 April and arrived at 1800 on 15 May: 14 days 22 hours. The repeated day makes the dates look short.",
+  "ref": "Time — the date line",
+  "fig": {
+   "type": "card",
+   "title": "Opua to Papeete",
+   "lines": [
+    "Left 0800 Fri 1 May, NZ time UT +12",
+    "Arrived 0800 Fri 15 May, Tahiti UT −10",
+    "Crossed the date line eastbound"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "South of Java at dawn you take a star by the cockpit watch, which keeps ship's time. What is GHA Aries for the sight?",
+  "a": "30°14.5′",
+  "o": [
+   "31°13.7′",
+   "30°16.5′",
+   "30°12.5′"
+  ],
+  "why": "UT = 05 48 30 − 4 s − 7 h = 22 48 26 on 8 Nov; GHA = 18°06.0′ + 12°08.5′ for 48m 26s = 30°14.5′.",
+  "ref": "Time — the almanac's daily pages",
+  "fig": {
+   "type": "card",
+   "title": "Almanac and watch",
+   "lines": [
+    "Aries 22h: 8 Nov 18°06.0′ · 9 Nov 19°05.2′",
+    "Ship's date 9 Nov, ZD −7",
+    "Watch on ship's time, 4 s fast: 05 48 30"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "With 12 days to go to Barbados and no time signal, you know the watch's rate only to a second a day either way. How far off could your longitude be at landfall?",
+  "a": "About 3 M east or west",
+  "o": [
+   "About 12 M east or west",
+   "About 3 M north or south",
+   "About 0.75 M east or west"
+  ],
+  "why": "12 days × 1 s = 12 s = 3′ of longitude; at 15°N, 3′ × cos 15° = 2.9 M east or west. The latitude is not affected.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Landfall planning, no GPS",
+   "lines": [
+    "Rate known to ±1 s a day",
+    "12 days to landfall at 15°N"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "You leave Neiafu for Savusavu and tell friends in Fiji when to expect you. At what local time, and on which day, will you arrive?",
+  "a": "1200 Monday",
+  "o": [
+   "1300 Monday",
+   "1200 Tuesday",
+   "1200 Sunday"
+  ],
+  "why": "UT out = 1900 Friday; + 2 d 5 h = 0000 UT Monday; Fiji is UT + 12: 1200 Monday. The date line bends east round Tonga.",
+  "ref": "Time — shore time and ship's time",
+  "fig": {
+   "type": "card",
+   "title": "Neiafu to Savusavu, Fiji",
+   "lines": [
+    "Depart 0800 Saturday 7 Nov, Tonga time",
+    "Tonga keeps UT +13, Fiji UT +12",
+    "Passage: 2 days 5 hours"
+   ]
+  }
+ },
+ {
+  "topic": "time",
+  "difficulty": 3,
+  "q": "Before a sight you compare the deck watch with the chronometer below. What is the UT of the sight?",
+  "a": "10 41 25",
+  "o": [
+   "10 41 19",
+   "10 41 51",
+   "10 41 13"
+  ],
+  "why": "Chronometer now 5 + 4 × 1.5 = 11 s slow; the watch reads 13 s more, so it is 2 s fast: UT = 10 41 27 − 2 s = 10 41 25.",
+  "ref": "Time — chronometer error and rate",
+  "fig": {
+   "type": "card",
+   "title": "Chronometer and deck watch",
+   "lines": [
+    "Chronometer 4 days ago: 5 s slow",
+    "Its rate: losing 1.5 s a day",
+    "Compared: chron 10 12 47, watch 10 13 00",
+    "Sight at deck watch 10 41 27"
+   ]
+  }
+ }
+]

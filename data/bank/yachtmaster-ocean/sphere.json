@@ -1,0 +1,2295 @@
+[
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You are at anchor off Barbados and a crew member asks what the 13°05′N on the plotter actually measures. What do you tell them?",
+  "a": "The arc of your meridian from the equator to here",
+  "o": [
+   "The arc of the equator from Greenwich to here",
+   "The arc of your parallel from Greenwich to here",
+   "The arc of your meridian from the North Pole to here"
+  ],
+  "why": "Latitude is the arc of the meridian (the angle at the Earth's centre) from the equator: 13°05′ = 785 M north of it.",
+  "ref": "The Earth — latitude and longitude",
+  "fig": {
+   "type": "card",
+   "title": "Plotter, Carlisle Bay",
+   "lines": [
+    "Position 13°05′N 59°37′W",
+    "Barbados, at anchor"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You are crossing the doldrums on a passage up the South Atlantic. How far is it along this track?",
+  "a": "885 M",
+  "o": [
+   "375 M",
+   "867 M",
+   "1770 M"
+  ],
+  "why": "Contrary names add: 10°30′ + 4°15′ = 14°45′ of latitude × 60 = 885 M along a meridian.",
+  "ref": "The Earth — latitude and longitude",
+  "fig": {
+   "type": "card",
+   "title": "Doldrums crossing",
+   "lines": [
+    "Track: due north along 25°00′W",
+    "From 10°30′S",
+    "To 4°15′N"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You log your noon position in Horta, Azores. What does the 28°38′W measure?",
+  "a": "The arc of the equator from Greenwich's meridian west to yours",
+  "o": [
+   "The arc of the equator from Greenwich's meridian east to yours",
+   "The arc of the equator from the date line east to yours",
+   "The arc of your meridian from the equator north to Horta"
+  ],
+  "why": "Longitude is the arc of the equator (or the angle at the pole) between the Greenwich meridian and yours, 0–180° E or W.",
+  "ref": "The Earth — latitude and longitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon position, Horta",
+   "lines": [
+    "Lat 38°32′N",
+    "Long 28°38′W"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You plan the passage from Fiji to Samoa across the 180th meridian. What is the difference of longitude, and which way?",
+  "a": "8°55′ east",
+  "o": [
+   "8°55′ west",
+   "351°05′ west",
+   "7°35′ east"
+  ],
+  "why": "Across 180°: (180° − 179°20′) + (180° − 171°45′) = 0°40′ + 8°15′ = 8°55′, going east.",
+  "ref": "The Earth — latitude and longitude",
+  "fig": {
+   "type": "card",
+   "title": "Fiji to Samoa",
+   "lines": [
+    "Savusavu 16°46′S 179°20′E",
+    "Apia 13°50′S 171°45′W"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You sketch the celestial sphere for your position at 30°N to show the crew where the sky's axis points. Which point is the north celestial pole?",
+  "a": "B — 30° above the north point of the horizon",
+  "o": [
+   "A — 90° up, straight overhead",
+   "C — 60° above the north point of the horizon",
+   "D — 60° above the south point of the horizon"
+  ],
+  "why": "The altitude of the elevated pole equals your latitude: at 30°N the celestial pole stands 30° above due north.",
+  "ref": "Celestial sphere — altitude of the pole",
+  "fig": {
+   "type": "chart",
+   "track": "M85 100 A75 75 0 1 1 235 100 A75 75 0 1 1 85 100 M85 100 H235",
+   "marks": [
+    [
+     160,
+     25,
+     "k",
+     "A"
+    ],
+    [
+     95,
+     62.5,
+     "k",
+     "B"
+    ],
+    [
+     122.5,
+     35,
+     "k",
+     "C"
+    ],
+    [
+     197.5,
+     35,
+     "k",
+     "D"
+    ]
+   ],
+   "labels": [
+    [
+     78,
+     104,
+     "N",
+     "end"
+    ],
+    [
+     242,
+     104,
+     "S",
+     "start"
+    ],
+    [
+     160,
+     116,
+     "horizon"
+    ]
+   ],
+   "note": "Meridian view · latitude 30°N"
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "On a night watch in the South Atlantic you work out where the Sun is. Where is it on your celestial sphere?",
+  "a": "At your nadir, 90° below the horizon",
+  "o": [
+   "At your zenith, 90° above you",
+   "On your celestial horizon, due north",
+   "On the celestial equator, due north"
+  ],
+  "why": "The GP is your antipode, 180° of arc away, so the Sun is at the point directly below you: your nadir.",
+  "ref": "Celestial sphere — zenith and nadir",
+  "fig": {
+   "type": "card",
+   "title": "0246 UT, 23 July",
+   "lines": [
+    "Your DR 20°05.1′S 39°52.2′W",
+    "Sun's GP 20°05.1′N 140°07.8′E"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You are watching the Sun climb to noon on the passage from Bermuda to the Azores. Which circle of the celestial sphere is it crossing now?",
+  "a": "Your meridian — the great circle through the poles and your zenith",
+  "o": [
+   "Your celestial horizon — the circle 90° from your zenith",
+   "The celestial equator — the circle 90° from the poles",
+   "The ecliptic — the Sun's yearly path among the stars"
+  ],
+  "why": "The observer's meridian runs through both celestial poles, your zenith and nadir; the Sun bears 180° or 000° as it crosses it.",
+  "ref": "Celestial sphere — the observer's meridian",
+  "fig": {
+   "type": "card",
+   "title": "Local noon, Bermuda to the Azores",
+   "lines": [
+    "Sun bearing 180°",
+    "Altitude at its highest"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You take a star sight from the cockpit. Why can't you put Hs straight into the PZX triangle?",
+  "a": "It needs the altitude above the celestial horizon, through the Earth's centre",
+  "o": [
+   "It needs the altitude above the visible horizon, at sea level",
+   "It needs the zenith distance, which a sextant cannot measure",
+   "It needs the altitude above the horizon at the body's GP"
+  ],
+  "why": "Hs is from the visible horizon at your eye; dip, refraction, SD and parallax reduce it to Ho above the celestial horizon.",
+  "ref": "Celestial sphere — celestial and visible horizon",
+  "fig": {
+   "type": "card",
+   "title": "Sight at dusk",
+   "lines": [
+    "Hs read against the visible horizon",
+    "Height of eye 2.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You want to know over which ocean the Sun stands at this moment. Where is its geographical position (GP)?",
+  "a": "15°38.5′N 149°13.9′E",
+  "o": [
+   "15°38.5′N 149°13.9′W",
+   "15°38.5′N 210°46.1′W",
+   "15°38.5′S 30°46.1′E"
+  ],
+  "why": "GP latitude = Dec; GP longitude = GHA west up to 180°, else 360° − GHA east: 360° − 210°46.1′ = 149°13.9′E.",
+  "ref": "Geographical position",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, Sun, 3 May 0200 UT",
+   "lines": [
+    "GHA 210°46.1′",
+    "Dec N15°38.5′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You read the Sun's data for the moment of your sight. What is the position of its GP?",
+  "a": "7°33.3′S 48°23.4′W",
+  "o": [
+   "7°33.3′N 48°23.4′W",
+   "7°33.3′S 48°23.4′E",
+   "48°23.4′S 7°33.3′W"
+  ],
+  "why": "Dec is the GP's latitude and GHA (under 180°) its west longitude: 7°33.3′S 48°23.4′W.",
+  "ref": "Geographical position",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, Sun, 12 Oct 1500 UT",
+   "lines": [
+    "GHA 48°23.4′",
+    "Dec S7°33.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You take a morning sight of the Sun off Bermuda. What LHA do you use?",
+  "a": "311°09.5′",
+  "o": [
+   "48°50.5′",
+   "80°39.5′",
+   "131°09.5′"
+  ],
+  "why": "LHA = GHA − west longitude: 15°54.5′ − 64°45.0′ = −48°50.5′, + 360° = 311°09.5′.",
+  "ref": "Celestial sphere — hour angles",
+  "fig": {
+   "type": "card",
+   "title": "Morning sight off Bermuda",
+   "lines": [
+    "Sun GHA 15°54.5′",
+    "DR long 64°45.0′W"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You are approaching the Maldives and take a morning sun sight. What LHA do you use?",
+  "a": "316°51.7′",
+  "o": [
+   "169°51.7′",
+   "43°08.3′",
+   "136°51.7′"
+  ],
+  "why": "LHA = GHA + east longitude: 243°21.7′ + 73°30.0′ = 316°51.7′.",
+  "ref": "Celestial sphere — hour angles",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, Indian Ocean",
+   "lines": [
+    "Sun GHA 243°21.7′",
+    "DR long 73°30.0′E"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "On the SSB net you compare sun sights with a yacht 300 miles from you on the ARC. How can both altitudes be the same?",
+  "a": "Both yachts lie on one circle of equal altitude round the GP",
+  "o": [
+   "Both yachts lie on the same meridian as the GP",
+   "Both yachts lie on the same parallel as the GP",
+   "Both yachts lie on the great circle through the GP"
+  ],
+  "why": "Everyone the same distance from the GP sees the same altitude: a circle of radius 90° − 52°10′ = 37°50′ = 2270 M.",
+  "ref": "Circle of equal altitude",
+  "fig": {
+   "type": "card",
+   "title": "SSB net, 1423 UT",
+   "lines": [
+    "Your Sun Ho 52°10.0′",
+    "Yacht 300 M away: Ho 52°10.0′",
+    "Both sights at the same second"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You reduce this sun sight in mid-Atlantic. What is the radius of the circle of position it puts you on?",
+  "a": "1720 M",
+  "o": [
+   "3680 M",
+   "1720 km",
+   "1704 M"
+  ],
+  "why": "Zenith distance 90° − 61°20.0′ = 28°40.0′ = 1720′ of arc, and 1′ of arc = 1 M.",
+  "ref": "Circle of equal altitude — zenith distance",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 1052 UT",
+   "lines": [
+    "Ho 61°20.0′",
+    "Halfway across on the ARC"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You reduce a sun sight with Ho 41°15′ and draw the position line as a straight line on your plotting sheet. Why is that good enough?",
+  "a": "The circle's radius is 2925 M; near the AP its arc is almost straight",
+  "o": [
+   "The circle is a meridian, so it is straight on the chart",
+   "On a Mercator sheet every great circle plots straight",
+   "The intercept corrects for the curve, so it does not matter"
+  ],
+  "why": "The circle of equal altitude is huge; the few miles of it near the AP plot as a straight line at right angles to the azimuth.",
+  "ref": "Circle of equal altitude — position line",
+  "fig": null
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You plot this sun sight on the plotting sheet. Which way does the position line run?",
+  "a": "045°–225°, at right angles to the azimuth",
+  "o": [
+   "135°–315°, along the azimuth",
+   "090°–270°, along the parallel",
+   "000°–180°, along the meridian"
+  ],
+  "why": "A position line is a short piece of the circle of equal altitude, at right angles to the bearing of the GP.",
+  "ref": "Circle of equal altitude — position line",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     130,
+     80,
+     "k",
+     "AP"
+    ]
+   ],
+   "track": "M130 80 L200 150",
+   "labels": [
+    [
+     206,
+     166,
+     "Sun Zn 135°",
+     "start"
+    ],
+    [
+     30,
+     30,
+     "N ↑"
+    ]
+   ],
+   "note": "Plotting sheet, north up"
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You take a dawn sight of Arcturus. How far are you from the star's geographical position?",
+  "a": "3255 M",
+  "o": [
+   "2145 M",
+   "3249 M",
+   "3255 km"
+  ],
+  "why": "Distance from the GP = zenith distance: 90° − 35°45.0′ = 54°15.0′ = 3255′ = 3255 M.",
+  "ref": "Circle of equal altitude — zenith distance",
+  "fig": {
+   "type": "card",
+   "title": "Dawn sight, Arcturus",
+   "lines": [
+    "Time 0532 UT",
+    "Ho 35°45.0′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "In the Caribbean in June the Sun near noon is almost overhead. How do you use this sight?",
+  "a": "Draw a circle of 90 M radius round the Sun's GP",
+  "o": [
+   "Reduce it from an AP and draw a straight line",
+   "Discard it, since no sight above 80° can be used",
+   "Take it as a meridian altitude for latitude only"
+  ],
+  "why": "Zenith distance 90° − 88°30′ = 1°30′ = 90 M: too curved for a straight line, so plot the circle itself round the GP.",
+  "ref": "Circle of equal altitude — high-altitude sights",
+  "fig": {
+   "type": "card",
+   "title": "Sun near noon, the Caribbean, June",
+   "lines": [
+    "Ho 88°30.0′",
+    "Sun's GP from the almanac, to the second"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You sketch the PZX triangle for a star sight. Which side gives you the star's altitude?",
+  "a": "ZX — the altitude is 90° − ZX",
+  "o": [
+   "PZ — the altitude is 90° − PZ",
+   "PX — the altitude is 90° − PX",
+   "PX — the altitude is PX − PZ"
+  ],
+  "why": "ZX is the zenith distance, your distance from the star's GP, so the altitude is 90° − ZX.",
+  "ref": "PZX triangle",
+  "fig": {
+   "type": "chart",
+   "track": "M80 100 A80 80 0 1 1 240 100 A80 80 0 1 1 80 100 M80 100 H240 M98.7 48.6 L160 20 L205 55 Z",
+   "marks": [
+    [
+     98.7,
+     48.6,
+     "k",
+     "P"
+    ],
+    [
+     160,
+     20,
+     "k",
+     "Z"
+    ],
+    [
+     205,
+     55,
+     "y",
+     "X"
+    ]
+   ],
+   "labels": [
+    [
+     72,
+     104,
+     "N",
+     "end"
+    ],
+    [
+     248,
+     104,
+     "S",
+     "start"
+    ]
+   ],
+   "note": "Your PZX triangle on the celestial sphere"
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You set up the PZX triangle for Arcturus south of the Cape of Good Hope. What are the sides PZ and PX?",
+  "a": "PZ 55°00′, PX 109°06′",
+  "o": [
+   "PZ 55°00′, PX 70°54′",
+   "PZ 35°00′, PX 109°06′",
+   "PZ 125°00′, PX 70°54′"
+  ],
+  "why": "In the south P is the South Pole: PZ = 90° − 35° = 55°; a north Dec lies beyond the equator, so PX = 90° + 19°06′.",
+  "ref": "PZX triangle — southern hemisphere",
+  "fig": {
+   "type": "card",
+   "title": "Star sight, 35°S",
+   "lines": [
+    "DR lat 35°00′S",
+    "Arcturus Dec N19°06′",
+    "P = your elevated pole"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You set up the PZX triangle for Vega off Bermuda. What is the polar distance PX?",
+  "a": "51°12′",
+  "o": [
+   "128°48′",
+   "38°48′",
+   "57°40′"
+  ],
+  "why": "Dec has the same name as the elevated pole: PX = 90° − Dec = 90° − 38°48′ = 51°12′.",
+  "ref": "PZX triangle",
+  "fig": {
+   "type": "card",
+   "title": "Star sight, Bermuda",
+   "lines": [
+    "DR lat 32°20′N",
+    "Vega Dec N38°48′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You set up the PZX triangle for this star. What is the angle at P, and on which side?",
+  "a": "60°, east of your meridian",
+  "o": [
+   "60°, west of your meridian",
+   "300°, east of your meridian",
+   "120°, west of your meridian"
+  ],
+  "why": "LHA over 180° means the body is east: the angle at P (meridian angle) = 360° − 300° = 60°E.",
+  "ref": "PZX triangle — the angle at P",
+  "fig": {
+   "type": "card",
+   "title": "Your PZX triangle",
+   "lines": [
+    "Star east of your meridian",
+    "LHA 300°00′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You solve the PZX triangle for a sight. Which three parts do you already know?",
+  "a": "PZ from your AP, PX from the Dec, and the angle at P from the LHA",
+  "o": [
+   "PZ from your AP, ZX from the Ho, and the angle at Z from the compass",
+   "PX from the Dec, ZX from the Ho, and the angle at X from the SHA",
+   "PZ from the Ho, PX from the GHA, and the angle at P from the UT"
+  ],
+  "why": "Co-lat, polar distance and LHA give ZX (so Hc = 90° − ZX) and the angle at Z, the azimuth.",
+  "ref": "PZX triangle",
+  "fig": null
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You solve the PZX triangle by the cosine formula. What calculated altitude Hc do you get?",
+  "a": "52°35.6′",
+  "o": [
+   "37°24.4′",
+   "31°10.9′",
+   "37°02.9′"
+  ],
+  "why": "sin Hc = sin 25° sin 19°06′ + cos 25° cos 19°06′ cos 40° → Hc 52°35.6′ (ZX 37°24.4′).",
+  "ref": "PZX triangle — solving for Hc",
+  "fig": {
+   "type": "card",
+   "title": "Arcturus, PZX triangle",
+   "lines": [
+    "AP lat 25°00′N",
+    "Dec N19°06′",
+    "LHA 40°00′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You work an afternoon sun sight north of the equator. What is the true azimuth Zn?",
+  "a": "260°",
+  "o": [
+   "100°",
+   "280°",
+   "080°"
+  ],
+  "why": "Z is measured from the north (elevated) pole towards the west: Zn = 360° − 100° = 260°.",
+  "ref": "PZX triangle — azimuth",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon sun, 20°N",
+   "lines": [
+    "LHA 75°",
+    "Azimuth angle Z: N100°W"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You work a morning sun sight off South Africa at 33°S. What is the true azimuth Zn?",
+  "a": "094°",
+  "o": [
+   "086°",
+   "266°",
+   "274°"
+  ],
+  "why": "South of the equator Z is measured from the south pole: S86°E gives Zn = 180° − 86° = 094°.",
+  "ref": "PZX triangle — southern hemisphere",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun, 33°S",
+   "lines": [
+    "LHA 300°",
+    "Azimuth angle Z: S86°E"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You notice the almanac gives Aries a GHA for every hour but each star only an SHA. Why does that work?",
+  "a": "The stars keep their places relative to Aries; the sky turns as one",
+  "o": [
+   "The stars move 15° an hour, the same as the Sun",
+   "Each star's SHA grows 15° an hour, like a GHA",
+   "Aries is a bright star the others are measured from"
+  ],
+  "why": "SHA is measured westward from Aries and barely changes, so GHA★ = GHA Aries + SHA at any moment.",
+  "ref": "First point of Aries — SHA",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, daily page",
+   "lines": [
+    "GHA Aries: every hour",
+    "Stars: SHA and Dec, once per page"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You are reducing a dusk sight of Vega. What is the star's GHA?",
+  "a": "225°53.4′",
+  "o": [
+   "64°47.4′",
+   "134°06.6′",
+   "279°27.0′"
+  ],
+  "why": "GHA★ = GHA Aries + SHA = 145°20.4′ + 80°33.0′ = 225°53.4′.",
+  "ref": "First point of Aries — SHA",
+  "fig": {
+   "type": "card",
+   "title": "Dusk sight, Vega",
+   "lines": [
+    "GHA Aries 145°20.4′",
+    "Vega SHA 80°33.0′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You take Sirius at dawn on the way to the Cape Verdes. What is its GHA?",
+  "a": "208°42.2′",
+  "o": [
+   "568°42.2′",
+   "51°48.2′",
+   "151°17.8′"
+  ],
+  "why": "310°15.2′ + 258°27.0′ = 568°42.2′; take off 360° → 208°42.2′.",
+  "ref": "First point of Aries — SHA",
+  "fig": {
+   "type": "card",
+   "title": "Dawn sight, Sirius",
+   "lines": [
+    "GHA Aries 310°15.2′",
+    "Sirius SHA 258°27.0′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You want to catch Vega on your meridian again tomorrow night at the same longitude. When will it come?",
+  "a": "About 2156",
+  "o": [
+   "About 2200",
+   "About 2204",
+   "About 2136"
+  ],
+  "why": "Aries gains 2.46′ an hour on the Sun: the stars come round in 23 h 56 min, so about 4 min earlier each night.",
+  "ref": "First point of Aries — the sidereal day",
+  "fig": {
+   "type": "card",
+   "title": "Star watch, mid-Atlantic",
+   "lines": [
+    "Vega crossed your meridian at 2200",
+    "Same longitude tomorrow night"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You take two sun sights on the same day. Between them, how far has the Sun's GP moved?",
+  "a": "60° of longitude, westward",
+  "o": [
+   "60° of longitude, eastward",
+   "4° of longitude, westward",
+   "15° of longitude, westward"
+  ],
+  "why": "The Earth turns 360° in 24 h, so the Sun's GHA grows 15° an hour: 4 h × 15° = 60° west.",
+  "ref": "The Sun's motion — 15° an hour",
+  "fig": {
+   "type": "card",
+   "title": "Two sun sights",
+   "lines": [
+    "First sight 0900 UT",
+    "Second sight 1300 UT"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You explain to the crew how fast the Sun's GP races across the ocean today. About how fast is it?",
+  "a": "826 kn",
+  "o": [
+   "900 kn",
+   "358 kn",
+   "15 kn"
+  ],
+  "why": "15° an hour = 900′ of longitude; along the parallel of 23°26.3′N that is 900 × cos 23°26.3′ ≈ 826 M an hour.",
+  "ref": "The Sun's motion — 15° an hour",
+  "fig": {
+   "type": "card",
+   "title": "21 June, the Sun's GP",
+   "lines": [
+    "Dec N23°26.3′",
+    "GHA grows 15° per hour"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You turn to the Sun's column for the longest day in the north. About what Dec do you expect?",
+  "a": "N23°26′",
+  "o": [
+   "S23°26′",
+   "0°00′",
+   "N11°43′"
+  ],
+  "why": "The ecliptic is tilted 23°26′ to the celestial equator; at the June solstice the Sun reaches its greatest north Dec.",
+  "ref": "Declination through the year — the ecliptic",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 21 June 2026",
+   "lines": [
+    "Northern summer solstice",
+    "Sun, 1200 UT"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You prepare for the noon sight on the first day of the ARC. About what Dec will the almanac give?",
+  "a": "S20°24′",
+  "o": [
+   "N20°24′",
+   "S23°26′",
+   "S16°04′"
+  ],
+  "why": "The Dec changes fast near the equinox and slowly near the solstice: on 23 Nov it is already S20°24′.",
+  "ref": "Declination through the year",
+  "fig": {
+   "type": "card",
+   "title": "ARC start, 23 Nov 2026",
+   "lines": [
+    "Las Palmas, Sun at 1200 UT",
+    "Equinox 23 Sep: Dec 0°",
+    "Solstice 21 Dec: Dec S23°26′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "By mistake you work your noon sight with yesterday's Dec. In which month does that cost you the most?",
+  "a": "March — the Dec changes about 24′ a day",
+  "o": [
+   "June — the Dec changes about 24′ a day",
+   "December — the Dec changes about 24′ a day",
+   "Any month — the Dec changes 24′ every day"
+  ],
+  "why": "Near the equinoxes the Sun crosses the equator at about 24′ a day; near the solstices its Dec barely moves.",
+  "ref": "Declination through the year",
+  "fig": null
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You are at 50°N, setting out from the Channel for the Azores. Which of these stars never sets for you?",
+  "a": "Capella",
+  "o": [
+   "Vega",
+   "Arcturus",
+   "Aldebaran"
+  ],
+  "why": "A body is circumpolar when Dec > co-lat (90° − 50° = 40°): only Capella (46°01′) qualifies; Vega (38°48′) just sets.",
+  "ref": "Circumpolar bodies",
+  "fig": {
+   "type": "card",
+   "title": "Star list, 50°N",
+   "lines": [
+    "Capella Dec N46°01′",
+    "Vega Dec N38°48′",
+    "Arcturus Dec N19°06′",
+    "Aldebaran Dec N16°33′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You are south of the Cape at 35°S. Which of these stars stays above your horizon all night, every night?",
+  "a": "Acrux",
+  "o": [
+   "Canopus",
+   "Antares",
+   "Rigel"
+  ],
+  "why": "Co-lat 90° − 35° = 55°: Acrux (S63°14′) is circumpolar; Canopus (S52°43′) dips below the south horizon.",
+  "ref": "Circumpolar bodies",
+  "fig": {
+   "type": "card",
+   "title": "Star list, 35°S",
+   "lines": [
+    "Acrux Dec S63°14′",
+    "Canopus Dec S52°43′",
+    "Antares Dec S26°29′",
+    "Rigel Dec S08°10′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You are waiting for the noon sight off Martinique. What altitude and bearing do you expect at meridian passage?",
+  "a": "81°09.7′, bearing north",
+  "o": [
+   "81°09.7′, bearing south",
+   "51°57.7′, bearing south",
+   "8°50.3′, bearing north"
+  ],
+  "why": "The Dec is north of your latitude: z = 23°26.3′ − 14°36′ = 8°50.3′; highest altitude 81°09.7′, Sun to the north.",
+  "ref": "Meridian passage — maximum altitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 21 June",
+   "lines": [
+    "Off Martinique, lat 14°36′N",
+    "Sun Dec N23°26.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You plan a meridian sight of Sirius before leaving Las Palmas. What will its altitude be?",
+  "a": "45°07′, bearing south",
+  "o": [
+   "45°07′, bearing north",
+   "78°37′, bearing south",
+   "11°23′, bearing south"
+  ],
+  "why": "Contrary names: z = 28°08′ + 16°45′ = 44°53′, so the highest altitude is 45°07′, due south.",
+  "ref": "Meridian passage — maximum altitude",
+  "fig": {
+   "type": "card",
+   "title": "Las Palmas, 28°08′N",
+   "lines": [
+    "Sirius Dec S16°45′",
+    "Meridian passage tonight"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "On the passage from Horta to Mindelo, how much lower will the celestial pole stand when you arrive?",
+  "a": "21°39′ lower",
+  "o": [
+   "21°39′ higher",
+   "55°25′ lower",
+   "16°53′ lower"
+  ],
+  "why": "The altitude of the celestial pole equals your latitude: 38°32′ − 16°53′ = 21°39′ lower.",
+  "ref": "Celestial sphere — altitude of the pole",
+  "fig": {
+   "type": "card",
+   "title": "Horta to Mindelo",
+   "lines": [
+    "Horta 38°32′N",
+    "Mindelo 16°53′N"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You are crossing the South Atlantic at 40°S on the equinox. Where will the Sun rise?",
+  "a": "Due east, 090°",
+  "o": [
+   "North of east, about 050°",
+   "South of east, about 130°",
+   "Due north, 000°"
+  ],
+  "why": "With Dec 0° the Sun is on the celestial equator, which meets every horizon due east and due west.",
+  "ref": "Rising and setting bodies",
+  "fig": {
+   "type": "card",
+   "title": "20 March, 40°S",
+   "lines": [
+    "Sun Dec S0°02.6′",
+    "The equinox"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You are on passage to Mauritius at 20°S. Can you use Vega for a star sight?",
+  "a": "Yes — it rises to 31°12′ over the north horizon",
+  "o": [
+   "No — a northern star never rises south of the equator",
+   "Yes — it is circumpolar at your latitude",
+   "Yes — it rises to 58°48′ over the north horizon"
+  ],
+  "why": "Vega rises because its Dec (38°48′) is less than your co-lat (70°); z = 20° + 38°48′ = 58°48′, so at best 31°12′ high.",
+  "ref": "Rising and setting bodies",
+  "fig": {
+   "type": "card",
+   "title": "Bound for Mauritius",
+   "lines": [
+    "Your lat 20°00′S",
+    "Vega Dec N38°48′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "A crew member wants to see the Southern Cross from the Azores. What do you tell them?",
+  "a": "It never rises — its Dec is more than your co-lat 52°16′",
+  "o": [
+   "It never sets — its Dec is more than your co-lat 52°16′",
+   "It rises 10°58′ above the south horizon at its highest",
+   "It rises only in summer, low over the south horizon"
+  ],
+  "why": "Contrary name and Dec 63°14′ > co-lat 52°16′: even at meridian passage Acrux stays 10°58′ below your horizon.",
+  "ref": "Rising and setting bodies",
+  "fig": {
+   "type": "card",
+   "title": "Ponta Delgada, 37°44′N",
+   "lines": [
+    "Acrux Dec S63°14′",
+    "Brightest star of the Southern Cross"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You explain to the crew why the noon sight needs no LHA, no AP and no tables. What is the reason?",
+  "a": "P, Z and X lie on your meridian, so the triangle collapses into one arc",
+  "o": [
+   "At noon the Sun's GP is always on the equator below you",
+   "At noon the azimuth is 000° or 180°, so Hc equals Ho",
+   "At noon the Sun stops moving, so the time does not matter"
+  ],
+  "why": "On the meridian PZ, PX and ZX lie along one arc: latitude = Dec ± zenith distance, with no LHA needed.",
+  "ref": "Meridian altitude — why it gives latitude",
+  "fig": null
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You take the noon sight on your way to Tahiti. What is your latitude?",
+  "a": "16°20.0′S",
+  "o": [
+   "1°42.0′N",
+   "1°42.0′S",
+   "16°20.0′N"
+  ],
+  "why": "z = 90° − 80°59.0′ = 9°01.0′; the Sun bears north, so you are z south of its GP: 7°19.0′ + 9°01.0′ = 16°20.0′S.",
+  "ref": "Meridian altitude — why it gives latitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 1 March, near the Tuamotus",
+   "lines": [
+    "Sun bearing north",
+    "Ho 80°59.0′",
+    "Dec S7°19.0′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "Before a dusk star fix south of Madagascar you want the GP of Canopus. Where is it?",
+  "a": "52°43.0′S 45°58.0′E",
+  "o": [
+   "52°43.0′S 45°58.0′W",
+   "52°43.0′N 45°58.0′E",
+   "52°43.0′S 146°18.0′E"
+  ],
+  "why": "GHA★ = 50°10.0′ + 263°52.0′ = 314°02.0′; over 180°, so long = 360° − GHA = 45°58.0′E; lat = Dec.",
+  "ref": "Geographical position — stars",
+  "fig": {
+   "type": "card",
+   "title": "Dusk star, south of Madagascar",
+   "lines": [
+    "GHA Aries 50°10.0′",
+    "Canopus SHA 263°52.0′",
+    "Canopus Dec S52°43.0′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You take Arcturus at dawn off Tahiti. What is its LHA, and where is the star?",
+  "a": "196°44.2′ — east of your meridian",
+  "o": [
+   "196°44.2′ — west of your meridian",
+   "135°52.2′ — west of your meridian",
+   "16°44.2′ — west of your meridian"
+  ],
+  "why": "GHA★ = 200°30.2′ + 145°48.0′ = 346°18.2′; − 149°34.0′W = LHA 196°44.2′: over 180°, so east.",
+  "ref": "Celestial sphere — hour angles",
+  "fig": {
+   "type": "card",
+   "title": "Dawn star off Tahiti",
+   "lines": [
+    "GHA Aries 200°30.2′",
+    "Arcturus SHA 145°48.0′",
+    "DR long 149°34.0′W"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You watch Capella through a long winter night at 50°N. What are its highest and lowest altitudes?",
+  "a": "86°01′ south and 6°01′ north",
+  "o": [
+   "86°01′ north and 6°01′ south",
+   "83°59′ south and 3°59′ north",
+   "86°01′ south and 43°59′ north"
+  ],
+  "why": "Upper: 90° − (50° − 46°01′) = 86°01′ to the south. Lower: lat − polar distance = 50° − 43°59′ = 6°01′ to the north.",
+  "ref": "Circumpolar bodies — upper and lower transit",
+  "fig": {
+   "type": "card",
+   "title": "Capella from 50°N",
+   "lines": [
+    "Capella Dec N46°01′",
+    "Your lat 50°00′N",
+    "Winter night, sky clear"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You solve the PZX triangle for Regulus in the South Atlantic. What is Hc?",
+  "a": "39°08.9′",
+  "o": [
+   "56°47.5′",
+   "50°51.1′",
+   "14°14.3′"
+  ],
+  "why": "Lat −30°, Dec +11°51′: sin Hc = sin(−30°) sin 11°51′ + cos 30° cos 11°51′ cos 30° → Hc 39°08.9′.",
+  "ref": "PZX triangle — southern hemisphere",
+  "fig": {
+   "type": "card",
+   "title": "Regulus, South Atlantic",
+   "lines": [
+    "AP lat 30°00′S",
+    "Regulus Dec N11°51′",
+    "LHA 30°00′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You consider Canopus for a meridian sight before leaving Las Palmas. Is it a good choice?",
+  "a": "No — at best 9°09′ high, where refraction is large",
+  "o": [
+   "No — it never rises at Las Palmas",
+   "Yes — at its highest it stands 65°25′ due south",
+   "Yes — it is circumpolar and can be taken all night"
+  ],
+  "why": "z = 28°08′ + 52°43′ = 80°51′: Canopus culminates only 9°09′ above the south horizon; avoid sights below about 10°.",
+  "ref": "Meridian passage — maximum altitude",
+  "fig": {
+   "type": "card",
+   "title": "Las Palmas, star planning",
+   "lines": [
+    "Your lat 28°08′N",
+    "Canopus Dec S52°43′",
+    "Second-brightest star in the sky"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You notice that the Sun's GHA on the almanac's daily page grows by almost exactly 15° every hour. Why 15°?",
+  "a": "The Earth turns once against the Sun in 24 hours",
+  "o": [
+   "The Earth moves 15° along its orbit every hour",
+   "The Sun moves 15° east among the stars every hour",
+   "The Earth turns once against the stars in 24 hours"
+  ],
+  "why": "One turn against the Sun, 360°, takes 24 h of mean time: 360° ÷ 24 = 15° an hour; against the stars it takes 4 min less.",
+  "ref": "The Sun's motion — 15° an hour",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, Sun, 14 April",
+   "lines": [
+    "1200 UT  GHA 359°56.0′",
+    "1300 UT  GHA 14°56.2′",
+    "1400 UT  GHA 29°56.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You cross the equator on the way to Brazil and a crew member asks where the celestial poles are now. What do you tell them?",
+  "a": "On your horizon, due north and due south",
+  "o": [
+   "One at your zenith, the other at your nadir",
+   "Both 23°26′ above your horizon, north and south",
+   "The north one 90° up, the south one 90° down"
+  ],
+  "why": "The elevated pole's altitude equals your latitude: at 0° both celestial poles sit on the horizon, at the north and south points.",
+  "ref": "Celestial sphere — altitude of the pole",
+  "fig": {
+   "type": "card",
+   "title": "Crossing the line",
+   "lines": [
+    "Lat 0°00′, long 27°10′W",
+    "Bound for Salvador, Brazil"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "At sunrise, with the Sun's centre on your celestial horizon, a crew member asks how far away its GP is. What is the answer?",
+  "a": "5400 M",
+  "o": [
+   "10 800 M",
+   "2700 M",
+   "3440 M"
+  ],
+  "why": "Zenith distance 90° − 0° = 90° = 5400′ of arc = 5400 M: a quarter of the way round the Earth from the GP.",
+  "ref": "Circle of equal altitude — zenith distance",
+  "fig": {
+   "type": "card",
+   "title": "Sunrise, Indian Ocean",
+   "lines": [
+    "Sun's centre on the celestial horizon",
+    "Ho 0°00.0′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "At anchor off Cape Town, a crew member asks where the sky's south pole is. What do you tell them?",
+  "a": "33°55′ above the south point of the horizon",
+  "o": [
+   "56°05′ above the south point of the horizon",
+   "33°55′ above the north point of the horizon",
+   "Straight overhead, at your zenith"
+  ],
+  "why": "The elevated pole's altitude equals your latitude; south of the equator it is the south celestial pole, 33°55′ up, due south.",
+  "ref": "Celestial sphere — altitude of the pole",
+  "fig": {
+   "type": "card",
+   "title": "Table Bay, at anchor",
+   "lines": [
+    "Lat 33°55′S",
+    "Clear night, no star at the pole"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You label the parts of your PZX triangle for a star sight south of the equator. Which part does the sight reduction never use?",
+  "a": "The angle at X, at the star",
+  "o": [
+   "The angle at P, at the pole",
+   "The angle at Z, at your zenith",
+   "The side PX, the polar distance"
+  ],
+  "why": "Reduction takes PZ, PX and the angle at P (LHA) and finds ZX (Hc) and the angle at Z (azimuth); the angle at X is not needed.",
+  "ref": "PZX triangle",
+  "fig": {
+   "type": "chart",
+   "track": "M80 100 A80 80 0 1 1 240 100 A80 80 0 1 1 80 100 M80 100 H240 M90.7 60 L160 20 L214 48 Z",
+   "marks": [
+    [
+     90.7,
+     60,
+     "k",
+     "P"
+    ],
+    [
+     160,
+     20,
+     "k",
+     "Z"
+    ],
+    [
+     214,
+     48,
+     "y",
+     "X"
+    ]
+   ],
+   "labels": [
+    [
+     72,
+     104,
+     "S",
+     "end"
+    ],
+    [
+     248,
+     104,
+     "N",
+     "start"
+    ]
+   ],
+   "note": "Your PZX triangle, latitude 30°S"
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "Becalmed on the equator, a crew member asks which stars stay above the horizon all night. What do you tell them?",
+  "a": "None — every star rises and sets",
+  "o": [
+   "Acrux and the stars near the south pole",
+   "Capella and the stars near the north pole",
+   "The stars within 23°26′ of the equator"
+  ],
+  "why": "Circumpolar needs Dec > co-lat; on the equator the co-lat is 90°, so every star spends half its daily circle below the horizon.",
+  "ref": "Circumpolar bodies",
+  "fig": {
+   "type": "card",
+   "title": "Becalmed on the line",
+   "lines": [
+    "Lat 0°02′N",
+    "Acrux Dec S63°14′",
+    "Capella Dec N46°01′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "On passage to Australia you work out the Sun's LHA for your sight. Where is the Sun?",
+  "a": "West of your meridian — it is afternoon",
+  "o": [
+   "East of your meridian — it is morning",
+   "On your meridian — it is noon",
+   "Below your horizon — it is night"
+  ],
+  "why": "LHA is counted westward from your meridian: 0°–180° puts the body west of you (afternoon), over 180° east (morning).",
+  "ref": "Celestial sphere — hour angles",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, Coral Sea",
+   "lines": [
+    "DR 18°00′S 152°00′E",
+    "Sun LHA 65°12.4′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "A crew member says it is summer in the south in January because the Earth is then closest to the Sun. What do you tell them?",
+  "a": "No — it is the axis's 23°26′ tilt to the ecliptic",
+  "o": [
+   "Yes — the Earth is about 3% closer to the Sun then",
+   "No — the Sun's Dec is 23°26′ north in January",
+   "Yes — the southern oceans are nearer the Sun then"
+  ],
+  "why": "The equator is tilted 23°26′ to the ecliptic, so the Sun's Dec swings N and S; in January its GP is far south — and the north has winter.",
+  "ref": "The ecliptic and the seasons",
+  "fig": {
+   "type": "card",
+   "title": "Sun facts",
+   "lines": [
+    "Earth nearest the Sun: 3 January",
+    "Southern summer: December to February"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "You want to catch Arcturus as it rises. Where on the horizon do you look?",
+  "a": "North of east",
+  "o": [
+   "South of east",
+   "Due east",
+   "North of west"
+  ],
+  "why": "A body rises on the side of east named like its Dec: a north Dec rises north of east, whichever hemisphere you are in.",
+  "ref": "Rising and setting bodies",
+  "fig": {
+   "type": "card",
+   "title": "Star watch off Durban",
+   "lines": [
+    "Your lat 30°S",
+    "Arcturus Dec N19°06′",
+    "Due to rise within the hour"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 1,
+  "q": "On the SSB net five yachts spread across the ocean compare sun sights taken at the same second. Which pair of values is the same for all of them?",
+  "a": "The Sun's GHA and Dec",
+  "o": [
+   "The Sun's LHA and Dec",
+   "The Sun's LHA and Zn",
+   "The Sun's Hc and Zn"
+  ],
+  "why": "GHA and Dec fix the GP, the same for everyone at one instant; LHA, Hc and Zn depend on each yacht's own position.",
+  "ref": "Celestial sphere — hour angles",
+  "fig": {
+   "type": "card",
+   "title": "SSB net, 1200 UT",
+   "lines": [
+    "Five ARC yachts",
+    "Spread over 600 M of ocean",
+    "All take a sun sight at 1200 UT"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You take a sun sight off Fiji, close to the 180th meridian. What LHA do you use, and where is the Sun?",
+  "a": "2°21.8′ — just west of your meridian",
+  "o": [
+   "5°31.8′ — just west of your meridian",
+   "357°38.2′ — just east of your meridian",
+   "182°21.8′ — east of your meridian"
+  ],
+  "why": "LHA = GHA + E long = 183°56.8′ + 178°25.0′ = 362°21.8′; − 360° = 2°21.8′: just past local noon.",
+  "ref": "Celestial sphere — hour angles",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight off Fiji, 10 Feb",
+   "lines": [
+    "0030 UT",
+    "Sun GHA 183°56.8′",
+    "DR long 178°25.0′E"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "On the passage from Vanuatu to Fiji you picture where the Sun stands. How far is its GP from your meridian, and which way?",
+  "a": "15°22.9′ east, across the 180th meridian",
+  "o": [
+   "15°22.9′ west, across the 180th meridian",
+   "6°22.9′ east, this side of the 180th meridian",
+   "344°37.1′ west, the other way round"
+  ],
+  "why": "GP long 169°07.1′W. From 175°30′E to 180° is 4°30′, plus 10°52.9′ beyond: 15°22.9′ east (LHA 344°37.1′).",
+  "ref": "Geographical position — the date line",
+  "fig": {
+   "type": "card",
+   "title": "Vanuatu to Fiji, 19 Aug",
+   "lines": [
+    "2320 UT",
+    "Sun GHA 169°07.1′",
+    "Your DR 17°50′S 175°30′E"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "On New Year's Day you explain the date line to the crew. At that moment, what is the local time and date at the GP, just either side of the line?",
+  "a": "Noon, 1 Jan to the west of the line; noon, 31 Dec to the east",
+  "o": [
+   "Noon, 31 Dec to the west of the line; noon, 1 Jan to the east",
+   "Midnight, 1 Jan to the west of the line; midnight, 31 Dec to the east",
+   "Noon, 1 Jan to the west of the line; noon, 2 Jan to the east"
+  ],
+  "why": "Under the GP it is local noon; west of 180° the date is a day ahead of the east side: 1 January to the west, 31 December to the east.",
+  "ref": "Geographical position — the date line",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 1 January 2027",
+   "lines": [
+    "Sun's GP on the 180th meridian",
+    "Time: 0003 UT, 1 January"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Waiting in Tonga for a weather window to New Zealand, a crew member asks on which days the noon Sun stands straight overhead here. What do you tell them?",
+  "a": "About 27 Nov and 15 Jan",
+  "o": [
+   "Only on 21 Dec, the solstice",
+   "About 27 Nov and 21 Dec",
+   "Never — only on the Tropic of Capricorn"
+  ],
+  "why": "The Sun is overhead at noon when its Dec equals your latitude, S21°08′: passed going south in late Nov and coming back in mid-Jan.",
+  "ref": "The Sun's declination through the year",
+  "fig": {
+   "type": "card",
+   "title": "Nuku'alofa, Tonga",
+   "lines": [
+    "Lat 21°08′S",
+    "Sun Dec 20 Nov S19°38′ · 30 Nov S21°36′",
+    "21 Dec S23°26′ (solstice)",
+    "10 Jan S22°01′ · 20 Jan S20°13′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Off Rio on the solstice, the crew expects the noon Sun to the north, as usual in the southern hemisphere. Which way do you face for the noon sight, and how high is the Sun?",
+  "a": "South, 89°27.7′ high",
+  "o": [
+   "North, 89°27.7′ high",
+   "North, 43°39.7′ high",
+   "South, 46°20.3′ high"
+  ],
+  "why": "Dec S23°26.3′ is south of 22°54′S: the GP is 0°32.3′ south of you, so the Sun bears south, 90° − 0°32.3′ = 89°27.7′ high.",
+  "ref": "Meridian passage — maximum altitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 21 Dec, off Rio",
+   "lines": [
+    "Lat 22°54′S",
+    "Sun Dec S23°26.3′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Before leaving Cape Town for St Helena you take a noon sight. Which way does the Sun bear, and how high is it?",
+  "a": "North, 78°02.3′ high",
+  "o": [
+   "South, 78°02.3′ high",
+   "North, 34°07.7′ high",
+   "South, 11°57.7′ high"
+  ],
+  "why": "The GP (S21°57.3′) is 11°57.7′ north of you: even in the southern summer the Sun bears north, 90° − 11°57.7′ = 78°02.3′.",
+  "ref": "Meridian passage — maximum altitude",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 10 Jan, Table Bay",
+   "lines": [
+    "Lat 33°55′S",
+    "Sun Dec S21°57.3′",
+    "The height of the southern summer"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You take a noon sight in the Galápagos on the equinox. Which way does the Sun bear, and how high is it?",
+  "a": "North, 89°11.5′ high",
+  "o": [
+   "South, 89°11.5′ high",
+   "South, 89°18.5′ high",
+   "North, 0°48.5′ high"
+  ],
+  "why": "Contrary names: z = 0°45.0′ + 0°03.5′ = 0°48.5′, GP north of you: the Sun bears north, 90° − 0°48.5′ = 89°11.5′ high.",
+  "ref": "Sun in the zenith",
+  "fig": {
+   "type": "card",
+   "title": "Noon, 20 March, Academy Bay",
+   "lines": [
+    "Lat 0°45′S",
+    "Sun Dec N0°03.5′",
+    "Galápagos, before the Puddle Jump"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "At anchor in Bora Bora you watch the noon Sun pass straight overhead. Which way does it bear a few minutes before and a few minutes after noon?",
+  "a": "Nearly east before noon, nearly west after",
+  "o": [
+   "Nearly north before noon, nearly south after",
+   "Due north both before and after noon",
+   "Nearly south before noon, nearly north after"
+  ],
+  "why": "Its GP runs west along your own parallel and passes over you: the azimuth swings from about 090° to about 270°, never N or S.",
+  "ref": "Sun in the zenith",
+  "fig": {
+   "type": "card",
+   "title": "Bora Bora, 7 November",
+   "lines": [
+    "Lat 16°29′S",
+    "Sun Dec at noon S16°29.1′",
+    "Noon altitude about 90°"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "In the Bahamas on the longest day, a crew member says the noon Sun will stand to the north of you. Is that right?",
+  "a": "No — the Sun's GP never goes north of 23°26′N",
+  "o": [
+   "Yes — around the June solstice, at noon",
+   "Yes — whenever the Sun's Dec is north",
+   "No — north of the equator it never does"
+  ],
+  "why": "The Sun's GP never leaves the tropics: at 25°03′N it is always south of you at noon, at best 88°23′ high on 21 June.",
+  "ref": "The Sun's declination through the year",
+  "fig": {
+   "type": "card",
+   "title": "Bahamas, 21 June",
+   "lines": [
+    "Lat 25°03′N",
+    "Sun Dec N23°26′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Running east in the forties, you plan a meridian sight of Antares. Which way will it bear, and how high will it be?",
+  "a": "North, 76°29′ high",
+  "o": [
+   "South, 76°29′ high",
+   "North, 13°31′ high",
+   "South, 23°31′ high"
+  ],
+  "why": "Dec S26°29′ lies north of 40°S: z = 40° − 26°29′ = 13°31′, so Antares culminates to the north, 76°29′ high.",
+  "ref": "Meridian passage — maximum altitude",
+  "fig": {
+   "type": "card",
+   "title": "Star sight, 40°S",
+   "lines": [
+    "Your lat 40°00′S",
+    "Antares Dec S26°29′",
+    "Meridian passage tonight"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Waiting in Horta, a crew member wants to see a body pass straight overhead. Which of these comes closest to your zenith?",
+  "a": "Vega",
+  "o": [
+   "The Sun at the June solstice",
+   "Capella",
+   "Arcturus"
+  ],
+  "why": "At culmination z = |lat − Dec|: Vega 16′, Capella 7°29′, the Sun at best 15°06′, Arcturus 19°26′ from your zenith.",
+  "ref": "Meridian passage — maximum altitude",
+  "fig": {
+   "type": "card",
+   "title": "Horta, 38°32′N",
+   "lines": [
+    "Sun Dec: at most N23°26′",
+    "Arcturus N19°06′ · Vega N38°48′",
+    "Capella N46°01′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "A crew member asks why the Sun is highest exactly as it crosses your meridian. What do you tell them?",
+  "a": "Its GP then passes closest to you on its way west",
+  "o": [
+   "Refraction is least when the Sun bears N or S",
+   "The Sun's Dec peaks at the moment of local noon",
+   "The Earth turns most slowly at local noon"
+  ],
+  "why": "The GP runs west along the parallel of its Dec and is nearest you as it crosses your meridian: ZX least, altitude greatest.",
+  "ref": "Meridian passage — maximum altitude",
+  "fig": null
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Southbound from the Cape Verdes, a crew member wants Acrux to stay up all night. From which latitude will it never set?",
+  "a": "South of 26°46′S",
+  "o": [
+   "South of 63°14′S",
+   "South of 23°26′S",
+   "South of 36°46′S"
+  ],
+  "why": "Circumpolar when Dec > co-lat: 63°14′ > 90° − lat once you are south of 90° − 63°14′ = 26°46′S.",
+  "ref": "Circumpolar bodies",
+  "fig": {
+   "type": "card",
+   "title": "Cape Verdes to Cape Town",
+   "lines": [
+    "Acrux Dec S63°14′",
+    "Brightest star of the Southern Cross"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "On a charter south from Ushuaia, a guest asks from which latitude the Sun stays above the horizon all day at the solstice. What do you answer (ignore refraction)?",
+  "a": "South of 66°34′S",
+  "o": [
+   "South of 23°26′S",
+   "South of 76°34′S",
+   "Only at 90°S, the pole itself"
+  ],
+  "why": "The Sun is circumpolar when its Dec exceeds your co-lat: 23°26′ > 90° − lat south of 66°34′S, the Antarctic Circle.",
+  "ref": "Circumpolar bodies",
+  "fig": {
+   "type": "card",
+   "title": "21 December",
+   "lines": [
+    "Sun Dec S23°26′",
+    "Bound south from Ushuaia"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You plan the watches for a solstice departure from Cape Town. Where does the Sun rise, and is it up for more or less than 12 hours?",
+  "a": "South of east; more than 12 hours",
+  "o": [
+   "North of east; more than 12 hours",
+   "South of east; less than 12 hours",
+   "Due east; exactly 12 hours"
+  ],
+  "why": "Dec of the same name as your latitude: the Sun rises south of east, and more than half its daily circle is above your horizon.",
+  "ref": "Rising and setting bodies",
+  "fig": {
+   "type": "card",
+   "title": "Cape Town, 21 December",
+   "lines": [
+    "Lat 33°55′S",
+    "Sun Dec S23°26′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Ten degrees south of the line you set up the first PZX triangle of the passage. Which pole is P, and how high does it stand?",
+  "a": "The south celestial pole, 10° above the south horizon",
+  "o": [
+   "The north celestial pole, 10° below the north horizon",
+   "The south celestial pole, 80° above the south horizon",
+   "The north celestial pole, right on the north horizon"
+  ],
+  "why": "P is the elevated pole, named like your latitude: at 10°S the south celestial pole stands 10° up, and PZ = 80°.",
+  "ref": "PZX triangle — southern hemisphere",
+  "fig": {
+   "type": "card",
+   "title": "Southbound, Atlantic",
+   "lines": [
+    "DR 10°00′S 32°10′W",
+    "Setting up the PZX triangle"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You set up the PZX triangle for a morning sun sight off Durban. What are the sides PZ and PX?",
+  "a": "PZ 60°07.0′, PX 72°51.4′",
+  "o": [
+   "PZ 60°07.0′, PX 107°08.6′",
+   "PZ 29°53.0′, PX 72°51.4′",
+   "PZ 119°53.0′, PX 107°08.6′"
+  ],
+  "why": "P is the south pole: PZ = 90° − 29°53.0′ = 60°07.0′; a south Dec is on your side, so PX = 90° − 17°08.6′ = 72°51.4′.",
+  "ref": "PZX triangle — southern hemisphere",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun, Durban, 1 Feb",
+   "lines": [
+    "Lat 29°53.0′S",
+    "Sun Dec S17°08.6′",
+    "P = your elevated pole"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Bound for Brisbane, you have the azimuth angle from your afternoon sun reduction. Which true azimuth do you lay off on the plotting sheet?",
+  "a": "262°",
+  "o": [
+   "098°",
+   "278°",
+   "082°"
+  ],
+  "why": "South of the equator Z is measured from south: S82°W is 180° + 82° = 262°, the Sun just south of west.",
+  "ref": "PZX triangle — southern hemisphere",
+  "fig": {
+   "type": "card",
+   "title": "Afternoon sun, 25°S",
+   "lines": [
+    "LHA 60°",
+    "Azimuth angle Z: S82°W"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "While the GPS still works you check your sextant work against it. What Ho should the sight give?",
+  "a": "65°00′",
+  "o": [
+   "25°00′",
+   "75°00′",
+   "76°30′"
+  ],
+  "why": "1500 M = 1500′ of arc = 25°00′ of zenith distance, so Ho = 90° − 25°00′ = 65°00′.",
+  "ref": "Circle of equal altitude — zenith distance",
+  "fig": {
+   "type": "card",
+   "title": "Sextant practice, GPS on",
+   "lines": [
+    "GPS: 1500 M from the Sun's GP",
+    "At the second of the sight"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You draw two simultaneous star sights as whole circles of equal altitude. They cross at A and at B, about 2900 M apart. Where are you?",
+  "a": "At A, the crossing near your DR",
+  "o": [
+   "Halfway between A and B",
+   "Halfway between GP 1 and GP 2",
+   "At A or B — only a third star can tell"
+  ],
+  "why": "Two circles always cross twice, usually thousands of miles apart; your DR (or a third body) shows which crossing is yours.",
+  "ref": "Circle of equal altitude — position line",
+  "fig": {
+   "type": "chart",
+   "track": "M40 100 A70 70 0 1 1 180 100 A70 70 0 1 1 40 100 M140 100 A70 70 0 1 1 280 100 A70 70 0 1 1 140 100",
+   "marks": [
+    [
+     110,
+     100,
+     "y",
+     "GP 1"
+    ],
+    [
+     210,
+     100,
+     "y",
+     "GP 2"
+    ],
+    [
+     160,
+     51,
+     "k",
+     "A"
+    ],
+    [
+     160,
+     149,
+     "k",
+     "B"
+    ],
+    [
+     186,
+     36,
+     "r",
+     "DR"
+    ]
+   ],
+   "note": "Two star sights at one instant · not to scale"
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You and the mate reduce the same sun sight from different assumed positions and get different intercepts. What do you find when you plot both?",
+  "a": "Both give the same position line",
+  "o": [
+   "The two lines lie 30 M apart",
+   "The two lines cross at your position",
+   "Only the AP nearer the GP gives the line"
+  ],
+  "why": "AP 1 + 12 M south = AP 2 + 18 M north: one line. It is a piece of one circle round the GP; the AP only changes the intercept.",
+  "ref": "Circle of equal altitude — the assumed position",
+  "fig": {
+   "type": "card",
+   "title": "One sun sight, two navigators",
+   "lines": [
+    "Sun Zn 180°",
+    "You: AP 1, intercept 12.0 M towards",
+    "Mate: AP 2, 30 M south of AP 1",
+    "Mate's intercept 18.0 M away"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You discover that the index error was left out of your morning sun sight. Where does the position line you plotted lie compared with the true one?",
+  "a": "2 M too far towards 110°",
+  "o": [
+   "2 M too far towards 290°",
+   "4 M too far towards 110°",
+   "2 M too far towards 020°"
+  ],
+  "why": "On the arc, so Ho came out 2.0′ too high: the zenith distance and the circle's radius are 2 M short, so the line sits 2 M nearer the Sun.",
+  "ref": "Circle of equal altitude — errors",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun line",
+   "lines": [
+    "Sun Zn 110°",
+    "Index error found later: 2.0′ on the arc",
+    "It was not applied to this sight"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You discover that the watch used for yesterday's sights was 30 seconds fast. What has that done to yesterday's fixes?",
+  "a": "Moved them 7.5′ of longitude west; latitude unchanged",
+  "o": [
+   "Moved them 7.5′ of longitude east; latitude unchanged",
+   "Moved them 7.5′ of latitude south; longitude unchanged",
+   "Moved them 0.5′ of longitude west; latitude unchanged"
+  ],
+  "why": "UT 30 s late makes every GHA 7.5′ too big and every GP too far west: the whole picture is turned 7.5′ west about the pole.",
+  "ref": "Geographical position — errors",
+  "fig": {
+   "type": "card",
+   "title": "Watch check by GPS time",
+   "lines": [
+    "Watch found 30 s fast",
+    "Used for all of yesterday's sights",
+    "No other error"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Halfway across on the ARC you take a sun sight just as the Sun bears due east. Which way does the position line run, and what does it give you?",
+  "a": "North–south: it gives your longitude",
+  "o": [
+   "East–west: it gives your longitude",
+   "North–south: it gives your latitude",
+   "East–west: it gives your latitude"
+  ],
+  "why": "A position line lies at right angles to the azimuth: with the Sun due east it runs along your meridian and fixes longitude.",
+  "ref": "Circle of equal altitude — position line",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun, the ARC",
+   "lines": [
+    "Sun bearing 090°",
+    "One sight, one position line"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You want to mark Jupiter on your star finder, which places bodies by their SHA. What SHA do you use?",
+  "a": "24°30.2′",
+  "o": [
+   "335°29.8′",
+   "215°50.6′",
+   "144°09.4′"
+  ],
+  "why": "SHA is measured west from Aries: SHA = GHA body − GHA Aries = 120°10.4′ − 95°40.2′ = 24°30.2′.",
+  "ref": "First point of Aries and SHA",
+  "fig": {
+   "type": "card",
+   "title": "Almanac, 1900 UT",
+   "lines": [
+    "Jupiter GHA 120°10.4′",
+    "GHA Aries 95°40.2′",
+    "Star finder: bodies set by SHA"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "At dusk you want a star that is crossing your meridian right now. Which one is it?",
+  "a": "Vega",
+  "o": [
+   "Rigel",
+   "Altair",
+   "Deneb"
+  ],
+  "why": "On your meridian LHA★ = LHA Aries + SHA = 360°: SHA = 360° − 279°27′ = 80°33′, which is Vega.",
+  "ref": "First point of Aries and SHA",
+  "fig": {
+   "type": "card",
+   "title": "Mid-Atlantic, dusk",
+   "lines": [
+    "LHA Aries 279°27′",
+    "Vega SHA 80°33′ · Rigel SHA 281°06′",
+    "Altair SHA 62°01′ · Deneb SHA 49°27′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "On a long night watch you picture the GP of Sirius moving across the globe. Which way does it go?",
+  "a": "West along the 16°45′S parallel, 15°02.5′ an hour",
+  "o": [
+   "East along the 16°45′S parallel, 15°02.5′ an hour",
+   "West along a great circle, 15°02.5′ an hour",
+   "West along the 16°45′S parallel, 15°00.0′ an hour"
+  ],
+  "why": "A star's Dec is fixed, so its GP keeps to the parallel of its Dec; its GHA (Aries + SHA) grows 15°02.5′ an hour, westward.",
+  "ref": "Geographical position",
+  "fig": {
+   "type": "card",
+   "title": "Night watch, Sirius",
+   "lines": [
+    "Sirius Dec S16°45′, SHA 258°27′",
+    "From 2100 to 0300 UT"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Before a dawn star fix on the way from Tonga to Fiji you want the GP of Antares. Where is it?",
+  "a": "26°29.0′S 176°47.6′E",
+  "o": [
+   "26°29.0′S 176°47.6′W",
+   "26°29.0′S 183°12.4′W",
+   "26°29.0′N 176°47.6′E"
+  ],
+  "why": "GHA★ = 70°55.4′ + 112°17.0′ = 183°12.4′: over 180°, so the GP is at 360° − 183°12.4′ = 176°47.6′E, just over the date line.",
+  "ref": "Geographical position — the date line",
+  "fig": {
+   "type": "card",
+   "title": "Dawn star, Tonga to Fiji",
+   "lines": [
+    "GHA Aries 70°55.4′",
+    "Antares SHA 112°17.0′",
+    "Antares Dec S26°29.0′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "Leafing through a year of almanac pages, the crew notice that the Sun's Dec swings while Vega's stays put. Why?",
+  "a": "The Sun goes round the ecliptic, tilted 23°26′ to the equator",
+  "o": [
+   "The Sun is close, so its parallax shifts its Dec",
+   "The Earth's axis nods 23°26′ to and fro each year",
+   "The Sun moves along the celestial equator, the stars do not"
+  ],
+  "why": "As the Earth orbits, the Sun seems to circle the ecliptic once a year, and that circle is tilted 23°26′ to the celestial equator.",
+  "ref": "The ecliptic and the seasons",
+  "fig": {
+   "type": "card",
+   "title": "A year of almanac pages",
+   "lines": [
+    "Vega Dec N38°48′ all year",
+    "Sun Dec from N23°26′ to S23°26′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 2,
+  "q": "You plan Moon sights for the week ahead. Why does the Moon cross your meridian about 50 minutes later each night?",
+  "a": "It moves east among the stars about 13° a day",
+  "o": [
+   "It moves west among the stars about 13° a day",
+   "Its Dec changes by about 13° a day",
+   "Its GHA grows faster than the Sun's"
+  ],
+  "why": "The Moon orbits eastward about 13° a day against the stars, so its GHA grows only about 14°30′ an hour and it comes round later.",
+  "ref": "The Moon's motion",
+  "fig": {
+   "type": "card",
+   "title": "Moon, meridian passage",
+   "lines": [
+    "Monday 2128 LMT",
+    "Tuesday 2219 LMT",
+    "Wednesday 2311 LMT"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You plotted a high sun sight as a straight line and crossed it with a star line 60 M from the foot of the intercept, F. How far is that fix from the true circle of position?",
+  "a": "About 7 M",
+  "o": [
+   "About 15 M",
+   "About 2 M",
+   "About 30 M"
+  ],
+  "why": "Offset ≈ d² ÷ 2r = 60² ÷ (2 × 240) ≈ 7.4 M: near the zenith the circle is tight, so plot the circle itself or keep the AP close.",
+  "ref": "Circle of equal altitude — high-altitude sights",
+  "fig": {
+   "type": "chart",
+   "track": "M80 150 A80 80 0 0 1 240 150 M50 70 H270 M160 150 V70",
+   "marks": [
+    [
+     160,
+     150,
+     "y",
+     "GP"
+    ],
+    [
+     160,
+     70,
+     "k",
+     "F"
+    ],
+    [
+     230,
+     70,
+     "r",
+     "fix"
+    ]
+   ],
+   "labels": [
+    [
+     56,
+     62,
+     "straight PL",
+     "start"
+    ],
+    [
+     250,
+     140,
+     "circle",
+     "start"
+    ]
+   ],
+   "note": "Ho 86°00′ · circle radius 240 M · fix 60 M from F"
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You find you reduced this morning's sun sight with yesterday's Dec. How far is the position line out, and which way?",
+  "a": "About 12 M, towards 120°",
+  "o": [
+   "About 12 M, towards 300°",
+   "About 24 M, towards 120°",
+   "About 21 M, towards 300°"
+  ],
+  "why": "The GP sits 23.7 M too far south; along Zn 120° that is 23.7 × cos 60° ≈ 12 M, so the line lies 12 M too far towards 120°.",
+  "ref": "Geographical position — errors",
+  "fig": {
+   "type": "card",
+   "title": "Sun sight, 21 March",
+   "lines": [
+    "Sun Zn 120°",
+    "Dec used: yesterday's, 23.7′ too far south",
+    "Everything else correct"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You reduce a morning sun sight off the Cape in the southern summer. What are Hc and Zn?",
+  "a": "Hc 47°25.2′, Zn 081°",
+  "o": [
+   "Hc 47°25.2′, Zn 099°",
+   "Hc 21°51.2′, Zn 081°",
+   "Hc 21°51.2′, Zn 099°"
+  ],
+  "why": "Lat −34°, Dec −19°00.0′: sin Hc = sin 34° sin 19°00.0′ + cos 34° cos 19°00.0′ cos 315° → 47°25.2′; Sun north of east, Zn 081°.",
+  "ref": "PZX triangle — southern hemisphere",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun, 25 Jan, off the Cape",
+   "lines": [
+    "AP lat 34°00′S",
+    "Sun Dec S19°00.0′",
+    "LHA 315°00′"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You plan star sights for a long passage along 35°S. For how long is Arcturus above your horizon each day?",
+  "a": "About 10 hours",
+  "o": [
+   "About 14 hours",
+   "About 12 hours",
+   "About 5 hours"
+  ],
+  "why": "Rising LHA: cos LHA = −tan lat tan Dec = tan 35° tan 19°06′ (lat S) → 76°; up for 152° of its circle ≈ 10 h.",
+  "ref": "Rising and setting bodies",
+  "fig": {
+   "type": "card",
+   "title": "Arcturus from 35°S",
+   "lines": [
+    "Your lat 35°00′S",
+    "Arcturus Dec N19°06′",
+    "Ignore refraction and dip"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "Running east at 45°S, you watch Acrux circle the pole through the night. What are its highest and lowest altitudes?",
+  "a": "71°46′ and 18°14′, both to the south",
+  "o": [
+   "71°46′ to the south and 18°14′ to the north",
+   "71°46′ to the north and 18°14′ to the south",
+   "63°14′ and 26°46′, both to the south"
+  ],
+  "why": "Upper: 90° − (63°14′ − 45°) = 71°46′, GP south of you. Lower: lat − polar distance = 45° − 26°46′ = 18°14′, below the pole.",
+  "ref": "Circumpolar bodies — upper and lower transit",
+  "fig": {
+   "type": "card",
+   "title": "Acrux from 45°S",
+   "lines": [
+    "Your lat 45°00′S",
+    "Acrux Dec S63°14′",
+    "Long winter night, clear sky"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "Off Mauritius at dusk you are reducing a sight of Antares. Which LHA goes into the triangle, and on which side of your meridian is the star?",
+  "a": "30°27.6′ — west of your meridian",
+  "o": [
+   "275°27.6′ — east of your meridian",
+   "30°27.6′ — east of your meridian",
+   "329°32.4′ — east of your meridian"
+  ],
+  "why": "GHA★ = 220°40.6′ + 112°17.0′ − 360° = 332°57.6′; + 57°30.0′E − 360° = LHA 30°27.6′: under 180°, so west.",
+  "ref": "Celestial sphere — hour angles",
+  "fig": {
+   "type": "card",
+   "title": "Dusk star off Mauritius",
+   "lines": [
+    "GHA Aries 220°40.6′",
+    "Antares SHA 112°17.0′",
+    "DR long 57°30.0′E"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "On the solstice at 30°S the Sun rises south of east and swings round to the north by noon. At what altitude does it bear due east (090°)?",
+  "a": "52°42′",
+  "o": [
+   "37°18′",
+   "11°28′",
+   "66°34′"
+  ],
+  "why": "Bearing 090° the triangle has a right angle at Z: sin Hc = sin Dec ÷ sin lat = sin 23°26.2′ ÷ sin 30° → 52°42′.",
+  "ref": "PZX triangle — southern hemisphere",
+  "fig": {
+   "type": "card",
+   "title": "21 December, 30°S",
+   "lines": [
+    "Sun Dec S23°26.2′",
+    "Sun rises south of east",
+    "It culminates to the north"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You and a buddy boat, either side of the 180th meridian, take sun sights at the same second. What LHA does each of you use?",
+  "a": "Yours 348°00′, theirs 352°00′",
+  "o": [
+   "Yours 352°00′, theirs 348°00′",
+   "Yours 8°00′, theirs 352°00′",
+   "Yours 348°00′, theirs 8°00′"
+  ],
+  "why": "You: 170° + 178°E = 348°. Buddy: 170° − 178°W = −8° + 360° = 352°. They are 4° east of you, so their LHA is 4° more.",
+  "ref": "Celestial sphere — hour angles",
+  "fig": {
+   "type": "card",
+   "title": "One instant, two yachts",
+   "lines": [
+    "Sun GHA 170°00.0′",
+    "You: long 178°00′E",
+    "Buddy boat: long 178°00′W"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "You reduce a morning sun sight in the southern summer and get an absurd intercept. Which slip is the most likely cause?",
+  "a": "The Dec named north instead of south",
+  "o": [
+   "The index error applied the wrong way",
+   "The dip added instead of subtracted",
+   "Yesterday's Dec used instead of today's"
+  ],
+  "why": "IE, dip or a day's Dec cost minutes at most; a Dec of the wrong name moves the GP by twice the Dec, here about 45°.",
+  "ref": "PZX triangle — errors",
+  "fig": {
+   "type": "card",
+   "title": "Morning sun, 5 Dec, 34°S",
+   "lines": [
+    "AP 34°00′S, LHA 330°",
+    "Ho 61°18.3′ · your Hc 26°48.4′",
+    "Intercept 2070 M towards"
+   ]
+  }
+ },
+ {
+  "topic": "sphere",
+  "difficulty": 3,
+  "q": "South of the Cape of Good Hope you reduce a dawn sight of Arcturus. What are Hc and Zn?",
+  "a": "Hc 28°51.6′, Zn 033°",
+  "o": [
+   "Hc 28°51.6′, Zn 327°",
+   "Hc 59°05.8′, Zn 033°",
+   "Hc 59°05.8′, Zn 147°"
+  ],
+  "why": "Lat −35°, Dec +19°06′: sin Hc = −sin 35° sin 19°06′ + cos 35° cos 19°06′ cos 330° → 28°51.6′; star NE of you, Zn 033°.",
+  "ref": "PZX triangle — southern hemisphere",
+  "fig": {
+   "type": "card",
+   "title": "Dawn star, 35°S",
+   "lines": [
+    "AP lat 35°00′S",
+    "Arcturus Dec N19°06′",
+    "LHA 330°00′"
+   ]
+  }
+ }
+]
