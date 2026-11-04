@@ -1,0 +1,2309 @@
+[
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You skipper a 22 m motor yacht on an overnight passage. At 0310 the watch reports a crew member missing. How do you turn to search?",
+  "a": "Williamson turn: hard over, at 60° off hard back to 045°T",
+  "o": [
+   "Anderson turn: hard over and round 250° to the spot",
+   "Hard over and hold it right round onto 045°T",
+   "Stop both engines and let him drift down to you"
+  ],
+  "why": "Time unknown: the Williamson turn puts you back on your own track, reciprocal 225° − 180° = 045°T, to search along it.",
+  "ref": "MOB — Williamson turn",
+  "fig": {
+   "type": "card",
+   "title": "Crew missing",
+   "lines": [
+    "Last seen in the cockpit at 0245",
+    "Heading 225°T at 13 kn",
+    "Night, wind NE 4, sea 1.5 m"
+   ],
+   "tag": "0310"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your man overboard is alongside on a line, exhausted, and cannot help himself. Where and how do you get him aboard?",
+  "a": "Amidships to leeward, lifted level in the net on a halyard",
+  "o": [
+   "At the bathing platform, where the freeboard is lowest",
+   "Up the boarding ladder over the side, by his own effort",
+   "Amidships, by two crew pulling him up by the arms"
+  ],
+  "why": "In a seaway the stern slams near the props; lift him level amidships to leeward — a vertical lift can make him collapse.",
+  "ref": "MOB — recovery",
+  "fig": {
+   "type": "card",
+   "title": "Recovery",
+   "lines": [
+    "Sailing yacht 23 m, freeboard 1.6 m",
+    "Sea 2.5 m, the stern rising 2 m",
+    "Bathing platform aft, props below it",
+    "Recovery net and spare halyard ready"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At 0140 the engine-room fire alarm sounds on your 24 m motor yacht. Before you pull the fixed system's release, what do you do?",
+  "a": "Stop engines, generator and fans, shut the flaps, count everyone out",
+  "o": [
+   "Open the engine-room door to judge the size of the fire",
+   "Keep the engines running to make the nearest port",
+   "Run the extractor fans to clear the smoke for the agent"
+  ],
+  "why": "Running engines and fans draw the agent out and feed air in; shut the space tight and make sure nobody is inside.",
+  "ref": "Fire — fixed systems",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Eng room",
+     "95°C",
+     true
+    ],
+    [
+     "Fire",
+     "ALARM",
+     true
+    ],
+    [
+     "Stbd RPM",
+     "1800",
+     false
+    ]
+   ],
+   "lines": [
+    "Camera: flames by the starboard engine",
+    "Fixed clean-agent system, wheelhouse release"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Your fixed system discharged into the engine room at 0144. At 0150 the engineer wants to open the door to see if the fire is out. What do you tell him?",
+  "a": "Keep it shut; wait, cool the bulkhead, extinguisher ready",
+  "o": [
+   "Open it now, so the smoke can clear before it spreads",
+   "Open it a crack, just enough to look inside",
+   "Open it now and start the engines to vent it"
+  ],
+  "why": "Opening early lets air in to hot metal and the fire re-ignites; wait the time on the label and let it cool first.",
+  "ref": "Fire — fixed systems",
+  "fig": {
+   "type": "card",
+   "title": "After discharge",
+   "lines": [
+    "Agent released at 0144",
+    "Now 0150; bulkhead still hot to the touch",
+    "System label: keep closed at least 15 min"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "You are holed 110 M from land and estimate the inflow below. With all three pumps running, where do you stand?",
+  "a": "Gaining about 4 L/min — only just",
+  "o": [
+   "Gaining about 28 L/min — comfortably",
+   "Losing about 8 L/min — slowly",
+   "Losing about 55 L/min — fast"
+  ],
+  "why": "Electric 3600/60 × 0.6 = 36, engine 120, hand 0.7 × 40 = 28: 184 L/min against 180 in — gaining 4.",
+  "ref": "Flooding — pump capacity",
+  "fig": {
+   "type": "card",
+   "title": "Damage control",
+   "lines": [
+    "Inflow estimated 180 L/min",
+    "Electric: 3,600 L/h rated, 60 % at this head",
+    "Engine-driven pump: 120 L/min",
+    "Hand pump: 0.7 L a stroke, 40 strokes/min"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You have hit a submerged object 115 M from land and water is pouring in through the split below. What stops most of it?",
+  "a": "A collision mat over the outside, held on by lines under the hull",
+  "o": [
+   "A mattress pressed against the tank from inside",
+   "Heel her to port with the crew's weight to steady her",
+   "Speed up so the bow wave keeps the water out"
+  ],
+  "why": "Outside, the sea pressure pushes the mat into the split; from inside it pushes the patch away.",
+  "ref": "Damage control — collision mat",
+  "fig": {
+   "type": "card",
+   "title": "Damage forward",
+   "lines": [
+    "Split 0.3 m long, port bow",
+    "0.5 m below the waterline",
+    "Can't be reached inside: a tank in the way",
+    "Sailcloth, lines and a mattress aboard"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "After hitting a log, a hull panel by the forward bulkhead has cracked and bulges inward as each wave strikes. How do you hold it?",
+  "a": "Pad and board over it, shored to the bulkhead with wedges",
+  "o": [
+   "Shore it down to the cabin sole, which is closer",
+   "Tape it from inside and keep a watch on it",
+   "Leave it alone — bracing would split it further"
+  ],
+  "why": "A shore spreads the load through a pad and board to a strong point; wedges tighten it as it settles.",
+  "ref": "Damage control — shoring",
+  "fig": {
+   "type": "card",
+   "title": "Forward cabin",
+   "lines": [
+    "Panel cracked, bulging in with each wave",
+    "Weeping, not pouring",
+    "Forward bulkhead 0.8 m away",
+    "Timber offcuts, wedges, a hatch board"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your 24 m motor yacht has run onto a sand bar at the end of a passage. The hull is dry inside. How do you get her off?",
+  "a": "Kedge out astern, shift weight aft, haul off near high water",
+  "o": [
+   "Full astern on both engines at once",
+   "Full ahead to drive her over the bar",
+   "Twist her off with the engines and bow thruster"
+  ],
+  "why": "Sand drawn into the raw-water intakes can wreck the engines; a kedge and the rising tide get her off safely.",
+  "ref": "Grounding — refloating",
+  "fig": {
+   "type": "card",
+   "title": "Aground on sand",
+   "lines": [
+    "Tide rising: HW in 2 h, 0.8 m to come",
+    "Draught 1.9 m, aground forward",
+    "Sand clouding round the stern",
+    "Tender and kedge anchor aboard"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You have abandoned to the liferaft 110 M offshore and are clear of the yacht, with the EPIRB transmitting. What do you do in the first hour?",
+  "a": "Seasick pills for all, inflate the floor, set a lookout rota",
+  "o": [
+   "A drink of water for all to keep up strength",
+   "Open the canopy wide for air and a better view",
+   "Paddle in turns towards the coast, 110 M off"
+  ],
+  "why": "Seasickness dehydrates fast, the floor insulates against the cold, and a lookout must not miss a rescuer.",
+  "ref": "Liferaft survival",
+  "fig": {
+   "type": "card",
+   "title": "In the raft",
+   "lines": [
+    "6 aboard, all wet, sea 3 m",
+    "EPIRB on, drogue streamed",
+    "Raft pack: water, seasick pills, pump",
+    "Water temperature 14°C"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "There are six of you in the liferaft. Following the raft's instructions, how long from abandoning will your water last?",
+  "a": "About 3.5 days",
+  "o": [
+   "About 2.5 days",
+   "About 2.25 days",
+   "About 15 days"
+  ],
+  "why": "Day 1 dry; then 7.5 L ÷ (6 × 0.5 L) = 2.5 days: 3.5 days from abandoning.",
+  "ref": "Liferaft survival — water",
+  "fig": {
+   "type": "card",
+   "title": "Water in the raft",
+   "lines": [
+    "Raft pack 3.0 L, grab bag 4.5 L",
+    "Instructions: no water for the first 24 h",
+    "Then 0.5 L per person per day",
+    "Injured aboard: none"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "A helicopter is lifting a casualty from your aft deck and has asked you to hold a course and speed. The helmsman keeps looking up at it. What do you tell him?",
+  "a": "Steer by the compass and hold course and speed steady",
+  "o": [
+   "Turn towards the helicopter to keep it in sight",
+   "Slow down whenever the winchman nears the deck",
+   "Follow the helicopter's movements to stay under it"
+  ],
+  "why": "The pilot holds station on you; a steady course and speed is what he asked for, and any change upsets the lift.",
+  "ref": "Helicopter rescue",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "The MRCC will send a helicopter for your injured crew once you are inside its radius of action, and asks you to close its base. When will you be inside it?",
+  "a": "About 0800, after 6 h at 7.5 kn",
+  "o": [
+   "About 0700, after 5 h at 9 kn",
+   "About 0617, after 4 h 17 min at 10.5 kn",
+   "About 0000 tomorrow, after 22 h at 7.5 kn"
+  ],
+  "why": "165 − 120 = 45 M to go at 9 − 1.5 = 7.5 kn over the ground: 6 h, so 0800.",
+  "ref": "Medical evacuation — rendezvous",
+  "fig": {
+   "type": "card",
+   "title": "MRCC",
+   "lines": [
+    "Helicopter radius of action 120 M",
+    "You: 165 M from its base, heading for it",
+    "Speed through the water 9 kn",
+    "Current against you 1.5 kn"
+   ],
+   "tag": "0200"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "A crew member has had severe abdominal pain for six hours and is getting worse. How do you get a doctor's advice from here?",
+  "a": "MF DSC urgency call to the coast station, then PAN-PAN on MF",
+  "o": [
+   "VHF DSC distress alert, then MAYDAY on channel 16",
+   "PAN-PAN on channel 16 to the coast station",
+   "Wait for landfall tomorrow and see a doctor ashore"
+  ],
+  "why": "Medical advice is urgency, not distress; 100 M off only the MF station hears you, and the MRCC links you to a doctor.",
+  "ref": "GMDSS — medical advice",
+  "fig": {
+   "type": "card",
+   "title": "100 M offshore",
+   "lines": [
+    "Coast station: VHF to about 30 M",
+    "MF DSC watch on 2187.5 kHz to 150 M",
+    "Yacht has VHF DSC and MF/HF DSC",
+    "Pain 6 h, fever, getting worse"
+   ],
+   "tag": "1500"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At night 90 M offshore the mast goes over the side. It lies to leeward, still held by the rigging, and punches the hull on every wave. What do you do?",
+  "a": "Cut it free; start the engine only once no line is in the water",
+  "o": [
+   "Start the engine and motor away to pull clear of it",
+   "Haul it back aboard over the side to save the rig",
+   "Leave it alongside as a sea anchor until daylight"
+  ],
+  "why": "In this sea the spar will hole the hull: knock out the pins, cut the wires, and keep the prop still until every line is aboard.",
+  "ref": "Dismasting",
+  "fig": {
+   "type": "card",
+   "title": "Dismasted",
+   "lines": [
+    "Wind F7, sea 3.5 m",
+    "Mast and boom in the water to leeward",
+    "Hull struck on each wave",
+    "Bolt-cutters and a hacksaw aboard"
+   ],
+   "tag": "2300"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "120 M from land the steering suddenly goes slack. A look over the stern shows the rudder blade has broken off. How do you steer?",
+  "a": "Tow a drogue on a bridle and steer by its two legs",
+  "o": [
+   "Fit the emergency tiller to the stock and steer",
+   "Lash the wheel amidships and sail on as she goes",
+   "Steer by moving the crew's weight fore and aft"
+  ],
+  "why": "With no blade the stock steers nothing; a drogue on a bridle, one leg shortened, turns her the way you want.",
+  "ref": "Steering failure — emergency steering",
+  "fig": {
+   "type": "card",
+   "title": "Steering failure",
+   "lines": [
+    "Rudder blade gone; stock intact",
+    "Emergency tiller fits the stock",
+    "Sea 2 m, wind F5 on the quarter",
+    "Drogue, warps and spare blocks aboard"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "On your twin-engine motor yacht the hydraulic steering fails, with the rudders jammed amidships. How do you steer to safety?",
+  "a": "With the engines: more power on one side than the other",
+  "o": [
+   "With the bow thruster alone, at cruising speed",
+   "You cannot steer — anchor and wait for a tow",
+   "With one engine only, the other one shut down"
+  ],
+  "why": "Twin screws steer her: ahead harder on the port engine turns her to starboard, and the other way round.",
+  "ref": "Steering failure — twin screws",
+  "fig": {
+   "type": "card",
+   "title": "Steering alarm",
+   "lines": [
+    "Hydraulic pressure lost",
+    "Rudders amidships, will not move",
+    "Both engines running"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At 0130, 110 M offshore, the alternator belt breaks and there is no spare. The engine still runs. What do you keep switched on?",
+  "a": "Nav lights and the VHF; plot by DR and fixes on paper",
+  "o": [
+   "The plotter and autopilot, as they navigate for you",
+   "Everything until the alarm sounds, then nothing",
+   "The fridge and cabin lights; VHF only to call"
+  ],
+  "why": "With no charge, save the battery for what keeps you seen and heard — the lights and the radio; a paper plot needs no power.",
+  "ref": "Loss of power",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "11.9",
+     true
+    ],
+    [
+     "Alternator",
+     "0 A",
+     true
+    ],
+    [
+     "Fuel",
+     "70%",
+     false
+    ]
+   ],
+   "lines": [
+    "30 h still to go",
+    "House bank only, no solar"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You are 120 M off the coast of a state that publishes this GMDSS coverage. In which sea area are you?",
+  "a": "A2 — inside MF DSC cover, outside VHF",
+  "o": [
+   "A1 — still within this state's cover",
+   "A3 — beyond VHF, so on satellite only",
+   "A4 — no shore station keeps watch"
+  ],
+  "why": "A1 is VHF DSC coverage; A2 is MF DSC coverage beyond it; A3 and A4 lie beyond both.",
+  "ref": "GMDSS sea areas",
+  "fig": {
+   "type": "card",
+   "title": "Coast state GMDSS notice",
+   "lines": [
+    "VHF DSC watch: to about 30 M",
+    "MF DSC watch, 2187.5 kHz: to about 150 M",
+    "Your distance off: 120 M"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You sent an MF DSC distress alert 140 M offshore and the coast station has acknowledged it by DSC. Where do you now make your MAYDAY call?",
+  "a": "By voice on 2182 kHz",
+  "o": [
+   "By voice on VHF channel 16",
+   "By voice on 2187.5 kHz",
+   "By voice on VHF channel 70"
+  ],
+  "why": "The voice call follows on the frequency paired with the DSC one: 2187.5 kHz DSC → 2182 kHz voice.",
+  "ref": "GMDSS — MF distress",
+  "fig": {
+   "type": "card",
+   "title": "DSC display",
+   "lines": [
+    "Distress alert sent on 2187.5 kHz",
+    "Acknowledged by the coast station",
+    "VHF: no answer on channel 16"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "To save paper on a three-day passage you set the NAVTEX to accept the weather forecasts only. What else will it still print?",
+  "a": "Nav warnings, gale warnings and SAR alerts",
+  "o": [
+   "Nothing — it prints only the types you pick",
+   "Only gale warnings for the sea area you are in",
+   "Everything, once you are within 50 M of a station"
+  ],
+  "why": "Navigational (A) and meteorological (B) warnings and SAR messages (D) cannot be switched off on a NAVTEX receiver.",
+  "ref": "GMDSS — NAVTEX",
+  "fig": {
+   "type": "card",
+   "title": "NAVTEX set-up",
+   "lines": [
+    "518 kHz, stations along the route",
+    "Message type selected: E (forecasts)",
+    "All other types switched off"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You bought this yacht last month and leave tomorrow on a 140 M crossing. What do you do about the EPIRB?",
+  "a": "Register it in your name on the flag state's beacon register",
+  "o": [
+   "Nothing — it sends its position whoever owns it",
+   "Re-register it only if you rename the yacht",
+   "Switch it on briefly to check it reaches a satellite"
+  ],
+  "why": "The MRCC calls the registered contacts first, and a stale entry wastes hours. Test it only with the test button.",
+  "ref": "GMDSS — EPIRB registration",
+  "fig": {
+   "type": "card",
+   "title": "EPIRB check",
+   "lines": [
+    "406 MHz, GNSS, battery in date",
+    "Coded for the yacht's flag state",
+    "Registered to the previous owner"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "In the liferaft at night your SART's indicator changes as its label describes below. What does it tell you?",
+  "a": "A ship's or aircraft's radar is sweeping you — flares ready",
+  "o": [
+   "The battery is low — switch it off to save it",
+   "A satellite has fixed your position for the MRCC",
+   "The MRCC has acknowledged your distress alert"
+  ],
+  "why": "A radar SART answers X-band radar pulses; the change means a radar is in range, so keep a lookout and use flares.",
+  "ref": "GMDSS — SART",
+  "fig": {
+   "type": "card",
+   "title": "SART label",
+   "lines": [
+    "Standby: lamp flashes every few seconds",
+    "Interrogated: fast flashing and a beeper",
+    "Now: fast flashing and beeping"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "At 0220, 90 M offshore, your VHF DSC sounds a distress alert from a yacht 25 M upwind that you cannot reach in this gale. Five minutes on, nobody has acknowledged it. How do you pass it on?",
+  "a": "MF DSC relay to the coast station alone, then MAYDAY RELAY to it",
+  "o": [
+   "VHF DSC relay to all ships, so the nearest one hears",
+   "Re-send her alert as your own DSC distress alert",
+   "Nothing — the coast station must have heard it too"
+  ],
+  "why": "Out of VHF range of the shore, relay to the coast station on MF; a DSC relay to all ships only sets off more alarms.",
+  "ref": "GMDSS — MAYDAY RELAY",
+  "fig": {
+   "type": "card",
+   "title": "DSC distress alert",
+   "lines": [
+    "From a yacht 25 M upwind: 'sinking'",
+    "No acknowledgement after 5 min",
+    "Nothing heard on channel 16",
+    "Your MF/HF DSC: working"
+   ],
+   "tag": "0220"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "A distress has been going on for an hour on channel 16 when you hear the MRCC's broadcast below. What may you now do on 16?",
+  "a": "Brief, essential calls only — the distress is not over",
+  "o": [
+   "Normal working again — the distress is finished",
+   "Nothing at all until the MRCC lifts the silence",
+   "Only the vessel in distress may transmit on 16"
+  ],
+  "why": "PRUDONCE allows restricted working while the distress goes on; SEELONCE FEENEE would end it.",
+  "ref": "GMDSS — radio silence",
+  "fig": {
+   "type": "card",
+   "title": "Heard on channel 16",
+   "lines": [
+    "MAYDAY",
+    "ALL STATIONS, ALL STATIONS, ALL STATIONS",
+    "THIS IS the MRCC …",
+    "PRUDONCE"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At 0340, 95 M offshore, you pass a container floating awash. What does the law expect of you?",
+  "a": "SÉCURITÉ to ships near, and report it to the coast station",
+  "o": [
+   "Note it in the log; report it at your next port",
+   "A MAYDAY, since it endangers every vessel",
+   "Nothing — reporting is for merchant ships"
+  ],
+  "why": "SOLAS V/31: every master reports a direct danger to navigation to ships nearby and to the authorities ashore.",
+  "ref": "SOLAS V/31",
+  "fig": {
+   "type": "card",
+   "title": "On watch",
+   "lines": [
+    "40 ft container awash, 2 M astern",
+    "Position noted from the GPS",
+    "Shipping lane 10 M to the north",
+    "MF/HF DSC and a sat phone aboard"
+   ],
+   "tag": "0340"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "At 0500 you hear this MAYDAY. The owner, aboard as a guest, tells you to carry on: he has people to meet at 1800. What do you do?",
+  "a": "Go to her with all speed and tell her and the MRCC",
+  "o": [
+   "Carry on — a yacht need only relay the MAYDAY",
+   "Go only if the owner agrees — it is his yacht",
+   "Stand by on 16 until the MRCC tells you to go"
+  ],
+  "why": "SOLAS V/33: a master able to help must go with all speed; if he does not, the reason goes in the log.",
+  "ref": "SOLAS V/33",
+  "fig": {
+   "type": "card",
+   "title": "Channel 16",
+   "lines": [
+    "MAYDAY: yacht sinking, 4 aboard",
+    "Position 18 M NE of you",
+    "No other vessel answering",
+    "Your ETA at her: about 2 h"
+   ],
+   "tag": "0500"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At night you collided with a fishing boat; one of your crew is hurt and both vessels are damaged. Once everyone is safe, what do you do about the records?",
+  "a": "Keep the log, plotter track and AIS data as they are, and report",
+  "o": [
+   "Write a fair copy of the log before you report",
+   "Wait for the fishing boat to report — she was give-way",
+   "Report only if your insurer asks you to"
+  ],
+  "why": "The investigators need the original records; altering them destroys the evidence, and the report is your duty.",
+  "ref": "Accident reporting",
+  "fig": {
+   "type": "card",
+   "title": "The flag state's rules say",
+   "lines": [
+    "Report injury or serious damage",
+    "to the accident investigation body",
+    "as soon as you can,",
+    "and keep the evidence"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The owner wants to sail at 0600 on this 130 M passage to keep to his schedule. Who decides, and what is the decision?",
+  "a": "You do — you wait for the window, whatever the schedule",
+  "o": [
+   "The owner — the yacht and the schedule are his",
+   "The crew, by a vote at the morning briefing",
+   "The insurer, who must be phoned for consent"
+  ],
+  "why": "SOLAS V/34-1: no owner may stop the master taking a decision he judges needed for safety.",
+  "ref": "SOLAS V/34-1 — master's discretion",
+  "fig": {
+   "type": "card",
+   "title": "Forecast for the passage",
+   "lines": [
+    "SW 7 to severe gale 9 later",
+    "Sea rough to very rough",
+    "Yacht 22 m, crew of 4",
+    "Next window in 48 h"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are buying a 20 m yacht with a loan; the bank lends against a mortgage on her. On which register do you put her?",
+  "a": "The full register, so the mortgage can be recorded",
+  "o": [
+   "The small ships register — cheaper and enough abroad",
+   "Either — the bank keeps the bill of sale instead",
+   "Neither — a mortgage is held at the bank only"
+  ],
+  "why": "Under these rules only the full register records title and mortgages, which is what a lender needs.",
+  "ref": "Registration",
+  "fig": {
+   "type": "card",
+   "title": "The flag state's rules say",
+   "lines": [
+    "Full register: title and mortgages recorded",
+    "Small ships register: nationality only,",
+    "no title, no mortgages recorded",
+    "Bank: 60 % of price, secured on the yacht"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are checking the papers before sailing for a foreign port. What do you sort out before you leave?",
+  "a": "Bring the original certificate of registry aboard",
+  "o": [
+   "Nothing — a copy of the registry will do",
+   "A second insurance certificate for the crew",
+   "The surveyor's report from when you bought her"
+  ],
+  "why": "Officials abroad ask for the original certificate of registry as proof of nationality; a copy is often refused.",
+  "ref": "Ship's papers",
+  "fig": {
+   "type": "card",
+   "title": "Papers aboard",
+   "lines": [
+    "Certificate of registry: a photocopy",
+    "Insurance certificate: original",
+    "Ship radio licence: original",
+    "Crew list and passports: ready"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are about to pay for a used 20 m yacht and the seller hands over the papers below. What must you have before you pay?",
+  "a": "The mortgage discharged, so the title comes to you clear",
+  "o": [
+   "Nothing more — the signed bill of sale is enough",
+   "Only the insurance moved over into your name",
+   "A new survey, which clears any debt on her"
+  ],
+  "why": "A registered mortgage stays on the yacht after a sale; the lender could arrest her from you.",
+  "ref": "Ownership — bills of sale",
+  "fig": {
+   "type": "card",
+   "title": "At completion",
+   "lines": [
+    "Bill of sale signed by the seller",
+    "Registry certificate in his name",
+    "Register search: one mortgage,",
+    "not marked as discharged"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "The owner lent his yacht to a friend with a coastal certificate, who was dismasted 90 M out on a crossing. Is the claim covered?",
+  "a": "No — the skipper warranty was broken on that passage",
+  "o": [
+   "Yes — the dismasting had nothing to do with her skill",
+   "Yes — warranties only matter for third-party claims",
+   "Only half — the owner shares the blame with her"
+  ],
+  "why": "The policy says a breach suspends cover while it lasts; the loss fell inside the breach, whatever caused it.",
+  "ref": "Insurance — warranties",
+  "fig": {
+   "type": "card",
+   "title": "Policy extract",
+   "lines": [
+    "Warranty: skipper on passages over 60 M",
+    "to hold Yachtmaster Offshore or equal",
+    "A breach suspends cover while it lasts",
+    "Friend's certificate: Coastal (60 M)"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You plan to take the yacht on this passage on 5 November. Are you covered?",
+  "a": "No — get the insurer to extend the season first",
+  "o": [
+   "Yes — inside 100 M is all the policy asks",
+   "Yes — the season matters only for laying up",
+   "Only for third-party claims, not the hull"
+  ],
+  "why": "Outside the navigation limits, in area or in time, the yacht is not covered; get a written extension before sailing.",
+  "ref": "Insurance — navigation limits",
+  "fig": {
+   "type": "card",
+   "title": "Policy limits",
+   "lines": [
+    "Mediterranean, within 100 M of the mainland",
+    "Season: 1 April to 31 October",
+    "Planned route: at most 60 M off",
+    "Departure: 5 November"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At night your 20 m yacht drags her anchor and hits a moored yacht. Both are damaged. What does your insurer pay?",
+  "a": "The other yacht's damage, not your own",
+  "o": [
+   "Both yachts' damage — it was an accident",
+   "Your damage only — she has her own policy",
+   "Nothing — a dragging anchor is negligence"
+  ],
+  "why": "Third-party cover pays your liability to others; damage to your own yacht needs hull cover.",
+  "ref": "Insurance — hull and third party",
+  "fig": {
+   "type": "card",
+   "title": "Your policy",
+   "lines": [
+    "Third-party liability only",
+    "Limit: €3 million",
+    "No hull cover"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are filling in the proposal form to insure your new yacht. How do you answer this question?",
+  "a": "Declare it — a hidden material fact can void the policy",
+  "o": [
+   "Leave it out — it was a different yacht",
+   "Leave it out — the claim is paid and closed",
+   "Declare it only if the insurer asks again"
+  ],
+  "why": "Insurance rests on full disclosure; a past claim is material, and hiding it lets the insurer refuse to pay.",
+  "ref": "Insurance — duty to disclose",
+  "fig": {
+   "type": "card",
+   "title": "Proposal form",
+   "lines": [
+    "'Any losses or claims in the last 5 years?'",
+    "Your old yacht grounded 3 years ago",
+    "Insurer paid €18,000; claim closed"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "The owner's friends offer to pay him €1,500 each for a week's cruise on his yacht, with you as skipper. What does this do to his insurance?",
+  "a": "No cover for the trip — paying guests are commercial use",
+  "o": [
+   "Nothing — they are his friends, not customers",
+   "Nothing, as long as you hold Offshore",
+   "Only the third-party cover is lost; hull stays"
+  ],
+  "why": "A private-pleasure policy excludes hire; paying guests make it a charter, and a claim during it would be refused.",
+  "ref": "Insurance — commercial use",
+  "fig": {
+   "type": "card",
+   "title": "Owner's policy",
+   "lines": [
+    "Use: private pleasure only",
+    "No charter or hire",
+    "Hull and third party"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "A charter company offers you a paid job skippering guests on its 18 m yacht for the season. You hold the IYT Yachtmaster Offshore. Can you take it on that certificate?",
+  "a": "No — the IYT certificate is for recreational use only",
+  "o": [
+   "Yes — Offshore covers any yacht up to 24 m",
+   "Yes, if every trip stays within 150 M of land",
+   "Yes, if the guests sign a waiver before sailing"
+  ],
+  "why": "The IYT Yachtmaster is a recreational certificate; paid skippering needs the flag state's commercial qualification.",
+  "ref": "Recreational vs commercial use",
+  "fig": {
+   "type": "card",
+   "title": "The flag state's rules say",
+   "lines": [
+    "Skippers paid to carry guests need",
+    "a commercial endorsement, and",
+    "the yacht a commercial certificate"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You leave tomorrow for a foreign port with the crew below. What papers do you prepare for the crew?",
+  "a": "A crew list with passports, and the deckhand's agreement",
+  "o": [
+   "Only your own passport and certificate",
+   "A crew list only — agreements are for merchant ships",
+   "The crew's sailing certificates and phone numbers"
+  ],
+  "why": "Arrival clearance goes by a crew list and passports; under these rules the paid hand also needs a signed agreement.",
+  "ref": "Crew lists & agreements",
+  "fig": {
+   "type": "card",
+   "title": "Departure tomorrow",
+   "lines": [
+    "Crew 5, three nationalities",
+    "One is a paid deckhand",
+    "Flag state's rules: paid crew sign",
+    "a crew agreement before sailing"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You are arriving from outside the customs area after a 140 M crossing. What do you do about the Q flag and going ashore?",
+  "a": "Fly Q on arrival; only the skipper goes ashore to report",
+  "o": [
+   "Fly Q only if somebody aboard is ill",
+   "Fly Q as you leave your port of departure",
+   "All may go ashore; take Q down at the berth"
+  ],
+  "why": "Q asks for free pratique: it flies from arrival until you are cleared, and only the skipper lands to report.",
+  "ref": "Customs & immigration",
+  "fig": {
+   "type": "card",
+   "title": "Pilot book: arrival",
+   "lines": [
+    "Arriving from outside the customs area:",
+    "report to customs and immigration",
+    "Customs office on the fuel quay"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "You live in the EU and are buying this yacht to keep in the EU. Under the rules below, what must happen?",
+  "a": "Import her and pay the VAT: temporary admission ends with you",
+  "o": [
+   "Nothing — admission runs on until the 18 months end",
+   "Sail out of the EU for a day to start a new 18 months",
+   "Re-flag her in the EU, which settles the VAT"
+  ],
+  "why": "Temporary admission needs a non-EU owner; an EU resident must import her and pay VAT to keep her in the EU.",
+  "ref": "VAT — paid status",
+  "fig": {
+   "type": "card",
+   "title": "The customs rules say",
+   "lines": [
+    "Temporary admission (no VAT): only for",
+    "a non-EU owner, non-EU flag, up to 18 months",
+    "Yacht: non-EU flag, VAT never paid",
+    "Buyer: you, resident in the EU"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "A non-EU crew member rejoins you on 1 July for the rest of the season inside the Schengen area. Until what date may she stay?",
+  "a": "28 Sep — the Jan–Mar days drop out as she goes",
+  "o": [
+   "15 Jul — 90 − 75 leaves her only 15 days",
+   "8 Jul — 180 days from her first entry",
+   "29 Sep — 90 days after the day she arrives"
+  ],
+  "why": "As the 180-day window moves on, old days leave it: her count peaks at 83, so she gets 90 days, 1 Jul–28 Sep.",
+  "ref": "Crew — Schengen 90/180",
+  "fig": {
+   "type": "card",
+   "title": "Visa rule for her (given)",
+   "lines": [
+    "90 days in any 180-day period",
+    "Entry and exit days both count",
+    "Earlier stay: 10 Jan – 25 Mar 2027",
+    "Back in from 1 Jul 2027"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You signed Lloyd's Open Form with a tug for your disabled yacht. The tow parts in the storm, and she drives ashore and is lost. What is the salvor owed?",
+  "a": "Nothing — no useful result, no salvage reward",
+  "o": [
+   "His costs for the nine hours he towed",
+   "The fixed fee written into the form",
+   "A share of the yacht's insured value"
+  ],
+  "why": "Under 'no cure, no pay' a reward needs a useful result; the yacht was lost, so nothing is owed.",
+  "ref": "Salvage — Lloyd's Open Form",
+  "fig": {
+   "type": "card",
+   "title": "Salvage",
+   "lines": [
+    "LOF signed: 'no cure, no pay'",
+    "Tow parted after 9 h",
+    "Yacht lost on the rocks"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Your engine has failed and the mainsail is torn, but you are in no danger. A commercial tug offers help on channel 16. What do you agree?",
+  "a": "A towage contract at a price agreed before the line comes over",
+  "o": [
+   "Sign LOF — it costs nothing unless he saves you",
+   "Take his line now and settle the bill ashore",
+   "Refuse, and ask the coastguard for a lifeboat"
+  ],
+  "why": "With no danger, agree a towage price first; taking a line with nothing agreed invites a salvage claim on her value.",
+  "ref": "Salvage vs towage",
+  "fig": {
+   "type": "card",
+   "title": "No danger",
+   "lines": [
+    "Engine dead, mainsail torn",
+    "Wind F3, settled for 48 h",
+    "Port 50 M off; drifting slowly seaward",
+    "Tug offers a tow on channel 16"
+   ],
+   "tag": "1100"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At night your yacht is dragging towards rocks with the engine dead, and a salvage tug offers LOF. The owner is ashore and cannot be reached. Can you sign?",
+  "a": "Yes — the master may sign a salvage contract for the owner",
+  "o": [
+   "No — only the owner can bind the yacht to a contract",
+   "Only once the insurer has agreed by phone",
+   "Only with the coastguard as a witness on 16"
+  ],
+  "why": "The 1989 Salvage Convention gives the master authority to make salvage contracts on the owner's behalf.",
+  "ref": "Salvage — master's authority",
+  "fig": {
+   "type": "card",
+   "title": "Dragging",
+   "lines": [
+    "Engine dead, anchor dragging",
+    "Rocks 4 cables to leeward",
+    "Owner ashore, phone off",
+    "Tug standing by, offers LOF"
+   ],
+   "tag": "0130"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "After a fuel-filter change there is diesel in the engine bilge with a sheen on it. What do you do with it?",
+  "a": "Pads and a container; dispose of it ashore",
+  "o": [
+   "Pump it out once you are 12 M offshore",
+   "Add detergent so no sheen shows, then pump",
+   "Pump it out slowly while under way"
+  ],
+  "why": "MARPOL Annex I bans oily discharges; a yacht keeps oily bilge water for shore disposal. Detergent only hides it.",
+  "ref": "MARPOL Annex I",
+  "fig": {
+   "type": "card",
+   "title": "Engine bilge",
+   "lines": [
+    "About 10 L of oily water",
+    "Diesel sheen on the surface",
+    "Absorbent pads aboard"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At 1500 your holding tank is full. Under the rules below, when may you empty it?",
+  "a": "At 1800, more than 12 M off and under way",
+  "o": [
+   "Now — 9 M off is well clear of the coast",
+   "Now, if you pump it out slowly enough",
+   "Never — a holding tank empties only ashore"
+  ],
+  "why": "Both conditions must hold — beyond 12 M from land and under way at 4 kn or more — and only at 1800 do they.",
+  "ref": "MARPOL Annex IV",
+  "fig": {
+   "type": "card",
+   "title": "The flag's sewage rules",
+   "lines": [
+    "Untreated, from the tank: over 12 M off,",
+    "under way at 4 kn or more, moderate rate",
+    "1500: at anchor, 9 M off the coast",
+    "1800: under way, 30 M off at 8 kn"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are 60 M offshore in the Mediterranean, under way, with these bags of rubbish. What may go over the side?",
+  "a": "The food waste only; keep the rest for shore",
+  "o": [
+   "Food waste and cardboard, as both will rot",
+   "Glass and tins too, since they sink",
+   "Nothing at all — the Med takes no waste"
+  ],
+  "why": "MARPOL Annex V: in a special area like the Med only food waste may go, 12 M or more from land and under way.",
+  "ref": "MARPOL Annex V",
+  "fig": {
+   "type": "card",
+   "title": "Rubbish aboard",
+   "lines": [
+    "Food waste",
+    "Plastic bottles and wrappers",
+    "Glass jars and tins",
+    "Cardboard packaging"
+   ],
+   "tag": "Special area"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Reading back the night's log, you find that the 0300 entry gives the wrong course. How do you correct it?",
+  "a": "One line through it, the right course beside, initialled",
+  "o": [
+   "Tear out the page and copy it out again fairly",
+   "Correction fluid over it and the right course on top",
+   "Rewrite the night's entries neatly in the morning"
+  ],
+  "why": "The log is evidence in a claim or an inquiry; a correction must leave the original readable and show who made it.",
+  "ref": "The logbook",
+  "fig": {
+   "type": "card",
+   "title": "Log, 0300",
+   "lines": [
+    "Course 245°T — should be 254°T",
+    "Log 412.6, baro 1012",
+    "Entered by the watch leader"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You enter a foreign harbour whose pilot book lists these by-laws. Which rules apply to you inside the port limits?",
+  "a": "The port's by-laws as well as the COLREGs",
+  "o": [
+   "Only the COLREGs — by-laws bind merchant ships",
+   "Only your flag state's rules, as a foreign yacht",
+   "Only the by-laws — the COLREGs stop outside"
+  ],
+  "why": "Local rules apply alongside the COLREGs to every vessel in the port, foreign yachts included (Rule 1(b)).",
+  "ref": "Harbour regulations",
+  "fig": {
+   "type": "card",
+   "title": "Harbour by-laws",
+   "lines": [
+    "Speed limit 5 kn inside the breakwater",
+    "Call port control on VHF 12 before entry",
+    "No anchoring in the approach channel",
+    "Dues payable at the office on arrival"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "The owner was skippering his own yacht when she did the damage below, and the claims exceed the limit for a yacht of her size. Can he limit his liability?",
+  "a": "No — loss from his own reckless act cannot be limited",
+  "o": [
+   "Yes — any owner may limit, whatever the cause",
+   "Yes, but only for the damage to the yachts",
+   "No — limitation is only for commercial ships"
+  ],
+  "why": "Under the LLMC the right to limit is lost if the loss came from the owner's own act, done recklessly or with intent.",
+  "ref": "Limitation of liability",
+  "fig": {
+   "type": "card",
+   "title": "The flag state applies the LLMC 1976",
+   "lines": [
+    "Owner at the helm after drinking",
+    "Entered harbour at night at 12 kn",
+    "Quay and two moored yachts damaged",
+    "Claims above the tonnage limit"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "In daylight your deckhand slips off the side deck of your twin-screw 24 m motor yacht at 12 kn. Everyone saw him go and he is in sight astern. Which turn do you make?",
+  "a": "Anderson turn: hard to starboard, round about 250°, then stop",
+  "o": [
+   "Williamson turn: back onto the reciprocal, search the wake",
+   "Scharnow turn: at 240° off, hard over the other way",
+   "Hard to port first, to swing the stern away from him"
+  ],
+  "why": "Immediate action, casualty in sight, a handy twin-screw yacht: the Anderson turn is quickest; helm to his side swings the props clear.",
+  "ref": "MOB — Anderson turn",
+  "fig": {
+   "type": "card",
+   "title": "Man overboard",
+   "lines": [
+    "Fell from the starboard side deck",
+    "Seen at once, in sight astern",
+    "Twin screws, tight turning circle",
+    "Wind W 3, sea slight"
+   ],
+   "tag": "Now"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At 0420 a guest tells you she saw a crew member go over the side about five minutes ago. No light or beacon went with him. You want to get back into your own wake in the fewest miles. Which turn?",
+  "a": "Scharnow turn — back into your wake in the least distance",
+  "o": [
+   "Anderson turn — the quickest when you act at once",
+   "Williamson turn — the one that covers fewest miles",
+   "No turn; press MOB now and the waypoint marks him"
+  ],
+  "why": "A late report with the time known: the Scharnow regains your wake in less distance than the Williamson; the Anderson is for immediate action.",
+  "ref": "MOB — Scharnow turn",
+  "fig": {
+   "type": "card",
+   "title": "Late report",
+   "lines": [
+    "Seen going over about 5 min ago",
+    "Reported to you at 0420",
+    "No light or beacon on him",
+    "Heading 310°T, 11 kn, night"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "You start a Scharnow turn to starboard from the heading below. At what heading do you put the wheel hard over the other way, and on what heading do you steady?",
+  "a": "Reverse at 010°T; steady on 310°T",
+  "o": [
+   "Reverse at 190°T; steady on 310°T",
+   "Reverse at 250°T; steady on 310°T",
+   "Reverse at 010°T; steady on 130°T"
+  ],
+  "why": "Scharnow: hard over, reverse 240° off the start — 130° + 240° = 010°T — and steady on the reciprocal, 310°T, back in the wake.",
+  "ref": "MOB — Scharnow turn",
+  "fig": {
+   "type": "card",
+   "title": "Scharnow turn",
+   "lines": [
+    "Heading 130°T at the start",
+    "Wheel put hard to starboard",
+    "Night, MOB reported late"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your 24 m motor yacht, high-sided with a big flybridge, is coming back to a man in the water in a fresh breeze. How do you make the final approach?",
+  "a": "Stop upwind of him, beam to the wind, and drift down onto him",
+  "o": [
+   "Come up from downwind, bow to the wind, as in a small yacht",
+   "Circle him at speed to flatten the sea around him",
+   "Back down on him stern-first so the platform reaches him"
+  ],
+  "why": "A high-sided yacht drifts faster than a swimmer: stopped to windward she makes a lee and drifts onto him, props clear of him.",
+  "ref": "MOB — recovery by a motor yacht",
+  "fig": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -35,
+    "dist": 80,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 270,
+   "note": "Freeboard 2 m, high windage"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your fixed system has fired by itself in the engine room, and both engines and the generator stopped at the same moment. The mate wants to restart the engines at once. What do you say?",
+  "a": "No — the shutdown is meant; wait the hold time, then check",
+  "o": [
+   "Yes — override the relay; the shutdown is a fault",
+   "Yes — but only the engine on the side with no fire",
+   "Yes — engines running will help to clear the gas"
+  ],
+  "why": "The system stops engines and fans so they cannot draw the agent out; restart only after the hold time and a check.",
+  "ref": "Fire — fixed systems",
+  "fig": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Port",
+     "STOP",
+     true
+    ],
+    [
+     "Stbd",
+     "STOP",
+     true
+    ],
+    [
+     "Fire sys",
+     "FIRED",
+     true
+    ]
+   ],
+   "lines": [
+    "Shutdown relay tripped at discharge",
+    "Open sea, 100 M off, drifting"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Under sail in your 23 m ketch, smoke pours from the engine room under the aft cockpit. You have stopped the engine and shut the fuel. How do you put her to the wind while you fight it?",
+  "a": "Bow to wind and slow, so the smoke blows aft, away from you",
+  "o": [
+   "Run off downwind, so the apparent wind is at its least",
+   "Keep reaching fast on this tack to make port sooner",
+   "Heave to with the fire on the windward side of you"
+  ],
+  "why": "Keep the fire downwind of the crew: with the fire aft, bring her head to wind and slow down so the draught does not fan it.",
+  "ref": "Fire — under sail",
+  "fig": {
+   "type": "card",
+   "title": "Engine-room fire, aft",
+   "lines": [
+    "Engine room under the aft cockpit",
+    "Crew mustering forward",
+    "Wind NW 5, reaching at 8 kn",
+    "Fire port in the engine-room door"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "On your 15 m catamaran the port engine-compartment alarm sounds and smoke leaks from round its hatch. How do you deal with it?",
+  "a": "Stop port engine and fuel, use the fire port, steer on the other",
+  "o": [
+   "Stop both engines and lift the hatch to find the fire",
+   "Keep the port engine running so its blower clears smoke",
+   "Lift the hatch and empty an extinguisher straight in"
+  ],
+  "why": "Each hull's engine has its own space: keep the hatch shut, attack through the port, and the other engine keeps you manoeuvring.",
+  "ref": "Fire — catamaran",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran, port hull",
+   "lines": [
+    "Engine under the aft port cabin",
+    "Fire port in the compartment lid",
+    "Starboard engine running normally",
+    "Liferaft on the stern crossbeam"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your 14 m catamaran hits a floating container 100 M offshore. The port bow fills quickly up to the crash bulkhead and she trims down by the head on that side. What do you do?",
+  "a": "Stay aboard, slow down, move weight aft to starboard, watch the bulkhead",
+  "o": [
+   "Take to the raft — a holed multihull goes down fast",
+   "Pump the bow dry through the hatch in the bulkhead",
+   "Move the crew forward to port to settle her evenly"
+  ],
+  "why": "The crash bulkhead keeps the rest dry and the other hull floats her: stay aboard, ease the load, take weight off the damaged bow.",
+  "ref": "Flooding — catamaran",
+  "fig": {
+   "type": "card",
+   "title": "Damage, port bow",
+   "lines": [
+    "Port bow compartment flooded",
+    "Crash bulkhead holding, a slow weep",
+    "Starboard hull dry",
+    "Wind NE 4, sea 1.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Two hours after you bounced off a rock ledge, water is seeping round the keel bolts of your 20 m sloop and the floor around them flexes as she pitches. You are 60 M from port, beating in F5. What do you do?",
+  "a": "Sails down, lifejackets on and raft ready, motor gently to port",
+  "o": [
+   "Keep beating hard to make port before dark",
+   "Tighten the keel nuts hard and sail on as before",
+   "Bear away and run under full sail to ease her"
+  ],
+  "why": "A working keel can drop off and she then capsizes at once: take the sail load off it, prepare to abandon, motor gently.",
+  "ref": "Flooding — keel damage",
+  "fig": {
+   "type": "card",
+   "title": "Keel area",
+   "lines": [
+    "Water weeping round 3 keel bolts",
+    "Keel floor flexing as she pitches",
+    "60 M to port, beating in F5",
+    "Engine and fuel fine"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At 2200 the guests' electric surfboard battery, left charging on the aft deck, starts to hiss and smoke. What do you do?",
+  "a": "Over the side if it can be done safely; if not, flood it with water",
+  "o": [
+   "A CO2 extinguisher — it starves the fire of air",
+   "Cover it with a fire blanket and leave it to burn out",
+   "One powder extinguisher, then carry it below to cool"
+  ],
+  "why": "A lithium pack in thermal runaway feeds itself, so smothering fails: get it overboard or cool it with plenty of water, upwind of the smoke.",
+  "ref": "Fire — lithium batteries",
+  "fig": {
+   "type": "card",
+   "title": "Aft deck",
+   "lines": [
+    "Lithium-ion pack, 15 kg, hissing",
+    "White smoke, no flame yet",
+    "Unplugged by the deckhand",
+    "Deck hose rigged; CO2 and powder near"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "On your 24 m motor yacht the engine room is flooding through a split in the plating behind the engine that nobody can reach, faster than the pumps clear it. What do you do first?",
+  "a": "Get the engineer out, then shut the watertight door",
+  "o": [
+   "Leave the door open so the mess pumps help as well",
+   "Shut the door at once with the engineer still inside",
+   "Send more crew in to hunt for the leak"
+  ],
+  "why": "A watertight door stops the flood spreading to the next compartment: count everyone out, then close it and keep it shut.",
+  "ref": "Flooding — watertight doors",
+  "fig": {
+   "type": "card",
+   "title": "Engine room",
+   "lines": [
+    "Split in the plating, out of reach",
+    "Pumps losing, water rising fast",
+    "Watertight door to crew mess open",
+    "Engineer still inside"
+   ],
+   "tag": "Flooding"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Your yacht is holed 120 M offshore. Her stability notes say she is lost once a further 6 t of water is aboard. How long have you got?",
+  "a": "About 15 min",
+  "o": [
+   "About 9 min",
+   "About 24 min",
+   "About 7 min"
+  ],
+  "why": "Net inflow 650 − 250 = 400 L/min; 6,000 ÷ 400 = 15 min: send the distress alert and ready the rafts now.",
+  "ref": "Abandoning ship — when",
+  "fig": {
+   "type": "card",
+   "title": "Flooding",
+   "lines": [
+    "Inflow estimated 650 L/min",
+    "All pumps together: 250 L/min",
+    "Stability notes: lost at +6 t (6,000 L)",
+    "8 aboard, two 6-person rafts"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "At 1310, 40 min after high water, your 20 m sloop runs onto a sandbank on the falling tide. You look at the tide table. When is your best chance of getting her off?",
+  "a": "Now, at once — heel, kedge and engine before it falls further",
+  "o": [
+   "Tonight at 0055 — the next high water will lift her off",
+   "In about 7 days at neaps, when the streams are weakest",
+   "Tomorrow at midday, when the tide is back up to 5.4 m"
+  ],
+  "why": "At the top of springs each following high water is lower — 5.2 m tonight against the 5.3 m she needs — so act before the tide drops.",
+  "ref": "Grounding — refloating",
+  "fig": {
+   "type": "card",
+   "title": "Tide table",
+   "lines": [
+    "Today HW 1230: 5.4 m — springs",
+    "Tonight HW 0055: 5.2 m",
+    "HWs fall to 3.9 m at neaps in 7 days",
+    "She floats with 5.3 m of tide here"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your 24 m motor yacht is sinking and the raft is inflated alongside the stern. Your crew are mustered on the boat deck. Where do they board it from?",
+  "a": "The bathing platform, stepping in dry one at a time",
+  "o": [
+   "The boat deck — jump straight down onto the canopy",
+   "The side deck — jump into the sea beside the raft",
+   "The boat deck, sliding down the painter into it"
+  ],
+  "why": "Board dry from the lowest point: a jump into the raft injures those inside, and a jump into the sea brings cold shock.",
+  "ref": "Abandoning ship — boarding the raft",
+  "fig": {
+   "type": "card",
+   "title": "Heights above the water",
+   "lines": [
+    "Boat deck: 4.2 m",
+    "Side deck: 1.9 m",
+    "Bathing platform: 0.4 m, clear of fire",
+    "Raft on its painter at the stern"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You must abandon your 22 m yacht 130 M offshore with nine aboard. She carries two 8-person rafts. How do you use them?",
+  "a": "Launch both, share out people and kit, tie them together",
+  "o": [
+   "Launch one and put all nine in it for warmth",
+   "Launch both and let them drift apart to widen the search",
+   "Launch one and keep the other aboard as a spare"
+  ],
+  "why": "One raft would be over its rating; two tied together share the gear, the warmth and the watch, and make one bigger target.",
+  "ref": "Abandoning ship — two rafts",
+  "fig": {
+   "type": "card",
+   "title": "Abandoning",
+   "lines": [
+    "9 aboard, one injured",
+    "Two 8-person rafts, one each side",
+    "Grab bag, EPIRB, SART, handheld VHF",
+    "Sea 3 m, wind SW 6"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Your yacht went down in seconds and three of you are in the water in lifejackets, with no raft. The water is 12°C and the EPIRB is on. How do you wait?",
+  "a": "Huddle together, chests touching, legs drawn up, and keep still",
+  "o": [
+   "Swim about to keep warm until the helicopter comes",
+   "Spread out in a line to be seen from further away",
+   "Take turns treading water to keep the blood moving"
+  ],
+  "why": "A huddle keeps the heat of chest and groin; swimming or treading water pumps cold water past the skin and cools you faster.",
+  "ref": "Survival in the water — huddle",
+  "fig": {
+   "type": "card",
+   "title": "In the water",
+   "lines": [
+    "Three crew, lifejackets on, no raft",
+    "Water 12°C, sea moderate",
+    "EPIRB floating, tied to one of you",
+    "Rescue expected in about 2 h"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You went into the water two minutes ago and your breathing has just settled. The raft is held on its painter to floating wreckage 50 m away. What do you do?",
+  "a": "Swim for it now, while your arms still work",
+  "o": [
+   "Hold still in the HELP position and wait",
+   "Wait some more minutes for the cold shock to pass",
+   "Take off the lifejacket so you can swim faster"
+  ],
+  "why": "1-10-1: a minute of cold shock, about ten of useful movement, an hour before hypothermia: use those ten minutes to save yourself now.",
+  "ref": "Survival in the water — 1-10-1",
+  "fig": {
+   "type": "card",
+   "title": "In the water",
+   "lines": [
+    "In for 2 min; gasping has eased",
+    "Raft on its painter to wreckage, 50 m",
+    "Water 10°C, lifejacket on",
+    "Nobody else can reach it"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You have gone over the side alone, in a lifejacket, and the yacht is turning back for you — it may take 20 minutes. How do you hold yourself while you wait?",
+  "a": "Knees drawn up, arms crossed over the chest, still: the HELP",
+  "o": [
+   "Swimming slowly after the yacht to close the gap",
+   "Lying flat on your back, arms and legs spread out",
+   "Upright and treading water to keep your head higher"
+  ],
+  "why": "The HELP posture guards the armpits, chest and groin, where most heat is lost; every movement spends heat and strength.",
+  "ref": "Survival in the water — HELP",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The helicopter pilot asks you to hold a steady speed with the wind 30° on your port bow while he winches. What heading do you steer?",
+  "a": "070°T",
+  "o": [
+   "010°T",
+   "040°T",
+   "250°T"
+  ],
+  "why": "Port bow means the wind comes from 30° to port of the heading: 040° + 30° = 070°T; 010°T would put it on the starboard bow.",
+  "ref": "Helicopter rescue",
+  "fig": {
+   "type": "card",
+   "title": "Winching",
+   "lines": [
+    "Wind from 040°T, 20 kn",
+    "Pilot: wind 30° on the port bow",
+    "Steady speed 8 kn, hold the heading"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Midway across, a crew member who takes insulin turns pale, sweaty, shaky and muddled before lunch. He can still swallow. What do you do first?",
+  "a": "Sugar now — a sweet drink or glucose — then food and advice",
+  "o": [
+   "His insulin dose now, to bring his sugar back down",
+   "Nothing by mouth; lay him down and let him sleep",
+   "Wait an hour to see whether it passes by itself"
+  ],
+  "why": "Low blood sugar: sugar by mouth while he can swallow brings him round fast; more insulin would make it far worse.",
+  "ref": "Medical — diabetic emergency",
+  "fig": {
+   "type": "card",
+   "title": "Crew member",
+   "lines": [
+    "Insulin-treated diabetic",
+    "Missed breakfast, seasick in the night",
+    "Pale, sweating, shaky, confused",
+    "Conscious, can swallow"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Dismasted and cut free 120 M from the nearest port, you check the fuel. Keeping the reserve, can you motor all the way in?",
+  "a": "No — about 96 M; rig a jury sail as well",
+  "o": [
+   "Yes — exactly 120 M, just enough to arrive",
+   "Yes — about 144 M, with some to spare",
+   "No — about 54 M; call for a tow at once"
+  ],
+  "why": "Usable 90 × 0.8 = 72 L; 72 ÷ 4.5 = 16 h; 16 h × 6 kn = 96 M — short of 120 M, so a jury rig must make up the rest.",
+  "ref": "Dismasting — fuel and jury rig",
+  "fig": {
+   "type": "card",
+   "title": "Fuel",
+   "lines": [
+    "Fuel left: 90 L",
+    "Burn at 6 kn: 4.5 L/h",
+    "Keep 20 % in reserve",
+    "Port 120 M off, no current"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "On your 20 m yacht the wheel turns but the rudder no longer answers: the helm pump has failed. You ship the emergency tiller on the stock, but it will hardly move. What have you missed?",
+  "a": "Opening the bypass valve on the ram so the oil can pass",
+  "o": [
+   "Bleeding the air out of the helm pump first",
+   "Topping up the oil in the helm pump reservoir",
+   "Lashing the wheel amidships to hold the rudder"
+  ],
+  "why": "Oil trapped in the ram locks the rudder; the bypass (crossover) valve lets it flow from side to side so the tiller can work.",
+  "ref": "Steering failure — hydraulic steering",
+  "fig": {
+   "type": "card",
+   "title": "Steering",
+   "lines": [
+    "Hydraulic ram on the rudder quadrant",
+    "Helm pump failed, no leak found",
+    "Emergency tiller fitted on the stock",
+    "Tiller will hardly move"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "At 0100 in F6 a guest coming on watch refuses to clip on, saying he has sailed for thirty years. You are the skipper. What do you do?",
+  "a": "Insist: he clips on or he stays below — your order stands",
+  "o": [
+   "Let him decide — he is an adult and an experienced sailor",
+   "Ask the owner aboard to settle it in the morning",
+   "Note his refusal in the log and let him go up"
+  ],
+  "why": "The skipper answers for the safety of everyone aboard, and his safety orders bind guests and crew alike.",
+  "ref": "The skipper's responsibility",
+  "fig": null
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your yacht is sinking 120 M offshore. A ship shows on AIS 8 M away, and you have a VHF DSC set and a satellite phone with the MRCC's number. What do you do first?",
+  "a": "VHF DSC alert and MAYDAY on 16, then phone the MRCC",
+  "o": [
+   "Phone the MRCC first: it can task the ship itself",
+   "Call the ship on 16 by name, without a MAYDAY",
+   "DSC individual call to the ship, then talk on 72"
+  ],
+  "why": "A DSC alert and a MAYDAY reach every ship in range at once; a phone call reaches only the MRCC, and the ship 8 M off hears nothing.",
+  "ref": "GMDSS — distress to ships nearby",
+  "fig": {
+   "type": "card",
+   "title": "Your kit",
+   "lines": [
+    "VHF DSC set, GPS connected",
+    "Satellite phone, MRCC number in it",
+    "Ship on AIS 8 M away, closing",
+    "No coast station in VHF range"
+   ],
+   "tag": "Sinking"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "At 1300 you are calling a distant coast station on your HF set, and on 4 MHz it is faint and broken. What do you try next?",
+  "a": "A higher band, such as 8 or 12 MHz",
+  "o": [
+   "A lower band, such as 2 MHz on MF",
+   "4 MHz again at full power until it clears",
+   "VHF channel 16, which carries further by day"
+  ],
+  "why": "By day the sky wave carries the higher HF bands further: over a long distance in daylight move up a band, at night move down.",
+  "ref": "GMDSS — HF bands",
+  "fig": {
+   "type": "card",
+   "title": "HF contact",
+   "lines": [
+    "Coast station about 700 M away",
+    "Midday, summer",
+    "4 MHz: faint and broken"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "At 0300 you must send an HF DSC urgency call to the coast station below for medical advice. Following its guide, on which frequency do you call?",
+  "a": "6312 kHz",
+  "o": [
+   "8414.5 kHz",
+   "12577 kHz",
+   "2187.5 kHz"
+  ],
+  "why": "0300 is night: 650 M falls in the 6 MHz band (500–1,000 M), so 6312 kHz; the day table would give 8 MHz.",
+  "ref": "GMDSS — HF band choice",
+  "fig": {
+   "type": "card",
+   "title": "Coast station guide (HF DSC)",
+   "lines": [
+    "Day: 4 MHz to 300 M, 8 to 800 M, 12 beyond",
+    "Night: 4 MHz to 500 M, 6 to 1,000 M, 8 beyond",
+    "DSC: 4207.5 / 6312 / 8414.5 / 12577 kHz",
+    "You are 650 M from the station"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "In the raft, your grab bag holds an AIS-SART, not a radar SART. A ship is closing at night. Where will her watchkeeper see you?",
+  "a": "As a SART target with your position on her AIS display",
+  "o": [
+   "As a line of 12 dots on her radar screen",
+   "Only on the MRCC's screen, through the satellites",
+   "Nowhere until she comes within about a mile"
+  ],
+  "why": "An AIS-SART sends its GPS position as an AIS message: it shows on AIS displays and plotters, not on radar like a radar SART.",
+  "ref": "GMDSS — AIS-SART",
+  "fig": {
+   "type": "card",
+   "title": "Grab bag",
+   "lines": [
+    "AIS-SART switched on, up on its pole",
+    "EPIRB transmitting",
+    "Ship closing, about 4 M off",
+    "Night, sea 2 m"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are standing by a yacht in distress 3 M away. On 16 two other yachts keep chatting over her calls, and no coast station is in range. What may you say?",
+  "a": "SEELONCE DISTRESS, then your yacht's name",
+  "o": [
+   "SEELONCE MAYDAY, then your yacht's name",
+   "SEELONCE FEENEE, then your yacht's name",
+   "PRUDONCE, then your yacht's name"
+  ],
+  "why": "Only the casualty or the station controlling the traffic says SEELONCE MAYDAY; another station near her imposes silence with SEELONCE DISTRESS.",
+  "ref": "GMDSS — radio silence",
+  "fig": {
+   "type": "card",
+   "title": "Channel 16",
+   "lines": [
+    "MAYDAY from a yacht 3 M off, ongoing",
+    "Two yachts chatting over her",
+    "No coast station in range",
+    "You are not controlling the traffic"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Alongside after the passage, you notice the EPIRB in its bracket flashing: it has been transmitting for an hour. Nothing is wrong. What do you do?",
+  "a": "Switch it off and tell the nearest MRCC it was a false alert",
+  "o": [
+   "Switch it off and say nothing — no harm was done",
+   "Leave it on until the MRCC calls you about it",
+   "Take the battery out so it cannot happen again"
+  ],
+  "why": "A 406 MHz alert has started a search somewhere; switch off and tell the MRCC at once so that they can stand it down.",
+  "ref": "GMDSS — EPIRB false alert",
+  "fig": {
+   "type": "card",
+   "title": "EPIRB",
+   "lines": [
+    "Strobe flashing in its bracket",
+    "Bracket wet, switch knocked on",
+    "Transmitting for about an hour"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At 0400, 140 M offshore, your MF DSC set receives a distress alert from a vessel 380 M away. A minute later a coast station acknowledges it by DSC. What do you do?",
+  "a": "Listen on 2182 kHz and log it; help only if asked",
+  "o": [
+   "Send a DSC relay to all ships to spread the word",
+   "Acknowledge it by DSC so she knows she was heard",
+   "Turn and head for her at your best speed now"
+  ],
+  "why": "Once a coast station has acknowledged, the alert is in hand: watch the voice frequency, log it, and stand by to help if asked.",
+  "ref": "GMDSS — distress alert received",
+  "fig": {
+   "type": "card",
+   "title": "MF DSC alert",
+   "lines": [
+    "Distress, vessel 380 M from you",
+    "Coast station's DSC acknowledgement",
+    "received one minute later"
+   ],
+   "tag": "0400"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are 2 h into a 40 M run towards a liferaft when the MRCC calls you with the message below. What do you do?",
+  "a": "Resume your passage and log the release with the time",
+  "o": [
+   "Carry on to the raft — only her crew can release you",
+   "Carry on until you see the ship take them aboard",
+   "Resume your passage; there is nothing to log"
+  ],
+  "why": "SOLAS V/33: once told that other ships have been requisitioned and are complying, you are released; record it in the log.",
+  "ref": "SOLAS V/33 — release",
+  "fig": {
+   "type": "card",
+   "title": "MRCC on channel 16",
+   "lines": [
+    "Ship 'Nordic Star' 4 M from the raft",
+    "She has been tasked and is proceeding",
+    "You are released from the search",
+    "Thank you for your help"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "The MRCC asks ships near a sinking fishing boat 70 M away to go to her. By your figures you can reach her, but then no port with the fuel left. What does SOLAS require of you?",
+  "a": "Tell the MRCC you cannot go, and log the reason",
+  "o": [
+   "Go anyway — the duty to assist comes before your safety",
+   "Say nothing on the radio; others will answer the call",
+   "Log the call, but there is no need to answer the MRCC"
+  ],
+  "why": "V/33.1: a master who is unable to assist must enter the reason in the log and inform the SAR service — never just stay silent.",
+  "ref": "SOLAS V/33 — unable to assist",
+  "fig": {
+   "type": "card",
+   "title": "Your position",
+   "lines": [
+    "Casualty 70 M away, upwind",
+    "Your fuel: enough for 85 M",
+    "Nearest fuel after her: 110 M on",
+    "Gale forecast for tomorrow"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At 0200, 130 M offshore, the wind rises to a steady force 10. The last forecast, two hours ago, gave force 6 to 7 with no gale warning. What does SOLAS V/31 ask of you?",
+  "a": "Report it to the coast station and to ships nearby",
+  "o": [
+   "Nothing — reports are for ice and derelicts only",
+   "Report it only if the yacht is damaged by it",
+   "Record it in your log; report it at your next port"
+  ],
+  "why": "V/31: a master who meets winds of force 10 or more with no storm warning received must pass it on to ships near and the coast.",
+  "ref": "SOLAS V/31",
+  "fig": {
+   "type": "card",
+   "title": "Log, 0200",
+   "lines": [
+    "Wind W 10, mean 52 kn",
+    "Baro 978, falling fast",
+    "0000 forecast: W 6 to 7, no warnings"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At night you collide with a sailing yacht. Nobody is hurt and your own damage is above the waterline. Before you go on, what must you do for her?",
+  "a": "Stand by until she needs no help, and give your yacht's details",
+  "o": [
+   "Nothing more — nobody was hurt in the collision",
+   "Exchange insurers' names, then continue at once",
+   "Stand by only if she was the stand-on vessel"
+  ],
+  "why": "After a collision the master must help the other vessel and her people, so far as he safely can, and give his ship's name and port of registry.",
+  "ref": "Collision — duties",
+  "fig": {
+   "type": "card",
+   "title": "After the collision",
+   "lines": [
+    "Her starboard quarter stove in",
+    "Crew of four, no injuries reported",
+    "Your bow damaged above the waterline",
+    "Wind SW 5, 70 M offshore"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You are moving your yacht from one flag to another. Before the new registry will enter her, what does it want from the old one?",
+  "a": "A deletion certificate: closed, with no mortgage left on it",
+  "o": [
+   "A copy of her current certificate of registry",
+   "Nothing — she may stay on both registers for a year",
+   "A letter from the builder confirming her hull number"
+  ],
+  "why": "A ship may fly one flag only: the new register needs proof the old registration is closed and no mortgage is still recorded on it.",
+  "ref": "Registration — change of flag",
+  "fig": {
+   "type": "card",
+   "title": "Change of flag",
+   "lines": [
+    "Registered on flag A, mortgage paid off",
+    "Moving her to flag B",
+    "Flag B's form asks for an old-register paper"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "The owner has gone bankrupt and the yacht is sold for less than her debts. In what order are the three lenders paid from the sale?",
+  "a": "B, then A, then C",
+  "o": [
+   "C, then A, then B",
+   "A, then B, then C",
+   "B, then C, then A"
+  ],
+  "why": "Registered mortgages rank by date of entry, not of signing — B (12 Mar) before A (20 Mar) — and the unregistered C comes last.",
+  "ref": "Marine mortgages — priority",
+  "fig": {
+   "type": "card",
+   "title": "Mortgages on the register",
+   "lines": [
+    "Rule: by date entered; unregistered last",
+    "A: signed 3 Mar, entered 20 Mar",
+    "B: signed 10 Mar, entered 12 Mar",
+    "C: signed 1 Mar, never entered"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "You bought this registered yacht 40 days ago and have sent nothing to the registry yet. You plan to sail for a foreign port tomorrow. Where do you stand?",
+  "a": "She is unregistered — apply and get papers before you sail",
+  "o": [
+   "Fine — the seller's certificate covers her until renewal",
+   "Fine — the bill of sale aboard proves her nationality",
+   "Fine — the registry is needed only for a new name"
+  ],
+  "why": "Past the 30 days her registration has lapsed: without a valid certificate she has no proven nationality abroad.",
+  "ref": "Registration — transfer on sale",
+  "fig": {
+   "type": "card",
+   "title": "Flag's registry rules",
+   "lines": [
+    "On a sale, registration lapses in 30 days",
+    "unless the buyer applies with the bill of sale",
+    "Certificate aboard: in the seller's name",
+    "Bought 40 days ago, no application yet"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your employer has taken this yacht on a bareboat charter for the summer and you are her skipper. The owner, aboard as a guest for a weekend, orders you to change the passage plan. Whose instructions do you follow?",
+  "a": "The charterer's — the owner gave up control for the charter",
+  "o": [
+   "The owner's — the yacht is his, charter or not",
+   "Whoever is aboard — the owner, since he is here",
+   "The insurer's — the policy names the owner"
+  ],
+  "why": "Under a bareboat charter the charterer takes possession and control and engages the skipper; the owner aboard is only a guest.",
+  "ref": "Charter vs private use",
+  "fig": {
+   "type": "card",
+   "title": "Charter",
+   "lines": [
+    "Bareboat (demise) charter, June–Sept",
+    "Charterer: your employer",
+    "Owner aboard as a guest this weekend",
+    "He wants to go to a different island"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Your flag applies the MLC rest rules to your paid deckhands. Looking at their last 24 hours below, who has broken them?",
+  "a": "Ben and Carl — no 6 h spell",
+  "o": [
+   "Nobody — all three had 10 h",
+   "Ben only — he has three spells",
+   "All three — rest must be unbroken"
+  ],
+  "why": "All had 10 h, but Ben's comes in three spells and neither of Carl's two reaches 6 h; only Anna's 6 + 4 meets the rule.",
+  "ref": "Crew employment — hours of rest",
+  "fig": {
+   "type": "card",
+   "title": "Deckhands' rest, last 24 h",
+   "lines": [
+    "MLC: 10 h rest/24 h, ≤2 spells, one ≥6 h",
+    "Anna: 0000–0600, 1400–1800",
+    "Ben: 0200–0500, 1000–1300, 2000–2400",
+    "Carl: 0000–0500, 1500–2000"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Your paid deckhand breaks his wrist in a foreign port and is signed off to fly home. Under your flag's rules below, who pays for his flight?",
+  "a": "The owner, as his employer",
+  "o": [
+   "The deckhand himself",
+   "You, as the skipper who signed him on",
+   "The port's health authority"
+  ],
+  "why": "MLC: a seafarer signed off sick or injured in service is repatriated at the employer's cost — here the owner.",
+  "ref": "Crew employment — repatriation",
+  "fig": {
+   "type": "card",
+   "title": "Flag: paid crew (MLC 2006)",
+   "lines": [
+    "Written agreement for every paid crew",
+    "Repatriation at the employer's cost",
+    "if sick or injured in service",
+    "Employer: the yacht's owner"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Under Lloyd's Open Form a salvor towed your disabled yacht off a lee shore. As saved she is worth €380,000, and he claims €420,000 for a hard job. What can the award be?",
+  "a": "Some part of the €380,000 — never more than that",
+  "o": [
+   "The full €420,000 — he decides what the job was worth",
+   "€380,000, plus his costs over and above it",
+   "A fixed tariff by length, whatever he claims"
+  ],
+  "why": "Salvage Convention art. 13: the award is fixed on the listed factors but may not exceed the value of the property salved.",
+  "ref": "Salvage — the award",
+  "fig": {
+   "type": "card",
+   "title": "Salvage claim",
+   "lines": [
+    "Yacht's value as saved: €380,000",
+    "Salvor's claim: €420,000",
+    "Danger high, skill and effort great",
+    "Salvage Convention 1989 applies"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "In a storm a fishing boat took your crew off your sinking yacht. Next day a tug found her still afloat and saved her under LOF. The fishermen ask whether they are owed anything. What is the answer?",
+  "a": "A fair share of the tug's award, as they saved the lives",
+  "o": [
+   "Nothing — saving lives earns no payment at all",
+   "Their own award, paid by your crew for saving them",
+   "The whole award — they were on the scene first"
+  ],
+  "why": "Art. 16: the people saved owe nothing, but a life salvor in the same casualty shares fairly in the award for saving the yacht.",
+  "ref": "Salvage — life salvage",
+  "fig": {
+   "type": "card",
+   "title": "Two rescues",
+   "lines": [
+    "Day 1: fishing boat saves the crew",
+    "Yacht abandoned, still afloat",
+    "Day 2: tug salves the yacht under LOF",
+    "Salvage Convention 1989 applies"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "Your disabled yacht is being towed in under LOF and the salvage master asks you to keep a bilge pump running and a lookout aft. What is your duty?",
+  "a": "Co-operate fully and do what he reasonably asks",
+  "o": [
+   "None — the salvor now answers for everything",
+   "Refuse — as skipper you take orders from nobody",
+   "Only what your insurer has approved in writing"
+  ],
+  "why": "Salvage Convention art. 8: the owner and master must co-operate fully with the salvor and take the yacht back once she is safe.",
+  "ref": "Salvage — duty to the salvor",
+  "fig": {
+   "type": "card",
+   "title": "Under LOF",
+   "lines": [
+    "Salvage master aboard the tug",
+    "Asks: bilge pump on, lookout aft",
+    "You are still aboard with 3 crew"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "You agreed a fixed price for a tug to tow your yacht, engine dead, 40 M to port. Halfway a gale gets up, she starts to flood, and the tug's crew come aboard and pump for six hours to save her. What can the tug claim?",
+  "a": "Salvage for the extra work, beyond the towage price",
+  "o": [
+   "Only the €4,000 — the price was fixed in advance",
+   "Nothing — salvage needs LOF signed at the time",
+   "Double the price, as the job was harder than agreed"
+  ],
+  "why": "Art. 17: work under a contract earns salvage only when it goes beyond the contract's due performance — as when a new danger arises.",
+  "ref": "Salvage vs towage",
+  "fig": {
+   "type": "card",
+   "title": "The tow",
+   "lines": [
+    "Towage agreed: €4,000, fixed",
+    "Halfway: gale, yacht flooding",
+    "Tug's crew pump for 6 h and save her",
+    "No danger when the tow was agreed"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Becalmed and in no danger, you clearly refuse a fishing boat's offer of a tow, and say so on 16. She makes fast to your bow anyway, tows you in and claims salvage. What is she owed?",
+  "a": "Nothing — you refused her clearly and with good reason",
+  "o": [
+   "A salvage reward, which any towed vessel owes",
+   "Her fuel only, since she did save you time",
+   "A reward, but halved as you did not ask for it"
+  ],
+  "why": "No danger, no salvage; and art. 19 gives nothing for services forced on you against an express and reasonable refusal.",
+  "ref": "Salvage — services refused",
+  "fig": {
+   "type": "card",
+   "title": "On channel 16, 1420",
+   "lines": [
+    "You: no danger, no tow wanted, thanks",
+    "Fishing boat makes fast anyway",
+    "Tows you 8 M into harbour",
+    "Claims a salvage reward"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "While you take on fuel alongside, the nozzle sticks open and about 20 L of diesel goes over the side into the harbour. Once the flow is stopped, what do you do?",
+  "a": "Report it to the harbour office and help contain it",
+  "o": [
+   "Spray detergent on it so it breaks up quickly",
+   "Say nothing — 20 L will be gone within the hour",
+   "Hose it away from the pontoon with deck water"
+  ],
+  "why": "An oil spill must be reported to the port or coastal authority at once; detergent only sinks it and makes the harm worse.",
+  "ref": "Pollution — reporting a spill",
+  "fig": {
+   "type": "card",
+   "title": "Fuel berth",
+   "lines": [
+    "About 20 L of diesel in the water",
+    "Sheen spreading under the pontoon",
+    "Absorbent boom at the fuel kiosk"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "At 1530, 80 M offshore, you pass through a long, fresh oil slick with a tanker on AIS steaming away from its end. What do you do?",
+  "a": "Report it to the coast station: position, extent, ship",
+  "o": [
+   "Nothing — reporting pollution is the tanker's own duty",
+   "Call the tanker on 16 and tell her to stop it",
+   "Photograph it and post it online for the authorities"
+  ],
+  "why": "Coastal states rely on sightings: give the coast station or MRCC the slick's position and size and the ship suspected.",
+  "ref": "Pollution — reporting a slick",
+  "fig": {
+   "type": "card",
+   "title": "Slick",
+   "lines": [
+    "Slick 2 M long, fresh and dark",
+    "Tanker on AIS at its end, 3 M off",
+    "Your position, time and her name noted"
+   ],
+   "tag": "1530"
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 2,
+  "q": "Your yacht's particulars are below. What does MARPOL Annex V require of her about garbage?",
+  "a": "Placards on the discharge rules, displayed aboard",
+  "o": [
+   "A garbage record book with every disposal in it",
+   "A garbage management plan and a record book",
+   "Nothing — Annex V does not apply to yachts"
+  ],
+  "why": "Annex V: every ship of 12 m or more shows the placards; the plan starts at 100 GT or 15 persons, the record book at 400 GT.",
+  "ref": "MARPOL Annex V",
+  "fig": {
+   "type": "card",
+   "title": "Your yacht",
+   "lines": [
+    "Length overall 22 m",
+    "60 GT, certified for 10 persons",
+    "Private use, offshore passages"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 3,
+  "q": "Your 15.4 m catamaran, six aboard, stays three nights in this harbour. What do you pay?",
+  "a": "€329.40",
+  "o": [
+   "€318.06",
+   "€228.60",
+   "€311.40"
+  ],
+  "why": "16 m × €4.20 × 1.5 = €100.80 a night; × 3 = €302.40; tax 6 × 3 × €1.50 = €27: €329.40.",
+  "ref": "Harbour dues",
+  "fig": {
+   "type": "card",
+   "title": "Harbour dues",
+   "lines": [
+    "€4.20 per metre LOA per night",
+    "LOA rounded up to the next whole metre",
+    "Multihulls +50 %",
+    "Tourist tax €1.50 per person per night"
+   ]
+  }
+ },
+ {
+  "topic": "emergency",
+  "difficulty": 1,
+  "q": "You arrive at a bay inside a marine reserve, and the pilot book prints the notice below. Where do you anchor your 22 m yacht?",
+  "a": "You don't: you pick up one of the reserve's buoys",
+  "o": [
+   "On the seagrass, which holds well, with plenty of chain",
+   "In sand beside the seagrass, the chain lying over it",
+   "Anywhere — the rule is for local boats only"
+  ],
+  "why": "Local rules bind visiting yachts too: over 20 m this reserve wants you on a buoy, and its posidonia is protected.",
+  "ref": "Local regulations",
+  "fig": {
+   "type": "card",
+   "title": "Marine reserve notice",
+   "lines": [
+    "No anchoring on seagrass (posidonia)",
+    "Yachts over 20 m: mooring buoys only",
+    "Fines on the spot"
+   ]
+  }
+ }
+]

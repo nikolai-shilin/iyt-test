@@ -1,0 +1,2412 @@
+[
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your mate lays the Breton plotter along the leg on the passage chart and calls out 058°. You glance at the chart. What true course goes in the plan?",
+  "a": "238°T",
+  "o": [
+   "058°T",
+   "148°T",
+   "302°T"
+  ],
+  "why": "The arrow must point the way you go: reversed, it reads the reciprocal, 058° + 180° = 238°T — and the leg runs SW.",
+  "ref": "Chartwork instruments — the plotter",
+  "fig": {
+   "type": "card",
+   "title": "Laying off the leg",
+   "lines": [
+    "Destination: south-west of departure",
+    "Plotter grid lined up on a meridian",
+    "Plotter's arrow points from the",
+    "destination back to departure"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "You set the variation on your Portland plotter and lay it along the leg, so that it reads the magnetic course directly. What should it read?",
+  "a": "116°M",
+  "o": [
+   "108°M",
+   "112°M",
+   "120°M"
+  ],
+  "why": "Set 4°W and the plotter adds it for you: 112°T + 4°W = 116°M. Set to E it gives 108°; adding 4° again by hand gives 120°.",
+  "ref": "Chartwork instruments — the variation setting",
+  "fig": {
+   "type": "compass",
+   "variation": -4,
+   "course": 112,
+   "courseLabel": "True track"
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "You are laying off the next 40 M leg on a big passage chart at sea. The nearest rose is a hand's span away and the parallel rules slip on every roll. What do you do?",
+  "a": "Use a Breton plotter lined up on a meridian",
+  "o": [
+   "Walk the rules anyway, in shorter steps",
+   "Take the course from the plotter screen",
+   "Judge it by eye against the nearest rose"
+  ],
+  "why": "A Breton-type plotter needs only a meridian or parallel under it — no rose, no walking; each slip of the rules shifts the line.",
+  "ref": "Chartwork instruments",
+  "fig": {
+   "type": "card",
+   "title": "Chart table, force 6 on the beam",
+   "lines": [
+    "Passage chart 1:350,000, leg 40 M",
+    "Nearest compass rose: 25 cm away",
+    "Parallel rules slip on every roll"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "You want hand-bearing compass bearings of three headlands for a fix from your 22 m motor yacht. Where do you take them?",
+  "a": "At a spot you have checked on a transit",
+  "o": [
+   "On the flybridge, for the highest view",
+   "Beside the steering compass at the helm",
+   "Anywhere aft, well away from the engines"
+  ],
+  "why": "Steel, speakers and electronics deflect a hand-bearing compass; take bearings where a transit has shown it reads true.",
+  "ref": "Chartwork instruments — the hand-bearing compass",
+  "fig": {
+   "type": "card",
+   "title": "Your motor yacht",
+   "lines": [
+    "Flybridge: radar arch, speakers, console",
+    "Foredeck: steel windlass, chain locker",
+    "Aft deck: stainless davits, the tender"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Your mate measured tonight's leg on the small-scale passage chart, reading the dividers on the latitude scale at the bottom edge. What is the leg's true length?",
+  "a": "60.0 M",
+  "o": [
+   "66.0 M",
+   "72.6 M",
+   "42.4 M"
+  ],
+  "why": "Mercator minutes of latitude grow as sec lat: 66.0 × cos 50° ÷ cos 45° = 60.0 M. Measure beside the leg.",
+  "ref": "Charts — distance on the latitude scale",
+  "fig": {
+   "type": "card",
+   "title": "Passage chart, Mercator",
+   "lines": [
+    "Covers 45°N to 52°N",
+    "The leg lies at about 50°N",
+    "Dividers read at 45°N: 66.0'"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "At 0300 your relief navigator plots the EP on the passage chart in ballpoint, in heavy lines across the next day's legs. What do you tell him?",
+  "a": "Soft pencil, light short lines — it must rub out",
+  "o": [
+   "Fine — ink won't smudge in a wet cockpit",
+   "Use a red pen so it shows under red light",
+   "Use a hard pencil and press hard to last"
+  ],
+  "why": "Plot in soft pencil (2B), lightly and only where needed: lines must rub out without spoiling the chart for later fixes and voyages.",
+  "ref": "Chartwork instruments — pencils",
+  "fig": {
+   "type": "card",
+   "title": "Night watch, chart table",
+   "lines": [
+    "0300 EP inked in ballpoint",
+    "Heavy lines across tomorrow's legs",
+    "Same chart for the return passage"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your planning chart of the north-east Atlantic covers 40°N to 60°N. You set the dividers to 10 M on the latitude scale at 40°N, then again at 60°N. How do the two spans compare on the paper?",
+  "a": "The 60°N span is about 1.5 times longer",
+  "o": [
+   "The two spans are exactly the same length",
+   "The 60°N span is about 1.5 times shorter",
+   "The 60°N span is about twice as long"
+  ],
+  "why": "Mercator scale grows as sec lat: sec 60° ÷ sec 40° = 2.00 ÷ 1.31 ≈ 1.5. The same mile is drawn longer nearer the pole.",
+  "ref": "Charts — Mercator projection",
+  "fig": {
+   "type": "card",
+   "title": "Planning chart, Mercator",
+   "lines": [
+    "North-east Atlantic, 40°N to 60°N",
+    "10 M set on the latitude scale at 40°N",
+    "and again at 60°N"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Planning a 1,200 M delivery leg to the Azores, you draw a straight line from departure to destination on a gnomonic chart. What do you do next?",
+  "a": "Take off points every 5° of longitude onto the Mercator",
+  "o": [
+   "Steer the course the line shows at its middle",
+   "Lay the line's first course on the Mercator rose",
+   "Measure its distance on the gnomonic's border"
+  ],
+  "why": "A great circle is a straight line on a gnomonic chart; transfer its points to the Mercator and sail rhumb lines between them.",
+  "ref": "Charts — gnomonic charts and great circles",
+  "fig": {
+   "type": "card",
+   "title": "Gnomonic chart, North Atlantic",
+   "lines": [
+    "Straight line Falmouth – Ponta Delgada",
+    "It cuts the meridians at changing angles",
+    "Aboard: Mercator charts of the route"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your 140 M overnight leg runs due east along 50°N. Your crew wants to plan it as a great circle on a gnomonic chart to save distance. What do you decide?",
+  "a": "Rhumb line — the great circle saves under 0.1 M",
+  "o": [
+   "Great circle — it saves about 5 % going east–west",
+   "Great circle — any leg over 100 M needs one",
+   "Rhumb line — great circles only pay going south"
+  ],
+  "why": "On 140 M the great circle is only 0.01 M shorter; it pays on long ocean legs, mostly east–west in high latitudes.",
+  "ref": "Charts — gnomonic charts and great circles",
+  "fig": {
+   "type": "card",
+   "title": "Tomorrow's leg",
+   "lines": [
+    "Along 50°N, due east",
+    "Distance 140 M, about 20 h",
+    "Crew: 'Plot the great circle — it's shorter'"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "A crew member lays a plotter on the straight line drawn on the gnomonic chart to read the course. What do you tell her?",
+  "a": "The course changes along the line — use the Mercator",
+  "o": [
+   "Fine — read it once and steer it all the way",
+   "Read it at the end of the line, not the start",
+   "Fine — but add the variation from its rose"
+  ],
+  "why": "A gnomonic chart doesn't keep angles: a great circle cuts each meridian at a different angle, so courses come off the Mercator.",
+  "ref": "Charts — gnomonic charts and great circles",
+  "fig": {
+   "type": "card",
+   "title": "Gnomonic chart on the table",
+   "lines": [
+    "Great circle drawn as a straight line",
+    "Meridians converge towards the pole",
+    "Crew lays the plotter on the line"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "You check the plotter's figures for tonight's Channel crossing against the chart. What course and distance do you lay off?",
+  "a": "190°T, 102.5 M",
+  "o": [
+   "195°T, 104.5 M",
+   "010°T, 102.5 M",
+   "170°T, 102.5 M"
+  ],
+  "why": "d.lat 101.0' S; d.long 27.0' W × cos 49.5° = 17.5 M W. √(101.0² + 17.5²) = 102.5 M; S 9.9° W = 190°T.",
+  "ref": "Charts — latitude and longitude",
+  "fig": {
+   "type": "card",
+   "title": "Crossing, rhumb line",
+   "lines": [
+    "From 50°19.0'N 004°09.0'W (Plymouth)",
+    "To 48°38.0'N 004°36.0'W (Aber Wrac'h)",
+    "Mercator chart, true north up"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "Tonight's leg runs due north along a single meridian. How long is it?",
+  "a": "115 M",
+  "o": [
+   "195 M",
+   "93 M",
+   "74 M"
+  ],
+  "why": "Along a meridian each minute of latitude is a mile: 50°47' − 48°52' = 1°55' = 115'.",
+  "ref": "Charts — latitude and longitude",
+  "fig": {
+   "type": "card",
+   "title": "Leg along 006°20'W",
+   "lines": [
+    "From 48°52'N",
+    "To 50°47'N",
+    "Course 000°T"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Overnight you run due east for 60 M along the parallel from this position. What longitude do you reach?",
+  "a": "003°28.5'W",
+  "o": [
+   "004°00.0'W",
+   "004°20.6'W",
+   "006°31.5'W"
+  ],
+  "why": "d.long = departure ÷ cos lat = 60.0 ÷ cos 49° = 91.5' = 1°31.5' E; going east, west longitude falls: 003°28.5'W.",
+  "ref": "Charts — latitude and longitude",
+  "fig": {
+   "type": "card",
+   "title": "Departure 2200",
+   "lines": [
+    "49°00.0'N 005°00.0'W",
+    "Course 090°T, distance run 60.0 M"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "From the log book you work out the boat's mean speed through the water over the night. What was it?",
+  "a": "7.5 kn",
+  "o": [
+   "7.8 kn",
+   "7.3 kn",
+   "2.8 kn"
+  ],
+  "why": "1093.0 − 1043.6 = 49.4 M in 6 h 35 min = 6.58 h: 49.4 ÷ 6.58 = 7.5 kn. Not 6.35 h, not 17 h 25 min.",
+  "ref": "Distance, speed and time — the log",
+  "fig": {
+   "type": "card",
+   "title": "Log book",
+   "lines": [
+    "2145 — log 1043.6",
+    "0420 — log 1093.0",
+    "Same heading all night"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "You leave Falmouth at 2050 for a Breton harbour, 121 M by the plan. The French marina wants your ETA in its local time. What do you give?",
+  "a": "1135",
+  "o": [
+   "1035",
+   "1205",
+   "0935"
+  ],
+  "why": "121 ÷ 8.8 = 13.75 h = 13 h 45 min: 2050 + 13 h 45 min = 1035 BST, plus 1 h = 1135 French time.",
+  "ref": "Distance, speed and time — ETA",
+  "fig": {
+   "type": "card",
+   "title": "Passage plan",
+   "lines": [
+    "Depart Falmouth 2050 BST (UTC+1)",
+    "Distance 121 M, planned SOG 8.8 kn",
+    "France keeps CEST (UTC+2)"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "In slack water you time your 20 m motor yacht between two buoys charted 2.35 M apart. What is her speed?",
+  "a": "11.3 kn",
+  "o": [
+   "11.5 kn",
+   "11.8 kn",
+   "5.3 kn"
+  ],
+  "why": "0926:50 − 0914:20 = 12 min 30 s = 0.208 h; 2.35 ÷ 0.208 = 11.3 kn. 12.30 min is not 12.5 min.",
+  "ref": "Distance, speed and time",
+  "fig": {
+   "type": "card",
+   "title": "Timed run, slack water",
+   "lines": [
+    "Buoy A abeam: 0914:20",
+    "Buoy B abeam: 0926:50",
+    "Distance on the chart: 2.35 M"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "Your guests ask what the motor yacht's cruising speed of 25 knots is in kilometres per hour. What do you tell them?",
+  "a": "About 46 km/h",
+  "o": [
+   "About 40 km/h",
+   "About 29 km/h",
+   "About 13.5 km/h"
+  ],
+  "why": "A knot is one nautical mile, 1852 m, per hour: 25 × 1.852 = 46.3 km/h.",
+  "ref": "Distance, speed and time — knots",
+  "fig": {
+   "type": "card",
+   "title": "Guests' question",
+   "lines": [
+    "Cruising speed: 25 kn",
+    "'How fast is that in km/h?'"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Bound for the next waypoint in the Aegean, the plotter shows BRG 209° while your plan says 214°T. What do you make of it?",
+  "a": "Nothing wrong — 214°T is 209°M",
+  "o": [
+   "Wrong — 214°T should show as 219°M",
+   "Wrong — the GPS has lost its fix",
+   "Wrong — you are 5° off the planned track"
+  ],
+  "why": "The plotter is set to magnetic: 214°T − 5°E = 209°M. East is least — subtract it going true to magnetic.",
+  "ref": "Charts — true, magnetic and compass",
+  "fig": {
+   "type": "compass",
+   "variation": 5,
+   "course": 214,
+   "courseLabel": "Plan",
+   "note": "Plotter: Magnetic"
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Your passage chart and the older approach chart of your landfall both note that their datum differs from WGS84. Where does it matter on tomorrow's 130 M passage?",
+  "a": "At the landfall, on the approach chart",
+  "o": [
+   "Offshore, where you fix every hour",
+   "Equally on both charts, all the way",
+   "Nowhere — 0.08' is under 150 m"
+  ],
+  "why": "0.08' ≈ 150 m: 0.2 mm on the 1:750,000, below plotting accuracy; 6 mm on the 1:25,000 — enough to put you on the rocks.",
+  "ref": "Charts — horizontal datum",
+  "fig": {
+   "type": "card",
+   "title": "Chart notes",
+   "lines": [
+    "Passage chart 1:750,000: shift 0.08'",
+    "Approaches 1:25,000 (old): shift 0.08'",
+    "Landfall: rocks either side of the entrance"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Your landfall harbour's plan comes from an old foreign survey, its soundings to a different datum from your chart's. What least depth do you expect at the visitors' berth this week?",
+  "a": "2.1 m",
+  "o": [
+   "2.7 m",
+   "3.3 m",
+   "1.9 m"
+  ],
+  "why": "Below LAT the bed is 2.5 − 0.6 = 1.9 m; the lowest tide adds 0.2 m: 2.1 m. The plan's datum sits 0.6 m above LAT.",
+  "ref": "Charts — chart datum",
+  "fig": {
+   "type": "card",
+   "title": "Harbour plan, old survey",
+   "lines": [
+    "Soundings below 'approx. MLWS'",
+    "Visitors' berth: 2.5 m on the plan",
+    "MLWS is 0.6 m above LAT",
+    "Lowest tide this week: 0.2 m above LAT"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "Your passage chart shows 8 m over a bank near your landfall; the approach chart shows a 4.2 m patch on it. Which depth do you plan on?",
+  "a": "4.2 m — the larger scale shows more",
+  "o": [
+   "8 m — the passage chart is for passage",
+   "About 6 m — the mean of the two",
+   "8 m — small scales are more up to date"
+  ],
+  "why": "A small-scale chart leaves out detail; the larger scale shows the shoal patches. Plan on the least depth shown.",
+  "ref": "Charts — scale and the chart folio",
+  "fig": {
+   "type": "card",
+   "title": "Two charts, one bank",
+   "lines": [
+    "Passage chart 1:500,000: bank 8 m",
+    "Approach chart 1:50,000: patch 4.2 m",
+    "Both corrected to the same week"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Mid-way across a 120 M crossing you plot hourly fixes. Which chart of your folio do you plot them on?",
+  "a": "B — the passage chart of the crossing",
+  "o": [
+   "A — it shows the whole route at once",
+   "C — the largest scale gives the best fix",
+   "D — so the arrival plan is ready"
+  ],
+  "why": "Plot on the largest-scale chart that covers the leg: B. A is for planning; C and D don't reach mid-channel.",
+  "ref": "Charts — scale and the chart folio",
+  "fig": {
+   "type": "card",
+   "title": "Chart folio",
+   "lines": [
+    "A: 1:1,500,000 — the whole sea area",
+    "B: 1:325,000 — the crossing on one sheet",
+    "C: 1:75,000 — the approaches only",
+    "D: 1:12,500 — the destination harbour"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "You check the chart folio for a 120 M night crossing to Brittany against your passage plan. What is missing?",
+  "a": "Large-scale charts of the refuge port",
+  "o": [
+   "Nothing — the plotter covers the refuge",
+   "A second copy of the passage chart",
+   "Nothing — enter on the passage chart"
+  ],
+  "why": "A port of refuge is entered at night in bad weather: carry its approach chart and plan on paper, not only on the plotter.",
+  "ref": "Charts — scale and the chart folio — the passage folio",
+  "fig": {
+   "type": "card",
+   "title": "Folio and plan",
+   "lines": [
+    "Charts: departure approaches, passage",
+    "Charts: approach, plan of destination",
+    "Plan B: a refuge port 25 M east",
+    "Plotter: vector charts of the area"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your planned track runs down the lane marked on the chart. What do you do?",
+  "a": "Replan to keep out — it is for deep ships",
+  "o": [
+   "Use it — its depths are the best surveyed",
+   "Use it at night only, when it is quieter",
+   "Cross it diagonally to save distance"
+  ],
+  "why": "A deep-water route is kept for deep-draught ships; vessels that don't need it should avoid it.",
+  "ref": "Chart symbols — traffic separation schemes — deep-water routes",
+  "fig": {
+   "type": "card",
+   "title": "On the chart along your route",
+   "lines": [
+    "A lane with magenta arrows and DW",
+    "Note: 'DW route, least depth 28 m'",
+    "Your yacht: 24 m ketch, draught 3.2 m"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your route crosses the area shown where three traffic schemes meet. What do you expect there, and how do you cross it?",
+  "a": "Ships turning every way — cross fast, watch hard",
+  "o": [
+   "Ships hold set lanes — cross at right angles",
+   "A closed area — re-route outside it",
+   "A slow-speed area — drift through under sail"
+  ],
+  "why": "In a precautionary area ships converge and turn, with at most a recommended flow: navigate with particular caution.",
+  "ref": "Chart symbols — traffic separation schemes — precautionary areas",
+  "fig": {
+   "type": "card",
+   "title": "Chart where three schemes meet",
+   "lines": [
+    "A magenta circle with a '!' symbol",
+    "Label: 'Precautionary area'",
+    "Your route crosses its middle"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "On a night passage across the North Sea you see these lights ahead, about 8 M off. What are they?",
+  "a": "An offshore platform — Mo(U) marks them",
+  "o": [
+   "A safe-water buoy — Morse is its sign",
+   "A wind turbine on a farm's corner",
+   "A lightvessel at the end of a lane"
+  ],
+  "why": "Offshore platforms show a white light Mo(U), · · —, usually every 15 s; safe-water marks use Mo(A), · —.",
+  "ref": "Chart symbols — offshore installations — platforms",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 160,
+     "y": 62,
+     "t": "white · · —"
+    },
+    {
+     "c": "r",
+     "x": 110,
+     "y": 118,
+     "t": "red"
+    },
+    {
+     "c": "r",
+     "x": 210,
+     "y": 118,
+     "t": "red"
+    }
+   ],
+   "note": "Night · white light · · — every 15 s"
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your 24 m ketch's route crosses this offshore wind farm. What does the note mean for you?",
+  "a": "Your mast can reach the blades — keep clear",
+  "o": [
+   "7 m clear at HAT, more at lower tides",
+   "Clear at any tide except at HAT",
+   "The blades are stopped for yachts in transit"
+  ],
+  "why": "Blades sweep down to 22 m above HAT, lower than your 29 m masthead: keep outside the swept circle of every turbine.",
+  "ref": "Chart symbols — offshore areas — wind farms",
+  "fig": {
+   "type": "card",
+   "title": "Wind farm on your route",
+   "lines": [
+    "Chart note: small craft may transit",
+    "Lowest blade tip: 22 m above HAT",
+    "Your ketch: masthead 29 m above water"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your night route crosses this area. What do you do?",
+  "a": "Get the broadcast, show lights, keep a sharp lookout",
+  "o": [
+   "Re-route — yachts may not enter at night",
+   "Nothing — submarines keep clear of yachts",
+   "Keep radio silence while in the area"
+  ],
+  "why": "Exercise areas are not closed; know the broadcast of submarine activity and keep a good lookout — a dived submarine may not see you.",
+  "ref": "Chart symbols — offshore areas — submarine exercise areas",
+  "fig": {
+   "type": "card",
+   "title": "Chart and almanac",
+   "lines": [
+    "Route crosses a 'Submarine exercise area'",
+    "Coastguard broadcasts submarine activity",
+    "Night crossing, 0100–0400"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "60 M offshore at night you pick up this light where the chart shows a buoy marked ODAS. What is it?",
+  "a": "A data buoy — a special mark; pass clear",
+  "o": [
+   "A safe-water mark on the route's fairway",
+   "A new wreck — report it to the coastguard",
+   "A lightvessel dragged off its station"
+  ],
+  "why": "ODAS buoys gather ocean and weather data; they are yellow special marks, often Fl(5) Y 20s — give them a wide berth.",
+  "ref": "Offshore buoys and lightvessels",
+  "fig": {
+   "type": "buoy",
+   "kind": "special",
+   "rhythm": "Fl(5)Y 20s",
+   "rhythmNote": "five yellow flashes",
+   "region": "A",
+   "note": "Chart: ODAS, 60 M offshore"
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "You anchored in the dark off an open coast to wait for the stream and find you lie in a cable area. Weighing, the anchor brings up a heavy cable. What do you do?",
+  "a": "Lower it, slip the anchor on a buoy, report",
+  "o": [
+   "Cut the cable free with the bolt cutters",
+   "Go hard astern to break the anchor out",
+   "Lift the cable aboard and unhook it"
+  ],
+  "why": "Never cut or force a submarine cable — power cables kill; slip the anchor and chain on a buoyed line and report the position.",
+  "ref": "Chart symbols — offshore areas — submarine cables",
+  "fig": {
+   "type": "card",
+   "title": "Anchored to wait for the stream",
+   "lines": [
+    "Chart: you lie in a magenta cable area",
+    "Windlass stalls; a thick cable comes up",
+    "It lies across the anchor's fluke"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "You want to anchor overnight off this coast to wait for a fair stream. The best depth for your chain lies inside the box. What do you do?",
+  "a": "Anchor elsewhere — not in a dumping ground",
+  "o": [
+   "Anchor — 'disused' means it was cleared",
+   "Anchor, with a tripping line on the anchor",
+   "Anchor — the munitions lie too deep to matter"
+  ],
+  "why": "A disused explosives dumping ground may still hold live munitions: never anchor, trawl or dive there.",
+  "ref": "Chart symbols — offshore areas — dumping grounds",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V30 C240 44 120 36 0 46 Z",
+   "depths": [
+    [
+     50,
+     92,
+     "33"
+    ],
+    [
+     150,
+     76,
+     "30"
+    ],
+    [
+     270,
+     120,
+     "36"
+    ],
+    [
+     70,
+     150,
+     "29"
+    ],
+    [
+     270,
+     160,
+     "34"
+    ]
+   ],
+   "track": "M110 100 H240 V160 H110 Z",
+   "boat": [
+    40,
+    172,
+    45
+   ],
+   "labels": [
+    [
+     175,
+     124,
+     "Explosives dumping",
+     "middle"
+    ],
+    [
+     175,
+     140,
+     "ground (disused)",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Waiting for tide",
+    "Depth wanted 30 m",
+    "Chain 100 m"
+   ],
+   "note": "Chart extract"
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your route runs against one of the arrows beyond the end of the scheme. What does that arrow tell you?",
+  "a": "A recommended flow — not binding, but expect ships",
+  "o": [
+   "A lane — you must not sail against it",
+   "A separation zone — keep out of it",
+   "A recommended track for small craft"
+  ],
+  "why": "A pecked-outline arrow is a recommended direction of traffic flow: no lane rule, but ships will be coming the other way.",
+  "ref": "Chart symbols — traffic separation schemes",
+  "fig": {
+   "type": "card",
+   "title": "On the chart near the scheme",
+   "lines": [
+    "In the lanes: solid-outlined arrows",
+    "Beyond the scheme: pecked-outline arrows",
+    "Your route runs against a pecked arrow"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Your night track runs north past the rig in this warning. How far off it do you pass, and what do you do?",
+  "a": "About 480 m — inside the zone; re-route",
+  "o": [
+   "About 740 m — outside it; carry on",
+   "About 1150 m — well clear; carry on",
+   "About 260 m — inside the zone; re-route"
+  ],
+  "why": "0.4' of longitude × cos 50° = 0.26 M ≈ 480 m, inside the 500 m zone. A minute of longitude is not a mile.",
+  "ref": "Chart symbols — offshore installations — safety zones",
+  "fig": {
+   "type": "card",
+   "title": "NAVTEX, navigational warning",
+   "lines": [
+    "Drilling rig moved to",
+    "50°02.0'N 001°48.0'W",
+    "500 m safety zone established",
+    "Your track: north along 001°47.6'W"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your night landfall plan picks up this lightvessel 20 M out as the first mark. What changes?",
+  "a": "You see it far later — fix on other lights first",
+  "o": [
+   "Nothing — the character is still the same",
+   "Only its colour changes, so re-check it",
+   "You see it at 20 M as before, but dimmer"
+  ],
+  "why": "A light buoy of 8 M can't be your 20 M landfall mark: run the approach on other lights, radar and depth until it shows.",
+  "ref": "Offshore buoys and lightvessels — T&P notices",
+  "fig": {
+   "type": "card",
+   "title": "T&P notice, this week",
+   "lines": [
+    "Lightvessel at the TSS end withdrawn",
+    "Replaced by a light buoy, same character",
+    "Range reduced from 24 M to 8 M"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Tomorrow's route crosses the area in this coastal warning. What do you do?",
+  "a": "Plot the area and route round it while firing",
+  "o": [
+   "Nothing — warnings are for big ships",
+   "Cross it at full speed, keeping a lookout",
+   "Wait for the range to call you on VHF"
+  ],
+  "why": "A navigational warning defines its area by positions: plot it on the chart and keep out of it at the times given.",
+  "ref": "Navigational warnings",
+  "fig": {
+   "type": "card",
+   "title": "Coastal navigational warning",
+   "lines": [
+    "Gunnery firing, 0800–1600 daily",
+    "Area: four positions, in the warning",
+    "Your route crosses it about 1100"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "You plan a first landfall on a foreign coast that your yachting almanac covers in one paragraph. Where do you find its look from seaward, its dangers, local rules and port details?",
+  "a": "The Admiralty Sailing Directions",
+  "o": [
+   "The List of Lights and Fog Signals",
+   "The List of Radio Signals",
+   "The weekly Notices to Mariners"
+  ],
+  "why": "Sailing Directions describe the coast, its dangers, regulations and ports in detail, for all shipping.",
+  "ref": "Nautical publications — Sailing Directions",
+  "fig": {
+   "type": "card",
+   "title": "Planning the landfall",
+   "lines": [
+    "Almanac: one paragraph on this coast",
+    "Need: the view from seaward, dangers,",
+    "local rules, port facilities"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "At night you time the light on your landfall headland, and it does not match the chart. What do you do?",
+  "a": "Check the corrected List of Lights",
+  "o": [
+   "Take it for another light and stand off",
+   "Trust the chart — lights rarely change",
+   "Take it as a fault and report it"
+  ],
+  "why": "Lights do change; the List of Lights, kept up by the NtMs, is the latest record — then correct the chart too.",
+  "ref": "Nautical publications — List of Lights",
+  "fig": {
+   "type": "card",
+   "title": "Light on the headland",
+   "lines": [
+    "Chart (2016 edition): Fl(2) 10s",
+    "You see: Fl(3) 15s, same position",
+    "Aboard: List of Lights, corrected weekly"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "For a passage to a coast beyond your almanac's area you need the NAVTEX stations and their times and the coast stations' weather schedules. Which publication do you open?",
+  "a": "The List of Radio Signals",
+  "o": [
+   "The Admiralty Sailing Directions",
+   "The List of Lights and Fog Signals",
+   "The routeing chart for the month"
+  ],
+  "why": "The List of Radio Signals covers radio stations, NAVTEX, safety and weather broadcasts worldwide, corrected weekly.",
+  "ref": "Nautical publications — List of Radio Signals",
+  "fig": {
+   "type": "card",
+   "title": "Beyond the almanac",
+   "lines": [
+    "Destination coast: not in your almanac",
+    "Need: NAVTEX stations and times,",
+    "coast radio weather schedules"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your almanac is the main publication aboard for this passage. How do you bring it up to date?",
+  "a": "Apply the publisher's supplements, check NtMs",
+  "o": [
+   "No need — an almanac is valid all year",
+   "Buy next year's edition when it appears",
+   "Rely on the plotter's chart updates"
+  ],
+  "why": "An almanac is fixed at printing: its publisher issues corrections, and the charts and lights it lists change by NtM.",
+  "ref": "Nautical publications — almanacs",
+  "fig": {
+   "type": "card",
+   "title": "Your almanac",
+   "lines": [
+    "Printed in the previous autumn",
+    "Now: July, before a 130 M passage",
+    "Publisher's website: free supplements"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your NAVTEX was off while you were in harbour. How do you know the navigational warnings for your route before you sail?",
+  "a": "Read the NAVAREA and coastal warnings in force",
+  "o": [
+   "Wait for them to be repeated on Ch 16",
+   "Read last week's Notices to Mariners only",
+   "Check the plotter's latest chart update"
+  ],
+  "why": "Navigational warnings stay in force until cancelled, and the lists in force are published: read them before you go.",
+  "ref": "Navigational warnings",
+  "fig": {
+   "type": "card",
+   "title": "Before an overnight passage",
+   "lines": [
+    "NAVTEX off for two days in harbour",
+    "Route: 140 M, open sea and a TSS",
+    "Sailing at 1800"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Planning an offshore passage for next May, you want the month's gale frequency, wind roses and mean currents for the sea area. What do you consult?",
+  "a": "The routeing chart for May",
+  "o": [
+   "The tidal stream atlas",
+   "The List of Radio Signals",
+   "The weekly Notices to Mariners"
+  ],
+  "why": "Routeing charts give each month's winds, currents, gale and fog frequency, ice limits and the usual routes.",
+  "ref": "Nautical publications — routeing charts",
+  "fig": {
+   "type": "card",
+   "title": "Planning for May",
+   "lines": [
+    "Need for the month: gale frequency,",
+    "prevailing winds, mean currents"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Off the headland the tidal stream atlas page shows this arrow. What rate do you use today?",
+  "a": "0.8 kn",
+  "o": [
+   "1.5 kn",
+   "8 kn",
+   "2.3 kn"
+  ],
+  "why": "Atlas figures are the neap and spring rates in tenths of a knot: 08,15 is 0.8 kn at neaps, 1.5 kn at springs.",
+  "ref": "Nautical publications — tidal stream atlases",
+  "fig": {
+   "type": "card",
+   "title": "Tidal stream atlas, HW Dover +2",
+   "lines": [
+    "Arrow off the headland: 08,15",
+    "Today: neap tides"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "This preliminary notice covers an area your route crosses in July. What do you do?",
+  "a": "Pencil it in and route round the area",
+  "o": [
+   "Ignore it until the buoys are charted",
+   "Cross it — 'preliminary' means not yet real",
+   "Wait for a new edition to show it"
+  ],
+  "why": "A (P) notice gives early warning of work or change: pencil it on the chart now and plan round the area.",
+  "ref": "Notices to Mariners — keeping charts corrected — T&P",
+  "fig": {
+   "type": "card",
+   "title": "Weekly NtMs, (P) notice",
+   "lines": [
+    "Wind farm construction from 1 June",
+    "Area: four positions; to be marked",
+    "by cardinal buoys when work starts"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your plotter and your paper chart disagree on the fairway buoy's position. Which do you believe, and what do you do?",
+  "a": "The ENC — then bring the paper up to date",
+  "o": [
+   "The paper — only paper charts are official",
+   "Neither — wait to see the buoy at dawn",
+   "The midpoint between the two positions"
+  ],
+  "why": "The freshly updated ENC likely carries a notice the paper lacks: find the NtM and correct the chart before you rely on either.",
+  "ref": "Notices to Mariners — keeping charts corrected",
+  "fig": {
+   "type": "card",
+   "title": "Approach, the evening before",
+   "lines": [
+    "Plotter ENC, updated last week:",
+    "fairway buoy 0.4 M further east",
+    "Paper chart: last corrected in March"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "You want the plotter to warn you before you stray into shallow water. Which chart must it be using?",
+  "a": "The ENC — it holds depths as data",
+  "o": [
+   "The RNC — it is the exact paper chart",
+   "Either — both carry the same depths",
+   "The RNC, zoomed to its largest scale"
+  ],
+  "why": "An RNC is a picture: the plotter can't read its depths. Only an ENC's vector depth data can drive a safety-contour alarm.",
+  "ref": "Electronic charts — ENC and RNC",
+  "fig": {
+   "type": "card",
+   "title": "Plotter, chart menu",
+   "lines": [
+    "Chart 1: RNC, a scanned paper chart",
+    "Chart 2: ENC, vector cells, same area",
+    "You want a shallow-water alarm"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "On the ENC with these settings, which spot soundings are drawn bold as a danger to you?",
+  "a": "3, 4.8 and 5 m",
+  "o": [
+   "3 and 4.8 m only",
+   "3, 4.8, 5 and 6.2 m",
+   "None — the contour does that job"
+  ],
+  "why": "Soundings equal to or shallower than the safety depth show bold; the safety contour is a separate line.",
+  "ref": "Electronic charts — ENC and RNC — safety depth",
+  "fig": {
+   "type": "card",
+   "title": "ENC display settings",
+   "lines": [
+    "Safety depth: 5 m",
+    "Safety contour: 10 m",
+    "Soundings shown: 3, 4.8, 5, 6.2, 12 m"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "You set the plotter's look-ahead (anti-grounding) zone for tonight's run at cruising speed. What distance do you enter?",
+  "a": "3.7 M",
+  "o": [
+   "2.2 M",
+   "0.4 M",
+   "1.2 M"
+  ],
+  "why": "22 kn × 10/60 h = 3.7 M. Ten minutes is 0.167 h, not 0.1 h.",
+  "ref": "Electronic charts — ENC and RNC — look-ahead",
+  "fig": {
+   "type": "card",
+   "title": "Motor yacht, night passage",
+   "lines": [
+    "Cruise 22 kn; displacement 7 kn",
+    "You want 10 min of warning",
+    "Look-ahead is set as a distance"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "The plotter's route check has passed your route. What do you do before relying on it?",
+  "a": "Re-run it with a corridor as wide as your likely set",
+  "o": [
+   "Nothing — the check has passed the route",
+   "Move leg 4 another 0.05 M off the rock",
+   "Trust it — the rock is three corridors away"
+  ],
+  "why": "A route check looks only inside its corridor: at 0.05 M it misses a rock 0.15 M off, well within the 0.4 M you may be set.",
+  "ref": "Electronic charts — ENC and RNC — route check",
+  "fig": {
+   "type": "card",
+   "title": "Route check: no dangers found",
+   "lines": [
+    "Check corridor: 0.05 M each side",
+    "Rock: 0.15 M off leg 4",
+    "Cross-stream on leg 4: set up to 0.4 M"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Your mate keeps the paper plot like this on a 130 M night passage. What is wrong with it?",
+  "a": "It is no check — a GPS error is copied too",
+  "o": [
+   "Nothing — the plotter is more exact anyway",
+   "It needs fixes every half hour, not hourly",
+   "The positions should be inked to last"
+  ],
+  "why": "A paper backup must be independent: log course and distance for a DR, and cross-check the GPS by bearings, depth or radar.",
+  "ref": "Electronic charts — ENC and RNC — the paper backup",
+  "fig": {
+   "type": "card",
+   "title": "Paper plot at 2300",
+   "lines": [
+    "Hourly positions copied from the plotter",
+    "No DR, no bearings, no depths logged",
+    "One GPS antenna feeds plotter and AIS"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Checking the plotter before a 120 M crossing, you find this. What do you do?",
+  "a": "Get the approach and harbour cells before sailing",
+  "o": [
+   "Nothing — zoom in on the coastal cell",
+   "Nothing — the coastal cell has the same detail",
+   "Switch on the satellite-photo overlay"
+  ],
+  "why": "Each usage band carries the detail for its scale; a coastal cell blown up to harbour scale lacks the shoals and marks you need.",
+  "ref": "Electronic charts — ENC and RNC — usage bands",
+  "fig": {
+   "type": "card",
+   "title": "ENC on your plotter",
+   "lines": [
+    "Installed: overview, general, coastal",
+    "Not bought: approach and harbour cells",
+    "At the landfall the screen shows 'overscale'"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "Before a three-day passage you check the chart-table kit and find this. What do you do before sailing?",
+  "a": "Tighten the dividers; replace the bowed plotter",
+  "o": [
+   "Keep both — re-check each course on the rose",
+   "Oil the dividers; press the plotter flat",
+   "Keep both — a GPS fix will catch the error"
+  ],
+  "why": "A creeping span falsifies every distance, a bowed plotter every course: fix or replace them in harbour.",
+  "ref": "Chartwork instruments — care and accuracy",
+  "fig": {
+   "type": "card",
+   "title": "Chart-table kit check",
+   "lines": [
+    "Dividers: the span closes as you walk them",
+    "Breton plotter: left in the sun, now bowed",
+    "Pencils 2B, soft eraser, spare leads"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your mate lays off tonight's 60 M leg with the plotter's grid squared to the chart table's edge instead of a meridian. How far from the leg's end could the boat arrive?",
+  "a": "3.1 M",
+  "o": [
+   "1.8 M",
+   "6.3 M",
+   "0.05 M"
+  ],
+  "why": "A 3° course error over 60 M: 60 × tan 3° = 3.1 M off. Line the grid up on a meridian or parallel of the chart itself.",
+  "ref": "Chartwork instruments — care and accuracy",
+  "fig": {
+   "type": "card",
+   "title": "Laying off the 60 M leg",
+   "lines": [
+    "Plotter grid lined up on the table edge",
+    "The chart lies 3° askew on the table",
+    "No meridian under the plotter"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "The new chart folio for a 140 M passage has arrived from the chart agent with this stamp. What do you do before sailing?",
+  "a": "Apply Weeks 19–27 to each chart and log them",
+  "o": [
+   "Nothing — the agent has corrected them",
+   "Apply only this week's notices to each",
+   "Correct only the two landfall charts"
+  ],
+  "why": "The stamp dates the last correction: every later weekly notice for each chart must be applied and entered in its log.",
+  "ref": "Notices to Mariners — keeping charts corrected",
+  "fig": {
+   "type": "card",
+   "title": "Chart agent's stamp",
+   "lines": [
+    "Folio: 14 charts for the passage",
+    "Corrected to NM Week 18/26",
+    "Today: Week 27/26"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Checking the folio against the latest cumulative list of notices, you find this for your landfall chart. What do you do?",
+  "a": "Replace it — no notice brings an old edition up",
+  "o": [
+   "Keep it — every notice has been applied",
+   "Keep it, and note the new edition's date",
+   "Apply the New Edition notice as a correction"
+  ],
+  "why": "A New Edition carries changes never issued as notices and cancels the old one: buy the new chart.",
+  "ref": "Notices to Mariners — keeping charts corrected — new editions",
+  "fig": {
+   "type": "card",
+   "title": "Cumulative list, this month",
+   "lines": [
+    "Landfall approach chart:",
+    "New Edition published 14 May 2026",
+    "Your copy: 2019 edition, all NMs applied"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Preparing the passage chart, you find three temporary notices pencilled on it and check them against this month's list in force. What do you do?",
+  "a": "Rub out 1104 and 0388; keep 2012",
+  "o": [
+   "Keep all three until a new edition",
+   "Rub them all out — T notices last a year",
+   "Ink in all three as permanent changes"
+  ],
+  "why": "A T notice stands until it is cancelled: the list in force shows which still apply; rub out the rest.",
+  "ref": "Notices to Mariners — keeping charts corrected — T&P notices",
+  "fig": {
+   "type": "card",
+   "title": "T notices on your chart",
+   "lines": [
+    "T 1104/23 — buoy moved",
+    "T 0388/24 — light unlit",
+    "T 2012/24 — survey in progress",
+    "In force this month: 2012/24 only"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "Besides the charts, you carry these publications for the passage. How do you keep them up to date?",
+  "a": "From the same weekly NMs — their later sections",
+  "o": [
+   "Buy new editions at the start of each season",
+   "No need — they change only with a new edition",
+   "From the almanac's supplements only"
+  ],
+  "why": "The weekly Notices to Mariners carry corrections to Sailing Directions, Lights and Radio Signals as well as charts.",
+  "ref": "Notices to Mariners — keeping charts corrected",
+  "fig": {
+   "type": "card",
+   "title": "Publications aboard",
+   "lines": [
+    "Admiralty Sailing Directions",
+    "List of Lights and Fog Signals",
+    "List of Radio Signals",
+    "Charts: corrected from the weekly NMs"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Your landfall is covered only by this cell, and you have zoomed in on a rock 300 m off your planned track. How far from where the screen draws it may the rock really lie?",
+  "a": "Up to about 175 m — 300 m is too close",
+  "o": [
+   "Up to about 10 m — 300 m is ample",
+   "Up to about 18 m — 300 m is ample",
+   "Up to about 1,750 m — 300 m is too close"
+  ],
+  "why": "The error follows the source scale, not the zoom: 0.5 mm × 350,000 = 175 m. Zooming in only magnifies it.",
+  "ref": "Electronic charts — ENC and RNC — over-zoom",
+  "fig": {
+   "type": "card",
+   "title": "ENC at the landfall",
+   "lines": [
+    "Only cell: general band, from 1:350,000",
+    "Drawing accuracy: about 0.5 mm at that scale",
+    "Screen: 'overscale ×17' (about 1:20,000)"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "At 32 kn at night your mate has zoomed the plotter right in for detail, with the boat at the screen's bottom edge. How much warning does the screen give of what lies ahead?",
+  "a": "1.5 min",
+  "o": [
+   "2.5 min",
+   "40 min",
+   "0.9 min"
+  ],
+  "why": "0.8 ÷ 32 = 0.025 h = 1.5 min (90 s). At speed, zoom out until the screen shows several minutes ahead.",
+  "ref": "Electronic charts — ENC and RNC — zoom at speed",
+  "fig": {
+   "type": "card",
+   "title": "Fast motor yacht, night",
+   "lines": [
+    "SOG 32 kn",
+    "Zoomed in: 0.8 M from the boat to the top",
+    "Boat icon at the bottom edge"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "You work the first leg of the Biscay crossing by Mercator sailing with the meridional parts from the tables. What course and distance do you lay off?",
+  "a": "214°T, 139.4 M",
+  "o": [
+   "225°T, 162.6 M",
+   "214°T, 203.3 M",
+   "146°T, 139.4 M"
+  ],
+  "why": "DMP 167.7; tan C = d.long 115' ÷ 167.7 → S 34.4° W = 214°T. Distance = d.lat 115' ÷ cos 34.4° = 139.4 M.",
+  "ref": "Charts — Mercator projection — Mercator sailing",
+  "fig": {
+   "type": "card",
+   "title": "Leg 1, Mercator sailing",
+   "lines": [
+    "From 47°50.0'N 005°10.0'W",
+    "To 45°55.0'N 007°05.0'W",
+    "Mer. parts: 47°50' 3259.5; 45°55' 3091.8"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "On the Ionian crossing you run this course and distance overnight. By mid-latitude sailing, what is your EP at dawn?",
+  "a": "38°20.3'N 020°15.0'E",
+  "o": [
+   "38°20.3'N 019°49.8'E",
+   "41°09.7'N 020°17.3'E",
+   "38°17.2'N 020°11.1'E"
+  ],
+  "why": "d.lat 122 × cos 134° = 84.7' S → 38°20.3'N; dep. 87.8 M ÷ cos 39.0° (mid-lat) = 113.0' E → 020°15.0'E.",
+  "ref": "Charts — latitude and longitude — mid-latitude sailing",
+  "fig": {
+   "type": "card",
+   "title": "Ionian crossing",
+   "lines": [
+    "0100: 39°45.0'N 018°22.0'E, off Leuca",
+    "Course made good 134°T",
+    "Distance run 122 M"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "At 0400, eight hours after your last fix, the EP on the passage chart sits 4 mm outside the 20 m contour of an offshore bank. How far off is that, and what do you make of it?",
+  "a": "About 1.1 M — less than the EP's likely error",
+  "o": [
+   "About 2.0 M — a safe margin offshore",
+   "About 0.1 M — alter away at once",
+   "About 10.8 M — plenty of sea room"
+  ],
+  "why": "4 mm × 500,000 = 2,000 m = 1.1 M. Eight hours of DR can be out by more than that: give the bank a wider berth.",
+  "ref": "Charts — scale and the chart folio — small-scale chart error",
+  "fig": {
+   "type": "card",
+   "title": "Passage chart, 0400",
+   "lines": [
+    "Natural scale 1:500,000 at the bank's latitude",
+    "EP 4 mm outside the bank's 20 m contour",
+    "Last fix 2000; DR and EP since"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Your crew transferred the great circle for this 300 M delivery leg from the gnomonic chart to the Mercator. At mid-leg, how far is it from the rhumb line, and what does it save?",
+  "a": "About 3.9 M north of it; saves about 0.1 M",
+  "o": [
+   "About 3.9 M south of it; saves about 0.1 M",
+   "About 0.1 M north of it; saves about 3.9 M",
+   "About 3.9 M north of it; saves about 3.9 M"
+  ],
+  "why": "Vertex: tan lat = tan 49.67° ÷ cos 3.86° → 49°43.9'N, 3.9 M north; the great circle is 299.9 M vs 300.0. Not worth it.",
+  "ref": "Charts — gnomonic charts and great circles",
+  "fig": {
+   "type": "card",
+   "title": "Delivery leg to the Scillies",
+   "lines": [
+    "From 49°40'N 014°00'W",
+    "To 49°40'N 006°16.5'W",
+    "Rhumb line: 090°T, 300.0 M"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "You set the safety contour for tonight's run on your 2.4 m draught motor yacht by the rule on this card. Which line does the plotter then draw bold?",
+  "a": "The 10 m contour — the next deeper one",
+  "o": [
+   "The 2 m contour — the nearest one",
+   "A new line drawn at 4.9 m",
+   "A new line drawn at 3.4 m"
+  ],
+  "why": "2.4 + 0.5 + 1.0 + 1.0 = 4.9 m. The plotter can bold only a contour the cell holds: the next deeper, 10 m.",
+  "ref": "Electronic charts — ENC and RNC — safety contour",
+  "fig": {
+   "type": "card",
+   "title": "Safety contour, tonight",
+   "lines": [
+    "Draught 2.4 m; squat and trim at 20 kn 0.5 m",
+    "Swell 2.0 m: allow half its height",
+    "Margin under the keel: 1.0 m",
+    "Contours in the cells: 2, 10, 20, 50 m"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Closing the coast at night, you pass from the general cell into the approach cell, and the bold safety contour suddenly jumps 2 M closer to the shore. Why?",
+  "a": "It now bolds the 5 m line — this cell has one",
+  "o": [
+   "The plotter has lost its depth settings",
+   "The tide has risen since you set it",
+   "The approach cell's depths are in feet"
+  ],
+  "why": "The bold line is the cell's shallowest contour at or deeper than your setting: 10 m in the general cell, 5 m in the approach cell.",
+  "ref": "Electronic charts — ENC and RNC — safety contour",
+  "fig": {
+   "type": "card",
+   "title": "Plotter setting and cells",
+   "lines": [
+    "Safety contour set: 4 m",
+    "General cell contours: 10, 20, 50 m",
+    "Approach cell contours: 2, 5, 10, 20 m"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "On a night passage the crew complains that the plotter's grounding alarm keeps sounding in open water and asks you to switch it off. You check the settings. What do you do?",
+  "a": "Set the contour for your draught; keep the alarm on",
+  "o": [
+   "Switch it off for the night — it is a nuisance",
+   "Leave it as it is and keep acknowledging",
+   "Turn the volume down so the saloon can sleep"
+  ],
+  "why": "A factory 30 m contour cries wolf until nobody listens. Set it from draught and margin, so the alarm means something.",
+  "ref": "Electronic charts — ENC and RNC — alarms",
+  "fig": {
+   "type": "card",
+   "title": "Plotter alarm, every few minutes",
+   "lines": [
+    "'Safety contour crossed' in 40–60 m",
+    "Safety contour: 30 m (factory setting)",
+    "Your draught: 2.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "The plotter's route check for tomorrow's 130 M passage reports this. What do you make of leg 3?",
+  "a": "Unchecked — check it on the paper chart",
+  "o": [
+   "Clear — the route check has passed it",
+   "Clear — a blank area is open, deep water",
+   "Clear — but re-run it with a wider corridor"
+  ],
+  "why": "A route check can only test the data it has: where no cell is loaded it finds nothing, so it reports nothing.",
+  "ref": "Electronic charts — ENC and RNC — alarms",
+  "fig": {
+   "type": "card",
+   "title": "Route check: no dangers found",
+   "lines": [
+    "Legs 1, 2, 4: in installed ENC cells",
+    "Leg 3: crosses an area with no cell —",
+    "the screen shows it blank"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "On autopilot at night, your watchkeeper wants to wait in the saloon and come up only if an alarm sounds. What do you tell him?",
+  "a": "No — keep the lookout on deck; alarms miss a lot",
+  "o": [
+   "Fine — the alarms cover every danger out there",
+   "Fine — but he checks the screen every hour",
+   "Fine, if he sets the radar guard zone wider"
+  ],
+  "why": "Alarms miss unlit craft, fishing gear, boats without AIS and uncharted dangers: Rule 5 needs a lookout by sight and hearing.",
+  "ref": "Electronic charts — ENC and RNC — alarms",
+  "fig": {
+   "type": "card",
+   "title": "Night watch, 18 kn on autopilot",
+   "lines": [
+    "Plotter alarms on: grounding, XTE, AIS CPA",
+    "Radar guard zone set",
+    "Watchkeeper: 'The alarms will call me'"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "You sit down to plan tomorrow's 130 M route on the plotter and find it set like this. What do you change first?",
+  "a": "Switch to the full display to plan and check",
+  "o": [
+   "Nothing — the basic display shows the dangers",
+   "Zoom in further to bring the soundings back",
+   "Switch on the satellite-photo overlay"
+  ],
+  "why": "A basic display hides soundings and objects to declutter the screen: plan and check a route with everything shown.",
+  "ref": "Electronic charts — ENC and RNC — display levels",
+  "fig": {
+   "type": "card",
+   "title": "Plotter display",
+   "lines": [
+    "Display level: 'Basic'",
+    "Spot soundings and some symbols hidden",
+    "Planning a 130 M route for tomorrow"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Mid-crossing, your route passes over this shoal, and the plotter shows it as an ordinary sounding with no danger symbol. Is it a danger to you at speed?",
+  "a": "Yes — about 2.5 m in the troughs; she needs 2.9 m",
+  "o": [
+   "No — 1.4 m spare under the 2.4 m draught",
+   "No — 2.5 m in the troughs clears 2.4 m",
+   "Yes — 1.2 m in the troughs, under 2.4 m"
+  ],
+  "why": "Troughs take half the swell: 3.8 − 1.3 = 2.5 m vs 2.4 + 0.5 = 2.9 m. Set at the draught, the contour flags no isolated danger.",
+  "ref": "Electronic charts — ENC and RNC — alarms — isolated dangers",
+  "fig": {
+   "type": "card",
+   "title": "Shoal on the route, 20 kn",
+   "lines": [
+    "Least depth 3.8 m, in deep water",
+    "Safety contour set to 2.4 m (your draught)",
+    "Swell 2.6 m; squat and trim 0.5 m"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "You check the folio for a Falmouth–Brest–La Coruña passage against the route in your plan. What is missing?",
+  "a": "A large-scale chart of the Raz de Sein",
+  "o": [
+   "Nothing — the Biscay chart covers the Raz",
+   "A second copy of the Biscay passage chart",
+   "Nothing — the plotter has the Raz in detail"
+  ],
+  "why": "A tidal race among rocks needs its own large-scale chart; a passage chart's scale is far too small for that pilotage.",
+  "ref": "Charts — scale and the chart folio — the passage folio",
+  "fig": {
+   "type": "card",
+   "title": "Folio and route",
+   "lines": [
+    "Charts: Falmouth, Western Channel, Ushant,",
+    "Brest; Biscay passage; La Coruña, Ferrol",
+    "Leg 2: leave Brest by the Raz de Sein,",
+    "then cross Biscay to La Coruña"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "At 0300 on the Ionian crossing your EP nears the edge of the Italian chart, and the Greek chart takes over. No land is in sight. How do you carry the plot across?",
+  "a": "Plot the EP on B by its latitude and longitude",
+  "o": [
+   "By bearing and distance from a coast light",
+   "Measure its distance from A's edge onto B",
+   "Leave B blank until the next GPS fix"
+  ],
+  "why": "Offshore, transfer by latitude and longitude: the charts differ in scale, so a distance off an edge does not carry.",
+  "ref": "Charts — scale and the chart folio — the passage folio",
+  "fig": {
+   "type": "card",
+   "title": "Changing charts mid-crossing",
+   "lines": [
+    "Chart A (Italian) ends at 019°40'E",
+    "Chart B (Greek) overlaps it by 10'",
+    "Both on WGS84; no lights in sight"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Before a Falmouth–Brest–La Coruña passage you go through the navigational warnings in force. Whose NAVAREA warnings do you need?",
+  "a": "NAVAREA I and II — the route crosses 48°27'N",
+  "o": [
+   "NAVAREA I only — you sail from the UK",
+   "NAVAREA II only — both ports lie in it",
+   "NAVAREA II and III — France and Spain"
+  ],
+  "why": "Falmouth lies in NAVAREA I; Brest and La Coruña, south of 48°27'N, in NAVAREA II. Check both lists in force.",
+  "ref": "Navigational warnings — NAVAREAs",
+  "fig": {
+   "type": "card",
+   "title": "Your route and the NAVAREAs",
+   "lines": [
+    "Falmouth 50°09'N; Brest 48°23'N",
+    "La Coruña 43°22'N",
+    "NAVAREA I/II boundary: 48°27'N",
+    "NAVAREA III: the Mediterranean"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "This NAVAREA III warning covers part of your Ionian crossing. You expect to cross the area at 1830 Greek summer time. What do you do?",
+  "a": "1530 UTC — inside the window; route round",
+  "o": [
+   "1830 UTC — after the firing; carry on",
+   "2130 UTC — long after it; carry on",
+   "1630 UTC — just after it; carry on"
+  ],
+  "why": "1830 local − 3 h = 1530 UTC, inside 0700–1600 UTC. Warnings run in UTC: convert before you compare.",
+  "ref": "Navigational warnings — NAVAREA III",
+  "fig": {
+   "type": "card",
+   "title": "NAVAREA III warning",
+   "lines": [
+    "Live firing; area as given in the text",
+    "Today 0700–1600 UTC",
+    "Your ETA at the area: 1830 local (UTC+3)"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "Your NAVTEX prints this NAVAREA III warning while you are on passage. What do you do on the chart?",
+  "a": "Rub out 0489; pencil in 0517 with its number",
+  "o": [
+   "Keep 0489 too until you reach port",
+   "Ink 0517 in, as it is the latest",
+   "Note 0517 in the log, not on the chart"
+  ],
+  "why": "Plot each warning in pencil with its number, to be rubbed out when cancelled: the chart shows what is in force.",
+  "ref": "Navigational warnings",
+  "fig": {
+   "type": "card",
+   "title": "NAVAREA III 0517/26",
+   "lines": [
+    "Drifting buoy reported, position given",
+    "Cancel 0489/26",
+    "0489 (a rig tow) is pencilled on your chart"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "At 0230 in thick fog, crossing an oil and gas field, you hear this ahead. What is it, and what does it tell you?",
+  "a": "A platform's fog signal — likely within 2 M",
+  "o": [
+   "A safe-water buoy's horn — the fairway",
+   "A ship at anchor sounding her signal",
+   "A lightvessel's horn, some 10 M off"
+  ],
+  "why": "Offshore structures sound Mo(U), · · —, usually every 30 s and audible about 2 M: slow down and pass it on the radar.",
+  "ref": "Chart symbols — offshore installations — fog signals",
+  "fig": {
+   "type": "card",
+   "title": "Fog, visibility 200 m",
+   "lines": [
+    "Horn ahead: · · — every 30 s",
+    "Chart: gas field, platforms 4–8 M ahead",
+    "Radar: several fixed echoes"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "At night your route runs along the edge of this wind farm. Which lights mark its outline for you?",
+  "a": "The yellow lights that flash together",
+  "o": [
+   "The red lights high up on the turbines",
+   "White Mo(U) lights on every tower",
+   "None — only the radar shows the farm"
+  ],
+  "why": "Corner and edge turbines carry synchronised flashing yellow lights; the red lights high up are for aircraft, not for you.",
+  "ref": "Chart symbols — offshore areas — wind farms — lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "y",
+     "x": 50,
+     "y": 112,
+     "t": "yellow"
+    },
+    {
+     "c": "y",
+     "x": 240,
+     "y": 112,
+     "t": "yellow"
+    },
+    {
+     "c": "r",
+     "x": 50,
+     "y": 58,
+     "r": 4,
+     "t": "red"
+    },
+    {
+     "c": "r",
+     "x": 145,
+     "y": 62,
+     "r": 4,
+     "t": "red"
+    },
+    {
+     "c": "r",
+     "x": 240,
+     "y": 58,
+     "r": 4,
+     "t": "red"
+    }
+   ],
+   "note": "Night · wind farm ahead · the yellows flash together"
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your night track passes 0.2 M from this offshore buoy, and AIS shows a tanker heading for it. What do you do?",
+  "a": "Re-route well clear — a tanker moors, hoses float",
+  "o": [
+   "Hold on — 0.2 M is outside the 500 m area",
+   "Hold on — a big mark is easy to pass close",
+   "Pass between the buoy and the tanker"
+  ],
+  "why": "A single buoy mooring holds a loading tanker and floating hoses; 0.2 M is 370 m, inside the 500 m area: keep well off.",
+  "ref": "Chart symbols — offshore installations — single buoy moorings",
+  "fig": {
+   "type": "chart",
+   "depths": [
+    [
+     40,
+     60,
+     "62"
+    ],
+    [
+     110,
+     172,
+     "58"
+    ],
+    [
+     260,
+     160,
+     "65"
+    ],
+    [
+     50,
+     118,
+     "60"
+    ]
+   ],
+   "marks": [
+    [
+     130,
+     100,
+     "y",
+     "SBM"
+    ]
+   ],
+   "track": "M20 150 L300 118",
+   "boat": [
+    40,
+    148,
+    80
+   ],
+   "labels": [
+    [
+     130,
+     62,
+     "Restricted area",
+     "middle"
+    ],
+    [
+     130,
+     76,
+     "500 m round it",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Night passage",
+    "Track 0.2 M off",
+    "AIS: tanker bound",
+    "for the buoy"
+   ],
+   "note": "Chart extract"
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "Your track crosses this charted symbol, and later you plan to anchor near it to wait for the stream. What do you do?",
+  "a": "Cross it, but anchor well away from it",
+  "o": [
+   "Go round — a well flares gas at the surface",
+   "Anchor beside it — it gives a lee",
+   "Stop and report it to the coastguard"
+  ],
+  "why": "A suspended wellhead stands on the seabed, here 14 m down: no danger to your keel, but anchors and nets snag on it.",
+  "ref": "Chart symbols — offshore installations — wellheads",
+  "fig": {
+   "type": "chart",
+   "depths": [
+    [
+     60,
+     70,
+     "28"
+    ],
+    [
+     235,
+     178,
+     "27"
+    ],
+    [
+     250,
+     112,
+     "30"
+    ],
+    [
+     90,
+     105,
+     "29"
+    ],
+    [
+     150,
+     60,
+     "31"
+    ]
+   ],
+   "marks": [
+    [
+     150,
+     140,
+     "w",
+     "Well (susp)"
+    ]
+   ],
+   "track": "M20 150 L290 130",
+   "boat": [
+    40,
+    148,
+    85
+   ],
+   "labels": [
+    [
+     150,
+     160,
+     "14 m over it",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Waiting for tide",
+    "Draught 2.4 m",
+    "Chain 100 m"
+   ],
+   "note": "Chart extract"
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your route crosses this wind farm, and your ETA at its edge is 2215. What do you do?",
+  "a": "Go round it — transit is by day only",
+  "o": [
+   "Go through, keeping 50 m off each turbine",
+   "Go through — you are under 24 m",
+   "Go through slowly, with a radar watch"
+  ],
+  "why": "The farm's own rules govern here: a vessel under 24 m may transit only in daylight, so at 2215 you go round.",
+  "ref": "Chart symbols — offshore areas — wind farms — the rules",
+  "fig": {
+   "type": "card",
+   "title": "Wind farm: the national rules",
+   "lines": [
+    "Transit: vessels under 24 m, daylight only",
+    "No anchoring or fishing inside the farm",
+    "Keep 50 m from every turbine",
+    "Your yacht: 21 m, motor"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Tonight your route runs between two rows of this wind farm. How wide is the clear lane, and what do you do?",
+  "a": "200 m — too narrow at night; go round",
+  "o": [
+   "700 m — room enough with care; go through",
+   "1,200 m — ample room; go through",
+   "1,700 m — wide open; go through"
+  ],
+  "why": "Each row's zone takes 500 m of the 1,200 m gap: 1,200 − 2 × 500 = 200 m — about a cable, at night, with a cross-set.",
+  "ref": "Chart symbols — offshore areas — wind farms — the rules",
+  "fig": {
+   "type": "card",
+   "title": "Wind farm under construction",
+   "lines": [
+    "Turbines in rows 1,200 m apart",
+    "Safety zone: 500 m round each turbine",
+    "Night; cross-set up to 1 kn"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "Fog closes in by day as you transit a wind farm, and your crew suggests anchoring between two turbines to wait. The chart shows the farm like this. What do you do?",
+  "a": "Not here — cables run between the turbines",
+  "o": [
+   "Anchor midway, where the cables lie deepest",
+   "Anchor next to a turbine, out of the traffic",
+   "Anchor with a tripping line on the anchor"
+  ],
+  "why": "Inter-array cables link every turbine, and an anchor can foul or cut them: leave the farm or wait under way.",
+  "ref": "Chart symbols — offshore areas — wind farms",
+  "fig": {
+   "type": "card",
+   "title": "Chart: the wind farm",
+   "lines": [
+    "Turbines in a grid, depths 20–25 m",
+    "Magenta cable lines between all turbines",
+    "Export cable to the shore from the south"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your passage plan must cross this deep-water route on the way out. How do you plan the crossing?",
+  "a": "At right angles, briskly, clear of the bend",
+  "o": [
+   "Along it for a while, with the traffic",
+   "Diagonally, at the bend, to save distance",
+   "At right angles, at the bend, to see both arms"
+  ],
+  "why": "Ships in a DW route can hardly alter: cross on a heading at right angles, quickly, away from the bend where they turn.",
+  "ref": "Chart symbols — traffic separation schemes — deep-water routes",
+  "fig": {
+   "type": "card",
+   "title": "Deep-water route on your route",
+   "lines": [
+    "One-way DW route, 4 M wide",
+    "Bends 90° at a junction 6 M to the north",
+    "Deep-draught tankers use it day and night"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 3,
+  "q": "Tonight you are watching from the deck for this landfall light. At about what range do you expect to pick it up?",
+  "a": "About 9 M — the luminous range",
+  "o": [
+   "About 19.7 M — the geographical range",
+   "About 22 M — the nominal range",
+   "About 16.1 M — the light's height alone"
+  ],
+  "why": "Geographical 2.08 (√60 + √3) = 19.7 M, but tonight's haze lets the light carry only 9 M: you see it at the lesser.",
+  "ref": "Nautical publications — List of Lights — luminous and geographical range",
+  "fig": {
+   "type": "card",
+   "title": "Landfall light, tonight",
+   "lines": [
+    "Elevation 60 m; nominal range 22 M",
+    "Meteorological visibility: 5 M",
+    "Luminous range diagram: 9 M · eye 3 m"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "The foreign list of lights for your landfall gives this. From your cockpit, at what range should the light rise above the horizon?",
+  "a": "About 19.3 M",
+  "o": [
+   "About 21.0 M",
+   "About 22.7 M",
+   "About 16.3 M"
+  ],
+  "why": "Take out the list's 5 m eye and put in yours: 21 − 2.08 (√5 − √2) = 21 − 1.7 = 19.3 M.",
+  "ref": "Nautical publications — List of Lights — geographical range",
+  "fig": {
+   "type": "card",
+   "title": "Foreign list of lights",
+   "lines": [
+    "Landfall light: range 21 M",
+    "Note: ranges are geographical,",
+    "for a height of eye of 5 m",
+    "Your height of eye: 2 m"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "At 2330 on a clear night, with your EP 30 M off the cape, you see this where the light should be. What is it?",
+  "a": "Its loom — good for a rough bearing only",
+  "o": [
+   "The light itself — your EP must be wrong",
+   "Another light, further along the coast",
+   "Lightning from a storm over the cape"
+  ],
+  "why": "A powerful light's loom shows in the sky well beyond its range; the light itself rises later — fix on it then.",
+  "ref": "Nautical publications — List of Lights",
+  "fig": {
+   "type": "card",
+   "title": "Approaching the cape at night",
+   "lines": [
+    "EP 30 M off; the light: range 23 M",
+    "A beam sweeps the sky above the horizon",
+    "No light itself in sight"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your plan for tonight keeps 5 M off this coast. You read this in the Sailing Directions' passage notes. What do you do?",
+  "a": "Allow for it — more offing and frequent fixes",
+  "o": [
+   "Ignore it — the chart shows no current",
+   "Ignore it — the tidal atlas covers it",
+   "Close the coast to get inside it"
+  ],
+  "why": "Sailing Directions record what the chart cannot: an onshore set of 1.5 kn eats 5 M of offing in about 3 h.",
+  "ref": "Nautical publications — Sailing Directions — passage notes",
+  "fig": {
+   "type": "card",
+   "title": "Sailing Directions, passage notes",
+   "lines": [
+    "'In W winds an indraught sets onto",
+    "this coast at up to 1.5 kn'",
+    "Chart: no current shown · Forecast W 6"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "After the crossing you plan a 0300 arrival at a Greek Ionian anchorage. The chart shows clear water in the approach, but the pilot says this. What do you plan?",
+  "a": "Time the arrival for daylight",
+  "o": [
+   "Trust the chart — it shows clear water",
+   "Go in at speed on the plotter's track",
+   "Follow the depth contour close inshore"
+  ],
+  "why": "Where the pilot warns of unlit, uncharted fish farms, a chart's clear water means little at night: arrive in daylight.",
+  "ref": "Nautical publications — Sailing Directions — passage notes",
+  "fig": {
+   "type": "card",
+   "title": "Sailing Directions, Ionian coast",
+   "lines": [
+    "Fish farms lie off many coasts and bays,",
+    "often unlit or poorly lit; positions change,",
+    "and they are not always charted"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your log has been found to read high. How far through the water have you actually run since the 2000 fix?",
+  "a": "120.0 M",
+  "o": [
+   "132.3 M",
+   "126.0 M",
+   "114.3 M"
+  ],
+  "why": "True = log ÷ 1.05 = 126.0 ÷ 1.05 = 120.0 M. Multiplying by 1.05 applies the error the wrong way.",
+  "ref": "Distance, speed and time — the log",
+  "fig": {
+   "type": "card",
+   "title": "Log calibration",
+   "lines": [
+    "Log reads 5 % high:",
+    "log distance = 1.05 × true distance",
+    "Log run since the 2000 fix: 126.0 M"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "You take this bearing of the landfall light with the hand-bearing compass. In which of its sectors does the boat lie?",
+  "a": "Red — you are on 130°T",
+  "o": [
+   "White — you are on 124°T",
+   "White — you are on 127°T",
+   "Obscured — you are on 310°T"
+  ],
+  "why": "127°M + 3°E = 130°T, inside R 128°–140°. Sector limits are true bearings from seaward, so convert first.",
+  "ref": "Charts — true, magnetic and compass — light sectors",
+  "fig": {
+   "type": "card",
+   "title": "Light and bearing",
+   "lines": [
+    "List of Lights: W 115°–128°, R 128°–140°",
+    "(sectors from seaward, true)",
+    "Hand-bearing compass: 127°M; var. 3°E"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "A NAVTEX warning gives a drifting container's position in decimal degrees. What do you plot on the chart?",
+  "a": "47°12.35'N 006°27.75'W",
+  "o": [
+   "47°20.58'N 006°46.25'W",
+   "47°12.35'N 006°46.25'W",
+   "47°20.58'N 006°27.75'W"
+  ],
+  "why": "Minutes = decimal × 60: 0.2058° × 60 = 12.35'; 0.4625° × 60 = 27.75'. Decimals of a degree are not minutes.",
+  "ref": "Charts — latitude and longitude",
+  "fig": {
+   "type": "card",
+   "title": "NAVTEX, navigational warning",
+   "lines": [
+    "Drifting container, awash",
+    "Position: 47.2058°N 006.4625°W"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Tonight's track runs through this area to be avoided on the passage chart. Does it bind your 21 m yacht?",
+  "a": "No — its note names the ships it applies to",
+  "o": [
+   "Yes — no vessel may enter such an area",
+   "Yes — but only at night",
+   "No — such areas apply only in fog"
+  ],
+  "why": "An area to be avoided binds the ships named in its note; a yacht under 400 GT may pass with care — read the note first.",
+  "ref": "Chart symbols — traffic separation schemes — areas to be avoided",
+  "fig": {
+   "type": "card",
+   "title": "On the passage chart",
+   "lines": [
+    "Magenta pecked line: 'Area to be avoided'",
+    "Note: by ships over 400 GT and",
+    "by all tankers laden with oil",
+    "Your yacht: 21 m, about 120 GT"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "On the routeing chart for May you look at the wind rose for the square your passage crosses. What does the figure in its centre tell you?",
+  "a": "4 % calms, light airs and variables",
+  "o": [
+   "The mean wind force there is 4",
+   "Four gales a month in that square",
+   "A 4 % chance of fog in that square"
+  ],
+  "why": "On routeing charts the figure in the rose's centre is the percentage of calms, light airs and variable winds.",
+  "ref": "Nautical publications — routeing charts",
+  "fig": {
+   "type": "card",
+   "title": "Routeing chart, May, one square",
+   "lines": [
+    "Wind rose: arrows from eight points",
+    "Figure in the centre circle: 4"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Range control has asked you to be out of the danger area by 1100. At what time do you cross its edge?",
+  "a": "1056:45",
+  "o": [
+   "1056:55",
+   "1053:59",
+   "1102:55"
+  ],
+  "why": "3.70 ÷ 24.0 = 0.1542 h = 9.25 min = 9 min 15 s; 1047:30 + 9:15 = 1056:45. A quarter of a minute is 15 s, not 25.",
+  "ref": "Distance, speed and time",
+  "fig": {
+   "type": "card",
+   "title": "Leaving the danger area",
+   "lines": [
+    "1047:30 — 3.70 M to the area's edge",
+    "SOG 24.0 kn, steady"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your Falmouth–Brest route runs through the Ushant VTS area. The List of Radio Signals says this. What do you do?",
+  "a": "No report — keep a listening watch on Ch 13",
+  "o": [
+   "Report on entry, as the ships do",
+   "Nothing — the VTS is only for ships",
+   "Call the VTS on Ch 16 at the scheme"
+  ],
+  "why": "The reporting rule binds ships of 300 GT and over; you still listen on the VTS channel and answer if called.",
+  "ref": "Nautical publications — List of Radio Signals",
+  "fig": {
+   "type": "card",
+   "title": "List of Radio Signals: Ushant VTS",
+   "lines": [
+    "Mandatory reports: ships of 300 GT and over",
+    "All vessels: listening watch on Ch 13",
+    "Your yacht: 21 m, under 300 GT"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 1,
+  "q": "Your mate has loaded the almanac's waypoints for the La Coruña approach straight into the plotter route. What do you do before using them?",
+  "a": "Check each one on the chart, and the legs between",
+  "o": [
+   "Nothing — almanac waypoints are checked",
+   "Check only the last one, at the entrance",
+   "Nothing — the route check will do that"
+  ],
+  "why": "A published waypoint can be mistyped, on another datum or across a danger: plot each one and check every leg.",
+  "ref": "Nautical publications — almanacs",
+  "fig": {
+   "type": "card",
+   "title": "Route for the landfall",
+   "lines": [
+    "Waypoints typed in from the almanac's list",
+    "Not yet checked on the chart",
+    "Arrival planned at night"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your tablet backup shows an old raster chart of a remote anchorage on your route, and its title panel says this. What depth is the sounding over the shoal?",
+  "a": "13.7 m",
+  "o": [
+   "7.3 m",
+   "12.8 m",
+   "2.2 m"
+  ],
+  "why": "7₃ is 7 fathoms 3 feet: 7 × 1.83 + 3 × 0.30 = 13.7 m. It is neither metres nor feet.",
+  "ref": "Charts — chart datum — units",
+  "fig": {
+   "type": "card",
+   "title": "Old raster chart, title panel",
+   "lines": [
+    "Soundings in fathoms and feet",
+    "Over the shoal: 7₃",
+    "1 fathom = 6 ft = 1.83 m; 1 ft = 0.30 m"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Off Brittany you use a French tidal stream atlas whose pages are referenced to HW Brest. It is now 1150. Which page do you open?",
+  "a": "HW Brest +3",
+  "o": [
+   "HW Brest +2",
+   "HW Dover −2",
+   "HW Dover −1"
+  ],
+  "why": "1150 − 0915 = 2 h 35 min after HW Brest: the nearest page is HW +3, each page serving half an hour either side.",
+  "ref": "Nautical publications — tidal stream atlases",
+  "fig": {
+   "type": "card",
+   "title": "Tidal stream atlas, Brittany",
+   "lines": [
+    "Pages referenced to HW Brest",
+    "Today HW Brest 0915; HW Dover 1340",
+    "Both in local time; now 1150"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "On a night passage across an oilfield you see these lights on a large structure ahead. What do the two red lights show you?",
+  "a": "The ends of the structure — pass outside them",
+  "o": [
+   "Aircraft warning lights — ignore them",
+   "Supply vessels moored at each side",
+   "A tug towing it — keep clear astern"
+  ],
+  "why": "Besides its main white Mo(U) light, a large platform shows red Mo(U) lights at its ends to mark its extent.",
+  "ref": "Chart symbols — offshore installations — lights",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 150,
+     "y": 64,
+     "t": "white Mo(U)"
+    },
+    {
+     "c": "r",
+     "x": 70,
+     "y": 118,
+     "r": 5,
+     "t": "red Mo(U)"
+    },
+    {
+     "c": "r",
+     "x": 225,
+     "y": 118,
+     "r": 5,
+     "t": "red Mo(U)"
+    }
+   ],
+   "note": "Night · a large structure about 3 M ahead"
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Your passage chart's title panel gives its scale like this. Near La Coruña, how much ground does 1 mm on this chart cover?",
+  "a": "About 532 m",
+  "o": [
+   "About 500 m",
+   "About 470 m",
+   "About 363 m"
+  ],
+  "why": "Mercator scale holds only at the stated latitude: 500,000 × cos 43.5° ÷ cos 47° = 1:531,800, so 1 mm ≈ 532 m.",
+  "ref": "Charts — Mercator projection",
+  "fig": {
+   "type": "card",
+   "title": "Passage chart, title panel",
+   "lines": [
+    "Mercator projection",
+    "Natural scale 1:500,000 at lat. 47°",
+    "Landfall at 43°30'N"
+   ]
+  }
+ },
+ {
+  "topic": "charts",
+  "difficulty": 2,
+  "q": "Crossing Biscay, you will reach the edge of the continental shelf tonight with this forecast. What does the Sailing Directions' note mean for your plan?",
+  "a": "Cross the shelf edge before the gale, at right angles",
+  "o": [
+   "Nothing — 200 m is far too deep to matter",
+   "Run along the shelf edge to stay in deep water",
+   "Heave to on the edge until the gale passes"
+  ],
+  "why": "Seas steepen where the depth shoals sharply: cross that zone early and quickly, not along it and not in the gale.",
+  "ref": "Nautical publications — Sailing Directions — passage notes",
+  "fig": {
+   "type": "card",
+   "title": "Sailing Directions and forecast",
+   "lines": [
+    "'Steep, heavy seas build in SW gales where",
+    "the shelf rises from 4,000 m to 200 m'",
+    "Forecast: SW 7, gale 8 later tonight"
+   ]
+  }
+ }
+]

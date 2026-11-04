@@ -1,0 +1,2410 @@
+[
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are working the height of tide at Dover for 1400 on the standard port's curve. Which high water do you write in the box under the curve?",
+  "a": "1638 — then 1400 is HW−2 h 38 min",
+  "o": [
+   "0412 — the higher HW, 1400 is HW+9 h 48 min",
+   "1105 — curves start at LW: LW+2 h 55 min",
+   "Either HW — the curve is the same both sides"
+  ],
+  "why": "Enter the HW nearest the time you want: 1400 is 2 h 38 min before the 1638 HW, on the rising side of the curve.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Dover — today",
+   "lines": [
+    "HW 0412  6.6 m · LW 1105  0.9 m",
+    "HW 1638  6.4 m · LW 2330  1.0 m",
+    "Curve: hours HW−6 … HW+6",
+    "Wanted: height at 1400"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are bringing your 24 m motor yacht into Plymouth Sound and will cross the charted 2.1 m patch at 1220. What depth of water will you have over it?",
+  "a": "4.9 m",
+  "o": [
+   "4.5 m",
+   "4.1 m",
+   "5.3 m"
+  ],
+  "why": "1220 is HW−3. Height = LW + factor × range = 0.8 + 0.46 × 4.4 = 2.8 m; plus 2.1 m charted = 4.9 m.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Plymouth — standard port curve",
+   "lines": [
+    "LW 0905  0.8 m · HW 1520  5.2 m",
+    "Curve factor at HW−3: 0.46",
+    "Charted depth on the patch: 2.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You will anchor off at 1215 to wait for your berth and want the height of tide then from the curve. What is it?",
+  "a": "3.6 m",
+  "o": [
+   "3.3 m",
+   "3.0 m",
+   "3.4 m"
+  ],
+  "why": "1215 is HW+3 on the ebb to the 1530 LW: 1.2 + 0.52 × 4.6 = 3.6 m. The 0250 LW belongs to the flood before.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Standard port — today",
+   "lines": [
+    "HW 0915  5.8 m · LW 1530  1.2 m",
+    "Earlier LW 0250  0.6 m",
+    "Curve: HW−3 0.46 · HW+3 0.52",
+    "Wanted: height at 1215"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are leaving the marina on the ebb for an overnight passage. What is the latest time you can cross the sill?",
+  "a": "1250",
+  "o": [
+   "1150",
+   "0650",
+   "1310"
+  ],
+  "why": "Need 1.5 + 2.1 + 0.4 = 4.0 m of tide: factor (4.0 − 1.0) ÷ 5.4 = 0.56, which is HW+3 = 1250.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Leaving over the sill",
+   "lines": [
+    "HW 0950  6.4 m · LW 1610  1.0 m",
+    "Curve: HW+2 0.72 · HW+3 0.56 · HW+4 0.38",
+    "Sill dries 1.5 m · draught 2.1 m",
+    "Want 0.4 m under the keel"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You need the height of tide at 0820 on the flood, and today's range falls between the spring and neap curves. What is it?",
+  "a": "1.8 m",
+  "o": [
+   "1.7 m",
+   "2.2 m",
+   "2.1 m"
+  ],
+  "why": "Range 4.8 m is ¾ of the way from neaps to springs: factor 0.34 − ¾ × 0.12 = 0.25; 0.6 + 0.25 × 4.8 = 1.8 m.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Standard port — two curves",
+   "lines": [
+    "LW 0610  0.6 m · HW 1220  5.4 m",
+    "Curve at HW−4: springs 0.22 · neaps 0.34",
+    "Mean ranges: springs 5.6 m · neaps 2.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "Today's range at the standard port is bigger than the mean spring range on the curve diagram. Which curve do you read?",
+  "a": "The spring curve, without going beyond it",
+  "o": [
+   "Beyond the spring curve, in proportion",
+   "The neap curve, the one drawn dashed",
+   "Halfway between the two curves"
+  ],
+  "why": "Interpolate between the curves only for a range between them; above the mean spring range, use the spring curve.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Curve diagram — today",
+   "lines": [
+    "Mean ranges: springs 5.9 m · neaps 3.1 m",
+    "Today: range 6.4 m, equinoctial springs",
+    "Spring curve solid · neap curve dashed"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are bound for a small secondary port that has no tidal curve of its own in the almanac. How do you find the height of tide there at 1500?",
+  "a": "Plymouth's curve, with this port's times and heights",
+  "o": [
+   "The rule of twelfths — curves are for standard ports",
+   "Plymouth's curve and heights, shifted by the time difference",
+   "A nearby port's curve, with that port's own heights"
+  ],
+  "why": "Correct the HW and LW times and heights to the secondary port, then work them on the standard port's curve.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — secondary port",
+   "lines": [
+    "Differences given on Plymouth",
+    "No curve printed for this port",
+    "Wanted: height of tide at 1500"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are anchored off the secondary port and need the time of this afternoon's low water there. Interpolating the difference, when is it?",
+  "a": "1608",
+  "o": [
+   "1550",
+   "1626",
+   "1552"
+  ],
+  "why": "1600 is halfway from 1300 to 1900: −0010 + ½ × 36 min = +0008, so 1600 + 0008 = 1608.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port — LW time",
+   "lines": [
+    "Standard port LW today 1600",
+    "LW diff at 0100 and 1300: −0010",
+    "LW diff at 0700 and 1900: +0026"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You will lie at anchor off the secondary port over tonight's low water. What is the height of that low water there?",
+  "a": "1.7 m",
+  "o": [
+   "1.4 m",
+   "2.0 m",
+   "1.3 m"
+  ],
+  "why": "1.5 m is halfway between MLWS and MLWN: difference −0.1 + ½ × 0.6 = +0.2 m, so 1.5 + 0.2 = 1.7 m.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port — LW height",
+   "lines": [
+    "Standard port LW tonight 1.5 m",
+    "Standard: MLWN 2.2 m · MLWS 0.8 m",
+    "LW diff: MLWN +0.5 m · MLWS −0.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You plan an early-morning arrival at the secondary port. Interpolating both differences, when is high water there and how high?",
+  "a": "0235, 4.9 m",
+  "o": [
+   "0220, 4.7 m",
+   "0250, 5.3 m",
+   "0235, 5.1 m"
+  ],
+  "why": "Time: 0300 is halfway, −0025 → 0235. Height: 5.6 m is ⅔ of the way to MHWS: −0.3 − ⅔ × 0.6 = −0.7 → 4.9 m.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Secondary port — HW",
+   "lines": [
+    "Standard port HW 0300  5.6 m",
+    "Standard: MHWS 6.0 m · MHWN 4.8 m",
+    "HW time diff: 0000 −0040 · 0600 −0010",
+    "HW height diff: MHWS −0.9 · MHWN −0.3"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are working tides for Yarmouth, Isle of Wight, and the almanac's curve is drawn in hours from low water, not high water. Why?",
+  "a": "HW there is a long stand or double — LW is sharp",
+  "o": [
+   "LW is when the Solent streams all turn",
+   "These ports have only one LW each day",
+   "HW times there are kept in local time"
+  ],
+  "why": "Between Swanage and Selsey HW is flat or double, so its time is vague; the curves use the well-defined time of LW.",
+  "ref": "Tides — Solent curves",
+  "fig": {
+   "type": "card",
+   "title": "Almanac — Swanage to Selsey",
+   "lines": [
+    "Special curves for each port",
+    "Hours counted from LW",
+    "Interpolate by the Portsmouth range"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You want to enter Lymington at 1610 over the shallow approach. What is the height of tide then by the port's curve?",
+  "a": "2.1 m",
+  "o": [
+   "1.5 m",
+   "1.4 m",
+   "1.8 m"
+  ],
+  "why": "1610 is LW+3. Height = LW + factor × range = 0.7 + 0.62 × 2.2 = 2.1 m.",
+  "ref": "Tides — Solent curves",
+  "fig": {
+   "type": "card",
+   "title": "Lymington — curve from LW",
+   "lines": [
+    "LW 1310  0.7 m · HW 2.9 m",
+    "Curve factor at LW+3: 0.62",
+    "Wanted: height at 1610"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You plan to leave Yarmouth at 1505 and need the height of tide then. Interpolating the port's curves, what is it?",
+  "a": "2.2 m",
+  "o": [
+   "2.4 m",
+   "2.1 m",
+   "1.2 m"
+  ],
+  "why": "1505 is LW+4. Portsmouth's 3.0 m is halfway between its ranges: factor 0.80; 0.8 + 0.80 × 1.8 = 2.2 m.",
+  "ref": "Tides — Solent curves",
+  "fig": {
+   "type": "card",
+   "title": "Yarmouth — curves from LW",
+   "lines": [
+    "LW 1105  0.8 m · HW 2.6 m",
+    "LW+4: springs 0.90 · neaps 0.70",
+    "Portsmouth ranges: sp 4.1 · np 1.9 m",
+    "Portsmouth range today 3.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are taking the yacht into a Solent river on the flood. What is the earliest time you can cross the bar at its entrance?",
+  "a": "1240",
+  "o": [
+   "1140",
+   "1340",
+   "0640"
+  ],
+  "why": "Need 0.3 + 1.6 + 0.4 = 2.3 m of tide: factor (2.3 − 0.5) ÷ 3.0 = 0.60, which is LW+3 = 1240.",
+  "ref": "Tides — Solent curves",
+  "fig": {
+   "type": "card",
+   "title": "River entrance — curve from LW",
+   "lines": [
+    "LW 0940  0.5 m · HW 3.5 m",
+    "LW+1 0.15 · +2 0.40 · +3 0.60 · +4 0.85",
+    "Bar dries 0.3 m · draught 1.6 m",
+    "Want 0.4 m under the keel"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your 24 m motor yacht needs near-HW depth to reach a berth in Southampton, and you are running late: you will be there at 1235. What do you find?",
+  "a": "Still near the top, between the two HWs",
+  "o": [
+   "About 0.7 m lower, as the twelfths give",
+   "The ebb running hard since the first HW",
+   "No second HW — that comes only at neaps"
+  ],
+  "why": "With a double HW the level stays near the top for about 2 h after the first HW; the rule of twelfths does not fit here.",
+  "ref": "Tides — Solent curves",
+  "fig": {
+   "type": "card",
+   "title": "Southampton — today",
+   "lines": [
+    "Double HW: the almanac gives the first",
+    "First HW 1105  4.5 m · LW 1730  0.6 m",
+    "Second HW about 2 h after the first"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You plan to scrub the hull on the grid at Portland over low water. The port's curve in the almanac shows a long stand at low water. What does that give you?",
+  "a": "Longer at the bottom of the tide to work",
+  "o": [
+   "A shorter time on the grid than usual",
+   "A lower LW than the tide table shows",
+   "Stronger streams over the grid at LW"
+  ],
+  "why": "A stand holds the level near LW for longer, so the grid stays dry longer than a normal curve would suggest.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Portland — curve",
+   "lines": [
+    "Long stand at LW (a double LW)",
+    "Plan: scrub on the grid at LW"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are anchoring off Lundy for the night in your 24 m motor yacht, open to the swell. What is the least depth from the surface at which you let go now?",
+  "a": "9.2 m",
+  "o": [
+   "9.8 m",
+   "8.6 m",
+   "11.0 m"
+  ],
+  "why": "At LW you need 2.0 + 1.0 + ½ × 1.2 swell = 3.6 m; the tide falls 6.5 − 0.9 = 5.6 m, so 3.6 + 5.6 = 9.2 m now.",
+  "ref": "Tides — clearances",
+  "fig": {
+   "type": "card",
+   "title": "Lundy — anchoring now",
+   "lines": [
+    "Now HW+1: tide 6.5 m · next LW 0.9 m",
+    "Draught 2.0 m · swell 1.2 m",
+    "Want 1.0 m under the keel in the troughs"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You plan to anchor off Herm for the night in your 24 m motor yacht. What is the least charted depth you can anchor in?",
+  "a": "2.6 m",
+  "o": [
+   "4.8 m",
+   "3.7 m",
+   "0.4 m"
+  ],
+  "why": "Charted depth + LW height must give draught + clearance: 2.2 + 1.5 − 1.1 = 2.6 m charted.",
+  "ref": "Tides — clearances",
+  "fig": {
+   "type": "card",
+   "title": "Off Herm — overnight",
+   "lines": [
+    "LW tonight 0310: 1.1 m",
+    "Draught 2.2 m",
+    "Want 1.5 m under the keel at LW"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are entering a marina over its sill in your 24 m motor yacht. The tide gauge at the sill shows the depth over it. Can you go in?",
+  "a": "Yes — 0.5 m under the keel",
+  "o": [
+   "Yes — 0.7 m under the keel",
+   "Yes — 2.3 m under the keel",
+   "No — 1.3 m short of water"
+  ],
+  "why": "The gauge already reads the depth over the sill: 2.6 − 1.9 − 0.2 squat = 0.5 m. Don't take off the drying height again.",
+  "ref": "Tides — bars and sills",
+  "fig": {
+   "type": "card",
+   "title": "At the sill",
+   "lines": [
+    "Gauge: 2.6 m over the sill",
+    "Sill dries 1.8 m",
+    "Draught 1.9 m · squat at 5 kn 0.2 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You come alongside the harbour wall at high water to dry out for a scrub. When does the keel take the ground?",
+  "a": "1230",
+  "o": [
+   "1330",
+   "1255",
+   "0630"
+  ],
+  "why": "She touches when the tide is down to 1.2 + 2.1 = 3.3 m: factor (3.3 − 0.7) ÷ 5.2 = 0.50, which is HW+3 = 1230.",
+  "ref": "Tides — drying out",
+  "fig": {
+   "type": "card",
+   "title": "Drying out at the wall",
+   "lines": [
+    "HW 0930  5.9 m · LW 1555  0.7 m",
+    "Curve: HW+2 0.70 · HW+3 0.50 · HW+4 0.30",
+    "Foot of the wall dries 1.2 m",
+    "Draught 2.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are drying out a fin-keeled yacht against the wall tonight. How do you make sure she leans onto the wall as the water leaves her?",
+  "a": "Weight to the wall side, a halyard to the quay",
+  "o": [
+   "Weight to the outboard side, to spare the wall",
+   "Breast lines slack, letting her lie off the wall",
+   "Fenders only, keeping her bolt upright"
+  ],
+  "why": "Give her a slight heel inwards: move weight to the wall side and take a halyard to a strong point ashore.",
+  "ref": "Tides — drying out",
+  "fig": {
+   "type": "card",
+   "title": "Against the wall tonight",
+   "lines": [
+    "Fin keel, draught 2.1 m",
+    "Fender board rigged on the wall side",
+    "LW tonight 2310"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You plan to dry out against an unfamiliar harbour wall on tonight's low water. What do you do first?",
+  "a": "Sound along the berth for level, firm ground",
+  "o": [
+   "Lay out an anchor to hold her off the wall",
+   "Rig fenders to keep her well off the wall",
+   "Check the depth at the wall at HW only"
+  ],
+  "why": "The keel must land on level, firm ground free of debris: sound or look at the berth near LW before you use it.",
+  "ref": "Tides — drying out",
+  "fig": {
+   "type": "card",
+   "title": "Strange harbour",
+   "lines": [
+    "Drying berth along the old wall",
+    "Harbourmaster: “firm sand, mostly”",
+    "Plan: dry out on tonight's LW"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are waiting off a river bar with a heavy swell running in. By the pilot's rule, from what time on the flood does the bar stop breaking?",
+  "a": "1220",
+  "o": [
+   "1120",
+   "1320",
+   "1820"
+  ],
+  "why": "Depth needed 1.3 × 2.4 = 3.12 m, so tide 3.12 − 0.4 = 2.72 m: factor (2.72 − 0.8) ÷ 4.0 = 0.48, HW−3 = 1220.",
+  "ref": "Tides — bars",
+  "fig": {
+   "type": "card",
+   "title": "River bar — swell",
+   "lines": [
+    "Bar charted 0.4 m · swell 2.4 m",
+    "Breaks where depth < 1.3 × swell",
+    "LW 0905  0.8 m · HW 1520  4.8 m",
+    "Curve: HW−4 0.30 · HW−3 0.48 · HW−2 0.70"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "After 130 M across Biscay you arrive off the river bar at 0230 with a tired crew. What do you do?",
+  "a": "Stand off in deep water; cross on the flood after dawn",
+  "o": [
+   "Cross now at full power, before it gets worse",
+   "Cross at LW slack, 0500, before the flood starts",
+   "Anchor just off the bar and wait for daylight"
+  ],
+  "why": "The ebb against the swell makes the bar break; wait in deep water and cross on the flood, in daylight, well before HW.",
+  "ref": "Tides — bars",
+  "fig": {
+   "type": "card",
+   "title": "Off the bar, 0230",
+   "lines": [
+    "Ebb over the bar 3 kn until 0500",
+    "Swell 2 m from the W · wind W F5",
+    "Pilot: breaks on the ebb in a W swell",
+    "HW 1110 · dawn 0640"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You plan to leave a river over its bar on tomorrow's ebb, after two days of heavy rain inland. What do you expect at the bar?",
+  "a": "A stronger, longer ebb and a weaker flood",
+  "o": [
+   "A weaker ebb and a stronger, longer flood",
+   "The same streams — the tide ignores rain",
+   "No ebb at all until the river drops"
+  ],
+  "why": "Flood water coming down the river adds to the ebb and holds back the flood: expect a harder ebb and steeper seas on the bar.",
+  "ref": "Tides — bars",
+  "fig": {
+   "type": "card",
+   "title": "River bar — after rain",
+   "lines": [
+    "Two days of heavy rain inland",
+    "Pilot: ebb up to 3 kn in normal flow",
+    "Plan: out over the bar on the ebb"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You will go through the Alderney Race with the fair stream this afternoon. What rate do you plan for at its strongest?",
+  "a": "4.7 kn",
+  "o": [
+   "7.0 kn",
+   "3.6 kn",
+   "5.9 kn"
+  ],
+  "why": "6.4 m is a third of the way from neaps to springs: 3.6 + ⅓ × (7.0 − 3.6) = 4.7 kn.",
+  "ref": "Tidal streams — rates",
+  "fig": {
+   "type": "card",
+   "title": "Alderney Race — atlas",
+   "lines": [
+    "Figures by the arrow: 36,70",
+    "St Helier ranges: sp 9.6 m · np 4.8 m",
+    "St Helier range today 6.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "It is a very small neap tide, and you are plotting the next hour of a night crossing from the atlas. What rate do you use by your position?",
+  "a": "0.5 kn",
+  "o": [
+   "0.7 kn",
+   "1.1 kn",
+   "1.5 kn"
+  ],
+  "why": "Extend the line below neaps: 0.7 − (0.6 ÷ 2.6) × 0.8 = 0.5 kn. The stream is weaker than the neap figure.",
+  "ref": "Tidal streams — rates",
+  "fig": {
+   "type": "card",
+   "title": "Atlas — small neaps",
+   "lines": [
+    "Figures by your arrow: 07,15",
+    "Mean ranges: sp 5.2 m · np 2.6 m",
+    "Today's range 2.0 m",
+    "Almanac: extend the line beyond neaps"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are working out the tidal offset for a 4-hour leg from the atlas, interpolating each hour for today's range. What net offset do you lay off?",
+  "a": "3.9 M to the east",
+  "o": [
+   "5.2 M to the east",
+   "2.6 M to the east",
+   "5.1 M to the east"
+  ],
+  "why": "Today is halfway: E 1.2 + 1.8 + 1.5 and W 0.6 — net 4.5 − 0.6 = 3.9 M to the east.",
+  "ref": "Tidal streams — rates",
+  "fig": {
+   "type": "card",
+   "title": "Atlas — your 4-hour leg",
+   "lines": [
+    "HW−2 E 08,16 · HW−1 E 12,24",
+    "HW E 10,20 · HW+1 W 04,08",
+    "Ranges: sp 5.6 m · np 2.8 m",
+    "Today's range 4.2 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You in yacht A (8 kn) and a fast motor yacht B (24 kn) make the 24 M crossing to Alderney together, with a steady beam stream. How far is each set off her line if neither allows for it?",
+  "a": "A 7.5 M, B 2.5 M",
+  "o": [
+   "A and B 7.5 M each",
+   "A and B 2.5 M each",
+   "A 2.5 M, B 7.5 M"
+  ],
+  "why": "Set = stream × time in it: A takes 3 h (7.5 M), B 1 h (2.5 M). The slow yacht feels the stream three times as much.",
+  "ref": "Tidal streams — slow and fast boats",
+  "fig": {
+   "type": "card",
+   "title": "Crossing — two yachts",
+   "lines": [
+    "Leg 24 M · beam stream 2.5 kn",
+    "Stream steady for the next 3 h+",
+    "Yacht A 8 kn · yacht B 24 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your 8-knot displacement motor yacht reaches the Alderney Race two hours late, and the stream there has turned foul. How long will the 8 M through the Race take?",
+  "a": "About 2 h 40 min",
+  "o": [
+   "About 37 min",
+   "About 1 h 00 min",
+   "About 1 h 36 min"
+  ],
+  "why": "Over the ground 8 − 5 = 3 kn: 8 M ÷ 3 kn = 2 h 40 min. A slow boat has to keep the tidal gate.",
+  "ref": "Tidal streams — slow and fast boats",
+  "fig": {
+   "type": "card",
+   "title": "Alderney Race — late",
+   "lines": [
+    "Through the Race: 8 M",
+    "Foul stream: average 5 kn",
+    "Your speed through the water: 8 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "Your crew opens the Channel Islands tidal stream atlas at the page for HW Dover +2 to plot the next hour. What do you tell them?",
+  "a": "Work the hour from HW St Helier instead",
+  "o": [
+   "Fine — Dover and St Helier are the same",
+   "Add an hour for summer time and go on",
+   "Take the page before, to be on the safe side"
+  ],
+  "why": "An atlas is used with the port its pages are referenced to; HW Dover and HW St Helier are hours apart.",
+  "ref": "Tidal streams — atlases",
+  "fig": {
+   "type": "card",
+   "title": "Atlas — Channel Islands",
+   "lines": [
+    "Pages in hours from HW St Helier",
+    "Almanac also lists HW Dover",
+    "Crew: page “HW+2” from HW Dover"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are on a 24-hour passage 100 M west of Ushant, out of the Channel streams. What offset do you allow for in your DR over the day?",
+  "a": "About 7 M to the NE",
+  "o": [
+   "About 19 M to the NE",
+   "About 26 M to the NE",
+   "Nothing — it all cancels out"
+  ],
+  "why": "Rotary streams nearly cancel over whole cycles; the steady 0.3 kn current adds up: 0.3 × 24 = 7 M.",
+  "ref": "Ocean currents",
+  "fig": {
+   "type": "card",
+   "title": "Offshore, 100 M W of Ushant",
+   "lines": [
+    "Tidal streams: rotary, up to 0.8 kn",
+    "Mean current: NE-going, 0.3 kn",
+    "Passage: 24 h (about two tidal cycles)"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are crossing Biscay from Brest to A Coruña. Once you are off the continental shelf, the chart shows no tidal diamonds. What do you allow for?",
+  "a": "The routeing chart's weak current, checked by fixes",
+  "o": [
+   "The last diamond's rates, hour by hour",
+   "Nothing — deep water does not move",
+   "The Channel atlas pages for HW Dover"
+  ],
+  "why": "Over the deep ocean tidal streams are weak; plan with the mean current from routeing charts or the pilot, and confirm by fixes.",
+  "ref": "Ocean currents",
+  "fig": {
+   "type": "card",
+   "title": "Biscay crossing",
+   "lines": [
+    "Brest → A Coruña, about 50 h",
+    "Shelf edge: 6 h out from Brest",
+    "Beyond it: no diamonds, depths 4,000 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "In July you plan to take the yacht north along the Portuguese coast from Lisbon to Baiona. What do you have to plan against?",
+  "a": "Northerly winds and a south-going current",
+  "o": [
+   "A north-going current that offsets the wind",
+   "Strong tidal streams to time, as in the Channel",
+   "Southerly winds on the edge of the high"
+  ],
+  "why": "In summer the Portuguese trades blow from the north and the Portugal Current sets south: both are foul going north.",
+  "ref": "Ocean currents",
+  "fig": {
+   "type": "card",
+   "title": "Lisbon → Baiona, July",
+   "lines": [
+    "Azores high well established",
+    "Tidal streams offshore: weak",
+    "Distance about 200 M"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are motoring west out of the Mediterranean through the Strait of Gibraltar. What does the mean surface current mid-strait do to you?",
+  "a": "Sets E into the Med, against you",
+  "o": [
+   "Sets W out of the Med, with you",
+   "Sets N across, onto the Spanish shore",
+   "Nothing — the Med has no tides"
+  ],
+  "why": "Evaporation draws Atlantic water in: the surface flow sets east into the Med, while the outflow runs deep.",
+  "ref": "Ocean currents",
+  "fig": {
+   "type": "card",
+   "title": "Strait of Gibraltar",
+   "lines": [
+    "Bound W for Cádiz",
+    "You: mid-strait, in deep water"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "Bound west from Gibraltar to Cádiz in your 7-knot motor yacht, you are at Europa Point as the W-going inshore stream begins. Which way do you go to Tarifa, and how long will it take?",
+  "a": "Inshore — about 2 h 21 min",
+  "o": [
+   "Mid-strait — about 4 h 00 min",
+   "Mid-strait — about 2 h 13 min",
+   "Inshore — about 3 h 38 min"
+  ],
+  "why": "Inshore: 7 + 1.5 = 8.5 kn over the ground, 20 ÷ 8.5 = 2 h 21 min. Mid-strait: 7 − 2 = 5 kn, 4 h.",
+  "ref": "Ocean currents",
+  "fig": {
+   "type": "card",
+   "title": "Europa Point → Tarifa, 20 M",
+   "lines": [
+    "Mid-strait: surface current E 2.0 kn",
+    "Spanish shore: W-going stream 1.5 kn",
+    "Your speed through the water: 7 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "On your night watch the plotter shows your track crossing this patch 15 M offshore. What do you expect there?",
+  "a": "Steep, breaking seas, even in light wind",
+  "o": [
+   "Nothing at 30 m — overfalls need shallows",
+   "Smooth water in the lee of the ridge",
+   "An eddy, but a flat sea surface"
+  ],
+  "why": "A strong stream over an uneven bottom throws up overfalls in deep water too; at springs they can be dangerous in a calm.",
+  "ref": "Tidal streams — overfalls",
+  "fig": {
+   "type": "card",
+   "title": "Passage chart — night watch",
+   "lines": [
+    "Overfalls symbol over a 30 m ridge",
+    "Spring stream 3 kn across the ridge",
+    "Wind F3, sea slight elsewhere"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are passing Portland Bill on the E-going spring stream. Where does the race lie now?",
+  "a": "East and SE of the Bill, downstream",
+  "o": [
+   "West and SW of the Bill, upstream",
+   "Close under the Bill on both sides",
+   "Due south, the same on every stream"
+  ],
+  "why": "A race forms where the stream sweeps past the headland and spreads downstream: on the E-going stream, E and SE of the Bill.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "chart",
+   "land": "M110 0 H210 V10 C205 50 185 80 165 95 C150 85 130 55 115 20 Z",
+   "depths": [
+    [
+     60,
+     60,
+     "22"
+    ],
+    [
+     270,
+     60,
+     "25"
+    ],
+    [
+     90,
+     130,
+     "38"
+    ],
+    [
+     230,
+     150,
+     "42"
+    ],
+    [
+     150,
+     165,
+     "30"
+    ]
+   ],
+   "labels": [
+    [
+     245,
+     112,
+     "E-going stream →",
+     "middle"
+    ],
+    [
+     160,
+     34,
+     "Portland",
+     "middle"
+    ]
+   ],
+   "boat": [
+    60,
+    160,
+    90
+   ],
+   "note": "Spring stream · depths in metres"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are taking your 15 m sailing yacht west round Portland Bill in daylight at neaps, in a light breeze, at the time the pilot gives for the inshore passage. Which way is quickest and safe today?",
+  "a": "A — the inshore passage, a few cables off",
+  "o": [
+   "B — 1.5 M off, outside the inshore passage",
+   "C — 5 M off, the long way outside the race",
+   "Any of them — the race is weak at neaps"
+  ],
+  "why": "In settled weather, at neaps and at the right time, the inshore passage close off the Bill avoids the race at its shortest.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "bay",
+   "wind": 90,
+   "land": "M110 0 H210 V10 C205 50 185 80 165 95 C150 85 130 55 115 20 Z",
+   "spots": [
+    [
+     166,
+     110,
+     "A"
+    ],
+    [
+     170,
+     136,
+     "B"
+    ],
+    [
+     168,
+     166,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     40,
+     "Portland Bill",
+     "middle"
+    ],
+    [
+     196,
+     140,
+     "race",
+     "start"
+    ]
+   ],
+   "note": "Neaps · daylight · inshore passage time"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are rounding Portland Bill eastbound at night with a spring stream, keeping outside the race. How far off do you pass?",
+  "a": "5 M or more — clear of the race's edge",
+  "o": [
+   "About 1 M — just outside the inshore passage",
+   "3 M — right on the race's limit",
+   "2 M — between the race and the Bill"
+  ],
+  "why": "Give the race its full width plus a margin: with the race up to 3 M off, pass 5 M or more off the Bill at night.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "card",
+   "title": "Portland Bill — night",
+   "lines": [
+    "Pilot: race up to 3 M off the Bill",
+    "Spring stream · wind W F5",
+    "You: 24 m motor yacht, eastbound"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are heading west past St Alban's Head on the W-going spring stream, with the wind W F6 against it. Which track do you take?",
+  "a": "C — 4 M off, outside the race",
+  "o": [
+   "A — close in, the inshore passage",
+   "B — 1.5 M off, through the middle",
+   "A or C — either side of the race will do"
+  ],
+  "why": "Wind against a spring stream makes the race and the inshore passage rough; keep well outside, or wait for the stream to turn.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "bay",
+   "wind": 270,
+   "land": "M110 0 H210 V10 C205 50 185 80 165 95 C150 85 130 55 115 20 Z",
+   "spots": [
+    [
+     166,
+     110,
+     "A"
+    ],
+    [
+     170,
+     136,
+     "B"
+    ],
+    [
+     168,
+     166,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     40,
+     "St Alban's Head",
+     "middle"
+    ],
+    [
+     196,
+     140,
+     "race",
+     "start"
+    ]
+   ],
+   "note": "Race up to 3 M off · rough inshore in strong wind"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are bound south from Camaret through the Raz de Sein and want to arrive just as the S-going stream begins. When do you leave Camaret?",
+  "a": "About 1040",
+  "o": [
+   "About 1250",
+   "About 1500",
+   "About 0040"
+  ],
+  "why": "The S-going stream starts at 0750 + 5 h = 1250; 13 M at 6 kn takes 2 h 10 min, so leave about 1040.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "card",
+   "title": "Raz de Sein — today",
+   "lines": [
+    "HW Brest 0750",
+    "Raz: S-going from HW Brest +0500",
+    "Camaret → Raz 13 M at 6 kn",
+    "Wind NW F4"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are bound west through the Pentland Firth with a heavy westerly swell outside. When do you plan to clear the western exit?",
+  "a": "At the end of the W-going stream, near slack",
+  "o": [
+   "At the height of the W-going, to rush through",
+   "On the E-going stream, punching through it",
+   "Any time — the swell cannot reach the Firth"
+  ],
+  "why": "The race at the western exit builds on the W-going stream against the W swell; time the exit for slack as it dies away.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "card",
+   "title": "Pentland Firth — westbound",
+   "lines": [
+    "Merry Men of Mey: on the W-going stream",
+    "They lie across the western exit",
+    "Swell outside: W, 3 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are motoring west into the wind with the spring stream running west under you. What wind speed does the sea surface feel as it builds the waves?",
+  "a": "About 22 kn",
+  "o": [
+   "About 16 kn",
+   "About 19 kn",
+   "About 25 kn"
+  ],
+  "why": "The water moves 3 kn into the wind, so the wind over it is 19 + 3 = 22 kn — that is what steepens the seas.",
+  "ref": "Tidal streams — wind against tide",
+  "fig": {
+   "type": "card",
+   "title": "Wind against tide",
+   "lines": [
+    "Wind W F5 (19 kn)",
+    "Spring stream W-going 3 kn",
+    "You: motoring W at 6 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are approaching a tide race at speed in your planing motor yacht, with the wind against the stream. How do you take it?",
+  "a": "Slow right down, or route outside the race",
+  "o": [
+   "Keep 22 kn — you are through in minutes",
+   "Speed up to skim the crests on the plane",
+   "Trim the bow down and hold full speed"
+  ],
+  "why": "Short, steep seas slam a fast hull and can injure the crew; come off the plane or go round outside the race.",
+  "ref": "Tidal streams — wind against tide",
+  "fig": {
+   "type": "card",
+   "title": "Race ahead — 22 kn",
+   "lines": [
+    "Your 24 m planing motor yacht",
+    "Race ahead: spring stream 4 kn",
+    "Wind F5 against the stream",
+    "Short, steep seas reported"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You lie alongside a low quay in a North Sea port with a deep low passing. What height of high water do you plan for tonight?",
+  "a": "5.5 m",
+  "o": [
+   "5.8 m",
+   "4.9 m",
+   "3.7 m"
+  ],
+  "why": "The surge forecast already includes the low pressure: 4.6 + 0.9 = 5.5 m. Adding 0.34 m for 979 hPa counts it twice.",
+  "ref": "Tides — storm surge",
+  "fig": {
+   "type": "card",
+   "title": "East coast port — tonight",
+   "lines": [
+    "Predicted HW 2140: 4.6 m",
+    "Surge forecast: +0.9 m (all weather)",
+    "Barometer 979 hPa"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You plan to take your 24 m motor yacht through a swatchway across the Thames Estuary sands at low water. What depth do you expect there?",
+  "a": "2.3 m — under your 2.4 m draught",
+  "o": [
+   "3.9 m — 1.5 m under the keel",
+   "3.1 m — 0.7 m under the keel",
+   "0.7 m — hard aground"
+  ],
+  "why": "A negative surge lowers the tide: 1.5 + 1.6 − 0.8 = 2.3 m, less than the draught. Wait for more tide.",
+  "ref": "Tides — storm surge",
+  "fig": {
+   "type": "card",
+   "title": "Thames Estuary — LW crossing",
+   "lines": [
+    "Swatchway charted 1.5 m",
+    "Predicted LW 1.6 m",
+    "Negative surge forecast: −0.8 m",
+    "Draught 2.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "Your yacht lies at a low quay in a southern North Sea port for the week. Which forecast should worry you most about a big positive surge?",
+  "a": "A deep low tracking SE, a N gale behind it",
+  "o": [
+   "A slow high over Scandinavia, light winds",
+   "A SW gale ahead of a warm front, with rain",
+   "A thundery trough with squalls inland"
+  ],
+  "why": "A deep low moving SE drives a northerly gale down the shallow, narrowing North Sea: the classic big positive surge.",
+  "ref": "Tides — storm surge",
+  "fig": null
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are leaving the Solent for Guernsey and want to carry the Race's fair stream from its start on to St Peter Port. When do you leave the Needles?",
+  "a": "About 0740",
+  "o": [
+   "About 0700",
+   "About 1340",
+   "About 0400"
+  ],
+  "why": "62 M at 7 kn takes 8 h 51 min: 1630 − 8:51 = 0739. You also pass the Needles inside its fair window.",
+  "ref": "Tidal gates",
+  "fig": {
+   "type": "card",
+   "title": "Needles → Alderney Race",
+   "lines": [
+    "Needles: fair (W-going) 0700–1300",
+    "Race: fair (SW-going) 1630–2230",
+    "Needles → Race 62 M at 7 kn",
+    "Then St Peter Port, 25 M beyond"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are planning the passage east from Dartmouth to the Solent. You will meet one foul tide whatever you do. Where do you want to take it?",
+  "a": "Across Lyme Bay, where it is weakest",
+  "o": [
+   "Off Portland, to have it over early",
+   "In the Needles Channel, at the very end",
+   "Spread out — it makes no difference"
+  ],
+  "why": "Spend the foul stream where it is weak, in the open bay, and carry the fair stream through the headlands and narrows.",
+  "ref": "Tidal gates",
+  "fig": {
+   "type": "card",
+   "title": "Dartmouth → Needles, 85 M at 6 kn",
+   "lines": [
+    "Lyme Bay: streams under 1 kn",
+    "Portland Bill: race, streams to 7 kn",
+    "St Alban's Head: race",
+    "Hurst Narrows: streams to 4 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are waiting off St Helier in your 24 m yacht to enter the marina over its sill on the flood. Reading the curve between the hours, what is the earliest time you can cross?",
+  "a": "1250",
+  "o": [
+   "1310",
+   "1235",
+   "1750"
+  ],
+  "why": "Need 3.6 + 2.8 + 0.6 = 7.0 m: factor 6.2 ÷ 10.0 = 0.62, halfway from HW−3 (0.50) to HW−2 (0.74) — HW−2 h 30 min, 1250.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "St Helier — marina sill",
+   "lines": [
+    "LW 0905  0.8 m · HW 1520  10.8 m",
+    "Curve: HW−3 0.50 · HW−2 0.74",
+    "Sill dries 3.6 m · draught 2.8 m",
+    "Want 0.6 m under the keel"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are taking your yacht up a North Brittany river under a fixed bridge. Between which times today can you not pass under it?",
+  "a": "1010–1710",
+  "o": [
+   "1110–1610",
+   "1010–1610",
+   "0910–1810"
+  ],
+  "why": "Underside 12.4 + 6.2 = 18.6 m; you need tide ≤ 18.6 − 15.8 = 2.8 m, factor (2.8 − 0.6) ÷ 5.0 = 0.44: from HW−3 to HW+4.",
+  "ref": "Tides — clearances",
+  "fig": {
+   "type": "card",
+   "title": "River bridge — chart and almanac",
+   "lines": [
+    "Clearance 12.4 m above HAT 6.2 m · MHWS 5.3",
+    "HW 1310  5.6 m · LW 0.6 m",
+    "Flood: HW−4 0.26 · HW−3 0.44 · HW−2 0.64",
+    "Ebb: HW+3 0.64 · HW+4 0.44 · HW+5 0.26",
+    "Air draught 14.8 m · margin 1.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You anchored at high water in a sound in the Isles of Scilly at the end of a night passage. By the curve, by what time must you move to keep your margin under the keel?",
+  "a": "1505",
+  "o": [
+   "1305",
+   "1405",
+   "1605"
+  ],
+  "why": "You can lose 6.7 − 2.2 − 1.0 = 3.5 m: tide 5.8 − 3.5 = 2.3 m, factor (2.3 − 0.8) ÷ 5.0 = 0.30 — HW+4, 1505.",
+  "ref": "Tides — clearances",
+  "fig": {
+   "type": "card",
+   "title": "St Mary's, Scilly — at anchor",
+   "lines": [
+    "Anchored at HW 1105 (5.8 m) in 6.7 m",
+    "Next LW 1725  0.8 m",
+    "Curve: HW+2 0.70 · +3 0.46 · +4 0.30 · +5 0.10",
+    "Draught 2.2 m · want 1.0 m under the keel"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are anchored in Braye Harbour, Alderney, over a charted 2.4 m for the night. What will you have under the keel at tonight's low water?",
+  "a": "1.5 m",
+  "o": [
+   "2.0 m",
+   "1.0 m",
+   "2.5 m"
+  ],
+  "why": "2.7 m is halfway from MLWS to MLWN: −0.5 + ½ × (−1.0) = −1.0, so LW 1.7 m; 2.4 + 1.7 − 2.6 = 1.5 m.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Braye — secondary on St Helier",
+   "lines": [
+    "St Helier LW tonight 2.7 m",
+    "St Helier: MLWN 4.0 m · MLWS 1.4 m",
+    "Braye LW diff: MLWN −1.5 · MLWS −0.5 m",
+    "Charted 2.4 m · draught 2.6 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are timing your arrival off Paimpol, a secondary port on St-Malo, for this morning's high water. Interpolating the time difference, when is it?",
+  "a": "1028",
+  "o": [
+   "1010",
+   "1040",
+   "1022"
+  ],
+  "why": "1100 is 3 h into the 5 h from 0800 to 1300: −0050 + ⅗ × 30 min = −0032, so 1100 − 0032 = 1028.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Paimpol — HW time on St-Malo",
+   "lines": [
+    "St-Malo HW this morning 1100",
+    "Diff when St-Malo HW 0800 or 2000: −0050",
+    "Diff when St-Malo HW 0100 or 1300: −0020"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You will enter Douglas, Isle of Man, at 0830 after a night passage across the Irish Sea. What is the height of tide there then?",
+  "a": "3.3 m",
+  "o": [
+   "4.5 m",
+   "4.2 m",
+   "2.6 m"
+  ],
+  "why": "Douglas: HW 1130 6.8 m, LW 0500 0.7 m. 0830 is HW−3: 0.7 + 0.42 × 6.1 = 3.3 m on Liverpool's curve.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Douglas — on Liverpool",
+   "lines": [
+    "Liverpool LW 0520 1.2 m · HW 1140 9.0 m",
+    "Douglas diffs: HW −0010, −2.2 m",
+    "Douglas diffs: LW −0020, −0.5 m",
+    "Liverpool curve at HW−3: 0.42"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You want to enter the drying harbour at Minehead on this morning's flood. Working its tide from Avonmouth, what is the earliest time you can reach your berth?",
+  "a": "0940",
+  "o": [
+   "1020",
+   "0740",
+   "1100"
+  ],
+  "why": "Minehead HW 1140 10.6 m, LW 0537 0.6 m. Need 4.2 + 2.0 + 0.4 = 6.6 m: factor 6.0 ÷ 10.0 = 0.60, HW−2 = 0940.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Minehead — on Avonmouth",
+   "lines": [
+    "Avonmouth LW 0612 1.0 m · HW 1220 12.8 m",
+    "Diffs: HW −0040, −2.2 m · LW −0035, −0.4 m",
+    "Curve: HW−4 0.18 · −3 0.36 · −2 0.60 · −1 0.84",
+    "Berth dries 4.2 m · draught 2.0 · want 0.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You planned to leave a drying berth near Avonmouth at HW+2 on the ebb, and you are an hour late. How much less water do you have than you planned?",
+  "a": "2.6 m",
+  "o": [
+   "2.9 m",
+   "1.9 m",
+   "1.0 m"
+  ],
+  "why": "On the curve the factor drops from 0.80 to 0.58 in that hour: 0.22 × 11.6 m = 2.6 m. Twelfths (2.9) or an average (1.9) don't fit.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Avonmouth — springs",
+   "lines": [
+    "HW 0950  12.4 m · LW 1615  0.8 m",
+    "Curve: HW+2 0.80 · HW+3 0.58",
+    "Planned: away at HW+2"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You want to cross the shallow patch off Swanage at LW+3. What height of tide do you have then?",
+  "a": "0.8 m",
+  "o": [
+   "1.2 m",
+   "0.6 m",
+   "1.6 m"
+  ],
+  "why": "Swanage has a young flood stand: the curve gives 0.30 at LW+3, so 0.3 + 0.30 × 1.8 = 0.8 m — not the twelfths' 1.2 m.",
+  "ref": "Tides — Solent curves",
+  "fig": {
+   "type": "card",
+   "title": "Swanage — curve from LW",
+   "lines": [
+    "LW 0905  0.3 m · HW 2.1 m",
+    "Young flood stand after LW+1",
+    "Curve: LW+1 0.24 · +2 0.26 · +3 0.30 · +4 0.58",
+    "Wanted: height at 1205"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are leaving Cowes on the last of the ebb at 1250, two hours before low water. What is the height of tide then by the Cowes curve?",
+  "a": "1.9 m",
+  "o": [
+   "2.2 m",
+   "1.2 m",
+   "3.1 m"
+  ],
+  "why": "1250 is LW−2, on the left of the curve: 0.9 + 0.30 × 3.2 = 1.9 m. The LW+2 factor belongs to the flood after.",
+  "ref": "Tides — Solent curves",
+  "fig": {
+   "type": "card",
+   "title": "Cowes — curve from LW",
+   "lines": [
+    "LW 1450  0.9 m · HW 4.1 m",
+    "Curve: LW−2 0.30 · LW+2 0.42",
+    "Wanted: height at 1250"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You will leave Bembridge Harbour tonight on the ebb, over the drying approach, for an overnight passage. What is the latest time you can cross it?",
+  "a": "2020",
+  "o": [
+   "2035",
+   "0020",
+   "2120"
+  ],
+  "why": "Bembridge LW 2235 − 0015 = 2220. Need 0.6 + 1.8 + 0.4 = 2.8 m: factor 2.2 ÷ 4.0 = 0.55, which is LW−2 = 2020.",
+  "ref": "Tides — Solent curves",
+  "fig": {
+   "type": "card",
+   "title": "Bembridge — curve from LW",
+   "lines": [
+    "Portsmouth LW 2235 · Bembridge diff −0015",
+    "Bembridge LW 0.6 m · HW 4.6 m",
+    "Curve: LW−3 0.78 · LW−2 0.55 · LW−1 0.25",
+    "Approach dries 0.6 m · draught 1.8 · want 0.4"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are leaving Southampton in your 24 m motor yacht after the second high water. Compared with the flood, what do you expect of the ebb?",
+  "a": "Shorter and stronger — the fall is squeezed",
+  "o": [
+   "Longer and weaker, after the long stand",
+   "The same as the flood, mirrored",
+   "Weak until LW, then a sudden rush"
+  ],
+  "why": "The double HW stretches the rise to about 7 h, so the fall comes in about 5 h: the ebb runs harder than the flood.",
+  "ref": "Tides — Solent curves",
+  "fig": {
+   "type": "card",
+   "title": "Southampton — the curve",
+   "lines": [
+    "Rise about 7 h, with a double HW",
+    "Fall about 5 h to LW",
+    "Leaving after the second HW"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You will take your yacht up the river at a secondary port, under an overhead power cable, at this evening's high water. Can you pass?",
+  "a": "Yes — 1.9 m to spare",
+  "o": [
+   "Yes — 2.2 m to spare",
+   "Yes — 0.7 m to spare",
+   "No — 4.6 m short"
+  ],
+  "why": "5.0 m is halfway: +0.2 + ½ × 0.2 = +0.3, HW 5.3 m. Clearance 21.5 + 6.5 − 5.3 = 22.7 m, less 20.8 m: 1.9 m to spare.",
+  "ref": "Tides — clearances",
+  "fig": {
+   "type": "card",
+   "title": "Power cable — secondary port",
+   "lines": [
+    "Chart: safe clearance 21.5 m above HAT 6.5 m",
+    "Std port HW 5.0 m · MHWS 5.6 · MHWN 4.4",
+    "HW height diff: MHWS +0.4 · MHWN +0.2 m",
+    "Mast and aerials: 20.8 m above the water"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "Approaching a power cable over a river, your crew says the wires look well above the charted figure and wants to add the difference to your margin. What do you tell them?",
+  "a": "Use the charted safe clearance — it allows for arcing",
+  "o": [
+   "Add it — the chart is always conservative",
+   "Judge the sag by eye and use that",
+   "Go under near the pylons, where it is highest"
+  ],
+  "why": "A power cable's charted safe clearance already keeps you out of the arcing zone; never eat into it by judging the wire.",
+  "ref": "Tides — clearances",
+  "fig": {
+   "type": "card",
+   "title": "Overhead power cable",
+   "lines": [
+    "Chart: safe vertical clearance 18 m",
+    "Note: it allows for arcing",
+    "Crew: “the wires look 3 m higher”"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You want to scrub on the harbour grid this week, going on at one high water and off at the next, with the tides building from neaps. Which is the first day it works?",
+  "a": "Wednesday",
+  "o": [
+   "Tuesday",
+   "Monday",
+   "Thursday"
+  ],
+  "why": "You need HW ≥ 2.6 + 2.0 + 0.3 = 4.9 m and LW ≤ 2.6 − 0.5 = 2.1 m: Wednesday (5.2 m, 1.9 m) is the first day with both.",
+  "ref": "Tides — drying out",
+  "fig": {
+   "type": "card",
+   "title": "Harbour grid — neaps to springs",
+   "lines": [
+    "Mon HW 4.7 LW 2.4 · Tue HW 4.9 LW 2.2",
+    "Wed HW 5.2 LW 1.9 · Thu HW 5.5 LW 1.6",
+    "Grid dries 2.6 m · draught 2.0 m",
+    "On and off with 0.3 m · LW 0.5 m below the grid"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You go onto the grid on Friday morning's spring high water for a job that needs two low waters, and the tides are now taking off. Which is the last high water you can float off on?",
+  "a": "Saturday 2000",
+  "o": [
+   "Sunday 2100",
+   "Sunday 0830",
+   "Friday 1900"
+  ],
+  "why": "She floats off with 2.6 + 2.0 + 0.3 = 4.9 m: Saturday 2000 (5.1 m) is the last HW above that. Miss it and she is neaped.",
+  "ref": "Tides — drying out",
+  "fig": {
+   "type": "card",
+   "title": "On the grid — Fri 0630, HW 5.7 m",
+   "lines": [
+    "Fri 1900 5.5 · Sat 0730 5.3 · Sat 2000 5.1",
+    "Sun 0830 4.8 · Sun 2100 4.6 (HW, m)",
+    "Grid dries 2.6 m · draught 2.0 m",
+    "Float off with 0.3 m under the keel"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are on the grid at a secondary port and want to float off on this evening's high water. Can you?",
+  "a": "No — 0.1 m short",
+  "o": [
+   "Yes — 0.4 m to spare",
+   "Yes — 0.9 m to spare",
+   "Yes — 0.2 m to spare"
+  ],
+  "why": "HW here is 5.0 − 0.5 = 4.5 m; you need 2.4 + 1.9 + 0.3 = 4.6 m — 0.1 m short. Wait for a bigger tide.",
+  "ref": "Tides — drying out",
+  "fig": {
+   "type": "card",
+   "title": "On the grid — secondary port",
+   "lines": [
+    "Standard port HW tonight 5.0 m",
+    "HW height diff here: −0.5 m",
+    "Grid dries 2.4 m · draught 1.9 m",
+    "Float off with 0.3 m under the keel"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are bringing the yacht onto a harbour grid to scrub her. At what state of the tide do you arrive?",
+  "a": "Shortly before HW, to settle as it falls",
+  "o": [
+   "At half-ebb, so she dries out quickly",
+   "On the young flood, for the most time",
+   "At LW, to see the grid clearly first"
+  ],
+  "why": "Arrive near the top of the tide, secure her over the bearers and to the posts, and let her settle as the ebb leaves her.",
+  "ref": "Tides — drying out",
+  "fig": {
+   "type": "card",
+   "title": "Harbour grid",
+   "lines": [
+    "Grid dries 2.2 m · posts to lie against",
+    "HW 1120 · LW 1735",
+    "Draught 2.1 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are drying out against a harbour wall overnight, with low water at 0300. What do you arrange for the night?",
+  "a": "Someone aboard to tend the lines as she settles",
+  "o": [
+   "Lines made fast tight at HW and left alone",
+   "All crew ashore until she floats again",
+   "Breast lines only, with the springs taken off"
+  ],
+  "why": "As the tide falls the lines need easing to keep her leaning on the wall, and taking in as she lifts: someone stays on watch.",
+  "ref": "Tides — drying out",
+  "fig": {
+   "type": "card",
+   "title": "Against the wall tonight",
+   "lines": [
+    "HW 2050 · LW 0300 · HW 0915",
+    "Range 4.8 m",
+    "Halyard to the quay · fenders and a board"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "Your night crossing of the western Channel takes six hours, and the diamond on the track gives spring and neap rates. Interpolating each hour for today's range, what total tidal offset do you plot?",
+  "a": "4.1 M towards 076°T",
+  "o": [
+   "5.5 M towards 076°T",
+   "2.8 M towards 076°T",
+   "7.4 M towards 072°T"
+  ],
+  "why": "Today is halfway: 1.35, 1.95, 1.65 and 0.9 M, then 0.45 and 1.2 M back; head to tail they give 4.1 M towards 076°T.",
+  "ref": "Tidal streams — rates",
+  "fig": {
+   "type": "card",
+   "title": "Diamond, sp/np kn — 2200 to 0400",
+   "lines": [
+    "HW−4 060° 1.8/0.9 · HW−3 070° 2.6/1.3",
+    "HW−2 080° 2.2/1.1 · HW−1 090° 1.2/0.6",
+    "HW 240° 0.6/0.3 · HW+1 250° 1.6/0.8",
+    "Ranges: sp 5.6 m · np 2.8 m · today 4.2 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are crossing the Irish Sea from Holyhead to Dublin Bay, seven hours across the north–south streams. Interpolating each hour for today's range, where does the stream leave you?",
+  "a": "5.1 M to the north",
+  "o": [
+   "6.8 M to the north",
+   "3.4 M to the north",
+   "9.9 M to the north"
+  ],
+  "why": "Today is halfway: 1.5 + 2.1 + 1.8 + 1.5 + 0.6 = 7.5 M north, less 0.9 + 1.5 = 2.4 M south — 5.1 M to the north.",
+  "ref": "Tidal streams — rates",
+  "fig": {
+   "type": "card",
+   "title": "Irish Sea crossing, 7 h — sp/np kn",
+   "lines": [
+    "N-going: 2.0/1.0 · 2.8/1.4 · 2.4/1.2 · 2.0/1.0",
+    "then N 0.8/0.4 · S 1.2/0.6 · S 2.0/1.0",
+    "Ranges: sp 4.6 m · np 2.2 m",
+    "Today's range 3.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You in an 8-knot yacht and a 20-knot motor yacht both start a 40 M crossing with a beam stream that turns after three hours. If neither allows for it, how far off the line does each end up?",
+  "a": "Slow 2 M, fast 4 M",
+  "o": [
+   "Slow 10 M, fast 4 M",
+   "Slow 4 M, fast 2 M",
+   "Neither — the stream cancels out"
+  ],
+  "why": "Slow: 3 h at 2 kn E, then 2 h at 2 kn W — 2 M net. Fast: 2 h, all in the E-going stream — 4 M. The turn helps the slow boat.",
+  "ref": "Tidal streams — slow and fast boats",
+  "fig": {
+   "type": "card",
+   "title": "Crossing — 40 M",
+   "lines": [
+    "Beam stream E-going 2 kn for 3 h",
+    "Then W-going 2 kn",
+    "Yacht 8 kn · motor yacht 20 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your displacement motor yacht has a 60 M leg to run at 10 kn, and the stream will be foul all the way. How much fuel do you plan for the leg?",
+  "a": "About 290 l",
+  "o": [
+   "About 220 l",
+   "About 170 l",
+   "About 190 l"
+  ],
+  "why": "Over the ground 10 − 2.5 = 7.5 kn: 60 ÷ 7.5 = 8 h at 36 l/h = 288 l. The burn follows the speed through the water.",
+  "ref": "Tidal streams — slow and fast boats",
+  "fig": {
+   "type": "card",
+   "title": "Fuel for the leg",
+   "lines": [
+    "Leg 60 M · foul stream 2.5 kn on average",
+    "At 10 kn through the water: 36 l/h",
+    "At 7.5 kn through the water: 24 l/h"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You will cross diagonally from Dartmouth to Guernsey, about eight hours under way, with the Channel stream running along your track. To carry the fair stream for longest, when do you leave?",
+  "a": "0720",
+  "o": [
+   "0920",
+   "0820",
+   "0620"
+  ],
+  "why": "0720 covers the hours HW−4 to HW+3: −0.2 + 0 + 0.6 + 1.4 + 1.8 + 1.6 + 1.2 + 0.4 = +6.8 M, more than any other start.",
+  "ref": "Tidal gates",
+  "fig": {
+   "type": "card",
+   "title": "Stream along your track (kn, + fair)",
+   "lines": [
+    "HW−5 −0.8 · −4 −0.2 · −3 0.0 · −2 +0.6",
+    "HW−1 +1.4 · HW +1.8 · +1 +1.6 · +2 +1.2",
+    "HW+3 +0.4 · +4 −0.6 · +5 −1.0",
+    "Hours from HW Dover 1120 · 8 h under way"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your 24 m motor yacht will cross from the Solent to Cherbourg at 22 kn, about three hours, with a fresh westerly forecast. What should decide your departure time?",
+  "a": "Avoiding wind against the spring stream at each end",
+  "o": [
+   "Carrying a fair stream for the whole crossing",
+   "Arriving at slack water, to save the most fuel",
+   "Leaving at LW, when the Needles Channel is calmest"
+  ],
+  "why": "At 22 kn the stream adds little to the time or the fuel; wind against a spring stream off the Needles and the Cotentin makes the seas that hurt.",
+  "ref": "Tidal streams — slow and fast boats",
+  "fig": {
+   "type": "card",
+   "title": "Solent → Cherbourg at 22 kn",
+   "lines": [
+    "Distance 65 M · about 3 h",
+    "Forecast W F5–6",
+    "Spring streams 3–4 kn at each end",
+    "Mid-Channel stream about 2 kn"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are taking the yacht up the Bristol Channel from Swansea to Portishead, about 45 M at 7 kn. When do you leave?",
+  "a": "Near LW, to carry the whole flood up-channel",
+  "o": [
+   "Near HW, for the deepest water",
+   "At half-flood, with the strongest stream",
+   "Any time — the streams there are weak"
+  ],
+  "why": "Up-channel streams reach 4–5 kn at springs: leave about LW so the flood carries you most of the way before it turns.",
+  "ref": "Tidal gates",
+  "fig": {
+   "type": "card",
+   "title": "Swansea → Portishead",
+   "lines": [
+    "About 45 M · your speed 7 kn",
+    "Flood (up-channel) about 6 h, to 5 kn",
+    "Ebb about 6 h, as strong"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "Leaving Cherbourg for St Peter Port at 7 kn through the water, you want the Race and then the Little Russel with the stream. What is the latest you can leave?",
+  "a": "About 1230",
+  "o": [
+   "About 1130",
+   "About 1340",
+   "About 0850"
+  ],
+  "why": "2 h + 10 M ÷ 11 kn (55 min) + 14 M ÷ 9 kn (1 h 33 min) = 4 h 28 min before 1700: 1232, inside the Race's window too.",
+  "ref": "Tidal gates",
+  "fig": {
+   "type": "card",
+   "title": "Cherbourg → St Peter Port",
+   "lines": [
+    "To the Race 14 M, little stream",
+    "Race 10 M: fair 4 kn until 1630",
+    "On to the Little Russel 14 M: fair 2 kn",
+    "Little Russel turns foul at 1700"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are bound from Cherbourg to Guernsey overnight and will pass Alderney at about 0200. Which route do you plan?",
+  "a": "The Race, mid-channel, on the fair stream",
+  "o": [
+   "The Swinge, shorter and out of the Race",
+   "The Race, close along the Alderney shore",
+   "The Swinge at slack, on the plotter"
+  ],
+  "why": "The Race is 8 M wide, with room to keep clear of its rocks and overfalls; the narrow, rocky Swinge is no place to be at night.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "card",
+   "title": "Alderney — passing at 0200",
+   "lines": [
+    "Race: about 8 M wide, overfalls at springs",
+    "Swinge: narrow, rocks and overfalls",
+    "Fair (SW-going) stream 0030–0530",
+    "Wind NE F4 · neaps"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You will go through the Raz de Sein at 0300 on the fair stream. What do you do before you reach it?",
+  "a": "Harnesses on, hatches shut, the crew briefed",
+  "o": [
+   "The crew below, the skipper alone on deck",
+   "Reef only once the seas build in it",
+   "Lifejackets stowed, ready to hand"
+  ],
+  "why": "A race can throw up steep, breaking seas with little warning, worst at night: secure the boat and the crew before you enter, not in it.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "card",
+   "title": "Raz de Sein — tonight",
+   "lines": [
+    "Through the Raz at 0300 · fair stream",
+    "Wind NW F4 · swell W 1.5 m",
+    "Crew of four, two on watch"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You are rounding Pointe de Barfleur eastbound in fog on the spring stream, and you can hear nothing of the race. Which track do you take?",
+  "a": "C — 6 M off, outside the race",
+  "o": [
+   "A — close in, the inshore passage",
+   "B — 2 M off, between the two",
+   "A or B — the fog means a calm sea"
+  ],
+  "why": "In fog you can neither see the race nor pilot the inshore passage by eye: pass well outside the race's charted limit and fix often.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "bay",
+   "wind": 225,
+   "land": "M0 40 H120 C150 46 170 66 178 90 C172 112 150 124 118 130 C80 138 50 166 40 200 H0 Z",
+   "spots": [
+    [
+     190,
+     90,
+     "A"
+    ],
+    [
+     222,
+     98,
+     "B"
+    ],
+    [
+     290,
+     104,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     80,
+     70,
+     "Pointe de Barfleur",
+     "middle"
+    ],
+    [
+     240,
+     130,
+     "race",
+     "middle"
+    ]
+   ],
+   "note": "Fog · spring stream · race up to 4 M off"
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "Weather holds you in port for five days, and your planned Alderney Race passage moves from neaps to springs. What changes?",
+  "a": "Stronger streams, shorter slacks — re-plan the timing",
+  "o": [
+   "Nothing — the Race times are fixed by HW",
+   "Weaker streams, as the moon is new",
+   "Longer slacks, so the timing is easier"
+  ],
+  "why": "From neaps to springs the Race's rate about doubles and the turn comes quicker: recheck the timing, the rate and wind against tide.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "card",
+   "title": "Alderney Race — the plan",
+   "lines": [
+    "Planned: Monday, neaps, 3.5 kn",
+    "Now: Saturday, springs, 7 kn",
+    "Fair stream: the same hours from HW"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You plan to take your 6-knot yacht west through the Gulf of Corryvreckan at slack water. On which tides can you do it?",
+  "a": "At neaps, when slack lasts long enough",
+  "o": [
+   "At springs, when slack comes at a fixed time",
+   "On the W-going stream, riding it through",
+   "On any tide, if you arrive on time"
+  ],
+  "why": "The narrows take 2.5 M ÷ 6 kn = 25 min, longer than the 15 min of slack at springs: only a neap slack gives you the time.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "card",
+   "title": "Gulf of Corryvreckan — the pilot",
+   "lines": [
+    "Narrows 2.5 M · streams to 8.5 kn at springs",
+    "Slack: about 15 min springs, 1 h neaps",
+    "Whirlpool and overfalls on the W-going",
+    "Worse with a W swell"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Bound east through the Pentland Firth in your 6-knot yacht, you reach the western entrance an hour after the fair stream has turned foul. What do you do?",
+  "a": "Wait at Scrabster for the next fair stream",
+  "o": [
+   "Push on — the foul stream is only an hour old",
+   "Anchor in the Firth until the stream eases",
+   "Go north of Stroma, where it is weaker"
+  ],
+  "why": "The foul stream builds to many knots, with races at both ends: a 6-knot yacht cannot stem it. Go back and wait for the E-going stream.",
+  "ref": "Tidal streams — races",
+  "fig": {
+   "type": "card",
+   "title": "Pentland Firth — eastbound",
+   "lines": [
+    "Streams to 10 kn and more at springs",
+    "Races and eddies at both ends",
+    "Now: W-going (foul), 1 h old",
+    "Scrabster 8 M astern"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "After 30 hours from Baiona you reach Figueira da Foz at 0100, and the port radio says the bar is closed to small craft. What do you do?",
+  "a": "Go on to Nazaré, an all-weather harbour",
+  "o": [
+   "Enter at HW, when the bar is deepest",
+   "Follow a fishing boat in over the bar",
+   "Anchor just off the bar until it opens"
+  ],
+  "why": "A closed bar is closed for a reason, and crossing it may break the law: go on to a harbour without a bar, or stand off in deep water.",
+  "ref": "Tides — bars",
+  "fig": {
+   "type": "card",
+   "title": "Figueira da Foz, 0100",
+   "lines": [
+    "Port radio: bar closed to small craft",
+    "Swell NW 3.5 m · wind NW F5",
+    "Pilot: Nazaré, 35 M S, no bar",
+    "Crew tired after 30 h"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You are waiting off Póvoa de Varzim with a long-period swell running in. By the pilot's rule, from what time on the flood can you cross the bar?",
+  "a": "1240",
+  "o": [
+   "1340",
+   "1025",
+   "1425"
+  ],
+  "why": "Depth needed 2 × 2.0 = 4.0 m, so tide 4.0 − 2.5 = 1.5 m: factor (1.5 − 0.6) ÷ 3.0 = 0.30, which is HW−4 = 1240.",
+  "ref": "Tides — bars",
+  "fig": {
+   "type": "card",
+   "title": "Póvoa de Varzim — bar",
+   "lines": [
+    "Bar charted 2.5 m · swell 2.0 m at 14 s",
+    "Pilot: over 12 s, keep depth ≥ 2 × swell",
+    "LW 1025  0.6 m · HW 1640  3.6 m",
+    "Curve: HW−4 0.30 · HW−3 0.50 · HW−2 0.72"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "Your chart shows 3.5 m on a river bar on the Spanish Atlantic coast, but this spring's port notice gives 2.0 m after the winter storms. What do you plan with?",
+  "a": "The notice's 2.0 m — bars shift",
+  "o": [
+   "The chart's 3.5 m — the official survey",
+   "The mean of the two, 2.8 m",
+   "The chart, less 10 % for its age"
+  ],
+  "why": "Bars move with storms and river floods: plan with the latest survey or notice, and watch the sounder on the way in.",
+  "ref": "Tides — bars",
+  "fig": {
+   "type": "card",
+   "title": "River bar — two sources",
+   "lines": [
+    "Chart (survey 2009): 3.5 m on the bar",
+    "Port notice, April: silted, 2.0 m",
+    "After a winter of W gales"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 3,
+  "q": "You must pass under a bridge on tonight's equinoctial spring high water, with a positive surge forecast. How much room will you have under it?",
+  "a": "14.9 m — 0.3 m to spare",
+  "o": [
+   "15.5 m — 0.9 m to spare",
+   "15.2 m — 0.6 m to spare",
+   "14.6 m — nothing to spare"
+  ],
+  "why": "The surge lifts HW to 6.0 + 0.6 = 6.6 m, above HAT: 15.2 + 6.3 − 6.6 = 14.9 m. The surge already includes the low pressure.",
+  "ref": "Tides — storm surge",
+  "fig": {
+   "type": "card",
+   "title": "Bridge — tonight",
+   "lines": [
+    "Clearance 15.2 m above HAT (6.3 m)",
+    "Predicted HW 2210: 6.0 m (equinoctial)",
+    "Surge forecast +0.6 m (all weather)",
+    "Air draught 14.6 m · barometer 983 hPa"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "Your yacht is in a low-lying east-coast marina for the week, and a surge of +0.8 m is forecast with a deep low. When is it most dangerous?",
+  "a": "If it peaks near a spring high water",
+  "o": [
+   "If it peaks near a neap high water",
+   "If it peaks near low water",
+   "Whenever it comes — the timing does not matter"
+  ],
+  "why": "A surge adds to the tide: on a spring HW it gives the highest levels, over pontoon piles and quays; near LW it does little harm.",
+  "ref": "Tides — storm surge",
+  "fig": {
+   "type": "card",
+   "title": "Surge warning",
+   "lines": [
+    "Surge forecast: +0.8 m",
+    "Springs on Thursday",
+    "Pontoon piles: 0.6 m above HAT"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "At high water your mast will clear the bridge by 0.6 m at the predicted height, but wind against tide is raising a 1.2 m chop under the span. What do you do?",
+  "a": "Wait — the crests and the pitching eat the 0.6 m",
+  "o": [
+   "Go — the troughs give back what the crests take",
+   "Go fast, so that the mast lifts less",
+   "Go — 0.6 m is over the usual 0.5 m margin"
+  ],
+  "why": "In waves the mast rises with the crests, about half the wave height, plus the pitching: the 0.6 m is gone. Wait for a smoother sea.",
+  "ref": "Tides — clearances",
+  "fig": {
+   "type": "card",
+   "title": "Under the bridge at HW",
+   "lines": [
+    "Room at the predicted height: 0.6 m",
+    "Wind against tide: chop 1.2 m",
+    "Spring HW · 15 m sailing yacht"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "After three days of westerly gales you set out across Biscay from A Coruña to Brest. Which way does the wind-driven surface current set you?",
+  "a": "Towards the E–SE — right of downwind",
+  "o": [
+   "Towards the N–NE — left of downwind",
+   "Towards the W — back into the wind",
+   "Nowhere — the rotary streams cancel it"
+  ],
+  "why": "In the northern hemisphere a wind drift sets to the right of downwind: after westerly gales it runs E–SE, towards the French coast.",
+  "ref": "Ocean currents",
+  "fig": {
+   "type": "card",
+   "title": "Biscay after the gales",
+   "lines": [
+    "W gale F8–9 for three days, now W F5",
+    "Pilot: wind drift up to 0.5 kn",
+    "A Coruña → Brest, about 2 days",
+    "Tidal streams mid-Bay: weak, rotary"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "On day two of the Biscay crossing, over 4,500 m of water, your fixes show a steady set of about 0.4 kn for the last 12 hours. How do you carry it in your DR?",
+  "a": "As a steady current, applied every hour",
+  "o": [
+   "As a tidal stream that will turn in 6 h",
+   "Not at all — it will average out over the day",
+   "From the Channel atlas pages, hour by hour"
+  ],
+  "why": "Over the abyssal plain the tidal streams are weak; a set that holds for 12 h is current: keep applying it and recheck at each fix.",
+  "ref": "Ocean currents",
+  "fig": {
+   "type": "card",
+   "title": "Mid-Biscay, day two",
+   "lines": [
+    "Depth 4,500 m · far off the shelf",
+    "Fixes: set 120°, about 0.4 kn, 12 h steady",
+    "Pilot: streams here under 0.2 kn, rotary"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "In December you take the yacht north from Lisbon to Baiona. Where do you route to get the most help from the current?",
+  "a": "Over the shelf edge, in the N-going current",
+  "o": [
+   "50 M offshore, in the Portugal Current",
+   "Close inshore, in the tidal streams",
+   "Anywhere — the current is the same all year"
+  ],
+  "why": "In winter a N-going current runs along the shelf edge, while the Portugal Current further out sets S: keep over the slope.",
+  "ref": "Ocean currents",
+  "fig": {
+   "type": "card",
+   "title": "Lisbon → Baiona, December",
+   "lines": [
+    "Pilot: winter N-going current over the slope",
+    "Up to 0.5 kn, 20–40 M off",
+    "Further out: Portugal Current, S-going",
+    "Tidal streams on this coast: weak"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You need the height of tide at HW+2 at the standard port on a very small neap tide. What is it?",
+  "a": "3.1 m",
+  "o": [
+   "2.7 m",
+   "3.2 m",
+   "2.1 m"
+  ],
+  "why": "The 2.0 m range is below the mean neap range: read the neap curve, not beyond it — 1.6 + 0.75 × 2.0 = 3.1 m.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Standard port — small neaps",
+   "lines": [
+    "HW 3.6 m · LW 1.6 m",
+    "Curve at HW+2: springs 0.55 · neaps 0.75",
+    "Mean ranges: springs 5.4 m · neaps 2.6 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You have marked HW 6.1 m and LW 1.3 m on the scales of the standard port's curve diagram. What do you draw next?",
+  "a": "A line joining the two heights",
+  "o": [
+   "A line from the HW height to the HW time",
+   "A line up from the time you want",
+   "A line along the mean spring range"
+  ],
+  "why": "Join HW on the top scale to LW on the bottom one; from the curve you then go across to that line and read the height off the scale.",
+  "ref": "Tides — Admiralty method",
+  "fig": {
+   "type": "card",
+   "title": "Curve diagram — setting up",
+   "lines": [
+    "HW 6.1 m marked on the top scale",
+    "LW 1.3 m marked on the bottom scale",
+    "Time wanted: HW−2 h 20 min"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You anchor off Sark at high water in 12.0 m for a few hours. What will you have under the keel at low water?",
+  "a": "1.5 m under the keel",
+  "o": [
+   "0.6 m under the keel",
+   "3.5 m under the keel",
+   "Aground — 0.3 m short"
+  ],
+  "why": "Sark: HW 10.6 − 1.1 = 9.5 m, LW 1.2 − 0.2 = 1.0 m, a fall of 8.5 m: 12.0 − 8.5 − 2.0 = 1.5 m under the keel.",
+  "ref": "Tides — secondary ports",
+  "fig": {
+   "type": "card",
+   "title": "Sark — on St Helier",
+   "lines": [
+    "St Helier HW 10.6 m · LW 1.2 m",
+    "Sark diffs: HW −1.1 m · LW −0.2 m",
+    "Anchored at HW in 12.0 m",
+    "Draught 2.0 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You anchored in 8.0 m at HW+1 this evening to wait two nights for the weather, with springs coming. What will you have under the keel at tomorrow night's low water?",
+  "a": "1.0 m",
+  "o": [
+   "1.5 m",
+   "5.2 m",
+   "0.6 m"
+  ],
+  "why": "Tomorrow's LW is lower: 8.0 − (5.0 − 0.4) = 3.4 m of water, less the 2.4 m draught = 1.0 m. Tonight's 0.9 m LW leaves 1.5 m.",
+  "ref": "Tides — clearances",
+  "fig": {
+   "type": "card",
+   "title": "At anchor — two nights",
+   "lines": [
+    "Anchored at HW+1 in 8.0 m · tide 5.0 m",
+    "LW tonight 0.9 m · tomorrow night 0.4 m",
+    "Draught 2.4 m",
+    "Springs on Thursday"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "Your 24 m motor yacht is crossing an offshore bank at 18 kn with a swell running. What do you have under the keel in the troughs?",
+  "a": "3.4 m",
+  "o": [
+   "2.4 m",
+   "3.8 m",
+   "1.4 m"
+  ],
+  "why": "6.2 m charted + 1.0 m tide = 7.2 m; less half the 2.0 m swell, 0.4 m of squat and the 2.4 m draught: 3.4 m in the troughs.",
+  "ref": "Tides — clearances",
+  "fig": {
+   "type": "chart",
+   "depths": [
+    [
+     40,
+     70,
+     "24"
+    ],
+    [
+     70,
+     130,
+     "18"
+    ],
+    [
+     118,
+     104,
+     "6.2"
+    ],
+    [
+     175,
+     150,
+     "9"
+    ],
+    [
+     260,
+     170,
+     "21"
+    ],
+    [
+     120,
+     40,
+     "15"
+    ]
+   ],
+   "track": "M30 185 L175 40",
+   "boat": [
+    55,
+    160,
+    45
+   ],
+   "labels": [
+    [
+     120,
+     124,
+     "bank",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Now",
+    "Tide 1.0 m",
+    "Swell 2.0 m",
+    "Draught 2.4 m",
+    "Squat 0.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "In a Brittany port, the inner basin's gate is worked only on tides of coefficient 60 or more. Today's coefficient is 48 and rising towards springs. When can you go in?",
+  "a": "In two days",
+  "o": [
+   "Tomorrow",
+   "Today, near HW",
+   "In a week, at springs"
+  ],
+  "why": "Rising about 7 a day: 55 tomorrow, 62 the day after — the first tide of 60 or more is in two days.",
+  "ref": "Tides — springs and neaps",
+  "fig": {
+   "type": "card",
+   "title": "Inner basin — capitainerie",
+   "lines": [
+    "Gate worked at coefficient 60 and over",
+    "Today: coefficient 48",
+    "Almanac: rising about 7 a day",
+    "Springs (coefficient 95) in a week"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 2,
+  "q": "You will go through the Chenal du Four at its strongest today. The French atlas gives rates for coefficients 45 and 95. What rate do you plan for?",
+  "a": "3.5 kn",
+  "o": [
+   "4.2 kn",
+   "5.2 kn",
+   "2.4 kn"
+  ],
+  "why": "Coefficient 65 is 20 ÷ 50 = 0.4 of the way from 45 to 95: 2.4 + 0.4 × 2.8 = 3.5 kn.",
+  "ref": "Tidal streams — rates",
+  "fig": {
+   "type": "card",
+   "title": "Chenal du Four — atlas",
+   "lines": [
+    "Rate at coefficient 45: 2.4 kn",
+    "Rate at coefficient 95: 5.2 kn",
+    "Today: coefficient 65"
+   ]
+  }
+ },
+ {
+  "topic": "tides",
+  "difficulty": 1,
+  "q": "You are passing Arklow on the Irish coast, where the almanac shows a spring range of under a metre. Your crew says the streams must be weak. What do you plan for?",
+  "a": "Streams of up to 3 kn despite the small range",
+  "o": [
+   "Streams of a few tenths of a knot",
+   "No streams — the tide hardly rises",
+   "Streams at HW only, none at LW"
+  ],
+  "why": "Near an amphidromic point the range is small, yet the water still runs hard past it: take the rates from the atlas, not the range.",
+  "ref": "Tidal streams — rates",
+  "fig": {
+   "type": "card",
+   "title": "Off Arklow — the almanac",
+   "lines": [
+    "Spring range: under 1 m",
+    "Atlas: streams up to 3 kn offshore",
+    "Liverpool range today: 9 m"
+   ]
+  }
+ }
+]

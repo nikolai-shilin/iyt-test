@@ -33,7 +33,7 @@ const LIMITS = { name: 64, description: 512, short_description: 120 };
 const TEXTS = {
   en: {
     name: 'IYT Test — exam practice',
-    description: `⚓️ Practice questions for IYT certification levels — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper, Yachtmaster Coastal and Yachtmaster Ocean.
+    description: `⚓️ Practice questions for IYT certification levels — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper and Yachtmaster Coastal, Offshore and Ocean.
 
 Real situations, drawn: the mark ahead, the lights at night, the other boat's bearing, the engine panel. Four options, a one-line note naming the rule.
 
@@ -51,7 +51,7 @@ Tap Start to pick your level.`,
   },
   ru: {
     name: 'IYT Test — подготовка к экзамену',
-    description: `⚓️ Вопросы для подготовки к экзаменам IYT — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper, Yachtmaster Coastal и Yachtmaster Ocean.
+    description: `⚓️ Вопросы для подготовки к экзаменам IYT — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper и Yachtmaster Coastal, Offshore и Ocean.
 
 Реальные ситуации, в картинках: знак по курсу, огни ночью, пеленг на другую яхту, приборы двигателя. Четыре варианта и одна строка с правилом.
 

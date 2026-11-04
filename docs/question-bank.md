@@ -110,9 +110,9 @@ first 100, right answers that stand out by length, and that every figure renders
 ## Other levels
 
 VHF Radio Operator (`vhf-`), International Crew (`ic-`), Flotilla Skipper (`fs-`), Yachtmaster Coastal (`yc-`), Yachtmaster
-Ocean (`yo-`), Racing Rules of Sailing (`rr-`) and Charter Check-in (`ci-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
+Offshore (`yof-`), Yachtmaster Ocean (`yo-`), Racing Rules of Sailing (`rr-`) and Charter Check-in (`ci-`) are built by `data/build_level.py`, which also holds their topic lists, exam defaults and topic icons. Each
 topic is `data/bank/<level>/<topic>.json` (20 questions, about 4/12/4 by difficulty; 50 and 10/30/10 for the
-Charter Check-in, 100 and 20/60/20 for Yachtmaster Coastal, Yachtmaster Ocean and the Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
+Charter Check-in, 100 and 20/60/20 for the three Yachtmaster levels and the Racing Rules — `per` in `LEVELS`) with its Russian text beside it in
 `<topic>.ru.json`: the same order, `{q, a, o, why, ref, fig}`, where `o` keeps the English order of the wrong options and
 `fig` maps figure text paths to the translation. The build shuffles the options once and writes both
 `data/questions/<level>.json` and the overlay `data/questions/<level>.ru.json` in that same order.
@@ -137,6 +137,17 @@ conversions, DR/EP, course to steer, tidal heights and clearances, dipping range
 Tidal questions are set in tidal waters (Channel, Solent, Brittany) with the almanac figures given in the figure, invented
 but realistic. IYT does not publish the theory exam's size, time or pass mark: 50 questions, 90 minutes and 70 % are app
 defaults. Written from the syllabus; no question is taken from an IYT paper.
+
+### Yachtmaster Offshore
+
+IYT's outline for Yachtmaster Offshore (iytworld.com/courses/yachtmaster-offshore: command up to 24 m, up to 150 nm offshore)
+has 23 headings, grouped as 10 topics × 100 — charts, instruments and publications; the compass, position lines and fixes; DR,
+EP and course to steer; tides, streams, races and bars (UK tides by the Admiralty method); pilotage, passage planning and
+electronic aids (radar plotting, AIS, GNSS); COLREGs; meteorology; construction, stability and the power plant; ropework,
+towing, anchoring and docking; emergencies, maritime business and law. Much of it overlaps Coastal: each writer read the
+Coastal topic first and took the offshore angle (longer legs, nights, larger yachts, two constraints at once), and the two
+banks were compared for duplicates. Computed answers were recomputed by script with named-slip distractors. Exam defaults
+(50 questions, 90 minutes, 70 %) are the app's.
 
 ### Yachtmaster Ocean
 

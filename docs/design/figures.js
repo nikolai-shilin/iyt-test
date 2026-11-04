@@ -141,8 +141,10 @@ FIG.anchor = f => {
   const ax = 60, ay = bed - 4;
   s += `<path d="M${bx - 40} ${wl + 4} Q ${bx - 60} ${bed - 20} ${ax} ${ay}" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-dasharray="3 4"/>`;
   s += `<path d="M${ax} ${ay - 14} v16 M${ax - 10} ${ay - 2} q10 10 20 0" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>`;
-  s += `<line x1="292" y1="${wl}" x2="292" y2="${bed}" stroke="var(--accent)" stroke-width="2"/>` + txt(300, (wl + bed) / 2 + 4, f.depth, { s: 12, f: 'var(--accent)', a: 'start' });
-  if (f.tide) s += txt(300, wl + 14, f.tide, { s: 10, f: 'var(--accent)', a: 'start', w: 400 });
+  // the depth and the state of tide sit left of the depth line, in open water under the boat (drawn to the right of the
+  // line at x 300 they ran off the 320-wide figure)
+  s += `<line x1="292" y1="${wl}" x2="292" y2="${bed}" stroke="var(--accent)" stroke-width="2"/>` + txt(286, (wl + bed) / 2 + 4, f.depth, { s: 12, f: 'var(--accent)', a: 'end' });
+  if (f.tide) s += txt(286, (wl + bed) / 2 + 20, f.tide, { s: 10, f: 'var(--accent)', a: 'end', w: 400 });
   s += txt(16, 30, f.title || ft('Anchoring'), { s: 13, f: 'var(--ink)', a: 'start' });
   (f.lines || []).forEach((l, i) => s += txt(16, 50 + 16 * i, l, { s: 12, f: 'var(--ink)', a: 'start', w: 400 }));
   if (f.wind != null) s += windArrow(f.wind, 150, 30);

@@ -91,6 +91,23 @@ LEVELS = {
             ('safety', 'Safety at sea & emergencies', 'Безопасность на море и аварийные ситуации', 'Безопасность', 'lifebuoy'),
             ('seamanship', 'Ropework, anchoring, boat handling & docking', 'Работа с тросами, якорная стоянка, управление и швартовка', 'Морская практика', 'cleat'),
         ]),
+    # IYT Yachtmaster Offshore (iytworld.com/courses/yachtmaster-offshore): command up to 24 m, up to 150 nm offshore. The course
+    # outline's 23 headings as ten topics of 100, a step above Coastal: UK tides, construction, stability and the power plant,
+    # towing, maritime business and law. IYT does not publish the theory exam's size, time or pass mark.
+    'yachtmaster-offshore': dict(
+        prefix='yof', name='Yachtmaster Offshore', per=100, passMark=70, examQuestions=50, examMinutes=90, version='2026-11-04',
+        topics=[
+            ('charts', 'Charts, chartwork instruments & publications', 'Карты, штурманские инструменты и пособия', 'Карты', 'map'),
+            ('compass', 'The compass, position lines & fixes', 'Компас, линии положения и обсервации', 'Компас', 'compass'),
+            ('dr', 'Dead reckoning, EP & course to steer', 'Счисление, счислимое место и курс, которым править', 'Счисление', 'dividers'),
+            ('tides', 'Tides, tidal streams, races & bars', 'Приливы, течения, сулои и бары', 'Приливы', 'tide'),
+            ('pilotage', 'Pilotage, passage planning & electronic aids', 'Лоцманская проводка, планирование перехода и электронные средства', 'Проводка', 'lighthouse'),
+            ('colregs', 'International collision regulations (COLREGs)', 'Международные правила предупреждения столкновений (МППСС-72)', 'МППСС', 'rules'),
+            ('weather', 'Meteorology', 'Метеорология', 'Погода', 'barometer'),
+            ('vessel', 'Construction, stability & the power plant', 'Конструкция, остойчивость и силовая установка', 'Яхта', 'yacht'),
+            ('seamanship', 'Ropework, towing, anchoring & docking', 'Работа с тросами, буксировка, якорная стоянка и швартовка', 'Морская практика', 'cleat'),
+            ('emergency', 'Emergencies, maritime business & law', 'Аварийные ситуации, морской бизнес и право', 'Аварии и право', 'lifebuoy'),
+        ]),
     # IYT Yachtmaster Ocean (iytworld.com/courses/yachtmaster-ocean): celestial navigation, great circles, ocean weather and
     # passage planning — the course outline's 16 headings as ten topics of 100. Requires Yachtmaster Offshore; any ocean, up to
     # 24 m. IYT does not publish the exam's size, time or pass mark.

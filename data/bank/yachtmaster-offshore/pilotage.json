@@ -1,0 +1,2655 @@
+[
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your 24 m ketch must pass under the river bridge on her way up to the yard. Can you go under now, and with what margin?",
+  "a": "Yes — 1.4 m to spare",
+  "o": [
+   "No — 3.8 m short",
+   "Yes — 2.3 m to spare",
+   "Yes — 2.9 m to spare"
+  ],
+  "why": "Clearance now = 26.0 + (6.1 − 3.5) = 28.6 m; air draught 25.7 + 1.5 = 27.2 m; 28.6 − 27.2 = 1.4 m.",
+  "ref": "Pilotage — air draught",
+  "fig": {
+   "type": "card",
+   "title": "River bridge, 1530",
+   "lines": [
+    "Charted clearance 26.0 m above HAT",
+    "HAT 6.1 m; height of tide now 3.5 m",
+    "Masthead 25.7 m above the waterline",
+    "VHF aerial and light 1.5 m above that"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are bound for a harbour with a dredged entrance after a night at sea. What height of tide do you need before you go in?",
+  "a": "1.7 m",
+  "o": [
+   "0.9 m",
+   "2.5 m",
+   "1.2 m"
+  ],
+  "why": "You need 3.6 + 0.8 (half the swell) + 0.5 = 4.9 m of water; 4.9 − 3.2 dredged = 1.7 m of tide.",
+  "ref": "Pilotage — under-keel clearance",
+  "fig": {
+   "type": "card",
+   "title": "Night entry — pilot book and plan",
+   "lines": [
+    "Entrance dredged to 3.2 m below CD",
+    "Swell running in the entrance: 1.6 m",
+    "Draught 3.6 m (24 m sloop)",
+    "Your rule: half the swell + 0.5 m clear"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are bringing your 24 m yacht into a strange marina at dusk. How do you plan the berthing?",
+  "a": "Reverse down the fairway so you never turn in it",
+  "o": [
+   "Go in bow first and turn at the end of it",
+   "Turn in the fairway on the bow thruster alone",
+   "Go in briskly so the wind cannot set you down"
+  ],
+  "why": "A 24 m yacht cannot safely turn in 30 m with a crosswind; reversing in from the open end needs no turn and keeps a way out.",
+  "ref": "Pilotage — turning room",
+  "fig": {
+   "type": "card",
+   "title": "Marina plan (pilot book)",
+   "lines": [
+    "Fairway between pontoon ends: 30 m",
+    "Dead end; berth on the last finger",
+    "Your yacht: 24 m LOA, bow thruster",
+    "Wind 15 kn across the fairway"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your 23 m ketch is off the entrance at night when the signal mast shows this. What do you do?",
+  "a": "Wait outside — the exemption is for under 20 m",
+  "o": [
+   "Go in — the yellow light exempts small craft",
+   "Go in outside the main channel, keeping clear",
+   "Go in — the reds are for ships over 50 m"
+  ],
+  "why": "Three reds: no entry. The yellow exempts only the vessels the port names — here under 20 m, so not your 23 m yacht.",
+  "ref": "Port traffic signals",
+  "fig": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "r",
+     "x": 160,
+     "y": 52
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 84
+    },
+    {
+     "c": "r",
+     "x": 160,
+     "y": 116
+    },
+    {
+     "c": "y",
+     "x": 128,
+     "y": 52
+    }
+   ],
+   "note": "Signal mast · pilot book: yellow exempts vessels under 20 m"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Your 23 m yacht will pass reporting point ALPHA in ten minutes on a night arrival. What do you do?",
+  "a": "Report to VTS on ch 14 at ALPHA, then listen there",
+  "o": [
+   "Stay silent — VTS reports are for ships only",
+   "Call on ch 16 only if you need assistance",
+   "Report once you are inside the breakwater"
+  ],
+  "why": "The port rule turns on length: at 23 m you report at each point and keep a listening watch on the VTS channel.",
+  "ref": "VTS — reporting points",
+  "fig": {
+   "type": "card",
+   "title": "Port VTS — pilot book",
+   "lines": [
+    "VTS on VHF ch 14",
+    "Vessels of 20 m LOA and over:",
+    "report at point ALPHA and the breakwater",
+    "and keep watch on ch 14 inside the area"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You reach the fairway buoy in fog and call VTS, which tells you this. What do you do?",
+  "a": "Hold in the wait area until the ferry is out, then enter",
+  "o": [
+   "Enter now and pass her port to port inside",
+   "Enter fast to be through before she sails",
+   "Anchor in the channel until she has passed"
+  ],
+  "why": "Meeting a ferry in a narrow channel in 0.1 M visibility is the risk to avoid: wait clear, then go in on radar with VTS informed.",
+  "ref": "Pilotage in fog — VTS",
+  "fig": {
+   "type": "card",
+   "title": "0555, fog, visibility 0.1 M",
+   "lines": [
+    "You: fairway buoy, 24 m motor yacht",
+    "Channel 1.2 M long, 150 m wide",
+    "VTS: ferry leaving at 0600, outbound",
+    "Wait area: south of the fairway buoy"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are closing this point at night, and your plan offers three clearing bearings on the light. Which do you use?",
+  "a": "C — the 10 m line, for the draught in a swell",
+  "o": [
+   "A — the 2 m line, the shortest way round",
+   "B — the 5 m line leaves 1.6 m under the keel",
+   "Any of them — the sounder will warn you"
+  ],
+  "why": "On the 5 m line a 3 m swell takes 1.5 m off your 1.6 m: almost nothing. At night with a deep draught, clear the 10 m line.",
+  "ref": "Pilotage — clearing bearings",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H120 C116 30 108 50 100 60 C92 80 70 130 50 200 H0 Z",
+   "depths": [
+    [
+     96,
+     140,
+     "1.4"
+    ],
+    [
+     131,
+     150,
+     "3.8"
+    ],
+    [
+     174,
+     150,
+     "7"
+    ],
+    [
+     238,
+     152,
+     "14"
+    ],
+    [
+     296,
+     152,
+     "19"
+    ]
+   ],
+   "marks": [
+    [
+     104,
+     58,
+     "w",
+     "light"
+    ]
+   ],
+   "track": "M104 58 L118 180 M104 58 L169 180 M104 58 L229 180",
+   "labels": [
+    [
+     124,
+     172,
+     "A",
+     "start"
+    ],
+    [
+     172,
+     172,
+     "B",
+     "start"
+    ],
+    [
+     228,
+     172,
+     "C",
+     "start"
+    ]
+   ],
+   "boat": [
+    268,
+    178,
+    320
+   ],
+   "panel": [
+    "Night approach",
+    "A: 2 m line",
+    "B: 5 m line",
+    "C: 10 m line",
+    "Draught 3.4 m",
+    "Swell 3 m, tide 0"
+   ],
+   "note": "Depths below CD"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are rounding a cape at night on a parallel index line. What do you change?",
+  "a": "Feed in a heading and set the display north-up",
+  "o": [
+   "Alter away each time the echo jumps inside",
+   "Move the index line to 1.5 M for a margin",
+   "Use the EBL instead and stay head-up"
+  ],
+  "why": "Head-up and unstabilised, every yaw swings the picture under a fixed index line; a stabilised north-up display holds it still.",
+  "ref": "Radar — parallel indexing",
+  "fig": {
+   "type": "card",
+   "title": "Radar, 0310, rounding the cape",
+   "lines": [
+    "Display: head-up, no heading input",
+    "Index line set 1.2 M to starboard",
+    "Yacht yawing ±15° in a quartering sea",
+    "The cape's echo jumps on and off the line"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your plan turns you onto a transit in a narrow approach. When do you start the turn?",
+  "a": "A little before the marks come into line",
+  "o": [
+   "Exactly as the marks come into line",
+   "When the marks have opened past the line",
+   "When the plotter shows you on the line"
+  ],
+  "why": "A 24 m yacht carries her way through a big turn: start the wheel early so she settles on the transit, not past it.",
+  "ref": "Pilotage — transits",
+  "fig": {
+   "type": "card",
+   "title": "Pilotage plan, leg 3",
+   "lines": [
+    "Course 040°M until the beacons are in transit",
+    "then turn to 125°M along the transit",
+    "Your yacht: 24 m, 10 kn, turns slowly",
+    "Stream: slack"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You have spent the evening on the pilot book, the tidal atlas, the forecasts and the crew list for a 140 M crossing. What is the next stage of the plan?",
+  "a": "Planning — tracks, waypoints, timings and plan B",
+  "o": [
+   "Monitoring — checking progress against the plan",
+   "Execution — the final go and the crew briefing",
+   "Appraisal — reading the sources once again"
+  ],
+  "why": "Appraisal (gather and weigh), planning (draw it all), execution (decide and brief), monitoring (check it on the way).",
+  "ref": "Passage planning — the four stages",
+  "fig": {
+   "type": "card",
+   "title": "Passage: 140 M crossing",
+   "lines": [
+    "Read: pilot book, tidal atlas",
+    "Read: forecasts, Notices, crew list",
+    "Drawn on the chart: nothing yet"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The owner asks which SOLAS chapter V carriage rule applies to his yacht. What do you tell him?",
+  "a": "A radar reflector, if practicable",
+  "o": [
+   "An AIS Class A transponder",
+   "A voyage data recorder",
+   "An ECDIS with a paper backup"
+  ],
+  "why": "SOLAS V/19 asks every ship under 150 GT, if practicable, for a radar reflector; AIS A, a VDR and ECDIS are for larger ships.",
+  "ref": "SOLAS V",
+  "fig": {
+   "type": "card",
+   "title": "Your yacht",
+   "lines": [
+    "22 m motor yacht, 85 GT",
+    "Private pleasure use only",
+    "Passage: 130 M, overnight"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You plan a 135 M crossing ahead of a gale front, and two models disagree on its timing. What is your latest departure?",
+  "a": "Friday 1000",
+  "o": [
+   "Friday 2000",
+   "Friday 1600",
+   "Friday 2200"
+  ],
+  "why": "135 ÷ 7.5 = 18 h. Earlier model Sat 1000 − 6 h margin − 18 h = Fri 1000.",
+  "ref": "Passage planning — weather window",
+  "fig": {
+   "type": "card",
+   "title": "Planning on Thursday evening",
+   "lines": [
+    "Crossing 135 M at 7.5 kn",
+    "Gale front: model A Sat 2000, B Sat 1000",
+    "Your rule: in 6 h before the earlier one"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You want to reach gate B just as its fair stream begins, having left through gate A. When do you pass gate A?",
+  "a": "1004",
+  "o": [
+   "1404",
+   "0947",
+   "0900"
+  ],
+  "why": "115 ÷ 7 = 16.43 h = 16 h 26 min; 0230 − 16 h 26 min = 1004, inside gate A’s 0900–1500.",
+  "ref": "Passage planning — tidal gates",
+  "fig": {
+   "type": "card",
+   "title": "Two tidal gates",
+   "lines": [
+    "Gate A (start): fair 0900–1500",
+    "Gate B, 115 M on: fair from 0230 next day",
+    "Planned speed over the ground 7 kn"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "A new forecast reaches you halfway across. What do you do?",
+  "a": "Bear away for the refuge — in by about 1845",
+  "o": [
+   "Turn back for home — in by about 2028",
+   "Press on for the destination — about 0527",
+   "Heave to and let the gale pass over you"
+  ],
+  "why": "Refuge: 38 ÷ 8 = 4.75 h → 1845, sheltered; home 55 ÷ 8.5 → 2028, entrance open to SW; on: 0527, in the gale.",
+  "ref": "Passage planning — ports of refuge",
+  "fig": {
+   "type": "card",
+   "title": "1400, 55 M out on a 140 M crossing",
+   "lines": [
+    "Gale SW 8 forecast from 0200",
+    "Home, N: 55 M, 8.5 kn, entrance open to SW",
+    "Refuge E: 38 M, beam reach, 8 kn, all-tide",
+    "Destination S: 85 M upwind, 5.5 kn, bar"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are choosing the departure time for an overnight passage to this coast. Which arrival do you plan?",
+  "a": "Raise the light before dawn, enter after 0640",
+  "o": [
+   "Arrive at 1500, to see the coast by day",
+   "Arrive at 2300, to enter on the light",
+   "Arrive at dusk, as the light comes on"
+  ],
+  "why": "A low coast is hard to identify by day; a light’s characteristic identifies it at night. The unlit entrance then needs daylight.",
+  "ref": "Passage planning — landfall",
+  "fig": {
+   "type": "card",
+   "title": "Landfall after 130 M",
+   "lines": [
+    "Coast low and featureless for 20 M",
+    "Light on the point: Fl(3) 15s 24M",
+    "Harbour: unlit buoys, reef 1 M off",
+    "Dawn 0640"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your night route north must get past the end of this scheme. Which crossing do you plan?",
+  "a": "A — across both lanes at right angles",
+  "o": [
+   "B — through the precautionary area",
+   "Along the separation zone to its end",
+   "B — it keeps clear of the lanes"
+  ],
+  "why": "Ships converge and turn in a precautionary area, with no set direction; a right-angle crossing of the lanes meets predictable traffic.",
+  "ref": "Passage planning — crossing a TSS",
+  "fig": {
+   "type": "chart",
+   "land": "M0 93 H160 V105 H0 Z",
+   "track": "M24 182 V18 M292 182 V74",
+   "labels": [
+    [
+     96,
+     80,
+     "W-going lane ←",
+     "middle"
+    ],
+    [
+     96,
+     126,
+     "E-going lane →",
+     "middle"
+    ],
+    [
+     86,
+     103,
+     "separation zone",
+     "middle"
+    ],
+    [
+     232,
+     98,
+     "precautionary",
+     "middle"
+    ],
+    [
+     232,
+     112,
+     "area",
+     "middle"
+    ],
+    [
+     32,
+     170,
+     "A",
+     "start"
+    ],
+    [
+     284,
+     170,
+     "B",
+     "end"
+    ]
+   ],
+   "boat": [
+    150,
+    160,
+    0
+   ],
+   "panel": [
+    "Night crossing",
+    "Route S → N"
+   ],
+   "note": "Ships converge and turn in the area"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The plotter flags this on the route for tonight’s passage. What do you do?",
+  "a": "Move the leg — 0.2 M is inside the 500 m zone",
+  "o": [
+   "Accept it — 0.2 M is outside a 500 m zone",
+   "Accept it, and call the standby vessel",
+   "Keep the leg and pass at reduced speed"
+  ],
+  "why": "0.2 M = 370 m, inside the 500 m zone, which no yacht may enter; re-route with a mile or more to spare.",
+  "ref": "Passage planning — offshore installations",
+  "fig": {
+   "type": "card",
+   "title": "Plotter route check, leg 4",
+   "lines": [
+    "Passes 0.2 M from platform 'Bravo'",
+    "Platform safety zone: 500 m radius",
+    "Standby vessel on station"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your crew want to take the short cut through the wind farm tonight, keeping a radar watch. What do you tell them?",
+  "a": "The turbines mask small echoes: go round it",
+  "o": [
+   "Radar works best among turbines: go through",
+   "Go through — AIS shows all the traffic there",
+   "Go through on autopilot, radar on 24 M"
+  ],
+  "why": "Turbines return strong echoes, side lobes and shadows that hide small craft; with rain and fishing boats without AIS, pass outside.",
+  "ref": "Passage planning — wind farms",
+  "fig": {
+   "type": "card",
+   "title": "Wind farm on the route",
+   "lines": [
+    "120 turbines, 0.5 M apart",
+    "Transit allowed; fishing boats, few on AIS",
+    "You would pass through at night, in rain"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You lead the watch on the second night of a 30-hour passage. What do you do?",
+  "a": "Alter boldly to starboard now, then call the skipper",
+  "o": [
+   "Call the skipper and wait for his orders",
+   "Hold on — the ship will see you on radar",
+   "Slow down a little and watch the bearing"
+  ],
+  "why": "With 9 min to go the watch acts at once under Rules 15 and 16, then calls: standing orders never delay avoiding action.",
+  "ref": "Passage planning — watches and night orders",
+  "fig": {
+   "type": "card",
+   "title": "0310 — the skipper is asleep",
+   "lines": [
+    "You: motor yacht, 24 m",
+    "Ship on the starboard bow, bearing steady",
+    "MARPA: CPA 0.2 M, TCPA 9 min",
+    "Orders: call me if a CPA is under 1 M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your passage reaches the shipping lanes 21 hours after you leave. Which departure do you plan?",
+  "a": "1800 — the lanes fall in daylight, not at 0300",
+  "o": [
+   "0600 — a fresh crew for the busy lanes",
+   "0600 — ships’ lights show their aspect best",
+   "Either — the watches keep everyone rested"
+  ],
+  "why": "At 0300, 21 h after an early start, a crew is at its lowest ebb; at 1500 the lanes are crossed in daylight with the watches settled.",
+  "ref": "Passage planning — fatigue",
+  "fig": {
+   "type": "card",
+   "title": "Lanes crossing, 21 h out",
+   "lines": [
+    "Leave 0600: cross the lanes at 0300",
+    "Leave 1800: cross the lanes at 1500",
+    "Crew of four, two watches"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your watermaker may fail, so you carry sealed drinking water. How much do you take?",
+  "a": "105 L",
+  "o": [
+   "42 L",
+   "90 L",
+   "63 L"
+  ],
+  "why": "7 people × 3 L × (2 + 3) days = 105 L.",
+  "ref": "Passage planning — provisioning",
+  "fig": {
+   "type": "card",
+   "title": "Provisioning for the crossing",
+   "lines": [
+    "Crew of 7, skipper included",
+    "Passage planned as 2 days",
+    "Rule: 3 L per person per day, bottled",
+    "plus 3 days' reserve in case of delay"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You plan the fuel for the run and a possible diversion to the port of refuge. How much does your rule ask you to carry?",
+  "a": "About 1,890 L",
+  "o": [
+   "About 1,760 L",
+   "About 1,010 L",
+   "About 1,570 L"
+  ],
+  "why": "13.3 h × (2 × 55 + 8) L/h = 1,573 L; × 1.2 = 1,888 L — about 1,890 L.",
+  "ref": "Passage planning — fuel",
+  "fig": {
+   "type": "card",
+   "title": "Motor yacht, 120 M passage",
+   "lines": [
+    "Twin engines, each 55 L/h at 12 kn",
+    "Generator 8 L/h, running all the way",
+    "Port of refuge 40 M beyond, at 12 kn",
+    "Rule: passage + diversion, then + 20 %"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your crew asks how the radar measures range. The echo of a ship comes back as on the card. How far off is she?",
+  "a": "6.0 M",
+  "o": [
+   "12.0 M",
+   "6.9 M",
+   "11.1 M"
+  ],
+  "why": "The pulse goes out and back: 300,000 km/s × 74.1 µs ÷ 2 = 11.1 km = 6.0 M.",
+  "ref": "Radar — how it works",
+  "fig": {
+   "type": "card",
+   "title": "How far is the echo?",
+   "lines": [
+    "Echo returns 74.1 µs after the pulse",
+    "Radio waves travel at 300,000 km/s",
+    "1 M = 1.852 km"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are closing a high coast at night after 140 M. When do you expect the cliffs to paint on the radar?",
+  "a": "0037",
+  "o": [
+   "0121",
+   "0114",
+   "0249"
+  ],
+  "why": "2.2 × (√9 + √81) = 2.2 × 12 = 26.4 M; (50 − 26.4) ÷ 9 = 2.62 h = 2 h 37 min → 0037.",
+  "ref": "Radar — detection range",
+  "fig": {
+   "type": "card",
+   "title": "Landfall by radar, 2200",
+   "lines": [
+    "Cliffs 81 m high, 50 M ahead",
+    "Your scanner 9 m above the sea",
+    "SOG 9 kn",
+    "Radar range ≈ 2.2 (√h₁ + √h₂) M, h in m"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are taking a radar range and bearing of a small islet for your offshore plot. Where do you take them?",
+  "a": "Range to the near edge, bearing to the arc’s centre",
+  "o": [
+   "Range to the far edge, bearing to the centre",
+   "Range to the centre, bearing to one end",
+   "Range and bearing both to the left end"
+  ],
+  "why": "Range is sharp at the echo’s leading edge; the beam width smears bearing both ways, so take the centre of a point target.",
+  "ref": "Radar — range and bearing accuracy",
+  "fig": {
+   "type": "card",
+   "title": "Radar, 12 M range",
+   "lines": [
+    "Islet 8 M off paints as an arc 0.6 M wide",
+    "Radar beam width 4°",
+    "You want its range and bearing to plot"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You switch the radar on for the night watch and see this. What do you adjust first?",
+  "a": "Tune, then raise the gain to a faint speckle",
+  "o": [
+   "Turn the sea clutter control to maximum",
+   "Turn the rain clutter control up full",
+   "Lower the gain further to keep it clean"
+  ],
+  "why": "A clean screen usually means too little gain or poor tuning: tune for the strongest echoes, then gain up to a light background.",
+  "ref": "Radar — gain and tuning",
+  "fig": {
+   "type": "card",
+   "title": "Radar switched on at dusk",
+   "lines": [
+    "Warm-up done, 6 M range",
+    "Screen clean: only the coast shows",
+    "Sea and rain controls at zero"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The AIS shows a yacht close on the bow, but the radar shows nothing there. Why?",
+  "a": "The sea clutter control has wiped out her echo",
+  "o": [
+   "Yachts never show on radar in a seaway",
+   "She is inside the radar’s minimum range",
+   "Her AIS is wrong — trust the radar"
+  ],
+  "why": "Sea clutter (STC) cuts close-range gain; at maximum it removes small echoes too. Set it to leave a little clutter showing.",
+  "ref": "Radar — sea clutter",
+  "fig": {
+   "type": "card",
+   "title": "Radar, rough sea",
+   "lines": [
+    "Sea clutter control: maximum",
+    "Screen clear right up to own ship",
+    "AIS: yacht 0.8 M on the port bow"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "A ship on AIS is inside the squall ahead, but the radar shows only rain. What do you do?",
+  "a": "Use the rain control to break up the rain and find her",
+  "o": [
+   "Raise the gain until the patch is solid",
+   "Turn up the sea clutter control instead",
+   "Rely on the AIS — radar cannot see in rain"
+  ],
+  "why": "The rain control (FTC) keeps only the leading edges of echoes, thinning the rain so a ship’s echo inside it can stand out.",
+  "ref": "Radar — rain clutter",
+  "fig": {
+   "type": "card",
+   "title": "Radar, 0140",
+   "lines": [
+    "Rain squall 3 M ahead: a solid patch",
+    "AIS: a ship inside it, heading your way",
+    "Rain clutter control: off"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Your motor yacht’s radar has a blind sector dead ahead. How do you keep watch on passage?",
+  "a": "Yaw the bow now and then to look into the sector",
+  "o": [
+   "Rely on the radar — 8° is too narrow to matter",
+   "Turn up the gain to see through the mast",
+   "Use a longer range scale to see past it"
+  ],
+  "why": "A ship can hide in a blind sector for many minutes; alter 10–15° from time to time and keep a visual lookout ahead.",
+  "ref": "Radar — blind sectors",
+  "fig": {
+   "type": "card",
+   "title": "Radar on the arch",
+   "lines": [
+    "Scanner on the flybridge arch",
+    "Mast 2 m forward of it",
+    "Blind sector: 8° wide, dead ahead"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "On an overnight passage a ship tells you this on VHF. What improves your echo most?",
+  "a": "An active radar target enhancer, mounted high",
+  "o": [
+   "A brighter tricolour at the masthead",
+   "A second small reflector beside the first",
+   "Your own radar left on transmit"
+  ],
+  "why": "A ship sees only what comes back to her: an active enhancer (RTE) high up returns her pulse amplified, clear of the clutter.",
+  "ref": "Radar — detecting small craft",
+  "fig": {
+   "type": "card",
+   "title": "VHF call from a ship, 0300",
+   "lines": [
+    "Ship: 'we saw you only at 2 miles'",
+    "Sea state 4, rain showers",
+    "Your reflector: small, on the pushpit"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You pick up an offshore light float’s racon like this. Where do you measure its range?",
+  "a": "To the near end of the racon paint",
+  "o": [
+   "To the far end of the racon paint",
+   "To the middle of the racon paint",
+   "To the end of the dash, less a mile"
+  ],
+  "why": "The racon paint starts just beyond the beacon’s own echo: its near end gives the range, the line’s direction the bearing.",
+  "ref": "Radar — racons",
+  "fig": {
+   "type": "card",
+   "title": "Racon on the light float",
+   "lines": [
+    "Echo of the light float 9 M ahead",
+    "Racon paint: Morse T ( — ) beyond it",
+    "You want a range for your offshore fix"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "On watch you see this on the X-band radar. Where is the survival craft?",
+  "a": "At the nearest dot, 7.2 M on 040°T",
+  "o": [
+   "At the farthest dot, at the screen’s edge",
+   "Midway along the line of dots",
+   "1 M beyond the farthest dot"
+  ],
+  "why": "A SART answers the radar with 12 dots running outward; the casualty is at the dot nearest you. Alert the MRCC and head there.",
+  "ref": "Radar — SART",
+  "fig": {
+   "type": "card",
+   "title": "Radar, 0420, 12 M range",
+   "lines": [
+    "A line of 12 dots on bearing 040°T",
+    "running outward from 7.2 M",
+    "No AIS target there"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You are plotting a ship crossing ahead of you at night. What CPA and time of CPA does the plot give?",
+  "a": "CPA 0.9 M at 0334",
+  "o": [
+   "CPA 0.9 M at 0322",
+   "CPA 0.9 M at 0325",
+   "CPA 1.1 M at 0327"
+  ],
+  "why": "The echo’s 0300–0312 track, extended, passes 0.9 M from you; at its relative speed CPA comes 22 min after 0312: 0334.",
+  "ref": "Radar plotting — CPA and TCPA",
+  "fig": {
+   "type": "card",
+   "title": "Radar plot, own ship 000°T 10 kn",
+   "lines": [
+    "0300  target 045°T, 9.0 M",
+    "0312  target 042°T, 5.9 M",
+    "Relative-motion display, north-up"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "To give the crossing ship more room you turn 60° to starboard at 0312. What CPA does the new plot give?",
+  "a": "About 3.4 M",
+  "o": [
+   "About 0.7 M",
+   "About 0.9 M",
+   "About 5.7 M"
+  ],
+  "why": "New relative motion = her 270° 12 kn minus your 060° 10 kn; drawn from 042°, 5.9 M it passes about 3.4 M off.",
+  "ref": "Radar plotting — the alteration",
+  "fig": {
+   "type": "card",
+   "title": "Same plot, at 0312",
+   "lines": [
+    "Target 042°T, 5.9 M; CPA 0.9 M ahead",
+    "Her true motion: about 270°T, 12 kn",
+    "You alter now to 060°T, still 10 kn"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You want to know what this ship is really doing before you decide. What are her course and speed?",
+  "a": "About 010°T at 14 kn",
+  "o": [
+   "About 339°T at 15 kn",
+   "About 317°T at 20 kn",
+   "About 190°T at 14 kn"
+  ],
+  "why": "True vector = relative motion in 6 min plus your own vector: the echo’s shift plus 0.8 M on 090° gives about 010°T, 14 kn.",
+  "ref": "Radar plotting — true and relative motion",
+  "fig": {
+   "type": "card",
+   "title": "Radar plot, own ship 090°T 8 kn",
+   "lines": [
+    "0410  target 150°T, 6.0 M",
+    "0416  target 147°T, 4.5 M",
+    "Relative-motion display"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your crew says the ship’s vector crosses well ahead of you, so all is well. What do you tell them?",
+  "a": "There is a risk of collision — read the CPA, not the vector",
+  "o": [
+   "They are right — she will cross a mile ahead",
+   "Only if her true vector meets our own",
+   "Only once the bearing is steady for 20 min"
+  ],
+  "why": "A true vector shows where she goes, not how close she passes; a CPA of 0.1 M and a steady bearing mean risk of collision.",
+  "ref": "ARPA — true and relative vectors",
+  "fig": {
+   "type": "card",
+   "title": "ARPA, true vectors, 12 min",
+   "lines": [
+    "Target's vector ends 1 M ahead of your bow",
+    "Readout: CPA 0.1 M, TCPA 16 min",
+    "Bearing steady for 10 min"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "A minute after your alteration the ARPA shows a comfortable CPA. How far do you trust it?",
+  "a": "Not yet — give it a few minutes to settle",
+  "o": [
+   "Fully — the ARPA updates every scan",
+   "Fully — the alteration was a large one",
+   "Not at all — ARPA fails after a turn"
+  ],
+  "why": "ARPA averages over several minutes, so just after your own alteration its vectors lag. Watch the bearing open; recheck at 3–4 min.",
+  "ref": "ARPA/MARPA — limits",
+  "fig": {
+   "type": "card",
+   "title": "ARPA after your alteration",
+   "lines": [
+    "0310  you alter 40° to starboard",
+    "0311  target: CPA 2.5 M, TCPA 14 min",
+    "Before the turn: CPA 0.3 M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "At dawn you find that the heading sensor feeding your MARPA was in error all night. Which of its outputs were wrong?",
+  "a": "Targets’ true courses and speeds; CPA and TCPA held",
+  "o": [
+   "CPA and TCPA; the true vectors held",
+   "Nothing — MARPA does not use the heading",
+   "Only the targets’ ranges, by 6 %"
+  ],
+  "why": "A heading error turns every echo 6° about you: relative motion keeps its CPA and TCPA, but adding the GPS vector skews true vectors.",
+  "ref": "ARPA/MARPA — limits",
+  "fig": {
+   "type": "card",
+   "title": "MARPA on your yacht",
+   "lines": [
+    "Heading from a fluxgate reading 6° high",
+    "Own course and speed from GPS",
+    "Radar north-up, stabilised by that heading"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You assume the ship can see you on her AIS. Why may she not?",
+  "a": "Class B sends less often, weaker, and may be filtered",
+  "o": [
+   "Class B only receives; it sends nothing",
+   "Class A sets cannot show Class B targets",
+   "AIS shows only ships over 300 GT"
+  ],
+  "why": "Class B (2 W, every 30 s at speed, lower priority for slots) may be weak, late or filtered off a busy bridge display.",
+  "ref": "AIS — classes A and B",
+  "fig": {
+   "type": "card",
+   "title": "0230, AIS",
+   "lines": [
+    "Your set: AIS Class B, 2 W",
+    "Ship 6 M off, Class A, closing",
+    "No reply to your VHF call yet"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You compare the radar with the AIS overlay. What do you make of this echo?",
+  "a": "A vessel without AIS — plot it like any other",
+  "o": [
+   "A false echo — a ship would be on AIS",
+   "A buoy — only buoys go without AIS",
+   "A second-trace echo from the far coast"
+  ],
+  "why": "Many fishing boats, yachts and warships send no AIS; a steady bearing on any echo means risk of collision.",
+  "ref": "AIS — what it does not show",
+  "fig": {
+   "type": "card",
+   "title": "0350, radar and AIS",
+   "lines": [
+    "Radar: echo 4 M on the port bow",
+    "Bearing steady, range closing",
+    "AIS: no target there"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your AIS alarm sounds for this target. What is it?",
+  "a": "An AIS MOB beacon — a person in the water",
+  "o": [
+   "An AIS-SART — a liferaft or survival craft",
+   "An AIS EPIRB — a vessel in distress",
+   "A virtual aid marking a new danger"
+  ],
+  "why": "MMSI 972 is an AIS MOB device (970 an AIS-SART, 974 an EPIRB-AIS): someone is in the water — go to them and alert the MRCC.",
+  "ref": "AIS — SART and MOB devices",
+  "fig": {
+   "type": "card",
+   "title": "AIS alarm, 0115",
+   "lines": [
+    "Target: MMSI 972012345",
+    "Symbol: a circle with a cross",
+    "1.8 M on the starboard bow"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You read this warning before a night passage. What do you do?",
+  "a": "Plot the wreck on the paper chart and the plan",
+  "o": [
+   "Nothing — the plotter will show the mark",
+   "Look out for the buoy’s light on the way",
+   "Watch for its echo on the radar"
+  ],
+  "why": "A virtual aid exists only on AIS: no light, no echo, and gone if your AIS fails. Put the danger on paper as well.",
+  "ref": "AIS — virtual aids to navigation",
+  "fig": {
+   "type": "card",
+   "title": "NAVTEX, before sailing",
+   "lines": [
+    "New wreck 3 M off your track near WP4",
+    "Marked by a virtual AIS aid only",
+    "No buoy in the water yet"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You check the GNSS page before the approach. What does the change mean?",
+  "a": "The fix is far less accurate: cross-check it",
+  "o": [
+   "The fix is better — fewer satellites, less noise",
+   "Nothing — HDOP only matters in harbour",
+   "The chart datum has changed overnight"
+  ],
+  "why": "A high HDOP means poor satellite geometry and a much bigger error; check the GNSS position against radar ranges and depth.",
+  "ref": "GNSS — HDOP and accuracy",
+  "fig": {
+   "type": "card",
+   "title": "GNSS status, 0230",
+   "lines": [
+    "Satellites in use: 5; HDOP 7.8",
+    "At 2200: 11 satellites; HDOP 0.9",
+    "Landfall in 3 h on a rocky coast"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "Your crew says that with SBAS showing, the GPS cannot be wrong now. What do you tell them?",
+  "a": "It sharpens the fix and flags faults, but can be jammed",
+  "o": [
+   "They are right — SBAS cannot be jammed",
+   "SBAS only shifts the chart datum",
+   "SBAS gives a fix with no satellites"
+  ],
+  "why": "SBAS (EGNOS, WAAS) sends corrections and integrity warnings by satellite — it still rests on weak signals that can be jammed.",
+  "ref": "GNSS — augmentation and integrity",
+  "fig": {
+   "type": "card",
+   "title": "GNSS status",
+   "lines": [
+    "3D fix, SBAS (EGNOS) in use",
+    "HDOP 0.8"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are 60 M offshore when the plotter shows this. What do you do?",
+  "a": "Treat GNSS as jammed: radar, compass and DR",
+  "o": [
+   "Restart the plotter and carry on with it",
+   "Steer back towards the GPS track line",
+   "Stop the boat until the position settles"
+  ],
+  "why": "Jumps, a wild SOG and a wrong clock while the other sensors are steady mean interference: go by DR and radar, and report it.",
+  "ref": "GNSS — jamming and spoofing",
+  "fig": {
+   "type": "card",
+   "title": "Eastern Med, 0215",
+   "lines": [
+    "GNSS: position jumps 20 M inland",
+    "SOG 0.0, then 41 kn; clock 3 min out",
+    "Radar, log and compass: all normal"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your crew on watch trusts the autopilot to hold the course. What happens?",
+  "a": "She follows the wind 25° to port, towards the lane",
+  "o": [
+   "She holds 090°T and the sails begin to luff",
+   "She follows the wind 25° to starboard, away",
+   "She tacks herself onto port tack"
+  ],
+  "why": "Wind mode holds the wind angle, not the heading: a 25° back takes her from 090° to about 065°, towards the lane. Watch the compass.",
+  "ref": "Autopilot — wind mode",
+  "fig": {
+   "type": "card",
+   "title": "0300, autopilot in wind mode",
+   "lines": [
+    "Course 090°T, close-hauled, starboard tack",
+    "Wind backs 25° in a squall",
+    "Shipping lane 4 M to the north"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You want to check the sounder against the charted depth plus the tide. What depth of water does it show?",
+  "a": "6.0 m",
+  "o": [
+   "4.3 m",
+   "3.4 m",
+   "5.1 m"
+  ],
+  "why": "A below-keel reading + draught = depth of water: 3.4 + 2.6 = 6.0 m, the figure to compare with charted depth + height of tide.",
+  "ref": "Echo sounder — offset",
+  "fig": {
+   "type": "card",
+   "title": "Echo sounder",
+   "lines": [
+    "Offset set to show depth below the keel",
+    "Transducer 0.9 m below the waterline",
+    "Draught 2.6 m; display reads 3.4 m"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your log under-reads, so you checked it at slack water. What distance through the water do you use for the night’s DR?",
+  "a": "67.2 M",
+  "o": [
+   "57.9 M",
+   "63.0 M",
+   "62.4 M"
+  ],
+  "why": "Log factor 8.4 ÷ 7.8 = 1.077, so 62.4 × 1.077 = 67.2 M through the water.",
+  "ref": "Log — calibration",
+  "fig": {
+   "type": "card",
+   "title": "Log check",
+   "lines": [
+    "1 h run at slack water, no current",
+    "GNSS distance 8.4 M; log 7.8 M",
+    "Log since 2000: 62.4 M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The antenna cable chafes through at 0200, 100 M offshore. What loses its position?",
+  "a": "Everything on the list, the DSC alert position too",
+  "o": [
+   "Only the plotter — the rest have their own",
+   "Only the AIS — it alone uses satellites",
+   "Nothing — NMEA 2000 keeps the last fix"
+  ],
+  "why": "One antenna is a single point of failure: plotter, AIS, the DSC distress position and track steering all go. Carry an independent GNSS.",
+  "ref": "Integrated electronics — single point of failure",
+  "fig": {
+   "type": "card",
+   "title": "Your installation",
+   "lines": [
+    "One GNSS antenna on the arch, feeding:",
+    "plotter, AIS, DSC VHF, autopilot",
+    "and the radar overlay over NMEA 2000"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "The owner of the 22 m yacht says the plotter’s saved track is the log now, so the paper log can go. What do you tell him?",
+  "a": "Keep it — the track has no decisions, weather or crew",
+  "o": [
+   "Agree — the track is a full legal record",
+   "Agree — a paper log is only for ships",
+   "Keep it, but only while in harbour"
+  ],
+  "why": "A track shows where you went, not the weather, watches, checks and decisions — and it dies with the power. Keep a written log.",
+  "ref": "Logbook — electronic and paper",
+  "fig": null
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are entering tonight with both these aids ahead of you. Which do you steer by?",
+  "a": "The leading lights — the white sector is wider than the channel",
+  "o": [
+   "The white sector — it is the brighter of the two",
+   "Either — both mark the same safe water",
+   "The white sector, using the sounder for its edges"
+  ],
+  "why": "The 8° white sector spans water of 3.0 m, too shallow for 3.8 m; only the leading lights hold you in the 60 m dredged channel.",
+  "ref": "Pilotage — leading lights and sectors",
+  "fig": {
+   "type": "card",
+   "title": "Night entry — pilot book",
+   "lines": [
+    "Leading lights 152°T: axis of the dredged cut",
+    "Cut 60 m wide, dredged to 4.5 m",
+    "Dir light W sector 148°–156°T: depths to 3.0 m",
+    "Your draught 3.8 m, 24 m ketch"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You must anchor in this unlit bay tonight. How do you find the planned spot?",
+  "a": "By two radar ranges off the steep points, checked by the sounder",
+  "o": [
+   "By the plotter’s position, zoomed in on the spot",
+   "By radar bearings of the beach, the nearest echo",
+   "By following the 15 m depth in until you arrive"
+  ],
+  "why": "Ranges off steep points are the sharpest radar fix in the dark; the sounder confirms the depth. Bearings smear by the beam width.",
+  "ref": "Pilotage — an unlit anchorage by radar",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H320 V104 C300 112 272 128 254 136 C240 108 222 72 186 58 C156 46 122 50 102 70 C88 88 78 116 66 136 C50 126 26 112 0 108 Z",
+   "depths": [
+    [
+     174,
+     108,
+     "9"
+    ],
+    [
+     118,
+     108,
+     "14"
+    ],
+    [
+     196,
+     120,
+     "15"
+    ],
+    [
+     128,
+     150,
+     "28"
+    ],
+    [
+     92,
+     168,
+     "40"
+    ],
+    [
+     236,
+     170,
+     "42"
+    ]
+   ],
+   "marks": [
+    [
+     66,
+     136,
+     "k",
+     "steep pt"
+    ],
+    [
+     254,
+     136,
+     "k",
+     "steep pt"
+    ]
+   ],
+   "track": "M147 70 A104 104 0 0 1 168 116 M152 116 A104 104 0 0 1 173 70",
+   "labels": [
+    [
+     152,
+     90,
+     "anchor",
+     "end"
+    ]
+   ],
+   "boat": [
+    160,
+    162,
+    0
+   ],
+   "panel": [
+    "Unlit bay, 0200",
+    "No moon",
+    "Radar, sounder",
+    "Draught 3.0 m"
+   ],
+   "note": "Depths in metres; dashed arcs: ranges"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Fog closes in as you round this cliff on radar. Outside what VRM ring do you keep the cliff’s echo?",
+  "a": "1.2 M",
+  "o": [
+   "0.5 M",
+   "0.7 M",
+   "0.2 M"
+  ],
+  "why": "The low reef gives no echo, so measure from the cliff: 0.7 M of reef + 0.5 M margin = keep the cliff outside 1.2 M.",
+  "ref": "Radar — clearing ranges",
+  "fig": {
+   "type": "chart",
+   "land": "M320 0 V200 H252 C242 160 232 124 236 92 C240 60 256 30 268 0 Z",
+   "depths": [
+    [
+     204,
+     142,
+     "0.6",
+     true
+    ],
+    [
+     216,
+     158,
+     "1.1"
+    ],
+    [
+     196,
+     170,
+     "2"
+    ],
+    [
+     120,
+     70,
+     "35"
+    ],
+    [
+     96,
+     150,
+     "40"
+    ]
+   ],
+   "labels": [
+    [
+     204,
+     128,
+     "reef",
+     "middle"
+    ],
+    [
+     244,
+     182,
+     "cliff",
+     "end"
+    ]
+   ],
+   "track": "M176 196 L176 8",
+   "boat": [
+    176,
+    150,
+    0
+   ],
+   "panel": [
+    "Fog, radar only",
+    "Reef 0.7 M off",
+    "Reef: no echo",
+    "Margin 0.5 M"
+   ],
+   "note": "Plan: round the cliff, reef to starboard"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are taking your 24 m motor yacht into the outer harbour in fog. What is the highest speed your rule allows?",
+  "a": "6 kn",
+  "o": [
+   "9 kn",
+   "4 kn",
+   "12 kn"
+  ],
+  "why": "Half of 2 cables is 1 cable: at 6 kn she stops in 0.9 cable, at 9 kn she needs 2.0. So 6 kn is the most the rule allows.",
+  "ref": "Pilotage in fog — speed",
+  "fig": {
+   "type": "card",
+   "title": "Fog, entering the outer harbour",
+   "lines": [
+    "Visibility 2 cables; now 12 kn",
+    "Stops in: 12 kn 3.2 · 9 kn 2.0 cables",
+    "6 kn 0.9 · 4 kn 0.5 cables",
+    "Your rule: stop within half the visibility"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are writing the plan for this entry. Where does it put the abort point?",
+  "a": "Outside the heads, while you can still turn away",
+  "o": [
+   "At the heads, once you can see inside",
+   "In the basin, where she has room to turn",
+   "Wherever the helmsman starts to feel unsure"
+  ],
+  "why": "With the swell from astern a 24 m yacht is committed once past the heads; decide go or no-go where you can still turn and stand off.",
+  "ref": "Pilotage plan — the abort point",
+  "fig": {
+   "type": "card",
+   "title": "Entry plan — narrow harbour, 0300",
+   "lines": [
+    "Entrance 40 m wide; inner basin 90 m across",
+    "Swell from astern, 1.5 m",
+    "Your yacht 24 m; turning circle about 60 m",
+    "The plan needs an abort point"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You reach the reporting point and call VTS, as the pilot book asks. What does your report give?",
+  "a": "Name, position, intentions and ETA at the berth",
+  "o": [
+   "Only your name, and that you will keep clear",
+   "Your crew list and last port, as for customs",
+   "Nothing until VTS asks you for details"
+  ],
+  "why": "VTS fits you into its traffic picture: who you are, where, where bound and when. Then keep watch on its channel.",
+  "ref": "VTS — reporting",
+  "fig": {
+   "type": "card",
+   "title": "Calling VTS at point BRAVO",
+   "lines": [
+    "Your yacht: 23 m, inbound at night",
+    "Pilot book: report at BRAVO on ch 12",
+    "Then keep watch on ch 12 to the berth"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Inbound in fog, you hear VTS give this. What do you do with it?",
+  "a": "Find her on radar and plot her as any other ship",
+  "o": [
+   "Hold your course — VTS will keep you apart",
+   "Ask VTS to give you a course to steer",
+   "Ignore it — VTS messages are for ships"
+  ],
+  "why": "Traffic information is not traffic control: it tells you she is coming. The lookout, the plot and the Rules stay with you.",
+  "ref": "VTS — traffic information",
+  "fig": {
+   "type": "card",
+   "title": "VTS, 0420, fog",
+   "lines": [
+    "\"Aurora leaving berth 4, outbound\"",
+    "\"This is traffic information only\"",
+    "You: inbound, 1.5 M from the entrance",
+    "Radar on; visibility 0.2 M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Your 24 m yacht must turn onto the leading line tonight. How far short of the point where the two tracks meet do you put the wheel over?",
+  "a": "About 140 m",
+  "o": [
+   "About 200 m",
+   "About 550 m",
+   "About 110 m"
+  ],
+  "why": "Wheel-over distance = radius × tan(half the turn) = 200 × tan 35° = 140 m before the tracks meet.",
+  "ref": "Pilotage — wheel-over point",
+  "fig": {
+   "type": "card",
+   "title": "Night entry — onto the leading line",
+   "lines": [
+    "Turn 70° to starboard onto the line",
+    "Turning radius at your helm angle: 200 m",
+    "Ignore her delay in answering the helm"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are finishing the contingencies of your plan for a 140 M crossing. What does its medical line list?",
+  "a": "Ports with a hospital on each stage, and the radio medical route",
+  "o": [
+   "The crew’s next of kin and their home phones",
+   "Only the contents of the first-aid kit",
+   "The nearest airports for flying crew home"
+  ],
+  "why": "A casualty 100 M out needs a plan: which ports on each stage have a hospital, and how to reach radio medical advice via the MRCC.",
+  "ref": "Passage planning — contingencies",
+  "fig": {
+   "type": "card",
+   "title": "Passage plan — contingencies",
+   "lines": [
+    "Ports of refuge: listed for each stage",
+    "Weather: plan B for a gale",
+    "Medical: ?"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "A crew member is hurt halfway across, as on the card. Which way gets him to a hospital soonest?",
+  "a": "Port B — in about 0653, the hospital at the port",
+  "o": [
+   "Port A — the nearest, in about 0700",
+   "Home — back alongside by about 0847",
+   "On to the destination — about 0900"
+  ],
+  "why": "B: 50 ÷ 8.5 = 5.9 h → 0653, hospital there. A is in at 0700 but 2 h from one (0900); home 0847; on, 0900.",
+  "ref": "Passage planning — medical diversion",
+  "fig": {
+   "type": "card",
+   "title": "0100, 70 M out of 130: crew member hurt",
+   "lines": [
+    "Radio medical: ashore to a hospital, soon",
+    "A: 30 M upwind at 5 kn; hospital 2 h by road",
+    "B: 50 M on a reach, 8.5 kn; hospital there",
+    "Home 70 M at 9 kn; destination 60 M at 7.5 kn"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your night orders set the fixing routine as on the card. When does the watch change to 6-minute fixes?",
+  "a": "0300",
+  "o": [
+   "0318",
+   "0233",
+   "0242"
+  ],
+  "why": "Six-minute fixes start 3 M from the bank: 10.5 − 3 = 7.5 M to run at 10 kn = 45 min after 0215 → 0300.",
+  "ref": "Passage monitoring — fixing interval",
+  "fig": {
+   "type": "card",
+   "title": "Night orders — fixing",
+   "lines": [
+    "Offshore: a fix every 30 min",
+    "Within 3 M of any danger: every 6 min",
+    "0215: 10.5 M from the bank, 10 kn, closing"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your 0300 fix lands well away from the EP, as on the card. What does your monitoring routine say now?",
+  "a": "Find the cause, and fix more often until it is clear",
+  "o": [
+   "Accept the fix and keep to the 30-minute routine",
+   "Ignore it — one odd fix is just an error",
+   "Steer back to where the EP put you"
+  ],
+  "why": "A 1.5 M jump in 30 min means a stream, a sensor or the plot is wrong; tighten the routine until you know which.",
+  "ref": "Passage monitoring — fix and EP",
+  "fig": {
+   "type": "card",
+   "title": "0300 — the fix and the plan",
+   "lines": [
+    "0230 fix on the track; 0300 EP on the track",
+    "0300 radar fix: 1.5 M east of the EP",
+    "Orders: a fix every 30 min offshore"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You fly home tonight, and a relief skipper takes the yacht on, as on the card. What do you hand over first?",
+  "a": "The plan and its changes, the defects and the crew",
+  "o": [
+   "The keys, the ship’s papers and the fuel receipts",
+   "The plotter route — it holds all he needs",
+   "Nothing formal — he can read the log"
+  ],
+  "why": "The new skipper takes on the plan: what has changed, what is broken and who is fit for what. Papers and keys come after.",
+  "ref": "Passage planning — handover",
+  "fig": {
+   "type": "card",
+   "title": "Halfway port — you leave tonight",
+   "lines": [
+    "Relief skipper joins at 1800",
+    "Sails at 0600 for the second 120 M leg",
+    "Watermaker weak; one crew new to nights"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your night route crosses the traffic lanes in the conditions on the card. How do you plan the crossing?",
+  "a": "Motor-sail across at a steady speed and heading",
+  "o": [
+   "Sail across slowly — a sailing yacht stands on",
+   "Wait in the separation zone for more wind",
+   "Sail along the lane until the wind fills in"
+  ],
+  "why": "At 3 kn on a wandering heading you spend 3 h in the lanes and confuse the ships; motor-sail for a steady heading and speed.",
+  "ref": "Passage planning — crossing the lanes",
+  "fig": {
+   "type": "card",
+   "title": "Crossing the lanes, 2300",
+   "lines": [
+    "24 m ketch; the lanes 9 M across in all",
+    "Wind light and fickle, 4–8 kn",
+    "Under sail alone: 3–5 kn, heading wanders"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Checking tonight’s route, you find WP4 here. What do you do?",
+  "a": "Move it clear of the point where the ships turn",
+  "o": [
+   "Keep it — ships keep clear of a yacht there",
+   "Keep it, and cross the point at full speed",
+   "Keep it, and call each ship on VHF"
+  ],
+  "why": "Ships converge and alter at the same point off a cape; a yacht turning there meets them all, mid-turn. Put WP4 clear of their routes.",
+  "ref": "Passage planning — waypoints and shipping",
+  "fig": {
+   "type": "chart",
+   "land": "M0 0 H92 C100 40 106 80 96 112 C88 140 64 170 0 186 Z",
+   "track": "M120 8 L150 110 L230 196 M312 96 L150 110 M150 110 L312 176",
+   "marks": [
+    [
+     150,
+     110,
+     "k",
+     "WP4"
+    ]
+   ],
+   "depths": [
+    [
+     200,
+     40,
+     "60"
+    ],
+    [
+     250,
+     120,
+     "85"
+    ],
+    [
+     130,
+     160,
+     "40"
+    ]
+   ],
+   "labels": [
+    [
+     272,
+     90,
+     "ships",
+     "middle"
+    ],
+    [
+     262,
+     142,
+     "ships",
+     "middle"
+    ],
+    [
+     114,
+     30,
+     "your route",
+     "end"
+    ]
+   ],
+   "panel": [
+    "Route check",
+    "WP4 off the cape"
+   ],
+   "note": "Ship routes from the routeing guide"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "It is the second afternoon at sea, as on the card. What do you do now to be ready for the landfall?",
+  "a": "Send half the crew to sleep now, by turns",
+  "o": [
+   "Keep everyone up — the landfall needs all hands",
+   "Give everyone coffee at 0300, before you close",
+   "Let them rest once the landfall is made"
+  ],
+  "why": "Rest is part of the plan: crew who sleep this afternoon and evening are fresh at 0400; coffee at 0300 does not undo 20 hours awake.",
+  "ref": "Passage planning — fatigue",
+  "fig": {
+   "type": "card",
+   "title": "1500, the second day",
+   "lines": [
+    "Landfall on a rocky coast at about 0400",
+    "Crew of five, all short of sleep",
+    "Two watches since yesterday 0800"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You check the fuel before the run, as on the card. Which figure does your fuel plan use?",
+  "a": "The dip — half, so you take on fuel first",
+  "o": [
+   "The gauge — it is the newer reading",
+   "The mean of the two, about five-eighths",
+   "The gauge — a dip is spoilt by heel"
+  ],
+  "why": "A gauge sender sticks and drifts; the dip measures the fuel. Half is less than your plan needs, so fill up before you go.",
+  "ref": "Passage planning — fuel",
+  "fig": {
+   "type": "card",
+   "title": "Before the 130 M run",
+   "lines": [
+    "Fuel gauge: three-quarters",
+    "Dipstick in the tank: half",
+    "Plan needs five-eighths, reserve included"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "It is the morning of departure, as on the card. What is left to do before you slip?",
+  "a": "Check the new forecast against the plan, then brief the crew",
+  "o": [
+   "Nothing — the plan was finished last night",
+   "Draw the whole route again on the chart",
+   "Let the crew vote on whether to go"
+  ],
+  "why": "Execution: confirm the plan still fits the latest forecast and the boat, decide, then brief everyone on the plan, watches and plan B.",
+  "ref": "Passage planning — execution",
+  "fig": {
+   "type": "card",
+   "title": "Departure morning, 0600",
+   "lines": [
+    "Plan made and checked last night",
+    "The 0520 forecast is in",
+    "Crew of six aboard"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You take the motor yacht across ahead of the wind on the card. When do you expect to arrive?",
+  "a": "About 1512",
+  "o": [
+   "About 1445",
+   "About 2000",
+   "About 1646"
+  ],
+  "why": "0600–1400 at 16 kn = 128 M; the last 12 M at 10 kn take 1 h 12 min → 1512, before the 1700 limit.",
+  "ref": "Passage planning — weather window",
+  "fig": {
+   "type": "card",
+   "title": "Motor yacht, 140 M, leaving 0600",
+   "lines": [
+    "16 kn in calm water",
+    "From 1400: NE 6 on the nose; 10 kn at best",
+    "Your rule: in before 1700, when F7 arrives"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are setting up the night watches on your motor yacht, as on the card. What do you add for the lone watchkeeper?",
+  "a": "A watch alarm that must be reset every few minutes",
+  "o": [
+   "A radar guard zone to stand in for the lookout",
+   "Longer watches, so there are fewer handovers",
+   "The autopilot’s off-course alarm, nothing more"
+  ],
+  "why": "Alone at night with the autopilot steering, a watchkeeper can doze off unseen; an alarm that sounds unless reset catches it early.",
+  "ref": "Passage planning — watchkeeping",
+  "fig": {
+   "type": "card",
+   "title": "Night watch, 24 m motor yacht",
+   "lines": [
+    "One watchkeeper on the flybridge",
+    "Autopilot steering, 2200–0600",
+    "Watches of two hours each"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You plot this echo on the night watch. If neither of you alters, when does she reach you?",
+  "a": "About 0248",
+  "o": [
+   "About 0236",
+   "About 0257",
+   "About 0234"
+  ],
+  "why": "Steady bearing, CPA nil: 2.0 M closed in 12 min = 10 kn, so the 6.0 M left take 36 min from 0212 → 0248.",
+  "ref": "Radar plotting — steady bearing",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     159,
+     103,
+     "y",
+     ""
+    ],
+    [
+     175,
+     118,
+     "y",
+     ""
+    ]
+   ],
+   "track": "M159 103 L226 160",
+   "boat": [
+    226,
+    160,
+    270
+   ],
+   "labels": [
+    [
+     151,
+     99,
+     "0200  310°  8.0 M",
+     "end"
+    ],
+    [
+     167,
+     132,
+     "0212  310°  6.0 M",
+     "end"
+    ]
+   ],
+   "panel": [
+    "Radar plot",
+    "Own 270°T 8 kn",
+    "Bearing steady"
+   ],
+   "note": "Relative motion, north-up"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Two echoes close on you at once. Which is the more urgent, and when is her CPA?",
+  "a": "B — CPA 0.3 M at about 0318",
+  "o": [
+   "A — CPA nil at about 0342",
+   "B — CPA 0.3 M at about 0312",
+   "A — CPA nil at about 0336"
+  ],
+  "why": "A: steady bearing, nil CPA, but 36 min off (0342). B passes 0.3 M off in 12 min (0318): deal with B first, without closing A.",
+  "ref": "Radar plotting — two targets",
+  "fig": {
+   "type": "card",
+   "title": "Radar plot, own ship 000°T 10 kn",
+   "lines": [
+    "A: 0300 045°T 7.0 M · 0306 045°T 6.0 M",
+    "B: 0300 315°T 4.0 M · 0306 317°T 2.7 M",
+    "Relative-motion display, north-up"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "You alter now to starboard for the CPA your orders ask. To what course do you alter?",
+  "a": "About 046°T",
+  "o": [
+   "About 024°T",
+   "About 028°T",
+   "About 314°T"
+  ],
+  "why": "From 040°, 5.0 M lay the line tangent to the 2 M ring (23.6° off); with her vector 261°, 9.8 kn the triangle gives 046°T.",
+  "ref": "Radar plotting — the alteration for a CPA",
+  "fig": {
+   "type": "card",
+   "title": "Radar plot, own ship 000°T 10 kn",
+   "lines": [
+    "0130  target 040°T, 8.0 M",
+    "0142  target 040°T, 5.0 M",
+    "Alter at 0142 to starboard, still 10 kn",
+    "Orders: a CPA of at least 2 M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Rather than turn, you slow down as on the card. What CPA does the new plot give?",
+  "a": "About 2.4 M",
+  "o": [
+   "Nil, as before",
+   "About 4.2 M",
+   "About 1.6 M"
+  ],
+  "why": "Her true vector 300°, 12 kn minus your 6 kn north gives relative motion 270°: from 060°, 4.8 M she passes 2.4 M ahead.",
+  "ref": "Radar plotting — a speed reduction",
+  "fig": {
+   "type": "card",
+   "title": "Radar plot, own ship 000°T 12 kn",
+   "lines": [
+    "0400  target 060°T, 6.0 M",
+    "0406  target 060°T, 4.8 M",
+    "At 0406 you slow to 6 kn (take it as at once)"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "The third plot of this echo falls off the line of the first two. What CPA does she now give?",
+  "a": "CPA 2.1 M at 0525",
+  "o": [
+   "CPA nil at 0523",
+   "CPA 1.3 M at 0526",
+   "CPA 2.1 M at 0519"
+  ],
+  "why": "The bend at 0506 shows she has altered: plot afresh from 0506 and 0512 only. That line passes 2.1 M off, CPA at 0525.",
+  "ref": "Radar plotting — a target that alters",
+  "fig": {
+   "type": "chart",
+   "marks": [
+    [
+     114,
+     125,
+     "y",
+     ""
+    ],
+    [
+     123,
+     99,
+     "y",
+     ""
+    ],
+    [
+     139,
+     83,
+     "y",
+     ""
+    ]
+   ],
+   "track": "M114 125 L123 99 L139 83",
+   "boat": [
+    150,
+    26,
+    180
+   ],
+   "labels": [
+    [
+     104,
+     129,
+     "0500  200°  7.0 M",
+     "end"
+    ],
+    [
+     113,
+     103,
+     "0506  200°  5.2 M",
+     "end"
+    ],
+    [
+     129,
+     81,
+     "0512  191°  3.9 M",
+     "end"
+    ]
+   ],
+   "panel": [
+    "Radar plot",
+    "Own 180°T 9 kn",
+    "Plots 6 min apart"
+   ],
+   "note": "Relative motion, north-up"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "Your route crosses a fast-ferry route tonight. At what range must the radar first show a ferry to give the warning your orders ask?",
+  "a": "13.1 M",
+  "o": [
+   "10.0 M",
+   "14.0 M",
+   "6.0 M"
+  ],
+  "why": "Relative speed = her 225°, 30 kn less your 000°, 12 kn = 39.4 kn; × 20 min = 13.1 M — beyond 12 M, so watch on the 24 M scale.",
+  "ref": "Radar — range scale and warning",
+  "fig": {
+   "type": "card",
+   "title": "Night orders, ferry route ahead",
+   "lines": [
+    "Fast ferries: 30 kn, heading 225°T",
+    "Own ship 000°T, 12 kn",
+    "Orders: 20 min warning of any ferry",
+    "Radar scales: 3, 6, 12, 24 M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You hand over the radar watch for the night, as on the card. Which range scales does the watch use?",
+  "a": "A long one for early warning, a short one for small craft",
+  "o": [
+   "The 24 M scale only, for the earliest warning",
+   "The 3 M scale only, for the finest detail",
+   "Whichever scale shows the most echoes"
+  ],
+  "why": "Long scales give early warning of ships; small craft and buoys show only on a short scale. Switch between them on every look.",
+  "ref": "Radar — range scales",
+  "fig": {
+   "type": "card",
+   "title": "Radar watch, 80 M offshore, night",
+   "lines": [
+    "Sea state 3, a few showers",
+    "Ships and fishing boats about",
+    "Scales: 1.5, 3, 6, 12, 24 M"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "This yacht’s echo appears 2 M off, and the guard zone never sounded. Why not?",
+  "a": "Her echo first showed inside the zone’s inner edge",
+  "o": [
+   "A guard zone works only on AIS targets",
+   "The zone filters out echoes as small as hers",
+   "The alarm waits until an echo has stayed 5 min"
+  ],
+  "why": "A small echo may first paint at 2–3 M; a ring from 6 M out never sees it. A guard zone helps the lookout, it does not replace one.",
+  "ref": "Radar — guard zones",
+  "fig": {
+   "type": "chart",
+   "track": "M38 100 A60 60 0 1 0 158 100 A60 60 0 1 0 38 100 M18 100 A80 80 0 1 0 178 100 A80 80 0 1 0 18 100",
+   "boat": [
+    98,
+    100,
+    0
+   ],
+   "marks": [
+    [
+     108,
+     83,
+     "y",
+     "yacht"
+    ]
+   ],
+   "labels": [
+    [
+     98,
+     34,
+     "guard zone",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Guard zone",
+    "Ring 6–8 M",
+    "Echo at 2 M",
+    "No alarm"
+   ],
+   "note": "Radar, 12 M range"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are closing the coast at night in heavy rain, and the radar shows this. Why is there nothing behind the squall?",
+  "a": "The rain soaks up the pulse, so echoes beyond it fade",
+  "o": [
+   "Nothing is there — the coast has a gap",
+   "The rain control wipes out all echoes behind it",
+   "X-band sees through rain; the coast there is low"
+  ],
+  "why": "Heavy rain absorbs and scatters X-band energy, so targets beyond a squall fade or vanish. Slow down and look round its side.",
+  "ref": "Radar — rain at night",
+  "fig": {
+   "type": "card",
+   "title": "Radar, 0200, heavy rain ahead",
+   "lines": [
+    "Squall 2–4 M ahead; rain control set",
+    "Coast at 9 M paints either side of it",
+    "Behind the squall: no coast, no echoes"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You set a parallel index line to pass the cape, as on the card. Which way do you draw the line?",
+  "a": "Parallel to the ground track, 045°T",
+  "o": [
+   "Parallel to the heading, 033°T",
+   "Parallel to the cape’s coastline",
+   "Along the bearing of the cape now"
+  ],
+  "why": "A fixed echo moves across the screen opposite to your motion over the ground, so the index line runs parallel to the track, not the heading.",
+  "ref": "Radar — parallel indexing with a stream",
+  "fig": {
+   "type": "card",
+   "title": "Parallel index past the cape",
+   "lines": [
+    "Planned track over the ground 045°T",
+    "Stream on the beam: heading 033°T holds it",
+    "Radar north-up, stabilised",
+    "Pass the cape 1.5 M off to port"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "A ship passes close and the radar paints this arc around her. What is it?",
+  "a": "Side lobes from her strong echo, not real targets",
+  "o": [
+   "A fleet of small craft around her",
+   "Her wake and the broken sea behind her",
+   "Second-trace echoes from far off"
+  ],
+  "why": "A big echo close by returns energy through the scanner’s side lobes, painting an arc at her range. Turn the gain or sea clutter down a touch.",
+  "ref": "Radar — false echoes",
+  "fig": {
+   "type": "chart",
+   "boat": [
+    110,
+    150,
+    0
+   ],
+   "marks": [
+    [
+     179,
+     110,
+     "k",
+     "ship"
+    ],
+    [
+     135,
+     74,
+     "y",
+     ""
+    ],
+    [
+     150,
+     81,
+     "y",
+     ""
+    ],
+    [
+     164,
+     91,
+     "y",
+     ""
+    ],
+    [
+     188,
+     133,
+     "y",
+     ""
+    ],
+    [
+     190,
+     150,
+     "y",
+     ""
+    ],
+    [
+     188,
+     167,
+     "y",
+     ""
+    ]
+   ],
+   "panel": [
+    "Radar, 1.5 M",
+    "Gain high",
+    "Sea clutter low"
+   ],
+   "note": "A ship passes 0.4 M off"
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You are tracking a ship on MARPA when this happens. What is the likely cause?",
+  "a": "The tracker has jumped to the fishing boat’s echo",
+  "o": [
+   "Ship A has slowed and turned towards you",
+   "The MARPA has found her real CPA at last",
+   "The fishing boat’s AIS has been fed into it"
+  ],
+  "why": "When two echoes pass close, MARPA may swap them and its data jump. Re-acquire both and check each by compass bearing and by eye.",
+  "ref": "ARPA/MARPA — target swap",
+  "fig": {
+   "type": "card",
+   "title": "MARPA, 0330",
+   "lines": [
+    "Acquired: ship A, CPA 1.8 M, 14 kn",
+    "Her echo passes close to a fishing boat",
+    "Now: vector swings, CPA 0.2 M, 3 kn"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "You switch the radar to true trails, as on the card. What do you make of the echo with no trail?",
+  "a": "It is stopped — a buoy or a ship at anchor",
+  "o": [
+   "It is on your course and at your speed",
+   "It is a false echo — real ones leave trails",
+   "It is closing you head-on at speed"
+  ],
+  "why": "Ground-stabilised true trails show movement over the ground, so no trail means stopped. In relative trails, an echo keeping pace with you has none.",
+  "ref": "Radar — true and relative trails",
+  "fig": {
+   "type": "card",
+   "title": "Radar, true trails (ground-stabilised)",
+   "lines": [
+    "Ships’ echoes: trails behind each one",
+    "One echo 3 M ahead: no trail at all",
+    "Your speed 9 kn"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "In a strong cross-stream the ARPA and the ship’s lights disagree, as on the card. Why?",
+  "a": "The vector shows her track over the ground, not her heading",
+  "o": [
+   "Her lights are wrong — trust the vector",
+   "The ARPA has lost her and is guessing",
+   "Her navigation lights are set for a tow"
+  ],
+  "why": "In a cross-stream a ship crabs: ground-stabilised vectors show her course over the ground, her lights her heading. Sea-stabilise to judge aspect.",
+  "ref": "ARPA — ground and sea stabilisation",
+  "fig": {
+   "type": "card",
+   "title": "0215, strong tidal stream across",
+   "lines": [
+    "ARPA vectors ground-stabilised (GNSS)",
+    "Ship ahead, steady 10 min: vector crossing",
+    "Her lights: masthead lights in line, red",
+    "and green both showing"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The AIS shows a tanker 28 M away, but the radar shows nothing on her bearing. Why?",
+  "a": "She is beyond your radar horizon; her AIS reaches further",
+  "o": [
+   "Her AIS is false — trust the empty radar",
+   "The radar needs a 48 M scale to show her",
+   "Large ships paint only inside 12 M"
+  ],
+  "why": "Radar sees to its horizon: about 2.2 × (√8 + √30) ≈ 18 M to her bridge, while VHF from her high aerial carries further. Expect her echo later.",
+  "ref": "Radar and AIS — detection range",
+  "fig": {
+   "type": "card",
+   "title": "0100, AIS and radar",
+   "lines": [
+    "AIS: tanker 28 M off, closing",
+    "Radar on 24 M: no echo on her bearing",
+    "Your scanner 8 m up; her bridge about 30 m"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The radar and the AIS tell you different things about this ship, as on the card. Which do you believe?",
+  "a": "The plot and her lights — the status is typed in by hand",
+  "o": [
+   "The AIS status — she is moored, so ignore her",
+   "Neither — call her and wait for a reply",
+   "The AIS SOG alone — she is only drifting"
+  ],
+  "why": "Navigational status is set by her crew and often left wrong; her SOG, the plot and her lights say she is under way. Act on the risk.",
+  "ref": "AIS — what it shows and what it does not",
+  "fig": {
+   "type": "card",
+   "title": "0330, radar and AIS",
+   "lines": [
+    "AIS: cargo ship, status \"moored\", SOG 11.8 kn",
+    "Radar: her echo closing, bearing steady",
+    "Lights: masthead, sidelight, no anchor light"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The radar shows two echoes in step, but the AIS shows one vessel, as on the card. What is the second echo?",
+  "a": "Her tow — and you keep clear of the gap between them",
+  "o": [
+   "A yacht in her wake — pass between the two",
+   "A false echo from the tug’s own hull",
+   "A second-trace echo from far astern"
+  ],
+  "why": "A tow often sends no AIS of its own. Two echoes in step with one AIS: treat it as a tow and never pass between them.",
+  "ref": "Radar and AIS — a tow",
+  "fig": {
+   "type": "card",
+   "title": "0130, radar and AIS",
+   "lines": [
+    "AIS: tug \"Hercules\", 6 kn",
+    "Radar: her echo, and another 0.4 M astern",
+    "Second echo: same course and speed, no AIS"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "GNSS is lost mid-crossing, as on the card. What still works as before?",
+  "a": "Radar, compass, log and sounder; the pilot on compass",
+  "o": [
+   "Everything but the plotter’s position",
+   "The AIS and DSC, with fixes of their own",
+   "The autopilot, still steering the route"
+  ],
+  "why": "Without GNSS the AIS sends no position, DSC alerts carry none and track mode stops. Radar, compass, log and sounder carry on: DR and radar.",
+  "ref": "GNSS — failure and what is left",
+  "fig": {
+   "type": "card",
+   "title": "0130, 60 M from landfall: GNSS lost",
+   "lines": [
+    "Plotter: \"no position fix\"",
+    "Fitted: radar, fluxgate, log, sounder,",
+    "AIS, DSC VHF, autopilot in track mode"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "The GNSS fails on passage at night, as on the card. What do you do first?",
+  "a": "Write down the last fix and time, and start a DR",
+  "o": [
+   "Restart the plotter until it finds a fix",
+   "Head for the nearest land to get a fix",
+   "Wait — the satellites will soon come back"
+  ],
+  "why": "The last good fix with its time and log reading starts your DR; write it down before it scrolls off a screen.",
+  "ref": "GNSS — failure",
+  "fig": {
+   "type": "card",
+   "title": "0130: GNSS lost",
+   "lines": [
+    "Last good fix 0100, log 406.2",
+    "Now 0130, log 412.6",
+    "Course steered 095°T"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Approaching the strait, you find this. What do you trust?",
+  "a": "The radar ranges — the GNSS may be spoofed",
+  "o": [
+   "The GNSS — an HDOP of 0.8 shows it is sound",
+   "The mean of the two positions",
+   "The GNSS, after retuning the radar"
+  ],
+  "why": "Spoofing gives a smooth, confident and false fix with a good HDOP. Radar ranges and depths are independent: trust them, and report it.",
+  "ref": "GNSS — spoofing",
+  "fig": {
+   "type": "card",
+   "title": "0400, approaching the strait",
+   "lines": [
+    "GNSS: steady fix, HDOP 0.8, SOG 9 kn",
+    "Radar ranges put you 2.5 M north of it",
+    "Two ships on AIS show inland, at an airport"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The autopilot’s off-course alarm keeps sounding, as on the card. What do you do?",
+  "a": "Reef or ease the main to take off the weather helm",
+  "o": [
+   "Turn the autopilot’s gain up to its maximum",
+   "Widen the off-course alarm to 30°",
+   "Switch to wind mode to follow the gusts"
+  ],
+  "why": "No pilot beats the weather helm of an over-pressed yacht; balance her — reef, ease the main — and it will steer again.",
+  "ref": "Autopilot — alarms",
+  "fig": {
+   "type": "card",
+   "title": "0230, off-course alarm",
+   "lines": [
+    "Autopilot on compass, close reach, F6",
+    "Heading swings 25° up in each gust",
+    "Full main, no reef; rudder hard over"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "At speed on the flybridge, the autopilot alarm shows this. What do you do first?",
+  "a": "Take the helm in hand steering and slow down",
+  "o": [
+   "Reset the autopilot and engage it again",
+   "Look up the fault code in the manual",
+   "Call the skipper, and wait at the helm"
+  ],
+  "why": "A drive fault can leave the rudder over at 18 kn: take hand steering at once and slow down, then look for the fault.",
+  "ref": "Autopilot — alarms",
+  "fig": {
+   "type": "card",
+   "title": "Flybridge, 0100, 18 kn",
+   "lines": [
+    "Autopilot alarm: \"DRIVE FAULT\"",
+    "Rudder angle shows hard over to port"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Far offshore at night the sounder shows this. What do you make of it?",
+  "a": "False echoes — fish, a layer in the water, or wake",
+  "o": [
+   "An uncharted shoal — stop and sound around it",
+   "A seamount: the chart datum must be wrong",
+   "The sounder is right; the chart is out of date"
+  ],
+  "why": "Beyond its range a sounder can show fish, plankton layers or wake as depths; jumpy readings in 2,000 m are not a shoal.",
+  "ref": "Echo sounder — false readings",
+  "fig": {
+   "type": "card",
+   "title": "0300, 70 M offshore",
+   "lines": [
+    "Chart: 2,000 m of water here",
+    "Sounder: 14 m, then 22 m, then nothing",
+    "No shoal on the chart or in the Notices"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "Your log is out of action, so you work the plot from the GNSS, as on the card. How do you find the next hour’s position?",
+  "a": "From COG and SOG alone — they hold the stream already",
+  "o": [
+   "From COG and SOG, then apply the atlas stream",
+   "From heading and SOG, then apply the stream",
+   "Wait — with the log at 0.0 you have no plot"
+  ],
+  "why": "GNSS COG and SOG are over the ground, so the stream is in them. Laying the atlas stream on top counts it twice.",
+  "ref": "Log — the GNSS as backup",
+  "fig": {
+   "type": "card",
+   "title": "Log out of action",
+   "lines": [
+    "Paddlewheel fouled by weed: reads 0.0 kn",
+    "Using GNSS: COG 112°T, SOG 7.4 kn",
+    "Tidal atlas: stream 040°T, 1.2 kn"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The log has failed, so you time a chip of wood along the deck. What is your speed through the water?",
+  "a": "10.7 kn",
+  "o": [
+   "5.5 kn",
+   "19.8 kn",
+   "12.3 kn"
+  ],
+  "why": "22 m ÷ 4.0 s = 5.5 m/s; × 3,600 ÷ 1,852 = 10.7 kn through the water.",
+  "ref": "Log — a Dutchman’s log",
+  "fig": {
+   "type": "card",
+   "title": "Log fouled — checking the speed",
+   "lines": [
+    "Marks on deck 22 m apart, bow to stern",
+    "The chip passes from mark to mark in 4.0 s",
+    "1 M = 1,852 m"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "On the approach the radar overlay sits off the chart, as on the card. What do you navigate by?",
+  "a": "Radar ranges — the plotter’s position may be off",
+  "o": [
+   "The overlay — the radar is 0.3 M out",
+   "The charted coastline — echoes always lie off it",
+   "The mean of the chart and the echoes"
+  ],
+  "why": "A steady, uniform offset means the plotter’s position (the GNSS or the chart datum) is wrong, not the radar. Fix by radar ranges near the coast.",
+  "ref": "Radar and the plotter — overlay offset",
+  "fig": {
+   "type": "card",
+   "title": "Radar overlay on the plotter",
+   "lines": [
+    "Coast echo 0.3 M east of the charted coast",
+    "The same offset all round, steady",
+    "Radar ranges to the cliffs agree together"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 2,
+  "q": "The plotter shows this alarm, but the radar shows no line of dots on that bearing. Why not?",
+  "a": "An AIS-SART sends AIS only — there is no radar reply",
+  "o": [
+   "On test the dots are switched off",
+   "Your radar gain is too low to show them",
+   "The survivors are below the radar horizon"
+  ],
+  "why": "An AIS-SART (MMSI 970) reports its GNSS position by AIS; only a radar SART paints dots. Head for the AIS position and alert the MRCC.",
+  "ref": "AIS-SART on the plotter",
+  "fig": {
+   "type": "card",
+   "title": "Plotter, 0510",
+   "lines": [
+    "\"SART ACTIVE\", MMSI 970123456",
+    "Bearing 075°T, 6.5 M",
+    "Radar on 12 M: no line of dots there"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "The plotter sounds an alarm for this AIS target. What do you do?",
+  "a": "Note it in the log — someone is testing a SART",
+  "o": [
+   "Head for it and send a MAYDAY RELAY",
+   "Alert the MRCC — a liferaft is out",
+   "Switch the AIS alarms off for the day"
+  ],
+  "why": "An AIS-SART on test sends \"SART TEST\"; in distress it sends \"SART ACTIVE\". Log it and carry on; act at once on ACTIVE.",
+  "ref": "AIS-SART on the plotter",
+  "fig": {
+   "type": "card",
+   "title": "Plotter alarm, 1015",
+   "lines": [
+    "AIS target: MMSI 970111222",
+    "Text: \"SART TEST\"",
+    "4 M on the port beam"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 1,
+  "q": "You are fitting out for a 150 M crossing, as on the card. Which backup do you add?",
+  "a": "A handheld GNSS and VHF on their own batteries",
+  "o": [
+   "A second plotter on the same network",
+   "A spare display for the main plotter",
+   "A larger house battery bank"
+  ],
+  "why": "A backup is a backup only if it shares nothing: its own aerial, power and screen. A second plotter on the same network fails with it.",
+  "ref": "Integrated electronics — single point of failure",
+  "fig": {
+   "type": "card",
+   "title": "Fit-out for a 150 M crossing",
+   "lines": [
+    "All navigation on one NMEA 2000 network",
+    "One battery bank, one GNSS antenna"
+   ]
+  }
+ },
+ {
+  "topic": "pilotage",
+  "difficulty": 3,
+  "q": "The GNSS fails 45 M from a low coast, as on the card. How do you plan the landfall now?",
+  "a": "Aim off to one side, so you know which way to turn",
+  "o": [
+   "Steer straight at the harbour on the DR",
+   "Wait offshore until the GNSS comes back",
+   "Follow a ship’s AIS track towards the coast"
+  ],
+  "why": "After 45 M of DR the error may lie either side. Aim off on purpose; at the coast the radar, sounder and light tell you to turn one way.",
+  "ref": "Pilotage — landfall without GNSS",
+  "fig": {
+   "type": "card",
+   "title": "GNSS lost, 0130 — 45 M to the landfall",
+   "lines": [
+    "Harbour on a low coast; streams uncertain",
+    "Light on the point 3 M W of it: Fl(2) 10s 20M",
+    "Radar, sounder and DR all good"
+   ]
+  }
+ }
+]

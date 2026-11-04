@@ -32,11 +32,11 @@ const LEVELS = [
   { id: 'flotilla-skipper', prefix: 'fs', link: 'flotilla', title: 'Flotilla Skipper' },
   { id: 'bareboat-skipper', prefix: 'bs', link: 'bareboat', title: 'Bareboat Skipper' },
   { id: 'yachtmaster-coastal', prefix: 'yc', link: 'coastal', title: 'Yachtmaster Coastal' },
+  { id: 'yachtmaster-offshore', prefix: 'yof', link: 'offshore', title: 'Yachtmaster Offshore' },
   { id: 'yachtmaster-ocean', prefix: 'yo', link: 'ocean', title: 'Yachtmaster Ocean' },
   { id: 'racing-rules', prefix: 'rr', link: 'racing', title: 'Racing Rules of Sailing' },
   { id: 'charter-checkin', prefix: 'ci', link: 'checkin', title: 'Charter Check-in' },
   { title: 'ICC', soon: 'planned' },
-  { title: 'Yachtmaster Offshore', soon: 'soon2027' },
 ];
 const DEFAULT_LEVEL = 'bareboat-skipper';
 let LEVEL = LEVELS.find((l) => l.id === DEFAULT_LEVEL); // the current level
@@ -48,6 +48,7 @@ const TOPIC_ICONS = {
   'international-crew': { boat: 'yacht', sailing: 'sail', knots: 'knot', deck: 'cleat', helming: 'wheel', safety: 'lifejacket', lookout: 'binoculars', weather: 'cloud', aboard: 'mug', emergency: 'medkit' },
   'flotilla-skipper': { power: 'propeller', mooring: 'anchor', sailing: 'sail', colregs: 'rules', buoyage: 'buoy', pilotage: 'lighthouse', weather: 'barometer', systems: 'gear', skipper: 'captain', emergency: 'lifebuoy' },
   'yachtmaster-coastal': { charts: 'map', dr: 'dividers', fixing: 'compass', tides: 'tide', pilotage: 'lighthouse', passage: 'route', colregs: 'rules', weather: 'barometer', safety: 'lifebuoy', seamanship: 'cleat' },
+  'yachtmaster-offshore': { charts: 'map', compass: 'compass', dr: 'dividers', tides: 'tide', pilotage: 'lighthouse', colregs: 'rules', weather: 'barometer', vessel: 'yacht', seamanship: 'cleat', emergency: 'lifebuoy' },
   'yachtmaster-ocean': { sphere: 'globe', sextant: 'sextant', time: 'timer', meridian: 'meridian', sun: 'sun', stars: 'star', compass: 'compass', greatcircle: 'map', weather: 'wind', passage: 'route' },
   'racing-rules': { definitions: 'book', rightofway: 'sail', limits: 'wheel', marks: 'buoy', obstructions: 'lighthouse', starting: 'timer', course: 'map', propulsion: 'wind', penalties: 'refresh', protests: 'trophy' },
   'charter-checkin': { papers: 'licence', hull: 'yacht', sails: 'sail', engine: 'propeller', electrics: 'battery', plumbing: 'drop', nav: 'compass', safety: 'lifejacket', ground: 'anchor', return: 'clipboard' },
