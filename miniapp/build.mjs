@@ -33,6 +33,10 @@ const FILES = [
   ['miniapp/app.css', 'app.css'],
   ['miniapp/intro.jpg', 'intro.jpg'], // the photo on the bot's /start welcome (bot/core.mjs)
   ['miniapp/fullcrimp.jpg', 'fullcrimp.jpg'], // the author's photo on the Home feedback card
+  // the RYC flag icons, taken from rycrentals.com
+  ['miniapp/favicon.ico', 'favicon.ico'],
+  ['miniapp/icon.png', 'icon.png'],
+  ['miniapp/apple-icon.png', 'apple-icon.png'],
   ['miniapp/fonts', 'fonts'],
   ['docs/design/app.css', 'design/app.css'],
   ['docs/design/flows.css', 'design/flows.css'],

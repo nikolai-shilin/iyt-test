@@ -286,6 +286,9 @@ function shell({ lang, path, alt = {}, title, desc, body, ld, css, type = 'websi
 <meta name="theme-color" content="#ffffff">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/icon.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/apple-icon.png">
 ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${url}">\n${alts.join('\n')}`}
 <meta property="og:type" content="${type}">
 <meta property="og:site_name" content="IYT Test">
