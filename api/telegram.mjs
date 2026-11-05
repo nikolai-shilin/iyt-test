@@ -2,6 +2,7 @@
 // Env on Vercel: TELEGRAM_BOT_TOKEN, TELEGRAM_WEBHOOK_SECRET, WEBAPP_URL.
 
 import { handleUpdate } from '../bot/core.mjs';
+import { logError } from './settings.mjs';
 
 export async function POST(request) {
   // Telegram echoes the secret given to setWebhook in this header; anything else is not from Telegram.
@@ -11,7 +12,7 @@ export async function POST(request) {
   let update;
   try { update = await request.json(); } catch { return new Response('bad request', { status: 400 }); }
   // Always answer 200: a failed reply should not make Telegram resend the same update over and over.
-  try { await handleUpdate(update); } catch (e) { console.error('update', update.update_id, e.message); }
+  try { await handleUpdate(update); } catch (e) { await logError(`update ${update.update_id}`, e, update.message?.from?.id ?? update.callback_query?.from?.id ?? null); }
   return new Response('ok');
 }
 

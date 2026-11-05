@@ -1,6 +1,6 @@
 /* IYT Test — Telegram mini app.
    Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile); C4 Admin
-   (four pages under one tab strip: Overview with joins, answers and wrong answers per day; Students; the questions
+   (four pages under one tab strip: Overview with joins, answers, wrong answers, theory reads and errors; Students; the questions
    reported as wrong; the flagged ones — api/admin.mjs) opens from the profile for the admins only. C1b lists the
    questions the student reported as wrong, so they can withdraw a report.
    Banks are static JSON files named after their content (build.mjs lists them in window.BANKS), so a phone keeps them
@@ -19,6 +19,21 @@
 const TG = window.Telegram && window.Telegram.WebApp;
 const IN_TG = !!(TG && TG.initData);
 const tgv = (v) => IN_TG && TG.isVersionAtLeast(v);
+// Errors nothing caught go to api/log.mjs (public.errors), for the Errors chart on the admins' Overview page: at most
+// 5 per launch, the same one once. "Script error." is a script from another site (Telegram's, analytics) that the
+// browser will not describe, so there is nothing to act on.
+const ERR_SENT = new Set();
+function reportError(m, w) {
+  m = String(m || '').trim().slice(0, 1000);
+  if (!m || /^Script error\.?$/.test(m) || ERR_SENT.size >= 5 || ERR_SENT.has(m)) return;
+  ERR_SENT.add(m);
+  try {
+    fetch('/api/log', { method: 'POST', keepalive: true, body: JSON.stringify({ m, w: String(w || 'app').slice(0, 200) }),
+      headers: { 'content-type': 'application/json', 'x-telegram-init-data': IN_TG ? TG.initData : '' } }).catch(() => {});
+  } catch (e) {}
+}
+addEventListener('error', (e) => { if (e.message) reportError(e.message, e.filename ? `${e.filename.split('/').pop()}:${e.lineno}` : 'app'); });
+addEventListener('unhandledrejection', (e) => { const r = e.reason; reportError((r && (r.message || r.toString())) || 'unhandled rejection', 'promise'); });
 // Telegram's own MainButton + SecondaryButton (clients 7.10+) are square-cornered and cannot be styled, so every
 // client gets the app's in-page bar with pill buttons instead; set to tgv('7.10') to go back to the native ones.
 const NATIVE_BUTTONS = false;
@@ -192,7 +207,7 @@ const STR = {
     adminT: 'Admin', adminMeta: 'Students, charts and reported questions',
     tabOverview: 'Overview', tabStudents: 'Students', tabReported: 'Reported', tabFlagged: 'Flagged',
     overviewMeta: 'How the app is used, day by day',
-    chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chNone: 'No numbers for the charts yet',
+    chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chErrors: 'Errors logged', chRange: 'Period', chNone: 'No numbers for the charts yet',
     rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
     chNote: (r) => ({ '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '3m': 'last 3 months' })[r],
     unflagOne: 'Remove', unflagAll: (n) => `Remove from all ${n}`, confirmUnflagAll: (n) => `Remove this flag for all ${pl(n, 'student')}?`,
@@ -304,7 +319,7 @@ const STR = {
     adminT: 'Админ-панель', adminMeta: 'Ученики, графики и вопросы с ошибками',
     tabOverview: 'Обзор', tabStudents: 'Ученики', tabReported: 'Ошибки', tabFlagged: 'Отмечены',
     overviewMeta: 'Как пользуются приложением, по дням',
-    chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chNone: 'Для графиков пока нет данных',
+    chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chErrors: 'Ошибки в приложении', chRange: 'Период', chNone: 'Для графиков пока нет данных',
     rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
     chNote: (r) => ({ '24h': 'за 24 часа', '7d': 'за 7 дней', '30d': 'за 30 дней', '3m': 'за 3 месяца' })[r],
     unflagOne: 'Снять', unflagAll: (n) => `Снять у всех (${n})`, confirmUnflagAll: (n) => `Снять эту отметку у всех (${pl(n, 'student')})?`,
@@ -629,7 +644,7 @@ function markRead() {
   if (c.v !== 'article' || !sc || !sc.querySelector('.th-end') || isRead(c.t) || Date.now() < ownScroll) return;
   if (sc.scrollTop + sc.clientHeight < sc.scrollHeight - 120) return;
   S.read = S.read || {};
-  S.read[readKey(c.t)] = 1;
+  S.read[readKey(c.t)] = Date.now(); // when: the admins' chart counts reads by day (api/admin.mjs)
   save();
 }
 
@@ -708,7 +723,8 @@ function loadDaily() {
   }).catch(() => {});
 }
 // Admin: every student's results from api/admin.mjs. undefined = not asked, 'loading', null = failed, or the list.
-// ADM_SERIES: joins, answers and wrong answers per UTC hour (24) and day (91) for the Overview charts, or null.
+// ADM_SERIES: joins, answers, wrong answers, theory reads and errors per UTC hour (24) and day (91) for the Overview
+// charts, or null.
 let ADM, ADM_SERIES = null;
 // The admin pages, in the order of their bottom menu: [view, icon, label]
 const ADMIN_TABS = [['admin', 'chart', 'tabOverview'], ['adminUsers', 'users', 'tabStudents'], ['adminWrong', 'alert', 'tabReported'], ['adminFlags', 'flag', 'tabFlagged']];
@@ -856,47 +872,51 @@ function flaggedList(key, none) {
   return `<div class="topics">${list.map(({ id, users }) => { const { q, lv, topic } = anyQ(id);
     return `<div class="topic flq${key === 'wrong' ? ' bad' : ''}" data-act="flagq" data-id="${id}" data-k="${key}"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span><span class="n"><b>${users.length}</b>${t('studentsW', users.length)}</span></div>`; }).join('')}</div>`;
 }
-// The Overview charts. Each has its own range (CH_RANGE): 24h = the last 24 UTC hours, 7d and 30d = UTC days, 3m = the
-// last 91 days in 13 weeks. CH_GROW is the chart whose range just changed, so only its bars grow in.
+// The Overview charts, all on one range (CH_RANGE, the switch above them): 24h = the last 24 UTC hours, 7d and 30d =
+// UTC days, 3m = the last 91 days in 13 weeks. CH_GROW: the range just changed, so the bars grow in again.
 const RANGES = ['24h', '7d', '30d', '3m'];
-const CH_RANGE = { joined: '7d', answers: '7d', wrong: '7d' };
-let CH_GROW = null;
+// [key in ADM_SERIES, title, class]: 'bad' charts are drawn in the danger colour
+const CHARTS = [['joined', 'chJoined', ''], ['answers', 'chAnswers', ''], ['wrong', 'chWrong', ' bad'], ['reads', 'chReads', ''], ['errors', 'chErrors', ' bad']];
+let CH_RANGE = '7d', CH_GROW = false;
 const uday = (iso) => new Date(iso).toLocaleDateString(t('locale'), { day: 'numeric', month: 'short', timeZone: 'UTC' });
 const uhour = (iso) => new Date(iso).toLocaleTimeString(t('locale'), { hour: '2-digit', minute: '2-digit' });
 // One range as bars: [{ l: its label in the readout, x: on the axis, joined, answers, wrong }]
 function buckets(range) {
   if (range === '24h') return ADM_SERIES.hour.map((r) => ({ ...r, l: uhour(r.at), x: uhour(r.at) }));
   if (range !== '3m') return ADM_SERIES.day.slice(range === '7d' ? -7 : -30).map((r) => ({ ...r, l: uday(r.at), x: uday(r.at) }));
-  const days = ADM_SERIES.day.slice(-91), out = [], add = (wk, k) => wk.reduce((a, r) => a + r[k], 0);
+  const days = ADM_SERIES.day.slice(-91), out = [];
   for (let i = days.length % 7; i < days.length; i += 7) {
-    const wk = days.slice(i, i + 7);
-    out.push({ joined: add(wk, 'joined'), answers: add(wk, 'answers'), wrong: add(wk, 'wrong'), l: `${uday(wk[0].at)} – ${uday(wk[wk.length - 1].at)}`, x: uday(wk[0].at) });
+    const wk = days.slice(i, i + 7), r = { l: `${uday(wk[0].at)} – ${uday(wk[wk.length - 1].at)}`, x: uday(wk[0].at) };
+    for (const [k] of CHARTS) r[k] = wk.reduce((a, d) => a + (+d[k] || 0), 0);
+    out.push(r);
   }
   return out;
 }
+// The range switch, then the charts. The series of a server that does not count reads or errors yet has 0s for them.
 function dailyCharts() {
   if (!ADM_SERIES || !ADM_SERIES.day.length) return `<p class="card-meta">${t('chNone')}</p>`;
-  return dayChart('joined', t('chJoined'), '') + dayChart('answers', t('chAnswers'), '') + dayChart('wrong', t('chWrong'), ' bad');
+  const rows = buckets(CH_RANGE);
+  const sw = RANGES.map((r) => `<button class="lang${r === CH_RANGE ? ' lang-on' : ''}" role="radio" aria-checked="${r === CH_RANGE}" data-act="range" data-r="${r}">${t('rg' + r)}</button>`).join('');
+  return `<div class="dhead dtop"><span class="kicker">${esc(t('chNote', CH_RANGE))}</span><div class="langs dsw" role="radiogroup" aria-label="${esc(t('chRange'))}">${sw}</div></div>` +
+    CHARTS.map(([k, title, cls]) => dayChart(rows, k, t(title), cls)).join('');
 }
-// One chart: the title, its total and the range switch; a bar per bucket, the highest marked on a dashed line, the first
-// and last bucket under it. Pointing at (or tapping) a bar puts its label and number in place of the total
-// (chartPoint); a hidden table reads it out.
-function dayChart(key, title, cls) {
-  const range = CH_RANGE[key], rows = buckets(range);
+// One chart: the title and its total; a bar per bucket, the highest marked on a dashed line, the first and last bucket
+// under it. Pointing at (or tapping) a bar puts its label and number in place of the total (chartPoint); a hidden
+// table reads it out.
+function dayChart(rows, key, title, cls) {
+  const range = CH_RANGE;
   if (!rows.length) return '';
-  const vals = rows.map((r) => r[key]), max = Math.max(1, ...vals), total = vals.reduce((a, b) => a + b, 0);
+  const vals = rows.map((r) => +r[key] || 0), max = Math.max(1, ...vals), total = vals.reduce((a, b) => a + b, 0);
   const ans = rows.reduce((a, r) => a + r.answers, 0);
-  const note = key === 'wrong' && ans ? t('chOf', Math.round((total / ans) * 100)) : t('chNote', range);
+  const note = key === 'wrong' && ans ? t('chOf', Math.round((total / ans) * 100)) : '';
   const share = (r) => (key === 'wrong' && r.answers ? ` · ${Math.round((r.wrong / r.answers) * 100)}%` : '');
-  const cols = rows.map((r) => `<div data-l="${esc(r.l)}" data-n="${r[key]}${share(r)}"><i class="${r[key] ? '' : 'z'}" style="height:${r[key] ? Math.max(3, (r[key] / max) * 100) : 0}%"></i></div>`).join('');
-  const read = `<b>${total}</b> · ${esc(note)}`;
-  const sw = RANGES.map((r) => `<button class="lang${r === range ? ' lang-on' : ''}" role="radio" aria-checked="${r === range}" data-act="range" data-k="${key}" data-r="${r}">${t('rg' + r)}</button>`).join('');
-  return `<div class="dchart${cls}${CH_GROW === key ? ' grow' : ''}" data-read="${esc(read)}">
-    <div class="dhead"><div class="stack"><span class="kicker">${esc(title)}</span><span class="meta dread" aria-hidden="true">${read}</span></div>
-      <div class="langs dsw" role="radiogroup" aria-label="${esc(title)}">${sw}</div></div>
+  const cols = rows.map((r, i) => `<div data-l="${esc(r.l)}" data-n="${vals[i]}${share(r)}"><i class="${vals[i] ? '' : 'z'}" style="height:${vals[i] ? Math.max(3, (vals[i] / max) * 100) : 0}%"></i></div>`).join('');
+  const read = `<b>${total}</b>${note ? ` · ${esc(note)}` : ''}`;
+  return `<div class="dchart${cls}${CH_GROW ? ' grow' : ''}" data-read="${esc(read)}">
+    <div class="dhead"><div class="stack"><span class="kicker">${esc(title)}</span><span class="meta dread" aria-hidden="true">${read}</span></div></div>
     <div class="dplot" style="--n:${rows.length}" aria-hidden="true"><span class="dmax">${max}</span>${cols}</div>
     <div class="row sb-between dx" aria-hidden="true"><span>${esc(rows[0].x)}</span><span>${esc(rows[rows.length - 1].x)}</span></div>
-    <table class="sr-only"><caption>${esc(title)}, ${esc(t('chNote', range))}: ${total}</caption>${rows.map((r) => `<tr><th>${esc(r.l)}</th><td>${r[key]}</td></tr>`).join('')}</table></div>`;
+    <table class="sr-only"><caption>${esc(title)}, ${esc(t('chNote', range))}: ${total}</caption>${rows.map((r, i) => `<tr><th>${esc(r.l)}</th><td>${vals[i]}</td></tr>`).join('')}</table></div>`;
 }
 // An admin takes a flag (kind 'flags' or 'wrong') off question q for these students (api/admin.mjs POST); the lists
 // update here at once, the students' apps on their next sync.
@@ -1915,7 +1935,7 @@ const ACT = {
   // the admin tab strip swaps the page in place, so Back still goes to the profile
   atab: (d) => { if (cur().v === d.v || !isAdminView(d.v)) return; stack[stack.length - 1] = { v: d.v }; hap('sel'); enterTab = true; render(true); },
   reported: () => go('reported'),
-  range: (d) => { if (!RANGES.includes(d.r) || !(d.k in CH_RANGE) || CH_RANGE[d.k] === d.r) return; CH_RANGE[d.k] = d.r; CH_GROW = d.k; hap('sel'); render(); CH_GROW = null; },
+  range: (d) => { if (!RANGES.includes(d.r) || CH_RANGE === d.r) return; CH_RANGE = d.r; CH_GROW = true; hap('sel'); render(); CH_GROW = false; },
   unflagOne: (d, el) => unflag(d.q, d.k, [+d.id], el),
   unflagAll: async (d, el) => {
     const ids = Array.isArray(ADM) ? ADM.filter((u) => (u[d.k] || []).includes(d.q)).map((u) => u.id) : [];

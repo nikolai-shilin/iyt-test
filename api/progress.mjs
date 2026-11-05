@@ -12,7 +12,7 @@
 // Env on Vercel: TELEGRAM_BOT_TOKEN, SUPABASE_URL, SUPABASE_SECRET_KEY. Without the database it answers 503 and the
 // app keeps its progress on the device as before.
 
-import { verifyInitData, db } from './settings.mjs';
+import { verifyInitData, db, logError } from './settings.mjs';
 
 const SB = (process.env.SUPABASE_URL || '').replace(/\/$/, ''), SB_KEY = process.env.SUPABASE_SECRET_KEY || '';
 const MAX_ANSWERS = 2000;     // per request; the app sends at most 500
@@ -32,7 +32,7 @@ async function clears(userId, state) {
     await Promise.all(done.map((r) => db(`flag_clears?user_id=eq.${userId}&question_id=eq.${encodeURIComponent(r.question_id)}&kind=eq.${r.kind}`, { method: 'DELETE', prefer: 'return=representation' })));
     return rows.filter(has).map((r) => ({ q: r.question_id, k: r.kind }));
   } catch (e) {
-    if (!/: 404 /.test(e.message)) console.error('progress clears', userId, e.message);
+    if (!/: 404 /.test(e.message)) await logError('progress clears', e, userId);
     return [];
   }
 }
@@ -74,7 +74,7 @@ export async function POST(request) {
     const r = await res.json();
     return json({ ts: r.ts, state: r.state, answers: r.answers, clear: await clears(user.id, state) });
   } catch (e) {
-    console.error('progress', user.id, e.message);
+    await logError('progress', e, user.id);
     return json({ error: 'failed' }, 500);
   }
 }

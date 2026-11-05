@@ -4,6 +4,7 @@
 // WEBAPP_URL, and optionally DAILY_QUESTION=off to stop the send for everyone.
 
 import { sendDaily } from '../bot/daily.mjs';
+import { logError } from './settings.mjs';
 
 export async function GET(request) {
   const secret = process.env.CRON_SECRET;
@@ -13,7 +14,7 @@ export async function GET(request) {
     console.log('daily', JSON.stringify(result));
     return Response.json(result);
   } catch (e) {
-    console.error('daily', e.message);
+    await logError('daily', e);
     return Response.json({ error: e.message }, { status: 500 });
   }
 }

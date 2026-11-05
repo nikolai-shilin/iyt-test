@@ -44,6 +44,17 @@ export async function db(path, { method = 'GET', body, prefer } = {}) {
   return res.json();
 }
 
+// A failure for the admins' Errors chart: written to the console (Vercel's logs) as before, and as a row of
+// public.errors (supabase/migrations/20261105120000_errors_log.sql). The row is best effort: a failure to write it
+// (no table yet, no database) is only noted in the console, and the caller never waits for it to fail.
+export function logError(place, message, userId = null, source = 'api') {
+  const msg = String((message && message.message) || message || 'error').slice(0, 2000);
+  console.error(place, ...(userId != null ? [userId] : []), msg);
+  if (!SB || !SB_KEY) return Promise.resolve();
+  return db('errors', { method: 'POST', prefer: 'return=minimal', body: { source, place: String(place).slice(0, 200), message: msg, user_id: Number.isSafeInteger(userId) ? userId : null } })
+    .catch((e) => console.error('errors log', e.message));
+}
+
 const RU = (u) => /^(ru|uk|be|kk)\b/i.test(u?.language_code || ''); // same rule as the bot and the app
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
 
@@ -65,7 +76,7 @@ async function handle(request, write) {
     const [saved] = await db('users?on_conflict=id&select=daily_question', { method: 'POST', body: row, prefer: 'resolution=merge-duplicates,return=representation' });
     return json({ daily: !!saved.daily_question });
   } catch (e) {
-    console.error('settings', user.id, e.message);
+    await logError('settings', e, user.id);
     return json({ error: 'failed' }, 500);
   }
 }
