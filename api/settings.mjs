@@ -44,7 +44,7 @@ export async function db(path, { method = 'GET', body, prefer } = {}) {
   return res.json();
 }
 
-// A failure for the admins' Errors chart: written to the console (Vercel's logs) as before, and as a row of
+// A failure: written to the console (Vercel's logs) as before, and as a row of
 // public.errors (supabase/migrations/20261105120000_errors_log.sql). The row is best effort: a failure to write it
 // (no table yet, no database) is only noted in the console, and the caller never waits for it to fail.
 export function logError(place, message, userId = null, source = 'api') {

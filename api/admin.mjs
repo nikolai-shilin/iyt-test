@@ -5,7 +5,7 @@
 //                                 week, levels: { fs: { mastered, seen, mistakes }, … }, exams: [{ lv, at, pct, passed }],
 //                                 flags: ['bs-012', …], wrong: ['bs-034', …],
 //                                 notes: [ { k: 'bs-buoyage/cardinal', text, at, lang } ] } ],
-//                               series: { hour: [ { at, joined, answers, wrong, reads, errors } × 24 ], day: [ … × 91 ] } | null }
+//                               series: { hour: [ { at, joined, answers, wrong, reads, reports } × 24 ], day: [ … × 91 ] } | null }
 //   POST /api/admin { unflag: { q: 'bs-012', k: 'flags' | 'wrong', users: [id, …] } } → { ok: true, users: [id, …] }
 //                             takes that flag off those students' question (public.flag_clears, see below); 501 when the
 //                             table is not in the database yet
@@ -26,11 +26,13 @@
 // series is for the charts on the Overview page, per UTC hour (the last 24) and per UTC day (the last 91), oldest first:
 // people who joined (users.created_at), answers given and the wrong ones among them (public.answers), theory articles
 // read to the end (the times in the students' state.read; an article read before those were kept, as 1, is not on
-// the chart) and errors logged (public.errors: the app's own and the server's, see api/log.mjs and logError in
-// api/settings.mjs); the app cuts its 24h / 7d / 30d / 3m views out of it. It comes from public.admin_series()
-// (supabase/migrations/20261105120000_errors_log.sql); until that function is in the database the same numbers are
-// counted here from the rows. The reads are always counted here. null when neither worked — the rest of the page
-// still loads.
+// the chart) and mistakes the students reported: a question's red flag (when, in state.wrongAt) and a comment on a
+// section of an article (state.notes[…].at). A report counts at the time it was made (a changed comment, at the
+// change) and stays on the chart after an admin takes the flag off; one the student withdrew is gone. Question
+// reports made before their times were kept are not on the chart. The app cuts its 24h / 7d / 30d / 3m views out of
+// it. Joins and answers come from public.admin_series() (supabase/migrations/20261105120000_errors_log.sql); until
+// that function is in the database they are counted here from the rows. Reads and reports are always counted here.
+// null when neither worked — the rest of the page still loads.
 // An admin taking a flag off writes public.flag_clears; the student's app drops the flag on its next sync
 // (api/progress.mjs), and until then the lists here leave it out.
 // The caller proves who they are with Telegram.WebApp.initData in the x-telegram-init-data header (as api/settings.mjs);
@@ -57,18 +59,25 @@ const dkey = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.g
 
 const UNITS = { hour: [24, 3600e3], day: [91, 86400e3] }; // buckets in the series, and their length in ms
 const MAX_ANSWER_ROWS = 50_000; // the fallback below reads the rows themselves; past this the database function is a must
-// Joins, answers, wrong answers, theory reads and errors per UTC hour and per UTC day, oldest first (see the header).
+// Joins, answers, wrong answers, theory reads and reported mistakes per UTC hour and per UTC day, oldest first (see the header).
 async function series(users, progress) {
   const out = {}, starts = {};
   for (const [u, [n, step]] of Object.entries(UNITS)) {
     const s = new Date();
     if (u === 'hour') s.setUTCMinutes(0, 0, 0); else s.setUTCHours(0, 0, 0, 0);
     starts[u] = +s - (n - 1) * step;
-    out[u] = Array.from({ length: n }, (_, i) => ({ at: new Date(starts[u] + i * step).toISOString(), joined: 0, answers: 0, wrong: 0, reads: 0, errors: 0 }));
+    out[u] = Array.from({ length: n }, (_, i) => ({ at: new Date(starts[u] + i * step).toISOString(), joined: 0, answers: 0, wrong: 0, reads: 0, reports: 0 }));
   }
   const add = (time, f) => { for (const u in UNITS) { const i = Math.floor((time - starts[u]) / UNITS[u][1]); if (i >= 0 && i < out[u].length) f(out[u][i]); } };
   // state.read['<prefix>-<topic>'] = when the article was read to the end (ms), or 1 from before the times were kept
   for (const p of progress) for (const v of Object.values(p.read && typeof p.read === 'object' ? p.read : {})) if (v > 1e12) add(v, (r) => r.reads++);
+  // state.wrongAt[question id] = when the red flag went up; state.notes['<prefix>-<topic>/<section>'].at = when the
+  // comment was written (ms)
+  const obj = (o) => (o && typeof o === 'object' && !Array.isArray(o) ? o : {});
+  for (const p of progress) {
+    for (const v of Object.values(obj(p.wrongAt))) if (v > 1e12) add(v, (r) => r.reports++);
+    for (const n of Object.values(obj(p.notes))) if (n && n.at > 1e12) add(n.at, (r) => r.reports++);
+  }
   let fn = null;
   try {
     fn = await Promise.all(Object.keys(UNITS).map((u) => db('rpc/admin_series', { method: 'POST', body: { p_unit: u, p_count: UNITS[u][0] } })));
@@ -80,7 +89,7 @@ async function series(users, progress) {
     // rolled over between the two clocks; a row with no bucket here is left out)
     Object.keys(UNITS).forEach((u, k) => {
       const at = new Map(out[u].map((b) => [b.at, b]));
-      for (const r of fn[k]) { const b = at.get(new Date(r.at).toISOString()); if (b) Object.assign(b, { joined: +r.joined || 0, answers: +r.answers || 0, wrong: +r.wrong || 0, errors: +r.errors || 0 }); }
+      for (const r of fn[k]) { const b = at.get(new Date(r.at).toISOString()); if (b) Object.assign(b, { joined: +r.joined || 0, answers: +r.answers || 0, wrong: +r.wrong || 0 }); }
     });
     return out;
   }
@@ -89,11 +98,6 @@ async function series(users, progress) {
   for (let off = 0; off < MAX_ANSWER_ROWS; off += 1000) {
     const page = await db(`answers?select=at,correct&at=gte.${from}&order=id.asc&limit=1000&offset=${off}`);
     for (const a of page) add(Date.parse(a.at), (r) => { r.answers++; if (!a.correct) r.wrong++; });
-    if (page.length < 1000) break;
-  }
-  for (let off = 0; off < MAX_ANSWER_ROWS; off += 1000) {
-    const page = await db(`errors?select=at&at=gte.${from}&order=id.asc&limit=1000&offset=${off}`).catch((e) => { if (/: 404 /.test(e.message)) return []; throw e; });
-    for (const a of page) add(Date.parse(a.at), (r) => r.errors++);
     if (page.length < 1000) break;
   }
   return out;
@@ -177,7 +181,7 @@ export async function GET(request) {
     const [users, progress, clears] = await Promise.all([
       db(`users?select=id,name,username,lang,daily_question,blocked_at,created_at,updated_at&order=updated_at.desc&limit=${MAX_USERS}`),
       // only the parts of the state the summary needs; the whole state can be ~100 KB per student
-      db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags,wrong:state->wrong,notes:state->notes,read:state->read&limit=${MAX_USERS}`),
+      db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags,wrong:state->wrong,wrongAt:state->wrongAt,notes:state->notes,read:state->read&limit=${MAX_USERS}`),
       pendingClears(),
     ]);
     const byUser = new Map(progress.map((p) => [p.user_id, p]));

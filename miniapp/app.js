@@ -20,7 +20,7 @@
 const TG = window.Telegram && window.Telegram.WebApp;
 const IN_TG = !!(TG && TG.initData);
 const tgv = (v) => IN_TG && TG.isVersionAtLeast(v);
-// Errors nothing caught go to api/log.mjs (public.errors), for the Errors chart on the admins' Overview page: at most
+// Errors nothing caught go to api/log.mjs (public.errors, for reading in the database; no chart shows them): at most
 // 5 per launch, the same one once. "Script error." is a script from another site (Telegram's, analytics) that the
 // browser will not describe, so there is nothing to act on.
 const ERR_SENT = new Set();
@@ -209,7 +209,7 @@ const STR = {
     tabOverview: 'Overview', tabStudents: 'Students', tabReported: 'Reported', tabArticles: 'Articles', tabFlagged: 'Flagged',
     articlesT: 'Article notes', articlesMeta: 'What students say is wrong in the theory, shown as they read it', articlesNone: 'Nobody has reported a mistake in an article yet',
     overviewMeta: 'How the app is used, day by day',
-    chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chErrors: 'Errors logged', chRange: 'Period', chLearning: 'Learning now, by course', chLearnNone: 'Nobody studied in this period', chNone: 'No numbers for the charts yet',
+    chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chReports: 'Mistakes reported', chRange: 'Period', chLearning: 'Learning now, by course', chLearnNone: 'Nobody studied in this period', chNone: 'No numbers for the charts yet',
     rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
     chNote: (r) => ({ '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '3m': 'last 3 months' })[r],
     unflagOne: 'Remove', unflagAll: (n) => `Remove from all ${n}`, confirmUnflagAll: (n) => `Remove this flag for all ${pl(n, 'student')}?`,
@@ -322,7 +322,7 @@ const STR = {
     tabOverview: 'Обзор', tabStudents: 'Ученики', tabReported: 'Ошибки', tabArticles: 'Статьи', tabFlagged: 'Отмечены',
     articlesT: 'Замечания к статьям', articlesMeta: 'Что ученики нашли неверного в теории — так, как они это читали', articlesNone: 'Об ошибках в статьях пока не сообщали',
     overviewMeta: 'Как пользуются приложением, по дням',
-    chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chErrors: 'Ошибки в приложении', chRange: 'Период', chLearning: 'Сейчас изучают, по курсам', chLearnNone: 'За этот период никто не занимался', chNone: 'Для графиков пока нет данных',
+    chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chReports: 'Сообщения об ошибках', chRange: 'Период', chLearning: 'Сейчас изучают, по курсам', chLearnNone: 'За этот период никто не занимался', chNone: 'Для графиков пока нет данных',
     rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
     chNote: (r) => ({ '24h': 'за 24 часа', '7d': 'за 7 дней', '30d': 'за 30 дней', '3m': 'за 3 месяца' })[r],
     unflagOne: 'Снять', unflagAll: (n) => `Снять у всех (${n})`, confirmUnflagAll: (n) => `Снять эту отметку у всех (${pl(n, 'student')})?`,
@@ -391,7 +391,7 @@ function toast(text) {
 /* ---------- state: mastery per question, activity per day, exams; saved locally and to CloudStorage ---------- */
 // q[id] = [last two results as '0'/'1', wrong count]. Mastered = right twice in a row (docs/data-model.md).
 const KEY = 'iyt-test-state-v1';
-const fresh = () => ({ v: 1, ts: 0, q: {}, days: {}, total: 0, flags: [], wrong: [], exams: [], exam: null, held: {}, last: null, read: {}, notes: {}, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
+const fresh = () => ({ v: 1, ts: 0, q: {}, days: {}, total: 0, flags: [], wrong: [], wrongAt: {}, exams: [], exam: null, held: {}, last: null, read: {}, notes: {}, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
 let S = fresh();
 const merge = (o) => { const f = fresh(); return { ...f, ...o, set: { ...f.set, ...(o && o.set) } }; };
 
@@ -916,7 +916,7 @@ function flaggedList(key, none) {
 // UTC days, 3m = the last 91 days in 13 weeks. CH_GROW: the range just changed, so the bars grow in again.
 const RANGES = ['24h', '7d', '30d', '3m'];
 // [key in ADM_SERIES, title, class]: 'bad' charts are drawn in the danger colour
-const CHARTS = [['joined', 'chJoined', ''], ['answers', 'chAnswers', ''], ['wrong', 'chWrong', ' bad'], ['reads', 'chReads', ''], ['errors', 'chErrors', ' bad']];
+const CHARTS = [['joined', 'chJoined', ''], ['answers', 'chAnswers', ''], ['wrong', 'chWrong', ' bad'], ['reads', 'chReads', ''], ['reports', 'chReports', ' bad']];
 let CH_RANGE = '7d', CH_GROW = false;
 const uday = (iso) => new Date(iso).toLocaleDateString(t('locale'), { day: 'numeric', month: 'short', timeZone: 'UTC' });
 const uhour = (iso) => new Date(iso).toLocaleTimeString(t('locale'), { hour: '2-digit', minute: '2-digit' });
@@ -933,7 +933,7 @@ function buckets(range) {
   return out;
 }
 // The range switch, the courses being learnt, then the charts over time. The series of a server that does not count
-// reads or errors yet has 0s for them.
+// reads or reports yet has 0s for them.
 function dailyCharts() {
   const sw = RANGES.map((r) => `<button class="lang${r === CH_RANGE ? ' lang-on' : ''}" role="radio" aria-checked="${r === CH_RANGE}" data-act="range" data-r="${r}">${t('rg' + r)}</button>`).join('');
   const series = ADM_SERIES && ADM_SERIES.day.length ? CHARTS.map(([k, title, cls]) => dayChart(buckets(CH_RANGE), k, t(title), cls)).join('') : `<p class="card-meta">${t('chNone')}</p>`;
@@ -1968,10 +1968,12 @@ const ACT = {
     k >= 0 ? S.flags.splice(k, 1) : S.flags.push(id);
     save(); render(); toast(k >= 0 ? t('unflagged') : t('flaggedToast'));
   },
-  // the red flag: this question is wrong (practice and exam); the admins see these on the Students page
+  // the red flag: this question is wrong (practice and exam); the admins see these on the Students page, and when it
+  // was reported (S.wrongAt) on the Mistakes reported chart (api/admin.mjs)
   wrong: (d) => {
     const k = S.wrong.indexOf(d.id);
-    k >= 0 ? S.wrong.splice(k, 1) : S.wrong.push(d.id);
+    S.wrongAt = S.wrongAt || {};
+    if (k >= 0) { S.wrong.splice(k, 1); delete S.wrongAt[d.id]; } else { S.wrong.push(d.id); S.wrongAt[d.id] = Date.now(); }
     save(); render(); toast(k >= 0 ? t('unwrong') : t('wrongToast'));
   },
   skip: () => { const [id] = P.ids.splice(P.i, 1); P.ids.push(id); P.sel = null; render(true); },
@@ -2008,7 +2010,7 @@ const ACT = {
   unreport: (d) => {
     const k = S.wrong.indexOf(d.id);
     if (k < 0) return;
-    S.wrong.splice(k, 1); hap('sel'); save(); render(); toast(t('unwrong'));
+    S.wrong.splice(k, 1); if (S.wrongAt) delete S.wrongAt[d.id]; hap('sel'); save(); render(); toast(t('unwrong'));
   },
   rentals: () => (IN_TG ? TG.openTelegramLink(RENTALS_LINK) : window.open(RENTALS_LINK, '_blank', 'noopener')),
   // the MCP server's page on the site (miniapp/pages.mjs), in the app's language; from Telegram it opens in the browser

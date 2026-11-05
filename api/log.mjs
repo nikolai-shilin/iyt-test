@@ -1,5 +1,5 @@
 // Errors the mini app did not catch (window 'error' and 'unhandledrejection', reportError in miniapp/app.js), kept in
-// public.errors for the Errors chart on the admins' Overview page (api/admin.mjs).
+// public.errors, to read in the database (no chart shows them; the admins' Overview charts reported mistakes instead).
 //
 //   POST /api/log { m: 'message', w: 'app.js:123' } → 204
 //
