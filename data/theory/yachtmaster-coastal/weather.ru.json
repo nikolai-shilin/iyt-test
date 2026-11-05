@@ -6,6 +6,7 @@
       "id": "pressure",
       "kicker": "Давление и ветер",
       "title": "Изобары и барометр",
+      "qa": { "q": "Если встать спиной к ветру, с какой стороны будет циклон?", "a": "Слева и чуть впереди, в северном полушарии: **закон Бейс-Баллота**. Ветер обходит циклон против часовой стрелки, антициклон — по часовой, с небольшим наклоном к низкому давлению." },
       "refs": ["Pressure systems — wind round a low", "Pressure systems — wind round a high", "Buys Ballot's law", "Isobar spacing and wind strength", "Isobars — the geostrophic scale", "Isobars — latitude and the scale", "Barometer — tendency", "Barometer — tendency terms", "Barometer — the tendency", "Barometer — the night log", "Barometer — passage decisions"],
       "blocks": [
         { "p": "В северном полушарии ветер обходит циклон против часовой стрелки, антициклон — по часовой, с небольшим наклоном к низкому давлению. Спиной к ветру: циклон слева и чуть впереди — **закон Бейс-Баллота**." },
@@ -27,6 +28,7 @@
       "id": "fronts",
       "kicker": "Циклоны и фронты",
       "title": "Что делает проходящий циклон",
+      "qa": { "q": "Ветер зайдёт или отойдёт, когда пройдёт циклон?", "a": "Если центр проходит севернее вас, ветер **заходит**, по часовой: S, SW, NW; если южнее — **отходит**: SE, E, NE. Фронтальный циклон смещается вдоль изобар своего тёплого сектора." },
       "refs": ["Polar front depression — life cycle", "Warm front — weather sequence", "Warm front — passage", "Cold front — weather sequence", "Fronts — the sequence on board", "Fronts — occlusion", "Pressure systems — wind shifts", "Depressions — the track of the centre", "Depressions — passing north of you", "Reading a synoptic chart", "Reading a synoptic chart — movement of a low", "Reading a synoptic chart — a 48 h plan", "Secondary depressions", "Troughs and ridges", "Barometer — a night passage", "Forecast terms — veering"],
       "blocks": [
         { "p": "Фронтальный циклон смещается вдоль изобар своего **тёплого сектора**. Если центр проходит севернее вас, ветер **заходит**, по часовой: S, SW, NW. Если южнее — **отходит**: SE, E, NE." },
@@ -44,6 +46,7 @@
       "id": "forecast",
       "kicker": "Прогнозы",
       "title": "Источники, слова и пределы",
+      "qa": { "q": "Что значит «gale soon» в штормовом предупреждении?", "a": "**Soon** — через 6–12 часов от выпуска; imminent — в течение 6 часов, later — позже 12. Предупреждение «gale soon», выпущенное в 0600 UTC, значит шторм в любой момент с 1200 до 1800 UTC." },
       "refs": ["Forecast sources — NAVTEX", "Forecast sources — VHF broadcasts", "Forecast terms — timing", "Forecast terms — sea state", "Forecast terms — visibility", "Forecast terms — gale warnings", "Forecast terms — speed of movement", "Forecast terms — cyclonic", "Forecast terms — locally", "GRIB files — limits", "GRIB files — resolution", "GRIB files vs the official forecast", "GRIB files — when models disagree", "GRIB files — age of the forecast", "GRIB files — wind barbs", "Go/no-go decision"],
       "blocks": [
         { "p": "**NAVTEX**: на 518 кГц по-английски, на 490 — на национальном языке; типы A, B и D (навигационные и метеопредупреждения, поиск и спасание) отключить нельзя. Вызов SÉCURITÉ на 16-м канале УКВ называет рабочий канал: перейдите и запишите." },
@@ -63,6 +66,7 @@
       "id": "sea",
       "kicker": "Ветер и волна",
       "title": "Бофорт, вымпельный ветер, волны",
+      "qa": { "q": "Почему у мыса такая крутая волна, когда ветер против течения?", "a": "**Ветер против течения** делает волну короткой, крутой и обрушивающейся, хуже всего у мысов на полном течении. Огибайте их около смены течения и подальше, а банки обходите: волна рушится там, где глубина падает до её высоты." },
       "refs": ["Beaufort scale", "Beaufort — true and apparent wind", "Beaufort — the true wind at night", "Beaufort — wind and load", "Waves — fetch and duration", "Swell", "Sea state — significant wave height", "Sea state — swell and wind sea", "Sea state — shoal water", "Wind against tide", "Wind against tide — timing at a headland", "Wind against tide — sea state", "Local winds — the sea they raise", "Local winds — Mistral and fetch"],
       "blocks": [
         { "p": "Балл Бофорта — по **среднему** ветру (7 баллов: 28–33 уз); порывы записывайте рядом. Нагрузка на такелаж растёт как квадрат скорости ветра: 24 уз тянут в 2¼ раза сильнее, чем 16." },
@@ -79,6 +83,7 @@
       "id": "coast",
       "kicker": "Берег",
       "title": "Бризы и высокий берег",
+      "qa": { "q": "Когда задувает морской бриз и какой силы он бывает?", "a": "В устойчивую погоду **морской бриз** задувает к концу утра, к середине дня доходит до 3–4 баллов, немного заходит и стихает к закату. Слабый отжимной ветер сдерживает его за полосой штиля." },
       "refs": ["Sea and land breezes", "Sea breeze — against an offshore wind", "Sea breeze — timing an arrival", "Katabatic and anabatic winds", "Local effects — funnelling", "Local effects — headlands", "Local effects — wind shadow", "Local effects — lee of a high island", "Clouds — lenticular"],
       "blocks": [
         { "p": "В устойчивую погоду **морской бриз** задувает к концу утра, к середине дня достигает 3–4 баллов, немного заходит и к закату стихает; нагретые склоны усиливают его (**анабатический** ветер). Слабый отжимной ветер сдерживает его за полосой штиля. Ночью дует **береговой бриз**, а с крутых склонов — холодный **катабатический** ветер, сильнее всего перед рассветом." },
@@ -93,6 +98,7 @@
       "id": "med",
       "kicker": "Ветры Средиземноморья",
       "title": "Именные ветры",
+      "qa": { "q": "Когда лучше идти против мельтеми?", "a": "На рассвете, пока он не разошёлся: **мельтеми** — северный ветер Эгейского моря, при ясном небе, по 6–7 баллов несколько дней подряд, с пиком после полудня; его создают антициклон над Балканами и депрессия над Турцией." },
       "refs": ["Local winds — Meltemi", "Local winds — Meltemi timing", "Local winds — Bora", "Local winds — Bora signs", "Local winds — Bora gusts", "Local winds — Sirocco", "Local winds — Jugo and Bora", "Local winds — Mistral", "Local winds — Mistral duration", "Local winds — Levante", "Local winds — Poyraz"],
       "blocks": [
         { "table": { "head": ["Ветер", "Откуда", "Признаки"], "rows": [
@@ -111,6 +117,7 @@
       "id": "fog",
       "kicker": "Туман и гроза",
       "title": "Нет видимости, внезапный ветер",
+      "qa": { "q": "Разгонит ли ветер морской туман?", "a": "Нет: **морской туман** — тёплый влажный воздух над холодной водой, ветер его не разгоняет, а морской бриз несёт к берегу. Радиационный туман ложится на сушу в ясные тихие ночи и уходит к середине утра." },
       "refs": ["Fog — sea fog", "Fog — advection (sea) fog", "Fog — sea fog and the sea breeze", "Fog — radiation fog", "Fog — frontal fog", "Fog — dew point", "Thunderstorms and squall lines", "Thunderstorms — gust fronts", "Thunderstorms — lightning on a yacht", "Thunderstorms — at anchor", "Thunderstorms — range and closing speed", "Thunderstorms — over high ground", "Squalls — at night"],
       "blocks": [
         { "p": "Туман образуется, когда воздух остывает до **точки росы**: разница в градус — определите место, приготовьте радар и горн. **Морской туман** — тёплый влажный воздух над холодной водой: ветер его не разгоняет, а бриз несёт к берегу. **Радиационный туман** ложится на сушу в ясные тихие ночи и уходит к середине утра. **Фронтальный туман** рассеивается, когда пройдёт тёплый фронт." },

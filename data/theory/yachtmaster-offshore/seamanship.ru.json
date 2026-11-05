@@ -6,6 +6,7 @@
       "id": "rope",
       "kicker": "Тросы",
       "title": "Растяжение, прочность и цена узла",
+      "qa": { "q": "Насколько беседочный узел ослабляет трос?", "a": "Беседочный узел оставляет около 60 % прочности троса, **сплесень** — около 90 %, крутой перегиб через тонкий палец — ещё меньше. Остаток делите на запас прочности — это рабочая нагрузка." },
       "refs": ["Rope — materials", "Rope — knots and splices", "Rope — breaking strain and SWL", "Rope — breaking strain", "Rope — splicing Dyneema", "Rope — splices", "Rope — ageing", "Rope — construction and wear", "Ropework — whippings", "Ropework — splices", "Ropework — bends under load", "Ropework — coiling", "Ropework — knots under load", "Mooring lines — sizing", "Mooring lines — load sharing"],
       "blocks": [
         { "table": { "head": ["Трос", "Свойства и применение"], "rows": [
@@ -26,6 +27,7 @@
       "id": "tackle",
       "kicker": "Якорное устройство",
       "title": "Якорь под грунт",
+      "qa": { "q": "Какой якорь держит на песке, мягком иле или в ламинарии?", "a": "Смотрите по грунту: на песке — якорь с дугой, он зарывается снова при развороте; в мягком иле — широкие лапы типа Данфорт; в ламинарии на камне — **адмиралтейский**. В морской траве не держит ничто: ищите светлый песок." },
       "refs": ["Anchors — types and seabeds", "Anchors — holding by seabed", "Anchors — holding and resetting", "Anchors — rocky ground", "Anchoring — chain and rope rode", "Anchoring — chain and windlass", "Anchoring — chain sizing", "Anchoring — windlass loads", "Anchoring — the bitter end", "Anchoring — deep water", "Anchoring — snubbers"],
       "blocks": [
         { "table": { "head": ["Грунт", "Что держит"], "rows": [
@@ -45,6 +47,7 @@
       "id": "scope",
       "kicker": "На якоре",
       "title": "Хватит каната, хватит места — и вахта",
+      "qa": { "q": "Сколько якорной цепи вытравить на шторм?", "a": "**Длину каната** считают от роульса: глубина плюс высота роульса, умноженные на 7 в шторм на цепи с тросом. На глубине 18 м при роульсе в 2 м над водой это 140 м." },
       "refs": ["Anchoring — scope by depth and weather", "Anchoring — scope in a gale", "Anchoring — swinging circles", "Anchoring — anchor watch", "Anchoring — dragging", "Anchoring — exposed anchorages", "Anchoring — at night on a strange coast", "Anchoring — riding sails", "Anchoring — 24 m motor yacht", "Anchoring — laying a kedge", "Anchoring — kedging off"],
       "blocks": [
         { "p": "**Длину каната** считают от роульса: глубина плюс его высота, умноженные на кратность; 7:1 в шторм на цепи с тросом. Тяжёлой цепи нужно меньше." },
@@ -59,6 +62,7 @@
       "id": "two-anchors",
       "kicker": "Два якоря",
       "title": "«Вилка» на шторм, линия на течение",
+      "qa": { "q": "Как поставить яхту на два якоря на реверсивном течении?", "a": "**Багамской постановкой**: отдайте якорь выше по течению, сдайте назад на двойную длину каната, отдайте второй и подтянитесь на середину. Оба якоря лягут по линии течения, яхта — между ними." },
       "refs": ["Anchoring — two anchors", "Anchoring — Bahamian moor", "Anchoring — two anchors in a river"],
       "blocks": [
         { "p": "Перед штормом с заходом ветра положите оба якоря впереди **вилкой**, поперёк ожидаемого захода: каждый возьмёт свою долю." },
@@ -71,6 +75,7 @@
       "id": "berthing",
       "kicker": "Швартовка",
       "title": "Шпринги, винты и течение",
+      "qa": { "q": "Как заставить двухвинтовую яхту идти лагом?", "a": "**Два винта**: один вперёд, другой назад — корма идёт в сторону мотора, работающего вперёд; включите подруливающее туда же, и яхта пойдёт лагом." },
       "refs": ["Springs — springing off", "Twin-screw handling", "Twin-screw handling — prop walk", "Boat handling — prop walk and wind", "Twin screws — docking in a stream", "Mooring — harbour walls with tide", "Mooring — piles", "Mooring — rafting", "Mooring — leaving a raft", "Med mooring — a large yacht", "Med mooring — lazy lines", "Med mooring — thruster limits"],
       "blocks": [
         { "fig": { "type": "lines", "quay": "ПРИЧАЛ", "lines": [["stern-spring", "кормовой шпринг"], ["bow", "носовой: отдать"]], "note": "Назад на шпринге, кранец на корму: нос отходит" } },
@@ -91,6 +96,7 @@
       "id": "towing",
       "kicker": "Буксировка",
       "title": "Длинный упругий трос и малый ход",
+      "qa": { "q": "Какой длины нужен буксирный трос, чтобы буксировать яхту на волне?", "a": "Около одной длины волны, 1,56 × квадрат периода: при волне с периодом 8 с — 100 м. Пружиной служит **растяжение нейлона**, а не груз на тросе; скорость — около ⅔ скорости корпуса." },
       "refs": ["Towing — length of towline", "Towing — speed of the tow", "Towing — the bridle", "Towing — the catenary", "Towing — communication", "Towing — emergency release", "Towing — chafe", "Towing — being towed by a ship", "Towing — being towed by a larger vessel", "Towing — being towed", "Towing — a tow that sheers", "Towing — a parted towline", "Towing — the long-tow watch", "Towing — entering harbour", "Towing — alongside", "Towing — the tender", "COLREGs Rule 24 — towing", "COLREGs Rule 24(i)"],
       "blocks": [
         { "table": { "head": ["Что решаем", "Правило"], "rows": [
@@ -112,6 +118,7 @@
       "id": "heavy",
       "kicker": "Штормовая погода",
       "title": "Носом или кормой к волне",
+      "qa": { "q": "Что делать в шторм: лечь в дрейф, уходить по ветру или ставить плавучий якорь?", "a": "Никогда не лежите **без парусов лагом** под обрушивающимися гребнями. В дрейфе — грот потравлен, руль под ветер, сносит медленно; по ветру — быстро, с дрогом на брайделе; плавучий якорь-парашют с носа даёт наименьший дрейф." },
       "refs": ["Heavy weather — lying a-hull", "Heavy weather — heaving to", "Heavy weather — running and drogues", "Heavy weather — drogues", "Heavy weather — sea anchors", "Heavy weather — sea room", "Heavy weather — trysail", "Heavy weather — the trysail", "Heavy weather — storm jib", "Heavy weather — the storm jib", "Heavy weather — motor yachts", "Heavy weather — twin screws", "Motor yachts — trim tabs"],
       "blocks": [
         { "p": "Никогда не лежите **без парусов лагом**: обрушивающийся гребень может перевернуть яхту. Дрейф, умноженный на часы шторма, должен уложиться в ваш простор под ветром." },

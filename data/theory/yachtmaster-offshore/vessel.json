@@ -6,6 +6,7 @@
       "id": "hull",
       "kicker": "Hull",
       "title": "Materials and the haul-out",
+      "qa": { "q": "What causes osmosis blisters on a GRP hull, and how is it cured?", "a": "**Osmosis**: water through the gelcoat reacts with the laminate, raising sour blisters below the waterline. The cure is to peel the gelcoat, dry the hull and coat it in epoxy." },
       "refs": ["Construction — GRP and osmosis", "Construction — osmosis treatment", "Construction — cored laminates", "Construction — gelcoat and deck fittings", "Construction — steel hulls", "Construction — aluminium hulls", "Construction — aluminium and stray current", "Construction — wooden hulls", "Drydocking — lifting", "Drydocking — on the hard", "Drydocking — the slipway", "Drydocking — careening grid", "Drydocking — antifouling", "Drydocking — the pre-purchase survey", "Drydocking — haul-out checks"],
       "blocks": [
         { "p": "**Osmosis**: water through the gelcoat reacts with the laminate, sour blisters below the waterline; the cure is peel, dry, epoxy. A cored deck rots round unsealed bolt holes: dull thud, flexing, damp; re-core, pot the holes. Star cracks at a fitting: a backing plate." },
@@ -22,6 +23,7 @@
       "id": "structure",
       "kicker": "Structure and rig",
       "title": "Keel, rudder, rig, seacocks",
+      "qa": { "q": "How do I know if my yacht's keel bolts are corroding?", "a": "Rust weeping at a nut: stainless **keel bolts** corrode unseen in a wet bilge, so draw one or X-ray it. A nut that turns without the torque rising means the bolt is yielding." },
       "refs": ["Construction — keel bolts", "Construction — keel attachment and grounding", "Construction — rudders and bearings", "Construction — rudders, skeg and spade", "Construction — bulkheads and chainplates", "Construction — the hull-to-deck joint", "Construction — seacocks", "Construction — through-hulls and seacocks", "Rigging — standing rigging", "Construction — rod standing rigging", "Construction — synthetic standing rigging"],
       "blocks": [
         { "p": "Stainless keel bolts corrode unseen in a wet bilge: rust weeping at a nut, draw one or X-ray it; a nut turning without the torque rising is yielding. After a grounding, survey the keel grid. A **spade rudder** hangs on its bearings alone; a skeg adds a lower bearing and fends off lines." },
@@ -38,6 +40,7 @@
       "id": "stability",
       "kicker": "Stability",
       "title": "The righting lever and its curve",
+      "qa": { "q": "What is a yacht's angle of vanishing stability?", "a": "The heel at which the righting lever **GZ**, past its peak, falls to zero; beyond it she is stable inverted. It assumes a closed hull, so an open companionway's downflooding angle is the real limit." },
       "refs": ["Stability — GM and GZ", "Stability — the GZ curve", "Stability — downflooding angle", "Stability — inversion", "Stability — knockdowns", "Stability — catamarans", "Stability — catamarans and gusts", "Stability — RCD design categories"],
       "blocks": [
         { "p": "Weight acts down through **G**, buoyancy up through **B**; heeled, B moves to the low side and the arm between them, **GZ**, is the righting lever: moment = displacement × GZ. Small angles: GZ ≈ GM × sin θ, **GM** = KM − KG." },
@@ -54,6 +57,7 @@
       "id": "weights",
       "kicker": "Weights",
       "title": "Stability you change yourself",
+      "qa": { "q": "Why are half-full tanks bad for a yacht's stability?", "a": "Sloshing liquid raises G like weight aloft: the **free surface** loss grows with the tank's width cubed, and every slack tank adds its own. A centreline division cuts it to a quarter; run tanks down one at a time." },
       "refs": ["Stability — weight aloft", "Stability — weight high up", "Stability — the GZ curve and added weight", "Stability — moving a weight", "Stability — free surface effect", "Stability — free surface in tanks", "Stability — rolling period and GM"],
       "blocks": [
         { "p": "Adding or raising weight moves G towards it: rise of G = weight × height ÷ displacement; GZ falls by that rise × sin θ. A weight on a crane acts at the crane head. Before a gale, heavy gear low and central." },
@@ -66,6 +70,7 @@
       "id": "engine",
       "kicker": "The diesel",
       "title": "Fuel, air, cooling",
+      "qa": { "q": "How do I bleed air out of a yacht's diesel fuel system?", "a": "Bleed along the **fuel path**, in order: primary filter and separator, lift pump, fine filter, injection pump. Then crack each injector union while cranking." },
       "refs": ["Power plant — the four-stroke diesel", "Power plant — the diesel cycle", "Power plant — the fuel system", "Power plant — bleeding the fuel system", "Power plant — fuel filters", "Power plant — fuel bug and fuel polishing", "Power plant — blue smoke", "Power plant — white smoke", "Power plant — black smoke and loss of power", "Power plant — fault-finding", "Power plant — cooling", "Power plant — the anti-siphon valve", "Power plant — keel cooling", "Power plant — maintenance schedule", "Power plant — maintenance schedules"],
       "blocks": [
         { "p": "A diesel fires on the **heat of compression**: fast cranking, sound rings, air, clean fuel. A bad seal on the suction side draws in air without a drip: runs, then falters. Rising filter vacuum: sludge and **diesel bug** stirred up by the sea; switch filters, polish the fuel." },
@@ -83,6 +88,7 @@
       "id": "drive",
       "kicker": "Drive train",
       "title": "Gearbox, propeller, speed",
+      "qa": { "q": "My engine never reaches rated revs at full throttle: what's wrong with the propeller?", "a": "Too much pitch: the propeller is **overpropped**. If it reaches rated revs already at part throttle, it has too little pitch." },
       "refs": ["Power plant — the gearbox", "Power plant — shaft and cutless bearing", "Power plant — shaft alignment and vibration", "Power plant — saildrive", "Power plant — twin engines", "Power plant — twin engines, fault-finding", "Power plant — a fouled propeller", "Power plant — propeller pitch", "Power plant — hull speed", "Power plant — fuel and speed"],
       "blocks": [
         { "p": "A gearbox slipping, hot and smelling burnt: low oil; top up, find the leak. Vibration growing over a season with a weeping stern gland: a worn **cutless bearing**; align the engine afloat. A saildrive's diaphragm alone keeps the sea out: renew it at the maker's interval. One engine dead, the bow swings towards it: counter-rudder, moderate revs." },
@@ -94,6 +100,7 @@
       "id": "electrics",
       "kicker": "Electrics",
       "title": "Batteries, generator, anodes",
+      "qa": { "q": "How big a battery bank do I need for my daily amp-hours?", "a": "Twice the day's amp-hours for a lead-acid or **AGM** bank, used only to half charge. Lithium gives about 80 %, but its BMS can cut off mid-charge: protect the alternator." },
       "refs": ["Power plant — battery capacity", "Power plant — battery types", "Power plant — batteries and charging", "Power plant — charging stages", "Power plant — charging regimes", "Power plant — battery monitors", "Power plant — generator load", "Power plant — generator and watermaker", "Power plant — the watermaker", "Power plant — anodes for fresh, brackish and salt water", "Power plant — galvanic isolation"],
       "blocks": [
         { "p": "Add up the day's amp-hours: a lead-acid or AGM bank, used only to half charge, needs twice that; lithium gives about 80 %, but its BMS can cut off mid-charge: protect the alternator. Charging runs **bulk**, **absorption**, **float**; an hour a day never finishes absorption and the bank sulphates. A shunt monitor drifts until a full charge resyncs it: trust the resting voltage." },

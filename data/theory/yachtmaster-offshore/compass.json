@@ -6,6 +6,7 @@
       "id": "compass",
       "kicker": "The steering compass",
       "title": "Lubber line, liquid, variation",
+      "qa": { "q": "How do I bring the variation on an old chart up to this year?", "a": "Multiply the rose's **annual change** by the years since its date and apply it: 4°10'W in 2016, changing 8'E a year, is 2°50'W in 2026." },
       "refs": ["Compass — lubber line", "Compass — bowl and liquid", "Compass — damping", "Compass — heeling error", "Compass — magnetic interference", "Compass — variation and its annual change", "Compass — variation from the chart", "Compass — variation along a passage"],
       "blocks": [
         { "p": "A compass reads the heading if its **lubber line** is parallel to the fore-and-aft line. A bubble makes the card stick and jump: cross-check against another compass, refill ashore. After a hard turn the liquid drags the card; log the heading once it settles. Keep gear outside its **compass safe distance**; a loudspeaker needs the most." },
@@ -18,6 +19,7 @@
       "id": "deviation",
       "kicker": "Deviation",
       "title": "The swing and the card",
+      "qa": { "q": "How do I check my compass deviation at sea?", "a": "On a steady heading, compare the compass with a known magnetic direction: a transit, the sun's or Polaris's tabled azimuth, or a satellite compass, never COG. A compass reading low has easterly **deviation**." },
       "refs": ["Compass — deviation", "Compass — deviation card", "Compass — deviation card from a swing", "Compass — applying the deviation card", "Compass — swinging", "Compass — swinging on a distant mark", "Compass — deviation by the sun's azimuth", "Compass — deviation by the Pole Star", "Compass — checking deviation", "Compass — checking the deviation", "Compass — adjusting", "Compass — deviation in steel yachts", "Compass — bearings on a steel yacht"],
       "blocks": [
         { "p": "**Deviation** is the boat's own magnetism; it changes with the heading, so the card lists it heading by heading, and each compass has its own. Find it on a steady heading against a known magnetic direction: a transit, the sun's or Polaris's tabled azimuth, a satellite compass; never COG, which a current sets off the heading. A compass reading low has easterly deviation." },
@@ -30,6 +32,7 @@
       "id": "electronic",
       "kicker": "Electronic heading",
       "title": "Fluxgate, satellite compass, COG",
+      "qa": { "q": "Can I use GPS COG instead of a heading sensor for radar overlay?", "a": "No: **COG** is your track over the ground, not a heading, so it is no good for radar overlay or MARPA. A satellite compass gives true heading, even stopped." },
       "refs": ["Compass — fluxgate", "Compass — heading sensors", "Compass — satellite compass", "Compass — GNSS and magnetic compasses", "Electronic compass — calibration", "Electronic compass — heading error at speed", "Satellite compass"],
       "blocks": [
         { "table": { "head": ["Source", "Gives", "Weakness"], "rows": [
@@ -45,6 +48,7 @@
       "id": "lines",
       "kicker": "Position lines",
       "title": "What each line tells you",
+      "qa": { "q": "In what order should I take bearings for a three-point fix?", "a": "Slow-changing bearings ahead and astern first, the beam one last, with the lines crossing near **right angles**. A cocked hat the size the errors give is honest: treat it as an area." },
       "refs": ["Position lines — a single line", "Position lines — depth contour", "Position lines — soundings offshore", "Position lines — radar and racons", "Position lines — transits", "Position lines — radar bearings", "Position fixing — taking bearings", "Fixing — order of bearings", "Position fixing — angle of cut", "Position fixing — accuracy", "Position fixing — cocked hat", "Fixing — the cocked hat", "Position fixing — choosing marks", "Position fixing — horizontal sextant angles", "Position fixing — radar ranges", "Radar — fix by two ranges", "Radar — range and bearing accuracy", "Radar — range rings and VRM", "Position fixing — transit and a second line", "Position fixing — depth and a bearing", "Fixing — depth and bearing", "Fixing — a line of soundings", "Position fixing — offshore structures"],
       "blocks": [
         { "p": "A position line fixes you across itself, not along it: a bearing of the light ahead checks the cross-track error, a contour across the track checks the distance run, a sounding helps where contours cross your line. Take bearings near right angles, slow-changing ones ahead and astern first, the beam one last. 3° at 20 M is 1 M." },
@@ -62,6 +66,7 @@
       "id": "running",
       "kicker": "Running fixes and bow angles",
       "title": "Two bearings of one mark",
+      "qa": { "q": "How do I get a fix from two bearings of the same light?", "a": "By a **running fix**: take a bearing, run on, take a second, and move the first line along the ground run, water legs and stream added as vectors. Where the lines cut is the fix." },
       "refs": ["Running fix — with tide", "Running fix — with stream", "Running fix — accuracy", "Running fix — a transferred range", "Running fix — a transferred contour", "Position fixing — doubling the angle on the bow", "Position fixing — four-point bearing", "Bow angles — 26½° and 45°"],
       "blocks": [
         { "p": "With one mark: a bearing, a run, a second bearing, and the first line moved by the **ground run**: water legs and hours of stream added as vectors. A range circle moves by its centre, a contour likewise. The fix is as good as the run: 0.4 kn of doubt over 2.5 h is 1 M." },
@@ -79,6 +84,7 @@
       "id": "landfall",
       "kicker": "Rising lights and landfall",
       "title": "Rising range and distance off",
+      "qa": { "q": "At what distance will a lighthouse rise above the horizon?", "a": "At its **rising range**, 2.08 × (√H + √h) miles with heights in metres, within its nominal range. The charted height is above MHWS, so at low water add the tide's fall." },
       "refs": ["Position lines — rising lights", "Rising lights", "Rising lights — height of tide", "Rising lights — landfall", "Landfall — lights", "Landfall — sectored lights", "Landfall — light sectors", "Landfall — planning", "Landfall — identifying a light", "Distance off — vertical sextant angle"],
       "blocks": [
         { "p": "A light rises at 2.08 × (√H + √h) miles, within its nominal range; its charted height is above MHWS, so add the tide's fall at low water. Seen only from the crests, it is on your horizon, at its rising range. Abnormal refraction shows it far beyond. Card each expected light: characteristic, rising range, bearing. One 15–20° off may still be yours if the EP is miles out: time it. Nothing after rising time: an obscured sector. A colour change puts you on the sector's edge." },
@@ -91,6 +97,7 @@
       "id": "trust",
       "kicker": "Trust and record",
       "title": "Believing a fix, recording it",
+      "qa": { "q": "How do I check that my GPS position is right?", "a": "Against something independent: depth, radar, lights or, offshore, the EP from the last fix. Plotter, AIS and DSC share one **receiver**, so their agreement proves nothing." },
       "refs": ["Position fixing — which fix to trust", "Fixing — which fix to trust", "Fixing — accuracy", "GNSS — cross-checks", "GNSS — integrity", "GNSS — jamming and spoofing", "Fixing — how often", "Recording fixes — the log book", "Recording fixes — chart symbols", "Recording fixes — a single position line", "Fixing — a single position line"],
       "blocks": [
         { "p": "Plotter, AIS and DSC share one receiver: their agreement proves nothing; nor does HDOP without RAIM. Cross-check against depth, radar, lights or, offshore, the EP from the last fix. Jumps, a frozen speed or a wrong date mean spoofing: back to DR from the last non-GNSS fix. A visual fix 0.5 M from the GNSS at 20 M agrees; hand bearings beside steel share one error." },

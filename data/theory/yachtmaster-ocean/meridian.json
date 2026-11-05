@@ -6,6 +6,7 @@
       "id": "noon",
       "kicker": "Time of noon",
       "title": "When the Sun is on your meridian",
+      "qa": { "q": "How do I work out the time of local noon for a noon sight?", "a": "Take the almanac's **Mer Pass**, in local mean time, and add your expected longitude in time if west, subtract it if east; 1° is 4 minutes. Mer Pass 1204 at 37°30′W gives noon at 1434 UT." },
       "refs": ["Meridian altitude — time of noon", "Meridian altitude — near the meridian", "Meridian altitude — fast boat", "Meridian altitude — Sun near the zenith"],
       "blocks": [
         { "p": "Local noon is the moment the Sun crosses your meridian, rarely 1200 by the clock. The almanac gives **Mer Pass** in local mean time; turn the longitude you expect to have reached into time (1° is 4 minutes) and add it if west, subtract it if east." },
@@ -18,6 +19,7 @@
       "id": "latitude",
       "kicker": "Noon latitude",
       "title": "Zenith distance and declination",
+      "qa": { "q": "How do I get my latitude from the Sun's noon altitude?", "a": "Take the **zenith distance**, z = 90° − Ho, named opposite to the Sun's bearing, and combine it with Dec: same names add, contrary names subtract, and the latitude takes the name of the larger." },
       "refs": ["Meridian altitude — latitude", "Meridian altitude — from Hs to Ho"],
       "blocks": [
         { "p": "Correct **Hs** to **Ho**: index error (on the arc subtract, off the arc add), dip (subtract), then the main correction, plus for the lower limb, minus for the upper." },
@@ -37,6 +39,7 @@
       "id": "bodies",
       "kicker": "Stars, planets, Moon",
       "title": "Any body on the meridian gives latitude",
+      "qa": { "q": "How do I get latitude from a circumpolar star at lower transit?", "a": "Add the polar distance, 90° − Dec, to Ho: at **lower transit**, below the pole, latitude = Ho + polar distance. Ho 20° with Dec N70° gives 40°N." },
       "refs": ["Meridian altitude — stars and planets", "Meridian altitude — Moon", "Meridian altitude — lower transit"],
       "blocks": [
         { "p": "The same rule serves a star or planet on your meridian in twilight, when body and horizon both show. Two stars taken together, one north and one south, cancel a constant error: mean the two latitudes." },
@@ -54,6 +57,7 @@
       "id": "polaris",
       "kicker": "Pole star",
       "title": "The pole's altitude is your latitude",
+      "qa": { "q": "How do I correct a Polaris altitude to get my latitude?", "a": "Use the almanac's **Polaris table**: latitude = Ho − 1° + a0 + a1 + a2, with a0 from LHA Aries, a1 from latitude and a2 from the month." },
       "refs": ["Pole star"],
       "blocks": [
         { "p": "The altitude of the celestial pole equals your latitude, and **Polaris** circles within 1° of it. The almanac's Polaris table bridges the gap with three corrections: **a0** from LHA Aries (GHA Aries − west longitude, + east), **a1** from latitude, **a2** from the month." },
@@ -68,6 +72,7 @@
       "id": "south",
       "kicker": "Southern sky",
       "title": "No pole star in the south",
+      "qa": { "q": "How do I find the south celestial pole without a pole star?", "a": "Use the **Southern Cross**: extend its long axis, Gacrux through Acrux, about 4½ times, and a line at right angles from midway between the Pointers meets it at the pole." },
       "refs": ["Southern Cross"],
       "blocks": [
         { "p": "No bright star marks the south celestial pole: Sigma Octantis, about 1° from it, is far too faint. For latitude take a bright star on the meridian, such as Achernar, Canopus or Acrux." },
@@ -79,6 +84,7 @@
       "id": "noonfix",
       "kicker": "Noon position",
       "title": "Crossing the latitude, and running it down",
+      "qa": { "q": "How do I get a noon position from a morning sun line?", "a": "Carry the morning sun line forward by the course and distance made good, keeping its direction, and cross it with the noon latitude: that crossing is your **noon position**." },
       "refs": ["Noon position", "Latitude sailing", "Noon sight lost"],
       "blocks": [
         { "p": "A latitude is a position line running east–west. For a **noon position**, carry the morning sun line forward by the course and distance made good, keeping its direction, and cross it with the noon latitude. Advanced to dusk, the latitude moves only by the north–south part of the run; a star bearing near east or west cuts it best." },

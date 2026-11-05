@@ -6,6 +6,7 @@
       "id": "tables",
       "kicker": "Springs, neaps, tables",
       "title": "Reading the day's tide",
+      "qa": { "q": "How do I work out the time and height of high water at a secondary port?", "a": "Apply the **secondary port** differences, with their signs, to the standard port's HW: interpolate the time difference by the standard port's HW time, and the height difference by today's height between neap and spring levels." },
       "refs": ["Tides — springs and neaps", "Tides — the semi-diurnal cycle", "Tides — causes", "Tides — tide tables", "Tides — secondary ports"],
       "blocks": [
         { "p": "On a **semi-diurnal** coast high waters come about 12 h 25 min apart, so tomorrow's tide is some 50 minutes later. **Springs**, the biggest ranges, come a day or two after new and full moon; **neaps** follow the quarters, a week later. Springs grow near the equinoxes and with the moon at perigee." },
@@ -19,6 +20,7 @@
       "id": "datum",
       "kicker": "Chart datum and depth",
       "title": "How much water is really there",
+      "qa": { "q": "How do I work out the actual depth of water from the chart?", "a": "Add the height of tide to the charted depth: both are measured from **chart datum**, about LAT. Over an underlined drying height, the water is the height of tide minus the drying height." },
       "refs": ["Tides — chart datum", "Tides — tidal levels", "Tides — depth of water", "Tides — drying heights", "Tides — drying out", "Tides — anchoring depth", "Tides — anchoring and LW", "Tides — clearance under the keel"],
       "blocks": [
         { "p": "Soundings and tide heights share one zero, **chart datum**, about lowest astronomical tide (LAT). Depth = charted depth + height of tide, so you seldom find less than charted, except on mean-sea-level charts (much of the Med). A minus height dips below datum, and an old chart reduced to MLWS over-reads at big springs. An underlined figure is a **drying height**: water over it = tide − drying height." },
@@ -31,6 +33,7 @@
       "id": "twelfths",
       "kicker": "Twelfths and curves",
       "title": "The height between high and low",
+      "qa": { "q": "How do I use the rule of twelfths to find the height of tide?", "a": "Hour by hour from low or high water, the level moves 1, 2, 3, 3, 2, 1 twelfths of the range: the **rule of twelfths**. Add the rise to LW on the flood; take the fall from HW on the ebb." },
       "refs": ["Tides — rule of twelfths", "Tides — tidal curve", "Tides — tidal curves"],
       "blocks": [
         { "p": "Where the tide runs evenly over six hours, the **rule of twelfths** fills the gap: hour by hour the level moves 1, 2, 3, 3, 2, 1 twelfths of the range, fastest in the third and fourth. Add the rise to LW on the flood, take the fall from HW on the ebb; half an hour takes half that hour's share." },
@@ -49,6 +52,7 @@
       "id": "clearance",
       "kicker": "Sills, bars, bridges",
       "title": "Water below, air above",
+      "qa": { "q": "How much tide do I need to get over a marina sill?", "a": "The sill's drying height + your draft + a margin. A sill drying 1.8 m, with a 2.0 m draft and 0.5 m to spare, needs a **height of tide** of 4.3 m; then find when the tide reaches it." },
       "refs": ["Tides — sills and bars", "Tides — crossing a bar", "Tides — marina sill", "Tides — bridge clearance", "Tides — overhead clearance"],
       "blocks": [
         { "p": "Work out the height of tide you need. Over a sill that dries: drying height + draft + margin. Over a bar: draft + margin − charted depth. Then find when the tide reaches it. On the ebb go early: at half tide the level can drop a metre in an hour." },
@@ -61,6 +65,7 @@
       "id": "diamonds",
       "kicker": "Diamonds and the atlas",
       "title": "The stream for this hour",
+      "qa": { "q": "How do I read a tidal diamond on the chart?", "a": "A **tidal diamond** points to a table giving, for each hour from HW at a reference port, the stream's true set and its spring and neap rates. Interpolate the rate by today's range; each row serves half an hour either side." },
       "refs": ["Tides — tidal diamonds", "Tides — springs/neaps interpolation", "Tides — tidal stream atlas", "Tides — tidal streams"],
       "blocks": [
         { "p": "A **tidal diamond** points to a table: for each hour from HW at a reference port, the set (where the stream goes, true) and the rates at springs and neaps. A row covers half an hour either side of its hour; after HW+6 count back from the next HW. Interpolate between springs and neaps by today's range, extend the line beyond springs, and lay off each hour of a leg in turn." },
@@ -73,6 +78,7 @@
       "id": "streams",
       "kicker": "Streams and gates",
       "title": "Where it runs hard, when to go",
+      "qa": { "q": "When is the best time to round a headland with a tidal race?", "a": "At slack water, when the diamond's rate falls to nothing, or pass well outside, above all at night. Off a headland the stream makes a **race** with overfalls, and wind against tide steepens every sea, worst at springs." },
       "refs": ["Tides — streams in channels", "Tides — counter-currents", "Tides — streams along the shore", "Tides — streams round headlands", "Tides — races and overfalls", "Tides — tidal races", "Tides — wind against tide", "Tides — tidal gates"],
       "blocks": [
         { "p": "Streams run hardest in deep water: mid-channel, in narrows, outside a bend, off headlands. Inshore they are weaker and turn earlier, and a bay may hold an eddy. Against a foul stream, work the edges." },
@@ -85,6 +91,7 @@
       "id": "weather",
       "kicker": "Weather and the Med",
       "title": "When the tables are wrong",
+      "qa": { "q": "How does high atmospheric pressure change the height of tide?", "a": "Predictions assume about **1013 hPa**: each hectopascal above lowers the sea about a centimetre, each one below raises it. An onshore gale piles water up, an offshore one drives it out." },
       "refs": ["Tides — weather effects", "Tides — meteorological effects", "Tides — the Mediterranean"],
       "blocks": [
         { "p": "Predictions assume about 1013 hPa. Each hectopascal above lowers the sea about a centimetre, each one below raises it. An onshore gale piles water up, an offshore one drives it out. These are estimates: add margin for them, never spend it." },

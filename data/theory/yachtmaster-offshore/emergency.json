@@ -6,6 +6,7 @@
       "id": "mob",
       "kicker": "Man overboard",
       "title": "Three turns, and a level lift",
+      "qa": { "q": "Which man overboard turn do I use at night if I don't know when he fell?", "a": "The **Williamson turn**: hard over, at 60° off hard back, and steady on the reciprocal; it brings you back in your own wake. The Anderson turn is for a casualty still in sight." },
       "refs": ["MOB — Anderson turn", "MOB — Williamson turn", "MOB — Scharnow turn", "MOB — recovery", "MOB — recovery by a motor yacht"],
       "blocks": [
         { "table": { "head": ["Turn", "When", "How"], "rows": [
@@ -23,6 +24,7 @@
       "id": "fire-flood",
       "kicker": "Fire and flooding",
       "title": "Shut the space, then count the litres",
+      "qa": { "q": "Why must I keep the engine room shut after firing the fixed extinguisher?", "a": "A **fixed system** works only in a closed space: keep it shut for the hold time while you cool the bulkhead, because opened early the fire reignites." },
       "refs": ["Fire — fixed systems", "Fire — under sail", "Fire — catamaran", "Fire — lithium batteries", "Flooding — pump capacity", "Flooding — watertight doors", "Flooding — catamaran", "Flooding — keel damage", "Damage control — collision mat", "Damage control — shoring", "Abandoning ship — when"],
       "blocks": [
         { "fig": { "type": "panel", "gauges": [["Eng room", "95°C", true], ["Fire", "ALARM", true], ["Fans", "ON", true]], "lines": ["Stop engines, generator, fans; shut flaps", "Count everyone out, then release"] } },
@@ -35,6 +37,7 @@
       "id": "disabled",
       "kicker": "Disabled",
       "title": "Aground, dismasted, no steering, no charge",
+      "qa": { "q": "What should I do first when the mast goes over the side?", "a": "Cut it away, and run no propeller until every line is aboard. Then work out your range under power, reserve kept, and rig a **jury sail** for the rest." },
       "refs": ["Grounding — refloating", "Dismasting", "Dismasting — fuel and jury rig", "Steering failure — emergency steering", "Steering failure — hydraulic steering", "Steering failure — twin screws", "Loss of power"],
       "blocks": [
         { "table": { "head": ["Failure", "First move"], "rows": [
@@ -53,6 +56,7 @@
       "id": "abandon",
       "kicker": "Abandoning and rescue",
       "title": "Leave dry, stay together, hold the course",
+      "qa": { "q": "How do I get from a sinking yacht into the liferaft?", "a": "**Dry**, from the lowest point, one at a time. If there are more people than one raft's rating, launch both and tie them together." },
       "refs": ["Abandoning ship — boarding the raft", "Abandoning ship — two rafts", "Liferaft survival", "Liferaft survival — water", "Survival in the water — 1-10-1", "Survival in the water — HELP", "Survival in the water — huddle", "Helicopter rescue", "Medical evacuation — rendezvous", "Medical — diabetic emergency"],
       "blocks": [
         { "p": "Board the raft **dry**, from the lowest point, one at a time; more people than one raft's rating, launch both, tie them together. First hour: seasickness pills, inflate the floor, a lookout. No water for 24 hours, then half a litre each a day." },
@@ -65,6 +69,7 @@
       "id": "gmdss",
       "kicker": "GMDSS offshore",
       "title": "Which band reaches whom",
+      "qa": { "q": "How do I send a distress alert beyond VHF range?", "a": "By **MF DSC** on 2187.5 kHz, then speech on 2182 kHz: that is sea area A2, beyond VHF DSC cover (A1); A3 is covered by satellite." },
       "refs": ["GMDSS sea areas", "GMDSS — MF distress", "GMDSS — HF bands", "GMDSS — HF band choice", "GMDSS — medical advice", "GMDSS — distress to ships nearby", "GMDSS — MAYDAY RELAY", "GMDSS — distress alert received", "GMDSS — radio silence", "GMDSS — EPIRB registration", "GMDSS — EPIRB false alert", "GMDSS — SART", "GMDSS — AIS-SART", "GMDSS — NAVTEX"],
       "blocks": [
         { "fig": { "type": "chart", "land": "M0 0 H40 V200 H0 Z", "marks": [[40, 150, "k", "coast station"]], "track": "M112 0 Q136 100 112 200 M232 0 Q258 100 232 200", "labels": [[76, 70, "A1", "middle"], [76, 86, "VHF DSC", "middle"], [76, 100, "≈ 30 M", "middle"], [176, 70, "A2", "middle"], [176, 86, "MF DSC", "middle"], [176, 100, "≈ 150 M", "middle"], [280, 70, "A3", "middle"], [280, 86, "satellite", "middle"]], "boat": [200, 150, 0], "note": "Sea areas follow the coast stations' DSC cover" } },
@@ -82,6 +87,7 @@
       "id": "duties",
       "kicker": "The master's duties",
       "title": "What the law expects of you at sea",
+      "qa": { "q": "Is a yacht skipper obliged to go to help a vessel in distress?", "a": "Yes: under **SOLAS V/33** you go with all speed, or tell SAR and log why you cannot; you are released once others are tasked." },
       "refs": ["SOLAS V/31", "SOLAS V/33", "SOLAS V/33 — release", "SOLAS V/33 — unable to assist", "SOLAS V/34-1 — master's discretion", "The skipper's responsibility", "Collision — duties", "Accident reporting", "The logbook", "MARPOL Annex I", "MARPOL Annex IV", "MARPOL Annex V", "Pollution — reporting a spill", "Pollution — reporting a slick", "Harbour regulations", "Local regulations", "Harbour dues"],
       "blocks": [
         { "table": { "head": ["Rule", "Duty"], "rows": [
@@ -105,6 +111,7 @@
       "id": "business",
       "kicker": "Papers, insurance, salvage",
       "title": "The yacht as property and as a contract",
+      "qa": { "q": "Which flag do I fly arriving from abroad, and who goes ashore?", "a": "Fly **Q** from arrival until you are cleared; usually only the skipper lands, with the crew list and passports." },
       "refs": ["Registration", "Registration — change of flag", "Registration — transfer on sale", "Ship's papers", "Ownership — bills of sale", "Marine mortgages — priority", "Insurance — duty to disclose", "Insurance — warranties", "Insurance — navigation limits", "Insurance — commercial use", "Insurance — hull and third party", "Recreational vs commercial use", "Charter vs private use", "Crew lists & agreements", "Crew employment — hours of rest", "Crew employment — repatriation", "Customs & immigration", "VAT — paid status", "Crew — Schengen 90/180", "Salvage — Lloyd's Open Form", "Salvage vs towage", "Salvage — master's authority", "Salvage — the award", "Salvage — life salvage", "Salvage — duty to the salvor", "Salvage — services refused", "Limitation of liability"],
       "blocks": [
         { "p": "Rules differ by country, principles do not. A yacht flies **one flag**: a new register wants a deletion certificate, a buyer re-registers in time, the original certificate travels aboard. A registered **mortgage** survives a sale: have it discharged before paying. Mortgages rank by date of entry where the register records them." },

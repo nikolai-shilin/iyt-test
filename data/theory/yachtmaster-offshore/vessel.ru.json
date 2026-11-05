@@ -6,6 +6,7 @@
       "id": "hull",
       "kicker": "Корпус",
       "title": "Материалы и подъём на берег",
+      "qa": { "q": "Отчего на стеклопластиковом корпусе появляются пузыри осмоса и как это лечат?", "a": "**Осмос**: вода проходит через гелькоут и реагирует со смолой, и ниже ватерлинии появляются кислые пузыри. Лечение — снять гелькоут, высушить корпус и покрыть эпоксидкой." },
       "refs": ["Construction — GRP and osmosis", "Construction — osmosis treatment", "Construction — cored laminates", "Construction — gelcoat and deck fittings", "Construction — steel hulls", "Construction — aluminium hulls", "Construction — aluminium and stray current", "Construction — wooden hulls", "Drydocking — lifting", "Drydocking — on the hard", "Drydocking — the slipway", "Drydocking — careening grid", "Drydocking — antifouling", "Drydocking — the pre-purchase survey", "Drydocking — haul-out checks"],
       "blocks": [
         { "p": "**Осмос**: вода проходит через гелькоут и реагирует со смолой — кислые пузыри ниже ватерлинии; лечение — снять гелькоут, высушить, покрыть эпоксидкой. Трёхслойная палуба гниёт вокруг незагерметизированных отверстий крепежа: глухой звук, прогиб, влага; заменить заполнитель, залить отверстия эпоксидкой. Звёздчатые трещины у фитинга: нужна опорная пластина." },
@@ -22,6 +23,7 @@
       "id": "structure",
       "kicker": "Набор и такелаж",
       "title": "Киль, руль, такелаж, кингстоны",
+      "qa": { "q": "Как понять, что килевые болты разъедает коррозия?", "a": "По потёкам ржавчины у гайки: **килевые болты** из нержавейки незаметно разъедает в мокром льяле, поэтому выньте болт или просветите его. Если гайка вращается без роста момента, болт тянется." },
       "refs": ["Construction — keel bolts", "Construction — keel attachment and grounding", "Construction — rudders and bearings", "Construction — rudders, skeg and spade", "Construction — bulkheads and chainplates", "Construction — the hull-to-deck joint", "Construction — seacocks", "Construction — through-hulls and seacocks", "Rigging — standing rigging", "Construction — rod standing rigging", "Construction — synthetic standing rigging"],
       "blocks": [
         { "p": "Килевые болты из нержавейки незаметно разъедает в мокром льяле: потёки ржавчины у гайки — вынуть болт или просветить; гайка, которая вращается без роста момента, — болт тянется. После удара о грунт осмотрите набор под килем. **Подвесной руль** висит только на подшипниках; скег даёт нижнюю опору и отводит тросы." },
@@ -38,6 +40,7 @@
       "id": "stability",
       "kicker": "Остойчивость",
       "title": "Плечо остойчивости и его диаграмма",
+      "qa": { "q": "Что такое угол заката на диаграмме остойчивости яхты?", "a": "Крен, при котором плечо остойчивости **GZ**, пройдя максимум, падает до нуля; дальше яхта остойчива вверх дном. Диаграмма считает корпус закрытым, поэтому настоящий предел — угол заливания открытого входного люка." },
       "refs": ["Stability — GM and GZ", "Stability — the GZ curve", "Stability — downflooding angle", "Stability — inversion", "Stability — knockdowns", "Stability — catamarans", "Stability — catamarans and gusts", "Stability — RCD design categories"],
       "blocks": [
         { "p": "Вес действует вниз через **G**, плавучесть вверх через **B**; при крене B уходит в сторону крена, и плечо между ними, **GZ**, — плечо остойчивости: момент = водоизмещение × GZ. Малые углы: GZ ≈ GM × sin θ, **GM** = KM − KG." },
@@ -54,6 +57,7 @@
       "id": "weights",
       "kicker": "Грузы",
       "title": "Остойчивость, которую меняете вы сами",
+      "qa": { "q": "Чем неполные танки опасны для остойчивости яхты?", "a": "Плещущаяся жидкость поднимает G, как груз наверху: потеря от **свободной поверхности** растёт с кубом ширины танка, и каждый неполный танк добавляет свою. Продольная переборка режет её вчетверо; вырабатывайте танки по одному." },
       "refs": ["Stability — weight aloft", "Stability — weight high up", "Stability — the GZ curve and added weight", "Stability — moving a weight", "Stability — free surface effect", "Stability — free surface in tanks", "Stability — rolling period and GM"],
       "blocks": [
         { "p": "Добавленный или поднятый груз смещает G к себе: подъём G = вес × высота ÷ водоизмещение; GZ уменьшается на этот подъём × sin θ. Груз на кране действует в точке подвеса. Перед штормом тяжёлое — вниз и к центру." },
@@ -66,6 +70,7 @@
       "id": "engine",
       "kicker": "Дизель",
       "title": "Топливо, воздух, охлаждение",
+      "qa": { "q": "Как прокачать топливную систему дизеля на яхте?", "a": "Прокачивайте по **пути топлива**, по порядку: фильтр грубой очистки с сепаратором, подкачивающий насос, тонкий фильтр, ТНВД. Затем ослабьте гайку у каждой форсунки, прокручивая стартером." },
       "refs": ["Power plant — the four-stroke diesel", "Power plant — the diesel cycle", "Power plant — the fuel system", "Power plant — bleeding the fuel system", "Power plant — fuel filters", "Power plant — fuel bug and fuel polishing", "Power plant — blue smoke", "Power plant — white smoke", "Power plant — black smoke and loss of power", "Power plant — fault-finding", "Power plant — cooling", "Power plant — the anti-siphon valve", "Power plant — keel cooling", "Power plant — maintenance schedule", "Power plant — maintenance schedules"],
       "blocks": [
         { "p": "Дизель воспламеняется от **тепла сжатия**: быстрая прокрутка, исправные кольца, воздух, чистое топливо. Плохое уплотнение на всасывании подсасывает воздух без капли: работает, потом глохнет. Растущее разрежение на фильтре: шлам и **топливный жучок**, поднятые волной; переключите фильтр, очистите топливо." },
@@ -83,6 +88,7 @@
       "id": "drive",
       "kicker": "Валопровод",
       "title": "Реверс-редуктор, винт, скорость",
+      "qa": { "q": "Двигатель не набирает номинальных оборотов на полном газу — что не так с винтом?", "a": "Шаг слишком велик: винт **«тяжёлый»**. Если номинальные обороты достигаются уже при неполном газе, шаг, наоборот, мал." },
       "refs": ["Power plant — the gearbox", "Power plant — shaft and cutless bearing", "Power plant — shaft alignment and vibration", "Power plant — saildrive", "Power plant — twin engines", "Power plant — twin engines, fault-finding", "Power plant — a fouled propeller", "Power plant — propeller pitch", "Power plant — hull speed", "Power plant — fuel and speed"],
       "blocks": [
         { "p": "Реверс-редуктор проскальзывает, горячий, пахнет горелым: мало масла; долить, найти течь. Вибрация, растущая за сезон, и текущий дейдвудный сальник: изношен **дейдвудный подшипник**; центруйте двигатель на плаву. Мембрана колонки saildrive — единственное, что не пускает море: меняйте её в срок изготовителя. Один двигатель встал — нос уходит в его сторону: руль против, обороты умеренные." },
@@ -94,6 +100,7 @@
       "id": "electrics",
       "kicker": "Электрика",
       "title": "Аккумуляторы, генератор, протекторы",
+      "qa": { "q": "Какой нужен аккумуляторный банк на суточный расход ампер-часов?", "a": "Свинцовый или **AGM** банк, который разряжают лишь до половины, должен быть вдвое больше суточного расхода. Литий отдаёт около 80 %, но его BMS может отключить банк посреди заряда — защитите генератор." },
       "refs": ["Power plant — battery capacity", "Power plant — battery types", "Power plant — batteries and charging", "Power plant — charging stages", "Power plant — charging regimes", "Power plant — battery monitors", "Power plant — generator load", "Power plant — generator and watermaker", "Power plant — the watermaker", "Power plant — anodes for fresh, brackish and salt water", "Power plant — galvanic isolation"],
       "blocks": [
         { "p": "Сложите ампер-часы за сутки: свинцовый или AGM банк, который разряжают лишь до половины, должен быть вдвое больше; литий отдаёт около 80 %, но его BMS может отключить банк посреди заряда — защитите генератор. Заряд идёт стадиями **bulk**, **абсорбция**, **float**; час в день абсорбцию не завершает, и банк сульфатируется. Монитор с шунтом «уплывает», пока полный заряд его не синхронизирует: верьте напряжению в покое." },

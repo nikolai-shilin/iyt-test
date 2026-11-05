@@ -6,6 +6,7 @@
       "id": "projection",
       "kicker": "Меркатор и гномоническая",
       "title": "Что проекция делает с расстоянием и курсом",
+      "qa": { "q": "Как правильно измерять расстояние на карте в проекции Меркатора?", "a": "По **шкале широт** на уровне отрезка: масштаб меркаторской карты растёт к полюсу как секанс широты, поэтому масштаб в заголовке верен только на той широте, для которой указан." },
       "refs": ["Charts — Mercator projection", "Charts — distance on the latitude scale", "Charts — gnomonic charts and great circles"],
       "blocks": [
         { "p": "На карте в **проекции Меркатора** прямая — это локсодромия: один истинный курс на всём отрезке. Плата за это — масштаб, который растёт к полюсу как секанс широты. Расстояние снимайте со шкалы широт на уровне отрезка, а не у верхнего или нижнего края путевой карты; масштаб в заголовке верен только на той широте, для которой указан." },
@@ -18,6 +19,7 @@
       "id": "sailings",
       "kicker": "Широта и долгота",
       "title": "Курс и расстояние расчётом",
+      "qa": { "q": "Как рассчитать курс и расстояние между двумя точками, не прокладывая их на карте?", "a": "**Меркаторским плаванием**: tg курса = РД ÷ разность меридиональных частей, расстояние = РШ ÷ cos курса. Чтобы счислить место вперёд, есть плавание по средней широте, где отшествие = РД × cos широты." },
       "refs": ["Charts — latitude and longitude", "Charts — latitude and longitude — mid-latitude sailing", "Charts — Mercator projection — Mercator sailing"],
       "blocks": [
         { "p": "Минута широты — миля; минута долготы — миля только на экваторе. Мили по параллели — это **отшествие**: РД × cos широты. Десятые доли градуса — не минуты: 0,25° — это 15,0'. Если карта слишком мелка для прокладки, считайте место **плаванием по средней широте**, а длинный отрезок — **меркаторским плаванием**." },
@@ -29,6 +31,7 @@
       "id": "scale",
       "kicker": "Масштаб, подбор карт и датум",
       "title": "Сколько стоит миллиметр",
+      "qa": { "q": "На какой карте вести прокладку, если две карты одного района расходятся?", "a": "На самой **крупномасштабной** карте, покрывающей отрезок: где карты расходятся, верьте более крупному масштабу. В открытом море переносите место на следующую карту по широте и долготе." },
       "refs": ["Charts — scale and the chart folio", "Charts — scale and the chart folio — the passage folio", "Charts — scale and the chart folio — small-scale chart error", "Charts — horizontal datum", "Charts — chart datum", "Charts — chart datum — units"],
       "blocks": [
         { "p": "Прокладку ведите на самой крупномасштабной карте, покрывающей отрезок; где две карты расходятся, верьте более крупному масштабу. **Комплект карт на переход** — это, на бумаге, путевая карта, а также подходы и планы пункта назначения, каждого порта-убежища и каждого участка лоцманской проводки по пути. В открытом море переносите место на следующую карту по широте и долготе." },
@@ -40,6 +43,7 @@
       "id": "chartwork",
       "kicker": "Прокладка",
       "title": "Инструменты, пеленги, скорость и время",
+      "qa": { "q": "Как перевести истинный курс в магнитный?", "a": "Западное **склонение** прибавьте, восточное отнимите: ИК 205° при склонении 6°W даёт МК 211°. Если склонение выставлено на плоттере Бретона, оно учитывается само." },
       "refs": ["Chartwork instruments", "Chartwork instruments — the plotter", "Chartwork instruments — the variation setting", "Chartwork instruments — the hand-bearing compass", "Chartwork instruments — pencils", "Chartwork instruments — care and accuracy", "Charts — true, magnetic and compass", "Charts — true, magnetic and compass — light sectors", "Distance, speed and time", "Distance, speed and time — the log", "Distance, speed and time — ETA", "Distance, speed and time — knots"],
       "blocks": [
         { "p": "**Плоттеру Бретона** нужен только меридиан или параллель под сеткой, а не кромка стола; его стрелка смотрит по ходу, иначе вы прочтёте обратный курс. Разъезжающийся циркуль и покоробленный плоттер искажают каждый отрезок: 3° на 60 милях — это 3 мили. Прокладку ведите мягким карандашом, легко. Пеленгуйте ручным пеленгатором там, где створ показал, что он не врёт." },
@@ -53,6 +57,7 @@
       "id": "offshore",
       "kicker": "Знаки в открытом море",
       "title": "Пути, сооружения и районы",
+      "qa": { "q": "Насколько близко яхте можно подходить к нефтяной платформе или буровой?", "a": "Не ближе **зоны безопасности 500 м** — такая же у буровых и SBM. В тумане платформа подаёт сигнал Mo(U), слышный примерно за 2 мили." },
       "refs": ["Chart symbols — traffic separation schemes", "Chart symbols — traffic separation schemes — deep-water routes", "Chart symbols — traffic separation schemes — precautionary areas", "Chart symbols — traffic separation schemes — areas to be avoided", "Chart symbols — offshore installations — platforms", "Chart symbols — offshore installations — lights", "Chart symbols — offshore installations — fog signals", "Chart symbols — offshore installations — safety zones", "Chart symbols — offshore installations — single buoy moorings", "Chart symbols — offshore installations — wellheads", "Chart symbols — offshore areas — wind farms", "Chart symbols — offshore areas — wind farms — lights", "Chart symbols — offshore areas — wind farms — the rules", "Chart symbols — offshore areas — submarine cables", "Chart symbols — offshore areas — submarine exercise areas", "Chart symbols — offshore areas — dumping grounds", "Offshore buoys and lightvessels", "Offshore buoys and lightvessels — T&P notices"],
       "blocks": [
         { "tiles": [
@@ -75,6 +80,7 @@
       "id": "publications",
       "kicker": "Пособия и корректура",
       "title": "Что открыть и как держать в порядке",
+      "qa": { "q": "На каком расстоянии ночью будет виден маяк?", "a": "На меньшей из двух дальностей: **географической**, 2,08 × (√H + √h) миль при высотах в метрах, и оптической — номинальной, урезанной сегодняшней видимостью." },
       "refs": ["Nautical publications — Sailing Directions", "Nautical publications — Sailing Directions — passage notes", "Nautical publications — List of Lights", "Nautical publications — List of Lights — luminous and geographical range", "Nautical publications — List of Lights — geographical range", "Nautical publications — List of Radio Signals", "Nautical publications — almanacs", "Nautical publications — routeing charts", "Nautical publications — tidal stream atlases", "Notices to Mariners — keeping charts corrected", "Notices to Mariners — keeping charts corrected — T&P", "Notices to Mariners — keeping charts corrected — new editions", "Notices to Mariners — keeping charts corrected — T&P notices", "Navigational warnings", "Navigational warnings — NAVAREAs", "Navigational warnings — NAVAREA III"],
       "blocks": [
         { "table": { "head": ["Пособие", "Что даёт"], "rows": [
@@ -94,6 +100,7 @@
       "id": "enc",
       "kicker": "Электронные карты",
       "title": "Настройки, при которых плоттеру можно верить",
+      "qa": { "q": "Как выставить безопасную изобату на картплоттере?", "a": "**Безопасная изобата** = осадка + проседание + половина зыби + запас; плоттер выделит ближайшую более глубокую изобату ячейки. Сигнал тревоги подаст только ENC, а не RNC — картинка бумажной карты." },
       "refs": ["Electronic charts — ENC and RNC", "Electronic charts — ENC and RNC — safety contour", "Electronic charts — ENC and RNC — safety depth", "Electronic charts — ENC and RNC — look-ahead", "Electronic charts — ENC and RNC — route check", "Electronic charts — ENC and RNC — alarms", "Electronic charts — ENC and RNC — alarms — isolated dangers", "Electronic charts — ENC and RNC — display levels", "Electronic charts — ENC and RNC — usage bands", "Electronic charts — ENC and RNC — over-zoom", "Electronic charts — ENC and RNC — zoom at speed", "Electronic charts — ENC and RNC — the paper backup"],
       "blocks": [
         { "p": "**RNC** — картинка бумажной карты; **ENC** — данные, поэтому только ENC может подать сигнал тревоги — о том, что вы задали и что есть в её ячейках." },

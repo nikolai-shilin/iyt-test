@@ -6,6 +6,7 @@
       "id": "chart",
       "kicker": "Chart and pilot book",
       "title": "Depths, datum and scale",
+      "qa": { "q": "What do the depth numbers on a nautical chart mean, and why are some underlined?", "a": "They are **soundings**: depths in metres below chart datum, a level close to the lowest the sea normally reaches. An underlined figure is a drying height: a rock or bank that stands that much above datum." },
       "refs": ["Chart symbols", "Chart datum & Med tide", "Harbour plans", "Charts & pilot books"],
       "blocks": [
         { "p": "The figures scattered over the water are **soundings**: depths in metres below **chart datum**, a level close to the lowest the sea normally reaches. An underlined figure is the opposite, a **drying height**: a rock or bank that stands that much above datum. Keep well clear of it." },
@@ -19,6 +20,7 @@
       "id": "distance",
       "kicker": "Distance, speed, time",
       "title": "A minute of latitude is a mile",
+      "qa": { "q": "How do I measure a distance in nautical miles on a chart?", "a": "On the latitude scale at the side of the chart, level with the leg: one minute of **latitude** is one nautical mile. Not the longitude scale along the top, whose minutes shrink as you go north." },
       "refs": ["Chartwork", "Latitude & distance", "Time, speed & distance", "Dead reckoning"],
       "blocks": [
         { "p": "One minute of **latitude** is one nautical mile. So you span a leg with dividers and read it off the latitude scale at the side of the chart, level with the leg. The longitude scale along the top will not do: its minutes shrink as you go north. Two bays due north and south of each other, 8' of latitude apart, are 8 miles apart." },
@@ -35,6 +37,7 @@
       "id": "compass",
       "kicker": "Compass and variation",
       "title": "True on the chart, magnetic on the compass",
+      "qa": { "q": "How do I turn a true course from the chart into a compass course?", "a": "Subtract easterly **variation** going from the chart to the compass, and add it coming back; westerly works the other way. A true course of 090° with 5°E variation is steered as 085°." },
       "refs": ["Compass & variation"],
       "blocks": [
         { "p": "The chart is drawn to true north; the compass points to magnetic north. The angle between them is **variation**, printed in the compass rose on the chart. In Greece, Croatia and Turkey it is a few degrees east." },
@@ -48,6 +51,7 @@
       "id": "transits",
       "kicker": "Transits and clearing bearings",
       "title": "Lines you can see",
+      "qa": { "q": "The two marks of a transit have opened: which way do I steer?", "a": "Towards the front mark: if the rear mark is to the right of the front one, you are right of the **transit**, so come to port until they close in line again." },
       "refs": ["Transits & leading lines", "Clearing bearings"],
       "blocks": [
         { "p": "Two marks in line, one behind the other, make a **transit**: a line drawn on the ground itself. While they stay in line you are on it, whatever wind and current do. A compass course cannot show that you are being set sideways; a transit shows it at once." },
@@ -64,6 +68,7 @@
       "id": "plotter",
       "kicker": "Chartplotter and GPS",
       "title": "A good position on a chart that may be wrong",
+      "qa": { "q": "Why does my chartplotter show the boat on land when I'm in deep water?", "a": "The **electronic chart** is offset, not the GPS: GPS is good to a few metres, but electronic charts can be out by tens or hundreds of metres. Trust your eyes and the echo sounder." },
       "refs": ["Chartplotter & GPS"],
       "blocks": [
         { "p": "GPS gives your position to a few metres. The chart drawn under it is another matter: electronic charts can be offset by tens or hundreds of metres. If the plotter draws your boat on the land while you are afloat in deep water, the chart is wrong: trust your eyes and the echo sounder." },
@@ -75,6 +80,7 @@
       "id": "plan",
       "kicker": "Planning the day",
       "title": "Check every leg, then do the sums",
+      "qa": { "q": "How do I check the day's route on the chart before I leave?", "a": "Draw each leg and follow it along its whole length: redraw any leg crossing a rock, a point of land or a sounding under your **draft plus a margin**. Then add up leg times and stops, with time in hand." },
       "refs": ["Passage planning"],
       "blocks": [
         { "p": "Before you leave, draw the day's legs on the chart and follow each one along its whole length. A sounding shallower than your draft plus a margin, a rock or a point of land on the line means you redraw the leg to pass clear." },

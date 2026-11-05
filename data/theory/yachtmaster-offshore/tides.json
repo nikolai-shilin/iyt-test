@@ -6,6 +6,7 @@
       "id": "curve",
       "kicker": "The tidal curve",
       "title": "Any height, any time",
+      "qa": { "q": "How do I find the height of tide at a given time from the tidal curve?", "a": "Mark HW on the top scale and LW on the bottom one and join them; from the time go up to the curve, across to the line, and read the height: **LW + factor × range**." },
       "refs": ["Tides — Admiralty method"],
       "blocks": [
         { "p": "On a standard port's **tidal curve**, enter the HW nearest your time in the box, so the time reads HW−4 or HW+2. Mark that HW on the top scale and the LW of the same half-tide on the bottom one, the LW before on the flood, after on the ebb, and join them. From the time go up to the curve, across to the line, and read the height: **LW + factor × range**." },
@@ -17,6 +18,7 @@
       "id": "secondary",
       "kicker": "Secondary ports, the Solent",
       "title": "A standard port's curve, moved",
+      "qa": { "q": "How do I work out the time and height of high water at a secondary port?", "a": "Apply the **secondary port**'s differences to the standard port: interpolate the time difference between its two tabled HW times and the height difference between MHWS and MHWN, then work on the standard port's curve." },
       "refs": ["Tides — secondary ports", "Tides — Solent curves"],
       "blocks": [
         { "p": "A **secondary port** has differences on a standard port: time differences at two times of the standard port's HW, height differences at MHWS and MHWN, MLWN and MLWS. Interpolate each by today's value, then work the hour on the **standard port's curve** with the secondary port's times and heights." },
@@ -29,6 +31,7 @@
       "id": "clearance",
       "kicker": "Clearances",
       "title": "Under the keel, over the mast",
+      "qa": { "q": "How do I calculate the depth under my keel in a swell?", "a": "Charted depth + height of tide, minus draught, **half the swell** for the troughs and squat at speed: 5.4 + 1.2 − 1.0 − 0.3 − 2.2 leaves 3.1 m under the keel." },
       "refs": ["Tides — clearances", "Tides — bars and sills", "Tides — storm surge"],
       "blocks": [
         { "p": "Depth = charted depth + height of tide; take off draught, **half the swell** for the troughs, and squat at speed. At anchor, depth now − the fall to come must cover draught and margin, and springs make tomorrow's LW lower. Least charted depth = draught + margin − height of LW. A sill gauge already reads the depth over the sill." },
@@ -42,6 +45,7 @@
       "id": "drying",
       "kicker": "Drying out and bars",
       "title": "The bottom comes up",
+      "qa": { "q": "When is it safe to cross a bar at a river or harbour entrance?", "a": "On the flood and in daylight: a **bar** breaks when the depth falls to about 1.3 times the swell height, sooner in a long swell, and is worst on the ebb against the swell." },
       "refs": ["Tides — drying out", "Tides — bars"],
       "blocks": [
         { "p": "To float over drying ground you need **drying height + draught + margin** of tide; she touches when the tide falls to drying height + draught. Arrive just before HW and let her settle, after sounding the berth: level, firm, clear. Heel a fin keel slightly to the wall, rig a fender board, and tend the lines all night. Go on while the tides are making; once they **take off**, the next HW may not float you." },
@@ -53,6 +57,7 @@
       "id": "streams",
       "kicker": "Rates and tidal gates",
       "title": "How hard, and when",
+      "qa": { "q": "What do the numbers 18,34 on a tidal stream atlas arrow mean?", "a": "1.8 knots at mean neaps and 3.4 knots at mean springs; interpolate between them by today's range at the atlas's **own reference port**. With today's range halfway between the mean ranges, the rate is 2.6 kn." },
       "refs": ["Tidal streams — rates", "Tidal streams — atlases", "Tidal streams — slow and fast boats", "Tidal gates", "Tides — springs and neaps"],
       "blocks": [
         { "p": "An atlas arrow marked 18,34 means 1.8 kn at mean neaps, 3.4 kn at mean springs. Interpolate by today's range at the atlas's **own reference port**; this line you may extend beyond springs and neaps. French tables grade a tide by its **coefficient**: 45 mean neaps, 95 mean springs. Near an amphidromic point the range is small but the stream strong: rates come from the atlas." },
@@ -66,6 +71,7 @@
       "id": "races",
       "kicker": "Races and overfalls",
       "title": "Where the stream breaks the sea",
+      "qa": { "q": "How do I round a headland with a tidal race safely?", "a": "Outside the **race**'s charted extent plus a margin, wider at night and in fog, or through it at slack water. The inshore passage, a few cables off, is for settled weather, neaps and daylight." },
       "refs": ["Tidal streams — races", "Tidal streams — overfalls", "Tidal streams — wind against tide"],
       "blocks": [
         { "p": "A **race** forms where a strong stream sweeps past a headland and lies downstream, so it changes sides with the stream. **Overfalls** stand over an uneven bottom. Wind against stream steepens every sea: the water feels wind plus stream." },
@@ -78,6 +84,7 @@
       "id": "currents",
       "kicker": "Ocean currents",
       "title": "Off the shelf",
+      "qa": { "q": "Do I need to allow for tidal streams in mid-ocean, off the continental shelf?", "a": "Hardly: beyond the shelf the streams are weak and **rotary** and nearly cancel over a cycle. Plan with the routeing chart's mean current, check it by fixes, and apply a set that holds for half a day." },
       "refs": ["Ocean currents"],
       "blocks": [
         { "p": "Beyond the shelf the streams are weak and **rotary** and nearly cancel over a cycle. Plan with the routeing chart's mean current, check it by fixes, and keep applying a set that holds for half a day. After a gale the **wind drift** sets right of downwind in the northern hemisphere. Off Portugal the Portugal Current runs south in summer with the northerlies; in winter a N-going current follows the shelf edge. In the Strait of Gibraltar the surface flows east into the Mediterranean, and the W-going streams run inshore." },

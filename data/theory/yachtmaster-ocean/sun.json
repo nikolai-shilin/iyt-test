@@ -6,6 +6,7 @@
       "id": "sight",
       "kicker": "The sight",
       "title": "Altitude and time, both exact",
+      "qa": { "q": "How accurately do I need to time a sun sight?", "a": "To the second: 4 seconds of time is 1′ of longitude. Turn the watch time into **UT** by removing its error and adding the zone description, and watch for a change of Greenwich date." },
       "refs": ["Sun sights — choosing the time", "Sun sights — a series of sights", "Sextant — altitude corrections", "Sight reduction — UT from the watch"],
       "blocks": [
         { "p": "Take the Sun above about 15°, where refraction is steady; well east or west, its line runs near north–south and fixes longitude. Time it to the second: 4 seconds is 1′ of longitude." },
@@ -18,6 +19,7 @@
       "id": "almanac",
       "kicker": "Almanac",
       "title": "GHA, declination and LHA",
+      "qa": { "q": "Is the LHA over or under 180° for a morning sun sight?", "a": "Over 180°: in the morning the Sun is east of you. **LHA** = GHA − west longitude or + east longitude, adding or taking off 360°; in the afternoon it is under 180°." },
       "refs": ["Sight reduction — GHA and increments", "Sight reduction — declination", "Sight reduction — LHA"],
       "blocks": [
         { "p": "The daily page gives the Sun's **GHA** and **Dec** for each hour of UT. Add the increment for the minutes and seconds (the Sun moves 15° an hour) and correct Dec with d, checking the next hour for its trend; near an equinox its name can change." },
@@ -30,6 +32,7 @@
       "id": "triangle",
       "kicker": "Hc and Zn",
       "title": "Solving the PZX triangle",
+      "qa": { "q": "How do I choose the assumed position for an HO 249 sight reduction?", "a": "Take the nearest whole degree of latitude and a longitude within 30′ of the DR that makes LHA whole: that is the **assumed position**. In west longitude its minutes are the GHA's, in east 60′ minus them." },
       "refs": ["Sight reduction — Hc and Zn", "Sight reduction — HO 249", "Sight reduction — assumed position"],
       "blocks": [
         { "p": "Pole, zenith and Sun make a triangle. You know two sides, 90° − Lat and 90° − Dec, and the angle between them at the pole, the LHA. Solving it gives 90° − **Hc**, the altitude seen from that position, and the **azimuth**." },
@@ -46,6 +49,7 @@
       "id": "intercept",
       "kicker": "Intercept",
       "title": "From two altitudes to a line",
+      "qa": { "q": "Do I plot the intercept towards or away from the Sun?", "a": "Towards if Ho is greater than Hc, away if Hc is greater. The **intercept**, Ho − Hc, is 1′ for 1 mile, laid off from the AP along Zn, or its reciprocal if away." },
       "refs": ["Sight reduction — intercept", "Plotting the position line", "Sun sights — the position line"],
       "blocks": [
         { "p": "The **intercept** is Ho − Hc, 1′ for 1 mile. Ho greater: you are nearer the Sun than the point you worked from, **towards**. Hc greater: **away**." },
@@ -63,6 +67,7 @@
       "id": "fix",
       "kicker": "Running fix",
       "title": "Sun, run, sun",
+      "qa": { "q": "How long should I wait between sun sights for a running fix?", "a": "Until the Sun's azimuth has changed about 45°, and no longer: every hour adds run error. Then carry the earlier line forward by the **run** to meet the later one." },
       "refs": ["Running fix — sun-run-sun", "Running fix — current", "Sun sights — a line and a latitude", "Sun and Moon — a fix by day", "Sun and Moon by day", "Sun sights in the tropics"],
       "blocks": [
         { "p": "The Sun gives a fix once its bearing has changed. Carry the earlier line forward by the **run**, course and distance made good, leeway allowed and legs added as vectors; it keeps its direction and meets the later line, or the noon latitude, at the fix." },
@@ -75,6 +80,7 @@
       "id": "use",
       "kicker": "One line",
       "title": "What one line tells you",
+      "qa": { "q": "What does a sun line tell me when the Sun is abeam?", "a": "Your offset from the track: with the Sun abeam the position line is a **course line**. Ahead or astern it is a speed line, giving distance run; due east or west, a meridian giving longitude." },
       "refs": ["Course and speed lines", "Sun sights — a course line", "Sun sights — clearing a danger", "Sun sights — a line and a sounding", "Sun sights — a line and a range"],
       "blocks": [
         { "p": "A position line lies at right angles to the Sun's bearing: pick the moment to suit the question." },
@@ -92,6 +98,7 @@
       "id": "errors",
       "kicker": "Errors",
       "title": "A mile for a minute",
+      "qa": { "q": "Why don't my three sun lines from one day meet in a point?", "a": "Mostly because of the runs that carried the earlier lines: they make the **cocked hat**. A constant error shifts every line the same way; you are inside the triangle only if the azimuths span more than 180°." },
       "refs": ["Sight errors — altitude", "Sight errors — time", "Sight errors — the almanac", "Sight errors — blunders", "Sight errors — the run", "Sun sights — a cocked hat"],
       "blocks": [
         { "table": { "head": ["Slip", "Effect"], "rows": [

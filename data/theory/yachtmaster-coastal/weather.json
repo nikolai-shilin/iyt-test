@@ -6,6 +6,7 @@
       "id": "pressure",
       "kicker": "Pressure and wind",
       "title": "Isobars and the barometer",
+      "qa": { "q": "With my back to the wind, where is the area of low pressure?", "a": "On your left and a little ahead, in the northern hemisphere: **Buys Ballot's law**. Wind blows anticlockwise round a low and clockwise round a high, angled slightly towards the low pressure." },
       "refs": ["Pressure systems — wind round a low", "Pressure systems — wind round a high", "Buys Ballot's law", "Isobar spacing and wind strength", "Isobars — the geostrophic scale", "Isobars — latitude and the scale", "Barometer — tendency", "Barometer — tendency terms", "Barometer — the tendency", "Barometer — the night log", "Barometer — passage decisions"],
       "blocks": [
         { "p": "In the north, wind blows anticlockwise round a low and clockwise round a high, angled slightly towards low pressure. Back to the wind, the low is on your left, a little ahead: **Buys Ballot's law**." },
@@ -27,6 +28,7 @@
       "id": "fronts",
       "kicker": "Lows and fronts",
       "title": "What a passing low does",
+      "qa": { "q": "Will the wind veer or back as a depression passes?", "a": "If the centre passes north of you the wind **veers**, clockwise through S, SW and NW; if it passes south, it **backs** through SE, E and NE. A frontal low travels along its warm-sector isobars." },
       "refs": ["Polar front depression — life cycle", "Warm front — weather sequence", "Warm front — passage", "Cold front — weather sequence", "Fronts — the sequence on board", "Fronts — occlusion", "Pressure systems — wind shifts", "Depressions — the track of the centre", "Depressions — passing north of you", "Reading a synoptic chart", "Reading a synoptic chart — movement of a low", "Reading a synoptic chart — a 48 h plan", "Secondary depressions", "Troughs and ridges", "Barometer — a night passage", "Forecast terms — veering"],
       "blocks": [
         { "p": "A frontal low travels along its **warm-sector** isobars. If the centre passes north of you the wind **veers**, clockwise: S, SW, NW. If it passes south, the wind **backs**: SE, E, NE." },
@@ -44,6 +46,7 @@
       "id": "forecast",
       "kicker": "Forecasts",
       "title": "Sources, words and limits",
+      "qa": { "q": "What does \"gale soon\" mean in a forecast?", "a": "**Soon** means 6 to 12 hours from the time of issue; imminent is within 6 hours, later over 12. A gale warning for soon, issued at 0600 UTC, means any time from 1200 to 1800 UTC." },
       "refs": ["Forecast sources — NAVTEX", "Forecast sources — VHF broadcasts", "Forecast terms — timing", "Forecast terms — sea state", "Forecast terms — visibility", "Forecast terms — gale warnings", "Forecast terms — speed of movement", "Forecast terms — cyclonic", "Forecast terms — locally", "GRIB files — limits", "GRIB files — resolution", "GRIB files vs the official forecast", "GRIB files — when models disagree", "GRIB files — age of the forecast", "GRIB files — wind barbs", "Go/no-go decision"],
       "blocks": [
         { "p": "**NAVTEX**: English on 518 kHz, national language on 490; types A, B and D (navigational and weather warnings, search and rescue) cannot be switched off. A SÉCURITÉ call on VHF 16 names a working channel: go there and write it down." },
@@ -63,6 +66,7 @@
       "id": "sea",
       "kicker": "Wind and sea",
       "title": "Beaufort, apparent wind, waves",
+      "qa": { "q": "Why is the sea so steep off a headland when the wind is against the tide?", "a": "**Wind against tide** makes short, steep, breaking seas, worst off headlands at full stream. Round them near slack water and well off, and avoid shoal banks, where seas break as the depth falls to about their height." },
       "refs": ["Beaufort scale", "Beaufort — true and apparent wind", "Beaufort — the true wind at night", "Beaufort — wind and load", "Waves — fetch and duration", "Swell", "Sea state — significant wave height", "Sea state — swell and wind sea", "Sea state — shoal water", "Wind against tide", "Wind against tide — timing at a headland", "Wind against tide — sea state", "Local winds — the sea they raise", "Local winds — Mistral and fetch"],
       "blocks": [
         { "p": "Beaufort force is the **mean** wind (force 7: 28–33 kn); log gusts beside it. Rig load grows as the square of the wind: 24 kn pulls 2¼ times as hard as 16." },
@@ -79,6 +83,7 @@
       "id": "coast",
       "kicker": "The coast",
       "title": "Breezes and high land",
+      "qa": { "q": "When does the sea breeze start and how strong does it get?", "a": "On a settled day a **sea breeze** sets in by late morning, reaches force 3–4 by mid-afternoon, veers a little and dies at dusk. A light offshore wind can hold it off behind a calm belt." },
       "refs": ["Sea and land breezes", "Sea breeze — against an offshore wind", "Sea breeze — timing an arrival", "Katabatic and anabatic winds", "Local effects — funnelling", "Local effects — headlands", "Local effects — wind shadow", "Local effects — lee of a high island", "Clouds — lenticular"],
       "blocks": [
         { "p": "On a settled day a **sea breeze** sets in by late morning, reaches force 3–4 by mid-afternoon, veers a little and dies at dusk; hot slopes strengthen it (**anabatic**). A light offshore wind holds it off behind a calm belt. By night a **land breeze** blows, and off steep slopes a cold **katabatic** wind, strongest before dawn." },
@@ -93,6 +98,7 @@
       "id": "med",
       "kicker": "Mediterranean winds",
       "title": "Named winds",
+      "qa": { "q": "When is the best time to sail upwind in the Meltemi?", "a": "At dawn, before it builds: the **Meltemi** blows from the north in the Aegean, under clear skies, at force 6–7 for days, peaking after noon, set up by a Balkan high and a Turkish low." },
       "refs": ["Local winds — Meltemi", "Local winds — Meltemi timing", "Local winds — Bora", "Local winds — Bora signs", "Local winds — Bora gusts", "Local winds — Sirocco", "Local winds — Jugo and Bora", "Local winds — Mistral", "Local winds — Mistral duration", "Local winds — Levante", "Local winds — Poyraz"],
       "blocks": [
         { "table": { "head": ["Wind", "From", "Signs"], "rows": [
@@ -111,6 +117,7 @@
       "id": "fog",
       "kicker": "Fog and thunder",
       "title": "No visibility, sudden wind",
+      "qa": { "q": "Will a stronger wind clear sea fog?", "a": "No: **sea fog** is warm moist air over colder water, and wind does not clear it; a sea breeze carries it inshore. Radiation fog, formed over land on clear calm nights, is gone by mid-morning." },
       "refs": ["Fog — sea fog", "Fog — advection (sea) fog", "Fog — sea fog and the sea breeze", "Fog — radiation fog", "Fog — frontal fog", "Fog — dew point", "Thunderstorms and squall lines", "Thunderstorms — gust fronts", "Thunderstorms — lightning on a yacht", "Thunderstorms — at anchor", "Thunderstorms — range and closing speed", "Thunderstorms — over high ground", "Squalls — at night"],
       "blocks": [
         { "p": "Fog forms as air cools to its **dew point**: a degree apart, fix your position, ready radar and horn. **Sea fog** is warm moist air over colder water: wind does not clear it; a sea breeze carries it inshore. **Radiation fog** forms over land on clear calm nights, gone by mid-morning. **Frontal fog** lifts once the warm front passes." },

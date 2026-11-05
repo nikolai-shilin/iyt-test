@@ -6,6 +6,7 @@
       "id": "papers",
       "kicker": "Two documents",
       "title": "One for the boat, one for you",
+      "qa": { "q": "What is the difference between a ship station licence and an SRC?", "a": "The **ship station licence** belongs to the boat and lists her call sign, MMSI and radio equipment; the Short Range Certificate (SRC) belongs to you, the operator, whatever boat you sail. Keep both aboard." },
       "refs": ["Radio licences"],
       "blocks": [
         { "p": "The **ship station licence** belongs to the boat. It names the vessel and lists her call sign, her MMSI and the radio equipment she is licensed to carry. The **operator's certificate** belongs to a person: for VHF with DSC it is the **Short Range Certificate (SRC)**, while the **Long Range Certificate (LRC)** adds MF/HF and satellite. It shows that you are qualified to use the radio, and it is yours whatever boat you sail. Sell your yacht and buy another, and the certificate stays with you. The rules are ITU's; your flag state issues the licence, call sign and MMSI, and may add its own requirements." },
@@ -18,6 +19,7 @@
       "id": "who",
       "kicker": "Who may transmit",
       "title": "The skipper decides, the certificate holder supervises",
+      "qa": { "q": "Can crew without a radio certificate use the VHF on my yacht?", "a": "Only **under the supervision** of a certificate holder, and as the skipper decides; alone they may not make a routine call. In distress, anyone aboard may send the MAYDAY." },
       "refs": ["Radio regulations", "Radio licences"],
       "blocks": [
         { "p": "The ship's radio station is under the **authority of the skipper**. Whether the crew may use it to chat with friends on another yacht is the skipper's decision." },
@@ -32,6 +34,7 @@
       "id": "where",
       "kicker": "Where it is valid",
       "title": "Abroad yes, ashore no",
+      "qa": { "q": "Can I use the yacht's handheld VHF ashore, say from a taverna?", "a": "No: a marine VHF is licensed for the **maritime service**, meaning use afloat, and use from land generally needs special permission. Afloat abroad is fine: the ship station licence is valid internationally, alongside local regulations." },
       "refs": ["Radio regulations"],
       "blocks": [
         { "p": "A ship station licence is valid internationally. Your own yacht, licensed in her home country, may use her VHF in Greek waters, where you also follow the local regulations." },
@@ -43,6 +46,7 @@
       "id": "prohibited",
       "kicker": "Prohibited transmissions",
       "title": "What must never go out",
+      "qa": { "q": "What am I not allowed to transmit on marine VHF?", "a": "**Prohibited transmissions** include a false distress call, even as a test; any call that does not give your own boat's name; unnecessary signals, such as clicking the key to say hello; and obscene or abusive language." },
       "refs": ["Prohibited transmissions"],
       "blocks": [
         { "table": { "head": ["Prohibited", "Why"], "rows": [
@@ -60,6 +64,7 @@
       "id": "secrecy",
       "kicker": "Secrecy and the log",
       "title": "Keep it to yourself, write it down",
+      "qa": { "q": "Can I tell anyone about a VHF conversation I overheard?", "a": "No: **secrecy of correspondence** means you may not pass on what you overhear. Distress traffic is the exception: if the coast station seems not to have heard a MAYDAY you noted, pass its details to the coastguard." },
       "refs": ["Secrecy of correspondence", "Radio log"],
       "blocks": [
         { "p": "VHF is an open line, and you will overhear calls not meant for you. **Secrecy of correspondence** means you may not pass on what you overhear: two yachts' family matters stay with them. Distress traffic is the exception. If you noted a MAYDAY that the coast station seems not to have heard, pass its details to the coastguard." },
@@ -71,6 +76,7 @@
       "id": "priority",
       "kicker": "Order of priority",
       "title": "Distress, urgency, safety, routine",
+      "qa": { "q": "Which goes first when several messages are waiting for the channel?", "a": "They go in a fixed **order of priority**, whoever was ready first: distress (MAYDAY), urgency (PAN-PAN), safety (SÉCURITÉ), then routine calls." },
       "refs": ["Order of priority"],
       "blocks": [
         { "p": "When several messages wait for a quiet channel, they go in a fixed order, whoever was ready first." },

@@ -6,6 +6,7 @@
       "id": "hear",
       "kicker": "Hearing a MAYDAY",
       "title": "Listen and write it down",
+      "qa": { "q": "What should I do when I hear someone else's MAYDAY on channel 16?", "a": "Do not transmit. **Listen and write down** the vessel's name, position, what is wrong, the help asked for, the persons aboard and the time, then wait a short while for a coast station to acknowledge." },
       "refs": ["SAR communications"],
       "blocks": [
         { "p": "When a MAYDAY comes over channel 16, do not transmit. **Listen and write**: the vessel's name, her position, what is wrong, the help she asks for, the number of persons aboard and the time. You may have to relay the call or go to help, and the coast station may not have heard it." },
@@ -17,6 +18,7 @@
       "id": "answer",
       "kicker": "Answering",
       "title": "When you speak, and to whom",
+      "qa": { "q": "Should I answer a MAYDAY from another boat?", "a": "Only if nobody has and you can help: **acknowledge** it, MAYDAY, her name and call sign or MMSI, THIS IS, your name, RECEIVED, MAYDAY, and go. If a coast station has answered, stay silent, or offer help if you are close." },
       "refs": ["SAR communications", "Distress acknowledgement"],
       "blocks": [
         { "table": { "head": ["Situation", "What you do"], "rows": [
@@ -33,6 +35,7 @@
       "id": "silence",
       "kicker": "Radio silence",
       "title": "Three signals that govern the channel",
+      "qa": { "q": "What do SEELONCE MAYDAY, PRUDONCE and SEELONCE FEENEE mean on the radio?", "a": "**SEELONCE MAYDAY** imposes silence on stations not in the rescue; PRUDONCE allows short, necessary calls while the distress is not over; SEELONCE FEENEE means distress traffic is over and the channel is used normally again." },
       "refs": ["Radio silence"],
       "blocks": [
         { "p": "During a rescue the channel belongs to the distress. The station controlling the traffic says so with three signals, normally heard in this order:" },
@@ -49,6 +52,7 @@
       "id": "onscene",
       "kicker": "On scene",
       "title": "One coordinator, one channel",
+      "qa": { "q": "Which VHF channel do I use on scene during a search and rescue?", "a": "The one the coordinator, the coastguard's **MRCC**, directs, often 16 or 6; keep all search talk on it. Report anything you sight there at once, and pass messages between stations exactly as heard, in full." },
       "refs": ["SAR organisation", "On-scene communications", "SAR communications"],
       "blocks": [
         { "p": "A search and rescue is coordinated by the coastguard's rescue centre, the **MRCC**, usually speaking through a coast station. Vessels on scene work on the channel the coordinator directs, often 16 or 6. If you are told to use 6, all your search talk goes on 6." },
@@ -63,6 +67,7 @@
       "id": "helicopter",
       "kicker": "Helicopter",
       "title": "Brief by VHF, clear deck, wire to earth first",
+      "qa": { "q": "How do I prepare my yacht for a helicopter rescue?", "a": "Follow the crew's VHF brief exactly, stow or lash down everything loose, let the **winch wire** touch the water or the deck before anyone touches it, since it carries a static charge, and never make it fast to the boat." },
       "refs": ["Helicopter rescue"],
       "blocks": [
         { "p": "A rescue helicopter is too loud to shout over. Its crew brief you **by VHF** before they come in: listen, and do exactly what they tell you." },

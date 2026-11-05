@@ -6,6 +6,7 @@
       "id": "convert",
       "kicker": "Compass conversions",
       "title": "True on the chart, compass at the helm",
+      "qa": { "q": "How do I convert a true course to a compass course?", "a": "Subtract east, add west: first the **variation**, then the deviation for the heading you are on; compass to true is the reverse. So 058°T with 4°E variation and 2°W deviation is 054°M, then 056°C." },
       "refs": ["Chartwork — compass conversions"],
       "blocks": [
         { "p": "**Variation** comes from the chart's rose; **deviation** from the steering compass's card for the heading you are on: read it again for each new heading." },
@@ -18,6 +19,7 @@
       "id": "dr",
       "kicker": "Dead reckoning",
       "title": "Heading, log and clock",
+      "qa": { "q": "How do I work out a DR position?", "a": "From the last fix, lay off the true course steered and the **distance run** through the water. Distance is speed × time in decimal hours: 1 h 12 min at 5 knots is 1.2 × 5 = 6 miles." },
       "refs": ["Chartwork — DR position", "Chartwork — speed, time, distance", "Chartwork — plotting symbols", "Navigation — the log and its error"],
       "blocks": [
         { "p": "A **DR position** is the true course steered and the distance run through the water, laid off from the last fix. Distance is speed × time, with time in decimal hours: 1 h 12 min is 1.2 h." },
@@ -30,6 +32,7 @@
       "id": "log",
       "kicker": "The log book",
       "title": "Write it down while the plotter works",
+      "qa": { "q": "What should I write in the log book on passage, and how often?", "a": "Time, log reading and the heading really steered, every hour and at each alteration, with a position on paper. From that the **plot** can be rebuilt, so a dead plotter costs an hour of DR, not the night." },
       "refs": ["Navigation — the log book", "Navigation — keeping the plot at night", "Navigation — DR in fog"],
       "blocks": [
         { "p": "A plot can be rebuilt only from what was written: time, log reading and the heading really steered, each hour and at each alteration, with a position on paper. Then a dead plotter costs an hour of DR, not the night." },
@@ -44,6 +47,7 @@
       "id": "ep",
       "kicker": "Estimated position",
       "title": "Add leeway, then the stream",
+      "qa": { "q": "How do I allow for leeway and tidal stream to get an estimated position?", "a": "Apply **leeway** to the heading first, away from the wind, to get the water track; then lay off the stream's set and rate × time from its end. That point is the EP." },
       "refs": ["Chartwork — estimated position", "Chartwork — leeway", "Chartwork — ground track and water track", "Tidal streams — diamonds and atlases"],
       "blocks": [
         { "p": "**Leeway** pushes the boat away from the wind: wind on the port side, add it to the heading; on the starboard side, subtract. Greatest close-hauled, nil on a run, it shows as the angle between wake and stern. The result is the **water track**." },
@@ -58,6 +62,7 @@
       "id": "cts",
       "kicker": "Course to steer",
       "title": "Turn the triangle round",
+      "qa": { "q": "How do I work out a course to steer across a tidal stream?", "a": "Draw the track to the destination, lay off the stream for the period, and swing an arc of boat speed from its end to cut the track: that line is the **course to steer**. Never join the stream to the destination." },
       "refs": ["Chartwork — course to steer", "Chartwork — cross-tide passages"],
       "blocks": [
         { "p": "Across a stream you aim up-tide. Find the angle by drawing:" },
@@ -77,6 +82,7 @@
       "id": "eta",
       "kicker": "Speed made good",
       "title": "When you will arrive",
+      "qa": { "q": "How do I work out my ETA against a foul tide?", "a": "Divide the distance to go by the **speed made good** over the ground: log speed less the foul stream. 14 miles at 6 knots against 1.5 knots is 14 ÷ 4.5 = 3 h 07 min." },
       "refs": ["Chartwork — speed made good and ETA", "Passage making — motor-sailing against the tide"],
       "blocks": [
         { "p": "The ETA comes from the speed made good over the ground: the SOG from the triangle, or log speed plus a fair stream, less a foul one. Mind the decimals: 0.4 h is 24 minutes." },
@@ -88,6 +94,7 @@
       "id": "plotter",
       "kicker": "Plotter and errors",
       "title": "COG and SOG include the stream",
+      "qa": { "q": "Should I add the tidal stream to my plotter's COG and SOG?", "a": "No: **COG** and SOG are over the ground, with stream and leeway already included, so adding the stream would count it twice. Heading and log are through the water." },
       "refs": ["Navigation — the plotter: heading, COG, SOG", "Chartwork — accuracy of DR and EP", "Chartwork — EP against the fix"],
       "blocks": [
         { "p": "Heading and log are through the water; **COG** and **SOG** are over the ground, stream and leeway included. The COG line, not the bow, shows where you are going. Never add the stream to them: it would count twice." },

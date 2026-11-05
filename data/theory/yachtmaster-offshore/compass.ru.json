@@ -6,6 +6,7 @@
       "id": "compass",
       "kicker": "Рулевой компас",
       "title": "Курсовая черта, жидкость, склонение",
+      "qa": { "q": "Как привести склонение со старой карты к текущему году?", "a": "Умножьте **годовое изменение** с розы на число лет с её даты и учтите его: 4°10'W в 2016 году при изменении 8'E в год — это 2°50'W в 2026-м." },
       "refs": ["Compass — lubber line", "Compass — bowl and liquid", "Compass — damping", "Compass — heeling error", "Compass — magnetic interference", "Compass — variation and its annual change", "Compass — variation from the chart", "Compass — variation along a passage"],
       "blocks": [
         { "p": "Компас показывает курс, если его **курсовая черта** параллельна диаметральной плоскости. Пузырь заставляет картушку застревать и прыгать: сверяйтесь с другим компасом, долейте на берегу. После резкого поворота жидкость тянет картушку; курс записывайте, когда она успокоится. Держите приборы за **безопасным расстоянием от компаса**; больше всего его нужно динамику." },
@@ -18,6 +19,7 @@
       "id": "deviation",
       "kicker": "Девиация",
       "title": "Определение и таблица",
+      "qa": { "q": "Как проверить девиацию компаса в море?", "a": "На устойчивом курсе сравните компас с известным магнитным направлением: створом, табличным азимутом солнца или Полярной, спутниковым компасом, но никогда не с COG. Компас, показывающий меньше, имеет восточную **девиацию**." },
       "refs": ["Compass — deviation", "Compass — deviation card", "Compass — deviation card from a swing", "Compass — applying the deviation card", "Compass — swinging", "Compass — swinging on a distant mark", "Compass — deviation by the sun's azimuth", "Compass — deviation by the Pole Star", "Compass — checking deviation", "Compass — checking the deviation", "Compass — adjusting", "Compass — deviation in steel yachts", "Compass — bearings on a steel yacht"],
       "blocks": [
         { "p": "**Девиация** — собственный магнетизм судна; она меняется с курсом, поэтому таблица даёт её по курсам, и у каждого компаса таблица своя. Её находят на устойчивом курсе по известному магнитному направлению: створу, табличному азимуту солнца или Полярной, спутниковому компасу; никогда по COG, который течение уводит от курса. Компас, показывающий меньше, имеет восточную девиацию." },
@@ -30,6 +32,7 @@
       "id": "electronic",
       "kicker": "Электронный курс",
       "title": "Феррозонд, спутниковый компас, COG",
+      "qa": { "q": "Можно ли брать COG от GPS вместо датчика курса для наложения на радар?", "a": "Нет: **COG** — путь над грунтом, а не курс, и для наложения и MARPA он не годится. Спутниковый компас даёт истинный курс даже без хода." },
       "refs": ["Compass — fluxgate", "Compass — heading sensors", "Compass — satellite compass", "Compass — GNSS and magnetic compasses", "Electronic compass — calibration", "Electronic compass — heading error at speed", "Satellite compass"],
       "blocks": [
         { "table": { "head": ["Источник", "Даёт", "Слабость"], "rows": [
@@ -45,6 +48,7 @@
       "id": "lines",
       "kicker": "Линии положения",
       "title": "Что говорит каждая линия",
+      "qa": { "q": "В каком порядке брать пеленги для обсервации по трём ориентирам?", "a": "Сначала медленно меняющиеся, впереди и за кормой, последним — на траверзе, и чтобы линии пересекались ближе к **прямому углу**. Треугольник погрешностей размером с ошибки честен: считайте его областью." },
       "refs": ["Position lines — a single line", "Position lines — depth contour", "Position lines — soundings offshore", "Position lines — radar and racons", "Position lines — transits", "Position lines — radar bearings", "Position fixing — taking bearings", "Fixing — order of bearings", "Position fixing — angle of cut", "Position fixing — accuracy", "Position fixing — cocked hat", "Fixing — the cocked hat", "Position fixing — choosing marks", "Position fixing — horizontal sextant angles", "Position fixing — radar ranges", "Radar — fix by two ranges", "Radar — range and bearing accuracy", "Radar — range rings and VRM", "Position fixing — transit and a second line", "Position fixing — depth and a bearing", "Fixing — depth and bearing", "Fixing — a line of soundings", "Position fixing — offshore structures"],
       "blocks": [
         { "p": "Линия положения определяет место поперёк себя, а не вдоль: пеленг на огонь впереди проверяет боковое отклонение, изобата поперёк пути — пройденное расстояние, глубина помогает там, где изобаты пересекают вашу линию. Пеленги берите ближе к прямому углу: сначала медленно меняющиеся, впереди и за кормой, последним — на траверзе. 3° на 20 милях — это 1 миля." },
@@ -62,6 +66,7 @@
       "id": "running",
       "kicker": "Крюйс-пеленг и курсовые углы",
       "title": "Два пеленга одного ориентира",
+      "qa": { "q": "Как определить место по двум пеленгам одного маяка?", "a": "**Крюйс-пеленгом**: пеленг, пробег, второй пеленг, и первую линию переносят на плавание над грунтом — отрезки по воде и течение, сложенные как векторы. Пересечение линий и есть место." },
       "refs": ["Running fix — with tide", "Running fix — with stream", "Running fix — accuracy", "Running fix — a transferred range", "Running fix — a transferred contour", "Position fixing — doubling the angle on the bow", "Position fixing — four-point bearing", "Bow angles — 26½° and 45°"],
       "blocks": [
         { "p": "С одним ориентиром: пеленг, пробег, второй пеленг, и первую линию переносят на **плавание над грунтом**: отрезки по воде и часы течения складывают как векторы. Окружность дальности переносят за её центр, изобату — так же. Обсервация не лучше пробега: сомнение 0,4 уз за 2,5 ч — это 1 миля." },
@@ -79,6 +84,7 @@
       "id": "landfall",
       "kicker": "Открытие огней и подход к берегу",
       "title": "Дальность открытия и расстояние",
+      "qa": { "q": "На каком расстоянии маяк откроется из-за горизонта?", "a": "На **дальности открытия**: 2,08 × (√H + √h) миль при высотах в метрах, в пределах номинальной дальности. Высота на карте дана над MHWS, так что в малую воду прибавьте, насколько упала вода." },
       "refs": ["Position lines — rising lights", "Rising lights", "Rising lights — height of tide", "Rising lights — landfall", "Landfall — lights", "Landfall — sectored lights", "Landfall — light sectors", "Landfall — planning", "Landfall — identifying a light", "Distance off — vertical sextant angle"],
       "blocks": [
         { "p": "Огонь открывается на 2,08 × (√H + √h) миль, в пределах номинальной дальности; высота на карте дана над MHWS, так что в малую воду прибавьте, насколько упала вода. Огонь, видимый лишь с гребней, стоит на вашем горизонте — на дальности открытия. Аномальная рефракция покажет его много дальше. На каждый ожидаемый огонь — карточка: характеристика, дальность открытия, пеленг. Огонь на 15–20° в стороне всё же может быть вашим, если EP ошибается на мили: проверьте по времени. Ничего после срока открытия — вы в затенённом секторе. Смена цвета ставит вас на границу сектора." },
@@ -91,6 +97,7 @@
       "id": "trust",
       "kicker": "Доверие и запись",
       "title": "Какой обсервации верить, что записать",
+      "qa": { "q": "Как проверить, что место по GPS верное?", "a": "По независимому источнику: глубине, радару, огням или, в море, по EP от последней обсервации. Плоттер, AIS и ЦИВ питаются от одного **приёмника**, поэтому их согласие ничего не доказывает." },
       "refs": ["Position fixing — which fix to trust", "Fixing — which fix to trust", "Fixing — accuracy", "GNSS — cross-checks", "GNSS — integrity", "GNSS — jamming and spoofing", "Fixing — how often", "Recording fixes — the log book", "Recording fixes — chart symbols", "Recording fixes — a single position line", "Fixing — a single position line"],
       "blocks": [
         { "p": "Плоттер, AIS и ЦИВ питаются от одного приёмника: их согласие ничего не доказывает; как и HDOP без RAIM. Сверяйтесь по глубине, радару, огням или, в море, по EP от последней обсервации. Скачки, замершая скорость или неверная дата — подмена сигнала: назад к счислению от последней обсервации не по GNSS. Визуальное место в 0,5 мили от GNSS при 20 милях сходится с ним; ручные пеленги у стали несут одну общую ошибку." },

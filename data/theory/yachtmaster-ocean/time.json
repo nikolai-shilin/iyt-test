@@ -6,6 +6,7 @@
       "id": "arc",
       "kicker": "Arc and time",
       "title": "Fifteen degrees are one hour",
+      "qa": { "q": "How do I convert longitude into time to get UT from local mean time?", "a": "At 15° to the hour: 1° is 4 minutes, 1′ is 4 seconds. Then UT is **local mean time** plus west longitude in time, or minus east longitude in time." },
       "refs": ["Time — arc and time", "Time — equation of time"],
       "blocks": [
         {"p": "The Earth turns 360° in 24 hours, so longitude and time are one thing in two units. **Local mean time** (LMT) is mean time on your meridian; **UT** is LMT at Greenwich."},
@@ -24,6 +25,7 @@
       "id": "zone",
       "kicker": "Zone time and ship's time",
       "title": "The clock the crew lives by",
+      "qa": { "q": "How do I convert ship's time to UT using the zone description?", "a": "Add the **zone description**: UT = zone time + ZD, where ZD is the longitude divided by 15 and rounded, positive west and negative east. Ship's time 1530 with ZD +4 is 1930 UT." },
       "refs": ["Time — zone time", "Time — shore time and ship's time", "Time — ship's time and the watch rota"],
       "blocks": [
         {"p": "The world is cut into 24 **zones** 15° wide, centred on 0°, 15°, 30° and so on, with boundaries at 7°30′, 22°30′, 37°30′ … The **zone description** (ZD) is the longitude divided by 15 and rounded, positive west and negative east."},
@@ -37,6 +39,7 @@
       "id": "dateline",
       "kicker": "The date line",
       "title": "Crossing the 180th meridian",
+      "qa": { "q": "Do I gain or lose a day crossing the date line westbound?", "a": "You skip a day: crossing the **date line** westbound into east longitude, the date goes forward; eastbound you repeat one. Hours and minutes do not change, and UT and its date run on." },
       "refs": ["Time — the date line"],
       "blocks": [
         {"p": "East of 180° the zone is ZD +12, west of it ZD −12: the same clock time, a day apart. Crossing westbound into east longitude you skip a day, the date goes forward; eastbound you repeat one. Hours and minutes do not change."},
@@ -48,6 +51,7 @@
       "id": "watch",
       "kicker": "Deck watch error and rate",
       "title": "Keeping UT to the second",
+      "qa": { "q": "How do I work out my deck watch error from its daily rate?", "a": "Error now = last error + **rate** × days, the rate being how the error changes each day. A watch 18 s fast and gaining 2 s a day is 28 s fast five days later." },
       "refs": ["Time — chronometer error and rate", "Time — time signals", "Time — timing a sight"],
       "blocks": [
         {"p": "A watch is never right; it is **fast** or **slow** by a known error, and the **rate** is how that error changes each day: error now = last error + rate × days. Heat alters the rate, so in the tropics use the rate from recent checks, not the one from Biscay."},
@@ -67,6 +71,7 @@
       "id": "almanac",
       "kicker": "Entering the almanac",
       "title": "From UT to GHA and declination",
+      "qa": { "q": "How do I get the Sun's GHA for a sight taken between whole hours?", "a": "Take the GHA for the whole hour of UT from the **daily pages**, by Greenwich date, then add the increment for the minutes and seconds from the increments table; correct Dec by d's share." },
       "refs": ["Time — the almanac's daily pages", "Time — the almanac's increments page"],
       "blocks": [
         {"p": "The **daily pages** give GHA and Dec for every whole hour of UT, by Greenwich date. The **increments** table adds the minutes and seconds, with columns for the Sun and planets at 15° an hour, Aries at 15°02.5′ and the Moon. The Dec changes by d an hour; for the minutes add or subtract d's share, the sign by inspection of the next hour."},
@@ -78,6 +83,7 @@
       "id": "events",
       "kicker": "Sunrise, twilight, meridian passage",
       "title": "The almanac's times are LMT",
+      "qa": { "q": "Are the almanac's sunrise, sunset and twilight times in UT or local time?", "a": "In **LMT**, against latitude: interpolate for yours, add west longitude in time or subtract east for UT, then take off the ZD for ship's time." },
       "refs": ["Time — sunrise, sunset and twilight in UT", "Time — high latitudes", "Time — the Moon's meridian passage", "Time — planets' and stars' meridian passage"],
       "blocks": [
         {"p": "Sunrise, sunset, twilight and meridian passage are tabulated in **LMT** against latitude: interpolate for yours, add west longitude in time (subtract east) for UT, then take off the ZD for ship's time. Shortcut: ship's time is the LMT plus 4 minutes for every degree you are west of the zone's central meridian."},

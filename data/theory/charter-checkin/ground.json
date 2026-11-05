@@ -6,6 +6,7 @@
       "id": "tackle",
       "kicker": "Anchor and chain",
       "title": "Sign for what you have seen at the bow",
+      "qa": { "q": "What should I check on the anchor and chain before signing for a charter yacht?", "a": "Go to the bow and see it yourself: ask for the **chain marks** and write their colour code on the form, check the bitter end is lashed with rope you can cut, and photograph a cracked roller or missing pin." },
       "refs": ["Check-in: ground tackle", "Check-in: anchor chain", "Check-in: anchor locker", "Check-in: bow roller", "Check-in: anchor swivel", "Check-in: second anchor", "Check-in: anchor rode"],
       "blocks": [
         { "p": "Go to the bow before you sign for the ground tackle: anchor on the roller, chain in the locker. Ask for the **chain marks** and write the colour code on the form: scope is counted by the marks. The bitter end should be lashed with rope you can cut in an emergency, not shackled hard." },
@@ -17,6 +18,7 @@
       "id": "windlass",
       "kicker": "Windlass",
       "title": "Test every control, keep hands off the chain",
+      "qa": { "q": "Why does the anchor windlass do nothing when I press the foot switch?", "a": "Usually its **breaker** is off. Switch it on and use the windlass with the engine running, or its current flattens the house battery. If the motor runs but the gypsy does not turn, the clutch is slipping." },
       "refs": ["Check-in: windlass", "Check-in: windlass clutch", "Check-in: windlass power", "Windlass safety"],
       "blocks": [
         { "fig": { "type": "panel", "gauges": [["Volts", "12.6", false], ["Engine", "stopped", false], ["Windlass", "OFF", true]], "lines": ["Foot switch: nothing", "Breaker on, engine running, try again"] } },
@@ -28,6 +30,7 @@
       "id": "anchoring",
       "kicker": "Anchoring",
       "title": "Sand, scope, and a pull to prove it",
+      "qa": { "q": "How much anchor chain should I let out in the Mediterranean?", "a": "With all chain, **4–5 times the depth**, measured from the bow roller, and more for a windy night: in 6 m with the roller 1 m up, about 30 m. Drop it on pale sand, not weed or rock." },
       "refs": ["Base briefing: anchoring", "Anchoring: drag alarm", "COLREGs Rule 30"],
       "blocks": [
         { "fig": { "type": "bay", "wind": 0, "land": "M0 0 H320 V30 H0 Z M0 30 H40 V200 H0 Z M280 30 H320 V200 H280 Z", "spots": [[110, 95, "A"], [200, 130, "B"], [160, 55, "C"]], "labels": [[110, 118, "dark weed"], [200, 153, "pale sand"], [200, 55, "rocks, 3 m"]], "note": "Depth 6–8 m across the bay" }, "cap": "B: pale sand holds. The anchor skids over weed and jams in rock." },
@@ -40,6 +43,7 @@
       "id": "load",
       "kicker": "The chain's load",
       "title": "The windlass lifts chain, nothing more",
+      "qa": { "q": "Can I leave the anchor chain on the windlass overnight?", "a": "No: the load goes onto a **snubber** hooked to the chain and made fast to a cleat, with the chain slack on the gypsy behind it. A catamaran uses a bridle to both bows." },
       "refs": ["Base briefing: anchoring", "Base briefing: catamaran anchoring"],
       "blocks": [
         { "fig": { "type": "anchor", "depth": "6 m", "title": "For the night", "lines": ["Snubber hooked on", "Load on a cleat", "Chain slack on the gypsy"] } },
@@ -51,6 +55,7 @@
       "id": "quay",
       "kicker": "Stern-to",
       "title": "Quays, lazy lines, buoys and lines ashore",
+      "qa": { "q": "How far from the quay do I drop the anchor when mooring stern-to?", "a": "About **four boat lengths** off when there are no lazy lines: drop it closer and it never bites. Come in square to the gap, then reverse in." },
       "refs": ["Base briefing: stern-to with the anchor", "Mooring: stern-to in an onshore wind", "Mooring: lazy lines", "Check-in: deck gear", "Base briefing: return", "Base briefing: mooring buoys", "Mooring: slip lines", "Mooring: crossed anchors", "Base briefing: lines ashore", "Check-in: passerelle"],
       "blocks": [
         { "fig": { "type": "bay", "wind": 90, "land": "M0 0 H320 V40 H0 Z", "spots": [[160, 72, "A"], [160, 128, "B"], [160, 182, "C"]], "labels": [[160, 25, "town quay · gap between two boats"], [200, 72, "15 m"], [200, 128, "50 m"], [200, 182, "100 m"]], "note": "Boat 14 m · depth 5 m" }, "cap": "B: square to the gap, then reverse in." },
@@ -68,6 +73,7 @@
       "id": "lines",
       "kicker": "Lines and fenders",
       "title": "Long enough, sound, and guarded from chafe",
+      "qa": { "q": "How long should a stern line be for Med mooring?", "a": "At least a **boat length**, because it goes to the quay and back; add a long line for the shore. Guard it from chafe at the fairlead and the quay edge: chafe, not strain, parts mooring lines." },
       "refs": ["Check-in: mooring lines", "Check-in: fenders", "Seamanship: fenders", "Mooring: fenders", "Mooring: chafe"],
       "blocks": [
         { "p": "A stern line goes to the quay and back, so it is at least a boat length; add a long line for the shore. A hard, chafed line is the base's to replace. Count the fenders and have a flat one pumped up." },
@@ -82,6 +88,7 @@
       "id": "dinghy",
       "kicker": "Dinghy and outboard",
       "title": "The gear a waiver often does not cover",
+      "qa": { "q": "Does the damage waiver cover theft of the charter dinghy and outboard?", "a": "Often not: theft of the dinghy and outboard is often outside the **damage waiver**, so read the dinghy clause. Lift and lock the dinghy at night, and try the outboard lock's key at the pontoon." },
       "refs": ["Check-in: dinghy", "Check-in: outboard", "Charter contract — dinghy", "Dinghy handling: outboard", "Dinghy handling", "Check-in: davits", "Catamaran: dinghy on the davits"],
       "blocks": [
         { "p": "Check the dinghy inflated hard with every valve closed, its drain plug, oars and pump, and the boat's name on the tubes. Read the dinghy clause: theft of the dinghy and outboard is often outside the damage waiver. So lift and lock it at night, and try the outboard lock's key at the pontoon." },

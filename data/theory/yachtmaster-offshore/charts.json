@@ -6,6 +6,7 @@
       "id": "projection",
       "kicker": "Mercator and gnomonic",
       "title": "What the projection does to distance and course",
+      "qa": { "q": "How do I measure distance correctly on a Mercator chart?", "a": "On the **latitude scale** level with the leg: Mercator scale grows towards the pole as the secant of the latitude, so the scale in the chart's title holds only at the latitude it names." },
       "refs": ["Charts — Mercator projection", "Charts — distance on the latitude scale", "Charts — gnomonic charts and great circles"],
       "blocks": [
         { "p": "On a **Mercator** chart a straight line is a rhumb line: one true course throughout. The price is scale, which grows towards the pole as the secant of the latitude. Measure distance on the latitude scale level with the leg; the scale in the title holds only at the latitude it names." },
@@ -18,6 +19,7 @@
       "id": "sailings",
       "kicker": "Latitude and longitude",
       "title": "Course and distance by calculation",
+      "qa": { "q": "How do I calculate course and distance between two positions without plotting them?", "a": "By **Mercator sailing**: tan course = d.long ÷ the difference of meridional parts, and distance = d.lat ÷ cos course. To work a position forward, use mid-latitude sailing, with departure = d.long × cos latitude." },
       "refs": ["Charts — latitude and longitude", "Charts — latitude and longitude — mid-latitude sailing", "Charts — Mercator projection — Mercator sailing"],
       "blocks": [
         { "p": "A minute of latitude is a mile; a minute of longitude is a mile only on the equator. East–west miles are **departure**: d.long × cos latitude. Decimals of a degree are not minutes: 0.25° is 15.0'. On a chart too small to plot on, work the position by **mid-latitude sailing**, or a long leg by **Mercator sailing**." },
@@ -29,6 +31,7 @@
       "id": "scale",
       "kicker": "Scale, folio and datum",
       "title": "How much a millimetre is worth",
+      "qa": { "q": "Which chart should I plot on when two charts of the same area disagree?", "a": "On the **largest-scale** chart that covers the leg: where two charts differ, believe the larger scale. Offshore, carry the plot onto the next chart by latitude and longitude." },
       "refs": ["Charts — scale and the chart folio", "Charts — scale and the chart folio — the passage folio", "Charts — scale and the chart folio — small-scale chart error", "Charts — horizontal datum", "Charts — chart datum", "Charts — chart datum — units"],
       "blocks": [
         { "p": "Plot on the largest-scale chart that covers the leg; where two charts differ, believe the larger scale. The **folio** holds, on paper, the passage chart and the approaches and plans of the destination, every port of refuge and any pilotage on the way. Offshore, carry the plot onto the next chart by latitude and longitude." },
@@ -40,6 +43,7 @@
       "id": "chartwork",
       "kicker": "Chartwork",
       "title": "Instruments, bearings, speed and time",
+      "qa": { "q": "How do I convert a true course to magnetic?", "a": "Add westerly **variation**, subtract easterly: 205°T with 6°W variation is 211°M. Set the variation on a Breton plotter and it is applied for you." },
       "refs": ["Chartwork instruments", "Chartwork instruments — the plotter", "Chartwork instruments — the variation setting", "Chartwork instruments — the hand-bearing compass", "Chartwork instruments — pencils", "Chartwork instruments — care and accuracy", "Charts — true, magnetic and compass", "Charts — true, magnetic and compass — light sectors", "Distance, speed and time", "Distance, speed and time — the log", "Distance, speed and time — ETA", "Distance, speed and time — knots"],
       "blocks": [
         { "p": "A **Breton plotter** needs only a meridian or parallel under its grid, never the table's edge; its arrow points the way you go, or you read the reciprocal. Creeping dividers and a bowed plotter falsify every leg: 3° over 60 M is 3 M. Plot lightly in soft pencil. Take hand bearings where a transit has proved the compass." },
@@ -53,6 +57,7 @@
       "id": "offshore",
       "kicker": "Offshore symbols",
       "title": "Routes, installations and areas",
+      "qa": { "q": "How close can a yacht go to an oil platform or rig?", "a": "No closer than its **500 m safety zone**, which rigs and single buoy moorings have too. In fog a platform sounds Mo(U), heard about 2 M off." },
       "refs": ["Chart symbols — traffic separation schemes", "Chart symbols — traffic separation schemes — deep-water routes", "Chart symbols — traffic separation schemes — precautionary areas", "Chart symbols — traffic separation schemes — areas to be avoided", "Chart symbols — offshore installations — platforms", "Chart symbols — offshore installations — lights", "Chart symbols — offshore installations — fog signals", "Chart symbols — offshore installations — safety zones", "Chart symbols — offshore installations — single buoy moorings", "Chart symbols — offshore installations — wellheads", "Chart symbols — offshore areas — wind farms", "Chart symbols — offshore areas — wind farms — lights", "Chart symbols — offshore areas — wind farms — the rules", "Chart symbols — offshore areas — submarine cables", "Chart symbols — offshore areas — submarine exercise areas", "Chart symbols — offshore areas — dumping grounds", "Offshore buoys and lightvessels", "Offshore buoys and lightvessels — T&P notices"],
       "blocks": [
         { "tiles": [
@@ -75,6 +80,7 @@
       "id": "publications",
       "kicker": "Publications and corrections",
       "title": "What to open, and how to keep it current",
+      "qa": { "q": "How far away will I see a lighthouse at night?", "a": "At the lesser of two ranges: the **geographical range**, 2.08 × (√H + √h) miles for heights in metres, and the luminous range, the nominal range cut down by tonight's visibility." },
       "refs": ["Nautical publications — Sailing Directions", "Nautical publications — Sailing Directions — passage notes", "Nautical publications — List of Lights", "Nautical publications — List of Lights — luminous and geographical range", "Nautical publications — List of Lights — geographical range", "Nautical publications — List of Radio Signals", "Nautical publications — almanacs", "Nautical publications — routeing charts", "Nautical publications — tidal stream atlases", "Notices to Mariners — keeping charts corrected", "Notices to Mariners — keeping charts corrected — T&P", "Notices to Mariners — keeping charts corrected — new editions", "Notices to Mariners — keeping charts corrected — T&P notices", "Navigational warnings", "Navigational warnings — NAVAREAs", "Navigational warnings — NAVAREA III"],
       "blocks": [
         { "table": { "head": ["Publication", "What it gives"], "rows": [
@@ -94,6 +100,7 @@
       "id": "enc",
       "kicker": "Electronic charts",
       "title": "Settings that make the plotter worth trusting",
+      "qa": { "q": "How do I set the safety contour on my chart plotter?", "a": "**Safety contour** = draught + squat + half the swell + margin; the plotter then bolds the next deeper contour in the cell. Only an ENC can sound the alarm, not an RNC, which is a picture of the paper chart." },
       "refs": ["Electronic charts — ENC and RNC", "Electronic charts — ENC and RNC — safety contour", "Electronic charts — ENC and RNC — safety depth", "Electronic charts — ENC and RNC — look-ahead", "Electronic charts — ENC and RNC — route check", "Electronic charts — ENC and RNC — alarms", "Electronic charts — ENC and RNC — alarms — isolated dangers", "Electronic charts — ENC and RNC — display levels", "Electronic charts — ENC and RNC — usage bands", "Electronic charts — ENC and RNC — over-zoom", "Electronic charts — ENC and RNC — zoom at speed", "Electronic charts — ENC and RNC — the paper backup"],
       "blocks": [
         { "p": "An **RNC** is a picture of the paper chart; an **ENC** is data, so only an ENC can sound an alarm, about what you set and what its cells hold." },

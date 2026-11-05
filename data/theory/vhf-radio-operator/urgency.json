@@ -6,6 +6,7 @@
       "id": "levels",
       "kicker": "Which call",
       "title": "How bad is it, and for whom?",
+      "qa": { "q": "What is the difference between MAYDAY, PAN-PAN and SÉCURITÉ?", "a": "MAYDAY is for **grave and imminent danger** to a vessel or a life; PAN-PAN when you need help urgently but nobody is in that danger yet; SÉCURITÉ when you need nothing yourself and only warn others." },
       "refs": ["Urgency call", "Urgency or distress"],
       "blocks": [
         { "p": "The test is **grave and imminent danger** to the vessel or to a person. If it is there, the call is MAYDAY. If you need help urgently but nobody is in that danger yet, it is **PAN-PAN**, the urgency signal. If you need nothing yourself and only want to warn others, it is **SÉCURITÉ**, the safety signal." },
@@ -21,6 +22,7 @@
       "id": "panpan",
       "kicker": "The urgency call",
       "title": "PAN-PAN three times, then who, then you",
+      "qa": { "q": "How do I make a PAN-PAN call on the VHF?", "a": "On channel 16 say **PAN-PAN** three times, ALL STATIONS (or the one station you want) three times, THIS IS and your name three times; then your position, what is wrong, the help you need, and OVER." },
       "refs": ["Urgency call"],
       "blocks": [
         { "p": "Make the call on channel 16. Say **PAN-PAN three times**, then the station you are calling three times, then THIS IS and your own name three times. ALL STATIONS reaches everyone in range. If only one station needs to hear you, name it instead: PAN-PAN three times, then Olympia Radio three times." },
@@ -33,6 +35,7 @@
       "id": "after",
       "kicker": "After the call",
       "title": "Stay on watch, cancel or upgrade",
+      "qa": { "q": "When should I cancel a PAN-PAN, and when upgrade it to MAYDAY?", "a": "**Upgrade to MAYDAY** the moment the danger becomes grave and imminent. If the problem goes away, say the engine starts again, cancel the PAN-PAN by telling all stations you need no help, so nobody keeps looking for you." },
       "refs": ["Urgency call"],
       "blocks": [
         { "p": "Once a coast station has your call, stay reachable: keep a listening watch on 16, or on the channel it gave you, until help arrives. If the problem goes away, say the engine starts again, **cancel** the PAN-PAN: tell all stations you need no help, so that nobody keeps looking for you." },
@@ -44,6 +47,7 @@
       "id": "medical",
       "kicker": "Medical advice",
       "title": "A doctor by radio",
+      "qa": { "q": "How do I get a doctor's advice over the VHF?", "a": "Make a PAN-PAN **asking for medical advice** on 16; the coast station moves you to a working channel and puts you through to a doctor. Have the patient's age, symptoms and the first aid given ready." },
       "refs": ["Urgency — medical", "Urgency or distress"],
       "blocks": [
         { "p": "An injury or illness that needs a doctor's view, but does not threaten life right now, is a PAN-PAN **asking for medical advice**. The coast station acknowledges on 16 and usually asks you to change to a working channel. Change, and carry on there: long urgency traffic moves off 16 to keep it free. The station then puts you through to a doctor." },
@@ -59,6 +63,7 @@
       "id": "securite",
       "kicker": "The safety call",
       "title": "Announce on 16, warn on a working channel",
+      "qa": { "q": "How do I warn other boats on the VHF about a container adrift?", "a": "Announce it on 16: **SÉCURITÉ** three times, ALL STATIONS, your name, what the warning is about and which working channel to listen on. Then give the warning itself on that working channel." },
       "refs": ["Safety call"],
       "blocks": [
         { "p": "**SÉCURITÉ** introduces a navigational or weather warning. Coast stations use it for gale warnings and dangers to navigation. Any station may send one, your yacht included: for a drifting container, a mooring buoy adrift in a harbour approach, an unlit mark." },
@@ -74,6 +79,7 @@
       "id": "priority",
       "kicker": "Priority",
       "title": "Who gives way on the air",
+      "qa": { "q": "What do I do if a PAN-PAN breaks in while I am sending a SÉCURITÉ?", "a": "Stop, listen and note it: calls rank in a fixed **priority**, distress, urgency, safety, routine, and the higher one takes the channel. Finish your SÉCURITÉ later, when 16 is clear." },
       "refs": ["Priority of calls", "Safety call"],
       "blocks": [
         { "p": "Calls rank in a fixed order, and the higher one takes the channel. If a PAN-PAN breaks in while you are giving a SÉCURITÉ, stop, listen and note it, and finish your message later, when 16 is clear." },

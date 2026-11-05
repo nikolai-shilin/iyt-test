@@ -6,6 +6,7 @@
       "id": "systems",
       "kicker": "Pressure systems",
       "title": "Which way the wind turns",
+      "qa": { "q": "How can I tell from the wind which way the low is?", "a": "By **Buys Ballot's law**: stand with your back to the wind, and the low is on your left in the northern hemisphere, on your right in the southern." },
       "refs": ["Pressure systems — wind round a high", "Pressure systems — Buys Ballot in the south", "Pressure systems — routing round a high", "Pressure systems — the blocking high", "Pressure systems — the col", "Pressure systems — Azores high and the heat low"],
       "blocks": [
         { "p": "Northern hemisphere: the wind turns **clockwise round a high**, slightly outwards, anticlockwise round a low, slightly inwards; in the south both reverse. **Buys Ballot**: back to the wind, the low is on your left in the north, your right in the south." },
@@ -20,6 +21,7 @@
       "id": "depressions",
       "kicker": "Depressions",
       "title": "The track decides your wind",
+      "qa": { "q": "Will the wind veer or back as a depression passes me?", "a": "Face the way the low is travelling: in the northern hemisphere the wind **veers** on the right of its track and backs on the left. On the right its motion also adds to its wind." },
       "refs": ["Depressions — the jet stream as context", "Depressions — the cut-off low and the jet", "Depressions — the track and the wind on board", "Depressions — the stronger side of the track", "Depressions — the centre passing over you", "Depressions — explosive deepening", "Forecast products — satellite images", "Depressions — ex-tropical storms", "Depressions — the polar low", "Depressions — the medicane"],
       "blocks": [
         { "p": "The **jet stream** steers the lows: under a strong, straight jet they race through in series; a **cut-off** low wanders unpredictably. Face the way a low travels (northern hemisphere): the wind **veers** on the right of its track, **backs** on the left." },
@@ -36,6 +38,7 @@
       "id": "fronts",
       "kicker": "Fronts",
       "title": "Occlusions and secondary lows",
+      "qa": { "q": "Where does a secondary low form, and what does it do to the wind?", "a": "A **secondary low** forms at the triple point, where the fronts meet, or as a wave on a trailing cold front: the wind backs again, rain returns and the glass falls. Its strongest wind lies away from the parent." },
       "refs": ["Surface analysis — front symbols", "Fronts — the occlusion", "Depressions — occlusion and the triple point", "Depressions — a wave on the cold front", "Depressions — the secondary low", "Fronts — timing the cold front", "Fronts — the sea after a veer"],
       "blocks": [
         { "p": "Triangles mark a cold front, semicircles a warm one; both on one side an **occlusion**, on opposite sides a **stationary front**. An occlusion brings one rain band and one veer, no warm sector." },
@@ -49,6 +52,7 @@
       "id": "charts",
       "kicker": "Wind from the chart",
       "title": "Isobars to the wind on deck",
+      "qa": { "q": "How do I work out the wind speed from isobar spacing on a chart?", "a": "Measure the spacing on the latitude scale and enter the **geostrophic scale**; take less round a low, more round a high, then about 0.8 of that at the sea, backed 15°." },
       "refs": ["Synoptic charts — the geostrophic scale", "Surface analysis — the geostrophic scale with latitude", "Surface analysis — measuring the isobar spacing", "Synoptic charts — gradient wind and curvature", "Synoptic charts — forecasting wind from isobars", "Synoptic charts — prognosis valid time", "Beaufort scale — the height of the anemometer", "Beaufort scale — the sea criterion", "Beaufort scale — the sea at force 6", "Forecast products — Beaufort terms in a bulletin", "Storm warnings and sea-state terms"],
       "blocks": [
         { "p": "Measure the spacing in miles on the **latitude scale** and enter the **geostrophic scale**, drawn for one interval and latitude: the same spacing gives less wind further north. Round a low the real (**gradient**) wind is less than the scale shows, round a high more; at the sea about 0.8 of that, backed 15°. A prognosis is valid at data time plus step." },
@@ -66,6 +70,7 @@
       "id": "forecasts",
       "kicker": "Forecast products",
       "title": "How far to trust each",
+      "qa": { "q": "How far can I trust a GRIB file against the gale warning?", "a": "Less than the bulletin: a **GRIB** is one model run, hours old, giving the mean wind. Believe a gale that the bulletin and the ensemble show but your GRIB lacks." },
       "refs": ["Forecast products — GMDSS, NAVTEX and SafetyNET", "Forecast products — NAVTEX on passage", "Forecast products — HF radiofax", "Forecast products — shipping forecast areas", "Forecast products — the high seas synopsis", "Forecast products — the synopsis wording", "Forecast products — GRIB model runs", "Forecast products — model resolution at landfall", "Forecast products — ensemble forecasts", "Forecast products — ensemble spread", "Forecast products — the ensemble for routeing", "Forecast products — GRIB, ensemble and the official forecast", "Forecast products — satellite winds and the GRIB", "Forecast products — weather routing", "Weather routing — the polars", "Forecasts — your own observations", "Barometer — the daily pressure swing", "Barometer — the tendency", "Barometer — the rate of fall and a storm", "Barometer — the tendency on a moving yacht"],
       "blocks": [
         { "table": { "head": ["Source", "What it gives"], "rows": [
@@ -83,6 +88,7 @@
       "id": "sea",
       "kicker": "Sea state and heavy weather",
       "title": "The sea does the damage",
+      "qa": { "q": "How much bigger than the significant wave height is the biggest wave?", "a": "Nearly twice: **significant height** (Hs) is the mean of the highest third of the waves, and the biggest single wave is nearly twice it." },
       "refs": ["Sea state — significant and maximum wave height", "Sea state — fetch and duration tables", "Sea state — fetch and duration", "Sea state — swell and wind sea", "Sea state — swell travel", "Sea state — steepness and breaking waves", "Sea state — wind against an ocean current", "Sea state — the continental shelf edge", "Sea state — the shelf and the deep sea", "Sea state — wavelength and a motor yacht", "Sea state — a motor yacht's limits", "Heavy weather — sea room or a port of refuge", "Heavy weather — sea room for heaving to", "Heavy weather — tactics and sea room", "Heavy weather — sea room or a port", "Heavy weather — a port of refuge", "Heavy weather — the window and its margin", "Heavy weather — after the gale"],
       "blocks": [
         { "p": "**Significant height** (Hs) is the mean of the highest third; the biggest wave is nearly twice it. The sea is limited by the smaller of **fetch** and duration. **Swell** runs on from its storm, whatever the local wind. Steepness, not height, breaks crests: a short wind sea beats a higher long swell, worst against a current." },
@@ -96,6 +102,7 @@
       "id": "local",
       "kicker": "Landfall weather",
       "title": "Fog, coasts and thunderstorms",
+      "qa": { "q": "What causes sea fog, and when does it clear?", "a": "Sea fog is **advection fog**: moist air cooled below its dew point by colder water, as over upwelling. It lasts until a cold front brings dry air." },
       "refs": ["Fog — types at sea", "Fog — coastal upwelling", "Fog — predicting it from the dew point", "Fog — sea smoke", "Fog — clearing behind a cold front", "Fog — a landfall decision", "Local effects — coastal convergence", "Local effects — high islands", "Local effects — swell round a point", "Local effects — reflected seas off cliffs", "Local effects — the calima", "Thunderstorms — at sea and over land", "Forecast products — CAPE in a GRIB", "Squalls — tracking a cell on radar", "Thunderstorms — dodging a cell offshore", "Thunderstorms — the squall line", "Waterspouts", "Squalls — the gust front", "Thunderstorms — St Elmo's fire", "Thunderstorms — lightning at sea", "Thunderstorms — after a near strike"],
       "blocks": [
         { "p": "Sea fog is **advection fog**: moist air cooled below its dew point by colder water, as over upwelling. It lasts until a cold front brings dry air: pick the wide, buoyed entrance. **Sea smoke** is steam where very cold air crosses warmer water." },

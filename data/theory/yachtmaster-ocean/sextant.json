@@ -6,6 +6,7 @@
       "id": "parts",
       "kicker": "The instrument",
       "title": "Two mirrors, an arc and a drum",
+      "qa": { "q": "How do I read a sextant micrometer without getting the degree wrong?", "a": "Degrees from the last mark the index passed on the arc, minutes from the **micrometer drum**, tenths from its vernier. A drum near 57 belongs to the degree not yet reached: just short of 42° reads 41°57.3′." },
       "refs": ["Sextant — parts", "Sextant — reading the micrometer", "Sextant — care"],
       "blocks": [
         {"p": "The micrometer drum moves the **index arm** along the arc, and the **index mirror** turns with it. The **horizon mirror** and the telescope are fixed to the frame: through the clear half of the horizon mirror you see the sea horizon, in its silvered half the body, reflected from the index mirror. Shades sit in front of each mirror."},
@@ -22,6 +23,7 @@
       "id": "adjust",
       "kicker": "Adjustments and index error",
       "title": "Three errors, in a fixed order",
+      "qa": { "q": "Do I add or subtract sextant index error?", "a": "**Index error** read on the arc, above zero, is subtracted; read off the arc, below zero, it is added. On the arc, take it off; off the arc, put it on." },
       "refs": ["Sextant — adjustments", "Sextant — index error"],
       "blocks": [
         {"p": "Each adjustment can upset the next, so the order is fixed: perpendicularity, side error, then index error. The first is cured by the screw behind the index mirror, the second by the side screw of the horizon mirror. Collimation, the telescope not parallel to the frame, is rare."},
@@ -35,6 +37,7 @@
       "id": "sight",
       "kicker": "Taking a sight",
       "title": "The body down to the horizon",
+      "qa": { "q": "How do I know my sextant is vertical when I take a sight?", "a": "**Rock the sextant**: the body swings in an arc, and only at the lowest point of that arc is the sextant vertical. Tilted, it reads too high." },
       "refs": ["Sextant — taking a sight", "Sextant — averaging sights"],
       "blocks": [
         {"p": "Swing in the index shades before you look for the Sun; a horizon shade only against glare. Find the body near zero and move it down to the horizon, or, sextant inverted, bring the horizon up to a star. Rock the sextant: the body swings in an arc, and only at its lowest point is the sextant vertical; tilted, it reads too high."},
@@ -48,6 +51,7 @@
       "id": "corrections",
       "kicker": "Altitude corrections",
       "title": "From Hs to Ho, in one order",
+      "qa": { "q": "In what order do I correct a sextant altitude from Hs to Ho?", "a": "Index error and **dip** turn Hs into the apparent altitude Ha; Ha then enters the almanac's main correction table, which gives Ho. For the Sun that correction combines refraction and semi-diameter." },
       "refs": ["Sextant — altitude corrections"],
       "blocks": [
         {"p": "Index error and **dip** turn the sextant altitude Hs into the apparent altitude Ha; Ha enters the almanac's main correction table, which gives the observed altitude Ho. Your eye is above the sea and sees the horizon below the true horizontal; that is the dip: 1.76′ × √(height of eye in metres), more the higher you stand."},
@@ -67,6 +71,7 @@
       "id": "moon",
       "kicker": "The Moon and the planets",
       "title": "Parallax and the lit limb",
+      "qa": { "q": "Is the Moon's parallax correction added or subtracted?", "a": "Always added: from the Earth's centre the Moon stands higher than from the surface, so **parallax**, HP × cos Ha, goes on. Use the Moon's own table, and subtract the SD for the upper limb." },
       "refs": ["Sextant — altitude corrections"],
       "blocks": [
         {"p": "The Moon is close enough for **parallax**: from the Earth's centre it stands higher than from the surface, by the horizontal parallax HP × cos Ha, always added. Use the Moon's own table with the day's HP and SD, not the Sun's, and when the lit limb is the upper one, subtract the SD."},
@@ -78,6 +83,7 @@
       "id": "errors",
       "kicker": "What an error does",
       "title": "One minute is one mile",
+      "qa": { "q": "How far out is my position line if the sextant altitude is one minute wrong?", "a": "One mile: every minute of altitude is a mile on the position line. Too high puts the line too far **towards** the body, too low, away; a sign applied the wrong way counts twice." },
       "refs": ["Sextant — altitude corrections", "Sextant — index error", "Sextant — reading the micrometer"],
       "blocks": [
         {"p": "Every minute of altitude is a mile on the position line. An altitude too high puts the line too far **towards** the body, too low, away; a sign applied the wrong way counts twice. A constant error in all the sights of a fix, an index error in doubt or a dip spoilt by strange air, shifts every line the same way."},

@@ -6,6 +6,7 @@
       "id": "gc",
       "kicker": "Great circle and rhumb line",
       "title": "Shortest track or steady course",
+      "qa": { "q": "Why is the straight line on a Mercator chart not the shortest route across an ocean?", "a": "Because that straight line is a **rhumb line**: one course all the way, but longer. The shortest track is the great circle, which on a Mercator chart bows towards the nearer pole." },
       "refs": ["Great circle sailing — the shortest route", "Great circle sailing — on the Mercator chart", "Rhumb line — the Mercator chart", "Great circle sailing — the saving", "Great circle sailing — the plotter", "Parallel sailing — and the great circle", "Great circle sailing — across the equator"],
       "blocks": [
         { "p": "A **great circle** is cut by a plane through the Earth's centre; its shorter arc is the shortest track between two points. A **rhumb line** crosses every meridian at the same angle: one course all the way, straight on a Mercator chart, but longer." },
@@ -18,6 +19,7 @@
       "id": "distance",
       "kicker": "Distance and initial course",
       "title": "A triangle on the globe",
+      "qa": { "q": "How do I calculate the great circle distance between two positions?", "a": "Solve the **spherical triangle** of pole, departure and destination: cos d = sin L1 × sin L2 + cos L1 × cos L2 × cos DLo, contrary-name latitudes negative. Each degree of d is 60 miles." },
       "refs": ["Great circle sailing — distance", "Great circle sailing — initial course", "Great circle sailing — DLo across the date line"],
       "blocks": [
         { "p": "The pole, departure A and destination B form a spherical triangle: two sides are 90° minus each latitude, the angle at the pole is the difference of longitude (**DLo**), the third side the distance and the angle at A the initial course." },
@@ -31,6 +33,7 @@
       "id": "vertex",
       "kicker": "The vertex",
       "title": "Where the track turns back",
+      "qa": { "q": "Why does my course keep changing when I sail a great circle?", "a": "A great circle cuts each meridian at a different angle, so the course keeps changing; it runs due east or west at the **vertex**, the point nearest the pole. Hold the first course and you sail a rhumb line past your port." },
       "refs": ["Great circle sailing — the vertex", "Great circle sailing — the course changes"],
       "blocks": [
         { "p": "A great circle cuts each meridian at a different angle, so the course changes all the way. The **vertex** is the point nearest the pole: there the track runs due east or west, then turns back towards the equator. Hold the first course and you sail a rhumb line past your port." },
@@ -43,6 +46,7 @@
       "id": "waypoints",
       "kicker": "Gnomonic chart and waypoints",
       "title": "Putting the curve on your chart",
+      "qa": { "q": "How do I plot a great circle route on a Mercator chart?", "a": "Rule it as a straight line on a **gnomonic chart**, read its latitude on each meridian 5° or 10° apart, plot those points on the Mercator chart and join them with short rhumb lines." },
       "refs": ["Great circle sailing — the gnomonic chart", "Great circle sailing — waypoints"],
       "blocks": [
         { "p": "On a **gnomonic chart** every great circle is a straight line. Rule it, but measure neither course nor distance there: both are distorted. Read its latitude on each meridian, 5° or 10° apart, plot the points on the Mercator chart and join them with short rhumb lines." },
@@ -61,6 +65,7 @@
       "id": "composite",
       "kicker": "Composite sailing",
       "title": "A latitude you will not cross",
+      "qa": { "q": "How do I keep a great circle route out of the ice in high latitudes?", "a": "Sail a **composite track**: a great circle whose vertex lies on your chosen limiting latitude, along that parallel, then a second great circle to the destination. It is the shortest track that keeps to the limit." },
       "refs": ["Composite sailing", "Composite sailing — the plotter"],
       "blocks": [
         { "p": "In high latitudes the great circle can lead into ice: from Bluff to Cape Horn its vertex is near 70°S. Choose a **limiting latitude** and sail a composite track: a great circle whose vertex lies on the limit, the parallel itself, then a second great circle to the destination: the shortest track that keeps to the limit. Each leg is solved from its vertex on the limit." },
@@ -73,6 +78,7 @@
       "id": "sailings",
       "kicker": "Rhumb-line sailings",
       "title": "Plane, parallel and Mercator",
+      "qa": { "q": "How do I work out my DR position from a day's run by calculation?", "a": "Use **plane sailing**: dLat = d × cos C, departure = d × sin C, and DLo = departure ÷ cos mean latitude. Over a long rhumb line the mean latitude no longer gives the true departure: use Mercator sailing." },
       "refs": ["Plane sailing", "Parallel sailing", "Mercator sailing", "Plane sailing — its limits"],
       "blocks": [
         { "p": "Rhumb lines are worked by three sailings. **Departure** is the east–west distance in miles: away from the equator a minute of longitude is less than a mile." },
@@ -89,6 +95,7 @@
       "id": "routing",
       "kicker": "Routing",
       "title": "More miles, fewer days",
+      "qa": { "q": "Is the great circle always the fastest route for a sailing yacht?", "a": "No: the shortest route is not always the fastest or safest, so a yacht routes for wind, current and season first. From the Canaries, for example, go south to the steady **NE trade**, then west." },
       "refs": ["Great circle sailing — when it is not the best route", "Great circle sailing — when not to use it"],
       "blocks": [
         { "p": "The shortest route is not always the fastest or safest: a yacht routes for wind, current and season first." },

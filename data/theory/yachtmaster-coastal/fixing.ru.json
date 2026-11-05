@@ -6,6 +6,7 @@
       "id": "compass",
       "kicker": "Склонение и девиация",
       "title": "От компаса к карте",
+      "qa": { "q": "Нужно ли учитывать девиацию для пеленга с ручного пеленгатора?", "a": "Нет, если брать пеленг на открытой палубе, вдали от стали, двигателя и динамиков: **ручному пеленгатору** тогда нужно только склонение. Пеленг по рулевому компасу требует ещё девиации для курса судна." },
       "refs": ["Compass — variation", "Compass — variation for the year", "Variation — changing across the chart", "Variation — annual change and the nearest rose", "Compass — deviation card", "Compass — when deviation applies", "Compass — the hand-bearing compass", "Hand-bearing compass — deviation", "Hand-bearing compass — deviation found on a transit", "Position fixing — three-point fix"],
       "blocks": [
         { "p": "Пеленги прокладывают истинными. **Ручному пеленгатору** на открытой палубе, вдали от стали, двигателя и динамиков, нужно только склонение: восточное прибавить, западное вычесть. Берите его с ближайшей розы, приведённое к текущему году." },
@@ -18,6 +19,7 @@
       "id": "check",
       "kicker": "Проверка компаса",
       "title": "Найдите девиацию до того, как она понадобится",
+      "qa": { "q": "Как проверить девиацию компаса по створу?", "a": "Идите по **створу** с карты, переведите его истинный пеленг в магнитный и сравните с компасом: показывает больше — девиация западная, меньше — восточная. Вдали от берега берите табличный пеленг восходящего или заходящего солнца." },
       "refs": ["Compass — causes of deviation", "Compass — magnetic interference", "Compass — heeling error", "Compass — checking on a transit", "Compass — checking deviation on a transit", "Compass — checking on a transit astern", "Compass check — the sun's bearing", "Compass — swinging", "Compass types — fluxgate"],
       "blocks": [
         { "p": "**Девиация** — собственный магнетизм яхты: двигатель, килевые болты, проводка. Она меняется с курсом и с креном. Всё магнитное рядом с компасом добавляет своё: телефон, стальной инструмент, верп, провод под током. Алюминий — нет." },
@@ -31,6 +33,7 @@
       "id": "fix",
       "kicker": "Визуальная обсервация",
       "title": "Три пеленга в правильном порядке",
+      "qa": { "q": "В каком порядке брать пеленги при обсервации по трём ориентирам?", "a": "Сначала ориентиры по носу и по корме — их пеленги меняются медленно, — а ориентир на траверзе последним, записав с ним время и лаг. Ориентиры выбирайте примерно через 60°; три линии оставят **треугольник погрешностей**." },
       "refs": ["Position fixing — choosing marks", "Position fixing — angle of cut", "Position fixing — a transit and a bearing", "Position fixing — order of bearings", "Position fixing — taking bearings", "Position fixing — recording the fix", "Position fixing — cocked hat", "Position fixing — cross-checking a fix", "Position fixing — fix versus DR", "Position fixing — fix and DR", "Position fixing — fix versus GPS", "Position fixing — choosing the fix", "Position fixing — frequency of fixes", "Position fixing — how often"],
       "blocks": [
         { "p": "Выбирайте ориентиры неподвижные, чёткие и точно нанесённые: маяк, а не буй и не пологий склон мыса. Две линии лучше всего пересекаются около 90°, три — примерно через 60°; ориентиры по носу и по корме дают почти одну линию. **Створу** компас не нужен: пересеките его пеленгом под прямым углом." },
@@ -44,6 +47,7 @@
       "id": "running",
       "kicker": "Крюйс-пеленг",
       "title": "Один ориентир, два пеленга и плавание между ними",
+      "qa": { "q": "Как определиться по одному маяку крюйс-пеленгом?", "a": "Возьмите два пеленга, записав время и лаг, и перенесите первую линию на **путь по грунту** между ними, с дрейфом и течением. Где перенесённая линия пересекает второй пеленг, там и место." },
       "refs": ["Running fix — no tide", "Running fix — with tide", "Running fix — the transferred line", "Running fix — leeway", "Running fix — course altered", "Running fix — course change and tide", "Running fix — tide hour by hour", "Running fix — bow and beam", "Running fix — bow and beam with tide", "Running fix — doubling the angle", "Running fix — two different marks", "Running fix — its limits", "GPS failure — a running fix at night"],
       "blocks": [
         { "p": "С одним ориентиром возьмите пеленг и запишите время и лаг; позже возьмите второй. От любой точки первой линии отложите **путь по грунту** между ними, с дрейфом и течением, и проведите первую линию заново через его конец. Где эта перенесённая линия пересекает второй пеленг, там и место." },
@@ -55,6 +59,7 @@
       "id": "lights",
       "kicker": "Огни ночью",
       "title": "Расстояние по горизонту, имя по секундомеру",
+      "qa": { "q": "Как узнать расстояние до огня, когда он открывается из-за горизонта?", "a": "Это 2,08 × (√H + √h) миль, где H — высота огня, h — высота вашего глаза, обе в метрах: на таком расстоянии сильный огонь **открывается**. Пересеките это расстояние с пеленгом огня — вот и обсервация." },
       "refs": ["Position lines — rising and dipping lights", "Position lines — dipping distance table", "Position fixing — rising light and bearing", "Rising and dipping lights — bobbing a light", "Rising lights — height of tide on the light", "Dipping lights — height of tide", "Rising lights — visibility", "Rising lights — the loom", "Rising lights — identifying a landfall light", "Fixing at night — identifying lights", "Fixing at night — identifying a light", "Fixing at night — timing a light", "Fixing at night — light characteristics"],
       "blocks": [
         { "p": "В ясную ночь сильный огонь **открывается** из-за горизонта на расстоянии 2,08 × (√H + √h) миль, где H — его высота, h — высота вашего глаза, обе в метрах. Пересеките это расстояние с пеленгом огня — вот и обсервация." },
@@ -72,6 +77,7 @@
       "id": "radar",
       "kicker": "РЛС и глубина",
       "title": "Дистанции и глубины как линии положения",
+      "qa": { "q": "Как определить место по РЛС?", "a": "По **дистанциям**, а не по пеленгам: РЛС хорошо измеряет дистанцию и плохо — пеленг. Пересеките две дистанции или дистанцию с визуальным пеленгом, ставя VRM на ближний край крутого берега; из двух пересечений дуг выбирайте по глубине." },
       "refs": ["Radar — fixing by ranges", "Radar — fixing by two ranges", "Radar — range and bearing fix", "Radar — range with a visual bearing", "Radar — EBL bearings", "Radar — measuring a range", "Radar — choosing a target", "Radar — a low coast", "Radar — range of a low target", "Radar — gain and clutter", "Radar — rain clutter", "Position lines — depth contour", "Position lines — bearing and depth", "Position fixing — checking with depth", "Fixing in fog — a line of soundings", "Fixing in fog — fog signals", "Fixing in fog — radar and plotter"],
       "blocks": [
         { "p": "РЛС хорошо измеряет **дистанцию** и плохо — пеленг: определяйтесь по двум дистанциям или по дистанции с визуальным пеленгом. Ставьте VRM на ближний край эха от крутого берега; низкий пляж может не отражать, и первым эхом окажутся холмы за ним. Низкая цель видна только в пределах радиолокационного горизонта, 2,2 × (√h + √H). EBL в режиме «курс вверх» считает от носа: прибавьте курс. Излишнее подавление помех от моря стирает слабые близкие эха; подавление дождя разбивает пятно ливня." },
@@ -84,6 +90,7 @@
       "id": "gps",
       "kicker": "GPS",
       "title": "Место, которое проверяют, а не слушаются",
+      "qa": { "q": "Как быстро нанести место по GPS на бумажную карту?", "a": "Как **дистанцию и пеленг** на путевую точку, поставленную на известный объект карты. Пеленг идёт от вас на точку, поэтому вы лежите на обратном; проверьте, в истинных или магнитных градусах работает прибор." },
       "refs": ["GPS — range and bearing to a waypoint", "GPS — plotting a fix", "GPS — magnetic or true bearings", "GPS — HDOP", "GPS — the antenna", "GPS — chart datum", "GPS — loss of fix", "GPS — interference"],
       "blocks": [
         { "p": "Быстрее всего место по GPS наносят как **дистанцию и пеленг** на путевую точку, поставленную на известный объект карты. Пеленг идёт от вас на точку, поэтому вы лежите на обратном; проверьте, в истинных или магнитных градусах работает прибор." },

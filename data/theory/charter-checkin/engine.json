@@ -6,6 +6,7 @@
       "id": "bay",
       "kicker": "Engine bay",
       "title": "Look at it cold, with a torch",
+      "qa": { "q": "What should I check in the engine bay before accepting a charter yacht?", "a": "Look at it cold, before anyone starts the engine: oil between the marks and not milky, coolant between MIN and MAX, belt with about 10 mm of give, **raw-water seacock** open and strainer clear, filter bowl clean, tray dry." },
       "refs": ["Check-in: engine bay", "Check-in: gearbox oil", "Check-in: alternator belt", "Check-in: exhaust elbow", "Check-in: raw-water seacock", "Check-in: fuel filter / water separator", "Check-in: saildrive diaphragm", "Check-in: stern gland", "Check-in: stern gland greaser", "Engine cooling: anti-siphon loop"],
       "blocks": [
         { "p": "Ask for the engine bay to be opened before anyone starts the engine, and check it yourself. A fault found now is the base's to fix; found on Wednesday, it is yours at sea." },
@@ -24,6 +25,7 @@
       "id": "start",
       "kicker": "Starting and stopping",
       "title": "Start it yourself and read the panel",
+      "qa": { "q": "How do I know the engine cooling is working after I start it?", "a": "Look aft for **water at the exhaust**. None means no cooling: stop the engine at once, then check the seacock, the strainer and the impeller." },
       "refs": ["Base briefing: starting the engine", "Engine panel: key-on test", "Check-in: exhaust water", "Engine panel: charging", "Check-in: engine alarms", "Base briefing: stopping the engine", "Engine will not start: battery switch", "Engine will not start: stop handle", "Engine will not start: cranking and raw water", "Water in the engine after a swell"],
       "blocks": [
         { "p": "Lever in **neutral**, key on, wait for the glow-plug light to go out, then crank. At key-on the oil and charge lamps and the buzzer come on: a lamp test. They go out seconds after the engine fires." },
@@ -37,6 +39,7 @@
       "id": "gear",
       "kicker": "Gear, propeller, thruster",
       "title": "Test ahead and astern with the lines on",
+      "qa": { "q": "How do I test a charter boat's gearbox and propeller before leaving the berth?", "a": "Still tied up, click ahead, then astern, at idle: the boat should pull against her lines both ways. A **folding propeller** that revs without pulling is stuck half-open: neutral, a burst astern, try again." },
       "refs": ["Check-in: propeller and gear test", "Base briefing: gear changes", "Check-in: throttle and gear lever", "Check-in: bow thruster", "Bow thruster: time limit", "Tachometer vs plotter SOG", "Exhaust smoke: black"],
       "blocks": [
         { "p": "Still tied up, click ahead, then astern, at idle: the boat should pull against her lines both ways. A **folding propeller** that revs without pulling is stuck half-open: neutral, a burst astern, try again. Neutral needs a click you can feel, and the engine should start only there." },
@@ -50,6 +53,7 @@
       "id": "fuel",
       "kicker": "Fuel",
       "title": "See it full, mark the filler, count the hours",
+      "qa": { "q": "How do I work out how much fuel a charter yacht has used?", "a": "Count **engine hours** times the hourly burn the base gives you; gauges read in quarters and stick. 'Full on handover, full on return' only works if you saw the tank full: a dip, a sight glass or the fuel quay." },
       "refs": ["Charter contract — fuel", "Base briefing: fuel and consumption", "Check-in: deck fillers", "Check-in: fuel shut-off", "Refuelling at the fuel quay", "Fuel cans: stowage and ventilation", "Fuel: range later in the week", "Engine at sea: fuel starvation"],
       "blocks": [
         { "p": "'Full on handover, full on return' works only if you saw it full: a dip, a sight glass or the fuel quay. Gauges read in quarters and stick, so count **engine hours** times the hourly burn the base gives you." },
@@ -68,6 +72,7 @@
       "id": "form",
       "kicker": "Hours, spares and the form",
       "title": "You sign for what you were shown",
+      "qa": { "q": "Why do I need to record the engine hours at charter check-in?", "a": "The **engine hours** on the check-in form are what the week is measured against at check-out. Write what the panel shows, photograph it, and have a wrong figure on the form corrected before you sign." },
       "refs": ["Check-in form: engine hours", "Check-in form: hour meter", "Charter contract — engine hours", "Check-in form: not seen", "Check-in: catamaran engines", "Check-in: generator", "Check-in: engine spares", "Check-in: tools and the manual"],
       "blocks": [
         { "p": "The engine hours on the form are what the week is measured against. Write what the panel shows and photograph it." },
@@ -85,6 +90,7 @@
       "id": "week",
       "kicker": "During the week",
       "title": "Stop first, find out second",
+      "qa": { "q": "What do I do if the engine overheat alarm goes off at sea?", "a": "Stop the engine before it seizes: after an **overheat alarm**, sail or anchor, let it cool, then check strainer, impeller and belt. On a catamaran, stop the hot engine and carry on with the other." },
       "refs": ["Daily engine check: oil", "Engine alarm at sea", "Catamaran: running on one engine", "Exhaust smoke: white", "Exhaust smoke: black", "Charging under way vs idling"],
       "blocks": [
         { "p": "Each morning: oil, coolant, belt, strainer, a dry tray. Top the oil up to the upper mark, never above; tell the base about an engine that needs a litre a day." },

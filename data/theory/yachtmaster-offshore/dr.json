@@ -6,6 +6,7 @@
       "id": "dr",
       "kicker": "Dead reckoning",
       "title": "Course and distance, added as vectors",
+      "qa": { "q": "How do I convert a compass course to a true course?", "a": "Compass + **deviation** = magnetic, + variation = true, counting east positive: 237°C with 3°W deviation and 4°W variation is 230°T. Take the deviation from the card for that compass heading." },
       "refs": ["DR — long offshore legs", "DR — after an electrical failure", "Compass — deviation and conversions", "Navigation — the plot at night"],
       "blocks": [
         { "p": "A **DR** comes from the heading steered and the distance logged. Each leg is a vector, course and distance: a change of course is a new vector, never a mean course with the summed log. The heading goes through the card for that compass heading, then the variation: compass + deviation = magnetic, + variation = true, east positive. The fluxgate reads magnetic, without the steering compass's deviation." },
@@ -18,6 +19,7 @@
       "id": "ep",
       "kicker": "Estimated position",
       "title": "Leeway and stream on top of the DR",
+      "qa": { "q": "Do I add or subtract leeway on port tack?", "a": "Add it on port tack, subtract it on starboard: **leeway** always turns the heading to leeward, into the water track. A motor yacht under power is allowed none." },
       "refs": ["EP — streams, current and leeway", "Leeway", "Leeway — heavy weather", "Tidal streams — summing the hours"],
       "blocks": [
         { "p": "The **EP** adds what the water did: leeway first, then the stream. **Leeway** turns the heading into the **water track**, always to leeward: added on port tack, subtracted on starboard, changing side when you tack. A motor yacht under power is allowed none. From GNSS, ground vector minus current is the water vector, its angle from the heading the leeway; or take the wake's bearing." },
@@ -33,6 +35,7 @@
       "id": "cts",
       "kicker": "Course to steer",
       "title": "One triangle for the whole crossing",
+      "qa": { "q": "How do I work out a course to steer across a stream lasting several hours?", "a": "Lay off the whole crossing's stream from the start as one vector, then swing an arc of **speed × time through the water** from its end to cut the ground track: that line is the water track to steer." },
       "refs": ["Course to steer — one course for the crossing", "Course to steer — a waypoint at a set time", "Course to steer — a rendezvous at sea"],
       "blocks": [
         { "p": "Lay off the whole crossing's stream from A, summed into one vector. From its end swing an arc of **speed × time through the water** to cut the ground track: that line is the water track to steer, aimed off by asin(stream across the track ÷ water distance). Stream along the track changes the hours: check them against ground distance ÷ SOG, and redo it once if they differ. Then leeway, variation, deviation." },
@@ -46,6 +49,7 @@
       "id": "errors",
       "kicker": "Errors and cross-track",
       "title": "1 in 60, and how doubt grows",
+      "qa": { "q": "How do I use the 1 in 60 rule to get back on track?", "a": "Alter by two angles from the **1 in 60** rule: miles off × 60 ÷ miles run is the track error in degrees, and the same over the miles to go is the extra turn to close." },
       "refs": ["The 1-in-60 rule", "DR — error growth on a long passage", "Cross-track error", "Cross-track error — in a TSS lane"],
       "blocks": [
         { "p": "**1 in 60**: one degree over 60 M is one mile off. Miles off × 60 ÷ miles run is the track error in degrees; the same sum over the miles to go is the extra turn to close. The EP's doubt grows with the run, about 10% of it; stream rate, log calibration and the helm's average course each add a share. A deviation applied backwards counts twice." },
@@ -58,6 +62,7 @@
       "id": "current",
       "kicker": "Current from fixes",
       "title": "Ground vector minus water vector",
+      "qa": { "q": "How do I find the current from two fixes?", "a": "Subtract the water vector, the leeway-corrected heading by the logged distance, from the ground vector between the fixes: the difference is the **current**, its set, and distance ÷ hours its rate." },
       "refs": ["Finding the current from fixes"],
       "blocks": [
         { "p": "Between two fixes the ground vector is what happened; the water vector is the leeway-corrected heading by the logged distance. The difference is the current: set, and distance ÷ hours. Stopped in a calm, the drift is the current alone. Fix minus EP sums every error since the fix, not current alone. A steady gap along the heading can be current, a log under-reading, or both." },
@@ -69,6 +74,7 @@
       "id": "eta",
       "kicker": "Speed made good and timing",
       "title": "ETA, tidal gates and daylight",
+      "qa": { "q": "What is VMG and how do I work it out when beating?", "a": "**VMG** is the speed at which you close the mark: boat speed × cos(water track − course to the mark), leeway included. 7.0 kn with the water track 48° off the course makes good 4.7 kn." },
       "refs": ["Speed made good and ETA", "Passage — timing a tidal gate", "Landfall — timing and aim-off"],
       "blocks": [
         { "p": "**Speed made good** is distance to go closed ÷ time over the whole run, not the mean of the legs' speeds nor the log. Beating, only VMG closes it: boat speed × cos(water track − course to the mark), leeway included; take the tack pointing nearest it. Hour by hour, SOG is boat speed plus the along-track stream." },
@@ -81,6 +87,7 @@
       "id": "fuel",
       "kicker": "Fuel and range",
       "title": "Litres per mile, not per hour",
+      "qa": { "q": "How do I calculate a motor yacht's range from its fuel curve?", "a": "For each speed, hours = usable fuel ÷ litres per hour and **range** = hours × speed, usable being the tank less the reserve. Litres per mile, l/h ÷ speed, are lowest slow, below the hump." },
       "refs": ["Motor yacht — fuel, speed and range", "Motor-sailing"],
       "blocks": [
         { "p": "Usable fuel is the tank less the reserve. For each speed on the curve, hours = usable ÷ l/h and range = hours × speed; l/h ÷ speed is litres per mile, lowest slow, below the hump, and among planing speeds well past it. Against a current, range over the ground is hours × (speed − current). A head sea costs 30% more per hour, or speed at the same revs." },

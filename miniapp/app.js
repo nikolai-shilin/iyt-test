@@ -1258,6 +1258,9 @@ function thBlock(b, tr) {
   if (b.table && b.table.head && b.table.rows) return `<table class="th-table"><thead><tr>${b.table.head.map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${b.table.rows.map((r) => `<tr>${r.map((x) => `<td>${inline(x)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
   return '';
 }
+// The page of a level or an article on the site (miniapp/pages.mjs), in the language shown: the rows that open them in
+// the app are links to them too, so search engines that render the app find the site's pages from its home page.
+const webPath = (...p) => `${LANG === 'ru' ? '/ru' : ''}/${p.join('/')}`;
 // A section's opener (docs/theory.md, qa): the question a student would ask, and the answer in a sentence or two.
 const thQa = (qa) => (qa && qa.q && qa.a ? `<div class="th-qa"><p class="th-q">${esc(qa.q)}</p><p class="th-p">${inline(qa.a)}</p></div>` : '');
 const thSkeleton = () => `<div class="sk-wrap" aria-busy="true"><span class="sk-label">${t('loading')}</span><div class="topics">${[['72%', '92px'], ['50%', '84px'], ['66%', '96px'], ['58%', '88px'], ['70%', '92px']]
@@ -1303,8 +1306,8 @@ const VIEWS = {
     const returning = S.total > 0;
     const lv = ready().map((l) => {
       const m = lvMeta(l.id), [lp, sp] = lvPcts(l);
-      return `<div class="lvl${l === LEVEL && returning ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, sp, '', undefined, l.id)}<div><div class="card-title">${l.title}</div>` +
-        `<div class="card-meta">${t('levelMeta', m.t, m.n, myExams(l.id).length)}</div></div><span class="chev" data-i="next" data-s="20"></span></div>`;
+      return `<a href="${webPath(l.id)}" class="lvl${l === LEVEL && returning ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, sp, '', undefined, l.id)}<div><div class="card-title">${l.title}</div>` +
+        `<div class="card-meta">${t('levelMeta', m.t, m.n, myExams(l.id).length)}</div></div><span class="chev" data-i="next" data-s="20"></span></a>`;
     }).join('');
     // first visit: the pitch; afterwards: pick up where you left off
     const lp = levelPct(), mis = allMistakes().length;
@@ -1362,8 +1365,8 @@ const VIEWS = {
       const a = th.topics[tp.id], read = isRead(tp.id);
       if (!a) return `<div class="topic th-row off"><span class="ico">${svg(topicIcon(tp), 18)}</span><span class="card-title">${esc(tp.title)}</span><span class="tmeta">${t('theoryNone')}</span></div>`;
       const m = articleMeta(a);
-      return `<div class="topic th-row${read ? ' done' : ''}" data-act="theory" data-t="${tp.id}"><span class="ico">${svg(read ? 'check' : topicIcon(tp), 18)}</span><span class="card-title">${esc(tp.title)}</span>` +
-        `<span class="tmeta">${t('theoryMeta', m.min, m.pics)}</span><span class="n">${read ? `<span class="th-read">${t('read')}</span>` : svg('next', 18)}</span></div>`;
+      return `<a href="${webPath(LEVEL.id, tp.id)}" class="topic th-row${read ? ' done' : ''}" data-act="theory" data-t="${tp.id}"><span class="ico">${svg(read ? 'check' : topicIcon(tp), 18)}</span><span class="card-title">${esc(tp.title)}</span>` +
+        `<span class="tmeta">${t('theoryMeta', m.min, m.pics)}</span><span class="n">${read ? `<span class="th-read">${t('read')}</span>` : svg('next', 18)}</span></a>`;
     }).join('')}</div>`;
     const none = () => `<div class="topics">${TOPICS.map((tp) => `<div class="topic th-row off"><span class="ico">${svg(topicIcon(tp), 18)}</span><span class="card-title">${esc(tp.title)}</span><span class="tmeta">${t('theoryNone')}</span></div>`).join('')}</div>`;
     return {
@@ -2024,6 +2027,7 @@ const ACT = {
 $app.addEventListener('click', (e) => {
   const el = e.target.closest('[data-act]');
   if (!el || !$app.contains(el)) return;
+  if (el.tagName === 'A') { if (!IN_TG && (e.metaKey || e.ctrlKey || e.shiftKey || e.button)) return; e.preventDefault(); }
   const fn = ACT[el.dataset.act];
   if (fn) fn(el.dataset, el);
 });

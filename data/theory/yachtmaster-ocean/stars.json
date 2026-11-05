@@ -6,6 +6,7 @@
       "id": "twilight",
       "kicker": "Twilight",
       "title": "Stars and horizon together",
+      "qa": { "q": "When can I take star sights at dusk or dawn?", "a": "Between **civil twilight**, the Sun 6° below the horizon, and nautical twilight, 12° below: only then are star and horizon visible together. The almanac lists both times by latitude in LMT." },
       "refs": ["Star sights — twilight", "Star sights — twilight times", "Star sights — dawn and dusk", "Star sight planning — high latitudes"],
       "blocks": [
         { "p": "A star sight needs star and horizon at once: between **civil twilight**, the Sun 6° below the horizon, and **nautical twilight**, 12° below. The almanac lists them by latitude in LMT. In the tropics the window is little over 20 minutes; in high latitudes at midsummer the Sun never gets 12° down and only the brightest bodies show." },
@@ -21,6 +22,7 @@
       "id": "planning",
       "kicker": "Planning",
       "title": "Which stars, and where to look",
+      "qa": { "q": "Which stars should I choose for a good star fix?", "a": "Three stars about 120° apart, or four in opposite pairs, 20° to 70° high. **HO 249 Volume 1**, entered with latitude and LHA Aries, lists seven selected stars and marks the best three." },
       "refs": ["Star sight planning", "Star sight planning — precomputation", "Star sight planning — southern sky", "Star finder", "Sight reduction tables — HO 249 Vol 1", "Star identification", "Star identification — the wrong body"],
       "blocks": [
         { "p": "Choose three stars about 120° apart, or four in opposite pairs, 20° to 70° high: lower, refraction is uncertain; overhead, the sextant is hard to swing. Two stars on one bearing give the same line twice." },
@@ -33,6 +35,7 @@
       "id": "stars",
       "kicker": "Reducing a star",
       "title": "Aries plus SHA",
+      "qa": { "q": "How do I find the LHA of a star from the almanac?", "a": "Add the star's **SHA** to GHA Aries, then subtract west longitude or add east: LHA★ = GHA Aries + SHA − longitude west. The almanac gives no star's GHA, only Aries and each star's SHA and Dec." },
       "refs": ["Sight reduction — stars", "Sight reduction — intercept", "Sight reduction — azimuth"],
       "blocks": [
         { "p": "The almanac tabulates no star: it gives the GHA of **Aries**, a reference point among them, and each star's fixed **SHA** and Dec. Take GHA Aries for the hour, the increment from the Aries column, add the SHA, then your longitude as for the Sun." },
@@ -45,6 +48,7 @@
       "id": "planets",
       "kicker": "Planets",
       "title": "Four wanderers, own columns",
+      "qa": { "q": "How do I find a planet's GHA and Dec in the almanac?", "a": "Venus, Mars, Jupiter and Saturn each have their own hourly GHA and Dec on the daily page: take the increment from the Sun and planets column, add **v** (Venus's can be negative) and correct Dec with d." },
       "refs": ["Planet sights"],
       "blocks": [
         { "p": "Venus, Mars, Jupiter and Saturn move among the stars, so the daily page gives each its own hourly GHA and Dec. Take the increment from the Sun and planets column, add **v** (Venus's can be negative) and correct Dec with **d**." },
@@ -60,6 +64,7 @@
       "id": "moon",
       "kicker": "Moon",
       "title": "Close, fast and lit on one side",
+      "qa": { "q": "Which limb of the Moon do I bring down to the horizon?", "a": "The **lit limb**, upper or lower, whichever faces the Sun. The Moon also needs parallax, its HP times the cosine of the altitude, and because it moves fast, never skip the d correction." },
       "refs": ["Moon sights"],
       "blocks": [
         { "p": "The Moon moves fast: use the Moon column of the increments, add **v**, and never skip **d**: Dec can change many minutes an hour. Bring down the **lit limb**, upper or lower, whichever faces the Sun." },
@@ -73,6 +78,7 @@
       "id": "fix",
       "kicker": "Plotting",
       "title": "Lines to one moment",
+      "qa": { "q": "How do I plot star sights taken a few minutes apart?", "a": "Lay off each intercept from its own AP, towards along Zn or away along the reciprocal, draw the line at right angles, then **advance** the earlier lines along the course by the run to the last sight." },
       "refs": ["Star fix — plotting", "Star fix — advancing the lines", "Star fix — advancing for current", "Star and sun lines"],
       "blocks": [
         { "p": "Plot each intercept from the position it was worked from, its own AP with HO 249, along Zn if towards or the reciprocal if away, and the line at right angles." },
@@ -84,6 +90,7 @@
       "id": "hat",
       "kicker": "Cocked hat",
       "title": "How far to trust the fix",
+      "qa": { "q": "Where am I if my three star lines make a cocked hat?", "a": "At its centre, if the stars were spread round the horizon: a constant error moves every line the same way and keeps you inside the **cocked hat**. With all the stars on one side you may be outside it." },
       "refs": ["Star fix — cocked hat", "Star fix — errors", "Star fix — angle of cut"],
       "blocks": [
         { "p": "Three lines seldom meet in a point. With the stars spread round the horizon a constant error, index or dip, moves every line the same way along its azimuth and you stay inside a small triangle: take its centre. With all the stars on one side you may be outside it." },

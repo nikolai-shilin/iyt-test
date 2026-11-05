@@ -6,6 +6,7 @@
       "id": "mob",
       "kicker": "Человек за бортом",
       "title": "Три поворота и подъём горизонтально",
+      "qa": { "q": "Какой поворот делать ночью, если неизвестно, когда человек упал за борт?", "a": "**Поворот Вильямсона**: руль на борт, через 60° — на другой борт, и ложитесь на обратный курс; он возвращает вас в собственный кильватер. Поворот Андерсона — когда человек виден." },
       "refs": ["MOB — Anderson turn", "MOB — Williamson turn", "MOB — Scharnow turn", "MOB — recovery", "MOB — recovery by a motor yacht"],
       "blocks": [
         { "table": { "head": ["Поворот", "Когда", "Как"], "rows": [
@@ -23,6 +24,7 @@
       "id": "fire-flood",
       "kicker": "Пожар и затопление",
       "title": "Закрыть отсек, потом считать литры",
+      "qa": { "q": "Почему нельзя сразу открывать машинное отделение после пуска стационарной системы пожаротушения?", "a": "**Стационарная система** работает только в закрытом отсеке: держите его закрытым на время выдержки, охлаждая переборку, — откроете рано, и огонь вспыхнет снова." },
       "refs": ["Fire — fixed systems", "Fire — under sail", "Fire — catamaran", "Fire — lithium batteries", "Flooding — pump capacity", "Flooding — watertight doors", "Flooding — catamaran", "Flooding — keel damage", "Damage control — collision mat", "Damage control — shoring", "Abandoning ship — when"],
       "blocks": [
         { "fig": { "type": "panel", "gauges": [["Маш. отд.", "95°C", true], ["Пожар", "ТРЕВОГА", true], ["Вентил.", "ВКЛ", true]], "lines": ["Стоп двигатели, генератор, вентиляторы", "Закрыть заслонки, вывести всех, пуск"] } },
@@ -35,6 +37,7 @@
       "id": "disabled",
       "kicker": "Потеря хода и управления",
       "title": "На мели, без мачты, без руля, без зарядки",
+      "qa": { "q": "Что делать в первую очередь, если мачта упала за борт?", "a": "Освободиться от неё и не запускать винт, пока все концы не на борту. Затем посчитайте дальность под мотором с запасом топлива, а на остаток пути поставьте **аварийный парус**." },
       "refs": ["Grounding — refloating", "Dismasting", "Dismasting — fuel and jury rig", "Steering failure — emergency steering", "Steering failure — hydraulic steering", "Steering failure — twin screws", "Loss of power"],
       "blocks": [
         { "table": { "head": ["Отказ", "Первый шаг"], "rows": [
@@ -53,6 +56,7 @@
       "id": "abandon",
       "kicker": "Оставление судна и спасение",
       "title": "Сходить сухими, держаться вместе, держать курс",
+      "qa": { "q": "Как правильно пересаживаться с тонущей яхты в спасательный плот?", "a": "**Сухими**, с самого низкого места, по одному. Если людей больше вместимости одного плота — спускайте оба и свяжите их вместе." },
       "refs": ["Abandoning ship — boarding the raft", "Abandoning ship — two rafts", "Liferaft survival", "Liferaft survival — water", "Survival in the water — 1-10-1", "Survival in the water — HELP", "Survival in the water — huddle", "Helicopter rescue", "Medical evacuation — rendezvous", "Medical — diabetic emergency"],
       "blocks": [
         { "p": "В плот садятся **сухими**, с самого низкого места, по одному; если людей больше вместимости одного плота — спускайте оба и свяжите их. Первый час: таблетки от укачивания, надуть дно, наблюдатель. Воды нет первые 24 часа, затем по пол-литра на человека в сутки." },
@@ -65,6 +69,7 @@
       "id": "gmdss",
       "kicker": "ГМССБ в море",
       "title": "Какой диапазон кого достигает",
+      "qa": { "q": "Как подать сигнал бедствия вне зоны действия УКВ?", "a": "По **ПВ ЦИВ** на 2187,5 кГц, голосом — на 2182 кГц: это морской район A2 за зоной УКВ ЦИВ (A1); район A3 покрывает спутниковая связь." },
       "refs": ["GMDSS sea areas", "GMDSS — MF distress", "GMDSS — HF bands", "GMDSS — HF band choice", "GMDSS — medical advice", "GMDSS — distress to ships nearby", "GMDSS — MAYDAY RELAY", "GMDSS — distress alert received", "GMDSS — radio silence", "GMDSS — EPIRB registration", "GMDSS — EPIRB false alert", "GMDSS — SART", "GMDSS — AIS-SART", "GMDSS — NAVTEX"],
       "blocks": [
         { "fig": { "type": "chart", "land": "M0 0 H40 V200 H0 Z", "marks": [[40, 150, "k", "берег. станция"]], "track": "M112 0 Q136 100 112 200 M232 0 Q258 100 232 200", "labels": [[76, 70, "A1", "middle"], [76, 86, "УКВ ЦИВ", "middle"], [76, 100, "≈ 30 миль", "middle"], [176, 70, "A2", "middle"], [176, 86, "ПВ ЦИВ", "middle"], [176, 100, "≈ 150 миль", "middle"], [280, 70, "A3", "middle"], [280, 86, "спутник", "middle"]], "boat": [200, 150, 0], "note": "Морские районы — по зонам ЦИВ береговых станций" } },
@@ -82,6 +87,7 @@
       "id": "duties",
       "kicker": "Обязанности капитана",
       "title": "Чего закон ждёт от вас в море",
+      "qa": { "q": "Обязан ли шкипер яхты идти на помощь судну, терпящему бедствие?", "a": "Да: по **СОЛАС V/33** идите к бедствию полным ходом, а если не можете — сообщите SAR и запишите причину в журнал; вы свободны, когда назначены другие." },
       "refs": ["SOLAS V/31", "SOLAS V/33", "SOLAS V/33 — release", "SOLAS V/33 — unable to assist", "SOLAS V/34-1 — master's discretion", "The skipper's responsibility", "Collision — duties", "Accident reporting", "The logbook", "MARPOL Annex I", "MARPOL Annex IV", "MARPOL Annex V", "Pollution — reporting a spill", "Pollution — reporting a slick", "Harbour regulations", "Local regulations", "Harbour dues"],
       "blocks": [
         { "table": { "head": ["Правило", "Обязанность"], "rows": [
@@ -105,6 +111,7 @@
       "id": "business",
       "kicker": "Документы, страхование, спасание",
       "title": "Яхта как собственность и как договор",
+      "qa": { "q": "Какой флаг поднимать при приходе из-за границы и кто сходит на берег?", "a": "Поднимайте **Q** с прибытия до окончания оформления; на берег обычно идёт только шкипер, с судовой ролью и паспортами." },
       "refs": ["Registration", "Registration — change of flag", "Registration — transfer on sale", "Ship's papers", "Ownership — bills of sale", "Marine mortgages — priority", "Insurance — duty to disclose", "Insurance — warranties", "Insurance — navigation limits", "Insurance — commercial use", "Insurance — hull and third party", "Recreational vs commercial use", "Charter vs private use", "Crew lists & agreements", "Crew employment — hours of rest", "Crew employment — repatriation", "Customs & immigration", "VAT — paid status", "Crew — Schengen 90/180", "Salvage — Lloyd's Open Form", "Salvage vs towage", "Salvage — master's authority", "Salvage — the award", "Salvage — life salvage", "Salvage — duty to the salvor", "Salvage — services refused", "Limitation of liability"],
       "blocks": [
         { "p": "Правила в странах разные, принципы одни. У яхты **один флаг**: новому регистру нужно свидетельство об исключении из старого, покупатель перерегистрирует её в срок, оригинал свидетельства о регистрации идёт с ней. Зарегистрированная **ипотека** переживает продажу: до оплаты добейтесь её погашения. Ипотеки ранжируются по дате внесения там, где реестр их учитывает." },

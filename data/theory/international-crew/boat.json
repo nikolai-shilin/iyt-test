@@ -6,6 +6,7 @@
       "id": "directions",
       "kicker": "Directions on board",
       "title": "Left and right belong to the boat",
+      "qa": { "q": "Is port still the left side of the boat when I'm facing the stern?", "a": "Yes: **port** is the left side and starboard the right as seen facing the bow, whichever way you look. Sitting in the cockpit facing aft, you have the port side on your right." },
       "refs": ["Boat terms"],
       "blocks": [
         { "p": "**Port** is the left side of the boat and **starboard** the right, as seen by someone facing the bow. They do not change when you turn round: sitting in the cockpit facing aft, you have the port side on your right. The **bow** is the front and the **stern** the back; **forward** means towards the bow, **aft** towards the stern." },
@@ -18,6 +19,7 @@
       "id": "wind",
       "kicker": "Windward and leeward",
       "title": "Which side the wind is on",
+      "qa": { "q": "How do I tell which side of the boat is windward?", "a": "Look at the boom: the wind pushes it away, so it always lies to leeward. With the boom out over starboard, port is the **windward** side, the one the wind comes from." },
       "refs": ["Boat terms"],
       "blocks": [
         { "p": "The **windward** side is the one the wind comes from, the **leeward** side the one it blows towards. The wind pushes the boom away from it, so the boom always lies to leeward: see it out over the starboard side and you know that port is windward." },
@@ -31,6 +33,7 @@
       "id": "hull",
       "kicker": "Hull and cabin",
       "title": "From the keel to the companionway",
+      "qa": { "q": "Where does water collect inside a sailing boat, and what is that space called?", "a": "In the **bilge**, the lowest space inside the hull, under the floorboards. That is where you look when the skipper asks you to check it." },
       "refs": ["Parts of the boat", "Boat terms"],
       "blocks": [
         { "fig": { "type": "boat", "view": "side", "parts": [["bow", "bow"], ["stern", "stern"], ["hull", "hull"], ["keel", "keel"], ["rudder", "rudder"], ["waterline", "waterline"]] } },
@@ -51,6 +54,7 @@
       "id": "rig",
       "kicker": "Mast and rigging",
       "title": "What holds the mast up",
+      "qa": { "q": "What are the wires that hold up a sailing boat's mast called?", "a": "The **forestay** runs from the masthead to the bow, the backstay to the stern, and the shrouds down to the deck on each side, held away from the mast by the spreaders." },
       "refs": ["Rigging"],
       "blocks": [
         { "fig": { "type": "boat", "view": "side", "parts": [["mast", "mast"], ["boom", "boom"], ["mainsail", "mainsail"], ["jib", "jib"], ["forestay", "forestay"], ["backstay", "backstay"]] } },
@@ -63,6 +67,7 @@
       "id": "size",
       "kicker": "Boat dimensions",
       "title": "Four numbers to know",
+      "qa": { "q": "How do I work out how much water there is under the keel?", "a": "If the sounder shows the depth below the waterline, take the **draft** off it: 2.6 m on the sounder minus a 2.1 m draft leaves 0.5 m. Some sounders show the depth under the keel directly." },
       "refs": ["Boat dimensions"],
       "blocks": [
         { "fig": { "type": "boat", "view": "side", "parts": [["draft", "draft"], ["freeboard", "freeboard"], ["waterline", "waterline"]] } },

@@ -6,6 +6,7 @@
       "id": "mob",
       "kicker": "Man overboard",
       "title": "Mark, point, come back",
+      "qa": { "q": "What should I do first when someone falls overboard?", "a": "Shout, throw the danbuoy and lifebuoy, press **MOB** at once and put one crew on pointing, doing nothing else. If he is out of sight or it is dark, send the DSC alert and a MAYDAY." },
       "refs": ["Safety briefing", "Harnesses & jackstays", "Lifejackets", "Liferafts", "Seasickness", "Seasickness — on deck", "MOB — night drill", "MOB — the MOB button", "MOB — quick-stop", "MOB — reach-turn-reach", "MOB — under power", "MOB — downwind", "MOB — search at night", "MOB — calling for help", "AIS & PLB", "PLB"],
       "blocks": [
         { "p": "Prevention first. The skipper may be the casualty, so every crew member must know the drill." },
@@ -24,6 +25,7 @@
       "id": "recovery",
       "kicker": "Recovery and first aid",
       "title": "Lift him level, warm him gently",
+      "qa": { "q": "How do I lift someone back aboard after a long time in cold water?", "a": "Lift him **level**, in two strops on a halyard or rolled in a sail: after long immersion a vertical lift can cause collapse. At a stern ladder, stop that engine first." },
       "refs": ["MOB — recovery", "MOB — recovery by the ladder", "MOB — catamaran", "Cold-water shock", "First aid — hypothermia", "First aid — severe hypothermia", "First aid — drowning", "First aid — burns", "First aid — head injury", "First aid — fractures", "First aid — seasickness", "Seasickness & fatigue", "Radio medical advice"],
       "blocks": [
         { "p": "**Cold shock** makes him gasp in water in the first minute; a sprayhood protects the airway. After long immersion lift him **level**, in two strops on a halyard or rolled in a sail: a vertical lift can cause collapse. At a stern ladder, or a catamaran's stern steps, **stop that engine** first; never bring him between the hulls." },
@@ -45,6 +47,7 @@
       "id": "fire",
       "kicker": "Fire, gas and fumes",
       "title": "Fuel, air or heat: take one away",
+      "qa": { "q": "How do I put out a pan of burning cooking oil on a boat?", "a": "Smother it with a **fire blanket** and turn the gas off; never use water. Keep an extinguisher by each exit, so you fight any fire with the way out behind you." },
       "refs": ["Fire — galley", "Fire — engine", "Fire — electrical", "Fire — class A", "Fire — extinguishers", "Gas safety", "Gas safety — alarm", "Carbon monoxide"],
       "blocks": [
         { "table": { "head": ["Fire", "First action"], "rows": [
@@ -63,6 +66,7 @@
       "id": "damage",
       "kicker": "Water and damage",
       "title": "People first, then the hull",
+      "qa": { "q": "How can I tell where the water in my bilge is coming from?", "a": "Keep pumping and check whether it is fresh or salt: fresh, with the pressure pump running by itself, is your own tank; salt means a **seacock**, a hose or the stern gland. A sheared seacock takes the softwood bung tied beside it." },
       "refs": ["Flooding", "Flooding — bungs", "Flooding — pumps", "Flooding — the source", "Collision", "Collision — damage control", "Grounding", "Grounding — falling tide", "Grounding — drying out", "Lightning", "Emergency steering"],
       "blocks": [
         { "p": "After a collision, grounding or lightning strike, check the crew, then look for water: lightning can blow out a through-hull. In a thunderstorm keep the crew below, clear of the mast, with a spare handheld VHF and GPS in the oven." },
@@ -77,6 +81,7 @@
       "id": "searoom",
       "kicker": "Sea room",
       "title": "Distance ÷ drift is the time you have",
+      "qa": { "q": "My engine has died off a lee shore: how long do I have?", "a": "Divide the **sea room** by your drift: rocks 0.4 M off at 1.2 kn give 20 minutes, so anchor now, then call PAN-PAN. With 40 minutes and sails ready, hoist them and claw off instead." },
       "refs": ["Engine failure — lee shore", "Engine failure in a TSS", "Urgency to distress", "Being towed", "Heavy weather — preparation", "Heavy weather — heaving to", "Heavy weather — drogue", "Heavy weather — lee shore", "Heavy weather — lying a-hull", "Heavy weather — tactics"],
       "blocks": [
         { "fig": { "type": "chart", "land": "M0 166 C100 156 200 172 320 160 V200 H0 Z", "depths": [[60, 110, "14"], [122, 112, "12"], [250, 142, "9"]], "boat": [150, 70, 270], "track": "M150 82 L150 140", "labels": [[160, 152, "rocks", "middle"]], "panel": ["Engine dead", "Wind N F5", "Rocks 4 ca S", "Drift 1.2 kn", "Chain 50 m"], "note": "Depths in metres" }, "cap": "0.4 M ÷ 1.2 kn = 20 minutes: anchor now, then call PAN-PAN." },
@@ -90,6 +95,7 @@
       "id": "distress",
       "kicker": "Calling for help",
       "title": "Alert by DSC, then speak on 16",
+      "qa": { "q": "How do I send a distress call on a DSC VHF radio?", "a": "Press the red **DISTRESS** button, even with no position on the set, then call on channel 16: MAYDAY three times, name, call sign, MMSI, position, nature of distress, help needed, persons aboard, OVER." },
       "refs": ["MAYDAY call", "DSC distress alert", "MAYDAY — position", "MAYDAY RELAY", "SÉCURITÉ call", "DSC — cancelling a false alert", "DSC — distress alert received", "Distress traffic — silence", "GMDSS sea areas", "VHF range", "Distress flares", "Flares — collision warning", "AIS", "Radar reflectors"],
       "blocks": [
         { "p": "**MAYDAY** means grave and imminent danger to the vessel or a person; **SÉCURITÉ** warns of a hazard, such as a container awash. Send the DSC alert even with no position on the set, then give it by voice on 16." },
@@ -114,6 +120,7 @@
       "id": "abandon",
       "kicker": "Abandon ship",
       "title": "Step up into the raft",
+      "qa": { "q": "When should we abandon the yacht and get into the liferaft?", "a": "Only when she is sinking or burning: a sound hull is bigger, warmer and easier to find than a **liferaft**, so if you are dismasted but dry, stay aboard. Call for help early." },
       "refs": ["Abandon ship — when", "Abandon ship — the raft", "Abandon ship — in the raft", "Abandon ship — grab bag", "Fire — abandon", "Liferaft — hydrostatic release", "EPIRB & SART", "SART", "Helicopter rescue", "Catamaran — capsize"],
       "blocks": [
         { "p": "A sound hull is bigger, warmer and easier to find than a raft: dismasted but dry, you stay. Call early, but leave only when she is sinking or burning." },

@@ -6,6 +6,7 @@
       "id": "compass",
       "kicker": "Variation and deviation",
       "title": "From the compass to the chart",
+      "qa": { "q": "Do I apply deviation to a bearing taken with a hand-bearing compass?", "a": "No, not if you use it in the open, clear of steel, engine and speakers: a **hand-bearing compass** then needs variation only. A bearing over the steering compass also takes the deviation for the ship's head." },
       "refs": ["Compass — variation", "Compass — variation for the year", "Variation — changing across the chart", "Variation — annual change and the nearest rose", "Compass — deviation card", "Compass — when deviation applies", "Compass — the hand-bearing compass", "Hand-bearing compass — deviation", "Hand-bearing compass — deviation found on a transit", "Position fixing — three-point fix"],
       "blocks": [
         { "p": "Bearings are plotted in true. A **hand-bearing compass** used in the open, clear of steel, engine and speakers, needs variation only: add east, subtract west. Take it from the nearest rose, updated to this year." },
@@ -18,6 +19,7 @@
       "id": "check",
       "kicker": "Checking the compass",
       "title": "Find the deviation before you need it",
+      "qa": { "q": "How do I check my compass deviation using a transit?", "a": "Steer along a charted **transit**, convert its true bearing to magnetic and compare with the compass: reading high means deviation west, low means east. Offshore, use the tabled bearing of the rising or setting sun." },
       "refs": ["Compass — causes of deviation", "Compass — magnetic interference", "Compass — heeling error", "Compass — checking on a transit", "Compass — checking deviation on a transit", "Compass — checking on a transit astern", "Compass check — the sun's bearing", "Compass — swinging", "Compass types — fluxgate"],
       "blocks": [
         { "p": "**Deviation** is the boat's own magnetism: engine, keel bolts, wiring. It changes with the heading and with heel. Anything magnetic left near the compass adds more: a phone, a steel tool, a kedge, a live cable. Aluminium does not." },
@@ -31,6 +33,7 @@
       "id": "fix",
       "kicker": "The visual fix",
       "title": "Three bearings in the right order",
+      "qa": { "q": "In what order should I take the bearings for a three-point fix?", "a": "The marks ahead and astern first, as their bearings change slowly, and the mark abeam last, noting time and log with it. Choose marks about 60° apart; the three lines leave a **cocked hat**." },
       "refs": ["Position fixing — choosing marks", "Position fixing — angle of cut", "Position fixing — a transit and a bearing", "Position fixing — order of bearings", "Position fixing — taking bearings", "Position fixing — recording the fix", "Position fixing — cocked hat", "Position fixing — cross-checking a fix", "Position fixing — fix versus DR", "Position fixing — fix and DR", "Position fixing — fix versus GPS", "Position fixing — choosing the fix", "Position fixing — frequency of fixes", "Position fixing — how often"],
       "blocks": [
         { "p": "Choose marks that are fixed, sharp and charted exactly: a lighthouse, not a buoy or a sloping headland. Two lines cut best near 90°, three about 60° apart; marks ahead and astern give almost one line. A **transit** needs no compass: cross it with a bearing at right angles." },
@@ -44,6 +47,7 @@
       "id": "running",
       "kicker": "The running fix",
       "title": "One mark, two bearings and the run between",
+      "qa": { "q": "How do I get a fix from a single lighthouse with a running fix?", "a": "Take two bearings of it, noting time and log, and transfer the first line along the **ground track** run between them, leeway and stream included. Where the transferred line cuts the second bearing is the fix." },
       "refs": ["Running fix — no tide", "Running fix — with tide", "Running fix — the transferred line", "Running fix — leeway", "Running fix — course altered", "Running fix — course change and tide", "Running fix — tide hour by hour", "Running fix — bow and beam", "Running fix — bow and beam with tide", "Running fix — doubling the angle", "Running fix — two different marks", "Running fix — its limits", "GPS failure — a running fix at night"],
       "blocks": [
         { "p": "With one mark, take a bearing and note time and log; later take another. From any point on the first line lay off the **ground track** run between them, leeway and stream included, and redraw the first line through its end. Where this transferred line cuts the second bearing is the fix." },
@@ -55,6 +59,7 @@
       "id": "lights",
       "kicker": "Lights at night",
       "title": "Range from the horizon, name from the stopwatch",
+      "qa": { "q": "How do I work out my distance off when a light rises over the horizon?", "a": "It is 2.08 × (√H + √h) miles, H being the light's height and h your eye's, in metres: the range at which a strong light **rises**. Cross that range with the light's bearing for a fix." },
       "refs": ["Position lines — rising and dipping lights", "Position lines — dipping distance table", "Position fixing — rising light and bearing", "Rising and dipping lights — bobbing a light", "Rising lights — height of tide on the light", "Dipping lights — height of tide", "Rising lights — visibility", "Rising lights — the loom", "Rising lights — identifying a landfall light", "Fixing at night — identifying lights", "Fixing at night — identifying a light", "Fixing at night — timing a light", "Fixing at night — light characteristics"],
       "blocks": [
         { "p": "On a clear night a strong light **rises** over the horizon at 2.08 × (√H + √h) miles, H being its height and h your eye's, in metres. Cross that range with its bearing for a fix." },
@@ -72,6 +77,7 @@
       "id": "radar",
       "kicker": "Radar and depth",
       "title": "Ranges and soundings as position lines",
+      "qa": { "q": "How do I fix my position with radar?", "a": "By **ranges**, not bearings: radar measures range well and bearing poorly. Cross two ranges, or a range with a visual bearing, with the VRM on the near edge of a steep target; where two arcs cross twice, the depth decides." },
       "refs": ["Radar — fixing by ranges", "Radar — fixing by two ranges", "Radar — range and bearing fix", "Radar — range with a visual bearing", "Radar — EBL bearings", "Radar — measuring a range", "Radar — choosing a target", "Radar — a low coast", "Radar — range of a low target", "Radar — gain and clutter", "Radar — rain clutter", "Position lines — depth contour", "Position lines — bearing and depth", "Position fixing — checking with depth", "Fixing in fog — a line of soundings", "Fixing in fog — fog signals", "Fixing in fog — radar and plotter"],
       "blocks": [
         { "p": "Radar measures **range** well and bearing poorly: fix by two ranges, or a range crossed with a visual bearing. Put the VRM on the near edge of a steep target; a low beach may not paint, leaving the hills behind as first echo. A low target shows only inside the radar horizon, 2.2 × (√h + √H). A head-up EBL reads from the bow: add the heading. Excess sea-clutter control hides small close echoes; rain control breaks up a shower." },
@@ -84,6 +90,7 @@
       "id": "gps",
       "kicker": "GPS",
       "title": "A position to check, not to obey",
+      "qa": { "q": "How do I plot a GPS position quickly on a paper chart?", "a": "As a **range and bearing** to a waypoint charted on a known object. The bearing runs from you to the waypoint, so you lie on its reciprocal; check whether the set shows true or magnetic." },
       "refs": ["GPS — range and bearing to a waypoint", "GPS — plotting a fix", "GPS — magnetic or true bearings", "GPS — HDOP", "GPS — the antenna", "GPS — chart datum", "GPS — loss of fix", "GPS — interference"],
       "blocks": [
         { "p": "Plot a GPS position quickly as a **range and bearing** to a waypoint charted on a known object. The bearing runs from you to the waypoint, so you lie on its reciprocal; check whether the set shows true or magnetic." },

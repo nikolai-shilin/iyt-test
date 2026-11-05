@@ -6,6 +6,7 @@
       "id": "error",
       "kicker": "Compass error",
       "title": "Variation plus deviation",
+      "qa": { "q": "How do I work out compass deviation from a true bearing?", "a": "Find the **compass error**, true minus compass, then subtract the variation for your position: what is left is the deviation. Count east as plus and west as minus." },
       "refs": ["Compass error, variation & deviation", "Magnetic variation on the ocean"],
       "blocks": [
         { "p": "The **compass error** is the difference between a true bearing and the same bearing by compass. It is the sum of **variation**, which belongs to the place, and **deviation**, which belongs to the boat on that heading. Count east as plus, west as minus." },
@@ -18,6 +19,7 @@
       "id": "amplitude",
       "kicker": "Amplitude",
       "title": "The Sun's bearing as it rises or sets",
+      "qa": { "q": "How do I check my compass with the rising or setting Sun?", "a": "Compare its compass bearing with the true bearing from its **amplitude**, the angle from due east or west: sin Amp = sin Dec ÷ cos Lat, no time needed. Take it with the Sun's centre on the celestial horizon." },
       "refs": ["Compass check — amplitude"],
       "blocks": [
         { "p": "The **amplitude** is the angle between the rising or setting Sun and due east or west. It needs only latitude and declination, not the time: sin Amp = sin Dec ÷ cos Lat. Name it E at rising or W at setting, then N or S like the declination: in either hemisphere the Sun rises and sets towards the name of its declination." },
@@ -30,6 +32,7 @@
       "id": "azimuth",
       "kicker": "Azimuth",
       "title": "A bearing at any time, of any body",
+      "qa": { "q": "How do I check the compass by the Sun at any time of day?", "a": "Compare the compass bearing with the Sun's **azimuth**, Zn, worked from latitude, declination and LHA in the PZX triangle, so you need the time to the minute. Best take it low, under about 30°." },
       "refs": ["Compass check — azimuth", "Compass check — stars & planets", "Compass check — Polaris"],
       "blocks": [
         { "p": "At any other moment the body's true bearing is its **azimuth**, Zn: the angle at your zenith in the PZX triangle, worked from latitude, declination and local hour angle (LHA = GHA − west longitude, or + east). So you need the time to the minute. LHA over 180° puts the body east of you." },
@@ -45,6 +48,7 @@
       "id": "log",
       "kicker": "Deviation log",
       "title": "One heading, one deviation",
+      "qa": { "q": "Does compass deviation change when I change tack or heading?", "a": "Yes: a deviation holds only for the heading and heel it was found on, so record it by heading and tack in a **deviation log**. After a gybe it is unknown until checked again." },
       "refs": ["Compass — the deviation log", "Compass — swinging at sea", "Fluxgate & steering compass"],
       "blocks": [
         { "p": "A deviation holds only for the heading it was found on, and for that heel: log it by heading and tack. After a gybe it is unknown until checked again. A sudden jump means steel or electronics stowed near the compass." },
@@ -62,6 +66,7 @@
       "id": "gnss",
       "kicker": "GNSS",
       "title": "Good to metres, until it is not",
+      "qa": { "q": "How can I tell if my GPS is being jammed or spoofed at sea?", "a": "**Jamming** loses the fix on every receiver at once, since GPS, Galileo, GLONASS and BeiDou share one band. Spoofing gives a plausible position that the log and radar disagree with." },
       "refs": ["Satellite navigation — GNSS", "Satellite navigation — single-source risk", "Celestial navigation as the backup", "AIS — position errors"],
       "blocks": [
         { "p": "A receiver finds its range from each satellite by the signal's travel time; three ranges and its own clock error need **four satellites**. Bunched satellites give a high **HDOP**, a poor fix. GPS, Galileo, GLONASS and BeiDou together improve the geometry, but share one band: a jammer blocks them all." },
@@ -79,6 +84,7 @@
       "id": "satcom",
       "kicker": "EPIRB and satcom",
       "title": "Satellites that carry your messages",
+      "qa": { "q": "How long should I leave my EPIRB switched on after activating it?", "a": "Until you are picked up: a 406 MHz **EPIRB** alerts an MRCC through the Cospas-Sarsat satellites, but rescuers home on its 121.5 MHz signal. The Return Link light only confirms the alert was received." },
       "refs": ["EPIRB & Cospas-Sarsat", "Satellite communications at sea"],
       "blocks": [
         { "p": "A 406 MHz **EPIRB** sends its identity through the Cospas-Sarsat satellites to an MRCC, so register it to you and this boat. With built-in GNSS it sends your position within minutes. Rescuers home on its 121.5 MHz signal, so leave it on until you are picked up. The Return Link light only confirms receipt of the alert." },

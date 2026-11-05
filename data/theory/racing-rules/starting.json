@@ -6,6 +6,7 @@
       "id": "sequence",
       "kicker": "The sequence",
       "title": "Five, four, one, go",
+      "qa": { "q": "How does the five-minute starting sequence work under rule 26?", "a": "Under **rule 26** the class flag goes up at 5 minutes, the preparatory flag at 4 and down at 1, and the class flag comes down at the start. Times are taken from the flags, not the sounds." },
       "refs": ["RRS 26", "RRS 26, race signals", "RRS definition Racing, RRS 26"],
       "blocks": [
         { "table": { "head": ["To go", "Flag", "Sound", "Signal"], "rows": [
@@ -22,6 +23,7 @@
       "id": "prep",
       "kicker": "Preparatory flags",
       "title": "What the last minute can cost",
+      "qa": { "q": "What happens if I'm in the triangle in the last minute under the black flag, rule 30.4?", "a": "You are disqualified without a hearing: under the **black flag**, a boat identified in the triangle between the ends of the line and the first mark in the last minute is scored BFD and cannot sail a restart." },
       "refs": ["RRS 30.2", "RRS 30.4", "RRS 30.1, RRS definition Start", "RRS 30.2, RRS 44.3(c)", "RRS 30.1, race signals", "RRS 30.2, race signals", "RRS 30.4, race signals", "RRS 30.3, race signals", "RRS 30.1, RRS 29.1", "RRS 30.1", "RRS 30.2, RRS definition Start", "RRS 30.3, RRS A5", "RRS 30.3, RRS 30.4", "RRS 30.3, RRS 36", "RRS 30.4, RRS A5", "RRS 30.4, RRS 61.4(b)(1)", "RRS 30.4, RRS 36", "RRS 30.4, RRS 29.2", "RRS 30, RRS 29.2", "RRS 26, RRS 30.1, RRS 30.2"],
       "blocks": [
         { "fig": { "type": "flag", "flags": [["I", "I|round an end"], ["Z", "Z|20 % penalty"], ["U", "U|disqualified"], ["black", "Black|disqualified"]] }, "view": "0 40 320 104" },
@@ -39,6 +41,7 @@
       "id": "started",
       "kicker": "Starting correctly",
       "title": "Hull behind the line at the gun",
+      "qa": { "q": "I was over the line at the starting signal: what must I do to start properly?", "a": "Return your whole hull to the pre-start side of the line or its extensions, keeping clear of boats that are not returning, and cross again. Until then you have not **started**; sail on and you are scored OCS." },
       "refs": ["RRS definition Start, RRS 29.1", "RRS definition Start, RRS 28.1", "RRS 29.1, RRS 21.1, RRS definition Start", "RRS definition Start, RRS 28.1, Basic Principle Sportsmanship", "RRS 21.1", "RRS 21.1, RRS 10", "RRS definition Start, RRS 30.1", "RRS 29.1, RRS definition Start, RRS 61.4(b)(1)", "RRS 29.1, RRS definition Start", "RRS 29.1, RRS definition Start, RRS 61.4", "RRS 26, RRS definition Start", "RRS 21.1, RRS 14, RRS 43.1(c)"],
       "blocks": [
         { "p": "You **start** when your hull, having been entirely on the pre-start side at or after your starting signal, crosses the line from that side. Only the hull counts, not a bowsprit or crew. Over at the signal, you have not started, whatever the cause and whether or not anyone tells you." },
@@ -50,6 +53,7 @@
       "id": "recalls",
       "kicker": "Recalls",
       "title": "X for some, First Substitute for all",
+      "qa": { "q": "What is the difference between flag X and First Substitute at a race start?", "a": "Flag X with one sound is an **individual recall**: boats over the line return and start. First Substitute with two sounds is a general recall: racing stops, and the new warning comes one minute after it is lowered." },
       "refs": ["RRS 29.1, RRS A5", "RRS 29.2", "RRS 29.1", "RRS 29.2, race signals", "RRS definition Racing", "RRS 36, RRS 29.2", "RRS 29.2, RRS 26", "RRS 29.1, RRS 30.1", "RRS 29.1, RRS 30.4", "RRS 29.1, RRS 26", "RRS 29.1, RRS A5, RRS 61.4(b)(1)", "RRS definition Racing, RRS 31, RRS 29.2", "RRS 29.1, race signals (X)", "RRS 29.2, race signals (First Substitute)"],
       "blocks": [
         { "fig": { "type": "flag", "flags": [["X", "X|individual recall"], ["first-sub", "First Substitute|general recall"]] }, "view": "0 40 320 104" },
@@ -61,6 +65,7 @@
       "id": "postponed",
       "kicker": "Postponed, abandoned",
       "title": "AP before the start, N after it",
+      "qa": { "q": "What does the AP flag mean in a sailing race, and when is the next start?", "a": "**AP** with two sounds postpones races not yet started; the warning signal comes one minute after AP is lowered. Over a numeral pennant 1–9 it postpones by that many hours; over A, no more racing today." },
       "refs": ["RRS 27.3, race signals", "RRS race signals (AP over numeral pennant)", "RRS race signals (AP over A)", "RRS race signals (AP over H)", "RRS 32, race signals (N)", "RRS 32, race signals (N over A)", "RRS 32, race signals (N over H)", "RRS race signals (L)", "RRS 40, RRS 27.1, race signals (Y)", "RRS race signals (orange flag), SI", "RRS 27.1", "RRS 27.2, RRS 61.4(b)(1)", "RRS 27.3", "RRS 27.3, race signals (N)", "RRS 26, race signals (AP over numeral pennant)", "RRS 27.3, race signals (AP)", "RRS 27.3, RRS 29.2"],
       "blocks": [
         { "fig": { "type": "flag", "flags": [["AP", "AP|postponed"], ["N", "N|abandoned"], ["H", "over H|signals ashore"], ["A", "over A|no more today"]] }, "view": "0 40 320 104" },
@@ -78,6 +83,7 @@
       "id": "prestart",
       "kicker": "Before the gun",
       "title": "Right of way on the line",
+      "qa": { "q": "Do I get mark-room at the committee boat when starting a race?", "a": "No: a **starting mark** surrounded by navigable water gives no mark-room as boats approach it to start, so a windward boat has no claim on the gap. The usual rules apply: port keeps clear of starboard, windward of leeward." },
       "refs": ["RRS Part 2 Section C preamble, RRS 11", "RRS 10, RRS Part 2 Section C preamble", "RRS definition Proper Course, RRS 17, RRS 16.1", "RRS Part 2 Section C preamble, RRS 11, RRS 16.1", "RRS 16.1, RRS 31, RRS 43.1(a)", "RRS 31, RRS 44.1, RRS definition Racing", "RRS definition Racing, RRS 31", "RRS 21.3"],
       "blocks": [
         { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 195, "y": 138, "hdg": 315, "label": "You", "you": true }, { "x": 222, "y": 126, "hdg": 295, "label": "A" }], "line": { "x1": 40, "y1": 90, "x2": 250, "y2": 90, "label": "Start line" }, "note": "A reaches in to windward: no room at the committee boat" } },
@@ -89,6 +95,7 @@
       "id": "scoring",
       "kicker": "Scores and redress",
       "title": "Reading the results sheet",
+      "qa": { "q": "What do OCS, ZFP, UFD and BFD mean on race results?", "a": "**OCS**: over the line at the starting signal and did not start; ZFP: 20 % penalty under flag Z; UFD and BFD: disqualified under flag U or the black flag. All are scored without a hearing; if wrong, request redress." },
       "refs": ["RRS A5, RRS 61.4(b)(1)", "RRS A11, RRS 30.4", "RRS A5, RRS A11", "RRS 90.2, RRS A5, SI", "RRS 61.4(b)(1), SI"],
       "blocks": [
         { "table": { "head": ["Score", "Meaning"], "rows": [

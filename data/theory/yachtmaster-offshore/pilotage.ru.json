@@ -6,6 +6,7 @@
       "id": "plan",
       "kicker": "План перехода",
       "title": "Четыре этапа и запасной выход",
+      "qa": { "q": "Как рассчитать крайнее время выхода, чтобы успеть до непогоды?", "a": "**Крайний выход** = более ранний прогноз непогоды − запас − время перехода: если модели дают фронт в сб 1200 и сб 1800, при запасе 6 ч и переходе 15 ч выходите до пт 1500." },
       "refs": ["Passage planning — the four stages", "SOLAS V", "Passage planning — weather window", "Passage planning — tidal gates", "Passage planning — ports of refuge", "Passage planning — landfall", "Passage planning — contingencies", "Passage planning — medical diversion", "Passage planning — provisioning", "Passage planning — fuel", "Passage planning — execution", "Passage planning — handover", "Passage planning — crossing a TSS", "Passage planning — crossing the lanes", "Passage planning — waypoints and shipping", "Passage planning — offshore installations", "Passage planning — wind farms"],
       "blocks": [
         { "fig": { "type": "card", "title": "Четыре этапа", "lines": ["Оценка: карты, лоция, приливы, прогнозы", "Планирование: пути, точки, время, план Б", "Выполнение: прогноз, решение, инструктаж", "Контроль: обсервация, сверка с планом"] } },
@@ -19,6 +20,7 @@
       "id": "watch",
       "kicker": "Вахты и контроль",
       "title": "Кто-то всегда проверяет",
+      "qa": { "q": "Как часто определяться при подходе к опасности?", "a": "Так часто, чтобы не дойти до опасности между двумя **обсервациями**: например, каждые 30 минут в море и каждые 6 минут ближе 3 миль к опасности." },
       "refs": ["Passage planning — watches and night orders", "Passage planning — fatigue", "Passage planning — watchkeeping", "Passage monitoring — fixing interval", "Passage monitoring — fix and EP", "Logbook — electronic and paper"],
       "blocks": [
         { "p": "Полосы и подход к берегу — на свежий экипаж и светлое время; спать до ночи, а не после. Одиночному вахтенному под автопилотом нужен **сторожевой таймер**. Ночные приказы не задерживают манёвр: в опасной близости действуйте, потом будите. Обсервации чаще по мере приближения опасностей — так, чтобы не дойти до них между двумя обсервациями; обсервация далеко от счислимого места значит, что врёт течение, датчик или прокладка. Записанный трек — не журнал: ни погоды, ни решений, и он гаснет вместе с питанием." },
@@ -29,6 +31,7 @@
       "id": "pilotage",
       "kicker": "План проводки",
       "title": "Готово до входа",
+      "qa": { "q": "Как пользоваться ограждающим пеленгом, чтобы обойти опасность?", "a": "Проведите **ограждающий пеленг** от знака с карты мимо опасности и держите пеленг на знак с безопасной стороны от него; ночью и при зыби стройте его по более глубокой изобате." },
       "refs": ["Pilotage — air draught", "Pilotage — under-keel clearance", "Pilotage — turning room", "Pilotage — clearing bearings", "Pilotage — transits", "Pilotage — leading lights and sectors", "Pilotage — wheel-over point", "Pilotage plan — the abort point", "Port traffic signals", "VTS — reporting points", "VTS — reporting", "VTS — traffic information", "Pilotage in fog — VTS", "Pilotage in fog — speed", "Pilotage — landfall without GNSS", "Pilotage — an unlit anchorage by radar"],
       "blocks": [
         { "fig": { "type": "card", "title": "В плане", "lines": ["Прилив = осадка + ½ зыби + запас − глубина", "Мост: габарит + HAT − прилив ≥ высота мачты", "Ограждающие пеленги; точки перекладки руля", "Точка отказа: последнее место отвернуть", "СУДС: имя, место, намерение, ETA; слушать"] } },
@@ -42,6 +45,7 @@
       "id": "radar",
       "kicker": "РЛС",
       "title": "Что видно на экране",
+      "qa": { "q": "На каком расстоянии радар увидит берег или судно?", "a": "В пределах **радиолокационного горизонта**, около 2,2 × (√h₁ + √h₂) миль при высотах в метрах: антенна на высоте 9 м видит скалу в 64 м примерно за 24 мили." },
       "refs": ["Radar — how it works", "Radar — detection range", "Radar — range and bearing accuracy", "Radar — gain and tuning", "Radar — sea clutter", "Radar — rain clutter", "Radar — rain at night", "Radar — blind sectors", "Radar — detecting small craft", "Radar — racons", "Radar — SART", "Radar — range scales", "Radar — range scale and warning", "Radar — guard zones", "Radar — false echoes", "Radar — parallel indexing", "Radar — parallel indexing with a stream", "Radar — clearing ranges", "Radar — true and relative trails", "Radar and the plotter — overlay offset", "Radar and AIS — detection range"],
       "blocks": [
         { "p": "Дистанция = скорость радиоволн × время до эха ÷ 2; картинка кончается на радиолокационном горизонте. Дистанция до ближнего края эха точна; пеленг размыт шириной луча: определяйтесь по дистанциям." },
@@ -55,6 +59,7 @@
       "id": "plot",
       "kicker": "Радиолокационная прокладка и ARPA",
       "title": "Её CPA, её истинный курс",
+      "qa": { "q": "Как найти CPA судна по радиолокационной прокладке?", "a": "Нанесите эхо дважды и продлите линию через отметки: это её **относительное движение**, и она проходит мимо вас на дистанции CPA. Остаток пути по ней ÷ относительная скорость = TCPA." },
       "refs": ["Radar plotting — CPA and TCPA", "Radar plotting — steady bearing", "Radar plotting — two targets", "Radar plotting — true and relative motion", "Radar plotting — the alteration", "Radar plotting — the alteration for a CPA", "Radar plotting — a speed reduction", "Radar plotting — a target that alters", "ARPA — true and relative vectors", "ARPA/MARPA — limits", "ARPA/MARPA — target swap", "ARPA — ground and sea stabilisation"],
       "blocks": [
         { "p": "Нанесите эхо дважды. Линия через отметки, продлённая, — её **относительное движение**: она проходит мимо вас на дистанции CPA; остаток пути по ней ÷ относительная скорость = TCPA. Пеленг постоянен, дистанция падает — столкновение. Две цели: сначала та, чья CPA раньше." },
@@ -67,6 +72,7 @@
       "id": "ais",
       "kicker": "AIS",
       "title": "Что судно говорит о себе",
+      "qa": { "q": "Можно ли рассчитывать, что AIS покажет все суда вокруг?", "a": "Нет: у многих рыбаков, яхт, военных кораблей и буксируемых объектов **AIS** нет, а показывает он лишь то, что сообщают GNSS судна и экипаж. Эхо без AIS прокладывайте как любое другое." },
       "refs": ["AIS — classes A and B", "AIS — what it does not show", "AIS — what it shows and what it does not", "AIS — SART and MOB devices", "AIS-SART on the plotter", "AIS — virtual aids to navigation", "Radar and AIS — a tow"],
       "blocks": [
         { "p": "AIS передаёт по УКВ то, что сообщают GNSS судна и его экипаж. У многих рыбаков, яхт, военных кораблей и буксируемых объектов его нет, а статус вводят руками. Эхо без цели AIS прокладывайте как любое другое; два эха в ногу под одним именем — буксир и буксируемое: между ними не проходить. **Класс B** шлёт 2 Вт каждые 30 секунд, и на загруженном экране его могут отфильтровать. **Виртуальный знак** существует только на экране: нанесите опасность на бумагу." },
@@ -81,6 +87,7 @@
       "id": "gnss",
       "kicker": "GNSS и датчики",
       "title": "Один источник — ни одного",
+      "qa": { "q": "Как понять, что GPS глушат или подменяют сигнал?", "a": "**Глушение** — это скачки, дикая SOG, сбитые часы или нет места; подмена даёт гладкое, уверенное и ложное место. Дистанции РЛС и глубины независимы: верьте им и доложите о помехе." },
       "refs": ["GNSS — HDOP and accuracy", "GNSS — augmentation and integrity", "GNSS — jamming and spoofing", "GNSS — spoofing", "GNSS — failure", "GNSS — failure and what is left", "Integrated electronics — single point of failure", "Autopilot — wind mode", "Autopilot — alarms", "Echo sounder — offset", "Echo sounder — false readings", "Log — calibration", "Log — the GNSS as backup", "Log — a Dutchman’s log"],
       "blocks": [
         { "p": "Высокий **HDOP**: плохая геометрия спутников, хуже место. SBAS уточняет место и предупреждает об отказах, но глушится так же. **Глушение**: скачки, дикая SOG, сбитые часы, нет места. **Подмена**: гладкое, уверенное и ложное место. Дистанции РЛС и глубины независимы: верьте им и доложите о помехе." },

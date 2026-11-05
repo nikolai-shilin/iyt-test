@@ -6,6 +6,7 @@
       "id": "grid",
       "kicker": "Position and distance",
       "title": "The grid of a Mercator chart",
+      "qa": { "q": "How do I measure distance in miles on a Mercator chart?", "a": "On the **latitude scale** at the side of the chart, level with the leg: one minute of latitude is one mile. A minute of longitude is shorter, by the cosine of the latitude." },
       "refs": ["Charts — latitude and longitude", "Charts — Mercator projection", "Charts — distance and direction", "Charts — scale", "Charts — choosing the chart", "Chart symbols — measured distance"],
       "blocks": [
         { "p": "**Latitude** is read on the side scales, **longitude** at top and bottom, in minutes and decimals: 45 seconds is 0.75', not 0.45'. Count from the nearest printed line; west longitude grows leftward." },
@@ -18,6 +19,7 @@
       "id": "title",
       "kicker": "Title panel and rose",
       "title": "Small print before soundings",
+      "qa": { "q": "Why is my GPS position about 100 m out on an older paper chart?", "a": "The chart is on an older **horizontal datum**, while GPS works in WGS84. Apply the shift printed in the title panel; with no shift given, carry the position across by bearing and distance from a charted object." },
       "refs": ["Charts — title panel", "Charts — horizontal datum", "Charts — GPS and chart datum", "Charts — source data", "Charts — compass rose", "Charts — magnetic anomalies"],
       "blocks": [
         { "p": "The **title panel** gives the scale, the units (a fathom is 1.83 m), the levels depths and heights are measured from, and the **horizontal datum**. GPS works in WGS84: on an older datum apply the printed shift, or the plot can be 100 m out. With no shift given, carry a position across by bearing and distance from a charted object." },
@@ -31,6 +33,7 @@
       "id": "depths",
       "kicker": "Depths and heights",
       "title": "Below datum, above datum, above high water",
+      "qa": { "q": "What does an underlined number on a chart mean?", "a": "It is a **drying height**, measured above chart datum. A plain sounding is a depth below chart datum, to which you add the height of tide; a figure in brackets is a height above MHWS that never covers." },
       "refs": ["Charts — drying heights", "Charts — vertical clearances", "Charts — depth contours and soundings", "Chart symbols — rocks", "Chart symbols — rocks and heights", "Chart symbols — depths and shoals", "Chart symbols — wrecks", "Chart symbols — obstructions"],
       "blocks": [
         { "p": "A sounding is a depth below **chart datum**: add the height of tide. An underlined figure is a **drying height**, above datum. A figure in brackets is a height that never covers, measured above high water (MHWS)." },
@@ -43,6 +46,7 @@
       "id": "symbols",
       "kicker": "Symbols and abbreviations",
       "title": "The seabed, the areas and their notes",
+      "qa": { "q": "What do S, M and R next to a sounding mean when choosing where to anchor?", "a": "They give the **nature of the seabed**: S sand, M mud and Cy clay are good holding; R rock, St stones, Wd weed and Sh shells are poor. Never anchor over a cable, pipeline or foul ground." },
       "refs": ["Chart symbols — nature of the seabed", "Chart symbols — abbreviations", "Chart symbols — anchorages, cables and pipelines", "Chart symbols — overfalls and tide rips", "Chart symbols — prohibited areas", "Chart symbols — danger areas", "Chart symbols — spoil grounds", "Chart symbols — nature reserves", "Chart symbols — moorings", "Chart symbols — traffic separation schemes", "Publications — chart 5011"],
       "blocks": [
         { "fig": { "type": "chart", "land": "M0 0 H320 V36 C250 60 210 40 170 50 C120 62 60 46 0 56 Z", "depths": [[70, 100, "5 R"], [140, 140, "6 Wd"], [225, 110, "7 S M"], [270, 160, "8 Sh"]], "labels": [[70, 84, "A", "middle"], [140, 124, "B", "middle"], [225, 94, "C", "middle"], [270, 144, "D", "middle"]], "note": "Letters beside a sounding: the seabed" }, "cap": "Anchor at C, in sand and mud." },
@@ -59,6 +63,7 @@
       "id": "lights",
       "kicker": "Lights and signals",
       "title": "The legend beside a light",
+      "qa": { "q": "What does Fl(3) WR 15s 21m 18/15M mean beside a light on the chart?", "a": "Three flashes every 15 seconds, with white and red **sectors**, 21 m above MHWS, nominal range 18 miles for the white and 15 for the red. The legend always runs character, colour, period, elevation, range." },
       "refs": ["Chart symbols — lights", "Chart symbols — light sectors", "Chart symbols — fog signals", "Chart symbols — radar beacons", "Chart symbols — buoys", "Chart symbols — AIS aids to navigation"],
       "blocks": [
         { "p": "The legend runs: character, colour, period, elevation, range. **Fl(3) WR 15s 21m 18/15M** is three flashes every 15 seconds, white and red sectors, 21 m above MHWS, nominal range 18 miles for white, 15 for red." },
@@ -71,6 +76,7 @@
       "id": "corrections",
       "kicker": "Corrections and publications",
       "title": "The newest information wins",
+      "qa": { "q": "How do I correct a paper chart with Notices to Mariners?", "a": "Find the last notice number in the chart's bottom-left margin, then apply every later **Notice to Mariners** for that chart in ink and write its number in the margin; temporary notices go in pencil." },
       "refs": ["Charts — corrections and Notices to Mariners", "Charts — Notices to Mariners", "Charts — edition and corrections", "Publications — the almanac", "Publications — almanac", "Publications — almanac port pages", "Publications — pilot books", "Publications — List of Lights", "Publications — List of Radio Signals", "Publications — tidal stream atlases", "Publications — what to carry"],
       "blocks": [
         { "p": "**Notices to Mariners** carry the changes: a new breakwater, a moved buoy, a wreck. Each names the previous notice for that chart, so a gap shows. A new edition holds everything issued before its date." },
@@ -89,6 +95,7 @@
       "id": "electronic",
       "kicker": "Electronic charts",
       "title": "The same data, with traps of its own",
+      "qa": { "q": "What should I set the safety contour to on my chart plotter?", "a": "To your draft plus a margin, along with the depth alarm. If the chart has no **safety contour** at that value, the plotter takes the next deeper one, and its route check ignores the tide." },
       "refs": ["Electronic charts — raster and vector", "Electronic charts — zones of confidence", "Electronic charts — safety contour", "Electronic charts — over-zoom", "Electronic charts — paper backup"],
       "blocks": [
         { "p": "A **raster** chart is a picture of the paper chart. A **vector** chart is a database: tap an object for its details, switch to night colours. It hides detail when zoomed out, so check each leg zoomed in; over-zooming enlarges errors, not accuracy." },

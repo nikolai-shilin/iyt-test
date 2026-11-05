@@ -6,6 +6,7 @@
       "id": "plotter",
       "kicker": "Картплоттер",
       "title": "Карта на каждую милю и проверенное место",
+      "qa": { "q": "Что проверить на картплоттере чартерной яхты до подписи акта?", "a": "Что картридж покрывает **весь район плавания**, разрешённый договором, и издан недавно, а плоттер поймал фикс и показывает яхту у её причала. Без спутников он показывает последнее сохранённое место." },
       "refs": ["Check-in: chartplotter", "Check-in: chart coverage vs cruising area", "Check-in: charts and pilot book", "Check-in: GPS fix at the berth", "Chart datum and GPS — WGS84"],
       "blocks": [
         { "p": "О картридже с картой спросите две вещи: покрывает ли он **весь район плавания**, разрешённый договором, и какого года издание. Базовая карта без глубин — не карта. Бумажная карта и лоция — ваш резерв, и в них есть подробности гаваней: просите свежие." },
@@ -17,6 +18,7 @@
       "id": "setup",
       "kicker": "Настройка плоттера",
       "title": "Сделайте плоттер своим до выхода",
+      "qa": { "q": "Как пользоваться клавишей MOB на картплоттере?", "a": "Клавиша **MOB** ставит метку и показывает пеленг и дистанцию до неё. Она только для человека за бортом: стоянку отмечают обычной путевой точкой, ведь на некоторых приборах MOB ещё и посылает тревогу." },
       "refs": ["Plotter — units", "Check-in: plotter at night", "Check-in: plotter routes and waypoints", "Plotter: the track", "Check-in: MOB function", "Plotter — MOB key"],
       "blocks": [
         { "table": { "head": ["Настройка", "Что вам нужно"], "rows": [
@@ -33,6 +35,7 @@
       "id": "instruments",
       "kicker": "Глубина, скорость, ветер",
       "title": "Знайте, от чего отсчитана каждая цифра",
+      "qa": { "q": "При каком показании эхолота киль яхты коснётся грунта?", "a": "Без введённого смещения эхолот считает **от датчика**, а не от киля: при осадке 2,1 м и датчике в 0,4 м под ватерлинией киль коснётся грунта при показании 1,7 м. Сигнал мелководья ставьте на метр или больше выше." },
       "refs": ["Check-in: instrument units", "Check-in: depth sounder offset", "Depth sounder — shallow-water alarm", "Check-in: log and speed", "SOG vs speed through the water", "Passage planning — SOG", "Check-in: wind instrument", "Wind instrument — the masthead unit", "Instruments — the network", "Catamaran — two helms", "Check-in: defects on the form", "Check-in: radar and defects on the form"],
       "blocks": [
         { "p": "Сверьте эхолот с планом гавани. Показание втрое больше — это футы. Без введённого смещения эхолот считает **от датчика**, а не от киля: при осадке 2,1 м и датчике в 0,4 м под ватерлинией киль коснётся грунта при показании 1,7 м. Сигнал мелководья поставьте на метр или больше выше." },
@@ -46,6 +49,7 @@
       "id": "backup",
       "kicker": "Компас, бумага, журнал",
       "title": "Что работает, когда экран погас",
+      "qa": { "q": "Как проверить девиацию компаса на чартерной яхте?", "a": "На пробном выходе, когда нет течения, сравните **путевой компас** с путевым углом (COG) на плоттере: то, чего не объясняет склонение, — девиация, часто от телефона у нактоуза." },
       "refs": ["Check-in: compass and plotter heading", "Hand-bearing compass", "Check-in: tablet as backup", "Phone apps and their limits", "Ship's log", "Base briefing — weather and currents"],
       "blocks": [
         { "fig": { "type": "compass", "variation": 3, "course": 90, "courseLabel": "Компас", "note": "COG плоттера 098° T" }, "cap": "090° по компасу плюс склонение 3°E — это 093° истинных; остальные 5° — девиация." },
@@ -57,6 +61,7 @@
       "id": "pilot",
       "kicker": "Автопилот и АИС",
       "title": "Помощники, за которыми нужен глаз",
+      "qa": { "q": "Видят ли другие суда мою яхту по АИС?", "a": "Только если у вас **транспондер**: приёмник показывает паромы вам, а вас им показывает только транспондер. Спросите, что стоит на яхте, и на ночной переход поставьте сигнализацию CPA, которую слышно от штурвала." },
       "refs": ["Check-in: autopilot", "Autopilot — not in close quarters", "Autopilot — wind mode", "Autopilot — compass calibration", "AIS — receiver or transponder", "AIS — CPA alarm and guard zone"],
       "blocks": [
         { "p": "На пробном выходе посмотрите **Standby**, смену курса и сигнал тревоги. Автопилот держит курс, а не обходит яхты: в гаванях и на стоянках рулит человек. В режиме по ветру он держит угол к вымпельному ветру и уходит за каждым его поворотом: следите за курсом. Если его курс расходится с компасом и плоттером, калибровку делает база." },
@@ -68,6 +73,7 @@
       "id": "radio",
       "kicker": "УКВ и ЦИВ",
       "title": "Настройте станцию и выучите её клавиши",
+      "qa": { "q": "На каком канале УКВ делать проверку связи?", "a": "На рабочем канале, а не на **16-м**, на котором вы несёте вахту на ходу. Вызывайте станцию за несколько миль: проверка через понтон ничего не скажет об антенне." },
       "refs": ["VHF watch — channel 16", "VHF — watch on channel 16", "Radio check — working channel", "Radio check — antenna and range", "VHF — power output 1 W / 25 W", "VHF licence — operator and ship station", "Forecast sources — VHF weather broadcasts", "Check-in: handheld VHF", "VHF DSC — MMSI", "DSC — a distress alert received", "DSC — cancelling a false distress alert"],
       "blocks": [
         { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["volume", "громкость"], ["squelch", "шумоподавитель"], ["distress", "DISTRESS под крышкой"], ["power", "1 Вт / 25 Вт"], ["ptt", "тангента"]] } },
@@ -81,6 +87,7 @@
       "id": "lights",
       "kicker": "Огни и горн",
       "title": "Какие выключатели и когда включать",
+      "qa": { "q": "Какие огни несёт яхта ночью, если идёт под парусом и мотором?", "a": "Ходовые огни плюс топовый (NAV + STEAMING): с работающим мотором вы — **судно с механическим двигателем**, стоят паруса или нет. Только под парусами несите трёхцветный огонь или бортовые с кормовым, но не всё вместе." },
       "refs": ["COLREGs Rules 23/25 — motor-sailing", "COLREGs Rule 25 — tricolour or sidelights", "COLREGs Rule 30 — at anchor", "COLREGs Rule 33 — sound signals"],
       "blocks": [
         { "tiles": [

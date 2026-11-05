@@ -6,6 +6,7 @@
       "id": "seen",
       "kicker": "Sails and inventory",
       "title": "You sign for what you were shown",
+      "qa": { "q": "Should I see the sails hoisted before signing for a charter yacht?", "a": "Yes: ask for the main hoisted and the genoa unrolled while it is calm. If it blows too hard, have the sail rolled out a metre and back, and write **not fully seen** on the form." },
       "refs": ["Check-in: sails", "Check-in form — what was shown", "Inventory list — sails", "Charter contract — downwind sails", "Charter contract — reporting damage"],
       "blocks": [
         { "p": "'Sails: OK, checked yesterday' is not a check. Ask for the main hoisted and the genoa unrolled while it is calm. If it blows too hard, have the sail rolled out a metre and back, and write 'not fully seen' on the form." },
@@ -23,6 +24,7 @@
       "id": "main",
       "kicker": "Mainsail and halyards",
       "title": "Up, down, and what can snag",
+      "qa": { "q": "How do I check the mainsail on a charter boat at the pontoon?", "a": "With the main up, look at every batten pocket, every luff slide and the whole leech, then let the halyard go: the sail must **drop on its own**, or you cannot get it down fast in a squall." },
       "refs": ["Check-in: mainsail", "Check-in: mainsail chafe", "Check-in: mainsail drop test", "Check-in: lazyjacks & stackpack", "Check-in: halyards", "Check-in: masthead & halyards", "Check-in: electric winch", "Check-in: catamaran mainsail", "At sea: hoisting the main"],
       "blocks": [
         { "fig": { "type": "boat", "view": "sail", "parts": [["head", "head"], ["luff", "luff"], ["leech", "leech"], ["batten", "batten"], ["clew", "clew"], ["tack", "tack"], ["mast", "slides"]], "note": "Walk every edge with your eyes" } },
@@ -40,6 +42,7 @@
       "id": "genoa",
       "kicker": "Genoa furler",
       "title": "It must roll in by hand",
+      "qa": { "q": "What should I do if the genoa furler jams?", "a": "Never winch it: ease the sheet, try again by hand and call the base. If the furling line goes solid, look up, because the **halyard** may be wrapped round the forestay above the swivel." },
       "refs": ["Check-in: genoa furler", "Check-in: genoa sheets & cars", "Check-in: sheets & lines", "At sea: furler jam", "At sea: furling the genoa", "At sea: reefed genoa", "Check-in: catamaran foresail"],
       "blocks": [
         { "fig": { "type": "rope", "kind": "winch", "labels": [[70, 86, "furling line"], [160, 152, "drum: full of line"], [250, 86, "to cockpit"]], "note": "Genoa fully out: this line rolls it back in" } },
@@ -56,6 +59,7 @@
       "id": "inmast",
       "kicker": "In-mast furling",
       "title": "A tight roll and the boom at its mark",
+      "qa": { "q": "How do I furl an in-mast mainsail without it jamming?", "a": "Set the boom to the base's mark, keep a little **outhaul** tension and take the furling line in steadily. If it bunches in the slot, stop, unroll a turn and furl again by hand: under power a bunch only tightens." },
       "refs": ["Check-in: in-mast furling", "At sea: in-mast furling"],
       "blocks": [
         { "p": "The main rolls up inside the mast through a narrow slot, where a loose roll bunches and jams. **To unfurl**, haul the outhaul on the winch while easing the furling line under slight tension. **To furl**, set the boom to the base's mark, keep a little outhaul tension and take the furling line in steadily. Never winch against a closed clutch." },
@@ -67,6 +71,7 @@
       "id": "reef",
       "kicker": "Reefing and wind limits",
       "title": "Put the reef in at the pontoon first",
+      "qa": { "q": "Should I practise reefing before leaving the charter base?", "a": "Yes: put reef 1 in at the pontoon and try reef 2, to see which line does what, that it runs free and is long enough. A torn cringle or a short **reef line** is put right before you leave." },
       "refs": ["Check-in: reefing", "At sea: reefing", "Charter contract — wind limit"],
       "blocks": [
         { "p": "Put reef 1 in at the pontoon and try reef 2: you see which line does what, that it runs free and is long enough. Horns at the gooseneck mean a **two-line** system: someone goes to the mast, clipped on, to hook the luff cringle, then the clew line is hauled from the cockpit. A torn cringle or a short reef line is no reef: it is put right before you leave." },
@@ -79,6 +84,7 @@
       "id": "boom",
       "kicker": "Boom gear",
       "title": "What controls the boom and what tames it",
+      "qa": { "q": "How should a boom preventer be rigged on a charter yacht?", "a": "A **preventer** runs from the boom end to the bow and back to a cockpit winch, so it can be eased. A boom brake only slows a gybe by friction; it does not stop one." },
       "refs": ["Check-in: mainsheet, traveller, vang", "Check-in: boom & bimini", "Check-in: boom preventer", "Check-in: boom, vang & topping lift", "Check-in: boom brake"],
       "blocks": [
         { "fig": { "type": "sail", "wind": 0, "hdg": 170, "note": "Wind astern: an accidental gybe throws the boom across" } },

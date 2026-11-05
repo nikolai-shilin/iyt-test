@@ -6,6 +6,7 @@
       "id": "sphere",
       "kicker": "The celestial sphere",
       "title": "The sky as a sphere round you",
+      "qa": { "q": "How high above the horizon is the celestial pole at my latitude?", "a": "As high as your latitude: the **elevated pole** P, the one above your horizon, stands at an altitude equal to your latitude. On the equator both poles lie on the horizon." },
       "refs": ["The Earth — latitude and longitude", "Celestial sphere — altitude of the pole", "Celestial sphere — zenith and nadir", "Celestial sphere — the observer's meridian", "Celestial sphere — celestial and visible horizon"],
       "blocks": [
         {"p": "**Latitude** is the arc of your meridian from the equator to you; 1′ of it is one mile. **Longitude** is the arc of the equator from Greenwich to your meridian, east or west up to 180°."},
@@ -19,6 +20,7 @@
       "id": "gp",
       "kicker": "GP and hour angles",
       "title": "The spot under a body",
+      "qa": { "q": "How do I get the local hour angle from GHA and my longitude?", "a": "**LHA** = GHA + east longitude, or − west longitude, ± 360°. Under 180° the body is west of you, past your meridian; over 180° it is east of you, still climbing." },
       "refs": ["Geographical position", "Geographical position — stars", "Geographical position — the date line", "Geographical position — errors", "Celestial sphere — hour angles", "The Sun's motion — 15° an hour"],
       "blocks": [
         {"p": "The **geographical position** (GP) is the spot with the body in its zenith. Its latitude is the **declination** (Dec); its longitude comes from the **Greenwich hour angle** (GHA), measured westward from Greenwich through 360°: GHA west up to 180°, beyond that 360° − GHA east."},
@@ -33,6 +35,7 @@
       "id": "aries",
       "kicker": "Aries and SHA",
       "title": "One point for every star",
+      "qa": { "q": "How do I find a star's GHA from the almanac?", "a": "Add the star's **sidereal hour angle** (SHA) to the GHA of the First Point of Aries for that hour, and take off 360° if the sum is over: GHA star = GHA Aries + SHA." },
       "refs": ["First point of Aries — SHA", "First point of Aries and SHA", "First point of Aries — the sidereal day", "The Moon's motion"],
       "blocks": [
         {"p": "The stars keep their places, so the almanac tabulates one point, the **First Point of Aries**, hour by hour and gives each star a fixed **sidereal hour angle** (SHA), measured westward from Aries. For a planet, GHA minus GHA Aries gives its SHA."},
@@ -45,6 +48,7 @@
       "id": "declination",
       "kicker": "The Sun's year",
       "title": "Why the Sun's declination swings",
+      "qa": { "q": "Why does the Sun's declination change through the year?", "a": "Because the Sun's yearly path, the **ecliptic**, is tilted 23°26′ to the celestial equator. Its Dec is 0° at the equinoxes and 23°26′ north or south at the solstices, changing fastest near the equinoxes, about 24′ a day." },
       "refs": ["Declination through the year", "Declination through the year — the ecliptic", "The ecliptic and the seasons", "The Sun's declination through the year", "Sun in the zenith"],
       "blocks": [
         {"p": "A star's Dec hardly changes. The Sun's does: its yearly path, the **ecliptic**, is tilted 23°26′ to the celestial equator. That tilt, not the distance to the Sun, makes the seasons."},
@@ -60,6 +64,7 @@
       "id": "pzx",
       "kicker": "The PZX triangle",
       "title": "The triangle behind every sight",
+      "qa": { "q": "What are the sides of the PZX triangle, and what does solving it give?", "a": "The **PZX triangle** joins the elevated pole, your zenith and the body: PZ is 90° − latitude, PX is 90° − Dec, or 90° + Dec for contrary names. Solving it gives ZX, hence Hc, and the azimuth." },
       "refs": ["PZX triangle", "PZX triangle — southern hemisphere", "PZX triangle — the angle at P", "PZX triangle — solving for Hc", "PZX triangle — azimuth", "PZX triangle — errors"],
       "blocks": [
         {"p": "Join the elevated pole P, your zenith Z and the body X by great circles. Knowing PZ, PX and the angle between them, you get ZX, hence the calculated altitude Hc, and the angle at Z, the azimuth. The angle at X is never used."},
@@ -77,6 +82,7 @@
       "id": "circle",
       "kicker": "Circle of equal altitude",
       "title": "One sight, one circle",
+      "qa": { "q": "How far am I from a body's geographical position, given its observed altitude?", "a": "The **zenith distance**, 90° − Ho, at 60 miles to the degree: Ho 60° puts you 1800 miles from the GP, on a circle round it shared by everyone measuring that altitude at that instant." },
       "refs": ["Circle of equal altitude", "Circle of equal altitude — zenith distance", "Circle of equal altitude — position line", "Circle of equal altitude — high-altitude sights", "Circle of equal altitude — the assumed position", "Circle of equal altitude — errors"],
       "blocks": [
         {"p": "The **zenith distance**, 90° − Ho, is also your distance from the GP, 60 miles to the degree. Everyone measuring that altitude at that instant is on one circle round the GP: Ho 60° puts you 1800 miles from it."},
@@ -90,6 +96,7 @@
       "id": "meridian",
       "kicker": "Meridian passage, rising, setting",
       "title": "The daily path of a body",
+      "qa": { "q": "When does a star never set at my latitude?", "a": "When its Dec has the same name as your latitude and exceeds 90° − latitude: the body is **circumpolar**. With that Dec and the contrary name it never rises; on the equator everything rises and sets." },
       "refs": ["Meridian passage — maximum altitude", "Meridian altitude — why it gives latitude", "Circumpolar bodies", "Circumpolar bodies — upper and lower transit", "Rising and setting bodies"],
       "blocks": [
         {"p": "A body is highest as it crosses your meridian, its GP then nearest to you. P, Z and X lie on one arc: the zenith distance is the difference between latitude and Dec, or their sum for contrary names, and the body bears north if its GP is north of you. So a noon sight gives latitude without tables."},

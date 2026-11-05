@@ -6,6 +6,7 @@
       "id": "gmdss",
       "kicker": "GMDSS",
       "title": "The alert goes out by itself",
+      "qa": { "q": "What is sea area A1, and what alerts a rescue centre beyond it?", "a": "**Sea area A1** is the water within range of VHF DSC coast stations, where most coastal cruising takes place. Beyond it your VHF no longer reaches a coast station, but a 406 MHz EPIRB alerts a rescue centre through satellites from anywhere." },
       "refs": ["GMDSS", "GMDSS sea areas"],
       "blocks": [
         { "p": "Before GMDSS a distress call depended on somebody listening. Its main idea is **automatic alerting**: a DSC radio or an EPIRB sends who you are and where you are to a rescue centre, even if no one hears a voice call." },
@@ -23,6 +24,7 @@
       "id": "epirb",
       "kicker": "EPIRB",
       "title": "A beacon the satellites hear",
+      "qa": { "q": "How does an EPIRB tell rescuers where I am?", "a": "An **EPIRB** transmits a coded 406 MHz alert that Cospas-Sarsat satellites pass to a rescue centre, with its own position if it has built-in GPS. A weak 121.5 MHz signal lets a lifeboat or helicopter home in." },
       "refs": ["EPIRB", "EPIRB & PLB"],
       "blocks": [
         { "p": "An **EPIRB** is the yacht's emergency beacon. Switched on, it transmits on **406 MHz** a coded alert that the Cospas-Sarsat satellites pick up and pass to a rescue centre. A beacon with built-in GPS sends its own position in the alert, so rescuers get it faster and more precisely; without GPS the satellites have to work the position out." },
@@ -35,6 +37,7 @@
       "id": "care",
       "kicker": "Looking after it",
       "title": "Register it, test it, own up to a false alert",
+      "qa": { "q": "How do I test my EPIRB without sending a false alert?", "a": "Use only the built-in **self-test**, as the maker's manual says: switching the beacon on sends a live alert. If it does go off by mistake, switch it off and tell the coastguard or MRCC at once." },
       "refs": ["EPIRB"],
       "blocks": [
         { "table": { "head": ["Job", "How"], "rows": [
@@ -48,6 +51,7 @@
       "id": "sart",
       "kicker": "SART",
       "title": "A line of dots on the radar",
+      "qa": { "q": "What does a SART look like on a ship's radar screen?", "a": "A **SART** paints a line of 12 dots on a ship's 9 GHz (X-band) radar. The SART is at the dot nearest the ship; the line runs on beyond it." },
       "refs": ["SART", "AIS-SART"],
       "blocks": [
         { "p": "A **SART** goes with you into the liferaft. It answers a ship's 9 GHz (X-band) radar and paints a line of **12 dots** on her screen. The SART is at the dot nearest the ship; the line runs on beyond it. Its range depends on height, so mount it on its pole or hold it as high as you can." },
@@ -73,6 +77,7 @@
       "id": "navtex",
       "kicker": "NAVTEX",
       "title": "Warnings in print",
+      "qa": { "q": "How do I stop my NAVTEX printing warnings for faraway seas?", "a": "Select only the local stations' letters, and the message types you want: all **NAVTEX** stations share 518 kHz and transmit in turn, so the set keeps only what you choose." },
       "refs": ["NAVTEX"],
       "blocks": [
         { "p": "**NAVTEX** is a receiver that prints or stores safety information. International broadcasts go out on **518 kHz**, in English. All stations share that frequency and transmit in turn, so you choose which station letters, and which message types, the set keeps. Select the local stations and it stops printing warnings for seas far away." },
@@ -89,6 +94,7 @@
       "id": "ais",
       "kicker": "AIS",
       "title": "An aid, not a lookout",
+      "qa": { "q": "Can I rely on AIS instead of keeping a lookout?", "a": "No: **AIS** is an aid, not a lookout. Many boats carry no AIS and a set can be switched off, so an empty screen does not mean an empty sea. Keep a proper lookout whatever the plotter shows." },
       "refs": ["AIS"],
       "blocks": [
         { "p": "**AIS** sets broadcast a vessel's identity, position, course and speed on VHF, and plotters show them as targets. Ships carry **Class A**. Yachts usually fit **Class B**, a simpler small-craft set that transmits at lower power and reports less often." },

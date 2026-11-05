@@ -6,6 +6,7 @@
       "id": "banks",
       "kicker": "Batteries and switches",
       "title": "Two banks, kept apart",
+      "qa": { "q": "Why does a charter yacht have separate engine and house batteries?", "a": "So a **house bank** flattened overnight still leaves the engine able to start: each engine has its own starter battery, and the house bank runs everything else. Switch to BOTH only to start on a flat battery." },
       "refs": ["Check-in: batteries", "Check-in: battery switches", "Check-in: batteries and master switch", "Check-in: battery terminals", "Battery switches — after a parallel start", "Battery switches — under way", "Batteries — ventilation", "Batteries — overcharging", "Catamaran — charging"],
       "blocks": [
         { "p": "Each engine has its own **starter battery**; the **house bank** runs everything else. Kept separate, a house bank flattened overnight still leaves the engine able to start. On a catamaran ask which alternator charges the house bank: often only one does." },
@@ -18,6 +19,7 @@
       "id": "monitor",
       "kicker": "Volts and amp-hours",
       "title": "Read the bank at rest",
+      "qa": { "q": "At what voltage do the boat's batteries need charging?", "a": "At about **12.2 V** on a rested lead-acid bank: that is half charge, time to charge. 12.7 V is full and 12.0 V or less is flat; read it only after an hour with no charge and no load." },
       "refs": ["Battery monitor", "Battery monitor — charging", "Battery monitor — amp-hours", "Battery monitor — out of step", "Battery capacity — an old bank", "Lithium house bank", "Check-in: alternator", "Battery charger — stages", "Alternator failure mid-week"],
       "blocks": [
         { "p": "The voltmeter tells the state of a lead-acid bank only when the bank has **rested**: no charge and no load for an hour or so." },
@@ -37,6 +39,7 @@
       "id": "budget",
       "kicker": "Power budget",
       "title": "Amps times hours",
+      "qa": { "q": "How many amp-hours can I actually use from a 200 Ah battery bank?", "a": "About 100 Ah: only half of a lead-acid bank is usable between charges. Budget in **amp-hours**, current times time: a fridge drawing 5 A for 10 hours takes 50 Ah." },
       "refs": ["Power budget — fridge", "Power budget for the week", "Power budget — catamaran", "Power budget — before a blow", "Solar controller", "Check-in: solar and generator", "12 V and 230 V systems", "Inverter — big loads", "Inverter — standby"],
       "blocks": [
         { "p": "Current times time gives **amp-hours**. Only half of a lead-acid bank is usable, so a 200 Ah bank gives you about 100 Ah between charges." },
@@ -49,6 +52,7 @@
       "id": "shore",
       "kicker": "Shore power",
       "title": "The cable goes live last",
+      "qa": { "q": "How do I connect shore power safely in a marina?", "a": "With the boat's 230 V main off, plug in at the boat end, then the pedestal, then switch the pedestal on; the 230 V main and the charger go on last. Never hold a **live plug**." },
       "refs": ["Shore power — connecting", "Shore power — leaving the berth", "Shore power — polarity and RCD", "Shore power — RCD", "Shore power — load", "Shore power — adapters", "Shore power — 230 V safety", "Shore power — 230 V and water"],
       "blocks": [
         { "p": "230 V on a wet pontoon can kill. Never hold a live plug, never accept a cable with a cut sheath, and never push bare wires into a pedestal: ask the marina office for an adapter." },
@@ -65,6 +69,7 @@
       "id": "panel",
       "kicker": "Panel, lights and pumps",
       "title": "Every breaker shown, every light seen",
+      "qa": { "q": "Which breakers should stay on overnight at anchor?", "a": "Three: the **anchor light**, the bilge pump and the gas alarm. The all-round white anchor light burns every night at anchor (COLREGs Rule 30)." },
       "refs": ["Check-in: electrical panel", "Check-in: navigation lights", "COLREGs Rule 30 — anchor light", "Anchor light — failure", "Breakers — overnight at anchor", "Check-in: bilge pump", "Bilge pump — stuck float switch", "Gas detector and CO alarm", "Check-in: windlass", "Electric winches", "Generator — carbon monoxide"],
       "blocks": [
         { "p": "Have each breaker switched on in turn: you will be looking for them at night. Test the lights after dark, from the pontoon." },
@@ -86,6 +91,7 @@
       "id": "faults",
       "kicker": "Fuses, breakers, fire",
       "title": "A fuse protects the wire",
+      "qa": { "q": "What do I do if a fuse keeps blowing on a charter boat?", "a": "Fit a spare of the same rating, never a bigger one; if it blows again, leave it out and call the base. A **fuse** is there to stop the wire overheating." },
       "refs": ["Fuses — spares", "Breakers — a short circuit", "Electrical fire", "Check-in: windlass"],
       "blocks": [
         { "p": "A breaker resets; a fuse needs a spare, so ask where the spares are kept. Both are there to stop a wire overheating." },

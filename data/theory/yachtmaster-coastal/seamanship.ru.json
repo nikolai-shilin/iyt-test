@@ -6,6 +6,7 @@
       "id": "ropes",
       "kicker": "Тросы, узлы и лебёдки",
       "title": "У каждой задачи свой узел",
+      "qa": { "q": "Каким узлом связать два троса разной толщины?", "a": "**Двойным шкотовым** узлом. Для петли на палу берите беседочный — он не затягивается, а чтобы держать нагруженный трос или цепь, — стопорный узел." },
       "refs": ["Ropework — knots", "Ropework — rolling hitch", "Ropework — cleating", "Ropework — lashing", "Ropework — throwing a line", "Ropework — splices and whippings", "Ropework — rope types", "Rope types", "Mooring lines — chafe", "Ropework — coiling", "Winches — riding turn", "Winches — riding turns", "Winches — safety"],
       "blocks": [
         { "table": { "head": ["Узел", "Задача"], "rows": [
@@ -27,6 +28,7 @@
       "id": "anchoring",
       "kicker": "Постановка на якорь",
       "title": "Длину цепи считают от роульса и по полной воде",
+      "qa": { "q": "Сколько якорной цепи нужно вытравить?", "a": "Считайте **длину цепи** от глубины в полную воду плюс высота роульса: 4:1 на цепи, 5:1 перед свежим ветром, 6:1 на канате. На глубине 3 м, когда придёт ещё 3,6 м, с роульсом 1 м — около 30 м." },
       "refs": ["Anchoring — choosing the spot", "Anchoring — wind shift", "Anchoring — scope", "Anchoring — the approach", "Anchoring — setting and checking", "Anchoring — anchor alarm", "Anchoring — swinging room", "Anchoring under sail"],
       "blocks": [
         { "p": "Становитесь под **прогноз**, а не под нынешний ветер: если заход ветра сделает бухту подветренным берегом, уходите засветло. Выбирайте песок, запас глубины в малую воду и соседей на таком же якорном устройстве: лодки на канате ходят шире лодок на цепи, а лодки на буях почти стоят." },
@@ -41,6 +43,7 @@
       "id": "night",
       "kicker": "Ночь на якоре",
       "title": "Ответ должен быть готов заранее",
+      "qa": { "q": "Что делать, если ночью якорь пополз?", "a": "Сначала **запустите мотор**, чтобы сохранить управление, подработайте вперёд, сняв нагрузку, затем встаньте заново с большей цепью или уйдите. Поползли снова, а за кормой камни — уходите в море." },
       "refs": ["Anchoring — anchor watch", "Anchor watch", "Anchoring — dragging", "Anchoring — two anchors", "Anchoring — tripping line", "Anchoring — a fouled anchor", "Anchoring — the kedge", "Anchoring — weighing"],
       "blocks": [
         { "p": "При усилении ветра назначьте **якорные вахты** с письменным наказом: будить шкипера, если сместился пеленг, ветер перевалил заданный предел или рядом кто-то ползёт." },
@@ -63,6 +66,7 @@
       "id": "power",
       "kicker": "Управление под мотором",
       "title": "Заброс кормы и точка вращения",
+      "qa": { "q": "Куда заносит корму на заднем ходу с винтом правого шага?", "a": "Влево: **винт правого шага** на заднем ходу заносит корму влево, сильнее всего с места, винт левого шага — вправо. Поэтому швартуйтесь левым бортом: торможение само прижмёт корму." },
       "refs": ["Boat handling — prop walk", "Prop walk", "Boat handling — turning in a tight space", "Boat handling — pivot point", "Pivot point", "Boat handling — wind and tide", "Boat handling — ferry gliding", "Boat handling — mooring buoy", "Catamaran handling", "Catamaran — springing off", "Catamaran — tacking", "Catamaran — anchoring"],
       "blocks": [
         { "p": "На заднем ходу винт **правого шага** заносит корму влево, сильнее всего с места; винт левого шага — вправо. Струя вскипает у борта, противоположного забросу. Поэтому швартуйтесь левым бортом — торможение само прижмёт корму — и разворачивайтесь на месте вправо." },
@@ -77,6 +81,7 @@
       "id": "berthing",
       "kicker": "Швартовка",
       "title": "Какой конец первым, какой последним",
+      "qa": { "q": "Как отойти от понтона, если ветер прижимает яхту к нему?", "a": "Дайте ход вперёд на **носовом шпринге**: корма отойдёт от причала, затем дайте задний ход и уходите. А подходя при ветре на причал, остановитесь параллельно в ширине корпуса — ветер прижмёт сам." },
       "refs": ["Boat handling — springing off", "Boat handling — springing on", "Coming alongside — wind onto", "Coming alongside — wind off", "Leaving a berth — using the stream", "Leaving a berth in a crosswind", "Docking — marina crosswind", "Boat handling — rafting up", "Rafting — leaving from inside", "Stern-to with an anchor", "Stern-to on your own anchor", "Med mooring — lazy lines", "Stern-to — lazy lines", "Picking up a mooring", "Picking up a mooring — the boat hook"],
       "blocks": [
         { "fig": { "type": "lines", "quay": "ПОНТОН", "lines": [["bow", "носовой"], ["stern", "кормовой"], ["bow-spring", "носовой шпринг"], ["stern-spring", "кормовой шпринг"]], "note": "Ход вперёд на носовом шпринге: корма отходит" } },
@@ -100,6 +105,7 @@
       "id": "sail",
       "kicker": "Под парусами",
       "title": "Рифиться рано, держать баланс",
+      "qa": { "q": "Как лечь в дрейф на парусной яхте?", "a": "Сделайте поворот оверштаг, не отдавая стаксель-шкот, потравите грот и принайтуйте румпель под ветер: со стакселем на ветре яхта **ляжет в дрейф**. Снос остаётся: 4 ч на 1,2 уз — это 4,8 мили." },
       "refs": ["Heaving to", "Reefing at sea", "Reefing at night", "Reefing — furling genoa", "Sail balance — weather helm", "Sail balance", "Sailing in waves", "Gybing — preventer", "Gybing — by the lee", "Sailing onto a mooring", "Leaving a mooring under sail", "Sailing off an anchor"],
       "blocks": [
         { "p": "**Лечь в дрейф**: поворот оверштаг, не отдавая стаксель-шкот, грот потравить, румпель принайтовать под ветер. Снос остаётся: 4 ч на 1,2 уз — это 4,8 мили." },
@@ -117,6 +123,7 @@
       "id": "towing",
       "kicker": "Буксировка и тузик",
       "title": "Растяжимый трос, брайдель и малый ход",
+      "qa": { "q": "Как завести буксирный конец, чтобы буксировать другую яхту?", "a": "На **нейлоновом** якорном канате с брайделем на каждом конце: у буксируемого — на обе носовые утки через роульс, у буксира — с обеих раковин. Брашпиль и релинг для этого не рассчитаны." },
       "refs": ["Towing — being towed", "Towing — the towline", "Towing — making fast", "Towing — length and speed", "Towing — a long tow", "Towing — speed and ETA", "Towing — alongside", "Dinghy safety", "Dinghy — towing", "Dinghy handling"],
       "blocks": [
         { "p": "Буксируйте на **нейлоновом** якорном канате — он гасит рывки — с **брайделя**: у буксируемого на обе носовые утки через роульс, у буксира с обеих раковин, чтобы он слушался руля. Брашпиль и релинг для этого не рассчитаны." },

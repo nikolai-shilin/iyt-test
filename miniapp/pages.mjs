@@ -39,6 +39,10 @@ const ABCD = 'ABCD';
 // The levels in the app's order; `link` is the app's deep link to the level (?screen=, startapp=), as in bot/core.mjs.
 const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], ['flotilla-skipper', 'flotilla'], ['bareboat-skipper', 'bareboat'], ['yachtmaster-coastal', 'coastal'], ['yachtmaster-offshore', 'offshore'], ['yachtmaster-ocean', 'ocean'], ['racing-rules', 'racing'], ['charter-checkin', 'checkin']];
 
+// What a level's certificate is, for the words of its title: the skipper and Yachtmaster levels are what people call
+// a licence («права на яхту»), VHF and Crew are IYT certificates, the racing rules and the charter check-in neither.
+const KIND = { 'flotilla-skipper': 'licence', 'bareboat-skipper': 'licence', 'yachtmaster-coastal': 'licence', 'yachtmaster-offshore': 'licence', 'yachtmaster-ocean': 'licence', 'vhf-radio-operator': 'iyt', 'international-crew': 'iyt' };
+
 // figures.js is a browser script: run it here, as api/mcp.mjs and data/check_theory.mjs do.
 const fig = new Function(`${await readFile(join(root, 'docs/design/figures.js'), 'utf8')}\nreturn { figSvg, FIG_TEXT, FIG_DAY };`)();
 // Built-in labels of the figures in Russian: the same list as FIG_RU in miniapp/app.js.
@@ -56,14 +60,14 @@ const STR = {
     kicker: 'IYT theory · free', ruleK: 'Rule', figure: 'Figure',
     homeTitle: 'Pass your IYT exam',
     homeLead: 'Close-to-real questions for every certification level, with an explanation after each answer, and a theory article for every topic. Pick the level you are studying for.',
-    levelTitle: (l) => `${l}: practice questions and theory`,
-    levelDesc: (l, n, t, q, m, p) => `${n} practice questions for ${l} in ${t} topics, a theory article for each, and a timed mock exam: ${q} questions, ${m} minutes, pass at ${p} %. Free.`,
+    levelTitle: (l, kind) => `${l} practice test: ${kind === 'other' ? '' : 'exam '}questions and theory`,
+    levelDesc: (l, n, t, q, m, p) => `Free ${l} practice test: ${n} questions in ${t} topics with the reason after every answer, a theory article for each topic, and a timed mock exam of ${q} questions in ${m} minutes, pass at ${p} %.`,
     levelLead: (n, t) => `${n} questions in ${t} topics. Each topic has an article that explains the rules the questions ask about, with drawings; the app asks the questions, explains every answer and brings your mistakes back until you get them right.`,
     questions: 'questions', topics: 'topics', exam: 'exam questions',
     examLine: (q, m, p) => `The mock exam: ${q} questions spread over every topic, ${m} minutes, pass at ${p} %. Size, time and pass mark are the app’s defaults, not an official rule.`,
     topicsK: 'Topics', otherK: 'Other levels', min: (m) => `${m} min read`, nq: (n) => `${n} questions`, noArticle: 'article not written yet',
     articleK: (i, n, m) => `Theory · topic ${i} of ${n} · ${m} min`, contents: 'In this article',
-    articleTitle: (t, l) => `${t} — ${l} theory`,
+    articleTitle: (t, l) => `${t}: theory and practice questions — ${l}`,
     qsK: 'Practice questions', qsLead: 'Questions from this topic, as the app asks them. Open one to see the answer.',
     answer: 'Show the answer', readSec: (k) => `Explained in: ${k}`,
     ctaK: 'Practise it', ctaTopic: (n) => `All ${n} questions of this topic are in the app: practice by topic with the reason after every answer, your mistakes brought back, and a timed mock exam. Free, no sign-up, in the browser or in Telegram.`,
@@ -126,14 +130,14 @@ const STR = {
     kicker: 'Теория IYT · бесплатно', ruleK: 'Правило', figure: 'Рисунок',
     homeTitle: 'Сдайте экзамен IYT',
     homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа и статьёй по теории для каждой темы. Выберите уровень, к которому готовитесь.',
-    levelTitle: (l) => `${l}: вопросы и теория для подготовки`,
-    levelDesc: (l, n, t, q, m, p) => `${n} вопросов для подготовки к ${l} по ${t} темам, статья по теории для каждой и пробный экзамен на время: ${q} вопросов, ${m} минут, проходной балл ${p} %. Бесплатно.`,
+    levelTitle: (l, kind) => `${l}: тест и теория к ${kind === 'licence' ? 'экзамену на права на яхту' : kind === 'iyt' ? 'экзамену IYT' : 'экзамену'}`,
+    levelDesc: (l, n, t, q, m, p, kind) => `${kind === 'licence' ? `Бесплатный тест к экзамену на международные права на яхту ${l}` : `Бесплатный тест ${l}`}: ${n} вопросов по ${t} темам с пояснением к каждому ответу, статья по теории для каждой темы и пробный экзамен на время (${q} вопросов, ${m} минут, проходной балл ${p} %).`,
     levelLead: (n, t) => `${n} вопросов по ${t} темам. У каждой темы есть статья с рисунками, которая объясняет правила из вопросов; приложение задаёт вопросы, объясняет каждый ответ и возвращает ошибки, пока вы не ответите верно.`,
     questions: 'вопросов', topics: 'тем', exam: 'вопросов в экзамене',
     examLine: (q, m, p) => `Пробный экзамен: ${q} вопросов со всех тем, ${m} минут, проходной балл ${p} %. Размер, время и проходной балл — настройки приложения, а не официальное правило.`,
     topicsK: 'Темы', otherK: 'Другие уровни', min: (m) => `${m} мин чтения`, nq: (n) => `${n} вопросов`, noArticle: 'статья ещё не написана',
     articleK: (i, n, m) => `Теория · тема ${i} из ${n} · ${m} мин`, contents: 'В статье',
-    articleTitle: (t, l) => `${t} — теория ${l}`,
+    articleTitle: (t, l) => `${t}: теория и тест — ${l}`,
     qsK: 'Вопросы для тренировки', qsLead: 'Вопросы по этой теме — так, как их задаёт приложение. Откройте вопрос, чтобы увидеть ответ.',
     answer: 'Показать ответ', readSec: (k) => `Объяснение: ${k}`,
     ctaK: 'Потренируйтесь', ctaTopic: (n) => `Все ${n} вопросов этой темы — в приложении: тренировка по темам с пояснением после каждого ответа, ошибки возвращаются, есть пробный экзамен на время. Бесплатно, без регистрации, в браузере или в Telegram.`,
@@ -341,7 +345,7 @@ export async function buildPages(out, { css }) {
       if (!en || !Array.isArray(en.sections)) continue;
       art[tp.id] = { en, ru: await readJson(`data/theory/${id}/${tp.id}.ru.json`) };
     }
-    levels.push({ id, link, bank, ov, art, title: bank.title });
+    levels.push({ id, link, bank, ov, art, title: bank.title, kind: KIND[id] || 'other' });
   }
   const topicTitle = (L, tp, lang) => (lang === 'ru' && L.ov && L.ov.topics && L.ov.topics[tp.id]) || tp.title;
 
@@ -367,15 +371,15 @@ export async function buildPages(out, { css }) {
         path: lp, lang, alt: { en: `/${L.id}`, ru: `/ru/${L.id}` },
         html: shell({
           lang, path: lp, alt: { en: `/${L.id}`, ru: `/ru/${L.id}` }, css,
-          title: `${s.levelTitle(L.title)} · IYT Test`,
-          desc: clip(s.levelDesc(L.title, b.questions.length, b.topics.length, b.examQuestions, b.examMinutes, b.passMark), 300),
+          title: `${s.levelTitle(L.title, L.kind)} · IYT Test`,
+          desc: clip(s.levelDesc(L.title, b.questions.length, b.topics.length, b.examQuestions, b.examMinutes, b.passMark, L.kind), 300),
           ld: { '@context': 'https://schema.org', '@graph': [
-            { '@type': 'CollectionPage', name: s.levelTitle(L.title), url: SITE + lp, inLanguage: lang, isAccessibleForFree: true, publisher: ORG,
+            { '@type': 'CollectionPage', name: s.levelTitle(L.title, L.kind), url: SITE + lp, inLanguage: lang, isAccessibleForFree: true, publisher: ORG,
               about: { '@type': 'EducationalOccupationalCredential', name: L.title, ...(official ? { recognizedBy: { '@type': 'Organization', name: 'International Yacht Training Worldwide' } } : {}) },
               mainEntity: { '@type': 'ItemList', itemListElement: b.topics.filter(has).map((tp, i) => ({ '@type': 'ListItem', position: i + 1, name: topicTitle(L, tp, lang), url: `${SITE}${lp}/${tp.id}` })) } },
             crumbLd(trail)] },
           body: `${crumbs(trail)}
-<div class="pg-head"><span class="meta">${s.kicker}</span><h1 class="display">${esc(s.levelTitle(L.title))}</h1><p class="body-muted">${esc(s.levelLead(b.questions.length, b.topics.length))}</p></div>
+<div class="pg-head"><span class="meta">${s.kicker}</span><h1 class="display">${esc(s.levelTitle(L.title, L.kind))}</h1><p class="body-muted">${esc(s.levelLead(b.questions.length, b.topics.length))}</p></div>
 <div class="band pg-facts"><div><b>${b.questions.length}</b><span class="meta">${s.questions}</span></div><div><b>${b.topics.length}</b><span class="meta">${s.topics}</span></div><div><b>${b.examQuestions}</b><span class="meta">${s.exam}</span></div></div>
 <p class="card-meta" style="margin:-12px 0 0">${s.examLine(b.examQuestions, b.examMinutes, b.passMark)}</p>
 <section class="stack g12"><h2 class="kicker">${s.topicsK}</h2><ol class="pg-list">${rows}</ol></section>
@@ -414,7 +418,7 @@ ${cta(s, s.ctaLevel, L.link)}
             ld: { '@context': 'https://schema.org', '@graph': [
               { '@type': 'Article', headline: tt, description: plain(a.lead), inLanguage: lang, url: SITE + path, mainEntityOfPage: SITE + path, image: `${SITE}/intro.jpg`,
                 author: ORG, publisher: ORG, isAccessibleForFree: true, timeRequired: `PT${m}M`, educationalLevel: L.title,
-                isPartOf: { '@type': 'CollectionPage', name: s.levelTitle(L.title), url: SITE + lp },
+                isPartOf: { '@type': 'CollectionPage', name: s.levelTitle(L.title, L.kind), url: SITE + lp },
                 articleSection: a.sections.map((x) => x.kicker) },
               { '@type': 'Quiz', name: `${tt}: ${s.qsK}`, inLanguage: lang, educationalLevel: L.title, url: `${SITE}${path}#questions`,
                 hasPart: sample.map(({ q }) => ({ '@type': 'Question', eduQuestionType: 'Multiple choice', text: q.q,
@@ -494,8 +498,8 @@ ${s.mcpBody.map(([h, ...bs]) => `<section class="th-sec"><h2 class="th-h">${esc(
       path: '/ru', lang: 'ru', alt: { en: '/', ru: '/ru' },
       html: shell({
         lang: 'ru', path: '/ru', alt: { en: '/', ru: '/ru' }, css,
-        title: 'Подготовка к экзаменам IYT: вопросы и теория от VHF до Yachtmaster Ocean · IYT Test',
-        desc: 'Бесплатные вопросы для подготовки к экзаменам IYT — от VHF Radio Operator до Yachtmaster Ocean: ситуации в картинках, пояснение к каждому ответу, теория и пробный экзамен.',
+        title: 'Права на яхту IYT: тест и теория к экзамену, от VHF до Yachtmaster Ocean · IYT Test',
+        desc: 'Бесплатный тест к экзамену на международные права на яхту IYT: вопросы в картинках с пояснением к каждому ответу, теория по МППСС, навигации и безопасности, пробный экзамен. От VHF до Yachtmaster Ocean.',
         ld: { '@context': 'https://schema.org', '@type': 'WebPage', name: s.homeTitle, url: `${SITE}/ru`, inLanguage: 'ru', publisher: ORG,
           mainEntity: { '@type': 'ItemList', itemListElement: levels.map((L, i) => ({ '@type': 'ListItem', position: i + 1, name: L.title, url: `${SITE}/ru/${L.id}` })) } },
         body: `<div class="pg-head"><span class="meta">${s.kicker}</span><h1 class="display">${s.homeTitle}</h1><p class="body-muted">${s.homeLead}</p></div>

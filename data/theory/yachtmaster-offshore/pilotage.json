@@ -6,6 +6,7 @@
       "id": "plan",
       "kicker": "The passage plan",
       "title": "Four stages and a way out",
+      "qa": { "q": "How do I work out the latest time I can leave before bad weather arrives?", "a": "**Latest departure** = the earlier forecast of bad weather − margin − passage time: with the front forecast for Sat 1200 and Sat 1800, a 6 h margin and a 15 h crossing, leave by Fri 1500." },
       "refs": ["Passage planning — the four stages", "SOLAS V", "Passage planning — weather window", "Passage planning — tidal gates", "Passage planning — ports of refuge", "Passage planning — landfall", "Passage planning — contingencies", "Passage planning — medical diversion", "Passage planning — provisioning", "Passage planning — fuel", "Passage planning — execution", "Passage planning — handover", "Passage planning — crossing a TSS", "Passage planning — crossing the lanes", "Passage planning — waypoints and shipping", "Passage planning — offshore installations", "Passage planning — wind farms"],
       "blocks": [
         { "fig": { "type": "card", "title": "The four stages", "lines": ["Appraisal: charts, pilot, tides, forecasts", "Planning: tracks, waypoints, times, plan B", "Execution: latest forecast, decide, brief", "Monitoring: fix, compare with the plan, act"] } },
@@ -19,6 +20,7 @@
       "id": "watch",
       "kicker": "Watches and monitoring",
       "title": "Somebody is always checking",
+      "qa": { "q": "How often should I fix my position when approaching a danger?", "a": "Often enough that you cannot reach a danger between **fixes**: for example every 30 minutes offshore and every 6 minutes within 3 M of a danger." },
       "refs": ["Passage planning — watches and night orders", "Passage planning — fatigue", "Passage planning — watchkeeping", "Passage monitoring — fixing interval", "Passage monitoring — fix and EP", "Logbook — electronic and paper"],
       "blocks": [
         { "p": "Lanes and landfall where the crew is fresh and it is light; sleep before the night, not after. A lone watchkeeper under autopilot needs a **watch alarm**. Night orders never delay avoiding action: at close quarters act, then call. Fix more often as dangers close, so you cannot reach one between fixes; a fix well off the EP means stream, sensor or plot is wrong. A saved track is no log: no weather or decisions, and it dies with the power." },
@@ -29,6 +31,7 @@
       "id": "pilotage",
       "kicker": "The pilotage plan",
       "title": "Ready before the entrance",
+      "qa": { "q": "How do I use a clearing bearing to stay off a danger?", "a": "Draw a **clearing bearing** from a charted mark past the danger and keep the mark's bearing on the safe side of it; at night and in a swell, lay it to a deeper contour." },
       "refs": ["Pilotage — air draught", "Pilotage — under-keel clearance", "Pilotage — turning room", "Pilotage — clearing bearings", "Pilotage — transits", "Pilotage — leading lights and sectors", "Pilotage — wheel-over point", "Pilotage plan — the abort point", "Port traffic signals", "VTS — reporting points", "VTS — reporting", "VTS — traffic information", "Pilotage in fog — VTS", "Pilotage in fog — speed", "Pilotage — landfall without GNSS", "Pilotage — an unlit anchorage by radar"],
       "blocks": [
         { "fig": { "type": "card", "title": "In the plan", "lines": ["Tide = draught + ½ swell + margin − depth", "Bridge: clearance + HAT − tide ≥ air draught", "Clearing bearings; wheel-over points", "Abort point: the last place to turn away", "VTS: name, position, intention, ETA; listen"] } },
@@ -42,6 +45,7 @@
       "id": "radar",
       "kicker": "Radar",
       "title": "What paints",
+      "qa": { "q": "How far away can my radar pick up a coastline or a ship?", "a": "Out to the **radar horizon**, about 2.2 × (√h₁ + √h₂) miles with heights in metres: a scanner 9 m up sees a 64 m cliff at about 24 M." },
       "refs": ["Radar — how it works", "Radar — detection range", "Radar — range and bearing accuracy", "Radar — gain and tuning", "Radar — sea clutter", "Radar — rain clutter", "Radar — rain at night", "Radar — blind sectors", "Radar — detecting small craft", "Radar — racons", "Radar — SART", "Radar — range scales", "Radar — range scale and warning", "Radar — guard zones", "Radar — false echoes", "Radar — parallel indexing", "Radar — parallel indexing with a stream", "Radar — clearing ranges", "Radar — true and relative trails", "Radar and the plotter — overlay offset", "Radar and AIS — detection range"],
       "blocks": [
         { "p": "Range = speed of radio waves × echo time ÷ 2; the picture ends at the horizon. Range to the near edge of an echo is sharp; bearing is smeared by the beam width: fix by ranges." },
@@ -55,6 +59,7 @@
       "id": "plot",
       "kicker": "Radar plotting and ARPA",
       "title": "Her CPA, her true course",
+      "qa": { "q": "How do I find a ship's CPA from radar plots?", "a": "Plot the echo twice and extend the line through the plots: that is her **relative motion**, and it passes you at the CPA. Distance left along it ÷ relative speed gives the TCPA." },
       "refs": ["Radar plotting — CPA and TCPA", "Radar plotting — steady bearing", "Radar plotting — two targets", "Radar plotting — true and relative motion", "Radar plotting — the alteration", "Radar plotting — the alteration for a CPA", "Radar plotting — a speed reduction", "Radar plotting — a target that alters", "ARPA — true and relative vectors", "ARPA/MARPA — limits", "ARPA/MARPA — target swap", "ARPA — ground and sea stabilisation"],
       "blocks": [
         { "p": "Plot an echo twice. The line through the plots, extended, is her **relative motion**: it passes you at the CPA; distance left along it ÷ relative speed = TCPA. Steady bearing, closing range: collision. Two targets: the earlier CPA first." },
@@ -67,6 +72,7 @@
       "id": "ais",
       "kicker": "AIS",
       "title": "What she says of herself",
+      "qa": { "q": "Can I rely on AIS to show every vessel around me?", "a": "No: many fishing boats, yachts, warships and tows have no **AIS**, and it shows only what a ship's GNSS and crew report. Plot an echo with no AIS like any other." },
       "refs": ["AIS — classes A and B", "AIS — what it does not show", "AIS — what it shows and what it does not", "AIS — SART and MOB devices", "AIS-SART on the plotter", "AIS — virtual aids to navigation", "Radar and AIS — a tow"],
       "blocks": [
         { "p": "AIS says what a ship's GNSS and crew report, over VHF. Many fishing boats, yachts, warships and tows have none, and the status is typed by hand. Plot an echo with no AIS like any other; two echoes in step under one name are tug and tow: never pass between. **Class B** sends 2 W every 30 seconds and may be filtered off a busy display. A **virtual aid** exists only on the screen: plot the danger on paper." },
@@ -81,6 +87,7 @@
       "id": "gnss",
       "kicker": "GNSS and sensors",
       "title": "One source is none",
+      "qa": { "q": "How can I tell if my GPS is being jammed or spoofed?", "a": "**Jamming** shows as jumps, wild SOG, a wrong clock or no fix; spoofing gives a smooth, confident, false position. Radar ranges and depths are independent: believe them, and report it." },
       "refs": ["GNSS — HDOP and accuracy", "GNSS — augmentation and integrity", "GNSS — jamming and spoofing", "GNSS — spoofing", "GNSS — failure", "GNSS — failure and what is left", "Integrated electronics — single point of failure", "Autopilot — wind mode", "Autopilot — alarms", "Echo sounder — offset", "Echo sounder — false readings", "Log — calibration", "Log — the GNSS as backup", "Log — a Dutchman’s log"],
       "blocks": [
         { "p": "High **HDOP**: poor satellite geometry, worse fix. SBAS sharpens the fix and flags faults, but jams too. **Jamming**: jumps, wild SOG, wrong clock, no fix. **Spoofing**: a smooth, confident, false position. Radar ranges and depths are independent: believe them, report it." },
