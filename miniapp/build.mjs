@@ -21,6 +21,7 @@ import { createHash } from 'node:crypto';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SITE, INDEXNOW_KEY, PAGES } from './site.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const out = join(root, 'miniapp/dist');
@@ -52,7 +53,7 @@ async function build() {
   for (const [from, to] of FILES) await cp(join(root, from), join(out, to), { recursive: true });
 
   // banks: minified, under their own name in data/ and their content's name in h/
-  const banks = {}, order = {};
+  const banks = {}, order = {}, titles = {};
   for (const f of (await readdir(join(root, 'data/questions'))).filter((x) => x.endsWith('.json')).sort()) {
     const json = JSON.parse(await readFile(join(root, 'data/questions', f), 'utf8'));
     const min = JSON.stringify(json);
@@ -62,7 +63,7 @@ async function build() {
     await writeFile(join(out, name), min);
     const b = (banks[level] = banks[level] || {});
     b[lang] = name;
-    if (lang === 'en') { Object.assign(b, { n: json.questions.length, t: json.topics.length }); order[level] = json.topics.map((tp) => tp.id); }
+    if (lang === 'en') { Object.assign(b, { n: json.questions.length, t: json.topics.length }); order[level] = json.topics.map((tp) => tp.id); titles[level] = json.title; }
   }
 
   // theory: a level's articles in one file per language; a topic with no article yet is simply not in it
@@ -96,6 +97,10 @@ async function build() {
 
   let html = await readFile(join(out, 'index.html'), 'utf8');
   const swap = (from, to) => { if (!html.includes(from)) throw new Error(`index.html has no ${from}`); html = html.replace(from, to); };
+  // the levels in the no-JavaScript copy of Home, smallest bank first (VHF … Yachtmaster), as search engines read it
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const lv = Object.keys(titles).sort((a, b) => banks[a].n - banks[b].n || titles[a].localeCompare(titles[b]));
+  swap('<ul data-levels></ul>', `<ul>${lv.map((l) => `<li>${esc(titles[l])}: ${banks[l].n} questions in ${banks[l].t} topics${theory[l] ? `, theory articles for ${theory[l].t.length} of them` : ''}</li>`).join('')}</ul>`);
   swap('<script src="app.js"></script>', `<script>window.BANKS = ${JSON.stringify(banks)}; window.THEORY = ${JSON.stringify(theory)};</script>\n<script src="app.js"></script>`);
   for (const f of LINKED) {
     const buf = await readFile(join(out, f));
@@ -104,6 +109,12 @@ async function build() {
     swap(`"${f}"`, `"${name}"`);
   }
   await writeFile(join(out, 'index.html'), html);
+
+  // for search engines (site.mjs): what to crawl, the pages, and the key that lets indexnow.mjs announce them
+  await writeFile(join(out, 'robots.txt'), `User-agent: *\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`);
+  const today = new Date().toISOString().slice(0, 10);
+  await writeFile(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${PAGES.map((p) => `  <url><loc>${SITE}${p}</loc><lastmod>${today}</lastmod></url>\n`).join('')}</urlset>\n`);
+  await writeFile(join(out, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
 }
 
 await build();
@@ -111,7 +122,7 @@ console.log('built', out);
 
 if (process.argv.includes('--serve')) {
   const port = +(process.env.PORT || 5173);
-  const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.txt': 'text/plain', '.woff2': 'font/woff2' };
+  const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.txt': 'text/plain', '.xml': 'application/xml', '.woff2': 'font/woff2' };
   createServer(async (req, res) => {
     try {
       const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);

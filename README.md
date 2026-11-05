@@ -59,6 +59,7 @@ api/
   daily.mjs                     Vercel cron (09:00 UTC daily): runs bot/daily.mjs
   settings.mjs                  the app's question-of-the-day switch (users.daily_question), checked with Telegram initData
   admin.mjs                     every student's results, flagged and reported questions (admins can take a flag off), joins/answers/wrong answers per hour and day for the admins (ADMINS in settings.mjs — @fullcrimp; ADMIN_USERNAMES adds more)
+  mcp.mjs                       the MCP server: the banks and the theory articles as tools for AI assistants (public, read-only)
 ```
 
 ## Mini app
@@ -109,6 +110,56 @@ Needs on Vercel: `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `CRON_SECRET` (`openssl 
 
 Not in this version (needs the Supabase backend in `docs/data-model.md`): DE/ES, the
 streak reminder, cross-device sync with the website, theory notes, the share image.
+
+### Search engines
+
+The app is indexed at https://iyt.rycrentals.com (`SITE` in `miniapp/site.mjs`; the canonical link and og tags in
+`miniapp/index.html` carry the same address). `build.mjs` writes `robots.txt`, `sitemap.xml` (one page: the app has
+a single address) and the IndexNow key file, and fills the levels into the `<noscript>` copy of Home that crawlers
+without JavaScript read. The old https://iyt-test.vercel.app still works for Telegram but answers `x-robots-tag:
+noindex` (`vercel.json`), so only the new address shows in results.
+
+After a production deploy:
+
+- `npm run seo:ping` tells Bing and Yandex (IndexNow) to recrawl; `-- --check` only checks the key file is live.
+- Once, by hand (each needs your account): add `iyt.rycrentals.com` in [Google Search Console](https://search.google.com/search-console),
+  verify it with the DNS TXT record it gives (on the `rycrentals.com` zone), and submit `sitemap.xml`; then
+  [Bing Webmaster Tools](https://www.bing.com/webmasters) → Import from Google Search Console; then
+  [Yandex Webmaster](https://webmaster.yandex.com) → add the site, verify (DNS or meta tag), add the sitemap.
+
+## MCP server
+
+`api/mcp.mjs` gives the question banks and the theory articles to AI assistants (Claude, ChatGPT and anything else
+that speaks the [Model Context Protocol](https://modelcontextprotocol.io)): a student adds
+`https://iyt.rycrentals.com/api/mcp` as a remote MCP server (a custom connector) and practises in their own
+assistant. It is public and read-only: no sign-in, nothing is saved, and it returns only what the app already serves.
+
+| Tool | What it gives |
+|---|---|
+| `list_levels` | the levels, their topics, exam settings and which topics have an article |
+| `get_questions` | random questions of a level, a topic or a difficulty, without the answers |
+| `check_answer` | right or wrong, the right option, the note, and the theory section that explains it |
+| `search_questions` | questions by words |
+| `start_mock_exam`, `grade_exam` | an exam-sized set spread over the topics; then the score, pass or fail, the mistakes and what to read |
+| `question_of_the_day` | the question the bot sends that day |
+| `list_theory`, `get_theory`, `search_theory` | the articles and their sections, as text with links to the drawings |
+| `explain_question` | a question with its answer and the section behind it |
+| `practice_section` | the questions a theory section covers |
+| `get_figure` | a drawing as SVG markup |
+
+Every tool takes `lang` (`en` or `ru`); what is not translated yet comes in English. A drawing has an address of
+its own, `/api/mcp?figure=bs-001` for a question and `/api/mcp?figure=<level>/<topic>/<section>/<n>` for the nth
+figure of a theory section: an SVG image drawn by `docs/design/figures.js` with the day colours written in. Card
+figures (a script, a checklist) go out as text.
+
+No dependencies and no state: the function answers JSON-RPC over HTTP (`initialize`, `tools/list`, `tools/call`) and
+reads the banks, the articles and `figures.js` bundled with it (`vercel.json` → `includeFiles`), so a deploy puts new
+articles in front of the assistants. Try it against a deployment:
+
+```
+curl -s https://iyt.rycrentals.com/api/mcp -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"get_questions","arguments":{"level":"bareboat-skipper","count":1}}}'
+```
 
 ## Look at it
 
