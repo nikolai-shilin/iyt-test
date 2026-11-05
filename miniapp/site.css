@@ -1,0 +1,44 @@
+/* The site's pages (miniapp/pages.mjs): the app's look (design/app.css, design/flows.css, app.css) on a page that
+   scrolls like any other, one column at reading width. */
+.screen.app.page { position: static; display: block; overflow: visible; width: auto; min-height: 100vh; }
+.page .wrap { max-width: 680px; padding-left: 20px; padding-right: 20px; }
+.page main.wrap { display: flex; flex-direction: column; gap: 24px; padding-top: 8px; padding-bottom: 40px; }
+.page a { color: var(--accent); }
+
+.pg-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+.pg-top nav { display: flex; gap: 18px; }
+.page .pg-top nav a { font: 700 13px 'Carlito', Arial, sans-serif; text-transform: uppercase; letter-spacing: .02em; color: var(--ink); }
+.crumbs { display: flex; flex-wrap: wrap; gap: 4px 8px; }
+.page .crumbs a { color: var(--muted); }
+.crumbs a + a::before, .crumbs a + span::before { content: '›'; margin-right: 8px; color: var(--faint); }
+.pg-head { display: flex; flex-direction: column; gap: 12px; }
+.page h1.display { font-size: 40px; line-height: 1; text-wrap: balance; }
+.page h2.kicker { margin: 0; }
+
+.pg-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 18px; }
+.pg-facts div { display: flex; flex-direction: column; gap: 4px; }
+.pg-facts b { font: 300 28px/1 'Merriweather', Georgia, serif; color: var(--ink); }
+.pg-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.page .pg-row { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; color: var(--ink); }
+.pg-row .card-meta { line-height: 1.35; }
+
+.pg-cta { display: flex; flex-direction: column; gap: 14px; padding: 20px; }
+.pg-cta .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.page .pg-cta .pill { height: 48px; padding: 0 22px; font-size: 16px; }
+
+.page .th-toc { margin: 0; padding: 0; flex-wrap: wrap; overflow: visible; }
+.page .th-sec { scroll-margin-top: 16px; }
+.page .th-near { color: var(--ink); }
+.page .fig { max-height: 300px; }
+
+.pg-q { display: flex; flex-direction: column; gap: 12px; padding-top: 20px; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
+.pg-qt { font: 400 16px/1.5 'Merriweather', Georgia, serif; margin: 0; color: var(--ink); }
+.pg-opts { margin: 0; padding-left: 24px; display: flex; flex-direction: column; gap: 6px; font: 400 16px/1.35 'Carlito', Arial, sans-serif; color: var(--ink); }
+.pg-opts li::marker { font-weight: 700; color: var(--muted); }
+.pg-q summary { cursor: pointer; width: max-content; font: 700 13px 'Carlito', Arial, sans-serif; text-transform: uppercase; letter-spacing: .02em; color: var(--accent); }
+.pg-q details[open] summary { margin-bottom: 8px; }
+.pg-q details p { margin: 0 0 6px; }
+
+.pg-foot { display: flex; flex-direction: column; gap: 8px; padding-top: 22px; padding-bottom: 40px; border-top: 1px solid var(--line); font: 400 13px/1.4 'Carlito', Arial, sans-serif; color: var(--muted); }
+.pg-foot nav { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+@media (max-width: 420px) { .page h1.display { font-size: 34px; } .pg-facts b { font-size: 24px; } }

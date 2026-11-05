@@ -48,6 +48,9 @@ miniapp/
                                 each linked file renamed after its content (h/…) so phones cache it for good, and the
                                 list of banks written into index.html so only the current level's bank loads at start
   fonts/                        Merriweather and Carlito (woff2, Latin + Cyrillic, OFL), served with the app
+  pages.mjs  site.css            the site around the app: a page per level and per theory article (EN + RU), sitemap, llms.txt
+  site.mjs                      the public address, the bot and the IndexNow key
+  indexnow.mjs                  npm run seo:ping: tells Bing and Yandex which pages changed
 bot/
   core.mjs                      the bot's replies: /start /exam /progress /settings open the app, /daily asks a question
   daily.mjs                     the daily question of the day to everyone who has it on
@@ -111,17 +114,32 @@ Needs on Vercel: `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `CRON_SECRET` (`openssl 
 Not in this version (needs the Supabase backend in `docs/data-model.md`): DE/ES, the
 streak reminder, cross-device sync with the website, theory notes, the share image.
 
-### Search engines
+### Search engines and AI assistants
 
-The app is indexed at https://iyt.rycrentals.com (`SITE` in `miniapp/site.mjs`; the canonical link and og tags in
-`miniapp/index.html` carry the same address). `build.mjs` writes `robots.txt`, `sitemap.xml` (one page: the app has
-a single address) and the IndexNow key file, and fills the levels into the `<noscript>` copy of Home that crawlers
-without JavaScript read. The old https://iyt-test.vercel.app still works for Telegram but answers `x-robots-tag:
-noindex` (`vercel.json`), so only the new address shows in results.
+Search engines and most AI crawlers read a page without running its JavaScript, so next to the app the build writes
+the site as plain pages (`miniapp/pages.mjs`, styled by `miniapp/site.css` over the app's own CSS), at
+https://iyt.rycrentals.com (`SITE` in `miniapp/site.mjs`):
+
+| Address | Page |
+|---|---|
+| `/` | the app; its `<noscript>` copy of Home links every level |
+| `/<level>` | the level: questions, topics, the mock exam, every topic with its article |
+| `/<level>/<topic>` | the topic's theory article with its drawings, then sample questions (one per section, a drawn one where there is one) with the answer, the note and a link to the section that explains it |
+| `/about` | what IYT Test is and is not, the author, the MCP server |
+| `/ru`, `/ru/<level>`, `/ru/<level>/<topic>`, `/ru/about` | the same in Russian; `/ru` lists the levels |
+
+Every page has its own title and description, a canonical link, `hreflang` links to its other language, link
+preview tags and structured data (breadcrumbs; `Article` and `Quiz` on a topic). Nothing is written by hand but the
+strings in `pages.mjs`: a new article or a new level gets its pages on the next build. The build also writes
+`robots.txt`, `sitemap.xml` (every page with its other language), `llms.txt` (the site's map for AI assistants),
+`404.html`, the IndexNow key file and `pages.json` (each address with a hash of its page). `npm run dev` serves the
+pages at their clean addresses, as Vercel does (`cleanUrls`).
 
 After a production deploy:
 
-- `npm run seo:ping` tells Bing and Yandex (IndexNow) to recrawl; `-- --check` only checks the key file is live.
+- `npm run seo:ping` tells Bing and Yandex (IndexNow) which pages are new, changed or gone since the last ping (the
+  live `pages.json` against `miniapp/.indexnow-sent.json`, which is not in git); `-- --dry` lists them, `-- --all`
+  sends every page, `-- --check` only checks the key file is live.
 - Once, by hand (each needs your account): add `iyt.rycrentals.com` in [Google Search Console](https://search.google.com/search-console),
   verify it with the DNS TXT record it gives (on the `rycrentals.com` zone), and submit `sitemap.xml`; then
   [Bing Webmaster Tools](https://www.bing.com/webmasters) → Import from Google Search Console; then

@@ -21,7 +21,8 @@ import { createHash } from 'node:crypto';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE, INDEXNOW_KEY, PAGES } from './site.mjs';
+import { SITE, INDEXNOW_KEY } from './site.mjs';
+import { buildPages } from './pages.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const out = join(root, 'miniapp/dist');
@@ -100,21 +101,23 @@ async function build() {
   // the levels in the no-JavaScript copy of Home, smallest bank first (VHF … Yachtmaster), as search engines read it
   const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
   const lv = Object.keys(titles).sort((a, b) => banks[a].n - banks[b].n || titles[a].localeCompare(titles[b]));
-  swap('<ul data-levels></ul>', `<ul>${lv.map((l) => `<li>${esc(titles[l])}: ${banks[l].n} questions in ${banks[l].t} topics${theory[l] ? `, theory articles for ${theory[l].t.length} of them` : ''}</li>`).join('')}</ul>`);
+  swap('<ul data-levels></ul>', `<ul>${lv.map((l) => `<li><a href="/${l}">${esc(titles[l])}</a>: ${banks[l].n} questions in ${banks[l].t} topics${theory[l] ? `, theory articles for ${theory[l].t.length} of them` : ''}</li>`).join('')}</ul>`);
   swap('<script src="app.js"></script>', `<script>window.BANKS = ${JSON.stringify(banks)}; window.THEORY = ${JSON.stringify(theory)};</script>\n<script src="app.js"></script>`);
+  const linked = {};
   for (const f of LINKED) {
     const buf = await readFile(join(out, f));
     const name = `h/${f.replace(/\//g, '-').replace(/(\.\w+)$/, `.${hash(buf)}$1`)}`;
     await writeFile(join(out, name), buf);
     swap(`"${f}"`, `"${name}"`);
+    linked[f] = name;
   }
   await writeFile(join(out, 'index.html'), html);
 
-  // for search engines (site.mjs): what to crawl, the pages, and the key that lets indexnow.mjs announce them
+  // for search engines (site.mjs): what to crawl and the key that lets indexnow.mjs announce the pages; then the
+  // site's own pages, sitemap.xml and llms.txt (pages.mjs), in the app's look
   await writeFile(join(out, 'robots.txt'), `User-agent: *\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`);
-  const today = new Date().toISOString().slice(0, 10);
-  await writeFile(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${PAGES.map((p) => `  <url><loc>${SITE}${p}</loc><lastmod>${today}</lastmod></url>\n`).join('')}</urlset>\n`);
   await writeFile(join(out, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
+  await buildPages(out, { css: ['fonts/fonts.css', 'design/app.css', 'design/flows.css', 'app.css'].map((f) => linked[f]) });
 }
 
 await build();
@@ -126,13 +129,17 @@ if (process.argv.includes('--serve')) {
   createServer(async (req, res) => {
     try {
       const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-      if (path === '/' || path === '/index.html') await build(); // pick up edits on reload
-      const file = normalize(join(out, path === '/' ? 'index.html' : path));
-      if (!file.startsWith(out) || !(await stat(file)).isFile()) throw new Error('not found');
+      if (path === '/' || path === '/index.html' || !extname(path)) await build(); // pick up edits on reload
+      let file = normalize(join(out, path === '/' ? 'index.html' : path));
+      if (!file.startsWith(out)) throw new Error('not found');
+      // a page's clean address (/bareboat-skipper → bareboat-skipper.html), as cleanUrls does on Vercel
+      if (!(await stat(file).catch(() => null))?.isFile()) file = `${file.replace(/\/$/, '')}.html`;
+      if (!(await stat(file)).isFile()) throw new Error('not found');
       res.writeHead(200, { 'content-type': TYPES[extname(file)] || 'application/octet-stream', 'cache-control': 'no-store' });
       res.end(await readFile(file));
     } catch (e) {
-      res.writeHead(404).end('not found');
+      const page = await readFile(join(out, '404.html')).catch(() => 'not found');
+      res.writeHead(404, { 'content-type': 'text/html' }).end(page);
     }
   }).listen(port, () => console.log(`serving http://localhost:${port}`));
 }
