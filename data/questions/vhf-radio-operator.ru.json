@@ -536,12 +536,12 @@
   "vhf-041": {
    "q": "Вы хотите вызвать яхту Blue Star. Какой вызов построен правильно?",
    "options": [
-    "«Blue Star, Blue Star, Blue Star, this is Aurora, Aurora, Aurora, OVER»",
+    "«Blue Star, Blue Star, this is Aurora, Aurora, OVER»",
     "«Aurora, Aurora, Aurora, calling Blue Star, Blue Star, OVER»",
     "«Hello Blue Star, it's Aurora here, do you read me? Over»",
     "«Blue Star, this is Aurora, please answer, OVER AND OUT»"
    ],
-   "why": "Сначала вызываемая станция (до трёх раз), затем THIS IS и своё название, затем OVER.",
+   "why": "Сначала вызываемая станция (один раз, при плохой слышимости дважды), затем THIS IS и своё название, затем OVER.",
    "ref": "Порядок радиосвязи на УКВ"
   },
   "vhf-042": {
@@ -1428,10 +1428,10 @@
    "options": [
     "MAYDAY ×3, THIS IS, другая яхта ×3",
     "PAN-PAN ×3, THIS IS, Aura ×3",
-    "MAYDAY RELAY ×3, THIS IS, Aura ×3",
-    "MAYDAY RELAY ×3, THIS IS, другая яхта ×3"
+    "MAYDAY RELAY ×3, ALL STATIONS ×3, THIS IS, Aura ×3",
+    "MAYDAY RELAY ×3, ALL STATIONS ×3, THIS IS, другая яхта ×3"
    ],
-   "why": "Ретрансляция: MAYDAY RELAY трижды, затем THIS IS и ваше название — не выдавайте себя за терпящего бедствие.",
+   "why": "Ретрансляция: MAYDAY RELAY трижды, затем вызываемая станция (береговая или ALL STATIONS), THIS IS и ваше название — не выдавайте себя за терпящего бедствие.",
    "ref": "MAYDAY RELAY"
   },
   "vhf-112": {

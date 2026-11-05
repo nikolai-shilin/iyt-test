@@ -39,7 +39,7 @@
       "title": "Settled when the first boat reaches the zone",
       "refs": ["RRS 18.2(a)(1), RRS 11", "RRS 18.2(a)(1)", "RRS 18.2(a)(2)", "RRS 18.2(e)", "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 18.2(a)(1)", "RRS 18.2(a)", "RRS 18.2(d), RRS 12", "RRS 18.2(d), RRS 18.3", "RRS 18.2(d), RRS 18.2(a)(1)", "RRS 18.2(a)(1), RRS 10, RRS definition Clear Astern and Clear Ahead; Overlap", "RRS 18.2(a)(2), RRS 11, RRS 15", "RRS 18.2(a)(2), RRS definition Clear Astern and Clear Ahead; Overlap", "RRS 18.2(a)(2), RRS 12, RRS 16.1", "RRS 18.2(a)(2), RRS 14, RRS 22"],
       "blocks": [
-        { "p": "Look at the boats when the first of them reaches the zone. If they are **overlapped**, the outside boat must from then on give the inside boat mark-room. If **not overlapped**, the boat still outside the zone gives it to the boat clear ahead." },
+        { "p": "Look at the boats when the first of them reaches the zone. If they are **overlapped**, the outside boat must from then on give the inside boat mark-room. If **not overlapped**, the first boat to reach the zone gets mark-room, even from a boat clear ahead of her." },
         { "tiles": [
           { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 78, "y": 58, "hdg": 179, "label": "outside" }, { "x": 130, "y": 54, "hdg": 179, "label": "inside" }], "mark": { "x": 160, "y": 140, "zone": true, "label": "Leeward mark" } }, "name": "Overlapped at the zone", "note": "outside gives room" },
           { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 95, "y": 18, "hdg": 179, "label": "astern" }, { "x": 130, "y": 54, "hdg": 179, "label": "ahead" }], "mark": { "x": 160, "y": 140, "zone": true, "label": "Leeward mark" } }, "name": "Clear ahead at the zone", "note": "astern gives room" }
@@ -56,7 +56,7 @@
       "blocks": [
         { "p": "**Mark-room** is room to sail to the mark when your proper course is to sail close to it, then to round or pass it on the required side until it is left astern, a gybe at a gybe mark included. **Room** is the space needed in the existing conditions, current included, to manoeuvre promptly in a seamanlike way without touching the mark." },
         { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 95, "y": 80, "hdg": 179, "label": "A" }, { "x": 120, "y": 62, "hdg": 179, "label": "You", "you": true }], "mark": { "x": 160, "y": 105, "zone": true, "label": "Leeward mark" }, "track": "M120 62 L95 100 L125 140 L160 120", "note": "Inside but windward: the wide loop is not mark-room" } },
-        { "p": "Inside but keeping clear, mark-room is all you have: swing wide for a tactical rounding and you must keep clear again. Inside with right of way, round as you like, giving room to keep clear when you change course (rule 16.1). Mark-room includes room to tack only if you are overlapped inside and to windward of the boat that owes it and would fetch the mark after the tack." }
+        { "p": "Inside but keeping clear, mark-room is all you have: swing wide for a tactical rounding and you must keep clear again. Inside with right of way, round as you like, giving room to keep clear when you change course (rule 16.1). The old clause on room to tack was removed in 2025." }
       ]
     },
     {
@@ -65,9 +65,9 @@
       "title": "Coming in on port at a windward mark",
       "refs": ["RRS 18.3(a)", "RRS 18.3", "RRS 18.3(b)", "RRS 18.3, RRS 13, RRS 15", "RRS 18.3, RRS 15", "RRS 13, RRS 18.3", "RRS 18.2(a)(2), RRS 18.3"],
       "blocks": [
-        { "p": "At a mark left to port, rule 18.3 covers a boat that passes head to wind in the zone and is then on the same tack as a boat **fetching the mark, on starboard since she entered the zone**. Rule 18.2 is off between them. The boat that tacked must not make the other sail above close-hauled to avoid contact, and gives her mark-room if she becomes overlapped inside." },
+        { "p": "At a mark left to port, rule 18.3 covers a boat that passes head to wind in the zone and is then on the same tack as a boat **fetching the mark**. Rule 18.2 is off between them, even if the other boat tacked in the zone too. The boat that tacked must not make the other sail above close-hauled to avoid contact, and gives her mark-room if she becomes overlapped inside." },
         { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 222, "y": 132, "hdg": 315, "label": "You", "you": true }, { "x": 185, "y": 118, "hdg": 45, "label": "A" }], "mark": { "x": 160, "y": 80, "zone": true, "label": "Windward mark" }, "note": "A tacks under your bow: she must not make you luff" } },
-        { "p": "Tacking in the zone is not forbidden: tack clear ahead and nobody is troubled. While still turning you keep clear under rule 13. A tack finished outside the zone, or a mark left to starboard, is outside 18.3." }
+        { "p": "Tacking in the zone is not forbidden: tack clear ahead and nobody is troubled. While still turning you keep clear under rule 13. Passing head to wind before the zone, or at a mark left to starboard, is outside 18.3." }
       ]
     },
     {

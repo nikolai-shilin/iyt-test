@@ -6646,7 +6646,7 @@
       "id": "rr-189",
       "topic": "rightofway",
       "difficulty": 3,
-      "q": "In a match-race style duel Black tacks on top of you: she crosses from port and tacks to windward of you, completing her tack close-hauled a length to windward and overlapped. You luff hard at once, above close-hauled, and she has to respond. Black protests under rule 17. Who is right?",
+      "q": "In a match-race style duel Black tacks on top of you: she crosses from port and tacks to windward of you, already overlapped a length to windward as she passes head to wind, and completing her tack close-hauled. You luff hard at once, above close-hauled, and she has to respond. Black protests under rule 17. Who is right?",
       "figure": {
         "type": "race",
         "wind": 0,
@@ -6668,13 +6668,13 @@
         "note": "Black has just tacked to windward of you; you luff"
       },
       "options": [
-        "You — Black is the windward boat and keeps clear (rule 11); rule 17 does not apply when the overlap began while she was tacking, so you may luff (within rule 16.1)",
+        "You — Black is the windward boat and keeps clear (rule 11); you never became overlapped from clear astern, so rule 17 does not limit you and you may luff (within rule 16.1)",
         "Black — a boat that has just completed a tack is entitled to room and may not be luffed",
         "Neither — Black was still tacking and you had to keep clear of her under rule 13",
         "Black — a leeward boat may not sail above close-hauled on a beat once overlapped"
       ],
       "answer": 0,
-      "why": "Rule 13 ends at close-hauled; rule 11 then applies, and rule 17 is excluded when the overlap is established while rule 13 applied.",
+      "why": "Rule 13 ends at close-hauled; rule 11 then applies. Rule 17 binds only a boat that became overlapped to leeward from clear astern, and you were overlapped from the moment she passed head to wind.",
       "ref": "RRS 13, RRS 11, RRS 17"
     },
     {
@@ -9788,7 +9788,7 @@
       "id": "rr-279",
       "topic": "limits",
       "difficulty": 3,
-      "q": "You are close-hauled on starboard. Grey crosses you on port and tacks a length to windward of you, becoming overlapped while still subject to rule 13. Once she is close-hauled you luff her hard above close-hauled, giving her room. Grey says you broke rule 17. Did you?",
+      "q": "You are close-hauled on starboard. Grey crosses ahead of you on port and tacks. She passes head to wind clear ahead, and while she is still turning to close-hauled you sail into an overlap a length to leeward of her. Once she is close-hauled you luff her hard above close-hauled, giving her room. Grey says you broke rule 17. Did you?",
       "figure": {
         "type": "race",
         "wind": 0,
@@ -9811,12 +9811,12 @@
       },
       "options": [
         "Yes — on a beat no boat may sail above close-hauled while overlapped",
-        "Yes — you are the leeward boat overlapped within two lengths, so rule 17 applies",
-        "No — rule 17 does not apply when the overlap began while the windward boat was required by rule 13 to keep clear; only rule 16.1 limits your luff",
+        "No — rule 17 does not apply when the overlap began while the windward boat was still tacking",
+        "Yes — you became overlapped to leeward from clear astern within two lengths after she passed head to wind; since 2025 rule 17 applies even while she is still tacking",
         "No — because Grey acquired right of way by her tack and had to give you room (rule 15)"
       ],
       "answer": 2,
-      "why": "Rule 17's last sentence: the rule does not apply if the overlap begins while the windward boat is required by rule 13 to keep clear.",
+      "why": "The 2025 rules deleted rule 17's last sentence: an overlap from clear astern that begins after the windward boat passes head to wind counts, so you may not sail above your proper course.",
       "ref": "RRS 17, RRS 13"
     },
     {
@@ -12053,10 +12053,10 @@
         "Nobody — a boat that tacks within five lengths of the mark loses all rights under rule 18",
         "Black must give you mark-room — she tacked in front of a starboard boat that was fetching the mark",
         "Black must keep clear of you all the way round under rule 10, because she was on port when you first met",
-        "You must give Black mark-room — she had completed her tack outside the zone and was clear ahead when she reached it (18.2(a)(2)); 18.3 is not involved"
+        "You must give Black mark-room — she passed head to wind outside the zone and was the first to reach it (18.2(a)(2)); 18.3 is not involved"
       ],
       "answer": 3,
-      "why": "Rule 18.3 applies only to a tack in the zone; a boat clear ahead when she reaches the zone is entitled to mark-room under 18.2(a)(2).",
+      "why": "Rule 18.3 applies only to a boat that passes head to wind in the zone; when boats are not overlapped, the first to reach the zone is entitled to mark-room under 18.2(a)(2).",
       "ref": "RRS 18.2(a)(2), RRS 18.3"
     },
     {
@@ -19869,13 +19869,13 @@
         "tag": "Points?"
       },
       "options": [
-        "11 points — 5 plus 20 % of 31 (the DNF score), which is 6.2, rounded to 6",
+        "11.2 points — 5 plus 20 % of 31 (the DNF score), which is 6.2",
         "31 points — a Z-flag boat is scored as if she had not finished",
         "6 points — 5 plus 20 % of your own finishing place, rounded up",
-        "5 points — the penalty is applied to the series total, not the race"
+        "11 points — 6.2 is rounded to a whole number and added to your 5th"
       ],
       "answer": 0,
-      "why": "Rule 44.3(c): the penalty is 20 % of the score for DNF (entries + 1), rounded to the nearest whole number, added to the boat's score; not worse than DNF.",
+      "why": "Rule 44.3(c): the penalty is 20 % of the score for DNF (entries + 1), rounded to the nearest tenth of a point (0.05 upward), added to the boat's score; not worse than DNF.",
       "ref": "RRS 30.2, RRS 44.3(c)"
     },
     {
@@ -32108,12 +32108,12 @@
       },
       "options": [
         "9.8 points — third place plus 6.8, with no rounding applied",
-        "10 points — 20 % of 35 (the DNF score) is 7, rounded to the nearest whole number, added to your third place",
+        "10 points — 20 % of 35 (the DNF score) is 7.0, added to your 3 points",
         "3.6 points — your third place plus 20 % of your own score of 3",
         "35 points — a Z-flag penalty is scored the same as DNF"
       ],
       "answer": 1,
-      "why": "Rule 44.3(c) via A5.2: 20 % of the DNF score, rounded to the nearest whole number (0.5 upward), added to the place — but never worse than DNF.",
+      "why": "Rule 44.3(c) via A5.2: 20 % of the DNF score, rounded to the nearest tenth of a point (0.05 upward), added to the boat's points — but never worse than DNF.",
       "ref": "RRS 30.2, RRS 44.3(c)"
     },
     {

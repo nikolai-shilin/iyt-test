@@ -11,8 +11,8 @@
         { "p": "On a **semi-diurnal** coast high waters come about 12 h 25 min apart, so tomorrow's tide is some 50 minutes later. **Springs**, the biggest ranges, come a day or two after new and full moon; **neaps** follow the quarters, a week later. Springs grow near the equinoxes and with the moon at perigee." },
         { "fig": { "type": "tide", "lw": "0400 · 1.1 m", "hw": "1000 · 5.9 m", "note": "Range = HW − LW = 5.9 − 1.1 = 4.8 m" } },
         { "p": "**Range** = HW − LW of the same tide. Compare it with the mean spring and neap ranges: streams follow the range, not the height of HW. Add the zone to times in UT." },
-        { "p": "A **secondary port** borrows a standard port's table: apply its differences, with their signs, to times and heights, interpolating between springs and neaps. Take the range last." },
-        { "fig": { "type": "card", "title": "Secondary port", "lines": ["Standard port HW 1010 · 5.6 m", "Time difference −0025: HW 0945", "Height diff: springs −0.6, neaps −0.2", "Today midway: −0.4, so HW 5.2 m", "LW 0.8 + 0.2 = 1.0 m · range 4.2 m"] } }
+        { "p": "A **secondary port** borrows a standard port's table. Interpolate the time difference by the standard port's HW time between the tabulated times, and the height difference by today's height between neap and spring levels. Apply both with their signs." },
+        { "fig": { "type": "card", "title": "Secondary port", "lines": ["Standard port HW 0200 · 5.2 m", "Time diff −0010 at 0000, −0040 at 0600", "0200 is 2/6 along: −0020 → HW 0140", "Height: MHWN 4.6 −0.2 · MHWS 5.8 −0.6", "5.2 is halfway: −0.4 → HW 4.8 m", "LW the same way, then the range"] } }
       ]
     },
     {
@@ -21,7 +21,7 @@
       "title": "How much water is really there",
       "refs": ["Tides — chart datum", "Tides — tidal levels", "Tides — depth of water", "Tides — drying heights", "Tides — drying out", "Tides — anchoring depth", "Tides — anchoring and LW", "Tides — clearance under the keel"],
       "blocks": [
-        { "p": "Soundings and tide heights share one zero, **chart datum**, about lowest astronomical tide (LAT). Depth = charted depth + height of tide, so you seldom find less than charted. A minus height dips below datum, and an old chart reduced to MLWS over-reads at big springs. An underlined figure is a **drying height**: water over it = tide − drying height." },
+        { "p": "Soundings and tide heights share one zero, **chart datum**, about lowest astronomical tide (LAT). Depth = charted depth + height of tide, so you seldom find less than charted, except on mean-sea-level charts (much of the Med). A minus height dips below datum, and an old chart reduced to MLWS over-reads at big springs. An underlined figure is a **drying height**: water over it = tide − drying height." },
         { "fig": { "type": "chart", "land": "M0 0 H70 C80 60 60 120 75 200 H0 Z", "depths": [[205, 135, "4.5"], [165, 60, "6"], [120, 170, "3.2"], [140, 105, "1.8", true]], "boat": [262, 168, 300], "labels": [[36, 100, "harbour", "middle"], [140, 86, "bank", "middle"]], "panel": ["Tide now 3.0 m", "Over 3.2: 6.2 m", "Over 1.8: 1.2 m"], "note": "Underlined: dries 1.8 m above chart datum" } },
         { "p": "MHWS, MHWN, MLWN and MLWS are the mean spring and neap levels. At anchor, depth at low water = depth now − the fall still to come; the next low is lower as springs build. Allow for the sounder's offset and half the swell height in the troughs. Dry out on firm, level ground." },
         { "fig": { "type": "anchor", "depth": "6.0 m", "title": "Afloat at low water?", "lines": ["Depth now 6.0 m", "Tide now 4.2 m", "Next LW 0.8 m", "Draft 1.9 m"] }, "cap": "It falls 3.4 m more: 2.6 m at low water, 0.7 m under the keel." }
@@ -76,7 +76,7 @@
       "refs": ["Tides — streams in channels", "Tides — counter-currents", "Tides — streams along the shore", "Tides — streams round headlands", "Tides — races and overfalls", "Tides — tidal races", "Tides — wind against tide", "Tides — tidal gates"],
       "blocks": [
         { "p": "Streams run hardest in deep water: mid-channel, in narrows, outside a bend, off headlands. Inshore they are weaker and turn earlier, and a bay may hold an eddy. Against a foul stream, work the edges." },
-        { "p": "Off a headland the stream makes a **race** with **overfalls**. Wind against tide steepens every sea, worst at springs, and on a beat a fair stream is exactly that. Round at slack water, when the diamond's rate falls to nothing, or pass well outside, above all at night. Cross a river bar late on the flood, never on the ebb against a swell." },
+        { "p": "Off a headland the stream makes a **race** with **overfalls**. Wind against tide steepens every sea, worst at springs. Round at slack water, when the diamond's rate falls to nothing, or pass well outside, above all at night. Cross a river bar late on the flood, never on the ebb against a swell." },
         { "fig": { "type": "chart", "land": "M0 0 H320 V50 C240 55 200 60 175 125 C160 70 120 55 0 60 Z", "depths": [[80, 110, "25"], [250, 100, "22"], [50, 165, "30"]], "track": "M270 124 C235 150 200 182 110 176", "boat": [285, 120, 260], "labels": [[175, 150, "overfalls", "middle"]], "panel": ["Springs", "Sets W at 4 kn", "Wind from W, F6"], "note": "Wind against tide: round at slack, or well outside" } },
         { "p": "A **tidal gate** opens only at a certain state of the stream. Time to leave = time at the gate − distance ÷ speed over the ground. Arrive as it opens; against a weak foul stream, pushing on may still beat waiting." }
       ]

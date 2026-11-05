@@ -863,13 +863,13 @@
       "q": "You want to call the yacht Blue Star. Which call is correctly built?",
       "figure": null,
       "options": [
-        "\"Blue Star, Blue Star, Blue Star, this is Aurora, Aurora, Aurora, OVER\"",
+        "\"Blue Star, Blue Star, this is Aurora, Aurora, OVER\"",
         "\"Aurora, Aurora, Aurora, calling Blue Star, Blue Star, OVER\"",
         "\"Hello Blue Star, it's Aurora here, do you read me? Over\"",
         "\"Blue Star, this is Aurora, please answer, OVER AND OUT\""
       ],
       "answer": 0,
-      "why": "The station called first (up to three times), then THIS IS and your own name, then OVER.",
+      "why": "The station called first (once, twice if reception is poor), then THIS IS and your own name, then OVER.",
       "ref": "VHF procedure"
     },
     {
@@ -2145,11 +2145,11 @@
       "options": [
         "MAYDAY ×3, THIS IS, the other yacht ×3",
         "PAN-PAN ×3, THIS IS, Aura ×3",
-        "MAYDAY RELAY ×3, THIS IS, Aura ×3",
-        "MAYDAY RELAY ×3, THIS IS, the other yacht ×3"
+        "MAYDAY RELAY ×3, ALL STATIONS ×3, THIS IS, Aura ×3",
+        "MAYDAY RELAY ×3, ALL STATIONS ×3, THIS IS, the other yacht ×3"
       ],
       "answer": 2,
-      "why": "A relay opens MAYDAY RELAY three times, then THIS IS and your own name — never pose as the casualty.",
+      "why": "A relay opens MAYDAY RELAY three times, then the station addressed (a coast station or ALL STATIONS), THIS IS and your own name — never pose as the casualty.",
       "ref": "MAYDAY RELAY"
     },
     {

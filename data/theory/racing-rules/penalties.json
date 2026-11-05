@@ -35,7 +35,7 @@
       "title": "When turns are not enough",
       "refs": ["RRS 44.1(b)", "RRS 44.1(b), RRS 60.5(c)", "RRS 60.5(c)", "RRS 2", "RRS Appendix A", "RRS 44.1(b), RRS 23.1", "RRS 36", "RRS 36, RRS 44.1(b)"],
       "blocks": [
-        { "p": "Turns do not pay if you caused **injury** or **serious damage**, or if despite them your breach gained you a **significant advantage** in the race or series: then you **retire**. Beating the other boat for another reason does not count." },
+        { "p": "Turns do not pay if you caused **injury** or **serious damage**, or if despite them your breach gained you a **significant advantage** in the race or series: then you **retire**." },
         { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 167, "y": 119, "hdg": 45, "label": "You", "you": true }, { "x": 182, "y": 104, "hdg": 315, "label": "Grey" }], "note": "A hole in Grey's side: retire, turns do not count" } },
         { "table": { "head": ["At the hearing", "Decision"], "rows": [
           ["Turns taken promptly", "No further penalty"],
@@ -52,7 +52,7 @@
       "title": "A rule broken, no penalty owed",
       "refs": ["RRS 43.1(a), RRS 31, RRS 44.1", "RRS 43.1(a), RRS 16.1, RRS 10", "RRS 43.1(a), RRS 31, RRS 60.5(c)", "RRS 18.2, RRS 44.1, RRS 43.1(a)", "RRS 43.2, RRS 43.1(a)", "RRS 43.1(b), RRS 18.2", "RRS 43.1(b), RRS 19.2(b), RRS 16.1", "RRS 43.1(b), RRS 43.1(c), RRS 18.2", "RRS 14, RRS 43.1(c)", "RRS 14, RRS 43.1(c), RRS 44.1", "RRS 10, RRS 43.1(c), RRS 44.1"],
       "blocks": [
-        { "p": "Rule 43 **exonerates** you when another boat's breach **compelled** you to break a rule; when, sailing within the **room or mark-room** owed to you, you broke a right-of-way rule, rule 15, 16 or 31 against the boat that owed it; and when, holding right of way, you broke rule 14 but the contact caused **no damage or injury**." },
+        { "p": "Rule 43 **exonerates** you when another boat's breach **compelled** you to break a rule; when, sailing within the **room or mark-room** owed to you, you broke a right-of-way rule or rule 15 or 16 against the boat that owed it, or were forced onto the mark (rule 31); and when, holding right of way, you broke rule 14 but the contact caused **no damage or injury**." },
         { "tiles": [
           { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 122, "hdg": 315, "label": "You", "you": true }, { "x": 190, "y": 116, "hdg": 315, "label": "Blue" }], "mark": { "x": 146, "y": 116, "label": "Mark", "labelY": 22 } }, "view": "95 0 225 179", "name": "Compelled", "note": "Blue pushes you onto the mark" },
           { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 120, "hdg": 330, "label": "You", "you": true }, { "x": 200, "y": 120, "hdg": 330, "label": "Yellow" }], "mark": { "x": 150, "y": 95, "label": "Mark", "labelY": -16 } }, "view": "95 0 225 179", "name": "Within mark-room", "note": "Yellow leaves too little room" }
@@ -68,7 +68,7 @@
       "blocks": [
         { "p": "Where the notice of race or sailing instructions specify the **Scoring Penalty** (rule 44.3), it replaces the turns: show a yellow flag at the first reasonable opportunity, keep it up until you finish, then tell the race committee and name the other boat. Otherwise a yellow flag is no penalty." },
         { "fig": { "type": "flag", "flags": [["yellow", "Yellow|Scoring Penalty"], ["red", "Red|a protest"]] } },
-        { "p": "It costs 20% of the DNF score, rounded to a whole number (or the places stated), never takes you beyond DNF and changes nobody else's score." },
+        { "p": "It costs 20% of the DNF score, rounded to a tenth of a point (or the points stated), never takes you beyond DNF and changes nobody else's score." },
         { "table": { "head": ["49 boats, you finish 7th", "Points"], "rows": [
           ["DNF score: 49 + 1", "50"],
           ["Penalty: 20% of 50", "10"],
