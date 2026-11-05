@@ -189,6 +189,8 @@ body.mode-overview .overview { display: block; }
 .fig .yel { fill: #ffa800; } .fig .blk { fill: var(--ink); } .fig .red { fill: #d40000; } .fig .grn { fill: #1aa39a; } .fig .wht { fill: var(--bg); stroke: var(--ink); stroke-width: 1.5; }
 .fig .cone { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
 .fig.night { background: #0a1016; }
+/* buoys and day shapes: the colours are the subject, so the box keeps the day tokens in the night theme (figures.js FIG_DAY) */
+.fig.day { --bg: #ffffff; --ink: #000000; --muted: #6d7a7e; --faint: #b8c2c6; --band: #f2f7f9; --line: #eef2f4; --tag-line: #dfe5e8; --accent: #0290d7; --danger: #d40000; background: #f2f7f9; }
 .fig .glow { filter: drop-shadow(0 0 6px currentColor); }
 
 /* result screens */

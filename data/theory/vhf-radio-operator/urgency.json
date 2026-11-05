@@ -1,0 +1,90 @@
+{
+  "topic": "urgency",
+  "lead": "Not every problem at sea is a MAYDAY. PAN-PAN asks for help when nobody is in immediate danger, and SÉCURITÉ warns other vessels of a hazard. Choose the right word and the right stations listen, with the right priority.",
+  "sections": [
+    {
+      "id": "levels",
+      "kicker": "Which call",
+      "title": "How bad is it, and for whom?",
+      "refs": ["Urgency call", "Urgency or distress"],
+      "blocks": [
+        { "p": "The test is **grave and imminent danger** to the vessel or to a person. If it is there, the call is MAYDAY. If you need help urgently but nobody is in that danger yet, it is **PAN-PAN**, the urgency signal. If you need nothing yourself and only want to warn others, it is **SÉCURITÉ**, the safety signal." },
+        { "table": { "head": ["Call", "When", "Example"], "rows": [
+          ["MAYDAY", "Grave and imminent danger to the vessel or a life", "Fire out of control; a guest who cannot breathe"],
+          ["PAN-PAN", "Urgent, but no such danger yet", "Engine dead, drifting offshore; dismasted with a sound hull; a broken arm"],
+          ["SÉCURITÉ", "A warning for others", "A container or a log adrift in the fairway"]
+        ] } },
+        { "p": "Judge the people as well as the boat: a sound yacht with a guest whose throat is swelling shut is in distress." }
+      ]
+    },
+    {
+      "id": "panpan",
+      "kicker": "The urgency call",
+      "title": "PAN-PAN three times, then who, then you",
+      "refs": ["Urgency call"],
+      "blocks": [
+        { "p": "Make the call on channel 16. Say **PAN-PAN three times**, then the station you are calling three times, then THIS IS and your own name three times. ALL STATIONS reaches everyone in range. If only one station needs to hear you, name it instead: PAN-PAN three times, then Olympia Radio three times." },
+        { "fig": { "type": "card", "title": "On channel 16", "lines": ["PAN-PAN, PAN-PAN, PAN-PAN", "ALL STATIONS ×3", "THIS IS Nefeli, Nefeli, Nefeli", "Position: 6 miles west of Paros", "Engine failed, drifting. I need a tow", "OVER"], "tag": "PAN-PAN" } },
+        { "p": "After the opening comes the message, in the order a rescuer needs it: **your position**, what is wrong, what help you want. Then OVER, and listen." },
+        { "rule": "PAN-PAN ×3 · who you call ×3 · THIS IS · your name ×3 · position · problem · help needed · OVER" }
+      ]
+    },
+    {
+      "id": "after",
+      "kicker": "After the call",
+      "title": "Stay on watch, cancel or upgrade",
+      "refs": ["Urgency call"],
+      "blocks": [
+        { "p": "Once a coast station has your call, stay reachable: keep a listening watch on 16, or on the channel it gave you, until help arrives. If the problem goes away, say the engine starts again, **cancel** the PAN-PAN: tell all stations you need no help, so that nobody keeps looking for you." },
+        { "p": "If things get worse, do not wait. The moment the danger becomes grave and imminent, **upgrade to MAYDAY**." },
+        { "fig": { "type": "chart", "land": "M0 200 V162 Q80 142 160 154 Q240 166 320 148 V200 Z", "track": "M110 84 L110 146", "boat": [110, 66, 250], "labels": [[110, 30, "wind F6, onshore", "middle"], [122, 120, "rocks 1 mile downwind", "start"]], "panel": ["1 hour later", "PAN-PAN sent", "Too deep to anchor"], "note": "No engine, drifting onto a lee shore" }, "cap": "Nothing stops the drift: the danger is now grave and imminent, so the PAN-PAN becomes a MAYDAY." }
+      ]
+    },
+    {
+      "id": "medical",
+      "kicker": "Medical advice",
+      "title": "A doctor by radio",
+      "refs": ["Urgency — medical", "Urgency or distress"],
+      "blocks": [
+        { "p": "An injury or illness that needs a doctor's view, but does not threaten life right now, is a PAN-PAN **asking for medical advice**. The coast station acknowledges on 16 and usually asks you to change to a working channel. Change, and carry on there: long urgency traffic moves off 16 to keep it free. The station then puts you through to a doctor." },
+        { "table": { "head": ["The doctor needs", "For example"], "rows": [
+          ["The patient", "Age"],
+          ["Symptoms", "Conscious? Breathing normally? Where is the pain?"],
+          ["First aid given", "What you have done and any medicine given"]
+        ] } },
+        { "p": "A patient who is getting worse by the minute or struggling to breathe is a life in grave and imminent danger: that is MAYDAY." }
+      ]
+    },
+    {
+      "id": "securite",
+      "kicker": "The safety call",
+      "title": "Announce on 16, warn on a working channel",
+      "refs": ["Safety call"],
+      "blocks": [
+        { "p": "**SÉCURITÉ** introduces a navigational or weather warning. Coast stations use it for gale warnings and dangers to navigation. Any station may send one, your yacht included: for a drifting container, a mooring buoy adrift in a harbour approach, an unlit mark." },
+        { "fig": { "type": "card", "title": "On channel 16", "lines": ["SÉCURITÉ, SÉCURITÉ, SÉCURITÉ", "ALL STATIONS ×3", "THIS IS Nefeli, Nefeli, Nefeli", "Navigational warning: container adrift", "Listen on channel 72", "OUT"], "tag": "SÉCURITÉ" } },
+        { "p": "Channel 16 carries only the announcement: what the warning is about and which working channel to listen on. The message itself goes out there. When a coast station announces a gale warning on 16 and names a channel, switch to that channel and listen." },
+        { "tiles": [
+          { "fig": { "type": "radio", "channel": "16", "power": "HI" }, "view": "40 30 262 130", "name": "Channel 16", "note": "the announcement only" },
+          { "fig": { "type": "radio", "channel": "72", "power": "HI" }, "view": "40 30 262 130", "name": "Working channel", "note": "the warning: what, where, when" }
+        ] }
+      ]
+    },
+    {
+      "id": "priority",
+      "kicker": "Priority",
+      "title": "Who gives way on the air",
+      "refs": ["Priority of calls", "Safety call"],
+      "blocks": [
+        { "p": "Calls rank in a fixed order, and the higher one takes the channel. If a PAN-PAN breaks in while you are giving a SÉCURITÉ, stop, listen and note it, and finish your message later, when 16 is clear." },
+        { "table": { "head": ["Rank", "Signal", "Other stations"], "rows": [
+          ["1 Distress", "MAYDAY", "Keep off the channel unless they are helping"],
+          ["2 Urgency", "PAN-PAN", "Give way and listen: they may be able to help"],
+          ["3 Safety", "SÉCURITÉ", "Listen; routine calls wait until it ends"],
+          ["4 Routine", "none", "Wait their turn"]
+        ] } },
+        { "p": "Safety traffic comes before routine calls but imposes no radio silence. If a coast station is reading a SÉCURITÉ when you want to call a friend, wait until it ends, then make your call." }
+      ]
+    }
+  ]
+}

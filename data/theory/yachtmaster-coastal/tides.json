@@ -1,0 +1,96 @@
+{
+  "topic": "tides",
+  "lead": "The almanac gives high and low water. The rest you work out: the depth at any hour, the water over a sill, the room under a bridge, the stream on each leg.",
+  "sections": [
+    {
+      "id": "tables",
+      "kicker": "Springs, neaps, tables",
+      "title": "Reading the day's tide",
+      "refs": ["Tides — springs and neaps", "Tides — the semi-diurnal cycle", "Tides — causes", "Tides — tide tables", "Tides — secondary ports"],
+      "blocks": [
+        { "p": "On a **semi-diurnal** coast high waters come about 12 h 25 min apart, so tomorrow's tide is some 50 minutes later. **Springs**, the biggest ranges, come a day or two after new and full moon; **neaps** follow the quarters, a week later. Springs grow near the equinoxes and with the moon at perigee." },
+        { "fig": { "type": "tide", "lw": "0400 · 1.1 m", "hw": "1000 · 5.9 m", "note": "Range = HW − LW = 5.9 − 1.1 = 4.8 m" } },
+        { "p": "**Range** = HW − LW of the same tide. Compare it with the mean spring and neap ranges: streams follow the range, not the height of HW. Add the zone to times in UT." },
+        { "p": "A **secondary port** borrows a standard port's table: apply its differences, with their signs, to times and heights, interpolating between springs and neaps. Take the range last." },
+        { "fig": { "type": "card", "title": "Secondary port", "lines": ["Standard port HW 1010 · 5.6 m", "Time difference −0025: HW 0945", "Height diff: springs −0.6, neaps −0.2", "Today midway: −0.4, so HW 5.2 m", "LW 0.8 + 0.2 = 1.0 m · range 4.2 m"] } }
+      ]
+    },
+    {
+      "id": "datum",
+      "kicker": "Chart datum and depth",
+      "title": "How much water is really there",
+      "refs": ["Tides — chart datum", "Tides — tidal levels", "Tides — depth of water", "Tides — drying heights", "Tides — drying out", "Tides — anchoring depth", "Tides — anchoring and LW", "Tides — clearance under the keel"],
+      "blocks": [
+        { "p": "Soundings and tide heights share one zero, **chart datum**, about lowest astronomical tide (LAT). Depth = charted depth + height of tide, so you seldom find less than charted. A minus height dips below datum, and an old chart reduced to MLWS over-reads at big springs. An underlined figure is a **drying height**: water over it = tide − drying height." },
+        { "fig": { "type": "chart", "land": "M0 0 H70 C80 60 60 120 75 200 H0 Z", "depths": [[205, 135, "4.5"], [165, 60, "6"], [120, 170, "3.2"], [140, 105, "1.8", true]], "boat": [262, 168, 300], "labels": [[36, 100, "harbour", "middle"], [140, 86, "bank", "middle"]], "panel": ["Tide now 3.0 m", "Over 3.2: 6.2 m", "Over 1.8: 1.2 m"], "note": "Underlined: dries 1.8 m above chart datum" } },
+        { "p": "MHWS, MHWN, MLWN and MLWS are the mean spring and neap levels. At anchor, depth at low water = depth now − the fall still to come; the next low is lower as springs build. Allow for the sounder's offset and half the swell height in the troughs. Dry out on firm, level ground." },
+        { "fig": { "type": "anchor", "depth": "6.0 m", "title": "Afloat at low water?", "lines": ["Depth now 6.0 m", "Tide now 4.2 m", "Next LW 0.8 m", "Draft 1.9 m"] }, "cap": "It falls 3.4 m more: 2.6 m at low water, 0.7 m under the keel." }
+      ]
+    },
+    {
+      "id": "twelfths",
+      "kicker": "Twelfths and curves",
+      "title": "The height between high and low",
+      "refs": ["Tides — rule of twelfths", "Tides — tidal curve", "Tides — tidal curves"],
+      "blocks": [
+        { "p": "Where the tide runs evenly over six hours, the **rule of twelfths** fills the gap: hour by hour the level moves 1, 2, 3, 3, 2, 1 twelfths of the range, fastest in the third and fourth. Add the rise to LW on the flood, take the fall from HW on the ebb; half an hour takes half that hour's share." },
+        { "fig": { "type": "tide", "lw": "0600 · 0.9 m", "hw": "1200 · 5.7 m", "twelfths": true, "at": 2, "atLabel": "0800 · 2.1 m", "note": "Range 4.8 m · 1/12 = 0.4 m · after 2 h: 0.9 + 1.2 = 2.1 m" } },
+        { "table": { "head": ["Hours from LW or HW", "Twelfths gone"], "rows": [
+          ["1", "1/12"],
+          ["2", "3/12"],
+          ["3", "6/12"],
+          ["4", "9/12"],
+          ["5", "11/12"]
+        ] } },
+        { "p": "A stand, a double high water or an uneven rise and fall breaks the rule. Use the port's **tidal curve** instead: height = LW + factor × range. Read the spring or neap curve that matches today's range, or interpolate." }
+      ]
+    },
+    {
+      "id": "clearance",
+      "kicker": "Sills, bars, bridges",
+      "title": "Water below, air above",
+      "refs": ["Tides — sills and bars", "Tides — crossing a bar", "Tides — marina sill", "Tides — bridge clearance", "Tides — overhead clearance"],
+      "blocks": [
+        { "p": "Work out the height of tide you need. Over a sill that dries: drying height + draft + margin. Over a bar: draft + margin − charted depth. Then find when the tide reaches it. On the ebb go early: at half tide the level can drop a metre in an hour." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V110 H200 V40 H120 V110 H0 Z", "depths": [[160, 112, "1.8", true], [100, 150, "3"], [230, 160, "4"]], "marks": [[123, 114, "r", ""], [197, 114, "g", ""]], "boat": [160, 165, 0], "labels": [[160, 70, "marina", "middle"], [160, 132, "sill", "middle"]], "panel": ["Tide needed", "Sill 1.8 m", "Draft 2.0 + 0.5 m", "= 4.3 m"], "note": "Sill dries 1.8 m · you want 0.5 m under the keel" } },
+        { "p": "Overhead clearances are charted above HAT, on older charts above MHWS: room now = clearance + that level − height of tide. A surge, or a high water above MHWS, eats into it. Measure to the top of the aerial." },
+        { "fig": { "type": "card", "title": "Bridge: 14.0 m above HAT", "lines": ["HAT 5.6 m · tide now 2.6 m", "Room now: 14.0 + 5.6 − 2.6 = 17.0 m", "Mast with aerial: 15.8 m", "To spare: 1.2 m"] } }
+      ]
+    },
+    {
+      "id": "diamonds",
+      "kicker": "Diamonds and the atlas",
+      "title": "The stream for this hour",
+      "refs": ["Tides — tidal diamonds", "Tides — springs/neaps interpolation", "Tides — tidal stream atlas", "Tides — tidal streams"],
+      "blocks": [
+        { "p": "A **tidal diamond** points to a table: for each hour from HW at a reference port, the set (where the stream goes, true) and the rates at springs and neaps. A row covers half an hour either side of its hour; after HW+6 count back from the next HW. Interpolate between springs and neaps by today's range, extend the line beyond springs, and lay off each hour of a leg in turn." },
+        { "fig": { "type": "card", "title": "Tidal diamond C", "lines": ["Hour · set · springs · neaps (kn)", "HW+2 · 230° · 1.6 · 0.8", "HW+3 · 240° · 2.2 · 1.0", "HW+4 · 245° · 1.8 · 0.8", "Range today 4.0 · sp 5.6 · np 2.4 m", "Midway: HW+3 gives 1.6 kn"] } },
+        { "p": "A **tidal stream atlas** has a page for each hour from HW at its own reference port; 10,22 by an arrow means 1.0 kn at neaps, 2.2 kn at springs. On the chart a feathered arrow is the flood, a plain one the ebb, with the spring rate." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V70 C290 72 262 66 250 50 C235 28 85 28 70 50 C58 66 30 72 0 70 Z", "depths": [[100, 54, "4"], [60, 150, "22"], [272, 120, "25"], [160, 104, "9"]], "marks": [[130, 58, "w", "B"], [215, 150, "w", "A"]], "boat": [178, 62, 90], "labels": [[110, 176, "main stream", "middle"]], "note": "Use the nearest diamond in water like yours: here B, not A" } }
+      ]
+    },
+    {
+      "id": "streams",
+      "kicker": "Streams and gates",
+      "title": "Where it runs hard, when to go",
+      "refs": ["Tides — streams in channels", "Tides — counter-currents", "Tides — streams along the shore", "Tides — streams round headlands", "Tides — races and overfalls", "Tides — tidal races", "Tides — wind against tide", "Tides — tidal gates"],
+      "blocks": [
+        { "p": "Streams run hardest in deep water: mid-channel, in narrows, outside a bend, off headlands. Inshore they are weaker and turn earlier, and a bay may hold an eddy. Against a foul stream, work the edges." },
+        { "p": "Off a headland the stream makes a **race** with **overfalls**. Wind against tide steepens every sea, worst at springs, and on a beat a fair stream is exactly that. Round at slack water, when the diamond's rate falls to nothing, or pass well outside, above all at night. Cross a river bar late on the flood, never on the ebb against a swell." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V50 C240 55 200 60 175 125 C160 70 120 55 0 60 Z", "depths": [[80, 110, "25"], [250, 100, "22"], [50, 165, "30"]], "track": "M270 124 C235 150 200 182 110 176", "boat": [285, 120, 260], "labels": [[175, 150, "overfalls", "middle"]], "panel": ["Springs", "Sets W at 4 kn", "Wind from W, F6"], "note": "Wind against tide: round at slack, or well outside" } },
+        { "p": "A **tidal gate** opens only at a certain state of the stream. Time to leave = time at the gate − distance ÷ speed over the ground. Arrive as it opens; against a weak foul stream, pushing on may still beat waiting." }
+      ]
+    },
+    {
+      "id": "weather",
+      "kicker": "Weather and the Med",
+      "title": "When the tables are wrong",
+      "refs": ["Tides — weather effects", "Tides — meteorological effects", "Tides — the Mediterranean"],
+      "blocks": [
+        { "p": "Predictions assume about 1013 hPa. Each hectopascal above lowers the sea about a centimetre, each one below raises it. An onshore gale piles water up, an offshore one drives it out. These are estimates: add margin for them, never spend it." },
+        { "fig": { "type": "card", "title": "Low water on the bar", "lines": ["Predicted LW 0.4 m · bar charted 1.6 m", "The tables give 2.0 m", "Barometer 1033 hPa: about −0.2 m", "Offshore gale, two days: −0.3 m more", "Plan for about 1.5 m"] } },
+        { "p": "In most of the Mediterranean the range is a few decimetres, so weather moves the level more than the tide. The exceptions: about a metre in the northern Adriatic, more when a Sirocco blows up it, and up to two metres in the Gulf of Gabès. Narrows such as Messina have streams worth timing." }
+      ]
+    }
+  ]
+}

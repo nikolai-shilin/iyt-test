@@ -1,0 +1,105 @@
+{
+  "topic": "charts",
+  "lead": "A chart is a survey, a date and a set of conventions. Learn to read all three and you know how far to trust it, on paper or on the plotter.",
+  "sections": [
+    {
+      "id": "grid",
+      "kicker": "Position and distance",
+      "title": "The grid of a Mercator chart",
+      "refs": ["Charts — latitude and longitude", "Charts — Mercator projection", "Charts — distance and direction", "Charts — scale", "Charts — choosing the chart", "Chart symbols — measured distance"],
+      "blocks": [
+        { "p": "**Latitude** is read on the side scales, **longitude** at top and bottom, in minutes and decimals: 45 seconds is 0.75', not 0.45'. Count from the nearest printed line; west longitude grows leftward." },
+        { "fig": { "type": "chart", "track": "M80 30 V170 M250 30 V170 M80 40 H250 M80 160 H250", "marks": [[182, 94, "y", "buoy"]], "labels": [[80, 22, "4°10'W", "middle"], [250, 22, "4°05'W", "middle"], [74, 44, "50°20'N", "end"], [74, 164, "50°18'N", "end"]], "note": "0.9' south, 3.0' east: 50°19.1'N 004°07.0'W" } },
+        { "p": "On a **Mercator** chart a straight line is a rhumb line: one true course throughout. Measure miles on the latitude scale level with the leg: a minute of latitude is a mile. A minute of longitude is shorter, by the cosine of the latitude: half a mile at 60°N." },
+        { "p": "At 1:200,000 a millimetre of pencil is 200 m. Plan on the passage chart, then change to the largest **scale** for each harbour; an inset has its own. On a measured distance, average the two runs' speeds, not their times." }
+      ]
+    },
+    {
+      "id": "title",
+      "kicker": "Title panel and rose",
+      "title": "Small print before soundings",
+      "refs": ["Charts — title panel", "Charts — horizontal datum", "Charts — GPS and chart datum", "Charts — source data", "Charts — compass rose", "Charts — magnetic anomalies"],
+      "blocks": [
+        { "p": "The **title panel** gives the scale, the units (a fathom is 1.83 m), the levels depths and heights are measured from, and the **horizontal datum**. GPS works in WGS84: on an older datum apply the printed shift, or the plot can be 100 m out. With no shift given, carry a position across by bearing and distance from a charted object." },
+        { "fig": { "type": "card", "title": "Datum shift: worked example", "lines": ["GPS (WGS84): 43°27.30'N 008°16.40'W", "Chart note: move 0.06' north, 0.09' east", "North adds to N latitude: 27.36'N", "East takes from W longitude: 16.31'W", "Plot 43°27.36'N 008°16.31'W"] } },
+        { "p": "The **compass rose** has an outer ring in true and an inner one in magnetic for the year printed. Update the variation and take it from the nearest rose." },
+        { "fig": { "type": "compass", "variation": -3, "course": 62, "courseLabel": "Course (T)", "note": "062°T = 065°M" }, "cap": "4°30'W 2016 (9'E): ten years × 9' = 1°30' east, so 3°00'W in 2026." },
+        { "p": "The source diagram dates each survey: old lead-line work missed rocks. In a charted **magnetic anomaly** fix without the compass." }
+      ]
+    },
+    {
+      "id": "depths",
+      "kicker": "Depths and heights",
+      "title": "Below datum, above datum, above high water",
+      "refs": ["Charts — drying heights", "Charts — vertical clearances", "Charts — depth contours and soundings", "Chart symbols — rocks", "Chart symbols — rocks and heights", "Chart symbols — depths and shoals", "Chart symbols — wrecks", "Chart symbols — obstructions"],
+      "blocks": [
+        { "p": "A sounding is a depth below **chart datum**: add the height of tide. An underlined figure is a **drying height**, above datum. A figure in brackets is a height that never covers, measured above high water (MHWS)." },
+        { "fig": { "type": "chart", "land": "M0 0 H120 V40 C80 55 40 50 0 60 Z", "marks": [[80, 112, "k", "A"], [165, 142, "k", "B"], [250, 118, "k", "C"]], "depths": [[80, 134, "(2.5)"], [165, 164, "1.2", true], [250, 140, "4.3"], [60, 170, "9"], [290, 170, "11"]], "panel": ["Title panel", "Heights above MHWS", "Depths below CD"], "note": "HW springs: only A shows · B dries near LW" } },
+        { "fig": { "type": "card", "title": "Sums with the tide", "lines": ["Bank drying 2.3, draft 1.8, margin 0.5:", "you need 2.3 + 1.8 + 0.5 = 4.6 m of tide", "Rock (3), MHWS 5.2 m, tide now 0.8 m:", "it stands 3 + 5.2 − 0.8 = 7.4 m high", "Wreck swept 4.2, tide 0.5 m, draft 2.0 m:", "4.2 + 0.5 − 2.0 = 2.7 m under the keel"] } },
+        { "p": "Clearances are measured above HAT, or MHWS on older charts. A rock awash at datum shows only near low water. Keep outside the dotted danger line round a wreck or obstruction. A blank inside a contour is unsurveyed, not deep, and swell breaks on a shoal the sums allow." }
+      ]
+    },
+    {
+      "id": "symbols",
+      "kicker": "Symbols and abbreviations",
+      "title": "The seabed, the areas and their notes",
+      "refs": ["Chart symbols — nature of the seabed", "Chart symbols — abbreviations", "Chart symbols — anchorages, cables and pipelines", "Chart symbols — overfalls and tide rips", "Chart symbols — prohibited areas", "Chart symbols — danger areas", "Chart symbols — spoil grounds", "Chart symbols — nature reserves", "Chart symbols — moorings", "Chart symbols — traffic separation schemes", "Publications — chart 5011"],
+      "blocks": [
+        { "fig": { "type": "chart", "land": "M0 0 H320 V36 C250 60 210 40 170 50 C120 62 60 46 0 56 Z", "depths": [[70, 100, "5 R"], [140, 140, "6 Wd"], [225, 110, "7 S M"], [270, 160, "8 Sh"]], "labels": [[70, 84, "A", "middle"], [140, 124, "B", "middle"], [225, 94, "C", "middle"], [270, 144, "D", "middle"]], "note": "Letters beside a sounding: the seabed" }, "cap": "Anchor at C, in sand and mud." },
+        { "table": { "head": ["On the chart", "Meaning"], "rows": [
+          ["S · M · Cy", "Sand, mud, clay: good holding"],
+          ["R · St · Wd · Sh", "Rock, stones, weed, shells: poor"],
+          ["PA", "Position approximate: a wide berth"],
+          ["ED", "Existence doubtful: treat as real"]
+        ] } },
+        { "p": "Never anchor over a cable, pipeline or foul ground. A **spoil ground** may be shallower than charted. **Overfalls** break at springs with wind against stream. A danger area may be firing: ask range control. In a prohibited area or reserve the chart's note decides; use the visitors' moorings. The tinted band between traffic lanes is the separation zone. Chart 5011 explains every symbol." }
+      ]
+    },
+    {
+      "id": "lights",
+      "kicker": "Lights and signals",
+      "title": "The legend beside a light",
+      "refs": ["Chart symbols — lights", "Chart symbols — light sectors", "Chart symbols — fog signals", "Chart symbols — radar beacons", "Chart symbols — buoys", "Chart symbols — AIS aids to navigation"],
+      "blocks": [
+        { "p": "The legend runs: character, colour, period, elevation, range. **Fl(3) WR 15s 21m 18/15M** is three flashes every 15 seconds, white and red sectors, 21 m above MHWS, nominal range 18 miles for white, 15 for red." },
+        { "fig": { "type": "chart", "land": "M0 0 H90 V200 H0 Z", "marks": [[95, 100, "y", "lighthouse"]], "labels": [[108, 128, "Fl(3) WR 15s 21m 18/15M", "start"]], "boat": [250, 165, 270], "panel": ["Title panel", "Heights above MHWS"] } },
+        { "p": "You see a light at its nominal range or its horizon, whichever is less: a 3M pierhead light will not show at 12 miles. **Sector** limits and obscured arcs are true bearings from seaward. Horn(2) 30s is two blasts every 30 seconds; a buoy's bell needs waves and may be silent in a calm. **Racon (T)** paints a Morse T on the radar beyond the mark. A virtual AIS mark exists only on screen." },
+        { "fig": { "type": "buoy", "kind": "card-e", "rhythm": "Q(3) 10s", "rhythmNote": "3 quick · east cardinal" } }
+      ]
+    },
+    {
+      "id": "corrections",
+      "kicker": "Corrections and publications",
+      "title": "The newest information wins",
+      "refs": ["Charts — corrections and Notices to Mariners", "Charts — Notices to Mariners", "Charts — edition and corrections", "Publications — the almanac", "Publications — almanac", "Publications — almanac port pages", "Publications — pilot books", "Publications — List of Lights", "Publications — List of Radio Signals", "Publications — tidal stream atlases", "Publications — what to carry"],
+      "blocks": [
+        { "p": "**Notices to Mariners** carry the changes: a new breakwater, a moved buoy, a wreck. Each names the previous notice for that chart, so a gap shows. A new edition holds everything issued before its date." },
+        { "fig": { "type": "card", "title": "Correcting a chart", "lines": ["Bottom-left margin: last notice 2025-3120", "2025-2988: older, already in", "2025-3305, then 2026-0412: apply in ink", "Write both numbers in the margin", "Temporary notices: pencil, rubbed out later"] } },
+        { "table": { "head": ["Publication", "What it gives"], "rows": [
+          ["This year's almanac", "Tides, streams, lights, radio, ports"],
+          ["Pilot book", "Approaches, berths; plans are sketches"],
+          ["Tidal stream atlas", "Streams hour by hour"],
+          ["List of Lights", "Each light in full"],
+          ["List of Radio Signals", "VTS and port channels"]
+        ] } },
+        { "p": "Carry paper charts of the route and every likely port. Read the port page before arriving: whom to call, opening hours, water over the sill. When sources disagree, the newer wins: a corrected chart over an old pilot book, a fresh warning over the chart." }
+      ]
+    },
+    {
+      "id": "electronic",
+      "kicker": "Electronic charts",
+      "title": "The same data, with traps of its own",
+      "refs": ["Electronic charts — raster and vector", "Electronic charts — zones of confidence", "Electronic charts — safety contour", "Electronic charts — over-zoom", "Electronic charts — paper backup"],
+      "blocks": [
+        { "p": "A **raster** chart is a picture of the paper chart. A **vector** chart is a database: tap an object for its details, switch to night colours. It hides detail when zoomed out, so check each leg zoomed in; over-zooming enlarges errors, not accuracy." },
+        { "table": { "head": ["Symbol", "ZOC", "Position within"], "rows": [
+          ["6 · 5 · 4 stars", "A1 · A2 · B", "5 · 20 · 50 m"],
+          ["3 stars", "C", "500 m"],
+          ["2 stars", "D", "Worse than C"],
+          ["U", "U", "Not assessed"]
+        ] } },
+        { "p": "Set the **safety contour** and depth alarm to draft plus a margin; with no contour at that value the plotter takes the next deeper one. Its route check ignores the tide: do that sum yourself. Mark a paper position every hour, so a dead plotter costs one hour of dead reckoning." }
+      ]
+    }
+  ]
+}

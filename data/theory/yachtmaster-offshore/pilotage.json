@@ -1,0 +1,94 @@
+{
+  "topic": "pilotage",
+  "lead": "Plan in four stages, check all the way; pilotage is the same at close range, with every number ready before the entrance. The electronics serve both, if you know what each cannot see.",
+  "sections": [
+    {
+      "id": "plan",
+      "kicker": "The passage plan",
+      "title": "Four stages and a way out",
+      "refs": ["Passage planning — the four stages", "SOLAS V", "Passage planning — weather window", "Passage planning — tidal gates", "Passage planning — ports of refuge", "Passage planning — landfall", "Passage planning — contingencies", "Passage planning — medical diversion", "Passage planning — provisioning", "Passage planning — fuel", "Passage planning — execution", "Passage planning — handover", "Passage planning — crossing a TSS", "Passage planning — crossing the lanes", "Passage planning — waypoints and shipping", "Passage planning — offshore installations", "Passage planning — wind farms"],
+      "blocks": [
+        { "fig": { "type": "card", "title": "The four stages", "lines": ["Appraisal: charts, pilot, tides, forecasts", "Planning: tracks, waypoints, times, plan B", "Execution: latest forecast, decide, brief", "Monitoring: fix, compare with the plan, act"] } },
+        { "p": "SOLAS V asks every vessel for a plan, and a radar reflector where practicable. Work timings backwards: latest departure = the **earlier** forecast of bad weather − margin − passage time; likewise back from a tidal gate. Landfall: raise a light before dawn, enter after it. Per stage: a **port of refuge**, safe in the forecast wind at any tide, and a port with a hospital. Fuel by dipstick: passage + diversion + reserve; bottled water for the passage plus spare days. Handing over: the plan's changes, the defects, the crew." },
+        { "fig": { "type": "card", "title": "Latest departure", "lines": ["Crossing 120 M at 8 kn: 15 h", "Front: model A Sat 1800, model B Sat 1200", "Rule: in harbour 6 h before the earlier one", "Sat 1200 − 6 h − 15 h = Fri 1500"] } },
+        { "p": "Cross lanes at right angles at a steady heading and speed, clear of the **precautionary area** where ships turn, and keep waypoints off the point where they all alter. A platform's 500 m zone is closed to you; a wind farm at night hides small craft among its echoes." },
+        { "fig": { "type": "chart", "land": "M0 93 H160 V105 H0 Z", "track": "M24 182 V18 M292 182 V74", "labels": [[96, 80, "W-going lane ←", "middle"], [96, 126, "E-going lane →", "middle"], [86, 103, "separation zone", "middle"], [232, 98, "precautionary", "middle"], [232, 112, "area", "middle"], [32, 170, "A", "start"], [284, 170, "B", "end"]], "boat": [150, 160, 0], "note": "A: both lanes at right angles · B: where ships turn" } }
+      ]
+    },
+    {
+      "id": "watch",
+      "kicker": "Watches and monitoring",
+      "title": "Somebody is always checking",
+      "refs": ["Passage planning — watches and night orders", "Passage planning — fatigue", "Passage planning — watchkeeping", "Passage monitoring — fixing interval", "Passage monitoring — fix and EP", "Logbook — electronic and paper"],
+      "blocks": [
+        { "p": "Lanes and landfall where the crew is fresh and it is light; sleep before the night, not after. A lone watchkeeper under autopilot needs a **watch alarm**. Night orders never delay avoiding action: at close quarters act, then call. Fix more often as dangers close, so you cannot reach one between fixes; a fix well off the EP means stream, sensor or plot is wrong. A saved track is no log: no weather or decisions, and it dies with the power." },
+        { "fig": { "type": "card", "title": "Night orders", "lines": ["Fix every 30 min offshore", "Every 6 min within 3 M of a danger", "Call me: CPA under 1 M, or any doubt", "Close quarters: act first, then call", "Watch alarm on; log every hour"] } }
+      ]
+    },
+    {
+      "id": "pilotage",
+      "kicker": "The pilotage plan",
+      "title": "Ready before the entrance",
+      "refs": ["Pilotage — air draught", "Pilotage — under-keel clearance", "Pilotage — turning room", "Pilotage — clearing bearings", "Pilotage — transits", "Pilotage — leading lights and sectors", "Pilotage — wheel-over point", "Pilotage plan — the abort point", "Port traffic signals", "VTS — reporting points", "VTS — reporting", "VTS — traffic information", "Pilotage in fog — VTS", "Pilotage in fog — speed", "Pilotage — landfall without GNSS", "Pilotage — an unlit anchorage by radar"],
+      "blocks": [
+        { "fig": { "type": "card", "title": "In the plan", "lines": ["Tide = draught + ½ swell + margin − depth", "Bridge: clearance + HAT − tide ≥ air draught", "Clearing bearings; wheel-over points", "Abort point: the last place to turn away", "VTS: name, position, intention, ETA; listen"] } },
+        { "p": "A **clearing bearing** on a charted mark fences off a danger; deeper water at night and in a swell." },
+        { "fig": { "type": "chart", "land": "M0 0 H120 C116 30 108 50 100 60 C92 80 70 130 50 200 H0 Z", "depths": [[96, 140, "1.4"], [131, 150, "3.8"], [174, 150, "7"], [238, 152, "14"], [296, 152, "19"]], "marks": [[104, 58, "w", "light"]], "track": "M104 58 L118 180 M104 58 L169 180 M104 58 L229 180", "labels": [[124, 172, "A", "start"], [172, 172, "B", "start"], [228, 172, "C", "start"]], "boat": [268, 178, 320], "panel": ["Clearing lines", "A: 2 m contour", "B: 5 m contour", "C: 10 m contour", "Draught 3.4 m", "Swell 3 m"], "note": "Night, swell: keep seaward of C — light bearing ≤ 314°" } },
+        { "p": "Start a big turn early: **wheel-over** distance = turning radius × tan(half the turn). Leading lights hold a dredged cut's axis; a white sector may be wider than your water. Mark the **abort point**; where you cannot turn inside, reverse in. Without GNSS **aim off** to one side of the harbour; in an unlit bay fix by radar ranges off steep points and the sounder. Three vertical reds: no entry; the yellow beside them exempts only named craft. VTS traffic information is not control. In fog let the ferry clear first, and be able to stop within half the visibility." },
+        { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 52 }, { "c": "r", "x": 160, "y": 84 }, { "c": "r", "x": 160, "y": 116 }, { "c": "y", "x": 128, "y": 52 }], "note": "Three reds: no entry · the yellow frees named craft" } }
+      ]
+    },
+    {
+      "id": "radar",
+      "kicker": "Radar",
+      "title": "What paints",
+      "refs": ["Radar — how it works", "Radar — detection range", "Radar — range and bearing accuracy", "Radar — gain and tuning", "Radar — sea clutter", "Radar — rain clutter", "Radar — rain at night", "Radar — blind sectors", "Radar — detecting small craft", "Radar — racons", "Radar — SART", "Radar — range scales", "Radar — range scale and warning", "Radar — guard zones", "Radar — false echoes", "Radar — parallel indexing", "Radar — parallel indexing with a stream", "Radar — clearing ranges", "Radar — true and relative trails", "Radar and the plotter — overlay offset", "Radar and AIS — detection range"],
+      "blocks": [
+        { "p": "Range = speed of radio waves × echo time ÷ 2; the picture ends at the horizon. Range to the near edge of an echo is sharp; bearing is smeared by the beam width: fix by ranges." },
+        { "fig": { "type": "card", "title": "Radar horizon", "lines": ["≈ 2.2 × (√h₁ + √h₂) M, heights in metres", "Scanner 9 m, cliff 64 m: 2.2 × 11 = 24 M", "Ship's bridge 30 m: 2.2 × (3 + 5.5) ≈ 19 M", "Her AIS from a high aerial reaches further"] } },
+        { "fig": { "type": "card", "title": "Setting up the picture", "lines": ["Tune, then gain up to a faint speckle", "Sea clutter: leave a little showing", "Rain control only to look into a squall", "Long scale to warn, short for small craft", "Long scale ≥ closing speed × warning time"] } },
+        { "p": "Heavy rain hides what lies behind it. A **guard zone** misses an echo that first paints inside it; an arc at a close ship's range is side lobes. Yaw to clear a blind sector; an active enhancer high up makes you seen. A **racon** paints a Morse flash outward: range to its near end. A **SART** paints twelve dots, the casualty at the nearest. **Parallel index**: a line parallel to your ground track, on a stabilised north-up display. **Clearing range**: a VRM ring round a cliff that echoes, at the hidden danger's reach plus margin. No true trail: stopped. Overlay offset evenly all round: doubt the position." },
+        { "fig": { "type": "chart", "land": "M320 0 V200 H252 C242 160 232 124 236 92 C240 60 256 30 268 0 Z", "depths": [[204, 142, "0.6", true], [216, 158, "1.1"], [196, 170, "2"], [120, 70, "35"], [96, 150, "40"]], "labels": [[204, 128, "reef", "middle"], [244, 182, "cliff", "end"]], "track": "M176 196 L176 8", "boat": [176, 150, 0], "panel": ["Clearing range", "Reef 0.6 M off", "Margin 0.4 M", "VRM 1.0 M"], "note": "The reef gives no echo: keep the cliff outside 1.0 M" } }
+      ]
+    },
+    {
+      "id": "plot",
+      "kicker": "Radar plotting and ARPA",
+      "title": "Her CPA, her true course",
+      "refs": ["Radar plotting — CPA and TCPA", "Radar plotting — steady bearing", "Radar plotting — two targets", "Radar plotting — true and relative motion", "Radar plotting — the alteration", "Radar plotting — the alteration for a CPA", "Radar plotting — a speed reduction", "Radar plotting — a target that alters", "ARPA — true and relative vectors", "ARPA/MARPA — limits", "ARPA/MARPA — target swap", "ARPA — ground and sea stabilisation"],
+      "blocks": [
+        { "p": "Plot an echo twice. The line through the plots, extended, is her **relative motion**: it passes you at the CPA; distance left along it ÷ relative speed = TCPA. Steady bearing, closing range: collision. Two targets: the earlier CPA first." },
+        { "fig": { "type": "chart", "marks": [[123, 99, "y", ""], [139, 83, "y", ""], [173, 49, "k", "CPA"]], "track": "M123 99 L196 26", "boat": [150, 26, 180], "labels": [[113, 103, "0200  200°  5.2 M", "end"], [129, 81, "0206  191°  3.9 M", "end"]], "panel": ["Relative plot", "Own 180°T 9 kn", "15 kn relative", "CPA 2.1 M at 0219"], "note": "Relative motion · 3.2 M to the CPA at 15 kn: 13 min" } },
+        { "p": "Relative motion + your own course and speed = her true course and speed. After you alter or slow, redraw from the last plot: her true vector minus your new one. A bend in the plot means she has altered: start again from the bend." },
+        { "p": "**ARPA** draws this, with limits. Read the CPA, not where the true vector points. Vectors take three minutes to settle. A heading error skews true vectors, not CPA and TCPA. Close-passing echoes can swap. Ground-stabilised vectors show track over the ground; in a cross-stream her lights disagree, so judge aspect sea-stabilised." }
+      ]
+    },
+    {
+      "id": "ais",
+      "kicker": "AIS",
+      "title": "What she says of herself",
+      "refs": ["AIS — classes A and B", "AIS — what it does not show", "AIS — what it shows and what it does not", "AIS — SART and MOB devices", "AIS-SART on the plotter", "AIS — virtual aids to navigation", "Radar and AIS — a tow"],
+      "blocks": [
+        { "p": "AIS says what a ship's GNSS and crew report, over VHF. Many fishing boats, yachts, warships and tows have none, and the status is typed by hand. Plot an echo with no AIS like any other; two echoes in step under one name are tug and tow: never pass between. **Class B** sends 2 W every 30 seconds and may be filtered off a busy display. A **virtual aid** exists only on the screen: plot the danger on paper." },
+        { "table": { "head": ["MMSI", "Device"], "rows": [
+          ["970", "AIS-SART, no radar dots. ACTIVE: go, alert the MRCC; TEST: log it"],
+          ["972", "MOB beacon: a person in the water"],
+          ["974", "EPIRB with AIS"]
+        ] } }
+      ]
+    },
+    {
+      "id": "gnss",
+      "kicker": "GNSS and sensors",
+      "title": "One source is none",
+      "refs": ["GNSS — HDOP and accuracy", "GNSS — augmentation and integrity", "GNSS — jamming and spoofing", "GNSS — spoofing", "GNSS — failure", "GNSS — failure and what is left", "Integrated electronics — single point of failure", "Autopilot — wind mode", "Autopilot — alarms", "Echo sounder — offset", "Echo sounder — false readings", "Log — calibration", "Log — the GNSS as backup", "Log — a Dutchman’s log"],
+      "blocks": [
+        { "p": "High **HDOP**: poor satellite geometry, worse fix. SBAS sharpens the fix and flags faults, but jams too. **Jamming**: jumps, wild SOG, wrong clock, no fix. **Spoofing**: a smooth, confident, false position. Radar ranges and depths are independent: believe them, report it." },
+        { "fig": { "type": "panel", "gauges": [["HDOP", "7.8", true], ["Sats", "5", false], ["SOG", "41 kn", true]], "lines": ["Position jumps; radar, log and compass steady", "Go by radar ranges, depth and DR"] } },
+        { "fig": { "type": "card", "title": "GNSS lost", "lines": ["Write down the last fix, its time and log", "Start a DR; fix by radar ranges and depth", "Gone: AIS and DSC positions, track steering", "Still good: radar, compass, log, sounder", "Backup: handheld GNSS, VHF, own batteries"] } },
+        { "p": "One antenna for everything: a single point of failure. **Wind mode** follows the wind, not the compass; off-course alarm in gusts: reef; drive fault: hand steering, slow down. Below-keel sounder reading + draught = the depth to compare with the chart; offshore it shows fish as shoals. Log factor = true ÷ logged distance, at slack water. GNSS SOG and COG already hold the stream." },
+        { "fig": { "type": "card", "title": "Dutchman's log", "lines": ["Marks on deck 18 m apart", "The chip takes 5.0 s: 3.6 m/s", "3.6 × 3,600 ÷ 1,852 = 7.0 kn", "Through the water, not over the ground"] } }
+      ]
+    }
+  ]
+}

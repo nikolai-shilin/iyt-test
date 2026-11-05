@@ -1,0 +1,108 @@
+{
+  "topic": "sun",
+  "lead": "A timed sun sight gives one position line. The intercept, the difference between the altitude you measured and the one calculated for a known point, places it.",
+  "sections": [
+    {
+      "id": "sight",
+      "kicker": "The sight",
+      "title": "Altitude and time, both exact",
+      "refs": ["Sun sights — choosing the time", "Sun sights — a series of sights", "Sextant — altitude corrections", "Sight reduction — UT from the watch"],
+      "blocks": [
+        { "p": "Take the Sun above about 15°, where refraction is steady; well east or west, its line runs near north–south and fixes longitude. Time it to the second: 4 seconds is 1′ of longitude." },
+        { "p": "Turn the watch into **UT**: remove its error, add the zone description (positive in west zones); past 2400 or below 0000 the Greenwich date and the almanac page change." },
+        { "fig": { "type": "altitude", "parts": [["hs", "Hs"], ["dip", "dip"], ["limb", "limb"], ["horizon", "visible horizon"], ["horizontal", "horizontal"], ["eye", "height of eye"]] }, "cap": "Hs to Ho: index error, dip, then the main correction." },
+        { "p": "**Ho** is Hs corrected for index error, dip and the main correction for your limb and season. In a seaway take several sights and average them, dropping any out of step." }
+      ]
+    },
+    {
+      "id": "almanac",
+      "kicker": "Almanac",
+      "title": "GHA, declination and LHA",
+      "refs": ["Sight reduction — GHA and increments", "Sight reduction — declination", "Sight reduction — LHA"],
+      "blocks": [
+        { "p": "The daily page gives the Sun's **GHA** and **Dec** for each hour of UT. Add the increment for the minutes and seconds (the Sun moves 15° an hour) and correct Dec with d, checking the next hour for its trend; near an equinox its name can change." },
+        { "p": "**LHA** is the Sun's angle west of your meridian: GHA minus west longitude or plus east, with 360° added or taken off. Morning, the Sun east of you: LHA over 180°. Afternoon: under 180°." },
+        { "fig": { "type": "card", "title": "LHA in west longitude", "lines": ["GHA Sun at 14h 031°10.0′", "Increment 20m 00s +5°00.0′", "GHA 036°10.0′", "36°10.0′ + 360° − 81°10.0′ W", "LHA 315°: morning, Sun to the east"] } },
+        { "rule": "LHA = GHA − longitude west, + longitude east." }
+      ]
+    },
+    {
+      "id": "triangle",
+      "kicker": "Hc and Zn",
+      "title": "Solving the PZX triangle",
+      "refs": ["Sight reduction — Hc and Zn", "Sight reduction — HO 249", "Sight reduction — assumed position"],
+      "blocks": [
+        { "p": "Pole, zenith and Sun make a triangle. You know two sides, 90° − Lat and 90° − Dec, and the angle between them at the pole, the LHA. Solving it gives 90° − **Hc**, the altitude seen from that position, and the **azimuth**." },
+        { "fig": { "type": "sphere", "parts": [["Z", "Z"], ["P", "P"], ["X", "X"], ["pz", "90° − Lat"], ["px", "90° − Dec"], ["zx", "90° − Hc"], ["horizon", "horizon"], ["equator", "equator"]] }, "cap": "Angle at P: the LHA. Angle at Z: the azimuth." },
+        { "p": "By calculator, sin Hc = sin Lat sin Dec + cos Lat cos Dec cos LHA, a contrary-name Dec negative, from any position: use the DR." },
+        { "p": "**HO 249** tabulates whole degrees, so you work from an **assumed position**: the nearest whole degree of latitude, and a longitude within 30′ of it that makes LHA whole (in west longitude the GHA's minutes, in east 60′ minus them). Enter the same- or contrary-name page with the whole degree of Dec, correct Hc with d. Both workings plot the same line." },
+        { "table": { "head": ["Latitude", "LHA over 180°", "LHA under 180°"], "rows": [
+          ["North", "Zn = Z", "Zn = 360° − Z"],
+          ["South", "Zn = 180° − Z", "Zn = 180° + Z"]
+        ] } }
+      ]
+    },
+    {
+      "id": "intercept",
+      "kicker": "Intercept",
+      "title": "From two altitudes to a line",
+      "refs": ["Sight reduction — intercept", "Plotting the position line", "Sun sights — the position line"],
+      "blocks": [
+        { "p": "The **intercept** is Ho − Hc, 1′ for 1 mile. Ho greater: you are nearer the Sun than the point you worked from, **towards**. Hc greater: **away**." },
+        { "fig": { "type": "chart", "land": "M182.9 99.5 L118.7 176.1 L116.8 174.6 L181.1 98.0 Z", "marks": [[120, 112, "k", "AP"], [150, 137, "k", ""]], "track": "M82 80 L181 163", "labels": [[185, 177, "to the Sun", "middle"], [128, 134, "6 M towards", "end"], [200, 118, "position line", "start"]], "panel": ["Sun sight", "Ho 40°16′", "Hc 40°10′", "Zn 130°"], "note": "Plotting sheet · azimuth dashed" } },
+        { "list": [
+          "Lay off the intercept from the AP or DR along Zn if towards, its reciprocal if away.",
+          "Draw the position line there, at right angles to the azimuth.",
+          "Measure miles on the latitude scale."
+        ] },
+        { "p": "A nil intercept puts the line through the AP. A very long one is not wrong, but the line is only a short piece of a large circle: rework from a point on it. One line is not a fix; its point nearest the DR is your best position. Current matters only when a line is carried forward." },
+        { "rule": "Ho greater: towards. Hc greater: away, in either hemisphere.", "label": "Remember" }
+      ]
+    },
+    {
+      "id": "fix",
+      "kicker": "Running fix",
+      "title": "Sun, run, sun",
+      "refs": ["Running fix — sun-run-sun", "Running fix — current", "Sun sights — a line and a latitude", "Sun and Moon — a fix by day", "Sun and Moon by day", "Sun sights in the tropics"],
+      "blocks": [
+        { "p": "The Sun gives a fix once its bearing has changed. Carry the earlier line forward by the **run**, course and distance made good, leeway allowed and legs added as vectors; it keeps its direction and meets the later line, or the noon latitude, at the fix." },
+        { "fig": { "type": "chart", "land": "M134.2 158.7 L205.4 76.7 L203.8 75.3 L132.5 157.3 Z M56.3 160.7 L111.9 96.7 L110.2 95.3 L54.6 159.3 Z M20.0 151.1 L300.0 151.1 L300.0 148.9 L20.0 148.9 Z", "marks": [[64, 150, "k", ""], [70, 118, "w", "DR noon"], [176, 84, "w", "DR 0915"]], "track": "M176 84 L70 118", "labels": [[214, 92, "0915 line", "start"], [58, 172, "0915 line run on", "start"], [300, 143, "noon latitude", "end"], [52, 146, "noon fix", "end"]], "panel": ["Run to noon", "252° T, 31 M"], "note": "Plotting sheet" } },
+        { "p": "The lines cut at the change of azimuth: wait until it has changed about 45°, and no longer than that: every hour adds run error. Add a known current to the run; an unknown one shows afterwards as the gap from DR to fix. In the tropics the azimuth swings so fast past noon that sights an hour apart cut well." },
+        { "p": "Around its quarters the **Moon** is up by day: Sun and Moon lines taken together cross with no run." }
+      ]
+    },
+    {
+      "id": "use",
+      "kicker": "One line",
+      "title": "What one line tells you",
+      "refs": ["Course and speed lines", "Sun sights — a course line", "Sun sights — clearing a danger", "Sun sights — a line and a sounding", "Sun sights — a line and a range"],
+      "blocks": [
+        { "p": "A position line lies at right angles to the Sun's bearing: pick the moment to suit the question." },
+        { "table": { "head": ["Sun bears", "The line shows"], "rows": [
+          ["Abeam", "Course line: your offset from the track"],
+          ["Ahead or astern", "Speed line: distance run"],
+          ["Due east or west", "A meridian: longitude"],
+          ["Square to a coast or reef", "Distance off it"]
+        ] } },
+        { "fig": { "type": "chart", "land": "M53 -61 L213 216 L340 216 L340 -61 Z M67.8 43.5 L129.8 150.9 L131.9 149.7 L69.9 42.3 Z", "marks": [[80, 108, "w", "AP"]], "track": "M66 116 L133 77", "labels": [[137, 152, "sun line", "start"], [250, 176, "REEF", "middle"]], "panel": ["Sun Zn 060°", "AP–reef 14.0 M", "5.2 M towards"], "note": "Plotting sheet · azimuth dashed" }, "cap": "Along the reef: 14.0 M from the AP less 5.2 M towards leaves 8.8 M off." },
+        { "p": "It also crosses a depth contour where the bottom rises steeply, or a radar range, whose circle cuts it twice; the DR says which cut is yours." }
+      ]
+    },
+    {
+      "id": "errors",
+      "kicker": "Errors",
+      "title": "A mile for a minute",
+      "refs": ["Sight errors — altitude", "Sight errors — time", "Sight errors — the almanac", "Sight errors — blunders", "Sight errors — the run", "Sun sights — a cocked hat"],
+      "blocks": [
+        { "table": { "head": ["Slip", "Effect"], "rows": [
+          ["1′ of altitude", "1 mile along the azimuth"],
+          ["4 s of time", "1′ of longitude; a fast watch puts you west"],
+          ["Yesterday's Dec", "A shift of the day's change in Dec"],
+          ["Wrong name for Lat or Dec", "An intercept of hundreds of miles"],
+          ["Error in the run", "Moves a carried line by its part along the azimuth"]
+        ] } },
+        { "p": "Three sun lines from one day seldom meet in a point; the **cocked hat** comes mostly from the runs that carried the earlier lines. A constant error shifts every line the same way along its azimuth: you are inside the triangle only if the azimuths span more than 180°. Lines a mile the same way every day betray such an error." }
+      ]
+    }
+  ]
+}

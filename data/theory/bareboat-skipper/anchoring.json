@@ -1,0 +1,115 @@
+{
+  "topic": "anchoring",
+  "lead": "Anchoring well means choosing the spot, laying enough chain and proving that the anchor holds. In harbour the same care goes into your lines.",
+  "sections": [
+    {
+      "id": "where",
+      "kicker": "Choosing the spot",
+      "title": "Shelter and seabed",
+      "refs": ["Anchoring", "Choosing an anchorage", "Holding ground", "Anchor types"],
+      "blocks": [
+        { "p": "Choose shelter from the **forecast** wind, not the present one: a bay open to it becomes a lee shore, so move while it is light. Plan your way out before dark." },
+        { "fig": { "type": "bay", "wind": 180, "land": "M0 200 H190 V135 C 150 120 60 125 0 130 Z M250 200 H320 V110 C 300 120 270 140 250 150 Z", "spots": [[90, 95, "A"], [220, 60, "B"], [220, 150, "C"]], "labels": [[95, 165, "LAND (south)", "middle"], [220, 128, "channel", "middle"]], "note": "Forecast: wind backing south overnight, F5" }, "cap": "Only A lies under the land when the wind goes south." },
+        { "p": "The chart names the seabed: **S** sand and **M** mud let an anchor dig in, **Wd** weed and **R** rock do not. Drop on pale sand, never on dark seagrass, and clear of a submarine cable, a magenta wavy line." },
+        { "table": { "head": ["Anchor", "Where it works"], "rows": [
+          ["Plough (Delta)", "Sand and mud"],
+          ["Danforth", "Sand and mud; may not reset when the pull reverses"],
+          ["Fisherman", "Weed and rock"],
+          ["Grapnel", "A dinghy, over rock"]
+        ] } }
+      ]
+    },
+    {
+      "id": "scope",
+      "kicker": "Scope",
+      "title": "How much chain to let out",
+      "refs": ["Scope", "Anchor rode", "Swinging circle"],
+      "blocks": [
+        { "p": "**Scope** compares the length of rode with the height from the bow roller to the seabed: depth at high water plus bow height. An anchor holds only while the pull is nearly horizontal; a short chain lifts the shank and pulls it out." },
+        { "fig": { "type": "anchor", "depth": "6 m", "title": "(6 m + 1 m) × 5 = 35 m", "lines": ["All-chain rode", "Bow roller 1 m above water", "Gusty night: 5:1"] } },
+        { "table": { "head": ["Rode", "Scope"], "rows": [
+          ["All chain, settled weather", "4:1 at least"],
+          ["All chain, strong wind", "5:1 to 7:1"],
+          ["Chain and rope", "6:1 to 8:1"]
+        ] } },
+        { "p": "A rope rode needs a few metres of chain at the anchor against chafe. More scope widens the **swinging circle**: its radius is about the chain along the bottom plus the boat's length." },
+        { "fig": { "type": "chart", "marks": [[90, 150, "k", "anchor"], [240, 150, "k", "rock"]], "boat": [45, 150, 90], "labels": [[165, 176, "rock is 45 m from your anchor", "middle"]], "depths": [[60, 90, "5"], [140, 110, "5"]], "panel": ["Wind E, going W", "Chain out 40 m", "Depth 5 m", "Bow height 1 m", "Boat length 13 m"] }, "cap": "The stern can swing 52 m from the anchor, past the rock." }
+      ]
+    },
+    {
+      "id": "setting",
+      "kicker": "Laying the anchor",
+      "title": "Stop, let go, dig it in",
+      "refs": ["Anchoring technique", "Setting the anchor", "Anchor light and shape", "COLREGs Rule 30"],
+      "blocks": [
+        { "list": [
+          "Approach slowly, head to wind, and stop over the spot.",
+          "Let go as she starts to drift astern, and pay out only as fast as she falls back: chain piled on the anchor fouls it.",
+          "Reverse gently to dig the anchor in.",
+          "Watch a **transit** abeam, two fixed marks ashore in line. Steady transit, taut chain: it holds. Opening transit, juddering chain: it is skating, so try another spot."
+        ] },
+        { "p": "In clear water, snorkel over it. In gusts a nylon **snubber** from a bow cleat to the chain spares the windlass; a catamaran rigs a bridle from both bows." },
+        { "tiles": [
+          { "fig": { "type": "dayshape", "shape": "ball", "sail": false }, "name": "By day", "note": "black ball forward" },
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 70 }] }, "view": "60 20 200 150", "name": "At night", "note": "all-round white light" }
+        ] }
+      ]
+    },
+    {
+      "id": "watch",
+      "kicker": "Anchor watch",
+      "title": "Holding through the night",
+      "refs": ["Anchor watch", "Dragging", "Two anchors"],
+      "blocks": [
+        { "p": "Centre the GPS **anchor alarm** on the anchor, radius the chain plus the boat's length. If it sounds, check transits, track and depth first. Swinging draws an arc; a straight line downwind is dragging." },
+        { "fig": { "type": "chart", "track": "M150 70 C 138 76 140 88 152 90 C 166 92 170 80 160 72 L 166 82 L 200 110 L 236 138", "boat": [240, 142, 315], "labels": [[150, 58, "earlier", "middle"]], "panel": ["Plotter, 0300", "Wind NW F6"], "note": "Your GPS track over the last hour" }, "cap": "Loops while she swings, then a straight track as she drags." },
+        { "p": "If you drag, start the engine and motor up to take the strain, then re-anchor or leave. If a neighbour drags down on you, wake her crew with horn and torch; engine on, fenders out. In strong wind set an anchor watch." },
+        { "table": { "head": ["Two anchors", "What for"], "rows": [
+          ["Both from the bow, 30–45° apart", "A strong, steady wind"],
+          ["Bahamian moor: two bow anchors 180° apart", "A small swinging circle"],
+          ["A kedge from the stern", "Lying end-on to the swell"]
+        ] } }
+      ]
+    },
+    {
+      "id": "weighing",
+      "kicker": "Weighing anchor",
+      "title": "The engine moves the boat",
+      "refs": ["Weighing anchor", "Kedging"],
+      "blocks": [
+        { "p": "Agree hand signals first: the bow crew points along the chain. Motor slowly up it so the windlass only takes in slack. With the chain up and down, lock it off and break the anchor out by motoring gently ahead. Then set the chain stopper and lash it." },
+        { "table": { "head": ["Problem", "Answer"], "rows": [
+          ["Fouled under a rock", "Pull it out backwards: a trip line on the crown, or from the other side"],
+          ["Under a neighbour's chain", "Hold their chain on a slip line, lower yours clear"],
+          ["Aground", "Lay the kedge by dinghy towards deep water and winch off"]
+        ] } }
+      ]
+    },
+    {
+      "id": "med",
+      "kicker": "Stern-to",
+      "title": "Mediterranean mooring",
+      "refs": ["Med mooring", "Shore lines", "Harbour etiquette"],
+      "blocks": [
+        { "p": "On a town quay you lie **stern-to**: the anchor holds the bow, two lines the stern. Drop three to four boat lengths out and reverse in straight, so your chain does not cross the neighbours'. Get sternway early: prop walk is strongest from rest, then the rudder steers." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V40 H0 Z", "track": "M160 180 L160 60", "marks": [[160, 170, "k", "drop here"]], "boat": [160, 90, 180], "labels": [[160, 30, "QUAY", "middle"], [200, 130, "3–4 boat lengths", "start"]], "note": "Stern-to, reversing towards the quay" } },
+        { "p": "In a cross wind drop upwind of the berth's line. The **windward stern line** goes ashore first and comes off last. In surge, ease the stern lines and haul in chain to sit further off. Ferry berths stay clear." },
+        { "fig": { "type": "bay", "wind": 90, "land": "M0 0 H320 V40 H0 Z", "spots": [[215, 132, "B"]], "labels": [[160, 25, "QUAY"], [160, 58, "your berth"], [215, 160, "drop upwind"]], "note": "Wind on the beam of the berth, F4" }, "cap": "From B the chain holds the bow up to windward." },
+        { "p": "A **lazy line** replaces the anchor: make it fast at the end away from the quay, and stay in neutral until it is clear of the propeller. In a cove a shore line holds the stern: lead it round a rock and back aboard, to slip from the deck." }
+      ]
+    },
+    {
+      "id": "alongside",
+      "kicker": "Alongside and on a buoy",
+      "title": "Breast lines hold, springs stop the surge",
+      "refs": ["Mooring alongside", "Boat handling", "Rafting up", "Mooring buoys"],
+      "blocks": [
+        { "p": "Bow and stern lines, and **breast lines** square to the pontoon, hold the boat in. **Springs** run diagonally and stop her surging. Where the level changes, leave the lines long and slack." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V40 H0 Z", "track": "M175 64 L204 40 M147 63 L116 40 M170 61 L146 40 M150 61 L174 40", "boat": [160, 67, 90], "labels": [[100, 31, "PONTOON", "middle"], [198, 62, "bow line", "start"], [124, 62, "stern line", "end"], [160, 92, "springs", "middle"]], "note": "Alongside" }, "view": "60 14 200 100" },
+        { "p": "Wind off the berth: come in steeper and get a line on fast; to leave, just let go. Wind onto it: stop parallel a metre off; to leave, motor ahead against a bow spring, bow fendered, until the stern swings out. In a raft, take your own lines ashore and cross by the foredeck." },
+        { "p": "Approach a **mooring buoy** into the wind. Its pick-up line only lifts the ring: lie to your own line, from a bow cleat through the ring and back to the same cleat." },
+        { "fig": { "type": "rope", "kind": "ring", "labels": [[160, 40, "buoy ring"], [232, 150, "your own line"]], "note": "Through the ring and back to the same cleat" } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "topic": "mooring",
+  "lead": "In a flotilla you anchor in a bay for lunch and lie stern-to a village quay at night. Both come down to the same things: choose the spot, lay enough chain, and prove the boat is held before you relax.",
+  "sections": [
+    {
+      "id": "where",
+      "kicker": "Choosing the spot",
+      "title": "Shelter, seabed, depth",
+      "refs": ["Choosing an anchorage", "Holding ground", "Choosing depth"],
+      "blocks": [
+        { "p": "Anchor in the **lee** of the land, where the wind reaches you across the shore and the water is flat. A shore the wind blows onto gives no shelter, and neither does open water. Choose for the **strongest wind in the forecast**, not for the breeze you have now: a cove that is calm in a light northerly is a trap when a fresh southerly arrives at 02:00." },
+        { "fig": { "type": "bay", "wind": 0, "land": "M90 80 C 120 50 220 50 240 80 C 255 105 210 125 165 122 C 120 120 75 105 90 80 Z", "spots": [[165, 30, "A"], [165, 158, "B"], [40, 95, "C"]], "labels": [[165, 92, "ISLAND"]], "note": "Forecast tonight: N F5–6" }, "cap": "Only B lies under the island when it blows from the north." },
+        { "table": { "head": ["Seabed", "Holding"], "rows": [
+          ["Sand: pale patches", "Good, the anchor digs in"],
+          ["Mud", "Good"],
+          ["Thick weed: dark patches", "Poor, the anchor skates over it"],
+          ["Flat rock", "Poor, nothing to dig into"]
+        ] } },
+        { "p": "Then the depth. Too deep, and your chain is too short: 60 m of chain in 20 m of water is barely 3:1. Too shallow, and you touch when the boat swings: 2.5 m leaves half a metre under a 2 m keel. Five to eight metres suits most charter yachts." }
+      ]
+    },
+    {
+      "id": "anchoring",
+      "kicker": "Scope and setting",
+      "title": "Lay the chain, then test it",
+      "refs": ["Scope", "Anchoring", "Setting the anchor"],
+      "blocks": [
+        { "p": "**Scope** is the length of chain compared with the height from the bow roller to the seabed. With all chain let out at least **4:1** in settled weather, more if it blows. An anchor holds while the pull is along the bottom; a short chain lifts it out." },
+        { "fig": { "type": "anchor", "depth": "5 m", "title": "(5 m + 1 m) × 4 = 24 m", "lines": ["All chain, scope 4:1", "Bow roller 1 m above water"] } },
+        { "list": [
+          "Stop head to wind over your spot and lower the anchor to the bottom.",
+          "As the boat drifts back, **pay the chain out** so that it lies in a line along the seabed. Dumped in a heap, it fouls the anchor.",
+          "With the scope out, go astern gently, then harder, to dig the anchor in.",
+          "Watch a **transit** abeam: two fixed objects ashore, one behind the other. While they stay in line, you are holding."
+        ] },
+        { "rule": "Measure from the bow roller: depth plus bow height, times four." }
+      ]
+    },
+    {
+      "id": "night",
+      "kicker": "At anchor",
+      "title": "Room to swing, and a way to know you drag",
+      "refs": ["Swinging room", "Anchor watch", "Line ashore"],
+      "blocks": [
+        { "p": "At anchor you swing round a circle. Its radius is about the chain you let out plus the boat's length: 30 m of chain and a 12 m yacht reach 42 m from the anchor. In a light, shifting wind neighbours swing at different moments, so your circles must not overlap." },
+        { "p": "Set the **anchor alarm**, and when it sounds look at the track. Arcs mean she is swinging. A straight line downwind means the anchor is **dragging**: start the engine at once, then let out more chain or lift it and anchor again." },
+        { "fig": { "type": "chart", "marks": [[100, 50, "k", "anchor"]], "track": "M70 96 Q100 120 132 96 Q104 118 76 100 Q98 116 120 108 L150 176", "boat": [152, 180, 0], "labels": [[62, 138, "arcs: swinging", "middle"], [164, 150, "straight: dragging", "start"]], "panel": ["Plotter, 02:30", "Wind N F6"], "note": "Your track over the last hour" } },
+        { "p": "In a cove too narrow to swing, drop the anchor and take a **stern line ashore** to a rock or a tree. Held at both ends, the boat cannot swing." }
+      ]
+    },
+    {
+      "id": "stern-to",
+      "kicker": "Stern-to",
+      "title": "The anchor holds you off the quay",
+      "refs": ["Med mooring", "Med mooring in a crosswind", "Lazy lines"],
+      "blocks": [
+        { "p": "On a town quay you lie **stern-to**: the anchor out ahead, two stern lines ashore. Let go **three to four boat lengths** off the quay, in line with your berth, and reverse in while the crew pay the chain out freely; a tight chain stops you short. Once the stern lines are made fast, take the chain up tight. It is what holds your stern off the stone." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V36 H0 Z", "marks": [[160, 178, "k", "anchor"]], "track": "M160 156 L160 80", "boat": [160, 64, 180], "labels": [[160, 24, "QUAY", "middle"], [172, 128, "3–4 boat lengths", "start"]], "note": "Reverse in, paying out chain" } },
+        { "p": "In a **crosswind** the boat sags downwind as she reverses. Drop a little upwind of the line of your berth, and the chain ends up running straight out from it. If the wind later swings onto the quay and the stern creeps towards it, take in chain and ease the stern lines to match." },
+        { "fig": { "type": "bay", "wind": 270, "land": "M0 0 H320 V36 H0 Z", "spots": [[125, 140, "A"]], "labels": [[160, 24, "QUAY"], [160, 56, "your berth"], [125, 168, "drop upwind"]], "note": "Fresh wind across the berths" } },
+        { "p": "In a marina a **lazy line** replaces the anchor: a heavy line fixed to the seabed ahead of the berth, with a light tail led to the quay. Pick it up at the stern, walk it forward and cleat it tight at the bow. When you leave, drop it and let it sink before you put the engine in gear, or it wraps round the propeller." }
+      ]
+    },
+    {
+      "id": "alongside",
+      "kicker": "Alongside",
+      "title": "Four lines, each with a job",
+      "refs": ["Berthing alongside", "Springing off"],
+      "blocks": [
+        { "fig": { "type": "lines", "quay": "QUAY", "lines": [["bow", "bow line"], ["stern", "stern line"], ["bow-spring", "bow spring"], ["stern-spring", "stern spring"]], "note": "The springs run along the quay" } },
+        { "p": "The bow and stern lines hold the boat in. The **springs** run diagonally along the quay: the bow spring leads aft from the bow, the stern spring forward from the stern. They stop the boat **surging** fore and aft in the wash of passing boats." },
+        { "p": "A spring also gets you off when the wind pins you on. To swing the **stern out**, fender the bow well, keep only the bow spring and motor gently ahead against it. The bow pivots in, the stern swings out; then go astern and slip the spring." }
+      ]
+    },
+    {
+      "id": "leaving",
+      "kicker": "Getting the anchor up",
+      "title": "The engine moves the boat, the windlass lifts the chain",
+      "refs": ["Weighing anchor", "Crossed anchors"],
+      "blocks": [
+        { "p": "A windlass is built to lift chain, not to drag the yacht. Motor gently towards the anchor while the crew on the bow **point along the chain** and signal when to stop. The windlass only gathers the slack." },
+        { "p": "On a crowded quay chains cross. If your anchor comes up with a neighbour's chain over it, do not force it." },
+        { "fig": { "type": "card", "title": "A chain over your anchor", "lines": ["Lift until you can reach the chain", "Pass a line under it, both ends aboard", "Lower your anchor clear of the chain", "Let one end go: the chain drops"] } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "topic": "navigation",
+  "lead": "A chart, a compass and a clock are enough to know where you are. Read the chart, convert a course, fix your position and allow for the tide: then the plotter is a check, not a crutch.",
+  "sections": [
+    {
+      "id": "latitude",
+      "kicker": "Latitude and distance",
+      "title": "One minute of latitude is one mile",
+      "refs": ["Latitude & longitude", "Chartwork", "Chart scale", "Speed, time, distance"],
+      "blocks": [
+        { "p": "A position is a **latitude**, read on the side scales, and a **longitude**, read at top and bottom, in degrees and minutes: 37.75° is 37°45.0'." },
+        { "fig": { "type": "chart", "labels": [[8, 22, "37°50'N", "start"], [8, 170, "37°40'N", "start"], [196, 67, "37°47.5'N", "start"]], "track": "M60 26 H300 M60 174 H300", "boat": [180, 63, 0], "note": "Parallels 10' apart · three-quarters up is 7.5'" } },
+        { "p": "One minute of latitude is one **nautical mile** (1,852 m): measure distance with dividers on the latitude scale level with your position, never on the longitude scale. A course read against a meridian is true." },
+        { "p": "A knot is one mile an hour: 18 miles at 5 knots take 3.6 hours, or 3 h 36 min. For pilotage use the **largest-scale** chart aboard." }
+      ]
+    },
+    {
+      "id": "symbols",
+      "kicker": "Depths and symbols",
+      "title": "What the chart prints in the water",
+      "refs": ["Chart symbols", "Charts", "Chart datum", "Echo sounder", "Chart corrections", "Chart reliability"],
+      "blocks": [
+        { "p": "Depths are metres below **chart datum**, about the lowest level the tide reaches, so there is usually more water than charted. An underlined figure is a **drying height**: it stands above datum and uncovers." },
+        { "fig": { "type": "chart", "land": "M0 0 H120 V30 C 90 50 60 60 0 70 Z", "depths": [[150, 104, "1.5", true], [70, 110, "6"], [230, 150, "9"], [110, 160, "12"]], "labels": [[150, 88, "rock", "middle"]], "panel": ["Now 10:00", "Height of tide 0.6 m", "Rock shows 0.9 m"], "note": "Underlined = drying height" } },
+        { "table": { "head": ["On the chart", "Meaning"], "rows": [
+          ["2 with a small 5", "2.5 m"],
+          ["S · M · Sh · R", "Seabed: sand, mud, shells, rock"],
+          ["(4) beside a rock", "An islet 4 m high, never covers"],
+          ["Cross in a dotted circle", "A dangerous rock"],
+          ["25 Wk", "A wreck, 25 m over it"],
+          ["PA", "Position approximate: give it room"],
+          ["Foul · cable", "Never anchor here"]
+        ] } },
+        { "p": "The echo sounder reads from its transducer: add its depth, then subtract your draft. Your air draft includes the aerials. Check the edition date and corrections in the chart's margin: old surveys miss rocks, and harbours change." }
+      ]
+    },
+    {
+      "id": "compass",
+      "kicker": "Compass",
+      "title": "True, magnetic, compass",
+      "refs": ["Compass", "Variation", "Deviation", "Compass conversion"],
+      "blocks": [
+        { "p": "The chart is drawn to true north; the compass points to magnetic north. **Variation** is the angle between them. It changes with place and year, and the compass rose gives both: 3°10'E 2015 (8'E) is 4°38'E eleven years later." },
+        { "p": "**Deviation** is the boat's own magnetism. It changes with the heading, is listed on the steering compass's deviation card, and grows if you stow metal nearby. A hand-bearing compass held clear of metal needs variation only." },
+        { "fig": { "type": "compass", "variation": 3, "deviation": -2, "course": 120, "note": "T → M → C" }, "cap": "120°T − 3° (east) = 117°M; 117 + 2° (west) = 119°C." },
+        { "rule": "True to compass: subtract east, add west. Compass to true: add east, subtract west." }
+      ]
+    },
+    {
+      "id": "fix",
+      "kicker": "Position fixing",
+      "title": "Crossing position lines",
+      "refs": ["Position fixing"],
+      "blocks": [
+        { "p": "One bearing of a charted object gives a **position line**. Plot it from the object on the reciprocal: a light bearing 050°T is drawn from the light on 230°T. A second line gives a **fix**, a third checks it." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V36 H0 Z", "marks": [[40, 30, "k", "lighthouse"], [160, 30, "k", "tower"], [290, 30, "k", "headland"]], "track": "M40 36 L170 150 M160 36 L172 160 M290 36 L166 156", "labels": [[200, 170, "cocked hat", "middle"]], "note": "Three bearings plotted" }, "cap": "Small triangle: take the corner nearest danger. Large one: take the bearings again." },
+        { "list": [
+          "Choose objects close by, 60° to 120° apart.",
+          "Take the bearing abeam last: it changes fastest.",
+          "With one object, cross its bearing with a radar range or a depth contour, or with the first line moved on by the distance run: a **running fix**.",
+          "When the angle on the bow doubles, 45° to abeam, distance off equals distance run."
+        ] }
+      ]
+    },
+    {
+      "id": "dr",
+      "kicker": "Dead reckoning",
+      "title": "Where you are between fixes",
+      "refs": ["Dead reckoning", "Estimated position", "Leeway", "Course to steer", "Log", "COG and heading", "SOG and STW", "Cross-track error"],
+      "blocks": [
+        { "p": "From the last fix, plot the course steered and the distance by log: that is the **dead reckoning** (DR) position. Add tidal stream and leeway for an **estimated position** (EP). A fix is drawn as a circled dot, an EP as a triangle. Log position, course and log reading hourly, in case the electronics fail." },
+        { "fig": { "type": "chart", "boat": [40, 120, 90], "track": "M55 120 L290 120 L290 178", "marks": [[290, 120, "w", ""], [290, 178, "w", ""]], "labels": [[170, 136, "6 M by log", "middle"], [284, 153, "tide 1.5 M", "end"], [300, 124, "DR", "start"], [300, 182, "EP", "start"]], "panel": ["10:00 – 11:00", "Course 090°T", "Log 6.0 M", "Tide 180°T 1.5 kn"], "depths": [[100, 60, "40"], [200, 170, "55"]], "note": "Fix at the boat · no leeway" } },
+        { "p": "**Leeway** is the slip downwind, seen as the angle between wake and centreline. To hold a track across a stream, aim up-tide: by the 1-in-60 rule a 2-knot stream at 6 knots needs about 20°." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 50, "nogo": true, "note": "Heading 050°T · leeway 5° · water track 055°T" } },
+        { "p": "The plotter's **COG** and **SOG** are course and speed over the ground; compass and log work through the water. The difference is the stream, unless it is the same on every heading: then the log is wrong. A growing cross-track error means you are being set: steer back towards the track." }
+      ]
+    },
+    {
+      "id": "tides",
+      "kicker": "Tides",
+      "title": "How much water, and which way it runs",
+      "refs": ["Tides", "Rule of twelfths", "Tidal streams", "Charts / tides"],
+      "blocks": [
+        { "p": "The **height of tide** is measured up from chart datum: depth now = charted depth + height of tide. The **range** is high water minus low water. **Springs**, just after new and full moon, bring the highest highs, lowest lows and strongest streams." },
+        { "fig": { "type": "chart", "depths": [[60, 60, "8"], [110, 90, "5"], [150, 118, "1.5"], [120, 150, "4"], [220, 150, "7"], [90, 170, "12"]], "track": "M30 170 L150 118 L260 60", "boat": [40, 168, 67], "panel": ["Now 14:00", "Height of tide 1.2 m", "Draft 1.9 m"], "note": "Shoal: 1.5 + 1.2 = 2.7 m · 0.8 m under the keel" } },
+        { "p": "The tide rises by the **rule of twelfths**: 1, 2, 3, 3, 2, 1 twelfths of the range in the six hours." },
+        { "fig": { "type": "card", "title": "Rule of twelfths", "lines": ["LW 08:00 0.4 m · HW 14:00 2.2 m", "Range 1.8 m, one twelfth 0.15 m", "10:00 is LW + 2 h: 1 + 2 = 3 twelfths", "Rise 0.45 m · height of tide 0.85 m"] } },
+        { "p": "A **tidal stream** is named by where it runs to. A feathered arrow on the chart is the flood, a plain one the ebb; a tidal diamond gives its direction and spring and neap rates hour by hour. Mediterranean tides are small, but narrow straits like the Evripos run at several knots." }
+      ]
+    },
+    {
+      "id": "pilotage",
+      "kicker": "Pilotage and GPS",
+      "title": "The last mile, by eye",
+      "refs": ["Pilotage", "Clearing bearings", "Electronic navigation", "GPS & chart datum", "Passage planning"],
+      "blocks": [
+        { "p": "Inshore you navigate by eye, to a plan made beforehand: marks, bearings to hold, where to turn. Two charted objects in line make a **transit**, an exact position line with no compass; if the front mark slides off, steer towards it. A **clearing bearing** fences off a danger." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V40 H200 V100 H120 V40 H0 Z", "marks": [[160, 30, "w", "rear"], [160, 70, "w", "front"]], "track": "M160 190 L160 80", "boat": [160, 180, 0], "labels": [[160, 125, "keep in line", "middle"]], "note": "Leading marks into the harbour" } },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V38 C 250 44 200 36 150 42 C 100 48 50 40 0 44 Z", "marks": [[260, 30, "k", "church"]], "track": "M260 30 L87 130", "depths": [[110, 86, "0.6", true], [215, 150, "14"], [280, 120, "18"], [140, 172, "9"]], "labels": [[110, 72, "reef", "middle"], [200, 96, "clearing line 060°T", "start"]], "boat": [40, 172, 90], "note": "Church bearing less than 060°T: south of the reef" } },
+        { "p": "GPS is accurate; the chart under it may not be. Plotters hide rocks when zoomed out, small bays can be drawn offset, and older paper charts need a datum shift for WGS84 positions. Zoom in along every leg, put waypoints in safe water off the entrance, and if the depth or the view disagrees with the screen, believe them. A passage plan also names ports of refuge." }
+      ]
+    }
+  ]
+}

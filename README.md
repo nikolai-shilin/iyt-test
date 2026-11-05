@@ -18,6 +18,8 @@ docs/
   figure-style.md               the agreed look of the rendered figures (cameras, looks, own boat, lights, annotations)
   design.md                     look & feel, components, the 21 screens, how to use the viewer
   data-model.md                 proposed database (Supabase) and how progress is computed
+  theory.md                     the theory articles: format of an article, authoring rules, check and build
+  superpowers/plans/            implementation plans (theory articles: 2026-11-05-theory-articles.md)
   design/
     flows.html                  hi-fi user flows (viewer: pages / overview, day / night)
     questions.html              the whole bank as the student sees it, filter by topic
@@ -38,6 +40,8 @@ data/
   questions/<level>.json        the built banks the apps read
   questions/<level>.ru.json     Russian translation of each bank (overlay)
   i18n.py                       extract strings to translate / check an overlay
+  theory/<level>/<topic>.json   theory articles, one per topic of every level (+ .ru.json): 90 in all, each with figures
+  check_theory.mjs              checks the articles against docs/theory.md and the banks (npm run check:theory)
 miniapp/
   index.html  app.js  app.css   the Telegram mini app (static, no framework, no backend)
   build.mjs                     builds miniapp/dist (the folder to host): the app, design files, fonts and minified banks,

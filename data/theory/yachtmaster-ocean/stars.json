@@ -1,0 +1,98 @@
+{
+  "topic": "stars",
+  "lead": "At dawn and dusk the sky gives several position lines within minutes: a fix with no run in it. Stars are the simplest bodies to work; planets and the Moon need a little more.",
+  "sections": [
+    {
+      "id": "twilight",
+      "kicker": "Twilight",
+      "title": "Stars and horizon together",
+      "refs": ["Star sights — twilight", "Star sights — twilight times", "Star sights — dawn and dusk", "Star sight planning — high latitudes"],
+      "blocks": [
+        { "p": "A star sight needs star and horizon at once: between **civil twilight**, the Sun 6° below the horizon, and **nautical twilight**, 12° below. The almanac lists them by latitude in LMT. In the tropics the window is little over 20 minutes; in high latitudes at midsummer the Sun never gets 12° down and only the brightest bodies show." },
+        { "table": { "head": ["", "Dusk", "Dawn"], "rows": [
+          ["You wait for", "the stars", "the horizon"],
+          ["Take first", "the brightest", "the faintest, east before west"],
+          ["Be on deck", "sextant preset", "early, in the dark"]
+        ] } },
+        { "p": "After nautical twilight the horizon is too dim to trust; so may be a horizon under a bright Moon: doubt a star taken beneath it." }
+      ]
+    },
+    {
+      "id": "planning",
+      "kicker": "Planning",
+      "title": "Which stars, and where to look",
+      "refs": ["Star sight planning", "Star sight planning — precomputation", "Star sight planning — southern sky", "Star finder", "Sight reduction tables — HO 249 Vol 1", "Star identification", "Star identification — the wrong body"],
+      "blocks": [
+        { "p": "Choose three stars about 120° apart, or four in opposite pairs, 20° to 70° high: lower, refraction is uncertain; overhead, the sextant is hard to swing. Two stars on one bearing give the same line twice." },
+        { "fig": { "type": "chart", "track": "M65 57 L203 137 M203 71 L65 151 M122 184 L122 24", "labels": [[209, 141, "Zn 030°", "start"], [209, 75, "Zn 150°", "start"], [128, 28, "Zn 270°", "start"]], "note": "Plotting sheet" }, "cap": "120° apart: the lines cut at 60° and a constant error cancels." },
+        { "p": "The **star finder**, set to your latitude and the LHA Aries of twilight, shows every navigational star's altitude and azimuth; planets you plot on it yourself. **HO 249 Volume 1**, entered with latitude and LHA Aries, lists seven selected stars with Hc and Zn and marks the best three; its fix needs Table 5's precession correction." },
+        { "p": "Preset Hc and look along Zn: the star is in the telescope, up to 1′ off per mile of DR error. For an unknown star note altitude, bearing and time: they give its Dec and SHA. A huge intercept with a bearing far off the prediction means another body; a brilliant steady light beside your star is a planet." }
+      ]
+    },
+    {
+      "id": "stars",
+      "kicker": "Reducing a star",
+      "title": "Aries plus SHA",
+      "refs": ["Sight reduction — stars", "Sight reduction — intercept", "Sight reduction — azimuth"],
+      "blocks": [
+        { "p": "The almanac tabulates no star: it gives the GHA of **Aries**, a reference point among them, and each star's fixed **SHA** and Dec. Take GHA Aries for the hour, the increment from the Aries column, add the SHA, then your longitude as for the Sun." },
+        { "fig": { "type": "card", "title": "LHA of a star", "lines": ["GHA Aries 300°00.0′", "SHA of the star 150°00.0′", "DR longitude 060°00.0′W", "300° + 150° − 60° = 390°", "LHA★ 030°: west of the meridian"] } },
+        { "rule": "LHA★ = GHA Aries + SHA − longitude west (+ east)." },
+        { "p": "The altitude takes index error, dip and refraction only: a star has no semi-diameter. Hc, Zn and the intercept follow the Sun's rules, a contrary-name Dec negative. In HO 249, Volume 1 serves its selected stars; any body with Dec up to 29° goes in Volumes 2 and 3. Intercepts near 30 miles: rework from the fix." }
+      ]
+    },
+    {
+      "id": "planets",
+      "kicker": "Planets",
+      "title": "Four wanderers, own columns",
+      "refs": ["Planet sights"],
+      "blocks": [
+        { "p": "Venus, Mars, Jupiter and Saturn move among the stars, so the daily page gives each its own hourly GHA and Dec. Take the increment from the Sun and planets column, add **v** (Venus's can be negative) and correct Dec with **d**." },
+        { "table": { "head": ["Body", "GHA", "Extra", "Altitude extras"], "rows": [
+          ["Star", "Aries + SHA", "none", "none"],
+          ["Planet", "own column", "v, can be minus", "small extra: Venus, Mars"],
+          ["Moon", "own column", "v, always plus", "parallax, ± semi-diameter"]
+        ] } },
+        { "p": "Venus stays within about 47° of the Sun: at dusk it shows first and sets soon, so take it first, above 10°; by day find it with the sextant preset. A brilliant planet high at midnight is Jupiter, not Venus." }
+      ]
+    },
+    {
+      "id": "moon",
+      "kicker": "Moon",
+      "title": "Close, fast and lit on one side",
+      "refs": ["Moon sights"],
+      "blocks": [
+        { "p": "The Moon moves fast: use the Moon column of the increments, add **v**, and never skip **d**: Dec can change many minutes an hour. Bring down the **lit limb**, upper or lower, whichever faces the Sun." },
+        { "fig": { "type": "altitude", "parts": [["sun", "Moon"], ["limb", "lit limb"], ["hs", "Hs"], ["horizon", "visible horizon"], ["dip", "dip"]] }, "cap": "So near, the Moon needs parallax too." },
+        { "p": "**Parallax** is the horizontal parallax **HP**, 54′ to 61′, times the cosine of the altitude. The Moon tables give it in two parts, the second from HP in the L or U column, less 30′ for an upper limb." },
+        { "fig": { "type": "card", "title": "Moon, lower limb", "lines": ["Apparent altitude 60°00.0′, HP 60.0′", "Refraction −0.6′", "Parallax 60.0′ × cos 60° = +30.0′", "Semi-diameter +16.4′", "Ho 60°45.8′"] } },
+        { "p": "Near the quarters the Moon is up by day, about 90° from the Sun: with a sun line it makes a fix with no run." }
+      ]
+    },
+    {
+      "id": "fix",
+      "kicker": "Plotting",
+      "title": "Lines to one moment",
+      "refs": ["Star fix — plotting", "Star fix — advancing the lines", "Star fix — advancing for current", "Star and sun lines"],
+      "blocks": [
+        { "p": "Plot each intercept from the position it was worked from, its own AP with HO 249, along Zn if towards or the reciprocal if away, and the line at right angles." },
+        { "fig": { "type": "chart", "land": "M174.8 118.1 L119.7 71.8 L121.2 69.9 L176.3 116.2 Z M182.2 82.8 L105.2 110.8 L104.4 108.6 L181.4 80.6 Z M155.4 58.8 L142.9 129.7 L140.6 129.2 L153.1 58.3 Z", "marks": [[112, 118, "k", "AP"], [148, 94, "k", ""]], "track": "M145 78 L112 118 M130 167 L108 108 M61 109 L143 123", "labels": [[153, 73, "040°", "middle"], [134, 182, "160°", "middle"], [49, 111, "280°", "middle"], [160, 90, "fix", "start"]], "panel": ["From the AP", "040°: 3.5′ T", "160°: 0.9′ A", "280°: 2.6′ A"], "note": "Plotting sheet · azimuths dashed" } },
+        { "p": "The sights are minutes apart: move each earlier line forward along the course by the run to the last sight, or a later one back, adding any current or drift. A dawn star line is advanced the same way to cross a sun line hours later, but a simultaneous star fix outranks any line carried by log and compass." }
+      ]
+    },
+    {
+      "id": "hat",
+      "kicker": "Cocked hat",
+      "title": "How far to trust the fix",
+      "refs": ["Star fix — cocked hat", "Star fix — errors", "Star fix — angle of cut"],
+      "blocks": [
+        { "p": "Three lines seldom meet in a point. With the stars spread round the horizon a constant error, index or dip, moves every line the same way along its azimuth and you stay inside a small triangle: take its centre. With all the stars on one side you may be outside it." },
+        { "tiles": [
+          { "fig": { "type": "chart", "track": "M71 68 L249 132 M155 4 L188 191 M226 31 L81 153", "labels": [[48, 64, "Zn 020°"], [206, 188, "Zn 080°", "start"], [246, 30, "Zn 140°", "start"]], "note": "Plotting sheet" }, "name": "Stars on one side", "note": "you may be outside the hat" },
+          { "fig": { "type": "chart", "track": "M105 22 L195 178 M228 55 L72 145 M150 190 L150 10 M223 164 L53 102", "labels": [[112, 30, "Vega"], [236, 62, "Altair"], [162, 18, "Arcturus", "start"], [62, 92, "Spica"]], "note": "Plotting sheet" }, "name": "Four lines, one odd", "note": "trust the three that agree" }
+        ] },
+        { "p": "A small angle of cut magnifies error: at 30° a mile moves the fix two miles. Two lines always cross and hide a blunder; a fourth or fifth star shows up the odd line: wrong star, mistimed sight, misread degree, intercept laid off the wrong way. A large hat near danger: work from the corner nearest it." }
+      ]
+    }
+  ]
+}

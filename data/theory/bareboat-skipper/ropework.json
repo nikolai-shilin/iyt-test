@@ -1,0 +1,117 @@
+{
+  "topic": "ropework",
+  "lead": "Every line on a yacht has a job, and each job has its rope, its knot and a safe way to handle it. Let a cleat or a winch take the load your hands cannot.",
+  "sections": [
+    {
+      "id": "types",
+      "kicker": "Rope types",
+      "title": "Stretch where you moor, none where you trim",
+      "refs": ["Rope types", "Breaking strength", "Splices"],
+      "blocks": [
+        { "table": { "head": ["Rope", "Behaviour", "Use"], "rows": [
+          ["Nylon", "Stretches, absorbs shock", "Anchor warp, mooring and tow lines"],
+          ["Polyester", "Low stretch, hard-wearing", "Sheets, halyards"],
+          ["Dyneema", "Almost no stretch, slippery", "Halyards; spliced, not knotted"],
+          ["Polypropylene", "Floats; sunlight destroys it", "Dinghy painter"]
+        ] } },
+        { "p": "A mooring line in a swell takes snatch loads many times the steady pull, so it must stretch; a sheet or a halyard must not. Load a rope to about a fifth of its **breaking strength** at most: knots, wear and shock use up the rest." },
+        { "fig": { "type": "rope", "kind": "ring", "labels": [[160, 40, "shackle"], [215, 150, "eye splice", "start"]], "note": "A thimble inside the eye takes the chafe" } },
+        { "p": "A knot is the weakest point of a line, so a permanent loop is an **eye splice**. Three-strand rope is the easiest to splice by hand." }
+      ]
+    },
+    {
+      "id": "knots",
+      "kicker": "Knots",
+      "title": "Know each knot by its job",
+      "refs": ["Knots"],
+      "blocks": [
+        { "tiles": [
+          { "fig": { "type": "rope", "kind": "ring" }, "view": "95 40 130 150", "name": "To a ring", "note": "round turn and two half hitches" },
+          { "fig": { "type": "rope", "kind": "rail" }, "view": "65 35 150 130", "name": "To a rail", "note": "clove hitch" },
+          { "fig": { "type": "rope", "kind": "sheet" }, "view": "50 25 220 160", "name": "Two lines", "note": "sheet bend" }
+        ] },
+        { "table": { "head": ["Knot", "Job"], "rows": [
+          ["Bowline", "Fixed loop for a sheet or a bollard; will not untie under load"],
+          ["Figure of eight", "Stopper in a sheet's end; does not jam"],
+          ["Clove hitch", "Fenders: quick to adjust, can work loose"],
+          ["Round turn and two half hitches", "Line to a ring or post; tied and freed under load"],
+          ["Reef knot", "Binding reef points and sail ties, not joining ropes"],
+          ["Sheet bend", "Joining two lines; doubled if slippery or unequal"],
+          ["Rolling hitch", "Gripping along a loaded rope or chain"],
+          ["Anchor bend", "Warp to the anchor ring"],
+          ["Lighterman's hitch", "Heavy line on a bollard, eased and freed under strain"],
+          ["Trucker's hitch", "Purchase to tighten a lashing"]
+        ] } },
+        { "p": "A reef knot is right over left, then left over right; the same way twice is a **granny**, which slips or jams. In a sheet bend the thicker line forms the bight. Slip a knot only on a line you are watching." }
+      ]
+    },
+    {
+      "id": "cleat",
+      "kicker": "Cleats and lines ashore",
+      "title": "The turn takes the load",
+      "refs": ["Cleating", "Deckwork", "Lines ashore", "Slip lines"],
+      "blocks": [
+        { "p": "Lead the line to the far horn of the cleat, take a full turn round the base, add figure-of-eight turns and finish with one **locking hitch**; more only jam. Keep that turn on to ease a loaded line, and take one on any line too heavy to hold. When two lines share a cleat, the first to leave goes on top." },
+        { "tiles": [
+          { "fig": { "type": "rope", "kind": "cleat", "labels": [[60, 45, "load"], [160, 150, "cleat"]] }, "view": "25 28 230 142", "name": "Making fast", "note": "turn, figures of eight, one hitch" },
+          { "fig": { "type": "rope", "kind": "ring", "labels": [[160, 40, "bollard"]] }, "view": "80 25 160 165", "name": "Slip line", "note": "both ends on board" }
+        ] },
+        { "p": "Ashore, drop the loop over the bollard and adjust the line from the boat. Pass your loop up through another boat's loop first, so that either can leave. A **slip line** runs round the bollard with both ends aboard: let one go, pull in the other. No knots in it; rig it just before leaving, and have it all aboard before the propeller turns." }
+      ]
+    },
+    {
+      "id": "winches",
+      "kicker": "Winches and clutches",
+      "title": "Friction holds, the tail controls",
+      "refs": ["Winches", "Clutches"],
+      "blocks": [
+        { "p": "Turns go on a winch **clockwise**: two to pull in slack, three or four as the load builds. Tension on the tail makes them grip. A self-tailing winch takes the tail over the arm into its jaws last." },
+        { "fig": { "type": "rope", "kind": "winch", "labels": [[80, 86, "sheet"], [255, 90, "tail"]], "note": "Lead from slightly below the drum: no riding turns" } },
+        { "list": [
+          "Ease with the turns on and the tail out of the jaws.",
+          "Release by lifting all the turns off together, never one by one.",
+          "Riding turn: take the load on a spare line with a rolling hitch, then clear it.",
+          "Too heavy: turn the handle the other way for low gear.",
+          "Handle out when you finish. Hair and scarves clear. Stop an electric winch at any snag."
+        ] },
+        { "p": "A **clutch** holds a line so the winch is free for the next. Check its label before opening it. To ease a loaded halyard, take the load on the winch, then open the clutch; after hoisting, close it before the turns come off. It grips only its own rope diameter. A cam cleat lets go when you pull in a little and lift." }
+      ]
+    },
+    {
+      "id": "handling",
+      "kicker": "Line handling",
+      "title": "Keep yourself out of the line",
+      "refs": ["Line handling", "Throwing a line"],
+      "blocks": [
+        { "list": [
+          "Never stand in a loop of line.",
+          "Hold a line in your hands, never wrapped round them; wear gloves.",
+          "Keep hands well back from blocks.",
+          "If a line runs away, let go, then catch it with a turn on a cleat.",
+          "No slack line in the water with the engine in gear.",
+          "Check that a tail is free to run before you release it."
+        ] },
+        { "fig": { "type": "rope", "kind": "ring", "labels": [[160, 40, "bollard"]], "note": "A parting line whips back: stand to one side" } },
+        { "p": "To **throw a line**, make the inboard end fast first. Split the coil, half to throw and half to pay out, and aim above and just beyond the catcher. If it falls short, pull it in fast, clear of the propeller. For a long throw, send a light line first and haul the heavy one across." }
+      ]
+    },
+    {
+      "id": "care",
+      "kicker": "Care and coiling",
+      "title": "Chafe, salt, grit and twist",
+      "refs": ["Rope care", "Coiling"],
+      "blocks": [
+        { "table": { "head": ["Enemy", "Cure"], "rows": [
+          ["Chafe", "Fairlead, a sleeve at the quay edge, sheets swapped end for end"],
+          ["Salt", "Rinse in fresh water, dry before stowing"],
+          ["Grit", "Keep lines off the ground"],
+          ["Frayed end", "Tape, cut through the tape, heat-seal, whip"],
+          ["Heat", "A line surging round a drum melts"]
+        ] } },
+        { "p": "Replace a sheet whose cover has worn through to the core. At night, tie halyards off away from the mast." },
+        { "p": "Coil three-strand rope **clockwise**, with the lay, and braid in figure-of-eight loops, which add no twist. Start from the fixed end so that twists run out of the free end. Bind the coil and tuck the end through before stowing it." },
+        { "fig": { "type": "rope", "kind": "cleat", "labels": [[60, 45, "halyard"], [160, 150, "mast cleat"]], "note": "Pull a loop through the coil, twist it, hang it" } }
+      ]
+    }
+  ]
+}

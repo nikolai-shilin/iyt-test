@@ -8,6 +8,9 @@
 //   h/<level>[.ru].<hash>.json   each question bank, minified
 //   window.BANKS            written into index.html: level → { en, ru: the bank files, n: questions, t: topics },
 //                           so the home screen can show every level while only the current level's bank downloads
+//   h/theory-<level>[.ru].<hash>.json   a level's theory articles (data/theory/<level>/<topic>[.ru].json, see
+//                           docs/theory.md) packed into one file per language, in the order of the bank's topics
+//   window.THEORY           level → { en, ru: the theory files, t: the topics that have an article }
 // The unhashed data/<level>[.ru].json stay too (minified) for an app.js still open from before a deploy.
 //
 //   node miniapp/build.mjs            # build once
@@ -49,7 +52,7 @@ async function build() {
   for (const [from, to] of FILES) await cp(join(root, from), join(out, to), { recursive: true });
 
   // banks: minified, under their own name in data/ and their content's name in h/
-  const banks = {};
+  const banks = {}, order = {};
   for (const f of (await readdir(join(root, 'data/questions'))).filter((x) => x.endsWith('.json')).sort()) {
     const json = JSON.parse(await readFile(join(root, 'data/questions', f), 'utf8'));
     const min = JSON.stringify(json);
@@ -59,12 +62,41 @@ async function build() {
     await writeFile(join(out, name), min);
     const b = (banks[level] = banks[level] || {});
     b[lang] = name;
-    if (lang === 'en') Object.assign(b, { n: json.questions.length, t: json.topics.length });
+    if (lang === 'en') { Object.assign(b, { n: json.questions.length, t: json.topics.length }); order[level] = json.topics.map((tp) => tp.id); }
+  }
+
+  // theory: a level's articles in one file per language; a topic with no article yet is simply not in it
+  const theory = {};
+  for (const level of (await readdir(join(root, 'data/theory')).catch(() => [])).sort()) {
+    if (!order[level]) continue;
+    let source = {};
+    for (const lang of ['en', 'ru']) {
+      let topics = {};
+      for (const id of order[level]) {
+        const file = join(root, 'data/theory', level, lang === 'en' ? `${id}.json` : `${id}.${lang}.json`);
+        try { topics[id] = JSON.parse(await readFile(file, 'utf8')); } catch (e) { if (e.code !== 'ENOENT') throw new Error(`${file}: ${e.message}`); }
+        // an article that is not shaped like one (data/check_theory.mjs says why) is left out, not shipped to break the tab
+        const a = topics[id];
+        if (a && !(typeof a.lead === 'string' && Array.isArray(a.sections) && a.sections.every((s) => s && s.id && Array.isArray(s.blocks)))) { console.warn(`skipped ${file}: not an article`); delete topics[id]; }
+      }
+      if (!Object.keys(topics).length) continue;
+      if (lang === 'en') source = topics;
+      // a topic not translated yet is read in English (en: true) rather than missing from the translated level
+      else topics = Object.fromEntries(Object.keys(source).map((id) => [id, topics[id] || { ...source[id], en: true }]));
+      const min = JSON.stringify({ level, lang, topics });
+      const plain = `theory-${level}${lang === 'en' ? '' : `.${lang}`}`;
+      await writeFile(join(out, 'data', `${plain}.json`), min);
+      await writeFile(join(out, `h/${plain}.${hash(min)}.json`), min);
+      const th = (theory[level] = theory[level] || {});
+      th[lang] = `h/${plain}.${hash(min)}.json`;
+      if (lang === 'en') th.t = Object.keys(topics);
+    }
+    if (theory[level] && !theory[level].en) delete theory[level]; // a translation without its source is not shown
   }
 
   let html = await readFile(join(out, 'index.html'), 'utf8');
   const swap = (from, to) => { if (!html.includes(from)) throw new Error(`index.html has no ${from}`); html = html.replace(from, to); };
-  swap('<script src="app.js"></script>', `<script>window.BANKS = ${JSON.stringify(banks)};</script>\n<script src="app.js"></script>`);
+  swap('<script src="app.js"></script>', `<script>window.BANKS = ${JSON.stringify(banks)}; window.THEORY = ${JSON.stringify(theory)};</script>\n<script src="app.js"></script>`);
   for (const f of LINKED) {
     const buf = await readFile(join(out, f));
     const name = `h/${f.replace(/\//g, '-').replace(/(\.\w+)$/, `.${hash(buf)}$1`)}`;

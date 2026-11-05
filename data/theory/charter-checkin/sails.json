@@ -1,0 +1,95 @@
+{
+  "topic": "sails",
+  "lead": "Sails are checked hoisted, at the pontoon, in Saturday's calm. A fault found there is the base's to fix; found on Sunday off the headland it is your problem. See every sail up, every reef in and every furler turn before you sign.",
+  "sections": [
+    {
+      "id": "seen",
+      "kicker": "Sails and inventory",
+      "title": "You sign for what you were shown",
+      "refs": ["Check-in: sails", "Check-in form — what was shown", "Inventory list — sails", "Charter contract — downwind sails", "Charter contract — reporting damage"],
+      "blocks": [
+        { "p": "'Sails: OK, checked yesterday' is not a check. Ask for the main hoisted and the genoa unrolled while it is calm. If it blows too hard, have the sail rolled out a metre and back, and write 'not fully seen' on the form." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["mainsail", "mainsail"], ["jib", "genoa"], ["forestay", "furler"], ["mast", "mast"], ["boom", "boom"]], "note": "Both sails up at the pontoon, in light wind" } },
+        { "table": { "head": ["What you find", "What you ask for"], "rows": [
+          ["Chafed clew, torn leech, UV strip hanging", "The base's repair before you leave"],
+          ["An old, stretched sail", "Its state on the form; reef it early"],
+          ["A sail listed but not aboard; a wrong sail number", "The list corrected before you sign"],
+          ["A gennaker on the list", "Hoisted in its sock once; tack line and halyard found"]
+        ] } },
+        { "p": "The **inventory** you sign is what you hand back: a storm jib that was never aboard is charged as missing. A gennaker is normally outside the waiver and needs the base's written consent, so a torn one is paid in full. Report damage the day it happens: hiding it costs more than the repair." }
+      ]
+    },
+    {
+      "id": "main",
+      "kicker": "Mainsail and halyards",
+      "title": "Up, down, and what can snag",
+      "refs": ["Check-in: mainsail", "Check-in: mainsail chafe", "Check-in: mainsail drop test", "Check-in: lazyjacks & stackpack", "Check-in: halyards", "Check-in: masthead & halyards", "Check-in: electric winch", "Check-in: catamaran mainsail", "At sea: hoisting the main"],
+      "blocks": [
+        { "fig": { "type": "boat", "view": "sail", "parts": [["head", "head"], ["luff", "luff"], ["leech", "leech"], ["batten", "batten"], ["clew", "clew"], ["tack", "tack"], ["mast", "slides"]], "note": "Walk every edge with your eyes" } },
+        { "p": "With the main up, look at every batten pocket, every luff slide and the whole leech. Missing battens let the leech flog; a cracked slide jams the hoist; a tear grows, so the sailmaker mends it before you leave, like worn spreader patches. Then let the halyard go: the sail must drop on its own, or you cannot get it down fast in a squall." },
+        { "table": { "head": ["Halyards", "What to know"], "rows": [
+          ["Tape mark at the clutch", "Full hoist: stop there, or the headboard jams in the sheave"],
+          ["Shackle", "One that can open drops the sail and sends the halyard aloft"],
+          ["Masthead, by binoculars", "Crossed halyards are cleared from aloft, by the base"],
+          ["Electric winch", "Short pushes, eyes on the sail, stop at any snag"]
+        ] } },
+        { "p": "Hoist head to wind at slow ahead, eyes aloft. If the hoist stops, a batten end is under a lazyjack: ease, clear it, go on by hand. Without lazyjacks someone flakes the sail at the mast as it drops. See a catamaran's square-top main hoisted and bagged once." }
+      ]
+    },
+    {
+      "id": "genoa",
+      "kicker": "Genoa furler",
+      "title": "It must roll in by hand",
+      "refs": ["Check-in: genoa furler", "Check-in: genoa sheets & cars", "Check-in: sheets & lines", "At sea: furler jam", "At sea: furling the genoa", "At sea: reefed genoa", "Check-in: catamaran foresail"],
+      "blocks": [
+        { "fig": { "type": "rope", "kind": "winch", "labels": [[70, 86, "furling line"], [160, 152, "drum: full of line"], [250, 86, "to cockpit"]], "note": "Genoa fully out: this line rolls it back in" } },
+        { "p": "In light wind a furler turns by hand; one that needs a winch at the pontoon will not furl at 25 knots. The line runs fair through its lead blocks, and the sail is rolled with its **UV strip** outside. If the line goes solid, look up: the halyard may be wrapped round the forestay above the swivel. Never winch a jammed furler. Scallops along the luff ask for more halyard, just until they go." },
+        { "table": { "head": ["At sea", "What you do"], "rows": [
+          ["Furling in a breeze", "Bear away so the main blankets it, keep a little sheet tension, haul by hand"],
+          ["The furler jams", "Ease the sheet, try again by hand, call the base; cut nothing"],
+          ["Genoa half rolled", "Move the sheet cars forward, or the leech flogs"]
+        ] } },
+        { "p": "Sheets show no bare core and reach their winches; each car is pinned in its track. A self-tacking jib still has one sheet, one car and two end stops to check." }
+      ]
+    },
+    {
+      "id": "inmast",
+      "kicker": "In-mast furling",
+      "title": "A tight roll and the boom at its mark",
+      "refs": ["Check-in: in-mast furling", "At sea: in-mast furling"],
+      "blocks": [
+        { "p": "The main rolls up inside the mast through a narrow slot, where a loose roll bunches and jams. **To unfurl**, haul the outhaul on the winch while easing the furling line under slight tension. **To furl**, set the boom to the base's mark, keep a little outhaul tension and take the furling line in steadily. Never winch against a closed clutch." },
+        { "fig": { "type": "rope", "kind": "winch", "labels": [[60, 86, "furling line"], [255, 86, "outhaul"]], "note": "Unfurling: winch the outhaul, ease the line" } },
+        { "rule": "A bunch in the slot only tightens under power. Stop, unroll a turn, boom to its mark, furl again by hand." }
+      ]
+    },
+    {
+      "id": "reef",
+      "kicker": "Reefing and wind limits",
+      "title": "Put the reef in at the pontoon first",
+      "refs": ["Check-in: reefing", "At sea: reefing", "Charter contract — wind limit"],
+      "blocks": [
+        { "p": "Put reef 1 in at the pontoon and try reef 2: you see which line does what, that it runs free and is long enough. Horns at the gooseneck mean a **two-line** system: someone goes to the mast, clipped on, to hook the luff cringle, then the clew line is hauled from the cockpit. A torn cringle or a short reef line is no reef: it is put right before you leave." },
+        { "fig": { "type": "boat", "view": "sail", "parts": [["reef", "reef 1"], ["tack", "hook at the mast"], ["clew", "reef line"], ["boom", "boom"]], "note": "The two cringles come down to the boom" } },
+        { "p": "Reefing wind speeds and a maximum wind force in the contract or the briefing are terms, not advice: sailing above them can void the insurance. The limit is read against the forecast, so you move the passage: leave before the wind arrives and tell the base. When a reef is forecast, put it in at the hoist, in flat water." },
+        { "rule": "Shaking a reef out is easy. Taking one in late is not.", "label": "Remember" }
+      ]
+    },
+    {
+      "id": "boom",
+      "kicker": "Boom gear",
+      "title": "What controls the boom and what tames it",
+      "refs": ["Check-in: mainsheet, traveller, vang", "Check-in: boom & bimini", "Check-in: boom preventer", "Check-in: boom, vang & topping lift", "Check-in: boom brake"],
+      "blocks": [
+        { "fig": { "type": "sail", "wind": 0, "hdg": 170, "note": "Wind astern: an accidental gybe throws the boom across" } },
+        { "table": { "head": ["Gear", "What to know"], "rows": [
+          ["Mainsheet", "Cracked block or worn cam cleat: replaced now. Chafed cover, sound core: noted"],
+          ["Rigid vang", "Holds the boom up with the sail down: no topping lift"],
+          ["Preventer", "From the boom end to the bow and back to a cockpit winch, so it can be eased"],
+          ["Boom brake", "Slows a gybe by friction; it does not stop one"],
+          ["Bimini under the boom", "Agree, in writing, whether it folds under sail"]
+        ] } }
+      ]
+    }
+  ]
+}

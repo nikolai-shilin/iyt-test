@@ -1,0 +1,88 @@
+{
+  "topic": "tides",
+  "lead": "Two almanac figures become a height for any minute, a secondary port's tide, and the hour to cross a bar, round a race or make a tidal gate.",
+  "sections": [
+    {
+      "id": "curve",
+      "kicker": "The tidal curve",
+      "title": "Any height, any time",
+      "refs": ["Tides — Admiralty method"],
+      "blocks": [
+        { "p": "On a standard port's **tidal curve**, enter the HW nearest your time in the box, so the time reads HW−4 or HW+2. Mark that HW on the top scale and the LW of the same half-tide on the bottom one, the LW before on the flood, after on the ebb, and join them. From the time go up to the curve, across to the line, and read the height: **LW + factor × range**." },
+        { "fig": { "type": "tide", "lw": "0900 · 0.8 m", "hw": "1500 · 5.6 m", "at": 2, "atLabel": "1100 · 2.0 m", "note": "HW−4: factor 0.25 · 0.8 + 0.25 × 4.8 = 2.0 m" } },
+        { "p": "Backwards, factor = (height needed − LW) ÷ range gives the time. Between the spring and neap curves go the fraction that today's range lies between the mean ranges; beyond either, use the nearer curve, never extrapolate." }
+      ]
+    },
+    {
+      "id": "secondary",
+      "kicker": "Secondary ports, the Solent",
+      "title": "A standard port's curve, moved",
+      "refs": ["Tides — secondary ports", "Tides — Solent curves"],
+      "blocks": [
+        { "p": "A **secondary port** has differences on a standard port: time differences at two times of the standard port's HW, height differences at MHWS and MHWN, MLWN and MLWS. Interpolate each by today's value, then work the hour on the **standard port's curve** with the secondary port's times and heights." },
+        { "fig": { "type": "card", "title": "Secondary port — high water", "lines": ["Standard port HW 0900 · 5.2 m", "Time diff: HW 0600 −0030 · HW 1200 −0010", "0900 is halfway: −0020, so HW 0840", "Height diff: MHWS 5.8 −0.6 · MHWN 4.6 −0.2", "5.2 is halfway: −0.4, so HW 4.8 m"] } },
+        { "p": "From Swanage to Selsey high water is a long stand or a **double high water**, so these ports have curves drawn in hours **from low water**; pick the curve by the range at Portsmouth. Left of LW is the ebb, right of it the flood. Southampton holds near the top for two hours after the first HW; its five-hour fall runs harder than the seven-hour rise." },
+        { "fig": { "type": "tide", "lw": "1000 · 0.6 m", "hw": "HW 4.2 m", "at": 4, "atLabel": "1400 · 3.3 m", "note": "Hours from LW · LW+4: 0.6 + 0.75 × 3.6 = 3.3 m" } }
+      ]
+    },
+    {
+      "id": "clearance",
+      "kicker": "Clearances",
+      "title": "Under the keel, over the mast",
+      "refs": ["Tides — clearances", "Tides — bars and sills", "Tides — storm surge"],
+      "blocks": [
+        { "p": "Depth = charted depth + height of tide; take off draught, **half the swell** for the troughs, and squat at speed. At anchor, depth now − the fall to come must cover draught and margin, and springs make tomorrow's LW lower. Least charted depth = draught + margin − height of LW. A sill gauge already reads the depth over the sill." },
+        { "fig": { "type": "chart", "depths": [[40, 70, "24"], [70, 130, "18"], [118, 104, "5.4"], [175, 150, "9"], [260, 170, "21"], [120, 40, "15"]], "track": "M30 185 L175 40", "boat": [55, 160, 45], "labels": [[120, 124, "bank", "middle"]], "panel": ["In the troughs", "Charted 5.4 m", "Tide +1.2 m", "Half swell −1.0 m", "Squat −0.3 m", "Draught −2.2 m"], "note": "5.4 + 1.2 − 1.0 − 0.3 − 2.2 = 3.1 m under the keel" } },
+        { "p": "Overhead: room = charted clearance + HAT − height of tide. A power cable's **safe clearance** allows for arcing; never trim it by eye." },
+        { "p": "A forecast **storm surge** adds to the prediction and already holds the pressure effect: never twice. A positive surge bites on a spring HW; a negative one takes water off a shallow passage. North Sea: a deep low tracking SE, a northerly gale behind it." },
+        { "fig": { "type": "card", "title": "Bridge on a surge", "lines": ["Clearance 15.0 m above HAT (6.0 m)", "Predicted HW 5.6 m · surge +0.5 m", "HW tonight: 6.1 m", "Room: 15.0 + 6.0 − 6.1 = 14.9 m", "Air draught 14.2 m: 0.7 m to spare"] } }
+      ]
+    },
+    {
+      "id": "drying",
+      "kicker": "Drying out and bars",
+      "title": "The bottom comes up",
+      "refs": ["Tides — drying out", "Tides — bars"],
+      "blocks": [
+        { "p": "To float over drying ground you need **drying height + draught + margin** of tide; she touches when the tide falls to drying height + draught. Arrive just before HW and let her settle, after sounding the berth: level, firm, clear. Heel a fin keel slightly to the wall, rig a fender board, and tend the lines all night. Go on while the tides are making; once they **take off**, the next HW may not float you." },
+        { "p": "A **bar** breaks when the depth falls to about 1.3 times the swell height, sooner in a long swell, worst on the ebb against the swell. Cross on the flood, in daylight; otherwise stand off or go to a harbour without one. Bars shift: trust the latest notice, and a closed bar is closed." },
+        { "fig": { "type": "chart", "land": "M0 0 H128 V84 H0 Z M192 0 H320 V84 H192 Z", "depths": [[160, 40, "4"], [160, 104, "0.4"], [160, 160, "12"], [70, 140, "9"]], "labels": [[160, 66, "river", "middle"], [160, 122, "bar", "middle"]], "boat": [160, 182, 0], "panel": ["Swell 2.0 m", "Breaks under 2.6 m", "Bar charted 0.4 m", "Tide needed 2.2 m"], "note": "Cross on the flood, once the tide is past 2.2 m" } }
+      ]
+    },
+    {
+      "id": "streams",
+      "kicker": "Rates and tidal gates",
+      "title": "How hard, and when",
+      "refs": ["Tidal streams — rates", "Tidal streams — atlases", "Tidal streams — slow and fast boats", "Tidal gates", "Tides — springs and neaps"],
+      "blocks": [
+        { "p": "An atlas arrow marked 18,34 means 1.8 kn at mean neaps, 3.4 kn at mean springs. Interpolate by today's range at the atlas's **own reference port**; this line you may extend beyond springs and neaps. French tables grade a tide by its **coefficient**: 45 mean neaps, 95 mean springs. Near an amphidromic point the range is small but the stream strong: rates come from the atlas." },
+        { "fig": { "type": "card", "title": "Rate for today", "lines": ["Atlas arrow: 18,34", "Mean ranges: springs 5.6 m · neaps 2.8 m", "Today's range 4.2 m: halfway", "Rate = 1.8 + ½ × (3.4 − 1.8) = 2.6 kn", "A leg: each hour in turn, added as vectors"] } },
+        { "p": "Set = rate × time in the stream, so a slow yacht is set further. At 20 knots the stream hardly changes the time; wind against tide at each end decides." },
+        { "fig": { "type": "card", "title": "Two yachts, one stream", "lines": ["Leg 30 M · beam stream 2 kn, steady", "6 kn: 5 h in it, set 10 M", "20 kn: 1 h 30 min, set 3 M", "If the stream turns, the slow one wins back", "Fuel against a stream: hours × litres/hour"] } },
+        { "p": "A **tidal gate** opens only with the stream. Time to leave = time it opens − distance ÷ speed over the ground. Take an unavoidable foul tide where it is weakest, the fair one through the narrows." }
+      ]
+    },
+    {
+      "id": "races",
+      "kicker": "Races and overfalls",
+      "title": "Where the stream breaks the sea",
+      "refs": ["Tidal streams — races", "Tidal streams — overfalls", "Tidal streams — wind against tide"],
+      "blocks": [
+        { "p": "A **race** forms where a strong stream sweeps past a headland and lies downstream, so it changes sides with the stream. **Overfalls** stand over an uneven bottom. Wind against stream steepens every sea: the water feels wind plus stream." },
+        { "fig": { "type": "chart", "land": "M110 0 H210 V10 C205 50 185 80 165 95 C150 85 130 55 115 20 Z", "depths": [[60, 60, "22"], [270, 60, "25"], [90, 130, "38"], [230, 160, "42"], [150, 170, "30"]], "labels": [[70, 104, "E-going stream →", "middle"], [160, 34, "headland", "middle"], [222, 118, "race", "middle"]], "boat": [40, 150, 90], "note": "The race lies downstream: here E and SE of the point" } },
+        { "p": "The **inshore passage**, a few cables off: settled weather, neaps, daylight, the pilot's time. Outside: the race's charted extent plus a margin, wider at night and in fog. Or through at slack: work back from the start of the fair stream, given as hours from HW at a reference port. Springs double the rate and shorten the slack; if the passage outlasts the slack, go at neaps, and a slow yacht arriving late waits a tide. Before a race: harnesses, hatches, briefing; planing boats slow down." },
+        { "fig": { "type": "bay", "wind": 270, "land": "M110 0 H210 V10 C205 50 185 80 165 95 C150 85 130 55 115 20 Z", "spots": [[166, 110, "A"], [170, 136, "B"], [168, 166, "C"]], "labels": [[160, 40, "headland", "middle"], [196, 140, "race", "start"]], "note": "A inshore passage · B the race · C outside, the default" } }
+      ]
+    },
+    {
+      "id": "currents",
+      "kicker": "Ocean currents",
+      "title": "Off the shelf",
+      "refs": ["Ocean currents"],
+      "blocks": [
+        { "p": "Beyond the shelf the streams are weak and **rotary** and nearly cancel over a cycle. Plan with the routeing chart's mean current, check it by fixes, and keep applying a set that holds for half a day. After a gale the **wind drift** sets right of downwind in the northern hemisphere. Off Portugal the Portugal Current runs south in summer with the northerlies; in winter a N-going current follows the shelf edge. In the Strait of Gibraltar the surface flows east into the Mediterranean, and the W-going streams run inshore." },
+        { "fig": { "type": "card", "title": "Current in the DR", "lines": ["Tidal streams: rotary, up to 0.8 kn", "Over 30 h they cancel out", "Mean current NE 0.4 kn: 30 × 0.4 = 12 M", "Apply it every hour; recheck at each fix"] } }
+      ]
+    }
+  ]
+}

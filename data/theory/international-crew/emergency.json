@@ -1,0 +1,93 @@
+{
+  "topic": "emergency",
+  "lead": "In an emergency the skipper gives the orders, but the first seconds often belong to whoever is nearest. Learn the first actions by heart, and how to call for help if the skipper cannot.",
+  "sections": [
+    {
+      "id": "mob",
+      "kicker": "Man overboard",
+      "title": "Shout, throw, point, mark",
+      "refs": ["Man overboard"],
+      "blocks": [
+        { "list": [
+          "**Shout** \"Man overboard!\" so that everyone knows, and keep your eyes on the person.",
+          "**Throw** the lifebuoy and the danbuoy towards them at once: something to hold on to, and a marker you can see.",
+          "**Point**: one person is the spotter, who keeps an arm stretched out at the casualty and never looks away until they are alongside.",
+          "**Mark**: press the MOB button on the plotter. It saves the position where the person went in and shows the way back."
+        ] },
+        { "fig": { "type": "encounter", "you": { "hdg": 90, "sail": true, "boom": 14 }, "other": { "bearing": 200, "dist": 70, "hdg": 0, "scale": 0.3, "label": "MOB" }, "wind": 0, "note": "The boat turns back; the spotter keeps pointing" } },
+        { "p": "A head among the waves is very easy to lose, which is why the alarm, the buoys and the marked position come before anything else. The radio call comes after them. If it is the skipper who is in the water, you do the same four things." }
+      ]
+    },
+    {
+      "id": "fire",
+      "kicker": "Fire",
+      "title": "The right answer for each fire",
+      "refs": ["Fire"],
+      "blocks": [
+        { "p": "What you put on a fire depends on what is burning. Water is right for some fires and makes others much worse." },
+        { "table": { "head": ["What burns", "Use", "Never"], "rows": [
+          ["Oil or fat in a pan", "Gas off, cover with the fire blanket", "Water: the burning oil erupts"],
+          ["Diesel, petrol", "Powder, foam or CO2 extinguisher", "Water: it spreads the fuel"],
+          ["Fabric, wood, paper", "Water, and plenty of it", "—"],
+          ["Wiring", "Power off, then powder or CO2", "Water"]
+        ] } },
+        { "fig": { "type": "card", "title": "You find a fire", "lines": ["Shout \"Fire!\" so the skipper knows", "Keep your way out behind you", "Aim at the base of the flames", "Too big to fight: get out, shut the door"], "tag": "FIRE" } }
+      ]
+    },
+    {
+      "id": "flood",
+      "kicker": "Water below",
+      "title": "Find where it comes in",
+      "refs": ["Flooding"],
+      "blocks": [
+        { "p": "Water over the floorboards: tell the skipper at once, then help to look for the source. Pumps only buy time; finding and stopping the leak saves the boat." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["waterline", "waterline"], ["hull", "seacocks"], ["keel", "keel bolts"], ["rudder", "rudder, shaft"]] }, "cap": "Below the waterline: where the sea can get in." },
+        { "p": "**Taste the water.** Salt means the sea is coming in: look at the seacocks and their hoses, the heads and the engine space. Fresh means the boat's own water tank or its pipes are leaking, which empties the tank but will not sink you." }
+      ]
+    },
+    {
+      "id": "vhf",
+      "kicker": "Calling for help",
+      "title": "The red button, then channel 16",
+      "refs": ["VHF distress"],
+      "blocks": [
+        { "p": "If the skipper cannot make the call, you must. First the red **DISTRESS** button under its flap: press and hold it until the set confirms. It sends an automatic alert with the boat's identity and, if a GPS is connected, her position." },
+        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["distress", "DISTRESS"], ["ch16", "channel 16"], ["power", "high power"], ["ptt", "press to talk"]] } },
+        { "p": "Then your voice: **channel 16**, **high power** for the longest range. Press the button on the microphone to talk and let go to listen." },
+        { "fig": { "type": "card", "title": "On channel 16", "lines": ["MAYDAY, MAYDAY, MAYDAY", "This is yacht (name, three times)", "MAYDAY, yacht (name)", "My position is …", "What is wrong · help needed", "People aboard · OVER"], "tag": "MAYDAY" } },
+        { "p": "The **position** comes first, read off the plotter, so that help can set out even if the radio then fails. Speak slowly. No answer: say it again." }
+      ]
+    },
+    {
+      "id": "firstaid",
+      "kicker": "First aid",
+      "title": "What to do until help comes",
+      "refs": ["First aid", "First aid: hypothermia", "First aid: burns", "First aid: head injury", "First aid: seasickness", "First aid: heat"],
+      "blocks": [
+        { "p": "You are not the doctor. Make the person safe, do the simple right thing and tell the skipper, who can get medical advice by radio." },
+        { "table": { "head": ["Problem", "Signs", "What you do"], "rows": [
+          ["Hypothermia", "Hard shivering, blue lips after time in the water", "Shelter, dry clothes, blankets, a warm sweet drink if alert. No alcohol"],
+          ["Burn or scald", "Red or blistered skin", "Cool running water for 20 minutes, then cover loosely with cling film"],
+          ["Blow to the head", "Confusion, the same question again and again", "Keep them still, watch them, tell the skipper now"],
+          ["Heat exhaustion", "Headache, dizziness, heavy sweat, pale clammy skin", "Shade, lie down, cool with water, sips of fluid"],
+          ["Long seasickness", "Sick for hours, keeps no water down, little urine", "Small sips often; tell the skipper"]
+        ] } },
+        { "p": "Someone **unconscious but breathing** normally goes on their side in the recovery position: the airway stays open and vomit can drain out. Stay with them." }
+      ]
+    },
+    {
+      "id": "raft",
+      "kicker": "The liferaft",
+      "title": "Step up into it",
+      "refs": ["Liferaft"],
+      "blocks": [
+        { "p": "The yacht is the best lifeboat you have: bigger, drier, easier to see, with water, food and a radio. A liferaft is small, wet and cold. So you leave only on the skipper's order, when the yacht is really going down." },
+        { "table": { "head": ["Situation", "What you do"], "rows": [
+          ["Damaged or taking water, but afloat", "Stay aboard: pump, call for help, get the raft ready"],
+          ["Sinking under you", "Step up into the raft"]
+        ] } },
+        { "rule": "Stay with the yacht as long as she floats. You should step up into the liferaft, not down." }
+      ]
+    }
+  ]
+}

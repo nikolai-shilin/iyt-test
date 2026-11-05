@@ -1,0 +1,115 @@
+{
+  "topic": "colregs",
+  "lead": "The collision regulations settle who keeps clear and how. Ask in order: is there risk of collision, what is she, which rule fits?",
+  "sections": [
+    {
+      "id": "risk",
+      "kicker": "Lookout and risk",
+      "title": "A steady bearing means risk of collision",
+      "refs": ["COLREGs Rule 5", "COLREGs Rule 6", "COLREGs Rule 7", "COLREGs Rule 8", "COLREGs Rules 5 / 7", "COLREGs Rules 7 / 8", "COLREGs Rules 8 / 16", "COLREGs Rules 2 / 6", "COLREGs Rules 2 / 8"],
+      "blocks": [
+        { "p": "Keep a **lookout** by sight and hearing at all times, under the genoa too. AIS and radar help, but many small boats show on neither. Keep a **safe speed**: able to stop in the distance you can see, slower in traffic, near swimmers or against shore lights." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 50, "dist": 90, "hdg": 270, "label": "Ship", "scale": 1.5 }, "bearingLine": true, "note": "Bearing steady, range closing" } },
+        { "p": "Take compass bearings of an approaching vessel. A steady bearing with the range closing is **risk of collision**; in doubt, assume it. Near a big ship it can exist even while the bearing changes. Act early: one bold alteration she can see at once, not several small ones. If you cannot turn, slow down or stop, and keep checking until she is past and clear." }
+      ]
+    },
+    {
+      "id": "sail",
+      "kicker": "Sail meets sail",
+      "title": "Tack first, then windward",
+      "refs": ["COLREGs Rule 12", "COLREGs Rules 12 / 17"],
+      "blocks": [
+        { "p": "Of two sailing vessels, the one on **port tack**, with the wind on her port side, keeps clear of the one on starboard tack. On the same tack the **windward** boat keeps clear. On a run, your tack is the side opposite your mainsail." },
+        { "tiles": [
+          { "fig": { "type": "encounter", "you": { "hdg": 45, "sail": true, "boom": 14 }, "other": { "bearing": 300, "dist": 85, "hdg": 315, "sail": true, "boom": -14 }, "wind": 0, "bearingLine": true }, "view": "85 -18 235 173", "name": "Opposite tacks", "note": "you are on port: keep clear" },
+          { "fig": { "type": "encounter", "you": { "hdg": 60, "sail": true, "boom": -14 }, "other": { "bearing": -80, "dist": 80, "hdg": 60, "sail": true, "boom": -14 }, "wind": 150, "bearingLine": true }, "view": "85 -18 235 173", "name": "Same tack", "note": "you are to windward: keep clear" }
+        ] },
+        { "p": "On port tack, if you cannot tell the tack of a boat to windward, keep clear. When you stand on, hold your course and speed." }
+      ]
+    },
+    {
+      "id": "power",
+      "kicker": "Overtaking, head-on, crossing",
+      "title": "Three meetings and the stand-on vessel",
+      "refs": ["COLREGs Rule 13", "COLREGs Rule 14", "COLREGs Rule 15", "COLREGs Rule 17", "COLREGs Rules 12 / 13", "COLREGs Rules 13 / 17", "COLREGs Rules 15 / 17", "COLREGs Rules 15 / 23", "COLREGs Rules 17 / 34", "COLREGs Rules 2 / 17"],
+      "blocks": [
+        { "p": "**Overtaking** binds every vessel, sail included: coming up from more than 22.5° abaft her beam, where at night you would see only her sternlight, you keep clear until past. Two power-driven vessels **head-on** both turn to starboard. **Crossing**, the one with the other on her starboard side gives way and avoids passing ahead." },
+        { "tiles": [
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 5, "dist": 85, "hdg": 0 }, "bearingLine": true }, "view": "55 -12 210 165", "name": "Overtaking", "note": "you keep clear" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 0, "dist": 90, "hdg": 180 }, "bearingLine": true }, "view": "55 -12 210 165", "name": "Head-on", "note": "both turn to starboard" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 50, "dist": 90, "hdg": 270 }, "bearingLine": true }, "view": "55 -12 210 165", "name": "She is to starboard", "note": "you give way" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": -50, "dist": 85, "hdg": 80 }, "bearingLine": true }, "view": "55 -12 210 165", "name": "She is to port", "note": "you stand on" }
+        ], "cols": 2 },
+        { "p": "The **stand-on vessel** holds her course and speed. If the other does not act, sound five short blasts; you may then manoeuvre, but under power do not turn to port for a vessel on your port side. Once her action alone cannot prevent a collision, you must act. A big ship may not have seen you and cannot stop quickly." },
+        { "rule": "In doubt whether you are overtaking or head-on? Assume you are." }
+      ]
+    },
+    {
+      "id": "order",
+      "kicker": "Who gives way to whom",
+      "title": "Hampered vessels come first",
+      "refs": ["COLREGs Rule 18", "COLREGs Rule 3 / 18", "COLREGs Rules 3 / 18", "COLREGs Rules 3 / 25", "COLREGs Rules 3 / 15", "COLREGs Rules 14 / 18", "COLREGs Rules 17 / 18", "COLREGs Rules 18 / 25", "COLREGs Rules 18 / 27", "COLREGs Rule 24", "COLREGs Rule 26", "COLREGs Rule 30"],
+      "blocks": [
+        { "p": "Overtaking apart, a power-driven vessel keeps clear of a sailing vessel. Both keep clear of a vessel **engaged in fishing**, **restricted in her ability to manoeuvre** or **not under command**, and avoid impeding one constrained by her draught." },
+        { "tiles": [
+          { "fig": { "type": "dayshape", "shape": "two-balls" }, "view": "80 28 160 140", "name": "Not under command", "note": "two balls" },
+          { "fig": { "type": "dayshape", "shape": "ball-diamond-ball" }, "view": "80 28 160 140", "name": "Restricted in ability to manoeuvre", "note": "ball, diamond, ball" },
+          { "fig": { "type": "dayshape", "shape": "two-cones" }, "view": "80 28 160 140", "name": "Fishing", "note": "two cones, points together" },
+          { "fig": { "type": "dayshape", "shape": "cylinder" }, "view": "80 28 160 140", "name": "Constrained by draught", "note": "cylinder" },
+          { "fig": { "type": "dayshape", "shape": "cone-down", "sail": true }, "view": "80 28 160 140", "name": "Motor-sailing", "note": "cone, point down" },
+          { "fig": { "type": "dayshape", "shape": "three-balls" }, "view": "80 28 160 140", "name": "Aground", "note": "three balls" }
+        ], "cols": 3 },
+        { "p": "With the engine in gear your yacht is **power-driven**, whatever sails are set. Trolling lines is not fishing. An extra white light on a fishing vessel points to her gear: pass the other side. Never pass between a tug and her tow. A vessel aground marks the shoal: stay away." }
+      ]
+    },
+    {
+      "id": "channels",
+      "kicker": "Channels and traffic schemes",
+      "title": "Never impede a ship in her channel",
+      "refs": ["COLREGs Rule 9", "COLREGs Rule 10", "COLREGs Rules 8 / 9", "COLREGs Rules 10 / 18"],
+      "blocks": [
+        { "p": "In a **narrow channel** keep as near its starboard edge as is safe. A sailing vessel or a vessel under 20 m must not impede a ship that can only navigate inside the channel, nor cross ahead of her. That duty remains when risk of collision develops." },
+        { "fig": { "type": "chart", "land": "M0 108 H320 V128 H0 Z", "labels": [[90, 96, "← westbound lane", "middle"], [90, 122, "separation zone", "middle"], [90, 148, "eastbound lane →", "middle"]], "boat": [210, 176, 0], "note": "Traffic separation scheme", "panel": ["Crossing", "Heading at 90°", "to the lanes"] } },
+        { "p": "In a **traffic separation scheme** follow your lane with the traffic. Join or leave at its ends, or from the side at a small angle. Cross on a heading at right angles to the lanes, under engine if need be, and keep out of the separation zone. A yacht under 20 m may use the inshore zone, but must not impede a power-driven vessel in a lane. Expect converging ships where a scheme ends." }
+      ]
+    },
+    {
+      "id": "signals",
+      "kicker": "Sound signals in sight",
+      "title": "What a whistle tells you",
+      "refs": ["COLREGs Rule 34", "COLREGs Rules 9 / 34"],
+      "blocks": [
+        { "p": "A short blast lasts about a second, a prolonged one four to six. A power-driven vessel in sight of another signals each manoeuvre." },
+        { "table": { "head": ["Signal", "Meaning"], "rows": [
+          ["1 short", "I am altering course to starboard"],
+          ["2 short", "I am altering course to port"],
+          ["3 short", "My engines are going astern"],
+          ["5 or more short", "I doubt you are keeping clear"],
+          ["1 prolonged", "Nearing a blind bend; answered the same"],
+          ["2 prolonged, 1 short", "I intend to overtake on your starboard side"],
+          ["2 prolonged, 2 short", "I intend to overtake on your port side"],
+          ["Prolonged, short, prolonged, short", "Agreed, overtake"]
+        ] } },
+        { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 192, "y": 72 }, { "c": "r", "x": 188, "y": 120 }, { "c": "w", "x": 196, "y": 48, "t": "5 rapid flashes", "r": 4 }], "note": "Night · the same signals by light" } }
+      ]
+    },
+    {
+      "id": "fog",
+      "kicker": "Restricted visibility",
+      "title": "In fog nobody stands on",
+      "refs": ["COLREGs Rule 19", "COLREGs Rule 35", "COLREGs Rules 6 / 19", "COLREGs Rules 15 / 19"],
+      "blocks": [
+        { "p": "Out of sight of each other nobody stands on: each vessel avoids a close-quarters situation. Slow down until you can stop within the visibility. For a vessel seen on radar alone, do not turn to port if she is forward of your beam, nor towards her if she is abeam or abaft it. A fog signal heard forward of the beam means bare steerage way, or stopping. Once she is in sight, the ordinary rules apply." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 20, "dist": 85, "hdg": 200, "label": "Radar target" }, "bearingLine": true, "note": "Fog · turn boldly to starboard, or slow down" } },
+        { "table": { "head": ["Fog signal, every 2 min or less", "Vessel"], "rows": [
+          ["1 prolonged", "Power-driven, making way"],
+          ["2 prolonged", "Power-driven, stopped"],
+          ["1 prolonged, 2 short", "Under sail, fishing, towing or hampered"],
+          ["Rapid bell for 5 s, each minute", "At anchor"],
+          ["Short, prolonged, short", "At anchor, warning you off"],
+          ["3 strokes, rapid ringing, 3 strokes", "Aground"]
+        ] } }
+      ]
+    }
+  ]
+}

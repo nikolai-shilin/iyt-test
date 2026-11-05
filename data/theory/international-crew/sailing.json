@@ -1,0 +1,110 @@
+{
+  "topic": "sailing",
+  "lead": "A sailing boat is driven by the angle between her sails and the wind. Know the points of sail and what each line does to a sail, and you can trim, tack and gybe on the skipper's word.",
+  "sections": [
+    {
+      "id": "points",
+      "kicker": "Points of sail",
+      "title": "Your course against the wind",
+      "refs": ["Points of sail"],
+      "blocks": [
+        { "p": "No boat sails straight into the wind. About 45° either side of it lies the **no-go zone**: point the bow there and the sails flap and the boat stops. Every other course has a name, from **close-hauled** on the edge of the zone to a **run** with the wind astern." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 50, "nogo": true }, "view": "76 4 244 192", "name": "Close-hauled", "note": "about 45° off the wind" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 90 }, "view": "76 4 244 192", "name": "Beam reach", "note": "wind on the beam" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 135 }, "view": "76 4 244 192", "name": "Broad reach", "note": "wind over the quarter" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 175 }, "view": "76 4 244 192", "name": "Run", "note": "wind astern, main right out" }
+        ], "cols": 2 },
+        { "p": "All four boats have the wind on their port side: they are on **port tack**." },
+        { "p": "To reach a harbour dead upwind you **beat**: close-hauled on one tack, then on the other, in a zigzag. On a dead run the mainsail hides the genoa from the wind and it collapses: set it on the opposite side, **goose-winged**, or head up a little." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 0, "nogo": true, "note": "In the no-go zone: sails flapping, no drive" } }
+      ]
+    },
+    {
+      "id": "trim",
+      "kicker": "Sail trim",
+      "title": "Ease until it flaps, then sheet in",
+      "refs": ["Sail trim", "Sail handling", "Heeling"],
+      "blocks": [
+        { "p": "A **sheet** pulls a sail in or lets it out. The **mainsheet** sets the angle of the boom; the genoa has a sheet on each side. To **sheet in** is to pull, to **ease** is to let out under control." },
+        { "fig": { "type": "boat", "view": "sail", "parts": [["luff", "luff"], ["leech", "leech"], ["foot", "foot"], ["boom", "boom"], ["mast", "mast"]] }, "cap": "The luff is the front edge of a sail, and the first part to flap." },
+        { "p": "A sail works best just short of flapping. Ease the sheet until the **luff** starts to flutter, then pull in just enough to stop it. The **tell-tales**, streamers on each side of the genoa's luff, show it more finely: both should stream aft." },
+        { "table": { "head": ["What you see", "What it means", "What you do"], "rows": [
+          ["Windward tell-tale lifting", "Sail eased too far", "Sheet in a little"],
+          ["Leeward tell-tale drooping", "Sail in too hard, stalled", "Ease a little"]
+        ] } },
+        { "p": "Wind makes the boat **heel**. In a gust, ease the mainsheet to spill wind and bring her upright, then sheet in again as the gust passes. That is playing the main." }
+      ]
+    },
+    {
+      "id": "apparent",
+      "kicker": "Apparent wind",
+      "title": "The wind you feel on a moving boat",
+      "refs": ["Apparent wind"],
+      "blocks": [
+        { "p": "The **true wind** is what a flag ashore feels. On a moving boat it mixes with the wind of your own speed: motor at 6 knots through a flat calm and you feel 6 knots from dead ahead. The mixture is the **apparent wind**: the one your sails and instruments feel." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 90, "note": "True wind abeam: you feel it from further forward" } },
+        { "table": { "head": ["Course", "Apparent wind"], "rows": [
+          ["Close-hauled", "Stronger than the true wind, and further forward"],
+          ["Beam reach", "Forward of the beam: the instrument may read 60°"],
+          ["Broad reach, run", "Lighter than the true wind: your speed is taken off it"]
+        ] } },
+        { "p": "So when the boat bears away from close-hauled to a broad reach, the wind on deck drops and moves aft, though the true wind is the same. Dead downwind at 7 knots in 15 of true wind you feel only 8." }
+      ]
+    },
+    {
+      "id": "tack",
+      "kicker": "Tacking",
+      "title": "The bow goes through the wind",
+      "refs": ["Tacking"],
+      "blocks": [
+        { "p": "A **tack** turns the bow through the wind, from close-hauled on one side to close-hauled on the other. The genoa crosses the boat: one crew lets go the old sheet, another pulls in the new one." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 310, "nogo": true }, "view": "76 4 244 192", "name": "Before", "note": "close-hauled, starboard tack" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 0, "nogo": true }, "view": "76 4 244 192", "name": "Bow through the wind", "note": "old sheet off now" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 50, "nogo": true }, "view": "76 4 244 192", "name": "After", "note": "close-hauled, port tack" }
+        ] },
+        { "list": [
+          "\"Ready about?\" Check your sheet and winch, answer \"Ready\", and keep the old sheet on.",
+          "\"Lee-oh\": the helm turns. As the bow passes through the wind, throw the old sheet off its winch.",
+          "On the new sheet, pull in the slack fast by hand, then winch in the last, loaded part."
+        ] },
+        { "p": "Let the old sheet go too early and the genoa stops driving before the turn has begun: the boat slows and may stop head to wind, **in irons**." }
+      ]
+    },
+    {
+      "id": "gybe",
+      "kicker": "Gybing",
+      "title": "The stern goes through the wind",
+      "refs": ["Gybing"],
+      "blocks": [
+        { "p": "A **gybe** turns the stern through the wind, from a run on one tack to a run on the other. The sails stay full all the way, and a boom left right out would sweep across the cockpit with the full force of the wind. So you centre it first, and keep your head down." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 170 }, "view": "76 4 244 192", "name": "Before: port tack", "note": "boom and genoa to starboard" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 190 }, "view": "76 4 244 192", "name": "After: starboard tack", "note": "boom and genoa to port" }
+        ] },
+        { "list": [
+          "\"Ready to gybe?\" On the mainsheet, pull the boom in to the centre of the boat.",
+          "\"Gybe-oh\": the helm turns, and the boom crosses on a short sheet.",
+          "Ease the mainsheet out smoothly on the new side.",
+          "The genoa crosses too: the old sheet is let go and the other one takes the load."
+        ] }
+      ]
+    },
+    {
+      "id": "hoist",
+      "kicker": "Hoisting and furling",
+      "title": "Take the wind out of the sail first",
+      "refs": ["Hoisting the main", "Furling"],
+      "blocks": [
+        { "fig": { "type": "boat", "view": "side", "parts": [["mainsail", "mainsail"], ["jib", "genoa"], ["forestay", "forestay"], ["mast", "mast"], ["boom", "boom"]] }, "cap": "The main goes up the mast on its halyard; the genoa rolls up round the forestay." },
+        { "p": "The mainsail is hoisted with the bow **head to wind**, so that it hangs empty. Ease the mainsheet before you pull the **halyard**: a tight sheet holds the boom down and the sail cannot go up. If the sail fills halfway and the halyard goes heavy, ask the helm to bring the bow back into the wind." },
+        { "table": { "head": ["Genoa", "Furling line", "Sheet"], "rows": [
+          ["To unfurl", "Ease out under control, with a turn round a winch", "Pull"],
+          ["To furl", "Pull", "Ease, keeping a light tension"]
+        ] } },
+        { "p": "A furling line let go runs wild and tangles on its drum. A sheet let fly while you furl leaves a loose roll and a flogging sail." }
+      ]
+    }
+  ]
+}

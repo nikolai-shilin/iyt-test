@@ -1,0 +1,93 @@
+{
+  "topic": "aboard",
+  "lead": "A yacht is a small home that heels, carries its own gas, water and electricity, and has nowhere to pop out to. A few habits keep it safe and pleasant for everyone on board.",
+  "sections": [
+    {
+      "id": "gas",
+      "kicker": "Gas and the galley",
+      "title": "Gas is heavier than air",
+      "refs": ["Gas safety", "Cooking under way"],
+      "blocks": [
+        { "p": "Bottled cooking gas is **heavier than air**. If it leaks it does not blow away: it sinks into the bilge and stays there, and one spark can set it off. Every gas habit on board follows from that." },
+        { "fig": { "type": "panel", "gauges": [["Bottle valve", "OPEN", false], ["Solenoid", "OFF", true], ["Burner", "OPEN", false]], "lines": ["Gas runs bottle → solenoid → burner", "Solenoid off: no gas reaches the stove"] } },
+        { "list": [
+          "The gas passes three valves: the one on the bottle, the **solenoid** (an electric valve with a switch near the galley) and the burner knob. All three must be open for the stove to light.",
+          "Strike the match or lighter first, then open the burner, so that no unburnt gas escapes.",
+          "After cooking close the burner and turn the gas off at the solenoid or the bottle. Then no gas sits in the pipe overnight."
+        ] },
+        { "p": "**You smell gas**: no flames, and touch no electrical switch, because a switch makes a spark. Turn the gas off at the bottle, get everyone into fresh air and tell the skipper." },
+        { "p": "Cooking at sea: let the stove swing on its **gimbals** so the pans stay level, clip on the galley strap to keep both hands free, and wear oilskin trousers against scalds." }
+      ]
+    },
+    {
+      "id": "heads",
+      "kicker": "The heads",
+      "title": "A pump, narrow pipes and one rule",
+      "refs": ["Marine heads"],
+      "blocks": [
+        { "p": "The marine toilet, the **heads**, pumps through narrow pipes and blocks easily. Nothing goes down it that you have not eaten first, except toilet paper. Everything else goes in the bin." },
+        { "fig": { "type": "card", "title": "Using the heads", "lines": ["1  In harbour: valve to holding tank", "2  Open the seacocks", "3  Pump until the bowl is clean", "4  Then more strokes to clear the pipe", "5  Under sail: close the seacocks"] } },
+        { "table": { "head": ["Where you are", "Where the waste goes"], "rows": [
+          ["Marina, harbour, anchorage", "Into the holding tank"],
+          ["Well out at sea", "Overboard, and the tank is emptied when the skipper says"]
+        ] } },
+        { "p": "When the bowl looks clean the waste is still in the pipe, so pump on for a while. Under sail a bowl below the waterline can **siphon** sea water in through open seacocks and flood the boat: many skippers want them closed after every use." }
+      ]
+    },
+    {
+      "id": "supplies",
+      "kicker": "Water and power",
+      "title": "The tanks and batteries are all you have",
+      "refs": ["Fresh water", "Batteries"],
+      "blocks": [
+        { "p": "Away from a marina nobody refills the water tanks. Turn the tap off while you soap your hands, the dishes or yourself, and rinse briefly. To see what you can afford, divide what is left by the crew and by the days." },
+        { "fig": { "type": "panel", "gauges": [["Tanks", "300 L", false], ["Crew", "5", false], ["Days", "4", false]], "lines": ["300 ÷ 5 ÷ 4 = 15 litres", "each per day, cooking included"] } },
+        { "p": "With the engine off and no shore power nothing charges the **house battery**. It holds amp-hours (Ah); everything switched on draws amps (A). Add up the amps, divide the amp-hours by them and you have the hours left. Switch off lights and chargers nobody is using." },
+        { "fig": { "type": "panel", "gauges": [["Usable", "120 Ah", false], ["Fridge", "5 A", false], ["Lights", "3 A", false]], "lines": ["5 A + 3 A = 8 A", "120 Ah ÷ 8 A = 15 hours"] } }
+      ]
+    },
+    {
+      "id": "stow",
+      "kicker": "Stowage and tidiness",
+      "title": "Ready for sea",
+      "refs": ["Stowage", "Life aboard", "Rubbish"],
+      "blocks": [
+        { "p": "When the boat heels, anything loose flies across the cabin: it breaks, or it hurts someone. \"Stow for sea\" means that nothing can move and no water can get below." },
+        { "table": { "head": ["What", "Before you sail"], "rows": [
+          ["Phones, laptops, cups, books", "In a locker, or wedged so they cannot move"],
+          ["Hatches and portholes", "Shut, and they stay shut under way"],
+          ["Lockers and drawers", "Latched"],
+          ["Sheets and halyard tails", "Coiled and stowed clear of feet, none over the side"],
+          ["Rubbish", "Bagged and kept aboard for the bins ashore"]
+        ] } },
+        { "p": "One wave through an open forehatch soaks a cabin. A loose line trips people, and one trailing over the side can foul the propeller. **Plastic never goes overboard**, at sea or at anchor." }
+      ]
+    },
+    {
+      "id": "seasick",
+      "kicker": "Seasickness",
+      "title": "Prevent it before you sail",
+      "refs": ["Seasickness"],
+      "blocks": [
+        { "p": "Almost everyone is seasick at some time, and it passes. It is much easier to prevent than to cure: take your tablet **before** you sail, as the packet says, sleep well, eat lightly and leave the wine alone the evening before a lumpy crossing." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["bow", "most motion"], ["stern", "cockpit"], ["keel", "least motion"]] }, "cap": "The bow moves most; low down amidships the motion is least. The cockpit has fresh air and a horizon." },
+        { "p": "If you start to feel queasy, come on deck into the fresh air and watch the **horizon**. Below decks it is worse, and worst of all in the forward cabin, where the motion is greatest. Keep warm, sip water, and tell someone how you feel." }
+      ]
+    },
+    {
+      "id": "watches",
+      "kicker": "Watches",
+      "title": "Off watch, sleep",
+      "refs": ["Watch system"],
+      "blocks": [
+        { "p": "On an overnight passage the crew splits into **watches**: one group sails the boat while the other rests, for example three hours on and three hours off." },
+        { "table": { "head": ["Time", "Watch A", "Watch B"], "rows": [
+          ["21:00–00:00", "On deck", "Asleep"],
+          ["00:00–03:00", "Asleep", "On deck"],
+          ["03:00–06:00", "On deck", "Asleep"]
+        ] } },
+        { "p": "Off watch, your job is to rest. Go below and sleep even if the evening in the cockpit is pleasant: a tired watchkeeper misses things. Come up a few minutes early, dressed and ready, so that the watch you relieve gets its full rest." }
+      ]
+    }
+  ]
+}

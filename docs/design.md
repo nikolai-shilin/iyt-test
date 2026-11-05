@@ -19,7 +19,7 @@ One system for the mini app and the website.
 - **Shape.** Bands and cards 20–28 px radius (squircle where supported), pills 54 px, 2 px outlines in
   `--tag-line`, selected outline in `--ink`.
 - **Phone chrome.** 390 × 844, iOS status bar, Telegram mini-app header (`.tgh`) and main button (`.tgmain .b`),
-  bottom tab bar (`.nav`) on the four root screens only.
+  bottom tab bar (`.nav`) on the five root screens only (Learn, Theory, Exam, Progress, Profile).
 - **Website.** 1280 wide desk, 1180 wrap, 76 px header with the RYC logo + "IYT Test" wordmark, nav, language
   switch, "Open in Telegram" pill; display 60 px in the hero; footer carries the disclaimer once.
 
@@ -55,6 +55,15 @@ rhythm) · A8 Results (ring, stats, bars, next step) · A9 Review mistakes.
 **B · Mini app · Mock exam** — B1 Intro (40 / 60 min / 70 %, rules, last attempts) · B2 Exam question (timer,
 flag, grid button, Previous/Next) · B3 Question grid (sheet, submit) · B4 Passed (badge, bars, next level, share)
 · B5 Not passed (red ring, weak topics first, practise them).
+
+**T · Mini app · Theory** (added 2026-11-05, not in flows.html yet) — T1 Theory, the second tab (chips to change the
+level, the level's ten topics with reading time, pictures and a read mark) · T2 Article (one topic: lead, section
+chips, sections with figures, tiles, tables and a rule band, previous / next topic, "Practise" as the main button;
+the reference chip under an answered question opens the section that explains it; a flag beside each section's
+heading opens a sheet with a comment box, "What is wrong here?", and turns red once sent). The result screens (A8,
+B4, B5) carry a "Where to read" band: the topics of the wrong answers, most mistakes first, each a link to its
+article at the section that explains them. Admins read the comments at the top of C4 Reported. Pieces: `.th-*` in
+`miniapp/app.css`; format and rules in `docs/theory.md`.
 
 **C · Mini app · Progress, profile, bot** — C1 Progress (stats, week, mastery by topic, mistakes) · C2 Profile
 (level, language EN/RU/DE/ES, theme, daily question, reminder, shuffle, disclaimer) · C3 Bot: daily question as an

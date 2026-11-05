@@ -1,0 +1,118 @@
+{
+  "topic": "safety",
+  "lead": "Most accidents afloat are ordinary: a fall, a burn, a gas leak, a propeller near a swimmer. The skipper makes them unlikely and keeps gear and crew ready.",
+  "sections": [
+    {
+      "id": "lifejackets",
+      "kicker": "Lifejackets",
+      "title": "One for everyone, worn properly",
+      "refs": ["Lifejackets", "Charter check-in"],
+      "blocks": [
+        { "p": "Carry a lifejacket of the right size for everyone aboard; a child's goes by weight. Wear it as the outer layer, waist belt snug and **crotch strap** fastened, or it rides up over your face. An automatic one inflates even if you are knocked out. In breaking waves pull down its sprayhood." },
+        { "table": { "head": ["Rating", "Use"], "rows": [
+          ["50 N", "Buoyancy aid only"],
+          ["100 N", "Sheltered water"],
+          ["150 N", "Coastal and offshore minimum"],
+          ["275 N", "Offshore, in heavy clothing"]
+        ] } },
+        { "p": "At check-in look inside each: cylinder tight and unfired, indicators green. Replace any extinguisher whose gauge is in the red." }
+      ]
+    },
+    {
+      "id": "deck",
+      "kicker": "Staying on board",
+      "title": "Clip on before you need it",
+      "refs": ["Harnesses & jackstays", "Personal safety", "Man overboard prevention", "Man overboard", "Night sailing"],
+      "blocks": [
+        { "p": "At night or in a fresh wind everyone on deck wears a lifejacket and clips on: before leaving the companionway, to a strong point or the **jackstay**, never a guardrail, on a tether too short to reach the water. Clip the second hook on before releasing the first. Alone on watch at night you stay clipped on." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 180, "note": "Dead run: rig a preventer, heads below the boom" } },
+        { "p": "Go forward on the windward side, low, one hand for the boat. Keep limbs out from between boat and quay, hands off the windlass. Use the heads, not the rail. At night use red light below, tell the helm before going forward, and wake the skipper early." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0, "sail": true, "boom": 14 }, "other": { "bearing": -165, "dist": 70, "hdg": 0, "scale": 0.3, "label": "MOB" }, "wind": 225, "note": "Shout, throw the buoys, point, press MOB" } },
+        { "p": "Never tie down the danbuoy and horseshoe: they must go in seconds." }
+      ]
+    },
+    {
+      "id": "fire",
+      "kicker": "Fire, gas and fumes",
+      "title": "Each fire has its extinguisher",
+      "refs": ["Fire", "Gas safety", "Carbon monoxide", "Galley safety"],
+      "blocks": [
+        { "table": { "head": ["Fire", "Use"], "rows": [
+          ["Pan of oil", "Gas off, fire blanket; never water"],
+          ["Petrol, diesel", "Powder or foam; never water"],
+          ["Electrics", "Batteries off, then CO2 or powder"],
+          ["Engine", "Engine and fuel off; discharge through the fire port, box shut"],
+          ["Bedding, wood", "Water"]
+        ] } },
+        { "p": "Hang the fire blanket beside the cooker, not above it, and show everyone the escape hatches." },
+        { "p": "**Gas** is heavier than air: a leak sinks into the bilge, where a spark ignites it. So bottles live in a locker draining overboard, the alarm sensor sits low, and the valve is open only while you cook. Smell gas? No flames, no switches: shut the bottle, ventilate, pump the bilge by hand. Test joints with soapy water. Petrol too stays outside the hull." },
+        { "fig": { "type": "panel", "gauges": [["Gas valve", "OFF", false], ["Gas alarm", "OK", false], ["CO alarm", "ALARM", true]], "lines": ["No smell, nobody feels ill yet", "Everyone out into fresh air"] } },
+        { "p": "**Carbon monoxide** from an exhaust has no smell: headache and nausea below mean fresh air at once and medical advice. At sea, strap the cook in, clamp the pans, let the stove swing." }
+      ]
+    },
+    {
+      "id": "liferaft",
+      "kicker": "Liferaft and grab bag",
+      "title": "Step up into the raft",
+      "refs": ["Liferaft", "Grab bag", "Abandoning ship"],
+      "blocks": [
+        { "p": "The yacht is your best lifeboat: step up into the raft only when she is sinking; until then keep it ready on deck, painter made fast. A raft must be in date and quick to launch. Its **hydrostatic release** lets it float free and inflate, unless someone has lashed it down." },
+        { "fig": { "type": "card", "title": "Abandon ship", "lines": ["MAYDAY sent, lifejackets on", "Raft's painter made fast on board", "Launch to leeward, pull the painter", "Grab bag and handheld VHF in", "Board dry if you can, cut the painter"] } },
+        { "p": "The **grab bag** waits by the companionway: handheld VHF in a waterproof pouch, flares, torch, first aid, and water in small, part-filled bottles that float." }
+      ]
+    },
+    {
+      "id": "firstaid",
+      "kicker": "First aid",
+      "title": "Simple measures, advice early",
+      "refs": ["First aid"],
+      "blocks": [
+        { "p": "Before sailing, ask the crew about conditions, allergies and medicines." },
+        { "table": { "head": ["Problem", "Action"], "rows": [
+          ["Cold-water shock", "Float until your breathing settles"],
+          ["Hypothermia", "Handle gently, lay flat, insulate, warm slowly; no alcohol"],
+          ["Heat exhaustion: pale, sweating", "Shade, rest, water with rehydration salts"],
+          ["Heatstroke: hot dry skin, confusion", "Cool fast with water and air; get help"],
+          ["Burn or scald", "Cool running water for 20 minutes, then loose cling film"],
+          ["Bleeding", "Firm pressure with a clean pad"],
+          ["Head injury", "Any knock-out: medical advice. Vomiting, drowsiness, unequal pupils: urgent help"],
+          ["Drowned, not breathing", "Five rescue breaths, then 30 compressions to 2"],
+          ["Unresponsive but breathing", "Recovery position; watch the breathing"],
+          ["Jellyfish", "Sea-water rinse, lift tentacles off, no rubbing"],
+          ["Weever fish", "Soak in water as hot as bearable"]
+        ] } },
+        { "p": "**Seasickness**: tablets before sailing, then fresh air, the helm and the horizon; be sick to leeward, clipped on. A day of vomiting without keeping water down is serious. Anyone who has inhaled water sees a doctor that day." }
+      ]
+    },
+    {
+      "id": "dinghy",
+      "kicker": "Dinghy and swimming",
+      "title": "Propellers and swimmers do not mix",
+      "refs": ["Dinghy safety", "Swimming from the yacht"],
+      "blocks": [
+        { "p": "In the tender wear the **kill cord** on your leg or lifejacket: fall out and the engine stops. Obey the builder's plate. Carry oars, a bailer and a phone in a dry bag; at night a torch, lifejackets and a sober driver. Start the outboard in neutral, swimmers well clear, and keep a safety line on it until clamped on." },
+        { "fig": { "type": "bay", "wind": 200, "spots": [[262, 168, "Y"]], "labels": [[110, 104, "BEACH", "middle"], [196, 158, "tenders and ribs", "middle"]], "note": "Y: your yacht, 300 m off the beach" } },
+        { "p": "Before anyone swims, stop the engine and lower the ladder. Stream a floating line astern. Swimming ashore needs a bright tow float and a route clear of tenders. Nobody swims after drinking or in the dark." }
+      ]
+    },
+    {
+      "id": "skipper",
+      "kicker": "Skipper and crew",
+      "title": "Brief, rest, reef early",
+      "refs": ["Skipper's responsibilities", "Crew management", "Heavy-weather preparation"],
+      "blocks": [
+        { "p": "You answer for everyone aboard, so your safety rules stand. Before leaving, give the **safety briefing**: lifejackets, gas, heads, fire, man overboard, VHF, flares. Someone else must be able to stop the boat, use the VHF and start the MOB drill. Whoever steers or keeps watch stays off alcohol." },
+        { "p": "On passage set watches so that everyone sleeps, you included, each led by someone experienced, and nobody drowsy from tablets alone. Tell the crew the plan. Tired, with an unlit harbour ahead? Wait offshore for daylight." },
+        { "fig": { "type": "isobars", "center": "L", "tight": true, "values": ["1000", "1004", "1008"], "boat": [236, 128, 0], "note": "Tomorrow: NW F7 from dawn, all day" } },
+        { "list": [
+          "Gale forecast, novice crew: stay in harbour.",
+          "Reef before leaving.",
+          "Lock floorboards and lockers; stow heavy gear.",
+          "Prepare food and flasks in advance.",
+          "Fit the lower washboards.",
+          "Turn for shelter while you can."
+        ] }
+      ]
+    }
+  ]
+}

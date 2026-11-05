@@ -1,0 +1,101 @@
+{
+  "topic": "fixing",
+  "lead": "A fix is two or more position lines that cross: bearings, transits, ranges, depths. Each has its errors, the compass two of its own. Check one source against another.",
+  "sections": [
+    {
+      "id": "compass",
+      "kicker": "Variation and deviation",
+      "title": "From the compass to the chart",
+      "refs": ["Compass — variation", "Compass — variation for the year", "Variation — changing across the chart", "Variation — annual change and the nearest rose", "Compass — deviation card", "Compass — when deviation applies", "Compass — the hand-bearing compass", "Hand-bearing compass — deviation", "Hand-bearing compass — deviation found on a transit", "Position fixing — three-point fix"],
+      "blocks": [
+        { "p": "Bearings are plotted in true. A **hand-bearing compass** used in the open, clear of steel, engine and speakers, needs variation only: add east, subtract west. Take it from the nearest rose, updated to this year." },
+        { "fig": { "type": "compass", "variation": -3, "course": 312, "courseLabel": "Bearing (M)", "note": "312°M − 3°W = 309°T" } },
+        { "p": "A bearing sighted over the **steering compass** also takes deviation: that of the ship's head, not of the bearing, interpolated in the card. The card serves that compass only; an error found for the hand compass on a transit holds at that spot and heading." },
+        { "fig": { "type": "card", "title": "Bearing over the steering compass", "lines": ["Ship's head 100°C: the card gives 4°E", "Bearing 075°C + 4°E = 079°M", "Variation 2°W: 079°M − 2° = 077°T", "Hand compass, clear of steel: only the −2°"] } }
+      ]
+    },
+    {
+      "id": "check",
+      "kicker": "Checking the compass",
+      "title": "Find the deviation before you need it",
+      "refs": ["Compass — causes of deviation", "Compass — magnetic interference", "Compass — heeling error", "Compass — checking on a transit", "Compass — checking deviation on a transit", "Compass — checking on a transit astern", "Compass check — the sun's bearing", "Compass — swinging", "Compass types — fluxgate"],
+      "blocks": [
+        { "p": "**Deviation** is the boat's own magnetism: engine, keel bolts, wiring. It changes with the heading and with heel. Anything magnetic left near the compass adds more: a phone, a steel tool, a kedge, a live cable. Aluminium does not." },
+        { "p": "Measure it by steering along a charted **transit**. With the marks astern you are on its reciprocal; offshore, use the tabled bearing of the rising or setting sun." },
+        { "fig": { "type": "chart", "land": "M150 200 C 200 170 260 150 320 140 V200 Z", "marks": [[193, 136, "k", "front"], [234, 165, "k", "rear"]], "track": "M70 50 L234 165", "depths": [[40, 120, "12"], [110, 170, "8"], [150, 60, "14"]], "boat": [70, 50, 125], "panel": ["Transit 125°T", "Variation 3°W", "Compass reads 131°"], "note": "128°M against 131°C: deviation 3°W on this heading" } },
+        { "rule": "Compass reads high: deviation west. Low: east." },
+        { "p": "The same error on every heading means a compass mounted out of line. **Swinging** repeats the check all round to make the card; redo it after fitting gear nearby. A **fluxgate** corrects itself after slow circles but needs power: the magnetic compass is the backup." }
+      ]
+    },
+    {
+      "id": "fix",
+      "kicker": "The visual fix",
+      "title": "Three bearings in the right order",
+      "refs": ["Position fixing — choosing marks", "Position fixing — angle of cut", "Position fixing — a transit and a bearing", "Position fixing — order of bearings", "Position fixing — taking bearings", "Position fixing — recording the fix", "Position fixing — cocked hat", "Position fixing — cross-checking a fix", "Position fixing — fix versus DR", "Position fixing — fix and DR", "Position fixing — fix versus GPS", "Position fixing — choosing the fix", "Position fixing — frequency of fixes", "Position fixing — how often"],
+      "blocks": [
+        { "p": "Choose marks that are fixed, sharp and charted exactly: a lighthouse, not a buoy or a sloping headland. Two lines cut best near 90°, three about 60° apart; marks ahead and astern give almost one line. A **transit** needs no compass: cross it with a bearing at right angles." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V75 C 260 90 200 60 150 62 C 100 64 50 95 0 90 Z", "marks": [[285, 78, "k", "A"], [125, 62, "k", "B"], [20, 85, "k", "C"]], "depths": [[60, 130, "14"], [200, 120, "11"], [250, 175, "18"], [60, 180, "20"]], "boat": [120, 150, 90], "note": "Heading east: A and C first, B abeam last" } },
+        { "p": "Take the marks ahead and astern first, their bearings change slowly, and the mark abeam last; note time and log with that bearing. Three lines leave a **cocked hat**." },
+        { "fig": { "type": "chart", "track": "M101 74 L229 94 M217 59 L135 147 M182 153 L120 45", "depths": [[150, 152, "0.8", true], [185, 146, "1.4", true], [60, 60, "18"], [260, 110, "15"], [70, 150, "9"], [270, 170, "7"]], "labels": [[127, 75, "A", "middle"], [205, 88, "B", "middle"], [161, 138, "C", "middle"], [168, 170, "reef", "middle"]], "note": "Take the corner nearest the danger: C" } },
+        { "p": "A large cocked hat means a mistake: check each mark's identity and start again. A small one proves only that the bearings agree: if depth and EP both disagree, doubt it. A good fix beats the DR: restart from it, the gap being the stream left out. Fix as often as the danger demands: half a mile from rocks at 6 kn is five minutes." }
+      ]
+    },
+    {
+      "id": "running",
+      "kicker": "The running fix",
+      "title": "One mark, two bearings and the run between",
+      "refs": ["Running fix — no tide", "Running fix — with tide", "Running fix — the transferred line", "Running fix — leeway", "Running fix — course altered", "Running fix — course change and tide", "Running fix — tide hour by hour", "Running fix — bow and beam", "Running fix — bow and beam with tide", "Running fix — doubling the angle", "Running fix — two different marks", "Running fix — its limits", "GPS failure — a running fix at night"],
+      "blocks": [
+        { "p": "With one mark, take a bearing and note time and log; later take another. From any point on the first line lay off the **ground track** run between them, leeway and stream included, and redraw the first line through its end. Where this transferred line cuts the second bearing is the fix." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V40 C240 52 190 34 150 44 C100 56 50 40 0 50 Z", "marks": [[150, 50, "w", "light"]], "track": "M20 150 L290 150 M150 50 L50 150 M150 50 L150 150 M220 80 L135 165", "boat": [50, 150, 90], "depths": [[262, 128, "22"]], "labels": [[50, 178, "log 22.6", "middle"], [158, 178, "log 25.9", "start"], [226, 92, "transferred", "start"], [144, 108, "3.3 M", "end"]], "panel": ["Bow and beam", "Run 3.3 M"], "note": "45° on the bow, then abeam: distance off = the run" } },
+        { "p": "Whenever the angle on the bow doubles, distance off at the second bearing equals the run, over the ground if there is a stream. After an alteration, add the legs and the stream end to end. One mark's line can be crossed with another's bearing. Every error of course, log and stream goes into the fix: keep the run short and prefer two marks at once." }
+      ]
+    },
+    {
+      "id": "lights",
+      "kicker": "Lights at night",
+      "title": "Range from the horizon, name from the stopwatch",
+      "refs": ["Position lines — rising and dipping lights", "Position lines — dipping distance table", "Position fixing — rising light and bearing", "Rising and dipping lights — bobbing a light", "Rising lights — height of tide on the light", "Dipping lights — height of tide", "Rising lights — visibility", "Rising lights — the loom", "Rising lights — identifying a landfall light", "Fixing at night — identifying lights", "Fixing at night — identifying a light", "Fixing at night — timing a light", "Fixing at night — light characteristics"],
+      "blocks": [
+        { "p": "On a clear night a strong light **rises** over the horizon at 2.08 × (√H + √h) miles, H being its height and h your eye's, in metres. Cross that range with its bearing for a fix." },
+        { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 170, "y": 146, "t": "Fl(2) 10s" }], "note": "Light 36 m, eye 2.5 m: 2.08 × (6.0 + 1.58) = 15.8 M" } },
+        { "list": [
+          "If the nominal range is less, the light shows late, already above the horizon.",
+          "Charted heights are above MHWS: at a lower tide add the difference.",
+          "The loom is not the light, and haze spoils the method.",
+          "Bob your head: seen standing, gone sitting, and you are at that distance."
+        ] },
+        { "p": "Name a light before using it: count the flashes and time the full period, from one group's start to the next. Occulting shows more light than dark. If two lights share a character, your EP and their ranges decide." }
+      ]
+    },
+    {
+      "id": "radar",
+      "kicker": "Radar and depth",
+      "title": "Ranges and soundings as position lines",
+      "refs": ["Radar — fixing by ranges", "Radar — fixing by two ranges", "Radar — range and bearing fix", "Radar — range with a visual bearing", "Radar — EBL bearings", "Radar — measuring a range", "Radar — choosing a target", "Radar — a low coast", "Radar — range of a low target", "Radar — gain and clutter", "Radar — rain clutter", "Position lines — depth contour", "Position lines — bearing and depth", "Position fixing — checking with depth", "Fixing in fog — a line of soundings", "Fixing in fog — fog signals", "Fixing in fog — radar and plotter"],
+      "blocks": [
+        { "p": "Radar measures **range** well and bearing poorly: fix by two ranges, or a range crossed with a visual bearing. Put the VRM on the near edge of a steep target; a low beach may not paint, leaving the hills behind as first echo. A low target shows only inside the radar horizon, 2.2 × (√h + √H). A head-up EBL reads from the bow: add the heading. Excess sea-clutter control hides small close echoes; rain control breaks up a shower." },
+        { "p": "The sounder gives a position line too, once the sounding is reduced to chart datum." },
+        { "fig": { "type": "chart", "land": "M262 0 H320 V200 H262 C 272 150 255 60 262 0 Z", "marks": [[270, 100, "w", "light"]], "track": "M20 100 L262 100", "depths": [[60, 92, "20"], [140, 92, "10"], [215, 92, "5"], [40, 150, "22"], [120, 160, "12"], [200, 155, "6"], [90, 50, "19"], [160, 45, "9"]], "labels": [[60, 118, "A", "middle"], [140, 118, "B", "middle"], [215, 118, "C", "middle"]], "panel": ["Bearing 090°T", "Sounder 13.2 m", "Tide now 3.2 m"], "note": "13.2 − 3.2 = 10.0 m below datum: you are at B" } },
+        { "p": "Two range arcs cross twice: the depth says which. In fog a line of soundings can be matched to the chart; a fog signal gives no bearing. When radar and sounder agree against the plotter, believe them and stand off." }
+      ]
+    },
+    {
+      "id": "gps",
+      "kicker": "GPS",
+      "title": "A position to check, not to obey",
+      "refs": ["GPS — range and bearing to a waypoint", "GPS — plotting a fix", "GPS — magnetic or true bearings", "GPS — HDOP", "GPS — the antenna", "GPS — chart datum", "GPS — loss of fix", "GPS — interference"],
+      "blocks": [
+        { "p": "Plot a GPS position quickly as a **range and bearing** to a waypoint charted on a known object. The bearing runs from you to the waypoint, so you lie on its reciprocal; check whether the set shows true or magnetic." },
+        { "fig": { "type": "chart", "marks": [[110, 60, "k", "WP Mew"]], "depths": [[30, 80, "16"], [150, 150, "19"], [250, 120, "21"], [260, 175, "17"]], "track": "M110 60 L48 134", "boat": [48, 134, 40], "labels": [[92, 108, "220°T · 3.2 M", "start"]], "panel": ["GPS to WP Mew", "BRG 040°T", "RNG 3.2 M"], "note": "You are 3.2 M from the waypoint, on 220°T from it" } },
+        { "table": { "head": ["Symptom", "Meaning"], "rows": [
+          ["High HDOP", "Poor satellite geometry"],
+          ["A wandering fix", "No clear sky for the antenna"],
+          ["Boat plotted on charted rocks", "Datum: apply the chart's shift"],
+          ["Lat/long and waypoint disagree", "A mistyped waypoint"],
+          ["No fix · interference", "DR from the last logged fix"]
+        ] } }
+      ]
+    }
+  ]
+}

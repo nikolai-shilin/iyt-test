@@ -1,0 +1,95 @@
+{
+  "topic": "nav",
+  "lead": "Before you sign, every screen has to show you something true. Check each instrument against something you can see, set it up for your week, and learn the radio while the technician is aboard.",
+  "sections": [
+    {
+      "id": "plotter",
+      "kicker": "Chartplotter",
+      "title": "A chart for every mile, a fix you have checked",
+      "refs": ["Check-in: chartplotter", "Check-in: chart coverage vs cruising area", "Check-in: charts and pilot book", "Check-in: GPS fix at the berth", "Chart datum and GPS — WGS84"],
+      "blocks": [
+        { "p": "Ask of the chart card: does it cover **the whole cruising ground** the contract allows, and how old is it? A base map without depths is not a chart. Paper chart and pilot book are the backup and hold the harbour detail: ask for current ones." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V50 H0 Z M118 50 V98 H130 V50 Z", "depths": [[200, 125, "9"], [80, 150, "12"]], "labels": [[124, 112, "Base pontoon", "middle"], [30, 34, "Town", "start"]], "boat": [240, 150, 0], "panel": ["No fix", "Last: Fri 18:10", "Off berth: 0.4 M"], "note": "Plotter screen at the berth, Sat 17:00" }, "cap": "Without satellites the plotter shows its last stored position." },
+        { "p": "Wait for the fix and see the boat on its berth. GPS positions are on the **WGS84** datum; an older paper chart on another datum prints the shift to apply." }
+      ]
+    },
+    {
+      "id": "setup",
+      "kicker": "Plotter set-up",
+      "title": "Make the plotter yours before you leave",
+      "refs": ["Plotter — units", "Check-in: plotter at night", "Check-in: plotter routes and waypoints", "Plotter: the track", "Check-in: MOB function", "Plotter — MOB key"],
+      "blocks": [
+        { "table": { "head": ["Setting", "What you want"], "rows": [
+          ["Units", "Nautical miles, knots and metres, as on the chart"],
+          ["Night palette, dimmer", "Found and tried in daylight"],
+          ["Routes, waypoints", "The last crew's cleared, your own built from the chart"],
+          ["Track", "Where you have been: your way back out in the dark"],
+          ["MOB key", "Drops a mark, shows bearing and distance back to it"]
+        ] } },
+        { "p": "Have the technician show how **MOB** marks and clears, then brief the crew. It is for one thing only: an anchorage is an ordinary waypoint, and on some sets MOB also sends an alert." }
+      ]
+    },
+    {
+      "id": "instruments",
+      "kicker": "Depth, speed, wind",
+      "title": "Know what each number is measured from",
+      "refs": ["Check-in: instrument units", "Check-in: depth sounder offset", "Depth sounder — shallow-water alarm", "Check-in: log and speed", "SOG vs speed through the water", "Passage planning — SOG", "Check-in: wind instrument", "Wind instrument — the masthead unit", "Instruments — the network", "Catamaran — two helms", "Check-in: defects on the form", "Check-in: radar and defects on the form"],
+      "blocks": [
+        { "p": "Compare the sounder with the harbour plan. A reading three times too big is in feet. With no offset it reads **below the transducer**, not the keel: with a draught of 2.1 m and the transducer 0.4 m down, the keel touches at a reading of 1.7 m. Set the shallow alarm a metre or more above that." },
+        { "fig": { "type": "panel", "gauges": [["SOG", "4.2", false], ["Log", "6.0", false], ["Depth", "42", false]], "lines": ["Through the water 6.0, over the ground 4.2", "The difference: 1.8 kn of current against you"] } },
+        { "p": "The **log** is a paddle wheel, speed through the water; **SOG** is GPS speed over the ground. The difference is current, and a log at zero under way is a fouled wheel. Plan arrivals by SOG: 24 miles at 4 knots is six hours." },
+        { "p": "A wild wind reading in a calm is often a halyard round the masthead unit. A number missing at one display but shown at another is the network, not the sensor. On a catamaran ask which readouts repeat at the second helm." },
+        { "rule": "A dead instrument goes on the form as unserviceable, so it is not charged to you. Weigh it against your plan: no depth, no anchoring; radar matters at night and in fog." }
+      ]
+    },
+    {
+      "id": "backup",
+      "kicker": "Compass, paper, log book",
+      "title": "What still works when the screen goes dark",
+      "refs": ["Check-in: compass and plotter heading", "Hand-bearing compass", "Check-in: tablet as backup", "Phone apps and their limits", "Ship's log", "Base briefing — weather and currents"],
+      "blocks": [
+        { "fig": { "type": "compass", "variation": 3, "course": 90, "courseLabel": "Compass", "note": "Plotter COG 098° T" }, "cap": "090° by compass plus 3°E variation is 093° true; the other 5° is deviation." },
+        { "p": "On the test run, with no current running, compare the **steering compass** with the plotter's course over the ground. What variation does not explain is deviation, often a phone by the binnacle. A hand-bearing compass has no deviation card: use it at the bow, away from iron." },
+        { "p": "A tablet is a backup only with offline charts and a 12 V lead. A phone app is a third source: it overheats, goes flat, and its depths may be unsurveyed. Keep the **log book** daily: times, positions, engine hours, weather, breakages. From the briefing take the local wind and the currents in channels." }
+      ]
+    },
+    {
+      "id": "pilot",
+      "kicker": "Autopilot and AIS",
+      "title": "Helpers that still need a lookout",
+      "refs": ["Check-in: autopilot", "Autopilot — not in close quarters", "Autopilot — wind mode", "Autopilot — compass calibration", "AIS — receiver or transponder", "AIS — CPA alarm and guard zone"],
+      "blocks": [
+        { "p": "See **Standby**, a course change and the alarm on the test run. The autopilot steers a heading, not round boats: in harbours and anchorages a person steers. In wind mode it holds the apparent wind angle, so it follows every shift: watch the course. If its heading disagrees with compass and plotter, the base calibrates it." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 50, "dist": 85, "hdg": 270, "label": "Ferry" }, "bearingLine": true, "note": "CPA alarm: it sounds while there is time to act" } },
+        { "p": "Ask whether the **AIS** only receives or is a transponder: a receiver shows the ferries to you, only a transponder shows you to them. For a night passage set a CPA alarm wide enough to act on and audible at the helm." }
+      ]
+    },
+    {
+      "id": "radio",
+      "kicker": "VHF and DSC",
+      "title": "Set the radio up and learn its keys",
+      "refs": ["VHF watch — channel 16", "VHF — watch on channel 16", "Radio check — working channel", "Radio check — antenna and range", "VHF — power output 1 W / 25 W", "VHF licence — operator and ship station", "Forecast sources — VHF weather broadcasts", "Check-in: handheld VHF", "VHF DSC — MMSI", "DSC — a distress alert received", "DSC — cancelling a false distress alert"],
+      "blocks": [
+        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["volume", "volume"], ["squelch", "squelch"], ["distress", "DISTRESS, covered"], ["power", "1 W / 25 W"], ["ptt", "press to talk"]] } },
+        { "p": "Under way you keep a watch on **channel 16**, with dual watch on the base's channel and the squelch just above the hiss; in harbour the set may go off. Make the radio check on a working channel, never on 16, with a station miles away: across the pontoon it says nothing about the antenna. Use 1 W in harbour, 25 W at sea and always in distress." },
+        { "p": "The certificated operator is in charge of the set; crew use it under supervision, and anyone may call in distress. Coast stations announce weather on 16 and read it on a working channel. The handheld, for dinghy and liferaft, needs its charger." },
+        { "p": "**DSC** needs the boat's MMSI programmed and the cover on the red button. When an alert comes in, listen on 16 and note the position: the coast station answers; you call only if nobody does and you can help." },
+        { "fig": { "type": "card", "title": "False DSC alert sent", "lines": ["Stop it on the set", "Then by voice on channel 16:", "ALL STATIONS × 3", "this is (name, call sign, MMSI)", "position", "CANCEL MY DISTRESS ALERT · OUT"], "tag": "Ch 16" } }
+      ]
+    },
+    {
+      "id": "lights",
+      "kicker": "Lights and horn",
+      "title": "Which switches go on, and when",
+      "refs": ["COLREGs Rules 23/25 — motor-sailing", "COLREGs Rule 25 — tricolour or sidelights", "COLREGs Rule 30 — at anchor", "COLREGs Rule 33 — sound signals"],
+      "blocks": [
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 70 }, { "c": "g", "x": 146, "y": 120 }, { "c": "r", "x": 174, "y": 120 }] }, "view": "60 20 200 150", "name": "Engine on", "note": "NAV + STEAMING" },
+          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 151, "y": 48 }, { "c": "r", "x": 169, "y": 48 }] }, "view": "60 20 200 150", "name": "Sail alone", "note": "TRICOLOUR, or NAV" },
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 48 }] }, "view": "60 20 200 150", "name": "At anchor", "note": "ANCHOR only" }
+        ] },
+        { "p": "With the engine driving you are a power-driven vessel, sails up or not. Under sail alone show the tricolour or the deck-level lights, never both. At anchor show the all-round white only: sidelights mean under way. Deck light off: it blinds the helm. A vessel of 12 m or more carries a whistle: the electric horn, with the aerosol can as the spare. Test both." }
+      ]
+    }
+  ]
+}

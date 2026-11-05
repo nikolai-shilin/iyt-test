@@ -1,0 +1,93 @@
+{
+  "topic": "deck",
+  "lead": "On deck you work with loaded lines, a moving boat and a hard quay. A winch, a fender and a well-led line do the heavy work, as long as your hands and feet stay out of their way.",
+  "sections": [
+    {
+      "id": "winches",
+      "kicker": "Winches",
+      "title": "Clockwise turns, tension on the tail",
+      "refs": ["Winches", "Riding turn"],
+      "blocks": [
+        { "p": "A winch lets you pull a sheet far harder than your arms can. The drum turns **clockwise** only, so the turns go on clockwise: one or two to pull in the slack by hand, three or four before you wind. The turns grip only while someone keeps the **tail** tight, so the tailer pulls steadily as the line comes off the drum. On a **self-tailing** winch the tail goes into the jaws on top after the turns, and you wind with both hands." },
+        { "tiles": [
+          { "fig": { "type": "rope", "kind": "winch", "labels": [[70, 86, "sheet"], [250, 90, "tail"]] }, "view": "20 40 280 130", "name": "Loaded", "note": "clockwise, the tail kept tight" },
+          { "fig": { "type": "rope", "kind": "winch", "labels": [[70, 86, "loaded"], [160, 160, "turns crossed"]] }, "view": "20 40 280 130", "name": "Riding turn", "note": "one turn trapped under another" }
+        ], "cols": 2 },
+        { "list": [
+          "To ease a loaded sheet, keep the turns on and let the tail out slowly, fingers clear of the drum.",
+          "Hold a line in your hand, never wrapped round it.",
+          "Take the handle out when you finish and put it in its pocket: left in, it catches sheets and shins, and it goes overboard."
+        ] },
+        { "p": "With a **riding turn** the sheet will neither come in nor ease. Stop winding, keep your hands away and call the skipper. The load comes off first: a spare line is tied to the sheet with a rolling hitch and wound in on another winch, and only then are the slack turns cleared." },
+        { "rule": "Fingers never go near a loaded drum." }
+      ]
+    },
+    {
+      "id": "fenders",
+      "kicker": "Fenders",
+      "title": "Hang them where the hull will touch",
+      "refs": ["Fenders"],
+      "blocks": [
+        { "p": "A fender protects only the spot it hangs over. Put the fenders out before you enter harbour, and set their height for the berth you are going to, not for the boat." },
+        { "table": { "head": ["Berth", "Fenders"], "rows": [
+          ["Low floating pontoon", "Low, close to the water, where the pontoon's edge meets the hull"],
+          ["Stern-to between yachts", "Both sides, at the widest part, level with the neighbours' fenders"],
+          ["At sea", "None: taken in and stowed once you are clear of the harbour"]
+        ] } },
+        { "fig": { "type": "rope", "kind": "rail", "labels": [[250, 84, "guardrail"], [160, 158, "down to the fender"]], "note": "Tied so that the height is quick to change" } },
+        { "p": "Keep one **loose fender** in your hand as the boat comes in: it goes wherever the hull is about to touch. Fenders left hanging at sea bang against the hull, and the waves tear them off." }
+      ]
+    },
+    {
+      "id": "alongside",
+      "kicker": "Coming alongside",
+      "title": "Step ashore, never jump",
+      "refs": ["Coming alongside"],
+      "blocks": [
+        { "p": "Before the berth, your line is made fast on its cleat, led outside the guardrail and coiled in your hand. Stand by the **shrouds**: the boat is widest there, closest to the pontoon, and you have something to hold. Wait until she is close and nearly stopped, then step down. A jump from a moving deck can end in the water between the hull and the pontoon." },
+        { "fig": { "type": "boat", "view": "plan", "parts": [["stbd-bow", "bow line"], ["abeam-stbd", "step off here"], ["stbd-quarter", "stern line"]], "note": "Starboard side-to: step off by the shrouds" } },
+        { "p": "A yacht weighs several tonnes and does not stop for a hand or a foot. Never put any part of yourself between the boat and the quay, and never fend off with your legs. If the hull is about to touch where no fender hangs, drop the loose fender into the gap." },
+        { "rule": "Into the gap goes a fender, never a hand or a foot." }
+      ]
+    },
+    {
+      "id": "lines",
+      "kicker": "Mooring lines",
+      "title": "Four lines, each stops one movement",
+      "refs": ["Mooring lines"],
+      "blocks": [
+        { "p": "Alongside, the **bow line** leads forward from the bow and the **stern line** aft from the stern. The two **springs** run diagonally along the boat: the bow spring leads aft from the bow cleat, the stern spring leads forward from the stern cleat. They stop her surging forward and back." },
+        { "fig": { "type": "lines", "quay": "PONTOON", "lines": [["bow", "bow line"], ["stern", "stern line"], ["bow-spring", "bow spring"], ["stern-spring", "stern spring"]], "note": "Lines that lead aft stop her moving forward" } },
+        { "p": "A line can only pull. To see which lines are working, ask which way the boat is trying to go. If wind from astern pushes her forward, the lines that lead aft take the strain: the stern line and the bow spring. Pushed back, it is the bow line and the stern spring." },
+        { "p": "A **slip line** lets you leave with nobody ashore. It runs from the boat round the bollard and back, with both ends made fast on board. To leave, let one end go and pull the line home." }
+      ]
+    },
+    {
+      "id": "med",
+      "kicker": "Med mooring",
+      "title": "Stern to the quay, bow held off",
+      "refs": ["Med mooring"],
+      "blocks": [
+        { "p": "In the Mediterranean yachts lie **stern-to**: the stern a step from the quay, neighbours close on both sides, and the bow held off by the anchor or by a **lazy line**. A lazy line is a heavy rope fixed to the seabed ahead of the berth, with a thin pick-up line leading to the quay." },
+        { "fig": { "type": "chart", "land": "M0 152 H320 V200 H0 Z", "track": "M160 98 L160 30 M155 130 L138 152 M165 130 L182 152", "boat": [160, 114, 0], "labels": [[160, 22, "lazy line, hauled taut"], [130, 144, "stern line", "end"], [190, 144, "stern line", "start"], [160, 180, "QUAY"], [40, 110, "wind →", "start"]], "note": "Crosswind: the windward stern line goes ashore first" } },
+        { "list": [
+          "Fenders on both sides before you go in.",
+          "Pass the **windward** stern line ashore first: it stops the stern blowing down onto the neighbour.",
+          "Pick up the lazy line at the quay and walk it forward to the bow cleat, clear of the propeller. Wear gloves: it is slimy and sharp with shells.",
+          "Haul it in hard until it is taut, then cleat it. It does the anchor's job: left slack, it lets the stern reach the quay."
+        ] }
+      ]
+    },
+    {
+      "id": "dinghy",
+      "kicker": "The tender",
+      "title": "The painter: short astern, untied last",
+      "refs": ["Dinghy"],
+      "blocks": [
+        { "p": "The tender's bow line is the **painter**. Towed on a long painter, the tender follows quietly until the yacht goes astern: then she runs over the slack line, and it can wrap round the propeller. Before any manoeuvre in harbour, shorten the painter right up or bring the tender alongside." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0, "label": " " }, "other": { "bearing": 180, "dist": 66, "hdg": 0, "scale": 0.4, "label": "tender" }, "note": "Going astern, the yacht runs over a slack painter" } },
+        { "p": "Getting in, the painter stays made fast until everyone is aboard and sitting down: it is all that holds the tender to the yacht. Step into the middle one at a time, keep low, and untie last." }
+      ]
+    }
+  ]
+}

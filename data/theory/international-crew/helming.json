@@ -1,0 +1,101 @@
+{
+  "topic": "helming",
+  "lead": "The helm turns the rudder and the rudder turns the boat, but only while water flows past it. Steer with small movements and say what you are about to do, and the crew can trust the deck under their feet.",
+  "sections": [
+    {
+      "id": "helm",
+      "kicker": "Tiller and wheel",
+      "title": "Which way to move the helm",
+      "refs": ["Helming"],
+      "blocks": [
+        { "p": "A **wheel** steers like a car: turn it clockwise, to starboard, and the bow goes to starboard. A **tiller** works the other way: push it to starboard and the bow swings to port. Move a tiller away from where you want the bow to go." },
+        { "table": { "head": ["You want", "Wheel", "Tiller"], "rows": [
+          ["Bow to port", "To port, anticlockwise", "To starboard"],
+          ["Bow to starboard", "To starboard, clockwise", "To port"],
+          ["To bear away", "Away from the wind", "To windward"],
+          ["To luff up", "Towards the wind", "To leeward"]
+        ] } },
+        { "p": "To **bear away** is to turn the bow away from the wind; to **luff up** is to turn it towards the wind. Sitting on the windward side with a tiller, you pull it towards you to bear away and push it away from you to luff up." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 60, "note": "Tiller to windward: the bow bears away" } },
+        { "p": "**Head to wind** means the bow points straight into the wind, as when the mainsail is hoisted under engine. You are there when the wind arrow at the masthead points dead ahead." }
+      ]
+    },
+    {
+      "id": "course",
+      "kicker": "Steering a course",
+      "title": "Small corrections, made early",
+      "refs": ["Steering a course"],
+      "blocks": [
+        { "p": "Compass headings grow **clockwise**. If the skipper gives you 140° and the compass shows 130°, turn to starboard until it reads 140°. To bring the number down, turn to port." },
+        { "fig": { "type": "chart", "land": "M320 0 V200 H262 Q270 150 244 118 Q226 100 244 82 Q270 50 262 0 Z", "track": "M72 100 L222 100", "boat": [56, 100, 90], "marks": [[234, 100, "k", "headland"]], "labels": [[146, 90, "090°"]], "note": "Steer for the landmark, glance at the compass" } },
+        { "p": "A compass card swings with every wave and is tiring to stare at. Find something fixed that lies on your course, a headland or a tower, steer for it, and check the compass now and then." },
+        { "p": "A yacht answers the helm slowly. A beginner waits for the turn, adds more helm, and then swings past the course the other way. Give a small correction as soon as the bow starts to wander, bring the helm back, and wait for her to answer." },
+        { "rule": "Small, early, then wait." }
+      ]
+    },
+    {
+      "id": "wind",
+      "kicker": "Steering by the wind",
+      "title": "Close-hauled and on a run",
+      "refs": ["Steering by the wind", "Steering downwind"],
+      "blocks": [
+        { "p": "No yacht sails straight into the wind: about 45° either side of it is the **no-go zone**. Close-hauled, you steer along its edge. To find the edge, head up slowly until the luff, the front edge of the genoa, starts to lift, then bear away a touch until the sail fills." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 45, "nogo": true }, "name": "Close-hauled", "note": "along the edge of the no-go zone" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 170 }, "name": "Run", "note": "a turn towards the boom gybes her" }
+        ], "cols": 2 },
+        { "p": "**Tell-tales** are the strands of wool on each side of the genoa. Close-hauled with the sheets cleated, they tell the helm what to do." },
+        { "table": { "head": ["Tell-tales", "You are", "Helm"], "rows": [
+          ["Windward one lifts", "Too close to the wind", "Bear away a little"],
+          ["Leeward one lifts", "Too far off the wind", "Luff up a little"],
+          ["Both stream aft", "On the wind", "Hold her there"]
+        ] } },
+        { "p": "On a **run** the wind is astern and the boom is right out on one side. If the stern swings through the wind, the boom slams across: an **accidental gybe**. It happens when the bow turns towards the side the boom is on. When a wave pushes the stern, correct at once and do not let the bow go that way." }
+      ]
+    },
+    {
+      "id": "calls",
+      "kicker": "Helm's calls",
+      "title": "Warn, wait for the answer, then turn",
+      "refs": ["Helm's calls"],
+      "blocks": [
+        { "p": "The helm starts every tack and gybe, and the crew must know it is coming: sheets have to be handled, and the boom crosses the cockpit. Each turn has three steps." },
+        { "table": { "head": ["Step", "Tack", "Gybe"], "rows": [
+          ["You warn", "\"Ready about!\"", "\"Ready to gybe!\""],
+          ["Every crew member answers", "\"Ready!\"", "\"Ready!\""],
+          ["You call as you turn", "\"Lee-oh!\"", "\"Gybe-oh!\""],
+          ["Through the wind goes", "The bow", "The stern"]
+        ] } },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 96, "y": 126, "hdg": 45, "label": "\"Ready about!\"", "you": true }, { "x": 144, "y": 38, "hdg": 315, "label": "new tack" }], "track": "M96 126 L160 76 Q172 64 146 40", "note": "\"Lee-oh!\" as the bow turns into the wind" } },
+        { "p": "If one person has not answered, you wait. Someone still putting turns on a winch, or standing in the way of the boom, is not ready, and calling louder does not make them ready." },
+        { "rule": "No \"Ready\" from everyone, no turn." }
+      ]
+    },
+    {
+      "id": "power",
+      "kicker": "Under power",
+      "title": "No flow over the rudder, no steering",
+      "refs": ["Under power", "Helming"],
+      "blocks": [
+        { "p": "The rudder works only when water flows past it. Drifting with no way on, you can spin the wheel and nothing happens. So in a marina keep the speed **slow, but enough to steer**: no faster than you would be happy to hit something at, no slower than the rudder needs." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["rudder", "rudder"], ["keel", "keel"]] }, "cap": "The propeller sits just ahead of the rudder, so its wash reaches the blade at once." },
+        { "list": [
+          "Too slow and the bow will not answer: give a short burst ahead. The propeller throws water straight onto the rudder, and the bow turns before the boat gathers speed.",
+          "Going astern with a wheel, turn it the way you want the stern to go.",
+          "Putting the engine astern from a standstill, expect the stern to kick sideways first. This is **prop walk**. Which side depends on the boat: ask the skipper."
+        ] }
+      ]
+    },
+    {
+      "id": "handover",
+      "kicker": "Handing over",
+      "title": "Steady for the crew, clear for the next helm",
+      "refs": ["Handing over", "Helming"],
+      "blocks": [
+        { "p": "Crew working at the mast or on the foredeck have no hand to spare. Hold a steady course, avoid sudden turns and heel, and warn them before any change." },
+        { "fig": { "type": "card", "title": "Handing over the helm", "lines": ["\"Course 220°, close reach.\"", "\"Wind W 18 knots, rising.\"", "\"Ferry crossing ahead, 2 miles off.\"", "\"I have the helm.\""] } },
+        { "p": "When someone takes over, tell them what they cannot see at a glance: the **course**, the **wind** and how the sails are set, and any **traffic** to watch. Let go of the helm only when they say they have it." }
+      ]
+    }
+  ]
+}

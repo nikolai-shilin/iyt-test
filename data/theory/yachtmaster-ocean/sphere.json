@@ -1,0 +1,103 @@
+{
+  "topic": "sphere",
+  "lead": "Celestial navigation rests on one picture: the sky as a sphere round you, each body standing over one spot on the Earth. From it comes the triangle every sight solves.",
+  "sections": [
+    {
+      "id": "sphere",
+      "kicker": "The celestial sphere",
+      "title": "The sky as a sphere round you",
+      "refs": ["The Earth — latitude and longitude", "Celestial sphere — altitude of the pole", "Celestial sphere — zenith and nadir", "Celestial sphere — the observer's meridian", "Celestial sphere — celestial and visible horizon"],
+      "blocks": [
+        {"p": "**Latitude** is the arc of your meridian from the equator to you; 1′ of it is one mile. **Longitude** is the arc of the equator from Greenwich to your meridian, east or west up to 180°."},
+        {"p": "Your **zenith** Z is the point overhead, the nadir the point underfoot. The **celestial horizon** is the great circle 90° from the zenith, through the Earth's centre; a sextant altitude is corrected to it first. Your **meridian** is the great circle through the celestial poles and your zenith."},
+        {"fig": {"type": "sphere", "parts": [["Z", "Z zenith"], ["P", "P pole"], ["observer", "you"], ["horizon", "horizon"], ["equator", "celestial equator"]]}},
+        {"p": "The **elevated pole** P is the one above your horizon, as high as your latitude; on the equator both poles lie on the horizon."},
+        {"fig": {"type": "chart", "track": "M85 100 A75 75 0 1 1 235 100 A75 75 0 1 1 85 100 M85 100 H235 M160 100 L95 62.5 M160 100 V25", "marks": [[160, 25, "k", "Z"], [95, 62.5, "k", "P"]], "labels": [[78, 104, "N", "end"], [242, 104, "S", "start"], [160, 116, "horizon"], [121, 93, "30°"]], "note": "Meridian view · latitude 30°N · pole 30° above north"}}
+      ]
+    },
+    {
+      "id": "gp",
+      "kicker": "GP and hour angles",
+      "title": "The spot under a body",
+      "refs": ["Geographical position", "Geographical position — stars", "Geographical position — the date line", "Geographical position — errors", "Celestial sphere — hour angles", "The Sun's motion — 15° an hour"],
+      "blocks": [
+        {"p": "The **geographical position** (GP) is the spot with the body in its zenith. Its latitude is the **declination** (Dec); its longitude comes from the **Greenwich hour angle** (GHA), measured westward from Greenwich through 360°: GHA west up to 180°, beyond that 360° − GHA east."},
+        {"p": "The Sun's GP runs west at 15° an hour: a watch 4 seconds out moves it, and your fix, 1′ of longitude. A wrong Dec moves it north or south."},
+        {"fig": {"type": "chart", "track": "M35 104 A70 70 0 1 1 175 104 A70 70 0 1 1 35 104 M105 104 V34 M105 104 L165.6 69 M105 104 L173.9 116.2", "marks": [[105, 34, "k", "Greenwich"], [165.6, 69, "r", "you"], [173.9, 116.2, "y", "GP"]], "labels": [[96, 120, "P"]], "panel": ["GHA 100°", "Long 60°W", "LHA 40°"], "note": "From above the north pole · west is clockwise"}},
+        {"p": "GHA and Dec are the same for every navigator. The **local hour angle** (LHA), measured westward from your own meridian, is yours alone: under 180° the body is west of you, past your meridian; over 180° it is east, still climbing."},
+        {"rule": "LHA = GHA + east longitude, or − west longitude (± 360°)."},
+        {"fig": {"type": "card", "title": "LHA across 360°", "lines": ["GHA 300° · long 100°E", "LHA = 400° − 360° = 40° (west)", "GHA 20° · long 60°W", "LHA = 20° + 360° − 60° = 320° (east)"]}}
+      ]
+    },
+    {
+      "id": "aries",
+      "kicker": "Aries and SHA",
+      "title": "One point for every star",
+      "refs": ["First point of Aries — SHA", "First point of Aries and SHA", "First point of Aries — the sidereal day", "The Moon's motion"],
+      "blocks": [
+        {"p": "The stars keep their places, so the almanac tabulates one point, the **First Point of Aries**, hour by hour and gives each star a fixed **sidereal hour angle** (SHA), measured westward from Aries. For a planet, GHA minus GHA Aries gives its SHA."},
+        {"rule": "GHA star = GHA Aries + SHA, less 360° if over."},
+        {"fig": {"type": "card", "title": "A star's GHA and LHA", "lines": ["GHA Aries 200° + SHA 250° = 450°", "GHA star = 450° − 360° = 90°", "Long 30°W: LHA = 90° − 30° = 60°", "The star is west of your meridian"]}},
+        {"p": "Against the stars the Earth turns in 23 h 56 min: a star crosses your meridian about 4 minutes earlier each night. The Moon slips east among the stars about 13° a day and crosses some 50 minutes later."}
+      ]
+    },
+    {
+      "id": "declination",
+      "kicker": "The Sun's year",
+      "title": "Why the Sun's declination swings",
+      "refs": ["Declination through the year", "Declination through the year — the ecliptic", "The ecliptic and the seasons", "The Sun's declination through the year", "Sun in the zenith"],
+      "blocks": [
+        {"p": "A star's Dec hardly changes. The Sun's does: its yearly path, the **ecliptic**, is tilted 23°26′ to the celestial equator. That tilt, not the distance to the Sun, makes the seasons."},
+        { "table": { "head": ["About", "Sun's Dec", "Event"], "rows": [
+          ["20 March, 23 September", "0°", "Equinoxes"],
+          ["21 June", "N23°26′", "Northern solstice"],
+          ["21 December", "S23°26′", "Southern solstice"]
+        ] } },
+        {"p": "Near the equinoxes the Dec changes fastest, about 24′ a day: the wrong day's figure costs miles. The Sun passes through your zenith only between the tropics, when its Dec equals your latitude; its bearing then swings from east to west within minutes of noon."}
+      ]
+    },
+    {
+      "id": "pzx",
+      "kicker": "The PZX triangle",
+      "title": "The triangle behind every sight",
+      "refs": ["PZX triangle", "PZX triangle — southern hemisphere", "PZX triangle — the angle at P", "PZX triangle — solving for Hc", "PZX triangle — azimuth", "PZX triangle — errors"],
+      "blocks": [
+        {"p": "Join the elevated pole P, your zenith Z and the body X by great circles. Knowing PZ, PX and the angle between them, you get ZX, hence the calculated altitude Hc, and the angle at Z, the azimuth. The angle at X is never used."},
+        {"fig": {"type": "sphere", "parts": [["Z", "Z"], ["P", "P"], ["X", "X"], ["pz", "PZ = 90° − lat"], ["zx", "ZX = 90° − Hc"], ["px", "PX"], ["horizon", "horizon"]]}},
+        {"p": "PX is 90° − Dec, or 90° + Dec when Dec and latitude have contrary names. South of the equator P is the south celestial pole. The azimuth angle Z is reckoned from the elevated pole, east or west, then turned into true azimuth Zn."},
+        {"fig": {"type": "card", "title": "Setting up the triangle", "lines": ["Lat 35°S · Dec N19° · LHA 330°", "PZ = 90° − 35° = 55°", "PX = 90° + 19° = 109° (contrary names)", "Angle P = 360° − 330° = 30°, body east", "Z from the tables: S 147° E", "Zn = 180° − 147° = 033°"]}},
+        { "table": { "head": ["Latitude", "Body east", "Body west"], "rows": [
+          ["North", "Zn = Z", "Zn = 360° − Z"],
+          ["South", "Zn = 180° − Z", "Zn = 180° + Z"]
+        ] } },
+        {"p": "An absurd intercept usually means Dec named north for south."}
+      ]
+    },
+    {
+      "id": "circle",
+      "kicker": "Circle of equal altitude",
+      "title": "One sight, one circle",
+      "refs": ["Circle of equal altitude", "Circle of equal altitude — zenith distance", "Circle of equal altitude — position line", "Circle of equal altitude — high-altitude sights", "Circle of equal altitude — the assumed position", "Circle of equal altitude — errors"],
+      "blocks": [
+        {"p": "The **zenith distance**, 90° − Ho, is also your distance from the GP, 60 miles to the degree. Everyone measuring that altitude at that instant is on one circle round the GP: Ho 60° puts you 1800 miles from it."},
+        {"fig": {"type": "chart", "track": "M40 100 A70 70 0 1 1 180 100 A70 70 0 1 1 40 100 M140 100 A70 70 0 1 1 280 100 A70 70 0 1 1 140 100", "marks": [[110, 100, "y", "GP 1"], [210, 100, "y", "GP 2"], [160, 51, "k", "fix"], [160, 149, "k", "B"], [186, 36, "r", "DR"]], "note": "Two sights, two circles · you are where they cross near the DR"}},
+        {"p": "The circle is so large that near you its arc is a straight **position line**, at right angles to the azimuth. Compare Ho with Hc for an assumed position (AP): if Ho is greater you are nearer the GP, and the line moves towards the body by the difference in miles, whichever AP you chose. A body due east or west gives a north–south line: longitude."},
+        {"fig": {"type": "chart", "marks": [[130, 80, "k", "AP"]], "track": "M130 80 L200 150 M126.5 140.1 L190.1 76.5", "labels": [[206, 166, "Sun Zn 135°", "start"], [196, 72, "line 045°–225°", "start"], [30, 30, "N ↑"]], "note": "Plotting sheet, north up · intercept towards"}},
+        {"p": "For a very high Sun, above about 87°, you draw the circle round the GP itself. An altitude 1′ too high puts the line a mile too far towards the body."}
+      ]
+    },
+    {
+      "id": "meridian",
+      "kicker": "Meridian passage, rising, setting",
+      "title": "The daily path of a body",
+      "refs": ["Meridian passage — maximum altitude", "Meridian altitude — why it gives latitude", "Circumpolar bodies", "Circumpolar bodies — upper and lower transit", "Rising and setting bodies"],
+      "blocks": [
+        {"p": "A body is highest as it crosses your meridian, its GP then nearest to you. P, Z and X lie on one arc: the zenith distance is the difference between latitude and Dec, or their sum for contrary names, and the body bears north if its GP is north of you. So a noon sight gives latitude without tables."},
+        {"fig": {"type": "card", "title": "Meridian altitude", "lines": ["Lat 40°N · Dec S10°: ZX = 40° + 10° = 50°", "Altitude 40°, bearing south", "Lat 20°S · Dec S23°: ZX = 23° − 20° = 3°", "Altitude 87°, bearing south"]}},
+        {"p": "A body whose Dec has the name of your latitude and exceeds 90° − latitude is **circumpolar**: it never sets, and at lower transit stands latitude + Dec − 90° high. With that Dec and the contrary name it never rises. On the equator everything rises and sets."},
+        {"fig": {"type": "chart", "track": "M85 100 A75 75 0 1 1 235 100 A75 75 0 1 1 85 100 M85 100 H235 M160 100 L102.5 51.8 M160 100 L208.2 42.6", "marks": [[160, 25, "k", "Z"], [102.5, 51.8, "k"], [134.3, 29.5, "y"], [86.1, 87, "y"], [208.2, 42.6, "k"]], "labels": [[78, 104, "N", "end"], [242, 104, "S", "start"], [160, 116, "horizon"], [94, 50, "P 40°", "end"], [126, 24, "upper 70°", "end"], [77, 84, "lower 10°", "end"], [216, 40, "equator", "start"]], "note": "Latitude 40°N · star Dec N60° · it never sets"}},
+        {"p": "A body with Dec 0° rises due east; with a north Dec, north of east in either hemisphere, staying up over 12 hours in north latitude."}
+      ]
+    }
+  ]
+}

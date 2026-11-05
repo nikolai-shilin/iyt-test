@@ -373,3 +373,61 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .flq.mine .card-title { display: block; -webkit-line-clamp: unset; overflow: visible; }
 .app .flq.mine .n { max-width: none; }
 .app .flq.mine:active { transform: none; }
+
+/* ---------- theory: the tab's list of topics and a topic's article (docs/theory.md) ---------- */
+/* a row of chips that scrolls sideways to the screen's edges: the levels on the tab, the sections in an article */
+.app .th-toc { display: flex; gap: 8px; overflow-x: auto; margin: 0 -24px; padding: 0 24px; scrollbar-width: none; position: relative; }
+.app .th-toc::-webkit-scrollbar { display: none; }
+.app .th-toc .chip { flex: none; cursor: pointer; }
+.app .th-row .n { display: flex; align-items: center; color: var(--muted); }
+.app .th-row.off { opacity: .5; }
+.app .th-read { font: 700 12px 'Carlito', Arial, sans-serif; text-transform: uppercase; letter-spacing: .02em; color: var(--accent); }
+.app .th-sec { display: flex; flex-direction: column; gap: 12px; padding-top: 6px; }
+.app .th-h { font: 300 25px/1.1 'Merriweather', Georgia, serif; letter-spacing: -.02em; margin: 0; color: var(--ink); text-wrap: balance; }
+.app .th-p { font: 400 15.5px/1.55 'Merriweather', Georgia, serif; margin: 0; color: var(--ink); }
+.app .th-lead { color: var(--muted); }
+.app .th-p b, .app .th-list b, .app .th-rule b, .app .th-table b { font-weight: 700; }
+.app .th-list { margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font: 400 15.5px/1.5 'Merriweather', Georgia, serif; color: var(--ink); }
+.app .th-cap { font: 400 13px/1.3 'Carlito', Arial, sans-serif; color: var(--muted); text-align: center; margin: -4px 0 0; }
+.app .th-rule { padding: 15px 18px; display: flex; flex-direction: column; gap: 5px; }
+.app .th-rule .kicker { color: var(--accent); }
+/* small figures side by side, each with its name: things to tell apart */
+.app .th-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 8px; }
+.app .th-tiles.c2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; }
+.app .th-tiles.c3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.app .th-tile { display: flex; flex-direction: column; gap: 5px; text-align: center; min-width: 0; }
+.app .th-tile .fig { aspect-ratio: auto; min-height: 0; max-height: none; height: 104px; padding: 8px; border-radius: 18px; }
+.app .th-tiles.c2 .fig { height: 132px; }
+.app .th-tile b { font: 700 13px/1.15 'Carlito', Arial, sans-serif; color: var(--ink); overflow-wrap: anywhere; }
+.app .th-tile span { font: 400 12px/1.2 'Carlito', Arial, sans-serif; color: var(--muted); }
+.app .th-table { width: 100%; border-collapse: collapse; font: 400 14px/1.3 'Carlito', Arial, sans-serif; color: var(--ink); }
+.app .th-table th { text-align: left; font: 700 12px 'Carlito', Arial, sans-serif; text-transform: uppercase; letter-spacing: .02em; color: var(--muted); padding: 0 12px 8px 0; }
+.app .th-table td { padding: 9px 12px 9px 0; border-top: 1px solid var(--line); vertical-align: top; hyphens: auto; -webkit-hyphens: auto; } /* a long word in a narrow column breaks with a hyphen, in the page's language */
+.app .th-table td:first-child { font-weight: 700; }
+.app .th-table th:last-child, .app .th-table td:last-child { padding-right: 0; }
+.app .th-nextprev { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.app .th-near { padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; cursor: pointer; }
+.app .th-near:last-child { text-align: right; }
+.app .th-near:active { transform: scale(.98); }
+.app .th-end { display: block; height: 1px; margin-top: -22px; }
+.app .ref-go { cursor: pointer; color: var(--accent); gap: 6px; }
+
+/* a section's flag (report a mistake) and the comment box of its sheet */
+.app .th-flag { flex: none; width: 40px; height: 40px; margin: -10px -10px -10px 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--muted); cursor: pointer; }
+.app .th-flag:active { transform: scale(.92); }
+.app .th-flag.on { color: var(--danger); }
+.app .th-flag.on svg { fill: currentColor; }
+.app .th-foot { display: flex; align-items: center; gap: 8px; }
+.app .th-foot svg { flex: none; }
+.app .th-note { width: 100%; box-sizing: border-box; min-height: 124px; padding: 14px 16px; border-radius: 20px; border: 2px solid var(--tag-line); background: var(--bg); color: var(--ink); font: 400 16px/1.45 'Merriweather', Georgia, serif; resize: none; outline: none; display: block; }
+.app .th-note:focus { border-color: var(--ink); }
+.app .th-note::placeholder { color: var(--faint); }
+.app .pill.off { opacity: .4; pointer-events: none; }
+/* "Where to read" on a result: the rows of the "What next" band, as links */
+.app .read-band .r { grid-template-columns: 28px minmax(0, 1fr) 16px; align-items: center; text-align: left; cursor: pointer; }
+.app .read-band .r > svg { color: var(--muted); }
+.app .read-band .r:active { transform: scale(.98); }
+/* admins: what students wrote about the articles */
+.app .anotes { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.app .anote { display: flex; flex-direction: column; gap: 4px; padding: 13px 0; border-bottom: 1px solid var(--line); text-align: left; cursor: pointer; }
+.app .anote .body-s { overflow-wrap: anywhere; }

@@ -1,0 +1,80 @@
+{
+  "topic": "boat",
+  "lead": "On a boat everything has its own name, and the skipper's orders are made of those names. Learn where things are, which side the wind is on and what the main parts are called, and you will understand an order the first time you hear it.",
+  "sections": [
+    {
+      "id": "directions",
+      "kicker": "Directions on board",
+      "title": "Left and right belong to the boat",
+      "refs": ["Boat terms"],
+      "blocks": [
+        { "p": "**Port** is the left side of the boat and **starboard** the right, as seen by someone facing the bow. They do not change when you turn round: sitting in the cockpit facing aft, you have the port side on your right. The **bow** is the front and the **stern** the back; **forward** means towards the bow, **aft** towards the stern." },
+        { "fig": { "type": "boat", "view": "plan", "parts": [["ahead", "ahead"], ["astern", "astern"], ["port", "PORT"], ["starboard", "STARBOARD"], ["abeam-port", "abeam"], ["abeam-stbd", "abeam"], ["port-bow", "port bow"], ["stbd-bow", "starboard bow"], ["port-quarter", "port quarter"], ["stbd-quarter", "starboard quarter"]], "note": "Named from the boat, facing forward" } },
+        { "p": "The same words say where something is around you. A boat level with you, at right angles to your own, is **abeam**. Between abeam and astern lies the **quarter**, between abeam and ahead the bow. So you report \"motor yacht abeam to starboard\" or \"wind over the port quarter\"." },
+        { "rule": "Port and starboard are named facing forward, wherever you are looking." }
+      ]
+    },
+    {
+      "id": "wind",
+      "kicker": "Windward and leeward",
+      "title": "Which side the wind is on",
+      "refs": ["Boat terms"],
+      "blocks": [
+        { "p": "The **windward** side is the one the wind comes from, the **leeward** side the one it blows towards. The wind pushes the boom away from it, so the boom always lies to leeward: see it out over the starboard side and you know that port is windward." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0, "sail": true, "boom": -14 }, "other": { "dist": 0 }, "wind": 90, "note": "Wind from starboard: the boom is out to port" } },
+        { "p": "The crew sits to windward, to balance the heel. Whatever goes over the side, a bucket of washing-up water included, goes to leeward, or the wind brings it back aboard." },
+        { "p": "**In the lee** of something means sheltered by it. With a north wind the lee of an island is its south side: flat water for the night." },
+        { "fig": { "type": "bay", "wind": 0, "land": "M110 85 C 125 60 195 58 215 82 C 235 108 205 130 165 128 C 125 126 98 110 110 85 Z", "labels": [[162, 40, "windward side: rough"], [162, 160, "in the lee: calm"]], "note": "Wind N 20 kn, sea from the north" } }
+      ]
+    },
+    {
+      "id": "hull",
+      "kicker": "Hull and cabin",
+      "title": "From the keel to the companionway",
+      "refs": ["Parts of the boat", "Boat terms"],
+      "blocks": [
+        { "fig": { "type": "boat", "view": "side", "parts": [["bow", "bow"], ["stern", "stern"], ["hull", "hull"], ["keel", "keel"], ["rudder", "rudder"], ["waterline", "waterline"]] } },
+        { "p": "The **keel** is the heavy fin under the hull that keeps the boat upright. It is her deepest part, so it is the first to touch the bottom. The **rudder** is the steering blade right aft, just behind the propeller." },
+        { "table": { "head": ["Word", "What it is"], "rows": [
+          ["Cockpit", "The open well aft, where you steer and work the sheets"],
+          ["Companionway", "The opening and steps from the cockpit down into the cabin"],
+          ["Washboards", "Boards that slot into the companionway to keep the sea out"],
+          ["Saloon", "The main cabin"],
+          ["Galley", "The kitchen"],
+          ["Heads", "The toilet"],
+          ["Bilge", "The lowest space inside the hull, under the floorboards"]
+        ] } },
+        { "p": "Water that gets inside collects in the **bilge**, so that is where you look when the skipper asks you to check it. When waves start to slop into the cockpit, the **washboards** go in." }
+      ]
+    },
+    {
+      "id": "rig",
+      "kicker": "Mast and rigging",
+      "title": "What holds the mast up",
+      "refs": ["Rigging"],
+      "blocks": [
+        { "fig": { "type": "boat", "view": "side", "parts": [["mast", "mast"], ["boom", "boom"], ["mainsail", "mainsail"], ["jib", "jib"], ["forestay", "forestay"], ["backstay", "backstay"]] } },
+        { "p": "Steel wires hold the mast up. The **forestay** runs from the masthead to the bow, the **backstay** to the stern, and the **shrouds** go down to the deck on each side, held away from the mast by the **spreaders**. A roller-furling genoa rolls up round the forestay." },
+        { "p": "Under sail the windward shroud carries the load. After a tack the other one takes over, so a missing split pin or a broken strand on the slack side matters just as much: tell the skipper before the boat tacks." },
+        { "p": "Flags have their places too. The boat's own ensign flies at the stern, and the **courtesy flag** of the country you are visiting is hoisted under the starboard spreader." }
+      ]
+    },
+    {
+      "id": "size",
+      "kicker": "Boat dimensions",
+      "title": "Four numbers to know",
+      "refs": ["Boat dimensions"],
+      "blocks": [
+        { "fig": { "type": "boat", "view": "side", "parts": [["draft", "draft"], ["freeboard", "freeboard"], ["waterline", "waterline"]] } },
+        { "table": { "head": ["Number", "What it is", "When you need it"], "rows": [
+          ["LOA", "Length overall, bow to stern", "Booking a berth"],
+          ["Beam", "The widest point of the hull", "Fitting between two boats"],
+          ["Draft", "From the waterline down to the bottom of the keel", "Shallow water"],
+          ["Freeboard", "From the water up to the deck", "Climbing aboard: it is lowest at the stern platform"]
+        ] } },
+        { "p": "The depth the boat needs is her draft plus a margin. If the depth sounder shows the depth below the waterline, take the draft off to find what is left under the keel. Ask the skipper how the sounder is set: some show the depth under the keel directly." },
+        { "fig": { "type": "card", "title": "Water under the keel", "lines": ["Sounder: 2.6 m below the waterline", "Draft: 2.1 m", "2.6 − 2.1 = 0.5 m under the keel"] } }
+      ]
+    }
+  ]
+}

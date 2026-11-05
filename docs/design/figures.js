@@ -10,7 +10,11 @@ const NS = (w = 320, h = 200, extra = '', y0 = 0) => `<svg viewBox="0 ${y0} ${w}
 const RAD = Math.PI / 180;
 const pol = (cx, cy, r, deg) => [cx + r * Math.sin(deg * RAD), cy - r * Math.cos(deg * RAD)];
 const txt = (x, y, s, o = {}) => `<text x="${x}" y="${y}" font-size="${o.s || 11}" font-weight="${o.w || 700}" fill="${o.f || 'var(--muted)'}" text-anchor="${o.a || 'middle'}" ${o.extra || ''}>${s}</text>`;
-const COL = { r: '#e0251b', g: '#1aa34a', w: '#ffffff', y: '#ffa800', k: 'var(--ink)' };
+// The colours of real things (marks, lights, shapes, flags) are fixed: black is black in the night theme too.
+const COL = { r: '#e0251b', g: '#1aa34a', w: '#ffffff', y: '#ffa800', k: '#000000' };
+// Figures of things whose colours carry the meaning are drawn as seen by day in either theme: their box gets the
+// class "day" (flows.css), which sets the day tokens for everything inside, as "night" does for the lights.
+const FIG_DAY = new Set(['buoy', 'dayshape', 'flag', 'radio']);
 
 /* boat silhouette, top view, pointing up (north) at 0,0; length ~ 44 */
 function boat(x, y, hdg, o = {}) {
@@ -278,8 +282,228 @@ FIG.rope = f => {
   return s + '</svg>';
 };
 
+/* ---------- boat: a sloop with its parts named — in profile ('side'), from above ('plan'), or her mainsail ('sail') ----------
+   { type: 'boat', view: 'side' | 'plan' | 'sail', parts: [[key, text], …], note }
+   Each part has its place (BOAT_PARTS); the text is the caller's, so a translation gives its own words. A key not in
+   the view is skipped. In 'side', draft and freeboard add their dimension arrows; in 'sail', reef adds the reef line. */
+const BOAT_PARTS = { // key: [x, y of the part, x, y of the label, text-anchor, colour]; a part with no label place is named on itself
+  side: {
+    mast: [160, 20, 160, 12, 'middle'], mainsail: [135, 95], jib: [193, 99],
+    forestay: [203, 74, 222, 60, 'start'], backstay: [114, 76, 96, 56, 'end'], boom: [112, 105.6, 72, 92, 'end'],
+    pushpit: [75, 114, 60, 112, 'end'], stern: [76, 128, 62, 138, 'end'], rudder: [95, 164, 80, 178, 'end'], keel: [150, 174, 136, 190, 'end'],
+    pulpit: [238, 109, 250, 100, 'start'], bow: [238, 119, 252, 120, 'start'], freeboard: [214, 132, 252, 138, 'start'], hull: [206, 151, 246, 174, 'start'],
+    draft: [196, 166, 203, 180, 'start'], waterline: [312, 158, 312, 158, 'end'],
+  },
+  plan: {
+    ahead: [160, 38, 160, 18, 'middle'], astern: [160, 152, 160, 180, 'middle'],
+    'port-bow': [146, 58, 114, 32, 'end'], 'stbd-bow': [174, 58, 206, 32, 'start'], 'port-quarter': [146, 140, 114, 176, 'end'], 'stbd-quarter': [174, 140, 206, 176, 'start'],
+    port: [134, 100, 88, 94, 'end', COL.r], starboard: [186, 100, 232, 94, 'start', COL.g], 'abeam-port': [134, 100, 88, 110, 'end'], 'abeam-stbd': [186, 100, 232, 110, 'start'],
+  },
+  sail: {
+    head: [114, 25, 126, 16, 'start'], luff: [104, 96, null, null, 'end'], mast: [104, 44, null, null, 'end'], tack: [114, 158, 102, 178, 'end'],
+    foot: [176, 178], clew: [240, 161, 252, 148, 'start'], boom: [236, 163, 252, 172, 'start'], leech: [202, 86, null, null, 'start'],
+    batten: [160, 61, 172, 48, 'start'], reef: [166, 122],
+  },
+};
+FIG.boat = f => {
+  const v = BOAT_PARTS[f.view] ? f.view : 'side', has = (k) => (f.parts || []).some((p) => p[0] === k);
+  const ink = 'stroke="var(--ink)" stroke-linecap="round" stroke-linejoin="round"';
+  let s = NS();
+  if (v === 'side') {
+    s += `<path d="M8 146c13-6 26-6 39 0s26 6 39 0 26-6 39 0 26 6 39 0 26-6 39 0 26 6 39 0 26-6 39 0 26 6 39 0" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round"/>`;
+    s += `<path d="M144 154 L172 154 L168 182 L150 182 Z M92 149 L102 150 L100 174 L94 174 Z" fill="var(--ink)"/>`; // keel, rudder
+    s += `<path d="M74 124 L238 118 L226 146 Q156 164 86 146 Z" fill="var(--bg)" ${ink} stroke-width="2"/>`;
+    s += `<path d="M118 122.4 L126 113 L178 112 L188 119.8" fill="var(--bg)" ${ink} stroke-width="2"/>`; // coachroof
+    s += `<path d="M74 124 V113 H86 V123.5 M238 118 L240 108 L226 108.5 V118.4" fill="none" ${ink} stroke-width="1.5"/>`; // pushpit, pulpit
+    s += `<path d="M160 20 L238 118 M160 20 L76 123" fill="none" ${ink} stroke-width="1.5"/>`; // forestay, backstay
+    s += `<path d="M158.5 24 V102 L100 104 Z M167.5 30 L233 113 L170 106 Z" fill="var(--bg)" ${ink} stroke-width="1.5"/>`; // mainsail, jib
+    s += `<path d="M160 112.5 V20 M160 104 L98 106" fill="none" ${ink} stroke-width="3"/>`; // mast, boom
+    const dim = (x, y1, y2) => `<path d="M${x} ${y1} V${y2} M${x - 4} ${y1} h8 M${x - 4} ${y2} h8" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/>`;
+    if (has('draft')) s += dim(196, 146, 182);
+    if (has('freeboard')) s += dim(214, 119.5, 146);
+  } else if (v === 'plan') {
+    const ray = (x1, y1, x2, y2) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>`;
+    const P = BOAT_PARTS.plan;
+    if (has('ahead')) s += ray(160, 38, 160, 24);
+    if (has('astern')) s += ray(160, 152, 160, 168);
+    if (has('port') || has('abeam-port')) s += ray(134, 100, 94, 100);
+    if (has('starboard') || has('abeam-stbd')) s += ray(186, 100, 226, 100);
+    ['port-bow', 'stbd-bow', 'port-quarter', 'stbd-quarter'].forEach((k) => { if (has(k)) s += ray(P[k][0], P[k][1], P[k][2] + (P[k][4] === 'end' ? 6 : -6), P[k][3] + (P[k][3] < 100 ? 2 : -10)); });
+    s += boat(160, 100, 0, { scale: 2.6, fill: 'var(--bg)' }) + `<circle cx="160" cy="86" r="3.5" fill="var(--ink)"/><line x1="160" y1="86" x2="160" y2="128" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>`; // mast and boom
+    s += `<path d="M139.5 104 C 139 82 143 60 160 43" fill="none" stroke="${COL.r}" stroke-width="3" stroke-linecap="round"/><path d="M180.5 104 C 181 82 177 60 160 43" fill="none" stroke="${COL.g}" stroke-width="3" stroke-linecap="round"/>`;
+  } else {
+    s += `<path d="M114 24 Q196 82 240 161 L114 158 Z" fill="var(--bg)" ${ink} stroke-width="1.5"/>`;
+    s += `<path d="M159.8 60.7 L136 63 M186.5 87.2 L158 91 M210.2 115.5 L180 119" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round"/>`; // battens
+    if (has('reef')) s += `<line x1="114" y1="128" x2="218.8" y2="127.2" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="118" cy="128" r="3" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/><circle cx="214" cy="127.3" r="3" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>`;
+    s += `<path d="M112 182 V18 M112 160 L246 163" fill="none" ${ink} stroke-width="3"/>`; // mast, boom
+  }
+  (f.parts || []).forEach(([k, raw]) => {
+    const p = BOAT_PARTS[v][k], text = String(raw).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+    if (!p) return;
+    const [px, py, lx, ly, a = 'middle', col] = p, o = { s: lx == null && v === 'side' ? 10 : 11, f: col || 'var(--ink)', a };
+    if (lx == null) return void (s += txt(px, py, text, o));
+    if (v !== 'plan' && k !== 'waterline') s += `<line x1="${px}" y1="${py}" x2="${a === 'start' ? lx - 3 : a === 'end' ? lx + 3 : lx}" y2="${a === 'middle' ? ly + 3 : ly - 4}" stroke="var(--muted)" stroke-width="1"/><circle cx="${px}" cy="${py}" r="1.8" fill="var(--muted)"/>`;
+    s += txt(lx, ly, text, o);
+  });
+  if (f.note) s += txt(160, 197, f.note, { s: 11, w: 400 });
+  return s + '</svg>';
+};
+
+/* ---------- figures of the theory articles: lines ashore, a VHF set, signal flags, a tidal curve, the celestial sphere,
+   a sextant altitude. Labels are the caller's text ([key, text] pairs), so a translation gives its own words; a key the
+   figure does not have is skipped. FIG_KEYS lists the keys of each, for data/check_theory.mjs. ---------- */
+const fesc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+// Names at their places: map[key] = [x, y of the part, x, y of the label, text-anchor]; with no label place the name sits on the part.
+function partLabels(map, parts, leaders = true) {
+  return (parts || []).map(([k, raw]) => {
+    const p = map[k];
+    if (!p) return '';
+    const [px, py, lx, ly, a = 'middle'] = p, o = { s: 11, f: 'var(--ink)', a };
+    if (lx == null) return txt(px, py, fesc(raw), o);
+    const line = leaders ? `<line x1="${px}" y1="${py}" x2="${a === 'start' ? lx - 3 : a === 'end' ? lx + 3 : lx}" y2="${a === 'middle' ? (ly < py ? ly + 3 : ly - 11) : ly - 4}" stroke="var(--muted)" stroke-width="1"/><circle cx="${px}" cy="${py}" r="1.8" fill="var(--muted)"/>` : '';
+    return line + txt(lx, ly, fesc(raw), o);
+  }).join('');
+}
+
+/* lines: a yacht alongside, from above, with her lines numbered and named below
+   { type: 'lines', lines: [['bow', 'bow line'], ['stern-spring', 'stern spring'], …], quay: 'PONTOON', note } */
+const LINE_ENDS = { // key: [on the boat, on the pontoon, where the number sits along the line (0 = boat end)]
+  bow: [[206, 76], [264, 52], .5], stern: [[114, 77], [56, 52], .5], 'bow-spring': [[206, 76], [150, 52], .32], 'stern-spring': [[114, 77], [170, 52], .32],
+  'bow-breast': [[206, 76], [206, 52], .5], 'stern-breast': [[114, 77], [114, 52], .5],
+};
+FIG.lines = f => {
+  let s = NS() + `<rect x="20" y="16" width="280" height="36" rx="8" fill="var(--tag-line)"/>` + (f.quay ? txt(160, 38, fesc(f.quay), { s: 10 }) : '');
+  s += boat(160, 94, 90, { scale: 3, fill: 'var(--bg)' });
+  const list = (f.lines || []).filter(([k]) => LINE_ENDS[k]);
+  const badge = (x, y, n) => `<circle cx="${x}" cy="${y}" r="8" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>` + txt(x, y + 3.5, n, { s: 10, f: 'var(--accent)' });
+  list.forEach(([k]) => { const [[x1, y1], [x2, y2]] = LINE_ENDS[k]; s += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/><circle cx="${x1}" cy="${y1}" r="2.5" fill="var(--ink)"/><circle cx="${x2}" cy="${y2}" r="2.5" fill="var(--ink)"/>`; });
+  list.forEach(([k, text], i) => {
+    const [[x1, y1], [x2, y2], at] = LINE_ENDS[k];
+    s += badge(x1 + (x2 - x1) * at, y1 + (y2 - y1) * at, i + 1);
+    const x = i % 2 ? 176 : 30, y = 144 + Math.floor(i / 2) * 18;
+    s += badge(x, y, i + 1) + txt(x + 14, y + 4, fesc(text), { s: 11, f: 'var(--ink)', a: 'start' });
+  });
+  if (f.note && list.length <= 4) s += txt(160, 197, f.note, { s: 11, w: 400 });
+  return s + '</svg>';
+};
+
+/* radio: a fixed VHF set with its handset
+   { type: 'radio', channel: '16', power: 'HI', parts: [['distress', 'DISTRESS, under its cover'], ['squelch', 'squelch'], …], note } */
+const RADIO_PARTS = {
+  display: [114, 58, 100, 30, 'middle'], volume: [203, 64, 232, 34, 'start'], mic: [277, 70, 282, 58, 'middle'], ptt: [260, 106, 306, 166, 'end'],
+  distress: [86, 136, 70, 170, 'middle'], power: [153, 136, 176, 170, 'middle'], ch16: [125, 136, 112, 184, 'middle'], squelch: [203, 130, 232, 184, 'middle'],
+};
+FIG.radio = f => {
+  let s = NS() + `<rect x="50" y="44" width="190" height="104" rx="12" fill="#1b2228"/><rect x="66" y="58" width="96" height="48" rx="6" fill="#d9ead3"/>`;
+  s += txt(120, 96, fesc(f.channel || '16'), { s: 32, f: '#10202a' }) + txt(72, 70, fesc(f.power || 'HI'), { s: 9, f: '#10202a', a: 'start' }) + txt(156, 70, 'DSC', { s: 9, f: '#10202a', a: 'end' });
+  s += `<circle cx="196" cy="74" r="13" fill="#39444d" stroke="#6b7780" stroke-width="1.5"/><line x1="196" y1="74" x2="196" y2="64" stroke="#fff" stroke-width="2" stroke-linecap="round"/>`;
+  s += `<circle cx="196" cy="120" r="13" fill="#39444d" stroke="#6b7780" stroke-width="1.5"/><line x1="196" y1="120" x2="203" y2="113" stroke="#fff" stroke-width="2" stroke-linecap="round"/>`;
+  s += `<rect x="66" y="114" width="40" height="22" rx="5" fill="${COL.r}"/><rect x="64" y="112" width="44" height="26" rx="6" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="3 2"/>`;
+  s += `<rect x="114" y="114" width="22" height="22" rx="5" fill="#39444d"/>` + txt(125, 129, '16', { s: 10, f: '#fff' }) + `<rect x="142" y="114" width="22" height="22" rx="5" fill="#39444d"/>` + txt(153, 129, 'H/L', { s: 8, f: '#fff' });
+  s += `<path d="M240 134 C 256 152 272 150 277 126" fill="none" stroke="#1b2228" stroke-width="3" stroke-linecap="round"/><rect x="262" y="70" width="30" height="56" rx="8" fill="#1b2228"/><rect x="258" y="86" width="5" height="24" rx="2" fill="#6b7780"/>`;
+  s += partLabels(RADIO_PARTS, f.parts);
+  if (f.note) s += txt(160, 197, f.note, { s: 11, w: 400 });
+  return s + '</svg>';
+};
+
+/* flag: up to four signal flags in a row, each with its name: the code flags sailors meet and the race signals
+   { type: 'flag', flags: [['P', 'P · preparatory'], ['first-sub', 'general recall']], note } */
+const FLAG_BLUE = '#0b4ea2', FLAG_YEL = '#ffd400';
+const FLAGS = { // drawn in a 60 × 40 box
+  P: `<rect width="60" height="40" fill="${FLAG_BLUE}"/><rect x="20" y="13" width="20" height="14" fill="#fff"/>`,
+  S: `<rect width="60" height="40" fill="#fff"/><rect x="20" y="13" width="20" height="14" fill="${FLAG_BLUE}"/>`,
+  I: `<rect width="60" height="40" fill="${FLAG_YEL}"/><circle cx="30" cy="20" r="9" fill="#000"/>`,
+  X: `<rect width="60" height="40" fill="#fff"/><rect x="25" width="10" height="40" fill="${FLAG_BLUE}"/><rect y="15" width="60" height="10" fill="${FLAG_BLUE}"/>`,
+  N: `<rect width="60" height="40" fill="#fff"/>` + [0, 1, 2, 3].map((r) => [0, 1, 2, 3].filter((c) => (r + c) % 2 === 0).map((c) => `<rect x="${c * 15}" y="${r * 10}" width="15" height="10" fill="${FLAG_BLUE}"/>`).join('')).join(''),
+  Z: `<path d="M0 0 L30 20 L0 40Z" fill="#000"/><path d="M0 0 H60 L30 20Z" fill="${FLAG_YEL}"/><path d="M60 0 V40 L30 20Z" fill="${FLAG_BLUE}"/><path d="M0 40 H60 L30 20Z" fill="${COL.r}"/>`,
+  U: `<rect width="60" height="40" fill="#fff"/><rect width="30" height="20" fill="${COL.r}"/><rect x="30" y="20" width="30" height="20" fill="${COL.r}"/>`,
+  L: `<rect width="60" height="40" fill="#000"/><rect width="30" height="20" fill="${FLAG_YEL}"/><rect x="30" y="20" width="30" height="20" fill="${FLAG_YEL}"/>`,
+  M: `<rect width="60" height="40" fill="${FLAG_BLUE}"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="#fff" stroke-width="8"/>`,
+  V: `<rect width="60" height="40" fill="#fff"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="${COL.r}" stroke-width="8"/>`,
+  Y: `<rect width="60" height="40" fill="${FLAG_YEL}"/><path d="M-30 40 L10 0 M-6 40 L34 0 M18 40 L58 0 M42 40 L82 0" stroke="${COL.r}" stroke-width="8"/>`,
+  C: `<rect width="60" height="40" fill="${FLAG_BLUE}"/><rect y="8" width="60" height="24" fill="#fff"/><rect y="16" width="60" height="8" fill="${COL.r}"/>`,
+  O: `<path d="M0 0 H60 V40Z" fill="${COL.r}"/><path d="M0 0 L60 40 H0Z" fill="${FLAG_YEL}"/>`,
+  H: `<rect width="60" height="40" fill="#fff"/><rect x="30" width="30" height="40" fill="${COL.r}"/>`,
+  Q: `<rect width="60" height="40" fill="${FLAG_YEL}"/>`,
+  R: `<rect width="60" height="40" fill="${COL.r}"/><rect x="25" width="10" height="40" fill="${FLAG_YEL}"/><rect y="15" width="60" height="10" fill="${FLAG_YEL}"/>`,
+  A: `<path d="M0 0 H30 V40 H0Z" fill="#fff"/><path d="M30 0 H60 L46 20 L60 40 H30Z" fill="${FLAG_BLUE}"/>`,
+  B: `<path d="M0 0 H60 L46 20 L60 40 H0Z" fill="${COL.r}"/>`,
+  AP: [0, 1, 2, 3, 4].map((i) => `<rect x="${i * 12}" width="12" height="40" fill="${i % 2 ? '#fff' : COL.r}"/>`).join(''),
+  'first-sub': `<path d="M0 0 L60 20 L0 40Z" fill="${FLAG_BLUE}"/><path d="M0 9 L33 20 L0 31Z" fill="${FLAG_YEL}"/>`,
+  black: `<rect width="60" height="40" fill="#000"/>`, blue: `<rect width="60" height="40" fill="${FLAG_BLUE}"/>`, red: `<rect width="60" height="40" fill="${COL.r}"/>`,
+  green: `<rect width="60" height="40" fill="${COL.g}"/>`, yellow: `<rect width="60" height="40" fill="${FLAG_YEL}"/>`, orange: `<rect width="60" height="40" fill="#ff7a00"/>`, white: `<rect width="60" height="40" fill="#fff"/>`,
+};
+const FLAG_SHAPE = { A: 'M0 0 H60 L46 20 L60 40 H0Z', B: 'M0 0 H60 L46 20 L60 40 H0Z', AP: 'M0 0 L60 13 V27 L0 40Z', 'first-sub': 'M0 0 L60 20 L0 40Z' };
+let flagN = 0;
+FIG.flag = f => {
+  const list = (f.flags || []).filter(([k]) => FLAGS[k]).slice(0, 4), n = list.length, step = n > 3 ? 76 : 92, w = n > 3 ? 60 : 72, k = w / 60;
+  let s = NS();
+  list.forEach(([code, text], i) => {
+    const x = 160 - ((n - 1) * step) / 2 + i * step - w / 2, y = 52, id = `fl${++flagN}`, shape = FLAG_SHAPE[code] || 'M0 0 H60 V40 H0Z';
+    s += `<g transform="translate(${x} ${y}) scale(${k})"><clipPath id="${id}"><path d="${shape}"/></clipPath><g clip-path="url(#${id})">${FLAGS[code]}</g><path d="${shape}" fill="none" stroke="#7d8a91" stroke-width="1"/></g>`;
+    String(text || '').split('|').forEach((line, j) => { s += txt(x + w / 2, y + 40 * k + 18 + j * 14, fesc(line.trim()), { s: 11, f: j ? 'var(--muted)' : 'var(--ink)', w: j ? 400 : 700 }); });
+  });
+  if (f.note) s += txt(160, 194, f.note, { s: 11, w: 400 });
+  return s + '</svg>';
+};
+
+/* tide: the rise from low water to high water over six hours, with the rule of twelfths
+   { type: 'tide', lw: '08:00 · 0.4 m', hw: '14:00 · 2.2 m', twelfths: true, at: 2, atLabel: '10:00 · 0.85 m', note } */
+FIG.tide = f => {
+  const x0 = 44, x1 = 284, yL = 150, yH = 46, base = 168, at = (t) => [x0 + (x1 - x0) * t, yL - (yL - yH) * (1 - Math.cos(Math.PI * t)) / 2];
+  let s = NS() + `<line x1="34" y1="${base}" x2="296" y2="${base}" stroke="var(--tag-line)" stroke-width="1.5"/>`;
+  for (let i = 0; i <= 6; i++) {
+    const [x, y] = at(i / 6);
+    s += `<line x1="${x}" y1="${base}" x2="${x}" y2="${y}" stroke="var(--tag-line)" stroke-width="1" stroke-dasharray="3 4"/>` + txt(x, base + 13, i === 0 ? ft('LW') : i === 6 ? ft('HW') : `+${i}`, { s: 10 });
+    if (f.twelfths && i < 6) s += txt(x + 20, base - 6, `${[1, 2, 3, 3, 2, 1][i]}/12`, { s: 10, f: 'var(--accent)' });
+  }
+  s += `<path d="M${Array.from({ length: 25 }, (_, i) => at(i / 24).map((v) => v.toFixed(1)).join(' ')).join(' L')}" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>`;
+  if (f.lw) s += txt(x0 - 6, yL - 13, fesc(f.lw), { s: 10, f: 'var(--ink)', a: 'start' });
+  if (f.hw) s += txt(x1 + 4, yH - 8, fesc(f.hw), { s: 10, f: 'var(--ink)', a: 'end' });
+  if (f.at != null) { const [x, y] = at(Math.max(0, Math.min(6, f.at)) / 6); s += `<circle cx="${x}" cy="${y}" r="5" fill="var(--accent)"/>` + (f.atLabel ? txt(x + 9, y + 12, fesc(f.atLabel), { s: 11, f: 'var(--accent)', a: 'start' }) : ''); }
+  if (f.note) s += txt(160, 197, f.note, { s: 11, w: 400 });
+  return s + '</svg>';
+};
+
+/* sphere: the celestial sphere round the observer, with the PZX triangle (pole, zenith, body)
+   { type: 'sphere', parts: [['Z', 'Z zenith'], ['P', 'P pole'], ['X', 'X body'], ['pz', '90° − latitude'], ['zx', 'zenith distance'], ['px', 'polar distance'], ['horizon', 'horizon'], ['equator', 'celestial equator'], ['observer', 'observer']], note } */
+const SPHERE_PARTS = {
+  Z: [160, 15], P: [104, 38, null, null, 'end'], X: [213, 73, null, null, 'start'], observer: [160, 114], horizon: [240, 102, null, null, 'start'], equator: [98, 162],
+  pz: [134, 28, 116, 14, 'end'], zx: [188, 40, 204, 30, 'start'], px: [150, 46, 128, 86, 'middle'],
+};
+FIG.sphere = f => {
+  let s = NS() + `<circle cx="160" cy="98" r="74" fill="var(--bg)" stroke="var(--ink)" stroke-width="1.5"/>`;
+  s += `<path d="M86 98 A74 20 0 0 0 234 98" fill="none" stroke="var(--muted)" stroke-width="1.5"/><path d="M86 98 A74 20 0 0 1 234 98" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 4"/>`;
+  s += `<ellipse cx="160" cy="98" rx="74" ry="18" transform="rotate(-40 160 98)" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="6 4"/>`;
+  s += `<line x1="160" y1="98" x2="160" y2="24" stroke="var(--tag-line)" stroke-width="1.5"/><line x1="160" y1="98" x2="112.4" y2="41.3" stroke="var(--tag-line)" stroke-width="1.5"/>`;
+  s += `<path d="M112.4 41.3 A74 74 0 0 1 160 24 Q192 34 204 70 Q162 42 112.4 41.3Z" fill="var(--accent)" fill-opacity=".1" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>`;
+  s += `<circle cx="160" cy="98" r="3" fill="var(--ink)"/><circle cx="160" cy="24" r="3.5" fill="var(--ink)"/><circle cx="112.4" cy="41.3" r="3.5" fill="var(--ink)"/><circle cx="204" cy="70" r="5.5" fill="${COL.y}" stroke="var(--ink)" stroke-width="1.5"/>`;
+  s += partLabels(SPHERE_PARTS, f.parts);
+  if (f.note) s += txt(160, 197, f.note, { s: 11, w: 400 });
+  return s + '</svg>';
+};
+
+/* altitude: what the sextant measures — the body above the visible horizon, seen from a height of eye
+   { type: 'altitude', parts: [['hs', 'sextant altitude'], ['dip', 'dip'], ['horizon', 'visible horizon'], ['horizontal', 'true horizontal'], ['limb', 'lower limb'], ['sun', 'Sun'], ['eye', 'height of eye']], note } */
+const ALT_PARTS = {
+  sun: [268, 36, null, null, 'start'], limb: [250, 49, 234, 28, 'end'], horizontal: [302, 106, null, null, 'end'], horizon: [302, 166, null, null, 'end'],
+  hs: [126, 108, null, null, 'start'], dip: [172, 126, null, null, 'start'], eye: [56, 124, 10, 88, 'start'],
+};
+FIG.altitude = f => {
+  let s = NS() + `<path d="M0 150 H320" stroke="var(--faint)" stroke-width="2"/><path d="M30 150 L78 150 L72 161 L36 161 Z" fill="var(--ink)"/><line x1="56" y1="150" x2="56" y2="112" stroke="var(--ink)" stroke-width="2"/>`;
+  s += `<line x1="56" y1="112" x2="304" y2="112" stroke="var(--muted)" stroke-width="1" stroke-dasharray="5 4"/><line x1="56" y1="112" x2="296" y2="148" stroke="var(--ink)" stroke-width="1.5"/><line x1="56" y1="112" x2="250" y2="49" stroke="var(--ink)" stroke-width="1.5"/>`;
+  s += `<circle cx="250" cy="40" r="9" fill="${COL.y}" stroke="var(--ink)" stroke-width="1.5"/><circle cx="56" cy="112" r="3.5" fill="var(--ink)"/>`;
+  s += `<path d="M119.3 121.5 A64 64 0 0 0 116.9 92.2" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/><path d="M166 112 A110 110 0 0 1 164.8 128.3" fill="none" stroke="var(--danger)" stroke-width="2.5" stroke-linecap="round"/>`;
+  s += partLabels(ALT_PARTS, f.parts);
+  if (f.note) s += txt(160, 197, f.note, { s: 11, w: 400 });
+  return s + '</svg>';
+};
+
+// The keys each labelled figure knows, for the checker: FIG_KEYS[type](spec) → { key: … }; the list field is parts, lines or flags.
+const FIG_KEYS = { boat: (f) => BOAT_PARTS[f.view] || BOAT_PARTS.side, radio: () => RADIO_PARTS, sphere: () => SPHERE_PARTS, altitude: () => ALT_PARTS, lines: () => LINE_ENDS, flag: () => FLAGS };
+
 function figSvg(spec) { const r = FIG[spec.type]; return r ? r(spec) : NS() + txt(160, 100, 'figure: ' + spec.type) + '</svg>'; }
 function paintFigures(root = document) {
-  root.querySelectorAll('[data-fig]').forEach(el => { if (el.dataset.figDone) return; try { el.innerHTML = figSvg(JSON.parse(el.dataset.fig)); } catch (e) { el.textContent = 'bad figure: ' + e.message; } el.dataset.figDone = 1; });
+  root.querySelectorAll('[data-fig]').forEach(el => { if (el.dataset.figDone) return; try { const spec = JSON.parse(el.dataset.fig); el.innerHTML = figSvg(spec); if (FIG_DAY.has(spec.type)) el.classList.add('day'); } catch (e) { el.textContent = 'bad figure: ' + e.message; } el.dataset.figDone = 1; });
 }
 if (typeof module !== 'undefined') module.exports = { FIG, figSvg };

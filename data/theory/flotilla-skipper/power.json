@@ -1,0 +1,74 @@
+{
+  "topic": "power",
+  "lead": "Under engine a yacht does not drive like a car: she steers from the stern, slides sideways in the wind and has no brakes. Learn the few forces at work in a marina and you can make them work for you.",
+  "sections": [
+    {
+      "id": "steering",
+      "kicker": "Rudder and throttle",
+      "title": "A rudder needs moving water",
+      "refs": ["Steering", "Prop wash", "Gear changes"],
+      "blocks": [
+        { "p": "The rudder turns the boat only while water flows past it. That flow comes from the boat's own speed, called **steerage way**, or from the **prop wash**: the stream the propeller throws back onto the rudder. Drifting in neutral, almost stopped, you can put the wheel hard over and nothing happens." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["rudder", "rudder"], ["bow", "bow"], ["stern", "stern"]], "note": "The propeller sits just ahead of the rudder" } },
+        { "p": "So to swing the bow without gathering speed, turn the wheel first, then give a **short burst ahead**. The wash hits the turned rudder and pushes the stern sideways before the boat starts to move." },
+        { "p": "Between ahead and astern, **pause in neutral** for a moment so the propeller can slow down. Slamming straight through wears out the gearbox." },
+        { "rule": "Wheel first, then power. No flow over the rudder, no steering." }
+      ]
+    },
+    {
+      "id": "propwalk",
+      "kicker": "Prop walk",
+      "title": "Astern, the stern kicks sideways",
+      "refs": ["Prop walk", "Turning in a tight space"],
+      "blocks": [
+        { "p": "A turning propeller also paddles the stern sideways: this is **prop walk**. It is strongest when you engage astern from rest with plenty of revs. Most charter yachts have a right-handed propeller, and it walks the stern **to port** when going astern." },
+        { "p": "Reversing out of a berth, start gently: as the boat gathers way the rudder takes over and the kick fades. And use the kick where it helps. With a free choice, berth **port side to**: the touch of astern that stops you also pulls the stern in." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V40 H0 Z", "track": "M146 64 L146 44", "boat": [160, 74, 90], "labels": [[160, 26, "PONTOON", "middle"], [136, 58, "stern walks in", "end"], [160, 104, "a touch of astern to stop", "middle"]], "note": "Port side to" }, "view": "20 8 280 112", "cap": "Port side to with a right-handed propeller: stopping pulls the stern onto the pontoon." },
+        { "p": "To turn round in a narrow fairway, turn **to starboard**. Put the wheel hard to starboard and leave it there, then alternate short bursts. Ahead, the wash on the rudder pushes the stern to port; astern, prop walk keeps it going the same way." },
+        { "fig": { "type": "card", "title": "Turning in your own length", "lines": ["Wheel hard to starboard, leave it", "Short burst ahead", "Neutral", "Short burst astern", "Neutral, and repeat"] } }
+      ]
+    },
+    {
+      "id": "pivot",
+      "kicker": "Pivot point",
+      "title": "Watch the end that swings",
+      "refs": ["Pivot point", "Steering astern"],
+      "blocks": [
+        { "p": "A boat does not follow her bow round a corner as a car does. Going ahead she pivots about a point well forward, so when the bow goes one way the **stern swings the other**. Steer away from a pontoon and your stern swings into it." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V40 H0 Z", "track": "M144 64 L140 44", "boat": [160, 74, 108], "labels": [[160, 26, "PONTOON", "middle"], [132, 60, "stern swings in", "end"], [184, 100, "bow turns out", "start"]], "note": "Leaving ahead" }, "view": "20 8 280 112", "cap": "Going ahead with the wheel to starboard: the stern swings to port, towards the pontoon." },
+        { "p": "Going astern the pivot point moves aft, and it is the **bow** that swings wide. Reversing out of a berth and turning the stern to port, watch your bow sweep to starboard across your neighbour." },
+        { "table": { "head": ["Moving", "Pivot point", "Swings wide"], "rows": [
+          ["Ahead", "Well forward", "The stern"],
+          ["Astern", "Aft", "The bow"]
+        ] } },
+        { "p": "Astern with a wheel, the **stern goes the way you turn the wheel**. Water now strikes the back of the rudder and tries to slam it hard over, so keep the speed low and hold the wheel firmly." }
+      ]
+    },
+    {
+      "id": "wind",
+      "kicker": "Wind",
+      "title": "The bow blows off first",
+      "refs": ["Windage", "Boat handling in wind", "Holding station", "Prop walk / windage"],
+      "blocks": [
+        { "p": "Hull, mast and rolled sails all catch the wind: this is **windage**. The keel grips the water amidships, but the high bow has nothing under it, so as you slow down the bow **blows off downwind**. The slower you go, the sooner it goes." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "dist": 0 }, "wind": 90, "note": "Slowing down: the bow falls off to port, downwind" } },
+        { "p": "In a crosswind keep **just enough speed to steer**, no more. Too slow and the wind takes the bow; too fast and you cannot stop when something goes wrong. If you have to wait, turn **head to wind** and hold her there with short bursts ahead: the wind has no side of the bow to push on." },
+        { "p": "Astern the picture reverses. The bow still blows downwind, so the **stern seeks the wind**. Reversing with the wind on the port beam, wind and prop walk both swing the stern to port." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "dist": 0 }, "wind": 270, "note": "Going astern: the stern swings to port, into the wind" } }
+      ]
+    },
+    {
+      "id": "berthing",
+      "kicker": "Coming alongside",
+      "title": "Slow in, and ready to go round again",
+      "refs": ["Coming alongside", "Berthing under power", "Bow thruster"],
+      "blocks": [
+        { "p": "Rig fenders and lines, brief the crew and look at the wind before you commit. Approach **no faster than you would be willing to hit the pontoon**: slow, but still steering. When the wind blows you **off** the berth, a shallow approach lets the bow blow away before a line is on. Come in at a steeper angle and get the bow line ashore at once." },
+        { "fig": { "type": "chart", "land": "M0 150 H320 V200 H0 Z", "track": "M200 108 L150 137", "boat": [200, 108, 240], "labels": [[160, 180, "PONTOON", "middle"]], "panel": ["Wind off the berth", "Steeper angle", "Bow line on first"], "note": "Wind F4 blowing off the pontoon" } },
+        { "p": "If a gust pushes you off line, **abort**: motor clear and come round again. Never let the crew fend off with hands or feet; a fender held on its line does that job." },
+        { "p": "A **bow thruster** pushes the bow sideways at slow speed. Use it in short bursts with pauses between: run for long, it overheats and cuts out just when you need it." },
+        { "rule": "If in doubt, go out and come in again.", "label": "Remember" }
+      ]
+    }
+  ]
+}

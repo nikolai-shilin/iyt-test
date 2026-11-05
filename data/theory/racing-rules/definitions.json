@@ -1,0 +1,175 @@
+{
+  "topic": "definitions",
+  "lead": "The racing rules are written in defined terms. Learn what keep clear, overlap, room and zone mean, and the right-of-way rules become short.",
+  "sections": [
+    {
+      "id": "tack",
+      "kicker": "Tack, leeward, windward",
+      "title": "Which side the wind is on",
+      "refs": [
+        "RRS definition Leeward and Windward, RRS definition Tack, Starboard or Port",
+        "RRS definition Leeward and Windward, RRS 11",
+        "RRS definition Leeward and Windward",
+        "RRS definition Tack, Starboard or Port",
+        "RRS definition Tack, Starboard or Port, RRS 13",
+        "RRS definition Tack, Starboard or Port, RRS definition Leeward and Windward",
+        "RRS definition Tack, Starboard or Port, RRS 10",
+        "RRS definition Tack, Starboard or Port, RRS 11"
+      ],
+      "blocks": [
+        { "p": "Your **leeward side** is the side away from the wind. Head to wind, it is the side that was leeward before; dead downwind or by the lee, the side your mainsail lies on. The other side is windward, and it names your **tack**: starboard or port." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 70, "y": 105, "hdg": 315, "label": "starboard" }, { "x": 160, "y": 80, "hdg": 181, "label": "starboard" }, { "x": 235, "y": 115, "hdg": 45, "label": "port" }], "note": "The tack is the windward side, opposite the mainsail" } },
+        { "p": "So the tack changes only when you pass head to wind or, on a run, when the mainsail crosses. Of two overlapped boats on one tack, the one to leeward of the other is the **leeward boat**." },
+        { "rule": "Boom to port on a run: starboard tack." }
+      ]
+    },
+    {
+      "id": "overlap",
+      "kicker": "Clear astern, overlap",
+      "title": "Behind you or alongside you",
+      "refs": [
+        "RRS definition Clear Astern and Clear Ahead; Overlap",
+        "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 11",
+        "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 10",
+        "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 18.2",
+        "RRS definition Clear Astern and Clear Ahead; Overlap, RRS 12"
+      ],
+      "blocks": [
+        { "p": "Take a line abeam from the aftermost point of your hull and equipment in normal position. A boat entirely behind it is **clear astern**; if neither boat is clear astern of the other, you **overlap**. Equipment counts: a rudder, a bowsprit set with its sail." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 120, "y": 70, "hdg": 270, "label": "A" }, { "x": 165, "y": 82, "hdg": 270, "label": "B" }, { "x": 128, "y": 135, "hdg": 270, "label": "C" }], "track": "M131 30 L131 162", "note": "B is clear astern of A · C overlaps A" } },
+        { "p": "Distance does not matter, and two boats also overlap when one between them overlaps both. On opposite tacks the terms apply only when both boats sail more than 90° from the true wind or when rule 18 applies between them; on a beat, rule 10 alone decides." }
+      ]
+    },
+    {
+      "id": "keepclear",
+      "kicker": "Keep clear, room, proper course",
+      "title": "Three yardsticks",
+      "refs": [
+        "RRS definition Keep Clear, RRS 10",
+        "RRS definition Keep Clear, RRS 11",
+        "RRS definition Keep Clear, RRS 12",
+        "RRS definition Room, RRS 19.2(b)",
+        "RRS definition Room, RRS 31",
+        "RRS definition Room, RRS definition Mark-Room",
+        "RRS definition Proper Course, RRS 17",
+        "RRS definition Proper Course"
+      ],
+      "blocks": [
+        { "p": "You **keep clear** when the right-of-way boat can sail her course with no need to take avoiding action and, if you are overlapped, can also change course either way without immediate contact. The test is her need to act, not distance or a hail." },
+        { "tiles": [
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 190, "y": 118, "hdg": 45, "label": "port" }, { "x": 235, "y": 140, "hdg": 315, "label": "starboard" }] }, "view": "150 0 170 185", "name": "Not keeping clear", "note": "starboard has to luff" },
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 220, "y": 92, "hdg": 270 }, { "x": 220, "y": 110, "hdg": 270, "label": "leeward" }] }, "view": "150 0 170 185", "name": "Not keeping clear", "note": "leeward cannot luff without contact" }
+        ] },
+        { "p": "**Room** is the space a boat needs in the existing conditions to manoeuvre promptly in a seamanlike way, including space to meet her obligations under Part 2 and rule 31." },
+        { "p": "**Proper course** is the course you would sail to finish soonest in the absence of the other boat the rule refers to. It shifts with the wind, and before your starting signal you have none." }
+      ]
+    },
+    {
+      "id": "mark",
+      "kicker": "Mark, zone, mark-room",
+      "title": "The words of a rounding",
+      "refs": [
+        "RRS definition Zone",
+        "RRS definition Zone, RRS definition Mark",
+        "RRS definition Mark",
+        "RRS definition Mark, RRS 31",
+        "RRS definition Mark, RRS definition Obstruction",
+        "RRS definition Mark, RRS 28",
+        "RRS definition Mark-Room, RRS 18.2",
+        "RRS definition Mark-Room, RRS 13",
+        "RRS definition Mark-Room",
+        "RRS definition Mark-Room, RRS 43.1(b)",
+        "RRS definition Fetching",
+        "RRS definition Fetching, RRS 18.3"
+      ],
+      "blocks": [
+        { "p": "A **mark** is an object the sailing instructions require you to leave on a stated side, or a committee vessel from which the starting or finishing line extends. A fender hung on it is part of it; its anchor line is not." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 212, "y": 138, "hdg": 315, "label": "in the zone" }, { "x": 262, "y": 120, "hdg": 315, "label": "outside" }], "mark": { "x": 160, "y": 85, "zone": true, "label": "Windward mark" }, "note": "Three hull lengths of the boat nearer the mark" } },
+        { "p": "The **zone** reaches three hull lengths of the boat nearer the mark. You are in it once any part of your hull is. Each gate mark has its own." },
+        { "p": "**Mark-room** is room to sail to the mark, round it on the required side and leave it astern: a seamanlike rounding, and room, not right of way. It includes room to tack only for a boat overlapped inside and to windward who would then be **fetching** the mark: passing to windward of it without another tack." }
+      ]
+    },
+    {
+      "id": "obstruction",
+      "kicker": "Obstruction",
+      "title": "What you cannot simply sail past",
+      "refs": [
+        "RRS definition Obstruction",
+        "RRS definition Obstruction, RRS 10",
+        "RRS definition Obstruction, RRS 11",
+        "RRS definition Obstruction, RRS 22",
+        "RRS definition Obstruction, RRS definition Mark",
+        "RRS definition Continuing Obstruction, RRS 19.2(c)",
+        "RRS definition Continuing Obstruction, RRS definition Obstruction",
+        "RRS definition Continuing Obstruction, RRS 18.1"
+      ],
+      "blocks": [
+        { "p": "An **obstruction** is an object you could not pass without changing course substantially if you sailed straight at it from one hull length away, or an area the event's rules close to boats. A boat racing is one only to boats that must keep clear of her or, under rule 22, avoid her." },
+        { "tiles": [
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 110, "y": 140, "hdg": 45, "you": true }], "obstruction": { "x": 125, "y": 80, "w": 80, "h": 22, "label": "Moored yacht" } }, "name": "Obstruction", "note": "one length away, straight at it" },
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 85, "y": 70, "hdg": 181 }, { "x": 112, "y": 82, "hdg": 181 }], "obstruction": { "x": 0, "y": 0, "w": 60, "h": 200, "label": "Shore" } }, "name": "Continuing obstruction", "note": "three lengths or more along it" }
+        ] },
+        { "p": "A **continuing obstruction** is one the boats pass along for at least three hull lengths; a vessel under way never is, nor a committee vessel that is also a mark. A small buoy is a mark without being an obstruction." }
+      ]
+    },
+    {
+      "id": "racing",
+      "kicker": "Racing, start, finish",
+      "title": "When the race begins and ends",
+      "refs": [
+        "RRS definition Racing, RRS 31",
+        "RRS definition Racing, RRS Part 2 preamble",
+        "RRS definition Racing, RRS 29.2",
+        "RRS definition Racing, RRS 23.1",
+        "RRS definition Start",
+        "RRS definition Start, RRS 29.1",
+        "RRS definition Finish",
+        "RRS definition Finish, RRS 28",
+        "RRS definition Finish, RRS 44.2",
+        "RRS definition Sail the Course, RRS 28",
+        "RRS definition Postpone, race signals",
+        "RRS definition Abandon, RRS 32"
+      ],
+      "blocks": [
+        { "p": "You are **racing** from your preparatory signal until you finish and clear the line and marks, retire, or a general recall, postponement or abandonment is signalled." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 110, "y": 112, "hdg": 315, "label": "A" }, { "x": 200, "y": 140, "hdg": 315, "label": "B" }], "line": { "x1": 40, "y1": 120, "x2": 280, "y2": 120, "label": "Start line" }, "note": "At the signal: A is over and must come back, B may start" } },
+        { "p": "You **start** when, your hull having been entirely on the pre-start side at or after the starting signal, any part of it crosses the line. You **finish** when any part of your hull crosses the finishing line from the course side, unless you then take a penalty, correct an error in sailing the course or sail on." },
+        { "p": "To **sail the course**, your track drawn taut must pass each mark on its required side and each gate from the previous mark's direction. A mark that does not begin, bound or end your leg has no required side." },
+        { "table": { "head": ["Signal", "The race is"], "rows": [
+          ["Postponed · AP", "Delayed; may be started or abandoned later"],
+          ["Abandoned · N", "Void; may be resailed"]
+        ] } }
+      ]
+    },
+    {
+      "id": "principles",
+      "kicker": "Principles, rules 1–4",
+      "title": "What you agree to by racing",
+      "refs": [
+        "RRS Basic Principles, RRS 44.1",
+        "RRS 1.1, RRS 61",
+        "RRS 1.1",
+        "RRS 1.2, RRS 40",
+        "RRS 2",
+        "RRS 2, RRS 44.1",
+        "RRS 3",
+        "RRS 4, RRS 70",
+        "RRS definition Rule",
+        "RRS definition Rule, RRS 2",
+        "RRS definition Protest, RRS 60",
+        "RRS definition Party, RRS 63"
+      ],
+      "blocks": [
+        { "p": "The basic principle: break a rule without being exonerated and you promptly take a penalty, perhaps retiring, whether or not anyone protests." },
+        { "table": { "head": ["Rule", "What it asks"], "rows": [
+          ["1.1", "Help anyone in danger, racing or not; redress for places lost"],
+          ["1.2", "Your flotation is your own responsibility"],
+          ["2", "Fair sailing: a deliberate breach means a non-discardable disqualification"],
+          ["3", "The decision to race is the boat's alone"],
+          ["4", "Accept the rules and appeals; no courts"]
+        ] } },
+        { "p": "A **rule** includes the notice of race, sailing instructions and class rules, not club customs or the Basic Principles. A **protest** is an allegation under rule 60 that a boat broke a rule; the hail only announces it. Its **parties** are protestor and protestee, never witnesses or the protest committee." }
+      ]
+    }
+  ]
+}

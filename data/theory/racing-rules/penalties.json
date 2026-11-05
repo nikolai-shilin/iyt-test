@@ -1,0 +1,113 @@
+{
+  "topic": "penalties",
+  "lead": "Break a rule and you pay for it on the water, at once and unasked. Which penalty fits which breach, how to take it, and when turns are not enough.",
+  "sections": [
+    {
+      "id": "which",
+      "kicker": "Turns penalties",
+      "title": "Which penalty for which breach",
+      "refs": ["RRS 44.1", "RRS 44.1(a)", "RRS 44.1, RRS 44.2", "RRS 31, RRS 44.1", "RRS 31, RRS 44.1, RRS 43.1", "RRS Basic Principles, RRS 12, RRS 44.1", "RRS Basic Principles, RRS 2", "RRS Basic Principles, RRS 42, RRS 44.1", "RRS 44.1, RRS 49.2", "RRS 44.1, RRS 16.1, RRS 11", "RRS 10, RRS 44.1", "RRS 17, RRS 44.1", "RRS 20.1, RRS 44.1", "RRS 21.3, RRS 44.1", "RRS 22, RRS 44.1", "RRS 44.1, RRS 60", "RRS 44.1, RRS 60.5(c)", "RRS definition Racing, RRS 31", "RRS Part 2 preamble, RRS definition Racing"],
+      "blocks": [
+        { "p": "Break a rule without being exonerated and you take the penalty promptly, protest or no protest. For a rule of **Part 2** (rules 10 to 23) it is a **Two-Turns Penalty**; for touching a mark (rule 31), a **One-Turn Penalty**, even if swept there. Both in one incident: two turns." },
+        { "tiles": [
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 150, "y": 135, "hdg": 45, "label": "You", "you": true }, { "x": 215, "y": 100, "hdg": 315, "label": "Grey" }] }, "view": "95 0 225 179", "name": "Two-Turns Penalty", "note": "port tack fails to keep clear" },
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 185, "y": 122, "hdg": 300, "label": "You", "you": true }], "mark": { "x": 195, "y": 95, "label": "Mark", "labelY": -16 } }, "view": "95 0 225 179", "name": "One-Turn Penalty", "note": "your boom brushes the mark" }
+        ] },
+        { "p": "Turns pay for these rules only: for rule 42 or 49 you retire, or the protest committee decides. Each incident, and each boat that may have broken a rule, needs its own penalty. If you broke none, a hail of \"Protest\" obliges you to nothing. Not yet racing, or finished and clear of the line: no turns owed. The sailing instructions may replace the turns with another penalty." }
+      ]
+    },
+    {
+      "id": "how",
+      "kicker": "Taking the turns",
+      "title": "Clear, prompt, the same way round",
+      "refs": ["RRS 44.2", "RRS 44.2, RRS 21.2", "RRS 21.2", "RRS 21.2, RRS 23.2", "RRS 23.2", "RRS 44.2, RRS definition Racing", "RRS 44.2, RRS definition Finish", "RRS 31, RRS 44.2, RRS definition Finish", "RRS 31, RRS 44.2", "RRS 44.2, RRS 60.2"],
+      "blocks": [
+        { "p": "Sail **well clear** of other boats as soon after the incident as you can, then turn **promptly**. Each turn includes one tack and one gybe, in either order; both turns go the same way. Two tacks are not a turn, and turns a leg later do not count." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 160, "y": 120, "hdg": 225, "label": "You", "you": true }], "track": "M160 60 L160 110 C 200 140 220 90 180 70 C 150 60 140 100 160 110", "note": "Downwind: gybe, luff, tack, bear away" } },
+        { "p": "While turning you **keep clear** of boats not taking a penalty (rule 21.2). If reasonably possible others must not interfere, but after the start a boat on her proper course need not avoid you (rule 23.2). A mark touched during the turns costs one more turn." },
+        { "fig": { "type": "race", "wind": 0, "line": { "x1": 60, "y1": 115, "x2": 250, "y2": 115, "label": "Finish line" }, "boats": [{ "x": 150, "y": 60, "hdg": 315, "label": "You", "you": true }], "track": "M165 150 L150 75 C 120 45 175 35 160 65", "note": "Turns beyond the line: come back, cross again" } },
+        { "p": "A penalty earned before the start need not wait for the starting signal. At the **finish** your hull must be completely back on the course side after the turns before you cross the line; likewise after touching a finishing mark." }
+      ]
+    },
+    {
+      "id": "retire",
+      "kicker": "Retiring",
+      "title": "When turns are not enough",
+      "refs": ["RRS 44.1(b)", "RRS 44.1(b), RRS 60.5(c)", "RRS 60.5(c)", "RRS 2", "RRS Appendix A", "RRS 44.1(b), RRS 23.1", "RRS 36", "RRS 36, RRS 44.1(b)"],
+      "blocks": [
+        { "p": "Turns do not pay if you caused **injury** or **serious damage**, or if despite them your breach gained you a **significant advantage** in the race or series: then you **retire**. Beating the other boat for another reason does not count." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 167, "y": 119, "hdg": 45, "label": "You", "you": true }, { "x": 182, "y": 104, "hdg": 315, "label": "Grey" }], "note": "A hole in Grey's side: retire, turns do not count" } },
+        { "table": { "head": ["At the hearing", "Decision"], "rows": [
+          ["Turns taken promptly", "No further penalty"],
+          ["No penalty taken", "Disqualified (DSQ)"],
+          ["Serious damage, turns taken", "DSQ: you had to retire"],
+          ["Deliberate breach, then turns", "Rule 2: DSQ, not excludable (DNE)"]
+        ] } },
+        { "p": "A retired boat scores boats entered plus one and must not hinder boats still racing. After a restart or resail, breaches in the first attempt go unpenalised, except rules 2, 30.2, 30.4, 69 and rule 14 with injury or serious damage." }
+      ]
+    },
+    {
+      "id": "exoneration",
+      "kicker": "Exoneration",
+      "title": "A rule broken, no penalty owed",
+      "refs": ["RRS 43.1(a), RRS 31, RRS 44.1", "RRS 43.1(a), RRS 16.1, RRS 10", "RRS 43.1(a), RRS 31, RRS 60.5(c)", "RRS 18.2, RRS 44.1, RRS 43.1(a)", "RRS 43.2, RRS 43.1(a)", "RRS 43.1(b), RRS 18.2", "RRS 43.1(b), RRS 19.2(b), RRS 16.1", "RRS 43.1(b), RRS 43.1(c), RRS 18.2", "RRS 14, RRS 43.1(c)", "RRS 14, RRS 43.1(c), RRS 44.1", "RRS 10, RRS 43.1(c), RRS 44.1"],
+      "blocks": [
+        { "p": "Rule 43 **exonerates** you when another boat's breach **compelled** you to break a rule; when, sailing within the **room or mark-room** owed to you, you broke a right-of-way rule, rule 15, 16 or 31 against the boat that owed it; and when, holding right of way, you broke rule 14 but the contact caused **no damage or injury**." },
+        { "tiles": [
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 122, "hdg": 315, "label": "You", "you": true }, { "x": 190, "y": 116, "hdg": 315, "label": "Blue" }], "mark": { "x": 146, "y": 116, "label": "Mark", "labelY": 22 } }, "view": "95 0 225 179", "name": "Compelled", "note": "Blue pushes you onto the mark" },
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 120, "hdg": 330, "label": "You", "you": true }, { "x": 200, "y": 120, "hdg": 330, "label": "Yellow" }], "mark": { "x": 150, "y": 95, "label": "Mark", "labelY": -16 } }, "view": "95 0 225 179", "name": "Within mark-room", "note": "Yellow leaves too little room" }
+        ] },
+        { "p": "An exonerated boat takes no penalty. But the hearing finds the facts: if nobody forced you onto the mark, you are disqualified. And a right-of-way boat that could have avoided a collision with damage has broken rule 14 too." }
+      ]
+    },
+    {
+      "id": "scoring",
+      "kicker": "Scoring Penalty",
+      "title": "A yellow flag instead of turns",
+      "refs": ["RRS 44.3", "RRS 44.3(a)", "RRS 44.3(b)", "RRS 44.3(c)", "RRS 44.3(a), RRS 44.3(b)", "RRS 44.1, RRS 44.3(a)", "RRS 44.1(b), RRS 44.3", "RRS 44.2, RRS 44.3, RRS 60.2", "RRS Appendix T1", "RRS Appendix T1, T4", "RRS Appendix T1, T2, RRS 44.1(b)", "RRS Introduction (Terminology, [DP]), RRS 40"],
+      "blocks": [
+        { "p": "Where the notice of race or sailing instructions specify the **Scoring Penalty** (rule 44.3), it replaces the turns: show a yellow flag at the first reasonable opportunity, keep it up until you finish, then tell the race committee and name the other boat. Otherwise a yellow flag is no penalty." },
+        { "fig": { "type": "flag", "flags": [["yellow", "Yellow|Scoring Penalty"], ["red", "Red|a protest"]] } },
+        { "p": "It costs 20% of the DNF score, rounded to a whole number (or the places stated), never takes you beyond DNF and changes nobody else's score." },
+        { "table": { "head": ["49 boats, you finish 7th", "Points"], "rows": [
+          ["DNF score: 49 + 1", "50"],
+          ["Penalty: 20% of 50", "10"],
+          ["Your score: 7 + 10", "17"]
+        ] } },
+        { "p": "Where **Appendix T** applies, you may still take a 30% **Post-Race Penalty** in writing before the hearing begins. Neither is open to a boat that had to retire. A rule marked **[DP]** carries a discretionary penalty, possibly less than disqualification." }
+      ]
+    },
+    {
+      "id": "start",
+      "kicker": "Starting penalties",
+      "title": "Errors that turns cannot fix",
+      "refs": ["RRS 29.1, RRS Appendix A", "RRS 29.1, RRS 21.1", "RRS 21.1", "RRS 30.1", "RRS 30.2", "RRS 30.3", "RRS 30.3, RRS 30.1", "RRS 30.4"],
+      "blocks": [
+        { "p": "Turns do not cure being over the line at the start: you return and start, keeping clear of boats that are not returning, or you are scored OCS. The preparatory flag prices the **last minute**." },
+        { "fig": { "type": "flag", "flags": [["I", "I|round an end"], ["Z", "Z|20%"], ["U", "U|UFD"], ["black", "Black|BFD"]] } },
+        { "table": { "head": ["Flag", "Caught in the last minute", "After a general recall"], "rows": [
+          ["I", "Over the line: round an end", "—"],
+          ["Z", "In the triangle: 20%", "Stays; again, another 20%"],
+          ["U", "In the triangle: DSQ", "Lifted"],
+          ["Black", "In the triangle: DSQ", "Stays; no restart for you"]
+        ] } },
+        { "p": "The **triangle** joins the ends of the line and the first mark. These penalties need no hearing. Under Z and black they lapse only if the race is postponed or abandoned before the starting signal, and a black-flagged boat that sails the restart cannot discard her disqualification." }
+      ]
+    },
+    {
+      "id": "jury",
+      "kicker": "Appendix P",
+      "title": "A yellow flag from the jury",
+      "refs": ["RRS Appendix P2.1", "RRS Appendix P2.2", "RRS Appendix P2.3", "RRS Appendix P3"],
+      "blocks": [
+        { "p": "Under **Appendix P** judges afloat penalise rule 42 at once: a sound signal, a yellow flag pointed at you, your sail number hailed." },
+        { "table": { "head": ["Time", "You must", "Otherwise"], "rows": [
+          ["First", "Take two turns", "DSQ without a hearing"],
+          ["Second", "Retire", "DSQ, not excludable"],
+          ["Third", "Retire: DNE", "DNE in every race"]
+        ] } },
+        { "p": "A postponement, general recall or abandonment cancels the penalty, but it still counts towards your total." }
+      ]
+    }
+  ]
+}

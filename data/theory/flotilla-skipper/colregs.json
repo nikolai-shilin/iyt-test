@@ -1,0 +1,108 @@
+{
+  "topic": "colregs",
+  "lead": "In a flotilla the lead boat shows the way, but the collision rules bind every skipper. You need a handful of them: keep a lookout, know when there is risk, know who keeps clear, and make your move early.",
+  "sections": [
+    {
+      "id": "lookout",
+      "kicker": "Lookout and risk",
+      "title": "Your own eyes, a steady bearing, an early turn",
+      "refs": ["COLREGs Rule 5", "COLREGs Rule 7", "COLREGs Rule 8"],
+      "blocks": [
+        { "p": "Following the lead boat does not hand over your watch. Every vessel keeps her own **lookout** by sight and hearing, all the time, astern and under the genoa too." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 40, "dist": 88, "hdg": 270, "label": "Ferry", "scale": 1.3 }, "bearingLine": true, "note": "Same bearing five minutes later, and closer" } },
+        { "p": "To see whether a vessel will hit you, take her compass bearing, then take it again a few minutes later. A steady bearing while she gets closer is **risk of collision**. In doubt, assume it." },
+        { "p": "When you keep clear, do it **early and boldly**: one large change of course or speed that she sees at once and that leaves a safe distance. Small alterations tell her nothing." }
+      ]
+    },
+    {
+      "id": "sail",
+      "kicker": "Sail meets sail",
+      "title": "Port tack keeps clear, then the windward boat",
+      "refs": ["COLREGs Rule 12", "COLREGs Rules 12 / 13"],
+      "blocks": [
+        { "p": "Your **tack** is the side the wind comes over. When two boats under sail converge, the one on **port tack** keeps clear. On the same tack the **windward** boat keeps clear." },
+        { "tiles": [
+          { "fig": { "type": "encounter", "you": { "hdg": 45, "sail": true, "boom": 14 }, "other": { "bearing": 45, "dist": 85, "hdg": 315, "sail": true, "boom": -14 }, "wind": 0, "bearingLine": true }, "view": "95 -8 225 170", "name": "Opposite tacks", "note": "you are on port tack: keep clear" },
+          { "fig": { "type": "encounter", "you": { "hdg": 300, "sail": true, "boom": -14 }, "other": { "bearing": 60, "dist": 80, "hdg": 270, "sail": true, "boom": -14 }, "wind": 0, "bearingLine": true }, "view": "95 -8 225 170", "name": "Same tack", "note": "she is to windward: she keeps clear" }
+        ] },
+        { "p": "**Overtaking** comes first. If you catch another vessel up from astern, you keep clear until you are past, whatever the tacks and whether she is sail or power." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0, "sail": true, "boom": -14 }, "other": { "bearing": 0, "dist": 70, "hdg": 340, "sail": true, "boom": 14 }, "wind": 180, "note": "Faster and coming up from astern: you keep clear" }, "view": "0 -22 320 222" },
+        { "rule": "Port tack gives way to starboard tack, windward to leeward, and the overtaking boat to everyone." }
+      ]
+    },
+    {
+      "id": "power",
+      "kicker": "Power meets power",
+      "title": "Head-on, crossing, and when you stand on",
+      "refs": ["COLREGs Rules 15 / 17", "COLREGs Rules 17 / 34"],
+      "blocks": [
+        { "p": "Under engine you are a power-driven vessel. Meeting **head-on**, both turn to starboard and pass port to port. **Crossing**, the one that has the other on her starboard side gives way: she turns to starboard to pass astern, or slows, and does not cross ahead." },
+        { "tiles": [
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 0, "dist": 85, "hdg": 180 }, "bearingLine": true }, "view": "60 -10 200 165", "name": "Head-on", "note": "both turn to starboard" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 45, "dist": 85, "hdg": 270 }, "bearingLine": true }, "view": "60 -10 200 165", "name": "Crossing", "note": "she is on your starboard side: you give way" }
+        ] },
+        { "p": "With the other vessel on your port side you are the **stand-on vessel**: hold your course and speed. If she does not act, sound five short blasts. If she still comes on, act yourself: slow down, stop or turn to starboard, never to port towards her." }
+      ]
+    },
+    {
+      "id": "order",
+      "kicker": "Sail, power, fishing",
+      "title": "Who keeps clear of whom",
+      "refs": ["COLREGs Rule 18", "COLREGs Rules 3 / 18", "COLREGs Rule 25"],
+      "blocks": [
+        { "p": "A **power-driven vessel** keeps clear of a vessel under sail, even one on her port side: the starboard-side rule is for two power vessels only. A sailing vessel in turn keeps clear of a vessel **engaged in fishing** with nets or a trawl." },
+        { "tiles": [
+          { "fig": { "type": "dayshape", "shape": "two-cones" }, "view": "80 28 160 140", "name": "Fishing", "note": "two cones, points together: keep clear" },
+          { "fig": { "type": "dayshape", "shape": "cone-down", "sail": true }, "view": "80 28 160 140", "name": "Motor-sailing", "note": "cone point down: she counts as power" }
+        ] },
+        { "p": "The engine decides what you are. With it in gear your yacht is power-driven, whatever sails are set, and keeps clear of boats under sail alone. By day a motor-sailing yacht shows a black cone, point down, forward." }
+      ]
+    },
+    {
+      "id": "channel",
+      "kicker": "Narrow channels",
+      "title": "Keep right and leave the ferry her water",
+      "refs": ["COLREGs Rule 9"],
+      "blocks": [
+        { "p": "In a **narrow channel**, a canal or a strait, keep as near to its starboard edge as is safe." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0, "sail": true, "boom": 14 }, "other": { "bearing": 6, "dist": 78, "hdg": 180, "label": "Ferry", "scale": 1.25 }, "wind": 270, "note": "She can only use the channel: move to the edge" } },
+        { "p": "A ferry or ship that can navigate only inside the channel has nowhere else to go. A sailing vessel, and any vessel under 20 m, **must not impede** her: \"power gives way to sail\" does not help you here. Move to the side early." }
+      ]
+    },
+    {
+      "id": "night",
+      "kicker": "Lights at night",
+      "title": "Read the other boat from her lights",
+      "refs": ["COLREGs Rules 14 / 23", "COLREGs Rules 15 / 23", "COLREGs Rules 23 / 25", "COLREGs Rules 18 / 25"],
+      "blocks": [
+        { "p": "A flotilla sails by day, but late arrivals happen. A boat under way shows a red **sidelight** to port, a green one to starboard and a white **sternlight**. A power-driven vessel adds a white **masthead light**, the steaming light, above them." },
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 70 }, { "c": "g", "x": 140, "y": 120 }, { "c": "r", "x": 180, "y": 120 }] }, "view": "60 20 200 150", "name": "Power, head-on", "note": "both sidelights: turn to starboard" },
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 204, "y": 72 }, { "c": "r", "x": 198, "y": 120 }] }, "view": "60 20 200 150", "name": "Power, crossing", "note": "red on your starboard bow: give way" },
+          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 160, "y": 56 }] }, "view": "60 20 200 150", "name": "Tricolour", "note": "one colour high up: sail, keep clear" },
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 122 }] }, "view": "60 20 200 150", "name": "From astern", "note": "sternlight: you are overtaking" }
+        ], "cols": 2 },
+        { "p": "Red is her port side. On your starboard bow, on a steady bearing, she is crossing from your starboard: turn to starboard and pass astern of her." },
+        { "p": "Under sail a yacht under 20 m may show the three colours in one **tricolour** at the masthead. Under engine switch on the steaming light, sidelights and sternlight, and the tricolour off." }
+      ]
+    },
+    {
+      "id": "signals",
+      "kicker": "Sound signals",
+      "title": "Short blasts in harbour, long ones in fog",
+      "refs": ["COLREGs Rule 34", "COLREGs Rule 35"],
+      "blocks": [
+        { "p": "A short blast lasts about one second, a prolonged blast four to six. Power-driven vessels in sight of one another signal their manoeuvres; in fog a vessel under way sounds her signal at least every two minutes." },
+        { "table": { "head": ["Signal", "Meaning"], "rows": [
+          ["1 short", "I am altering course to starboard"],
+          ["2 short", "I am altering course to port"],
+          ["3 short", "My engines are going astern"],
+          ["5 short or more", "I doubt you are doing enough to keep clear"],
+          ["Fog: 1 prolonged", "Power-driven vessel making way"],
+          ["Fog: 1 prolonged, 2 short", "Vessel under sail, fishing or towing"]
+        ] } },
+        { "p": "Three short blasts from a ferry at the quay: she is backing out, so keep away from her stern. A prolonged blast coming closer in fog is a vessel under power: slow down and listen." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "topic": "meridian",
+  "lead": "A body on your meridian gives latitude with one subtraction and no accurate time: the noon Sun by day, Polaris and the meridian stars at twilight.",
+  "sections": [
+    {
+      "id": "noon",
+      "kicker": "Time of noon",
+      "title": "When the Sun is on your meridian",
+      "refs": ["Meridian altitude — time of noon", "Meridian altitude — near the meridian", "Meridian altitude — fast boat", "Meridian altitude — Sun near the zenith"],
+      "blocks": [
+        { "p": "Local noon is the moment the Sun crosses your meridian, rarely 1200 by the clock. The almanac gives **Mer Pass** in local mean time; turn the longitude you expect to have reached into time (1° is 4 minutes) and add it if west, subtract it if east." },
+        { "fig": { "type": "card", "title": "Time of noon", "lines": ["Almanac: Sun Mer Pass 1204 LMT", "DR longitude 037°30′W", "37.5° × 4 min = 2 h 30 min", "West, so add: noon at 1434 UT"] } },
+        { "p": "Start ten minutes early and follow the Sun up. It climbs ever more slowly, hangs, then dips: the **highest** reading is the meridian altitude. The top of the curve is flat, so a few minutes either way cost almost nothing and the watch need only be roughly right; farther off, work the sight as an ordinary sun line." },
+        { "p": "Two cases spoil the flat top. A fast boat running north or south shifts the peak off the meridian by its own movement: take the altitude at the computed time. A Sun nearly overhead has a sharp peak and a bearing that swings round in minutes: time sights either side of noon and plot each as a circle of radius z round the Sun's geographical position." }
+      ]
+    },
+    {
+      "id": "latitude",
+      "kicker": "Noon latitude",
+      "title": "Zenith distance and declination",
+      "refs": ["Meridian altitude — latitude", "Meridian altitude — from Hs to Ho"],
+      "blocks": [
+        { "p": "Correct **Hs** to **Ho**: index error (on the arc subtract, off the arc add), dip (subtract), then the main correction, plus for the lower limb, minus for the upper." },
+        { "fig": { "type": "altitude", "parts": [["hs", "Hs"], ["dip", "dip"], ["horizon", "visible horizon"], ["horizontal", "horizontal"], ["limb", "limb"], ["eye", "height of eye"]] }, "cap": "The sextant measures from the visible horizon, below the horizontal by the dip." },
+        { "p": "The **zenith distance** z = 90° − Ho is how far you are from the point under the Sun, whose latitude is its declination. Take Dec for the UT of noon, and note which way you faced." },
+        { "fig": { "type": "sphere", "parts": [["Z", "Z"], ["P", "P"], ["X", "Sun"], ["pz", "90° − Lat"], ["zx", "z"], ["px", "90° − Dec"], ["horizon", "horizon"], ["equator", "equator"]] }, "cap": "At noon the Sun lies on the arc through P and Z: the triangle closes up and its sides add or subtract." },
+        { "p": "Name z opposite to the Sun's bearing: Sun to the south, z is north. Then **same names add, contrary names subtract**, and the latitude takes the name of the larger." },
+        { "table": { "head": ["Sun bears", "z", "Dec", "Latitude"], "rows": [
+          ["south, Ho 60°", "30° N", "N10°", "same, add: 40°N"],
+          ["south, Ho 50°", "40° N", "S20°", "contrary, subtract: 20°N"],
+          ["north, Ho 70°", "20° S", "N5°", "contrary, subtract: 15°S"]
+        ] } },
+        { "rule": "Lat = Dec + z with the Sun to the south, Dec − z with it to the north; north plus, south minus." }
+      ]
+    },
+    {
+      "id": "bodies",
+      "kicker": "Stars, planets, Moon",
+      "title": "Any body on the meridian gives latitude",
+      "refs": ["Meridian altitude — stars and planets", "Meridian altitude — Moon", "Meridian altitude — lower transit"],
+      "blocks": [
+        { "p": "The same rule serves a star or planet on your meridian in twilight, when body and horizon both show. Two stars taken together, one north and one south, cancel a constant error: mean the two latitudes." },
+        { "table": { "head": ["Body", "After index error and dip", "Declination"], "rows": [
+          ["Sun", "refraction, semi-diameter", "changes slowly"],
+          ["Star, planet", "refraction only", "star fixed, planet hourly"],
+          ["Moon", "refraction, semi-diameter, parallax", "fast: use the exact UT"]
+        ] } },
+        { "p": "The **Moon** is so close that you add parallax, the almanac's HP × cos altitude. It crosses the meridian about 50 minutes later each day." },
+        { "p": "A **circumpolar** star (Dec greater than 90° − latitude, same name) never sets and crosses the meridian again below the pole. At this lower transit, latitude = Ho + polar distance, 90° − Dec." },
+        { "fig": { "type": "card", "title": "Lower transit", "lines": ["Star below the pole, bearing north", "Ho 20°00′, Dec N70°00′", "Polar distance 90° − 70° = 20°", "Latitude 20° + 20° = 40°00′N"] } }
+      ]
+    },
+    {
+      "id": "polaris",
+      "kicker": "Pole star",
+      "title": "The pole's altitude is your latitude",
+      "refs": ["Pole star"],
+      "blocks": [
+        { "p": "The altitude of the celestial pole equals your latitude, and **Polaris** circles within 1° of it. The almanac's Polaris table bridges the gap with three corrections: **a0** from LHA Aries (GHA Aries − west longitude, + east), **a1** from latitude, **a2** from the month." },
+        { "fig": { "type": "card", "title": "Polaris", "lines": ["Ho 40°10.0′", "a0 0°50.0′ · a1 0.6′ · a2 0.4′", "40°10.0′ − 1° + 50.0′ + 0.6′ + 0.4′", "Latitude 40°01.0′N"] } },
+        { "rule": "Latitude = Ho − 1° + a0 + a1 + a2." },
+        { "p": "Follow the Plough's pointers, Merak to Dubhe, about five times their gap; Cassiopeia's W lies as far away on the other side. Polaris is only second magnitude: at dusk set your DR latitude on the sextant and sweep the horizon due north." },
+        { "fig": { "type": "chart", "marks": [[235, 170, "w", ""], [215, 148, "w", ""], [241, 124, "w", ""], [263, 144, "w", ""], [262, 108, "w", ""], [282, 95, "w", ""], [305, 92, "w", ""], [115, 38, "w", "Polaris"]], "track": "M235 170 L115 38", "labels": [[235, 188, "Merak"], [205, 152, "Dubhe", "end"], [290, 168, "Plough"], [160, 100, "5 × the gap", "end"]], "note": "Looking north after dark" } },
+        { "p": "Near the equator it is too low to trust; south of it, below the horizon." }
+      ]
+    },
+    {
+      "id": "south",
+      "kicker": "Southern sky",
+      "title": "No pole star in the south",
+      "refs": ["Southern Cross"],
+      "blocks": [
+        { "p": "No bright star marks the south celestial pole: Sigma Octantis, about 1° from it, is far too faint. For latitude take a bright star on the meridian, such as Achernar, Canopus or Acrux." },
+        { "fig": { "type": "chart", "marks": [[70, 15, "w", ""], [77, 40, "w", ""], [83, 25, "w", ""], [64, 30, "w", ""], [136, 63, "w", ""], [174, 87, "w", ""], [108, 152, "k", ""]], "track": "M70 15 L108 152 M155 75 L108 152", "labels": [[60, 14, "Gacrux", "end"], [66, 52, "Acrux", "end"], [190, 70, "Pointers", "start"], [86, 104, "4½ ×", "end"], [108, 174, "south celestial pole", "middle"]], "note": "Looking south after dark" } },
+        { "p": "The **Southern Cross** points the way: extend its long axis, Gacrux through Acrux, about 4½ times, and a line at right angles from midway between the Pointers meets it at the pole. By eye that checks latitude to a degree or so. With the Cross upright, Acrux is on your meridian. The **False Cross** is larger and dimmer, with no bright Pointers beside it." }
+      ]
+    },
+    {
+      "id": "noonfix",
+      "kicker": "Noon position",
+      "title": "Crossing the latitude, and running it down",
+      "refs": ["Noon position", "Latitude sailing", "Noon sight lost"],
+      "blocks": [
+        { "p": "A latitude is a position line running east–west. For a **noon position**, carry the morning sun line forward by the course and distance made good, keeping its direction, and cross it with the noon latitude. Advanced to dusk, the latitude moves only by the north–south part of the run; a star bearing near east or west cuts it best." },
+        { "fig": { "type": "chart", "land": "M170.9 162.8 L274.9 34.8 L273.1 33.2 L169.1 161.2 Z M20.0 141.2 L300.0 141.2 L300.0 138.8 L20.0 138.8 Z M219.9 99.2 L130.9 115.2 L131.1 116.8 L220.1 100.8 Z", "track": "M78 182 L182 53", "marks": [[112, 140, "k", ""]], "labels": [[262, 26, "1130 sun line"], [90, 84, "run up to noon"], [298, 156, "noon latitude", "end"], [104, 134, "noon fix", "end"]], "note": "Plotting sheet" } },
+        { "p": "If cloud takes the noon sight, cross two sun lines with a run between them, or take a meridian star or Polaris at dusk." },
+        { "p": "**Latitude sailing** needs no longitude. Reach the latitude of your landfall well up-wind and up-current of it, then run along the parallel; each noon sight gives the miles to make good north or south, and a latitude off the DR reveals the north–south part of the current. Unsure of the longitude, slow down and close the land in daylight." },
+        { "fig": { "type": "chart", "land": "M30 112 C45 104 70 108 78 118 C82 130 62 140 44 136 C30 132 24 120 30 112 Z M20.0 126.2 L300.0 126.2 L300.0 123.8 L20.0 123.8 Z", "track": "M270 50 L190 125 L84 125", "boat": [270, 50, 227], "labels": [[55, 156, "island"], [298, 142, "its latitude", "end"], [212, 112, "to windward", "start"], [138, 116, "run down the latitude", "middle"]], "note": "Trade wind from the east · not to scale" } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "topic": "sextant",
+  "lead": "A sextant reads the angle between a body and the horizon to a tenth of a minute, and a minute is a mile on the chart. Instrument, handling and corrections decide whether the fix is any good.",
+  "sections": [
+    {
+      "id": "parts",
+      "kicker": "The instrument",
+      "title": "Two mirrors, an arc and a drum",
+      "refs": ["Sextant — parts", "Sextant — reading the micrometer", "Sextant — care"],
+      "blocks": [
+        {"p": "The micrometer drum moves the **index arm** along the arc, and the **index mirror** turns with it. The **horizon mirror** and the telescope are fixed to the frame: through the clear half of the horizon mirror you see the sea horizon, in its silvered half the body, reflected from the index mirror. Shades sit in front of each mirror."},
+        { "table": { "head": ["Reading", "Where"], "rows": [
+          ["Degrees", "The last mark passed on the arc"],
+          ["Minutes", "The micrometer drum"],
+          ["Tenths", "The drum's vernier"]
+        ] } },
+        {"fig": {"type": "card", "title": "Reading the micrometer", "lines": ["Index just past 35° on the arc", "Drum 27, vernier 4: Hs 35°27.4′", "Index just short of 42°, drum 57.3", "Hs 41°57.3′, not 42°57.3′"]}},
+        {"p": "A degree misread is 60 miles: a drum near 57 belongs to the degree the index has not quite reached. Lift the sextant by its handle or frame, never by the arc, arm or mirrors; dab spray off, dry it, and stow it boxed, wedged low amidships. A gritty drum wants the rack cleaned and a drop of light oil. A metal sextant keeps its index error; a plastic one drifts with heat: check it at every sight."}
+      ]
+    },
+    {
+      "id": "adjust",
+      "kicker": "Adjustments and index error",
+      "title": "Three errors, in a fixed order",
+      "refs": ["Sextant — adjustments", "Sextant — index error"],
+      "blocks": [
+        {"p": "Each adjustment can upset the next, so the order is fixed: perpendicularity, side error, then index error. The first is cured by the screw behind the index mirror, the second by the side screw of the horizon mirror. Collimation, the telescope not parallel to the frame, is rare."},
+        {"fig": {"type": "card", "title": "Checking the sextant, in order", "lines": ["1 Perpendicularity: arm at 60°, look into", "   the index mirror at the arc: one line", "2 Side error: at 0°, tilt on the horizon", "   or a star: no step, no sideways pass", "3 Index error: horizon in one line, read it"]}},
+        {"p": "A small **index error** (IE) is not adjusted away but applied to every reading. Read on the arc, above zero, it is subtracted; read off the arc, below zero, it is added, and the drum then counts backwards: 57.0 means 3.0′ off. After a knock, measure it again before every sight."},
+        {"fig": {"type": "card", "title": "Index error by the Sun", "lines": ["Limbs touching, on the arc: 33.0′", "Limbs touching, off the arc: 31.0′", "IE = (33.0 − 31.0) ÷ 2 = 1.0′ on: subtract", "Check: (33.0 + 31.0) ÷ 4 = 16.0′ = SD"]}},
+        {"rule": "On the arc, take it off. Off the arc, put it on.", "label": "Remember"}
+      ]
+    },
+    {
+      "id": "sight",
+      "kicker": "Taking a sight",
+      "title": "The body down to the horizon",
+      "refs": ["Sextant — taking a sight", "Sextant — averaging sights"],
+      "blocks": [
+        {"p": "Swing in the index shades before you look for the Sun; a horizon shade only against glare. Find the body near zero and move it down to the horizon, or, sextant inverted, bring the horizon up to a star. Rock the sextant: the body swings in an arc, and only at its lowest point is the sextant vertical; tilted, it reads too high."},
+        {"fig": {"type": "altitude", "parts": [["sun", "Sun"], ["limb", "limb"], ["horizon", "horizon"], ["hs", "Hs"], ["eye", "height of eye"]]}},
+        {"p": "Bring the **lower limb** to the horizon; the upper when cloud hides the lower, and on the Moon always the lit one. Use the sea horizon straight under the body, never a coastline or a near crest: in a swell shoot from a crest, in haze from lower down, with the dip for that height. Alone, start a stopwatch at the sight and stop it on a whole minute of the watch."},
+        {"fig": {"type": "card", "title": "Timing a sight alone", "lines": ["Stopwatch started at the sight", "Stopped as the watch read 08 30 00", "Stopwatch 2 m 15 s: sight at 08 27 45", "Watch 5 s fast: UT 08 27 40"]}},
+        {"p": "Stars need twilight, when star and horizon show together. Start in the east, where the horizon fades first at dusk and appears first at dawn; take the bright stars first at dusk, the faint ones first at dawn. Preset the planned altitude and sweep the azimuth. Take three to five sights, plot altitude against time, drop any off the line and average the rest."}
+      ]
+    },
+    {
+      "id": "corrections",
+      "kicker": "Altitude corrections",
+      "title": "From Hs to Ho, in one order",
+      "refs": ["Sextant — altitude corrections"],
+      "blocks": [
+        {"p": "Index error and **dip** turn the sextant altitude Hs into the apparent altitude Ha; Ha enters the almanac's main correction table, which gives the observed altitude Ho. Your eye is above the sea and sees the horizon below the true horizontal; that is the dip: 1.76′ × √(height of eye in metres), more the higher you stand."},
+        {"fig": {"type": "altitude", "parts": [["horizontal", "horizontal"], ["horizon", "visible horizon"], ["hs", "Hs"], ["dip", "dip"], ["eye", "height of eye"]]}},
+        { "table": { "head": ["Correction", "Sign", "Applies to"], "rows": [
+          ["Index error", "− on the arc, + off", "everything"],
+          ["Dip", "always −", "everything"],
+          ["Refraction", "always −", "everything"],
+          ["Semi-diameter, about 16′", "+ lower limb, − upper", "Sun and Moon"],
+          ["Parallax", "always +", "the Moon"]
+        ] } },
+        {"p": "The Sun's main correction combines refraction and semi-diameter, in lower- and upper-limb columns and by season, since the semi-diameter follows the date. Stars and most planets get refraction alone. **Refraction** grows fast low down, 5′ at 10° and 10′ at 5°, and cold air or high pressure change it: wait for a body to climb above 10°; the temperature and pressure correction matters only below that."},
+        {"fig": {"type": "card", "title": "Sun, lower limb", "lines": ["Hs 40°00.0′", "IE 2.0′ on the arc: −2.0′", "Dip, eye 2.9 m: −3.0′ · Ha 39°55.0′", "Main correction, LL: +15.0′", "Ho 40°10.0′"]}}
+      ]
+    },
+    {
+      "id": "moon",
+      "kicker": "The Moon and the planets",
+      "title": "Parallax and the lit limb",
+      "refs": ["Sextant — altitude corrections"],
+      "blocks": [
+        {"p": "The Moon is close enough for **parallax**: from the Earth's centre it stands higher than from the surface, by the horizontal parallax HP × cos Ha, always added. Use the Moon's own table with the day's HP and SD, not the Sun's, and when the lit limb is the upper one, subtract the SD."},
+        {"fig": {"type": "card", "title": "Moon, upper limb", "lines": ["Ha 60°00′ · HP 60.0′ · SD 16.0′", "Refraction −0.6′", "Parallax = 60.0 × cos 60° = +30.0′", "SD, upper limb: −16.0′", "Ho = Ha + 13.4′"]}},
+        {"p": "Venus and Mars get a small additional correction of their own; Jupiter and Saturn are corrected like stars."}
+      ]
+    },
+    {
+      "id": "errors",
+      "kicker": "What an error does",
+      "title": "One minute is one mile",
+      "refs": ["Sextant — altitude corrections", "Sextant — index error", "Sextant — reading the micrometer"],
+      "blocks": [
+        {"p": "Every minute of altitude is a mile on the position line. An altitude too high puts the line too far **towards** the body, too low, away; a sign applied the wrong way counts twice. A constant error in all the sights of a fix, an index error in doubt or a dip spoilt by strange air, shifts every line the same way."},
+        {"fig": {"type": "chart", "track": "M90 70 H230 M225.3 61.9 L155.3 183.1 M94.7 61.9 L164.7 183.1", "marks": [[160, 105, "k", "fix"]], "labels": [[160, 56, "star 000°"], [262, 150, "star 120°"], [58, 150, "star 240°"]], "note": "Three stars, all altitudes too high · the fix is the centre"}},
+        {"p": "So spread the stars round the sky. With three 120° apart your position is the centre of the cocked hat; with two on opposite bearings half the sum of the intercepts is the error, and the rest is the true offset."}
+      ]
+    }
+  ]
+}

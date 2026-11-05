@@ -1,0 +1,94 @@
+{
+  "topic": "compass",
+  "lead": "Mid-ocean there is no transit to check the compass against: you use the Sun and the stars. When the satellites fail, that checked compass, the log and the sextant bring you in.",
+  "sections": [
+    {
+      "id": "error",
+      "kicker": "Compass error",
+      "title": "Variation plus deviation",
+      "refs": ["Compass error, variation & deviation", "Magnetic variation on the ocean"],
+      "blocks": [
+        { "p": "The **compass error** is the difference between a true bearing and the same bearing by compass. It is the sum of **variation**, which belongs to the place, and **deviation**, which belongs to the boat on that heading. Count east as plus, west as minus." },
+        { "fig": { "type": "compass", "variation": -16, "deviation": 2, "course": 249, "note": "Compass 263°" }, "cap": "263°C + 2°E − 16°W = 249°T." },
+        { "p": "Take the variation for your DR position from the pilot chart's isogonic lines or the chart's rose, corrected for the annual change; it alters by degrees across an ocean. Subtract it from the error: what is left is the deviation." },
+        { "rule": "Error = true − compass. Compass least, error east; compass best, error west. Deviation = error − variation." }
+      ]
+    },
+    {
+      "id": "amplitude",
+      "kicker": "Amplitude",
+      "title": "The Sun's bearing as it rises or sets",
+      "refs": ["Compass check — amplitude"],
+      "blocks": [
+        { "p": "The **amplitude** is the angle between the rising or setting Sun and due east or west. It needs only latitude and declination, not the time: sin Amp = sin Dec ÷ cos Lat. Name it E at rising or W at setting, then N or S like the declination: in either hemisphere the Sun rises and sets towards the name of its declination." },
+        { "fig": { "type": "compass", "variation": -11, "deviation": 3, "course": 77, "courseLabel": "Sun, true", "note": "By compass 085°" }, "cap": "Sunrise at 40°N with declination N10°: the Sun bears 077°T." },
+        { "fig": { "type": "card", "title": "Sunrise amplitude", "lines": ["Lat 40°N, Dec N10°", "sin Amp = sin 10° ÷ cos 40° = 0.227", "Amp E13°N: 090° − 13° = 077°T", "Sun by compass 085°C: error 8°W", "Variation 11°W: deviation 3°E"] } },
+        { "p": "Take the bearing with the Sun's centre on the celestial horizon: its lower limb then stands about half a diameter above the visible horizon. Near the equator the amplitude equals the declination; it grows with latitude, and in high latitudes the slanting Sun makes a late bearing degrees out. At the equinoxes it rises due east everywhere." }
+      ]
+    },
+    {
+      "id": "azimuth",
+      "kicker": "Azimuth",
+      "title": "A bearing at any time, of any body",
+      "refs": ["Compass check — azimuth", "Compass check — stars & planets", "Compass check — Polaris"],
+      "blocks": [
+        { "p": "At any other moment the body's true bearing is its **azimuth**, Zn: the angle at your zenith in the PZX triangle, worked from latitude, declination and local hour angle (LHA = GHA − west longitude, or + east). So you need the time to the minute. LHA over 180° puts the body east of you." },
+        { "fig": { "type": "sphere", "parts": [["Z", "Z"], ["P", "P"], ["X", "Sun"], ["pz", "90° − lat"], ["px", "90° − Dec"], ["zx", "90° − altitude"], ["horizon", "horizon"]], "note": "The angle at Z is the azimuth" } },
+        { "table": { "head": ["Tables give Z", "LHA over 180°", "LHA under 180°"], "rows": [
+          ["North latitude", "Zn = Z", "Zn = 360° − Z"],
+          ["South latitude", "Zn = 180° − Z", "Zn = 180° + Z"]
+        ] } },
+        { "p": "Choose a low body, under about 30°: a high one is hard to sight across the compass, and near the zenith its bearing swings fast. Stars and planets serve at twilight; for their amplitude take the bearing a Sun's diameter above the horizon. **Polaris** bears within about 1° of north in low and middle latitudes, but is out of sight south of the equator; there the Southern Cross bears 180°T when its long axis is vertical." }
+      ]
+    },
+    {
+      "id": "log",
+      "kicker": "Deviation log",
+      "title": "One heading, one deviation",
+      "refs": ["Compass — the deviation log", "Compass — swinging at sea", "Fluxgate & steering compass"],
+      "blocks": [
+        { "p": "A deviation holds only for the heading it was found on, and for that heel: log it by heading and tack. After a gybe it is unknown until checked again. A sudden jump means steel or electronics stowed near the compass." },
+        { "table": { "head": ["Ship's head", "Deviation"], "rows": [
+          ["000°C", "2°E"],
+          ["090°C", "5°W"],
+          ["180°C", "2°W"],
+          ["270°C", "5°E"]
+        ] } },
+        { "p": "To **swing the compass** at sea, steer each heading in turn and bear the Sun on each, with a fresh azimuth for every bearing, since the Sun moves degrees in half an hour. Between headings interpolate: on 045°C this card gives about 1½°W. Steer by the card; leave the corrector magnets to an adjuster in port." },
+        { "p": "A fluxgate compass also feels the boat's magnetism: run its calibration turns, then compare it with the steering compass. A satellite compass has no deviation but dies with the GNSS signal; only the magnetic compass needs no power." }
+      ]
+    },
+    {
+      "id": "gnss",
+      "kicker": "GNSS",
+      "title": "Good to metres, until it is not",
+      "refs": ["Satellite navigation — GNSS", "Satellite navigation — single-source risk", "Celestial navigation as the backup", "AIS — position errors"],
+      "blocks": [
+        { "p": "A receiver finds its range from each satellite by the signal's travel time; three ranges and its own clock error need **four satellites**. Bunched satellites give a high **HDOP**, a poor fix. GPS, Galileo, GLONASS and BeiDou together improve the geometry, but share one band: a jammer blocks them all." },
+        { "table": { "head": ["What you see", "What it means"], "rows": [
+          ["All receivers lose the fix at once", "Jamming"],
+          ["A plausible position, but log and radar disagree", "Spoofing"],
+          ["Plotter lost, handheld fine", "The shared antenna or its cable"],
+          ["Two sets disagree", "A third decides: DR or a sight"]
+        ] } },
+        { "p": "The fix may be right and the chart wrong: an old survey can put a reef a mile out. Log position, course and distance every hour, take a daily sight, and keep a handheld GPS with sealed spare batteries; in lightning, into the oven, unplugged." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0, "sail": true, "boom": 14 }, "other": { "bearing": 40, "dist": 85, "hdg": 280 }, "bearingLine": true, "note": "Bearing 040° steady 12 min · AIS CPA 1.8 M" }, "cap": "AIS repeats the other ship's own GPS. A steady compass bearing is a risk of collision, whatever the AIS says." }
+      ]
+    },
+    {
+      "id": "satcom",
+      "kicker": "EPIRB and satcom",
+      "title": "Satellites that carry your messages",
+      "refs": ["EPIRB & Cospas-Sarsat", "Satellite communications at sea"],
+      "blocks": [
+        { "p": "A 406 MHz **EPIRB** sends its identity through the Cospas-Sarsat satellites to an MRCC, so register it to you and this boat. With built-in GNSS it sends your position within minutes. Rescuers home on its 121.5 MHz signal, so leave it on until you are picked up. The Return Link light only confirms receipt of the alert." },
+        { "fig": { "type": "card", "title": "False alert", "lines": ["Switch the EPIRB off", "Call an MRCC at once", "Give the beacon's hex ID,", "the boat's name, position and time", "Say that all is well"] } },
+        { "table": { "head": ["System", "Satellites", "Limits"], "rows": [
+          ["Iridium", "Low polar orbits, whole globe", "Needs open sky"],
+          ["Inmarsat", "Geostationary over the equator", "Lost beyond about 75°; the rig can mask it"]
+        ] } },
+        { "p": "Without satcom only HF reaches mid-ocean: high-seas bulletins and weatherfax. A passing ship will relay a routine message." }
+      ]
+    }
+  ]
+}

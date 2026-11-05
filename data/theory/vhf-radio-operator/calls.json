@@ -1,0 +1,77 @@
+{
+  "topic": "calls",
+  "lead": "Routine calls follow one pattern, the same in every port and every language. It keeps transmissions short and tells each station when to speak. The rest is manners: the channel belongs to everyone in range.",
+  "sections": [
+    {
+      "id": "call",
+      "kicker": "Making a call",
+      "title": "Who you want, who you are, OVER",
+      "refs": ["VHF procedure"],
+      "blocks": [
+        { "p": "A call has three parts in a fixed order: the **name of the station you are calling**, the words **THIS IS**, and **your own name**. Each name may be said up to three times; when reception is good, once is enough. You end with **OVER**." },
+        { "fig": { "type": "card", "title": "Calling a yacht on 16", "lines": ["Blue Star, Blue Star, Blue Star,", "this is Aurora, Aurora, Aurora,", "OVER"] } },
+        { "p": "To answer a call, turn it round: the caller's name, THIS IS, your name, OVER. \"Blue Star, this is Aurora, OVER.\"" },
+        { "p": "If you do not know a vessel's name, describe her so that she recognises herself, by type and position: \"Motor yacht anchoring north of me in Vathi Bay, this is Aurora, OVER.\"" }
+      ]
+    },
+    {
+      "id": "move",
+      "kicker": "Changing channel",
+      "title": "Meet on 16, talk on a working channel",
+      "refs": ["VHF procedure"],
+      "blocks": [
+        { "p": "On 16 you only make contact. As soon as the other yacht answers, you propose an intership working channel, digit by digit: \"channel seven two\". She may propose another one instead. Whichever is agreed, confirm it in a word and switch." },
+        { "tiles": [
+          { "fig": { "type": "radio", "channel": "16", "power": "HI" }, "view": "60 53 108 58", "name": "1 · Make contact", "note": "call, answer, agree a channel" },
+          { "fig": { "type": "radio", "channel": "72", "power": "HI" }, "view": "60 53 108 58", "name": "2 · Talk", "note": "listen first, then call again" }
+        ] },
+        { "fig": { "type": "card", "title": "Aurora and Blue Star", "lines": ["16 · Aurora, this is Blue Star, OVER", "16 · Blue Star, this is Aurora,", "channel seven two, OVER", "16 · Aurora, this is Blue Star, seven two", "72 · Blue Star, this is Aurora, OVER", "72 · Aurora, this is Blue Star, OVER"] } },
+        { "p": "On the new channel listen for a moment to make sure it is free, then call the station again before you give your message. If she does not come up after a call or two, go back to 16, where you last had contact, and call her once more." }
+      ]
+    },
+    {
+      "id": "over-out",
+      "kicker": "OVER and OUT",
+      "title": "Whose turn it is",
+      "refs": ["VHF procedure"],
+      "blocks": [
+        { "p": "Only one station can speak at a time, so every transmission ends with a word that says what comes next." },
+        { "table": { "head": ["Word", "Means", "Then"], "rows": [
+          ["OVER", "I have finished and I expect your reply", "the other station speaks"],
+          ["OUT", "the exchange is finished, no reply expected", "back to watching 16"]
+        ] } },
+        { "p": "The two never go together: \"over and out\" asks for a reply and refuses it in one breath. When the other station ends with OUT, say nothing more." },
+        { "rule": "OVER: your turn. OUT: we are done. Never both." }
+      ]
+    },
+    {
+      "id": "marina",
+      "kicker": "Marinas and ports",
+      "title": "A short call on their own channel",
+      "refs": ["VHF procedure", "Radio discipline"],
+      "blocks": [
+        { "p": "A marina or a port authority is called on its own working channel, the one in the pilot book, not on 16. Make a short call and wait for the answer. Then give the whole request in one message: the boat, her length, how many nights." },
+        { "fig": { "type": "card", "title": "Asking for a berth", "lines": ["Vega Marina, this is Aurora, OVER", "Aurora, this is Vega Marina, OVER", "Vega Marina, this is Aurora, a berth", "for one night, 12 metres, OVER", "Aurora, berth B 14, stern to, OVER", "Berth B 14, stern to, thank you, OUT"] } },
+        { "p": "When a station calls you, answer that station and give exactly what it asked for. A port authority that asks for your name and intentions hears: \"Port Authority, this is Aurora, mooring at the town quay, OVER.\"" }
+      ]
+    },
+    {
+      "id": "discipline",
+      "kicker": "Radio discipline",
+      "title": "The channel belongs to everyone",
+      "refs": ["Radio discipline"],
+      "blocks": [
+        { "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["display", "listen before you call"], ["power", "in port: low power, 1 W"]] } },
+        { "list": [
+          "**Listen before you transmit.** If others are talking, wait until they finish; never talk over them.",
+          "**Low power in port.** 1 W reaches the fuel dock across the marina and does not block the channel for boats miles away.",
+          "**Keep it short.** One message with everything in it: others are waiting to call.",
+          "**No answer?** Wait a few minutes before you call again. If the station is far off or behind a cape, try later, when you are closer, not more often.",
+          "**Nothing private.** Everyone in range hears you: no card numbers on the air.",
+          "**No needless transmissions.** Channel 16 stays clear for distress and calling, and the radio is not a toy."
+        ] },
+        { "rule": "Listen, think, then press: short, clear, and off the air." }
+      ]
+    }
+  ]
+}

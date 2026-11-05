@@ -1,0 +1,109 @@
+{
+  "topic": "weather",
+  "lead": "В открытом море не убежишь в гавань: вы сами читаете карту, взвешиваете каждый прогноз и решаете заранее.",
+  "sections": [
+    {
+      "id": "systems",
+      "kicker": "Барические системы",
+      "title": "Куда поворачивает ветер",
+      "refs": ["Pressure systems — wind round a high", "Pressure systems — Buys Ballot in the south", "Pressure systems — routing round a high", "Pressure systems — the blocking high", "Pressure systems — the col", "Pressure systems — Azores high and the heat low"],
+      "blocks": [
+        { "p": "Северное полушарие: ветер обходит **антициклон по часовой стрелке**, чуть наружу, а циклон — против часовой, чуть внутрь; в южном оба направления обратные. **Закон Бейс-Балло**: встаньте спиной к ветру — циклон слева от вас на севере, справа на юге." },
+        { "tiles": [
+          { "fig": { "type": "isobars", "center": "В", "values": ["1032", "1028", "1024"], "boat": [120, 160, 270], "note": "К югу от центра: ENE" }, "name": "Антициклон, север" },
+          { "fig": { "type": "isobars", "center": "Н", "values": ["992", "996", "1000"], "boat": [96, 22, 0], "hemisphere": "Южное полушарие", "note": "К северу от центра: WNW" }, "name": "Циклон, юг" }
+        ] },
+        { "p": "В центре антициклона почти штиль: обходите его той стороной, где ветер попутный. **Блокирующий антициклон** стоит днями и отводит циклоны в обход. **Седловина** между двумя антициклонами и двумя циклонами даёт слабый переменный ветер, туман или грозы. Летом Азорский антициклон и **термическая депрессия** над Иберией гонят северный ветер вдоль Португалии." }
+      ]
+    },
+    {
+      "id": "depressions",
+      "kicker": "Циклоны",
+      "title": "Траектория решает, какой у вас ветер",
+      "refs": ["Depressions — the jet stream as context", "Depressions — the cut-off low and the jet", "Depressions — the track and the wind on board", "Depressions — the stronger side of the track", "Depressions — the centre passing over you", "Depressions — explosive deepening", "Forecast products — satellite images", "Depressions — ex-tropical storms", "Depressions — the polar low", "Depressions — the medicane"],
+      "blocks": [
+        { "p": "Циклоны ведёт **струйное течение**: под сильной прямой струёй они проносятся серией; **отсечённый** циклон блуждает непредсказуемо. Встаньте лицом туда, куда идёт циклон (северное полушарие): справа от его траектории ветер **заходит**, слева — **отходит**." },
+        { "fig": { "type": "chart", "marks": [[90, 150, "r", "Циклон"]], "track": "M98 145 L262 40", "labels": [[228, 140, "справа от пути:", "middle"], [228, 154, "заходит · сильнее", "middle"], [92, 56, "слева от пути:", "middle"], [92, 70, "отходит · слабее", "middle"]], "note": "Северное полушарие · циклон идёт на NE" } },
+        { "p": "Справа его движение складывается с его ветром. Под центром ветер стихает при минимуме давления, а затем резко задувает с противоположной стороны." },
+        { "table": { "head": ["Циклон", "Чего ждать"], "rows": [
+          ["Взрывной", "24 гПа за 24 ч на 60° с. ш.; облачная «запятая»"],
+          ["Бывший тропический", "Снова углубляется над холодной водой"],
+          ["Полярный мезоциклон · медикейн", "Малые, яростные, плохо предсказуемые"]
+        ] } }
+      ]
+    },
+    {
+      "id": "fronts",
+      "kicker": "Фронты",
+      "title": "Окклюзии и частные циклоны",
+      "refs": ["Surface analysis — front symbols", "Fronts — the occlusion", "Depressions — occlusion and the triple point", "Depressions — a wave on the cold front", "Depressions — the secondary low", "Fronts — timing the cold front", "Fronts — the sea after a veer"],
+      "blocks": [
+        { "p": "Треугольники обозначают холодный фронт, полукружия — тёплый; оба с одной стороны линии — **окклюзия**, с разных сторон — **стационарный фронт**. Окклюзия приносит одну полосу дождя и один заход ветра, без тёплого сектора." },
+        { "p": "**Частный циклон** рождается в **точке окклюзии**, где сходятся фронты, или как волна на холодном фронте позади циклона: ветер снова отходит, возвращается дождь, барометр падает. Самый сильный его ветер — на стороне, дальней от основного циклона." },
+        { "fig": { "type": "chart", "marks": [[100, 50, "r", "Основной 968"], [178, 122, "r", "Частный 994"]], "labels": [[138, 92, "ветры гасятся", "middle"], [226, 166, "складываются: сильнее всего", "middle"]], "note": "Северное полушарие · частный циклон к SE от основного" } },
+        { "p": "После захода ветра на холодном фронте старая волна идёт поперёк новой; время подхода фронта считайте по скорости сближения." },
+        { "fig": { "type": "card", "title": "Когда подойдёт фронт?", "lines": ["Фронт: 120 миль к W, идёт на E 25 уз", "Вы: курс W, 5 уз", "Скорость сближения 25 + 5 = 30 уз", "120 ÷ 30 = 4 ч: рифьтесь раньше"] } }
+      ]
+    },
+    {
+      "id": "charts",
+      "kicker": "Ветер по карте",
+      "title": "От изобар к ветру на палубе",
+      "refs": ["Synoptic charts — the geostrophic scale", "Surface analysis — the geostrophic scale with latitude", "Surface analysis — measuring the isobar spacing", "Synoptic charts — gradient wind and curvature", "Synoptic charts — forecasting wind from isobars", "Synoptic charts — prognosis valid time", "Beaufort scale — the height of the anemometer", "Beaufort scale — the sea criterion", "Beaufort scale — the sea at force 6", "Forecast products — Beaufort terms in a bulletin", "Storm warnings and sea-state terms"],
+      "blocks": [
+        { "p": "Измерьте расстояние между изобарами в милях по **шкале широт** и войдите в **шкалу геострофического ветра**, построенную для одного интервала изобар и одной широты: та же густота изобар дальше к северу даёт меньше ветра. Вокруг циклона настоящий (**градиентный**) ветер слабее, чем показывает шкала, вокруг антициклона — сильнее; у воды он около 0,8 от этого и отклонён на 15° влево. Прогностическая карта действует на исходный срок плюс шаг." },
+        { "fig": { "type": "card", "title": "Ветер по изобарам", "lines": ["Шкала: геострофический 40 уз от 270°", "Крутой изгиб вокруг циклона: −15 % → 34 уз", "У воды: × 0,8 → 27 уз", "Отклонение 15° влево: от 255°, 6 баллов"] } },
+        { "p": "Ветер прогноза и шкалы Бофорта — средний на высоте 10 м; датчик на топе мачты показывает больше. Без него читайте море." },
+        { "table": { "head": ["Баллы", "Узлы", "Море"], "rows": [
+          ["6", "22–27", "Крупные волны, белые гребни, брызги"],
+          ["8", "34–40", "Брызги с гребней, пена полосами"],
+          ["10", "48–55", "Сильный шторм; волнение «high» 6–9 м"],
+          ["12", "от 64", "«Ураганной силы» — и глубокий циклон"]
+        ] } }
+      ]
+    },
+    {
+      "id": "forecasts",
+      "kicker": "Источники прогноза",
+      "title": "Насколько верить каждому",
+      "refs": ["Forecast products — GMDSS, NAVTEX and SafetyNET", "Forecast products — NAVTEX on passage", "Forecast products — HF radiofax", "Forecast products — shipping forecast areas", "Forecast products — the high seas synopsis", "Forecast products — the synopsis wording", "Forecast products — GRIB model runs", "Forecast products — model resolution at landfall", "Forecast products — ensemble forecasts", "Forecast products — ensemble spread", "Forecast products — the ensemble for routeing", "Forecast products — GRIB, ensemble and the official forecast", "Forecast products — satellite winds and the GRIB", "Forecast products — weather routing", "Weather routing — the polars", "Forecasts — your own observations", "Barometer — the daily pressure swing", "Barometer — the tendency", "Barometer — the rate of fall and a storm", "Barometer — the tendency on a moving yacht"],
+      "blocks": [
+        { "table": { "head": ["Источник", "Что даёт"], "rows": [
+          ["НАВТЕКС", "Несколько сотен миль; добавьте станцию впереди"],
+          ["SafetyNET", "Бюллетени для открытого моря через спутник"],
+          ["Радиофакс на КВ", "Приземные и прогностические карты"],
+          ["GRIB", "Один расчёт модели, уже не свежий; средний ветер"]
+        ] } },
+        { "p": "Читайте свой район, районы по маршруту и те, что с наветра. Синоптическая обстановка говорит, где будет циклон и какое в нём давление; «теряет индивидуальность» — затухает. **Ансамбль** прогоняет модель много раз: доля членов со штормом — его вероятность; большой разброс — низкая достоверность." },
+        { "fig": { "type": "panel", "gauges": [["Сейчас", "995", true], ["3 ч назад", "1005", false], ["Падение", "10", true]], "lines": ["6–9 гПа за 3 ч: вероятен шторм", "10 и больше: вероятен сильный шторм"] } },
+        { "p": "Верьте шторму, который показывают бюллетень и ансамбль, но не ваш GRIB. Грубая сетка не видит горных ущелий; измеренный спутником ветер точнее модели; на гружёной яхте делите время маршрутизатора на 0,8. Ваш журнал важнее любого прогноза: учтите суточный ход **барометра** в тропиках и собственный ход поперёк изобар; медленное падение — долгий ветер." }
+      ]
+    },
+    {
+      "id": "sea",
+      "kicker": "Волнение и штормовая погода",
+      "title": "Бьёт не ветер, а волна",
+      "refs": ["Sea state — significant and maximum wave height", "Sea state — fetch and duration tables", "Sea state — fetch and duration", "Sea state — swell and wind sea", "Sea state — swell travel", "Sea state — steepness and breaking waves", "Sea state — wind against an ocean current", "Sea state — the continental shelf edge", "Sea state — the shelf and the deep sea", "Sea state — wavelength and a motor yacht", "Sea state — a motor yacht's limits", "Heavy weather — sea room or a port of refuge", "Heavy weather — sea room for heaving to", "Heavy weather — tactics and sea room", "Heavy weather — sea room or a port", "Heavy weather — a port of refuge", "Heavy weather — the window and its margin", "Heavy weather — after the gale"],
+      "blocks": [
+        { "p": "**Значительная высота** (Hs) — средняя у трети самых высоких волн; самая большая почти вдвое выше. Волну ограничивает меньшее из **разгона** и продолжительности ветра. **Зыбь** приходит от своего шторма независимо от местного ветра. Гребни обрушает крутизна, а не высота: короткая ветровая волна опаснее более высокой длинной зыби, хуже всего — против течения." },
+        { "fig": { "type": "card", "title": "Зыбь с периодом 16 с", "lines": ["Длина ≈ 1,56 × 16² = 400 м", "Чувствует дно на половине: 200 м", "Скорость ≈ 3 × 16 = 48 уз; приходит на 24 уз", "Килевая качка сильнее всего, когда", "длина волны близка к длине корпуса"] } },
+        { "fig": { "type": "chart", "land": "M250 200 C270 180 300 172 320 168 V200 Z", "depths": [[40, 160, "4200"], [70, 100, "3000"], [130, 104, "1000"], [200, 104, "200"], [250, 160, "150"], [292, 104, "120"]], "marks": [[190, 131, "y", "самая крутая"]], "track": "M20 126 L60 128 L170 130 L270 134 L300 136", "labels": [[172, 160, "бровка шельфа", "middle"]], "panel": ["Прогноз", "SW 8 к 1800", "Зыбь 16 с"], "note": "Глубины в метрах · пройдите бровку до шторма" } },
+        { "p": "В открытом море безопасность — **простор**: снос, в дрейфе или по ветру, умноженный на часы шторма, должен уложиться в расстояние до подветренного берега. Порт-убежище годится, только если вы приходите с запасом в несколько часов и его вход безопасен в шторм. Оставляйте окну запас; после шторма дайте волне улечься. Предел моторной яхты — встречная волна, а не ветер." },
+        { "fig": { "type": "chart", "land": "M252 0 H320 V200 H268 C254 150 262 60 252 0 Z", "boat": [60, 112, 300], "track": "M76 110 L250 100", "labels": [[160, 92, "снос: 24 ч × 2 уз = 48 миль", "middle"], [160, 128, "простор: 40 миль", "middle"], [290, 104, "берег", "middle"]], "note": "Шторм W на 24 ч, под ветром берег: сначала уйдите мористее" } }
+      ]
+    },
+    {
+      "id": "local",
+      "kicker": "Погода у берега",
+      "title": "Туман, побережье и грозы",
+      "refs": ["Fog — types at sea", "Fog — coastal upwelling", "Fog — predicting it from the dew point", "Fog — sea smoke", "Fog — clearing behind a cold front", "Fog — a landfall decision", "Local effects — coastal convergence", "Local effects — high islands", "Local effects — swell round a point", "Local effects — reflected seas off cliffs", "Local effects — the calima", "Thunderstorms — at sea and over land", "Forecast products — CAPE in a GRIB", "Squalls — tracking a cell on radar", "Thunderstorms — dodging a cell offshore", "Thunderstorms — the squall line", "Waterspouts", "Squalls — the gust front", "Thunderstorms — St Elmo's fire", "Thunderstorms — lightning at sea", "Thunderstorms — after a near strike"],
+      "blocks": [
+        { "p": "Морской туман — **адвективный**: влажный воздух остывает ниже точки росы над более холодной водой, например над апвеллингом. Он держится, пока холодный фронт не принесёт сухой воздух: выбирайте широкий вход с буями. **Парение моря** — пар там, где очень холодный воздух идёт над тёплой водой." },
+        { "fig": { "type": "bay", "wind": 45, "land": "M150 50 C185 50 200 75 198 98 C196 125 175 142 150 142 C120 142 102 122 102 96 C102 70 120 50 150 50 Z", "labels": [[214, 152, "сильнее", "middle"], [88, 42, "сильнее", "middle"], [74, 150, "ветровая тень", "middle"]], "note": "Высокий остров в пассате NE" } },
+        { "p": "Суша справа, если смотреть по ветру (северное полушарие): ветер сходится вдоль берега и усиливается; суша слева — расходится и стихает. Зыбь огибает мыс и заходит в бухту за ним, а от обрывов отражается: беспорядочная толчея. Восточный ветер из Сахары несёт **калиму** — пыльную мглу." },
+        { "p": "Над тёплым морем грозы чаще ночью; высокий **CAPE** в GRIB предупреждает о них. Ведите ячейку по радару, как судно: её не обогнать, поэтому рифьтесь и проходите у неё за кормой; с пути смерча уходите под прямым углом. **Фронт порывов** приносит резкую смену ветра и порывы вдвое сильнее. Огни святого Эльма — предупреждение об ударе молнии: людей от такелажа, запасную электронику в духовку; после удара проверьте компас." },
+        { "fig": { "type": "chart", "marks": [[210, 44, "r", "ячейка Cb"]], "track": "M210 52 L226 170", "boat": [56, 128, 90], "labels": [[56, 152, "Вы, 6 уз", "middle"]], "note": "Радар · ячейка 18 уз: пройдите за ней · CAPE 1800 Дж/кг" } }
+      ]
+    }
+  ]
+}

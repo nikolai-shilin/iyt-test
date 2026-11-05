@@ -1,0 +1,83 @@
+{
+  "topic": "sailing",
+  "lead": "Sails are an engine you can make smaller. The skipper's job is to set them without drama, shrink them before the wind arrives, and turn the boat only when the crew is ready.",
+  "sections": [
+    {
+      "id": "hoist",
+      "kicker": "Making sail",
+      "title": "Head to wind for the main",
+      "refs": ["Hoisting the main", "Furling genoa"],
+      "blocks": [
+        { "p": "Hoist the mainsail outside the harbour, **head to wind**, motoring slowly ahead with the mainsheet eased. Pointing into the wind the sail cannot fill: it flaps along the centreline and slides up the mast." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "dist": 0 }, "wind": 0, "note": "Head to wind, engine slow ahead" } },
+        { "p": "If the halyard suddenly goes hard halfway up, **stop and look up**. A batten has caught under a lazy jack, or a reef line is still made fast. Winching harder only tears the sail." },
+        { "p": "Then the genoa. Pull the sheet and **ease the furling line under control**, with a turn round a winch: let it run free and it tangles on the drum. For the night, roll the sail tight until the sheets wrap twice round it, and make the furling line fast. A gust cannot unroll it then." }
+      ]
+    },
+    {
+      "id": "reef",
+      "kicker": "Reefing",
+      "title": "Reef before you need to",
+      "refs": ["Reefing", "Apparent wind", "Slab reefing", "In-mast furling"],
+      "blocks": [
+        { "p": "Reef when you first think of it. In the calm of the bay it takes five minutes; out in the blow it is hard, wet work. If the forecast gives Force 5 for the afternoon, leave the lunch stop with the reef already in." },
+        { "p": "A run hides the wind, because your own speed is taken off it. In 16 knots of true wind, running at 6 knots, you feel 10. Turn upwind and you feel over 20. So reef **before** you turn for a harbour to windward." },
+        { "fig": { "type": "boat", "view": "sail", "parts": [["head", "head"], ["luff", "luff"], ["leech", "leech"], ["reef", "reef"], ["tack", "tack"], ["clew", "clew"], ["boom", "boom"]] }, "cap": "The two rings on the reef line become the new tack and the new clew." },
+        { "list": [
+          "Ease the **mainsheet and the kicker**, so the sail spills its wind.",
+          "Lower the halyard and hook the luff cringle onto the **reefing horn** at the front of the boom.",
+          "Tension the halyard again.",
+          "Then haul in the **reef line**: it pulls the new clew down to the boom.",
+          "Trim the mainsheet and tidy the loose sail with the reef points."
+        ] },
+        { "p": "With **in-mast furling** you work two lines against each other: wind the sail into the mast while you ease the **outhaul** under control. A little tension on the outhaul rolls the sail tight; a loose roll jams in the mast." }
+      ]
+    },
+    {
+      "id": "trim",
+      "kicker": "Trim and balance",
+      "title": "Keep the boat on her feet",
+      "refs": ["Sail trim", "Depowering", "Balance and reefing", "Reducing the genoa"],
+      "blocks": [
+        { "p": "The **telltales** on the genoa's luff show the airflow. All streaming aft: the sail is working. The windward ones lifting and fluttering: the luff is starved of wind, so sheet in a little or bear away." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 45, "note": "Close-hauled: a gust heels her and she rounds up" } },
+        { "p": "In a gust the boat heels and tries to turn into the wind by herself: she **rounds up**. The quick cure is in the mainsail. Let the **traveller** down to leeward, or ease the mainsheet, and the main spills wind. If the wheel pulls hard all the time, you carry too much mainsail: it sits aft of the mast and pushes the stern away from the wind. Reef it and the helm goes light." },
+        { "table": { "head": ["What you see", "What you do"], "rows": [
+          ["Windward telltales fluttering", "Sheet in a little, or bear away"],
+          ["Hard heel in the gusts", "Traveller down, or ease the mainsheet"],
+          ["Heavy wheel, rounding up", "Reef the mainsail"],
+          ["Part-rolled genoa: top flaps, foot tight", "Sheet car forward"]
+        ] } },
+        { "p": "A part-rolled genoa has a shorter foot, so its sheet pulls along the foot and not down the leech. Moving the **sheet car forward** closes the leech and stops the top of the sail flapping." }
+      ]
+    },
+    {
+      "id": "windward",
+      "kicker": "Sailing upwind",
+      "title": "A harbour in the no-go zone",
+      "refs": ["Points of sail", "Sailing to windward"],
+      "blocks": [
+        { "p": "No yacht sails straight into the wind. A cruising boat makes about **45° either side** of it; the sector between is the **no-go zone**. Compare the bearing of your destination with the wind: with the wind from 270°, a harbour bearing 250° is only 20° off it. You cannot point there. You must **tack**, close-hauled on one tack and then on the other." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 45, "nogo": true }, "view": "76 4 244 192", "name": "Port tack", "note": "wind over the port side" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 315, "nogo": true }, "view": "76 4 244 192", "name": "Starboard tack", "note": "wind over the starboard side" }
+        ] },
+        { "p": "Tacking adds distance. At 45° to the wind you sail about **1.4 miles for every mile** gained upwind: a harbour 5 miles dead to windward is 7 miles of sailing. Allow the time for it." }
+      ]
+    },
+    {
+      "id": "turns",
+      "kicker": "Tacking, gybing, stopping",
+      "title": "Turn when the crew is ready",
+      "refs": ["Tacking as skipper", "Controlled gybe", "Gybing as skipper", "Preventer", "Heaving-to"],
+      "blocks": [
+        { "fig": { "type": "card", "title": "Tacking: the calls", "lines": ["Skipper: \"Ready about!\"", "Each of the crew: \"Ready!\"", "Skipper: \"Lee-ho!\", and turns"] } },
+        { "p": "You call, the crew answer, and only then do you turn. Silence is not an answer: if one person has not said \"Ready\", wait." },
+        { "p": "A **gybe** takes the stern through the wind and the boom across the cockpit. Keep it under control: heads down, **sheet the main in to the centre**, turn slowly, and ease the sheet out again as the boom comes over. In a strong wind or with a new crew, do not gybe at all: luff up and **tack round** through the wind." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 175, "note": "On a run: a preventer from the boom end to the bow" } },
+        { "p": "On a run in a swell the boom lifts and threatens to gybe by itself. Rig a **preventer**: a line from the boom end forward to the bow." },
+        { "p": "To stop at sea, **heave-to**: tack without releasing the genoa sheet, then lash the wheel turned towards the wind. The backed genoa pushes the bow off, the rudder brings it back, and the boat lies quietly." }
+      ]
+    }
+  ]
+}

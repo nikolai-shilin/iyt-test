@@ -1,0 +1,93 @@
+{
+  "topic": "dr",
+  "lead": "Between fixes the chart holds only what you work out: heading, log, leeway and stream, added as vectors.",
+  "sections": [
+    {
+      "id": "dr",
+      "kicker": "Dead reckoning",
+      "title": "Course and distance, added as vectors",
+      "refs": ["DR — long offshore legs", "DR — after an electrical failure", "Compass — deviation and conversions", "Navigation — the plot at night"],
+      "blocks": [
+        { "p": "A **DR** comes from the heading steered and the distance logged. Each leg is a vector, course and distance: a change of course is a new vector, never a mean course with the summed log. The heading goes through the card for that compass heading, then the variation: compass + deviation = magnetic, + variation = true, east positive. The fluxgate reads magnetic, without the steering compass's deviation." },
+        { "fig": { "type": "compass", "variation": -4, "deviation": -3, "course": 230, "note": "T → M → C: 237°C" } },
+        { "fig": { "type": "card", "title": "DR from the log book: worked example", "lines": ["2000 fix · 240°T, 8.0 kn to 2300: 24.0 M", "2300 altered: 200°T, 8.0 kn to 0200: 24.0 M", "Not 220°T, 48 M: add the vectors", "0200 DR: 220°T, 45.1 M from the fix", "Helm steered 237°C? Card 3°W, var 4°W:", "237 − 3 − 4 = 230°T goes on the chart"] } },
+        { "p": "Work the hourly EP from the last fix and compare it with the GNSS: a mile or two of gap in an hour is a fault; call the skipper. With the electrics dead, the magnetic compass by torchlight gives the heading, a chip timed along the deck the speed: m/s ÷ 0.514 = knots. Restart the plot from the paper log's last fix." }
+      ]
+    },
+    {
+      "id": "ep",
+      "kicker": "Estimated position",
+      "title": "Leeway and stream on top of the DR",
+      "refs": ["EP — streams, current and leeway", "Leeway", "Leeway — heavy weather", "Tidal streams — summing the hours"],
+      "blocks": [
+        { "p": "The **EP** adds what the water did: leeway first, then the stream. **Leeway** turns the heading into the **water track**, always to leeward: added on port tack, subtracted on starboard, changing side when you tack. A motor yacht under power is allowed none. From GNSS, ground vector minus current is the water vector, its angle from the heading the leeway; or take the wake's bearing." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 50, "note": "water track = heading + leeway" }, "name": "Port tack", "note": "add it" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 310, "note": "water track = heading − leeway" }, "name": "Starboard tack", "note": "subtract it" }
+        ] },
+        { "fig": { "type": "card", "title": "EP: worked example", "lines": ["0000 fix · heading 250°T · log 7.0 kn · 3 h", "Wind NW: starboard tack, leeway 5° to port", "Water track 245°T, 21.0 M", "Streams 160° 1.0 · 165° 1.5 · 170° 1.0 kn", "= 3.5 M toward 165°T", "0300 EP: 236°T, 21.9 M from the fix"] } },
+        { "p": "Sum the diamond's hourly vectors for the leg at today's rate; beyond the atlas use the routeing chart's current, checked by fixes. In heavy weather leeway grows to 15° or more; hove-to or under a drogue the drift is a vector of its own; a stopped motor yacht drifts beam-on with the wind, plus the current. Near a lee shore overstate leeway and keep sea room." }
+      ]
+    },
+    {
+      "id": "cts",
+      "kicker": "Course to steer",
+      "title": "One triangle for the whole crossing",
+      "refs": ["Course to steer — one course for the crossing", "Course to steer — a waypoint at a set time", "Course to steer — a rendezvous at sea"],
+      "blocks": [
+        { "p": "Lay off the whole crossing's stream from A, every hour summed into one vector. From its end swing an arc of **speed × time through the water** to cut the ground track: that line is the water track to steer, aimed off by asin(net stream ÷ water distance). One hour's stream answers nothing; a fast boat uses only the hours she is out. Then leeway, variation, deviation." },
+        { "fig": { "type": "chart", "track": "M110 170 V45 M110 170 H128 M128 170 L110 45", "marks": [[110, 170, "w", "A"], [110, 45, "w", "B"]], "labels": [[104, 110, "track 000°T", "end"], [150, 110, "water 42 M, 352°T", "start"], [150, 184, "stream 6 M east", "start"]], "panel": ["One triangle", "Track 000°T, 41.6 M", "7 kn × 6 h = 42 M", "Streams: 6 M east"], "note": "Swing speed × time from the end of the stream vector" } },
+        { "fig": { "type": "card", "title": "Course to steer: worked example", "lines": ["Track 000°T, 41.6 M · 7.0 kn: about 6 h", "Streams E 1.0 · 2.0 · 2.5 · 1.5; W 0.5 · 0.5", "Net 7.0 − 1.0 = 6.0 M east", "Aim off asin(6.0 ÷ 42) = 8°: steer 352°T", "Leeway 4°, wind W: head up 4° more, 348°T", "Var 5°W: 353°M · dev 2°E: 351°C"] } },
+        { "p": "For a waypoint at a set time the water vector is the ground vector minus the stream over that time; its length ÷ hours is the speed to hold. To meet a vessel holding her course, keep her bearing steady: sin A = her speed × sin(her course − her bearing) ÷ yours, A off her bearing. On the same course you close at the difference of speeds." },
+        { "fig": { "type": "chart", "track": "M220 50 V154 M40 50 L220 154", "marks": [[220, 50, "w", "Sister"]], "boat": [40, 50, 120], "labels": [[130, 42, "24 M", "middle"], [228, 110, "180°T · 5 kn", "start"], [110, 118, "you 10 kn", "middle"]], "note": "sin A = 5 ÷ 10: steer 30° off her bearing, 120°T; 2 h 46 min" } }
+      ]
+    },
+    {
+      "id": "errors",
+      "kicker": "Errors and cross-track",
+      "title": "1 in 60, and how doubt grows",
+      "refs": ["The 1-in-60 rule", "DR — error growth on a long passage", "Cross-track error", "Cross-track error — in a TSS lane"],
+      "blocks": [
+        { "p": "**1 in 60**: one degree over 60 M is one mile off. Miles off × 60 ÷ miles run is the track error in degrees; the same sum over the miles to go is the extra turn to close. The EP's doubt grows with the run, about 10% of it; stream rate, log calibration and the helm's average course each add a share. A deviation applied backwards counts twice." },
+        { "fig": { "type": "chart", "track": "M20 150 L300 150", "marks": [[20, 150, "w", "A"], [300, 150, "w", "B"]], "boat": [176, 118, 86], "labels": [[98, 170, "80 M run", "middle"], [238, 170, "48 M to go", "middle"], [194, 136, "4 M", "start"]], "panel": ["No stream", "XTE 4.0 M", "4 × 60 ÷ 80 = 3°", "4 × 60 ÷ 48 = 5°"], "note": "Alter 3° + 5° = 8° to starboard to go straight for B" } },
+        { "fig": { "type": "card", "title": "Where the error puts you", "lines": ["Log over-reads 4%: 104 M logged", "True run 104 ÷ 1.04 = 100.0 M: 4 M short", "Current 0.4 kn too weak for 12 h: 4.8 M off", "Helm 2° off for 90 M: 2 × 90 ÷ 60 = 3.0 M", "Used 180° 0.8 kn, real 210° 0.8 kn, 10 h:", "the EP is 4.1 M out, toward 285°"] } },
+        { "p": "**Cross-track error** matters where the track was laid for a reason: a margin off a wind farm, a lane in a TSS. Regain the planned line, in a lane without cutting the separation zone; track mode crabs into the stream. With nothing near, steering straight for the waypoint is shortest. At a low coast aim off, so you know which way to turn." }
+      ]
+    },
+    {
+      "id": "current",
+      "kicker": "Current from fixes",
+      "title": "Ground vector minus water vector",
+      "refs": ["Finding the current from fixes"],
+      "blocks": [
+        { "p": "Between two fixes the ground vector is what happened; the water vector is the leeway-corrected heading by the logged distance. The difference is the current: set, and distance ÷ hours. Stopped in a calm, the drift is the current alone. Fix minus EP sums every error since the fix, not current alone. A steady gap along the heading can be current, a log under-reading, or both." },
+        { "fig": { "type": "chart", "track": "M60 150 L186 150 M60 150 L198 174 M186 150 L198 174", "marks": [[60, 150, "k", "0300 fix"], [186, 150, "w", "DR"], [198, 174, "k", ""]], "labels": [[140, 126, "water 18 M, 090°T", "middle"], [120, 184, "ground 20 M, 100°T", "middle"], [224, 190, "0600 fix", "middle"]], "panel": ["Current", "ground − water", "3.9 M in 3 h", "set 154°T, 1.3 kn"], "note": "The step from DR to fix is the current over the three hours" } },
+        { "fig": { "type": "card", "title": "Current from fixes: worked example", "lines": ["0300–0600: heading 093°T, leeway 3° to port", "Water track 090°T, log run 18.0 M", "Fix to fix: 20.0 M toward 100°T", "Ground − water = 3.9 M toward 154°T", "Over 3 h: set 154°T, rate 1.3 kn", "Use it for the next leg; check at the next fix"] } }
+      ]
+    },
+    {
+      "id": "eta",
+      "kicker": "Speed made good and timing",
+      "title": "ETA, tidal gates and daylight",
+      "refs": ["Speed made good and ETA", "Passage — timing a tidal gate", "Landfall — timing and aim-off"],
+      "blocks": [
+        { "p": "**Speed made good** is distance to go closed ÷ time over the whole run, not the mean of the legs' speeds nor the log. Beating, only VMG closes it: boat speed × cos(water track − course to the mark), leeway included; take the tack pointing nearest it. Hour by hour, SOG is boat speed plus the along-track stream." },
+        { "fig": { "type": "card", "title": "Tidal gate and VMG: worked example", "lines": ["Gate 38.0 M ahead at 0900; fair stream to 1430", "5.5 h: 38.0 ÷ 5.5 = 6.9 kn over the ground", "Foul stream 0.8 kn: hold 7.7 kn by the log", "Beating: 7.0 kn, water track 48° off course", "VMG 7.0 × cos 48° = 4.7 kn", "80 M to windward: 17 h 05, from 0600: 2305"] } },
+        { "p": "Reach a tidal gate early in its fair stream, with time in hand: an ETA from the log speed, an uncalibrated log or spring rates on a neap day shifts by hours over 100 M. Close a strange coast in daylight: slow down or heave to rather than arrive before dawn. The one-triangle course gives the landfall time: the hours the arc needs to reach the coast." },
+        { "fig": { "type": "chart", "land": "M286 0 L300 60 L292 120 L302 200 L320 200 L320 0 Z", "track": "M30 140 L292 140", "marks": [[292, 140, "r", "Harbour"], [292, 112, "y", "5 M N"]], "boat": [30, 140, 90], "labels": [[160, 160, "direct 090°T, 96 M", "middle"]], "panel": ["Current N 0.5 kn", "6.0 kn: 16 h", "Aim 5 M north"], "note": "8 M of set, 5 M wanted: 3 × 60 ÷ 96 = 2° south, 092°T" } }
+      ]
+    },
+    {
+      "id": "fuel",
+      "kicker": "Fuel and range",
+      "title": "Litres per mile, not per hour",
+      "refs": ["Motor yacht — fuel, speed and range", "Motor-sailing"],
+      "blocks": [
+        { "p": "Usable fuel is the tank less the reserve. For each speed on the curve, hours = usable ÷ l/h and range = hours × speed; l/h ÷ speed is litres per mile, lowest slow, below the hump, and among planing speeds well past it. Against a current, range over the ground is hours × (speed − current). A head sea costs 30% more per hour, or speed at the same revs." },
+        { "fig": { "type": "card", "title": "Range from the curve: worked example", "lines": ["8 kn 40 l/h: 5.0 l/M · 12 kn 110 l/h: 9.2 l/M", "16 kn 210 l/h: 13.1 l/M · 20 kn 220: 11.0 l/M", "Usable 2000 l at 12 kn: 18.2 h, 218 M", "On the plane, 20 kn: 9.1 h, 182 M", "Foul current 2 kn at 12 kn: 18.2 × 10 = 182 M", "Head sea: +30% per hour at the same speed"] } },
+        { "fig": { "type": "card", "title": "Fast first, then slow: worked example", "lines": ["200 M · usable 1800 l", "15 kn 150 l/h · 8 kn 48 l/h", "x h fast: 150x + 48 × (200 − 15x) ÷ 8 = 1800", "x = 10 h: 150 M at 15 kn, then 50 M at 8 kn", "1500 + 300 = 1800 l: arrive on the reserve"] } },
+        { "p": "**Motor-sailing** with the main drawing gives the same speed at lower revs, so the range grows. Dead to windward, motor-sailing 30° off and tacking makes good speed × cos(30° + leeway), often more than motoring straight into the sea." }
+      ]
+    }
+  ]
+}

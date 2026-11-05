@@ -1,0 +1,105 @@
+{
+  "topic": "propulsion",
+  "lead": "Rule 42: a boat races on wind and water alone. Part 4 adds no outside help, lifejackets under flag Y and limits on crew and gear.",
+  "sections": [
+    {
+      "id": "basic",
+      "kicker": "Rule 42.1",
+      "title": "Wind and water only",
+      "refs": ["RRS 42.1", "RRS 42.1, RRS 42.2(a)", "RRS 42.1, RRS 45", "RRS 42.1, RRS 21", "RRS 42.1, RRS 48.2", "RRS Part 4 preamble, RRS definition Racing", "RRS definition Racing, RRS 42.2(a)"],
+      "blocks": [
+        { "p": "You may use only the wind and the water to increase, maintain or decrease speed. The crew may **adjust the trim** of sails and hull and perform other acts of seamanship, but not otherwise move their bodies to propel the boat. Trimming to every puff, hiking, one shift of weight then held, bailing and backing a sail are legal; a paddle or a swimmer pushing the bow is not." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 140, "y": 96, "hdg": 0, "label": "You", "you": true }, { "x": 190, "y": 148, "hdg": 315, "label": "Grey" }], "line": { "x1": 40, "y1": 70, "x2": 260, "y2": 70, "label": "Start line" }, "note": "A backed mainsail uses the wind; keep clear (rule 21)" } },
+        { "p": "Part 4 applies only while you are **racing**: from the preparatory signal until you have finished and cleared the line and marks. Rule 42 has no wind limit." }
+      ]
+    },
+    {
+      "id": "prohibited",
+      "kicker": "Rule 42.2",
+      "title": "Five actions that are always out",
+      "refs": ["RRS 42.2(a)", "RRS 42.2(b)", "RRS 42.2(c)", "RRS 42.2(d)", "RRS 42.2(e)"],
+      "blocks": [
+        { "table": { "head": ["Action", "What it is"], "rows": [
+          ["Pumping", "Repeated fanning of a sail, by trimming and releasing or by body movement"],
+          ["Rocking", "Repeated rolling of the boat by body movement, repeated sail or centreboard adjustment, or steering"],
+          ["Ooching", "Sudden forward body movement, stopped abruptly"],
+          ["Sculling", "Repeated helm movement that is forceful, propels the boat forward or stops her moving astern"],
+          ["Repeated tacks or gybes", "Unrelated to changes in the wind or to tactics"]
+        ] } },
+        { "p": "The key word is **repeated**. Trimming thirty times on a shifty beat answers the wind; fanning the sail in rhythm does not. Tacking on every header is tactics; gybing every fifteen seconds down an empty run is not." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 140, "y": 132, "hdg": 200, "label": "You", "you": true }], "track": "M150 22 L132 58 L166 94 L140 132", "note": "Steady wind, nobody near: gybe after gybe is propulsion" } }
+      ]
+    },
+    {
+      "id": "exceptions",
+      "kicker": "Rule 42.3",
+      "title": "What you may still do",
+      "refs": ["RRS 42.3(a)", "RRS 42.3(b)", "RRS 42.3(c)", "RRS 42.3(d)", "RRS 42.3(e)", "RRS 42.3(f)", "RRS 42.3(i)", "RRS 42.3(g), RRS 1.1", "RRS 42.3(h), RRS 42.3(i)", "RRS 42.3(h), RRS 41", "RRS 41(b), RRS 42.3(h)", "RRS 42.3(c), RRS 42.2(a)", "RRS 42.2(b), RRS 42.3(a)", "RRS 42.2(c), RRS 42.3(c)", "RRS 42.2(d), RRS 42.3(d)"],
+      "blocks": [
+        { "table": { "head": ["You may", "Limit"], "rows": [
+          ["Roll the boat to help steer", "Not repeated rolling that propels her"],
+          ["Roll through a tack or gybe", "No faster just after it than without it"],
+          ["Pull each sail in once per wave or gust", "To start surfing or planing, not upwind (foiling: any number)"],
+          ["Scull when stopped or slow above close-hauled", "Only down to close-hauled"],
+          ["Pump to free an inverted batten", "Unless it clearly propels the boat"],
+          ["Move the helm repeatedly", "To reduce speed"],
+          ["Use any propulsion", "To help someone in danger"],
+          ["Push off after grounding or collision", "Either crew's force, any gear but an engine"]
+        ] } },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 15, "nogo": true, "note": "Stopped in the shaded sector: scull to its edge, no further" } },
+        { "p": "An exception covers only what it names: one body lunge per wave is still ooching. An engine to get off a shoal needs the sailing instructions' permission." },
+        { "fig": { "type": "race", "wind": 0, "obstruction": { "x": 0, "y": 120, "w": 320, "h": 80, "label": "Sandbank" }, "boats": [{ "x": 120, "y": 115, "hdg": 60, "label": "You", "you": true }], "note": "Aground: crews may push by hand; no tow under engine" } }
+      ]
+    },
+    {
+      "id": "judges",
+      "kicker": "Enforcement",
+      "title": "Protests, yellow flags and flag O",
+      "refs": ["RRS 60, RRS 42.2(a)", "RRS 44.1, RRS Basic Principles", "RRS Appendix P preamble", "RRS Appendix P1.2", "RRS Appendix P2.1", "RRS Appendix P2.2", "RRS Appendix P2.3", "RRS Appendix P3", "RRS Appendix P4", "RRS Appendix P5, race signals", "RRS Appendix P5.3", "RRS 42.2, RRS Appendix P5", "RRS 86.1(c), RRS 42", "RRS Appendix B, rule 42 as changed"],
+      "blocks": [
+        { "p": "Without judges, rule 42 is enforced by protest and a hearing. Rule 44 turns cover only Part 2 and rule 31: a boat that knows she broke rule 42 retires. **Appendix P** applies only if the notice of race or sailing instructions say so; then a judge whistles, points a yellow flag and hails your sail number." },
+        { "table": { "head": ["Yellow flag", "Penalty"], "rows": [
+          ["First", "Two-Turns Penalty; if not taken, disqualified without a hearing"],
+          ["Second", "Retire; if not, a disqualification that cannot be discarded"],
+          ["Third", "Retire and still score DNE; if not, DNE in every race"]
+        ] } },
+        { "fig": { "type": "flag", "flags": [["yellow", "Yellow flag|rule 42 penalty"], ["O", "Flag O|kinetics allowed"]] } },
+        { "p": "A penalty cancelled by a postponement, general recall or abandonment still counts towards your total, and one incident is penalised once. Redress is possible only if the judge ignored a committee signal or a class rule. Class rules may change rule 42: where they allow pumping, rocking and ooching above a set wind, flag O switches that on and flag R switches it off. Windsurfers (Appendix B) may pump." }
+      ]
+    },
+    {
+      "id": "help",
+      "kicker": "Outside help, crew, anchoring",
+      "title": "Rules 41 and 45 to 48",
+      "refs": ["RRS 41", "RRS 41(a)", "RRS 41(c)", "RRS 41(d)", "RRS 41, RRS 48.1", "RRS 48.1, RRS 41", "RRS 45", "RRS 45, RRS 42.1", "RRS 46, RRS 75", "RRS 47", "RRS 47, RRS Part 4 preamble", "RRS 48.2", "RRS 48.2, RRS 1.1"],
+      "blocks": [
+        { "p": "Rule 41 forbids **outside help**, with four exceptions: help for a crew member who is ill, injured or in danger; help from the other vessel's crew to get clear after a collision; information freely available to all; unsolicited information from a disinterested source, even another competitor. A coach's tip, an arranged signal, a question to a spectator, food or spares handed over all break it." },
+        { "table": { "head": ["Rule", "In short"], "rows": [
+          ["45", "Off moorings at the preparatory signal; later made fast or hauled out only to bail, reef or repair. You may anchor or stand on the bottom; recover the anchor if you can"],
+          ["46", "On board: a person in charge named by the entrant"],
+          ["47", "No trash in the water on purpose, at any time afloat; coaches too"],
+          ["48", "Only equipment on board at the preparatory signal. Leave the boat only when ill, injured, helping someone in danger or swimming; be back in contact before she sails on"]
+        ] } },
+        { "fig": { "type": "race", "wind": 0, "mark": { "x": 160, "y": 45, "label": "Windward mark" }, "boats": [{ "x": 150, "y": 100, "hdg": 315, "label": "You", "you": true }, { "x": 85, "y": 138, "hdg": 315, "label": "Blue" }, { "x": 232, "y": 142, "hdg": 45, "label": "Red" }], "note": "No wind, foul tide: you anchor, the others drift back" } }
+      ]
+    },
+    {
+      "id": "gear",
+      "kicker": "Lifejackets, hiking, gear",
+      "title": "Rules 40 and 49 to 56",
+      "refs": ["RRS 40.1", "RRS 40.1, RRS 40.2(a)", "RRS 40.2(a)", "RRS 40.2(b)", "RRS 40.2, RRS 1.2", "RRS 49.1", "RRS 49.2", "RRS 50.1(a)", "RRS 50.1(b)", "RRS 50.1(c)", "RRS 51", "RRS 52", "RRS 53", "RRS 54", "RRS 55.1", "RRS 55.2", "RRS 55.3(a)", "RRS 55.3(b)", "RRS 56.1", "RRS 56.2", "RRS 56.3"],
+      "blocks": [
+        { "fig": { "type": "flag", "flags": [["Y", "Y|wear lifejackets"]], "note": "One sound signal" } },
+        { "p": "Flag Y with one sound, shown afloat before or with the warning signal, makes lifejackets compulsory for that race, even once lowered; shown ashore, all day afloat. One may come off briefly to change clothing. A wetsuit or drysuit is not a lifejacket. Without flag Y, adequate flotation is each competitor's own responsibility." },
+        { "table": { "head": ["Rule", "In short"], "rows": [
+          ["49", "Hiking straps and thigh stiffeners only. Torso inside taut lifelines except briefly for a task; with two lifelines a seated crew may lean over the upper"],
+          ["50", "No clothing to add weight; normally 8 kg at most; a quick-release trapeze harness"],
+          ["51 · 52", "Ballast and unset sails stay stowed; rigging and appendages worked by hand"],
+          ["53 · 54", "No polymer or textured surface to ease the water's flow; headsail tacks on the centreline"],
+          ["55", "One pole in use; a headsail clew on a whisker pole (no spinnaker set) or sheeted to the main boom; a new sail may be set before the old one is lowered"],
+          ["56", "Lights, fog signals and traffic separation as COLREGs require; a required tracker stays on"]
+        ] } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "topic": "weather",
+  "lead": "Weather decides whether you sail, where to and under how much canvas. Read the pressure pattern, the sky and the forecast, know the local winds, and you are in harbour before the trouble starts.",
+  "sections": [
+    {
+      "id": "pressure",
+      "kicker": "Pressure systems",
+      "title": "Highs, lows and the wind between them",
+      "refs": ["Pressure systems", "Synoptic charts", "Barometer"],
+      "blocks": [
+        { "p": "Wind follows the **isobars**: in the northern hemisphere anticlockwise round a low and clockwise round a high, angled 10–15° in towards the low over the sea. The closer the isobars, the stronger the wind." },
+        { "tiles": [
+          { "fig": { "type": "isobars", "center": "L", "tight": true, "values": ["996", "1000", "1004"], "boat": [250, 150, 0] }, "name": "Low", "note": "anticlockwise · tight isobars, strong wind" },
+          { "fig": { "type": "isobars", "center": "H", "values": ["1028", "1024", "1020"], "boat": [255, 92, 0] }, "name": "High", "note": "clockwise · wide isobars, light wind" }
+        ] },
+        { "p": "**Buys Ballot's law**: stand with your back to the wind and the low is on your left." },
+        { "fig": { "type": "encounter", "you": { "hdg": 225 }, "other": { "bearing": 0, "dist": 0, "hdg": 0, "scale": 0.01, "label": " " }, "wind": 45, "note": "Back to a NE wind: the low is to the SE" } },
+        { "p": "One barometer reading says little; watch the trend. A fall of 6 hPa in three hours warns of strong wind; so does a fast rise after a front." }
+      ]
+    },
+    {
+      "id": "fronts",
+      "kicker": "Depressions and fronts",
+      "title": "What the sky tells you",
+      "refs": ["Fronts", "Clouds"],
+      "blocks": [
+        { "p": "As a low passes north of you the wind **veers**, clockwise from SW to NW; passing south, it **backs**, anticlockwise. It brings a **warm front**, a mild **warm sector**, then a **cold front**; an occlusion is both in one." },
+        { "fig": { "type": "isobars", "center": "L", "values": ["1000", "1004", "1008"], "boat": [120, 170, 0], "note": "Low passing north: SW, then NW" } },
+        { "table": { "head": ["Stage", "Signs"], "rows": [
+          ["Warm front coming", "High cloud thickening, a halo, falling glass, rain"],
+          ["Warm sector", "Wind veers, drizzle, milder, glass steadies"],
+          ["Cold front", "Dark towering cloud, squalls, heavy rain, sharp veer to NW"],
+          ["Behind it", "Gusty NW, showers, clear air, glass rising fast"]
+        ] } },
+        { "p": "Small flat cumulus that vanish by evening: settled weather. Cumulus towering by mid-morning: thunderstorms by afternoon. Lens-shaped clouds over the peaks: strong wind aloft, hard gusts in their lee." }
+      ]
+    },
+    {
+      "id": "wind",
+      "kicker": "Wind strength",
+      "title": "Beaufort, gusts and the wind you feel",
+      "refs": ["Beaufort scale", "Gusts", "Apparent wind", "Reefing"],
+      "blocks": [
+        { "table": { "head": ["Force", "Knots", "Sea"], "rows": [
+          ["4", "11–16", "Fairly frequent white horses"],
+          ["5", "17–21", "Many white horses"],
+          ["6", "22–27", "Large waves, spray"],
+          ["7", "28–33", "Sea heaps up, foam in streaks"],
+          ["8", "34–40", "Gale"],
+          ["9", "41–47", "Strong gale"]
+        ] } },
+        { "p": "The force is named from the mean wind, but gusts overpower the boat: reef for them, and early. Under high land they can be half as strong again. Double the wind is four times the load. In an app, 1 m/s is about 2 knots." },
+        { "p": "You feel the **apparent wind**. Running, boat speed is taken off the true wind; beating, most of it is added. Reef before you turn upwind." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 180 }, "view": "84 0 236 200", "name": "Running", "note": "true 20 kn, boat 7 kn: 13 kn felt" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 45, "nogo": true }, "view": "84 0 236 200", "name": "Close-hauled", "note": "true 20 kn, boat 6 kn: about 25 kn felt" }
+        ] }
+      ]
+    },
+    {
+      "id": "forecast",
+      "kicker": "Forecasts",
+      "title": "Where to get one and how to read it",
+      "refs": ["Forecast sources", "Forecast terms"],
+      "blocks": [
+        { "p": "Official forecasts come by **Navtex**, by coast radio (announced on VHF channel 16, read on a working channel), from the harbour office and from national services such as Poseidon in Greece or DHMZ in Croatia. Check the time of issue." },
+        { "p": "A GRIB or an app is raw model output: it misses funnelling, gusts and thunderstorms, and days ahead it is only a trend. If models disagree, plan for the strongest. An official warning outranks any app; a port-police departure ban is binding." },
+        { "table": { "head": ["Term", "Means"], "rows": [
+          ["Imminent · soon · later", "Within 6 h · in 6–12 h · after 12 h"],
+          ["Veering · backing", "Shifting clockwise · anticlockwise"],
+          ["Visibility good · moderate · poor · fog", "Over 5 M · 2–5 M · 1,000 m–2 M · under 1,000 m"],
+          ["Sea slight · moderate · rough", "0.5–1.25 m · 1.25–2.5 m · 2.5–4 m"],
+          ["Locally", "In channels and off capes"]
+        ] } },
+        { "fig": { "type": "card", "title": "Navtex 09:00 UTC", "lines": ["GALE WARNING", "Southern Aegean: N 8, imminent", "09:00 UTC is 12:00 Greek summer time", "Imminent: the gale by 18:00 local"], "tag": "Navtex" } }
+      ]
+    },
+    {
+      "id": "local",
+      "kicker": "Local winds and sea",
+      "title": "What the coast does to wind and waves",
+      "refs": ["Local winds", "Sea state"],
+      "blocks": [
+        { "p": "On a hot sunny day the land draws in a **sea breeze**: often 15 knots by afternoon, more where a gradient wind blows the same way, gone at sunset. After a clear night a light **land breeze** blows offshore until sunrise." },
+        { "fig": { "type": "bay", "wind": 180, "spots": [], "labels": [[160, 30, "LAND — hot", "middle"], [160, 170, "SEA — cool", "middle"]], "note": "Afternoon, clear sky, wind onshore" } },
+        { "p": "High land bends the wind: it accelerates through straits and round capes, falls in gusts in the lee of a high island, and on clear nights pours out of valleys as a cold **katabatic** wind." },
+        { "fig": { "type": "bay", "wind": 20, "land": "M0 0 H120 C 135 60 120 130 90 200 H0 Z M205 0 H320 V200 H235 C 215 140 195 70 205 0 Z", "spots": [[163, 100, "A"]], "labels": [[50, 100, "EVIA", "middle"], [270, 100, "ANDROS", "middle"]], "note": "Forecast NE 5–6 · at A expect 7 and steep seas" } },
+        { "p": "Waves grow with **fetch**, the open water the wind has crossed: the sea is smallest under the windward shore. Wind against current makes short, steep seas. **Swell** outruns its weather: it warns of a distant system and can ruin a calm anchorage." }
+      ]
+    },
+    {
+      "id": "med",
+      "kicker": "Mediterranean winds",
+      "title": "The named winds, and planning round them",
+      "refs": ["Mediterranean winds", "Passage planning"],
+      "blocks": [
+        { "p": "The **Meltemi** is the Aegean's summer northerly: dry, clear, force 5 to 7, between a high over the Balkans and a low over Turkey. It blows NE in the north, N in the Cyclades and NW in the Dodecanese, lightest at dawn, strongest in the afternoon." },
+        { "fig": { "type": "isobars", "center": "H", "boat": [250, 170, 0], "hemisphere": "Aegean · July", "note": "High to the NW, low to the E" } },
+        { "table": { "head": ["Wind", "From", "Where and what"], "rows": [
+          ["Bora", "NE", "Adriatic: cold, violent gusts; cloud cap on the mountains"],
+          ["Jugo, sirocco", "SE", "Slow build, rain, heavy sea"],
+          ["Maestral", "NW", "Adriatic afternoon breeze, fair weather"],
+          ["Mistral", "NW", "Gulf of Lion: clear-sky gale"],
+          ["Tramontana", "N", "Balearics, Gulf of Lion"],
+          ["Libeccio", "SW", "Corsica's west coast: heavy sea"],
+          ["Gregale", "NE", "Malta"],
+          ["Levante · Poniente", "E · W", "Gibraltar"]
+        ] } },
+        { "p": "Plan round it: upwind legs early in the day and early in the week; anchor for tonight's wind and swell; with a gale warning or a green crew, wait." }
+      ]
+    },
+    {
+      "id": "storms",
+      "kicker": "Thunderstorms and fog",
+      "title": "Sudden wind, no visibility",
+      "refs": ["Thunderstorms", "Fog"],
+      "blocks": [
+        { "p": "A **thunderstorm** cloud, towering with an anvil top, pushes a cold gust front ahead: the wind drops, then 40 knots can hit from the storm. A low roll of cloud over white water is minutes away." },
+        { "fig": { "type": "card", "title": "Squall coming", "lines": ["Reef hard or drop the sails", "Close hatches, lifejackets on", "Lightning: crew below, clear of the mast", "Waterspout: watch its bearing, motor clear"], "tag": "40 kn" } },
+        { "p": "**Radiation fog** forms over land on clear, calm nights and burns off by mid-morning. **Sea fog** (advection fog) forms when warm moist air meets a colder sea, mostly in spring; wind does not clear it." }
+      ]
+    }
+  ]
+}

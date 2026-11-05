@@ -12,6 +12,7 @@ const BLADE = '<path d="M12 9.5c-2.8-1.8-3.2-5.2 0-7.5 3.2 2.3 2.8 5.7 0 7.5z"/>
 const TEST_ICONS = {
   /* ---- the app: tabs, buttons, exam ---- */
   book: '<path d="M3 5.5c4.5 0 7 .8 9 2.5v12c-2-1.7-4.5-2.5-9-2.5z"/><path d="M21 5.5c-4.5 0-7 .8-9 2.5v12c2-1.7 4.5-2.5 9-2.5z"/>',
+  page: '<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9.5 12h5M9.5 16h5"/>', // the Theory tab: an article
   timer: '<circle cx="12" cy="13.5" r="7.5"/><path d="M12 10v3.5l2.5 1.5"/><path d="M10 2.5h4M12 2.5V6M18.5 6.5 20 5"/>',
   chart: '<path d="M3 21h18"/><path d="M6.5 21v-6M12 21V10M17.5 21V4"/>',
   user: '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
@@ -99,7 +100,7 @@ TEST_ICONS['board-view'] = TEST_ICONS.grid;
 
 // The icon sheet and the viewer list the set by group, in this order.
 const TEST_ICON_GROUPS = [
-  ['App', ['book', 'timer', 'chart', 'user', 'users', 'play', 'next', 'back', 'check', 'x', 'refresh', 'share', 'flag', 'grid', 'trophy', 'fire', 'target', 'sun', 'moon', 'globe']],
+  ['App', ['book', 'page', 'timer', 'chart', 'user', 'users', 'play', 'next', 'back', 'check', 'x', 'refresh', 'share', 'flag', 'grid', 'trophy', 'fire', 'target', 'sun', 'moon', 'globe']],
   ['Boat', ['yacht', 'sail', 'wheel', 'propeller', 'gear', 'cleat', 'knot', 'anchor']],
   ['Safety', ['lifebuoy', 'lifejacket', 'medkit', 'flare', 'binoculars', 'captain', 'mug']],
   ['Rules, navigation, buoyage', ['rules', 'dividers', 'compass', 'map', 'buoy', 'lighthouse']],

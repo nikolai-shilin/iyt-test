@@ -1,0 +1,143 @@
+{
+  "topic": "colregs",
+  "lead": "This level works by rule number: is she in sight, what do her lights, shapes or signals make her, which rule decides?",
+  "sections": [
+    {
+      "id": "conduct",
+      "kicker": "Look-out and risk",
+      "title": "Before anyone gives way",
+      "refs": ["COLREGs Rule 2", "COLREGs Rule 2(b)", "COLREGs Rule 5", "COLREGs Rule 6", "COLREGs Rule 7", "COLREGs Rules 8, 15 and 16", "COLREGs Rules 8 and 16"],
+      "blocks": [
+        { "p": "Keep a **look-out** (Rule 5) by sight and hearing, all round, under the genoa too; radar only adds to it. **Safe speed** (Rule 6) drops where shore lights or radar clutter hide craft." },
+        { "p": "**Risk of collision** (Rule 7): an approaching vessel's compass bearing does not appreciably change; near a big ship or a tow, even if it does. Act early (Rules 8, 16): one large alteration, at night enough to show her your other sidelight." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 45, "dist": 90, "hdg": 270, "label": "Ship", "scale": 1.4 }, "bearingLine": true, "note": "She bears 045°: turn past 45° and she sees your red" } },
+        { "p": "**Rule 2**: no rule excuses poor seamanship, and immediate danger justifies departing from one." }
+      ]
+    },
+    {
+      "id": "channels",
+      "kicker": "Channels and schemes",
+      "title": "Do not impede",
+      "refs": ["COLREGs Rule 9", "COLREGs Rule 9(g)", "COLREGs Rules 8(f) and 9(b)", "COLREGs Rule 10", "COLREGs Rule 10(c)", "COLREGs Rule 10(d)", "COLREGs Rule 10(j)", "COLREGs Rules 10(a) and 14"],
+      "blocks": [
+        { "p": "In a **narrow channel** (Rule 9) keep to starboard and avoid anchoring. Under 20 m or under sail, never impede a vessel confined to it: act early, before risk of collision exists." },
+        { "fig": { "type": "chart", "land": "M0 70 H320 V86 H0 Z M0 20 H320 V22 H0 Z M0 136 H320 V138 H0 Z", "boat": [150, 165, 0], "labels": [[20, 50, "lane: traffic west", "start"], [20, 82, "separation zone", "start"], [20, 112, "lane: traffic east", "start"]], "panel": ["Crossing", "Heading 000°T", "Stream sets you E", "Track is not the rule"], "note": "Traffic separation scheme · north up" } },
+        { "p": "In a **traffic separation scheme** (Rule 10) follow your lane; join at its end, or from the side at a small angle. Cross on a **heading** at right angles to the traffic. Under 20 m or under sail you may use the inshore zone, but never impede a power-driven vessel following a lane. Head-on in a lane, Rule 14 still applies." }
+      ]
+    },
+    {
+      "id": "sight",
+      "kicker": "Vessels in sight",
+      "title": "Sail, overtaking, head-on, crossing",
+      "refs": ["COLREGs Rule 12", "COLREGs Rule 12(a)(iii)", "COLREGs Rule 13", "COLREGs Rule 13(c)", "COLREGs Rule 14", "COLREGs Rules 14 and 21", "COLREGs Rules 15 and 17", "COLREGs Rule 17", "COLREGs Rule 17(b)", "COLREGs Rule 17(d)"],
+      "blocks": [
+        { "p": "Under sail (**Rule 12**) port tack keeps clear of starboard; on the same tack, the windward vessel. Your tack is the side opposite your mainsail. On port tack, unsure of a windward vessel's tack, keep clear." },
+        { "tiles": [
+          { "fig": { "type": "encounter", "you": { "hdg": 300, "sail": true, "boom": -14 }, "other": { "bearing": -60, "dist": 65, "hdg": 310, "sail": true, "boom": -14 }, "wind": 0, "bearingLine": true }, "view": "75 5 245 185", "name": "Same tack", "note": "windward keeps clear" },
+          { "fig": { "type": "encounter", "you": { "hdg": 180, "sail": true, "boom": 14 }, "other": { "bearing": -70, "dist": 70, "hdg": 315, "sail": true, "boom": -14 }, "wind": 0, "bearingLine": true }, "view": "75 5 245 185", "name": "Main to starboard", "note": "port tack" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": -80, "dist": 70, "hdg": 10, "label": "Motor yacht" }, "bearingLine": true }, "view": "40 -12 225 165", "name": "Came from astern", "note": "still overtaking" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": -45, "dist": 70, "hdg": 90, "label": "Motor yacht" }, "bearingLine": true }, "view": "40 -12 225 165", "name": "She is to port", "note": "stand on" }
+        ], "cols": 2 },
+        { "p": "**Overtaking** (Rule 13) overrides the rest: coming up from more than 22.5° abaft her beam, where only her sternlight shows, you keep clear, even under sail; in doubt, assume it. Power-driven vessels **head-on** (Rule 14) both turn to starboard; **crossing** (Rule 15), the one with the other to starboard gives way and does not cross ahead." },
+        { "p": "The **stand-on vessel** (Rule 17) holds course and speed. She may act once the other clearly is not, and must when the other alone cannot avoid collision; under power, not by turning to port for a vessel to port. The give-way vessel stays bound." }
+      ]
+    },
+    {
+      "id": "hierarchy",
+      "kicker": "Responsibilities",
+      "title": "Rule 18: who gives way to whom",
+      "refs": ["COLREGs Rule 18", "COLREGs Rules 3 and 18", "COLREGs Rules 3(d) and 18", "COLREGs Rules 3 and 25(e)", "COLREGs Rules 18 and 26", "COLREGs Rules 18 and 27(a)", "COLREGs Rule 27(b)", "COLREGs Rules 18 and 27(b)", "COLREGs Rules 18 and 27(c)", "COLREGs Rules 18(d) and 28", "COLREGs Rules 9, 18 and 28", "COLREGs Rule 30", "COLREGs Rule 30(d)"],
+      "blocks": [
+        { "p": "Unless overtaking, **power** keeps clear of sail, fishing, restricted in ability to manoeuvre and not under command; **sail** of the last three; fishing of the last two. All but those two avoid impeding one constrained by her draught." },
+        { "tiles": [
+          { "fig": { "type": "dayshape", "shape": "two-balls" }, "view": "80 28 160 140", "name": "Not under command" },
+          { "fig": { "type": "dayshape", "shape": "ball-diamond-ball" }, "view": "80 28 160 140", "name": "Restricted in ability to manoeuvre" },
+          { "fig": { "type": "dayshape", "shape": "two-cones" }, "view": "80 28 160 140", "name": "Fishing" },
+          { "fig": { "type": "dayshape", "shape": "cylinder" }, "view": "80 28 160 140", "name": "Constrained by draught" },
+          { "fig": { "type": "dayshape", "shape": "cone-down", "sail": true }, "view": "80 28 160 140", "name": "Motor-sailing" },
+          { "fig": { "type": "dayshape", "shape": "three-balls" }, "view": "80 28 160 140", "name": "Aground" }
+        ], "cols": 3 },
+        { "p": "A yacht using her engine is power-driven (Rule 3). Trolling lines are not fishing: the gear must hamper her. Towing alone gives no priority. At anchor show a ball, unless under 7 m and clear of channels and anchorages." }
+      ]
+    },
+    {
+      "id": "lights",
+      "kicker": "Lights",
+      "title": "Rules 21–25, 30: arcs and ranges",
+      "refs": ["COLREGs Rule 21", "COLREGs Rule 22", "COLREGs Rules 22 and 23", "COLREGs Rules 23 and 25", "COLREGs Rule 23(d)", "COLREGs Rule 25", "COLREGs Rules 18 and 25(c)", "COLREGs Rule 30(b)", "COLREGs Rules 21 and 30"],
+      "blocks": [
+        { "p": "A **masthead light** covers 225°, from right ahead to 22.5° abaft each beam; each **sidelight** its half of that; the **sternlight** the 135° astern. A lone white seen from abeam is **all-round**: an anchor light." },
+        { "table": { "head": ["Range, M", "Masthead", "Side", "Stern, all-round"], "rows": [
+          ["50 m or more", "6", "3", "3"],
+          ["12–50 m", "5 · 3 under 20 m", "2", "2"],
+          ["Under 12 m", "2", "1", "2"]
+        ] } },
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 138, "y": 56 }, { "c": "w", "x": 178, "y": 78 }, { "c": "g", "x": 168, "y": 120 }] }, "view": "60 20 200 150", "name": "Ship heading right", "note": "forward masthead lower" },
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 94, "t": "all-round" }, { "c": "g", "x": 152, "y": 124 }, { "c": "r", "x": 168, "y": 124 }] }, "view": "60 20 200 150", "name": "Power under 12 m" },
+          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 52 }, { "c": "g", "x": 160, "y": 72 }, { "c": "g", "x": 150, "y": 122 }, { "c": "r", "x": 170, "y": 122 }] }, "view": "60 20 200 150", "name": "Under sail" },
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 104, "y": 70 }, { "c": "w", "x": 216, "y": 98 }], "hull": "M84 126 L236 126 L232 142 L100 142 Z" }, "view": "60 20 200 150", "name": "Anchored, over 50 m" }
+        ], "cols": 2 },
+        { "p": "Under engine show masthead light, sidelights and sternlight; the tricolour, or red over green, only under sail, never both. Under 7 m and 7 knots, or anchored under 50 m, one all-round white will do." }
+      ]
+    },
+    {
+      "id": "working",
+      "kicker": "Vessels at work",
+      "title": "Rules 24–29: lights for the job",
+      "refs": ["COLREGs Rule 24", "COLREGs Rule 24(c)", "COLREGs Rule 24(i)", "COLREGs Rule 26(b)", "COLREGs Rule 26(c)", "COLREGs Rules 13 and 26", "COLREGs Rule 27", "COLREGs Rule 27(a)", "COLREGs Rule 27(d)", "COLREGs Rule 27(f)", "COLREGs Rule 29"],
+      "blocks": [
+        { "p": "Vessels fishing, not under command or restricted show sidelights and sternlight only when **making way**." },
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 44 }, { "c": "w", "x": 160, "y": 62 }, { "c": "w", "x": 160, "y": 80 }, { "c": "g", "x": 130, "y": 120 }, { "c": "r", "x": 190, "y": 120 }] }, "view": "60 20 200 150", "name": "Towing, over 200 m", "note": "two mastheads if shorter" },
+          { "fig": { "type": "lights", "lights": [{ "c": "y", "x": 160, "y": 104, "t": "yellow" }, { "c": "w", "x": 160, "y": 124 }] }, "view": "60 20 200 150", "name": "Tug from astern" },
+          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 160, "y": 64 }, { "c": "w", "x": 160, "y": 86 }] }, "view": "60 20 200 150", "name": "Trawling, stopped" },
+          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 130, "y": 66 }, { "c": "w", "x": 130, "y": 88 }, { "c": "w", "x": 168, "y": 104, "t": "gear, 150 m+" }] }, "view": "60 20 200 150", "name": "Fishing", "note": "pass the other side" },
+          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 46 }, { "c": "w", "x": 160, "y": 64 }, { "c": "r", "x": 160, "y": 82 }, { "c": "r", "x": 100, "y": 74 }, { "c": "r", "x": 100, "y": 92 }, { "c": "g", "x": 220, "y": 74 }, { "c": "g", "x": 220, "y": 92 }] }, "view": "60 20 200 150", "name": "Restricted: dredger", "note": "red-white-red; pass her greens" },
+          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 160, "y": 40 }, { "c": "g", "x": 124, "y": 60 }, { "c": "g", "x": 196, "y": 60 }, { "c": "w", "x": 160, "y": 80 }, { "c": "g", "x": 150, "y": 120 }, { "c": "r", "x": 170, "y": 120 }] }, "view": "60 20 200 150", "name": "Mine clearance", "note": "1000 m off" }
+        ], "cols": 2 },
+        { "table": { "head": ["All-round lights", "Vessel"], "rows": [
+          ["Two reds", "Not under command, not distress"],
+          ["Three reds", "Constrained by draught"],
+          ["White over red", "Pilot vessel"],
+          ["Anchor lights, two reds", "Aground"]
+        ] } },
+        { "p": "Never pass between a tug and her tow, whose own sidelights follow astern; by day, diamonds mean over 200 m. Pushing or towing alongside, a tug shows no yellow light. A yacht towing another lights the towline." }
+      ]
+    },
+    {
+      "id": "fog",
+      "kicker": "Sound and fog",
+      "title": "Heard, not seen",
+      "refs": ["COLREGs Rule 34", "COLREGs Rule 34(a)", "COLREGs Rules 9(e) and 34(c)", "COLREGs Rules 9(f) and 34(e)", "COLREGs Rules 9 and 34(d)", "COLREGs Rule 19", "COLREGs Rule 19(d)", "COLREGs Rule 19(e)", "COLREGs Rules 3(k), 15 and 19", "COLREGs Rules 3, 20 and 35", "COLREGs Rule 35", "COLREGs Rule 35(c)", "COLREGs Rule 35(d)", "COLREGs Rule 35(g)", "COLREGs Rule 35(h)", "COLREGs Rule 35(j)", "COLREGs Rule 35(k)", "COLREGs Rules 3 and 35(a)", "COLREGs Rules 3 and 35(b)", "COLREGs Annex IV"],
+      "blocks": [
+        { "table": { "head": ["Rule 34: • short, — prolonged", "Whistle or light, in sight"], "rows": [
+          ["•", "Altering to starboard"],
+          ["• •", "Altering to port"],
+          ["• • •", "Engines astern"],
+          ["• • • • •", "I doubt your action"],
+          ["—", "Nearing a blind bend"],
+          ["— — •", "Overtaking to starboard"],
+          ["— — • •", "Overtaking to port"],
+          ["— • — •", "Agreed, overtake"]
+        ] } },
+        { "p": "**Restricted visibility** includes heavy rain: lights on by day, fog signals sounding. Nobody stands on (Rule 19). With a radar target forward of the beam, avoid turning to port unless overtaking her; with one abeam or abaft, avoid turning towards her. A fog signal heard forward of the beam: bare steerage way, or stop. In sight again, the usual rules return." },
+        { "tiles": [
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": -20, "dist": 88, "hdg": 170, "label": "Target" }, "bearingLine": true }, "view": "50 -6 220 190", "name": "Forward: to starboard" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 120, "dist": 62, "hdg": 345, "label": "Target" }, "bearingLine": true }, "view": "50 -6 220 190", "name": "Abaft: turn away" }
+        ] },
+        { "table": { "head": ["Rule 35, every 2 min", "In fog"], "rows": [
+          ["—", "Power, making way"],
+          ["— —", "Power, stopped"],
+          ["— • •", "Sail, towing, hampered, fishing (also anchored)"],
+          ["— • • •", "Manned tow"],
+          ["• • • •", "Pilot, added"],
+          ["Bell, each minute", "At anchor"],
+          ["• — •", "At anchor, warning"],
+          ["3 strokes, bell, 3 strokes", "Aground"]
+        ] } },
+        { "p": "Motor-sailing, you sound as power. Under 12 m, any efficient signal will do. Distress (Annex IV): red rockets and flares, orange smoke, flags N over C, a square flag with a ball; not a white flare or flag V." }
+      ]
+    }
+  ]
+}

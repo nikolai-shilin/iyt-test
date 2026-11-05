@@ -1,0 +1,92 @@
+{
+  "topic": "emergency",
+  "lead": "Emergencies are rare, and on a flotilla help is close. What decides the outcome is the first minute, before help arrives. For each case, learn the first action and the reason for it.",
+  "sections": [
+    {
+      "id": "mob",
+      "kicker": "Man overboard",
+      "title": "Keep them in sight, come back under control",
+      "refs": ["Man overboard"],
+      "blocks": [
+        { "p": "Three things happen at once. Shout **\"man overboard\"** so the whole crew knows. Throw the lifebuoy to give the casualty buoyancy. Name one person who does nothing but **point** at the casualty: a head among the waves is lost in seconds." },
+        { "p": "The surest way back is under engine, with the sails down. Make the final approach slowly, bow into the wind, where the boat is easiest to control at low speed, and stop the engine as you reach them: a turning propeller must never be near a person in the water." },
+        { "tiles": [
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 12, "dist": 85, "hdg": 0, "label": "MOB", "scale": 0.3 }, "wind": 0, "note": "Sails down, under engine" }, "name": "Under engine", "note": "bow into the wind, engine stopped alongside" },
+          { "fig": { "type": "encounter", "you": { "hdg": 60, "sail": true, "boom": 14 }, "other": { "bearing": 0, "dist": 80, "hdg": 0, "label": "MOB", "scale": 0.3 }, "wind": 0, "note": "Under sail, on a close reach" }, "name": "Under sail", "note": "close reach, ease the sheets to stop" }
+        ] },
+        { "p": "Under sail, approach on a **close reach**. It is the point of sail on which you control your speed completely: ease the sheets and the sails spill their wind and the boat slows; sheet in and she moves again." }
+      ]
+    },
+    {
+      "id": "calls",
+      "kicker": "Calling for help",
+      "title": "MAYDAY, PAN-PAN and the right flare",
+      "refs": ["Distress & urgency calls", "Distress flares"],
+      "blocks": [
+        { "table": { "head": ["Call", "When"], "rows": [
+          ["MAYDAY", "Grave and imminent danger to life or to the vessel: a fire you cannot put out, a sinking yacht"],
+          ["PAN-PAN", "Urgent, but no grave and imminent danger: an injury that needs a doctor while the boat is fine"]
+        ] } },
+        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["display", "channel 16"], ["distress", "DISTRESS"], ["ptt", "press to talk"]], "note": "Both calls are made on channel 16" } },
+        { "p": "A fire beyond your extinguishers is a MAYDAY: make the call first, then get everyone on deck in lifejackets and the liferaft ready." },
+        { "table": { "head": ["Signal", "What it is for"], "rows": [
+          ["Red parachute rocket", "Raising the alarm from far off: it climbs to about 300 m. Never fire one near a helicopter"],
+          ["Red hand flare", "Pinpointing your position once help is near"],
+          ["Orange smoke", "By day: it shows an aircraft where you are and how the wind blows. Hold it on the downwind side"]
+        ] } }
+      ]
+    },
+    {
+      "id": "fire",
+      "kicker": "Fire",
+      "title": "Starve it of fuel and air",
+      "refs": ["Fire", "Abandon ship"],
+      "blocks": [
+        { "p": "A fire needs fuel, air and heat; take one away. A burning pan of oil in the galley is smothered: turn off the gas and lay the **fire blanket** over it. Never throw water on burning fat: it explodes into a ball of flame." },
+        { "fig": { "type": "card", "title": "Engine fire", "lines": ["1. Stop the engine", "2. Shut off the fuel", "3. Keep the engine box closed", "4. Extinguisher through the port in the lid"] } },
+        { "p": "Opening the engine box feeds the fire a rush of air. That is what the small **extinguisher port** in the lid is for: the nozzle goes in, the lid stays shut." },
+        { "p": "If the fire wins, you abandon ship, and only then. A yacht that still floats is a better liferaft than the liferaft: you get into the raft when the yacht is going down under you, **stepping up** into it." },
+        { "rule": "Step up into the liferaft. Never leave a boat that still floats." }
+      ]
+    },
+    {
+      "id": "water",
+      "kicker": "Flooding and grounding",
+      "title": "Find where the water comes in",
+      "refs": ["Flooding", "Grounding"],
+      "blocks": [
+        { "p": "Water over the floorboards with no collision nearly always comes through a fitting below the waterline. Look first at the **seacocks**, the hoses and clips on them, and the **stern gland**, where the propeller shaft leaves the hull. If a hose has come off, close its seacock; if the valve will not close, hammer in the tapered softwood **bung**." },
+        { "p": "After a **grounding**, look in the bilge before anything else. A rock may be plugging the hole it made: pull off into deep water with a holed hull and you sink there." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["waterline", "waterline"], ["keel", "keel"], ["rudder", "rudder"], ["draft", "draft"]] }, "cap": "Heel the boat and she draws less." },
+        { "p": "On sand, with a dry bilge, go out the way you came in: reverse gently along your own track with the crew on one side, since heeling reduces the draft. The Mediterranean has almost no tide to lift you off, so if that fails, call the lead boat." }
+      ]
+    },
+    {
+      "id": "ropes",
+      "kicker": "Ropes in the water",
+      "title": "Protect the propeller",
+      "refs": ["Fouled propeller", "Dismasting"],
+      "blocks": [
+        { "p": "A rope round the propeller stops the engine with a thump. Do not restart it: forcing it can wreck the shaft or the gearbox. You still have sails. Sail on, and call the lead boat to help you clear the rope." },
+        { "fig": { "type": "card", "title": "Before you start the engine", "lines": ["Sheets and mooring lines aboard?", "Dinghy painter pulled in short?", "After a dismasting: all rigging clear?", "Nothing trailing near the propeller?"] } },
+        { "p": "The same thinking applies after a **dismasting**. A broken shroud brings the mast over the side, with wires and ropes all round the hull. Before the engine goes on, every rope and wire comes out of the water, or the propeller winds them in and you have lost the engine as well." },
+        { "rule": "Look over the side before you turn the key." }
+      ]
+    },
+    {
+      "id": "firstaid",
+      "kicker": "First aid",
+      "title": "Four cases to know",
+      "refs": ["First aid — hypothermia", "First aid — burns", "First aid — head injury", "First aid — heat stroke"],
+      "blocks": [
+        { "table": { "head": ["Case", "Signs", "What you do"], "rows": [
+          ["Hypothermia", "Shivering hard after time in the water", "Shelter, dry clothes, wrap them up; warm sweet drinks if they are alert. No alcohol"],
+          ["Burn or scald", "Red, blistering skin", "Cool running water for 20 minutes, then cover loosely with cling film or a clean dressing"],
+          ["Head injury", "Knocked out, even for seconds", "Get medical advice and watch them for hours: drowsiness, vomiting or confusion are danger signs"],
+          ["Heat stroke", "Hot, dry skin, confusion, no sweating", "Shade, cool them with water and fanning, call for medical help: PAN-PAN"]
+        ] } },
+        { "p": "Warm a cold casualty gradually and cool a hot one fast. Heat stroke is a medical emergency, not a bad day in the sun. And a crew member who was knocked out and now \"feels fine\" still needs a doctor's advice: bleeding inside the skull can show itself hours later." }
+      ]
+    }
+  ]
+}

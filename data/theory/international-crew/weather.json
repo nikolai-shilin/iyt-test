@@ -1,0 +1,102 @@
+{
+  "topic": "weather",
+  "lead": "The skipper makes the weather decisions, but the whole crew lives with them. Know how wind is named and measured, what a forecast is telling you, and which signs in the sky and on the barometer deserve a word to the skipper.",
+  "sections": [
+    {
+      "id": "wind",
+      "kicker": "Wind direction",
+      "title": "Named by where it comes from",
+      "refs": ["Wind direction"],
+      "blocks": [
+        { "p": "Wind is always named after the direction it blows **from**. A northerly blows from the north towards the south; a sea breeze blows in from the sea." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 180, "note": "A northerly: from the north, pushing you south" } },
+        { "p": "Flags, smoke and boats at anchor show the wind the other way round: a flag streams **downwind**. If it streams towards the south-east, the wind is a north-westerly." }
+      ]
+    },
+    {
+      "id": "beaufort",
+      "kicker": "Beaufort scale",
+      "title": "Wind strength as a Force",
+      "refs": ["Beaufort scale"],
+      "blocks": [
+        { "p": "Forecasts give the wind as a **Force** on the Beaufort scale. Each Force is a band of wind speeds in knots, and the sea grows with it." },
+        { "table": { "head": ["Force", "Knots", "Name", "On a yacht"], "rows": [
+          ["3", "7–10", "Gentle breeze", "Easy sailing under full sail"],
+          ["4", "11–16", "Moderate breeze", "Good sailing, some white horses"],
+          ["5", "17–21", "Fresh breeze", "Many white horses, time to reef"],
+          ["6", "22–27", "Strong breeze", "Reefs, spray, lifejackets on"],
+          ["7", "28–33", "Near gale", "Hard going for boat and crew"],
+          ["8", "34–40", "Gale", "Stay in port"]
+        ] } },
+        { "fig": { "type": "panel", "gauges": [["True wind", "19 kn", false], ["Gusts", "26 kn", false]], "lines": ["17–21 knots: Force 5, a fresh breeze", "The gusts reach Force 6"] } },
+        { "rule": "Force 4: a good sailing day. Force 6: hard work. Force 8: a gale.", "label": "Remember" }
+      ]
+    },
+    {
+      "id": "forecast",
+      "kicker": "Forecasts",
+      "title": "Wind, sea, weather, visibility",
+      "refs": ["Forecasts"],
+      "blocks": [
+        { "p": "A marine forecast keeps to one order: wind direction and Force, the state of the sea, the weather, the visibility. Listen for the words of change: **increasing**, **becoming**, **later**. They describe the rest of the day, not just the morning." },
+        { "fig": { "type": "card", "title": "Forecast, read at 08:00", "lines": ["Wind: N 3 to 4, increasing 5 later", "Sea: slight, becoming moderate", "Weather: showers", "Visibility: good, poor in showers", "So: more wind and sea as the day goes on"] } },
+        { "table": { "head": ["Visibility", "You can see"], "rows": [
+          ["Good", "More than 5 miles"],
+          ["Moderate", "2 to 5 miles"],
+          ["Poor", "Less than 2 miles"],
+          ["Fog", "Less than 1,000 metres"]
+        ] } }
+      ]
+    },
+    {
+      "id": "breeze",
+      "kicker": "Sea and land breeze",
+      "title": "The daily wind of a hot coast",
+      "refs": ["Sea and land breeze"],
+      "blocks": [
+        { "p": "On a hot, settled day the land heats up faster than the sea. Warm air rises over the land and cooler air flows in from the sea to replace it: the **sea breeze**. It fills in around midday, is strongest in mid-afternoon and dies at sunset." },
+        { "tiles": [
+          { "fig": { "type": "bay", "wind": 180, "spots": [], "labels": [[160, 30, "LAND · hot", "middle"], [160, 170, "SEA · cooler", "middle"]] }, "name": "Afternoon", "note": "sea breeze, onshore" },
+          { "fig": { "type": "bay", "wind": 0, "spots": [], "labels": [[160, 30, "LAND · cool", "middle"], [160, 170, "SEA · warmer", "middle"]] }, "name": "Night", "note": "land breeze, offshore" }
+        ] },
+        { "p": "A calm morning anchorage close off a beach can have the wind blowing onto that beach by three o'clock. At night it reverses: the land cools faster than the sea, and a light **land breeze** drifts offshore until morning." }
+      ]
+    },
+    {
+      "id": "local",
+      "kicker": "Meltemi and local winds",
+      "title": "Where the land makes the wind",
+      "refs": ["Meltemi", "Local winds"],
+      "blocks": [
+        { "p": "The **Meltemi** is the summer wind of the Aegean. It blows from the north under clear skies, often Force 5 to 7 for days on end. It usually eases overnight and builds through the day to its strongest in the afternoon. So crews in the Cyclades make their passages early, and any leg towards the north is a beat into wind and waves." },
+        { "tiles": [
+          { "fig": { "type": "bay", "wind": 0, "land": "M0 0 H120 C 132 60 132 140 110 200 H0 Z M320 0 H200 C 188 60 188 140 210 200 H320 Z", "spots": [[160, 100, "A"]] }, "name": "A gap between islands", "note": "the wind is squeezed: stronger at A" },
+          { "fig": { "type": "bay", "wind": 0, "land": "M0 0 H320 V50 C 240 72 120 72 0 50 Z", "labels": [[160, 30, "High cliffs", "middle"]] }, "name": "Under high land", "note": "calm water, then sudden gusts" }
+        ] },
+        { "p": "Land bends any wind and speeds it up. It **funnels** through gaps between islands and round headlands, where it blows harder than in open water. In the lee of high land the water may look calm, but the wind that has climbed over the top falls down the slope in sudden, violent gusts." }
+      ]
+    },
+    {
+      "id": "barometer",
+      "kicker": "Barometer",
+      "title": "Falling fast: tell the skipper",
+      "refs": ["Barometer"],
+      "blocks": [
+        { "p": "The **barometer** shows air pressure in hectopascals (hPa). The number itself matters less than the change, which is why it is logged every few hours. Steady or slowly rising pressure means settled weather. A fall of several hPa in three hours warns of strong wind." },
+        { "fig": { "type": "panel", "gauges": [["06:00", "1018", false], ["09:00", "1015", false], ["12:00", "1009", true]], "lines": ["Down 3 hPa, then 6 hPa in three hours", "Falling faster: report it"] } },
+        { "p": "Put the signs together. Pressure falling fast, high wispy cloud thickening from the west and a long swell arriving out of a calm sea all say the same thing: a **depression** with strong wind is on its way." }
+      ]
+    },
+    {
+      "id": "storms",
+      "kicker": "Thunderstorms",
+      "title": "Reef before the squall, not in it",
+      "refs": ["Thunderstorms"],
+      "blocks": [
+        { "p": "On a hot, sticky afternoon watch the tall cauliflower clouds that grow over the land. When a top spreads out flat like an anvil, it is a thundercloud. Under it comes a **squall**: sudden violent gusts, often from a new direction, heavy rain and lightning." },
+        { "fig": { "type": "card", "title": "Before the squall arrives", "lines": ["Reef or drop the sails now", "Lifejackets on", "Hatches shut, loose gear stowed", "Watch the dark line on the water"], "tag": "10 min" } },
+        { "p": "The first gust can be far stronger than the wind ahead of it, and it reaches you within minutes of the dark ruffled water appearing. Everything is easier to do before it arrives." }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,8 @@
 //
 //   GET /api/admin            → { users: [ { id, name, username, lang, daily, joined, active, level, total, streak, lastDay,
 //                                 week, levels: { fs: { mastered, seen, mistakes }, … }, exams: [{ lv, at, pct, passed }],
-//                                 flags: ['bs-012', …], wrong: ['bs-034', …] } ],
+//                                 flags: ['bs-012', …], wrong: ['bs-034', …],
+//                                 notes: [ { k: 'bs-buoyage/cardinal', text, at } ] } ],
 //                               series: { hour: [ { at, joined, answers, wrong } × 24 ], day: [ … × 91 ] } | null }
 //   POST /api/admin { unflag: { q: 'bs-012', k: 'flags' | 'wrong', users: [id, …] } } → { ok: true, users: [id, …] }
 //                             takes that flag off those students' question (public.flag_clears, see below); 501 when the
@@ -17,7 +18,8 @@
 // prefix (fs = Flotilla Skipper, bs = Bareboat Skipper, …; the app knows the bank sizes and turns counts into %).
 // flags are the question ids the student marked to come back to (state.flags) and wrong the ones they reported as
 // having a mistake (state.wrong, the red flag); the app groups both by question on the Students page, so the admins
-// see which questions people get stuck on and which need a fix.
+// see which questions people get stuck on and which need a fix. notes is what the student wrote about a section of a
+// theory article (state.notes, the flag beside a section's heading): the article and section, the comment, when.
 // series is for the charts on the Overview page, per UTC hour (the last 24) and per UTC day (the last 91), oldest first:
 // people who joined (users.created_at), answers given and the wrong ones among them (public.answers); the app cuts its
 // 24h / 7d / 30d / 3m views out of it. It comes from public.admin_series()
@@ -36,6 +38,12 @@ const MAX_USERS = 1000;
 const MAX_FLAGS = 500; // per student, per kind
 // Question ids out of a state list: well-formed, no repeats (the app never sends anything else; the state is the app's).
 const cleanIds = (list) => [...new Set((Array.isArray(list) ? list : []).filter((id) => typeof id === 'string' && /^[a-z]{1,8}-\d{1,5}$/.test(id)))].slice(0, MAX_FLAGS);
+
+const MAX_NOTES = 50; // per student
+// What a student wrote about the theory articles: state.notes['<prefix>-<topic>/<section>'] = { text, at }.
+const cleanNotes = (notes) => Object.entries(notes && typeof notes === 'object' && !Array.isArray(notes) ? notes : {})
+  .filter(([k, n]) => /^[a-z]{1,8}-[a-z0-9-]{1,40}\/[a-z0-9-]{1,40}$/.test(k) && n && typeof n.text === 'string' && n.text.trim())
+  .slice(0, MAX_NOTES).map(([k, n]) => ({ k, text: n.text.trim().slice(0, 1000), at: Number.isFinite(n.at) ? n.at : 0 }));
 
 const pad = (n) => String(n).padStart(2, '0');
 const dkey = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
@@ -90,7 +98,7 @@ export function summarise(u, p) {
   const out = {
     id: u.id, name: u.name || null, username: u.username || null, lang: u.lang || 'en', daily: !!(u.daily_question && !u.blocked_at),
     joined: u.created_at, active: p ? p.updated_at : u.updated_at,
-    level: null, total: 0, streak: 0, lastDay: null, week: 0, levels: {}, exams: [], flags: [], wrong: [],
+    level: null, total: 0, streak: 0, lastDay: null, week: 0, levels: {}, exams: [], flags: [], wrong: [], notes: [],
   };
   if (!p) return out;
   const q = p.q && typeof p.q === 'object' ? p.q : {}, days = p.days && typeof p.days === 'object' ? p.days : {};
@@ -114,6 +122,7 @@ export function summarise(u, p) {
     .map((e) => ({ lv: e.lv || 'bareboat-skipper', at: e.at, pct: e.pct, passed: !!e.passed }));
   out.flags = cleanIds(p.flags);
   out.wrong = cleanIds(p.wrong);
+  out.notes = cleanNotes(p.notes);
   return out;
 }
 
@@ -147,7 +156,7 @@ export async function GET(request) {
     const [users, progress, clears] = await Promise.all([
       db(`users?select=id,name,username,lang,daily_question,blocked_at,created_at,updated_at&order=updated_at.desc&limit=${MAX_USERS}`),
       // only the parts of the state the summary needs; the whole state can be ~100 KB per student
-      db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags,wrong:state->wrong&limit=${MAX_USERS}`),
+      db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags,wrong:state->wrong,notes:state->notes&limit=${MAX_USERS}`),
       pendingClears(),
     ]);
     const byUser = new Map(progress.map((p) => [p.user_id, p]));

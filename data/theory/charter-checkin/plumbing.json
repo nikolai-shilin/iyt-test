@@ -1,0 +1,93 @@
+{
+  "topic": "plumbing",
+  "lead": "Water, waste and gas are the systems the whole crew uses, so they are the ones that go wrong. Check each at the pontoon with the technician, then give the crew a few firm rules for the week.",
+  "sections": [
+    {
+      "id": "water",
+      "kicker": "Fresh water",
+      "title": "Fill it yourself and make it last",
+      "refs": ["Check-in: fresh water", "Check-in: deck fillers", "Filling water", "Water budget", "Water budget (catamaran)", "Drinking water"],
+      "blocks": [
+        { "p": "The gauge reads only the tank the selector points at, so check **every tank**: at the panel and by looking into the filler. Deck caps for water, diesel and waste look alike: have each identified and marked before a hose goes anywhere." },
+        { "list": [
+          "Run the hose clear first, then fill tank by tank and stay with it.",
+          "Water spurting from a small fitting in the hull is the tank vent: that tank is full.",
+          "Never leave a hose in the filler overnight."
+        ] },
+        { "fig": { "type": "panel", "gauges": [["Tanks", "600 L", false], ["Crew", "8", false], ["Days", "7", false]], "lines": ["600 ÷ 8 ÷ 7 = under 11 L each a day", "Not enough: fill at every marina"] } },
+        { "p": "Do the sum on day one. A transom shower runs litres a minute, and heads set to flush with fresh water empty a tank quietly: switch them to sea water. Wash up in sea water, drink bottled water and keep the tank for washing and boiling. A watermaker runs only offshore in clean water, never in harbour." }
+      ]
+    },
+    {
+      "id": "pump",
+      "kicker": "Pump, hot water, drains",
+      "title": "What the pressure pump is telling you",
+      "refs": ["Pressure water pump", "Water tanks and pump", "Hot water", "Hot water: relief valve", "Shower and sump pump", "Grey water", "Cockpit and locker drains"],
+      "blocks": [
+        { "table": { "head": ["Sign", "Meaning and answer"], "rows": [
+          ["Pump runs on, taps spit air", "Tank empty: pump off, change tank, prime with one tap open"],
+          ["Pump runs with every tap closed", "A leak: pump off, the base finds it"],
+          ["Cold shower at anchor", "The 230 V element needs shore power: run the engine half an hour"],
+          ["Relief valve runs steadily", "A fault for the form; never plug it"],
+          ["Shower tray will not drain", "Its pump breaker, then the hair filter"]
+        ] } },
+        { "p": "Sink and shower water is **grey water**: on most charter boats it goes straight over the side, so use little soap in a bay. Before you leave the base, see the cockpit drains and the anchor-locker drain run free: a cockpit that cannot empty itself is dangerous in a sea." }
+      ]
+    },
+    {
+      "id": "heads",
+      "kicker": "Heads and holding tank",
+      "title": "Only what you have eaten",
+      "refs": ["Marine toilet", "Marine toilet: joker valve", "Marine toilet: blocked", "Electric toilet", "Holding tank", "Check-in: holding tank", "Holding tank: Turkey", "Holding tank: planning", "Check-in form"],
+      "blocks": [
+        { "p": "The rule for the **heads**: only what has been eaten, and a little paper. Wipes block the pump, and the crew pays for the unblocking. Try every toilet yourself at check-in, and have a weak flush written on the form." },
+        { "fig": { "type": "card", "title": "Holding tank", "lines": ["Check-in: empty, or the base pumps it out", "Harbours and bays: valve to TANK", "Discharge: only offshore, where allowed", "Waste at the hull vent: the tank is full", "No-discharge waters: pump-out station"] } },
+        { "p": "How far offshore you may empty the tank is in the base's briefing. In some waters, Turkey among them, nothing goes over the side and each pump-out is recorded on a card. With a big crew a tank fills in about a day, so plan the emptying like a fuel stop." },
+        { "table": { "head": ["Trouble", "Answer"], "rows": [
+          ["Bowl fills again from the outlet", "Worn joker valve: the base changes it"],
+          ["Handle stiff, will not pump", "Stop; close its seacocks, use the other heads, call the base"],
+          ["Electric heads hum, nothing moves", "Jammed: stop pressing, breaker off"]
+        ] } },
+        { "p": "Under way, pump the bowl dry and leave the lever on 'dry': a full bowl can siphon when the boat heels." }
+      ]
+    },
+    {
+      "id": "seacocks",
+      "kicker": "Seacocks",
+      "title": "Find every one and turn it yourself",
+      "refs": ["Seacocks", "Seacocks and bungs", "Seacocks: hoses and clips", "Leaving the boat", "Below decks before a passage", "Fridge: seawater cooling"],
+      "blocks": [
+        { "p": "A **seacock** is a valve on a hole in the hull. A ball valve is open with the lever along the pipe and closed with it across: a quarter turn. Have each one shown to you and turn it yourself. One that will not move is never forced with a lever: it can snap off below the waterline. The base frees it." },
+        { "fig": { "type": "card", "title": "Seacock round", "lines": ["Each one found and turned by hand", "A softwood bung tied beside each", "Two sound stainless clips on every hose", "Leaving the boat: heads seacocks closed", "Heeled passage: heads and sink closed"] } },
+        { "p": "Leaving the boat empty: heads seacocks closed, gas off at the bottle, pressure pump off. Before a hard beat close the heads and sink seacocks, or a low outlet floods back when she heels. A water-cooled fridge has its own seacock: open it again when you come back, or the fridge warms up." }
+      ]
+    },
+    {
+      "id": "gas",
+      "kicker": "Gas",
+      "title": "Heavier than air",
+      "refs": ["Gas installation", "Gas installation: hose", "Gas: leak test", "Gas: solenoid", "Gas: the valve routine", "Gas: bottle types", "Gas leak", "Gas alarm", "Stove and oven"],
+      "blocks": [
+        { "p": "Bottled gas sinks. A leak runs down into the bilge and waits for a spark, so the gas locker must drain overboard and its drain must be clear. Every bottle, the spare too, stands upright in such a locker." },
+        { "fig": { "type": "card", "title": "Gas locker at check-in", "lines": ["Drain clear, no water in the locker", "Hose: date printed on it, no cracks", "A full spare bottle, upright", "Leak test: open the bottle, close it,", "the gauge holds for minutes", "Gas alarm connected and tested"] } },
+        { "p": "After cooking, close the valve at the bottle, let the flame burn the pipe empty, then close the knob. If no gas reaches the burner, look for the **solenoid** switch. Hold an oven knob in for 10–15 seconds after lighting, until the flame-failure sensor is hot. Lock the stove's gimbals in harbour and free them at sea. A bottle of another make is never adapted to fit: call the base." },
+        { "fig": { "type": "card", "title": "Smell of gas", "lines": ["1. Valve at the bottle: closed", "2. No flames, no switches", "3. Hatches open, ventilate", "4. Then soapy water on the joints"], "tag": "No sparks" } }
+      ]
+    },
+    {
+      "id": "bilge",
+      "kicker": "Bilge",
+      "title": "Dry at check-in, so any water is news",
+      "refs": ["Check-in: bilge", "Check-in: bilge (catamaran)", "Bilge pumps", "Bilge: finding the water", "Bilge: salt water"],
+      "blocks": [
+        { "p": "Take over a **dry bilge**: it is your baseline for the week. Lift the float until the electric pump runs, then find the handle and work the manual pump. On a catamaran ask to see every compartment of both hulls." },
+        { "fig": { "type": "panel", "gauges": [["Bilge pump", "3×/h", true], ["Taste", "salt", true]], "lines": ["Pressure pump off: no change", "Find it now, and call the base"] } },
+        { "table": { "head": ["The water is", "Look at"], "rows": [
+          ["Fresh, only with the pressure pump on", "A leak on the pressure side"],
+          ["Fresh, pump off", "The fridge drain, the water heater, a tank"],
+          ["Salt, and it keeps coming", "Seacocks, hoses, stern gland, rudder seal"]
+        ] } }
+      ]
+    }
+  ]
+}

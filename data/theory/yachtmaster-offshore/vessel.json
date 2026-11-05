@@ -1,0 +1,110 @@
+{
+  "topic": "vessel",
+  "lead": "Far from help, know her hull, what keeps her upright, and how her systems fail.",
+  "sections": [
+    {
+      "id": "hull",
+      "kicker": "Hull",
+      "title": "Materials and the haul-out",
+      "refs": ["Construction — GRP and osmosis", "Construction — osmosis treatment", "Construction — cored laminates", "Construction — gelcoat and deck fittings", "Construction — steel hulls", "Construction — aluminium hulls", "Construction — aluminium and stray current", "Construction — wooden hulls", "Drydocking — lifting", "Drydocking — on the hard", "Drydocking — the slipway", "Drydocking — careening grid", "Drydocking — antifouling", "Drydocking — the pre-purchase survey", "Drydocking — haul-out checks"],
+      "blocks": [
+        { "p": "**Osmosis**: water through the gelcoat reacts with the laminate, sour blisters below the waterline; the cure is peel, dry, epoxy. A cored deck rots round unsealed bolt holes: dull thud, flexing, damp; re-core, pot the holes. Star cracks at a fitting: a backing plate." },
+        { "table": { "head": ["Material", "Enemy", "Cure"], "rows": [
+          ["Steel", "Rust under broken paint", "Blast, epoxy-prime; renew thin plate"],
+          ["Aluminium", "Copper paint, stray DC", "Copper-free paint; find the leak"],
+          ["Wood", "Rot: fresh water, still air", "Cut to sound timber"]
+        ] } },
+        { "p": "Slings go on the builder's marks, clear of saildrive and transducers; the keel takes the weight on long blocks, chained stands only steady her. Enter a slipway cradle on the rising tide; a grid needs tide to float off too. Fast hulls need hard antifouling; painted anodes protect nothing; a weeping rudder is wet inside." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["waterline", "osmosis below"], ["keel", "on blocks"], ["rudder", "wet inside?"]] } }
+      ]
+    },
+    {
+      "id": "structure",
+      "kicker": "Structure and rig",
+      "title": "Keel, rudder, rig, seacocks",
+      "refs": ["Construction — keel bolts", "Construction — keel attachment and grounding", "Construction — rudders and bearings", "Construction — rudders, skeg and spade", "Construction — bulkheads and chainplates", "Construction — the hull-to-deck joint", "Construction — seacocks", "Construction — through-hulls and seacocks", "Rigging — standing rigging", "Construction — rod standing rigging", "Construction — synthetic standing rigging"],
+      "blocks": [
+        { "p": "Stainless keel bolts corrode unseen in a wet bilge: rust weeping at a nut, draw one or X-ray it; a nut turning without the torque rising is yielding. After a grounding, survey the keel grid. A **spade rudder** hangs on its bearings alone; a skeg adds a lower bearing and fends off lines." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["keel", "keel bolts, grid"], ["rudder", "bearings"], ["forestay", "swages"], ["backstay", "chainplates"], ["hull", "hull-deck joint"]] } },
+        { "p": "Shroud loads go through chainplates into a bulkhead: cracked tabbing and a door jamming on one tack mean it moves; unload the rig, get in. A leak along the lee side only with the rail under: the hull-to-deck joint. Below the waterline one metal, bronze or DZR, or a rated composite: brass dezincifies." },
+        { "table": { "head": ["Rigging", "Watch for"], "rows": [
+          ["Wire", "Broken strand at the swage: replace"],
+          ["Rod", "Fatigues at the heads unseen: re-head on schedule"],
+          ["Dyneema", "Creeps, chafes: re-tension, replace if cut"]
+        ] } }
+      ]
+    },
+    {
+      "id": "stability",
+      "kicker": "Stability",
+      "title": "The righting lever and its curve",
+      "refs": ["Stability — GM and GZ", "Stability — the GZ curve", "Stability — downflooding angle", "Stability — inversion", "Stability — knockdowns", "Stability — catamarans", "Stability — catamarans and gusts", "Stability — RCD design categories"],
+      "blocks": [
+        { "p": "Weight acts down through **G**, buoyancy up through **B**; heeled, B moves to the low side and the arm between them, **GZ**, is the righting lever: moment = displacement × GZ. Small angles: GZ ≈ GM × sin θ, **GM** = KM − KG." },
+        { "fig": { "type": "card", "title": "Stability booklet, loaded", "lines": ["KM 3.20 m, KG 2.60 m: GM 0.60 m", "At 10°: GZ ≈ 0.60 × sin 10° = 0.10 m", "Δ 30 t: righting moment 30 × 0.10 = 3 t·m"] } },
+        { "p": "Against heel GZ rises to a peak, then falls to zero at the **angle of vanishing stability**; past it she is stable inverted. It assumes a closed hull: the **downflooding angle** of an open companionway is the real limit; washboards in. A catamaran's GZ peaks as the windward hull lifts, then collapses: no heel warns you, reef for the gusts." },
+        { "table": { "head": ["RCD category", "Designed for, at the plate's crew"], "rows": [
+          ["A ocean", "Beyond force 8 and Hs 4 m"],
+          ["B offshore", "Up to force 8, Hs 4 m"],
+          ["C inshore", "Up to force 6, Hs 2 m"]
+        ] } }
+      ]
+    },
+    {
+      "id": "weights",
+      "kicker": "Weights",
+      "title": "Stability you change yourself",
+      "refs": ["Stability — weight aloft", "Stability — weight high up", "Stability — the GZ curve and added weight", "Stability — moving a weight", "Stability — free surface effect", "Stability — free surface in tanks", "Stability — rolling period and GM"],
+      "blocks": [
+        { "p": "Adding or raising weight moves G towards it: rise of G = weight × height ÷ displacement; GZ falls by that rise × sin θ. A weight on a crane acts at the crane head. Before a gale, heavy gear low and central." },
+        { "fig": { "type": "card", "title": "Launching the tender", "lines": ["Δ 40 t, GM 0.80 m; tender 1.0 t", "Lifted 4.0 m: G rises 1.0 × 4.0 ÷ 40 = 0.10 m", "GM now 0.70 m", "Swung 2.8 m outboard: G shifts 0.07 m", "tan θ = 0.07 ÷ 0.70: list about 6°"] } },
+        { "p": "Sloshing liquid raises G like weight aloft: the **free surface** loss goes with the tank's width cubed, so a centreline division cuts it to a quarter, and every slack tank adds its own. Run tanks down one at a time; stop flooding spreading. A slow, lazy roll means GM has fallen." },
+        { "fig": { "type": "panel", "gauges": [["Roll", "8.0 s", true], ["Beam", "5.0 m", false], ["GM", "0.25 m", true]], "lines": ["Period ≈ 0.8 × beam ÷ √GM: √GM = 4 ÷ 8 = 0.5", "In harbour 6.0 s, GM 0.44 m: find the free water"] } }
+      ]
+    },
+    {
+      "id": "engine",
+      "kicker": "The diesel",
+      "title": "Fuel, air, cooling",
+      "refs": ["Power plant — the four-stroke diesel", "Power plant — the diesel cycle", "Power plant — the fuel system", "Power plant — bleeding the fuel system", "Power plant — fuel filters", "Power plant — fuel bug and fuel polishing", "Power plant — blue smoke", "Power plant — white smoke", "Power plant — black smoke and loss of power", "Power plant — fault-finding", "Power plant — cooling", "Power plant — the anti-siphon valve", "Power plant — keel cooling", "Power plant — maintenance schedule", "Power plant — maintenance schedules"],
+      "blocks": [
+        { "p": "A diesel fires on the **heat of compression**: fast cranking, sound rings, air, clean fuel. A bad seal on the suction side draws in air without a drip: runs, then falters. Rising filter vacuum: sludge and **diesel bug** stirred up by the sea; switch filters, polish the fuel." },
+        { "fig": { "type": "card", "title": "Fuel path, and the bleeding order", "lines": ["Tank → primary filter and separator →", "lift pump → fine filter → injection pump →", "injectors", "Bleed in that order, then crack each", "injector union while cranking"] } },
+        { "table": { "head": ["Smoke", "Means"], "rows": [
+          ["Black", "Too much fuel for the air: overload, shut vents"],
+          ["Blue", "Burning oil: rings, turbo seals"],
+          ["White", "Sweet: coolant, head gasket; grey after fuelling: water"]
+        ] } },
+        { "p": "Strong flow yet overheating: scaled exchanger tubes; a keel cooler fouls outside. The **anti-siphon valve** keeps the sea out of an engine below the waterline; locked solid with milky oil, turn it by hand, never the starter. Service by hours or months, whichever first." },
+        { "fig": { "type": "panel", "gauges": [["Temp", "92°", true], ["RPM", "2200", false], ["Flow", "strong", false]], "lines": ["Seacock, strainer, impeller, exchanger, exhaust", "Flow strong, coolant full: descale the tubes"] } }
+      ]
+    },
+    {
+      "id": "drive",
+      "kicker": "Drive train",
+      "title": "Gearbox, propeller, speed",
+      "refs": ["Power plant — the gearbox", "Power plant — shaft and cutless bearing", "Power plant — shaft alignment and vibration", "Power plant — saildrive", "Power plant — twin engines", "Power plant — twin engines, fault-finding", "Power plant — a fouled propeller", "Power plant — propeller pitch", "Power plant — hull speed", "Power plant — fuel and speed"],
+      "blocks": [
+        { "p": "A gearbox slipping, hot and smelling burnt: low oil; top up, find the leak. Vibration growing over a season with a weeping stern gland: a worn **cutless bearing**; align the engine afloat. A saildrive's diaphragm alone keeps the sea out: renew it at the maker's interval. One engine dead, the bow swings towards it: counter-rudder, moderate revs." },
+        { "p": "Vibration, falling revs, black smoke after fishing gear: a fouled propeller; stop, clear it by daylight. Rated revs at part throttle: too little pitch; never reached at full throttle: too much. Hull speed ≈ 1.34 × √LWL in feet. Litres per mile = litres per hour ÷ knots: a planing yacht goes furthest slow, below the hump." },
+        { "fig": { "type": "panel", "gauges": [["Rated", "3200", false], ["Full throttle", "2700", true], ["Smoke", "black", true]], "lines": ["Overpropped: aim for 3100", "(3100 − 2700) ÷ 200 ≈ 2 in less pitch"] } }
+      ]
+    },
+    {
+      "id": "electrics",
+      "kicker": "Electrics",
+      "title": "Batteries, generator, anodes",
+      "refs": ["Power plant — battery capacity", "Power plant — battery types", "Power plant — batteries and charging", "Power plant — charging stages", "Power plant — charging regimes", "Power plant — battery monitors", "Power plant — generator load", "Power plant — generator and watermaker", "Power plant — the watermaker", "Power plant — anodes for fresh, brackish and salt water", "Power plant — galvanic isolation"],
+      "blocks": [
+        { "p": "Add up the day's amp-hours: a lead-acid or AGM bank, used only to half charge, needs twice that; lithium gives about 80 %, but its BMS can cut off mid-charge: protect the alternator. Charging runs **bulk**, **absorption**, **float**; an hour a day never finishes absorption and the bank sulphates. A shunt monitor drifts until a full charge resyncs it: trust the resting voltage." },
+        { "fig": { "type": "panel", "gauges": [["Volts", "14.4", false], ["Amps", "9", false], ["Stage", "ABS", false]], "lines": ["Bulk done; voltage held, current tapering", "Falling current here is normal"] } },
+        { "p": "Motors start on three times their running load: shed loads. A generator run nearly unloaded glazes its bores: load it. Rising salinity with clean prefilters: a fouled membrane; unused, flush or pickle it. A galvanic isolator in the shore earth stops the pontoon eating your anodes." },
+        { "table": { "head": ["Water", "Anode"], "rows": [
+          ["Sea", "Zinc or aluminium alloy"],
+          ["Brackish", "Aluminium alloy"],
+          ["Fresh", "Magnesium"]
+        ] } }
+      ]
+    }
+  ]
+}

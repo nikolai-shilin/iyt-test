@@ -1,0 +1,93 @@
+{
+  "topic": "buoyage",
+  "lead": "Buoys and lights tell you where the safe water is. In flotilla waters you meet a small set of them: the red and green sides of a channel, the black and yellow cardinals, a few marks that stand alone and the harbour lights.",
+  "sections": [
+    {
+      "id": "lateral",
+      "kicker": "Lateral marks",
+      "title": "Red to port on the way in",
+      "refs": ["IALA lateral marks", "IALA region B", "Direction of buoyage"],
+      "blocks": [
+        { "p": "**Lateral marks** show the edges of a channel. They are laid for a boat coming in from the sea. In **IALA Region A**, which covers Europe and the Mediterranean, you leave red marks to port and green marks to starboard on the way in. The shape says the same: a red **can**, a green **cone**." },
+        { "tiles": [
+          { "fig": { "type": "buoy", "kind": "lat-port", "topmark": true }, "view": "68 10 120 178", "name": "Port hand", "note": "red can · red light" },
+          { "fig": { "type": "buoy", "kind": "lat-stbd", "topmark": true }, "view": "68 10 120 178", "name": "Starboard hand", "note": "green cone · green light" }
+        ] },
+        { "p": "Going out to sea everything swaps: red stays to starboard, green to port. In a strait between islands there is no \"in\", so the chart shows the **direction of buoyage** with an arrow, and you treat that direction as coming in. Heading against it, you leave a green cone to port." },
+        { "p": "**Region B**, the Americas and with them the Caribbean, reverses the colours: coming in, red is left to starboard. The shapes keep their sides: can to port, cone to starboard." },
+        { "rule": "Region A, coming in from the sea: red to port, green to starboard. Going out: the other way round." }
+      ]
+    },
+    {
+      "id": "night",
+      "kicker": "Harbour lights",
+      "title": "Between the red and the green",
+      "refs": ["Harbour entrance lights"],
+      "blocks": [
+        { "p": "At night the sides keep their colours. Most small harbours show just two lights, a red and a green, one on each pierhead. Coming in, steer between them with the red to port and the green to starboard." },
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 125, "y": 128 }, { "c": "g", "x": 195, "y": 128 }] }, "view": "60 20 200 150", "name": "Entrance ahead", "note": "steer between them" },
+          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 215, "y": 128 }] }, "view": "60 20 200 150", "name": "Red on the starboard bow", "note": "wrong side: bring it to port" }
+        ] },
+        { "p": "A red light on your starboard bow as you come in means you are on the wrong side of it, outside the channel: turn until it is on your port side. Leaving harbour, the red lights pass down your starboard side." }
+      ]
+    },
+    {
+      "id": "cardinal",
+      "kicker": "Cardinal marks",
+      "title": "Named after the safe side",
+      "refs": ["Cardinal marks"],
+      "blocks": [
+        { "p": "A **cardinal mark** stands beside a danger and is named after the side where the safe water is: pass **north of a north** cardinal, east of an east one. The danger lies on the opposite side: a west cardinal has its reef to the east. All four are black and yellow, with two black cones on top." },
+        { "tiles": [
+          { "fig": { "type": "buoy", "kind": "card-n" }, "view": "68 10 120 178", "name": "North", "note": "points up · Q" },
+          { "fig": { "type": "buoy", "kind": "card-e" }, "view": "68 10 120 178", "name": "East", "note": "bases together · Q(3)" },
+          { "fig": { "type": "buoy", "kind": "card-s" }, "view": "68 10 120 178", "name": "South", "note": "points down · Q(6)+LFl" },
+          { "fig": { "type": "buoy", "kind": "card-w" }, "view": "68 10 120 178", "name": "West", "note": "points together · Q(9)" }
+        ] },
+        { "p": "At night the light is white and counts like a clock face: three quick flashes for east, six for south, nine for west, quick flashes without a break for north. The south cardinal adds one long flash, which sets it apart from three and nine." },
+        { "p": "Turn the compass side into a side of your boat. Heading east towards a north cardinal, north is to port: turn to port and leave the mark to starboard. Never pass between a north and a south cardinal that guard the same danger." },
+        { "fig": { "type": "chart", "depths": [[60, 40, "18"], [260, 40, "15"], [70, 172, "16"], [260, 165, "20"], [160, 110, "0.6", true]], "marks": [[160, 58, "y", "N cardinal"], [160, 152, "y", "S cardinal"]], "labels": [[160, 30, "safe water to the north", "middle"], [160, 180, "safe water to the south", "middle"]], "note": "The danger lies between the two marks" } },
+        { "rule": "The cones point to the black: up for north, down for south, apart for east, together for west." }
+      ]
+    },
+    {
+      "id": "other",
+      "kicker": "Marks that stand alone",
+      "title": "Danger, safe water, special",
+      "refs": ["Isolated danger mark", "Safe water mark", "Special marks"],
+      "blocks": [
+        { "p": "An **isolated danger mark** sits on a small danger with navigable water all round: black with a red band, two black balls on top. Pass either side, but give it a good berth. A **safe water mark** is the opposite: red and white stripes and a red ball mean deep water all round, often at the start of a fairway." },
+        { "tiles": [
+          { "fig": { "type": "buoy", "kind": "iso" }, "view": "68 10 120 178", "name": "Isolated danger", "note": "white Fl(2)" },
+          { "fig": { "type": "buoy", "kind": "safe" }, "view": "68 10 120 178", "name": "Safe water", "note": "white Iso · Oc · LFl 10s" },
+          { "fig": { "type": "buoy", "kind": "special" }, "view": "68 10 120 178", "name": "Special", "note": "yellow light" }
+        ] },
+        { "p": "Yellow **special marks** with an X on top show an area, not a danger to steer round. A line of them off a beach is usually the limit of a bathing zone; the chart or the pilot book tells you what they are for." }
+      ]
+    },
+    {
+      "id": "lights",
+      "kicker": "Light characteristics",
+      "title": "Reading a light off the chart",
+      "refs": ["Light characteristics", "Sector lights"],
+      "blocks": [
+        { "p": "The chart and the pilot book give every light a short code, so that you can tell it from its neighbours with a watch. **Fl(3) G 10s** reads: flashes in groups of three, green, the whole pattern repeating every 10 seconds. The **period** is the full cycle, light and dark together. No colour letter means a white light." },
+        { "table": { "head": ["Code", "What you see"], "rows": [
+          ["F", "Fixed: a steady light"],
+          ["Fl · Fl(2)", "Flashing: single flashes · groups of two; more dark than light"],
+          ["LFl", "A long flash, 2 seconds or more"],
+          ["Oc", "Occulting: more light than dark"],
+          ["Iso", "Isophase: light and dark equal"],
+          ["Q · VQ", "Quick, about one flash a second · very quick, about two"]
+        ] } },
+        { "p": "Time a light that is on for 4 seconds and off for 2, and you have Oc 6s. A buoy marked just Q shows white quick flashes without a break: a north cardinal." },
+        { "p": "A **sector light** shows white over the safe approach and red or green over the dangers to either side. If the white turns to a colour as you come in, you have left the safe sector: check the chart and get back into the white." },
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 110 }] }, "view": "60 20 200 150", "name": "White sector", "note": "you are on the safe approach" },
+          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 110 }] }, "view": "60 20 200 150", "name": "It turns red", "note": "off the line: check the chart" }
+        ] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "topic": "time",
+  "lead": "Every celestial fix is a time fix: four seconds of error are a mile of longitude. Three clocks run on an ocean passage, UT, ship's time and local mean time; always know which one you hold.",
+  "sections": [
+    {
+      "id": "arc",
+      "kicker": "Arc and time",
+      "title": "Fifteen degrees are one hour",
+      "refs": ["Time — arc and time", "Time — equation of time"],
+      "blocks": [
+        {"p": "The Earth turns 360° in 24 hours, so longitude and time are one thing in two units. **Local mean time** (LMT) is mean time on your meridian; **UT** is LMT at Greenwich."},
+        { "table": { "head": ["Arc", "Time"], "rows": [
+          ["15°", "1 hour"],
+          ["1°", "4 minutes"],
+          ["15′", "1 minute"],
+          ["1′", "4 seconds"]
+        ] } },
+        {"rule": "UT = LMT + west longitude in time, or − east longitude in time."},
+        {"p": "The **equation of time** is the gap between the true Sun and the mean Sun, up to about 16 minutes. You never apply it yourself: the almanac's Mer Pass, 1144 LMT in early November, 1214 in February, is noon with it already in. Apply your longitude in time for the UT of local noon; timing the Sun at its highest and comparing with Mer Pass gives your longitude."},
+        {"fig": {"type": "card", "title": "Noon in UT", "lines": ["Long 37°30′W = 37.5 × 4 min = 2 h 30 min", "Mer Pass 1208 LMT", "Local noon 1208 + 0230 = 1438 UT", "Long 48°15′E = 3 h 13 min: subtract it"]}}
+      ]
+    },
+    {
+      "id": "zone",
+      "kicker": "Zone time and ship's time",
+      "title": "The clock the crew lives by",
+      "refs": ["Time — zone time", "Time — shore time and ship's time", "Time — ship's time and the watch rota"],
+      "blocks": [
+        {"p": "The world is cut into 24 **zones** 15° wide, centred on 0°, 15°, 30° and so on, with boundaries at 7°30′, 22°30′, 37°30′ … The **zone description** (ZD) is the longitude divided by 15 and rounded, positive west and negative east."},
+        {"rule": "UT = zone time + ZD. Ship's time 1530, ZD +4: 1930 UT."},
+        {"fig": {"type": "chart", "track": "M285 100 C 220 140 120 145 35 115", "marks": [[285, 100, "k", "ZD +1"], [35, 115, "k", "ZD +4"]], "labels": [[250, 160, "22°30′W"], [160, 166, "37°30′W"], [70, 160, "52°30′W"]], "boat": [160, 138, 265], "note": "Westbound: clocks back an hour at each boundary"}},
+        {"p": "Keep the ship's clocks on the zone you are in: westbound retard them an hour at each boundary, eastbound advance them. A retarded night makes one watch five hours long, so split the hour among the night watches. Shore time is whatever the country keeps, summer time and half-hour zones included. Log sights, fixes and radio schedules in UT, which never jumps."},
+        {"fig": {"type": "card", "title": "Ship's time to shore time", "lines": ["Ship's clock 1500, ZD +4", "UT = 1500 + 4 h = 1900", "Shore keeps UT −3", "Ashore it is 1900 − 3 h = 1600"]}}
+      ]
+    },
+    {
+      "id": "dateline",
+      "kicker": "The date line",
+      "title": "Crossing the 180th meridian",
+      "refs": ["Time — the date line"],
+      "blocks": [
+        {"p": "East of 180° the zone is ZD +12, west of it ZD −12: the same clock time, a day apart. Crossing westbound into east longitude you skip a day, the date goes forward; eastbound you repeat one. Hours and minutes do not change."},
+        {"fig": {"type": "chart", "land": "M159 0 H161 V200 H159 Z", "track": "M290 120 C 230 130 120 130 50 120", "boat": [120, 128, 270], "labels": [[172, 112, "180°", "start"], [60, 150, "ZD −12"], [270, 150, "ZD +12"]], "panel": ["Westbound", "Tue → Wed", "UT unchanged"], "note": "Westbound across the date line: the date goes forward"}},
+        {"p": "The deck watch on UT is not touched: **UT and its date run on**, and they are what the almanac wants. Convert first and open the Greenwich date, which may differ from the ship's: at 0745 on 15 March with ZD −12 the sight is at 1945 UT on 14 March. A passage time is the difference of the two UTs, not of the local dates."}
+      ]
+    },
+    {
+      "id": "watch",
+      "kicker": "Deck watch error and rate",
+      "title": "Keeping UT to the second",
+      "refs": ["Time — chronometer error and rate", "Time — time signals", "Time — timing a sight"],
+      "blocks": [
+        {"p": "A watch is never right; it is **fast** or **slow** by a known error, and the **rate** is how that error changes each day: error now = last error + rate × days. Heat alters the rate, so in the tropics use the rate from recent checks, not the one from Biscay."},
+        {"fig": {"type": "card", "title": "Rate book", "lines": ["1 Nov: 4 s fast", "8 Nov: 18 s fast → gaining 2 s a day", "13 Nov: 18 + 5 × 2 = 28 s fast", "Watch 09 15 40 → UT 09 15 12"]}},
+        {"p": "Check against a radio time signal, WWV or the hourly pips, the hour being the start of the long pip; UTC is UT within a second, and the signal's travel time is nothing. Set the watch from a GPS only on its UTC display: raw GPS time runs 18 seconds ahead. Carry two or three watches and compare them daily: one that jumps shows against the others."},
+        { "table": { "head": ["Error", "Effect"], "rows": [
+          ["4 s", "1′ of longitude"],
+          ["1 minute", "15′ of longitude"],
+          ["Fast", "GHA too big, fix too far west"],
+          ["Slow", "fix too far east"],
+          ["Any", "noon latitude unchanged"]
+        ] } },
+        {"p": "A minute of longitude is a mile only on the equator: multiply by the cosine of the latitude. Time a sight with a stopwatch started at the instant and read against the watch after; a timekeeper notes the seconds first."}
+      ]
+    },
+    {
+      "id": "almanac",
+      "kicker": "Entering the almanac",
+      "title": "From UT to GHA and declination",
+      "refs": ["Time — the almanac's daily pages", "Time — the almanac's increments page"],
+      "blocks": [
+        {"p": "The **daily pages** give GHA and Dec for every whole hour of UT, by Greenwich date. The **increments** table adds the minutes and seconds, with columns for the Sun and planets at 15° an hour, Aries at 15°02.5′ and the Moon. The Dec changes by d an hour; for the minutes add or subtract d's share, the sign by inspection of the next hour."},
+        {"fig": {"type": "card", "title": "GHA and Dec for a sight", "lines": ["Sun 14h: GHA 30°00.0′ · Dec S10°00.0′", "Sight at 14 20 00 UT: increment 20 min", "20 min at 15°/h = +5°00.0′: GHA 35°00.0′", "d 1.0, Dec growing: +0.3′, Dec S10°00.3′"]}},
+        {"p": "The last second of an hour belongs to that hour's row, with 59 m 59 s of increment. A watch on ship's time is first turned into UT with its date: a sight at midnight can belong to tomorrow's page."}
+      ]
+    },
+    {
+      "id": "events",
+      "kicker": "Sunrise, twilight, meridian passage",
+      "title": "The almanac's times are LMT",
+      "refs": ["Time — sunrise, sunset and twilight in UT", "Time — high latitudes", "Time — the Moon's meridian passage", "Time — planets' and stars' meridian passage"],
+      "blocks": [
+        {"p": "Sunrise, sunset, twilight and meridian passage are tabulated in **LMT** against latitude: interpolate for yours, add west longitude in time (subtract east) for UT, then take off the ZD for ship's time. Shortcut: ship's time is the LMT plus 4 minutes for every degree you are west of the zone's central meridian."},
+        {"fig": {"type": "card", "title": "Sunset by ship's time", "lines": ["Sunset 1800 LMT · long 50°W · ZD +3", "Long in time 3 h 20 min: 2120 UT", "Ship's time 2120 − 3 h = 1820", "Or: 5° west of 45°W, 4 min each: 1820"]}},
+        {"p": "Star sights live between **civil twilight**, Sun 6° down, and **nautical twilight**, 12° down: horizon and stars together. In high-latitude summer the almanac prints //// where the Sun never gets that low: plan on sun lines. The Moon crosses the meridian about 50 minutes later each day: interpolate between the two days' values by longitude, west longitude towards the next day. A planet with Mer Pass near noon is lost in the Sun; one in the evening or early morning gives a twilight sight."},
+        { "table": { "head": ["Body", "Meridian passage"], "rows": [
+          ["Sun", "Mer Pass on the daily page, LMT"],
+          ["Moon", "Daily page, corrected for longitude"],
+          ["Planets", "Daily page, LMT"],
+          ["Star", "Mer Pass of Aries + (360° − SHA) in time"]
+        ] } }
+      ]
+    }
+  ]
+}

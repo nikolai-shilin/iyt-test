@@ -1,0 +1,147 @@
+{
+  "topic": "rightofway",
+  "lead": "Four rules say who has right of way when two boats meet. Two facts decide which one applies: the tack each boat is on and whether they overlap. One boat keeps clear; the other may sail her course.",
+  "sections": [
+    {
+      "id": "which",
+      "kicker": "Which rule applies",
+      "title": "Tacks first, then overlap",
+      "refs": [
+        "RRS 10, RRS Part 2 preamble",
+        "RRS 11, RRS Part 2 preamble",
+        "RRS 13, RRS Part 2 preamble",
+        "RRS 10, RRS Appendix B",
+        "RRS 10, RRS definition Racing",
+        "RRS 11, RRS definition Racing",
+        "RRS 10, RRS 12",
+        "RRS 12, RRS 13, RRS 10"
+      ],
+      "blocks": [
+        { "p": "Part 2 applies between boats sailing in or near the racing area that intend to race, are racing or have been racing: before the start, on every leg, until you have finished and cleared the line. Between them it replaces the collision regulations. Size, speed, class, the leg you are on and who hailed first change nothing, and a windsurfer is a boat." },
+        { "table": { "head": ["Situation", "Rule", "Keeps clear"], "rows": [
+          ["Opposite tacks", "10", "Port tack"],
+          ["Same tack, overlapped", "11", "Windward boat"],
+          ["Same tack, not overlapped", "12", "Boat clear astern"],
+          ["Past head to wind, not yet close-hauled", "13", "Tacking boat"]
+        ] } },
+        { "p": "Rule 12 exists only on the same tack. On opposite tacks rule 10 decides even when one boat is clear astern, so a gybe by the boat ahead can change who keeps clear." }
+      ]
+    },
+    {
+      "id": "r10",
+      "kicker": "Rule 10 · opposite tacks",
+      "title": "Port keeps clear of starboard",
+      "refs": [
+        "RRS 10",
+        "RRS 10, RRS definition Keep Clear",
+        "RRS 10, RRS 18.1",
+        "RRS 10, RRS 18.2",
+        "RRS 10, RRS definition Tack",
+        "RRS 10, RRS definition Leeward and Windward",
+        "RRS 10, RRS 16.1",
+        "RRS 10, RRS 13, RRS definition Tack",
+        "RRS 10, RRS definition Clear Astern and Clear Ahead; Overlap",
+        "RRS 10, RRS 14",
+        "RRS definition Tack, RRS definition Leeward and Windward, RRS 10"
+      ],
+      "blocks": [
+        { "p": "On opposite tacks the **port-tack boat keeps clear**, whether the boats are beating, reaching or running. On a run, read the tack from the mainsail: boom to starboard means port tack. A boat luffing head to wind is still on her old tack." },
+        { "tiles": [
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 105, "y": 130, "hdg": 45, "label": "port" }, { "x": 215, "y": 130, "hdg": 315, "label": "starboard" }] }, "name": "On a beat", "note": "port crosses, ducks or tacks" },
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 125, "y": 100, "hdg": 170 }, { "x": 205, "y": 100, "hdg": 190 }] }, "name": "On a run", "note": "boom to starboard: port tack keeps clear" }
+        ] },
+        { "p": "The rule says who keeps clear, not how: cross ahead if you safely can, bear away astern of her, or tack. You kept clear if she could hold her course with no need to avoid you; if she had to alter, you broke the rule, contact or not. No hail is needed, and current, waves or a late duck are your problem. Starboard may still alter course, within rule 16." },
+        { "p": "On a beat rule 18 does not apply between boats on opposite tacks, so at the windward mark rule 10 stands alone. On a reach or a run starboard keeps right of way but may owe an inside port-tack boat mark-room." }
+      ]
+    },
+    {
+      "id": "r11",
+      "kicker": "Rule 11 · same tack, overlapped",
+      "title": "Windward keeps clear of leeward",
+      "refs": [
+        "RRS 11",
+        "RRS 11, RRS 17",
+        "RRS 11, RRS definition Leeward and Windward",
+        "RRS 11, RRS definition Overlap",
+        "RRS 11, RRS 13",
+        "RRS 11, RRS definition Keep Clear",
+        "RRS 11, RRS definition Proper Course",
+        "RRS 11, RRS 14",
+        "RRS 11, RRS 43.1(a)",
+        "RRS 11, RRS 16.1",
+        "RRS 11, RRS 10, RRS definition Keep Clear",
+        "RRS 11, RRS Part 2 Section C preamble"
+      ],
+      "blocks": [
+        { "p": "On the same tack and overlapped, the **windward boat keeps clear**, however the overlap began and whoever's bow is ahead. On a run she is the boat on the side opposite the booms." },
+        { "tiles": [
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 175, "y": 95, "hdg": 315, "label": "windward" }, { "x": 135, "y": 135, "hdg": 315, "label": "leeward" }] }, "name": "Overlapped", "note": "windward keeps clear: hull, boom and sails" },
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 222, "y": 147, "hdg": 315 }, { "x": 243, "y": 143, "hdg": 315, "label": "windward" }], "line": { "x1": 30, "y1": 85, "x2": 200, "y2": 85, "label": "Start line" } }, "name": "Barging at the start", "note": "no room at the committee boat" }
+        ] },
+        { "p": "You keep clear with the whole boat, with a margin for gusts. If you cannot point higher, slow down, drop astern or tack away cleanly: the leeward boat may sail her course and may luff, limited only by rules 16.1 and 17. Before the start there is no proper course, so she may luff as far as head to wind, giving you room." },
+        { "p": "At a starting mark surrounded by navigable water there is no mark-room for boats approaching to start, so a windward boat squeezing in has no rights. With three boats abreast the rule applies to each pair; a middle boat forced onto the leeward one by a boat that did not keep clear is exonerated." }
+      ]
+    },
+    {
+      "id": "r12",
+      "kicker": "Rule 12 · same tack, not overlapped",
+      "title": "Clear astern keeps clear of clear ahead",
+      "refs": [
+        "RRS 12",
+        "RRS 12, RRS 16.1",
+        "RRS 12, RRS 14",
+        "RRS 12, RRS 11, RRS 15",
+        "RRS 12, RRS 15",
+        "RRS 12, RRS 16.1, RRS 43.1(a)",
+        "RRS 12, RRS 11",
+        "RRS 12, RRS definition Clear Astern and Clear Ahead; Overlap",
+        "RRS 11, RRS 12, RRS definition Clear Astern and Clear Ahead; Overlap",
+        "RRS 12, RRS definition Leeward and Windward",
+        "RRS 12, RRS definition Keep Clear",
+        "RRS 12, RRS 43.1(a)",
+        "RRS 12, RRS 11, RRS 17"
+      ],
+      "blocks": [
+        { "p": "On the same tack and not overlapped, the **boat clear astern keeps clear**. Surfing, waves, current, a boat ahead stalled or fighting her spinnaker: all the astern boat's problem. The boat ahead may slow down, which is not a change of course, and may alter course to defend her wind if she leaves you room (rule 16.1). Taking her wind is allowed." },
+        { "tiles": [
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 210, "y": 120, "hdg": 270 }, { "x": 236, "y": 97, "hdg": 270, "label": "You", "you": true }] }, "view": "150 0 170 185", "name": "You pass to windward", "note": "you keep clear all the way: rule 12, then 11" },
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 210, "y": 100, "hdg": 270 }, { "x": 230, "y": 123, "hdg": 270, "label": "You", "you": true }] }, "view": "150 0 170 185", "name": "You pass to leeward", "note": "once overlapped you have right of way" }
+        ] },
+        { "p": "Leeward and windward exist only between overlapped boats: a hail of \"leeward boat\" from clear astern gives you nothing. Once your bow, or a bowsprit with its sail set, overlaps her to leeward, rule 11 makes you the right-of-way boat, but you must first give her room to keep clear (rule 15) and may be limited by rule 17." }
+      ]
+    },
+    {
+      "id": "r13",
+      "kicker": "Rule 13 · while tacking",
+      "title": "No rights from head to wind to close-hauled",
+      "refs": [
+        "RRS 13",
+        "RRS 13, RRS 18.3",
+        "RRS 13, RRS 10",
+        "RRS 13, RRS 11",
+        "RRS 13, RRS 12",
+        "RRS 13, RRS 15",
+        "RRS 13, RRS definition Tack",
+        "RRS 13, RRS 11, RRS 15",
+        "RRS 13, RRS 12, RRS 15",
+        "RRS 13, RRS 15, RRS 10",
+        "RRS 13, RRS 15, RRS 12",
+        "RRS 13, RRS 11, RRS 17",
+        "RRS 13, RRS 11, RRS 10",
+        "RRS 13, RRS 12, RRS definition Keep Clear",
+        "RRS 13, RRS 14, RRS 43.1(c)"
+      ],
+      "blocks": [
+        { "p": "After you pass head to wind you **keep clear of other boats until you are on a close-hauled course**. During that time rules 10, 11 and 12 do not apply, and a hail of \"Tacking!\" gives you nothing." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 208, "y": 143, "hdg": 315, "label": "starboard" }, { "x": 150, "y": 85, "hdg": 345, "label": "tacking" }], "note": "Past head to wind, not yet close-hauled: she keeps clear" } },
+        { "table": { "head": ["Moment", "What applies"], "rows": [
+          ["Luffing, up to head to wind", "The old tack: rules 10–12"],
+          ["Past head to wind", "Rule 13: keep clear of everyone"],
+          ["On a close-hauled course", "The new tack's rule, with rule 15"]
+        ] } },
+        { "p": "The rule ends with your heading, not your trim: sails may still be flapping, and a boat stuck in irons is tacking for as long as it takes. If two boats tack at once, the one on the other's port side, or the one astern, keeps clear. A gybe has no such rule: rules 10 to 12 apply throughout it." },
+        { "p": "Out of the tack you may hold right of way as starboard, leeward or clear ahead, but rule 15 first gives the other boat room to keep clear. In the zone of a mark to be left to port, rule 18.3 limits you further." }
+      ]
+    }
+  ]
+}

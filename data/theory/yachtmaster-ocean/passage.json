@@ -1,0 +1,490 @@
+{
+  "topic": "passage",
+  "lead": "An ocean passage is won before the start: season, boat, crew. Then it is routine, kept up daily until you clear in.",
+  "sections": [
+    {
+      "id": "route",
+      "kicker": "Route and season",
+      "title": "The right ocean in the right months",
+      "refs": [
+        "Ocean passage planning — route and season"
+      ],
+      "blocks": [
+        {
+          "p": "Plan each ocean outside its storm season, with the prevailing wind behind you; insurance may fix the dates. Go south to the steady trades before you turn west: the shortest line is seldom the fastest. 2 850 M in the trades at 6.3 kn take 19 days, 2 650 M of light airs at 4.8 kn take 23."
+        },
+        {
+          "table": {
+            "head": [
+              "Passage",
+              "When"
+            ],
+            "rows": [
+              [
+                "Canaries → Caribbean",
+                "late November–January"
+              ],
+              [
+                "Caribbean → Europe",
+                "early May"
+              ],
+              [
+                "Panama → Polynesia",
+                "February–April; NZ by November"
+              ],
+              [
+                "Indian Ocean westbound",
+                "January–February, NE monsoon"
+              ],
+              [
+                "Biscay southbound",
+                "by early September"
+              ]
+            ]
+          }
+        },
+        {
+          "tiles": [
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "H",
+                "values": [
+                  "1028",
+                  "1024",
+                  "1020"
+                ],
+                "boat": [
+                  40,
+                  170,
+                  20
+                ],
+                "hemisphere": "Northern hemisphere",
+                "note": "Azores high; you at Bermuda"
+              },
+              "name": "Bermuda to the Azores"
+            },
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "H",
+                "values": [
+                  "1028",
+                  "1024",
+                  "1020"
+                ],
+                "boat": [
+                  240,
+                  165,
+                  330
+                ],
+                "hemisphere": "Southern hemisphere",
+                "note": "St Helena high; you at Cape Town"
+              },
+              "name": "Cape Town to Brazil"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boat",
+      "kicker": "Boat and stores",
+      "title": "What three weeks at sea ask of her",
+      "refs": [
+        "Ocean passage planning — the boat",
+        "Ocean passage planning — provisions and water"
+      ],
+      "blocks": [
+        {
+          "fig": {
+            "type": "boat",
+            "view": "side",
+            "parts": [
+              [
+                "forestay",
+                "rig surveyed"
+              ],
+              [
+                "boom",
+                "chafe"
+              ],
+              [
+                "rudder",
+                "emerg. tiller"
+              ],
+              [
+                "pushpit",
+                "windvane"
+              ],
+              [
+                "hull",
+                "spares"
+              ]
+            ],
+            "note": "Fix in harbour what you cannot fix at sea"
+          }
+        },
+        {
+          "list": [
+            "Rig: a cracked fitting in old wire condemns it all; re-rig, carry spare wire.",
+            "Steering: a windvane uses no power; try the emergency tiller in harbour.",
+            "Chafe: move the wear point daily. Engine spares: fuel filters, impellers, belts."
+          ]
+        },
+        {
+          "p": "Budget energy in amp-hours, amps × hours per load, against what solar and a towed generator give; the engine makes up the deficit. Range under power: usable litres ÷ litres an hour × speed, with a reserve for the landfall."
+        },
+        {
+          "fig": {
+            "type": "card",
+            "title": "Water for 5 crew, 18 days",
+            "lines": [
+              "3 L × 5 × 18 = 270 L",
+              "+50 % reserve = 405 L aboard",
+              "Tanks 350 L: 55 L more in cans",
+              "Never count on the watermaker"
+            ]
+          }
+        },
+        {
+          "p": "Allow 3 L of water a person a day for drinking and cooking, more in the tropics, plus half as much again, split between tanks and cans. Provision for the expected days plus 50 %; cabbage, onions, potatoes and unwashed eggs keep for weeks, stowed dry and airy and checked daily."
+        }
+      ]
+    },
+    {
+      "id": "crew",
+      "kicker": "Crew and watches",
+      "title": "Rested people make good decisions",
+      "refs": [
+        "Ocean passage planning — crew and watches",
+        "Ocean passage planning — the skipper"
+      ],
+      "blocks": [
+        {
+          "p": "A shakedown of two or three days with night watches shows seasickness, skill and who follows the rules, while you can still change crew. A medical condition is planned for, not barred. Rotate the watch hours: with two watches that needs an odd number of watches a day, as in the Swedish system, five a day."
+        },
+        {
+          "fig": {
+            "type": "card",
+            "title": "Standing orders",
+            "lines": [
+              "Call me: any ship with CPA under 2 M",
+              "Call me: wind over 20 kn, glass −3 hPa in 3 h",
+              "Clip on at night; nobody forward alone",
+              "No spinnaker after dark",
+              "If in doubt, call me"
+            ]
+          }
+        },
+        {
+          "p": "**Standing orders** spare the watch from judging alone; a handover passes on course, sails, traffic and weather trend. The skipper answers for boat and crew: a schedule never outranks a forecast, a deputy lets you sleep, and you go to people in distress when you can safely. Yachtmaster Ocean covers yachts up to 24 m."
+        }
+      ]
+    },
+    {
+      "id": "comms",
+      "kicker": "Navigation and communications",
+      "title": "The daily routine far from land",
+      "refs": [
+        "Ocean passage planning — communications",
+        "Ocean passage planning — navigation plan"
+      ],
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Means",
+              "Reach",
+              "Use"
+            ],
+            "rows": [
+              [
+                "VHF, AIS",
+                "20–30 M",
+                "keep AIS on"
+              ],
+              [
+                "HF/SSB",
+                "ocean-wide, free",
+                "daily net, weatherfax, forecasts"
+              ],
+              [
+                "Sat phone",
+                "worldwide, paid",
+                "small GRIBs, medical advice"
+              ],
+              [
+                "Inmarsat-C",
+                "ocean-wide",
+                "SafetyNET forecasts, warnings"
+              ]
+            ]
+          }
+        },
+        {
+          "fig": {
+            "type": "card",
+            "title": "Daily report, 1800 UT",
+            "lines": [
+              "Position 15°40′N 042°10′W",
+              "Course 265°, speed 6 kn, wind ENE 18 kn",
+              "All well aboard",
+              "Next report tomorrow 1800 UT",
+              "Shore: no report for 48 h → call the MRCC"
+            ]
+          }
+        },
+        {
+          "p": "Leave a **float plan** ashore with a trigger: who calls which MRCC after what silence. Report in UT (zone +4: 1800 UT is 1400 aboard); if your link dies, relay through another boat before the trigger falls."
+        },
+        {
+          "fig": {
+            "type": "compass",
+            "variation": -14,
+            "deviation": 2,
+            "course": 265,
+            "courseLabel": "Compass course",
+            "note": "Checked daily by amplitude"
+          }
+        },
+        {
+          "p": "Log the position hourly; work the noon position and day's run (25 hours when the clocks go back). Back-ups: a handheld GPS stowed against lightning, sextant, an almanac for every month of the passage, tables for your latitudes, plotting sheets, a large-scale chart of the landfall. Check the compass daily by the Sun's amplitude or azimuth."
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "kicker": "Safety and medical",
+      "title": "Your own boat is the rescue service",
+      "refs": [
+        "Ocean passage planning — safety",
+        "Ocean passage planning — medical"
+      ],
+      "blocks": [
+        {
+          "p": "Help may be days away: clip on before you leave the hatch, with a second person awake, and give each lifejacket an **AIS MOB beacon**, seen on your own plotter. Overboard: MOB button, danbuoy, a pointer, sails down, back under power; a halyard and a winch lift the casualty."
+        },
+        {
+          "table": {
+            "head": [
+              "Equipment",
+              "For an ocean"
+            ],
+            "rows": [
+              [
+                "Liferaft",
+                "ISO 9650-1, >24 h pack, serviced"
+              ],
+              [
+                "EPIRB",
+                "registered to the boat, battery in date"
+              ],
+              [
+                "Grab bag",
+                "add PLB, sat phone, water, hand watermaker"
+              ],
+              [
+                "Medical kit",
+                "prescription drugs and a guide, with a doctor"
+              ]
+            ]
+          }
+        },
+        {
+          "fig": {
+            "type": "card",
+            "title": "Abandon ship",
+            "lines": [
+              "1 MAYDAY, EPIRB on",
+              "2 Painter made fast",
+              "3 Raft over the side",
+              "4 Step in dry, grab bag with you",
+              "5 Cut the painter"
+            ],
+            "tag": "MAYDAY"
+          }
+        },
+        {
+          "p": "Stay with the boat while she floats: fight the leak, tell the MRCC early, take to the raft only when she sinks. For illness the MRCC connects you to a doctor: have position, vital signs, history and kit list ready. Seasickness tablets work only taken before sailing; a seasick crew comes off watch, clipped on, sipping fluids."
+        }
+      ]
+    },
+    {
+      "id": "heavy",
+      "kicker": "Heavy weather",
+      "title": "Sea room is safety",
+      "refs": [
+        "Ocean passage planning — heavy weather"
+      ],
+      "blocks": [
+        {
+          "tiles": [
+            {
+              "fig": {
+                "type": "encounter",
+                "you": {
+                  "hdg": 50,
+                  "sail": true,
+                  "boom": 14
+                },
+                "other": {
+                  "dist": 0
+                },
+                "wind": 0,
+                "note": "Hove to: nearly stopped, bow off the seas"
+              },
+              "name": "Hove to"
+            },
+            {
+              "fig": {
+                "type": "encounter",
+                "you": {
+                  "hdg": 180
+                },
+                "other": {
+                  "dist": 0
+                },
+                "wind": 0,
+                "note": "Drogue astern: stern to the seas"
+              },
+              "name": "Drogue astern"
+            },
+            {
+              "fig": {
+                "type": "encounter",
+                "you": {
+                  "hdg": 0
+                },
+                "other": {
+                  "dist": 0
+                },
+                "wind": 0,
+                "note": "Sea anchor from the bow: head to sea"
+              },
+              "name": "Sea anchor"
+            }
+          ]
+        },
+        {
+          "p": "Before a gale: storm sails tried in harbour, everything lashed below, food cooked ahead, crew rested. With sea room, heave to when the crew is exhausted; running too fast, stream a **drogue** astern; with a reef to leeward, lie to a **parachute sea anchor** from the bow, which nearly stops the drift. A lee shore at night is the danger: stay out and close it by day."
+        }
+      ]
+    },
+    {
+      "id": "landfall",
+      "kicker": "Landfall and clearing in",
+      "title": "Arrive by day, with the Q flag up",
+      "refs": [
+        "Ocean passage planning — landfall",
+        "Ocean passage planning — clearing in"
+      ],
+      "blocks": [
+        {
+          "p": "Make the landfall in daylight: slow down or heave to rather than close an unlit reef at night. A light rises at 2.08 × (√height + √eye height) miles. Old charts can be a mile out and remote lights fail: keep a wide berth. Unsure of your position, **aim off** up-current of the harbour: then you know which way to turn."
+        },
+        {
+          "tiles": [
+            {
+              "fig": {
+                "type": "chart",
+                "land": "M60 40 C 90 20 130 30 120 60 C 110 80 70 75 60 40 Z M200 120 C 240 100 280 120 260 150 C 240 170 205 155 200 120 Z",
+                "track": "M30 180 L160 95 L180 82",
+                "boat": [
+                  60,
+                  160,
+                  57
+                ],
+                "labels": [
+                  [
+                    90,
+                    95,
+                    "atoll, palms ~25 m",
+                    "middle"
+                  ],
+                  [
+                    235,
+                    185,
+                    "current unknown, up to 2 kn",
+                    "middle"
+                  ]
+                ],
+                "panel": [
+                  "Tuamotus, night",
+                  "Survey: 1890s",
+                  "Datum offset?"
+                ],
+                "note": "Not to scale"
+              },
+              "name": "Atolls at night",
+              "note": "wide berth, radar; gap by day"
+            },
+            {
+              "fig": {
+                "type": "chart",
+                "land": "M0 0 H105 C 112 60 98 140 108 200 H0 Z",
+                "marks": [
+                  [
+                    106,
+                    100,
+                    "k",
+                    "Harbour"
+                  ]
+                ],
+                "labels": [
+                  [
+                    122,
+                    44,
+                    "B",
+                    "start"
+                  ],
+                  [
+                    122,
+                    104,
+                    "A",
+                    "start"
+                  ],
+                  [
+                    122,
+                    164,
+                    "C",
+                    "start"
+                  ]
+                ],
+                "track": "M290 150 L140 55",
+                "boat": [
+                  290,
+                  150,
+                  302
+                ],
+                "panel": [
+                  "Sun-sight fix ±8 M",
+                  "Coast low, no marks",
+                  "Current: S-going, 1 kn"
+                ],
+                "note": "Not to scale"
+              },
+              "name": "Aiming off",
+              "note": "B, up-current"
+            }
+          ]
+        },
+        {
+          "fig": {
+            "type": "flag",
+            "flags": [
+              [
+                "Q",
+                "Q|not yet cleared in"
+              ]
+            ],
+            "note": "Yellow: flown until customs and immigration have cleared you"
+          }
+        },
+        {
+          "p": "Go straight to a port of entry under the **Q flag**; only the skipper lands, with passports, crew list, ship's papers and the outward clearance from the last port. Send any advance notice in local time, declare all food, and sign off crew who leave. Once cleared, the Q flag comes down and the courtesy flag goes up at the starboard spreader."
+        }
+      ]
+    }
+  ]
+}

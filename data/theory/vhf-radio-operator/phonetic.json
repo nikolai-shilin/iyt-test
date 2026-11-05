@@ -1,0 +1,92 @@
+{
+  "topic": "phonetic",
+  "lead": "A radio voice is thin, clipped and often half lost in noise. The phonetic alphabet, figures said one by one and a few fixed procedure words make sure a name, a berth number or a position arrives exactly as you sent it.",
+  "sections": [
+    {
+      "id": "alphabet",
+      "kicker": "Phonetic alphabet",
+      "title": "Spell with words, not letters",
+      "refs": ["Phonetic alphabet"],
+      "blocks": [
+        { "p": "On the air B, D, E, P and T all sound alike. So every letter has a word of its own, the same on every ship and in every country. Learn all 26 by heart: you will spell your yacht's name, her call sign, a pontoon letter. Pontoon B is **Bravo**, never just \"B\"." },
+        { "table": { "head": ["A–G", "H–N", "O–U", "V–Z"], "rows": [
+          ["**A** Alfa", "**H** Hotel", "**O** Oscar", "**V** Victor"],
+          ["**B** Bravo", "**I** India", "**P** Papa", "**W** Whiskey"],
+          ["**C** Charlie", "**J** Juliett", "**Q** Quebec", "**X** X-ray"],
+          ["**D** Delta", "**K** Kilo", "**R** Romeo", "**Y** Yankee"],
+          ["**E** Echo", "**L** Lima", "**S** Sierra", "**Z** Zulu"],
+          ["**F** Foxtrot", "**M** Mike", "**T** Tango", ""],
+          ["**G** Golf", "**N** November", "**U** Uniform", ""]
+        ] } },
+        { "fig": { "type": "flag", "flags": [["N", "N|November"], ["O", "O|Oscar"], ["V", "V|Victor"], ["A", "A|Alfa"]], "note": "The code flags carry the same names" }, "cap": "A yacht called Nova, spelled out." },
+        { "rule": "Say the word, then spell it: \"Nova, I SPELL, November Oscar Victor Alfa\"." }
+      ]
+    },
+    {
+      "id": "figures",
+      "kicker": "Numbers on the radio",
+      "title": "One figure at a time",
+      "refs": ["Numbers on the radio", "Phonetic alphabet"],
+      "blocks": [
+        { "p": "Numbers go out figure by figure. \"Fifteen\" and \"fifty\" differ by one faint sound, and a yacht ends up at the wrong berth; **one five** and **five zero** cannot be confused. Berth 27 on pontoon D is \"pontoon Delta, berth two seven\". A nine-figure MMSI is nine separate words, zeros included." },
+        { "table": { "head": ["Figure", "Say", "Figure", "Say"], "rows": [
+          ["0", "zero", "5", "fife"],
+          ["1", "wun", "6", "six"],
+          ["2", "too", "7", "seven"],
+          ["3", "tree", "8", "ait"],
+          ["4", "fower", "9", "**niner**"]
+        ] } },
+        { "p": "The odd spellings show how to pronounce the figures so that they cut through noise. **Niner** matters most: a plain \"nine\" is easily taken for \"five\". The decimal point is the word **decimal**: a draft of 1.9 m is \"one decimal niner metres\"." }
+      ]
+    },
+    {
+      "id": "position",
+      "kicker": "Reading out a position",
+      "title": "Latitude first, then longitude",
+      "refs": ["Numbers on the radio"],
+      "blocks": [
+        { "p": "Read a position in the order the plotter shows it: **latitude first**, then longitude. Each goes degrees, then minutes with \"decimal\", then its hemisphere: north or south, east or west. Longitude always has **three figures** of degrees, so 24° east begins \"zero two four\"." },
+        { "fig": { "type": "card", "title": "Plotter: 38°04.6′N 024°19.5′E", "lines": ["\"Three eight degrees", "zero four decimal six minutes north,", "zero two four degrees", "one niner decimal five minutes east\""] } },
+        { "p": "Speak at the pace of someone writing it down. A position heard wrong sends help to the wrong place." }
+      ]
+    },
+    {
+      "id": "call",
+      "kicker": "Procedure words",
+      "title": "Who is speaking, and whose turn it is",
+      "refs": ["Procedure words"],
+      "blocks": [
+        { "p": "A VHF channel carries one voice at a time: while you hold the press-to-talk switch you hear nobody. Procedure words, or **prowords**, mark the turns. **THIS IS** stands between the station you call and your own name; leave it out and nobody knows who is calling whom. **OVER** hands the turn across, **OUT** ends the conversation." },
+        { "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["ptt", "press to talk"], ["mic", "handset"], ["display", "working channel"]], "note": "Pressed: you talk. Released: you listen." } },
+        { "table": { "head": ["Proword", "Meaning"], "rows": [
+          ["THIS IS", "My own name follows"],
+          ["OVER", "I have finished and expect your reply"],
+          ["OUT", "The call is finished, no reply expected"],
+          ["RECEIVED", "I heard and understood your message"],
+          ["AFFIRMATIVE", "Yes"],
+          ["WAIT", "I need a pause; add the minutes if you can"],
+          ["STATION CALLING", "I did not catch who is calling me"]
+        ] } },
+        { "p": "RECEIVED only says that the message arrived. A question still needs its answer: \"do you need a diver?\" gets AFFIRMATIVE, not RECEIVED. If the caller's name was lost, reply \"Station calling Nova, this is Nova, OVER\"." },
+        { "rule": "OVER or OUT, never both: you cannot ask for a reply and end the call in one breath." }
+      ]
+    },
+    {
+      "id": "repair",
+      "kicker": "Repeats and corrections",
+      "title": "Mending a broken message",
+      "refs": ["Procedure words"],
+      "blocks": [
+        { "p": "Sooner or later noise eats part of a message. Ask for it with **SAY AGAIN**; the word \"repeat\" is not used for this on the radio. If only a part was lost, ask for that part alone and name the word you did hear." },
+        { "table": { "head": ["You send", "You get"], "rows": [
+          ["SAY AGAIN", "The whole message"],
+          ["SAY AGAIN ALL AFTER …", "Everything after the word you name"],
+          ["SAY AGAIN ALL BEFORE …", "Everything before the word you name"],
+          ["SAY AGAIN WORD AFTER …", "The single word that followed it"]
+        ] } },
+        { "fig": { "type": "card", "title": "A reply lost in noise", "lines": ["Marina: \"Nova, go to pontoon Delta …\"", "(the rest is lost)", "You: \"Vega Marina, this is Nova,", "SAY AGAIN ALL AFTER Delta, OVER\"", "Marina: \"I SAY AGAIN, berth two seven\""] } },
+        { "p": "Your own slip is mended with **CORRECTION**: it cancels what you have just said, and the right version follows. \"Berth two three, CORRECTION, berth two five\" means berth 25. When you hear it, drop what came before the word and act on what comes after. **I SPELL** warns that the next words are letters of the phonetic alphabet." }
+      ]
+    }
+  ]
+}

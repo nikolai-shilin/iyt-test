@@ -1,0 +1,102 @@
+{
+  "topic": "pilotage",
+  "lead": "Pilotage is navigation by eye in the last mile, with no time for chartwork. Prepare it beforehand: what you will see and which line keeps you off the rocks.",
+  "sections": [
+    {
+      "id": "plan",
+      "kicker": "The pilotage plan",
+      "title": "Work it out before you arrive",
+      "refs": ["Pilotage plan", "Pilotage plan — timing", "Pilotage plan — at night", "Pilotage plan — turning bearings", "Pilotage — the cockpit team", "Pilot book — bearings", "Pilot book — the harbour plan", "Pilot book — arriving", "Arriving in an unknown port"],
+      "blocks": [
+        { "p": "A **pilotage plan** is a card for the cockpit: each leg's heading, distance and minutes at your speed over the ground, what you will see at the turn and the danger beyond. Write bearings in degrees magnetic, as the compasses read; pilot books give them true, from seaward. At night use lit marks only." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V70 C240 64 160 70 140 48 C130 36 106 36 96 46 C80 60 40 66 0 60 Z", "depths": [[106, 66, "6"], [240, 110, "14"], [60, 120, "16"]], "marks": [[120, 26, "w", "church"]], "track": "M300 150 L165 150 L134 66", "boat": [192, 150, 270], "labels": [[165, 172, "turn here", "middle"]], "panel": ["Leg 1: 270°M", "Now: church 330°M", "Turn at 340°M"], "note": "Running west, the church draws aft and its bearing rises" } },
+        { "p": "If a mark fails to appear on time, you may not be where you think: stop, fix, return to the last safe point. Where chart and pilot book disagree, assume the worse; if the book warns against today's wind, go elsewhere." },
+        { "p": "One person steers; the other navigates from the cockpit, calling headings and marks. The helm repeats each heading and reports when steady." }
+      ]
+    },
+    {
+      "id": "lines",
+      "kicker": "Transits and clearing lines",
+      "title": "Lines that keep you off the danger",
+      "refs": ["Transits", "Transits — cross-stream", "Transits — open and closed", "Leading lights", "Clearing bearings", "Clearing bearings — the stream", "Clearing bearings — astern", "Clearing bearings — tacking", "Back bearings"],
+      "blocks": [
+        { "p": "Two charted objects in line make a **transit**: you are on that line whatever the plotter says. Pick objects far apart, and steer whatever heading holds them in line, bow into any cross-stream. Rear mark open (just out of line) to the left of the front one: you are left of the line, steer right." },
+        { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 146, "y": 70, "t": "rear" }, { "c": "w", "x": 166, "y": 122, "t": "front" }], "note": "Rear light open to the left: you are left of the line" } },
+        { "p": "A **clearing bearing** is a limit, not a track: the bearing of a charted mark that just clears the danger, written NMT (not more than) or NLT (not less than). Up to it you may tack freely. A **back bearing** checks a mark astern: on track it reads the reciprocal of your course; if it creeps, you are being set." },
+        { "fig": { "type": "chart", "land": "M320 0 V200 H300 C290 170 276 140 288 116 C296 90 300 40 320 0 Z", "depths": [[170, 124, "1.8"], [205, 116, "0.6", true], [100, 60, "14"], [230, 178, "15"]], "marks": [[284, 120, "w", "Lt"]], "track": "M90 154 L284 120", "boat": [110, 138, 90], "labels": [[150, 178, "light bears 080°M", "middle"], [182, 102, "shoal", "middle"]], "panel": ["Light NMT 080°M", "Now 084°M", "Too far north"], "note": "The shoal lies where the light bears more than 080°M" } }
+      ]
+    },
+    {
+      "id": "marks",
+      "kicker": "Buoyage",
+      "title": "Marks you must name at a glance",
+      "refs": ["IALA direction of buoyage", "IALA lateral marks", "IALA lateral marks — beacons", "IALA region B", "IALA region B — preferred channel", "IALA preferred channel marks", "IALA cardinal marks", "IALA isolated danger mark", "IALA safe water mark", "IALA special marks", "IALA emergency wreck marking buoy", "Emergency wreck marking buoy"],
+      "blocks": [
+        { "p": "Lateral marks follow the **direction of buoyage**: in from the sea, or as the chart's arrow shows. Against it the sides swap. Region B reverses only the colours of lateral marks (red right returning); cardinals and all other marks are the same. A beacon stands on its danger: give it room." },
+        { "tiles": [
+          { "fig": { "type": "buoy", "kind": "lat-port", "region": "A", "topmark": true }, "view": "68 10 120 178", "name": "Port hand, region A" },
+          { "fig": { "type": "buoy", "kind": "lat-port", "region": "B", "topmark": true }, "view": "68 10 120 178", "name": "Port hand, region B" }
+        ] },
+        { "p": "At a fork, a lateral mark banded in the other colour, Fl(2+1), marks the **preferred channel**: for the main channel obey its main colour, so red with a green band stays to port in region A." },
+        { "tiles": [
+          { "fig": { "type": "buoy", "kind": "card-n" }, "view": "68 10 120 178", "name": "North", "note": "Q · VQ" },
+          { "fig": { "type": "buoy", "kind": "card-e" }, "view": "68 10 120 178", "name": "East", "note": "Q(3) 10s · VQ(3) 5s" },
+          { "fig": { "type": "buoy", "kind": "card-s" }, "view": "68 10 120 178", "name": "South", "note": "Q(6)+LFl 15s · VQ(6)+LFl 10s" },
+          { "fig": { "type": "buoy", "kind": "card-w" }, "view": "68 10 120 178", "name": "West", "note": "Q(9) 15s · VQ(9) 10s" }
+        ] },
+        { "p": "A cardinal is named for its safe side and flashes like a clock face; the long flash stops six being miscounted, and neighbours differ as Q and VQ. White Fl(2): isolated danger, under the mark. Iso, Oc, LFl 10s or Mo(A): safe water. Yellow: special mark, see the chart. Blue and yellow, Al Bu Y, racon D: new wreck." }
+      ]
+    },
+    {
+      "id": "lights",
+      "kicker": "Lights and sectors",
+      "title": "Naming a light, reading its colour",
+      "refs": ["Light characteristics", "Light characteristics — range", "Sectored lights", "Sectored lights — entering at night", "Harbour lights", "Harbour entry at night"],
+      "blocks": [
+        { "p": "Time a light to name it. Oc is lit longer than dark, Iso half and half; Al changes colour on every bearing; VQ flashes twice a second. **Nominal range** assumes 10 miles of visibility, and a 3M pierhead light shows only close in. Against a town, stand off until both pierheads are certain: red to port, green to starboard. A narrow, half-lit entrance can wait for daylight." },
+        { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 60, "y": 140, "r": 3 }, { "c": "w", "x": 84, "y": 136, "r": 3 }, { "c": "y", "x": 104, "y": 142, "r": 3 }, { "c": "w", "x": 128, "y": 134, "r": 3 }, { "c": "r", "x": 140, "y": 128, "r": 4 }, { "c": "w", "x": 168, "y": 138, "r": 3 }, { "c": "g", "x": 186, "y": 132, "r": 4 }, { "c": "w", "x": 204, "y": 140, "r": 3 }, { "c": "r", "x": 226, "y": 136, "r": 3 }, { "c": "y", "x": 248, "y": 138, "r": 3 }, { "c": "w", "x": 270, "y": 134, "r": 3 }], "note": "Which red is Fl R 5s? Time it before you commit" } },
+        { "p": "A **sectored light** changes colour with your bearing: white over the safe line, red and green either side, or red over a danger. Limits are true bearings from seaward: convert your compass bearing. Red on the way in usually puts you to port of the line: come to starboard. The edge flickers, and at 4 miles a 3° sector is two cables wide: keep to the middle." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V36 C240 44 200 30 160 40 C120 30 80 44 0 36 Z", "marks": [[160, 42, "w", "Dir WRG"]], "track": "M160 46 L125 196 M160 46 L195 196 M160 46 L40 196 M160 46 L280 196", "boat": [95, 180, 15], "labels": [[106, 150, "red", "middle"], [160, 150, "white", "middle"], [214, 150, "green", "middle"]], "note": "In the red: you are to port of the line, come to starboard" } }
+      ]
+    },
+    {
+      "id": "signals",
+      "kicker": "Port and bridge signals",
+      "title": "Lights that give orders",
+      "refs": ["Port traffic signals", "Bridge and port traffic signals", "Lights on bridges", "Bridge lights"],
+      "blocks": [
+        { "p": "IALA **port traffic signals** are three lights, one above another. A yellow light beside the top exempts craft that can stay outside the main channel." },
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 58 }, { "c": "r", "x": 160, "y": 84 }, { "c": "r", "x": 160, "y": 110 }] }, "view": "60 20 200 150", "name": "Do not proceed" },
+          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 160, "y": 58 }, { "c": "g", "x": 160, "y": 84 }, { "c": "g", "x": 160, "y": 110 }] }, "view": "60 20 200 150", "name": "Proceed, one-way" },
+          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 160, "y": 58 }, { "c": "g", "x": 160, "y": 84 }, { "c": "w", "x": 160, "y": 110 }] }, "view": "60 20 200 150", "name": "Proceed, two-way" },
+          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 160, "y": 58 }, { "c": "w", "x": 160, "y": 84 }, { "c": "g", "x": 160, "y": 110 }] }, "view": "60 20 200 150", "name": "Only with orders" }
+        ], "cols": 2 },
+        { "p": "Three reds flashing: a serious emergency, stop or divert as told. A bridge has its own lights, given in the pilot book: commonly red and green mark the sides of the navigable span, white its centre. Ignore street lamps." },
+        { "fig": { "type": "lights", "hull": "M20 70 H300 V82 H20 Z M96 82 H112 V150 H96 Z M208 82 H224 V150 H208 Z", "lights": [{ "c": "r", "x": 104, "y": 118, "t": "F R" }, { "c": "w", "x": 160, "y": 94, "t": "Iso W" }, { "c": "g", "x": 216, "y": 118, "t": "F G" }], "note": "Navigable span: under the white, between red and green" } }
+      ]
+    },
+    {
+      "id": "plotter",
+      "kicker": "Plotter and radar",
+      "title": "Electronics are the cross-check",
+      "refs": ["Pilotage with the plotter", "Radar — parallel indexing", "Radar — clearing ranges", "Radar — EBL", "Radar — the pilotage plan"],
+      "blocks": [
+        { "p": "A plotter's chart can be tens of metres out and zooming adds no detail: marks in line beat the screen. Keep waypoints off the marks. 'Go to' draws a straight line from wherever you have drifted. At low speed COG wanders: steer by compass. Obey a virtual AIS mark like a buoy." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V24 C240 30 160 20 110 34 L96 40 L84 40 C60 30 30 34 0 30 Z", "depths": [[130, 110, "0.8", true], [144, 126, "1.5"], [50, 120, "9"], [262, 122, "11"]], "marks": [[90, 52, "y", "WP"]], "track": "M66 176 L90 52 M176 160 L90 52", "boat": [176, 160, 330], "labels": [[150, 98, "shoal", "start"], [56, 150, "plan", "end"], [192, 150, "go to", "start"]], "panel": ["Set east,", "then 'go to':", "over the shoal"], "note": "Depths in metres below chart datum" } },
+        { "p": "On radar a **parallel index** line lies along your track at the planned passing distance: the echo should slide down it; if it comes inside, turn away. A VRM ring is a clearing range; the EBL, relative when head-up, marks a turn. For fog, note an echo's range and bearing for each turn." }
+      ]
+    },
+    {
+      "id": "fog",
+      "kicker": "Fog and soundings",
+      "title": "Feeling your way in",
+      "refs": ["Pilotage in fog", "Pilotage in fog — aiming off", "Depth contours as a handrail"],
+      "blocks": [
+        { "p": "In fog slow down, sound the signal, post a lookout and cross-check every aid. Without radar follow a **depth contour** as a handrail to a known mark: a steep, even one well outside the dangers. The sounder should read contour + tide − its own offset; less means you are inshore." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V50 C280 54 220 48 176 52 L172 22 L148 22 L144 52 C110 48 60 58 0 52 Z", "depths": [[100, 68, "0.6", true], [74, 74, "1.2"], [120, 84, "3"], [160, 128, "18"], [262, 138, "20"], [215, 94, "10"], [290, 94, "10"]], "marks": [[160, 56, "r", "entrance"]], "track": "M150 150 L246 104 L164 104 L160 64", "boat": [150, 160, 0], "labels": [[80, 96, "rocks", "middle"], [250, 76, "clean 10 m line", "middle"]], "panel": ["Fog, no radar", "Stream uncertain"], "note": "Aim east of the entrance, then follow the 10 m line west" } },
+        { "p": "**Aim off**: steer deliberately to one side of the entrance, so that on finding the contour you know which way to turn. A fog signal says the mark is near, not where. Unsure of the next turn? Anchor and wait." }
+      ]
+    }
+  ]
+}

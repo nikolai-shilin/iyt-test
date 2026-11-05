@@ -1,0 +1,729 @@
+{
+  "topic": "weather",
+  "lead": "Ocean routes follow the planet's wind belts. One thing you avoid at any price: the tropical revolving storm, where your hemisphere decides every action.",
+  "sections": [
+    {
+      "id": "belts",
+      "kicker": "Wind belts",
+      "title": "Trades, doldrums and westerlies",
+      "refs": [
+        "Global circulation — the trade winds",
+        "Global circulation — the horse latitudes",
+        "Global circulation — the SE trades",
+        "Global circulation — the westerlies",
+        "Global circulation — the polar easterlies",
+        "The ITCZ — its seasonal shift",
+        "The ITCZ — crossing it",
+        "The ITCZ — Panama to the Galápagos",
+        "El Niño — cyclones and the trades",
+        "Trade winds — squalls",
+        "Trade winds — squall tactics"
+      ],
+      "blocks": [
+        {
+          "p": "Air rises at the **ITCZ**, the doldrums: calms and squalls. It sinks near 30° in a belt of highs, the **horse latitudes**, and flows back as the **trades**, turned by Coriolis: NE in the northern hemisphere, SE in the southern. Poleward blow the **westerlies** with their lows, then the polar easterlies."
+        },
+        {
+          "fig": {
+            "type": "chart",
+            "land": "M0 50 H320 V54 H0 Z M0 98 H320 V102 H0 Z M0 146 H320 V150 H0 Z",
+            "track": "M84 62 L60 88 M264 62 L240 88 M84 138 L60 112 M264 138 L240 112 M50 22 H90 M230 22 H270 M50 172 H90 M230 172 H270",
+            "labels": [
+              [
+                160,
+                26,
+                "westerlies",
+                "middle"
+              ],
+              [
+                160,
+                45,
+                "30°N · highs, calms",
+                "middle"
+              ],
+              [
+                160,
+                79,
+                "NE trades",
+                "middle"
+              ],
+              [
+                160,
+                93,
+                "ITCZ · doldrums",
+                "middle"
+              ],
+              [
+                160,
+                122,
+                "SE trades",
+                "middle"
+              ],
+              [
+                160,
+                142,
+                "30°S · highs, calms",
+                "middle"
+              ],
+              [
+                160,
+                176,
+                "westerlies",
+                "middle"
+              ]
+            ],
+            "note": "Schematic · the belts shift north and south with the Sun"
+          }
+        },
+        {
+          "p": "The ITCZ follows the Sun and is wider in the east: cross it further west, with fuel for the calms. Winter highs reinforce the trades to 25–30 kn; El Niño weakens the Pacific trades and moves the cyclones east. Trade-wind **squalls** travel with the wind and can double it: reef before they arrive."
+        }
+      ]
+    },
+    {
+      "id": "highs",
+      "kicker": "Highs and monsoons",
+      "title": "Which side of the high to sail",
+      "refs": [
+        "Subtropical highs — the Azores High",
+        "Subtropical highs — the North Pacific High",
+        "Subtropical highs — the St Helena High",
+        "Subtropical highs — the Azores High's movement",
+        "Monsoons",
+        "Monsoons — the South China Sea",
+        "Monsoons — the transition",
+        "Monsoons — the Red Sea"
+      ],
+      "blocks": [
+        {
+          "p": "Wind circles a high clockwise in the northern hemisphere, anticlockwise in the southern. Either way the trades blow on its equatorward side, the westerlies on its poleward side, calms in the centre. Route by where it lies today."
+        },
+        {
+          "tiles": [
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "H",
+                "values": [
+                  "1032",
+                  "1028",
+                  "1024"
+                ],
+                "boat": [
+                  30,
+                  120,
+                  70
+                ],
+                "hemisphere": "Northern hemisphere",
+                "note": "Bermuda to the Azores"
+              },
+              "name": "Northern high"
+            },
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "H",
+                "values": [
+                  "1028",
+                  "1024",
+                  "1020"
+                ],
+                "boat": [
+                  196,
+                  40,
+                  320
+                ],
+                "hemisphere": "Southern hemisphere",
+                "note": "Cape Town to St Helena"
+              },
+              "name": "Southern high"
+            }
+          ]
+        },
+        {
+          "p": "A **monsoon** reverses with the season: in the northern Indian Ocean and the South China Sea the NE monsoon (November–March) is fair, the SW monsoon (June–September) blows force 6–7, and between them come calms, squalls and cyclones. The Red Sea is NNW all year, except SSE in its southern half in winter."
+        }
+      ]
+    },
+    {
+      "id": "lows",
+      "kicker": "Depressions",
+      "title": "Let the low pass on the poleward side",
+      "refs": [
+        "Depressions — fronts on an ocean crossing",
+        "Southern Ocean — lows and their sequence"
+      ],
+      "blocks": [
+        {
+          "p": "Lows travel east, turning anticlockwise in the northern hemisphere and clockwise in the southern. Bound east, let the centre pass on your poleward side: the wind stays westerly and fair."
+        },
+        {
+          "tiles": [
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "L",
+                "values": [
+                  "992",
+                  "1000",
+                  "1008"
+                ],
+                "boat": [
+                  120,
+                  160,
+                  90
+                ],
+                "hemisphere": "Northern hemisphere",
+                "note": "Low moving E"
+              },
+              "name": "Northern hemisphere"
+            },
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "L",
+                "values": [
+                  "972"
+                ],
+                "boat": [
+                  120,
+                  26,
+                  90
+                ],
+                "hemisphere": "Southern hemisphere",
+                "note": "Low moving E"
+              },
+              "name": "Southern hemisphere"
+            }
+          ]
+        },
+        {
+          "table": {
+            "head": [
+              "Centre passes",
+              "Northern",
+              "Southern"
+            ],
+            "rows": [
+              [
+                "Poleward of you",
+                "veers SW → NW",
+                "backs NW → SW"
+              ],
+              [
+                "Equatorward",
+                "backs SE → NE",
+                "veers NE → SE"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "The cold front brings the shift, squalls and a rising glass. Southern Ocean lows come in a train: a brief ridge, then NW wind and a falling glass for the next."
+        }
+      ]
+    },
+    {
+      "id": "trs",
+      "kicker": "Tropical revolving storms",
+      "title": "Where and when, and the first signs",
+      "refs": [
+        "Tropical revolving storms — names",
+        "Tropical revolving storms — seasons",
+        "Tropical revolving storms — formation",
+        "Tropical revolving storms — where they form",
+        "Tropical revolving storms — tracks",
+        "Tropical revolving storms — recurvature",
+        "Tropical revolving storms — warning signs",
+        "Tropical revolving storms — the barometer",
+        "Tropical meteorology — the diurnal variation",
+        "Tropical revolving storms — the swell",
+        "Tropical revolving storms — the eye"
+      ],
+      "blocks": [
+        {
+          "p": "A **tropical revolving storm** needs a sea of 26.5 °C and Coriolis, so it forms at least 5° from the equator, in its hemisphere's summer and autumn. It moves west and poleward, then **recurves** towards the pole and east, faster."
+        },
+        {
+          "tiles": [
+            {
+              "fig": {
+                "type": "chart",
+                "track": "M300 170 C 220 166 110 150 92 104 C 80 70 110 40 190 18",
+                "marks": [
+                  [
+                    223,
+                    163,
+                    "r",
+                    "storm"
+                  ]
+                ],
+                "labels": [
+                  [
+                    205,
+                    105,
+                    "dangerous half",
+                    "middle"
+                  ],
+                  [
+                    62,
+                    168,
+                    "navigable half",
+                    "middle"
+                  ],
+                  [
+                    48,
+                    100,
+                    "recurves",
+                    "middle"
+                  ],
+                  [
+                    246,
+                    34,
+                    "NE, faster",
+                    "middle"
+                  ]
+                ],
+                "note": "Northern hemisphere: dangerous half right of the track"
+              },
+              "name": "Northern hemisphere"
+            },
+            {
+              "fig": {
+                "type": "chart",
+                "track": "M300 30 C 220 34 110 50 92 96 C 80 130 110 160 190 182",
+                "marks": [
+                  [
+                    223,
+                    37,
+                    "r",
+                    "storm"
+                  ]
+                ],
+                "labels": [
+                  [
+                    205,
+                    100,
+                    "dangerous half",
+                    "middle"
+                  ],
+                  [
+                    62,
+                    38,
+                    "navigable half",
+                    "middle"
+                  ],
+                  [
+                    48,
+                    104,
+                    "recurves",
+                    "middle"
+                  ],
+                  [
+                    246,
+                    172,
+                    "SE, faster",
+                    "middle"
+                  ]
+                ],
+                "note": "Southern hemisphere: dangerous half left of the track"
+              },
+              "name": "Southern hemisphere"
+            }
+          ]
+        },
+        {
+          "table": {
+            "head": [
+              "Ocean",
+              "Name",
+              "Season"
+            ],
+            "rows": [
+              [
+                "North Atlantic",
+                "hurricane",
+                "June–November"
+              ],
+              [
+                "NW Pacific",
+                "typhoon",
+                "mostly June–November"
+              ],
+              [
+                "South Pacific, South Indian",
+                "cyclone",
+                "November–April"
+              ],
+              [
+                "North Indian",
+                "cyclone",
+                "monsoon changes"
+              ],
+              [
+                "South Atlantic",
+                "almost none",
+                "—"
+              ]
+            ]
+          }
+        },
+        {
+          "p": "First signs: a long swell from the storm's bearing, cirrus fanning from one point, then the barometer. Tropical pressure swings 3 hPa daily (high 1000 and 2200, low 0400 and 1600); corrected for that, 3 hPa below normal means suspect, 5 means act. In the **eye** the wind drops, then returns as hard from the opposite side."
+        }
+      ]
+    },
+    {
+      "id": "avoid",
+      "kicker": "Avoiding a storm",
+      "title": "Find the centre, then act by hemisphere",
+      "refs": [
+        "Tropical revolving storms — semicircles",
+        "Tropical revolving storms — Buys Ballot's law",
+        "Tropical revolving storms — which semicircle",
+        "Tropical revolving storms — avoiding action",
+        "Tropical revolving storms — the centre's bearing",
+        "Tropical revolving storms — finding the centre",
+        "Tropical revolving storms — closest approach",
+        "Tropical revolving storms — a stalled storm",
+        "Tropical revolving storms — a catamaran's options",
+        "Tropical revolving storms — the 1-2-3 rule",
+        "Tropical revolving storms — closing time",
+        "Tropical revolving storms — wind radii"
+      ],
+      "blocks": [
+        {
+          "p": "**Buys Ballot's law**: face the wind and the centre is about 10 points (112°) to your right in the northern hemisphere, to your left in the southern."
+        },
+        {
+          "tiles": [
+            {
+              "fig": {
+                "type": "encounter",
+                "you": {
+                  "hdg": 40
+                },
+                "other": {
+                  "bearing": 112,
+                  "dist": 62,
+                  "hdg": 290,
+                  "scale": 0.35,
+                  "label": "centre"
+                },
+                "wind": 40,
+                "bearingLine": true,
+                "note": "Wind 040°: centre bears about 150°"
+              },
+              "name": "Northern hemisphere"
+            },
+            {
+              "fig": {
+                "type": "encounter",
+                "you": {
+                  "hdg": 330
+                },
+                "other": {
+                  "bearing": -112,
+                  "dist": 62,
+                  "hdg": 250,
+                  "scale": 0.35,
+                  "label": "centre"
+                },
+                "wind": 330,
+                "bearingLine": true,
+                "note": "Wind 330°: centre bears about 220°"
+              },
+              "name": "Southern hemisphere"
+            }
+          ]
+        },
+        {
+          "p": "In the **dangerous semicircle** the storm's speed adds to the wind, and the wind carries you into its path: right of the track in the northern hemisphere, left in the southern. The other half is **navigable**. The wind shift tells you which half you are in; so does the centre's bearing: moving clockwise, you are right of the track."
+        },
+        {
+          "tiles": [
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "L",
+                "tight": true,
+                "values": [
+                  "975"
+                ],
+                "boat": [
+                  120,
+                  26,
+                  25
+                ],
+                "hemisphere": "Northern hemisphere",
+                "note": "Storm moving W"
+              },
+              "name": "Northern, dangerous",
+              "note": "wind on starboard bow"
+            },
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "L",
+                "tight": true,
+                "values": [
+                  "975"
+                ],
+                "boat": [
+                  120,
+                  158,
+                  120
+                ],
+                "hemisphere": "Northern hemisphere",
+                "note": "Storm moving W"
+              },
+              "name": "Northern, navigable",
+              "note": "wind on starboard quarter"
+            },
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "L",
+                "tight": true,
+                "values": [
+                  "975"
+                ],
+                "boat": [
+                  120,
+                  158,
+                  155
+                ],
+                "hemisphere": "Southern hemisphere",
+                "note": "Storm moving W"
+              },
+              "name": "Southern, dangerous",
+              "note": "wind on port bow"
+            },
+            {
+              "fig": {
+                "type": "isobars",
+                "center": "L",
+                "tight": true,
+                "values": [
+                  "975"
+                ],
+                "boat": [
+                  120,
+                  26,
+                  65
+                ],
+                "hemisphere": "Southern hemisphere",
+                "note": "Storm moving W"
+              },
+              "name": "Southern, navigable",
+              "note": "wind on port quarter"
+            }
+          ],
+          "cols": 2
+        },
+        {
+          "table": {
+            "head": [
+              "Wind",
+              "Northern hemisphere",
+              "Southern hemisphere"
+            ],
+            "rows": [
+              [
+                "Veers",
+                "dangerous: close-hauled, starboard tack",
+                "navigable: run, port quarter"
+              ],
+              [
+                "Backs",
+                "navigable: run, starboard quarter",
+                "dangerous: close-hauled, port tack"
+              ],
+              [
+                "Steady, glass falling",
+                "on the track: run, starboard quarter",
+                "on the track: run, port quarter"
+              ]
+            ]
+          }
+        },
+        {
+          "rule": "North: wind to starboard. South: wind to port. Bow in the dangerous half, quarter in the navigable.",
+          "label": "Remember"
+        },
+        {
+          "p": "The **1-2-3 rule** adds 100, 200 and 300 M to the 34-knot radius at 24, 48 and 72 hours: forecast error grows. The gale arrives at (distance − radius) ÷ speed. Move early; a stalled storm can go anywhere."
+        }
+      ]
+    },
+    {
+      "id": "currents",
+      "kicker": "Currents, swell and fog",
+      "title": "What the wind does to moving water",
+      "refs": [
+        "Ocean currents — wind against current",
+        "Ocean currents — the North Equatorial Current",
+        "Ocean currents — the Agulhas Current",
+        "Ocean currents — the Humboldt Current",
+        "Ocean currents — the Kuroshio",
+        "Ocean currents — Gulf Stream eddies",
+        "Ocean currents — crossing the Gulf Stream",
+        "Ocean currents — the Gulf Stream",
+        "Ocean currents — the Agulhas and a cold front",
+        "Ocean swell — from a distant storm",
+        "Fog — over cold currents",
+        "Waterspouts"
+      ],
+      "blocks": [
+        {
+          "table": {
+            "head": [
+              "Current",
+              "Sets",
+              "Note"
+            ],
+            "rows": [
+              [
+                "Gulf Stream",
+                "NE, 3 kn",
+                "sharp cold north wall"
+              ],
+              [
+                "Agulhas",
+                "SW, 2–4 kn",
+                "SW gale: go inshore of 200 m"
+              ],
+              [
+                "Kuroshio",
+                "NE, 2–4 kn",
+                "Japan's Gulf Stream"
+              ],
+              [
+                "Humboldt",
+                "N, cold",
+                "cool, cloudy, dry"
+              ],
+              [
+                "North Equatorial",
+                "W, 0.5 kn",
+                "fair westbound"
+              ]
+            ]
+          }
+        },
+        {
+          "fig": {
+            "type": "chart",
+            "land": "M0 0 H110 C 90 50 60 90 0 130 Z",
+            "track": "M40 196 C 80 140 150 120 320 56",
+            "marks": [
+              [
+                140,
+                80,
+                "r",
+                "warm ring: clockwise"
+              ],
+              [
+                128,
+                178,
+                "w",
+                "cold ring: anticlockwise"
+              ]
+            ],
+            "labels": [
+              [
+                236,
+                40,
+                "cold water, 15°C",
+                "middle"
+              ],
+              [
+                220,
+                132,
+                "Gulf Stream: NE, 3 kn",
+                "middle"
+              ],
+              [
+                244,
+                166,
+                "warm water, 26°C",
+                "middle"
+              ]
+            ],
+            "boat": [
+              290,
+              118,
+              330
+            ],
+            "note": "Not to scale · a northerly wind against the Stream: wait"
+          }
+        },
+        {
+          "p": "Wind against current raises short, steep, breaking seas: cross the Gulf Stream or ride the Agulhas only with the wind going its way. Moist air chilled over a cold current gives **advection fog** that wind does not clear. **Swell** outruns a distant storm at 1.5 × its period, in knots. Steer across a waterspout's track."
+        }
+      ]
+    },
+    {
+      "id": "info",
+      "kicker": "Pilot charts and forecasts",
+      "title": "Climate for the plan, forecasts for the day",
+      "refs": [
+        "Pilot charts — wind roses",
+        "Pilot charts — ice limits",
+        "Pilot charts — storm tracks",
+        "Pilot charts — gale frequency",
+        "Weather information — GRIB and its limits",
+        "Weather information — routing services",
+        "Weather information — high-seas forecasts",
+        "Weather information — weatherfax"
+      ],
+      "blocks": [
+        {
+          "p": "A **pilot chart** shows one month's averages: wind roses, gale and calm percentages, ice limits, past storm tracks. It is history: an empty route means rare, not impossible."
+        },
+        {
+          "fig": {
+            "type": "card",
+            "title": "Reading a pilot chart",
+            "lines": [
+              "Arrows fly with the wind, to the circle",
+              "Arrow length: how often from there",
+              "Feathers: the mean force",
+              "Figure in the circle: % of calms",
+              "Gales 15 % × 8 days = 1.2 days of gale"
+            ]
+          }
+        },
+        {
+          "table": {
+            "head": [
+              "Source",
+              "Limits"
+            ],
+            "rows": [
+              [
+                "NAVTEX",
+                "300–400 M from the station"
+              ],
+              [
+                "SafetyNET, HF weatherfax",
+                "ocean-wide; a fax chart is hours old"
+              ],
+              [
+                "GRIB",
+                "mean wind: gusts 40 % more, no squalls, storms blunted"
+              ],
+              [
+                "Router",
+                "advises; the skipper decides"
+              ]
+            ]
+          }
+        },
+        {
+          "rule": "Models disagree: plan for the worse. Tropical storm: trust the advisory, not the GRIB."
+        }
+      ]
+    }
+  ]
+}

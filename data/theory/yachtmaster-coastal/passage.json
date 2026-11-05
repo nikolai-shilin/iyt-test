@@ -1,0 +1,88 @@
+{
+  "topic": "passage",
+  "lead": "A passage plan settles four things before you slip: can boat and crew do it, when must you be where, what could stop you, and where you go instead.",
+  "sections": [
+    {
+      "id": "plan",
+      "kicker": "Plan and skipper",
+      "title": "What a plan must answer",
+      "refs": ["SOLAS V", "Passage planning — purpose", "Passage planning — the skipper", "Yachtmaster Coastal — limits", "Passage planning — the boat's limits", "Passage planning — crew", "Passage planning — documents", "Passage planning — crew briefing", "Passage planning — float plan", "Passage making — float plan"],
+      "blocks": [
+        { "p": "SOLAS V expects everyone who goes to sea, small craft included, to plan: weather, tides, the limits of boat and crew, the dangers, and a plan B. The trip's purpose and the weakest crew set its scale: a family cruise wants short daylight legs." },
+        { "fig": { "type": "card", "title": "Passage plan: what SOLAS V asks", "lines": ["Weather: forecast and window", "Tides: heights, streams, gates", "The boat: her real limits, fuel, gear", "The crew: experience, watches", "Dangers on the route", "Plan B: ports of refuge"] } },
+        { "p": "The skipper answers for boat and crew: planning can be delegated, responsibility cannot, and a vote changes nothing. A Yachtmaster Coastal commands yachts to 24 m, day or night, in moderate conditions, up to 60 miles offshore. Check the insurance limits, and clear in at a port of entry under the Q flag." },
+        { "p": "Brief the crew on the route, watches, forecast and plan B: the skipper may be the casualty. Leave the plan ashore with your ETA and an alarm time, and report changes." }
+      ]
+    },
+    {
+      "id": "timing",
+      "kicker": "Times and gates",
+      "title": "Work back from the fixed points",
+      "refs": ["Passage planning — ETA", "Passage planning — distance and speed", "Passage planning — tidal gates", "Passage planning — tidal races", "Passage planning — arrival", "Passage making — arrival", "Passage planning — weather window", "Passage planning — night", "Passage making — ETA"],
+      "blocks": [
+        { "p": "Time = distance ÷ speed over the ground, at the speed you really average. Fix what cannot move: slack at a headland, a sill open around high water, daylight at a strange entrance, the wind's arrival. Then work back to a departure, hour by hour where the stream changes." },
+        { "fig": { "type": "chart", "land": "M0 200 V152 C70 148 128 150 150 96 C172 150 250 148 320 154 V200 Z", "marks": [[22, 152, "w", "harbour"], [298, 154, "w", "marina"]], "track": "M34 144 C60 100 110 76 150 76 C190 76 250 100 282 146", "labels": [[8, 176, "leave 0800", "start"], [150, 62, "headland 1030", "middle"], [312, 176, "sill 1400", "end"], [100, 128, "15 M · 2 h 30", "middle"], [212, 128, "21 M · 3 h 30", "middle"]], "note": "Headland fair 1000–1200 · sill open 1330–1830 · 6 kn SOG" } },
+        { "p": "Take a race at slack or with wind and tide together, or stand well off. Be in before a forecast increase: a GRIB shows no gusts. Rather than reach an unknown harbour in the dark, slow down or leave later; write its pilotage plan before sailing. At night choose a lit route over a short cut, and moonlight for new crew." }
+      ]
+    },
+    {
+      "id": "route",
+      "kicker": "Route and refuges",
+      "title": "Check every leg",
+      "refs": ["Passage planning — waypoints", "Passage planning — electronic route", "Passage making — electronic route", "Passage planning — paper backup", "Passage planning — hazards", "Passage planning — fishing areas", "Passage planning — lights", "Passage planning — ports of refuge", "Passage planning — alternatives"],
+      "blocks": [
+        { "p": "Put waypoints in safe water, never on a mark, and check the whole leg between them. On the plotter zoom in along each leg, or run the route check with a corridor wider than your cross-track alarm; set that alarm inside the distance to the nearest danger. A leg that disagrees with the paper plan hides a mistyped position. Auto-routing needs your true draft, a reversed route a fresh check, and on autopilot the watch confirms each turn." },
+        { "fig": { "type": "chart", "depths": [[100, 50, "18"], [50, 140, "12"], [130, 135, "1.2", true], [165, 142, "2"], [110, 150, "0.6", true], [270, 160, "11"], [60, 60, "15"]], "marks": [[140, 100, "y", "N cardinal"]], "track": "M20 122 L140 78 L290 126", "labels": [[140, 68, "WP3", "middle"]], "panel": ["Waypoints", "in safe water,", "not on the mark"], "note": "North cardinal: the waypoint goes north of it" } },
+        { "p": "Route round firing ranges, pot buoys and fish farms; cross a port's deep-water channel quickly, at right angles, listening to its VTS. Note when each light should appear: a strong one at its rising range, a weak one only at its nominal range. A light that does not match: fix your position." },
+        { "p": "A **port of refuge** must be safe to enter when you would arrive: enough tide, shelter from the forecast wind, lights at night, soundings and buoys to follow in fog. Keep the plan on paper too: courses, distances, lights." },
+        { "fig": { "type": "chart", "land": "M0 200 V150 C60 140 100 160 160 146 C220 132 260 150 320 140 V200 Z", "marks": [[60, 148, "y", "A"], [160, 144, "y", "B"], [262, 140, "y", "C"]], "labels": [[60, 128, "sill: HW±2", "middle"], [160, 124, "open to SW", "middle"], [262, 120, "lit, all tides", "middle"]], "track": "M20 100 L300 96", "boat": [30, 100, 90], "panel": ["Refuge tonight?", "SW 7 coming", "Arrive HW+4, dark"], "note": "Only C works: A's sill is shut, B is open to the wind" } }
+      ]
+    },
+    {
+      "id": "stores",
+      "kicker": "Fuel, water, food",
+      "title": "Enough to arrive, plus a reserve",
+      "refs": ["Passage planning — fuel", "Passage planning — water", "Passage planning — provisioning", "Passage making — motor-sailing"],
+      "blocks": [
+        { "p": "Count fuel in hours: usable litres ÷ litres an hour, times speed over the ground for range. Keep a reserve. Slower burns less per mile; a catamaran on one engine, less still." },
+        { "fig": { "type": "card", "title": "Fuel and water sums", "lines": ["Tank 100 L − 20 L reserve = 80 L", "80 ÷ 2.5 L/h = 32 h · × 5 kn = 160 M", "Leg 30 M at 5 kn: 6 h × 2.5 = 15 L", "Water: 4 crew × 2 L × (2 + 1) days = 24 L", "Upwind: 6 kn × cos 30° = 5.2 kn made good"] } },
+        { "p": "Dead upwind, compare speed made good. Cook the first night's meal in harbour and keep snacks and a flask by the companionway. Carry drinking water with a day spare. Load for the plan and a margin: weight slows a catamaran most." }
+      ]
+    },
+    {
+      "id": "watches",
+      "kicker": "Watches and the night",
+      "title": "Round the clock",
+      "refs": ["Passage planning — watch systems", "Passage making — watch systems", "Passage planning — night orders", "Passage making — night orders", "Passage making — watch leader", "Passage making — change of watch", "Passage making — the log", "Passage making — keeping the plot", "Passage making — night", "Passage making — fatigue", "Passage making — seasickness"],
+      "blocks": [
+        { "p": "Each watch needs a leader who can handle the boat and traffic at night: never two novices alone. Two watches stand four hours on, four off, with 1600–2000 split so the rota rotates; three watches give each person eight hours on deck. Staggered changes keep someone on deck who saw the last two hours. Two-handed, never both sleep. With a big crew the skipper stays out of the rota." },
+        { "fig": { "type": "card", "title": "Two watches, 4 on, 4 off", "lines": ["0000 Port · 0400 Starboard", "0800 Port · 1200 Starboard", "1600 Port · 1800 Starboard (dog watches)", "2000 Port", "Seven watches: tomorrow they swap"] } },
+        { "p": "**Night orders** say when to call the skipper. A handover gives position, course, the next turn, traffic, sails, weather and those orders. Log time, log reading, course, position, wind and barometer hourly and at each change, and plot on paper, so DR can start if the electronics die." },
+        { "fig": { "type": "card", "title": "Skipper's night orders", "lines": ["Course 245°M, 2 M off the coast", "Call me: wind over 20 kn", "Call me: a ship with CPA under 1 M", "Call me: visibility under 2 M", "Call me: before the turn at WP5", "Call me: any doubt at all"] } },
+        { "p": "Below, dim red light; on deck, lights only for the job. Clip on before leaving the companionway; nobody goes forward unwatched. Seasickness eases in fresh air or a low bunk amidships; a crew who cannot keep water down needs the nearest harbour. Too tired for a strange entrance, stand off until dawn." }
+      ]
+    },
+    {
+      "id": "shipping",
+      "kicker": "Shipping lanes",
+      "title": "Crossing a separation scheme",
+      "refs": ["Passage making — TSS", "Passage making — fog"],
+      "blocks": [
+        { "p": "Rule 10: cross a **traffic separation scheme** on a heading at right angles to the lanes and accept the stream's set: the quickest way over. Never wait in the separation zone; adjust speed and pass astern." },
+        { "fig": { "type": "chart", "land": "M0 88 H320 V112 H0 Z", "labels": [[230, 55, "lane ← 270°", "middle"], [160, 104, "separation zone", "middle"], [230, 150, "lane → 090°", "middle"], [66, 172, "heading 000°", "middle"], [124, 30, "ground track", "start"], [252, 104, "stream 2 kn ←", "middle"]], "track": "M130 156 L76 20", "boat": [130, 170, 0], "note": "4 M lane at 5 kn: 48 min · a ship at 18 kn runs 14 M" } },
+        { "p": "Fog before the lane: wait outside, in water too shallow for ships. Fog halfway across: the shortest way out is ahead; hold the heading at a safe speed, watch the radar, sound your signal." }
+      ]
+    },
+    {
+      "id": "decisions",
+      "kicker": "Plan against reality",
+      "title": "Deciding on passage",
+      "refs": ["Passage making — plan against reality", "Passage making — decision points", "Passage making — plan B"],
+      "blocks": [
+        { "p": "Check progress at set times. The plotter's ETA assumes the present speed holds: work the streams ahead yourself and ask what speed the remaining miles demand. Start the engine while it can still save a gate." },
+        { "p": "A **decision point** is set in harbour, rested, with the tide worked out: not past the headland by 1400, then port C. Act on it, however keen the crew. Plan B must suit the boat and crew you have now: without an engine, an anchorage you can sail into; with a gale coming, a near harbour on a reach." },
+        { "fig": { "type": "card", "title": "1200: will you make the gate?", "lines": ["Gate 20 M ahead, it shuts at 1600", "Now 4.4 kn: ETA 1633, too late", "Needed: 20 ÷ 4 = 5.0 kn", "Start the engine now", "If not through by 1600: port C"] } }
+      ]
+    }
+  ]
+}

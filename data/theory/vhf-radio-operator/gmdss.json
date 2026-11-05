@@ -1,0 +1,100 @@
+{
+  "topic": "gmdss",
+  "lead": "GMDSS, the Global Maritime Distress and Safety System, gets a distress alert ashore without anyone having to hear your voice, and brings safety information to you. On a yacht you meet it as the DSC radio, the EPIRB, the SART and NAVTEX, with AIS working alongside.",
+  "sections": [
+    {
+      "id": "gmdss",
+      "kicker": "GMDSS",
+      "title": "The alert goes out by itself",
+      "refs": ["GMDSS", "GMDSS sea areas"],
+      "blocks": [
+        { "p": "Before GMDSS a distress call depended on somebody listening. Its main idea is **automatic alerting**: a DSC radio or an EPIRB sends who you are and where you are to a rescue centre, even if no one hears a voice call." },
+        { "p": "What reaches the shore depends on where you sail. **Sea area A1** is the water within range of VHF DSC coast stations, where most coastal cruising takes place. Further out, your VHF no longer reaches a coast station. A 406 MHz EPIRB, working through satellites, still alerts a rescue centre from anywhere." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V34 Q240 48 160 38 Q80 28 0 44 Z", "marks": [[160, 46, "w", ""]], "track": "M28 52 Q160 250 292 52", "boat": [120, 100, 90], "labels": [[160, 26, "VHF DSC coast station", "middle"], [200, 104, "A1", "middle"], [160, 188, "beyond VHF range: EPIRB", "middle"]], "note": "Sea area A1: in range of a VHF DSC coast station" } },
+        { "table": { "head": ["Sea area", "Defined by"], "rows": [
+          ["A1", "Range of VHF DSC coast stations"],
+          ["A2", "Range of MF DSC coast stations"],
+          ["A3", "Satellite communication coverage"],
+          ["A4", "Everything beyond, mainly the polar regions"]
+        ] } }
+      ]
+    },
+    {
+      "id": "epirb",
+      "kicker": "EPIRB",
+      "title": "A beacon the satellites hear",
+      "refs": ["EPIRB", "EPIRB & PLB"],
+      "blocks": [
+        { "p": "An **EPIRB** is the yacht's emergency beacon. Switched on, it transmits on **406 MHz** a coded alert that the Cospas-Sarsat satellites pick up and pass to a rescue centre. A beacon with built-in GPS sends its own position in the alert, so rescuers get it faster and more precisely; without GPS the satellites have to work the position out." },
+        { "fig": { "type": "chart", "land": "M196 0 H320 V62 Q258 74 196 40 Z", "marks": [[70, 26, "w", "satellite"], [264, 40, "w", "MRCC"], [200, 96, "r", "lifeboat"]], "track": "M70 134 L70 36 M80 28 L254 40 M190 102 L86 150", "boat": [70, 154, 0], "labels": [[78, 90, "406 MHz", "start"], [158, 150, "homing: 121.5 MHz", "start"], [86, 176, "EPIRB", "start"]], "note": "406 MHz raises the alarm · 121.5 MHz guides the rescuers in" } },
+        { "p": "The beacon also sends a weak **121.5 MHz** signal, which a lifeboat or helicopter homes in on for the final approach." },
+        { "p": "A Category I EPIRB sits in a bracket with a hydrostatic release: if the yacht sinks, it floats free and switches itself on. A **PLB** alerts through the same satellites, but it is worn by a person and registered to that person; the EPIRB is registered to the boat." }
+      ]
+    },
+    {
+      "id": "care",
+      "kicker": "Looking after it",
+      "title": "Register it, test it, own up to a false alert",
+      "refs": ["EPIRB"],
+      "blocks": [
+        { "table": { "head": ["Job", "How"], "rows": [
+          ["Registration", "Keep your details and the boat's up to date: rescuers use them to phone the owner and identify the yacht. A used boat's beacon must be re-registered to you"],
+          ["Testing", "Only the built-in self-test, as the maker's manual says. Switching the beacon on sends a live alert"],
+          ["False alert", "Switch it off and tell the coastguard or MRCC at once: the alert may already be in the system"]
+        ] } }
+      ]
+    },
+    {
+      "id": "sart",
+      "kicker": "SART",
+      "title": "A line of dots on the radar",
+      "refs": ["SART", "AIS-SART"],
+      "blocks": [
+        { "p": "A **SART** goes with you into the liferaft. It answers a ship's 9 GHz (X-band) radar and paints a line of **12 dots** on her screen. The SART is at the dot nearest the ship; the line runs on beyond it. Its range depends on height, so mount it on its pole or hold it as high as you can." },
+        { "fig": { "type": "lights", "lights": [
+          { "c": "w", "x": 160, "y": 168, "r": 5, "t": "ship" },
+          { "c": "y", "x": 160, "y": 142, "r": 2.5, "t": "SART is here" },
+          { "c": "y", "x": 160, "y": 132, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 122, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 112, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 102, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 92, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 82, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 72, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 62, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 52, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 42, "r": 2.5 },
+          { "c": "y", "x": 160, "y": 32, "r": 2.5, "t": "12th dot" }
+        ], "note": "Radar screen · the line points away from the ship" } },
+        { "p": "An **AIS-SART** does the same job another way: it transmits AIS messages with its own position and shows on any AIS display nearby, with no radar needed." }
+      ]
+    },
+    {
+      "id": "navtex",
+      "kicker": "NAVTEX",
+      "title": "Warnings in print",
+      "refs": ["NAVTEX"],
+      "blocks": [
+        { "p": "**NAVTEX** is a receiver that prints or stores safety information. International broadcasts go out on **518 kHz**, in English. All stations share that frequency and transmit in turn, so you choose which station letters, and which message types, the set keeps. Select the local stations and it stops printing warnings for seas far away." },
+        { "fig": { "type": "card", "title": "NAVTEX printout", "lines": ["ZCZC HB45", "H · the transmitting station", "B · the subject: weather warning", "45 · the number of the message", "NNNN · end of the message"] } },
+        { "table": { "head": ["Second letter", "Subject"], "rows": [
+          ["A", "Navigational warning"],
+          ["B", "Meteorological warning"],
+          ["D", "Search and rescue information"],
+          ["E", "Weather forecast"]
+        ] } }
+      ]
+    },
+    {
+      "id": "ais",
+      "kicker": "AIS",
+      "title": "An aid, not a lookout",
+      "refs": ["AIS"],
+      "blocks": [
+        { "p": "**AIS** sets broadcast a vessel's identity, position, course and speed on VHF, and plotters show them as targets. Ships carry **Class A**. Yachts usually fit **Class B**, a simpler small-craft set that transmits at lower power and reports less often." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 25, "dist": 85, "hdg": 250, "label": "No AIS" }, "note": "No targets on the plotter, yet a boat ahead" } },
+        { "p": "An empty AIS screen does not mean an empty sea. Many boats carry no AIS, and a set can be switched off. Keep a proper lookout whatever the plotter shows." }
+      ]
+    }
+  ]
+}

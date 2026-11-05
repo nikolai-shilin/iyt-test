@@ -1,0 +1,98 @@
+{
+  "topic": "skipper",
+  "lead": "On a flotilla the lead crew plans the route and stands by on the radio, but on your boat you are the skipper: responsible for the yacht, the crew and the paperwork. Most of it is routine. Learn the routine and the week runs itself.",
+  "sections": [
+    {
+      "id": "checkin",
+      "kicker": "Check-in and return",
+      "title": "What you sign for",
+      "refs": ["Check-in", "Returning the boat"],
+      "blocks": [
+        { "p": "At the base you walk round the boat with the staff and sign a **check-in sheet**. From then on, anything wrong that is not on the sheet can be charged to you at check-out. So look hard, and have every scratch written down before you sign." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["hull", "hull"], ["bow", "bow"], ["stern", "stern"], ["keel", "keel"], ["rudder", "rudder"], ["pulpit", "pulpit"], ["mainsail", "mainsail"], ["jib", "jib"], ["mast", "mast"]] }, "cap": "Walk round with the base staff and look at every part before you sign." },
+        { "p": "Count the safety gear too: a lifejacket for **every** person aboard, the liferaft within its service date, the flares in date. A missing lifejacket is put right before you leave, not noted for later." },
+        { "p": "The same care applies at the end. Return the boat as the charter agreement says, normally with a full tank: fill up at the fuel quay on the way back, or the base charges you for the fuel at its own rate." }
+      ]
+    },
+    {
+      "id": "papers",
+      "kicker": "Boat papers",
+      "title": "What the port police ask for",
+      "refs": ["Boat papers"],
+      "blocks": [
+        { "p": "Port authorities deal with the skipper. Keep three things together and ready to hand over." },
+        { "table": { "head": ["Document", "What it is"], "rows": [
+          ["Boat's papers", "The yacht's documents and the charter agreement, in the folder from the base"],
+          ["Crew list", "Everyone aboard, by name"],
+          ["Your certificate", "The valid skipper's certificate the charter was booked on"]
+        ] } },
+        { "p": "Crossing to another country, even one four miles away, means clearing out with customs and immigration on one side and in on the other, and it takes you outside the flotilla's area. A yacht arriving from abroad flies the yellow flag Q until she is cleared." },
+        { "fig": { "type": "flag", "flags": [["Q", "Q|requesting clearance"]], "note": "Flown on arrival from another country" } }
+      ]
+    },
+    {
+      "id": "briefing",
+      "kicker": "Safety briefing",
+      "title": "Before the lines are let go",
+      "refs": ["Safety briefing"],
+      "blocks": [
+        { "p": "Before the first departure, brief your crew. Show them where each item is and how it works: a lifejacket in its locker is no use to someone who has never put one on." },
+        { "list": [
+          "Lifejackets: where they are, how to fit them, when they are worn",
+          "Fire: extinguishers, fire blanket, gas shut-off",
+          "Man overboard: the lifebuoy, and what each person does",
+          "Liferaft: where it is and how it is launched",
+          "VHF: how to call for help"
+        ] },
+        { "p": "Then make sure **at least one other person** can use the VHF and bring the boat back to a casualty. If you are the one who goes overboard or gets hurt, the crew must manage without you." },
+        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["display", "channel 16"], ["distress", "DISTRESS"], ["ptt", "press to talk"], ["volume", "volume"]], "note": "Show a second person these controls" } }
+      ]
+    },
+    {
+      "id": "routine",
+      "kicker": "Flotilla routine",
+      "title": "The shape of a flotilla day",
+      "refs": ["Flotilla routine"],
+      "blocks": [
+        { "table": { "head": ["When", "What happens"], "rows": [
+          ["Morning briefing", "The lead crew gives the route, the weather, the destination and the berthing plan for the next harbour"],
+          ["Radio schedule", "The lead boat calls every yacht at set times on the flotilla's working channel"]
+        ] } },
+        { "p": "Answer every radio schedule with your **position** and your **expected time of arrival**. It is how the lead crew knows each boat is safe." },
+        { "fig": { "type": "card", "title": "17:00 radio schedule", "lines": ["Lead boat: all yachts, report in", "You: Lead boat, this is Kalliope", "Position: 5 miles north of the harbour", "ETA 18:00 · OVER"] } },
+        { "p": "The ETA is distance divided by speed. With 12 miles to go at 5 knots, 12 ÷ 5 = 2.4 hours, or 2 h 24 min: at 14:00 you report an ETA of about 16:25. If that is later than the lead crew asked, say so, or motor-sail to make it up." },
+        { "p": "Two limits are not yours to change. The **sailing area** is part of the charter terms and of the lead crew's cover: you stay inside it. And when the lead crew keeps the flotilla in harbour for weather, you stay in harbour, however keen your crew." }
+      ]
+    },
+    {
+      "id": "calls",
+      "kicker": "Who to call",
+      "title": "The coastguard for life, the lead crew for the rest",
+      "refs": ["Flotilla routine", "Damage report"],
+      "blocks": [
+        { "table": { "head": ["What has happened", "Who you tell"], "rows": [
+          ["Danger to life: a crew member unconscious after a fall", "The coastguard first, on channel 16; then the lead crew"],
+          ["A breakdown with no danger: a pump, the fridge", "The lead crew, on the working channel"],
+          ["The lead boat does not answer on VHF", "Phone the number given at the briefing"],
+          ["The engine is dead, but the boat sails well", "Sail on; call the lead crew to plan your arrival or a tow"],
+          ["Damage to the boat, however small", "The lead crew now; listed again at check-out"]
+        ] } },
+        { "p": "No danger means no distress call: a dead engine on a boat that sails is a matter for the lead crew, not the coastguard. But they must hear of it early, while they can still meet you outside the harbour." },
+        { "p": "Report **damage** at once. The lead crew can often repair it, it may affect safety, and it goes on the return report anyway." },
+        { "rule": "Life in danger: channel 16. Everything else: the lead crew." }
+      ]
+    },
+    {
+      "id": "command",
+      "kicker": "Skipper's responsibility",
+      "title": "Your boat, your decision",
+      "refs": ["Skipper's responsibility", "Harbour etiquette"],
+      "blocks": [
+        { "p": "The skipper answers for everyone aboard, and that is why the skipper decides. When you say lifejackets are worn on deck, they are worn; it is not put to a vote." },
+        { "fig": { "type": "card", "title": "Skipper's standing rules", "lines": ["Lifejackets on when the skipper says so", "No alcohol for skipper or helm until moored", "Night dinghy: sober driver, lifejackets, torch", "Anyone who has been drinking sits low"] } },
+        { "p": "**Alcohol** waits until the boat is moored: you must stay fit to command and the helm alert. The dinghy ride back from dinner is where crews get hurt, so it has a sober driver, lifejackets and a torch." },
+        { "p": "In harbour, good manners are good seamanship. When a boat reverses into the gap beside you, put a crew member on that side with a fender, ready to take a line. Tomorrow you will be the one coming in." }
+      ]
+    }
+  ]
+}

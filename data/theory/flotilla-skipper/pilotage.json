@@ -1,0 +1,92 @@
+{
+  "topic": "pilotage",
+  "lead": "The lead crew gives you the route, but you take your own boat along it. For that you read depths off the chart, turn miles into hours, steer a compass course, hold a line by eye and keep the plotter honest.",
+  "sections": [
+    {
+      "id": "chart",
+      "kicker": "Chart and pilot book",
+      "title": "Depths, datum and scale",
+      "refs": ["Chart symbols", "Chart datum & Med tide", "Harbour plans", "Charts & pilot books"],
+      "blocks": [
+        { "p": "The figures scattered over the water are **soundings**: depths in metres below **chart datum**, a level close to the lowest the sea normally reaches. An underlined figure is the opposite, a **drying height**: a rock or bank that stands that much above datum. Keep well clear of it." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V36 C250 50 200 30 140 44 C90 54 40 40 0 50 Z", "depths": [[50, 110, "14"], [120, 150, "9"], [150, 86, "0.8", true], [230, 110, "6"], [270, 160, "11"]], "labels": [[150, 104, "dries 0.8 m", "middle"]], "boat": [60, 165, 45], "note": "Depths in metres below chart datum" } },
+        { "p": "Mediterranean tides are tiny, a few tens of centimetres, so the charted depth is about the water you get. Compare it with your draft and keep a margin under the keel, at anchor and alongside." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V30 H0 Z M60 30 H80 V160 H60 Z", "depths": [[100, 62, "1.5"], [100, 102, "2.2"], [100, 142, "3.5"]], "labels": [[125, 62, "aground", "start"], [125, 102, "too tight", "start"], [125, 142, "berth here", "start"], [70, 22, "town quay", "middle"]], "panel": ["Harbour plan", "Your draft 2.0 m"], "note": "Depths in metres alongside the quay" } },
+        { "p": "**Scale** decides the detail. 1:10 000 is a larger scale than 1:50 000: a smaller area, drawn bigger. Pick your way into harbour on the largest-scale plan you have, usually the one in the pilot book." }
+      ]
+    },
+    {
+      "id": "distance",
+      "kicker": "Distance, speed, time",
+      "title": "A minute of latitude is a mile",
+      "refs": ["Chartwork", "Latitude & distance", "Time, speed & distance", "Dead reckoning"],
+      "blocks": [
+        { "p": "One minute of **latitude** is one nautical mile. So you span a leg with dividers and read it off the latitude scale at the side of the chart, level with the leg. The longitude scale along the top will not do: its minutes shrink as you go north. Two bays due north and south of each other, 8' of latitude apart, are 8 miles apart." },
+        { "table": { "head": ["You want", "Work out", "Example"], "rows": [
+          ["Time", "distance ÷ speed", "15 M ÷ 5 kn = 3 h"],
+          ["Speed", "distance ÷ time", "10 M ÷ 2.5 h = 4 kn"],
+          ["Distance", "speed × time", "6 kn × 1.5 h = 9 M"]
+        ] } },
+        { "p": "**Dead reckoning** keeps your position without the plotter: the course steered and the distance run from the last known position. Note the time you leave, and speed × time gives the miles to mark off along the course." },
+        { "fig": { "type": "chart", "marks": [[160, 160, "w"]], "track": "M160 160 V56", "boat": [160, 52, 0], "labels": [[174, 164, "10:00 · 38°40.0'N", "start"], [24, 164, "38°40'N", "start"], [24, 104, "38°45'N", "start"], [24, 44, "38°50'N", "start"], [174, 112, "9 M = 9' of latitude", "start"], [174, 56, "11:30 · 38°49.0'N", "start"]], "note": "Course 000° true, 6 kn for 1.5 h, no current" } }
+      ]
+    },
+    {
+      "id": "compass",
+      "kicker": "Compass and variation",
+      "title": "True on the chart, magnetic on the compass",
+      "refs": ["Compass & variation"],
+      "blocks": [
+        { "p": "The chart is drawn to true north; the compass points to magnetic north. The angle between them is **variation**, printed in the compass rose on the chart. In Greece, Croatia and Turkey it is a few degrees east." },
+        { "fig": { "type": "compass", "variation": 5, "course": 90, "courseLabel": "True course", "note": "Steer 085° magnetic" } },
+        { "p": "With easterly variation, subtract it going from the chart to the compass and add it coming back. A true course of 090° with 5°E is steered as 085°. A hand-bearing compass bearing of 220° is drawn on the chart as 225° true. Westerly variation works the other way." },
+        { "p": "**Deviation** is the error the boat herself adds, from metal and electronics near the compass. Check it on a line you know: on a leading line of 045° true, with 5°E variation, the steering compass should read 040°." },
+        { "rule": "Error east, compass least. Error west, compass best.", "label": "Remember" }
+      ]
+    },
+    {
+      "id": "transits",
+      "kicker": "Transits and clearing bearings",
+      "title": "Lines you can see",
+      "refs": ["Transits & leading lines", "Clearing bearings"],
+      "blocks": [
+        { "p": "Two marks in line, one behind the other, make a **transit**: a line drawn on the ground itself. While they stay in line you are on it, whatever wind and current do. A compass course cannot show that you are being set sideways; a transit shows it at once." },
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 120 }, { "c": "w", "x": 160, "y": 82 }] }, "view": "60 20 200 150", "name": "In line", "note": "rear above front: on the line" },
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 150, "y": 120 }, { "c": "w", "x": 174, "y": 82 }] }, "view": "60 20 200 150", "name": "Rear open to the right", "note": "you are right of the line: steer to port" }
+        ] },
+        { "p": "If the marks open, steer towards the front one: the rear mark to the right of the front means you are right of the line, so come to port until they close." },
+        { "p": "A **clearing bearing** fences off a danger with one compass bearing of a mark. The pilot book may say: keep the lighthouse bearing less than 070°. While your hand-bearing compass reads less, you are outside the rocks; if the bearing grows past 070°, turn offshore until it drops back." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V40 L290 40 L270 78 L245 52 L150 48 L60 44 L0 46 Z", "marks": [[270, 70, "w", "Lt"]], "depths": [[120, 64, "0.4", true], [150, 70, "1.1", true], [222, 126, "18"], [140, 176, "25"]], "track": "M270 72 L35 157", "labels": [[90, 152, "070°", "middle"]], "boat": [60, 172, 70], "note": "Lt bears 064°M, under 070°: you are clear of the rocks" } }
+      ]
+    },
+    {
+      "id": "plotter",
+      "kicker": "Chartplotter and GPS",
+      "title": "A good position on a chart that may be wrong",
+      "refs": ["Chartplotter & GPS"],
+      "blocks": [
+        { "p": "GPS gives your position to a few metres. The chart drawn under it is another matter: electronic charts can be offset by tens or hundreds of metres. If the plotter draws your boat on the land while you are afloat in deep water, the chart is wrong: trust your eyes and the echo sounder." },
+        { "p": "In a narrow pass use the plotter, and check it all the time against what is real: marks, transits, bearings and the depth. Treat **Go to** with care. It draws a straight line to the waypoint, through any headland, rock or shoal in the way. Follow that line across the chart before you follow it on the water." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V36 H210 L185 120 L150 36 H0 Z", "depths": [[70, 100, "12"], [250, 130, "9"], [120, 180, "20"]], "marks": [[290, 60, "y", "waypoint"]], "track": "M40 150 L290 60", "labels": [[118, 150, "Go to", "middle"]], "boat": [40, 150, 70], "note": "The straight line crosses the headland: go round" } }
+      ]
+    },
+    {
+      "id": "plan",
+      "kicker": "Planning the day",
+      "title": "Check every leg, then do the sums",
+      "refs": ["Passage planning"],
+      "blocks": [
+        { "p": "Before you leave, draw the day's legs on the chart and follow each one along its whole length. A sounding shallower than your draft plus a margin, a rock or a point of land on the line means you redraw the leg to pass clear." },
+        { "fig": { "type": "chart", "land": "M0 0 H120 C100 30 60 50 0 60 Z M250 200 C240 170 260 140 320 130 V200 Z", "depths": [[90, 140, "12"], [165, 118, "1.8"], [120, 92, "8"], [215, 150, "10"], [250, 80, "14"]], "track": "M40 170 L140 150 L215 118 L300 90", "boat": [40, 170, 79], "panel": ["Draft 2.1 m", "Go round the 1.8"], "note": "The leg redrawn clear of the shallow patch" } },
+        { "p": "Then add up the times, leg by leg, with the stops, and compare the result with the time the lead crew wants you in. Keep something in hand: under sail the speed is never quite what you planned." },
+        { "table": { "head": ["Step", "Sum", "Clock"], "rows": [
+          ["Leave", "—", "10:00"],
+          ["Leg 1: 10 M at 5 kn", "10 ÷ 5 = 2 h", "12:00"],
+          ["Lunch and swim", "1 h 30", "13:30"],
+          ["Leg 2: 8 M at 4 kn", "8 ÷ 4 = 2 h", "15:30"]
+        ] } }
+      ]
+    }
+  ]
+}

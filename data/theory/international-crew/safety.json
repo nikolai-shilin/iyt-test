@@ -1,0 +1,99 @@
+{
+  "topic": "safety",
+  "lead": "Almost every accident to a crew member is an ordinary one: a slip, a swinging boom, a fall over the side, a day of sun without water. The gear is simple, and it works only if you wear it, clip it on and know where it is kept.",
+  "sections": [
+    {
+      "id": "briefing",
+      "kicker": "Safety briefing",
+      "title": "Know where everything is before you sail",
+      "refs": ["Safety briefing"],
+      "blocks": [
+        { "p": "Before the boat leaves, the skipper shows the crew where the safety gear is and how it works. Every boat is laid out differently, so a briefing you heard on another yacht does not count, and neither does another guest's account of this one. If you missed it, ask the skipper to walk you through it before you sail. If something in this list was not shown, ask about it." },
+        { "table": { "head": ["Gear", "What you need to know"], "rows": [
+          ["Lifejackets and harnesses", "Which one is yours, where it is kept, how it fits"],
+          ["Fire extinguishers, fire blanket", "Where each one is"],
+          ["Flares and liferaft", "Where they are stowed"],
+          ["Gas shut-off and seacocks", "Where the valves are and how to close them"],
+          ["First-aid kit", "Where it is kept"],
+          ["Bilge pump", "Where the handle is and how to pump"]
+        ] } }
+      ]
+    },
+    {
+      "id": "lifejackets",
+      "kicker": "Lifejackets",
+      "title": "Worn, fastened and ready to fire",
+      "refs": ["Lifejackets"],
+      "blocks": [
+        { "p": "A lifejacket in a locker saves nobody. Wear it whenever there is a real risk of ending up in the water, and whenever the skipper says so." },
+        { "table": { "head": ["Wear it", "Why"], "rows": [
+          ["At night and in rough weather", "A person in the water is hard to see and hard to reach"],
+          ["In the tender, above all at night", "Small, low and easily upset, often after dinner ashore"],
+          ["Always on deck under way, if you cannot swim", "Calm weather does not help a non-swimmer"]
+        ] } },
+        { "p": "Put it on **over** all your clothes, the foul-weather jacket included: underneath, it cannot inflate properly and squeezes your chest. Pull the belt snug and fasten the **crotch strap**. Without it the inflated jacket rides up over your face or comes off over your head." },
+        { "fig": { "type": "card", "title": "Lifejacket check before sailing", "lines": ["Indicators: green, not red", "Gas cylinder: screwed in tight", "Belt and crotch strap: fitted to you", "Red, loose or fired: hand it to the skipper"] } },
+        { "p": "An **automatic** lifejacket inflates from a small gas cylinder when it gets wet, and it does so once. After it has fired, letting the air out is not enough: it needs a re-arming kit fitted before it will inflate again." }
+      ]
+    },
+    {
+      "id": "deck",
+      "kicker": "Moving on deck",
+      "title": "One hand for yourself, one for the boat",
+      "refs": ["Moving on deck", "Personal safety"],
+      "blocks": [
+        { "p": "On a moving deck one hand always holds on: carry less and go twice. The boom is no handhold, it swings. Wear **deck shoes** with soft, non-slip, non-marking soles; flip-flops come off your feet." },
+        { "fig": { "type": "encounter", "you": { "hdg": 45, "sail": true, "boom": 14 }, "other": { "dist": 0 }, "wind": 0, "note": "Heeling: go forward along the port side, the high one" } },
+        { "p": "When the boat heels, go forward along the **windward** side, the high one, and keep low. If you slip there, you fall onto the deck. On the low side you fall towards the water, over the guardrail." },
+        { "p": "Seasickness is the exception: be sick over the **leeward** rail, so that it blows away from the boat. But that is the rail people fall over, so the sick person is clipped on and somebody stays with them." }
+      ]
+    },
+    {
+      "id": "clip",
+      "kicker": "Harness and tether",
+      "title": "Clip on before you need it",
+      "refs": ["Harness and tether", "Personal safety"],
+      "blocks": [
+        { "p": "A lifejacket keeps you afloat; a **tether** keeps you on board, which is better. One end clips to the harness, the other to a **strong point** made for it or to a **jackstay**, the line laid along each side deck. Never clip to a guardrail, a stanchion or anything that moves: they are not built to stop a falling person." },
+        { "fig": { "type": "rope", "kind": "ring", "labels": [[160, 40, "strong point"], [215, 150, "tether", "start"]] }, "cap": "A strong point and a jackstay are made to take the load of a falling person." },
+        { "list": [
+          "Clip on in the companionway, before you step out into the cockpit.",
+          "With two hooks, clip the second one on before you unclip the first: you are never loose.",
+          "Before you go forward: lifejacket fastened, clipped on, the helmsman told.",
+          "At night never leave the cockpit alone. Wake someone first: if you went over the side, nobody would know."
+        ] },
+        { "p": "\"Clip on at night\" has no fine-weather exception. On a calm, starry night a person in the water is just as hard to find." },
+        { "rule": "Clip on first, then move." }
+      ]
+    },
+    {
+      "id": "boom",
+      "kicker": "The boom",
+      "title": "Keep your head below it",
+      "refs": ["Boom awareness"],
+      "blocks": [
+        { "p": "The **boom** is the heaviest moving thing on deck, and in the cockpit it passes at head height. On a run in a rolling sea the wind can get behind the mainsail and throw the boom across without warning: an accidental gybe. A line called a **preventer** can hold the boom out; if none is rigged, treat the boom as ready to move." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 170 }, "name": "On a run", "note": "the boom can fly across" },
+          { "fig": { "type": "boat", "view": "side", "parts": [["boom", "boom"]] }, "name": "In the cockpit", "note": "the boom is at head height" }
+        ], "cols": 2 },
+        { "p": "Crossing the cockpit, stay low and do not stand up under the boom. In a tack or a gybe keep your head down until the boom has gone across." }
+      ]
+    },
+    {
+      "id": "sun",
+      "kicker": "Sun and heat",
+      "title": "Drink before you are thirsty",
+      "refs": ["Heat and dehydration", "Sun protection"],
+      "blocks": [
+        { "p": "A breeze cools your skin but does not stop the sun: on the water it burns all day, and its glare comes back off the sea. Dehydration creeps up the same way, because thirst arrives late. A tired crew member with a headache makes mistakes on deck." },
+        { "table": { "head": ["Risk", "What you do"], "rows": [
+          ["Sunburn", "Hat, long sleeves, sunscreen put on again through the day"],
+          ["Glare", "Sunglasses"],
+          ["Dehydration", "Water often, before you feel thirsty; alcohol dries you out further"],
+          ["Overheating", "Shade when you are off watch; tell the skipper if you feel dizzy or sick"]
+        ] } }
+      ]
+    }
+  ]
+}

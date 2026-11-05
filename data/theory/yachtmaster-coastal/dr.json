@@ -1,0 +1,100 @@
+{
+  "topic": "dr",
+  "lead": "Between fixes, heading, log and clock carry your position forward. Add leeway and stream for an estimated position; turn the triangle round for the course to steer.",
+  "sections": [
+    {
+      "id": "convert",
+      "kicker": "Compass conversions",
+      "title": "True on the chart, compass at the helm",
+      "refs": ["Chartwork — compass conversions"],
+      "blocks": [
+        { "p": "**Variation** comes from the chart's rose; **deviation** from the steering compass's card for the heading you are on: read it again for each new heading." },
+        { "fig": { "type": "compass", "variation": 4, "deviation": -2, "course": 58, "courseLabel": "Course (T)", "note": "054°M, then 056°C" } },
+        { "rule": "True to compass: subtract east, add west. Compass to true: the reverse." },
+        { "p": "By the **1 in 60 rule** one degree of error is a mile off track after 60 miles." }
+      ]
+    },
+    {
+      "id": "dr",
+      "kicker": "Dead reckoning",
+      "title": "Heading, log and clock",
+      "refs": ["Chartwork — DR position", "Chartwork — speed, time, distance", "Chartwork — plotting symbols", "Navigation — the log and its error"],
+      "blocks": [
+        { "p": "A **DR position** is the true course steered and the distance run through the water, laid off from the last fix. Distance is speed × time, with time in decimal hours: 1 h 12 min is 1.2 h." },
+        { "fig": { "type": "chart", "land": "M0 0 H60 C50 40 30 80 0 110 Z", "depths": [[110, 70, "32"], [160, 150, "41"], [250, 130, "45"]], "marks": [[70, 160, "k", ""], [170, 102, "w", "1412 DR"]], "track": "M70 160 L170 102", "labels": [[70, 180, "1300 fix", "middle"]], "panel": ["1300 fix", "Steering 060°T", "Log 5.0 kn"], "note": "1.2 h × 5.0 kn = 6.0 M along 060°T" } },
+        { "p": "Mark a DR with a line across the track, an EP with a triangle, a fix with a circle, each with its time. Legs on different headings go end to end." },
+        { "p": "Check the **log**: at slack water it should agree with the SOG; a fouled paddlewheel under-reads. Over a measured distance take the mean speed of two opposite runs. A log showing 2.2 M for 2.0 over-reads: divide by 1.1. If it fails, take speed from the engine revs, not the SOG." }
+      ]
+    },
+    {
+      "id": "log",
+      "kicker": "The log book",
+      "title": "Write it down while the plotter works",
+      "refs": ["Navigation — the log book", "Navigation — keeping the plot at night", "Navigation — DR in fog"],
+      "blocks": [
+        { "p": "A plot can be rebuilt only from what was written: time, log reading and the heading really steered, each hour and at each alteration, with a position on paper. Then a dead plotter costs an hour of DR, not the night." },
+        { "table": { "head": ["Time", "Log", "Steered", "Note"], "rows": [
+          ["0100", "41.2", "255°C", "Fix"],
+          ["0200", "46.0", "255°C", "DR: 4.8 M, 252°T"]
+        ] } },
+        { "p": "In **fog**, slow down and work each stretch at its own speed. Closing a coast blind, aim to one side of the harbour by more than your likely error: then you know which way to turn. Near dangers plot every six minutes: a tenth of the speed." }
+      ]
+    },
+    {
+      "id": "ep",
+      "kicker": "Estimated position",
+      "title": "Add leeway, then the stream",
+      "refs": ["Chartwork — estimated position", "Chartwork — leeway", "Chartwork — ground track and water track", "Tidal streams — diamonds and atlases"],
+      "blocks": [
+        { "p": "**Leeway** pushes the boat away from the wind: wind on the port side, add it to the heading; on the starboard side, subtract. Greatest close-hauled, nil on a run, it shows as the angle between wake and stern. The result is the **water track**." },
+        { "fig": { "type": "sail", "wind": 40, "hdg": 90, "nogo": true, "note": "Heading 090°T · leeway 7° · water track 097°T" } },
+        { "p": "From the end of the water track lay off the **tidal stream**: its set, the direction it flows towards, and rate × time. That point is the **EP**; the line from the fix to it is the **ground track**, the one to check against dangers. Arrowheads: water track one, ground track two, stream three." },
+        { "fig": { "type": "chart", "marks": [[40, 110, "k", "0700 fix"], [160, 150, "w", ""]], "track": "M40 110 L160 110 L160 150 M40 110 L160 150", "labels": [[112, 102, "water track 6.0 M", "middle"], [166, 134, "stream 2.0 M", "start"], [160, 170, "0800 EP", "middle"], [70, 150, "ground track", "middle"]], "depths": [[90, 60, "48"], [250, 170, "62"], [100, 185, "55"]], "panel": ["0700 fix", "Heading 090°T", "Log 6.0 kn", "Set 180°T 2.0 kn"], "note": "EP: 108°T, 6.3 M from the fix" } },
+        { "p": "Take the stream from a tidal diamond or the atlas; each hourly value serves half an hour either side. Interpolate the rate by the day's range, even beyond springs. On your track the diamond beats the atlas." },
+        { "fig": { "type": "card", "title": "Rate from a diamond", "lines": ["Diamond: neaps 1.2 kn, springs 2.4 kn", "Mean ranges: neaps 2.0 m, springs 5.0 m", "Today's range 4.0 m: 2/3 of the way up", "Rate 1.2 + 2/3 × 1.2 = 2.0 kn", "In 40 minutes: 2.0 × 40/60 = 1.3 M"] } }
+      ]
+    },
+    {
+      "id": "cts",
+      "kicker": "Course to steer",
+      "title": "Turn the triangle round",
+      "refs": ["Chartwork — course to steer", "Chartwork — cross-tide passages"],
+      "blocks": [
+        { "p": "Across a stream you aim up-tide. Find the angle by drawing:" },
+        { "list": [
+          "From your best position, fix or EP, draw the track through the destination.",
+          "From the same point lay off the stream for the period.",
+          "From its end swing an arc of boat speed for that period to cut the track.",
+          "That line is the course to steer; start to cut is the distance made good."
+        ] },
+        { "fig": { "type": "chart", "marks": [[40, 150, "k", ""], [290, 150, "y", "B"], [231, 150, "w", ""]], "track": "M40 150 L290 150 M40 150 L40 90 L231 150", "labels": [[40, 170, "A", "middle"], [46, 124, "1.5 M", "start"], [140, 104, "steer 107°T", "middle"], [136, 166, "made good 4.8 M", "middle"]], "depths": [[100, 50, "38"], [270, 185, "44"]], "panel": ["1-hour triangle", "Track 090°T", "Speed 5.0 kn", "Set 000°T 1.5 kn"], "note": "Steer 107°T · SOG 4.8 kn" } },
+        { "p": "Never join the stream to the destination. If the arc cuts beyond it, rework with the shorter time. A slower boat needs a bigger angle; a stream across the track faster than the boat leaves no answer. Then steer into the wind by the leeway and convert to compass." },
+        { "p": "For a long crossing lay off every hour's stream end to end and swing one arc for the whole time. On that **one course** the ground track bows down-tide and returns as the stream turns: the shortest way through the water. Do not chase the cross-track error or point at the waypoint; where the curve crosses a danger, work each hour's course." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V22 H0 Z", "marks": [[110, 170, "k", "A"], [110, 40, "y", "B"]], "track": "M110 170 L110 40 M110 170 Q170 105 110 40", "labels": [[150, 108, "ground track", "start"]], "depths": [[50, 120, "64"], [240, 160, "71"]], "panel": ["Crossing 4 h", "h1–2: E 2.0 kn", "h3–4: W 2.0 kn"], "note": "The streams cancel: steer 000°T all the way" } }
+      ]
+    },
+    {
+      "id": "eta",
+      "kicker": "Speed made good",
+      "title": "When you will arrive",
+      "refs": ["Chartwork — speed made good and ETA", "Passage making — motor-sailing against the tide"],
+      "blocks": [
+        { "p": "The ETA comes from the speed made good over the ground: the SOG from the triangle, or log speed plus a fair stream, less a foul one. Mind the decimals: 0.4 h is 24 minutes." },
+        { "fig": { "type": "card", "title": "ETA: worked example", "lines": ["1350: 14.0 M to go", "Log 6.0 kn, stream 1.5 kn foul: SOG 4.5 kn", "14.0 ÷ 4.5 = 3.11 h = 3 h 07 min", "ETA 1350 + 3 h 07 = 1657", "One knot more, SOG 5.5 kn: 2 h 33 min", "34 minutes saved, for more fuel"] } },
+        { "p": "The plotter's ETA assumes the present SOG lasts: if the stream will turn, work each stretch yourself. Beating, tacks 45° off the bearing make good 0.7 of your speed. Against a foul stream each extra knot counts for more: weigh the time saved against the fuel." }
+      ]
+    },
+    {
+      "id": "plotter",
+      "kicker": "Plotter and errors",
+      "title": "COG and SOG include the stream",
+      "refs": ["Navigation — the plotter: heading, COG, SOG", "Chartwork — accuracy of DR and EP", "Chartwork — EP against the fix"],
+      "blocks": [
+        { "p": "Heading and log are through the water; **COG** and **SOG** are over the ground, stream and leeway included. The COG line, not the bow, shows where you are going. Never add the stream to them: it would count twice." },
+        { "fig": { "type": "panel", "gauges": [["HDG", "090°T", false], ["COG", "090°T", false], ["SOG", "6.8 kn", false]], "lines": ["Log 5.5 kn", "Same direction, 1.3 kn faster: a fair stream"] } },
+        { "p": "The plotter's own course to steer is just the bearing back to the route, stream ignored. At low speed in a swell COG and SOG jump: use compass and log." },
+        { "p": "An EP is an area that grows every hour since the fix. At the next fix, read the gap: along the track it is the log or the stream's rate; across it, heading, leeway or set. From a plain DR to the fix is the stream you had: 2.4 M in two hours is 1.2 kn. Restart from the fix." }
+      ]
+    }
+  ]
+}

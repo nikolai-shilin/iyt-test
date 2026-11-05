@@ -1,0 +1,96 @@
+{
+  "topic": "weather",
+  "lead": "In a flotilla the lead crew gives you the forecast every morning, but the decision to reef, to wait or to move the boat is still yours. Learn to read a forecast, the barometer and the local winds of the Ionian and the Aegean.",
+  "sections": [
+    {
+      "id": "forecast",
+      "kicker": "Forecasts",
+      "title": "Where the forecast comes from, and which one to trust",
+      "refs": ["Forecast sources", "Reading a forecast"],
+      "blocks": [
+        { "p": "Your first source is the lead crew's morning briefing. On your own, the **official forecast** comes from the national met service: coast stations read it on VHF at set times, **NAVTEX** prints it aboard, and harbour offices post it. A warning is announced on channel 16 with the word SÉCURITÉ and read out on a working channel: switch to the channel given, listen, then go back to 16." },
+        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["display", "warning announced on 16"], ["ch16", "then back to 16"]], "note": "The text is read on the working channel named" } },
+        { "p": "A phone app shows raw model output and misses local effects. Plan on the official forecast and its warnings; when two forecasts disagree, plan on the worse one." },
+        { "table": { "head": ["Forecast says", "It means"], "rows": [
+          ["NW 4 to 5", "From the northwest, force 4–5 on the Beaufort scale"],
+          ["Locally 6", "Stronger in places: round capes and in channels between islands, where the wind is squeezed"],
+          ["Gusts 25 kn", "Short bursts well above the mean wind"]
+        ] } }
+      ]
+    },
+    {
+      "id": "beaufort",
+      "kicker": "Wind strength",
+      "title": "Beaufort force, and the gusts on top",
+      "refs": ["Beaufort scale", "Gusts"],
+      "blocks": [
+        { "p": "Forecasts give the wind as a **Beaufort force**, named from the mean speed. For a charter yacht with a holiday crew, force 4 is a fine sailing day, force 5 wants a reef, and force 7 is a day in harbour." },
+        { "table": { "head": ["Force", "Knots", "Name", "What you do"], "rows": [
+          ["3", "7–10", "Gentle breeze", "Full sail"],
+          ["4", "11–16", "Moderate breeze", "Full sail, a good day"],
+          ["5", "17–21", "Fresh breeze", "Reef before you leave"],
+          ["6", "22–27", "Strong breeze", "Deep reefs, sheltered legs only"],
+          ["7", "28–33", "Near gale", "Stay in harbour"]
+        ] } },
+        { "p": "The force is a mean. **Gusts** run well above it, and they are what overpowers the boat, so set your sails for the gusts. A forecast of 15 knots gusting 25 is force 4 with force 6 in it. Reef in harbour, where it is easy, not outside in the gusts." },
+        { "fig": { "type": "panel", "gauges": [["Mean", "16 kn", false], ["Gusts", "24 kn", true], ["Force", "4", false]], "lines": ["Wind instrument at the quay", "Mean force 4, gusts force 6: reef"] } }
+      ]
+    },
+    {
+      "id": "pressure",
+      "kicker": "Isobars and barometer",
+      "title": "What the pressure tells you",
+      "refs": ["Isobars", "Barometer"],
+      "blocks": [
+        { "p": "A forecast chart joins places of equal pressure with lines called **isobars**. Read their spacing: packed close, the wind is strong; wide apart, it is light. Under a summer high expect little wind, and allow time and fuel for motoring." },
+        { "tiles": [
+          { "fig": { "type": "isobars", "center": "L", "tight": true, "values": ["992", "996", "1000"], "boat": [205, 150, 0] }, "name": "Close together", "note": "strong wind" },
+          { "fig": { "type": "isobars", "center": "H", "values": ["1024", "1020", "1016"], "boat": [160, 140, 0] }, "name": "Wide apart", "note": "light wind, some motoring" }
+        ] },
+        { "p": "Aboard, the **barometer** gives the trend. One reading means little; write it down every few hours. A steady fall of about 1 hPa an hour, with high cloud thickening, says a low is on its way and the wind will rise." },
+        { "rule": "Close isobars, strong wind. Falling barometer, rising wind." }
+      ]
+    },
+    {
+      "id": "local",
+      "kicker": "Local winds",
+      "title": "What the land does to the wind",
+      "refs": ["Local winds", "Sea breezes", "Gusts off high land", "Wind shifts"],
+      "blocks": [
+        { "p": "On a hot settled day the land heats up and draws in a **sea breeze** from around midday until evening. It blows onshore, so a calm lunch stop off a beach becomes a **lee shore**. The Ionian's summer northwesterly keeps the same clock: a calm morning, a breeze building from late morning to about force 4, gone around sunset." },
+        { "p": "High land makes its own wind. At night cold air pours down the valleys in hard gusts, so anchor well clear of a valley mouth." },
+        { "fig": { "type": "bay", "wind": 0, "land": "M0 0 H320 V70 C280 75 250 60 225 30 L205 30 C185 70 150 90 100 85 C60 82 30 95 0 100 Z", "spots": [[215, 70, "A"], [95, 118, "B"]], "labels": [[215, 22, "valley", "middle"], [100, 40, "high hills", "middle"]], "note": "Night gusts come down the valley: B, not A" } },
+        { "p": "A wind shift can open your bay to the sea. The wind **veers** when it shifts clockwise, south to west for example, and **backs** when it shifts anticlockwise. Before dark, ask where tonight's wind will come from, and move if the bay will be open to it." },
+        { "fig": { "type": "bay", "wind": 180, "land": "M60 0 H320 V200 H60 C90 185 140 150 230 145 C250 120 250 80 230 55 C140 50 90 15 60 0 Z", "spots": [[195, 100, "•"]], "labels": [[176, 104, "you", "end"], [30, 104, "open sea", "middle"]], "note": "South now, veering west: open to the wind" } }
+      ]
+    },
+    {
+      "id": "meltemi",
+      "kicker": "Meltemi",
+      "title": "The Aegean's summer northerly",
+      "refs": ["Meltemi"],
+      "blocks": [
+        { "p": "The **Meltemi** blows over the Aegean in summer, hardest in July and August: from the northeast in the north, from the north in the Cyclades, from the northwest in the Dodecanese. It is a fair-weather wind. The sky is clear and the barometer steady while it blows force 6 to 7, so the sky gives no warning. Only the forecast does." },
+        { "fig": { "type": "bay", "wind": 0, "land": "M40 62 C60 47 95 52 100 72 C104 92 70 102 50 94 C35 88 30 72 40 62 Z M150 97 C175 87 205 97 205 117 C203 137 165 140 150 127 C140 117 140 104 150 97 Z M225 42 C245 34 270 42 268 60 C264 74 235 74 226 62 C220 54 220 46 225 42 Z", "spots": [], "labels": [[160, 24, "Cyclades, August", "middle"], [150, 166, "dawn F4 · afternoon F6–7", "middle"]], "note": "Clear sky, steady barometer, wind from the north" } },
+        { "table": { "head": ["When", "What to expect"], "rows": [
+          ["Early morning", "Lightest: the time to make your miles"],
+          ["Afternoon", "Strongest, often force 6–7"],
+          ["The days after", "More of the same: it often blows for days on end"]
+        ] } },
+        { "p": "If a leg must be made, leave at first light and be in by midday. Do not count on it blowing itself out overnight: plan on the forecast, keep to sheltered legs or stay put, and ask the lead crew for a route." }
+      ]
+    },
+    {
+      "id": "decision",
+      "kicker": "Go or no-go",
+      "title": "Deciding whether to sail",
+      "refs": ["Go / no-go decision", "Thunderstorms & squalls"],
+      "blocks": [
+        { "p": "The forecast is half of the decision; your boat and crew are the other half. Weigh the wind with its gusts, its direction (upwind is slower, wetter and harder), the hours the leg will take and what your crew can stand. A leg to windward takes far longer than its miles suggest: you tack, and the sea slows you. If the answer is doubtful, stay: nobody regrets a day in harbour." },
+        { "fig": { "type": "card", "title": "Go or no-go?", "lines": ["Force and gusts: within your limit?", "Upwind or downwind? How many hours?", "Crew: rested, experienced, willing?", "Shelter on the way if it gets worse?"] } },
+        { "p": "**Thunderstorms** are the exception to a quiet forecast. A tall dark cloud building over the land in the afternoon, then thunder, means a sudden violent squall. Reef or drop the sails before it reaches you, not when it hits." },
+        { "rule": "Reduce sail before the wind arrives. If you wonder whether to reef, reef.", "label": "Remember" }
+      ]
+    }
+  ]
+}

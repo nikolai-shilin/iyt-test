@@ -80,8 +80,8 @@ let LANG = 'en';
 /* ---------- interface strings ---------- */
 // Plural forms: en [one, many]; ru [one, few, many] (1 вопрос, 2 вопроса, 5 вопросов).
 const PL = {
-  en: { question: ['question', 'questions'], topic: ['topic', 'topics'], mistake: ['mistake', 'mistakes'], exam: ['exam', 'exams'], day: ['day', 'days'], minute: ['minute', 'minutes'], student: ['student', 'students'] },
-  ru: { question: ['вопрос', 'вопроса', 'вопросов'], topic: ['тема', 'темы', 'тем'], topicAcc: ['тему', 'темы', 'тем'], mistake: ['ошибка', 'ошибки', 'ошибок'], exam: ['экзамен', 'экзамена', 'экзаменов'], day: ['день', 'дня', 'дней'], minute: ['минута', 'минуты', 'минут'], student: ['ученик', 'ученика', 'учеников'] },
+  en: { question: ['question', 'questions'], topic: ['topic', 'topics'], mistake: ['mistake', 'mistakes'], exam: ['exam', 'exams'], day: ['day', 'days'], minute: ['minute', 'minutes'], student: ['student', 'students'], picture: ['picture', 'pictures'] },
+  ru: { question: ['вопрос', 'вопроса', 'вопросов'], topic: ['тема', 'темы', 'тем'], topicAcc: ['тему', 'темы', 'тем'], mistake: ['ошибка', 'ошибки', 'ошибок'], exam: ['экзамен', 'экзамена', 'экзаменов'], day: ['день', 'дня', 'дней'], minute: ['минута', 'минуты', 'минут'], student: ['ученик', 'ученика', 'учеников'], picture: ['рисунок', 'рисунка', 'рисунков'] },
 };
 function word(n, key) {
   const f = (PL[LANG][key] || PL.en[key] || PL[LANG][key.replace(/Acc$/, '')]);
@@ -94,6 +94,15 @@ const pl = (n, key) => `${n} ${word(n, key)}`;
 const STR = {
   en: {
     learn: 'Learn', exam: 'Exam', progress: 'Progress', profile: 'Profile', back: '‹ Back',
+    theory: 'Theory', theoryLead: 'The same topics as the questions. Read one, then practise it.', theorySoon: 'The articles for this course are being written.',
+    readOf: (r, n) => `read ${r} of ${n}`, read: 'read', readTheory: 'Read', theoryMeta: (m, p) => `${m} min · ${pl(p, 'picture')}`, theoryNone: 'not written yet',
+    theoryErr: 'The theory did not load. Check the connection and try again.', theoryK: (i, n, m) => `Theory · topic ${i} of ${n} · ${m} min`,
+    practiseTopicN: (n) => `Practise · ${pl(n, 'question')}`, ruleK: 'Rule', prevTopic: (i) => `‹ Topic ${i}`, nextTopic: (i) => `Topic ${i} ›`,
+    inEnglish: 'This article is in English for now.', courses: 'Courses', backToQuestion: 'Back to the question',
+    noteHint: 'Report a mistake in this section', noteTitle: 'What is wrong here?', noteLead: 'A fact, a picture, a translation, a typo: say what you noticed. The author reads every report.',
+    notePh: 'For example: a south cardinal mark flashes Q(6)+LFl, not Q(9)', noteSend: 'Send', noteSave: 'Save the changes', noteDrop: 'Withdraw the report',
+    noteSent: 'Reported — thank you', noteLocal: 'Saved on this device. Open the app in Telegram to send it.', noteFoot: 'Found a mistake? Tap the flag beside the heading of that section.',
+    notesK: 'Articles', readUpK: 'Where to read', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Coming soon', soon2027: 'Coming in 2027', planned: 'Planned',
     homeKicker: 'IYT theory · free', homeTitle: 'Pass your IYT&nbsp;exam',
     homeLead: 'Close-to-real questions for every certification level, with an explanation after each answer. Pick the level you are studying for.',
@@ -104,7 +113,7 @@ const STR = {
     mastered: 'mastered', covered: 'covered', halfway: 'right once', halfwayN: (n) => `+${n} right once`, moreLevels: 'More levels',
     fbK: 'Feedback?', fbRole: 'Author of IYT Test', fbText: 'Found a mistake in a question, missing a topic or have an idea? Write to me on Telegram, I read every message.', fbBtn: 'Write on Telegram',
     ringLabel: (s, m) => `${s}% seen · ${m}% mastered`, answers: 'Answer options', figure: 'Figure',
-    figNames: { anchor: 'Anchorage sketch', bay: 'Bay chart', buoy: 'Buoy', card: 'Notes', chart: 'Chart extract', compass: 'Compass rose', dayshape: 'Day shape', encounter: 'Two vessels meeting', isobars: 'Weather map', lights: 'Navigation lights', panel: 'Instrument panel', rope: 'Rope and knot', sail: 'Sailing boat and wind' }, timeLeft: 'Time left', fiveLeft: '5 minutes left',
+    figNames: { anchor: 'Anchorage sketch', boat: 'Parts of a yacht', lines: 'Mooring lines', radio: 'VHF set', flag: 'Signal flags', tide: 'Tidal curve', sphere: 'Celestial sphere', altitude: 'Sextant altitude', bay: 'Bay chart', buoy: 'Buoy', card: 'Notes', chart: 'Chart extract', compass: 'Compass rose', dayshape: 'Day shape', encounter: 'Two vessels meeting', isobars: 'Weather map', lights: 'Navigation lights', panel: 'Instrument panel', rope: 'Rope and knot', sail: 'Sailing boat and wind' }, timeLeft: 'Time left', fiveLeft: '5 minutes left',
     nextLevelK: 'Next level', open: 'Open', resetNothing: 'Nothing to reset yet', retry: 'Try again', allTopicsChip: 'All topics',
     longSession: 'A long one — quit any time, your answers are kept.', reportHint: 'Report a mistake in this question',
     levelText: (m, n, h, sn) => `${sn} of ${n} seen so far. ${h ? `${h} right once, ` : ''}${m} mastered — right twice in a row.`,
@@ -194,6 +203,15 @@ const STR = {
   },
   ru: {
     learn: 'Учёба', exam: 'Экзамен', progress: 'Прогресс', profile: 'Профиль', back: '‹ Назад',
+    theory: 'Теория', theoryLead: 'Те же темы, что и в вопросах. Прочитайте тему, затем потренируйтесь.', theorySoon: 'Статьи для этого курса ещё пишутся.',
+    readOf: (r, n) => `прочитано ${r} из ${n}`, read: 'прочитано', readTheory: 'Читать', theoryMeta: (m, p) => `${m} мин · ${pl(p, 'picture')}`, theoryNone: 'ещё не написана',
+    theoryErr: 'Теория не загрузилась. Проверьте соединение и попробуйте ещё раз.', theoryK: (i, n, m) => `Теория · тема ${i} из ${n} · ${m} мин`,
+    practiseTopicN: (n) => `Тренировка · ${pl(n, 'question')}`, ruleK: 'Правило', prevTopic: (i) => `‹ Тема ${i}`, nextTopic: (i) => `Тема ${i} ›`,
+    inEnglish: 'Эта статья пока на английском.', courses: 'Курсы', backToQuestion: 'Назад к вопросу',
+    noteHint: 'Сообщить об ошибке в этом разделе', noteTitle: 'Что здесь не так?', noteLead: 'Факт, рисунок, перевод, опечатка — напишите, что вы заметили. Автор читает каждое сообщение.',
+    notePh: 'Например: южный кардинальный знак — Q(6)+LFl, а не Q(9)', noteSend: 'Отправить', noteSave: 'Сохранить', noteDrop: 'Отозвать сообщение',
+    noteSent: 'Сообщили — спасибо', noteLocal: 'Сохранено на этом устройстве. Чтобы отправить, откройте приложение в Telegram.', noteFoot: 'Нашли ошибку? Нажмите флажок рядом с заголовком раздела.',
+    notesK: 'Статьи', readUpK: 'Что почитать', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Скоро', soon2027: 'В 2027 году', planned: 'В планах',
     homeKicker: 'Теория IYT · бесплатно', homeTitle: 'Сдайте экзамен&nbsp;IYT',
     homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа. Выберите уровень, к которому готовитесь.',
@@ -204,7 +222,7 @@ const STR = {
     mastered: 'освоено', covered: 'пройдено', halfway: 'верно 1 раз', halfwayN: (n) => `+${n} верно 1 раз`, moreLevels: 'Другие уровни',
     fbK: 'Есть отзыв?', fbRole: 'Автор IYT Test', fbText: 'Нашли ошибку в вопросе, не хватает темы или есть идея? Напишите мне в Telegram — читаю каждое сообщение.', fbBtn: 'Написать в Telegram',
     ringLabel: (s, m) => `${s}% пройдено · ${m}% освоено`, answers: 'Варианты ответа', figure: 'Рисунок',
-    figNames: { anchor: 'Схема якорной стоянки', bay: 'Карта бухты', buoy: 'Буй', card: 'Заметки', chart: 'Фрагмент карты', compass: 'Картушка компаса', dayshape: 'Дневной знак', encounter: 'Расхождение двух судов', isobars: 'Карта погоды', lights: 'Навигационные огни', panel: 'Приборная панель', rope: 'Трос и узел', sail: 'Парусная яхта и ветер' }, timeLeft: 'Осталось времени', fiveLeft: 'Осталось 5 минут',
+    figNames: { anchor: 'Схема якорной стоянки', boat: 'Устройство яхты', lines: 'Швартовы', radio: 'УКВ-радиостанция', flag: 'Сигнальные флаги', tide: 'Кривая прилива', sphere: 'Небесная сфера', altitude: 'Высота светила', bay: 'Карта бухты', buoy: 'Буй', card: 'Заметки', chart: 'Фрагмент карты', compass: 'Картушка компаса', dayshape: 'Дневной знак', encounter: 'Расхождение двух судов', isobars: 'Карта погоды', lights: 'Навигационные огни', panel: 'Приборная панель', rope: 'Трос и узел', sail: 'Парусная яхта и ветер' }, timeLeft: 'Осталось времени', fiveLeft: 'Осталось 5 минут',
     nextLevelK: 'Следующий уровень', open: 'Открыть', resetNothing: 'Сбрасывать пока нечего', retry: 'Повторить', allTopicsChip: 'Все темы',
     longSession: 'Долгая тренировка — выйти можно в любой момент, ответы сохранятся.', reportHint: 'Сообщить об ошибке в вопросе',
     levelText: (m, n, h, sn) => `Видели ${sn} из ${n}. ${h ? `Верно один раз: ${h}, ` : ''}освоено: ${m} — верно дважды подряд.`,
@@ -303,7 +321,7 @@ const FIG_RU = {
   'Light at night': 'Огонь ночью', 'N (true)': 'N ист.', MN: 'N магн.', Variation: 'Склонение', Deviation: 'Девиация',
   'True course': 'ИК', W: 'W', E: 'E', 'Depths in metres below chart datum': 'Глубины в метрах от нуля глубин',
   Anchoring: 'Якорная стоянка', 'Northern hemisphere': 'Северное полушарие',
-  zone: 'зона', pin: 'знак', RC: 'ГК', A: 'A', B: 'B', C: 'C', D: 'D',
+  zone: 'зона', pin: 'знак', RC: 'ГК', LW: 'МВ', HW: 'ПВ', A: 'A', B: 'B', C: 'C', D: 'D',
 };
 
 /* ---------- small helpers ---------- */
@@ -334,7 +352,7 @@ function figHtml(q) {
   if (f.type === 'card') return `<div class="figcard">${f.tag ? `<span class="figtag">${esc(f.tag)}</span>` : ''}<span class="kicker">${esc(f.title || '')}</span>` +
     `<ul>${cardItems(f.lines || []).map((l) => `<li>${l.map(esc).join('<br>')}</li>`).join('')}</ul></div>`;
   const label = f.note || f.title || t('figNames')[f.type] || t('figure');
-  return `<div class="fig${f.type === 'lights' ? ' night' : ''}" role="img" aria-label="${esc(label)}">${figSvg(f).replace('<svg ', '<svg aria-hidden="true" focusable="false" ')}</div>`;
+  return `<div class="fig${f.type === 'lights' ? ' night' : FIG_DAY.has(f.type) ? ' day' : ''}" role="img" aria-label="${esc(label)}">${figSvg(f).replace('<svg ', '<svg aria-hidden="true" focusable="false" ')}</div>`;
 }
 
 function hap(kind) {
@@ -353,7 +371,7 @@ function toast(text) {
 /* ---------- state: mastery per question, activity per day, exams; saved locally and to CloudStorage ---------- */
 // q[id] = [last two results as '0'/'1', wrong count]. Mastered = right twice in a row (docs/data-model.md).
 const KEY = 'iyt-test-state-v1';
-const fresh = () => ({ v: 1, ts: 0, q: {}, days: {}, total: 0, flags: [], wrong: [], exams: [], exam: null, held: {}, last: null, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
+const fresh = () => ({ v: 1, ts: 0, q: {}, days: {}, total: 0, flags: [], wrong: [], exams: [], exam: null, held: {}, last: null, read: {}, notes: {}, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
 let S = fresh();
 const merge = (o) => { const f = fresh(); return { ...f, ...o, set: { ...f.set, ...(o && o.set) } }; };
 
@@ -542,6 +560,77 @@ async function loadOverlay(lang, lv = LEVEL.id) {
   if (lang === 'en' || k in OVERLAY) return;
   await (OVERLAY_LOADS[k] = OVERLAY_LOADS[k] || fetchBank(lv, lang).catch(() => null).then((o) => { OVERLAY[k] = o && o.questions ? o : null; }));
 }
+/* ---------- theory: one article per topic (docs/theory.md), a level's articles in one file per language ---------- */
+// What build.mjs wrote into index.html: level id → { en, ru: the theory files, t: the topics that have an article }.
+const THEORY_FILES = window.THEORY || {};
+const THEORY = {};       // '<level>.<lang>' → { topics: { id: article } }, or null when it did not load
+const THEORY_LOADS = {};
+const hasTheory = (id = LEVEL.id) => !!(THEORY_FILES[id] && THEORY_FILES[id].en);
+// The language a level's theory is read in: the app's, or English while there is no translation of the level.
+const theoryLang = (id = LEVEL.id) => (LANG !== 'en' && THEORY_FILES[id] && THEORY_FILES[id][LANG] ? LANG : 'en');
+const theoryKey = () => `${LEVEL.id}.${theoryLang()}`;
+// The current level's articles in the language shown: undefined = not asked yet or on its way, null = failed.
+const theory = () => THEORY[theoryKey()];
+// Asks for the current level's theory once; the theory screens draw again when it is in.
+function needTheory() {
+  const k = theoryKey();
+  if (!hasTheory() || k in THEORY || THEORY_LOADS[k]) return;
+  const get = (url, opt) => fetch(url, opt).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  // the content-named file; if it is gone (an app open since before a deploy), the plain name, checked with the server
+  const plain = `data/theory-${LEVEL.id}${theoryLang() === 'en' ? '' : `.${theoryLang()}`}.json`;
+  THEORY_LOADS[k] = get(THEORY_FILES[LEVEL.id][theoryLang()]).then((d) => (d && d.topics ? d : get(plain, { cache: 'no-cache' }))).then((d) => {
+    delete THEORY_LOADS[k];
+    THEORY[k] = d && d.topics ? d : null;
+    if (['theory', 'article', 'results', 'examResult'].includes(cur().v) && !sheet) render();
+  });
+}
+const readKey = (tp) => `${LEVEL.prefix}-${tp}`;
+// What the student wrote about a section of an article: S.notes['<prefix>-<topic>/<section>'] = { text, at }. It goes
+// to the server with the rest of the progress; the admins read it on their Reported page (api/admin.mjs).
+const noteKey = (tp, sec) => `${readKey(tp)}/${sec}`;
+const MAX_NOTE = 1000;
+const isRead = (tp) => !!(S.read && S.read[readKey(tp)]);
+// The topics of the current level that have an article (from the list in index.html, so no download is needed).
+const theoryTopics = () => (hasTheory() ? TOPICS.filter((tp) => THEORY_FILES[LEVEL.id].t.includes(tp.id)) : []);
+// What an article holds: minutes at a study pace (pictures take time too) and pictures.
+function articleMeta(a) {
+  let w = 0, p = 0;
+  const add = (s) => { w += String(s || '').split(/\s+/).length; };
+  add(a.lead);
+  a.sections.forEach((s) => {
+    add(s.title);
+    s.blocks.forEach((b) => {
+      add(b.p); add(b.rule); (b.list || []).forEach(add);
+      if (b.table) (b.table.rows || []).forEach((r) => r.forEach(add));
+      if (b.fig) p++;
+      if (b.tiles) p += b.tiles.length;
+    });
+  });
+  return { min: Math.max(2, Math.round(w / 130 + p * 0.15)), pics: p };
+}
+// The section of an article that explains a question: the one whose refs hold the question's reference as the
+// English bank spells it. '' when no section lists it (the article opens at the top).
+function sectionOf(a, qid) {
+  const q = BASE.questions.find((x) => x.id === qid);
+  const s = q && a.sections.find((x) => (x.refs || []).includes(q.ref));
+  return s ? s.id : '';
+}
+let ownScroll = 0; // until when a scroll is the app's own (toSection) and not the student reading on
+function toSection(id, smooth = false) {
+  const el = document.getElementById(`sec-${id}`), sc = $app.querySelector('.scroll');
+  ownScroll = Date.now() + 1500;
+  if (el && sc) sc.scrollTo({ top: el.getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop - 10, behavior: smooth && !REDUCED ? 'smooth' : 'auto' });
+}
+// An article counts as read once its end has been on screen.
+function markRead() {
+  const c = cur(), sc = $app.querySelector('.scroll');
+  if (c.v !== 'article' || !sc || !sc.querySelector('.th-end') || isRead(c.t) || Date.now() < ownScroll) return;
+  if (sc.scrollTop + sc.clientHeight < sc.scrollHeight - 120) return;
+  S.read = S.read || {};
+  S.read[readKey(c.t)] = 1;
+  save();
+}
+
 function setPath(obj, path, val) {
   const k = path.split('.');
   let o = obj;
@@ -747,6 +836,18 @@ function adminPage(v, title, meta, inner) {
 }
 // The questions the students reported as wrong (key 'wrong') or flagged ('flags'), grouped by question; a tap opens
 // the question and who marked it.
+// What students wrote about the articles (state.notes), newest first; a tap opens the article at that section.
+const allNotes = () => (Array.isArray(ADM) ? ADM.flatMap((u) => (u.notes || []).map((n) => ({ u, ...n }))).sort((a, b) => b.at - a.at) : []);
+function notesList() {
+  const rows = allNotes();
+  if (!rows.length) return '';
+  return `<div class="stack g8"><span class="kicker">${t('notesK')}</span><div class="anotes">${rows.map((n) => {
+    const [art, sec] = n.k.split('/'), prefix = art.split('-')[0], tp = art.slice(prefix.length + 1);
+    const lv = levelOfPrefix(prefix), b = lv && BASES[lv.id], topic = b && b.topics.find((x) => x.id === tp);
+    return `<button class="anote" data-act="anote" data-lv="${lv ? lv.id : ''}" data-t="${esc(tp)}" data-s="${esc(sec)}"><span class="body-s">${esc(n.text)}</span>` +
+      `<span class="card-meta">${esc([lv && lv.title, topic ? topic.title : tp, sec].filter(Boolean).join(' · '))}</span><span class="card-meta">${esc(studentName(n.u))}${n.at ? ` · ${day(n.at)}` : ''}</span></button>`;
+  }).join('')}</div></div>`;
+}
 function flaggedList(key, none) {
   const list = flaggedByStudents(key);
   if (!list.length) return `<div class="empty"><p class="body-muted">${t(none)}</p></div>`;
@@ -942,12 +1043,12 @@ function mainButtonChange(toTop) {
 }
 
 /* ---------- rendering ---------- */
-const NAV = [['home', 'book', 'learn'], ['examIntro', 'timer', 'exam'], ['progress', 'chart', 'progress'], ['profile', 'user', 'profile']];
+const NAV = [['home', 'book', 'learn'], ['theory', 'page', 'theory'], ['examIntro', 'timer', 'exam'], ['progress', 'chart', 'progress'], ['profile', 'user', 'profile']];
 
 // The admin pages' own bottom menu, built like the app's: Overview, Students, Reported, Flagged. The two question
 // lists carry how many questions are on them.
 function adminNavHtml(on) {
-  const n = { adminWrong: Array.isArray(ADM) ? flaggedByStudents('wrong').length : 0, adminFlags: Array.isArray(ADM) ? flaggedByStudents('flags').length : 0 };
+  const n = { adminWrong: Array.isArray(ADM) ? flaggedByStudents('wrong').length + allNotes().length : 0, adminFlags: Array.isArray(ADM) ? flaggedByStudents('flags').length : 0 };
   return `<nav class="nav anav" aria-label="${esc(t('adminT'))}">${ADMIN_TABS.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}" data-act="atab" data-v="${v}"${v === on ? ' aria-current="page"' : ''}><span class="ai"><span data-i="${i}" aria-hidden="true"></span>${n[v] ? `<b class="badge${v === 'adminWrong' ? ' bad' : ''}">${n[v] > 99 ? '99+' : n[v]}</b>` : ''}</span>${t(k)}</a>`).join('')}</nav>`;
 }
 const navHtml = (on, live = true) => `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}"${live ? ` data-act="tab" data-v="${v}"` : ''}${v === on ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
@@ -992,6 +1093,12 @@ function render(toTop, theme = false, pre = null) {
     paintIcons($app);
     const sc = $app.querySelector('.scroll');
     if (keep) sc.scrollTop = keep;
+    const chipOn = sc.querySelector('.th-toc .chip-on');
+    if (chipOn) chipOn.parentElement.scrollLeft = chipOn.offsetLeft - 24;
+    if (c.v === 'article' && (c.s || c.q) && !c.shown) {
+      const a = theory() && theory().topics[c.t];
+      if (a) { c.shown = true; const id = c.s || sectionOf(a, c.q); if (id) toSection(id); }
+    }
     // a sheet that has just opened takes the focus (the screen behind it is inert until it closes)
     if (sheet && !sheetWasOpen) $app.querySelector('.sheet button, .sheet [data-act]')?.focus({ preventScroll: true });
     sheetWasOpen = !!sheet;
@@ -1030,6 +1137,51 @@ function nativeButtons(B) {
 }
 
 /* ---------- pieces shared by several screens ---------- */
+// The reference under an answered question: a link to the section of the topic's article when there is one.
+function refChip(q) {
+  if (!theoryTopics().some((tp) => tp.id === q.topic)) return `<span class="chip ref">${svg('book', 12)}${esc(q.ref)}</span>`;
+  return `<button class="chip ref ref-go" data-act="theory" data-t="${q.topic}" data-q="${q.id}">${svg('book', 12)}${esc(q.ref)}${svg('next', 12)}</button>`;
+}
+// The flag beside a section's heading: red once the student has reported a mistake there (S.notes).
+function noteFlag(tp, sec) {
+  const on = !!(S.notes && S.notes[noteKey(tp, sec)]);
+  return `<button class="th-flag${on ? ' on' : ''}" data-act="treport" data-s="${esc(sec)}" aria-pressed="${on}" aria-label="${esc(t('noteHint'))}" title="${esc(t('noteHint'))}">${svg('flag', 16)}</button>`;
+}
+// Where to read after a session or an exam: the topics of the wrong answers that have an article, most mistakes
+// first, each with the sections that explain those answers (once the level's theory is in). '' when there is none.
+function readUp(wrong) {
+  if (!wrong.length || !hasTheory()) return '';
+  needTheory();
+  const arts = new Set(theoryTopics().map((tp) => tp.id)), by = {}, th = theory();
+  wrong.forEach((id) => { const tp = Q[id].topic; if (arts.has(tp)) (by[tp] = by[tp] || []).push(id); });
+  const rows = Object.entries(by).sort((a, b) => b[1].length - a[1].length).slice(0, 3).map(([tp, ids]) => {
+    const a = th && th.topics[tp];
+    const secs = a ? [...new Set(ids.map((id) => sectionOf(a, id)).filter(Boolean))] : [];
+    const names = secs.slice(0, 3).map((s) => a.sections.find((x) => x.id === s).kicker);
+    return `<button class="r" data-act="theory" data-t="${tp}" data-s="${esc(secs[0] || '')}"><span>${svg('page', 16)}</span><div><div class="card-title">${esc(TT[tp])}</div>` +
+      `<div class="card-meta">${esc([t('mistakesIn', ids.length), ...names].join(' · '))}</div></div>${svg('next', 16)}</button>`;
+  }).join('');
+  return rows ? `<div class="band next-band read-band"><span class="kicker">${t('readUpK')}</span>${rows}</div>` : '';
+}
+// **bold** is the only markup of an article's text.
+const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+// A figure of an article: the question figure's box, cropped to view (an SVG viewBox) when the block gives one.
+function thFig(f, view, tr) {
+  const h = figHtml({ figure: f, _tr: tr });
+  return view ? h.replace(/viewBox="[^"]*"/, `viewBox="${esc(view)}"`) : h;
+}
+function thBlock(b, tr) {
+  if (b.p) return `<p class="th-p">${inline(b.p)}</p>`;
+  if (b.list) return `<ul class="th-list">${b.list.map((x) => `<li>${inline(x)}</li>`).join('')}</ul>`;
+  if (b.fig) return thFig(b.fig, b.view, tr) + (b.cap ? `<p class="th-cap">${inline(b.cap)}</p>` : '');
+  if (b.tiles) return `<div class="th-tiles c${[2, 3, 4].includes(b.cols) ? b.cols : Math.min(b.tiles.length, 4)}">${b.tiles.map((x) => `<div class="th-tile">${thFig(x.fig, x.view, tr)}<b>${esc(x.name)}</b>${x.note ? `<span>${esc(x.note)}</span>` : ''}</div>`).join('')}</div>`;
+  if (b.rule) return `<div class="band th-rule"><span class="kicker">${esc(b.label || t('ruleK'))}</span><p class="body-s">${inline(b.rule)}</p></div>`;
+  if (b.table && b.table.head && b.table.rows) return `<table class="th-table"><thead><tr>${b.table.head.map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${b.table.rows.map((r) => `<tr>${r.map((x) => `<td>${inline(x)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  return '';
+}
+const thSkeleton = () => `<div class="sk-wrap" aria-busy="true"><span class="sk-label">${t('loading')}</span><div class="topics">${[['72%', '92px'], ['50%', '84px'], ['66%', '96px'], ['58%', '88px'], ['70%', '92px']]
+  .map(([a, b]) => `<div class="topic"><span class="ico sk"></span>${sk(a, '14px', ';grid-column:2;margin:2px 0')}${sk(b, '12px', ';grid-column:2;margin:2px 0')}</div>`).join('')}</div></div>`;
+const thError = () => `<div class="stack g12" style="align-items:flex-start"><p class="body-muted">${t('theoryErr')}</p><button class="pill" data-act="tretry">${t('retry')}</button></div>`;
 function topicRows(list = TOPICS) {
   return `<div class="topics">${list.map((tp) => {
     const ids = topicIds(tp.id), m = ids.filter(mastered).length, p = Math.round((m / ids.length) * 100);
@@ -1112,7 +1264,52 @@ const VIEWS = {
         <div class="row" style="gap:10px"><button class="pill pill-primary lvl-btn" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
           <button class="pill lvl-btn" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
         ${mis ? `<div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${t('toAnswerTwice', mis)}</div></div><button class="mini mini-accent" data-act="allMistakes">${t('review')}</button></div>` : ''}
+        ${hasTheory() ? `<div class="row sb-between"><div><div class="card-title">${t('theory')}</div><div class="card-meta">${t('readOf', theoryTopics().filter((tp) => isRead(tp.id)).length, theoryTopics().length)}</div></div><button class="mini mini-accent" data-act="tab" data-v="theory">${t('readTheory')}</button></div>` : ''}
         <div class="stack g8"><div class="row sb-between"><span class="kicker">${t('topics')}</span><span class="meta">${t('masteredTotal')}</span></div>${topicRows()}</div>`,
+    };
+  },
+
+  /* T1 Theory (a tab): the current level's topics, an article each; the chips change the level */
+  theory() {
+    needTheory();
+    const th = theory(), has = hasTheory(), arts = theoryTopics();
+    const chips = ready().map((l) => `<button class="chip${l === LEVEL ? ' chip-on' : ''}" data-act="tlevel" data-id="${l.id}"${l === LEVEL ? ' aria-current="true"' : ''}>${esc(l.title)}</button>`).join('');
+    const rows = () => `<div class="topics">${TOPICS.map((tp) => {
+      const a = th.topics[tp.id], read = isRead(tp.id);
+      if (!a) return `<div class="topic th-row off"><span class="ico">${svg(topicIcon(tp), 18)}</span><span class="card-title">${esc(tp.title)}</span><span class="tmeta">${t('theoryNone')}</span></div>`;
+      const m = articleMeta(a);
+      return `<div class="topic th-row${read ? ' done' : ''}" data-act="theory" data-t="${tp.id}"><span class="ico">${svg(read ? 'check' : topicIcon(tp), 18)}</span><span class="card-title">${esc(tp.title)}</span>` +
+        `<span class="tmeta">${t('theoryMeta', m.min, m.pics)}</span><span class="n">${read ? `<span class="th-read">${t('read')}</span>` : svg('next', 18)}</span></div>`;
+    }).join('')}</div>`;
+    const none = () => `<div class="topics">${TOPICS.map((tp) => `<div class="topic th-row off"><span class="ico">${svg(topicIcon(tp), 18)}</span><span class="card-title">${esc(tp.title)}</span><span class="tmeta">${t('theoryNone')}</span></div>`).join('')}</div>`;
+    return {
+      title: t('theory'), nav: 'theory',
+      body: `<div class="stack g4"><span class="meta">${esc(BANK.title)}</span><h2 class="display-s">${t('theory')}</h2></div>
+        <div class="th-toc" aria-label="${t('courses')}">${chips}</div>
+        <p class="body-muted">${t(has ? 'theoryLead' : 'theorySoon')}</p>
+        ${has && th === null ? thError() : `<div class="stack g8"><div class="row sb-between"><span class="kicker">${t('topics')}</span>${has ? `<span class="meta">${t('readOf', arts.filter((tp) => isRead(tp.id)).length, arts.length)}</span>` : ''}</div>
+          ${!has ? none() : th ? rows() : thSkeleton()}</div>`}`,
+    };
+  },
+
+  /* T2 A topic's article: its sections follow the bank's references; the main button practises the topic */
+  article(c) {
+    needTheory();
+    const th = theory(), a = th && th.topics[c.t], tp = TOPICS.find((x) => x.id === c.t);
+    if (!a || !tp) return { title: t('theory'), body: th === undefined && hasTheory() ? thSkeleton() : th === null ? thError() : `<p class="body-muted">${t('theorySoon')}</p>` };
+    const tr = LANG === 'ru' && theoryLang() === 'ru' && !a.en; // the article itself is in Russian: its figures' own labels are too
+    const m = articleMeta(a), arts = TOPICS.filter((x) => th.topics[x.id]), k = arts.indexOf(tp);
+    const near = (x, key) => (x ? `<button class="band th-near" data-act="theory" data-t="${x.id}" data-r="1"><span class="meta">${t(key, TOPICS.indexOf(x) + 1)}</span><span class="card-title">${esc(x.title)}</span></button>` : '<span></span>');
+    return {
+      title: tp.title,
+      // opened from the reference under a question: the session under it goes on, so the button leads back to it
+      main: stack.some((x) => x.v === 'question') ? { text: t('backToQuestion'), act: back } : { text: t('practiseTopicN', topicIds(c.t).length), icon: 'play', act: () => openSetup([c.t]) },
+      body: `<div class="stack g8"><span class="meta">${t('theoryK', TOPICS.indexOf(tp) + 1, TOPICS.length, m.min)}</span><h2 class="display-s">${esc(tp.title)}</h2>${LANG !== 'en' && !tr ? `<span class="card-meta">${t('inEnglish')}</span>` : ''}</div>
+        <p class="th-p th-lead">${inline(a.lead)}</p>
+        <div class="th-toc">${a.sections.map((s) => `<button class="chip" data-act="tsec" data-s="${esc(s.id)}">${esc(s.kicker)}</button>`).join('')}</div>
+        ${a.sections.map((s, n) => `<section class="th-sec" id="sec-${esc(s.id)}"><div class="row sb-between"><span class="kicker">${n + 1} · ${esc(s.kicker)}</span>${noteFlag(c.t, s.id)}</div><h3 class="th-h">${esc(s.title)}</h3>${s.blocks.map((b) => thBlock(b, tr)).join('')}</section>`).join('')}
+        <p class="card-meta th-foot">${svg('flag', 14)}${t('noteFoot')}</p>
+        <div class="th-nextprev">${near(arts[k - 1], 'prevTopic')}${near(arts[k + 1], 'nextTopic')}</div><span class="th-end"></span>`,
     };
   },
 
@@ -1138,7 +1335,7 @@ const VIEWS = {
     if (P.checked) {
       const ok = P.res[id] === 'ok';
       after = `<div class="verdict ${ok ? 'ok' : 'bad'}" role="status" tabindex="-1"><span class="ico">${svg(ok ? 'check' : 'x', 16)}</span>${ok ? t('correct') : t('notQuite')}</div>
-        <div class="band why" id="why"><span class="kicker">${t('why')}</span><p class="body-s">${esc(q.why)}</p><span class="chip ref">${svg('book', 12)}${esc(q.ref)}</span></div>`;
+        <div class="band why" id="why"><span class="kicker">${t('why')}</span><p class="body-s">${esc(q.why)}</p>${refChip(q)}</div>`;
     }
     const flagged = S.flags.includes(id);
     const tools = `<div class="qtools"><span class="qflags"><button class="mini${flagged ? ' on' : ''}" data-act="flag" aria-pressed="${flagged}"><span data-i="flag" data-s="14"></span>${flagged ? t('flagged') : t('flag')}</button>${wrongBtn(id)}</span>` +
@@ -1187,6 +1384,7 @@ const VIEWS = {
           <h2 class="display" style="font-size:34px">${head}</h2><p class="body-muted">${esc(copy)}</p></div>
         <div class="stats"><div class="stat"><b>+${fresh}</b><span class="meta">${t('statNew')}</span></div><div class="stat"><b>${half}</b><span class="meta">${t('halfway')}</span></div><div class="stat"><b>${wrong.length}</b><span class="meta">${t('statWrong')}</span></div></div>
         <div class="stack g8"><span class="kicker">${t('byTopic')}</span>${tbars(per)}</div>
+        ${readUp(wrong)}
         ${next ? `<div class="band next-band"><span class="kicker">${t('whatNext')}</span>${next}</div>` : ''}`,
     };
   },
@@ -1282,7 +1480,7 @@ const VIEWS = {
       second: R.passed ? { text: t('share'), icon: 'share', act: () => share(R) } : (wrong.length ? { text: t('reviewN', wrong.length), act: reviewAct, pos: 'bottom' } : null),
       body: `<div class="score">${R.passed ? `<span class="pass">${svg('trophy', 16)}${t('passed')}</span>` : `<span class="pass no">${svg('x', 16)}${t('notYetPass', BANK.passMark)}</span>`}
           <span class="ring l${R.passed ? '' : ' bad'}" style="--v:${R.pct}"><b data-count="${R.pct}" data-suffix="%">${R.pct}%</b><small>${t('okOf', R.ok, R.n)}</small></span>
-          <h2 class="display" style="font-size:34px">${head}</h2><p class="body-muted">${esc(copy)}</p></div>${bars}${nextBand}`,
+          <h2 class="display" style="font-size:34px">${head}</h2><p class="body-muted">${esc(copy)}</p></div>${bars}${readUp(wrong)}${nextBand}`,
     };
   },
 
@@ -1369,7 +1567,7 @@ const VIEWS = {
     });
   },
   /* C4 Questions the students reported as wrong (the red flag) */
-  adminWrong() { return adminPage('adminWrong', 'reportedQ', 'reportedMeta', () => flaggedList('wrong', 'reportedNone')); },
+  adminWrong() { return adminPage('adminWrong', 'reportedQ', 'reportedMeta', () => notesList() + flaggedList('wrong', 'reportedNone')); },
   /* C4 Questions the students flagged to come back to */
   adminFlags() { return adminPage('adminFlags', 'flaggedQ', 'flaggedMeta', () => flaggedList('flags', 'flaggedNone')); },
 
@@ -1388,6 +1586,15 @@ const VIEWS = {
 
 /* A3 Set up a session · B3 Exam grid · C4 one student, one flagged or reported question */
 const SHEETS = {
+  // T2b What is wrong in a section of an article: a comment for the author, kept in S.notes
+  treport(s) {
+    const a = theory() && theory().topics[s.t], sec = a && a.sections.find((x) => x.id === s.s), had = !!S.notes[noteKey(s.t, s.s)];
+    return `<div class="stack g4"><span class="meta">${esc(TT[s.t] || '')}${sec ? ` · ${esc(sec.kicker)}` : ''}</span><h2 class="display-s" style="font-size:26px">${t('noteTitle')}</h2></div>
+      <p class="body-muted">${t('noteLead')}</p>
+      <textarea class="th-note" id="thNote" rows="5" maxlength="${MAX_NOTE}" placeholder="${esc(t('notePh'))}" aria-label="${esc(t('noteTitle'))}">${esc(s.text)}</textarea>
+      <button class="pill pill-primary pill-wide${s.text.trim().length < 3 ? ' off' : ''}" data-act="treportSend">${t(had ? 'noteSave' : 'noteSend')}</button>
+      ${had ? `<button class="pill pill-quiet pill-wide" data-act="treportDrop">${t('noteDrop')}</button>` : ''}`;
+  },
   flagq(s) {
     const f = anyQ(s.id);
     if (!f || !Array.isArray(ADM)) return `<div class="empty"><span class="meta">${t('studentsFail')}</span></div>`;
@@ -1479,7 +1686,11 @@ function startPractice(ids, fb = S.set.feedback) {
     orders: Object.fromEntries(ids.map((id) => [id, S.set.shuffle ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3]])),
     before: Object.fromEntries(ids.map((id) => [id, mastered(id)])), seen: new Set(ids.filter(touched)),
   };
-  if (['results', 'review', 'examResult'].includes(cur().v)) replace('question'); else go('question');
+  // the new session takes the place of the result it was started from, with whatever was opened on top of it (the
+  // mistakes, an article): going back from it must not land on the result of a session that is no more
+  const k = stack.findIndex((x) => ['results', 'review', 'examResult'].includes(x.v));
+  if (k >= 0) stack.length = k;
+  go('question');
 }
 function check() {
   if (P.sel == null || P.checked) return;
@@ -1589,6 +1800,47 @@ const ACT = {
   main: () => mainCb && mainCb(),
   second: () => secCb && secCb(),
   tab: (d) => tab(d.v),
+  // theory: open a topic's article (r: in place of the one on screen; q: at the section that explains this question)
+  theory: (d) => (d.r ? replace : go)('article', { t: d.t, s: d.s || '', q: d.q || '' }),
+  tsec: (d) => toSection(d.s, true),
+  // the flag beside a section: a sheet with a comment box (what was written before, if anything, to change or withdraw)
+  treport: (d) => {
+    const c = cur();
+    if (c.v !== 'article') return;
+    sheet = { v: 'treport', t: c.t, s: d.s, text: ((S.notes || {})[noteKey(c.t, d.s)] || {}).text || '' };
+    render();
+    document.getElementById('thNote')?.focus();
+  },
+  treportSend: () => {
+    const text = (document.getElementById('thNote')?.value ?? sheet.text).trim().slice(0, MAX_NOTE);
+    if (text.length < 3) return;
+    S.notes = S.notes || {};
+    S.notes[noteKey(sheet.t, sheet.s)] = { text, at: Date.now() };
+    save(); hap('success'); closeSheet(); toast(t(IN_TG && serverOn ? 'noteSent' : 'noteLocal'));
+  },
+  treportDrop: () => {
+    delete S.notes[noteKey(sheet.t, sheet.s)];
+    save(); closeSheet(); toast(t('unwrong'));
+  },
+  // an admin opens the section a student wrote about
+  anote: async (d) => {
+    if (switching || !d.lv) return;
+    switching = true;
+    const ok = await setLevel(d.lv);
+    switching = false;
+    if (!ok) return toast(t('bankError'));
+    go('article', { t: d.t, s: d.s });
+  },
+  tretry: () => { delete THEORY[theoryKey()]; render(); },
+  tlevel: async (d, el) => {
+    if (switching || d.id === LEVEL.id) return;
+    if (!BASES[d.id]) el.style.opacity = '0.55'; // a bank not downloaded yet: the chip dims while it comes
+    switching = true;
+    const ok = await setLevel(d.id);
+    switching = false;
+    if (!ok) { el.style.opacity = ''; return toast(t('bankError')); }
+    hap('sel'); render(true);
+  },
   level: async (d) => {
     if (switching) return;
     // a bank not downloaded yet: the row dims while it comes
@@ -1688,6 +1940,12 @@ $app.addEventListener('click', (e) => {
   const fn = ACT[el.dataset.act];
   if (fn) fn(el.dataset, el);
 });
+$app.addEventListener('input', (e) => {
+  if (e.target.id !== 'thNote' || !sheet) return;
+  sheet.text = e.target.value;
+  $app.querySelector('[data-act="treportSend"]')?.classList.toggle('off', sheet.text.trim().length < 3);
+});
+$app.addEventListener('scroll', markRead, { capture: true, passive: true }); // scroll does not bubble: caught on the way down
 $app.addEventListener('pointerover', chartPoint);
 $app.addEventListener('click', chartPoint);
 $app.addEventListener('pointerout', chartLeave);
@@ -1712,6 +1970,7 @@ document.addEventListener('visibilitychange', () => {
 function deepLink() {
   const p = (IN_TG && TG.initDataUnsafe && TG.initDataUnsafe.start_param) || new URLSearchParams(location.search).get('screen') || '';
   if (p === 'exam') stack = [{ v: 'examIntro' }];
+  else if (p === 'theory') stack = [{ v: 'theory' }];
   else if (p === 'progress') stack = [{ v: 'progress' }];
   else if (p === 'profile' || p === 'settings') stack = [{ v: 'profile' }];
   else if (p === 'admin') stack = [{ v: 'profile' }, { v: 'admin' }];

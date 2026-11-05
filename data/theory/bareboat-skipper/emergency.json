@@ -1,0 +1,115 @@
+{
+  "topic": "emergency",
+  "lead": "One call on channel 16 reaches the coastguard and every vessel in range. Learn the three priorities and the MAYDAY by heart, then the first actions for the emergencies themselves.",
+  "sections": [
+    {
+      "id": "vhf",
+      "kicker": "Using the VHF",
+      "title": "Call on 16, talk elsewhere",
+      "refs": ["VHF", "VHF operation", "VHF range", "VHF channels", "Radio procedure", "Prowords", "Phonetic alphabet", "Radio licences", "MMSI"],
+      "blocks": [
+        { "p": "**Channel 16** is for distress and for calling: make contact, then move to a working channel, between yachts an intership one such as 72. **Channel 70** carries DSC data only, never voice. Ask for a radio check on a working channel." },
+        { "fig": { "type": "card", "title": "Routine call on 16", "lines": ["Thalassa, Thalassa, Thalassa", "this is Kalliope, Kalliope, Kalliope", "OVER", "Thalassa answers: both move to 72"] } },
+        { "p": "Use low power, 1 W, at short range; set the squelch where the hiss just stops; dual watch keeps an ear on 16. VHF is line of sight, so range depends on antenna height: the masthead antenna far outreaches a handheld. Spell with the phonetic alphabet and say tree, fower, fife, niner. Routine use needs an operator's certificate such as the SRC. An MMSI beginning 00 is a coast station." },
+        { "table": { "head": ["Proword", "Meaning"], "rows": [
+          ["OVER", "I expect a reply"],
+          ["OUT", "End of call, never with OVER"],
+          ["WILCO", "Received, will comply. ROGER: received"],
+          ["SAY AGAIN", "Repeat that"]
+        ] } }
+      ]
+    },
+    {
+      "id": "priority",
+      "kicker": "Three priorities",
+      "title": "MAYDAY, PAN-PAN or SÉCURITÉ",
+      "refs": ["Urgency procedure", "Safety procedure", "Calling the coastguard"],
+      "blocks": [
+        { "table": { "head": ["Call", "When"], "rows": [
+          ["MAYDAY", "Grave and imminent danger to the vessel or a life: a fire out of control, sinking, a person lost overboard, a crew member not breathing"],
+          ["PAN-PAN", "Urgent, no immediate danger: dismasted or drifting without engine, an injury that needs a doctor"],
+          ["SÉCURITÉ", "A warning to others: a container adrift in a channel"]
+        ] } },
+        { "p": "A life in immediate danger is distress even if the yacht is sound. Announce SÉCURITÉ on 16 and pass the message on a working channel. Call by radio before the phone: VHF reaches every station in range, a phone only one. In Croatia the sea-rescue number is 195." }
+      ]
+    },
+    {
+      "id": "mayday",
+      "kicker": "The MAYDAY",
+      "title": "Red button, then your voice on 16",
+      "refs": ["Distress procedure", "DSC"],
+      "blocks": [
+        { "p": "On a **DSC** radio, lift the flap and hold the red button for five seconds: your MMSI and position go out on channel 70 and the set switches to 16. With seconds in hand, select the nature of distress first. Then speak:" },
+        { "fig": { "type": "card", "title": "On channel 16", "lines": ["MAYDAY, MAYDAY, MAYDAY", "this is Aurora, Aurora, Aurora, MMSI…", "MAYDAY Aurora, MMSI…", "Position · nature of distress", "Help required · persons aboard", "Other facts · OVER"], "tag": "MAYDAY" } },
+        { "p": "The **position** comes early, so that help can start even if you are cut off. Give latitude and longitude, or the true bearing **from** a landmark and the distance. End with what helps rescuers: liferaft, EPIRB, hull colour. No answer: repeat the call and switch on the EPIRB." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V40 H150 L110 72 L80 40 H0 Z", "marks": [[110, 66, "w", "Sounion lt"]], "track": "M110 74 L110 148", "labels": [[120, 114, "2 miles", "start"]], "boat": [110, 160, 270], "panel": ["Chart, north up", "You: 2 M due", "south of the light"], "note": "Giving your position by radio" }, "cap": "You say: 180° from Cape Sounion light, 2 miles." },
+        { "p": "Without GPS data the alert carries no position. Cancel a false alert on the set, then tell all stations on 16." }
+      ]
+    },
+    {
+      "id": "relay",
+      "kicker": "Another vessel's distress",
+      "title": "Listen, keep silence, relay",
+      "refs": ["MAYDAY relay"],
+      "blocks": [
+        { "p": "A DSC distress alarm on your set: do not acknowledge it, coast stations do that. Listen on 16 for the voice MAYDAY and note the details. If a coast station has answered, stay off the channel. If nobody answers and you can help, reply RECEIVED MAYDAY, go, and tell the coast station." },
+        { "p": "If you cannot help, or the casualty cannot call, relay it: **MAYDAY RELAY** three times, all stations three times, this is and your own name three times, then her position and trouble." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0, "sail": true, "boom": -14 }, "other": { "bearing": 40, "dist": 85, "hdg": 270, "sail": true, "boom": 14, "label": "Yacht" }, "wind": 90, "note": "Red hand flare from this yacht, nothing on the radio" } },
+        { "table": { "head": ["You hear", "Meaning"], "rows": [
+          ["SEELONCE MAYDAY", "Silence: distress traffic only"],
+          ["PRUDONCE", "Short essential calls only"],
+          ["SEELONCE FEENEE", "Distress over"]
+        ] } }
+      ]
+    },
+    {
+      "id": "signals",
+      "kicker": "Flares and beacons",
+      "title": "Being seen, being found",
+      "refs": ["Distress signals", "EPIRB", "PLB", "AIS MOB beacon", "AIS-SART", "GMDSS", "Navtex"],
+      "blocks": [
+        { "table": { "head": ["Signal", "Use"], "rows": [
+          ["Red parachute rocket", "Seen from far off. Never near a helicopter"],
+          ["Red hand flare", "Shows where you are to help nearby, at night"],
+          ["Orange smoke", "The same by day"]
+        ] } },
+        { "p": "Hold a hand flare at arm's length to leeward. Replace out-of-date flares. SOS by light, or arms slowly raised and lowered, also mean distress; code flag V only asks for assistance." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 30, "dist": 80, "hdg": 200, "label": "Dinghy", "scale": 0.5 }, "note": "Person slowly raising and lowering both arms" } },
+        { "p": "Beyond VHF range only a satellite beacon reaches a rescue centre. The **EPIRB**, in a float-free bracket, switches on if the yacht sinks; take it into the raft, tie it on and leave it on until you are rescued. A **PLB** is personal and must be registered. An AIS MOB beacon alarms on plotters nearby, your own included; an AIS-SART target marks survivors. Report a false activation at once. Navtex prints navigation and search-and-rescue warnings." }
+      ]
+    },
+    {
+      "id": "mob",
+      "kicker": "Man overboard",
+      "title": "Keep them in sight, come back slowly",
+      "refs": ["Man overboard"],
+      "blocks": [
+        { "list": [
+          "Throw the danbuoy, post a spotter and press **MOB** on the plotter. Out of sight: MAYDAY.",
+          "Tack at once, leaving the headsail backed: the quick-stop keeps you close.",
+          "Approach on a close reach, easing sheets to slow; under power, slowly into the wind, in neutral alongside.",
+          "Get a line on them first. Lift at the side with a halyard on the lifejacket's lifting loop; after long immersion, horizontally."
+        ] },
+        { "fig": { "type": "encounter", "you": { "hdg": 300, "sail": true, "boom": -14 }, "other": { "bearing": 0, "dist": 75, "hdg": 0, "scale": 0.3, "label": "MOB" }, "wind": 0, "note": "Final approach under sail: close reach, sheets eased" } }
+      ]
+    },
+    {
+      "id": "damage",
+      "kicker": "Fire, flood, breakage",
+      "title": "First actions",
+      "refs": ["Flooding", "Fire", "Grounding", "Dismasting", "Loss of steering", "Towing", "Helicopter rescue", "Abandoning ship"],
+      "blocks": [
+        { "p": "**Flooding**: pumps only buy time, so find and stop the inflow. Close the seacock, hammer a bung into a broken fitting, tack to lift a hole clear of the water. **Fire** in the engine bay: stop the engine, keep the hatch shut and fire the extinguisher through the fire port. Keep any fire downwind of the crew." },
+        { "table": { "head": ["Emergency", "What you do"], "rows": [
+          ["Aground", "Heel her, kedge off towards deep water. Holed on rock: check before you pull off"],
+          ["Dismasted", "Cut the rig away before it holes the hull; no lines in the water before you motor"],
+          ["No steering", "Emergency tiller; without a rudder, a drogue on a bridle"],
+          ["Tow", "Agree it is a tow, not salvage. Bridle from both bow cleats"],
+          ["Helicopter", "Clear the deck. Let the wire touch down before you touch it. Never tie the hi-line"],
+          ["Abandoning", "MAYDAY first; take grab bag and EPIRB"]
+        ] } },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 0, "dist": 85, "hdg": 0, "label": "Tow" }, "note": "Towline to a bridle from both bow cleats" } }
+      ]
+    }
+  ]
+}

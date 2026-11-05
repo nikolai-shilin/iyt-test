@@ -1,0 +1,113 @@
+{
+  "topic": "systems",
+  "lead": "Engines and systems rarely fail without warning. Two minutes of checks each morning and an eye on the gauges prevent most breakdowns.",
+  "sections": [
+    {
+      "id": "checks",
+      "kicker": "Daily checks and starting",
+      "title": "Before you turn the key",
+      "refs": ["Engine checks", "Daily engine checks", "Starting and stopping", "Glow plugs and preheat", "Diesel engine basics", "Gearbox"],
+      "blocks": [
+        { "p": "A diesel has no spark: it needs **fuel, air and compression**. Each morning check:" },
+        { "list": [
+          "Oil, engine stopped, boat level. Milky oil means water in it: do not start.",
+          "Coolant in the header tank, engine cold.",
+          "The belt: about 1 cm of give under your thumb.",
+          "Raw-water seacock open, strainer clear, bilge dry, gear in neutral."
+        ] },
+        { "p": "**Preheat** a cold engine for 10–15 seconds, start, and look for water at the exhaust at once. With the key at ON, the oil and charge lights and the buzzer are normal until she runs. Shift at idle, pausing in neutral. To stop, idle a few minutes first; never use the battery isolator." },
+        { "fig": { "type": "panel", "gauges": [["Oil", "ON", true], ["Charge", "ON", true], ["RPM", "0", false]], "lines": ["Key at ON, engine not yet started", "Buzzer sounding: normal"] } }
+      ]
+    },
+    {
+      "id": "cooling",
+      "kicker": "Cooling and alarms",
+      "title": "Water at the exhaust, or stop",
+      "refs": ["Engine cooling", "Engine troubleshooting", "Overheating causes", "Wet exhaust", "Engine alarms and gauges", "Exhaust smoke"],
+      "blocks": [
+        { "p": "Seawater carries the heat away: **seacock, strainer, impeller pump, heat exchanger**, then out with the exhaust. If little or none comes out, or the temperature alarm sounds, stop the engine and let it cool. Never open a hot coolant cap." },
+        { "fig": { "type": "panel", "gauges": [["Temp", "110°", true], ["Oil", "OK", false], ["Volts", "14.1", false]], "lines": ["Alarm sounding", "Exhaust water: a trickle"] } },
+        { "p": "Look at the strainer first, then the impeller: find any broken vanes. A strong flow with the temperature still rising points to low coolant or a broken belt. If the engine will not fire, crank with the seacock closed, or water fills the exhaust and floods it; open it as soon as she runs." },
+        { "table": { "head": ["Sign", "Meaning"], "rows": [
+          ["Oil pressure alarm", "Stop at once, check the oil"],
+          ["Charge light on", "Not charging: check the belt"],
+          ["Black smoke", "Overloaded or short of air"],
+          ["Blue smoke", "Burning oil"],
+          ["White smoke", "Normal on a cold start"]
+        ] } }
+      ]
+    },
+    {
+      "id": "fuel",
+      "kicker": "Fuel",
+      "title": "Clean, free of air, and enough",
+      "refs": ["Fuel system", "Fuel consumption and range", "Fuelling", "Refuelling"],
+      "blocks": [
+        { "p": "Fuel runs from the tank through the **water separator**, the lift pump and the fine filter to the injectors. Water sinks to the bottom of the separator bowl: drain it. Dirty fuel makes the engine surge and stop: drain the separator, change the filter." },
+        { "p": "After running dry, or when a low tank lets the pickup suck air under heel, **bleed** the system: open the bleed screw and work the lift-pump lever until fuel runs without bubbles." },
+        { "fig": { "type": "panel", "gauges": [["Fuel", "80 L", false], ["Burn", "4 L/h", false], ["Speed", "6 kn", false]], "lines": ["Reserve 20 L: 60 ÷ 4 = 15 h", "15 h × 6 kn = 90 miles"] } },
+        { "p": "Range is usable fuel divided by hourly burn, times speed; the burn is litres refilled divided by engine hours. Easing the revs stretches it. At the fuel berth check the cap says DIESEL, switch off engine and electrics, and fill slowly with a rag at the breather." }
+      ]
+    },
+    {
+      "id": "power",
+      "kicker": "Under power",
+      "title": "Prop walk and the pivot point",
+      "refs": ["Boat handling under power", "Propeller", "Twin engines", "Saildrive", "Steering", "Autopilot", "Charter check-in"],
+      "blocks": [
+        { "p": "In astern the propeller kicks the stern sideways before the boat moves: **prop walk**, to port with a right-handed propeller. So berth port side-to, and turn short to starboard. With sternway on, the stern follows the wheel." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 0, "dist": 0, "hdg": 0, "scale": 0.01 }, "note": "Engine astern, rudder centred: stern walks to port" } },
+        { "p": "Going ahead she pivots a third of her length from the bow, and the stern swings wide. A catamaran spins on the spot: port engine ahead and starboard astern turn her to starboard." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 100, "dist": 48, "hdg": 0, "label": "Moored" }, "note": "Turn to port: your stern swings to starboard" } },
+        { "p": "Vibration and lost speed mean a fouled propeller: stop, and clear it with the key out. Milky saildrive oil, or seawater on its diaphragm: report it. If the wheel goes slack, fit the emergency tiller; press Standby to take over from the autopilot." }
+      ]
+    },
+    {
+      "id": "electrics",
+      "kicker": "Electrics",
+      "title": "Two banks, read in volts",
+      "refs": ["Electrics", "Battery state of charge", "Alternator charging", "Energy budget", "Battery switches", "Inverter", "Fuses and breakers", "Shore power", "Windlass"],
+      "blocks": [
+        { "p": "A **starter battery** and a **house bank**: at anchor run everything from the house bank alone, and the engine will always start. A flat starter battery: parallel the banks, start, then separate them. Never open the isolator with the engine running: it destroys the alternator." },
+        { "fig": { "type": "panel", "gauges": [["House", "11.8 V", true], ["Engine", "12.7 V", false], ["Solar", "2 A", false]], "lines": ["Fridge and anchor light ran all night", "Engine battery was isolated: she starts"] } },
+        { "table": { "head": ["Volts", "Meaning"], "rows": [
+          ["12.7 at rest", "Full"],
+          ["12.2 at rest", "Half: charge"],
+          ["Below 12.0", "Deeply discharged"],
+          ["13.8–14.4", "Charging normally"],
+          ["Above 14.8", "Overcharging: stop, ventilate"]
+        ] } },
+        { "p": "Budget in **amp-hours**, amps times hours, and use only half of a lead-acid bank. Watts divided by 12 give the amps an inverter draws." },
+        { "p": "Replace a fuse like for like. A breaker or shore-power RCD that trips again at once is protecting you: find the fault. Connect the shore cable to the boat first, the pedestal last. Run the engine when you use the windlass; breaker off before hands go near the chain." }
+      ]
+    },
+    {
+      "id": "water",
+      "kicker": "Water, heads and bilge",
+      "title": "Every hull fitting has a seacock",
+      "refs": ["Fresh water", "Heads", "Heads and holding tanks", "Seacocks", "Hull fittings", "Bilge pumps"],
+      "blocks": [
+        { "p": "Fresh water: tank litres divided by the crew's daily use. A pump that runs on while the tap spits air has an empty tank; one that cuts in with every tap closed has a leak." },
+        { "fig": { "type": "panel", "gauges": [["Tanks", "360 L", false], ["Crew", "6", false], ["Each", "20 L", false]], "lines": ["6 × 20 = 120 L a day", "360 ÷ 120 = 3 days"] } },
+        { "p": "The **heads** take only what you have eaten and a little paper. In harbours and bays the Y-valve stays on the **holding tank**; empty it at a pump-out or well offshore, where rules allow. Close the heads seacocks at sea, or the bowl can siphon full when heeled." },
+        { "p": "A **seacock** is open with the handle along the pipe, closed across it. Leaking hose: close it. Broken fitting: hammer in the softwood bung. If the bilge pump keeps running, taste the water: fresh is a tank, salt is the sea." }
+      ]
+    },
+    {
+      "id": "gas",
+      "kicker": "Gas and the outboard",
+      "title": "Small systems, firm rules",
+      "refs": ["Gas installation", "Outboard engine"],
+      "blocks": [
+        { "p": "Bottled gas is **heavier than air**, so its locker drains overboard and the drain must be clear. A solenoid valve at the bottle shuts the supply: after cooking switch it off first, let the flame die, then close the burner." },
+        { "table": { "head": ["Outboard", "Answer"], "rows": [
+          ["Fuel", "Four-stroke: plain petrol, no oil"],
+          ["Will not start", "Kill cord on?"],
+          ["Cold", "Choke out, in as it warms"],
+          ["No tell-tale water", "Stop: no cooling"],
+          ["Runs, then dies", "Open the tank vent"]
+        ] } }
+      ]
+    }
+  ]
+}

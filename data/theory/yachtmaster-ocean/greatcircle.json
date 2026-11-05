@@ -1,0 +1,105 @@
+{
+  "topic": "greatcircle",
+  "lead": "On an ocean the straight line on your chart is not the shortest way. Find the great circle, sail it as waypoints, keep it out of the ice, and know when a longer route is faster.",
+  "sections": [
+    {
+      "id": "gc",
+      "kicker": "Great circle and rhumb line",
+      "title": "Shortest track or steady course",
+      "refs": ["Great circle sailing — the shortest route", "Great circle sailing — on the Mercator chart", "Rhumb line — the Mercator chart", "Great circle sailing — the saving", "Great circle sailing — the plotter", "Parallel sailing — and the great circle", "Great circle sailing — across the equator"],
+      "blocks": [
+        { "p": "A **great circle** is cut by a plane through the Earth's centre; its shorter arc is the shortest track between two points. A **rhumb line** crosses every meridian at the same angle: one course all the way, straight on a Mercator chart, but longer." },
+        { "fig": { "type": "chart", "land": "M40 0 H41 V200 H40 Z M100 0 H101 V200 H100 Z M160 0 H161 V200 H160 Z M220 0 H221 V200 H220 Z M280 0 H281 V200 H280 Z M0 40 H320 V41 H0 Z M0 90 H320 V91 H0 Z M0 140 H320 V141 H0 Z", "marks": [[30, 160, "k", "Yokohama"], [290, 112, "k", "Victoria"]], "track": "M30 160 Q150 10 290 112 M30 160 L290 112", "labels": [[150, 66, "great circle", "middle"], [170, 150, "rhumb line", "middle"]], "note": "Mercator chart, North Pacific" }, "cap": "Yokohama to Victoria: great circle 4,104 M, rhumb line 4,374 M." },
+        { "p": "On a Mercator chart the great circle bows towards the nearer pole, an S across the equator. The saving grows with latitude and east–west distance: 214 miles Cape Town to Fremantle, 10 Canaries to St Lucia, none along a meridian or the equator, which are great circles themselves. Other parallels are small circles: even a due-east leg is not the shortest." },
+        { "p": "In the plotter, leg type **GC** follows it; **RL** holds one course." }
+      ]
+    },
+    {
+      "id": "distance",
+      "kicker": "Distance and initial course",
+      "title": "A triangle on the globe",
+      "refs": ["Great circle sailing — distance", "Great circle sailing — initial course", "Great circle sailing — DLo across the date line"],
+      "blocks": [
+        { "p": "The pole, departure A and destination B form a spherical triangle: two sides are 90° minus each latitude, the angle at the pole is the difference of longitude (**DLo**), the third side the distance and the angle at A the initial course." },
+        { "fig": { "type": "sphere", "parts": [["P", "pole"], ["Z", "A"], ["X", "B"], ["pz", "90° − lat A"], ["px", "90° − lat B"], ["zx", "distance"], ["equator", "equator"]], "note": "Angle at the pole: DLo · angle at A: the course" } },
+        { "rule": "cos d = sin L1 × sin L2 + cos L1 × cos L2 × cos DLo. Each degree of d is 60 miles.", "label": "Distance" },
+        { "p": "Contrary-name latitudes go in negative. For DLo subtract longitudes of the same name, add east to west; across the date line add both distances from 180°. Initial course: tan C = sin DLo ÷ (cos L1 × tan L2 − sin L1 × cos DLo), from north towards your side; if negative, add 180°." },
+        { "fig": { "type": "card", "title": "45°S 080°E → 45°S 140°E", "lines": ["DLo 60°E, both latitudes south (−45°)", "cos d = 0.5 + 0.5 × cos 60° = 0.75", "d = 41.41° × 60 = 2,485 M", "tan C = −2.449: C = 180° − 67.8° = 112°T", "Along the parallel: 2,546 M"] } }
+      ]
+    },
+    {
+      "id": "vertex",
+      "kicker": "The vertex",
+      "title": "Where the track turns back",
+      "refs": ["Great circle sailing — the vertex", "Great circle sailing — the course changes"],
+      "blocks": [
+        { "p": "A great circle cuts each meridian at a different angle, so the course changes all the way. The **vertex** is the point nearest the pole: there the track runs due east or west, then turns back towards the equator. Hold the first course and you sail a rhumb line past your port." },
+        { "fig": { "type": "chart", "land": "M40 0 H41 V200 H40 Z M80 0 H81 V200 H80 Z M120 0 H121 V200 H120 Z M160 0 H161 V200 H160 Z M200 0 H201 V200 H200 Z M240 0 H241 V200 H240 Z M280 0 H281 V200 H280 Z M0 42.9 H320 V43.9 H0 Z M0 70 H320 V71 H0 Z M0 99.6 H320 V100.6 H0 Z M0 132.5 H320 V133.5 H0 Z", "marks": [[40, 70, "k", "A"], [160, 94.1, "k"], [280, 70, "k", "B"]], "track": "M40 70.0 L60 77.5 L80 83.5 L100 88.2 L120 91.5 L140 93.5 L160 94.1 L180 93.5 L200 91.5 L220 88.2 L240 83.5 L260 77.5 L280 70.0 M40 70 L280 70", "labels": [[160, 62, "rhumb line", "middle"], [160, 114, "V 49°06′S", "middle"], [236, 114, "great circle", "middle"], [52, 94, "112°T", "middle"], [262, 94, "068°T", "middle"], [316, 39, "40°S", "end"], [316, 66, "45°S", "end"], [316, 96, "50°S", "end"], [316, 129, "55°S", "end"], [40, 180, "080°E", "middle"], [160, 180, "110°E", "middle"], [280, 180, "140°E", "middle"]], "note": "Mercator chart: 45°S 080°E → 45°S 140°E" }, "cap": "112°T at the start, 090°T at the vertex, 068°T on arrival." },
+        { "rule": "cos Lv = cos L1 × sin C; to its meridian, cos DLo = tan L1 ÷ tan Lv.", "label": "Vertex" },
+        { "p": "The vertex may lie off the passage: beyond the destination if you arrive still closing the pole, behind you if you start heading away. The track crosses the equator 90° of longitude from the vertex; at any latitude L on it, sin C = cos Lv ÷ cos L. Blown off the track, start a new great circle from your fix." }
+      ]
+    },
+    {
+      "id": "waypoints",
+      "kicker": "Gnomonic chart and waypoints",
+      "title": "Putting the curve on your chart",
+      "refs": ["Great circle sailing — the gnomonic chart", "Great circle sailing — waypoints"],
+      "blocks": [
+        { "p": "On a **gnomonic chart** every great circle is a straight line. Rule it, but measure neither course nor distance there: both are distorted. Read its latitude on each meridian, 5° or 10° apart, plot the points on the Mercator chart and join them with short rhumb lines." },
+        { "fig": { "type": "chart", "land": "M-40 200 L70 0 L71 0 L-38.5 200 Z M10 200 L92 0 L94 0 L11.5 200 Z M60 200 L115 0 L116 0 L61.5 200 Z M110 200 L138 0 L139 0 L111.5 200 Z M160 200 L160 0 L161 0 L161.5 200 Z M210 200 L182 0 L184 0 L211.5 200 Z M260 200 L205 0 L206 0 L261.5 200 Z M310 200 L228 0 L229 0 L311.5 200 Z", "marks": [[24, 140, "k", "Halifax"], [255, 112, "k", "Falmouth"]], "track": "M24 140 L255 112", "labels": [[150, 112, "great circle", "middle"], [22, 172, "60°W", "middle"], [68, 172, "50°W", "middle"], [114, 172, "40°W", "middle"], [160, 172, "30°W", "middle"], [206, 172, "20°W", "middle"], [252, 172, "10°W", "middle"]], "note": "Gnomonic chart, North Atlantic" } },
+        { "p": "Or compute them from the vertex: tan L = tan Lv × cos (DLo from the vertex). Along 45°S:" },
+        { "table": { "head": ["Meridian", "Latitude"], "rows": [
+          ["080°E, 140°E", "45°00′S"],
+          ["090°E, 130°E", "47°20′S"],
+          ["100°E, 120°E", "48°40′S"],
+          ["110°E (vertex)", "49°06′S"]
+        ] } },
+        { "p": "Legs 10° apart add only a mile or two; space them closer in high latitudes, where the course turns fastest." }
+      ]
+    },
+    {
+      "id": "composite",
+      "kicker": "Composite sailing",
+      "title": "A latitude you will not cross",
+      "refs": ["Composite sailing", "Composite sailing — the plotter"],
+      "blocks": [
+        { "p": "In high latitudes the great circle can lead into ice: from Bluff to Cape Horn its vertex is near 70°S. Choose a **limiting latitude** and sail a composite track: a great circle whose vertex lies on the limit, the parallel itself, then a second great circle to the destination: the shortest track that keeps to the limit. Each leg is solved from its vertex on the limit." },
+        { "fig": { "type": "chart", "land": "M40 0 H41 V200 H40 Z M100 0 H101 V200 H100 Z M160 0 H161 V200 H160 Z M220 0 H221 V200 H220 Z M280 0 H281 V200 H280 Z M0 40 H320 V41 H0 Z M0 90 H320 V91 H0 Z M0 140 H320 V141 H0 Z", "marks": [[30, 40, "k", "Bluff"], [290, 100, "k", "Cape Horn"]], "track": "M30 40 Q55 130 110 140 L230 140 Q275 135 290 100", "labels": [[170, 132, "58°S: the limit · 090°T", "middle"], [102, 84, "GC 130°T", "middle"], [248, 112, "GC", "middle"]], "note": "Mercator chart, Southern Ocean (north up)" }, "cap": "Bluff to Cape Horn, limit 58°S: 4,297 M; the direct great circle 4,040 M." },
+        { "fig": { "type": "card", "title": "First leg: Bluff, 46°36′S, to 58°S", "lines": ["sin C = cos 58° ÷ cos 46.6° → 130°T", "cos DLo = tan 46.6° ÷ tan 58° → 48°38′", "cos d = sin 46.6° ÷ sin 58° → 1,863 M", "Along 58°S: 3,212′ × cos 58° = 1,702 M", "Total 1,863 + 1,702 + 732 = 4,297 M"] } },
+        { "p": "In the plotter: two GC legs joined by an RL leg along the parallel." }
+      ]
+    },
+    {
+      "id": "sailings",
+      "kicker": "Rhumb-line sailings",
+      "title": "Plane, parallel and Mercator",
+      "refs": ["Plane sailing", "Parallel sailing", "Mercator sailing", "Plane sailing — its limits"],
+      "blocks": [
+        { "p": "Rhumb lines are worked by three sailings. **Departure** is the east–west distance in miles: away from the equator a minute of longitude is less than a mile." },
+        { "table": { "head": ["Sailing", "Use it for", "Formulas"], "rows": [
+          ["Plane", "A day's run, a few hundred miles", "dLat = d × cos C; dep = d × sin C; DLo = dep ÷ cos mean lat"],
+          ["Parallel", "Due east or west", "dep = DLo × cos lat"],
+          ["Mercator", "A long rhumb line", "tan C = DLo ÷ DMP; d = dLat ÷ cos C"]
+        ] } },
+        { "fig": { "type": "card", "title": "Plane sailing: a day's run", "lines": ["From 20°00′N 030°00′W: 240°T, 120 M", "dLat = 120 × cos 60° = 60′ S", "dep = 120 × sin 60° = 103.9′ W", "DLo = 103.9 ÷ cos 19.5° = 110′ W", "DR 19°00′N 031°50′W"] } },
+        { "p": "DMP is the difference of meridional parts: subtract for same-name latitudes, add across the equator. Over a long leg the mean latitude no longer gives the true departure: use Mercator sailing." }
+      ]
+    },
+    {
+      "id": "routing",
+      "kicker": "Routing",
+      "title": "More miles, fewer days",
+      "refs": ["Great circle sailing — when it is not the best route", "Great circle sailing — when not to use it"],
+      "blocks": [
+        { "p": "The shortest route is not always the fastest or safest: a yacht routes for wind, current and season first." },
+        { "fig": { "type": "isobars", "center": "H", "values": ["1032", "1028", "1024"], "boat": [60, 175, 45], "hemisphere": "Northern hemisphere", "note": "GC: on the wind, then calms" }, "cap": "Honolulu to San Francisco in summer: north round the Pacific High, then east in the westerlies." },
+        { "list": [
+          "Trade winds: from the Canaries go south to the steady NE trade, then west.",
+          "Highs: round the calm centre, on the side with a fair wind.",
+          "High latitudes: stay on the equator side of the great circle, clear of ice, fog and gales.",
+          "Monsoons: pick the season that puts the wind on your quarter."
+        ] }
+      ]
+    }
+  ]
+}

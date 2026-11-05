@@ -1,0 +1,111 @@
+{
+  "topic": "charts",
+  "lead": "Offshore the chart is small in scale and nobody checks the plot but you. Know what the projection does to distance, what each publication gives, and how far to trust the plotter.",
+  "sections": [
+    {
+      "id": "projection",
+      "kicker": "Mercator and gnomonic",
+      "title": "What the projection does to distance and course",
+      "refs": ["Charts — Mercator projection", "Charts — distance on the latitude scale", "Charts — gnomonic charts and great circles"],
+      "blocks": [
+        { "p": "On a **Mercator** chart a straight line is a rhumb line: one true course throughout. The price is scale, which grows towards the pole as the secant of the latitude. Measure distance on the latitude scale level with the leg; the scale in the title holds only at the latitude it names." },
+        { "fig": { "type": "chart", "track": "M80 24 V180 M150 24 V180 M220 24 V180 M290 24 V180 M80 180 H290 M80 110 H290 M80 24 H290", "labels": [[72, 184, "40°N", "end"], [72, 114, "50°N", "end"], [72, 28, "60°N", "end"], [185, 150, "600 M", "middle"], [185, 72, "600 M", "middle"]], "note": "Mercator: the same 600 M takes more paper further north" } },
+        { "fig": { "type": "card", "title": "Scale by latitude: worked example", "lines": ["Chart 1:300,000 at 50°N, landfall at 45°N", "Scale there: 300,000 × cos 45° ÷ cos 50°", "= 1:330,000, so 1 mm is 330 m", "Leg at 48°N read on the scale at 42°N: 50.0'", "True: 50.0 × cos 48° ÷ cos 42° = 45.0 M"] } },
+        { "p": "A **great circle** is a straight line on a **gnomonic** chart, but that chart keeps no angles. Take points off the line every 5° of longitude, plot them on the Mercator and sail rhumb lines between them. Over a few hundred miles it saves almost nothing." }
+      ]
+    },
+    {
+      "id": "sailings",
+      "kicker": "Latitude and longitude",
+      "title": "Course and distance by calculation",
+      "refs": ["Charts — latitude and longitude", "Charts — latitude and longitude — mid-latitude sailing", "Charts — Mercator projection — Mercator sailing"],
+      "blocks": [
+        { "p": "A minute of latitude is a mile; a minute of longitude is a mile only on the equator. East–west miles are **departure**: d.long × cos latitude. Decimals of a degree are not minutes: 0.25° is 15.0'. On a chart too small to plot on, work the position by **mid-latitude sailing**, or a long leg by **Mercator sailing**." },
+        { "fig": { "type": "card", "title": "Mid-latitude sailing: worked example", "lines": ["From 44°10.0'N 008°30.0'W: 220°T, 100 M", "d.lat 100 × cos 220° = 76.6' S: 42°53.4'N", "Departure 100 × sin 220° = 64.3 M W", "Mid-latitude 43°31.7': cos = 0.725", "d.long 64.3 ÷ 0.725 = 88.7' = 1°28.7' W", "DR 42°53.4'N 009°58.7'W"] } },
+        { "fig": { "type": "card", "title": "Mercator sailing: worked example", "lines": ["From 48°00.0'N 006°00.0'W", "To 45°30.0'N 008°20.0'W", "Mer. parts 3274.4 − 3056.1: DMP 218.3", "tan C = d.long 140' ÷ 218.3: S 32.7° W", "Course 213°T", "Distance = d.lat 150' ÷ cos 32.7° = 178.2 M"] } }
+      ]
+    },
+    {
+      "id": "scale",
+      "kicker": "Scale, folio and datum",
+      "title": "How much a millimetre is worth",
+      "refs": ["Charts — scale and the chart folio", "Charts — scale and the chart folio — the passage folio", "Charts — scale and the chart folio — small-scale chart error", "Charts — horizontal datum", "Charts — chart datum", "Charts — chart datum — units"],
+      "blocks": [
+        { "p": "Plot on the largest-scale chart that covers the leg; where two charts differ, believe the larger scale. The **folio** holds, on paper, the passage chart and the approaches and plans of the destination, every port of refuge and any pilotage on the way. Offshore, carry the plot onto the next chart by latitude and longitude." },
+        { "fig": { "type": "chart", "depths": [[150, 100, "14"], [118, 122, "18"], [50, 56, "46"], [262, 176, "52"], [48, 168, "60"]], "track": "M80 112 C80 72 220 72 220 112 C220 152 80 152 80 112 Z", "marks": [[240, 136, "k", "EP"]], "labels": [[150, 168, "20 m contour", "middle"]], "panel": ["Scale 1:350,000", "1 mm = 350 m", "EP 5 mm off: 0.9 M", "Last fix 6 h ago"], "note": "Six hours of EP can be out by more than 0.9 M" } },
+        { "p": "A **horizontal datum** shift of 0.08' is 150 m: invisible on the passage chart, 6 mm on a 1:25,000 approach. An old plan sounded to MLWS shows more water than one reduced to LAT. Read the units: 7₃ on a fathoms chart is 7 fathoms 3 feet, 13.7 m." }
+      ]
+    },
+    {
+      "id": "chartwork",
+      "kicker": "Chartwork",
+      "title": "Instruments, bearings, speed and time",
+      "refs": ["Chartwork instruments", "Chartwork instruments — the plotter", "Chartwork instruments — the variation setting", "Chartwork instruments — the hand-bearing compass", "Chartwork instruments — pencils", "Chartwork instruments — care and accuracy", "Charts — true, magnetic and compass", "Charts — true, magnetic and compass — light sectors", "Distance, speed and time", "Distance, speed and time — the log", "Distance, speed and time — ETA", "Distance, speed and time — knots"],
+      "blocks": [
+        { "p": "A **Breton plotter** needs only a meridian or parallel under its grid, never the table's edge; its arrow points the way you go, or you read the reciprocal. Creeping dividers and a bowed plotter falsify every leg: 3° over 60 M is 3 M. Plot lightly in soft pencil. Take hand bearings where a transit has proved the compass." },
+        { "fig": { "type": "compass", "variation": -6, "course": 205, "courseLabel": "True track", "note": "205°T + 6°W = 211°M" } },
+        { "p": "True to magnetic: add westerly variation, subtract easterly. Set on the plotter, it is applied for you. Light sectors are true, from seaward: convert your bearing first." },
+        { "fig": { "type": "card", "title": "Speed and time: worked example", "lines": ["2130 log 512.4 · 0415 log 561.9: 49.5 M", "6 h 45 min is 6.75 h, not 6.45 h", "49.5 ÷ 6.75 = 7.3 kn", "Log reads 4% high: 130.0 ÷ 1.04 = 125.0 M", "96 M at 8.0 kn = 12 h: leave 1900 BST,", "arrive 0700 BST = 0800 French time"] } },
+        { "rule": "Minutes are sixtieths, not decimals. A knot is 1.852 km/h.", "label": "Remember" }
+      ]
+    },
+    {
+      "id": "offshore",
+      "kicker": "Offshore symbols",
+      "title": "Routes, installations and areas",
+      "refs": ["Chart symbols — traffic separation schemes", "Chart symbols — traffic separation schemes — deep-water routes", "Chart symbols — traffic separation schemes — precautionary areas", "Chart symbols — traffic separation schemes — areas to be avoided", "Chart symbols — offshore installations — platforms", "Chart symbols — offshore installations — lights", "Chart symbols — offshore installations — fog signals", "Chart symbols — offshore installations — safety zones", "Chart symbols — offshore installations — single buoy moorings", "Chart symbols — offshore installations — wellheads", "Chart symbols — offshore areas — wind farms", "Chart symbols — offshore areas — wind farms — lights", "Chart symbols — offshore areas — wind farms — the rules", "Chart symbols — offshore areas — submarine cables", "Chart symbols — offshore areas — submarine exercise areas", "Chart symbols — offshore areas — dumping grounds", "Offshore buoys and lightvessels", "Offshore buoys and lightvessels — T&P notices"],
+      "blocks": [
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 62, "t": "Mo(U) 15s" }, { "c": "r", "x": 100, "y": 118 }, { "c": "r", "x": 220, "y": 118 }] }, "view": "60 20 200 150", "name": "Platform", "note": "white Mo(U), red at its ends" },
+          { "fig": { "type": "lights", "lights": [{ "c": "y", "x": 90, "y": 120 }, { "c": "y", "x": 230, "y": 120 }, { "c": "r", "x": 90, "y": 60, "r": 4 }, { "c": "r", "x": 160, "y": 56, "r": 4 }, { "c": "r", "x": 230, "y": 60, "r": 4 }] }, "view": "60 20 200 150", "name": "Wind farm", "note": "yellow, flashing together" }
+        ], "cols": 2 },
+        { "table": { "head": ["On the chart", "For a yacht"], "rows": [
+          ["DW route", "Deep-draught ships: keep out, or cross at right angles"],
+          ["Precautionary area", "Ships converge and turn: extra care"],
+          ["Pecked arrow", "A recommended flow, no lane rule"],
+          ["Area to be avoided", "Binds the ships its note names"],
+          ["Platform, rig, SBM", "500 m safety zone"],
+          ["Cable, wellhead, dumping ground", "Never anchor"],
+          ["Submarine exercise area", "Open: get the broadcast, keep a lookout"]
+        ] } },
+        { "p": "In fog a platform sounds Mo(U), heard about 2 M off. A **wind farm** has national rules in its chart note: who may transit, and when. Check the blade-tip height against your mast; never anchor among its cables. A fouled cable is slipped, buoyed and reported. An ODAS data buoy is a yellow special mark, Fl(5) Y 20s. A light buoy replacing a lightvessel has a fraction of its range." }
+      ]
+    },
+    {
+      "id": "publications",
+      "kicker": "Publications and corrections",
+      "title": "What to open, and how to keep it current",
+      "refs": ["Nautical publications — Sailing Directions", "Nautical publications — Sailing Directions — passage notes", "Nautical publications — List of Lights", "Nautical publications — List of Lights — luminous and geographical range", "Nautical publications — List of Lights — geographical range", "Nautical publications — List of Radio Signals", "Nautical publications — almanacs", "Nautical publications — routeing charts", "Nautical publications — tidal stream atlases", "Notices to Mariners — keeping charts corrected", "Notices to Mariners — keeping charts corrected — T&P", "Notices to Mariners — keeping charts corrected — new editions", "Notices to Mariners — keeping charts corrected — T&P notices", "Navigational warnings", "Navigational warnings — NAVAREAs", "Navigational warnings — NAVAREA III"],
+      "blocks": [
+        { "table": { "head": ["Publication", "What it gives"], "rows": [
+          ["Sailing Directions", "Coast from seaward, local rules; passage notes: sets, steep seas, fish farms"],
+          ["List of Lights", "Each light in full, corrected weekly"],
+          ["List of Radio Signals", "NAVTEX and weather schedules, VTS rules"],
+          ["Routeing chart", "A month's winds, currents, gales; the rose's centre figure: % of calms"],
+          ["Tidal stream atlas", "Hourly pages; 08,15 is 0.8 kn at neaps, 1.5 at springs"],
+          ["Almanac", "Apply the supplements; check each waypoint on the chart"]
+        ] } },
+        { "p": "You see a light at the lesser of two ranges: the **geographical**, 2.08 × (√H + √h) miles for heights in metres, and the **luminous**, the nominal range cut down by tonight's visibility. Beyond both there is only the loom." },
+        { "fig": { "type": "card", "title": "Corrections before sailing", "lines": ["Stamp: corrected to NM Week 31. Now Week 36:", "apply Weeks 32–36 to each chart, log them", "New Edition published: replace the chart", "T notices: keep only those still in force", "(P) notices, warnings: pencil, with the number", "ENC and paper differ: find the notice"] } },
+        { "p": "Weekly **Notices to Mariners** correct the charts and, in their later sections, the publications. **Navigational warnings** stand until cancelled: read the lists for each NAVAREA you cross, plot them in pencil, convert their UTC times." }
+      ]
+    },
+    {
+      "id": "enc",
+      "kicker": "Electronic charts",
+      "title": "Settings that make the plotter worth trusting",
+      "refs": ["Electronic charts — ENC and RNC", "Electronic charts — ENC and RNC — safety contour", "Electronic charts — ENC and RNC — safety depth", "Electronic charts — ENC and RNC — look-ahead", "Electronic charts — ENC and RNC — route check", "Electronic charts — ENC and RNC — alarms", "Electronic charts — ENC and RNC — alarms — isolated dangers", "Electronic charts — ENC and RNC — display levels", "Electronic charts — ENC and RNC — usage bands", "Electronic charts — ENC and RNC — over-zoom", "Electronic charts — ENC and RNC — zoom at speed", "Electronic charts — ENC and RNC — the paper backup"],
+      "blocks": [
+        { "p": "An **RNC** is a picture of the paper chart; an **ENC** is data, so only an ENC can sound an alarm, about what you set and what its cells hold." },
+        { "table": { "head": ["Setting", "Rule"], "rows": [
+          ["Safety contour", "Draught + squat + half the swell + margin; the next deeper contour in the cell is bolded"],
+          ["Safety depth", "Soundings equal or shallower show bold"],
+          ["Look-ahead", "Speed × warning time"],
+          ["Route check", "Corridor as wide as your likely set"]
+        ] } },
+        { "fig": { "type": "card", "title": "Safety contour: worked example", "lines": ["Draught 2.1 m, squat 0.3 m", "Swell 1.6 m: allow half, 0.8 m", "Margin under the keel 1.0 m: total 4.2 m", "Cell contours 2, 5, 10, 20 m: 5 m is bold", "General cell, 10, 20, 50 m: 10 m is bold", "Look-ahead: 18 kn × 10 min = 3.0 M"] } },
+        { "p": "A contour at the bare draught misses a shoal the troughs uncover; a factory 30 m alarm cries wolf. A leg with no cell is unchecked; the 'Basic' display hides soundings. **Overscale**: the cell's error, about 0.5 mm at its compilation scale, grows with the zoom: buy the approach cells. At speed, zoom out to see minutes ahead. A plot copied from the plotter checks nothing: keep a DR, cross-check by bearings, depth or radar. No alarm replaces the lookout." }
+      ]
+    }
+  ]
+}

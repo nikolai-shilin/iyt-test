@@ -1,0 +1,101 @@
+{
+  "topic": "safety",
+  "lead": "Safety gear is the part of the check-in most often waved through. Count it, read the dates, try it with your own hands, and have the base make up what is short before you leave.",
+  "sections": [
+    {
+      "id": "list",
+      "kicker": "The list",
+      "title": "Every item aboard and in date before you sign",
+      "refs": ["Equipment required by law", "Check-in: missing or expired items", "Liferaft service", "Check-in: first-aid kit", "Check-in: safety locker", "Base briefing"],
+      "blocks": [
+        { "p": "The base's equipment list is the regulation of the boat's **flag state**, whatever rules you know from home. Every item on it is aboard and in date before you sign; what is missing or expired goes on the form and the base makes it up. With an out-of-date liferaft you stay on the pontoon." },
+        { "table": { "head": ["Item", "What you check"], "rows": [
+          ["Liferaft", "Service date, capacity for everyone aboard"],
+          ["Flares", "Expiry date of each one"],
+          ["Extinguishers", "Gauge in the green, service date"],
+          ["EPIRB", "Battery date, self-test, registration"],
+          ["First-aid kit", "Contents against the list, dates"],
+          ["Safety locker", "Bolt cutters, working foghorn, torch with spare batteries"]
+        ] } },
+        { "p": "Write the numbers from the briefing on a card by the VHF: channel 16, the base's phone, the local emergency number." }
+      ]
+    },
+    {
+      "id": "jackets",
+      "kicker": "Lifejackets and harnesses",
+      "title": "One that fits, within reach, for everyone",
+      "refs": ["Check-in: lifejackets", "Lifejacket standard ISO 12402", "Check-in: lifejacket stowage", "Lifejacket: light & whistle", "Skipper's safety briefing — lifejackets", "Check-in: children aboard", "Check-in: harnesses & jackstays", "Harness: clipping on at night"],
+      "blocks": [
+        { "p": "One lifejacket per person in the right size, plus a spare. Children's jackets are sized by weight: an adult one slides off a child. For non-swimmers and children ask for **automatic inflation** and a spray hood. Jackets live in the cockpit locker, not under a sail in the forepeak." },
+        { "fig": { "type": "card", "title": "150 N lifejacket (ISO 12402), opened", "lines": ["Cylinder: screwed in tight", "Firing-head indicator: green", "Service label: in date", "Crotch strap: fitted", "Light and whistle: shown to the crew"] } },
+        { "p": "The light and the whistle are how the boat finds a head in the water at night. Set your rule before leaving: children whenever on deck; everyone at night, when reefed and in the dinghy. With small children ask for guardrail netting and child harnesses." },
+        { "p": "For a night passage rig the **jackstays** at the base and test each tether clip: faded webbing or a bent hook will not hold a fall. Nobody leaves the cockpit at night unclipped, or without waking you." }
+      ]
+    },
+    {
+      "id": "mob",
+      "kicker": "Man overboard",
+      "title": "Gear that goes in seconds, a way back aboard",
+      "refs": ["Check-in: MOB gear", "Check-in: throwing line", "Check-in: MOB recovery", "MOB recovery: catamaran", "Swimming from the yacht", "Dinghy at night"],
+      "blocks": [
+        { "fig": { "type": "encounter", "you": { "hdg": 45, "sail": true, "boom": 14 }, "other": { "bearing": 200, "dist": 70, "hdg": 0, "scale": 0.3, "label": "MOB" }, "wind": 0, "note": "Horseshoe, light and danbuoy go over at once" } },
+        { "p": "The horseshoe hangs on a **quick-release** clip, never a knot, with a light and a danbuoy. The throwing line lives in the cockpit: hold the loop and throw the bag beyond the person, so the line falls across them. Plan the recovery at the base: a bathing ladder that opens from the water, and a spare halyard to a winch for someone who cannot climb." },
+        { "rule": "Engine off and key out before anyone is in the water at the stern. On a catamaran, both engines." },
+        { "p": "For the dinghy at night: lifejackets on, a torch, kill cord on the wrist, a time to be back." }
+      ]
+    },
+    {
+      "id": "fire",
+      "kicker": "Fire",
+      "title": "An extinguisher where the fire is fought",
+      "refs": ["Check-in: fire extinguishers", "Check-in: fire extinguisher locations", "Check-in: fire extinguishers, small boat", "Check-in: fire blanket", "Fire drill: engine bay", "Galley fire"],
+      "blocks": [
+        { "fig": { "type": "panel", "gauges": [["Galley", "green", false], ["Aft cabin", "red", true], ["Engine", "none", true]], "lines": ["Each one in its bracket, by a way out", "Gauge in the red: replaced before you sign"] } },
+        { "p": "Check each extinguisher's gauge and service date, and that it sits in its bracket: by the galley, by the companionway, in the cabins, one beside the engine's fire port. All in one deck locker, they are useless below. The **fire blanket** hangs by the galley, reachable without leaning over the stove." },
+        { "p": "Engine fire: stop the engine, shut off fuel and gas, discharge through the fire port and keep the compartment shut: opening it feeds the fire with air. With no port, lift the steps a crack and aim through the gap. Pan fire: gas off, blanket over the pan from the side, leave it covered. Never water on burning oil." }
+      ]
+    },
+    {
+      "id": "raft",
+      "kicker": "Liferaft, beacons, flares",
+      "title": "Leaving the boat and being found",
+      "refs": ["Check-in: liferaft", "Check-in: liferaft stowage", "Liferaft launching", "Grab bag", "Check-in: EPIRB", "Check-in: EPIRB registration", "PLB", "Check-in: flares", "Flares: use", "Flares: use and disposal"],
+      "blocks": [
+        { "p": "The raft's capacity covers everyone aboard, its painter is made fast to the yacht, and it comes out in seconds: no padlock on the cradle, nothing stowed on top." },
+        { "fig": { "type": "card", "title": "Launching the liferaft", "lines": ["Painter made fast to the yacht", "Canister over the lee side", "Pull the painter hard until it fires", "Grab bag in, board dry", "Cut the painter last"] } },
+        { "p": "Pack the **grab bag** yourself: handheld VHF, flares, torch, water, papers, the crew's medicines, a phone in a dry pouch. The EPIRB passes its self-test, has an in-date battery and is registered to this yacht, or rescuers look for the wrong boat; a dead one is replaced, never tested live. A crew member's own PLB is worn on his lifejacket." },
+        { "table": { "head": ["Flare", "Use"], "rows": [
+          ["Red parachute", "To be seen from far off; fired downwind"],
+          ["Red handheld", "To pinpoint you as help closes; held over the lee side"],
+          ["Orange smoke", "By day only"]
+        ] } },
+        { "p": "Only in-date flares count on the form. A red flare always means distress: expired ones go back to the base, never up for fun." }
+      ]
+    },
+    {
+      "id": "sea",
+      "kicker": "Ready for a sea",
+      "title": "Keep the water out and the boat steering",
+      "refs": ["Check-in: bungs & bilge pumps", "Check-in: washboards & hatches", "Check-in: emergency tiller", "Emergency tiller: under way", "Heavy-weather preparation", "Radar reflector"],
+      "blocks": [
+        { "p": "Under the floorboards you want a softwood **bung** tied to each seacock and the manual bilge pump with its handle: power is the first thing to go. Both washboards on lanyards and hatches that dog shut keep a boarding sea out. Fit the **emergency tiller** on the rudder stock yourself at the base. If the wheel fails, take the way off, fit it, anchor somewhere safe and call the base. Hoist the radar reflector at the base and leave it up." },
+        { "fig": { "type": "card", "title": "Before a blow, still at anchor", "lines": ["Reef in", "Jackstays rigged", "Lifejackets and harnesses on", "Washboards in, hatches dogged", "Loose gear stowed"] } }
+      ]
+    },
+    {
+      "id": "crew",
+      "kicker": "Briefing and first aid",
+      "title": "Your own briefing, on this boat",
+      "refs": ["Skipper's safety briefing", "Skipper's briefing: medical", "First aid: seasickness", "First aid: burns", "First aid: heat"],
+      "blocks": [
+        { "p": "Once the boat is signed for, brief **every** crew member, the experienced ones too: the gear and its places are this boat's. Note who takes which medicine and where it is kept, and tell a second person." },
+        { "fig": { "type": "card", "title": "Skipper's briefing", "lines": ["Lifejackets: where, how, when worn", "Man overboard: shout, point, gear", "Gas valve and the heads", "Fire: extinguishers, blanket, ways out", "Swimming: engine off, ladder down", "Who does what"] } },
+        { "table": { "head": ["Problem", "What you do"], "rows": [
+          ["Seasickness", "Tablet about an hour before leaving, with food; then on deck, at the helm"],
+          ["Rope burn", "Cool under fresh water 15–20 minutes, then a loose non-stick dressing; no cream, no ice"],
+          ["Heatstroke: hot dry skin, confusion", "Shade, wet cloths and fanning, sips of water, medical advice at once"]
+        ] } }
+      ]
+    }
+  ]
+}

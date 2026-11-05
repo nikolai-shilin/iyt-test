@@ -1,0 +1,82 @@
+{
+  "topic": "set",
+  "lead": "A VHF is simple to work once you know what each control does and what the set needs: a healthy supply, a sound antenna and a clear voice. Most \"faults\" on a charter yacht turn out to be a knob in the wrong place.",
+  "sections": [
+    {
+      "id": "controls",
+      "kicker": "The controls",
+      "title": "What each knob and button does",
+      "refs": ["VHF set"],
+      "blocks": [
+        { "p": "A fixed set has few controls. **Volume** sets how loud you hear others; it changes nothing in what you send. **Squelch** mutes the hiss between calls: turn it down until the hiss starts, then up until it just stops. Set any higher, it shuts out weak stations too, and you hear nothing for hours." },
+        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["display", "channel"], ["volume", "volume"], ["mic", "microphone"], ["ptt", "press to talk"], ["distress", "DISTRESS"], ["power", "25 W / 1 W"], ["ch16", "straight to 16"], ["squelch", "squelch"]] } },
+        { "p": "The **16** key takes you straight back to channel 16. The red **DISTRESS** button sits under a cover and sends a DSC alert: never press it to try it. **Dual watch** listens to 16 and one channel you choose; **tri-watch** listens to 16 and two others in turn." },
+        { "rule": "Squelch: just past the point where the hiss stops." }
+      ]
+    },
+    {
+      "id": "power",
+      "kicker": "Power and supply",
+      "title": "25 watts to reach, 1 watt close by",
+      "refs": ["VHF set"],
+      "blocks": [
+        { "p": "The **H/L** key switches between high power, **25 W**, and low power, **1 W**. Low power is for short range: inside a harbour, to a boat nearby. If a station miles away does not answer, check first that the set is not still on 1 W." },
+        { "tiles": [
+          { "fig": { "type": "radio", "channel": "72", "power": "HI" }, "view": "60 53 108 58", "name": "High, 25 W", "note": "open water, long range" },
+          { "fig": { "type": "radio", "channel": "72", "power": "LO" }, "view": "60 53 108 58", "name": "Low, 1 W", "note": "in port, close by" }
+        ] },
+        { "p": "The set lives on the yacht's battery. A blank display means no supply: check the VHF breaker on the switch panel, the fuse and the battery switch. A tired battery still lights the display but cannot give full power when you transmit, so others hear you weak. Run the engine to charge it, then call again." },
+        { "fig": { "type": "panel", "gauges": [["Volts", "11.2", true], ["VHF", "25 W", false]], "lines": ["Coast station: \"Aurora, you are weak\"", "Engine off since yesterday, fridge running"] } }
+      ]
+    },
+    {
+      "id": "antenna",
+      "kicker": "Antenna and range",
+      "title": "Height gives range",
+      "refs": ["VHF range", "VHF set"],
+      "blocks": [
+        { "p": "VHF travels roughly in a straight line, so each antenna must \"see\" the other over the horizon. **Height matters more than power**: an antenna at the masthead reaches much further than one on the pushpit rail, and a coast station on a hill reaches furthest of all." },
+        { "fig": { "type": "boat", "view": "side", "parts": [["mast", "masthead antenna: reaches far"], ["pushpit", "on the rail"]], "note": "The higher the antenna, the further its horizon" } },
+        { "table": { "head": ["Between", "Roughly"], "rows": [
+          ["Two yachts with masthead antennas", "10–20 miles"],
+          ["A yacht and a coast station on a hill", "the longest: 30 miles and more"],
+          ["A handheld at deck level", "a few miles"]
+        ] } },
+        { "p": "The cable is part of the antenna. A corroded connector at the mast foot loses most of the signal: range falls to a mile or two until you clean or replace it. And never transmit with the antenna unplugged: the power has nowhere to go and can damage the set." }
+      ]
+    },
+    {
+      "id": "handheld",
+      "kicker": "The handheld",
+      "title": "Short range, but it goes with you",
+      "refs": ["VHF set", "VHF range"],
+      "blocks": [
+        { "p": "A handheld gives about 5 W from a short antenna at deck level, so it reaches only a few miles. Give it its best chance: stand up on deck, hold the antenna straight up and use high power. Offshore, the fixed set is the one that reaches the coast." },
+        { "table": { "head": ["What", "Fixed set", "Handheld"], "rows": [
+          ["Power", "25 W / 1 W", "about 5 W / 1 W"],
+          ["Antenna", "at the masthead", "on the set, at deck level"],
+          ["Supply", "the yacht's battery", "its own battery"],
+          ["Place", "the main radio", "dinghy, back-up, liferaft"]
+        ] } },
+        { "p": "Its strength is that it works away from the yacht: in the dinghy, and in the liferaft, so it belongs in the grab bag. Transmitting drains the battery fast: charge it before you leave. **IPX7** means it survives a short dunking, about 1 m for 30 minutes. It does not mean it floats." }
+      ]
+    },
+    {
+      "id": "technique",
+      "kicker": "Microphone technique",
+      "title": "Press, pause, speak",
+      "refs": ["VHF technique", "VHF set", "VHF procedure"],
+      "blocks": [
+        { "p": "You talk and listen in turn: press the button on the microphone to transmit, release it to listen. The set needs a moment to start sending, so **press, pause, then speak**, or your first words are clipped." },
+        { "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["mic", "few cm away"], ["ptt", "press, pause, speak · release to listen"]] } },
+        { "list": [
+          "Hold the microphone a few centimetres from your mouth and speak in a normal voice: shouting with it against your lips distorts every word.",
+          "In a strong wind, shield the microphone with your hand or your body.",
+          "Release the button when you finish. A handheld jammed in a locker with its button pressed transmits non-stop and blocks the channel for everyone.",
+          "To test the set, ask a marina or another boat for a radio check on a working channel, never on 16 or 70."
+        ] },
+        { "rule": "Press, pause, speak. Release to listen." }
+      ]
+    }
+  ]
+}

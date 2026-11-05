@@ -1,0 +1,100 @@
+{
+  "topic": "systems",
+  "lead": "A charter yacht is a small house with an engine, and on a flotilla the lead crew's engineer is a radio call away. Your part is the daily check, reading the alarms correctly and stopping a small fault before it becomes a big one.",
+  "sections": [
+    {
+      "id": "daily",
+      "kicker": "Daily check and fuel",
+      "title": "Two minutes before the first start",
+      "refs": ["Daily engine check", "Fuel", "Fuel planning"],
+      "blocks": [
+        { "p": "Every morning, before the first start, open the engine box and look. It takes two minutes and finds most problems while you are still tied up." },
+        { "list": [
+          "Oil level on the dipstick",
+          "Coolant level in the header tank",
+          "Drive belt tight and not frayed",
+          "Raw-water strainer clear, seacock open",
+          "Bilge under the engine dry",
+          "Fuel tap on, enough fuel for the day"
+        ] },
+        { "p": "Yacht engines are **diesels**. Petrol in the tank means draining it, with a fire risk and a damaged engine: at the fuel quay, look at the nozzle yourself. Work out the fuel for a leg before you go: hours under engine times litres an hour, with a reserve left over." },
+        { "fig": { "type": "panel", "gauges": [["Fuel", "60 L", false], ["Burn", "3 L/h", false], ["Speed", "5 kn", false]], "lines": ["Leg: 20 M under engine", "4 h × 3 L/h = 12 L used, 48 L left"] }, "cap": "20 M ÷ 5 kn = 4 hours. 4 h × 3 L/h = 12 litres, so 48 of the 60 are left." }
+      ]
+    },
+    {
+      "id": "cooling",
+      "kicker": "Engine cooling",
+      "title": "Water in, water out",
+      "refs": ["Engine cooling"],
+      "blocks": [
+        { "p": "The engine is cooled by sea water. It comes in through a **seacock**, passes the **raw-water strainer**, is pushed along by a pump with a rubber **impeller** and leaves with the exhaust. So after every start, look over the stern: water must spurt out with the exhaust. No water means no cooling, and you stop the engine." },
+        { "table": { "head": ["No water: check", "What you do"], "rows": [
+          ["Seacock", "Make sure it is open"],
+          ["Strainer", "Weed or plastic in the bowl: clean it"],
+          ["Impeller", "Intake clear and still no water: the impeller has failed. Stop and call the lead crew"]
+        ] } },
+        { "fig": { "type": "card", "title": "Cleaning the strainer", "lines": ["1. Stop the engine", "2. Close the seacock", "3. Open the strainer, clean the basket", "4. Refit the lid tight", "5. Open the seacock, start, check the exhaust"] } },
+        { "rule": "Close the seacock before you open the strainer, or the sea pours in. Open it again before you start, or the engine overheats." }
+      ]
+    },
+    {
+      "id": "alarms",
+      "kicker": "Engine alarms",
+      "title": "When the panel shouts, stop the engine",
+      "refs": ["Engine alarms", "Fouled propeller"],
+      "blocks": [
+        { "tiles": [
+          { "fig": { "type": "panel", "gauges": [["Temp", "105°", true], ["Oil", "OK", false]], "lines": ["Steam, little exhaust water"] }, "name": "Overheating", "note": "the cooling water has stopped" },
+          { "fig": { "type": "panel", "gauges": [["Temp", "82°", false], ["Oil", "LOW", true]], "lines": ["Oil warning light on"] }, "name": "Low oil pressure", "note": "minutes from damage" }
+        ] },
+        { "p": "Both alarms ask for the same first action: **stop the engine**. Overheating with steam and little water at the exhaust means the raw-water flow has failed: check the intake. Low oil pressure can wreck a diesel within minutes: stop, check the oil level, and do not restart until you know why." },
+        { "p": "The one exception is the safety of the boat. Close to a rocky lee shore, unroll the genoa and sail clear first, then stop the engine." },
+        { "p": "A thump under the stern, heavy vibration and lost speed near fishing floats mean a **rope round the propeller**: go to neutral and stop the engine." }
+      ]
+    },
+    {
+      "id": "electrics",
+      "kicker": "Batteries and charging",
+      "title": "Keep one battery for starting",
+      "refs": ["Batteries", "Charging", "Shore power"],
+      "blocks": [
+        { "p": "The boat has two battery banks. The **house** bank runs the fridge, lights and instruments; the **engine** battery only starts the engine. At anchor run everything from the house bank and keep the engine battery isolated. With the switch on BOTH the two are joined, and a night of fridge flattens the starting battery as well." },
+        { "fig": { "type": "panel", "gauges": [["House", "11.9 V", true], ["Engine", "12.7 V", false]], "lines": ["Second night at anchor, lights dim", "House flat, engine battery ready"] } },
+        { "table": { "head": ["Volts at rest", "State"], "rows": [
+          ["12.6–12.7", "Full"],
+          ["About 12.2", "Half: time to charge"],
+          ["Under 12", "Flat"]
+        ] } },
+        { "p": "Batteries charge from the engine's **alternator** or from the shore-power charger. A charge light that stays on with the engine running, and a squeal from the engine box, point to a slack or broken alternator belt. On many engines the same belt drives the water pump, so watch the temperature too." },
+        { "p": "For **shore power**, plug the cable into the boat first and the pillar second, so you never hold a live loose end. To leave, unplug at the pillar first." }
+      ]
+    },
+    {
+      "id": "gas",
+      "kicker": "Gas",
+      "title": "Heavier than air",
+      "refs": ["Gas system"],
+      "blocks": [
+        { "p": "Cooking gas is heavier than air. A leak does not blow away: it sinks into the bilge and lies there until a spark finds it. So gas is in the pipe only while you cook." },
+        { "p": "After cooking, shut the supply first, at the solenoid switch or the bottle valve, and let the flame burn off the gas left in the pipe. Then turn off the burner knob." },
+        { "fig": { "type": "card", "title": "Smell of gas", "lines": ["Turn the gas off at the bottle", "No flames, no smoking", "Touch no electrical switch", "Open every hatch and air the boat"], "tag": "No sparks" } },
+        { "rule": "Supply off, flame dies, then the burner knob." }
+      ]
+    },
+    {
+      "id": "water",
+      "kicker": "Water, heads and bilge",
+      "title": "The domestic systems",
+      "refs": ["Fresh water system", "Marine heads", "Bilge pumps"],
+      "blocks": [
+        { "table": { "head": ["What you notice", "What it means", "What you do"], "rows": [
+          ["The water pump runs on, the taps spit air", "The tank is empty", "Pump off, switch to the other tank"],
+          ["You are in harbour or at anchor", "The heads must not pump overboard", "Use the holding tank; empty it well offshore or at a pump-out"],
+          ["The bilge is filling, the electric pump is silent", "A blown fuse or a stuck float switch", "Pump by hand, then check both"]
+        ] } },
+        { "p": "A water pump left running dry can burn out, so switch it off at the panel as soon as the taps spit air." },
+        { "p": "Find the **manual bilge pump** and its handle on the first day. It works when the electrics do not." }
+      ]
+    }
+  ]
+}

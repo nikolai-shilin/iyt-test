@@ -1,0 +1,129 @@
+{
+  "topic": "seamanship",
+  "lead": "Seamanship is choosing the method before you start: which knot, how much chain, which line first, which sail. The load, the wind and the stream decide.",
+  "sections": [
+    {
+      "id": "ropes",
+      "kicker": "Ropes, knots and winches",
+      "title": "Each job has its knot",
+      "refs": ["Ropework — knots", "Ropework — rolling hitch", "Ropework — cleating", "Ropework — lashing", "Ropework — throwing a line", "Ropework — splices and whippings", "Ropework — rope types", "Rope types", "Mooring lines — chafe", "Ropework — coiling", "Winches — riding turn", "Winches — riding turns", "Winches — safety"],
+      "blocks": [
+        { "table": { "head": ["Knot", "Job"], "rows": [
+          ["Bowline", "Loop for a bollard; never jams"],
+          ["Bowline on the bight", "Two loops: a sling for a person"],
+          ["Round turn and two half hitches", "To a ring; freed under load"],
+          ["Clove hitch and half hitch", "Fenders on the rail"],
+          ["Double sheet bend", "Joins unequal lines"],
+          ["Figure of eight", "Stopper in a sheet"],
+          ["Rolling hitch", "Grips a loaded line or chain"]
+        ] } },
+        { "p": "One locking hitch on a cleat: more jam. Clear a **riding turn** by taking the load on a rolling hitch led to another winch. Put three turns on the winch before opening a loaded clutch, and ease with a flat palm, never with the tail round your hand." },
+        { "fig": { "type": "rope", "kind": "winch", "labels": [[70, 86, "sheet"], [255, 86, "tail"]], "note": "Lead from just below the drum: no riding turns" } },
+        { "p": "**Nylon** stretches, for warps and mooring lines; a halyard must not; a painter should float. Splice a permanent eye, whip a cut end, coil braid in figure-of-eights. In a surge add chafe guards, doubled lines and snubbers. Lash deck gear with several turns to strong points, frapped tight." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 270, "dist": 75, "hdg": 0, "scale": 0.3, "label": "catcher" }, "wind": 270, "bearingLine": true, "note": "Throwing upwind: end fast, coil split, aim past him" } }
+      ]
+    },
+    {
+      "id": "anchoring",
+      "kicker": "Anchoring",
+      "title": "Scope from the bow roller, at high water",
+      "refs": ["Anchoring — choosing the spot", "Anchoring — wind shift", "Anchoring — scope", "Anchoring — the approach", "Anchoring — setting and checking", "Anchoring — anchor alarm", "Anchoring — swinging room", "Anchoring under sail"],
+      "blocks": [
+        { "p": "Anchor for the **forecast** wind: if a shift will make the bay a lee shore, move in daylight. Choose sand, enough water at low water, and neighbours on your kind of rode: rope boats range wider than chain boats, moored boats hardly move." },
+        { "fig": { "type": "bay", "wind": 0, "land": "M0 0 H320 V36 C 230 50 110 32 0 44 Z", "spots": [[60, 100, "A"], [160, 100, "B"], [255, 100, "C"]], "labels": [[60, 127, "yachts on chain"], [160, 127, "yachts on rope"], [255, 127, "yachts on buoys"]], "note": "On all chain, anchor at A: they swing as you do" } },
+        { "p": "**Scope** is rode against high-water depth plus bow-roller height: 4:1 on chain, 5:1 before a blow, 6:1 on rope." },
+        { "fig": { "type": "anchor", "depth": "3 m", "title": "(3.0 + 3.6 + 1.0) × 4 ≈ 30 m", "lines": ["LW + 2 h, range 4.8 m", "Risen 3/12: 1.2 m", "Still to come: 3.6 m"] } },
+        { "p": "Approach head to wind and let go as she gathers sternway, so the chain lays out in a line; under sail, come in under main alone. Go astern firmly and watch a **transit abeam**: if it stays closed, she holds." },
+        { "fig": { "type": "card", "title": "Swinging room and anchor alarm", "lines": ["35 m of chain · depth 5 m + roller 1 m", "Along the bottom: √(35² − 6²) ≈ 34 m", "Plus 12 m of boat: she reaches 46 m", "A rock 40 m from the anchor is too close", "Alarm: centred on the anchor, not the boat"] } }
+      ]
+    },
+    {
+      "id": "night",
+      "kicker": "A night at anchor",
+      "title": "Have the answer ready",
+      "refs": ["Anchoring — anchor watch", "Anchor watch", "Anchoring — dragging", "Anchoring — two anchors", "Anchoring — tripping line", "Anchoring — a fouled anchor", "Anchoring — the kedge", "Anchoring — weighing"],
+      "blocks": [
+        { "p": "In a rising wind set **anchor watches** with written orders: call the skipper if a bearing shifts, the wind passes a set force or a boat drags nearby." },
+        { "fig": { "type": "card", "title": "Dragging", "lines": ["Engine on first: you keep control", "Motor up to ease the load", "Re-anchor with more scope, or move", "Fails again, lee shore astern: out to sea", "A boat dragging onto you: fenders out,", "horn and torch to wake her crew"], "tag": "0230" } },
+        { "table": { "head": ["Problem", "Answer"], "rows": [
+          ["Tidal river, no room", "Bahamian moor: anchors up and downstream"],
+          ["Gale, steady direction", "Tandem: kedge ahead, chained to the bower's crown"],
+          ["Foul ground", "Tripping line from crown to buoy"],
+          ["Stuck fast", "Chain cleated short; motor the opposite way"],
+          ["Neighbour's chain on yours", "Hold it on a line, lower yours clear"]
+        ] } },
+        { "tiles": [
+          { "fig": { "type": "anchor", "depth": "4 m", "title": "Tripping line: about 8 m", "lines": ["Low water, range 2.5 m", "HW depth 4.0 + 2.5 = 6.5 m", "A little more than that"] }, "name": "Tripping line" },
+          { "fig": { "type": "chart", "land": "M0 0 H320 V28 C 220 38 120 22 0 32 Z", "depths": [[60, 170, "5"], [250, 165, "6"], [90, 80, "1.2"], [124, 146, "0.4", true], [225, 130, "0.8", true], [116, 174, "3.5"]], "boat": [150, 108, 0], "track": "M150 122 L150 170", "labels": [[95, 128, "sandbank", "middle"], [160, 160, "kedge", "start"]], "panel": ["Aground 1000", "Tide rising", "HW 1400", "Wind S 4"], "note": "Kedge laid astern by dinghy: haul off as she lifts" }, "name": "Kedging off" }
+        ] },
+        { "p": "To weigh, motor gently up the chain as the bow crew points: the windlass only lifts." }
+      ]
+    },
+    {
+      "id": "power",
+      "kicker": "Handling under power",
+      "title": "Prop walk and the pivot point",
+      "refs": ["Boat handling — prop walk", "Prop walk", "Boat handling — turning in a tight space", "Boat handling — pivot point", "Pivot point", "Boat handling — wind and tide", "Boat handling — ferry gliding", "Boat handling — mooring buoy", "Catamaran handling", "Catamaran — springing off", "Catamaran — tacking", "Catamaran — anchoring"],
+      "blocks": [
+        { "p": "Astern, a **right-handed** propeller kicks the stern to port, most strongly from rest; a left-handed one, to starboard. The wash boils up on the side opposite the kick. So berth port side to, where braking pulls the stern in, and turn short round to starboard." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "dist": 0 }, "note": "Astern from rest · right-handed prop: stern to port" } },
+        { "p": "Ahead, she pivots a third of her length from the bow and the stern swings out, towards the quay you are leaving. Astern, the pivot moves aft and the **bow** sweeps wide." },
+        { "p": "Approach a berth or buoy into whichever is stronger, wind or stream, as the moored boats lie. To **ferry glide**, stem the stream at its own speed with the bow angled slightly in." },
+        { "fig": { "type": "chart", "land": "M266 0 H284 V200 H266 Z", "boat": [170, 110, 0], "track": "M184 110 L236 110", "labels": [[242, 50, "yacht"], [242, 112, "gap"], [242, 172, "yacht"], [80, 40, "stream sets S, 2 kn"]], "note": "Stem the stream at 2 kn, bow a little in: she crabs across" } },
+        { "fig": { "type": "card", "title": "Catamaran: two engines far apart", "lines": ["One ahead, one astern: she spins on the spot,", "towards the engine going astern", "Bows blow off: leeward ahead, windward astern", "Pinned on: bow spring, outboard engine ahead", "Tacking: jib aback until the bows are through", "At anchor: a bridle from both bows"] } }
+      ]
+    },
+    {
+      "id": "berthing",
+      "kicker": "Berthing",
+      "title": "Which line first, which line last",
+      "refs": ["Boat handling — springing off", "Boat handling — springing on", "Coming alongside — wind onto", "Coming alongside — wind off", "Leaving a berth — using the stream", "Leaving a berth in a crosswind", "Docking — marina crosswind", "Boat handling — rafting up", "Rafting — leaving from inside", "Stern-to with an anchor", "Stern-to on your own anchor", "Med mooring — lazy lines", "Stern-to — lazy lines", "Picking up a mooring", "Picking up a mooring — the boat hook"],
+      "blocks": [
+        { "fig": { "type": "lines", "quay": "PONTOON", "lines": [["bow", "bow line"], ["stern", "stern line"], ["bow-spring", "bow spring"], ["stern-spring", "stern spring"]], "note": "Ahead on the bow spring: the stern swings out" } },
+        { "table": { "head": ["Situation", "Method"], "rows": [
+          ["Wind onto the berth", "Stop parallel, a beam off; she blows in"],
+          ["Wind off the berth", "Steeper, with way; midships line first, then ahead on it"],
+          ["Pinned on, leaving", "Ahead on the bow spring; stern out, then astern"],
+          ["Stream ahead, leaving", "Stern spring only: the stream pushes the bow out"],
+          ["Finger berth, crosswind", "Aim to windward; windward lines first on, last off"],
+          ["Raft", "Own shore lines, masts staggered; from inside, leave down-tide"]
+        ] } },
+        { "p": "Stern-to on your own anchor, let go a little upwind; if the bow sags downwind later, tighten the chain." },
+        { "tiles": [
+          { "fig": { "type": "bay", "wind": 90, "land": "M0 0 H320 V42 H0 Z", "spots": [[186, 150, "•"]], "labels": [[160, 28, "QUAY"], [160, 66, "your slot"], [186, 178, "let go here"]], "note": "(7 + 1) × 4 = 32 m + boat 12 m ≈ 45 m out" }, "name": "Own anchor" },
+          { "fig": { "type": "card", "title": "Lazy-line berth", "lines": ["In: windward stern line first", "Lazy line to the bow, outside everything", "Haul it taut, cleat it at the bow", "Out: drop the lazy line, let it sink,", "then slip the stern lines and go"] }, "name": "Lazy lines" }
+        ] },
+        { "p": "On a buoy lie to a **slip line** through the ring, both ends aboard. If the boat hook is being dragged away, let it go and come round again." }
+      ]
+    },
+    {
+      "id": "sail",
+      "kicker": "Under sail",
+      "title": "Reef early, stay balanced",
+      "refs": ["Heaving to", "Reefing at sea", "Reefing at night", "Reefing — furling genoa", "Sail balance — weather helm", "Sail balance", "Sailing in waves", "Gybing — preventer", "Gybing — by the lee", "Sailing onto a mooring", "Leaving a mooring under sail", "Sailing off an anchor"],
+      "blocks": [
+        { "p": "**Heave to**: tack with the jib sheet left made fast, ease the main, lash the tiller to leeward. She still drifts: 4 h at 1.2 kn is 4.8 M." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 60, "note": "Hove to on port tack: jib aback, tiller to leeward" } },
+        { "fig": { "type": "card", "title": "Slab reef", "lines": ["Reef early · at night before it is urgent", "Everyone clipped on, the main eased", "1  Ease the kicker and the mainsheet", "2  Lower the halyard, hook on the tack", "3  Re-hoist, then haul in the reef line", "Genoa: roll it against a little sheet tension"] } },
+        { "p": "Heavy **weather helm** is too much main and heel: ease the traveller, then reef. Lee helm is too much sail forward: roll some genoa. Beating into a steep sea, steer a little free, luff up the face, bear away over the crest." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 170, "note": "Boom end → bow block → cockpit" }, "name": "Preventer", "note": "free it before you gybe" },
+          { "fig": { "type": "encounter", "you": { "hdg": 190, "sail": true, "boom": 14 }, "other": { "dist": 0 }, "wind": 0, "note": "Wind and boom on the same side" }, "name": "By the lee", "note": "steer away from the boom" }
+        ] },
+        { "p": "Use the sail you can spill: head to wind, the main; stemming a tide with the wind astern, at a mooring, the **jib alone**. To sail off an anchor, back the jib to port and the bow pays off to starboard." }
+      ]
+    },
+    {
+      "id": "towing",
+      "kicker": "Towing and the dinghy",
+      "title": "Stretch, a bridle and low speed",
+      "refs": ["Towing — being towed", "Towing — the towline", "Towing — making fast", "Towing — length and speed", "Towing — a long tow", "Towing — speed and ETA", "Towing — alongside", "Dinghy safety", "Dinghy — towing", "Dinghy handling"],
+      "blocks": [
+        { "p": "Tow on **nylon**, the anchor warp, from a **bridle**: both bow cleats through the bow roller on the casualty, both quarters on the tug, so she can still steer. Windlass and pulpit are not built for it." },
+        { "fig": { "type": "encounter", "you": { "hdg": 90 }, "other": { "bearing": 180, "dist": 85, "hdg": 90, "label": "Yacht in tow" }, "bearingLine": true, "note": "A bridle at each end keeps the pull central" } },
+        { "fig": { "type": "card", "title": "Towing a 10 m yacht", "lines": ["Crests 20 m apart: towline 40 m, two waves", "Hull speed 7 kn: tow at 5 kn", "22 M ÷ 5 kn = 4 h 24 min · 1100 → 1524", "Long tow: more line, a weight in the middle,", "a chafe guard at the fairlead", "In harbour: alongside, your stern aft of hers"] } },
+        { "p": "Tow the dinghy with the outboard aboard, on two painters, on the back of a following wave; tie her short alongside before you reverse. Ashore at night: two trips, lifejackets, kill cord, torch." }
+      ]
+    }
+  ]
+}

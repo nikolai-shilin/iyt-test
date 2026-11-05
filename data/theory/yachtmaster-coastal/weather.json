@@ -1,0 +1,122 @@
+{
+  "topic": "weather",
+  "lead": "You forecast for yourself here: chart, barometer and sky first, then the official forecast weighed against the coast.",
+  "sections": [
+    {
+      "id": "pressure",
+      "kicker": "Pressure and wind",
+      "title": "Isobars and the barometer",
+      "refs": ["Pressure systems — wind round a low", "Pressure systems — wind round a high", "Buys Ballot's law", "Isobar spacing and wind strength", "Isobars — the geostrophic scale", "Isobars — latitude and the scale", "Barometer — tendency", "Barometer — tendency terms", "Barometer — the tendency", "Barometer — the night log", "Barometer — passage decisions"],
+      "blocks": [
+        { "p": "In the north, wind blows anticlockwise round a low and clockwise round a high, angled slightly towards low pressure. Back to the wind, the low is on your left, a little ahead: **Buys Ballot's law**." },
+        { "tiles": [
+          { "fig": { "type": "isobars", "center": "L", "values": ["996", "1000", "1004"], "boat": [120, 166, 90] }, "name": "Low", "note": "south side: WSW" },
+          { "fig": { "type": "isobars", "center": "H", "values": ["1028", "1024", "1020"], "boat": [200, 92, 180] }, "name": "High", "note": "east side: NNW" }
+        ] },
+        { "p": "Halve the isobar spacing and the wind doubles. The chart's **geostrophic scale** reads the wind aloft: at sea take two thirds, more at lower latitudes for the same spacing." },
+        { "table": { "head": ["hPa in 3 h", "Tendency"], "rows": [
+          ["Under 1.6", "Slowly"],
+          ["1.6–3.5", "Falling or rising"],
+          ["3.6–6", "Quickly: strong wind coming"],
+          ["Over 6", "Very rapidly: gale"]
+        ] } },
+        { "p": "A fast rise blows as hard as a fast fall; an offset error leaves the tendency true." }
+      ]
+    },
+    {
+      "id": "fronts",
+      "kicker": "Lows and fronts",
+      "title": "What a passing low does",
+      "refs": ["Polar front depression — life cycle", "Warm front — weather sequence", "Warm front — passage", "Cold front — weather sequence", "Fronts — the sequence on board", "Fronts — occlusion", "Pressure systems — wind shifts", "Depressions — the track of the centre", "Depressions — passing north of you", "Reading a synoptic chart", "Reading a synoptic chart — movement of a low", "Reading a synoptic chart — a 48 h plan", "Secondary depressions", "Troughs and ridges", "Barometer — a night passage", "Forecast terms — veering"],
+      "blocks": [
+        { "p": "A frontal low travels along its **warm-sector** isobars. If the centre passes north of you the wind **veers**, clockwise: S, SW, NW. If it passes south, the wind **backs**: SE, E, NE." },
+        { "fig": { "type": "isobars", "center": "L", "values": ["992", "996", "1000"], "boat": [200, 150, 0], "note": "North of you, moving E: veers" } },
+        { "table": { "head": ["Stage", "Weather", "Wind · barometer"], "rows": [
+          ["Warm front", "Cirrus, halo, lowering cloud, rain", "Backs · falls"],
+          ["Warm sector", "Drizzle, mild, poor visibility", "Veers SW · steady"],
+          ["Cold front", "Squalls, heavy rain", "Sharp veer NW · jumps"],
+          ["Behind it", "Showers, clear air", "Gusty NW · rises fast"]
+        ] } },
+        { "p": "When the cold front catches the warm one the low is **occluded**: it stops deepening and fills. An occlusion brings rain, then a veer and showers. A **trough** is a weak front; a **ridge** between lows a brief fair spell, so sail early. A **secondary low** on the trailing front can deepen fast and outblow its parent." }
+      ]
+    },
+    {
+      "id": "forecast",
+      "kicker": "Forecasts",
+      "title": "Sources, words and limits",
+      "refs": ["Forecast sources — NAVTEX", "Forecast sources — VHF broadcasts", "Forecast terms — timing", "Forecast terms — sea state", "Forecast terms — visibility", "Forecast terms — gale warnings", "Forecast terms — speed of movement", "Forecast terms — cyclonic", "Forecast terms — locally", "GRIB files — limits", "GRIB files — resolution", "GRIB files vs the official forecast", "GRIB files — when models disagree", "GRIB files — age of the forecast", "GRIB files — wind barbs", "Go/no-go decision"],
+      "blocks": [
+        { "p": "**NAVTEX**: English on 518 kHz, national language on 490; types A, B and D (navigational and weather warnings, search and rescue) cannot be switched off. A SÉCURITÉ call on VHF 16 names a working channel: go there and write it down." },
+        { "fig": { "type": "card", "title": "Gale warning, issued 0600 UTC", "lines": ["“W gale 8 soon”", "Imminent: within 6 h of issue", "Soon: 6–12 h · later: over 12 h", "So: any time from 1200 to 1800 UTC"] } },
+        { "table": { "head": ["Term", "Means"], "rows": [
+          ["Steadily · rather quickly", "15–25 · 25–35 kn"],
+          ["Gale 8 · severe 9 · storm 10", "34–40 · 41–47 · 48–55 kn"],
+          ["Visibility moderate · poor · fog", "2–5 M · to 1000 m · less"],
+          ["Sea moderate · rough · very rough", "Up to 2.5 · 4 · 6 m"],
+          ["Cyclonic", "Centre close: big, quick shifts"],
+          ["Locally", "Straits and capes"]
+        ] } },
+        { "p": "A **GRIB** is one model's mean wind on a coarse grid: no gusts, no funnelling. Add the coast yourself, plan on the earlier of two models, trust the newest official forecast. A barb points where the wind comes from: long feather 10 kn, short 5." }
+      ]
+    },
+    {
+      "id": "sea",
+      "kicker": "Wind and sea",
+      "title": "Beaufort, apparent wind, waves",
+      "refs": ["Beaufort scale", "Beaufort — true and apparent wind", "Beaufort — the true wind at night", "Beaufort — wind and load", "Waves — fetch and duration", "Swell", "Sea state — significant wave height", "Sea state — swell and wind sea", "Sea state — shoal water", "Wind against tide", "Wind against tide — timing at a headland", "Wind against tide — sea state", "Local winds — the sea they raise", "Local winds — Mistral and fetch"],
+      "blocks": [
+        { "p": "Beaufort force is the **mean** wind (force 7: 28–33 kn); log gusts beside it. Rig load grows as the square of the wind: 24 kn pulls 2¼ times as hard as 16." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 180 }, "view": "84 0 236 200", "name": "Running", "note": "14 felt + 9 boat = 23 true" },
+          { "fig": { "type": "sail", "wind": 0, "hdg": 50 }, "view": "84 0 236 200", "name": "Beating", "note": "24 felt, 19 true" }
+        ] },
+        { "p": "Waves grow with wind, **fetch** and duration: the least sea lies under a weather shore. Forecast heights are **significant**: the odd wave is nearly twice as high. Swell and wind sea combine as √(swell² + sea²): 2.0 and 1.5 m give 2.5 m. A new long swell announces a distant low." },
+        { "fig": { "type": "bay", "wind": 270, "land": "M0 0 H320 V40 C250 44 214 50 196 64 C182 96 176 124 160 136 C144 124 138 96 124 64 C106 50 70 44 0 40 Z", "spots": [[160, 164, "A"]], "labels": [[160, 24, "headland", "middle"], [200, 124, "← W-going stream, 3 kn", "start"]], "note": "W wind over a W-going stream: steep, breaking at A" } },
+        { "p": "**Wind against tide** makes short, steep, breaking seas, worst off headlands at full stream: round near slack water, well off. Seas also break where depth falls to about their height: avoid shoal banks." }
+      ]
+    },
+    {
+      "id": "coast",
+      "kicker": "The coast",
+      "title": "Breezes and high land",
+      "refs": ["Sea and land breezes", "Sea breeze — against an offshore wind", "Sea breeze — timing an arrival", "Katabatic and anabatic winds", "Local effects — funnelling", "Local effects — headlands", "Local effects — wind shadow", "Local effects — lee of a high island", "Clouds — lenticular"],
+      "blocks": [
+        { "p": "On a settled day a **sea breeze** sets in by late morning, reaches force 3–4 by mid-afternoon, veers a little and dies at dusk; hot slopes strengthen it (**anabatic**). A light offshore wind holds it off behind a calm belt. By night a **land breeze** blows, and off steep slopes a cold **katabatic** wind, strongest before dawn." },
+        { "tiles": [
+          { "fig": { "type": "bay", "wind": 45, "land": "M0 0 H132 C138 50 136 140 128 200 H0 Z M320 0 H184 C178 60 182 140 190 200 H320 Z", "spots": [[158, 100, "A"]], "labels": [[62, 100, "high island", "middle"], [256, 90, "high island", "middle"]], "note": "Open sea: NE 5" }, "name": "Strait", "note": "stronger, along it" },
+          { "fig": { "type": "bay", "wind": 0, "land": "M60 0 H260 C262 40 232 74 190 84 C160 90 130 88 106 78 C76 66 58 36 60 0 Z", "spots": [[160, 122, "A"]], "labels": [[160, 40, "high island, 900 m", "middle"]], "note": "Open sea: N 7" }, "name": "High island's lee", "note": "gusts off the slopes" }
+        ] },
+        { "p": "High land bends the wind along straits and round headlands, and speeds it up. A high island casts a **wind shadow** with a sharp edge, yet in strong winds gusts fall down its lee slopes, hardest at night. Lens-shaped clouds over the peaks warn of them." }
+      ]
+    },
+    {
+      "id": "med",
+      "kicker": "Mediterranean winds",
+      "title": "Named winds",
+      "refs": ["Local winds — Meltemi", "Local winds — Meltemi timing", "Local winds — Bora", "Local winds — Bora signs", "Local winds — Bora gusts", "Local winds — Sirocco", "Local winds — Jugo and Bora", "Local winds — Mistral", "Local winds — Mistral duration", "Local winds — Levante", "Local winds — Poyraz"],
+      "blocks": [
+        { "table": { "head": ["Wind", "From", "Signs"], "rows": [
+          ["Meltemi", "N, Aegean", "Balkan high, Turkish low; clear, 6–7 for days, peak after noon"],
+          ["Bora", "NE, Adriatic", "Cloud cap on the mountains, rising glass; violent gusts"],
+          ["Jugo (Sirocco)", "SE, Adriatic", "Haze, dust, slow build, big sea; may end in Bora"],
+          ["Mistral", "NW, Gulf of Lion", "After a cold front, Genoa low; clear, 7–8 for days"],
+          ["Levante", "E, Alborán", "Funnelled at Gibraltar; long swell"],
+          ["Poyraz", "NE, Turkey", "Cold, strong; with the Dardanelles current"]
+        ] } },
+        { "fig": { "type": "bay", "wind": 45, "land": "M190 0 H320 V100 C296 84 262 56 230 30 C214 18 200 8 190 0 Z M56 96 C74 66 130 62 150 84 C166 104 146 136 108 138 C74 140 46 122 56 96 Z", "spots": [[194, 74, "A"], [78, 164, "B"]], "labels": [[282, 30, "mountains", "middle"], [104, 104, "island", "middle"]], "note": "Bora NE 7: shelter at B, away from the mountains" } },
+        { "p": "Make upwind miles at dawn, before a Meltemi builds. Gusts in km/h ÷ 1.852 give knots: 100 km/h is 54 kn." }
+      ]
+    },
+    {
+      "id": "fog",
+      "kicker": "Fog and thunder",
+      "title": "No visibility, sudden wind",
+      "refs": ["Fog — sea fog", "Fog — advection (sea) fog", "Fog — sea fog and the sea breeze", "Fog — radiation fog", "Fog — frontal fog", "Fog — dew point", "Thunderstorms and squall lines", "Thunderstorms — gust fronts", "Thunderstorms — lightning on a yacht", "Thunderstorms — at anchor", "Thunderstorms — range and closing speed", "Thunderstorms — over high ground", "Squalls — at night"],
+      "blocks": [
+        { "p": "Fog forms as air cools to its **dew point**: a degree apart, fix your position, ready radar and horn. **Sea fog** is warm moist air over colder water: wind does not clear it; a sea breeze carries it inshore. **Radiation fog** forms over land on clear calm nights, gone by mid-morning. **Frontal fog** lifts once the warm front passes." },
+        { "fig": { "type": "chart", "land": "M0 0 H34 C44 60 30 140 44 200 H0 Z", "depths": [[88, 162, "14°C"], [124, 128, "13°C"], [166, 98, "11.5°C"], [174, 60, "10°C"]], "marks": [[62, 158, "y", "A"], [98, 124, "y", "B"], [130, 94, "y", "C"], [150, 56, "y", "D"]], "track": "M62 158 L98 124 L130 94 L150 56", "panel": ["SW wind, F4", "Air 16°C", "Dew pt 12°C"], "note": "Sea temperatures · fog from C on, below the dew point" } },
+        { "p": "A **thunderstorm** throws a cold gust front ahead of its rain: reef first; at anchor, leave room to swing right round. Over high ground they break late in the day. Flash-to-thunder seconds ÷ 3 give kilometres. Stars vanishing to windward: a squall. After a strike, check the through-hulls and hull for leaks first." }
+      ]
+    }
+  ]
+}

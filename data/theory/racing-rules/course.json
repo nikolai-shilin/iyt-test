@@ -1,0 +1,94 @@
+{
+  "topic": "course",
+  "lead": "Start, sail the course, finish: each word has a definition. Here are the string test, the marks, the finish and flags S, N, C and M.",
+  "sections": [
+    {
+      "id": "string",
+      "kicker": "Sailing the course",
+      "title": "A string pulled taut past every mark",
+      "refs": ["RRS 28.1", "RRS 28, RRS definition Sail the Course", "RRS definition Sail the Course", "RRS 28.1, RRS definition Sail the Course", "RRS 28.1, RRS definition Mark", "RRS definition Mark, RRS 28.1", "RRS 28.1, RRS definition Start", "RRS 28, RRS A5.1", "RRS 28.1, RRS A5.1", "RRS 61.4(b)(1), RRS A5.1"],
+      "blocks": [
+        { "p": "Rule 28.1: **sail the course** in the sailing instructions, whatever the leader does. Picture a string along your track from your approach to the starting line until you finish. Pulled taut, it passes each mark on its required side and in order, touches each rounding mark, and passes between the marks of a **gate** from the direction of the previous mark; then you may round either gate mark." },
+        { "fig": { "type": "race", "wind": 0, "mark": { "x": 190, "y": 100, "label": "Right-hand gate mark" }, "track": "M150 20 L215 85 L214 118 L196 140", "boats": [{ "x": 196, "y": 140, "hdg": 315, "label": "You", "you": true }], "note": "Outside the gate: the string never passed between the marks" } },
+        { "p": "A **mark** is an object the instructions tell you to leave on a stated side, or a committee vessel at the end of a starting or finishing line. Only marks that begin, bound or end your leg have a required side." },
+        { "p": "A boat that did not sail the course is scored **NSC** without a hearing. If the committee is wrong, request redress." }
+      ]
+    },
+    {
+      "id": "unwind",
+      "kicker": "Correcting an error",
+      "title": "Unwind it before you finish",
+      "refs": ["RRS 28.2, RRS definition Sail the Course", "RRS 28.2, RRS definition Finish", "RRS 28.2, RRS 11", "RRS 28.2, RRS 44.1", "RRS 10, RRS 21, RRS 28.2"],
+      "blocks": [
+        { "p": "Rule 28.2 lets you correct any error in sailing the course until you finish. A mark left on the wrong side is **unwound**, so that the taut string lies on the required side. Circling the mark once does not do it; neither do penalty turns." },
+        { "fig": { "type": "race", "wind": 0, "mark": { "x": 160, "y": 80, "label": "Windward mark" }, "track": "M120 180 L140 100 Q150 55 178 80 L200 140", "boats": [{ "x": 200, "y": 140, "hdg": 180, "label": "You", "you": true }], "note": "Marks to port; this one was left to starboard" } },
+        { "list": ["Sail back past the mark on the side you came.", "Round it leaving it on the required side.", "Carry on: no penalty is owed."] },
+        { "p": "Pushed by another boat, swept by the current or capsized, you still unwind. Sailing back, you keep your ordinary rights. Even after crossing the finishing line you may go back, correct the error and cross again." }
+      ]
+    },
+    {
+      "id": "touching",
+      "kicker": "Touching a mark",
+      "title": "Rule 31 and the One-Turn Penalty",
+      "refs": ["RRS 31", "RRS 31, RRS 44.2", "RRS 44.2", "RRS 31, RRS definition Mark", "RRS 31, RRS 44.2, RRS definition Mark", "RRS 31, RRS definition Racing", "RRS 31, RRS 44.2, RRS definition Racing", "RRS 44.1, RRS 31", "RRS 44.1(a), RRS 31", "RRS 44.1(a), RRS 18.2", "RRS 31, RRS 43.1(a)", "RRS 43.1(a), RRS 31, RRS 18.2(a)", "RRS 60.5(c), RRS 31"],
+      "blocks": [
+        { "p": "While racing you must not touch a starting mark before starting, a mark that begins, bounds or ends your leg, or a finishing mark after finishing. Hull, crew or equipment all count. Anything intentionally attached to a mark is part of it; a committee boat's **anchor line** is not. Both gate marks bound the leg." },
+        { "fig": { "type": "race", "wind": 0, "mark": { "x": 160, "y": 90, "label": "Windward mark" }, "boats": [{ "x": 178, "y": 118, "hdg": 330, "label": "You", "you": true }], "note": "A sheet, the boom or a hand on it: a touch" } },
+        { "table": { "head": ["What happened", "What you owe"], "rows": [
+          ["You touch a mark, even by bad luck", "One-Turn Penalty: get well clear, then one tack and one gybe"],
+          ["Another boat's foul forces you onto it", "Nothing: you are exonerated"],
+          ["You foul a boat and touch the mark in one incident", "Two turns cover both"],
+          ["A hearing later finds the touch", "Disqualification"]
+        ] } },
+        { "p": "Rule 31 applies only while you are **racing**: from your preparatory signal until you have finished and cleared the line and marks, and not after a general recall." }
+      ]
+    },
+    {
+      "id": "finish",
+      "kicker": "Finishing",
+      "title": "Hull across the line from the course side",
+      "refs": ["RRS definition Finish", "RRS definition Finish, RRS 28.1", "RRS 28.1, RRS definition Finish", "RRS 44.2, RRS definition Finish", "RRS 31, RRS 44.2, RRS definition Finish", "RRS 28.1, RRS 23.1", "RRS 23.1, RRS definition Racing", "RRS 10, RRS definition Racing", "RRS race signals (blue flag)", "RRS 35", "RRS 35, RRS A5.1", "RRS 90.3(a), RRS 35", "RRS 35, RRS 90.3(a)"],
+      "blocks": [
+        { "p": "You **finish** when any part of your hull crosses the finishing line from the course side, between its marks. A spinnaker ahead of the bow does not count, and no horn is needed. A committee boat flying a blue flag is in position at the finish. You need not cross completely." },
+        { "fig": { "type": "race", "wind": 0, "line": { "x1": 60, "y1": 110, "x2": 240, "y2": 110, "label": "Finishing line" }, "boats": [{ "x": 110, "y": 114, "hdg": 315, "label": "You", "you": true }], "note": "The bow is across from the course side: finished" } },
+        { "p": "You have not finished if, after crossing, you take a penalty, go back to correct an error or carry on sailing the course. A penalty near the line is taken with the hull wholly on the course side. Until you clear the line and marks you are still racing; after that, or once retired, you must not interfere with boats racing." },
+        { "table": { "head": ["Rule 35", "Result"], "rows": [
+          ["A boat sails the course and finishes in time", "The race counts, even if she is later disqualified"],
+          ["No boat does", "The race is abandoned"],
+          ["You miss the instructions' finishing window", "DNF without a hearing"]
+        ] } }
+      ]
+    },
+    {
+      "id": "shorten",
+      "kicker": "Shortening and abandoning",
+      "title": "Flags S and N",
+      "refs": ["RRS 32.1", "RRS 32.1(b)", "RRS 32.1, RRS 35", "RRS 32.1(c), RRS 61.4(b)(1)", "RRS 32.2, race signals", "RRS 32.2(a), race signals", "RRS 32.2(a), RRS definition Finish", "RRS 32.2(b)", "RRS 32.2(c)", "RRS 32.2, RRS definition Finish", "RRS 32.2, RRS 61.4(b)(1)", "RRS 32.3, race signals (N)", "RRS 32.3, race signals (N over H)", "RRS 32.3, race signals (N over A)", "RRS 36", "RRS 36(a), RRS 30.4", "RRS 36(b), RRS 14", "RRS 36(b), RRS 2"],
+      "blocks": [
+        { "p": "After the start the committee may **shorten** the course or **abandon** the race for foul weather, too little wind to finish in time, a mark missing or out of position, or another reason affecting safety or fairness; it may also shorten to fit in later races. Once a boat has finished in time it must weigh the consequences for all boats before abandoning." },
+        { "fig": { "type": "flag", "flags": [["S", "S|shortened"], ["N", "N|abandoned"], ["H", "H under N|see ashore"], ["A", "A under N|no more today"]], "note": "S: two sounds · N: three sounds" } },
+        { "p": "S must be shown before the first boat crosses the new line: between a rounding mark and the staff showing S, between the gate marks, or at a line the course makes you cross. Over a class flag a signal is for that class only. After N alone, return to the starting area. Redress needs an improper act of the committee: a late signal is one, a proper abandonment is not." },
+        { "fig": { "type": "race", "wind": 0, "mark": { "x": 160, "y": 80, "label": "Mark 3", "labelY": -14 }, "line": { "x1": 160, "y1": 80, "x2": 250, "y2": 84 }, "boats": [{ "x": 250, "y": 140, "hdg": 315, "label": "You", "you": true }], "note": "Finish between mark 3 and the boat showing flag S" } },
+        { "p": "In a restart or resail earlier breaches are not penalised, except rules 2, 30.2, 30.4 and 69, and rule 14 with injury or serious damage. Only rule 30.4 keeps you out." }
+      ]
+    },
+    {
+      "id": "change",
+      "kicker": "Changed legs, missing marks",
+      "title": "Flags C and M",
+      "refs": ["RRS 33", "RRS 33(a)", "RRS 33(a)(1)", "RRS 33, RRS 33(a)(2)", "RRS 33(a), race signals (C)", "RRS 33(b), race signals (C)", "RRS 33(c)", "RRS 33, RRS 34", "RRS 33, RRS 61.4(b)(1)", "RRS 33, RRS 28, RRS A5.1", "RRS 34(a)", "RRS 34, race signals (M)", "RRS 34, RRS 32.1(c)", "RRS 34(b), RRS 28, RRS A5.1"],
+      "blocks": [
+        { "p": "The committee may move the **next mark**: flag C with repeated sounds, shown before boats begin the leg; the new mark need not be laid yet. Later legs may then change without signals to keep the course's shape. A signal made in time binds you even if you missed it." },
+        { "fig": { "type": "flag", "flags": [["C", "C|leg changed"], ["M", "M|missing mark"]], "note": "Both with repeated sounds" } },
+        { "table": { "head": ["With flag C", "Meaning"], "rows": [
+          ["Green triangle", "Leg changed to starboard"],
+          ["Red rectangle", "Leg changed to port"],
+          ["A number: 215", "New compass bearing of the leg"],
+          ["− or +", "Leg shorter or longer"]
+        ] } },
+        { "p": "A mark **missing or out of position** is put back or replaced by a similar one, without a signal, or by an object showing flag M with repeated sounds, which is then the mark. If that is impossible, the race is abandoned. A mark in position may not be moved mid-leg." },
+        { "fig": { "type": "race", "wind": 0, "obstruction": { "x": 147, "y": 104, "w": 26, "h": 12, "label": "RIB, flag M", "lx": 160, "ly": 134 }, "boats": [{ "x": 125, "y": 45, "hdg": 180, "label": "You", "you": true }], "note": "Mark 2 has gone: the RIB showing M is now the mark" } }
+      ]
+    }
+  ]
+}

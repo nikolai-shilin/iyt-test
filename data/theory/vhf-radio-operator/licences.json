@@ -1,0 +1,86 @@
+{
+  "topic": "licences",
+  "lead": "A marine radio is licensed twice: the set through the boat, the operator through a certificate. The rules that come with them are few and mostly common sense: identify yourself, put distress first, send nothing you need not send, and repeat nothing you overhear.",
+  "sections": [
+    {
+      "id": "papers",
+      "kicker": "Two documents",
+      "title": "One for the boat, one for you",
+      "refs": ["Radio licences"],
+      "blocks": [
+        { "p": "The **ship station licence** belongs to the boat. It names the vessel and lists her call sign, her MMSI and the radio equipment she is licensed to carry. The **operator's certificate** belongs to a person: it shows that you are qualified to use the radio, and it is yours whatever boat you sail. Sell your yacht and buy another, and the certificate stays with you." },
+        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["display", "the set: ship station licence"], ["ptt", "the operator: certificate"]] } },
+        { "fig": { "type": "card", "title": "Ship station licence", "lines": ["Vessel: sailing yacht Nefeli", "Issued to: the owner or charter firm", "Call sign · MMSI (nine digits)", "Equipment: fixed VHF DSC, handheld VHF"] } },
+        { "p": "On a charter yacht the licence is in the charter firm's name and covers the set; your certificate covers you as the operator. Keep both documents aboard: a port official inspecting the yacht may ask for them." }
+      ]
+    },
+    {
+      "id": "who",
+      "kicker": "Who may transmit",
+      "title": "The skipper decides, the certificate holder supervises",
+      "refs": ["Radio regulations", "Radio licences"],
+      "blocks": [
+        { "p": "The ship's radio station is under the **authority of the skipper**. Whether the crew may use it to chat with friends on another yacht is the skipper's decision." },
+        { "p": "Someone without a certificate may operate the radio **under the supervision** of a certificate holder. Alone, she may not make a routine call. Distress is the exception: when lives are in danger, anyone aboard may send the MAYDAY." },
+        { "table": { "head": ["She has no certificate", "May she call the marina?"], "rows": [
+          ["You, the holder, stand beside her", "Yes, under your supervision"],
+          ["You are ashore", "No: the call waits for you"]
+        ] } }
+      ]
+    },
+    {
+      "id": "where",
+      "kicker": "Where it is valid",
+      "title": "Abroad yes, ashore no",
+      "refs": ["Radio regulations"],
+      "blocks": [
+        { "p": "A ship station licence is valid internationally. Your own yacht, licensed in her home country, may use her VHF in Greek waters, where you also follow the local regulations." },
+        { "p": "A marine VHF is licensed for the **maritime service**, which means use afloat. Taking the yacht's handheld to a taverna to call the crew on board is not allowed: use from land generally needs special permission." },
+        { "fig": { "type": "chart", "land": "M0 200 V150 Q90 130 170 146 Q250 162 320 138 V200 Z", "marks": [[84, 170, "r", ""]], "track": "M92 164 L190 88", "boat": [200, 76, 0], "labels": [[200, 36, "afloat: licensed", "middle"], [84, 190, "handheld at the taverna", "middle"], [150, 140, "not allowed", "start"]], "note": "A handheld ashore is outside the maritime service" } }
+      ]
+    },
+    {
+      "id": "prohibited",
+      "kicker": "Prohibited transmissions",
+      "title": "What must never go out",
+      "refs": ["Prohibited transmissions"],
+      "blocks": [
+        { "table": { "head": ["Prohibited", "Why"], "rows": [
+          ["A false distress call, even \"as a test\"", "It may launch a real rescue"],
+          ["A call without your boat's name", "Every transmission must identify the station"],
+          ["Another boat's name instead of yours", "You identify your own station, correctly"],
+          ["Unnecessary signals, such as clicking the key to \"say hello\"", "They can mask a weak distress call"],
+          ["Obscene or abusive language", "Forbidden, however angry you are"]
+        ] } },
+        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["distress", "never as a test"], ["ptt", "your boat's name, every time"]] } },
+        { "rule": "Before you press the key: is it needed, is it true, and does it say who you are?" }
+      ]
+    },
+    {
+      "id": "secrecy",
+      "kicker": "Secrecy and the log",
+      "title": "Keep it to yourself, write it down",
+      "refs": ["Secrecy of correspondence", "Radio log"],
+      "blocks": [
+        { "p": "VHF is an open line, and you will overhear calls not meant for you. **Secrecy of correspondence** means you may not pass on what you overhear: two yachts' family matters stay with them. Distress traffic is the exception. If you noted a MAYDAY that the coast station seems not to have heard, pass its details to the coastguard." },
+        { "p": "Note in the log the distress, urgency and safety traffic you send or hear, with the times: it may be needed later." },
+        { "fig": { "type": "card", "title": "Radio log", "lines": ["14:05 MAYDAY heard, yacht Selene", "14:07 Acknowledged by coast station", "14:40 PAN-PAN heard, MV Ionian", "15:10 SÉCURITÉ sent: buoy adrift"] } }
+      ]
+    },
+    {
+      "id": "priority",
+      "kicker": "Order of priority",
+      "title": "Distress, urgency, safety, routine",
+      "refs": ["Order of priority"],
+      "blocks": [
+        { "p": "When several messages wait for a quiet channel, they go in a fixed order, whoever was ready first." },
+        { "table": { "head": ["Priority", "Signal", "Example"], "rows": [
+          ["1 Distress", "MAYDAY", "Fire, sinking, a life in danger"],
+          ["2 Urgency", "PAN-PAN", "Engine dead, drifting, tow needed"],
+          ["3 Safety", "SÉCURITÉ", "Warning of an unlit buoy"],
+          ["4 Routine", "none", "Booking a table ashore"]
+        ] } }
+      ]
+    }
+  ]
+}

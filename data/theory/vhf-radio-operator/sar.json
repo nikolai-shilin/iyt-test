@@ -1,0 +1,78 @@
+{
+  "topic": "sar",
+  "lead": "A distress call sets a rescue in motion, and every station that hears it has a part in it: mostly to listen and keep quiet, sometimes to answer, relay or go. This is what you do on the radio when the MAYDAY is someone else's.",
+  "sections": [
+    {
+      "id": "hear",
+      "kicker": "Hearing a MAYDAY",
+      "title": "Listen and write it down",
+      "refs": ["SAR communications"],
+      "blocks": [
+        { "p": "When a MAYDAY comes over channel 16, do not transmit. **Listen and write**: the vessel's name, her position, what is wrong, the help she asks for, the number of persons aboard and the time. You may have to relay the call or go to help, and the coast station may not have heard it." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V30 Q250 46 170 34 Q90 24 0 44 Z", "marks": [[60, 34, "w", "coast station"], [80, 118, "r", "Thalassa"]], "track": "M90 122 L176 160", "boat": [190, 166, 300], "labels": [[122, 156, "3 miles", "middle"]], "panel": ["14:05 MAYDAY", "Yacht Thalassa", "37°05'N 25°17'E", "Holed, sinking", "4 persons"], "note": "What you note while you listen" } },
+        { "p": "Then wait a short while for a coast station to acknowledge. It normally does, and from then on it runs the radio traffic." }
+      ]
+    },
+    {
+      "id": "answer",
+      "kicker": "Answering",
+      "title": "When you speak, and to whom",
+      "refs": ["SAR communications", "Distress acknowledgement"],
+      "blocks": [
+        { "table": { "head": ["Situation", "What you do"], "rows": [
+          ["A coast station has acknowledged; you are far away", "Stay silent, keep listening and noting: you may be asked to help later"],
+          ["A coast station has acknowledged; you are close", "Offer your help to the coast station, with your position and how soon you can arrive"],
+          ["Nobody has answered; you can help", "Acknowledge the MAYDAY, go, and tell the coastguard you are going"]
+        ] } },
+        { "p": "The acknowledgement has a fixed form: MAYDAY, the name of the vessel in distress with her call sign or MMSI, THIS IS, your own name, RECEIVED, MAYDAY. Each name is said once." },
+        { "fig": { "type": "card", "title": "Aura answers Thalassa, on 16", "lines": ["MAYDAY", "Thalassa, MMSI 237 012 345", "THIS IS Aura", "RECEIVED, MAYDAY"] } },
+        { "p": "On your way, the coastguard may call to say a lifeboat is there and you are not needed. Acknowledge the message and resume your passage." }
+      ]
+    },
+    {
+      "id": "silence",
+      "kicker": "Radio silence",
+      "title": "Three signals that govern the channel",
+      "refs": ["Radio silence"],
+      "blocks": [
+        { "p": "During a rescue the channel belongs to the distress. The station controlling the traffic says so with three signals, normally heard in this order:" },
+        { "table": { "head": ["You hear", "It means", "You"], "rows": [
+          ["SEELONCE MAYDAY", "Silence is imposed", "Keep off the channel unless you are in the rescue"],
+          ["PRUDONCE", "The distress is not over, but restricted working may resume", "Make only short, necessary calls"],
+          ["SEELONCE FEENEE", "Distress traffic is over", "Use the channel normally again"]
+        ] } },
+        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["display", "distress traffic"], ["volume", "listen"], ["ptt", "hands off, unless you are called"]], "note": "SEELONCE MAYDAY" } },
+        { "p": "Silence binds the stations that are **not involved**. If the rescue centre calls you by name, you are part of the distress traffic: answer. A routine message waits, however small: leave 16 alone and reach your friend later, or another way." }
+      ]
+    },
+    {
+      "id": "onscene",
+      "kicker": "On scene",
+      "title": "One coordinator, one channel",
+      "refs": ["SAR organisation", "On-scene communications", "SAR communications"],
+      "blocks": [
+        { "p": "A search and rescue is coordinated by the coastguard's rescue centre, the **MRCC**, usually speaking through a coast station. Vessels on scene work on the channel the coordinator directs, often 16 or 6. If you are told to use 6, all your search talk goes on 6." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V28 H0 Z M128 82 Q160 62 196 86 Q202 112 166 120 Q126 114 128 82 Z", "marks": [[60, 20, "w", "MRCC"], [62, 112, "r", "casualty"], [264, 104, "y", "lifeboat"]], "track": "M72 118 L150 158 M180 158 L256 110", "boat": [165, 166, 0], "labels": [[164, 96, "island", "middle"], [165, 194, "you hear both: relay", "middle"]], "note": "On scene · the channel the MRCC directs" } },
+        { "list": [
+          "Asked to pass messages between two stations that cannot hear each other, repeat each one exactly as you heard it, in full.",
+          "Report anything you sight at once to the coordinator, on the channel in use."
+        ] }
+      ]
+    },
+    {
+      "id": "helicopter",
+      "kicker": "Helicopter",
+      "title": "Brief by VHF, clear deck, wire to earth first",
+      "refs": ["Helicopter rescue"],
+      "blocks": [
+        { "p": "A rescue helicopter is too loud to shout over. Its crew brief you **by VHF** before they come in: listen, and do exactly what they tell you." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "dist": 0 }, "wind": 330, "note": "A typical brief: steady course, wind 30° on the port bow" } },
+        { "list": [
+          "Before it arrives, stow or lash down everything loose and clear the pick-up area: the downdraft throws cushions, towels and slack sails about.",
+          "Let the winch wire touch the water or the deck before anyone touches it: it carries a static charge.",
+          "Never make the wire fast to the boat."
+        ] }
+      ]
+    }
+  ]
+}

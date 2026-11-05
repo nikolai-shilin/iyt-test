@@ -1,0 +1,126 @@
+{
+  "topic": "safety",
+  "lead": "Every question here gives you a situation and a clock: a crew in the water, smoke, a lee shore four cables off. Know the first action, and work out how long you have.",
+  "sections": [
+    {
+      "id": "mob",
+      "kicker": "Man overboard",
+      "title": "Mark, point, come back",
+      "refs": ["Safety briefing", "Harnesses & jackstays", "Lifejackets", "Liferafts", "Seasickness", "Seasickness — on deck", "MOB — night drill", "MOB — the MOB button", "MOB — quick-stop", "MOB — reach-turn-reach", "MOB — under power", "MOB — downwind", "MOB — search at night", "MOB — calling for help", "AIS & PLB", "PLB"],
+      "blocks": [
+        { "p": "Prevention first. The skipper may be the casualty, so every crew member must know the drill." },
+        { "fig": { "type": "card", "title": "Before a night passage", "lines": ["Everyone can send the DSC alert, not only you", "Clip on before the hatch, then to the jackstay", "Lifejacket indicator red: re-arm before use", "Seasick crew: cockpit, clipped on, watched", "Seasickness pills hours before sailing", "Raft: room for everyone, service in date"] } },
+        { "fig": { "type": "card", "title": "Man overboard", "lines": ["Shout · throw the danbuoy and lifebuoy", "Press MOB now: 3 min at 6 kn is 0.3 M late", "One pointer, who does nothing else", "Out of sight or dark: DSC alert, MAYDAY", "Spinnaker up: get it down, then turn back", "Before the engine: no lines in the water"], "tag": "MOB" } },
+        { "p": "Under sail, the **quick-stop** tacks at once with the jib left sheeted, so she stops nearby; reach-turn-reach sails off on a beam reach, tacks and returns. Approach on a **close reach**, where letting the sheets fly stops her." },
+        { "tiles": [
+          { "fig": { "type": "sail", "wind": 0, "hdg": 300, "note": "Close reach: ease the sheets and she stops" }, "name": "Under sail", "note": "close reach" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 8, "dist": 45, "hdg": 0, "scale": 0.3, "label": "MOB" }, "wind": 0, "note": "Into the wind, propeller stopped" }, "name": "Under power", "note": "neutral alongside" }
+        ] },
+        { "p": "The MOB waypoint is fixed to the ground; he drifts with the stream. A danbuoy blows downwind faster than a swimmer: search **upwind** of it. His AIS beacon shows on your plotter; a PLB, held high, aerial upright, calls the rescue centre by satellite." },
+        { "fig": { "type": "chart", "land": "M0 0 H320 V26 C250 40 150 20 0 34 Z", "marks": [[110, 120, "y", "MOB wpt"], [178, 120, "r", "he is here"]], "track": "M40 160 L104 124 M118 120 L170 120", "boat": [100, 132, 60], "labels": [[144, 138, "0.5 M", "middle"]], "panel": ["MOB at 0214", "Back at wpt 0229", "Tide 090°T 2.0 kn"], "note": "Night · nothing at the waypoint" }, "cap": "2.0 kn × 15 min: look 0.5 M down-tide." }
+      ]
+    },
+    {
+      "id": "recovery",
+      "kicker": "Recovery and first aid",
+      "title": "Lift him level, warm him gently",
+      "refs": ["MOB — recovery", "MOB — recovery by the ladder", "MOB — catamaran", "Cold-water shock", "First aid — hypothermia", "First aid — severe hypothermia", "First aid — drowning", "First aid — burns", "First aid — head injury", "First aid — fractures", "First aid — seasickness", "Seasickness & fatigue", "Radio medical advice"],
+      "blocks": [
+        { "p": "**Cold shock** makes him gasp in water in the first minute; a sprayhood protects the airway. After long immersion lift him **level**, in two strops on a halyard or rolled in a sail: a vertical lift can cause collapse. At a stern ladder, or a catamaran's stern steps, **stop that engine** first; never bring him between the hulls." },
+        { "table": { "head": ["Casualty", "What you do"], "rows": [
+          ["Shivering, conscious", "Dry clothes, insulation, warm sweet drinks"],
+          ["Cold, unconscious", "Flat, gentle handling, insulation; no drinks"],
+          ["Not breathing", "Five rescue breaths, then CPR 30:2; MAYDAY"],
+          ["Inhaled water", "Medical advice: trouble can follow hours later"],
+          ["Scald", "Cool water 20 min, then loose cling film"],
+          ["Knocked out, confused, vomiting", "PAN-PAN for medical advice"],
+          ["Broken forearm", "Splint as found, sling, check fingers"],
+          ["Seasick for hours", "Sips of rehydration fluid; medical advice"]
+        ] } },
+        { "fig": { "type": "card", "title": "Before you call for medical advice", "lines": ["Pulse, breathing, temperature", "What happened, and when", "Medicines already given", "What is in your first-aid kit", "Your position and ETA"] } },
+        { "p": "Tired and seasick? Anchor, rest, and enter by daylight." }
+      ]
+    },
+    {
+      "id": "fire",
+      "kicker": "Fire, gas and fumes",
+      "title": "Fuel, air or heat: take one away",
+      "refs": ["Fire — galley", "Fire — engine", "Fire — electrical", "Fire — class A", "Fire — extinguishers", "Gas safety", "Gas safety — alarm", "Carbon monoxide"],
+      "blocks": [
+        { "table": { "head": ["Fire", "First action"], "rows": [
+          ["Pan of oil", "Fire blanket, gas off; never water"],
+          ["Engine", "Stop engine and fuel; extinguisher through the fire port"],
+          ["Electrical", "Batteries off, then CO2 or powder; never water"],
+          ["Cushion (class A)", "Water or foam, to cool it"]
+        ] } },
+        { "fig": { "type": "panel", "gauges": [["Temp", "88°", false], ["Oil", "OK", false], ["Fire", "ALARM", true]], "lines": ["Smoke from the engine box", "Opening it feeds the fire: use the fire port"] } },
+        { "p": "Keep an extinguisher **by each exit**, to fight with the way out behind you." },
+        { "p": "**LPG** is heavier than air and sinks into the bilge, so the alarm sensor sits low and one spark is enough. Headache, drowsiness and nausea in a closed cabin with the heater or engine running mean **carbon monoxide**: everyone into fresh air." },
+        { "fig": { "type": "card", "title": "Smell of gas", "lines": ["Shut it off at the cylinder", "Touch no switch: a spark ignites it", "Open up and ventilate", "Pump the bilge with the hand pump", "Find leaks with soapy water, never a flame"] } }
+      ]
+    },
+    {
+      "id": "damage",
+      "kicker": "Water and damage",
+      "title": "People first, then the hull",
+      "refs": ["Flooding", "Flooding — bungs", "Flooding — pumps", "Flooding — the source", "Collision", "Collision — damage control", "Grounding", "Grounding — falling tide", "Grounding — drying out", "Lightning", "Emergency steering"],
+      "blocks": [
+        { "p": "After a collision, grounding or lightning strike, check the crew, then look for water: lightning can blow out a through-hull. In a thunderstorm keep the crew below, clear of the mast, with a spare handheld VHF and GPS in the oven." },
+        { "p": "Water below: pump **and** hunt. Fresh water with the pressure pump running by itself is your own tank; salt means seacocks, hoses, stern gland. A sheared seacock takes the softwood **bung** tied beside it. Holed in the port bow, sail on port tack: she heels to starboard and lifts the hole." },
+        { "fig": { "type": "card", "title": "Can the pumps keep up?", "lines": ["Inflow about 70 L/min", "Electric pump: 30 L/min", "Manual: 0.6 L × 45 strokes = 27 L/min", "Engine intake hose in the bilge: 40 L/min", "Out 97 − in 70 = 27 L/min in hand"] } },
+        { "fig": { "type": "card", "title": "Aground", "lines": ["Tide falling: astern at once, along your track", "Crew out on the boom to heel her", "Holed on a rock: stem the leak and call", "before the rising tide floats her off"] } },
+        { "fig": { "type": "chart", "depths": [[40, 70, "1.4", true], [60, 130, "0.8", true], [110, 160, "0.5", true], [230, 120, "3"], [280, 150, "6"], [250, 170, "8"]], "boat": [150, 100, 0], "track": "M162 100 L236 100", "labels": [[48, 102, "dries", "middle"], [270, 104, "deep", "middle"], [200, 94, "kedge", "middle"]], "panel": ["Drying out", "Heel her west,", "up the slope"], "note": "Bank slopes down to the east · pad her bilge" } },
+        { "p": "Steering gone: stop or heave to, then ship the **emergency tiller**. Try it once in harbour first." }
+      ]
+    },
+    {
+      "id": "searoom",
+      "kicker": "Sea room",
+      "title": "Distance ÷ drift is the time you have",
+      "refs": ["Engine failure — lee shore", "Engine failure in a TSS", "Urgency to distress", "Being towed", "Heavy weather — preparation", "Heavy weather — heaving to", "Heavy weather — drogue", "Heavy weather — lee shore", "Heavy weather — lying a-hull", "Heavy weather — tactics"],
+      "blocks": [
+        { "fig": { "type": "chart", "land": "M0 166 C100 156 200 172 320 160 V200 H0 Z", "depths": [[60, 110, "14"], [122, 112, "12"], [250, 142, "9"]], "boat": [150, 70, 270], "track": "M150 82 L150 140", "labels": [[160, 152, "rocks", "middle"]], "panel": ["Engine dead", "Wind N F5", "Rocks 4 ca S", "Drift 1.2 kn", "Chain 50 m"], "note": "Depths in metres" }, "cap": "0.4 M ÷ 1.2 kn = 20 minutes: anchor now, then call PAN-PAN." },
+        { "p": "With 40 minutes and sails ready, hoist and claw off instead. Disabled in a shipping lane: **PAN-PAN** to ships and the VTS. Dragging onto rocks half an hour away: **MAYDAY**. Take a tow on a bridle round strong points, led over the bow roller." },
+        { "p": "Before a gale reef and rig the storm jib early, and head offshore: a bar breaks in an onshore blow. Ride it out **hove to**, or run off with a **drogue** holding her stern to the seas. Never lie a-hull: beam-on, a breaking crest rolls her." },
+        { "fig": { "type": "sail", "wind": 0, "hdg": 60, "note": "Hove to: jib aback, main eased, tiller to leeward" } },
+        { "fig": { "type": "card", "title": "How long does the sea room last?", "lines": ["A gale for 10 h, 30 M of sea room:", "bare poles 5 kn = 50 M · hove to 1.5 kn = 15 M", "A gale for 6 h, 21 M of sea room:", "running at 7 kn it lasts 3 h;", "with a drogue at 2.5 kn, 8 h 24 min"] } }
+      ]
+    },
+    {
+      "id": "distress",
+      "kicker": "Calling for help",
+      "title": "Alert by DSC, then speak on 16",
+      "refs": ["MAYDAY call", "DSC distress alert", "MAYDAY — position", "MAYDAY RELAY", "SÉCURITÉ call", "DSC — cancelling a false alert", "DSC — distress alert received", "Distress traffic — silence", "GMDSS sea areas", "VHF range", "Distress flares", "Flares — collision warning", "AIS", "Radar reflectors"],
+      "blocks": [
+        { "p": "**MAYDAY** means grave and imminent danger to the vessel or a person; **SÉCURITÉ** warns of a hazard, such as a container awash. Send the DSC alert even with no position on the set, then give it by voice on 16." },
+        { "tiles": [
+          { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["distress", "DISTRESS"], ["display", "then voice on 16"]] }, "name": "The alert", "note": "red button" },
+          { "fig": { "type": "card", "title": "MAYDAY on 16", "lines": ["MAYDAY ×3 · THIS IS Selene ×3", "MAYDAY Selene, call sign, MMSI", "Position: 220°T from the light, 4.0 M", "Nature of distress · help needed", "Persons aboard · other information", "OVER"] }, "name": "The call", "note": "position first" }
+        ] },
+        { "fig": { "type": "chart", "land": "M40 0 H200 C190 30 150 58 122 60 C96 60 70 30 40 0 Z", "marks": [[122, 58, "w", "light"]], "track": "M76 112 L118 62", "boat": [74, 116, 90], "panel": ["GPS failed", "Light 043°M", "Radar 4.0 M", "Var 3°W"], "note": "043°M − 3°W = 040°T to the light · you: 220°T from it" } },
+        { "p": "Do not acknowledge another vessel's alert by DSC: listen on 16 and, if no coast station answers, acknowledge by voice. SEELONCE MAYDAY keeps you off 16 until SEELONCE FEENEE. Cancel a false alert on the set, then tell all stations." },
+        { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 200, "y": 62, "t": "red parachute flare" }], "note": "Silent radio: note bearing and time, MAYDAY RELAY" } },
+        { "table": { "head": ["Flare", "Use"], "rows": [
+          ["Red parachute rocket", "Far from help; under low cloud, 45° downwind"],
+          ["Red handheld", "Help in sight at night; hold it downwind"],
+          ["Orange smoke", "The same by day"],
+          ["White handheld", "Collision warning, not distress"]
+        ] } },
+        { "p": "A coast station hears VHF only in **sea area A1**; beyond it, ships nearby and the EPIRB. To be seen, hoist the radar reflector high in the catch-rain position and fit an AIS **transponder**, not just a receiver." },
+        { "fig": { "type": "card", "title": "How far does your VHF reach?", "lines": ["Range ≈ 2.2 × (√h1 + √h2) M, h in metres", "Masthead 16 m, station 81 m: 28.6 M", "Dismasted, aerial at 4 m: 2.2 × 11 = 24.2 M", "A1: some 20–30 M from a coast station", "70 M crossing, 25 M each side: 20 M outside"] } }
+      ]
+    },
+    {
+      "id": "abandon",
+      "kicker": "Abandon ship",
+      "title": "Step up into the raft",
+      "refs": ["Abandon ship — when", "Abandon ship — the raft", "Abandon ship — in the raft", "Abandon ship — grab bag", "Fire — abandon", "Liferaft — hydrostatic release", "EPIRB & SART", "SART", "Helicopter rescue", "Catamaran — capsize"],
+      "blocks": [
+        { "p": "A sound hull is bigger, warmer and easier to find than a raft: dismasted but dry, you stay. Call early, but leave only when she is sinking or burning." },
+        { "fig": { "type": "card", "title": "Into the raft", "lines": ["Painter made fast to the yacht first", "Launch to leeward · on fire: to windward", "Pull the painter to inflate; step in dry", "Take grab bag, EPIRB, water, warm clothes", "Cut the painter, get clear, stream the drogue", "EPIRB stays on · SART high on its pole"] } },
+        { "p": "A raft upside down: stand on the gas-bottle side and lean back on the righting strap. In a deck cradle a **hydrostatic release** frees it a few metres down. A **SART** paints 12 dots on a searching radar; the nearest marks the raft. A capsized catamaran floats: stay with it." },
+        { "fig": { "type": "card", "title": "Helicopter", "lines": ["Stow the bimini and loose gear: downwash", "The pilot briefs you on 16: course, speed", "Let the hi-line touch the sea first", "Take it in by hand · never make it fast", "The lift may be from the dinghy, towed astern"] } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "topic": "emergency",
+  "lead": "Offshore the decisions are yours: which turn, which door to shut, when to leave the yacht, whom to call on which band. Command also brings duties in law.",
+  "sections": [
+    {
+      "id": "mob",
+      "kicker": "Man overboard",
+      "title": "Three turns, and a level lift",
+      "refs": ["MOB — Anderson turn", "MOB — Williamson turn", "MOB — Scharnow turn", "MOB — recovery", "MOB — recovery by a motor yacht"],
+      "blocks": [
+        { "table": { "head": ["Turn", "When", "How"], "rows": [
+          ["Anderson", "In sight", "Hard over to his side, round 250°, stop"],
+          ["Williamson", "Time unknown, night", "Hard over; at 60° off, hard back; steady on reciprocal"],
+          ["Scharnow", "Late report, time known", "Hard over; at 240° off, hard back; steady on reciprocal"]
+        ] } },
+        { "p": "Helm towards the casualty swings the propellers away from him. Williamson and Scharnow bring you back **in your own wake**; the Scharnow in less distance, but only once he is well astern." },
+        { "fig": { "type": "card", "title": "Scharnow turn from 130°T", "lines": ["Wheel hard to starboard", "Reverse it at 130° + 240° = 010°T", "Steady on the reciprocal: 310°T", "Search back along your own wake"] } },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 90, "dist": 70, "hdg": 0, "scale": 0.3, "label": "MOB" }, "wind": 270, "note": "High freeboard: stop upwind, beam-on, drift onto him" } },
+        { "p": "A high-sided motor yacht drifts faster than a swimmer: stop upwind, beam-on, propellers still, and come down to him. Lift an exhausted casualty **amidships to leeward** in a net on a halyard: the stern slams near the propellers, a vertical lift can collapse him." }
+      ]
+    },
+    {
+      "id": "fire-flood",
+      "kicker": "Fire and flooding",
+      "title": "Shut the space, then count the litres",
+      "refs": ["Fire — fixed systems", "Fire — under sail", "Fire — catamaran", "Fire — lithium batteries", "Flooding — pump capacity", "Flooding — watertight doors", "Flooding — catamaran", "Flooding — keel damage", "Damage control — collision mat", "Damage control — shoring", "Abandoning ship — when"],
+      "blocks": [
+        { "fig": { "type": "panel", "gauges": [["Eng room", "95°C", true], ["Fire", "ALARM", true], ["Fans", "ON", true]], "lines": ["Stop engines, generator, fans; shut flaps", "Count everyone out, then release"] } },
+        { "p": "A fixed system needs a **closed space**, and the space stays shut for the hold time while you cool the bulkhead: opened early it reignites, and a shutdown at discharge is meant. Under sail put the fire downwind of the crew: fire aft, bow to wind, slow. Use the **fire port**, hatch shut; a lithium battery goes overboard or under plenty of water." },
+        { "p": "Flooding is litres in against litres out. A patch goes **outside**, where the sea presses it on: a collision mat on lines under the keel; a bulging panel gets pad, board and a shore to a bulkhead. Shut a watertight door once everyone is out. One flooded bow still floats a catamaran: stay aboard. A working keel may drop off: sails down, raft ready, motor gently." },
+        { "fig": { "type": "card", "title": "How long have you got?", "lines": ["In 650 L/min, pumps 250 L/min: net 400", "Lost with 6,000 L more aboard", "6,000 ÷ 400 = 15 min", "Distress alert and rafts now"] } }
+      ]
+    },
+    {
+      "id": "disabled",
+      "kicker": "Disabled",
+      "title": "Aground, dismasted, no steering, no charge",
+      "refs": ["Grounding — refloating", "Dismasting", "Dismasting — fuel and jury rig", "Steering failure — emergency steering", "Steering failure — hydraulic steering", "Steering failure — twin screws", "Loss of power"],
+      "blocks": [
+        { "table": { "head": ["Failure", "First move"], "rows": [
+          ["Aground on sand", "Kedge out, weight aft, off on the tide; engines suck sand"],
+          ["Mast overboard", "Cut it away; no propeller until every line is aboard"],
+          ["Rudder blade gone", "Drogue on a bridle, steered by its legs"],
+          ["Hydraulics dead", "Open the bypass valve, ship the tiller; twin screws steer on engines"],
+          ["No charging", "Nav lights and VHF only; plot on paper"]
+        ] } },
+        { "p": "After the top of springs each high water is lower: stranded just after high water, act now or wait a fortnight. Dismasted, work out the range under power, reserve kept, and rig a **jury sail** for the rest." },
+        { "fig": { "type": "card", "title": "Range under power", "lines": ["Fuel 90 L, keep 20%: 72 L usable", "4.5 L/h at 6 kn: 16 h", "16 h × 6 kn = 96 M", "Port 120 M off: a jury rig as well"] } },
+        { "fig": { "type": "panel", "gauges": [["Volts", "11.9", true], ["Alternator", "0 A", true], ["Fuel", "70%", false]], "lines": ["No spare belt, 30 h to go", "Lights and VHF stay on; plot on paper"] } }
+      ]
+    },
+    {
+      "id": "abandon",
+      "kicker": "Abandoning and rescue",
+      "title": "Leave dry, stay together, hold the course",
+      "refs": ["Abandoning ship — boarding the raft", "Abandoning ship — two rafts", "Liferaft survival", "Liferaft survival — water", "Survival in the water — 1-10-1", "Survival in the water — HELP", "Survival in the water — huddle", "Helicopter rescue", "Medical evacuation — rendezvous", "Medical — diabetic emergency"],
+      "blocks": [
+        { "p": "Board the raft **dry**, from the lowest point, one at a time; more people than one raft's rating, launch both, tie them together. First hour: seasickness pills, inflate the floor, a lookout. No water for 24 hours, then half a litre each a day." },
+        { "fig": { "type": "card", "title": "Cold water: 1-10-1", "lines": ["1 minute: cold shock, control your breathing", "10 minutes of useful movement: swim now", "1 hour before hypothermia: then keep still", "Alone: HELP, knees up, arms crossed, still", "Together: huddle, chests touching"] } },
+        { "p": "A helicopter pilot keeps station on you: steer what he asks, usually wind 30° on the port bow, and hold course and speed; out of range, close to inside his radius of action. A pale, sweaty, muddled diabetic gets **sugar** while he can swallow." },
+        { "fig": { "type": "encounter", "you": { "hdg": 70 }, "other": { "dist": 0 }, "wind": 40, "note": "Wind 040°T, 30° on the port bow: steer 070°T" } }
+      ]
+    },
+    {
+      "id": "gmdss",
+      "kicker": "GMDSS offshore",
+      "title": "Which band reaches whom",
+      "refs": ["GMDSS sea areas", "GMDSS — MF distress", "GMDSS — HF bands", "GMDSS — HF band choice", "GMDSS — medical advice", "GMDSS — distress to ships nearby", "GMDSS — MAYDAY RELAY", "GMDSS — distress alert received", "GMDSS — radio silence", "GMDSS — EPIRB registration", "GMDSS — EPIRB false alert", "GMDSS — SART", "GMDSS — AIS-SART", "GMDSS — NAVTEX"],
+      "blocks": [
+        { "fig": { "type": "chart", "land": "M0 0 H40 V200 H0 Z", "marks": [[40, 150, "k", "coast station"]], "track": "M112 0 Q136 100 112 200 M232 0 Q258 100 232 200", "labels": [[76, 70, "A1", "middle"], [76, 86, "VHF DSC", "middle"], [76, 100, "≈ 30 M", "middle"], [176, 70, "A2", "middle"], [176, 86, "MF DSC", "middle"], [176, 100, "≈ 150 M", "middle"], [280, 70, "A3", "middle"], [280, 86, "satellite", "middle"]], "boat": [200, 150, 0], "note": "Sea areas follow the coast stations' DSC cover" } },
+        { "p": "**Sea areas** follow what the shore hears: A1 VHF DSC, A2 MF DSC beyond it, A3 satellite, A4 the poles. Beyond VHF range distress goes by **MF DSC** on 2187.5 kHz, speech on 2182 kHz. On HF, day and distance want a higher band, night a lower." },
+        { "list": [
+          "Sinking, ship in sight: DSC alert and MAYDAY on 16 first, then phone the MRCC.",
+          "Alert acknowledged by a coast station: listen, log, help if asked. Unacknowledged, beyond you: relay to the coast station alone.",
+          "Medical advice is urgency: DSC urgency call, then PAN-PAN."
+        ] },
+        { "fig": { "type": "card", "title": "In the grab bag", "lines": ["EPIRB: registered to you with the flag state", "False alert: switch off, tell the MRCC", "Radar SART: flashes when a radar sweeps it", "AIS-SART: shows with position on AIS screens", "NAVTEX: nav, gale, SAR messages always print"] } },
+        { "fig": { "type": "card", "title": "Silence on channel 16", "lines": ["SEELONCE MAYDAY: casualty or control station", "SEELONCE DISTRESS: any other station nearby", "PRUDONCE: restricted working may resume", "SEELONCE FEENEE: distress traffic ended"] } }
+      ]
+    },
+    {
+      "id": "duties",
+      "kicker": "The master's duties",
+      "title": "What the law expects of you at sea",
+      "refs": ["SOLAS V/31", "SOLAS V/33", "SOLAS V/33 — release", "SOLAS V/33 — unable to assist", "SOLAS V/34-1 — master's discretion", "The skipper's responsibility", "Collision — duties", "Accident reporting", "The logbook", "MARPOL Annex I", "MARPOL Annex IV", "MARPOL Annex V", "Pollution — reporting a spill", "Pollution — reporting a slick", "Harbour regulations", "Local regulations", "Harbour dues"],
+      "blocks": [
+        { "table": { "head": ["Rule", "Duty"], "rows": [
+          ["SOLAS V/31", "Report a navigational danger or unforecast force 10 to ships near and the coast"],
+          ["SOLAS V/33", "Go to distress with all speed, or tell SAR and log why; released once others are tasked"],
+          ["SOLAS V/34-1", "Safety decisions are the master's alone"],
+          ["Collision", "Stand by and help; exchange names and ports; report, records untouched"]
+        ] } },
+        { "p": "Your safety orders bind guests too. The **log** is evidence: correct with one line through, the right figure beside, initialled." },
+        { "fig": { "type": "card", "title": "Correcting the log", "lines": ["0300 · Course 245°T: one line through it", "254°T written beside it, initialled", "The old figure stays readable", "Never erase or tear out a page"] } },
+        { "table": { "head": ["Waste", "Rule"], "rows": [
+          ["Oil", "Never overboard; report every spill and slick"],
+          ["Sewage", "Local rules; MARPOL's 12 M at 4 kn binds larger ships"],
+          ["Garbage", "Plastic never; special area (Med): food waste only, 12 M off, under way"],
+          ["Placards", "Garbage rules displayed from 12 m"]
+        ] } },
+        { "p": "By-laws apply with the COLREGs, to visitors too; a reserve may require its buoys. Dues: LOA rounded up, more for multihulls." }
+      ]
+    },
+    {
+      "id": "business",
+      "kicker": "Papers, insurance, salvage",
+      "title": "The yacht as property and as a contract",
+      "refs": ["Registration", "Registration — change of flag", "Registration — transfer on sale", "Ship's papers", "Ownership — bills of sale", "Marine mortgages — priority", "Insurance — duty to disclose", "Insurance — warranties", "Insurance — navigation limits", "Insurance — commercial use", "Insurance — hull and third party", "Recreational vs commercial use", "Charter vs private use", "Crew lists & agreements", "Crew employment — hours of rest", "Crew employment — repatriation", "Customs & immigration", "VAT — paid status", "Crew — Schengen 90/180", "Salvage — Lloyd's Open Form", "Salvage vs towage", "Salvage — master's authority", "Salvage — the award", "Salvage — life salvage", "Salvage — duty to the salvor", "Salvage — services refused", "Limitation of liability"],
+      "blocks": [
+        { "p": "Rules differ by country, principles do not. A yacht flies **one flag**: a new register wants a deletion certificate, a buyer re-registers in time, the original certificate travels aboard. A registered **mortgage** survives a sale: have it discharged before paying. Mortgages rank by date of entry where the register records them." },
+        { "fig": { "type": "card", "title": "Before the passage: the policy", "lines": ["Limits: area, season; extension in writing", "Warranties: skipper's certificate, use, crew", "Private pleasure: no paying guests", "Hull covers your yacht; third party, others", "Disclosure: every material fact, or void"] } },
+        { "p": "Paid skippering needs commercial papers; under a **bareboat charter** the charterer commands. Paid crew: a signed agreement, 10 hours' rest in 24 in at most two spells, one of 6, repatriation at the employer's cost. From abroad fly **Q**: usually only the skipper lands, with crew list and passports. Schengen: 90 days in 180; VAT-free temporary admission only for boats of non-EU residents." },
+        { "fig": { "type": "flag", "flags": [["Q", "Q|I request free pratique"]], "note": "From arrival until you are cleared" } },
+        { "fig": { "type": "card", "title": "Salvage Convention 1989", "lines": ["No cure, no pay: no result, no reward (LOF)", "The award never exceeds the value saved", "No danger: towage price; refusal bars a claim", "Beyond the contract: salvage for extra work", "The master signs; life salvors get a share"] } },
+        { "p": "An owner limits liability by tonnage, unless the loss came from his own reckless act." }
+      ]
+    }
+  ]
+}

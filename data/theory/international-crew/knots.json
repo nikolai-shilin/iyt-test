@@ -1,0 +1,83 @@
+{
+  "topic": "knots",
+  "lead": "A crew needs only a handful of knots, each for one job, and a few habits with lines: let a cleat or a bollard take the load, keep every line out of the water, and make your end fast before you throw.",
+  "sections": [
+    {
+      "id": "knots",
+      "kicker": "Seven knots",
+      "title": "One knot for each job",
+      "refs": ["Knots"],
+      "blocks": [
+        { "p": "A good knot holds, and comes undone when you want it to. Learn these seven by the job they do: the skipper will ask for them by name." },
+        { "table": { "head": ["Knot", "Job"], "rows": [
+          ["Bowline", "A fixed loop that cannot slip or tighten: over a bollard, round a person"],
+          ["Figure-of-eight", "A stopper in the end of a sheet, too fat to run out through a block"],
+          ["Reef knot", "Tying round a bundle: a sail tie round the furled mainsail"],
+          ["Clove hitch", "A fender on the guardrail: quick to tie, easy to adjust"],
+          ["Round turn and two half hitches", "A line to a ring or a post that will be jerked for hours"],
+          ["Sheet bend", "Joining two lines, even of different thickness"],
+          ["Rolling hitch", "Gripping a rope, a spar or a chain against a pull along it"]
+        ] } },
+        { "tiles": [
+          { "fig": { "type": "rope", "kind": "ring" }, "view": "95 40 130 150", "name": "To a ring", "note": "round turn and two half hitches" },
+          { "fig": { "type": "rope", "kind": "rail" }, "view": "65 35 150 130", "name": "To a rail", "note": "clove hitch" },
+          { "fig": { "type": "rope", "kind": "sheet" }, "view": "50 25 220 160", "name": "Two lines", "note": "sheet bend" }
+        ] },
+        { "p": "A reef knot is tied right over left, then left over right, and lies flat. It is for binding, not for joining two lines that take a load. In a sheet bend the thicker line makes the loop and the thinner one is tucked round it." }
+      ]
+    },
+    {
+      "id": "hitches",
+      "kicker": "Fenders and rings",
+      "title": "The round turn takes the strain",
+      "refs": ["Knots"],
+      "blocks": [
+        { "fig": { "type": "rope", "kind": "rail", "labels": [[60, 80, "guardrail"], [200, 160, "fender line"]], "note": "Clove hitch: quick to tie, easy to adjust" } },
+        { "p": "A **clove hitch** is two turns round the rail, the second crossing over the first. It is easy to adjust, which is why fenders hang on it, but the rolling of the boat can work it loose. Lock it with a **half hitch** round the standing part, the part of the line that carries the load." },
+        { "fig": { "type": "rope", "kind": "ring", "labels": [[160, 40, "quay ring"]], "note": "The round turn first, then two half hitches" } },
+        { "p": "For a line that will be jerked all evening, such as the tender's painter on a quay ring, use a **round turn and two half hitches**. Pass the line twice round the ring: the friction of that full turn holds the strain, so you tie the half hitches in slack line, even with the wind pulling the boat away." }
+      ]
+    },
+    {
+      "id": "cleat",
+      "kicker": "Cleat hitch",
+      "title": "A turn, figure-eights, one locking hitch",
+      "refs": ["Cleat hitch"],
+      "blocks": [
+        { "fig": { "type": "rope", "kind": "cleat", "labels": [[160, 150, "cleat"], [40, 50, "load"]] } },
+        { "list": [
+          "Lead the line to the far end of the cleat and take a full turn round its base: this turn takes the load.",
+          "Cross over the top in one or two figure-eights.",
+          "Finish with a single locking hitch."
+        ] },
+        { "p": "More locking hitches add nothing, and they can jam just when the line has to come off in a hurry." },
+        { "p": "To ease a loaded line, take off the locking hitch and the figure-eights but keep the turn round the base. Then let the line slip round the cleat a little at a time, with your hands well back from it." },
+        { "rule": "The turn holds the load; the hitch only keeps the turn in place." }
+      ]
+    },
+    {
+      "id": "load",
+      "kicker": "Lines under load",
+      "title": "Let a bollard hold what your hands cannot",
+      "refs": ["Line handling"],
+      "blocks": [
+        { "p": "A yacht pushed by a gust pulls far harder than you can. Do not try to hold her by strength, and never wrap a line round your hand or your body: it can drag you into the water. Take a turn round a bollard or a cleat and hold the tail. The friction does the work." },
+        { "fig": { "type": "rope", "kind": "ring", "labels": [[160, 40, "bollard"]], "note": "One turn, and you hold only the tail" } },
+        { "p": "A loose line is a danger too. People trip on it, and one that slips over the side can wrap round the propeller. As soon as you have left the berth, coil the mooring lines and stow them." },
+        { "p": "To finish a coil so that it hangs in the locker, wrap the end several times round the coil, push a loop of it through the top and bring that loop back over the head of the coil." }
+      ]
+    },
+    {
+      "id": "throw",
+      "kicker": "Throwing a line",
+      "title": "Make fast on board, then throw upwind",
+      "refs": ["Line handling"],
+      "blocks": [
+        { "fig": { "type": "card", "title": "Throwing a line ashore", "lines": ["1. Make the boat's end fast on a cleat", "2. Coil the line, split the coil in two", "3. Aim upwind of the catcher", "4. Throw one half, let the other run out"] } },
+        { "p": "Make your own end fast before anything else, or a good throw sends the whole line ashore or into the sea. The half of the coil in your throwing hand carries the line; the other half runs out freely from your open hand. The wind carries a flying line sideways, so with the wind from your left you aim a little to the left of the person catching it." },
+        { "p": "If the line falls short into the water near the stern while the engine is in gear, tell the helm at once and haul it in fast, before it reaches the propeller." },
+        { "rule": "No line in the water while the propeller is turning." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "topic": "ground",
+  "lead": "The anchor, the lines and the dinghy are the gear you handle every day, and the gear most often lost or broken. See each piece yourself at the base, try it, and learn how the briefing wants it used.",
+  "sections": [
+    {
+      "id": "tackle",
+      "kicker": "Anchor and chain",
+      "title": "Sign for what you have seen at the bow",
+      "refs": ["Check-in: ground tackle", "Check-in: anchor chain", "Check-in: anchor locker", "Check-in: bow roller", "Check-in: anchor swivel", "Check-in: second anchor", "Check-in: anchor rode"],
+      "blocks": [
+        { "p": "Go to the bow before you sign for the ground tackle: anchor on the roller, chain in the locker. Ask for the **chain marks** and write the colour code on the form: scope is counted by the marks. The bitter end should be lashed with rope you can cut in an emergency, not shackled hard." },
+        { "fig": { "type": "anchor", "depth": "6 m", "title": "At the bow", "lines": ["Marks: code on the form", "Bitter end: rope lashing", "Roller pin, swivel: fitted"] } },
+        { "p": "Photograph a cracked roller or a missing pin and write it down: damage not on the form is yours at check-out. An anchor that comes up upside down on a twisted chain needs a swivel. A blocked locker drain is cleared. Have the **second anchor** dug out with its warp and shackle. With a rope rode, look for sharp edges where it meets the roller." }
+      ]
+    },
+    {
+      "id": "windlass",
+      "kicker": "Windlass",
+      "title": "Test every control, keep hands off the chain",
+      "refs": ["Check-in: windlass", "Check-in: windlass clutch", "Check-in: windlass power", "Windlass safety"],
+      "blocks": [
+        { "fig": { "type": "panel", "gauges": [["Volts", "12.6", false], ["Engine", "stopped", false], ["Windlass", "OFF", true]], "lines": ["Foot switch: nothing", "Breaker on, engine running, try again"] } },
+        { "p": "Run the chain out and in from both foot switches and from the remote. Nothing at all usually means its **breaker** is off. Use the windlass with the engine running: its current would flatten the house battery. If the motor runs but the gypsy does not turn, the clutch is slipping: tighten it with the windlass handle, which also frees it to lower by hand." },
+        { "rule": "Chain is cleared with the windlass stopped, never by hand while it runs." }
+      ]
+    },
+    {
+      "id": "anchoring",
+      "kicker": "Anchoring",
+      "title": "Sand, scope, and a pull to prove it",
+      "refs": ["Base briefing: anchoring", "Anchoring: drag alarm", "COLREGs Rule 30"],
+      "blocks": [
+        { "fig": { "type": "bay", "wind": 0, "land": "M0 0 H320 V30 H0 Z M0 30 H40 V200 H0 Z M280 30 H320 V200 H280 Z", "spots": [[110, 95, "A"], [200, 130, "B"], [160, 55, "C"]], "labels": [[110, 118, "dark weed"], [200, 153, "pale sand"], [200, 55, "rocks, 3 m"]], "note": "Depth 6–8 m across the bay" }, "cap": "B: pale sand holds. The anchor skids over weed and jams in rock." },
+        { "p": "With all chain the usual Mediterranean scope is **4–5 times the depth**, measured from the bow roller, and more for a windy night: choose a sheltered bay shallow enough for your chain." },
+        { "fig": { "type": "anchor", "depth": "6 m", "title": "(6 m + 1 m) × 4–5 ≈ 30 m", "lines": ["All chain, marks every 10 m", "Roller 1 m above water", "Three marks out"] } },
+        { "p": "Set the anchor by reversing slowly, then at about 1,500 rpm, watching a transit ashore. For the night give the plotter's anchor alarm the chain out plus a boat length and a margin: 35 m of chain and a 14 m boat make about 55 m. By day an anchored vessel shows a black ball forward, at night the all-round white light." }
+      ]
+    },
+    {
+      "id": "load",
+      "kicker": "The chain's load",
+      "title": "The windlass lifts chain, nothing more",
+      "refs": ["Base briefing: anchoring", "Base briefing: catamaran anchoring"],
+      "blocks": [
+        { "fig": { "type": "anchor", "depth": "6 m", "title": "For the night", "lines": ["Snubber hooked on", "Load on a cleat", "Chain slack on the gypsy"] } },
+        { "p": "At anchor the load goes onto the **snubber**, hooked to the chain and made fast to a cleat, with the chain slack behind it. A catamaran uses a bridle to both bows, which stops her sheering. To weigh, motor slowly up the chain so the windlass lifts only slack. Where old chains foul the bottom, rig a buoyed trip line on the anchor's crown." },
+        { "p": "Before a passage close the chain stopper, fit the roller pin and switch the breaker off: a kicked foot switch cannot then drop the anchor." }
+      ]
+    },
+    {
+      "id": "quay",
+      "kicker": "Stern-to",
+      "title": "Quays, lazy lines, buoys and lines ashore",
+      "refs": ["Base briefing: stern-to with the anchor", "Mooring: stern-to in an onshore wind", "Mooring: lazy lines", "Check-in: deck gear", "Base briefing: return", "Base briefing: mooring buoys", "Mooring: slip lines", "Mooring: crossed anchors", "Base briefing: lines ashore", "Check-in: passerelle"],
+      "blocks": [
+        { "fig": { "type": "bay", "wind": 90, "land": "M0 0 H320 V40 H0 Z", "spots": [[160, 72, "A"], [160, 128, "B"], [160, 182, "C"]], "labels": [[160, 25, "town quay · gap between two boats"], [200, 72, "15 m"], [200, 128, "50 m"], [200, 182, "100 m"]], "note": "Boat 14 m · depth 5 m" }, "cap": "B: square to the gap, then reverse in." },
+        { "p": "Without lazy lines you drop the anchor about **four boat lengths** off the quay: closer and it never bites. If the wind turns onshore, take chain in to pull the stern off, ease the stern lines and lift the passerelle. With a **lazy line**, keep its slack out of the water and clear of the propeller while it is walked forward; have gloves and a boat hook that locks. The base wants the boat back on its own berth, on its lazy line, on time." },
+        { "table": { "head": ["Situation", "What you do"], "rows": [
+          ["Mooring buoy", "A line through the ring and back to the same cleat, then a second"],
+          ["Leaving a quay early", "Double each stern line through its ring and slip it from aboard"],
+          ["A neighbour's chain on your anchor", "Take its weight on a line, lower your anchor clear, slip the line"],
+          ["Boats lying on lines ashore", "Anchor and take a long line ashore as they do"]
+        ] } },
+        { "p": "See how the passerelle fits, and lash it down for passages." }
+      ]
+    },
+    {
+      "id": "lines",
+      "kicker": "Lines and fenders",
+      "title": "Long enough, sound, and guarded from chafe",
+      "refs": ["Check-in: mooring lines", "Check-in: fenders", "Seamanship: fenders", "Mooring: fenders", "Mooring: chafe"],
+      "blocks": [
+        { "p": "A stern line goes to the quay and back, so it is at least a boat length; add a long line for the shore. A hard, chafed line is the base's to replace. Count the fenders and have a flat one pumped up." },
+        { "tiles": [
+          { "fig": { "type": "rope", "kind": "rail", "labels": [[60, 50, "guardrail"], [250, 150, "fender line"]] }, "name": "Fender", "note": "clove hitch, slipped half hitch" },
+          { "fig": { "type": "rope", "kind": "cleat", "labels": [[60, 50, "stern line"], [250, 150, "fairlead"]] }, "name": "Stern line", "note": "chafe guard where it moves" }
+        ], "cols": 2 },
+        { "p": "Tied this way a fender's height changes in seconds. Fenders go where hull and quay meet, higher at a tall stone quay. Chafe, not strain, parts mooring lines: fit a sleeve or a piece of hose at the fairlead and the quay edge." }
+      ]
+    },
+    {
+      "id": "dinghy",
+      "kicker": "Dinghy and outboard",
+      "title": "The gear a waiver often does not cover",
+      "refs": ["Check-in: dinghy", "Check-in: outboard", "Charter contract — dinghy", "Dinghy handling: outboard", "Dinghy handling", "Check-in: davits", "Catamaran: dinghy on the davits"],
+      "blocks": [
+        { "p": "Check the dinghy inflated hard with every valve closed, its drain plug, oars and pump, and the boat's name on the tubes. Read the dinghy clause: theft of the dinghy and outboard is often outside the damage waiver. So lift and lock it at night, and try the outboard lock's key at the pontoon." },
+        { "fig": { "type": "card", "title": "Outboard, at the pontoon", "lines": ["Tank vent open, bulb squeezed firm", "Starts in neutral", "Stops when you pull the kill cord", "Clamps tight, lock bar on", "Moved between boats on a lanyard"] } },
+        { "p": "An outboard that dies after a few seconds usually has a closed tank vent. Before a beach, stop the motor and tilt it, then row or wade in. For towing, the outboard rides on the pushpit bracket. On davits, pull the plug so rain drains and refit it before launching; before a rough passage take the outboard off, drain the dinghy and strap it tight." }
+      ]
+    }
+  ]
+}

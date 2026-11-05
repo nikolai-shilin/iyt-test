@@ -1,0 +1,94 @@
+{
+  "topic": "lookout",
+  "lead": "The lookout is the boat's eyes and ears. You do not need every rule of the road: your job is to see other vessels early, tell the skipper where they are and what they are doing, and recognise the few situations and signals that matter most.",
+  "sections": [
+    {
+      "id": "watch",
+      "kicker": "Keeping a lookout",
+      "title": "All round, all the time",
+      "refs": ["Lookout", "Night lookout"],
+      "blocks": [
+        { "p": "A lookout watches **all round the horizon**, with eyes and ears, not just ahead. Fast ferries and RIBs come up from astern quickly and quietly, so turn and look behind you every few minutes." },
+        { "fig": { "type": "encounter", "you": { "hdg": 315, "sail": true, "boom": -14 }, "other": { "dist": 0 }, "wind": 0, "note": "Starboard tack: the genoa hides the port bow" } },
+        { "p": "Under sail the genoa hides a whole sector on the **leeward bow**: on starboard tack that is the port bow. Duck down and look under the sail often." },
+        { "p": "At night your eyes need about 20 minutes of darkness to see well, and one bright white light undoes it. Read the chart by a **dim red light**." }
+      ]
+    },
+    {
+      "id": "report",
+      "kicker": "Reporting",
+      "title": "What, where, how far",
+      "refs": ["Reporting"],
+      "blocks": [
+        { "p": "Report what you see, and report it early: a vessel, a buoy, a fishing float, something in the water. The skipper needs time to decide, and would rather hear of ten things that do not matter than miss one. Say **what** it is, **where** and **how far**." },
+        { "fig": { "type": "boat", "view": "plan", "parts": [["ahead", "12"], ["stbd-bow", "1–2"], ["abeam-stbd", "3"], ["stbd-quarter", "4–5"], ["astern", "6"], ["port-quarter", "7–8"], ["abeam-port", "9"], ["port-bow", "10–11"]], "note": "Clock bearings, counted from your own bow" } },
+        { "p": "The simplest way to say where is the **clock**, counted from your own bow: 12 o'clock is dead ahead, 3 is abeam to starboard, 6 is astern, 9 is abeam to port. Add your guess at the distance and what the vessel is doing." },
+        { "rule": "\"Motor boat at ten o'clock, about a mile, coming closer.\"", "label": "Say" }
+      ]
+    },
+    {
+      "id": "bearing",
+      "kicker": "Risk of collision",
+      "title": "Watch the bearing",
+      "refs": ["COLREGs Rule 7"],
+      "blocks": [
+        { "p": "To tell whether another vessel will hit you or pass clear, watch its **bearing**: the compass direction to it. Take it with the hand-bearing compass, or line the vessel up with a stanchion while your boat holds a steady course. Check it several times, a few minutes apart." },
+        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 50, "dist": 90, "hdg": 270, "label": "Ship" }, "bearingLine": true, "note": "Bearing steady, ship closer each time" } },
+        { "table": { "head": ["The bearing", "What you report"], "rows": [
+          ["Stays the same while the vessel gets closer", "Risk of collision: call the skipper now"],
+          ["Changes clearly", "It should pass clear. Keep checking until it is past"]
+        ] } },
+        { "rule": "Steady bearing, closing range: collision course." }
+      ]
+    },
+    {
+      "id": "rules",
+      "kicker": "Who keeps clear",
+      "title": "Four rules worth knowing",
+      "refs": ["COLREGs Rule 13", "COLREGs Rule 14", "COLREGs Rule 18", "COLREGs Rule 9"],
+      "blocks": [
+        { "p": "The skipper decides what to do, but you report better when you know what should happen. One vessel **keeps clear**; the other holds her course and speed." },
+        { "tiles": [
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 5, "dist": 85, "hdg": 0 }, "bearingLine": true }, "view": "55 -12 210 165", "name": "Overtaking", "note": "you catch up: you keep clear" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 0, "dist": 90, "hdg": 180 }, "bearingLine": true }, "view": "55 -12 210 165", "name": "Head-on, both under power", "note": "both turn to starboard" },
+          { "fig": { "type": "encounter", "you": { "hdg": 0, "sail": true, "boom": 14 }, "other": { "bearing": 50, "dist": 85, "hdg": 270 }, "bearingLine": true }, "view": "55 -12 210 165", "name": "Power meets sail", "note": "power keeps clear" }
+        ], "cols": 3 },
+        { "p": "**Overtaking**: the vessel coming up from astern keeps clear, sail or power, on any tack. **Head-on under power**: both turn to starboard and pass port to port. **Power and sail**: a vessel under power normally keeps out of the way of one under sail." },
+        { "p": "Normally, not always. A sailing yacht keeps clear of a vessel **fishing** with nets or lines out: by day she shows two cones, points together. And in a **narrow channel** or harbour entrance a yacht must not get in the way of a ship that can only use that channel. A ferry leaving port will not move over for you." },
+        { "fig": { "type": "dayshape", "shape": "two-cones", "sail": false, "note": "Fishing: two cones, points together" }, "view": "40 20 240 180" }
+      ]
+    },
+    {
+      "id": "lights",
+      "kicker": "Lights at night",
+      "title": "Which way is she heading?",
+      "refs": ["Navigation lights"],
+      "blocks": [
+        { "p": "At night you see lights, not hulls. A vessel under way shows a **red** sidelight on her port side, a **green** one to starboard and a white **sternlight** aft. Under power she adds a white **masthead light** above them; a big ship, 50 m or more, shows two, the forward one lower." },
+        { "tiles": [
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 76 }, { "c": "r", "x": 162, "y": 120 }] }, "view": "60 20 200 150", "name": "White over red", "note": "under power, crossing right to left" },
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 138, "y": 84 }, { "c": "w", "x": 186, "y": 62 }, { "c": "r", "x": 134, "y": 120 }] }, "view": "60 20 200 150", "name": "Two white and a red", "note": "big ship, crossing right to left" },
+          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 154, "y": 60, "r": 4 }, { "c": "r", "x": 166, "y": 60, "r": 4 }] }, "view": "60 20 200 150", "name": "Green and red, high up", "note": "sailing yacht coming at you" },
+          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 122 }] }, "view": "60 20 200 150", "name": "One white, low", "note": "a stern: you are behind her" }
+        ], "cols": 2 },
+        { "p": "Read the colour first. Red is her port side, so her bow points to your left; green is her starboard side, bow to your right. **Red and green together**: she is heading straight at you, so report it at once. A single white light is a stern. Sidelights with no white above them mean sail; a yacht may carry them in one **tricolour** lantern at the masthead." }
+      ]
+    },
+    {
+      "id": "sound",
+      "kicker": "Sound signals",
+      "title": "What the horn is saying",
+      "refs": ["COLREGs Rule 34"],
+      "blocks": [
+        { "p": "Vessels under power in sight of each other announce their manoeuvres on the horn. A **short blast** lasts about a second." },
+        { "table": { "head": ["You hear", "It means"], "rows": [
+          ["One short blast", "I am altering my course to starboard"],
+          ["Two short blasts", "I am altering my course to port"],
+          ["Three short blasts", "My engines are going astern"],
+          ["Five or more short, rapid blasts", "I doubt your intentions: a warning"]
+        ] } },
+        { "p": "Five short blasts aimed at your boat mean the other vessel does not understand what you are doing, or thinks you are not doing enough to keep clear. Tell the skipper at once." }
+      ]
+    }
+  ]
+}

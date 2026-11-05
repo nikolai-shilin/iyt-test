@@ -1,0 +1,96 @@
+{
+  "topic": "hull",
+  "lead": "The hull, the deck and the rig are where a deposit goes. Walk round in a fixed order with the base's technician, sort what you find into what is fixed before you leave and what goes on the form, and only then sign.",
+  "sections": [
+    {
+      "id": "order",
+      "kicker": "The walk-round",
+      "title": "A fixed order, the technician beside you",
+      "refs": ["Check-in: walk-round", "Check-in: form", "Check-in: photographs", "Check-in: hull damage", "Charter contract — deposit"],
+      "blocks": [
+        { "p": "Start outside, from the quay: the hull from bow to stern on both sides, then the deck, then the rig. A fixed order is how nothing gets missed. Keep the technician with you: a mark goes on the form's boat outline with him present and initialling. Notes you make alone are your word against the base's on Friday." },
+        { "fig": { "type": "card", "title": "One mark, written properly", "lines": ["What: gelcoat chip 3 cm, star cracks", "Where: port bow, 40 cm aft of the stem", "Photo 1: wide, to place it on the boat", "Photo 2: close up, a coin for scale", "Initialled by the technician"] } },
+        { "p": "Write what it is, how big and where. Star cracks mean an impact, so write cracks, not scratches: you sign for the boat as the form describes her, and 'general wear' describes nothing. Whatever happens before your signature goes on the form too. A gap noticed next morning is added, dated and initialled at the office before you sail." },
+        { "rule": "On Friday the signed form counts, not the technician's memory." }
+      ]
+    },
+    {
+      "id": "hull",
+      "kicker": "Hull, keel and rudder",
+      "title": "From the quay, the dinghy and the bilge",
+      "refs": ["Check-in: hull", "Check-in: rudder and keel", "Check-in: rudder", "Check-in: keel", "Check-in: hull windows", "Check-in: hull-deck joint", "Hull-deck joint — leak", "Charter contract — damage"],
+      "blocks": [
+        { "fig": { "type": "boat", "view": "side", "parts": [["bow", "bow"], ["stern", "stern"], ["hull", "topsides"], ["waterline", "waterline"], ["keel", "keel"], ["rudder", "rudder"], ["pulpit", "pulpit"], ["pushpit", "pushpit"]] } },
+        { "table": { "head": ["What you see", "What you do"], "rows": [
+          ["Weed at the waterline, an old sound repair", "The base's: note them with a photo"],
+          ["A list with both tanks full", "Have the bilge and lockers opened: often it is water"],
+          ["Rusty keel bolts, fresh paint at the keel joint", "Signs of a grounding: ask for a keel check, not 'keel OK'"],
+          ["Rudder blade moves sideways with a clunk", "Bearing play: noted, and the base passes it as safe"],
+          ["Cracked sealant on a hull window", "A hose test while you watch inside"],
+          ["Toe rail lifted, bolts missing", "The hull-deck joint is open: refastened before you leave"]
+        ] } },
+        { "p": "A keel scuff or a chipped rudder missing from the form at check-in becomes your grounding at check-out. If you do touch bottom during the week, check the bilge and keel bolts, photograph the keel and call the base the same day. Salt water in a locker only when heeled points to the deck joint: report that too." }
+      ]
+    },
+    {
+      "id": "deck",
+      "kicker": "Deck and cockpit",
+      "title": "Fix it now or write it down",
+      "refs": ["Check-in: guardrails", "Check-in: hatches", "Check-in: deck", "Check-in: deck fittings", "Check-in: bow fitting", "Check-in: bathing platform", "Check-in: cockpit", "Check-in: winches", "Check-in: running rigging", "Check-in: steering and throttle", "Check-in: steering", "Steering — failure ahead"],
+      "blocks": [
+        { "p": "Sort every finding into two piles. What can hurt someone or endanger the boat is **fixed by the base before you leave**: an entry on the form does not hold a guardrail. What is worn but safe is **written on the form** with a photo, so it stays the base's on Friday." },
+        { "fig": { "type": "rope", "kind": "rail", "labels": [[80, 50, "Stanchion: loose"], [235, 50, "Lifeline: frayed"], [160, 165, "Gate hook: pin missing"]], "note": "Guardrail: all three fixed before you leave" } },
+        { "table": { "head": ["Fixed before you leave", "On the form, with a photo"], "rows": [
+          ["Cracked ladder rung; hatch that will not seal", "Play in the platform hinge; cracked hatch lens"],
+          ["Loose bow cleat, chain stopper without its pawl, leaking stanchion base", "Soft spot in the deck, initialled"],
+          ["Winch that slips back, clutch that will not open, missing handle", "Chafed halyard cover, worn self-tailer jaws"],
+          ["Slack steering, stiff throttle, loose tiller head", "Wheel lock that slips"],
+          ["Locker lid that will not latch, blocked cockpit drain", "Broken table-leaf support"]
+        ] } },
+        { "p": "The chain stopper, not the windlass, takes the anchor load. A winch's pawls stop the drum running back under load. Steering play that grows during the week, with a knock under the cockpit, is a cable or quadrant going: call the base and motor gently to the nearest harbour." }
+      ]
+    },
+    {
+      "id": "canvas",
+      "kicker": "Sprayhood and bimini",
+      "title": "Light tube and soft vinyl",
+      "refs": ["Check-in: canvas", "Canvas and frame", "Canvas care", "Canvas in strong wind"],
+      "blocks": [
+        { "p": "At check-in a tear, an open zip or a missing strap is fixed, because a tear grows in the first blow; a scratched window and a bent frame go on the form." },
+        { "table": { "head": ["During the week", "Why"], "rows": [
+          ["Nobody pulls themselves aboard by the bimini frame", "It bends; the pushpit and grab rails take a body's weight"],
+          ["Salt on a window: rinse with fresh water, dab with a soft cloth", "Dry salt scratches clear vinyl"],
+          ["Strong gusts forecast: fold the bimini and lash it", "Left up, it tears or bends: damage from your week"]
+        ] } }
+      ]
+    },
+    {
+      "id": "rig",
+      "kicker": "Mast and rigging",
+      "title": "What you can check from the deck",
+      "refs": ["Check-in: standing rigging", "Check-in: mast", "Check-in: mast and spreaders", "Check-in: masthead", "Check-in: boom", "Check-in: chainplates", "Check-in: backstay", "Standing rigging — failure"],
+      "blocks": [
+        { "fig": { "type": "boat", "view": "side", "parts": [["mast", "mast: straight?"], ["forestay", "forestay"], ["backstay", "backstay"], ["boom", "boom"]], "note": "Sight up the mast; binoculars for the masthead" } },
+        { "p": "At the mast foot, sight up the groove: a straight mast, spreaders level with their end boots on, the deck flat round the foot. Binoculars from the quay show the masthead: wind vane and cups turning, antenna upright, light lenses whole. Each shroud ends in a **turnbuckle** with a split pin, so it cannot unwind, taped so sails and hands do not snag." },
+        { "fig": { "type": "card", "title": "Ask for the base's rigger", "lines": ["Broken strand at a swage", "Cap shroud slack on one side", "Spreader drooping, its boot gone", "Rust streaks below a chainplate", "Backstay ram leaking, forestay sagging"] } },
+        { "p": "None of these is a form entry or a job for you: the rigger puts it right before you sail, and the base gives you its backstay setting in writing. On the boom, a worn gooseneck pin is looked at now, and you ask for a line long enough to rig a preventer; a rigid kicker carries the boom without a topping lift. If strands break during the week, do not load the rig: call the base, and stay or motor back, sails down, as they decide." }
+      ]
+    },
+    {
+      "id": "cat",
+      "kicker": "Catamaran",
+      "title": "Two hulls and some parts of her own",
+      "refs": ["Check-in: catamaran hulls", "Check-in: catamaran steering", "Check-in: catamaran rig", "Check-in: catamaran trampoline", "Check-in: catamaran davits", "Check-in: catamaran saloon"],
+      "blocks": [
+        { "table": { "head": ["Part", "What to check"], "rows": [
+          ["Hulls", "The inner faces and the bridgedeck underside, from the dinghy"],
+          ["Two helms", "Each wheel moves both rudders at once; at rest the rudders are parallel"],
+          ["Forestay bridle", "Both legs carry the forestay: no broken strand at either"],
+          ["Trampoline", "Lacing whole all round; nobody lies on it until it is relaced"],
+          ["Davits", "No cracked weld before the dinghy and outboard hang there"],
+          ["Saloon door", "Stays on its track and locks: a loose door slams under way"]
+        ] } }
+      ]
+    }
+  ]
+}

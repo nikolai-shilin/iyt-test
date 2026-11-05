@@ -1,0 +1,149 @@
+{
+  "topic": "limits",
+  "lead": "Right of way is not a licence. Rules 14 to 17 limit every boat, and above all the right-of-way boat: avoid contact, give room when you gain right of way or change course, and do not luff a boat you caught from astern.",
+  "sections": [
+    {
+      "id": "r14",
+      "kicker": "Rule 14 · avoiding contact",
+      "title": "Every boat avoids contact",
+      "refs": [
+        "RRS 14",
+        "RRS 14, RRS 10",
+        "RRS 14, RRS 11",
+        "RRS 11, RRS 14",
+        "RRS 14, RRS 12",
+        "RRS 14, RRS 13, RRS 15",
+        "RRS 14, RRS 16.1",
+        "RRS 14, RRS definition Keep Clear",
+        "RRS 14, RRS 16.1, RRS 43.1(a)"
+      ],
+      "blocks": [
+        { "p": "Every boat must **avoid contact with another boat if reasonably possible**, and must not cause contact between other boats or between a boat and an object. A right-of-way boat, or one sailing within room she is entitled to, need not act until it is clear that the other boat is not keeping clear or giving that room. From then on she must, and a hail is no substitute." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 70, "y": 135, "hdg": 45, "label": "port" }, { "x": 200, "y": 135, "hdg": 315, "label": "starboard" }], "note": "Port is not keeping clear: now starboard must act too" } },
+        { "p": "Only what is reasonably possible is asked: a boat given no time to react, or one that could escape only by hitting a third boat, breaks nothing. Contact by any part of a boat or her equipment counts. Avoiding early is always allowed." }
+      ]
+    },
+    {
+      "id": "after",
+      "kicker": "Exoneration and penalties",
+      "title": "After a contact: who pays",
+      "refs": [
+        "RRS 14, RRS 43.1(c)",
+        "RRS 14, RRS 11, RRS 43.1(c)",
+        "RRS 14, RRS 12, RRS 43.1(c)",
+        "RRS 14, RRS 43.1(c), RRS 18.2",
+        "RRS 14, RRS 21, RRS 43.1(c)",
+        "RRS 44.1, RRS 14",
+        "RRS 44.1(b), RRS 14",
+        "RRS 14, RRS 10, RRS 44.1",
+        "RRS Part 2 preamble, RRS 14"
+      ],
+      "blocks": [
+        { "table": { "head": ["Boat", "Outcome"], "rows": [
+          ["Right of way, no damage or injury", "Broke rule 14, exonerated: rule 43.1(c)"],
+          ["Right of way, damage or injury", "Penalised under rule 14 too"],
+          ["Keep-clear boat", "Broke her own rule and rule 14: two turns"],
+          ["Compelled by another's breach", "Exonerated: rule 43.1(a)"],
+          ["Caused injury or serious damage", "Must retire: rule 44.1(b)"]
+        ] } },
+        { "p": "The no-damage exoneration is only for a right-of-way boat or one sailing within her room or mark-room. A keep-clear boat that touches takes a Two-Turns Penalty promptly after getting well clear, protest or not. A boat taking a penalty keeps clear of others (rule 21), and a boat no longer racing can still be penalised under rule 14 for injury or serious damage." }
+      ]
+    },
+    {
+      "id": "r15",
+      "kicker": "Rule 15 · acquiring right of way",
+      "title": "Give her room at first",
+      "refs": [
+        "RRS 15",
+        "RRS 15, RRS 10",
+        "RRS 15, RRS 13",
+        "RRS 15, RRS 11",
+        "RRS 15, RRS 17",
+        "RRS 15, RRS 12, RRS 11",
+        "RRS 15, RRS 21",
+        "RRS 15, RRS definition Room",
+        "RRS 15, RRS 14",
+        "RRS 15, RRS 10, RRS 14",
+        "RRS 15, RRS 16.1"
+      ],
+      "blocks": [
+        { "p": "When you **acquire right of way** by your own action, you must initially give the other boat **room to keep clear**: after tacking or gybing onto starboard, tacking close to leeward of her, overlapping her to leeward from clear astern, or getting back to the pre-start side." },
+        { "tiles": [
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 245, "y": 130, "hdg": 315 }, { "x": 205, "y": 112, "hdg": 315, "label": "You", "you": true }] }, "view": "150 0 170 185", "name": "Your tack: rule 15", "note": "she needs room to keep clear" },
+          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 220, "y": 125, "hdg": 45, "label": "You", "you": true }, { "x": 195, "y": 100, "hdg": 45 }] }, "view": "150 0 170 185", "name": "Her tack: no rule 15", "note": "she keeps clear at once" }
+        ] },
+        { "p": "It does not apply when you gain right of way because of the other boat's actions, such as her tack or gybe, or when you had it all along. \"Initially\" means just that: once she has had room, her ordinary duty takes over. Room is a prompt, seamanlike manoeuvre, even a sharp bear-away; no rule sets a distance for \"tacking too close\"." }
+      ]
+    },
+    {
+      "id": "r16-1",
+      "kicker": "Rule 16.1 · changing course",
+      "title": "Turn only as fast as she can answer",
+      "refs": [
+        "RRS 16.1",
+        "RRS 16.1, RRS 12",
+        "RRS 16.1, RRS 11",
+        "RRS 16.1, RRS 17",
+        "RRS 16.1, RRS 16.2",
+        "RRS 16.1, RRS 15",
+        "RRS 16.1, RRS 14, RRS 43.1(a)",
+        "RRS 16.1, RRS 43.1(a)",
+        "RRS 16.1, RRS definition Room",
+        "RRS 16.1, RRS 10, RRS 14",
+        "RRS 16.1, RRS 19.2(b), RRS definition Room"
+      ],
+      "blocks": [
+        { "p": "When a **right-of-way boat changes course**, she must give the other boat room to keep clear. That binds the leeward boat who luffs, the starboard-tack boat who luffs or bears away and the boat clear ahead, before the start as well as after it." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 82, "hdg": 270 }, { "x": 160, "y": 125, "hdg": 290, "label": "You", "you": true }], "note": "You luff slowly: the windward boat has room to respond" } },
+        { "p": "Room is judged in the existing conditions: the other boat must be able to respond in a seamanlike way without hitting a third boat or an obstruction. If she has one such way out and misjudges it, the breach is hers. Slowing down on a steady heading is not a change of course. No hail is required, \"Hold your course!\" binds nobody, and you may alter as often as you like, even below your proper course." },
+        { "p": "Rule 16.1 limits only the right-of-way boat. A keep-clear boat that sails into her simply fails to keep clear; one robbed of room by a sudden turn is exonerated." }
+      ]
+    },
+    {
+      "id": "r16-2",
+      "kicker": "Rule 16.2 · on a beat",
+      "title": "No bearing away at a boat ducking you",
+      "refs": [
+        "RRS 16.2",
+        "RRS 16.2, RRS 16.1",
+        "RRS 16.2, RRS 44.1",
+        "RRS 16.2, RRS 10",
+        "RRS 16.2, RRS 10, RRS 14",
+        "RRS 16.2, RRS 14, RRS 43.1(a)"
+      ],
+      "blocks": [
+        { "p": "On a beat to windward, when a port-tack boat is keeping clear by sailing to pass to leeward of a starboard-tack boat, the **starboard-tack boat must not bear away** if the port-tack boat would then have to change course immediately to go on keeping clear." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 190, "y": 105, "hdg": 300, "label": "starboard" }, { "x": 110, "y": 135, "hdg": 65, "label": "port" }], "note": "Starboard bears away at the ducking boat: rule 16.2" } },
+        { "p": "The rule is narrow. It applies only on a beat, only to a bear-away (a luff is judged by rule 16.1) and only if the other boat must react at once: five lengths away she need not. A header is no excuse. A starboard-tack boat that holds her course breaks nothing, and a breach costs two turns even without contact." }
+      ]
+    },
+    {
+      "id": "r17",
+      "kicker": "Rule 17 · proper course",
+      "title": "Caught her from astern: no luffing",
+      "refs": [
+        "RRS 17",
+        "RRS 17, RRS definition Proper Course",
+        "RRS 17, RRS 11",
+        "RRS 17, RRS 16.1",
+        "RRS 17, RRS 10",
+        "RRS 17, RRS 13",
+        "RRS 17, RRS 15",
+        "RRS 17, RRS definition Leeward and Windward",
+        "RRS 17, RRS 60.5(c)"
+      ],
+      "blocks": [
+        { "p": "If you become overlapped **to leeward from clear astern within two of your hull lengths**, you may not sail above your proper course while the boats stay on the same tack and overlapped within that distance, unless you promptly pass astern of her." },
+        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 150, "y": 85, "hdg": 270, "label": "windward" }, { "x": 165, "y": 130, "hdg": 270, "label": "You", "you": true }], "track": "M228 105 L182 126", "note": "From clear astern, within two lengths: rule 17" } },
+        { "table": { "head": ["How the overlap began", "Rule 17"], "rows": [
+          ["To leeward from clear astern, within two lengths", "Applies"],
+          ["More than two lengths to leeward", "No"],
+          ["From windward, or by tacking or gybing into it", "No"],
+          ["While the windward boat was tacking", "No"],
+          ["Before the starting signal", "Not until the signal: no proper course yet"]
+        ] } },
+        { "p": "Rule 17 limits how high you sail and nothing else: you keep right of way and the windward boat still keeps clear. Your proper course is your own and may include luffing round an obstruction, heading for more wind or shooting the finishing line. You may sail below it and come back up to it. A gybe or a broken overlap ends the limit; a new overlap from astern starts it again." }
+      ]
+    }
+  ]
+}

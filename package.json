@@ -10,6 +10,7 @@
     "bot:setup": "node --env-file=.env.local bot/scripts/setup.mjs",
     "bot:webhook": "node --env-file=.env.local bot/scripts/webhook.mjs",
     "bot:daily": "node --env-file=.env.local bot/scripts/daily.mjs",
-    "db:load": "node --env-file=.env.local data/load.mjs"
+    "db:load": "node --env-file=.env.local data/load.mjs",
+    "check:theory": "node data/check_theory.mjs"
   }
 }

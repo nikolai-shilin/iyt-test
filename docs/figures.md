@@ -3,8 +3,11 @@
 A question's `figure` is a small JSON object. `docs/design/figures.js` turns it into an SVG (`figSvg(spec)`), and
 `paintFigures(root)` fills every element with a `data-fig` attribute. One renderer per `type`. All figures are
 320 × 200 units, scale to their container, and use the app's theme tokens (`--ink`, `--muted`, `--bg`, `--band`,
-`--accent`, `--danger`) so they read in day and night; the only fixed colours are the lights and buoys (red, green,
-yellow, white).
+`--accent`, `--danger`) so they read in day and night. **The colours of real things never follow the theme**: a
+mark's black, yellow, red and green, a light's colour, a day shape's black, a flag's colours are fixed (`COL`), so a
+cardinal mark is black and yellow in the night theme too. Figures whose subject is those colours (`FIG_DAY`: `buoy`,
+`dayshape`) are drawn as seen by day in either theme: their box gets the class `day`, which sets the day tokens for
+everything inside it, the way `night` does for `lights`. A new type that shows coloured objects joins `FIG_DAY`.
 
 Conventions: compass directions are degrees clockwise from north (0 = N, 90 = E). **Wind is the direction it blows
 from.** Boat headings are absolute. In `encounter`, the other vessel's `bearing` is *relative* to your bow (positive
@@ -85,7 +88,7 @@ the course arrow (black) and a panel with the numbers.
 ## sail — points of sail
 
 ```json
-{ "type": "sail", "wind": 0, "hdg": 45, "nogo": true, "note": "Close-hauled on starboard tack" }
+{ "type": "sail", "wind": 0, "hdg": 45, "nogo": true, "note": "Close-hauled on port tack" }
 ```
 
 Own boat with the sail set on the correct side for `hdg` relative to `wind`; `nogo` shades ±45° round the wind.
@@ -152,6 +155,81 @@ sets the radius directly. `line` runs from the pin (x1, y1) to the committee boa
 `obstruction` is a grey rectangle (`x y w h`) or a `path`. Built-in labels (`You`, `wind`, `zone`, `pin`, `RC`,
 `A`–`D`) go through `FIG_TEXT`; other boat labels, `mark.label`, `line.label`, `obstruction.label` and `note`
 are translated by path (`boats.1.label`, …).
+
+## boat — a yacht with her parts named
+
+```json
+{ "type": "boat", "view": "side",
+  "parts": [ ["mast", "mast"], ["boom", "boom"], ["forestay", "forestay"], ["keel", "keel"], ["draft", "draft"] ],
+  "note": "" }
+```
+
+For the theory articles. Three views of the same sloop; `parts` lists what to name as `[key, text]`: the key places
+the label, the text is the caller's (so a translation gives its own words, kept short). A key the view does not have
+is skipped.
+
+- `side` (profile, bow to the right): `mast boom mainsail jib forestay backstay pulpit pushpit bow stern hull keel
+  rudder waterline`; `draft` and `freeboard` also draw their dimension arrows.
+- `plan` (from above, bow up, port side red and starboard side green): `ahead astern port starboard abeam-port
+  abeam-stbd port-bow stbd-bow port-quarter stbd-quarter`.
+- `sail` (the mainsail on its mast and boom): `head tack clew luff leech foot batten boom mast`; `reef` draws the
+  reef line with its two cringles.
+
+## lines — a yacht alongside with her lines
+
+```json
+{ "type": "lines", "quay": "PONTOON", "lines": [ ["bow", "bow line"], ["stern", "stern line"], ["bow-spring", "bow spring"], ["stern-spring", "stern spring"] ] }
+```
+
+From above, bow to the right, the pontoon along the top. Each line is drawn, numbered, and named in a legend under
+the boat. Keys: `bow stern bow-spring stern-spring bow-breast stern-breast`. A `note` fits with four lines or fewer.
+
+## radio — a fixed VHF set
+
+```json
+{ "type": "radio", "channel": "16", "power": "HI", "parts": [ ["distress", "DISTRESS"], ["squelch", "squelch"], ["ptt", "press to talk"] ] }
+```
+
+The set with its handset, the channel on the display. Keys: `display volume squelch distress ch16 power mic ptt`.
+Keep the names short: they sit round a small drawing.
+
+## flag — signal flags
+
+```json
+{ "type": "flag", "flags": [ ["P", "P|preparatory"], ["I", "I|round an end"], ["first-sub", "First Substitute|general recall"] ], "note": "" }
+```
+
+Up to four flags in a row in their real colours, each with a name; text after `|` is a second, lighter line. Codes:
+the code flags `A B C H I L M N O P Q R S U V X Y Z`, the answering pennant `AP`, the First Substitute `first-sub`, and
+plain `black blue red green yellow orange white`. For more than four, use tiles with one flag each.
+
+## tide — low water to high water
+
+```json
+{ "type": "tide", "lw": "08:00 · 0.4 m", "hw": "14:00 · 2.2 m", "twelfths": true, "at": 2, "atLabel": "10:00 · 0.85 m", "note": "Range 1.8 m" }
+```
+
+The six-hour rise as a curve, hours marked from LW. `twelfths` writes 1/12 2/12 3/12 3/12 2/12 1/12 under the hours;
+`at` (hours after LW) puts a dot on the curve with `atLabel` beside it. For a falling tide, say so in the note and read
+the curve from right to left.
+
+## sphere — the celestial sphere and the PZX triangle
+
+```json
+{ "type": "sphere", "parts": [ ["Z", "Z"], ["P", "P"], ["X", "X"], ["pz", "90° − latitude"], ["zx", "zenith distance"], ["px", "polar distance"], ["horizon", "horizon"], ["equator", "equator"] ] }
+```
+
+The sphere round the observer with the horizon, the celestial equator, the elevated pole P, the zenith Z and a body X,
+and the triangle between them. Keys: `Z P X observer horizon equator pz zx px`.
+
+## altitude — what the sextant measures
+
+```json
+{ "type": "altitude", "parts": [ ["hs", "sextant altitude"], ["dip", "dip"], ["horizon", "visible horizon"], ["horizontal", "horizontal"], ["limb", "lower limb"], ["eye", "height of eye"] ] }
+```
+
+An observer above the sea, the Sun, the line of sight to the visible horizon and the true horizontal; the measured
+angle in blue, the dip in red. Keys: `sun limb horizon horizontal hs dip eye`.
 
 ## Adding a type
 
