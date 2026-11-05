@@ -179,6 +179,18 @@ curl -s https://iyt.rycrentals.com/api/mcp -H 'content-type: application/json' \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"get_questions","arguments":{"level":"bareboat-skipper","count":1}}}'
 ```
 
+It is listed in the [official MCP Registry](https://registry.modelcontextprotocol.io) as
+`io.github.nikolai-shilin/iyt-test`, from `server.json` (Glama and PulseMCP copy the registry). A
+new tool or a changed description goes out with a new `version` (also `serverInfo.version` in `api/mcp.mjs`): a
+published version cannot be changed.
+
+```
+brew install mcp-publisher
+mcp-publisher validate
+mcp-publisher login github      # as nikolai-shilin: the name must start with io.github.<your GitHub login>/
+mcp-publisher publish
+```
+
 ## Look at it
 
 Open `docs/design/flows.html` directly in a browser for the screens. `questions.html` loads the bank JSON, so it
