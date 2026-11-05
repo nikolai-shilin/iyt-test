@@ -5,6 +5,7 @@
 //   /<level>                 the level: its mock exam, its topics with their articles, a way into the app
 //   /<level>/<topic>         a topic's article with its drawings, then sample questions with their answers
 //   /about                   what IYT Test is and is not
+//   /privacy                 what the site, the app, the bot and the MCP server keep about you
 //   /ru, /ru/<level>, …      the same in Russian; /ru lists the levels (in English the app's own / does)
 //
 // and next to them sitemap.xml (each page with its other language), llms.txt (the map for AI assistants), 404.html
@@ -25,6 +26,8 @@ const hash = (s) => createHash('sha256').update(s).digest('hex').slice(0, 10);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 // **bold** is the only markup of an article's text (docs/theory.md)
 const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+// and [text](https://…) links, in the strings of the privacy page
+const rich = (s) => inline(s).replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g, '<a href="$2">$1</a>');
 const plain = (s) => String(s ?? '').replace(/\*\*(.+?)\*\*/g, '$1').replace(/\s+/g, ' ').trim();
 // a description of at most n characters, cut at a word
 const clip = (s, n = 158) => { s = plain(s); if (s.length <= n) return s; const c = s.slice(0, n - 1); return `${c.slice(0, c.lastIndexOf(' ')).replace(/[,;:·—-]$/, '')}…`; };
@@ -76,6 +79,19 @@ const STR = {
     ],
     aboutWho: (h) => `Made by RYC. Found a mistake? Every question and every article section has a report button in the app, or write to the author on Telegram: <a href="https://t.me/${h}">@${h}</a>.`,
     aboutMcp: (u) => `For AI assistants: the questions and the articles are also a public, read-only MCP server at <code>${u}</code>. Add it as a custom connector and practise in your own assistant.`,
+    privacy: 'Privacy', privTitle: 'Privacy policy', privDate: 'Updated 5 November 2026',
+    privLead: 'What IYT Test keeps about you, where, who sees it, and how to have it deleted. The short version: in a browser, nothing that says who you are; in Telegram, your Telegram name and your progress, so it follows you between devices.',
+    privBody: [
+      ['Who we are', 'IYT Test is made by RYC. For anything about your data, write to the author on Telegram: [@fullcrimp](https://t.me/fullcrimp).'],
+      ['In a browser', 'The site and the app ask for no account. Your progress stays **on your device**, in the browser’s storage, and is not sent to us. We count page views with Vercel Web Analytics, which uses no cookies and cannot tell who you are: it sees the page, the referring site, and the country and kind of device.'],
+      ['In Telegram', 'When you open the app in Telegram, Telegram gives it your **Telegram id, name, username and language**, signed so that nobody else can use them. The app keeps your progress in Telegram’s cloud storage and on our server, so it is the same on every device: the questions you answered, whether you were right, the option you picked and when, your mock exams, the questions you flagged and the notes you wrote about a question or a section of an article.',
+        'The admins of IYT Test (the author) can see each student’s name, username, results, flags and notes, to fix the questions people report and see where they get stuck. They also see your Telegram profile photo, fetched from Telegram when they open the list, not stored.'],
+      ['The Telegram bot', 'When you write to [@iyt_test_bot](https://t.me/iyt_test_bot), it saves your Telegram id, name, username and language, and whether the question of the day is on. It does not keep what you write to it or how you answer the question of the day. If you block the bot, it marks you as blocked and stops writing.'],
+      ['The MCP server', 'The MCP server for AI assistants asks for no sign-in and stores nothing about the people or the assistants that use it. Like every request to the site, a call passes through the hosting’s logs (the IP address, the address called and the time), which Vercel keeps for a limited time to run the service.'],
+      ['Who else handles it', 'Vercel hosts the site, the app and the server, and counts the page views. Supabase holds the database, in the EU (Stockholm). Telegram runs the bot, the mini app and its cloud storage. Nobody else gets your data: there are no ads, and nothing is sold.'],
+      ['How long, and deleting it', 'Your data is kept while the app runs. To have it deleted, write to [@fullcrimp](https://t.me/fullcrimp) from the same Telegram account: your Telegram name, settings, progress and answers are removed from the server. What is in your browser or in Telegram’s cloud storage you can clear yourself, with Reset progress in the app’s profile.'],
+      ['Changes', 'When this policy changes, this page changes, with the date at the top.'],
+    ],
   },
   ru: {
     levels: 'Уровни', about: 'О проекте', other: 'English', practise: 'Тренироваться в приложении', telegram: 'Открыть в Telegram',
@@ -106,6 +122,19 @@ const STR = {
     ],
     aboutWho: (h) => `Сделано RYC. Нашли ошибку? У каждого вопроса и каждого раздела статьи в приложении есть кнопка «Сообщить», или напишите автору в Telegram: <a href="https://t.me/${h}">@${h}</a>.`,
     aboutMcp: (u) => `Для ИИ-ассистентов: вопросы и статьи доступны как публичный MCP-сервер только для чтения — <code>${u}</code>. Добавьте его как свой коннектор и тренируйтесь в своём ассистенте.`,
+    privacy: 'Конфиденциальность', privTitle: 'Политика конфиденциальности', privDate: 'Обновлено 5 ноября 2026 года',
+    privLead: 'Что IYT Test хранит о вас, где, кто это видит и как это удалить. Коротко: в браузере — ничего, по чему вас можно узнать; в Telegram — ваше имя в Telegram и ваш прогресс, чтобы он был одинаковым на всех устройствах.',
+    privBody: [
+      ['Кто мы', 'IYT Test делает RYC. По любым вопросам о ваших данных пишите автору в Telegram: [@fullcrimp](https://t.me/fullcrimp).'],
+      ['В браузере', 'Сайт и приложение не просят учётной записи. Ваш прогресс хранится **на вашем устройстве**, в памяти браузера, и нам не отправляется. Просмотры страниц мы считаем через Vercel Web Analytics: без cookie и без возможности узнать, кто вы, — видны только страница, сайт, с которого вы пришли, страна и тип устройства.'],
+      ['В Telegram', 'Когда вы открываете приложение в Telegram, Telegram передаёт ему ваши **id, имя, имя пользователя и язык** с подписью, так что никто другой не может ими воспользоваться. Приложение хранит ваш прогресс в облачном хранилище Telegram и на нашем сервере, чтобы он был одинаковым на всех устройствах: на какие вопросы вы отвечали, верно ли, какой вариант выбрали и когда, ваши пробные экзамены, отмеченные вопросы и заметки, которые вы оставили к вопросу или разделу статьи.',
+        'Администраторы IYT Test (автор) видят имя, имя пользователя, результаты, отметки и заметки каждого ученика — чтобы исправлять вопросы, о которых сообщают, и видеть, где возникают трудности. Ещё они видят фото вашего профиля в Telegram: оно загружается из Telegram, когда они открывают список, и не хранится.'],
+      ['Бот в Telegram', 'Когда вы пишете [@iyt_test_bot](https://t.me/iyt_test_bot), он сохраняет ваши id, имя, имя пользователя и язык в Telegram и то, включён ли вопрос дня. Он не хранит то, что вы ему пишете, и ваши ответы на вопрос дня. Если вы заблокируете бота, он отметит это и перестанет писать.'],
+      ['MCP-сервер', 'MCP-сервер для ИИ-ассистентов не просит входа и не хранит ничего о людях и ассистентах, которые к нему обращаются. Как и любой запрос к сайту, обращение проходит через журналы хостинга (IP-адрес, запрошенный адрес и время), которые Vercel хранит ограниченное время для работы сервиса.'],
+      ['Кто ещё обрабатывает данные', 'Vercel размещает сайт, приложение и сервер и считает просмотры страниц. Supabase хранит базу данных в ЕС (Стокгольм). Telegram обслуживает бота, мини-приложение и его облачное хранилище. Больше ваши данные никто не получает: рекламы нет, ничего не продаётся.'],
+      ['Сколько хранится и как удалить', 'Данные хранятся, пока работает приложение. Чтобы удалить их, напишите [@fullcrimp](https://t.me/fullcrimp) с того же аккаунта Telegram: ваше имя в Telegram, настройки, прогресс и ответы будут удалены с сервера. То, что хранится в браузере или в облачном хранилище Telegram, вы можете стереть сами — кнопкой «Сбросить прогресс» в профиле приложения.'],
+      ['Изменения', 'Если политика изменится, изменится эта страница, с новой датой вверху.'],
+    ],
   },
 };
 const LANGS = ['en', 'ru'];
@@ -223,7 +252,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
 ${body}
 </main>
 <footer class="wrap pg-foot"><p style="margin:0">${s.foot}</p>
-<nav><a href="${at(lang)}">${s.levels}</a><a href="${at(lang, '/about')}">${s.about}</a><a href="/">${s.practise}</a><a href="https://t.me/${BOT}">Telegram</a></nav></footer>
+<nav><a href="${at(lang)}">${s.levels}</a><a href="${at(lang, '/about')}">${s.about}</a><a href="/">${s.practise}</a><a href="https://t.me/${BOT}">Telegram</a><a href="${at(lang, '/privacy')}">${s.privacy}</a></nav></footer>
 </div>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
@@ -363,6 +392,19 @@ ${s.aboutBody.map((p) => `<p class="th-p">${inline(p)}</p>`).join('\n')}
 ${cta(s, s.ctaLevel, 'level')}`,
       }),
     });
+
+    // privacy
+    const pp = at(lang, '/privacy');
+    add({
+      path: pp, lang, alt: { en: '/privacy', ru: '/ru/privacy' },
+      html: shell({
+        lang, path: pp, alt: { en: '/privacy', ru: '/ru/privacy' }, css, title: `${s.privTitle} · IYT Test`, desc: clip(s.privLead),
+        ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'WebPage', name: s.privTitle, url: SITE + pp, inLanguage: lang, publisher: ORG, dateModified: '2026-11-05' }, crumbLd([[s.levels, home], [s.privTitle, pp]])] },
+        body: `${crumbs([[s.levels, home], [s.privTitle, pp]])}
+<div class="pg-head"><span class="meta">${s.privDate}</span><h1 class="display">${s.privTitle}</h1><p class="body-muted">${esc(s.privLead)}</p></div>
+${s.privBody.map(([h, ...ps]) => `<section class="th-sec"><h2 class="th-h">${esc(h)}</h2>${ps.map((p) => `<p class="th-p">${rich(p)}</p>`).join('')}</section>`).join('\n')}`,
+      }),
+    });
   }
 
   // Russian home: the levels (in English the app at / is the home page, with the same list for crawlers)
@@ -430,6 +472,7 @@ ${levels.map((L) => `## ${L.title}: theory\n\n${L.bank.topics.filter((tp) => L.a
 ## Optional
 
 - [About](${SITE}/about): what IYT Test is, who makes it, and what it is not
+- [Privacy](${SITE}/privacy): what the site, the app, the bot and the MCP server keep about you
 `);
   return all.length;
 }
