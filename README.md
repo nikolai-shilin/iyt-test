@@ -153,6 +153,8 @@ After a production deploy:
 that speaks the [Model Context Protocol](https://modelcontextprotocol.io)): a student adds
 `https://iyt.rycrentals.com/api/mcp` as a remote MCP server (a custom connector) and practises in their own
 assistant. It is public and read-only: no sign-in, nothing is saved, and it returns only what the app already serves.
+How to connect it is on https://iyt.rycrentals.com/mcp (`mcpBody` in `miniapp/pages.mjs`, with the tool list: add a
+row there when a tool is added), which the app's home links to from a card above the feedback card.
 What the site, the app, the bot and the server keep about people is on https://iyt.rycrentals.com/privacy (the
 strings in `miniapp/pages.mjs`, `privBody`): change it there when any of them starts keeping something new.
 

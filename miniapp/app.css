@@ -75,6 +75,10 @@ body { -webkit-tap-highlight-color: transparent; }
 /* home: levels without a bank, grouped */
 .app .soonlist { padding: 14px 18px 4px; }
 .app .soonlist .kicker { display: block; margin-bottom: 2px; }
+/* MCP card on Home: what the MCP server is, a pill to its page on the site (/mcp) */
+.app .mcpband { display: flex; flex-direction: column; gap: 10px; padding: 18px 18px 20px; }
+.app .mcpband .body-muted { margin: 0 0 4px; }
+.app .mcpband .pill.pill-quiet { height: 50px; background: var(--bg); color: var(--ink); }
 /* Feedback card on Home: the author's photo and handle, a line of text, a pill to Telegram */
 .app .fback { display: flex; flex-direction: column; gap: 14px; padding: 18px 18px 20px; }
 .app .fback .fb-who { gap: 14px; align-items: center; }

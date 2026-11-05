@@ -6,6 +6,7 @@
 //   /<level>/<topic>         a topic's article with its drawings, then sample questions with their answers
 //   /about                   what IYT Test is and is not
 //   /privacy                 what the site, the app, the bot and the MCP server keep about you
+//   /mcp                     the MCP server for AI assistants: its address, how to connect it, what it can do
 //   /ru, /ru/<level>, …      the same in Russian; /ru lists the levels (in English the app's own / does)
 //
 // and next to them sitemap.xml (each page with its other language), llms.txt (the map for AI assistants), 404.html
@@ -26,8 +27,8 @@ const hash = (s) => createHash('sha256').update(s).digest('hex').slice(0, 10);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 // **bold** is the only markup of an article's text (docs/theory.md)
 const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
-// and [text](https://…) links, in the strings of the privacy page
-const rich = (s) => inline(s).replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g, '<a href="$2">$1</a>');
+// and [text](https://… or /…) links and `code`, in the strings of the privacy and MCP pages
+const rich = (s) => inline(s).replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+|\/[^)\s]*)\)/g, '<a href="$2">$1</a>').replace(/`([^`]+)`/g, '<code>$1</code>');
 const plain = (s) => String(s ?? '').replace(/\*\*(.+?)\*\*/g, '$1').replace(/\s+/g, ' ').trim();
 // a description of at most n characters, cut at a word
 const clip = (s, n = 158) => { s = plain(s); if (s.length <= n) return s; const c = s.slice(0, n - 1); return `${c.slice(0, c.lastIndexOf(' ')).replace(/[,;:·—-]$/, '')}…`; };
@@ -92,6 +93,33 @@ const STR = {
       ['How long, and deleting it', 'Your data is kept while the app runs. To have it deleted, write to [@fullcrimp](https://t.me/fullcrimp) from the same Telegram account: your Telegram name, settings, progress and answers are removed from the server. What is in your browser or in Telegram’s cloud storage you can clear yourself, with Reset progress in the app’s profile.'],
       ['Changes', 'When this policy changes, this page changes, with the date at the top.'],
     ],
+    mcpHow: 'How to connect it', mcpBand: 'Practise in Claude or ChatGPT', mcpBandText: 'The questions and the theory are also an MCP server: add it to your AI assistant and it quizzes you, checks your answers and explains the rule.',
+    mcp: 'For AI assistants', mcpK: 'MCP server · free', mcpTitle: 'Practise in your AI assistant',
+    mcpDesc: 'Connect IYT Test to Claude, ChatGPT or any assistant that speaks MCP: it quizzes you on IYT questions, checks your answers, explains the rule and runs a mock exam. Free, no sign-in.',
+    mcpLead: 'The questions and the theory articles of IYT Test are also an MCP server. Add it to Claude, ChatGPT or any other assistant that speaks the Model Context Protocol, and the assistant can quiz you, check your answers, explain the rule behind each one and run a mock exam, in a conversation.',
+    mcpUrlK: 'The address', mcpUrlNote: 'Public and read-only: no sign-in, no key, nothing to install.',
+    mcpBody: [
+      ['Connect it', '**Claude** (web, desktop and mobile): Settings → Connectors → Add custom connector, then paste the address.',
+        '**ChatGPT**: turn on developer mode in the settings for apps and connectors, then create a connector with the address. It needs a plan that allows custom connectors.',
+        '**Claude Code**, in a terminal:', { code: (u) => `claude mcp add --transport http iyt-test ${u}` },
+        '**Cursor, VS Code and other apps** that take a JSON list of servers:', { code: (u) => JSON.stringify({ mcpServers: { 'iyt-test': { type: 'streamable-http', url: u } } }, null, 2) }],
+      ['Then ask', { list: ['Quiz me on IALA buoyage for the Bareboat Skipper, five questions, one at a time.', 'Give me a Yachtmaster Coastal mock exam and grade it at the end.', 'I keep mixing up cardinal marks: explain them, then test me.', 'Ask me the question of the day in Russian.'] },
+        'The assistant asks each question with its four options and keeps the answer back until you choose. Most questions come with a drawing; where the assistant cannot show it, it gets a link to the image.'],
+      ['What it can do', { table: [
+        ['list_levels', 'The levels, their topics, the mock-exam settings, and which topics have an article'],
+        ['get_questions', 'Random questions of a level, a topic or a difficulty, without the answers'],
+        ['check_answer', 'Right or wrong, the right option, the note that names the rule, and the theory section that explains it'],
+        ['search_questions', 'Questions by words: “cardinal mark”, “MAYDAY”'],
+        ['start_mock_exam · grade_exam', 'An exam-sized set spread over every topic; then the score, pass or fail, the mistakes and what to read'],
+        ['question_of_the_day', 'The question the Telegram bot sends today'],
+        ['list_theory · get_theory · search_theory', 'The theory articles and their sections, as text with links to the drawings'],
+        ['explain_question', 'A question with its answer and the theory section behind it'],
+        ['practice_section', 'The questions a theory section covers: read, then practise'],
+        ['get_figure', 'A drawing as SVG'],
+      ] }, 'Every tool answers in English or Russian. What is not translated yet comes in English.'],
+      ['What it keeps', 'Nothing. The server asks for no sign-in and stores nothing about you or your assistant; your progress in the app is not connected to it. The details are in the [privacy policy](/privacy).'],
+      ['Where else to find it', 'It is listed in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.nikolai-shilin/iyt-test) as `io.github.nikolai-shilin/iyt-test`. The questions and the articles are written for study, close to the syllabus; they are not IYT exam content.'],
+    ],
   },
   ru: {
     levels: 'Уровни', about: 'О проекте', other: 'English', practise: 'Тренироваться в приложении', telegram: 'Открыть в Telegram',
@@ -134,6 +162,33 @@ const STR = {
       ['Кто ещё обрабатывает данные', 'Vercel размещает сайт, приложение и сервер и считает просмотры страниц. Supabase хранит базу данных в ЕС (Стокгольм). Telegram обслуживает бота, мини-приложение и его облачное хранилище. Больше ваши данные никто не получает: рекламы нет, ничего не продаётся.'],
       ['Сколько хранится и как удалить', 'Данные хранятся, пока работает приложение. Чтобы удалить их, напишите [@fullcrimp](https://t.me/fullcrimp) с того же аккаунта Telegram: ваше имя в Telegram, настройки, прогресс и ответы будут удалены с сервера. То, что хранится в браузере или в облачном хранилище Telegram, вы можете стереть сами — кнопкой «Сбросить прогресс» в профиле приложения.'],
       ['Изменения', 'Если политика изменится, изменится эта страница, с новой датой вверху.'],
+    ],
+    mcpHow: 'Как подключить', mcpBand: 'Тренируйтесь в Claude или ChatGPT', mcpBandText: 'Вопросы и теория доступны и как MCP-сервер: добавьте его в свой ИИ-ассистент, и он будет задавать вопросы, проверять ответы и объяснять правило.',
+    mcp: 'Для ИИ-ассистентов', mcpK: 'MCP-сервер · бесплатно', mcpTitle: 'Тренируйтесь в своём ИИ-ассистенте',
+    mcpDesc: 'Подключите IYT Test к Claude, ChatGPT или любому ассистенту с поддержкой MCP: он задаёт вопросы IYT, проверяет ответы, объясняет правило и проводит пробный экзамен. Бесплатно, без входа.',
+    mcpLead: 'Вопросы и статьи по теории IYT Test доступны и как MCP-сервер. Добавьте его в Claude, ChatGPT или другой ассистент, который поддерживает Model Context Protocol, — и ассистент прямо в разговоре будет задавать вопросы, проверять ответы, объяснять правило за каждым и проводить пробный экзамен.',
+    mcpUrlK: 'Адрес', mcpUrlNote: 'Публичный и только для чтения: без входа, без ключа, ничего не нужно устанавливать.',
+    mcpBody: [
+      ['Как подключить', '**Claude** (веб, компьютер и телефон): Настройки → Коннекторы → Добавить свой коннектор, затем вставьте адрес.',
+        '**ChatGPT**: включите режим разработчика в настройках приложений и коннекторов и создайте коннектор с этим адресом. Нужен тариф, в котором доступны свои коннекторы.',
+        '**Claude Code**, в терминале:', { code: (u) => `claude mcp add --transport http iyt-test ${u}` },
+        '**Cursor, VS Code и другие приложения**, которые принимают список серверов в JSON:', { code: (u) => JSON.stringify({ mcpServers: { 'iyt-test': { type: 'streamable-http', url: u } } }, null, 2) }],
+      ['Что спросить', { list: ['Задай мне пять вопросов по системе IALA для Bareboat Skipper, по одному.', 'Проведи пробный экзамен Yachtmaster Coastal и оцени его в конце.', 'Я путаю кардинальные знаки: объясни их, а потом проверь меня.', 'Задай мне вопрос дня на русском.'] },
+        'Ассистент задаёт каждый вопрос с четырьмя вариантами и не называет ответ, пока вы не выберете. У большинства вопросов есть рисунок; если ассистент не может его показать, он получает ссылку на изображение.'],
+      ['Что он умеет', { table: [
+        ['list_levels', 'Уровни, их темы, настройки пробного экзамена и темы, у которых есть статья'],
+        ['get_questions', 'Случайные вопросы уровня, темы или сложности, без ответов'],
+        ['check_answer', 'Верно или нет, правильный вариант, пояснение с правилом и раздел теории, который его объясняет'],
+        ['search_questions', 'Вопросы по словам: «кардинальный знак», «MAYDAY»'],
+        ['start_mock_exam · grade_exam', 'Набор вопросов размером с экзамен со всех тем, затем результат, сдано или нет, ошибки и что прочитать'],
+        ['question_of_the_day', 'Вопрос, который сегодня присылает бот в Telegram'],
+        ['list_theory · get_theory · search_theory', 'Статьи по теории и их разделы — текстом со ссылками на рисунки'],
+        ['explain_question', 'Вопрос с ответом и разделом теории, который его объясняет'],
+        ['practice_section', 'Вопросы к разделу теории: прочитайте, затем потренируйтесь'],
+        ['get_figure', 'Рисунок в формате SVG'],
+      ] }, 'Все инструменты отвечают на английском или русском. То, что ещё не переведено, приходит на английском.'],
+      ['Что он хранит', 'Ничего. Сервер не просит входа и ничего не хранит о вас и вашем ассистенте; ваш прогресс в приложении с ним не связан. Подробности — в [политике конфиденциальности](/ru/privacy).'],
+      ['Где ещё его найти', 'Он опубликован в [официальном реестре MCP](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.nikolai-shilin/iyt-test) под именем `io.github.nikolai-shilin/iyt-test`. Вопросы и статьи написаны для подготовки, близко к программе; это не экзаменационные материалы IYT.'],
     ],
   },
 };
@@ -252,7 +307,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
 ${body}
 </main>
 <footer class="wrap pg-foot"><p style="margin:0">${s.foot}</p>
-<nav><a href="${at(lang)}">${s.levels}</a><a href="${at(lang, '/about')}">${s.about}</a><a href="/">${s.practise}</a><a href="https://t.me/${BOT}">Telegram</a><a href="${at(lang, '/privacy')}">${s.privacy}</a></nav></footer>
+<nav><a href="${at(lang)}">${s.levels}</a><a href="${at(lang, '/about')}">${s.about}</a><a href="/">${s.practise}</a><a href="https://t.me/${BOT}">Telegram</a><a href="${at(lang, '/mcp')}">${s.mcp}</a><a href="${at(lang, '/privacy')}">${s.privacy}</a></nav></footer>
 </div>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
@@ -391,7 +446,7 @@ ${cta(s, s.ctaTopic(qs.length), L.link)}
 <div class="pg-head"><h1 class="display">${s.aboutTitle}</h1><p class="body-muted">${esc(s.aboutLead)}</p></div>
 ${s.aboutBody.map((p) => `<p class="th-p">${inline(p)}</p>`).join('\n')}
 <p class="th-p">${s.aboutWho(FEEDBACK_HANDLE)}</p>
-<p class="th-p">${s.aboutMcp(`${SITE}/api/mcp`)}</p>
+<p class="th-p">${s.aboutMcp(`${SITE}/api/mcp`)} <a href="${at(lang, '/mcp')}">${s.mcpHow}</a>.</p>
 ${cta(s, s.ctaLevel, 'level')}`,
       }),
     });
@@ -406,6 +461,25 @@ ${cta(s, s.ctaLevel, 'level')}`,
         body: `${crumbs([[s.levels, home], [s.privTitle, pp]])}
 <div class="pg-head"><span class="meta">${s.privDate}</span><h1 class="display">${s.privTitle}</h1><p class="body-muted">${esc(s.privLead)}</p></div>
 ${s.privBody.map(([h, ...ps]) => `<section class="th-sec"><h2 class="th-h">${esc(h)}</h2>${ps.map((p) => `<p class="th-p">${rich(p)}</p>`).join('')}</section>`).join('\n')}`,
+      }),
+    });
+
+    // the MCP server
+    const mp = at(lang, '/mcp'), mcpUrl = `${SITE}/api/mcp`;
+    const mcpBlock = (bl) => (typeof bl === 'string' ? `<p class="th-p">${rich(bl)}</p>`
+      : bl.code ? `<pre class="pg-code"><code>${esc(bl.code(mcpUrl))}</code></pre>`
+      : bl.list ? `<ul class="th-list">${bl.list.map((x) => `<li>${rich(x)}</li>`).join('')}</ul>`
+      : `<table class="th-table pg-tools"><tbody>${bl.table.map(([k, v]) => `<tr><td><code>${esc(k).replace(/ · /g, '<br>')}</code></td><td>${esc(v)}</td></tr>`).join('')}</tbody></table>`);
+    add({
+      path: mp, lang, alt: { en: '/mcp', ru: '/ru/mcp' },
+      html: shell({
+        lang, path: mp, alt: { en: '/mcp', ru: '/ru/mcp' }, css, title: `${s.mcpTitle} · IYT Test`, desc: clip(s.mcpDesc),
+        ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'WebPage', name: s.mcpTitle, url: SITE + mp, inLanguage: lang, publisher: ORG,
+          about: { '@type': 'WebAPI', name: 'IYT Test MCP server', url: mcpUrl, documentation: SITE + mp, isAccessibleForFree: true, provider: ORG } }, crumbLd([[s.levels, home], [s.mcp, mp]])] },
+        body: `${crumbs([[s.levels, home], [s.mcp, mp]])}
+<div class="pg-head"><span class="meta">${s.mcpK}</span><h1 class="display">${s.mcpTitle}</h1><p class="body-muted">${esc(s.mcpLead)}</p></div>
+<div class="band pg-cta"><span class="kicker">${s.mcpUrlK}</span><pre class="pg-code pg-url"><code>${esc(mcpUrl).replace('.com/', '.com/<wbr>')}</code></pre><p class="body-muted" style="margin:0">${s.mcpUrlNote}</p></div>
+${s.mcpBody.map(([h, ...bs]) => `<section class="th-sec"><h2 class="th-h">${esc(h)}</h2>${bs.map(mcpBlock).join('')}</section>`).join('\n')}`,
       }),
     });
   }
@@ -423,7 +497,8 @@ ${s.privBody.map(([h, ...ps]) => `<section class="th-sec"><h2 class="th-h">${esc
           mainEntity: { '@type': 'ItemList', itemListElement: levels.map((L, i) => ({ '@type': 'ListItem', position: i + 1, name: L.title, url: `${SITE}/ru/${L.id}` })) } },
         body: `<div class="pg-head"><span class="meta">${s.kicker}</span><h1 class="display">${s.homeTitle}</h1><p class="body-muted">${s.homeLead}</p></div>
 <section class="stack g12"><h2 class="kicker">${s.levels}</h2><ul class="pg-list">${levels.map((L) => `<li><a class="band pg-row" href="/ru/${L.id}"><span class="card-title">${esc(L.title)}</span><span class="card-meta">${s.nq(L.bank.questions.length)} · ${L.bank.topics.length} ${s.topics}</span></a></li>`).join('')}</ul></section>
-${cta(s, s.ctaLevel, 'level')}`,
+${cta(s, s.ctaLevel, 'level')}
+<div class="band pg-cta pg-mcp"><span class="kicker">${s.mcp}</span><div class="card-title">${s.mcpBand}</div><p class="body-muted" style="margin:0">${s.mcpBandText}</p><a class="pill pill-quiet" href="/ru/mcp">${s.mcpHow}</a></div>`,
       }),
     });
   }
@@ -470,7 +545,7 @@ ${levels.map((L) => `## ${L.title}: theory\n\n${L.bank.topics.filter((tp) => L.a
 
 ## For AI assistants
 
-- [MCP server](${SITE}/api/mcp): public, read-only, no sign-in. Tools to list levels and topics, draw questions (without answers), check an answer, run and grade a mock exam, read and search the theory articles, and get a drawing as SVG. Every tool takes lang (en or ru).
+- [MCP server](${SITE}/api/mcp) (how to connect it: ${SITE}/mcp): public, read-only, no sign-in. Tools to list levels and topics, draw questions (without answers), check an answer, run and grade a mock exam, read and search the theory articles, and get a drawing as SVG. Every tool takes lang (en or ru).
 
 ## Optional
 

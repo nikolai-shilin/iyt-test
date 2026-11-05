@@ -126,6 +126,7 @@ const STR = {
     practice: 'Practice', mockExam: 'Mock exam', mockShort: 'Mock exam',
     mistakesToClear: 'Mistakes to clear', toAnswerTwice: (n) => `${pl(n, 'question')} to answer right twice`, review: 'Review',
     topics: 'Topics', masteredTotal: 'mastered / total',
+    mcpK: 'For AI assistants', mcpTitle: 'Practise in Claude or ChatGPT', mcpText: 'The questions and the theory are also an MCP server: add it to your AI assistant and it quizzes you, checks your answers and explains the rule.', mcpBtn: 'How to connect it',
     questionOf: (i, n) => `Question ${i} of ${n}`, correct: 'Correct', notQuite: 'Not quite', why: 'Why',
     flag: 'Flag', flagged: 'Flagged', wrong: 'Report', wrongOn: 'Reported', skip: 'Skip', check: 'Check', next: 'Next', finish: 'Finish', seeResults: 'See results',
     results: 'Results', heads: ['Excellent', 'Good session', 'Getting there', 'Keep going'],
@@ -235,6 +236,7 @@ const STR = {
     practice: 'Тренировка', mockExam: 'Пробный экзамен', mockShort: 'Экзамен',
     mistakesToClear: 'Ошибки к разбору', toAnswerTwice: (n) => `${pl(n, 'question')} — ответьте верно дважды`, review: 'Разобрать',
     topics: 'Темы', masteredTotal: 'освоено / всего',
+    mcpK: 'Для ИИ-ассистентов', mcpTitle: 'Тренируйтесь в Claude или ChatGPT', mcpText: 'Вопросы и теория доступны и как MCP-сервер: добавьте его в свой ИИ-ассистент, и он будет задавать вопросы, проверять ответы и объяснять правило.', mcpBtn: 'Как подключить',
     questionOf: (i, n) => `Вопрос ${i} из ${n}`, correct: 'Верно', notQuite: 'Неверно', why: 'Почему',
     flag: 'Отметить', flagged: 'Отмечен', wrong: 'Сообщить', wrongOn: 'Сообщено', skip: 'Пропустить', check: 'Проверить', next: 'Далее', finish: 'Закончить', seeResults: 'Результаты',
     results: 'Результаты', heads: ['Отлично', 'Хорошая тренировка', 'Почти получилось', 'Продолжайте'],
@@ -1263,6 +1265,9 @@ const VIEWS = {
       body: `<div class="stack g4"><span class="meta">${LANG === 'ru' && LEVEL_RU[LEVEL.id] ? LEVEL_RU[LEVEL.id] : t('levelMeta', TOPICS.length, BANK.questions.length, myExams().length)}</span><h2 class="display-s">${esc(LEVEL.title)}</h2></div>
         <div class="row" style="gap:18px;align-items:center">${ring(lp, sp, ' l', `<b data-count="${sp}" data-suffix="%" data-k="seen:${LEVEL.id}">${sp}%</b><small>${t('covered')}</small>`, LEVEL.id)}
           <p class="body-s">${esc(text)}</p></div>
+        <div class="band mcpband"><span class="kicker">${t('mcpK')}</span><div class="card-title">${t('mcpTitle')}</div>
+          <p class="body-muted">${t('mcpText')}</p>
+          <button class="pill pill-quiet pill-wide" data-act="mcp" role="link"><span data-i="globe" data-s="18"></span>${t('mcpBtn')}</button></div>
         <div class="row" style="gap:10px"><button class="pill pill-primary lvl-btn" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
           <button class="pill lvl-btn" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
         ${mis ? `<div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${t('toAnswerTwice', mis)}</div></div><button class="mini mini-accent" data-act="allMistakes">${t('review')}</button></div>` : ''}
@@ -1944,6 +1949,8 @@ $app.addEventListener('click', (e) => {
 });
 $app.addEventListener('input', (e) => {
   if (e.target.id !== 'thNote' || !sheet) return;
+  // the MCP server's page on the site (miniapp/pages.mjs), in the app's language; from Telegram it opens in the browser
+  mcp: () => { const path = LANG === 'ru' ? '/ru/mcp' : '/mcp'; return IN_TG ? TG.openLink(location.origin + path) : location.assign(path); },
   sheet.text = e.target.value;
   $app.querySelector('[data-act="treportSend"]')?.classList.toggle('off', sheet.text.trim().length < 3);
 });
