@@ -1,7 +1,7 @@
 {
  "level": "vhf-radio-operator",
  "lang": "ru",
- "source": "2026-11-02b",
+ "source": "2026-11-05",
  "note": "Russian overlay, built by data/build_level.py from data/bank/<level>/<topic>.ru.json.",
  "topics": {
   "set": "УКВ-радиостанция и её органы управления",
@@ -1881,10 +1881,10 @@
    "options": [
     "RECEIVED MAYDAY — и никаких названий",
     "SEELONCE MAYDAY, Thalassa, THIS IS Aura",
-    "MAYDAY, Thalassa ×3, THIS IS, Aura ×3, RECEIVED MAYDAY",
+    "MAYDAY, Thalassa и её MMSI, THIS IS Aura, RECEIVED, MAYDAY",
     "Thalassa, THIS IS Aura, ROGER your message, OVER"
    ],
-   "why": "Подтверждение: MAYDAY, название терпящего ×3, THIS IS, ваше название ×3, RECEIVED MAYDAY.",
+   "why": "Подтверждение: MAYDAY, название терпящего с позывным или MMSI, THIS IS, ваше название, RECEIVED, MAYDAY.",
    "ref": "Подтверждение бедствия"
   },
   "vhf-144": {

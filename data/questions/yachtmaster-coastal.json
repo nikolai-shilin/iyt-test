@@ -5,7 +5,7 @@
   "passMark": 70,
   "examQuestions": 50,
   "examMinutes": 90,
-  "version": "2026-11-03",
+  "version": "2026-11-05",
   "note": "Scenario questions written for study, close to the IYT Yachtmaster Coastal syllabus. Not official IYT exam content. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.",
   "topics": [
     {
@@ -12541,7 +12541,7 @@
       "q": "You are anchored for lunch over the underlined 0.4 in the bay and want 0.3 m under the keel when you weigh. By the rule of twelfths, what is the latest time to leave?",
       "figure": {
         "type": "chart",
-        "land": "M0 0 H320 V60 C260 70 250 150 160 160 C70 150 60 70 0 60 Z",
+        "land": "M0 0 H320 V200 H252 C 240 120 210 70 160 66 C 110 70 80 120 66 200 H0 Z",
         "depths": [
           [
             176,
@@ -12566,7 +12566,7 @@
             "4"
           ],
           [
-            250,
+            216,
             180,
             "6"
           ]
@@ -13357,7 +13357,7 @@
       "q": "Your EP is in the bay, close to diamond B; diamond A is out in the main channel. Which stream do you use?",
       "figure": {
         "type": "chart",
-        "land": "M0 0 H320 V40 C250 50 230 110 150 115 C80 110 60 50 0 45 Z",
+        "land": "M0 0 H320 V100 C 290 95 270 60 230 45 C 190 32 120 32 80 45 C 40 60 25 95 0 100 Z",
         "marks": [
           [
             120,
@@ -18149,7 +18149,7 @@
           [
             100,
             55,
-            "lane → 090°",
+            "lane ← 270°",
             "middle"
           ],
           [
@@ -18161,7 +18161,7 @@
           [
             160,
             150,
-            "lane ← 270°",
+            "lane → 090°",
             "middle"
           ]
         ],
@@ -29583,7 +29583,7 @@
       "id": "yc-940",
       "topic": "seamanship",
       "difficulty": 3,
-      "q": "You will sail off the anchor here. The main is up and the chain is up and down. How do you get her onto starboard tack as the anchor breaks out?",
+      "q": "You will sail off the anchor here. The main is up and the chain is up and down. How do you get her heading east, on port tack, as the anchor breaks out?",
       "figure": {
         "type": "bay",
         "wind": 0,
@@ -29617,7 +29617,7 @@
         "Back the jib to port, so the bow pays off to starboard"
       ],
       "answer": 3,
-      "why": "A jib held aback on the port side pushes the bow to starboard: starboard tack, heading east, away from the rocks.",
+      "why": "A jib held aback on the port side pushes the bow to starboard: port tack, heading east, away from the rocks.",
       "ref": "Sailing off an anchor"
     },
     {

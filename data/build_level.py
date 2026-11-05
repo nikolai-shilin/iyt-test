@@ -33,7 +33,7 @@ CHECKIN_NOTE = ('Scenario questions on the charter check-in, written for study: 
 # topics: (id, English title, Russian title, Russian short name, icon for the mini app)
 LEVELS = {
     'vhf-radio-operator': dict(
-        prefix='vhf', name='VHF Radio Operator', passMark=70, examQuestions=30, examMinutes=45, version='2026-11-02b',
+        prefix='vhf', name='VHF Radio Operator', passMark=70, examQuestions=30, examMinutes=45, version='2026-11-05',
         topics=[
             ('set', 'The VHF set & its controls', 'УКВ-радиостанция и её органы управления', 'Радиостанция', 'vhf'),
             ('channels', 'Channels & range', 'Каналы и дальность связи', 'Каналы', 'radio'),
@@ -47,7 +47,7 @@ LEVELS = {
             ('licences', 'Licences & regulations', 'Лицензии и правила радиосвязи', 'Правила', 'licence'),
         ]),
     'international-crew': dict(
-        prefix='ic', name='International Crew', passMark=70, examQuestions=30, examMinutes=45, version='2026-11-02b',
+        prefix='ic', name='International Crew', passMark=70, examQuestions=30, examMinutes=45, version='2026-11-05',
         topics=[
             ('boat', 'Parts of the boat & terms', 'Устройство яхты и термины', 'Термины', 'yacht'),
             ('sailing', 'Points of sail & sail handling', 'Курсы относительно ветра и работа с парусами', 'Паруса', 'sail'),
@@ -78,7 +78,7 @@ LEVELS = {
     # charts and publications; DR and EP; position fixing; tides; pilotage; passage planning; COLREGs; meteorology; safety;
     # ropework, anchoring, boat handling and docking. IYT does not publish the theory exam's size, time or pass mark.
     'yachtmaster-coastal': dict(
-        prefix='yc', name='Yachtmaster Coastal', per=100, passMark=70, examQuestions=50, examMinutes=90, version='2026-11-03',
+        prefix='yc', name='Yachtmaster Coastal', per=100, passMark=70, examQuestions=50, examMinutes=90, version='2026-11-05',
         topics=[
             ('charts', 'Navigational charts & publications', 'Навигационные карты и пособия', 'Карты', 'map'),
             ('dr', 'Dead reckoning, estimated position & course to steer', 'Счисление, счислимое место и курс, которым править', 'Счисление', 'dividers'),
@@ -95,7 +95,7 @@ LEVELS = {
     # outline's 23 headings as ten topics of 100, a step above Coastal: UK tides, construction, stability and the power plant,
     # towing, maritime business and law. IYT does not publish the theory exam's size, time or pass mark.
     'yachtmaster-offshore': dict(
-        prefix='yof', name='Yachtmaster Offshore', per=100, passMark=70, examQuestions=50, examMinutes=90, version='2026-11-04',
+        prefix='yof', name='Yachtmaster Offshore', per=100, passMark=70, examQuestions=50, examMinutes=90, version='2026-11-05',
         topics=[
             ('charts', 'Charts, chartwork instruments & publications', 'Карты, штурманские инструменты и пособия', 'Карты', 'map'),
             ('compass', 'The compass, position lines & fixes', 'Компас, линии положения и обсервации', 'Компас', 'compass'),
@@ -112,7 +112,7 @@ LEVELS = {
     # passage planning — the course outline's 16 headings as ten topics of 100. Requires Yachtmaster Offshore; any ocean, up to
     # 24 m. IYT does not publish the exam's size, time or pass mark.
     'yachtmaster-ocean': dict(
-        prefix='yo', name='Yachtmaster Ocean', per=100, passMark=70, examQuestions=50, examMinutes=120, version='2026-11-04',
+        prefix='yo', name='Yachtmaster Ocean', per=100, passMark=70, examQuestions=50, examMinutes=120, version='2026-11-05',
         topics=[
             ('sphere', 'The Earth, the celestial sphere & the PZX triangle', 'Земля, небесная сфера и параллактический треугольник', 'Небесная сфера', 'globe'),
             ('sextant', 'The sextant & altitude corrections', 'Секстан и поправки высот', 'Секстан', 'sextant'),
@@ -128,7 +128,7 @@ LEVELS = {
     # Not an IYT course: the Racing Rules of Sailing (World Sailing, 2025–2028), as situations on the race course.
     'racing-rules': dict(
         prefix='rr', name='Racing Rules of Sailing', title='Racing Rules of Sailing', note=RRS_NOTE, per=100,
-        passMark=70, examQuestions=40, examMinutes=60, version='2026-11-03',
+        passMark=70, examQuestions=40, examMinutes=60, version='2026-11-05',
         topics=[
             ('definitions', 'Definitions & basic principles', 'Определения и основные принципы', 'Определения', 'book'),
             ('rightofway', 'Right of way — opposite tacks, same tack, tacking (Rules 10–13)', 'Право дороги — разные галсы, один галс, поворот оверштаг (правила 10–13)', 'Право дороги', 'sail'),
@@ -144,7 +144,7 @@ LEVELS = {
     # Not an IYT course: the charter check-in — taking over a bareboat at the base, Saturday to Saturday, and handing it back.
     'charter-checkin': dict(
         prefix='ci', name='Charter Check-in', title='Charter Check-in', note=CHECKIN_NOTE, per=50,
-        passMark=70, examQuestions=40, examMinutes=60, version='2026-11-03b',
+        passMark=70, examQuestions=40, examMinutes=60, version='2026-11-05',
         topics=[
             ('papers', 'Documents, contract & base briefing', 'Документы, договор и брифинг на базе', 'Документы', 'licence'),
             ('hull', 'Hull, deck & rigging walk-round', 'Осмотр корпуса, палубы и такелажа', 'Корпус', 'yacht'),

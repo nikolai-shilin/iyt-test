@@ -5,7 +5,7 @@
   "passMark": 70,
   "examQuestions": 30,
   "examMinutes": 45,
-  "version": "2026-11-02b",
+  "version": "2026-11-05",
   "note": "Scenario questions written for study, close to the IYT VHF Radio Operator syllabus. Not official IYT exam content. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.",
   "topics": [
     {
@@ -2801,11 +2801,11 @@
       "options": [
         "RECEIVED MAYDAY, with no names given at all",
         "SEELONCE MAYDAY, Thalassa, THIS IS Aura",
-        "MAYDAY, Thalassa ×3, THIS IS, Aura ×3, RECEIVED MAYDAY",
+        "MAYDAY, Thalassa and her MMSI, THIS IS Aura, RECEIVED, MAYDAY",
         "Thalassa, THIS IS Aura, ROGER your message, OVER"
       ],
       "answer": 2,
-      "why": "Acknowledgement: MAYDAY, the casualty's name ×3, THIS IS, your name ×3, RECEIVED MAYDAY.",
+      "why": "Acknowledgement: MAYDAY, the casualty's name with her call sign or MMSI, THIS IS, your name, RECEIVED, MAYDAY.",
       "ref": "Distress acknowledgement"
     },
     {

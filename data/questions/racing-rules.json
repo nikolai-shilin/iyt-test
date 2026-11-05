@@ -5,7 +5,7 @@
   "passMark": 70,
   "examQuestions": 40,
   "examMinutes": 60,
-  "version": "2026-11-03",
+  "version": "2026-11-05",
   "note": "Scenario questions on the Racing Rules of Sailing 2025–2028 (World Sailing), written for study: real situations on the course, at the start, at marks, in protests. Not an official World Sailing publication; the rules themselves are the authority. figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults.",
   "topics": [
     {
@@ -15451,7 +15451,7 @@
         "Nothing — only the hull of the committee boat has any status under the rules"
       ],
       "answer": 1,
-      "why": "Rules 18.1 and 19.1(a): no mark-room at a starting mark in navigable water and no rule 19 room at a mark; the windward boat keeps clear (rule 11).",
+      "why": "Definition Mark: an anchor line is not part of the mark; it is an object you cannot pass without changing course substantially, so an obstruction (rule 19).",
       "ref": "RRS 19.2(b), RRS definition Mark"
     },
     {
@@ -29655,7 +29655,7 @@
         "note": "Flag U; you go back round the pin end"
       },
       "options": [
-        "Yes — rule 31 does not ask whose fault it was; you touched the mark while racing, so you take a One-Turn Penalty",
+        "No — flag U disqualifies her without a hearing; rounding an end is for flag I",
         "Yes — sailing round an end of the line cures any starting error",
         "Yes — flags I and U have the same round-an-end remedy",
         "No — but the penalty is only 20 %, as under flag Z"
