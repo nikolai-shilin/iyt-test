@@ -48,6 +48,7 @@ is kept in the repo.
 | `kicker` | The plain name of the section ("Cardinal marks"): the label above the heading and the chip in the contents row. |
 | `title` | The heading: what the section says ("Which side of the danger is safe"). |
 | `refs` | The `ref` values of the English bank that this section explains, spelled exactly as in the bank. The same list in both languages. |
+| `qa` | Optional. The section's opener: `{ "q": "…?", "a": "…" }`, the question a student would type into a search engine or ask an assistant, and the answer in one or two sentences. Shown under the heading, before the blocks; search engines and AI assistants quote passages like it. Not counted in the article's words. |
 | `blocks` | The section's content, in order. |
 
 A block is one of:
@@ -75,6 +76,7 @@ A block is one of:
 - **Second person, present tense**, as in the questions: "you leave the red marks to port".
 - **No official claims.** These are study notes close to the syllabus, not IYT text. Facts follow COLREGs, IALA and
   standard practice; where practice differs by region (IALA A and B, local rules), say so.
+- **Openers** (`qa`): the question in the student's words, specific to the section ("Which side do I leave a red buoy on, coming into harbour?", not "What are lateral marks?"), at most 18 words; the answer starts with the answer itself, names the rule or term, stands on its own without the rest of the section, 8–45 words. Every section of an article has one or none does; the Russian file has them where the English one does.
 - **Russian** follows `glossary-ru.md`: «вы», the glossary's terms, international abbreviations for lights left as
   they are. Labels inside figures are translated in the Russian file (keep them as short as the English); labels the
   renderer draws itself ("You", "wind") are translated by the app.

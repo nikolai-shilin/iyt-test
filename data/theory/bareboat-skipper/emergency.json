@@ -6,6 +6,7 @@
       "id": "vhf",
       "kicker": "Using the VHF",
       "title": "Call on 16, talk elsewhere",
+      "qa": { "q": "Which VHF channel do I call another yacht on, and where do we then talk?", "a": "Call on **channel 16**, then move to a working channel; between yachts, an intership one such as 72. Channel 70 carries DSC data only, never voice." },
       "refs": ["VHF", "VHF operation", "VHF range", "VHF channels", "Radio procedure", "Prowords", "Phonetic alphabet", "Radio licences", "MMSI"],
       "blocks": [
         { "p": "**Channel 16** is for distress and for calling: make contact, then move to a working channel, between yachts an intership one such as 72. **Channel 70** carries DSC data only, never voice. Ask for a radio check on a working channel." },
@@ -23,6 +24,7 @@
       "id": "priority",
       "kicker": "Three priorities",
       "title": "MAYDAY, PAN-PAN or SÉCURITÉ",
+      "qa": { "q": "When should I call MAYDAY rather than PAN-PAN on the radio?", "a": "**MAYDAY** is for grave and imminent danger to the vessel or a life, such as sinking or a fire out of control. PAN-PAN is urgent with no immediate danger: dismasted, or an injury that needs a doctor." },
       "refs": ["Urgency procedure", "Safety procedure", "Calling the coastguard"],
       "blocks": [
         { "table": { "head": ["Call", "When"], "rows": [
@@ -37,6 +39,7 @@
       "id": "mayday",
       "kicker": "The MAYDAY",
       "title": "Red button, then your voice on 16",
+      "qa": { "q": "What exactly do I say in a MAYDAY call on the VHF, and in what order?", "a": "Hold the red **DSC** button for five seconds, then on channel 16: MAYDAY three times, this is and your name three times with MMSI, MAYDAY and name, position, nature of distress, help required, persons aboard, other facts, OVER." },
       "refs": ["Distress procedure", "DSC"],
       "blocks": [
         { "p": "On a **DSC** radio, lift the flap and hold the red button for five seconds: your MMSI and position go out on channel 70 and the set switches to 16. With seconds in hand, select the nature of distress first. Then speak:" },
@@ -50,6 +53,7 @@
       "id": "relay",
       "kicker": "Another vessel's distress",
       "title": "Listen, keep silence, relay",
+      "qa": { "q": "What should I do if I hear another boat's MAYDAY on the VHF?", "a": "Don't acknowledge a DSC alert: listen on 16, note the details, and stay off the channel if a coast station answers. If none does and you can help, reply RECEIVED MAYDAY and go; if you cannot, send a **MAYDAY RELAY**." },
       "refs": ["MAYDAY relay"],
       "blocks": [
         { "p": "A DSC distress alarm on your set: do not acknowledge it, coast stations do that. Listen on 16 for the voice MAYDAY and note the details. If a coast station has answered, stay off the channel. If nobody answers and you can help, reply RECEIVED MAYDAY, go, and tell the coast station." },
@@ -66,6 +70,7 @@
       "id": "signals",
       "kicker": "Flares and beacons",
       "title": "Being seen, being found",
+      "qa": { "q": "When do I use a parachute rocket, a red hand flare or orange smoke?", "a": "A **red parachute rocket** is seen from far off, but never fire one near a helicopter. A red hand flare shows help nearby where you are at night; orange smoke does the same by day." },
       "refs": ["Distress signals", "EPIRB", "PLB", "AIS MOB beacon", "AIS-SART", "GMDSS", "Navtex"],
       "blocks": [
         { "table": { "head": ["Signal", "Use"], "rows": [
@@ -82,6 +87,7 @@
       "id": "mob",
       "kicker": "Man overboard",
       "title": "Keep them in sight, come back slowly",
+      "qa": { "q": "How do I get back to someone who falls overboard from a sailing yacht?", "a": "Throw the danbuoy, post a spotter, press MOB and tack at once, leaving the headsail backed: the **quick-stop** keeps you close. Approach on a close reach, easing sheets to slow, and get a line on them first." },
       "refs": ["Man overboard"],
       "blocks": [
         { "list": [
@@ -97,6 +103,7 @@
       "id": "damage",
       "kicker": "Fire, flood, breakage",
       "title": "First actions",
+      "qa": { "q": "My yacht is taking on water: what do I do first?", "a": "Find and stop the inflow, because pumps only buy time: close the seacock, hammer a bung into a broken fitting, or tack to lift a hole clear of the water." },
       "refs": ["Flooding", "Fire", "Grounding", "Dismasting", "Loss of steering", "Towing", "Helicopter rescue", "Abandoning ship"],
       "blocks": [
         { "p": "**Flooding**: pumps only buy time, so find and stop the inflow. Close the seacock, hammer a bung into a broken fitting, tack to lift a hole clear of the water. **Fire** in the engine bay: stop the engine, keep the hatch shut and fire the extinguisher through the fire port. Keep any fire downwind of the crew." },

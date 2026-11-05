@@ -16,7 +16,7 @@ const only = process.argv[2];
 const figSrc = await readFile(join(root, 'docs/design/figures.js'), 'utf8');
 const { FIG, figSvg, FIG_KEYS } = new Function(`${figSrc}\nreturn { FIG, figSvg, FIG_KEYS };`)();
 
-const LIMITS = { sections: [4, 7], words: [400, 900], pictures: 4, bigRef: 10 };
+const LIMITS = { sections: [4, 7], words: [400, 900], pictures: 4, bigRef: 10, q: 18, a: [8, 45] };
 const KINDS = ['p', 'list', 'fig', 'tiles', 'rule', 'table'];
 const kind = (b) => KINDS.find((k) => b && typeof b === 'object' && k in b);
 const words = (s) => (String(s).match(/[\p{L}\p{N}][\p{L}\p{N}'’().+-]*/gu) || []).length;
@@ -48,6 +48,13 @@ function check(a, topic, refs) {
     if (ids.has(s.id)) err.push(`${at}: id used twice`);
     ids.add(s.id);
     w += words(str(s.kicker, `${at} kicker`)) + words(str(s.title, `${at} title`));
+    // the opener (optional): a question as a reader would ask it, and the answer in a sentence or two; not counted in the words
+    if (s.qa != null) {
+      const q = str(s.qa.q, `${at} qa.q`), a = str(s.qa.a, `${at} qa.a`);
+      if (!/\?$/.test(q.trim())) err.push(`${at}: qa.q is not a question (ends in ?)`);
+      if (words(q) > LIMITS.q) err.push(`${at}: qa.q has ${words(q)} words (at most ${LIMITS.q})`);
+      if (words(a) < LIMITS.a[0] || words(a) > LIMITS.a[1]) err.push(`${at}: qa.a has ${words(a)} words (${LIMITS.a.join('–')})`);
+    }
     for (const r of s.refs || []) { if (!(r in refs)) err.push(`${at}: the bank has no reference "${r}" in this topic`); covered.add(r); }
     let shown = 0;
     (s.blocks || []).forEach((b, i) => {
@@ -97,7 +104,7 @@ function parity(en, ru) {
   const figs = (a) => (a.sections || []).flatMap((s) => (s.blocks || []).flatMap((b) => (b.fig ? [b.fig] : b.tiles ? b.tiles.map((x) => x.fig) : [])));
   const fe = figs(en), fr = figs(ru);
   fe.forEach((f, i) => { if (fr[i] && JSON.stringify(bare(f)) !== JSON.stringify(bare(fr[i]))) err.push(`picture ${i + 1} (${f.type}) is not the English one with its words translated`); });
-  const shape = (a) => (a.sections || []).map((s) => `${s.id}[${(s.refs || []).join('|')}]: ` + (s.blocks || []).map((b) => {
+  const shape = (a) => (a.sections || []).map((s) => `${s.id}[${(s.refs || []).join('|')}]${s.qa ? ' qa' : ''}: ` + (s.blocks || []).map((b) => {
     const k = kind(b);
     if (k === 'fig') return `fig:${b.fig && b.fig.type}:${b.view || ''}`;
     if (k === 'tiles') return `tiles:${(b.tiles || []).map((x) => `${x.fig && x.fig.type}:${x.view || ''}`).join(',')}:${b.cols || ''}`;

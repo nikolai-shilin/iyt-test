@@ -131,6 +131,7 @@ function show(id, ctx, answer = false) {
 const cell = (s) => String(s ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
 function sectionText(b, topic, s, got, ctx) {
   const out = [`## ${s.kicker}: ${s.title}`, `Section id: \`${s.id}\``];
+  if (s.qa && s.qa.q && s.qa.a) out.push(`**${s.qa.q}** ${s.qa.a}`); // the opener: the question and its short answer
   const figs = figuresOf(s);
   const link = (f, label) => (f.fig.type === 'card' || !figLib ? '' : `[${label}](${figureUrl({ ...ctx, lang: got }, `${b.id}/${topic}/${s.id}/${figs.indexOf(f) + 1}`)})`);
   const card = (f) => [f.title && `**${f.title}**`, ...(f.lines || []).map((l) => `- ${l}`)].filter(Boolean).join('\n');

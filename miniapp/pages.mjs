@@ -362,12 +362,15 @@ ${cta(s, s.ctaLevel, L.link)}
                 hasPart: sample.map(({ q }) => ({ '@type': 'Question', eduQuestionType: 'Multiple choice', text: q.q,
                   acceptedAnswer: { '@type': 'Answer', text: q.options[q.answer], answerExplanation: { '@type': 'Comment', text: q.why } },
                   suggestedAnswer: q.options.filter((o, i) => i !== q.answer).map((o) => ({ '@type': 'Answer', text: o })) })) },
+              ...(a.sections.some((x) => x.qa) ? [{ '@type': 'FAQPage', inLanguage: lang, url: SITE + path,
+                mainEntity: a.sections.filter((x) => x.qa && x.qa.q && x.qa.a).map((x) => ({ '@type': 'Question', name: x.qa.q, url: `${SITE}${path}#sec-${x.id}`,
+                  acceptedAnswer: { '@type': 'Answer', text: plain(x.qa.a) } })) }] : []),
               crumbLd(trail)] },
             body: `${crumbs(trail)}
 <div class="pg-head"><span class="meta">${esc(s.articleK(k + 1, b.topics.length, m))}</span><h1 class="display-s">${esc(tt)}</h1></div>
 <p class="th-p th-lead">${inline(a.lead)}</p>
 <nav class="th-toc" aria-label="${s.contents}">${a.sections.map((x) => `<a class="chip" href="#sec-${esc(x.id)}">${esc(x.kicker)}</a>`).join('')}<a class="chip" href="#questions">${s.qsK}</a></nav>
-${a.sections.map((x, n) => `<section class="th-sec" id="sec-${esc(x.id)}"><span class="kicker">${n + 1} · ${esc(x.kicker)}</span><h2 class="th-h">${esc(x.title)}</h2>${x.blocks.map((bl) => block(bl, s, ru)).join('')}</section>`).join('\n')}
+${a.sections.map((x, n) => `<section class="th-sec" id="sec-${esc(x.id)}"><span class="kicker">${n + 1} · ${esc(x.kicker)}</span><h2 class="th-h">${esc(x.title)}</h2>${x.qa && x.qa.q && x.qa.a ? `<div class="th-qa"><p class="th-q">${esc(x.qa.q)}</p><p class="th-p">${inline(x.qa.a)}</p></div>` : ''}${x.blocks.map((bl) => block(bl, s, ru)).join('')}</section>`).join('\n')}
 <section class="stack g12" id="questions"><h2 class="th-h">${s.qsK}</h2><p class="body-muted">${s.qsLead}</p>
 ${qHtml}</section>
 ${cta(s, s.ctaTopic(qs.length), L.link)}

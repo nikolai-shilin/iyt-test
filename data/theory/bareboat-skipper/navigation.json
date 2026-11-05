@@ -6,6 +6,7 @@
       "id": "latitude",
       "kicker": "Latitude and distance",
       "title": "One minute of latitude is one mile",
+      "qa": { "q": "Which scale on the chart do I measure distance in nautical miles on?", "a": "Use the **latitude scale** at the sides of the chart, level with your position: one minute of latitude is one nautical mile (1,852 m). Never measure distance on the longitude scale at top and bottom." },
       "refs": ["Latitude & longitude", "Chartwork", "Chart scale", "Speed, time, distance"],
       "blocks": [
         { "p": "A position is a **latitude**, read on the side scales, and a **longitude**, read at top and bottom, in degrees and minutes: 37.75° is 37°45.0'." },
@@ -18,6 +19,7 @@
       "id": "symbols",
       "kicker": "Depths and symbols",
       "title": "What the chart prints in the water",
+      "qa": { "q": "What does an underlined depth figure on a nautical chart mean?", "a": "It is a **drying height**: the spot stands that far above chart datum and uncovers. Ordinary depths are metres below chart datum, about the lowest level the tide reaches, so there is usually more water than charted." },
       "refs": ["Chart symbols", "Charts", "Chart datum", "Echo sounder", "Chart corrections", "Chart reliability"],
       "blocks": [
         { "p": "Depths are metres below **chart datum**, about the lowest level the tide reaches, so there is usually more water than charted. An underlined figure is a **drying height**: it stands above datum and uncovers." },
@@ -38,6 +40,7 @@
       "id": "compass",
       "kicker": "Compass",
       "title": "True, magnetic, compass",
+      "qa": { "q": "How do I convert a true course into a compass course with variation and deviation?", "a": "Apply **variation**, then deviation: true to compass, subtract east and add west; compass to true, add east and subtract west. So 120°T with 3°E variation and 2°W deviation is 119°C." },
       "refs": ["Compass", "Variation", "Deviation", "Compass conversion"],
       "blocks": [
         { "p": "The chart is drawn to true north; the compass points to magnetic north. **Variation** is the angle between them. It changes with place and year, and the compass rose gives both: 3°10'E 2015 (8'E) is 4°38'E eleven years later." },
@@ -50,6 +53,7 @@
       "id": "fix",
       "kicker": "Position fixing",
       "title": "Crossing position lines",
+      "qa": { "q": "How do I plot a fix from compass bearings of landmarks?", "a": "Each bearing of a charted object is a **position line**, drawn from the object on the reciprocal bearing. Two lines crossing give a fix, a third checks it; choose objects close by, 60° to 120° apart." },
       "refs": ["Position fixing"],
       "blocks": [
         { "p": "One bearing of a charted object gives a **position line**. Plot it from the object on the reciprocal: a light bearing 050°T is drawn from the light on 230°T. A second line gives a **fix**, a third checks it." },
@@ -66,6 +70,7 @@
       "id": "dr",
       "kicker": "Dead reckoning",
       "title": "Where you are between fixes",
+      "qa": { "q": "What is the difference between a DR position and an estimated position?", "a": "A **dead reckoning** (DR) position is plotted from the last fix with the course steered and the distance by log. Add tidal stream and leeway and you have an **estimated position** (EP), drawn as a triangle." },
       "refs": ["Dead reckoning", "Estimated position", "Leeway", "Course to steer", "Log", "COG and heading", "SOG and STW", "Cross-track error"],
       "blocks": [
         { "p": "From the last fix, plot the course steered and the distance by log: that is the **dead reckoning** (DR) position. Add tidal stream and leeway for an **estimated position** (EP). A fix is drawn as a circled dot, an EP as a triangle. Log position, course and log reading hourly, in case the electronics fail." },
@@ -79,6 +84,7 @@
       "id": "tides",
       "kicker": "Tides",
       "title": "How much water, and which way it runs",
+      "qa": { "q": "How do I work out how much water there is now over a charted depth?", "a": "Add the **height of tide** to the charted depth, since both are measured from chart datum. The rule of twelfths gives the rise: 1, 2, 3, 3, 2, 1 twelfths of the range in each of the six hours." },
       "refs": ["Tides", "Rule of twelfths", "Tidal streams", "Charts / tides"],
       "blocks": [
         { "p": "The **height of tide** is measured up from chart datum: depth now = charted depth + height of tide. The **range** is high water minus low water. **Springs**, just after new and full moon, bring the highest highs, lowest lows and strongest streams." },
@@ -92,6 +98,7 @@
       "id": "pilotage",
       "kicker": "Pilotage and GPS",
       "title": "The last mile, by eye",
+      "qa": { "q": "How do I use leading marks and a clearing bearing to get into harbour safely?", "a": "Keep two charted objects in line: a **transit** is an exact position line with no compass, and if the front mark slides off, steer towards it. A **clearing bearing** on a charted object fences off a danger." },
       "refs": ["Pilotage", "Clearing bearings", "Electronic navigation", "GPS & chart datum", "Passage planning"],
       "blocks": [
         { "p": "Inshore you navigate by eye, to a plan made beforehand: marks, bearings to hold, where to turn. Two charted objects in line make a **transit**, an exact position line with no compass; if the front mark slides off, steer towards it. A **clearing bearing** fences off a danger." },

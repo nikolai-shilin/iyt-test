@@ -115,7 +115,12 @@ async function build() {
 
   // for search engines (site.mjs): what to crawl and the key that lets indexnow.mjs announce the pages; then the
   // site's own pages, sitemap.xml and llms.txt (pages.mjs), in the app's look
-  await writeFile(join(out, 'robots.txt'), `User-agent: *\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`);
+  // AI crawlers are named, and welcome, search and training alike: the content is free and the MCP server gives it
+  // out anyway. A crawler named in a group of its own skips the `*` group, so the group repeats its rules.
+  const AI = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot', 'Perplexity-User',
+    'Google-Extended', 'Applebot-Extended', 'Amazonbot', 'meta-externalagent', 'DuckAssistBot', 'MistralAI-User', 'CCBot'];
+  await writeFile(join(out, 'robots.txt'), `User-agent: *\nDisallow: /api/\n\n# AI search, assistants and training: welcome (the same content is at ${SITE}/llms.txt and ${SITE}/api/mcp)\n` +
+    `${AI.map((a) => `User-agent: ${a}`).join('\n')}\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`);
   await writeFile(join(out, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
   await buildPages(out, { css: ['fonts/fonts.css', 'design/app.css', 'design/flows.css', 'app.css'].map((f) => linked[f]) });
 }

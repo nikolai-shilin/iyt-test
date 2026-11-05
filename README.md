@@ -130,8 +130,10 @@ https://iyt.rycrentals.com (`SITE` in `miniapp/site.mjs`):
 
 Every page has its own title and description, a canonical link, `hreflang` links to its other language, link
 preview tags and structured data (breadcrumbs; `Article` and `Quiz` on a topic). Nothing is written by hand but the
-strings in `pages.mjs`: a new article or a new level gets its pages on the next build. The build also writes
-`robots.txt`, `sitemap.xml` (every page with its other language), `llms.txt` (the site's map for AI assistants),
+strings in `pages.mjs`: a new article or a new level gets its pages on the next build. A section's opener (`qa` in
+[docs/theory.md](docs/theory.md): the question a student would ask, answered in a sentence or two) goes under its
+heading and into the page's `FAQPage` data, the passage search engines and AI assistants quote. The build also writes
+`robots.txt` (AI crawlers named and let in, search and training alike: the content is free and the MCP server gives it out anyway), `sitemap.xml` (every page with its other language), `llms.txt` (the site's map for AI assistants),
 `404.html`, the IndexNow key file and `pages.json` (each address with a hash of its page). `npm run dev` serves the
 pages at their clean addresses, as Vercel does (`cleanUrls`).
 

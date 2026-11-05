@@ -1179,6 +1179,8 @@ function thBlock(b, tr) {
   if (b.table && b.table.head && b.table.rows) return `<table class="th-table"><thead><tr>${b.table.head.map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${b.table.rows.map((r) => `<tr>${r.map((x) => `<td>${inline(x)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
   return '';
 }
+// A section's opener (docs/theory.md, qa): the question a student would ask, and the answer in a sentence or two.
+const thQa = (qa) => (qa && qa.q && qa.a ? `<div class="th-qa"><p class="th-q">${esc(qa.q)}</p><p class="th-p">${inline(qa.a)}</p></div>` : '');
 const thSkeleton = () => `<div class="sk-wrap" aria-busy="true"><span class="sk-label">${t('loading')}</span><div class="topics">${[['72%', '92px'], ['50%', '84px'], ['66%', '96px'], ['58%', '88px'], ['70%', '92px']]
   .map(([a, b]) => `<div class="topic"><span class="ico sk"></span>${sk(a, '14px', ';grid-column:2;margin:2px 0')}${sk(b, '12px', ';grid-column:2;margin:2px 0')}</div>`).join('')}</div></div>`;
 const thError = () => `<div class="stack g12" style="align-items:flex-start"><p class="body-muted">${t('theoryErr')}</p><button class="pill" data-act="tretry">${t('retry')}</button></div>`;
@@ -1307,7 +1309,7 @@ const VIEWS = {
       body: `<div class="stack g8"><span class="meta">${t('theoryK', TOPICS.indexOf(tp) + 1, TOPICS.length, m.min)}</span><h2 class="display-s">${esc(tp.title)}</h2>${LANG !== 'en' && !tr ? `<span class="card-meta">${t('inEnglish')}</span>` : ''}</div>
         <p class="th-p th-lead">${inline(a.lead)}</p>
         <div class="th-toc">${a.sections.map((s) => `<button class="chip" data-act="tsec" data-s="${esc(s.id)}">${esc(s.kicker)}</button>`).join('')}</div>
-        ${a.sections.map((s, n) => `<section class="th-sec" id="sec-${esc(s.id)}"><div class="row sb-between"><span class="kicker">${n + 1} · ${esc(s.kicker)}</span>${noteFlag(c.t, s.id)}</div><h3 class="th-h">${esc(s.title)}</h3>${s.blocks.map((b) => thBlock(b, tr)).join('')}</section>`).join('')}
+        ${a.sections.map((s, n) => `<section class="th-sec" id="sec-${esc(s.id)}"><div class="row sb-between"><span class="kicker">${n + 1} · ${esc(s.kicker)}</span>${noteFlag(c.t, s.id)}</div><h3 class="th-h">${esc(s.title)}</h3>${thQa(s.qa)}${s.blocks.map((b) => thBlock(b, tr)).join('')}</section>`).join('')}
         <p class="card-meta th-foot">${svg('flag', 14)}${t('noteFoot')}</p>
         <div class="th-nextprev">${near(arts[k - 1], 'prevTopic')}${near(arts[k + 1], 'nextTopic')}</div><span class="th-end"></span>`,
     };
