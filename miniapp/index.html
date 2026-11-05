@@ -41,6 +41,8 @@
 <script src="design/figures.js"></script>
 <script src="app.js"></script>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<!-- Telegram opens the app with the student's signed sign-in data in the address's #fragment; analytics gets the address without it -->
+<script>window.va('beforeSend', function (e) { return Object.assign({}, e, { url: e.url.split('#')[0] }); });</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
