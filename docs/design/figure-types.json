@@ -1,0 +1,282 @@
+{
+ "sail": {
+  "level": "bareboat-skipper",
+  "id": "bs-001",
+  "q": "You are at the helm, sailing with the wind over your right shoulder and the boom out to the left. Which tack are you on?",
+  "figure": {
+   "type": "sail",
+   "wind": 45,
+   "hdg": 0,
+   "note": "Wind over the starboard side, boom to port"
+  }
+ },
+ "anchor": {
+  "level": "bareboat-skipper",
+  "id": "bs-006",
+  "q": "The anchorage shows 2.4 m on the sounder at low water. The boat's draft is 1.9 m. Can you stay?",
+  "figure": {
+   "type": "anchor",
+   "depth": "2.4 m",
+   "tide": "low water",
+   "title": "Sounder at low water",
+   "lines": [
+    "Draft 1.9 m",
+    "Swell about 0.3 m"
+   ]
+  }
+ },
+ "rope": {
+  "level": "bareboat-skipper",
+  "id": "bs-011",
+  "q": "You need to put a loop in the end of a mooring line to drop over a bollard. Which knot?",
+  "figure": {
+   "type": "rope",
+   "kind": "ring",
+   "labels": [
+    [
+     160,
+     40,
+     "bollard"
+    ]
+   ],
+   "note": "Loop in the end of a line"
+  }
+ },
+ "encounter": {
+  "level": "bareboat-skipper",
+  "id": "bs-025",
+  "q": "A crew member goes over the side on a broad reach. What is the very first thing you shout and do?",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": -165,
+    "dist": 70,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 225,
+   "note": "Casualty astern to port"
+  }
+ },
+ "dayshape": {
+  "level": "bareboat-skipper",
+  "id": "bs-037",
+  "q": "Under sail you meet a vessel with these shapes, towing nets. Who gives way?",
+  "figure": {
+   "type": "dayshape",
+   "shape": "two-cones",
+   "note": "Two cones apexes together: vessel engaged in fishing"
+  }
+ },
+ "lights": {
+  "level": "bareboat-skipper",
+  "id": "bs-040",
+  "q": "Motoring at night you see these lights on a steady bearing, closing. What vessel is it and what do you do?",
+  "figure": {
+   "type": "lights",
+   "lights": [
+    {
+     "c": "w",
+     "x": 200,
+     "y": 78,
+     "t": "white"
+    },
+    {
+     "c": "r",
+     "x": 196,
+     "y": 118,
+     "t": "red"
+    }
+   ],
+   "note": "Night · bearing 045° relative, steady"
+  }
+ },
+ "buoy": {
+  "level": "bareboat-skipper",
+  "id": "bs-051",
+  "q": "Entering a Mediterranean harbour from seaward you see this buoy. Which side do you leave it on?",
+  "figure": {
+   "type": "buoy",
+   "kind": "lat-port",
+   "topmark": true,
+   "rhythm": "Fl R",
+   "note": "Entering harbour from seaward"
+  }
+ },
+ "bay": {
+  "level": "bareboat-skipper",
+  "id": "bs-065",
+  "q": "A hot sunny morning, calm. By 14:00 a steady 15-knot onshore wind has set in. What is it?",
+  "figure": {
+   "type": "bay",
+   "wind": 180,
+   "spots": [],
+   "labels": [
+    [
+     160,
+     30,
+     "LAND — hot",
+     "middle"
+    ],
+    [
+     160,
+     170,
+     "SEA — cool",
+     "middle"
+    ]
+   ],
+   "note": "Afternoon, clear sky, wind onshore"
+  }
+ },
+ "card": {
+  "level": "charter-checkin",
+  "id": "ci-002",
+  "q": "You fill in the crew list at the desk and the manager asks whether anyone else will sleep aboard this week. What do you say?",
+  "figure": {
+   "type": "card",
+   "title": "Crew list",
+   "lines": [
+    "Booked: skipper + 4 crew",
+    "A friend joins Wednesday in Lefkas",
+    "Two crew fly home on Thursday",
+    "Port police may check at any harbour"
+   ]
+  }
+ },
+ "panel": {
+  "level": "charter-checkin",
+  "id": "ci-153",
+  "q": "The technician has already filled in the engine hours on the check-in form. You look at the panel. What do you do?",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Hours",
+     "2312.1",
+     false
+    ],
+    [
+     "Volts",
+     "12.6",
+     false
+    ],
+    [
+     "Fuel",
+     "4/4",
+     false
+    ]
+   ],
+   "lines": [
+    "Form says: engine hours 2,290"
+   ]
+  }
+ },
+ "race": {
+  "level": "racing-rules",
+  "id": "rr-001",
+  "q": "Wednesday evening club race, J/24s on a starboard-tack reach. Red is directly behind you; her bow is about a metre behind the line abeam of your transom. In the words of the rules, are you overlapped?",
+  "figure": {
+   "type": "race",
+   "wind": 0,
+   "boats": [
+    {
+     "x": 140,
+     "y": 110,
+     "hdg": 270,
+     "label": "You",
+     "you": true
+    },
+    {
+     "x": 178,
+     "y": 110,
+     "hdg": 270,
+     "label": "Red"
+    }
+   ],
+   "note": "Red's bow is 1 m behind the line abeam your transom"
+  }
+ },
+ "chart": {
+  "level": "yachtmaster-coastal",
+  "id": "yc-006",
+  "q": "You need this buoy's position for your waypoint list. What do you write down?",
+  "figure": {
+   "type": "chart",
+   "track": "M80 30 V170 M250 30 V170 M80 40 H250 M80 160 H250",
+   "marks": [
+    [
+     182,
+     94,
+     "y",
+     "buoy"
+    ]
+   ],
+   "labels": [
+    [
+     80,
+     22,
+     "4°10'W",
+     "middle"
+    ],
+    [
+     250,
+     22,
+     "4°05'W",
+     "middle"
+    ],
+    [
+     74,
+     44,
+     "50°20'N",
+     "end"
+    ],
+    [
+     74,
+     164,
+     "50°18'N",
+     "end"
+    ]
+   ],
+   "note": "Parallels and meridians from the border"
+  }
+ },
+ "compass": {
+  "level": "yachtmaster-coastal",
+  "id": "yc-108",
+  "q": "You have laid off the course to the next waypoint on the chart. The boat has no deviation on this heading. What course do you give the helmsman?",
+  "figure": {
+   "type": "compass",
+   "variation": -3,
+   "course": 247,
+   "courseLabel": "Course (T)",
+   "note": "No deviation"
+  }
+ },
+ "isobars": {
+  "level": "yachtmaster-ocean",
+  "id": "yo-747",
+  "q": "You leave Honolulu for San Francisco in July. The NE trade blows straight down the great circle (054°T, 2,078 M) and the Pacific High lies across its middle. How do you route?",
+  "figure": {
+   "type": "isobars",
+   "center": "H",
+   "values": [
+    "1032",
+    "1028",
+    "1024"
+   ],
+   "boat": [
+    60,
+    175,
+    45
+   ],
+   "hemisphere": "Northern hemisphere",
+   "note": "GC: on the wind, then calms"
+  }
+ }
+}

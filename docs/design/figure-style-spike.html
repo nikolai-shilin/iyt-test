@@ -772,6 +772,16 @@ function yacht(o) {
     g.add(cyl(bowTip.clone().add(V(0, 0.4, 0.05)), bowTip.clone().lerp(stayTop, 0.88), 0.074 * k, mat(o.cover || '#0e3a5c', 0.8, 0, { transparent: true, opacity: 0.0 }), 12));
   }
 
+  if (o.keel) { // a fin keel and rudder, for cutaway views
+    const keel = new THREE.Mesh(new THREE.BoxGeometry(0.22 * k, 1.75 * k, 2.4 * k), mat('#1b2430', 0.6)); keel.position.set(0, -0.9 * k, 0.02 * L); keel.castShadow = true; g.add(keel);
+    const bulb = new THREE.Mesh(new THREE.CapsuleGeometry(0.16 * k, 1.6 * k, 6, 12), mat('#1b2430', 0.6)); bulb.rotation.x = Math.PI / 2; bulb.position.set(0, -1.75 * k, 0.02 * L); g.add(bulb);
+    const rud = new THREE.Mesh(new THREE.BoxGeometry(0.08 * k, 1.3 * k, 0.5 * k), mat('#1b2430', 0.6)); rud.position.set(0, -0.65 * k, 0.4 * L); g.add(rud);
+  }
+  if (o.dayshape === 'two-cones' || o.dayshape === 'cone-down') {
+    const p = bowTip.clone().lerp(stayTop, 0.42), shp = mat('#101318', 0.75);
+    if (o.dayshape === 'two-cones') { const a = new THREE.Mesh(new THREE.ConeGeometry(0.3, 0.5, 24), shp); a.position.copy(p).add(V(0, 0.27, 0)); a.rotation.x = Math.PI; const b = new THREE.Mesh(new THREE.ConeGeometry(0.3, 0.5, 24), shp); b.position.copy(p).add(V(0, -0.27, 0)); a.castShadow = b.castShadow = true; g.add(a, b); }
+    else { const a = new THREE.Mesh(new THREE.ConeGeometry(0.3, 0.5, 24), shp); a.position.copy(p); a.rotation.x = Math.PI; a.castShadow = true; g.add(a); }
+  }
   if (o.dayshape === 'ball') {
     const p = bowTip.clone().lerp(stayTop, 0.36);
     const ball = new THREE.Mesh(new THREE.SphereGeometry(0.3, 32, 20), mat('#101318', 0.75)); ball.position.copy(p).add(V(0, -0.35, 0)); ball.castShadow = true; g.add(ball);
@@ -802,6 +812,17 @@ function yacht(o) {
   g.rotation.y = -o.hdg * DEG;
   if (o.heel && boomA) g.rotation.z = -Math.sign(boomA) * o.heel * DEG;
   g.userData = { L, S, mastTop: top, mz, bowTip, wake: o.speed ? { speed: o.speed, hdg: o.hdg, L } : null };
+  return g;
+}
+
+/* ---------- a casualty in the water: head, lifejacket, an arm up ---------- */
+function mob() {
+  const g = new THREE.Group();
+  const lj = new THREE.Mesh(new THREE.CapsuleGeometry(0.22, 0.2, 6, 14), mat('#ff7a00', 0.8)); lj.rotation.z = Math.PI / 2; lj.position.set(0, 0.08, 0); g.add(lj);
+  const head = new THREE.Mesh(new THREE.SphereGeometry(0.13, 16, 12), mat('#c9956c', 0.8)); head.position.set(0, 0.3, 0.1); g.add(head);
+  const hat = new THREE.Mesh(new THREE.SphereGeometry(0.135, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2), mat('#c8102e', 0.8)); hat.position.copy(head.position).add(V(0, 0.02, 0)); g.add(hat);
+  g.add(cyl(V(0.2, 0.15, 0), V(0.45, 0.75, 0.1), 0.05, mat('#c9956c', 0.8), 8)); // an arm raised
+  const f = foamRing(0.9, 0.55); g.add(f);
   return g;
 }
 
@@ -1122,7 +1143,7 @@ function plateCam(p) {
     pitch = -Math.atan((1 - 2 * ym) * tv);
     roll = Math.atan2((p.horizon[1] - p.horizon[0]) * H, W);
   }
-  cam.position.set(0, p.eye, 0); cam.rotation.order = 'YXZ'; cam.rotation.set(pitch, 0, roll); cam.updateMatrixWorld(true);
+  cam.position.set(0, p.eye, 0); cam.rotation.order = 'YXZ'; cam.rotation.set(pitch, (p.yaw ?? 0) * DEG, roll); cam.updateMatrixWorld(true);
   return cam;
 }
 function glow2d(ctx, x, y, r, color, a = 1) {
@@ -1346,20 +1367,78 @@ function dressOwnBoat(me, o) {
 function village(at, n, look, bearing) {
   const g = new THREE.Group(), r = rng(n * 7 + 1), wall = mat('#e9e4d8', 0.9), roof = mat('#8a5a4a', 0.9);
   const win = new THREE.MeshBasicMaterial({ color: '#5a6672' }), tree = mat('#3d5a3a', 1), trunk = mat('#4a3a2a', 1), stone = mat('#9a948a', 1);
+  // each building, tree and the church is its own group with its footprint, so settleOnLand() can seat it on the ground
+  const part = (x, z, foot) => { const q = new THREE.Group(); q.position.set(x, 0, z); q.userData.foot = foot; g.add(q); return q; };
   for (let i = 0; i < n; i++) {
     const w = 8 + r() * 10, dpt = 8 + r() * 8, h = 6 + r() * 5 + (r() < 0.15 ? 7 : 0), x = (i - n / 2) * 14 + (r() - 0.5) * 8, z = (r() - 0.5) * 40;
-    const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, dpt), wall); b.position.set(x, h / 2 + 1, z); g.add(b);
-    const rf = new THREE.Mesh(new THREE.ConeGeometry(Math.max(w, dpt) * 0.72, 2.2, 4), roof); rf.rotation.y = Math.PI / 4; rf.position.set(x, h + 2.1, z); g.add(rf);
-    for (let k = 0; k < 2 + (h > 10 ? 2 : 0); k++) for (let j = 0; j < Math.floor(w / 3.2); j++) { const wn = new THREE.Mesh(new THREE.PlaneGeometry(0.7, 1.0), win); wn.position.set(x - w / 2 + 1.6 + j * 3.2, 3 + k * 3.2, z + dpt / 2 + 0.05); g.add(wn); }
-    if (r() < 0.5) { const ty = 3 + r() * 3, tx = x + w / 2 + 3, tz = z + (r() - 0.5) * 10; g.add(cyl(V(tx, 1, tz), V(tx, 1 + ty, tz), 0.4, trunk, 5)); const cr = new THREE.Mesh(new THREE.SphereGeometry(2.4 + r() * 1.6, 10, 8), tree); cr.position.set(tx, 1 + ty + 1.5, tz); g.add(cr); }
+    const q = part(x, z, [w, dpt]);
+    const b = new THREE.Mesh(new THREE.BoxGeometry(w, h + 3, dpt), wall); b.position.set(0, (h + 3) / 2 - 2, 0); q.add(b);
+    const rf = new THREE.Mesh(new THREE.ConeGeometry(Math.max(w, dpt) * 0.72, 2.2, 4), roof); rf.rotation.y = Math.PI / 4; rf.position.set(0, h + 2.1, 0); q.add(rf);
+    for (let k = 0; k < 2 + (h > 10 ? 2 : 0); k++) for (let j = 0; j < Math.floor(w / 3.2); j++) { const wn = new THREE.Mesh(new THREE.PlaneGeometry(0.7, 1.0), win); wn.position.set(-w / 2 + 1.6 + j * 3.2, 3 + k * 3.2, dpt / 2 + 0.05); q.add(wn); }
+    if (r() < 0.5) { const ty = 3 + r() * 3, tq = part(x + w / 2 + 3, z + (r() - 0.5) * 10, [3, 3]); tq.add(cyl(V(0, -1, 0), V(0, 1 + ty, 0), 0.4, trunk, 5)); const cr = new THREE.Mesh(new THREE.SphereGeometry(2.4 + r() * 1.6, 10, 8), tree); cr.position.set(0, 1 + ty + 1.5, 0); tq.add(cr); }
   }
   // a church: a taller block with a bell tower; a stone breakwater with a small light at its end
-  const cx = (r() - 0.5) * n * 6, ch = new THREE.Mesh(new THREE.BoxGeometry(14, 12, 24), wall); ch.position.set(cx, 7, -30); g.add(ch);
-  const tw = new THREE.Mesh(new THREE.BoxGeometry(6, 24, 6), wall); tw.position.set(cx + 8, 13, -22); g.add(tw);
-  const sp = new THREE.Mesh(new THREE.ConeGeometry(4.2, 6, 4), roof); sp.rotation.y = Math.PI / 4; sp.position.set(cx + 8, 28, -22); g.add(sp);
-  const bw = new THREE.Mesh(new THREE.BoxGeometry(6, 3, 90), stone); bw.position.set(n * 7 + 20, 0.5, 60); g.add(bw);
-  const lt = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.6, 7, 10), wall); lt.position.set(n * 7 + 20, 5, 104); g.add(lt);
-  g.position.copy(at); g.rotation.y = -bearing * DEG; return g;
+  const cx = (r() - 0.5) * n * 6, cq = part(cx, -30, [22, 26]);
+  const ch = new THREE.Mesh(new THREE.BoxGeometry(14, 15, 24), wall); ch.position.set(0, 5.5, 0); cq.add(ch);
+  const tw = new THREE.Mesh(new THREE.BoxGeometry(6, 27, 6), wall); tw.position.set(8, 11.5, 8); cq.add(tw);
+  const sp = new THREE.Mesh(new THREE.ConeGeometry(4.2, 6, 4), roof); sp.rotation.y = Math.PI / 4; sp.position.set(8, 28, 8); cq.add(sp);
+  const pier = new THREE.Group(); pier.position.set(n * 7 + 20, 0, 15); pier.userData.pier = true; g.add(pier);
+  const bw = new THREE.Mesh(new THREE.BoxGeometry(6, 3, 90), stone); bw.position.set(0, 0.5, 45); pier.add(bw);
+  const lt = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.6, 7, 10), wall); lt.position.set(0, 5, 89); pier.add(lt);
+  g.position.copy(at).setY(2.5); g.rotation.y = -bearing * DEG; return g;
+}
+// Put a village on the land: slide it inland along its bearing until the front row is on dry ground,
+// seat every building on the lowest corner of its footprint, and run the breakwater out from the actual shoreline.
+function settleOnLand(v, lands) {
+  for (const m of lands) m.updateMatrixWorld(true);
+  const ray = new THREE.Raycaster(), down = V(0, -1, 0);
+  const ground = (x, z) => { ray.set(V(x, 5000, z), down); const h = ray.intersectObjects(lands, false)[0]; return h ? h.point.y : -99; };
+  v.position.y = 0; v.updateMatrixWorld(true);
+  const toCam = V(-v.position.x, 0, -v.position.z).normalize();
+  const sea = Math.sign(v.localToWorld(V(0, 0, 1)).sub(v.position).dot(toCam)) || 1; // which local z points out to sea
+  const front = () => { let lo = 99; for (const c of v.children) { if (c.userData.pier) continue; const [fw, fd] = c.userData.foot || [4, 4]; for (const [dx, dz] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { const p = c.localToWorld(V(dx * fw / 2, 0, dz * fd / 2)); lo = Math.min(lo, ground(p.x, p.z)); } } return lo; };
+  for (let k = 0; k < 120 && front() < 2.5; k++) { v.position.addScaledVector(toCam, -4); v.updateMatrixWorld(true); }
+  for (const c of v.children) {
+    if (c.userData.pier) continue;
+    const [fw, fd] = c.userData.foot || [4, 4]; let lo = 99;
+    for (const [dx, dz] of [[-1, -1], [1, -1], [-1, 1], [1, 1], [0, 0]]) { const p = c.localToWorld(V(dx * fw / 2, 0, dz * fd / 2)); lo = Math.min(lo, ground(p.x, p.z)); }
+    c.position.y = lo; c.updateMatrixWorld(true);
+  }
+  const pier = v.children.find(c => c.userData.pier);
+  if (pier) {
+    let zs = null; for (let lz = -150; lz <= 250; lz += 3) { const p = v.localToWorld(V(pier.position.x, 0, lz * sea)); if (ground(p.x, p.z) < -0.4) { zs = lz; break; } }
+    if (zs === null) pier.visible = false; else { pier.position.z = (zs - 12) * sea; pier.scale.z = sea; }
+  }
+}
+// A landmass: a heightfield that starts as beach at the waterline and rises into hills, coloured by height and slope.
+function landmass(look, o = {}) {
+  const r = rng(o.seed ?? 31), W_ = o.width ?? 1600, D_ = o.depth ?? 1200, nx = 140, nz = 100;
+  const g = new THREE.PlaneGeometry(W_, D_, nx, nz).rotateX(-Math.PI / 2);
+  const pa = g.attributes.position, col = [], base = new THREE.Color(o.scrub || '#5a6b48'), rock = new THREE.Color('#9a9484'), sand = new THREE.Color('#dcd3b8'), dark = new THREE.Color('#3f4d35');
+  const n2 = (x, z, f, s0) => { const h = (a, b) => { const v = Math.sin(a * 127.1 + b * 311.7 + s0) * 43758.5453; return v - Math.floor(v); }; const ix = Math.floor(x * f), iz = Math.floor(z * f), tx = x * f - ix, tz = z * f - iz, sm = t => t * t * (3 - 2 * t); return (h(ix, iz) * (1 - sm(tx)) + h(ix + 1, iz) * sm(tx)) * (1 - sm(tz)) + (h(ix, iz + 1) * (1 - sm(tx)) + h(ix + 1, iz + 1) * sm(tx)) * sm(tz); };
+  for (let i = 0; i < pa.count; i++) {
+    const x = pa.getX(i), z = pa.getZ(i), t = 0.5 - z / D_; // t: 0 at the near (water) edge (z = +D/2), 1 at the far edge
+    const shoreWobble = (n2(x / 300, 0, 1, 7) - 0.5) * 0.08;
+    const inland = Math.max(0, t - 0.06 + shoreWobble);
+    let h = (o.maxH ?? 140) * Math.pow(inland, 1.4) * (0.6 + 0.4 * n2(x / 900, z / 900, 1, 3)) + 18 * n2(x / 180, z / 180, 1, 5) * inland + 5 * n2(x / 60, z / 60, 1, 9) * inland;
+    if (inland <= 0) h = -2 + 3 * t; // a gently shelving beach under the shoreline
+    pa.setY(i, h);
+    const c = h < 1.5 ? sand.clone() : h < 6 ? sand.clone().lerp(base, (h - 1.5) / 4.5) : base.clone();
+    const rocky = n2(x / 120, z / 120, 1, 11) > 0.72 && h > 20; if (rocky) c.copy(rock);
+    if (n2(x / 50, z / 50, 1, 13) > 0.62 && h > 6 && !rocky) c.lerp(dark, 0.6);
+    col.push(c.r, c.g, c.b);
+  }
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
+  const m = new THREE.Mesh(g, mat('#ffffff', 0.95, 0, { vertexColors: true })); m.receiveShadow = true; m.castShadow = true;
+  m.position.set(o.x ?? 0, 0, (o.z ?? -600) - D_ / 2); m.rotation.y = (o.yaw ?? 0) * DEG;
+  // trees: dark blobs scattered on the lower slopes
+  const tree = mat('#2f4a2c', 1), tg = new THREE.Group();
+  for (let i = 0; i < (o.trees ?? 400); i++) { const x = (r() - 0.5) * W_, z = -r() * D_ * 0.6; const tri = Math.max(0, 0.5 - z / D_ - 0.06); if (tri <= 0.02) continue; const hh = (o.maxH ?? 140) * Math.pow(Math.max(0, tri), 1.4) * 0.8 + 18 * tri; if (hh > 90 || r() < 0.3) continue; const t3 = new THREE.Mesh(new THREE.ConeGeometry(2 + r() * 2.5, 5 + r() * 6, 6), tree); t3.position.set(x, hh + 2.5, z); t3.castShadow = true; tg.add(t3); }
+  tg.position.copy(m.position); tg.rotation.copy(m.rotation); tg.position.z += D_ / 2; tg.position.z -= D_ / 2;
+  const grp = new THREE.Group(); grp.add(m);
+  // the trees were placed in the plane's own coordinates: put them in the same frame
+  tg.position.set(o.x ?? 0, 0, (o.z ?? -600) - D_ / 2); tg.rotation.y = (o.yaw ?? 0) * DEG; grp.add(tg);
+  return grp;
 }
 function layeredCoast(scene, look, ridges) {
   for (const [from, to, R, Hh, far, seed] of ridges) scene.add(coast(from, to, R, Hh, far ? look.landFar : look.land, seed));
@@ -1371,21 +1450,24 @@ async function renderCG(renderer, s) {
   const cam = plateCam(s.own?.eye ? { ...p, eye: s.own.eye } : p);
   const az = (p.sun?.[0] ?? -120) * DEG, el = (p.sun?.[1] ?? 40) * DEG, sunDir = V(Math.sin(az) * Math.cos(el), Math.sin(el), -Math.cos(az) * Math.cos(el));
   const env = { night: look.night, zenith: look.zenith, horizon: look.horizon, sky: { zenith: look.skyTop, mid: look.skyMid, haze: look.skyHorizon }, clouds: look.clouds ?? 0, cirrus: look.cirrus ?? 1,
-    fogDensity: p.clean ? 0 : look.fog, exposure: look.exposure, water: look.water, distortion: 2.0, waterSize: 2.4, chop: p.clean ? 1.2 : (p.chop ?? look.chop ?? 2.2), reflK: look.reflK ?? 0.8, shiny: look.shiny, spec: look.spec, ripple: p.clean ? 0 : look.ripple, topDown: p.horizon ? 0 : 1, troughDark: look.troughDark, waterSunOverride: p.waterSun, foam: p.clean ? 0 : (look.foam ?? (p.horizon ? 0.35 : 0.5)), waterSun: p.waterSun ?? look.moonPath ?? look.waterSun ?? 1,
+    fogDensity: p.clean ? (p.haze ?? 0) : look.fog, exposure: look.exposure, water: look.water, distortion: 2.0, waterSize: 2.4, chop: p.clean ? 1.2 : (p.chop ?? look.chop ?? 2.2), reflK: look.reflK ?? 0.8, shiny: look.shiny, spec: look.spec, ripple: p.clean ? 0 : look.ripple, topDown: p.horizon ? 0 : 1, troughDark: look.troughDark, waterSunOverride: p.waterSun, foam: p.clean ? 0 : (look.foam ?? (p.horizon ? 0.35 : 0.5)), waterSun: p.waterSun ?? look.moonPath ?? look.waterSun ?? 1,
     sun: { color: look.sunColor || '#c9d6ea', intensity: look.sunI }, hemi: { sky: look.skyMid || look.horizon, ground: look.seaNear, intensity: look.hemi }, envIntensity: 1,
     bloom: p.clean ? [0.0, 0.4, 1.0] : look.night ? [0.5, 0.45, 1.1] : [0.1, 0.45, 1.0], contrast: 0, saturation: 1 };
   setSea(p.windFrom ?? 30, p.clean ? 0 : (p.seaAmp ?? 0.3), V(0, 0, 0));
   const scene = makeWorld(renderer, env, sunDir, 0);
   const root = new THREE.Group(); scene.add(root);
-  if (s.own) {
-    const o = s.own, me = yacht({ hdg: 0, own: true, wheel: false, sails: o.sails ?? false, wind: o.wind, heel: o.heel, speed: o.speed ?? 0.4, cover: o.cover || '#2b3d56', stripe: o.stripe || '#1f3a5a' });
+  if (s.own && !s.own.nobody) {
+    const o = s.own, me = yacht({ hdg: 0, own: !o.ownBoom, wheel: false, sails: o.sails ?? false, wind: o.wind, heel: o.heel, speed: o.speed ?? 0.4, cover: o.cover || '#2b3d56', stripe: o.stripe || '#1f3a5a', bag: o.bag });
+    if (o.yaw) { cam.rotation.order = 'YXZ'; cam.rotation.y += o.yaw * DEG; cam.updateMatrixWorld(true); }
     root.add(me); dressOwnBoat(me, o);
     me.position.set(-(o.x ?? 0), 0, -(o.z ?? 0.33 * 12));
     floatOn(me, 12, 3.8);
     me.updateMatrixWorld(true);
   }
   if (s.coast) layeredCoast(scene, look, s.coast);
-  if (s.village) for (const [b, d, n] of s.village) scene.add(village(brgVec(b, d), n, look, b));
+  const lands = []; if (s.land) for (const l of s.land) { const lm = landmass(look, l); scene.add(lm); lands.push(lm.children[0]); }
+  if (p.cutaway) { const w = scene.userData.water; if (w) { w.material.side = THREE.DoubleSide; w.material.transparent = true; w.material.uniforms.alpha.value = 0.55; w.material.depthWrite = false; } }
+  if (s.village) for (const [b, d, n] of s.village) { const v = village(brgVec(b, d), n, look, b); scene.add(v); if (lands.length) settleOnLand(v, lands); }
   if (look.night && s.own) {
     const me = root.children.find(c => c.userData?.S), S = me.userData.S, L = me.userData.L;
     for (const [sd, c] of [[-1, '#ff3a24'], [1, '#3cff8a']]) { const sl = new THREE.SpotLight(c, 1.4, 4.0, Math.PI / 3.2, 0.5, 2); sl.position.set(sd * 0.3, S.sh(-L / 2) + 0.35, -L / 2 + 0.6); sl.target.position.set(sd * 2.6, S.sh(-L / 2) - 1.0, -L / 2 - 1.6); me.add(sl, sl.target); }
@@ -1400,6 +1482,24 @@ async function renderCG(renderer, s) {
     const st = new THREE.Points(stars, new THREE.PointsMaterial({ color: '#cfdcff', size: 1.3, sizeAttenuation: false, fog: false, transparent: true, opacity: 0.55 })); st.renderOrder = -8; scene.add(st);
   }
   const built = s.subjects(root, cam, scene) || {};
+  if (built.cutaway) {
+    const cw = built.cutaway, depth = cw.depth, bed = new THREE.Mesh(new THREE.PlaneGeometry(400, 400, 160, 160).rotateX(-Math.PI / 2), mat('#ffffff', 1, 0, { vertexColors: true }));
+    { const pa = bed.geometry.attributes.position, r2 = rng(8), col = [], sand = new THREE.Color('#d9cfa8'), dk = new THREE.Color('#8f8664'); for (let i = 0; i < pa.count; i++) { const x = pa.getX(i), z = pa.getZ(i), rip = Math.sin(x * 2.1 + Math.sin(z * 0.7) * 1.5) * 0.5 + 0.5; pa.setY(i, (r2() - 0.5) * 0.1 + 0.07 * rip + 0.25 * Math.sin(x * 0.11) * Math.cos(z * 0.09)); const c = sand.clone().lerp(dk, rip * 0.6 + r2() * 0.2); col.push(c.r, c.g, c.b); } bed.geometry.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); bed.geometry.computeVertexNormals(); }
+    bed.position.y = -depth; bed.receiveShadow = true; root.add(bed);
+    // weed tufts and a few stones on the sand
+    const r3 = rng(12); for (let i = 0; i < 120; i++) { const x = (r3() - 0.5) * 120, z = -40 + (r3() - 0.5) * 60; const w = new THREE.Mesh(new THREE.ConeGeometry(0.12 + r3() * 0.2, 0.3 + r3() * 0.6, 5), mat('#4f6a3a', 1)); w.position.set(x, -depth + 0.2, z); root.add(w); }
+    for (let i = 0; i < 40; i++) { const x = (r3() - 0.5) * 100, z = -40 + (r3() - 0.5) * 50; const st = new THREE.Mesh(new THREE.SphereGeometry(0.2 + r3() * 0.5, 7, 5), mat('#7a7262', 1)); st.position.set(x, -depth + 0.1, z); st.scale.y = 0.5; root.add(st); }
+    // the chain: from the bow roller down in a catenary to the anchor, which lies on its side with the fluke in the sand
+    const b = cw.boat, bow = b.localToWorld(b.userData.bowTip.clone()), a = cw.chainTo.clone().setY(-depth + 0.1);
+    const pts = []; for (let i = 0; i <= 14; i++) { const t = i / 14; const p = bow.clone().lerp(a, t); p.y = bow.y + (a.y - bow.y) * (1 - Math.pow(1 - t, 2.2)); pts.push(p); }
+    const chain = tube(pts, 0.045, mat('#4a4f55', 0.45, 0.8)); root.add(chain);
+    const an = new THREE.Group(); const shank = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.1, 1.4), mat('#8a9096', 0.3, 1)); an.add(shank); const fl = new THREE.Mesh(new THREE.ConeGeometry(0.35, 0.7, 4), mat('#8a9096', 0.3, 1)); fl.rotation.x = Math.PI / 2; fl.position.z = -0.9; an.add(fl); an.position.copy(a).add(V(0, 0.08, 0)); an.rotation.y = Math.atan2(bow.x - a.x, bow.z - a.z); an.rotation.z = 0.5; root.add(an);
+    // the water volume: a translucent block between the surface and the bed (the surface itself is the Water mesh)
+    const vol = new THREE.Mesh(new THREE.BoxGeometry(400, depth, 400), new THREE.MeshPhysicalMaterial({ color: '#0f5f6a', transparent: true, opacity: 0.3, roughness: 0.6, depthWrite: false, side: THREE.BackSide }));
+    vol.position.y = -depth / 2; vol.renderOrder = 2; root.add(vol);
+    // haze below the line: a translucent screen a few metres ahead of the camera, the water colour, below y = 0 only
+    built.cutawayDraw = { depth, draft: cw.draft, boat: b };
+  }
   { const me = root.children.find(c => c.userData?.ownLights); if (me) { me.updateMatrixWorld(true); built.lights = [...(built.lights || []), ...me.userData.ownLights.map(l => ({ pos: me.localToWorld(l.p.clone()), color: l.c, size: l.size }))]; } }
   setWakes(scene, root);
   focusShadow(scene, built.focus || V(0, 3, -40), built.shadow || 30);
@@ -1417,6 +1517,20 @@ async function renderCG(renderer, s) {
     ctx.restore(); ctx.globalAlpha = 1; glow2d(ctx, x, y, (l.size || 20) * SCALE, l.color, 1);
   }
   gradeToLook(ctx, look, p);
+  if (built.cutawayDraw) {
+    // the water: everything below the cut line is seen through sea water, teal near the surface and darker with depth, with shafts of light from above
+    const [, wy] = project(V(0, 0, -30), cam); ctx.save();
+    let wg = ctx.createLinearGradient(0, wy, 0, H); wg.addColorStop(0, 'rgba(120,200,195,0.6)'); wg.addColorStop(0.5, 'rgba(50,140,145,0.75)'); wg.addColorStop(1, 'rgba(20,90,105,0.85)');
+    ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = wg; ctx.fillRect(0, wy, W, H - wy);
+    wg = ctx.createLinearGradient(0, wy, 0, H); wg.addColorStop(0, 'rgba(60,170,170,0.28)'); wg.addColorStop(0.5, 'rgba(25,110,120,0.18)'); wg.addColorStop(1, 'rgba(10,60,80,0.1)');
+    ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = wg; ctx.fillRect(0, wy, W, H - wy);
+    ctx.globalCompositeOperation = 'lighter'; ctx.filter = `blur(${18 * SCALE}px)`; for (let i = 0; i < 7; i++) { const x0 = W * (i * 0.16 - 0.05) + rr() * 80 * SCALE, w0 = (60 + rr() * 90) * SCALE; const gg = ctx.createLinearGradient(0, wy, 0, H); gg.addColorStop(0, `rgba(200,240,230,${0.05 + rr() * 0.05})`); gg.addColorStop(0.8, 'rgba(200,240,230,0)'); ctx.fillStyle = gg; ctx.beginPath(); ctx.moveTo(x0, wy); ctx.lineTo(x0 + w0, wy); ctx.lineTo(x0 + w0 + 120 * SCALE, H); ctx.lineTo(x0 - 60 * SCALE, H); ctx.closePath(); ctx.fill(); }
+    ctx.filter = 'none'; ctx.globalCompositeOperation = 'source-over'; const sl = ctx.createLinearGradient(0, wy - 8 * SCALE, 0, wy + 14 * SCALE); sl.addColorStop(0, 'rgba(255,255,255,0)'); sl.addColorStop(0.35, 'rgba(235,252,250,0.9)'); sl.addColorStop(0.5, 'rgba(180,230,225,0.6)'); sl.addColorStop(1, 'rgba(255,255,255,0)'); ctx.fillStyle = sl; ctx.fillRect(0, wy - 8 * SCALE, W, 22 * SCALE);
+    ctx.restore();
+    const cd = built.cutawayDraw, bx = cd.boat.position.x + 14, [sx, sy0] = project(V(bx, 0, cd.boat.position.z), cam), [, syD] = project(V(bx, -cd.depth, cd.boat.position.z), cam), [, syK] = project(V(bx, -cd.draft, cd.boat.position.z), cam);
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 4 * SCALE; ctx.beginPath(); ctx.moveTo(sx, sy0); ctx.lineTo(sx, syD); ctx.stroke();
+    for (const [yy, t, kind] of [[sy0, 'waterline', 'light'], [syK, `draft ${cd.draft} m`, 'accent'], [syD, `depth ${cd.depth} m`, 'light']]) { ctx.beginPath(); ctx.moveTo(sx - 14 * SCALE, yy); ctx.lineTo(sx + 14 * SCALE, yy); ctx.stroke(); pill(ctx, sx + 150 * SCALE, yy + 30 * SCALE, t, kind); }
+  }
   for (const [obj, text, kind] of built.labels || []) {
     let q; if (obj.isVector3) q = obj.clone(); else { obj.updateMatrixWorld(true); q = obj.localToWorld(obj.userData.mastTop.clone()).add(V(0, 1.2, 0)); }
     const [x, y] = project(q, cam); pill(ctx, x, y, text, kind);
@@ -1726,6 +1840,77 @@ const SAMPLES = [
   },
 ];
 
+// One real question of each sea type, from docs/design/figure-types.json, rendered in the agreed looks (?set=types)
+const TYPE_SAMPLES = [
+  {
+    id: 'encounter', chip: 'encounter · bs-025', cam: 'Helm view aft · day',
+    q: 'A crew member goes over the side on a broad reach. What is the very first thing you shout and do?',
+    note: 'The helm looks aft: the casualty 70 m astern on the port quarter, the wake leading back to them.',
+    plate: { horizon: [0.42, 0.42], hfov: 66, eye: 2.3, sun: [-110, 40], windFrom: 225, seaAmp: 0.5, fog: 0.00017 },
+    look: 'backlit', own: { x: 0.6, z: -3.0, eye: 2.4, sails: true, wind: 225, heel: 10, speed: 1.0, teak: false, yaw: 180, sprayhood: false },
+    subjects(root) { const m = mob(); m.scale.setScalar(1.4); m.position.copy(brgVec(160, 18)); root.add(m); floatOn(m, 0.6, 0.6); return { focus: m.position.clone().add(V(0, 0.5, 0)), shadow: 4 }; },
+  },
+  {
+    id: 'lights', chip: 'lights · bs-040', cam: 'Helm view · night',
+    q: 'Motoring at night you see these lights on a steady bearing, closing. What vessel is it and what do you do?',
+    note: 'A white over a red, 045° relative: a power-driven vessel under 50 m crossing from starboard, her masthead over her port sidelight.',
+    plate: { horizon: [0.5, 0.5], hfov: 50, eye: 2.6, night: true, sun: [-10, 20], windFrom: 40, seaAmp: 0.8, fog: 0.00005 },
+    look: 'night', own: { x: -0.9, z: 2.6, sails: false, speed: 0.3 },
+    subjects(root, cam) {
+      const lights = [], g = new THREE.Group(); root.add(g);
+      const mb = yacht({ L: 14, hdg: 300, sails: false, speed: 0.6, stripe: '#1d2a3a' }); mb.position.copy(brgVec(45, 160)); g.add(mb); floatOn(mb, 14, 4.4);
+      const ls = yachtLights(mb, 300, cam.position, true); ls.forEach(l => l.size = 24); return { lights: ls };
+    },
+  },
+  {
+    id: 'buoy', chip: 'buoy · bs-051', cam: 'Helm view · day',
+    q: 'Entering a Mediterranean harbour from seaward you see this buoy. Which side do you leave it on?',
+    note: 'A red can with a can topmark, 35 m off the port bow; its light Fl R.',
+    plate: { horizon: [0.46, 0.46], hfov: 66, eye: 2.8, sun: [-120, 40], windFrom: 20, seaAmp: 0.25, fog: 0.00017 },
+    look: 'backlit', own: { x: -1.1, z: 0.9, eye: 2.1, sails: false, speed: 0.3, bag: true, teak: false }, coast: [[-30, 50, 1800, 60, false, 4], [-50, 70, 4200, 140, true, 9]],
+    subjects(root) { const b = buoy({ kind: 'lat-port' }); b.position.copy(brgVec(-14, 35)); root.add(b); floatOn(b, 1.5, 1.5); return { focus: b.position.clone().add(V(0, 1.5, 0)), shadow: 4 }; },
+  },
+  {
+    id: 'dayshape', chip: 'dayshape · bs-037', cam: 'Helm view · day',
+    q: 'Under sail you meet a vessel with these shapes, towing nets. Who gives way?',
+    note: 'A fishing vessel 120 m off on the starboard bow, two cones apexes together hoisted forward, her nets astern.',
+    plate: { horizon: [0.44, 0.44], hfov: 60, eye: 2.6, sun: [-100, 40], windFrom: 60, seaAmp: 0.35, fog: 0.00017 },
+    look: 'backlit', own: { x: -0.5, z: 0.4, sails: true, wind: 60, heel: 10, speed: 0.8, teak: false },
+    subjects(root) { const f = yacht({ L: 15, hdg: 240, sails: false, speed: 0.4, dayshape: 'two-cones', hull: '#2a4a6a', stripe: '#1a2430', cover: '#3a3a3a' }); f.position.copy(brgVec(25, 120)); root.add(f); floatOn(f, 15, 4.8); return { focus: f.position.clone().add(V(0, 6, 0)), shadow: 16 }; },
+  },
+  {
+    id: 'sail', chip: 'sail · bs-001', cam: 'Helm view aft · day',
+    q: 'You are at the helm, sailing with the wind over your right shoulder and the boom out to the left. Which tack are you on?',
+    note: 'From the foredeck looking aft: the boom out to port, the wind from over the starboard quarter.',
+    plate: { horizon: [0.4, 0.4], hfov: 72, eye: 2.2, sun: [-130, 45], windFrom: 45, seaAmp: 0.4, fog: 0.00017 },
+    look: 'backlit', own: { x: 0.3, z: -3.8, sails: true, wind: 45, heel: 8, speed: 1.0, teak: false, yaw: 180, bag: false, ownBoom: true },
+    subjects() { return { focus: V(0, 4, 0), shadow: 14 }; },
+  },
+  {
+    id: 'anchor', chip: 'anchor · bs-006', cam: 'Cutaway · day',
+    q: 'The anchorage shows 2.4 m on the sounder at low water. The boat\'s draft is 1.9 m. Can you stay?',
+    note: 'A cutaway: the yacht at anchor above the waterline, and below it her keel, the chain and the anchor dug into the sand, with the depth and draft marked.',
+    plate: { horizon: [0.3, 0.3], hfov: 46, eye: 0.0, sun: [-60, 38], windFrom: 200, seaAmp: 0.02, fog: 0.0006, cutaway: true, soft: 0.6, ao: false },
+    look: 'backlit', land: [{ z: -420, width: 2000, depth: 1400, maxH: 120, seed: 21, trees: 250 }], own: { x: 0, z: 22, sails: false, speed: 0, nobody: true },
+    subjects(root) {
+      const y = yacht({ hdg: 270, sails: false, anchored: true, dayshape: 'ball', bimini: true, keel: true }); y.position.set(2, 0, -20); root.add(y); floatOn(y, 12, 3.8);
+      return { focus: V(0, -1, -20), shadow: 16, cutaway: { depth: 2.4, draft: 1.9, boat: y, chainTo: V(-15, -2.4, -20) } };
+    },
+  },
+  {
+    id: 'bay', chip: 'bay · bs-065', cam: 'Drone view · day',
+    q: 'A hot sunny morning, calm. By 14:00 a steady 15-knot onshore wind has set in. What is it?',
+    note: 'The bay from above at 14:00: the hot land behind the beach, the cool sea, the wind arrow blowing onshore.',
+    plate: { clean: true, pitch: -20, yaw: 28, hfov: 60, eye: 80, sun: [-120, 55], windFrom: 180, haze: 0.0004 },
+    look: 'backlit', land: [{ z: -230, width: 5000, depth: 1700, maxH: 650, seed: 31, trees: 1400 }], village: [[-34, 282, 9], [-16, 294, 7]],
+    subjects(root) {
+      const r2 = rng(3); for (const [b, d] of [[-56, 105], [-38, 150], [-18, 100], [-6, 175]]) { const y = yacht({ hdg: 180 + (r2() - 0.5) * 20, sails: false, anchored: true, sprayhood: r2() < 0.5 }); y.position.copy(brgVec(b, d)); root.add(y); floatOn(y, 12, 3.8); }
+      const ar = flatArrow(V(-55, 0, -140), 0, 85, 20, '#ff2a1a'); ar.userData.noReflect = true; root.add(ar);
+      return { focus: V(0, 3, -150), shadow: 110, labels: [[V(-105, 0, -205), 'Wind', 'red'], [V(-200, 20, -520), 'LAND · hot', 'light'], [V(-62, 0, -112), 'SEA · cool', 'accent']] };
+    },
+  },
+];
+
 async function main() {
   await Promise.all([document.fonts.load('700 34px Carlito'), document.fonts.load('400 17px Merriweather')]).catch(() => {});
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true, logarithmicDepthBuffer: true });
@@ -1737,11 +1922,12 @@ async function main() {
   if (new URLSearchParams(location.search).get('view')) { document.querySelector('main').style.cssText = 'max-width:none;padding:0;margin:0'; for (const el of document.querySelectorAll('main > :not(#samples)')) el.remove(); }
   window.__renders = {};
   const only = new URLSearchParams(location.search).get('only'), mode = new URLSearchParams(location.search).get('mode');
+  const SET = new URLSearchParams(location.search).get('set') === 'types' ? TYPE_SAMPLES : SAMPLES;
   for (const [k, v] of new URLSearchParams(location.search)) {
     if (k.startsWith('d.')) { const path = k.slice(2).split('.'); let o = DAY; while (path.length > 1) o = o[path.shift()]; o[path[0]] = isNaN(+v) ? v : +v; }
     if (k.startsWith('l.')) { const [, look, key] = k.split('.'); LOOKS[look][key] = isNaN(+v) ? v : +v; }
   }
-  for (const s of SAMPLES) {
+  for (const s of SET) {
     if (only && !only.split(',').includes(s.id)) continue;
     const env = s.cam.includes('night') ? NIGHT : DAY;
     renderer.toneMappingExposure = env.exposure;

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Figure types</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Carlito:wght@400;700&display=swap">
+<link rel="stylesheet" href="app.css">
+<style>
+  body { background: #fff; font-family: 'Merriweather', Georgia, serif; }
+  main.screen { width: auto; min-height: 0; padding: 32px 40px 48px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 40px; }
+  .card { border: 2px solid var(--line); border-radius: 18px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .fig { width: 100%; border-radius: 12px; overflow: hidden; background: var(--band); }
+  .fig svg { display: block; width: 100%; }
+  .type { font-family: 'Carlito', Arial, sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .02em; color: var(--accent); }
+  .type b { color: var(--muted); font-weight: 700; margin-left: 10px; text-transform: none; letter-spacing: 0; }
+  .q { font-size: 15px; line-height: 1.4; color: var(--ink); }
+  h1 { font-weight: 300; font-size: 34px; margin: 0 0 6px; letter-spacing: -.02em; }
+  .lede { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <h1>Every figure type, as drawn today</h1>
+  <p class="lede">One real question of each of the 14 types, rendered by figures.js in the day theme. Counts are across all nine banks.</p>
+  <div class="grid" id="grid"></div>
+</main>
+<script src="figures.js"></script>
+<script>
+(async () => {
+  const picked = await (await fetch('figure-types.json')).json();
+  const counts = { card: 3599, race: 569, chart: 320, lights: 154, encounter: 137, panel: 89, rope: 72, bay: 71, sail: 47, buoy: 33, isobars: 31, anchor: 29, dayshape: 21, compass: 21 };
+  const order = ['encounter', 'lights', 'buoy', 'dayshape', 'sail', 'anchor', 'bay', 'race', 'chart', 'panel', 'rope', 'isobars', 'compass', 'card'];
+  const grid = document.getElementById('grid');
+  for (const t of order) {
+    const p = picked[t]; if (!p) continue;
+    const el = document.createElement('div'); el.className = 'card';
+    el.innerHTML = `<div class="type">${t} <b>${counts[t]} questions · ${p.level} ${p.id}</b></div><div class="fig" data-fig='${JSON.stringify(p.figure).replace(/'/g, '&#39;')}'></div><div class="q">${p.q}</div>`;
+    grid.append(el);
+  }
+  paintFigures(document);
+  document.body.dataset.done = '1';
+})();
+</script>
+</body>
+</html>
