@@ -207,7 +207,7 @@ const STR = {
     adminT: 'Admin', adminMeta: 'Students, charts and reported questions',
     tabOverview: 'Overview', tabStudents: 'Students', tabReported: 'Reported', tabFlagged: 'Flagged',
     overviewMeta: 'How the app is used, day by day',
-    chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chErrors: 'Errors logged', chRange: 'Period', chNone: 'No numbers for the charts yet',
+    chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chErrors: 'Errors logged', chRange: 'Period', chLearning: 'Learning now, by course', chLearnNone: 'Nobody studied in this period', chNone: 'No numbers for the charts yet',
     rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
     chNote: (r) => ({ '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '3m': 'last 3 months' })[r],
     unflagOne: 'Remove', unflagAll: (n) => `Remove from all ${n}`, confirmUnflagAll: (n) => `Remove this flag for all ${pl(n, 'student')}?`,
@@ -319,7 +319,7 @@ const STR = {
     adminT: 'Админ-панель', adminMeta: 'Ученики, графики и вопросы с ошибками',
     tabOverview: 'Обзор', tabStudents: 'Ученики', tabReported: 'Ошибки', tabFlagged: 'Отмечены',
     overviewMeta: 'Как пользуются приложением, по дням',
-    chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chErrors: 'Ошибки в приложении', chRange: 'Период', chNone: 'Для графиков пока нет данных',
+    chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chErrors: 'Ошибки в приложении', chRange: 'Период', chLearning: 'Сейчас изучают, по курсам', chLearnNone: 'За этот период никто не занимался', chNone: 'Для графиков пока нет данных',
     rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
     chNote: (r) => ({ '24h': 'за 24 часа', '7d': 'за 7 дней', '30d': 'за 30 дней', '3m': 'за 3 месяца' })[r],
     unflagOne: 'Снять', unflagAll: (n) => `Снять у всех (${n})`, confirmUnflagAll: (n) => `Снять эту отметку у всех (${pl(n, 'student')})?`,
@@ -892,13 +892,29 @@ function buckets(range) {
   }
   return out;
 }
-// The range switch, then the charts. The series of a server that does not count reads or errors yet has 0s for them.
+// The range switch, the courses being learnt, then the charts over time. The series of a server that does not count
+// reads or errors yet has 0s for them.
 function dailyCharts() {
-  if (!ADM_SERIES || !ADM_SERIES.day.length) return `<p class="card-meta">${t('chNone')}</p>`;
-  const rows = buckets(CH_RANGE);
   const sw = RANGES.map((r) => `<button class="lang${r === CH_RANGE ? ' lang-on' : ''}" role="radio" aria-checked="${r === CH_RANGE}" data-act="range" data-r="${r}">${t('rg' + r)}</button>`).join('');
+  const series = ADM_SERIES && ADM_SERIES.day.length ? CHARTS.map(([k, title, cls]) => dayChart(buckets(CH_RANGE), k, t(title), cls)).join('') : `<p class="card-meta">${t('chNone')}</p>`;
   return `<div class="dhead dtop"><span class="kicker">${esc(t('chNote', CH_RANGE))}</span><div class="langs dsw" role="radiogroup" aria-label="${esc(t('chRange'))}">${sw}</div></div>` +
-    CHARTS.map(([k, title, cls]) => dayChart(rows, k, t(title), cls)).join('');
+    learningChart() + series;
+}
+// Learning now: the students active in the range (their last sync), by the course they are on (studentLevel: the one
+// they picked last, else the one they have seen most of), most first. Students with no answers yet are not counted.
+const RANGE_MS = { '24h': 864e5, '7d': 7 * 864e5, '30d': 30 * 864e5, '3m': 91 * 864e5 };
+function learningChart() {
+  const from = Date.now() - RANGE_MS[CH_RANGE], per = new Map();
+  for (const u of Array.isArray(ADM) ? ADM : []) {
+    if (!(Date.parse(u.active) >= from)) continue;
+    const s = studentLevel(u);
+    if (s) per.set(s.lv, (per.get(s.lv) || 0) + 1);
+  }
+  const rows = [...per].sort((a, b) => b[1] - a[1]), total = rows.reduce((a, r) => a + r[1], 0), max = Math.max(1, ...rows.map((r) => r[1]));
+  const bars = rows.map(([lv, n]) => `<div class="dbar"><span class="card-meta">${esc(lv.title)}</span><span class="dtrack"><i style="width:${Math.max(2, (n / max) * 100)}%"></i></span><b>${n}</b></div>`).join('');
+  return `<div class="dchart${CH_GROW ? ' grow' : ''}">
+    <div class="dhead"><div class="stack"><span class="kicker">${esc(t('chLearning'))}</span><span class="meta dread"><b>${total}</b> ${esc(t('studentsW', total))}</span></div></div>
+    ${rows.length ? `<div class="dbars">${bars}</div>` : `<p class="card-meta">${t('chLearnNone')}</p>`}</div>`;
 }
 // One chart: the title and its total; a bar per bucket, the highest marked on a dashed line, the first and last bucket
 // under it. Pointing at (or tapping) a bar puts its label and number in place of the total (chartPoint); a hidden

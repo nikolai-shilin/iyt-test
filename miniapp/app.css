@@ -367,6 +367,15 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .dplot:has(> .on) > div:not(.on) i { opacity: .35; }
 .app .dx { margin-top: -2px; }
 .app .dx span { font: 700 11px 'Carlito', Arial, sans-serif; text-transform: uppercase; color: var(--muted); }
+/* Learning now: a row per course, its name, a bar on a faint track and the number of students */
+.app .dbars { display: flex; flex-direction: column; gap: 8px; }
+.app .dbar { display: grid; grid-template-columns: minmax(0, 10.5em) 1fr 2.5em; align-items: center; gap: 10px; }
+.app .dbar .card-meta { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.app .dtrack { height: 10px; border-radius: 5px; background: var(--line); overflow: hidden; }
+.app .dtrack i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
+.app .dbar b { text-align: right; color: var(--ink); font: 700 14px/1 'Carlito', Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.app .in .dtrack i, .app .dchart.grow .dtrack i { transform-origin: left; animation: growX .45s var(--ease-out) both; }
+@media (prefers-reduced-motion: reduce) { .app .in .dtrack i, .app .dchart.grow .dtrack i { animation: none; } }
 .app .in .dplot i, .app .dchart.grow .dplot i { transform-origin: bottom; animation: growY .45s var(--ease-out) both; }
 @media (prefers-reduced-motion: reduce) { .app .in .dplot i, .app .dchart.grow .dplot i { animation: none; } }
 /* C4 a flagged question's sheet: each student opens their results; Remove takes the flag off */
