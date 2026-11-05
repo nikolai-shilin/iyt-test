@@ -38,7 +38,7 @@
         { "p": "Pole, zenith and Sun make a triangle. You know two sides, 90° − Lat and 90° − Dec, and the angle between them at the pole, the LHA. Solving it gives 90° − **Hc**, the altitude seen from that position, and the **azimuth**." },
         { "fig": { "type": "sphere", "parts": [["Z", "Z"], ["P", "P"], ["X", "X"], ["pz", "90° − Lat"], ["px", "90° − Dec"], ["zx", "90° − Hc"], ["horizon", "horizon"], ["equator", "equator"]] }, "cap": "Angle at P: the LHA. Angle at Z: the azimuth." },
         { "p": "By calculator, sin Hc = sin Lat sin Dec + cos Lat cos Dec cos LHA, a contrary-name Dec negative, from any position: use the DR." },
-        { "p": "**HO 249** tabulates whole degrees, so you work from an **assumed position**: the nearest whole degree of latitude, and a longitude within 30′ of it that makes LHA whole (in west longitude the GHA's minutes, in east 60′ minus them). Enter the same- or contrary-name page with the whole degree of Dec, correct Hc with d. Both workings plot the same line." },
+        { "p": "**HO 249** tabulates whole degrees, so you work from an **assumed position**: the nearest whole degree of latitude, and a longitude within 30′ of the DR longitude that makes LHA whole (in west longitude the GHA's minutes, in east 60′ minus them). Enter the same- or contrary-name page with the whole degree of Dec, correct Hc with d. Both workings plot the same line." },
         { "table": { "head": ["Latitude", "LHA over 180°", "LHA under 180°"], "rows": [
           ["North", "Zn = Z", "Zn = 360° − Z"],
           ["South", "Zn = 180° − Z", "Zn = 180° + Z"]

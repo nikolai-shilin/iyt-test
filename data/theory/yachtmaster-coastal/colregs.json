@@ -83,7 +83,7 @@
           { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 52 }, { "c": "g", "x": 160, "y": 72 }, { "c": "g", "x": 150, "y": 122 }, { "c": "r", "x": 170, "y": 122 }] }, "view": "60 20 200 150", "name": "Under sail" },
           { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 104, "y": 70 }, { "c": "w", "x": 216, "y": 98 }], "hull": "M84 126 L236 126 L232 142 L100 142 Z" }, "view": "60 20 200 150", "name": "Anchored, over 50 m" }
         ], "cols": 2 },
-        { "p": "Under engine show masthead light, sidelights and sternlight; the tricolour, or red over green, only under sail, never both. Under 7 m and 7 knots, or anchored under 50 m, one all-round white will do." }
+        { "p": "Under engine show masthead light, sidelights and sternlight; the tricolour, or red over green, only under sail, never both. Under 7 m and 7 knots, or anchored under 50 m, one all-round white suffices." }
       ]
     },
     {
@@ -128,7 +128,7 @@
           ["— — • •", "Overtaking to port"],
           ["— • — •", "Agreed, overtake"]
         ] } },
-        { "p": "**Restricted visibility** includes heavy rain: lights on by day, fog signals sounding. Nobody stands on (Rule 19). With a radar target forward of the beam, avoid turning to port unless overtaking her; with one abeam or abaft, avoid turning towards her. A fog signal heard forward of the beam: bare steerage way, or stop. In sight again, the usual rules return." },
+        { "p": "**Restricted visibility** includes heavy rain: lights on by day, fog signals sounding. Nobody stands on (Rule 19). With a radar target forward of the beam, avoid turning to port unless overtaking her; with one abeam or abaft, avoid turning towards her. A fog signal heard forward of the beam: bare steerage way, or stop. In sight, normal rules." },
         { "tiles": [
           { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": -20, "dist": 88, "hdg": 170, "label": "Target" }, "bearingLine": true }, "view": "50 -6 220 190", "name": "Forward: to starboard" },
           { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 120, "dist": 62, "hdg": 345, "label": "Target" }, "bearingLine": true }, "view": "50 -6 220 190", "name": "Abaft: turn away" }
@@ -136,14 +136,14 @@
         { "table": { "head": ["Rule 35, every 2 min", "In fog"], "rows": [
           ["—", "Power, making way"],
           ["— —", "Power, stopped"],
-          ["— • •", "Sail, towing, hampered, fishing (also anchored)"],
+          ["— • •", "Sail, fishing, towing, restricted, not under command, constrained (fishing, restricted: also anchored)"],
           ["— • • •", "Manned tow"],
           ["• • • •", "Pilot, added"],
           ["Bell, each minute", "At anchor"],
           ["• — •", "At anchor, warning"],
           ["3 strokes, bell, 3 strokes", "Aground"]
         ] } },
-        { "p": "Motor-sailing, you sound as power. Under 12 m, any efficient signal will do. Distress (Annex IV): red rockets and flares, orange smoke, flags N over C, a square flag with a ball; not a white flare or flag V." }
+        { "p": "Motor-sailing, you sound as power. Under 12 m, any efficient signal. Distress (Annex IV): red rockets and flares, orange smoke, flags N over C, a square flag with a ball; not a white flare or flag V." }
       ]
     }
   ]
