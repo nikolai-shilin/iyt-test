@@ -211,7 +211,9 @@ function braid(points, o) {
   const R = o.R, path = new THREE.CatmullRomCurve3(points, false, 'centripetal'); path.arcLengthDivisions = 6000;
   const L = path.getLength(), n = Math.ceil(L / (R * 0.5)), P = path.getSpacedPoints(n);
   const m = new THREE.MeshPhysicalMaterial({ map: braidTex(o.base, o.fleck), bumpMap: braidTex(o.base, o.fleck, true), bumpScale: 1.5, roughness: o.shiny ? 0.32 : 0.72, sheen: o.shiny ? 0.2 : 0.5, sheenRoughness: 0.5, sheenColor: new THREE.Color('#ffffff') });
-  const g = new THREE.Group(), t = new THREE.Mesh(tubeFromPoints(P, R, 16, 2 * Math.PI * R), m); t.castShadow = t.receiveShadow = true; g.add(t);
+  if (o.fine) { m.map.repeat.set(o.fine, o.fine); m.bumpMap.repeat.set(o.fine, o.fine); }
+  const g = new THREE.Group(), t = new THREE.Mesh(tubeFromPoints(P, R, 20, 2 * Math.PI * R), m); t.castShadow = t.receiveShadow = true; g.add(t);
+  t.userData = { center: P, R, ds: L / n, per: 21 };
   if (o.whip) g.add(whipping(P[n], P[n].clone().sub(P[n - 1]).normalize(), R, o.whip));
   if (o.whipStart) g.add(whipping(P[0], P[0].clone().sub(P[1]).normalize(), R, o.whipStart));
   return g;
@@ -244,7 +246,7 @@ function teakMat(wid, dep) {
 }
 const box = (scene, size, at, m, rot = 0) => { const b = new THREE.Mesh(new THREE.BoxGeometry(...size), m); b.position.set(...at); b.rotation.y = rot; b.castShadow = b.receiveShadow = true; scene.add(b); return b; };
 const cylY = (scene, r, h, at, m, seg = 20) => { const c = new THREE.Mesh(new THREE.CylinderGeometry(r, r, h, seg), m); c.position.set(...at); c.castShadow = c.receiveShadow = true; scene.add(c); return c; };
-function waterPlane(scene, y) { const wn = noiseNormal(256, 16, 4); wn.repeat.set(12, 12); const w = new THREE.Mesh(new THREE.PlaneGeometry(40, 40).rotateX(-Math.PI / 2), new THREE.MeshPhysicalMaterial({ color: '#1f4a54', roughness: 0.05, normalMap: wn, normalScale: new THREE.Vector2(0.35, 0.35) })); w.position.y = y; scene.add(w); }
+function waterPlane(scene, y) { const wn = noiseNormal(256, 32, 4); wn.repeat.set(40, 40); const w = new THREE.Mesh(new THREE.PlaneGeometry(40, 40).rotateX(-Math.PI / 2), new THREE.MeshPhysicalMaterial({ color: '#173f49', roughness: 0.12, normalMap: wn, normalScale: new THREE.Vector2(0.18, 0.18) })); w.position.y = y; scene.add(w); }
 function lifelines(scene, xs, z, deckY, x0, x1) {
   for (const x of xs) { cylY(scene, 0.0125, 0.62, [x, deckY + 0.31, z], chrome, 14); cylY(scene, 0.03, 0.012, [x, deckY + 0.006, z], chrome, 14); }
   for (const y of [deckY + 0.3, deckY + 0.6]) { const l = new THREE.Mesh(new THREE.CylinderGeometry(0.0042, 0.0042, x1 - x0, 8).rotateZ(Math.PI / 2), new THREE.MeshPhysicalMaterial({ color: '#f2f2ee', roughness: 0.3, clearcoat: 0.5 })); l.position.set((x0 + x1) / 2, y, z); l.castShadow = true; scene.add(l); }
@@ -261,20 +263,35 @@ function kindRing() {
 }
 
 // winch: a genoa sheet with three turns on a self-tailing winch, into the jaws, the tail coiled on the seat, the handle left in
-function winchKit(y0) {
+function winchKit(y0, o = {}) {
   const g = new THREE.Group(), L = (pts, m) => { const me = new THREE.Mesh(new THREE.LatheGeometry(pts.map(([r, y]) => new THREE.Vector2(r, y)), 96), m); me.castShadow = me.receiveShadow = true; g.add(me); };
+  const dark = new THREE.MeshStandardMaterial({ color: '#0b0c0d', roughness: 0.6 });
   L([[0, 0], [0.1, 0], [0.103, 0.006], [0.099, 0.014], [0.085, 0.02]], satin);
+  for (let k = 0; k < 6; k++) { const a = k / 6 * Math.PI * 2 + 0.3, b = new THREE.Mesh(new THREE.CylinderGeometry(0.0065, 0.0065, 0.004, 6), chrome); b.position.set(Math.cos(a) * 0.092, 0.017, Math.sin(a) * 0.092); g.add(b); }
   L([[0.085, 0.02], [0.078, 0.026], [0.07, 0.034], [0.068, 0.06], [0.0675, 0.085], [0.069, 0.104], [0.075, 0.112], [0.08, 0.116], [0.072, 0.117]], chrome);
   for (let k = 0; k < 44; k++) { const a = k / 44 * Math.PI * 2, rb = new THREE.Mesh(new THREE.BoxGeometry(0.0035, 0.064, 0.0028), chrome); rb.position.set(Math.cos(a) * 0.0695, 0.069, Math.sin(a) * 0.0695); rb.rotation.y = -a; g.add(rb); }
+  // the self-tailer: a black jaw ring with ridged faces, a stripper arm that lifts the line off the drum
   L([[0.072, 0.117], [0.088, 0.118], [0.091, 0.126], [0.066, 0.137], [0.091, 0.148], [0.088, 0.156], [0.072, 0.158]], blackAnod);
+  for (let k = 0; k < 48; k++) { const a = k / 48 * Math.PI * 2, rb = new THREE.Mesh(new THREE.BoxGeometry(0.014, 0.0025, 0.0028), blackAnod); rb.position.set(Math.cos(a) * 0.08, 0.1585, Math.sin(a) * 0.08); rb.rotation.y = -a; g.add(rb); }
   L([[0.072, 0.158], [0.075, 0.161], [0.07, 0.17], [0.045, 0.177], [0, 0.179]], chrome);
-  const arm = new THREE.Mesh(new RoundedBoxGeometry(0.055, 0.012, 0.022, 2, 0.004), blackAnod), aa = -0.12 * Math.PI; arm.position.set(Math.cos(aa) * 0.1, 0.122, Math.sin(aa) * 0.1); arm.rotation.y = -aa; arm.castShadow = true; g.add(arm);
-  // the handle, left in the socket: alloy arm, black grip
-  const hd = V(1, 0, -0.35).normalize(), ha = Math.atan2(hd.z, hd.x);
-  const sp = new THREE.Mesh(new THREE.CylinderGeometry(0.011, 0.011, 0.03, 16), satin); sp.position.set(0, 0.188, 0); g.add(sp);
-  const harm = new THREE.Mesh(new RoundedBoxGeometry(0.25, 0.014, 0.028, 2, 0.006), satin); harm.position.copy(hd.clone().multiplyScalar(0.115)).setY(0.203); harm.rotation.y = -ha; harm.castShadow = true; g.add(harm);
-  const grip = new THREE.Mesh(new THREE.CapsuleGeometry(0.017, 0.085, 6, 18), rubber); grip.position.copy(hd.clone().multiplyScalar(0.235)).setY(0.262); grip.castShadow = true; g.add(grip);
-  g.position.y = y0; g.userData.grip = grip.position.clone().setY(y0 + 0.31);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.056, 0.0012, 6, 64).rotateX(Math.PI / 2), dark); ring.position.y = 0.1735; g.add(ring);
+  const socket = new THREE.Mesh(new THREE.CylinderGeometry(0.017, 0.017, 0.002, 8), dark); socket.position.y = 0.1795; g.add(socket);
+  const arm = new THREE.Mesh(new RoundedBoxGeometry(0.06, 0.012, 0.024, 2, 0.004), blackAnod), aa = -0.12 * Math.PI; arm.position.set(Math.cos(aa) * 0.1, 0.122, Math.sin(aa) * 0.1); arm.rotation.y = -aa; arm.castShadow = true; g.add(arm);
+  const feeder = new THREE.Mesh(new THREE.TorusGeometry(0.012, 0.004, 8, 16, Math.PI), blackAnod); feeder.position.set(Math.cos(aa) * 0.128, 0.122, Math.sin(aa) * 0.128); feeder.rotation.set(0, -aa, Math.PI / 2); g.add(feeder);
+  if (o.handle !== false) {
+    // a lock-in handle: alloy hub with its release button, a tapered arm, a ridged grip
+    const hd = V(1, 0, -0.35).normalize(), ha = Math.atan2(hd.z, hd.x);
+    const sp = new THREE.Mesh(new THREE.CylinderGeometry(0.011, 0.011, 0.03, 16), satin); sp.position.set(0, 0.188, 0); g.add(sp);
+    const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.022, 0.024, 0.026, 24), satin); hub.position.set(0, 0.205, 0); hub.castShadow = true; g.add(hub);
+    const btn = new THREE.Mesh(new THREE.CylinderGeometry(0.009, 0.009, 0.008, 16), new THREE.MeshStandardMaterial({ color: '#b3261e', roughness: 0.4 })); btn.position.set(0, 0.221, 0); g.add(btn);
+    const sh = new THREE.Shape(); sh.moveTo(0, -0.017); sh.lineTo(0.24, -0.012); sh.quadraticCurveTo(0.262, 0, 0.24, 0.012); sh.lineTo(0, 0.017); sh.closePath();
+    const harm = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: 0.012, bevelEnabled: true, bevelThickness: 0.003, bevelSize: 0.003, bevelSegments: 2 }).rotateX(Math.PI / 2), satin); harm.position.set(0, 0.214, 0); harm.rotation.y = -ha; harm.castShadow = true; g.add(harm);
+    const gp = hd.clone().multiplyScalar(0.235);
+    const grip = new THREE.Mesh(new THREE.CapsuleGeometry(0.017, 0.085, 6, 18), rubber); grip.position.copy(gp).setY(0.262); grip.castShadow = true; g.add(grip);
+    for (const dy of [-0.03, 0, 0.03]) { const r = new THREE.Mesh(new THREE.TorusGeometry(0.0172, 0.0018, 6, 24).rotateX(Math.PI / 2), rubber); r.position.copy(gp).setY(0.262 + dy); g.add(r); }
+    g.userData.grip = gp.clone().setY(y0 + 0.31);
+  }
+  g.position.y = y0;
   return g;
 }
 function kindWinch() {
@@ -287,18 +304,31 @@ function kindWinch() {
   box(scene, [3, 0.05, 0.03], [0, -0.125, -0.97], satin);           // toe rail
   box(scene, [3, 1.0, 0.04], [0, -0.65, -1.0], gelMat);
   lifelines(scene, [-0.95, 0.75], -0.94, -0.15, -1.5, 1.5);
-  const y0 = 0.02, w = winchKit(y0); scene.add(w);
-  const R = 0.006, rT = 0.077, rJ = 0.074, yJ = y0 + 0.137, pts = [V(-1.5, 0.078, -0.086), V(-0.9, 0.07, -0.083), V(-0.4, 0.062, -0.08), V(-0.12, y0 + 0.042, -rT)];
-  const th0 = -Math.PI / 2, thT = th0 + 6 * Math.PI, thJ0 = thT + 0.9 * Math.PI, thE = thJ0 + 1.2 * Math.PI, st = Math.PI / 12;
+  // moulded winch pads on the coaming, the primary with the sheet, a secondary aft, a handle pocket on the cockpit side
+  for (const [x, sc] of [[0, 1], [0.78, 0.82]]) { const pad = new THREE.Mesh(new RoundedBoxGeometry(0.3 * sc, 0.03, 0.34, 3, 0.012), gelMat); pad.position.set(x, 0.035, 0); pad.castShadow = pad.receiveShadow = true; scene.add(pad); }
+  const y0 = 0.05, w = winchKit(y0); scene.add(w);
+  { const w2 = winchKit(0, { handle: false }); w2.scale.setScalar(0.82); w2.position.set(0.78, y0, 0); scene.add(w2); }
+  { const pk = new THREE.Mesh(new RoundedBoxGeometry(0.15, 0.22, 0.06, 3, 0.015), new THREE.MeshStandardMaterial({ color: '#232527', roughness: 0.55 })); pk.position.set(-0.5, -0.17, 0.21); pk.castShadow = true; scene.add(pk);
+    const mouth = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.004, 0.035), new THREE.MeshStandardMaterial({ color: '#050505', roughness: 1 })); mouth.position.set(-0.5, -0.058, 0.215); scene.add(mouth); }
+  // the genoa track on the side deck, its car with a sheave: the sheet comes down from the clew, round the sheave and aft to the winch
+  for (let x = -1.8; x < -0.6; x += 0.3) { const t = new THREE.Mesh(new THREE.BoxGeometry(0.302, 0.014, 0.03), satin); t.position.set(x + 0.15, -0.143, -0.6); t.receiveShadow = true; scene.add(t); }
+  const cx = -1.0, cy = -0.085, cz = -0.6;
+  { const car = new THREE.Mesh(new RoundedBoxGeometry(0.17, 0.03, 0.055, 2, 0.008), blackAnod); car.position.set(cx, -0.12, cz); car.castShadow = true; scene.add(car);
+    for (const dz of [-0.022, 0.022]) { const ch = new THREE.Mesh(new RoundedBoxGeometry(0.095, 0.085, 0.006, 2, 0.003), chrome); ch.position.set(cx, cy, cz + dz); ch.castShadow = true; scene.add(ch); }
+    const sv = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.03, 32).rotateX(Math.PI / 2), blackAnod); sv.position.set(cx, cy, cz); scene.add(sv);
+    const knob = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 0.03, 16), new THREE.MeshStandardMaterial({ color: '#b3261e', roughness: 0.4 })); knob.position.set(cx - 0.075, -0.1, cz); scene.add(knob); }
+  const R = 0.006, rT = 0.077, rJ = 0.074, yJ = y0 + 0.137, rs = 0.032;
+  const pts = [V(-4.2, 2.3, -1.25), V(-2.6, 1.1, -0.95), V(-1.5, 0.25, -0.7), V(cx - rs, cy, cz), V(cx - rs * 0.7, cy - rs * 0.7, cz), V(cx, cy - rs, cz), V(cx + rs * 0.7, cy - rs * 0.7, cz), V(cx + rs, cy, cz), V(-0.6, -0.02, -0.38), V(-0.25, y0 + 0.022, -0.18)];
+  const th0 = -1.06, thT = th0 + 6 * Math.PI, thJ0 = thT + 0.9 * Math.PI, thE = thJ0 + 1.2 * Math.PI, st = Math.PI / 12;
   for (let th = th0; th <= thT + 1e-6; th += st) { const t = (th - th0) / (thT - th0); pts.push(V(rT * Math.cos(th), y0 + 0.036 + 0.054 * t, rT * Math.sin(th))); }
   for (let th = thT + st; th <= thJ0 + 1e-6; th += st) { const t = (th - thT) / (thJ0 - thT), r = rT + (rJ - rT) * t; pts.push(V(r * Math.cos(th), y0 + 0.09 + (yJ - y0 - 0.09) * t * t * (3 - 2 * t), r * Math.sin(th))); }
   for (let th = thJ0 + st; th <= thE + 1e-6; th += st) pts.push(V(rJ * Math.cos(th), yJ, rJ * Math.sin(th)));
   const E = pts[pts.length - 1];
-  pts.push(E.clone().add(V(0.045, -0.004, 0.016)), V(0.13, y0 + 0.11, -0.02), V(0.2, 0.07, 0.06), V(0.25, 0.034, 0.14), V(0.27, 0.027, 0.19), V(0.28, 0.004, 0.21), V(0.285, -0.15, 0.208), V(0.29, -0.3, 0.226), V(0.31, -0.344, 0.29));
+  pts.push(E.clone().add(V(0.04, -0.004, 0.035)), V(0.15, y0 + 0.1, 0.03), V(0.21, 0.07, 0.09), V(0.25, 0.034, 0.15), V(0.27, 0.027, 0.19), V(0.28, 0.004, 0.21), V(0.285, -0.15, 0.208), V(0.29, -0.3, 0.226), V(0.31, -0.344, 0.29));
   pts.push(...coilPts(V(0.31, 0, 0.29), V(0.48, 0, 0.45), { loops: 3, r: 0.13, R, y: -0.35 }));
   scene.add(braid(pts, { R, base: '#f1efe8', fleck: '#1f3f78', whip: '#f4f1e6' }));
-  const cam = new THREE.PerspectiveCamera(38, W / H, 0.02, 60); cam.position.set(0.52, 0.95, 1.08); cam.lookAt(V(0.1, -0.04, 0.12));
-  return { scene, cam, labels: [[V(-0.5, 0.068, -0.081), 'sheet'], [V(0.286, -0.12, 0.21), 'tail'], [w.userData.grip, 'handle still in the winch']], sun: { pos: [1.6, 3.2, 0.9], target: [0, 0, 0], box: 1.4 }, ao: 0.05 };
+  const cam = new THREE.PerspectiveCamera(40, W / H, 0.02, 60); cam.position.set(0.5, 1.0, 1.15); cam.lookAt(V(-0.12, -0.08, -0.05));
+  return { env: 'outdoor', scene, cam, labels: [[V(-0.62, -0.02, -0.39), 'sheet'], [V(0.286, -0.12, 0.21), 'tail'], [w.userData.grip, 'handle still in the winch']], sun: { pos: [1.6, 3.2, 0.9], target: [-0.3, 0, -0.2], box: 1.8 }, ao: 0.05 };
 }
 
 // cleat: a loaded stern line through the fairlead and made fast on a deck cleat, the tail coiled
@@ -336,84 +366,120 @@ function kindCleat() {
   return { scene, cam, labels: [[V(-0.47, -0.17, -0.74), 'load'], [V(0.13, 0.11, -0.01), 'cleat on board']], note: 'Line bar tight', sun: { pos: [-1.4, 3.0, 1.2], target: [0, 0, -0.2], box: 1.6 }, ao: 0.05 };
 }
 
-// rail: seen from the pontoon, a yacht alongside: curved topsides with sheer and flare, stripes, hull windows, rubbing strake,
-// perforated toe rail, stanchions and guardrail, chainplates and shrouds to the mast, coachroof with windows and a teak grab rail.
-// A fender hangs between hull and pontoon; its line runs over the top guardrail with the end not yet made fast.
+// rail: standing on the pontoon, looking forward along a yacht alongside. A shaped hull (bow drawn in to the stem, sheer
+// rising forward), pulpit, forestay with the furled genoa, mast and shrouds, coachroof, sprayhood, boom with its stack-pack,
+// a spring line to the pontoon cleat. A fender hangs between hull and pontoon; its line runs over the top guardrail, the end
+// not yet made fast.
 function kindRail() {
   const scene = new THREE.Scene();
   scene.background = canvasTex(4, 256, (ctx, w, h) => { const g = ctx.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#8fb3cf'); g.addColorStop(0.7, '#c9dae4'); g.addColorStop(1, '#e3e9ea'); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); });
   scene.background.wrapS = scene.background.wrapT = THREE.ClampToEdgeWrapping;
   waterPlane(scene, -0.95);
-  const sh = x => 0.004 * x * x, pl = x => 0.012 * x * x;              // sheer rises, the plan narrows towards the ends
-  const X0 = -4.6, X1 = 4.6, NX = 140;
-  // a surface over a (x, v) grid
+  const zc = 1.28;
+  const hb = x => 1.8 * Math.sqrt(Math.max(0, 1 - ((x - 0.6) / 7.1) ** 2));        // half beam at the deck edge
+  const hbw = x => 1.66 * Math.sqrt(Math.max(0, 1 - ((x - 0.6) / 6.2) ** 2));      // at the waterline: the bow overhangs
+  const sh = x => 0.006 * (x - 1.5) ** 2;                                            // sheer, rising to the bow
+  const X0 = -6.45, X1 = 5.5, NX = 180;
+  const edge = x => V(x, sh(x), zc - hb(x));
+  const outN = x => { const d = (hb(x + 0.01) - hb(x - 0.01)) / 0.02, t = V(1, 0, -d).normalize(); return V(t.z, 0, -t.x); };
   const surface = (fn, nv, m) => { const pos = [], idx = []; for (let i = 0; i <= NX; i++) for (let j = 0; j <= nv; j++) { const p = fn(X0 + (X1 - X0) * i / NX, j / nv); pos.push(p.x, p.y, p.z); }
     for (let i = 0; i < NX; i++) for (let j = 0; j < nv; j++) { const a = i * (nv + 1) + j, b = a + nv + 1; idx.push(a, b, a + 1, b, b + 1, a + 1); }
-    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals(); const me = new THREE.Mesh(g, m); me.castShadow = me.receiveShadow = true; me.material.side = THREE.DoubleSide; scene.add(me); return me; };
-  // topsides: waterline (v 0, y -0.95) to deck edge (v 1), flaring out a little, the ends drawn in
-  const hullAt = (x, v, off = 0) => V(x, -0.97 + v * (0.97 + sh(x)), -0.455 - 0.065 * v + pl(x) * (0.4 + 0.6 * v) - off);
-  surface((x, v) => hullAt(x, v), 24, gelMat.clone());
-  const band = (v0, v1, color, rough = 0.3) => surface((x, v) => hullAt(x, v0 + (v1 - v0) * v, 0.0015), 2, new THREE.MeshPhysicalMaterial({ color, roughness: rough, clearcoat: 0.8, clearcoatRoughness: 0.1 }));
-  band(0, 0.035, '#14203a', 0.6); band(0.035, 0.07, '#1d3557'); band(0.8, 0.83, '#1d3557');
-  // hull windows: long dark glass set into the topsides
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals(); const me = new THREE.Mesh(g, m); me.castShadow = me.receiveShadow = true; m.side = THREE.DoubleSide; scene.add(me); return me; };
+  const hullAt = (x, v, off = 0) => { const yb = -0.97 + Math.max(0, -5.6 - x) * 0.95, hw = hbw(x) + (hb(x) - hbw(x)) * Math.pow(v, 0.8); return V(x, yb + v * (sh(x) - yb), zc - hw - off); };
+  const mirrorFrom = start => { const g = new THREE.Group(); for (const c of scene.children.slice(start)) g.add(c.clone()); g.scale.z = -1; g.position.z = 2 * zc; scene.add(g); };
+  const s0 = scene.children.length;
+  surface((x, v) => hullAt(x, v), 28, gelMat.clone());
+  const band = (v0, v1, color, rough = 0.3) => surface((x, v) => hullAt(x, v0 + (v1 - v0) * v, 0.002), 2, new THREE.MeshPhysicalMaterial({ color, roughness: rough, clearcoat: 0.8, clearcoatRoughness: 0.1 }));
+  band(0, 0.035, '#14203a', 0.6); band(0.035, 0.065, '#1d3557'); band(0.8, 0.825, '#1d3557');
   const glass = new THREE.MeshPhysicalMaterial({ color: '#0e1318', roughness: 0.04, metalness: 0.3, clearcoat: 1 });
   const rr = (w, h, r) => { const s = new THREE.Shape(); s.moveTo(-w / 2 + r, -h / 2); s.lineTo(w / 2 - r, -h / 2); s.quadraticCurveTo(w / 2, -h / 2, w / 2, -h / 2 + r); s.lineTo(w / 2, h / 2 - r); s.quadraticCurveTo(w / 2, h / 2, w / 2 - r, h / 2); s.lineTo(-w / 2 + r, h / 2); s.quadraticCurveTo(-w / 2, h / 2, -w / 2, h / 2 - r); s.lineTo(-w / 2, -h / 2 + r); s.quadraticCurveTo(-w / 2, -h / 2, -w / 2 + r, -h / 2); return new THREE.ShapeGeometry(s, 8); };
-  for (const [x, w] of [[-1.55, 1.15], [0.95, 0.75], [2.15, 0.45]]) { const v = (-0.27 + 0.97) / 0.97, p = hullAt(x, v, 0.003); const m = new THREE.Mesh(rr(w, 0.085, 0.04), glass); m.position.copy(p); m.rotation.set(-0.068, Math.PI, 0); scene.add(m); }
-  // deck: follows the sheer from the deck edge inboard
-  surface((x, v) => V(x, sh(x), (-0.52 + pl(x)) + v * 2.2), 8, nonskid);
-  // rubbing strake with a stainless insert, perforated alloy toe rail
-  const along = (y, z, r, m) => { const P = []; for (let i = 0; i <= 200; i++) { const x = X0 + (X1 - X0) * i / 200; P.push(V(x, sh(x) + y, z + pl(x))); } const me = new THREE.Mesh(tubeFromPoints(P, r, 12, 1), m); me.castShadow = true; scene.add(me); };
-  along(-0.03, -0.536, 0.024, strakeMat); along(-0.03, -0.558, 0.0065, chrome);
-  for (let x = X0; x < X1; x += 0.24) { const b = new THREE.Mesh(new THREE.BoxGeometry(0.242, 0.046, 0.024), satin); b.position.set(x + 0.12, sh(x + 0.12) + 0.023, -0.508 + pl(x + 0.12)); b.castShadow = true; scene.add(b); }
-  const holes = new THREE.InstancedMesh(new THREE.BoxGeometry(0.034, 0.016, 0.004), new THREE.MeshStandardMaterial({ color: '#0d0f12', roughness: 0.6 }), 92), m4 = new THREE.Matrix4();
-  for (let i = 0; i < 92; i++) { const x = X0 + 0.05 + i * 0.1; m4.makeTranslation(x, sh(x) + 0.024, -0.5205 + pl(x)); holes.setMatrixAt(i, m4); } scene.add(holes);
-  // stanchions on bolted bases, guardrail through their tops
-  for (const x of [-2.6, -1.0, 0.95, 2.6]) { const z = -0.44 + pl(x), y = sh(x);
-    const st = new THREE.Mesh(new THREE.CylinderGeometry(0.0125, 0.0125, 0.63, 16), chrome); st.position.set(x, y + 0.33, z); st.castShadow = true; scene.add(st);
-    const base = new THREE.Mesh(new RoundedBoxGeometry(0.1, 0.012, 0.07, 2, 0.004), chrome); base.position.set(x, y + 0.006, z + 0.01); scene.add(base);
-    const sock = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.022, 0.08, 16), chrome); sock.position.set(x, y + 0.05, z); scene.add(sock);
-    for (const yy of [0.3, 0.6]) { const eye = new THREE.Mesh(new THREE.TorusGeometry(0.012, 0.004, 8, 16), chrome); eye.position.set(x, y + yy, z); eye.rotation.y = Math.PI / 2; scene.add(eye); } }
-  for (const yy of [0.3, 0.6]) { const P = []; for (let i = 0; i <= 120; i++) { const x = -4.4 + 8.8 * i / 120; P.push(V(x, sh(x) + yy, -0.44 + pl(x))); } const l = new THREE.Mesh(tubeFromPoints(P, 0.0042, 8, 1), new THREE.MeshPhysicalMaterial({ color: '#f2f2ee', roughness: 0.3, clearcoat: 0.5 })); l.castShadow = true; scene.add(l); }
-  // genoa track with its car, a mid cleat
-  for (let x = -2.2; x < 1.8; x += 0.4) { const t = new THREE.Mesh(new THREE.BoxGeometry(0.402, 0.014, 0.028), satin); t.position.set(x + 0.2, sh(x + 0.2) + 0.007, -0.27 + pl(x + 0.2)); t.receiveShadow = true; scene.add(t); }
-  { const car = new THREE.Mesh(new RoundedBoxGeometry(0.13, 0.03, 0.045, 2, 0.008), blackAnod); car.position.set(0.35, 0.03, -0.27); car.castShadow = true; scene.add(car);
-    const sheave = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.03, 24).rotateX(Math.PI / 2), chrome); sheave.position.set(0.35, 0.07, -0.27); sheave.castShadow = true; scene.add(sheave); }
-  { const c = cleatKit(); c.scale.setScalar(0.85); c.position.set(1.7, sh(1.7), -0.36 + pl(1.7)); scene.add(c); }
-  // chainplates, bottlescrews and shrouds rising inboard to the mast
-  const mastX = -0.05, mastZ = 1.28;
-  const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 12, 24), new THREE.MeshStandardMaterial({ color: '#c9cdd1', metalness: 0.55, roughness: 0.38 })); mast.scale.z = 1.45; mast.position.set(mastX, 6.3, mastZ); mast.castShadow = true; scene.add(mast);
-  for (const [cx, top] of [[0.12, V(mastX, 9, mastZ - 0.06)], [-0.22, V(mastX - 0.1, 4.2, mastZ - 0.08)]]) {
-    const cz = -0.37, base = V(cx, 0, cz), dir = top.clone().sub(base).normalize();
-    const plate = new THREE.Mesh(new RoundedBoxGeometry(0.035, 0.07, 0.012, 2, 0.004), chrome); plate.position.set(cx, 0.03, cz); plate.lookAt(top.clone().setY(0.03)); scene.add(plate);
-    const bs = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 0.13, 12), chrome); bs.quaternion.setFromUnitVectors(V(0, 1, 0), dir); bs.position.copy(base).addScaledVector(dir, 0.13); bs.castShadow = true; scene.add(bs);
-    const wire = tubeFromPoints([base.clone().addScaledVector(dir, 0.19), top], 0.0035, 8, 1), wm = new THREE.Mesh(wire, satin); wm.castShadow = true; scene.add(wm); }
-  // the coachroof: sloped sides with long windows, a teak grab rail along the top
-  const roof = new THREE.Mesh(new RoundedBoxGeometry(5.6, 0.4, 1.6, 4, 0.06), gelMat); roof.position.set(-0.3, 0.16, 1.12); roof.castShadow = roof.receiveShadow = true; scene.add(roof);
-  for (const [x, w] of [[-1.9, 1.3], [-0.3, 1.0], [1.2, 1.1]]) { const m = new THREE.Mesh(rr(w, 0.11, 0.05), glass); m.position.set(x, 0.2, 0.317); m.rotation.y = Math.PI; scene.add(m); }
-  const tk = teakMat(5, 0.05);
-  { const rail = new THREE.Mesh(new RoundedBoxGeometry(4.4, 0.03, 0.035, 2, 0.01), tk); rail.position.set(-0.4, 0.43, 0.45); rail.castShadow = true; scene.add(rail);
-    for (let x = -2.5; x <= 1.7; x += 0.35) { const post = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.05, 0.03), tk); post.position.set(x, 0.385, 0.45); scene.add(post); } }
-  // the marina beyond: masts of the neighbours, a hazy shore with hills
-  for (const [x, z, h] of [[-3.4, 7, 13], [-1.6, 9.5, 11], [2.2, 8, 14], [3.6, 11, 12], [5.2, 9, 10]]) { const m = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.07, h, 10), new THREE.MeshStandardMaterial({ color: '#dfe3e6', metalness: 0.4, roughness: 0.4 })); m.position.set(x, h / 2, z); scene.add(m); }
-  { const pts = []; for (let i = 0; i <= 40; i++) pts.push(new THREE.Vector2(-260 + i * 13, 6 + 14 * Math.sin(i * 0.37) ** 2 + 9 * Math.sin(i * 0.11 + 1) ** 2)); pts.push(new THREE.Vector2(260, -2), new THREE.Vector2(-260, -2));
-    const shore = new THREE.Mesh(new THREE.ShapeGeometry(new THREE.Shape(pts)), new THREE.MeshBasicMaterial({ color: '#a9b8b9', fog: false })); shore.position.set(0, 0, 160); shore.rotation.y = Math.PI; scene.add(shore);
-    const near = new THREE.Mesh(new THREE.PlaneGeometry(520, 3), new THREE.MeshBasicMaterial({ color: '#d9d4c6' })); near.position.set(0, -0.2, 159.5); near.rotation.y = Math.PI; scene.add(near); }
-  // the pontoon in front: weathered planks on a float, a rubber edge, a galvanised cleat
-  const plank = new THREE.BoxGeometry(0.14, 0.035, 2.8), pm = new THREE.MeshStandardMaterial({ roughness: 0.95, map: canvasTex(128, 512, (ctx, w, h) => { ctx.fillStyle = '#a49b8c'; ctx.fillRect(0, 0, w, h); for (let i = 0; i < 260; i++) { ctx.fillStyle = `rgba(${60 + rnd() * 40 | 0},${55 + rnd() * 35 | 0},${45 + rnd() * 30 | 0},${0.1 + rnd() * 0.25})`; ctx.fillRect(rnd() * w, rnd() * h, 1 + rnd() * 2, 30 + rnd() * 200); } for (let i = 0; i < 60; i++) { ctx.fillStyle = `rgba(230,225,215,${0.1 + rnd() * 0.15})`; ctx.fillRect(rnd() * w, rnd() * h, 1, 40 + rnd() * 160); } for (let i = 0; i < 4; i++) { ctx.fillStyle = 'rgba(40,35,30,.5)'; ctx.beginPath(); ctx.ellipse(rnd() * w, rnd() * h, 3, 7, 0, 0, 7); ctx.fill(); } }) });
-  const planks = new THREE.InstancedMesh(plank, pm, 60);
-  for (let i = 0; i < 60; i++) { const q = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, (rnd() - 0.5) * 0.01, 0)); m4.compose(V(-4.6 + i * 0.155, -0.57 + (rnd() - 0.5) * 0.004, -2.28), q, V(1, 1, 1)); planks.setMatrixAt(i, m4); planks.setColorAt(i, new THREE.Color().setHSL(0.09, 0.05 + rnd() * 0.05, 0.62 + rnd() * 0.2)); }
+  for (const [x, w] of [[-2.6, 1.2], [-0.2, 0.8]]) { const v = 0.72, p = hullAt(x, v, 0.004), m = new THREE.Mesh(rr(w, 0.09, 0.045), glass); m.position.copy(p); m.lookAt(p.clone().add(outN(x))); scene.add(m); }
+  // deck from the edge to the centreline
+  surface((x, v) => { const e = edge(x); return V(x, e.y + 0.025 * Math.sin(v * Math.PI / 2), e.z + v * hb(x)); }, 8, nonskid);
+  // rubbing strake with stainless insert; perforated toe rail; holes
+  { const P = [], Q = []; for (let i = 0; i <= 240; i++) { const x = X0 + 0.15 + (X1 - X0 - 0.15) * i / 240, e = edge(x), n = outN(x); P.push(e.clone().add(n.clone().multiplyScalar(0.016)).setY(e.y - 0.03)); Q.push(e.clone().add(n.clone().multiplyScalar(0.039)).setY(e.y - 0.03)); }
+    const a = new THREE.Mesh(tubeFromPoints(P, 0.024, 12, 1), strakeMat); a.castShadow = true; scene.add(a); scene.add(new THREE.Mesh(tubeFromPoints(Q, 0.0065, 8, 1), chrome)); }
+  const dummy = new THREE.Object3D(), xs = []; for (let x = X0 + 0.2; x < X1 - 0.1; x += 0.2) xs.push(x);
+  const toe = new THREE.InstancedMesh(new THREE.BoxGeometry(0.024, 0.046, 0.202), satin, xs.length), holes = new THREE.InstancedMesh(new THREE.BoxGeometry(0.004, 0.016, 0.034), new THREE.MeshStandardMaterial({ color: '#0d0f12', roughness: 0.6 }), xs.length * 2);
+  xs.forEach((x, i) => { const p0 = edge(x).add(outN(x).multiplyScalar(-0.012)), p1 = edge(x + 0.2).add(outN(x + 0.2).multiplyScalar(-0.012)), mid = p0.clone().lerp(p1, 0.5).setY((p0.y + p1.y) / 2 + 0.023);
+    dummy.position.copy(mid); dummy.lookAt(p1.clone().setY(mid.y)); dummy.updateMatrix(); toe.setMatrixAt(i, dummy.matrix);
+    for (let k = 0; k < 2; k++) { const t = 0.25 + k * 0.5, q = p0.clone().lerp(p1, t).add(outN(x).multiplyScalar(0.0125)); dummy.position.copy(q).setY(q.y + 0.024); dummy.updateMatrix(); holes.setMatrixAt(i * 2 + k, dummy.matrix); } });
+  toe.castShadow = true; scene.add(toe, holes);
+  // stanchions on bolted bases; guardrail wires straight between their tops, to the pulpit forward
+  const stX = [-4.7, -3.0, -1.3, 0.4, 2.1, 3.8, 5.2], tops = { 0.33: [], 0.63: [] };
+  const sPos = x => edge(x).add(outN(x).multiplyScalar(-0.085));
+  for (const x of stX) { const p = sPos(x);
+    const st = new THREE.Mesh(new THREE.CylinderGeometry(0.0125, 0.0125, 0.64, 16), chrome); st.position.set(p.x, p.y + 0.33, p.z); st.castShadow = true; scene.add(st);
+    const base = new THREE.Mesh(new RoundedBoxGeometry(0.1, 0.012, 0.07, 2, 0.004), chrome); base.position.set(p.x, p.y + 0.006, p.z); scene.add(base);
+    const sock = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.022, 0.08, 16), chrome); sock.position.set(p.x, p.y + 0.05, p.z); scene.add(sock);
+    for (const h of [0.33, 0.63]) tops[h].push(V(p.x, p.y + h, p.z)); }
+  const pulN = x => sPos(x), pulF = x => { const p = sPos(x); return V(p.x, p.y, 2 * zc - p.z); };
+  const pul = [pulN(-5.3), pulN(-5.85), V(-6.28, sh(-6.28), zc), pulF(-5.85), pulF(-5.3)].map(p => p.clone().setY(p.y + 0.64));
+  { const c = new THREE.CatmullRomCurve3(pul); const m = new THREE.Mesh(new THREE.TubeGeometry(c, 60, 0.0125, 10), chrome); m.castShadow = true; scene.add(m);
+    for (const p of [pul[0], pul[2], pul[4]]) { const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.0125, 0.0125, 0.64, 12), chrome); leg.position.set(p.x, p.y - 0.32, p.z); scene.add(leg); } }
+  const wireM = new THREE.MeshPhysicalMaterial({ color: '#f2f2ee', roughness: 0.3, clearcoat: 0.5 });
+  for (const h of [0.33, 0.63]) { const P = [pulN(-5.3).setY(sh(-5.3) + h), ...tops[h]]; const dense = []; for (let i = 0; i < P.length - 1; i++) for (let k = 0; k < 10; k++) dense.push(P[i].clone().lerp(P[i + 1], k / 10)); dense.push(P[P.length - 1]); const l = new THREE.Mesh(tubeFromPoints(dense, 0.0055, 8, 1), wireM); l.castShadow = true; scene.add(l); }
+  mirrorFrom(s0);
+  const lifeAt = x => { const T = tops[0.63]; for (let i = 0; i < T.length - 1; i++) if (x >= T[i].x && x <= T[i + 1].x) return T[i].clone().lerp(T[i + 1], (x - T[i].x) / (T[i + 1].x - T[i].x)); return T[0].clone(); };
+  // coachroof with a rounded front, windows and a teak grab rail; the sprayhood over the companionway
+  { const s = new THREE.Shape(), xf = -2.5, xa = 3.0, w = 1.0; s.moveTo(xa, -(zc - w)); s.lineTo(-1.4, -(zc - w)); s.bezierCurveTo(-2.2, -(zc - w + 0.05), xf, -(zc - 0.6), xf, -zc); s.bezierCurveTo(xf, -(zc + 0.6), -2.2, -(zc + w - 0.05), -1.4, -(zc + w)); s.lineTo(xa, -(zc + w)); s.closePath();
+    const roof = new THREE.Mesh(new THREE.ExtrudeGeometry(s, { depth: 0.34, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.05, bevelSegments: 4, curveSegments: 24 }).rotateX(-Math.PI / 2), gelMat); roof.castShadow = roof.receiveShadow = true; scene.add(roof);
+    for (const [x, ww] of [[-1.2, 0.9], [0.2, 1.1], [1.7, 0.9]]) { const m = new THREE.Mesh(rr(ww, 0.12, 0.055), glass); m.position.set(x, 0.2, zc - w - 0.052); m.rotation.y = Math.PI; scene.add(m); }
+    const tk = teakMat(5, 0.05), rail = new THREE.Mesh(new RoundedBoxGeometry(3.6, 0.03, 0.035, 2, 0.01), tk); rail.position.set(0.9, 0.46, zc - w + 0.12); rail.castShadow = true; scene.add(rail);
+    for (let x = -0.8; x <= 2.6; x += 0.34) { const post = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.05, 0.03), tk); post.position.set(x, 0.415, zc - w + 0.12); scene.add(post); }
+    const navy = new THREE.MeshPhysicalMaterial({ color: '#1f2c48', roughness: 0.9, sheen: 0.6, sheenColor: new THREE.Color('#5b6f99') });
+    const hood = new THREE.Mesh(new RoundedBoxGeometry(0.75, 0.6, 1.9, 6, 0.28), navy); hood.position.set(3.25, 0.55, zc); hood.castShadow = true; scene.add(hood);
+    const hw = new THREE.Mesh(rr(0.5, 0.2, 0.06), new THREE.MeshPhysicalMaterial({ color: '#2a3036', roughness: 0.05, transparent: true, opacity: 0.85 })); hw.position.set(3.1, 0.62, zc - 0.951); hw.rotation.y = Math.PI; scene.add(hw);
+    // mast, boom with the stack-pack, lazy jacks
+    const mx = 0.2, alu = new THREE.MeshStandardMaterial({ color: '#c9cdd1', metalness: 0.55, roughness: 0.38 });
+    const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 15, 24), alu); mast.scale.z = 1.45; mast.position.set(mx, 7.8, zc); mast.castShadow = true; scene.add(mast);
+    const boom = new THREE.Mesh(new THREE.CylinderGeometry(0.065, 0.06, 4.6, 20).rotateZ(Math.PI / 2), alu); boom.position.set(mx + 2.4, 1.3, zc); boom.castShadow = true; scene.add(boom);
+    const pack = new THREE.Mesh(new RoundedBoxGeometry(4.2, 0.4, 0.34, 4, 0.12), navy); pack.position.set(mx + 2.4, 1.5, zc); pack.castShadow = true; scene.add(pack);
+    const zip = new THREE.Mesh(new THREE.BoxGeometry(4.1, 0.012, 0.012), new THREE.MeshStandardMaterial({ color: '#c7c3b8' })); zip.position.set(mx + 2.4, 1.705, zc); scene.add(zip);
+    for (const x of [1.4, 3.0]) for (const dz of [-0.17, 0.17]) { const P = [V(x, 1.7, zc + dz), V(x - 0.6, 4.5, zc + dz * 0.3)]; scene.add(new THREE.Mesh(tubeFromPoints(P, 0.0025, 6, 1), new THREE.MeshStandardMaterial({ color: '#202020' }))); }
+    // shrouds via the spreader to the masthead and a lower to the spreader root; chainplates and bottlescrews
+    const s1 = scene.children.length, spT = V(mx + 0.05, 7.6, zc - 1.25); scene.add(new THREE.Mesh(tubeFromPoints([V(mx, 7.6, zc), spT], 0.025, 10, 1), alu));
+    for (const [cx, path] of [[0.35, [spT, V(mx, 14.5, zc - 0.05)]], [0.0, [V(mx - 0.05, 7.4, zc - 0.07)]]]) { const base = edge(cx).add(outN(cx).multiplyScalar(-0.13)).setY(sh(cx)), top = path[0], dir = top.clone().sub(base).normalize();
+      const plate = new THREE.Mesh(new RoundedBoxGeometry(0.035, 0.07, 0.012, 2, 0.004), chrome); plate.position.copy(base).setY(base.y + 0.03); scene.add(plate);
+      const bs = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 0.13, 12), chrome); bs.quaternion.setFromUnitVectors(V(0, 1, 0), dir); bs.position.copy(base).addScaledVector(dir, 0.12); scene.add(bs);
+      const wire = new THREE.Mesh(tubeFromPoints([base.clone().addScaledVector(dir, 0.19), ...path], 0.0035, 8, 1), satin); wire.castShadow = true; scene.add(wire); }
+    mirrorFrom(s1);
+    // forestay from the stemhead with the furled genoa and its blue UV strip
+    const stem = V(-6.3, sh(-6.3) + 0.12, zc), head = V(mx, 14.6, zc), fd = head.clone().sub(stem).normalize();
+    scene.add(new THREE.Mesh(tubeFromPoints([stem, head], 0.005, 8, 1), satin));
+    const furl = new THREE.Mesh(new THREE.CylinderGeometry(0.055, 0.075, 11, 20), new THREE.MeshPhysicalMaterial({ color: '#22355e', roughness: 0.85, sheen: 0.5, sheenColor: new THREE.Color('#5b6f99') })); furl.quaternion.setFromUnitVectors(V(0, 1, 0), fd); furl.position.copy(stem).addScaledVector(fd, 6.3); furl.castShadow = true; scene.add(furl);
+    const drum = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.12, 20), satin); drum.quaternion.copy(furl.quaternion); drum.position.copy(stem).addScaledVector(fd, 0.25); scene.add(drum); }
+  // the pontoon: weathered planks on a float, a rubber edge, a galvanised cleat; the neighbour across
+  const plank = new THREE.BoxGeometry(0.14, 0.035, 2.2), pm = new THREE.MeshStandardMaterial({ roughness: 0.95, map: canvasTex(128, 512, (ctx, w, h) => { ctx.fillStyle = '#a49b8c'; ctx.fillRect(0, 0, w, h); for (let i = 0; i < 260; i++) { ctx.fillStyle = `rgba(${60 + rnd() * 40 | 0},${55 + rnd() * 35 | 0},${45 + rnd() * 30 | 0},${0.1 + rnd() * 0.25})`; ctx.fillRect(rnd() * w, rnd() * h, 1 + rnd() * 2, 30 + rnd() * 200); } for (let i = 0; i < 60; i++) { ctx.fillStyle = `rgba(230,225,215,${0.1 + rnd() * 0.15})`; ctx.fillRect(rnd() * w, rnd() * h, 1, 40 + rnd() * 160); } }) });
+  const m4 = new THREE.Matrix4(), np = 90, planks = new THREE.InstancedMesh(plank, pm, np);
+  for (let i = 0; i < np; i++) { const q = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, (rnd() - 0.5) * 0.01, 0)); m4.compose(V(-7 + i * 0.155, -0.57 + (rnd() - 0.5) * 0.004, -1.9), q, V(1, 1, 1)); planks.setMatrixAt(i, m4); planks.setColorAt(i, new THREE.Color().setHSL(0.09, 0.05 + rnd() * 0.05, 0.62 + rnd() * 0.2)); }
   planks.castShadow = planks.receiveShadow = true; scene.add(planks);
-  box(scene, [9.4, 0.36, 2.8], [0, -0.77, -2.28], new THREE.MeshStandardMaterial({ color: '#8d8a84', roughness: 0.9 }));
-  box(scene, [9.4, 0.12, 0.06], [0, -0.62, -0.86], rubber);
-  { const galv = new THREE.MeshStandardMaterial({ color: '#9ea3a6', metalness: 0.7, roughness: 0.55 }); const c = cleatKit(); c.traverse(m => { if (m.isMesh) m.material = galv; }); c.scale.setScalar(1.5); c.position.set(-0.9, -0.553, -1.05); scene.add(c); }
-  // the fender between hull and pontoon, its line over the top guardrail
+  box(scene, [14, 0.36, 2.2], [0, -0.77, -1.9], new THREE.MeshStandardMaterial({ color: '#8d8a84', roughness: 0.9 }));
+  box(scene, [14, 0.12, 0.06], [0, -0.62, -0.78], rubber);
+  const galv = new THREE.MeshStandardMaterial({ color: '#9ea3a6', metalness: 0.7, roughness: 0.55 });
+  const C = V(1.95, -0.553, -1.0);
+  { const c = cleatKit(); c.traverse(m => { if (m.isMesh) m.material = galv; }); c.scale.setScalar(1.5); c.position.copy(C); scene.add(c); }
+  { const nb = new THREE.Mesh(new RoundedBoxGeometry(10, 1.3, 3.4, 6, 0.4), gelMat); nb.position.set(1.2, -0.45, -4.85); nb.castShadow = true; scene.add(nb);
+    const nm = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 14, 16), new THREE.MeshStandardMaterial({ color: '#dfe3e6', metalness: 0.4, roughness: 0.4 })); nm.position.set(0.5, 7, -4.85); scene.add(nm);
+    for (const [x, z, h] of [[-5, 7, 13], [-8, 9, 11], [6, -9, 14], [-3, -10, 12]]) { const m = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.07, h, 10), nm.material); m.position.set(x, h / 2, z); scene.add(m); } }
+  // a spring line: from the boat's mid cleat over the toe rail to the pontoon cleat, a cleat hitch there, the tail on the planks
+  { const bx = 3.05, B = edge(bx).add(outN(bx).multiplyScalar(-0.12)).setY(sh(bx));
+    const bc = cleatKit(); bc.scale.setScalar(0.85); bc.position.copy(B); scene.add(bc);
+    const hitch = [[-0.13, 0.009, -0.052], [-0.06, 0.009, -0.034], [0.02, 0.009, -0.034], [0.07, 0.009, -0.03], [0.093, 0.01, -0.012], [0.093, 0.011, 0.012], [0.07, 0.012, 0.032], [0, 0.013, 0.034], [-0.07, 0.014, 0.032], [-0.093, 0.016, 0.012], [-0.093, 0.018, -0.012], [-0.075, 0.024, -0.03], [-0.045, 0.06, -0.03], [-0.015, 0.086, -0.012], [0.03, 0.087, 0.012], [0.07, 0.08, 0.027], [0.1, 0.06, 0.029], [0.104, 0.04, 0.017], [0.104, 0.037, -0.004], [0.102, 0.045, -0.022], [0.098, 0.068, -0.029], [0.06, 0.096, -0.018], [0, 0.101, 0], [-0.06, 0.096, 0.018], [-0.098, 0.068, 0.029], [-0.102, 0.045, 0.022], [-0.104, 0.037, 0.004], [-0.104, 0.04, -0.016], [-0.1, 0.06, -0.029], [-0.07, 0.092, -0.024], [-0.03, 0.114, -0.008], [0.02, 0.115, 0.01], [0.062, 0.105, 0.025], [0.1, 0.088, 0.037], [0.14, 0.05, 0.052], [0.19, 0.012, 0.08], [0.25, 0.009, 0.14]]
+      .map(([x, y, z]) => V(-x * 1.5, y * 1.5, -z * 1.5).add(C));
+    const lineM = [B.clone().add(V(0, 0.05, 0)), B.clone().add(outN(bx).multiplyScalar(0.06)).setY(B.y + 0.055), edge(bx - 0.05).add(outN(bx).multiplyScalar(0.05)).setY(0.06)];
+    const a = lineM[2], b = hitch[0].clone().add(V(0.12, 0.02, 0.1)); for (let i = 1; i <= 6; i++) { const t = i / 7, p = a.clone().lerp(b, t); p.y -= Math.sin(t * Math.PI) * 0.06; lineM.push(p); }
+    const tail = hitch[hitch.length - 1]; const pts = [...lineM, b, ...hitch, ...coilPts(tail, V(C.x - 0.55, 0, C.z - 0.45), { loops: 2, r: 0.14, R: 0.009, y: -0.553 })];
+    scene.add(rope(pts, 0.009, 0.058, { whip: '#f2eee2' })); }
+  // the fender between hull and pontoon, its line round the strake and over the top guardrail, the end hanging inboard
   const sock = new THREE.MeshPhysicalMaterial({ color: '#1e2f55', roughness: 0.95, sheen: 0.8, sheenRoughness: 0.6, sheenColor: new THREE.Color('#5d75a8'), normalMap: noiseNormal(128, 64, 3), normalScale: new THREE.Vector2(0.4, 0.4) });
-  const fx = 0.42, fz = -0.6, fender = new THREE.Mesh(new THREE.CapsuleGeometry(0.105, 0.42, 10, 32), sock); fender.position.set(fx, -0.47, fz); fender.castShadow = true; scene.add(fender);
-  const eye = new THREE.Mesh(new THREE.TorusGeometry(0.018, 0.006, 10, 20), rubber); eye.position.set(fx, -0.17, fz); scene.add(eye);
-  const R = 0.005, p = [V(fx, -0.16, fz), V(fx, -0.11, -0.545), V(fx, -0.07, -0.545), V(fx, -0.05, -0.556), V(fx, -0.02, -0.576), V(fx + 0.003, 0.1, -0.552), V(fx + 0.008, 0.35, -0.5), V(fx + 0.012, 0.56, -0.449), V(fx + 0.012, 0.6, -0.4475), V(fx + 0.013, 0.6095, -0.438), V(fx + 0.014, 0.6, -0.4285), V(fx + 0.018, 0.55, -0.424), V(fx + 0.03, 0.42, -0.417), V(fx + 0.045, 0.3, -0.409)];
+  const fx = 1.15, eF = edge(fx), fz = eF.z - 0.06 - 0.105 + 0.07, fender = new THREE.Mesh(new THREE.CapsuleGeometry(0.105, 0.42, 10, 32), sock); fender.position.set(fx, -0.42, fz); fender.castShadow = true; scene.add(fender);
+  const eye = new THREE.Mesh(new THREE.TorusGeometry(0.018, 0.006, 10, 20), rubber); eye.position.set(fx, -0.1, fz); scene.add(eye);
+  const Lt = lifeAt(fx), zS = eF.z - 0.06, R = 0.005;
+  const p = [V(fx, -0.09, fz), V(fx, -0.06, zS + 0.005), V(fx, -0.035, zS - 0.004), V(fx, 0.0, zS - 0.002), V(fx + 0.003, 0.12, zS + 0.01), V(fx + 0.006, 0.35, (zS + Lt.z) / 2), V(fx + 0.01, Lt.y - 0.04, Lt.z - 0.011), V(fx + 0.01, Lt.y, Lt.z - 0.0095), V(fx + 0.011, Lt.y + 0.0095, Lt.z), V(fx + 0.012, Lt.y, Lt.z + 0.0095), V(fx + 0.014, Lt.y - 0.05, Lt.z + 0.014), V(fx + 0.025, Lt.y - 0.18, Lt.z + 0.022), V(fx + 0.04, Lt.y - 0.3, Lt.z + 0.03)];
   scene.add(braid(p, { R, base: '#f0eee6', fleck: '#2a4c8a', whip: '#f4f1e6' }));
-  const cam = new THREE.PerspectiveCamera(46, W / H, 0.02, 80); cam.position.set(1.3, 0.55, -3.15); cam.lookAt(V(0.25, -0.06, -0.4));
-  return { env: 'outdoor', scene, cam, labels: [[V(-1.7, 0.6, -0.44), 'guardrail'], [V(fx + 0.006, 0.24, -0.515), 'fender line']], sun: { pos: [-1.6, 3.2, -2.6], target: [0.2, -0.3, -0.6], box: 2.6 }, ao: 0.07 };
+  const cam = new THREE.PerspectiveCamera(46, W / H, 0.02, 120); cam.position.set(3.4, 1.05, -2.05); cam.lookAt(V(0.3, -0.05, -0.35));
+  return { env: 'outdoor', scene, cam, labels: [[lifeAt(-0.6), 'guardrail'], [V(fx + 0.006, 0.3, (zS + Lt.z) / 2), 'fender line']], sun: { pos: [-2.5, 4.0, -3.0], target: [0.5, -0.2, -0.4], box: 4.5 }, ao: 0.08 };
 }
 
 // sheet: two lines to be joined, a thin slippery one and a thick stiff one, their ends side by side on the cockpit seat
@@ -427,6 +493,200 @@ function kindSheet() {
   scene.add(braid(thin, { R: Rt, base: '#c4262e', fleck: '#f3f1ea', shiny: true, whip: '#f4f1e6' }));
   const cam = new THREE.PerspectiveCamera(36, W / H, 0.02, 60); cam.position.set(0.06, 0.5, 0.4); cam.lookAt(V(0.02, 0, -0.01));
   return { scene, cam, labels: [[V(0.3, Rt, -0.14), 'thin line'], [V(-0.25, Rk, 0.1), 'thick line']], sun: { pos: [-1.4, 3, -0.8], target: [0, 0, 0], box: 1.4 }, ao: 0.04 };
+}
+
+/* ---------- knots: dressed knots as close-up renders, for theory pages and answer explanations ---------- */
+// A flat knot is written as a 2D diagram in rope diameters. The engine finds every crossing, decides over and under
+// (alternating along each rope unless a crossing is pinned), then lifts each over-strand just enough to clear the strand
+// beneath it, relaxing a few times so stacked crossings clear too. Units: D = 1 rope diameter, scaled to metres at the end.
+function flatKnot(ropes, pins = []) {
+  const S = ropes.map(rp => { const c = new THREE.CatmullRomCurve3(rp.pts.map(([x, y]) => V(x, 0, -y)), false, 'centripetal'); c.arcLengthDivisions = 4000; const L = c.getLength(), n = Math.ceil(L / 0.06), P = c.getSpacedPoints(n); return { P, L, n, R: (rp.d ?? 1) / 2, ds: L / n }; });
+  const cr = [];
+  const hit = (p1, p2, p3, p4) => { const d = (p2.x - p1.x) * (p4.z - p3.z) - (p2.z - p1.z) * (p4.x - p3.x); if (Math.abs(d) < 1e-9) return null; const t = ((p3.x - p1.x) * (p4.z - p3.z) - (p3.z - p1.z) * (p4.x - p3.x)) / d, u = ((p3.x - p1.x) * (p2.z - p1.z) - (p3.z - p1.z) * (p2.x - p1.x)) / d; return t >= 0 && t < 1 && u >= 0 && u < 1 ? [t, u] : null; };
+  for (let a = 0; a < S.length; a++) for (let b = a; b < S.length; b++) {
+    const A = S[a], B = S[b];
+    for (let i = 0; i < A.n; i++) for (let j = (a === b ? i + 12 : 0); j < B.n; j++) {
+      const r = hit(A.P[i], A.P[i + 1], B.P[j], B.P[j + 1]); if (!r) continue;
+      const x = A.P[i].x + (A.P[i + 1].x - A.P[i].x) * r[0], z = A.P[i].z + (A.P[i + 1].z - A.P[i].z) * r[0];
+      if (cr.some(c => Math.hypot(c.x - x, c.z - z) < 0.3)) continue;
+      cr.push({ a, sa: (i + r[0]) * A.ds, b, sb: (j + r[1]) * B.ds, x, z });
+    } }
+  // over/under: pins first ('late' = the later pass along the path is over, or a rope index), then alternation
+  const over = cr.map(() => undefined);
+  for (const pin of pins) { let k = -1, best = 1.5; cr.forEach((c, i) => { const d = Math.hypot(c.x - pin.at[0], c.z + pin.at[1]); if (d < best) { best = d; k = i; } }); if (k < 0) { console.warn('pin found no crossing', pin); continue; } const c = cr[k]; over[k] = typeof pin.over === 'number' ? pin.over === c.a : pin.over === 'early'; }
+  ropes.forEach((rp, r) => { const ev = []; cr.forEach((c, k) => { if (c.a === r) ev.push({ k, s: c.sa, side: 'a' }); if (c.b === r) ev.push({ k, s: c.sb, side: 'b' }); }); ev.sort((p, q) => p.s - q.s);
+    let par = rp.startOver ?? true; for (const e of ev) { if (over[e.k] === undefined) over[e.k] = e.side === 'a' ? par : !par; const mine = e.side === 'a' ? over[e.k] : !over[e.k]; par = !mine; } });
+  // heights: start on the surface, then raise each over-pass to clear its under-pass, a few rounds
+  const H = S.map(s => s.P.map(() => s.R)), amp = cr.map(() => 0);
+  const prof = d => d < 0.45 ? 1 : d > 2.4 ? 0 : (t => t * t * (3 - 2 * t))((2.4 - d) / 1.95);
+  const at = (r, s) => { const i = Math.min(S[r].n, Math.max(0, Math.round(s / S[r].ds))); return H[r][i]; };
+  for (let it = 0; it < 6; it++) {
+    cr.forEach((c, k) => { const [o, so, u, su] = over[k] ? [c.a, c.sa, c.b, c.sb] : [c.b, c.sb, c.a, c.sa]; const need = at(u, su) + S[u].R + S[o].R + 0.04; amp[k] = Math.max(0, need - S[o].R); });
+    S.forEach((s, r) => { for (let i = 0; i <= s.n; i++) { let h = s.R; const si = i * s.ds; cr.forEach((c, k) => { const mine = c.a === r ? (over[k] ? c.sa : null) : null, mine2 = c.b === r ? (!over[k] ? c.sb : null) : null; for (const sv of [mine, mine2]) if (sv !== null) h = Math.max(h, s.R + amp[k] * prof(Math.abs(si - sv))); }); H[r][i] = h; } });
+  }
+  return { ropes: S.map((s, r) => s.P.map((p, i) => V(p.x, H[r][i], p.z))), crossings: cr.map((c, k) => ({ ...c, over: over[k] })) };
+}
+const scalePts = (pts, k, off = V(0, 0, 0)) => pts.map(p => p.clone().multiplyScalar(k).add(off));
+
+// The board the flat knots lie on: a pale teak cockpit seat; the camera looks down at a slight angle.
+function knotTable(name) {
+  const scene = new THREE.Scene(); scene.background = new THREE.Color('#d9d3c7');
+  box(scene, [2.4, 0.04, 1.6], [0, -0.02, 0], teakMat(2.4, 1.6));
+  return scene;
+}
+const KS = 0.012; // a 12 mm line
+function flatKind(name, ropes, pins, o = {}) {
+  return () => {
+    const scene = knotTable(name), res = flatKnot(ropes, pins);
+    res.ropes.forEach((P, r) => { const rp = ropes[r]; scene.add(braid(scalePts(P, KS), { R: (rp.d ?? 1) / 2 * KS, base: rp.base, fleck: rp.fleck, shiny: rp.shiny, whip: rp.whip, whipStart: rp.whipStart, fine: 2 })); });
+    const span = o.span ?? 0.42, cam = new THREE.PerspectiveCamera(34, W / H, 0.01, 20);
+    const c = o.center ? V(o.center[0] * KS, 0, -o.center[1] * KS) : V(0, 0, 0);
+    cam.position.set(c.x + 0.02, span * 1.55, c.z + span * 0.62); cam.lookAt(c);
+    const labels = (o.labels || []).map(([x, y, t]) => [V(x * KS, 0.012, -y * KS), t]);
+    window.__knotDebug = window.__knotDebug || {}; window.__knotDebug[name] = res.crossings.map(c => [+(c.x).toFixed(2), +(-c.z).toFixed(2), c.a, c.b, c.over]);
+    return { env: 'outdoor', scene, cam, labels, note: o.title, sun: { pos: [-0.6, 1.6, -0.4], target: [0, 0, 0], box: 0.5 }, ao: 0.012 };
+  };
+}
+// knot ropes: solid colour with a light fleck and a little shine, like a dinghy sheet, so the cover never reads as extra crossings
+const RED = { base: '#c4262e', fleck: '#f3f1ea', shiny: true }, BLUE = { base: '#1d4f91', fleck: '#e3eaf4', shiny: true }, NAVY = BLUE, WHITE = RED;
+
+const KNOTS = {
+  // figure-of-eight stopper: over the standing part, round behind it, down through the loop; ends leave on opposite sides
+  'knot-figure8': flatKind('figure8', [{ ...WHITE, whip: '#f4f1e6', pts: [[-16, 0], [-7, 0], [-1, 0], [1.5, 0.3], [2.9, 1.2], [3.1, 2.9], [1.8, 3.9], [-0.2, 3.6], [-1.4, 2.3], [-1.9, 0], [-2.3, -2.3], [-3.9, -3.2], [-5.5, -2.2], [-5.6, 0], [-4.8, 2.0], [-3.0, 3.0], [-0.4, 2.5], [0.6, 1.5], [0.85, 0.1], [1.25, -1.5], [3.1, -2.3], [6, -2.5], [9, -2.5]] }], [], { title: 'Figure-of-eight', center: [-1, 0.8], span: 0.17, labels: [[-12, 0, 'standing part'], [8, -2.5, 'end']] }),
+  // reef knot: two interlocked bights, each rope's standing part and end lying together
+  'knot-reef': flatKind('reef', (() => { const A = [[-16, 0.95], [-6, 0.95], [-2.5, 0.95], [0, 1.75], [2, 3.1], [4.3, 2.8], [5.7, 0], [4.3, -2.8], [2, -3.1], [0, -1.75], [-2.5, -0.95], [-6, -0.95], [-9.5, -0.95]]; return [{ ...NAVY, whip: '#141414', pts: A }, { ...WHITE, whip: '#f4f1e6', pts: A.map(([x, y]) => [-x, y]) }]; })(),
+    [{ at: [0, 1.75], over: 0 }, { at: [0, -1.75], over: 0 }, { at: [-5.4, 0.95], over: 1 }, { at: [-5.4, -0.95], over: 1 }, { at: [5.4, 0.95], over: 0 }, { at: [5.4, -0.95], over: 0 }],
+    { title: 'Reef knot', span: 0.19, labels: [[-13, 0.95, 'standing part'], [13, 0.95, 'standing part']] }),
+  // sheet bend: a bight in the thick line; the thin line up through it, round behind both legs and under itself
+  'knot-sheetbend': flatKind('sheetbend', [
+    { ...NAVY, d: 1.25, whip: '#141414', pts: [[-17, 2.0], [-4, 2.0], [-0.5, 2.05], [2.1, 1.8], [3.5, 0], [2.1, -1.8], [-0.5, -2.05], [-4, -2.0], [-9, -2.0]] },
+    { ...RED, d: 0.75, shiny: true, whip: '#f4f1e6', startOver: false, pts: [[17, 0.15], [8, 0.15], [4, 0.15], [1.6, 0.15], [0.2, 0.6], [-0.6, 1.3], [-1.2, 2.8], [-2.3, 3.5], [-3.6, 3.2], [-4.1, 2.0], [-4.2, 0], [-4.1, -2.0], [-3.6, -3.2], [-2.4, -3.5], [-1.4, -2.8], [-1.1, -1.5], [-1.7, -0.3], [-3.1, 0.3], [-5.7, 0.35], [-8, 0.35]] }],
+    [], { title: 'Sheet bend', span: 0.17, center: [-0.5, 0], labels: [[-13, 2.0, 'thick line'], [12, 0.15, 'thin line']] }),
+  // bowline: the small loop, the end up through it, round behind the standing part and back down; the eye below
+  'knot-bowline': flatKind('bowline', [{ ...WHITE, whip: '#f4f1e6', pts: [[0.3, 19], [0.1, 13], [0, 9.5], [0, 6.5], [0.2, 5.0], [1.3, 3.6], [3.0, 3.5], [4.2, 4.8], [4.2, 6.7], [3.0, 8.1], [1.0, 8.3], [-1.0, 7.8], [-2.8, 6.6], [-3.8, 4.6], [-4.1, 1], [-4.1, -4], [-3.1, -7.6], [0, -9.4], [3.1, -7.6], [4.1, -4], [4.0, 0], [3.0, 1.6], [2.5, 3.0], [2.4, 4.4], [2.4, 6.4], [2.3, 8.4], [2.0, 10.0], [1.0, 11.2], [0, 11.4], [-1.3, 11.0], [-1.9, 9.8], [-1.5, 8.4], [-0.6, 7.0], [0.6, 6.0], [1.0, 4.6], [1.0, 3.0], [1.1, 1.0], [1.2, -0.6]] }],
+    [{ at: [0, 8.1], over: 'late' }, { at: [2.4, 3.55], over: 'early' }, { at: [2.4, 8.3], over: 'late' }, { at: [0, 11.4], over: 'early' }, { at: [-1.1, 7.7], over: 'late' }, { at: [-0.05, 6.4], over: 'late' }, { at: [1.0, 3.9], over: 'early' }],
+    { title: 'Bowline', span: 0.27, center: [0, 1.2], labels: [[0.2, 15, 'standing part'], [1.2, -0.6, 'end']] }),
+};
+
+// clove hitch on a rail: two turns, the second crossing over the first on the front, the end tucked under the crossing
+function railScene() {
+  const scene = new THREE.Scene(); scene.background = new THREE.Color('#cdd6da');
+  box(scene, [3, 0.1, 2], [0, -0.45, -0.3], nonskid);
+  return scene;
+}
+function wrapPts(x0, x1, f0, f1, rho, off = () => 0, n = 30) { const out = []; for (let i = 0; i <= n; i++) { const u = i / n, f = f0 + (f1 - f0) * u, rr = rho + off(u); out.push(V(x0 + (x1 - x0) * u, rr * Math.sin(f), rr * Math.cos(f))); } return out; }
+const join = (...parts) => parts.reduce((a, p) => a.concat(a.length ? p.slice(1) : p), []);
+function railKind(title, build, o = {}) {
+  return () => {
+    const scene = railScene(), r = 1.25, rho = r + 0.5, pi = Math.PI;
+    const rail = new THREE.Mesh(new THREE.CylinderGeometry(r * KS, r * KS, 1.6, 32).rotateZ(pi / 2), chrome); rail.castShadow = true; scene.add(rail);
+    for (const x of [-0.75, 0.75]) { const st = new THREE.Mesh(new THREE.CylinderGeometry(r * KS, r * KS, 0.45, 24), chrome); st.position.set(x, -0.225, 0); scene.add(st); }
+    const P = build(rho, pi);
+    scene.add(braid(scalePts(P, KS), { R: 0.5 * KS, ...WHITE, whip: '#f4f1e6', fine: 2.5 }));
+    const cam = new THREE.PerspectiveCamera(32, W / H, 0.005, 20); cam.position.set(...(o.cam || [0.03, 0.05, 0.19])); cam.lookAt(V(...(o.look || [-0.003, -0.012, 0])));
+    return { env: 'outdoor', scene, cam, labels: (o.labels || []).map(([x, y, z, t]) => [V(x * KS, y * KS, z * KS), t]), note: title, sun: { pos: [-0.8, 1.5, 1.2], target: [0, 0, 0], box: 0.5 }, ao: 0.012 };
+  };
+}
+KNOTS['knot-clove'] = railKind('Clove hitch', (rho, pi) => join(
+  [V(-1.2, -16, 0.3), V(-1.2, -8, 0.15), V(-1.2, -rho - 0.6, 0)],
+  wrapPts(-1.2, 1.2, -pi / 2, pi / 2, rho),
+  wrapPts(1.2, 1.2, pi / 2, 3 * pi / 2, rho),
+  wrapPts(1.2, -1.2, 3 * pi / 2, 5 * pi / 2, rho, u => 1.3 * Math.pow(Math.sin(pi * u), 0.6)),
+  wrapPts(-1.2, -2.4, 5 * pi / 2, 7 * pi / 2, rho),
+  wrapPts(-2.4, 0.0, 7 * pi / 2, 4 * pi + 0.42 * pi, rho),
+  [V(0.25, rho + 1.2, 1.4), V(0.45, rho + 2.2, 2.3)]), { labels: [[-1.2, -8, 0.2, 'standing part'], [0.45, 2.2 + 1.75, 2.3, 'end']], cam: [0.035, 0.02, 0.27], look: [0, -0.012, 0] });
+
+// cleat hitch: round the base from the far horn, figure-eights over the horns, a locking hitch, the tail coiled
+KNOTS['knot-cleat'] = () => {
+  const scene = new THREE.Scene(); scene.background = new THREE.Color('#c3d2db');
+  box(scene, [2, 0.1, 1.6], [0, -0.05, 0], nonskid); scene.add(cleatKit());
+  const R = 0.008, p = [V(-0.55, 0.009, -0.42), V(-0.32, 0.009, -0.2), V(-0.2, 0.01, -0.1)].concat([[-0.13, 0.009, -0.052], [-0.06, 0.009, -0.034], [0.02, 0.009, -0.034], [0.07, 0.009, -0.03], [0.093, 0.01, -0.012], [0.093, 0.011, 0.012], [0.07, 0.012, 0.032], [0, 0.013, 0.034], [-0.07, 0.014, 0.032], [-0.093, 0.016, 0.012], [-0.093, 0.018, -0.012], [-0.075, 0.024, -0.03], [-0.045, 0.06, -0.03], [-0.015, 0.086, -0.012], [0.03, 0.087, 0.012], [0.07, 0.08, 0.027], [0.1, 0.06, 0.029], [0.104, 0.04, 0.017], [0.104, 0.037, -0.004], [0.102, 0.045, -0.022], [0.098, 0.068, -0.029], [0.06, 0.096, -0.018], [0, 0.101, 0], [-0.06, 0.096, 0.018], [-0.098, 0.068, 0.029], [-0.102, 0.045, 0.022], [-0.104, 0.037, 0.004], [-0.104, 0.04, -0.016], [-0.1, 0.06, -0.029], [-0.07, 0.092, -0.024], [-0.03, 0.114, -0.008], [0.02, 0.115, 0.01], [0.062, 0.105, 0.025], [0.1, 0.088, 0.037], [0.14, 0.05, 0.052], [0.19, 0.012, 0.08], [0.25, 0.009, 0.12], [0.33, 0.009, 0.16]].map(a => V(...a)));
+  scene.add(braid(p, { R, ...WHITE, whip: '#f4f1e6', fine: 1.6 }));
+  const cam = new THREE.PerspectiveCamera(34, W / H, 0.01, 20); cam.position.set(0.08, 0.42, 0.3); cam.lookAt(V(0.06, 0.0, 0.02));
+  return { env: 'outdoor', scene, cam, labels: [[V(-0.4, 0.01, -0.28), 'standing part'], [V(0.32, 0.01, 0.16), 'end']], note: 'Cleat hitch', sun: { pos: [-0.8, 1.6, 0.6], target: [0, 0, 0], box: 0.6 }, ao: 0.02 };
+};
+
+// round turn and two half hitches: two full turns round the rail, then two half hitches round the standing part.
+// Two half hitches are a clove hitch tied round the standing part, so the same wrap is built in the rail's frame
+// (axis x, the loaded side hanging down) and turned onto the standing part: rail axis -> down, rail up -> left.
+const bumpAt = (u, c, w) => Math.exp(-(((u - c) / w) ** 2));
+function cloveCore(rho, pi, amp, k = 1) {
+  return join(wrapPts(-1.2 * k, 1.2 * k, -pi / 2, pi / 2, rho), wrapPts(1.2 * k, 1.2 * k, pi / 2, 3 * pi / 2, rho),
+    wrapPts(1.2 * k, -1.2 * k, 3 * pi / 2, 5 * pi / 2, rho, u => amp * Math.pow(Math.sin(pi * u), 0.6)),
+    wrapPts(-1.2 * k, -2.4 * k, 5 * pi / 2, 7 * pi / 2, rho), wrapPts(-2.4 * k, 0.0, 7 * pi / 2, 4 * pi + 0.42 * pi, rho));
+}
+// laid out as the knot is usually photographed, from above: a round turn on a post, the standing part running off along
+// the surface, the end coming back to it and making two half hitches round it, then leaving to the side
+function rtKind(o = {}) {
+  return () => {
+    const scene = knotTable('roundturn'), pi = Math.PI, rp = 4.0, rr = rp + 0.5, s = o.s ?? 1, gap = o.gap ?? 3.6, n = o.hitches ?? 2;
+    const post = new THREE.Mesh(new THREE.CylinderGeometry(rp * KS, rp * KS, 3.6 * KS, 48), new THREE.MeshStandardMaterial({ color: '#c9cdd1', metalness: 0.85, roughness: 0.28 })); post.position.y = 1.8 * KS; post.castShadow = post.receiveShadow = true; scene.add(post);
+    const cap = new THREE.Mesh(new THREE.CylinderGeometry(rp * 1.08 * KS, rp * 1.08 * KS, 0.6 * KS, 48), chrome); cap.position.y = 3.75 * KS; cap.castShadow = true; scene.add(cap);
+    // a half hitch, local to the standing part: over it going down, round under it, back up, under its own entering part
+    const hh = a => [[a - 2.0 * s, 1.8 * s], [a, 1.5 * s], [a + 0.6 * s, 0], [a + 0.5 * s, -1.4 * s], [a - 0.5 * s, -1.6 * s], [a - 1.0 * s, -0.5 * s], [a - 0.8 * s, 0], [a - 0.4 * s, 1.0 * s], [a + 1.0 * s, 2.0 * s]];
+    const Y = -4.5, a1 = 10.0 + (s - 1) * 1.5, as = [a1, a1 + gap].slice(0, n), up = pts => pts.map(([x, y]) => [x, y + Y]);
+    const last = as.length ? as[as.length - 1] : 8;
+    const sp = { ...RED, pts: [[30, Y], [20, Y], [10, Y], [4, Y], [0.6, Y]] };
+    const tail = as.length ? [[last + 1.0 * s + 1.4, Y + 2.0 * s + 1.4], [last + 1.0 * s + 2.4, Y + 2.0 * s + 2.9]] : [[11, Y + 2.6], [14.5, Y + 2.9], [17, Y + 3.1]];
+    const end = { ...(o.twoTone ? BLUE : RED), whip: '#f4f1e6', pts: [[5.8, -1.4], [7.6, Y + 1.9 * s], ...as.flatMap(a => up(hh(a)).slice(1)), ...tail] };
+    // each half hitch as in the animatedknots step photos (frames 4 and 5): the end comes off along the top, curves down at
+    // the far side OVER the standing part, comes back UNDER it towards the post, and finishes OVER its own entering part
+    const pins = []; for (const a of as) pins.push({ at: [a + 0.6 * s, Y], over: 1 }, { at: [a - 0.8 * s, Y], over: 0 }, { at: [a + 0.15 * s, Y + 1.3 * s], over: 'late' });
+    const res = flatKnot([sp, end], pins), [SP, EN] = res.ropes;
+    const helix = []; for (let k = 0; k <= 70; k++) { const t = k / 70, th = -pi / 2 - 3.5 * pi * t; helix.push(V(rr * Math.cos(th), 0.55 + 1.9 * t, -rr * Math.sin(th))); }
+    const tie = [V(5.0, 1.8, 0.5), V(5.45, 1.0, 1.05)];
+    if (o.twoTone) { scene.add(braid(scalePts([...SP, ...helix.slice(1)], KS), { R: 0.5 * KS, ...RED, fine: 2 })); scene.add(braid(scalePts([helix[helix.length - 1], ...tie, ...EN], KS), { R: 0.5 * KS, ...BLUE, whip: '#f4f1e6', fine: 2 })); }
+    else scene.add(braid(scalePts([...SP, ...helix.slice(1), ...tie, ...EN], KS), { R: 0.5 * KS, ...RED, whip: '#f4f1e6', fine: 2 }));
+    const span = 1 + Math.max(0, (as.length ? last : 13.6) - 13.6) * 0.012, c = V((7.2 + Math.max(0, last - 13.6) * 0.45) * KS, 0, 1.6 * KS);
+    const cam = new THREE.PerspectiveCamera(34, W / H, 0.01, 20); cam.position.set(c.x + 0.015, 0.4 * span, c.z + 0.1 * span); cam.lookAt(c);
+    const L = (x, y, h, t) => [V(x * KS, h * KS, -y * KS), t];
+    const labels = [L(3.4, 3.0, 2.4, 'round turn'), L(27, Y, 1, 'standing part')];
+    if (o.numbered) as.forEach((a, k) => labels.push(L(a - 0.2 * s, Y + 2.6 * s, 1, k ? '2nd half hitch' : '1st half hitch')));
+    else if (as.length) labels.push(L((as[0] + last) / 2 + 1.8, Y + 2.6 * s, 1, as.length > 1 ? 'two half hitches' : 'half hitch'));
+    const tp = tail[tail.length - 1]; labels.push(L(tp[0], tp[1], 1, o.twoTone ? 'working end' : 'end'));
+    // arrows along the working end, showing the way it travels
+    const arrows = []; if (o.arrows) for (let k = 40; k < EN.length - 30; k += 58) { const a = EN[k].clone(), b = EN[Math.min(EN.length - 1, k + 6)].clone(); a.y += 0.75; b.y += 0.75; arrows.push([a.multiplyScalar(KS), b.multiplyScalar(KS)]); }
+    return { env: 'outdoor', scene, cam, labels, arrows, note: o.title || 'Round turn and two half hitches', sun: { pos: [-0.6, 1.6, -0.4], target: [0.1, 0, 0], box: 0.6 }, ao: 0.012 };
+  };
+}
+KNOTS['knot-roundturn'] = rtKind({ s: 1.5, gap: 6.4 }); // option A, chosen: looser loops, spaced apart, one colour
+const KNOT_OPTS = {
+  'rt-a-loose': rtKind({ s: 1.5, gap: 6.4, title: 'A · looser loops' }),
+  'rt-b-twotone': rtKind({ twoTone: true, title: 'B · working end in a second colour' }),
+  'rt-c-arrows': rtKind({ s: 1.4, gap: 6.0, twoTone: true, arrows: true, numbered: true, title: 'C · loose, two colours, arrows' }),
+  'rt-d-step1': rtKind({ s: 1.4, gap: 6.0, twoTone: true, hitches: 0, title: 'D · step 1: round turn' }),
+  'rt-d-step2': rtKind({ s: 1.4, gap: 6.0, twoTone: true, hitches: 1, numbered: true, title: 'D · step 2: first half hitch' }),
+  'rt-d-step3': rtKind({ s: 1.4, gap: 6.0, twoTone: true, hitches: 2, numbered: true, title: 'D · step 3: second half hitch' }),
+};
+// rolling hitch: two riding turns over the standing part towards the load, then a hitch on the far side; the end lies along the rail
+KNOTS['knot-rolling'] = railKind('Rolling hitch', (rho, pi) => {
+  const f0 = -0.3, pl = (u, a, b) => (u <= a || u >= b) ? 0 : Math.sin(pi * (u - a) / (b - a)) ** 0.5;
+  return join([V(-17, -3.4, 3.4), V(-10, -1.6, 2.4), V(-7, rho * Math.sin(f0), rho * Math.cos(f0))],
+    wrapPts(-7, 1.0, f0, f0, rho, () => 0, 20),
+    wrapPts(1.0, -0.25, f0, 2 * pi + f0, rho, u => 1.05 * bumpAt(u, 1, 0.08)),
+    wrapPts(-0.25, -1.5, 2 * pi + f0, 4 * pi + f0, rho, u => 1.05 * (bumpAt(u, 0, 0.08) + bumpAt(u, 1, 0.08))),
+    wrapPts(-1.5, 2.1, 4 * pi + f0, 4 * pi + pi / 2, rho, u => 1.1 * Math.max(bumpAt(u, 0, 0.1), pl(u, 0.0, 0.97))),
+    wrapPts(2.1, 2.75, 4 * pi + pi / 2, 4 * pi + 3 * pi / 2, rho),
+    wrapPts(2.75, 1.45, 4 * pi + 3 * pi / 2, 6 * pi + 1.5, rho),
+    [V(2.2, rho + 0.05, 0.05), V(3.3, rho + 0.2, 0.2), V(5.0, rho + 0.6, 0.5), V(6.4, rho + 1.0, 0.8)]);
+}, { labels: [[-11, -1.9, 2.6, 'standing part · load'], [6.4, 1.75 + 1.0, 0.8, 'end']], cam: [0.0, 0.07, 0.25], look: [-0.008, -0.003, 0] });
+
+// Contact shading for knots: every point on a rope's surface is darkened as it nears another strand (or a far part of
+// its own), so each crossing reads at once: the strand beneath shades where the upper one lies on it, and vice versa.
+function bakeContact(scene) {
+  const ropes = []; scene.traverse(o => { if (o.isMesh && o.userData.center) ropes.push(o); });
+  const p = new THREE.Vector3();
+  for (const m of ropes) {
+    const pos = m.geometry.attributes.position, nv = pos.count, { per, R, ds } = m.userData, col = new Float32Array(nv * 3);
+    for (let v = 0; v < nv; v++) {
+      p.fromBufferAttribute(pos, v); const ring = Math.floor(v / per); let dmin = 1e9;
+      for (const o of ropes) { const C = o.userData.center, Ro = o.userData.R, skip = o === m ? Math.ceil(5 * R / ds) : -1;
+        for (let k = 0; k < C.length; k++) { if (o === m && Math.abs(k - ring) < skip) continue; const d = p.distanceTo(C[k]) - Ro; if (d < dmin) dmin = d; } }
+      const t = Math.min(1, Math.max(0, dmin / (1.5 * R))), f = 0.2 + 0.8 * t * t * (3 - 2 * t);
+      col[v * 3] = col[v * 3 + 1] = col[v * 3 + 2] = f;
+    }
+    m.geometry.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); m.material.vertexColors = true; m.material.needsUpdate = true;
+  }
 }
 
 const KINDS = { ring: kindRing, winch: kindWinch, cleat: kindCleat, rail: kindRail, sheet: kindSheet };
@@ -444,11 +704,12 @@ async function main() {
     g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); es.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide })));
     const sunD = new THREE.Mesh(new THREE.SphereGeometry(3, 16, 8), new THREE.MeshBasicMaterial({ color: new THREE.Color(14, 13, 11) })); sunD.position.set(-18, 34, -26); es.add(sunD);
     return pm.fromScene(es, 0.02).texture; })();
-  const want = new URLSearchParams(location.search).get('kind'), list = want ? want.split(',') : Object.keys(KINDS);
+  const qs = new URLSearchParams(location.search), want = qs.get('kind'), list = want ? want.split(',') : qs.get('set') === 'knots' ? Object.keys(KNOTS) : qs.get('set') === 'rtopts' ? Object.keys(KNOT_OPTS) : Object.keys(KINDS);
   window.__renders = {};
   for (const k of list) {
     seed = 7 + k.length * 13;
-    const K = KINDS[k](), scene = K.scene, cam = K.cam;
+    const K = (KINDS[k] || KNOTS[k] || KNOT_OPTS[k])(), scene = K.scene, cam = K.cam;
+    if (KNOTS[k] || KNOT_OPTS[k]) bakeContact(scene);
     scene.environment = K.env === 'outdoor' ? outdoorEnv : envTex; scene.environmentIntensity = K.env === 'outdoor' ? 0.8 : 0.55;
     const sun = new THREE.DirectionalLight('#fff1dc', 3.2); sun.position.set(...K.sun.pos); sun.target.position.set(...K.sun.target);
     const b = K.sun.box; sun.castShadow = true; sun.shadow.mapSize.set(4096, 4096); Object.assign(sun.shadow.camera, { left: -b, right: b, top: b, bottom: -b, near: 0.3, far: 12 }); sun.shadow.bias = -0.0002; sun.shadow.normalBias = 0.002; sun.shadow.radius = 3;
@@ -460,6 +721,8 @@ async function main() {
     ctx.imageSmoothingQuality = 'high'; ctx.drawImage(renderer.domElement, 0, 0, W, H);
     const vg = ctx.createRadialGradient(W / 2, H * 0.55, H * 0.35, W / 2, H * 0.55, H * 0.95); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.26)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
     for (const [p, text] of K.labels) { const q = p.clone().project(cam); pill(ctx, (q.x + 1) / 2 * W, (1 - q.y) / 2 * H - 4, text); }
+    for (const [a, b] of K.arrows || []) { const p = a.clone().project(cam), q = b.clone().project(cam), x = (p.x + 1) / 2 * W, y = (1 - p.y) / 2 * H, ang = Math.atan2((1 - q.y) / 2 * H - y, (q.x + 1) / 2 * W - x);
+      ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.beginPath(); ctx.moveTo(22, 0); ctx.lineTo(-14, -16); ctx.lineTo(-6, 0); ctx.lineTo(-14, 16); ctx.closePath(); ctx.fillStyle = '#ffe600'; ctx.strokeStyle = 'rgba(0,0,0,.75)'; ctx.lineWidth = 2.5; ctx.fill(); ctx.stroke(); ctx.restore(); }
     if (K.note) notePill(ctx, K.note);
     const img = new Image(); img.src = out.toDataURL('image/jpeg', 0.92); img.dataset.kind = k; document.getElementById('out').append(img);
     window.__renders[k] = img.src; ao.dispose?.(); comp.dispose?.();
