@@ -838,6 +838,10 @@ async function toggleDaily(el) {
 let mainCb = null, secCb = null;
 const cur = () => stack[stack.length - 1];
 
+// Analytics: the address never changes, so each screen is reported as a page of its own (/home, /exam-intro, …).
+let seenView = '';
+function seen(v) { if (v === seenView) return; seenView = v; window.va?.('pageview', { path: '/' + v.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase()) }); }
+
 function go(v, p = {}) { stack.push({ v, ...p }); sheet = null; render(true); }
 function replace(v, p = {}) { stack[stack.length - 1] = { v, ...p }; sheet = null; render(true); }
 function tab(v) { stack = [{ v }]; sheet = null; P = null; enterTab = true; render(true); }
@@ -952,6 +956,7 @@ const navHtml = (on, live = true) => `<nav class="nav">${NAV.map(([v, i, k]) => 
 function render(toTop, theme = false, pre = null) {
   if (cur().v === 'exam' && !S.exam) stack[stack.length - 1] = { v: 'examIntro' };
   const c = cur();
+  seen(c.v);
   if (ALL_LEVEL_VIEWS.has(c.v)) loadAllBanks();
   WEAK = new Set(weakTopics());
   const V = VIEWS[c.v](c);

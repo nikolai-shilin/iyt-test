@@ -39,10 +39,11 @@
 <script src="design/icons.js"></script>
 <script src="design/test-icons.js"></script>
 <script src="design/figures.js"></script>
-<script src="app.js"></script>
+<!-- Analytics: app.js reports each screen as a page (seen), so the queue and its hook come first and Vercel's own page view on load is off -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <!-- Telegram opens the app with the student's signed sign-in data in the address's #fragment; analytics gets the address without it -->
 <script>window.va('beforeSend', function (e) { return Object.assign({}, e, { url: e.url.split('#')[0] }); });</script>
-<script defer src="/_vercel/insights/script.js"></script>
+<script src="app.js"></script>
+<script defer src="/_vercel/insights/script.js" data-disable-auto-track="1"></script>
 </body>
 </html>
