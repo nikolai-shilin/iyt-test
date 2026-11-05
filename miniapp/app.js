@@ -1,7 +1,8 @@
 /* IYT Test — Telegram mini app.
    Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile); C4 Admin
-   (four pages under one tab strip: Overview with joins, answers, wrong answers, theory reads and errors; Students; the questions
-   reported as wrong; the flagged ones — api/admin.mjs) opens from the profile for the admins only. C1b lists the
+   (five pages under one tab strip: Overview with joins, answers, wrong answers, theory reads and errors; Students; the
+   questions reported as wrong; what students say is wrong in the articles; the flagged questions — api/admin.mjs; the
+   questions and articles in the language each student read them in) opens from the profile for the admins only. C1b lists the
    questions the student reported as wrong, so they can withdraw a report.
    Banks are static JSON files named after their content (build.mjs lists them in window.BANKS), so a phone keeps them
    once downloaded; Supabase is the fallback (fetchBank). Progress lives on the device
@@ -117,7 +118,7 @@ const STR = {
     noteHint: 'Report a mistake in this section', noteTitle: 'What is wrong here?', noteLead: 'A fact, a picture, a translation, a typo: say what you noticed. The author reads every report.',
     notePh: 'For example: a south cardinal mark flashes Q(6)+LFl, not Q(9)', noteSend: 'Send', noteSave: 'Save the changes', noteDrop: 'Withdraw the report',
     noteSent: 'Reported — thank you', noteLocal: 'Saved on this device. Open the app in Telegram to send it.', noteFoot: 'Found a mistake? Tap the flag beside the heading of that section.',
-    notesK: 'Articles', readUpK: 'Where to read', mistakesIn: (n) => pl(n, 'mistake'),
+    readUpK: 'Where to read', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Coming soon', soon2027: 'Coming in 2027', planned: 'Planned',
     homeKicker: 'IYT theory · free', homeTitle: 'Pass your IYT&nbsp;exam',
     homeLead: 'Close-to-real questions for every certification level, with an explanation after each answer. Pick the level you are studying for.',
@@ -205,7 +206,8 @@ const STR = {
     flaggedMeta: 'Questions students marked to come back to', flaggedNone: 'Nobody has flagged a question yet', flaggedBy: 'Flagged by',
     reportedQ: 'Reported as wrong', reportedMeta: 'Questions students say have a mistake', reportedNone: 'No question has been reported yet', reportedBy: 'Reported by',
     adminT: 'Admin', adminMeta: 'Students, charts and reported questions',
-    tabOverview: 'Overview', tabStudents: 'Students', tabReported: 'Reported', tabFlagged: 'Flagged',
+    tabOverview: 'Overview', tabStudents: 'Students', tabReported: 'Reported', tabArticles: 'Articles', tabFlagged: 'Flagged',
+    articlesT: 'Article notes', articlesMeta: 'What students say is wrong in the theory, shown as they read it', articlesNone: 'Nobody has reported a mistake in an article yet',
     overviewMeta: 'How the app is used, day by day',
     chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chErrors: 'Errors logged', chRange: 'Period', chLearning: 'Learning now, by course', chLearnNone: 'Nobody studied in this period', chNone: 'No numbers for the charts yet',
     rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
@@ -227,7 +229,7 @@ const STR = {
     noteHint: 'Сообщить об ошибке в этом разделе', noteTitle: 'Что здесь не так?', noteLead: 'Факт, рисунок, перевод, опечатка — напишите, что вы заметили. Автор читает каждое сообщение.',
     notePh: 'Например: южный кардинальный знак — Q(6)+LFl, а не Q(9)', noteSend: 'Отправить', noteSave: 'Сохранить', noteDrop: 'Отозвать сообщение',
     noteSent: 'Сообщили — спасибо', noteLocal: 'Сохранено на этом устройстве. Чтобы отправить, откройте приложение в Telegram.', noteFoot: 'Нашли ошибку? Нажмите флажок рядом с заголовком раздела.',
-    notesK: 'Статьи', readUpK: 'Что почитать', mistakesIn: (n) => pl(n, 'mistake'),
+    readUpK: 'Что почитать', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Скоро', soon2027: 'В 2027 году', planned: 'В планах',
     homeKicker: 'Теория IYT · бесплатно', homeTitle: 'Сдайте экзамен&nbsp;IYT',
     homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа. Выберите уровень, к которому готовитесь.',
@@ -317,7 +319,8 @@ const STR = {
     flaggedMeta: 'Вопросы, которые ученики отметили, чтобы вернуться', flaggedNone: 'Отмеченных вопросов пока нет', flaggedBy: 'Отметили',
     reportedQ: 'Вопросы с ошибкой', reportedMeta: 'Вопросы, в которых ученики нашли ошибку', reportedNone: 'Об ошибках пока не сообщали', reportedBy: 'Сообщили',
     adminT: 'Админ-панель', adminMeta: 'Ученики, графики и вопросы с ошибками',
-    tabOverview: 'Обзор', tabStudents: 'Ученики', tabReported: 'Ошибки', tabFlagged: 'Отмечены',
+    tabOverview: 'Обзор', tabStudents: 'Ученики', tabReported: 'Ошибки', tabArticles: 'Статьи', tabFlagged: 'Отмечены',
+    articlesT: 'Замечания к статьям', articlesMeta: 'Что ученики нашли неверного в теории — так, как они это читали', articlesNone: 'Об ошибках в статьях пока не сообщали',
     overviewMeta: 'Как пользуются приложением, по дням',
     chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chErrors: 'Ошибки в приложении', chRange: 'Период', chLearning: 'Сейчас изучают, по курсам', chLearnNone: 'За этот период никто не занимался', chNone: 'Для графиков пока нет данных',
     rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
@@ -563,7 +566,7 @@ function loadBank(id) {
 }
 // Every level's bank, for the pages that list questions of any level (ALL_LEVEL_VIEWS): asked for once, and the page
 // draws again when they are in.
-const ALL_LEVEL_VIEWS = new Set(['reported', 'admin', 'adminUsers', 'adminWrong', 'adminFlags']);
+const ALL_LEVEL_VIEWS = new Set(['reported', 'admin', 'adminUsers', 'adminWrong', 'adminNotes', 'adminFlags']);
 let allAsked = false;
 function loadAllBanks() {
   if (allAsked) return;
@@ -590,20 +593,26 @@ const theoryKey = () => `${LEVEL.id}.${theoryLang()}`;
 const theory = () => THEORY[theoryKey()];
 // Asks for the current level's theory once; the theory screens draw again when it is in.
 function needTheory() {
-  const k = theoryKey();
-  if (!hasTheory() || k in THEORY || THEORY_LOADS[k]) return;
+  loadTheory(LEVEL.id, theoryLang(), () => { if (['theory', 'article', 'results', 'examResult'].includes(cur().v) && !sheet) render(); });
+}
+// Asks once for a level's articles in a language (one it has: see theoryLang) into THEORY['<level>.<lang>']; done runs
+// when they are in (or failed: null).
+function loadTheory(id, lang, done) {
+  const k = `${id}.${lang}`;
+  if (!hasTheory(id) || !THEORY_FILES[id][lang] || k in THEORY || THEORY_LOADS[k]) return;
   const get = (url, opt) => fetch(url, opt).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   // the content-named file; if it is gone (an app open since before a deploy), the plain name, checked with the server
-  const plain = `data/theory-${LEVEL.id}${theoryLang() === 'en' ? '' : `.${theoryLang()}`}.json`;
-  THEORY_LOADS[k] = get(THEORY_FILES[LEVEL.id][theoryLang()]).then((d) => (d && d.topics ? d : get(plain, { cache: 'no-cache' }))).then((d) => {
+  const plain = `data/theory-${id}${lang === 'en' ? '' : `.${lang}`}.json`;
+  THEORY_LOADS[k] = get(THEORY_FILES[id][lang]).then((d) => (d && d.topics ? d : get(plain, { cache: 'no-cache' }))).then((d) => {
     delete THEORY_LOADS[k];
     THEORY[k] = d && d.topics ? d : null;
-    if (['theory', 'article', 'results', 'examResult'].includes(cur().v) && !sheet) render();
+    if (done) done();
   });
 }
 const readKey = (tp) => `${LEVEL.prefix}-${tp}`;
-// What the student wrote about a section of an article: S.notes['<prefix>-<topic>/<section>'] = { text, at }. It goes
-// to the server with the rest of the progress; the admins read it on their Reported page (api/admin.mjs).
+// What the student wrote about a section of an article: S.notes['<prefix>-<topic>/<section>'] = { text, at, lang: the
+// language the article was shown in }. It goes to the server with the rest of the progress; the admins read it on their
+// Articles page (api/admin.mjs), with the section as the student saw it.
 const noteKey = (tp, sec) => `${readKey(tp)}/${sec}`;
 const MAX_NOTE = 1000;
 const isRead = (tp) => !!(S.read && S.read[readKey(tp)]);
@@ -654,18 +663,19 @@ function setPath(obj, path, val) {
   for (let i = 0; i < k.length - 1; i++) { o = o?.[k[i]]; if (o == null) return; }
   if (o != null) o[k[k.length - 1]] = val;
 }
+// A question with an overlay's translation laid over it (its figure's labels too); as it is when tr does not cover it.
+function trQ(q, tr) {
+  if (!tr || !tr.q || (tr.options || []).length !== 4) return q;
+  const figure = q.figure ? JSON.parse(JSON.stringify(q.figure)) : null;
+  if (figure) for (const [p, v] of Object.entries(tr.figure || {})) setPath(figure, p, v);
+  return { ...q, q: tr.q, options: tr.options, why: tr.why || q.why, ref: tr.ref || q.ref, figure, _tr: true };
+}
 // Rebuilds BANK/Q/TOPICS in LANG. Option order never changes, so progress and exams keyed by option index stay valid.
 function localise() {
   BASE = BASES[LEVEL.id];
   const ov = (LANG !== 'en' && OVERLAY[`${LEVEL.id}.${LANG}`]) || null;
   const tq = (ov && ov.questions) || {};
-  const questions = BASE.questions.map((q) => {
-    const tr = tq[q.id];
-    if (!tr || !tr.q || (tr.options || []).length !== 4) return q;
-    const figure = q.figure ? JSON.parse(JSON.stringify(q.figure)) : null;
-    if (figure) for (const [p, v] of Object.entries(tr.figure || {})) setPath(figure, p, v);
-    return { ...q, q: tr.q, options: tr.options, why: tr.why || q.why, ref: tr.ref || q.ref, figure, _tr: true };
-  });
+  const questions = BASE.questions.map((q) => trQ(q, tq[q.id]));
   BANK = { ...BASE, questions, topics: BASE.topics.map((tp) => ({ ...tp, title: (ov && ov.topics && ov.topics[tp.id]) || tp.title })) };
   BANK.translated = questions.filter((q) => q._tr).length;
   Q = {}; BY_TOPIC = {};
@@ -727,7 +737,7 @@ function loadDaily() {
 // charts, or null.
 let ADM, ADM_SERIES = null;
 // The admin pages, in the order of their bottom menu: [view, icon, label]
-const ADMIN_TABS = [['admin', 'chart', 'tabOverview'], ['adminUsers', 'users', 'tabStudents'], ['adminWrong', 'alert', 'tabReported'], ['adminFlags', 'flag', 'tabFlagged']];
+const ADMIN_TABS = [['admin', 'chart', 'tabOverview'], ['adminUsers', 'users', 'tabStudents'], ['adminWrong', 'alert', 'tabReported'], ['adminNotes', 'page', 'tabArticles'], ['adminFlags', 'flag', 'tabFlagged']];
 const isAdminView = (v) => ADMIN_TABS.some(([k]) => k === v);
 function loadStudents(again) {
   if (ADM !== undefined && !again) return; // a failure stays on screen until Reload is tapped
@@ -830,12 +840,30 @@ function anyQ(id) {
   const lv = levelOfPrefix(String(id).split('-')[0]), b = lv && BASES[lv.id], q = b && b.questions.find((x) => x.id === id);
   return q ? { q, lv, topic: (b.topics.find((tp) => tp.id === q.topic) || {}).title || '' } : null;
 }
-// The questions the students flagged (key 'flags') or reported as wrong ('wrong'), most marked first: [{ id, users }].
-// Ids no bank knows are left out.
+// The questions the students flagged (key 'flags') or reported as wrong ('wrong'), most marked first, one entry per
+// question and language the students read it in: [{ id, lang, users }]. Ids no bank knows are left out.
 function flaggedByStudents(key) {
   const by = {};
-  ADM.forEach((u) => (u[key] || []).forEach((id) => { (by[id] = by[id] || []).push(u); }));
-  return Object.keys(by).filter(anyQ).map((id) => ({ id, users: by[id] })).sort((a, b) => b.users.length - a.users.length || a.id.localeCompare(b.id));
+  ADM.forEach((u) => (u[key] || []).forEach((id) => { const k = `${id} ${uLang(u)}`; (by[k] = by[k] || []).push(u); }));
+  return Object.keys(by).map((k) => { const [id, lang] = k.split(' '); return { id, lang, users: by[k] }; }).filter((x) => anyQ(x.id))
+    .sort((a, b) => b.users.length - a.users.length || a.id.localeCompare(b.id) || a.lang.localeCompare(b.lang));
+}
+// The language a student reads the app in (api/admin.mjs uiLang: their EN/RU pick, else what Telegram suggests).
+const uLang = (u) => (LANGS.includes(u.uiLang) ? u.uiLang : LANGS.includes(u.lang) ? u.lang : 'en');
+// A level's overlay in a language for the admin pages, asked for once; the page draws again when it is in.
+function overlayFor(lv, lang) {
+  const k = `${lv}.${lang}`;
+  if (lang === 'en') return null;
+  if (!(k in OVERLAY)) loadOverlay(lang, lv).then(() => { if (isAdminView(cur().v)) render(); });
+  return OVERLAY[k] || null;
+}
+// A question of any level as a student reading in lang sees it: { q, lv, topic, lang: the language it is shown in,
+// English while the overlay is on its way or does not cover it }, or null when no bank knows it.
+function qIn(id, lang) {
+  const lv = levelOfPrefix(String(id).split('-')[0]), b = lv && BASES[lv.id], q0 = b && b.questions.find((x) => x.id === id);
+  if (!q0) return null;
+  const ov = overlayFor(lv.id, lang), q = trQ(q0, ov && ov.questions && ov.questions[id]);
+  return { q, lv, topic: (ov && ov.topics && ov.topics[q0.topic]) || (b.topics.find((tp) => tp.id === q0.topic) || {}).title || '', lang: q._tr ? lang : 'en' };
 }
 const initials = (name) => name.replace(/^@/, '').split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
 // One admin page: the heading, then the page itself once the results are in (inner builds it); render() adds the
@@ -856,21 +884,33 @@ function adminPage(v, title, meta, inner) {
 // the question and who marked it.
 // What students wrote about the articles (state.notes), newest first; a tap opens the article at that section.
 const allNotes = () => (Array.isArray(ADM) ? ADM.flatMap((u) => (u.notes || []).map((n) => ({ u, ...n }))).sort((a, b) => b.at - a.at) : []);
+// The Articles page: each note under the section it is about, as the student saw it: the article's language then
+// (notes from before that was kept: the language they read the app in now), or English where the level has no
+// translation. The section's title and its opening lines come once that level's articles in that language are in.
+const plainText = (s) => String(s || '').replace(/\*\*(.+?)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1');
 function notesList() {
   const rows = allNotes();
-  if (!rows.length) return '';
-  return `<div class="stack g8"><span class="kicker">${t('notesK')}</span><div class="anotes">${rows.map((n) => {
+  if (!rows.length) return `<div class="empty"><p class="body-muted">${t('articlesNone')}</p></div>`;
+  return `<div class="anotes">${rows.map((n) => {
     const [art, sec] = n.k.split('/'), prefix = art.split('-')[0], tp = art.slice(prefix.length + 1);
-    const lv = levelOfPrefix(prefix), b = lv && BASES[lv.id], topic = b && b.topics.find((x) => x.id === tp);
-    return `<button class="anote" data-act="anote" data-lv="${lv ? lv.id : ''}" data-t="${esc(tp)}" data-s="${esc(sec)}"><span class="body-s">${esc(n.text)}</span>` +
-      `<span class="card-meta">${esc([lv && lv.title, topic ? topic.title : tp, sec].filter(Boolean).join(' · '))}</span><span class="card-meta">${esc(studentName(n.u))}${n.at ? ` · ${day(n.at)}` : ''}</span></button>`;
-  }).join('')}</div></div>`;
+    const lv = levelOfPrefix(prefix), b = lv && BASES[lv.id], want = LANGS.includes(n.lang) ? n.lang : uLang(n.u);
+    const lang = lv && hasTheory(lv.id) && THEORY_FILES[lv.id][want] ? want : 'en';
+    if (lv) loadTheory(lv.id, lang, () => { if (cur().v === 'adminNotes') render(); });
+    const a = lv && THEORY[`${lv.id}.${lang}`], s = a && a.topics[tp] && a.topics[tp].sections.find((x) => x.id === sec);
+    const ov = lv && overlayFor(lv.id, lang), topic = (ov && ov.topics && ov.topics[tp]) || (b && (b.topics.find((x) => x.id === tp) || {}).title) || tp;
+    const first = s && ((s.qa && s.qa.a) || (s.blocks.find((x) => x.p || x.rule) || {}).p || (s.blocks.find((x) => x.rule) || {}).rule);
+    const quote = first ? plainText(first) : '';
+    return `<button class="anote" data-act="anote" data-lv="${lv ? lv.id : ''}" data-t="${esc(tp)}" data-s="${esc(sec)}" lang="${lang}">` +
+      `<span class="card-meta">${esc([lv && lv.title, topic].filter(Boolean).join(' · '))}</span>` +
+      `<span class="card-title">${esc(s ? s.title : sec)}</span>${quote ? `<span class="body-muted anq">${esc(quote.length > 180 ? quote.slice(0, 180).replace(/\s+\S*$/, '') + '…' : quote)}</span>` : ''}` +
+      `<span class="body-s ant">${esc(n.text)}</span><span class="card-meta">${esc(studentName(n.u))}${n.at ? ` · ${day(n.at)}` : ''} · ${lang.toUpperCase()}</span></button>`;
+  }).join('')}</div>`;
 }
 function flaggedList(key, none) {
   const list = flaggedByStudents(key);
   if (!list.length) return `<div class="empty"><p class="body-muted">${t(none)}</p></div>`;
-  return `<div class="topics">${list.map(({ id, users }) => { const { q, lv, topic } = anyQ(id);
-    return `<div class="topic flq${key === 'wrong' ? ' bad' : ''}" data-act="flagq" data-id="${id}" data-k="${key}"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span><span class="n"><b>${users.length}</b>${t('studentsW', users.length)}</span></div>`; }).join('')}</div>`;
+  return `<div class="topics">${list.map(({ id, lang, users }) => { const { q, lv, topic } = qIn(id, lang);
+    return `<div class="topic flq${key === 'wrong' ? ' bad' : ''}" data-act="flagq" data-id="${id}" data-k="${key}" data-lang="${lang}" lang="${lang}"><span class="ico">${svg('flag', 18)}</span><span class="card-title">${esc(q.q)}</span><span class="tmeta">${esc([lv.title, topic, lang.toUpperCase()].filter(Boolean).join(' · '))}</span><span class="n"><b>${users.length}</b>${t('studentsW', users.length)}</span></div>`; }).join('')}</div>`;
 }
 // The Overview charts, all on one range (CH_RANGE, the switch above them): 24h = the last 24 UTC hours, 7d and 30d =
 // UTC days, 3m = the last 91 days in 13 weeks. CH_GROW: the range just changed, so the bars grow in again.
@@ -948,7 +988,7 @@ async function unflag(q, k, ids, el) {
     if (!r.ok) throw new Error(r.status);
   } catch (e) { el?.classList.remove('off'); return toast(t('error')); }
   ADM.forEach((u) => { if (ids.includes(u.id)) u[k] = (u[k] || []).filter((id) => id !== q); });
-  if (!ADM.some((u) => (u[k] || []).includes(q))) sheet = null; // nobody left on this question
+  if (!ADM.some((u) => (u[k] || []).includes(q) && (!sheet || !sheet.lang || uLang(u) === sheet.lang))) sheet = null; // nobody left on this question (in this language)
   hap('success'); render(); toast(t(ids.length > 1 ? 'unflagDoneAll' : 'unflagDone'));
 }
 function chartPoint(e) {
@@ -1083,11 +1123,12 @@ function mainButtonChange(toTop) {
 /* ---------- rendering ---------- */
 const NAV = [['home', 'book', 'learn'], ['theory', 'page', 'theory'], ['examIntro', 'timer', 'exam'], ['progress', 'chart', 'progress'], ['profile', 'user', 'profile']];
 
-// The admin pages' own bottom menu, built like the app's: Overview, Students, Reported, Flagged. The two question
-// lists carry how many questions are on them.
+// The admin pages' own bottom menu, built like the app's: Overview, Students, Reported, Articles, Flagged. The lists
+// carry how many questions (or article notes) are on them.
 function adminNavHtml(on) {
-  const n = { adminWrong: Array.isArray(ADM) ? flaggedByStudents('wrong').length + allNotes().length : 0, adminFlags: Array.isArray(ADM) ? flaggedByStudents('flags').length : 0 };
-  return `<nav class="nav anav" aria-label="${esc(t('adminT'))}">${ADMIN_TABS.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}" data-act="atab" data-v="${v}"${v === on ? ' aria-current="page"' : ''}><span class="ai"><span data-i="${i}" aria-hidden="true"></span>${n[v] ? `<b class="badge${v === 'adminWrong' ? ' bad' : ''}">${n[v] > 99 ? '99+' : n[v]}</b>` : ''}</span>${t(k)}</a>`).join('')}</nav>`;
+  const qs = (k) => (Array.isArray(ADM) ? new Set(flaggedByStudents(k).map((x) => x.id)).size : 0); // questions, whatever the language
+  const n = { adminWrong: qs('wrong'), adminNotes: allNotes().length, adminFlags: qs('flags') };
+  return `<nav class="nav anav" aria-label="${esc(t('adminT'))}">${ADMIN_TABS.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}" data-act="atab" data-v="${v}"${v === on ? ' aria-current="page"' : ''}><span class="ai"><span data-i="${i}" aria-hidden="true"></span>${n[v] ? `<b class="badge${v === 'adminWrong' || v === 'adminNotes' ? ' bad' : ''}">${n[v] > 99 ? '99+' : n[v]}</b>` : ''}</span>${t(k)}</a>`).join('')}</nav>`;
 }
 const navHtml = (on, live = true) => `<nav class="nav">${NAV.map(([v, i, k]) => `<a class="${v === on ? 'on' : ''}"${live ? ` data-act="tab" data-v="${v}"` : ''}${v === on ? ' aria-current="page"' : ''}><span data-i="${i}" aria-hidden="true"></span>${t(k)}</a>`).join('')}</nav>`;
 // theme: the new theme spreads from the tapped segment (--tx/--ty), the DOM swap running inside a view transition;
@@ -1587,7 +1628,7 @@ const VIEWS = {
     };
   },
 
-  /* C4 Admin (admins only), four pages under one tab strip. Overview: the totals and the charts per day */
+  /* C4 Admin (admins only), five pages under one tab strip. Overview: the totals and the charts per day */
   admin() {
     return adminPage('admin', 'overview', 'overviewMeta', () => {
       const active = ADM.filter((u) => u.week > 0).length, exams = ADM.reduce((a, u) => a + u.exams.length, 0);
@@ -1610,7 +1651,9 @@ const VIEWS = {
     });
   },
   /* C4 Questions the students reported as wrong (the red flag) */
-  adminWrong() { return adminPage('adminWrong', 'reportedQ', 'reportedMeta', () => notesList() + flaggedList('wrong', 'reportedNone')); },
+  adminWrong() { return adminPage('adminWrong', 'reportedQ', 'reportedMeta', () => flaggedList('wrong', 'reportedNone')); },
+  /* C4 What students say is wrong in the theory articles */
+  adminNotes() { return adminPage('adminNotes', 'articlesT', 'articlesMeta', notesList); },
   /* C4 Questions the students flagged to come back to */
   adminFlags() { return adminPage('adminFlags', 'flaggedQ', 'flaggedMeta', () => flaggedList('flags', 'flaggedNone')); },
 
@@ -1639,15 +1682,15 @@ const SHEETS = {
       ${had ? `<button class="pill pill-quiet pill-wide" data-act="treportDrop">${t('noteDrop')}</button>` : ''}`;
   },
   flagq(s) {
-    const f = anyQ(s.id);
+    const f = qIn(s.id, LANGS.includes(s.lang) ? s.lang : 'en');
     if (!f || !Array.isArray(ADM)) return `<div class="empty"><span class="meta">${t('studentsFail')}</span></div>`;
     const key = s.k === 'wrong' ? 'wrong' : 'flags';
-    const { q, lv, topic } = f, users = ADM.filter((u) => (u[key] || []).includes(s.id));
+    const { q, lv, topic } = f, users = ADM.filter((u) => (u[key] || []).includes(s.id) && (!s.lang || uLang(u) === s.lang));
     const opts = q.options.map((o, i) => `<div class="ans${i === q.answer ? ' ok' : ' plain'}"><span class="l">${i === q.answer ? svg('check', 12) : ''}</span><span>${esc(o)}</span></div>`).join('');
     const who = users.map((u) => `<div class="att who"><button class="whob" data-act="student" data-id="${u.id}">${avatar(u, 'tg-ava', 'width:32px;height:32px;font-size:12px')}<span class="card-title">${esc(studentName(u))}</span>${svg('next', 16)}</button><button class="mini mini-danger" data-act="unflagOne" data-id="${u.id}" data-q="${s.id}" data-k="${key}">${t('unflagOne')}</button></div>`).join('');
-    const all = users.length > 1 ? `<button class="pill pill-quiet" style="margin-top:4px" data-act="unflagAll" data-q="${s.id}" data-k="${key}">${t('unflagAll', users.length)}</button>` : '';
-    return `<span class="meta">${esc([lv.title, topic].filter(Boolean).join(' · '))}</span>
-      <div class="rev flq-card"><p class="q">${esc(q.q)}</p>${figHtml(q)}${opts}<p class="body-muted" style="font-size:14px">${esc(q.why)}</p></div>
+    const all = users.length > 1 ? `<button class="pill pill-quiet" style="margin-top:4px" data-act="unflagAll" data-q="${s.id}" data-k="${key}" data-lang="${s.lang || ''}">${t('unflagAll', users.length)}</button>` : '';
+    return `<span class="meta">${esc([lv.title, topic, (s.lang || f.lang).toUpperCase()].filter(Boolean).join(' · '))}</span>
+      <div class="rev flq-card" lang="${f.lang}"><p class="q">${esc(q.q)}</p>${figHtml(q)}${opts}<p class="body-muted" style="font-size:14px">${esc(q.why)}</p></div>
       <div class="stack g8"><span class="kicker">${t(key === 'wrong' ? 'reportedBy' : 'flaggedBy')} · ${users.length}</span><div>${who}</div>${all}<p class="hint" style="margin:0">${t('unflagHint')}</p></div>`;
   },
   student(s) {
@@ -1660,7 +1703,7 @@ const SHEETS = {
       return `<div class="tbar"><span class="card-title">${esc(LEVELS.find((l) => l.id === id).title)}</span><span class="n">${p}%</span><span class="bar"><i style="width:${p}%"></i></span><span class="card-meta" style="grid-column:1/-1">${t('levelText', a, b, 0, L.seen)}${L.mistakes ? ' ' + t('misMeta', L.mistakes) + '.' : ''}</span></div>`; }).join('');
     const exams = u.exams.map((e) => `<div class="att"><span class="card-meta">${day(e.at)} · ${esc((LEVELS.find((l) => l.id === e.lv) || {}).title || e.lv)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
     return `<div class="row" style="gap:14px">${avatar(u, 'tg-ava', 'width:52px;height:52px;font-size:16px')}<div><div class="card-title" style="font-size:18px">${esc(name)}</div>
-        <div class="card-meta">${u.username ? '@' + esc(u.username) + ' · ' : ''}${u.lang.toUpperCase()} · ${u.daily ? t('dailyOn') : t('dailyOff')}</div></div></div>
+        <div class="card-meta">${u.username ? '@' + esc(u.username) + ' · ' : ''}${uLang(u).toUpperCase()} · ${u.daily ? t('dailyOn') : t('dailyOff')}</div></div></div>
       <div class="stats"><div class="stat"><b>${u.total}</b><span class="meta">${t('answeredW')}</span></div><div class="stat"><b>${u.streak}</b><span class="meta">${t('dayStreak', u.streak)}</span></div><div class="stat"><b>${u.week}</b><span class="meta">${t('thisWeek').toLowerCase()}</span></div></div>
       <div class="att"><span class="card-meta">${t('joined')}</span><span class="card-meta">${day(u.joined)}</span></div>
       <div class="att"><span class="card-meta">${t('lastActive')}</span><span class="card-meta">${day(u.active)}</span></div>
@@ -1858,7 +1901,7 @@ const ACT = {
     const text = (document.getElementById('thNote')?.value ?? sheet.text).trim().slice(0, MAX_NOTE);
     if (text.length < 3) return;
     S.notes = S.notes || {};
-    S.notes[noteKey(sheet.t, sheet.s)] = { text, at: Date.now() };
+    S.notes[noteKey(sheet.t, sheet.s)] = { text, at: Date.now(), lang: theoryLang() };
     save(); hap('success'); closeSheet(); toast(t(IN_TG && serverOn ? 'noteSent' : 'noteLocal'));
   },
   treportDrop: () => {
@@ -1954,7 +1997,7 @@ const ACT = {
   range: (d) => { if (!RANGES.includes(d.r) || CH_RANGE === d.r) return; CH_RANGE = d.r; CH_GROW = true; hap('sel'); render(); CH_GROW = false; },
   unflagOne: (d, el) => unflag(d.q, d.k, [+d.id], el),
   unflagAll: async (d, el) => {
-    const ids = Array.isArray(ADM) ? ADM.filter((u) => (u[d.k] || []).includes(d.q)).map((u) => u.id) : [];
+    const ids = Array.isArray(ADM) ? ADM.filter((u) => (u[d.k] || []).includes(d.q) && (!d.lang || uLang(u) === d.lang)).map((u) => u.id) : [];
     if (!ids.length || !(await confirmBox(t('confirmUnflagAll', ids.length)))) return;
     unflag(d.q, d.k, ids, el);
   },
@@ -1965,10 +2008,11 @@ const ACT = {
     S.wrong.splice(k, 1); hap('sel'); save(); render(); toast(t('unwrong'));
   },
   rentals: () => (IN_TG ? TG.openTelegramLink(RENTALS_LINK) : window.open(RENTALS_LINK, '_blank', 'noopener')),
+  // the MCP server's page on the site (miniapp/pages.mjs), in the app's language; from Telegram it opens in the browser
   feedback: () => (IN_TG ? TG.openTelegramLink(FEEDBACK_LINK) : window.open(FEEDBACK_LINK, '_blank', 'noopener')),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
-  flagq: (d) => { sheet = { v: 'flagq', id: d.id, k: d.k }; render(); },
+  flagq: (d) => { sheet = { v: 'flagq', id: d.id, k: d.k, lang: d.lang || '' }; render(); },
   sort: (d) => { ADM_SORT = d.s; hap('sel'); render(); },
   reset: async () => {
     if (!(await confirmBox(t('confirmReset')))) return;

@@ -1,10 +1,10 @@
 // Every student's results, for the admins (ADMINS in api/settings.mjs). The mini app shows them on the Students page
 // behind a button in the profile that only admins see.
 //
-//   GET /api/admin            → { users: [ { id, name, username, lang, daily, joined, active, level, total, streak, lastDay,
+//   GET /api/admin            → { users: [ { id, name, username, lang, uiLang, daily, joined, active, level, total, streak, lastDay,
 //                                 week, levels: { fs: { mastered, seen, mistakes }, … }, exams: [{ lv, at, pct, passed }],
 //                                 flags: ['bs-012', …], wrong: ['bs-034', …],
-//                                 notes: [ { k: 'bs-buoyage/cardinal', text, at } ] } ],
+//                                 notes: [ { k: 'bs-buoyage/cardinal', text, at, lang } ] } ],
 //                               series: { hour: [ { at, joined, answers, wrong, reads, errors } × 24 ], day: [ … × 91 ] } | null }
 //   POST /api/admin { unflag: { q: 'bs-012', k: 'flags' | 'wrong', users: [id, …] } } → { ok: true, users: [id, …] }
 //                             takes that flag off those students' question (public.flag_clears, see below); 501 when the
@@ -19,7 +19,10 @@
 // flags are the question ids the student marked to come back to (state.flags) and wrong the ones they reported as
 // having a mistake (state.wrong, the red flag); the app groups both by question on the Students page, so the admins
 // see which questions people get stuck on and which need a fix. notes is what the student wrote about a section of a
-// theory article (state.notes, the flag beside a section's heading): the article and section, the comment, when.
+// theory article (state.notes, the flag beside a section's heading): the article and section, the comment, when, and
+// the language the article was shown in (notes written before that was kept have none). uiLang is the language the
+// student reads the app in: their EN/RU pick (state.set.lang), else lang (the bot's guess from Telegram, the same rule
+// the app uses until they pick); the admin pages show each student's flagged questions in it.
 // series is for the charts on the Overview page, per UTC hour (the last 24) and per UTC day (the last 91), oldest first:
 // people who joined (users.created_at), answers given and the wrong ones among them (public.answers), theory articles
 // read to the end (the times in the students' state.read; an article read before those were kept, as 1, is not on
@@ -46,7 +49,8 @@ const MAX_NOTES = 50; // per student
 // What a student wrote about the theory articles: state.notes['<prefix>-<topic>/<section>'] = { text, at }.
 const cleanNotes = (notes) => Object.entries(notes && typeof notes === 'object' && !Array.isArray(notes) ? notes : {})
   .filter(([k, n]) => /^[a-z]{1,8}-[a-z0-9-]{1,40}\/[a-z0-9-]{1,40}$/.test(k) && n && typeof n.text === 'string' && n.text.trim())
-  .slice(0, MAX_NOTES).map(([k, n]) => ({ k, text: n.text.trim().slice(0, 1000), at: Number.isFinite(n.at) ? n.at : 0 }));
+  .slice(0, MAX_NOTES).map(([k, n]) => ({ k, text: n.text.trim().slice(0, 1000), at: Number.isFinite(n.at) ? n.at : 0, ...(LANGS.includes(n.lang) && { lang: n.lang }) }));
+const LANGS = ['en', 'ru']; // the app's languages (miniapp/app.js LANGS)
 
 const pad = (n) => String(n).padStart(2, '0');
 const dkey = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
@@ -112,13 +116,14 @@ function streakOf(days) {
 // One student's line: the users row plus the sums of their progress state (null when they have no state yet).
 export function summarise(u, p) {
   const out = {
-    id: u.id, name: u.name || null, username: u.username || null, lang: u.lang || 'en', daily: !!(u.daily_question && !u.blocked_at),
+    id: u.id, name: u.name || null, username: u.username || null, lang: u.lang || 'en', uiLang: u.lang || 'en', daily: !!(u.daily_question && !u.blocked_at),
     joined: u.created_at, active: p ? p.updated_at : u.updated_at,
     level: null, total: 0, streak: 0, lastDay: null, week: 0, levels: {}, exams: [], flags: [], wrong: [], notes: [],
   };
   if (!p) return out;
   const q = p.q && typeof p.q === 'object' ? p.q : {}, days = p.days && typeof p.days === 'object' ? p.days : {};
   out.level = (p.set && typeof p.set.level === 'string' && p.set.level) || null;
+  if (p.set && LANGS.includes(p.set.lang)) out.uiLang = p.set.lang;
   out.total = Number.isFinite(p.total) ? p.total : 0;
   for (const id in q) {
     const r = Array.isArray(q[id]) ? q[id] : ['', 0], prefix = id.split('-')[0];

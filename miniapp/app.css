@@ -447,3 +447,8 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .anotes { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .app .anote { display: flex; flex-direction: column; gap: 4px; padding: 13px 0; border-bottom: 1px solid var(--line); text-align: left; cursor: pointer; }
 .app .anote .body-s { overflow-wrap: anywhere; }
+.app .anote .card-title { overflow-wrap: anywhere; }
+/* the section's opening lines, as the student read them, set off by a rule like a quotation; then what they wrote */
+.app .anote .anq { font-size: 13px; line-height: 1.45; padding-left: 10px; border-left: 2px solid var(--line); overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
+.app .anote .ant { margin-top: 4px; }
