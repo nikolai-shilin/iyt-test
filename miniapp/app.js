@@ -127,6 +127,7 @@ const STR = {
     examOpen: 'Mock exam in progress', continue: 'Continue',
     examLine: (a, n, left) => `${a} of ${n} answered · ${left} left`,
     mastered: 'mastered', covered: 'covered', halfway: 'right once', halfwayN: (n) => `+${n} right once`, moreLevels: 'More levels',
+    mcpK: 'For AI assistants', mcpTitle: 'Practise in Claude or ChatGPT', mcpText: 'The questions and the theory are also an MCP server: add it to your AI assistant and it quizzes you, checks your answers and explains the rule.', mcpBtn: 'How to connect it',
     fbK: 'Feedback?', fbRole: 'Author of IYT Test', fbText: 'Found a mistake in a question, missing a topic or have an idea? Write to me on Telegram, I read every message.', fbBtn: 'Write on Telegram',
     ringLabel: (s, m) => `${s}% seen · ${m}% mastered`, answers: 'Answer options', figure: 'Figure',
     figNames: { anchor: 'Anchorage sketch', boat: 'Parts of a yacht', lines: 'Mooring lines', radio: 'VHF set', flag: 'Signal flags', tide: 'Tidal curve', sphere: 'Celestial sphere', altitude: 'Sextant altitude', bay: 'Bay chart', buoy: 'Buoy', card: 'Notes', chart: 'Chart extract', compass: 'Compass rose', dayshape: 'Day shape', encounter: 'Two vessels meeting', isobars: 'Weather map', lights: 'Navigation lights', panel: 'Instrument panel', rope: 'Rope and knot', sail: 'Sailing boat and wind' }, timeLeft: 'Time left', fiveLeft: '5 minutes left',
@@ -142,7 +143,6 @@ const STR = {
     practice: 'Practice', mockExam: 'Mock exam', mockShort: 'Mock exam',
     mistakesToClear: 'Mistakes to clear', toAnswerTwice: (n) => `${pl(n, 'question')} to answer right twice`, review: 'Review',
     topics: 'Topics', masteredTotal: 'mastered / total',
-    mcpK: 'For AI assistants', mcpTitle: 'Practise in Claude or ChatGPT', mcpText: 'The questions and the theory are also an MCP server: add it to your AI assistant and it quizzes you, checks your answers and explains the rule.', mcpBtn: 'How to connect it',
     questionOf: (i, n) => `Question ${i} of ${n}`, correct: 'Correct', notQuite: 'Not quite', why: 'Why',
     flag: 'Flag', flagged: 'Flagged', wrong: 'Report', wrongOn: 'Reported', skip: 'Skip', check: 'Check', next: 'Next', finish: 'Finish', seeResults: 'See results',
     results: 'Results', heads: ['Excellent', 'Good session', 'Getting there', 'Keep going'],
@@ -238,6 +238,7 @@ const STR = {
     examOpen: 'Пробный экзамен не закончен', continue: 'Продолжить',
     examLine: (a, n, left) => `отвечено ${a} из ${n} · осталось ${left}`,
     mastered: 'освоено', covered: 'пройдено', halfway: 'верно 1 раз', halfwayN: (n) => `+${n} верно 1 раз`, moreLevels: 'Другие уровни',
+    mcpK: 'Для ИИ-ассистентов', mcpTitle: 'Тренируйтесь в Claude или ChatGPT', mcpText: 'Вопросы и теория доступны и как MCP-сервер: добавьте его в свой ИИ-ассистент, и он будет задавать вопросы, проверять ответы и объяснять правило.', mcpBtn: 'Как подключить',
     fbK: 'Есть отзыв?', fbRole: 'Автор IYT Test', fbText: 'Нашли ошибку в вопросе, не хватает темы или есть идея? Напишите мне в Telegram — читаю каждое сообщение.', fbBtn: 'Написать в Telegram',
     ringLabel: (s, m) => `${s}% пройдено · ${m}% освоено`, answers: 'Варианты ответа', figure: 'Рисунок',
     figNames: { anchor: 'Схема якорной стоянки', boat: 'Устройство яхты', lines: 'Швартовы', radio: 'УКВ-радиостанция', flag: 'Сигнальные флаги', tide: 'Кривая прилива', sphere: 'Небесная сфера', altitude: 'Высота светила', bay: 'Карта бухты', buoy: 'Буй', card: 'Заметки', chart: 'Фрагмент карты', compass: 'Картушка компаса', dayshape: 'Дневной знак', encounter: 'Расхождение двух судов', isobars: 'Карта погоды', lights: 'Навигационные огни', panel: 'Приборная панель', rope: 'Трос и узел', sail: 'Парусная яхта и ветер' }, timeLeft: 'Осталось времени', fiveLeft: 'Осталось 5 минут',
@@ -253,7 +254,6 @@ const STR = {
     practice: 'Тренировка', mockExam: 'Пробный экзамен', mockShort: 'Экзамен',
     mistakesToClear: 'Ошибки к разбору', toAnswerTwice: (n) => `${pl(n, 'question')} — ответьте верно дважды`, review: 'Разобрать',
     topics: 'Темы', masteredTotal: 'освоено / всего',
-    mcpK: 'Для ИИ-ассистентов', mcpTitle: 'Тренируйтесь в Claude или ChatGPT', mcpText: 'Вопросы и теория доступны и как MCP-сервер: добавьте его в свой ИИ-ассистент, и он будет задавать вопросы, проверять ответы и объяснять правило.', mcpBtn: 'Как подключить',
     questionOf: (i, n) => `Вопрос ${i} из ${n}`, correct: 'Верно', notQuite: 'Неверно', why: 'Почему',
     flag: 'Отметить', flagged: 'Отмечен', wrong: 'Сообщить', wrongOn: 'Сообщено', skip: 'Пропустить', check: 'Проверить', next: 'Далее', finish: 'Закончить', seeResults: 'Результаты',
     results: 'Результаты', heads: ['Отлично', 'Хорошая тренировка', 'Почти получилось', 'Продолжайте'],
@@ -1325,6 +1325,9 @@ const VIEWS = {
         ${S.exam ? `<div class="continue" data-act="resumeExam"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
         <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
         ${more.length ? `<div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${more.map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>` : ''}
+        <div class="band mcpband"><span class="kicker">${t('mcpK')}</span><div class="card-title">${t('mcpTitle')}</div>
+          <p class="body-muted">${t('mcpText')}</p>
+          <button class="pill pill-quiet pill-wide" data-act="mcp" role="link"><span data-i="globe" data-s="18"></span>${t('mcpBtn')}</button></div>
         <div class="band fback"><span class="kicker">${t('fbK')}</span>
           <div class="row fb-who"><img class="fb-face" src="fullcrimp.jpg" alt="" width="56" height="56" decoding="async"><div><div class="fb-nick">@${FEEDBACK_HANDLE}</div><div class="card-meta">${t('fbRole')}</div></div></div>
           <p class="body-muted">${t('fbText')}</p>
@@ -1345,9 +1348,6 @@ const VIEWS = {
       body: `<div class="stack g4"><span class="meta">${LANG === 'ru' && LEVEL_RU[LEVEL.id] ? LEVEL_RU[LEVEL.id] : t('levelMeta', TOPICS.length, BANK.questions.length, myExams().length)}</span><h2 class="display-s">${esc(LEVEL.title)}</h2></div>
         <div class="row" style="gap:18px;align-items:center">${ring(lp, sp, ' l', `<b data-count="${sp}" data-suffix="%" data-k="seen:${LEVEL.id}">${sp}%</b><small>${t('covered')}</small>`, LEVEL.id)}
           <p class="body-s">${esc(text)}</p></div>
-        <div class="band mcpband"><span class="kicker">${t('mcpK')}</span><div class="card-title">${t('mcpTitle')}</div>
-          <p class="body-muted">${t('mcpText')}</p>
-          <button class="pill pill-quiet pill-wide" data-act="mcp" role="link"><span data-i="globe" data-s="18"></span>${t('mcpBtn')}</button></div>
         <div class="row" style="gap:10px"><button class="pill pill-primary lvl-btn" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>
           <button class="pill lvl-btn" data-act="examIntro"><span data-i="timer" data-s="20"></span>${t('mockShort')}</button></div>
         ${mis ? `<div class="row sb-between"><div><div class="card-title">${t('mistakesToClear')}</div><div class="card-meta">${t('toAnswerTwice', mis)}</div></div><button class="mini mini-accent" data-act="allMistakes">${t('review')}</button></div>` : ''}
@@ -2012,6 +2012,7 @@ const ACT = {
   },
   rentals: () => (IN_TG ? TG.openTelegramLink(RENTALS_LINK) : window.open(RENTALS_LINK, '_blank', 'noopener')),
   // the MCP server's page on the site (miniapp/pages.mjs), in the app's language; from Telegram it opens in the browser
+  mcp: () => { const path = LANG === 'ru' ? '/ru/mcp' : '/mcp'; return IN_TG ? TG.openLink(location.origin + path) : location.assign(path); },
   feedback: () => (IN_TG ? TG.openTelegramLink(FEEDBACK_LINK) : window.open(FEEDBACK_LINK, '_blank', 'noopener')),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },
@@ -2033,8 +2034,6 @@ $app.addEventListener('click', (e) => {
 });
 $app.addEventListener('input', (e) => {
   if (e.target.id !== 'thNote' || !sheet) return;
-  // the MCP server's page on the site (miniapp/pages.mjs), in the app's language; from Telegram it opens in the browser
-  mcp: () => { const path = LANG === 'ru' ? '/ru/mcp' : '/mcp'; return IN_TG ? TG.openLink(location.origin + path) : location.assign(path); },
   sheet.text = e.target.value;
   $app.querySelector('[data-act="treportSend"]')?.classList.toggle('off', sheet.text.trim().length < 3);
 });
