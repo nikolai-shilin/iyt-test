@@ -6,8 +6,8 @@
   "outputDirectory": "miniapp/dist",
   "cleanUrls": true,
   "functions": {
-    "api/telegram.mjs": { "includeFiles": "data/questions/*.json" },
-    "api/daily.mjs": { "includeFiles": "data/questions/*.json", "maxDuration": 300 },
+    "api/telegram.mjs": { "includeFiles": "{data/questions/*.json,data/theory/**/*.json}" },
+    "api/daily.mjs": { "includeFiles": "{data/questions/*.json,data/theory/**/*.json}", "maxDuration": 300 },
     "api/mcp.mjs": { "includeFiles": "{data/questions/*.json,data/theory/**/*.json,docs/design/figures.js}" }
   },
   "crons": [{ "path": "/api/daily", "schedule": "0 9 * * *" }],

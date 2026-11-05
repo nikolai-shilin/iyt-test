@@ -4,11 +4,12 @@
 //
 // /start, /exam, /progress, /settings reply with a button into the mini app (WEBAPP_URL, opened at the right
 // screen via ?screen=…). /daily sends one text question with A–D buttons; the answer and the one-line note come
-// back in the same message (design C3). Questions with a figure are skipped here — figures are drawn in the app.
+// back in the same message (design C3), with a button to the theory article section that explains it. Questions with a figure are skipped here — figures are drawn in the app.
 // Every private message is saved to Supabase users; /settings and the scheduled question (bot/daily.mjs) carry the
 // user's on/off switch for the question of the day.
 
 import { readFile } from 'node:fs/promises';
+import { SITE } from '../miniapp/site.mjs';
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 if (!token) throw new Error('TELEGRAM_BOT_TOKEN is not set');
@@ -40,6 +41,17 @@ const banks = (await Promise.all(LEVELS.map(async ([id, link]) => {
 const byId = {};
 for (const b of banks) for (const q of b.bank.questions) byId[q.id] = { q, b };
 const daily = Object.values(byId).filter(({ q }) => !q.figure).map(({ q }) => q);
+// The theory article of each topic (data/theory/<level>/<topic>.json, bundled like the banks): only what a link to it
+// needs — its sections' ids and kickers, and the rule references each one explains (refs, docs/theory.md).
+// A topic without an article gets no link; an article without a Russian translation is linked in English.
+const readArt = (p) => readFile(new URL(`../data/theory/${p}.json`, import.meta.url), 'utf8').then(JSON.parse, () => null);
+const articles = {}; // "<level>/<topic>" → { secs: [{ id, kicker, refs }], ru: { <section id>: kicker } | null }
+await Promise.all(banks.flatMap((b) => b.bank.topics.map(async (tp) => {
+  const [en, ru] = await Promise.all([readArt(`${b.id}/${tp.id}`), readArt(`${b.id}/${tp.id}.ru`)]);
+  if (!en || !Array.isArray(en.sections)) return;
+  articles[`${b.id}/${tp.id}`] = { secs: en.sections.map(({ id, kicker, refs }) => ({ id, kicker, refs: refs || [] })),
+    ru: ru && Array.isArray(ru.sections) ? Object.fromEntries(ru.sections.map((x) => [x.id, x.kicker])) : null };
+})));
 const N = Object.keys(byId).length;
 const names = banks.map((b) => b.bank.title.replace(/^IYT /, ''));
 // The question, its topic title and level in the reader's language.
@@ -120,6 +132,7 @@ const T = {
   turnedOff: (ru) => (ru ? 'Вопрос дня выключен. Включить снова — /settings' : 'Question of the day is off. Turn it back on in /settings'),
   settingsBtn: (ru) => (ru ? 'Настройки' : 'Settings'),
   practise: (ru) => (ru ? 'Тренироваться' : 'Practise more'),
+  theory: (ru, what) => (ru ? `📖 Теория: ${what}` : `📖 Theory: ${what}`),
 };
 
 const head = (isRu) => (isRu ? 'Вопрос дня' : 'Question of the day');
@@ -130,6 +143,16 @@ export function dailyMessage(src, isRu, switchOn) {
   const q = local(src, isRu);
   const text = `<b>${head(isRu)}</b> · ${esc(q.lv)} · ${esc(q.title)}\n\n${esc(q.q)}\n\n` + q.options.map((o, i) => `<b>${'ABCD'[i]}</b>  ${esc(o)}`).join('\n');
   return { text, reply_markup: kb(q.options.map((_, i) => ({ text: 'ABCD'[i], callback_data: `d:${q.id}:${i}` })), switchOn != null && dailySwitch(switchOn, isRu)) };
+}
+
+// The article that explains a question, as a button to its page on the site (miniapp/pages.mjs: /<level>/<topic>,
+// /ru/… when translated), opened at the section whose refs hold the question's reference, else at the top.
+function theoryButton(src, isRu) {
+  const { b } = byId[src.id], art = articles[`${b.id}/${src.topic}`];
+  if (!art) return null;
+  const ru = isRu && !!art.ru, sec = art.secs.find((x) => x.refs.includes(src.ref));
+  const what = sec ? (ru && art.ru[sec.id]) || sec.kicker : local(src, isRu).title;
+  return [{ text: T.theory(isRu, what), url: `${SITE}${ru ? '/ru' : ''}/${b.id}/${src.topic}${sec ? `#sec-${sec.id}` : ''}` }];
 }
 
 // Question of the day: the same question for everyone on a UTC day (per level once users have one), text-only.
@@ -179,7 +202,7 @@ async function onCallback(c) {
     q.options.map((o, i) => `${i === q.answer ? '✅' : i === +pick ? '❌' : '▫️'}  ${esc(o)}`).join('\n') +
     `\n\n<b>${ok ? (isRu ? 'Верно.' : 'Correct.') : (isRu ? 'Неверно.' : 'Not quite.')}</b> ${esc(q.why)}\n<i>${esc(q.ref)}</i>`;
   await api('editMessageText', { chat_id: c.message.chat.id, message_id: c.message.message_id, text, parse_mode: 'HTML',
-    reply_markup: kb(open(T.practise(isRu), q.link), hadSwitch && user && dailySwitch(user.daily_question, isRu)) });
+    reply_markup: kb(theoryButton(byId[id].q, isRu), open(T.practise(isRu), q.link), hadSwitch && user && dailySwitch(user.daily_question, isRu)) });
 }
 
 // The update types the bot asks Telegram for (getUpdates and setWebhook).
