@@ -211,19 +211,19 @@ function questionOfTheDay(day, levelId) {
 }
 
 const LANG = { type: 'string', enum: LANGS, description: 'Language of the text: en (default) or ru. What is not translated yet comes in English.' };
-const LEVEL = { type: 'string', description: 'Level id from list_levels, e.g. bareboat-skipper.' };
+const LEVEL = { type: 'string', description: 'Level id, e.g. bareboat-skipper.' };
 const QID = { type: 'string', description: 'Question id, e.g. bs-001.' };
 const EXCLUDE = { type: 'array', items: { type: 'string' }, description: 'Question ids the student has already had in this conversation, so they are not repeated.' };
 const tool = (name, title, description, properties, required, run) => ({ name, title, description, inputSchema: { type: 'object', properties, required, additionalProperties: false }, annotations: { title, readOnlyHint: true, openWorldHint: false }, run });
 const TOOLS = [
-  tool('list_levels', 'List levels', 'The levels with a question bank (IYT courses, the Racing Rules of Sailing, the charter check-in): topics, number of questions, mock-exam settings and which topics have a theory article. Start here.',
+  tool('list_levels', 'List levels', 'The levels with a question bank (IYT courses, the Racing Rules of Sailing, the charter check-in): topics, number of questions, mock-exam settings and which topics have a theory article.',
     { lang: LANG }, [], (a, ctx) => banks.map((b) => ({
       id: b.id, title: b.bank.title, questions: b.bank.questions.length, russian: !!(b.ru.questions && Object.keys(b.ru.questions).length),
       exam: { questions: Math.min(b.bank.examQuestions, b.bank.questions.length), minutes: b.bank.examMinutes, pass_mark: b.bank.passMark },
       topics: b.bank.topics.map((t) => ({ id: t.id, title: topicTitle(b, t.id, ctx.lang), questions: b.bank.questions.filter((q) => q.topic === t.id).length, theory: !!b.theory[t.id] })),
       app: `${ctx.origin}/?screen=${b.link}`,
     }))),
-  tool('get_questions', 'Get practice questions', 'Random practice questions of a level, without the answers. Ask them one at a time and send the student\'s choice to check_answer.',
+  tool('get_questions', 'Get practice questions', 'Random practice questions of a level, of one topic or difficulty when given, without the answers.',
     { level: LEVEL, topic: { type: 'string', description: 'Topic id, to practise one topic.' }, difficulty: { type: 'integer', enum: [1, 2, 3], description: '1 easy, 2 medium, 3 hard.' },
       count: { type: 'integer', minimum: 1, maximum: 20, description: 'How many (default 5).' }, text_only: { type: 'boolean', description: 'Only questions without a drawing, for when images cannot be shown.' }, exclude: EXCLUDE, lang: LANG },
     ['level'], (a, ctx) => {
@@ -232,19 +232,19 @@ const TOOLS = [
       const ids = b.bank.questions.filter((q) => (!topic || q.topic === topic) && (!a.difficulty || q.difficulty === a.difficulty) && !(a.text_only && q.figure && q.figure.type !== 'card')).map((q) => q.id);
       return { level: b.id, matching: ids.length, questions: pick(ids, countOf(a.count, 5, 20), a.exclude).map((id) => show(id, ctx)) };
     }),
-  tool('check_answer', 'Check an answer', 'Checks the option the student chose: right or wrong, the right option, the one-line note that names the rule, and the theory section that explains it (read it with get_theory).',
+  tool('check_answer', 'Check an answer', 'Whether an option of a question is right: the right option, the one-line note that names the rule, and the theory section that explains it.',
     { question_id: QID, option: { type: 'string', enum: [...ABCD], description: 'The option chosen: A, B, C or D.' }, lang: LANG },
     ['question_id', 'option'], (a, ctx) => {
       const q = show(questionOf(a.question_id), ctx, true), i = optionOf(a.option);
       return { question_id: q.id, correct: ABCD[i] === q.answer, chosen: ABCD[i], answer: q.answer, answer_text: q.answer_text, why: q.why, reference: q.reference, theory: q.theory };
     }),
-  tool('search_questions', 'Search questions', 'Finds questions by words in the question, its options, its rule reference or its topic (e.g. "cardinal mark", "MAYDAY"). Answers are not included.',
+  tool('search_questions', 'Search questions', 'Questions whose text, options, rule reference or topic have the words (e.g. "cardinal mark", "MAYDAY"), without the answers.',
     { query: { type: 'string', description: 'Words to look for; all of them must be there.' }, level: LEVEL, count: { type: 'integer', minimum: 1, maximum: 20, description: 'How many (default 10).' }, lang: LANG },
     ['query'], (a, ctx) => {
       const level = a.level == null ? null : levelOf(a.level).id;
       return { questions: find(questionHay(ctx.lang), termsOf(a.query), level, countOf(a.count, 10, 20)).map((r) => show(r.id, ctx)) };
     }),
-  tool('start_mock_exam', 'Start a mock exam', 'A mock exam of a level: the exam\'s number of questions spread evenly over all topics, with the time allowed and the pass mark. No answers until grade_exam: collect the student\'s choice for every question first.',
+  tool('start_mock_exam', 'Start a mock exam', 'A mock exam of a level: the exam\'s number of questions spread evenly over all topics, with the time allowed and the pass mark, without the answers.',
     { level: LEVEL, lang: LANG }, ['level'], (a, ctx) => {
       const b = levelOf(a.level), n = Math.min(b.bank.examQuestions, b.bank.questions.length);
       // round-robin over the topics: an even spread (buildExam in miniapp/app.js)
@@ -252,7 +252,7 @@ const TOOLS = [
       while (ids.length < n && groups.some((g) => g.length)) for (const g of groups) if (g.length && ids.length < n) ids.push(g.pop());
       return { level: b.id, title: b.bank.title, minutes: b.bank.examMinutes, pass_mark: b.bank.passMark, questions: shuffle(ids).map((id) => show(id, ctx)) };
     }),
-  tool('grade_exam', 'Grade a mock exam', 'Marks a finished mock exam: the score, pass or fail, the result per topic, every mistake with the right answer and its note, and what to read. Send every question of the exam; one left unanswered has option null and counts as wrong.',
+  tool('grade_exam', 'Grade a mock exam', 'The marks of a finished mock exam: the score, pass or fail, the result per topic, every mistake with the right answer and its note, and the theory sections to read. A question with option null was not answered and counts as wrong.',
     { answers: { type: 'array', minItems: 1, maxItems: 100, description: 'One item per question of the exam.', items: { type: 'object', properties: { question_id: QID, option: { type: ['string', 'null'], enum: [...ABCD, null], description: 'A, B, C, D, or null when not answered.' } }, required: ['question_id'], additionalProperties: false } }, lang: LANG },
     ['answers'], (a, ctx) => {
       need(Array.isArray(a.answers) && a.answers.length >= 1 && a.answers.length <= 100, 'answers is a list of 1 to 100 items: { question_id, option }.');
@@ -271,12 +271,12 @@ const TOOLS = [
         mistakes: wrong.map((m) => { const q = show(m.id, ctx, true); return { question_id: q.id, question: q.question, chosen: m.pick == null ? null : ABCD[m.pick], answer: q.answer, answer_text: q.answer_text, why: q.why, reference: q.reference }; }),
         read: reading(wrong.map((m) => m.id), ctx) };
     }),
-  tool('question_of_the_day', 'Question of the day', 'Today\'s question, the same one the Telegram bot @iyt_test_bot sends: one text question per day (UTC), for one level when a level is given. Without the answer; use check_answer.',
+  tool('question_of_the_day', 'Question of the day', 'Today\'s question, the same one the Telegram bot @iyt_test_bot sends: one text question per day (UTC), for one level when a level is given, without the answer.',
     { level: LEVEL, lang: LANG }, [], (a, ctx) => {
       const day = new Date().toISOString().slice(0, 10), level = a.level == null ? null : levelOf(a.level).id;
       return { day, question: show(questionOfTheDay(day, level).id, ctx) };
     }),
-  tool('list_theory', 'List theory articles', 'The theory articles: one per topic, each in sections. With a level, the sections of its articles; without, which topics of every level have an article. Articles are still being written, so some topics have none yet.',
+  tool('list_theory', 'List theory articles', 'The theory articles: one per topic, each in sections. With a level, the sections of its articles; without, which topics of every level have an article. Some topics have no article yet.',
     { level: LEVEL, lang: LANG }, [], (a, ctx) => {
       const one = a.level == null ? null : levelOf(a.level);
       return (one ? [one] : banks).map((b) => ({ level: b.id, title: b.bank.title, articles: Object.keys(b.theory).map((topic) => {
@@ -285,19 +285,19 @@ const TOOLS = [
       }) }));
     }),
   tool('get_theory', 'Read a theory article', 'A theory article, or one section of it, as text: the rule, the reason, tables and links to the drawings. Study notes close to the syllabus, not official IYT text.',
-    { level: LEVEL, topic: { type: 'string', description: 'Topic id from list_theory.' }, section: { type: 'string', description: 'Section id, to read one section only.' }, lang: LANG },
+    { level: LEVEL, topic: { type: 'string', description: 'Topic id, e.g. buoyage.' }, section: { type: 'string', description: 'Section id, to read one section only.' }, lang: LANG },
     ['level', 'topic'], (a, ctx) => {
       const b = levelOf(a.level), topic = withArticle(b, a.topic), ids = article(b, topic, ctx.lang).a.sections.map((s) => s.id);
       need(a.section == null || ids.includes(a.section), `Unknown section "${a.section}". Sections: ${ids.join(', ')}.`);
       return articleText(b, topic, ctx.lang, a.section, ctx);
     }),
-  tool('search_theory', 'Search theory', 'Finds the sections of the theory articles that have the words (e.g. "scope", "cardinal marks"). Read a match with get_theory.',
+  tool('search_theory', 'Search theory', 'The sections of the theory articles that have the words (e.g. "scope", "cardinal marks"), with an excerpt of each.',
     { query: { type: 'string', description: 'Words to look for; all of them must be there.' }, level: LEVEL, count: { type: 'integer', minimum: 1, maximum: 20, description: 'How many (default 8).' }, lang: LANG },
     ['query'], (a, ctx) => {
       const level = a.level == null ? null : levelOf(a.level).id;
       return { sections: find(theoryHay(ctx.lang), termsOf(a.query), level, countOf(a.count, 8, 20)).map(({ head, text, body, ...r }) => ({ ...r, excerpt: body.length > 240 ? `${body.slice(0, 240)}…` : body })) };
     }),
-  tool('explain_question', 'Explain a question', 'A question with its answer, the note that names the rule and the full text of the theory section that explains it. This gives the answer away: use it after the student has answered, or when they ask for the explanation.',
+  tool('explain_question', 'Explain a question', 'A question with its answer, the note that names the rule and the full text of the theory section that explains it.',
     { question_id: QID, lang: LANG }, ['question_id'], (a, ctx) => {
       const q = show(questionOf(a.question_id), ctx, true), { b } = byId[q.id], s = q.theory, art = s && article(b, s.topic, ctx.lang);
       const figure = q.figure && (q.figure.url ? `[${ctx.lang === 'ru' ? 'Рисунок' : 'Drawing'}](${q.figure.url})` : [q.figure.title, ...(q.figure.lines || [])].filter(Boolean).join('\n'));
@@ -305,8 +305,8 @@ const TOOLS = [
         `**${ctx.lang === 'ru' ? 'Ответ' : 'Answer'}: ${q.answer}.** ${q.why}\n_${q.reference}_`,
         s ? sectionText(b, s.topic, art.a.sections.find((x) => x.id === s.section), art.lang, ctx) : 'No theory section covers this question yet.'].filter(Boolean).join('\n\n');
     }),
-  tool('practice_section', 'Practise a theory section', 'Questions on what a theory section explains: read the section, then practise it. Without the answers; use check_answer.',
-    { level: LEVEL, topic: { type: 'string', description: 'Topic id from list_theory.' }, section: { type: 'string', description: 'Section id from list_theory.' }, count: { type: 'integer', minimum: 1, maximum: 20, description: 'How many (default 5).' }, exclude: EXCLUDE, lang: LANG },
+  tool('practice_section', 'Practise a theory section', 'The questions on what a theory section explains, at random, without the answers.',
+    { level: LEVEL, topic: { type: 'string', description: 'Topic id, e.g. buoyage.' }, section: { type: 'string', description: 'Section id, e.g. cardinal.' }, count: { type: 'integer', minimum: 1, maximum: 20, description: 'How many (default 5).' }, exclude: EXCLUDE, lang: LANG },
     ['level', 'topic', 'section'], (a, ctx) => {
       const b = levelOf(a.level), topic = withArticle(b, a.topic), en = b.theory[topic].en.sections;
       const s = en.find((x) => x.id === a.section);
@@ -314,7 +314,7 @@ const TOOLS = [
       const ids = b.bank.questions.filter((q) => q.topic === topic && (s.refs || []).includes(q.ref)).map((q) => q.id);
       return { level: b.id, topic, section: s.id, matching: ids.length, questions: pick(ids, countOf(a.count, 5, 20), a.exclude).map((id) => show(id, ctx)) };
     }),
-  tool('get_figure', 'Get a drawing', 'The drawing of a question or of a theory section as SVG markup, for showing it inline where a link to the image is not enough.',
+  tool('get_figure', 'Get a drawing', 'The drawing of a question or of a theory section as SVG markup.',
     { figure: { type: 'string', description: 'A question id (bs-001), or a theory drawing as level/topic/section/number (bareboat-skipper/buoyage/lateral/1).' }, lang: LANG },
     ['figure'], (a, ctx) => { const svg = figureSvg(a.figure, ctx.lang); need(svg, `No drawing "${a.figure ?? ''}". Give a question id that has a figure, or level/topic/section/number from get_theory.`); return svg; }),
 ];
@@ -349,7 +349,7 @@ function handle(msg, ctx) {
   if (msg.method === 'initialize') return ok({
     protocolVersion: VERSIONS.includes(p.protocolVersion) ? p.protocolVersion : VERSIONS[0],
     capabilities: { tools: { listChanged: false } },
-    serverInfo: { name: 'iyt-test', title: 'IYT Test', version: '1.0.0' },
+    serverInfo: { name: 'iyt-test', title: 'IYT Test', version: '1.0.1', websiteUrl: `${SITE}/mcp`, icons: [{ src: `${SITE}/icon.png`, mimeType: 'image/png', sizes: ['192x192'] }] },
     instructions: INSTRUCTIONS,
   });
   if (msg.method === 'ping') return ok({});
