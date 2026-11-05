@@ -73,7 +73,7 @@ Languages: English and Russian interface (follows the Telegram language until sw
 are translated in `data/questions/bareboat-skipper.ru.json` (terms: [docs/glossary-ru.md](docs/glossary-ru.md)); see
 [docs/question-bank.md](docs/question-bank.md#translations).
 
-It is live at https://iyt-test.vercel.app and connected to [@iyt_test_bot](https://t.me/iyt_test_bot): the bot's
+It is live at https://iyt.rycrentals.com and connected to [@iyt_test_bot](https://t.me/iyt_test_bot): the bot's
 menu button opens the app, and the bot itself runs as a webhook on the same Vercel project (`api/telegram.mjs`).
 To set it up again from scratch:
 

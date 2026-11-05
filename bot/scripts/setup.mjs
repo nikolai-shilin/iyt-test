@@ -33,14 +33,14 @@ const LIMITS = { name: 64, description: 512, short_description: 120 };
 const TEXTS = {
   en: {
     name: 'IYT Test — exam practice',
-    description: `⚓️ Practice questions for IYT certification levels — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper and Yachtmaster Coastal, Offshore and Ocean.
+    description: `⚓️ Practice questions for IYT levels — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper and Yachtmaster Coastal, Offshore and Ocean — plus the Racing Rules of Sailing and charter check-in. Over 6,000 questions, in English and Russian.
 
-Real situations, drawn: the mark ahead, the lights at night, the other boat's bearing, the engine panel. Four options, a one-line note naming the rule.
+Real situations, drawn: the mark ahead, the lights at night, the other boat's bearing. Four options and the rule in one line.
 
-📚 Practise by topic · ⏱ Timed mock exam · 🔁 Mistakes come back until you get them right · 🔥 A question a day in this chat
+📚 Practise by topic · ⏱ Mock exam · 🔁 Mistakes come back · 🔥 A question a day in chat
 
 Tap Start to pick your level.`,
-    short_description: 'Practice questions for IYT levels: drawn situations, mock exam, daily question. From VHF to Yachtmaster Ocean.',
+    short_description: 'Practice for IYT levels from VHF to Yachtmaster Ocean, Racing Rules and charter check-in. Mock exam, daily question.',
     commands: [
       { command: 'start', description: 'Pick a level and practise' },
       { command: 'exam', description: 'Start a mock exam' },
@@ -51,14 +51,14 @@ Tap Start to pick your level.`,
   },
   ru: {
     name: 'IYT Test — подготовка к экзамену',
-    description: `⚓️ Вопросы для подготовки к экзаменам IYT — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper и Yachtmaster Coastal, Offshore и Ocean.
+    description: `⚓️ Вопросы для подготовки к экзаменам IYT — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper и Yachtmaster Coastal, Offshore и Ocean, а ещё по Правилам парусных гонок и приёмке чартерной яхты. Более 6000 вопросов на русском и английском.
 
-Реальные ситуации, в картинках: знак по курсу, огни ночью, пеленг на другую яхту, приборы двигателя. Четыре варианта и одна строка с правилом.
+Ситуации в картинках: знак по курсу, огни ночью, пеленг на другую яхту. Четыре варианта и одна строка с правилом.
 
-📚 Тренировка по темам · ⏱ Пробный экзамен на время · 🔁 Ошибки возвращаются, пока не ответите верно · 🔥 Вопрос дня прямо в чате
+📚 Тренировка по темам · ⏱ Пробный экзамен · 🔁 Ошибки возвращаются · 🔥 Вопрос дня в чате
 
 Нажмите «Старт» и выберите уровень.`,
-    short_description: 'Вопросы для подготовки к IYT: ситуации в картинках, пробный экзамен, вопрос дня. От VHF до Yachtmaster Ocean.',
+    short_description: 'Подготовка к IYT от VHF до Yachtmaster Ocean, Правила гонок, приёмка яхты. Пробный экзамен, вопрос дня.',
     commands: [
       { command: 'start', description: 'Выбрать уровень и тренироваться' },
       { command: 'exam', description: 'Пробный экзамен' },
