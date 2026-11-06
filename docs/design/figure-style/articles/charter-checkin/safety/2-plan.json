@@ -1,0 +1,87 @@
+{
+ "sch": {
+  "padPx": 80,
+  "wind": 0,
+  "title": "Man overboard · the gear goes at once",
+  "key": [
+   "Shout, point, and throw the horseshoe with its light and the danbuoy",
+   "On a quick-release clip, never a knot, so it goes in a second"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 45,
+    "sail": true,
+    "noHeading": true
+   },
+   {
+    "x": -30.8,
+    "z": 14.4,
+    "hdg": 0,
+    "label": "MOB",
+    "scale": 0.6,
+    "noHeading": true,
+    "bearing": false
+   }
+  ],
+  "circles": [
+   {
+    "x": -28.3,
+    "z": 12.4,
+    "r": 1.2,
+    "c": "course",
+    "dash": "0",
+    "fill": "rgba(255,200,0,.6)"
+   },
+   {
+    "x": -33.8,
+    "z": 11.9,
+    "r": 0.9,
+    "c": "red",
+    "dash": "0",
+    "fill": "rgba(255,90,0,.7)"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -29.3,
+      13.4
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": -18.8,
+    "z": 5.4,
+    "text": "horseshoe + light"
+   },
+   {
+    "x": -43.8,
+    "z": 6.4,
+    "text": "danbuoy"
+   }
+  ],
+  "fit": [
+   {
+    "x": -50,
+    "z": -25
+   },
+   {
+    "x": 25,
+    "z": 30
+   }
+  ]
+ }
+}

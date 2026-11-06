@@ -1,0 +1,94 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 60,
+  "title": "Compass check · against the plotter's COG",
+  "key": [
+   "Compass 090° + 5°E deviation = 095°M",
+   "095°M + 3°E variation = 098°T, the plotter's course over the ground"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -380,
+    "z": 60,
+    "hdg": 90,
+    "noHeading": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -380,
+      60
+     ],
+     [
+      380.0,
+      60.0
+     ]
+    ],
+    "c": "course",
+    "w": 5
+   },
+   {
+    "pts": [
+     [
+      -380,
+      60
+     ],
+     [
+      377.1,
+      126.2
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "14 10"
+   },
+   {
+    "pts": [
+     [
+      -380,
+      60
+     ],
+     [
+      372.6,
+      165.8
+     ]
+    ],
+    "c": "red",
+    "w": 5
+   }
+  ],
+  "texts": [
+   {
+    "x": 260.0,
+    "z": 0.0,
+    "text": "090°C · compass",
+    "kind": "accent"
+   },
+   {
+    "x": 476.7,
+    "z": 135.0,
+    "text": "095°M"
+   },
+   {
+    "x": 253.8,
+    "z": 219.1,
+    "text": "098°T · plotter COG",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -460,
+    "z": -150
+   },
+   {
+    "x": 520,
+    "z": 260
+   }
+  ]
+ }
+}

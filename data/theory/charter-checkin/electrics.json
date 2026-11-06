@@ -10,7 +10,7 @@
       "refs": ["Check-in: batteries", "Check-in: battery switches", "Check-in: batteries and master switch", "Check-in: battery terminals", "Battery switches — after a parallel start", "Battery switches — under way", "Batteries — ventilation", "Batteries — overcharging", "Catamaran — charging"],
       "blocks": [
         { "p": "Each engine has its own **starter battery**; the **house bank** runs everything else. Kept separate, a house bank flattened overnight still leaves the engine able to start. On a catamaran ask which alternator charges the house bank: often only one does." },
-        { "fig": { "type": "card", "title": "Battery switches", "lines": ["ENGINE, HOUSE: on at sea and at anchor", "BOTH: only to start on a flat battery", "Then BOTH off and an hour's charge", "Engine running: never switch ENGINE off", "Leaving the boat: all off"] } },
+        { "photo": "charter-checkin/electrics/1", "plan": 1.6, "fig": { "type": "card", "title": "Battery switches", "lines": ["ENGINE, HOUSE: on at sea and at anchor", "BOTH: only to start on a flat battery", "Then BOTH off and an hour's charge", "Engine running: never switch ENGINE off", "Leaving the boat: all off"] } },
         { "p": "Switching the engine battery off while the engine runs can wreck the alternator. Terminals should be clean, tight and covered: a spanner dropped across them starts a fire, so tightening them is the base's job. Learn where the master switches are, for the dark." },
         { "p": "Leave the battery vent open: batteries on charge give off hydrogen. A hot, bulging battery that smells of rotten eggs is being overcharged: charger off, hatches open, no sparks, call the base." }
       ]
@@ -30,7 +30,7 @@
           ["12.0 or less", "Flat"]
         ] } },
         { "p": "On shore power or with the engine running you read the charger, not the battery: up to 14.4 V in bulk, 13.8 V on FLOAT, when the bank is full. Lower volts with the amps negative mean nothing is charging." },
-        { "fig": { "type": "panel", "gauges": [["Volts", "12.3", true], ["Amps", "-8", true], ["RPM", "1500", false]], "lines": ["Engine running, nothing going in", "Belt or alternator: before you leave"] } },
+        { "photo": "charter-checkin/electrics/2", "fig": { "type": "panel", "gauges": [["Volts", "12.3", true], ["Amps", "-8", true], ["RPM", "1500", false]], "lines": ["Engine running, nothing going in", "Belt or alternator: before you leave"] } },
         { "p": "A **battery monitor** counts amp-hours out and in since the last full charge: 76 Ah used from a 200 Ah bank is 62 %. If it says 100 % while the volts say 12.1, it has lost count: believe the volts. A lithium bank is the opposite: it holds about 13 V until nearly empty, so trust the percentage." },
         { "p": "An old bank that falls to 11.9 V after a quiet night has lost its capacity. If the alternator fails mid-week: cut every load, make for shore power, call the base." }
       ]
@@ -43,7 +43,7 @@
       "refs": ["Power budget — fridge", "Power budget for the week", "Power budget — catamaran", "Power budget — before a blow", "Solar controller", "Check-in: solar and generator", "12 V and 230 V systems", "Inverter — big loads", "Inverter — standby"],
       "blocks": [
         { "p": "Current times time gives **amp-hours**. Only half of a lead-acid bank is usable, so a 200 Ah bank gives you about 100 Ah between charges." },
-        { "fig": { "type": "card", "title": "One night at anchor", "lines": ["House bank 2 × 100 Ah: 100 Ah usable", "Fridge 5 A × 10 h = 50 Ah", "Anchor light and phones: a few Ah more", "Morning: run the engine for an hour"] } },
+        { "photo": "charter-checkin/electrics/3", "plan": 1.6, "fig": { "type": "card", "title": "One night at anchor", "lines": ["House bank 2 × 100 Ah: 100 Ah usable", "Fridge 5 A × 10 h = 50 Ah", "Anchor light and phones: a few Ah more", "Morning: run the engine for an hour"] } },
         { "p": "With no solar and no generator, plan an hour of engine morning and evening and switch off what is not in use. A solar controller showing +7 A at 13.9 V is charging, but three fridges drawing 12 A round the clock take about 290 Ah a day, more than the sun gives back. Before a windy passage charge full: autopilot, plotter, VHF and bilge pump all run on that bank." },
         { "p": "The 230 V sockets are live only on shore power or a generator. An **inverter** makes 230 V from the batteries, at a price: a 1,600 W hairdryer draws about 140 A (1,600 ÷ 12 = 133 A, plus the inverter's losses). A small one runs a laptop, not a kettle, and left on idle it still takes about 1 A: 24 Ah a day." }
       ]
@@ -56,7 +56,7 @@
       "refs": ["Shore power — connecting", "Shore power — leaving the berth", "Shore power — polarity and RCD", "Shore power — RCD", "Shore power — load", "Shore power — adapters", "Shore power — 230 V safety", "Shore power — 230 V and water"],
       "blocks": [
         { "p": "230 V on a wet pontoon can kill. Never hold a live plug, never accept a cable with a cut sheath, and never push bare wires into a pedestal: ask the marina office for an adapter." },
-        { "fig": { "type": "card", "title": "Shore power, in order", "lines": ["Connect: boat's 230 V main off", "Boat end, pedestal end, pedestal switch", "Then the 230 V main and the charger", "Leave: charger and main off, pedestal off", "Unplug the pedestal first, then the boat"] } },
+        { "photo": "charter-checkin/electrics/4", "plan": 1.6, "fig": { "type": "card", "title": "Shore power, in order", "lines": ["Connect: boat's 230 V main off", "Boat end, pedestal end, pedestal switch", "Then the 230 V main and the charger", "Leave: charger and main off, pedestal off", "Unplug the pedestal first, then the boat"] } },
         { "table": { "head": ["On the 230 V panel", "What you do"], "rows": [
           ["Reverse-polarity light on", "Unplug and tell the base"],
           ["RCD trips with one appliance", "Leave it off: it leaks to earth"],
@@ -74,8 +74,8 @@
       "blocks": [
         { "p": "Have each breaker switched on in turn: you will be looking for them at night. Test the lights after dark, from the pontoon." },
         { "tiles": [
-          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 62 }, { "c": "g", "x": 146, "y": 120 }, { "c": "r", "x": 174, "y": 120 }] }, "view": "60 20 200 150", "name": "Navigation lights", "note": "under power, from ahead" },
-          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 50 }] }, "view": "60 20 200 150", "name": "Anchor light", "note": "all-round white at the masthead" }
+          { "photo": "charter-checkin/electrics/5", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 62 }, { "c": "g", "x": 146, "y": 120 }, { "c": "r", "x": 174, "y": 120 }] }, "view": "60 20 200 150", "name": "Navigation lights", "note": "under power, from ahead" },
+          { "photo": "charter-checkin/electrics/6", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 50 }] }, "view": "60 20 200 150", "name": "Anchor light", "note": "all-round white at the masthead" }
         ], "cols": 2 },
         { "p": "At anchor the **all-round white light** burns every night (COLREGs Rule 30). If it fails, hang a white lamp in the foretriangle; nobody climbs the mast in the dark. Overnight three breakers stay on: anchor light, bilge pump, gas alarm." },
         { "list": [

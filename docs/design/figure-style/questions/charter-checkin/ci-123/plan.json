@@ -1,0 +1,117 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 70,
+  "title": "Main halyard · the full-hoist mark",
+  "key": [
+   "The tape marks full hoist: stop when it reaches the clutch",
+   "Winched past it, the headboard jams against the masthead sheave"
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -70,
+      -40
+     ],
+     [
+      70,
+      -40
+     ],
+     [
+      70,
+      40
+     ],
+     [
+      -70,
+      40
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,0,0,.12)",
+    "dash": "0"
+   }
+  ],
+  "circles": [
+   {
+    "x": -420,
+    "z": -250,
+    "r": 40,
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -470,
+      -250
+     ],
+     [
+      -470,
+      0
+     ],
+     [
+      -380,
+      0
+     ],
+     [
+      420,
+      0
+     ]
+    ],
+    "c": "line",
+    "w": 9
+   },
+   {
+    "pts": [
+     [
+      -150,
+      0
+     ],
+     [
+      -110,
+      0
+     ]
+    ],
+    "c": "red",
+    "w": 24
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": 80,
+    "text": "clutch"
+   },
+   {
+    "x": -130,
+    "z": -80,
+    "text": "tape: full hoist",
+    "kind": "accent"
+   },
+   {
+    "x": 330,
+    "z": -60,
+    "text": "to the winch"
+   },
+   {
+    "x": -250,
+    "z": -300,
+    "text": "masthead sheave",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -500,
+    "z": -340
+   },
+   {
+    "x": 440,
+    "z": 160
+   }
+  ]
+ }
+}

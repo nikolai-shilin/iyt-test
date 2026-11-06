@@ -2,11 +2,13 @@
 # built on the ropework article's own schematics (article-figures.html, 'bareboat-skipper/ropework'), each titled and
 # keyed for its question's answer and reasoning. RU holds the Russian of every string they print.
 # Plain Python (no Blender): python3 docs/design/blender/q_rope_plans.py  writes every <id>/plan.json and adds the
-# plan's strings to that question's ru.json.
+# plan's strings to that question's ru.json (bs-* ids under bareboat-skipper, ci-* under charter-checkin).
 import os, json, math
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', 'bareboat-skipper')
+def qdir(level='bareboat-skipper'): return os.path.join(HERE, '..', 'figure-style', 'questions', level)
+QDIR = qdir()
+LEVEL_OF = {'bs': 'bareboat-skipper', 'ci': 'charter-checkin'}
 
 def loop(cx, cz, r, a0, a1, n=24):
     return [[round(cx + r * math.cos(math.radians(a0 + (a1 - a0) * i / n)), 1), round(cz + r * math.sin(math.radians(a0 + (a1 - a0) * i / n)), 1)] for i in range(n + 1)]
@@ -70,7 +72,79 @@ PLANS = {
                    fit=[{'x': -420, 'z': -180}, {'x': 440, 'z': 180}]),
 }
 
+# ---- Charter Check-in ----
+def drum(title, key):
+    turns = [line(loop(0, 0, 66 + 5 * k, 0, 360, 36), w=7) for k in range(5)]
+    return plan(title, key, circles=[ring(0, 0, 60), ring(0, 0, 100)],
+                paths=turns + [line([[0, 92], [180, 140], [420, 160]], w=7)],
+                texts=[t(0, -150, 'sail fully out: line wound on', kind='accent'), t(330, 210, 'to cockpit'), t(-230, 40, 'furling drum')],
+                fit=[{'x': -420, 'z': -220}, {'x': 440, 'z': 260}])
+
+def ci_clove(title, key):
+    return plan(title, key, paths=[line([[-440, 0], [440, 0]], 'ink', 14),
+                                   line(loop(-80, 0, 55, 90, 450, 30), w=10), line([[-80, 55], [40, -55]], w=10), line(loop(40, 0, 55, 270, 630, 30), w=10),
+                                   line([[-135, 10], [-150, 160], [-150, 330]], w=10), line([[95, 10], [150, 90], [200, 120]], w=10),
+                                   line(loop(230, 120, 34, 180, 520, 24), w=10), line([[200, 140], [230, 220], [250, 300]], w=10)],
+                texts=[t(-20, -120, 'clove hitch', kind='accent'), t(330, 60, 'slipped half hitch', kind='accent'), t(-300, 260, 'to the fender'), t(-330, -50, 'guardrail')],
+                fit=[{'x': -440, 'z': -200}, {'x': 440, 'z': 340}])
+
+def ci_chafe(title, key):
+    return plan(title, key, zones=[{'pts': [[-500, -320], [500, -320], [500, -180], [-500, -180]], 'c': 'ink', 'fill': '#d8c9a3', 'dash': '0'}],
+                circles=[ring(0, -250, 16), ring(0, 150, 22)],
+                paths=[line([[0, -235], [0, 128]]), line([[0, -205], [0, -150]], 'course', 22), line([[0, 110], [0, 170]], 'course', 22)],
+                boats=[{'you': True, 'x': 0, 'z': 260, 'hdg': 0, 'noHeading': True, 'scale': 3.4}],
+                texts=[t(190, -170, 'chafe guard · quay edge', kind='accent'), t(190, 135, 'chafe guard · fairlead', kind='accent'), t(-170, -30, 'ease a little'), t(-300, -250, 'QUAY', pill=False, size=30)],
+                fit=[{'x': -320, 'z': -320}, {'x': 320, 'z': 340}])
+
+def ci_tape(title, key):
+    return plan(title, key, zones=[{'pts': [[-70, -40], [70, -40], [70, 40], [-70, 40]], 'c': 'ink', 'fill': 'rgba(0,0,0,.12)', 'dash': '0'}],
+                circles=[ring(-420, -250, 40)],
+                paths=[line([[-470, -250], [-470, 0], [-380, 0], [420, 0]], w=9), line([[-150, 0], [-110, 0]], 'red', 24)],
+                texts=[t(0, 80, 'clutch'), t(-130, -80, 'tape: full hoist', kind='accent'), t(330, -60, 'to the winch'), t(-250, -300, 'masthead sheave', kind='red')],
+                fit=[{'x': -500, 'z': -340}, {'x': 440, 'z': 160}])
+
+def ci_inmast(title, key):
+    return plan(title, key, circles=[ring(-320, 0, 55), ring(-320, 0, 28)],
+                zones=[{'pts': [[-300, -10], [180, -10], [-300, -140]], 'c': 'ink', 'fill': 'rgba(0,0,0,.06)', 'dash': '0'}],
+                paths=[line([[-320, 0], [380, 0]], 'ink', 14), line([[180, -10], [380, -10], [400, 220]], w=8), line([[-320, 50], [-320, 240]], w=8)],
+                texts=[t(330, 270, 'outhaul: on the winch', kind='accent'), t(-320, 290, 'furling line: eased under tension', kind='accent'), t(-150, -170, 'main'), t(-420, -60, 'mast')],
+                fit=[{'x': -480, 'z': -220}, {'x': 460, 'z': 330}])
+
+PLANS.update({
+    'ci-102': drum('Furling drum · enough line to roll it all in', ['With the sail fully out, the drum must still hold the line that rolls it all in',
+                                                                   'One turn left runs out mid-furl: have it rewound tight']),
+    'ci-109': ci_inmast('In-mast main · unfurling', ['Pull the sail out with the outhaul on the winch', 'Ease the furling line with a little tension on: a slack roll bunches and jams in the slot']),
+    'ci-123': ci_tape('Main halyard · the full-hoist mark', ['The tape marks full hoist: stop when it reaches the clutch', 'Winched past it, the headboard jams against the masthead sheave']),
+    'ci-423': ci_clove('Fender line · clove hitch, slipped', ['A clove hitch on the guardrail, finished with a slipped half hitch', 'It re-sets in seconds; the slipped hitch stops it shaking loose']),
+    'ci-430': ci_chafe('Stern lines · chafe guards', ['Chafe, not strain, parts mooring lines: sleeve them where they move', 'A guard at the fairlead and one at the quay edge; ease the line a little']),
+    'ci-432': slip('Slip line · doubled through the ring', ['Just before leaving, double each line back through its ring', 'Both ends aboard: let one go and pull it in, nobody ashore needed'], 'quay ring'),
+})
+
 RU = {
+    # Charter Check-in plans
+    'sail fully out: line wound on': 'парус раскрыт: линь намотан', 'to cockpit': 'в кокпит', 'furling drum': 'барабан закрутки',
+    'Furling drum · enough line to roll it all in': 'Барабан закрутки · линя хватит, чтобы скрутить парус',
+    'With the sail fully out, the drum must still hold the line that rolls it all in': 'Когда парус раскрыт полностью, на барабане должен остаться весь линь, которым его скручивают',
+    'One turn left runs out mid-furl: have it rewound tight': 'Один виток кончится на середине закрутки: попросите плотно перемотать',
+    'In-mast main · unfurling': 'Грот в мачте · раскрываем', 'outhaul: on the winch': 'аутхол: на лебёдке',
+    'furling line: eased under tension': 'линь закрутки: травить с натяжением', 'main': 'грот', 'mast': 'мачта',
+    'Pull the sail out with the outhaul on the winch': 'Вытягивайте парус аутхолом на лебёдке',
+    'Ease the furling line with a little tension on: a slack roll bunches and jams in the slot': 'Линь закрутки травите, придерживая: слабый рулон сбивается и заклинивает в щели',
+    'Main halyard · the full-hoist mark': 'Грота-фал · метка полного подъёма', 'clutch': 'стопор', 'tape: full hoist': 'изолента: поднят полностью',
+    'to the winch': 'на лебёдку', 'masthead sheave': 'шкив на топе мачты',
+    'The tape marks full hoist: stop when it reaches the clutch': 'Изолента отмечает полный подъём: остановитесь, когда она дошла до стопора',
+    'Winched past it, the headboard jams against the masthead sheave': 'Если тянуть дальше, фаловый угол упрётся в шкив на топе и заклинит',
+    'Fender line · clove hitch, slipped': 'Конец кранца · выбленочный узел со слипом', 'clove hitch': 'выбленочный узел',
+    'slipped half hitch': 'полуштык со слипом', 'to the fender': 'к кранцу', 'guardrail': 'леер',
+    'A clove hitch on the guardrail, finished with a slipped half hitch': 'Выбленочный узел на леере, закреплённый полуштыком со слипом',
+    'It re-sets in seconds; the slipped hitch stops it shaking loose': 'Высота меняется за секунды; полуштык не даёт узлу разболтаться',
+    'Stern lines · chafe guards': 'Кормовые швартовы · защита от перетирания', 'chafe guard · quay edge': 'защита · кромка причала',
+    'chafe guard · fairlead': 'защита · клюз', 'ease a little': 'чуть потравить',
+    'Chafe, not strain, parts mooring lines: sleeve them where they move': 'Швартовы рвёт перетирание, а не нагрузка: защитите их там, где они ходят',
+    'A guard at the fairlead and one at the quay edge; ease the line a little': 'Защита у клюза и у кромки причала; швартов чуть потравите',
+    'Slip line · doubled through the ring': 'Швартов на слип · через рым вдвое',
+    'Just before leaving, double each line back through its ring': 'Перед самым отходом проведите каждый швартов через рым и обратно на борт',
+    'Both ends aboard: let one go and pull it in, nobody ashore needed': 'Оба конца на борту: отдайте один и выберите швартов — никого на берегу не нужно',
     # the article's own (figure-style/articles/bareboat-skipper/ropework/ru.json)
     'sheet · from the car': 'шкот · от каретки', 'clockwise': 'по часовой', 'tail · into the jaws': 'хвост · в губки',
     'Winch · the lead from below': 'Лебёдка · трос подходит снизу', 'Coming in from above it can ride over itself: a riding turn that jams': 'Сверху трос ложится на себя: захлёст, который заклинит',
@@ -134,8 +208,8 @@ def ru_for(qid):
     if miss: raise SystemExit(f'{qid}: plan strings without Russian: {miss}')
     return {x: RU[x] for x in strings(A)}
 
-def write(qid):
-    d = os.path.join(QDIR, qid); os.makedirs(d, exist_ok=True)
+def write(qid, level=None):
+    d = os.path.join(qdir(level or LEVEL_OF.get(qid[:2], 'bareboat-skipper')), qid); os.makedirs(d, exist_ok=True)
     p = os.path.join(d, 'plan.json')
     if qid in PLANS:
         with open(p, 'w') as f: json.dump(PLANS[qid], f, ensure_ascii=False, indent=1)

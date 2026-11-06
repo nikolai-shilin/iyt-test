@@ -59,11 +59,12 @@ def publish_dirs(level, only=None):
     """A level whose figures are made per question (bareboat-skipper): docs/design/figure-style/questions/<level>/<id>/
     holds 3d.jpg + 3d.labels.json (a Blender render, labelled here) or q.png (a 2D image), plan.png when the answer
     has a plan, the Russian copies (.ru.png) and ru.json, the Russian of every string on them. The marks go into
-    data/bank/photos.json by question text, which data/build_bank.py merges into the bank."""
+    data/bank/photos.json by question text, which data/build_bank.py merges into the bank; for a level built by
+    data/build_level.py, on the question's entry in data/bank/<level>/<topic>.json."""
     qdir = os.path.join(STYLE, 'questions', level)
     out = os.path.join(ROOT, 'miniapp', 'figs', 'q', level); os.makedirs(out, exist_ok=True)
     ph = os.path.join(ROOT, 'data', 'bank', 'photos.json')
-    photos = json.load(open(ph)) if os.path.exists(ph) else {}
+    photos = (json.load(open(ph)) if os.path.exists(ph) else {}) if level == 'bareboat-skipper' else {}
     lists = [f for f in sorted(os.listdir(qdir)) if f.endswith('.json') and f[:-5] not in ('questions', 'ru')]
     done, skipped = 0, []
     for f in lists:
@@ -86,7 +87,16 @@ def publish_dirs(level, only=None):
                 w, h = webp(os.path.join(d, 'plan.png'), os.path.join(out, f"{x['id']}-plan.webp"), 960); mark['plan'] = round(w / h, 3)
                 webp(os.path.join(d, 'plan.ru.png'), os.path.join(out, f"{x['id']}-plan.ru.webp"), 960)
             photos[x['q']] = mark; done += 1
-    json.dump(photos, open(ph, 'w'), ensure_ascii=False, indent=1)
+    if level == 'bareboat-skipper':   # its bank is built by data/build_bank.py, which merges data/bank/photos.json
+        json.dump(photos, open(ph, 'w'), ensure_ascii=False, indent=1)
+    else:                              # a level built by data/build_level.py: the marks go on the entries of its sources
+        bank = {q['q']: q['topic'] for q in json.load(open(os.path.join(ROOT, 'data', 'questions', f'{level}.json')))['questions']}
+        for topic in sorted(set(bank[t] for t in photos if t in bank)):
+            p = os.path.join(ROOT, 'data', 'bank', level, f'{topic}.json'); items = json.load(open(p))
+            for x in items:
+                if x['q'] in photos: x.pop('photo', None); x.pop('plan', None); x.update(photos[x['q']])
+            open(p, 'w').write(json.dumps(items, ensure_ascii=False, indent=1))
+        print('now: python3 data/build_level.py', level)
     print(level, done, 'published,', len(skipped), 'skipped', skipped[:20])
 
 if __name__ == '__main__':

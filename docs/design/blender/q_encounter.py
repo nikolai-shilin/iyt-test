@@ -11,6 +11,7 @@
 #   plotter the plotter close up (AIS-SART)
 #   night   drone view at night, lights only
 #   blender --background --factory-startup --python docs/design/blender/q_encounter.py -- --id bs-031 [--samples 128]
+#   --level charter-checkin: questions/<level>/encounter.json in, <level>/<id>/ out (default bareboat-skipper)
 import os, sys, math, json, subprocess, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -20,8 +21,9 @@ from bpy_extras.object_utils import world_to_camera_view
 import common as C, kit as K, kit_night as N
 import q_encounter_props as P
 
-QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', 'bareboat-skipper')
 arg = C.cli(); ID = arg('--id', 'bs-031'); SAMPLES = arg('--samples', 128); SCALE = arg('--scale', 100)
+LEVEL = arg('--level', 'bareboat-skipper')
+QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', LEVEL)
 OUT = arg('--out', os.path.join(QDIR, ID, '3d.jpg'))
 SPEC = next(x for x in json.load(open(os.path.join(QDIR, 'encounter.json'))) if x['id'] == ID)
 F = SPEC['figure']; YOU = F['you']; OTH = F.get('other', {}); WIND = F.get('wind')
@@ -89,6 +91,9 @@ VIEW = {
     'bs-973': dict(view='drone', model='mob', d=30),
     'bs-974': dict(view='drone', model='mob', d=48),
     'bs-992': dict(view='helm', model='motor', d=55, tow=True, lens=40),
+    # Charter Check-in
+    'ci-361': dict(view='helm', model='mob', d=24, horseshoe=True),
+    'ci-397': dict(view='drone', you_model='cat', model='mob', d=20, cam=dict(el=50, k=1.7)),
 }
 V = VIEW.get(ID, {'view': 'drone'})
 VIEW_KIND = V['view']
@@ -348,6 +353,27 @@ elif VIEW_KIND == 'helm':
         C.tube('towline', pts, 0.035, 8, 1.0, C.simple('towline', '#e9e2c4', 0.7))
     if V.get('shoal'):
         P.shoal((30, 30), YOU.get('hdg', 0), 150, 34, seed=4)
+    if V.get('horseshoe'):   # the horseshoe on the pushpit, lashed on with a knot: no light, no danbuoy beside it
+        import bmesh
+        side = 1 if ((OTH.get('bearing', 0) + 540) % 360) - 180 < 0 else -1      # the quarter towards the casualty
+        c = yt.world((-3.35, 0.13 + side * 1.32, 4.05)); out = (yt.world((-3.35, 0.13 + side * 3.0, 4.05)) - c).normalized()
+        aft = (yt.world((-6.0, 0.13 + side * 1.32, 4.05)) - c).normalized()
+        hs = C.simple('horseshoe', '#f2f2ee', 0.5, coat=0.3); band = C.simple('horseshoe-band', '#e04a12', 0.5)
+        Rr, r = 0.24, 0.07; pts = []
+        for k in range(29):
+            a = math.radians(-135 + 270 * k / 28)
+            pts.append(c + Vector((0, 0, 1)) * (Rr * math.cos(a)) + aft * (Rr * math.sin(a)) + out * 0.08)
+        C.tube('horseshoe', pts, r, 20, 1.0, hs, caps=True)
+        for a0 in (-100, 0, 100):
+            a = math.radians(a0); q = c + Vector((0, 0, 1)) * (Rr * math.cos(a)) + aft * (Rr * math.sin(a)) + out * 0.08
+            t = (Vector((0, 0, 1)) * -math.sin(a) + aft * math.cos(a)).normalized()
+            C.tube('horseshoe-band', [q - t * 0.04, q + t * 0.04], r * 1.04, 20, 1.0, band)
+        lash = C.simple('lashing', '#2a4f8c', 0.7)
+        top = c + Vector((0, 0, Rr)) + out * 0.08
+        for k in range(4):
+            a = k / 4 * math.tau
+            C.tube('lashing', [top + out * (0.09 * math.cos(a + j / 12 * math.tau)) + Vector((0, 0, 0.09 * math.sin(a + j / 12 * math.tau))) + aft * (0.012 * k - 0.02) for j in range(13)], 0.006, 8, 1.0, lash)
+        C.tube('lashing-knot', [top + Vector((0, 0, 0.09)), top + Vector((0, 0, 0.12)) + aft * 0.04, top + Vector((0, 0, 0.05)) + aft * 0.1, top - Vector((0, 0, 0.12)) + aft * 0.12], 0.006, 8, 1.0, lash)
     if V.get('rocks'):
         for i, (x, y_) in enumerate([(26, 30), (30, 70), (28, 115), (34, 160), (40, 205)]):
             P.rock('rock', (x, y_, -0.4), 1.6 + (i % 3) * 0.7, i); P.foam_patch((x - 1.5, y_, 0.3), 4.5, 30 + i)

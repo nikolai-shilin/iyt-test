@@ -1,0 +1,101 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Chartplotter · no fix at the berth",
+  "key": [
+   "Without satellites the plotter shows its last stored position, here 0.4 M out",
+   "Wait for the fix and see the boat on its berth"
+  ],
+  "land": [
+   [
+    [
+     -700,
+     -620
+    ],
+    [
+     1000,
+     -620
+    ],
+    [
+     1000,
+     -330
+    ],
+    [
+     -700,
+     -330
+    ]
+   ]
+  ],
+  "quays": [
+   {
+    "x1": -18,
+    "z1": -330,
+    "x2": 18,
+    "z2": -110
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 60,
+    "z": -230,
+    "hdg": 0,
+    "noHeading": true,
+    "label": "on the berth"
+   },
+   {
+    "x": 660,
+    "z": 200,
+    "hdg": 20,
+    "noHeading": true,
+    "bearing": false,
+    "fill": "#9aa0a6",
+    "label": "plotter: Fri 18:10"
+   }
+  ],
+  "dims": [
+   {
+    "a": [
+     60,
+     -230
+    ],
+    "b": [
+     660,
+     200
+    ],
+    "text": "0.4 M",
+    "off": -60
+   }
+  ],
+  "texts": [
+   {
+    "x": -400,
+    "z": -480,
+    "text": "Town",
+    "pill": false,
+    "size": 32
+   },
+   {
+    "x": -190,
+    "z": -200,
+    "text": "Base pontoon"
+   },
+   {
+    "x": 860,
+    "z": 200,
+    "text": "no fix",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -700,
+    "z": -620
+   },
+   {
+    "x": 1000,
+    "z": 330
+   }
+  ]
+ }
+}

@@ -1,0 +1,226 @@
+{
+ "article": "charter-checkin/nav",
+ "topic": "nav",
+ "lead": "Before you sign, every screen has to show you something true. Check each instrument against something you can see, set it up for your week, and learn the radio while the technician is aboard.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Chartplotter",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V50 H0 Z M118 50 V98 H130 V50 Z",
+    "depths": [
+     [
+      200,
+      125,
+      "9"
+     ],
+     [
+      80,
+      150,
+      "12"
+     ]
+    ],
+    "labels": [
+     [
+      124,
+      112,
+      "Base pontoon",
+      "middle"
+     ],
+     [
+      30,
+      34,
+      "Town",
+      "start"
+     ]
+    ],
+    "boat": [
+     240,
+     150,
+     0
+    ],
+    "panel": [
+     "No fix",
+     "Last: Fri 18:10",
+     "Off berth: 0.4 M"
+    ],
+    "note": "Plotter screen at the berth, Sat 17:00"
+   },
+   "cap": "Without satellites the plotter shows its last stored position."
+  },
+  {
+   "n": 2,
+   "section": "Depth, speed, wind",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "SOG",
+      "4.2",
+      false
+     ],
+     [
+      "Log",
+      "6.0",
+      false
+     ],
+     [
+      "Depth",
+      "42",
+      false
+     ]
+    ],
+    "lines": [
+     "Through the water 6.0, over the ground 4.2",
+     "The difference: 1.8 kn of current against you"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Compass, paper, log book",
+   "fig": {
+    "type": "compass",
+    "variation": 3,
+    "course": 90,
+    "courseLabel": "Compass",
+    "note": "Plotter COG 098° T"
+   },
+   "cap": "Compass 090°, plotter 098° true: 3°E is variation, the other 5°E deviation."
+  },
+  {
+   "n": 4,
+   "section": "Autopilot and AIS",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 50,
+     "dist": 85,
+     "hdg": 270,
+     "label": "Ferry"
+    },
+    "bearingLine": true,
+    "note": "CPA alarm: it sounds while there is time to act"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "VHF and DSC",
+   "fig": {
+    "type": "radio",
+    "channel": "16",
+    "power": "HI",
+    "parts": [
+     [
+      "volume",
+      "volume"
+     ],
+     [
+      "squelch",
+      "squelch"
+     ],
+     [
+      "distress",
+      "DISTRESS, covered"
+     ],
+     [
+      "power",
+      "1 W / 25 W"
+     ],
+     [
+      "ptt",
+      "press to talk"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "VHF and DSC",
+   "fig": {
+    "type": "card",
+    "title": "False DSC alert sent",
+    "lines": [
+     "Stop it on the set",
+     "Then by voice on channel 16:",
+     "ALL STATIONS × 3",
+     "this is (name, call sign, MMSI)",
+     "position",
+     "CANCEL MY DISTRESS ALERT · OUT"
+    ],
+    "tag": "Ch 16"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Lights and horn",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 70
+     },
+     {
+      "c": "g",
+      "x": 146,
+      "y": 120
+     },
+     {
+      "c": "r",
+      "x": 174,
+      "y": 120
+     }
+    ]
+   },
+   "cap": "NAV + STEAMING",
+   "name": "Engine on"
+  },
+  {
+   "n": 8,
+   "section": "Lights and horn",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "g",
+      "x": 151,
+      "y": 48
+     },
+     {
+      "c": "r",
+      "x": 169,
+      "y": 48
+     }
+    ]
+   },
+   "cap": "TRICOLOUR, or NAV",
+   "name": "Sail alone"
+  },
+  {
+   "n": 9,
+   "section": "Lights and horn",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 48
+     }
+    ]
+   },
+   "cap": "ANCHOR only",
+   "name": "At anchor"
+  }
+ ]
+}

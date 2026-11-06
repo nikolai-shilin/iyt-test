@@ -1,0 +1,96 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 60,
+  "title": "Log and SOG · the difference is current",
+  "key": [
+   "Log: the paddle wheel, speed through the water · SOG: GPS speed over the ground",
+   "6.0 − 4.2 = 1.8 kn of current against you: plan arrivals by SOG"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 300,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -300,
+      200
+     ],
+     [
+      -300,
+      -400
+     ]
+    ],
+    "c": "ink",
+    "w": 7,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      300,
+      200
+     ],
+     [
+      300,
+      -220
+     ]
+    ],
+    "c": "course",
+    "w": 7,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      0,
+      -400
+     ],
+     [
+      0,
+      -220
+     ]
+    ],
+    "c": "red",
+    "w": 7,
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -300,
+    "z": -450,
+    "text": "log 6.0 kn"
+   },
+   {
+    "x": 300,
+    "z": -270,
+    "text": "SOG 4.2 kn",
+    "kind": "accent"
+   },
+   {
+    "x": 0,
+    "z": -450,
+    "text": "current 1.8 kn",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -480,
+    "z": -480
+   },
+   {
+    "x": 480,
+    "z": 420
+   }
+  ]
+ }
+}

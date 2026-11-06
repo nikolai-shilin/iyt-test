@@ -1,0 +1,471 @@
+[
+ {
+  "id": "ci-017",
+  "topic": "papers",
+  "q": "Friday 16:00, the base is in sight and the tank is at three-quarters. Where do you take the boat first?",
+  "answer": "A — fill up, then berth at B and report to the base",
+  "why": "Full to full: the boat comes back with full tanks; refuelling by the base is charged on top of the fuel.",
+  "figure": {
+   "type": "bay",
+   "wind": 315,
+   "spots": [
+    [
+     60,
+     120,
+     "A"
+    ],
+    [
+     160,
+     140,
+     "B"
+    ],
+    [
+     255,
+     115,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     60,
+     145,
+     "Fuel pontoon"
+    ],
+    [
+     160,
+     165,
+     "Return berth"
+    ],
+    [
+     255,
+     140,
+     "Visitor quay"
+    ]
+   ],
+   "note": "Fri 18:00, tanks full · base refuels at fuel + €80"
+  },
+  "ru": {
+   "Fri 18:00, tanks full · base refuels at fuel + €80": "Пт 18:00, баки полные · заправка базой: топливо + €80",
+   "Fuel pontoon": "Топливный понтон",
+   "Return berth": "Причал сдачи",
+   "Visitor quay": "Гостевой причал"
+  }
+ },
+ {
+  "id": "ci-033",
+  "topic": "papers",
+  "q": "Monday 18:00, the quay attendant waves you to the free space at A. What do you do with the briefing's note?",
+  "answer": "Ask for B, or anchor at C; the ferry wash will throw you onto the quay twice a day",
+  "why": "The briefing's harbour notes are the base's own experience of its boats damaged on that quay; the attendant fills spaces.",
+  "figure": {
+   "type": "bay",
+   "wind": 315,
+   "spots": [
+    [
+     70,
+     70,
+     "A"
+    ],
+    [
+     230,
+     150,
+     "B"
+    ],
+    [
+     250,
+     60,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     70,
+     95,
+     "N quay, ferry berth"
+    ],
+    [
+     230,
+     175,
+     "S quay"
+    ],
+    [
+     250,
+     85,
+     "Bay, 5 m"
+    ]
+   ],
+   "note": "Briefing: ferry wash on the N quay 07:00 and 19:00"
+  },
+  "ru": {
+   "Briefing: ferry wash on the N quay 07:00 and 19:00": "Брифинг: волна от парома на сев. причале в 07:00 и 19:00",
+   "N quay, ferry berth": "Сев. причал, паром",
+   "S quay": "Южн. причал",
+   "Bay, 5 m": "Бухта, 5 м"
+  }
+ },
+ {
+  "id": "ci-035",
+  "topic": "papers",
+  "q": "Monday 18:00, N 3 and dying, your crew want A: it is flat calm and closest to the taverna. What do you do?",
+  "answer": "Anchor at B — the briefing's gusts come after dark in exactly this wind, however calm it looks now",
+  "why": "Katabatic gusts fall from the cliffs after dark in a northerly; the briefing names that bay so that you do not learn it at 02:00.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "spots": [
+    [
+     240,
+     110,
+     "A"
+    ],
+    [
+     80,
+     120,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     240,
+     135,
+     "E bay, under cliffs"
+    ],
+    [
+     80,
+     145,
+     "W bay, open S"
+    ]
+   ],
+   "note": "Briefing: E bay — night gusts to 40 kn in N wind"
+  },
+  "ru": {
+   "Briefing: E bay — night gusts to 40 kn in N wind": "Брифинг: вост. бухта — ночные шквалы до 40 уз при N",
+   "E bay, under cliffs": "Вост. бухта, под скалами",
+   "W bay, open S": "Зап. бухта, открыта на S"
+  }
+ },
+ {
+  "id": "ci-420",
+  "topic": "ground",
+  "q": "The base manager shows you the plan for Friday. Where and how do you bring the boat back?",
+  "answer": "Stern-to at B on the lazy line, by 17:00 on Friday",
+  "why": "The base takes the boat back where and how the briefing says: its own berth, the lazy line, no anchor, on time.",
+  "figure": {
+   "type": "bay",
+   "wind": 180,
+   "land": "M0 0 H320 V48 H0 Z M0 48 H60 V200 H0 Z",
+   "spots": [
+    [
+     110,
+     72,
+     "A"
+    ],
+    [
+     215,
+     80,
+     "B"
+    ],
+    [
+     95,
+     150,
+     "C"
+    ],
+    [
+     230,
+     150,
+     "D"
+    ]
+   ],
+   "labels": [
+    [
+     110,
+     30,
+     "fuel quay"
+    ],
+    [
+     215,
+     30,
+     "base pontoon · lazy lines"
+    ],
+    [
+     30,
+     100,
+     "town quay"
+    ],
+    [
+     230,
+     178,
+     "buoys"
+    ]
+   ],
+   "note": "Briefing: back by 17:00 on Friday"
+  },
+  "ru": {
+   "Briefing: back by 17:00 on Friday": "Брифинг: вернуться в пятницу к 17:00",
+   "fuel quay": "топл. причал",
+   "base pontoon · lazy lines": "понтон базы · муринги",
+   "town quay": "гор. причал",
+   "buoys": "буи"
+  }
+ },
+ {
+  "id": "ci-434",
+  "topic": "ground",
+  "q": "Monday, 17:00, a town quay with no lazy lines; you will go in stern-to between two boats. Where do you drop the anchor?",
+  "answer": "At B: about four boat lengths out, square to the gap, then reverse in",
+  "why": "Four boat lengths in 5 m gives real scope and still reaches the quay with chain to spare; too close and it never bites.",
+  "figure": {
+   "type": "bay",
+   "wind": 90,
+   "land": "M0 0 H320 V40 H0 Z",
+   "spots": [
+    [
+     160,
+     72,
+     "A"
+    ],
+    [
+     160,
+     128,
+     "B"
+    ],
+    [
+     160,
+     182,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     25,
+     "town quay · gap between two boats"
+    ],
+    [
+     200,
+     72,
+     "15 m"
+    ],
+    [
+     200,
+     128,
+     "50 m"
+    ],
+    [
+     200,
+     182,
+     "100 m"
+    ]
+   ],
+   "note": "Boat 14 m · depth 5 m · chain 70 m"
+  },
+  "ru": {
+   "Boat 14 m · depth 5 m · chain 70 m": "Яхта 14 м · глубина 5 м · цепь 70 м",
+   "town quay · gap between two boats": "городской причал · место между яхтами",
+   "15 m": "15 м",
+   "50 m": "50 м",
+   "100 m": "100 м"
+  }
+ },
+ {
+  "id": "ci-441",
+  "topic": "ground",
+  "q": "Monday, 12:30, you come into a clear-water bay for lunch. Where do you drop the anchor?",
+  "answer": "B: on the pale sand, where the anchor digs in and you can see it",
+  "why": "An anchor skids over thick weed and jams in rock; in clear water the pale sand is the holding ground.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V30 H0 Z M0 30 H40 V200 H0 Z M280 30 H320 V200 H280 Z",
+   "spots": [
+    [
+     110,
+     95,
+     "A"
+    ],
+    [
+     200,
+     130,
+     "B"
+    ],
+    [
+     160,
+     55,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     110,
+     118,
+     "dark weed"
+    ],
+    [
+     200,
+     153,
+     "pale sand"
+    ],
+    [
+     200,
+     55,
+     "rocks, 3 m"
+    ]
+   ],
+   "note": "Depth 6–8 m across the bay"
+  },
+  "ru": {
+   "Depth 6–8 m across the bay": "Глубина 6–8 м по всей бухте",
+   "dark weed": "тёмная трава",
+   "pale sand": "светлый песок",
+   "rocks, 3 m": "камни, 3 м"
+  }
+ },
+ {
+  "id": "ci-448",
+  "topic": "ground",
+  "q": "Wednesday, 17:00, near Göcek. The bay is filling up and the boats along the shore lie on anchors with lines ashore. Where do you go?",
+  "answer": "B: drop well out and back in, with a long line to the shore like the others",
+  "why": "Boats on lines ashore do not swing; a free-swinging boat among them hits one at the first wind shift — do as they do.",
+  "figure": {
+   "type": "bay",
+   "wind": 180,
+   "land": "M0 0 H320 V45 H0 Z M0 45 H35 V200 H0 Z M285 45 H320 V200 H285 Z",
+   "spots": [
+    [
+     110,
+     85,
+     "A"
+    ],
+    [
+     230,
+     75,
+     "B"
+    ],
+    [
+     160,
+     165,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     28,
+     "shore · boats on lines ashore"
+    ],
+    [
+     255,
+     98,
+     "gap"
+    ],
+    [
+     160,
+     188,
+     "entrance · 30 m"
+    ]
+   ],
+   "note": "Long line: 50 m, on board"
+  },
+  "ru": {
+   "Long line: 50 m, on board": "Длинный конец: 50 м, на борту",
+   "shore · boats on lines ashore": "берег · яхты с концами на берег",
+   "gap": "просвет",
+   "entrance · 30 m": "вход · 30 м"
+  }
+ },
+ {
+  "id": "ci-457",
+  "topic": "return",
+  "q": "Friday afternoon you are approaching the base. The briefing said return berths are assigned on arrival. What do you do?",
+  "answer": "Call the base on the VHF or phone before entering and take the berth they give you",
+  "why": "The return berth, the time and the mooring are the base's; 'back at the base' means alongside, before the deadline.",
+  "figure": {
+   "type": "bay",
+   "wind": 315,
+   "land": "M0 0 H320 V45 H0 Z M0 45 H60 V72 H0 Z M150 45 H160 V130 H150 Z M300 45 H320 V175 H300 Z",
+   "spots": [
+    [
+     30,
+     92,
+     "A"
+    ],
+    [
+     185,
+     92,
+     "B"
+    ],
+    [
+     230,
+     162,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     30,
+     114,
+     "fuel dock"
+    ],
+    [
+     185,
+     114,
+     "base pontoon"
+    ],
+    [
+     230,
+     143,
+     "anchorage"
+    ]
+   ],
+   "note": "Friday 16:30 · contract: alongside at the base by 18:00"
+  },
+  "ru": {
+   "Friday 16:30 · contract: alongside at the base by 18:00": "Пятница 16:30 · договор: у причала базы к 18:00",
+   "fuel dock": "топливо",
+   "base pontoon": "понтон базы",
+   "anchorage": "якорная стоянка"
+  }
+ },
+ {
+  "id": "ci-458",
+  "topic": "return",
+  "q": "Friday 15:30, the fuel gauge shows half. The base has given you berth B for the night. Where do you go first?",
+  "answer": "Fuel dock A: fill the tank and keep the receipt, then berth B",
+  "why": "'Returned full' is in the contract; the base's own refuelling adds a service charge, and the receipt is your proof.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V40 H0 Z M0 40 H70 V66 H0 Z M140 40 H150 V140 H140 Z M290 40 H320 V180 H290 Z",
+   "spots": [
+    [
+     62,
+     90,
+     "A"
+    ],
+    [
+     180,
+     100,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     64,
+     112,
+     "fuel dock · to 20:00"
+    ],
+    [
+     180,
+     122,
+     "your berth tonight"
+    ]
+   ],
+   "note": "Contract: full tank, or pump price + €50 service"
+  },
+  "ru": {
+   "Contract: full tank, or pump price + €50 service": "Договор: полный бак, иначе цена АЗС + €50 сервис",
+   "fuel dock · to 20:00": "топливо · до 20:00",
+   "your berth tonight": "ваше место на ночь"
+  }
+ }
+]

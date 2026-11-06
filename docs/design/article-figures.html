@@ -572,6 +572,8 @@ const AFTER = {
 (async () => {
   const q = new URLSearchParams(location.search), a = q.get('a') || 'bareboat-skipper/anchoring';
   const data = await (await fetch(`article-figs/${a.replace('/', '-')}.json?v=${Date.now()}`)).json(), after = AFTER[a] || [];
+  // an article without entries above: each figure's schematic from figure-style/articles/<a>/<n>-plan.json, if there is one
+  if (!AFTER[a]) for (const f of data.figs) { const r = await fetch(`figure-style/articles/${a}/${f.n}-plan.json?v=${Date.now()}`); after.push(r.ok ? await r.json() : {}); }
   document.getElementById('title').textContent = `${a.replace('/', ' · ')} · before and after`;
   document.getElementById('lede').textContent = data.lead;
   const rows = document.getElementById('rows');

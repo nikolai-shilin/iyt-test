@@ -1,0 +1,58 @@
+[
+ {
+  "id": "ci-318",
+  "topic": "nav",
+  "q": "You switch the plotter on at the berth in the base and it shows this. What do you do?",
+  "answer": "Treat it as a stale fix — wait for a lock, then check the position against the berth",
+  "why": "Until it has satellites the plotter shows the last stored position. Check the fix time and that the boat sits on its berth before trusting it.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V50 H0 Z M118 50 V98 H130 V50 Z",
+   "depths": [
+    [
+     200,
+     125,
+     "9"
+    ],
+    [
+     80,
+     150,
+     "12"
+    ]
+   ],
+   "labels": [
+    [
+     124,
+     112,
+     "Base pontoon",
+     "middle"
+    ],
+    [
+     30,
+     34,
+     "Town",
+     "start"
+    ]
+   ],
+   "boat": [
+    240,
+    150,
+    0
+   ],
+   "panel": [
+    "No fix",
+    "Last: Fri 18:10",
+    "Off berth: 0.4 M"
+   ],
+   "note": "Plotter screen at the berth, Sat 17:00"
+  },
+  "ru": {
+   "Plotter screen at the berth, Sat 17:00": "Экран плоттера у причала, сб 17:00",
+   "No fix": "Нет фикса",
+   "Last: Fri 18:10": "Посл.: пт 18:10",
+   "Off berth: 0.4 M": "От причала 0,4 M",
+   "Base pontoon": "Понтон базы",
+   "Town": "Город"
+  }
+ }
+]

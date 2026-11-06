@@ -10,7 +10,7 @@
       "refs": ["Check-in: engine bay", "Check-in: gearbox oil", "Check-in: alternator belt", "Check-in: exhaust elbow", "Check-in: raw-water seacock", "Check-in: fuel filter / water separator", "Check-in: saildrive diaphragm", "Check-in: stern gland", "Check-in: stern gland greaser", "Engine cooling: anti-siphon loop"],
       "blocks": [
         { "p": "Ask for the engine bay to be opened before anyone starts the engine, and check it yourself. A fault found now is the base's to fix; found on Wednesday, it is yours at sea." },
-        { "fig": { "type": "card", "title": "Engine bay, engine cold", "lines": ["Oil: between the marks, dark, not milky", "Coolant: between MIN and MAX", "Belt: about 10 mm of give, no black dust", "Seacock open, strainer clear", "Filter bowl: clear fuel, no dark layer", "Tray and saildrive well: dry"] } },
+        { "photo": "charter-checkin/engine/1", "fig": { "type": "card", "title": "Engine bay, engine cold", "lines": ["Oil: between the marks, dark, not milky", "Coolant: between MIN and MAX", "Belt: about 10 mm of give, no black dust", "Seacock open, strainer clear", "Filter bowl: clear fuel, no dark layer", "Tray and saildrive well: dry"] } },
         { "table": { "head": ["You find", "It means"], "rows": [
           ["Milky oil, engine or gearbox", "Water in the oil: the base's job"],
           ["Dark layer in the filter bowl", "Water or dirt: drain, new element"],
@@ -29,10 +29,10 @@
       "refs": ["Base briefing: starting the engine", "Engine panel: key-on test", "Check-in: exhaust water", "Engine panel: charging", "Check-in: engine alarms", "Base briefing: stopping the engine", "Engine will not start: battery switch", "Engine will not start: stop handle", "Engine will not start: cranking and raw water", "Water in the engine after a swell"],
       "blocks": [
         { "p": "Lever in **neutral**, key on, wait for the glow-plug light to go out, then crank. At key-on the oil and charge lamps and the buzzer come on: a lamp test. They go out seconds after the engine fires." },
-        { "fig": { "type": "panel", "gauges": [["RPM", "900", false], ["Oil", "LOW", true], ["Temp", "40°", false]], "lines": ["Lamps and buzzer at key-on: a lamp test", "Oil alarm still on 15 s after start: stop"] } },
+        { "photo": "charter-checkin/engine/2", "fig": { "type": "panel", "gauges": [["RPM", "900", false], ["Oil", "LOW", true], ["Temp", "40°", false]], "lines": ["Lamps and buzzer at key-on: a lamp test", "Oil alarm still on 15 s after start: stop"] } },
         { "p": "Then look aft for **water at the exhaust**. None means no cooling: stop at once, then check seacock, strainer and impeller. A battery light that stays on means no charge: belt or alternator. An alarm blamed on a 'faulty sender' is no alarm; do not sign for it." },
         { "p": "A diesel stops when its fuel is cut, by a stop button or pull handle; the key goes off afterwards. Push the handle back in." },
-        { "fig": { "type": "card", "title": "It will not start", "lines": ["Panel dark: the engine battery switch", "Cranks, no fire: stop handle left out", "Many tries: close the raw-water seacock,", "each crank pumps water into the exhaust", "Half a turn, then solid: water inside.", "Do not crank again, call the base"] } }
+        { "photo": "charter-checkin/engine/3", "fig": { "type": "card", "title": "It will not start", "lines": ["Panel dark: the engine battery switch", "Cranks, no fire: stop handle left out", "Many tries: close the raw-water seacock,", "each crank pumps water into the exhaust", "Half a turn, then solid: water inside.", "Do not crank again, call the base"] } }
       ]
     },
     {
@@ -45,7 +45,7 @@
         { "p": "Still tied up, click ahead, then astern, at idle: the boat should pull against her lines both ways. A **folding propeller** that revs without pulling is stuck half-open: neutral, a burst astern, try again. Neutral needs a click you can feel, and the engine should start only there." },
         { "rule": "Gear at idle only: idle, pause in neutral, click, then throttle." },
         { "p": "Test the **bow thruster** in short bursts each way. It is built for seconds: held for half a minute, its thermal cut-out trips until it has cooled and its breaker is reset." },
-        { "fig": { "type": "panel", "gauges": [["RPM", "2200", false], ["Speed", "6 kn", false], ["Temp", "80°", false]], "lines": ["Flat water, day one: note revs and speed", "Later, same revs, less speed: fouled prop"] } },
+        { "photo": "charter-checkin/engine/4", "fig": { "type": "panel", "gauges": [["RPM", "2200", false], ["Speed", "6 kn", false], ["Temp", "80°", false]], "lines": ["Flat water, day one: note revs and speed", "Later, same revs, less speed: fouled prop"] } },
         { "p": "Check her speed at cruising revs in flat water on day one. Wind and chop take a knot or two; less speed in flat water, or black smoke at high revs, means an overloaded engine: ease back and have the propeller looked at." }
       ]
     },
@@ -57,7 +57,7 @@
       "refs": ["Charter contract — fuel", "Base briefing: fuel and consumption", "Check-in: deck fillers", "Check-in: fuel shut-off", "Refuelling at the fuel quay", "Fuel cans: stowage and ventilation", "Fuel: range later in the week", "Engine at sea: fuel starvation"],
       "blocks": [
         { "p": "'Full on handover, full on return' works only if you saw it full: a dip, a sight glass or the fuel quay. Gauges read in quarters and stick, so count **engine hours** times the hourly burn the base gives you." },
-        { "fig": { "type": "card", "title": "Fuel plan for the week", "lines": ["Tank 160 L, keep 20 L: 140 L to use", "Burn at cruising revs: about 4 L/h", "140 ÷ 4 = 35 hours of motoring", "Plan: 6 h a day × 6 days = 36 h = 144 L", "So: a fuel stop midweek"] } },
+        { "photo": "charter-checkin/engine/5", "plan": 1.6, "fig": { "type": "card", "title": "Fuel plan for the week", "lines": ["Tank 160 L, keep 20 L: 140 L to use", "Burn at cruising revs: about 4 L/h", "140 ÷ 4 = 35 hours of motoring", "Plan: 6 h a day × 6 days = 36 h = 144 L", "So: a fuel stop midweek"] } },
         { "rule": "Gauge and hours disagree: plan on the worse one. The reserve is not for planning." },
         { "list": [
           "Deck fillers: smell, then mark the diesel cap with tape.",
@@ -76,7 +76,7 @@
       "refs": ["Check-in form: engine hours", "Check-in form: hour meter", "Charter contract — engine hours", "Check-in form: not seen", "Check-in: catamaran engines", "Check-in: generator", "Check-in: engine spares", "Check-in: tools and the manual"],
       "blocks": [
         { "p": "The engine hours on the form are what the week is measured against. Write what the panel shows and photograph it." },
-        { "fig": { "type": "panel", "gauges": [["Hours", "2312.1", false], ["Fuel", "4/4", false], ["Volts", "12.6", false]], "lines": ["Form says 2,290: have it corrected", "Photograph the panel before you sign"] } },
+        { "photo": "charter-checkin/engine/6", "fig": { "type": "panel", "gauges": [["Hours", "2312.1", false], ["Fuel", "4/4", false], ["Volts", "12.6", false]], "lines": ["Form says 2,290: have it corrected", "Photograph the panel before you sign"] } },
         { "list": [
           "Meter not counting: write it on the form, with how the base will charge instead.",
           "A clause limiting engine hours: get its meaning in writing.",
@@ -94,7 +94,7 @@
       "refs": ["Daily engine check: oil", "Engine alarm at sea", "Catamaran: running on one engine", "Exhaust smoke: white", "Exhaust smoke: black", "Charging under way vs idling"],
       "blocks": [
         { "p": "Each morning: oil, coolant, belt, strainer, a dry tray. Top the oil up to the upper mark, never above; tell the base about an engine that needs a litre a day." },
-        { "fig": { "type": "panel", "gauges": [["RPM", "2200", false], ["Temp", "105°", true], ["Oil", "OK", false]], "lines": ["Buzzer, steam at the exhaust", "Throttle back, neutral, stop, let it cool"] } },
+        { "photo": "charter-checkin/engine/7", "fig": { "type": "panel", "gauges": [["RPM", "2200", false], ["Temp", "105°", true], ["Oil", "OK", false]], "lines": ["Buzzer, steam at the exhaust", "Throttle back, neutral, stop, let it cool"] } },
         { "p": "An overheat alarm means stop before the engine seizes: sail or anchor, let it cool, then check strainer, impeller and belt. On a catamaran, stop the hot engine and carry on with the other." },
         { "table": { "head": ["Exhaust", "Meaning"], "rows": [
           ["White on a cold start", "Normal: it clears in a minute"],

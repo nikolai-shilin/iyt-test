@@ -1,0 +1,90 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "AIS · the CPA alarm",
+  "key": [
+   "A ferry on the starboard bow, crossing west: CPA 0.34 M in 4 minutes",
+   "Set the alarm wide enough to act on, and loud at the helm"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "courseSide": -1
+   },
+   {
+    "x": 1532.1,
+    "z": -1285.6,
+    "hdg": 270,
+    "label": "Ferry",
+    "noHeading": true,
+    "bearing": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -100
+     ],
+     [
+      0,
+      -1500
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "14 10"
+   },
+   {
+    "pts": [
+     [
+      1412.1,
+      -1285.6
+     ],
+     [
+      -900,
+      -1285.6
+     ]
+    ],
+    "c": "ink",
+    "w": 5,
+    "arrow": true
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": 0,
+    "r": 630,
+    "c": "red"
+   }
+  ],
+  "texts": [
+   {
+    "x": -560,
+    "z": -380,
+    "text": "CPA 0.34 M",
+    "kind": "red"
+   },
+   {
+    "x": -500,
+    "z": -1375.6,
+    "text": "her COG 270°, 15 kn"
+   }
+  ],
+  "fit": [
+   {
+    "x": -1000,
+    "z": -1450
+   },
+   {
+    "x": 1700,
+    "z": 350
+   }
+  ]
+ }
+}

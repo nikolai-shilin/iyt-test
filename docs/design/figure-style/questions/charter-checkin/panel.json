@@ -1,0 +1,1397 @@
+[
+ {
+  "id": "ci-153",
+  "topic": "engine",
+  "q": "The technician has already filled in the engine hours on the check-in form. You look at the panel. What do you do?",
+  "answer": "Have the form corrected to the panel reading and photograph the panel",
+  "why": "Engine hours on the form are what you are charged against at check-out; write what the panel shows, with a photo.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Hours",
+     "2312.1",
+     false
+    ],
+    [
+     "Volts",
+     "12.6",
+     false
+    ],
+    [
+     "Fuel",
+     "4/4",
+     false
+    ]
+   ],
+   "lines": [
+    "Form says: engine hours 2,290"
+   ]
+  },
+  "ru": {
+   "Form says: engine hours 2,290": "В акте: моточасы 2 290",
+   "Hours": "Моточасы",
+   "Volts": "Вольты",
+   "Fuel": "Топливо"
+  }
+ },
+ {
+  "id": "ci-155",
+  "topic": "engine",
+  "q": "The engine has started under the technician's eye and you watch the panel. What do you do?",
+  "answer": "Pull the stop handle now — the alarm should stop within seconds as oil pressure rises",
+  "why": "The oil alarm sounds until pressure builds — a second or two; longer than that, stop the engine before it damages itself.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "900",
+     false
+    ],
+    [
+     "Oil",
+     "LOW",
+     true
+    ],
+    [
+     "Temp",
+     "40°",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine fired 15 s ago",
+    "Buzzer still sounding"
+   ]
+  },
+  "ru": {
+   "Engine fired 15 s ago": "Двигатель запустился 15 с назад",
+   "Buzzer still sounding": "Зуммер всё ещё звучит",
+   "RPM": "Обороты",
+   "Oil": "Масло",
+   "LOW": "НИЗК",
+   "Temp": "Т-ра"
+  }
+ },
+ {
+  "id": "ci-158",
+  "topic": "engine",
+  "q": "The contract says the boat is handed over with a full tank. What do you do?",
+  "answer": "Ask to see it dipped or topped up at the fuel quay, and write the gauge reading on the form",
+  "why": "'Full on handover, full on return' only works if you see it full: a dip, a sight glass or a visit to the fuel quay.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "3/4",
+     false
+    ],
+    [
+     "Volts",
+     "12.7",
+     false
+    ],
+    [
+     "Temp",
+     "28°",
+     false
+    ]
+   ],
+   "lines": [
+    "Technician: 'full — the gauge sticks'",
+    "No fuel receipt shown"
+   ]
+  },
+  "ru": {
+   "Technician: 'full — the gauge sticks'": "Техник: «полный — указатель залипает»",
+   "No fuel receipt shown": "Чек с заправки не показан",
+   "Fuel": "Топливо",
+   "Volts": "Вольты",
+   "Temp": "Т-ра"
+  }
+ },
+ {
+  "id": "ci-163",
+  "topic": "engine",
+  "q": "After ten minutes running at the pontoon the panel looks like this. The technician says 'the light always does that'. What do you do?",
+  "answer": "Ask for the belt and alternator checked before you leave — it is not charging",
+  "why": "A battery light with the engine running means no charge: a slipping belt or a dead alternator. With it, the week ends on day two.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "1500",
+     false
+    ],
+    [
+     "Volts",
+     "12.1",
+     true
+    ],
+    [
+     "Temp",
+     "82°",
+     false
+    ]
+   ],
+   "lines": [
+    "Battery light on",
+    "Engine warm, running 10 min"
+   ]
+  },
+  "ru": {
+   "Battery light on": "Горит лампа аккумулятора",
+   "Engine warm, running 10 min": "Двигатель прогрет, работает 10 мин",
+   "RPM": "Обороты",
+   "Volts": "Вольты",
+   "Temp": "Т-ра"
+  }
+ },
+ {
+  "id": "ci-169",
+  "topic": "engine",
+  "q": "The engine has been running a quarter of an hour at the pontoon. The technician says the sender has been like that all season. Do you accept the boat?",
+  "answer": "Not until the base proves the oil pressure, replaces the sender or gauge, and writes it on the form",
+  "why": "An oil alarm you cannot tell from a real one is no alarm: you would not know at sea. Not a boat to sign for.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "1800",
+     false
+    ],
+    [
+     "Oil",
+     "LOW",
+     true
+    ],
+    [
+     "Temp",
+     "85°",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine warm, 15 min running",
+    "Buzzer sounding; 'faulty sender'"
+   ]
+  },
+  "ru": {
+   "Engine warm, 15 min running": "Двигатель прогрет, 15 мин работы",
+   "Buzzer sounding; 'faulty sender'": "Зуммер звучит; «датчик неисправен»",
+   "RPM": "Обороты",
+   "Oil": "Масло",
+   "LOW": "НИЗК",
+   "Temp": "Т-ра"
+  }
+ },
+ {
+  "id": "ci-170",
+  "topic": "engine",
+  "q": "Day three, motoring towards the harbour, the panel changes to this. What do you do?",
+  "answer": "Throttle back, neutral, stop; let it cool, then check strainer, impeller and belt before restarting",
+  "why": "Overheat: stop before it seizes. Sail or anchor, find the cause (strainer, impeller, belt), call the base if it is beyond you.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "2200",
+     false
+    ],
+    [
+     "Temp",
+     "105°",
+     true
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Buzzer sounding; steam at the exhaust",
+    "Harbour 2 miles ahead, wind F3"
+   ]
+  },
+  "ru": {
+   "Buzzer sounding; steam at the exhaust": "Зуммер; пар у выхлопа",
+   "Harbour 2 miles ahead, wind F3": "Гавань в 2 милях, ветер 3 балла",
+   "RPM": "Обороты",
+   "Temp": "Т-ра",
+   "Oil": "Масло",
+   "OK": "OK"
+  }
+ },
+ {
+  "id": "ci-171",
+  "topic": "engine",
+  "q": "Key on, not yet cranked: the panel lights up and the buzzer sounds. Your crew member at the chart table says 'it's broken before we start'. What do you tell them?",
+  "answer": "This is normal — the lamps and buzzer prove themselves on key-on and go out seconds after the engine fires",
+  "why": "On key-on the oil and charge lamps and the buzzer come on and stay on until the engine runs and pressure builds — a lamp test, not a fault.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Oil",
+     "LOW",
+     true
+    ],
+    [
+     "Batt",
+     "12.4",
+     true
+    ],
+    [
+     "RPM",
+     "0",
+     false
+    ]
+   ],
+   "lines": [
+    "Key ON, not yet cranked",
+    "Buzzer sounding"
+   ]
+  },
+  "ru": {
+   "Key ON, not yet cranked": "Ключ в ON, стартер не крутили",
+   "Buzzer sounding": "Зуммер звучит",
+   "Oil": "Масло",
+   "LOW": "НИЗК",
+   "Batt": "Батар.",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "ci-183",
+  "topic": "engine",
+  "q": "Monday, 19:00, at anchor, the batteries are low. Your crew suggests leaving the engine ticking over until bedtime. What do you do?",
+  "answer": "Run it at about 1,500 rpm for an hour — a diesel idled for hours glazes its bores and charges little",
+  "why": "A diesel is charged under some load and revs, not at idle for hours; an hour at 1,500 does more than four at 800 and keeps the engine healthy.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "800",
+     false
+    ],
+    [
+     "Volts",
+     "12.2",
+     true
+    ],
+    [
+     "Temp",
+     "62°",
+     false
+    ]
+   ],
+   "lines": [
+    "At anchor, fridge on",
+    "Crew: 'leave it ticking over'"
+   ]
+  },
+  "ru": {
+   "At anchor, fridge on": "На якоре, холодильник включён",
+   "Crew: 'leave it ticking over'": "Экипаж: «пусть молотит на холостых»",
+   "RPM": "Обороты",
+   "Volts": "Вольты",
+   "Temp": "Т-ра"
+  }
+ },
+ {
+  "id": "ci-185",
+  "topic": "engine",
+  "q": "Monday, an hour out. Your crew at the helm says the engine must be down on power. What do you tell them?",
+  "answer": "Nothing is wrong yet: wind and chop take two knots; the test is speed at 2,200 in flat water, and a drop there means a fouled prop",
+  "why": "SOG on the plotter is speed through water plus wind, chop and current; rpm-to-speed in flat water is the baseline you note on day one.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "2200",
+     false
+    ],
+    [
+     "Temp",
+     "80°",
+     false
+    ],
+    [
+     "Volts",
+     "14.1",
+     false
+    ]
+   ],
+   "lines": [
+    "Plotter: SOG 4.1 kn, 15 kn wind on the nose",
+    "Technician: 'about 6 kn at 2,200'"
+   ]
+  },
+  "ru": {
+   "Plotter: SOG 4.1 kn, 15 kn wind on the nose": "Плоттер: SOG 4,1 уз, ветер 15 уз в нос",
+   "Technician: 'about 6 kn at 2,200'": "Техник: «около 6 уз на 2 200»",
+   "RPM": "Обороты",
+   "Temp": "Т-ра",
+   "Volts": "Вольты"
+  }
+ },
+ {
+  "id": "ci-194",
+  "topic": "engine",
+  "q": "Tuesday, catamaran, 8 miles to go: the port engine's buzzer sounds. What do you do?",
+  "answer": "Stop port and carry on at moderate revs on starboard, allowing for the pull; tell the base, and port stays off till the cause is found",
+  "why": "A cat's second engine is why it can carry on; an overheated engine is stopped, not nursed, and the base is told before the next start.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Port temp",
+     "108°",
+     true
+    ],
+    [
+     "Stbd temp",
+     "82°",
+     false
+    ],
+    [
+     "RPM",
+     "2000",
+     false
+    ]
+   ],
+   "lines": [
+    "Port buzzer sounding",
+    "Tuesday, 8 miles to the harbour"
+   ]
+  },
+  "ru": {
+   "Port buzzer sounding": "Зуммер левого двигателя",
+   "Tuesday, 8 miles to the harbour": "Вторник, 8 миль до гавани",
+   "Port temp": "Т-ра ЛБ",
+   "Stbd temp": "Т-ра ПБ",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "ci-195",
+  "topic": "engine",
+  "q": "Thursday evening, anchored 28 miles from the base; tomorrow is forecast calm. What do you decide about fuel?",
+  "answer": "Plan on the lower figure: the gauge's 40 L leaves nothing over the 20 L reserve for a five-hour run — top up at the first fuel quay",
+  "why": "Gauge and hours disagree: plan on the worse one. 28 miles at 6 kn is 5 h ≈ 20 L, and the reserve is not for planning.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "1/4",
+     false
+    ],
+    [
+     "Hours",
+     "2334.1",
+     false
+    ],
+    [
+     "Volts",
+     "12.6",
+     false
+    ]
+   ],
+   "lines": [
+    "22 h since check-in at ≈4 L/h; tank 160 L, reserve 20 L",
+    "Friday: 28 miles to the base, calm forecast"
+   ]
+  },
+  "ru": {
+   "22 h since check-in at ≈4 L/h; tank 160 L, reserve 20 L": "22 ч с приёмки при ≈4 л/ч; бак 160 л, резерв 20 л",
+   "Friday: 28 miles to the base, calm forecast": "Пятница: 28 миль до базы, прогноз штиль",
+   "Fuel": "Топливо",
+   "Hours": "Моточасы",
+   "Volts": "Вольты"
+  }
+ },
+ {
+  "id": "ci-203",
+  "topic": "electrics",
+  "q": "First morning at anchor; you read the battery monitor before switching anything on. What state is the house bank in?",
+  "answer": "Full — a rested bank at 12.7 V is near 100 %",
+  "why": "Rested, no load: 12.7 V full, 12.4 V about 75 %, 12.2 V half, 12.0 V or less flat.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.7",
+     false
+    ],
+    [
+     "Amps",
+     "0",
+     false
+    ]
+   ],
+   "lines": [
+    "Sunday 07:00, at anchor",
+    "Nothing switched on since 23:00"
+   ]
+  },
+  "ru": {
+   "Sunday 07:00, at anchor": "Воскресенье 07:00, на якоре",
+   "Nothing switched on since 23:00": "С 23:00 ничего не включали",
+   "Volts": "Вольты",
+   "Amps": "Амперы"
+  }
+ },
+ {
+  "id": "ci-204",
+  "topic": "electrics",
+  "q": "At check-in the technician points at the voltmeter and says the batteries are 'perfect'. What does this reading actually tell you?",
+  "answer": "Only that the charger is working — the state of the bank shows after a rest off the charger",
+  "why": "On charge the charger sets the volts (13.8 float, 14.4 bulk); the bank's own voltage is read after an hour at rest.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "13.8",
+     false
+    ],
+    [
+     "Amps",
+     "+4",
+     false
+    ]
+   ],
+   "lines": [
+    "Shore power connected",
+    "Charger on, Saturday 16:00"
+   ]
+  },
+  "ru": {
+   "Shore power connected": "Береговое питание подключено",
+   "Charger on, Saturday 16:00": "Зарядное включено, суббота 16:00",
+   "Volts": "Вольты",
+   "Amps": "Амперы"
+  }
+ },
+ {
+  "id": "ci-205",
+  "topic": "electrics",
+  "q": "You are going through the panel with the technician and see this. What do you do?",
+  "answer": "Note it on the form and ask the base to sort it before you sail — the charger is off or the bank is dead",
+  "why": "Plugged in, the bank should read 13.8–14.4 V; 11.8 V with current going out means no charge — and ask how old the bank is.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "11.8",
+     true
+    ],
+    [
+     "Amps",
+     "-6",
+     false
+    ]
+   ],
+   "lines": [
+    "Shore power connected",
+    "Check-in, Saturday 15:00",
+    "House bank"
+   ]
+  },
+  "ru": {
+   "Shore power connected": "Береговое питание подключено",
+   "Check-in, Saturday 15:00": "Приёмка, суббота 15:00",
+   "House bank": "Сервисный банк",
+   "Volts": "Вольты",
+   "Amps": "Амперы"
+  }
+ },
+ {
+  "id": "ci-210",
+  "topic": "electrics",
+  "q": "You ask the technician to start the engine and watch the battery monitor. What do you tell him?",
+  "answer": "It is not charging — the alternator or belt needs looking at before you leave",
+  "why": "With the engine running the monitor should show about 14 V and current going in; 12.3 V and −8 A is no charge.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.3",
+     false
+    ],
+    [
+     "Amps",
+     "-8",
+     false
+    ],
+    [
+     "RPM",
+     "1500",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine running 3 min",
+    "Started at 12.4 V"
+   ]
+  },
+  "ru": {
+   "Engine running 3 min": "Двигатель работает 3 мин",
+   "Started at 12.4 V": "При запуске было 12,4 В",
+   "Volts": "Вольты",
+   "Amps": "Амперы",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "ci-212",
+  "topic": "electrics",
+  "q": "Evening in the bay, the fridge is the only thing running. Do you leave it on overnight?",
+  "answer": "Yes — about 5 A for 10 h is 50 Ah, a quarter of the bank; charge with the engine in the morning",
+  "why": "Amps × hours = amp-hours; a lead-acid bank should not go below half, so 50 Ah of 200 is fine.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.5",
+     false
+    ],
+    [
+     "Amps",
+     "-5",
+     false
+    ]
+   ],
+   "lines": [
+    "Evening at anchor, fridge only",
+    "House bank 2 × 100 Ah"
+   ]
+  },
+  "ru": {
+   "Evening at anchor, fridge only": "Вечер на якоре, только холодильник",
+   "House bank 2 × 100 Ah": "Сервисный банк 2 × 100 А·ч",
+   "Volts": "Вольты",
+   "Amps": "Амперы"
+  }
+ },
+ {
+  "id": "ci-221",
+  "topic": "electrics",
+  "q": "Tuesday, 08:00, at anchor. You read the battery monitor before breakfast. What does the third figure tell you?",
+  "answer": "That 76 Ah have been drawn from the bank since it was last full",
+  "why": "The monitor counts amp-hours out and in since the last full charge; 76 drawn from 200 Ah matches the 62 %.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Charge",
+     "62%",
+     false
+    ],
+    [
+     "Amps",
+     "-3",
+     false
+    ],
+    [
+     "Used Ah",
+     "-76",
+     false
+    ]
+   ],
+   "lines": [
+    "House bank 2 × 100 Ah",
+    "Last full: Sunday at the base"
+   ]
+  },
+  "ru": {
+   "House bank 2 × 100 Ah": "Сервисный банк 2 × 100 А·ч",
+   "Last full: Sunday at the base": "Полный заряд: воскресенье на базе",
+   "Charge": "Заряд",
+   "Amps": "Амперы",
+   "Used Ah": "Взято А·ч"
+  }
+ },
+ {
+  "id": "ci-225",
+  "topic": "electrics",
+  "q": "Monday noon in a bay, engine off. You read the solar controller at the chart table. What is it doing?",
+  "answer": "Charging the house bank at 7 A from the panels",
+  "why": "The controller turns the panels' higher voltage into a charge: +7 A is going in, and 13.9 V is a bank on charge.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Panel V",
+     "19.5",
+     false
+    ],
+    [
+     "Battery V",
+     "13.9",
+     false
+    ],
+    [
+     "Amps",
+     "+7",
+     false
+    ]
+   ],
+   "lines": [
+    "Solar 200 W on the bimini",
+    "Sky clear"
+   ]
+  },
+  "ru": {
+   "Solar 200 W on the bimini": "Солнечные панели 200 Вт на бимини",
+   "Sky clear": "Небо ясное",
+   "Panel V": "Панели, В",
+   "Battery V": "Банк, В",
+   "Amps": "Амперы"
+  }
+ },
+ {
+  "id": "ci-241",
+  "topic": "electrics",
+  "q": "42 ft catamaran with a lithium house bank, Tuesday evening at anchor. Your crew say the volts 'look fine'. What do you tell them?",
+  "answer": "Trust the 25 % — a lithium bank stays near 13 V until it is almost empty",
+  "why": "Lithium holds a flat 13.0–13.3 V over most of its charge, so the volts say little; the monitor's amp-hour count is the gauge.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "13.1",
+     false
+    ],
+    [
+     "Charge",
+     "25%",
+     true
+    ]
+   ],
+   "lines": [
+    "House bank: lithium 400 Ah",
+    "Fridges and lights on"
+   ]
+  },
+  "ru": {
+   "House bank: lithium 400 Ah": "Сервисный банк: литиевый 400 А·ч",
+   "Fridges and lights on": "Холодильники и свет включены",
+   "Volts": "Вольты",
+   "Charge": "Заряд"
+  }
+ },
+ {
+  "id": "ci-245",
+  "topic": "electrics",
+  "q": "Monday, 07:00, in a bay. The fridge was the only thing on overnight. You compare the readings. What do you do?",
+  "answer": "The bank has lost much of its capacity — call the base for new batteries on your route",
+  "why": "40 Ah from 200 should still read about 12.4 V; 11.9 V means the old bank holds far less than its label. The base can swap it midweek.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Sun 22:00",
+     "12.6",
+     false
+    ],
+    [
+     "Mon 07:00",
+     "11.9",
+     true
+    ]
+   ],
+   "lines": [
+    "House bank 2 × 100 Ah, fitted 2017",
+    "Fridge overnight: about 40 Ah"
+   ]
+  },
+  "ru": {
+   "House bank 2 × 100 Ah, fitted 2017": "Сервисный банк 2 × 100 А·ч, установлен в 2017",
+   "Fridge overnight: about 40 Ah": "Холодильник за ночь: около 40 А·ч",
+   "Sun 22:00": "Вс 22:00",
+   "Mon 07:00": "Пн 07:00"
+  }
+ },
+ {
+  "id": "ci-248",
+  "topic": "electrics",
+  "q": "Saturday 14:00, shore power off since the morning cleaning. The technician says 'the monitor says full'. What do you do?",
+  "answer": "Believe the volts — have the bank tested and the monitor reset before you sign",
+  "why": "A monitor that has lost count shows whatever it was last set to; 12.1 V under a small load is a bank near half or below.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Charge",
+     "100%",
+     false
+    ],
+    [
+     "Volts",
+     "12.1",
+     true
+    ],
+    [
+     "Amps",
+     "-4",
+     false
+    ]
+   ],
+   "lines": [
+    "House bank 2 × 100 Ah",
+    "Fridge on since 08:00"
+   ]
+  },
+  "ru": {
+   "House bank 2 × 100 Ah": "Сервисный банк 2 × 100 А·ч",
+   "Fridge on since 08:00": "Холодильник включён с 08:00",
+   "Charge": "Заряд",
+   "Volts": "Вольты",
+   "Amps": "Амперы"
+  }
+ },
+ {
+  "id": "ci-250",
+  "topic": "electrics",
+  "q": "Wednesday, 11:00, motoring between islands, you check the monitor. What do you do for the rest of the week?",
+  "answer": "Call the base, make for a marina with shore power tonight, and cut every load you can",
+  "why": "No charge means the bank only falls; the base can send a technician, and shore power keeps the fridge and lights going until then.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.4",
+     true
+    ],
+    [
+     "Amps",
+     "-6",
+     false
+    ],
+    [
+     "RPM",
+     "1800",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine running 2 h",
+    "Battery light on since this morning"
+   ]
+  },
+  "ru": {
+   "Engine running 2 h": "Двигатель работает 2 ч",
+   "Battery light on since this morning": "Лампа заряда горит с утра",
+   "Volts": "Вольты",
+   "Amps": "Амперы",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "ci-251",
+  "topic": "plumbing",
+  "q": "The technician says both water tanks are full. The panel shows this. What do you do before you sign?",
+  "answer": "Switch the selector to tank 2 and look into both fillers yourself",
+  "why": "A gauge reads the selected tank; a quarter-full tank 1 is the first thing to see — check both tanks at the filler before signing.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Water",
+     "1/4",
+     true
+    ]
+   ],
+   "lines": [
+    "Tank selector: on tank 1",
+    "Water 2 × 300 l"
+   ]
+  },
+  "ru": {
+   "Tank selector: on tank 1": "Селектор: танк 1",
+   "Water 2 × 300 l": "Вода 2 × 300 л",
+   "Water": "Вода"
+  }
+ },
+ {
+  "id": "ci-254",
+  "topic": "plumbing",
+  "q": "Every tap is closed, yet the pressure pump keeps running. The technician says it is just priming. What do you do?",
+  "answer": "Switch the pump off and ask the base to find the leak before you leave",
+  "why": "A pump that runs with the taps closed is pumping into a leak or from an empty tank — on a full tank, that water is going into the bilge.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Water",
+     "Full",
+     false
+    ]
+   ],
+   "lines": [
+    "All taps closed",
+    "Pump: running 5 min, won't stop"
+   ]
+  },
+  "ru": {
+   "All taps closed": "Все краны закрыты",
+   "Pump: running 5 min, won't stop": "Помпа: 5 мин, не отключается",
+   "Water": "Вода",
+   "Full": "Полн."
+  }
+ },
+ {
+  "id": "ci-272",
+  "topic": "plumbing",
+  "q": "Wednesday, 07:30. Your crew call you to the aft shower. You check the panel. What do you do?",
+  "answer": "Switch the pump off, turn the selector to tank 2, then switch it on again",
+  "why": "A pump running dry overheats and wears out; switch it off, change tanks, then let it prime with one tap open.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Water",
+     "Empty",
+     true
+    ]
+   ],
+   "lines": [
+    "Taps: spitting air",
+    "Pump: running, won't stop",
+    "Selector: tank 1 · tank 2 full"
+   ]
+  },
+  "ru": {
+   "Taps: spitting air": "Краны: плюются воздухом",
+   "Pump: running, won't stop": "Помпа: работает, не стихает",
+   "Selector: tank 1 · tank 2 full": "Селектор: танк 1 · танк 2 полон",
+   "Water": "Вода",
+   "Empty": "Пусто"
+  }
+ },
+ {
+  "id": "ci-284",
+  "topic": "plumbing",
+  "q": "A 36 ft boat, six crew. After Sunday's swim the gauge already reads this. What rule do you set?",
+  "answer": "A short rinse after swims, wash up in seawater, drink bottled",
+  "why": "75 l for six people for three days is about 4 l each a day, and the transom shower draws from the same tank at litres a minute.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Water",
+     "1/2",
+     true
+    ]
+   ],
+   "lines": [
+    "One tank, 150 l, full on Saturday",
+    "4 crew used the transom shower",
+    "Next water: Wednesday evening"
+   ]
+  },
+  "ru": {
+   "One tank, 150 l, full on Saturday": "Один танк 150 л, полон в субботу",
+   "4 crew used the transom shower": "4 человека мылись в кормовом душе",
+   "Next water: Wednesday evening": "Следующая вода: вечер среды",
+   "Water": "Вода"
+  }
+ },
+ {
+  "id": "ci-297",
+  "topic": "plumbing",
+  "q": "Thursday, 21:00 at anchor, wind forecast to rise in the night. You notice this. What do you do now?",
+  "answer": "Check each seacock, hose and the stern gland now, and call the base",
+  "why": "Salt water that keeps coming is a seacock, hose, gland or rudder seal; find it now, with light and the base on the phone, not at 02:00 in F6.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Bilge pump",
+     "3×/h",
+     true
+    ]
+   ],
+   "lines": [
+    "Water tastes salty",
+    "Pressure pump off: no change",
+    "Forecast: F6 from 02:00"
+   ]
+  },
+  "ru": {
+   "Water tastes salty": "Вода на вкус солёная",
+   "Pressure pump off: no change": "Помпа пресной воды выкл.: без изменений",
+   "Forecast: F6 from 02:00": "Прогноз: 6 баллов с 02:00",
+   "Bilge pump": "Трюмная помпа",
+   "3×/h": "3×/ч"
+  }
+ },
+ {
+  "id": "ci-300",
+  "topic": "plumbing",
+  "q": "Monday evening on the catamaran, eight crew. The water is going faster than you planned. You find this. What do you change?",
+  "answer": "Set the heads to SEA flush and ask the crew for short showers",
+  "why": "Fresh-water flushing on four heads takes tens of litres a day; sea-water flushing and short showers make 400 l last to the marina.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Water",
+     "1/2",
+     true
+    ]
+   ],
+   "lines": [
+    "2 × 400 l, both full on Saturday",
+    "4 electric heads, flush: FRESH / SEA",
+    "All four set to FRESH"
+   ]
+  },
+  "ru": {
+   "2 × 400 l, both full on Saturday": "2 × 400 л, оба полны в субботу",
+   "4 electric heads, flush: FRESH / SEA": "4 электрогальюна, смыв: FRESH / SEA",
+   "All four set to FRESH": "Все четыре на FRESH",
+   "Water": "Вода"
+  }
+ },
+ {
+  "id": "ci-302",
+  "topic": "nav",
+  "q": "At the berth the instruments show this, and the base's harbour plan gives 3.0 m here. What has happened?",
+  "answer": "The sounder is set to feet — 9.8 ft is 3.0 m; switch the units to metres",
+  "why": "9.8 ft = 3.0 m. Greek and Croatian charts are in metres: set depth to metres and distance to nautical miles before you sail.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Depth",
+     "9.8",
+     false
+    ],
+    [
+     "SOG",
+     "0.0",
+     false
+    ],
+    [
+     "Wind",
+     "6 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Depth display: no unit shown",
+    "Harbour plan: 3.0 m at the berth"
+   ]
+  },
+  "ru": {
+   "Depth display: no unit shown": "Индикатор глубины: единицы не показаны",
+   "Harbour plan: 3.0 m at the berth": "План гавани: у причала 3,0 м",
+   "Depth": "Глуб.",
+   "SOG": "SOG",
+   "Wind": "Ветер",
+   "6 kn": "6 уз"
+  }
+ },
+ {
+  "id": "ci-303",
+  "topic": "nav",
+  "q": "You check the sounder against the harbour plan at the berth. How much water is under the keel right now?",
+  "answer": "About 1.6 m — the sounder reads from the transducer, not from the keel",
+  "why": "No offset: the reading is depth below the transducer, 0.2 m under the surface here. Below the keel: 3.5 − 1.9 ≈ 1.6 m.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Depth",
+     "3.3",
+     false
+    ],
+    [
+     "SOG",
+     "0.0",
+     false
+    ],
+    [
+     "Log",
+     "0.0",
+     false
+    ]
+   ],
+   "lines": [
+    "Harbour plan: 3.5 m at the berth",
+    "Draught 1.9 m · offset: none set"
+   ]
+  },
+  "ru": {
+   "Harbour plan: 3.5 m at the berth": "План гавани: у причала 3,5 м",
+   "Draught 1.9 m · offset: none set": "Осадка 1,9 м · смещение не задано",
+   "Depth": "Глуб.",
+   "SOG": "SOG",
+   "Log": "Лаг"
+  }
+ },
+ {
+  "id": "ci-305",
+  "topic": "nav",
+  "q": "On the test run outside the harbour the display shows this. What do you write on the check-in form?",
+  "answer": "Log reads zero — paddle wheel fouled; ask the base to clear it",
+  "why": "A fouled paddle wheel reads 0; the base pulls and cleans it in the harbour. Note it: speed through the water feeds true wind and the log book.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "SOG",
+     "4.8",
+     false
+    ],
+    [
+     "Log",
+     "0.0",
+     true
+    ],
+    [
+     "Depth",
+     "12",
+     false
+    ]
+   ],
+   "lines": [
+    "Motoring at cruising revs",
+    "Paddle-wheel log under the hull"
+   ]
+  },
+  "ru": {
+   "Motoring at cruising revs": "Под мотором на крейсерских оборотах",
+   "Paddle-wheel log under the hull": "Лаг-вертушка под корпусом",
+   "SOG": "SOG",
+   "Log": "Лаг",
+   "Depth": "Глуб."
+  }
+ },
+ {
+  "id": "ci-306",
+  "topic": "nav",
+  "q": "A steady breeze blows across the marina and the burgee flies at the masthead, yet the instruments show this. What do you do?",
+  "answer": "Note it — masthead unit dead; ask the base to look at it before you leave",
+  "why": "The wind instrument should show direction and speed at the berth; a dead one is logged and fixed by the base, not by you aloft.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Wind",
+     "---",
+     true
+    ],
+    [
+     "AWS",
+     "0 kn",
+     false
+    ],
+    [
+     "Depth",
+     "3.4",
+     false
+    ]
+   ],
+   "lines": [
+    "Masthead unit: no data",
+    "Breeze F3 across the pontoon"
+   ]
+  },
+  "ru": {
+   "Masthead unit: no data": "Датчик на топе: нет данных",
+   "Breeze F3 across the pontoon": "Бриз 3 балла над понтоном",
+   "Wind": "Ветер",
+   "AWS": "AWS",
+   "0 kn": "0 уз",
+   "Depth": "Глуб."
+  }
+ },
+ {
+  "id": "ci-326",
+  "topic": "nav",
+  "q": "Monday, 11:00, motoring north in the Kos–Kalymnos channel at cruising revs, the displays show this. What is happening?",
+  "answer": "Nearly 2 kn of current against you — the log is through the water, SOG over the ground",
+  "why": "STW is what the paddle wheel sees; SOG is what the ground sees. The difference is the current — the briefing warned of 2 kn here.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "SOG",
+     "4.2",
+     false
+    ],
+    [
+     "Log",
+     "6.0",
+     false
+    ],
+    [
+     "Depth",
+     "42",
+     false
+    ]
+   ],
+   "lines": [
+    "Cruising revs, flat water, no wind",
+    "Briefing: current in the channel"
+   ]
+  },
+  "ru": {
+   "Cruising revs, flat water, no wind": "Крейсерские обороты, ровная вода, штиль",
+   "Briefing: current in the channel": "Брифинг: течение в проливе",
+   "SOG": "SOG",
+   "Log": "Лаг",
+   "Depth": "Глуб."
+  }
+ },
+ {
+  "id": "ci-337",
+  "topic": "nav",
+  "q": "Wednesday morning after a rolly night at anchor, the spare halyard has been slapping the mast and the wind display shows this in a flat calm. What do you do?",
+  "answer": "Look up — the halyard has likely fouled the masthead unit; free it from the deck, tell the base, sail by eye",
+  "why": "A halyard wrapped on the masthead unit jams the cups or bends the vane; free it, tell the base, and sail without the number until it is fixed.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Wind",
+     "38 kn",
+     true
+    ],
+    [
+     "AWA",
+     "jumping",
+     false
+    ],
+    [
+     "Depth",
+     "6.2",
+     false
+    ]
+   ],
+   "lines": [
+    "Flat calm, 07:00, Wednesday",
+    "Spare halyard slapping all night"
+   ]
+  },
+  "ru": {
+   "Flat calm, 07:00, Wednesday": "Полный штиль, 07:00, среда",
+   "Spare halyard slapping all night": "Запасной фал хлопал всю ночь",
+   "Wind": "Ветер",
+   "38 kn": "38 уз",
+   "AWA": "AWA",
+   "jumping": "скачет",
+   "Depth": "Глуб."
+  }
+ },
+ {
+  "id": "ci-350",
+  "topic": "nav",
+  "q": "Thursday, 11:00, 24 miles from the base, the displays show this and the base closes at 18:00. When do you arrive, and what do you do?",
+  "answer": "About 17:00 — plan by SOG, six hours at 4 kn; call the base now and say so",
+  "why": "Time to go is distance over speed over the ground: 24 M / 4 kn = 6 h. Tell the base early — a late boat is a late check-out.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "SOG",
+     "4.0",
+     false
+    ],
+    [
+     "Log",
+     "6.0",
+     false
+    ],
+    [
+     "Depth",
+     "55",
+     false
+    ]
+   ],
+   "lines": [
+    "24 M to the base, 11:00",
+    "Base office closes 18:00"
+   ]
+  },
+  "ru": {
+   "24 M to the base, 11:00": "До базы 24 M, 11:00",
+   "Base office closes 18:00": "Офис базы закрывается в 18:00",
+   "SOG": "SOG",
+   "Log": "Лаг",
+   "Depth": "Глуб."
+  }
+ },
+ {
+  "id": "ci-406",
+  "topic": "ground",
+  "q": "You press the foot switch and nothing happens. You go below and find the panel like this. What do you do?",
+  "answer": "Switch the windlass breaker on, start the engine and try again",
+  "why": "The windlass has its own breaker and is used with the engine running — its current would flatten the house bank.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.6",
+     false
+    ],
+    [
+     "Engine",
+     "stopped",
+     false
+    ],
+    [
+     "Windlass",
+     "OFF",
+     true
+    ]
+   ],
+   "lines": [
+    "Foot switch: nothing",
+    "Remote: nothing"
+   ]
+  },
+  "ru": {
+   "Foot switch: nothing": "Педаль: ничего",
+   "Remote: nothing": "Пульт: ничего",
+   "Volts": "Вольты",
+   "Engine": "Двигатель",
+   "stopped": "стоит",
+   "Windlass": "Брашпиль",
+   "OFF": "ВЫКЛ"
+  }
+ },
+ {
+  "id": "ci-463",
+  "topic": "return",
+  "q": "At the check-out the technician fills in the engine hours on the form. What do you do?",
+  "answer": "Read the meter with him and have the form corrected to 1 412 before you sign",
+  "why": "Both readings are compared on the form you sign; a wrong figure is argued later only with your photo.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Hours",
+     "1 412",
+     false
+    ],
+    [
+     "Fuel",
+     "Full",
+     false
+    ],
+    [
+     "Volts",
+     "12.6",
+     false
+    ]
+   ],
+   "lines": [
+    "Check-in form: 1 371 h",
+    "Your check-in photo: 1 371 h",
+    "Technician writes: 1 421 h"
+   ]
+  },
+  "ru": {
+   "Check-in form: 1 371 h": "Акт приёмки: 1 371 ч",
+   "Your check-in photo: 1 371 h": "Ваше фото при приёмке: 1 371 ч",
+   "Technician writes: 1 421 h": "Техник пишет: 1 421 ч",
+   "Hours": "Моточасы",
+   "Fuel": "Топливо",
+   "Full": "Полный",
+   "Volts": "Вольты"
+  }
+ },
+ {
+  "id": "ci-473",
+  "topic": "return",
+  "q": "The check-in form of your catamaran has one line for engine hours. You look at the two engine panels. What do you do?",
+  "answer": "Have both meters written on the form and photograph each panel",
+  "why": "Each engine is read against the form at check-out; a meter that is not on it is your word against the base's.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Port h",
+     "2 214",
+     false
+    ],
+    [
+     "Stbd h",
+     "2 187",
+     false
+    ],
+    [
+     "Fuel",
+     "Full",
+     false
+    ]
+   ],
+   "lines": [
+    "Form: 'Engine hours: 2 214'",
+    "No line for the starboard engine"
+   ]
+  },
+  "ru": {
+   "Form: 'Engine hours: 2 214'": "Акт: «Моточасы: 2 214»",
+   "No line for the starboard engine": "Строки для правого мотора нет",
+   "Port h": "Лев. ч",
+   "Stbd h": "Прав. ч",
+   "Fuel": "Топливо",
+   "Full": "Полный"
+  }
+ },
+ {
+  "id": "ci-480",
+  "topic": "return",
+  "q": "Friday you fill up at Nidri and motor two hours to the base. The technician reads the gauge and wants to top up at the base's price. What do you show him?",
+  "answer": "The Nidri receipt — the contract takes it as full from within 20 miles",
+  "why": "Read the fuel clause: a receipt from close by counts as full, and most fuel gauges are too coarse to argue over.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "7/8",
+     false
+    ],
+    [
+     "Hours",
+     "1 455",
+     false
+    ]
+   ],
+   "lines": [
+    "Receipt: Nidri, 11:40, 96 l",
+    "Contract: full, or a receipt within 20 M",
+    "Nidri to the base: 12 M"
+   ]
+  },
+  "ru": {
+   "Receipt: Nidri, 11:40, 96 l": "Чек: Нидри, 11:40, 96 л",
+   "Contract: full, or a receipt within 20 M": "Договор: полный бак или чек в пределах 20 миль",
+   "Nidri to the base: 12 M": "От Нидри до базы: 12 миль",
+   "Fuel": "Топливо",
+   "Hours": "Моточасы"
+  }
+ }
+]

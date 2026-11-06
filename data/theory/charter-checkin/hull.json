@@ -10,7 +10,7 @@
       "refs": ["Check-in: walk-round", "Check-in: form", "Check-in: photographs", "Check-in: hull damage", "Charter contract — deposit"],
       "blocks": [
         { "p": "Start outside, from the quay: the hull from bow to stern on both sides, then the deck, then the rig. A fixed order is how nothing gets missed. Keep the technician with you: a mark goes on the form's boat outline with him present and initialling. Notes you make alone are your word against the base's on Friday." },
-        { "fig": { "type": "card", "title": "One mark, written properly", "lines": ["What: gelcoat chip 3 cm, star cracks", "Where: port bow, 40 cm aft of the stem", "Photo 1: wide, to place it on the boat", "Photo 2: close up, a coin for scale", "Initialled by the technician"] } },
+        { "photo": "charter-checkin/hull/1", "plan": 1.6, "fig": { "type": "card", "title": "One mark, written properly", "lines": ["What: gelcoat chip 3 cm, star cracks", "Where: port bow, 40 cm aft of the stem", "Photo 1: wide, to place it on the boat", "Photo 2: close up, a coin for scale", "Initialled by the technician"] } },
         { "p": "Write what it is, how big and where. Star cracks mean an impact, so write cracks, not scratches: you sign for the boat as the form describes her, and 'general wear' describes nothing. Whatever happens before your signature goes on the form too. A gap noticed next morning is added, dated and initialled at the office before you sail." },
         { "rule": "On Friday the signed form counts, not the technician's memory." }
       ]
@@ -22,7 +22,7 @@
       "qa": { "q": "How can I tell if a charter yacht has run aground before?", "a": "Look at the keel: **rusty keel bolts** or fresh paint at the keel joint are signs of a grounding. Ask for a keel check, because a keel scuff missing from the form becomes your grounding at check-out." },
       "refs": ["Check-in: hull", "Check-in: rudder and keel", "Check-in: rudder", "Check-in: keel", "Check-in: hull windows", "Check-in: hull-deck joint", "Hull-deck joint — leak", "Charter contract — damage"],
       "blocks": [
-        { "fig": { "type": "boat", "view": "side", "parts": [["bow", "bow"], ["stern", "stern"], ["hull", "topsides"], ["waterline", "waterline"], ["keel", "keel"], ["rudder", "rudder"], ["pulpit", "pulpit"], ["pushpit", "pushpit"]] } },
+        { "photo": "charter-checkin/hull/2", "fig": { "type": "boat", "view": "side", "parts": [["bow", "bow"], ["stern", "stern"], ["hull", "topsides"], ["waterline", "waterline"], ["keel", "keel"], ["rudder", "rudder"], ["pulpit", "pulpit"], ["pushpit", "pushpit"]] } },
         { "table": { "head": ["What you see", "What you do"], "rows": [
           ["Weed at the waterline, an old sound repair", "The base's: note them with a photo"],
           ["A list with both tanks full", "Have the bilge and lockers opened: often it is water"],
@@ -42,7 +42,7 @@
       "refs": ["Check-in: guardrails", "Check-in: hatches", "Check-in: deck", "Check-in: deck fittings", "Check-in: bow fitting", "Check-in: bathing platform", "Check-in: cockpit", "Check-in: winches", "Check-in: running rigging", "Check-in: steering and throttle", "Check-in: steering", "Steering — failure ahead"],
       "blocks": [
         { "p": "Sort every finding into two piles. What can hurt someone or endanger the boat is **fixed by the base before you leave**: an entry on the form does not hold a guardrail. What is worn but safe is **written on the form** with a photo, so it stays the base's on Friday." },
-        { "fig": { "type": "rope", "kind": "rail", "labels": [[80, 50, "Stanchion: loose"], [235, 50, "Lifeline: frayed"], [160, 165, "Gate hook: pin missing"]], "note": "Guardrail: all three fixed before you leave" } },
+        { "photo": "charter-checkin/hull/3", "plan": 1.6, "fig": { "type": "rope", "kind": "rail", "labels": [[80, 50, "Stanchion: loose"], [235, 50, "Lifeline: frayed"], [160, 165, "Gate hook: pin missing"]], "note": "Guardrail: all three fixed before you leave" } },
         { "table": { "head": ["Fixed before you leave", "On the form, with a photo"], "rows": [
           ["Cracked ladder rung; hatch that will not seal", "Play in the platform hinge; cracked hatch lens"],
           ["Loose bow cleat, chain stopper without its pawl, leaking stanchion base", "Soft spot in the deck, initialled"],
@@ -75,9 +75,9 @@
       "qa": { "q": "How do I check the mast and rigging when taking over a charter yacht?", "a": "Sight up the mast from its foot for a straight mast and level spreaders, check the masthead with binoculars, and see each shroud's **turnbuckle** has a taped split pin. A broken strand or slack shroud is for the base's rigger." },
       "refs": ["Check-in: standing rigging", "Check-in: mast", "Check-in: mast and spreaders", "Check-in: masthead", "Check-in: boom", "Check-in: chainplates", "Check-in: backstay", "Standing rigging — failure"],
       "blocks": [
-        { "fig": { "type": "boat", "view": "side", "parts": [["mast", "mast: straight?"], ["forestay", "forestay"], ["backstay", "backstay"], ["boom", "boom"]], "note": "Sight up the mast; binoculars for the masthead" } },
+        { "photo": "charter-checkin/hull/4", "fig": { "type": "boat", "view": "side", "parts": [["mast", "mast: straight?"], ["forestay", "forestay"], ["backstay", "backstay"], ["boom", "boom"]], "note": "Sight up the mast; binoculars for the masthead" } },
         { "p": "At the mast foot, sight up the groove: a straight mast, spreaders level with their end boots on, the deck flat round the foot. Binoculars from the quay show the masthead: wind vane and cups turning, antenna upright, light lenses whole. Each shroud ends in a **turnbuckle** with a split pin, so it cannot unwind, taped so sails and hands do not snag." },
-        { "fig": { "type": "card", "title": "Ask for the base's rigger", "lines": ["Broken strand at a swage", "Cap shroud slack on one side", "Spreader drooping, its boot gone", "Rust streaks below a chainplate", "Backstay ram leaking, forestay sagging"] } },
+        { "photo": "charter-checkin/hull/5", "fig": { "type": "card", "title": "Ask for the base's rigger", "lines": ["Broken strand at a swage", "Cap shroud slack on one side", "Spreader drooping, its boot gone", "Rust streaks below a chainplate", "Backstay ram leaking, forestay sagging"] } },
         { "p": "None of these is a form entry or a job for you: the rigger puts it right before you sail, and the base gives you its backstay setting in writing. On the boom, a worn gooseneck pin is looked at now, and you ask for a line long enough to rig a preventer; a rigid kicker carries the boom without a topping lift. If strands break during the week, do not load the rig: call the base, and stay or motor back, sails down, as they decide." }
       ]
     },

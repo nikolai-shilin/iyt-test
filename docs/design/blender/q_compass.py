@@ -6,7 +6,7 @@
 # See q_misc.py for how to run it.
 #   blender --background --factory-startup --python docs/design/blender/q_compass.py -- --id bs-042
 #   python3 docs/design/blender/q_compass.py --all          ru.json for every compass question
-import os, sys, math
+import os, sys, math, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import q_misc as Q
 
@@ -23,7 +23,7 @@ def texts(f):
 
 def scene(f):
     lab = f.get('courseLabel', 'True course')
-    return 'compass' if lab.startswith('Compass') else 'plotter' if lab.startswith('GPS') else 'chart'
+    return 'compass' if lab.startswith(('Compass', 'Steering compass')) else 'plotter' if lab.startswith('GPS') else 'chart'
 
 RU_WORDS = {'True course': 'ИК', 'Variation': 'Склонение', 'Deviation': 'Девиация'}
 def meta(x):
@@ -32,8 +32,35 @@ def meta(x):
     for s in labels + lines:
         for en, r in sorted(words.items(), key=lambda kv: -len(kv[0])):
             if s.startswith(en + ' '): ru[s] = r + s[len(en):]; break
-    Q.drop(x['id'], 'plan.json')
-    Q.write_ru(x['id'], labels + lines + ([note] if note else []), ru)
+    english = labels + lines + ([note] if note else [])
+    if x['id'] in PLANS and Q.LEVEL != 'bareboat-skipper':     # another level's plan: the compass error worked out
+        P = PLANS[x['id']](f, x); Q.save(x['id'], 'plan.json', {'svg': P.svg()}); english += P.texts
+        for t in P.texts: ru.setdefault(t, PLAN_RU.get(t, Q.ru_number(t)))
+    else: Q.drop(x['id'], 'plan.json')
+    Q.write_ru(x['id'], english, ru)
+
+# ---------- plans for other levels (charter check-in): {svg}, shown with the answer ----------
+def box3(P, x, y, top, big, kind='light'):
+    P.rect(x - 150, y - 80, 300, 160, fill='var(--bg)', stroke='var(--accent)' if kind == 'accent' else 'var(--ink)', sw=5, rx=18)
+    P.text(x, y - 30, top, 30, 400, fill='var(--muted)', halo=False); P.text(x, y + 42, big, 60, halo=False)
+
+def plan_deviation(f, x):
+    """Compass, magnetic, true in a row, with the corrections between them; deviation is what is left over."""
+    c, v = f['course'], f.get('variation', 0); t = int(re.search(r'COG (\d+)', f['note']).group(1)); dev = t - v - c
+    P = Q.Plan('What the compass error is made of', [f'{c:03d}° compass + {abs(v)}°{"E" if v >= 0 else "W"} variation = {c + v:03d}°: the other {abs(dev)}° is deviation',
+                                                     'Look for a phone or speaker by the binnacle; note what remains'], PLAN_RU)
+    box3(P, 220, 220, 'compass', f'{c:03d}°'); box3(P, 640, 220, 'magnetic', f'{c + dev:03d}°'); box3(P, 1060, 220, 'true · plotter COG', f'{t:03d}°', 'accent')
+    P.arrow(375, 220, 485, 220, w=6); P.arrow(795, 220, 905, 220, w=6)
+    P.pill(430, 380, f'deviation {abs(dev)}°{"E" if dev >= 0 else "W"}', 'red', 32); P.pill(850, 380, f'variation {abs(v)}°{"E" if v >= 0 else "W"}', 'light', 32)
+    P.pill(640, 500, 'a phone or speaker by the binnacle?', 'accent', 30)
+    return P
+
+PLANS = {'ci-313': plan_deviation}
+PLAN_RU = {'What the compass error is made of': 'Из чего складывается ошибка компаса',
+           '090° compass + 3°E variation = 093°: the other 5° is deviation': '090° по компасу + 3°E склонение = 093°: остальные 5° — девиация',
+           'Look for a phone or speaker by the binnacle; note what remains': 'Ищите телефон или динамик у нактоуза; остаток запишите',
+           'compass': 'компас', 'magnetic': 'магнитный', 'true · plotter COG': 'истинный, COG',
+           'deviation 5°E': 'девиация 5°E', 'variation 3°E': 'склонение 3°E', 'a phone or speaker by the binnacle?': 'телефон или динамик у нактоуза?'}
 
 # ---------- textures (system Python, Pillow) ----------
 CHART_W, CHART_H, PX_W, PX_H = 0.80, 0.5333, 2400, 1600

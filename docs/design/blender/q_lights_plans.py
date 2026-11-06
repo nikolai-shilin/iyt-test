@@ -7,7 +7,9 @@ import json, math, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', 'bareboat-skipper')
-LIST = {e['id']: e for e in json.load(open(os.path.join(QDIR, 'lights.json')))}
+LEVELS = {'bs': 'bareboat-skipper', 'ci': 'charter-checkin'}       # the level of a question, by its id's prefix
+def qdir(qid): return os.path.join(HERE, '..', 'figure-style', 'questions', LEVELS.get(qid[:2], 'bareboat-skipper'))
+LIST = {e['id']: e for lv in LEVELS.values() for e in json.load(open(os.path.join(HERE, '..', 'figure-style', 'questions', lv, 'lights.json')))}
 
 RU = {}
 def T(en, ru):
@@ -590,9 +592,47 @@ def label_room(plan):
         room = span * (0.16 + 0.04 * max(0, b.get('scale', 2.6) - 2.6))
         sp.setdefault('fit', []).append(dict(x=b['x'], z=b['z'] + (-room if b.get('labelAbove') else room)))
 
+# ---------- Charter Check-in: our own lights tested at the pontoon ----------
+def svg_bow_on():
+    """ci-213: our yacht bow on, as from the pontoon ahead: steaming light, red to port (on your right as you face
+    her), the starboard green dead."""
+    cx = 640
+    b = f'<path d="M{cx - 230} 470 L{cx + 230} 470 L{cx + 150} 540 L{cx - 150} 540 Z" fill="var(--ink)"/>'
+    b += f'<path d="M{cx - 40} 470 L{cx + 40} 470 L{cx + 12} 560 L{cx - 12} 560 Z" fill="var(--ink)"/>'
+    b += f'<line x1="{cx}" y1="470" x2="{cx}" y2="90" stroke="var(--ink)" stroke-width="8"/>'
+    b += f'<line x1="{cx - 260}" y1="480" x2="{cx + 260}" y2="480" stroke="#3c8cbe" stroke-width="4"/>'
+    b += glow(cx, 250, 'w', 15) + pill(cx + 190, 245, T('steaming light: on', 'топовый: горит'))
+    b += glow(cx + 120, 440, 'r', 14) + pill(cx + 300, 410, T('port: red, on', 'левый: красный, горит'))
+    gx = cx - 120
+    b += f'<circle cx="{gx}" cy="440" r="14" fill="none" stroke="{SCOL["g"]}" stroke-width="4"/>'
+    b += f'<path d="M{gx - 20} 420 L{gx + 20} 460 M{gx + 20} 420 L{gx - 20} 460" stroke="#e8231a" stroke-width="6"/>'
+    b += pill(gx - 190, 410, T('starboard: green, dead', 'правый: зелёный, не горит'), 'red')
+    b += pill(cx - 260, 620, T('her starboard: your left', 'её правый борт: слева от вас')) + pill(cx + 260, 620, T('her port: your right', 'её левый борт: справа от вас'))
+    return frame(T('Nav lights · the starboard light is dead', 'Ходовые огни · правый не горит'),
+                 [T('Seen from ahead: the steaming light and both sidelights should show', 'С носа должны быть видны топовый и оба бортовых огня'),
+                  T('Note it on the form; the base replaces the bulb before you sail', 'Запишите в акт; лампу база меняет до выхода')], b)
+
+def svg_anchor_light():
+    """ci-214: the all-round white at the masthead, our yacht in profile at the pontoon."""
+    b = '<line x1="60" y1="500" x2="1220" y2="500" stroke="#3c8cbe" stroke-width="4"/>'
+    b += '<path d="M330 455 L950 455 L900 510 L380 520 Z" fill="var(--ink)"/>'
+    b += '<line x1="600" y1="455" x2="600" y2="110" stroke="var(--ink)" stroke-width="8"/>'
+    b += glow(600, 98, 'w', 16)
+    for a in range(0, 360, 45):
+        x1 = 600 + 34 * math.cos(math.radians(a)); y1 = 98 + 34 * math.sin(math.radians(a)); x2 = 600 + 60 * math.cos(math.radians(a)); y2 = 98 + 60 * math.sin(math.radians(a))
+        b += f'<line x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" stroke="#9aa4ae" stroke-width="4"/>'
+    b += pill(860, 100, T('all-round white: anchor light', 'белый круговой: якорный огонь'), 'accent', 26)
+    b += pill(640, 600, T('ANCHOR breaker on: only this light', 'автомат ЯКОРНЫЙ: горит только он'))
+    return frame(T('Anchor light · all-round white at the masthead', 'Якорный огонь · белый круговой на топе'),
+                 [T('At anchor at night a vessel shows one all-round white light (Rule 30)', 'На якоре ночью судно несёт один белый круговой огонь (правило 30)'),
+                  T('Test it at the pontoon at night, where you can see it', 'Проверьте его на понтоне ночью, где его видно')], b)
+
+P['ci-213'] = dict(svg=svg_bow_on())
+P['ci-214'] = dict(svg=svg_anchor_light())
+
 def main(ids):
     for qid in ids:
-        e = LIST[qid]; d = os.path.join(QDIR, qid); os.makedirs(d, exist_ok=True)
+        e = LIST[qid]; d = os.path.join(qdir(qid), qid); os.makedirs(d, exist_ok=True)
         plan = P[qid]; label_room(plan)
         with open(os.path.join(d, 'plan.json'), 'w') as f: json.dump(plan, f, ensure_ascii=False, indent=1)
         ru = {}

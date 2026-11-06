@@ -5,13 +5,16 @@
 // <id>/ru.json (every text node of both, in Russian). Everything is drawn here as {svg}: the 320×200 chart frame of
 // figures.js mapped uniformly into a 1280×800 frame, type sized for a phone (shown about 240 px high).
 // The primitives (boat, arrow, pill, compass, cardinal marks, anchor, rock) are copied from figure-schematic.js.
-//   node docs/design/blender/q_chart.mjs            then capture_questions.mjs bareboat-skipper --type chart|isobars [--ru]
+//   node docs/design/blender/q_chart.mjs [id] [--level charter-checkin]   then capture_questions.mjs <level> --type chart|isobars [--ru]
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const DIR = join(HERE, '..', 'figure-style', 'questions', 'bareboat-skipper');
+// --level <level> (default bareboat-skipper): read questions/<level>/{chart,isobars}.json, write questions/<level>/<id>/
+const ARGS = process.argv.slice(2), LI = ARGS.indexOf('--level');
+const LEVEL = LI >= 0 ? ARGS[LI + 1] : 'bareboat-skipper';
+const DIR = join(HERE, '..', 'figure-style', 'questions', LEVEL);
 const W = 1280, H = 800;
 const SCOL = { r: '#e0251b', g: '#1aa34a', w: '#ffffff', y: '#ffa800', k: 'var(--ink)', wind: '#e8231a', course: '#e0b400' };
 const LIGHT = '#d4148c';          // the chart's magenta: light flares, traffic separation, charted areas
@@ -391,6 +394,12 @@ const PLAN = {
   'bs-771': f => ({ title: 'Swing room when the wind goes west', key: ['Chain 40 m, depth + bow 6 m: about 39.5 m along the bottom', '+ boat 13 m ≈ 52 m of swing: the rock at 45 m is inside it'],
     under: [{ t: 'circle', x: 90, y: 150, r: 173, c: 'red', w: 5 }],
     over: [{ t: 'boat', x: 244, y: 150, hdg: 270, scale: 3.4 }, { t: 'dim', a: [90, 118], b: [263, 118], text: '≈ 52 m', kind: 'red' }, { t: 'windCorner', from: 270, text: 'Wind W' }] }),
+  'ci-318': f => ({ title: 'No fix: the last stored position', key: ['Until it has satellites the plotter shows the last fix, Fri 18:10',
+    'Wait for a lock, then check the boat sits on its berth'], noBoat: true,
+    over: [{ t: 'raw', svg: (P) => { const [x, y] = P(240, 150); return boat(x, y, 0, { scale: 2.3, fill: 'var(--muted)', ghost: true }); } },
+      { t: 'line', pts: [[230, 148], [180, 142], [148, 92]], c: 'red', w: 4, dash: '10 9' },
+      { t: 'raw', svg: (P) => { const [x, y] = P(142, 76); return boat(x, y, 0, { you: true, scale: 2.0 }); } },
+      { t: 'pill', x: 236, y: 182, text: 'stale fix, Fri 18:10', kind: 'red', size: 28 }, { t: 'pill', x: 218, y: 70, text: 'the boat: on its berth', kind: 'accent', size: 28 }] }),
   'bs-925': f => ({ title: 'Position from a landmark', key: ['Give the true bearing FROM the landmark, then the distance', '"180 degrees from Cape Sounion light, 2 miles"'],
     over: [{ t: 'arrow', a: [98, 80], b: [98, 142], c: 'accent', w: 6 }, { t: 'pill', x: 226, y: 100, text: '180° from the light, 2 miles', kind: 'accent', size: 28 }] }),
 };
@@ -416,6 +425,10 @@ const YOUAT = { 'bs-066': 'left', 'bs-656': 'right', 'bs-062': 'below', 'bs-061'
 
 /* ---------------- Russian for every string we draw ---------------- */
 const RU = {
+  'No fix: the last stored position': 'Нет фикса: последняя сохранённая позиция',
+  'Until it has satellites the plotter shows the last fix, Fri 18:10': 'Пока нет спутников, плоттер показывает последний фикс, пт 18:10',
+  'Wait for a lock, then check the boat sits on its berth': 'Дождитесь фикса и проверьте, что яхта стоит у своего причала',
+  'stale fix, Fri 18:10': 'старый фикс, пт 18:10', 'the boat: on its berth': 'яхта: у своего причала',
   N: 'С', You: 'Вы', 'Northern hemisphere': 'Северное полушарие', 'Depths in metres below chart datum': 'Глубины в метрах от нуля глубин',
   'You: 2 M due south of the light': 'Вы: 2 мили к югу от маяка',
   // plans
@@ -542,9 +555,10 @@ function emit(e, q, plan) {
   for (const s of [...USED].sort()) { const r = ruOf(s); if (r === s && /[A-Za-z]/.test(s) && !/^[A-D]$|^[PQR]$|^(DR|EP|ODAS|Foul|S|M|R|Sn|Wd|S\.Sh|25 Wk|\+ PA|Fl|Oc|Iso|Al|WR|\d+[sm]|\d+M|Fl\(\d\)|Oc\(\d\)|\d+\/\d+M|[A-C]  .*|Fl .*|Oc.*|Al WR.*|\d.*'N|37°.*)$/.test(s)) report.missing.push(`${e.id}: ${s}`); ru[s] = r; }
   writeFileSync(join(dir, 'ru.json'), JSON.stringify(ru, null, 1) + '\n');
 }
-const only = process.argv[2];
+const only = ARGS.filter((a, i) => a !== '--level' && ARGS[i - 1] !== '--level')[0];
+const list = name => existsSync(join(DIR, name)) ? JSON.parse(readFileSync(join(DIR, name), 'utf8')) : [];
 let CUR = '';
-for (const e of JSON.parse(readFileSync(join(DIR, 'chart.json'), 'utf8'))) {
+for (const e of list('chart.json')) {
   if (only && e.id !== only) continue;
   CUR = e.id; const f = e.figure, cfg = CFG[e.id] || {}; USED = new Set(); RUMAP = e.ru || {};
   const q = frame({ title: titleOf(f), key: keyOf(f, e.id), draw: chartDraw(f, cfg), avoid: chartAvoid(f) });
@@ -553,7 +567,7 @@ for (const e of JSON.parse(readFileSync(join(DIR, 'chart.json'), 'utf8'))) {
   else if (LIGHTPLAN[e.id]) plan = LIGHTPLAN[e.id]();
   emit(e, q, plan);
 }
-for (const e of JSON.parse(readFileSync(join(DIR, 'isobars.json'), 'utf8'))) {
+for (const e of list('isobars.json')) {
   if (only && e.id !== only) continue;
   CUR = e.id; const f = e.figure; USED = new Set(); RUMAP = e.ru || {};
   const sec = { ...(ISOSECOND[e.id] ? { second: ISOSECOND[e.id] } : {}), youAt: YOUAT[e.id] };

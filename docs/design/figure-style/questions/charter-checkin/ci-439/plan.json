@@ -1,0 +1,102 @@
+{
+ "sch": {
+  "padPx": 70,
+  "trueScale": true,
+  "minMpp": 0.05,
+  "wind": 90,
+  "title": "Anchor alarm · the swinging circle",
+  "key": [
+   "Chain 35 m + boat 14 m (GPS at the stern) ≈ 49 m: set about 55 m",
+   "Tighter wakes you all night; wider tells you too late"
+  ],
+  "anchors": [
+   {
+    "x": 0,
+    "z": 0,
+    "s": 0.8
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": 0,
+    "r": 55,
+    "c": "red"
+   },
+   {
+    "x": -48.5,
+    "z": 0,
+    "r": 1.2,
+    "fill": "var(--accent)",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -41.5,
+    "z": 0,
+    "hdg": 90,
+    "L": 14,
+    "noHeading": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -3,
+      0
+     ],
+     [
+      -34.5,
+      0
+     ]
+    ],
+    "c": "ink",
+    "w": 5,
+    "dash": "8 8"
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -62,
+    "text": "alarm radius ≈ 55 m",
+    "kind": "red"
+   },
+   {
+    "x": -17,
+    "z": -8,
+    "text": "chain 35 m"
+   },
+   {
+    "x": -42,
+    "z": -17,
+    "text": "boat 14 m"
+   },
+   {
+    "x": -63,
+    "z": 0,
+    "text": "GPS",
+    "kind": "accent"
+   },
+   {
+    "x": 16,
+    "z": 8,
+    "text": "drop point"
+   }
+  ],
+  "fit": [
+   {
+    "x": -60,
+    "z": -66
+   },
+   {
+    "x": 60,
+    "z": 60
+   }
+  ]
+ }
+}

@@ -4,6 +4,8 @@
 # run here unchanged with their ropes re-routed, parts hidden or added, and the labels and note taken from the
 # question's figure only (the answer and its reasoning are never printed).
 #   blender --background --factory-startup --python docs/design/blender/q_rope.py -- --id bs-011 [--samples 128] [--scale 100]
+#   --level charter-checkin reads questions/<level>/rope.json and writes questions/<level>/<id>/ (default bareboat-skipper);
+#   the Charter Check-in scenes are in q_rope_ci.py.
 # A question that shares another's image (SAME) copies that render and writes its own labels.
 import os, sys, math, json, random, shutil
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -16,7 +18,8 @@ from q_rope_geo import V, T3
 
 arg = C.cli()
 QID = arg('--id', 'bs-011'); SAMPLES = arg('--samples', 128); SCALE = arg('--scale', 100); OUTDIR = arg('--outdir', '')
-QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', 'bareboat-skipper')
+LEVEL = arg('--level', 'bareboat-skipper')
+QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', LEVEL)
 with open(os.path.join(QDIR, 'rope.json')) as f: ITEMS = {q['id']: q for q in json.load(f)}
 Q = ITEMS[QID]; FIG = Q['figure']
 OUT = os.path.join(OUTDIR or os.path.join(QDIR, QID), '3d.jpg')
@@ -32,7 +35,9 @@ def write_ru():
     with open(os.path.join(os.path.dirname(OUT), 'ru.json'), 'w') as f: json.dump(out, f, ensure_ascii=False, indent=1)
 
 def labels_from(points):
-    """points: {figure label text: 3D point} -> the render's label list, in the figure's order."""
+    """points: {figure label text: 3D point} (or a list, one point per figure label in order) -> the render's label
+    list, in the figure's order."""
+    if isinstance(points, (list, tuple)): points = dict(zip(TEXTS, points))
     miss = [t for t in TEXTS if t not in points]
     if miss: raise SystemExit(f'{QID}: no place for labels {miss}')
     return [(tuple(points[t]), t) for t in TEXTS]
@@ -161,7 +166,7 @@ def art8(variant):
     run_lib('art_rope_a.py', ['--fig', 8], pre_render=pre, points=lambda g: {'bollard': g['b'] + V(0, 0, 0.55)},
             cam=((0.4, 4.3, 2.55), (2.0, -0.9, 1.05), 30))
 
-def art6(variant):
+def art6(variant, extra_pts=None):
     """Fig 6's scene: the yacht stern-to a granite quay, two bollards. Variants re-rig the starboard stern line:
     'handed' round the bollard with its end handed back on board (not made fast); 'ashore' made fast on the
     bollard in the ordinary way; 'slipring' a slip line through a quay ring; 'bowring' a bowline through a quay
@@ -237,9 +242,10 @@ def art6(variant):
     else:
         sfn = strand
     def pts(g):
+        more = extra_pts(g, st) if extra_pts else {}
         if variant in ('slipring', 'bowring', 'rtring'):
-            return {'quay ring': st['ring']['c'] + V(0, 0, 0.03)}
-        return {'bollard': g['b'] + V(0, 0, 0.62)}
+            return {'quay ring': st['ring']['c'] + V(0, 0, 0.03), **more}
+        return {'bollard': g['b'] + V(0, 0, 0.62), **more}
     camv = {'bowring': ((-2.9, 1.25, 1.75), (-2.1, -0.15, 1.05), 40), 'rtring': ((-2.75, 1.05, 1.62), (-2.15, 0.05, 1.04), 50),
             'slipring': ((-3.05, 1.75, 1.95), (-2.05, -0.7, 1.08), 36)}.get(variant)
     run_lib('art_rope_a.py', ['--fig', 6], strand_fn=sfn, pre_render=pre, points=pts, cam=camv)
@@ -262,8 +268,13 @@ def art1(variant):
 # winch (fig_winch.py: the exported cockpit, a Lewmar self-tailer; Three.js space)
 # =====================================================================================================
 DRUM = (0.035, 0.17, 0.045)        # a point on the drum's face towards the camera, Three.js (after fig_winch's lift)
-def winch(variant, handle=False, third=None, clutch=False):
+def winch(variant, handle=False, third=None, clutch=False, labpts=None, more=None, rope_more=None, cam=None):
+    """labpts: the label points (Three.js), one per figure label, instead of the defaults; more(g): extra parts
+    built before the render; rope_more(P): re-routes the sheet after the variant's own re-routing."""
     def rope(i, P):
+        if rope_more: return rope_more(rope0(i, P))
+        return rope0(i, P)
+    def rope0(i, P):
         P = [list(p) for p in P]
         if variant == 'A': return P
         if variant == 'B':                       # turns on, the tail straight off the top turn (not in the jaws)
@@ -306,21 +317,27 @@ def winch(variant, handle=False, third=None, clutch=False):
             for o in g['handle']: o.hide_render = True
         if clutch:
             G.clutch(C.B(-0.62, 0.0, -0.055), V(1, 0, 0), 0.14)
+        if more: more(g)
     pts = {}
     def points(g):
+        if labpts: return labpts
         p = {TEXTS[0]: (-0.62, -0.02, -0.39) if variant != 'E' else (-0.95, 0.03, -0.055),
              TEXTS[1]: (0.25, 0.03, 0.15) if variant not in ('D', 'E') else (-0.17, -0.1, 0.2)}
         if third:
             p[TEXTS[2]] = third
         return p
     # closer than the library's view, so the turns on the drum can be read
-    run_lib('fig_winch.py', [], rope_fn=rope, pre_render=pre, points=points, cammat=((0.36, 0.66, 0.74), (-0.14, 0.1, -0.06), 40))
+    run_lib('fig_winch.py', [], rope_fn=rope, pre_render=pre, points=points, cammat=cam or ((0.36, 0.66, 0.74), (-0.14, 0.1, -0.06), 40))
 
 # =====================================================================================================
 # cleat (render_scene.py --name cleat: a white three-strand line through a fairlead to a deck cleat; Three.js)
 # =====================================================================================================
-def cleat(variant):
+def cleat(variant, labpts=None, more=None, rope_more=None, cam=None):
+    """labpts / more(g) / rope_more(P) as for winch()."""
     def rope(i, P):
+        if rope_more: return rope_more(rope0(i, P))
+        return rope0(i, P)
+    def rope0(i, P):
         P = [tuple(p) for p in P]
         coil = P[2072:]
         if variant == 'full': return P
@@ -367,18 +384,19 @@ def cleat(variant):
             tail = [(-0.15, 0.03, 0.08), (-0.22, 0.012, 0.15), (-0.34, 0.009, 0.22), (-0.46, 0.009, 0.24)]
             path = lead + hitch + tail
             C.braid('stern-line', [C.V3(p) for p in path], 0.0085, '#1b2c4c', '#e9e3d2', whip='#141414', fine=1.3)
-    lab = {
+        if more: more(g)
+    lab = labpts or {
         'full': {'load': (-0.47, -0.17, -0.74), 'cleat on board': (0.13, 0.11, -0.01)},
         'started': {'cleat': (0.0, 0.1, 0.0)},
         'approach': {'load': (-0.3, 0.012, -0.27), 'pontoon cleat': (0.0, 0.095, 0.0)},
         'toerail': {'to the quay': (-0.2, 0.07, -0.5), 'cleat': (0.1, 0.09, 0.02)},
         'three': {'stern line': (-0.3, 0.03, -0.3), 'three locking hitches': (0.08, 0.15, 0.03)},
         'two': {'two lines': (0.36, 0.03, -0.36), 'spring under, stern line on top': (0.0, 0.13, 0.0)},
-    }[variant]
+    }.get(variant)
     if variant == 'two':
         # render_scene keeps its data in d; keep a handle on it for pre()
         pass
-    cm = {'toerail': ((0.42, 0.72, 0.52), (-0.16, 0.0, -0.3), 40)}.get(variant)   # back far enough to see the toe rail
+    cm = cam or {'toerail': ((0.42, 0.72, 0.52), (-0.16, 0.0, -0.3), 40)}.get(variant)   # back far enough to see the toe rail
     run_lib('render_scene.py', ['--name', 'cleat'], rope_fn=rope, pre_render=pre, points=lambda g: lab, cammat=cm)
 
 # =====================================================================================================
@@ -427,8 +445,12 @@ def sheet_block():
 # =====================================================================================================
 # rail (fig_rail.py: the fender line over the yacht's guardrail; Blender space)
 # =====================================================================================================
-def rail():
-    run_lib('fig_rail.py', [], points=lambda g: {'guardrail': V(-0.6, g['side_y'](-0.6, g['wire_z']) or g['wire_y'], g['wire_z'])})
+def rail(fender_label=False):
+    def pts(g):
+        p = {'guardrail': V(-0.6, g['side_y'](-0.6, g['wire_z']) or g['wire_y'], g['wire_z'])}
+        if fender_label: p[TEXTS[1]] = g['fline'][3]
+        return p
+    run_lib('fig_rail.py', [], points=pts)
 
 # =====================================================================================================
 # custom scenes: the dinghy at the quay ring, the kedge on deck, the halyard on the mast cleat
@@ -604,6 +626,8 @@ SPEC = {
     'bs-271': lambda: winch('A'),
     'bs-277': lambda: winch('A'),
 }
+if LEVEL != 'bareboat-skipper':
+    import q_rope_ci; SPEC.update(q_rope_ci.specs(globals()))
 
 def same_as(src):
     """Copy another question's render and write this question's labels at the same anchors (by position in the
@@ -626,5 +650,5 @@ if isinstance(s, str): same_as(s)
 else: s()
 write_ru()
 if not OUTDIR:
-    import q_rope_plans; q_rope_plans.write(QID)
+    import q_rope_plans; q_rope_plans.write(QID, LEVEL)
 print('Q_ROPE DONE', QID, OUT)

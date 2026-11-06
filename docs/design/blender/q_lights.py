@@ -5,6 +5,7 @@
 # <id>/3d.jpg with <id>/3d.labels.json (the figure's own light texts at their lights, its note as the note).
 # Rule 1: it is night, so only the lights show; hulls are one plain, faint dark shape whatever the vessel.
 #   blender --background --factory-startup --python docs/design/blender/q_lights.py -- --id bs-416 [--samples 128]
+#   --level charter-checkin: questions/<level>/lights.json in, <level>/<id>/ out (default bareboat-skipper)
 import os, sys, json, math
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -17,7 +18,8 @@ from q_lights_layout import layout, target
 
 arg = C.cli(); QID = arg('--id', 'bs-416'); SAMPLES = arg('--samples', 128); SCALE = arg('--scale', 100)
 EXPO = arg('--exposure', 0.75)
-QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', 'bareboat-skipper')
+LEVEL = arg('--level', 'bareboat-skipper')
+QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', LEVEL)
 OUT = arg('--out', os.path.join(QDIR, QID, '3d.jpg'))
 ENTRY = {e['id']: e for e in json.load(open(os.path.join(QDIR, 'lights.json')))}[QID]
 FIG = ENTRY['figure']; LIGHTS = FIG['lights']; SP = SPECS[QID]
@@ -279,6 +281,38 @@ elif kind == 'yacht':
     ld = bpy.data.lights.new('steam-spot', 'SPOT'); ld.energy = 5; ld.color = RGB['w']; ld.spot_size = deg(110); ld.spot_blend = 0.7
     lo = bpy.data.objects.new('steam-spot', ld); C.col.objects.link(lo); lo.location = Vector(st)
     lo.rotation_euler = (Vector(model_world(pos, hdg, (9.5, 0.13, 3.6))) - Vector(st)).to_track_quat('-Z', 'Y').to_euler()
+    render(cam, pts)
+
+elif kind == 'pontoon':
+    # our own yacht at night, lying in a marina berth: a finger pontoon along her starboard side, the main pontoon
+    # across, ahead of her bow; we stand on it and look back at her. Only the lights the question switches on burn
+    # (the data's lights, matched to her fittings by colour); a dead lantern is there, unlit.
+    y = K.load_yacht(name='own'); y.place(0, 0, heading=0)
+    night(center=(0, 0), moon=0.003)
+    bpy.context.view_layer.update()
+    bow = y.world((10.95, 0.13, 3.72))
+    M = K.mats(); TOP = 0.5
+    def deck_box(name, cx, cy, sx, sy):
+        C.obj(name + '-float', C.rbox(name + '-float', (sx - 0.1, sy - 0.1, 0.8), 0.06, 2), dark('float-night', '#2a2d30', 0.8), (cx, cy, TOP - 0.45))
+        C.obj(name, C.rbox(name, (sx, sy, 0.06), 0.01, 1), dark('planks-night', '#3a3530', 0.85), (cx, cy, TOP))
+    ahead = bow.y + 6.5
+    deck_box('main-pontoon', 0.0, ahead + 1.25, 40.0, 2.5)
+    deck_box('finger', 3.35, (ahead - 12.0) / 2 + 0.5, 1.2, ahead + 12.0)
+    FIT = {'steaming': (5.45, 0.13, 11.5), 'port': (8.3, 1.51, 3.7), 'starboard': (8.3, -1.25, 3.7), 'anchor': (5.06, 0.13, 21.0)}
+    colour_fit = {'r': 'port', 'g': 'starboard'}
+    pts = {}
+    for i, l in enumerate(LIGHTS):
+        f = colour_fit.get(l['c']) or ('anchor' if SP.get('anchor') else 'steaming')
+        pts[i] = tuple(y.world(FIT[f]))
+    for f in SP.get('dead', ()):          # an unlit lantern: dark glass where the light should be
+        m = C.simple('dead-lens', '#0e2a16' if f == 'starboard' else '#2a0e0e', 0.15, coat=0.8)
+        C.obj('dead-lens', C.rbox('dead-lens', (0.09, 0.05, 0.07), 0.015, 2), m, tuple(y.world(FIT[f])))
+    eye = Vector((bow.x, ahead + 1.6, TOP + 1.65)) + Vector(SP.get('eye_off', (0, 0, 0)))
+    look = Vector(SP.get('look', (bow.x, bow.y - 4.0, SP.get('look_z', 4.5))))
+    d = look - eye
+    cam = {'yaw': math.degrees(math.atan2(d.x, d.y)), 'pitch': math.degrees(math.atan2(d.z, math.hypot(d.x, d.y))), 's': G.s_of_lens(SP.get('lens', 28)), 'eye': tuple(eye)}
+    set_camera(cam)
+    lights_at(cam, pts, power=6.0)
     render(cam, pts)
 
 elif kind == 'masthead':

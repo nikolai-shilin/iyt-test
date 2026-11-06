@@ -7,7 +7,9 @@ import json, math, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', 'bareboat-skipper')
-LIST = {x['id']: x for x in json.load(open(os.path.join(QDIR, 'encounter.json')))}
+LEVELS = {'bs': 'bareboat-skipper', 'ci': 'charter-checkin'}       # the level of a question, by its id's prefix
+def qdir(qid): return os.path.join(HERE, '..', 'figure-style', 'questions', LEVELS.get(qid[:2], 'bareboat-skipper'))
+LIST = {x['id']: x for lv in LEVELS.values() for x in json.load(open(os.path.join(HERE, '..', 'figure-style', 'questions', lv, 'encounter.json')))}
 BUILTIN = {'You': 'Вы', 'Other': 'Судно', 'Wind': 'Ветер', 'N': 'С', '?': '?'}
 
 def rad(a): return math.radians(a)
@@ -290,6 +292,17 @@ plan('bs-974', 200, ('MOB · approach on a close reach', 'ЧЗБ · подход
      [('Make the final approach on a close reach', 'Последний заход делайте полным бейдевиндом'), ('Ease the sheets to slow down, fill the sails to go', 'Потравите шкоты, чтобы сбросить ход, выберите — чтобы идти')],
      lambda c: dict(**mob_bits(c, [T(c.near(c.O, 180, 0.4), ('close reach, sheets eased', 'полный бейдевинд, шкоты потравлены'), 'accent')]),
                     paths=[c.line(c.near(c.O, 120, 0.7), c.near(c.O, 120, 0.1), 'course', 6, '16 12', True)]), other=False)
+plan('ci-361', 60, ('MOB gear · ready in seconds', 'Снаряжение ЧЗБ · наготове за секунды'),
+     [('Horseshoe on a quick-release clip, with a light and a danbuoy', 'Подкова на быстросъёмном креплении, с огнём и буем'),
+      ('It goes over in seconds, and the light finds the casualty at night', 'Её бросают за секунды, а огонь помогает найти человека ночью')],
+     lambda c: dict(**mob_bits(c, [T(c.near(c.O, 90, 0.4), ('horseshoe, light, danbuoy', 'подкова, огонь, буй'), 'accent'),
+                                   T(c.near(c.Y, 140, 0.32), ('quick release at the pushpit', 'быстросъёмно на кормовом релинге'))]),
+                    paths=[c.line(c.near(c.Y, 225, 0.1), c.near(c.O, 45, 0.12), 'red', 4, '6 8', True)]), other=False)
+plan('ci-397', 50, ('MOB from a catamaran · engines off', 'ЧЗБ с катамарана · двигатели заглушить'),
+     [('Both engines off and the keys out before anyone reaches down', 'Оба двигателя заглушены, ключи вынуты — и только потом тянуться к человеку'),
+      ('Two propellers sit either side of the transom steps', 'По обе стороны от кормовых ступенек — два гребных винта')],
+     lambda c: dict(**mob_bits(c, [T(c.near(c.Y, 270, 0.42), ('both engines off, keys out', 'оба двигателя стоп, ключи вынуть'), 'red'),
+                                   T(c.near(c.O, 270, 0.42), ('to the stern steps', 'к кормовым ступенькам'), 'accent')])), other=False)
 plan('bs-336', 50, ('Swimming off the stern', 'Купание с кормы'),
      [('At anchor the current sets south, away from the boat: a tired swimmer drifts off', 'На якоре течение на юг, от яхты: уставшего пловца относит'),
       ('First stream a floating line astern for them to grab', 'Сначала выпустите за корму плавучий конец, чтобы было за что схватиться')],
@@ -482,7 +495,7 @@ def write(qid):
     layout(sch)
     out = {'sch': sch}
     if p.get('noScale'): out['noScale'] = True
-    d = os.path.join(QDIR, qid); os.makedirs(d, exist_ok=True)
+    d = os.path.join(qdir(qid), qid); os.makedirs(d, exist_ok=True)
     json.dump(out, open(os.path.join(d, 'plan.json'), 'w'), ensure_ascii=False, indent=1)
     # the render's strings (note, lines, labels in 3d.labels.json) must all be in ru.json
     lab = os.path.join(d, '3d.labels.json')

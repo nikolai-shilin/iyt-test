@@ -96,6 +96,9 @@ SPECS = {
     # ---------- two scenes of their own ----------
     'bs-609': dict(kind='yacht', bearing=0),      # the Sun Odyssey bow on, sails up, steaming light and sidelights
     'bs-060': dict(kind='masthead'),              # our own masthead tricolour, seen from astern and below
+    # ---------- Charter Check-in: our own yacht at the pontoon, lights tested at night ----------
+    'ci-213': dict(kind='pontoon', dead=('starboard',), lens=24, look_z=5.5),                 # NAV LIGHTS on, seen from ahead
+    'ci-214': dict(kind='pontoon', anchor=True, lens=18, eye_off=(2.2, 2.5, 0.0), look=(0.13, 2.0, 11.0)),   # ANCHOR breaker on
 }
 
 if __name__ == '__main__':
@@ -104,7 +107,7 @@ if __name__ == '__main__':
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import q_lights_geo as G
     from q_lights_layout import layout
-    L = {e['id']: e for e in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'figure-style', 'questions', 'bareboat-skipper', 'lights.json')))}
+    L = {e['id']: e for lv in ('bareboat-skipper', 'charter-checkin') for e in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'figure-style', 'questions', lv, 'lights.json')))}
     only = sys.argv[1:]
     for qid, sp in SPECS.items():
         if only and qid not in only: continue

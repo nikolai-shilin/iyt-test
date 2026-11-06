@@ -1,0 +1,130 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 70,
+  "title": "In-mast main · unfurling",
+  "key": [
+   "Pull the sail out with the outhaul on the winch",
+   "Ease the furling line with a little tension on: a slack roll bunches and jams in the slot"
+  ],
+  "circles": [
+   {
+    "x": -320,
+    "z": 0,
+    "r": 55,
+    "c": "ink",
+    "dash": "0"
+   },
+   {
+    "x": -320,
+    "z": 0,
+    "r": 28,
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -300,
+      -10
+     ],
+     [
+      180,
+      -10
+     ],
+     [
+      -300,
+      -140
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,0,0,.06)",
+    "dash": "0"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -320,
+      0
+     ],
+     [
+      380,
+      0
+     ]
+    ],
+    "c": "ink",
+    "w": 14
+   },
+   {
+    "pts": [
+     [
+      180,
+      -10
+     ],
+     [
+      380,
+      -10
+     ],
+     [
+      400,
+      220
+     ]
+    ],
+    "c": "line",
+    "w": 8
+   },
+   {
+    "pts": [
+     [
+      -320,
+      50
+     ],
+     [
+      -320,
+      240
+     ]
+    ],
+    "c": "line",
+    "w": 8
+   }
+  ],
+  "texts": [
+   {
+    "x": 330,
+    "z": 270,
+    "text": "outhaul: on the winch",
+    "kind": "accent"
+   },
+   {
+    "x": -320,
+    "z": 290,
+    "text": "furling line: eased under tension",
+    "kind": "accent"
+   },
+   {
+    "x": -150,
+    "z": -170,
+    "text": "main"
+   },
+   {
+    "x": -420,
+    "z": -60,
+    "text": "mast"
+   }
+  ],
+  "fit": [
+   {
+    "x": -480,
+    "z": -220
+   },
+   {
+    "x": 460,
+    "z": 330
+   }
+  ]
+ }
+}

@@ -1,1245 +1,1257 @@
 [
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "Saturday, 16:30, light wind. The technician ticks 'Sails: OK' and says they were checked yesterday. What do you ask for before you sign?",
-    "a": "The main hoisted and the genoa unrolled now, while it is calm",
-    "o": [
-      "Nothing — it was checked yesterday and the form says OK",
-      "A look inside the stackpack and the sail bags, unhoisted",
-      "To unroll them yourself on the first morning and phone in faults"
-    ],
-    "why": "Sails are checked hoisted: at the pontoon in light wind, not at sea; a faulty sail found on Sunday is your problem.",
-    "ref": "Check-in: sails",
-    "fig": {
-      "type": "card",
-      "title": "Check-in form — sails",
-      "lines": [
-        "Checked yesterday — technician",
-        "Wind at the pontoon: F2, no swell",
-        "Main in the stackpack, genoa furled"
-      ],
-      "tag": "Sails: OK"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The genoa is fully unrolled. You look at the furling drum and see this. What do you ask for?",
-    "a": "The line rewound tight on the drum with the sail fully out",
-    "o": [
-      "Nothing — the drum should be empty when the sail is out",
-      "Three turns taken off the drum so the sail unrolls fully",
-      "The slack on deck coiled, tied off to the pulpit and left"
-    ],
-    "why": "With the sail fully out the drum must hold enough line to roll it all in; one turn left means the line runs out mid-furl.",
-    "ref": "Check-in: genoa furler",
-    "fig": {
-      "type": "rope",
-      "kind": "winch",
-      "labels": [
-        [
-          70,
-          86,
-          "furling line"
-        ],
-        [
-          160,
-          152,
-          "drum: 1 turn left"
-        ],
-        [
-          250,
-          86,
-          "to cockpit"
-        ]
-      ],
-      "note": "Genoa fully out · rest of the line slack on deck"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "Halfway through furling the genoa the line goes solid. The technician reaches for a winch handle. You look up and see this. What do you do?",
-    "a": "Stop him — unroll, clear the wrap, and have the base fix the halyard lead",
-    "o": [
-      "Let him winch it — a halyard wrap pulls itself out once under load",
-      "Sheet the genoa in hard on the winch to drag the wrap down the foil",
-      "Note 'stiff furler' on the form and grease the swivel yourself once at sea"
-    ],
-    "why": "A halyard wrap jams the swivel; winching it damages the foil and the halyard. The halyard angle at the masthead is the base's job.",
-    "ref": "Check-in: genoa furler",
-    "fig": {
-      "type": "card",
-      "title": "Genoa furler — jammed",
-      "lines": [
-        "Halyard wound twice round the forestay above the swivel",
-        "Furling line: solid, two turns on the drum",
-        "Technician: 'always stiff — winch it'"
-      ],
-      "tag": "Jammed"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The technician runs the genoa sheet through the car for you. You check the car itself and see this. What do you ask for?",
-    "a": "The plunger pin replaced so the car locks in the track",
-    "o": [
-      "Nothing — the cord lashing holds the car where it is",
-      "The port car moved across to starboard; one car is enough",
-      "A shackle through the car to the toe rail once at sea"
-    ],
-    "why": "A car that is not pinned slides under load: the sheet lead goes and the car can hit the end stop; the pin is a base fix.",
-    "ref": "Check-in: genoa sheets & cars",
-    "fig": {
-      "type": "rope",
-      "kind": "rail",
-      "labels": [
-        [
-          60,
-          78,
-          "genoa track"
-        ],
-        [
-          160,
-          165,
-          "car: pin missing"
-        ]
-      ],
-      "note": "Starboard car lashed to the track with cord · port car OK"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The genoa is out. You walk the leech and see this. What do you do?",
-    "a": "Photograph both, note them on the form, ask for the strip restitched today",
-    "o": [
-      "Nothing — the UV strip is cosmetic and a leech line is only a trim aid",
-      "Tape the strip down and tie off the leech line yourself, then move on",
-      "Sign now and mention both at check-out if they have got any worse"
-    ],
-    "why": "A loose UV strip tears off and takes stitching with it; the leech line flogs the leech. Both are quick fixes at the base, not at sea.",
-    "ref": "Check-in: sails",
-    "fig": {
-      "type": "card",
-      "title": "Genoa leech",
-      "lines": [
-        "UV strip: stitching gone along 1.5 m, strip hanging",
-        "Leech line: cleat at the clew broken, line flapping",
-        "Cloth under the strip: sound"
-      ],
-      "tag": "Photo"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "At the genoa clew you find this. The technician says it has sailed like that all season. What do you do?",
-    "a": "Insist the base repairs the clew now — it carries the whole sheet load",
-    "o": [
-      "Accept it — two of the three loops are still holding the ring",
-      "Tie the sheets to the ring with a round turn and two half hitches instead",
-      "Note it on the form and ask for a reduced deposit for the week"
-    ],
-    "why": "A clew lets go in a gust and the sail flogs itself to pieces; a chafed clew is the base's repair, not a note.",
-    "ref": "Check-in: sails",
-    "fig": {
-      "type": "card",
-      "title": "Genoa clew",
-      "lines": [
-        "Clew ring: webbing, 3 loops",
-        "One loop chafed through, one frayed",
-        "Sheets tied with bowlines, no shackle"
-      ],
-      "tag": "All season"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The main goes up at the pontoon and you see this. What do you ask for before you sign?",
-    "a": "Battens and the slide replaced now; the zip photographed and on the form",
-    "o": [
-      "Everything on the form — you will be sailing on reef 1 most days anyway",
-      "A spare batten and a spare slide to fit yourself at the first anchorage",
-      "The zip fixed now; battens only matter with the full main up"
-    ],
-    "why": "Missing battens let the leech flog and tear; a cracked slide jams the hoist. The zip only keeps the cover shut.",
-    "ref": "Check-in: mainsail",
-    "fig": {
-      "type": "card",
-      "title": "Mainsail hoisted",
-      "lines": [
-        "Batten 2 (from the top): pocket empty",
-        "Batten 3: snapped, bends in the middle",
-        "One luff slide cracked; stackpack zip slider missing"
-      ],
-      "tag": "Hoisted"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "You run the genoa sheets to the winches and look at them. What do you ask for?",
-    "a": "The port sheet replaced and the second spare line found before you sign",
-    "o": [
-      "The port sheet end-for-ended so the chafe sits at the tail end",
-      "Nothing — a sheet lasts the week; the spare takes over if it goes",
-      "Both sheets swapped for the spare lines and the old sheets noted on the form"
-    ],
-    "why": "A bare core fails under load and a 14 m sheet will not reach the winch on a wide genoa; spares are counted, not assumed.",
-    "ref": "Check-in: sheets & lines",
-    "fig": {
-      "type": "rope",
-      "kind": "winch",
-      "labels": [
-        [
-          70,
-          86,
-          "port sheet"
-        ],
-        [
-          250,
-          86,
-          "core showing"
-        ]
-      ],
-      "note": "Port 14 m · starboard 16 m · spare lines: list 2, found 1"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The boat has in-mast furling. The technician asks you to unfurl the main yourself. How do you do it?",
-    "a": "Outhaul out on the winch, the furling line eased with a little tension kept on",
-    "o": [
-      "Furling line cast off fully first, then the outhaul hauled out on the winch",
-      "Furling line and outhaul hauled together so the roll stays tight",
-      "Outhaul winched out with the furling line still shut in its clutch"
-    ],
-    "why": "The roll must stay firm as it leaves the mast: slack on the furling line lets it bunch and jam in the slot; never winch against a closed clutch.",
-    "ref": "Check-in: in-mast furling",
-    "fig": {
-      "type": "rope",
-      "kind": "winch",
-      "labels": [
-        [
-          60,
-          86,
-          "furling line"
-        ],
-        [
-          255,
-          86,
-          "outhaul"
-        ]
-      ],
-      "note": "In-mast main · outhaul on the winch, furling line in a clutch"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "Now the technician furls the main back in. You watch the boom and the lines. What do you ask him to change?",
-    "a": "Boom up to the base's mark on the topping lift, a little outhaul tension kept",
-    "o": [
-      "Boom lower still on the topping lift so the sail drops into the mast on its own",
-      "Outhaul let fully go so that nothing at all resists the roll into the mast",
-      "Furling line pulled faster, two hands, so the roll stays tight in the mast"
-    ],
-    "why": "The boom at the set angle feeds the luff square into the slot; a loose roll creases and jams, and a jammed furler is never forced.",
-    "ref": "Check-in: in-mast furling",
-    "fig": {
-      "type": "card",
-      "title": "In-mast main — furling in",
-      "lines": [
-        "Topping lift eased: boom end below horizontal",
-        "Outhaul: slack",
-        "Furling line pulled fast, by hand"
-      ],
-      "tag": "Creasing"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "The technician points at the clutches and says 'reefs are there'. What do you ask for before you sign?",
-    "a": "Reef 1 put in at the pontoon, so you see which line does what and runs free",
-    "o": [
-      "The colour code written on the form so you can look it up when you need it",
-      "A spare clutch handed over in case one of the reef clutches fails at sea",
-      "The reef lines coiled and stowed below; you will try them out at sea"
-    ],
-    "why": "A reef is practised at the pontoon in calm, not worked out at 25 knots; a jammed reef line is then the base's fix.",
-    "ref": "Check-in: reefing",
-    "fig": {
-      "type": "card",
-      "title": "Clutches — port coachroof",
-      "lines": [
-        "Red: main halyard",
-        "Blue: reef 1 · blue/white: reef 2",
-        "White: outhaul · black: kicker"
-      ],
-      "tag": "Reefs"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "You look at the gooseneck and the reef lines. What does this tell you about reefing at sea?",
-    "a": "Two-line: the luff cringle is hooked on a horn at the mast, then the clew line hauled",
-    "o": [
-      "Single-line: one pull from the cockpit reefs both the luff and the clew together",
-      "The horns take the tack only; the reefs are single-line, pulled from the cockpit",
-      "The luff reefs with the halyard alone; the horns are spare fittings, unused"
-    ],
-    "why": "Horns at the gooseneck mean the luff is hooked by hand: plan who goes forward, clipped on, before you need a reef.",
-    "ref": "Check-in: reefing",
-    "fig": {
-      "type": "card",
-      "title": "Reefing gear",
-      "lines": [
-        "Cockpit: one line per reef, to the clew cringle",
-        "Gooseneck: two horns (hooks)",
-        "Luff cringles: free, no line"
-      ],
-      "tag": "2 reefs"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The main is sheeted in at the pontoon and you see this. What do you settle with the base before you sign?",
-    "a": "Whether the bimini folds under sail or the boom is held clear — and who pays if it tears",
-    "o": [
-      "Nothing — it is only canvas; the boom slides over it on a gybe without harm",
-      "The bimini taken off and left ashore at the base for the week, fitted again on Friday",
-      "The boom held up high on the topping lift and cleated there for the whole week"
-    ],
-    "why": "A boom that meets the bimini on a gybe tears it, and the damage comes off your deposit; agree the rule now, in writing on the form.",
-    "ref": "Check-in: boom & bimini",
-    "fig": {
-      "type": "card",
-      "title": "Boom & bimini",
-      "lines": [
-        "Main sheeted in: boom end 3 cm above the bimini frame",
-        "Bimini: folds aft in a minute",
-        "Technician: 'everyone sails like that'"
-      ],
-      "tag": "3 cm"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The genoa is out in F2 and the luff looks like this. The technician says it always does. What do you do?",
-    "a": "Tension the halyard until the scallops just go, then check the furler still turns",
-    "o": [
-      "Leave it — a slack luff rolls up tighter on the furler and sets better",
-      "Winch the halyard bar-tight; a furling genoa can never be too tight",
-      "Ease the backstay a turn — the scallops come from forestay sag, not from the halyard"
-    ],
-    "why": "Scallops mean a slack luff; set the halyard so they disappear, no more — an over-tight halyard stiffens the furler and wraps.",
-    "ref": "Check-in: halyards",
-    "fig": {
-      "type": "card",
-      "title": "Genoa luff",
-      "lines": [
-        "Horizontal scallops along the luff",
-        "Furler turns freely by hand",
-        "Genoa halyard: in a clutch at the mast"
-      ],
-      "tag": "F2"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "Your check of the mainsheet, traveller and vang gives this list. What goes to the base to fix now, and what on the form?",
-    "a": "The cracked block replaced now; the chafed cover photographed and on the form",
-    "o": [
-      "Everything on the form — nothing has actually failed yet, so nothing to fix",
-      "Both replaced now before you sign, or you do not take the boat at all",
-      "The chafed line replaced now, the block noted — rope fails before metal"
-    ],
-    "why": "A cracked block under mainsheet load can burst and hurt someone: repair now. A chafed cover on a sound core: note it, watch it.",
-    "ref": "Check-in: mainsheet, traveller, vang",
-    "fig": {
-      "type": "card",
-      "title": "Mainsheet, traveller, vang",
-      "lines": [
-        "Mainsheet lower block: one cheek cracked",
-        "Traveller control line: cover chafed, core sound",
-        "Vang: 8:1, cleat holds"
-      ],
-      "tag": "Fix / note?"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The inventory lists a preventer. You find this in the cockpit locker. What do you ask for?",
-    "a": "A line long enough from the boom end to the bow and back to a cockpit winch",
-    "o": [
-      "Nothing — 6 m from the boom end to the toe rail amidships is how it is rigged",
-      "A boom brake instead of it; a preventer line is only for racing boats",
-      "A second 6 m line so you can rig one on each side at the same time"
-    ],
-    "why": "A preventer runs from the boom end forward to the bow and back aft, so it can be eased from the cockpit; a short strop to the rail breaks the boom.",
-    "ref": "Check-in: boom preventer",
-    "fig": {
-      "type": "card",
-      "title": "Inventory — deck",
-      "lines": [
-        "Preventer line: 1 — found: 6 m, snap hook",
-        "Boom end: pad eye fitted",
-        "Bow: cleat and fairlead"
-      ],
-      "tag": "6 m"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "The inventory lists the sails below. You open the forepeak. What do you do before you sign?",
-    "a": "Have the storm jib found or struck off the list, and the count on the form",
-    "o": [
-      "Sign — you will not fly a storm jib in August in the Ionian anyway",
-      "Take the technician's word that it is in the office and will be put back",
-      "Count the bags, not the contents: two bags on the list, two bags found"
-    ],
-    "why": "What is on the signed list is what you hand back on Friday; a sail you never had is charged against your deposit.",
-    "ref": "Inventory list — sails",
-    "fig": {
-      "type": "card",
-      "title": "Inventory — sails",
-      "lines": [
-        "Gennaker with sock: 1",
-        "Storm jib: 1",
-        "Found: bag 'Gennaker' (sail + sock); bag 'Storm jib' — empty"
-      ],
-      "tag": "Count"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "Sunday, your first sail. Off the headland the genoa furling line goes solid with the sail half rolled. What do you do?",
-    "a": "Ease the sheet, try again by hand, and call the base for instructions — cut nothing",
-    "o": [
-      "Put the furling line on the electric winch and grind the sail in, turn by turn",
-      "Cut the furling line at the drum and roll the sail by hand round the foil",
-      "Leave it half out, hoist the main and carry on under both to the anchorage"
-    ],
-    "why": "A jammed furler is a base problem: forcing or cutting it turns a phone call into a damaged foil and a deposit claim.",
-    "ref": "At sea: furler jam",
-    "fig": {
-      "type": "card",
-      "title": "Day 1 — off Lefkas",
-      "lines": [
-        "Genoa half rolled, furling line solid",
-        "Wind 20 kn and rising",
-        "Base: 40 min away under engine"
-      ],
-      "tag": "20 kn"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "On the 42 ft catamaran the technician says 'the main goes up like on any boat'. You look at the lazy bag and the head of the sail. What do you ask to see?",
-    "a": "The main hoisted and dropped once: how the square top goes into the bag, and where you zip it",
-    "o": [
-      "Only the sail number on the bag — a catamaran's main hoists like any other mainsail does",
-      "That the bag can stay zipped shut and the main hoisted straight up through it",
-      "A ladder added to the inventory so you can reach the zip from the deck at anchor"
-    ],
-    "why": "A square top with two headboard cars needs the lazyjacks and the bag opened right, at a height; see it done once at the pontoon.",
-    "ref": "Check-in: catamaran mainsail",
-    "fig": {
-      "type": "card",
-      "title": "Catamaran mainsail",
-      "lines": [
-        "Square-top main: headboard on two cars",
-        "Lazy bag zip: 2.6 m above the coachroof",
-        "Boom reached from the coachroof steps"
-      ],
-      "tag": "Square top"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "At the briefing you are given this. What does it mean for your week?",
-    "a": "Reef at those numbers and stay in port above F6 — they are contract terms, not advice",
-    "o": [
-      "Reef when the boat feels overpressed; the numbers are a guide for beginners",
-      "The limit is for the forecast only; at sea you carry on as you judge best",
-      "The reef numbers apply only with the full genoa out; with the main alone they do not"
-    ],
-    "why": "Sailing above the contract limit, or unreefed when told to reef, can void the insurance and put the damage on you.",
-    "ref": "Charter contract — wind limit",
-    "fig": {
-      "type": "card",
-      "title": "Contract & briefing — wind",
-      "lines": [
-        "Sailing permitted up to F6 on the base forecast",
-        "Reef 1 at 18 kn, reef 2 at 25 kn",
-        "Above F6: stay in port, call the base"
-      ],
-      "tag": "F6 max"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "You follow the genoa furling line from the drum aft along the side deck and find this. What do you ask for?",
-    "a": "A lead block fitted at the gap so the line runs fair, not over the stanchion base",
-    "o": [
-      "Nothing — the line only touches the base while the sail is fully out",
-      "The line lashed to that stanchion with a short cord so it cannot move",
-      "A spare furling line put aboard in case this one chafes through"
-    ],
-    "why": "A furling line chafing on a stanchion base jams or parts mid-furl; the lead blocks are the base's fittings, counted like the rest.",
-    "ref": "Check-in: genoa furler",
-    "fig": {
-      "type": "rope",
-      "kind": "rail",
-      "labels": [
-        [
-          60,
-          78,
-          "lead block"
-        ],
-        [
-          165,
-          165,
-          "no block: line rubs"
-        ],
-        [
-          265,
-          78,
-          "to cockpit"
-        ]
-      ],
-      "note": "Furling line, drum to cockpit · list: 4 blocks, fitted: 3"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "Reading the inventory again, you compare it with the number on the genoa's clew. What do you do before you sign?",
-    "a": "Have the form corrected to the number on the sail — that is the sail you hand back",
-    "o": [
-      "Nothing — the base swaps sails between boats and the form is only indicative",
-      "Write the main's number on the genoa clew with a marker so the two agree",
-      "Ask for the genoa with the number on the form to be fitted instead of this one"
-    ],
-    "why": "On Friday the inventory is checked by number: a sail listed wrongly is 'missing' and charged against your deposit.",
-    "ref": "Inventory list — sails",
-    "fig": {
-      "type": "card",
-      "title": "Inventory — sails",
-      "lines": [
-        "Main: no. 4512 · Genoa: no. 4512",
-        "On the genoa clew: no. 3870",
-        "Technician: 'they get swapped around'"
-      ],
-      "tag": "3870"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "On the hoist the technician stops winching at this point. Your crew ask what the tape is for. What do you tell them?",
-    "a": "It marks full hoist: stop there, or the headboard jams against the masthead sheave",
-    "o": [
-      "It marks a worn spot on the halyard; move the tape when the chafe moves",
-      "It marks reef 1: the sail is lowered to the tape for the first reef",
-      "It is the base's inventory tag; the lines are counted by their tapes"
-    ],
-    "why": "A halyard winched past its mark drives the headboard into the sheave: the halyard stretches, the sail will not come down.",
-    "ref": "Check-in: halyards",
-    "fig": {
-      "type": "rope",
-      "kind": "winch",
-      "labels": [
-        [
-          65,
-          86,
-          "main halyard"
-        ],
-        [
-          160,
-          152,
-          "tape at the clutch"
-        ],
-        [
-          255,
-          86,
-          "to winch"
-        ]
-      ],
-      "note": "Main at full hoist · black tape 5 cm short of the clutch"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "Your crew are already planning a gennaker day. At the briefing you read this clause. What does it mean for the week?",
-    "a": "Ask for the base's written OK now, keep to 12 kn and daylight — a torn gennaker is paid in full",
-    "o": [
-      "Fly it whenever the wind allows; the clause is advice to keep beginners off it",
-      "Fly it only after raising the deposit to cover it; the base adjusts the hold",
-      "Leave it in the bag all week; a gennaker on a charter boat is never for the crew"
-    ],
-    "why": "The gennaker is usually outside the damage waiver: the clause sets who, when and the limit, and you carry the whole repair bill.",
-    "ref": "Charter contract — downwind sails",
-    "fig": {
-      "type": "card",
-      "title": "Contract — gennaker",
-      "lines": [
-        "Use only with the base's written OK",
-        "Max 12 kn true, daylight, sock rigged",
-        "Damage to it: not covered by the waiver"
-      ],
-      "tag": "Gennaker"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "Your crew ask where the topping lift is before the main comes down. You look at the boom and see this. What do you tell them?",
-    "a": "There is none: the rigid vang holds the boom up with the sail down — just ease the mainsheet",
-    "o": [
-      "Rig the spare halyard to the boom end as a lift every time before the drop",
-      "Pull the vang control line on hard before the drop so the boom cannot fall",
-      "Hold the boom up by hand at the drop; without a lift it falls on the bimini"
-    ],
-    "why": "A gas-strut vang replaces the topping lift: it carries the boom when the halyard is let go; a strut that sags is a base repair.",
-    "ref": "Check-in: boom, vang & topping lift",
-    "fig": {
-      "type": "card",
-      "title": "Boom support",
-      "lines": [
-        "Rigid vang with gas strut",
-        "Topping lift: none fitted",
-        "Mainsheet eased, main down: boom stays up"
-      ],
-      "tag": "No lift"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 1,
-    "q": "The main halyard goes to an electric winch. The technician shows you the button. What rule do you give the crew?",
-    "a": "Short pushes, eyes on the sail, stop at any snag — never hold the button against a load",
-    "o": [
-      "Hold the button until the winch stalls; the motor's cut-out protects the sail",
-      "Only the skipper touches the button; the crew hoist by hand with the handle",
-      "Use the button only for the last metre; the first part is hoisted by hand"
-    ],
-    "why": "An electric winch does not feel a snag: a batten in a lazyjack or a jammed slide tears before the motor notices.",
-    "ref": "Check-in: electric winch",
-    "fig": {
-      "type": "rope",
-      "kind": "winch",
-      "labels": [
-        [
-          65,
-          86,
-          "main halyard"
-        ],
-        [
-          160,
-          152,
-          "electric winch"
-        ],
-        [
-          255,
-          86,
-          "button"
-        ]
-      ],
-      "note": "Push-button at the coachroof · two speeds · halyard 10 mm"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The technician hands you the furling line to roll the genoa in. It takes everything you have, though there is no wrap aloft. What do you do?",
-    "a": "Ask the base to check the drum and swivel bearings now — in F2 a furler rolls in by hand",
-    "o": [
-      "Lead the line to the electric winch and roll it in on the button",
-      "Spray the drum and swivel with lubricant yourself and sign",
-      "Note 'stiff furler' and furl the genoa only in light winds this week"
-    ],
-    "why": "A furler that needs the winch at the pontoon will not furl at all at 25 kn; bearings are the base's job and no amount of spray fixes them.",
-    "ref": "Check-in: genoa furler",
-    "fig": {
-      "type": "card",
-      "title": "Genoa furler",
-      "lines": [
-        "Sail fully out, sheet eased, F2",
-        "Rolls in by hand: barely, with both hands",
-        "Masthead by binoculars: no halyard wrap"
-      ],
-      "tag": "Stiff"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The genoa is out in F2 and looks like this. The form says it is fine. What do you do?",
-    "a": "Photograph luff and leech, write 'genoa: aged, stretched' on the form, and plan to reef it early",
-    "o": [
-      "Demand a new genoa before you sign; the contract promises sails in good condition",
-      "Nothing — the age of the cloth is not something the check-in form records",
-      "Ask for a lower deposit for the week since the sail is likely to blow out"
-    ],
-    "why": "An old sail is not damage the base repairs, but its state goes on the form so a blow-out this week is not charged as new; sail it conservatively.",
-    "ref": "Check-in: sails",
-    "fig": {
-      "type": "card",
-      "title": "Genoa in F2",
-      "lines": [
-        "Cloth stiff and crackly, UV strip faded",
-        "Draft well aft, leech hooked",
-        "Form: 'Genoa — 2019 — OK'"
-      ],
-      "tag": "2019"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "Main hoisted, you walk the leech from the cockpit and spot this. The technician points at the locker. What do you do?",
-    "a": "The tear sewn or patched by the base's sailmaker before departure, and written on the form",
-    "o": [
-      "Tape it on both sides yourself; a tear this size does not grow in the Ionian",
-      "Note it and keep reef 2 in all week so that part of the leech stays rolled away",
-      "Nothing — a tear that small is within normal wear for a charter sail"
-    ],
-    "why": "A tear at the leech grows with every flog; sail tape is a sea-going stopgap, and a tear you accept unrepaired is yours at check-out.",
-    "ref": "Check-in: mainsail",
-    "fig": {
-      "type": "card",
-      "title": "Mainsail hoisted",
-      "lines": [
-        "Tear 10 cm at the leech, above batten 3 pocket",
-        "Cloth around it: sound",
-        "Technician: 'sail tape is in the locker'"
-      ],
-      "tag": "10 cm"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "Hoisting the main at the pontoon, your crew member on the winch feels it stop and asks whether to keep winching. You look up and see this. What do you say?",
-    "a": "Stop — ease a little so the batten drops clear of the lazyjack, then hoist again by hand",
-    "o": [
-      "Keep winching — the batten end pops through once the halyard is tight",
-      "Let the lazyjacks go altogether; they only get in the way of the hoist",
-      "Drop the main, pull all the battens out, hoist it and refit them aloft"
-    ],
-    "why": "A batten end winched against a lazyjack tears the pocket; slack the lazyjacks forward or head to wind, and hoist with eyes aloft.",
-    "ref": "Check-in: lazyjacks & stackpack",
-    "fig": {
-      "type": "rope",
-      "kind": "winch",
-      "labels": [
-        [
-          65,
-          86,
-          "main halyard"
-        ],
-        [
-          165,
-          152,
-          "batten end caught"
-        ],
-        [
-          255,
-          86,
-          "lazyjack"
-        ]
-      ],
-      "note": "Hoist stops at two-thirds · lazyjack across the batten pocket"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The 36 ft boat is simpler than your last charter. You read its sail handling on the form. What does this change for Thursday evening, coming into the bay?",
-    "a": "Someone clipped on at the mast to flake the main onto the boom as it drops, head to wind under engine, before the bay",
-    "o": [
-      "Nothing — the main drops onto the boom and into the cover like a stackpack",
-      "Drop the main in the bay once the anchor is down; the sail flakes itself",
-      "Keep the main up until the anchor is set; it steadies the boat in the bay"
-    ],
-    "why": "Without lazyjacks the dropped main falls over the deck and the helm's view: plan the drop outside, with a crew member at the mast.",
-    "ref": "Check-in: mainsail",
-    "fig": {
-      "type": "card",
-      "title": "36 ft — mainsail",
-      "lines": [
-        "Slab reefing at the mast, no lazyjacks, no stackpack",
-        "Sail cover with ties",
-        "Halyard and reef lines at the mast"
-      ],
-      "tag": "36 ft"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "You unclip the main halyard from the headboard to look at it. What do you ask for?",
-    "a": "The shackle replaced before you sign — one that opens drops the main and sends the halyard aloft",
-    "o": [
-      "A second cable tie through the pin and a line on the form",
-      "Nothing — the headboard cars hold the sail if the shackle lets go",
-      "The halyard tied to the headboard with a bowline instead of the shackle"
-    ],
-    "why": "A halyard shackle carries the whole luff load: a stripped pin held by plastic is a failure waiting for a gust, and a lost halyard ends the week.",
-    "ref": "Check-in: halyards",
-    "fig": {
-      "type": "card",
-      "title": "Main halyard shackle",
-      "lines": [
-        "Captive-pin shackle: thread stripped",
-        "Pin held by a cable tie",
-        "Technician: 'it has held all season'"
-      ],
-      "tag": "Cable tie"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "You take the binoculars to the masthead before the main goes up and see this. What do you ask for?",
-    "a": "The base sends someone up the mast to clear it now — a crossed halyard is a mast job",
-    "o": [
-      "Hoist the main anyway: the last metre comes with the halyard winched hard",
-      "Tie the spare halyard off at the bow and live with the crossed lines",
-      "Go up in the bosun's chair yourself with the technician on the winch"
-    ],
-    "why": "Halyards crossed above the sheaves chafe through each other and stop the hoist short; it is cleared from aloft, by the base, before you leave.",
-    "ref": "Check-in: masthead & halyards",
-    "fig": {
-      "type": "card",
-      "title": "Masthead by binoculars",
-      "lines": [
-        "Main halyard and topping lift crossed twice above the sheaves",
-        "Main stops 1 m short of full hoist",
-        "Spare halyard: wrapped round the forestay"
-      ],
-      "tag": "Crossed"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "Main sheeted in at the pontoon, you load the mainsheet by hand and the tail creeps through the cleat. What do you ask for?",
-    "a": "The cam cleat replaced before you sign — a mainsheet that will not hold cannot be trusted on a gybe",
-    "o": [
-      "Lead the mainsheet to the genoa winch instead for the week",
-      "A figure-of-eight in the tail behind the cleat so it cannot run out",
-      "A note on the form; it only slips above twenty knots anyway"
-    ],
-    "why": "The mainsheet must hold on its own cleat under full load; worn cam teeth let the boom out in a gust, with crew in the way.",
-    "ref": "Check-in: mainsheet, traveller, vang",
-    "fig": {
-      "type": "rope",
-      "kind": "sheet",
-      "labels": [
-        [
-          65,
-          80,
-          "mainsheet"
-        ],
-        [
-          165,
-          160,
-          "cam cleat: teeth worn"
-        ],
-        [
-          260,
-          80,
-          "tail"
-        ]
-      ],
-      "note": "Sheet loaded by hand · tail creeps 10 cm, then holds"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "Your crew ask what the fitting under the boom is and whether a preventer is still needed. What do you tell them?",
-    "a": "A boom brake: set its line before a downwind leg so the boom crosses slowly — it slows a gybe, it does not stop one",
-    "o": [
-      "A boom brake: it locks the boom like a preventer, so no preventer is needed",
-      "A second vang: pull it on hard upwind and leave it slack on a run",
-      "A dinghy-hoist fitting; nothing to do with the boom under sail"
-    ],
-    "why": "A brake lets the boom come across under friction on a gybe; it never pins the boom, so an accidental gybe still happens, only slower.",
-    "ref": "Check-in: boom brake",
-    "fig": {
-      "type": "card",
-      "title": "Under the boom",
-      "lines": [
-        "Boom brake: line through the drum, led to both toe rails",
-        "Control tail: cam cleat at the cockpit",
-        "Preventer line: 1 on the list"
-      ],
-      "tag": "Brake"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "The gennaker is on the list. You find this in the forepeak. What do you ask for before you sign?",
-    "a": "The gennaker hoisted in its sock at the pontoon, sock raised a metre and lowered, tack line and halyard found",
-    "o": [
-      "Nothing — a gennaker is checked by flying it on the first downwind leg",
-      "The sail pulled out of the bag on the pontoon and looked over for tears",
-      "The sock taken off; a gennaker without a sock is simpler for a crew"
-    ],
-    "why": "The sock's uphaul, the tack line and a dedicated halyard are what let a crew get the sail down; find and try them where help is at hand.",
-    "ref": "Inventory list — sails",
-    "fig": {
-      "type": "card",
-      "title": "Inventory — gennaker",
-      "lines": [
-        "Gennaker with sock: 1 — found in bag",
-        "Tack line, gennaker halyard: on the list, not found",
-        "Tack fitting: ring on the bow roller"
-      ],
-      "tag": "Sock"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "With the main up you look along the leech at spreader height and see this. What do you ask for?",
-    "a": "The worn patches replaced now — on a run the leech lies on the spreader and the cloth under goes next",
-    "o": [
-      "Nothing — patches are there to be worn through; that is their job",
-      "Sail tape over the patches, and a note on the form",
-      "The spreader tips taped instead; then the sail needs no patches"
-    ],
-    "why": "Spreader patches are sacrificial, but once through the sail itself chafes; a sailmaker's patch at the base is an hour, a torn leech is a week.",
-    "ref": "Check-in: mainsail chafe",
-    "fig": {
-      "type": "card",
-      "title": "Mainsail — leech",
-      "lines": [
-        "Port spreader patch: worn through, cloth under it thin",
-        "Starboard patch: scuffed, whole",
-        "Spreader tips: bare, no boots"
-      ],
-      "tag": "Chafe"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "Monday, 09:30, leaving the bay. Your crew member on the helm asks how you want the boat for the hoist. What do you say?",
-    "a": "Motor clear of the moorings, head to wind at slow ahead, autopilot in compass mode, and hoist with eyes aloft",
-    "o": [
-      "Hoist at anchor among the moored boats; the bow lies to the wind by itself",
-      "Autopilot in wind mode so it follows every shift while you hoist",
-      "Sail out on the genoa and hoist the main outside, running downwind"
-    ],
-    "why": "Head to wind the slides run free and the battens clear the lazyjacks; the autopilot holds the heading while two of you work the halyard.",
-    "ref": "At sea: hoisting the main",
-    "fig": {
-      "type": "card",
-      "title": "Monday — leaving the bay",
-      "lines": [
-        "Wind N 10 kn, bay open to the south",
-        "Autopilot: compass and wind modes",
-        "Crew: two adults, both new to it"
-      ],
-      "tag": "09:30"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "You ask for the main dropped into the lazy bag as a test and watch it come down. What do you ask for?",
-    "a": "The track cleaned and the bent slide replaced so the main drops on its own — at sea nobody should be hauling it down",
-    "o": [
-      "A note 'sticky slides' and a crew member at the mast for every drop",
-      "Nothing — a main always needs a hand on the luff to come down",
-      "Silicone spray on the track yourself before you sign"
-    ],
-    "why": "A main that will not fall on its own cannot be dropped fast in a squall; a dry track and a bent slide are the base's fix, before departure.",
-    "ref": "Check-in: mainsail drop test",
-    "fig": {
-      "type": "card",
-      "title": "Main drop — pontoon",
-      "lines": [
-        "Halyard let go: sail stops at batten 2",
-        "Slides: dry, salt-crusted; one bent",
-        "Technician: 'pull the luff, it always wants a hand'"
-      ],
-      "tag": "Stuck"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "Reef 1 went in fine. You try reef 2 at the pontoon and get this. What do you ask for?",
-    "a": "The reef 2 line re-led or replaced long enough to pull the reef in from the cockpit, before you sign",
-    "o": [
-      "Accept it — reef 1 and a rolled genoa is reefed enough for F6",
-      "Tie an extension onto the tail with a sheet bend and note it",
-      "Take the line out and keep it as a spare sheet; reef 2 is for storms"
-    ],
-    "why": "Reef 2 is the reef you need when it is already too rough to improvise; a line that runs out before the cringle is down is no reef at all.",
-    "ref": "Check-in: reefing",
-    "fig": {
-      "type": "card",
-      "title": "Reef 2 — pontoon",
-      "lines": [
-        "Reef 2 line: 1 m tail, runs out before the clew cringle is down",
-        "Reef 1: in and out, fine",
-        "Technician: 'nobody uses reef 2 here'"
-      ],
-      "tag": "Too short"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "On the 42 ft catamaran the technician says there are no genoa sheets to run — the jib tacks itself. What do you check?",
-    "a": "The car runs the whole track with its end stops in, and the single sheet pulls through its blocks to the winch",
-    "o": [
-      "Nothing — a self-tacker has no sheets, cars or leads to go wrong",
-      "That the overlapping genoa from the forepeak is bent on instead; it is faster",
-      "That the car is lashed in the middle of the track so it cannot move"
-    ],
-    "why": "A self-tacking jib still has one sheet, one car and two end stops; a car that leaves the track or a sheet that jams tacks nothing.",
-    "ref": "Check-in: catamaran foresail",
-    "fig": {
-      "type": "card",
-      "title": "Catamaran foresail",
-      "lines": [
-        "Self-tacking jib, curved track ahead of the mast",
-        "One sheet, to the mast winch",
-        "Overlapping genoa: on the list, in the forepeak"
-      ],
-      "tag": "Self-tacker"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "Thursday, 14:00, 22 kn on a beam reach. Your crew member says they will put the furling line on the winch. What do you say?",
-    "a": "Bear away to blanket the genoa behind the main, ease the sheet but keep a little on it, and haul the line by hand",
-    "o": [
-      "Winch it in on the beam reach with the sheet cleated — the winch has the power",
-      "Luff head to wind and let the sail flog while the line is hauled",
-      "Drop the genoa on deck instead; a furler is not meant for 22 knots"
-    ],
-    "why": "Blanketed and with light sheet tension the sail rolls tight by hand; winched against a cleated sheet, the line or the drum goes first.",
-    "ref": "At sea: furling the genoa",
-    "fig": {
-      "type": "card",
-      "title": "Thursday — 22 kn",
-      "lines": [
-        "Genoa full, course beam reach",
-        "Sheet: cleated hard on the winch",
-        "Crew: 'I'll put the line on the winch'"
-      ],
-      "tag": "22 kn"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "Monday, 08:00, in a bay. The base's forecast is on your phone; your crew say you will reef when it gets strong. What do you do?",
-    "a": "Put reef 1 in at the hoist, still at anchor, and shake it out later if the wind never comes",
-    "o": [
-      "Hoist full and reef when the first gust arrives; reefing early wastes a nice morning",
-      "Stay at anchor until the base calls to say the wind has dropped",
-      "Leave the main in the bag and motor all day; the contract numbers are for sailing"
-    ],
-    "why": "A reef is put in at the hoist, in the flat water, when the forecast says it will be needed; shaking one out is easy, reefing late is not.",
-    "ref": "At sea: reefing",
-    "fig": {
-      "type": "card",
-      "title": "Monday — in the bay",
-      "lines": [
-        "Base forecast: NW 18–22 kn by noon",
-        "Contract: reef 1 at 18 kn, reef 2 at 25 kn",
-        "Now in the bay: 6 kn"
-      ],
-      "tag": "08:00"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 2,
-    "q": "You watch the technician furl the genoa away at the end of the check and see this. What do you ask for?",
-    "a": "The sail unrolled and furled the other way so the UV strip is outside — and ask which way the drum turns",
-    "o": [
-      "Nothing — the strip only matters while the sail is stored ashore",
-      "The strip pulled out and over the roll by hand without unrolling",
-      "A cover made to fit over the furled genoa for the week"
-    ],
-    "why": "The UV strip protects the roll only on the outside; furled the wrong way the sail cooks all week and the sheets wrap in the wrong direction.",
-    "ref": "Check-in: genoa furler",
-    "fig": {
-      "type": "card",
-      "title": "Genoa furled",
-      "lines": [
-        "UV strip: inside the roll, white cloth outside",
-        "Sheets: 3 turns round the sail",
-        "Furling line: full on the drum"
-      ],
-      "tag": "Inside out"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "Thursday, 16:00, in harbour 25 miles from the base. The base's forecast arrives. What do you do?",
-    "a": "Leave now or at first light, reefed, and tell the base your plan — Friday at 10:00 would be above the limit",
-    "o": [
-      "Stay and leave Friday at 10:00 as planned; F6 is within the contract limit",
-      "Stay put and let the base fetch the boat; the limit means you may not sail",
-      "Leave Friday at 06:00 under full sail to be fast ahead of the wind"
-    ],
-    "why": "The limit is read against the forecast for the passage: sailing into a forecast F6–7 breaks the contract, so the passage moves to before it.",
-    "ref": "Charter contract — wind limit",
-    "fig": {
-      "type": "card",
-      "title": "Thursday — base forecast",
-      "lines": [
-        "Friday from 10:00: NW F6, gusts F7",
-        "Tonight and early morning: NW 10–14 kn",
-        "Base: 25 M, about 5 h · boat due Friday 17:00"
-      ],
-      "tag": "F6–7"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "Tuesday, 15 kn, furling the main in. The line goes solid at halfway and your crew member on the electric winch says 'one more push'. What do you do?",
-    "a": "Stop the winch, unroll a turn to clear the bunch, boom to its mark, then furl again by hand with outhaul tension",
-    "o": [
-      "Hold the button — the winch has the power to pull the bunch through the slot",
-      "Drop the boom further so the sail hangs slack and pulls itself into the mast",
-      "Leave the main half furled, sheet it in hard and motor to the bay"
-    ],
-    "why": "A bunch in the slot only gets tighter under power; back off a turn and feed the roll in square, the way it was shown at the pontoon.",
-    "ref": "At sea: in-mast furling",
-    "fig": {
-      "type": "card",
-      "title": "Tuesday — furling the main",
-      "lines": [
-        "Furling line solid at half; cloth bunched at the slot",
-        "Boom: below the mark on the topping lift",
-        "Crew on the electric winch: 'one more push'"
-      ],
-      "tag": "Jam"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "Wednesday, 17:00, at anchor. Your crew admit the gennaker tore in a broach and suggest bagging it quietly. What do you do?",
-    "a": "Call the base today, photograph it, and have it noted — hiding it costs more at check-out than the repair",
-    "o": [
-      "Bag it and say nothing; the inventory counts bags, not the state of the sail",
-      "Patch it with sail tape and fly it again so the tear looks like old wear",
-      "Report it on Friday at check-out, when the technician asks about the sails"
-    ],
-    "why": "The contract says damage is reported at once; a tear found by the base after a cover-up loses you the waiver's goodwill and the whole deposit.",
-    "ref": "Charter contract — reporting damage",
-    "fig": {
-      "type": "card",
-      "title": "Wednesday — at anchor",
-      "lines": [
-        "Gennaker: 2 m tear along the foot after a broach",
-        "Crew: 'bag it, nobody looks inside'",
-        "Contract: damage reported at once; gennaker outside the waiver"
-      ],
-      "tag": "Torn"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "Kos, Saturday. Trying reef 2 you find this, and the base's forecast is on the board. The technician shrugs. What do you do?",
-    "a": "A sailmaker's repair before departure or another boat — with a Meltemi forecast reef 2 is the reef you will use",
-    "o": [
-      "Accept it with a note on the form; reef 1 and a scrap of genoa will do for F6",
-      "Tie a strop through the cloth round the boom as a makeshift reef 2 and sign",
-      "Postpone departure to Monday and let the base decide what to do then"
-    ],
-    "why": "A torn cringle cannot take a reef load; in the Dodecanese in a Meltemi week you will sail on reef 2 most days, so it is fixed or the boat is not fit.",
-    "ref": "Check-in: reefing",
-    "fig": {
-      "type": "card",
-      "title": "Reef 2 cringle",
-      "lines": [
-        "Clew cringle reef 2: ring torn half out of the leech",
-        "Base forecast Wed–Thu: N F6–7 (Meltemi)",
-        "Technician: 'nobody uses reef 2 in August'"
-      ],
-      "tag": "Meltemi"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "The boat has in-mast furling and it is blowing F4 at the pontoon. The technician will not unfurl the main today. What do you do?",
-    "a": "Have it rolled out a metre and back to prove it runs, and write 'main not fully seen at check-in' on the form",
-    "o": [
-      "Sign — an in-mast main cannot be checked at a pontoon in any case",
-      "Insist on the whole main out in F4 at the pontoon; it is your right",
-      "Unfurl it yourself at the first anchorage and photograph any fault for the base"
-    ],
-    "why": "You sign for what you were shown: a short test proves the furler turns, and the note means a fault found on Sunday is not your fault.",
-    "ref": "Check-in form — what was shown",
-    "fig": {
-      "type": "card",
-      "title": "Saturday — pontoon",
-      "lines": [
-        "In-mast main, F4 across the pontoon",
-        "Technician: 'not in this wind, it's fine'",
-        "Form: 'Sails: checked — OK'"
-      ],
-      "tag": "F4"
-    }
-  },
-  {
-    "topic": "sails",
-    "difficulty": 3,
-    "q": "Thursday, 13:00, Meltemi 25 kn. Reef 2 is in and the genoa is half rolled; your crew say it is fine. You look forward and see this. What do you do?",
-    "a": "Move the cars forward for the smaller sail and roll a little more — a flogging half genoa wears itself out in an hour",
-    "o": [
-      "Leave it — with reef 2 in, the main does the work and the genoa hardly matters",
-      "Unroll the genoa fully so the leech stops flogging, and ease the main",
-      "Roll the genoa away and motor-sail on the main alone to stay within the limit"
-    ],
-    "why": "A reefed genoa needs its lead moved forward or the leech flogs; a flogging leech shreds the UV strip and stitching — damage you pay for.",
-    "ref": "At sea: reefed genoa",
-    "fig": {
-      "type": "card",
-      "title": "Thursday — 25 kn",
-      "lines": [
-        "Main: reef 2 in, well set",
-        "Genoa: half rolled, leech flogging",
-        "Sheet cars: at the aft end of the track"
-      ],
-      "tag": "25 kn"
-    }
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "Saturday, 16:30, light wind. The technician ticks 'Sails: OK' and says they were checked yesterday. What do you ask for before you sign?",
+  "a": "The main hoisted and the genoa unrolled now, while it is calm",
+  "o": [
+   "Nothing — it was checked yesterday and the form says OK",
+   "A look inside the stackpack and the sail bags, unhoisted",
+   "To unroll them yourself on the first morning and phone in faults"
+  ],
+  "why": "Sails are checked hoisted: at the pontoon in light wind, not at sea; a faulty sail found on Sunday is your problem.",
+  "ref": "Check-in: sails",
+  "fig": {
+   "type": "card",
+   "title": "Check-in form — sails",
+   "lines": [
+    "Checked yesterday — technician",
+    "Wind at the pontoon: F2, no swell",
+    "Main in the stackpack, genoa furled"
+   ],
+   "tag": "Sails: OK"
   }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The genoa is fully unrolled. You look at the furling drum and see this. What do you ask for?",
+  "a": "The line rewound tight on the drum with the sail fully out",
+  "o": [
+   "Nothing — the drum should be empty when the sail is out",
+   "Three turns taken off the drum so the sail unrolls fully",
+   "The slack on deck coiled, tied off to the pulpit and left"
+  ],
+  "why": "With the sail fully out the drum must hold enough line to roll it all in; one turn left means the line runs out mid-furl.",
+  "ref": "Check-in: genoa furler",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     70,
+     86,
+     "furling line"
+    ],
+    [
+     160,
+     152,
+     "drum: 1 turn left"
+    ],
+    [
+     250,
+     86,
+     "to cockpit"
+    ]
+   ],
+   "note": "Genoa fully out · rest of the line slack on deck"
+  },
+  "photo": "q/charter-checkin/ci-102",
+  "plan": 1.6
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "Halfway through furling the genoa the line goes solid. The technician reaches for a winch handle. You look up and see this. What do you do?",
+  "a": "Stop him — unroll, clear the wrap, and have the base fix the halyard lead",
+  "o": [
+   "Let him winch it — a halyard wrap pulls itself out once under load",
+   "Sheet the genoa in hard on the winch to drag the wrap down the foil",
+   "Note 'stiff furler' on the form and grease the swivel yourself once at sea"
+  ],
+  "why": "A halyard wrap jams the swivel; winching it damages the foil and the halyard. The halyard angle at the masthead is the base's job.",
+  "ref": "Check-in: genoa furler",
+  "fig": {
+   "type": "card",
+   "title": "Genoa furler — jammed",
+   "lines": [
+    "Halyard wound twice round the forestay above the swivel",
+    "Furling line: solid, two turns on the drum",
+    "Technician: 'always stiff — winch it'"
+   ],
+   "tag": "Jammed"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The technician runs the genoa sheet through the car for you. You check the car itself and see this. What do you ask for?",
+  "a": "The plunger pin replaced so the car locks in the track",
+  "o": [
+   "Nothing — the cord lashing holds the car where it is",
+   "The port car moved across to starboard; one car is enough",
+   "A shackle through the car to the toe rail once at sea"
+  ],
+  "why": "A car that is not pinned slides under load: the sheet lead goes and the car can hit the end stop; the pin is a base fix.",
+  "ref": "Check-in: genoa sheets & cars",
+  "fig": {
+   "type": "rope",
+   "kind": "rail",
+   "labels": [
+    [
+     60,
+     78,
+     "genoa track"
+    ],
+    [
+     160,
+     165,
+     "car: pin missing"
+    ]
+   ],
+   "note": "Starboard car lashed to the track with cord · port car OK"
+  },
+  "photo": "q/charter-checkin/ci-104"
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The genoa is out. You walk the leech and see this. What do you do?",
+  "a": "Photograph both, note them on the form, ask for the strip restitched today",
+  "o": [
+   "Nothing — the UV strip is cosmetic and a leech line is only a trim aid",
+   "Tape the strip down and tie off the leech line yourself, then move on",
+   "Sign now and mention both at check-out if they have got any worse"
+  ],
+  "why": "A loose UV strip tears off and takes stitching with it; the leech line flogs the leech. Both are quick fixes at the base, not at sea.",
+  "ref": "Check-in: sails",
+  "fig": {
+   "type": "card",
+   "title": "Genoa leech",
+   "lines": [
+    "UV strip: stitching gone along 1.5 m, strip hanging",
+    "Leech line: cleat at the clew broken, line flapping",
+    "Cloth under the strip: sound"
+   ],
+   "tag": "Photo"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "At the genoa clew you find this. The technician says it has sailed like that all season. What do you do?",
+  "a": "Insist the base repairs the clew now — it carries the whole sheet load",
+  "o": [
+   "Accept it — two of the three loops are still holding the ring",
+   "Tie the sheets to the ring with a round turn and two half hitches instead",
+   "Note it on the form and ask for a reduced deposit for the week"
+  ],
+  "why": "A clew lets go in a gust and the sail flogs itself to pieces; a chafed clew is the base's repair, not a note.",
+  "ref": "Check-in: sails",
+  "fig": {
+   "type": "card",
+   "title": "Genoa clew",
+   "lines": [
+    "Clew ring: webbing, 3 loops",
+    "One loop chafed through, one frayed",
+    "Sheets tied with bowlines, no shackle"
+   ],
+   "tag": "All season"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The main goes up at the pontoon and you see this. What do you ask for before you sign?",
+  "a": "Battens and the slide replaced now; the zip photographed and on the form",
+  "o": [
+   "Everything on the form — you will be sailing on reef 1 most days anyway",
+   "A spare batten and a spare slide to fit yourself at the first anchorage",
+   "The zip fixed now; battens only matter with the full main up"
+  ],
+  "why": "Missing battens let the leech flog and tear; a cracked slide jams the hoist. The zip only keeps the cover shut.",
+  "ref": "Check-in: mainsail",
+  "fig": {
+   "type": "card",
+   "title": "Mainsail hoisted",
+   "lines": [
+    "Batten 2 (from the top): pocket empty",
+    "Batten 3: snapped, bends in the middle",
+    "One luff slide cracked; stackpack zip slider missing"
+   ],
+   "tag": "Hoisted"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "You run the genoa sheets to the winches and look at them. What do you ask for?",
+  "a": "The port sheet replaced and the second spare line found before you sign",
+  "o": [
+   "The port sheet end-for-ended so the chafe sits at the tail end",
+   "Nothing — a sheet lasts the week; the spare takes over if it goes",
+   "Both sheets swapped for the spare lines and the old sheets noted on the form"
+  ],
+  "why": "A bare core fails under load and a 14 m sheet will not reach the winch on a wide genoa; spares are counted, not assumed.",
+  "ref": "Check-in: sheets & lines",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     70,
+     86,
+     "port sheet"
+    ],
+    [
+     250,
+     86,
+     "core showing"
+    ]
+   ],
+   "note": "Port 14 m · starboard 16 m · spare lines: list 2, found 1"
+  },
+  "photo": "q/charter-checkin/ci-108"
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The boat has in-mast furling. The technician asks you to unfurl the main yourself. How do you do it?",
+  "a": "Outhaul out on the winch, the furling line eased with a little tension kept on",
+  "o": [
+   "Furling line cast off fully first, then the outhaul hauled out on the winch",
+   "Furling line and outhaul hauled together so the roll stays tight",
+   "Outhaul winched out with the furling line still shut in its clutch"
+  ],
+  "why": "The roll must stay firm as it leaves the mast: slack on the furling line lets it bunch and jam in the slot; never winch against a closed clutch.",
+  "ref": "Check-in: in-mast furling",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     60,
+     86,
+     "furling line"
+    ],
+    [
+     255,
+     86,
+     "outhaul"
+    ]
+   ],
+   "note": "In-mast main · outhaul on the winch, furling line in a clutch"
+  },
+  "photo": "q/charter-checkin/ci-109",
+  "plan": 1.6
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "Now the technician furls the main back in. You watch the boom and the lines. What do you ask him to change?",
+  "a": "Boom up to the base's mark on the topping lift, a little outhaul tension kept",
+  "o": [
+   "Boom lower still on the topping lift so the sail drops into the mast on its own",
+   "Outhaul let fully go so that nothing at all resists the roll into the mast",
+   "Furling line pulled faster, two hands, so the roll stays tight in the mast"
+  ],
+  "why": "The boom at the set angle feeds the luff square into the slot; a loose roll creases and jams, and a jammed furler is never forced.",
+  "ref": "Check-in: in-mast furling",
+  "fig": {
+   "type": "card",
+   "title": "In-mast main — furling in",
+   "lines": [
+    "Topping lift eased: boom end below horizontal",
+    "Outhaul: slack",
+    "Furling line pulled fast, by hand"
+   ],
+   "tag": "Creasing"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "The technician points at the clutches and says 'reefs are there'. What do you ask for before you sign?",
+  "a": "Reef 1 put in at the pontoon, so you see which line does what and runs free",
+  "o": [
+   "The colour code written on the form so you can look it up when you need it",
+   "A spare clutch handed over in case one of the reef clutches fails at sea",
+   "The reef lines coiled and stowed below; you will try them out at sea"
+  ],
+  "why": "A reef is practised at the pontoon in calm, not worked out at 25 knots; a jammed reef line is then the base's fix.",
+  "ref": "Check-in: reefing",
+  "fig": {
+   "type": "card",
+   "title": "Clutches — port coachroof",
+   "lines": [
+    "Red: main halyard",
+    "Blue: reef 1 · blue/white: reef 2",
+    "White: outhaul · black: kicker"
+   ],
+   "tag": "Reefs"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "You look at the gooseneck and the reef lines. What does this tell you about reefing at sea?",
+  "a": "Two-line: the luff cringle is hooked on a horn at the mast, then the clew line hauled",
+  "o": [
+   "Single-line: one pull from the cockpit reefs both the luff and the clew together",
+   "The horns take the tack only; the reefs are single-line, pulled from the cockpit",
+   "The luff reefs with the halyard alone; the horns are spare fittings, unused"
+  ],
+  "why": "Horns at the gooseneck mean the luff is hooked by hand: plan who goes forward, clipped on, before you need a reef.",
+  "ref": "Check-in: reefing",
+  "fig": {
+   "type": "card",
+   "title": "Reefing gear",
+   "lines": [
+    "Cockpit: one line per reef, to the clew cringle",
+    "Gooseneck: two horns (hooks)",
+    "Luff cringles: free, no line"
+   ],
+   "tag": "2 reefs"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The main is sheeted in at the pontoon and you see this. What do you settle with the base before you sign?",
+  "a": "Whether the bimini folds under sail or the boom is held clear — and who pays if it tears",
+  "o": [
+   "Nothing — it is only canvas; the boom slides over it on a gybe without harm",
+   "The bimini taken off and left ashore at the base for the week, fitted again on Friday",
+   "The boom held up high on the topping lift and cleated there for the whole week"
+  ],
+  "why": "A boom that meets the bimini on a gybe tears it, and the damage comes off your deposit; agree the rule now, in writing on the form.",
+  "ref": "Check-in: boom & bimini",
+  "fig": {
+   "type": "card",
+   "title": "Boom & bimini",
+   "lines": [
+    "Main sheeted in: boom end 3 cm above the bimini frame",
+    "Bimini: folds aft in a minute",
+    "Technician: 'everyone sails like that'"
+   ],
+   "tag": "3 cm"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The genoa is out in F2 and the luff looks like this. The technician says it always does. What do you do?",
+  "a": "Tension the halyard until the scallops just go, then check the furler still turns",
+  "o": [
+   "Leave it — a slack luff rolls up tighter on the furler and sets better",
+   "Winch the halyard bar-tight; a furling genoa can never be too tight",
+   "Ease the backstay a turn — the scallops come from forestay sag, not from the halyard"
+  ],
+  "why": "Scallops mean a slack luff; set the halyard so they disappear, no more — an over-tight halyard stiffens the furler and wraps.",
+  "ref": "Check-in: halyards",
+  "fig": {
+   "type": "card",
+   "title": "Genoa luff",
+   "lines": [
+    "Horizontal scallops along the luff",
+    "Furler turns freely by hand",
+    "Genoa halyard: in a clutch at the mast"
+   ],
+   "tag": "F2"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "Your check of the mainsheet, traveller and vang gives this list. What goes to the base to fix now, and what on the form?",
+  "a": "The cracked block replaced now; the chafed cover photographed and on the form",
+  "o": [
+   "Everything on the form — nothing has actually failed yet, so nothing to fix",
+   "Both replaced now before you sign, or you do not take the boat at all",
+   "The chafed line replaced now, the block noted — rope fails before metal"
+  ],
+  "why": "A cracked block under mainsheet load can burst and hurt someone: repair now. A chafed cover on a sound core: note it, watch it.",
+  "ref": "Check-in: mainsheet, traveller, vang",
+  "fig": {
+   "type": "card",
+   "title": "Mainsheet, traveller, vang",
+   "lines": [
+    "Mainsheet lower block: one cheek cracked",
+    "Traveller control line: cover chafed, core sound",
+    "Vang: 8:1, cleat holds"
+   ],
+   "tag": "Fix / note?"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The inventory lists a preventer. You find this in the cockpit locker. What do you ask for?",
+  "a": "A line long enough from the boom end to the bow and back to a cockpit winch",
+  "o": [
+   "Nothing — 6 m from the boom end to the toe rail amidships is how it is rigged",
+   "A boom brake instead of it; a preventer line is only for racing boats",
+   "A second 6 m line so you can rig one on each side at the same time"
+  ],
+  "why": "A preventer runs from the boom end forward to the bow and back aft, so it can be eased from the cockpit; a short strop to the rail breaks the boom.",
+  "ref": "Check-in: boom preventer",
+  "fig": {
+   "type": "card",
+   "title": "Inventory — deck",
+   "lines": [
+    "Preventer line: 1 — found: 6 m, snap hook",
+    "Boom end: pad eye fitted",
+    "Bow: cleat and fairlead"
+   ],
+   "tag": "6 m"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "The inventory lists the sails below. You open the forepeak. What do you do before you sign?",
+  "a": "Have the storm jib found or struck off the list, and the count on the form",
+  "o": [
+   "Sign — you will not fly a storm jib in August in the Ionian anyway",
+   "Take the technician's word that it is in the office and will be put back",
+   "Count the bags, not the contents: two bags on the list, two bags found"
+  ],
+  "why": "What is on the signed list is what you hand back on Friday; a sail you never had is charged against your deposit.",
+  "ref": "Inventory list — sails",
+  "fig": {
+   "type": "card",
+   "title": "Inventory — sails",
+   "lines": [
+    "Gennaker with sock: 1",
+    "Storm jib: 1",
+    "Found: bag 'Gennaker' (sail + sock); bag 'Storm jib' — empty"
+   ],
+   "tag": "Count"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "Sunday, your first sail. Off the headland the genoa furling line goes solid with the sail half rolled. What do you do?",
+  "a": "Ease the sheet, try again by hand, and call the base for instructions — cut nothing",
+  "o": [
+   "Put the furling line on the electric winch and grind the sail in, turn by turn",
+   "Cut the furling line at the drum and roll the sail by hand round the foil",
+   "Leave it half out, hoist the main and carry on under both to the anchorage"
+  ],
+  "why": "A jammed furler is a base problem: forcing or cutting it turns a phone call into a damaged foil and a deposit claim.",
+  "ref": "At sea: furler jam",
+  "fig": {
+   "type": "card",
+   "title": "Day 1 — off Lefkas",
+   "lines": [
+    "Genoa half rolled, furling line solid",
+    "Wind 20 kn and rising",
+    "Base: 40 min away under engine"
+   ],
+   "tag": "20 kn"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "On the 42 ft catamaran the technician says 'the main goes up like on any boat'. You look at the lazy bag and the head of the sail. What do you ask to see?",
+  "a": "The main hoisted and dropped once: how the square top goes into the bag, and where you zip it",
+  "o": [
+   "Only the sail number on the bag — a catamaran's main hoists like any other mainsail does",
+   "That the bag can stay zipped shut and the main hoisted straight up through it",
+   "A ladder added to the inventory so you can reach the zip from the deck at anchor"
+  ],
+  "why": "A square top with two headboard cars needs the lazyjacks and the bag opened right, at a height; see it done once at the pontoon.",
+  "ref": "Check-in: catamaran mainsail",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran mainsail",
+   "lines": [
+    "Square-top main: headboard on two cars",
+    "Lazy bag zip: 2.6 m above the coachroof",
+    "Boom reached from the coachroof steps"
+   ],
+   "tag": "Square top"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "At the briefing you are given this. What does it mean for your week?",
+  "a": "Reef at those numbers and stay in port above F6 — they are contract terms, not advice",
+  "o": [
+   "Reef when the boat feels overpressed; the numbers are a guide for beginners",
+   "The limit is for the forecast only; at sea you carry on as you judge best",
+   "The reef numbers apply only with the full genoa out; with the main alone they do not"
+  ],
+  "why": "Sailing above the contract limit, or unreefed when told to reef, can void the insurance and put the damage on you.",
+  "ref": "Charter contract — wind limit",
+  "fig": {
+   "type": "card",
+   "title": "Contract & briefing — wind",
+   "lines": [
+    "Sailing permitted up to F6 on the base forecast",
+    "Reef 1 at 18 kn, reef 2 at 25 kn",
+    "Above F6: stay in port, call the base"
+   ],
+   "tag": "F6 max"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "You follow the genoa furling line from the drum aft along the side deck and find this. What do you ask for?",
+  "a": "A lead block fitted at the gap so the line runs fair, not over the stanchion base",
+  "o": [
+   "Nothing — the line only touches the base while the sail is fully out",
+   "The line lashed to that stanchion with a short cord so it cannot move",
+   "A spare furling line put aboard in case this one chafes through"
+  ],
+  "why": "A furling line chafing on a stanchion base jams or parts mid-furl; the lead blocks are the base's fittings, counted like the rest.",
+  "ref": "Check-in: genoa furler",
+  "fig": {
+   "type": "rope",
+   "kind": "rail",
+   "labels": [
+    [
+     60,
+     78,
+     "lead block"
+    ],
+    [
+     165,
+     165,
+     "no block: line rubs"
+    ],
+    [
+     265,
+     78,
+     "to cockpit"
+    ]
+   ],
+   "note": "Furling line, drum to cockpit · list: 4 blocks, fitted: 3"
+  },
+  "photo": "q/charter-checkin/ci-121"
+ },
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "Reading the inventory again, you compare it with the number on the genoa's clew. What do you do before you sign?",
+  "a": "Have the form corrected to the number on the sail — that is the sail you hand back",
+  "o": [
+   "Nothing — the base swaps sails between boats and the form is only indicative",
+   "Write the main's number on the genoa clew with a marker so the two agree",
+   "Ask for the genoa with the number on the form to be fitted instead of this one"
+  ],
+  "why": "On Friday the inventory is checked by number: a sail listed wrongly is 'missing' and charged against your deposit.",
+  "ref": "Inventory list — sails",
+  "fig": {
+   "type": "card",
+   "title": "Inventory — sails",
+   "lines": [
+    "Main: no. 4512 · Genoa: no. 4512",
+    "On the genoa clew: no. 3870",
+    "Technician: 'they get swapped around'"
+   ],
+   "tag": "3870"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "On the hoist the technician stops winching at this point. Your crew ask what the tape is for. What do you tell them?",
+  "a": "It marks full hoist: stop there, or the headboard jams against the masthead sheave",
+  "o": [
+   "It marks a worn spot on the halyard; move the tape when the chafe moves",
+   "It marks reef 1: the sail is lowered to the tape for the first reef",
+   "It is the base's inventory tag; the lines are counted by their tapes"
+  ],
+  "why": "A halyard winched past its mark drives the headboard into the sheave: the halyard stretches, the sail will not come down.",
+  "ref": "Check-in: halyards",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     65,
+     86,
+     "main halyard"
+    ],
+    [
+     160,
+     152,
+     "tape at the clutch"
+    ],
+    [
+     255,
+     86,
+     "to winch"
+    ]
+   ],
+   "note": "Main at full hoist · black tape 5 cm short of the clutch"
+  },
+  "photo": "q/charter-checkin/ci-123",
+  "plan": 1.6
+ },
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "Your crew are already planning a gennaker day. At the briefing you read this clause. What does it mean for the week?",
+  "a": "Ask for the base's written OK now, keep to 12 kn and daylight — a torn gennaker is paid in full",
+  "o": [
+   "Fly it whenever the wind allows; the clause is advice to keep beginners off it",
+   "Fly it only after raising the deposit to cover it; the base adjusts the hold",
+   "Leave it in the bag all week; a gennaker on a charter boat is never for the crew"
+  ],
+  "why": "The gennaker is usually outside the damage waiver: the clause sets who, when and the limit, and you carry the whole repair bill.",
+  "ref": "Charter contract — downwind sails",
+  "fig": {
+   "type": "card",
+   "title": "Contract — gennaker",
+   "lines": [
+    "Use only with the base's written OK",
+    "Max 12 kn true, daylight, sock rigged",
+    "Damage to it: not covered by the waiver"
+   ],
+   "tag": "Gennaker"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "Your crew ask where the topping lift is before the main comes down. You look at the boom and see this. What do you tell them?",
+  "a": "There is none: the rigid vang holds the boom up with the sail down — just ease the mainsheet",
+  "o": [
+   "Rig the spare halyard to the boom end as a lift every time before the drop",
+   "Pull the vang control line on hard before the drop so the boom cannot fall",
+   "Hold the boom up by hand at the drop; without a lift it falls on the bimini"
+  ],
+  "why": "A gas-strut vang replaces the topping lift: it carries the boom when the halyard is let go; a strut that sags is a base repair.",
+  "ref": "Check-in: boom, vang & topping lift",
+  "fig": {
+   "type": "card",
+   "title": "Boom support",
+   "lines": [
+    "Rigid vang with gas strut",
+    "Topping lift: none fitted",
+    "Mainsheet eased, main down: boom stays up"
+   ],
+   "tag": "No lift"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 1,
+  "q": "The main halyard goes to an electric winch. The technician shows you the button. What rule do you give the crew?",
+  "a": "Short pushes, eyes on the sail, stop at any snag — never hold the button against a load",
+  "o": [
+   "Hold the button until the winch stalls; the motor's cut-out protects the sail",
+   "Only the skipper touches the button; the crew hoist by hand with the handle",
+   "Use the button only for the last metre; the first part is hoisted by hand"
+  ],
+  "why": "An electric winch does not feel a snag: a batten in a lazyjack or a jammed slide tears before the motor notices.",
+  "ref": "Check-in: electric winch",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     65,
+     86,
+     "main halyard"
+    ],
+    [
+     160,
+     152,
+     "electric winch"
+    ],
+    [
+     255,
+     86,
+     "button"
+    ]
+   ],
+   "note": "Push-button at the coachroof · two speeds · halyard 10 mm"
+  },
+  "photo": "q/charter-checkin/ci-126"
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The technician hands you the furling line to roll the genoa in. It takes everything you have, though there is no wrap aloft. What do you do?",
+  "a": "Ask the base to check the drum and swivel bearings now — in F2 a furler rolls in by hand",
+  "o": [
+   "Lead the line to the electric winch and roll it in on the button",
+   "Spray the drum and swivel with lubricant yourself and sign",
+   "Note 'stiff furler' and furl the genoa only in light winds this week"
+  ],
+  "why": "A furler that needs the winch at the pontoon will not furl at all at 25 kn; bearings are the base's job and no amount of spray fixes them.",
+  "ref": "Check-in: genoa furler",
+  "fig": {
+   "type": "card",
+   "title": "Genoa furler",
+   "lines": [
+    "Sail fully out, sheet eased, F2",
+    "Rolls in by hand: barely, with both hands",
+    "Masthead by binoculars: no halyard wrap"
+   ],
+   "tag": "Stiff"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The genoa is out in F2 and looks like this. The form says it is fine. What do you do?",
+  "a": "Photograph luff and leech, write 'genoa: aged, stretched' on the form, and plan to reef it early",
+  "o": [
+   "Demand a new genoa before you sign; the contract promises sails in good condition",
+   "Nothing — the age of the cloth is not something the check-in form records",
+   "Ask for a lower deposit for the week since the sail is likely to blow out"
+  ],
+  "why": "An old sail is not damage the base repairs, but its state goes on the form so a blow-out this week is not charged as new; sail it conservatively.",
+  "ref": "Check-in: sails",
+  "fig": {
+   "type": "card",
+   "title": "Genoa in F2",
+   "lines": [
+    "Cloth stiff and crackly, UV strip faded",
+    "Draft well aft, leech hooked",
+    "Form: 'Genoa — 2019 — OK'"
+   ],
+   "tag": "2019"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "Main hoisted, you walk the leech from the cockpit and spot this. The technician points at the locker. What do you do?",
+  "a": "The tear sewn or patched by the base's sailmaker before departure, and written on the form",
+  "o": [
+   "Tape it on both sides yourself; a tear this size does not grow in the Ionian",
+   "Note it and keep reef 2 in all week so that part of the leech stays rolled away",
+   "Nothing — a tear that small is within normal wear for a charter sail"
+  ],
+  "why": "A tear at the leech grows with every flog; sail tape is a sea-going stopgap, and a tear you accept unrepaired is yours at check-out.",
+  "ref": "Check-in: mainsail",
+  "fig": {
+   "type": "card",
+   "title": "Mainsail hoisted",
+   "lines": [
+    "Tear 10 cm at the leech, above batten 3 pocket",
+    "Cloth around it: sound",
+    "Technician: 'sail tape is in the locker'"
+   ],
+   "tag": "10 cm"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "Hoisting the main at the pontoon, your crew member on the winch feels it stop and asks whether to keep winching. You look up and see this. What do you say?",
+  "a": "Stop — ease a little so the batten drops clear of the lazyjack, then hoist again by hand",
+  "o": [
+   "Keep winching — the batten end pops through once the halyard is tight",
+   "Let the lazyjacks go altogether; they only get in the way of the hoist",
+   "Drop the main, pull all the battens out, hoist it and refit them aloft"
+  ],
+  "why": "A batten end winched against a lazyjack tears the pocket; slack the lazyjacks forward or head to wind, and hoist with eyes aloft.",
+  "ref": "Check-in: lazyjacks & stackpack",
+  "fig": {
+   "type": "rope",
+   "kind": "winch",
+   "labels": [
+    [
+     65,
+     86,
+     "main halyard"
+    ],
+    [
+     165,
+     152,
+     "batten end caught"
+    ],
+    [
+     255,
+     86,
+     "lazyjack"
+    ]
+   ],
+   "note": "Hoist stops at two-thirds · lazyjack across the batten pocket"
+  },
+  "photo": "q/charter-checkin/ci-130"
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The 36 ft boat is simpler than your last charter. You read its sail handling on the form. What does this change for Thursday evening, coming into the bay?",
+  "a": "Someone clipped on at the mast to flake the main onto the boom as it drops, head to wind under engine, before the bay",
+  "o": [
+   "Nothing — the main drops onto the boom and into the cover like a stackpack",
+   "Drop the main in the bay once the anchor is down; the sail flakes itself",
+   "Keep the main up until the anchor is set; it steadies the boat in the bay"
+  ],
+  "why": "Without lazyjacks the dropped main falls over the deck and the helm's view: plan the drop outside, with a crew member at the mast.",
+  "ref": "Check-in: mainsail",
+  "fig": {
+   "type": "card",
+   "title": "36 ft — mainsail",
+   "lines": [
+    "Slab reefing at the mast, no lazyjacks, no stackpack",
+    "Sail cover with ties",
+    "Halyard and reef lines at the mast"
+   ],
+   "tag": "36 ft"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "You unclip the main halyard from the headboard to look at it. What do you ask for?",
+  "a": "The shackle replaced before you sign — one that opens drops the main and sends the halyard aloft",
+  "o": [
+   "A second cable tie through the pin and a line on the form",
+   "Nothing — the headboard cars hold the sail if the shackle lets go",
+   "The halyard tied to the headboard with a bowline instead of the shackle"
+  ],
+  "why": "A halyard shackle carries the whole luff load: a stripped pin held by plastic is a failure waiting for a gust, and a lost halyard ends the week.",
+  "ref": "Check-in: halyards",
+  "fig": {
+   "type": "card",
+   "title": "Main halyard shackle",
+   "lines": [
+    "Captive-pin shackle: thread stripped",
+    "Pin held by a cable tie",
+    "Technician: 'it has held all season'"
+   ],
+   "tag": "Cable tie"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "You take the binoculars to the masthead before the main goes up and see this. What do you ask for?",
+  "a": "The base sends someone up the mast to clear it now — a crossed halyard is a mast job",
+  "o": [
+   "Hoist the main anyway: the last metre comes with the halyard winched hard",
+   "Tie the spare halyard off at the bow and live with the crossed lines",
+   "Go up in the bosun's chair yourself with the technician on the winch"
+  ],
+  "why": "Halyards crossed above the sheaves chafe through each other and stop the hoist short; it is cleared from aloft, by the base, before you leave.",
+  "ref": "Check-in: masthead & halyards",
+  "fig": {
+   "type": "card",
+   "title": "Masthead by binoculars",
+   "lines": [
+    "Main halyard and topping lift crossed twice above the sheaves",
+    "Main stops 1 m short of full hoist",
+    "Spare halyard: wrapped round the forestay"
+   ],
+   "tag": "Crossed"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "Main sheeted in at the pontoon, you load the mainsheet by hand and the tail creeps through the cleat. What do you ask for?",
+  "a": "The cam cleat replaced before you sign — a mainsheet that will not hold cannot be trusted on a gybe",
+  "o": [
+   "Lead the mainsheet to the genoa winch instead for the week",
+   "A figure-of-eight in the tail behind the cleat so it cannot run out",
+   "A note on the form; it only slips above twenty knots anyway"
+  ],
+  "why": "The mainsheet must hold on its own cleat under full load; worn cam teeth let the boom out in a gust, with crew in the way.",
+  "ref": "Check-in: mainsheet, traveller, vang",
+  "fig": {
+   "type": "rope",
+   "kind": "sheet",
+   "labels": [
+    [
+     65,
+     80,
+     "mainsheet"
+    ],
+    [
+     165,
+     160,
+     "cam cleat: teeth worn"
+    ],
+    [
+     260,
+     80,
+     "tail"
+    ]
+   ],
+   "note": "Sheet loaded by hand · tail creeps 10 cm, then holds"
+  },
+  "photo": "q/charter-checkin/ci-134"
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "Your crew ask what the fitting under the boom is and whether a preventer is still needed. What do you tell them?",
+  "a": "A boom brake: set its line before a downwind leg so the boom crosses slowly — it slows a gybe, it does not stop one",
+  "o": [
+   "A boom brake: it locks the boom like a preventer, so no preventer is needed",
+   "A second vang: pull it on hard upwind and leave it slack on a run",
+   "A dinghy-hoist fitting; nothing to do with the boom under sail"
+  ],
+  "why": "A brake lets the boom come across under friction on a gybe; it never pins the boom, so an accidental gybe still happens, only slower.",
+  "ref": "Check-in: boom brake",
+  "fig": {
+   "type": "card",
+   "title": "Under the boom",
+   "lines": [
+    "Boom brake: line through the drum, led to both toe rails",
+    "Control tail: cam cleat at the cockpit",
+    "Preventer line: 1 on the list"
+   ],
+   "tag": "Brake"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "The gennaker is on the list. You find this in the forepeak. What do you ask for before you sign?",
+  "a": "The gennaker hoisted in its sock at the pontoon, sock raised a metre and lowered, tack line and halyard found",
+  "o": [
+   "Nothing — a gennaker is checked by flying it on the first downwind leg",
+   "The sail pulled out of the bag on the pontoon and looked over for tears",
+   "The sock taken off; a gennaker without a sock is simpler for a crew"
+  ],
+  "why": "The sock's uphaul, the tack line and a dedicated halyard are what let a crew get the sail down; find and try them where help is at hand.",
+  "ref": "Inventory list — sails",
+  "fig": {
+   "type": "card",
+   "title": "Inventory — gennaker",
+   "lines": [
+    "Gennaker with sock: 1 — found in bag",
+    "Tack line, gennaker halyard: on the list, not found",
+    "Tack fitting: ring on the bow roller"
+   ],
+   "tag": "Sock"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "With the main up you look along the leech at spreader height and see this. What do you ask for?",
+  "a": "The worn patches replaced now — on a run the leech lies on the spreader and the cloth under goes next",
+  "o": [
+   "Nothing — patches are there to be worn through; that is their job",
+   "Sail tape over the patches, and a note on the form",
+   "The spreader tips taped instead; then the sail needs no patches"
+  ],
+  "why": "Spreader patches are sacrificial, but once through the sail itself chafes; a sailmaker's patch at the base is an hour, a torn leech is a week.",
+  "ref": "Check-in: mainsail chafe",
+  "fig": {
+   "type": "card",
+   "title": "Mainsail — leech",
+   "lines": [
+    "Port spreader patch: worn through, cloth under it thin",
+    "Starboard patch: scuffed, whole",
+    "Spreader tips: bare, no boots"
+   ],
+   "tag": "Chafe"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "Monday, 09:30, leaving the bay. Your crew member on the helm asks how you want the boat for the hoist. What do you say?",
+  "a": "Motor clear of the moorings, head to wind at slow ahead, autopilot in compass mode, and hoist with eyes aloft",
+  "o": [
+   "Hoist at anchor among the moored boats; the bow lies to the wind by itself",
+   "Autopilot in wind mode so it follows every shift while you hoist",
+   "Sail out on the genoa and hoist the main outside, running downwind"
+  ],
+  "why": "Head to wind the slides run free and the battens clear the lazyjacks; the autopilot holds the heading while two of you work the halyard.",
+  "ref": "At sea: hoisting the main",
+  "fig": {
+   "type": "card",
+   "title": "Monday — leaving the bay",
+   "lines": [
+    "Wind N 10 kn, bay open to the south",
+    "Autopilot: compass and wind modes",
+    "Crew: two adults, both new to it"
+   ],
+   "tag": "09:30"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "You ask for the main dropped into the lazy bag as a test and watch it come down. What do you ask for?",
+  "a": "The track cleaned and the bent slide replaced so the main drops on its own — at sea nobody should be hauling it down",
+  "o": [
+   "A note 'sticky slides' and a crew member at the mast for every drop",
+   "Nothing — a main always needs a hand on the luff to come down",
+   "Silicone spray on the track yourself before you sign"
+  ],
+  "why": "A main that will not fall on its own cannot be dropped fast in a squall; a dry track and a bent slide are the base's fix, before departure.",
+  "ref": "Check-in: mainsail drop test",
+  "fig": {
+   "type": "card",
+   "title": "Main drop — pontoon",
+   "lines": [
+    "Halyard let go: sail stops at batten 2",
+    "Slides: dry, salt-crusted; one bent",
+    "Technician: 'pull the luff, it always wants a hand'"
+   ],
+   "tag": "Stuck"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "Reef 1 went in fine. You try reef 2 at the pontoon and get this. What do you ask for?",
+  "a": "The reef 2 line re-led or replaced long enough to pull the reef in from the cockpit, before you sign",
+  "o": [
+   "Accept it — reef 1 and a rolled genoa is reefed enough for F6",
+   "Tie an extension onto the tail with a sheet bend and note it",
+   "Take the line out and keep it as a spare sheet; reef 2 is for storms"
+  ],
+  "why": "Reef 2 is the reef you need when it is already too rough to improvise; a line that runs out before the cringle is down is no reef at all.",
+  "ref": "Check-in: reefing",
+  "fig": {
+   "type": "card",
+   "title": "Reef 2 — pontoon",
+   "lines": [
+    "Reef 2 line: 1 m tail, runs out before the clew cringle is down",
+    "Reef 1: in and out, fine",
+    "Technician: 'nobody uses reef 2 here'"
+   ],
+   "tag": "Too short"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "On the 42 ft catamaran the technician says there are no genoa sheets to run — the jib tacks itself. What do you check?",
+  "a": "The car runs the whole track with its end stops in, and the single sheet pulls through its blocks to the winch",
+  "o": [
+   "Nothing — a self-tacker has no sheets, cars or leads to go wrong",
+   "That the overlapping genoa from the forepeak is bent on instead; it is faster",
+   "That the car is lashed in the middle of the track so it cannot move"
+  ],
+  "why": "A self-tacking jib still has one sheet, one car and two end stops; a car that leaves the track or a sheet that jams tacks nothing.",
+  "ref": "Check-in: catamaran foresail",
+  "fig": {
+   "type": "card",
+   "title": "Catamaran foresail",
+   "lines": [
+    "Self-tacking jib, curved track ahead of the mast",
+    "One sheet, to the mast winch",
+    "Overlapping genoa: on the list, in the forepeak"
+   ],
+   "tag": "Self-tacker"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "Thursday, 14:00, 22 kn on a beam reach. Your crew member says they will put the furling line on the winch. What do you say?",
+  "a": "Bear away to blanket the genoa behind the main, ease the sheet but keep a little on it, and haul the line by hand",
+  "o": [
+   "Winch it in on the beam reach with the sheet cleated — the winch has the power",
+   "Luff head to wind and let the sail flog while the line is hauled",
+   "Drop the genoa on deck instead; a furler is not meant for 22 knots"
+  ],
+  "why": "Blanketed and with light sheet tension the sail rolls tight by hand; winched against a cleated sheet, the line or the drum goes first.",
+  "ref": "At sea: furling the genoa",
+  "fig": {
+   "type": "card",
+   "title": "Thursday — 22 kn",
+   "lines": [
+    "Genoa full, course beam reach",
+    "Sheet: cleated hard on the winch",
+    "Crew: 'I'll put the line on the winch'"
+   ],
+   "tag": "22 kn"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "Monday, 08:00, in a bay. The base's forecast is on your phone; your crew say you will reef when it gets strong. What do you do?",
+  "a": "Put reef 1 in at the hoist, still at anchor, and shake it out later if the wind never comes",
+  "o": [
+   "Hoist full and reef when the first gust arrives; reefing early wastes a nice morning",
+   "Stay at anchor until the base calls to say the wind has dropped",
+   "Leave the main in the bag and motor all day; the contract numbers are for sailing"
+  ],
+  "why": "A reef is put in at the hoist, in the flat water, when the forecast says it will be needed; shaking one out is easy, reefing late is not.",
+  "ref": "At sea: reefing",
+  "fig": {
+   "type": "card",
+   "title": "Monday — in the bay",
+   "lines": [
+    "Base forecast: NW 18–22 kn by noon",
+    "Contract: reef 1 at 18 kn, reef 2 at 25 kn",
+    "Now in the bay: 6 kn"
+   ],
+   "tag": "08:00"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 2,
+  "q": "You watch the technician furl the genoa away at the end of the check and see this. What do you ask for?",
+  "a": "The sail unrolled and furled the other way so the UV strip is outside — and ask which way the drum turns",
+  "o": [
+   "Nothing — the strip only matters while the sail is stored ashore",
+   "The strip pulled out and over the roll by hand without unrolling",
+   "A cover made to fit over the furled genoa for the week"
+  ],
+  "why": "The UV strip protects the roll only on the outside; furled the wrong way the sail cooks all week and the sheets wrap in the wrong direction.",
+  "ref": "Check-in: genoa furler",
+  "fig": {
+   "type": "card",
+   "title": "Genoa furled",
+   "lines": [
+    "UV strip: inside the roll, white cloth outside",
+    "Sheets: 3 turns round the sail",
+    "Furling line: full on the drum"
+   ],
+   "tag": "Inside out"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "Thursday, 16:00, in harbour 25 miles from the base. The base's forecast arrives. What do you do?",
+  "a": "Leave now or at first light, reefed, and tell the base your plan — Friday at 10:00 would be above the limit",
+  "o": [
+   "Stay and leave Friday at 10:00 as planned; F6 is within the contract limit",
+   "Stay put and let the base fetch the boat; the limit means you may not sail",
+   "Leave Friday at 06:00 under full sail to be fast ahead of the wind"
+  ],
+  "why": "The limit is read against the forecast for the passage: sailing into a forecast F6–7 breaks the contract, so the passage moves to before it.",
+  "ref": "Charter contract — wind limit",
+  "fig": {
+   "type": "card",
+   "title": "Thursday — base forecast",
+   "lines": [
+    "Friday from 10:00: NW F6, gusts F7",
+    "Tonight and early morning: NW 10–14 kn",
+    "Base: 25 M, about 5 h · boat due Friday 17:00"
+   ],
+   "tag": "F6–7"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "Tuesday, 15 kn, furling the main in. The line goes solid at halfway and your crew member on the electric winch says 'one more push'. What do you do?",
+  "a": "Stop the winch, unroll a turn to clear the bunch, boom to its mark, then furl again by hand with outhaul tension",
+  "o": [
+   "Hold the button — the winch has the power to pull the bunch through the slot",
+   "Drop the boom further so the sail hangs slack and pulls itself into the mast",
+   "Leave the main half furled, sheet it in hard and motor to the bay"
+  ],
+  "why": "A bunch in the slot only gets tighter under power; back off a turn and feed the roll in square, the way it was shown at the pontoon.",
+  "ref": "At sea: in-mast furling",
+  "fig": {
+   "type": "card",
+   "title": "Tuesday — furling the main",
+   "lines": [
+    "Furling line solid at half; cloth bunched at the slot",
+    "Boom: below the mark on the topping lift",
+    "Crew on the electric winch: 'one more push'"
+   ],
+   "tag": "Jam"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "Wednesday, 17:00, at anchor. Your crew admit the gennaker tore in a broach and suggest bagging it quietly. What do you do?",
+  "a": "Call the base today, photograph it, and have it noted — hiding it costs more at check-out than the repair",
+  "o": [
+   "Bag it and say nothing; the inventory counts bags, not the state of the sail",
+   "Patch it with sail tape and fly it again so the tear looks like old wear",
+   "Report it on Friday at check-out, when the technician asks about the sails"
+  ],
+  "why": "The contract says damage is reported at once; a tear found by the base after a cover-up loses you the waiver's goodwill and the whole deposit.",
+  "ref": "Charter contract — reporting damage",
+  "fig": {
+   "type": "card",
+   "title": "Wednesday — at anchor",
+   "lines": [
+    "Gennaker: 2 m tear along the foot after a broach",
+    "Crew: 'bag it, nobody looks inside'",
+    "Contract: damage reported at once; gennaker outside the waiver"
+   ],
+   "tag": "Torn"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "Kos, Saturday. Trying reef 2 you find this, and the base's forecast is on the board. The technician shrugs. What do you do?",
+  "a": "A sailmaker's repair before departure or another boat — with a Meltemi forecast reef 2 is the reef you will use",
+  "o": [
+   "Accept it with a note on the form; reef 1 and a scrap of genoa will do for F6",
+   "Tie a strop through the cloth round the boom as a makeshift reef 2 and sign",
+   "Postpone departure to Monday and let the base decide what to do then"
+  ],
+  "why": "A torn cringle cannot take a reef load; in the Dodecanese in a Meltemi week you will sail on reef 2 most days, so it is fixed or the boat is not fit.",
+  "ref": "Check-in: reefing",
+  "fig": {
+   "type": "card",
+   "title": "Reef 2 cringle",
+   "lines": [
+    "Clew cringle reef 2: ring torn half out of the leech",
+    "Base forecast Wed–Thu: N F6–7 (Meltemi)",
+    "Technician: 'nobody uses reef 2 in August'"
+   ],
+   "tag": "Meltemi"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "The boat has in-mast furling and it is blowing F4 at the pontoon. The technician will not unfurl the main today. What do you do?",
+  "a": "Have it rolled out a metre and back to prove it runs, and write 'main not fully seen at check-in' on the form",
+  "o": [
+   "Sign — an in-mast main cannot be checked at a pontoon in any case",
+   "Insist on the whole main out in F4 at the pontoon; it is your right",
+   "Unfurl it yourself at the first anchorage and photograph any fault for the base"
+  ],
+  "why": "You sign for what you were shown: a short test proves the furler turns, and the note means a fault found on Sunday is not your fault.",
+  "ref": "Check-in form — what was shown",
+  "fig": {
+   "type": "card",
+   "title": "Saturday — pontoon",
+   "lines": [
+    "In-mast main, F4 across the pontoon",
+    "Technician: 'not in this wind, it's fine'",
+    "Form: 'Sails: checked — OK'"
+   ],
+   "tag": "F4"
+  }
+ },
+ {
+  "topic": "sails",
+  "difficulty": 3,
+  "q": "Thursday, 13:00, Meltemi 25 kn. Reef 2 is in and the genoa is half rolled; your crew say it is fine. You look forward and see this. What do you do?",
+  "a": "Move the cars forward for the smaller sail and roll a little more — a flogging half genoa wears itself out in an hour",
+  "o": [
+   "Leave it — with reef 2 in, the main does the work and the genoa hardly matters",
+   "Unroll the genoa fully so the leech stops flogging, and ease the main",
+   "Roll the genoa away and motor-sail on the main alone to stay within the limit"
+  ],
+  "why": "A reefed genoa needs its lead moved forward or the leech flogs; a flogging leech shreds the UV strip and stitching — damage you pay for.",
+  "ref": "At sea: reefed genoa",
+  "fig": {
+   "type": "card",
+   "title": "Thursday — 25 kn",
+   "lines": [
+    "Main: reef 2 in, well set",
+    "Genoa: half rolled, leech flogging",
+    "Sheet cars: at the aft end of the track"
+   ],
+   "tag": "25 kn"
+  }
+ }
 ]
