@@ -48,9 +48,10 @@ const MAX_FLAGS = 500; // per student, per kind
 const cleanIds = (list) => [...new Set((Array.isArray(list) ? list : []).filter((id) => typeof id === 'string' && /^[a-z]{1,8}-\d{1,5}$/.test(id)))].slice(0, MAX_FLAGS);
 
 const MAX_NOTES = 50; // per student
-// What a student wrote about the theory articles: state.notes['<prefix>-<topic>/<section>'] = { text, at }.
+// What a student wrote about the theory articles: state.notes['<prefix>-<topic>/<section>'] = { text, at }, or about
+// one picture of that section: '<prefix>-<topic>/<section>/f<n>', n its place among the section's pictures from 1.
 const cleanNotes = (notes) => Object.entries(notes && typeof notes === 'object' && !Array.isArray(notes) ? notes : {})
-  .filter(([k, n]) => /^[a-z]{1,8}-[a-z0-9-]{1,40}\/[a-z0-9-]{1,40}$/.test(k) && n && typeof n.text === 'string' && n.text.trim())
+  .filter(([k, n]) => /^[a-z]{1,8}-[a-z0-9-]{1,40}\/[a-z0-9-]{1,40}(\/f[1-9]\d?)?$/.test(k) && n && typeof n.text === 'string' && n.text.trim())
   .slice(0, MAX_NOTES).map(([k, n]) => ({ k, text: n.text.trim().slice(0, 1000), at: Number.isFinite(n.at) ? n.at : 0, ...(LANGS.includes(n.lang) && { lang: n.lang }) }));
 const LANGS = ['en', 'ru']; // the app's languages (miniapp/app.js LANGS)
 

@@ -86,6 +86,9 @@ A block is one of:
 - **Read marks**: an article is read once its end has been on screen (`state.read['<prefix>-<topic>']`).
 - **Reports**: the flag beside a section's heading opens a sheet with a comment box; what the student writes is kept
   in `state.notes['<prefix>-<topic>/<section>'] = { text, at }` and goes to the server with the rest of the progress.
+  Each picture has its own flag in its corner, for a mistake in that picture: its note is kept under
+  `'<prefix>-<topic>/<section>/f<n>'`, n the picture's place in the section from 1 (a figure, then each tile of a row),
+  and the admins see the picture beside the comment.
   The admins read the comments at the top of their Reported page (`api/admin.mjs` → `notes`), newest first, and a
   tap opens the article at that section. A student can change or withdraw a report from the same flag. Admins cannot
   take one off yet: `public.flag_clears` only knows question flags.
