@@ -1,0 +1,103 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Isolated danger mark",
+  "key": [
+   "White Fl(2): an isolated danger with navigable water all round",
+   "Pass well clear, on any side"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -110,
+    "z": -110,
+    "hdg": 90,
+    "noHeading": true
+   }
+  ],
+  "marks": [
+   {
+    "x": 0,
+    "z": -6,
+    "kind": "iso",
+    "bearing": false,
+    "hi": true
+   }
+  ],
+  "rocks": [
+   {
+    "x": 0,
+    "z": 60
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": 10,
+    "r": 60,
+    "c": "red"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -80,
+      -110
+     ],
+     [
+      150,
+      -110
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      150,
+      130
+     ],
+     [
+      -150,
+      130
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 130,
+    "z": 40,
+    "text": "rock under the mark",
+    "kind": "red"
+   },
+   {
+    "x": 0,
+    "z": -160,
+    "text": "safe water all round",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -170,
+    "z": -180
+   },
+   {
+    "x": 170,
+    "z": 160
+   },
+   {
+    "x": -110,
+    "z": -55.6
+   }
+  ]
+ }
+}

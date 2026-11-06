@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rope scene export</title>
+<script type="importmap">{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }</script>
+</head>
+<body>
+<pre id="out"></pre>
+<script type="module">
+// Exports the Three.js rope scenes from ../figure-rope-3d.html for Blender, without touching that page:
+// its module source is fetched, patched in memory (ropes remember their centreline, materials get names,
+// main() does not run), then each scene is split into
+//   - the ropes: centreline points in world space, radius, lay or braid colours, whippings -> JSON
+//   - everything else: a binary glTF, base64 in the JSON (instanced meshes expanded, background dropped)
+//   - camera matrix and fov, label anchors, note, sun.
+// Usage: export.html?kind=winch,cleat or ?set=knots. The JSON lands in <pre id="out"> for --dump-dom.
+const src = await (await fetch('../figure-rope-3d.html')).text();
+let code = src.slice(src.indexOf('<script type="module">') + 22, src.lastIndexOf('<\/script>'));
+const patch = (find, repl) => { if (!code.includes(find)) throw new Error('patch target not found: ' + find.slice(0, 60)); code = code.replace(find, repl); };
+const named = (prefix, name) => patch(prefix + '({', prefix + `({ name: '${name}',`);
+patch("import * as THREE from 'three';", "import * as THREE from 'three';\nimport { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';");
+patch('const g = new THREE.Group(), a = R * 0.56, rs = R * 0.52;', 'const g = new THREE.Group(), a = R * 0.56, rs = R * 0.52; g.userData.rope = { P, R, lay, o };');
+patch('const g = new THREE.Group(), t = new THREE.Mesh(tubeFromPoints(P, R, 20, 2 * Math.PI * R), m);', 'const g = new THREE.Group(), t = new THREE.Mesh(tubeFromPoints(P, R, 20, 2 * Math.PI * R), m); g.userData.braid = { P, R, o };');
+patch('return new THREE.MeshStandardMaterial({ map: t, roughness: 0.85,', "return new THREE.MeshStandardMaterial({ name: 'teak', map: t, roughness: 0.85,");
+patch('w.position.y = y; scene.add(w); }', "w.position.y = y; w.material.name = 'water'; scene.add(w); }");
+named("pm = new THREE.MeshStandardMaterial", 'planks');
+named("const navy = new THREE.MeshPhysicalMaterial", 'canvas');
+named("const sock = new THREE.MeshPhysicalMaterial", 'sock');
+named("const galv = new THREE.MeshStandardMaterial", 'galv');
+named("const glass = new THREE.MeshPhysicalMaterial", 'glass');
+named("alu = new THREE.MeshStandardMaterial", 'alu');
+named("const wireM = new THREE.MeshPhysicalMaterial", 'wire');
+patch("new THREE.MeshStandardMaterial({ color: '#c9cdd1', metalness: 0.85", "new THREE.MeshStandardMaterial({ name: 'post', color: '#c9cdd1', metalness: 0.85");
+patch("new THREE.MeshStandardMaterial({ color: '#8d8a84', roughness: 0.9 })", "new THREE.MeshStandardMaterial({ name: 'float', color: '#8d8a84', roughness: 0.9 })");
+patch('main().catch(e =>', 'if (false) main().catch(e =>');
+code += `
+gelMat.name = 'gel'; chrome.name = 'chrome'; satin.name = 'satin'; blackAnod.name = 'anod'; rubber.name = 'rubber';
+strakeMat.name = 'strake'; nonskid.name = 'nonskid'; stoneMat.name = 'granite'; ironMat.name = 'iron';
+const r5 = v => +v.toFixed(5);
+const b64 = buf => { const u = new Uint8Array(buf); let s = ''; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(s); };
+window.__exportKind = async (k) => {
+  seed = 7 + k.length * 13;
+  const K = (KINDS[k] || KNOTS[k] || KNOT_OPTS[k])(), scene = K.scene;
+  scene.updateMatrixWorld(true);
+  const ropes = [], drop = [];
+  scene.traverse(o => { const d = o.userData.rope || o.userData.braid; if (!d) return;
+    const s = new THREE.Vector3().setFromMatrixScale(o.matrixWorld).x;
+    ropes.push({ type: o.userData.rope ? 'laid' : 'braid', R: d.R * s, lay: o.userData.rope ? d.lay * s : null,
+      P: d.P.map(p => p.clone().applyMatrix4(o.matrixWorld).toArray().map(r5)),
+      base: d.o.base || null, fleck: d.o.fleck || null, shiny: !!d.o.shiny, whip: d.o.whip || null, whipStart: d.o.whipStart || null, fine: d.o.fine || null });
+    drop.push(o); });
+  drop.forEach(o => o.parent.remove(o));
+  // glTF instancing does not survive the round trip reliably: expand instanced meshes into plain meshes
+  const inst = []; scene.traverse(o => { if (o.isInstancedMesh) inst.push(o); });
+  for (const im of inst) { const m = new THREE.Matrix4(), c = new THREE.Color();
+    for (let i = 0; i < im.count; i++) { im.getMatrixAt(i, m); let mat = im.material;
+      if (im.instanceColor) { im.getColorAt(i, c); mat = im.material.clone(); mat.color.multiply(c); mat.name = im.material.name; }
+      const me = new THREE.Mesh(im.geometry, mat); me.applyMatrix4(m); me.applyMatrix4(im.matrix); me.name = (mat.name || 'inst') + '_' + i; im.parent.add(me); }
+    im.parent.remove(im); }
+  const cam = K.cam; cam.updateMatrixWorld(true);
+  const bg = scene.background && scene.background.isColor ? '#' + scene.background.getHexString() : null;
+  scene.background = null; scene.environment = null;
+  const glb = await new GLTFExporter().parseAsync(scene, { binary: true });
+  return { kind: k, cam: { matrix: cam.matrixWorld.toArray().map(r5), fov: cam.fov }, labels: (K.labels || []).map(([p, t]) => ({ p: p.toArray().map(r5), text: t })),
+    note: K.note || null, sun: K.sun, env: K.env || 'room', background: bg, ropes, glb: b64(glb) };
+};
+window.__kinds = { scenes: Object.keys(KINDS), knots: Object.keys(KNOTS) };
+`;
+const s = document.createElement('script'); s.type = 'module'; s.textContent = code + `
+const qs = new URLSearchParams(location.search), list = qs.get('kind') ? qs.get('kind').split(',') : qs.get('set') === 'knots' ? window.__kinds.knots : [];
+const out = {}; try { for (const k of list) out[k] = await window.__exportKind(k); document.getElementById('out').textContent = JSON.stringify(out); document.body.dataset.done = '1'; }
+catch (e) { document.getElementById('out').textContent = 'ERROR ' + e.stack; document.body.dataset.done = 'err'; }`;
+document.body.append(s);
+</script>
+</body>
+</html>

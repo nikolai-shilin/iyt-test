@@ -1,0 +1,72 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "AIS-SART · survivors",
+  "key": [
+   "An AIS-SART marks survivors in distress",
+   "Tell the coastguard, and go to assist"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   }
+  ],
+  "circles": [
+   {
+    "x": -2348.1,
+    "z": -5035.4,
+    "r": 194.46,
+    "fill": "#e0251b",
+    "c": "red",
+    "dash": "0"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -187.8,
+      -402.8
+     ],
+     [
+      -2160.2,
+      -4632.6
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -2025.8,
+    "z": -5838.0,
+    "text": "SART",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 2037.2,
+    "z": 2139.5,
+    "text": "coastguard, then go",
+    "kind": "accent",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -1666.8,
+    "z": -1666.8
+   },
+   {
+    "x": 1666.8,
+    "z": 1666.8
+   }
+  ]
+ }
+}

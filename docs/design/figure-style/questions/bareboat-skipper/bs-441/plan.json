@@ -1,0 +1,85 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · restricted in ability to manoeuvre",
+  "key": [
+   "Red-white-red all round, masthead light and green: RAM under way",
+   "Under sail you still keep clear of her (Rule 18)"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "tag": "under sail"
+   },
+   {
+    "x": -206.5,
+    "z": -294.9,
+    "hdg": 70,
+    "label": "Restricted in manoeuvre",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "r",
+     "w",
+     "r"
+    ],
+    "stackDx": -130,
+    "scale": 3.0
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -40
+     ],
+     [
+      20,
+      -110
+     ],
+     [
+      -20,
+      -200
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 160,
+    "z": -40,
+    "text": "you keep clear",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -380,
+    "z": -420
+   },
+   {
+    "x": 260,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 102.4
+   },
+   {
+    "x": -206.5,
+    "z": -407.53999999999996
+   }
+  ]
+ }
+}

@@ -39,6 +39,7 @@ const FILES = [
   ['miniapp/icon.png', 'icon.png'],
   ['miniapp/apple-icon.png', 'apple-icon.png'],
   ['miniapp/fonts', 'fonts'],
+  ['miniapp/figs', 'figs'], // the articles' photos and plans (docs/design/blender/publish_figs.py)
   ['docs/design/app.css', 'design/app.css'],
   ['docs/design/flows.css', 'design/flows.css'],
   ['docs/design/icons.js', 'design/icons.js'],
@@ -135,7 +136,7 @@ console.log('built', out);
 
 if (process.argv.includes('--serve')) {
   const port = +(process.env.PORT || 5173);
-  const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.txt': 'text/plain', '.xml': 'application/xml', '.woff2': 'font/woff2' };
+  const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.txt': 'text/plain', '.xml': 'application/xml', '.woff2': 'font/woff2' };
   createServer(async (req, res) => {
     try {
       const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);

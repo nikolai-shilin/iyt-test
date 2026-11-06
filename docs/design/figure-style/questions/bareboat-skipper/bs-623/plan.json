@@ -1,0 +1,63 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · pilot vessel on duty",
+  "key": [
+   "White over red all round: a pilot vessel on duty, \"white hat, red nose\"",
+   "A sidelight as well: she is under way"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 0.0,
+    "z": -240.0,
+    "hdg": 255,
+    "label": "Pilot",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "w",
+     "r"
+    ],
+    "stackDx": -130
+   },
+   {
+    "x": -260.0,
+    "z": -450.3,
+    "hdg": 90,
+    "label": "Ship",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "scale": 3.4,
+    "plain": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -300,
+    "z": -500
+   },
+   {
+    "x": 240,
+    "z": 100
+   },
+   {
+    "x": 0,
+    "z": 96.0
+   },
+   {
+    "x": 0.0,
+    "z": -336.0
+   }
+  ]
+ }
+}

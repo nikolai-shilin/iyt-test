@@ -1,0 +1,752 @@
+[
+ {
+  "id": "bs-082",
+  "topic": "systems",
+  "q": "The engine has just started. What is wrong here?",
+  "answer": "No cooling water at the exhaust — stop, check the seacock and strainer",
+  "why": "Running dry overheats the engine and shreds the impeller.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "40°",
+     false
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ],
+    [
+     "Volts",
+     "13.8",
+     false
+    ]
+   ],
+   "lines": [
+    "Exhaust: dry, no water pulsing out",
+    "Seacock: ?"
+   ]
+  },
+  "ru": {
+   "Exhaust: dry, no water pulsing out": "Выхлоп сухой, вода не выплёскивается",
+   "Seacock: ?": "Кингстон: ?",
+   "Temp": "Т-ра",
+   "Oil": "Масло",
+   "OK": "норма",
+   "Volts": "Вольты"
+  }
+ },
+ {
+  "id": "bs-083",
+  "topic": "systems",
+  "q": "Half an hour into the passage you see this. What do you do?",
+  "answer": "Stop the engine, sail or anchor, let it cool and find the cause",
+  "why": "An overheating engine can seize; never open a hot pressurised cap.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "110°",
+     true
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ],
+    [
+     "Volts",
+     "14.1",
+     false
+    ]
+   ],
+   "lines": [
+    "Alarm sounding",
+    "Exhaust water: a trickle"
+   ]
+  },
+  "ru": {
+   "Alarm sounding": "Звучит сирена",
+   "Exhaust water: a trickle": "Вода из выхлопа: еле течёт",
+   "Temp": "Т-ра",
+   "Oil": "Масло",
+   "OK": "норма",
+   "Volts": "Вольты"
+  }
+ },
+ {
+  "id": "bs-084",
+  "topic": "systems",
+  "q": "Morning after a night at anchor with fridge and lights on. Can you start the engine?",
+  "answer": "Yes — the engine battery was isolated; the house bank is low",
+  "why": "Separate banks keep starting power away from house loads.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "House",
+     "11.8 V",
+     true
+    ],
+    [
+     "Engine",
+     "12.7 V",
+     false
+    ],
+    [
+     "Solar",
+     "2 A",
+     false
+    ]
+   ],
+   "lines": [
+    "Fridge and anchor light ran all night"
+   ]
+  },
+  "ru": {
+   "Fridge and anchor light ran all night": "Холодильник и якорный огонь работали всю ночь",
+   "House": "Быт. АКБ",
+   "11.8 V": "11,8 В",
+   "Engine": "Старт. АКБ",
+   "12.7 V": "12,7 В",
+   "Solar": "Солн. бат.",
+   "2 A": "2 А"
+  }
+ },
+ {
+  "id": "bs-307",
+  "topic": "safety",
+  "q": "You are about to leave the boat for dinner ashore. What do you do?",
+  "answer": "Switch the gas solenoid off",
+  "why": "The solenoid is open only while cooking; a closed valve cannot feed a leak.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Gas solenoid",
+     "ON",
+     false
+    ],
+    [
+     "Gas alarm",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Nobody is cooking",
+    "Crew going ashore for the evening"
+   ]
+  },
+  "ru": {
+   "Nobody is cooking": "Никто не готовит",
+   "Crew going ashore for the evening": "Экипаж уходит на берег на вечер",
+   "Gas solenoid": "Клапан газа",
+   "ON": "ВКЛ",
+   "Gas alarm": "Датчик газа",
+   "OK": "НОРМА"
+  }
+ },
+ {
+  "id": "bs-310",
+  "topic": "safety",
+  "q": "The alarm wakes you. How do you respond?",
+  "answer": "Get everyone into fresh air, find the source",
+  "why": "Carbon monoxide has no smell; sleepers can be poisoned before they notice symptoms.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "CO alarm",
+     "ALARM",
+     true
+    ]
+   ],
+   "lines": [
+    "Aft cabin, 04:00, at anchor",
+    "No smell, nobody feels ill yet"
+   ]
+  },
+  "ru": {
+   "Aft cabin, 04:00, at anchor": "Кормовая каюта, 04:00, на якоре",
+   "No smell, nobody feels ill yet": "Запаха нет, плохо пока никому",
+   "CO alarm": "Датчик CO",
+   "ALARM": "ТРЕВОГА"
+  }
+ },
+ {
+  "id": "bs-369",
+  "topic": "safety",
+  "q": "You are checking the fire gear at the base. What do you do?",
+  "answer": "Have it replaced before you leave",
+  "why": "A needle in the red means low pressure; the extinguisher may not work.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Extinguisher",
+     "LOW",
+     true
+    ],
+    [
+     "Fire blanket",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Check-in: saloon extinguisher",
+    "Gauge needle in the red"
+   ]
+  },
+  "ru": {
+   "Check-in: saloon extinguisher": "Приёмка: огнетушитель в салоне",
+   "Gauge needle in the red": "Стрелка манометра в красной зоне",
+   "Extinguisher": "Огнетушитель",
+   "LOW": "НИЗКОЕ",
+   "Fire blanket": "Покрывало",
+   "OK": "НОРМА"
+  }
+ },
+ {
+  "id": "bs-827",
+  "topic": "systems",
+  "q": "You plan to motor through a calm day to the next fuel quay. How far can you go without touching your reserve?",
+  "answer": "90 miles",
+  "why": "(80 − 20) ÷ 4 = 15 hours; 15 h × 6 kn = 90 miles.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "80 L",
+     false
+    ],
+    [
+     "Burn",
+     "4 L/h",
+     false
+    ],
+    [
+     "Speed",
+     "6 kn",
+     false
+    ]
+   ],
+   "lines": [
+    "Keep 20 L in reserve",
+    "Calm sea, same revs all the way"
+   ]
+  },
+  "ru": {
+   "Keep 20 L in reserve": "Резерв 20 л не трогать",
+   "Calm sea, same revs all the way": "Штиль, обороты всё время одни и те же",
+   "Fuel": "Топливо",
+   "80 L": "80 л",
+   "Burn": "Расход",
+   "4 L/h": "4 л/ч",
+   "Speed": "Скор.",
+   "6 kn": "6 уз"
+  }
+ },
+ {
+  "id": "bs-830",
+  "topic": "systems",
+  "q": "Motor-sailing hard on the wind, the engine stutters and stops. What is the most likely cause?",
+  "answer": "Low fuel sloshing away from the pickup",
+  "why": "With a low tank and a big heel the pickup sucks air; level the boat, refuel and bleed.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Fuel",
+     "1/4",
+     false
+    ],
+    [
+     "Heel",
+     "25°",
+     false
+    ],
+    [
+     "Temp",
+     "82°",
+     false
+    ]
+   ],
+   "lines": [
+    "Engine stuttered, then stopped",
+    "Oil alarm only after it stopped"
+   ]
+  },
+  "ru": {
+   "Engine stuttered, then stopped": "Двигатель зачихал и заглох",
+   "Oil alarm only after it stopped": "Сигнал по маслу — только после остановки",
+   "Fuel": "Топливо",
+   "Heel": "Крен",
+   "Temp": "Т-ра"
+  }
+ },
+ {
+  "id": "bs-835",
+  "topic": "systems",
+  "q": "You turn the key and hear one click, but the engine does not turn. What do you do?",
+  "answer": "Parallel the banks, then start the engine",
+  "why": "The emergency parallel switch lets the house bank start the engine; separate the banks once it runs.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Engine",
+     "11.4 V",
+     true
+    ],
+    [
+     "House",
+     "12.7 V",
+     false
+    ]
+   ],
+   "lines": [
+    "Key turned: a click, no cranking"
+   ]
+  },
+  "ru": {
+   "Key turned: a click, no cranking": "Ключ повёрнут: щелчок, не крутит",
+   "Engine": "Старт. АКБ",
+   "11.4 V": "11,4 В",
+   "House": "Быт. АКБ",
+   "12.7 V": "12,7 В"
+  }
+ },
+ {
+  "id": "bs-836",
+  "topic": "systems",
+  "q": "Motoring along the coast, you see this. What do you do?",
+  "answer": "Stop the engine at once and check the oil",
+  "why": "Without oil pressure the bearings are destroyed within minutes; stop first, then investigate.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Oil",
+     "LOW",
+     true
+    ],
+    [
+     "Temp",
+     "82°",
+     false
+    ],
+    [
+     "RPM",
+     "1800",
+     false
+    ]
+   ],
+   "lines": [
+    "Buzzer sounding, oil light on"
+   ]
+  },
+  "ru": {
+   "Buzzer sounding, oil light on": "Звучит зуммер, горит лампа масла",
+   "Oil": "Масло",
+   "LOW": "низкое",
+   "Temp": "Т-ра",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "bs-837",
+  "topic": "systems",
+  "q": "You turn the key to ON before starting. This is what you see and hear. What does it mean?",
+  "answer": "Normal — they go out once the engine runs",
+  "why": "With the engine stopped there is no oil pressure and no charge, so both lights and the buzzer come on.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Oil",
+     "ON",
+     true
+    ],
+    [
+     "Charge",
+     "ON",
+     true
+    ],
+    [
+     "RPM",
+     "0",
+     false
+    ]
+   ],
+   "lines": [
+    "Key at ON, engine not yet started",
+    "Buzzer sounding"
+   ]
+  },
+  "ru": {
+   "Key at ON, engine not yet started": "Ключ на ON, двигатель не запущен",
+   "Buzzer sounding": "Звучит зуммер",
+   "Oil": "Масло",
+   "ON": "горит",
+   "Charge": "Заряд",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "bs-838",
+  "topic": "systems",
+  "q": "Ten minutes after leaving the marina you see this. What do you check first?",
+  "answer": "The alternator drive belt",
+  "why": "A charge light on with the engine running means the alternator is not charging; a slipping or broken belt is the usual cause.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "12.3",
+     true
+    ],
+    [
+     "Temp",
+     "78°",
+     false
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Cruising revs for ten minutes",
+    "Charge warning light still on"
+   ]
+  },
+  "ru": {
+   "Cruising revs for ten minutes": "Десять минут на крейсерских оборотах",
+   "Charge warning light still on": "Лампа зарядки всё ещё горит",
+   "Volts": "Вольты",
+   "Temp": "Т-ра",
+   "Oil": "Масло",
+   "OK": "норма"
+  }
+ },
+ {
+  "id": "bs-839",
+  "topic": "systems",
+  "q": "Motoring out of Kos, you hear a squeal, then quiet. Soon after the panel looks like this. Most likely cause?",
+  "answer": "The belt has broken",
+  "why": "One belt drives both the alternator and the coolant pump, so no charge plus rising heat points to it.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "96°",
+     true
+    ],
+    [
+     "Volts",
+     "12.2",
+     true
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Charge light on",
+    "Plenty of water at the exhaust"
+   ]
+  },
+  "ru": {
+   "Charge light on": "Горит лампа зарядки",
+   "Plenty of water at the exhaust": "Вода из выхлопа идёт хорошо",
+   "Temp": "Т-ра",
+   "Volts": "Вольты",
+   "Oil": "Масло",
+   "OK": "норма"
+  }
+ },
+ {
+  "id": "bs-845",
+  "topic": "systems",
+  "q": "The temperature keeps rising. What is the most likely cause?",
+  "answer": "Low coolant on the freshwater side",
+  "why": "Raw-water faults show as weak exhaust water; a strong flow points to the freshwater circuit.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "100°",
+     true
+    ],
+    [
+     "Volts",
+     "14.0",
+     false
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ]
+   ],
+   "lines": [
+    "Exhaust water: strong flow",
+    "Belt tight, charge light off"
+   ]
+  },
+  "ru": {
+   "Exhaust water: strong flow": "Вода из выхлопа: сильная струя",
+   "Belt tight, charge light off": "Ремень натянут, лампа зарядки не горит",
+   "Temp": "Т-ра",
+   "Volts": "Вольты",
+   "Oil": "Масло",
+   "OK": "норма"
+  }
+ },
+ {
+  "id": "bs-870",
+  "topic": "systems",
+  "q": "The boat has rested all afternoon with nothing switched on. What does the house bank reading tell you?",
+  "answer": "About half charged — time to charge",
+  "why": "Resting 12.7 V ≈ full, 12.2 V ≈ 50 %, below 12.0 V deeply discharged.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "House",
+     "12.2 V",
+     false
+    ],
+    [
+     "Load",
+     "0 A",
+     false
+    ]
+   ],
+   "lines": [
+    "Resting for 4 hours, no charging"
+   ]
+  },
+  "ru": {
+   "Resting for 4 hours, no charging": "4 часа в покое, без зарядки",
+   "House": "Быт. АКБ",
+   "12.2 V": "12,2 В",
+   "Load": "Нагр.",
+   "0 A": "0 А"
+  }
+ },
+ {
+  "id": "bs-871",
+  "topic": "systems",
+  "q": "The engine is running. A crew member says the batteries are being overcharged. Are they right?",
+  "answer": "No — it is normal while charging",
+  "why": "While charging a 12 V bank reads 13.8–14.4 V.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "14.2",
+     false
+    ],
+    [
+     "Charge",
+     "35 A",
+     false
+    ],
+    [
+     "RPM",
+     "1600",
+     false
+    ]
+   ]
+  },
+  "ru": {
+   "Volts": "Вольты",
+   "Charge": "Заряд",
+   "35 A": "35 А",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "bs-873",
+  "topic": "systems",
+  "q": "Starting full, how many days can you stay at anchor before you must charge?",
+  "answer": "2 days",
+  "why": "Half of 400 Ah = 200 Ah usable; 200 ÷ 100 = 2 days.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "House",
+     "400 Ah",
+     false
+    ],
+    [
+     "Use",
+     "100 Ah",
+     false
+    ]
+   ],
+   "lines": [
+    "Daily use per 24 h, no solar",
+    "Lead-acid: do not go below 50 %"
+   ]
+  },
+  "ru": {
+   "Daily use per 24 h, no solar": "Расход за сутки, без солнечной панели",
+   "Lead-acid: do not go below 50 %": "Свинцово-кислотные: не ниже 50 %",
+   "House": "Быт. АКБ",
+   "400 Ah": "400 А·ч",
+   "Use": "Расход",
+   "100 Ah": "100 А·ч"
+  }
+ },
+ {
+  "id": "bs-874",
+  "topic": "systems",
+  "q": "The house bank is 100 Ah down. Roughly how long must you run the engine to put it back?",
+  "answer": "At least 2½ hours, more as it tapers",
+  "why": "100 Ah ÷ 40 A = 2.5 h, and the current falls as the bank fills.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Charge",
+     "40 A",
+     false
+    ],
+    [
+     "Down",
+     "100 Ah",
+     false
+    ]
+   ],
+   "lines": [
+    "Alternator current into the house bank"
+   ]
+  },
+  "ru": {
+   "Alternator current into the house bank": "Ток генератора в бытовые АКБ",
+   "Charge": "Заряд",
+   "40 A": "40 А",
+   "Down": "Разряд",
+   "100 Ah": "100 А·ч"
+  }
+ },
+ {
+  "id": "bs-875",
+  "topic": "systems",
+  "q": "It is a sunny midday at anchor. Why is the solar giving so little?",
+  "answer": "The boom shades part of the panel",
+  "why": "Even a small shadow across one cell cuts a panel's output sharply.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Solar",
+     "1.5 A",
+     true
+    ],
+    [
+     "House",
+     "12.3 V",
+     false
+    ]
+   ],
+   "lines": [
+    "200 W panel on the stern arch",
+    "Boom swinging across it at anchor"
+   ]
+  },
+  "ru": {
+   "200 W panel on the stern arch": "Панель 200 Вт на кормовой дуге",
+   "Boom swinging across it at anchor": "Гик на якоре ходит над ней",
+   "Solar": "Солн. бат.",
+   "1.5 A": "1,5 А",
+   "House": "Быт. АКБ",
+   "12.3 V": "12,3 В"
+  }
+ },
+ {
+  "id": "bs-884",
+  "topic": "systems",
+  "q": "This is the house bank first thing in the morning. What do you do?",
+  "answer": "Cut loads and charge now",
+  "why": "Below 12.0 V the bank is deeply discharged and damaged if left there.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "House",
+     "11.6 V",
+     true
+    ],
+    [
+     "Load",
+     "4 A",
+     false
+    ]
+   ],
+   "lines": [
+    "Fridge ran all night"
+   ]
+  },
+  "ru": {
+   "Fridge ran all night": "Холодильник работал всю ночь",
+   "House": "Быт. АКБ",
+   "11.6 V": "11,6 В",
+   "Load": "Нагр.",
+   "4 A": "4 А"
+  }
+ },
+ {
+  "id": "bs-885",
+  "topic": "systems",
+  "q": "Motoring for two hours, you smell rotten eggs near the battery locker. What is happening?",
+  "answer": "Overcharging — stop charging, ventilate",
+  "why": "Above about 14.8 V a faulty regulator boils the batteries and they give off gas.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "15.2",
+     true
+    ],
+    [
+     "Charge",
+     "30 A",
+     false
+    ],
+    [
+     "Temp",
+     "80°",
+     false
+    ]
+   ],
+   "lines": [
+    "Battery cases warm to the touch"
+   ]
+  },
+  "ru": {
+   "Battery cases warm to the touch": "Корпуса аккумуляторов тёплые на ощупь",
+   "Volts": "Вольты",
+   "Charge": "Заряд",
+   "30 A": "30 А",
+   "Temp": "Т-ра"
+  }
+ }
+]

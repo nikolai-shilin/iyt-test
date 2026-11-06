@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Article figures</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Carlito:wght@400;700&display=swap">
+<link rel="stylesheet" href="app.css">
+<style>
+  body { background: #fff; font-family: 'Merriweather', Georgia, serif; margin: 0; }
+  main.screen { width: auto; min-height: 0; display: block; overflow: visible; padding: 28px 32px 48px; }
+  h1 { font-weight: 300; font-size: 30px; margin: 0 0 4px; letter-spacing: -.02em; }
+  .lede { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+  .row { display: grid; grid-template-columns: 0.9fr 1.25fr 1.25fr; gap: 14px; align-items: start; margin: 0 0 26px; padding-bottom: 22px; border-bottom: 2px solid var(--line); }
+  .col h3 { font: 700 12px Carlito, Arial, sans-serif; text-transform: uppercase; letter-spacing: .03em; color: var(--accent); margin: 0 0 6px; }
+  .col h3 b { color: var(--muted); font-weight: 700; margin-left: 6px; text-transform: none; letter-spacing: 0; }
+  .before { border-radius: 10px; overflow: hidden; background: var(--band); }
+  .before svg { display: block; width: 100%; }
+  .after img, .after canvas, .after svg { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .cap { font-size: 13px; color: var(--ink); margin-top: 6px; line-height: 1.35; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <h1 id="title">Article figures</h1>
+  <p class="lede" id="lede"></p>
+  <div id="rows"></div>
+</main>
+<script src="figures.js"></script>
+<script src="figure-schematic.js"></script>
+<script>
+const W = 1280, H = 800;
+/* ---------- the chartplotter: the GPS-track figures drawn as the screen you would actually look at ---------- */
+function plotter(f, o = {}) {
+  const c = document.createElement('canvas'); c.width = W; c.height = H; const ctx = c.getContext('2d');
+  // the helm pod and the unit's bezel
+  let g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#3a3e42'); g.addColorStop(1, '#1d2023'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.6)'; ctx.shadowBlur = 40; ctx.shadowOffsetY = 16; ctx.fillStyle = '#0e0f11'; ctx.beginPath(); ctx.roundRect(90, 50, 1100, 700, 38); ctx.fill(); ctx.restore();
+  g = ctx.createLinearGradient(90, 50, 90, 750); g.addColorStop(0, '#2a2d31'); g.addColorStop(1, '#101113'); ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(98, 58, 1084, 684, 32); ctx.fill();
+  for (let i = 0; i < 4; i++) { ctx.fillStyle = '#1c1e21'; ctx.beginPath(); ctx.roundRect(1092, 160 + i * 120, 66, 84, 14); ctx.fill(); ctx.strokeStyle = '#33373b'; ctx.lineWidth = 2; ctx.stroke(); }
+  ctx.fillStyle = '#c8102e'; ctx.beginPath(); ctx.arc(1125, 650, 20, 0, 7); ctx.fill();
+  // the screen: a chart in day colours
+  const sx = 140, sy = 96, sw = 920, sh = 610; ctx.save(); ctx.beginPath(); ctx.roundRect(sx, sy, sw, sh, 10); ctx.clip();
+  ctx.fillStyle = '#d4ecf7'; ctx.fillRect(sx, sy, sw, sh);
+  ctx.strokeStyle = 'rgba(70,140,190,.45)'; ctx.lineWidth = 2; for (let k = 0; k < 4; k++) { ctx.beginPath(); ctx.ellipse(sx + 120, sy + 90, 260 + k * 150, 170 + k * 110, 0.25, 0, 7); ctx.stroke(); }
+  ctx.fillStyle = '#f0dd96'; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(sx + 330, sy); ctx.bezierCurveTo(sx + 270, sy + 90, sx + 120, sy + 160, sx, sy + 190); ctx.closePath(); ctx.fill(); ctx.strokeStyle = '#8a7a40'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.fillStyle = 'rgba(30,60,90,.55)'; ctx.font = 'italic 22px Carlito, Arial'; for (const [x, y, t] of [[520, 260, '6'], [760, 330, '7'], [430, 520, '8'], [880, 560, '9'], [640, 610, '9']]) ctx.fillText(t, sx + x - 140, sy + y - 96);
+  // the track from the figure, scaled into the screen
+  const P = (x, y) => [sx + 140 + (x - 120) * 4.6, sy + 40 + (y - 40) * 4.6];
+  const path = new Path2D(); const toks = f.track.match(/[MCL]|-?\d+(\.\d+)?/g); let i = 0, cmd = '';
+  while (i < toks.length) { if (/[MCL]/.test(toks[i])) cmd = toks[i++]; const n = cmd === 'C' ? 6 : 2, v = toks.slice(i, i + n).map(Number); i += n; const q = []; for (let k = 0; k < n; k += 2) q.push(...P(v[k], v[k + 1])); if (cmd === 'M') path.moveTo(...q); else if (cmd === 'L') path.lineTo(...q); else path.bezierCurveTo(...q); }
+  ctx.strokeStyle = '#d81b2a'; ctx.lineWidth = 7; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.stroke(path);
+  const [ax, ay] = P(153, 81); ctx.fillStyle = '#1b2a44'; ctx.font = '700 34px Carlito'; ctx.textAlign = 'center'; ctx.fillText('⚓', ax, ay + 12);
+  ctx.strokeStyle = 'rgba(216,27,42,.5)'; ctx.setLineDash([10, 8]); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(ax, ay, 120, 0, 7); ctx.stroke(); ctx.setLineDash([]);
+  const [bx, by] = P(...f.boat.slice(0, 2)); ctx.save(); ctx.translate(bx, by); ctx.rotate(f.boat[2] * Math.PI / 180); ctx.fillStyle = '#111'; ctx.beginPath(); ctx.moveTo(0, -26); ctx.lineTo(15, 18); ctx.lineTo(0, 10); ctx.lineTo(-15, 18); ctx.closePath(); ctx.fill(); ctx.strokeStyle = '#111'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(0, -26); ctx.lineTo(0, -90); ctx.stroke(); ctx.restore();
+  // the data bar and the alarm
+  ctx.fillStyle = 'rgba(18,22,28,.88)'; ctx.fillRect(sx, sy, sw, 64);
+  ctx.textAlign = 'left'; ctx.fillStyle = '#e8eef2'; ctx.font = '700 30px Carlito'; ctx.fillText('03:00', sx + 24, sy + 43);
+  ctx.font = '400 26px Carlito'; ctx.fillStyle = '#9fb2c2'; ctx.fillText('WIND', sx + 170, sy + 41); ctx.fillStyle = '#e8eef2'; ctx.font = '700 30px Carlito'; ctx.fillText('NW 26 kn', sx + 240, sy + 43);
+  ctx.font = '400 26px Carlito'; ctx.fillStyle = '#9fb2c2'; ctx.fillText('SOG', sx + 430, sy + 41); ctx.fillStyle = '#e8eef2'; ctx.font = '700 30px Carlito'; ctx.fillText('0.8 kn', sx + 485, sy + 43);
+  ctx.fillStyle = '#d81b2a'; ctx.beginPath(); ctx.roundRect(sx + sw - 290, sy + 12, 270, 42, 8); ctx.fill(); ctx.fillStyle = '#fff'; ctx.font = '700 26px Carlito'; ctx.textAlign = 'center'; ctx.fillText('ANCHOR ALARM · DRAG', sx + sw - 155, sy + 42);
+  ctx.textAlign = 'left'; ctx.strokeStyle = '#1b2a44'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(sx + 30, sy + sh - 30); ctx.lineTo(sx + 145, sy + sh - 30); ctx.stroke(); ctx.fillStyle = '#1b2a44'; ctx.font = '700 22px Carlito'; ctx.fillText('25 m', sx + 64, sy + sh - 40);
+  ctx.restore();
+  // pills
+  const pill = (x, y, t, fill = '#fff', ink = '#000') => { ctx.font = '700 28px Carlito'; const w = ctx.measureText(t).width + 34; ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.3)'; ctx.shadowBlur = 12; ctx.fillStyle = fill; ctx.beginPath(); ctx.roundRect(x - w / 2, y - 24, w, 48, 24); ctx.fill(); ctx.restore(); ctx.fillStyle = ink; ctx.textAlign = 'center'; ctx.fillText(t, x, y + 10); };
+  const [ex, ey] = P(150, 58); pill(ex, ey - 26, 'earlier: swinging'); const [dx, dy] = P(205, 108); pill(dx + 120, dy, 'now: dragging', '#d81b2a', '#fff');
+  return c;
+}
+const cubic = (p0, p1, p2, p3, n = 10) => Array.from({ length: n }, (_, k) => { const t = (k + 1) / n, u = 1 - t; return [u * u * u * p0[0] + 3 * u * u * t * p1[0] + 3 * u * t * t * p2[0] + t * t * t * p3[0], u * u * u * p0[1] + 3 * u * u * t * p1[1] + 3 * u * t * t * p2[1] + t * t * t * p3[1]]; });
+
+/* ---------- the after versions for each article: a 3D render (file) and a schematic (spec) per figure ---------- */
+const AFTER = {
+  'bareboat-skipper/anchoring': (() => {
+    const s3 = (x, y) => [(x - 160) * 3, (y - 100) * 3], land1 = [[0, 200], [190, 200], [190, 135], [150, 124], [100, 123], [50, 126], [0, 130]].map(p => s3(...p)), land2 = [[250, 200], [320, 200], [320, 110], [300, 121], [275, 135], [250, 150]].map(p => s3(...p));
+    const sp = (x, y, l) => { const [a, b] = s3(x, y); return { x: a, z: b, label: l }; };
+    const tr = (() => { const m = (x, y) => [(x - 160) * 0.5, (y - 100) * 0.5]; return [m(150, 70), ...cubic(m(150, 70), m(138, 76), m(140, 88), m(152, 90)), ...cubic(m(152, 90), m(166, 92), m(170, 80), m(160, 72)), m(166, 82), m(200, 110), m(236, 138)]; })();
+    const nb = [-15, -10, -5, 5, 10, 15].map(x => ({ x, z: 6.5, hdg: 180, plain: true }));
+    return [
+      { sch: { wind: 180, padPx: 40, title: 'Anchoring · shelter from the forecast wind', land: [land1, land2], spots: [sp(90, 95, 'A'), sp(220, 60, 'B'), sp(220, 150, 'C')], fit: [{ x: -470, z: -260 }, { x: 470, z: 290 }],
+          texts: [{ ...sp(95, 170), text: 'LAND (south)', pill: false, size: 34 }, { ...sp(220, 182), text: 'channel', pill: false, size: 28 }], key: ['Forecast: wind backing south overnight, F5', 'Only A lies under the land when the wind goes south'] } },
+      { profile: { depth: 6, bow: 1, chain: 35, formula: '(6 m + 1 m) × 5 = 35 m', title: 'Anchoring · how much chain (depth drawn deeper to read)', key: ['All-chain rode, the bow roller 1 m above the water', 'A gusty night: scope 5:1'] } },
+      { sch: { wind: 90, padPx: 60, trueScale: true, title: 'Anchoring · swing room', anchors: [{ x: 0, z: 0, label: 'anchor' }], rocks: [{ x: 45, z: 0, label: 'rock' }], circles: [{ x: 0, z: 0, r: 52 }],
+          boats: [{ you: true, x: -46, z: 0, hdg: 90, L: 13, noHeading: true, tag: 'lying to the east wind' }], paths: [{ pts: [[-39.5, 0], [0, 0]], c: 'ink', dash: '8 8', w: 4 }],
+          dims: [{ a: [0, 0], b: [45, 0], text: '45 m', off: -70 }], texts: [{ x: -30, z: -48, text: 'swing 52 m', kind: 'accent' }], key: ['Chain 40 m in 5 m, boat 13 m: she swings 52 m round the anchor', 'Wind E now, going W: the stern will swing past the rock'] } },
+      { sch: { padPx: 80, trueScale: true, minMpp: 0.04, title: 'Day shape · at anchor', boats: [{ x: 0, z: 0, hdg: 240, label: 'Yacht', tag: 'black ball forward', noHeading: true }], circles: [{ x: -2.4, z: 1.4, r: 1.25, fill: '#fff', c: 'ink', dash: '0' }, { x: -2.4, z: 1.4, r: 0.8, fill: 'var(--ink)', c: 'ink', dash: '0' }],
+          anchors: [{ x: -21, z: 12, s: 0.9 }], paths: [{ pts: [[-5.2, 3], [-21, 12]], c: 'ink', dash: '8 8', w: 4 }], fit: [{ x: 6, z: -6 }], key: ['One black ball, forward where it is best seen', 'By day: a vessel at anchor'] } },
+      { sch: { night: true, padPx: 80, trueScale: true, mpp: 0.055, title: 'Lights · at anchor', boats: [{ x: 0, z: 0, hdg: 220, label: 'Yacht', anchorLight: true, noHeading: true, tag: 'one all-round white' }], fit: [{ x: -12, z: -8 }, { x: 12, z: 8 }], key: ['One all-round white light where it is best seen', 'At night: a vessel at anchor, under 50 m'] } },
+      { plotter: true, sch: { wind: 315, padPx: 80, title: 'Anchoring · is she dragging?', boats: [{ you: true, x: 40, z: 21, hdg: 315, noHeading: true, scale: 1.6 }], paths: [{ pts: tr, c: 'red', w: 6 }], anchors: [{ x: -4, z: -10, s: 0.8 }],
+          texts: [{ x: -5, z: -21, text: 'earlier: swinging' }, { x: 26, z: 2, text: 'now: dragging', kind: 'red' }], key: ['Your GPS track over the last hour, 0300, wind NW F6', 'Loops while she swings; a straight line once she drags'] } },
+      { sch: { padPx: 60, trueScale: true, title: 'Mediterranean mooring · stern-to', quays: [{ x1: -24, z1: -8, x2: 24, z2: 0 }], boats: [...nb.filter(b => Math.abs(b.x) > 1), { you: true, x: 0, z: 18, hdg: 180, noHeading: true }],
+          anchors: [{ x: 0, z: 50, s: 0.9, label: 'drop here' }], paths: [{ pts: [[-0.8, 46], [-0.8, 24]], c: 'ink', dash: '8 8', w: 4 }, { pts: [[3.8, 44], [3.8, 14]], c: 'course', dash: '14 10', arrow: true }],
+          dims: [{ a: [0, 0], b: [0, 50], text: '3–4 boat lengths', off: -150 }], fit: [{ x: 0, z: 60 }], texts: [{ x: -18, z: -4, text: 'QUAY', pill: false, size: 30 }, { x: -17, z: 34, text: 'reversing in', kind: 'accent' }], key: ['Drop 3–4 boat lengths off, then reverse to the quay paying out chain', 'The chain holds the bow; stern lines go to the quay'] } },
+      { sch: { wind: 90, padPx: 60, trueScale: true, title: 'Mediterranean mooring · wind on the beam', quays: [{ x1: -24, z1: -8, x2: 24, z2: 0 }], boats: nb, spots: [{ x: 16, z: 42, label: 'B' }],
+          paths: [{ pts: [[15, 38], [1, 8]], c: 'course', dash: '14 10', arrow: true }], texts: [{ x: 0, z: 4, text: 'your berth', kind: 'accent' }, { x: 16, z: 50, text: 'drop upwind' }, { x: -18, z: -4, text: 'QUAY', pill: false, size: 30 }],
+          key: ['Wind on the beam of the berth, F4', 'From B, upwind, the chain holds the bow up to windward'] } },
+      { sch: { padPx: 50, trueScale: true, mpp: 0.034, title: 'Alongside · breast lines and springs', quays: [{ x1: -22, z1: -5, x2: 22, z2: 0 }], boats: [{ you: true, x: 0, z: 3.6, hdg: 90, noHeading: true }],
+          paths: [{ pts: [[5.6, 2.3], [11.5, -0.9]], c: 'line', w: 7 }, { pts: [[-5.6, 2.3], [-11.5, -0.9]], c: 'line', w: 7 }, { pts: [[1.8, 1.9], [-5.5, -0.9]], c: 'line', w: 7 }, { pts: [[-1.8, 1.9], [5.5, -0.9]], c: 'line', w: 7 }],
+          texts: [{ x: 12, z: -7, text: 'bow line' }, { x: -12, z: -7, text: 'stern line' }, { x: 0, z: -7, text: 'springs', kind: 'accent' }, { x: 0, z: -3, text: 'PONTOON', pill: false, size: 26 }], fit: [{ x: -16, z: -8 }, { x: 16, z: 7 }],
+          key: ['Bow and stern lines hold her in to the pontoon', 'The springs stop her surging fore and aft'] } },
+      { sch: { padPx: 70, trueScale: true, minMpp: 0.045, title: 'Mooring buoy · a slip line', boats: [{ you: true, x: 0, z: 6, hdg: 0, noHeading: true }], circles: [{ x: 0, z: -12, r: 1.3, fill: '#f2f1ec', c: 'ink', dash: '0' }],
+          paths: [{ pts: [[-0.35, 0.6], [-0.55, -11]], c: 'line', w: 7 }, { pts: [[0.55, -11], [0.35, 0.6]], c: 'line', w: 7 }], texts: [{ x: 0, z: -15.5, text: 'buoy ring' }, { x: 5.5, z: -6, text: 'your own line' }, { x: -5, z: 3, text: 'same cleat' }], fit: [{ x: -8, z: -17 }, { x: 8, z: 13 }],
+          key: ['Through the ring and back to the same cleat', 'To leave, let one end go and pull the line back aboard'] } },
+    ];
+  })(),
+  'bareboat-skipper/buoyage': (() => {
+    // a harbour entrance with a buoyed channel, coming in from the south
+    const moles = [[[-230, -300], [-60, -300], [-60, -190], [-230, -175]], [[60, -300], [230, -300], [230, -178], [60, -190]]];
+    const chan = hi => ({ padPx: 50, land: moles, marks: [[-60, -120], [-66, -20], [-72, 80]].map(([x, z], i) => ({ x, z, kind: 'lat-port', bearing: false, hi: hi === 'port' && i === 1 })).concat([[60, -120], [66, -20], [72, 80]].map(([x, z], i) => ({ x, z, kind: 'lat-stbd', bearing: false, hi: hi === 'stbd' && i === 1 }))),
+      boats: [{ you: true, x: 0, z: 140, hdg: 0, noHeading: true }], paths: [{ pts: [[0, 115], [0, -170]], c: 'course', dash: '16 12', arrow: true }],
+      texts: [{ x: 0, z: -250, text: 'HARBOUR', pill: false, size: 30 }, hi === 'port' ? { x: -195, z: -20, text: 'leave to port', kind: 'accent' } : { x: 215, z: -20, text: 'leave to starboard', kind: 'accent' }, { x: 120, z: 150, text: 'coming in from sea' }] });
+    // a cardinal: the shoal in the middle, the mark on its safe side, your course beyond the mark
+    const shoal = [[-48, -22], [-12, -40], [34, -30], [46, 6], [20, 36], [-24, 38], [-50, 10]];
+    const card = (kind, dir, title, key) => {
+      const v = { n: [0, -1], e: [1, 0], s: [0, 1], w: [-1, 0] }[dir], t = [-v[1], v[0]], m = [v[0] * 105, v[1] * 105], c = [v[0] * 175, v[1] * 175];
+      const a = [c[0] - t[0] * 190, c[1] - t[1] * 190], b = [c[0] + t[0] * 190, c[1] + t[1] * 190], hdg = (Math.atan2(t[0], -t[1]) / Math.PI * 180 + 360) % 360;
+      return { sch: { padPx: 60, zones: [{ pts: shoal, c: 'red', fill: 'rgba(224,37,27,.08)' }], rocks: [{ x: 0, z: 0 }], marks: [{ x: m[0], z: m[1], kind, bearing: false, hi: true }],
+        boats: [{ you: true, x: a[0] + t[0] * 30, z: a[1] + t[1] * 30, hdg, noHeading: true }], paths: [{ pts: [a.map((q, i) => q + t[i] * 60), b], c: 'course', dash: '16 12', arrow: true }],
+        texts: [{ x: c[0] + v[0] * 50 + t[0] * 110, z: c[1] + v[1] * 50 + t[1] * 110, text: `safe water ${({ n: 'north', e: 'east', s: 'south', w: 'west' })[dir]}`, kind: 'accent' }, { x: -v[0] * 85, z: -v[1] * 85, text: 'shoal', kind: 'red' }],
+        fit: [{ x: -230, z: -230 }, { x: 230, z: 230 }], title, key } };
+    };
+    // a vessel showing all-round lights, seen from above with the lights she shows beside her
+    const work = (title, stack, extra, key) => ({ sch: { padPx: 60, mpp: 0.32, title, boats: [{ x: 0, z: 0, hdg: extra.hdg ?? 270, label: extra.label, stack, stackDx: -140, noHeading: true, scale: 3.2 }], ...extra.sch, key } });
+    const night = (title, other, key) => ({ sch: { night: true, padPx: 70, title, boats: [{ ...other, bearing: false }, { you: true, x: 0, z: 70, hdg: 0, noHeading: true }], paths: [{ pts: [[0, 50], [0, -50]], c: 'ink', dash: '6 10', w: 3 }], fit: [{ x: -80, z: -120 }, { x: 80, z: 100 }], key } });
+    const flash = (n, gap, d = 0.35) => Array.from({ length: n }, (_, i) => [i * gap, d]);
+    return [
+      { sch: { ...chan('port'), title: 'Lateral marks · port hand (IALA A)', key: ['Coming in from sea: red cans to port', 'Going out, or in Region B, the sides swap'] } },
+      { sch: { ...chan('stbd'), title: 'Lateral marks · starboard hand (IALA A)', key: ['Coming in from sea: green cones to starboard', 'The shape tells you when the colour is hard to see'] } },
+      card('card-n', 'n', 'Cardinal marks · north', ['Pass to the north of a north cardinal', 'Cones both up · black over yellow · Q']),
+      card('card-e', 'e', 'Cardinal marks · east', ['Pass to the east of an east cardinal', 'Cones base to base · black, yellow, black · Q(3)']),
+      card('card-s', 's', 'Cardinal marks · south', ['Pass to the south of a south cardinal', 'Cones both down · yellow over black · Q(6)+LFl']),
+      card('card-w', 'w', 'Cardinal marks · west', ['Pass to the west of a west cardinal', 'Cones point to point · yellow, black, yellow · Q(9)']),
+      { rhythm: { T: 15, tick: 5, title: 'Cardinal lights · count like a clock face', rows: [
+          { label: 'North', note: 'Q · continuous', period: 1, flashes: [[0, 0.35]], periodMark: false },
+          { label: 'East', note: 'Q(3) 10s', period: 10, flashes: flash(3, 1) },
+          { label: 'South', note: 'Q(6)+LFl 15s', period: 15, flashes: [...flash(6, 1), [6.2, 2]], hi: true },
+          { label: 'West', note: 'Q(9) 15s', period: 15, flashes: flash(9, 1) }],
+        key: ['South: six quick flashes and one long, every 15 s', 'Three o’clock east, six south, nine west'] } },
+      { sch: { padPx: 60, title: 'Isolated danger mark', marks: [{ x: 0, z: -6, kind: 'iso', bearing: false, hi: true }], circles: [{ x: 0, z: 10, r: 60, c: 'red' }],
+          boats: [{ you: true, x: -110, z: -110, hdg: 90, noHeading: true }], paths: [{ pts: [[-80, -110], [150, -110]], c: 'course', dash: '16 12', arrow: true }, { pts: [[150, 130], [-150, 130]], c: 'course', dash: '16 12', arrow: true }],
+          texts: [{ x: 110, z: 40, text: 'danger under the mark', kind: 'red' }, { x: 0, z: -150, text: 'safe water all round', kind: 'accent' }], fit: [{ x: -170, z: -170 }, { x: 170, z: 160 }],
+          key: ['A small danger with safe water all round it', 'Two black balls · black, red, black · Fl(2)'] } },
+      { sch: { padPx: 50, title: 'Safe water mark · the landfall', land: moles, marks: [{ x: -45, z: 40, kind: 'safe', bearing: false, hi: true }], boats: [{ you: true, x: 10, z: 250, hdg: 0, noHeading: true }],
+          paths: [{ pts: [[10, 225], [10, -150]], c: 'course', dash: '16 12', arrow: true }], texts: [{ x: 0, z: -240, text: 'HARBOUR', pill: false, size: 30 }, { x: -200, z: 120, text: 'safe water all round', kind: 'accent' }],
+          key: ['Safe water all round: the landfall or mid-channel', 'Red and white stripes · red ball · Iso, Oc or LFl 10s'] } },
+      { sch: { padPx: 50, title: 'Special mark · a zone on the chart', land: [[[-300, -300], [300, -300], [300, -180], [-300, -180]]], zones: [{ pts: [[-150, -180], [150, -180], [150, -60], [-150, -60]] }],
+          marks: [{ x: -150, z: -60, kind: 'special', bearing: false, hi: true }, { x: 150, z: -60, kind: 'special', bearing: false }], boats: [{ you: true, x: -170, z: 60, hdg: 90, noHeading: true }],
+          paths: [{ pts: [[-140, 60], [200, 60]], c: 'course', dash: '16 12', arrow: true }], texts: [{ x: 0, z: -120, text: 'swimming zone', kind: 'accent' }, { x: 0, z: -240, text: 'BEACH', pill: false, size: 30 }],
+          key: ['Marks a zone or a feature, not a channel: read the chart', 'Yellow · yellow X · yellow light'] } },
+      { sch: { padPx: 60, title: 'Emergency wreck marking', wrecks: [{ x: 0, z: 0 }], marks: [{ x: -75, z: -50, kind: 'wreck', bearing: false, hi: true }, { x: 75, z: 55, kind: 'wreck', bearing: false }], circles: [{ x: 0, z: 0, r: 120, c: 'red' }],
+          boats: [{ you: true, x: -190, z: 170, hdg: 90, noHeading: true }], paths: [{ pts: [[-160, 170], [200, 170]], c: 'course', dash: '16 12', arrow: true }], texts: [{ x: 0, z: -150, text: 'new wreck: give it a wide berth', kind: 'red' }],
+          fit: [{ x: -200, z: -170 }, { x: 200, z: 230 }], key: ['A wreck too new to be on the chart yet', 'Blue and yellow stripes · yellow cross · Al.Bu/Y'] } },
+      { rhythm: { T: 15, tick: 5, title: 'Light characteristics · the chart describes each light', rows: [
+          { label: 'Fl 5s', note: 'one flash every 5 s', period: 5, flashes: [[0, 0.6]] },
+          { label: 'Fl(3) 15s', note: '49 m high · seen 22 miles', period: 15, flashes: [[0, 0.6], [2, 0.6], [4, 0.6]], hi: true },
+          { label: 'Fl(2) 10s', note: 'two flashes every 10 s', period: 10, flashes: [[0, 0.6], [2, 0.6]] }],
+        key: ['Time a light from the start of one group to the next', 'Fl(3) 15s 49m 22M: three flashes, every 15 s, 49 m up, 22 miles'] } },
+      { sch: { padPx: 50, title: 'Leading lights · steering onto the line', land: [[[-260, -420], [260, -420], [260, -230], [-260, -230]]],
+          circles: [{ x: 0, z: -245, r: 18, fill: '#fff3c4', c: 'ink', dash: '0' }, { x: 0, z: -360, r: 18, fill: '#fff3c4', c: 'ink', dash: '0' }], fit: [{ x: 0, z: 250 }],
+          paths: [{ pts: [[0, -245], [0, 200]], c: 'course', dash: '16 12' }, { pts: [[130, 150], [0, -245]], c: 'ink', dash: '4 10', w: 3 }, { pts: [[130, 150], [0, -360]], c: 'ink', dash: '4 10', w: 3 }, { pts: [[125, 105], [30, 10]], c: 'red', w: 7, arrow: true }],
+          boats: [{ you: true, x: 130, z: 150, hdg: 0, noHeading: true }], texts: [{ x: -100, z: -245, text: 'front, low' }, { x: 100, z: -360, text: 'rear, high' }, { x: -110, z: 100, text: 'the leading line', kind: 'accent' }, { x: 180, z: 20, text: 'steer to port', kind: 'red' }],
+          key: ['Right of the line, the front light shows left of the rear', 'Steer to port until they stand one above the other'] } },
+      night('Lights · power-driven vessel, bow on', { x: 0, z: -70, hdg: 180, power: true, label: 'Power', labelAbove: true, noHeading: true }, ['Masthead white over both sidelights: coming straight at you', 'A sailing yacht under engine shows the same']),
+      night('Lights · sailing vessel, bow on', { x: 0, z: -70, hdg: 180, label: 'Sail', labelAbove: true, noHeading: true }, ['Red and green, no white above them: a sailing vessel', 'She is heading straight at you']),
+      night('Lights · tricolour at the masthead', { x: 0, z: -70, hdg: 180, label: 'Sail, under 20 m', labelAbove: true, noHeading: true }, ['The same arcs in one lantern at the masthead', 'Under 20 m only, and never with the engine on']),
+      night('Lights · from astern', { x: 0, z: -70, hdg: 0, label: 'Any vessel', labelAbove: true, noHeading: true }, ['Only the white sternlight: you are within 67.5° of her stern', 'You are overtaking: keep clear of her']),
+      work('Lights · trawling', ['g', 'w'], { label: 'Trawler', sch: { paths: [{ pts: [[22, -4], [95, -10]], c: 'ink', dash: '8 8', w: 3 }, { pts: [[22, 4], [95, 10]], c: 'ink', dash: '8 8', w: 3 }], zones: [{ pts: [[95, -12], [130, -6], [130, 6], [95, 12]], c: 'ink', fill: 'rgba(0,0,0,.08)', dash: '4 6' }], texts: [{ x: 112, z: -24, text: 'the trawl' }], fit: [{ x: -60, z: -40 }, { x: 140, z: 40 }] } }, ['Green over white, all round: trawling', 'Plus sidelights and sternlight when making way']),
+      work('Lights · fishing, not trawling', ['r', 'w'], { label: 'Fishing', sch: { paths: [{ pts: [[0, 8], [10, 60], [40, 110]], c: 'ink', dash: '8 8', w: 3 }], marks: [], circles: [{ x: 40, z: 112, r: 3, fill: '#ffa800', c: 'ink', dash: '0' }], texts: [{ x: 90, z: 80, text: 'nets or lines out' }], fit: [{ x: -60, z: -40 }, { x: 140, z: 120 }] } }, ['Red over white, all round: fishing with nets or lines', 'Plus sidelights and sternlight when making way']),
+      work('Lights · not under command', ['r', 'r'], { hdg: 200, label: 'Not under command', sch: { paths: [{ pts: [[30, -20], [80, -40]], c: 'ink', w: 4, arrow: true }], texts: [{ x: 95, z: -62, text: 'drifting' }], fit: [{ x: -60, z: -60 }, { x: 120, z: 50 }] } }, ['Red over red, all round: she cannot steer or stop', 'Keep clear of her, whatever you are']),
+      work('Lights · restricted in ability to manoeuvre', ['r', 'w', 'r'], { hdg: 0, label: 'Buoy tender', sch: { marks: [{ x: 42, z: -4, kind: 'lat-port', bearing: false }], texts: [{ x: 100, z: -36, text: 'lifting a buoy' }], fit: [{ x: -60, z: -50 }, { x: 120, z: 50 }] } }, ['Red, white, red, all round: her work limits how she moves', 'Dredging, laying cable, servicing a mark']),
+    ];
+  })(),
+  'bareboat-skipper/colregs': (() => {
+    // positions in metres, north up, you at the origin; rel = bearing relative to your heading
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+    const enc = (you, other, o) => ({ sch: { padPx: 80, wind: o.wind, title: o.title, key: o.key, boats: [{ you: true, x: 0, z: 0, ...you }, { ...at(you.hdg, other.rel, other.d), ...other }], paths: o.paths || [], texts: o.texts || [], fit: [{ x: 0, z: 170 }, ...(o.fit || [])] } });
+    // a vessel shown from above, the shape she hoists drawn beside her, and you
+    const shape = (title, label, tag, key, o = {}) => ({ sch: { padPx: 70, title, key, boats: [{ x: 0, z: 0, hdg: o.hdg ?? 270, label, tag, bearing: false, scale: 3.2, noHeading: o.noHeading ?? false }, { you: true, x: o.yx ?? 0, z: o.yz ?? 260, hdg: o.yhdg ?? 0, noHeading: true }], paths: o.paths || [], zones: o.zones || [], rocks: o.rocks || [], texts: o.texts || [], fit: [{ x: -200, z: -160 }, { x: 200, z: 380 }] } });
+    const turn = (pts) => ({ pts, c: 'course', dash: '16 12', arrow: true });
+    return [
+      enc({ hdg: 0 }, { rel: 50, d: 600, hdg: 270, label: 'Ship', scale: 3.6 }, { title: 'Risk of collision · a steady bearing', key: ['Her compass bearing stays the same while the range closes', 'In doubt, assume risk: act early and boldly'],
+        texts: [{ ...at(0, 50, 300), text: 'bearing 050° · steady', kind: 'red' }], paths: [{ pts: [[0, 0], [at(0, 50, 560).x, at(0, 50, 560).z]], c: 'red', dash: '10 10', w: 4 }] }),
+      enc({ hdg: 45, sail: true }, { rel: 255, d: 260, hdg: 315 }, { wind: 0, title: 'Sail meets sail · opposite tacks', key: ['You: wind on your port side, port tack', 'Port tack keeps clear of starboard tack'],
+        texts: [{ x: 190, z: 20, text: 'port tack: keep clear', kind: 'red' }, { x: -260, z: -40, text: 'starboard tack' }], paths: [turn([[30, -30], [80, 40]])] }),
+      enc({ hdg: 60, sail: true }, { rel: -80, d: 240, hdg: 60 }, { wind: 150, title: 'Sail meets sail · same tack', key: ['Both on the same tack, the wind from the south-east', 'The windward boat keeps clear of the leeward one'],
+        texts: [{ x: 190, z: 40, text: 'windward: keep clear', kind: 'red' }, { ...at(60, -80, 240), z: at(60, -80, 240).z - 90, text: 'leeward' }] }),
+      enc({ hdg: 0 }, { rel: 5, d: 320, hdg: 0, label: 'Other' }, { title: 'Overtaking · you keep clear', key: ['Coming up from more than 22.5° abaft her beam you are overtaking', 'Keep clear until you are past and clear, whatever she is'],
+        paths: [turn([[0, -30], [60, -130], [75, -260]])], texts: [{ x: 190, z: -150, text: 'pass clear', kind: 'accent' }] }),
+      enc({ hdg: 0 }, { rel: 0, d: 400, hdg: 180, label: 'Other' }, { title: 'Head-on · both turn to starboard', key: ['Two power-driven vessels meeting end-on', 'Each alters to starboard and passes port to port'],
+        paths: [turn([[0, -40], [50, -140], [60, -220]]), turn([[0, -360], [-50, -260], [-60, -180]])] }),
+      enc({ hdg: 0 }, { rel: 50, d: 380, hdg: 270, label: 'Other' }, { title: 'Crossing · she is on your starboard side', key: ['The one with the other on her starboard side gives way', 'Alter to starboard early and go astern of her'],
+        paths: [turn([[0, -40], [60, -130], [110, -150]])], texts: [{ x: -110, z: -60, text: 'you give way', kind: 'red' }] }),
+      enc({ hdg: 0 }, { rel: -50, d: 360, hdg: 80, label: 'Other' }, { title: 'Crossing · she is on your port side', key: ['She has you on her starboard side: she gives way', 'Hold your course and speed; act only if she does not'],
+        texts: [{ x: 110, z: -40, text: 'you stand on', kind: 'accent' }] }),
+      shape('Day shapes · not under command', 'Not under command', 'two balls', ['She cannot steer or stop: two black balls', 'Everyone keeps clear of her, power and sail alike'],
+        { noHeading: true, paths: [{ pts: [[60, -20], [150, -60]], c: 'ink', w: 4, arrow: true }], texts: [{ x: 160, z: -100, text: 'drifting' }] }),
+      shape('Day shapes · restricted in ability to manoeuvre', 'Buoy tender', 'ball, diamond, ball', ['Her work limits how she moves: ball, diamond, ball', 'Keep clear; pass on the side she shows as clear'], { texts: [{ x: -170, z: -60, text: 'lifting a buoy' }] }),
+      shape('Day shapes · fishing', 'Fishing', 'two cones, points together', ['Engaged in fishing: two cones, points together', 'You keep clear of her, under sail or power'],
+        { paths: [{ pts: [[90, 0], [200, -40]], c: 'ink', dash: '8 8', w: 3 }, { pts: [[90, 0], [200, 40]], c: 'ink', dash: '8 8', w: 3 }], texts: [{ x: 200, z: -80, text: 'the trawl' }] }),
+      shape('Day shapes · constrained by her draught', 'Ship', 'cylinder', ['Bound to the deep water by her draught: a cylinder', 'Do not impede her: keep out of the channel'],
+        { zones: [{ pts: [[-220, -50], [220, -50], [220, 50], [-220, 50]], c: 'ink', fill: 'rgba(0,118,190,.08)' }], texts: [{ x: 0, z: -90, text: 'deep-water channel', kind: 'accent' }] }),
+      shape('Day shapes · motor-sailing', 'Yacht', 'cone, point down', ['Sails up and the engine running: a cone, point down', 'She is a power-driven vessel under the rules'], { hdg: 300 }),
+      shape('Day shapes · aground', 'Aground', 'three balls', ['Three balls in a vertical line: she is aground', 'And shallow water lies round her: keep well off'],
+        { noHeading: true, zones: [{ pts: [[-90, -60], [80, -80], [120, 20], [10, 80], [-110, 40]], c: 'red', fill: 'rgba(224,37,27,.08)' }], rocks: [{ x: 60, z: -55 }] }),
+      { sch: { padPx: 60, title: 'Traffic separation scheme · crossing', key: ['Cross a lane on a heading at right angles to the traffic flow', 'Keep clear of the lanes if you can; do not impede ships in them'],
+        zones: [{ pts: [[-900, -260], [900, -260], [900, -120], [-900, -120]], c: 'ink', fill: 'rgba(0,0,0,.03)' }, { pts: [[-900, -120], [900, -120], [900, -40], [-900, -40]], c: 'red', fill: 'rgba(224,37,27,.10)' }, { pts: [[-900, -40], [900, -40], [900, 100], [-900, 100]], c: 'ink', fill: 'rgba(0,0,0,.03)' }],
+        boats: [{ you: true, x: 0, z: 200, hdg: 0, noHeading: true }, { x: -500, z: -190, hdg: 270, label: 'Ship', labelAbove: true, bearing: false, noHeading: true }, { x: 520, z: 30, hdg: 90, label: 'Ship', bearing: false, noHeading: true }],
+        paths: [turn([[0, 160], [0, -320]]), { pts: [[-300, -190], [-700, -190]], c: 'ink', w: 4, arrow: true }, { pts: [[300, 30], [700, 30]], c: 'ink', w: 4, arrow: true }],
+        texts: [{ x: 420, z: -190, text: '← westbound lane', pill: false }, { x: 420, z: -80, text: 'separation zone', pill: false }, { x: -420, z: 30, text: 'eastbound lane →', pill: false }, { x: 120, z: -280, text: 'cross at right angles', kind: 'accent' }] } },
+      { sch: { night: true, padPx: 80, title: 'Sound and light signals in sight · doubt', key: ['Five or more short, rapid blasts: I doubt you are taking enough action', 'At night the same signal by five quick flashes'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, noHeading: true }, { x: 300, z: -300, hdg: 225, label: 'Ship', power: true, bearing: false, noHeading: true }],
+        texts: [{ x: 300, z: -440, text: '5 rapid flashes', kind: 'red' }, { x: 0, z: 260, text: '· · · · ·  five short blasts' }], fit: [{ x: -200, z: -500 }, { x: 450, z: 300 }] } },
+      enc({ hdg: 0 }, { rel: 20, d: 700, hdg: 200, label: 'Radar target' }, { title: 'Restricted visibility · a target ahead on radar', key: ['A target forward of your beam, closing: avoid turning to port', 'Turn boldly to starboard, or slow right down; sound one long blast every 2 min'],
+        paths: [turn([[0, -40], [90, -150], [200, -170]])], texts: [{ x: -170, z: -250, text: 'fog', pill: false, size: 40 }] }),
+    ];
+  })(),
+  'bareboat-skipper/weather': (() => {
+    // weather maps have no metre scale: noScale drops the scale bar; units are arbitrary
+    const iso = (cx, cz, radii, values, o = {}) => ({ circles: radii.map(r => ({ x: cx, z: cz, r, c: 'ink', dash: '0' })), texts: values.map((v, i) => ({ x: cx, z: cz - radii[i], text: v + ' hPa', size: 20 })).concat([{ x: cx, z: cz, text: o.centre, pill: false, size: 64 }]) });
+    const arr = (a, b, c = 'red', w = 6) => ({ pts: [a, b], c, w, arrow: true });
+    const merge = (...xs) => xs.reduce((m, x) => { for (const k in x) m[k] = Array.isArray(x[k]) ? [...(m[k] || []), ...x[k]] : x[k]; return m; }, {});
+    const map = (title, key, ...parts) => ({ noScale: true, sch: merge({ padPx: 50, title, key }, ...parts) });
+    const you = (x, z, hdg = 0, extra = {}) => ({ boats: [{ you: true, x, z, hdg, noHeading: true, ...extra }] });
+    const lowArrows = (r) => ({ paths: [arr([r, 30], [r - 30, -80]), arr([-30, -r], [-130, -r + 30]), arr([-r, -30], [-r + 30, 80]), arr([30, r], [130, r - 30])] });
+    const highArrows = (r) => ({ paths: [arr([r, -30], [r + 30, 80]), arr([30, -r], [-80, -r - 30]), arr([-r, 30], [-r - 30, -80]), arr([-30, r], [80, r + 30])] });
+    return [
+      map('Pressure · a low (northern hemisphere)', ['Wind goes anticlockwise round a low, angled in towards it', 'Isobars close together: strong wind'], iso(0, 0, [90, 160, 230], ['1004', '1000', '996'].reverse(), { centre: 'L' }), lowArrows(200), you(270, 150), { fit: [{ x: -260, z: -260 }, { x: 320, z: 260 }] }),
+      map('Pressure · a high', ['Wind goes clockwise round a high, angled out of it', 'Isobars far apart: light wind'], iso(0, 0, [130, 260, 390], ['1028', '1024', '1020'], { centre: 'H' }), highArrows(320), you(470, 180), { fit: [{ x: -420, z: -420 }, { x: 520, z: 420 }] }),
+      map("Buys Ballot's law", ['Stand with your back to the wind: the low is on your left, a little ahead', 'NE wind: the low lies to the south-east'],
+        { wind: 45, boats: [{ you: true, x: 0, z: 0, hdg: 225, noHeading: true, tag: 'back to the wind' }], paths: [{ pts: [[20, 20], [230, 230]], c: 'ink', dash: '10 10', w: 4, arrow: true }],
+          texts: [{ x: 270, z: 270, text: 'L', pill: false, size: 72 }, { x: 260, z: 180, text: 'the low: SE', kind: 'red' }], fit: [{ x: -200, z: -200 }, { x: 320, z: 320 }] }),
+      map('A depression passing to the north', ['As the low passes north of you, the wind veers', 'South-west ahead of it, north-west behind the cold front'],
+        iso(0, -170, [80, 150], ['1004', '1008'], { centre: 'L' }), { paths: [{ pts: [[-320, -170], [320, -170]], c: 'ink', dash: '14 10', w: 4, arrow: true }, arr([-170, 370], [-40, 270]), arr([-170, 130], [-40, 230], 'red')],
+          texts: [{ x: 300, z: -230, text: 'track of the low', pill: false, size: 22 }, { x: -250, z: 400, text: 'SW now', kind: 'red' }, { x: -250, z: 100, text: 'NW after it passes', kind: 'red' }] }, you(0, 250), { fit: [{ x: -340, z: -340 }, { x: 340, z: 420 }] }),
+      { sch: { padPx: 80, wind: 0, title: 'Felt wind · running', key: ['True wind 20 kn from astern, boat speed 7 kn', 'You feel 20 − 7 = 13 kn: it seems lighter than it is'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 180, sail: true, noHeading: true }], paths: [arr([-120, -260], [-120, -40]), arr([120, -170], [120, -40], 'course'), arr([0, 50], [0, 200], 'ink', 4)],
+        texts: [{ x: -120, z: -300, text: 'true 20 kn', kind: 'red' }, { x: 120, z: -210, text: 'felt 13 kn', kind: 'accent' }, { x: 0, z: 240, text: 'boat 7 kn' }], fit: [{ x: -250, z: -320 }, { x: 250, z: 260 }] } },
+      { sch: { padPx: 80, wind: 0, title: 'Felt wind · close-hauled', key: ['True wind 20 kn, boat speed 6 kn into it', 'You feel about 25 kn, from further ahead: reef for the felt wind'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 45, sail: true, noHeading: true }], paths: [arr([-60, -270], [-60, -50]), arr([10, -260], [5, -45], 'course'), arr([40, -40], [140, -140], 'ink', 4)],
+        texts: [{ x: -170, z: -300, text: 'true 20 kn', kind: 'red' }, { x: 90, z: -300, text: 'felt 25 kn', kind: 'accent' }, { x: 200, z: -150, text: 'boat 6 kn' }], fit: [{ x: -260, z: -330 }, { x: 260, z: 200 }] } },
+      map('Navtex · a gale warning', ['Times are UTC: 09:00 UTC is 12:00 Greek summer time', 'Imminent: within 6 hours, so by 18:00 local'],
+        { land: [[[-420, -300], [420, -300], [420, -230], [-420, -200]]], zones: [{ pts: [[-420, -190], [420, -220], [420, 120], [-420, 120]], c: 'red', fill: 'rgba(224,37,27,.07)' }],
+          paths: [arr([-160, -180], [-160, 40], 'red', 9), arr([160, -180], [160, 40], 'red', 9)], texts: [{ x: 0, z: -260, text: 'Northern Aegean', pill: false, size: 26 }, { x: 0, z: -60, text: 'N 8 · imminent', kind: 'red', size: 30 }, { x: 0, z: 70, text: 'Southern Aegean', pill: false, size: 26 }, { x: 0, z: 210, text: '12:00 local → gale by 18:00', kind: 'accent' }] },
+        you(260, 210), { fit: [{ x: -420, z: -300 }, { x: 420, z: 300 }] }),
+      map('Sea breeze', ['Land heats in the sun, air rises; cooler sea air flows in', 'From midday to evening, onshore, often 15 kn or more'],
+        { land: [[[-420, -320], [420, -320], [420, -90], [200, -70], [0, -100], [-200, -60], [-420, -90]]], paths: [arr([-200, 220], [-200, -40]), arr([0, 240], [0, -60]), arr([200, 220], [200, -30])],
+          texts: [{ x: 0, z: -230, text: 'LAND · hot', kind: 'red', size: 30 }, { x: 0, z: 300, text: 'SEA · cool', kind: 'accent', size: 30 }, { x: 330, z: 120, text: 'wind onshore' }], fit: [{ x: -420, z: -320 }, { x: 420, z: 330 }] }),
+      (() => { const c = ([x, y]) => [(x - 160) * 3, (y - 100) * 3];
+        return map('Funnelling between islands', ['Wind squeezed between high islands speeds up', 'Forecast NE 5–6: at A expect 7 and steep seas'],
+          { wind: 20, land: [[[0, 0], [120, 0], [128, 60], [120, 130], [90, 200], [0, 200]].map(c), [[205, 0], [320, 0], [320, 200], [235, 200], [215, 140], [200, 70]].map(c)],
+            spots: [{ x: 9, z: 0, label: 'A' }], paths: [arr([60, -330], [20, -90]), arr([150, -330], [45, -90]), arr([20, 90], [-30, 300], 'red', 10)],
+            texts: [{ x: -330, z: 0, text: 'EVIA', pill: false, size: 34 }, { x: 330, z: 0, text: 'ANDROS', pill: false, size: 34 }, { x: 10, z: 110, text: 'F7 · steep seas', kind: 'red' }], fit: [{ x: -480, z: -320 }, { x: 480, z: 320 }] }); })(),
+      map('The meltemi (Aegean, July)', ['High over the Balkans, heat low over Turkey', 'Steady N wind, F5–7, strongest in the afternoon'],
+        iso(-330, -260, [90, 170], ['1016', '1012'], { centre: 'H' }), iso(360, 120, [80, 150], ['1004', '1008'], { centre: 'L' }), { paths: [arr([0, -230], [0, -20], 'red', 10), arr([-120, -200], [-120, 10], 'red', 7), arr([120, -200], [120, 10], 'red', 7)],
+          texts: [{ x: 0, z: 60, text: 'meltemi N 6–7', kind: 'red', size: 30 }] }, you(140, 190), { fit: [{ x: -440, z: -430 }, { x: 520, z: 290 }] }),
+      { sch: { padPx: 70, wind: 270, title: 'A squall line coming', key: ['Reef hard or drop the sails before it arrives; close the hatches', 'Lightning: crew below, clear of the mast · waterspout: motor clear of its bearing'],
+        zones: [{ pts: [[-420, -260], [-170, -260], [-120, 0], [-170, 260], [-420, 260]], c: 'red', fill: 'rgba(40,50,70,.18)' }], paths: [arr([-150, 0], [-30, 0], 'red', 10)],
+        texts: [{ x: -300, z: -40, text: 'squall', pill: false, size: 34 }, { x: -300, z: 20, text: 'rain, gusts 40 kn', pill: false, size: 24 }, { x: -90, z: -60, text: '40 kn', kind: 'red' }],
+        boats: [{ you: true, x: 150, z: 0, hdg: 0, noHeading: true, tag: 'sails down, engine on' }], fit: [{ x: -420, z: -260 }, { x: 320, z: 260 }] } },
+    ];
+  })(),
+  'bareboat-skipper/navigation': (() => {
+    const arr = (a, b, c = 'red', w = 6) => ({ pts: [a, b], c, w, arrow: true });
+    const line = (a, b, c = 'ink', w = 4, dash) => ({ pts: [a, b], c, w, dash });
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const snd = (x, z, d) => t(x, z, d, { pill: false, size: 30 });
+    const land = (pts) => ({ land: [pts] });
+    const ray = (x, z, brg, d) => [x + d * Math.sin(brg * Math.PI / 180), z - d * Math.cos(brg * Math.PI / 180)];
+    // rule of twelfths: the tide curve from LW to HW with its twelfths as steps, 10:00 marked
+    const twelfths = () => { const W = 1280, H = 800, x0 = 150, x1 = 1180, y0 = 560, y1 = 120, lw = 0.4, hw = 2.2, X = h => x0 + (x1 - x0) * h / 6, Y = m => y0 - (y0 - y1) * (m - 0) / 2.4;
+      let p = '', acc = 0; const steps = [1, 2, 3, 3, 2, 1]; let sx = X(0), sy = Y(lw);
+      steps.forEach((k, i) => { acc += k; const ny = Y(lw + 1.8 * acc / 12); p += `<path d="M${sx} ${sy} H${X(i + 1)} V${ny}" fill="none" stroke="#e0b400" stroke-width="5"/>`; p += `<text x="${(sx + X(i + 1)) / 2}" y="${sy + 34}" font-size="26" font-weight="700" fill="var(--muted)" text-anchor="middle">${k}/12</text>`; sx = X(i + 1); sy = ny; });
+      const curve = Array.from({ length: 61 }, (_, i) => { const h = i / 10; return `${i ? 'L' : 'M'}${X(h).toFixed(1)} ${Y(lw + 1.8 * (1 - Math.cos(Math.PI * h / 6)) / 2).toFixed(1)}`; }).join(' ');
+      let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" font-family="Carlito, Arial, sans-serif"><rect width="${W}" height="${H}" fill="var(--bg)"/>`;
+      for (let m = 0; m <= 2.4; m += 0.4) s += `<line x1="${x0}" y1="${Y(m)}" x2="${x1}" y2="${Y(m)}" stroke="var(--line)" stroke-width="2"/><text x="${x0 - 14}" y="${Y(m) + 9}" font-size="24" fill="var(--muted)" text-anchor="end">${m.toFixed(1)} m</text>`;
+      for (let h = 0; h <= 6; h++) s += `<line x1="${X(h)}" y1="${y1}" x2="${X(h)}" y2="${y0}" stroke="var(--line)" stroke-width="2"/><text x="${X(h)}" y="${y0 + 72}" font-size="26" font-weight="700" fill="var(--ink)" text-anchor="middle">${String(8 + h).padStart(2, '0')}:00</text>`;
+      s += p + `<path d="${curve}" fill="none" stroke="var(--ink)" stroke-width="5"/>`;
+      s += `<line x1="${X(2)}" y1="${y0}" x2="${X(2)}" y2="${Y(0.85)}" stroke="#e8231a" stroke-width="5" stroke-dasharray="12 8"/><circle cx="${X(2)}" cy="${Y(0.85)}" r="12" fill="#e8231a"/>`;
+      s += sPill(X(2) + 160, Y(0.85) - 40, '10:00 · 0.85 m', 'red', 30) + sPill(X(0) + 80, Y(lw) - 46, 'LW 0.4 m', 'light', 26) + sPill(X(6) - 70, Y(hw) - 46, 'HW 2.2 m', 'light', 26);
+      const keyY = 690; s += `<rect x="0" y="${keyY - 40}" width="${W}" height="${H - keyY + 40}" fill="var(--band)"/>` + stxt(30, keyY, 'Rule of twelfths', { s: 30, f: 'var(--ink)', a: 'start' });
+      s += stxt(30, keyY + 40, '· Range 1.8 m: one twelfth is 0.15 m · in the hours after LW the tide rises 1, 2, 3, 3, 2, 1 twelfths', { s: 26, w: 400, f: 'var(--ink)', a: 'start' });
+      s += stxt(30, keyY + 80, '· 10:00 is LW + 2 h: 3 twelfths = 0.45 m · height of tide 0.4 + 0.45 = 0.85 m', { s: 26, w: 400, f: 'var(--ink)', a: 'start' });
+      return s + '</svg>'; };
+    return [
+      { noScale: true, sch: { padPx: 60, title: 'Latitude · read it off the side of the chart', key: ['The parallels are 10′ apart: the boat is three-quarters of the way up', "37°40′ + 7.5′ = 37°47.5′ N · one minute of latitude is one nautical mile"],
+        paths: [line([-420, -300], [420, -300]), line([-420, 300], [420, 300])], dims: [{ a: [-330, -300], b: [-330, -150], text: "2.5′" }, { a: [-330, -150], b: [-330, 300], text: "7.5′" }],
+        boats: [{ you: true, x: 120, z: -150, hdg: 90, noHeading: true }], texts: [t(-300, -330, "37°50′ N", { pill: false, size: 30 }), t(-300, 340, "37°40′ N", { pill: false, size: 30 }), t(280, -150, "37°47.5′ N", { kind: 'accent' })], fit: [{ x: -420, z: -360 }, { x: 420, z: 360 }] } },
+      { sch: { padPx: 60, title: 'Depths and symbols · a drying rock', key: ['An underlined sounding is a drying height: 1.5 m above chart datum', 'Height of tide 0.6 m now: the rock shows 1.5 − 0.6 = 0.9 m above the water'],
+        ...land([[-420, -320], [-100, -320], [-110, -220], [-230, -160], [-420, -140]]), rocks: [{ x: 30, z: -10 }], zones: [{ pts: [[-30, -60], [90, -70], [100, 40], [-40, 50]], c: 'red', fill: 'rgba(224,37,27,.08)' }],
+        texts: [snd(30, 80, '1̲.̲5̲'), snd(-180, 30, '6'), snd(250, 200, '9'), snd(-60, 250, '12'), t(30, -110, 'rock · shows 0.9 m now', { kind: 'red' })], boats: [{ you: true, x: 300, z: -170, hdg: 270, noHeading: true }], fit: [{ x: -420, z: -320 }, { x: 420, z: 320 }] } },
+      { noScale: true, sch: { padPx: 60, title: 'Compass · true, magnetic, compass', key: ['120°T − 3° east variation = 117°M', '117°M + 2° west deviation = 119°C: steer 119 on the compass'],
+        boats: [{ you: true, x: -260, z: 150, hdg: 120, noHeading: true }], paths: [line([-260, 150], ray(-260, 150, 117, 620), 'ink', 4, '14 10'), line([-260, 150], ray(-260, 150, 120, 640), 'red', 5), line([-260, 150], ray(-260, 150, 119, 660), 'course', 5)],
+        texts: [t(...ray(-260, 150, 120, 700), '120°T', { kind: 'red' }), t(ray(-260, 150, 117, 660)[0], ray(-260, 150, 117, 660)[1] - 60, '117°M'), t(ray(-260, 150, 119, 740)[0], ray(-260, 150, 119, 740)[1] + 60, '119°C · steer', { kind: 'accent' })].map(x => Array.isArray(x.x) ? { ...x, x: x.x[0], z: x.x[1] } : x),
+        fit: [{ x: -340, z: -60 }, { x: 460, z: 560 }] } },
+      { noScale: true, sch: { padPx: 50, title: 'Position fixing · three bearings', key: ['Plot three bearings of charted objects well spread round you', 'Small triangle: take the corner nearest danger · large: take the bearings again'],
+        ...land([[-460, -360], [460, -360], [460, -260], [-460, -260]]), paths: [line([-380, -260], [30, 300]), line([0, -260], [40, 330]), line([400, -260], [10, 315])],
+        zones: [{ pts: [[22, 292], [36, 296], [25, 318]], c: 'red', fill: 'rgba(224,37,27,.25)', dash: '0' }],
+        texts: [t(-380, -220, 'lighthouse'), t(0, -220, 'tower'), t(400, -220, 'headland'), t(160, 330, 'cocked hat', { kind: 'red' })], fit: [{ x: -460, z: -360 }, { x: 460, z: 380 }] } },
+      { noScale: true, sch: { padPx: 60, title: 'Dead reckoning and estimated position', key: ['10:00–11:00: course 090°T, log 6.0 M → DR', 'Tide 180°T 1.5 kn for the hour → EP, where you really are'],
+        boats: [{ you: true, x: -380, z: -60, hdg: 90, noHeading: true }], paths: [arr([-340, -60], [300, -60], 'ink', 5), arr([330, -60], [330, 120], 'course', 5), line([-340, -60], [320, 120], 'red', 4, '12 10')],
+        spots: [{ x: 330, z: -60, label: 'DR' }, { x: 330, z: 150, label: 'EP' }], texts: [t(-20, -110, '6 M by log'), t(450, 45, 'tide 1.5 M', { kind: 'accent' }), t(-20, 90, 'ground track', { kind: 'red' })], fit: [{ x: -440, z: -200 }, { x: 520, z: 220 }] } },
+      { sch: { padPx: 70, wind: 0, title: 'Leeway · the wind pushes you sideways', key: ['Close-hauled on port tack, heading 050°T, she slips 5° to leeward', 'Water track 055°T: lay the course you will actually make'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 50, sail: true, noHeading: true }], paths: [line([0, 0], ray(0, 0, 50, 300), 'ink', 4, '14 10'), arr([0, 0], ray(0, 0, 55, 320), 'course', 5)],
+        texts: [t(...ray(0, 0, 47, 360).map((v, i) => v + (i ? -30 : 0)), 'heading 050°'), t(...ray(0, 0, 58, 380), 'water track 055°', { kind: 'accent' })].map(o => o), fit: [{ x: -120, z: -330 }, { x: 380, z: 120 }] } },
+      { noScale: true, sch: { padPx: 60, title: 'Tides · depth over a shoal', key: ['Charted 1.5 m + height of tide 1.2 m = 2.7 m of water', 'Draft 1.9 m: 0.8 m under the keel at 14:00 · less if the tide falls'],
+        paths: [line([-380, 240], [0, 70], 'course', 5, '14 10'), arr([0, 70], [330, -110], 'course', 5)], zones: [{ pts: [[-60, 20], [80, 10], [90, 120], [-70, 130]], c: 'red', fill: 'rgba(224,37,27,.08)' }],
+        texts: [snd(-280, -150, '8'), snd(-120, -40, '5'), snd(10, 120, '1.5'), snd(-40, 260, '4'), snd(250, 250, '7'), snd(-230, 330, '12'), t(260, 40, '1.5 + 1.2 = 2.7 m', { kind: 'red' })],
+        boats: [{ you: true, x: -380, z: 240, hdg: 67, noHeading: true }], fit: [{ x: -440, z: -220 }, { x: 420, z: 360 }] } },
+      { svg: twelfths() },
+      { sch: { padPx: 60, title: 'Leading marks · keep them in line', key: ['Front mark low, rear mark high: in line, you are on the safe track', 'Front left of the rear: you are right of the line, steer to port to get back'],
+        ...land([[-460, -380], [460, -380], [460, -220], [70, -220], [70, -40], [-70, -40], [-70, -220], [-460, -220]]), spots: [{ x: 0, z: -330, label: 'R' }, { x: 0, z: -150, label: 'F' }],
+        paths: [line([0, -330], [0, 320], 'course', 4, '14 10')], boats: [{ you: true, x: 0, z: 260, hdg: 0, noHeading: true }], texts: [t(130, -330, 'rear, high'), t(130, -150, 'front, low'), t(140, 120, 'keep in line', { kind: 'accent' })], fit: [{ x: -460, z: -380 }, { x: 460, z: 340 }] } },
+      { noScale: true, sch: { padPx: 50, title: 'Clearing line · church bearing less than 060°T', key: ['The church bears 060°T from the outer edge of the reef', 'Bearing less than 060°: you are south of the line and clear of the reef'],
+        ...land([[-460, -380], [460, -380], [460, -250], [200, -270], [0, -240], [-200, -260], [-460, -240]]), zones: [{ pts: [[-240, -170], [-120, -190], [-90, -110], [-200, -80]], c: 'red', fill: 'rgba(224,37,27,.12)' }], rocks: [{ x: -170, z: -140 }],
+        paths: [line([300, -300], ray(300, -300, 240, 780), 'red', 4, '14 10'), arr([-440, 260], [400, 260], 'course', 5)], texts: [t(300, -340, 'church', { pill: false, size: 30 }), t(-330, -140, 'reef · dries 0.6', { kind: 'red' }), t(160, 40, 'clearing line 060°T', { kind: 'red' }), t(0, 310, 'church < 060°: safe', { kind: 'accent' })],
+        boats: [{ you: true, x: -380, z: 260, hdg: 90, noHeading: true }], fit: [{ x: -460, z: -380 }, { x: 460, z: 360 }] } },
+    ];
+  })(),
+  'bareboat-skipper/ropework': (() => {
+    const line = (pts, c = 'line', w = 9, dash) => ({ pts, c, w, dash });
+    const arr = (a, b, c = 'red', w = 6) => ({ pts: [a, b], c, w, arrow: true });
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const loop = (cx, cz, r, a0, a1, n = 24) => Array.from({ length: n + 1 }, (_, i) => { const a = (a0 + (a1 - a0) * i / n) * Math.PI / 180; return [cx + r * Math.cos(a), cz + r * Math.sin(a)]; });
+    const ring = (x, z, r, c = 'ink') => ({ x, z, r, c, dash: '0' });
+    return [
+      { noScale: true, sch: { padPx: 70, title: 'An eye splice on a thimble', key: ['The strands tucked back into the rope: about 90% of its strength', 'A metal thimble in the eye takes the chafe from the shackle'],
+        circles: [ring(-260, 0, 40)], paths: [line(loop(-170, 0, 70, 0, 360), 'ink', 6), line([[-100, -10], [60, -18], [420, -18]]), line([[-100, 10], [60, 18], [420, 18]]), line([[60, -18], [60, 18]], 'ink', 4, '6 6')],
+        texts: [t(-260, -90, 'shackle'), t(-170, 110, 'thimble'), t(0, 90, 'tucks', { pill: false, size: 26 }), t(300, -80, 'eye splice', { kind: 'accent' })], fit: [{ x: -320, z: -160 }, { x: 440, z: 160 }] } },
+      { noScale: true, sch: { padPx: 70, title: 'Round turn and two half hitches', key: ['Two full turns round the ring take the load and the chafe', 'Two half hitches round the standing part hold it; you can untie it under load'],
+        circles: [ring(-300, 0, 50)], paths: [line([[420, 0], [-240, 0]]), line(loop(-300, 0, 70, 0, 340)), line(loop(-300, 0, 84, 340, 700)), line([[-216, 0], [-60, 40], [20, 40]]), line(loop(40, 10, 40, 180, 520)), line(loop(140, 10, 40, 180, 520)), line([[180, 30], [260, 90]])],
+        texts: [t(-300, -140, 'round turn', { kind: 'accent' }), t(90, -80, 'two half hitches', { kind: 'accent' }), t(360, -50, 'standing part'), t(290, 130, 'end')], fit: [{ x: -400, z: -180 }, { x: 440, z: 180 }] } },
+      { noScale: true, sch: { padPx: 70, title: 'Clove hitch on a rail', key: ['Two turns round the rail, the second crossing over the first', 'The end tucks under the crossing; quick, but it can slip: back it up'],
+        paths: [line([[-420, 0], [420, 0]], 'ink', 28), line([[-60, -260], [-60, -40], [-60, 40]]), line([[-60, 40], [20, -40]]), line([[20, -40], [60, 40]]), line([[60, 40], [60, 260]])],
+        texts: [t(-60, -300, 'standing part'), t(60, 300, 'end'), t(200, -90, 'crossing on top', { kind: 'accent' }), t(-300, -50, 'rail', { pill: false, size: 28 })], fit: [{ x: -420, z: -330 }, { x: 420, z: 330 }] } },
+      { noScale: true, sch: { padPx: 70, title: 'Sheet bend · two different lines', key: ['A bight in the thick line, the thin line through it, round behind and under itself', 'Both ends on the same side; double it if the lines are very different'],
+        paths: [line([[-420, -60], [80, -60]], 'ink', 16), line(loop(80, 0, 60, -90, 90), 'ink', 16), line([[80, 60], [-260, 60]], 'ink', 16), line([[420, 0], [140, 0], [40, -100], [-20, -100], [-20, 100], [40, 100], [40, 0], [-160, 0]], 'red', 6)],
+        texts: [t(-330, -110, 'thick line'), t(330, -50, 'thin line', { kind: 'red' }), t(-200, 130, 'ends together', { kind: 'accent' })], fit: [{ x: -420, z: -180 }, { x: 440, z: 180 }] } },
+      { noScale: true, sch: { padPx: 70, title: 'Cleat hitch', key: ['A full turn round the base from the far horn, then figures of eight', 'Finish with one locking hitch: no more, or it jams'],
+        zones: [{ pts: [[-180, -40], [180, -40], [180, 40], [-180, 40]], c: 'ink', fill: 'rgba(0,0,0,.08)', dash: '0' }], paths: [line([[-420, -200], [-200, -60], [-120, -60]]), line(loop(0, 0, 130, 200, 560)), line([[-130, 50], [130, -50]]), line([[-130, -50], [130, 50]]), line([[130, 50], [240, 160], [380, 200]])],
+        texts: [t(-380, -240, 'load', { kind: 'red' }), t(0, 110, 'cleat'), t(260, 230, 'locking hitch', { kind: 'accent' })], fit: [{ x: -420, z: -280 }, { x: 420, z: 260 }] } },
+      { noScale: true, sch: { padPx: 70, title: 'Slip line · both ends on board', key: ['From the cleat, round the bollard and back to the same cleat', 'To leave, let one end go and pull the line back aboard'],
+        zones: [{ pts: [[-500, -320], [500, -320], [500, -180], [-500, -180]], c: 'ink', fill: '#d8c9a3', dash: '0' }], circles: [ring(0, -240, 16)],
+        paths: [line([[-30, 120], [-16, -230]]), line(loop(0, -240, 18, 180, 360)), line([[16, -230], [30, 120]])], boats: [{ you: true, x: 0, z: 200, hdg: 0, noHeading: true, scale: 3.4 }],
+        texts: [t(0, -290, 'bollard'), t(160, -40, 'both ends on board', { kind: 'accent' }), t(-300, -250, 'QUAY', { pill: false, size: 30 })], fit: [{ x: -300, z: -320 }, { x: 300, z: 300 }] } },
+      { noScale: true, sch: { padPx: 70, title: 'Winch · the lead from below', key: ['Three or four turns clockwise; the line arrives slightly below the drum', 'Coming in from above it can ride over itself: a riding turn that jams'],
+        circles: [ring(0, 0, 90), ring(0, 0, 70)], paths: [line([[-420, 160], [-80, 50]]), line(loop(0, 0, 80, 150, 1000)), line([[60, -55], [280, -200], [420, -260]])],
+        texts: [t(-330, 220, 'sheet · from the car'), t(0, -130, 'clockwise', { kind: 'accent' }), t(330, -300, 'tail · into the jaws')], fit: [{ x: -420, z: -320 }, { x: 420, z: 260 }] } },
+      { noScale: true, sch: { padPx: 60, title: 'Line handling · the snap-back zone', key: ['A loaded line that parts whips back along and beyond its lead', 'Stand to one side of it, never in the bight or on its line'],
+        zones: [{ pts: [[-500, -320], [500, -320], [500, -180], [-500, -180]], c: 'ink', fill: '#d8c9a3', dash: '0' }, { pts: [[-60, -200], [60, -200], [140, 260], [-140, 260]], c: 'red', fill: 'rgba(224,37,27,.12)' }],
+        circles: [ring(0, -240, 16)], paths: [line([[0, -230], [0, 180]])], boats: [{ x: 0, z: 240, hdg: 0, label: 'Yacht', noHeading: true, scale: 3.2 }],
+        texts: [t(0, -290, 'bollard'), t(220, 40, 'snap-back zone', { kind: 'red' }), t(-300, 40, 'stand here', { kind: 'accent' }), t(300, -250, 'QUAY', { pill: false, size: 30 })], fit: [{ x: -360, z: -320 }, { x: 360, z: 320 }] } },
+      { noScale: true, sch: { padPx: 70, title: 'Coiling and hanging a halyard', key: ['Coil from the cleat towards the end, a twist in each loop', 'Pull a loop through the coil, twist it and hang it over the cleat'],
+        paths: [line([[0, -420], [0, -40]], 'ink', 40), line([[-60, -150], [60, -150]], 'ink', 14), ...[0, 1, 2, 3].map(k => line(loop(0, 80, 110 - k * 6, 0, 360), 'line', 7)), line([[0, -150], [0, -30]])],
+        texts: [t(150, -280, 'mast'), t(170, -150, 'mast cleat'), t(240, 90, 'coil', { kind: 'accent' }), t(-220, -60, 'halyard')], fit: [{ x: -300, z: -420 }, { x: 300, z: 220 }] } },
+    ];
+  })(),
+  'bareboat-skipper/terms': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const ray = (brg, d) => [d * Math.sin(brg * Math.PI / 180), -d * Math.cos(brg * Math.PI / 180)];
+    const nogo = { pts: [[0, 0], ray(-45, 260), ray(-20, 280), ray(0, 285), ray(20, 280), ray(45, 260)], c: 'red', fill: 'rgba(224,37,27,.08)' };
+    const pos = (title, hdg, key, extra = {}) => ({ noScale: true, sch: { padPx: 70, wind: 0, title, key, zones: [nogo], boats: [{ you: true, x: 0, z: 0, hdg, sail: true, noHeading: false }],
+      texts: [t(0, -300, 'no-go zone', { kind: 'red' }), ...(extra.texts || [])], fit: [{ x: -300, z: -320 }, { x: 300, z: 260 }] } });
+    // directions: sectors round the boat, each named
+    const dir = [['ahead', 0], ['starboard bow', 45], ['abeam', 90], ['starboard quarter', 135], ['astern', 180], ['port quarter', 225], ['abeam', 270], ['port bow', 315]];
+    return [
+      { noScale: true, sch: { padPx: 60, title: 'Directions on board', key: ['Named from the boat, facing forward: port is left, starboard is right', 'Bow and quarter are the 45° lines either side; abeam is square to the side'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, noHeading: true, scale: 3.6 }], paths: dir.map(([, b]) => ({ pts: [ray(b, 110), ray(b, 400)], c: 'ink', w: 3, dash: '10 10' })),
+        texts: dir.map(([n, b]) => t(...ray(b, 470), n, { kind: n === 'ahead' ? 'accent' : 'light' })).concat([t(-330, 90, 'PORT', { pill: false, size: 34 }), t(330, 90, 'STARBOARD', { pill: false, size: 34 })]).map(o => ({ ...o, x: Array.isArray(o.x) ? o.x[0] : o.x })),
+        fit: [{ x: -560, z: -520 }, { x: 560, z: 520 }] } },
+      {}, {}, {},
+      pos('Points of sail · close-hauled', 45, ['About 45° off the wind, sails pulled in tight', 'Any closer and you are in the no-go zone']),
+      pos('Points of sail · beam reach', 90, ['Wind on the beam, square to the boat', 'Sails eased about halfway: usually the fastest point']),
+      pos('Points of sail · broad reach', 135, ['Wind on the quarter, over the back corner', 'Sails well out; the boat rolls more']),
+      pos('Points of sail · run', 175, ['Wind astern, the main right out', 'Watch for an accidental gybe: rig a preventer']),
+      pos('In irons', 0, ['Head to wind, sails flapping, the boat stopped', 'Back the jib or reverse the rudder to bear away']),
+    ];
+  })(),
+  'bareboat-skipper/emergency': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const arr = (a, b, c = 'red', w = 6) => ({ pts: [a, b], c, w, arrow: true });
+    const line = (a, b, c = 'ink', w = 4, dash) => ({ pts: [a, b], c, w, dash });
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+
+    return [
+      {}, {},
+      { noScale: true, sch: { padPx: 60, title: 'Your position by radio · from a charted light', key: ['Bearing FROM the light and distance: "180° from Cape Sounion light, 2 miles"', 'Anyone with a chart can plot it at once'],
+        land: [[[-460, -380], [460, -380], [460, -240], [60, -240], [0, -150], [-60, -240], [-460, -240]]], spots: [{ x: 0, z: -150, label: '★' }],
+        paths: [line([0, -130], [0, 260], 'course', 5, '14 10')], dims: [{ a: [60, -150], b: [60, 300], text: '2 M', off: 0 }], boats: [{ you: true, x: 0, z: 300, hdg: 270, noHeading: true }],
+        texts: [t(0, -300, 'Cape Sounion', { pill: false, size: 30 }), t(-170, -150, 'Sounion lt'), t(-200, 100, '180° from the light', { kind: 'accent' })], fit: [{ x: -460, z: -380 }, { x: 460, z: 460 }] } },
+      { sch: { padPx: 80, wind: 90, title: 'Another vessel in distress · a red flare', key: ['A red hand flare: someone needs help now', 'Note her position and bearing, call the coastguard on 16, go to her if you can'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, sail: true, noHeading: true }, { ...at(0, 40, 300), hdg: 270, label: 'Yacht', sail: true, noHeading: true }], texts: [t(at(0, 40, 300).x, at(0, 40, 300).z - 90, 'red hand flare', { kind: 'red' })], fit: [{ x: -100, z: -320 }, { x: 320, z: 120 }] } },
+      { sch: { padPx: 80, title: 'A distress signal · arms raised and lowered', key: ['Slowly raising and lowering both arms: I need help', 'Turn towards them and keep them in sight'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, noHeading: true }, { ...at(0, 30, 200), hdg: 200, label: 'Dinghy', scale: 1.4, noHeading: true }], paths: [arr([10, -40], [at(0, 30, 160).x, at(0, 30, 160).z], 'course', 5)], fit: [{ x: -100, z: -260 }, { x: 220, z: 120 }] } },
+      { sch: { padPx: 80, wind: 0, title: 'Man overboard · the final approach under sail', key: ['Come in on a close reach, sheets eased so you can stop by letting them fly', 'Stop with the casualty to leeward, close to the bow'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 300, sail: true, noHeading: true }, { x: -150, z: -90, hdg: 0, label: 'MOB', scale: 0.6, noHeading: true, bearing: false }], paths: [{ pts: [[260, 150], [130, 70], [20, 5], [-110, -70]], c: 'course', dash: '14 10', w: 5, arrow: true }],
+        texts: [t(150, -40, 'close reach, sheets eased', { kind: 'accent' })], fit: [{ x: -260, z: -220 }, { x: 300, z: 200 }] } },
+      { sch: { padPx: 80, title: 'Towing · a bridle from both bow cleats', key: ['Lead the towline to a bridle from both bow cleats, round winches if needed', 'Long enough to ride the waves in step; keep crew clear of it'],
+        boats: [{ x: 0, z: 160, hdg: 0, label: 'Tow', noHeading: true, scale: 3.2, bearing: false }, { you: true, x: 0, z: -220, hdg: 0, noHeading: true, scale: 3.2 }], paths: [line([0, -150], [0, 60], 'line', 7), line([0, 60], [-26, 100], 'line', 6), line([0, 60], [26, 100], 'line', 6)],
+        texts: [t(150, 80, 'bridle', { kind: 'accent' }), t(150, -40, 'towline')], fit: [{ x: -200, z: -320 }, { x: 200, z: 260 }] } },
+    ];
+  })(),
+  'bareboat-skipper/systems': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const arr = (a, b, c = 'red', w = 6) => ({ pts: [a, b], c, w, arrow: true });
+    const line = (a, b, c = 'ink', w = 4, dash) => ({ pts: [a, b], c, w, dash });
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+
+    return [
+      {}, {}, {},
+      { sch: { padPx: 80, title: 'Prop walk · engine astern', key: ['A right-handed propeller kicks the stern to port when going astern', 'Use it: plan to berth port side to when reversing in'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, noHeading: true, scale: 3.4 }], paths: [arr([0, 80], [0, 200], 'ink', 5), { pts: [[0, 60], [-50, 90], [-100, 110]], c: 'red', w: 6, arrow: true }],
+        texts: [t(130, 170, 'astern'), t(-170, 150, 'stern walks to port', { kind: 'red' })], fit: [{ x: -220, z: -140 }, { x: 220, z: 260 }] } },
+      { sch: { padPx: 80, title: 'Turning under power · the stern swings out', key: ['Turn to port and the stern swings to starboard', 'Close to a moored boat, turn away late or you will hit her with your quarter'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 330, noHeading: true, scale: 3.2 }, { x: 150, z: 30, hdg: 0, label: 'Moored', noHeading: true, scale: 3.2, bearing: false }], paths: [{ pts: [[0, -60], [-30, -110], [-80, -140]], c: 'course', w: 5, arrow: true }, { pts: [[5, 50], [30, 60]], c: 'red', w: 6, arrow: true }],
+        texts: [t(-120, -170, 'turning to port', { kind: 'accent' }), t(20, 140, 'stern swings to starboard', { kind: 'red' })], fit: [{ x: -220, z: -220 }, { x: 260, z: 220 }] } },
+      {}, {},
+    ];
+  })(),
+  'bareboat-skipper/safety': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const arr = (a, b, c = 'red', w = 6) => ({ pts: [a, b], c, w, arrow: true });
+    const line = (a, b, c = 'ink', w = 4, dash) => ({ pts: [a, b], c, w, dash });
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+
+    return [
+      { sch: { padPx: 80, wind: 0, title: 'Dead run · rig a preventer', key: ['Wind right astern: a wind shift or a wave can slam the boom across', 'Rig a preventer from the boom end forward; heads below the boom'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 180, sail: true, noHeading: true, scale: 3.4 }], paths: [line([60, 30], [60, -90], 'red', 5), { pts: [[60, 30], [-60, 30]], c: 'ink', w: 4, dash: '8 8' }],
+        texts: [t(200, -60, 'preventer', { kind: 'red' }), t(-200, 30, 'gybe zone: heads down', { kind: 'accent' })], fit: [{ x: -260, z: -180 }, { x: 260, z: 200 }] } },
+      { sch: { padPx: 80, wind: 225, title: 'Man overboard · the first seconds', key: ['Shout "man overboard", throw the lifebuoy and dan buoy, point and keep pointing', 'Press MOB on the plotter: it marks the spot'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, sail: true, noHeading: true }, { ...at(0, -165, 220), hdg: 0, label: 'MOB', scale: 0.6, noHeading: true, bearing: false }], paths: [line([0, 0], [at(0, -165, 200).x, at(0, -165, 200).z], 'red', 4, '10 10')],
+        texts: [t(at(0, -165, 220).x - 140, at(0, -165, 220).z, 'point, keep pointing', { kind: 'red' })], fit: [{ x: -260, z: -120 }, { x: 160, z: 280 }] } },
+      {}, {},
+      { sch: { padPx: 60, wind: 200, title: 'Dinghy and swimmers · go slow', key: ['Near a beach and swimmers: dead slow, someone forward watching', 'Engine in neutral near anyone in the water; kill cord on'],
+        land: [[[-460, -380], [460, -380], [460, -180], [-460, -180]]], zones: [{ pts: [[-300, -180], [100, -180], [100, -60], [-300, -60]], c: 'red', fill: 'rgba(224,37,27,.06)' }],
+        boats: [{ you: true, x: 300, z: 220, hdg: 300, noHeading: true }, { x: 150, z: 60, hdg: 0, label: 'tender', scale: 1.4, plain: true }], paths: [{ pts: [[300, 180], [220, 100], [140, -10]], c: 'course', dash: '12 10', w: 5, arrow: true }],
+        texts: [t(-100, -280, 'BEACH', { pill: false, size: 32 }), t(-100, -110, 'swimmers', { kind: 'red' }), t(330, 290, 'Y · your yacht 300 m off')], fit: [{ x: -460, z: -380 }, { x: 460, z: 340 }] } },
+      { noScale: true, sch: { padPx: 50, title: 'Skipper decides · NW 7 tomorrow', key: ['Tight isobars: NW F7 from dawn, all day', 'Stay in harbour; brief the crew tonight and double the lines'],
+        circles: [80, 150, 220].map(r => ({ x: -300, z: -260, r, c: 'ink', dash: '0' })), texts: [t(-300, -260, 'L', { pill: false, size: 64 }), t(150, -100, 'NW 7', { kind: 'red', size: 30 }), t(30, 260, 'stay in harbour', { kind: 'accent' })],
+        paths: [arr([0, -220], [180, 0], 'red', 10), arr([-120, -100], [60, 120], 'red', 8)], boats: [{ you: true, x: 240, z: 150, hdg: 0, noHeading: true }], fit: [{ x: -520, z: -480 }, { x: 420, z: 300 }] } },
+    ];
+  })(),
+  'vhf-radio-operator/channels': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const c = ([x, y]) => [(x - 160) * 3, (y - 100) * 3];
+    const P = (x, y) => { const [a, b] = c([x, y]); return { x: a, z: b }; };
+    const arr = (a, b, col = 'red', w = 6) => ({ pts: [a, b], c: col, w, arrow: true });
+    const line = (a, b, col = 'ink', w = 4, dash) => ({ pts: [a, b], c: col, w, dash });
+    const radio = (a, b, col = 'course') => ({ pts: [a, b], c: col, w: 5, dash: '6 12' });
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+    const you = (x, y, hdg = 0, o = {}) => ({ you: true, ...P(x, y), hdg, noHeading: true, ...o });
+    const map = (title, key, o) => ({ noScale: true, sch: { padPx: 60, title, key, ...o } });
+
+    return [{}, {}, {}, {}, {}, {},
+      { sch: { padPx: 80, title: 'Working channels · a ship calls you', key: ['The ship calls on 16 and asks you to go to 13, bridge to bridge', 'Answer, switch, and keep the talk short'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, sail: true, noHeading: true }, { ...at(0, 40, 380), hdg: 270, label: 'Ship', scale: 3.6, noHeading: true }], paths: [radio([0, -20], [at(0, 40, 340).x, at(0, 40, 340).z])], texts: [t(at(0, 40, 190).x - 120, at(0, 40, 190).z, '16 → 13', { kind: 'accent' })], fit: [{ x: 0, z: 170 }] } },
+      map('Range · an island in the way', ['VHF travels in straight lines: 6 miles apart, but the island blocks the path', 'Move clear of it, or go higher'],
+        { land: [[[130, 60], [150, 40], [190, 40], [205, 70], [210, 110], [190, 140], [150, 148], [125, 115]].map(c)], boats: [you(50, 100, 90)], spots: [{ ...P(272, 70), label: 'F' }], paths: [line(c([64, 98]), c([265, 71]), 'red', 5, '12 10')], texts: [t(...c([166, 160]), 'island, 300 m high', { pill: false, size: 26 }), t(...c([272, 45]), 'friend'), t(...c([230, 115]), 'blocked', { kind: 'red' })].map(o => ({ ...o, x: o.x, z: o.z })), fit: [{ x: -420, z: -200 }, { x: 420, z: 200 }] }),
+      map('Range · height wins', ['A coast station high on a mountain hears you 30 miles off', 'Friends 3 miles away behind the headland do not'],
+        { land: [[[118, 200], [130, 140], [145, 90], [162, 52], [180, 40], [193, 60], [196, 110], [205, 160], [212, 200]].map(c)], boats: [you(70, 120)], spots: [{ ...P(160, 26), label: 'C' }, { ...P(245, 110), label: 'F' }], paths: [radio(c([74, 108]), c([156, 32])), line(c([84, 119]), c([238, 110]), 'red', 5, '12 10')], texts: [t(...c([160, 2]), 'coast station on a mountain'), t(...c([250, 85]), 'friends'), t(...c([164, 170]), 'headland', { pill: false, size: 26 })] }),
+    ];
+  })(),
+  'vhf-radio-operator/distress': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const c = ([x, y]) => [(x - 160) * 3, (y - 100) * 3];
+    const P = (x, y) => { const [a, b] = c([x, y]); return { x: a, z: b }; };
+    const arr = (a, b, col = 'red', w = 6) => ({ pts: [a, b], c: col, w, arrow: true });
+    const line = (a, b, col = 'ink', w = 4, dash) => ({ pts: [a, b], c: col, w, dash });
+    const radio = (a, b, col = 'course') => ({ pts: [a, b], c: col, w: 5, dash: '6 12' });
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+    const you = (x, y, hdg = 0, o = {}) => ({ you: true, ...P(x, y), hdg, noHeading: true, ...o });
+    const map = (title, key, o) => ({ noScale: true, sch: { padPx: 60, title, key, ...o } });
+
+    return [{}, {}, {},
+      map('Your position · bearing FROM the light', ['You take the light bearing 040° from the boat: you are 220° FROM the light', 'Say: "220 degrees from the lighthouse, 3 miles"'],
+        { land: [[[95, 42], [130, 20], [176, 34], [185, 60], [160, 76], [120, 80], [100, 66]].map(c)], spots: [{ ...P(150, 60), label: '★' }], boats: [you(75, 150)], paths: [line(c([150, 60]), c([78, 146]), 'course', 5, '14 10')], texts: [t(...c([200, 40]), 'Lt'), t(...c([150, 110]), '3 M'), t(...c([40, 110]), '220° from the light', { kind: 'accent' })] }),
+      {},
+      { sch: { night: true, padPx: 80, title: 'MAYDAY RELAY · you saw a flare', key: ['A red parachute flare, and nothing heard on 16', 'Note its bearing and time, then send MAYDAY RELAY'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, noHeading: true }], paths: [line([0, -20], [260, -330], 'red', 4, '10 10')], circles: [{ x: 280, z: -350, r: 30, c: 'red', dash: '0', fill: 'rgba(224,37,27,.4)' }], texts: [t(280, -420, 'red flare · 040°', { kind: 'red' })], fit: [{ x: -100, z: -440 }, { x: 380, z: 120 }] } },
+      {},
+    ];
+  })(),
+  'vhf-radio-operator/gmdss': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const c = ([x, y]) => [(x - 160) * 3, (y - 100) * 3];
+    const P = (x, y) => { const [a, b] = c([x, y]); return { x: a, z: b }; };
+    const arr = (a, b, col = 'red', w = 6) => ({ pts: [a, b], c: col, w, arrow: true });
+    const line = (a, b, col = 'ink', w = 4, dash) => ({ pts: [a, b], c: col, w, dash });
+    const radio = (a, b, col = 'course') => ({ pts: [a, b], c: col, w: 5, dash: '6 12' });
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+    const you = (x, y, hdg = 0, o = {}) => ({ you: true, ...P(x, y), hdg, noHeading: true, ...o });
+    const map = (title, key, o) => ({ noScale: true, sch: { padPx: 60, title, key, ...o } });
+
+    const sart = () => { const W = 1280, H = 800, cx = 640, cy = 360, R = 300; let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" font-family="Carlito, Arial, sans-serif"><rect width="${W}" height="${H}" fill="var(--bg)"/>`;
+      s += `<circle cx="${cx}" cy="${cy}" r="${R}" fill="#0c2a22" stroke="var(--ink)" stroke-width="4"/>`; for (const r of [100, 200]) s += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#2f6b55" stroke-width="2"/>`;
+      s += `<line x1="${cx}" y1="${cy}" x2="${cx}" y2="${cy - R}" stroke="#2f6b55" stroke-width="2"/>`;
+      for (let i = 0; i < 12; i++) s += `<circle cx="${cx + 120}" cy="${cy - 120 - i * 14}" r="6" fill="#ffd400"/>`;
+      s += `<circle cx="${cx}" cy="${cy}" r="9" fill="#9fe5c5"/>` + sPill(cx + 260, cy - 120, 'SART · first dot', 'red', 26) + sPill(cx + 250, cy - 290, '12 dots outwards', 'light', 24) + sPill(cx, cy + 50, 'you', 'accent', 24);
+      s += `<rect x="0" y="690" width="${W}" height="110" fill="var(--band)"/>` + stxt(30, 730, 'SART on the radar screen', { s: 30, f: 'var(--ink)', a: 'start' }) + stxt(30, 772, '· Twelve dots in a line pointing away: the casualty is at the dot nearest you', { s: 26, w: 400, f: 'var(--ink)', a: 'start' });
+      return s + '</svg>'; };
+    return [
+      map('GMDSS sea area A1', ['In range of a VHF DSC coast station: about 20–30 miles', 'Beyond it you need more: an EPIRB, MF/HF or satellite'],
+        { land: [[[0, 0], [320, 0], [320, 34], [240, 48], [160, 38], [80, 28], [0, 44]].map(c)], spots: [{ ...P(160, 46), label: 'C' }], zones: [{ pts: Array.from({ length: 21 }, (_, i) => { const a = Math.PI * i / 20; return [Math.cos(a) * 400, -150 + Math.sin(a) * 420]; }), c: 'course', fill: 'rgba(0,118,190,.06)' }], boats: [you(120, 100, 90)], texts: [t(...c([160, 18]), 'VHF DSC coast station'), t(...c([215, 104]), 'A1', { kind: 'accent', size: 30 }), t(0, 330, 'beyond VHF range: EPIRB', { kind: 'red' })], fit: [{ x: -480, z: -300 }, { x: 480, z: 360 }] }),
+      map('EPIRB · alarm and homing', ['406 MHz goes up to the satellite, which tells the MRCC', '121.5 MHz guides the lifeboat in'],
+        { land: [[[196, 0], [320, 0], [320, 62], [258, 74], [196, 40]].map(c)], spots: [{ ...P(70, 26), label: 'S' }, { ...P(264, 40), label: 'M' }], boats: [you(70, 154), { ...P(200, 96), hdg: 225, label: 'lifeboat', noHeading: true, bearing: false }],
+          paths: [radio(c([70, 134]), c([70, 36])), radio(c([80, 28]), c([254, 40])), line(c([190, 102]), c([86, 150]), 'red', 5, '12 10')], texts: [t(...c([110, 90]), '406 MHz', { kind: 'accent' }), t(...c([30, 26]), 'satellite'), t(...c([290, 80]), 'MRCC'), t(...c([150, 150]), '121.5 MHz homing', { kind: 'red' })], fit: [{ x: -460, z: -320 }, { x: 480, z: 300 }] }),
+      { svg: sart() },
+      {},
+      { sch: { padPx: 80, title: 'AIS · not every boat shows', key: ['No targets on the plotter, yet a boat ahead: many small boats have no AIS', 'Keep a lookout by eye and radar'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, noHeading: true }, { ...at(0, 25, 360), hdg: 250, label: 'No AIS', noHeading: true }], texts: [t(at(0, 25, 360).x, at(0, 25, 360).z - 90, 'not on the plotter', { kind: 'red' })], fit: [{ x: 0, z: 170 }] } },
+    ];
+  })(),
+  'vhf-radio-operator/licences': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const c = ([x, y]) => [(x - 160) * 3, (y - 100) * 3];
+    const P = (x, y) => { const [a, b] = c([x, y]); return { x: a, z: b }; };
+    const arr = (a, b, col = 'red', w = 6) => ({ pts: [a, b], c: col, w, arrow: true });
+    const line = (a, b, col = 'ink', w = 4, dash) => ({ pts: [a, b], c: col, w, dash });
+    const radio = (a, b, col = 'course') => ({ pts: [a, b], c: col, w: 5, dash: '6 12' });
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+    const you = (x, y, hdg = 0, o = {}) => ({ you: true, ...P(x, y), hdg, noHeading: true, ...o });
+    const map = (title, key, o) => ({ noScale: true, sch: { padPx: 60, title, key, ...o } });
+
+    return [{}, {},
+      map('Where the licence is valid', ['The ship station licence covers the radio aboard, afloat', 'A handheld used ashore, at the taverna, is outside the maritime service'],
+        { land: [[[0, 200], [0, 150], [90, 130], [170, 146], [250, 162], [320, 138], [320, 200]].map(c)], boats: [you(200, 76)], spots: [{ ...P(84, 170), label: 'T' }], paths: [line(c([92, 164]), c([190, 88]), 'red', 5, '12 10')],
+          texts: [t(...c([200, 40]), 'afloat: licensed', { kind: 'accent' }), t(...c([84, 194]), 'handheld at the taverna'), t(...c([175, 128]), 'not allowed', { kind: 'red' })] }),
+      {}, {},
+    ];
+  })(),
+  'vhf-radio-operator/sar': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const c = ([x, y]) => [(x - 160) * 3, (y - 100) * 3];
+    const P = (x, y) => { const [a, b] = c([x, y]); return { x: a, z: b }; };
+    const arr = (a, b, col = 'red', w = 6) => ({ pts: [a, b], c: col, w, arrow: true });
+    const line = (a, b, col = 'ink', w = 4, dash) => ({ pts: [a, b], c: col, w, dash });
+    const radio = (a, b, col = 'course') => ({ pts: [a, b], c: col, w: 5, dash: '6 12' });
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+    const you = (x, y, hdg = 0, o = {}) => ({ you: true, ...P(x, y), hdg, noHeading: true, ...o });
+    const map = (title, key, o) => ({ noScale: true, sch: { padPx: 60, title, key, ...o } });
+
+    return [
+      map('Hearing a MAYDAY · what to note', ['14:05 MAYDAY · yacht Thalassa · 37°05′N 25°17′E', 'Holed, sinking · 4 persons: you are 3 miles off'],
+        { land: [[[0, 0], [320, 0], [320, 30], [250, 46], [170, 34], [90, 24], [0, 44]].map(c)], spots: [{ ...P(60, 34), label: 'C' }], boats: [you(190, 166, 300), { ...P(80, 118), hdg: 0, label: 'Thalassa', noHeading: true, bearing: false }], paths: [line(c([90, 122]), c([176, 160]), 'ink', 4, '10 10')],
+          texts: [t(...c([60, 8]), 'coast station'), t(...c([130, 160]), '3 miles'), t(...c([80, 150]), 'holed, sinking', { kind: 'red' })] }),
+      {}, {},
+      map('On scene · relay between them', ['The MRCC directs the channel; the casualty is behind the island', 'You hear both: relay their messages'],
+        { land: [[[0, 0], [320, 0], [320, 28], [0, 28]].map(c), [[128, 82], [160, 62], [196, 86], [202, 112], [166, 120], [126, 114]].map(c)], spots: [{ ...P(60, 20), label: 'M' }], boats: [you(165, 166), { ...P(62, 112), hdg: 0, label: 'casualty', noHeading: true, bearing: false }, { ...P(264, 104), hdg: 270, label: 'lifeboat', noHeading: true, bearing: false }],
+          paths: [radio(c([72, 118]), c([150, 158])), radio(c([180, 158]), c([256, 110]))], texts: [t(...c([164, 96]), 'island', { pill: false, size: 26 }), t(...c([165, 194]), 'you hear both: relay', { kind: 'accent' })] }),
+      { sch: { padPx: 80, wind: 330, title: 'Helicopter rescue · the brief', key: ['Steady course, the wind about 30° on the port bow', 'Sails down, deck cleared; never touch the winch wire before it has earthed'],
+        boats: [{ you: true, x: 0, z: 0, hdg: 0, noHeading: false }], texts: [t(150, 60, 'steady course 000°', { kind: 'accent' })], fit: [{ x: -200, z: -220 }, { x: 220, z: 140 }] } },
+    ];
+  })(),
+  'vhf-radio-operator/urgency': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const c = ([x, y]) => [(x - 160) * 3, (y - 100) * 3];
+    const P = (x, y) => { const [a, b] = c([x, y]); return { x: a, z: b }; };
+    const arr = (a, b, col = 'red', w = 6) => ({ pts: [a, b], c: col, w, arrow: true });
+    const line = (a, b, col = 'ink', w = 4, dash) => ({ pts: [a, b], c: col, w, dash });
+    const radio = (a, b, col = 'course') => ({ pts: [a, b], c: col, w: 5, dash: '6 12' });
+    const at = (hdg, rel, d) => { const a = (hdg + rel) * Math.PI / 180; return { x: Math.round(d * Math.sin(a)), z: Math.round(-d * Math.cos(a)) }; };
+    const you = (x, y, hdg = 0, o = {}) => ({ you: true, ...P(x, y), hdg, noHeading: true, ...o });
+    const map = (title, key, o) => ({ noScale: true, sch: { padPx: 60, title, key, ...o } });
+
+    return [{},
+      map('PAN-PAN becomes MAYDAY', ['No engine, too deep to anchor, drifting onto a lee shore in F6', 'Rocks a mile downwind: the danger is now grave and imminent'],
+        { land: [[[0, 200], [0, 162], [80, 142], [160, 154], [240, 166], [320, 148], [320, 200]].map(c)], boats: [you(110, 66, 250)], paths: [arr(c([110, 84]), c([110, 140]), 'red', 6), arr(c([40, 20]), c([40, 70]), 'red', 8)], rocks: [P(115, 156)],
+          texts: [t(...c([110, 20]), 'wind F6, onshore', { kind: 'red' }), t(...c([210, 120]), 'rocks 1 mile downwind', { kind: 'red' }), t(...c([200, 60]), '1 hour later: drifting')] }),
+      {}, {}, {},
+    ];
+  })(),
+};
+
+(async () => {
+  const q = new URLSearchParams(location.search), a = q.get('a') || 'bareboat-skipper/anchoring';
+  const data = await (await fetch(`article-figs/${a.replace('/', '-')}.json?v=${Date.now()}`)).json(), after = AFTER[a] || [];
+  document.getElementById('title').textContent = `${a.replace('/', ' · ')} · before and after`;
+  document.getElementById('lede').textContent = data.lead;
+  const rows = document.getElementById('rows');
+  // Russian (?lang=ru): every display string of the schematic specs goes through figure-style/articles/<a>/ru.json
+  // before drawing, so pills are sized for the Russian text; window.__strings lists the English strings per figure
+  const SKIP = new Set(['kind', 'color', 'type', 'side', 'which', 'shape', 'id', 'fill', 'stroke', 'anchor', 'd', 'svg', 'font', 'align', 'dir', 'style', 'cls', 'class', 'dash', 'icon', 'plotter']);
+  const CODE = /^(red|blue|green|yellow|accent|white|black|grey|gray|orange|dash|dashed|dotted|solid|port|stbd|left|right|middle|start|end|top|bottom|[a-zA-Z]{1,2}|[\d\s.,:°′″'"+-]*)$/;
+  const deep = (v, k, fn) => typeof v === 'string' ? (SKIP.has(k) || CODE.test(v) ? v : fn(v)) : Array.isArray(v) ? v.map((x) => deep(x, k, fn)) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([kk, x]) => [kk, deep(x, kk, fn)])) : v;
+  const RU = q.get('lang') === 'ru' ? await (await fetch(`figure-style/articles/${a}/ru.json?v=${Date.now()}`)).json() : null;
+  if (RU) Object.assign(window.SCH_TEXT, { You: 'Вы', Other: 'Судно', Wind: 'Ветер', N: 'С', port: 'слева', stbd: 'справа' });
+  window.__strings = {};
+  data.figs.forEach((f, i) => {
+    const seen = new Set(); deep(after[i] || {}, '', (s) => { seen.add(s); return s; }); window.__strings[String(f.n)] = [...seen];
+    if (RU) after[i] = deep(after[i] || {}, '', (s) => RU[s] ?? s);
+  });
+  data.figs.forEach((f, i) => {
+    const A = after[i] || {}, row = document.createElement('div'); row.className = 'row';
+    row.innerHTML = `<div class="col"><h3>${f.n}. ${f.fig.type} <b>today</b></h3><div class="before" data-fig='${JSON.stringify(f.fig).replace(/'/g, '&#39;')}'></div><div class="cap">${f.section}${f.name ? ' · ' + f.name : ''}${f.cap ? ' · ' + f.cap : ''}</div></div>
+      <div class="col after"><h3>3D <b>${A.plotter ? 'the chartplotter screen' : 'render'}</b></h3><div class="r3d"></div></div>
+      <div class="col after"><h3>Schematic <b>${A.rhythm ? 'flash timing' : A.profile ? 'side view' : 'plan view'}</b></h3><div class="sch"></div></div>`;
+    const r3d = row.querySelector('.r3d');
+    if (A.plotter) { const c = plotter(f.fig); r3d.append(c); window.__renders = window.__renders || {}; window.__renders[String(f.n)] = c.toDataURL('image/jpeg', 0.92); }
+    else { const im = new Image(); im.src = `figure-style/articles/${a}/${f.n}.jpg?v=${Date.now()}`; im.onerror = () => { r3d.innerHTML = '<div class="cap">not rendered yet</div>'; }; r3d.append(im); }
+    row.querySelector('.sch').innerHTML = A.svg ? A.svg : A.rhythm ? schematicRhythm(A.rhythm) : A.profile ? schematicProfile(A.profile) : A.sch ? (A.noScale ? schematic(A.sch).replace(/<g><line x1="30"[\s\S]*?<\/g>/, '') : schematic(A.sch)) : '<div class="cap">no schematic</div>';
+    // the drawer's own words (figure-schematic.js): You, Wind 200°, 200 m, the north arrow's N
+    const OWN = [[/(\d) m\b/g, '$1 м'], [/^(\d[\d.,]*) (miles|M)$/, '$1 мили']];   // the scale bar, a bearing's distance
+    if (RU) row.querySelectorAll('.sch text, .sch tspan').forEach((el) => {
+      if (el.children.length) return; const s = el.textContent;
+      if (RU[s] != null) { el.textContent = RU[s]; return; }
+      for (const [re, to] of OWN) if (s.search(re) >= 0) { el.textContent = s.replace(re, to); return; }
+    });
+    rows.append(row);
+  });
+  paintFigures(document);
+  await document.fonts.ready; document.body.dataset.done = '1';
+})();
+</script>
+</body>
+</html>

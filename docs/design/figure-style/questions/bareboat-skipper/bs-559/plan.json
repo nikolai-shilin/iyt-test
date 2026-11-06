@@ -1,0 +1,144 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 50,
+  "title": "Preferred channel · main channel to port",
+  "key": [
+   "Fl(2+1) G: a modified starboard-hand mark at the fork",
+   "The main channel is to port: leave the mark to starboard"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -20,
+    "z": 250,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -110,
+      300
+     ],
+     [
+      110,
+      300
+     ],
+     [
+      110,
+      40
+     ],
+     [
+      -260,
+      -300
+     ],
+     [
+      -480,
+      -300
+     ],
+     [
+      -110,
+      40
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(60,140,190,.10)",
+    "dash": "0"
+   },
+   {
+    "pts": [
+     [
+      60,
+      0
+     ],
+     [
+      300,
+      -300
+     ],
+     [
+      420,
+      -300
+     ],
+     [
+      110,
+      40
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(60,140,190,.05)",
+    "dash": "6 10"
+   }
+  ],
+  "marks": [
+   {
+    "x": 40,
+    "z": 10,
+    "kind": "lat-stbd",
+    "bearing": false,
+    "hi": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -20,
+      210
+     ],
+     [
+      -60,
+      60
+     ],
+     [
+      -200,
+      -120
+     ],
+     [
+      -330,
+      -260
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -380,
+    "z": -150,
+    "text": "main channel",
+    "kind": "accent"
+   },
+   {
+    "x": 330,
+    "z": -200,
+    "text": "secondary",
+    "kind": "light"
+   },
+   {
+    "x": 170,
+    "z": 60,
+    "text": "Fl(2+1) G",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -480,
+    "z": -300
+   },
+   {
+    "x": 420,
+    "z": 300
+   },
+   {
+    "x": -20,
+    "z": 394.0
+   }
+  ]
+ }
+}

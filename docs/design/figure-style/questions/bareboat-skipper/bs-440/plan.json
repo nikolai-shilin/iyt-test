@@ -1,0 +1,74 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · power crossing a sailing yacht",
+  "key": [
+   "Masthead light over red: power-driven, crossing; her port side to you",
+   "Power keeps clear of sail (Rule 18): hold your course and speed, watch her"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "tag": "under sail"
+   },
+   {
+    "x": 189.3,
+    "z": -270.3,
+    "hdg": 295,
+    "label": "Power",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      189,
+      -270
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": -170,
+    "z": -60,
+    "text": "you stand on",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -220,
+    "z": 150
+   },
+   {
+    "x": 330,
+    "z": -360
+   },
+   {
+    "x": 0,
+    "z": 88.0
+   },
+   {
+    "x": 189.3,
+    "z": -358.3
+   }
+  ]
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "No room to starboard · slow down",
+  "key": [
+   "Rocks close to starboard: the usual turn is impossible",
+   "Slow down or stop until she has passed (Rules 2(b), 8(e))"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 0.0,
+    "z": -300.0,
+    "hdg": 180,
+    "label": "Motorboat",
+    "bearing": false,
+    "noHeading": true
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      22.5,
+      39.0
+     ],
+     [
+      34.5,
+      -28.9
+     ],
+     [
+      77.0,
+      -211.4
+     ],
+     [
+      154.3,
+      -183.9
+     ],
+     [
+      88.6,
+      15.6
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.08)"
+   }
+  ],
+  "texts": [
+   {
+    "x": 132.3,
+    "z": -63.0,
+    "text": "rocks",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": -189.6,
+    "z": 127.6,
+    "text": "slow down or stop",
+    "kind": "accent",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -90.0,
+    "z": -90.0
+   },
+   {
+    "x": 90.0,
+    "z": 90.0
+   },
+   {
+    "x": -90.0,
+    "z": -390.0
+   },
+   {
+    "x": 90.0,
+    "z": -210.0
+   }
+  ]
+ }
+}

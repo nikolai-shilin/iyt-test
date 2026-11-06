@@ -11,8 +11,8 @@
       "blocks": [
         { "p": "Lateral marks stand on the edges of a channel. They are laid for a vessel **coming in from the sea**: that is the direction of buoyage. In IALA Region A, which covers Europe and the Mediterranean, you leave red marks to port and green marks to starboard on the way in. Going out, everything swaps." },
         { "tiles": [
-          { "fig": { "type": "buoy", "kind": "lat-port", "topmark": true }, "view": "68 10 120 178", "name": "Port hand", "note": "red · can · red light" },
-          { "fig": { "type": "buoy", "kind": "lat-stbd", "topmark": true }, "view": "68 10 120 178", "name": "Starboard hand", "note": "green · cone · green light" }
+          { "photo": "bareboat-skipper/buoyage/1", "plan": 1.6, "fig": { "type": "buoy", "kind": "lat-port", "topmark": true }, "view": "68 10 120 178", "name": "Port hand", "note": "red · can · red light" },
+          { "photo": "bareboat-skipper/buoyage/2", "plan": 1.6, "fig": { "type": "buoy", "kind": "lat-stbd", "topmark": true }, "view": "68 10 120 178", "name": "Starboard hand", "note": "green · cone · green light" }
         ] },
         { "p": "The shape repeats the colour: a **can** is port hand, a **cone** is starboard hand. In **Region B** (the Americas, Japan, Korea, the Philippines) the colours are reversed, the shapes are not. Where a channel divides, a red mark with a green band, Fl(2+1) R, tells you the main channel lies to starboard; green with a red band, to port." },
         { "rule": "Region A, entering harbour: red to port, green to starboard." }
@@ -27,13 +27,13 @@
       "blocks": [
         { "p": "A cardinal mark is named after the side on which the safe water lies: pass **north of a north** cardinal, east of an east cardinal. Two black cones on top say which one it is, and the black band of the pillar sits where the cones point." },
         { "tiles": [
-          { "fig": { "type": "buoy", "kind": "card-n" }, "view": "68 10 120 178", "name": "North", "note": "Q" },
-          { "fig": { "type": "buoy", "kind": "card-e" }, "view": "68 10 120 178", "name": "East", "note": "Q(3)" },
-          { "fig": { "type": "buoy", "kind": "card-s" }, "view": "68 10 120 178", "name": "South", "note": "Q(6)+LFl" },
-          { "fig": { "type": "buoy", "kind": "card-w" }, "view": "68 10 120 178", "name": "West", "note": "Q(9)" }
+          { "photo": "bareboat-skipper/buoyage/3", "plan": 1.6, "fig": { "type": "buoy", "kind": "card-n" }, "view": "68 10 120 178", "name": "North", "note": "Q" },
+          { "photo": "bareboat-skipper/buoyage/4", "plan": 1.6, "fig": { "type": "buoy", "kind": "card-e" }, "view": "68 10 120 178", "name": "East", "note": "Q(3)" },
+          { "photo": "bareboat-skipper/buoyage/5", "plan": 1.6, "fig": { "type": "buoy", "kind": "card-s" }, "view": "68 10 120 178", "name": "South", "note": "Q(6)+LFl" },
+          { "photo": "bareboat-skipper/buoyage/6", "plan": 1.6, "fig": { "type": "buoy", "kind": "card-w" }, "view": "68 10 120 178", "name": "West", "note": "Q(9)" }
         ] },
         { "p": "At night the white light counts like a clock face: three quick flashes for east, six and a long one for south, nine for west, and an unbroken quick flash for north." },
-        { "fig": { "type": "buoy", "kind": "card-s", "rhythm": "Q(6)+LFl 15s", "rhythmNote": "six quick, one long" } },
+        { "photo": "bareboat-skipper/buoyage/7", "plan": 1.6, "fig": { "type": "buoy", "kind": "card-s", "rhythm": "Q(6)+LFl 15s", "rhythmNote": "six quick, one long" } },
         { "rule": "The cones point to the black. Up: north. Down: south. Base to base: east. Point to point: west." }
       ]
     },
@@ -46,10 +46,10 @@
       "blocks": [
         { "p": "An **isolated danger** mark sits on a small danger with clear water all round: keep off it, pass either side. A **safe water** mark is the opposite: deep water all round, the landfall buoy at the start of a channel. A yellow **special** mark shows an area, such as a swimming zone, a cable or a racing mark, not a danger to steer by." },
         { "tiles": [
-          { "fig": { "type": "buoy", "kind": "iso" }, "view": "68 10 120 178", "name": "Isolated danger", "note": "Fl(2)" },
-          { "fig": { "type": "buoy", "kind": "safe" }, "view": "68 10 120 178", "name": "Safe water", "note": "Iso · Oc · LFl 10s" },
-          { "fig": { "type": "buoy", "kind": "special" }, "view": "68 10 120 178", "name": "Special", "note": "yellow light" },
-          { "fig": { "type": "buoy", "kind": "wreck" }, "view": "68 10 120 178", "name": "New wreck", "note": "blue / yellow" }
+          { "photo": "bareboat-skipper/buoyage/8", "plan": 1.6, "fig": { "type": "buoy", "kind": "iso" }, "view": "68 10 120 178", "name": "Isolated danger", "note": "Fl(2)" },
+          { "photo": "bareboat-skipper/buoyage/9", "plan": 1.6, "fig": { "type": "buoy", "kind": "safe" }, "view": "68 10 120 178", "name": "Safe water", "note": "Iso · Oc · LFl 10s" },
+          { "photo": "bareboat-skipper/buoyage/10", "plan": 1.6, "fig": { "type": "buoy", "kind": "special" }, "view": "68 10 120 178", "name": "Special", "note": "yellow light" },
+          { "photo": "bareboat-skipper/buoyage/11", "plan": 1.6, "fig": { "type": "buoy", "kind": "wreck" }, "view": "68 10 120 178", "name": "New wreck", "note": "blue / yellow" }
         ] },
         { "p": "A blue and yellow buoy marks a **new wreck** not yet on the chart. A new danger may also be shown by two identical marks side by side." }
       ]
@@ -62,7 +62,7 @@
       "refs": ["Light characteristics", "Lighthouse identification", "Range of lights"],
       "blocks": [
         { "p": "Every light has its own rhythm, printed beside it on the chart, so you can tell one from another by timing it. **Fl(3) 15s 49m 22M** reads: a group of three flashes every 15 seconds, the light 49 metres above the sea, nominal range 22 miles." },
-        { "fig": { "type": "chart", "land": "M0 0 H320 V40 Q240 55 160 42 Q80 30 0 50 Z", "marks": [[50, 58, "w", "Fl 5s"], [160, 56, "w", "Fl(3) 15s 49m 22M"], [270, 62, "w", "Fl(2) 10s"]], "boat": [160, 160, 0], "labels": [[160, 120, "3 flashes, then dark · 15 s per cycle", "middle"]], "note": "Night · time the light to name it" } },
+        { "photo": "bareboat-skipper/buoyage/12", "plan": 1.6, "fig": { "type": "chart", "land": "M0 0 H320 V40 Q240 55 160 42 Q80 30 0 50 Z", "marks": [[50, 58, "w", "Fl 5s"], [160, 56, "w", "Fl(3) 15s 49m 22M"], [270, 62, "w", "Fl(2) 10s"]], "boat": [160, 160, 0], "labels": [[160, 120, "3 flashes, then dark · 15 s per cycle", "middle"]], "note": "Night · time the light to name it" } },
         { "table": { "head": ["Chart", "What you see"], "rows": [
           ["F", "Fixed: a steady light"],
           ["Fl · LFl", "Flashing, mostly dark · a long flash of 2 s or more"],
@@ -82,7 +82,7 @@
       "blocks": [
         { "p": "A **sectored light** shows different colours on different bearings: white over the safe approach, red and green over the dangers on either side. If it turns red or green, steer back until it shows white. Sector limits on the chart are true bearings from seaward." },
         { "p": "**Leading lights** are two lights, the rear one higher. Keep them one above the other and you are on the line. If the front light moves to one side, steer to that side to bring them together." },
-        { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 148, "y": 120, "t": "front" }, { "c": "w", "x": 172, "y": 82, "t": "rear" }], "note": "Front light left of the rear: steer to port" } }
+        { "photo": "bareboat-skipper/buoyage/13", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "w", "x": 148, "y": 120, "t": "front" }, { "c": "w", "x": 172, "y": 82, "t": "rear" }], "note": "Front light left of the rear: steer to port" } }
       ]
     },
     {
@@ -94,10 +94,10 @@
       "blocks": [
         { "p": "From sunset to sunrise and in poor visibility every vessel under way shows a red **sidelight** to port, a green one to starboard and a white **sternlight**. A vessel under power adds a white **masthead light** shining forward. So white above the colours means power, colours alone mean sail. A yacht motor-sailing is under power." },
         { "tiles": [
-          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 70 }, { "c": "g", "x": 146, "y": 120 }, { "c": "r", "x": 174, "y": 120 }] }, "view": "60 20 200 150", "name": "Power, bow on", "note": "white over both sidelights" },
-          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 146, "y": 120 }, { "c": "r", "x": 174, "y": 120 }] }, "view": "60 20 200 150", "name": "Sail, bow on", "note": "sidelights, no white" },
-          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 151, "y": 48 }, { "c": "r", "x": 169, "y": 48 }] }, "view": "60 20 200 150", "name": "Sail, tricolour", "note": "the colours at the masthead" },
-          { "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 122 }] }, "view": "60 20 200 150", "name": "From astern", "note": "one white light, low" }
+          { "photo": "bareboat-skipper/buoyage/14", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 70 }, { "c": "g", "x": 146, "y": 120 }, { "c": "r", "x": 174, "y": 120 }] }, "view": "60 20 200 150", "name": "Power, bow on", "note": "white over both sidelights" },
+          { "photo": "bareboat-skipper/buoyage/15", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "g", "x": 146, "y": 120 }, { "c": "r", "x": 174, "y": 120 }] }, "view": "60 20 200 150", "name": "Sail, bow on", "note": "sidelights, no white" },
+          { "photo": "bareboat-skipper/buoyage/16", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "g", "x": 151, "y": 48 }, { "c": "r", "x": 169, "y": 48 }] }, "view": "60 20 200 150", "name": "Sail, tricolour", "note": "the colours at the masthead" },
+          { "photo": "bareboat-skipper/buoyage/17", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 122 }] }, "view": "60 20 200 150", "name": "From astern", "note": "one white light, low" }
         ], "cols": 2 },
         { "p": "A sailing yacht under 20 m may carry the three colours in one **tricolour** lantern at the masthead instead of the deck-level lights, never both. The colours give the aspect: red is her port side, green her starboard side, both together and she is coming straight at you." }
       ]
@@ -111,10 +111,10 @@
       "blocks": [
         { "p": "All-round lights one above the other mark a vessel that cannot keep out of your way as usual. With sidelights she is making way, without them she is stopped." },
         { "tiles": [
-          { "fig": { "type": "lights", "lights": [{ "c": "g", "x": 160, "y": 56 }, { "c": "w", "x": 160, "y": 78 }] }, "view": "60 20 200 150", "name": "Trawling", "note": "green over white" },
-          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 56 }, { "c": "w", "x": 160, "y": 78 }] }, "view": "60 20 200 150", "name": "Fishing", "note": "red over white" },
-          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 60 }, { "c": "r", "x": 160, "y": 82 }] }, "view": "60 20 200 150", "name": "Not under command", "note": "red over red" },
-          { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 46 }, { "c": "w", "x": 160, "y": 68 }, { "c": "r", "x": 160, "y": 90 }] }, "view": "60 20 200 150", "name": "Restricted in ability to manoeuvre", "note": "red, white, red" }
+          { "photo": "bareboat-skipper/buoyage/18", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "g", "x": 160, "y": 56 }, { "c": "w", "x": 160, "y": 78 }] }, "view": "60 20 200 150", "name": "Trawling", "note": "green over white" },
+          { "photo": "bareboat-skipper/buoyage/19", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 56 }, { "c": "w", "x": 160, "y": 78 }] }, "view": "60 20 200 150", "name": "Fishing", "note": "red over white" },
+          { "photo": "bareboat-skipper/buoyage/20", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 60 }, { "c": "r", "x": 160, "y": 82 }] }, "view": "60 20 200 150", "name": "Not under command", "note": "red over red" },
+          { "photo": "bareboat-skipper/buoyage/21", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "r", "x": 160, "y": 46 }, { "c": "w", "x": 160, "y": 68 }, { "c": "r", "x": 160, "y": 90 }] }, "view": "60 20 200 150", "name": "Restricted in ability to manoeuvre", "note": "red, white, red" }
         ], "cols": 2 },
         { "table": { "head": ["Lights", "Vessel"], "rows": [
           ["Yellow above the sternlight", "Towing: the tow is astern of her"],

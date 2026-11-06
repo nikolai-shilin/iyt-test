@@ -1,0 +1,63 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "mpp": 0.32,
+  "title": "Lights · restricted in ability to manoeuvre, at anchor",
+  "key": [
+   "Red-white-red all round: restricted in ability to manoeuvre",
+   "An anchor light and no sidelights: she is at anchor"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 90,
+    "label": "Restricted in manoeuvre",
+    "stack": [
+     "r",
+     "w",
+     "r"
+    ],
+    "stackDx": -140,
+    "noHeading": true,
+    "scale": 3.2,
+    "bearing": false
+   }
+  ],
+  "anchors": [
+   {
+    "x": 48,
+    "z": 0,
+    "s": 0.8
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      22,
+      0
+     ],
+     [
+      40,
+      0
+     ]
+    ],
+    "c": "line",
+    "w": 3,
+    "dash": "4 4"
+   }
+  ],
+  "fit": [
+   {
+    "x": -60,
+    "z": -50
+   },
+   {
+    "x": 120,
+    "z": 50
+   }
+  ]
+ }
+}

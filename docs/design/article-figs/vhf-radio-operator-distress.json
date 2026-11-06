@@ -1,0 +1,151 @@
+{
+ "article": "vhf-radio-operator/distress",
+ "topic": "distress",
+ "lead": "MAYDAY is the one call that stops all other traffic and sets a rescue going. It has a fixed form so that you can say it under stress and anyone who hears it can write it down. Learn the form by heart.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Distress call",
+   "fig": {
+    "type": "radio",
+    "channel": "16",
+    "power": "HI",
+    "parts": [
+     [
+      "distress",
+      "hold 5 s"
+     ],
+     [
+      "ptt",
+      "then speak"
+     ],
+     [
+      "ch16",
+      "channel 16, high power"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Distress call",
+   "fig": {
+    "type": "card",
+    "title": "Distress call",
+    "lines": [
+     "MAYDAY, MAYDAY, MAYDAY",
+     "THIS IS",
+     "Nova, Nova, Nova",
+     "call sign 9A1234, MMSI 238123450"
+    ],
+    "tag": "CH 16"
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Distress message",
+   "fig": {
+    "type": "card",
+    "title": "Distress message",
+    "lines": [
+     "MAYDAY Nova, 9A1234, MMSI 238123450",
+     "My position 43°10.5′N 015°58.0′E",
+     "Holed and sinking",
+     "I require immediate assistance",
+     "Four persons on board",
+     "Abandoning to the liferaft. OVER"
+    ],
+    "tag": "CH 16"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Giving your position",
+   "fig": {
+    "type": "chart",
+    "land": "M95 42 Q130 16 176 34 Q188 60 160 76 Q120 82 100 66 Z",
+    "marks": [
+     [
+      150,
+      60,
+      "w",
+      "Lt"
+     ]
+    ],
+    "track": "M150 60 L75 150",
+    "labels": [
+     [
+      122,
+      112,
+      "3 M",
+      "start"
+     ]
+    ],
+    "boat": [
+     75,
+     150,
+     0
+    ],
+    "panel": [
+     "GPS lost",
+     "Light 040° T",
+     "Range about 3 M"
+    ],
+    "note": "Bearing taken from your boat to the light"
+   },
+   "cap": "You say: \"220 degrees from the lighthouse, 3 miles\"."
+  },
+  {
+   "n": 5,
+   "section": "After the MAYDAY",
+   "fig": {
+    "type": "card",
+    "title": "Acknowledgement",
+    "lines": [
+     "MAYDAY",
+     "Nova, 9A1234",
+     "THIS IS Split Radio",
+     "RECEIVED MAYDAY"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "MAYDAY RELAY",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "r",
+      "x": 205,
+      "y": 52,
+      "t": "red flare"
+     }
+    ],
+    "note": "Night · red parachute flare, nothing heard on 16"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "MAYDAY RELAY",
+   "fig": {
+    "type": "card",
+    "title": "MAYDAY RELAY",
+    "lines": [
+     "MAYDAY RELAY ×3",
+     "ALL STATIONS ×3",
+     "THIS IS Nova ×3, call sign 9A1234",
+     "Following received from yacht Mistral:",
+     "MAYDAY Mistral, position …, sinking,",
+     "six persons on board. OVER"
+    ]
+   },
+   "cap": null
+  }
+ ]
+}

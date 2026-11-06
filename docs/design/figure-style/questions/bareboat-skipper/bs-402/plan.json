@@ -1,0 +1,82 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Crossing a traffic lane",
+  "key": [
+   "Under sail you must not impede a power-driven vessel following the lane (Rule 10(j))",
+   "Steady bearing: you keep clear, early"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": -815.7,
+    "z": -380.4,
+    "hdg": 90,
+    "label": "Ship in lane"
+   }
+  ],
+  "wind": 270,
+  "zones": [
+   {
+    "pts": [
+     [
+      84.3,
+      -540.4
+     ],
+     [
+      84.3,
+      -220.4
+     ],
+     [
+      -1715.7,
+      -220.4
+     ],
+     [
+      -1715.7,
+      -540.4
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "texts": [
+   {
+    "x": -815.7,
+    "z": -610.4,
+    "text": "lane",
+    "free": true
+   },
+   {
+    "x": 187.7,
+    "z": 307.1,
+    "text": "you keep clear",
+    "kind": "red",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -270.0,
+    "z": -270.0
+   },
+   {
+    "x": 270.0,
+    "z": 270.0
+   },
+   {
+    "x": -1085.7,
+    "z": -650.4
+   },
+   {
+    "x": -545.7,
+    "z": -110.4
+   }
+  ]
+ }
+}

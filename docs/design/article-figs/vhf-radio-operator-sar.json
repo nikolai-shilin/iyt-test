@@ -1,0 +1,158 @@
+{
+ "article": "vhf-radio-operator/sar",
+ "topic": "sar",
+ "lead": "A distress call sets a rescue in motion, and every station that hears it has a part in it: mostly to listen and keep quiet, sometimes to answer, relay or go. This is what you do on the radio when the MAYDAY is someone else's.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Hearing a MAYDAY",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V30 Q250 46 170 34 Q90 24 0 44 Z",
+    "marks": [
+     [
+      60,
+      34,
+      "w",
+      "coast station"
+     ],
+     [
+      80,
+      118,
+      "r",
+      "Thalassa"
+     ]
+    ],
+    "track": "M90 122 L176 160",
+    "boat": [
+     190,
+     166,
+     300
+    ],
+    "labels": [
+     [
+      122,
+      156,
+      "3 miles",
+      "middle"
+     ]
+    ],
+    "panel": [
+     "14:05 MAYDAY",
+     "Yacht Thalassa",
+     "37°05'N 25°17'E",
+     "Holed, sinking",
+     "4 persons"
+    ],
+    "note": "What you note while you listen"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Answering",
+   "fig": {
+    "type": "card",
+    "title": "Aura answers Thalassa, on 16",
+    "lines": [
+     "MAYDAY",
+     "Thalassa, MMSI 237 012 345",
+     "THIS IS Aura",
+     "RECEIVED, MAYDAY"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Radio silence",
+   "fig": {
+    "type": "radio",
+    "channel": "16",
+    "power": "HI",
+    "parts": [
+     [
+      "display",
+      "distress traffic"
+     ],
+     [
+      "volume",
+      "listen"
+     ],
+     [
+      "ptt",
+      "hands off, unless you are called"
+     ]
+    ],
+    "note": "SEELONCE MAYDAY"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "On scene",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V28 H0 Z M128 82 Q160 62 196 86 Q202 112 166 120 Q126 114 128 82 Z",
+    "marks": [
+     [
+      60,
+      20,
+      "w",
+      "MRCC"
+     ],
+     [
+      62,
+      112,
+      "r",
+      "casualty"
+     ],
+     [
+      264,
+      104,
+      "y",
+      "lifeboat"
+     ]
+    ],
+    "track": "M72 118 L150 158 M180 158 L256 110",
+    "boat": [
+     165,
+     166,
+     0
+    ],
+    "labels": [
+     [
+      164,
+      96,
+      "island",
+      "middle"
+     ],
+     [
+      165,
+      194,
+      "you hear both: relay",
+      "middle"
+     ]
+    ],
+    "note": "On scene · the channel the MRCC directs"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Helicopter",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "dist": 0
+    },
+    "wind": 330,
+    "note": "A typical brief: steady course, wind 30° on the port bow"
+   },
+   "cap": null
+  }
+ ]
+}

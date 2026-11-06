@@ -26,7 +26,7 @@
       "refs": ["Urgency call"],
       "blocks": [
         { "p": "Make the call on channel 16. Say **PAN-PAN three times**, then the station you are calling three times, then THIS IS and your own name three times. ALL STATIONS reaches everyone in range. If only one station needs to hear you, name it instead: PAN-PAN three times, then Olympia Radio three times." },
-        { "fig": { "type": "card", "title": "On channel 16", "lines": ["PAN-PAN, PAN-PAN, PAN-PAN", "ALL STATIONS ×3", "THIS IS Nefeli, Nefeli, Nefeli", "Position: 6 miles west of Paros", "Engine failed, drifting. I need a tow", "OVER"], "tag": "PAN-PAN" } },
+        { "photo": "vhf-radio-operator/urgency/1", "fig": { "type": "card", "title": "On channel 16", "lines": ["PAN-PAN, PAN-PAN, PAN-PAN", "ALL STATIONS ×3", "THIS IS Nefeli, Nefeli, Nefeli", "Position: 6 miles west of Paros", "Engine failed, drifting. I need a tow", "OVER"], "tag": "PAN-PAN" } },
         { "p": "After the opening comes the message, in the order a rescuer needs it: **your position**, what is wrong, what help you want. Then OVER, and listen." },
         { "rule": "PAN-PAN ×3 · who you call ×3 · THIS IS · your name ×3 · position · problem · help needed · OVER" }
       ]
@@ -40,7 +40,7 @@
       "blocks": [
         { "p": "Once a coast station has your call, stay reachable: keep a listening watch on 16, or on the channel it gave you, until help arrives. If the problem goes away, say the engine starts again, **cancel** the PAN-PAN: tell all stations you need no help, so that nobody keeps looking for you." },
         { "p": "If things get worse, do not wait. The moment the danger becomes grave and imminent, **upgrade to MAYDAY**." },
-        { "fig": { "type": "chart", "land": "M0 200 V162 Q80 142 160 154 Q240 166 320 148 V200 Z", "track": "M110 84 L110 146", "boat": [110, 66, 250], "labels": [[110, 30, "wind F6, onshore", "middle"], [122, 120, "rocks 1 mile downwind", "start"]], "panel": ["1 hour later", "PAN-PAN sent", "Too deep to anchor"], "note": "No engine, drifting onto a lee shore" }, "cap": "Nothing stops the drift: the danger is now grave and imminent, so the PAN-PAN becomes a MAYDAY." }
+        { "photo": "vhf-radio-operator/urgency/2", "plan": 1.6, "fig": { "type": "chart", "land": "M0 200 V162 Q80 142 160 154 Q240 166 320 148 V200 Z", "track": "M110 84 L110 146", "boat": [110, 66, 250], "labels": [[110, 30, "wind F6, onshore", "middle"], [122, 120, "rocks 1 mile downwind", "start"]], "panel": ["1 hour later", "PAN-PAN sent", "Too deep to anchor"], "note": "No engine, drifting onto a lee shore" }, "cap": "Nothing stops the drift: the danger is now grave and imminent, so the PAN-PAN becomes a MAYDAY." }
       ]
     },
     {
@@ -67,11 +67,11 @@
       "refs": ["Safety call"],
       "blocks": [
         { "p": "**SÉCURITÉ** introduces a navigational or weather warning. Coast stations use it for gale warnings and dangers to navigation. Any station may send one, your yacht included: for a drifting container, a mooring buoy adrift in a harbour approach, an unlit mark." },
-        { "fig": { "type": "card", "title": "On channel 16", "lines": ["SÉCURITÉ, SÉCURITÉ, SÉCURITÉ", "ALL STATIONS ×3", "THIS IS Nefeli, Nefeli, Nefeli", "Navigational warning: container adrift", "Listen on channel 72", "OUT"], "tag": "SÉCURITÉ" } },
+        { "photo": "vhf-radio-operator/urgency/3", "fig": { "type": "card", "title": "On channel 16", "lines": ["SÉCURITÉ, SÉCURITÉ, SÉCURITÉ", "ALL STATIONS ×3", "THIS IS Nefeli, Nefeli, Nefeli", "Navigational warning: container adrift", "Listen on channel 72", "OUT"], "tag": "SÉCURITÉ" } },
         { "p": "Channel 16 carries only the announcement: what the warning is about and which working channel to listen on. The message itself goes out on that working channel. When a coast station announces a gale warning on 16 and names a channel, switch to that channel and listen." },
         { "tiles": [
-          { "fig": { "type": "radio", "channel": "16", "power": "HI" }, "view": "40 30 262 130", "name": "Channel 16", "note": "the announcement only" },
-          { "fig": { "type": "radio", "channel": "72", "power": "HI" }, "view": "40 30 262 130", "name": "Working channel", "note": "the warning: what, where, when" }
+          { "photo": "vhf-radio-operator/urgency/4", "fig": { "type": "radio", "channel": "16", "power": "HI" }, "view": "40 30 262 130", "name": "Channel 16", "note": "the announcement only" },
+          { "photo": "vhf-radio-operator/urgency/5", "fig": { "type": "radio", "channel": "72", "power": "HI" }, "view": "40 30 262 130", "name": "Working channel", "note": "the warning: what, where, when" }
         ] }
       ]
     },

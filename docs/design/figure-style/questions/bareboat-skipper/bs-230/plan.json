@@ -1,0 +1,129 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 60,
+  "title": "Line handling · the snap-back zone",
+  "key": [
+   "A stretched nylon line that parts whips back along its own path",
+   "Stand to one side of it, out of line with it"
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -500,
+      -320
+     ],
+     [
+      500,
+      -320
+     ],
+     [
+      500,
+      -180
+     ],
+     [
+      -500,
+      -180
+     ]
+    ],
+    "c": "ink",
+    "fill": "#d8c9a3",
+    "dash": "0"
+   },
+   {
+    "pts": [
+     [
+      -60,
+      -200
+     ],
+     [
+      60,
+      -200
+     ],
+     [
+      140,
+      260
+     ],
+     [
+      -140,
+      260
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.12)"
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": -240,
+    "r": 16,
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -230
+     ],
+     [
+      0,
+      180
+     ]
+    ],
+    "c": "line",
+    "w": 9
+   }
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 240,
+    "hdg": 0,
+    "label": "Yacht",
+    "noHeading": true,
+    "scale": 3.2
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -290,
+    "text": "bollard"
+   },
+   {
+    "x": 220,
+    "z": 40,
+    "text": "snap-back zone",
+    "kind": "red"
+   },
+   {
+    "x": -300,
+    "z": 40,
+    "text": "stand here",
+    "kind": "accent"
+   },
+   {
+    "x": 300,
+    "z": -250,
+    "text": "QUAY",
+    "pill": false,
+    "size": 30
+   }
+  ],
+  "fit": [
+   {
+    "x": -360,
+    "z": -320
+   },
+   {
+    "x": 360,
+    "z": 320
+   }
+  ]
+ }
+}

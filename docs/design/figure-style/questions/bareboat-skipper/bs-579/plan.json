@@ -1,0 +1,136 @@
+{
+ "sch": {
+  "padPx": 50,
+  "title": "Special marks · a swimming area",
+  "land": [
+   [
+    [
+     -300,
+     -300
+    ],
+    [
+     300,
+     -300
+    ],
+    [
+     300,
+     -180
+    ],
+    [
+     -300,
+     -180
+    ]
+   ]
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -200,
+      -180
+     ],
+     [
+      200,
+      -180
+     ],
+     [
+      200,
+      -80
+     ],
+     [
+      -200,
+      -80
+     ]
+    ]
+   }
+  ],
+  "marks": [
+   {
+    "x": -200,
+    "z": -80,
+    "kind": "special",
+    "bearing": false,
+    "hi": false
+   },
+   {
+    "x": -100,
+    "z": -80,
+    "kind": "special",
+    "bearing": false,
+    "hi": false
+   },
+   {
+    "x": 0,
+    "z": -80,
+    "kind": "special",
+    "bearing": false,
+    "hi": true
+   },
+   {
+    "x": 100,
+    "z": -80,
+    "kind": "special",
+    "bearing": false,
+    "hi": false
+   },
+   {
+    "x": 200,
+    "z": -80,
+    "kind": "special",
+    "bearing": false,
+    "hi": false
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -120,
+    "z": 80,
+    "hdg": 90,
+    "noHeading": true
+   }
+  ],
+  "anchors": [
+   {
+    "x": -10,
+    "z": 80,
+    "s": 0.8
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -135,
+    "text": "swimming area",
+    "kind": "accent"
+   },
+   {
+    "x": 0,
+    "z": -240,
+    "text": "BEACH",
+    "pill": false,
+    "size": 30
+   },
+   {
+    "x": 120,
+    "z": 20,
+    "text": "stay outside the line",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -260,
+    "z": -300
+   },
+   {
+    "x": 260,
+    "z": 150
+   }
+  ],
+  "key": [
+   "Yellow buoys in a line off a beach usually mark the swimming area",
+   "Stay outside it; check the chart or the local rules"
+  ]
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "sch": {
+  "padPx": 70,
+  "title": "Day shapes · aground",
+  "key": [
+   "Three black balls: she is aground",
+   "Shallow water round her: keep well clear"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 235,
+    "label": "Aground",
+    "tag": "three balls",
+    "bearing": false,
+    "scale": 3.2,
+    "noHeading": false
+   },
+   {
+    "you": true,
+    "x": 0,
+    "z": 260,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -200,
+    "z": -160
+   },
+   {
+    "x": 200,
+    "z": 380
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -170,
+      -120
+     ],
+     [
+      150,
+      -140
+     ],
+     [
+      190,
+      90
+     ],
+     [
+      -150,
+      110
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.08)"
+   }
+  ],
+  "texts": [
+   {
+    "x": 120,
+    "z": -110,
+    "text": "shallow water",
+    "kind": "red"
+   }
+  ]
+ }
+}

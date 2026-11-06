@@ -1,0 +1,122 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 50,
+  "title": "Special marks · a fish farm",
+  "key": [
+   "Yellow lights mark special marks: here, the corners of a fish farm",
+   "Keep outside the square they mark"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -60,
+    "z": 260,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -110,
+      -220
+     ],
+     [
+      110,
+      -220
+     ],
+     [
+      110,
+      -20
+     ],
+     [
+      -110,
+      -20
+     ]
+    ]
+   }
+  ],
+  "marks": [
+   {
+    "x": -110,
+    "z": -20,
+    "kind": "special",
+    "bearing": false
+   },
+   {
+    "x": 110,
+    "z": -20,
+    "kind": "special",
+    "bearing": false,
+    "hi": true
+   },
+   {
+    "x": -110,
+    "z": -220,
+    "kind": "special",
+    "bearing": false
+   },
+   {
+    "x": 110,
+    "z": -220,
+    "kind": "special",
+    "bearing": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -60,
+      220
+     ],
+     [
+      -160,
+      60
+     ],
+     [
+      -200,
+      -120
+     ],
+     [
+      -180,
+      -300
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -120,
+    "text": "fish farm",
+    "kind": "accent"
+   },
+   {
+    "x": 240,
+    "z": 20,
+    "text": "Fl(4) Y 12s",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -280,
+    "z": -320
+   },
+   {
+    "x": 300,
+    "z": 300
+   },
+   {
+    "x": -60,
+    "z": 359.2
+   }
+  ]
+ }
+}

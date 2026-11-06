@@ -1,0 +1,99 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · crossing, she is on your starboard side",
+  "key": [
+   "Masthead light over red: power-driven, her port side to you",
+   "She has you on her port side: you give way, turn to starboard and pass astern"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 226.3,
+    "z": -226.3,
+    "hdg": 305,
+    "label": "Power",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      208,
+      -208
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 10"
+   },
+   {
+    "pts": [
+     [
+      20,
+      -40
+     ],
+     [
+      80,
+      -90
+     ],
+     [
+      200,
+      -110
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 30,
+    "z": -220,
+    "text": "bearing 045° steady",
+    "kind": "red"
+   },
+   {
+    "x": -150,
+    "z": -40,
+    "text": "you give way",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -200,
+    "z": 100
+   },
+   {
+    "x": 320,
+    "z": -330
+   },
+   {
+    "x": 0,
+    "z": 83.2
+   },
+   {
+    "x": 226.3,
+    "z": -309.5
+   }
+  ]
+ }
+}

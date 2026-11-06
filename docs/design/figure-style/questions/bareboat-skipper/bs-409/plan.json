@@ -1,0 +1,90 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Overtaken · she keeps clear",
+  "key": [
+   "She comes from more than 22.5° abaft your beam: she is overtaking",
+   "The overtaking vessel keeps clear, whichever side she is on (Rule 13)"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 270
+   },
+   {
+    "x": 199.2,
+    "z": -167.1,
+    "hdg": 260,
+    "label": "Motor yacht"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      89.5,
+      -216.2
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "4 10"
+   },
+   {
+    "pts": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      89.5,
+      216.2
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "4 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": 53.4,
+    "z": -256.1,
+    "text": "overtaking: keeps clear",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": -44.6,
+    "z": -186.5,
+    "text": "you stand on",
+    "kind": "accent",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -78.0,
+    "z": -78.0
+   },
+   {
+    "x": 78.0,
+    "z": 78.0
+   },
+   {
+    "x": 121.2,
+    "z": -245.1
+   },
+   {
+    "x": 277.2,
+    "z": -89.1
+   }
+  ]
+ }
+}

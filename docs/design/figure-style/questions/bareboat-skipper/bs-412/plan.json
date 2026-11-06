@@ -1,0 +1,77 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · overtaking",
+  "key": [
+   "Only her white sternlight: you are coming up from astern",
+   "You are overtaking: keep clear of her until past and clear (Rule 13)"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 4.5,
+    "z": -260.0,
+    "hdg": 0,
+    "label": "Other",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      10,
+      -40
+     ],
+     [
+      80,
+      -140
+     ],
+     [
+      95,
+      -330
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 200,
+    "z": -150,
+    "text": "pass clear",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -200,
+    "z": -400
+   },
+   {
+    "x": 260,
+    "z": 100
+   },
+   {
+    "x": 0,
+    "z": 80.0
+   },
+   {
+    "x": 4.5,
+    "z": -340.0
+   }
+  ]
+ }
+}

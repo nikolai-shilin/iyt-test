@@ -1,0 +1,58 @@
+{
+ "sch": {
+  "padPx": 80,
+  "trueScale": true,
+  "minMpp": 0.04,
+  "title": "Day shape · under way again",
+  "key": [
+   "The ball says you are at anchor",
+   "Take it down as soon as you are under way"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 300,
+    "tag": "ball still up",
+    "noHeading": true
+   }
+  ],
+  "circles": [
+   {
+    "x": -0.6,
+    "z": -5.2,
+    "r": 1.25,
+    "fill": "#fff",
+    "c": "ink",
+    "dash": "0"
+   },
+   {
+    "x": -0.6,
+    "z": -5.2,
+    "r": 0.8,
+    "fill": "var(--ink)",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "texts": [
+   {
+    "x": -6,
+    "z": -9,
+    "text": "lower the ball",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -14,
+    "z": -12
+   },
+   {
+    "x": 12,
+    "z": 10
+   }
+  ]
+ }
+}

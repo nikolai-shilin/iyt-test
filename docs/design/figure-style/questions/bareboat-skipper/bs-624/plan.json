@@ -1,0 +1,87 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · constrained by her draught",
+  "key": [
+   "Three all-round reds in a vertical line, and the lights of a power-driven vessel",
+   "Constrained by her draught: do not impede her; keep out of her deep channel"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 150,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 0,
+    "z": -200,
+    "hdg": 80,
+    "label": "Tanker",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "r",
+     "r",
+     "r"
+    ],
+    "stackDx": -170,
+    "scale": 3.6
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -480,
+      -280
+     ],
+     [
+      480,
+      -280
+     ],
+     [
+      480,
+      -120
+     ],
+     [
+      -480,
+      -120
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "texts": [
+   {
+    "x": 300,
+    "z": -80,
+    "text": "deep-water channel",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -480,
+    "z": -360
+   },
+   {
+    "x": 480,
+    "z": 220
+   },
+   {
+    "x": 0,
+    "z": 303.6
+   },
+   {
+    "x": 0,
+    "z": -392.0
+   }
+  ]
+ }
+}

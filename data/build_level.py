@@ -186,7 +186,9 @@ def build(level):
         pick = lambda src: [src['a'] if k == 'a' else src['o'][k] for k in order]
         qid = f'{L["prefix"]}-{i + 1:03d}'
         out.append(dict(id=qid, topic=x['topic'], difficulty=x['difficulty'], q=x['q'], figure=x['fig'], options=pick(x),
-                        answer=target, why=x['why'], ref=x['ref']))
+                        answer=target, why=x['why'], ref=x['ref'],
+                        # a Blender photo of the figure, and its plan (width / height) for the answer: docs/design/blender/publish_q.py
+                        **{k: x[k] for k in ('photo', 'plan') if x.get(k)}))
         if r:
             want = set(figure_texts(x['fig']))
             got = set((r.get('fig') or {}))

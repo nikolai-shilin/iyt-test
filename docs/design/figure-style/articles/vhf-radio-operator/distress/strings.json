@@ -1,0 +1,66 @@
+{
+ "1": {
+  "render": [
+   "hold 5 s",
+   "then speak",
+   "channel 16, high power"
+  ],
+  "schematic": []
+ },
+ "2": {
+  "render": [
+   "Distress call · call sign and MMSI",
+   "MAYDAY ×3, this is Nova ×3",
+   "16, high power"
+  ],
+  "schematic": []
+ },
+ "3": {
+  "render": [
+   "Distress message: MAYDAY Nova · position · nature · help · persons",
+   "position · holed · 4 persons"
+  ],
+  "schematic": []
+ },
+ "4": {
+  "render": [
+   "Your position · bearing FROM the light",
+   "Lt 040° · say: 220° from the light, 3 miles"
+  ],
+  "schematic": [
+   "Your position · bearing FROM the light",
+   "You take the light bearing 040° from the boat: you are 220° FROM the light",
+   "Say: \"220 degrees from the lighthouse, 3 miles\"",
+   "★",
+   "course",
+   "3 M",
+   "220° from the light"
+  ]
+ },
+ "5": {
+  "render": [
+   "Split Radio: RECEIVED MAYDAY",
+   "acknowledged"
+  ],
+  "schematic": []
+ },
+ "6": {
+  "render": [
+   "MAYDAY RELAY · you saw a flare",
+   "red parachute flare · 040°"
+  ],
+  "schematic": [
+   "MAYDAY RELAY · you saw a flare",
+   "A red parachute flare, and nothing heard on 16",
+   "Note its bearing and time, then send MAYDAY RELAY",
+   "red flare · 040°"
+  ]
+ },
+ "7": {
+  "render": [
+   "MAYDAY RELAY: passing on a distress you saw",
+   "MAYDAY RELAY ×3 · ALL STATIONS ×3"
+  ],
+  "schematic": []
+ }
+}

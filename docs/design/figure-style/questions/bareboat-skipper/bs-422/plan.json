@@ -1,0 +1,80 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · crossing, she is on your port side",
+  "key": [
+   "Masthead light over green: power-driven, her starboard side to you",
+   "You are on her starboard side: she gives way; hold course and speed, ready to act"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": -212.1,
+    "z": -252.8,
+    "hdg": 60,
+    "label": "Power",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -212,
+      -253
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": 150,
+    "z": -60,
+    "text": "you stand on",
+    "kind": "accent"
+   },
+   {
+    "x": -40,
+    "z": -200,
+    "text": "bearing steady",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -330,
+    "z": -360
+   },
+   {
+    "x": 260,
+    "z": 100
+   },
+   {
+    "x": 0,
+    "z": 94.4
+   },
+   {
+    "x": -212.1,
+    "z": -347.20000000000005
+   }
+  ]
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Lateral marks · quick flashing green",
+  "key": [
+   "Quick flashing is not only for cardinals: the colour decides",
+   "Green is a starboard-hand mark in region A"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 250,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "marks": [
+   {
+    "x": 70,
+    "z": -60,
+    "kind": "lat-stbd",
+    "bearing": false,
+    "hi": true
+   },
+   {
+    "x": -70,
+    "z": -170,
+    "kind": "lat-port",
+    "bearing": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      210
+     ],
+     [
+      0,
+      -230
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -210,
+    "z": 230,
+    "text": "from seaward",
+    "kind": "light"
+   },
+   {
+    "x": 190,
+    "z": -60,
+    "text": "Q G",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -260,
+    "z": -260
+   },
+   {
+    "x": 260,
+    "z": 280
+   },
+   {
+    "x": 0,
+    "z": 336.4
+   }
+  ]
+ }
+}

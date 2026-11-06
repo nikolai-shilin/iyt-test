@@ -1,0 +1,103 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · tug and tow",
+  "key": [
+   "The lone red light is the tow: a towed vessel shows only sidelights and sternlight",
+   "The tow line lies between them: never cross between tug and tow"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": -57.3,
+    "z": -325.0,
+    "hdg": 260,
+    "label": "Tug",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "w",
+     "w",
+     "w"
+    ],
+    "stackDx": -120
+   },
+   {
+    "x": 336.6,
+    "z": -394.5,
+    "hdg": 260,
+    "label": "Tow",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -27.755767409633755,
+      -330.2094453300079
+     ],
+     [
+      307.0557674096338,
+      -389.2905546699921
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "8 8"
+   }
+  ],
+  "texts": [
+   {
+    "x": 139.65,
+    "z": -209.75,
+    "text": "tow line: never cross",
+    "kind": "red"
+   },
+   {
+    "x": 150,
+    "z": -150,
+    "text": "about 400 m",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -150,
+    "z": 120
+   },
+   {
+    "x": -57.3,
+    "z": -445.0
+   },
+   {
+    "x": 396.6,
+    "z": -474.5
+   },
+   {
+    "x": 0,
+    "z": 95.12
+   },
+   {
+    "x": -57.3,
+    "z": -420.12
+   },
+   {
+    "x": 336.6,
+    "z": -489.62
+   }
+  ]
+ }
+}

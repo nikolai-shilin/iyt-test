@@ -1,0 +1,112 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "North cardinal · pass to the north",
+  "key": [
+   "Uninterrupted quick or very quick flashes: a north cardinal",
+   "Pass to the north of it, clear of the shoal"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -200,
+    "z": -150,
+    "hdg": 90.0,
+    "noHeading": true
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -70,
+      -50
+     ],
+     [
+      10,
+      -75
+     ],
+     [
+      70,
+      -30
+     ],
+     [
+      55,
+      45
+     ],
+     [
+      -20,
+      70
+     ],
+     [
+      -75,
+      30
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.08)"
+   }
+  ],
+  "rocks": [
+   {
+    "x": 0,
+    "z": 0
+   }
+  ],
+  "marks": [
+   {
+    "x": 0,
+    "z": -80,
+    "kind": "card-n",
+    "bearing": false,
+    "hi": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -160,
+      -150
+     ],
+     [
+      200,
+      -150
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 110,
+    "z": -210,
+    "text": "pass north",
+    "kind": "accent"
+   },
+   {
+    "x": 0,
+    "z": 90,
+    "text": "shoal",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -240,
+    "z": -240
+   },
+   {
+    "x": 240,
+    "z": 240
+   },
+   {
+    "x": -200,
+    "z": -73.2
+   }
+  ]
+ }
+}

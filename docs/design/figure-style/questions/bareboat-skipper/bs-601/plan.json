@@ -1,0 +1,159 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 50,
+  "title": "Sector light · you are in the red",
+  "key": [
+   "A sectored light shows a different colour on each bearing",
+   "Red sectors usually cover a danger: steer back into the white"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 150,
+    "z": 380,
+    "hdg": 90,
+    "noHeading": true
+   }
+  ],
+  "land": [
+   [
+    [
+     -500,
+     -420
+    ],
+    [
+     500,
+     -420
+    ],
+    [
+     500,
+     -330
+    ],
+    [
+     60,
+     -330
+    ],
+    [
+     0,
+     -280
+    ],
+    [
+     -60,
+     -330
+    ],
+    [
+     -500,
+     -330
+    ]
+   ]
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      0,
+      -290
+     ],
+     [
+      -160,
+      450
+     ],
+     [
+      140,
+      450
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(255,220,80,.22)",
+    "dash": "0"
+   },
+   {
+    "pts": [
+     [
+      0,
+      -290
+     ],
+     [
+      140,
+      450
+     ],
+     [
+      470,
+      450
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.16)",
+    "dash": "0"
+   }
+  ],
+  "rocks": [
+   {
+    "x": 330,
+    "z": 200
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": -290,
+    "r": 16,
+    "fill": "#fff3c4",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      110,
+      380
+     ],
+     [
+      -10,
+      380
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -10,
+    "z": 140,
+    "text": "white: safe",
+    "kind": "accent"
+   },
+   {
+    "x": 330,
+    "z": 110,
+    "text": "red: danger",
+    "kind": "red"
+   },
+   {
+    "x": 150,
+    "z": -260,
+    "text": "lighthouse",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -500,
+    "z": -420
+   },
+   {
+    "x": 500,
+    "z": 460
+   },
+   {
+    "x": 150,
+    "z": 540.0
+   }
+  ]
+ }
+}

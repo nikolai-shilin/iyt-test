@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Question plans</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Carlito:wght@400;700&display=swap">
+<link rel="stylesheet" href="app.css">
+<style>
+  body { background: #fff; margin: 0; font-family: Carlito, Arial, sans-serif; }
+  main.screen { width: auto; min-height: 0; display: block; overflow: visible; padding: 20px; }
+  .q { width: 760px; margin: 0 0 24px; }
+  .q h3 { font: 700 12px Carlito, Arial, sans-serif; color: var(--accent); margin: 0 0 6px; }
+  .sch svg { display: block; width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<!-- The plan-view schematics of test questions that need their own (the rest reuse an article's), drawn by
+     figure-schematic.js; ?l=<level>, and &lang=ru through figure-style/questions/<level>/ru.json. Captured by
+     docs/design/blender/capture_questions.mjs into figure-style/questions/<level>/<slug>/plan[.ru].png. -->
+<main class="screen" id="rows"></main>
+<script src="figures.js"></script>
+<script src="figure-schematic.js"></script>
+<script>
+const PLANS = {
+  'vhf-radio-operator': (() => {
+    const t = (x, z, text, o = {}) => ({ x, z, text, ...o });
+    const c = ([x, y]) => [(x - 160) * 3, (y - 100) * 3];
+    const P = (x, y) => { const [a, b] = c([x, y]); return { x: a, z: b }; };
+    const line = (a, b, col = 'ink', w = 4, dash) => ({ pts: [a, b], c: col, w, dash });
+    const you = (x, y, hdg = 0, o = {}) => ({ you: true, ...P(x, y), hdg, noHeading: true, ...o });
+    const map = (title, key, o) => ({ noScale: true, sch: { padPx: 60, title, key, ...o } });
+    return {
+      // vhf-119: the light bears 330° T, about 4 miles: you are 150° from it
+      'lighthouse-position': map('Your position · bearing FROM the light', ['The light bears 330° from your boat: you are 150° FROM the light', 'Say: "150 degrees from the lighthouse, 4 miles"'],
+        { land: [[[95, 42], [130, 20], [176, 34], [185, 60], [160, 76], [120, 80], [100, 66]].map(c)], spots: [{ ...P(150, 60), label: '★' }], boats: [you(200, 147)],
+          paths: [line(c([150, 60]), c([197, 142]), 'course', 5, '14 10')], texts: [t(...c([200, 40]), 'Lt'), t(...c([150, 112]), '4 M'), t(...c([250, 110]), '150° from the light', { kind: 'accent' })] }),
+    };
+  })(),
+};
+(async () => {
+  // two modes: PLANS above (?l=<level>), or a figure type's list (?l=<level>&t=<type>): for each question in
+  // figure-style/questions/<level>/<type>.json, its <id>/plan.json (the plan for the answer) and <id>/q.json (a 2D image
+  // for the question itself), each { sch } | { profile } | { rhythm } as in article-figures.html, with noScale to drop
+  // the scale bar; Russian through <id>/ru.json
+  const q = new URLSearchParams(location.search), level = q.get('l') || 'vhf-radio-operator', type = q.get('t'), ru = q.get('lang') === 'ru';
+  const SKIP = new Set(['kind', 'color', 'type', 'side', 'which', 'shape', 'id', 'fill', 'stroke', 'anchor', 'd', 'c', 'dash', 'svg', 'font', 'align', 'dir', 'style', 'cls', 'class', 'icon']);
+  const CODE = /^(red|blue|green|yellow|accent|white|black|grey|gray|orange|ink|muted|course|line|light|dash|dashed|dotted|solid|middle|start|end|top|bottom|[a-zA-Z]{1,2}|[\d\s.,:°′″'"+-]*)$/;
+  const deep = (v, k, fn) => typeof v === 'string' ? (SKIP.has(k) || CODE.test(v) ? v : fn(v)) : Array.isArray(v) ? v.map((x) => deep(x, k, fn)) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([kk, x]) => [kk, deep(x, kk, fn)])) : v;
+  const get = async (u) => { const r = await fetch(`${u}?v=${Date.now()}`); return r.ok ? r.json() : null; };
+  if (ru) Object.assign(window.SCH_TEXT, { You: 'Вы', Other: 'Судно', Wind: 'Ветер', N: 'С', port: 'слева', stbd: 'справа' });
+  const draw = (A) => A.svg ? A.svg : A.rhythm ? schematicRhythm(A.rhythm) : A.profile ? schematicProfile(A.profile) : A.noScale ? schematic(A.sch).replace(/<g><line x1="30"[\s\S]*?<\/g>/, '') : schematic(A.sch);
+  const OWN = [[/(\d) m\b/g, '$1 м'], [/^(\d[\d.,]*) (miles|M)$/, '$1 мили']];
+  const rows = document.getElementById('rows');
+  const add = (slug, kind, A0, RU) => {
+    const A = RU ? deep(A0, '', (s) => RU[s] ?? s) : A0;
+    const row = document.createElement('div'); row.className = 'q'; row.dataset.slug = slug; row.dataset.kind = kind;
+    row.innerHTML = `<h3>${slug} · ${kind}</h3><div class="sch">${draw(A)}</div>`;
+    if (RU) row.querySelectorAll('.sch text, .sch tspan').forEach((el) => {
+      if (el.children.length) return; const t = el.textContent;
+      if (RU[t] != null) { el.textContent = RU[t]; return; }
+      for (const [re, to] of OWN) if (t.search(re) >= 0) { el.textContent = t.replace(re, to); return; }
+    });
+    rows.append(row);
+  };
+  if (type) {
+    const base = `figure-style/questions/${level}`, list = await get(`${base}/${type}.json`) || [];
+    for (const x of list) {
+      const RU = ru ? (await get(`${base}/${x.id}/ru.json`)) || {} : null;
+      for (const kind of ['q', 'plan']) { const A = await get(`${base}/${x.id}/${kind}.json`); if (A) add(x.id, kind, A, RU); }
+    }
+  } else {
+    const RU = ru ? await get(`figure-style/questions/${level}/ru.json`) : null;
+    for (const [slug, A0] of Object.entries(PLANS[level] || {})) add(slug, 'plan', A0, RU);
+  }
+  await document.fonts.ready; document.body.dataset.done = '1';
+})();
+</script>
+</body>
+</html>

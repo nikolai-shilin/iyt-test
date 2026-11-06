@@ -1,0 +1,233 @@
+{
+ "article": "vhf-radio-operator/gmdss",
+ "topic": "gmdss",
+ "lead": "GMDSS, the Global Maritime Distress and Safety System, gets a distress alert ashore without anyone having to hear your voice, and brings safety information to you. On a yacht you meet it as the DSC radio, the EPIRB, the SART and NAVTEX, with AIS working alongside.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "GMDSS",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V34 Q240 48 160 38 Q80 28 0 44 Z",
+    "marks": [
+     [
+      160,
+      46,
+      "w",
+      ""
+     ]
+    ],
+    "track": "M28 52 Q160 250 292 52",
+    "boat": [
+     120,
+     100,
+     90
+    ],
+    "labels": [
+     [
+      160,
+      26,
+      "VHF DSC coast station",
+      "middle"
+     ],
+     [
+      200,
+      104,
+      "A1",
+      "middle"
+     ],
+     [
+      160,
+      188,
+      "beyond VHF range: EPIRB",
+      "middle"
+     ]
+    ],
+    "note": "Sea area A1: in range of a VHF DSC coast station"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "EPIRB",
+   "fig": {
+    "type": "chart",
+    "land": "M196 0 H320 V62 Q258 74 196 40 Z",
+    "marks": [
+     [
+      70,
+      26,
+      "w",
+      "satellite"
+     ],
+     [
+      264,
+      40,
+      "w",
+      "MRCC"
+     ],
+     [
+      200,
+      96,
+      "r",
+      "lifeboat"
+     ]
+    ],
+    "track": "M70 134 L70 36 M80 28 L254 40 M190 102 L86 150",
+    "boat": [
+     70,
+     154,
+     0
+    ],
+    "labels": [
+     [
+      78,
+      90,
+      "406 MHz",
+      "start"
+     ],
+     [
+      158,
+      150,
+      "homing: 121.5 MHz",
+      "start"
+     ],
+     [
+      86,
+      176,
+      "EPIRB",
+      "start"
+     ]
+    ],
+    "note": "406 MHz raises the alarm · 121.5 MHz guides the rescuers in"
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "SART",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 168,
+      "r": 5,
+      "t": "ship"
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 142,
+      "r": 2.5,
+      "t": "SART is here"
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 132,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 122,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 112,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 102,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 92,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 82,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 72,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 62,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 52,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 42,
+      "r": 2.5
+     },
+     {
+      "c": "y",
+      "x": 160,
+      "y": 32,
+      "r": 2.5,
+      "t": "12th dot"
+     }
+    ],
+    "note": "Radar screen · the line points away from the ship"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "NAVTEX",
+   "fig": {
+    "type": "card",
+    "title": "NAVTEX printout",
+    "lines": [
+     "ZCZC HB45",
+     "H · the transmitting station",
+     "B · the subject: weather warning",
+     "45 · the number of the message",
+     "NNNN · end of the message"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "AIS",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 25,
+     "dist": 85,
+     "hdg": 250,
+     "label": "No AIS"
+    },
+    "note": "No targets on the plotter, yet a boat ahead"
+   },
+   "cap": null
+  }
+ ]
+}

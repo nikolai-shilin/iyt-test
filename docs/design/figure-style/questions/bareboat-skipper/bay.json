@@ -1,0 +1,852 @@
+[
+ {
+  "id": "bs-065",
+  "topic": "weather",
+  "q": "A hot sunny morning, calm. By 14:00 a steady 15-knot onshore wind has set in. What is it?",
+  "answer": "A sea breeze — it will die at sunset",
+  "why": "Warm land draws air in from the sea on sunny afternoons.",
+  "figure": {
+   "type": "bay",
+   "wind": 180,
+   "spots": [],
+   "labels": [
+    [
+     160,
+     30,
+     "LAND — hot",
+     "middle"
+    ],
+    [
+     160,
+     170,
+     "SEA — cool",
+     "middle"
+    ]
+   ],
+   "note": "Afternoon, clear sky, wind onshore"
+  },
+  "ru": {
+   "Afternoon, clear sky, wind onshore": "День, ясно, ветер с моря",
+   "LAND — hot": "СУША — жарко",
+   "SEA — cool": "МОРЕ — прохладно"
+  }
+ },
+ {
+  "id": "bs-072",
+  "topic": "anchoring",
+  "q": "Wind is forecast to go round to the south overnight. Which spot do you anchor in?",
+  "answer": "Spot A — sheltered by the land to the south",
+  "why": "Choose shelter from the forecast wind, not the present one.",
+  "figure": {
+   "type": "bay",
+   "wind": 180,
+   "land": "M0 200 H190 V135 C 150 120 60 125 0 130 Z M250 200 H320 V110 C 300 120 270 140 250 150 Z",
+   "spots": [
+    [
+     90,
+     95,
+     "A"
+    ],
+    [
+     220,
+     60,
+     "B"
+    ],
+    [
+     220,
+     150,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     95,
+     165,
+     "LAND (south)",
+     "middle"
+    ],
+    [
+     220,
+     128,
+     "channel",
+     "middle"
+    ]
+   ],
+   "note": "Forecast: wind backing south overnight, F5"
+  },
+  "ru": {
+   "Forecast: wind backing south overnight, F5": "Прогноз: ночью ветер отходит к Ю, 5 баллов",
+   "LAND (south)": "БЕРЕГ (юг)",
+   "channel": "фарватер"
+  }
+ },
+ {
+  "id": "bs-080",
+  "topic": "anchoring",
+  "q": "The wind is pinning you against the pontoon. How do you leave?",
+  "answer": "Spring the stern out: bow spring led aft, fender the bow, helm towards the pontoon, gently ahead, then astern clear",
+  "why": "Ahead against a bow spring pivots the boat on the bow and swings the stern out into the wind.",
+  "figure": {
+   "type": "bay",
+   "wind": 90,
+   "land": "M0 0 H40 V200 H0 Z",
+   "spots": [],
+   "labels": [
+    [
+     20,
+     100,
+     "PONTOON",
+     "middle"
+    ],
+    [
+     130,
+     100,
+     "yacht pinned on",
+     "middle"
+    ]
+   ],
+   "note": "Wind onto the pontoon, F4"
+  },
+  "ru": {
+   "Wind onto the pontoon, F4": "Ветер на понтон, 4 балла",
+   "PONTOON": "ПОНТОН",
+   "yacht pinned on": "яхту прижало"
+  }
+ },
+ {
+  "id": "bs-123",
+  "topic": "terms",
+  "q": "You are sailing along this coast towards the next harbour. What is it called, and how far off do you keep?",
+  "answer": "A lee shore; keep well off",
+  "why": "A lee shore has the wind blowing onto it; a failure there drives you onto the rocks.",
+  "figure": {
+   "type": "bay",
+   "wind": 180,
+   "labels": [
+    [
+     160,
+     40,
+     "ROCKY COAST",
+     "middle"
+    ]
+   ],
+   "note": "Wind blowing onto the coast"
+  },
+  "ru": {
+   "Wind blowing onto the coast": "Ветер дует на берег",
+   "ROCKY COAST": "СКАЛИСТЫЙ БЕРЕГ"
+  }
+ },
+ {
+  "id": "bs-337",
+  "topic": "safety",
+  "q": "A crew member wants to swim from the yacht to the beach. What do you insist on?",
+  "answer": "A bright tow float, clear of the tender route",
+  "why": "A swimmer's head is almost invisible to a rib driver; a bright float and a clear route save lives.",
+  "figure": {
+   "type": "bay",
+   "wind": 200,
+   "spots": [
+    [
+     262,
+     168,
+     "Y"
+    ]
+   ],
+   "labels": [
+    [
+     110,
+     104,
+     "BEACH",
+     "middle"
+    ],
+    [
+     196,
+     158,
+     "tenders and ribs",
+     "middle"
+    ]
+   ],
+   "note": "Y: your yacht, 300 m off the beach"
+  },
+  "ru": {
+   "Y: your yacht, 300 m off the beach": "Y: ваша яхта, в 300 м от пляжа",
+   "BEACH": "ПЛЯЖ",
+   "tenders and ribs": "тендеры и РИБы"
+  }
+ },
+ {
+  "id": "bs-694",
+  "topic": "weather",
+  "q": "You plan to pass through the strait at A. What do you expect?",
+  "answer": "F7 or more and steep seas — consider waiting",
+  "why": "Wind funnels and accelerates between high islands; the Kafireas Strait is notorious.",
+  "figure": {
+   "type": "bay",
+   "wind": 20,
+   "land": "M0 0 H120 C 135 60 120 130 90 200 H0 Z M205 0 H320 V200 H235 C 215 140 195 70 205 0 Z",
+   "spots": [
+    [
+     163,
+     100,
+     "A"
+    ]
+   ],
+   "labels": [
+    [
+     50,
+     100,
+     "EVIA",
+     "middle"
+    ],
+    [
+     270,
+     100,
+     "ANDROS",
+     "middle"
+    ]
+   ],
+   "note": "Forecast: Meltemi NE 5–6"
+  },
+  "ru": {
+   "Forecast: Meltemi NE 5–6": "Прогноз: мельтеми СВ 5–6",
+   "EVIA": "ЭВБЕЯ",
+   "ANDROS": "АНДРОС"
+  }
+ },
+ {
+  "id": "bs-701",
+  "topic": "weather",
+  "q": "Menorca, July. Tramontana F6 is forecast for tonight. Where do you spend the night?",
+  "answer": "B, on the south coast",
+  "why": "The Tramontana is a northerly: shelter on the south side of the island.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M90 80 C 110 45 210 40 235 75 C 255 105 220 140 160 140 C 110 140 75 115 90 80 Z",
+   "spots": [
+    [
+     160,
+     24,
+     "A"
+    ],
+    [
+     160,
+     164,
+     "B"
+    ],
+    [
+     272,
+     82,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     162,
+     95,
+     "MENORCA",
+     "middle"
+    ]
+   ],
+   "note": "Forecast: Tramontana N 6 tonight"
+  },
+  "ru": {
+   "Forecast: Tramontana N 6 tonight": "Прогноз: трамонтана С 6 ночью",
+   "MENORCA": "МЕНОРКА"
+  }
+ },
+ {
+  "id": "bs-708",
+  "topic": "weather",
+  "q": "You are anchored off a hot island in summer. Yesterday afternoon the wind blew onshore. What is this light breeze?",
+  "answer": "A land breeze — it fades after sunrise",
+  "why": "At night the land cools below the sea and air drains offshore; it dies as the sun heats the land.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "spots": [
+    [
+     150,
+     150,
+     "You"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     30,
+     "LAND — cool",
+     "middle"
+    ]
+   ],
+   "note": "05:00 after a clear night, wind off the land"
+  },
+  "ru": {
+   "05:00 after a clear night, wind off the land": "05:00 после ясной ночи, ветер с берега",
+   "LAND — cool": "СУША — прохладно"
+  }
+ },
+ {
+  "id": "bs-710",
+  "topic": "weather",
+  "q": "You are anchored at A. At 02:00 strong cold gusts pour down off the land. What is it, and what do you do next time?",
+  "answer": "Katabatic — avoid the valley mouth",
+  "why": "On clear nights cold air drains down valleys and bursts out of their mouths.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V70 C 260 75 200 60 175 95 L 160 70 L 145 95 C 120 60 60 75 0 70 Z",
+   "spots": [
+    [
+     160,
+     125,
+     "A"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     35,
+     "HIGH MOUNTAINS",
+     "middle"
+    ],
+    [
+     160,
+     62,
+     "valley",
+     "middle"
+    ]
+   ],
+   "note": "02:00, clear sky, calm at dusk"
+  },
+  "ru": {
+   "02:00, clear sky, calm at dusk": "02:00, ясно, вечером был штиль",
+   "HIGH MOUNTAINS": "ВЫСОКИЕ ГОРЫ",
+   "valley": "долина"
+  }
+ },
+ {
+  "id": "bs-713",
+  "topic": "weather",
+  "q": "Same F6 wind across the whole gulf. Where is the sea smallest?",
+  "answer": "A — near the windward shore, short fetch",
+  "why": "Waves grow with the distance the wind blows over open water (the fetch).",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V45 C 220 55 100 40 0 50 Z M0 200 H320 V172 C 220 162 100 178 0 168 Z",
+   "spots": [
+    [
+     160,
+     74,
+     "A"
+    ],
+    [
+     160,
+     146,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     25,
+     "NORTH SHORE",
+     "middle"
+    ]
+   ],
+   "note": "Wind N 6, gulf 10 M wide"
+  },
+  "ru": {
+   "Wind N 6, gulf 10 M wide": "Ветер С 6, ширина залива 10 миль",
+   "NORTH SHORE": "СЕВЕРНЫЙ БЕРЕГ"
+  }
+ },
+ {
+  "id": "bs-726",
+  "topic": "weather",
+  "q": "Where will you spend a comfortable night?",
+  "answer": "B — tucked away from the swell",
+  "why": "Swell can make an anchorage untenable even in light wind; hide from the swell direction.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M90 80 C 110 45 210 40 235 75 C 255 105 220 140 160 140 C 110 140 75 115 90 80 Z",
+   "spots": [
+    [
+     66,
+     140,
+     "A"
+    ],
+    [
+     255,
+     42,
+     "B"
+    ],
+    [
+     160,
+     164,
+     "C"
+    ]
+   ],
+   "note": "Wind N 2 · SW swell 1.5 m tonight"
+  },
+  "ru": {
+   "Wind N 2 · SW swell 1.5 m tonight": "Ветер С 2 · ночью зыбь с ЮЗ 1,5 м"
+  }
+ },
+ {
+  "id": "bs-730",
+  "topic": "weather",
+  "q": "You must pick a night anchorage. Which one?",
+  "answer": "B — sheltered now and after the shift",
+  "why": "Choose shelter for the wind you will have overnight, not only the wind you have now.",
+  "figure": {
+   "type": "bay",
+   "wind": 315,
+   "land": "M90 80 C 110 45 210 40 235 75 C 255 105 220 140 160 140 C 110 140 75 115 90 80 Z",
+   "spots": [
+    [
+     52,
+     92,
+     "A"
+    ],
+    [
+     272,
+     80,
+     "B"
+    ],
+    [
+     160,
+     164,
+     "C"
+    ]
+   ],
+   "note": "Now NW 5 · backing SW 6 after midnight"
+  },
+  "ru": {
+   "Now NW 5 · backing SW 6 after midnight": "Сейчас СЗ 5 · после полуночи отходит на ЮЗ 6"
+  }
+ },
+ {
+  "id": "bs-736",
+  "topic": "anchoring",
+  "q": "Looking down through clear water you see this bottom. Where do you drop the anchor?",
+  "answer": "B — on the sand, clear of the seagrass",
+  "why": "Posidonia seagrass is protected and holds poorly; anchor and chain belong on sand.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V35 C 240 50 120 30 0 45 Z",
+   "spots": [
+    [
+     110,
+     100,
+     "A"
+    ],
+    [
+     220,
+     115,
+     "B"
+    ]
+   ],
+   "labels": [
+    [
+     110,
+     130,
+     "dark seagrass meadow"
+    ],
+    [
+     220,
+     145,
+     "pale sand patch"
+    ]
+   ],
+   "note": "Seen from the bow, depth about 6 m"
+  },
+  "ru": {
+   "Seen from the bow, depth about 6 m": "Вид с носа, глубина около 6 м",
+   "dark seagrass meadow": "тёмные заросли посидонии",
+   "pale sand patch": "светлое пятно песка"
+  }
+ },
+ {
+  "id": "bs-748",
+  "topic": "anchoring",
+  "q": "Which spot gives you the quietest night?",
+  "answer": "A — tucked in behind the headland",
+  "why": "Swell, not just wind, decides comfort; anchor behind land that blocks it.",
+  "figure": {
+   "type": "bay",
+   "wind": 315,
+   "land": "M0 0 H320 V40 C 260 50 200 40 150 45 C 120 48 95 50 85 70 L 80 160 C 70 175 40 175 0 170 Z",
+   "spots": [
+    [
+     115,
+     75,
+     "A"
+    ],
+    [
+     215,
+     120,
+     "B"
+    ],
+    [
+     255,
+     78,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     40,
+     100,
+     "headland"
+    ]
+   ],
+   "note": "Wind NW F3 · old swell rolling in from the SW"
+  },
+  "ru": {
+   "Wind NW F3 · old swell rolling in from the SW": "Ветер СЗ, 3 балла · старая зыбь заходит с ЮЗ",
+   "headland": "мыс"
+  }
+ },
+ {
+  "id": "bs-749",
+  "topic": "anchoring",
+  "q": "You are anchored here for the night. What do you do?",
+  "answer": "Leave before dark for a bay sheltered from the west",
+  "why": "A bay open to the forecast wind becomes a lee shore; move while it is light.",
+  "figure": {
+   "type": "bay",
+   "wind": 90,
+   "land": "M320 0 V200 H230 C 210 160 250 120 220 80 C 200 50 230 20 240 0 Z",
+   "spots": [
+    [
+     150,
+     100,
+     "Y"
+    ]
+   ],
+   "labels": [
+    [
+     150,
+     130,
+     "you, at anchor"
+    ],
+    [
+     280,
+     60,
+     "LAND"
+    ]
+   ],
+   "note": "Forecast: wind W F6 after midnight"
+  },
+  "ru": {
+   "Forecast: wind W F6 after midnight": "Прогноз: после полуночи ветер З, 6 баллов",
+   "you, at anchor": "вы, на якоре",
+   "LAND": "БЕРЕГ"
+  }
+ },
+ {
+  "id": "bs-751",
+  "topic": "anchoring",
+  "q": "You arrive in this bay. Where do you let go your anchor?",
+  "answer": "C — well to one side, clear of its swing",
+  "why": "Never drop over another boat's chain; keep both swinging circles apart.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V35 C 240 50 120 30 0 45 Z",
+   "spots": [
+    [
+     160,
+     70,
+     "A"
+    ],
+    [
+     160,
+     160,
+     "B"
+    ],
+    [
+     55,
+     115,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     118,
+     "yacht at anchor, 40 m chain out"
+    ]
+   ],
+   "note": "Wind N F3, steady"
+  },
+  "ru": {
+   "Wind N F3, steady": "Ветер С, 3 балла, устойчивый",
+   "yacht at anchor, 40 m chain out": "яхта на якоре, 40 м цепи"
+  }
+ },
+ {
+  "id": "bs-755",
+  "topic": "anchoring",
+  "q": "You are motoring towards spot A to anchor. How do you make the final approach?",
+  "answer": "Slowly, head to wind, stopping over the spot",
+  "why": "Head to wind you can stop exactly where you want and fall back in line.",
+  "figure": {
+   "type": "bay",
+   "wind": 0,
+   "land": "M0 0 H320 V35 C 240 50 120 30 0 45 Z",
+   "spots": [
+    [
+     160,
+     95,
+     "A"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     125,
+     "sand, 6 m"
+    ]
+   ],
+   "note": "Wind N F3, settled"
+  },
+  "ru": {
+   "Wind N F3, settled": "Ветер С, 3 балла, устойчивый",
+   "sand, 6 m": "песок, 6 м"
+  }
+ },
+ {
+  "id": "bs-791",
+  "topic": "anchoring",
+  "q": "You will moor stern-to in the marked berth. Where do you drop the anchor?",
+  "answer": "B — upwind of the line of the berth",
+  "why": "Dropped upwind, the chain holds the bow up to windward as you reverse.",
+  "figure": {
+   "type": "bay",
+   "wind": 90,
+   "land": "M0 0 H320 V40 H0 Z",
+   "spots": [
+    [
+     160,
+     150,
+     "A"
+    ],
+    [
+     230,
+     140,
+     "B"
+    ],
+    [
+     90,
+     140,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     25,
+     "QUAY"
+    ],
+    [
+     160,
+     58,
+     "your berth"
+    ]
+   ],
+   "note": "Wind on the beam of the berth, F4"
+  },
+  "ru": {
+   "Wind on the beam of the berth, F4": "Ветер поперёк места стоянки, 4 балла",
+   "QUAY": "ПРИЧАЛ",
+   "your berth": "ваше место"
+  }
+ },
+ {
+  "id": "bs-803",
+  "topic": "anchoring",
+  "q": "From which spot do you start your final approach to the buoy?",
+  "answer": "A — so you motor slowly up into the wind",
+  "why": "Approach a buoy into the wind so you can stop beside it.",
+  "figure": {
+   "type": "bay",
+   "wind": 270,
+   "land": "M0 0 H50 C 60 60 40 120 30 165 C 20 172 10 172 0 170 Z",
+   "spots": [
+    [
+     240,
+     100,
+     "A"
+    ],
+    [
+     100,
+     100,
+     "B"
+    ],
+    [
+     160,
+     165,
+     "C"
+    ]
+   ],
+   "labels": [
+    [
+     160,
+     104,
+     "buoy"
+    ]
+   ],
+   "note": "Wind W F3"
+  },
+  "ru": {
+   "Wind W F3": "Ветер З, 3 балла",
+   "buoy": "буй"
+  }
+ },
+ {
+  "id": "bs-807",
+  "topic": "anchoring",
+  "q": "You are alongside and an offshore breeze holds the bow away from the pontoon. Which line pulls it in close?",
+  "answer": "A bow breast line, square to the pontoon",
+  "why": "Breast lines run at right angles and pull the boat in; springs stop surge.",
+  "figure": {
+   "type": "bay",
+   "wind": 270,
+   "land": "M0 0 H50 V168 H0 Z",
+   "labels": [
+    [
+     25,
+     90,
+     "PONTOON"
+    ],
+    [
+     110,
+     100,
+     "you, bow blowing off"
+    ]
+   ],
+   "note": "Wind off the pontoon, F3"
+  },
+  "ru": {
+   "Wind off the pontoon, F3": "Ветер с понтона, 3 балла",
+   "PONTOON": "ПОНТОН",
+   "you, bow blowing off": "вы, нос отжимает"
+  }
+ },
+ {
+  "id": "bs-809",
+  "topic": "anchoring",
+  "q": "You come alongside this pontoon. How do you approach?",
+  "answer": "At a steeper angle, getting a line on fast",
+  "why": "Wind off the berth blows you away; aim in more and get a line ashore quickly.",
+  "figure": {
+   "type": "bay",
+   "wind": 270,
+   "land": "M0 0 H50 V168 H0 Z",
+   "spots": [
+    [
+     150,
+     110,
+     "Y"
+    ]
+   ],
+   "labels": [
+    [
+     25,
+     90,
+     "PONTOON"
+    ],
+    [
+     150,
+     140,
+     "you, motoring in"
+    ]
+   ],
+   "note": "Wind off the pontoon, F4"
+  },
+  "ru": {
+   "Wind off the pontoon, F4": "Ветер с понтона, 4 балла",
+   "PONTOON": "ПОНТОН",
+   "you, motoring in": "вы, идёте под мотором"
+  }
+ },
+ {
+  "id": "bs-810",
+  "topic": "anchoring",
+  "q": "This time the wind blows onto the berth. How do you come alongside?",
+  "answer": "Stop parallel, a metre off; let the wind push you in",
+  "why": "An onshore wind does the work; arrive stopped and parallel, well fendered.",
+  "figure": {
+   "type": "bay",
+   "wind": 90,
+   "land": "M0 0 H50 V168 H0 Z",
+   "spots": [
+    [
+     150,
+     110,
+     "Y"
+    ]
+   ],
+   "labels": [
+    [
+     25,
+     90,
+     "PONTOON"
+    ],
+    [
+     150,
+     140,
+     "you, motoring in"
+    ]
+   ],
+   "note": "Wind onto the pontoon, F4"
+  },
+  "ru": {
+   "Wind onto the pontoon, F4": "Ветер на понтон, 4 балла",
+   "PONTOON": "ПОНТОН",
+   "you, motoring in": "вы, идёте под мотором"
+  }
+ },
+ {
+  "id": "bs-813",
+  "topic": "anchoring",
+  "q": "You will swing the stern out and leave astern. What do you rig, and which gear?",
+  "answer": "Bow spring led aft, bow fendered, gently ahead",
+  "why": "Ahead against a bow spring pivots on the bow and swings the stern out.",
+  "figure": {
+   "type": "bay",
+   "wind": 90,
+   "land": "M0 0 H50 V168 H0 Z",
+   "labels": [
+    [
+     25,
+     90,
+     "PONTOON"
+    ],
+    [
+     110,
+     50,
+     "yacht close ahead"
+    ],
+    [
+     110,
+     110,
+     "you"
+    ]
+   ],
+   "note": "Wind onto the pontoon, F4"
+  },
+  "ru": {
+   "Wind onto the pontoon, F4": "Ветер на понтон, 4 балла",
+   "PONTOON": "ПОНТОН",
+   "yacht close ahead": "яхта вплотную впереди",
+   "you": "вы"
+  }
+ }
+]

@@ -1,0 +1,130 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Wind against tide",
+  "key": [
+   "Wind from the north, the current setting north: they oppose",
+   "Expect short, steep, breaking seas, worse than the wind alone suggests"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   }
+  ],
+  "wind": 0,
+  "land": [
+   [
+    [
+     -360.0,
+     -420.0
+    ],
+    [
+     -150.0,
+     -420.0
+    ],
+    [
+     -135.0,
+     -180.0
+    ],
+    [
+     -165.0,
+     90.0
+    ],
+    [
+     -360.0,
+     90.0
+    ]
+   ],
+   [
+    [
+     360.0,
+     -420.0
+    ],
+    [
+     165.0,
+     -420.0
+    ],
+    [
+     135.0,
+     -180.0
+    ],
+    [
+     180.0,
+     90.0
+    ],
+    [
+     360.0,
+     90.0
+    ]
+   ]
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -60.0,
+      -90.0
+     ],
+     [
+      -60.0,
+      -285.0
+     ]
+    ],
+    "c": "ink",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      60.0,
+      -90.0
+     ],
+     [
+      60.0,
+      -285.0
+     ]
+    ],
+    "c": "ink",
+    "w": 5,
+    "arrow": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -300.0,
+    "z": -420.0
+   },
+   {
+    "x": 300.0,
+    "z": 90.0
+   },
+   {
+    "x": -90.0,
+    "z": -90.0
+   },
+   {
+    "x": 90.0,
+    "z": 90.0
+   }
+  ],
+  "texts": [
+   {
+    "x": -23.8,
+    "z": -321.4,
+    "text": "current 2 kn",
+    "free": true
+   },
+   {
+    "x": 0.0,
+    "z": -377.4,
+    "text": "steep, breaking seas",
+    "kind": "red",
+    "free": true
+   }
+  ]
+ }
+}

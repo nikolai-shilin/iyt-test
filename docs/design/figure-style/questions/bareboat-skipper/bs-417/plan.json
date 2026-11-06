@@ -1,0 +1,93 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Power meets sail end-on",
+  "key": [
+   "Rule 14 is only for two power-driven vessels",
+   "Power keeps clear of sail: you alone take action (Rule 18)"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 0.0,
+    "z": -300.0,
+    "hdg": 180,
+    "bearing": false,
+    "noHeading": true
+   }
+  ],
+  "wind": 270,
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      -36.0
+     ],
+     [
+      0.0,
+      -75.0
+     ],
+     [
+      4.2,
+      -98.6
+     ],
+     [
+      12.4,
+      -121.2
+     ],
+     [
+      24.4,
+      -142.0
+     ],
+     [
+      39.8,
+      -160.4
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -166.7,
+    "z": 112.9,
+    "text": "you keep clear",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": -165.3,
+    "z": -265.2,
+    "text": "under sail",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -90.0,
+    "z": -90.0
+   },
+   {
+    "x": 90.0,
+    "z": 90.0
+   },
+   {
+    "x": -90.0,
+    "z": -390.0
+   },
+   {
+    "x": 90.0,
+    "z": -210.0
+   }
+  ]
+ }
+}

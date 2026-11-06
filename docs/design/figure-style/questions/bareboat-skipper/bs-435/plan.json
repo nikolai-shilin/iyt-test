@@ -1,0 +1,120 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · a tow over 200 m",
+  "key": [
+   "Three masthead lights in a line: towing, the tow over 200 m long",
+   "Never cross between tug and tow: pass well astern of the tow"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 298.3,
+    "z": -426.0,
+    "hdg": 295,
+    "label": "Tug",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "w",
+     "w",
+     "w"
+    ],
+    "stackDx": -120
+   },
+   {
+    "x": 570.2,
+    "z": -299.2,
+    "hdg": 295,
+    "label": "Tow",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      325.4892336110995,
+      -413.321452147779
+     ],
+     [
+      543.0107663889005,
+      -311.878547852221
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "8 8"
+   },
+   {
+    "pts": [
+     [
+      20,
+      -40
+     ],
+     [
+      200,
+      -40
+     ],
+     [
+      520,
+      20
+     ],
+     [
+      700,
+      -60
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 434.25,
+    "z": -212.60000000000002,
+    "text": "tow line: never cross",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -150,
+    "z": 120
+   },
+   {
+    "x": 298.3,
+    "z": -546.0
+   },
+   {
+    "x": 630.2,
+    "z": -379.2
+   },
+   {
+    "x": 0,
+    "z": 124.83200000000001
+   },
+   {
+    "x": 298.3,
+    "z": -550.832
+   },
+   {
+    "x": 570.2,
+    "z": -424.032
+   }
+  ]
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 50,
+  "title": "Harbour entrance · red and green",
+  "key": [
+   "Region A: red marks the port side of the entrance, green the starboard side",
+   "Enter between them, the green to starboard"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 260,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "land": [
+   [
+    [
+     -460,
+     -420
+    ],
+    [
+     460,
+     -420
+    ],
+    [
+     460,
+     -300
+    ],
+    [
+     -460,
+     -300
+    ]
+   ]
+  ],
+  "quays": [
+   {
+    "x1": -460,
+    "z1": -300,
+    "x2": -80,
+    "z2": -250
+   },
+   {
+    "x1": 80,
+    "z1": -300,
+    "x2": 460,
+    "z2": -250
+   }
+  ],
+  "circles": [
+   {
+    "x": -80,
+    "z": -255,
+    "r": 16,
+    "fill": "#e0251b",
+    "c": "ink",
+    "dash": "0"
+   },
+   {
+    "x": 80,
+    "z": -255,
+    "r": 16,
+    "fill": "#1aa34a",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      220
+     ],
+     [
+      0,
+      -330
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -200,
+    "z": -190,
+    "text": "Fl R 3s",
+    "kind": "light"
+   },
+   {
+    "x": 200,
+    "z": -190,
+    "text": "Fl G 3s",
+    "kind": "light"
+   },
+   {
+    "x": 150,
+    "z": 60,
+    "text": "enter between",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -460,
+    "z": -420
+   },
+   {
+    "x": 460,
+    "z": 320
+   },
+   {
+    "x": 0,
+    "z": 407.20000000000005
+   }
+  ]
+ }
+}

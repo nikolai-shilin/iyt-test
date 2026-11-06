@@ -1,0 +1,307 @@
+{
+ "article": "bareboat-skipper/anchoring",
+ "topic": "anchoring",
+ "lead": "Anchoring well means choosing the spot, laying enough chain and proving that the anchor holds. In harbour the same care goes into your lines.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Shelter and seabed",
+   "fig": {
+    "type": "bay",
+    "wind": 180,
+    "land": "M0 200 H190 V135 C 150 120 60 125 0 130 Z M250 200 H320 V110 C 300 120 270 140 250 150 Z",
+    "spots": [
+     [
+      90,
+      95,
+      "A"
+     ],
+     [
+      220,
+      60,
+      "B"
+     ],
+     [
+      220,
+      150,
+      "C"
+     ]
+    ],
+    "labels": [
+     [
+      95,
+      165,
+      "LAND (south)",
+      "middle"
+     ],
+     [
+      220,
+      128,
+      "channel",
+      "middle"
+     ]
+    ],
+    "note": "Forecast: wind backing south overnight, F5"
+   },
+   "cap": "Only A lies under the land when the wind goes south."
+  },
+  {
+   "n": 2,
+   "section": "How much chain to let out",
+   "fig": {
+    "type": "anchor",
+    "depth": "6 m",
+    "title": "(6 m + 1 m) × 5 = 35 m",
+    "lines": [
+     "All-chain rode",
+     "Bow roller 1 m above water",
+     "Gusty night: 5:1"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "How much chain to let out",
+   "fig": {
+    "type": "chart",
+    "marks": [
+     [
+      90,
+      150,
+      "k",
+      "anchor"
+     ],
+     [
+      240,
+      150,
+      "k",
+      "rock"
+     ]
+    ],
+    "boat": [
+     45,
+     150,
+     90
+    ],
+    "labels": [
+     [
+      165,
+      176,
+      "rock is 45 m from your anchor",
+      "middle"
+     ]
+    ],
+    "depths": [
+     [
+      60,
+      90,
+      "5"
+     ],
+     [
+      140,
+      110,
+      "5"
+     ]
+    ],
+    "panel": [
+     "Wind E, going W",
+     "Chain out 40 m",
+     "Depth 5 m",
+     "Bow height 1 m",
+     "Boat length 13 m"
+    ]
+   },
+   "cap": "The stern can swing 52 m from the anchor, past the rock."
+  },
+  {
+   "n": 4,
+   "section": "Stop, let go, dig it in",
+   "fig": {
+    "type": "dayshape",
+    "shape": "ball",
+    "sail": false
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Stop, let go, dig it in",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 70
+     }
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Holding through the night",
+   "fig": {
+    "type": "chart",
+    "track": "M150 70 C 138 76 140 88 152 90 C 166 92 170 80 160 72 L 166 82 L 200 110 L 236 138",
+    "boat": [
+     240,
+     142,
+     315
+    ],
+    "labels": [
+     [
+      150,
+      58,
+      "earlier",
+      "middle"
+     ]
+    ],
+    "panel": [
+     "Plotter, 0300",
+     "Wind NW F6"
+    ],
+    "note": "Your GPS track over the last hour"
+   },
+   "cap": "Loops while she swings, then a straight track as she drags."
+  },
+  {
+   "n": 7,
+   "section": "Mediterranean mooring",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V40 H0 Z",
+    "track": "M160 180 L160 60",
+    "marks": [
+     [
+      160,
+      170,
+      "k",
+      "drop here"
+     ]
+    ],
+    "boat": [
+     160,
+     90,
+     180
+    ],
+    "labels": [
+     [
+      160,
+      30,
+      "QUAY",
+      "middle"
+     ],
+     [
+      200,
+      130,
+      "3–4 boat lengths",
+      "start"
+     ]
+    ],
+    "note": "Stern-to, reversing towards the quay"
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Mediterranean mooring",
+   "fig": {
+    "type": "bay",
+    "wind": 90,
+    "land": "M0 0 H320 V40 H0 Z",
+    "spots": [
+     [
+      215,
+      132,
+      "B"
+     ]
+    ],
+    "labels": [
+     [
+      160,
+      25,
+      "QUAY"
+     ],
+     [
+      160,
+      58,
+      "your berth"
+     ],
+     [
+      215,
+      160,
+      "drop upwind"
+     ]
+    ],
+    "note": "Wind on the beam of the berth, F4"
+   },
+   "cap": "From B the chain holds the bow up to windward."
+  },
+  {
+   "n": 9,
+   "section": "Breast lines hold, springs stop the surge",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V40 H0 Z",
+    "track": "M175 64 L204 40 M147 63 L116 40 M170 61 L146 40 M150 61 L174 40",
+    "boat": [
+     160,
+     67,
+     90
+    ],
+    "labels": [
+     [
+      100,
+      31,
+      "PONTOON",
+      "middle"
+     ],
+     [
+      198,
+      62,
+      "bow line",
+      "start"
+     ],
+     [
+      124,
+      62,
+      "stern line",
+      "end"
+     ],
+     [
+      160,
+      92,
+      "springs",
+      "middle"
+     ]
+    ],
+    "note": "Alongside"
+   },
+   "cap": null
+  },
+  {
+   "n": 10,
+   "section": "Breast lines hold, springs stop the surge",
+   "fig": {
+    "type": "rope",
+    "kind": "ring",
+    "labels": [
+     [
+      160,
+      40,
+      "buoy ring"
+     ],
+     [
+      232,
+      150,
+      "your own line"
+     ]
+    ],
+    "note": "Through the ring and back to the same cleat"
+   },
+   "cap": null
+  }
+ ]
+}

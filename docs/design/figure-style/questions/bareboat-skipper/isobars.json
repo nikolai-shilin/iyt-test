@@ -1,0 +1,204 @@
+[
+ {
+  "id": "bs-061",
+  "topic": "weather",
+  "q": "The forecast chart shows isobars packed tightly over your area tomorrow. What do you expect?",
+  "answer": "Strong wind — stay in port or reef early",
+  "why": "Close isobars = steep pressure gradient = strong wind.",
+  "figure": {
+   "type": "isobars",
+   "center": "L",
+   "tight": true,
+   "values": [
+    "996",
+    "1000",
+    "1004"
+   ],
+   "boat": [
+    250,
+    150,
+    0
+   ]
+  },
+  "ru": {
+   "L": "Н"
+  }
+ },
+ {
+  "id": "bs-062",
+  "topic": "weather",
+  "q": "The low is to the north-west of you. From which direction will the wind blow?",
+  "answer": "From the south-west, veering as the low passes",
+  "why": "Northern hemisphere: wind anticlockwise round a low; Buys Ballot — back to wind, low on the left.",
+  "figure": {
+   "type": "isobars",
+   "center": "L",
+   "boat": [
+    260,
+    160,
+    0
+   ],
+   "note": "Low centre to the NW of the yacht"
+  },
+  "ru": {
+   "Low centre to the NW of the yacht": "Центр циклона к СЗ от яхты",
+   "L": "Н"
+  }
+ },
+ {
+  "id": "bs-066",
+  "topic": "weather",
+  "q": "Aegean, July. The forecast shows this pattern for a week. What wind?",
+  "answer": "The Meltemi — strong dry northerly, F5–7, strongest in the afternoon",
+  "why": "High over the Balkans, low over Turkey: the Meltemi.",
+  "figure": {
+   "type": "isobars",
+   "center": "H",
+   "boat": [
+    250,
+    170,
+    0
+   ],
+   "hemisphere": "Aegean · July",
+   "note": "High to the NW, low over Anatolia to the E"
+  },
+  "ru": {
+   "High to the NW, low over Anatolia to the E": "Антициклон СЗ, циклон над Анатолией",
+   "Aegean · July": "Эгейское море · июль",
+   "H": "В"
+  }
+ },
+ {
+  "id": "bs-361",
+  "topic": "safety",
+  "q": "Your novice crew are due to cross 25 miles of open water tomorrow. What do you do?",
+  "answer": "Stay in harbour until it passes",
+  "why": "The best heavy-weather tactic for a charter crew is not to be out in it.",
+  "figure": {
+   "type": "isobars",
+   "center": "L",
+   "tight": true,
+   "values": [
+    "1000",
+    "1004",
+    "1008"
+   ],
+   "boat": [
+    236,
+    128,
+    0
+   ],
+   "note": "Tomorrow: NW F7 from dawn, all day"
+  },
+  "ru": {
+   "Tomorrow: NW F7 from dawn, all day": "Завтра: СЗ 7 баллов с рассвета весь день",
+   "L": "Н"
+  }
+ },
+ {
+  "id": "bs-655",
+  "topic": "weather",
+  "q": "From which direction does the wind blow where you are?",
+  "answer": "From the north",
+  "why": "Northern hemisphere: wind blows clockwise round a high, so on its east side it comes from the north.",
+  "figure": {
+   "type": "isobars",
+   "center": "H",
+   "values": [
+    "1028",
+    "1024",
+    "1020"
+   ],
+   "boat": [
+    255,
+    92,
+    0
+   ],
+   "note": "You are east of the high"
+  },
+  "ru": {
+   "You are east of the high": "Вы к востоку от антициклона",
+   "H": "В"
+  }
+ },
+ {
+  "id": "bs-656",
+  "topic": "weather",
+  "q": "Which way is the wind blowing at your position on this chart?",
+  "answer": "From the north-west",
+  "why": "Wind circulates anticlockwise round a low in the northern hemisphere, angled slightly inwards.",
+  "figure": {
+   "type": "isobars",
+   "center": "L",
+   "values": [
+    "1000",
+    "1004",
+    "1008"
+   ],
+   "boat": [
+    40,
+    170,
+    0
+   ],
+   "note": "You are SW of the low"
+  },
+  "ru": {
+   "You are SW of the low": "Вы к ЮЗ от циклона",
+   "L": "Н"
+  }
+ },
+ {
+  "id": "bs-659",
+  "topic": "weather",
+  "q": "This high is forecast to sit over the Ionian for three days. What weather do you plan for?",
+  "answer": "Light winds, sea breezes and sun",
+  "why": "Widely spaced isobars round a high: light winds and settled weather with local breezes.",
+  "figure": {
+   "type": "isobars",
+   "center": "H",
+   "values": [
+    "1026",
+    "1024",
+    "1022"
+   ],
+   "boat": [
+    150,
+    130,
+    0
+   ],
+   "hemisphere": "Ionian · June",
+   "note": "High centred over you"
+  },
+  "ru": {
+   "High centred over you": "Центр антициклона над вами",
+   "Ionian · June": "Ионическое море · июнь",
+   "H": "В"
+  }
+ },
+ {
+  "id": "bs-661",
+  "topic": "weather",
+  "q": "You use this chart to estimate the wind at sea near the low. How does the surface wind blow relative to the isobars?",
+  "answer": "Nearly along them, angled in towards the low",
+  "why": "Friction turns the surface wind 10–15° across the isobars towards low pressure at sea.",
+  "figure": {
+   "type": "isobars",
+   "center": "L",
+   "values": [
+    "1002",
+    "1006",
+    "1010"
+   ],
+   "boat": [
+    255,
+    60,
+    0
+   ],
+   "note": "Surface wind over the sea"
+  },
+  "ru": {
+   "Surface wind over the sea": "Приземный ветер над морем",
+   "L": "Н"
+  }
+ }
+]

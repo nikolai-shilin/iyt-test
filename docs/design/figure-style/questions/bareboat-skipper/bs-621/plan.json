@@ -1,0 +1,97 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · towing, tow over 200 m",
+  "key": [
+   "Three masthead lights in a vertical line: towing",
+   "The tow, from her stern to its end, is more than 200 m long"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 0.0,
+    "z": -300.0,
+    "hdg": 255,
+    "label": "Tug",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "w",
+     "w",
+     "w"
+    ],
+    "stackDx": -120
+   },
+   {
+    "x": 251.1,
+    "z": -367.3,
+    "hdg": 255,
+    "label": "Tow",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      28.97777478867205,
+      -307.7645713530756
+     ],
+     [
+      222.12222521132793,
+      -359.5354286469244
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "8 8"
+   }
+  ],
+  "texts": [
+   {
+    "x": 125.55,
+    "z": -183.64999999999998,
+    "text": "tow line: never cross",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -150,
+    "z": 120
+   },
+   {
+    "x": 0.0,
+    "z": -420.0
+   },
+   {
+    "x": 311.1,
+    "z": -447.3
+   },
+   {
+    "x": 0,
+    "z": 90.768
+   },
+   {
+    "x": 0.0,
+    "z": -390.76800000000003
+   },
+   {
+    "x": 251.1,
+    "z": -458.068
+   }
+  ]
+ }
+}

@@ -17,7 +17,7 @@
           "Raw-water seacock open, strainer clear, bilge dry, gear in neutral."
         ] },
         { "p": "**Preheat** a cold engine for 10–15 seconds, start, and look for water at the exhaust at once. With the key at ON, the oil and charge lights and the buzzer are normal until she runs. Shift at idle, pausing in neutral. To stop, idle a few minutes first; never use the battery isolator." },
-        { "fig": { "type": "panel", "gauges": [["Oil", "ON", true], ["Charge", "ON", true], ["RPM", "0", false]], "lines": ["Key at ON, engine not yet started", "Buzzer sounding: normal"] } }
+        { "photo": "bareboat-skipper/systems/1", "fig": { "type": "panel", "gauges": [["Oil", "ON", true], ["Charge", "ON", true], ["RPM", "0", false]], "lines": ["Key at ON, engine not yet started", "Buzzer sounding: normal"] } }
       ]
     },
     {
@@ -28,7 +28,7 @@
       "refs": ["Engine cooling", "Engine troubleshooting", "Overheating causes", "Wet exhaust", "Engine alarms and gauges", "Exhaust smoke"],
       "blocks": [
         { "p": "Seawater carries the heat away: **seacock, strainer, impeller pump, heat exchanger**, then out with the exhaust. If little or none comes out, or the temperature alarm sounds, stop the engine and let it cool. Never open a hot coolant cap." },
-        { "fig": { "type": "panel", "gauges": [["Temp", "110°", true], ["Oil", "OK", false], ["Volts", "14.1", false]], "lines": ["Alarm sounding", "Exhaust water: a trickle"] } },
+        { "photo": "bareboat-skipper/systems/2", "fig": { "type": "panel", "gauges": [["Temp", "110°", true], ["Oil", "OK", false], ["Volts", "14.1", false]], "lines": ["Alarm sounding", "Exhaust water: a trickle"] } },
         { "p": "Look at the strainer first, then the impeller: find any broken vanes. A strong flow with the temperature still rising points to low coolant or a broken belt. If the engine will not fire, crank with the seacock closed, or water fills the exhaust and floods it; open it as soon as she runs." },
         { "table": { "head": ["Sign", "Meaning"], "rows": [
           ["Oil pressure alarm", "Stop at once, check the oil"],
@@ -48,7 +48,7 @@
       "blocks": [
         { "p": "Fuel runs from the tank through the **water separator**, the lift pump and the fine filter to the injectors. Water sinks to the bottom of the separator bowl: drain it. Dirty fuel makes the engine surge and stop: drain the separator, change the filter." },
         { "p": "After running dry, or when a low tank lets the pickup suck air under heel, **bleed** the system: open the bleed screw and work the lift-pump lever until fuel runs without bubbles." },
-        { "fig": { "type": "panel", "gauges": [["Fuel", "80 L", false], ["Burn", "4 L/h", false], ["Speed", "6 kn", false]], "lines": ["Reserve 20 L: 60 ÷ 4 = 15 h", "15 h × 6 kn = 90 miles"] } },
+        { "photo": "bareboat-skipper/systems/3", "fig": { "type": "panel", "gauges": [["Fuel", "80 L", false], ["Burn", "4 L/h", false], ["Speed", "6 kn", false]], "lines": ["Reserve 20 L: 60 ÷ 4 = 15 h", "15 h × 6 kn = 90 miles"] } },
         { "p": "Range is usable fuel divided by hourly burn, times speed; the burn is litres refilled divided by engine hours. Easing the revs stretches it. At the fuel berth check the cap says DIESEL, switch off engine and electrics, and fill slowly with a rag at the breather." }
       ]
     },
@@ -60,9 +60,9 @@
       "refs": ["Boat handling under power", "Propeller", "Twin engines", "Saildrive", "Steering", "Autopilot", "Charter check-in"],
       "blocks": [
         { "p": "In astern the propeller kicks the stern sideways before the boat moves: **prop walk**, to port with a right-handed propeller. So berth port side-to, and turn short to starboard. With sternway on, the stern follows the wheel." },
-        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 0, "dist": 0, "hdg": 0, "scale": 0.01 }, "note": "Engine astern, rudder centred: stern walks to port" } },
+        { "photo": "bareboat-skipper/systems/4", "plan": 1.6, "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 0, "dist": 0, "hdg": 0, "scale": 0.01 }, "note": "Engine astern, rudder centred: stern walks to port" } },
         { "p": "Going ahead she pivots a third of her length from the bow, and the stern swings wide. A catamaran spins on the spot: port engine ahead and starboard astern turn her to starboard." },
-        { "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 100, "dist": 48, "hdg": 0, "label": "Moored" }, "note": "Turn to port: your stern swings to starboard" } },
+        { "photo": "bareboat-skipper/systems/5", "plan": 1.6, "fig": { "type": "encounter", "you": { "hdg": 0 }, "other": { "bearing": 100, "dist": 48, "hdg": 0, "label": "Moored" }, "note": "Turn to port: your stern swings to starboard" } },
         { "p": "Vibration and lost speed mean a fouled propeller: stop, and clear it with the key out. Milky saildrive oil, or seawater on its diaphragm: report it. If the wheel goes slack, fit the emergency tiller; press Standby to take over from the autopilot." }
       ]
     },
@@ -74,7 +74,7 @@
       "refs": ["Electrics", "Battery state of charge", "Alternator charging", "Energy budget", "Battery switches", "Inverter", "Fuses and breakers", "Shore power", "Windlass"],
       "blocks": [
         { "p": "A **starter battery** and a **house bank**: at anchor run everything from the house bank alone, and the engine will always start. A flat starter battery: parallel the banks, start, then separate them. Never open the isolator with the engine running: it destroys the alternator." },
-        { "fig": { "type": "panel", "gauges": [["House", "11.8 V", true], ["Engine", "12.7 V", false], ["Solar", "2 A", false]], "lines": ["Fridge and anchor light ran all night", "Engine battery was isolated: she starts"] } },
+        { "photo": "bareboat-skipper/systems/6", "fig": { "type": "panel", "gauges": [["House", "11.8 V", true], ["Engine", "12.7 V", false], ["Solar", "2 A", false]], "lines": ["Fridge and anchor light ran all night", "Engine battery was isolated: she starts"] } },
         { "table": { "head": ["Volts", "Meaning"], "rows": [
           ["12.7 at rest", "Full"],
           ["12.2 at rest", "Half: charge"],
@@ -94,7 +94,7 @@
       "refs": ["Fresh water", "Heads", "Heads and holding tanks", "Seacocks", "Hull fittings", "Bilge pumps"],
       "blocks": [
         { "p": "Fresh water: tank litres divided by the crew's daily use. A pump that runs on while the tap spits air has an empty tank; one that cuts in with every tap closed has a leak." },
-        { "fig": { "type": "panel", "gauges": [["Tanks", "360 L", false], ["Crew", "6", false], ["Each", "20 L", false]], "lines": ["6 × 20 = 120 L a day", "360 ÷ 120 = 3 days"] } },
+        { "photo": "bareboat-skipper/systems/7", "fig": { "type": "panel", "gauges": [["Tanks", "360 L", false], ["Crew", "6", false], ["Each", "20 L", false]], "lines": ["6 × 20 = 120 L a day", "360 ÷ 120 = 3 days"] } },
         { "p": "The **heads** take only what you have eaten and a little paper. In harbours and bays the Y-valve stays on the **holding tank**; empty it at a pump-out or well offshore, where rules allow. Close the heads seacocks at sea, or the bowl can siphon full when heeled." },
         { "p": "A **seacock** is open with the handle along the pipe, closed across it. Leaking hose: close it. Broken fitting: hammer in the softwood bung. If the bilge pump keeps running, taste the water: fresh is a tank, salt is the sea." }
       ]

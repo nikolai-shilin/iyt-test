@@ -1,0 +1,136 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 50,
+  "title": "Safe speed · a harbour against the town lights",
+  "key": [
+   "Shore lights behind the entrance hide the lights of other vessels",
+   "Rule 6: background light is a factor in a safe speed — slow down"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 260,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 120,
+    "z": -90,
+    "hdg": 160,
+    "label": "a vessel coming out",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": false,
+    "power": true
+   }
+  ],
+  "land": [
+   [
+    [
+     -500,
+     -420
+    ],
+    [
+     500,
+     -420
+    ],
+    [
+     500,
+     -260
+    ],
+    [
+     70,
+     -260
+    ],
+    [
+     70,
+     -220
+    ],
+    [
+     -70,
+     -220
+    ],
+    [
+     -70,
+     -260
+    ],
+    [
+     -500,
+     -260
+    ]
+   ]
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -350,
+    "text": "TOWN LIGHTS",
+    "kind": "light",
+    "pill": false,
+    "size": 30
+   },
+   {
+    "x": -210,
+    "z": 60,
+    "text": "slow down",
+    "kind": "red"
+   }
+  ],
+  "circles": [
+   {
+    "x": -70,
+    "z": -225,
+    "r": 12,
+    "fill": "#e0251b",
+    "c": "ink",
+    "dash": "0"
+   },
+   {
+    "x": 70,
+    "z": -225,
+    "r": 12,
+    "fill": "#1aa34a",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      225
+     ],
+     [
+      0,
+      40
+     ]
+    ],
+    "c": "course",
+    "dash": "6 12",
+    "w": 5,
+    "arrow": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -500,
+    "z": -420
+   },
+   {
+    "x": 500,
+    "z": 330
+   },
+   {
+    "x": 0,
+    "z": 420.0
+   },
+   {
+    "x": 120,
+    "z": 70.0
+   }
+  ]
+ }
+}

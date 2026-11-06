@@ -1,0 +1,75 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "On watch · a ship on a steady bearing",
+  "key": [
+   "Two masthead lights and red: a big ship, her port side to you",
+   "Steady bearing, closing: risk of collision — wake the skipper now"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 334.2,
+    "z": -398.3,
+    "hdg": 245,
+    "label": "Ship over 50 m",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "scale": 3.4
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      334,
+      -398
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": 80,
+    "z": -260,
+    "text": "bearing steady",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -200,
+    "z": 100
+   },
+   {
+    "x": 500,
+    "z": -560
+   },
+   {
+    "x": 0,
+    "z": 112.0
+   },
+   {
+    "x": 334.2,
+    "z": -532.7
+   }
+  ]
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Lateral marks · red fine to starboard",
+  "key": [
+   "A red light is a port-hand mark: going in, it must pass down your port side",
+   "Alter to starboard and leave it to port"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 250,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "marks": [
+   {
+    "x": 70,
+    "z": -120,
+    "kind": "lat-port",
+    "bearing": false,
+    "hi": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      210
+     ],
+     [
+      40,
+      60
+     ],
+     [
+      150,
+      -120
+     ],
+     [
+      150,
+      -240
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -210,
+    "z": 230,
+    "text": "from seaward",
+    "kind": "light"
+   },
+   {
+    "x": -150,
+    "z": -120,
+    "text": "Fl R 4s",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -260,
+    "z": -260
+   },
+   {
+    "x": 260,
+    "z": 280
+   },
+   {
+    "x": 0,
+    "z": 336.4
+   }
+  ]
+ }
+}

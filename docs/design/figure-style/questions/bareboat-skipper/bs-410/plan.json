@@ -1,0 +1,83 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "In doubt · assume you are overtaking",
+  "key": [
+   "About 20° abaft her beam: close to the 22.5° line",
+   "In doubt you are overtaking: keep out of her way (Rule 13(c))"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": -130.0,
+    "z": -225.2,
+    "hdg": 40,
+    "label": "Motorboat"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -130.0,
+      -225.2
+     ],
+     [
+      -22.0,
+      -17.6
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "4 10"
+   },
+   {
+    "pts": [
+     [
+      -130.0,
+      -225.2
+     ],
+     [
+      -353.2,
+      -295.5
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "4 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": 179.2,
+    "z": 75.9,
+    "text": "overtaking: keep clear",
+    "kind": "red",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -78.0,
+    "z": -78.0
+   },
+   {
+    "x": 78.0,
+    "z": 78.0
+   },
+   {
+    "x": -208.0,
+    "z": -303.2
+   },
+   {
+    "x": -52.0,
+    "z": -147.2
+   }
+  ]
+ }
+}

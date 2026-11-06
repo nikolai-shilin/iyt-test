@@ -1,0 +1,137 @@
+{
+ "article": "bareboat-skipper/safety",
+ "topic": "safety",
+ "lead": "Most accidents afloat are ordinary: a fall, a burn, a gas leak, a propeller near a swimmer. The skipper makes them unlikely and keeps gear and crew ready.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Staying on board",
+   "fig": {
+    "type": "sail",
+    "wind": 0,
+    "hdg": 180,
+    "note": "Dead run: rig a preventer, heads below the boom"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Staying on board",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0,
+     "sail": true,
+     "boom": 14
+    },
+    "other": {
+     "bearing": -165,
+     "dist": 70,
+     "hdg": 0,
+     "scale": 0.3,
+     "label": "MOB"
+    },
+    "wind": 225,
+    "note": "Shout, throw the buoys, point, press MOB"
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Fire, gas and fumes",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Gas valve",
+      "OFF",
+      false
+     ],
+     [
+      "Gas alarm",
+      "OK",
+      false
+     ],
+     [
+      "CO alarm",
+      "ALARM",
+      true
+     ]
+    ],
+    "lines": [
+     "No smell, nobody feels ill yet",
+     "Everyone out into fresh air"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Liferaft and grab bag",
+   "fig": {
+    "type": "card",
+    "title": "Abandon ship",
+    "lines": [
+     "MAYDAY sent, lifejackets on",
+     "Raft's painter made fast on board",
+     "Launch to leeward, pull the painter",
+     "Grab bag and handheld VHF in",
+     "Board dry if you can, cut the painter"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Dinghy and swimming",
+   "fig": {
+    "type": "bay",
+    "wind": 200,
+    "spots": [
+     [
+      262,
+      168,
+      "Y"
+     ]
+    ],
+    "labels": [
+     [
+      110,
+      104,
+      "BEACH",
+      "middle"
+     ],
+     [
+      196,
+      158,
+      "tenders and ribs",
+      "middle"
+     ]
+    ],
+    "note": "Y: your yacht, 300 m off the beach"
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Skipper and crew",
+   "fig": {
+    "type": "isobars",
+    "center": "L",
+    "tight": true,
+    "values": [
+     "1000",
+     "1004",
+     "1008"
+    ],
+    "boat": [
+     236,
+     128,
+     0
+    ],
+    "note": "Tomorrow: NW F7 from dawn, all day"
+   },
+   "cap": null
+  }
+ ]
+}

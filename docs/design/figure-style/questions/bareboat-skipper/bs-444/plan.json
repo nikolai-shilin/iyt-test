@@ -1,0 +1,85 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Fog · a target ahead",
+  "key": [
+   "Forward of your beam: avoid turning to port (Rule 19(d)(i))",
+   "Turn boldly to starboard, or slow right down"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 307.8,
+    "z": -845.7,
+    "hdg": 200,
+    "label": "Radar target"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      -108.0
+     ],
+     [
+      0.0,
+      -135.0
+     ],
+     [
+      60.9,
+      -265.5
+     ],
+     [
+      171.2,
+      -358.1
+     ],
+     [
+      310.3,
+      -395.3
+     ],
+     [
+      452.1,
+      -370.3
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -270.0,
+    "z": 0.0,
+    "text": "fog",
+    "pill": false,
+    "size": 40
+   }
+  ],
+  "fit": [
+   {
+    "x": -270.0,
+    "z": -270.0
+   },
+   {
+    "x": 270.0,
+    "z": 270.0
+   },
+   {
+    "x": 37.8,
+    "z": -1115.7
+   },
+   {
+    "x": 577.8,
+    "z": -575.7
+   }
+  ]
+ }
+}

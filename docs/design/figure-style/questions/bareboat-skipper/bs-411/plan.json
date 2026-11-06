@@ -1,0 +1,68 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Overtaking stays overtaking",
+  "key": [
+   "You came up from astern of her: you are the overtaking vessel",
+   "A later change of bearing does not end it: keep clear until past and clear (Rule 13(d))"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": -173.2,
+    "z": -100.0,
+    "hdg": 20,
+    "label": "Motor-sailer"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      120.0
+     ],
+     [
+      0.0,
+      20.0
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "6 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": 135.4,
+    "z": 102.5,
+    "text": "still overtaking: keep clear",
+    "kind": "red",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -60.0,
+    "z": -60.0
+   },
+   {
+    "x": 60.0,
+    "z": 60.0
+   },
+   {
+    "x": -233.2,
+    "z": -160.0
+   },
+   {
+    "x": -113.2,
+    "z": -40.0
+   }
+  ]
+ }
+}

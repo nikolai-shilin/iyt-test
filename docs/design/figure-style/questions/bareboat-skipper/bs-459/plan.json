@@ -1,0 +1,85 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Light signals · altering course to port",
+  "key": [
+   "Two flashes, like two short blasts: I am altering my course to port",
+   "Rule 34(b): one flash to starboard, two to port, three astern"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": -195.0,
+    "z": -278.5,
+    "hdg": 70,
+    "label": "Ship",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "scale": 3.0
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -160,
+      -290
+     ],
+     [
+      -110,
+      -330
+     ],
+     [
+      -60,
+      -400
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -400,
+    "z": -200,
+    "text": "2 flashes",
+    "kind": "red"
+   },
+   {
+    "x": 40,
+    "z": -420,
+    "text": "her new course",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -500,
+    "z": -500
+   },
+   {
+    "x": 200,
+    "z": 100
+   },
+   {
+    "x": 0,
+    "z": 112.0
+   },
+   {
+    "x": -195.0,
+    "z": -401.7
+   }
+  ]
+ }
+}

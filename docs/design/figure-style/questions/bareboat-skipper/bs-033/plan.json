@@ -1,0 +1,91 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Motor-sailing meets sail",
+  "key": [
+   "Engine in gear: you are a power-driven vessel, sails or not (Rule 3)",
+   "Power keeps clear of sail: you give way; by day show a cone, point down"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 225.2,
+    "z": -130.0,
+    "hdg": 270
+   }
+  ],
+  "wind": 45,
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      -31.2
+     ],
+     [
+      0.0,
+      -65.0
+     ],
+     [
+      7.8,
+      -89.8
+     ],
+     [
+      22.7,
+      -111.1
+     ],
+     [
+      43.4,
+      -126.9
+     ],
+     [
+      67.8,
+      -135.8
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -135.0,
+    "z": -53.6,
+    "text": "power-driven: keep clear",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 225.2,
+    "z": -228.8,
+    "text": "under sail",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -78.0,
+    "z": -78.0
+   },
+   {
+    "x": 78.0,
+    "z": 78.0
+   },
+   {
+    "x": 147.2,
+    "z": -208.0
+   },
+   {
+    "x": 303.2,
+    "z": -52.0
+   }
+  ]
+ }
+}

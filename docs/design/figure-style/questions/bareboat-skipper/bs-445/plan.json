@@ -1,0 +1,85 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Fog · a target on the quarter",
+  "key": [
+   "Abaft the beam: avoid turning towards her (Rule 19(d)(ii))",
+   "She is on your starboard quarter: alter to port, away from her"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 270,
+    "noHeading": true
+   },
+   {
+    "x": 450.0,
+    "z": -536.2,
+    "hdg": 240,
+    "label": "Radar target"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -84.0,
+      0.0
+     ],
+     [
+      -175.0,
+      0.0
+     ],
+     [
+      -256.1,
+      21.7
+     ],
+     [
+      -328.9,
+      63.7
+     ],
+     [
+      -388.3,
+      123.1
+     ],
+     [
+      -430.3,
+      195.9
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 245.0,
+    "z": -0.0,
+    "text": "fog",
+    "pill": false,
+    "size": 40
+   }
+  ],
+  "fit": [
+   {
+    "x": -210.0,
+    "z": -210.0
+   },
+   {
+    "x": 210.0,
+    "z": 210.0
+   },
+   {
+    "x": 240.0,
+    "z": -746.2
+   },
+   {
+    "x": 660.0,
+    "z": -326.2
+   }
+  ]
+ }
+}

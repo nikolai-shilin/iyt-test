@@ -1,0 +1,81 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · trawler, bow on",
+  "key": [
+   "Green over white all round: trawling; sidelights: making way",
+   "Fishing has right of way over sail and power: you keep clear"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 0.0,
+    "z": -280.0,
+    "hdg": 180,
+    "label": "Trawler",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "g",
+     "w"
+    ],
+    "stackDx": -150
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      20,
+      -40
+     ],
+     [
+      90,
+      -120
+     ],
+     [
+      150,
+      -260
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 220,
+    "z": -150,
+    "text": "keep clear",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -220,
+    "z": -400
+   },
+   {
+    "x": 260,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 81.60000000000001
+   },
+   {
+    "x": 0.0,
+    "z": -361.6
+   }
+  ]
+ }
+}

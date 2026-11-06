@@ -10,7 +10,7 @@
       "refs": ["VHF procedure"],
       "blocks": [
         { "p": "В вызове три части в строгом порядке: **название вызываемой станции**, слова **THIS IS** и **название вашей яхты**. Каждое название говорите один раз, при плохой слышимости — дважды; трижды — только в вызовах бедствия, срочности и безопасности. В конце — **OVER**." },
-        { "fig": { "type": "card", "title": "Вызов яхты на 16-м", "lines": ["Blue Star, Blue Star, Blue Star,", "this is Aurora, Aurora, Aurora,", "OVER"] } },
+        { "photo": "vhf-radio-operator/calls/1", "fig": { "type": "card", "title": "Вызов яхты на 16-м", "lines": ["Blue Star, Blue Star, Blue Star,", "this is Aurora, Aurora, Aurora,", "OVER"] } },
         { "p": "Ответ строится зеркально: название вызывающего, THIS IS, своё название, OVER. «Blue Star, this is Aurora, OVER»." },
         { "p": "Если название судна вам неизвестно, опишите его так, чтобы оно себя узнало, — по типу и местоположению: «Motor yacht anchoring north of me in Vathi Bay, this is Aurora, OVER»." }
       ]
@@ -24,10 +24,10 @@
       "blocks": [
         { "p": "На 16-м вы только устанавливаете связь. Как только другая яхта ответила, предложите рабочий канал связи между судами, называя номер по цифрам: «channel seven two». Она может предложить взамен другой. О каком бы ни договорились, подтвердите его одним словом и переходите." },
         { "tiles": [
-          { "fig": { "type": "radio", "channel": "16", "power": "HI" }, "view": "60 53 108 58", "name": "1 · Установить связь", "note": "вызов, ответ, выбор канала" },
-          { "fig": { "type": "radio", "channel": "72", "power": "HI" }, "view": "60 53 108 58", "name": "2 · Разговор", "note": "послушать, затем вызвать снова" }
+          { "photo": "vhf-radio-operator/calls/2", "fig": { "type": "radio", "channel": "16", "power": "HI" }, "view": "60 53 108 58", "name": "1 · Установить связь", "note": "вызов, ответ, выбор канала" },
+          { "photo": "vhf-radio-operator/calls/3", "fig": { "type": "radio", "channel": "72", "power": "HI" }, "view": "60 53 108 58", "name": "2 · Разговор", "note": "послушать, затем вызвать снова" }
         ] },
-        { "fig": { "type": "card", "title": "Aurora и Blue Star", "lines": ["16 · Aurora, this is Blue Star, OVER", "16 · Blue Star, this is Aurora,", "channel seven two, OVER", "16 · Aurora, this is Blue Star, seven two", "72 · Blue Star, this is Aurora, OVER", "72 · Aurora, this is Blue Star, OVER"] } },
+        { "photo": "vhf-radio-operator/calls/4", "fig": { "type": "card", "title": "Aurora и Blue Star", "lines": ["16 · Aurora, this is Blue Star, OVER", "16 · Blue Star, this is Aurora,", "channel seven two, OVER", "16 · Aurora, this is Blue Star, seven two", "72 · Blue Star, this is Aurora, OVER", "72 · Aurora, this is Blue Star, OVER"] } },
         { "p": "На новом канале послушайте мгновение, свободен ли он, и снова вызовите станцию, прежде чем передавать сообщение. Если после одного-двух вызовов она не появилась, вернитесь на 16-й — туда, где связь была, — и вызовите её ещё раз." }
       ]
     },
@@ -55,7 +55,7 @@
       "refs": ["VHF procedure", "Radio discipline"],
       "blocks": [
         { "p": "Марину или портовые власти вызывают на их рабочем канале, который указан в лоции, а не на 16-м. Сделайте короткий вызов и дождитесь ответа. Затем изложите всю просьбу одним сообщением: яхта, её длина, сколько ночей." },
-        { "fig": { "type": "card", "title": "Просим место на ночь", "lines": ["Vega Marina, this is Aurora, OVER", "Aurora, this is Vega Marina, OVER", "Vega Marina, this is Aurora, a berth", "for one night, 12 metres, OVER", "Aurora, berth B 14, stern to, OVER", "Berth B 14, stern to, thank you, OUT"] } },
+        { "photo": "vhf-radio-operator/calls/5", "fig": { "type": "card", "title": "Просим место на ночь", "lines": ["Vega Marina, this is Aurora, OVER", "Aurora, this is Vega Marina, OVER", "Vega Marina, this is Aurora, a berth", "for one night, 12 metres, OVER", "Aurora, berth B 14, stern to, OVER", "Berth B 14, stern to, thank you, OUT"] } },
         { "p": "Когда станция вызывает вас, отвечайте именно ей и сообщайте ровно то, о чём спросили. Портовые власти, которые просят назвать яхту и намерения, слышат в ответ: «Port Authority, this is Aurora, mooring at the town quay, OVER»." }
       ]
     },
@@ -66,7 +66,7 @@
       "qa": { "q": "Что делать, если на мой вызов по УКВ никто не отвечает?", "a": "Подождите несколько минут, прежде чем вызывать снова. Если станция далеко или за мысом, попробуйте позже, когда подойдёте ближе, а не чаще: этого требует **порядок в эфире**, ведь канал общий для всех." },
       "refs": ["Radio discipline"],
       "blocks": [
-        { "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["display", "сначала послушайте"], ["power", "в порту — малая, 1 Вт"]] } },
+        { "photo": "vhf-radio-operator/calls/6", "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["display", "сначала послушайте"], ["power", "в порту — малая, 1 Вт"]] } },
         { "list": [
           "**Сначала слушайте.** Если на канале разговаривают, дождитесь конца; поверх чужого разговора не передают.",
           "**В порту — малая мощность.** 1 Вт хватит до заправки на другой стороне марины, и канал не будет занят для яхт за много миль.",

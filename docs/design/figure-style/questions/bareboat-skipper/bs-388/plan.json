@@ -1,0 +1,84 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Narrow channel · do not impede",
+  "key": [
+   "She can only use the deep water: under sail you must not impede her (Rule 9)",
+   "Risk of collision does not change that: act early (Rule 8(f))"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": 104.2,
+    "z": -590.9,
+    "hdg": 185,
+    "label": "Tanker",
+    "bearing": false
+   }
+  ],
+  "wind": 270,
+  "zones": [
+   {
+    "pts": [
+     [
+      5.1,
+      -720.0
+     ],
+     [
+      224.2,
+      -700.8
+     ],
+     [
+      156.2,
+      76.2
+     ],
+     [
+      -62.9,
+      57.0
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "texts": [
+   {
+    "x": 104.2,
+    "z": -850.9,
+    "text": "deep water",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": -408.2,
+    "z": 199.6,
+    "text": "keep out of her way",
+    "kind": "red",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -180.0,
+    "z": -180.0
+   },
+   {
+    "x": 180.0,
+    "z": 180.0
+   },
+   {
+    "x": -75.8,
+    "z": -770.9
+   },
+   {
+    "x": 284.2,
+    "z": -410.9
+   }
+  ]
+ }
+}

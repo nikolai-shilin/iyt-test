@@ -19,7 +19,7 @@
           ["**F** Foxtrot", "**M** Mike", "**T** Tango", ""],
           ["**G** Golf", "**N** November", "**U** Uniform", ""]
         ] } },
-        { "fig": { "type": "flag", "flags": [["N", "N|November"], ["O", "O|Oscar"], ["V", "V|Victor"], ["A", "A|Alfa"]], "note": "The code flags carry the same names" }, "cap": "A yacht called Nova, spelled out." },
+        { "photo": "vhf-radio-operator/phonetic/1", "fig": { "type": "flag", "flags": [["N", "N|November"], ["O", "O|Oscar"], ["V", "V|Victor"], ["A", "A|Alfa"]], "note": "The code flags carry the same names" }, "cap": "A yacht called Nova, spelled out." },
         { "rule": "Say the word, then spell it: \"Nova, I SPELL, November Oscar Victor Alfa\"." }
       ]
     },
@@ -49,7 +49,7 @@
       "refs": ["Numbers on the radio"],
       "blocks": [
         { "p": "Read a position in the order the plotter shows it: **latitude first**, then longitude. Each goes degrees, then minutes with \"decimal\", then its hemisphere: north or south, east or west. Longitude always has **three figures** of degrees, so 24° east begins \"zero two four\"." },
-        { "fig": { "type": "card", "title": "Plotter: 38°04.6′N 024°19.5′E", "lines": ["\"Three eight degrees", "zero four decimal six minutes north,", "zero two four degrees", "one niner decimal five minutes east\""] } },
+        { "photo": "vhf-radio-operator/phonetic/2", "fig": { "type": "card", "title": "Plotter: 38°04.6′N 024°19.5′E", "lines": ["\"Three eight degrees", "zero four decimal six minutes north,", "zero two four degrees", "one niner decimal five minutes east\""] } },
         { "p": "Speak at the pace of someone writing it down. A position heard wrong sends help to the wrong place." }
       ]
     },
@@ -61,7 +61,7 @@
       "refs": ["Procedure words"],
       "blocks": [
         { "p": "A VHF channel carries one voice at a time: while you hold the press-to-talk switch you hear nobody. Procedure words, or **prowords**, mark the turns. **THIS IS** stands between the station you call and your own name; leave it out and nobody knows who is calling whom. **OVER** hands the turn across, **OUT** ends the conversation." },
-        { "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["ptt", "press to talk"], ["mic", "handset"], ["display", "working channel"]], "note": "Pressed: you talk. Released: you listen." } },
+        { "photo": "vhf-radio-operator/phonetic/3", "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["ptt", "press to talk"], ["mic", "handset"], ["display", "working channel"]], "note": "Pressed: you talk. Released: you listen." } },
         { "table": { "head": ["Proword", "Meaning"], "rows": [
           ["THIS IS", "My own name follows"],
           ["OVER", "I have finished and expect your reply"],
@@ -89,7 +89,7 @@
           ["SAY AGAIN ALL BEFORE …", "Everything before the word you name"],
           ["SAY AGAIN WORD AFTER …", "The single word that followed it"]
         ] } },
-        { "fig": { "type": "card", "title": "A reply lost in noise", "lines": ["Marina: \"Nova, go to pontoon Delta …\"", "(the rest is lost)", "You: \"Vega Marina, this is Nova,", "SAY AGAIN ALL AFTER Delta, OVER\"", "Marina: \"I SAY AGAIN, berth two seven\""] } },
+        { "photo": "vhf-radio-operator/phonetic/4", "fig": { "type": "card", "title": "A reply lost in noise", "lines": ["Marina: \"Nova, go to pontoon Delta …\"", "(the rest is lost)", "You: \"Vega Marina, this is Nova,", "SAY AGAIN ALL AFTER Delta, OVER\"", "Marina: \"I SAY AGAIN, berth two seven\""] } },
         { "p": "Your own slip is mended with **CORRECTION**: it cancels what you have just said, and the right version follows. \"Berth two three, CORRECTION, berth two five\" means berth 25. When you hear it, drop what came before the word and act on what comes after. **I SPELL** warns that the next words are letters of the phonetic alphabet." }
       ]
     }

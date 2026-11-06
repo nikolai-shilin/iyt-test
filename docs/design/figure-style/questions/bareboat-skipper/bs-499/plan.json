@@ -1,0 +1,155 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 50,
+  "title": "Leading lights · left of the line",
+  "key": [
+   "Rear light showing left of the front: you are left of the line",
+   "Steer to starboard, towards the front light, until they line up"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -130,
+    "z": 150,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "land": [
+   [
+    [
+     -260,
+     -420
+    ],
+    [
+     260,
+     -420
+    ],
+    [
+     260,
+     -230
+    ],
+    [
+     -260,
+     -230
+    ]
+   ]
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": -245,
+    "r": 18,
+    "fill": "#fff3c4",
+    "c": "ink",
+    "dash": "0"
+   },
+   {
+    "x": 0,
+    "z": -360,
+    "r": 18,
+    "fill": "#fff3c4",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -245
+     ],
+     [
+      0,
+      200
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12"
+   },
+   {
+    "pts": [
+     [
+      -130,
+      150
+     ],
+     [
+      0,
+      -245
+     ]
+    ],
+    "c": "ink",
+    "dash": "4 10",
+    "w": 3
+   },
+   {
+    "pts": [
+     [
+      -130,
+      150
+     ],
+     [
+      0,
+      -360
+     ]
+    ],
+    "c": "ink",
+    "dash": "4 10",
+    "w": 3
+   },
+   {
+    "pts": [
+     [
+      -124.8,
+      105
+     ],
+     [
+      -29.900000000000002,
+      10
+     ]
+    ],
+    "c": "red",
+    "w": 7,
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 110,
+    "z": -245,
+    "text": "front, low",
+    "kind": "light"
+   },
+   {
+    "x": -110,
+    "z": -360,
+    "text": "rear, high",
+    "kind": "light"
+   },
+   {
+    "x": 120,
+    "z": 100,
+    "text": "the leading line",
+    "kind": "accent"
+   },
+   {
+    "x": -180,
+    "z": 20,
+    "text": "steer to starboard",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": 0,
+    "z": 250
+   },
+   {
+    "x": -130,
+    "z": 170.8
+   }
+  ]
+ }
+}

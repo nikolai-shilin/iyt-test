@@ -1,0 +1,80 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Lateral marks · a red light",
+  "key": [
+   "Red, any rhythm but Fl(2+1): a port-hand mark",
+   "Isolated danger is white Fl(2); red Fl(2) is still port-hand"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 250,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "marks": [
+   {
+    "x": -70,
+    "z": -60,
+    "kind": "lat-port",
+    "bearing": false,
+    "hi": true
+   },
+   {
+    "x": 70,
+    "z": -170,
+    "kind": "lat-stbd",
+    "bearing": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      210
+     ],
+     [
+      0,
+      -230
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -210,
+    "z": 230,
+    "text": "from seaward",
+    "kind": "light"
+   },
+   {
+    "x": -200,
+    "z": -60,
+    "text": "Fl(2) R 6s",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -260,
+    "z": -260
+   },
+   {
+    "x": 260,
+    "z": 280
+   },
+   {
+    "x": 0,
+    "z": 336.4
+   }
+  ]
+ }
+}

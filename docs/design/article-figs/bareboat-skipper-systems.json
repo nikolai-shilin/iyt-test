@@ -1,0 +1,188 @@
+{
+ "article": "bareboat-skipper/systems",
+ "topic": "systems",
+ "lead": "Engines and systems rarely fail without warning. Two minutes of checks each morning and an eye on the gauges prevent most breakdowns.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Daily checks and starting",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Oil",
+      "ON",
+      true
+     ],
+     [
+      "Charge",
+      "ON",
+      true
+     ],
+     [
+      "RPM",
+      "0",
+      false
+     ]
+    ],
+    "lines": [
+     "Key at ON, engine not yet started",
+     "Buzzer sounding: normal"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Cooling and alarms",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Temp",
+      "110°",
+      true
+     ],
+     [
+      "Oil",
+      "OK",
+      false
+     ],
+     [
+      "Volts",
+      "14.1",
+      false
+     ]
+    ],
+    "lines": [
+     "Alarm sounding",
+     "Exhaust water: a trickle"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Fuel",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Fuel",
+      "80 L",
+      false
+     ],
+     [
+      "Burn",
+      "4 L/h",
+      false
+     ],
+     [
+      "Speed",
+      "6 kn",
+      false
+     ]
+    ],
+    "lines": [
+     "Reserve 20 L: 60 ÷ 4 = 15 h",
+     "15 h × 6 kn = 90 miles"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Under power",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 0,
+     "dist": 0,
+     "hdg": 0,
+     "scale": 0.01
+    },
+    "note": "Engine astern, rudder centred: stern walks to port"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Under power",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 100,
+     "dist": 48,
+     "hdg": 0,
+     "label": "Moored"
+    },
+    "note": "Turn to port: your stern swings to starboard"
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Electrics",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "House",
+      "11.8 V",
+      true
+     ],
+     [
+      "Engine",
+      "12.7 V",
+      false
+     ],
+     [
+      "Solar",
+      "2 A",
+      false
+     ]
+    ],
+    "lines": [
+     "Fridge and anchor light ran all night",
+     "Engine battery was isolated: she starts"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Water, heads and bilge",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Tanks",
+      "360 L",
+      false
+     ],
+     [
+      "Crew",
+      "6",
+      false
+     ],
+     [
+      "Each",
+      "20 L",
+      false
+     ]
+    ],
+    "lines": [
+     "6 × 20 = 120 L a day",
+     "360 ÷ 120 = 3 days"
+    ]
+   },
+   "cap": null
+  }
+ ]
+}

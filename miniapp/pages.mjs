@@ -241,11 +241,18 @@ function figure(f, { ru = false, view, label } = {}) {
   if (view) svg = svg.replace(/viewBox="[^"]*"/, `viewBox="${esc(view)}"`);
   return `<div class="fig${f.type === 'lights' ? ' night' : fig.FIG_DAY.has(f.type) ? ' day' : ''}" role="img" aria-label="${esc(label || f.note || f.title || STR[ru ? 'ru' : 'en'].figure)}">${svg}</div>`;
 }
+// A figure with a photo (as thPhoto in app.js): the Blender render and its plan under it; a text card stays, under them.
+function photo(o, { ru, label }) {
+  const s = `/figs/${o.photo}`, l = ru ? '.ru' : '', img = (src, w, h, alt) => `<img src="${src}" width="${w}" height="${h}" loading="lazy" decoding="async" alt="${esc(alt)}">`;
+  return `<figure class="th-photo">${img(`${s}${l}.webp`, 1280, 800, label || '')}${o.plan ? img(`${s}-plan${l}.webp`, 1200, Math.round(1200 / o.plan), '') : ''}</figure>` +
+    (o.fig.type === 'card' ? figure(o.fig, { ru, view: o.view, label }) : '');
+}
+const pic = (o, opt) => (o.photo ? photo(o, opt) : figure(o.fig, { ...opt, view: o.view }));
 function block(b, s, ru) {
   if (b.p) return `<p class="th-p">${inline(b.p)}</p>`;
   if (b.list) return `<ul class="th-list">${b.list.map((x) => `<li>${inline(x)}</li>`).join('')}</ul>`;
-  if (b.fig) return figure(b.fig, { ru, view: b.view, label: b.cap && plain(b.cap) }) + (b.cap ? `<p class="th-cap">${inline(b.cap)}</p>` : '');
-  if (b.tiles) return `<div class="th-tiles c${[2, 3, 4].includes(b.cols) ? b.cols : Math.min(b.tiles.length, 4)}">${b.tiles.map((x) => `<div class="th-tile">${figure(x.fig, { ru, view: x.view, label: x.name })}<b>${esc(x.name)}</b>${x.note ? `<span>${esc(x.note)}</span>` : ''}</div>`).join('')}</div>`;
+  if (b.fig) return pic(b, { ru, label: b.cap && plain(b.cap) }) + (b.cap ? `<p class="th-cap">${inline(b.cap)}</p>` : '');
+  if (b.tiles) return `<div class="th-tiles c${[2, 3, 4].includes(b.cols) ? b.cols : Math.min(b.tiles.length, 4)}">${b.tiles.map((x) => `<div class="th-tile">${pic(x, { ru, label: x.name })}<b>${esc(x.name)}</b>${x.note ? `<span>${esc(x.note)}</span>` : ''}</div>`).join('')}</div>`;
   if (b.rule) return `<div class="band th-rule"><span class="kicker">${esc(b.label || s.ruleK)}</span><p class="body-s">${inline(b.rule)}</p></div>`;
   if (b.table && b.table.head && b.table.rows) return `<table class="th-table"><thead><tr>${b.table.head.map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${b.table.rows.map((r) => `<tr>${r.map((x) => `<td>${inline(x)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
   return '';
@@ -401,9 +408,13 @@ ${cta(s, s.ctaLevel, L.link)}
         const sample = samples(qs, en).map((q) => ({ q: local(q, L.ov, lang), sec: secOf(q) }));
         const qHtml = sample.map(({ q, sec }) => {
           const own = q._tr ? '' : ' lang="en"'; // a question not translated yet is read in English
-          return `<article class="pg-q" id="${esc(q.id)}"${own}>${figure(q.figure, { ru: ru && q._tr })}<p class="pg-qt">${esc(q.q)}</p>
+          // a question with a photo (as figHtml and qPlan in app.js): the render in the figure's place, its plan in the answer
+          const ql = ru && q._tr ? '.ru' : '', qimg = (src, h, cls, alt) => `<img${cls} src="/figs/${esc(q.photo)}${src}${ql}.webp" width="960" height="${h}" loading="lazy" decoding="async" alt="${esc(alt)}">`;
+          const fig = q.photo ? `<div class="qphoto">${qimg('', 600, '', (q.figure && q.figure.note) || '')}</div>` : figure(q.figure, { ru: ru && q._tr });
+          const plan = q.photo && q.plan ? qimg('-plan', Math.round(960 / q.plan), ' class="qplan"', '') : '';
+          return `<article class="pg-q" id="${esc(q.id)}"${own}>${fig}<p class="pg-qt">${esc(q.q)}</p>
 <ol class="pg-opts" type="A">${q.options.map((o) => `<li>${esc(o)}</li>`).join('')}</ol>
-<details><summary>${s.answer}</summary><p class="th-p"><b>${ABCD[q.answer]}. ${esc(q.options[q.answer])}</b></p><p class="th-p">${esc(q.why)}</p>` +
+<details><summary>${s.answer}</summary><p class="th-p"><b>${ABCD[q.answer]}. ${esc(q.options[q.answer])}</b></p><p class="th-p">${esc(q.why)}</p>${plan}` +
             `<p class="card-meta">${esc(q.ref)}${sec ? ` · <a href="#sec-${esc(sec.id)}">${esc(s.readSec(sec.kicker))}</a>` : ''}</p></details></article>`;
         }).join('\n');
         const near = (x, key) => (x ? `<a class="band th-near" href="${at(lang, `/${L.id}/${x.id}`)}"><span class="meta">${s[key](b.topics.indexOf(x) + 1)}</span><span class="card-title">${esc(topicTitle(L, x, lang))}</span></a>` : '<span></span>');

@@ -1,0 +1,88 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Emergency wreck marking",
+  "key": [
+   "Blue and yellow flashes in turn: an emergency wreck-marking buoy",
+   "A new danger, not yet on the chart: give it a wide berth"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -190,
+    "z": 170,
+    "hdg": 90,
+    "noHeading": true
+   }
+  ],
+  "wrecks": [
+   {
+    "x": 0,
+    "z": 0
+   }
+  ],
+  "marks": [
+   {
+    "x": -75,
+    "z": -50,
+    "kind": "wreck",
+    "bearing": false,
+    "hi": true
+   },
+   {
+    "x": 75,
+    "z": 55,
+    "kind": "wreck",
+    "bearing": false
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": 0,
+    "r": 120,
+    "c": "red"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -160,
+      170
+     ],
+     [
+      200,
+      170
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -150,
+    "text": "new wreck: keep well off",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -220,
+    "z": -170
+   },
+   {
+    "x": 220,
+    "z": 230
+   },
+   {
+    "x": -190,
+    "z": 240.4
+   }
+  ]
+ }
+}

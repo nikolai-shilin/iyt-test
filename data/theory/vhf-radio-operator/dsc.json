@@ -10,7 +10,7 @@
       "refs": ["DSC"],
       "blocks": [
         { "p": "A **DSC** call is a short digital message on **channel 70**, which carries data only, never voice. It names the station called, the station calling, the priority and the channel for the conversation. A fixed DSC set has a second receiver that listens on 70 all the time, whatever voice channel you are using and whether or not dual watch is on." },
-        { "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["display", "voice channel in use"], ["distress", "DISTRESS"]], "note": "Chatting on 72, the set still hears an alert on 70" } },
+        { "photo": "vhf-radio-operator/dsc/1", "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["display", "voice channel in use"], ["distress", "DISTRESS"]], "note": "Chatting on 72, the set still hears an alert on 70" } },
         { "table": { "head": ["Call", "Goes to", "For"], "rows": [
           ["Distress alert", "All stations", "Grave and imminent danger"],
           ["All ships", "All stations", "Urgency and safety only"],
@@ -27,7 +27,7 @@
       "refs": ["MMSI"],
       "blocks": [
         { "p": "The **MMSI** is the number DSC calls. It always has **nine figures**. A ship's MMSI begins with the three-figure **MID**, the code of her flag state, so a rescue centre sees at once where she is registered. A coast station's number begins with 00, a group's with a single 0." },
-        { "fig": { "type": "card", "title": "Reading an MMSI", "lines": ["238 123450 · a ship", "238 = MID: the flag state, here Croatia", "00 238 0100 · a coast station", "0 238 12345 · a group of ships"] }, "cap": "Example numbers: the zeros in front tell you what kind of station it is." },
+        { "photo": "vhf-radio-operator/dsc/2", "fig": { "type": "card", "title": "Reading an MMSI", "lines": ["238 123450 · a ship", "238 = MID: the flag state, here Croatia", "00 238 0100 · a coast station", "0 238 12345 · a group of ships"] }, "cap": "Example numbers: the zeros in front tell you what kind of station it is." },
         { "p": "The MMSI is issued to the **vessel** with her ship radio licence, not to a person. It is programmed into the set once and stays with the yacht: a guest cannot put in his own. A set with no MMSI can send neither a call nor an alert, so on a charter yacht have the base put it right before you sail." }
       ]
     },
@@ -44,7 +44,7 @@
           "She acknowledges, both sets go to the proposed channel, and you talk by voice.",
           "A **group call** rings every set that holds the group MMSI and sends them all to the channel named: go there and listen for the lead boat."
         ] },
-        { "fig": { "type": "card", "title": "DSC: individual call", "lines": ["To: MMSI 238123450 (Nova)", "Category: ROUTINE", "Working channel: 72", "ACKNOWLEDGED · both sets go to 72"] } },
+        { "photo": "vhf-radio-operator/dsc/3", "fig": { "type": "card", "title": "DSC: individual call", "lines": ["To: MMSI 238123450 (Nova)", "Category: ROUTINE", "Working channel: 72", "ACKNOWLEDGED · both sets go to 72"] } },
         { "p": "An **all-ships** call sounds an alarm on every set in range. It is kept for distress, urgency and safety, never used to ask the fleet for a spare part. To **test** DSC, send a routine individual call to a friend's MMSI and see that it arrives. Never test with the red button." }
       ]
     },
@@ -56,7 +56,7 @@
       "refs": ["DSC"],
       "blocks": [
         { "p": "The DISTRESS button sits under a cover so that it cannot be pressed by accident. **Lift the cover, press and hold for about five seconds** until the set confirms the alert has gone." },
-        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["distress", "lift cover, hold 5 s"], ["display", "then 16, high power"], ["ptt", "voice MAYDAY"]] } },
+        { "photo": "vhf-radio-operator/dsc/4", "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["distress", "lift cover, hold 5 s"], ["display", "then 16, high power"], ["ptt", "voice MAYDAY"]] } },
         { "table": { "head": ["The alert carries", "From"], "rows": [
           ["Who: your MMSI", "Programmed into the set"],
           ["Where and when: position, time", "The GPS feed, or entered by hand"],
@@ -89,7 +89,7 @@
       "blocks": [
         { "p": "Your set sounds an alarm and shows a distress alert: an MMSI, a position, a nature of distress. Silence the alarm, **write the details down** and listen on 16 for the voice MAYDAY. Do not acknowledge by DSC: that is normally left to the coast station, whose acknowledgement stops the casualty's set repeating." },
         { "p": "If your own set sends an alert by mistake, do not just switch it off: a search may already be starting. Cancel the alert on the set if it has that function, then tell everyone by voice on 16." },
-        { "fig": { "type": "card", "title": "Cancelling a false alert, on 16", "lines": ["ALL STATIONS, ALL STATIONS, ALL STATIONS", "THIS IS Nova, MMSI 238123450", "Position 43°10.5′N 015°58.0′E", "CANCEL MY DISTRESS ALERT OF 0915 UTC"] } },
+        { "photo": "vhf-radio-operator/dsc/5", "fig": { "type": "card", "title": "Cancelling a false alert, on 16", "lines": ["ALL STATIONS, ALL STATIONS, ALL STATIONS", "THIS IS Nova, MMSI 238123450", "Position 43°10.5′N 015°58.0′E", "CANCEL MY DISTRESS ALERT OF 0915 UTC"] } },
         { "rule": "A false alert is nothing to hide. Cancel it at once, with your name, MMSI, position and the time it was sent." }
       ]
     }

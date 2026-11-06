@@ -1,0 +1,362 @@
+{
+ "article": "bareboat-skipper/buoyage",
+ "topic": "buoyage",
+ "lead": "Every mark answers one question: where is the safe water? Learn the families of marks, how the chart describes a light, and the lights other vessels carry, and you can read a coast and its traffic by day or night.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Lateral marks",
+   "fig": {
+    "type": "buoy",
+    "kind": "lat-port",
+    "topmark": true
+   },
+   "cap": "red · can · red light",
+   "name": "Port hand"
+  },
+  {
+   "n": 2,
+   "section": "Lateral marks",
+   "fig": {
+    "type": "buoy",
+    "kind": "lat-stbd",
+    "topmark": true
+   },
+   "cap": "green · cone · green light",
+   "name": "Starboard hand"
+  },
+  {
+   "n": 3,
+   "section": "Cardinal marks",
+   "fig": {
+    "type": "buoy",
+    "kind": "card-n"
+   },
+   "cap": "Q",
+   "name": "North"
+  },
+  {
+   "n": 4,
+   "section": "Cardinal marks",
+   "fig": {
+    "type": "buoy",
+    "kind": "card-e"
+   },
+   "cap": "Q(3)",
+   "name": "East"
+  },
+  {
+   "n": 5,
+   "section": "Cardinal marks",
+   "fig": {
+    "type": "buoy",
+    "kind": "card-s"
+   },
+   "cap": "Q(6)+LFl",
+   "name": "South"
+  },
+  {
+   "n": 6,
+   "section": "Cardinal marks",
+   "fig": {
+    "type": "buoy",
+    "kind": "card-w"
+   },
+   "cap": "Q(9)",
+   "name": "West"
+  },
+  {
+   "n": 7,
+   "section": "Cardinal marks",
+   "fig": {
+    "type": "buoy",
+    "kind": "card-s",
+    "rhythm": "Q(6)+LFl 15s",
+    "rhythmNote": "six quick, one long"
+   },
+   "cap": null,
+   "name": null
+  },
+  {
+   "n": 8,
+   "section": "Danger, safe water, special",
+   "fig": {
+    "type": "buoy",
+    "kind": "iso"
+   },
+   "cap": "Fl(2)",
+   "name": "Isolated danger"
+  },
+  {
+   "n": 9,
+   "section": "Danger, safe water, special",
+   "fig": {
+    "type": "buoy",
+    "kind": "safe"
+   },
+   "cap": "Iso · Oc · LFl 10s",
+   "name": "Safe water"
+  },
+  {
+   "n": 10,
+   "section": "Danger, safe water, special",
+   "fig": {
+    "type": "buoy",
+    "kind": "special"
+   },
+   "cap": "yellow light",
+   "name": "Special"
+  },
+  {
+   "n": 11,
+   "section": "Danger, safe water, special",
+   "fig": {
+    "type": "buoy",
+    "kind": "wreck"
+   },
+   "cap": "blue / yellow",
+   "name": "New wreck"
+  },
+  {
+   "n": 12,
+   "section": "Light characteristics",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V40 Q240 55 160 42 Q80 30 0 50 Z",
+    "marks": [
+     [
+      50,
+      58,
+      "w",
+      "Fl 5s"
+     ],
+     [
+      160,
+      56,
+      "w",
+      "Fl(3) 15s 49m 22M"
+     ],
+     [
+      270,
+      62,
+      "w",
+      "Fl(2) 10s"
+     ]
+    ],
+    "boat": [
+     160,
+     160,
+     0
+    ],
+    "labels": [
+     [
+      160,
+      120,
+      "3 flashes, then dark · 15 s per cycle",
+      "middle"
+     ]
+    ],
+    "note": "Night · time the light to name it"
+   },
+   "cap": null,
+   "name": null
+  },
+  {
+   "n": 13,
+   "section": "Sectors and leading lights",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 148,
+      "y": 120,
+      "t": "front"
+     },
+     {
+      "c": "w",
+      "x": 172,
+      "y": 82,
+      "t": "rear"
+     }
+    ],
+    "note": "Front light left of the rear: steer to port"
+   },
+   "cap": null,
+   "name": null
+  },
+  {
+   "n": 14,
+   "section": "Navigation lights",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 70
+     },
+     {
+      "c": "g",
+      "x": 146,
+      "y": 120
+     },
+     {
+      "c": "r",
+      "x": 174,
+      "y": 120
+     }
+    ]
+   },
+   "cap": "white over both sidelights",
+   "name": "Power, bow on"
+  },
+  {
+   "n": 15,
+   "section": "Navigation lights",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "g",
+      "x": 146,
+      "y": 120
+     },
+     {
+      "c": "r",
+      "x": 174,
+      "y": 120
+     }
+    ]
+   },
+   "cap": "sidelights, no white",
+   "name": "Sail, bow on"
+  },
+  {
+   "n": 16,
+   "section": "Navigation lights",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "g",
+      "x": 151,
+      "y": 48
+     },
+     {
+      "c": "r",
+      "x": 169,
+      "y": 48
+     }
+    ]
+   },
+   "cap": "the colours at the masthead",
+   "name": "Sail, tricolour"
+  },
+  {
+   "n": 17,
+   "section": "Navigation lights",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 122
+     }
+    ]
+   },
+   "cap": "one white light, low",
+   "name": "From astern"
+  },
+  {
+   "n": 18,
+   "section": "Vessels at work",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "g",
+      "x": 160,
+      "y": 56
+     },
+     {
+      "c": "w",
+      "x": 160,
+      "y": 78
+     }
+    ]
+   },
+   "cap": "green over white",
+   "name": "Trawling"
+  },
+  {
+   "n": 19,
+   "section": "Vessels at work",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "r",
+      "x": 160,
+      "y": 56
+     },
+     {
+      "c": "w",
+      "x": 160,
+      "y": 78
+     }
+    ]
+   },
+   "cap": "red over white",
+   "name": "Fishing"
+  },
+  {
+   "n": 20,
+   "section": "Vessels at work",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "r",
+      "x": 160,
+      "y": 60
+     },
+     {
+      "c": "r",
+      "x": 160,
+      "y": 82
+     }
+    ]
+   },
+   "cap": "red over red",
+   "name": "Not under command"
+  },
+  {
+   "n": 21,
+   "section": "Vessels at work",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "r",
+      "x": 160,
+      "y": 46
+     },
+     {
+      "c": "w",
+      "x": 160,
+      "y": 68
+     },
+     {
+      "c": "r",
+      "x": 160,
+      "y": 90
+     }
+    ]
+   },
+   "cap": "red, white, red",
+   "name": "Restricted in ability to manoeuvre"
+  }
+ ]
+}

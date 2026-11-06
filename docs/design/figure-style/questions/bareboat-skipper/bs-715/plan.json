@@ -1,0 +1,112 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "A thunderstorm approaching",
+  "key": [
+   "Ahead of the cell the light easterly drops away",
+   "Then a hard gust hits from the storm: the cold downdraught’s gust front"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   }
+  ],
+  "wind": 90,
+  "zones": [
+   {
+    "pts": [
+     [
+      -400.0,
+      -220.00000000000003
+     ],
+     [
+      -200.0,
+      -220.00000000000003
+     ],
+     [
+      -140.0,
+      0
+     ],
+     [
+      -200.0,
+      220.00000000000003
+     ],
+     [
+      -400.0,
+      220.00000000000003
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(40,50,70,.18)"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -128.0,
+      0
+     ],
+     [
+      -40.0,
+      0
+     ]
+    ],
+    "c": "red",
+    "w": 9,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -300.0,
+      -160.0
+     ],
+     [
+      -200.0,
+      -160.0
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -300.0,
+    "z": 0,
+    "text": "Cb",
+    "pill": false,
+    "size": 40
+   },
+   {
+    "x": -110.1,
+    "z": -90.1,
+    "text": "gust front",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": -248.0,
+    "z": -192.0,
+    "text": "moving east",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -120.0,
+    "z": -120.0
+   },
+   {
+    "x": 120.0,
+    "z": 120.0
+   }
+  ]
+ },
+ "noScale": true
+}

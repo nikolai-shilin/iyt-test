@@ -1,0 +1,70 @@
+{
+ "sch": {
+  "padPx": 80,
+  "trueScale": true,
+  "minMpp": 0.04,
+  "title": "Day shape · at anchor",
+  "key": [
+   "One black ball, forward where it is best seen",
+   "By day: at anchor; at night an all-round white light"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 240,
+    "label": "Yacht",
+    "tag": "black ball forward",
+    "noHeading": true
+   }
+  ],
+  "circles": [
+   {
+    "x": -4.4,
+    "z": -2.1,
+    "r": 1.25,
+    "fill": "#fff",
+    "c": "ink",
+    "dash": "0"
+   },
+   {
+    "x": -4.4,
+    "z": -2.1,
+    "r": 0.8,
+    "fill": "var(--ink)",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "anchors": [
+   {
+    "x": -21,
+    "z": 12,
+    "s": 0.9
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -5.2,
+      3
+     ],
+     [
+      -21,
+      12
+     ]
+    ],
+    "c": "ink",
+    "dash": "8 8",
+    "w": 4
+   }
+  ],
+  "fit": [
+   {
+    "x": 6,
+    "z": -6
+   }
+  ]
+ }
+}

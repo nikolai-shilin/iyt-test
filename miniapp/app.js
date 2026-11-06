@@ -119,7 +119,10 @@ const STR = {
     inEnglish: 'This article is in English for now.', courses: 'Courses', backToQuestion: 'Back to the question',
     noteHint: 'Report a mistake in this section', noteTitle: 'What is wrong here?', noteLead: 'A fact, a picture, a translation, a typo: say what you noticed. The author reads every report.',
     notePh: 'For example: a south cardinal mark flashes Q(6)+LFl, not Q(9)', noteSend: 'Send', noteSave: 'Save the changes', noteDrop: 'Withdraw the report',
-    noteSent: 'Reported — thank you', noteLocal: 'Saved on this device. Open the app in Telegram to send it.', noteFoot: 'Found a mistake? Tap the flag beside the heading of that section.',
+    noteSent: 'Reported — thank you', noteLocal: 'Saved on this device. Open the app in Telegram to send it.', noteFoot: 'Found a mistake? Tap the flag beside the heading of that section, or the one on the picture.',
+    picHint: 'Report a mistake in this picture', picTitle: 'What is wrong in this picture?', picN: (n) => `Picture ${n}`,
+    picLead: 'A wrong colour, light, shape or label, or a picture that does not match the text: say what you noticed. The author reads every report.',
+    picPh: 'For example: the starboard sidelight is drawn red, it should be green',
     readUpK: 'Where to read', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Coming soon', soon2027: 'Coming in 2027', planned: 'Planned',
     homeKicker: 'IYT theory · free', homeTitle: 'Pass your IYT&nbsp;exam',
@@ -231,7 +234,10 @@ const STR = {
     inEnglish: 'Эта статья пока на английском.', courses: 'Курсы', backToQuestion: 'Назад к вопросу',
     noteHint: 'Сообщить об ошибке в этом разделе', noteTitle: 'Что здесь не так?', noteLead: 'Факт, рисунок, перевод, опечатка — напишите, что вы заметили. Автор читает каждое сообщение.',
     notePh: 'Например: южный кардинальный знак — Q(6)+LFl, а не Q(9)', noteSend: 'Отправить', noteSave: 'Сохранить', noteDrop: 'Отозвать сообщение',
-    noteSent: 'Сообщили — спасибо', noteLocal: 'Сохранено на этом устройстве. Чтобы отправить, откройте приложение в Telegram.', noteFoot: 'Нашли ошибку? Нажмите флажок рядом с заголовком раздела.',
+    noteSent: 'Сообщили — спасибо', noteLocal: 'Сохранено на этом устройстве. Чтобы отправить, откройте приложение в Telegram.', noteFoot: 'Нашли ошибку? Нажмите флажок рядом с заголовком раздела или на рисунке.',
+    picHint: 'Сообщить об ошибке на рисунке', picTitle: 'Что не так на рисунке?', picN: (n) => `Рисунок ${n}`,
+    picLead: 'Не тот цвет, огонь, форма или подпись, рисунок не совпадает с текстом — напишите, что вы заметили. Автор читает каждое сообщение.',
+    picPh: 'Например: правый бортовой огонь нарисован красным, а должен быть зелёным',
     readUpK: 'Что почитать', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Скоро', soon2027: 'В 2027 году', planned: 'В планах',
     homeKicker: 'Теория IYT · бесплатно', homeTitle: 'Сдайте экзамен&nbsp;IYT',
@@ -368,8 +374,13 @@ function cardItems(lines) {
   });
   return out;
 }
+// A question with a photo (docs/design/blender/publish_q.py): the Blender render in the figure's place, labelled only with
+// the figure's own data; its plan-view schematic shows the answer, so it comes with the explanation (qPlan).
+const qLang = (q) => (q._tr && LANG === 'ru' ? '.ru' : '');
+const qPlan = (q) => (q.photo && q.plan ? `<img class="qplan" src="/figs/${esc(q.photo)}-plan${qLang(q)}.webp" width="960" height="${Math.round(960 / q.plan)}" loading="lazy" decoding="async" alt="">` : '');
 function figHtml(q) {
   if (!q.figure) return '';
+  if (q.photo) return `<div class="qphoto"><img src="/figs/${esc(q.photo)}${qLang(q)}.webp" width="960" height="600" decoding="async" alt="${esc(q.figure.note || t('figure'))}"></div>`;
   for (const k in FIG_TEXT) delete FIG_TEXT[k];
   if (q._tr && LANG === 'ru') Object.assign(FIG_TEXT, FIG_RU);
   const f = q.figure;
@@ -617,7 +628,11 @@ const readKey = (tp) => `${LEVEL.prefix}-${tp}`;
 // What the student wrote about a section of an article: S.notes['<prefix>-<topic>/<section>'] = { text, at, lang: the
 // language the article was shown in }. It goes to the server with the rest of the progress; the admins read it on their
 // Articles page (api/admin.mjs), with the section as the student saw it.
-const noteKey = (tp, sec) => `${readKey(tp)}/${sec}`;
+// A note about one picture of the section has the picture's number after it: '…/<section>/f2' (secPics, picFlag).
+const noteKey = (tp, sec, f) => `${readKey(tp)}/${sec}${f ? `/f${f}` : ''}`;
+// The pictures of a section in order, numbered from 1: a figure block, then each tile of a row of tiles.
+const secPics = (sec) => (sec ? sec.blocks.flatMap((b) => (b.fig ? [b] : b.tiles || [])) : []);
+const picLabel = (o) => String(o.cap || o.name || '').replace(/\*\*/g, '');
 const MAX_NOTE = 1000;
 const isRead = (tp) => !!(S.read && S.read[readKey(tp)]);
 // The topics of the current level that have an article (from the list in index.html, so no download is needed).
@@ -896,7 +911,7 @@ function notesList() {
   const rows = allNotes();
   if (!rows.length) return `<div class="empty"><p class="body-muted">${t('articlesNone')}</p></div>`;
   return `<div class="anotes">${rows.map((n) => {
-    const [art, sec] = n.k.split('/'), prefix = art.split('-')[0], tp = art.slice(prefix.length + 1);
+    const [art, sec, fig] = n.k.split('/'), prefix = art.split('-')[0], tp = art.slice(prefix.length + 1);
     const lv = levelOfPrefix(prefix), b = lv && BASES[lv.id], want = LANGS.includes(n.lang) ? n.lang : uLang(n.u);
     const lang = lv && hasTheory(lv.id) && THEORY_FILES[lv.id][want] ? want : 'en';
     if (lv) loadTheory(lv.id, lang, () => { if (cur().v === 'adminNotes') render(); });
@@ -904,9 +919,13 @@ function notesList() {
     const ov = lv && overlayFor(lv.id, lang), topic = (ov && ov.topics && ov.topics[tp]) || (b && (b.topics.find((x) => x.id === tp) || {}).title) || tp;
     const first = s && ((s.qa && s.qa.a) || (s.blocks.find((x) => x.p || x.rule) || {}).p || (s.blocks.find((x) => x.rule) || {}).rule);
     const quote = first ? plainText(first) : '';
+    // a note about one picture: that picture in place of the section's opening lines
+    const fn = fig ? +fig.slice(1) : 0, p = fn && s ? secPics(s)[fn - 1] : null, ptr = lang === 'ru' && !!(a && a.topics[tp] && !a.topics[tp].en);
+    const what = fn ? [t('picN', fn), p && picLabel(p)].filter(Boolean).join(' · ') : '';
     return `<button class="anote" data-act="anote" data-lv="${lv ? lv.id : ''}" data-t="${esc(tp)}" data-s="${esc(sec)}" lang="${lang}">` +
       `<span class="card-meta">${esc([lv && lv.title, topic].filter(Boolean).join(' · '))}</span>` +
-      `<span class="card-title">${esc(s ? s.title : sec)}</span>${quote ? `<span class="body-muted anq">${esc(quote.length > 180 ? quote.slice(0, 180).replace(/\s+\S*$/, '') + '…' : quote)}</span>` : ''}` +
+      `<span class="card-title">${esc(s ? s.title : sec)}</span>${what ? `<span class="kicker anpk">${svg('flag', 12)}${esc(what)}</span>` : ''}` +
+      `${p ? `<span class="anfig">${thPic(p, ptr, picLabel(p))}</span>` : fn ? '' : quote ? `<span class="body-muted anq">${esc(quote.length > 180 ? quote.slice(0, 180).replace(/\s+\S*$/, '') + '…' : quote)}</span>` : ''}` +
       `<span class="body-s ant">${esc(n.text)}</span><span class="card-meta">${esc(studentName(n.u))}${n.at ? ` · ${day(n.at)}` : ''} · ${lang.toUpperCase()}</span></button>`;
   }).join('')}</div>`;
 }
@@ -1146,6 +1165,7 @@ function render(toTop, theme = false, pre = null) {
   const V = VIEWS[c.v](c);
   const old = $app.querySelector('.scroll');
   const keep = !toTop && old ? old.scrollTop : 0;
+  const rows = !toTop && old ? [...old.querySelectorAll('.th-tiles')].map((r) => r.scrollLeft) : []; // rows of pictures, as swiped
   let h = '';
   if (!IN_TG) h += `<div class="tgh"><span>${stack.length > 1 || sheet ? `<button data-act="back">${t('back')}</button>` : ''}</span><b>${esc(V.title)}</b><span></span></div>`;
   const enter = toTop ? (enterTab ? ' in in-tab' : ' in') : ''; enterTab = false;
@@ -1176,6 +1196,7 @@ function render(toTop, theme = false, pre = null) {
     paintIcons($app);
     const sc = $app.querySelector('.scroll');
     if (keep) sc.scrollTop = keep;
+    if (rows.some(Boolean)) sc.querySelectorAll('.th-tiles').forEach((r, i) => { if (rows[i]) { r.scrollLeft = rows[i]; tileDots(r); } });
     const chipOn = sc.querySelector('.th-toc .chip-on');
     if (chipOn) chipOn.parentElement.scrollLeft = chipOn.offsetLeft - 24;
     if (c.v === 'article' && (c.s || c.q) && !c.shown) {
@@ -1230,6 +1251,11 @@ function noteFlag(tp, sec) {
   const on = !!(S.notes && S.notes[noteKey(tp, sec)]);
   return `<button class="th-flag${on ? ' on' : ''}" data-act="treport" data-s="${esc(sec)}" aria-pressed="${on}" aria-label="${esc(t('noteHint'))}" title="${esc(t('noteHint'))}">${svg('flag', 16)}</button>`;
 }
+// The flag in a picture's corner: the same report, about that picture (n: its number in the section, secPics).
+function picFlag(tp, sec, n) {
+  const on = !!(S.notes && S.notes[noteKey(tp, sec, n)]);
+  return `<button class="th-flag th-pflag${on ? ' on' : ''}" data-act="treport" data-s="${esc(sec)}" data-f="${n}" aria-pressed="${on}" aria-label="${esc(t('picHint'))}" title="${esc(t('picHint'))}">${svg('flag', 14)}</button>`;
+}
 // Where to read after a session or an exam: the topics of the wrong answers that have an article, most mistakes
 // first, each with the sections that explain those answers (once the level's theory is in). '' when there is none.
 function readUp(wrong) {
@@ -1253,14 +1279,39 @@ function thFig(f, view, tr) {
   const h = figHtml({ figure: f, _tr: tr });
   return view ? h.replace(/viewBox="[^"]*"/, `viewBox="${esc(view)}"`) : h;
 }
-function thBlock(b, tr) {
+// A figure with a photo (data/theory, "photo": docs/design/blender/publish_figs.py): the Blender render, and the plan-view
+// schematic under it when it has one ("plan": its width / height), in place of the drawn figure; a text card stays,
+// under its photo. A Russian article has its own copies (.ru.webp).
+function thPhoto(o, tr, label) {
+  const s = `/figs/${o.photo}`, l = tr ? '.ru' : '', img = (src, w, h, alt) => `<img src="${src}" width="${w}" height="${h}" loading="lazy" decoding="async" alt="${esc(alt)}">`;
+  return `<figure class="th-photo">${img(`${s}${l}.webp`, 1280, 800, label || '')}${o.plan ? img(`${s}-plan${l}.webp`, 1200, Math.round(1200 / o.plan), '') : ''}</figure>` +
+    (o.fig.type === 'card' ? thFig(o.fig, o.view, tr) : '');
+}
+const thPic = (o, tr, label) => (o.photo ? thPhoto(o, tr, label) : thFig(o.fig, o.view, tr));
+// pf: the flag of the next picture (thBlocks), or none.
+function thBlock(b, tr, pf) {
+  const pic = (o, label) => (pf ? `<div class="th-pic">${thPic(o, tr, label)}${pf()}</div>` : thPic(o, tr, label));
   if (b.p) return `<p class="th-p">${inline(b.p)}</p>`;
   if (b.list) return `<ul class="th-list">${b.list.map((x) => `<li>${inline(x)}</li>`).join('')}</ul>`;
-  if (b.fig) return thFig(b.fig, b.view, tr) + (b.cap ? `<p class="th-cap">${inline(b.cap)}</p>` : '');
-  if (b.tiles) return `<div class="th-tiles c${[2, 3, 4].includes(b.cols) ? b.cols : Math.min(b.tiles.length, 4)}">${b.tiles.map((x) => `<div class="th-tile">${thFig(x.fig, x.view, tr)}<b>${esc(x.name)}</b>${x.note ? `<span>${esc(x.note)}</span>` : ''}</div>`).join('')}</div>`;
+  if (b.fig) return pic(b, b.cap && b.cap.replace(/\*\*/g, '')) + (b.cap ? `<p class="th-cap">${inline(b.cap)}</p>` : '');
+  if (b.tiles) return `<div class="th-tiles c${[2, 3, 4].includes(b.cols) ? b.cols : Math.min(b.tiles.length, 4)}">${b.tiles.map((x) => `<div class="th-tile">${pic(x, x.name)}<b>${esc(x.name)}</b>${x.note ? `<span>${esc(x.note)}</span>` : ''}</div>`).join('')}</div>` +
+    (b.tiles.length > 1 ? `<div class="th-dots">${b.tiles.map((x, i) => `<button data-act="tdot" data-i="${i}" aria-label="${esc(x.name)}"${i ? '' : ' class="on" aria-current="true"'}><i></i></button>`).join('')}</div>` : '');
   if (b.rule) return `<div class="band th-rule"><span class="kicker">${esc(b.label || t('ruleK'))}</span><p class="body-s">${inline(b.rule)}</p></div>`;
   if (b.table && b.table.head && b.table.rows) return `<table class="th-table"><thead><tr>${b.table.head.map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${b.table.rows.map((r) => `<tr>${r.map((x) => `<td>${inline(x)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
   return '';
+}
+// A row of pictures (th-tiles) is swiped one picture at a time: the dot of the picture in view is on.
+function tileDots(r) {
+  const d = r.nextElementSibling, x0 = r.firstElementChild;
+  if (!d || !d.classList.contains('th-dots') || !x0) return;
+  const at = (x) => Math.abs(x.offsetLeft - x0.offsetLeft - r.scrollLeft);
+  const k = [...r.children].reduce((b, x, i, a) => (at(x) < at(a[b]) ? i : b), 0);
+  d.querySelectorAll('button').forEach((b, i) => { b.classList.toggle('on', i === k); b.toggleAttribute('aria-current', i === k); });
+}
+// A section's blocks in an article, each picture with its flag, numbered as secPics counts them.
+function thBlocks(tp, s, tr) {
+  let n = 0;
+  return s.blocks.map((b) => thBlock(b, tr, () => picFlag(tp, s.id, ++n))).join('');
 }
 // The page of a level or an article on the site (miniapp/pages.mjs), in the language shown: the rows that open them in
 // the app are links to them too, so search engines that render the app find the site's pages from its home page.
@@ -1402,7 +1453,7 @@ const VIEWS = {
       body: `<div class="stack g8"><span class="meta">${t('theoryK', TOPICS.indexOf(tp) + 1, TOPICS.length, m.min)}</span><h2 class="display-s">${esc(tp.title)}</h2>${LANG !== 'en' && !tr ? `<span class="card-meta">${t('inEnglish')}</span>` : ''}</div>
         <p class="th-p th-lead">${inline(a.lead)}</p>
         <div class="th-toc">${a.sections.map((s) => `<button class="chip" data-act="tsec" data-s="${esc(s.id)}">${esc(s.kicker)}</button>`).join('')}</div>
-        ${a.sections.map((s, n) => `<section class="th-sec" id="sec-${esc(s.id)}"><div class="row sb-between"><span class="kicker">${n + 1} · ${esc(s.kicker)}</span>${noteFlag(c.t, s.id)}</div><h3 class="th-h">${esc(s.title)}</h3>${thQa(s.qa)}${s.blocks.map((b) => thBlock(b, tr)).join('')}</section>`).join('')}
+        ${a.sections.map((s, n) => `<section class="th-sec" id="sec-${esc(s.id)}"><div class="row sb-between"><span class="kicker">${n + 1} · ${esc(s.kicker)}</span>${noteFlag(c.t, s.id)}</div><h3 class="th-h">${esc(s.title)}</h3>${thQa(s.qa)}${thBlocks(c.t, s, tr)}</section>`).join('')}
         <p class="card-meta th-foot">${svg('flag', 14)}${t('noteFoot')}</p>
         <div class="th-nextprev">${near(arts[k - 1], 'prevTopic')}${near(arts[k + 1], 'nextTopic')}</div><span class="th-end"></span>`,
     };
@@ -1430,7 +1481,7 @@ const VIEWS = {
     if (P.checked) {
       const ok = P.res[id] === 'ok';
       after = `<div class="verdict ${ok ? 'ok' : 'bad'}" role="status" tabindex="-1"><span class="ico">${svg(ok ? 'check' : 'x', 16)}</span>${ok ? t('correct') : t('notQuite')}</div>
-        <div class="band why" id="why"><span class="kicker">${t('why')}</span><p class="body-s">${esc(q.why)}</p>${refChip(q)}</div>`;
+        <div class="band why" id="why"><span class="kicker">${t('why')}</span><p class="body-s">${esc(q.why)}</p>${qPlan(q)}${refChip(q)}</div>`;
     }
     const flagged = S.flags.includes(id);
     const tools = `<div class="qtools"><span class="qflags"><button class="mini${flagged ? ' on' : ''}" data-act="flag" aria-pressed="${flagged}"><span data-i="flag" data-s="14"></span>${flagged ? t('flagged') : t('flag')}</button>${wrongBtn(id)}</span>` +
@@ -1494,7 +1545,7 @@ const VIEWS = {
         : pick !== q.answer ? `<div class="ans bad"><span class="l">${svg('x', 12)}</span><span>${esc(q.options[pick])}</span></div>` : '';
       return `<div class="rev"><span class="chip" style="align-self:flex-start">${esc(TT[q.topic])}</span>${figHtml(q)}<p class="q">${esc(q.q)}</p>${yours}
         <div class="ans ok"><span class="l">${svg('check', 12)}</span><span>${esc(q.options[q.answer])}</span></div>
-        <p class="body-muted" style="font-size:14px">${esc(q.why)}</p></div>`;
+        <p class="body-muted" style="font-size:14px">${esc(q.why)}</p>${qPlan(q)}</div>`;
     }).join('');
     const total = allMistakes().length;
     return {
@@ -1685,10 +1736,14 @@ const VIEWS = {
 const SHEETS = {
   // T2b What is wrong in a section of an article: a comment for the author, kept in S.notes
   treport(s) {
-    const a = theory() && theory().topics[s.t], sec = a && a.sections.find((x) => x.id === s.s), had = !!S.notes[noteKey(s.t, s.s)];
-    return `<div class="stack g4"><span class="meta">${esc(TT[s.t] || '')}${sec ? ` · ${esc(sec.kicker)}` : ''}</span><h2 class="display-s" style="font-size:26px">${t('noteTitle')}</h2></div>
-      <p class="body-muted">${t('noteLead')}</p>
-      <textarea class="th-note" id="thNote" rows="5" maxlength="${MAX_NOTE}" placeholder="${esc(t('notePh'))}" aria-label="${esc(t('noteTitle'))}">${esc(s.text)}</textarea>
+    const a = theory() && theory().topics[s.t], sec = a && a.sections.find((x) => x.id === s.s), had = !!S.notes[noteKey(s.t, s.s, s.f)];
+    // about a picture: the picture itself above the box, so it is clear which one
+    const p = s.f && secPics(sec)[s.f - 1], tr = LANG === 'ru' && theoryLang() === 'ru' && !!a && !a.en, k = (x) => t(p ? `pic${x}` : `note${x}`);
+    const where = [TT[s.t], sec && sec.kicker, p && (picLabel(p) || t('picN', s.f))].filter(Boolean).join(' · ');
+    return `<div class="stack g4"><span class="meta">${esc(where)}</span><h2 class="display-s" style="font-size:26px">${k('Title')}</h2></div>
+      ${p ? `<div class="th-pic-sheet">${thPic(p, tr, picLabel(p))}</div>` : ''}
+      <p class="body-muted">${k('Lead')}</p>
+      <textarea class="th-note" id="thNote" rows="5" maxlength="${MAX_NOTE}" placeholder="${esc(k('Ph'))}" aria-label="${esc(k('Title'))}">${esc(s.text)}</textarea>
       <button class="pill pill-primary pill-wide${s.text.trim().length < 3 ? ' off' : ''}" data-act="treportSend">${t(had ? 'noteSave' : 'noteSend')}</button>
       ${had ? `<button class="pill pill-quiet pill-wide" data-act="treportDrop">${t('noteDrop')}</button>` : ''}`;
   },
@@ -1900,11 +1955,17 @@ const ACT = {
   // theory: open a topic's article (r: in place of the one on screen; q: at the section that explains this question)
   theory: (d) => (d.r ? replace : go)('article', { t: d.t, s: d.s || '', q: d.q || '' }),
   tsec: (d) => toSection(d.s, true),
+  // a dot under a row of pictures: that picture into view
+  tdot: (d, el) => {
+    const r = el.parentElement.previousElementSibling, x = r && r.children[+d.i];
+    if (x) r.scrollTo({ left: x.offsetLeft - r.firstElementChild.offsetLeft, behavior: REDUCED ? 'auto' : 'smooth' });
+  },
   // the flag beside a section: a sheet with a comment box (what was written before, if anything, to change or withdraw)
   treport: (d) => {
     const c = cur();
     if (c.v !== 'article') return;
-    sheet = { v: 'treport', t: c.t, s: d.s, text: ((S.notes || {})[noteKey(c.t, d.s)] || {}).text || '' };
+    const f = +d.f || 0; // a picture's flag: its number in the section
+    sheet = { v: 'treport', t: c.t, s: d.s, f, text: ((S.notes || {})[noteKey(c.t, d.s, f)] || {}).text || '' };
     render();
     document.getElementById('thNote')?.focus();
   },
@@ -1912,11 +1973,11 @@ const ACT = {
     const text = (document.getElementById('thNote')?.value ?? sheet.text).trim().slice(0, MAX_NOTE);
     if (text.length < 3) return;
     S.notes = S.notes || {};
-    S.notes[noteKey(sheet.t, sheet.s)] = { text, at: Date.now(), lang: theoryLang() };
+    S.notes[noteKey(sheet.t, sheet.s, sheet.f)] = { text, at: Date.now(), lang: theoryLang() };
     save(); hap('success'); closeSheet(); toast(t(IN_TG && serverOn ? 'noteSent' : 'noteLocal'));
   },
   treportDrop: () => {
-    delete S.notes[noteKey(sheet.t, sheet.s)];
+    delete S.notes[noteKey(sheet.t, sheet.s, sheet.f)];
     save(); closeSheet(); toast(t('unwrong'));
   },
   // an admin opens the section a student wrote about
@@ -2049,6 +2110,7 @@ $app.addEventListener('input', (e) => {
   $app.querySelector('[data-act="treportSend"]')?.classList.toggle('off', sheet.text.trim().length < 3);
 });
 $app.addEventListener('scroll', markRead, { capture: true, passive: true }); // scroll does not bubble: caught on the way down
+$app.addEventListener('scroll', (e) => { if (e.target.classList && e.target.classList.contains('th-tiles')) tileDots(e.target); }, { capture: true, passive: true });
 $app.addEventListener('pointerover', chartPoint);
 $app.addEventListener('click', chartPoint);
 $app.addEventListener('pointerout', chartLeave);

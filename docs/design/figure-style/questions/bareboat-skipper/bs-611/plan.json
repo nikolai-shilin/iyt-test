@@ -1,0 +1,88 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Lights · aground",
+  "key": [
+   "Two all-round reds plus her anchor lights: a vessel aground",
+   "The forward anchor light is the higher one: her bow is to the left",
+   "Shallow water round her: keep well off"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 270,
+    "label": "Aground",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "r",
+     "r"
+    ],
+    "stackDx": -160,
+    "scale": 3.4
+   },
+   {
+    "you": true,
+    "x": 0,
+    "z": 280,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -200,
+      -90
+     ],
+     [
+      150,
+      -110
+     ],
+     [
+      220,
+      30
+     ],
+     [
+      60,
+      110
+     ],
+     [
+      -190,
+      80
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.08)"
+   }
+  ],
+  "rocks": [
+   {
+    "x": 150,
+    "z": -60
+   }
+  ],
+  "fit": [
+   {
+    "x": -300,
+    "z": -160
+   },
+   {
+    "x": 300,
+    "z": 340
+   },
+   {
+    "x": 0,
+    "z": -115.2
+   },
+   {
+    "x": 0,
+    "z": 376.0
+   }
+  ]
+ }
+}

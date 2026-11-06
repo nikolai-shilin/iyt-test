@@ -1,0 +1,226 @@
+[
+ {
+  "id": "bs-051",
+  "topic": "buoyage",
+  "q": "Entering a Mediterranean harbour from seaward you see this buoy. Which side do you leave it on?",
+  "answer": "To port",
+  "why": "Region A: red can to port when returning.",
+  "figure": {
+   "type": "buoy",
+   "kind": "lat-port",
+   "topmark": true,
+   "rhythm": "Fl R",
+   "note": "Entering harbour from seaward"
+  },
+  "ru": {
+   "Entering harbour from seaward": "Вход в гавань с моря"
+  }
+ },
+ {
+  "id": "bs-052",
+  "topic": "buoyage",
+  "q": "This mark is ahead. Where is the safe water?",
+  "answer": "North of the mark",
+  "why": "North cardinal: black over yellow, both cones up.",
+  "figure": {
+   "type": "buoy",
+   "kind": "card-n",
+   "rhythm": "Q",
+   "rhythmNote": "continuous quick"
+  },
+  "ru": {
+   "continuous quick": "непрерывный частый"
+  }
+ },
+ {
+  "id": "bs-054",
+  "topic": "buoyage",
+  "q": "You see this mark. Which way round do you go?",
+  "answer": "Keep clear, but you may pass on any side",
+  "why": "Isolated danger: black with red bands, two balls; danger right under it.",
+  "figure": {
+   "type": "buoy",
+   "kind": "iso",
+   "rhythm": "Fl(2)",
+   "rhythmNote": "white, group of two"
+  },
+  "ru": {
+   "white, group of two": "белый, группа из двух"
+  }
+ },
+ {
+  "id": "bs-055",
+  "topic": "buoyage",
+  "q": "This buoy is at the harbour approach. What does it tell you?",
+  "answer": "Safe water all round — a landfall or mid-channel mark",
+  "why": "Red and white vertical stripes, red ball: safe water.",
+  "figure": {
+   "type": "buoy",
+   "kind": "safe",
+   "rhythm": "Iso / LFl 10s",
+   "rhythmNote": "white"
+  },
+  "ru": {
+   "white": "белый"
+  }
+ },
+ {
+  "id": "bs-056",
+  "topic": "buoyage",
+  "q": "A yellow buoy with this topmark sits off the beach. What is it?",
+  "answer": "A special mark — check the chart (swimming area, pipeline, spoil ground)",
+  "why": "Yellow with an X: not a navigation mark in itself.",
+  "figure": {
+   "type": "buoy",
+   "kind": "special",
+   "rhythm": "Fl Y"
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-551",
+  "topic": "buoyage",
+  "q": "Leaving the marina at Kalamata for the open sea, you have this buoy ahead. On which side do you leave it?",
+  "answer": "On your port side",
+  "why": "Region A: a green cone marks the starboard side going in, so it stays on your port side going out.",
+  "figure": {
+   "type": "buoy",
+   "kind": "lat-stbd",
+   "topmark": true,
+   "note": "You are heading out to sea"
+  },
+  "ru": {
+   "You are heading out to sea": "Вы выходите в море"
+  }
+ },
+ {
+  "id": "bs-552",
+  "topic": "buoyage",
+  "q": "You are returning to Road Town, Tortola (BVI), from sea. This buoy is ahead. Which side do you leave it?",
+  "answer": "On your starboard side",
+  "why": "Region B (the Americas): red, conical, kept to starboard returning — \"red right returning\".",
+  "figure": {
+   "type": "buoy",
+   "kind": "lat-stbd",
+   "region": "B",
+   "topmark": true,
+   "rhythm": "Fl R 4s",
+   "note": "IALA region B · returning from sea"
+  },
+  "ru": {
+   "IALA region B · returning from sea": "МАМС, регион В · возврат с моря"
+  }
+ },
+ {
+  "id": "bs-553",
+  "topic": "buoyage",
+  "q": "Entering English Harbour, Antigua, from the sea, you see this buoy. What is it?",
+  "answer": "A port-hand mark: leave it to port",
+  "why": "Region B: green and can-shaped marks the port side when entering.",
+  "figure": {
+   "type": "buoy",
+   "kind": "lat-port",
+   "region": "B",
+   "topmark": true,
+   "rhythm": "Fl G 4s",
+   "note": "IALA region B · entering from sea"
+  },
+  "ru": {
+   "IALA region B · entering from sea": "МАМС, регион В · вход с моря"
+  }
+ },
+ {
+  "id": "bs-563",
+  "topic": "buoyage",
+  "q": "Sailing along the coast of Lefkada, you see this mark. On which side of it is the safe water?",
+  "answer": "East of it",
+  "why": "East cardinal: black–yellow–black, cones base to base; pass to the east.",
+  "figure": {
+   "type": "buoy",
+   "kind": "card-e"
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-564",
+  "topic": "buoyage",
+  "q": "This mark stands off a reef near Hvar. Where do you pass it?",
+  "answer": "To the west of it",
+  "why": "West cardinal: yellow–black–yellow, cones point to point; safe water to the west.",
+  "figure": {
+   "type": "buoy",
+   "kind": "card-w"
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-571",
+  "topic": "buoyage",
+  "q": "Sailing in the Bahamas (IALA region B), you see this mark. What does it mean there?",
+  "answer": "Pass to the east, as in region A",
+  "why": "Only lateral marks differ between regions A and B; cardinals are the same worldwide.",
+  "figure": {
+   "type": "buoy",
+   "kind": "card-e",
+   "region": "B",
+   "note": "IALA region B"
+  },
+  "ru": {
+   "IALA region B": "МАМС, регион В"
+  }
+ },
+ {
+  "id": "bs-573",
+  "topic": "buoyage",
+  "q": "Rounding a headland in the Gulf of Corinth, you see this mark off the point. Where is the danger?",
+  "answer": "North of the mark",
+  "why": "South cardinal: safe water to the south, so the danger lies to the north of it.",
+  "figure": {
+   "type": "buoy",
+   "kind": "card-s"
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-579",
+  "topic": "buoyage",
+  "q": "Anchoring off a beach in Zakynthos, you see a line of these buoys between you and the shore. What do they usually mark?",
+  "answer": "The edge of a swimming area: stay outside",
+  "why": "Yellow special marks along beaches usually mark the bathing zone; check the chart or local rules.",
+  "figure": {
+   "type": "buoy",
+   "kind": "special",
+   "note": "Small buoys in a line parallel to the beach"
+  },
+  "ru": {
+   "Small buoys in a line parallel to the beach": "Небольшие буйки в линию вдоль пляжа"
+  }
+ },
+ {
+  "id": "bs-581",
+  "topic": "buoyage",
+  "q": "Off Piraeus you see this new buoy, which is not on your chart. What does it mark?",
+  "answer": "A recent wreck, not yet charted",
+  "why": "Blue and yellow stripes: an emergency wreck-marking buoy over a new, uncharted wreck.",
+  "figure": {
+   "type": "buoy",
+   "kind": "wreck"
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-583",
+  "topic": "buoyage",
+  "q": "You see two of these marks close together where your up-to-date chart shows clear water. What does it mean?",
+  "answer": "A newly found danger, marked with a duplicate",
+  "why": "IALA: a serious new danger may be marked by duplicating one of the marks until it is charted.",
+  "figure": {
+   "type": "buoy",
+   "kind": "card-e",
+   "note": "Two of these, side by side; chart shows clear water"
+  },
+  "ru": {
+   "Two of these, side by side; chart shows clear water": "Два таких знака рядом; на карте чистая вода"
+  }
+ }
+]

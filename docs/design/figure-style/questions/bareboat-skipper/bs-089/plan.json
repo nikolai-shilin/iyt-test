@@ -1,0 +1,98 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Prop walk going astern",
+  "key": [
+   "A right-handed propeller kicks the stern to port in astern",
+   "Berth port side to: a burst astern pulls the stern in alongside"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      8.0
+     ],
+     [
+      -14.0,
+      14.0
+     ]
+    ],
+    "c": "red",
+    "w": 7,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      10.0,
+      -4.0
+     ],
+     [
+      10.0,
+      20.0
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "arrow": true
+   }
+  ],
+  "quays": [
+   {
+    "x1": -30.0,
+    "z1": -24.0,
+    "x2": -24.8,
+    "z2": 24.0
+   }
+  ],
+  "fit": [
+   {
+    "x": -34.0,
+    "z": -24.0
+   },
+   {
+    "x": 28.0,
+    "z": 24.0
+   },
+   {
+    "x": -12.0,
+    "z": -12.0
+   },
+   {
+    "x": 12.0,
+    "z": 12.0
+   }
+  ],
+  "texts": [
+   {
+    "x": -20.0,
+    "z": 20.8,
+    "text": "stern walks to port",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 22.0,
+    "z": 8.0,
+    "text": "astern",
+    "free": true
+   },
+   {
+    "x": -34.0,
+    "z": -16.0,
+    "text": "port side to",
+    "kind": "accent",
+    "free": true
+   }
+  ]
+ }
+}

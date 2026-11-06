@@ -1,0 +1,85 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Spinning a catamaran",
+  "key": [
+   "Port engine ahead, starboard engine astern: she spins to starboard",
+   "Engines far apart give a strong turning couple"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "label": "Catamaran"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -11.4,
+      6.0
+     ],
+     [
+      -11.4,
+      -9.0
+     ]
+    ],
+    "c": "course",
+    "w": 7,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      11.4,
+      -7.5
+     ],
+     [
+      11.4,
+      7.5
+     ]
+    ],
+    "c": "red",
+    "w": 7,
+    "arrow": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -24.0,
+    "z": -15.0
+   },
+   {
+    "x": 24.0,
+    "z": 15.0
+   },
+   {
+    "x": -9.0,
+    "z": -9.0
+   },
+   {
+    "x": 9.0,
+    "z": 9.0
+   }
+  ],
+  "texts": [
+   {
+    "x": -19.7,
+    "z": -5.0,
+    "text": "port ahead",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": 24.4,
+    "z": 6.0,
+    "text": "starboard astern",
+    "kind": "red",
+    "free": true
+   }
+  ]
+ }
+}

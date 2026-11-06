@@ -1,0 +1,63 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "mpp": 0.32,
+  "title": "Lights · not under command, stopped",
+  "key": [
+   "Two all-round reds and nothing else: not under command",
+   "No sidelights: she is not making way; aground she would add anchor lights"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 200,
+    "label": "Not under command",
+    "stack": [
+     "r",
+     "r"
+    ],
+    "stackDx": -140,
+    "noHeading": true,
+    "scale": 3.2,
+    "bearing": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      30,
+      -20
+     ],
+     [
+      80,
+      -40
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 95,
+    "z": -62,
+    "text": "drifting",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -60,
+    "z": -60
+   },
+   {
+    "x": 120,
+    "z": 50
+   }
+  ]
+ }
+}

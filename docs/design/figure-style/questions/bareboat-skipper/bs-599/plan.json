@@ -1,0 +1,40 @@
+{
+ "rhythm": {
+  "T": 20,
+  "tick": 5,
+  "title": "Light rhythm · group flashing",
+  "key": [
+   "Two flashes close together, then dark: group flashing, Fl(2)",
+   "The period runs from the start of one group to the next: 10 s"
+  ],
+  "rows": [
+   {
+    "label": "Fl(2) 10s",
+    "note": "two flashes every 10 s",
+    "period": 10,
+    "flashes": [
+     [
+      0,
+      0.6
+     ],
+     [
+      2,
+      0.6
+     ]
+    ],
+    "hi": true
+   },
+   {
+    "label": "Fl 5s",
+    "note": "one flash every 5 s",
+    "period": 5,
+    "flashes": [
+     [
+      0,
+      0.6
+     ]
+    ]
+   }
+  ]
+ }
+}

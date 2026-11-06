@@ -1,0 +1,159 @@
+{
+ "article": "bareboat-skipper/emergency",
+ "topic": "emergency",
+ "lead": "One call on channel 16 reaches the coastguard and every vessel in range. Learn the three priorities and the MAYDAY by heart, then the first actions for the emergencies themselves.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Using the VHF",
+   "fig": {
+    "type": "card",
+    "title": "Routine call on 16",
+    "lines": [
+     "Thalassa, Thalassa, Thalassa",
+     "this is Kalliope, Kalliope, Kalliope",
+     "OVER",
+     "Thalassa answers: both move to 72"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "The MAYDAY",
+   "fig": {
+    "type": "card",
+    "title": "On channel 16",
+    "lines": [
+     "MAYDAY, MAYDAY, MAYDAY",
+     "this is Aurora, Aurora, Aurora, MMSI…",
+     "MAYDAY Aurora, MMSI…",
+     "Position · nature of distress",
+     "Help required · persons aboard",
+     "Other facts · OVER"
+    ],
+    "tag": "MAYDAY"
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "The MAYDAY",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V40 H150 L110 72 L80 40 H0 Z",
+    "marks": [
+     [
+      110,
+      66,
+      "w",
+      "Sounion lt"
+     ]
+    ],
+    "track": "M110 74 L110 148",
+    "labels": [
+     [
+      120,
+      114,
+      "2 miles",
+      "start"
+     ]
+    ],
+    "boat": [
+     110,
+     160,
+     270
+    ],
+    "panel": [
+     "Chart, north up",
+     "You: 2 M due",
+     "south of the light"
+    ],
+    "note": "Giving your position by radio"
+   },
+   "cap": "You say: 180° from Cape Sounion light, 2 miles."
+  },
+  {
+   "n": 4,
+   "section": "Another vessel's distress",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0,
+     "sail": true,
+     "boom": -14
+    },
+    "other": {
+     "bearing": 40,
+     "dist": 85,
+     "hdg": 270,
+     "sail": true,
+     "boom": 14,
+     "label": "Yacht"
+    },
+    "wind": 90,
+    "note": "Red hand flare from this yacht, nothing on the radio"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Flares and beacons",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 30,
+     "dist": 80,
+     "hdg": 200,
+     "label": "Dinghy",
+     "scale": 0.5
+    },
+    "note": "Person slowly raising and lowering both arms"
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Man overboard",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 300,
+     "sail": true,
+     "boom": -14
+    },
+    "other": {
+     "bearing": 0,
+     "dist": 75,
+     "hdg": 0,
+     "scale": 0.3,
+     "label": "MOB"
+    },
+    "wind": 0,
+    "note": "Final approach under sail: close reach, sheets eased"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Fire, flood, breakage",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 0,
+     "dist": 85,
+     "hdg": 0,
+     "label": "Tow"
+    },
+    "note": "Towline to a bridle from both bow cleats"
+   },
+   "cap": null
+  }
+ ]
+}

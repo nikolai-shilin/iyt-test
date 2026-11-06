@@ -1,0 +1,69 @@
+[
+ {
+  "id": "bs-042",
+  "topic": "navigation",
+  "q": "The chart gives this variation; your compass has no deviation. Your plotted true course is 090°. What do you steer?",
+  "answer": "094°M",
+  "why": "True to magnetic: add west (\"west is best\").",
+  "figure": {
+   "type": "compass",
+   "variation": -4,
+   "course": 90
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-043",
+  "topic": "navigation",
+  "q": "The compass reads 215°C. Deviation on this heading is 3°E, variation 2°W. What is the true course?",
+  "answer": "216°T",
+  "why": "Compass → true: add east, subtract west: 215 + 3 − 2 = 216.",
+  "figure": {
+   "type": "compass",
+   "variation": -2,
+   "deviation": 3,
+   "course": 215,
+   "courseLabel": "Compass course",
+   "note": "C → M → T"
+  },
+  "ru": {
+   "C → M → T": "КК → МК → ИК",
+   "Compass course": "Компасный курс"
+  }
+ },
+ {
+  "id": "bs-488",
+  "topic": "navigation",
+  "q": "Your plotted course is shown. What compass course do you give the helmsman?",
+  "answer": "119°C",
+  "why": "True to compass: subtract east, add west: 120 − 3 + 2 = 119.",
+  "figure": {
+   "type": "compass",
+   "variation": 3,
+   "deviation": -2,
+   "course": 120,
+   "note": "T → M → C"
+  },
+  "ru": {
+   "T → M → C": "ИК → МК → КК"
+  }
+ },
+ {
+  "id": "bs-533",
+  "topic": "navigation",
+  "q": "The plotter shows this bearing to the next waypoint. Ignoring deviation, what magnetic course do you steer?",
+  "answer": "195°M",
+  "why": "True to magnetic: subtract easterly variation, 200 − 5.",
+  "figure": {
+   "type": "compass",
+   "variation": 5,
+   "course": 200,
+   "courseLabel": "GPS bearing",
+   "note": "Plotter set to true"
+  },
+  "ru": {
+   "Plotter set to true": "Плоттер в истинных",
+   "GPS bearing": "Пеленг GPS"
+  }
+ }
+]

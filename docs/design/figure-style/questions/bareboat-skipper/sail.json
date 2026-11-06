@@ -1,0 +1,336 @@
+[
+ {
+  "id": "bs-001",
+  "topic": "terms",
+  "q": "You are at the helm, sailing with the wind over your right shoulder and the boom out to the left. Which tack are you on?",
+  "answer": "Starboard tack",
+  "why": "The tack is named after the side the wind comes over.",
+  "figure": {
+   "type": "sail",
+   "wind": 45,
+   "hdg": 0,
+   "note": "Wind over the starboard side, boom to port"
+  },
+  "ru": {
+   "Wind over the starboard side, boom to port": "Ветер с правого борта, гик слева"
+  }
+ },
+ {
+  "id": "bs-003",
+  "topic": "terms",
+  "q": "From this point of sail you want to turn to sail downwind. Which way do you turn the boat?",
+  "answer": "Bear away — turn the bow away from the wind",
+  "why": "Bearing away takes you from close-hauled towards a run.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 315,
+   "nogo": true,
+   "note": "Close-hauled on starboard tack"
+  },
+  "ru": {
+   "Close-hauled on starboard tack": "Бейдевинд, правый галс"
+  }
+ },
+ {
+  "id": "bs-004",
+  "topic": "terms",
+  "q": "The boat is on this heading relative to the wind. What point of sail is it?",
+  "answer": "Beam reach",
+  "why": "Wind on the beam, about 90° off the bow.",
+  "figure": {
+   "type": "sail",
+   "wind": 270,
+   "hdg": 0,
+   "nogo": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-005",
+  "topic": "terms",
+  "q": "The boat is pointing into the shaded sector. What happens?",
+  "answer": "The sails flap and the boat stops — it is the no-go zone",
+  "why": "A yacht cannot sail closer than about 40–45° to the wind.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 15,
+   "nogo": true,
+   "note": "Red sector: about 45° either side of the wind"
+  },
+  "ru": {
+   "Red sector: about 45° either side of the wind": "Красный сектор: около 45° в обе стороны от ветра"
+  }
+ },
+ {
+  "id": "bs-009",
+  "topic": "terms",
+  "q": "You are about to turn the stern through the wind on a run. What do you do first?",
+  "answer": "Centre the mainsheet and warn the crew: \"Gybe-ho\"",
+  "why": "A controlled gybe keeps the boom from slamming across.",
+  "figure": {
+   "type": "sail",
+   "wind": 180,
+   "hdg": 350,
+   "note": "Running, about to gybe"
+  },
+  "ru": {
+   "Running, about to gybe": "Фордевинд, перед поворотом"
+  }
+ },
+ {
+  "id": "bs-101",
+  "topic": "terms",
+  "q": "You are sailing from Paros to Naxos on this heading. What point of sail are you on?",
+  "answer": "Broad reach",
+  "why": "Wind on the quarter, about 135° off the bow, is a broad reach.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 135,
+   "nogo": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-102",
+  "topic": "terms",
+  "q": "The genoa and main are sheeted in hard and you cannot steer any closer to the wind. What point of sail is this?",
+  "answer": "Close-hauled",
+  "why": "Close-hauled is the closest course to the wind that keeps the sails full, about 45°.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 315,
+   "nogo": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-103",
+  "topic": "terms",
+  "q": "You were close-hauled and have borne away a little to this heading. What point of sail are you on now?",
+  "answer": "Close reach",
+  "why": "Between close-hauled (45°) and a beam reach (90°) is a close reach.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 60,
+   "nogo": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-104",
+  "topic": "terms",
+  "q": "You settle on this heading for the long leg down to Kos. Where do you set the mainsail, and what is the main risk?",
+  "answer": "Eased right out; an accidental gybe",
+  "why": "On a run the main is eased fully, and a wind shift or wave can swing the boom across.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 180
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-105",
+  "topic": "terms",
+  "q": "You have just borne away from close-hauled onto this heading. What do you do with the sheets?",
+  "answer": "Ease both until the sails just stop luffing",
+  "why": "As you bear away, ease the sheets: trim each sail to the edge of luffing.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 90,
+   "note": "Now on a beam reach"
+  },
+  "ru": {
+   "Now on a beam reach": "Теперь курс — галфвинд"
+  }
+ },
+ {
+  "id": "bs-106",
+  "topic": "terms",
+  "q": "You were close-hauled on 045°. Now the sails start to lift and flap. What has happened and what do you do?",
+  "answer": "You are headed: bear away to keep the sails full",
+  "why": "A veer of 20° puts 045° inside the no-go zone; bear away or tack.",
+  "figure": {
+   "type": "sail",
+   "wind": 20,
+   "hdg": 45,
+   "nogo": true,
+   "note": "Wind has veered from 000° to 020°"
+  },
+  "ru": {
+   "Wind has veered from 000° to 020°": "Ветер зашёл с 000° на 020°"
+  }
+ },
+ {
+  "id": "bs-107",
+  "topic": "terms",
+  "q": "The skipper calls \"luff up 20 degrees\". What heading do you steer?",
+  "answer": "070°",
+  "why": "Luffing up turns the bow towards the wind: 090° − 20° = 070°.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 90,
+   "note": "Heading 090°, wind from the north"
+  },
+  "ru": {
+   "Heading 090°, wind from the north": "Курс 090°, ветер с севера"
+  }
+ },
+ {
+  "id": "bs-108",
+  "topic": "terms",
+  "q": "You bear away 45° from this heading. What is your new heading and point of sail?",
+  "answer": "270°, beam reach",
+  "why": "Bearing away turns from the wind: 315° − 45° = 270°, wind now on the beam.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 315,
+   "nogo": true,
+   "note": "Close-hauled, heading 315°, wind from the north"
+  },
+  "ru": {
+   "Close-hauled, heading 315°, wind from the north": "Бейдевинд, курс 315°, ветер с севера"
+  }
+ },
+ {
+  "id": "bs-109",
+  "topic": "terms",
+  "q": "Your boat tacks through 90°. After tacking from this heading, what course will you be steering?",
+  "answer": "045°",
+  "why": "Close-hauled 45° each side of a northerly wind: 315° tacks to 045°.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 315,
+   "nogo": true,
+   "note": "Close-hauled, heading 315°, wind from the north"
+  },
+  "ru": {
+   "Close-hauled, heading 315°, wind from the north": "Бейдевинд, курс 315°, ветер с севера"
+  }
+ },
+ {
+  "id": "bs-127",
+  "topic": "terms",
+  "q": "Your destination is upwind, to the north-west. Which manoeuvre puts you on the other close-hauled course?",
+  "answer": "Tack: turn the bow through the wind",
+  "why": "Changing from one close-hauled course to the other means tacking.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 45,
+   "nogo": true,
+   "note": "Close-hauled, wind from the north"
+  },
+  "ru": {
+   "Close-hauled, wind from the north": "Бейдевинд, ветер с севера"
+  }
+ },
+ {
+  "id": "bs-153",
+  "topic": "terms",
+  "q": "On a dead run in light wind the genoa keeps collapsing behind the main. What can you do?",
+  "answer": "Goose-wing it on the opposite side",
+  "why": "Set the genoa on the side away from the main, ideally held out by a pole.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 180,
+   "note": "Light wind, dead run"
+  },
+  "ru": {
+   "Light wind, dead run": "Слабый ветер, чистый фордевинд"
+  }
+ },
+ {
+  "id": "bs-175",
+  "topic": "terms",
+  "q": "After a slow tack the boat has stopped like this and will not turn either way. What is it and what do you do?",
+  "answer": "In irons: back the genoa to push the bow off",
+  "why": "Head to wind with no way on; backing the headsail turns the bow.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 0,
+   "nogo": true,
+   "note": "Speed 0 knots, sails flapping"
+  },
+  "ru": {
+   "Speed 0 knots, sails flapping": "Скорость 0 узлов, паруса полощут"
+  }
+ },
+ {
+  "id": "bs-325",
+  "topic": "safety",
+  "q": "You are sailing like this and the boat is rolling. How do you protect the crew?",
+  "answer": "Rig a preventer, keep heads clear of the boom",
+  "why": "An accidental gybe swings the boom across hard; a preventer holds it.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 180,
+   "note": "Dead run in a swell, crew in the cockpit"
+  },
+  "ru": {
+   "Dead run in a swell, crew in the cockpit": "Чистый фордевинд на зыби, экипаж в кокпите"
+  }
+ },
+ {
+  "id": "bs-510",
+  "topic": "navigation",
+  "q": "You are close-hauled as shown. What water track do you make?",
+  "answer": "045°T",
+  "why": "Leeway pushes you downwind: wind on the port bow sets you to starboard, 040 + 5.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 40,
+   "nogo": true,
+   "note": "Heading 040°T · leeway 5°"
+  },
+  "ru": {
+   "Heading 040°T · leeway 5°": "ИК 040° · дрейф 5°"
+  }
+ },
+ {
+  "id": "bs-644",
+  "topic": "weather",
+  "q": "You are close-hauled under full main and genoa. The boat heels hard and fights the helm. What do you do?",
+  "answer": "Reef now, before the wind builds further",
+  "why": "Reef early — the first time you think of it, and well before F6 on a charter yacht.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 40,
+   "nogo": true,
+   "note": "True wind rising 16 → 20 kn, weather helm"
+  },
+  "ru": {
+   "True wind rising 16 → 20 kn, weather helm": "Ист. ветер растёт 16 → 20 уз, яхта приводится"
+  }
+ },
+ {
+  "id": "bs-645",
+  "topic": "weather",
+  "q": "You have been running pleasantly under full sail for two hours. Now you must turn and beat back to harbour. What do you expect?",
+  "answer": "Much more wind and spray — reef first",
+  "why": "Downwind your boat speed is subtracted from the true wind; upwind it is added.",
+  "figure": {
+   "type": "sail",
+   "wind": 0,
+   "hdg": 180,
+   "note": "Running · apparent wind 13 kn, sea easy"
+  },
+  "ru": {
+   "Running · apparent wind 13 kn, sea easy": "Фордевинд · вымпельный ветер 13 уз, волна небольшая"
+  }
+ }
+]

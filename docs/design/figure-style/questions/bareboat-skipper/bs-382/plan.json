@@ -1,0 +1,84 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Bearing in doubt",
+  "key": [
+   "If you cannot tell whether the bearing changes, assume risk of collision (Rule 7(a))",
+   "She is on your starboard bow: act as the give-way vessel, early"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 192.8,
+    "z": -229.8,
+    "hdg": 280
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      -36.0
+     ],
+     [
+      0.0,
+      -75.0
+     ],
+     [
+      10.3,
+      -103.2
+     ],
+     [
+      29.5,
+      -126.2
+     ],
+     [
+      55.5,
+      -141.2
+     ],
+     [
+      85.1,
+      -146.4
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -142.1,
+    "z": 46.2,
+    "text": "assume risk",
+    "kind": "red",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -90.0,
+    "z": -90.0
+   },
+   {
+    "x": 90.0,
+    "z": 90.0
+   },
+   {
+    "x": 102.8,
+    "z": -319.8
+   },
+   {
+    "x": 282.8,
+    "z": -139.8
+   }
+  ]
+ }
+}

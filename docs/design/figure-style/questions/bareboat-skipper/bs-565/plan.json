@@ -1,0 +1,112 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "East cardinal · pass to the east",
+  "key": [
+   "Q(3) 10s: three quick flashes, like three o’clock",
+   "An east cardinal: the safe water is to the east of it"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 150,
+    "z": -200,
+    "hdg": 180.0,
+    "noHeading": true
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -70,
+      -50
+     ],
+     [
+      10,
+      -75
+     ],
+     [
+      70,
+      -30
+     ],
+     [
+      55,
+      45
+     ],
+     [
+      -20,
+      70
+     ],
+     [
+      -75,
+      30
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.08)"
+   }
+  ],
+  "rocks": [
+   {
+    "x": 0,
+    "z": 0
+   }
+  ],
+  "marks": [
+   {
+    "x": 80,
+    "z": 0,
+    "kind": "card-e",
+    "bearing": false,
+    "hi": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      150,
+      -160
+     ],
+     [
+      150,
+      200
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 210,
+    "z": 110,
+    "text": "pass east",
+    "kind": "accent"
+   },
+   {
+    "x": -90,
+    "z": 0,
+    "text": "shoal",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -240,
+    "z": -240
+   },
+   {
+    "x": 240,
+    "z": 240
+   },
+   {
+    "x": 150,
+    "z": -123.2
+   }
+  ]
+ }
+}

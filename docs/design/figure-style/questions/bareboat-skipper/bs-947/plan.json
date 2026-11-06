@@ -1,0 +1,77 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "A red flare · distress",
+  "key": [
+   "A red hand flare is a distress signal",
+   "No MAYDAY heard: send a MAYDAY RELAY on 16, then go to help"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": 192.8,
+    "z": -229.8,
+    "hdg": 270,
+    "label": "Yacht"
+   }
+  ],
+  "wind": 90,
+  "paths": [
+   {
+    "pts": [
+     [
+      23.1,
+      -27.6
+     ],
+     [
+      163.9,
+      -195.3
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 192.8,
+    "z": -334.8,
+    "text": "red flare",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": -29.2,
+    "z": 126.6,
+    "text": "MAYDAY RELAY · ch 16",
+    "kind": "accent",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -90.0,
+    "z": -90.0
+   },
+   {
+    "x": 90.0,
+    "z": 90.0
+   },
+   {
+    "x": 102.8,
+    "z": -319.8
+   },
+   {
+    "x": 282.8,
+    "z": -139.8
+   }
+  ]
+ }
+}

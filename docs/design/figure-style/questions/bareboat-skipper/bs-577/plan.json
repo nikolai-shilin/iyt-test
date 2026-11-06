@@ -1,0 +1,114 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 50,
+  "title": "Safe water mark · the landfall",
+  "key": [
+   "White LFl 10s, alone in open water: a safe water mark",
+   "Safe water all round: the landfall or the middle of a channel"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 10,
+    "z": 250,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "land": [
+   [
+    [
+     -300,
+     -300
+    ],
+    [
+     -60,
+     -300
+    ],
+    [
+     -60,
+     -180
+    ],
+    [
+     -300,
+     -180
+    ]
+   ],
+   [
+    [
+     60,
+     -300
+    ],
+    [
+     300,
+     -300
+    ],
+    [
+     300,
+     -180
+    ],
+    [
+     60,
+     -180
+    ]
+   ]
+  ],
+  "marks": [
+   {
+    "x": -45,
+    "z": 40,
+    "kind": "safe",
+    "bearing": false,
+    "hi": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      10,
+      225
+     ],
+     [
+      10,
+      -150
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -240,
+    "text": "HARBOUR",
+    "kind": "light",
+    "pill": false,
+    "size": 30
+   },
+   {
+    "x": -200,
+    "z": 120,
+    "text": "safe water all round",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -300,
+    "z": -300
+   },
+   {
+    "x": 300,
+    "z": 300
+   },
+   {
+    "x": 10,
+    "z": 346.0
+   }
+  ]
+ }
+}

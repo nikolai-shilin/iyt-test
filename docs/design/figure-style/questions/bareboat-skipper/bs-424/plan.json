@@ -1,0 +1,92 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Acting as stand-on · which way?",
+  "key": [
+   "A power-driven vessel on your port side: do not turn to port (Rule 17(c))",
+   "Turn to starboard, away from her, or slow down"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": -229.8,
+    "z": -192.8,
+    "hdg": 80,
+    "label": "Motor yacht"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      -36.0
+     ],
+     [
+      0.0,
+      -75.0
+     ],
+     [
+      13.8,
+      -108.3
+     ],
+     [
+      39.2,
+      -133.7
+     ],
+     [
+      72.5,
+      -147.5
+     ],
+     [
+      108.5,
+      -147.5
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 148.4,
+    "z": -34.9,
+    "text": "to starboard",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": -35.9,
+    "z": 112.5,
+    "text": "not to port",
+    "kind": "red",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -90.0,
+    "z": -90.0
+   },
+   {
+    "x": 90.0,
+    "z": 90.0
+   },
+   {
+    "x": -319.8,
+    "z": -282.8
+   },
+   {
+    "x": -139.8,
+    "z": -102.8
+   }
+  ]
+ }
+}

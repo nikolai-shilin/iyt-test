@@ -1,0 +1,77 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Lookout under the genoa",
+  "key": [
+   "Starboard tack, genoa to port: it hides the leeward bow",
+   "Look under the genoa to leeward, regularly (Rule 5)"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 315
+   },
+   {
+    "x": -300.0,
+    "z": 0.0,
+    "hdg": 60,
+    "label": "?",
+    "bearing": false
+   }
+  ],
+  "wind": 0,
+  "zones": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -311.5,
+      -234.7
+     ],
+     [
+      -433.3,
+      37.9
+     ],
+     [
+      -250.7,
+      298.8
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.08)"
+   }
+  ],
+  "texts": [
+   {
+    "x": -117.6,
+    "z": 160.1,
+    "text": "hidden by the genoa",
+    "kind": "red",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -90.0,
+    "z": -90.0
+   },
+   {
+    "x": 90.0,
+    "z": 90.0
+   },
+   {
+    "x": -390.0,
+    "z": -90.0
+   },
+   {
+    "x": -210.0,
+    "z": 90.0
+   }
+  ]
+ }
+}

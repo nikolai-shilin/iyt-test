@@ -1,0 +1,92 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Isolated danger mark",
+  "marks": [
+   {
+    "x": 0,
+    "z": -6,
+    "kind": "iso",
+    "bearing": false,
+    "hi": true
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": 10,
+    "r": 60,
+    "c": "red"
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -110,
+    "z": -110,
+    "hdg": 90,
+    "noHeading": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -80,
+      -110
+     ],
+     [
+      150,
+      -110
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      150,
+      130
+     ],
+     [
+      -150,
+      130
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 110,
+    "z": 40,
+    "text": "danger under the mark",
+    "kind": "red"
+   },
+   {
+    "x": 0,
+    "z": -150,
+    "text": "pass on any side",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -170,
+    "z": -170
+   },
+   {
+    "x": 170,
+    "z": 160
+   }
+  ],
+  "key": [
+   "Isolated danger: a small danger right under the mark",
+   "Safe water all round: pass on any side, but keep well clear"
+  ]
+ }
+}

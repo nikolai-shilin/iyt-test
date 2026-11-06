@@ -1,0 +1,83 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · sailing vessel, bow on",
+  "key": [
+   "Red and green, no masthead light above them: a sailing vessel",
+   "Power gives way to sail (Rule 18): you keep clear"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 130.0,
+    "z": -225.2,
+    "hdg": 210,
+    "label": "Sail",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      20,
+      -40
+     ],
+     [
+      110,
+      -90
+     ],
+     [
+      260,
+      -110
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -140,
+    "z": -60,
+    "text": "keep clear",
+    "kind": "red"
+   },
+   {
+    "x": 60,
+    "z": -260,
+    "text": "bearing steady",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -220,
+    "z": -330
+   },
+   {
+    "x": 330,
+    "z": 100
+   },
+   {
+    "x": 0,
+    "z": 88.0
+   },
+   {
+    "x": 130.0,
+    "z": -313.2
+   }
+  ]
+ }
+}

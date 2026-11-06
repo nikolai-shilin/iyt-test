@@ -1,0 +1,110 @@
+{
+ "sch": {
+  "padPx": 80,
+  "trueScale": true,
+  "minMpp": 0.04,
+  "title": "Day shape · at anchor",
+  "key": [
+   "A black ball: she is at anchor",
+   "Her chain runs out ahead: keep clear of her bow"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 240,
+    "label": "Yacht",
+    "tag": "black ball: at anchor",
+    "noHeading": true,
+    "bearing": false
+   },
+   {
+    "you": true,
+    "x": 22,
+    "z": 14,
+    "hdg": 300,
+    "noHeading": true,
+    "L": 13
+   }
+  ],
+  "circles": [
+   {
+    "x": -4.4,
+    "z": -2.1,
+    "r": 1.25,
+    "fill": "#fff",
+    "c": "ink",
+    "dash": "0"
+   },
+   {
+    "x": -4.4,
+    "z": -2.1,
+    "r": 0.8,
+    "fill": "var(--ink)",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "anchors": [
+   {
+    "x": -21,
+    "z": 12,
+    "s": 0.9
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -5.2,
+      3
+     ],
+     [
+      -21,
+      12
+     ]
+    ],
+    "c": "ink",
+    "dash": "8 8",
+    "w": 4
+   },
+   {
+    "pts": [
+     [
+      19,
+      9
+     ],
+     [
+      14,
+      0
+     ],
+     [
+      10,
+      -9
+     ]
+    ],
+    "c": "course",
+    "dash": "14 10",
+    "arrow": true
+   }
+  ],
+  "fit": [
+   {
+    "x": 6,
+    "z": -6
+   },
+   {
+    "x": 30,
+    "z": 24
+   }
+  ],
+  "texts": [
+   {
+    "x": 22,
+    "z": -5,
+    "text": "pass astern",
+    "kind": "accent"
+   }
+  ]
+ }
+}

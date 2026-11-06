@@ -1,0 +1,97 @@
+{
+ "article": "vhf-radio-operator/dsc",
+ "topic": "dsc",
+ "lead": "Digital selective calling lets one radio ring another, the way a phone does. You talk by voice afterwards; DSC only makes the call. In distress the same system sends who you are and where you are in a single burst of data.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "What DSC does",
+   "fig": {
+    "type": "radio",
+    "channel": "72",
+    "power": "LO",
+    "parts": [
+     [
+      "display",
+      "voice channel in use"
+     ],
+     [
+      "distress",
+      "DISTRESS"
+     ]
+    ],
+    "note": "Chatting on 72, the set still hears an alert on 70"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "MMSI",
+   "fig": {
+    "type": "card",
+    "title": "Reading an MMSI",
+    "lines": [
+     "238 123450 · a ship",
+     "238 = MID: the flag state, here Croatia",
+     "00 238 0100 · a coast station",
+     "0 238 12345 · a group of ships"
+    ]
+   },
+   "cap": "Example numbers: the zeros in front tell you what kind of station it is."
+  },
+  {
+   "n": 3,
+   "section": "Routine calls",
+   "fig": {
+    "type": "card",
+    "title": "DSC: individual call",
+    "lines": [
+     "To: MMSI 238123450 (Nova)",
+     "Category: ROUTINE",
+     "Working channel: 72",
+     "ACKNOWLEDGED · both sets go to 72"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Distress alert",
+   "fig": {
+    "type": "radio",
+    "channel": "16",
+    "power": "HI",
+    "parts": [
+     [
+      "distress",
+      "lift cover, hold 5 s"
+     ],
+     [
+      "display",
+      "then 16, high power"
+     ],
+     [
+      "ptt",
+      "voice MAYDAY"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Alerts received, false alerts",
+   "fig": {
+    "type": "card",
+    "title": "Cancelling a false alert, on 16",
+    "lines": [
+     "ALL STATIONS, ALL STATIONS, ALL STATIONS",
+     "THIS IS Nova, MMSI 238123450",
+     "Position 43°10.5′N 015°58.0′E",
+     "CANCEL MY DISTRESS ALERT OF 0915 UTC"
+    ]
+   },
+   "cap": null
+  }
+ ]
+}

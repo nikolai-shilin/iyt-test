@@ -1,0 +1,85 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Signal the turn",
+  "key": [
+   "Power-driven vessels in sight signal their alterations (Rule 34(a))",
+   "One short blast: “I am altering my course to starboard”"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 771.3,
+    "z": -919.3,
+    "hdg": 240,
+    "label": "Ship"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      -144.0
+     ],
+     [
+      0.0,
+      -300.0
+     ],
+     [
+      45.1,
+      -424.0
+     ],
+     [
+      130.0,
+      -525.2
+     ],
+     [
+      244.3,
+      -591.2
+     ],
+     [
+      374.3,
+      -614.1
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -10.1,
+    "z": 502.5,
+    "text": "·  one short blast",
+    "kind": "accent",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -360.0,
+    "z": -360.0
+   },
+   {
+    "x": 360.0,
+    "z": 360.0
+   },
+   {
+    "x": 411.3,
+    "z": -1279.3
+   },
+   {
+    "x": 1131.3,
+    "z": -559.3
+   }
+  ]
+ }
+}

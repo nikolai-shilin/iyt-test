@@ -1,0 +1,293 @@
+{
+ "article": "bareboat-skipper/colregs",
+ "topic": "colregs",
+ "lead": "The collision regulations settle who keeps clear and how. Ask in order: is there risk of collision, what is she, which rule fits?",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Lookout and risk",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 50,
+     "dist": 90,
+     "hdg": 270,
+     "label": "Ship",
+     "scale": 1.5
+    },
+    "bearingLine": true,
+    "note": "Bearing steady, range closing"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Sail meets sail",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 45,
+     "sail": true,
+     "boom": 14
+    },
+    "other": {
+     "bearing": 300,
+     "dist": 85,
+     "hdg": 315,
+     "sail": true,
+     "boom": -14
+    },
+    "wind": 0,
+    "bearingLine": true
+   },
+   "cap": "you are on port: keep clear",
+   "name": "Opposite tacks"
+  },
+  {
+   "n": 3,
+   "section": "Sail meets sail",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 60,
+     "sail": true,
+     "boom": -14
+    },
+    "other": {
+     "bearing": -80,
+     "dist": 80,
+     "hdg": 60,
+     "sail": true,
+     "boom": -14
+    },
+    "wind": 150,
+    "bearingLine": true
+   },
+   "cap": "you are to windward: keep clear",
+   "name": "Same tack"
+  },
+  {
+   "n": 4,
+   "section": "Overtaking, head-on, crossing",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 5,
+     "dist": 85,
+     "hdg": 0
+    },
+    "bearingLine": true
+   },
+   "cap": "you keep clear",
+   "name": "Overtaking"
+  },
+  {
+   "n": 5,
+   "section": "Overtaking, head-on, crossing",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 0,
+     "dist": 90,
+     "hdg": 180
+    },
+    "bearingLine": true
+   },
+   "cap": "both turn to starboard",
+   "name": "Head-on"
+  },
+  {
+   "n": 6,
+   "section": "Overtaking, head-on, crossing",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 50,
+     "dist": 90,
+     "hdg": 270
+    },
+    "bearingLine": true
+   },
+   "cap": "you give way",
+   "name": "She is to starboard"
+  },
+  {
+   "n": 7,
+   "section": "Overtaking, head-on, crossing",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": -50,
+     "dist": 85,
+     "hdg": 80
+    },
+    "bearingLine": true
+   },
+   "cap": "you stand on",
+   "name": "She is to port"
+  },
+  {
+   "n": 8,
+   "section": "Who gives way to whom",
+   "fig": {
+    "type": "dayshape",
+    "shape": "two-balls"
+   },
+   "cap": "two balls",
+   "name": "Not under command"
+  },
+  {
+   "n": 9,
+   "section": "Who gives way to whom",
+   "fig": {
+    "type": "dayshape",
+    "shape": "ball-diamond-ball"
+   },
+   "cap": "ball, diamond, ball",
+   "name": "Restricted in ability to manoeuvre"
+  },
+  {
+   "n": 10,
+   "section": "Who gives way to whom",
+   "fig": {
+    "type": "dayshape",
+    "shape": "two-cones"
+   },
+   "cap": "two cones, points together",
+   "name": "Fishing"
+  },
+  {
+   "n": 11,
+   "section": "Who gives way to whom",
+   "fig": {
+    "type": "dayshape",
+    "shape": "cylinder"
+   },
+   "cap": "cylinder",
+   "name": "Constrained by draught"
+  },
+  {
+   "n": 12,
+   "section": "Who gives way to whom",
+   "fig": {
+    "type": "dayshape",
+    "shape": "cone-down",
+    "sail": true
+   },
+   "cap": "cone, point down",
+   "name": "Motor-sailing"
+  },
+  {
+   "n": 13,
+   "section": "Who gives way to whom",
+   "fig": {
+    "type": "dayshape",
+    "shape": "three-balls"
+   },
+   "cap": "three balls",
+   "name": "Aground"
+  },
+  {
+   "n": 14,
+   "section": "Channels and traffic schemes",
+   "fig": {
+    "type": "chart",
+    "land": "M0 108 H320 V128 H0 Z",
+    "labels": [
+     [
+      90,
+      96,
+      "← westbound lane",
+      "middle"
+     ],
+     [
+      90,
+      122,
+      "separation zone",
+      "middle"
+     ],
+     [
+      90,
+      148,
+      "eastbound lane →",
+      "middle"
+     ]
+    ],
+    "boat": [
+     210,
+     176,
+     0
+    ],
+    "note": "Traffic separation scheme",
+    "panel": [
+     "Crossing",
+     "Heading at 90°",
+     "to the lanes"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 15,
+   "section": "Sound signals in sight",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 192,
+      "y": 72
+     },
+     {
+      "c": "r",
+      "x": 188,
+      "y": 120
+     },
+     {
+      "c": "w",
+      "x": 196,
+      "y": 48,
+      "t": "5 rapid flashes",
+      "r": 4
+     }
+    ],
+    "note": "Night · the same signals by light"
+   },
+   "cap": null
+  },
+  {
+   "n": 16,
+   "section": "Restricted visibility",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 20,
+     "dist": 85,
+     "hdg": 200,
+     "label": "Radar target"
+    },
+    "bearingLine": true,
+    "note": "Fog · turn boldly to starboard, or slow down"
+   },
+   "cap": null
+  }
+ ]
+}

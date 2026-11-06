@@ -10,7 +10,7 @@
       "refs": ["VHF set"],
       "blocks": [
         { "p": "A fixed set has few controls. **Volume** sets how loud you hear others; it changes nothing in what you send. **Squelch** mutes the hiss between calls: turn it down until the hiss starts, then up until it just stops. Set any higher, it shuts out weak stations too, and you hear nothing for hours." },
-        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["display", "channel"], ["volume", "volume"], ["mic", "microphone"], ["ptt", "press to talk"], ["distress", "DISTRESS"], ["power", "25 W / 1 W"], ["ch16", "straight to 16"], ["squelch", "squelch"]] } },
+        { "photo": "vhf-radio-operator/set/1", "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["display", "channel"], ["volume", "volume"], ["mic", "microphone"], ["ptt", "press to talk"], ["distress", "DISTRESS"], ["power", "25 W / 1 W"], ["ch16", "straight to 16"], ["squelch", "squelch"]] } },
         { "p": "The **16** key takes you straight back to channel 16. The red **DISTRESS** button sits under a cover and sends a DSC alert: never press it to try it. **Dual watch** listens to 16 and one channel you choose; **tri-watch** listens to 16 and two others in turn." },
         { "rule": "Squelch: just past the point where the hiss stops." }
       ]
@@ -24,11 +24,11 @@
       "blocks": [
         { "p": "The **H/L** key switches between high power, **25 W**, and low power, **1 W**. Low power is for short range: inside a harbour, to a boat nearby. If a station miles away does not answer, check first that the set is not still on 1 W." },
         { "tiles": [
-          { "fig": { "type": "radio", "channel": "72", "power": "HI" }, "view": "60 53 108 58", "name": "High, 25 W", "note": "open water, long range" },
-          { "fig": { "type": "radio", "channel": "72", "power": "LO" }, "view": "60 53 108 58", "name": "Low, 1 W", "note": "in port, close by" }
+          { "photo": "vhf-radio-operator/set/2", "fig": { "type": "radio", "channel": "72", "power": "HI" }, "view": "60 53 108 58", "name": "High, 25 W", "note": "open water, long range" },
+          { "photo": "vhf-radio-operator/set/3", "fig": { "type": "radio", "channel": "72", "power": "LO" }, "view": "60 53 108 58", "name": "Low, 1 W", "note": "in port, close by" }
         ] },
         { "p": "The set lives on the yacht's battery. A blank display means no supply: check the VHF breaker on the switch panel, the fuse and the battery switch. A tired battery still lights the display but cannot give full power when you transmit, so others hear you weak. Run the engine to charge it, then call again." },
-        { "fig": { "type": "panel", "gauges": [["Volts", "11.2", true], ["VHF", "25 W", false]], "lines": ["Coast station: \"Aurora, you are weak\"", "Engine off since yesterday, fridge running"] } }
+        { "photo": "vhf-radio-operator/set/4", "fig": { "type": "panel", "gauges": [["Volts", "11.2", true], ["VHF", "25 W", false]], "lines": ["Coast station: \"Aurora, you are weak\"", "Engine off since yesterday, fridge running"] } }
       ]
     },
     {
@@ -39,7 +39,7 @@
       "refs": ["VHF range", "VHF set"],
       "blocks": [
         { "p": "VHF travels roughly in a straight line, so each antenna must \"see\" the other over the horizon. **Height matters more than power**: an antenna at the masthead reaches much further than one on the pushpit rail, and a coast station on a hill reaches furthest of all." },
-        { "fig": { "type": "boat", "view": "side", "parts": [["mast", "masthead antenna: reaches far"], ["pushpit", "on the rail"]], "note": "The higher the antenna, the further its horizon" } },
+        { "photo": "vhf-radio-operator/set/5", "fig": { "type": "boat", "view": "side", "parts": [["mast", "masthead antenna: reaches far"], ["pushpit", "on the rail"]], "note": "The higher the antenna, the further its horizon" } },
         { "table": { "head": ["Between", "Roughly"], "rows": [
           ["Two yachts with masthead antennas", "10–20 miles"],
           ["A yacht and a coast station on a hill", "the longest: 30 miles and more"],
@@ -73,7 +73,7 @@
       "refs": ["VHF technique", "VHF set", "VHF procedure"],
       "blocks": [
         { "p": "You talk and listen in turn: press the button on the microphone to transmit, release it to listen. The set needs a moment to start sending, so **press, pause, then speak**, or your first words are clipped." },
-        { "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["mic", "few cm away"], ["ptt", "press, pause, speak · release to listen"]] } },
+        { "photo": "vhf-radio-operator/set/6", "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["mic", "few cm away"], ["ptt", "press, pause, speak · release to listen"]] } },
         { "list": [
           "Hold the microphone a few centimetres from your mouth and speak in a normal voice: shouting with it against your lips distorts every word.",
           "In a strong wind, shield the microphone with your hand or your body.",

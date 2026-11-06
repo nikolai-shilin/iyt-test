@@ -1,0 +1,2538 @@
+[
+ {
+  "id": "bs-046",
+  "topic": "navigation",
+  "q": "Your draft is 1.9 m. Can you cross the shoal on the track at the time shown?",
+  "answer": "Yes — 1.5 m charted + 1.2 m tide = 2.7 m, about 0.8 m clearance",
+  "why": "Depth now = charted depth + height of tide.",
+  "figure": {
+   "type": "chart",
+   "depths": [
+    [
+     60,
+     60,
+     "8"
+    ],
+    [
+     110,
+     90,
+     "5"
+    ],
+    [
+     150,
+     118,
+     "1.5"
+    ],
+    [
+     120,
+     150,
+     "4"
+    ],
+    [
+     220,
+     150,
+     "7"
+    ],
+    [
+     90,
+     170,
+     "12"
+    ]
+   ],
+   "track": "M30 170 L150 118 L260 60",
+   "boat": [
+    40,
+    168,
+    67
+   ],
+   "panel": [
+    "Now 14:00",
+    "Height of tide 1.2 m",
+    "Draft 1.9 m"
+   ],
+   "note": "Depths in metres below chart datum"
+  },
+  "ru": {
+   "Depths in metres below chart datum": "Глубины в метрах от нуля глубин",
+   "Now 14:00": "Сейчас 14:00",
+   "Height of tide 1.2 m": "Высота прилива 1,2 м",
+   "Draft 1.9 m": "Осадка 1,9 м"
+  }
+ },
+ {
+  "id": "bs-047",
+  "topic": "navigation",
+  "q": "Which of the depths on this chart will dry at low water?",
+  "answer": "The underlined 0.8 — a drying height above chart datum",
+  "why": "Underlined figures are heights above datum that uncover.",
+  "figure": {
+   "type": "chart",
+   "depths": [
+    [
+     60,
+     60,
+     "8"
+    ],
+    [
+     120,
+     100,
+     "4"
+    ],
+    [
+     170,
+     130,
+     "0.8",
+     true
+    ],
+    [
+     230,
+     90,
+     "1.5"
+    ],
+    [
+     90,
+     160,
+     "12"
+    ]
+   ],
+   "note": "Depths in metres · underlined = drying height"
+  },
+  "ru": {
+   "Depths in metres · underlined = drying height": "Глубины в метрах · подчёркнуто = осыхание"
+  }
+ },
+ {
+  "id": "bs-048",
+  "topic": "navigation",
+  "q": "Entering harbour, the two beacons must be kept in line. What are they called and what do they give you?",
+  "answer": "A transit (leading line) — a precise position line without a compass",
+  "why": "Two charted objects in line = one accurate position line.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 H200 V100 H120 V40 H0 Z",
+   "marks": [
+    [
+     160,
+     30,
+     "w",
+     "rear"
+    ],
+    [
+     160,
+     70,
+     "w",
+     "front"
+    ]
+   ],
+   "track": "M160 190 L160 80",
+   "boat": [
+    160,
+    180,
+    0
+   ],
+   "labels": [
+    [
+     160,
+     125,
+     "keep in line",
+     "middle"
+    ]
+   ],
+   "note": "Leading marks into the harbour"
+  },
+  "ru": {
+   "Leading marks into the harbour": "Створные знаки на входе в гавань",
+   "keep in line": "держать в створе",
+   "rear": "задний",
+   "front": "передний"
+  }
+ },
+ {
+  "id": "bs-049",
+  "topic": "navigation",
+  "q": "You take bearings of the lighthouse, the tower and the headland and plot them. They form a small triangle. Where are you?",
+  "answer": "Inside the cocked hat — take the corner nearest danger as your position",
+  "why": "A three-bearing fix; the triangle shows the error.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V36 H0 Z",
+   "marks": [
+    [
+     40,
+     30,
+     "k",
+     "lighthouse"
+    ],
+    [
+     160,
+     30,
+     "k",
+     "tower"
+    ],
+    [
+     290,
+     30,
+     "k",
+     "headland"
+    ]
+   ],
+   "track": "M40 36 L170 150 M160 36 L172 160 M290 36 L166 156",
+   "labels": [
+    [
+     200,
+     170,
+     "cocked hat",
+     "middle"
+    ]
+   ],
+   "note": "Three bearings plotted"
+  },
+  "ru": {
+   "Three bearings plotted": "Проложены три пеленга",
+   "cocked hat": "треуг. погрешностей",
+   "lighthouse": "маяк",
+   "tower": "башня",
+   "headland": "мыс"
+  }
+ },
+ {
+  "id": "bs-073",
+  "topic": "anchoring",
+  "q": "The chart shows these seabeds. Where will the anchor hold best?",
+  "answer": "Sand (S)",
+  "why": "Sand and mud let the anchor dig in; weed and rock do not.",
+  "figure": {
+   "type": "chart",
+   "depths": [
+    [
+     60,
+     80,
+     "S"
+    ],
+    [
+     140,
+     60,
+     "Wd"
+    ],
+    [
+     220,
+     90,
+     "R"
+    ],
+    [
+     120,
+     150,
+     "Sn"
+    ],
+    [
+     240,
+     160,
+     "M"
+    ]
+   ],
+   "note": "Chart seabed abbreviations"
+  },
+  "ru": {
+   "Chart seabed abbreviations": "Обозначения грунта на карте"
+  }
+ },
+ {
+  "id": "bs-077",
+  "topic": "anchoring",
+  "q": "Berthing stern-to with your own anchor in a Greek harbour. When do you drop the anchor?",
+  "answer": "About 3–4 boat lengths out, reversing towards the quay, paying out as you go",
+  "why": "Drop early, keep tension, stern lines ashore, then snug the chain.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 H0 Z",
+   "track": "M160 180 L160 60",
+   "marks": [
+    [
+     160,
+     170,
+     "k",
+     "drop here"
+    ]
+   ],
+   "boat": [
+    160,
+    90,
+    180
+   ],
+   "labels": [
+    [
+     160,
+     30,
+     "QUAY",
+     "middle"
+    ],
+    [
+     200,
+     130,
+     "3–4 boat lengths",
+     "start"
+    ]
+   ],
+   "note": "Stern-to, reversing towards the quay"
+  },
+  "ru": {
+   "Stern-to, reversing towards the quay": "Кормой, задним ходом к причалу",
+   "QUAY": "ПРИЧАЛ",
+   "3–4 boat lengths": "3–4 корпуса",
+   "drop here": "отдать здесь"
+  }
+ },
+ {
+  "id": "bs-396",
+  "topic": "colregs",
+  "q": "You must cross this traffic separation scheme. How do you steer?",
+  "answer": "On a heading at right angles, whatever the stream",
+  "why": "Rule 10(c): cross on a heading as nearly as practicable at right angles to the flow.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    210,
+    176,
+    0
+   ],
+   "note": "Traffic separation scheme",
+   "panel": [
+    "Crossing",
+    "Stream 2 kn east"
+   ]
+  },
+  "ru": {
+   "Traffic separation scheme": "Система разделения движения",
+   "Crossing": "Пересечение",
+   "Stream 2 kn east": "Течение 2 уз на восток",
+   "← westbound lane": "← полоса на запад",
+   "separation zone": "разделительная зона",
+   "eastbound lane →": "полоса на восток →"
+  }
+ },
+ {
+  "id": "bs-397",
+  "topic": "colregs",
+  "q": "You want to follow the eastbound lane along the coast. How do you join it?",
+  "answer": "At its end, or from the side at a small angle",
+  "why": "Rule 10(b)(iii): join at the end, or from the side at as small an angle as practicable.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    210,
+    176,
+    45
+   ],
+   "note": "Traffic separation scheme",
+   "panel": [
+    "Joining",
+    "Bound east"
+   ]
+  },
+  "ru": {
+   "Traffic separation scheme": "Система разделения движения",
+   "Joining": "Вход в полосу",
+   "Bound east": "Курс на восток",
+   "← westbound lane": "← полоса на запад",
+   "separation zone": "разделительная зона",
+   "eastbound lane →": "полоса на восток →"
+  }
+ },
+ {
+  "id": "bs-398",
+  "topic": "colregs",
+  "q": "Your 13 m yacht is going from one bay to the next along this coast. May you use the inshore traffic zone?",
+  "answer": "Yes — under 20 m and sailing vessels may",
+  "why": "Rule 10(d): vessels under 20 m, sailing vessels and fishing vessels may use it.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 70 H320 V88 H0 Z M0 176 H320 V200 H0 Z",
+   "labels": [
+    [
+     160,
+     62,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     160,
+     83,
+     "separation zone",
+     "middle"
+    ],
+    [
+     160,
+     112,
+     "eastbound lane →",
+     "middle"
+    ],
+    [
+     200,
+     160,
+     "inshore traffic zone",
+     "middle"
+    ]
+   ],
+   "boat": [
+    60,
+    160,
+    90
+   ],
+   "note": "Coast to the south"
+  },
+  "ru": {
+   "Coast to the south": "Берег к югу",
+   "← westbound lane": "← полоса на запад",
+   "separation zone": "разделительная зона",
+   "eastbound lane →": "полоса на восток →",
+   "inshore traffic zone": "зона прибрежного плавания"
+  }
+ },
+ {
+  "id": "bs-399",
+  "topic": "colregs",
+  "q": "Your planned track runs straight down the middle of the separation zone. Is that acceptable?",
+  "answer": "No — enter it only to cross or in an emergency",
+  "why": "Rule 10(e): keep out of a separation zone except to cross, join, leave or in an emergency.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    30,
+    118,
+    90
+   ],
+   "note": "Traffic separation scheme",
+   "panel": [
+    "Planned track"
+   ],
+   "track": "M30 118 H300"
+  },
+  "ru": {
+   "Traffic separation scheme": "Система разделения движения",
+   "Planned track": "Планируемый путь",
+   "← westbound lane": "← полоса на запад",
+   "separation zone": "разделительная зона",
+   "eastbound lane →": "полоса на восток →"
+  }
+ },
+ {
+  "id": "bs-400",
+  "topic": "colregs",
+  "q": "You are in this lane of a traffic separation scheme. What is wrong?",
+  "answer": "You are going against the traffic flow",
+  "why": "Rule 10(b)(i): in a lane, go in the general direction of traffic flow.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    230,
+    146,
+    270
+   ],
+   "note": "Traffic separation scheme"
+  },
+  "ru": {
+   "Traffic separation scheme": "Система разделения движения",
+   "← westbound lane": "← полоса на запад",
+   "separation zone": "разделительная зона",
+   "eastbound lane →": "полоса на восток →"
+  }
+ },
+ {
+  "id": "bs-401",
+  "topic": "colregs",
+  "q": "Your route passes close to where this scheme ends. What do you expect there?",
+  "answer": "Ships changing course and converging",
+  "why": "Rule 10(f): navigate with particular caution near the ends of a scheme.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 108 H200 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ],
+    [
+     255,
+     112,
+     "scheme ends",
+     "middle"
+    ]
+   ],
+   "boat": [
+    265,
+    176,
+    0
+   ],
+   "note": "Traffic separation scheme"
+  },
+  "ru": {
+   "Traffic separation scheme": "Система разделения движения",
+   "← westbound lane": "← полоса на запад",
+   "separation zone": "разделительная зона",
+   "eastbound lane →": "полоса на восток →",
+   "scheme ends": "конец системы"
+  }
+ },
+ {
+  "id": "bs-403",
+  "topic": "colregs",
+  "q": "To cross this scheme at right angles under sail you would be head to wind. What do you do?",
+  "answer": "Motor-sail to hold a heading near right angles",
+  "why": "Rule 10(c): cross as nearly at right angles as practicable — use the engine.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 108 H320 V128 H0 Z",
+   "labels": [
+    [
+     90,
+     96,
+     "← westbound lane",
+     "middle"
+    ],
+    [
+     90,
+     122,
+     "separation zone",
+     "middle"
+    ],
+    [
+     90,
+     148,
+     "eastbound lane →",
+     "middle"
+    ]
+   ],
+   "boat": [
+    210,
+    176,
+    0
+   ],
+   "note": "Traffic separation scheme",
+   "panel": [
+    "Under sail",
+    "Wind from north",
+    "Engine working"
+   ]
+  },
+  "ru": {
+   "Traffic separation scheme": "Система разделения движения",
+   "Under sail": "Под парусом",
+   "Wind from north": "Ветер северный",
+   "Engine working": "Мотор исправен",
+   "← westbound lane": "← полоса на запад",
+   "separation zone": "разделительная зона",
+   "eastbound lane →": "полоса на восток →"
+  }
+ },
+ {
+  "id": "bs-461",
+  "topic": "navigation",
+  "q": "Your plotted position lies three-quarters of the way up from the lower parallel to the upper one. What is your latitude?",
+  "answer": "37°47.5'N",
+  "why": "The parallels are 10' apart; three-quarters up is 7.5' north of 37°40'.",
+  "figure": {
+   "type": "chart",
+   "labels": [
+    [
+     8,
+     22,
+     "37°50'N",
+     "start"
+    ],
+    [
+     8,
+     170,
+     "37°40'N",
+     "start"
+    ]
+   ],
+   "track": "M60 26 H300 M60 174 H300",
+   "boat": [
+    180,
+    63,
+    0
+   ],
+   "note": "Parallels of latitude on the chart"
+  },
+  "ru": {
+   "Parallels of latitude on the chart": "Параллели на карте",
+   "37°50'N": "37°50'N",
+   "37°40'N": "37°40'N"
+  }
+ },
+ {
+  "id": "bs-465",
+  "topic": "navigation",
+  "q": "You sail due north as shown, with no tide or leeway. What latitude do you reach?",
+  "answer": "37°02.0'N",
+  "why": "12 M north = 12' of latitude: 36°50' + 12' = 37°02'.",
+  "figure": {
+   "type": "chart",
+   "boat": [
+    150,
+    168,
+    0
+   ],
+   "track": "M150 155 L150 40",
+   "panel": [
+    "Start 36°50.0'N",
+    "Course 000°T",
+    "Distance run 12 M"
+   ],
+   "depths": [
+    [
+     80,
+     70,
+     "45"
+    ],
+    [
+     240,
+     150,
+     "52"
+    ],
+    [
+     90,
+     150,
+     "38"
+    ]
+   ],
+   "note": "No tide, no leeway"
+  },
+  "ru": {
+   "No tide, no leeway": "Без течения и дрейфа",
+   "Start 36°50.0'N": "Старт 36°50,0'N",
+   "Course 000°T": "ИК 000°",
+   "Distance run 12 M": "Пройдено 12 миль"
+  }
+ },
+ {
+  "id": "bs-468",
+  "topic": "navigation",
+  "q": "The rock off the point carries this drying height. What do you see as you pass at the time shown?",
+  "answer": "The rock showing 0.9 m above water",
+  "why": "Drying height 1.5 m above datum − 0.6 m of tide = 0.9 m still uncovered.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H120 V30 C 90 50 60 60 0 70 Z",
+   "depths": [
+    [
+     150,
+     104,
+     "1.5",
+     true
+    ],
+    [
+     70,
+     110,
+     "6"
+    ],
+    [
+     230,
+     150,
+     "9"
+    ],
+    [
+     110,
+     160,
+     "12"
+    ]
+   ],
+   "labels": [
+    [
+     150,
+     88,
+     "rock",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Now 10:00",
+    "Height of tide 0.6 m"
+   ],
+   "note": "Underlined = drying height"
+  },
+  "ru": {
+   "Underlined = drying height": "Подчёркнуто = осыхание",
+   "Now 10:00": "Сейчас 10:00",
+   "Height of tide 0.6 m": "Высота прилива 0,6 м",
+   "rock": "скала"
+  }
+ },
+ {
+  "id": "bs-469",
+  "topic": "navigation",
+  "q": "Your track crosses this drying patch. How much water is over it at the time shown?",
+  "answer": "1.2 m",
+  "why": "Depth over a drying patch = height of tide − drying height: 1.6 − 0.4.",
+  "figure": {
+   "type": "chart",
+   "depths": [
+    [
+     160,
+     106,
+     "0.4",
+     true
+    ],
+    [
+     70,
+     70,
+     "5"
+    ],
+    [
+     250,
+     150,
+     "7"
+    ],
+    [
+     110,
+     172,
+     "3"
+    ]
+   ],
+   "track": "M30 160 L160 112 L300 120",
+   "boat": [
+    40,
+    156,
+    70
+   ],
+   "panel": [
+    "Now 15:30",
+    "Height of tide 1.6 m"
+   ],
+   "note": "Underlined = drying height"
+  },
+  "ru": {
+   "Underlined = drying height": "Подчёркнуто = осыхание",
+   "Now 15:30": "Сейчас 15:30",
+   "Height of tide 1.6 m": "Высота прилива 1,6 м"
+  }
+ },
+ {
+  "id": "bs-473",
+  "topic": "navigation",
+  "q": "Planning where to anchor, you find this printed in the bay. What is the seabed?",
+  "answer": "Sand and shells",
+  "why": "Seabed abbreviations: S = sand, Sh = shells.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V170 C 270 160 250 60 160 60 C 70 60 50 160 0 170 Z",
+   "depths": [
+    [
+     160,
+     112,
+     "S.Sh"
+    ],
+    [
+     120,
+     142,
+     "6"
+    ],
+    [
+     200,
+     150,
+     "8"
+    ],
+    [
+     160,
+     175,
+     "12"
+    ]
+   ],
+   "note": "Depths in metres"
+  },
+  "ru": {
+   "Depths in metres": "Глубины в метрах"
+  }
+ },
+ {
+  "id": "bs-474",
+  "topic": "navigation",
+  "q": "Off the headland the chart shows a small rock with this figure beside it. What is it?",
+  "answer": "A rock that never covers, 4 m high",
+  "why": "A height in brackets beside a rock marks an islet that never covers.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 H0 Z",
+   "marks": [
+    [
+     140,
+     98,
+     "k",
+     ""
+    ]
+   ],
+   "depths": [
+    [
+     166,
+     103,
+     "(4)"
+    ],
+    [
+     90,
+     80,
+     "7"
+    ],
+    [
+     230,
+     130,
+     "11"
+    ],
+    [
+     110,
+     155,
+     "15"
+    ]
+   ]
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-475",
+  "topic": "navigation",
+  "q": "The chart prints 'Foul' in the corner of the bay where you planned to drop anchor. What do you do?",
+  "answer": "Anchor elsewhere — debris may trap the anchor",
+  "why": "Foul ground is no danger to passing boats but is to be avoided for anchoring.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V170 C 270 160 250 60 160 60 C 70 60 50 160 0 170 Z",
+   "labels": [
+    [
+     205,
+     116,
+     "Foul",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     120,
+     130,
+     "5"
+    ],
+    [
+     170,
+     150,
+     "7"
+    ],
+    [
+     150,
+     178,
+     "11"
+    ]
+   ],
+   "note": "Depths in metres"
+  },
+  "ru": {
+   "Depths in metres": "Глубины в метрах",
+   "Foul": "Foul"
+  }
+ },
+ {
+  "id": "bs-476",
+  "topic": "navigation",
+  "q": "The best-sheltered spot in the bay lies on this charted line. Where do you anchor?",
+  "answer": "Well clear of the cable",
+  "why": "Never anchor over a charted cable: the anchor can snag or damage it.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V170 C 270 160 250 60 160 60 C 70 60 50 160 0 170 Z",
+   "labels": [
+    [
+     160,
+     128,
+     "~ ~ ~ submarine cable ~ ~ ~",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     115,
+     110,
+     "6"
+    ],
+    [
+     205,
+     108,
+     "5"
+    ],
+    [
+     140,
+     160,
+     "9"
+    ],
+    [
+     200,
+     170,
+     "10"
+    ]
+   ],
+   "note": "Depths in metres"
+  },
+  "ru": {
+   "Depths in metres": "Глубины в метрах",
+   "~ ~ ~ submarine cable ~ ~ ~": "~ ~ ~ подводный кабель ~ ~ ~"
+  }
+ },
+ {
+  "id": "bs-477",
+  "topic": "navigation",
+  "q": "Well offshore you pass the buoy labelled on the chart like this. What is it?",
+  "answer": "A data buoy recording weather and sea",
+  "why": "ODAS = Ocean Data Acquisition System: a yellow data buoy; keep clear of it.",
+  "figure": {
+   "type": "chart",
+   "marks": [
+    [
+     170,
+     96,
+     "y",
+     "ODAS"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     60,
+     "850"
+    ],
+    [
+     250,
+     150,
+     "1100"
+    ],
+    [
+     100,
+     160,
+     "920"
+    ]
+   ],
+   "boat": [
+    70,
+    140,
+    60
+   ],
+   "note": "Depths in metres · 20 M off the coast"
+  },
+  "ru": {
+   "Depths in metres · 20 M off the coast": "Глубины в метрах · 20 миль от берега",
+   "ODAS": "ODAS"
+  }
+ },
+ {
+  "id": "bs-478",
+  "topic": "navigation",
+  "q": "Your planned route crosses this charted area. What do you do before you go?",
+  "answer": "Check navigational warnings for firing times",
+  "why": "Firing areas are live only at notified times: check NAVTEX and coast radio warnings.",
+  "figure": {
+   "type": "chart",
+   "labels": [
+    [
+     160,
+     92,
+     "FIRING PRACTICE AREA",
+     "middle"
+    ]
+   ],
+   "track": "M20 170 L300 120",
+   "boat": [
+    30,
+    166,
+    75
+   ],
+   "depths": [
+    [
+     70,
+     60,
+     "120"
+    ],
+    [
+     250,
+     70,
+     "140"
+    ]
+   ]
+  },
+  "ru": {
+   "FIRING PRACTICE AREA": "РАЙОН УЧЕБНЫХ СТРЕЛЬБ"
+  }
+ },
+ {
+  "id": "bs-486",
+  "topic": "navigation",
+  "q": "An isolated rock near your route is marked 'PA' on the chart. How do you treat it?",
+  "answer": "Its position is approximate — give it room",
+  "why": "PA = position approximate: the danger may lie some way from where it is drawn.",
+  "figure": {
+   "type": "chart",
+   "labels": [
+    [
+     160,
+     100,
+     "+ PA",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     60,
+     "18"
+    ],
+    [
+     240,
+     70,
+     "22"
+    ],
+    [
+     250,
+     160,
+     "25"
+    ]
+   ],
+   "track": "M20 150 L300 118",
+   "boat": [
+    34,
+    148,
+    80
+   ]
+  },
+  "ru": {
+   "+ PA": "+ PA"
+  }
+ },
+ {
+  "id": "bs-493",
+  "topic": "navigation",
+  "q": "You motor straight down this transit to check the steering compass. What is the deviation on this heading?",
+  "answer": "5°W",
+  "why": "315°T − 3°E = 312°M; the compass reads 317°, 5° more, so deviation is 5°W.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H170 L130 40 L90 80 L0 100 Z",
+   "marks": [
+    [
+     40,
+     24,
+     "w",
+     "rear"
+    ],
+    [
+     80,
+     64,
+     "w",
+     "front"
+    ]
+   ],
+   "track": "M195 179 L90 74",
+   "boat": [
+    185,
+    169,
+    315
+   ],
+   "panel": [
+    "On the transit",
+    "Chart: 315°T",
+    "Compass: 317°",
+    "Variation 3°E"
+   ],
+   "note": "Two beacons in line"
+  },
+  "ru": {
+   "Two beacons in line": "Два знака в створе",
+   "On the transit": "На створе",
+   "Chart: 315°T": "Карта: 315° ист.",
+   "Compass: 317°": "Компас: 317°",
+   "Variation 3°E": "Склонение 3°E",
+   "rear": "задний",
+   "front": "передний"
+  }
+ },
+ {
+  "id": "bs-495",
+  "topic": "navigation",
+  "q": "You can identify these four objects. Which three give the best fix?",
+  "answer": "A, C and D",
+  "why": "Choose objects near you and about 60°–120° apart; A and B lie on one line.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V120 L270 100 L220 50 L120 45 L40 130 L0 140 Z",
+   "marks": [
+    [
+     62,
+     96,
+     "k",
+     "A"
+    ],
+    [
+     13,
+     66,
+     "k",
+     "B"
+    ],
+    [
+     165,
+     30,
+     "k",
+     "C"
+    ],
+    [
+     275,
+     93,
+     "k",
+     "D"
+    ]
+   ],
+   "boat": [
+    160,
+    155,
+    0
+   ],
+   "note": "B is a summit far inland, directly behind A"
+  },
+  "ru": {
+   "B is a summit far inland, directly behind A": "B — вершина далеко на берегу, прямо за A",
+   "A": "A",
+   "B": "B",
+   "C": "C",
+   "D": "D"
+  }
+ },
+ {
+  "id": "bs-496",
+  "topic": "navigation",
+  "q": "You are motoring east along the coast to take a three-point fix. In what order do you take the bearings?",
+  "answer": "P and R first, Q on the beam last",
+  "why": "Beam bearings change fastest, so take them last; ahead and astern change slowly.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V140 L280 120 L270 60 L0 50 Z",
+   "marks": [
+    [
+     300,
+     100,
+     "k",
+     "P"
+    ],
+    [
+     160,
+     40,
+     "k",
+     "Q"
+    ],
+    [
+     20,
+     40,
+     "k",
+     "R"
+    ]
+   ],
+   "boat": [
+    160,
+    112,
+    90
+   ],
+   "depths": [
+    [
+     90,
+     150,
+     "14"
+    ],
+    [
+     220,
+     160,
+     "16"
+    ]
+   ],
+   "note": "Heading 090°T"
+  },
+  "ru": {
+   "Heading 090°T": "ИК 090°",
+   "P": "P",
+   "Q": "Q",
+   "R": "R"
+  }
+ },
+ {
+  "id": "bs-497",
+  "topic": "navigation",
+  "q": "Your three bearings off Kythnos plot like this, a triangle almost a mile across. What do you do?",
+  "answer": "Re-take the bearings; assume the worst position",
+  "why": "A large cocked hat means an error: wrong object, misread compass or deviation.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V30 C 220 50 120 20 0 40 Z",
+   "marks": [
+    [
+     50,
+     36,
+     "k",
+     "church"
+    ],
+    [
+     170,
+     34,
+     "k",
+     "mast"
+    ],
+    [
+     280,
+     30,
+     "k",
+     "light"
+    ]
+   ],
+   "track": "M50 42 L230 152 M170 40 L144 186 M280 36 L130 176",
+   "labels": [
+    [
+     95,
+     152,
+     "rocks",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     100,
+     134,
+     "+"
+    ],
+    [
+     114,
+     128,
+     "+"
+    ]
+   ],
+   "note": "Three bearings plotted"
+  },
+  "ru": {
+   "Three bearings plotted": "Проложены три пеленга",
+   "rocks": "скалы",
+   "church": "церковь",
+   "mast": "мачта",
+   "light": "маяк"
+  }
+ },
+ {
+  "id": "bs-498",
+  "topic": "navigation",
+  "q": "To pass safely south of the reef, what bearing of the church do you keep?",
+  "answer": "Less than 060°T",
+  "why": "South of the line the church bears less than 060°; more means you are on the reef side.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V38 C 250 44 200 36 150 42 C 100 48 50 40 0 44 Z",
+   "marks": [
+    [
+     260,
+     30,
+     "k",
+     "church"
+    ]
+   ],
+   "track": "M260 30 L87 130",
+   "depths": [
+    [
+     110,
+     86,
+     "0.6",
+     true
+    ],
+    [
+     215,
+     150,
+     "14"
+    ],
+    [
+     280,
+     120,
+     "18"
+    ],
+    [
+     140,
+     172,
+     "9"
+    ]
+   ],
+   "labels": [
+    [
+     110,
+     72,
+     "reef",
+     "middle"
+    ],
+    [
+     200,
+     96,
+     "clearing line 060°T",
+     "start"
+    ]
+   ],
+   "boat": [
+    40,
+    172,
+    90
+   ],
+   "note": "Church on 060°T clears the reef"
+  },
+  "ru": {
+   "Church on 060°T clears the reef": "Церковь по ИП 060° ограждает риф",
+   "reef": "риф",
+   "clearing line 060°T": "ограждающий ИП 060°",
+   "church": "церковь"
+  }
+ },
+ {
+  "id": "bs-503",
+  "topic": "navigation",
+  "q": "In haze you get one bearing of the light, and the echo sounder (corrected to chart datum) reads 20 m. What do you have?",
+  "answer": "A rough fix where the bearing meets the 20 m line",
+  "why": "A sounding gives a depth-contour position line; crossed with a bearing it gives a rough fix.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V30 H0 Z",
+   "marks": [
+    [
+     200,
+     34,
+     "k",
+     "light"
+    ]
+   ],
+   "track": "M200 40 L130 180",
+   "depths": [
+    [
+     60,
+     120,
+     "20"
+    ],
+    [
+     115,
+     125,
+     "20"
+    ],
+    [
+     215,
+     128,
+     "20"
+    ],
+    [
+     270,
+     122,
+     "20"
+    ],
+    [
+     90,
+     75,
+     "10"
+    ],
+    [
+     250,
+     80,
+     "10"
+    ],
+    [
+     80,
+     170,
+     "30"
+    ],
+    [
+     240,
+     170,
+     "32"
+    ]
+   ],
+   "labels": [
+    [
+     165,
+     92,
+     "bearing",
+     "end"
+    ]
+   ]
+  },
+  "ru": {
+   "bearing": "пеленг",
+   "light": "маяк"
+  }
+ },
+ {
+  "id": "bs-504",
+  "topic": "navigation",
+  "q": "You take one bearing of a lighthouse and draw it on the chart. What do you have?",
+  "answer": "A position line — you are somewhere on it",
+  "why": "One bearing gives one position line; you need a second line to cross it.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V24 H0 Z",
+   "marks": [
+    [
+     200,
+     30,
+     "k",
+     "lighthouse"
+    ]
+   ],
+   "track": "M200 36 L115 177",
+   "labels": [
+    [
+     135,
+     120,
+     "light bears 030°T",
+     "end"
+    ]
+   ],
+   "depths": [
+    [
+     260,
+     120,
+     "25"
+    ],
+    [
+     60,
+     80,
+     "18"
+    ]
+   ]
+  },
+  "ru": {
+   "light bears 030°T": "ИП маяка 030°",
+   "lighthouse": "маяк"
+  }
+ },
+ {
+  "id": "bs-507",
+  "topic": "navigation",
+  "q": "You leave the 10:00 fix as shown. Where is your 11:00 estimated position?",
+  "answer": "6 M east and 1.5 M south of the fix",
+  "why": "Plot the water track 6 M along 090°, then the tide 1.5 M towards 180°.",
+  "figure": {
+   "type": "chart",
+   "boat": [
+    40,
+    120,
+    90
+   ],
+   "track": "M55 120 L290 120",
+   "panel": [
+    "10:00 – 11:00",
+    "Course 090°T",
+    "Log 6.0 M",
+    "Tide 180°T 1.5 kn"
+   ],
+   "depths": [
+    [
+     100,
+     60,
+     "40"
+    ],
+    [
+     200,
+     170,
+     "55"
+    ]
+   ],
+   "note": "Fix at the boat · no leeway"
+  },
+  "ru": {
+   "Fix at the boat · no leeway": "Обсервация — у яхты · без дрейфа",
+   "Course 090°T": "ИК 090°",
+   "Log 6.0 M": "Лаг 6,0 мили",
+   "Tide 180°T 1.5 kn": "Течение 180° 1,5 уз"
+  }
+ },
+ {
+  "id": "bs-513",
+  "topic": "navigation",
+  "q": "Where is your DR position at 15:30?",
+  "answer": "6.0 M west of the fix",
+  "why": "1.5 h × 4 kn = 6 M along the course; a DR ignores tide and leeway.",
+  "figure": {
+   "type": "chart",
+   "boat": [
+    270,
+    140,
+    270
+   ],
+   "track": "M255 140 L40 140",
+   "panel": [
+    "14:00 fix",
+    "Course 270°T",
+    "Speed 4.0 kn"
+   ],
+   "depths": [
+    [
+     80,
+     70,
+     "35"
+    ],
+    [
+     150,
+     175,
+     "42"
+    ]
+   ],
+   "note": "Fix at the boat · no tide, no leeway"
+  },
+  "ru": {
+   "Fix at the boat · no tide, no leeway": "Обсервация — у яхты · без течения и дрейфа",
+   "14:00 fix": "Обсервация 14:00",
+   "Course 270°T": "ИК 270°",
+   "Speed 4.0 kn": "Скорость 4,0 уз"
+  }
+ },
+ {
+  "id": "bs-515",
+  "topic": "navigation",
+  "q": "You want to cross the channel along the track shown. What course do you steer?",
+  "answer": "About 070°T",
+  "why": "Aim up-tide about 20°: 2 kn ÷ 6 kn × 60 (1-in-60), so 090 − 20.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H24 V200 H0 Z M296 0 H320 V200 H296 Z",
+   "boat": [
+    44,
+    120,
+    90
+   ],
+   "track": "M58 120 L290 120",
+   "panel": [
+    "Track 090°T",
+    "Boat speed 6.0 kn",
+    "Tide 180°T 2.0 kn"
+   ],
+   "depths": [
+    [
+     120,
+     170,
+     "45"
+    ],
+    [
+     220,
+     165,
+     "50"
+    ]
+   ],
+   "note": "Same stream for the whole crossing"
+  },
+  "ru": {
+   "Same stream for the whole crossing": "Течение одинаково на всём переходе",
+   "Track 090°T": "Путь 090° ист.",
+   "Boat speed 6.0 kn": "Скорость яхты 6,0 уз",
+   "Tide 180°T 2.0 kn": "Течение 180° 2,0 уз"
+  }
+ },
+ {
+  "id": "bs-529",
+  "topic": "navigation",
+  "q": "Entering this Cycladic bay, the plotter shows your boat here. What do you do?",
+  "answer": "Navigate by eye, depth and bearings",
+  "why": "Electronic charts of small Greek bays can be offset; the depth and the view are real.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V200 H250 C 240 140 200 110 160 110 C 120 110 80 140 70 200 H0 Z",
+   "boat": [
+    60,
+    70,
+    150
+   ],
+   "depths": [
+    [
+     160,
+     140,
+     "8"
+    ],
+    [
+     125,
+     166,
+     "10"
+    ],
+    [
+     200,
+     166,
+     "12"
+    ]
+   ],
+   "panel": [
+    "Echo sounder",
+    "Depth 8.0 m"
+   ],
+   "note": "Plotter screen"
+  },
+  "ru": {
+   "Plotter screen": "Экран плоттера",
+   "Echo sounder": "Эхолот",
+   "Depth 8.0 m": "Глубина 8,0 м"
+  }
+ },
+ {
+  "id": "bs-538",
+  "topic": "navigation",
+  "q": "How do you round this breakwater head to enter the harbour?",
+  "answer": "Wide, then turn in",
+  "why": "Breakwater heads often have rubble and shoals off them: round them wide.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 H140 V118 H120 V40 H0 Z",
+   "marks": [
+    [
+     130,
+     112,
+     "r",
+     ""
+    ]
+   ],
+   "depths": [
+    [
+     130,
+     140,
+     "1.2"
+    ],
+    [
+     105,
+     134,
+     "1.8"
+    ],
+    [
+     210,
+     150,
+     "6"
+    ],
+    [
+     230,
+     90,
+     "5"
+    ],
+    [
+     60,
+     100,
+     "3"
+    ]
+   ],
+   "labels": [
+    [
+     146,
+     142,
+     "shoal",
+     "start"
+    ]
+   ],
+   "boat": [
+    250,
+    160,
+    300
+   ],
+   "note": "Harbour plan from the pilot book"
+  },
+  "ru": {
+   "Harbour plan from the pilot book": "План гавани из лоции",
+   "shoal": "мель"
+  }
+ },
+ {
+  "id": "bs-544",
+  "topic": "navigation",
+  "q": "Your track passes over this charted wreck. What do you do?",
+  "answer": "Carry on, but don't anchor near it",
+  "why": "A wreck with 25 m over it is no danger to a yacht; just keep your anchor off it.",
+  "figure": {
+   "type": "chart",
+   "depths": [
+    [
+     168,
+     98,
+     "25 Wk"
+    ],
+    [
+     80,
+     60,
+     "38"
+    ],
+    [
+     250,
+     150,
+     "41"
+    ],
+    [
+     90,
+     160,
+     "35"
+    ]
+   ],
+   "track": "M20 140 L300 80",
+   "boat": [
+    34,
+    137,
+    78
+   ],
+   "panel": [
+    "Draft 2.0 m"
+   ],
+   "note": "Depths in metres below chart datum"
+  },
+  "ru": {
+   "Depths in metres below chart datum": "Глубины в метрах от нуля глубин",
+   "Draft 2.0 m": "Осадка 2,0 м"
+  }
+ },
+ {
+  "id": "bs-566",
+  "topic": "buoyage",
+  "q": "Your track north runs close past this mark. How do you get by it safely?",
+  "answer": "Alter to port and leave it to starboard",
+  "why": "West cardinal: safe water to the west, danger to the east, which is where your track goes.",
+  "figure": {
+   "type": "chart",
+   "depths": [
+    [
+     70,
+     60,
+     "12"
+    ],
+    [
+     60,
+     130,
+     "9"
+    ],
+    [
+     178,
+     80,
+     "0.6",
+     true
+    ],
+    [
+     205,
+     115,
+     "1.2"
+    ],
+    [
+     250,
+     160,
+     "15"
+    ]
+   ],
+   "marks": [
+    [
+     135,
+     75,
+     "y",
+     "W cardinal"
+    ]
+   ],
+   "track": "M150 148 L150 30",
+   "boat": [
+    150,
+    160,
+    0
+   ],
+   "note": "Depths in metres · heading 000°"
+  },
+  "ru": {
+   "Depths in metres · heading 000°": "Глубины в метрах · курс 000°",
+   "W cardinal": "Зап. кардинальный"
+  }
+ },
+ {
+  "id": "bs-570",
+  "topic": "buoyage",
+  "q": "Bound west along the coast, which way do you take this mark?",
+  "answer": "Alter to starboard and leave it to port",
+  "why": "North cardinal: safe water to the north; the danger lies south of it, on your track.",
+  "figure": {
+   "type": "chart",
+   "depths": [
+    [
+     60,
+     50,
+     "14"
+    ],
+    [
+     230,
+     50,
+     "11"
+    ],
+    [
+     140,
+     132,
+     "1.2"
+    ],
+    [
+     175,
+     126,
+     "0.4",
+     true
+    ],
+    [
+     70,
+     165,
+     "8"
+    ]
+   ],
+   "marks": [
+    [
+     140,
+     98,
+     "y",
+     "N cardinal"
+    ]
+   ],
+   "track": "M245 112 L30 112",
+   "boat": [
+    262,
+    112,
+    270
+   ],
+   "note": "Depths in metres · heading 270°"
+  },
+  "ru": {
+   "Depths in metres · heading 270°": "Глубины в метрах · курс 270°",
+   "N cardinal": "Сев. кардинальный"
+  }
+ },
+ {
+  "id": "bs-572",
+  "topic": "buoyage",
+  "q": "You want to continue east. Can you pass between these two marks?",
+  "answer": "No: go north of the N mark or south of the S mark",
+  "why": "Cardinals are named for where the safe water is, so the shoal lies between them.",
+  "figure": {
+   "type": "chart",
+   "depths": [
+    [
+     160,
+     100,
+     "0.8",
+     true
+    ],
+    [
+     200,
+     92,
+     "1.5"
+    ],
+    [
+     120,
+     108,
+     "1.1"
+    ],
+    [
+     60,
+     40,
+     "15"
+    ],
+    [
+     60,
+     170,
+     "13"
+    ],
+    [
+     270,
+     120,
+     "12"
+    ]
+   ],
+   "marks": [
+    [
+     160,
+     48,
+     "y",
+     "N cardinal"
+    ],
+    [
+     160,
+     152,
+     "y",
+     "S cardinal"
+    ]
+   ],
+   "boat": [
+    40,
+    100,
+    90
+   ],
+   "note": "Depths in metres · you are heading east"
+  },
+  "ru": {
+   "Depths in metres · you are heading east": "Глубины в метрах · вы идёте на восток",
+   "N cardinal": "Сев. кардинальный",
+   "S cardinal": "Южн. кардинальный"
+  }
+ },
+ {
+  "id": "bs-584",
+  "topic": "buoyage",
+  "q": "The chart shows this light on the cape. What will you see at night?",
+  "answer": "One flash every 5 seconds",
+  "why": "Fl 5s: a single flash, repeated every 5 s (the period).",
+  "figure": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     238,
+     60,
+     "w",
+     "Fl 5s 18m 12M"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     60,
+     "45"
+    ],
+    [
+     150,
+     140,
+     "30"
+    ]
+   ],
+   "note": "Chart extract"
+  },
+  "ru": {
+   "Chart extract": "Фрагмент карты",
+   "Fl 5s 18m 12M": "Fl 5s 18m 12M"
+  }
+ },
+ {
+  "id": "bs-585",
+  "topic": "buoyage",
+  "q": "You are trying to pick out this harbour light among the lights of the town. What pattern do you look for?",
+  "answer": "Mostly on, with two short eclipses every 8 s",
+  "why": "Oc: light longer than dark; Oc(2) 8s puts two eclipses in each 8-second period.",
+  "figure": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     245,
+     110,
+     "w",
+     "Oc(2) 8s"
+    ]
+   ],
+   "depths": [
+    [
+     90,
+     80,
+     "20"
+    ],
+    [
+     160,
+     150,
+     "12"
+    ]
+   ],
+   "note": "Chart extract"
+  },
+  "ru": {
+   "Chart extract": "Фрагмент карты",
+   "Oc(2) 8s": "Oc(2) 8s"
+  }
+ },
+ {
+  "id": "bs-587",
+  "topic": "buoyage",
+  "q": "What does the \"23m\" in this light's description on the chart tell you?",
+  "answer": "The height of the light above sea level",
+  "why": "Elevation: the height of the light itself above sea level (above MHWS on tidal charts).",
+  "figure": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     240,
+     70,
+     "w",
+     "Fl(3) WR 15s 23m 18/15M"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     80,
+     "40"
+    ],
+    [
+     140,
+     150,
+     "25"
+    ]
+   ],
+   "note": "Chart extract"
+  },
+  "ru": {
+   "Chart extract": "Фрагмент карты",
+   "Fl(3) WR 15s 23m 18/15M": "Fl(3) WR 15s 23m 18/15M"
+  }
+ },
+ {
+  "id": "bs-588",
+  "topic": "buoyage",
+  "q": "Planning a night landfall, you read this light on the chart. What is meant by 18/15M?",
+  "answer": "The nominal range of its white and red light",
+  "why": "Nominal range in 10 M visibility: 18 M for the white, 15 M for the weaker red.",
+  "figure": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     240,
+     130,
+     "w",
+     "Fl(3) WR 15s 23m 18/15M"
+    ]
+   ],
+   "depths": [
+    [
+     70,
+     60,
+     "38"
+    ],
+    [
+     150,
+     100,
+     "27"
+    ]
+   ],
+   "note": "Chart extract"
+  },
+  "ru": {
+   "Chart extract": "Фрагмент карты",
+   "Fl(3) WR 15s 23m 18/15M": "Fl(3) WR 15s 23m 18/15M"
+  }
+ },
+ {
+  "id": "bs-589",
+  "topic": "buoyage",
+  "q": "You time the light you can see. Which lighthouse is it?",
+  "answer": "B",
+  "why": "Fl(3) 15s: a group of three flashes, then dark, the whole cycle taking 15 s.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 Q240 55 160 42 Q80 30 0 50 Z",
+   "marks": [
+    [
+     50,
+     58,
+     "w",
+     "A  Fl 5s"
+    ],
+    [
+     160,
+     56,
+     "w",
+     "B  Fl(3) 15s"
+    ],
+    [
+     270,
+     62,
+     "w",
+     "C  Fl(2) 10s"
+    ]
+   ],
+   "boat": [
+    160,
+    160,
+    0
+   ],
+   "labels": [
+    [
+     160,
+     120,
+     "3 flashes, then dark · 15 s per cycle",
+     "middle"
+    ]
+   ],
+   "note": "Night · what you time"
+  },
+  "ru": {
+   "Night · what you time": "Ночь · что вы засекли",
+   "3 flashes, then dark · 15 s per cycle": "3 проблеска, затем темно · цикл 15 с",
+   "A  Fl 5s": "A  Fl 5s",
+   "B  Fl(3) 15s": "B  Fl(3) 15s",
+   "C  Fl(2) 10s": "C  Fl(2) 10s"
+  }
+ },
+ {
+  "id": "bs-590",
+  "topic": "buoyage",
+  "q": "Approaching at night, the light ahead behaves as described. Which charted light is it?",
+  "answer": "B",
+  "why": "Occulting: the light is on longer than it is off; Fl is mostly dark, Iso is half and half.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 Q240 55 160 42 Q80 30 0 50 Z",
+   "marks": [
+    [
+     50,
+     58,
+     "w",
+     "A  Fl 10s"
+    ],
+    [
+     160,
+     56,
+     "w",
+     "B  Oc 10s"
+    ],
+    [
+     270,
+     62,
+     "w",
+     "C  Iso 10s"
+    ]
+   ],
+   "boat": [
+    160,
+    160,
+    0
+   ],
+   "labels": [
+    [
+     160,
+     120,
+     "Steady light, briefly dark every 10 s",
+     "middle"
+    ]
+   ],
+   "note": "Night · what you see"
+  },
+  "ru": {
+   "Night · what you see": "Ночь · что вы видите",
+   "Steady light, briefly dark every 10 s": "Горит постоянно, на миг гаснет каждые 10 с",
+   "A  Fl 10s": "A  Fl 10s",
+   "B  Oc 10s": "B  Oc 10s",
+   "C  Iso 10s": "C  Iso 10s"
+  }
+ },
+ {
+  "id": "bs-597",
+  "topic": "buoyage",
+  "q": "You see this light change colour as you hold your course. What does that tell you?",
+  "answer": "Nothing about your position: it alternates",
+  "why": "Al WR: the light alternates white and red wherever you are; a sector light changes only with your bearing.",
+  "figure": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     245,
+     110,
+     "w",
+     "Al WR 10s"
+    ]
+   ],
+   "depths": [
+    [
+     90,
+     80,
+     "18"
+    ],
+    [
+     160,
+     150,
+     "11"
+    ]
+   ],
+   "note": "Chart extract"
+  },
+  "ru": {
+   "Chart extract": "Фрагмент карты",
+   "Al WR 10s": "Al WR 10s"
+  }
+ },
+ {
+  "id": "bs-598",
+  "topic": "buoyage",
+  "q": "What colour is this light on the end of the mole?",
+  "answer": "White",
+  "why": "No colour letter in the chart description means a white light.",
+  "figure": {
+   "type": "chart",
+   "land": "M230 0 H320 V200 H280 Q250 120 230 0 Z",
+   "marks": [
+    [
+     240,
+     100,
+     "w",
+     "Fl(2) 10s 15m 10M"
+    ]
+   ],
+   "depths": [
+    [
+     80,
+     70,
+     "14"
+    ],
+    [
+     150,
+     140,
+     "9"
+    ]
+   ],
+   "note": "Chart extract"
+  },
+  "ru": {
+   "Chart extract": "Фрагмент карты",
+   "Fl(2) 10s 15m 10M": "Fl(2) 10s 15m 10M"
+  }
+ },
+ {
+  "id": "bs-733",
+  "topic": "anchoring",
+  "q": "You plan to anchor on the shallow patch off Kalamos shown on the chart. What does the abbreviation tell you?",
+  "answer": "Weed — the anchor may skate; look for sand",
+  "why": "Wd = weed on the chart; anchors often fail to dig through it.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V30 C 220 45 100 30 0 40 Z",
+   "depths": [
+    [
+     70,
+     90,
+     "8"
+    ],
+    [
+     150,
+     82,
+     "Wd"
+    ],
+    [
+     150,
+     106,
+     "4"
+    ],
+    [
+     240,
+     100,
+     "6"
+    ],
+    [
+     110,
+     150,
+     "12"
+    ],
+    [
+     230,
+     160,
+     "15"
+    ]
+   ]
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-754",
+  "topic": "anchoring",
+  "q": "You are anchored as shown. What do you do before nightfall?",
+  "answer": "Re-anchor further north, out of the shoal's reach",
+  "why": "When the wind goes north you lie south of the anchor: 35 m of chain reaches the shoal.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V22 H0 Z",
+   "marks": [
+    [
+     150,
+     112,
+     "k",
+     "anchor"
+    ]
+   ],
+   "boat": [
+    150,
+    62,
+    180
+   ],
+   "depths": [
+    [
+     80,
+     70,
+     "7"
+    ],
+    [
+     70,
+     140,
+     "5"
+    ],
+    [
+     250,
+     135,
+     "6"
+    ],
+    [
+     150,
+     158,
+     "1.2"
+    ]
+   ],
+   "labels": [
+    [
+     150,
+     176,
+     "shoal 35 m S of the anchor",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Tonight",
+    "Wind going N, F4",
+    "Chain out 35 m",
+    "Draught 1.9 m"
+   ]
+  },
+  "ru": {
+   "Tonight": "Ночью",
+   "Wind going N, F4": "Ветер к С, 4 балла",
+   "Chain out 35 m": "Цепь 35 м",
+   "Draught 1.9 m": "Осадка 1,9 м",
+   "shoal 35 m S of the anchor": "мель в 35 м к Ю от якоря",
+   "anchor": "якорь"
+  }
+ },
+ {
+  "id": "bs-766",
+  "topic": "anchoring",
+  "q": "Your plotter track looks like this. What is happening?",
+  "answer": "The anchor is dragging downwind",
+  "why": "Swinging draws an arc; a straight line downwind means dragging.",
+  "figure": {
+   "type": "chart",
+   "track": "M150 70 C 138 76 140 88 152 90 C 166 92 170 80 160 72 L 166 82 L 200 110 L 236 138",
+   "boat": [
+    240,
+    142,
+    315
+   ],
+   "labels": [
+    [
+     150,
+     58,
+     "earlier",
+     "middle"
+    ]
+   ],
+   "panel": [
+    "Plotter, 0300",
+    "Wind NW F6"
+   ],
+   "note": "Your GPS track over the last hour"
+  },
+  "ru": {
+   "Your GPS track over the last hour": "Ваш трек GPS за последний час",
+   "Plotter, 0300": "Плоттер, 03:00",
+   "Wind NW F6": "Ветер СЗ, 6 баллов",
+   "earlier": "раньше"
+  }
+ },
+ {
+  "id": "bs-771",
+  "topic": "anchoring",
+  "q": "Will you clear the rock when the wind goes round to the west?",
+  "answer": "No — the stern could reach about 52 m from the anchor",
+  "why": "Swing radius ≈ horizontal chain (about 39.5 m) + boat length 13 m ≈ 52 m > 45 m.",
+  "figure": {
+   "type": "chart",
+   "marks": [
+    [
+     90,
+     150,
+     "k",
+     "anchor"
+    ],
+    [
+     240,
+     150,
+     "k",
+     "rock"
+    ]
+   ],
+   "boat": [
+    45,
+    150,
+    90
+   ],
+   "labels": [
+    [
+     165,
+     176,
+     "rock is 45 m from your anchor",
+     "middle"
+    ]
+   ],
+   "depths": [
+    [
+     60,
+     90,
+     "5"
+    ],
+    [
+     140,
+     110,
+     "5"
+    ]
+   ],
+   "panel": [
+    "Wind E, going W",
+    "Chain out 40 m",
+    "Depth 5 m",
+    "Bow height 1 m",
+    "Boat length 13 m"
+   ]
+  },
+  "ru": {
+   "Wind E, going W": "Ветер В, меняется на З",
+   "Chain out 40 m": "Цепь 40 м",
+   "Depth 5 m": "Глубина 5 м",
+   "Bow height 1 m": "Высота носа 1 м",
+   "Boat length 13 m": "Длина яхты 13 м",
+   "rock is 45 m from your anchor": "камень в 45 м от якоря",
+   "anchor": "якорь",
+   "rock": "камень"
+  }
+ },
+ {
+  "id": "bs-925",
+  "topic": "emergency",
+  "q": "You give your position by radio from this landmark. What do you say?",
+  "answer": "180° from Cape Sounion light, 2 miles",
+  "why": "A position by landmark is the true bearing FROM the landmark, then the distance.",
+  "figure": {
+   "type": "chart",
+   "land": "M0 0 H320 V40 H150 L110 72 L80 40 H0 Z",
+   "marks": [
+    [
+     110,
+     66,
+     "w",
+     "Sounion lt"
+    ]
+   ],
+   "track": "M110 74 L110 148",
+   "labels": [
+    [
+     120,
+     114,
+     "2 miles",
+     "start"
+    ]
+   ],
+   "boat": [
+    110,
+    160,
+    270
+   ],
+   "panel": [
+    "Chart, north up",
+    "You: 2 M due",
+    "south of the light"
+   ],
+   "note": "Giving your position by radio"
+  },
+  "ru": {
+   "Giving your position by radio": "Сообщаете место по радио",
+   "Chart, north up": "Карта, север вверху",
+   "You: 2 M due": "Вы: 2 мили",
+   "south of the light": "к югу от маяка",
+   "2 miles": "2 мили",
+   "Sounion lt": "Маяк Сунион"
+  }
+ }
+]

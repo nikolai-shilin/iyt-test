@@ -307,12 +307,15 @@ for t, _ in TOPICS:
     if os.path.exists(p):
         for x in json.load(open(p)): q(x['topic'], x['difficulty'], x['q'], x['a'], x['o'], x['why'], x['ref'], x['fig'])
 assert len(Q) == 1000, len(Q)
+# the Blender photos of the figures and the plans that go with the answers (docs/design/blender/publish_q.py), by question text
+PH = os.path.join(BANK, 'photos.json')
+PHOTOS = json.load(open(PH)) if os.path.exists(PH) else {}
 rnd = random.Random(2026)
 out = []
 for i, x in enumerate(Q):
     wrong = x['o'][:]; rnd.shuffle(wrong); target = i % 4
     opts = wrong[:]; opts.insert(target, x['a'])
-    out.append(dict(id=f'bs-{i + 1:03d}', topic=x['topic'], difficulty=x['difficulty'], q=x['q'], figure=x['fig'], options=opts, answer=target, why=x['why'], ref=x['ref']))
+    out.append(dict(id=f'bs-{i + 1:03d}', topic=x['topic'], difficulty=x['difficulty'], q=x['q'], figure=x['fig'], options=opts, answer=target, why=x['why'], ref=x['ref'], **PHOTOS.get(x['q'], {})))
 bank = dict(level='bareboat-skipper', title='IYT Bareboat Skipper', lang='en', passMark=70, examQuestions=40, examMinutes=60, version='2026-11-02d',
             note='Scenario questions written for study, close to the IYT Bareboat Skipper theory syllabus. Not official IYT exam content. '
                  'figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.',

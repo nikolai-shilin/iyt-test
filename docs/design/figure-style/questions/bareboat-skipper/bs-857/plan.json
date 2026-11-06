@@ -1,0 +1,91 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "The stern swings out",
+  "key": [
+   "Going ahead, a yacht pivots about a third of her length from the bow",
+   "Turn to port and the stern swings to starboard, towards the moored yacht"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": 39.4,
+    "z": 6.9,
+    "hdg": 0,
+    "label": "Moored",
+    "bearing": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -4.0
+     ],
+     [
+      -10.0,
+      -12.0
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      0,
+      6.0
+     ],
+     [
+      10.0,
+      12.0
+     ]
+    ],
+    "c": "red",
+    "w": 7,
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 12.0,
+    "z": 18.0,
+    "text": "stern swings out",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": -10.2,
+    "z": -18.0,
+    "text": "turn to port",
+    "kind": "accent",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -12.0,
+    "z": -12.0
+   },
+   {
+    "x": 12.0,
+    "z": 12.0
+   },
+   {
+    "x": 27.4,
+    "z": -5.1
+   },
+   {
+    "x": 51.4,
+    "z": 18.9
+   }
+  ]
+ }
+}

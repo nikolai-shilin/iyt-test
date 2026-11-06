@@ -28,8 +28,8 @@
       "refs": ["Distress call", "Distress procedure"],
       "blocks": [
         { "p": "On a DSC set, start with the red button: lift the cover and hold it for five seconds. The alert goes out as data and the set moves to **channel 16**. Check that it is on high power, press the switch on the handset and speak slowly and clearly. First comes the **distress call**, which says who is in trouble." },
-        { "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["distress", "hold 5 s"], ["ptt", "then speak"], ["ch16", "channel 16, high power"]] } },
-        { "fig": { "type": "card", "title": "Distress call", "lines": ["MAYDAY, MAYDAY, MAYDAY", "THIS IS", "Nova, Nova, Nova", "call sign 9A1234, MMSI 238123450"], "tag": "CH 16" } },
+        { "photo": "vhf-radio-operator/distress/1", "fig": { "type": "radio", "channel": "16", "power": "HI", "parts": [["distress", "hold 5 s"], ["ptt", "then speak"], ["ch16", "channel 16, high power"]] } },
+        { "photo": "vhf-radio-operator/distress/2", "fig": { "type": "card", "title": "Distress call", "lines": ["MAYDAY, MAYDAY, MAYDAY", "THIS IS", "Nova, Nova, Nova", "call sign 9A1234, MMSI 238123450"], "tag": "CH 16" } },
         { "p": "MAYDAY three times, THIS IS, the yacht's name three times, then her call sign or MMSI. Do not stop there: the message follows without a pause." }
       ]
     },
@@ -41,7 +41,7 @@
       "refs": ["Distress message"],
       "blocks": [
         { "p": "The **distress message** opens with MAYDAY and the name once more. **Position comes first**: if the radio dies ten seconds later, help can still set out. Then what is wrong, what help you need and how many people are aboard." },
-        { "fig": { "type": "card", "title": "Distress message", "lines": ["MAYDAY Nova, 9A1234, MMSI 238123450", "My position 43°10.5′N 015°58.0′E", "Holed and sinking", "I require immediate assistance", "Four persons on board", "Abandoning to the liferaft. OVER"], "tag": "CH 16" } },
+        { "photo": "vhf-radio-operator/distress/3", "fig": { "type": "card", "title": "Distress message", "lines": ["MAYDAY Nova, 9A1234, MMSI 238123450", "My position 43°10.5′N 015°58.0′E", "Holed and sinking", "I require immediate assistance", "Four persons on board", "Abandoning to the liferaft. OVER"], "tag": "CH 16" } },
         { "table": { "head": ["Letter", "Item"], "rows": [
           ["M", "MAYDAY"],
           ["I", "Identity: name, call sign, MMSI"],
@@ -63,7 +63,7 @@
       "refs": ["Distress message"],
       "blocks": [
         { "p": "With a GPS, read the coordinates: **latitude first, then longitude**, each with its hemisphere, north or south, east or west. Without one, give a **true bearing from** a charted point and the distance off: a lighthouse or a headland that rescuers will find on their own chart." },
-        { "fig": { "type": "chart", "land": "M95 42 Q130 16 176 34 Q188 60 160 76 Q120 82 100 66 Z", "marks": [[150, 60, "w", "Lt"]], "track": "M150 60 L75 150", "labels": [[122, 112, "3 M", "start"]], "boat": [75, 150, 0], "panel": ["GPS lost", "Light 040° T", "Range about 3 M"], "note": "Bearing taken from your boat to the light" }, "cap": "You say: \"220 degrees from the lighthouse, 3 miles\"." },
+        { "photo": "vhf-radio-operator/distress/4", "plan": 1.6, "fig": { "type": "chart", "land": "M95 42 Q130 16 176 34 Q188 60 160 76 Q120 82 100 66 Z", "marks": [[150, 60, "w", "Lt"]], "track": "M150 60 L75 150", "labels": [[122, 112, "3 M", "start"]], "boat": [75, 150, 0], "panel": ["GPS lost", "Light 040° T", "Range about 3 M"], "note": "Bearing taken from your boat to the light" }, "cap": "You say: \"220 degrees from the lighthouse, 3 miles\"." },
         { "p": "The bearing you take runs from your boat to the mark. Rescuers plot the other way, from the mark out to you, so give the **reciprocal**: add or subtract 180°. The light bears 040°, so you are 220° from it." },
         { "rule": "From the landmark, not to it: your bearing plus or minus 180°." }
       ]
@@ -76,7 +76,7 @@
       "refs": ["Distress acknowledgement", "Distress procedure", "Abandon ship"],
       "blocks": [
         { "p": "End the message with **OVER**, release the switch and listen on 16. A coast station or a vessel nearby acknowledges:" },
-        { "fig": { "type": "card", "title": "Acknowledgement", "lines": ["MAYDAY", "Nova, 9A1234", "THIS IS Split Radio", "RECEIVED MAYDAY"] } },
+        { "photo": "vhf-radio-operator/distress/5", "fig": { "type": "card", "title": "Acknowledgement", "lines": ["MAYDAY", "Nova, 9A1234", "THIS IS Split Radio", "RECEIVED MAYDAY"] } },
         { "p": "**RECEIVED MAYDAY** means your distress call has been heard and help is being organised. The station then asks what it still needs: answer briefly and stay on 16." },
         { "list": [
           "No answer: check channel 16 and high power, then repeat the call and the message.",
@@ -94,8 +94,8 @@
       "refs": ["MAYDAY RELAY"],
       "blocks": [
         { "p": "Sometimes the casualty reaches nobody, and you can. Send a **MAYDAY RELAY** in two cases: you hear a MAYDAY that no station acknowledges and you cannot give the help yourself; or you see a distress signal, such as a red flare, from a vessel that is silent on the radio." },
-        { "fig": { "type": "lights", "lights": [{ "c": "r", "x": 205, "y": 52, "t": "red flare" }], "note": "Night · red parachute flare, nothing heard on 16" } },
-        { "fig": { "type": "card", "title": "MAYDAY RELAY", "lines": ["MAYDAY RELAY ×3", "ALL STATIONS ×3", "THIS IS Nova ×3, call sign 9A1234", "Following received from yacht Mistral:", "MAYDAY Mistral, position …, sinking,", "six persons on board. OVER"] } },
+        { "photo": "vhf-radio-operator/distress/6", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "r", "x": 205, "y": 52, "t": "red flare" }], "note": "Night · red parachute flare, nothing heard on 16" } },
+        { "photo": "vhf-radio-operator/distress/7", "fig": { "type": "card", "title": "MAYDAY RELAY", "lines": ["MAYDAY RELAY ×3", "ALL STATIONS ×3", "THIS IS Nova ×3, call sign 9A1234", "Following received from yacht Mistral:", "MAYDAY Mistral, position …, sinking,", "six persons on board. OVER"] } },
         { "p": "Each of the three is said three times, like MAYDAY itself, and you call under **your own name**. Never pose as the casualty: rescuers must know who is speaking and where the message comes from. Then pass on her position and trouble as you heard them, or say what you saw, where and when." }
       ]
     }

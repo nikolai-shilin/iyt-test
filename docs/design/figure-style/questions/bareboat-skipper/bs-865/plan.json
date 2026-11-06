@@ -1,0 +1,86 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Autopilot · take the wheel",
+  "key": [
+   "Press Standby: it releases the autopilot drive",
+   "Then steer by hand, and keep clear of the fishing boat"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "label": "You (autopilot)",
+    "noHeading": true
+   },
+   {
+    "x": 22.7,
+    "z": -259.0,
+    "hdg": 200,
+    "label": "Fishing"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      -31.2
+     ],
+     [
+      0.0,
+      -65.0
+     ],
+     [
+      6.8,
+      -95.5
+     ],
+     [
+      19.9,
+      -123.7
+     ],
+     [
+      38.9,
+      -148.5
+     ],
+     [
+      62.8,
+      -168.5
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -226.1,
+    "z": 31.1,
+    "text": "Standby, then the wheel",
+    "kind": "accent",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -78.0,
+    "z": -78.0
+   },
+   {
+    "x": 78.0,
+    "z": 78.0
+   },
+   {
+    "x": -55.3,
+    "z": -337.0
+   },
+   {
+    "x": 100.7,
+    "z": -181.0
+   }
+  ]
+ }
+}

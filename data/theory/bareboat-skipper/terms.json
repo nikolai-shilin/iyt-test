@@ -10,7 +10,7 @@
       "refs": ["Directions on board", "Nautical terms"],
       "blocks": [
         { "p": "**Port** is the left side of the boat when you face forward, **starboard** the right, whichever way you are looking. The **bow** is the front, the **stern** the back. Something at right angles to the boat is **abeam**; between the beam and the stern it is on the **quarter**. A boat close to your heading line is fine on the bow." },
-        { "fig": { "type": "boat", "view": "plan", "parts": [["ahead", "ahead"], ["astern", "astern"], ["port", "PORT"], ["starboard", "STARBOARD"], ["abeam-port", "abeam"], ["abeam-stbd", "abeam"], ["port-bow", "port bow"], ["stbd-bow", "starboard bow"], ["port-quarter", "port quarter"], ["stbd-quarter", "starboard quarter"]], "note": "Named from the boat, facing forward" } },
+        { "photo": "bareboat-skipper/terms/1", "plan": 1.6, "fig": { "type": "boat", "view": "plan", "parts": [["ahead", "ahead"], ["astern", "astern"], ["port", "PORT"], ["starboard", "STARBOARD"], ["abeam-port", "abeam"], ["abeam-stbd", "abeam"], ["port-bow", "port bow"], ["stbd-bow", "starboard bow"], ["port-quarter", "port quarter"], ["stbd-quarter", "starboard quarter"]], "note": "Named from the boat, facing forward" } },
         { "p": "**Windward** is the side the wind comes from, **leeward** the side it blows to: sit to windward, be sick to leeward. A **lee shore** has the wind blowing onto it, so keep well off. **Fore-and-aft** means along the boat, **athwartships** across it." }
       ]
     },
@@ -21,7 +21,7 @@
       "qa": { "q": "What's the difference between draft and air draft on a sailing yacht?", "a": "**Draft** is the depth of the keel below the waterline: compare it with the depth at low water. Air draft is the masthead height above the water, which matters for bridges." },
       "refs": ["Parts of the boat", "Hull measurements", "Keel types", "Catamaran terms"],
       "blocks": [
-        { "fig": { "type": "boat", "view": "side", "parts": [["bow", "bow"], ["stern", "stern"], ["hull", "hull"], ["keel", "keel"], ["rudder", "rudder"], ["pulpit", "pulpit"], ["pushpit", "pushpit"], ["draft", "draft"], ["freeboard", "freeboard"], ["waterline", "waterline"]] } },
+        { "photo": "bareboat-skipper/terms/2", "fig": { "type": "boat", "view": "side", "parts": [["bow", "bow"], ["stern", "stern"], ["hull", "hull"], ["keel", "keel"], ["rudder", "rudder"], ["pulpit", "pulpit"], ["pushpit", "pushpit"], ["draft", "draft"], ["freeboard", "freeboard"], ["waterline", "waterline"]] } },
         { "p": "The **pulpit** is the rail round the bow, the **pushpit** the rail round the stern, and **stanchions** carry the guardwires between them. You go below through the **companionway**, closed with washboards in a big sea." },
         { "table": { "head": ["Measure", "Why it matters"], "rows": [
           ["Draft", "Keel depth below the waterline: compare it with the depth at low water"],
@@ -40,7 +40,7 @@
       "qa": { "q": "What should I do if a shroud or the forestay breaks while sailing?", "a": "If a windward **shroud** breaks, tack at once to put the load on the sound side; if the forestay goes, bear away onto a run." },
       "refs": ["Parts of the rig", "Rigging"],
       "blocks": [
-        { "fig": { "type": "boat", "view": "side", "parts": [["mast", "mast"], ["boom", "boom"], ["mainsail", "mainsail"], ["jib", "jib"], ["forestay", "forestay"], ["backstay", "backstay"]] } },
+        { "photo": "bareboat-skipper/terms/3", "fig": { "type": "boat", "view": "side", "parts": [["mast", "mast"], ["boom", "boom"], ["mainsail", "mainsail"], ["jib", "jib"], ["forestay", "forestay"], ["backstay", "backstay"]] } },
         { "p": "**Standing rigging** holds the mast: the **forestay** forward, the **backstay** aft, the **shrouds** to each side, spread by the **spreaders** and fixed to **chainplates** in the deck through **bottlescrews**. The **gooseneck** is the hinge between boom and mast. If a windward shroud breaks, tack at once to put the load on the sound side; if the forestay goes, bear away onto a run." }
       ]
     },
@@ -51,7 +51,7 @@
       "qa": { "q": "How do I put a reef in the mainsail, step by step?", "a": "To **reef**, ease the mainsheet and kicker, lower the halyard, hook on the new tack, haul the reefing line to bring the new clew to the boom, then hoist tight again." },
       "refs": ["Parts of a sail", "Running rigging", "Reefing"],
       "blocks": [
-        { "fig": { "type": "boat", "view": "sail", "parts": [["head", "head"], ["tack", "tack"], ["clew", "clew"], ["luff", "luff"], ["leech", "leech"], ["foot", "foot"], ["batten", "batten"], ["reef", "reef points"]] } },
+        { "photo": "bareboat-skipper/terms/4", "fig": { "type": "boat", "view": "sail", "parts": [["head", "head"], ["tack", "tack"], ["clew", "clew"], ["luff", "luff"], ["leech", "leech"], ["foot", "foot"], ["batten", "batten"], ["reef", "reef points"]] } },
         { "table": { "head": ["Line", "What it does"], "rows": [
           ["Halyard", "Hoists the sail"],
           ["Sheet", "Trims it in and out; on a genoa it goes to the clew"],
@@ -73,10 +73,10 @@
       "blocks": [
         { "p": "No boat sails straight into the wind: about 45° either side of it is the **no-go zone**. From its edge round to dead downwind every course has a name. Between close-hauled and a beam reach lies the **close reach**." },
         { "tiles": [
-          { "fig": { "type": "sail", "wind": 0, "hdg": 45, "nogo": true }, "view": "76 4 244 192", "name": "Close-hauled", "note": "about 45° off the wind" },
-          { "fig": { "type": "sail", "wind": 0, "hdg": 90 }, "view": "76 4 244 192", "name": "Beam reach", "note": "wind on the beam" },
-          { "fig": { "type": "sail", "wind": 0, "hdg": 135 }, "view": "76 4 244 192", "name": "Broad reach", "note": "wind on the quarter" },
-          { "fig": { "type": "sail", "wind": 0, "hdg": 175 }, "view": "76 4 244 192", "name": "Run", "note": "wind astern, main right out" }
+          { "photo": "bareboat-skipper/terms/5", "plan": 1.6, "fig": { "type": "sail", "wind": 0, "hdg": 45, "nogo": true }, "view": "76 4 244 192", "name": "Close-hauled", "note": "about 45° off the wind" },
+          { "photo": "bareboat-skipper/terms/6", "plan": 1.6, "fig": { "type": "sail", "wind": 0, "hdg": 90 }, "view": "76 4 244 192", "name": "Beam reach", "note": "wind on the beam" },
+          { "photo": "bareboat-skipper/terms/7", "plan": 1.6, "fig": { "type": "sail", "wind": 0, "hdg": 135 }, "view": "76 4 244 192", "name": "Broad reach", "note": "wind on the quarter" },
+          { "photo": "bareboat-skipper/terms/8", "plan": 1.6, "fig": { "type": "sail", "wind": 0, "hdg": 175 }, "view": "76 4 244 192", "name": "Run", "note": "wind astern, main right out" }
         ], "cols": 2 },
         { "p": "The **tack** is named after the side the wind comes over: all four boats above are on port tack. On a run it is the side opposite the boom." }
       ]
@@ -89,7 +89,7 @@
       "refs": ["Sailing manoeuvres"],
       "blocks": [
         { "p": "**Luffing up** turns the bow towards the wind, **bearing away** turns it from the wind. A **tack** takes the bow through the wind: call \"lee-ho\" and release the old genoa sheet as the bow comes through. A **gybe** takes the stern through: centre the mainsheet first, so the boom cannot slam across. In strong wind, tack round instead." },
-        { "fig": { "type": "sail", "wind": 0, "hdg": 0, "nogo": true, "note": "In irons: head to wind, stopped" } },
+        { "photo": "bareboat-skipper/terms/9", "plan": 1.6, "fig": { "type": "sail", "wind": 0, "hdg": 0, "nogo": true, "note": "In irons: head to wind, stopped" } },
         { "p": "Stopped head to wind you are **in irons**: back the jib to push the bow off. To **heave to**, tack without releasing the genoa and lash the helm to turn up: the boat lies quietly but drifts to leeward. A **preventer** holds the boom forward on a run." }
       ]
     },

@@ -1,0 +1,216 @@
+{
+ "article": "bareboat-skipper/weather",
+ "topic": "weather",
+ "lead": "Weather decides whether you sail, where to and under how much canvas. Read the pressure pattern, the sky and the forecast, know the local winds, and you are in harbour before the trouble starts.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Pressure systems",
+   "fig": {
+    "type": "isobars",
+    "center": "L",
+    "tight": true,
+    "values": [
+     "996",
+     "1000",
+     "1004"
+    ],
+    "boat": [
+     250,
+     150,
+     0
+    ]
+   },
+   "cap": "anticlockwise · tight isobars, strong wind",
+   "name": "Low"
+  },
+  {
+   "n": 2,
+   "section": "Pressure systems",
+   "fig": {
+    "type": "isobars",
+    "center": "H",
+    "values": [
+     "1028",
+     "1024",
+     "1020"
+    ],
+    "boat": [
+     255,
+     92,
+     0
+    ]
+   },
+   "cap": "clockwise · wide isobars, light wind",
+   "name": "High"
+  },
+  {
+   "n": 3,
+   "section": "Pressure systems",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 225
+    },
+    "other": {
+     "bearing": 0,
+     "dist": 0,
+     "hdg": 0,
+     "scale": 0.01,
+     "label": " "
+    },
+    "wind": 45,
+    "note": "Back to a NE wind: the low is to the SE"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Depressions and fronts",
+   "fig": {
+    "type": "isobars",
+    "center": "L",
+    "values": [
+     "1000",
+     "1004",
+     "1008"
+    ],
+    "boat": [
+     120,
+     170,
+     0
+    ],
+    "note": "Low passing north: SW, then NW"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Wind strength",
+   "fig": {
+    "type": "sail",
+    "wind": 0,
+    "hdg": 180
+   },
+   "cap": "true 20 kn, boat 7 kn: 13 kn felt",
+   "name": "Running"
+  },
+  {
+   "n": 6,
+   "section": "Wind strength",
+   "fig": {
+    "type": "sail",
+    "wind": 0,
+    "hdg": 45,
+    "nogo": true
+   },
+   "cap": "true 20 kn, boat 6 kn: about 25 kn felt",
+   "name": "Close-hauled"
+  },
+  {
+   "n": 7,
+   "section": "Forecasts",
+   "fig": {
+    "type": "card",
+    "title": "Navtex 09:00 UTC",
+    "lines": [
+     "GALE WARNING",
+     "Southern Aegean: N 8, imminent",
+     "09:00 UTC is 12:00 Greek summer time",
+     "Imminent: the gale by 18:00 local"
+    ],
+    "tag": "Navtex"
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Local winds and sea",
+   "fig": {
+    "type": "bay",
+    "wind": 180,
+    "spots": [],
+    "labels": [
+     [
+      160,
+      30,
+      "LAND — hot",
+      "middle"
+     ],
+     [
+      160,
+      170,
+      "SEA — cool",
+      "middle"
+     ]
+    ],
+    "note": "Afternoon, clear sky, wind onshore"
+   },
+   "cap": null
+  },
+  {
+   "n": 9,
+   "section": "Local winds and sea",
+   "fig": {
+    "type": "bay",
+    "wind": 20,
+    "land": "M0 0 H120 C 135 60 120 130 90 200 H0 Z M205 0 H320 V200 H235 C 215 140 195 70 205 0 Z",
+    "spots": [
+     [
+      163,
+      100,
+      "A"
+     ]
+    ],
+    "labels": [
+     [
+      50,
+      100,
+      "EVIA",
+      "middle"
+     ],
+     [
+      270,
+      100,
+      "ANDROS",
+      "middle"
+     ]
+    ],
+    "note": "Forecast NE 5–6 · at A expect 7 and steep seas"
+   },
+   "cap": null
+  },
+  {
+   "n": 10,
+   "section": "Mediterranean winds",
+   "fig": {
+    "type": "isobars",
+    "center": "H",
+    "boat": [
+     250,
+     170,
+     0
+    ],
+    "hemisphere": "Aegean · July",
+    "note": "High to the NW, low to the E"
+   },
+   "cap": null
+  },
+  {
+   "n": 11,
+   "section": "Thunderstorms and fog",
+   "fig": {
+    "type": "card",
+    "title": "Squall coming",
+    "lines": [
+     "Reef hard or drop the sails",
+     "Close hatches, lifejackets on",
+     "Lightning: crew below, clear of the mast",
+     "Waterspout: watch its bearing, motor clear"
+    ],
+    "tag": "40 kn"
+   },
+   "cap": null
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "article": "vhf-radio-operator/urgency",
+ "topic": "urgency",
+ "lead": "Not every problem at sea is a MAYDAY. PAN-PAN asks for help when nobody is in immediate danger, and SÉCURITÉ warns other vessels of a hazard. Choose the right word and the right stations listen, with the right priority.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "The urgency call",
+   "fig": {
+    "type": "card",
+    "title": "On channel 16",
+    "lines": [
+     "PAN-PAN, PAN-PAN, PAN-PAN",
+     "ALL STATIONS ×3",
+     "THIS IS Nefeli, Nefeli, Nefeli",
+     "Position: 6 miles west of Paros",
+     "Engine failed, drifting. I need a tow",
+     "OVER"
+    ],
+    "tag": "PAN-PAN"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "After the call",
+   "fig": {
+    "type": "chart",
+    "land": "M0 200 V162 Q80 142 160 154 Q240 166 320 148 V200 Z",
+    "track": "M110 84 L110 146",
+    "boat": [
+     110,
+     66,
+     250
+    ],
+    "labels": [
+     [
+      110,
+      30,
+      "wind F6, onshore",
+      "middle"
+     ],
+     [
+      122,
+      120,
+      "rocks 1 mile downwind",
+      "start"
+     ]
+    ],
+    "panel": [
+     "1 hour later",
+     "PAN-PAN sent",
+     "Too deep to anchor"
+    ],
+    "note": "No engine, drifting onto a lee shore"
+   },
+   "cap": "Nothing stops the drift: the danger is now grave and imminent, so the PAN-PAN becomes a MAYDAY."
+  },
+  {
+   "n": 3,
+   "section": "The safety call",
+   "fig": {
+    "type": "card",
+    "title": "On channel 16",
+    "lines": [
+     "SÉCURITÉ, SÉCURITÉ, SÉCURITÉ",
+     "ALL STATIONS ×3",
+     "THIS IS Nefeli, Nefeli, Nefeli",
+     "Navigational warning: container adrift",
+     "Listen on channel 72",
+     "OUT"
+    ],
+    "tag": "SÉCURITÉ"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "The safety call",
+   "fig": {
+    "type": "radio",
+    "channel": "16",
+    "power": "HI"
+   },
+   "cap": "the announcement only",
+   "name": "Channel 16"
+  },
+  {
+   "n": 5,
+   "section": "The safety call",
+   "fig": {
+    "type": "radio",
+    "channel": "72",
+    "power": "HI"
+   },
+   "cap": "the warning: what, where, when",
+   "name": "Working channel"
+  }
+ ]
+}

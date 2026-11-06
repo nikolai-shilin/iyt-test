@@ -1,0 +1,1884 @@
+[
+ {
+  "id": "bs-025",
+  "topic": "safety",
+  "q": "A crew member goes over the side on a broad reach. What is the very first thing you shout and do?",
+  "answer": "\"Man overboard!\" — throw the danbuoy and horseshoe, point at the casualty",
+  "why": "Flotation first and a spotter who never looks away.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": -165,
+    "dist": 70,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 225,
+   "note": "Casualty astern to port"
+  },
+  "ru": {
+   "Casualty astern to port": "Человек в воде слева за кормой",
+   "MOB": "ЧЗБ"
+  }
+ },
+ {
+  "id": "bs-031",
+  "topic": "colregs",
+  "q": "Both yachts are sailing. Who gives way?",
+  "answer": "You — you are on port tack, she is on starboard",
+  "why": "Rule 12: port tack keeps clear of starboard tack.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 300,
+    "dist": 85,
+    "hdg": 315,
+    "sail": true,
+    "boom": -14
+   },
+   "wind": 0,
+   "bearingLine": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-032",
+  "topic": "colregs",
+  "q": "Both yachts are on starboard tack. Who gives way?",
+  "answer": "You — you are the windward boat",
+  "why": "Rule 12: same tack, windward keeps clear of leeward.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 60,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -80,
+    "dist": 80,
+    "hdg": 60,
+    "sail": true,
+    "boom": -14
+   },
+   "wind": 150,
+   "bearingLine": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-033",
+  "topic": "colregs",
+  "q": "You are motor-sailing with the engine in gear. A yacht under sail alone is crossing from your starboard. Who gives way?",
+  "answer": "You — under power you are a power-driven vessel",
+  "why": "Rule 3: sail plus engine = power-driven; show the cone by day.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 60,
+    "dist": 85,
+    "hdg": 270,
+    "sail": true,
+    "boom": -14
+   },
+   "wind": 45,
+   "bearingLine": true,
+   "note": "Your engine is running and in gear"
+  },
+  "ru": {
+   "Your engine is running and in gear": "Двигатель работает, на передаче"
+  }
+ },
+ {
+  "id": "bs-034",
+  "topic": "colregs",
+  "q": "Motoring, you see a motorboat crossing on this bearing, which has not changed for five minutes. What do you do?",
+  "answer": "Give way — alter course to starboard, early and clearly, and pass astern of her",
+  "why": "Rule 15: she is on your starboard side, so you keep clear; avoid crossing ahead.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 50,
+    "dist": 90,
+    "hdg": 270
+   },
+   "bearingLine": true,
+   "note": "Bearing steady at 050° relative"
+  },
+  "ru": {
+   "Bearing steady at 050° relative": "Курсовой угол 050°, не меняется"
+  }
+ },
+ {
+  "id": "bs-035",
+  "topic": "colregs",
+  "q": "Two motor yachts are meeting head-on in a channel. What do you do?",
+  "answer": "Alter course to starboard; pass port side to port side",
+  "why": "Rule 14: both turn to starboard.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 90,
+    "hdg": 180
+   },
+   "bearingLine": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-036",
+  "topic": "colregs",
+  "q": "Under sail you are catching up a slow motorboat from astern. Who gives way?",
+  "answer": "You — the overtaking vessel always keeps clear",
+  "why": "Rule 13 overrides sail-over-power.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 5,
+    "dist": 85,
+    "hdg": 0
+   },
+   "wind": 120,
+   "bearingLine": true,
+   "note": "You are faster, approaching from well abaft her beam"
+  },
+  "ru": {
+   "You are faster, approaching from well abaft her beam": "Вы быстрее и подходите далеко позади её траверза"
+  }
+ },
+ {
+  "id": "bs-069",
+  "topic": "weather",
+  "q": "Wind F5 blowing against a 2-knot current in the strait you are about to enter. What sea do you expect?",
+  "answer": "Short, steep breaking seas — worse than the wind suggests",
+  "why": "Wind against tide shortens and steepens the waves.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0,
+    "hdg": 0,
+    "scale": 0.01
+   },
+   "wind": 0,
+   "note": "Wind from the north · current setting north at 2 kn"
+  },
+  "ru": {
+   "Wind from the north · current setting north at 2 kn": "Ветер с севера · течение на север 2 уз"
+  }
+ },
+ {
+  "id": "bs-089",
+  "topic": "systems",
+  "q": "Reversing out of the berth the stern swings to port by itself. What is happening and how do you use it?",
+  "answer": "Prop walk from a right-handed propeller — berth port-side-to and use a burst astern to pull the stern in",
+  "why": "A right-handed prop kicks the stern to port in astern.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0,
+    "hdg": 0,
+    "scale": 0.01
+   },
+   "note": "Engine astern, rudder centred: stern walks to port"
+  },
+  "ru": {
+   "Engine astern, rudder centred: stern walks to port": "Задний ход, руль прямо: корму забрасывает влево"
+  }
+ },
+ {
+  "id": "bs-099",
+  "topic": "emergency",
+  "q": "You are coming back to the man overboard under power. How do you make the final approach?",
+  "answer": "Slowly, heading into the wind; neutral as they come alongside near the bow",
+  "why": "Into the wind you stop easily; a turning prop next to a swimmer is lethal.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -20,
+    "dist": 60,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 0,
+   "note": "Final approach under power, wind from ahead"
+  },
+  "ru": {
+   "Final approach under power, wind from ahead": "Последний заход под мотором, ветер с носа",
+   "MOB": "ЧЗБ"
+  }
+ },
+ {
+  "id": "bs-110",
+  "topic": "terms",
+  "q": "You need to know which tack you are on. On this heading, what is it?",
+  "answer": "Port tack",
+  "why": "The tack is named after the side the wind comes over; tacks apply on every point of sail.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0.01,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 270
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-111",
+  "topic": "terms",
+  "q": "You are on a dead run with the main boom out to starboard. Which tack are you on?",
+  "answer": "Port tack",
+  "why": "On a run the tack is the side opposite the main boom.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0.01,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 180,
+   "note": "Dead run, main boom to starboard"
+  },
+  "ru": {
+   "Dead run, main boom to starboard": "Чистый фордевинд, гик грота справа"
+  }
+ },
+ {
+  "id": "bs-112",
+  "topic": "terms",
+  "q": "The skipper asks where the other yacht is. How do you call it?",
+  "answer": "Abeam to starboard",
+  "why": "Abeam is 90° from the bow; starboard is the right-hand side facing forward.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 90,
+    "dist": 85,
+    "hdg": 0,
+    "label": "Yacht",
+    "scale": 1,
+    "sail": true
+   }
+  },
+  "ru": {
+   "Yacht": "Яхта"
+  }
+ },
+ {
+  "id": "bs-113",
+  "topic": "terms",
+  "q": "A ferry is coming up from this direction to overtake you. How do you call its position to the crew?",
+  "answer": "On the starboard quarter",
+  "why": "The quarter is about 45° abaft the beam, between the beam and the stern.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 135,
+    "dist": 85,
+    "hdg": 0,
+    "label": "Ferry",
+    "scale": 1.3
+   }
+  },
+  "ru": {
+   "Ferry": "Паром"
+  }
+ },
+ {
+  "id": "bs-114",
+  "topic": "terms",
+  "q": "Your lookout spots a fishing boat here. How should she call it out?",
+  "answer": "On the port bow",
+  "why": "The bow is about 45° either side of dead ahead; port is the left side.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 315,
+    "dist": 85,
+    "hdg": 90,
+    "label": "Fishing boat",
+    "scale": 1
+   }
+  },
+  "ru": {
+   "Fishing boat": "Рыбацкая лодка"
+  }
+ },
+ {
+  "id": "bs-115",
+  "topic": "terms",
+  "q": "A small motorboat is close to your heading line, a little to the right. How do you report it?",
+  "answer": "Fine on the starboard bow",
+  "why": "\"Fine\" means close to the bow line; \"broad\" means nearer the beam.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 20,
+    "dist": 85,
+    "hdg": 180,
+    "label": "Motorboat",
+    "scale": 0.6
+   }
+  },
+  "ru": {
+   "Motorboat": "Катер"
+  }
+ },
+ {
+  "id": "bs-116",
+  "topic": "terms",
+  "q": "A RIB is following in your wake. Where is it?",
+  "answer": "Dead astern",
+  "why": "Directly behind the stern is dead astern.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 180,
+    "dist": 80,
+    "hdg": 0,
+    "label": "RIB",
+    "scale": 0.7
+   }
+  },
+  "ru": {
+   "RIB": "РИБ"
+  }
+ },
+ {
+  "id": "bs-117",
+  "topic": "terms",
+  "q": "You and another yacht are sailing side by side. Which boat is the windward boat?",
+  "answer": "The other yacht",
+  "why": "The windward boat is the one nearer the wind, upwind of the other.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 270,
+    "dist": 70,
+    "hdg": 90,
+    "sail": true,
+    "boom": 14,
+    "label": "Other"
+   },
+   "wind": 0
+  },
+  "ru": {
+   "Other": "Другая"
+  }
+ },
+ {
+  "id": "bs-120",
+  "topic": "terms",
+  "q": "A crew member feels seasick and wants to be sick over the side. Which side do you send them to?",
+  "answer": "Port, the leeward side",
+  "why": "Always to leeward, downwind, so it blows away from the boat.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0.01,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 90
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-121",
+  "topic": "terms",
+  "q": "A gust heels the boat hard. The skipper calls \"everyone to windward!\". Where does the crew sit?",
+  "answer": "Port side, the high side",
+  "why": "Windward is the side the wind comes from; crew weight there reduces heel.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0.01,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 270
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-336",
+  "topic": "safety",
+  "q": "Your crew want to swim off the stern. What do you rig first?",
+  "answer": "A floating line streamed astern",
+  "why": "A trailing line gives a tired swimmer something to grab before being carried away.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 180,
+    "dist": 70,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "Swimmer"
+   },
+   "wind": 0,
+   "note": "At anchor · wind 15 kn · current setting south"
+  },
+  "ru": {
+   "At anchor · wind 15 kn · current setting south": "На якоре · ветер 15 уз · течение на юг",
+   "Swimmer": "Пловец"
+  }
+ },
+ {
+  "id": "bs-346",
+  "topic": "safety",
+  "q": "The horseshoe is thrown and a spotter is pointing. What do you do at the plotter?",
+  "answer": "Press the MOB button to mark the spot",
+  "why": "The MOB button fixes the position at once — vital if you lose sight of the casualty.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 200,
+    "dist": 60,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 0,
+   "note": "Crew member just fell in"
+  },
+  "ru": {
+   "Crew member just fell in": "Член экипажа только что упал за борт",
+   "MOB": "ЧЗБ"
+  }
+ },
+ {
+  "id": "bs-372",
+  "topic": "colregs",
+  "q": "How do you keep a proper lookout, sailing like this?",
+  "answer": "Look under the genoa to leeward regularly",
+  "why": "Rule 5: the genoa hides the leeward bow — that is where you must look.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 315,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -45,
+    "dist": 80,
+    "hdg": 60,
+    "label": "?"
+   },
+   "wind": 0,
+   "note": "Deck-sweeping genoa, starboard tack"
+  },
+  "ru": {
+   "Deck-sweeping genoa, starboard tack": "Генуя до палубы, правый галс"
+  }
+ },
+ {
+  "id": "bs-382",
+  "topic": "colregs",
+  "q": "You cannot tell whether the bearing of this motorboat is changing. What do you assume?",
+  "answer": "That risk of collision exists",
+  "why": "Rule 7(a): if in doubt, risk of collision is deemed to exist.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 85,
+    "hdg": 280
+   },
+   "bearingLine": true,
+   "note": "Bearing hard to read in the swell"
+  },
+  "ru": {
+   "Bearing hard to read in the swell": "Пеленг трудно взять на зыби"
+  }
+ },
+ {
+  "id": "bs-385",
+  "topic": "colregs",
+  "q": "You must give way to this ship. What kind of alteration does Rule 8 want?",
+  "answer": "One early turn, big enough to see on radar",
+  "why": "Rule 8: early, substantial, readily apparent — not a series of small alterations.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 50,
+    "dist": 90,
+    "hdg": 270,
+    "label": "Ship",
+    "scale": 1.5
+   },
+   "bearingLine": true,
+   "note": "Bearing steady, range 3 miles"
+  },
+  "ru": {
+   "Bearing steady, range 3 miles": "Пеленг не меняется, дистанция 3 мили",
+   "Ship": "Судно"
+  }
+ },
+ {
+  "id": "bs-386",
+  "topic": "colregs",
+  "q": "You are the give-way vessel but cannot turn to starboard. What do you do?",
+  "answer": "Slow down or stop and let her pass ahead",
+  "why": "Rules 8(e) and 16: slowing or stopping is a proper give-way action.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 55,
+    "dist": 85,
+    "hdg": 270,
+    "label": "Ship",
+    "scale": 1.4
+   },
+   "bearingLine": true,
+   "note": "Shoal water close on your starboard side"
+  },
+  "ru": {
+   "Shoal water close on your starboard side": "Справа близко мелководье",
+   "Ship": "Судно"
+  }
+ },
+ {
+  "id": "bs-387",
+  "topic": "colregs",
+  "q": "You have turned 40° to starboard to pass astern of this boat. What does Rule 8 require now?",
+  "answer": "Check her bearing until she is past and clear",
+  "why": "Rule 8(d): check the action until the other vessel is finally past and clear.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 40
+   },
+   "other": {
+    "bearing": -20,
+    "dist": 80,
+    "hdg": 270
+   },
+   "bearingLine": true,
+   "note": "After your alteration"
+  },
+  "ru": {
+   "After your alteration": "После вашего манёвра"
+  }
+ },
+ {
+  "id": "bs-388",
+  "topic": "colregs",
+  "q": "Under sail in this channel, risk of collision with the tanker now exists. Does your duty change?",
+  "answer": "No — you must still act early not to impede her",
+  "why": "Rule 8(f): the duty not to impede continues when risk of collision develops.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 10,
+    "dist": 85,
+    "hdg": 185,
+    "label": "Tanker",
+    "scale": 1.5
+   },
+   "wind": 270,
+   "bearingLine": true,
+   "note": "Narrow channel · she can only use the deep water"
+  },
+  "ru": {
+   "Narrow channel · she can only use the deep water": "Узкий фарватер · ему доступна только глубокая вода",
+   "Tanker": "Танкер"
+  }
+ },
+ {
+  "id": "bs-389",
+  "topic": "colregs",
+  "q": "You want to cross this buoyed channel ahead of the ship. What does Rule 9 say?",
+  "answer": "Do not cross if it will impede her — wait",
+  "why": "Rule 9(d): do not cross a narrow channel if it impedes a vessel confined to it.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90
+   },
+   "other": {
+    "bearing": -60,
+    "dist": 85,
+    "hdg": 190,
+    "label": "Ship",
+    "scale": 1.5
+   },
+   "bearingLine": true,
+   "note": "Narrow channel · she can only use the channel"
+  },
+  "ru": {
+   "Narrow channel · she can only use the channel": "Узкий фарватер · оно может идти только по нему",
+   "Ship": "Судно"
+  }
+ },
+ {
+  "id": "bs-392",
+  "topic": "colregs",
+  "q": "In this narrow channel you want to overtake on her port side. What do you sound first?",
+  "answer": "Two prolonged then two short blasts",
+  "why": "Rule 34(c): two prolonged + two short = I intend to overtake on your port side.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 5,
+    "dist": 70,
+    "hdg": 0,
+    "label": "Slow boat"
+   },
+   "bearingLine": true,
+   "note": "Narrow channel · you are the faster boat"
+  },
+  "ru": {
+   "Narrow channel · you are the faster boat": "Узкий фарватер · вы идёте быстрее",
+   "Slow boat": "Медленная лодка"
+  }
+ },
+ {
+  "id": "bs-395",
+  "topic": "colregs",
+  "q": "In a narrow channel this motor vessel astern sounds two prolonged and two short blasts. What do you do?",
+  "answer": "Sound agreement and move over to starboard",
+  "why": "Rule 9(e): if you agree, answer long-short-long-short and make room.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90
+   },
+   "other": {
+    "bearing": 180,
+    "dist": 62,
+    "hdg": 90,
+    "label": "Motor vessel"
+   },
+   "note": "Narrow channel · she is closing from astern"
+  },
+  "ru": {
+   "Narrow channel · she is closing from astern": "Узкий фарватер · оно догоняет вас с кормы",
+   "Motor vessel": "Моторное судно"
+  }
+ },
+ {
+  "id": "bs-402",
+  "topic": "colregs",
+  "q": "Crossing the lane under sail, this ship following the lane is closing on a steady bearing. Who keeps clear?",
+  "answer": "You — you must not impede a ship in the lane",
+  "why": "Rule 10(j): sail and vessels under 20 m must not impede power vessels in a lane.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": -65,
+    "dist": 85,
+    "hdg": 90,
+    "label": "Ship in lane",
+    "scale": 1.6
+   },
+   "wind": 270,
+   "bearingLine": true,
+   "note": "Crossing a TSS lane under sail"
+  },
+  "ru": {
+   "Crossing a TSS lane under sail": "Пересечение полосы СРД под парусом",
+   "Ship in lane": "Судно в полосе"
+  }
+ },
+ {
+  "id": "bs-404",
+  "topic": "colregs",
+  "q": "This yacht to windward is running downwind and you cannot see her mainsail. Who keeps clear?",
+  "answer": "You — you cannot be sure of her tack",
+  "why": "Rule 12(a)(iii): on port tack, if unsure of a windward boat's tack, keep clear.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 60,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": -80,
+    "dist": 80,
+    "hdg": 180,
+    "sail": true,
+    "boom": 0
+   },
+   "wind": 0,
+   "bearingLine": true,
+   "note": "Her mainsail is hidden behind the genoa"
+  },
+  "ru": {
+   "Her mainsail is hidden behind the genoa": "Её грот скрыт за генуей"
+  }
+ },
+ {
+  "id": "bs-405",
+  "topic": "colregs",
+  "q": "Both yachts are close-hauled on port tack and converging. What do you do?",
+  "answer": "Hold course and speed — she is to windward",
+  "why": "Rule 12(a)(ii): on the same tack, windward keeps clear; you stand on (Rule 17).",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": -70,
+    "dist": 80,
+    "hdg": 60,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 0,
+   "bearingLine": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-406",
+  "topic": "colregs",
+  "q": "You are to windward of this yacht. Who gives way?",
+  "answer": "She does — she is on port tack",
+  "why": "Rule 12(a)(i): on different tacks, port keeps clear; windward only counts on the same tack.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -22,
+    "dist": 80,
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 0,
+   "bearingLine": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-407",
+  "topic": "colregs",
+  "q": "You are running dead downwind with the mainsail out to port. This yacht is converging. Who keeps clear?",
+  "answer": "She does — you count as starboard tack",
+  "why": "Rule 12(b): the windward side is opposite the mainsail, so main to port = starboard tack.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 45,
+    "dist": 80,
+    "hdg": 270,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 180,
+   "bearingLine": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-408",
+  "topic": "colregs",
+  "q": "You are stand-on to this port-tack yacht a mile away. Your crew want to tack away now, just in case. What do you do?",
+  "answer": "Hold course and speed so she can keep clear",
+  "why": "Rule 17(a)(i): the stand-on vessel keeps her course and speed.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 315,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -45,
+    "dist": 85,
+    "hdg": 45,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 0,
+   "bearingLine": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-409",
+  "topic": "colregs",
+  "q": "This motor yacht is coming up from here, faster than you. Who keeps clear?",
+  "answer": "She does — she is overtaking you",
+  "why": "Rule 13: from more than 22.5° abaft your beam she is overtaking, whatever the side.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270
+   },
+   "other": {
+    "bearing": 140,
+    "dist": 75,
+    "hdg": 260,
+    "label": "Motor yacht"
+   },
+   "bearingLine": true,
+   "note": "She is closing from your starboard quarter"
+  },
+  "ru": {
+   "She is closing from your starboard quarter": "Она подходит с вашей правой раковины",
+   "Motor yacht": "Моторная яхта"
+  }
+ },
+ {
+  "id": "bs-410",
+  "topic": "colregs",
+  "q": "You are catching this motorboat up and cannot be sure whether you are overtaking or crossing. What do you do?",
+  "answer": "Assume you are overtaking and keep clear",
+  "why": "Rule 13(c): in doubt, assume you are overtaking and keep out of the way.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -30,
+    "dist": 75,
+    "hdg": 40,
+    "label": "Motorboat"
+   },
+   "bearingLine": true,
+   "note": "You are faster · about 20° abaft her beam"
+  },
+  "ru": {
+   "You are faster · about 20° abaft her beam": "Вы быстрее · около 20° позади её траверза",
+   "Motorboat": "Моторная лодка"
+  }
+ },
+ {
+  "id": "bs-411",
+  "topic": "colregs",
+  "q": "You started overtaking this boat from astern; now she is converging with you. Who keeps clear?",
+  "answer": "You — until you are past and clear",
+  "why": "Rule 13(d): a later change of bearing does not end the overtaking vessel's duty.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -60,
+    "dist": 60,
+    "hdg": 20,
+    "label": "Motor-sailer"
+   },
+   "bearingLine": true,
+   "note": "Bearing now forward of your beam"
+  },
+  "ru": {
+   "Bearing now forward of your beam": "Пеленг теперь впереди вашего траверза",
+   "Motor-sailer": "Моторсейлер"
+  }
+ },
+ {
+  "id": "bs-413",
+  "topic": "colregs",
+  "q": "Sailing downwind, you are catching up this yacht. Who keeps clear?",
+  "answer": "You — overtaking beats the tack rules",
+  "why": "Rule 13 overrides Rule 12: an overtaking sailing vessel keeps clear.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 15,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 5,
+    "dist": 75,
+    "hdg": 345,
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 180,
+   "bearingLine": true,
+   "note": "You are faster"
+  },
+  "ru": {
+   "You are faster": "Вы идёте быстрее"
+  }
+ },
+ {
+  "id": "bs-414",
+  "topic": "colregs",
+  "q": "Under sail, you see this motor yacht coming up from astern. What do you do?",
+  "answer": "Hold course and speed — she keeps clear",
+  "why": "Rules 13 and 17: she is overtaking and keeps clear; you stand on.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 170,
+    "dist": 62,
+    "hdg": 95,
+    "label": "Motor yacht"
+   },
+   "wind": 180,
+   "bearingLine": true,
+   "note": "She is faster, closing from astern"
+  },
+  "ru": {
+   "She is faster, closing from astern": "Она быстрее, догоняет с кормы",
+   "Motor yacht": "Моторная яхта"
+  }
+ },
+ {
+  "id": "bs-417",
+  "topic": "colregs",
+  "q": "Motoring, you meet this yacht under sail end-on. Who takes action?",
+  "answer": "You alone — power keeps clear of sail",
+  "why": "Rule 14 is for two power vessels; Rule 18 makes power keep clear of sail.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 82,
+    "hdg": 180,
+    "sail": true,
+    "boom": -14
+   },
+   "wind": 270,
+   "bearingLine": true
+  },
+  "ru": {}
+ },
+ {
+  "id": "bs-419",
+  "topic": "colregs",
+  "q": "Motoring by day, you see this ship ahead with her masts in line. What do you do?",
+  "answer": "Alter course to starboard",
+  "why": "Rule 14: masts in line by day = head-on; both turn to starboard.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 2,
+    "dist": 82,
+    "hdg": 182,
+    "label": "Ship",
+    "scale": 1.3
+   },
+   "bearingLine": true,
+   "note": "Her masts are in line"
+  },
+  "ru": {
+   "Her masts are in line": "Его мачты в створе",
+   "Ship": "Судно"
+  }
+ },
+ {
+  "id": "bs-420",
+  "topic": "colregs",
+  "q": "Motoring, you see this boat crossing. What do you do?",
+  "answer": "Hold course and speed, and watch her",
+  "why": "Rules 15 and 17: you are on her starboard side, so you stand on.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90
+   },
+   "other": {
+    "bearing": -45,
+    "dist": 85,
+    "hdg": 180,
+    "label": "Motorboat"
+   },
+   "bearingLine": true,
+   "note": "Bearing steady, range closing"
+  },
+  "ru": {
+   "Bearing steady, range closing": "Пеленг не меняется, дистанция сокращается",
+   "Motorboat": "Моторная лодка"
+  }
+ },
+ {
+  "id": "bs-421",
+  "topic": "colregs",
+  "q": "In open water, this high-speed ferry is closing on a steady bearing. Who gives way?",
+  "answer": "The ferry — you are on her starboard side",
+  "why": "Rule 15: a high-speed craft is a power-driven vessel with no special priority.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -68,
+    "dist": 88,
+    "hdg": 100,
+    "label": "Fast ferry",
+    "scale": 1.3
+   },
+   "bearingLine": true,
+   "note": "Ferry at 30 knots · you are motoring"
+  },
+  "ru": {
+   "Ferry at 30 knots · you are motoring": "Паром 30 уз · вы идёте под мотором",
+   "Fast ferry": "Скоростной паром"
+  }
+ },
+ {
+  "id": "bs-423",
+  "topic": "colregs",
+  "q": "You are the stand-on vessel and she shows no sign of giving way. What do you do first?",
+  "answer": "Sound at least five short blasts",
+  "why": "Rule 34(d): five short blasts when in doubt the other is taking enough action.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -50,
+    "dist": 85,
+    "hdg": 80,
+    "label": "Motor yacht"
+   },
+   "bearingLine": true,
+   "note": "Steady bearing, half a mile, no action"
+  },
+  "ru": {
+   "Steady bearing, half a mile, no action": "Пеленг не меняется, полмили, никаких действий",
+   "Motor yacht": "Моторная яхта"
+  }
+ },
+ {
+  "id": "bs-424",
+  "topic": "colregs",
+  "q": "She still does nothing after your five short blasts. You decide to act. Which way?",
+  "answer": "Turn to starboard, not to port",
+  "why": "Rule 17(c): do not turn to port for a power vessel on your own port side.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -50,
+    "dist": 70,
+    "hdg": 80,
+    "label": "Motor yacht"
+   },
+   "bearingLine": true,
+   "note": "Bearing still steady, closing"
+  },
+  "ru": {
+   "Bearing still steady, closing": "Пеленг всё так же не меняется, сближение",
+   "Motor yacht": "Моторная яхта"
+  }
+ },
+ {
+  "id": "bs-425",
+  "topic": "colregs",
+  "q": "She is now so close that her action alone cannot avoid a collision. What does Rule 17 require?",
+  "answer": "You must take the best action to avoid her",
+  "why": "Rule 17(b): when the give-way vessel alone cannot avoid collision, you must act.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -45,
+    "dist": 62,
+    "hdg": 90,
+    "label": "Motorboat"
+   },
+   "bearingLine": true,
+   "note": "Very close, still not altering"
+  },
+  "ru": {
+   "Very close, still not altering": "Очень близко, курс не меняет",
+   "Motorboat": "Моторная лодка"
+  }
+ },
+ {
+  "id": "bs-426",
+  "topic": "colregs",
+  "q": "Under sail, you are stand-on to this container ship. Why do you still watch her closely and act early if she does not alter?",
+  "answer": "She may not see you, and can't turn or stop fast",
+  "why": "Rules 2 and 17: big ships have blind arcs and long stopping distances.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 50,
+    "dist": 88,
+    "hdg": 270,
+    "label": "Container ship",
+    "scale": 1.8
+   },
+   "wind": 270,
+   "bearingLine": true,
+   "note": "Open water · she is not restricted"
+  },
+  "ru": {
+   "Open water · she is not restricted": "Открытое море · он ничем не стеснён",
+   "Container ship": "Контейнеровоз"
+  }
+ },
+ {
+  "id": "bs-430",
+  "topic": "colregs",
+  "q": "Motoring, you see this boat crossing on a steady bearing. Who keeps clear?",
+  "answer": "She does — trolling is not \"engaged in fishing\"",
+  "why": "Rule 3(d): trolling lines do not restrict manoeuvring, so Rule 15 applies.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -55,
+    "dist": 75,
+    "hdg": 70,
+    "label": "Trolling"
+   },
+   "bearingLine": true,
+   "note": "Trolling lines astern, no day shape"
+  },
+  "ru": {
+   "Trolling lines astern, no day shape": "За кормой дорожки, дневного знака нет",
+   "Trolling": "Троллинг"
+  }
+ },
+ {
+  "id": "bs-431",
+  "topic": "colregs",
+  "q": "Under sail near Corfu, this seaplane is taxiing towards your track. Who keeps clear?",
+  "answer": "The seaplane — it keeps clear of vessels",
+  "why": "Rule 18(e): a seaplane on the water keeps well clear of all vessels.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 82,
+    "hdg": 250,
+    "label": "Seaplane"
+   },
+   "wind": 90,
+   "bearingLine": true
+  },
+  "ru": {
+   "Seaplane": "Гидросамолёт"
+  }
+ },
+ {
+  "id": "bs-437",
+  "topic": "colregs",
+  "q": "Motoring, you meet this windsurfer crossing ahead. Who keeps clear?",
+  "answer": "You — treat her as a sailing vessel",
+  "why": "Rule 18: power keeps clear of sail; give boards a wide berth.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -40,
+    "dist": 70,
+    "hdg": 30,
+    "scale": 0.5,
+    "label": "Windsurfer",
+    "sail": true,
+    "boom": 14
+   },
+   "wind": 270,
+   "bearingLine": true
+  },
+  "ru": {
+   "Windsurfer": "Виндсёрфер"
+  }
+ },
+ {
+  "id": "bs-438",
+  "topic": "colregs",
+  "q": "Motoring, you see this trawler crossing from your port side. Who keeps clear?",
+  "answer": "You — she is engaged in fishing",
+  "why": "Rule 18(a): power keeps clear of a vessel engaged in fishing, from any side.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -50,
+    "dist": 78,
+    "hdg": 85,
+    "label": "Trawler"
+   },
+   "bearingLine": true,
+   "note": "Two cones, points together"
+  },
+  "ru": {
+   "Two cones, points together": "Два конуса вершинами вместе",
+   "Trawler": "Траулер"
+  }
+ },
+ {
+  "id": "bs-444",
+  "topic": "colregs",
+  "q": "In fog, radar shows this target closing. Which alteration is right?",
+  "answer": "A bold turn to starboard, or slow down",
+  "why": "Rule 19(d)(i): avoid turning to port for a vessel forward of the beam.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 20,
+    "dist": 85,
+    "hdg": 200,
+    "label": "Radar target"
+   },
+   "bearingLine": true,
+   "note": "Fog · radar only, bearing steady, closing"
+  },
+  "ru": {
+   "Fog · radar only, bearing steady, closing": "Туман · только радар, пеленг постоянный, сближение",
+   "Radar target": "Цель на радаре"
+  }
+ },
+ {
+  "id": "bs-445",
+  "topic": "colregs",
+  "q": "In fog, radar shows this target closing from your starboard quarter. What do you do?",
+  "answer": "Alter to port, away from her",
+  "why": "Rule 19(d)(ii): avoid turning towards a vessel abeam or abaft the beam.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270
+   },
+   "other": {
+    "bearing": 130,
+    "dist": 75,
+    "hdg": 240,
+    "label": "Radar target"
+   },
+   "bearingLine": true,
+   "note": "Fog · not in sight, she is faster"
+  },
+  "ru": {
+   "Fog · not in sight, she is faster": "Туман · судна не видно, оно быстрее",
+   "Radar target": "Цель на радаре"
+  }
+ },
+ {
+  "id": "bs-446",
+  "topic": "colregs",
+  "q": "In fog, radar shows this vessel closing from your port bow. Are you the stand-on vessel?",
+  "answer": "No — out of sight, both must act",
+  "why": "Rule 19: vessels not in sight have no stand-on or give-way; each avoids close quarters.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -40,
+    "dist": 80,
+    "hdg": 100,
+    "label": "Radar target"
+   },
+   "bearingLine": true,
+   "note": "Fog · not in sight of each other"
+  },
+  "ru": {
+   "Fog · not in sight of each other": "Туман · суда не видят друг друга",
+   "Radar target": "Цель на радаре"
+  }
+ },
+ {
+  "id": "bs-447",
+  "topic": "colregs",
+  "q": "You were tracking this motor yacht by radar in fog. Now she is in sight. Which rule applies?",
+  "answer": "The crossing rule — you give way to her",
+  "why": "Rules 11 and 15: once in sight of each other, the steering rules apply.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 45,
+    "dist": 80,
+    "hdg": 270,
+    "label": "Motor yacht"
+   },
+   "bearingLine": true,
+   "note": "She has just come into sight, 200 m off"
+  },
+  "ru": {
+   "She has just come into sight, 200 m off": "Она только что появилась в 200 м",
+   "Motor yacht": "Моторная яхта"
+  }
+ },
+ {
+  "id": "bs-457",
+  "topic": "colregs",
+  "q": "Motoring in sight of this ship, you are about to alter to starboard to give way. What signal do you give?",
+  "answer": "One short blast as you turn",
+  "why": "Rule 34(a): power vessels in sight signal alterations — one short = to starboard.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 88,
+    "hdg": 240,
+    "label": "Ship",
+    "scale": 1.4
+   },
+   "bearingLine": true,
+   "note": "Clear weather, bearing steady"
+  },
+  "ru": {
+   "Clear weather, bearing steady": "Ясно, пеленг не меняется",
+   "Ship": "Судно"
+  }
+ },
+ {
+  "id": "bs-460",
+  "topic": "colregs",
+  "q": "There is no room to turn to starboard for this motorboat. What do you do?",
+  "answer": "Slow down or stop until she has passed",
+  "why": "Rules 2(b) and 8(e): when the rule cannot be followed, slow or stop.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 80,
+    "hdg": 180,
+    "label": "Motorboat"
+   },
+   "bearingLine": true,
+   "note": "Narrow passage · rocks close to starboard"
+  },
+  "ru": {
+   "Narrow passage · rocks close to starboard": "Узкий проход · справа близко камни",
+   "Motorboat": "Моторная лодка"
+  }
+ },
+ {
+  "id": "bs-637",
+  "topic": "buoyage",
+  "q": "At night, which of your lights can this ship see?",
+  "answer": "Only your sternlight",
+  "why": "The sternlight covers 135° astern; sidelights stop 22.5° abaft the beam.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 140,
+    "dist": 85,
+    "hdg": 270,
+    "label": "Ship"
+   },
+   "bearingLine": true,
+   "note": "Ship bearing 140° relative"
+  },
+  "ru": {
+   "Ship bearing 140° relative": "Судно на курсовом угле 140°",
+   "Ship": "Судно"
+  }
+ },
+ {
+  "id": "bs-654",
+  "topic": "weather",
+  "q": "You stand with your back to this wind. Where is the centre of low pressure?",
+  "answer": "To the south-east",
+  "why": "Buys Ballot, northern hemisphere: back to the wind, the low is on your left.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 225
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 45,
+   "note": "Wind NE · northern hemisphere"
+  },
+  "ru": {
+   "Wind NE · northern hemisphere": "Ветер СВ · северное полушарие"
+  }
+ },
+ {
+  "id": "bs-715",
+  "topic": "weather",
+  "q": "A thunderstorm cell is approaching against a light easterly. Just before it reaches you, what happens to the wind?",
+  "answer": "It drops, then a hard gust hits from the storm",
+  "why": "The cold downdraft spreads out ahead of the storm as a sudden gust front.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "wind": 90,
+   "note": "Cb cell to the west, moving east"
+  },
+  "ru": {
+   "Cb cell to the west, moving east": "Ячейка Cb на западе, идёт на восток"
+  }
+ },
+ {
+  "id": "bs-854",
+  "topic": "systems",
+  "q": "In astern your stern walks to port. You must turn round in a narrow marina fairway. Which way do you turn?",
+  "answer": "To starboard — astern kicks the stern to port",
+  "why": "Short bursts ahead with full starboard helm and astern in between both rotate the boat clockwise.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "label": "You"
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "note": "Narrow fairway · stern walks to port in astern"
+  },
+  "ru": {
+   "Narrow fairway · stern walks to port in astern": "Узкий проход · на заднем ходу корму влево",
+   "You": "Вы"
+  }
+ },
+ {
+  "id": "bs-857",
+  "topic": "systems",
+  "q": "Motoring slowly ahead, you turn to port. Which part of your boat swings towards the moored yacht?",
+  "answer": "The stern — it swings out opposite the turn",
+  "why": "Going ahead a yacht pivots about a third from the bow, so the stern swings wide.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 100,
+    "dist": 48,
+    "hdg": 0,
+    "label": "Moored"
+   },
+   "note": "Turning to port, moored yacht close to starboard"
+  },
+  "ru": {
+   "Turning to port, moored yacht close to starboard": "Поворот влево, яхта у причала близко справа",
+   "Moored": "У причала"
+  }
+ },
+ {
+  "id": "bs-859",
+  "topic": "systems",
+  "q": "Your charter catamaran is stopped in the marina. You want to spin her to starboard on the spot. What do you do?",
+  "answer": "Port engine ahead, starboard engine astern",
+  "why": "Twin screws far apart give a turning couple: push one side forward and pull the other back.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "label": "Catamaran"
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 0,
+    "hdg": 0,
+    "scale": 0.01,
+    "label": " "
+   },
+   "note": "Catamaran, twin engines · turn to starboard"
+  },
+  "ru": {
+   "Catamaran, twin engines · turn to starboard": "Катамаран, два двигателя · поворот вправо",
+   "Catamaran": "Катамаран"
+  }
+ },
+ {
+  "id": "bs-865",
+  "topic": "systems",
+  "q": "You are on autopilot when a fishing boat appears ahead. You need to steer by hand at once. What do you do?",
+  "answer": "Press Standby, then take the wheel",
+  "why": "Standby releases the autopilot drive so the wheel answers you.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "label": "You (autopilot)"
+   },
+   "other": {
+    "bearing": 5,
+    "dist": 80,
+    "hdg": 200,
+    "label": "Fishing"
+   },
+   "bearingLine": true
+  },
+  "ru": {
+   "You (autopilot)": "Вы (автопилот)",
+   "Fishing": "Рыбак"
+  }
+ },
+ {
+  "id": "bs-947",
+  "topic": "emergency",
+  "q": "You see this and hear nothing on the radio. What do you do?",
+  "answer": "MAYDAY RELAY on 16, then go to help",
+  "why": "A vessel that cannot call for itself needs you to relay and assist.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 40,
+    "dist": 85,
+    "hdg": 270,
+    "sail": true,
+    "boom": 14,
+    "label": "Yacht"
+   },
+   "wind": 90,
+   "note": "Red hand flare from this yacht"
+  },
+  "ru": {
+   "Red hand flare from this yacht": "Красный фальшфейер с этой яхты",
+   "Yacht": "Яхта"
+  }
+ },
+ {
+  "id": "bs-960",
+  "topic": "emergency",
+  "q": "What is the person in the dinghy telling you?",
+  "answer": "They are in distress and need help",
+  "why": "Slowly raising and lowering outstretched arms is a distress signal.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 30,
+    "dist": 80,
+    "hdg": 200,
+    "label": "Dinghy",
+    "scale": 0.5
+   },
+   "note": "Person slowly raising and lowering both arms"
+  },
+  "ru": {
+   "Person slowly raising and lowering both arms": "Человек медленно поднимает и опускает обе руки",
+   "Dinghy": "Тузик"
+  }
+ },
+ {
+  "id": "bs-962",
+  "topic": "emergency",
+  "q": "What is this yacht asking for?",
+  "answer": "Assistance — but it is not in distress",
+  "why": "Flag V: \"I require assistance\". Distress is NC, flares, MAYDAY.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": -35,
+    "dist": 85,
+    "hdg": 90,
+    "label": "Flag V"
+   },
+   "wind": 90,
+   "note": "Yacht flying code flag V (white, red X)"
+  },
+  "ru": {
+   "Yacht flying code flag V (white, red X)": "Яхта несёт флаг МСС V (белый, красный X)",
+   "Flag V": "Флаг V"
+  }
+ },
+ {
+  "id": "bs-968",
+  "topic": "emergency",
+  "q": "What does this target on your plotter mean, and what do you do?",
+  "answer": "Survivors in distress: tell the coastguard and go",
+  "why": "An AIS-SART marks survivors; report it and assist.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -25,
+    "dist": 80,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "SART"
+   },
+   "note": "Plotter: \"SART ACTIVE\", 3 miles"
+  },
+  "ru": {
+   "Plotter: \"SART ACTIVE\", 3 miles": "Плоттер: «SART ACTIVE», 3 мили",
+   "SART": "SART"
+  }
+ },
+ {
+  "id": "bs-973",
+  "topic": "emergency",
+  "q": "You want to stay close to the casualty. What do you do at once?",
+  "answer": "Tack at once, leaving the headsail backed",
+  "why": "The quick-stop keeps the boat near the casualty.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0,
+    "sail": true,
+    "boom": 14
+   },
+   "other": {
+    "bearing": 160,
+    "dist": 55,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 300,
+   "note": "Close reach, crew has just gone over"
+  },
+  "ru": {
+   "Close reach, crew has just gone over": "Полный бейдевинд, человек только что упал за борт",
+   "MOB": "ЧЗБ"
+  }
+ },
+ {
+  "id": "bs-974",
+  "topic": "emergency",
+  "q": "You are sailing back to the casualty. On which point of sail do you make the final approach?",
+  "answer": "Close reach, easing the sheets to slow down",
+  "why": "On a close reach you can spill wind to stop and fill the sails to go.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 270,
+    "sail": true,
+    "boom": -14
+   },
+   "other": {
+    "bearing": 30,
+    "dist": 85,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 0,
+   "note": "Returning to the casualty under sail"
+  },
+  "ru": {
+   "Returning to the casualty under sail": "Возвращение к пострадавшему под парусом",
+   "MOB": "ЧЗБ"
+  }
+ },
+ {
+  "id": "bs-992",
+  "topic": "emergency",
+  "q": "Where do you make the towline fast on your yacht?",
+  "answer": "To a bridle between both bow cleats",
+  "why": "A bridle spreads the load over two strong points.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 0,
+    "dist": 85,
+    "hdg": 0,
+    "label": "Tow"
+   },
+   "note": "Being towed by the boat ahead"
+  },
+  "ru": {
+   "Being towed by the boat ahead": "Вас буксирует судно впереди",
+   "Tow": "Буксир"
+  }
+ }
+]

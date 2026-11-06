@@ -19,7 +19,7 @@
           ["**F** Foxtrot", "**M** Mike", "**T** Tango", ""],
           ["**G** Golf", "**N** November", "**U** Uniform", ""]
         ] } },
-        { "fig": { "type": "flag", "flags": [["N", "N|November"], ["O", "O|Oscar"], ["V", "V|Victor"], ["A", "A|Alfa"]], "note": "Флаги свода сигналов называются так же" }, "cap": "Яхта Nova, переданная по буквам." },
+        { "photo": "vhf-radio-operator/phonetic/1", "fig": { "type": "flag", "flags": [["N", "N|November"], ["O", "O|Oscar"], ["V", "V|Victor"], ["A", "A|Alfa"]], "note": "Флаги свода сигналов называются так же" }, "cap": "Яхта Nova, переданная по буквам." },
         { "rule": "Назовите слово, затем продиктуйте его: «Nova, I SPELL, November Oscar Victor Alfa»." }
       ]
     },
@@ -49,7 +49,7 @@
       "refs": ["Numbers on the radio"],
       "blocks": [
         { "p": "Координаты читайте в том порядке, в каком их показывает картплоттер: **сначала широта**, затем долгота. В каждой идут градусы, потом минуты со словом «decimal», потом сторона света: north или south, east или west. Градусы долготы всегда передают **тремя цифрами**, поэтому 24° восточной долготы начинаются с «zero two four»." },
-        { "fig": { "type": "card", "title": "Плоттер: 38°04.6′N 024°19.5′E", "lines": ["«Three eight degrees", "zero four decimal six minutes north,", "zero two four degrees", "one niner decimal five minutes east»"] } },
+        { "photo": "vhf-radio-operator/phonetic/2", "fig": { "type": "card", "title": "Плоттер: 38°04.6′N 024°19.5′E", "lines": ["«Three eight degrees", "zero four decimal six minutes north,", "zero two four degrees", "one niner decimal five minutes east»"] } },
         { "p": "Говорите в темпе человека, который записывает. Неверно принятые координаты отправят помощь не туда." }
       ]
     },
@@ -61,7 +61,7 @@
       "refs": ["Procedure words"],
       "blocks": [
         { "p": "На канале УКВ звучит один голос за раз: пока вы держите тангенту, вы никого не слышите. Очерёдность задают **процедурные слова**. **THIS IS** стоит между названием вызываемой станции и вашим собственным: пропустите его — и никто не поймёт, кто кого вызывает. **OVER** передаёт очередь собеседнику, **OUT** заканчивает разговор." },
-        { "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["ptt", "тангента"], ["mic", "микрофон"], ["display", "рабочий канал"]], "note": "Нажали — говорите. Отпустили — слушаете." } },
+        { "photo": "vhf-radio-operator/phonetic/3", "fig": { "type": "radio", "channel": "72", "power": "LO", "parts": [["ptt", "тангента"], ["mic", "микрофон"], ["display", "рабочий канал"]], "note": "Нажали — говорите. Отпустили — слушаете." } },
         { "table": { "head": ["Слово", "Значение"], "rows": [
           ["THIS IS", "Дальше моё название"],
           ["OVER", "Я закончил и жду вашего ответа"],
@@ -89,7 +89,7 @@
           ["SAY AGAIN ALL BEFORE …", "Всё, что шло до названного слова"],
           ["SAY AGAIN WORD AFTER …", "Одно слово, которое шло за названным"]
         ] } },
-        { "fig": { "type": "card", "title": "Ответ утонул в шуме", "lines": ["Марина: «Nova, go to pontoon Delta …»", "(дальше не слышно)", "Вы: «Vega Marina, this is Nova,", "SAY AGAIN ALL AFTER Delta, OVER»", "Марина: «I SAY AGAIN, berth two seven»"] } },
+        { "photo": "vhf-radio-operator/phonetic/4", "fig": { "type": "card", "title": "Ответ утонул в шуме", "lines": ["Марина: «Nova, go to pontoon Delta …»", "(дальше не слышно)", "Вы: «Vega Marina, this is Nova,", "SAY AGAIN ALL AFTER Delta, OVER»", "Марина: «I SAY AGAIN, berth two seven»"] } },
         { "p": "Собственную оговорку исправляют словом **CORRECTION**: оно отменяет только что сказанное, а следом идёт правильный вариант. «Berth two three, CORRECTION, berth two five» — это место 25. Услышав это слово, отбросьте то, что было до него, и действуйте по тому, что после. **I SPELL** предупреждает, что дальше пойдут буквы фонетического алфавита." }
       ]
     }
