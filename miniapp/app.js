@@ -404,9 +404,11 @@ function toast(text) {
 }
 
 /* ---------- state: mastery per question, activity per day, exams; saved locally and to CloudStorage ---------- */
-// q[id] = [last two results as '0'/'1', wrong count]. Mastered = right twice in a row (docs/data-model.md).
+// q[id] = [last two results as '0'/'1', wrong count, minute of the last answer (Date.now() / 60000; missing in
+// progress saved before 2026-11-07)]. Mastered = right twice in a row (docs/data-model.md). ls = when the last practice
+// or exam started (ms): what was answered since then rests for one session (pickFor).
 const KEY = 'iyt-test-state-v1';
-const fresh = () => ({ v: 1, ts: 0, q: {}, days: {}, total: 0, flags: [], wrong: [], wrongAt: {}, exams: [], exam: null, held: {}, last: null, read: {}, notes: {}, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
+const fresh = () => ({ v: 1, ts: 0, ls: 0, q: {},days: {}, total: 0, flags: [], wrong: [], wrongAt: {}, exams: [], exam: null, held: {}, last: null, read: {}, notes: {}, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
 let S = fresh();
 const merge = (o) => { const f = fresh(); return { ...f, ...o, set: { ...f.set, ...(o && o.set) } }; };
 
@@ -494,7 +496,7 @@ const touched = (id) => !!S.q[id];
 const halfway = (id) => !mastered(id) && rec(id)[0].endsWith('1');
 function record(id, ok, mode = 'practice', option = null) {
   const [h, w] = rec(id);
-  S.q[id] = [(h + (ok ? '1' : '0')).slice(-2), w + (ok ? 0 : 1)];
+  S.q[id] = [(h + (ok ? '1' : '0')).slice(-2), w + (ok ? 0 : 1), Math.floor(Date.now() / 60000)];
   const d = dkey();
   if (!S.days[d]) streakGrew = true;
   S.days[d] = (S.days[d] || 0) + 1;
@@ -1819,20 +1821,29 @@ function setupPool(s) {
   const ids = TOPICS.filter((tp) => s.on.has(tp.id)).flatMap((tp) => topicIds(tp.id));
   return s.mis ? ids.filter(isMistake) : ids;
 }
-// Mistakes first, then questions not yet mastered, then the rest; the chosen ones come in random order.
-// A session mixes mistakes (up to 40 %), questions answered right once (up to 30 %, so the second right answer comes
-// and they become mastered) and new ones; empty slots are filled in that order, then from the rest.
+// A session mixes mistakes (up to 30 %), questions answered right once (up to 20 %, so the second right answer comes
+// and they become mastered) and new ones, so at least half of it is new while new ones are left; empty slots are
+// filled with new ones, then mistakes, right-once, the rest and mastered. The chosen ones come in random order.
+// Repeats wait: a mistake skips the session after the one it was answered in (answered since S.ls, the start of the
+// last session), a question answered right once comes back on another day. Waiting ones are taken only when nothing
+// else is left, as in a small topic or the mistakes alone.
+const lastMin = (id) => rec(id)[2] || 0;
+const today = (id) => lastMin(id) > 0 && dkey(new Date(lastMin(id) * 60000)) === dkey();
+const justNow = (id) => lastMin(id) > 0 && lastMin(id) >= Math.floor((S.ls || 0) / 60000);
 function pickFor(pool, n) {
-  const mis = shuffle(pool.filter(isMistake)), half = shuffle(pool.filter((id) => halfway(id) && !isMistake(id)));
+  const misAll = pool.filter(isMistake), halfAll = pool.filter((id) => halfway(id) && !isMistake(id));
+  const mis = shuffle(misAll.filter((id) => !justNow(id))), misWait = shuffle(misAll.filter(justNow));
+  const half = shuffle(halfAll.filter((id) => !today(id))), halfWait = shuffle(halfAll.filter(today));
   const fresh = shuffle(pool.filter((id) => !touched(id))), done = shuffle(pool.filter(mastered));
   const rest = shuffle(pool.filter((id) => touched(id) && !mastered(id) && !isMistake(id) && !halfway(id)));
-  const out = [...mis.splice(0, Math.ceil(n * 0.4)), ...half.splice(0, Math.ceil(n * 0.3))];
-  for (const g of [fresh, mis, half, rest, done]) out.push(...g.splice(0, n - out.length));
+  const out = [...mis.splice(0, Math.ceil(n * 0.3)), ...half.splice(0, Math.ceil(n * 0.2))];
+  for (const g of [fresh, mis, half, rest, done, misWait, halfWait]) out.push(...g.splice(0, n - out.length));
   return shuffle(out.slice(0, n));
 }
 function startPractice(ids, fb = S.set.feedback) {
   ids = ids.filter((id) => Q[id]);
   if (!ids.length) return toast(t('noQuestions'));
+  S.ls = Date.now();
   P = {
     ids, i: 0, res: {}, picks: {}, sel: null, checked: false, fb, t0: Date.now(), done: false,
     orders: Object.fromEntries(ids.map((id) => [id, S.set.shuffle ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3]])),
@@ -1892,11 +1903,15 @@ function tick() {
 }
 function buildExam() {
   const n = Math.min(BANK.examQuestions, BANK.questions.length);
-  const groups = shuffle(TOPICS.map((tp) => shuffle(topicIds(tp.id)))); // round-robin over topics: an even spread
+  // Round-robin over topics: an even spread. Within a topic the order is random, but a question not seen yet is three
+  // times as likely to come early (weighted shuffle: key = random ^ (1 / weight), the biggest keys are taken first).
+  const order1 = (ids) => ids.map((id) => [id, Math.random() ** (touched(id) ? 1 : 1 / 3)]).sort((a, b) => a[1] - b[1]).map((x) => x[0]);
+  const groups = shuffle(TOPICS.map((tp) => order1(topicIds(tp.id))));
   const ids = [];
   while (ids.length < n && groups.some((g) => g.length)) for (const g of groups) if (g.length && ids.length < n) ids.push(g.pop());
   const order = shuffle(ids);
-  S.exam = { lv: LEVEL.id, ids: order, ord: Object.fromEntries(order.map((id) => [id, S.set.shuffle ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3]])), ans: {}, flags: [], el: 0, i: 0, at: Date.now(), last: Date.now() };
+  S.ls = Date.now();
+  S.exam = { lv: LEVEL.id, ids: order,ord: Object.fromEntries(order.map((id) => [id, S.set.shuffle ? shuffle([0, 1, 2, 3]) : [0, 1, 2, 3]])), ans: {}, flags: [], el: 0, i: 0, at: Date.now(), last: Date.now() };
   save();
 }
 function startExam() {
