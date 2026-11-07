@@ -1,0 +1,218 @@
+{
+ "1": {
+  "render": [
+   "The four stages",
+   "Appraisal: pilot, tides",
+   "Planning: track, waypoints",
+   "Execution: latest forecast",
+   "Monitoring: fix, compare"
+  ],
+  "schematic": []
+ },
+ "2": {
+  "render": [
+   "Latest departure",
+   "front: model B Sat 1200",
+   "120 M at 8 kn: 15 h",
+   "leave by Fri 1500"
+  ],
+  "schematic": []
+ },
+ "3": {
+  "render": [
+   "Crossing a TSS",
+   "W-going lane",
+   "E-going lane",
+   "separation zone",
+   "A: cross at right angles",
+   "B: ships turn here",
+   "precautionary area"
+  ],
+  "schematic": [
+   "Crossing a traffic separation scheme",
+   "A: both lanes at right angles, on a steady heading and speed",
+   "B: the precautionary area, where ships turn and alter: keep clear",
+   "ink",
+   "course",
+   "W-going lane",
+   "E-going lane",
+   "separation zone",
+   "precautionary area",
+   "A: at right angles",
+   "B: ships turn here"
+  ]
+ },
+ "4": {
+  "render": [
+   "Night orders",
+   "fix every 30 min offshore",
+   "call me: CPA under 1 M",
+   "watch alarm on"
+  ],
+  "schematic": [
+   "Fixing as a danger closes",
+   "Offshore a fix every 30 min: 3 M apart at 6 kn",
+   "Within 3 M of a danger every 6 min, 0.6 M apart: you cannot reach it between fixes",
+   "danger",
+   "ink",
+   "course",
+   "every 30 min",
+   "every 6 min",
+   "3 M",
+   "3 M apart"
+  ]
+ },
+ "5": {
+  "render": [
+   "In the plan",
+   "clearing bearing",
+   "wheel-over point",
+   "abort point",
+   "tide and bridge sums"
+  ],
+  "schematic": [
+   "Pilotage plan · wheel-over and abort point",
+   "Wheel-over: radius 200 m × tan 45° = 200 m before the 90° turn",
+   "Abort point: the last place to turn away · the clearing bearing keeps you off the rock",
+   "rock",
+   "course",
+   "200 m",
+   "tower",
+   "clearing bearing: tower NMT 003°",
+   "wheel-over",
+   "abort point",
+   "HARBOUR"
+  ]
+ },
+ "6": {
+  "render": [
+   "Night, swell: keep seaward of C",
+   "light",
+   "A · 2 m",
+   "B · 5 m",
+   "C · 10 m: keep seaward",
+   "You · light 306°"
+  ],
+  "schematic": [
+   "Clearing lines from the light",
+   "Draught 3.4 m in a 3 m swell, at night: stay outside the 10 m contour, line C",
+   "Light bearing 314° or less: you are seaward of C",
+   "ink",
+   "light",
+   "A · 2 m",
+   "B · 5 m",
+   "C · 10 m",
+   "breakers",
+   "light 306°: safe"
+  ]
+ },
+ "7": {
+  "render": [
+   "Port traffic signals",
+   "three reds: no entry",
+   "yellow: named craft only"
+  ],
+  "schematic": [
+   "Port traffic signals · no entry",
+   "Three reds in a column on the mole head: no vessel may enter or leave",
+   "With the yellow beside the top red, only craft the port names may move",
+   "You: hold off",
+   "named craft",
+   "ink",
+   "three reds + yellow",
+   "HARBOUR",
+   "no entry"
+  ]
+ },
+ "8": {
+  "render": [
+   "Radar horizon: scanner 9 m, cliff 64 m",
+   "cliff 64 m: paints at 24 M",
+   "ship's bridge 30 m: 19 M"
+  ],
+  "schematic": []
+ },
+ "9": {
+  "render": [
+   "Setting up the picture",
+   "gain: a faint speckle",
+   "sea clutter: a little left"
+  ],
+  "schematic": []
+ },
+ "10": {
+  "render": [
+   "Clearing range",
+   "VRM 1.0 M",
+   "cliff: keep it outside 1.0 M",
+   "reef 0.6 M off: no echo"
+  ],
+  "schematic": [
+   "Clearing range on a cliff",
+   "The reef lies 0.6 M off the cliff and gives no echo",
+   "VRM at 0.6 + 0.4 M margin = 1.0 M: keep the cliff echo outside the ring",
+   "course",
+   "margin 0.4 M",
+   "reef 0.6 M off",
+   "cliff",
+   "VRM 1.0 M",
+   "reef: no echo"
+  ]
+ },
+ "11": {
+  "render": [
+   "Relative plot · own 180°T 9 kn",
+   "0206 · 191° 3.9 M",
+   "CPA 2.1 M at 0219",
+   "her lights"
+  ],
+  "schematic": []
+ },
+ "12": {
+  "render": [
+   "Jamming: radar, log and compass steady",
+   "SOG 41 kn: impossible",
+   "position jumping",
+   "HDOP 7.8 · 5 satellites"
+  ],
+  "schematic": [
+   "Jamming · fix by radar ranges",
+   "The GNSS position jumps about; SOG reads 41 kn",
+   "Two radar ranges of steep points cross where you really are: check the depth and the DR",
+   "ink",
+   "radar range 1.15 M",
+   "radar range 1.00 M",
+   "GNSS: jumping",
+   "point"
+  ]
+ },
+ "13": {
+  "render": [
+   "GNSS lost: start a DR",
+   "last fix, time and log",
+   "NO FIX",
+   "radar still paints"
+  ],
+  "schematic": []
+ },
+ "14": {
+  "render": [
+   "Dutchman's log: 18 m in 5.0 s",
+   "mark 1 · 0 s",
+   "mark 2 · 5.0 s",
+   "chip",
+   "18 m"
+  ],
+  "schematic": [
+   "Dutchman's log",
+   "A chip dropped at the bow mark passes the stern mark 5.0 s later: 18 m in 5.0 s = 3.6 m/s",
+   "3.6 × 3,600 ÷ 1,852 = 7.0 kn, through the water",
+   "ink",
+   "course",
+   "marks 18 m apart",
+   "mark 1 · 0 s",
+   "mark 2 · 5.0 s",
+   "chip"
+  ]
+ }
+}

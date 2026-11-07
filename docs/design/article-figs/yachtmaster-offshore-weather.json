@@ -1,0 +1,368 @@
+{
+ "article": "yachtmaster-offshore/weather",
+ "topic": "weather",
+ "lead": "Offshore there is no harbour to run for: read the chart yourself, weigh each forecast, decide early.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Pressure systems",
+   "fig": {
+    "type": "isobars",
+    "center": "H",
+    "values": [
+     "1032",
+     "1028",
+     "1024"
+    ],
+    "boat": [
+     120,
+     160,
+     270
+    ],
+    "note": "South of the centre: ENE"
+   },
+   "cap": null,
+   "name": "High, north"
+  },
+  {
+   "n": 2,
+   "section": "Pressure systems",
+   "fig": {
+    "type": "isobars",
+    "center": "L",
+    "values": [
+     "992",
+     "996",
+     "1000"
+    ],
+    "boat": [
+     96,
+     22,
+     0
+    ],
+    "hemisphere": "Southern hemisphere",
+    "note": "North of the centre: WNW"
+   },
+   "cap": null,
+   "name": "Low, south"
+  },
+  {
+   "n": 3,
+   "section": "Depressions",
+   "fig": {
+    "type": "chart",
+    "marks": [
+     [
+      90,
+      150,
+      "r",
+      "Low"
+     ]
+    ],
+    "track": "M98 145 L262 40",
+    "labels": [
+     [
+      228,
+      140,
+      "right of the track:",
+      "middle"
+     ],
+     [
+      228,
+      154,
+      "veers · stronger",
+      "middle"
+     ],
+     [
+      92,
+      56,
+      "left of the track:",
+      "middle"
+     ],
+     [
+      92,
+      70,
+      "backs · lighter",
+      "middle"
+     ]
+    ],
+    "note": "Northern hemisphere · low moving NE"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Fronts",
+   "fig": {
+    "type": "chart",
+    "marks": [
+     [
+      100,
+      50,
+      "r",
+      "Main low 968"
+     ],
+     [
+      178,
+      122,
+      "r",
+      "Secondary 994"
+     ]
+    ],
+    "labels": [
+     [
+      138,
+      92,
+      "winds oppose",
+      "middle"
+     ],
+     [
+      226,
+      166,
+      "winds add: strongest",
+      "middle"
+     ]
+    ],
+    "note": "Northern hemisphere · secondary SE of the main low"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Fronts",
+   "fig": {
+    "type": "card",
+    "title": "When does the front arrive?",
+    "lines": [
+     "Cold front 120 M W, moving E at 25 kn",
+     "You: heading W at 5 kn",
+     "Closing speed 25 + 5 = 30 kn",
+     "120 ÷ 30 = 4 h: reef before then"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Wind from the chart",
+   "fig": {
+    "type": "card",
+    "title": "Wind from the isobars",
+    "lines": [
+     "Geostrophic scale: 40 kn from 270°",
+     "Tight curve round a low: −15 % → 34 kn",
+     "At the sea: × 0.8 → 27 kn",
+     "Backed 15°: from 255°, force 6"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Forecast products",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Now",
+      "995",
+      true
+     ],
+     [
+      "3 h ago",
+      "1005",
+      false
+     ],
+     [
+      "Fall",
+      "10",
+      true
+     ]
+    ],
+    "lines": [
+     "6–9 hPa in 3 h: a gale likely",
+     "10 or more: a storm likely"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Sea state and heavy weather",
+   "fig": {
+    "type": "card",
+    "title": "Swell with a period of 16 s",
+    "lines": [
+     "Wavelength ≈ 1.56 × 16² = 400 m",
+     "Feels the bottom at half that: 200 m",
+     "Speed ≈ 3 × 16 = 48 kn; it arrives at 24 kn",
+     "Pitching is worst when the wavelength",
+     "is near the boat's length"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 9,
+   "section": "Sea state and heavy weather",
+   "fig": {
+    "type": "chart",
+    "land": "M250 200 C270 180 300 172 320 168 V200 Z",
+    "depths": [
+     [
+      40,
+      160,
+      "4200"
+     ],
+     [
+      70,
+      100,
+      "3000"
+     ],
+     [
+      130,
+      104,
+      "1000"
+     ],
+     [
+      200,
+      104,
+      "200"
+     ],
+     [
+      250,
+      160,
+      "150"
+     ],
+     [
+      292,
+      104,
+      "120"
+     ]
+    ],
+    "marks": [
+     [
+      190,
+      131,
+      "y",
+      "steepest sea"
+     ]
+    ],
+    "track": "M20 126 L60 128 L170 130 L270 134 L300 136",
+    "labels": [
+     [
+      172,
+      160,
+      "shelf edge",
+      "middle"
+     ]
+    ],
+    "panel": [
+     "Forecast",
+     "SW 8 by 1800",
+     "Swell 16 s"
+    ],
+    "note": "Depths in metres · cross the edge before the gale"
+   },
+   "cap": null
+  },
+  {
+   "n": 10,
+   "section": "Sea state and heavy weather",
+   "fig": {
+    "type": "chart",
+    "land": "M252 0 H320 V200 H268 C254 150 262 60 252 0 Z",
+    "boat": [
+     60,
+     112,
+     300
+    ],
+    "track": "M76 110 L250 100",
+    "labels": [
+     [
+      160,
+      92,
+      "drift: 24 h × 2 kn = 48 M",
+      "middle"
+     ],
+     [
+      160,
+      128,
+      "sea room: 40 M",
+      "middle"
+     ],
+     [
+      290,
+      104,
+      "lee shore",
+      "middle"
+     ]
+    ],
+    "note": "W gale for 24 h: make offing before you heave to"
+   },
+   "cap": null
+  },
+  {
+   "n": 11,
+   "section": "Landfall weather",
+   "fig": {
+    "type": "bay",
+    "wind": 45,
+    "land": "M150 50 C185 50 200 75 198 98 C196 125 175 142 150 142 C120 142 102 122 102 96 C102 70 120 50 150 50 Z",
+    "labels": [
+     [
+      214,
+      152,
+      "stronger",
+      "middle"
+     ],
+     [
+      88,
+      42,
+      "stronger",
+      "middle"
+     ],
+     [
+      74,
+      150,
+      "wind shadow",
+      "middle"
+     ]
+    ],
+    "note": "High island in the NE trade wind"
+   },
+   "cap": null
+  },
+  {
+   "n": 12,
+   "section": "Landfall weather",
+   "fig": {
+    "type": "chart",
+    "marks": [
+     [
+      210,
+      44,
+      "r",
+      "Cb cell"
+     ]
+    ],
+    "track": "M210 52 L226 170",
+    "boat": [
+     56,
+     128,
+     90
+    ],
+    "labels": [
+     [
+      56,
+      152,
+      "You, 6 kn",
+      "middle"
+     ]
+    ],
+    "note": "Radar · cell 18 kn: pass astern · CAPE 1800 J/kg"
+   },
+   "cap": null
+  }
+ ]
+}

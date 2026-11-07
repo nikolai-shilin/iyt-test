@@ -1,11 +1,11 @@
 # Test-question figures of type "lights" (bareboat-skipper): navigation lights at night, seen from our deck.
-# Each question's 2D figure (figure-style/questions/bareboat-skipper/lights.json) gives its lights as coloured dots
+# Each question's 2D figure (figure-style/questions/<level>/lights.json) gives its lights as coloured dots
 # on a 320 x 200 drawing; this builds the 3D scene behind them (q_lights_specs.py: the vessel and her aspect, or
 # the marks and the shore), fits the camera so every light lands where the figure has it, and renders
 # <id>/3d.jpg with <id>/3d.labels.json (the figure's own light texts at their lights, its note as the note).
 # Rule 1: it is night, so only the lights show; hulls are one plain, faint dark shape whatever the vessel.
 #   blender --background --factory-startup --python docs/design/blender/q_lights.py -- --id bs-416 [--samples 128]
-#   --level charter-checkin: questions/<level>/lights.json in, <level>/<id>/ out (default bareboat-skipper)
+#   --level charter-checkin | yachtmaster-offshore: questions/<level>/lights.json in, <level>/<id>/ out (default bareboat-skipper)
 import os, sys, json, math
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -50,7 +50,7 @@ def lamp(name, p, c, radius, power=30.0, gain=1.0):
     and the water round her."""
     k = ckey(c); rgb = RGB[k]
     m, nt, b, out = C.new_mat(name + '-lens')
-    em = C.node(nt, 'ShaderNodeEmission'); C.setin(em, 'Color', rgb + (1,)); C.setin(em, 'Strength', GAIN[k] * gain)
+    em = C.node(nt, 'ShaderNodeEmission'); C.setin(em, 'Color', rgb + (1,)); C.setin(em, 'Strength', GAIN[k] * gain * SP.get('gain', {}).get(k, 1.0))
     C.link(nt, em.outputs[0], out.inputs['Surface'])
     bm = bmesh.new(); bmesh.ops.create_uvsphere(bm, u_segments=20, v_segments=10, radius=radius)
     me = bpy.data.meshes.new(name); bm.to_mesh(me); bm.free()
@@ -96,7 +96,7 @@ def rig(pos, heading, L, B, fb, lights):
         base = hh if abs(x) < L * 0.11 and abs(y) < B * 0.31 else fb
         if max(zs) - base < 0.8: continue
         w = Vector(G.to_world(pos, heading, (x, max(-B / 2, min(B / 2, y)), 0)))
-        cyl('pole', max(0.06, L * 0.004), base, max(zs) - 0.1, (w.x, w.y), dark('pole-night', '#08090a', 0.95))
+        cyl('pole', SP.get('pole_r', max(0.06, L * 0.004)), base, max(zs) - 0.1, (w.x, w.y), dark('pole-night', '#08090a', 0.95))
 
 def cyl(name, r, z0, z1, at, mat=None):
     return C.cyl(name, r, r, z1 - z0, 20, mat or dark(), (at[0], at[1], (z0 + z1) / 2))
@@ -143,6 +143,57 @@ def clear_of_land(p, eye):
     if hit and ob and ob.name.startswith('coast'): return tuple(loc - d.normalized() * 3.0)
     return p
 
+def away(p, eye, k):
+    """Point p moved k metres further from the eye, horizontally (what carries a light stands just behind it)."""
+    d = Vector((p[0] - eye[0], p[1] - eye[1], 0)).normalized(); return Vector(p) + d * k, d
+
+def bar(name, a, b, w, mat=None):
+    """A thin box from world point a to b, w thick (a blade, a yard, a girder)."""
+    a, b = Vector(a), Vector(b); d = b - a
+    o = C.obj(name, C.rbox(name, (d.length, w, w), 0.0, 1), mat or dark())
+    o.location = (a + b) / 2; o.rotation_euler = d.to_track_quat('X', 'Z').to_euler(); return o
+
+def turbine(red, yellow, eye):
+    """A wind turbine under its red aviation light: tower from the sea, nacelle, three blades turned to us; its
+    platform round the tower at the yellow light's height."""
+    c, d = away(red, eye, 4.0); top = red[2] - 1.2
+    C.cyl('tower', 3.0, 1.9, top - 2.0, 24, dark('tower-night', '#1d2125', 0.6), (c.x, c.y, (top + 2.0) / 2 - 1.0))
+    nac = C.obj('nacelle', C.rbox('nacelle', (13, 4.2, 4.2), 0.6, 2), dark('tower-night', '#1d2125', 0.6))
+    nac.location = (c.x + d.x * 2, c.y + d.y * 2, top - 1.0); nac.rotation_euler = (0, 0, math.atan2(d.y, d.x))
+    hub = Vector((c.x - d.x * 5.5, c.y - d.y * 5.5, top - 1.0)); side = Vector((-d.y, d.x, 0))
+    for k, a in enumerate((20, 140, 260)):
+        u = side * math.cos(math.radians(a)) + Vector((0, 0, 1)) * math.sin(math.radians(a))
+        bar(f'blade{k}', hub + u * 1.5, hub + u * 58, 1.6, dark('tower-night', '#1d2125', 0.6))
+    if yellow is not None:
+        C.cyl('platform', 7.0, 7.0, 0.8, 32, dark('tower-night', '#1d2125', 0.6), (c.x, c.y, yellow[2] - 1.6))
+
+def platform(pl, pr, pw, eye):
+    """A large offshore structure: its deck between the two red end lights, legs to the sea, a derrick under the white."""
+    a, d = away(pl, eye, 0.0); b, _ = away(pr, eye, 0.0); depth = 45.0
+    ctr = (a + b) / 2 + d * (depth / 2 + 2); ctr.z = (pl[2] + pr[2]) / 2 - 3.5
+    span = (b - a); span.z = 0; L = span.length
+    m = dark('rig-night', '#1b1e21', 0.7)
+    deck = C.obj('deck', C.rbox('deck', (L, depth, 6.0), 0.2, 1), m); deck.location = ctr; deck.rotation_euler = (0, 0, math.atan2(span.y, span.x))
+    ax = span.normalized()
+    for sx in (-0.4, 0.4):
+        for sy in (-0.35, 0.35):
+            q = ctr + ax * (sx * L) + d * (sy * depth)
+            C.cyl('leg', 2.2, 2.2, ctr.z + 6, 16, m, (q.x, q.y, ctr.z / 2 - 3))
+    w, _ = away(pw, eye, 3.0)
+    C.cyl('derrick', 3.5, 0.8, pw[2] - ctr.z - 4, 4, m, (w.x, w.y, (pw[2] + ctr.z) / 2))
+
+def signal_mast(top, bottom, yellow, eye):
+    """A port's signal mast on its mole head: the pole just behind the column of lights, a yard out to the yellow."""
+    p, d = away(top, eye, 0.5); m = dark('pole-night', '#121416', 0.8)
+    C.cyl('signal-mast', 0.18, 0.12, top[2] + 1.2 - 2.5, 12, m, (p.x, p.y, (top[2] + 1.2 + 2.5) / 2))
+    y, _ = away(yellow, eye, 0.5)
+    bar('signal-yard', Vector((p.x, p.y, top[2] + 0.45)), Vector((y.x, y.y, yellow[2] + 0.45)), 0.14, m)
+    for q in (top, bottom, yellow):     # a small dark box behind each lantern
+        b_, _ = away(q, eye, 0.3); C.obj('lantern', C.rbox('lantern', (0.5, 0.5, 0.6), 0.05, 1), m, (b_.x, b_.y, q[2]))
+    head = Vector((p.x, p.y, 0)); left = Vector((-d.y, d.x, 0))
+    C.cyl('mole-head', 2.2, 2.2, 3.0, 32, dark('mole-night', '#1b1d1f', 0.9), (head.x, head.y + 0.0, 1.0))
+    mole(head + d * 2.0, head + d * 2.0 + left * 180 + d * 60, 1.25, 6.0)
+
 # ---------- camera ----------
 def set_camera(cam):
     r, u, d = G.axes(cam['yaw'], cam['pitch'])
@@ -169,7 +220,8 @@ def write_labels(cam, pts, extra_labels=()):
 
 def report(cam, pts):
     idx = sorted(pts); px = [G.project(pts[i], cam)[:2] for i in idx]
-    bad = G.check_order(px, [(LIGHTS[i]['x'], LIGHTS[i]['y']) for i in idx])
+    sw = SP.get('swap', {})
+    bad = G.check_order(px, [(LIGHTS[sw.get(i, i)]['x'], LIGHTS[sw.get(i, i)]['y']) for i in idx])
     print('LIGHTS', QID, 'lens %.0f' % G.lens_of_s(cam['s']), ' '.join('%d:%s(%.0f,%.0f)' % (i, LIGHTS[i]['c'], *p) for i, p in zip(idx, px)))
     for b in bad: print('  ORDER', b)
 
@@ -194,7 +246,7 @@ if kind == 'vessel':
         if v['hull']:
             hull(v['pos'], v['heading'], *v['hull'], name=f'hull{k}')
             own = SP['lights'] if k == 0 else SP['tow']['lights']
-            if not v['deck'] and SP.get('poles', True): rig(v['pos'], v['heading'], *v['hull'], own)
+            if not v['deck'] and SP.get('poles', True) and not (k > 0 and SP['tow'].get('rig') is False): rig(v['pos'], v['heading'], *v['hull'], own)
     set_camera(cam)
     lights_at(cam, pts, power=40.0)
     if SP.get('deck'):    # deck lights: lamps that light her deck
@@ -213,6 +265,10 @@ elif kind == 'screen':
         for i in list(pts):
             if i != ai: pts[i] = clear_of_land(pts[i], cam['eye'])
     for i, kd in SP.get('bodies', {}).items(): body(kd, pts[i])
+    eye = cam.get('eye', G.EYE)
+    for r, yl in SP.get('turbines', ()): turbine(pts[r], None if yl is None else pts[yl], eye)
+    if SP.get('platform'): platform(*(pts[i] for i in SP['platform']), eye)
+    if SP.get('signal'): signal_mast(*(pts[i] for i in SP['signal']), eye)
     if SP.get('moles'):   # harbour entrance: the two mole heads carry the lights, the moles run out to each side
         a, b = SP['moles']; pa, pb = Vector(pts[a]), Vector(pts[b]); side = (pb - pa).normalized(); side.z = 0
         back = Vector((-side.y, side.x, 0))

@@ -1,0 +1,117 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Overtaking · from abaft her beam",
+  "key": [
+   "From her you bear 165°T: 120° from her bow, more than 22.5° abaft her beam",
+   "Rule 13: you are overtaking and keep clear until finally past and clear"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 20,
+    "noHeading": true
+   },
+   {
+    "x": -103.5,
+    "z": -386.4,
+    "hdg": 45,
+    "label": "Coaster"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -103.5,
+      -386.4
+     ],
+     [
+      34.2,
+      -53.8
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "4 10"
+   },
+   {
+    "pts": [
+     [
+      -103.5,
+      -386.4
+     ],
+     [
+      -436.1,
+      -524.1
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "4 10"
+   },
+   {
+    "pts": [
+     [
+      16.4,
+      -45.1
+     ],
+     [
+      34.2,
+      -94.0
+     ],
+     [
+      43.9,
+      -141.0
+     ],
+     [
+      46.7,
+      -188.9
+     ],
+     [
+      42.5,
+      -236.7
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 380.9,
+    "z": 47.9,
+    "text": "overtaking: you keep clear",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": -303.3,
+    "z": -118.8,
+    "text": "22.5° abaft her beam",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -120.0,
+    "z": -120.0
+   },
+   {
+    "x": 120.0,
+    "z": 120.0
+   },
+   {
+    "x": -223.5,
+    "z": -506.4
+   },
+   {
+    "x": 16.5,
+    "z": -266.4
+   }
+  ]
+ }
+}

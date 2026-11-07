@@ -1,0 +1,88 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · a WIG craft in flight",
+  "key": [
+   "Rule 23(c): a WIG craft taking off, landing or flying near the surface adds a flashing red",
+   "Rule 18(f): she keeps well clear of all vessels and avoids impeding them"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 0.0,
+    "z": -340.0,
+    "hdg": 250,
+    "label": "WIG craft",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "r"
+    ],
+    "stackDx": 140
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -60,
+      -330
+     ],
+     [
+      -260,
+      -400
+     ],
+     [
+      -480,
+      -470
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "8 8",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -300,
+    "z": -280,
+    "text": "very fast, just above the water",
+    "kind": "light"
+   },
+   {
+    "x": 170,
+    "z": -60,
+    "text": "she keeps clear",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -520,
+    "z": -500
+   },
+   {
+    "x": 260,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 124.8
+   },
+   {
+    "x": 0.0,
+    "z": -464.8
+   }
+  ]
+ }
+}

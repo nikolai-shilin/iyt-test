@@ -1,0 +1,101 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · a hovercraft head-on",
+  "key": [
+   "Flashing yellow all round: an air-cushion vessel in the non-displacement mode (Rule 23(b))",
+   "She is power-driven, end-on: Rule 14 — both alter to starboard, port to port"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 0.0,
+    "z": -420.0,
+    "hdg": 180,
+    "label": "Hovercraft",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "y"
+    ],
+    "stackDx": -130
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -40
+     ],
+     [
+      55,
+      -140
+     ],
+     [
+      70,
+      -230
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      15,
+      -380
+     ],
+     [
+      -40,
+      -280
+     ],
+     [
+      -55,
+      -190
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 220,
+    "z": -150,
+    "text": "turn to starboard",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -240,
+    "z": -560
+   },
+   {
+    "x": 280,
+    "z": 100
+   },
+   {
+    "x": 0,
+    "z": 105.60000000000001
+   },
+   {
+    "x": 0.0,
+    "z": -525.6
+   }
+  ]
+ }
+}

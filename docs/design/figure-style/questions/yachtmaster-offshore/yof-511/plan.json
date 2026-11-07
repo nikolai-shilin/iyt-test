@@ -1,0 +1,95 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Risk of collision · a very large ship close",
+  "key": [
+   "Rule 7(d)(ii): with a very large ship at close range, risk may exist even as the bearing changes",
+   "You take bearings of her bridge, right aft: her bow is 300 m ahead of it and passes far closer"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": 1717.1,
+    "z": -693.8,
+    "hdg": 270,
+    "label": "VLCC"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      1717.1,
+      -693.8
+     ],
+     [
+      1411.6,
+      -693.8
+     ]
+    ],
+    "c": "red",
+    "w": 9
+   },
+   {
+    "pts": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      1411.6,
+      -693.8
+     ]
+    ],
+    "c": "red",
+    "w": 3,
+    "dash": "6 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": 1272.7,
+    "z": -1043.2,
+    "text": "her bow: 300 m ahead of the bridge",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 2208.7,
+    "z": -103.3,
+    "text": "bridge: bearing draws aft",
+    "free": true
+   },
+   {
+    "x": 4.3,
+    "z": 575.0,
+    "text": "risk may still exist",
+    "kind": "red",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -555.6,
+    "z": -555.6
+   },
+   {
+    "x": 555.6,
+    "z": 555.6
+   },
+   {
+    "x": 1161.5,
+    "z": -1249.4
+   },
+   {
+    "x": 2272.7,
+    "z": -138.2
+   }
+  ]
+ }
+}

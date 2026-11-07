@@ -1,0 +1,105 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Platform · lights and safety zone",
+  "key": [
+   "White Mo(U) 15s in the middle, red lights at its ends; in fog it sounds Mo(U)",
+   "A 500 m safety zone round it: pass outside"
+  ],
+  "quays": [
+   {
+    "x1": -70,
+    "z1": -50,
+    "x2": 70,
+    "z2": 50
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": 0,
+    "r": 500,
+    "c": "red"
+   },
+   {
+    "x": -82,
+    "z": 0,
+    "r": 22,
+    "c": "red",
+    "dash": "0",
+    "fill": "#e0251b"
+   },
+   {
+    "x": 82,
+    "z": 0,
+    "r": 22,
+    "c": "red",
+    "dash": "0",
+    "fill": "#e0251b"
+   },
+   {
+    "x": 0,
+    "z": 0,
+    "r": 22,
+    "c": "ink",
+    "dash": "0",
+    "fill": "#ffffff"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -800,
+      700
+     ],
+     [
+      700,
+      700
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "arrow": true
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -650,
+    "z": 700,
+    "hdg": 90,
+    "noHeading": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -140,
+    "text": "white Mo(U) 15s"
+   },
+   {
+    "x": 260,
+    "z": 170,
+    "text": "red at its ends",
+    "kind": "red"
+   },
+   {
+    "x": 0,
+    "z": -560,
+    "text": "500 m safety zone",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -820,
+    "z": -620
+   },
+   {
+    "x": 820,
+    "z": 900
+   }
+  ]
+ }
+}

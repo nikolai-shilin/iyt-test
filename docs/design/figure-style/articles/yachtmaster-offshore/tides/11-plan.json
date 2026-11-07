@@ -1,0 +1,113 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 60,
+  "title": "Ocean current in the DR",
+  "key": [
+   "Rotary tidal streams, up to 0.8 kn, cancel out over 30 h",
+   "Mean current NE 0.4 kn: 30 h × 0.4 = 12 M NE of the DR"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 849,
+    "z": -849,
+    "hdg": 30,
+    "noHeading": true,
+    "label": "EP"
+   }
+  ],
+  "spots": [
+   {
+    "x": 0,
+    "z": 0,
+    "label": "DR"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -1100,
+      700
+     ],
+     [
+      -50,
+      40
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "12 10"
+   },
+   {
+    "pts": [
+     [
+      30,
+      -30
+     ],
+     [
+      809,
+      -809
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "arrow": true
+   }
+  ],
+  "circles": [
+   {
+    "x": -700,
+    "z": -500,
+    "r": 160,
+    "c": "ink",
+    "dash": "10 8"
+   }
+  ],
+  "dims": [
+   {
+    "a": [
+     0,
+     0
+    ],
+    "b": [
+     849,
+     -849
+    ],
+    "text": "12 M",
+    "off": -170
+   }
+  ],
+  "texts": [
+   {
+    "x": -760,
+    "z": 640,
+    "text": "your track by log",
+    "pill": false,
+    "size": 24
+   },
+   {
+    "x": 700,
+    "z": -150,
+    "text": "current NE 0.4 kn",
+    "kind": "accent"
+   },
+   {
+    "x": -700,
+    "z": -720,
+    "text": "rotary stream: it cancels"
+   }
+  ],
+  "fit": [
+   {
+    "x": -1150,
+    "z": 750
+   },
+   {
+    "x": 1100,
+    "z": -1100
+   }
+  ]
+ }
+}

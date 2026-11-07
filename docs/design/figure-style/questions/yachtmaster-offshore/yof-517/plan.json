@@ -1,0 +1,160 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 50,
+  "title": "Traffic separation · fishing in the zone",
+  "key": [
+   "Red over white all round, no sidelights: fishing other than trawling, not making way",
+   "Rule 10(e)(ii): a vessel may fish inside the separation zone"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 300,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 90,
+    "label": "Fishing",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "r",
+     "w"
+    ],
+    "stackDx": -130,
+    "scale": 3.0
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -560,
+      -260
+     ],
+     [
+      560,
+      -260
+     ],
+     [
+      560,
+      -90
+     ],
+     [
+      -560,
+      -90
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   },
+   {
+    "pts": [
+     [
+      -560,
+      -90
+     ],
+     [
+      560,
+      -90
+     ],
+     [
+      560,
+      90
+     ],
+     [
+      -560,
+      90
+     ]
+    ],
+    "c": "course",
+    "fill": "rgba(255,200,0,.14)"
+   },
+   {
+    "pts": [
+     [
+      -560,
+      90
+     ],
+     [
+      560,
+      90
+     ],
+     [
+      560,
+      260
+     ],
+     [
+      -560,
+      260
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "texts": [
+   {
+    "x": 380,
+    "z": 0,
+    "text": "separation zone",
+    "kind": "accent"
+   },
+   {
+    "x": -380,
+    "z": -175,
+    "text": "lane →",
+    "kind": "light"
+   },
+   {
+    "x": -380,
+    "z": 175,
+    "text": "← lane",
+    "kind": "light"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      60,
+      260
+     ],
+     [
+      60,
+      -330
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "w": 5,
+    "arrow": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -560,
+    "z": -340
+   },
+   {
+    "x": 560,
+    "z": 380
+   },
+   {
+    "x": 0,
+    "z": 479.20000000000005
+   },
+   {
+    "x": 0,
+    "z": -197.11999999999998
+   }
+  ]
+ }
+}

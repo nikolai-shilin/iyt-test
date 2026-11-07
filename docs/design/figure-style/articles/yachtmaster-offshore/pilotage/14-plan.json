@@ -1,0 +1,130 @@
+{
+ "sch": {
+  "padPx": 90,
+  "trueScale": true,
+  "minMpp": 0.02,
+  "title": "Dutchman's log",
+  "key": [
+   "A chip dropped at the bow mark passes the stern mark 5.0 s later: 18 m in 5.0 s = 3.6 m/s",
+   "3.6 × 3,600 ÷ 1,852 = 7.0 kn, through the water"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 90,
+    "L": 21,
+    "noHeading": true
+   }
+  ],
+  "circles": [
+   {
+    "x": 9,
+    "z": 4.5,
+    "r": 0.45,
+    "c": "ink",
+    "dash": "0",
+    "fill": "#c58b4a"
+   },
+   {
+    "x": -9,
+    "z": 4.5,
+    "r": 0.45,
+    "c": "ink",
+    "dash": "0",
+    "fill": "#c58b4a"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      9,
+      1.6
+     ],
+     [
+      9,
+      4.0
+     ]
+    ],
+    "c": "course",
+    "w": 6
+   },
+   {
+    "pts": [
+     [
+      -9,
+      1.6
+     ],
+     [
+      -9,
+      4.0
+     ]
+    ],
+    "c": "course",
+    "w": 6
+   },
+   {
+    "pts": [
+     [
+      7.8,
+      4.5
+     ],
+     [
+      -7.6,
+      4.5
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "8 8",
+    "arrow": true
+   }
+  ],
+  "dims": [
+   {
+    "a": [
+     9,
+     6.5
+    ],
+    "b": [
+     -9,
+     6.5
+    ],
+    "text": "marks 18 m apart",
+    "off": 0
+   }
+  ],
+  "texts": [
+   {
+    "x": 9,
+    "z": 9.2,
+    "text": "mark 1 · 0 s"
+   },
+   {
+    "x": -9,
+    "z": 9.2,
+    "text": "mark 2 · 5.0 s",
+    "kind": "accent"
+   },
+   {
+    "x": -12.5,
+    "z": 4.5,
+    "text": "chip",
+    "pill": false,
+    "size": 24
+   }
+  ],
+  "fit": [
+   {
+    "x": -14,
+    "z": -5
+   },
+   {
+    "x": 14,
+    "z": 10.5
+   }
+  ]
+ }
+}

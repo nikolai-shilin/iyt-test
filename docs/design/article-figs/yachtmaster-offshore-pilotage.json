@@ -1,0 +1,449 @@
+{
+ "article": "yachtmaster-offshore/pilotage",
+ "topic": "pilotage",
+ "lead": "Plan in four stages, check all the way; pilotage is the same at close range, with every number ready before the entrance. The electronics serve both, if you know what each cannot see.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "The passage plan",
+   "fig": {
+    "type": "card",
+    "title": "The four stages",
+    "lines": [
+     "Appraisal: charts, pilot, tides, forecasts",
+     "Planning: tracks, waypoints, times, plan B",
+     "Execution: latest forecast, decide, brief",
+     "Monitoring: fix, compare with the plan, act"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "The passage plan",
+   "fig": {
+    "type": "card",
+    "title": "Latest departure",
+    "lines": [
+     "Crossing 120 M at 8 kn: 15 h",
+     "Front: model A Sat 1800, model B Sat 1200",
+     "Rule: in harbour 6 h before the earlier one",
+     "Sat 1200 − 6 h − 15 h = Fri 1500"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "The passage plan",
+   "fig": {
+    "type": "chart",
+    "land": "M0 93 H160 V105 H0 Z",
+    "track": "M24 182 V18 M292 182 V74",
+    "labels": [
+     [
+      96,
+      80,
+      "W-going lane ←",
+      "middle"
+     ],
+     [
+      96,
+      126,
+      "E-going lane →",
+      "middle"
+     ],
+     [
+      86,
+      103,
+      "separation zone",
+      "middle"
+     ],
+     [
+      232,
+      98,
+      "precautionary",
+      "middle"
+     ],
+     [
+      232,
+      112,
+      "area",
+      "middle"
+     ],
+     [
+      32,
+      170,
+      "A",
+      "start"
+     ],
+     [
+      284,
+      170,
+      "B",
+      "end"
+     ]
+    ],
+    "boat": [
+     150,
+     160,
+     0
+    ],
+    "note": "A: both lanes at right angles · B: where ships turn"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Watches and monitoring",
+   "fig": {
+    "type": "card",
+    "title": "Night orders",
+    "lines": [
+     "Fix every 30 min offshore",
+     "Every 6 min within 3 M of a danger",
+     "Call me: CPA under 1 M, or any doubt",
+     "Close quarters: act first, then call",
+     "Watch alarm on; log every hour"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "The pilotage plan",
+   "fig": {
+    "type": "card",
+    "title": "In the plan",
+    "lines": [
+     "Tide = draught + ½ swell + margin − depth",
+     "Bridge: clearance + HAT − tide ≥ air draught",
+     "Clearing bearings; wheel-over points",
+     "Abort point: the last place to turn away",
+     "VTS: name, position, intention, ETA; listen"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "The pilotage plan",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H120 C116 30 108 50 100 60 C92 80 70 130 50 200 H0 Z",
+    "depths": [
+     [
+      96,
+      140,
+      "1.4"
+     ],
+     [
+      131,
+      150,
+      "3.8"
+     ],
+     [
+      174,
+      150,
+      "7"
+     ],
+     [
+      238,
+      152,
+      "14"
+     ],
+     [
+      296,
+      152,
+      "19"
+     ]
+    ],
+    "marks": [
+     [
+      104,
+      58,
+      "w",
+      "light"
+     ]
+    ],
+    "track": "M104 58 L118 180 M104 58 L169 180 M104 58 L229 180",
+    "labels": [
+     [
+      124,
+      172,
+      "A",
+      "start"
+     ],
+     [
+      172,
+      172,
+      "B",
+      "start"
+     ],
+     [
+      228,
+      172,
+      "C",
+      "start"
+     ]
+    ],
+    "boat": [
+     268,
+     178,
+     320
+    ],
+    "panel": [
+     "Clearing lines",
+     "A: 2 m contour",
+     "B: 5 m contour",
+     "C: 10 m contour",
+     "Draught 3.4 m",
+     "Swell 3 m"
+    ],
+    "note": "Night, swell: keep seaward of C — light bearing ≤ 314°"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "The pilotage plan",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "r",
+      "x": 160,
+      "y": 52
+     },
+     {
+      "c": "r",
+      "x": 160,
+      "y": 84
+     },
+     {
+      "c": "r",
+      "x": 160,
+      "y": 116
+     },
+     {
+      "c": "y",
+      "x": 128,
+      "y": 52
+     }
+    ],
+    "note": "Three reds: no entry · the yellow frees named craft"
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Radar",
+   "fig": {
+    "type": "card",
+    "title": "Radar horizon",
+    "lines": [
+     "≈ 2.2 × (√h₁ + √h₂) M, heights in metres",
+     "Scanner 9 m, cliff 64 m: 2.2 × 11 = 24 M",
+     "Ship's bridge 30 m: 2.2 × (3 + 5.5) ≈ 19 M",
+     "Her AIS from a high aerial reaches further"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 9,
+   "section": "Radar",
+   "fig": {
+    "type": "card",
+    "title": "Setting up the picture",
+    "lines": [
+     "Tune, then gain up to a faint speckle",
+     "Sea clutter: leave a little showing",
+     "Rain control only to look into a squall",
+     "Long scale to warn, short for small craft",
+     "Long scale ≥ closing speed × warning time"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 10,
+   "section": "Radar",
+   "fig": {
+    "type": "chart",
+    "land": "M320 0 V200 H252 C242 160 232 124 236 92 C240 60 256 30 268 0 Z",
+    "depths": [
+     [
+      204,
+      142,
+      "0.6",
+      true
+     ],
+     [
+      216,
+      158,
+      "1.1"
+     ],
+     [
+      196,
+      170,
+      "2"
+     ],
+     [
+      120,
+      70,
+      "35"
+     ],
+     [
+      96,
+      150,
+      "40"
+     ]
+    ],
+    "labels": [
+     [
+      204,
+      128,
+      "reef",
+      "middle"
+     ],
+     [
+      244,
+      182,
+      "cliff",
+      "end"
+     ]
+    ],
+    "track": "M176 196 L176 8",
+    "boat": [
+     176,
+     150,
+     0
+    ],
+    "panel": [
+     "Clearing range",
+     "Reef 0.6 M off",
+     "Margin 0.4 M",
+     "VRM 1.0 M"
+    ],
+    "note": "The reef gives no echo: keep the cliff outside 1.0 M"
+   },
+   "cap": null
+  },
+  {
+   "n": 11,
+   "section": "Radar plotting and ARPA",
+   "fig": {
+    "type": "chart",
+    "marks": [
+     [
+      123,
+      99,
+      "y",
+      ""
+     ],
+     [
+      139,
+      83,
+      "y",
+      ""
+     ],
+     [
+      173,
+      49,
+      "k",
+      "CPA"
+     ]
+    ],
+    "track": "M123 99 L196 26",
+    "boat": [
+     150,
+     26,
+     180
+    ],
+    "labels": [
+     [
+      113,
+      103,
+      "0200  200°  5.2 M",
+      "end"
+     ],
+     [
+      129,
+      81,
+      "0206  191°  3.9 M",
+      "end"
+     ]
+    ],
+    "panel": [
+     "Relative plot",
+     "Own 180°T 9 kn",
+     "15 kn relative",
+     "CPA 2.1 M at 0219"
+    ],
+    "note": "Relative motion · 3.2 M to the CPA at 15 kn: 13 min"
+   },
+   "cap": null
+  },
+  {
+   "n": 12,
+   "section": "GNSS and sensors",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "HDOP",
+      "7.8",
+      true
+     ],
+     [
+      "Sats",
+      "5",
+      false
+     ],
+     [
+      "SOG",
+      "41 kn",
+      true
+     ]
+    ],
+    "lines": [
+     "Position jumps; radar, log and compass steady",
+     "Go by radar ranges, depth and DR"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 13,
+   "section": "GNSS and sensors",
+   "fig": {
+    "type": "card",
+    "title": "GNSS lost",
+    "lines": [
+     "Write down the last fix, its time and log",
+     "Start a DR; fix by radar ranges and depth",
+     "Gone: AIS and DSC positions, track steering",
+     "Still good: radar, compass, log, sounder",
+     "Backup: handheld GNSS, VHF, own batteries"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 14,
+   "section": "GNSS and sensors",
+   "fig": {
+    "type": "card",
+    "title": "Dutchman's log",
+    "lines": [
+     "Marks on deck 18 m apart",
+     "The chip takes 5.0 s: 3.6 m/s",
+     "3.6 × 3,600 ÷ 1,852 = 7.0 kn",
+     "Through the water, not over the ground"
+    ]
+   },
+   "cap": null
+  }
+ ]
+}

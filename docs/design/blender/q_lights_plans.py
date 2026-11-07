@@ -1,5 +1,5 @@
 # The answer plans for the "lights" test questions, and the Russian of every English string in each question's
-# 3d.labels.json and plan.json: writes figure-style/questions/bareboat-skipper/<id>/plan.json and ru.json.
+# 3d.labels.json and plan.json: writes figure-style/questions/<level>/<id>/plan.json and ru.json (level by id prefix).
 # The plans are schematic() specs (figure-schematic.js) or an SVG of our own for a side view; shown after the
 # answer, so they name the vessel and carry the reasoning, in agreement with the question's answer and why.
 #   python3 docs/design/blender/q_lights_plans.py [ids...]
@@ -7,8 +7,8 @@ import json, math, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', 'bareboat-skipper')
-LEVELS = {'bs': 'bareboat-skipper', 'ci': 'charter-checkin'}       # the level of a question, by its id's prefix
-def qdir(qid): return os.path.join(HERE, '..', 'figure-style', 'questions', LEVELS.get(qid[:2], 'bareboat-skipper'))
+LEVELS = {'bs': 'bareboat-skipper', 'ci': 'charter-checkin', 'yof': 'yachtmaster-offshore'}   # the level of a question, by its id's prefix
+def qdir(qid): return os.path.join(HERE, '..', 'figure-style', 'questions', LEVELS.get(qid.split('-')[0], 'bareboat-skipper'))
 LIST = {e['id']: e for lv in LEVELS.values() for e in json.load(open(os.path.join(HERE, '..', 'figure-style', 'questions', lv, 'lights.json')))}
 
 RU = {}
@@ -629,6 +629,276 @@ def svg_anchor_light():
 
 P['ci-213'] = dict(svg=svg_bow_on())
 P['ci-214'] = dict(svg=svg_anchor_light())
+
+# ---------- Yachtmaster Offshore ----------
+def svg_signal_mast():
+    """yof-404: the port's signal mast, three reds in a column, the yellow to the left of the top one."""
+    cx = 700
+    b = '<line x1="40" y1="560" x2="1240" y2="560" stroke="#3c8cbe" stroke-width="4"/>'
+    b += f'<rect x="{cx - 120}" y="520" width="240" height="40" fill="var(--ink)"/><line x1="{cx}" y1="520" x2="{cx}" y2="70" stroke="var(--ink)" stroke-width="8"/>'
+    b += f'<line x1="{cx}" y1="110" x2="{cx - 130}" y2="110" stroke="var(--ink)" stroke-width="6"/>'
+    for y in (110, 220, 330): b += glow(cx, y, 'r', 18)
+    b += glow(cx - 130, 110, 'y', 18)
+    b += pill(cx + 230, 220, T('three reds: no entry', 'три красных: вход запрещён'), 'red', 26)
+    b += pill(cx - 330, 110, T('yellow: exempts under 20 m', 'жёлтый: для судов до 20 м'), 'light', 24)
+    b += pill(cx - 330, 430, T('your ketch: 23 m — wait outside', 'ваш кеч 23 м — ждите снаружи'), 'accent', 26)
+    return frame(T('Port traffic signals · no entry, with an exemption', 'Сигналы движения в порту · вход запрещён, с исключением'),
+                 [T('Three reds in a column: vessels shall not proceed', 'Три красных по вертикали: суда не должны входить и выходить'),
+                  T('The yellow exempts only the vessels the port names: here under 20 m', 'Жёлтый освобождает лишь суда, названные портом: здесь до 20 м')], b)
+
+def platform_plan(title, key, ends=True):
+    """yof-026, yof-098: a platform from above, its main white light and its red end lights, the 500 m zone."""
+    deck = [[-110, -40], [110, -40], [110, 40], [-110, 40]]
+    c = [dict(x=0, z=0, r=500, c='red'), dict(x=0, z=0, r=20, fill='#ffffff', c='ink', dash='0')]
+    if ends: c += [dict(x=-110, z=0, r=20, fill='#e0251b', c='ink', dash='0'), dict(x=110, z=0, r=20, fill='#e0251b', c='ink', dash='0')]
+    return sch(title, key, [you(90, x=-700, z=700)], night=False, pad=50, zones=[dict(pts=deck, c='ink', fill='rgba(0,0,0,.25)')], circles=c,
+               paths=[turn([[-660, 660], [-560, 600], [-300, 590], [300, 590], [620, 540]])],
+               texts=[txt(0, -560, T('500 m safety zone: keep out', 'зона безопасности 500 м: не входить'), 'red'), txt(0, 640, T('pass outside', 'проходить снаружи'), 'accent')]
+                     + ([txt(-260, -170, T('red Mo(U): the ends', 'красный Mo(U): края')), txt(250, 170, T('white Mo(U)', 'белый Mo(U)'))] if ends else [txt(120, 90, T('white Mo(U)', 'белый Mo(U)'))]),
+               fit=[dict(x=-760, z=-560), dict(x=760, z=760)])
+
+P['yof-026'] = rhythm(T('Light rhythm · Morse U: an offshore platform', 'Характер огня · Морзе U: морская платформа'),
+    [k('An offshore platform: white Mo(U), · · —, usually every 15 s; the reds mark its ends', 'Морская платформа: белый Mo(U), · · —, обычно каждые 15 с; красные — её края'),
+     k('A safe-water mark flashes Mo(A), · —: one short, one long', 'Знак безопасных вод — Mo(A), · —: короткий и длинный')],
+    [dict(label=T('Mo(U) 15s', 'Mo(U) 15s'), note=T('· · — : the platform', '· · — : платформа'), period=15, flashes=[[0, 0.5], [1.2, 0.5], [2.4, 1.6]], hi=True),
+     dict(label=T('Mo(A) 6s', 'Mo(A) 6s'), note=T('· — : safe water', '· — : безопасные воды'), period=6, flashes=[[0, 0.5], [1.2, 1.6]])], T_=15, tick=5)
+
+P['yof-076'] = sch(T('Wind farm at night · the yellows mark its outline', 'Ветропарк ночью · жёлтые обозначают его границу'),
+    [k('Corner and edge turbines: yellow lights flashing together, for vessels', 'Угловые и крайние турбины: жёлтые огни, мигают вместе — для судов'),
+     k('The red lights high on the nacelles are for aircraft, not for you', 'Красные огни высоко на гондолах — для авиации, не для вас')],
+    [you(0, x=-900, z=900)], night=False, pad=50,
+    circles=[dict(x=x, z=z, r=48, fill='#ffa800' if (abs(x) == 900 or abs(z) == 600) else '#9aa4ae', c='ink', dash='0')
+             for x in (-900, -300, 300, 900) for z in (-600, 0, 600)],
+    zones=[dict(pts=[[-900, -600], [900, -600], [900, 600], [-900, 600]], c='ink', fill='rgba(255,168,0,.06)')],
+    paths=[turn([[-900, 860], [-1050, 700], [-1080, 0], [-1080, -700]])],
+    texts=[txt(-1100, 300, T('yellow: the edge', 'жёлтые: граница'), 'accent'), txt(0, 0, T('red: aircraft only', 'красные: только для авиации'))],
+    fit=[dict(x=-1200, z=-760), dict(x=1000, z=1000)])
+
+P['yof-098'] = platform_plan(T('A large structure · red lights at its ends', 'Большое сооружение · красные огни по краям'),
+    [k('Main light white Mo(U); red Mo(U) lights mark the ends of a large platform', 'Основной огонь белый Mo(U); красные Mo(U) обозначают края большой платформы'),
+     k('Pass outside the reds, clear of the 500 m safety zone', 'Проходите снаружи от красных, вне зоны безопасности 500 м')])
+
+P['yof-404'] = dict(svg=svg_signal_mast())
+
+P['yof-504'] = sch(T('Lights · a warship recovering aircraft', 'Огни · военный корабль принимает вертолёт'),
+    [k('Red-white-red all round: launching or recovering aircraft makes her RAM (Rule 3(g)(iv))', 'Красный-белый-красный круговые: приём вертолёта — она ограничена в манёвре (правило 3(g)(iv))'),
+     k('Rule 18(b): a sailing vessel keeps clear of a vessel restricted in her ability to manoeuvre', 'Правило 18(b): парусное судно уступает судну, ограниченному в манёвре')],
+    [you(tag='under sail'), other(-30, 380, 80, T('Warship, RAM', 'Военный корабль, ограничен в манёвре'), power=True, stack=['r', 'w', 'r'], stackDx=-150, scale=3.4)],
+    paths=[line([0, 0], [-190, -329]), turn([[0, -40], [-30, -120], [-110, -170]])],
+    texts=[txt(170, -60, T('you keep clear', 'уступаете вы'), 'red'), txt(-480, -200, T('helicopter landing aft', 'вертолёт садится на корму'))],
+    fit=[dict(x=-700, z=-470), dict(x=240, z=110)])
+
+P['yof-514'] = sch(T('Narrow channel · a trawler in the fairway', 'Узкость · траулер на фарватере'),
+    [k('Rule 9(c): fishing must not impede a vessel navigating within the channel', 'Правило 9(c): занятое ловом не должно затруднять движение судна в узкости'),
+     k('Once risk of collision exists, Rule 18 still binds you: you keep clear (8(f)(iii))', 'Если возникла опасность столкновения, правило 18 продолжает действовать: уступаете вы (8(f)(iii))')],
+    [you(power=True, x=40, z=0), other(0, 360, 180, T('Trawler', 'Траулер'), x=10, z=-360, stack=['g', 'w'], stackDx=-120)],
+    zones=[dict(pts=[[-130, -560], [130, -560], [130, 120], [-130, 120]], c='ink', fill='rgba(0,118,190,.08)')],
+    paths=[turn([[40, -40], [80, -120], [90, -230]])],
+    texts=[txt(-330, -150, T('narrow channel', 'узкость'), 'accent'), txt(480, -420, T('she must not impede you', 'она не должна мешать'), 'light'),
+           txt(480, -150, T('risk: you keep clear', 'опасность: уступаете вы'), 'red')],
+    fit=[dict(x=-600, z=-600), dict(x=760, z=160)])
+
+P['yof-517'] = sch(T('Traffic separation · fishing in the zone', 'Разделение движения · лов в зоне разделения'),
+    [k('Red over white all round, no sidelights: fishing other than trawling, not making way', 'Красный над белым, круговые, без бортовых: лов рыбы (не траление), без хода'),
+     k('Rule 10(e)(ii): a vessel may fish inside the separation zone', 'Правило 10(e)(ii): в зоне разделения ловить рыбу можно')],
+    [you(power=True, x=0, z=300), dict(x=0, z=0, hdg=90, label=T('Fishing', 'Лов рыбы'), bearing=False, noHeading=True, labelAbove=True, stack=['r', 'w'], stackDx=-130, scale=3.0)],
+    night=False, pad=50,
+    zones=[dict(pts=[[-560, -260], [560, -260], [560, -90], [-560, -90]], c='ink', fill='rgba(0,118,190,.08)'),
+           dict(pts=[[-560, -90], [560, -90], [560, 90], [-560, 90]], c='course', fill='rgba(255,200,0,.14)'),
+           dict(pts=[[-560, 90], [560, 90], [560, 260], [-560, 260]], c='ink', fill='rgba(0,118,190,.08)')],
+    texts=[txt(380, 0, T('separation zone', 'зона разделения'), 'accent'), txt(-380, -175, T('lane →', 'полоса →')), txt(-380, 175, T('← lane', '← полоса'))],
+    paths=[dict(pts=[[60, 260], [60, -330]], c='course', dash='16 12', w=5, arrow=True)],
+    fit=[dict(x=-560, z=-340), dict(x=560, z=380)])
+
+P['yof-523'] = sch(T('Lights · in doubt, take the worse case', 'Огни · при сомнении — худший вариант'),
+    [k('Red over green says sail; the white below it says power: lights that do not agree', 'Красный над зелёным — парус; белый под ними — мотор: огни противоречат друг другу'),
+     k('In doubt (Rules 2 and 7(a)) treat her as a sailing vessel: you keep clear, early', 'При сомнении (правила 2 и 7(a)) считайте её парусной: уступаете вы, заранее')],
+    [you(power=True), other(-25, 330, 145, T('Sail? Power?', 'Парус? Мотор?'), stack=['r', 'g', 'w'], stackDx=-140)],
+    paths=[line([0, 0], [-139, -299])],
+    texts=[txt(180, -60, T('keep clear, early', 'уступить, заранее'), 'red'), txt(-260, -170, T('bearing steady', 'пеленг не меняется'), 'red')],
+    fit=[dict(x=-400, z=-430), dict(x=260, z=110)])
+
+P['yof-524'] = sch(T('Lights · a pilot vessel on duty', 'Огни · лоцманское судно при исполнении'),
+    [k('White over red all round: a pilot vessel on duty, here under way (red sidelight)', 'Белый над красным, круговые: лоцманское судно при исполнении, на ходу (красный бортовой)'),
+     k('A pilot vessel is power-driven, with no special place in Rule 18: she keeps out of your way', 'Лоцманское судно — механическое, особого места в правиле 18 у него нет: уступает оно')],
+    [you(tag='under sail'), other(30, 330, 225, T('Pilot', 'Лоцман'), power=True, stack=['w', 'r'], stackDx=-130)],
+    paths=[line([0, 0], [165, -286])],
+    texts=[txt(-170, -60, T('you stand on', 'вы сохраняете курс'), 'accent'), txt(330, -120, T('she keeps clear', 'уступает она'), 'red')],
+    fit=[dict(x=-230, z=-430), dict(x=420, z=110)])
+
+P['yof-526'] = sch(T('Lights · a WIG craft in flight', 'Огни · экраноплан в полёте'),
+    [k('Rule 23(c): a WIG craft taking off, landing or flying near the surface adds a flashing red', 'Правило 23(c): экраноплан при взлёте, посадке и полёте у поверхности добавляет проблесковый красный'),
+     k('Rule 18(f): she keeps well clear of all vessels and avoids impeding them', 'Правило 18(f): экраноплан держится в стороне от всех судов и не затрудняет их движение')],
+    [you(), other(0, 340, 250, T('WIG craft', 'Экраноплан'), power=True, stack=['r'], stackDx=140)],
+    paths=[dict(pts=[[-60, -330], [-260, -400], [-480, -470]], c='ink', w=4, dash='8 8', arrow=True)],
+    texts=[txt(-300, -280, T('very fast, just above the water', 'очень быстро, над самой водой')), txt(170, -60, T('she keeps clear', 'уступает она'), 'red')],
+    fit=[dict(x=-520, z=-500), dict(x=260, z=110)])
+
+P['yof-539'] = work(T('Lights · a trawler hauling her nets', 'Огни · траулер выбирает сети'),
+    [k('Green over white: trawling; below them white over red: hauling nets (Annex II)', 'Зелёный над белым: траление; ниже белый над красным: выбирает сети (Приложение II)'),
+     k('Two whites below: shooting nets; two reds: the net fast on an obstruction', 'Два белых ниже — выметывает сети; два красных — сеть зацепилась за препятствие')],
+    270, T('Trawler', 'Траулер'), ['g', 'w', 'w', 'r'],
+    dict(paths=[dict(pts=[[22, -4], [70, -6]], c='ink', dash='8 8', w=3), dict(pts=[[22, 4], [70, 6]], c='ink', dash='8 8', w=3)],
+         texts=[txt(95, -26, T('hauling: white over red', 'выбирает: белый над красным'), 'accent')], fit=[dict(x=-70, z=-50), dict(x=150, z=50)]))
+
+P['yof-540'] = work(T('Lights · a purse seiner hampered by her net', 'Огни · кошельковый сейнер, стеснённый сетью'),
+    [k('Red over white: fishing; two yellows flashing in turn below: a purse seiner (Annex II 3)', 'Красный над белым: лов рыбы; ниже два жёлтых, мигающих поочерёдно: кошельковый сейнер (Приложение II 3)'),
+     k('Her net circles round her and she cannot move off it: keep well clear', 'Её сеть кольцом вокруг судна, и уйти от неё она не может: держитесь подальше')],
+    270, T('Purse seiner', 'Кошельковый сейнер'), ['r', 'w', 'y', 'y'],
+    dict(circles=[dict(x=30, z=0, r=38, c='ink', dash='8 8')], texts=[txt(30, -52, T('the net', 'сеть'), 'red')], fit=[dict(x=-70, z=-60), dict(x=110, z=60)]))
+
+P['yof-541'] = work(T('Lights · a trawler with her net fast', 'Огни · траулер, сеть зацепилась'),
+    [k('Green over white: trawling; two reds below them: her net is fast on an obstruction', 'Зелёный над белым: траление; два красных ниже: сеть зацепилась за препятствие'),
+     k('She cannot move off; two reds alone would mean not under command', 'Уйти она не может; два красных без огней лова означали бы «лишено возможности управляться»')],
+    270, T('Trawler', 'Траулер'), ['g', 'w', 'r', 'r'],
+    dict(paths=[dict(pts=[[22, 0], [110, 10]], c='ink', dash='8 8', w=3)], rocks=[dict(x=120, z=12)],
+         texts=[txt(120, -18, T('net fast', 'сеть зацепилась'), 'red')], fit=[dict(x=-70, z=-50), dict(x=150, z=50)]))
+
+P['yof-542'] = sch(T('Lights · a dredger at anchor', 'Огни · земснаряд на якоре'),
+    [k('Red-white-red, and the red and green pairs: RAM, dredging (Rule 27(d))', 'Красный-белый-красный, пары красных и зелёных: ограничен в манёвре, ведёт дноуглубление (правило 27(d))'),
+     k('At anchor these replace her anchor lights (27(d)(iv)); pass on the side of the greens', 'На якоре они заменяют якорные огни (27(d)(iv)); проходите со стороны зелёных')],
+    [dict(x=0, z=-150, hdg=180, label=T('Dredger at anchor', 'Земснаряд на якоре'), bearing=False, noHeading=True, labelAbove=True, stack=['r', 'w', 'r'], stackDx=-150, scale=3.2),
+     you(0, x=0, z=200)], night=False, pad=60,
+    anchors=[dict(x=0, z=-20, s=0.8)],
+    zones=[dict(pts=[[-60, -230], [-260, -230], [-260, -60], [-60, -60]], c='red', fill='rgba(224,37,27,.10)')],
+    paths=[dict(pts=[[0, -75], [0, -45]], c='line', w=3, dash='4 4'), turn([[40, 170], [180, 60], [200, -150], [180, -300]])],
+    texts=[txt(-170, -20, T('two reds: obstructed', 'два красных: препятствие'), 'red'), txt(250, -150, T('two greens: pass here', 'два зелёных: проход здесь'), 'accent'),
+           txt(260, -330, T('no anchor light needed', 'якорный огонь не нужен'))],
+    fit=[dict(x=-280, z=-480), dict(x=480, z=260)])
+
+P['yof-548'] = sch(T('Light signals · one flash', 'Световые сигналы · одна вспышка'),
+    [k('One flash of about a second: “I am altering my course to starboard” (Rule 34(b))', 'Одна вспышка около секунды: «Изменяю курс вправо» (правило 34(b))'),
+     k('The light is all-round white, seen at least 5 M; it may go with or without the sound', 'Огонь белый круговой, видимость не менее 5 миль; подаётся со звуком или без')],
+    [you(power=True), other(15, 360, 255, 'Ship', power=True, scale=3.2)],
+    paths=[turn([[60, -330], [20, -340], [-20, -370], [-40, -420]])],
+    texts=[txt(330, -460, T('one flash: turning to starboard', 'одна вспышка: поворачиваю вправо'), 'red')],
+    fit=[dict(x=-200, z=-520), dict(x=420, z=110)])
+
+P['yof-563'] = sch(T('Lights · constrained by her draught, in a lane', 'Огни · стеснено осадкой, в полосе движения'),
+    [k('Three all-round reds in a column: constrained by her draught (Rule 28)', 'Три круговых красных по вертикали: стеснено своей осадкой (правило 28)'),
+     k('Rules 18(d) and 10(j): you avoid impeding her — act early, pass astern of her', 'Правила 18(d) и 10(j): не затрудняйте её движение — заранее, за её кормой')],
+    [you(tag='under sail'), other(-30, 380, 90, T('Constrained by draught', 'Стеснено осадкой'), power=True, stack=['r', 'r', 'r'], stackDx=-150, scale=3.6)],
+    zones=[dict(pts=[[-700, -420], [500, -420], [500, -240], [-700, -240]], c='ink', fill='rgba(0,118,190,.08)')],
+    paths=[line([0, 0], [-190, -329]), turn([[0, -40], [-40, -110], [-160, -150], [-330, -150]])],
+    texts=[txt(380, -330, T('eastbound lane', 'полоса на восток'), 'accent'), txt(170, -60, T('do not impede her', 'не мешайте ей'), 'red')],
+    fit=[dict(x=-700, z=-480), dict(x=500, z=110)])
+
+P['yof-565'] = dict(sch=dict(night=True, padPx=70, title=T('Lights · a tricolour, tack unknown', 'Огни · трёхцветный, галс неизвестен'), wind=0,
+    key=[k('Her red shows you are on her port side: her heading is between 150° and 262°T', 'Виден её красный — вы с её левого борта: её курс между 150° и 262° ист.'),
+         k('In a north wind that is either tack: on port tack you keep clear (Rule 12(a)(iii))', 'При ветре N это любой галс: на левом галсе вы уступаете (правило 12(a)(iii))')],
+    boats=[you(45, tag=T('port tack', 'левый галс')),
+           dict(x=-170, z=-300, hdg=200, label=T('She: tack unknown', 'Она: галс неизвестен'), bearing=False, noHeading=True, labelAbove=True)],
+    paths=[line([0, 0], [-170, -300]),
+           dict(pts=[[-150, -240], [-115, -100]], c='ink', w=4, dash='8 8', arrow=True), dict(pts=[[-225, -280], [-370, -225]], c='ink', w=4, dash='8 8', arrow=True)],
+    texts=[txt(200, 60, T('you keep clear', 'уступаете вы'), 'red'), txt(-60, -60, T('160°T: port tack?', '160° ист.: левый галс?')),
+           txt(-470, -260, T('250°T: starboard tack?', '250° ист.: правый галс?')), txt(120, -200, T('she bears 330°T', 'она на 330° ист.'))],
+    fit=[dict(x=-640, z=-520), dict(x=330, z=160)]))
+
+P['yof-567'] = dict(noScale=True, **sch(T('Head-on in doubt · turn to starboard, boldly', 'Сомнение во встречном · решительно вправо'),
+    [k('Two masthead lights almost in line, only her green: end-on or nearly so', 'Два топовых почти в створе, виден лишь зелёный: встречный или почти встречный'),
+     k('Rule 14(c): assume head-on; a bold, early turn to starboard opens the 0.3 M CPA, port to port', 'Правило 14(c): считайте курсы встречными; ранний крупный поворот вправо увеличит CPA 0,3 мили — левыми бортами')],
+    [you(power=True), other(3, 560, 180, 'Ship', power=True, scale=3.2)],
+    paths=[turn([[0, -40], [60, -110], [150, -150], [230, -170]]), dict(pts=[[29, -500], [29, 60]], c='red', w=3, dash='8 10')],
+    texts=[txt(-200, -300, T('as she is: stbd to stbd, 0.3 M', 'сейчас: правыми бортами, 0,3 мили'), 'red'), txt(260, -60, T('bold turn to starboard', 'решительно вправо'), 'accent'),
+           txt(-160, -540, T('6 M', '6 миль'))],
+    fit=[dict(x=-330, z=-760), dict(x=330, z=110)]))
+
+P['yof-572'] = sch(T('Lights · not under command, making way', 'Огни · лишённое возможности управляться, на ходу'),
+    [k('Two all-round reds; making way she adds sidelights and a sternlight: from astern you see the sternlight', 'Два круговых красных; на ходу добавляет бортовые и кормовой — с кормы виден кормовой'),
+     k('You are overtaking a vessel not under command: you keep clear (Rules 13 and 18)', 'Вы обгоняете судно, лишённое возможности управляться: уступаете вы (правила 13 и 18)')],
+    [you(power=True), other(0, 300, 0, T('Not under command', 'Лишено возможности управляться'), stack=['r', 'r'], stackDx=-150, labelAbove=False)],
+    paths=[turn([[10, -40], [90, -140], [110, -330]])],
+    texts=[txt(230, -160, T('keep clear', 'уступить'), 'red'), txt(-230, -60, T('9 kn vs 3 kn', '9 уз против 3 уз'))],
+    fit=[dict(x=-260, z=-420), dict(x=300, z=110)])
+
+P['yof-573'] = work(T('Lights · not under command, drifting', 'Огни · лишено возможности управляться, в дрейфе'),
+    [k('Two all-round reds: not under command; she moves only with the current', 'Два круговых красных: лишено возможности управляться; движется лишь с течением'),
+     k('Rule 27(a)(iii): sidelights and sternlight only when making way through the water — so none', 'Правило 27(a)(iii): бортовые и кормовой — лишь при ходе относительно воды, а его нет')],
+    200, T('Not under command', 'Лишено возможности управляться'), ['r', 'r'],
+    dict(paths=[dict(pts=[[30, 15], [90, -7]], c='ink', w=4, arrow=True), dict(pts=[[-60, 45], [0, 23]], c='course', w=4, dash='8 8', arrow=True)],
+         texts=[txt(105, -30, T('over the ground: 070° 2 kn', 'над грунтом: 070° 2 уз')), txt(-60, 70, T('current 070° 2 kn', 'течение 070° 2 уз'), 'accent')],
+         fit=[dict(x=-80, z=-60), dict(x=140, z=80)]))
+
+def tow_astern(title, key, ram=False):
+    """yof-575, yof-577: you right astern of a tow, the tug ahead of her barge; seen from astern."""
+    tug = dict(x=0, z=-1150, hdg=0, label=T('Tug', 'Буксировщик'), bearing=False, noHeading=True, labelAbove=True, power=True,
+               stack=(['r', 'w', 'r', 'y', 'w'] if ram else ['y', 'w']), stackDx=-130)
+    tow = dict(x=0, z=-600, hdg=0, label=T('Tow', 'Буксируемое'), bearing=False, noHeading=True, labelAbove=False)
+    return sch(title, key, [you(power=True), tug, tow],
+               paths=[dict(pts=[[0, -1060], [0, -690]], c='ink', w=4, dash='8 8'), turn([[30, -60], [330, -300], [380, -700]])],
+               texts=[txt(260, -880, T('tow line', 'буксирный трос')), txt(-620, -330, T('from astern: no masthead lights', 'с кормы: топовых не видно'), 'red')],
+               fit=[dict(x=-1000, z=-1300), dict(x=600, z=110)])
+
+P['yof-575'] = tow_astern(T('Lights · a tow seen from astern', 'Огни · буксировка с кормы'),
+    [k('The length shows in two or three masthead lights, seen only from ahead and abeam (Rule 24(a))', 'Длину показывают два или три топовых — их видно только с носа и с траверза (правило 24(a))'),
+     k('From astern only the yellow towing light and the sternlights: you cannot tell the length', 'С кормы — только жёлтый буксировочный и кормовые огни: длину не определить')])
+
+P['yof-577'] = tow_astern(T('Lights · a tow that cannot deviate', 'Огни · буксировка, не может отклониться от курса'),
+    [k('Red-white-red over the yellow towing light and sternlight: a tug restricted by her tow (Rule 27(c))', 'Красный-белый-красный над жёлтым буксировочным и кормовым: буксировщик ограничен в манёвре (правило 27(c))'),
+     k('The low white on the left is her tow: never pass between them', 'Низкий белый слева — буксируемое: никогда не проходите между ними')], ram=True)
+
+P['yof-578'] = sch(T('Lights · a dredger under way, from astern', 'Огни · земснаряд на ходу, с кормы'),
+    [k('Rule 27(d): the two greens mark the side to pass, the two reds the obstruction', 'Правило 27(d): два зелёных — сторона прохода, два красных — препятствие'),
+     k('From astern her port side, with the greens, is on your left; you overtake and keep clear (Rule 13)', 'С кормы её левый борт с зелёными — слева от вас; вы обгоняете и уступаете (правило 13)')],
+    [dict(x=0, z=-250, hdg=0, label=T('Dredger', 'Земснаряд'), bearing=False, noHeading=True, labelAbove=True, stack=['r', 'w', 'r'], stackDx=150, scale=3.2),
+     you(0, x=0, z=150)], night=False, pad=60,
+    zones=[dict(pts=[[60, -350], [260, -350], [260, -150], [60, -150]], c='red', fill='rgba(224,37,27,.10)')],
+    paths=[turn([[-20, 110], [-130, 0], [-150, -250], [-120, -420]])],
+    texts=[txt(170, -100, T('two reds: obstructed', 'два красных: препятствие'), 'red'), txt(-280, -250, T('two greens: pass here', 'два зелёных: проход здесь'), 'accent')],
+    fit=[dict(x=-330, z=-470), dict(x=300, z=210)])
+
+P['yof-579'] = sch(T('Lights · a small boat with divers down', 'Огни · малое судно, водолазы под водой'),
+    [k('Red-white-red: too small for all the RAM lights, she shows these when diving (Rule 27(e)(i))', 'Красный-белый-красный: малое судно с водолазами несёт только их (правило 27(e)(i))'),
+     k('Divers may be in the water round her: slow right down and pass wide', 'Вокруг могут быть водолазы: сильно сбавьте ход и обходите широко')],
+    [you(power=True, x=0, z=300), dict(x=0, z=-150, hdg=90, label=T('Diving boat', 'Судно с водолазами'), bearing=False, noHeading=True, labelAbove=True, stack=['r', 'w', 'r'], stackDx=-140, scale=2.6)],
+    night=False, pad=60, circles=[dict(x=0, z=-150, r=120, c='red')],
+    paths=[turn([[20, 260], [150, 100], [210, -150], [160, -380]])],
+    texts=[txt(-230, -20, T('divers may be down', 'возможны водолазы'), 'red'), txt(330, 120, T('slow, pass wide', 'малым ходом, широко'), 'accent'),
+           txt(-260, 200, T('dive site', 'место погружений'))],
+    fit=[dict(x=-360, z=-420), dict(x=360, z=350)])
+
+P['yof-580'] = work(T('Lights · RAM at anchor', 'Огни · ограничено в манёвре, на якоре'),
+    [k('Red-white-red all round: restricted in ability to manoeuvre, servicing a buoy', 'Красный-белый-красный, круговые: ограничено в манёвре, обслуживает буй'),
+     k('Rule 27(b)(iv): at anchor she adds her anchor light; only 27(d) work drops it', 'Правило 27(b)(iv): на якоре добавляет якорный огонь; не несут его лишь при работах по 27(d)')],
+    90, T('Buoy tender', 'Судно обслуживания буёв'), ['r', 'w', 'r'],
+    dict(anchors=[dict(x=48, z=0, s=0.8)], paths=[dict(pts=[[22, 0], [40, 0]], c='line', w=3, dash='4 4')],
+         circles=[dict(x=26, z=0, r=2.6, fill='#ffffff', c='ink', dash='0')],
+         marks=[dict(x=-95, z=20, kind='lat-port', bearing=False)],
+         texts=[txt(40, -28, T('anchor light: correct', 'якорный огонь: верно'), 'accent'), txt(-95, 48, T('the buoy', 'буй'))],
+         fit=[dict(x=-130, z=-50), dict(x=120, z=70)]))
+
+P['yof-581'] = sch(T('Lights · a trawler shooting her nets', 'Огни · траулер выметывает сети'),
+    [k('Green over white: trawling; two whites below them: shooting nets (Annex II 2(a)(i))', 'Зелёный над белым: траление; два белых ниже: выметывает сети (Приложение II 2(a)(i))'),
+     k('Her trawl is paying out astern, towards you: keep well clear of her stern', 'Трал уходит за корму — в вашу сторону: держитесь подальше от её кормы')],
+    [you(power=True), other(0, 420, 350, T('Trawler', 'Траулер'), stack=['g', 'w', 'w', 'w'], stackDx=-150)],
+    paths=[dict(pts=[[-8, -395], [0, -300], [10, -220]], c='ink', w=3, dash='8 8'), dict(pts=[[-2, -395], [30, -300], [45, -230]], c='ink', w=3, dash='8 8'),
+           turn([[-10, -40], [-120, -120], [-170, -300]])],
+    texts=[txt(160, -260, T('trawl paying out', 'трал уходит за корму'), 'red'), txt(-260, -150, T('keep clear', 'уступить'), 'accent'), txt(170, -60, T('1 M', '1 миля'))],
+    fit=[dict(x=-330, z=-560), dict(x=260, z=110)])
+
+P['yof-583'] = sch(T('Lights · a hovercraft head-on', 'Огни · судно на воздушной подушке на встречном курсе'),
+    [k('Flashing yellow all round: an air-cushion vessel in the non-displacement mode (Rule 23(b))', 'Проблесковый жёлтый круговой: судно на воздушной подушке в неводоизмещающем режиме (правило 23(b))'),
+     k('She is power-driven, end-on: Rule 14 — both alter to starboard, port to port', 'Она — механическое судно, курсы встречные: правило 14 — обе вправо, левыми бортами')],
+    [you(power=True), other(0, 420, 180, T('Hovercraft', 'Судно на воздушной подушке'), power=True, stack=['y'], stackDx=-130)],
+    paths=[turn([[0, -40], [55, -140], [70, -230]]), turn([[15, -380], [-40, -280], [-55, -190]])],
+    texts=[txt(220, -150, T('turn to starboard', 'отворот вправо'), 'accent')], fit=[dict(x=-240, z=-560), dict(x=280, z=100)])
+
+P['yof-584'] = sch(T('Lights · two masthead lights, length unknown', 'Огни · два топовых, длина неизвестна'),
+    [k('From 50 m two masthead lights are required; under 50 m a second one is allowed (Rule 23(a)(ii))', 'С 50 м два топовых обязательны; короче 50 м второй разрешён (правило 23(a)(ii))'),
+     k('A tug’s two or three are in a vertical line; these are one aft and higher, as on any vessel', 'У буксировщика два-три топовых по вертикали; здесь задний выше — как у обычного судна')],
+    [you(power=True), other(10, 380, 135, T('Power, under or over 50 m?', 'Механическое: меньше или больше 50 м?'), power=True, scale=3.0)],
+    texts=[txt(-330, -150, T('two masthead lights: not proof of 50 m', 'два топовых: ещё не 50 м'), 'red')],
+    fit=[dict(x=-700, z=-600), dict(x=400, z=110)])
+
+P['yof-589'] = sch(T('Lights · aground', 'Огни · на мели'),
+    [k('Rule 30(d): aground — her anchor light and two all-round reds', 'Правило 30(d): на мели — якорный огонь и два круговых красных'),
+     k('You saw the white from every side: all-round, not a 135° sternlight — she is not NUC under way', 'Белый виден со всех сторон: он круговой, не кормовой на 135° — это не НУК на ходу')],
+    [dict(x=0, z=0, hdg=90, label=T('Aground', 'На мели'), bearing=False, noHeading=True, labelAbove=True, stack=['r', 'r'], stackDx=-160, scale=3.2)],
+    night=False, pad=60,
+    zones=[dict(pts=[[-200, -90], [150, -110], [220, 30], [60, 110], [-190, 80]], c='red', fill='rgba(224,37,27,.08)')],
+    circles=[dict(x=0, z=0, r=330, c='course')],
+    texts=[txt(0, 140, T('charted shoal', 'отмель по карте'), 'red'), txt(290, -290, T('seen from every side', 'видно со всех сторон'), 'accent')],
+    fit=[dict(x=-360, z=-360), dict(x=360, z=360)])
 
 def main(ids):
     for qid in ids:

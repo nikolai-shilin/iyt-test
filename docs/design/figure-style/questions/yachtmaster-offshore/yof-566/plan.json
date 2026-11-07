@@ -1,0 +1,106 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Overtaking a sailing yacht · finally past and clear",
+  "key": [
+   "Rule 13(d): a later change of bearing does not make you a crossing vessel",
+   "Turn east across her bow only when finally past and clear, well ahead; Rule 18 says the same"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": 126.8,
+    "z": -271.9,
+    "hdg": 0,
+    "label": "Yacht",
+    "bearing": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -40
+     ],
+     [
+      0,
+      -270.0
+     ],
+     [
+      0,
+      -450.0
+     ],
+     [
+      40,
+      -540.0
+     ],
+     [
+      160,
+      -585.0
+     ],
+     [
+      330,
+      -600.0
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -100,
+    "z": -630.0
+   },
+   {
+    "x": 420,
+    "z": 100
+   },
+   {
+    "x": -90.0,
+    "z": -90.0
+   },
+   {
+    "x": 90.0,
+    "z": 90.0
+   },
+   {
+    "x": 36.8,
+    "z": -361.9
+   },
+   {
+    "x": 216.8,
+    "z": -181.9
+   }
+  ],
+  "texts": [
+   {
+    "x": -301.2,
+    "z": -193.6,
+    "text": "not across her bow yet",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 223.4,
+    "z": -661.5,
+    "text": "past and clear: now turn",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": 415.3,
+    "z": -375.0,
+    "text": "harbour: east",
+    "free": true
+   }
+  ]
+ }
+}

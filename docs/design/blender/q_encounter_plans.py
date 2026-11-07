@@ -7,8 +7,8 @@ import json, math, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 QDIR = os.path.join(HERE, '..', 'figure-style', 'questions', 'bareboat-skipper')
-LEVELS = {'bs': 'bareboat-skipper', 'ci': 'charter-checkin'}       # the level of a question, by its id's prefix
-def qdir(qid): return os.path.join(HERE, '..', 'figure-style', 'questions', LEVELS.get(qid[:2], 'bareboat-skipper'))
+LEVELS = {'bs': 'bareboat-skipper', 'ci': 'charter-checkin', 'yof': 'yachtmaster-offshore'}   # the level of a question, by its id's prefix
+def qdir(qid): return os.path.join(HERE, '..', 'figure-style', 'questions', LEVELS.get(qid.split('-')[0], 'bareboat-skipper'))
 LIST = {x['id']: x for lv in LEVELS.values() for x in json.load(open(os.path.join(HERE, '..', 'figure-style', 'questions', lv, 'encounter.json')))}
 BUILTIN = {'You': 'Вы', 'Other': 'Судно', 'Wind': 'Ветер', 'N': 'С', '?': '?'}
 
@@ -388,6 +388,99 @@ plan('bs-372', 300, ('Lookout under the genoa', 'Наблюдение из-по�
      [('Starboard tack, genoa to port: it hides the leeward bow', 'Правый галс, генуя слева: она закрывает подветренную скулу'), ('Look under the genoa to leeward, regularly (Rule 5)', 'Регулярно заглядывайте под геную с подветренной стороны (правило 5)')],
      lambda c: dict(zones=[{'pts': [[0, 0], R(c.near(c.Y, c.hy - 8, 1.3)), R(c.near(c.Y, c.hy - 50, 1.45)), R(c.near(c.Y, c.hy - 95, 1.3))], 'c': 'red', 'fill': 'rgba(224,37,27,.08)'}],
                     texts=[T(c.near(c.Y, c.hy - 40, 0.55), ('hidden by the genoa', 'закрыто генуей'), 'red')]), bearing=False)
+
+# ---- Yachtmaster Offshore ----
+plan('yof-511', 1852, ('Risk of collision · a very large ship close', 'Опасность столкновения · огромное судно рядом'),
+     [('Rule 7(d)(ii): with a very large ship at close range, risk may exist even as the bearing changes', 'Правило 7(d)(ii): с огромным судном рядом опасность может быть и при меняющемся пеленге'),
+      ('You take bearings of her bridge, right aft: her bow is 300 m ahead of it and passes far closer', 'Вы пеленгуете её мостик в корме, а нос на 300 м впереди и пройдёт гораздо ближе')],
+     lambda c: dict(paths=[c.line(c.O, c.near(c.O, c.ho, 0.165), 'red', 9, None), c.line(c.Y, c.near(c.O, c.ho, 0.165), 'red', 3, '6 10')],
+                    texts=[T(c.near(c.O, c.ho, 0.24), ('her bow: 300 m ahead of the bridge', 'её нос: 300 м впереди мостика'), 'red'),
+                           T(c.near(c.O, 90, 0.18), ('bridge: bearing draws aft', 'мостик: пеленг уходит на корму')),
+                           T(c.near(c.Y, 200, 0.2), ('risk may still exist', 'опасность может быть'), 'red')]))
+plan('yof-513', 600, ('Narrow channel · over 20 m under power', 'Узкость · больше 20 м под мотором'),
+     [('Rule 9(b) covers only vessels under 20 m and sailing vessels: not your 23 m motor yacht', 'Правило 9(b) — только для судов короче 20 м и парусных: не для вашей моторной яхты 23 м'),
+      ('Keep to the starboard side of the channel (9(a)) and meet her port to port (Rule 14)', 'Держитесь правой стороны узкости (9(a)) и расходитесь левыми бортами (правило 14)')], bearing=False,
+     fn=lambda c: dict(zones=[chan_zone(c, (-70, -0.45 * c.D), 0, 130, 1.6 * c.D)],
+                       texts=[T(c.near(c.Y, 90, 0.3), ('keep to starboard', 'держаться правой стороны'), 'accent'), T((-260, -0.9 * c.D), ('narrow channel', 'узкость'))],
+                       paths=[c.turn(c.Y, 0, 25, 0.12, 3), c.turn(c.O, 182, 20, 0.12, 3)]))
+plan('yof-519', 900, ('Crossing a lane · Rule 15 still applies', 'Пересечение полосы · правило 15 действует'),
+     [('Rule 10(j) binds only vessels under 20 m and sailing vessels; you are a 23 m motor yacht', 'Правило 10(j) — только для судов короче 20 м и парусных; вы — моторная яхта 23 м'),
+      ('Rule 10(a) leaves Rule 15 in force: she has you on her starboard side and gives way', 'Правило 10(a) оставляет в силе правило 15: вы у неё справа — уступает она')],
+     lambda c: dict(zones=[chan_zone(c, c.O, 90, 170, 3600)],
+                    texts=[T(add(c.O, (0, -230)), ('eastbound lane', 'полоса на восток')), T(c.near(c.O, 200, 0.35), ('she gives way', 'она уступает'), 'red'),
+                           T(c.near(c.Y, 120, 0.3), ('you stand on, watch her', 'вы сохраняете курс и следите'), 'accent')]))
+plan('yof-522', 400, ('Overtaking · from abaft her beam', 'Обгон · из-за её траверза'),
+     [('From her you bear 165°T: 120° from her bow, more than 22.5° abaft her beam', 'От неё вы на 165° ист.: 120° от её носа, более 22,5° позади траверза'),
+      ('Rule 13: you are overtaking and keep clear until finally past and clear', 'Правило 13: вы обгоняете и уступаете, пока окончательно не пройдёте')],
+     lambda c: dict(paths=[c.line(c.O, c.near(c.O, c.ho + 112.5, 0.9), 'ink', 3, '4 10'), c.line(c.O, c.near(c.O, c.ho - 112.5, 0.9), 'ink', 3, '4 10'), c.turn(c.Y, c.hy, -25, 0.12, 3)],
+                    texts=[T(c.near(c.Y, 110, 0.35), ('overtaking: you keep clear', 'обгоняете: уступаете вы'), 'red'), T(c.near(c.O, c.ho + 140, 0.55), ('22.5° abaft her beam', '22,5° позади её траверза'))]))
+plan('yof-528', 2778, ('Fog · a vessel you are overtaking', 'Туман · судно, которое вы обгоняете'),
+     [('Rule 19(d)(i): avoid turning to port for a vessel forward of the beam — other than one being overtaken', 'Правило 19(d)(i): не поворачивайте влево к судну впереди траверза — кроме обгоняемого'),
+      ('She is on your course at 4 kn, you at 12 kn: you are overtaking, and may pass her to port', 'Она идёт вашим курсом 4 уз, вы — 12 уз: вы обгоняете и можете обойти её слева')],
+     lambda c: dict(texts=[T(c.near(c.Y, 90, 0.35), ('fog', 'туман'), None, pill=False, size=40), T(c.near(c.Y, 290, 0.4), ('port: allowed when overtaking', 'влево: можно при обгоне'), 'accent')],
+                    paths=[c.turn(c.Y, 0, -25, 0.15, 3)]))
+plan('yof-534', 400, ('Her lights from your bearing', 'Её огни с вашего направления'),
+     [('You bear 120°T from her: 40° on her port bow', 'От неё вы на 120° ист.: в 40° слева от её носа'),
+      ('Inside her masthead and red sectors (to 112.5° each side), outside her sternlight’s: both masthead lights and red', 'Внутри секторов топовых и красного (до 112,5° на борт), вне кормового: оба топовых и красный')],
+     lambda c: dict(night=True, texts=[T(c.near(c.O, 90, 0.45), ('masthead lights + red', 'топовые + красный'), 'accent')]), power=True)
+plan('yof-557', 900, ('Crossing a dredged channel · do not impede', 'Пересечение канала · не мешайте'),
+     [('Rule 9(d): no vessel may cross a narrow channel if that impedes one that can navigate only within it', 'Правило 9(d): никакое судно не пересекает узкость, если это затруднит движение судна, идущего только по ней'),
+      ('There is no 20 m limit in 9(d): wait, and cross astern of her', 'В 9(d) нет границы в 20 м: подождите и пересеките у неё за кормой')],
+     lambda c: dict(zones=[chan_zone(c, (c.O[0], c.O[1] + 0.4 * c.D), 0, 150, 2.2 * c.D)],
+                    texts=[T(c.near(c.Y, 270, 0.3), ('wait', 'ждите'), 'red'), T(add(c.O, (0, 0.9 * c.D)), ('dredged channel', 'прорытый канал'))]))
+plan('yof-561', 600, ('Joining a lane · she is overtaking you', 'Вход в полосу · она вас обгоняет'),
+     [('She is 150° from your bow, over 22.5° abaft your beam, and sees your sternlight', 'Она в 150° от вашего носа, более 22,5° позади траверза, и видит ваш кормовой огонь'),
+      ('Rule 13: she keeps clear; Rule 10(a) keeps every other Rule in force', 'Правило 13: уступает она; правило 10(a) сохраняет остальные правила')],
+     lambda c: dict(zones=[chan_zone(c, (0, -0.25 * c.D), 90, 170, 3600)],
+                    paths=[c.line(c.Y, c.near(c.Y, c.hy + 112.5, 0.9), 'ink', 3, '4 10'), c.line(c.Y, c.near(c.Y, c.hy - 112.5, 0.9), 'ink', 3, '4 10')],
+                    texts=[T(c.near(c.O, 0, 0.35), ('overtaking: she keeps clear', 'обгоняет: уступает она'), 'red'), T(c.near(c.Y, 30, 0.4), ('you stand on', 'вы сохраняете курс'), 'accent'),
+                           T((0.8 * c.D, -0.55 * c.D), ('eastbound lane', 'полоса на восток'))]))
+plan('yof-566', 300, ('Overtaking a sailing yacht · finally past and clear', 'Обгон парусной яхты · пока окончательно не пройдёте'),
+     [('Rule 13(d): a later change of bearing does not make you a crossing vessel', 'Правило 13(d): последующее изменение пеленга не делает вас судном, пересекающим курс'),
+      ('Turn east across her bow only when finally past and clear, well ahead; Rule 18 says the same', 'Поворачивайте на восток перед её носом, лишь окончательно пройдя её, далеко впереди; то же по правилу 18')],
+     lambda c: dict(paths=[{'pts': [[0, -40], [0, -0.9 * c.D], [0, -1.5 * c.D], [40, -1.8 * c.D], [160, -1.95 * c.D], [330, -2.0 * c.D]], 'c': 'course', 'dash': '16 12', 'arrow': True}],
+                    texts=[T((40, -0.95 * c.D), ('not across her bow yet', 'не перед её носом'), 'red'), T((260, -1.75 * c.D), ('past and clear: now turn', 'прошли: теперь поворот'), 'accent'),
+                           T((380, -1.25 * c.D), ('harbour: east', 'гавань: на восток'))],
+                    fit=[{'x': -100, 'z': -2.1 * c.D}, {'x': 420, 'z': 100}]), bearing=False)
+plan('yof-576', 400, ('A tug’s lights from your bearing', 'Огни буксировщика с вашего направления'),
+     [('You bear 230°T from her, 130° from her bow: inside the 135° arc astern', 'От неё вы на 230° ист., в 130° от её носа: внутри кормового сектора 135°'),
+      ('There her sternlight shows, with the yellow towing light above it', 'Там виден её кормовой огонь, а над ним — жёлтый буксировочный')],
+     lambda c: dict(night=True, paths=[c.line(c.near(c.O, c.ho + 180, 0.08), c.near(c.O, c.ho + 180, 0.42), 'ink', 4, '8 8')],
+                    circles=[{'x': round(c.near(c.O, c.ho + 180, 0.5)[0], 1), 'z': round(c.near(c.O, c.ho + 180, 0.5)[1], 1), 'r': 14, 'fill': '#5a6068', 'c': 'ink', 'dash': '0'}],
+                    texts=[T(c.near(c.O, 60, 0.42), ('yellow towing light + sternlight', 'жёлтый буксировочный + кормовой'), 'accent'), T(c.near(c.O, c.ho + 180, 0.62), ('tow', 'буксируемое'))]), power=True)
+plan('yof-825', 30, ('Walking her sideways · twin screws and thruster', 'Лагом к понтону · два винта и подруливающее'),
+     [('Starboard engine ahead, port astern: the stern swings to starboard', 'Правый вперёд, левый назад: корму ведёт вправо'),
+      ('Bow thruster to starboard as well: she moves bodily sideways onto the pontoon', 'Подруливающее тоже вправо: яхта идёт лагом к понтону')],
+     lambda c: dict(paths=[c.line((0.1 * c.D, 0.32 * c.D), (0.1 * c.D, 0.05 * c.D), 'course', 6, None, True), c.line((-0.1 * c.D, 0.05 * c.D), (-0.1 * c.D, 0.32 * c.D), 'red', 6, None, True),
+                           c.line((0.12 * c.D, -0.35 * c.D), (0.32 * c.D, -0.35 * c.D), 'course', 6, None, True), c.line((0.12 * c.D, 0.42 * c.D), (0.32 * c.D, 0.42 * c.D), 'ink', 5, None, True)],
+                    quays=[{'x1': 0.38 * c.D, 'z1': -0.75 * c.D, 'x2': 0.46 * c.D, 'z2': 0.75 * c.D}],
+                    texts=[T((0.62 * c.D, -0.4 * c.D), ('thruster to starboard', 'подруливающее вправо'), 'accent'), T((0.55 * c.D, 0.25 * c.D), ('stbd engine ahead', 'правый вперёд'), 'accent'),
+                           T((-0.5 * c.D, 0.25 * c.D), ('port engine astern', 'левый назад'), 'red'), T((0.62 * c.D, 0.0), ('4 m', '4 м'))],
+                    fit=[{'x': -0.8 * c.D, 'z': -0.75 * c.D}, {'x': 0.8 * c.D, 'z': 0.75 * c.D}]), bearing=False)
+plan('yof-826', 30, ('Port engine astern only · the stern swings to starboard', 'Только левый назад · корму ведёт вправо'),
+     [('The port shaft lies off the centreline: going astern it pulls the stern to starboard', 'Левый вал смещён от диаметральной плоскости: на заднем ходу он тянет корму вправо'),
+      ('Props turn outwards, so the port prop is left-handed: astern, its prop walk kicks the stern to starboard too', 'Винты вращаются наружу, левый — левого шага: на заднем ходу его заброс тоже ведёт корму вправо')],
+     lambda c: dict(paths=[c.line((-0.1 * c.D, 0.1 * c.D), (-0.1 * c.D, 0.4 * c.D), 'red', 6, None, True), c.line((0.05 * c.D, 0.45 * c.D), (0.35 * c.D, 0.5 * c.D), 'red', 7, None, True)],
+                    texts=[T((-0.5 * c.D, 0.3 * c.D), ('port engine astern', 'левый назад'), 'red'), T((0.55 * c.D, 0.6 * c.D), ('stern swings to starboard', 'корму ведёт вправо'), 'red'),
+                           T((0.5 * c.D, 0.1 * c.D), ('starboard: neutral', 'правый: нейтраль'))],
+                    fit=[{'x': -0.8 * c.D, 'z': -0.6 * c.D}, {'x': 0.8 * c.D, 'z': 0.7 * c.D}]), bearing=False)
+plan('yof-893', 40, ('Yawing in following seas · port engine ahead', 'Рыскание на попутной волне · левый вперёд'),
+     [('She yaws to port as each crest lifts her stern', 'Она уходит влево, когда гребень поднимает корму'),
+      ('A burst ahead on the port engine turns her back to starboard; port astern would turn her further to port', 'Импульс вперёд левым возвращает её вправо; левый назад увёл бы её ещё левее')],
+     lambda c: dict(paths=[{'pts': [[0, -0.35 * c.D], [-0.12 * c.D, -0.5 * c.D], [-0.28 * c.D, -0.58 * c.D]], 'c': 'red', 'w': 6, 'arrow': True},
+                           {'pts': [[0, -0.62 * c.D], [0.12 * c.D, -0.68 * c.D], [0.26 * c.D, -0.7 * c.D]], 'c': 'course', 'w': 6, 'arrow': True},
+                           c.line((-0.1 * c.D, 0.32 * c.D), (-0.1 * c.D, 0.05 * c.D), 'course', 6, None, True),
+                           c.line((-0.6 * c.D, 0.75 * c.D), (-0.6 * c.D, 0.45 * c.D), 'ink', 4, None, True), c.line((0.6 * c.D, 0.75 * c.D), (0.6 * c.D, 0.45 * c.D), 'ink', 4, None, True)],
+                    texts=[T((-0.45 * c.D, -0.7 * c.D), ('yaws to port', 'уходит влево'), 'red'), T((0.45 * c.D, -0.8 * c.D), ('back to starboard', 'обратно вправо'), 'accent'),
+                           T((-0.5 * c.D, 0.25 * c.D), ('port engine ahead', 'левый вперёд'), 'accent'), T((0, 0.85 * c.D), ('following seas', 'попутная волна'))],
+                    fit=[{'x': -0.8 * c.D, 'z': -0.9 * c.D}, {'x': 0.8 * c.D, 'z': 0.9 * c.D}]), bearing=False)
+plan('yof-954', 80, ('MOB · a high-sided yacht drifts down onto him', 'ЧЗБ · высокобортная яхта дрейфует на него'),
+     [('A high-sided yacht drifts faster than a swimmer: stop upwind of him, beam to the wind', 'Высокобортная яхта дрейфует быстрее пловца: остановитесь на ветре от него, лагом к ветру'),
+      ('She makes a lee and drifts down onto him, her props clear of him', 'Она прикрывает его от ветра и дрейфует на него, винты в стороне от человека')],
+     lambda c: dict(**mob_bits(c, [T(c.near(c.O, 270, 0.55), ('stop upwind, beam to the wind', 'стоп на ветре, лагом к ветру'), 'accent')]),
+                    paths=[c.line(c.near(c.Y, 0, 0.1), c.near(c.O, 250, 0.35), 'course', 6, '16 12', True),
+                           c.line(c.near(c.O, 270, 0.3), c.near(c.O, 270, 0.1), 'ink', 4, None, True)],
+                    texts2=[T(c.near(c.O, 230, 0.3), ('drift down', 'дрейф на него'))]), other=False)
 
 # ---- layout: the frame as figure-schematic.js fits it, then every text pill moved off boats, labels, headings ----
 W_, H_ = 1280, 800

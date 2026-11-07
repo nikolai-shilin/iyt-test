@@ -1,0 +1,48 @@
+{
+ "rhythm": {
+  "T": 15,
+  "tick": 5,
+  "title": "Light rhythm · Morse U: an offshore platform",
+  "key": [
+   "An offshore platform: white Mo(U), · · —, usually every 15 s; the reds mark its ends",
+   "A safe-water mark flashes Mo(A), · —: one short, one long"
+  ],
+  "rows": [
+   {
+    "label": "Mo(U) 15s",
+    "note": "· · — : the platform",
+    "period": 15,
+    "flashes": [
+     [
+      0,
+      0.5
+     ],
+     [
+      1.2,
+      0.5
+     ],
+     [
+      2.4,
+      1.6
+     ]
+    ],
+    "hi": true
+   },
+   {
+    "label": "Mo(A) 6s",
+    "note": "· — : safe water",
+    "period": 6,
+    "flashes": [
+     [
+      0,
+      0.5
+     ],
+     [
+      1.2,
+      1.6
+     ]
+    ]
+   }
+  ]
+ }
+}

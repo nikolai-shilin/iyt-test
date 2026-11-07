@@ -1,0 +1,106 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · a warship recovering aircraft",
+  "key": [
+   "Red-white-red all round: launching or recovering aircraft makes her RAM (Rule 3(g)(iv))",
+   "Rule 18(b): a sailing vessel keeps clear of a vessel restricted in her ability to manoeuvre"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "tag": "under sail"
+   },
+   {
+    "x": -190.0,
+    "z": -329.1,
+    "hdg": 80,
+    "label": "Warship, RAM",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "r",
+     "w",
+     "r"
+    ],
+    "stackDx": -150,
+    "scale": 3.4
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -190,
+      -329
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 10"
+   },
+   {
+    "pts": [
+     [
+      0,
+      -40
+     ],
+     [
+      -30,
+      -120
+     ],
+     [
+      -110,
+      -170
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 170,
+    "z": -60,
+    "text": "you keep clear",
+    "kind": "red"
+   },
+   {
+    "x": -480,
+    "z": -200,
+    "text": "helicopter landing aft",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -700,
+    "z": -470
+   },
+   {
+    "x": 240,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 150.4
+   },
+   {
+    "x": -190.0,
+    "z": -509.58000000000004
+   }
+  ]
+ }
+}

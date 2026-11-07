@@ -1,0 +1,152 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Estimated position · leeway, then stream",
+  "key": [
+   "Heading 250°T, wind NW on the starboard side: leeway 5° to port, water track 245°T 21.0 M",
+   "Then three hours of stream, 3.5 M toward 165°T: EP 236°T 21.9 M from the fix"
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -296.0,
+      107.7
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "12 10"
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -285.5,
+      133.1
+     ]
+    ],
+    "c": "ink",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -285.5,
+      133.1
+     ],
+     [
+      -280.4,
+      147.2
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -280.4,
+      147.2
+     ],
+     [
+      -274.6,
+      168.9
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -274.6,
+      168.9
+     ],
+     [
+      -272.0,
+      183.7
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -272.0,
+      183.7
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "8 8"
+   }
+  ],
+  "circles": [
+   {
+    "x": -272.0,
+    "z": 183.7,
+    "r": 8,
+    "c": "red",
+    "dash": "0",
+    "fill": "#e0251b"
+   }
+  ],
+  "texts": [
+   {
+    "x": 40,
+    "z": -40,
+    "text": "0000 fix"
+   },
+   {
+    "x": -185.5,
+    "z": 10.3,
+    "text": "heading 250°T"
+   },
+   {
+    "x": -143.7,
+    "z": 138.5,
+    "text": "water track 245°T 21.0 M"
+   },
+   {
+    "x": -114.6,
+    "z": 168.9,
+    "text": "stream 3.5 M, 165°T",
+    "kind": "accent"
+   },
+   {
+    "x": -272.0,
+    "z": 253.7,
+    "text": "0300 EP: 236°T 21.9 M",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -400,
+    "z": -60
+   },
+   {
+    "x": 80,
+    "z": 260
+   }
+  ]
+ },
+ "noScale": true
+}

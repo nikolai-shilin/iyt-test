@@ -1,0 +1,104 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Current from two fixes",
+  "key": [
+   "Water 090°T 18.0 M by the log · ground 100°T 20.0 M, fix to fix in 3 h",
+   "Current = ground − water: 3.9 M toward 154°T, 1.3 kn"
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      450.0,
+      -0.0
+     ]
+    ],
+    "c": "ink",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      492.4,
+      86.8
+     ]
+    ],
+    "c": "red",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      450.0,
+      -0.0
+     ],
+     [
+      492.4,
+      86.8
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "arrow": true
+   }
+  ],
+  "spots": [
+   {
+    "x": 450.0,
+    "z": -0.0,
+    "label": "DR"
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -40,
+    "text": "0300 fix"
+   },
+   {
+    "x": 492.4,
+    "z": 136.8,
+    "text": "0600 fix"
+   },
+   {
+    "x": 225,
+    "z": -40,
+    "text": "water 090°T 18.0 M"
+   },
+   {
+    "x": 130,
+    "z": 90,
+    "text": "ground 100°T 20.0 M",
+    "kind": "red"
+   },
+   {
+    "x": 646.2,
+    "z": 33.4,
+    "text": "current 154°T 3.9 M",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -40,
+    "z": -80
+   },
+   {
+    "x": 720,
+    "z": 140
+   }
+  ]
+ },
+ "noScale": true
+}

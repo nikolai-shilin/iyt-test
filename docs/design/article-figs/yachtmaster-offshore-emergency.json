@@ -1,0 +1,329 @@
+{
+ "article": "yachtmaster-offshore/emergency",
+ "topic": "emergency",
+ "lead": "Offshore the decisions are yours: which turn, which door to shut, when to leave the yacht, whom to call on which band. Command also brings duties in law.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Man overboard",
+   "fig": {
+    "type": "card",
+    "title": "Scharnow turn from 130°T",
+    "lines": [
+     "Wheel hard to starboard",
+     "Reverse it at 130° + 240° = 010°T",
+     "Steady on the reciprocal: 310°T",
+     "Search back along your own wake"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Man overboard",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "bearing": 90,
+     "dist": 70,
+     "hdg": 0,
+     "scale": 0.3,
+     "label": "MOB"
+    },
+    "wind": 270,
+    "note": "High freeboard: stop upwind, beam-on, drift onto him"
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Fire and flooding",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Eng room",
+      "95°C",
+      true
+     ],
+     [
+      "Fire",
+      "ALARM",
+      true
+     ],
+     [
+      "Fans",
+      "ON",
+      true
+     ]
+    ],
+    "lines": [
+     "Stop engines, generator, fans; shut flaps",
+     "Count everyone out, then release"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Fire and flooding",
+   "fig": {
+    "type": "card",
+    "title": "How long have you got?",
+    "lines": [
+     "In 650 L/min, pumps 250 L/min: net 400",
+     "Lost with 6,000 L more aboard",
+     "6,000 ÷ 400 = 15 min",
+     "Distress alert and rafts now"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Disabled",
+   "fig": {
+    "type": "card",
+    "title": "Range under power",
+    "lines": [
+     "Fuel 90 L, keep 20%: 72 L usable",
+     "4.5 L/h at 6 kn: 16 h",
+     "16 h × 6 kn = 96 M",
+     "Port 120 M off: a jury rig as well"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Disabled",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Volts",
+      "11.9",
+      true
+     ],
+     [
+      "Alternator",
+      "0 A",
+      true
+     ],
+     [
+      "Fuel",
+      "70%",
+      false
+     ]
+    ],
+    "lines": [
+     "No spare belt, 30 h to go",
+     "Lights and VHF stay on; plot on paper"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Abandoning and rescue",
+   "fig": {
+    "type": "card",
+    "title": "Cold water: 1-10-1",
+    "lines": [
+     "1 minute: cold shock, control your breathing",
+     "10 minutes of useful movement: swim now",
+     "1 hour before hypothermia: then keep still",
+     "Alone: HELP, knees up, arms crossed, still",
+     "Together: huddle, chests touching"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Abandoning and rescue",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 70
+    },
+    "other": {
+     "dist": 0
+    },
+    "wind": 40,
+    "note": "Wind 040°T, 30° on the port bow: steer 070°T"
+   },
+   "cap": null
+  },
+  {
+   "n": 9,
+   "section": "GMDSS offshore",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H40 V200 H0 Z",
+    "marks": [
+     [
+      40,
+      150,
+      "k",
+      "coast station"
+     ]
+    ],
+    "track": "M112 0 Q136 100 112 200 M232 0 Q258 100 232 200",
+    "labels": [
+     [
+      76,
+      70,
+      "A1",
+      "middle"
+     ],
+     [
+      76,
+      86,
+      "VHF DSC",
+      "middle"
+     ],
+     [
+      76,
+      100,
+      "≈ 30 M",
+      "middle"
+     ],
+     [
+      176,
+      70,
+      "A2",
+      "middle"
+     ],
+     [
+      176,
+      86,
+      "MF DSC",
+      "middle"
+     ],
+     [
+      176,
+      100,
+      "≈ 150 M",
+      "middle"
+     ],
+     [
+      280,
+      70,
+      "A3",
+      "middle"
+     ],
+     [
+      280,
+      86,
+      "satellite",
+      "middle"
+     ]
+    ],
+    "boat": [
+     200,
+     150,
+     0
+    ],
+    "note": "Sea areas follow the coast stations' DSC cover"
+   },
+   "cap": null
+  },
+  {
+   "n": 10,
+   "section": "GMDSS offshore",
+   "fig": {
+    "type": "card",
+    "title": "In the grab bag",
+    "lines": [
+     "EPIRB: registered to you with the flag state",
+     "False alert: switch off, tell the MRCC",
+     "Radar SART: flashes when a radar sweeps it",
+     "AIS-SART: shows with position on AIS screens",
+     "NAVTEX: nav, gale, SAR messages always print"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 11,
+   "section": "GMDSS offshore",
+   "fig": {
+    "type": "card",
+    "title": "Silence on channel 16",
+    "lines": [
+     "SEELONCE MAYDAY: casualty or control station",
+     "SEELONCE DISTRESS: any other station nearby",
+     "PRUDONCE: restricted working may resume",
+     "SEELONCE FEENEE: distress traffic ended"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 12,
+   "section": "The master's duties",
+   "fig": {
+    "type": "card",
+    "title": "Correcting the log",
+    "lines": [
+     "0300 · Course 245°T: one line through it",
+     "254°T written beside it, initialled",
+     "The old figure stays readable",
+     "Never erase or tear out a page"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 13,
+   "section": "Papers, insurance, salvage",
+   "fig": {
+    "type": "card",
+    "title": "Before the passage: the policy",
+    "lines": [
+     "Limits: area, season; extension in writing",
+     "Warranties: skipper's certificate, use, crew",
+     "Private pleasure: no paying guests",
+     "Hull covers your yacht; third party, others",
+     "Disclosure: every material fact, or void"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 14,
+   "section": "Papers, insurance, salvage",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "Q",
+      "Q|I request free pratique"
+     ]
+    ],
+    "note": "From arrival until you are cleared"
+   },
+   "cap": null
+  },
+  {
+   "n": 15,
+   "section": "Papers, insurance, salvage",
+   "fig": {
+    "type": "card",
+    "title": "Salvage Convention 1989",
+    "lines": [
+     "No cure, no pay: no result, no reward (LOF)",
+     "The award never exceeds the value saved",
+     "No danger: towage price; refusal bars a claim",
+     "Beyond the contract: salvage for extra work",
+     "The master signs; life salvors get a share"
+    ]
+   },
+   "cap": null
+  }
+ ]
+}

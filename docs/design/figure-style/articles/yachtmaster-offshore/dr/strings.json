@@ -1,0 +1,266 @@
+{
+ "1": {
+  "render": [
+   "T → M → C: 230°T + 4°W + 3°W = 237°C",
+   "237°C under the lubber line"
+  ],
+  "schematic": [
+   "Compass to true · and back",
+   "237°C − 3° west deviation = 234°M",
+   "234°M − 4° west variation = 230°T: plot 230°T",
+   "ink",
+   "course",
+   "230°T",
+   "234°M",
+   "237°C"
+  ]
+ },
+ "2": {
+  "render": [
+   "DR: each leg a vector, course and distance",
+   "2000 fix",
+   "2300: altered to 200°T",
+   "0200 DR: 220°T, 45.1 M"
+  ],
+  "schematic": [
+   "Dead reckoning · each leg a vector",
+   "2000–2300: 240°T 24.0 M · 2300–0200: 200°T 24.0 M",
+   "Added as vectors: 220°T 45.1 M from the fix, not 48 M",
+   "ink",
+   "course",
+   "2000 fix",
+   "240°T 24.0 M",
+   "200°T 24.0 M",
+   "220°T 45.1 M"
+  ]
+ },
+ "3": {
+  "render": [
+   "Port tack: water track = heading + leeway",
+   "heading 050°",
+   "water track 055°",
+   "Wind N"
+  ],
+  "schematic": [
+   "Leeway · port tack",
+   "Wind N, heading 050°T: port tack, she slips to starboard",
+   "Water track = heading + leeway: 050° + 5° = 055°T",
+   "ink",
+   "course",
+   "heading 050°",
+   "water track 055°"
+  ]
+ },
+ "4": {
+  "render": [
+   "Starboard tack: water track = heading − leeway",
+   "heading 310°",
+   "water track 305°",
+   "Wind N"
+  ],
+  "schematic": [
+   "Leeway · starboard tack",
+   "Wind N, heading 310°T: starboard tack, she slips to port",
+   "Water track = heading − leeway: 310° − 5° = 305°T",
+   "ink",
+   "course",
+   "heading 310°",
+   "water track 305°"
+  ]
+ },
+ "5": {
+  "render": [
+   "EP: 236°T, 21.9 M from the fix",
+   "0000 fix",
+   "heading 250°T",
+   "water track 245°T, 21.0 M",
+   "stream 3.5 M toward 165°T",
+   "0300 EP"
+  ],
+  "schematic": [
+   "Estimated position · leeway, then stream",
+   "Heading 250°T, wind NW on the starboard side: leeway 5° to port, water track 245°T 21.0 M",
+   "Then three hours of stream, 3.5 M toward 165°T: EP 236°T 21.9 M from the fix",
+   "ink",
+   "course",
+   "0000 fix",
+   "heading 250°T",
+   "water track 245°T 21.0 M",
+   "stream 3.5 M, 165°T",
+   "0300 EP: 236°T 21.9 M"
+  ]
+ },
+ "6": {
+  "render": [
+   "One triangle for the whole crossing",
+   "track 000°T, 41.6 M",
+   "stream 6 M east",
+   "42 M swung from here",
+   "steer 352°T"
+  ],
+  "schematic": [
+   "Course to steer · one triangle",
+   "Lay off the whole crossing’s stream from A: 6 M east",
+   "From its end swing 7 kn × 6 h = 42 M to the track: steer 352°T",
+   "ink",
+   "course",
+   "track 000°T 41.6 M",
+   "stream 6 M east",
+   "water 42 M: steer 352°T"
+  ]
+ },
+ "7": {
+  "render": [
+   "352°T, leeway 4°: 348°T · + 5°W = 353°M · − 2°E = 351°C",
+   "steer 351°C"
+  ],
+  "schematic": []
+ },
+ "8": {
+  "render": [
+   "Her bearing stays 090°T: you will meet",
+   "Sister: 180°T, 5 kn",
+   "you: 120°T, 10 kn"
+  ],
+  "schematic": [
+   "Meeting a vessel · keep her bearing steady",
+   "Sister 24 M east, 180°T 5 kn · you 10 kn",
+   "sin A = 5 × sin 90° ÷ 10: A = 30°, steer 120°T · meet in 2 h 46 min",
+   "ink",
+   "course",
+   "Sister",
+   "24 M, bearing 090°T",
+   "180°T 5 kn",
+   "120°T 10 kn",
+   "meet in 2 h 46 min"
+  ]
+ },
+ "9": {
+  "render": [
+   "1 in 60: 4 × 60 ÷ 80 = 3° off track",
+   "XTE 4.0 NM left",
+   "you: 4.0 M left of the route"
+  ],
+  "schematic": [
+   "1 in 60 · back to the line",
+   "XTE 4.0 M after 80 M: 4 × 60 ÷ 80 = 3° off track",
+   "48 M to go: 4 × 60 ÷ 48 = 5° more · alter 3° + 5° = 8° to starboard for B",
+   "ink",
+   "course",
+   "80 M run",
+   "48 M to go",
+   "3° off track",
+   "alter 8° to starboard",
+   "XTE 4 M"
+  ]
+ },
+ "10": {
+  "render": [
+   "Current 30° wrong for 10 h: the fix 4.1 M toward 285° from the EP",
+   "used: 180° 0.8 kn",
+   "real: 210° 0.8 kn",
+   "1600 EP",
+   "fix"
+  ],
+  "schematic": [
+   "Where the error puts you",
+   "Current used 180° 0.8 kn, real 210° 0.8 kn, for 10 h: 8 M each",
+   "The fix lies 4.1 M toward 285° from the EP",
+   "ink",
+   "course",
+   "water track 270°T",
+   "used 180°",
+   "real 210°",
+   "fix",
+   "4.1 M toward 285°"
+  ]
+ },
+ "11": {
+  "render": [
+   "Current = ground − water: set 154°T, 1.3 kn",
+   "0300 fix",
+   "DR",
+   "0600 fix",
+   "current 3.9 M",
+   "water 090°T, 18 M",
+   "ground 100°T, 20 M"
+  ],
+  "schematic": [
+   "Current from two fixes",
+   "Water 090°T 18.0 M by the log · ground 100°T 20.0 M, fix to fix in 3 h",
+   "Current = ground − water: 3.9 M toward 154°T, 1.3 kn",
+   "ink",
+   "course",
+   "0300 fix",
+   "0600 fix",
+   "water 090°T 18.0 M",
+   "ground 100°T 20.0 M",
+   "current 154°T 3.9 M"
+  ]
+ },
+ "12": {
+  "render": [
+   "Over 3 h: set 154°T, rate 1.3 kn",
+   "water 090°T, 18.0 M",
+   "ground 100°T, 20.0 M",
+   "0300 fix",
+   "current 154°T, 3.9 M"
+  ],
+  "schematic": []
+ },
+ "13": {
+  "render": [
+   "VMG = 7.0 × cos 48° = 4.7 kn",
+   "to the mark, 80 M",
+   "water track 7.0 kn",
+   "VMG 4.7 kn",
+   "Wind"
+  ],
+  "schematic": [
+   "Velocity made good · beating",
+   "7.0 kn through the water, 48° off the course to the mark",
+   "VMG = 7.0 × cos 48° = 4.7 kn: 80 M takes 17 h 05, from 0600 to 2305",
+   "ink",
+   "course",
+   "to the mark, 80 M",
+   "7.0 kn",
+   "VMG 4.7 kn"
+  ]
+ },
+ "14": {
+  "render": [
+   "Aim off: you know which way to turn",
+   "Harbour",
+   "you: 5 M north",
+   "turn south",
+   "092°T, 96 M"
+  ],
+  "schematic": [
+   "Aim off · know which way to turn",
+   "Current N 0.5 kn for 16 h at 6 kn: 8 M of set, and you want 5 M north",
+   "Steer 3 × 60 ÷ 96 = 2° south of the direct line, 092°T: arrive north, turn south",
+   "ink",
+   "course",
+   "direct 090°T, 96 M",
+   "steer 092°T",
+   "5 M north",
+   "Harbour",
+   "turn south"
+  ]
+ },
+ "15": {
+  "render": [
+   "Litres per mile = l/h ÷ speed",
+   "20 kn: 220 l/h, 11.0 l/M"
+  ],
+  "schematic": []
+ },
+ "16": {
+  "render": [
+   "Fast first, then slow",
+   "15 kn: 150 l/h",
+   "range 180 M: short of 200"
+  ],
+  "schematic": []
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Port engine astern only · the stern swings to starboard",
+  "key": [
+   "The port shaft lies off the centreline: going astern it pulls the stern to starboard",
+   "Props turn outwards, so the port prop is left-handed: astern, its prop walk kicks the stern to starboard too"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -3.0,
+      3.0
+     ],
+     [
+      -3.0,
+      12.0
+     ]
+    ],
+    "c": "red",
+    "w": 6,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      1.5,
+      13.5
+     ],
+     [
+      10.5,
+      15.0
+     ]
+    ],
+    "c": "red",
+    "w": 7,
+    "arrow": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -24.0,
+    "z": -18.0
+   },
+   {
+    "x": 24.0,
+    "z": 21.0
+   },
+   {
+    "x": -9.0,
+    "z": -9.0
+   },
+   {
+    "x": 9.0,
+    "z": 9.0
+   }
+  ],
+  "texts": [
+   {
+    "x": -16.0,
+    "z": 10.7,
+    "text": "port engine astern",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 16.5,
+    "z": 18.0,
+    "text": "stern swings to starboard",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 18.8,
+    "z": 3.0,
+    "text": "starboard: neutral",
+    "free": true
+   }
+  ]
+ }
+}

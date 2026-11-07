@@ -1,0 +1,88 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Fog · a vessel you are overtaking",
+  "key": [
+   "Rule 19(d)(i): avoid turning to port for a vessel forward of the beam — other than one being overtaken",
+   "She is on your course at 4 kn, you at 12 kn: you are overtaking, and may pass her to port"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 719.0,
+    "z": -2683.3,
+    "hdg": 0,
+    "label": "Target"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      -333.4
+     ],
+     [
+      0.0,
+      -694.5
+     ],
+     [
+      -60.4,
+      -1106.8
+     ],
+     [
+      -179.9,
+      -1506.0
+     ],
+     [
+      -356.0,
+      -1883.7
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 972.3,
+    "z": -0.0,
+    "text": "fog",
+    "pill": false,
+    "size": 40
+   },
+   {
+    "x": -2670.7,
+    "z": 55.7,
+    "text": "port: allowed when overtaking",
+    "kind": "accent",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -833.4,
+    "z": -833.4
+   },
+   {
+    "x": 833.4,
+    "z": 833.4
+   },
+   {
+    "x": -114.4,
+    "z": -3516.7
+   },
+   {
+    "x": 1552.4,
+    "z": -1849.9
+   }
+  ]
+ }
+}

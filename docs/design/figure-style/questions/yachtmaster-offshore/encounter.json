@@ -1,0 +1,343 @@
+[
+ {
+  "id": "yof-511",
+  "topic": "colregs",
+  "q": "You take bearings of this 330 m tanker's bridge, right aft. They draw slowly aft, about 1° a minute. Is there a risk of collision?",
+  "answer": "It may still exist — her bow is 300 m ahead of it",
+  "why": "Rule 7(d)(ii): risk may exist despite a bearing change with a very large ship at close range — her bow passes far closer than her bridge.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 68,
+    "dist": 72,
+    "hdg": 270,
+    "label": "VLCC",
+    "scale": 1.6
+   },
+   "bearingLine": true,
+   "note": "1.0 M · bearing of her bridge draws aft"
+  },
+  "ru": {
+   "1.0 M · bearing of her bridge draws aft": "1,0 мили · пеленг на мостик уходит на корму",
+   "VLCC": "Супертанкер"
+  }
+ },
+ {
+  "id": "yof-513",
+  "topic": "colregs",
+  "q": "Motoring up a narrow channel in your 23 m motor yacht, you meet this tanker coming down. Which rules govern you?",
+  "answer": "Rules 9(a) and 14 — keep to starboard, port to port",
+  "why": "Rule 9(b) covers vessels under 20 m and sailing vessels; at 23 m under power you keep to starboard (9(a)) and meet her as Rule 14 says.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 6,
+    "dist": 88,
+    "hdg": 182,
+    "label": "Tanker 200 m",
+    "scale": 1.5
+   },
+   "bearingLine": true,
+   "note": "Narrow channel · you: 23 m motor yacht"
+  },
+  "ru": {
+   "Narrow channel · you: 23 m motor yacht": "Узкий проход · вы: моторная яхта 23 м",
+   "Tanker 200 m": "Танкер 200 м"
+  }
+ },
+ {
+  "id": "yof-519",
+  "topic": "colregs",
+  "q": "Your 23 m motor yacht is crossing the eastbound lane at right angles. This ship, following the lane, is on your port bow on a steady bearing. Who gives way?",
+  "answer": "She does — Rule 15; you stand on and watch her",
+  "why": "Rule 10(j) binds vessels under 20 m and sailing vessels only; Rule 10(a) leaves Rule 15 in force — she has you on her starboard side.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -60,
+    "dist": 86,
+    "hdg": 90,
+    "label": "Ship"
+   },
+   "bearingLine": true,
+   "note": "Eastbound lane · bearing steady, 3 M"
+  },
+  "ru": {
+   "Eastbound lane · bearing steady, 3 M": "Полоса на восток · пеленг постоянен, 3 мили",
+   "Ship": "Судно"
+  }
+ },
+ {
+  "id": "yof-522",
+  "topic": "colregs",
+  "q": "Your 24 m motor yacht is closing this coaster from her starboard side. Who keeps clear?",
+  "answer": "You — you are coming up from abaft her beam",
+  "why": "From her you bear 165°T, 120° from her bow — over 22.5° abaft her beam: Rule 13, you keep clear until finally past and clear.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 20
+   },
+   "other": {
+    "bearing": -35,
+    "dist": 84,
+    "hdg": 45,
+    "label": "Coaster"
+   },
+   "bearingLine": true,
+   "note": "You 020°T 20 kn · she 045°T 12 kn · bears 345°T"
+  },
+  "ru": {
+   "You 020°T 20 kn · she 045°T 12 kn · bears 345°T": "Вы 020° ист. 20 уз · он 045° ист. 12 уз · пел. 345°",
+   "Coaster": "Каботажник"
+  }
+ },
+ {
+  "id": "yof-528",
+  "topic": "colregs",
+  "q": "In fog you are catching up this radar target fine on your starboard bow. May you alter to port to pass her?",
+  "answer": "Yes — she is a vessel you are overtaking",
+  "why": "Rule 19(d)(i): avoid turning to port for a vessel forward of the beam — other than for a vessel being overtaken.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 15,
+    "dist": 62,
+    "hdg": 0,
+    "label": "Target"
+   },
+   "bearingLine": true,
+   "note": "Fog · radar: 1.5 M, same course, 4 kn; you 12 kn"
+  },
+  "ru": {
+   "Fog · radar: 1.5 M, same course, 4 kn; you 12 kn": "Туман · РЛС: 1,5 мили, тем же курсом, 4 уз; вы 12 уз",
+   "Target": "Цель"
+  }
+ },
+ {
+  "id": "yof-534",
+  "topic": "colregs",
+  "q": "Which of this ship's lights can you see?",
+  "answer": "Both masthead lights and her red sidelight",
+  "why": "You bear 120°T from her, 40° on her port bow: inside her masthead and red sectors (to 112.5° on each side), outside her sternlight's.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -60,
+    "dist": 86,
+    "hdg": 160,
+    "label": "Ship 120 m"
+   },
+   "bearingLine": true,
+   "note": "At night · she bears 300°T, heading 160°T"
+  },
+  "ru": {
+   "At night · she bears 300°T, heading 160°T": "Ночью · пеленг на неё 300°, её курс 160°",
+   "Ship 120 m": "Судно 120 м"
+  }
+ },
+ {
+  "id": "yof-557",
+  "topic": "colregs",
+  "q": "Your 23 m motor yacht is about to cross this dredged channel. A deep-draught ship coming down it bears steady on your port bow. What do you do?",
+  "answer": "Wait — do not cross if it would impede her",
+  "why": "Rule 9(d): no vessel of any size may cross a narrow channel if that impedes one that can navigate only within it — 9(b)'s 20 m limit isn't here.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 90
+   },
+   "other": {
+    "bearing": -50,
+    "dist": 86,
+    "hdg": 180,
+    "label": "Ship",
+    "scale": 1.4
+   },
+   "bearingLine": true,
+   "note": "Dredged channel · ship 1.5 M, bearing steady"
+  },
+  "ru": {
+   "Dredged channel · ship 1.5 M, bearing steady": "Прорытый канал · судно в 1,5 мили, пеленг постоянен",
+   "Ship": "Судно"
+  }
+ },
+ {
+  "id": "yof-561",
+  "topic": "colregs",
+  "q": "Your 22 m motor yacht is joining the eastbound lane from its side, at the small angle Rule 10 asks for. This ship in the lane is closing on your port quarter, bearing steady. Who keeps clear?",
+  "answer": "She does — she is overtaking you",
+  "why": "She is 150° from your bow, over 22.5° abaft your beam, seeing your sternlight: Rule 13 — she keeps clear; 10(a) keeps every other Rule in force.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 75
+   },
+   "other": {
+    "bearing": -150,
+    "dist": 80,
+    "hdg": 90,
+    "label": "Ship"
+   },
+   "bearingLine": true,
+   "note": "Night · joining the lane at 15° · you 10 kn, she 16 kn"
+  },
+  "ru": {
+   "Night · joining the lane at 15° · you 10 kn, she 16 kn": "Ночь · вход в полосу под 15° · вы 10 уз, оно 16 уз",
+   "Ship": "Судно"
+  }
+ },
+ {
+  "id": "yof-566",
+  "topic": "colregs",
+  "q": "Your 24 m motor yacht is overtaking this sailing yacht on her port side. Your harbour lies to the east. When may you turn across her bow?",
+  "answer": "Only when finally past and clear, well ahead",
+  "why": "Rule 13(d): a later change of bearing doesn't make you a crossing vessel — keep clear until finally past and clear; Rule 18 says the same.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 25,
+    "dist": 62,
+    "hdg": 0,
+    "sail": true,
+    "boom": 14,
+    "label": "Yacht"
+   },
+   "bearingLine": true,
+   "note": "You 24 kn · she 6 kn · your harbour lies east"
+  },
+  "ru": {
+   "You 24 kn · she 6 kn · your harbour lies east": "Вы 24 уз · она 6 уз · ваша гавань к востоку",
+   "Yacht": "Яхта"
+  }
+ },
+ {
+  "id": "yof-576",
+  "topic": "colregs",
+  "q": "This tug, towing a barge astern, is on your starboard bow at night. Which of the tug's own lights face you?",
+  "answer": "Her yellow towing light over her sternlight",
+  "why": "You bear 230°T from her, 130° from her bow — inside the 135° astern arc her sternlight shares with the yellow towing light above it.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": 50,
+    "dist": 82,
+    "hdg": 100,
+    "label": "Tug"
+   },
+   "bearingLine": true,
+   "note": "Night · she bears 050°T, heading 100°T, towing astern"
+  },
+  "ru": {
+   "Night · she bears 050°T, heading 100°T, towing astern": "Ночь · он на 050° ист., курс 100° ист., буксирует за кормой",
+   "Tug": "Буксировщик"
+  }
+ },
+ {
+  "id": "yof-825",
+  "topic": "seamanship",
+  "q": "Your 22 m motor yacht lies parallel to the pontoon, 4 m off it to starboard. How do you walk her sideways onto it?",
+  "answer": "Thruster to starboard; starboard engine ahead, port astern",
+  "why": "Starboard ahead and port astern swing the stern to starboard; the thruster pushes the bow the same way, so she moves bodily sideways.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "dist": 0
+   },
+   "note": "Twin screws, bow thruster · pontoon to starboard"
+  },
+  "ru": {
+   "Twin screws, bow thruster · pontoon to starboard": "Два винта, подруливающее · понтон справа"
+  }
+ },
+ {
+  "id": "yof-826",
+  "topic": "seamanship",
+  "q": "From rest, you put only the port engine astern, with the starboard one in neutral. What does the stern do?",
+  "answer": "Swings to starboard — offset and prop walk add up",
+  "why": "The port shaft's pull aft swings the stern to starboard, and its left-handed prop going astern kicks the stern to starboard too.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "dist": 0
+   },
+   "note": "Props turn outwards · port engine astern only"
+  },
+  "ru": {
+   "Props turn outwards · port engine astern only": "Винты вращаются наружу · назад только левый"
+  }
+ },
+ {
+  "id": "yof-893",
+  "topic": "seamanship",
+  "q": "In following seas your twin-screw displacement yacht yaws to port as each crest lifts her stern. Which engine do you give a burst ahead to check it?",
+  "answer": "The port engine: its thrust swings the bow back to starboard",
+  "why": "Thrust ahead on the port side turns her to starboard about her centre; the port engine astern would turn her further to port.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "dist": 0
+   },
+   "note": "Twin screws · following seas · yawing to port"
+  },
+  "ru": {
+   "Twin screws · following seas · yawing to port": "Два винта · попутная волна · уходит влево"
+  }
+ },
+ {
+  "id": "yof-954",
+  "topic": "emergency",
+  "q": "Your 24 m motor yacht, high-sided with a big flybridge, is coming back to a man in the water in a fresh breeze. How do you make the final approach?",
+  "answer": "Stop upwind of him, beam to the wind, and drift down onto him",
+  "why": "A high-sided yacht drifts faster than a swimmer: stopped to windward she makes a lee and drifts onto him, props clear of him.",
+  "figure": {
+   "type": "encounter",
+   "you": {
+    "hdg": 0
+   },
+   "other": {
+    "bearing": -35,
+    "dist": 80,
+    "hdg": 0,
+    "scale": 0.3,
+    "label": "MOB"
+   },
+   "wind": 270,
+   "note": "Freeboard 2 m, high windage"
+  },
+  "ru": {
+   "Freeboard 2 m, high windage": "Надводный борт 2 м, большая парусность",
+   "MOB": "ЧЗБ"
+  }
+ }
+]

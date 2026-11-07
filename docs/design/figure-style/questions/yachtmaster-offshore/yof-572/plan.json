@@ -1,0 +1,88 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · not under command, making way",
+  "key": [
+   "Two all-round reds; making way she adds sidelights and a sternlight: from astern you see the sternlight",
+   "You are overtaking a vessel not under command: you keep clear (Rules 13 and 18)"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 0.0,
+    "z": -300.0,
+    "hdg": 0,
+    "label": "Not under command",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": false,
+    "stack": [
+     "r",
+     "r"
+    ],
+    "stackDx": -150
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      10,
+      -40
+     ],
+     [
+      90,
+      -140
+     ],
+     [
+      110,
+      -330
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 230,
+    "z": -160,
+    "text": "keep clear",
+    "kind": "red"
+   },
+   {
+    "x": -230,
+    "z": -60,
+    "text": "9 kn vs 3 kn",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -260,
+    "z": -420
+   },
+   {
+    "x": 300,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 89.60000000000001
+   },
+   {
+    "x": 0.0,
+    "z": -210.39999999999998
+   }
+  ]
+ }
+}

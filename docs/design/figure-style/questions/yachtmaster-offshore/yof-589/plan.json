@@ -1,0 +1,92 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Lights · aground",
+  "key": [
+   "Rule 30(d): aground — her anchor light and two all-round reds",
+   "You saw the white from every side: all-round, not a 135° sternlight — she is not NUC under way"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 90,
+    "label": "Aground",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "r",
+     "r"
+    ],
+    "stackDx": -160,
+    "scale": 3.2
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -200,
+      -90
+     ],
+     [
+      150,
+      -110
+     ],
+     [
+      220,
+      30
+     ],
+     [
+      60,
+      110
+     ],
+     [
+      -190,
+      80
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.08)"
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": 0,
+    "r": 330,
+    "c": "course"
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": 140,
+    "text": "charted shoal",
+    "kind": "red"
+   },
+   {
+    "x": 290,
+    "z": -290,
+    "text": "seen from every side",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -360,
+    "z": -360
+   },
+   {
+    "x": 360,
+    "z": 360
+   },
+   {
+    "x": 0,
+    "z": -132.48
+   }
+  ]
+ }
+}

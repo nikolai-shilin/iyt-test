@@ -1,0 +1,114 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Breton plotter · true and magnetic",
+  "key": [
+   "Grid on a meridian, the arrow along the track: 205° at the index",
+   "At the 6°W mark the same setting reads 211°M"
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      -380
+     ]
+    ],
+    "c": "ink",
+    "w": 3
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -39.7,
+      -377.9
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "10 8"
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -262.0,
+      561.9
+     ]
+    ],
+    "c": "red",
+    "w": 5
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -329.6,
+      548.6
+     ]
+    ],
+    "c": "course",
+    "w": 5
+   }
+  ],
+  "texts": [
+   {
+    "x": -160,
+    "z": -330,
+    "text": "N (true)",
+    "pill": false
+   },
+   {
+    "x": 66.1,
+    "z": -417.7,
+    "text": "MN 6°W"
+   },
+   {
+    "x": -207.4,
+    "z": 616.3,
+    "text": "track 205°T",
+    "kind": "red"
+   },
+   {
+    "x": -445.4,
+    "z": 591.4,
+    "text": "211°M",
+    "kind": "accent"
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 205,
+    "noHeading": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -420,
+    "z": -440
+   },
+   {
+    "x": 260,
+    "z": 640
+   }
+  ]
+ },
+ "noScale": true
+}

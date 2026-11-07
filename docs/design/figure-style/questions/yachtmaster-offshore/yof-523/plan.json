@@ -1,0 +1,85 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · in doubt, take the worse case",
+  "key": [
+   "Red over green says sail; the white below it says power: lights that do not agree",
+   "In doubt (Rules 2 and 7(a)) treat her as a sailing vessel: you keep clear, early"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": -139.5,
+    "z": -299.1,
+    "hdg": 145,
+    "label": "Sail? Power?",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "r",
+     "g",
+     "w"
+    ],
+    "stackDx": -140
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -139,
+      -299
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": 180,
+    "z": -60,
+    "text": "keep clear, early",
+    "kind": "red"
+   },
+   {
+    "x": -260,
+    "z": -170,
+    "text": "bearing steady",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -400,
+    "z": -430
+   },
+   {
+    "x": 260,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 105.60000000000001
+   },
+   {
+    "x": -139.5,
+    "z": -404.70000000000005
+   }
+  ]
+ }
+}

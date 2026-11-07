@@ -1,0 +1,90 @@
+[
+ {
+  "id": "yof-002",
+  "topic": "charts",
+  "q": "You set the variation on your Portland plotter and lay it along the leg, so that it reads the magnetic course directly. What should it read?",
+  "answer": "116°M",
+  "why": "Set 4°W and the plotter adds it for you: 112°T + 4°W = 116°M. Set to E it gives 108°; adding 4° again by hand gives 120°.",
+  "figure": {
+   "type": "compass",
+   "variation": -4,
+   "course": 112,
+   "courseLabel": "True track"
+  },
+  "ru": {
+   "True track": "Ист. путь"
+  }
+ },
+ {
+  "id": "yof-018",
+  "topic": "charts",
+  "q": "Bound for the next waypoint in the Aegean, the plotter shows BRG 209° while your plan says 214°T. What do you make of it?",
+  "answer": "Nothing wrong — 214°T is 209°M",
+  "why": "The plotter is set to magnetic: 214°T − 5°E = 209°M. East is least — subtract it going true to magnetic.",
+  "figure": {
+   "type": "compass",
+   "variation": 5,
+   "course": 214,
+   "courseLabel": "Plan",
+   "note": "Plotter: Magnetic"
+  },
+  "ru": {
+   "Plotter: Magnetic": "Плоттер: магн.",
+   "Plan": "План"
+  }
+ },
+ {
+  "id": "yof-119",
+  "topic": "compass",
+  "q": "You check the steering compass against the satellite compass on a steady heading. What is its deviation on this heading?",
+  "answer": "3°W",
+  "why": "Satellite compass 210°T + 4°W = 214°M; the steering compass reads 217°, 3° high, so deviation is 3°W.",
+  "figure": {
+   "type": "compass",
+   "variation": -4,
+   "course": 217,
+   "courseLabel": "Compass",
+   "note": "Sat compass 210°T"
+  },
+  "ru": {
+   "Sat compass 210°T": "Спутн. 210° ист.",
+   "Compass": "КК"
+  }
+ },
+ {
+  "id": "yof-249",
+  "topic": "dr",
+  "q": "You give the helmsman a compass course from the true course on the rose. Which compass course do you give?",
+  "answer": "082°C",
+  "why": "True to compass: add west, subtract east. 080°T + 5°W = 085°M; − 3°E = 082°C.",
+  "figure": {
+   "type": "compass",
+   "variation": -5,
+   "deviation": 3,
+   "course": 80,
+   "note": "T → M → C"
+  },
+  "ru": {
+   "T → M → C": "ИК → МК → КК"
+  }
+ },
+ {
+  "id": "yof-273",
+  "topic": "dr",
+  "q": "The autopilot steers by its fluxgate, which reads magnetic and was calibrated to no deviation. The rose shows the steering compass's deviation. Which heading do you set?",
+  "answer": "153°M",
+  "why": "True to magnetic: subtract east variation, 156°T − 3°E = 153°M. The steering compass's deviation is not the fluxgate's.",
+  "figure": {
+   "type": "compass",
+   "variation": 3,
+   "deviation": -5,
+   "course": 156,
+   "courseLabel": "CTS",
+   "note": "Autopilot: °M"
+  },
+  "ru": {
+   "Autopilot: °M": "Автопилот: МК",
+   "CTS": "ИК"
+  }
+ }
+]

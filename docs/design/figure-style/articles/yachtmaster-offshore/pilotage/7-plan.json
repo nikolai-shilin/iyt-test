@@ -1,0 +1,135 @@
+{
+ "sch": {
+  "padPx": 50,
+  "title": "Port traffic signals · no entry",
+  "key": [
+   "Three reds in a column on the mole head: no vessel may enter or leave",
+   "With the yellow beside the top red, only craft the port names may move"
+  ],
+  "land": [
+   [
+    [
+     -700,
+     -900
+    ],
+    [
+     700,
+     -900
+    ],
+    [
+     700,
+     -560
+    ],
+    [
+     -700,
+     -560
+    ]
+   ]
+  ],
+  "quays": [
+   {
+    "x1": -460,
+    "z1": -340,
+    "x2": -50,
+    "z2": -300
+   },
+   {
+    "x1": 50,
+    "z1": -340,
+    "x2": 460,
+    "z2": -300
+   },
+   {
+    "x1": -480,
+    "z1": -560,
+    "x2": -440,
+    "z2": -300
+   },
+   {
+    "x1": 440,
+    "z1": -560,
+    "x2": 480,
+    "z2": -300
+   }
+  ],
+  "circles": [
+   {
+    "x": -60,
+    "z": -320,
+    "r": 14,
+    "c": "red",
+    "dash": "0",
+    "fill": "#e0251b"
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 80,
+    "z": 200,
+    "hdg": 350,
+    "noHeading": true,
+    "label": "You: hold off"
+   },
+   {
+    "x": 0,
+    "z": -440,
+    "hdg": 180,
+    "noHeading": true,
+    "bearing": false,
+    "label": "named craft",
+    "labelAbove": true,
+    "scale": 3.4
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -380
+     ],
+     [
+      0,
+      -120
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "10 8",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -300,
+    "z": -230,
+    "text": "three reds + yellow",
+    "kind": "red"
+   },
+   {
+    "x": -460,
+    "z": -680,
+    "text": "HARBOUR",
+    "pill": false,
+    "size": 26
+   },
+   {
+    "x": 300,
+    "z": 40,
+    "text": "no entry",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -600,
+    "z": -700
+   },
+   {
+    "x": 600,
+    "z": 320
+   }
+  ]
+ }
+}

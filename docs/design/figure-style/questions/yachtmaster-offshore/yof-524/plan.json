@@ -1,0 +1,85 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · a pilot vessel on duty",
+  "key": [
+   "White over red all round: a pilot vessel on duty, here under way (red sidelight)",
+   "A pilot vessel is power-driven, with no special place in Rule 18: she keeps out of your way"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "tag": "under sail"
+   },
+   {
+    "x": 165.0,
+    "z": -285.8,
+    "hdg": 225,
+    "label": "Pilot",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "w",
+     "r"
+    ],
+    "stackDx": -130
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      165,
+      -286
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": -170,
+    "z": -60,
+    "text": "you stand on",
+    "kind": "accent"
+   },
+   {
+    "x": 330,
+    "z": -120,
+    "text": "she keeps clear",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -230,
+    "z": -430
+   },
+   {
+    "x": 420,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 104.0
+   },
+   {
+    "x": 165.0,
+    "z": -389.8
+   }
+  ]
+ }
+}

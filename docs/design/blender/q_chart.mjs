@@ -86,13 +86,41 @@ const landmark = (x, y) => `<circle cx="${f1(x)}" cy="${f1(y)}" r="13" fill="var
 const beacon = (x, y) => `<circle cx="${f1(x)}" cy="${f1(y)}" r="14" fill="#fff" stroke="var(--ink)" stroke-width="5"/>`;
 const flare = (x, y, c = LIGHT, rot = 35) => `<path transform="translate(${f1(x)} ${f1(y)}) rotate(${rot})" d="M0 -6 C 9 -18 10 -40 0 -62 C -10 -40 -9 -18 0 -6 Z" fill="${c}" stroke="var(--bg)" stroke-width="2"/>`;
 const islet = (x, y) => `<path transform="translate(${f1(x)} ${f1(y)}) scale(1.7)" d="M-20 4 C -22 -10 -8 -18 4 -16 C 18 -14 24 -2 18 8 C 12 18 -14 18 -20 4 Z" fill="${LAND}" stroke="${COAST}" stroke-width="4"/>`;
+/* more chart and radar symbols (yachtmaster offshore), drawn by cfg.markAs and the 'sym' overlay item */
+const SYMDY = { ep: -36, pile: -26, echo: -30, ship: -34, plot: -24, lobe: -24, turbine: -28, sbm: -32, well: -34, cell: -60, cradle: -28, wpt: -32, vessel: -56, none: -30 };
+function markSym(o, x, y, f, P) {
+  const R = (a, r) => `<circle cx="${f1(x)}" cy="${f1(y)}" r="${r}" ${a}/>`;
+  switch (o.kind) {
+    case 'light': return flare(x, y) + landmark(x, y);
+    case 'spot': return landmark(x, y);
+    case 'ep': return `<path d="M${f1(x)} ${f1(y - 22)} L${f1(x + 20)} ${f1(y + 13)} L${f1(x - 20)} ${f1(y + 13)} Z" fill="var(--bg)" stroke="var(--ink)" stroke-width="5" stroke-linejoin="round"/>` + R('fill="var(--ink)"', 4.5);
+    case 'pile': return R('fill="var(--ink)" stroke="var(--bg)" stroke-width="3"', 11);
+    case 'plot': return R('fill="var(--ink)" stroke="var(--bg)" stroke-width="3"', 9);
+    case 'echo': case 'ship': { const [a, b] = o.kind === 'ship' ? [24, 14] : [15, 9];
+      return `<ellipse cx="${f1(x)}" cy="${f1(y)}" rx="${a}" ry="${b}" transform="rotate(${o.rot ?? -30} ${f1(x)} ${f1(y)})" fill="var(--ink)" opacity=".8"/>`; }
+    case 'lobe': { // a short smear of echo along the range circle round our own boat
+      const [cx, cy] = P(f.boat[0], f.boat[1]), r = Math.hypot(x - cx, y - cy), a = Math.atan2(y - cy, x - cx), d = 9 / r;
+      const p = t => [cx + r * Math.cos(a + t), cy + r * Math.sin(a + t)].map(f1).join(' ');
+      return `<path d="M${p(-d)} A${f1(r)} ${f1(r)} 0 0 1 ${p(d)}" fill="none" stroke="var(--ink)" stroke-width="11" stroke-linecap="round" opacity=".7"/>`; }
+    case 'turbine': return R('fill="var(--ink)"', 6) + [0, 120, 240].map(b => { const [ex, ey] = pol(x, y, 22, b); return `<line x1="${f1(x)}" y1="${f1(y)}" x2="${f1(ex)}" y2="${f1(ey)}" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/>`; }).join('');
+    case 'sbm': return R(`fill="${SCOL.y}" stroke="var(--ink)" stroke-width="5"`, 15) + R('fill="var(--ink)"', 4);
+    case 'well': return R('fill="var(--bg)" stroke="var(--ink)" stroke-width="5" stroke-dasharray="7 6"', 19) + R('fill="var(--ink)"', 6);
+    case 'cell': return `<path transform="translate(${f1(x)} ${f1(y)})" d="M-46 -6 C -48 -30 -22 -40 -4 -34 C 14 -46 44 -36 46 -12 C 60 4 46 30 22 30 C 8 42 -20 40 -30 28 C -50 26 -58 8 -46 -6 Z" fill="rgba(40,46,52,.55)" stroke="var(--ink)" stroke-width="3"/>`
+      + `<path transform="translate(${f1(x)} ${f1(y)})" d="M-20 -10 C -18 -22 0 -24 8 -16 C 22 -18 26 -2 16 6 C 10 18 -8 16 -14 8 C -26 6 -28 -4 -20 -10 Z" fill="rgba(20,24,28,.6)"/>`;
+    case 'cradle': return `<rect x="${f1(x - 26)}" y="${f1(y - 14)}" width="52" height="28" rx="4" fill="${SCOL.y}" stroke="var(--ink)" stroke-width="4"/>`;
+    case 'wpt': return `<rect x="${f1(x - 15)}" y="${f1(y - 15)}" width="30" height="30" fill="var(--bg)" stroke="var(--ink)" stroke-width="5"/>` + R('fill="var(--ink)"', 4.5);
+    case 'vessel': return boat(x, y, o.hdg || 0, { scale: o.scale || 2.1, fill: 'var(--muted)' });
+    case 'none': return '';
+  }
+  return landmark(x, y);
+}
 function spotRing(x, y, letter, r = 34) {
   return `<circle cx="${f1(x)}" cy="${f1(y)}" r="${r}" fill="rgba(255,230,0,.18)" stroke="${SCOL.course}" stroke-width="7"/>` + (letter ? txt(x, y + 13, letter, { s: 36, halo: false }) : '');
 }
 
 /* ---------------- SVG path strings of figures.js (absolute M L H V C Q Z) ---------------- */
 function parsePath(d) {
-  const tok = d.match(/[MLHVCQZ]|-?\d*\.?\d+/gi) || [], subs = []; let i = 0, cmd = '', cur = [0, 0], sub = null, start = [0, 0];
+  const tok = d.match(/[MLHVCQZA]|-?\d*\.?\d+/gi) || [], subs = []; let i = 0, cmd = '', cur = [0, 0], sub = null, start = [0, 0];
   const num = () => +tok[i++];
   while (i < tok.length) {
     if (/[A-Za-z]/.test(tok[i])) cmd = tok[i++];
@@ -103,13 +131,15 @@ function parsePath(d) {
     if (cmd === 'V') { cur = [cur[0], num()]; sub.push({ c: 'L', p: [cur] }); continue; }
     if (cmd === 'C') { const p = [[num(), num()], [num(), num()], [num(), num()]]; cur = p[2]; sub.push({ c: 'C', p }); continue; }
     if (cmd === 'Q') { const p = [[num(), num()], [num(), num()]]; cur = p[1]; sub.push({ c: 'Q', p }); continue; }
+    if (cmd === 'A') { const a = [num(), num(), num(), num(), num()]; cur = [num(), num()]; sub.push({ c: 'A', a, p: [cur] }); continue; }
     i++;
   }
   return subs;
 }
 // land touching the 320×200 frame runs on past it, into the side strips of the wider frame
 const extend = ([x, y]) => [x <= 0 ? -200 : x >= 320 ? 520 : x, y <= 0 ? -200 : y >= 200 ? 400 : y];
-const subD = (sub, P, ext) => sub.map(s => s.c === 'Z' ? 'Z' : s.c + s.p.map(q => P(...(ext ? extend(q) : q)).map(f1).join(' ')).join(' ')).join(' ');
+const arcD = (s, P) => { const kk = P(1, 0)[0] - P(0, 0)[0]; return `A${f1(s.a[0] * kk)} ${f1(s.a[1] * kk)} ${s.a[2]} ${s.a[3]} ${s.a[4]} ` + P(...s.p[0]).map(f1).join(' '); };
+const subD = (sub, P, ext) => sub.map(s => s.c === 'Z' ? 'Z' : s.c === 'A' ? arcD(s, P) : s.c + s.p.map(q => P(...(ext ? extend(q) : q)).map(f1).join(' ')).join(' ')).join(' ');
 const headAt = (a, b, c, w, h = 24) => { const L = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, t = Math.min(1, 30 / L); return arrow(b[0] - (b[0] - a[0]) * t, b[1] - (b[1] - a[1]) * t, b[0], b[1], { c, w, h }); };
 const pathEnd = sub => { const segs = sub.filter(s => s.c !== 'Z'), last = segs[segs.length - 1], prev = segs[segs.length - 2]; const b = last.p[last.p.length - 1], a = last.p.length > 1 ? last.p[last.p.length - 2] : prev.p[prev.p.length - 1]; return [a, b]; };
 
@@ -144,7 +174,11 @@ function frame({ title = '', key = [], view = [0, 0, 320, 200], draw, avoid = []
 
 /* ---------------- chart: the figures.js spec, redrawn ---------------- */
 const TRACK = { course: { c: SCOL.course, w: 6, dash: '16 11', arrow: true }, bearing: { c: 'var(--ink)', w: 4 }, plain: { c: 'var(--ink)', w: 4 },
-  clearing: { c: SCOL.wind, w: 5, dash: '16 11' }, gps: { c: 'var(--accent)', w: 6 }, distance: { c: 'var(--ink)', w: 4, dash: '12 10' } };
+  clearing: { c: SCOL.wind, w: 5, dash: '16 11' }, gps: { c: 'var(--accent)', w: 6 }, distance: { c: 'var(--ink)', w: 4, dash: '12 10' },
+  // yachtmaster offshore: a charted area, ship routes, a relative-motion line, a moving echo, a radar guard ring, slipway rails
+  zone: { c: LIGHT, w: 4, dash: '14 10', fill: 'rgba(212,20,140,.07)' }, ship: { c: 'var(--muted)', w: 6, dash: '18 10', arrow: true },
+  rel: { c: 'var(--ink)', w: 4, dash: '12 9' }, motion: { c: 'var(--ink)', w: 5, dash: '14 10', arrow: true },
+  guard: { c: LIGHT, w: 4, fill: 'rgba(212,20,140,.12)', join: true }, rails: { c: 'var(--ink)', w: 14, inner: 'var(--bg)', innerW: 5 } };
 const isLightName = n => /\b(Fl|Oc|Iso|Al)\b|\blt\b|^[A-C]  /.test(n);
 const cardKind = n => ({ 'N cardinal': 'card-n', 'S cardinal': 'card-s', 'E cardinal': 'card-e', 'W cardinal': 'card-w' })[n];
 
@@ -157,13 +191,16 @@ function chartDraw(f, cfg, extra = {}) {
       else s += `<path d="${subD(sub, P, true)}" fill="${LAND}" stroke="${COAST}" stroke-width="5" stroke-linejoin="round"/>`;
     });
     if (cfg.area) { const [a, b] = [P(...cfg.area[0]), P(...cfg.area[1])]; s += `<rect x="${f1(a[0])}" y="${f1(a[1])}" width="${f1(b[0] - a[0])}" height="${f1(b[1] - a[1])}" fill="rgba(212,20,140,.07)" stroke="${LIGHT}" stroke-width="4" stroke-dasharray="14 10"/>`; }
-    s += (extra.under || []).map(o => item(o, P, k)).join('');
+    s += (cfg.under || []).map(o => item(o, P, k)).join('') + (extra.under || []).map(o => item(o, P, k)).join('');
     if (f.track && !cfg.noTrack) {
-      const st = TRACK[cfg.track || 'course'];
-      for (const sub of parsePath(f.track)) {
-        s += `<path d="${subD(sub, P)}" fill="none" stroke="${st.c}" stroke-width="${st.w}" stroke-linecap="round" stroke-linejoin="round" ${st.dash ? `stroke-dasharray="${st.dash}"` : ''}/>`;
+      const subs = parsePath(f.track), st0 = TRACK[cfg.track || 'course'];
+      if (st0.join) s += `<path d="${subs.map(sub => subD(sub, P)).join(' ')}" fill="${st0.fill}" fill-rule="evenodd" stroke="${st0.c}" stroke-width="${st0.w}"/>`;
+      else subs.forEach((sub, i) => {
+        const st = cfg.tracks ? TRACK[cfg.tracks[i]] : st0; if (!st) return;
+        s += `<path d="${subD(sub, P)}" fill="${st.fill || 'none'}" stroke="${st.c}" stroke-width="${st.w}" stroke-linecap="round" stroke-linejoin="round" ${st.dash ? `stroke-dasharray="${st.dash}"` : ''}/>`;
+        if (st.inner) s += `<path d="${subD(sub, P)}" fill="none" stroke="${st.inner}" stroke-width="${st.innerW}" stroke-linecap="round"/>`;
         if (st.arrow) { const [a, b] = pathEnd(sub).map(q => P(...q)); s += headAt(a, b, st.c, st.w); }
-      }
+      });
     }
     for (const d of f.depths || []) {
       const [x, y] = P(d[0], d[1]); s += txt(x, y, d[2], { s: 40 });
@@ -174,6 +211,8 @@ function chartDraw(f, cfg, extra = {}) {
       if ((cfg.dropMarks || []).includes(name)) continue;
       const [x, y] = P(m[0], m[1]), lo = (cfg.markLabel || {})[name] || {};
       const lab = (dy, a = 'middle', dx = 0) => name && !lo.hide ? txt(x + (lo.dx ?? dx), y + (lo.dy ?? dy), name, { s: 32, a: lo.a || a }) : '';
+      const as = cfg.markAs && cfg.markAs[name];
+      if (as) { const o = typeof as === 'string' ? { kind: as } : as; s += markSym(o, x, y, f, P) + lab(SYMDY[o.kind] ?? -30); continue; }
       if (cardKind(name) || (col === 'y' && name === 'ODAS')) { s += card(x, y, cardKind(name) || 'special') + lab(70); continue; }
       if (name === 'anchor') { s += anchorGlyph(x, y, 0.9); continue; }
       if (name === 'rock') { s += rockSym(x, y) + lab(-56); continue; }
@@ -189,9 +228,9 @@ function chartDraw(f, cfg, extra = {}) {
       const lo = (cfg.labelAt || {})[l[2]] || {}, [x, y] = P(lo.x ?? l[0], lo.y ?? l[1]);
       s += txt(x, y, l[2], { s: lo.s || 34, a: lo.a || l[3] || 'middle' });
     }
-    s += (extra.mid || []).map(o => item(o, P, k)).join('');
-    if (f.boat && !extra.noBoat) { const [x, y] = P(f.boat[0], f.boat[1]); s += boat(x, y, f.boat[2], { you: true, scale: 2.3 }); }
-    s += (extra.over || []).map(o => item(o, P, k)).join('');
+    s += (cfg.mid || []).map(o => item(o, P, k)).join('') + (extra.mid || []).map(o => item(o, P, k)).join('');
+    if (f.boat && !extra.noBoat) { const [x, y] = P(...(cfg.boatAt || f.boat.slice(0, 2))); s += boat(x, y, f.boat[2], { you: true, scale: cfg.boatLen ? cfg.boatLen * k / 40 : 2.3 }); }
+    s += (cfg.over || []).map(o => item(o, P, k)).join('') + (extra.over || []).map(o => item(o, P, k)).join('');
     return s;
   };
 }
@@ -210,7 +249,7 @@ function item(o, P, k) {
     case 'pill': { const [x, y] = P(o.x, o.y); return pill(x + (o.dx || 0), y + (o.dy || 0), o.text, o.kind || 'light', o.size || 30); }
     case 'text': { const [x, y] = P(o.x, o.y); return txt(x + (o.dx || 0), y + (o.dy || 0), o.text, { s: o.size || 34, a: o.a, f: o.f }); }
     case 'spot': { const [x, y] = P(o.x, o.y); return spotRing(x, y, o.label, o.r); }
-    case 'boat': { const [x, y] = P(o.x, o.y); return boat(x, y, o.hdg, { scale: o.scale || 2.3, fill: 'var(--muted)', ghost: true }); }
+    case 'boat': { const [x, y] = P(o.x, o.y); return boat(x, y, o.hdg, { scale: o.len ? o.len * k / 40 : o.scale || 2.3, fill: 'var(--muted)', ghost: true }); }
     case 'anchor': { const [x, y] = P(o.x, o.y); return anchorGlyph(x, y, o.s || 0.9); }
     case 'dim': { const [a, b] = [P(...o.a), P(...o.b)], an = Math.atan2(b[1] - a[1], b[0] - a[0]), nx = -Math.sin(an) * (o.off || 0), ny = Math.cos(an) * (o.off || 0);
       const tick = (x, y) => `<line x1="${f1(x - Math.sin(an) * 14)}" y1="${f1(y + Math.cos(an) * 14)}" x2="${f1(x + Math.sin(an) * 14)}" y2="${f1(y - Math.cos(an) * 14)}" stroke="var(--ink)" stroke-width="4"/>`;
@@ -222,6 +261,9 @@ function item(o, P, k) {
       const x = W - 110, y = 95, [ax, ay] = pol(x, y, 48, o.from), [bx, by] = pol(x, y, 48, o.from + 180);
       return arrow(ax, ay, bx, by, { c: SCOL.wind, w: 9, h: 26 }) + pill(x, y + 86, o.text, 'red', 30); }
     case 'raw': return o.svg(P, k);
+    case 'you': { const [x, y] = P(o.x, o.y); return boat(x, y, o.hdg || 0, { you: true, scale: o.len ? o.len * k / 40 : o.scale || 2.3 }); }
+    case 'vessel': { const [x, y] = P(o.x, o.y); return boat(x, y, o.hdg || 0, { scale: o.len ? o.len * k / 40 : o.scale || 2.1, fill: 'var(--muted)' }); }
+    case 'sym': { const [x, y] = P(o.x, o.y); return markSym(o, x, y, o.f || {}, P); }
   }
   return '';
 }
@@ -247,7 +289,7 @@ function isoDraw(f, extra = {}) {
   };
 }
 // wind arrows round a system: anticlockwise and angled in round a low, clockwise and angled out round a high
-const circ = (letter, cx, cy, r, brgs, o = {}) => brgs.map(b => { const [x, y] = onRing(cx, cy, r, b), dir = letter === 'L' ? b - 105 : b + 75, L = o.len || 26;
+const circ = (letter, cx, cy, r, brgs, o = {}) => brgs.map(b => { const [x, y] = onRing(cx, cy, r, b), dir = o.sh ? (letter === 'L' ? b + 105 : b - 75) : letter === 'L' ? b - 105 : b + 75, L = o.len || 26;
   const [ax, ay] = pol(x, y, -L, dir), [bx, by] = pol(x, y, L, dir); return { t: 'arrow', a: [ax, ay], b: [bx, by], c: 'red', w: o.w || 7 }; });
 
 /* ---------------- lights: the description taken apart, and rhythms ---------------- */
@@ -311,7 +353,16 @@ const CFG = {
   'bs-771': { markLabel: { rock: { dy: -58 } } },
   'bs-925': { track: 'distance', markLabel: { 'Sounion lt': { dx: 30, dy: 10, a: 'start' } } },
 };
-const keyOf = (f, id) => { const p = [...(f.panel || [])]; if (id === 'bs-925') return [p[0], p[1] + ' ' + p[2]]; return p; };
+const keyOf = (f, id) => { const p = [...(f.panel || [])]; if (id === 'bs-925') return [p[0], p[1] + ' ' + p[2]]; return joinKey(p); };
+function joinKey(p) {
+  const out = [];
+  for (const l of p) {
+    const prev = out[out.length - 1];
+    if (prev !== undefined && (/^[a-z]/.test(l) || /[,:]$/.test(prev))) { const j = prev + ' ' + l; RUMAP[j] = RU[j] ?? ruOf(prev) + ' ' + ruOf(l); out[out.length - 1] = j; }
+    else out.push(l);
+  }
+  return out;
+}
 const titleOf = f => f.note || 'Depths in metres below chart datum';
 
 /* ---------------- the plans (answer drawings) ---------------- */
@@ -545,6 +596,293 @@ const LIGHTPLAN = {
     rows: [{ label: 'A  Fl 10s', flashes: repeat(10, 30, [[0, 1, 'w']]) }, { label: 'B  Oc 10s', hi: true, flashes: repeat(10, 30, [[0, 8.5, 'w']]) }, { label: 'C  Iso 10s', flashes: repeat(10, 30, [[0, 5, 'w']]) }] }),
 };
 
+/* ---------------- yachtmaster offshore: the question's settings and the plans ---------------- */
+// q images: marks drawn as their own symbols (markAs), overlays of the figure's own facts (under / mid / over: the
+// restricted circle round a buoy, ghost yachts where the labels say yachts lie, the crossings of two range arcs).
+const ZONE0 = { zones: [0] }, STRIPS = { zones: [1, 2] }, TSS3 = { zones: [0, 1, 2] };
+const lab = (x, y, text, a = 'middle', size = 32) => ({ t: 'text', x, y, text, a, size });
+// yof-162: the two range arcs cross at X and Y (A 9.3 M = 112, B 7.8 M = 93 units)
+const ISL_A = [40, 40], ISL_B = [180, 165];
+const ARCX = (() => { const [ax, ay] = ISL_A, [bx, by] = ISL_B, d = Math.hypot(bx - ax, by - ay), a = (112 ** 2 - 93 ** 2 + d * d) / (2 * d), h = Math.sqrt(112 ** 2 - a * a);
+  const px = ax + a * (bx - ax) / d, py = ay + a * (by - ay) / d, nx = -(by - ay) / d, ny = (bx - ax) / d; return { X: [px + h * nx, py + h * ny], Y: [px - h * nx, py - h * ny] }; })();
+// yof-475: the line through the 0506 and 0512 plots, and its closest point to us
+const CPA475 = (() => { const a = [123, 99], b = [139, 83], o = [150, 26], u = [(b[0] - a[0]) / Math.hypot(16, 16), (b[1] - a[1]) / Math.hypot(16, 16)];
+  const t = (o[0] - b[0]) * u[0] + (o[1] - b[1]) * u[1]; return [b[0] + t * u[0], b[1] + t * u[1]]; })();
+// yof-184: the foot of the EP on the line of position
+const FOOT184 = (() => { const a = [150, 22], d = [-55, 153], L = Math.hypot(...d), u = [d[0] / L, d[1] / L], t = (180 - a[0]) * u[0] + (120 - a[1]) * u[1]; return [a[0] + t * u[0], a[1] + t * u[1]]; })();
+// yof-659: isobars round the main low (D) and the secondary (C)
+const isoRings = (cx, cy, rs) => ({ t: 'raw', svg: (P, k) => { const [x, y] = P(cx, cy); return rs.map(r => `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(r * k)}" fill="none" stroke="var(--ink)" stroke-width="4" opacity=".55"/>`).join(''); } });
+const streamArrows = (pts, dx, dy) => pts.map(([x, y]) => ({ t: 'arrow', a: [x, y], b: [x + dx, y + dy], c: 'muted', w: 5, h: 18 }));
+
+Object.assign(CFG, {
+  'yof-031': { track: 'zone' },
+  'yof-077': { markAs: { SBM: 'sbm' }, markLabel: { SBM: { dx: 24, dy: 10, a: 'start' } }, under: [{ t: 'circle', x: 130, y: 100, r: 50, c: 'magenta', w: 4, dash: '14 10', fill: 'rgba(212,20,140,.07)' }] },
+  'yof-078': { markAs: { 'Well (susp)': 'well' } },
+  'yof-120': { track: 'bearing', markAs: { Light: 'light' } },
+  'yof-127': { markAs: { A: 'light', B: 'light', C: 'light' } },
+  'yof-139': { track: 'bearing', markAs: { Light: 'light' } },
+  'yof-162': { track: 'distance', over: [ARCX.X, ARCX.Y].map(([x, y]) => ({ t: 'raw', svg: P => { const [a, b] = P(x, y); return `<circle cx="${f1(a)}" cy="${f1(b)}" r="8" fill="var(--ink)" stroke="var(--bg)" stroke-width="3"/>`; } })),
+    labelAt: { X: { x: ARCX.X[0] - 10, y: ARCX.X[1] + 4, a: 'end' }, Y: { x: ARCX.Y[0] + 10, y: ARCX.Y[1] + 4, a: 'start' } } },
+  'yof-172': { track: 'bearing', markAs: { Light: 'light' } },
+  'yof-184': { track: 'bearing', markAs: { Light: 'light', EP: 'ep' } },
+  'yof-239': { markAs: { '': 'turbine' } },
+  'yof-240': { under: [{ t: 'line', pts: [[188, 124], [188, 150]], c: 'ink', w: 4, dash: '8 8' }] },
+  'yof-279': { markAs: { Sister: { kind: 'vessel', hdg: 180 } } },
+  'yof-284': { ...ZONE0, markAs: { WPT: 'wpt' } },
+  'yof-294': { markAs: { Harbour: 'spot', '6 M N': 'spot' }, markLabel: { Harbour: { dx: -20, dy: 10, a: 'end' }, '6 M N': { dx: -20, dy: 10, a: 'end' } } },
+  'yof-407': { track: 'clearing', markAs: { light: 'light' } },
+  'yof-416': { ...ZONE0, area: [[178, 62], [312, 150]] },
+  'yof-452': { track: 'distance' },
+  'yof-465': { tracks: ['course', 'ship', 'ship'], markAs: { WP4: 'wpt' } },
+  'yof-471': { track: 'rel', markAs: { '': 'plot' } },
+  'yof-475': { track: 'rel', markAs: { '': 'plot' } },
+  'yof-478': { track: 'guard', markAs: { yacht: 'echo' }, markLabel: { yacht: { dx: 22, dy: -10, a: 'start' } } },
+  'yof-481': { markAs: { ship: 'ship', '': 'lobe' }, markLabel: { ship: { dx: 34, dy: 10, a: 'start' } } },
+  'yof-515': ZONE0, 'yof-516': STRIPS, 'yof-558': STRIPS, 'yof-559': TSS3, 'yof-560': TSS3,
+  'yof-659': { under: [isoRings(100, 50, [24, 48, 72]), isoRings(178, 122, [12, 26])] },
+  'yof-691': { track: 'motion', markAs: { 'Cb cell': 'cell' } },
+  'yof-775': { track: 'rails', markAs: { cradle: 'cradle' }, markLabel: { cradle: { dx: 34, dy: 10, a: 'start' } } },
+  // berthing sketches: the boats at a length that fits the quay and the river, ours alongside where the figure says so
+  'yof-827': { boatLen: 30, boatAt: [256, 112], drop: ['yacht'], under: [{ t: 'vessel', x: 256, y: 64, hdg: 0, len: 30 }], over: [lab(240, 68, 'yacht', 'end'), { t: 'windCorner', from: 90, text: 'Wind E 5' }] },
+  'yof-833': { boatLen: 30, drop: ['yacht'], under: [{ t: 'vessel', x: 108, y: 134, hdg: 0, len: 30 }, { t: 'vessel', x: 212, y: 134, hdg: 0, len: 30 }], over: [lab(94, 138, 'yacht', 'end'), lab(226, 138, 'yacht', 'start'), { t: 'windCorner', from: 270, text: 'Wind W 5' }] },
+  'yof-834': { markAs: { pile: 'pile' }, under: streamArrows([[120, 150], [200, 150]], 26, 0) },
+  'yof-836': { mid: [{ t: 'curve', pts: [[160, 128], [156, 142], [156, 150], [160, 160]], c: 'ink', w: 4 }, { t: 'vessel', x: 160, y: 174, hdg: 0 }, { t: 'you', x: 160, y: 114, hdg: 0 }] },
+  'yof-867': { under: streamArrows([[110, 150], [190, 150]], 26, 0) },
+  'yof-877': { boatLen: 36, boatAt: [247, 105], drop: ['yacht'], under: [{ t: 'vessel', x: 255, y: 34, hdg: 0, len: 36 }, { t: 'vessel', x: 255, y: 174, hdg: 0, len: 36 }, ...streamArrows([[100, 70], [100, 140]], 0, 24)],
+    over: [lab(240, 38, 'yacht', 'end'), lab(240, 178, 'yacht', 'end')] },
+  'yof-878': { boatLen: 80, under: streamArrows([[30, 140], [120, 140]], 26, 0) },
+});
+
+const PL = {   // the plans
+  'yof-031': f => ({ title: 'Explosives dumping ground · keep out', key: ['A disused dumping ground may still hold live munitions', 'Never anchor, trawl or dive there: anchor clear of it'],
+    under: [{ t: 'zone', pts: [[110, 100], [240, 100], [240, 160], [110, 160]], fill: 'rgba(224,37,27,.12)', dash: '0', c: 'red' }],
+    over: [{ t: 'pill', x: 175, y: 182, text: 'no anchoring', kind: 'red' }, { t: 'anchor', x: 40, y: 118, s: 0.8 }, { t: 'pill', x: 74, y: 62, text: 'anchor clear of it', kind: 'accent', size: 28 }] }),
+  'yof-077': f => ({ title: 'Single buoy mooring · keep well clear', key: ['Track 0.2 M off ≈ 370 m: inside the 500 m restricted area', 'A tanker moors there with floating hoses: re-route well clear'],
+    over: [{ t: 'dim', a: [130, 100], b: [134.2, 136.9], text: '0.2 M ≈ 370 m', pdx: 56, kind: 'red' },
+      { t: 'curve', pts: [[48, 154], [110, 194], [230, 192], [300, 150]], c: 'accent', w: 7, arrow: true }, { t: 'pill', x: 205, y: 172, text: 'well clear of it', kind: 'accent', size: 28 }] }),
+  'yof-078': f => ({ title: 'Suspended wellhead · cross, but anchor away', key: ['14 m over it: no danger to a 2.4 m keel', 'Anchors and nets snag on it: anchor well away from it'],
+    under: [{ t: 'circle', x: 150, y: 140, r: 24, c: 'red', w: 5, fill: 'rgba(224,37,27,.10)' }],
+    over: [{ t: 'pill', x: 236, y: 152, text: 'no anchoring here', kind: 'red', size: 28 }, { t: 'anchor', x: 214, y: 62, s: 0.8 }, { t: 'pill', x: 214, y: 88, text: 'anchor well away', kind: 'accent', size: 28 }] }),
+  'yof-120': f => ({ title: 'One bearing along the track', key: ['A bearing dead ahead shows whether you are on track', 'Not how far to go: that needs a line across the track'],
+    over: [{ t: 'line', pts: [[96, 104], [226, 104]], c: 'muted', w: 5, dash: '12 10' }, { t: 'pill', x: 245, y: 144, text: 'cross-track only', kind: 'accent' }, { t: 'pill', x: 268, y: 104, text: 'distance: needs this', size: 26 }] }),
+  'yof-121': f => ({ title: 'A contour across the track', key: ['The shelf edge runs across your track, at right angles to it', 'Finding it checks the distance run: log and along-track stream'],
+    under: [{ t: 'curve', pts: [[0, 112], [80, 104], [240, 112], [320, 106]], c: 'accent', w: 6, dash: '14 10' }],
+    over: [{ t: 'spot', x: 160, y: 107, r: 26 }, { t: 'pill', x: 236, y: 46, text: 'checks the distance run', kind: 'accent', size: 28 }] }),
+  'yof-127': f => ({ title: 'The order of the bearings', key: ['Ahead (A) and astern (C) the bearings change slowly: take them first', 'B, near the beam, changes fastest: take it last, then note time and log'],
+    under: [[300, 105], [150, 178], [25, 150]].map(p => ({ t: 'line', pts: [[140, 90], p], c: 'accent', w: 5, dash: '12 9' })),
+    over: [{ t: 'spot', x: 278, y: 132, label: '1', r: 26 }, { t: 'spot', x: 50, y: 176, label: '2', r: 26 }, { t: 'spot', x: 178, y: 186, label: '3', r: 26 }] }),
+  'yof-139': f => ({ title: 'The sounding reduced to chart datum', key: ['Sounder 45.0 m + transducer 1.0 m = 46.0 m of water', 'Less the 3.0 m of tide: 43.0 m charted, at B'],
+    over: [{ t: 'spot', x: 200, y: 109, r: 30 }, { t: 'pill', x: 236, y: 58, text: '45.0 + 1.0 − 3.0 = 43.0 m', kind: 'accent' }] }),
+  'yof-162': f => ({ title: 'Two ranges, two crossings', key: ['From X, island A bears about 333°T; from Y it would bear 290°T', 'Even a rough EBL (±5°) tells them apart: you are at X'],
+    under: [{ t: 'line', pts: [ARCX.X, ISL_A], c: 'accent', w: 6 }, { t: 'line', pts: [ARCX.Y, ISL_A], c: 'red', w: 5, dash: '12 9' }],
+    over: [{ t: 'spot', x: ARCX.X[0], y: ARCX.X[1], r: 24 }, { t: 'pill', x: 96, y: 176, text: 'X: A bears 333°T', kind: 'accent', size: 28 }, { t: 'pill', x: 236, y: 54, text: 'Y: A would bear 290°T', kind: 'red', size: 28 }] }),
+  'yof-170': f => ({ title: 'Matching a line of soundings', key: ['Only on B is the third sounding deep: 142, 148, 405, then 155, 160 m', 'On A it never drops; on C the canyon comes second (390 m)'],
+    under: [{ t: 'line', pts: [[105, 182], [105, 90]], c: 'accent', w: 10 }], over: [{ t: 'circle', x: 123, y: 131, r: 10, c: 'red', w: 5, dash: '0' }, { t: 'pill', x: 236, y: 56, text: 'B: deep on the third', kind: 'accent', size: 28 }] }),
+  'yof-172': f => ({ title: 'A sounding along a contour', key: ['Along this bearing the depth stays about 84 m: the contour runs with it', 'A sounding helps only where the contours cross the line'],
+    under: [{ t: 'line', pts: [[54, 46], [304, 186]], c: 'accent', w: 6, dash: '14 10' }], over: [{ t: 'pill', x: 210, y: 62, text: 'about 84 m all along', kind: 'accent', size: 28 }] }),
+  'yof-184': f => ({ title: 'One position line and an EP', key: ['Take the point on the line nearest the EP', 'It is the smallest shift that fits both'],
+    under: [{ t: 'line', pts: [[180, 120], FOOT184], c: 'accent', w: 5, dash: '10 8' }], over: [{ t: 'spot', x: FOOT184[0], y: FOOT184[1], r: 22 }, { t: 'pill', x: 62, y: 122, text: 'nearest the EP', kind: 'accent', size: 28 }] }),
+  'yof-239': f => ({ title: 'Off track near a wind farm', key: ['The track was laid for a 2 M margin off the farm', 'A new course straight to B passes nearer it: regain the track first'],
+    under: [{ t: 'line', pts: [[103, 132], [300, 100]], c: 'red', w: 4, dash: '10 9' }],
+    over: [{ t: 'arrow', a: [100, 128], b: [128, 113], c: 'accent', w: 6 }, { t: 'pill', x: 112, y: 92, text: 'back to the track', kind: 'accent', size: 28 }, { t: 'pill', x: 252, y: 127, text: 'direct to B: nearer the farm', kind: 'red', size: 24 }] }),
+  'yof-240': f => ({ title: 'The 1 in 60 rule', key: ['5 M off after a 75 M run: 5 × 60 ÷ 75 = 4° of track error', '5 M to close in the 50 M to go: 6° more; 4° + 6° = 10° to starboard'],
+    under: [{ t: 'line', pts: [[20, 150], [188, 116]], c: 'red', w: 4, dash: '10 9' }, { t: 'line', pts: [[194, 118], [300, 150]], c: 'accent', w: 6, arrow: true }],
+    over: [{ t: 'pill', x: 62, y: 130, text: '4°', kind: 'red' }, { t: 'pill', x: 262, y: 124, text: '6°', kind: 'accent' }, { t: 'pill', x: 188, y: 66, text: 'alter 10° to starboard', kind: 'accent' }] }),
+  'yof-279': f => ({ title: 'A collision course to meet her', key: ['sin A = 6 × sin 90° ÷ 8: A = 49° off her bearing, towards her course', '090° + 49° = 139°T: you meet in about 5 h 40 min'],
+    view: [0, 96, 330, 350], under: [{ t: 'line', pts: [[64, 130], [220, 130]], c: 'muted', w: 4, dash: '10 9' }],
+    over: [{ t: 'line', pts: [[230, 190], [230, 334]], c: 'muted', w: 5, dash: '12 10' }, { t: 'line', pts: [[56, 137], [228, 330]], c: 'accent', w: 7, arrow: true },
+      { t: 'spot', x: 230, y: 334, r: 26 }, { t: 'pill', x: 110, y: 250, text: 'steer 139°T', kind: 'accent', size: 32 }, { t: 'pill', x: 284, y: 300, text: 'she runs 34 M', size: 28 }, { t: 'pill', x: 104, y: 152, text: 'A = 49°', kind: 'accent', size: 26 }] }),
+  'yof-284': f => ({ title: 'Set towards the separation zone', key: ['A new course for the waypoint cuts the corner through the zone', 'Regain the planned track and follow the lane round the bend'],
+    under: [{ t: 'line', pts: [[112, 140], [290, 50]], c: 'red', w: 4, dash: '10 9' }],
+    over: [{ t: 'line', pts: [[110, 150], [170, 140], [282, 56]], c: 'accent', w: 7, arrow: true }, { t: 'pill', x: 228, y: 124, text: 'direct: across the zone', kind: 'red', size: 26 }, { t: 'pill', x: 262, y: 168, text: 'regain the track', kind: 'accent', size: 26 }] }),
+  'yof-294': f => ({ title: 'Allowing for the current', key: ['20 h × 0.6 kn = 12 M north; you want only 6 M of it', 'Cancel 6 M: 6 × 60 ÷ 120 = 3° south of 090°: steer 093°T'],
+    over: [{ t: 'line', pts: [[30, 140], [286, 154]], c: 'accent', w: 5, dash: '12 9' }, { t: 'line', pts: [[34, 138], [286, 113]], c: 'accent', w: 6, arrow: true },
+      { t: 'arrow', a: [200, 84], b: [200, 46], c: 'red', w: 7 }, { t: 'pill', x: 200, y: 26, text: 'current 12 M N', kind: 'red', size: 28 }, { t: 'pill', x: 104, y: 178, text: 'steer 093°T', kind: 'accent' }, { t: 'pill', x: 120, y: 110, text: 'made good', size: 26 }] }),
+  'yof-338': f => ({ title: 'Where the race lies', key: ['A race forms where the stream sweeps past the headland', 'On the E-going stream it lies east and south-east of the Bill'],
+    under: [{ t: 'zone', pts: [[166, 96], [196, 92], [232, 100], [244, 130], [214, 152], [178, 132]], fill: 'rgba(224,37,27,.16)' }], over: [{ t: 'pill', x: 205, y: 140, text: 'race', kind: 'red' }] }),
+  'yof-397': f => ({ title: 'Under the keel in the troughs', key: ['6.2 m charted + 1.0 m tide = 7.2 m; half the 2.0 m swell is 1.0 m', '7.2 − 1.0 − 0.4 squat − 2.4 draught = 3.4 m under the keel'],
+    over: [{ t: 'spot', x: 118, y: 100, r: 30 }, { t: 'pill', x: 212, y: 190, text: '6.2 + 1.0 − 1.0 − 0.4 − 2.4 = 3.4 m', kind: 'accent', size: 28 }] }),
+  'yof-407': f => ({ title: 'Choosing the clearing bearing', key: ['A 3 m swell takes 1.5 m off every depth in the troughs', 'With 3.4 m draught: B leaves 0.1 m under the keel, C leaves 5.1 m'],
+    over: [{ t: 'line', pts: [[104, 58], [229, 180]], c: 'accent', w: 9 }, { t: 'pill', x: 232, y: 98, text: 'C: 10 − 3.4 − 1.5 = 5.1 m', kind: 'accent', size: 28 }, { t: 'pill', x: 226, y: 48, text: 'B: 5 − 3.4 − 1.5 = 0.1 m', kind: 'red', size: 28 }] }),
+  'yof-416': f => ({ title: 'Crossing near the end of a scheme', key: ['Cross the lanes at right angles, where the traffic is predictable', 'In the precautionary area ships converge and turn: keep out of it'],
+    under: [{ t: 'line', pts: [[24, 182], [24, 24]], c: 'accent', w: 9, arrow: true }],
+    over: [{ t: 'pill', x: 84, y: 144, text: 'A: right angles', kind: 'accent', size: 26 }, { t: 'pill', x: 226, y: 172, text: 'B: ships turning', kind: 'red', size: 26 }] }),
+  'yof-452': f => ({ title: 'Anchoring by radar ranges', key: ['Two ranges off the steep points cross at the anchor spot', 'Ranges are sharp where bearings smear; the sounder checks the depth'],
+    over: [{ t: 'spot', x: 160, y: 91.5, r: 24 }, { t: 'pill', x: 84, y: 190, text: 'the ranges cross at the spot', kind: 'accent', size: 26 }] }),
+  'yof-453': f => ({ title: 'Rounding a cliff by radar', key: ['The reef gives no echo: measure from the cliff', '0.7 M of reef + 0.5 M margin: keep the cliff outside 1.2 M'],
+    under: [{ t: 'circle', x: 176, y: 150, r: 58, c: 'accent', w: 5, dash: '14 10', fill: 'rgba(0,120,255,.05)' }], over: [{ t: 'pill', x: 108, y: 112, text: 'VRM 1.2 M', kind: 'accent' }] }),
+  'yof-465': f => ({ title: 'A waypoint where the ships turn', key: ['Off a cape the ships converge and alter course at the same point', 'Turning there you meet them all mid-turn: move WP4 clear of their routes'],
+    under: [{ t: 'circle', x: 150, y: 110, r: 16, c: 'red', w: 5, dash: '0', fill: 'rgba(224,37,27,.15)' }, { t: 'line', pts: [[120, 8], [116, 112], [230, 196]], c: 'accent', w: 6, dash: '14 10' }],
+    over: [{ t: 'sym', kind: 'wpt', x: 116, y: 112 }, { t: 'pill', x: 210, y: 72, text: 'the ships turn here', kind: 'red', size: 28 }, { t: 'pill', x: 62, y: 140, text: 'WP4 moved', kind: 'accent', size: 28 }] }),
+  'yof-471': f => ({ title: 'When she reaches you', key: ['2.0 M closed in 12 min: 10 kn of relative speed', '6.0 M left at 10 kn = 36 min: 0212 + 36 min = 0248'],
+    over: [{ t: 'pill', x: 100, y: 172, text: '2.0 M in 12 min = 10 kn', size: 28 }, { t: 'pill', x: 250, y: 120, text: 'CPA nil · 0248', kind: 'red' }] }),
+  'yof-475': f => ({ title: 'A target that has altered', key: ['The third plot falls off the line: she altered after 0506', 'Plot afresh from 0506 and 0512: CPA 2.1 M at 0525'],
+    under: [{ t: 'line', pts: [[139, 83], CPA475], c: 'accent', w: 5, dash: '12 9' }],
+    over: [{ t: 'dim', a: [150, 26], b: CPA475, text: '2.1 M', pdx: 64, pdy: 12, kind: 'accent' }, { t: 'spot', x: CPA475[0], y: CPA475[1], r: 18 }, { t: 'pill', x: 250, y: 92, text: 'CPA 2.1 M at 0525', kind: 'accent' }] }),
+  'yof-478': f => ({ title: 'Why the guard zone stayed quiet', key: ['A small echo may first paint at only 2–3 M', 'A zone from 6 M out never sees it: it helps the lookout, it does not replace one'],
+    over: [{ t: 'circle', x: 98, y: 100, r: 20, c: 'red', w: 4, dash: '10 8' }, { t: 'pill', x: 240, y: 90, text: 'first painted at 2 M', kind: 'red', size: 28 }, { t: 'pill', x: 240, y: 150, text: 'zone: 6–8 M', kind: 'accent', size: 28 }] }),
+  'yof-481': f => ({ title: 'Side lobes', key: ['A big echo close by paints through the scanner side lobes', 'An arc at her range, not real targets: turn the gain down a touch'],
+    under: [{ t: 'circle', x: 110, y: 150, r: 79.8, c: 'muted', w: 4, dash: '10 10' }],
+    over: [{ t: 'pill', x: 250, y: 74, text: 'side lobes, not targets', kind: 'red', size: 28 }, { t: 'pill', x: 260, y: 168, text: 'at the ship’s range', size: 26 }] }),
+  'yof-515': f => ({ title: 'Passing a scheme you are not using', key: ['Rule 10(h): avoid it by as wide a margin as practicable', 'Rule 10(f), (g): take care near its ends; never anchor in or near it'],
+    over: [{ t: 'pill', x: 150, y: 152, text: 'as wide a margin as you can', kind: 'accent', size: 28 }] }),
+  'yof-516': f => ({ title: 'Who may use the inshore zone', key: ['Rule 10(d): vessels under 20 m, sailing or fishing vessels, or to reach a place in it', 'At 22 m under power, passing by: use the lane'],
+    over: [{ t: 'arrow', a: [52, 112], b: [300, 112], c: 'accent', w: 7 }, { t: 'pill', x: 236, y: 58, text: 'not for you', kind: 'red', size: 28 }] }),
+  'yof-558': f => ({ title: 'Into the inshore zone for a port', key: ['Rule 10(d)(ii): any vessel may use an inshore traffic zone', 'when bound to or from a port, installation or place within it'],
+    over: [{ t: 'pill', x: 226, y: 48, text: 'bound for Port A: allowed', kind: 'accent', size: 28 }] }),
+  'yof-559': f => ({ title: 'Crossing a scheme head to wind', key: ['Rule 10(c): cross on a heading as near 90° to the flow as practicable', 'With an engine aboard 000°T is practicable: motor-sail across'],
+    over: [{ t: 'arrow', a: [172, 150], b: [172, 12], c: 'accent', w: 8 }, { t: 'pill', x: 250, y: 108, text: 'motor-sail · 000°T', kind: 'accent', size: 28 }, { t: 'windCorner', from: 0, text: 'Wind N' }] }),
+  'yof-560': f => ({ title: 'Where to keep in a lane', key: ['Rule 10(b)(ii): keep clear of the separation zone', 'Near the outer edge you also impede the ships least (Rule 10(j))'], noTrack: true,
+    over: [{ t: 'arrow', a: [52, 131], b: [300, 131], c: 'accent', w: 7 }, { t: 'pill', x: 236, y: 150, text: 'near the outer edge', kind: 'accent', size: 28 }, { t: 'pill', x: 236, y: 96, text: 'clear of the zone', kind: 'red', size: 28 }] }),
+  'yof-624': f => ({ title: 'The shelf edge in a gale', key: ['Where the bottom rises from ocean depths to 200 m the waves steepen', 'The sea is worst over the shelf edge, at B: cross it before the gale'],
+    under: [{ t: 'circle', x: 170, y: 130, r: 22, c: 'red', w: 5, dash: '0', fill: 'rgba(224,37,27,.14)' }], over: [{ t: 'pill', x: 170, y: 76, text: 'B: steep, confused seas', kind: 'red', size: 28 }] }),
+  'yof-659': f => ({ title: 'A secondary low', key: ['Away from the main low, the two circulations add: strongest at B', 'Between the two centres they oppose'],
+    over: [{ t: 'arrow', a: pol(246, 178, -16, 32), b: pol(246, 178, 16, 32), c: 'red', w: 9 }, { t: 'arrow', a: pol(260, 166, -16, 32), b: pol(260, 166, 16, 32), c: 'red', w: 9 },
+      { t: 'arrow', a: pol(152, 104, -13, 34), b: pol(152, 104, 13, 34), c: 'red', w: 6 }, { t: 'arrow', a: pol(126, 92, -13, 199), b: pol(126, 92, 13, 199), c: 'red', w: 6 },
+      { t: 'pill', x: 280, y: 136, text: 'B: they add', kind: 'red' }, { t: 'pill', x: 60, y: 112, text: 'A: they oppose', size: 28 }] }),
+  'yof-691': f => ({ title: 'A squall cell crossing ahead', key: ['Treat it like a ship crossing at 18 kn: you cannot outpace it', 'Slow down, let it cross ahead, then pass astern of it'],
+    over: [{ t: 'line', pts: [[74, 128], [300, 128]], c: 'accent', w: 6, dash: '14 10', arrow: true }, { t: 'pill', x: 132, y: 100, text: 'slow down, let it cross', kind: 'accent', size: 28 }, { t: 'pill', x: 274, y: 104, text: 'then astern of it', kind: 'accent', size: 26 }] }),
+  'yof-775': f => ({ title: 'Onto a slipway cradle', key: ['Motor onto the cradle on the last of the flood, about an hour before HW', 'If she sits badly, the rising tide lifts her clear to try again'],
+    over: [{ t: 'pill', x: 232, y: 104, text: 'about 1240, flood still rising', kind: 'accent', size: 26 }] }),
+  'yof-820': f => ({ title: 'Laying out a kedge', key: ['Anchor, chain and warp go in the tender; pay the warp out from it as you go', 'Never drag the warp through the water: drop the anchor at full length'],
+    under: [{ t: 'line', pts: [[134, 114], [60, 128]], c: 'ink', w: 4, dash: '10 8' }],
+    over: [{ t: 'boat', x: 92, y: 121, hdg: 260, scale: 1.2 }, { t: 'anchor', x: 52, y: 128, s: 0.7 }, { t: 'pill', x: 224, y: 42, text: 'anchor and warp in the tender', kind: 'accent', size: 26 }, { t: 'pill', x: 236, y: 178, text: 'pay out as you go', size: 26 }] }),
+  'yof-827': f => ({ title: 'Springing off, bow first', key: ['Stern spring on, fender on the quarter, port (outboard) engine astern', 'Going astern on the spring holds the quarter: the bow swings out'],
+    over: [{ t: 'line', pts: [[257, 127], [264, 90]], c: 'ink', w: 5 }, { t: 'raw', svg: P => { const [x, y] = P(264, 90); return `<circle cx="${f1(x)}" cy="${f1(y)}" r="7" fill="var(--ink)"/>`; } },
+      { t: 'raw', svg: P => { const [x, y] = P(261, 121); return `<rect x="${f1(x - 6)}" y="${f1(y - 15)}" width="12" height="30" rx="6" fill="var(--accent)" stroke="var(--ink)" stroke-width="3"/>`; } },
+      { t: 'curve', pts: [[250, 94], [242, 86], [230, 84], [218, 88]], c: 'accent', w: 6, arrow: true }, { t: 'pill', x: 176, y: 80, text: 'bow swings out', kind: 'accent', size: 28 },
+      { t: 'pill', x: 190, y: 126, text: 'stern spring · fender', size: 26 }, { t: 'pill', x: 186, y: 160, text: 'port engine astern', kind: 'accent', size: 28 }] }),
+  'yof-833': f => ({ title: 'Going astern into a slot', key: ['Prop walk astern kicks the stern to port; the W wind blows the bow to starboard', 'Both turn her one way: bow thruster to port, gather sternway early'],
+    over: [{ t: 'arrow', a: [156, 84], b: [134, 84], c: 'red', w: 6 }, { t: 'arrow', a: [164, 54], b: [186, 54], c: 'red', w: 6 }, { t: 'pill', x: 94, y: 84, text: 'stern to port', kind: 'red', size: 26 },
+      { t: 'pill', x: 236, y: 54, text: 'bow to starboard', kind: 'red', size: 26 }, { t: 'pill', x: 160, y: 22, text: 'thruster to port, sternway early', kind: 'accent', size: 26 }] }),
+  'yof-834': f => ({ title: 'Mooring between piles', key: ['Head west into the ebb: stemming it gives you control', 'Bow line to the up-tide (west) pile first, then drop back for the stern line'],
+    over: [{ t: 'curve', pts: [[268, 120], [220, 112], [150, 104], [106, 100]], c: 'accent', w: 6, arrow: true }, { t: 'boat', x: 160, y: 100, hdg: 270 },
+      { t: 'pill', x: 90, y: 72, text: '1 bow line, west pile', kind: 'accent', size: 26 }, { t: 'pill', x: 232, y: 74, text: '2 drop back, stern line', size: 26 }] }),
+  'yof-836': f => ({ title: 'Towing over a bar', key: ['A 100 m tow sags: it can drag on the 3.5 m bar and steers badly', 'Shorten up in sheltered water before the bar; go alongside inside'],
+    over: [{ t: 'pill', x: 252, y: 150, text: 'shorten the tow first', kind: 'accent', size: 28 }, { t: 'pill', x: 236, y: 104, text: 'bar 3.5 m', kind: 'red', size: 26 }] }),
+  'yof-867': f => ({ title: 'Laying a Bahamian moor', key: ['Let go the up-stream anchor, drop back twice the scope (80 m), let go the second', 'Heave in on the first: she lies midway, 40 m to each'],
+    over: [{ t: 'anchor', x: 120, y: 100, s: 0.7 }, { t: 'anchor', x: 200, y: 100, s: 0.7 }, { t: 'boat', x: 160, y: 100, hdg: 270 },
+      { t: 'dim', a: [120, 80], b: [160, 80], text: '40 m', size: 24 }, { t: 'dim', a: [160, 80], b: [200, 80], text: '40 m', size: 24 },
+      { t: 'pill', x: 96, y: 58, text: '1 let go', kind: 'accent', size: 26 }, { t: 'pill', x: 226, y: 58, text: '2 after 80 m astern', kind: 'accent', size: 26 }] }),
+  'yof-872': f => ({ title: 'Kedging off a lee bank', key: ['As she lifts, the W wind will drive her further up the bank', 'Lay the kedge to windward now, into deep water; heave in as she lifts'],
+    under: [{ t: 'line', pts: [[150, 105], [56, 100]], c: 'ink', w: 4, dash: '10 8' }],
+    over: [{ t: 'anchor', x: 44, y: 100, s: 0.7 }, { t: 'pill', x: 120, y: 40, text: 'kedge to windward, now', kind: 'accent', size: 26 }, { t: 'pill', x: 242, y: 92, text: 'wind drives her up the bank', kind: 'red', size: 24 }, { t: 'windCorner', from: 270, text: 'Wind W 5' }] }),
+  'yof-877': f => ({ title: 'The last metres across a stream', key: ['Split engines give little thrust ahead: the stream carries her back', 'Hold the stream on both engines, bow angled in a little: she ferries across'],
+    over: [{ t: 'boat', x: 252, y: 103, hdg: 12, len: 36 }, { t: 'arrow', a: [212, 96], b: [236, 96], c: 'accent', w: 6 }, { t: 'pill', x: 120, y: 186, text: 'both ahead, bow angled in', kind: 'accent', size: 28 }] }),
+  'yof-878': f => ({ title: 'A berth downstream', key: ['With the stream behind her she cannot stop', 'Pass the berth, stop, then go astern to it, stemming the stream'],
+    under: [{ t: 'boat', x: 236, y: 132, hdg: 90, len: 80 }],
+    over: [{ t: 'line', pts: [[114, 92], [306, 92]], c: 'accent', w: 6, arrow: true }, { t: 'curve', pts: [[312, 104], [306, 118], [292, 124], [280, 124]], c: 'accent', w: 6, dash: '12 9', arrow: true },
+      { t: 'pill', x: 262, y: 66, text: 'pass it, stop', kind: 'accent', size: 26 }, { t: 'pill', x: 104, y: 126, text: 'astern, into the stream', kind: 'accent', size: 26 }] }),
+};
+Object.assign(PLAN, PL);
+Object.assign(ISOPLAN, {
+  'yof-601': f => ({ title: 'Wind round a high', key: ['Northern hemisphere: clockwise round a high, angled outwards', 'South of the centre the wind comes from about ENE'],
+    over: [...circ('H', ICX, ICY, 78, [70, 290]), { t: 'windAt', x: 120, y: 160, from: 67.5, len: 80, gap: 46, text: 'wind ENE', pdx: 70, pdy: -10 }] }),
+  'yof-652': f => ({ title: 'Wind round a low, south of the equator', key: ['Southern hemisphere: clockwise round a low, angled in across the isobars', 'North of the centre the wind comes from about WNW'],
+    over: [...circ('L', ICX, ICY, 78, [90, 180, 270], { sh: true }), { t: 'arrow', a: pol(160, 40, -40, 112.5), b: pol(160, 40, 40, 112.5), c: 'red', w: 9 }, { t: 'pill', x: 236, y: 40, text: 'wind WNW', kind: 'red' }] }),
+});
+Object.assign(YOUAT, { 'yof-652': 'left', 'yof-601': 'left' });
+Object.assign(RU, {
+  'Wind E 5': 'Ветер E 5', 'Wind W 5': 'Ветер W 5', 'wind ENE': 'ветер ENE', 'wind WNW': 'ветер WNW',
+  'She steers 180°T at 6.0 kn': 'Её ИК 180°, ход 6,0 уз', 'Soundings, S to N': 'Глубины, с юга на север',
+  'Explosives dumping ground · keep out': 'Свалка взрывчатых веществ · не входить', 'A disused dumping ground may still hold live munitions': 'На заброшенной свалке ещё могут лежать боеприпасы',
+  'Never anchor, trawl or dive there: anchor clear of it': 'Там не становятся на якорь, не тралят и не ныряют: якорь — вне её', 'no anchoring': 'якорь не отдавать', 'anchor clear of it': 'якорь — вне свалки',
+  'Single buoy mooring · keep well clear': 'Буй SBM · держитесь подальше', 'Track 0.2 M off ≈ 370 m: inside the 500 m restricted area': 'Путь в 0,2 мили ≈ 370 м: внутри зоны 500 м',
+  'A tanker moors there with floating hoses: re-route well clear': 'Там швартуется танкер, плавают шланги: проложите путь подальше', '0.2 M ≈ 370 m': '0,2 мили ≈ 370 м', 'well clear of it': 'подальше от буя',
+  'Suspended wellhead · cross, but anchor away': 'Устье скважины · пройти можно, якорь — подальше', '14 m over it: no danger to a 2.4 m keel': 'Над ним 14 м: киль 2,4 м не заденет',
+  'Anchors and nets snag on it: anchor well away from it': 'Якоря и сети за него цепляются: становитесь подальше', 'no anchoring here': 'здесь якорь не отдавать', 'anchor well away': 'якорь — подальше',
+  'One bearing along the track': 'Один пеленг вдоль пути', 'A bearing dead ahead shows whether you are on track': 'Пеленг прямо по курсу покажет, на пути ли вы',
+  'Not how far to go: that needs a line across the track': 'Но не сколько осталось: нужна линия поперёк пути', 'cross-track only': 'только боковое смещение', 'distance: needs this': 'для дистанции — такая',
+  'A contour across the track': 'Изобата поперёк пути', 'The shelf edge runs across your track, at right angles to it': 'Бровка шельфа пересекает ваш путь под прямым углом',
+  'Finding it checks the distance run: log and along-track stream': 'Её пересечение проверяет пройденное: лаг и течение вдоль пути', 'checks the distance run': 'проверка пройденного',
+  'The order of the bearings': 'Порядок пеленгов', 'Ahead (A) and astern (C) the bearings change slowly: take them first': 'Впереди (A) и позади (C) пеленг меняется медленно: их первыми',
+  'B, near the beam, changes fastest: take it last, then note time and log': 'B, у траверза, меняется быстрее всего: его последним, затем время и лаг',
+  'The sounding reduced to chart datum': 'Глубина, приведённая к нулю карты', 'Sounder 45.0 m + transducer 1.0 m = 46.0 m of water': 'Эхолот 45,0 м + вибратор 1,0 м = 46,0 м воды',
+  'Less the 3.0 m of tide: 43.0 m charted, at B': 'Минус прилив 3,0 м: 43,0 м по карте — точка B', '45.0 + 1.0 − 3.0 = 43.0 m': '45,0 + 1,0 − 3,0 = 43,0 м',
+  'Two ranges, two crossings': 'Две дальности, два пересечения', 'From X, island A bears about 333°T; from Y it would bear 290°T': 'Из X остров A по пеленгу около 333°, из Y было бы 290°',
+  'Even a rough EBL (±5°) tells them apart: you are at X': 'Даже грубый EBL (±5°) их различает: вы в X', 'X: A bears 333°T': 'X: A на 333°', 'Y: A would bear 290°T': 'Y: A было бы на 290°',
+  'Matching a line of soundings': 'Сверка серии глубин', 'Only on B is the third sounding deep: 142, 148, 405, then 155, 160 m': 'Только на B третья глубина большая: 142, 148, 405, затем 155, 160 м',
+  'On A it never drops; on C the canyon comes second (390 m)': 'На A провала нет; на C каньон вторым (390 м)', 'B: deep on the third': 'B: провал на третьей',
+  'A sounding along a contour': 'Глубина вдоль изобаты', 'Along this bearing the depth stays about 84 m: the contour runs with it': 'Вдоль этого пеленга глубина около 84 м: изобата идёт вдоль него',
+  'A sounding helps only where the contours cross the line': 'Глубина помогает, только где изобаты пересекают линию', 'about 84 m all along': 'везде около 84 м',
+  'One position line and an EP': 'Одна линия положения и EP', 'Take the point on the line nearest the EP': 'Берите точку линии, ближайшую к EP', 'It is the smallest shift that fits both': 'Это наименьший сдвиг, согласный с обоими', 'nearest the EP': 'ближе всего к EP',
+  'Off track near a wind farm': 'Сход с пути у ветропарка', 'The track was laid for a 2 M margin off the farm': 'Путь проложен с запасом 2 мили от ветропарка',
+  'A new course straight to B passes nearer it: regain the track first': 'Новый курс прямо на B идёт ближе к нему: сначала вернитесь на путь', 'back to the track': 'назад на путь', 'direct to B: nearer the farm': 'прямо на B: ближе к ветропарку',
+  'The 1 in 60 rule': 'Правило «1 на 60»', '5 M off after a 75 M run: 5 × 60 ÷ 75 = 4° of track error': 'В 5 милях после 75 пройденных: 5 × 60 ÷ 75 = 4° ошибки пути',
+  '5 M to close in the 50 M to go: 6° more; 4° + 6° = 10° to starboard': '5 миль за оставшиеся 50: ещё 6°; 4° + 6° = 10° вправо', 'alter 10° to starboard': 'отвернуть на 10° вправо', '4°': '4°', '6°': '6°',
+  'A collision course to meet her': 'Курс на сближение', 'sin A = 6 × sin 90° ÷ 8: A = 49° off her bearing, towards her course': 'sin A = 6 × sin 90° ÷ 8: A = 49° от пеленга на неё, в сторону её курса',
+  '090° + 49° = 139°T: you meet in about 5 h 40 min': '090° + 49° = 139°: встреча примерно через 5 ч 40 мин', 'steer 139°T': 'ИК 139°', 'she runs 34 M': 'она пройдёт 34 мили', 'A = 49°': 'A = 49°',
+  'Set towards the separation zone': 'Снос к разделительной зоне', 'A new course for the waypoint cuts the corner through the zone': 'Новый курс на точку срезает угол через зону',
+  'Regain the planned track and follow the lane round the bend': 'Вернитесь на путь и идите по полосе за поворот', 'direct: across the zone': 'напрямую: через зону', 'regain the track': 'вернуться на путь',
+  'Allowing for the current': 'Поправка на течение', '20 h × 0.6 kn = 12 M north; you want only 6 M of it': '20 ч × 0,6 уз = 12 миль на N; нужно лишь 6',
+  'Cancel 6 M: 6 × 60 ÷ 120 = 3° south of 090°: steer 093°T': 'Погасить 6 миль: 6 × 60 ÷ 120 = 3° южнее 090°: ИК 093°', 'current 12 M N': 'течение 12 миль на N', 'steer 093°T': 'ИК 093°', 'made good': 'путь',
+  'Where the race lies': 'Где стоит сулой', 'A race forms where the stream sweeps past the headland': 'Сулой встаёт там, где течение огибает мыс',
+  'On the E-going stream it lies east and south-east of the Bill': 'При течении на E он к E и SE от мыса', 'race': 'сулой',
+  'Under the keel in the troughs': 'Под килем в подошве волны', '6.2 m charted + 1.0 m tide = 7.2 m; half the 2.0 m swell is 1.0 m': '6,2 м по карте + прилив 1,0 м = 7,2 м; половина зыби 2,0 м — 1,0 м',
+  '7.2 − 1.0 − 0.4 squat − 2.4 draught = 3.4 m under the keel': '7,2 − 1,0 − 0,4 проседание − 2,4 осадка = 3,4 м под килем', '6.2 + 1.0 − 1.0 − 0.4 − 2.4 = 3.4 m': '6,2 + 1,0 − 1,0 − 0,4 − 2,4 = 3,4 м',
+  'Choosing the clearing bearing': 'Выбор ограждающего пеленга', 'A 3 m swell takes 1.5 m off every depth in the troughs': 'Зыбь 3 м отнимает 1,5 м от любой глубины в подошве',
+  'With 3.4 m draught: B leaves 0.1 m under the keel, C leaves 5.1 m': 'При осадке 3,4 м: B оставляет 0,1 м под килем, C — 5,1 м', 'C: 10 − 3.4 − 1.5 = 5.1 m': 'C: 10 − 3,4 − 1,5 = 5,1 м', 'B: 5 − 3.4 − 1.5 = 0.1 m': 'B: 5 − 3,4 − 1,5 = 0,1 м',
+  'Crossing near the end of a scheme': 'Пересечение у конца системы', 'Cross the lanes at right angles, where the traffic is predictable': 'Пересекайте полосы под прямым углом: там движение предсказуемо',
+  'In the precautionary area ships converge and turn: keep out of it': 'В районе осторожного плавания суда сходятся и поворачивают: не входите', 'A: right angles': 'A: под прямым углом', 'B: ships turning': 'B: суда поворачивают',
+  'Anchoring by radar ranges': 'Постановка по дальностям РЛС', 'Two ranges off the steep points cross at the anchor spot': 'Две дальности от приметных мысов пересекаются в точке якоря',
+  'Ranges are sharp where bearings smear; the sounder checks the depth': 'Дальности точны, пеленги размыты; эхолот проверяет глубину', 'the ranges cross at the spot': 'дальности пересекаются здесь',
+  'Rounding a cliff by radar': 'Огибание утёса по РЛС', 'The reef gives no echo: measure from the cliff': 'Риф не даёт эха: меряйте от утёса',
+  '0.7 M of reef + 0.5 M margin: keep the cliff outside 1.2 M': 'Риф 0,7 мили + запас 0,5 мили: утёс — за кольцом 1,2 мили', 'VRM 1.2 M': 'VRM 1,2 мили',
+  'A waypoint where the ships turn': 'Точка там, где поворачивают суда', 'Off a cape the ships converge and alter course at the same point': 'У мыса суда сходятся и поворачивают в одной точке',
+  'Turning there you meet them all mid-turn: move WP4 clear of their routes': 'Поворачивая там, встретите их всех в повороте: вынесите WP4 с их путей', 'the ships turn here': 'здесь поворачивают суда', 'WP4 moved': 'WP4 перенесена',
+  'When she reaches you': 'Когда она подойдёт', '2.0 M closed in 12 min: 10 kn of relative speed': '2,0 мили за 12 мин: относительная скорость 10 уз',
+  '6.0 M left at 10 kn = 36 min: 0212 + 36 min = 0248': '6,0 мили при 10 уз = 36 мин: 0212 + 36 мин = 0248', '2.0 M in 12 min = 10 kn': '2,0 мили за 12 мин = 10 уз', 'CPA nil · 0248': 'CPA ноль · 0248',
+  'A target that has altered': 'Цель изменила курс', 'The third plot falls off the line: she altered after 0506': 'Третья отметка ушла с линии: после 0506 она изменила курс',
+  'Plot afresh from 0506 and 0512: CPA 2.1 M at 0525': 'Новая прокладка по 0506 и 0512: CPA 2,1 мили в 0525', '2.1 M': '2,1 мили', 'CPA 2.1 M at 0525': 'CPA 2,1 мили в 0525', 'a new line from 0506': 'новая линия от 0506',
+  'Why the guard zone stayed quiet': 'Почему охранная зона молчала', 'A small echo may first paint at only 2–3 M': 'Малая цель может появиться только в 2–3 милях',
+  'A zone from 6 M out never sees it: it helps the lookout, it does not replace one': 'Зона от 6 миль её не видит: она помогает наблюдению, но не заменяет его', 'first painted at 2 M': 'появилась в 2 милях', 'zone: 6–8 M': 'зона: 6–8 миль',
+  'Side lobes': 'Боковые лепестки', 'A big echo close by paints through the scanner side lobes': 'Сильное близкое эхо приходит и через боковые лепестки антенны',
+  'An arc at her range, not real targets: turn the gain down a touch': 'Дуга на её дистанции — не цели: чуть убавьте усиление', 'side lobes, not targets': 'боковые лепестки, не цели', 'at the ship’s range': 'на дистанции судна',
+  'Passing a scheme you are not using': 'Мимо СРД, которой не пользуетесь', 'Rule 10(h): avoid it by as wide a margin as practicable': 'Правило 10(h): обходите её как можно шире',
+  'Rule 10(f), (g): take care near its ends; never anchor in or near it': 'Правило 10(f), (g): осторожно у её концов; не становитесь в ней и рядом', 'as wide a margin as you can': 'как можно шире',
+  'Who may use the inshore zone': 'Кто может идти зоной прибрежного плавания', 'Rule 10(d): vessels under 20 m, sailing or fishing vessels, or to reach a place in it': 'Правило 10(d): суда до 20 м, парусные, рыболовные или идущие в место в ней',
+  'At 22 m under power, passing by: use the lane': '22 м, под мотором, мимо: идите по полосе', 'not for you': 'не для вас',
+  'Into the inshore zone for a port': 'В зону прибрежного плавания — в порт', 'Rule 10(d)(ii): any vessel may use an inshore traffic zone': 'Правило 10(d)(ii): любое судно может идти зоной прибрежного плавания',
+  'when bound to or from a port, installation or place within it': 'если идёт в порт, к сооружению или месту в ней или оттуда', 'bound for Port A: allowed': 'в порт A: можно',
+  'Crossing a scheme head to wind': 'Пересечение СРД против ветра', 'Rule 10(c): cross on a heading as near 90° to the flow as practicable': 'Правило 10(c): курсом как можно ближе к 90° к потоку',
+  'With an engine aboard 000°T is practicable: motor-sail across': 'С мотором 000° выполним: идите под мотором и парусами', 'motor-sail · 000°T': 'мотор и паруса · 000°',
+  'Where to keep in a lane': 'Где держаться в полосе', 'Rule 10(b)(ii): keep clear of the separation zone': 'Правило 10(b)(ii): держитесь в стороне от зоны разделения',
+  'Near the outer edge you also impede the ships least (Rule 10(j))': 'У внешней кромки вы ещё и меньше мешаете судам (правило 10(j))', 'near the outer edge': 'у внешней кромки', 'clear of the zone': 'в стороне от зоны',
+  'The shelf edge in a gale': 'Бровка шельфа в шторм', 'Where the bottom rises from ocean depths to 200 m the waves steepen': 'Где дно поднимается от океанских глубин до 200 м, волна становится круче',
+  'The sea is worst over the shelf edge, at B: cross it before the gale': 'Хуже всего над бровкой, в B: пересеките её до шторма', 'B: steep, confused seas': 'B: крутая толчея',
+  'A secondary low': 'Частный циклон', 'Away from the main low, the two circulations add: strongest at B': 'Вдали от основного циклона циркуляции складываются: сильнее всего в B',
+  'Between the two centres they oppose': 'Между центрами они противоположны', 'B: they add': 'B: складываются', 'A: they oppose': 'A: навстречу',
+  'A squall cell crossing ahead': 'Шквальная ячейка пересекает курс', 'Treat it like a ship crossing at 18 kn: you cannot outpace it': 'Как судно, пересекающее курс на 18 уз: его не обогнать',
+  'Slow down, let it cross ahead, then pass astern of it': 'Сбавьте ход, пропустите её и пройдите у неё за кормой', 'slow down, let it cross': 'сбавить ход, пропустить', 'then astern of it': 'затем за ней',
+  'Onto a slipway cradle': 'На тележку слипа', 'Motor onto the cradle on the last of the flood, about an hour before HW': 'Заходите на тележку в конце прилива, за час до ПВ',
+  'If she sits badly, the rising tide lifts her clear to try again': 'Если встала криво, прибывающая вода снимет её для новой попытки', 'about 1240, flood still rising': 'около 1240, вода ещё прибывает',
+  'Laying out a kedge': 'Завоз верпа', 'Anchor, chain and warp go in the tender; pay the warp out from it as you go': 'Якорь, цепь и трос — в тузик; трос травите из него на ходу',
+  'Never drag the warp through the water: drop the anchor at full length': 'Не тащите трос по воде: отдавайте якорь на всю длину', 'anchor and warp in the tender': 'якорь и трос в тузике', 'pay out as you go': 'травить на ходу',
+  'Springing off, bow first': 'Отход носом на шпринге', 'Stern spring on, fender on the quarter, port (outboard) engine astern': 'Кормовой шпринг, кранец на раковину, левый (внешний) мотор назад',
+  'Going astern on the spring holds the quarter: the bow swings out': 'Назад на шпринге корма держится, нос отходит', 'bow swings out': 'нос отходит', 'stern spring · fender': 'кормовой шпринг · кранец', 'port engine astern': 'левый мотор назад',
+  'Going astern into a slot': 'Задним ходом в узкое место', 'Prop walk astern kicks the stern to port; the W wind blows the bow to starboard': 'На заднем ходу корму забрасывает влево, ветер W сносит нос вправо',
+  'Both turn her one way: bow thruster to port, gather sternway early': 'Оба поворачивают её в одну сторону: подрулька влево, задний ход заранее',
+  'stern to port': 'корма влево', 'bow to starboard': 'нос вправо', 'thruster to port, sternway early': 'подрулька влево, задний ход заранее',
+  'Mooring between piles': 'Швартовка между сваями', 'Head west into the ebb: stemming it gives you control': 'Идите на W против отлива: так яхта управляется',
+  'Bow line to the up-tide (west) pile first, then drop back for the stern line': 'Сначала носовой на западную (верхнюю) сваю, затем сдайте назад и кормовой',
+  '1 bow line, west pile': '1 носовой на W сваю', '2 drop back, stern line': '2 назад, кормовой',
+  'Towing over a bar': 'Буксировка через бар', 'A 100 m tow sags: it can drag on the 3.5 m bar and steers badly': 'Трос 100 м провисает: может цеплять бар 3,5 м, буксир плохо управляется',
+  'Shorten up in sheltered water before the bar; go alongside inside': 'Укоротите трос на тихой воде до бара, внутри — лагом', 'shorten the tow first': 'сначала укоротить трос', 'bar 3.5 m': 'бар 3,5 м',
+  'Laying a Bahamian moor': 'Багамская постановка', 'Let go the up-stream anchor, drop back twice the scope (80 m), let go the second': 'Отдайте верхний якорь, сдайте на 80 м (двойная длина), отдайте второй',
+  'Heave in on the first: she lies midway, 40 m to each': 'Выберите первый: яхта посередине, по 40 м к каждому', '40 m': '40 м', '1 let go': '1 отдать', '2 after 80 m astern': '2 через 80 м назад',
+  'Kedging off a lee bank': 'Снятие верпом с подветренной мели', 'As she lifts, the W wind will drive her further up the bank': 'Когда она всплывёт, ветер W загонит её дальше на мель',
+  'Lay the kedge to windward now, into deep water; heave in as she lifts': 'Завезите верп на ветер сейчас, на глубину; выбирайте, пока она всплывает',
+  'kedge to windward, now': 'верп на ветер, сейчас', 'wind drives her up the bank': 'ветер гонит её на мель',
+  'The last metres across a stream': 'Последние метры поперёк течения', 'Split engines give little thrust ahead: the stream carries her back': 'Моторы враздрай почти не тянут вперёд: течение сносит назад',
+  'Hold the stream on both engines, bow angled in a little: she ferries across': 'Держите течение обоими моторами, нос чуть к причалу: яхту сносит вбок', 'both ahead, bow angled in': 'оба вперёд, нос чуть внутрь',
+  'A berth downstream': 'Место ниже по течению', 'With the stream behind her she cannot stop': 'С попутным течением яхта не остановится',
+  'Pass the berth, stop, then go astern to it, stemming the stream': 'Пройдите место, остановитесь и подайте назад против течения', 'pass it, stop': 'пройти, остановиться', 'astern, into the stream': 'назад, против течения',
+  'Wind round a low, south of the equator': 'Ветер вокруг циклона в Южном полушарии', 'Northern hemisphere: clockwise round a high, angled outwards': 'Северное полушарие: по часовой вокруг антициклона, с отклонением наружу',
+  'South of the centre the wind comes from about ENE': 'К югу от центра ветер дует примерно с ENE',
+  'Southern hemisphere: clockwise round a low, angled in across the isobars': 'Южное полушарие: по часовой вокруг циклона, поперёк изобар внутрь',
+  'North of the centre the wind comes from about WNW': 'К северу от центра ветер дует примерно с WNW',
+});
+
 /* ---------------- run ---------------- */
 const report = { q: 0, plan: 0, missing: [] };
 function emit(e, q, plan) {
@@ -563,7 +901,7 @@ for (const e of list('chart.json')) {
   CUR = e.id; const f = e.figure, cfg = CFG[e.id] || {}; USED = new Set(); RUMAP = e.ru || {};
   const q = frame({ title: titleOf(f), key: keyOf(f, e.id), draw: chartDraw(f, cfg), avoid: chartAvoid(f) });
   let plan = null;
-  if (PLAN[e.id]) { const p = PLAN[e.id](f); plan = frame({ title: p.title, key: p.key, draw: chartDraw(f, { ...cfg, noTrack: p.noTrack, ...(p.cfg || {}) }, p), avoid: chartAvoid(f), cols: 1 }); }
+  if (PLAN[e.id]) { const p = PLAN[e.id](f); plan = frame({ title: p.title, key: p.key, draw: chartDraw(f, { ...cfg, noTrack: p.noTrack, ...(p.cfg || {}) }, p), avoid: chartAvoid(f), cols: 1, view: p.view }); }
   else if (LIGHTPLAN[e.id]) plan = LIGHTPLAN[e.id]();
   emit(e, q, plan);
 }

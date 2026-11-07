@@ -1,0 +1,111 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 60,
+  "title": "A thunderstorm cell on radar",
+  "key": [
+   "Plot the cell like a ship: S at 18 kn, it crosses your track well ahead",
+   "You cannot outrun it: reef, and pass astern of it · CAPE 1800 J/kg: expect more"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 90,
+    "noHeading": true,
+    "label": "You, 6 kn"
+   },
+   {
+    "x": 300,
+    "z": 0,
+    "hdg": 90,
+    "noHeading": true,
+    "bearing": false,
+    "label": "in 30 min",
+    "labelAbove": true,
+    "fill": "#9aa0a6"
+   }
+  ],
+  "circles": [
+   {
+    "x": 1540,
+    "z": -840,
+    "r": 170,
+    "c": "red",
+    "dash": "0",
+    "fill": "rgba(224,37,27,.25)"
+   },
+   {
+    "x": 1649.7,
+    "z": 53.3,
+    "r": 170,
+    "c": "red",
+    "fill": "rgba(224,37,27,.08)"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      1563.2,
+      -651.4
+     ],
+     [
+      1722.8,
+      648.8
+     ]
+    ],
+    "c": "red",
+    "w": 5,
+    "dash": "14 10",
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      60,
+      0
+     ],
+     [
+      1200,
+      0
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "dash": "14 10",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 980,
+    "z": -840,
+    "text": "Cb cell, 18 kn S",
+    "kind": "red"
+   },
+   {
+    "x": 2029.7,
+    "z": 13.299999999999997,
+    "text": "in 30 min"
+   },
+   {
+    "x": 950,
+    "z": -260,
+    "text": "it crosses ahead: pass astern of it",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -250,
+    "z": -1100
+   },
+   {
+    "x": 2200,
+    "z": 800
+   }
+  ]
+ }
+}

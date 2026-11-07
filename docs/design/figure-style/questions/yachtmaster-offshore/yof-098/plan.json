@@ -1,0 +1,145 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 50,
+  "title": "A large structure · red lights at its ends",
+  "key": [
+   "Main light white Mo(U); red Mo(U) lights mark the ends of a large platform",
+   "Pass outside the reds, clear of the 500 m safety zone"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -700,
+    "z": 700,
+    "hdg": 90,
+    "noHeading": true
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -110,
+      -40
+     ],
+     [
+      110,
+      -40
+     ],
+     [
+      110,
+      40
+     ],
+     [
+      -110,
+      40
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,0,0,.25)"
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": 0,
+    "r": 500,
+    "c": "red"
+   },
+   {
+    "x": 0,
+    "z": 0,
+    "r": 20,
+    "fill": "#ffffff",
+    "c": "ink",
+    "dash": "0"
+   },
+   {
+    "x": -110,
+    "z": 0,
+    "r": 20,
+    "fill": "#e0251b",
+    "c": "ink",
+    "dash": "0"
+   },
+   {
+    "x": 110,
+    "z": 0,
+    "r": 20,
+    "fill": "#e0251b",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -660,
+      660
+     ],
+     [
+      -560,
+      600
+     ],
+     [
+      -300,
+      590
+     ],
+     [
+      300,
+      590
+     ],
+     [
+      620,
+      540
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -560,
+    "text": "500 m safety zone: keep out",
+    "kind": "red"
+   },
+   {
+    "x": 0,
+    "z": 640,
+    "text": "pass outside",
+    "kind": "accent"
+   },
+   {
+    "x": -260,
+    "z": -170,
+    "text": "red Mo(U): the ends",
+    "kind": "light"
+   },
+   {
+    "x": 250,
+    "z": 170,
+    "text": "white Mo(U)",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -760,
+    "z": -560
+   },
+   {
+    "x": 760,
+    "z": 760
+   },
+   {
+    "x": -700,
+    "z": 943.2
+   }
+  ]
+ }
+}

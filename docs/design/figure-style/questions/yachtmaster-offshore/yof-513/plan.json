@@ -1,0 +1,135 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Narrow channel · over 20 m under power",
+  "key": [
+   "Rule 9(b) covers only vessels under 20 m and sailing vessels: not your 23 m motor yacht",
+   "Keep to the starboard side of the channel (9(a)) and meet her port to port (Rule 14)"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true
+   },
+   {
+    "x": 62.7,
+    "z": -596.7,
+    "hdg": 182,
+    "label": "Tanker 200 m",
+    "bearing": false
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -200.0,
+      -750.0
+     ],
+     [
+      60.0,
+      -750.0
+     ],
+     [
+      60.0,
+      210.0
+     ],
+     [
+      -200.0,
+      210.0
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      -72.0
+     ],
+     [
+      0.0,
+      -150.0
+     ],
+     [
+      10.4,
+      -221.2
+     ],
+     [
+      31.1,
+      -290.2
+     ],
+     [
+      61.5,
+      -355.5
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      57.5,
+      -446.8
+     ],
+     [
+      46.6,
+      -375.6
+     ],
+     [
+      27.6,
+      -306.2
+     ],
+     [
+      0.6,
+      -239.4
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 418.7,
+    "z": 0.0,
+    "text": "keep to starboard",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": -352.2,
+    "z": -515.3,
+    "text": "narrow channel",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -180.0,
+    "z": -180.0
+   },
+   {
+    "x": 180.0,
+    "z": 180.0
+   },
+   {
+    "x": -117.3,
+    "z": -776.7
+   },
+   {
+    "x": 242.7,
+    "z": -416.7
+   }
+  ]
+ }
+}

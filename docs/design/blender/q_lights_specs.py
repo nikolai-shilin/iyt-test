@@ -8,7 +8,9 @@
 #   light positions, and her distance is set so the lens comes out near `lens`. `hull` (length, beam, freeboard):
 #   a faint dark hull, the same plain shape for every vessel so it never tells her type. `tow`: what she tows, its
 #   own hull and lights, `right` and `beyond` metres from her across and along our line of sight (the tow line
-#   bends behind a tug that has turned), and its own aspect `R`. `poles=False`: no poles under her lights (a
+#   bends behind a tug that has turned), and its own aspect `R` (`rig=False`: a barge, no deckhouse). `gain`: lens
+#   brightness by colour ({'y': 0.4} keeps a yellow yellow); `pole_r`: a thinner pole under a small boat's lights;
+#   `swap`: fit a light to another light's point of the figure; `dy`: the figure that many pixels lower in the picture. `poles=False`: no poles under her lights (a
 #   sailing vessel's mast stays unseen).
 # kind 'screen': lights with no hull to fit (marks, shore lights, a light alone): the camera is set by `lens` and
 #   `bearing`, the `anchor` light (index, distance, height) sets the pitch, and every light goes on the ray through
@@ -101,13 +103,58 @@ SPECS = {
     'ci-214': dict(kind='pontoon', anchor=True, lens=18, eye_off=(2.2, 2.5, 0.0), look=(0.13, 2.0, 11.0)),   # ANCHOR breaker on
 }
 
+# ---------- Yachtmaster Offshore ----------
+SPECS.update({
+    # offshore structures and signals: lights alone (a platform's shape would be the answer), a wind farm's towers,
+    # a large structure's deck, a port's signal mast on its mole head
+    'yof-026': dict(kind='screen', lens=250, bearing=0, anchor=(1, 2000, 25.0), dist=2000),
+    'yof-098': dict(kind='screen', lens=250, bearing=0, anchor=(1, 2000, 22.0), dist=2000, platform=(1, 2, 0)),
+    'yof-076': dict(kind='screen', lens=60, gain={'y': 0.4}, bearing=0, anchor=(0, 1200, 18.0), dist=1200, at={3: 1300}, turbines=((2, 0), (3, None), (4, 1))),
+    'yof-404': dict(kind='screen', lens=216, gain={'y': 0.4}, bearing=0, anchor=(2, 150, 6.0), dist=150, signal=(0, 2, 3), coast=dict(distance=1500, height=60)),
+    # restricted in ability to manoeuvre: a warship recovering aircraft, a dredger at anchor and under way, a diving
+    # boat, a buoy tender at anchor; a tug whose tow restricts her
+    'yof-504': dict(kind='vessel', bearing=-30, R=70, hull=(120, 14, 6), lights={0: (2, 0, 47), 1: (2, 0, 41), 2: (2, 0, 35), 3: (-28, 0, 31), 4: (30, 0, 21), 5: (24, -7, 10)}),
+    'yof-542': dict(kind='vessel', bearing=0, R=0, hull=(45, 16, 3), lights={0: (0, 0, 19), 1: (0, 0, 15.5), 2: (0, 0, 12), 3: (0, -8, 9.5), 4: (0, -8, 6), 5: (0, 8, 9.5), 6: (0, 8, 6)}),
+    'yof-578': dict(kind='vessel', bearing=0, R=180, dy=60, hull=(45, 16, 3), lights={0: (0, 0, 19), 1: (0, 0, 15.5), 2: (0, 0, 12), 3: (0, 8, 9.5), 4: (0, 8, 6), 5: (0, -8, 9.5), 6: (0, -8, 6), 7: (-22, 0, 4)}),
+    'yof-579': dict(kind='vessel', bearing=0, R=70, lens=180, pole_r=0.03, hull=(6, 2.4, 0.7), lights={0: (0, 0, 4.6), 1: (0, 0, 3.6), 2: (0, 0, 2.6)}),
+    'yof-580': dict(kind='vessel', bearing=0, R=90, hull=(40, 9, 3), lights={0: (-5, 0, 20), 1: (-5, 0, 16), 2: (-5, 0, 12), 3: (14, 0, 8.7)}),
+    'yof-577': dict(kind='vessel', gain={'y': 0.4}, bearing=2, R=180, lens=300, hull=(28, 8, 2.5), lights={0: (2, 0, 15), 1: (2, 0, 12.2), 2: (2, 0, 9.4), 3: (-13, 0, 5.8), 4: (-13, 0, 3.2)},
+                    tow=dict(right=-4, beyond=-190, R=180, hull=(40, 10, 1.5), rig=False, lights={5: (-20, 0, 2.0)})),
+    # towing seen from astern: the tow's sternlight nearer, the tug's towing light over her sternlight beyond
+    'yof-575': dict(kind='vessel', gain={'y': 0.4}, bearing=2, R=180, lens=300, hull=(25, 7, 2), lights={1: (-12, 0, 4.9), 2: (-12, 0, 2.6)},
+                    tow=dict(right=-6, beyond=-190, R=180, hull=(40, 10, 1.5), rig=False, lights={0: (-20, 0, 2.0)})),
+    # fishing: trawling in a channel, fishing at rest, and the Annex II signals in one vertical line under the fishing lights
+    'yof-514': dict(kind='vessel', bearing=0, R=0, hull=(22, 6, 2), lights={0: (2, 0, 10.6), 1: (2, 0, 8), 2: (1, -2.2, 3.5), 3: (1, 2.2, 3.5)}),
+    'yof-517': dict(kind='vessel', bearing=0, R=90, hull=(18, 5, 1.6), lights={0: (1, 0, 9.6), 1: (1, 0, 7)}),
+    'yof-539': dict(kind='vessel', bearing=0, R=90, hull=(22, 6, 2), lights={0: (2, 0, 12), 1: (2, 0, 10), 2: (2, 0, 7), 3: (2, 0, 5)}),
+    'yof-540': dict(kind='vessel', gain={'y': 0.6}, bearing=0, R=90, hull=(24, 7, 2.2), lights={0: (1, 0, 11.5), 1: (1, 0, 9.5), 2: (1, 0, 6.8), 3: (1, 0, 4.8)}),
+    'yof-541': dict(kind='vessel', bearing=0, R=60, hull=(22, 6, 2), lights={0: (2, 0, 12), 1: (2, 0, 10), 2: (2, 0, 7), 3: (2, 0, 5)}),
+    'yof-581': dict(kind='vessel', bearing=0, R=-170, dy=60, hull=(22, 6, 2), lights={0: (2, 0, 12), 1: (2, 0, 10), 2: (2, 0, 7.2), 3: (2, 0, 5.2), 4: (-10, 0, 2.8)}),
+    # power-driven, pilot, not under command, constrained by draught, aground
+    'yof-523': dict(kind='vessel', bearing=-25, R=10, hull=(15, 4.3, 1.3), lights={0: (0, 0, 19.5), 1: (0, 0, 16.5), 2: (0, 0, 11.5), 3: (5, -1.6, 2.0)}, poles=False),
+    'yof-524': dict(kind='vessel', bearing=30, R=-15, hull=(16, 5, 1.6), lights={0: (-1, 0, 8.8), 1: (-1, 0, 6.5), 2: (5, 2.2, 2.6)}),
+    'yof-548': dict(kind='vessel', bearing=15, R=-60, lens=200, hull=(150, 24, 10), lights={0: (-12, 0, 54), 1: (34, 0, 26), 2: (-35, 0, 36), 3: (-30, 11, 12)}),
+    'yof-563': dict(kind='vessel', bearing=-30, R=60, hull=(180, 30, 12), lights={0: (-5, 0, 58), 1: (-5, 0, 52), 2: (-5, 0, 46), 3: (-35, 0, 36), 4: (30, 0, 28), 5: (20, -12, 15.5)}),
+    'yof-567': dict(kind='vessel', bearing=3, R=4.5, lens=250, hull=(200, 32, 12), lights={0: (-45, 0, 40), 1: (55, 0, 30), 2: (50, -6, 16)}),
+    'yof-572': dict(kind='vessel', bearing=0, R=180, hull=(35, 8, 3), lights={0: (0, 0, 14), 1: (0, 0, 11), 2: (-17, 0, 4)}),
+    'yof-573': dict(kind='vessel', bearing=0, R=90, hull=(35, 8, 3), lights={0: (0, 0, 14.5), 1: (0, 0, 11)}),
+    'yof-584': dict(kind='vessel', bearing=10, R=55, hull=(45, 9, 3), lights={0: (-12, 0, 17), 1: (7, 0, 10), 2: (5, -4.5, 3.5)}),
+    'yof-589': dict(kind='vessel', bearing=0, R=90, hull=(40, 8, 3), lights={0: (-4, 0, 13.5), 1: (-4, 0, 9.5), 2: (12, 0, 5.5)}),
+    # a yacht's tricolour alone; a WIG craft in flight (no hull: she flies); a hovercraft bow on (a plain hull).
+    # yof-583: the data draws her red on the left and green on the right, which no vessel heading at you shows;
+    # `swap` fits each sidelight to the other's point, so she shows green on your left, red on your right
+    'yof-565': dict(kind='vessel', bearing=-75, R=-50, dist=150, lens=50, hull=(12, 3.8, 1.2), lights={0: (0.5, 0, 15)}, poles=False),
+    'yof-526': dict(kind='vessel', bearing=0, R=-70, lights={0: (-8, 0, 8), 1: (4, 0, 4.5), 2: (1, 4.5, 1.5)}),
+    'yof-583': dict(kind='vessel', gain={'y': 0.4}, bearing=0, R=0, swap={2: 3, 3: 2}, hull=(25, 11, 1.5), lights={0: (0, 0, 7.5), 1: (2, 0, 5.8), 2: (3, 3.8, 2.6), 3: (3, -3.8, 2.6)}),
+})
+
 if __name__ == '__main__':
     # dry check: fit each vessel scene's camera and print where its lights land against the figure's
     import json, os, sys
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import q_lights_geo as G
     from q_lights_layout import layout
-    L = {e['id']: e for lv in ('bareboat-skipper', 'charter-checkin') for e in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'figure-style', 'questions', lv, 'lights.json')))}
+    L = {e['id']: e for lv in ('bareboat-skipper', 'charter-checkin', 'yachtmaster-offshore') for e in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'figure-style', 'questions', lv, 'lights.json')))}
     only = sys.argv[1:]
     for qid, sp in SPECS.items():
         if only and qid not in only: continue
@@ -117,7 +164,8 @@ if __name__ == '__main__':
         cam = lay['cam']; pts = lay['points']
         px = {i: G.project(p, cam)[:2] for i, p in pts.items()}
         idx = sorted(px)
-        bad = G.check_order([px[i] for i in idx], [(lights[i]['x'], lights[i]['y']) for i in idx])
+        sw = sp.get('swap', {})
+        bad = G.check_order([px[i] for i in idx], [(lights[sw.get(i, i)]['x'], lights[sw.get(i, i)]['y']) for i in idx])
         errs = [((px[i][0] - lights[i]['x'] * 4) ** 2 + (px[i][1] - lights[i]['y'] * 4) ** 2) ** 0.5 for i in idx]
         print(f"{qid} {sp['kind']:6} lens {G.lens_of_s(cam['s']):5.0f} mm  dist {lay.get('dist', 0):6.0f}  err max {max(errs):4.0f}px  "
               + ' '.join(f"{i}:{lights[i]['c']}({px[i][0]:.0f},{px[i][1]:.0f})/({lights[i]['x']*4},{lights[i]['y']*4})" for i in idx))

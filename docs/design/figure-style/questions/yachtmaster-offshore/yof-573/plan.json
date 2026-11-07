@@ -1,0 +1,85 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "mpp": 0.32,
+  "title": "Lights · not under command, drifting",
+  "key": [
+   "Two all-round reds: not under command; she moves only with the current",
+   "Rule 27(a)(iii): sidelights and sternlight only when making way through the water — so none"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 200,
+    "label": "Not under command",
+    "stack": [
+     "r",
+     "r"
+    ],
+    "stackDx": -140,
+    "noHeading": true,
+    "scale": 3.2,
+    "bearing": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      30,
+      15
+     ],
+     [
+      90,
+      -7
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -60,
+      45
+     ],
+     [
+      0,
+      23
+     ]
+    ],
+    "c": "course",
+    "w": 4,
+    "dash": "8 8",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 105,
+    "z": -30,
+    "text": "over the ground: 070° 2 kn",
+    "kind": "light"
+   },
+   {
+    "x": -60,
+    "z": 70,
+    "text": "current 070° 2 kn",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -80,
+    "z": -60
+   },
+   {
+    "x": 140,
+    "z": 80
+   }
+  ]
+ }
+}

@@ -1,0 +1,135 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Walking her sideways · twin screws and thruster",
+  "key": [
+   "Starboard engine ahead, port astern: the stern swings to starboard",
+   "Bow thruster to starboard as well: she moves bodily sideways onto the pontoon"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      3.0,
+      9.6
+     ],
+     [
+      3.0,
+      1.5
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -3.0,
+      1.5
+     ],
+     [
+      -3.0,
+      9.6
+     ]
+    ],
+    "c": "red",
+    "w": 6,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      3.6,
+      -10.5
+     ],
+     [
+      9.6,
+      -10.5
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      3.6,
+      12.6
+     ],
+     [
+      9.6,
+      12.6
+     ]
+    ],
+    "c": "ink",
+    "w": 5,
+    "arrow": true
+   }
+  ],
+  "quays": [
+   {
+    "x1": 11.4,
+    "z1": -22.5,
+    "x2": 13.8,
+    "z2": 22.5
+   }
+  ],
+  "fit": [
+   {
+    "x": -24.0,
+    "z": -22.5
+   },
+   {
+    "x": 24.0,
+    "z": 22.5
+   },
+   {
+    "x": -9.0,
+    "z": -9.0
+   },
+   {
+    "x": 9.0,
+    "z": 9.0
+   }
+  ],
+  "texts": [
+   {
+    "x": 17.1,
+    "z": -13.5,
+    "text": "thruster to starboard",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": 18.4,
+    "z": 8.6,
+    "text": "stbd engine ahead",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": -18.1,
+    "z": 10.6,
+    "text": "port engine astern",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 18.6,
+    "z": 0.0,
+    "text": "4 m",
+    "free": true
+   }
+  ]
+ }
+}

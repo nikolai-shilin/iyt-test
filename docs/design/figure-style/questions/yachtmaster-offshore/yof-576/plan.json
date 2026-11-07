@@ -1,0 +1,86 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "A tug’s lights from your bearing",
+  "key": [
+   "You bear 230°T from her, 130° from her bow: inside the 135° arc astern",
+   "There her sternlight shows, with the yellow towing light above it"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": 306.4,
+    "z": -257.1,
+    "hdg": 100,
+    "label": "Tug",
+    "power": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      274.9,
+      -262.7
+     ],
+     [
+      141.0,
+      -286.3
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "8 8"
+   }
+  ],
+  "circles": [
+   {
+    "x": 109.5,
+    "z": -291.8,
+    "r": 14,
+    "fill": "#5a6068",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "night": true,
+  "texts": [
+   {
+    "x": 335.7,
+    "z": -372.2,
+    "text": "yellow towing light + sternlight",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": 45.2,
+    "z": -283.2,
+    "text": "tow",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -120.0,
+    "z": -120.0
+   },
+   {
+    "x": 120.0,
+    "z": 120.0
+   },
+   {
+    "x": 186.4,
+    "z": -377.1
+   },
+   {
+    "x": 426.4,
+    "z": -137.1
+   }
+  ]
+ }
+}

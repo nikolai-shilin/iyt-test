@@ -79,6 +79,7 @@ def faces():
     elif kind == 'litres': dial(['0', '25', '50', '75', '100'], -60, 60, 2, [(0, 0.125, RED)], [('LITRES', 60)], font=78)
     elif kind == 'fuel': dial(['E', '¼', '½', '¾', 'F'], -60, 60, 2, [(0, 0.125, RED)], [('FUEL', 64)], font=100)
     elif kind == 'heel': dial(['40', '20', '0', '20', '40'], -60, 60, 2, [], [('HEEL °', 60)])
+    elif kind == 'vacuum': dial(['0', '10', '20', '30'], -60, 60, 5, [], [('inHg', 64), ('VACUUM', 52)])
     elif kind == 'extinguisher':
         im = Image.new('RGB', (S, S), (236, 234, 226)); d = ImageDraw.Draw(im); R = 440
         for f0, f1, col in ((0, 0.33, RED), (0.33, 0.72, GRN), (0.72, 1, RED)):
@@ -178,6 +179,13 @@ MON = ('Volts', 'Amps', 'Charge', 'Used Ah', 'Sun 22:00', 'Mon 07:00', 'Panel V'
 
 def units(f):
     gs = [list(g) for g in f['gauges']]; names = [g[0] for g in gs]; txt = ' '.join(f.get('lines', [])).lower()
+    pick = lambda *ns: [g for g in gs if g[0] in ns]
+    if 'Stage' in names: return [('monitor', gs, {'title': 'BATTERY CHARGER'})]
+    if 'Salinity' in names: return [('monitor', gs, {'title': 'WATERMAKER'})]
+    if 'Fire sys' in names:      # both engines stopped by the fire system's shutdown, and the system's own panel
+        return [('tach', pick('Port'), {'title': 'PORT'}), ('tach', pick('Stbd'), {'title': 'STBD'}), ('monitor', pick('Fire sys'), {'title': 'FIRE SYSTEM'})]
+    if 'Fire' in names: return [('monitor', pick('Eng room', 'Fire'), {'title': 'FIRE ALARM'}), ('tach', pick('Stbd RPM'), {'title': 'STBD ENGINE'})]
+    if 'Boost' in names: return [('engine', [g for g in gs if g[0] != 'Boost'], {}), ('nav', pick('Boost'), {})]
     if any(n in NAV for n in names): return [('nav', gs, {})]
     if 'Water' in names: return [('water', gs, {'sel': 'selector' in txt, 'pump': 'pump' in txt and 'running' in txt})]
     if 'Bilge pump' in names: return [('bilge', gs, {})]
@@ -368,7 +376,52 @@ def p_oil(fig):
     P.pill(X(0), 480, 'engine fires', 'accent', 28)
     return P
 
+# ---------- yachtmaster offshore plans ----------
+def p_vacuum(fig):
+    P = Q.Plan('The fuel filter is clogging', ['Vacuum across the primary filter: 2 inHg at the start, 7 now',
+                                                'Switch to the clean side of the duplex filter, then renew the element'], PLAN_RU)
+    X = lambda v: 160 + v / 10 * 840
+    P.line(X(0), 300, X(10), 300, w=4)
+    for v in range(0, 11, 2): P.line(X(v), 300, X(v), 316, w=4); P.text(X(v), 356, f'{v}', 30, 400, halo=False)
+    P.text(X(10) + 40, 356, 'inHg', 30, 400, a='start', halo=False)
+    P.rect(X(0), 200, X(2) - X(0), 80, fill=GREEN, op=.45, rx=8); P.rect(X(2), 200, X(7) - X(2), 80, fill=RED, op=.28, rx=8)
+    P.pill(X(2), 150, 'at the start: 2', 'green', 28); P.pill(X(7), 150, 'now: 7, revs hunting', 'red', 28)
+    P.arrow(X(2) + 20, 240, X(7) - 20, 240, c=RED, w=6)
+    P.pill(640, 470, 'rough sea: sludge stirred up', 'light', 28)
+    return P
+
+def p_charger(fig):
+    P = Q.Plan('Three-stage charging', ['Bulk: full current, 62 A, until the bank reaches 14.4 V at 2 h 10 min',
+                                         'Absorption: 14.4 V held while the current falls; float follows'], PLAN_RU)
+    x0, x1, y0, y1 = 170, 1180, 470, 90; T = 4.0
+    X = lambda h: x0 + h / T * (x1 - x0); YA = lambda a: y0 - a / 70 * (y0 - y1)
+    P.line(x0, y0, x1, y0, w=4); P.line(x0, y0, x0, y1, w=4)
+    for h in range(0, 5): P.line(X(h), y0, X(h), y0 + 12, w=4); P.text(X(h), y0 + 46, f'{h} h', 28, 400, halo=False)
+    for a in (0, 20, 40, 60): P.line(x0 - 12, YA(a), x0, YA(a), w=4); P.text(x0 - 20, YA(a) + 10, f'{a} A', 28, 400, a='end', halo=False)
+    tb = 2 + 10 / 60; pts = [(0, 62)] + [(tb + (3.0 - tb) * i / 12, 62 * (9 / 62) ** (i / 12)) for i in range(13)]
+    P.raw('<path d="M' + ' L'.join(f'{X(h):.1f} {YA(a):.1f}' for h, a in pts) + '" fill="none" stroke="var(--accent)" stroke-width="7" stroke-linejoin="round"/>')
+    P.line(X(3.0), YA(9), X(3.8), YA(3), c='var(--accent)', w=5, dash='12 9')
+    P.line(X(tb), y1, X(tb), y0, c=MUTED, w=4, dash='10 8')
+    P.pill((X(0) + X(tb)) / 2, YA(62) - 40, 'bulk: 62 A', 'light', 28); P.pill((X(tb) + X(3.6)) / 2, YA(62) - 40, 'absorption: 14.4 V', 'accent', 28)
+    P.pill(X(3.0), YA(9) - 46, 'now: 9 A', 'accent', 28); P.pill(X(tb), y0 + 96, '14.4 V at 2 h 10 min', 'light', 26)
+    return P
+
+def p_salinity(fig):
+    P = Q.Plan('Salinity creeping up', ['280 ppm on day 1, 640 now, at the same pressure: the membrane is fouling',
+                                         'Over 500 ppm: divert the product overboard, then clean the membrane'], PLAN_RU)
+    X = lambda v: 160 + v / 800 * 840
+    P.line(X(0), 320, X(800), 320, w=4)
+    for v in range(0, 801, 200): P.line(X(v), 320, X(v), 336, w=4); P.text(X(v), 376, f'{v}', 30, 400, halo=False)
+    P.text(X(800) + 40, 376, 'ppm', 30, 400, a='start', halo=False)
+    P.rect(X(0), 220, X(500) - X(0), 80, fill=GREEN, op=.3, rx=8); P.rect(X(500), 220, X(800) - X(500), 80, fill=RED, op=.25, rx=8)
+    P.line(X(500), 180, X(500), 340, c=RED, w=6, dash='12 9'); P.pill(X(500), 150, 'drink under 500', 'red', 28)
+    for v, t, k in ((280, 'day 1: 280', 'green'), (640, 'day 9: 640', 'red')):
+        P.line(X(v), 210, X(v), 310, c='var(--ink)', w=6); P.pill(X(v), 440, t, k, 30)
+    P.pill(640, 520, '56 bar, prefilters new', 'light', 28)
+    return P
+
 PLANS = {
+    'yof-731': p_vacuum, 'yof-789': p_charger, 'yof-797': p_salinity,
     'ci-155': p_oil, 'ci-171': p_lamps, 'ci-195': p_fuel,
     'ci-203': p_volts('A rested bank: its volts tell the charge', ['Rested, no load: 12.7 V full, 12.4 V about 75 %', '12.2 V half, 12.0 V or less flat'],
                       [(12.7, '12.7 V at rest: full', 'accent', 0)]),
@@ -467,6 +520,18 @@ PLAN_RU = {
     'normal: 1–2 s': 'норма: 1–2 с', 'still sounding: stop': 'всё ещё звучит: стоп',
 }
 PLAN_RU.update({f'{t} s': f'{t} с' for t in range(0, 21, 5)})
+PLAN_RU.update({
+    'The fuel filter is clogging': 'Топливный фильтр забивается', 'Vacuum across the primary filter: 2 inHg at the start, 7 now': 'Разрежение на фильтре грубой очистки: на выходе 2 дюйма рт. ст., сейчас 7',
+    'Switch to the clean side of the duplex filter, then renew the element': 'Перейдите на чистую сторону сдвоенного фильтра, смените элемент',
+    'inHg': 'дюйм рт. ст.', 'at the start: 2': 'на выходе: 2', 'now: 7, revs hunting': 'сейчас: 7, обороты плавают', 'rough sea: sludge stirred up': 'качка подняла осадок со дна бака',
+    'Three-stage charging': 'Трёхстадийная зарядка', 'Bulk: full current, 62 A, until the bank reaches 14.4 V at 2 h 10 min': 'Основная: полный ток 62 А, пока банк не дойдёт до 14,4 В — за 2 ч 10 мин',
+    'Absorption: 14.4 V held while the current falls; float follows': 'Абсорбция: 14,4 В держатся, ток падает; затем поддержание',
+    'bulk: 62 A': 'основная: 62 А', 'absorption: 14.4 V': 'абсорбция: 14,4 В', 'now: 9 A': 'сейчас: 9 А', '14.4 V at 2 h 10 min': '14,4 В за 2 ч 10 мин',
+    '0 h': '0 ч', '1 h': '1 ч', '2 h': '2 ч', '3 h': '3 ч', '4 h': '4 ч', '0 A': '0 А', '20 A': '20 А', '40 A': '40 А', '60 A': '60 А',
+    'Salinity creeping up': 'Солёность растёт', '280 ppm on day 1, 640 now, at the same pressure: the membrane is fouling': '1-й день 280 мг/л, сейчас 640, давление то же: мембрана загрязнена',
+    'Over 500 ppm: divert the product overboard, then clean the membrane': 'Выше 500 мг/л: воду за борт, затем промойте мембрану',
+    'ppm': 'мг/л', 'drink under 500': 'пить: до 500', 'day 1: 280': '1-й день: 280', 'day 9: 640': '9-й день: 640', '56 bar, prefilters new': '56 бар, префильтры новые',
+})
 
 if not Q.IN_BLENDER:
     xs = Q.items('panel') if Q.flag('--all') else [Q.item('panel', Q.arg('--id', 'bs-083'))]
@@ -508,7 +573,7 @@ def lcd(w, h, text):
 
 # needle angle (clockwise from 12 o'clock) for a value on each dial
 DIAL = {'temp': (40, 120, -60, 60), 'volts': (8, 16, -60, 60), 'tach': (0, 4000, -135, 135), 'amps': (0, 60, -60, 60),
-        'litres': (0, 100, -60, 60), 'fuel': (0, 1, -60, 60), 'heel': (-40, 40, -60, 60)}
+        'litres': (0, 100, -60, 60), 'fuel': (0, 1, -60, 60), 'heel': (-40, 40, -60, 60), 'vacuum': (0, 30, -60, 60)}
 def angle(kind, v):
     lo, hi, a0, a1 = DIAL[kind]; v = max(lo - (hi - lo) * 0.04, min(hi + (hi - lo) * 0.04, v))
     return a0 + (a1 - a0) * (v - lo) / (hi - lo)
@@ -659,6 +724,11 @@ FRAC = {'Empty': 0.0, '1/8': 0.125, '1/4': 0.25, '1/2': 0.5, '3/4': 0.75, '7/8':
 def cdial(g):
     """(face kind, value) of a gauge drawn as a dial or meter on another level's engine panel; (None, None) for a lamp."""
     n, v = g[0], g[1]
+    if v == 'STOP': return 'tach', 0.0                          # stopped
+    if n == 'Vacuum': return 'vacuum', num(v)
+    if n == 'Alternator': return 'amps', num(v)
+    if n in ('Port RPM', 'Stbd RPM'): return 'tach', num(v)
+    if n == 'Fuel' and v.endswith('%'): return 'fuel', num(v) / 100
     if n in ('Temp', 'Port temp', 'Stbd temp'): return 'temp', num(v)
     if n in ('Volts', 'Batt'): return 'volts', num(v)
     if n == 'RPM': return 'tach', num(v)
@@ -692,8 +762,8 @@ def lit_lamps(gs, lines):
     """Which warning lamps the figure lights: a flagged oil, temperature, charge or battery reading, or 'battery
     light on' / 'charge light on' in its lines."""
     by = {g[0]: g for g in gs}; txt = ' '.join(lines).lower()
-    temp = any(g[2] for g in gs if g[0] in ('Temp', 'Port temp', 'Stbd temp'))
-    charge = bool(by.get('Batt', [0, 0, False])[2]) or bool(by.get('Charge', [0, '', False])[2] and by['Charge'][1] == 'ON') or \
+    temp = any(g[2] and (num(g[1]) or 0) >= 95 for g in gs if g[0] in ('Temp', 'Port temp', 'Stbd temp'))
+    charge = bool(by.get('Batt', [0, 0, False])[2]) or bool(by.get('Alternator', [0, 0, False])[2]) or bool(by.get('Charge', [0, '', False])[2] and by['Charge'][1] == 'ON') or \
         bool(re.search(r'(battery|charge)( warning)? light (still )?on', txt))
     return {'OIL': bool(by.get('Oil', [0, 0, False])[2]), 'TEMP': temp, 'CHARGE': charge}
 
@@ -722,7 +792,7 @@ def u_tach(cx, gs, lines, o):
     """A small engine panel: the rev counter, the key, and the charge lamp only when the figure says it is on."""
     W, H = 0.17, 0.2167; box(cx, W, H)
     caps = ['1300:1180:KEY'] + (['300:1180:CHARGE'] if o.get('charge') else [])
-    plate_img('tach-plate', W, H, face('unit-plate', 'ENGINE', *[c.replace('1300', '850') for c in caps]), cx, 0)
+    plate_img('tach-plate', W, H, face('unit-plate', o.get('title', 'ENGINE'), *[c.replace('1300', '850') for c in caps]), cx, 0)
     P = lambda x, y: (cx + (x / 1200 - 0.5) * W, (0.5 - y / 1300) * H)
     g = gs[0]; kind, v = cdial(g); r = 0.05; zc = 0.012
     KI.gauge(face(kind), (cx, -0.001, zc), r, value_angle=angle(kind, v)); labels = tag(g, (cx, 0, zc + r + 0.008))

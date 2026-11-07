@@ -1,0 +1,82 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 60,
+  "title": "ODAS · a special mark",
+  "marks": [
+   {
+    "x": 0,
+    "z": 0,
+    "kind": "special",
+    "bearing": false,
+    "hi": true
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": 4,
+    "r": 70,
+    "c": "red"
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": -170,
+    "z": 120,
+    "hdg": 70,
+    "noHeading": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -140,
+      112
+     ],
+     [
+      0,
+      150
+     ],
+     [
+      160,
+      60
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -110,
+    "text": "ocean data buoy",
+    "kind": "accent"
+   },
+   {
+    "x": 150,
+    "z": 140,
+    "text": "pass well clear",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -220,
+    "z": -150
+   },
+   {
+    "x": 220,
+    "z": 175
+   }
+  ],
+  "key": [
+   "Five yellow flashes every 20 s: a special mark",
+   "ODAS: a buoy gathering ocean and weather data; give it a wide berth"
+  ]
+ }
+}

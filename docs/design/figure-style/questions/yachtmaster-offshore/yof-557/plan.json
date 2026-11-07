@@ -1,0 +1,81 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Crossing a dredged channel · do not impede",
+  "key": [
+   "Rule 9(d): no vessel may cross a narrow channel if that impedes one that can navigate only within it",
+   "There is no 20 m limit in 9(d): wait, and cross astern of her"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 90
+   },
+   {
+    "x": 578.5,
+    "z": -689.4,
+    "hdg": 180,
+    "label": "Ship"
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      428.5,
+      -1229.4
+     ],
+     [
+      728.5,
+      -1229.4
+     ],
+     [
+      728.5,
+      570.6
+     ],
+     [
+      428.5,
+      570.6
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "texts": [
+   {
+    "x": -438.3,
+    "z": 45.1,
+    "text": "wait",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 729.4,
+    "z": 207.7,
+    "text": "dredged channel",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -270.0,
+    "z": -270.0
+   },
+   {
+    "x": 270.0,
+    "z": 270.0
+   },
+   {
+    "x": 308.5,
+    "z": -959.4
+   },
+   {
+    "x": 848.5,
+    "z": -419.4
+   }
+  ]
+ }
+}

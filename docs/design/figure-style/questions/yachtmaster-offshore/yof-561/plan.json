@@ -1,0 +1,120 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Joining a lane · she is overtaking you",
+  "key": [
+   "She is 150° from your bow, over 22.5° abaft your beam, and sees your sternlight",
+   "Rule 13: she keeps clear; Rule 10(a) keeps every other Rule in force"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 75
+   },
+   {
+    "x": -579.6,
+    "z": -155.3,
+    "hdg": 90,
+    "label": "Ship"
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      600.0,
+      -320.0
+     ],
+     [
+      600.0,
+      20.0
+     ],
+     [
+      -600.0,
+      20.0
+     ],
+     [
+      -600.0,
+      -320.0
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      -70.5,
+      535.4
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "4 10"
+   },
+   {
+    "pts": [
+     [
+      0.0,
+      0.0
+     ],
+     [
+      -328.7,
+      -428.4
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "4 10"
+   }
+  ],
+  "texts": [
+   {
+    "x": -615.8,
+    "z": -500.4,
+    "text": "overtaking: she keeps clear",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 54.0,
+    "z": -273.8,
+    "text": "you stand on",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": 526.6,
+    "z": -330.0,
+    "text": "eastbound lane",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -180.0,
+    "z": -180.0
+   },
+   {
+    "x": 180.0,
+    "z": 180.0
+   },
+   {
+    "x": -759.6,
+    "z": -335.3
+   },
+   {
+    "x": -399.6,
+    "z": 24.7
+   }
+  ]
+ }
+}

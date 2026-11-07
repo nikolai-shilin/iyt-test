@@ -1,0 +1,104 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Deviation by the sun’s azimuth",
+  "key": [
+   "Tabled azimuth 118°T + 4°W = 122°M; over the compass the sun bears 119°C",
+   "The compass reads 3° low: deviation 3°E on 165°C"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 165,
+    "noHeading": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      77.6,
+      289.8
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "10 8"
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      525.8,
+      328.5
+     ]
+    ],
+    "c": "red",
+    "w": 5
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      559.8,
+      310.3
+     ]
+    ],
+    "c": "course",
+    "w": 5
+   }
+  ],
+  "texts": [
+   {
+    "x": 88.0,
+    "z": 328.4,
+    "text": "heading 165°C"
+   },
+   {
+    "x": 585.2,
+    "z": 415.6,
+    "text": "122°M tabled",
+    "kind": "red"
+   },
+   {
+    "x": 612.2,
+    "z": 284.4,
+    "text": "119°C by the compass",
+    "kind": "accent"
+   }
+  ],
+  "circles": [
+   {
+    "x": 606.2,
+    "z": 350.0,
+    "r": 26,
+    "c": "course",
+    "dash": "0",
+    "fill": "#ffd34a"
+   }
+  ],
+  "fit": [
+   {
+    "x": -120,
+    "z": -420
+   },
+   {
+    "x": 820,
+    "z": 360
+   }
+  ]
+ },
+ "noScale": true
+}

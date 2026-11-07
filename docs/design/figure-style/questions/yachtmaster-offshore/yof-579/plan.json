@@ -1,0 +1,108 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Lights · a small boat with divers down",
+  "key": [
+   "Red-white-red: too small for all the RAM lights, she shows these when diving (Rule 27(e)(i))",
+   "Divers may be in the water round her: slow right down and pass wide"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 300,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 0,
+    "z": -150,
+    "hdg": 90,
+    "label": "Diving boat",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "r",
+     "w",
+     "r"
+    ],
+    "stackDx": -140,
+    "scale": 2.6
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": -150,
+    "r": 120,
+    "c": "red"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      20,
+      260
+     ],
+     [
+      150,
+      100
+     ],
+     [
+      210,
+      -150
+     ],
+     [
+      160,
+      -380
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -230,
+    "z": -20,
+    "text": "divers may be down",
+    "kind": "red"
+   },
+   {
+    "x": 330,
+    "z": 120,
+    "text": "slow, pass wide",
+    "kind": "accent"
+   },
+   {
+    "x": -260,
+    "z": 200,
+    "text": "dive site",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -360,
+    "z": -420
+   },
+   {
+    "x": 360,
+    "z": 350
+   },
+   {
+    "x": 0,
+    "z": 423.2
+   },
+   {
+    "x": 0,
+    "z": -273.2
+   }
+  ]
+ }
+}

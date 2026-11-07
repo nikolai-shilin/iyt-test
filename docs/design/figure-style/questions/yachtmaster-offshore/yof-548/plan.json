@@ -1,0 +1,83 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Light signals · one flash",
+  "key": [
+   "One flash of about a second: “I am altering my course to starboard” (Rule 34(b))",
+   "The light is all-round white, seen at least 5 M; it may go with or without the sound"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 93.2,
+    "z": -347.7,
+    "hdg": 255,
+    "label": "Ship",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "scale": 3.2
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      60,
+      -330
+     ],
+     [
+      20,
+      -340
+     ],
+     [
+      -20,
+      -370
+     ],
+     [
+      -40,
+      -420
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 330,
+    "z": -460,
+    "text": "one flash: turning to starboard",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -200,
+    "z": -520
+   },
+   {
+    "x": 420,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 100.8
+   },
+   {
+    "x": 93.2,
+    "z": -463.62
+   }
+  ]
+ }
+}

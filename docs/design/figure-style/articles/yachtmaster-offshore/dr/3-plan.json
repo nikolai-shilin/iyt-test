@@ -1,0 +1,77 @@
+{
+ "sch": {
+  "padPx": 70,
+  "title": "Leeway · port tack",
+  "key": [
+   "Wind N, heading 050°T: port tack, she slips to starboard",
+   "Water track = heading + leeway: 050° + 5° = 055°T"
+  ],
+  "wind": 0,
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 50,
+    "noHeading": true,
+    "sail": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      229.8,
+      -192.8
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "14 10"
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      262.1,
+      -183.5
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 220.8,
+    "z": -245.2,
+    "text": "heading 050°"
+   },
+   {
+    "x": 341.1,
+    "z": -189.1,
+    "text": "water track 055°",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -120,
+    "z": -330
+   },
+   {
+    "x": 380,
+    "z": 120
+   }
+  ]
+ },
+ "noScale": true
+}

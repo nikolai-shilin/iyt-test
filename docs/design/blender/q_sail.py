@@ -71,6 +71,13 @@ SPEC = {
                    key=['Close-hauled with the true wind rising: heeling hard, weather helm', 'Reef now, before the wind builds further']),
     'bs-645': dict(sea='calm', goes=[(315, 'beating back')], title='Running, then beating back',
                    key=['Running, your speed is taken off the true wind', 'Upwind it is added: much more wind and spray, so reef first']),
+    # yachtmaster offshore
+    'yof-760': dict(sea='fresh', arcs=[(50, 310, 'tack: 310°')], title='Damage on the lee bow · tack',
+                    key=['On port tack she heels to starboard and buries the crack', 'Tack: on starboard tack she heels to port and the crack lifts clear']),
+    # hove-to: the genoa backed to windward, the main eased a little, forereaching (name: the plan's own words, not the point of sail)
+    'yof-844': dict(sea='fresh', backed=True, boom=22, heel=6, wake=0.45, name='hove-to, forereaching', goes=[(50, 'lie about 050°')],
+                    title='Hove-to · stop the forereaching',
+                    key=['Forereaching at 3 kn, nearly beam-on: the main is still driving', 'Ease the main further, lash the helm harder to leeward: she lies about 50° off']),
 }
 
 RU = {
@@ -140,6 +147,12 @@ RU = {
     'Overpowered · close-hauled': 'Слишком много парусов · бейдевинд',
     'Close-hauled with the true wind rising: heeling hard, weather helm': 'Бейдевинд, ветер крепчает: большой крен, яхта приводится',
     'Reef now, before the wind builds further': 'Берите риф сейчас, пока ветер не усилился',
+    'tack: 310°': 'оверштаг: 310°', 'Damage on the lee bow · tack': 'Пробоина в подветренной скуле · поворот',
+    'On port tack she heels to starboard and buries the crack': 'На левом галсе крен на правый борт — трещина под водой',
+    'Tack: on starboard tack she heels to port and the crack lifts clear': 'Поворот: на правом галсе крен на левый борт, трещина выходит из воды',
+    'hove-to, forereaching': 'в дрейфе, идёт вперёд', 'lie about 050°': 'лечь около 050°', 'Hove-to · stop the forereaching': 'В дрейфе · остановите ход вперёд',
+    'Forereaching at 3 kn, nearly beam-on: the main is still driving': 'Идёт вперёд 3 уз почти лагом: грот всё ещё тянет',
+    'Ease the main further, lash the helm harder to leeward: she lies about 50° off': 'Потравите грот ещё, руль круче под ветер: встанет около 50° к ветру',
     'Running, then beating back': 'Фордевинд, потом назад в лавировку',
     'Running, your speed is taken off the true wind': 'На фордевинде скорость яхты вычитается из ветра',
     'Upwind it is added: much more wind and spray, so reef first': 'Против ветра — прибавляется: ветра и брызг куда больше, сначала риф',
@@ -208,7 +221,7 @@ def plan(x):
     if s.get('genoa_pole'): place('genoa poled out', around(ge, 150))
     if s.get('preventer'): place('preventer', around(math.degrees(math.atan2(end[0] + bow[0], -(end[1] + bow[1]))), 140))
     place('boom', around(bb, 130), 'light')
-    name = pos + (' · ' + tack if tack else '')
+    name = s.get('name') or pos + (' · ' + tack if tack else '')
     place(name, [(bb2, r_) for r_ in (200, 235, 270, 300) for bb2 in (180, 0, 160, 200, 20, 340, 135, 225, 45, 315, 90, 270)])
     title = s.get('title') or f'Points of sail · {pos}'
     return {'noScale': True, 'sch': {'padPx': 70, 'mpp': MPP, 'wind': w, 'title': title, 'key': s['key'], 'zones': [nogo],
@@ -221,7 +234,7 @@ def meta(x):
     Q.save(x['id'], 'plan.json', A)
     ru = dict(RU); ru.update(x['ru'])
     pos, _, tack = name.partition(' · ')
-    ru[name] = RU[pos] + (' · ' + RU[tack] if tack else '')
+    ru[name] = RU[name] if name in RU else RU[pos] + (' · ' + RU[tack] if tack else '')
     english = ['Wind'] + ([f['note']] if f.get('note') else []) + Q.plan_strings(A)
     Q.write_ru(x['id'], english, ru)
 
@@ -298,7 +311,7 @@ def render(x):
     f = x['figure']; s = SPEC.get(x['id'], {}); w, h = f.get('wind', 0), f['hdg']
     rel, port = rel_wind(f); off = abs(rel)
     b, heel = trim(off); b = s.get('boom', b); heel = s.get('heel', heel)
-    sails = {'main': True, 'genoa': 'port' if port else 'starboard', 'boom': b if port else -b}
+    sails = {'main': True, 'genoa': 'port' if port != bool(s.get('backed')) else 'starboard', 'boom': b if port else -b}   # backed: to windward
     if 'camber' in s: sails['camber'] = s['camber']
     if 'genoa_camber' in s: sails['genoa_camber'] = s['genoa_camber']
     C.reset()

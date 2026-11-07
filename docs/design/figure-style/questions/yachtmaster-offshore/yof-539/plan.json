@@ -1,0 +1,80 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "mpp": 0.32,
+  "title": "Lights · a trawler hauling her nets",
+  "key": [
+   "Green over white: trawling; below them white over red: hauling nets (Annex II)",
+   "Two whites below: shooting nets; two reds: the net fast on an obstruction"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 270,
+    "label": "Trawler",
+    "stack": [
+     "g",
+     "w",
+     "w",
+     "r"
+    ],
+    "stackDx": -140,
+    "noHeading": true,
+    "scale": 3.2,
+    "bearing": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      22,
+      -4
+     ],
+     [
+      70,
+      -6
+     ]
+    ],
+    "c": "ink",
+    "dash": "8 8",
+    "w": 3
+   },
+   {
+    "pts": [
+     [
+      22,
+      4
+     ],
+     [
+      70,
+      6
+     ]
+    ],
+    "c": "ink",
+    "dash": "8 8",
+    "w": 3
+   }
+  ],
+  "texts": [
+   {
+    "x": 95,
+    "z": -26,
+    "text": "hauling: white over red",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -70,
+    "z": -50
+   },
+   {
+    "x": 150,
+    "z": 50
+   }
+  ]
+ }
+}

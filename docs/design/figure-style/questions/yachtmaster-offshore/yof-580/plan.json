@@ -1,0 +1,95 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "mpp": 0.32,
+  "title": "Lights · RAM at anchor",
+  "key": [
+   "Red-white-red all round: restricted in ability to manoeuvre, servicing a buoy",
+   "Rule 27(b)(iv): at anchor she adds her anchor light; only 27(d) work drops it"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": 0,
+    "hdg": 90,
+    "label": "Buoy tender",
+    "stack": [
+     "r",
+     "w",
+     "r"
+    ],
+    "stackDx": -140,
+    "noHeading": true,
+    "scale": 3.2,
+    "bearing": false
+   }
+  ],
+  "anchors": [
+   {
+    "x": 48,
+    "z": 0,
+    "s": 0.8
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      22,
+      0
+     ],
+     [
+      40,
+      0
+     ]
+    ],
+    "c": "line",
+    "w": 3,
+    "dash": "4 4"
+   }
+  ],
+  "circles": [
+   {
+    "x": 26,
+    "z": 0,
+    "r": 2.6,
+    "fill": "#ffffff",
+    "c": "ink",
+    "dash": "0"
+   }
+  ],
+  "marks": [
+   {
+    "x": -95,
+    "z": 20,
+    "kind": "lat-port",
+    "bearing": false
+   }
+  ],
+  "texts": [
+   {
+    "x": 40,
+    "z": -28,
+    "text": "anchor light: correct",
+    "kind": "accent"
+   },
+   {
+    "x": -95,
+    "z": 48,
+    "text": "the buoy",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -130,
+    "z": -50
+   },
+   {
+    "x": 120,
+    "z": 70
+   }
+  ]
+ }
+}

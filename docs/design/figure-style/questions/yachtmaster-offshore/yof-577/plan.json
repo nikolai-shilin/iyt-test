@@ -1,0 +1,120 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · a tow that cannot deviate",
+  "key": [
+   "Red-white-red over the yellow towing light and sternlight: a tug restricted by her tow (Rule 27(c))",
+   "The low white on the left is her tow: never pass between them"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 0,
+    "z": -1150,
+    "hdg": 0,
+    "label": "Tug",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "r",
+     "w",
+     "r",
+     "y",
+     "w"
+    ],
+    "stackDx": -130
+   },
+   {
+    "x": 0,
+    "z": -600,
+    "hdg": 0,
+    "label": "Tow",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": false
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -1060
+     ],
+     [
+      0,
+      -690
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "8 8"
+   },
+   {
+    "pts": [
+     [
+      30,
+      -60
+     ],
+     [
+      330,
+      -300
+     ],
+     [
+      380,
+      -700
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 260,
+    "z": -880,
+    "text": "tow line",
+    "kind": "light"
+   },
+   {
+    "x": -620,
+    "z": -330,
+    "text": "from astern: no masthead lights",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -1000,
+    "z": -1300
+   },
+   {
+    "x": 600,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 256.0
+   },
+   {
+    "x": 0,
+    "z": -1406.0
+   },
+   {
+    "x": 0,
+    "z": -344.0
+   }
+  ]
+ }
+}

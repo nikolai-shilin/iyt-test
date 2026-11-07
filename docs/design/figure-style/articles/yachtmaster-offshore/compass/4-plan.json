@@ -1,0 +1,94 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Deviation by satellite compass",
+  "key": [
+   "Satellite compass 240°T + 3° west variation = 243°M",
+   "The compass reads 248°C: deviation 5°W on this heading"
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -536.9,
+      310.0
+     ]
+    ],
+    "c": "red",
+    "w": 5
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -552.4,
+      281.5
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "14 10"
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -574.9,
+      232.3
+     ]
+    ],
+    "c": "course",
+    "w": 5
+   }
+  ],
+  "texts": [
+   {
+    "x": -571.2,
+    "z": 410.6,
+    "text": "240°T satellite",
+    "kind": "red"
+   },
+   {
+    "x": -356.0,
+    "z": 226.3,
+    "text": "243°M"
+   },
+   {
+    "x": -675.2,
+    "z": 197.3,
+    "text": "248°C compass",
+    "kind": "accent"
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 248,
+    "noHeading": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -815.2224615391139,
+    "z": -60
+   },
+   {
+    "x": 140,
+    "z": 490.6217782649107
+   }
+  ]
+ },
+ "noScale": true
+}

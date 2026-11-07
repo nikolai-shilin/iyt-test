@@ -1,10 +1,10 @@
-# Bareboat Skipper test-question images for the figure types "bay", "anchor" and "dayshape" (the contract:
-# docs/design/figure-style/questions/bareboat-skipper/README.md). For one question id it renders <id>/3d.jpg with its
+# Test-question images for the figure types "bay", "anchor" and "dayshape" (Bareboat Skipper, Charter Check-in,
+# Yachtmaster Offshore; the contract: docs/design/figure-style/questions/<level>/README.md). For one question id it renders <id>/3d.jpg with its
 # 3d.labels.json (Blender, common.render) and writes <id>/plan.json and <id>/ru.json; with the system Python and
 # --plans it writes only the plans and Russian for every id of the type.
 #   blender --background --factory-startup --python docs/design/blender/q_scenes.py -- --type bay --id bs-072 [--samples 128]
 #   python3 docs/design/blender/q_scenes.py --type bay --plans
-#   --level charter-checkin: questions/<level>/<type>.json in, questions/<level>/<id>/ out (default bareboat-skipper)
+#   --level charter-checkin | yachtmaster-offshore: questions/<level>/<type>.json in, questions/<level>/<id>/ out (default bareboat-skipper)
 # What the scenes show (rule 1: never the answer):
 #   bay       the figure's 320 x 200 drawing as a high drone view, north up: terrain raised from its `land` path (x east,
 #             y south; s metres per drawing unit, per question below), the spots as yellow rings with blue letters, the
@@ -144,6 +144,24 @@ ANCHOR.update({
     'ci-439': dict(state='set', chain=35, dusk=True, labels={}),
 })
 
+# Yachtmaster Offshore. bay 'race': (x, y, r) a tide race, broken water round the figure's own 'race' label (drawing
+# units); 'haze': a thicker sky haze (fog); 'far': a drawing tens of km across (camera clipping, sea to match). anchor 'deep': the camera stands off far enough to show the bottom in deep
+# water, the water clearer; 'motor': a motor yacht of that length instead of our sailing yacht; 'snubber': a nylon
+# bridle from both bow cleats to a hook on the chain, before any more chain is let out (labels 'hook', 'cleat').
+BAY.update({
+    'yof-339': dict(s=33, relief=50, cliff=True, race=(196, 140, 26), wind_at=(282, 60)),
+    'yof-341': dict(s=100, far=True, noscale=True, relief=60, cliff=True, race=(196, 140, 26), wind_at=(282, 60)),
+    'yof-380': dict(s=100, far=True, noscale=True, relief=45, race=(240, 128, 24), haze=7.0, sun=(200, 25), wind_at=(282, 175)),
+    'yof-637': dict(s=200, far=True, relief=1900, cone=9000, noscale=True, sun=(250, 25), elev=40, zoom=0.8, target=(132, 112), wind_at=(270, 30)),
+    'yof-690': dict(s=10, relief=120, sun=(230, 38), wind_at=(282, 150)),
+    'yof-816': dict(s=8, relief=90, sun=(220, 30), wind_at=(250, 120)),
+})
+ANCHOR.update({
+    'yof-814': dict(state='drop', deep=True, labels={'Bow roller 2 m above water': 'roller'}),
+    'yof-823': dict(state='drop', deep=True, motor=24.0, labels={}),
+    'yof-870': dict(state='set', chain=40, snubber=True, near=True, labels={'Snubber on a chain hook': 'hook', 'Made fast to both bow cleats': 'cleat'}),
+})
+
 # dayshape: the vessel and the view
 DAY = {
     'bs-037': dict(vessel='trawler', booms=True, kinds=['cone-down', 'cone-up'], own='sail', brg=22, dist=100, hdg=60),
@@ -156,6 +174,7 @@ DAY = {
     'bs-434': dict(vessel='trawler', booms=False, kinds=['ball', 'ball', 'ball'], own='motor', brg=12, dist=110, hdg=235, coast=True),
     'bs-764': dict(vessel='yacht-anchored', kinds=['ball'], own='motor', brg=8, dist=48, hdg=200),
     'bs-820': dict(vessel='own-deck', kinds=['ball']),
+    'yof-588': dict(vessel='own-motor-anchored', kinds=['ball'], length=22.0, ball=0.3),
 }
 
 # ===================================================================================================== Russian
@@ -358,6 +377,43 @@ RU.update({
     'Tighter wakes you all night; wider tells you too late': 'Меньше — будет будить всю ночь; больше — предупредит слишком поздно',
 })
 
+RU.update({
+    # Yachtmaster Offshore bay plans
+    'Portland Bill · the inshore passage': 'Портленд-Билл · прибрежный проход', 'A: a few cables off': 'A: в нескольких кабельтовых',
+    'At neaps, in settled weather and at the right time: close in, a few cables off': 'В квадратуру, в устойчивую погоду и в нужное время — у самого берега, в нескольких кабельтовых',
+    'Close in you pass the race at its shortest': 'У берега сулой проходится по самому короткому пути',
+    "St Alban's Head · wind against a spring stream": 'Сент-Олбанс-Хед · ветер против сизигийного течения', 'C: 4 M off, outside the race': 'C: в 4 милях, вне сулоя',
+    'Wind against a spring stream: the race and the inshore passage are rough': 'Ветер против сизигийного течения: в сулое и у берега бурно',
+    'Keep well outside, or wait for the stream to turn': 'Держитесь далеко мористее или дождитесь смены течения',
+    'Pointe de Barfleur in fog · outside the race': 'Мыс Барфлёр в тумане · мористее сулоя', 'C: 6 M off': 'C: в 6 милях',
+    'In fog you can neither see the race nor pilot the inshore passage by eye': 'В тумане не видно ни сулоя, ни ориентиров прибрежного прохода',
+    'Pass outside its charted limit and fix often': 'Проходите за его границей по карте и часто определяйтесь',
+    'A high island in the trade wind': 'Высокий остров в пассате', 'B: acceleration zone': 'B: зона усиления', 'C, D: wind shadow': 'C, D: ветровая тень',
+    'Under the trade inversion the wind goes round the island, not over it': 'Под пассатной инверсией ветер обтекает остров, а не переваливает через него',
+    'It speeds up off the ends (B) and drops in the lee': 'У его оконечностей он усиливается (B), а под ветром стихает',
+    'Swell wraps round a point': 'Зыбь огибает мыс', 'A: still rolling': 'A: всё равно качает',
+    'Swell bends as it feels the bottom and wraps round the point into the bay': 'Зыбь, почувствовав дно, преломляется и заходит за мыс в бухту',
+    'At A it is smaller but still rolling — a long swell most of all': 'В A она ниже, но качает — особенно длинная зыбь',
+    'Riding out a gale · an open moor': 'Шторм на якоре · два якоря вразнос', 'SW anchor': 'якорь на SW', 'W anchor': 'якорь на W',
+    'Two anchors ahead in a V across the expected wind: one SW, one W': 'Два якоря впереди, клином поперёк ожидаемого ветра: один на SW, другой на W',
+    'Both share the load as it veers; 180° apart is for a reversing stream': 'Ветер заходит — нагрузку несут оба; на 180° ставят при реверсивном течении',
+    # anchor
+    'Anchoring · chain and nylon in a gale': 'Якорная стоянка · цепь и нейлон в шторм', '(18 m + 2 m) × 7 = 140 m': '(18 м + 2 м) × 7 = 140 м',
+    'Chain and rope at 7:1, measured from the bow roller: 140 m': 'Цепь с тросом 7:1, считая от роульса: 140 м', '140 m − 80 m of chain = 60 m of nylon': '140 м − 80 м цепи = 60 м нейлона',
+    'Anchoring in deep water · power it down': 'Якорь на большой глубине · травить брашпилем',
+    'A free-falling anchor and chain gather speed the band brake may not hold, and the chain piles up': 'Свободно падающие якорь и цепь разгоняются так, что ленточный тормоз может не удержать, а цепь ложится кучей',
+    'Lower it under power all the way to the bottom, then pay out under control': 'Опускайте брашпилем до самого дна, потом травите под контролем',
+    'depth 32 m': 'глубина 32 м', 'windlass powers it down': 'брашпиль травит якорь', 'all the way to the bottom': 'до самого дна', 'let go: 32 m of chain runs away': 'отдать: 32 м цепи убегают',
+    'Anchoring · the snubber takes the load': 'Якорная стоянка · нагрузку берёт демпфер',
+    'Let out chain until it hangs in a slack loop below the hook': 'Травите цепь, пока она не провиснет петлёй ниже гака',
+    'Then the snubber stretches; a taut chain sends the shocks to the windlass': 'Тогда тянется демпфер; натянутая цепь передаёт рывки на брашпиль',
+    'depth 18 m': 'глубина 18 м', 'bow 2 m': 'нос 2 м', 'chain 140 m': 'цепь 140 м',
+    # day shape
+    'Day shapes · the size matters': 'Знаки · важен размер', '0.6 m: at least, from 20 m': '0,6 м: минимум, от 20 м', '0.3 m: your ball': '0,3 м: ваш шар',
+    'your yacht: 22 m': 'ваша яхта: 22 м', 'Annex I 6: a ball is at least 0.6 m across': 'Приложение I, 6: шар диаметром не менее 0,6 м',
+    'Only a vessel under 20 m may use smaller shapes to suit her size': 'Знаки меньше — только для судов короче 20 м, по их размеру',
+})
+
 # ===================================================================================================== plans
 def P3(s):
     return lambda x, y: [round((x - 160) * s, 2), round((y - 100) * s, 2)]
@@ -517,8 +573,35 @@ PLAN_BAY.update({
                    key=['Fuel dock A: fill the tank and keep the receipt', 'Then berth B: the base adds €50 if it refuels for you']),
 })
 
+# ---- Yachtmaster Offshore ----
+PLAN_BAY.update({
+    'yof-339': dict(title='Portland Bill · the inshore passage', texts=[(95, 118, 'A: a few cables off', 'accent')],
+                    key=['At neaps, in settled weather and at the right time: close in, a few cables off', 'Close in you pass the race at its shortest'],
+                    paths=[([(232, 78), (196, 104), (166, 113), (136, 98), (112, 60)], 'course')]),
+    'yof-341': dict(title="St Alban's Head · wind against a spring stream", texts=[(250, 182, 'C: 4 M off, outside the race', 'accent')],
+                    key=['Wind against a spring stream: the race and the inshore passage are rough', 'Keep well outside, or wait for the stream to turn'],
+                    paths=[([(250, 120), (210, 166), (168, 176), (120, 160), (80, 110)], 'course')]),
+    'yof-380': dict(title='Pointe de Barfleur in fog · outside the race', texts=[(290, 160, 'C: 6 M off', 'accent')],
+                    key=['In fog you can neither see the race nor pilot the inshore passage by eye', 'Pass outside its charted limit and fix often'],
+                    paths=[([(60, 18), (240, 30), (290, 104), (250, 190)], 'course')]),
+    'yof-637': dict(title='A high island in the trade wind', texts=[(250, 160, 'B: acceleration zone', 'red'), (60, 120, 'C, D: wind shadow', 'accent')],
+                    key=['Under the trade inversion the wind goes round the island, not over it', 'It speeds up off the ends (B) and drops in the lee'],
+                    paths=[([(250, 40), (222, 120), (200, 170), (150, 195)], 'red'), ([(130, 8), (80, 40), (50, 90)], 'red')]),
+    'yof-690': dict(title='Swell wraps round a point', texts=[(272, 92, 'A: still rolling', 'red')],
+                    key=['Swell bends as it feels the bottom and wraps round the point into the bay', 'At A it is smaller but still rolling — a long swell most of all'],
+                    paths=[([(20, 110), (110, 140), (172, 168), (215, 128)], 'ink'), ([(20, 160), (120, 185), (200, 175), (232, 120)], 'ink')]),
+    'yof-816': dict(title='Riding out a gale · an open moor', texts=[(150, 125, 'SW anchor', 'accent'), (150, 45, 'W anchor', 'accent')],
+                    key=['Two anchors ahead in a V across the expected wind: one SW, one W', 'Both share the load as it veers; 180° apart is for a reversing stream'],
+                    boats=lambda P: [dict(you=True, noHeading=True, x=P(200, 70)[0], z=P(200, 70)[1], hdg=235, L=14)],
+                    anchors=lambda P: [dict(x=P(172, 98)[0], z=P(172, 98)[1], s=0.8), dict(x=P(165, 70)[0], z=P(165, 70)[1], s=0.8)],
+                    paths=[([(194, 76), (176, 94)], 'ink'), ([(193, 70), (170, 70)], 'ink')]),
+})
+
 def anchor_plan(e, cfg):
     i = e['id']
+    if i == 'yof-814': return prof_ci(18, 2, 140, '(18 m + 2 m) × 7 = 140 m', 'Anchoring · chain and nylon in a gale', ['Chain and rope at 7:1, measured from the bow roller: 140 m', '140 m − 80 m of chain = 60 m of nylon'])
+    if i == 'yof-823': return {'svg': deep_svg()}
+    if i == 'yof-870': return {'svg': snubber_svg('Anchoring · the snubber takes the load', ['Let out chain until it hangs in a slack loop below the hook', 'Then the snubber stretches; a taut chain sends the shocks to the windlass'])}
     if i == 'ci-411': return prof_ci(6, 1, 30, '(6 m + 1 m) × 4–5 = 28–35 m', 'Anchoring · counting the marks', ['Measure from the bow roller: 6 m + 1 m = 7 m', '4–5 × 7 m = 28–35 m: three 10 m marks, 30 m'])
     if i == 'ci-439': return alarm_plan()
     if i == 'ci-407': return {'svg': snubber_svg('Anchoring · snubber on, windlass off the load', ['Hook the snubber on and take the load to a bow cleat', 'Then slacken the chain on the gypsy: the windlass is not a mooring point'], 'snubber')}
@@ -650,6 +733,18 @@ def snubber_svg(title, key, snub='nylon snubber'):
         b += _pill(220, sea + 20, 'chain hook', 'light', 24) + _pill(340, bed - 60, 'slack chain', 'light', 24)
         return _frame(b, title, key)
 
+def deep_svg():
+    """yof-823: a motor yacht over 32 m of water, the anchor powered down on the windlass, not let go."""
+    sea, bed = 150, 600
+    b = _water(sea, bed) + f'<path d="M760 {sea - 60} L1240 {sea - 50} L1225 {sea + 30} L800 {sea + 34} Z" fill="var(--ink)"/>'
+    b += f'<path d="M880 {sea - 60} L1150 {sea - 60} L1130 {sea - 110} L920 {sea - 110} Z" fill="var(--ink)"/>'
+    b += f'<circle cx="772" cy="{sea - 56}" r="12" fill="var(--accent)"/>'
+    b += f'<path d="M772 {sea - 50} L 760 {bed - 40}" fill="none" stroke="#4a4f55" stroke-width="8" stroke-dasharray="12 6"/>' + _anchor(758, bed - 34, 1.1)
+    b += _dim(640, sea, 640, bed, 'depth 32 m') + _pill(1000, 300, 'windlass powers it down', 'accent', 28)
+    b += _pill(1000, 380, 'all the way to the bottom', 'accent', 26) + _pill(330, 300, 'let go: 32 m of chain runs away', 'red', 24)
+    return _frame(b, 'Anchoring in deep water · power it down', ['A free-falling anchor and chain gather speed the band brake may not hold, and the chain piles up',
+                                                                  'Lower it under power all the way to the bottom, then pay out under control'])
+
 def day_plan(e, cfg):
     i = e['id']
     def shape(title, label, tag, key, hdg=270, you=(0, 260, 0), extra=None):
@@ -679,6 +774,12 @@ def day_plan(e, cfg):
         return {'sch': {'padPx': 80, 'trueScale': True, 'minMpp': 0.04, 'title': 'Day shape · under way again', 'key': ['The ball says you are at anchor', 'Take it down as soon as you are under way'],
                 'boats': [{'you': True, 'x': 0, 'z': 0, 'hdg': 300, 'tag': 'ball still up', 'noHeading': True}], 'circles': [{'x': -0.6, 'z': -5.2, 'r': 1.25, 'fill': '#fff', 'c': 'ink', 'dash': '0'}, {'x': -0.6, 'z': -5.2, 'r': 0.8, 'fill': 'var(--ink)', 'c': 'ink', 'dash': '0'}],
                 'texts': [{'x': -6, 'z': -9, 'text': 'lower the ball', 'kind': 'accent'}], 'fit': [{'x': -14, 'z': -12}, {'x': 12, 'z': 10}]}}
+    if i == 'yof-588':
+        b = _water(470, 600, 600)
+        b += f'<circle cx="420" cy="300" r="90" fill="var(--ink)"/><circle cx="820" cy="345" r="45" fill="var(--ink)"/>'
+        b += _dim(300, 420, 540, 420, '0.6 m: at least, from 20 m', 'accent') + _dim(760, 420, 880, 420, '0.3 m: your ball', 'red')
+        b += _pill(620, 140, 'your yacht: 22 m', 'light', 26)
+        return {'svg': _frame(b, 'Day shapes · the size matters', ['Annex I 6: a ball is at least 0.6 m across', 'Only a vessel under 20 m may use smaller shapes to suit her size'])}
     raise KeyError(i)
 
 def make_plan(t, e):
@@ -810,6 +911,8 @@ if BL:
         hills = 1.4 + relief * (1 - np.exp(-dl / (cfg.get('hill_len', 95) * k))) + 0.45 * relief * (1 - np.exp(-np.maximum(0, d - 300 * k) / (400 * k)))
         rough = (0.35 * relief * n1 + 0.1 * relief * n2) * np.clip((d - bw - 15 * k) / (60 * k), 0, 1)
         if cliff: hills = hills + 20.0 * np.clip(d / 6.0, 0, 1) ** 0.5
+        if cfg.get('cone'):      # a volcanic island: one peak rising to `relief` `cone` metres in from the shore
+            hills = 1.4 + relief * np.clip(dl / cfg['cone'], 0, 1) ** 1.15; rough = rough * 0.25
         if cfg.get('valley') is not None:
             px = X / s + 160; py = 100 - Y / s
             v = np.exp(-((px - cfg['valley']) / (16 + 0.25 * np.maximum(0, 95 - py))) ** 2) * (py < 100)
@@ -892,7 +995,7 @@ if BL:
             size = 40.0 if s > 1 else 30.0; rep = max(8, min(26, int(math.ceil(330 * s * 1.25 / size))))
             K.sea('calm' if s < 1 else 'breeze', size=size, res=9, repeat=rep, center=(0, 0))
         else:
-            flat_sea()
+            flat_sea(max(60000.0, 700.0 * s) if cfg.get('far') else 60000.0)
         if cfg.get('cliff'):   # rocks at the foot of the cliffs
             rnd = random.Random(4); rm = C.simple('wet-rock', '#4d4840', 0.6)
             bm = bmesh.new(); bmesh.ops.create_icosphere(bm, subdivisions=2, radius=1.0)
@@ -904,11 +1007,17 @@ if BL:
                 if -12 < d < 1:
                     o = bpy.data.objects.new('rock', rme); C.col.objects.link(o); sc = rnd.uniform(1.0, 3.2)
                     o.scale = (sc, sc * rnd.uniform(0.7, 1.3), sc * 0.7); o.location = (x, y, rnd.uniform(-0.8, 0.4))
+        if cfg.get('race'):      # a tide race: patches of broken water round the figure's own 'race' label
+            rx, ry, rr = cfg['race']; rnd = random.Random(7)
+            for k in range(22):
+                a = rnd.uniform(0, math.tau); d = rr * math.sqrt(rnd.random())
+                X, Y = P(rx + d * math.cos(a) - 6, ry + d * math.sin(a) * 0.7)
+                race_patch(X, Y, rnd.uniform(0.25, 0.5) * rr * s * 0.45, k)
         labels, arrows = [], []
         ring_r = 6.5 * s
         for x, y, l in f.get('spots', []):
             X, Y = P(x, y)
-            if l in 'ABC' and len(l) == 1:
+            if l in 'ABCD' and len(l) == 1:
                 spot_ring(X, Y, ring_r, 'spot' + l)
                 labels.append(((X, Y, 4.0 * s), l, 'blue'))
         if cfg.get('ashore'): lines_ashore(cfg, P, hfun)
@@ -945,9 +1054,30 @@ if BL:
         elif cfg.get('dawn'):
             K.day_sky(sun_az=75, sun_el=7, strength=0.25, haze=3.0); expo = 0.3
         else:
-            az, el = cfg.get('sun', (210, 40)); K.day_sky(sun_az=az, sun_el=el, strength=0.25, haze=2.2); expo = -0.7
-        drone(s, target=P(*cfg.get('target', (160, 100))), elev=cfg.get('elev', 55), zoom=cfg.get('zoom', 1.0))
+            az, el = cfg.get('sun', (210, 40)); K.day_sky(sun_az=az, sun_el=el, strength=0.25, haze=cfg.get('haze', 2.2)); expo = -0.7
+        cam = drone(s, target=P(*cfg.get('target', (160, 100))), elev=cfg.get('elev', 55), zoom=cfg.get('zoom', 1.0))
+        if cfg.get('far'): cam.data.clip_start = 5.0; cam.data.clip_end = 2000.0 * s     # a drawing tens of km across
         return labels, arrows, f.get('note'), expo, []
+
+    def race_patch(X, Y, R, seed):
+        """Broken white water on a disc of radius R: noise-cut foam, fading to its edge."""
+        me = bpy.data.meshes.new('race'); me.from_pydata([(-1, -1, 0), (1, -1, 0), (1, 1, 0), (-1, 1, 0)], [], [(0, 1, 2, 3)])
+        m, nt, b, out = C.new_mat(f'race{seed}')
+        tc = nt.nodes.new('ShaderNodeTexCoord')
+        nz = nt.nodes.new('ShaderNodeTexNoise'); nz.inputs['Scale'].default_value = 6.0; nz.inputs['Detail'].default_value = 8.0
+        nz.noise_dimensions = '4D'; nz.inputs['W'].default_value = float(seed); nt.links.new(tc.outputs['Object'], nz.inputs['Vector'])
+        cr = nt.nodes.new('ShaderNodeValToRGB'); cr.color_ramp.elements[0].position = 0.55; cr.color_ramp.elements[1].position = 0.68
+        nt.links.new(nz.outputs['Fac'], cr.inputs['Fac'])
+        ln = nt.nodes.new('ShaderNodeVectorMath'); ln.operation = 'LENGTH'; nt.links.new(tc.outputs['Object'], ln.inputs[0])
+        mr = nt.nodes.new('ShaderNodeMapRange'); mr.inputs['From Min'].default_value = 0.45; mr.inputs['From Max'].default_value = 1.0
+        mr.inputs['To Min'].default_value = 1.0; mr.inputs['To Max'].default_value = 0.0; nt.links.new(ln.outputs['Value'], mr.inputs['Value'])
+        mu = nt.nodes.new('ShaderNodeMath'); mu.operation = 'MULTIPLY'; nt.links.new(cr.outputs['Color'], mu.inputs[0]); nt.links.new(mr.outputs['Result'], mu.inputs[1])
+        tr = nt.nodes.new('ShaderNodeBsdfTransparent'); mx = nt.nodes.new('ShaderNodeMixShader')
+        C.setin(b, 'Base Color', (0.85, 0.88, 0.9, 1)); C.setin(b, 'Roughness', 0.8)
+        nt.links.new(mu.outputs[0], mx.inputs['Fac']); nt.links.new(tr.outputs[0], mx.inputs[1]); nt.links.new(b.outputs[0], mx.inputs[2])
+        nt.links.new(mx.outputs[0], out.inputs['Surface'])
+        o = C.obj('race', me, m, (X, Y, 0.25)); o.scale = (R, R * 0.7, 1); o.rotation_euler = (0, 0, seed * 0.7); o.visible_shadow = False
+        return o
 
     def mooring_buoy(x, y):
         fl = sphere('float', 0.55, C.simple('buoy-float', '#eceae3', 0.45, coat=0.5), (x, y, 0.18)); fl.scale.z = 0.75
@@ -1222,9 +1352,15 @@ if BL:
     # ---------------------------------------------------------------- anchor: the cut-away
     def scene_anchor(e, cfg):
         f = e['figure']; dep = float(f['depth'].split()[0]); draft = cfg.get('draft', 2.0)
-        y = K.load_yacht(); y.place(0, 0, heading=0); y.root.location.z = 2.0 - draft
-        KW.antifoul_hull(y); bpy.context.view_layer.update()
-        bow = y.world((10.95, 0.13, 3.72)); sb = -dep + 0.07
+        if cfg.get('motor'):    # a motor yacht of that length, her bow roller at the stem, about 2.5 m up
+            import q_encounter_props as EP
+            spin, mvis, mtop = EP.motor_yacht((0, 0), 180, cfg['motor']); bpy.context.view_layer.update()   # bow north: the model's bow lies on -heading
+            mlo, mhi = K.bbox(mvis); bow = Vector(((mlo.x + mhi.x) / 2, mhi.y - 0.6, 2.5)); y = None
+        else:
+            y = K.load_yacht(); y.place(0, 0, heading=0); y.root.location.z = 2.0 - draft
+            KW.antifoul_hull(y); bpy.context.view_layer.update()
+            bow = y.world((10.95, 0.13, 3.72))
+        sb = -dep + 0.07
         H = bow.z - sb
         state = cfg['state']; labels, arrows = [], []
         anchor_file = 'anchor-cqr.glb' if cfg.get('kedge') else 'anchor-delta.glb'
@@ -1272,14 +1408,30 @@ if BL:
             KW.chain(hang + lie, link_len=0.2 if L < 20 else 0.26, wire=0.028 if L < 20 else 0.036)
             if 'Chain out: 12 m' in cfg['labels']:
                 m = hang[len(hang) // 2]; labels.append(((m.x, m.y, m.z), 'Chain out: 12 m'))
+            if cfg.get('snubber'):   # the hook on the chain 2.5 m out from the roller, the bridle back to both bow cleats, still slack
+                acc = 0.0; hook = hang[-1]
+                for a_, b_ in zip(hang, hang[1:]):
+                    acc += (b_ - a_).length
+                    if acc >= 2.5: hook = b_; break
+                nyl = C.simple('snubber', '#f1ecd9', 0.6)
+                C.cyl('chain-hook', 0.05, 0.03, 0.18, 12, K.mats()['galv'], tuple(hook + Vector((0, 0, 0.08))))
+                for sd in (-1, 1):
+                    cl = Vector((bow.x + sd * 0.55, bow.y - 1.2, bow.z + 0.05))
+                    C.obj('cleat', C.rbox('cleat', (0.08, 0.28, 0.06), 0.02, 2), K.mats()['galv'], tuple(cl))
+                    mid = cl.lerp(hook, 0.5) - Vector((0, 0, 0.45))
+                    C.tube('snubber', [cl.lerp(mid, t / 6) if t <= 6 else mid.lerp(hook, (t - 6) / 6) for t in range(13)], 0.022, 10, 1.0, nyl)
+                for text, where in cfg['labels'].items():
+                    if where == 'hook': labels.append(((hook.x, hook.y, hook.z - 0.2), text))
+                    if where == 'cleat': labels.append(((bow.x - 0.55, bow.y - 1.2, bow.z + 0.4), text))
             for text, where in cfg['labels'].items():
                 if where == 'chain' and text != 'Chain out: 12 m':
                     m = hang[len(hang) // 3]; labels.append(((m.x, m.y, m.z), text))
         far = max(bow.y + 4, (sh.y if state == 'set' else bow.y) + 4)
-        KW.water_body(depth=dep + 8, size=600.0, density=0.02, color='#0f4a4f', absorb='#2f8f86', reflect=0.25, absorb_density=0.035, center=(0, 15))
+        wd = (0.007, 0.012) if cfg.get('deep') else (0.02, 0.035)
+        KW.water_body(depth=dep + 8, size=600.0, density=wd[0], color='#0f4a4f', absorb='#2f8f86', reflect=0.25, absorb_density=wd[1], center=(0, 15))
         KW.far_sea_ring(inner=300.0)
         cols = ('#8f8c78', '#a7a387', '#9a977f') if cfg.get('weed') else ('#8f9a7e', '#b2b593', '#a3a886') if cfg.get('flat') else ('#7d8669', '#99a07e', '#8b9274')
-        KW.seabed(z=-dep, size=170.0, res=260, center=(0, 18), colors=cols)
+        KW.seabed(z=-dep, size=500.0 if cfg.get('deep') else 170.0, res=320 if cfg.get('deep') else 260, center=(0, 18), colors=cols)
         if not cfg.get('flat'):
             KW.stones(60 if not cfg.get('weed') else 30, ((-16, -12), (-3, 52)), -dep, scale=(0.15, 0.6))
             KW.stones(60, ((7, -14), (26, 52)), -dep, seed=8, scale=(0.15, 0.55))
@@ -1291,7 +1443,16 @@ if BL:
         else:
             az, el = cfg.get('sun', (120, 55)); K.day_sky(sun_az=az, sun_el=el, strength=0.25, haze=2.0); expo = -0.55
         dl = f['depth'] + (f" · {f['tide']}" if f.get('tide') else '')
-        if cfg.get('draft'):
+        if cfg.get('deep'):
+            # deep water: stand off far enough to see from the bow down to the bottom
+            dist = dep * 1.7 + 6; mid = bow.y + 2.0
+            KW.camera(Vector((dist, mid, 0.002)), Vector((0.0, mid, -dep * 0.42)), lens=20)
+            gx, gy = 2.2, bow.y - 6.0
+            labels.append(((gx, gy - 2.6 * (dist / 34), -dep / 2 - 0.2), dl, 'blue'))
+            arrows += [((gx, gy, -dep * 0.45), (gx, gy, -0.05), 'blue'), ((gx, gy, -dep * 0.45), (gx, gy, -dep + 0.05), 'blue')]
+            for text, where in cfg['labels'].items():
+                if where == 'roller': labels.append(((bow.x, bow.y + 0.3, bow.z + 0.5), text))
+        elif cfg.get('draft'):
             # as the original sounder figure: the camera at the waterline off the keel, draft and depth gauges side by side
             keel = [o for o in y.objs if o.type == 'MESH' and not o.hide_render and K.bbox([o])[0].z < -draft + 0.15]
             klo, khi = K.bbox(keel); kb = Vector(((klo.x + khi.x) / 2, (klo.y + khi.y) / 2, klo.z))
@@ -1303,7 +1464,7 @@ if BL:
                 labels.append(((dg.x, dg.y - 2.2, -0.75), text, 'yellow'))
                 arrows += [((dg.x, dg.y, -0.95), (dg.x, dg.y, -0.03), 'yellow'), ((dg.x, dg.y, -0.95), (dg.x, dg.y, -draft + 0.03), 'yellow')]
         else:
-            near = state == 'drop' or (cfg['chain'] < 2.0 * H and not cfg.get('taut'))
+            near = state == 'drop' or (cfg['chain'] < 2.0 * H and not cfg.get('taut')) or cfg.get('near', False)
             if near: y0, y1 = bow.y - 13.0, max(bow.y + 6.0, far + 1.5)
             else: y0, y1 = -10.5, far + 2.5
             mid = (y0 + y1) / 2; dist = max(21.0, (y1 - y0) * (0.62 if near else 0.5) + (6 if near else 3))
@@ -1396,6 +1557,20 @@ if BL:
                     K.load_yacht(name=f'other{i}', hull='navy' if i % 2 else 'white').place(d * math.sin(deg(brg)), d * math.cos(deg(brg)), heading=h)
                 K.sea('calm'); K.day_sky(sun_az=230, sun_el=42); K.coast(distance=380, bearing=20, height=110, town=True)
                 KW.camera(y.world((8.0, -26.0, 7.0)), y.world((5.0, 0.13, 7.5)), lens=32); C.focus_on_centre(bpy.context.scene.camera, 16.0)
+                return labels, [], f['note'], -0.7, []
+            if v == 'own-motor-anchored':   # our motor yacht at anchor, the data's ball hoisted at her radar mast
+                import q_encounter_props as EP
+                spin, mvis, mtop = EP.motor_yacht((0, 0), 200, cfg['length']); bpy.context.view_layer.update()   # bow to 020 (the model's bow lies on -heading)
+                k = cfg['ball'] / 2 / (0.3 * SH)          # hoist() draws a ball of radius 0.3 * SH * k
+                fw = Vector((math.sin(deg(20)), math.cos(deg(20)), 0))
+                top = mtop + fw * 0.6 + Vector((0, 0, 1.4)); hoist(top, ['ball'], k=k)      # from a short staff on her roof
+                C.cyl('ball-staff', 0.03, 0.025, 3.4, 8, K.mats()['galv'], tuple(top - Vector((0, 0, 1.65))))
+                mlo, mhi = K.bbox(mvis); stem = Vector((0, 0, 0)) + fw * (cfg['length'] / 2 - 0.6) + Vector((0, 0, 2.4))
+                C.tube('chain', [stem.lerp(stem + fw * 7 + Vector((0, 0, -2.6)), t / 10) - Vector((0, 0, 0.3 * math.sin(math.pi * t / 10))) for t in range(11)], 0.03, 8, 1.0, C.simple('chain', '#6b6e70', 0.5, 0.8))
+                for i, (brg, d, h) in enumerate(((290, 70, 25), (250, 120, 15), (320, 150, 22))):
+                    K.load_yacht(name=f'other{i}', hull='navy' if i % 2 else 'white').place(d * math.sin(deg(brg)), d * math.cos(deg(brg)), heading=h)
+                K.sea('calm'); K.day_sky(sun_az=230, sun_el=42); K.coast(distance=420, bearing=10, height=110, town=True)
+                eye = Vector((34.0, -24.0, 3.4)); KW.camera(eye, top - Vector((0, 0, 3.4)), lens=42); C.focus_on_centre(bpy.context.scene.camera, 16.0)
                 return labels, [], f['note'], -0.7, []
             # own-deck: from the cockpit, looking forward past the mast to the ball under the forestay
             y = K.load_yacht(name='own'); y.place(0, 0, heading=0); b = forestay_ball(y)

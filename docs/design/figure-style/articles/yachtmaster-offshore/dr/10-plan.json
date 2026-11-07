@@ -1,0 +1,119 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Where the error puts you",
+  "key": [
+   "Current used 180° 0.8 kn, real 210° 0.8 kn, for 10 h: 8 M each",
+   "The fix lies 4.1 M toward 285° from the EP"
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      330,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      0.0,
+      240.0
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -120.0,
+      207.8
+     ]
+    ],
+    "c": "red",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      0.0,
+      240.0
+     ],
+     [
+      -120.0,
+      207.8
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "10 8"
+   }
+  ],
+  "spots": [
+   {
+    "x": 0.0,
+    "z": 240.0,
+    "label": "EP"
+   }
+  ],
+  "texts": [
+   {
+    "x": 180,
+    "z": -40,
+    "text": "water track 270°T"
+   },
+   {
+    "x": 100.0,
+    "z": 120.0,
+    "text": "used 180°",
+    "kind": "accent"
+   },
+   {
+    "x": -170.0,
+    "z": 103.9,
+    "text": "real 210°",
+    "kind": "red"
+   },
+   {
+    "x": -180.0,
+    "z": 247.8,
+    "text": "fix"
+   },
+   {
+    "x": -60.0,
+    "z": 283.9,
+    "text": "4.1 M toward 285°"
+   }
+  ],
+  "fit": [
+   {
+    "x": -260,
+    "z": -80
+   },
+   {
+    "x": 360,
+    "z": 320
+   }
+  ]
+ },
+ "noScale": true
+}

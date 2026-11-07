@@ -1,0 +1,158 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 60,
+  "title": "Sea room before a gale",
+  "key": [
+   "A W gale for 24 h, hove-to: drift 24 h × 2 kn = 48 M",
+   "Only 40 M to the lee shore: make offing to the west before you heave to"
+  ],
+  "land": [
+   [
+    [
+     4000,
+     -1500
+    ],
+    [
+     5600,
+     -1500
+    ],
+    [
+     5600,
+     1500
+    ],
+    [
+     4100,
+     1500
+    ],
+    [
+     3950,
+     600
+    ],
+    [
+     4050,
+     -300
+    ]
+   ]
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 300,
+    "noHeading": true,
+    "scale": 1.8
+   },
+   {
+    "x": -1300,
+    "z": 0,
+    "hdg": 270,
+    "noHeading": true,
+    "bearing": false,
+    "label": "make offing",
+    "fill": "#9aa0a6",
+    "scale": 1.8
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      80,
+      220
+     ],
+     [
+      4700,
+      220
+     ]
+    ],
+    "c": "red",
+    "w": 6,
+    "dash": "14 10",
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -100,
+      0
+     ],
+     [
+      -1150,
+      0
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -1300,
+      -600
+     ],
+     [
+      -700,
+      -600
+     ]
+    ],
+    "c": "red",
+    "w": 10,
+    "arrow": true
+   }
+  ],
+  "dims": [
+   {
+    "a": [
+     0,
+     -260
+    ],
+    "b": [
+     4000,
+     -260
+    ],
+    "text": "sea room 40 M",
+    "off": 0
+   }
+  ],
+  "texts": [
+   {
+    "x": 2400,
+    "z": 330,
+    "text": "drift 24 h × 2 kn = 48 M",
+    "kind": "red"
+   },
+   {
+    "x": 4800,
+    "z": 0,
+    "text": "lee shore",
+    "pill": false,
+    "size": 28
+   },
+   {
+    "x": 4300,
+    "z": 420,
+    "text": "aground",
+    "kind": "red"
+   },
+   {
+    "x": -1000,
+    "z": -730,
+    "text": "W gale, 24 h",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -1600,
+    "z": -850
+   },
+   {
+    "x": 5400,
+    "z": 700
+   }
+  ]
+ }
+}

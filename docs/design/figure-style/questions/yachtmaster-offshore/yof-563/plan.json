@@ -1,0 +1,134 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · constrained by her draught, in a lane",
+  "key": [
+   "Three all-round reds in a column: constrained by her draught (Rule 28)",
+   "Rules 18(d) and 10(j): you avoid impeding her — act early, pass astern of her"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "tag": "under sail"
+   },
+   {
+    "x": -190.0,
+    "z": -329.1,
+    "hdg": 90,
+    "label": "Constrained by draught",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "power": true,
+    "stack": [
+     "r",
+     "r",
+     "r"
+    ],
+    "stackDx": -150,
+    "scale": 3.6
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -700,
+      -420
+     ],
+     [
+      500,
+      -420
+     ],
+     [
+      500,
+      -240
+     ],
+     [
+      -700,
+      -240
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -190,
+      -329
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 10"
+   },
+   {
+    "pts": [
+     [
+      0,
+      -40
+     ],
+     [
+      -40,
+      -110
+     ],
+     [
+      -160,
+      -150
+     ],
+     [
+      -330,
+      -150
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 380,
+    "z": -330,
+    "text": "eastbound lane",
+    "kind": "accent"
+   },
+   {
+    "x": 170,
+    "z": -60,
+    "text": "do not impede her",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -700,
+    "z": -480
+   },
+   {
+    "x": 500,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 192.0
+   },
+   {
+    "x": -190.0,
+    "z": -569.1
+   }
+  ]
+ }
+}

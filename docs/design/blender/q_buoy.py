@@ -88,6 +88,12 @@ PLANS = {
             'texts': [{'x': 110, 'z': 40, 'text': 'danger under the mark', 'kind': 'red'}, {'x': 0, 'z': -150, 'text': 'pass on any side', 'kind': 'accent'}],
             'fit': [{'x': -170, 'z': -170}, {'x': 170, 'z': 160}],
             'key': ['Isolated danger: a small danger right under the mark', 'Safe water all round: pass on any side, but keep well clear']}},
+    'yof-029': lambda: {'noScale': True, 'sch': {'padPx': 60, 'title': 'ODAS · a special mark', 'marks': [{'x': 0, 'z': 0, 'kind': 'special', 'bearing': False, 'hi': True}],
+            'circles': [{'x': 0, 'z': 4, 'r': 70, 'c': 'red'}], 'boats': [{'you': True, 'x': -170, 'z': 120, 'hdg': 70, 'noHeading': True}],
+            'paths': [COURSE([[-140, 112], [0, 150], [160, 60]])],
+            'texts': [{'x': 0, 'z': -110, 'text': 'ocean data buoy', 'kind': 'accent'}, {'x': 150, 'z': 140, 'text': 'pass well clear', 'kind': 'red'}],
+            'fit': [{'x': -220, 'z': -150}, {'x': 220, 'z': 175}],
+            'key': ['Five yellow flashes every 20 s: a special mark', 'ODAS: a buoy gathering ocean and weather data; give it a wide berth']}},
     'bs-579': lambda: {'sch': {'padPx': 50, 'title': 'Special marks · a swimming area', 'land': [[[-300, -300], [300, -300], [300, -180], [-300, -180]]],
             'zones': [{'pts': [[-200, -180], [200, -180], [200, -80], [-200, -80]]}],
             'marks': [{'x': x, 'z': -80, 'kind': 'special', 'bearing': False, 'hi': x == 0} for x in (-200, -100, 0, 100, 200)],
@@ -104,6 +110,9 @@ RU = {
     'safe water east': 'чисто к востоку', 'safe water south': 'чисто к югу', 'safe water west': 'чисто к западу',
     'danger under the mark': 'опасность под знаком', 'pass on any side': 'можно с любой стороны', 'swimming area': 'зона купания',
     'BEACH': 'ПЛЯЖ', 'stay outside the line': 'не заходите за линию',
+    'ODAS · a special mark': 'ODAS · специальный знак', 'ocean data buoy': 'океанский буй-станция', 'pass well clear': 'обходите широко',
+    'Five yellow flashes every 20 s: a special mark': 'Пять жёлтых проблесков за 20 с: специальный знак',
+    'ODAS: a buoy gathering ocean and weather data; give it a wide berth': 'ODAS: буй, собирающий данные об океане и погоде; обходите широко',
     'Lateral marks · entering harbour (IALA A)': 'Латеральные знаки · вход в гавань (МАМС А)',
     'Region A, coming in from sea: red cans to port': 'Регион А, вход с моря: красные цилиндры слева',
     'Leave the red can on your port side': 'Красный цилиндр оставляйте слева',
@@ -197,9 +206,20 @@ def low_camera(target_objs, dist, lens, eye_h=1.8, aim=0.5, side=0.0):
 def render(x):
     f = x['figure']; k = f['kind']; B = f.get('region') == 'B'; qid = x['id']
     C.reset(); expo = -0.6; labels = []
+    lt = light_text(f)
+    if qid in NIGHT:                 # at night, far off: only the light shows (its shape is the answer)
+        import kit_night as KN
+        KN.night_scene('breeze')
+        root, top3, lightp = mark(k, (0, 0), heading=20)
+        KN.light('mark-light', lightp, 'yellow', strength=7.0, power=1.0, radius=0.3)     # a dim lamp: the light, not the mark it sits on
+        objs = meshes_under(root)
+        c, top = low_camera(objs, 260.0, 70, eye_h=2.2, aim=0.5)
+        for o in objs: o.hide_render = True        # this far off, in the dark, the buoy itself does not show
+        labels = [((c.x, c.y, top + 3.5), lt)] if lt else []
+        C.render(Q.out_jpg(qid), Q.arg('--samples', 128), Q.arg('--scale', 100), 0.0, labels, f.get('note'), space='blender')
+        return
     K.day_sky(sun_az=215, sun_el=34)
     K.sea('breeze', size=30.0, repeat=10)
-    lt = light_text(f)
     if k in ('lat-port', 'lat-stbd'):
         port = k == 'lat-port'
         color = ('green' if port else 'red') if B else ('red' if port else 'green')
@@ -238,6 +258,8 @@ def render(x):
         c, top = low_camera(objs, 29.0, 45, eye_h=1.8, aim=0.6)
     if lt: labels = [((c.x, c.y, top + 0.9), lt)]
     C.render(Q.out_jpg(qid), Q.arg('--samples', 128), Q.arg('--scale', 100), expo, labels, f.get('note'), space='blender')
+
+NIGHT = {'yof-029'}
 
 def lamp_on(p, col):
     o = K.nav_light('mark-light', p, col, power=3.0, radius=0.11)

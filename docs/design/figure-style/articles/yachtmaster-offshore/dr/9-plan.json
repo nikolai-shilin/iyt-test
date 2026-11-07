@@ -1,0 +1,120 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "1 in 60 · back to the line",
+  "key": [
+   "XTE 4.0 M after 80 M: 4 × 60 ÷ 80 = 3° off track",
+   "48 M to go: 4 × 60 ÷ 48 = 5° more · alter 3° + 5° = 8° to starboard for B"
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      1024.0,
+      0.0
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "dash": "14 10"
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      640.0,
+      -32.0
+     ]
+    ],
+    "c": "red",
+    "w": 4
+   },
+   {
+    "pts": [
+     [
+      640.0,
+      -32.0
+     ],
+     [
+      1024.0,
+      0.0
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "arrow": true
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 640.0,
+    "z": -32.0,
+    "hdg": 87,
+    "noHeading": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -30,
+    "z": 10,
+    "text": "A",
+    "pill": false,
+    "size": 34
+   },
+   {
+    "x": 1054.0,
+    "z": 10.0,
+    "text": "B",
+    "pill": false,
+    "size": 34
+   },
+   {
+    "x": 320,
+    "z": 40,
+    "text": "80 M run"
+   },
+   {
+    "x": 840,
+    "z": 40,
+    "text": "48 M to go"
+   },
+   {
+    "x": 170,
+    "z": -60,
+    "text": "3° off track",
+    "kind": "red"
+   },
+   {
+    "x": 860,
+    "z": -70,
+    "text": "alter 8° to starboard",
+    "kind": "accent"
+   },
+   {
+    "x": 640,
+    "z": -110,
+    "text": "XTE 4 M",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -60,
+    "z": -140
+   },
+   {
+    "x": 1080,
+    "z": 80
+   }
+  ]
+ },
+ "noScale": true
+}

@@ -1,0 +1,145 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Lights · a dredger at anchor",
+  "key": [
+   "Red-white-red, and the red and green pairs: RAM, dredging (Rule 27(d))",
+   "At anchor these replace her anchor lights (27(d)(iv)); pass on the side of the greens"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": -150,
+    "hdg": 180,
+    "label": "Dredger at anchor",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "r",
+     "w",
+     "r"
+    ],
+    "stackDx": -150,
+    "scale": 3.2
+   },
+   {
+    "you": true,
+    "x": 0,
+    "z": 200,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "anchors": [
+   {
+    "x": 0,
+    "z": -20,
+    "s": 0.8
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -60,
+      -230
+     ],
+     [
+      -260,
+      -230
+     ],
+     [
+      -260,
+      -60
+     ],
+     [
+      -60,
+      -60
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.10)"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -75
+     ],
+     [
+      0,
+      -45
+     ]
+    ],
+    "c": "line",
+    "w": 3,
+    "dash": "4 4"
+   },
+   {
+    "pts": [
+     [
+      40,
+      170
+     ],
+     [
+      180,
+      60
+     ],
+     [
+      200,
+      -150
+     ],
+     [
+      180,
+      -300
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -170,
+    "z": -20,
+    "text": "two reds: obstructed",
+    "kind": "red"
+   },
+   {
+    "x": 250,
+    "z": -150,
+    "text": "two greens: pass here",
+    "kind": "accent"
+   },
+   {
+    "x": 260,
+    "z": -330,
+    "text": "no anchor light needed",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -280,
+    "z": -480
+   },
+   {
+    "x": 480,
+    "z": 260
+   },
+   {
+    "x": 0,
+    "z": -289.84000000000003
+   },
+   {
+    "x": 0,
+    "z": 321.6
+   }
+  ]
+ }
+}

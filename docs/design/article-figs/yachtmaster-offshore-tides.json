@@ -1,0 +1,336 @@
+{
+ "article": "yachtmaster-offshore/tides",
+ "topic": "tides",
+ "lead": "Two almanac figures become a height for any minute, a secondary port's tide, and the hour to cross a bar, round a race or make a tidal gate.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "The tidal curve",
+   "fig": {
+    "type": "tide",
+    "lw": "0900 · 0.8 m",
+    "hw": "1500 · 5.6 m",
+    "at": 2,
+    "atLabel": "1100 · 2.0 m",
+    "note": "HW−4: factor 0.25 · 0.8 + 0.25 × 4.8 = 2.0 m"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Secondary ports, the Solent",
+   "fig": {
+    "type": "card",
+    "title": "Secondary port — high water",
+    "lines": [
+     "Standard port HW 0900 · 5.2 m",
+     "Time diff: HW 0600 −0030 · HW 1200 −0010",
+     "0900 is halfway: −0020, so HW 0840",
+     "Height diff: MHWS 5.8 −0.6 · MHWN 4.6 −0.2",
+     "5.2 is halfway: −0.4, so HW 4.8 m"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Secondary ports, the Solent",
+   "fig": {
+    "type": "tide",
+    "lw": "1000 · 0.6 m",
+    "hw": "HW 4.2 m",
+    "at": 4,
+    "atLabel": "1400 · 3.3 m",
+    "note": "Hours from LW · LW+4: 0.6 + 0.75 × 3.6 = 3.3 m"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Clearances",
+   "fig": {
+    "type": "chart",
+    "depths": [
+     [
+      40,
+      70,
+      "24"
+     ],
+     [
+      70,
+      130,
+      "18"
+     ],
+     [
+      118,
+      104,
+      "5.4"
+     ],
+     [
+      175,
+      150,
+      "9"
+     ],
+     [
+      260,
+      170,
+      "21"
+     ],
+     [
+      120,
+      40,
+      "15"
+     ]
+    ],
+    "track": "M30 185 L175 40",
+    "boat": [
+     55,
+     160,
+     45
+    ],
+    "labels": [
+     [
+      120,
+      124,
+      "bank",
+      "middle"
+     ]
+    ],
+    "panel": [
+     "In the troughs",
+     "Charted 5.4 m",
+     "Tide +1.2 m",
+     "Half swell −1.0 m",
+     "Squat −0.3 m",
+     "Draught −2.2 m"
+    ],
+    "note": "5.4 + 1.2 − 1.0 − 0.3 − 2.2 = 3.1 m under the keel"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Clearances",
+   "fig": {
+    "type": "card",
+    "title": "Bridge on a surge",
+    "lines": [
+     "Clearance 15.0 m above HAT (6.0 m)",
+     "Predicted HW 5.6 m · surge +0.5 m",
+     "HW tonight: 6.1 m",
+     "Room: 15.0 + 6.0 − 6.1 = 14.9 m",
+     "Air draught 14.2 m: 0.7 m to spare"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Drying out and bars",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H128 V84 H0 Z M192 0 H320 V84 H192 Z",
+    "depths": [
+     [
+      160,
+      40,
+      "4"
+     ],
+     [
+      160,
+      104,
+      "0.4"
+     ],
+     [
+      160,
+      160,
+      "12"
+     ],
+     [
+      70,
+      140,
+      "9"
+     ]
+    ],
+    "labels": [
+     [
+      160,
+      66,
+      "river",
+      "middle"
+     ],
+     [
+      160,
+      122,
+      "bar",
+      "middle"
+     ]
+    ],
+    "boat": [
+     160,
+     182,
+     0
+    ],
+    "panel": [
+     "Swell 2.0 m",
+     "Breaks under 2.6 m",
+     "Bar charted 0.4 m",
+     "Tide needed 2.2 m"
+    ],
+    "note": "Cross on the flood, once the tide is past 2.2 m"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Rates and tidal gates",
+   "fig": {
+    "type": "card",
+    "title": "Rate for today",
+    "lines": [
+     "Atlas arrow: 18,34",
+     "Mean ranges: springs 5.6 m · neaps 2.8 m",
+     "Today's range 4.2 m: halfway",
+     "Rate = 1.8 + ½ × (3.4 − 1.8) = 2.6 kn",
+     "A leg: each hour in turn, added as vectors"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Rates and tidal gates",
+   "fig": {
+    "type": "card",
+    "title": "Two yachts, one stream",
+    "lines": [
+     "Leg 30 M · beam stream 2 kn, steady",
+     "6 kn: 5 h in it, set 10 M",
+     "20 kn: 1 h 30 min, set 3 M",
+     "If the stream turns, the slow one wins back",
+     "Fuel against a stream: hours × litres/hour"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 9,
+   "section": "Races and overfalls",
+   "fig": {
+    "type": "chart",
+    "land": "M110 0 H210 V10 C205 50 185 80 165 95 C150 85 130 55 115 20 Z",
+    "depths": [
+     [
+      60,
+      60,
+      "22"
+     ],
+     [
+      270,
+      60,
+      "25"
+     ],
+     [
+      90,
+      130,
+      "38"
+     ],
+     [
+      230,
+      160,
+      "42"
+     ],
+     [
+      150,
+      170,
+      "30"
+     ]
+    ],
+    "labels": [
+     [
+      70,
+      104,
+      "E-going stream →",
+      "middle"
+     ],
+     [
+      160,
+      34,
+      "headland",
+      "middle"
+     ],
+     [
+      222,
+      118,
+      "race",
+      "middle"
+     ]
+    ],
+    "boat": [
+     40,
+     150,
+     90
+    ],
+    "note": "The race lies downstream: here E and SE of the point"
+   },
+   "cap": null
+  },
+  {
+   "n": 10,
+   "section": "Races and overfalls",
+   "fig": {
+    "type": "bay",
+    "wind": 270,
+    "land": "M110 0 H210 V10 C205 50 185 80 165 95 C150 85 130 55 115 20 Z",
+    "spots": [
+     [
+      166,
+      110,
+      "A"
+     ],
+     [
+      170,
+      136,
+      "B"
+     ],
+     [
+      168,
+      166,
+      "C"
+     ]
+    ],
+    "labels": [
+     [
+      160,
+      40,
+      "headland",
+      "middle"
+     ],
+     [
+      196,
+      140,
+      "race",
+      "start"
+     ]
+    ],
+    "note": "A inshore passage · B the race · C outside, the default"
+   },
+   "cap": null
+  },
+  {
+   "n": 11,
+   "section": "Ocean currents",
+   "fig": {
+    "type": "card",
+    "title": "Current in the DR",
+    "lines": [
+     "Tidal streams: rotary, up to 0.8 kn",
+     "Over 30 h they cancel out",
+     "Mean current NE 0.4 kn: 30 × 0.4 = 12 M",
+     "Apply it every hour; recheck at each fix"
+    ]
+   },
+   "cap": null
+  }
+ ]
+}

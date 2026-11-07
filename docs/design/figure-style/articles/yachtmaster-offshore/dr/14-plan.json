@@ -1,0 +1,159 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "Aim off · know which way to turn",
+  "key": [
+   "Current N 0.5 kn for 16 h at 6 kn: 8 M of set, and you want 5 M north",
+   "Steer 3 × 60 ÷ 96 = 2° south of the direct line, 092°T: arrive north, turn south"
+  ],
+  "land": [
+   [
+    [
+     600,
+     -260
+    ],
+    [
+     590,
+     -100
+    ],
+    [
+     598,
+     60
+    ],
+    [
+     592,
+     200
+    ],
+    [
+     760,
+     200
+    ],
+    [
+     760,
+     -260
+    ]
+   ]
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      576.0,
+      0.0
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "12 10"
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      575.6,
+      20.1
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "4 8"
+   },
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      576.0,
+      -30.0
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      576.0,
+      -30.0
+     ],
+     [
+      566.0,
+      -6.0
+     ]
+    ],
+    "c": "red",
+    "w": 5,
+    "arrow": true
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 92,
+    "noHeading": true
+   }
+  ],
+  "circles": [
+   {
+    "x": 576.0,
+    "z": 0.0,
+    "r": 9,
+    "c": "red",
+    "dash": "0",
+    "fill": "#e0251b"
+   }
+  ],
+  "texts": [
+   {
+    "x": 300,
+    "z": 40,
+    "text": "direct 090°T, 96 M"
+   },
+   {
+    "x": 465.6,
+    "z": 50.1,
+    "text": "steer 092°T"
+   },
+   {
+    "x": 496.0,
+    "z": -70.0,
+    "text": "5 M north",
+    "kind": "accent"
+   },
+   {
+    "x": 666.0,
+    "z": 30.0,
+    "text": "Harbour"
+   },
+   {
+    "x": 666.0,
+    "z": -10.0,
+    "text": "turn south",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -60,
+    "z": -120
+   },
+   {
+    "x": 760,
+    "z": 120
+   }
+  ]
+ },
+ "noScale": true
+}

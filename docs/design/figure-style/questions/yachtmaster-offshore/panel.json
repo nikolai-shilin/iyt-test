@@ -1,0 +1,380 @@
+[
+ {
+  "id": "yof-731",
+  "topic": "vessel",
+  "q": "After 12 hours motoring into a rough sea, the panel shows this and the revs start to hunt. What do you do?",
+  "answer": "Switch to the clean side — the filter is clogging",
+  "why": "Rising vacuum across the primary filter means it is blocking: a rough sea stirs up tank sludge and diesel bug. Change over, renew it.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Vacuum",
+     "7",
+     true
+    ],
+    [
+     "RPM",
+     "1900",
+     false
+    ],
+    [
+     "Temp",
+     "82°",
+     false
+    ]
+   ],
+   "lines": [
+    "Filter vacuum, inHg: 2 at the start",
+    "Duplex primary filter, standby side clean"
+   ]
+  },
+  "ru": {
+   "Filter vacuum, inHg: 2 at the start": "Разрежение, дюйм рт. ст.: на выходе 2",
+   "Duplex primary filter, standby side clean": "Сдвоенный фильтр, резервная сторона чистая",
+   "Vacuum": "Разрежение",
+   "RPM": "Обороты",
+   "Temp": "Т-ра"
+  }
+ },
+ {
+  "id": "yof-732",
+  "topic": "vessel",
+  "q": "Over the last few weeks the engine has run hotter at cruising revs. You have already checked these. What is the most likely cause?",
+  "answer": "Scale or impeller debris blocking the heat-exchanger tubes",
+  "why": "Strong raw-water flow and full coolant point to poor heat transfer: scaled or blocked heat-exchanger tubes. Rod or descale them.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "92°",
+     true
+    ],
+    [
+     "RPM",
+     "2200",
+     false
+    ]
+   ],
+   "lines": [
+    "Normal at these revs 82°; coolant tank full",
+    "Strong flow at the exhaust; new impeller"
+   ]
+  },
+  "ru": {
+   "Normal at these revs 82°; coolant tank full": "Обычно на этих оборотах 82°; бачок полон",
+   "Strong flow at the exhaust; new impeller": "Сильный поток из выхлопа; крыльчатка новая",
+   "Temp": "Т-ра",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "yof-746",
+  "topic": "vessel",
+  "q": "On passage the engine starts doing this. What is the most likely fault?",
+  "answer": "A failed head gasket or a cracked head",
+  "why": "White, sweet-smelling smoke with coolant loss and bubbles in the header tank means coolant is reaching the cylinders: the head gasket.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Temp",
+     "96°",
+     true
+    ],
+    [
+     "Oil",
+     "OK",
+     false
+    ],
+    [
+     "RPM",
+     "1800",
+     false
+    ]
+   ],
+   "lines": [
+    "Steady white smoke with a sweet smell",
+    "Coolant down a litre a day; bubbles in tank"
+   ]
+  },
+  "ru": {
+   "Steady white smoke with a sweet smell": "Ровный белый дым со сладким запахом",
+   "Coolant down a litre a day; bubbles in tank": "Литр антифриза в сутки; в бачке пузыри",
+   "Temp": "Т-ра",
+   "Oil": "Масло",
+   "OK": "норма",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "yof-784",
+  "topic": "vessel",
+  "q": "In a Force 8 you closed the engine-room vents to keep the spray out. Since then the panel shows this. What do you do?",
+  "answer": "Open the vents — the engine is starved of air",
+  "why": "A diesel needs a great deal of air: shut vents starve it, so it smokes black, loses revs and heats the room. Open them; trust the baffles.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "RPM",
+     "1450",
+     true
+    ],
+    [
+     "Temp",
+     "88°",
+     false
+    ],
+    [
+     "Boost",
+     "Low",
+     true
+    ]
+   ],
+   "lines": [
+    "Vents shut against spray since 1600",
+    "Black smoke; engine room very hot"
+   ]
+  },
+  "ru": {
+   "Vents shut against spray since 1600": "Вентиляция закрыта от брызг с 1600",
+   "Black smoke; engine room very hot": "Чёрный дым; в машинном очень жарко",
+   "RPM": "Обороты",
+   "Temp": "Т-ра",
+   "Boost": "Наддув",
+   "Low": "низкий"
+  }
+ },
+ {
+  "id": "yof-785",
+  "topic": "vessel",
+  "q": "Cruising at 1,900 rpm, your twin-screw motor yacht's starboard engine starts to overheat. What is the most likely fault?",
+  "answer": "The starboard intake is blocked outside the hull",
+  "why": "A strainer below the waterline floods by itself even if the impeller dies; air in it that will not clear means the intake is blocked.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Port temp",
+     "82°",
+     false
+    ],
+    [
+     "Stbd temp",
+     "99°",
+     true
+    ],
+    [
+     "RPM",
+     "1900",
+     false
+    ]
+   ],
+   "lines": [
+    "Stbd seacock open; little exhaust water",
+    "Stbd strainer bowl half air, not refilling"
+   ]
+  },
+  "ru": {
+   "Stbd seacock open; little exhaust water": "Прав. кингстон открыт; воды в выхлопе мало",
+   "Stbd strainer bowl half air, not refilling": "Фильтр прав.: воздух, не заполняется",
+   "Port temp": "Т-ра лев.",
+   "Stbd temp": "Т-ра прав.",
+   "RPM": "Обороты"
+  }
+ },
+ {
+  "id": "yof-789",
+  "topic": "vessel",
+  "q": "The charger has been on for three hours. The crew say it is failing because the current keeps dropping. What is happening?",
+  "answer": "Absorption — at 14.4 V the current falls as it fills",
+  "why": "Bulk pushes full current up to the set voltage; absorption holds that voltage while the current tapers; float follows when nearly full.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "14.4",
+     false
+    ],
+    [
+     "Amps",
+     "9",
+     false
+    ],
+    [
+     "Stage",
+     "ABS",
+     false
+    ]
+   ],
+   "lines": [
+    "Bulk: 62 A until 14.4 V at 2 h 10 min",
+    "Now 3 h in; current still falling"
+   ]
+  },
+  "ru": {
+   "Bulk: 62 A until 14.4 V at 2 h 10 min": "Основной: 62 А до 14,4 В за 2 ч 10 мин",
+   "Now 3 h in; current still falling": "Прошло 3 ч; ток всё падает",
+   "Volts": "Вольты",
+   "Amps": "Амперы",
+   "Stage": "Стадия",
+   "ABS": "АБС"
+  }
+ },
+ {
+  "id": "yof-797",
+  "topic": "vessel",
+  "q": "Nine days into a passage, your watermaker shows this. What do you do?",
+  "answer": "Divert the product overboard and clean the membrane",
+  "why": "Rising salinity at normal pressure with clean prefilters means a fouled membrane: dump the product and clean it by the maker's routine.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Salinity",
+     "640 ppm",
+     true
+    ],
+    [
+     "Pressure",
+     "56 bar",
+     false
+    ]
+   ],
+   "lines": [
+    "Day 1: 280 ppm · maker: drink under 500",
+    "Prefilters new; feed water clean"
+   ]
+  },
+  "ru": {
+   "Day 1: 280 ppm · maker: drink under 500": "1-й день: 280 мг/л · пить: до 500",
+   "Prefilters new; feed water clean": "Префильтры новые; вода чистая",
+   "Salinity": "Солёность",
+   "640 ppm": "640 мг/л",
+   "Pressure": "Давление",
+   "56 bar": "56 бар"
+  }
+ },
+ {
+  "id": "yof-903",
+  "topic": "emergency",
+  "q": "At 0140 the engine-room fire alarm sounds on your 24 m motor yacht. Before you pull the fixed system's release, what do you do?",
+  "answer": "Stop engines, generator and fans, shut the flaps, count everyone out",
+  "why": "Running engines and fans draw the agent out and feed air in; shut the space tight and make sure nobody is inside.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Eng room",
+     "95°C",
+     true
+    ],
+    [
+     "Fire",
+     "ALARM",
+     true
+    ],
+    [
+     "Stbd RPM",
+     "1800",
+     false
+    ]
+   ],
+   "lines": [
+    "Camera: flames by the starboard engine",
+    "Fixed clean-agent system, wheelhouse release"
+   ]
+  },
+  "ru": {
+   "Camera: flames by the starboard engine": "Камера: пламя у правого двигателя",
+   "Fixed clean-agent system, wheelhouse release": "Стационарная система, пуск из рубки",
+   "Eng room": "Маш. отд.",
+   "95°C": "95 °С",
+   "Fire": "Пожар",
+   "ALARM": "ТРЕВОГА",
+   "Stbd RPM": "Обор. пр."
+  }
+ },
+ {
+  "id": "yof-917",
+  "topic": "emergency",
+  "q": "At 0130, 110 M offshore, the alternator belt breaks and there is no spare. The engine still runs. What do you keep switched on?",
+  "answer": "Nav lights and the VHF; plot by DR and fixes on paper",
+  "why": "With no charge, save the battery for what keeps you seen and heard — the lights and the radio; a paper plot needs no power.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Volts",
+     "11.9",
+     true
+    ],
+    [
+     "Alternator",
+     "0 A",
+     true
+    ],
+    [
+     "Fuel",
+     "70%",
+     false
+    ]
+   ],
+   "lines": [
+    "30 h still to go",
+    "House bank only, no solar"
+   ]
+  },
+  "ru": {
+   "30 h still to go": "Идти ещё 30 ч",
+   "House bank only, no solar": "Только бытовой банк, солнечных панелей нет",
+   "Volts": "Вольты",
+   "Alternator": "Генератор",
+   "0 A": "0 А",
+   "Fuel": "Топливо"
+  }
+ },
+ {
+  "id": "yof-955",
+  "topic": "emergency",
+  "q": "Your fixed system has fired by itself in the engine room, and both engines and the generator stopped at the same moment. The mate wants to restart the engines at once. What do you say?",
+  "answer": "No — the shutdown is meant; wait the hold time, then check",
+  "why": "The system stops engines and fans so they cannot draw the agent out; restart only after the hold time and a check.",
+  "figure": {
+   "type": "panel",
+   "gauges": [
+    [
+     "Port",
+     "STOP",
+     true
+    ],
+    [
+     "Stbd",
+     "STOP",
+     true
+    ],
+    [
+     "Fire sys",
+     "FIRED",
+     true
+    ]
+   ],
+   "lines": [
+    "Shutdown relay tripped at discharge",
+    "Open sea, 100 M off, drifting"
+   ]
+  },
+  "ru": {
+   "Shutdown relay tripped at discharge": "Реле остановки сработало при пуске",
+   "Open sea, 100 M off, drifting": "Открытое море, 100 миль, дрейф",
+   "Port": "Левый",
+   "STOP": "СТОП",
+   "Stbd": "Правый",
+   "Fire sys": "Пож. сист.",
+   "FIRED": "СРАБ."
+  }
+ }
+]

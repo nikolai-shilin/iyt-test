@@ -1,0 +1,172 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 60,
+  "title": "When does the front arrive?",
+  "key": [
+   "The front comes E at 25 kn, you go W at 5 kn: closing at 30 kn",
+   "120 M ÷ 30 kn = 4 h: reef before then"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 270,
+    "noHeading": true,
+    "scale": 1.8
+   },
+   {
+    "x": -200,
+    "z": 0,
+    "hdg": 270,
+    "noHeading": true,
+    "bearing": false,
+    "label": "you, in 4 h",
+    "labelAbove": true,
+    "fill": "#9aa0a6",
+    "scale": 1.8
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -1200,
+      -450
+     ],
+     [
+      -1240,
+      -150
+     ],
+     [
+      -1200,
+      150
+     ],
+     [
+      -1240,
+      450
+     ]
+    ],
+    "c": "red",
+    "w": 8
+   },
+   {
+    "pts": [
+     [
+      -200,
+      -450
+     ],
+     [
+      -240,
+      -150
+     ],
+     [
+      -200,
+      150
+     ],
+     [
+      -240,
+      450
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "12 10"
+   },
+   {
+    "pts": [
+     [
+      -1150,
+      -300
+     ],
+     [
+      -900,
+      -300
+     ]
+    ],
+    "c": "red",
+    "w": 7,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -60,
+      0
+     ],
+     [
+      -160,
+      0
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "arrow": true
+   }
+  ],
+  "dims": [
+   {
+    "a": [
+     -1200,
+     300
+    ],
+    "b": [
+     -200,
+     300
+    ],
+    "text": "front: 4 h × 25 kn = 100 M",
+    "off": 0
+   },
+   {
+    "a": [
+     -200,
+     -170
+    ],
+    "b": [
+     0,
+     -170
+    ],
+    "text": "20 M",
+    "off": 0
+   }
+  ],
+  "texts": [
+   {
+    "x": -1220,
+    "z": -520,
+    "text": "cold front now",
+    "kind": "red"
+   },
+   {
+    "x": -220,
+    "z": -520,
+    "text": "the front in 4 h"
+   },
+   {
+    "x": -1020,
+    "z": -380,
+    "text": "25 kn E",
+    "pill": false,
+    "size": 24
+   },
+   {
+    "x": 140,
+    "z": 100,
+    "text": "W at 5 kn",
+    "pill": false,
+    "size": 24
+   }
+  ],
+  "fit": [
+   {
+    "x": -1350,
+    "z": -600
+   },
+   {
+    "x": 250,
+    "z": 520
+   }
+  ]
+ }
+}

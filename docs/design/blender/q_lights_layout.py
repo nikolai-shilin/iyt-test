@@ -15,7 +15,9 @@ def vessel(sp, lights):
     s_t = G.s_of_lens(sp.get('lens', 110))
     D = sp.get('dist', 150.0); fixed = 'dist' in sp
     idx = list(sp['lights']) + (list(sp['tow']['lights']) if sp.get('tow') else [])
-    tg = [target(lights[i]) for i in idx]
+    sw = sp.get('swap', {})      # fit a light to another light's point of the figure (a figure that has the sides wrong)
+    dy = sp.get('dy', 0)         # the whole figure lower in the picture (its top light clear of the note)
+    tg = [(target(lights[sw.get(i, i)])[0], target(lights[sw.get(i, i)])[1] + dy) for i in idx]
     for it in range(6):
         pos, hdg = G.vessel_frame(sp['bearing'], D, sp['R'])
         pts = {i: G.to_world(pos, hdg, p) for i, p in sp['lights'].items()}

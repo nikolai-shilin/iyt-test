@@ -1,0 +1,287 @@
+{
+ "article": "yachtmaster-offshore/charts",
+ "topic": "charts",
+ "lead": "Offshore the chart is small in scale and nobody checks the plot but you. Know what the projection does to distance, what each publication gives, and how far to trust the plotter.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Mercator and gnomonic",
+   "fig": {
+    "type": "chart",
+    "track": "M80 24 V180 M150 24 V180 M220 24 V180 M290 24 V180 M80 180 H290 M80 110 H290 M80 24 H290",
+    "labels": [
+     [
+      72,
+      184,
+      "40°N",
+      "end"
+     ],
+     [
+      72,
+      114,
+      "50°N",
+      "end"
+     ],
+     [
+      72,
+      28,
+      "60°N",
+      "end"
+     ],
+     [
+      185,
+      150,
+      "600 M",
+      "middle"
+     ],
+     [
+      185,
+      72,
+      "600 M",
+      "middle"
+     ]
+    ],
+    "note": "Mercator: the same 600 M takes more paper further north"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Mercator and gnomonic",
+   "fig": {
+    "type": "card",
+    "title": "Scale by latitude: worked example",
+    "lines": [
+     "Chart 1:300,000 at 50°N, landfall at 45°N",
+     "Scale there: 300,000 × cos 45° ÷ cos 50°",
+     "= 1:330,000, so 1 mm is 330 m",
+     "Leg at 48°N read on the scale at 42°N: 50.0'",
+     "True: 50.0 × cos 48° ÷ cos 42° = 45.0 M"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Latitude and longitude",
+   "fig": {
+    "type": "card",
+    "title": "Mid-latitude sailing: worked example",
+    "lines": [
+     "From 44°10.0'N 008°30.0'W: 220°T, 100 M",
+     "d.lat 100 × cos 220° = 76.6' S: 42°53.4'N",
+     "Departure 100 × sin 220° = 64.3 M W",
+     "Mid-latitude 43°31.7': cos = 0.725",
+     "d.long 64.3 ÷ 0.725 = 88.7' = 1°28.7' W",
+     "DR 42°53.4'N 009°58.7'W"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Latitude and longitude",
+   "fig": {
+    "type": "card",
+    "title": "Mercator sailing: worked example",
+    "lines": [
+     "From 48°00.0'N 006°00.0'W",
+     "To 45°30.0'N 008°20.0'W",
+     "Mer. parts 3274.4 − 3056.1: DMP 218.3",
+     "tan C = d.long 140' ÷ 218.3: S 32.7° W",
+     "Course 213°T",
+     "Distance = d.lat 150' ÷ cos 32.7° = 178.2 M"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Scale, folio and datum",
+   "fig": {
+    "type": "chart",
+    "depths": [
+     [
+      150,
+      100,
+      "14"
+     ],
+     [
+      118,
+      122,
+      "18"
+     ],
+     [
+      50,
+      56,
+      "46"
+     ],
+     [
+      262,
+      176,
+      "52"
+     ],
+     [
+      48,
+      168,
+      "60"
+     ]
+    ],
+    "track": "M80 112 C80 72 220 72 220 112 C220 152 80 152 80 112 Z",
+    "marks": [
+     [
+      240,
+      136,
+      "k",
+      "EP"
+     ]
+    ],
+    "labels": [
+     [
+      150,
+      168,
+      "20 m contour",
+      "middle"
+     ]
+    ],
+    "panel": [
+     "Scale 1:350,000",
+     "1 mm = 350 m",
+     "EP 5 mm off: 0.9 M",
+     "Last fix 6 h ago"
+    ],
+    "note": "Six hours of EP can be out by more than 0.9 M"
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Chartwork",
+   "fig": {
+    "type": "compass",
+    "variation": -6,
+    "course": 205,
+    "courseLabel": "True track",
+    "note": "205°T + 6°W = 211°M"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Chartwork",
+   "fig": {
+    "type": "card",
+    "title": "Speed and time: worked example",
+    "lines": [
+     "2130 log 512.4 · 0415 log 561.9: 49.5 M",
+     "6 h 45 min is 6.75 h, not 6.45 h",
+     "49.5 ÷ 6.75 = 7.3 kn",
+     "Log reads 4% high: 130.0 ÷ 1.04 = 125.0 M",
+     "96 M at 8.0 kn = 12 h: leave 1900 BST,",
+     "arrive 0700 BST = 0800 French time"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Offshore symbols",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 62,
+      "t": "Mo(U) 15s"
+     },
+     {
+      "c": "r",
+      "x": 100,
+      "y": 118
+     },
+     {
+      "c": "r",
+      "x": 220,
+      "y": 118
+     }
+    ]
+   },
+   "cap": "white Mo(U), red at its ends",
+   "name": "Platform"
+  },
+  {
+   "n": 9,
+   "section": "Offshore symbols",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "y",
+      "x": 90,
+      "y": 120
+     },
+     {
+      "c": "y",
+      "x": 230,
+      "y": 120
+     },
+     {
+      "c": "r",
+      "x": 90,
+      "y": 60,
+      "r": 4
+     },
+     {
+      "c": "r",
+      "x": 160,
+      "y": 56,
+      "r": 4
+     },
+     {
+      "c": "r",
+      "x": 230,
+      "y": 60,
+      "r": 4
+     }
+    ]
+   },
+   "cap": "yellow, flashing together",
+   "name": "Wind farm"
+  },
+  {
+   "n": 10,
+   "section": "Publications and corrections",
+   "fig": {
+    "type": "card",
+    "title": "Corrections before sailing",
+    "lines": [
+     "Stamp: corrected to NM Week 31. Now Week 36:",
+     "apply Weeks 32–36 to each chart, log them",
+     "New Edition published: replace the chart",
+     "T notices: keep only those still in force",
+     "(P) notices, warnings: pencil, with the number",
+     "ENC and paper differ: find the notice"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 11,
+   "section": "Electronic charts",
+   "fig": {
+    "type": "card",
+    "title": "Safety contour: worked example",
+    "lines": [
+     "Draught 2.1 m, squat 0.3 m",
+     "Swell 1.6 m: allow half, 0.8 m",
+     "Margin under the keel 1.0 m: total 4.2 m",
+     "Cell contours 2, 5, 10, 20 m: 5 m is bold",
+     "General cell, 10, 20, 50 m: 10 m is bold",
+     "Look-ahead: 18 kn × 10 min = 3.0 M"
+    ]
+   },
+   "cap": null
+  }
+ ]
+}

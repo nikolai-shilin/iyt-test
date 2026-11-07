@@ -1,0 +1,222 @@
+{
+ "noScale": true,
+ "sch": {
+  "padPx": 60,
+  "title": "Fixing as a danger closes",
+  "key": [
+   "Offshore a fix every 30 min: 3 M apart at 6 kn",
+   "Within 3 M of a danger every 6 min, 0.6 M apart: you cannot reach it between fixes"
+  ],
+  "land": [
+   [
+    [
+     -300,
+     -600
+    ],
+    [
+     300,
+     -600
+    ],
+    [
+     380,
+     -330
+    ],
+    [
+     160,
+     -200
+    ],
+    [
+     -120,
+     -230
+    ],
+    [
+     -380,
+     -360
+    ]
+   ]
+  ],
+  "rocks": [
+   {
+    "x": 0,
+    "z": -60,
+    "label": "danger"
+   }
+  ],
+  "circles": [
+   {
+    "x": 0,
+    "z": -60,
+    "r": 300,
+    "c": "red"
+   },
+   {
+    "x": -1200,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": -900,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": -600,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": -300,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": -240,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": -180,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": -120,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": -60,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": 0,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": 60,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": 120,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": 180,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   },
+   {
+    "x": 240,
+    "z": 150,
+    "r": 18,
+    "c": "ink",
+    "dash": "0",
+    "fill": "var(--bg)"
+   }
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 520,
+    "z": 150,
+    "hdg": 90,
+    "noHeading": true
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -1300,
+      150
+     ],
+     [
+      460,
+      150
+     ]
+    ],
+    "c": "course",
+    "w": 5,
+    "dash": "14 10",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -750,
+    "z": 230,
+    "text": "every 30 min",
+    "kind": "light"
+   },
+   {
+    "x": 0,
+    "z": 230,
+    "text": "every 6 min",
+    "kind": "red"
+   },
+   {
+    "x": 270,
+    "z": -330,
+    "text": "3 M",
+    "kind": "red"
+   },
+   {
+    "x": -750,
+    "z": 80,
+    "text": "3 M apart",
+    "pill": false,
+    "size": 22
+   }
+  ],
+  "fit": [
+   {
+    "x": -1300,
+    "z": -620
+   },
+   {
+    "x": 600,
+    "z": 300
+   }
+  ]
+ }
+}

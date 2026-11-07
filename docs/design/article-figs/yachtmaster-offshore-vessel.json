@@ -1,0 +1,223 @@
+{
+ "article": "yachtmaster-offshore/vessel",
+ "topic": "vessel",
+ "lead": "Far from help, know her hull, what keeps her upright, and how her systems fail.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Hull",
+   "fig": {
+    "type": "boat",
+    "view": "side",
+    "parts": [
+     [
+      "waterline",
+      "osmosis below"
+     ],
+     [
+      "keel",
+      "on blocks"
+     ],
+     [
+      "rudder",
+      "wet inside?"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Structure and rig",
+   "fig": {
+    "type": "boat",
+    "view": "side",
+    "parts": [
+     [
+      "keel",
+      "keel bolts, grid"
+     ],
+     [
+      "rudder",
+      "bearings"
+     ],
+     [
+      "forestay",
+      "swages"
+     ],
+     [
+      "backstay",
+      "chainplates"
+     ],
+     [
+      "hull",
+      "hull-deck joint"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Stability",
+   "fig": {
+    "type": "card",
+    "title": "Stability booklet, loaded",
+    "lines": [
+     "KM 3.20 m, KG 2.60 m: GM 0.60 m",
+     "At 10°: GZ ≈ 0.60 × sin 10° = 0.10 m",
+     "Δ 30 t: righting moment 30 × 0.10 = 3 t·m"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Weights",
+   "fig": {
+    "type": "card",
+    "title": "Launching the tender",
+    "lines": [
+     "Δ 40 t, GM 0.80 m; tender 1.0 t",
+     "Lifted 4.0 m: G rises 1.0 × 4.0 ÷ 40 = 0.10 m",
+     "GM now 0.70 m",
+     "Swung 2.8 m outboard: G shifts 0.07 m",
+     "tan θ = 0.07 ÷ 0.70: list about 6°"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Weights",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Roll",
+      "8.0 s",
+      true
+     ],
+     [
+      "Beam",
+      "5.0 m",
+      false
+     ],
+     [
+      "GM",
+      "0.25 m",
+      true
+     ]
+    ],
+    "lines": [
+     "Period ≈ 0.8 × beam ÷ √GM: √GM = 4 ÷ 8 = 0.5",
+     "In harbour 6.0 s, GM 0.44 m: find the free water"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "The diesel",
+   "fig": {
+    "type": "card",
+    "title": "Fuel path, and the bleeding order",
+    "lines": [
+     "Tank → primary filter and separator →",
+     "lift pump → fine filter → injection pump →",
+     "injectors",
+     "Bleed in that order, then crack each",
+     "injector union while cranking"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "The diesel",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Temp",
+      "92°",
+      true
+     ],
+     [
+      "RPM",
+      "2200",
+      false
+     ],
+     [
+      "Flow",
+      "strong",
+      false
+     ]
+    ],
+    "lines": [
+     "Seacock, strainer, impeller, exchanger, exhaust",
+     "Flow strong, coolant full: descale the tubes"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Drive train",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Rated",
+      "3200",
+      false
+     ],
+     [
+      "Full throttle",
+      "2700",
+      true
+     ],
+     [
+      "Smoke",
+      "black",
+      true
+     ]
+    ],
+    "lines": [
+     "Overpropped: aim for 3100",
+     "(3100 − 2700) ÷ 200 ≈ 2 in less pitch"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 9,
+   "section": "Electrics",
+   "fig": {
+    "type": "panel",
+    "gauges": [
+     [
+      "Volts",
+      "14.4",
+      false
+     ],
+     [
+      "Amps",
+      "9",
+      false
+     ],
+     [
+      "Stage",
+      "ABS",
+      false
+     ]
+    ],
+    "lines": [
+     "Bulk done; voltage held, current tapering",
+     "Falling current here is normal"
+    ]
+   },
+   "cap": null
+  }
+ ]
+}

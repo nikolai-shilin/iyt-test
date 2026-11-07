@@ -1,0 +1,118 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Narrow channel · a trawler in the fairway",
+  "key": [
+   "Rule 9(c): fishing must not impede a vessel navigating within the channel",
+   "Once risk of collision exists, Rule 18 still binds you: you keep clear (8(f)(iii))"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 40,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 10,
+    "z": -360,
+    "hdg": 180,
+    "label": "Trawler",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "g",
+     "w"
+    ],
+    "stackDx": -120
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      -130,
+      -560
+     ],
+     [
+      130,
+      -560
+     ],
+     [
+      130,
+      120
+     ],
+     [
+      -130,
+      120
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      40,
+      -40
+     ],
+     [
+      80,
+      -120
+     ],
+     [
+      90,
+      -230
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": -330,
+    "z": -150,
+    "text": "narrow channel",
+    "kind": "accent"
+   },
+   {
+    "x": 480,
+    "z": -420,
+    "text": "she must not impede you",
+    "kind": "light"
+   },
+   {
+    "x": 480,
+    "z": -150,
+    "text": "risk: you keep clear",
+    "kind": "red"
+   }
+  ],
+  "fit": [
+   {
+    "x": -600,
+    "z": -600
+   },
+   {
+    "x": 760,
+    "z": 160
+   },
+   {
+    "x": 40,
+    "z": 217.6
+   },
+   {
+    "x": 10,
+    "z": -577.6
+   }
+  ]
+ }
+}

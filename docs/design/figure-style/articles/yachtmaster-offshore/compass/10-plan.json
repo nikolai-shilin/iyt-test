@@ -1,0 +1,112 @@
+{
+ "sch": {
+  "padPx": 60,
+  "title": "One position line · the point nearest the EP",
+  "key": [
+   "One line only: the light bears 020°T, so you are somewhere on the line",
+   "Take the point on it nearest the EP, and log the line with its time"
+  ],
+  "land": [
+   [
+    [
+     -520,
+     -40
+    ],
+    [
+     -200,
+     -30
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     200,
+     -40
+    ],
+    [
+     520,
+     -30
+    ],
+    [
+     520,
+     -140
+    ],
+    [
+     -520,
+     -140
+    ]
+   ]
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      0
+     ],
+     [
+      -287.3,
+      789.3
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -74.0,
+      483.9
+     ],
+     [
+      -164.2,
+      451.1
+     ]
+    ],
+    "c": "red",
+    "w": 4,
+    "dash": "10 8"
+   }
+  ],
+  "spots": [
+   {
+    "x": -74.0,
+    "z": 483.9,
+    "label": "EP"
+   }
+  ],
+  "texts": [
+   {
+    "x": 0,
+    "z": -40,
+    "text": "Light",
+    "pill": false,
+    "size": 30
+   },
+   {
+    "x": -232.1,
+    "z": 225.5,
+    "text": "light bears 020°T"
+   },
+   {
+    "x": -254.2,
+    "z": 451.1,
+    "text": "here",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -520,
+    "z": -140
+   },
+   {
+    "x": 420,
+    "z": 860
+   }
+  ]
+ },
+ "noScale": true
+}

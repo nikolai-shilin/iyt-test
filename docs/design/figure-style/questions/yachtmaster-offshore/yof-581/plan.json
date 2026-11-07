@@ -1,0 +1,134 @@
+{
+ "sch": {
+  "night": true,
+  "padPx": 80,
+  "title": "Lights · a trawler shooting her nets",
+  "key": [
+   "Green over white: trawling; two whites below them: shooting nets (Annex II 2(a)(i))",
+   "Her trawl is paying out astern, towards you: keep well clear of her stern"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0,
+    "noHeading": true,
+    "power": true
+   },
+   {
+    "x": 0.0,
+    "z": -420.0,
+    "hdg": 350,
+    "label": "Trawler",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "g",
+     "w",
+     "w",
+     "w"
+    ],
+    "stackDx": -150
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -8,
+      -395
+     ],
+     [
+      0,
+      -300
+     ],
+     [
+      10,
+      -220
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "8 8"
+   },
+   {
+    "pts": [
+     [
+      -2,
+      -395
+     ],
+     [
+      30,
+      -300
+     ],
+     [
+      45,
+      -230
+     ]
+    ],
+    "c": "ink",
+    "w": 3,
+    "dash": "8 8"
+   },
+   {
+    "pts": [
+     [
+      -10,
+      -40
+     ],
+     [
+      -120,
+      -120
+     ],
+     [
+      -170,
+      -300
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 160,
+    "z": -260,
+    "text": "trawl paying out",
+    "kind": "red"
+   },
+   {
+    "x": -260,
+    "z": -150,
+    "text": "keep clear",
+    "kind": "accent"
+   },
+   {
+    "x": 170,
+    "z": -60,
+    "text": "1 M",
+    "kind": "light"
+   }
+  ],
+  "fit": [
+   {
+    "x": -330,
+    "z": -560
+   },
+   {
+    "x": 260,
+    "z": 110
+   },
+   {
+    "x": 0,
+    "z": 107.2
+   },
+   {
+    "x": 0.0,
+    "z": -527.2
+   }
+  ]
+ }
+}

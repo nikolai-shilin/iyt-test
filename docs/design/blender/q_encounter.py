@@ -1,5 +1,5 @@
-# Bareboat Skipper test questions, figure type "encounter": one Blender render per question, from its spec in
-# docs/design/figure-style/questions/bareboat-skipper/encounter.json (you, other at a bearing relative to your heading,
+# Test questions, figure type "encounter" (Bareboat Skipper, Charter Check-in, Yachtmaster Offshore): one Blender
+# render per question, from its spec in docs/design/figure-style/questions/<level>/encounter.json (you, other at a bearing relative to your heading,
 # distance in the 2D drawing's units, headings, sails and boom side, wind, note). Writes <id>/3d.jpg (1280 x 800) and
 # 3d.labels.json, then <id>/plan.json and ru.json (q_encounter_plans.py).
 # Views (VIEW below picks one per question; see the README beside the list for the rules):
@@ -11,7 +11,7 @@
 #   plotter the plotter close up (AIS-SART)
 #   night   drone view at night, lights only
 #   blender --background --factory-startup --python docs/design/blender/q_encounter.py -- --id bs-031 [--samples 128]
-#   --level charter-checkin: questions/<level>/encounter.json in, <level>/<id>/ out (default bareboat-skipper)
+#   --level charter-checkin | yachtmaster-offshore: questions/<level>/encounter.json in, <level>/<id>/ out (default bareboat-skipper)
 import os, sys, math, json, subprocess, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -94,6 +94,22 @@ VIEW = {
     # Charter Check-in
     'ci-361': dict(view='helm', model='mob', d=24, horseshoe=True),
     'ci-397': dict(view='drone', you_model='cat', model='mob', d=20, cam=dict(el=50, k=1.7)),
+    # Yachtmaster Offshore (you_L: our own motor yacht's length; a night question about geometry is a day drone
+    # view: from our deck at night her lights would be the answer)
+    'yof-511': dict(view='helm', model='tanker', d=1852, L=330, lens=85),
+    'yof-513': dict(view='chase', you_model='motor', you_L=23.0, model='tanker', d=700, L=200, narrows=True),
+    'yof-519': dict(view='drone', you_model='motor', you_L=23.0, model='cargo', L=140),
+    'yof-522': dict(view='drone', you_model='motor', you_L=24.0, model='cargo', L=70),
+    'yof-528': dict(view='fog'),
+    'yof-534': dict(view='drone', model='cargo', L=120),
+    'yof-557': dict(view='drone', you_model='motor', you_L=23.0, model='tanker', L=160, dredged=True),
+    'yof-561': dict(view='drone', you_model='motor', you_L=22.0, model='cargo', L=140),
+    'yof-566': dict(view='drone', you_model='motor', you_L=24.0),
+    'yof-576': dict(view='drone', model='tug', L=30.0, barge=True),
+    'yof-825': dict(view='solo', scene='alongside', you_model='motor', you_L=22.0),
+    'yof-826': dict(view='solo', scene='still', you_model='motor', you_L=22.0),
+    'yof-893': dict(view='solo', scene='following', you_model='motor', you_L=22.0),
+    'yof-954': dict(view='drone', you_model='motor', you_L=24.0, model='mob', d=40),
 }
 V = VIEW.get(ID, {'view': 'drone'})
 VIEW_KIND = V['view']
@@ -104,10 +120,10 @@ def other_kind():
     lab = OTH.get('label') or ''
     return {'Ship': 'cargo', 'Ship in lane': 'cargo', 'Tanker': 'tanker', 'Container ship': 'container', 'Ferry': 'ferry',
             'Fast ferry': 'ferry', 'Trawler': 'trawler', 'Fishing boat': 'trawler', 'Fishing': 'trawler', 'RIB': 'rib',
-            'Dinghy': 'dinghy', 'MOB': 'mob', 'Swimmer': 'swimmer', 'Seaplane': 'seaplane', 'Windsurfer': 'windsurfer'}.get(lab, 'motor')
+            'Dinghy': 'dinghy', 'MOB': 'mob', 'Swimmer': 'swimmer', 'Seaplane': 'seaplane', 'Windsurfer': 'windsurfer', 'Tug': 'tug'}.get(lab, 'motor')
 
 LENGTH = {'motor': 12.0, 'yacht': 14.6, 'yacht_motor': 14.6, 'moored': 14.6, 'cargo': 140.0, 'tanker': 170.0, 'container': 180.0,
-          'ferry': 55.0, 'trawler': 22.0, 'rib': 5.0, 'dinghy': 3.6, 'mob': 1.0, 'swimmer': 1.0, 'seaplane': 10.0, 'windsurfer': 3.0}
+          'ferry': 55.0, 'trawler': 22.0, 'rib': 5.0, 'dinghy': 3.6, 'mob': 1.0, 'swimmer': 1.0, 'seaplane': 10.0, 'windsurfer': 3.0, 'tug': 30.0}
 
 labels, arrows, lines = [], [], []
 NOTE = F.get('note')
@@ -121,7 +137,8 @@ def boom_sign(spec):
 def make_you(x=0.0, y=0.0):
     h = YOU.get('hdg', 0)
     if V.get('you_model') == 'motor':
-        root, vis, top = P.motor_yacht((x, y), h, 12.0); return None, top, root
+        # P.motor_yacht puts the model's bow on -heading (the article scripts compensate themselves): turn her round
+        root, vis, top = P.motor_yacht((x, y), h + 180, V.get('you_L', 12.0)); return None, top, root
     if V.get('you_model') == 'cat':
         root, vis, top = P.catamaran((x, y), h); return None, top, root
     if YOU.get('sail'):
@@ -147,8 +164,8 @@ def make_other(p, kind):
         return yt, P.yacht_top(yt), yt.root
     if kind in ('yacht_motor', 'moored'):
         yt = P.motor_yacht_sun('other', h, p.x, p.y); return yt, P.yacht_top(yt), yt.root
-    if kind == 'motor':
-        r, vis, top = P.motor_yacht((p.x, p.y), h, L); return None, top, r
+    if kind == 'motor':     # bow on the heading (P.motor_yacht itself puts it on -heading)
+        r, vis, top = P.motor_yacht((p.x, p.y), h + 180, L); return None, top, r
     if kind in ('cargo', 'tanker', 'container'):
         r, vis, top = P.merchant((p.x, p.y), h, L, kind); return None, top, r
     if kind == 'ferry':
@@ -166,6 +183,13 @@ def make_other(p, kind):
         r, vis, top = P.seaplane((p.x, p.y), h); return None, top, r
     if kind == 'windsurfer':
         r, vis, top = P.windsurfer((p.x, p.y), h, sail_side=boom_sign(OTH), k=1.0); return None, top, r
+    if kind == 'tug':      # the harbour tug (art_yof_emergency), her wake and water-jet slabs dropped
+        def hide(o):
+            ms = ' '.join(sl.material.name for sl in o.material_slots if sl.material)
+            if 'wake' in ms or 'sea' in ms: return True
+            lo, hi = K.bbox([o]); return (hi.y - lo.y) > 11 and lo.z > -3
+        r, vis = P.vessel('vessel-tug.glb', (p.x, p.y), h, L, None, flip=False, draft=2.2, hide=hide)
+        return None, P.top_of(vis), r
     raise SystemExit('unknown kind ' + kind)
 
 def add_wake(kind, p, h, L, yt=None):
@@ -177,6 +201,7 @@ def add_wake(kind, p, h, L, yt=None):
     elif kind == 'motor': P.wake_decal(p, h, L * (1.6 if V.get('slow') else 3.4), L * 0.45, stern=L * 0.5, strength=0.8 if V.get('slow') else 1.3)
     elif kind == 'rib': P.wake_decal(p, h, 30, 3.5, stern=2.5, strength=1.2)
     elif kind == 'trawler': P.wake_decal(p, h, 45, 7, stern=11, strength=0.9)
+    elif kind == 'tug': P.wake_decal(p, h, 60, 8, stern=L * 0.5, strength=0.9)
 
 # ---------- labels ----------
 def pill(pt, text, color=None):
@@ -287,11 +312,20 @@ if VIEW_KIND in ('drone', 'night'):
     if VIEW_KIND != 'night':
         if not V.get('anchored') and not V.get('you_still'):
             if yt is not None: K.wake(yt, 28 if YOU.get('sail') else 45, 8, 0.9 if YOU.get('sail') else 1.3)
-            else: P.wake_decal((0, 0), YOU.get('hdg', 0), 40, 5.5, stern=6, strength=1.3)
+            else: P.wake_decal((0, 0), YOU.get('hdg', 0), 40 * V.get('you_L', 12.0) / 12.0, 5.5 * V.get('you_L', 12.0) / 12.0, stern=V.get('you_L', 12.0) / 2, strength=1.3)
         add_wake(kind, p, OTH.get('hdg', 180), L, ot)
     if V.get('anchored'): P.anchor_chain(yt, YOU.get('hdg', 0))
     if V.get('lane'):
         P.channel(tuple((-P.right(YOU.get('hdg', 0)) * 18).xy), YOU.get('hdg', 0), half_width=40.0, n=6, spacing=45.0, start=-130.0)
+    if V.get('barge'):      # her tow: a dark barge 70 m astern on a sagging towline
+        h = OTH.get('hdg', 0); bc = p - fwd(h) * (L * 0.5 + 70 + 20)
+        bg = C.obj('barge', C.rbox('barge', (40, 11, 3.2), 0.4, 2), C.simple('barge', '#3d4247', 0.6)); bg.location = (bc.x, bc.y, 0.6)
+        bg.rotation_euler = (0, 0, deg(90 - h))
+        st = p - fwd(h) * (L * 0.5 - 1.0) + Vector((0, 0, 1.6)); bw = bc + fwd(h) * 20 + Vector((0, 0, 2.0))
+        C.tube('towline', [st.lerp(bw, t / 20) + Vector((0, 0, -1.8 * math.sin(math.pi * t / 20))) for t in range(21)], 0.12, 8, 1.0, C.simple('towline', '#e9e2c4', 0.7))
+        P.wake_decal(bc, h, 30, 12, stern=20, strength=0.6)
+    if V.get('dredged'):    # the dredged channel she follows: red cans and green cones either side, 100 m wide
+        P.channel(tuple(p.xy), (OTH.get('hdg', 0) + 180) % 360, half_width=50.0, n=6, spacing=70.0, start=-150.0)
     if V.get('scene') == 'pontoon':      # the moored yacht alongside a pontoon on her far side
         h = OTH.get('hdg', 0); r = P.right(h)
         P.pontoon(tuple(p + r * 4.6 - fwd(h) * 30), tuple(p + r * 4.6 + fwd(h) * 40), 2.6)
@@ -402,6 +436,7 @@ elif VIEW_KIND == 'helm':
 elif VIEW_KIND == 'chase':
     sea('breeze', size=40.0, repeat=14)
     yt, ytop, yroot = make_you(); add_wake('yacht', Vector((0, 0, 0)), YOU.get('hdg', 0), 14.6, yt)
+    if yt is None: P.wake_decal((0, 0), YOU.get('hdg', 0), 3 * V.get('you_L', 12.0), 0.45 * V.get('you_L', 12.0), stern=V.get('you_L', 12.0) / 2, strength=1.2)
     L = V.get('L') or LENGTH[kind]; d = V['d']; p = other_pos(d)
     ot, otop, oroot = make_other(p, kind); add_wake(kind, p, OTH.get('hdg', 180), L, ot)
     if V.get('narrows'):
@@ -452,9 +487,17 @@ elif VIEW_KIND == 'solo':
             K.coast(distance=135, bearing=90, length=3000, height=85, seed=7, town=True)
         elif scene == 'storm':
             sea('calm', size=40.0, repeat=14)
+        elif scene in ('alongside', 'still'):
+            sea('calm', size=40.0, repeat=14)
+        elif scene == 'following':
+            sea('fresh', size=60.0, repeat=12)
         else:
             sea('breeze', size=40.0, repeat=14)
         yt, ytop, yroot = make_you()
+        if scene == 'alongside':     # a pontoon parallel to her, 4 m off her starboard side, a quay behind it
+            YL = V.get('you_L', 12.0); r_ = P.right(hdg); f_ = fwd(hdg); off = YL * 0.13 + 4.0 + 1.3
+            P.pontoon(tuple(r_ * off - f_ * 30), tuple(r_ * off + f_ * 30), 2.6)
+            for k_ in (-1, 1): P.clone_yacht(P.motor_yacht_sun('m0', hdg, 999, 999), f'moored{k_}', *(r_ * (off + 1.3 + 2.4) + f_ * 19 * k_).xy, hdg)
         if YOU.get('sail') or scene == 'strait': K.wake(yt, 30, 8, 0.9)
         if scene == 'storm':
             P.cb_cloud((-40000, 2500, 0), r=5000, base=1300, top=12500)
@@ -462,6 +505,9 @@ elif VIEW_KIND == 'solo':
             cam, eye = drone(Vector((0, 0, 4)), D, az, el, k=2.2, lens=lens)
             cam.rotation_euler = (Vector((-60, 10, 16)) - eye).to_track_quat('-Z', 'Y').to_euler(); cam.data.clip_end = 80000
             K.day_sky(sun_az=150, sun_el=35, strength=0.2)
+        elif scene in ('alongside', 'still', 'following'):
+            az, el = hdg + 180 + (25 if scene == 'alongside' else 35), (55 if scene == 'alongside' else 40)
+            cam, eye = drone(Vector((0, 0, 3)), 30 * V.get('you_L', 12.0) / 14.0, az, el, k=2.3, lens=32); K.day_sky(sun_az=az + 25, sun_el=50)
         elif V.get('north') and scene != 'strait':
             az, el = 180 + 20, 50
             cam, eye = drone(Vector((0, 0, 3)), 30, az, el, k=2.3, lens=32); K.day_sky(sun_az=az + 25, sun_el=50)

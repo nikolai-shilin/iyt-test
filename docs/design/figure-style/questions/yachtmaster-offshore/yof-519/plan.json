@@ -1,0 +1,88 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Crossing a lane · Rule 15 still applies",
+  "key": [
+   "Rule 10(j) binds only vessels under 20 m and sailing vessels; you are a 23 m motor yacht",
+   "Rule 10(a) leaves Rule 15 in force: she has you on her starboard side and gives way"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   },
+   {
+    "x": -779.4,
+    "z": -450.0,
+    "hdg": 90,
+    "label": "Ship"
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      120.6,
+      -620.0
+     ],
+     [
+      120.6,
+      -280.0
+     ],
+     [
+      -1679.4,
+      -280.0
+     ],
+     [
+      -1679.4,
+      -620.0
+     ]
+    ],
+    "c": "ink",
+    "fill": "rgba(0,118,190,.08)"
+   }
+  ],
+  "texts": [
+   {
+    "x": -779.4,
+    "z": -680.0,
+    "text": "eastbound lane",
+    "free": true
+   },
+   {
+    "x": -887.2,
+    "z": -154.0,
+    "text": "she gives way",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 184.2,
+    "z": 320.1,
+    "text": "you stand on, watch her",
+    "kind": "accent",
+    "free": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -270.0,
+    "z": -270.0
+   },
+   {
+    "x": 270.0,
+    "z": 270.0
+   },
+   {
+    "x": -1049.4,
+    "z": -720.0
+   },
+   {
+    "x": -509.4,
+    "z": -180.0
+   }
+  ]
+ }
+}

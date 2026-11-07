@@ -1,0 +1,281 @@
+{
+ "article": "yachtmaster-offshore/compass",
+ "topic": "compass",
+ "lead": "Offshore every heading and bearing passes through a compass you must trust; a fix is as good as its worst line.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "The steering compass",
+   "fig": {
+    "type": "compass",
+    "variation": -3,
+    "course": 245,
+    "courseLabel": "True",
+    "note": "245°T + 3°W = 248°M"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "The steering compass",
+   "fig": {
+    "type": "card",
+    "title": "Variation brought up to date",
+    "lines": [
+     "Rose: 4°10'W 2016 (8'E)",
+     "2026: 10 years × 8' = 1°20' less westerly",
+     "Variation now 2°50'W",
+     "Old chart: 1°30'W 2010 (9'E)",
+     "16 years × 9' = 2°24': 0°54'E",
+     "It has passed through zero"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Deviation",
+   "fig": {
+    "type": "card",
+    "title": "Deviation by azimuth: worked example",
+    "lines": [
+     "Heading steady 165°C; sun over the pin 119°C",
+     "Tabled azimuth 118°T + variation 4°W = 122°M",
+     "Compass reads 3° low: deviation 3°E on 165°C",
+     "Swing on a far peak: mean of 8 bearings 222°",
+     "That mean is magnetic; on 090°C it read 218°",
+     "Deviation 4°E there; on 270°C, 226°: 4°W"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Deviation",
+   "fig": {
+    "type": "compass",
+    "variation": -3,
+    "course": 248,
+    "courseLabel": "Compass",
+    "note": "Sat 240°T → 5°W"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Position lines",
+   "fig": {
+    "type": "chart",
+    "land": "M28 34 C 32 24 50 24 54 34 C 58 46 46 54 36 50 C 28 47 25 40 28 34 Z M168 160 C 172 150 190 151 194 160 C 198 172 186 178 176 175 C 168 172 165 166 168 160 Z",
+    "marks": [
+     [
+      40,
+      40,
+      "k",
+      "A"
+     ],
+     [
+      180,
+      165,
+      "k",
+      "B"
+     ]
+    ],
+    "track": "M116 122 A112 112 0 0 1 60 150 M152 48 A112 112 0 0 1 130 106 M87 166 A93 93 0 0 1 100 116 M122 91 A93 93 0 0 1 170 72",
+    "labels": [
+     [
+      76,
+      136,
+      "X",
+      "middle"
+     ],
+     [
+      158,
+      88,
+      "Y",
+      "middle"
+     ]
+    ],
+    "panel": [
+     "Two radar ranges",
+     "A 9.3 M · B 7.8 M",
+     "EBL on A ≈ 333°T"
+    ],
+    "note": "The arcs cross twice: even a rough bearing picks X"
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Running fixes and bow angles",
+   "fig": {
+    "type": "chart",
+    "marks": [
+     [
+      230,
+      50,
+      "y",
+      "Light"
+     ]
+    ],
+    "track": "M40 150 H300 M130 150 L230 50 M230 50 V150 M212 168 L290 90",
+    "boat": [
+     70,
+     150,
+     90
+    ],
+    "labels": [
+     [
+      130,
+      184,
+      "0100",
+      "middle"
+     ],
+     [
+      236,
+      184,
+      "0130",
+      "middle"
+     ],
+     [
+      168,
+      166,
+      "run 8 M",
+      "middle"
+     ],
+     [
+      238,
+      105,
+      "8 M",
+      "start"
+     ],
+     [
+      162,
+      143,
+      "45°",
+      "middle"
+     ]
+    ],
+    "note": "Four-point bearing: abeam, the distance off equals the run"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Running fixes and bow angles",
+   "fig": {
+    "type": "card",
+    "title": "Running fix with stream",
+    "lines": [
+     "0100: light bears 050°T",
+     "Water track 080°T, 8.0 kn, 2 h: 16.0 M",
+     "Stream 170°T 1.0 kn, 2 h: 2.0 M",
+     "Ground run: 16.1 M along 087°T",
+     "Move the 0100 line 16.1 M along 087°T",
+     "0300: light bears 330°T; the cut is the fix"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Rising lights and landfall",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 148,
+      "t": "on the horizon"
+     }
+    ],
+    "note": "Seen only from the crests: you stand at its rising range"
+   },
+   "cap": null
+  },
+  {
+   "n": 9,
+   "section": "Rising lights and landfall",
+   "fig": {
+    "type": "card",
+    "title": "Rising range and distance off",
+    "lines": [
+     "Light 40 m above MHWS; MHWS 5.0 m; tide 2.0 m",
+     "H = 40 + 3.0 = 43 m; height of eye 4 m",
+     "Rising range 2.08 × (√43 + √4) = 17.8 M",
+     "24 M to go at 11 kn: it rises in 34 min",
+     "Vertical sextant angle 0°20.0' of the 43 m:",
+     "1.854 × 43 ÷ 20.0 = 4.0 M off"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 10,
+   "section": "Trust and record",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V22 C 250 30 200 18 160 24 C 110 32 60 20 0 28 Z",
+    "marks": [
+     [
+      150,
+      22,
+      "y",
+      "Light"
+     ],
+     [
+      180,
+      120,
+      "k",
+      "EP"
+     ],
+     [
+      122,
+      99,
+      "w",
+      ""
+     ]
+    ],
+    "track": "M150 22 L95 175",
+    "depths": [
+     [
+      60,
+      80,
+      "95"
+     ],
+     [
+      40,
+      150,
+      "88"
+     ],
+     [
+      230,
+      110,
+      "102"
+     ],
+     [
+      255,
+      160,
+      "110"
+     ]
+    ],
+    "labels": [
+     [
+      112,
+      94,
+      "here",
+      "end"
+     ]
+    ],
+    "panel": [
+     "One line only",
+     "Light bears 020°T",
+     "EP lies off it"
+    ],
+    "note": "Put yourself on the line at the point nearest the EP"
+   },
+   "cap": null
+  }
+ ]
+}

@@ -55,12 +55,50 @@ def plan_deviation(f, x):
     P.pill(640, 500, 'a phone or speaker by the binnacle?', 'accent', 30)
     return P
 
-PLANS = {'ci-313': plan_deviation}
+def chain(title, key, boxes, steps, note=None):
+    """Boxes in a row (top caption, the figure, kind) with the correction between each pair (pill text, kind)."""
+    def f(fig, x):
+        P = Q.Plan(title, key, PLAN_RU); n = len(boxes); xs = [640 + (i - (n - 1) / 2) * 420 for i in range(n)]
+        for (top, big, kind), cx in zip(boxes, xs): box3(P, cx, 220, top, big, kind)
+        for i, (t, k) in enumerate(steps):
+            P.arrow(xs[i] + 155, 220, xs[i + 1] - 155, 220, w=6); P.pill((xs[i] + xs[i + 1]) / 2, 380, t, k, 30)
+        if note: P.pill(640, 490, note[0], note[1], 28)
+        return P
+    return f
+
+PLANS = {'ci-313': plan_deviation,
+         'yof-002': chain('True to magnetic', ['True to magnetic: add west, subtract east', '112°T + 4°W = 116°M: set 4°W and the plotter adds it for you'],
+                          [('true', '112°', 'light'), ('magnetic', '116°', 'accent')], [('+ 4°W', 'red')], ('adding 4° again by hand gives 120°: wrong', 'light')),
+         'yof-018': chain('The plotter shows magnetic', ['True to magnetic: east is least, subtract it', '214°T − 5°E = 209°M: the plotter agrees with the plan'],
+                          [('plan · true', '214°', 'light'), ('plotter · magnetic', '209°', 'accent')], [('− 5°E', 'red')]),
+         'yof-119': chain('Deviation from the satellite compass', ['210°T + 4°W = 214°M; the steering compass reads 217°', 'It reads 3° more than magnetic: deviation 3°W'],
+                          [('true · sat compass', '210°', 'light'), ('magnetic', '214°', 'light'), ('steering compass', '217°', 'accent')], [('+ 4°W variation', 'light'), ('deviation 3°W', 'red')]),
+         'yof-249': chain('True to compass', ['True to compass: add west, subtract east', '080°T + 5°W = 085°M; 085° − 3°E = 082°C'],
+                          [('true', '080°', 'light'), ('magnetic', '085°', 'light'), ('compass', '082°', 'accent')], [('+ 5°W variation', 'light'), ('− 3°E deviation', 'red')]),
+         'yof-273': chain('The autopilot steers magnetic', ['156°T − 3°E = 153°M: set 153° on the fluxgate autopilot', "The 5°W on the rose is the steering compass's deviation, not the fluxgate's"],
+                          [('true · CTS', '156°', 'light'), ('magnetic · autopilot', '153°', 'accent')], [('− 3°E variation', 'light')], ('no deviation: the fluxgate was calibrated', 'light')),
+         }
 PLAN_RU = {'What the compass error is made of': 'Из чего складывается ошибка компаса',
            '090° compass + 3°E variation = 093°: the other 5° is deviation': '090° по компасу + 3°E склонение = 093°: остальные 5° — девиация',
            'Look for a phone or speaker by the binnacle; note what remains': 'Ищите телефон или динамик у нактоуза; остаток запишите',
            'compass': 'компас', 'magnetic': 'магнитный', 'true · plotter COG': 'истинный, COG',
-           'deviation 5°E': 'девиация 5°E', 'variation 3°E': 'склонение 3°E', 'a phone or speaker by the binnacle?': 'телефон или динамик у нактоуза?'}
+           'deviation 5°E': 'девиация 5°E', 'variation 3°E': 'склонение 3°E', 'a phone or speaker by the binnacle?': 'телефон или динамик у нактоуза?',
+           # yachtmaster offshore
+           'True to magnetic': 'Из истинного в магнитный', 'True to magnetic: add west, subtract east': 'Из истинного в магнитный: западное прибавляют, восточное вычитают',
+           '112°T + 4°W = 116°M: set 4°W and the plotter adds it for you': '112° ист. + 4°W = 116° магн.: задайте 4°W, плоттер прибавит сам',
+           'true': 'истинный', '+ 4°W': '+ 4°W', 'adding 4° again by hand gives 120°: wrong': 'прибавить 4° ещё раз вручную — 120°: ошибка',
+           'The plotter shows magnetic': 'Плоттер показывает магнитный', 'True to magnetic: east is least, subtract it': 'Из истинного в магнитный: восточное вычитают',
+           '214°T − 5°E = 209°M: the plotter agrees with the plan': '214° ист. − 5°E = 209° магн.: плоттер согласен с планом', 'plan · true': 'план · истинный',
+           'plotter · magnetic': 'плоттер · магнитный', '− 5°E': '− 5°E',
+           'Deviation from the satellite compass': 'Девиация по спутниковому компасу', '210°T + 4°W = 214°M; the steering compass reads 217°': '210° ист. + 4°W = 214° магн.; путевой компас показывает 217°',
+           'It reads 3° more than magnetic: deviation 3°W': 'На 3° больше магнитного: девиация 3°W', 'true · sat compass': 'истинный · спутн.',
+           'steering compass': 'путевой компас', '+ 4°W variation': '+ 4°W склонение', 'deviation 3°W': 'девиация 3°W',
+           'True to compass': 'Из истинного в компасный', 'True to compass: add west, subtract east': 'Из истинного в компасный: западное прибавляют, восточное вычитают',
+           '080°T + 5°W = 085°M; 085° − 3°E = 082°C': '080° ист. + 5°W = 085° магн.; 085° − 3°E = 082° комп.', '+ 5°W variation': '+ 5°W склонение', '− 3°E deviation': '− 3°E девиация',
+           'The autopilot steers magnetic': 'Автопилот держит магнитный', '156°T − 3°E = 153°M: set 153° on the fluxgate autopilot': '156° ист. − 3°E = 153° магн.: задайте 153° на автопилоте',
+           "The 5°W on the rose is the steering compass's deviation, not the fluxgate's": 'Девиация 5°W на розе — путевого компаса, не датчика автопилота',
+           'true · CTS': 'истинный · курс', 'magnetic · autopilot': 'магн. · автопилот', '− 3°E variation': '− 3°E склонение',
+           'no deviation: the fluxgate was calibrated': 'девиации нет: датчик откалиброван'}
 
 # ---------- textures (system Python, Pillow) ----------
 CHART_W, CHART_H, PX_W, PX_H = 0.80, 0.5333, 2400, 1600

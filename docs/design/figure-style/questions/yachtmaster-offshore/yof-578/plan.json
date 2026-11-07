@@ -1,0 +1,117 @@
+{
+ "sch": {
+  "night": false,
+  "padPx": 60,
+  "title": "Lights · a dredger under way, from astern",
+  "key": [
+   "Rule 27(d): the two greens mark the side to pass, the two reds the obstruction",
+   "From astern her port side, with the greens, is on your left; you overtake and keep clear (Rule 13)"
+  ],
+  "boats": [
+   {
+    "x": 0,
+    "z": -250,
+    "hdg": 0,
+    "label": "Dredger",
+    "bearing": false,
+    "noHeading": true,
+    "labelAbove": true,
+    "stack": [
+     "r",
+     "w",
+     "r"
+    ],
+    "stackDx": 150,
+    "scale": 3.2
+   },
+   {
+    "you": true,
+    "x": 0,
+    "z": 150,
+    "hdg": 0,
+    "noHeading": true
+   }
+  ],
+  "zones": [
+   {
+    "pts": [
+     [
+      60,
+      -350
+     ],
+     [
+      260,
+      -350
+     ],
+     [
+      260,
+      -150
+     ],
+     [
+      60,
+      -150
+     ]
+    ],
+    "c": "red",
+    "fill": "rgba(224,37,27,.10)"
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      -20,
+      110
+     ],
+     [
+      -130,
+      0
+     ],
+     [
+      -150,
+      -250
+     ],
+     [
+      -120,
+      -420
+     ]
+    ],
+    "c": "course",
+    "dash": "16 12",
+    "arrow": true
+   }
+  ],
+  "texts": [
+   {
+    "x": 170,
+    "z": -100,
+    "text": "two reds: obstructed",
+    "kind": "red"
+   },
+   {
+    "x": -280,
+    "z": -250,
+    "text": "two greens: pass here",
+    "kind": "accent"
+   }
+  ],
+  "fit": [
+   {
+    "x": -330,
+    "z": -470
+   },
+   {
+    "x": 300,
+    "z": 210
+   },
+   {
+    "x": 0,
+    "z": -375.12
+   },
+   {
+    "x": 0,
+    "z": 258.8
+   }
+  ]
+ }
+}

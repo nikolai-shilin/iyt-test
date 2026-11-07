@@ -1,0 +1,150 @@
+{
+ "sch": {
+  "padPx": 80,
+  "title": "Yawing in following seas · port engine ahead",
+  "key": [
+   "She yaws to port as each crest lifts her stern",
+   "A burst ahead on the port engine turns her back to starboard; port astern would turn her further to port"
+  ],
+  "boats": [
+   {
+    "you": true,
+    "x": 0,
+    "z": 0,
+    "hdg": 0
+   }
+  ],
+  "paths": [
+   {
+    "pts": [
+     [
+      0,
+      -14.0
+     ],
+     [
+      -4.8,
+      -20.0
+     ],
+     [
+      -11.200000000000001,
+      -23.2
+     ]
+    ],
+    "c": "red",
+    "w": 6,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      0,
+      -24.8
+     ],
+     [
+      4.8,
+      -27.200000000000003
+     ],
+     [
+      10.4,
+      -28.0
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -4.0,
+      12.8
+     ],
+     [
+      -4.0,
+      2.0
+     ]
+    ],
+    "c": "course",
+    "w": 6,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      -24.0,
+      30.0
+     ],
+     [
+      -24.0,
+      18.0
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "arrow": true
+   },
+   {
+    "pts": [
+     [
+      24.0,
+      30.0
+     ],
+     [
+      24.0,
+      18.0
+     ]
+    ],
+    "c": "ink",
+    "w": 4,
+    "arrow": true
+   }
+  ],
+  "fit": [
+   {
+    "x": -32.0,
+    "z": -36.0
+   },
+   {
+    "x": 32.0,
+    "z": 36.0
+   },
+   {
+    "x": -12.0,
+    "z": -12.0
+   },
+   {
+    "x": 12.0,
+    "z": 12.0
+   }
+  ],
+  "texts": [
+   {
+    "x": -21.4,
+    "z": -28.9,
+    "text": "yaws to port",
+    "kind": "red",
+    "free": true
+   },
+   {
+    "x": 16.3,
+    "z": -35.0,
+    "text": "back to starboard",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": -30.5,
+    "z": 10.0,
+    "text": "port engine ahead",
+    "kind": "accent",
+    "free": true
+   },
+   {
+    "x": 0.0,
+    "z": 34.0,
+    "text": "following seas",
+    "free": true
+   }
+  ]
+ }
+}

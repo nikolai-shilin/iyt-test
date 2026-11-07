@@ -1,0 +1,379 @@
+{
+ "article": "yachtmaster-offshore/seamanship",
+ "topic": "seamanship",
+ "lead": "Bigger yacht, worse weather, a number or a decision wanted. Rope stretches or it does not, an anchor holds only along the seabed, and every load needs somewhere strong to go.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Rope",
+   "fig": {
+    "type": "card",
+    "title": "Working load of a tow line",
+    "lines": [
+     "16 mm nylon: breaks at 6.0 t when new",
+     "Wet: × 0.85 = 5.1 t",
+     "A bowline in it: × 0.6 = 3.06 t",
+     "Safety factor 5: about 0.6 t"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Rope",
+   "fig": {
+    "type": "card",
+    "title": "Doubled lines in a surge",
+    "lines": [
+     "Line A 6 m, line B 12 m, both just taut",
+     "Stiffness ∝ 1 ÷ length: A is twice as stiff",
+     "A takes two-thirds of every snatch",
+     "Make doubled lines the same length"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Ground tackle",
+   "fig": {
+    "type": "anchor",
+    "depth": "8 m",
+    "title": "Snubber rigged",
+    "lines": [
+     "Nylon hooked to the chain",
+     "Chain slack below the hook"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "At anchor",
+   "fig": {
+    "type": "anchor",
+    "depth": "18 m",
+    "title": "(18 + 2) × 7 = 140 m",
+    "lines": [
+     "Bow roller 2 m above water",
+     "80 m chain + 60 m nylon"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "At anchor",
+   "fig": {
+    "type": "card",
+    "title": "Room to swing",
+    "lines": [
+     "Radius = chain along the bottom + boat",
+     "60 m of chain, roller 12 m above the seabed",
+     "√(60² − 12²) ≈ 59 m; + 24 m of yacht = 83 m",
+     "Boats lying differently: add both radii"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "At anchor",
+   "fig": {
+    "type": "chart",
+    "marks": [
+     [
+      96,
+      52,
+      "k",
+      "anchor"
+     ]
+    ],
+    "track": "M62 98 Q96 124 130 98 Q100 120 70 102 L176 150 L236 178",
+    "boat": [
+     240,
+     180,
+     300
+    ],
+    "labels": [
+     [
+      60,
+      136,
+      "arc: swinging",
+      "middle"
+     ],
+     [
+      196,
+      140,
+      "straight: dragging",
+      "start"
+     ]
+    ],
+    "panel": [
+     "Plotter, 0200",
+     "Wind veered 0130"
+    ],
+    "note": "Track since 2200"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Two anchors",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H70 C 95 70 90 130 120 170 C 150 190 200 195 240 200 H0 Z",
+    "marks": [
+     [
+      183,
+      108,
+      "k",
+      "SW"
+     ],
+     [
+      166,
+      66,
+      "k",
+      "W"
+     ]
+    ],
+    "track": "M183 108 L226 66 L166 66",
+    "boat": [
+     240,
+     60,
+     247
+    ],
+    "labels": [
+     [
+      40,
+      100,
+      "LAND",
+      "middle"
+     ]
+    ],
+    "note": "Gale SW 8, veering W: an anchor towards each"
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Two anchors",
+   "fig": {
+    "type": "chart",
+    "land": "M0 0 H320 V45 H0 Z M0 155 H320 V200 H0 Z",
+    "marks": [
+     [
+      80,
+      100,
+      "k",
+      "first"
+     ],
+     [
+      240,
+      100,
+      "k",
+      "second"
+     ]
+    ],
+    "track": "M80 100 L240 100",
+    "boat": [
+     160,
+     100,
+     270
+    ],
+    "labels": [
+     [
+      160,
+      135,
+      "flood →",
+      "middle"
+     ]
+    ],
+    "note": "A swivel joins the rodes · weigh the slack anchor first"
+   },
+   "cap": null
+  },
+  {
+   "n": 9,
+   "section": "Berthing",
+   "fig": {
+    "type": "lines",
+    "quay": "QUAY",
+    "lines": [
+     [
+      "stern-spring",
+      "stern spring"
+     ],
+     [
+      "bow",
+      "bow line: let go"
+     ]
+    ],
+    "note": "Astern on the spring, fender aft: the bow swings out"
+   },
+   "cap": null
+  },
+  {
+   "n": 10,
+   "section": "Berthing",
+   "fig": {
+    "type": "encounter",
+    "you": {
+     "hdg": 0
+    },
+    "other": {
+     "dist": 0
+    },
+    "note": "Starboard ahead, port astern, thruster to starboard"
+   },
+   "cap": null
+  },
+  {
+   "n": 11,
+   "section": "Berthing",
+   "fig": {
+    "type": "card",
+    "title": "Stern-to in a gusty crosswind",
+    "lines": [
+     "Gusts 26 kn: load ≈ V² ÷ 60 kgf per m²",
+     "Bow windage 24 m²: 26² ÷ 60 × 24 ≈ 270 kgf",
+     "Thruster 160 kgf cannot hold it",
+     "Anchor upwind, snub the chain: it holds the bow",
+     "Engines place the stern"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 12,
+   "section": "Towing",
+   "fig": {
+    "type": "card",
+    "title": "Night orders for the tow",
+    "lines": [
+     "Watch aft on the line, knife to hand",
+     "Chafe and VHF check every hour",
+     "Tow steers in our wake; drogue if she sheers",
+     "Line parts: engines neutral, recover it",
+     "Before the bar: shorten up, then alongside",
+     "Offshore: tender on deck"
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 13,
+   "section": "Towing",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 50
+     },
+     {
+      "c": "w",
+      "x": 160,
+      "y": 72
+     },
+     {
+      "c": "g",
+      "x": 146,
+      "y": 120
+     },
+     {
+      "c": "r",
+      "x": 174,
+      "y": 120
+     }
+    ]
+   },
+   "cap": null,
+   "name": "Up to 200 m"
+  },
+  {
+   "n": 14,
+   "section": "Towing",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "w",
+      "x": 160,
+      "y": 34
+     },
+     {
+      "c": "w",
+      "x": 160,
+      "y": 54
+     },
+     {
+      "c": "w",
+      "x": 160,
+      "y": 74
+     },
+     {
+      "c": "g",
+      "x": 146,
+      "y": 120
+     },
+     {
+      "c": "r",
+      "x": 174,
+      "y": 120
+     }
+    ]
+   },
+   "cap": null,
+   "name": "Over 200 m"
+  },
+  {
+   "n": 15,
+   "section": "Towing",
+   "fig": {
+    "type": "lights",
+    "lights": [
+     {
+      "c": "y",
+      "x": 160,
+      "y": 100
+     },
+     {
+      "c": "w",
+      "x": 160,
+      "y": 122
+     }
+    ]
+   },
+   "cap": null,
+   "name": "From astern"
+  },
+  {
+   "n": 16,
+   "section": "Heavy weather",
+   "fig": {
+    "type": "sail",
+    "wind": 0,
+    "hdg": 50,
+    "note": "Hove-to, 50° off the wind. Forereaching? Ease the main"
+   },
+   "cap": null
+  },
+  {
+   "n": 17,
+   "section": "Heavy weather",
+   "fig": {
+    "type": "card",
+    "title": "Can she run with the seas?",
+    "lines": [
+     "LWL 21.5 m = 70.5 ft: 1.34 × √70.5 ≈ 11 kn",
+     "Period 6 s: 1.56 × 6 = 9.4 m/s ≈ 18 kn",
+     "She cannot keep up: slow down,",
+     "let them pass under her"
+    ]
+   },
+   "cap": null
+  }
+ ]
+}
