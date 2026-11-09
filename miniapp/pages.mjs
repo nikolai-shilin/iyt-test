@@ -17,7 +17,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE, BOT } from './site.mjs';
+import { SITE, BOT, PAUSED } from './site.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const readJson = async (p) => {
@@ -342,7 +342,7 @@ export async function buildPages(out, { css }) {
 
   // every level with its Russian overlay and its articles in both languages
   const levels = [];
-  for (const [id, link] of LEVELS) {
+  for (const [id, link] of LEVELS.filter(([x]) => !PAUSED.includes(x))) { // a paused level has no pages (site.mjs)
     const bank = await readJson(`data/questions/${id}.json`);
     if (!bank) continue;
     const ov = await readJson(`data/questions/${id}.ru.json`);

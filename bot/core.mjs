@@ -9,7 +9,7 @@
 // user's on/off switch for the question of the day.
 
 import { readFile } from 'node:fs/promises';
-import { SITE } from '../miniapp/site.mjs';
+import { SITE, PAUSED } from '../miniapp/site.mjs';
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 if (!token) throw new Error('TELEGRAM_BOT_TOKEN is not set');
@@ -34,7 +34,7 @@ async function read(name) {
 }
 // Each bank with its Russian overlay (data/i18n.py): translated questions and topic titles; anything missing stays English.
 // A level with no bank in the database or in the files yet is left out.
-const banks = (await Promise.all(LEVELS.map(async ([id, link]) => {
+const banks = (await Promise.all(LEVELS.filter(([id]) => !PAUSED.includes(id)).map(async ([id, link]) => { // not the paused ones (site.mjs)
   const bank = await read(id).catch(() => null);
   return bank && { id, link, bank, ru: await read(`${id}.ru`).catch(() => ({})) };
 }))).filter(Boolean);

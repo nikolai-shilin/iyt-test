@@ -21,7 +21,7 @@ import { createHash } from 'node:crypto';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE, INDEXNOW_KEY } from './site.mjs';
+import { SITE, INDEXNOW_KEY, PAUSED } from './site.mjs';
 import { buildPages } from './pages.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -65,6 +65,7 @@ async function build() {
     const json = JSON.parse(await readFile(join(root, 'data/questions', f), 'utf8'));
     const min = JSON.stringify(json);
     const [level, lang = 'en'] = f.slice(0, -5).split('.');
+    if (PAUSED.includes(level)) continue; // switched off for now (site.mjs); its articles go with it
     const name = `h/${f.slice(0, -5)}.${hash(min)}.json`;
     await writeFile(join(out, 'data', f), min);
     await writeFile(join(out, name), min);

@@ -20,7 +20,7 @@
 // connector) with the URL SITE/api/mcp (miniapp/site.mjs): https://iyt.rycrentals.com/api/mcp.
 
 import { readFile } from 'node:fs/promises';
-import { SITE } from '../miniapp/site.mjs';
+import { SITE, PAUSED } from '../miniapp/site.mjs';
 
 const root = new URL('../', import.meta.url);
 const readJson = async (path) => { try { return JSON.parse(await readFile(new URL(path, root), 'utf8')); } catch { return null; } };
@@ -30,7 +30,7 @@ const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], [
 // An article the tools can walk; one that is not shaped like this is left out (data/check_theory.mjs says why).
 const isArticle = (a) => !!a && Array.isArray(a.sections) && a.sections.length > 0 && a.sections.every((s) => s && typeof s.id === 'string' && Array.isArray(s.blocks));
 // Each bank with its Russian overlay (anything missing stays English) and its articles: topic → { en, ru | null }.
-const banks = (await Promise.all(LEVELS.map(async ([id, link]) => {
+const banks = (await Promise.all(LEVELS.filter(([id]) => !PAUSED.includes(id)).map(async ([id, link]) => { // not the paused ones (site.mjs)
   const bank = await readJson(`data/questions/${id}.json`);
   if (!bank || !Array.isArray(bank.questions) || !Array.isArray(bank.topics)) return null;
   const ru = (await readJson(`data/questions/${id}.ru.json`)) || {}, theory = {};
