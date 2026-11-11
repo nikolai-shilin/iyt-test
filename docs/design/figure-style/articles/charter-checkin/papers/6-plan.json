@@ -186,7 +186,8 @@
     "z": 22,
     "hdg": 340,
     "noHeading": true,
-    "L": 14.6
+    "L": 14.6,
+    "labelAt": "below"
    }
   ],
   "spots": [
@@ -196,7 +197,7 @@
     "label": "A"
    },
    {
-    "x": 2,
+    "x": -20,
     "z": -47.2,
     "label": "B"
    },
@@ -242,15 +243,17 @@
   ],
   "texts": [
    {
-    "x": -60,
-    "z": -10,
-    "text": "fuel"
+    "x": -83,
+    "z": -22,
+    "text": "fuel",
+    "fixed": true
    },
    {
-    "x": -28,
-    "z": -52,
+    "x": -74,
+    "z": -48,
     "text": "return berth",
-    "kind": "accent"
+    "kind": "accent",
+    "fixed": true
    },
    {
     "x": 60,

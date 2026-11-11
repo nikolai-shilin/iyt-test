@@ -235,7 +235,7 @@ function schematic(spec) {
   for (const b of spec.boats || []) if (b.stack) { const [x, y] = P(b.x, b.z), R0 = 26 * (b.scale || 2.6), sx = x + (b.stackDx ?? R0 + 70), n = b.stack.length, sy0 = y - (n - 1) * 23; boxes.push([sx - 30, sy0 - 34, sx + 30, sy0 + (n - 1) * 46 + 34]); }
   for (const b of spec.boats || []) if (!b.plain && !b.noHeading) { const [x, y] = P(b.x, b.z), R0 = 26 * (spec.trueScale ? ((b.L || 12) / mpp) / 40 : (b.scale || 2.6)), L = R0 + 70, side = b.courseSide || 0;
     const [tx, ty] = spol(x, y, L, b.hdg), [lx0, ly0] = spol(x, y, L + 58, b.hdg), [sx, sy] = spol(0, 0, 54 * side, b.hdg + 90), z = 26 * TS, w = 4 * z * 0.55, h = z * 1.1;
-    const [px, py] = inFrame(side ? tx + sx : lx0, (side ? ty + sy : ly0) - z * 0.35, w, h); boxes.push(box(px, py, w, h)); }
+    const [px, py] = inFrame((side ? tx + sx : lx0) + (b.hdgDx || 0), (side ? ty + sy : ly0) - z * 0.35 + (b.hdgDy || 0), w, h); boxes.push(box(px, py, w, h)); }
   // each boat's name pill is reserved next to her first (below, above, then beside), before the bearings and notes
   const boatLab = new Map();
   for (const b of spec.boats || []) { if (b.plain) continue;
@@ -257,10 +257,13 @@ function schematic(spec) {
           const cost = bs.reduce((a, bb) => a + boxes.reduce((t, o) => t + ov(bb, o), 0) + (bb[3] > planB - 10 || bb[1] < 10 ? w * h : 0), 0);
           if (cost < best) { best = cost; pos = [px, py]; up = u; } } }
       if (!pos) { const c = spots(w, h); pos = inFrame(...c[0], w, h); } }
-    boxes.push(box(pos[0], pos[1], w, h)); if (b.tag) boxes.push(tagBox(pos[0], pos[1], h, up)); boatLab.set(b, { lab, pos, h, up, lsz });
+    // a figure's own fix: labelAt picks the side outright, labelDx / labelDy nudge the name, tagUp puts the caption above it
+    if (b.labelAt) { [w, h] = pillWH(lab, lsz); const sp = spots(w, h), i = { below: 0, above: 1, right: 2, left: 3 }[b.labelAt]; pos = inFrame(...sp[b.labelAbove ? [1, 0, 2, 3][i] : i], w, h); }
+    pos = inFrame(pos[0] + (b.labelDx || 0), pos[1] + (b.labelDy || 0), w, h); if (b.tagUp != null) up = b.tagUp;
+    boxes.push(box(pos[0], pos[1], w, h)); if (b.tag) boxes.push(tagBox(pos[0] + (b.tagDx || 0), pos[1] + (b.tagDy || 0), h, up)); boatLab.set(b, { lab, pos, h, up, lsz });
   }
   const you = (spec.boats || []).find(b => b.you);
-  const bearingTo = (t) => { const [x1, y1] = P(you.x, you.z), [x2, y2] = P(t.x, t.z); const dx = t.x - you.x, dz = t.z - you.z, abs = Math.atan2(dx, -dz) / SRAD, rel = ((abs - you.hdg + 540) % 360) - 180; return sBearing(x1, y1, x2, y2, rel, Math.hypot(dx, dz), t.side || 1, fit); };
+  const bearingTo = (t) => { const [x1, y1] = P(you.x, you.z), [x2, y2] = P(t.x, t.z); const dx = t.x - you.x, dz = t.z - you.z, abs = Math.atan2(dx, -dz) / SRAD, rel = ((abs - you.hdg + 540) % 360) - 180; return sBearing(x1, y1, x2, y2, rel, Math.hypot(dx, dz), t.side || 1, (px, py, label, sz) => fit(px + (t.bearingDx || 0), py + (t.bearingDy || 0), label, sz)); };
   for (const b of spec.boats || []) if (!b.you && !b.plain && you && b.bearing !== false) s += bearingTo(b);
   for (const m of spec.marks || []) if (you && m.bearing !== false) s += bearingTo(m);
   // boats: light ring at night, heading, hull, label, tag
@@ -269,17 +272,19 @@ function schematic(spec) {
     if (b.plain) { s += sBoat(x, y, b.hdg, { scale: sc, fill: 'var(--muted)' }); continue; }
     if (spec.night && b.anchorLight) s += `<circle cx="${x}" cy="${y}" r="${R + 18}" fill="none" stroke="#ffffff" stroke-width="10"/><circle cx="${x}" cy="${y}" r="${R + 18}" fill="none" stroke="var(--ink)" stroke-width="2"/>`;
     else if (spec.night) s += sLightArcs(x, y, b.hdg, R, { power: b.power });
-    if (!b.noHeading) s += sHeading(x, y, b.hdg, R + 70, b.courseSide || 0, (hx, hy, w, h) => inFrame(hx, hy, w, h));
+    if (!b.noHeading) s += sHeading(x, y, b.hdg, R + 70, b.courseSide || 0, (hx, hy, w, h) => inFrame(hx + (b.hdgDx || 0), hy + (b.hdgDy || 0), w, h));
     s += sBoat(x, y, b.hdg, { you: b.you, scale: sc, fill: b.fill });
     const above = b.labelAbove, ly = above ? y - R - (spec.night && b.power ? 14 : 0) - 80 : y + R + (spec.night && b.power ? 14 : 0) + 48;
     const { lab, pos: [lpx, lpy], h: lh, up: tagUp, lsz } = boatLab.get(b);
     s += sPill(lpx, lpy, lab, b.you ? 'accent' : 'light', lsz);
-    if (b.tag) { const ty = tagUp ? lpy - lh / 2 - 10 - 24 * TS * 0.3 : lpy + lh / 2 + 10 + 24 * TS * 0.85; s += stxt(lpx, ty, b.tag, { s: 24, f: 'var(--ink)', w: 400 }); }
+    if (b.tag) { const ty = (tagUp ? lpy - lh / 2 - 10 - 24 * TS * 0.3 : lpy + lh / 2 + 10 + 24 * TS * 0.85) + (b.tagDy || 0); s += stxt(lpx + (b.tagDx || 0), ty, b.tag, { s: 24, f: 'var(--ink)', w: 400 }); }
     if (b.stack) { const sx = x + (b.stackDx ?? R + 70), n = b.stack.length, sy0 = y - (n - 1) * 23;
       s += `<rect x="${sx - 26}" y="${sy0 - 30}" width="52" height="${(n - 1) * 46 + 60}" rx="26" fill="#10161f"/>`;
       b.stack.forEach((c, i) => { s += `<circle cx="${sx}" cy="${sy0 + i * 46}" r="16" fill="${SCOL[c]}" stroke="${c === 'w' ? '#9aa4ae' : 'none'}" stroke-width="2"/>`; }); }
   }
-  for (const t of spec.texts || []) { const [x, y] = P(t.x, t.z);
+  // a note: dx / dy (frame pixels) move it from its spot, fixed draws it right there at full size
+  for (const t of spec.texts || []) { const [x0, y0] = P(t.x, t.z), x = x0 + (t.dx || 0), y = y0 + (t.dy || 0);
+    if (t.fixed) { s += t.pill === false ? stxt(x, y, t.text, { s: (t.size || 26) * 1.45 / TS, f: 'var(--ink)' }) : sPill(x, y, t.text, t.kind || 'light', t.size || 24); continue; }
     if (t.pill === false) { const s0 = (t.size || 26) * 1.45 / TS, [px, py, sz] = fit(x, y - s0 * TS * 0.35, t.text, s0, false); s += stxt(px, py + sz * TS * 0.35, t.text, { s: sz, f: 'var(--ink)' }); }
     else { const [px, py, sz] = fit(x, y, t.text, t.size || 24); s += sPill(px, py, t.text, t.kind || 'light', sz); } }
   // the compass, the wind and the scale bar on top of land and quays
