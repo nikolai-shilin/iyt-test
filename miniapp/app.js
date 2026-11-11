@@ -200,6 +200,8 @@ const STR = {
     start: (n) => `Start · ${pl(n, 'question')}`, pickTopic: 'Pick a topic',
     noQuestions: 'No questions to practise', unflagged: 'Removed from flagged', flaggedToast: 'Flagged — find it in Progress',
     wrongToast: 'Reported — the admins will check this question', unwrong: 'Report withdrawn',
+    qnoteTitle: 'What is wrong in this question?', qnoteLead: 'A wrong answer, a confusing wording, a picture that does not match, a translation, a typo: say what you noticed. The admins read every report.',
+    qnotePh: 'For example: answer B is right too, because…',
     confirmQuit: 'Quit this session? Your answers so far are kept.',
     error: 'Something went wrong', bankError: () => 'Could not load the questions. Check the connection and try again.',
     days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], locale: 'en-GB',
@@ -317,6 +319,8 @@ const STR = {
     start: (n) => `Начать · ${pl(n, 'question')}`, pickTopic: 'Выберите тему',
     noQuestions: 'Нет вопросов для тренировки', unflagged: 'Отметка снята', flaggedToast: 'Отмечен — он в разделе «Прогресс»',
     wrongToast: 'Сообщили — администраторы проверят вопрос', unwrong: 'Сообщение отозвано',
+    qnoteTitle: 'Что не так в этом вопросе?', qnoteLead: 'Неверный ответ, непонятная формулировка, рисунок не совпадает с текстом, перевод, опечатка — напишите, что вы заметили. Администраторы читают каждое сообщение.',
+    qnotePh: 'Например: ответ B тоже верный, потому что…',
     confirmQuit: 'Выйти из тренировки? Ответы сохранятся.',
     error: 'Что-то пошло не так', bankError: () => 'Не удалось загрузить вопросы. Проверьте связь и попробуйте ещё раз.',
     days: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'], locale: 'ru-RU',
@@ -408,7 +412,7 @@ function toast(text) {
 // progress saved before 2026-11-07)]. Mastered = right twice in a row (docs/data-model.md). ls = when the last practice
 // or exam started (ms): what was answered since then rests for one session (pickFor).
 const KEY = 'iyt-test-state-v1';
-const fresh = () => ({ v: 1, ts: 0, ls: 0, q: {},days: {}, total: 0, flags: [], wrong: [], wrongAt: {}, exams: [], exam: null, held: {}, last: null, read: {}, notes: {}, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
+const fresh = () => ({ v: 1, ts: 0, ls: 0, q: {},days: {}, total: 0, flags: [], wrong: [], wrongAt: {}, exams: [], exam: null, held: {}, last: null, read: {}, notes: {}, wrongNote: {}, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
 let S = fresh();
 const merge = (o) => { const f = fresh(); return { ...f, ...o, set: { ...f.set, ...(o && o.set) } }; };
 
@@ -451,7 +455,7 @@ function applyClears(list, draw = true) {
   let n = 0;
   for (const c of list) {
     const a = c && (c.k === 'flags' || c.k === 'wrong') ? S[c.k] : null, i = a ? a.indexOf(c.q) : -1;
-    if (i >= 0) { a.splice(i, 1); n++; }
+    if (i >= 0) { a.splice(i, 1); n++; if (c.k === 'wrong' && S.wrongNote) delete S.wrongNote[c.q]; }
   }
   if (!n) return;
   save();
@@ -636,6 +640,8 @@ const noteKey = (tp, sec, f) => `${readKey(tp)}/${sec}${f ? `/f${f}` : ''}`;
 const secPics = (sec) => (sec ? sec.blocks.flatMap((b) => (b.fig ? [b] : b.tiles || [])) : []);
 const picLabel = (o) => String(o.cap || o.name || '').replace(/\*\*/g, '');
 const MAX_NOTE = 1000;
+// What the student wrote about a question they reported (the red flag under it, S.wrong): S.wrongNote[id] = { text, at,
+// lang: the language the question was shown in }. The admins read it under the student's name on the Reported page.
 const isRead = (tp) => !!(S.read && S.read[readKey(tp)]);
 // The topics of the current level that have an article (from the list in index.html, so no download is needed).
 const theoryTopics = () => (hasTheory() ? TOPICS.filter((tp) => THEORY_FILES[LEVEL.id].t.includes(tp.id)) : []);
@@ -840,6 +846,14 @@ function bootSkeleton() {
   paintIcons($app);
 }
 const levelOfPrefix = (p) => LEVELS.find((l) => l.prefix === p);
+// A report on a question taken back: the flag, when it went up and the comment.
+function dropReport(id) {
+  const k = S.wrong.indexOf(id);
+  if (k >= 0) S.wrong.splice(k, 1);
+  if (S.wrongAt) delete S.wrongAt[id];
+  if (S.wrongNote) delete S.wrongNote[id];
+  save();
+}
 // The red flag on a question screen: "this question is wrong"; on once the student reported it (S.wrong).
 function wrongBtn(id) {
   const on = S.wrong.includes(id);
@@ -1749,13 +1763,25 @@ const SHEETS = {
       <button class="pill pill-primary pill-wide${s.text.trim().length < 3 ? ' off' : ''}" data-act="treportSend">${t(had ? 'noteSave' : 'noteSend')}</button>
       ${had ? `<button class="pill pill-quiet pill-wide" data-act="treportDrop">${t('noteDrop')}</button>` : ''}`;
   },
+  // A8 What is wrong in a question (the red flag under it): a comment for the admins, as for an article. The report
+  // itself is S.wrong (and S.wrongAt), the comment S.wrongNote.
+  qreport(s) {
+    const f = anyQ(s.id), had = S.wrong.includes(s.id);
+    return `<div class="stack g4"><span class="meta">${esc(f ? [f.lv.title, f.topic].filter(Boolean).join(' · ') : '')}</span><h2 class="display-s" style="font-size:26px">${t('qnoteTitle')}</h2></div>
+      ${f ? `<div class="band qn-q"><p class="body-s">${esc(f.q.q)}</p></div>` : ''}
+      <p class="body-muted">${t('qnoteLead')}</p>
+      <textarea class="th-note" id="thNote" rows="5" maxlength="${MAX_NOTE}" placeholder="${esc(t('qnotePh'))}" aria-label="${esc(t('qnoteTitle'))}">${esc(s.text)}</textarea>
+      <button class="pill pill-primary pill-wide${s.text.trim().length < 3 ? ' off' : ''}" data-act="qreportSend">${t(had ? 'noteSave' : 'noteSend')}</button>
+      ${had ? `<button class="pill pill-quiet pill-wide" data-act="qreportDrop">${t('noteDrop')}</button>` : ''}`;
+  },
   flagq(s) {
     const f = qIn(s.id, LANGS.includes(s.lang) ? s.lang : 'en');
     if (!f || !Array.isArray(ADM)) return `<div class="empty"><span class="meta">${t('studentsFail')}</span></div>`;
     const key = s.k === 'wrong' ? 'wrong' : 'flags';
     const { q, lv, topic } = f, users = ADM.filter((u) => (u[key] || []).includes(s.id) && (!s.lang || uLang(u) === s.lang));
     const opts = q.options.map((o, i) => `<div class="ans${i === q.answer ? ' ok' : ' plain'}"><span class="l">${i === q.answer ? svg('check', 12) : ''}</span><span>${esc(o)}</span></div>`).join('');
-    const who = users.map((u) => `<div class="att who"><button class="whob" data-act="student" data-id="${u.id}">${avatar(u, 'tg-ava', 'width:32px;height:32px;font-size:12px')}<span class="card-title">${esc(studentName(u))}</span>${svg('next', 16)}</button><button class="mini mini-danger" data-act="unflagOne" data-id="${u.id}" data-q="${s.id}" data-k="${key}">${t('unflagOne')}</button></div>`).join('');
+    const said = (u) => { const n = key === 'wrong' && u.wrongNote && u.wrongNote[s.id]; return n ? `<p class="body-s who-note"${n.lang ? ` lang="${n.lang}"` : ''}>${esc(n.text)}</p>` : ''; };
+    const who = users.map((u) => `<div class="att who"><button class="whob" data-act="student" data-id="${u.id}">${avatar(u, 'tg-ava', 'width:32px;height:32px;font-size:12px')}<span class="card-title">${esc(studentName(u))}</span>${svg('next', 16)}</button><button class="mini mini-danger" data-act="unflagOne" data-id="${u.id}" data-q="${s.id}" data-k="${key}">${t('unflagOne')}</button></div>${said(u)}`).join('');
     const all = users.length > 1 ? `<button class="pill pill-quiet" style="margin-top:4px" data-act="unflagAll" data-q="${s.id}" data-k="${key}" data-lang="${s.lang || ''}">${t('unflagAll', users.length)}</button>` : '';
     return `<span class="meta">${esc([lv.title, topic, (s.lang || f.lang).toUpperCase()].filter(Boolean).join(' · '))}</span>
       <div class="rev flq-card" lang="${f.lang}"><p class="q">${esc(q.q)}</p>${figHtml(q)}${opts}<p class="body-muted" style="font-size:14px">${esc(q.why)}</p></div>
@@ -2052,14 +2078,23 @@ const ACT = {
     k >= 0 ? S.flags.splice(k, 1) : S.flags.push(id);
     save(); render(); toast(k >= 0 ? t('unflagged') : t('flaggedToast'));
   },
-  // the red flag: this question is wrong (practice and exam); the admins see these on the Students page, and when it
-  // was reported (S.wrongAt) on the Mistakes reported chart (api/admin.mjs)
+  // the red flag: this question is wrong (practice and exam): a sheet with a comment box, as for an article (what was
+  // written before, if anything, to change or withdraw). The admins see the reports and comments on their Reported
+  // page, and when each was made (S.wrongAt) on the Mistakes reported chart (api/admin.mjs)
   wrong: (d) => {
-    const k = S.wrong.indexOf(d.id);
-    S.wrongAt = S.wrongAt || {};
-    if (k >= 0) { S.wrong.splice(k, 1); delete S.wrongAt[d.id]; } else { S.wrong.push(d.id); S.wrongAt[d.id] = Date.now(); }
-    save(); render(); toast(k >= 0 ? t('unwrong') : t('wrongToast'));
+    sheet = { v: 'qreport', id: d.id, text: ((S.wrongNote || {})[d.id] || {}).text || '' };
+    render();
+    document.getElementById('thNote')?.focus();
   },
+  qreportSend: () => {
+    const text = (document.getElementById('thNote')?.value ?? sheet.text).trim().slice(0, MAX_NOTE), id = sheet.id, f = anyQ(id);
+    if (text.length < 3) return;
+    S.wrongAt = S.wrongAt || {}; S.wrongNote = S.wrongNote || {};
+    if (!S.wrong.includes(id)) { S.wrong.push(id); S.wrongAt[id] = Date.now(); }
+    S.wrongNote[id] = { text, at: Date.now(), lang: f && f.q._tr ? LANG : 'en' };
+    save(); hap('success'); closeSheet(); toast(t(IN_TG && serverOn ? 'wrongToast' : 'noteLocal'));
+  },
+  qreportDrop: () => { dropReport(sheet.id); closeSheet(); toast(t('unwrong')); },
   skip: () => { const [id] = P.ids.splice(P.i, 1); P.ids.push(id); P.sel = null; render(true); },
   // exam
   eopt: (d) => { const E = S.exam, id = E.ids[E.i]; E.ans[id] = E.ord[id][+d.n]; hap('sel'); save(false); render(); },
@@ -2092,9 +2127,8 @@ const ACT = {
   },
   // C1b: withdraw a report (the same as tapping the red flag again under the question)
   unreport: (d) => {
-    const k = S.wrong.indexOf(d.id);
-    if (k < 0) return;
-    S.wrong.splice(k, 1); if (S.wrongAt) delete S.wrongAt[d.id]; hap('sel'); save(); render(); toast(t('unwrong'));
+    if (!S.wrong.includes(d.id)) return;
+    dropReport(d.id); hap('sel'); render(); toast(t('unwrong'));
   },
   rentals: () => (IN_TG ? TG.openTelegramLink(RENTALS_LINK) : window.open(RENTALS_LINK, '_blank', 'noopener')),
   // the MCP server's page on the site (miniapp/pages.mjs), in the app's language; from Telegram it opens in the browser
@@ -2122,7 +2156,7 @@ $app.addEventListener('click', (e) => {
 $app.addEventListener('input', (e) => {
   if (e.target.id !== 'thNote' || !sheet) return;
   sheet.text = e.target.value;
-  $app.querySelector('[data-act="treportSend"]')?.classList.toggle('off', sheet.text.trim().length < 3);
+  $app.querySelector('[data-act="treportSend"], [data-act="qreportSend"]')?.classList.toggle('off', sheet.text.trim().length < 3);
 });
 $app.addEventListener('scroll', markRead, { capture: true, passive: true }); // scroll does not bubble: caught on the way down
 $app.addEventListener('scroll', (e) => { if (e.target.classList && e.target.classList.contains('th-tiles')) tileDots(e.target); }, { capture: true, passive: true });

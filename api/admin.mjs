@@ -4,6 +4,7 @@
 //   GET /api/admin            → { users: [ { id, name, username, lang, uiLang, daily, joined, active, level, total, streak, lastDay,
 //                                 week, levels: { fs: { mastered, seen, mistakes }, … }, exams: [{ lv, at, pct, passed }],
 //                                 flags: ['bs-012', …], wrong: ['bs-034', …],
+//                                 wrongNote: { 'bs-034': { text, at, lang } },
 //                                 notes: [ { k: 'bs-buoyage/cardinal', text, at, lang } ] } ],
 //                               series: { hour: [ { at, joined, answers, wrong, reads, reports } × 24 ], day: [ … × 91 ] } | null }
 //   POST /api/admin { unflag: { q: 'bs-012', k: 'flags' | 'wrong', users: [id, …] } } → { ok: true, users: [id, …] }
@@ -18,7 +19,8 @@
 // prefix (fs = Flotilla Skipper, bs = Bareboat Skipper, …; the app knows the bank sizes and turns counts into %).
 // flags are the question ids the student marked to come back to (state.flags) and wrong the ones they reported as
 // having a mistake (state.wrong, the red flag); the app groups both by question on the Students page, so the admins
-// see which questions people get stuck on and which need a fix. notes is what the student wrote about a section of a
+// see which questions people get stuck on and which need a fix. wrongNote is what the student wrote about a question
+// they reported (state.wrongNote, the sheet behind the red flag), for the ids still in wrong. notes is what the student wrote about a section of a
 // theory article (state.notes, the flag beside a section's heading): the article and section, the comment, when, and
 // the language the article was shown in (notes written before that was kept have none). uiLang is the language the
 // student reads the app in: their EN/RU pick (state.set.lang), else lang (the bot's guess from Telegram, the same rule
@@ -54,6 +56,12 @@ const cleanNotes = (notes) => Object.entries(notes && typeof notes === 'object' 
   .filter(([k, n]) => /^[a-z]{1,8}-[a-z0-9-]{1,40}\/[a-z0-9-]{1,40}(\/f[1-9]\d?)?$/.test(k) && n && typeof n.text === 'string' && n.text.trim())
   .slice(0, MAX_NOTES).map(([k, n]) => ({ k, text: n.text.trim().slice(0, 1000), at: Number.isFinite(n.at) ? n.at : 0, ...(LANGS.includes(n.lang) && { lang: n.lang }) }));
 const LANGS = ['en', 'ru']; // the app's languages (miniapp/app.js LANGS)
+// What a student wrote about the questions they reported: state.wrongNote[id] = { text, at, lang }, kept for ids.
+const cleanQNotes = (notes, ids) => {
+  const o = notes && typeof notes === 'object' && !Array.isArray(notes) ? notes : {};
+  return Object.fromEntries(ids.filter((id) => o[id] && typeof o[id].text === 'string' && o[id].text.trim())
+    .map((id) => [id, { text: o[id].text.trim().slice(0, 1000), at: Number.isFinite(o[id].at) ? o[id].at : 0, ...(LANGS.includes(o[id].lang) && { lang: o[id].lang }) }]));
+};
 
 const pad = (n) => String(n).padStart(2, '0');
 const dkey = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
@@ -123,7 +131,7 @@ export function summarise(u, p) {
   const out = {
     id: u.id, name: u.name || null, username: u.username || null, lang: u.lang || 'en', uiLang: u.lang || 'en', daily: !!(u.daily_question && !u.blocked_at),
     joined: u.created_at, active: p ? p.updated_at : u.updated_at,
-    level: null, total: 0, streak: 0, lastDay: null, week: 0, levels: {}, exams: [], flags: [], wrong: [], notes: [],
+    level: null, total: 0, streak: 0, lastDay: null, week: 0, levels: {}, exams: [], flags: [], wrong: [], wrongNote: {}, notes: [],
   };
   if (!p) return out;
   const q = p.q && typeof p.q === 'object' ? p.q : {}, days = p.days && typeof p.days === 'object' ? p.days : {};
@@ -148,6 +156,7 @@ export function summarise(u, p) {
     .map((e) => ({ lv: e.lv || 'bareboat-skipper', at: e.at, pct: e.pct, passed: !!e.passed }));
   out.flags = cleanIds(p.flags);
   out.wrong = cleanIds(p.wrong);
+  out.wrongNote = cleanQNotes(p.wrongNote, out.wrong);
   out.notes = cleanNotes(p.notes);
   return out;
 }
@@ -182,7 +191,7 @@ export async function GET(request) {
     const [users, progress, clears] = await Promise.all([
       db(`users?select=id,name,username,lang,daily_question,blocked_at,created_at,updated_at&order=updated_at.desc&limit=${MAX_USERS}`),
       // only the parts of the state the summary needs; the whole state can be ~100 KB per student
-      db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags,wrong:state->wrong,wrongAt:state->wrongAt,notes:state->notes,read:state->read&limit=${MAX_USERS}`),
+      db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags,wrong:state->wrong,wrongAt:state->wrongAt,wrongNote:state->wrongNote,notes:state->notes,read:state->read&limit=${MAX_USERS}`),
       pendingClears(),
     ]);
     const byUser = new Map(progress.map((p) => [p.user_id, p]));

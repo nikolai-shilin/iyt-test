@@ -461,6 +461,10 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .th-note { width: 100%; box-sizing: border-box; min-height: 124px; padding: 14px 16px; border-radius: 20px; border: 2px solid var(--tag-line); background: var(--bg); color: var(--ink); font: 400 16px/1.45 'Merriweather', Georgia, serif; resize: none; outline: none; display: block; }
 .app .th-note:focus { border-color: var(--ink); }
 .app .th-note::placeholder { color: var(--faint); }
+/* the question a report is about (SHEETS.qreport), and a student's comment under their name on the admin sheet */
+.app .qn-q { padding: 14px 16px; border-radius: 20px; }
+.app .qn-q p { margin: 0; }
+.app .sheet .who-note { margin: 0 0 8px 44px; padding: 10px 14px; border-radius: 14px; background: var(--band); white-space: pre-wrap; overflow-wrap: anywhere; }
 .app .pill.off { opacity: .4; pointer-events: none; }
 /* "Where to read" on a result: the rows of the "What next" band, as links */
 .app .read-band .r { grid-template-columns: 28px minmax(0, 1fr) 16px; align-items: center; text-align: left; cursor: pointer; }
