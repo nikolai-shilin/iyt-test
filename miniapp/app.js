@@ -132,6 +132,7 @@ const STR = {
     examOpen: 'Mock exam in progress', continue: 'Continue',
     examLine: (a, n, left) => `${a} of ${n} answered · ${left} left`,
     mastered: 'mastered', covered: 'covered', halfway: 'right once', halfwayN: (n) => `+${n} right once`, moreLevels: 'More levels',
+    regK: 'Game', regTitle: 'Regatta: sail a race in 3D', regText: 'Race a yacht against three boats round a windward–leeward course, in light, medium or strong wind. Steer, trim the sheet, tack and read the gusts.', regBtn: 'Play',
     mcpK: 'For AI assistants', mcpTitle: 'Practise in Claude or ChatGPT', mcpText: 'The questions and the theory are also an MCP server: add it to your AI assistant and it quizzes you, checks your answers and explains the rule.', mcpBtn: 'How to connect it',
     grpK: 'Discuss the questions', grpName: 'IYT Test · Discussion', grpRole: 'Telegram group for students', grpText: 'Ask why an answer is right, talk through the tricky ones, tell how your exam went.', grpBtn: 'Join the group',
     fbK: 'Feedback?', fbRole: 'Author of IYT Test', fbText: 'Found a mistake in a question, missing a topic or have an idea? Write to me on Telegram, I read every message.', fbBtn: 'Write on Telegram',
@@ -250,6 +251,7 @@ const STR = {
     examOpen: 'Пробный экзамен не закончен', continue: 'Продолжить',
     examLine: (a, n, left) => `отвечено ${a} из ${n} · осталось ${left}`,
     mastered: 'освоено', covered: 'пройдено', halfway: 'верно 1 раз', halfwayN: (n) => `+${n} верно 1 раз`, moreLevels: 'Другие уровни',
+    regK: 'Игра', regTitle: 'Регата: гонка под парусом в 3D', regText: 'Гонка на яхте против трёх лодок по курсу «апвинд — даунвинд» при слабом, среднем или сильном ветре. Рули, работай шкотом, делай повороты и лови порывы.', regBtn: 'Играть',
     mcpK: 'Для ИИ-ассистентов', mcpTitle: 'Тренируйтесь в Claude или ChatGPT', mcpText: 'Вопросы и теория доступны и как MCP-сервер: добавьте его в свой ИИ-ассистент, и он будет задавать вопросы, проверять ответы и объяснять правило.', mcpBtn: 'Как подключить',
     grpK: 'Обсуждайте вопросы', grpName: 'IYT Test · Discussion', grpRole: 'Группа в Telegram для тех, кто готовится', grpText: 'Спросите, почему ответ верный, разберите сложные вопросы, расскажите, как прошёл экзамен.', grpBtn: 'Вступить в группу',
     fbK: 'Есть отзыв?', fbRole: 'Автор IYT Test', fbText: 'Нашли ошибку в вопросе, не хватает темы или есть идея? Напишите мне в Telegram — читаю каждое сообщение.', fbBtn: 'Написать в Telegram',
@@ -1401,6 +1403,9 @@ const VIEWS = {
         ${S.exam ? `<div class="continue" data-act="resumeExam"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
         <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
         ${more.length ? `<div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${more.map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>` : ''}
+        <div class="band mcpband"><span class="kicker">${t('regK')}</span><div class="card-title">${t('regTitle')}</div>
+          <p class="body-muted">${t('regText')}</p>
+          <button class="pill pill-quiet pill-wide" data-act="regatta" role="link"><span data-i="yacht" data-s="18"></span>${t('regBtn')}</button></div>
         <div class="band mcpband"><span class="kicker">${t('mcpK')}</span><div class="card-title">${t('mcpTitle')}</div>
           <p class="body-muted">${t('mcpText')}</p>
           <button class="pill pill-quiet pill-wide" data-act="mcp" role="link"><span data-i="globe" data-s="18"></span>${t('mcpBtn')}</button></div>
@@ -2138,6 +2143,7 @@ const ACT = {
   },
   rentals: () => (IN_TG ? TG.openTelegramLink(RENTALS_LINK) : window.open(RENTALS_LINK, '_blank', 'noopener')),
   // the MCP server's page on the site (miniapp/pages.mjs), in the app's language; from Telegram it opens in the browser
+  regatta: () => location.assign(`/regatta?lang=${LANG}`), // the 3D sailing game (miniapp/regatta.html), in the app's language
   mcp: () => { const path = LANG === 'ru' ? '/ru/mcp' : '/mcp'; return IN_TG ? TG.openLink(location.origin + path) : location.assign(path); },
   feedback: () => (IN_TG ? TG.openTelegramLink(FEEDBACK_LINK) : window.open(FEEDBACK_LINK, '_blank', 'noopener')),
   group: () => (IN_TG ? TG.openTelegramLink(GROUP_LINK) : window.open(GROUP_LINK, '_blank', 'noopener')),

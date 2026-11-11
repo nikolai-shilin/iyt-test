@@ -40,6 +40,8 @@ const FILES = [
   ['miniapp/apple-icon.png', 'apple-icon.png'],
   ['miniapp/fonts', 'fonts'],
   ['miniapp/figs', 'figs'], // the articles' photos and plans (docs/design/blender/publish_figs.py)
+  ['miniapp/regatta.html', 'regatta.html'], // the sailing game, at /regatta
+  ['miniapp/regatta', 'regatta'],
   ['docs/design/app.css', 'design/app.css'],
   ['docs/design/flows.css', 'design/flows.css'],
   ['docs/design/icons.js', 'design/icons.js'],
