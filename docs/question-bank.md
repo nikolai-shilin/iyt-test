@@ -203,3 +203,8 @@ when the bank has moved on. Built-in figure labels ("You", "wind", "Variation"�
 
 Status: `bareboat-skipper.ru.json` covers all 1000 questions (bank version 2026-11-02d). Terms and style for new or
 changed questions: [glossary-ru.md](glossary-ru.md). After editing the bank, run `check` — it lists what to translate.
+
+English terms: a Russian question names a marine term's English as a tag right after it, `на траверзе [[abeam]]`, once
+per question (in `q` or `why` by preference; in the options only so the right one does not stand out), never in
+`figure` or `ref`. The app shows the tag in brackets when the student has "Учить английские термины" on in Profile
+and leaves it out otherwise, as the bot and the site pages always do (docs/theory.md has the same rule for articles).

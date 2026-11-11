@@ -22,15 +22,17 @@ const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], [
 // A bank comes from data/questions/<name>.json, bundled with the function (vercel.json includeFiles): all 18 files
 // read and parse in under 0.1 s, where fetching them from Supabase held up a cold start for seconds. Supabase —
 // bank() / bank_overlay() return the same shape as the files (docs/data-model.md) — is the fallback for a missing file.
+// The Russian texts carry English sailing terms as tags, "створом [[transit]]" (docs/theory.md); the bot leaves them out.
+const untag = (text) => JSON.parse(text, (k, v) => (typeof v === 'string' ? v.replace(/ \[\[[^\]]*\]\]/g, '') : v));
 async function read(name) {
-  try { return JSON.parse(await readFile(new URL(`../data/questions/${name}.json`, import.meta.url), 'utf8')); }
+  try { return untag(await readFile(new URL(`../data/questions/${name}.json`, import.meta.url), 'utf8')); }
   catch (e) { if (e.code !== 'ENOENT') throw e; }
   const [level, lang] = name.split('.');
   const url = (process.env.SUPABASE_URL || '').replace(/\/$/, ''), key = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || '';
   if (!url || !key) throw new Error(`no bank ${name}`);
   const fn = lang ? `bank_overlay?p_level=${level}&p_lang=${lang}` : `bank?p_level=${level}`;
   const res = await fetch(`${url}/rest/v1/rpc/${fn}`, { headers: { apikey: key, ...(key.startsWith('eyJ') && { authorization: `Bearer ${key}` }) }, signal: AbortSignal.timeout(8000) });
-  const b = res.ok ? await res.json() : null;
+  const b = res.ok ? untag(await res.text()) : null;
   if (!b) throw new Error(`no bank ${name}`);
   return b;
 }
@@ -46,7 +48,7 @@ let daily = []; // the questions the bot sends: filled below, next to the pools
 // The theory article of each topic (data/theory/<level>/<topic>.json, bundled like the banks): only what a link to it
 // needs — its sections' ids and kickers, and the rule references each one explains (refs, docs/theory.md).
 // A topic without an article gets no link; an article without a Russian translation is linked in English.
-const readArt = (p) => readFile(new URL(`../data/theory/${p}.json`, import.meta.url), 'utf8').then(JSON.parse, () => null);
+const readArt = (p) => readFile(new URL(`../data/theory/${p}.json`, import.meta.url), 'utf8').then(untag, () => null);
 const articles = {}; // "<level>/<topic>" → { secs: [{ id, kicker, refs }], ru: { <section id>: kicker } | null }
 await Promise.all(banks.flatMap((b) => b.bank.topics.map(async (tp) => {
   const [en, ru] = await Promise.all([readArt(`${b.id}/${tp.id}`), readArt(`${b.id}/${tp.id}.ru`)]);

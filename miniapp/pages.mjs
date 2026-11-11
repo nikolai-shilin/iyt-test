@@ -20,8 +20,10 @@ import { fileURLToPath } from 'node:url';
 import { SITE, BOT, PAUSED } from './site.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
+// The Russian texts carry English sailing terms as tags, "створом [[transit]]" (docs/theory.md): the app shows them
+// when the student asks for them; the pages leave them out.
 const readJson = async (p) => {
-  try { return JSON.parse(await readFile(join(root, p), 'utf8')); } catch (e) { if (e.code === 'ENOENT') return null; throw new Error(`${p}: ${e.message}`); }
+  try { return JSON.parse(await readFile(join(root, p), 'utf8'), (k, v) => (typeof v === 'string' ? v.replace(/ \[\[[^\]]*\]\]/g, '') : v)); } catch (e) { if (e.code === 'ENOENT') return null; throw new Error(`${p}: ${e.message}`); }
 };
 const hash = (s) => createHash('sha256').update(s).digest('hex').slice(0, 10);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));

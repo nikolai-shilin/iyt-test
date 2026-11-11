@@ -191,6 +191,7 @@ const STR = {
     currentLevel: 'Current level', language: 'Language', theme: 'Theme', auto: 'Auto',
     daily: 'Question of the day', dailyMeta: 'Every morning in the chat with the bot', dailyAccess: 'Allow the bot to message you to get the question',
     shuffle: 'Shuffle options', shuffleMeta: 'Different order each time',
+    terms: 'Learn English terms', termsMeta: 'The English term in brackets after a Russian one',
     explain: 'Explain after each answer', explainMeta: 'Off = exam style, results at the end',
     reset: 'Reset progress', resetMeta: 'Mastery, mistakes, streak and exams', resetBtn: 'Reset',
     confirmReset: 'Reset all progress? Mastery, mistakes, streak and exam history will be cleared.', resetDone: 'Progress reset',
@@ -308,6 +309,7 @@ const STR = {
     currentLevel: 'Текущий уровень', language: 'Язык', theme: 'Тема', auto: 'Авто',
     daily: 'Вопрос дня', dailyMeta: 'Каждое утро в чате с ботом', dailyAccess: 'Разрешите боту писать вам, чтобы получать вопрос',
     shuffle: 'Перемешивать варианты', shuffleMeta: 'Каждый раз в другом порядке',
+    terms: 'Учить английские термины', termsMeta: 'Английский термин в скобках: створ (transit)',
     explain: 'Пояснение после ответа', explainMeta: 'Выкл. — как на экзамене, итог в конце',
     reset: 'Сбросить прогресс', resetMeta: 'Освоение, ошибки, серия дней и экзамены', resetBtn: 'Сбросить',
     confirmReset: 'Сбросить весь прогресс? Освоение, ошибки, серия дней и история экзаменов будут удалены.', resetDone: 'Прогресс сброшен',
@@ -359,7 +361,10 @@ const FIG_RU = {
 };
 
 /* ---------- small helpers ---------- */
-const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// The Russian texts carry the English sailing term after a Russian one as a tag, "створом [[transit]]"
+// (docs/theory.md): with "Learn English terms" on in Profile it shows in brackets, "створом (transit)"; off, it is left out.
+const terms = (s) => String(s).replace(/ \[\[([^\]]+)\]\]/g, S.set.terms ? ' ($1)' : '');
+const esc = (s) => terms(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const pad = (n) => String(n).padStart(2, '0');
 const dkey = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -412,7 +417,7 @@ function toast(text) {
 // progress saved before 2026-11-07)]. Mastered = right twice in a row (docs/data-model.md). ls = when the last practice
 // or exam started (ms): what was answered since then rests for one session (pickFor).
 const KEY = 'iyt-test-state-v1';
-const fresh = () => ({ v: 1, ts: 0, ls: 0, q: {},days: {}, total: 0, flags: [], wrong: [], wrongAt: {}, exams: [], exam: null, held: {}, last: null, read: {}, notes: {}, wrongNote: {}, set: { theme: 'auto', shuffle: true, feedback: true, lang: '', level: '' } });
+const fresh = () => ({ v: 1, ts: 0, ls: 0, q: {},days: {}, total: 0, flags: [], wrong: [], wrongAt: {}, exams: [], exam: null, held: {}, last: null, read: {}, notes: {}, wrongNote: {}, set: { theme: 'auto', shuffle: true, feedback: true, terms: false, lang: '', level: '' } });
 let S = fresh();
 const merge = (o) => { const f = fresh(); return { ...f, ...o, set: { ...f.set, ...(o && o.set) } }; };
 
@@ -1677,7 +1682,7 @@ const VIEWS = {
     const ava = u && u.photo_url ? `<img src="${esc(u.photo_url)}" alt="">` : esc(ini);
     const th = S.set.theme;
     const seg = (act, val, on, inner) => `<button class="lang${on ? ' lang-on' : ''}" data-act="${act}" data-t="${val}" role="radio" aria-checked="${on}">${inner}</button>`;
-    const tog = (k) => `<button class="toggle${S.set[k] ? ' on' : ''}" data-act="set" data-k="${k}" role="switch" aria-checked="${S.set[k]}" aria-label="${esc(t(k === 'shuffle' ? 'shuffle' : 'explain'))}"></button>`;
+    const tog = (k) => `<button class="toggle${S.set[k] ? ' on' : ''}" data-act="set" data-k="${k}" role="switch" aria-checked="${S.set[k]}" aria-label="${esc(t(k === 'feedback' ? 'explain' : k))}"></button>`;
     const nothing = !S.total && !S.exams.length && !Object.keys(S.q).length;
     const partial = LANG !== 'en' && BANK.translated < BANK.questions.length ? t('partEnglish') : '';
     loadDaily();
@@ -1697,6 +1702,7 @@ const VIEWS = {
           ${daily}${lvl}${admin}
           <div class="set"><div class="card-title">${t('language')}</div><div class="langs" role="radiogroup" aria-label="${t('language')}">${LANGS.map((l) => seg('lang', l, LANG === l, l.toUpperCase())).join('')}</div></div>
           <div class="set"><div class="card-title">${t('theme')}</div><div class="langs" role="radiogroup" aria-label="${t('theme')}">${seg('theme', 'day', th === 'day', svg('sun', 14) + t('themeDay'))}${seg('theme', 'night', th === 'night', svg('moon', 14) + t('themeNight'))}${seg('theme', 'auto', th === 'auto', t('auto'))}</div></div>
+          ${LANG === 'ru' ? `<div class="set"><div><div class="card-title">${t('terms')}</div><div class="card-meta">${t('termsMeta')}</div></div>${tog('terms')}</div>` : ''}
           <div class="set"><div><div class="card-title">${t('shuffle')}</div><div class="card-meta">${t('shuffleMeta')}</div></div>${tog('shuffle')}</div>
           <div class="set"><div><div class="card-title">${t('explain')}</div><div class="card-meta">${t('explainMeta')}</div></div>${tog('feedback')}</div>
           <div class="set" data-act="rentals" role="link"><div><div class="card-title">${t('rentals')}</div><div class="card-meta">${t('rentalsMeta')}</div></div><span class="val">${svg('next', 16)}</span></div>

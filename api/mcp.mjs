@@ -23,7 +23,9 @@ import { readFile } from 'node:fs/promises';
 import { SITE, PAUSED } from '../miniapp/site.mjs';
 
 const root = new URL('../', import.meta.url);
-const readJson = async (path) => { try { return JSON.parse(await readFile(new URL(path, root), 'utf8')); } catch { return null; } };
+// The Russian texts carry English sailing terms as tags, "створом [[transit]]" (docs/theory.md): here they read as
+// "створом (transit)", which helps an assistant explain the term.
+const readJson = async (path) => { try { return JSON.parse(await readFile(new URL(path, root), 'utf8'), (k, v) => (typeof v === 'string' ? v.replace(/ \[\[([^\]]*)\]\]/g, ' ($1)') : v)); } catch { return null; } };
 
 // The levels in the app's order; `link` is the mini app deep link that opens the level (as in bot/core.mjs).
 const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], ['flotilla-skipper', 'flotilla'], ['bareboat-skipper', 'bareboat'], ['yachtmaster-coastal', 'coastal'], ['yachtmaster-offshore', 'offshore'], ['yachtmaster-ocean', 'ocean'], ['racing-rules', 'racing'], ['charter-checkin', 'checkin']];

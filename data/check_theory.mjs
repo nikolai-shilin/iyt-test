@@ -19,7 +19,8 @@ const { FIG, figSvg, FIG_KEYS } = new Function(`${figSrc}\nreturn { FIG, figSvg,
 const LIMITS = { sections: [4, 7], words: [400, 900], pictures: 4, bigRef: 10, q: 18, a: [8, 45] };
 const KINDS = ['p', 'list', 'fig', 'tiles', 'rule', 'table'];
 const kind = (b) => KINDS.find((k) => b && typeof b === 'object' && k in b);
-const words = (s) => (String(s).match(/[\p{L}\p{N}][\p{L}\p{N}'’().+-]*/gu) || []).length;
+// English term tags in the Russian text (" [[transit]]", docs/theory.md) are not counted.
+const words = (s) => (String(s).replace(/ \[\[[^\]]*\]\]/g, '').match(/[\p{L}\p{N}][\p{L}\p{N}'’().+-]*/gu) || []).length;
 const readJson = async (f) => { try { return JSON.parse(await readFile(f, 'utf8')); } catch (e) { if (e.code === 'ENOENT') return null; throw new Error(`${f}: ${e.message}`); } };
 
 let failed = 0;

@@ -80,6 +80,10 @@ A block is one of:
 - **Russian** follows `glossary-ru.md`: «вы», the glossary's terms, international abbreviations for lights left as
   they are. Labels inside figures are translated in the Russian file (keep them as short as the English); labels the
   renderer draws itself ("You", "wind") are translated by the app.
+- **English terms in the Russian text**: a marine term is followed by its English as a tag, `**створом** [[transit]]`,
+  the first time it appears in the article, with the English article's own word. The app shows it as «створом
+  (transit)» when "Учить английские термины" is on in Profile and leaves it out otherwise; the site pages and the
+  bot leave it out, the MCP server shows it in brackets. Not in headings, figures, tiles or `refs`.
 
 ## In the app
 
