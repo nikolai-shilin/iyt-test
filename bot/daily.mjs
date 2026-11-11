@@ -1,11 +1,12 @@
 // The daily send (09:00 UTC = 13:00 Dubai): the question of the day to every user who has it on (users.daily_question), once per UTC day.
+// It goes with its photo, in the language the user picked in the app, else their Telegram app's (bot/core.mjs).
 // Run by the Vercel cron (api/daily.mjs, schedule in vercel.json) or by hand: bot/scripts/daily.mjs.
 //
 // Switches:
 //   per user   users.daily_question — the button under the question and in /settings (bot/core.mjs)
 //   whole bot  env DAILY_QUESTION=off — the cron still fires but sends nothing
 
-import { api, db, hasDb, dailyMessage, questionOfTheDay } from './core.mjs';
+import { db, hasDb, sendQuestion, questionOfTheDay, chosenLangs } from './core.mjs';
 
 export const enabled = () => !/^(off|false|0|no)$/i.test(process.env.DAILY_QUESTION || '');
 const today = () => new Date().toISOString().slice(0, 10);
@@ -13,10 +14,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Sends one user's message; retries once on Telegram's flood limit. Returns 'sent' | 'blocked' | 'failed'.
 async function sendOne(user, day) {
-  const d = dailyMessage(questionOfTheDay(day, user.level_id), user.lang === 'ru', true);
+  const q = questionOfTheDay(day, user.level_id);
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      await api('sendMessage', { chat_id: user.id, text: d.text, parse_mode: 'HTML', reply_markup: d.reply_markup });
+      await sendQuestion(user.id, q, user.lang === 'ru', true);
       return 'sent';
     } catch (e) {
       if (e.code === 429 && attempt === 0) { await sleep((e.retryAfter || 1) * 1000); continue; }
@@ -46,6 +47,9 @@ export async function sendDaily({ dry = false } = {}) {
     after = users[users.length - 1].id;
     result.users += users.length;
     if (dry) continue;
+    // The language the user picked in the app wins over users.lang (their Telegram app's language, kept by the bot).
+    const chosen = await chosenLangs(users.map((u) => u.id));
+    for (const u of users) u.lang = chosen[u.id] || u.lang;
 
     for (let i = 0; i < users.length; i += BATCH) {
       const part = users.slice(i, i + BATCH);
