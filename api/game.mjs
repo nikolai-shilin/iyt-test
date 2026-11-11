@@ -2,7 +2,8 @@
 // admins' Overview page (api/admin.mjs). miniapp/regatta/stats.js posts here when a race starts and when the player
 // finishes it.
 //
-//   POST /api/game { ev: 'start', id: '<uuid>', wind: 'light' | 'medium' | 'strong', laps: 1 }               → 204
+//   POST /api/game { ev: 'start', id: '<uuid>', wind: 'light' | 'medium' | 'strong', laps: 1,
+//                    length: 'short' | 'medium' | 'long', boats: 10 }                                       → 204
 //   POST /api/game { ev: 'finish', id: '<uuid>', place: 2 | null, boats: 4, secs: 431.2, dsq: false }       → 204
 //
 // The game also runs in a plain browser, so the launch data (x-telegram-init-data, as api/settings.mjs) is optional:
@@ -33,7 +34,8 @@ export async function POST(request) {
     if (b.ev === 'start') {
       await db('game_races?on_conflict=id', {
         method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation',
-        body: { id, user_id: user ? user.id : null, wind: ['light', 'medium', 'strong'].includes(b.wind) ? b.wind : null, laps: int(b.laps, 1, 9) },
+        body: { id, user_id: user ? user.id : null, wind: ['light', 'medium', 'strong'].includes(b.wind) ? b.wind : null, laps: int(b.laps, 1, 9),
+                length: ['short', 'medium', 'long'].includes(b.length) ? b.length : null, boats: int(b.boats, 1, 20) },
       });
     } else {
       const secs = Number.isFinite(b.secs) && b.secs >= 0 && b.secs < 86400 ? Math.round(b.secs * 10) / 10 : null;
