@@ -597,7 +597,7 @@ const AFTER = {
   const CODE = /^(red|blue|green|yellow|accent|white|black|grey|gray|orange|dash|dashed|dotted|solid|port|stbd|left|right|middle|start|end|top|bottom|[a-zA-Z]{1,2}|[\d\s.,:°′″'"+-]*)$/;
   const deep = (v, k, fn) => typeof v === 'string' ? (SKIP.has(k) || CODE.test(v) ? v : fn(v)) : Array.isArray(v) ? v.map((x) => deep(x, k, fn)) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([kk, x]) => [kk, deep(x, kk, fn)])) : v;
   const RU = q.get('lang') === 'ru' ? await (await fetch(`figure-style/articles/${a}/ru.json?v=${Date.now()}`)).json() : null;
-  if (RU) Object.assign(window.SCH_TEXT, { You: 'Вы', Other: 'Судно', Wind: 'Ветер', N: 'С', port: 'слева', stbd: 'справа' });
+  if (RU) Object.assign(window.SCH_TEXT, { You: 'Вы', Other: 'Судно', Wind: 'Ветер', N: 'С', port: 'слева', stbd: 'справа', depth: 'глубина', bow: 'роульс', chain: 'цепь', s: 'с' });
   window.__strings = {};
   data.figs.forEach((f, i) => {
     const seen = new Set(); deep(after[i] || {}, '', (s) => { seen.add(s); return s; }); window.__strings[String(f.n)] = [...seen];
