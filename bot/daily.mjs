@@ -65,7 +65,9 @@ export async function sendDaily({ dry = false } = {}) {
   return result;
 }
 
-// Sends today's question to one chat, ignoring the switches and the database — for trying it out.
-export async function sendDailyTo(chatId, { lang = 'en', levelId = null } = {}) {
+// Sends today's question to one chat, ignoring the switches — for trying it out. Without `lang`, in the language the
+// user picked in the app (else English).
+export async function sendDailyTo(chatId, { lang, levelId = null } = {}) {
+  lang ||= (await chosenLangs([chatId]))[chatId] || 'en';
   return sendOne({ id: chatId, lang, level_id: levelId }, today());
 }
