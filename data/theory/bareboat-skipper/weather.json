@@ -52,7 +52,7 @@
           ["8", "34–40", "Gale"],
           ["9", "41–47", "Strong gale"]
         ] } },
-        { "p": "The force is named from the mean wind, but gusts overpower the boat: reef for them, and early. Under high land they can be half as strong again. Double the wind is four times the load. In an app, 1 m/s is about 2 knots." },
+        { "p": "Under high land, air falling down the slopes makes gusts half as strong again. In an app, 1 m/s is about 2 knots." },
         { "p": "You feel the **apparent wind**. Running, boat speed is taken off the true wind; beating, most of it is added. Reef before you turn upwind." },
         { "tiles": [
           { "photo": "bareboat-skipper/weather/5", "plan": 1.6, "fig": { "type": "sail", "wind": 0, "hdg": 180 }, "view": "84 0 236 200", "name": "Running", "note": "true 20 kn, boat 7 kn: 13 kn felt" },
@@ -67,8 +67,8 @@
       "qa": { "q": "Can I trust a GRIB file or weather app, or do I need an official forecast?", "a": "Go by the **official forecast**: Navtex, coast radio, the harbour office or a national service. A GRIB or app is raw model output that misses funnelling, gusts and thunderstorms; an official warning outranks any app." },
       "refs": ["Forecast sources", "Forecast terms"],
       "blocks": [
-        { "p": "Official forecasts come by **Navtex**, by coast radio (announced on VHF channel 16, read on a working channel), from the harbour office and from national services such as Poseidon in Greece or DHMZ in Croatia. Check the time of issue." },
-        { "p": "A GRIB or an app is raw model output: it misses funnelling, gusts and thunderstorms, and days ahead it is only a trend. If models disagree, plan for the strongest. An official warning outranks any app; a port-police departure ban is binding." },
+        { "p": "Official forecasts come by **Navtex**, by coast radio (announced on VHF channel 16, read on a working channel), from the harbour office and from national services such as Poseidon in Greece or DHMZ in Croatia. Check the time of issue. Without Navtex, the WMO publishes them online by METAREA; the Mediterranean is METAREA III." },
+        { "p": "Days ahead, a GRIB or an app shows only a trend; if models disagree, plan for the strongest. A port-police departure ban is binding." },
         { "table": { "head": ["Term", "Means"], "rows": [
           ["Imminent · soon · later", "Within 6 h · in 6–12 h · after 12 h"],
           ["Veering · backing", "Shifting clockwise · anticlockwise"],
@@ -100,7 +100,7 @@
       "qa": { "q": "When does the Meltemi blow in the Aegean, and how strong does it get?", "a": "The **Meltemi** is the Aegean's summer northerly, dry and clear, force 5 to 7. It is lightest at dawn and strongest in the afternoon, so sail the upwind legs early in the day." },
       "refs": ["Mediterranean winds", "Passage planning"],
       "blocks": [
-        { "p": "The **Meltemi** is the Aegean's summer northerly: dry, clear, force 5 to 7, between a high over the Balkans and a low over Turkey. It blows NE in the north, N in the Cyclades and NW in the Dodecanese, lightest at dawn, strongest in the afternoon." },
+        { "p": "The **Meltemi** is the Aegean's summer northerly: dry, clear, force 5 to 7, between a high over the Balkans and a heat low over Turkey and the eastern Mediterranean. It blows NE in the north, N in the Cyclades and NW in the Dodecanese, lightest at dawn, strongest in the afternoon." },
         { "photo": "bareboat-skipper/weather/10", "plan": 1.6, "fig": { "type": "isobars", "center": "H", "boat": [250, 170, 0], "hemisphere": "Aegean · July", "note": "High to the NW, low to the E" } },
         { "table": { "head": ["Wind", "From", "Where and what"], "rows": [
           ["Bora", "NE", "Adriatic: cold, violent gusts; cloud cap on the mountains"],

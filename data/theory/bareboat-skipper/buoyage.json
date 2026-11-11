@@ -9,7 +9,7 @@
       "qa": { "q": "Which side do I leave a red buoy on, coming into harbour?", "a": "To port: in **IALA Region A**, which covers Europe and the Mediterranean, you leave red marks to port and green to starboard coming in from sea. Going out everything swaps, and in Region B the colours are reversed." },
       "refs": ["IALA lateral marks", "IALA region B", "Preferred channel marks", "IALA buoyage"],
       "blocks": [
-        { "p": "Lateral marks stand on the edges of a channel. They are laid for a vessel **coming in from the sea**: that is the direction of buoyage. In IALA Region A, which covers Europe and the Mediterranean, you leave red marks to port and green marks to starboard on the way in. Going out, everything swaps." },
+        { "p": "Lateral marks stand on the edges of a channel. They are laid for a vessel **coming in from the sea**: that is the direction of buoyage. In IALA Region A, which covers Europe and the Mediterranean, you leave red marks to port and green marks to starboard on the way in. Going out, everything swaps. A red and white striped **safe water** mark may stand mid-channel." },
         { "tiles": [
           { "photo": "bareboat-skipper/buoyage/1", "plan": 1.6, "fig": { "type": "buoy", "kind": "lat-port", "topmark": true }, "view": "68 10 120 178", "name": "Port hand", "note": "red · can · red light" },
           { "photo": "bareboat-skipper/buoyage/2", "plan": 1.6, "fig": { "type": "buoy", "kind": "lat-stbd", "topmark": true }, "view": "68 10 120 178", "name": "Starboard hand", "note": "green · cone · green light" }
@@ -44,11 +44,11 @@
       "qa": { "q": "Which side do I pass an isolated danger mark on?", "a": "Either side, but keep off it: an **isolated danger** mark sits on a small danger with clear water all round. A safe water mark is the opposite, deep water all round, such as the landfall buoy of a channel." },
       "refs": ["Isolated danger marks", "Safe water marks", "Special marks", "Emergency wreck marking buoy", "New dangers"],
       "blocks": [
-        { "p": "An **isolated danger** mark sits on a small danger with clear water all round: keep off it, pass either side. A **safe water** mark is the opposite: deep water all round, the landfall buoy at the start of a channel. A yellow **special** mark shows an area, such as a swimming zone, a cable or a racing mark, not a danger to steer by." },
+        { "p": "A yellow **special** mark, topped by a yellow X, shows an area or its edge, such as a swimming zone, a marina, a cable or a racing mark, not a danger to steer by." },
         { "tiles": [
           { "photo": "bareboat-skipper/buoyage/8", "plan": 1.6, "fig": { "type": "buoy", "kind": "iso" }, "view": "68 10 120 178", "name": "Isolated danger", "note": "Fl(2)" },
           { "photo": "bareboat-skipper/buoyage/9", "plan": 1.6, "fig": { "type": "buoy", "kind": "safe" }, "view": "68 10 120 178", "name": "Safe water", "note": "Iso · Oc · LFl 10s" },
-          { "photo": "bareboat-skipper/buoyage/10", "plan": 1.6, "fig": { "type": "buoy", "kind": "special" }, "view": "68 10 120 178", "name": "Special", "note": "yellow light" },
+          { "photo": "bareboat-skipper/buoyage/10", "plan": 1.6, "fig": { "type": "buoy", "kind": "special" }, "view": "68 10 120 178", "name": "Special", "note": "yellow · X on top" },
           { "photo": "bareboat-skipper/buoyage/11", "plan": 1.6, "fig": { "type": "buoy", "kind": "wreck" }, "view": "68 10 120 178", "name": "New wreck", "note": "blue / yellow" }
         ] },
         { "p": "A blue and yellow buoy marks a **new wreck** not yet on the chart. A new danger may also be shown by two identical marks side by side." }
@@ -80,7 +80,7 @@
       "qa": { "q": "What do I do if a sectored light at a harbour entrance turns red or green?", "a": "Steer back until it shows white: a **sectored light** shows white over the safe approach and red or green over the dangers on either side. Sector limits on the chart are true bearings from seaward." },
       "refs": ["Sectored lights", "Leading lights", "Directional lights"],
       "blocks": [
-        { "p": "A **sectored light** shows different colours on different bearings: white over the safe approach, red and green over the dangers on either side. If it turns red or green, steer back until it shows white. Sector limits on the chart are true bearings from seaward." },
+        { "p": "A **sectored light** shows different colours on different bearings: white over the safe approach, red and green over the dangers on either side. Sector limits on the chart are true bearings from seaward; read the colours there too, as red does not always mean danger." },
         { "p": "**Leading lights** are two lights, the rear one higher. Keep them one above the other and you are on the line. If the front light moves to one side, steer to that side to bring them together." },
         { "photo": "bareboat-skipper/buoyage/13", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "w", "x": 148, "y": 120, "t": "front" }, { "c": "w", "x": 172, "y": 82, "t": "rear" }], "note": "Front light left of the rear: steer to port" } }
       ]
@@ -92,7 +92,7 @@
       "qa": { "q": "How do I tell a sailing yacht from a motor boat by her lights at night?", "a": "A vessel under power shows a white **masthead light** above her red and green sidelights; a sailing vessel shows the colours alone. A yacht motor-sailing counts as under power." },
       "refs": ["Navigation lights", "COLREGs Rule 20", "COLREGs Rule 21", "COLREGs Rule 22", "COLREGs Rule 23", "COLREGs Rule 25", "COLREGs Rules 3 / 25", "COLREGs Rules 20 / 23"],
       "blocks": [
-        { "p": "From sunset to sunrise and in poor visibility every vessel under way shows a red **sidelight** to port, a green one to starboard and a white **sternlight**. A vessel under power adds a white **masthead light** shining forward. So white above the colours means power, colours alone mean sail. A yacht motor-sailing is under power." },
+        { "p": "From sunset to sunrise and in poor visibility every vessel under way shows a red **sidelight** to port, a green one to starboard and a white **sternlight**. A vessel under power adds a white **masthead light**, on the mast above the sidelights, shining forward. So white above the colours means power, colours alone mean sail. A yacht motor-sailing is under power." },
         { "tiles": [
           { "photo": "bareboat-skipper/buoyage/14", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "w", "x": 160, "y": 70 }, { "c": "g", "x": 146, "y": 120 }, { "c": "r", "x": 174, "y": 120 }] }, "view": "60 20 200 150", "name": "Power, bow on", "note": "white over both sidelights" },
           { "photo": "bareboat-skipper/buoyage/15", "plan": 1.6, "fig": { "type": "lights", "lights": [{ "c": "g", "x": 146, "y": 120 }, { "c": "r", "x": 174, "y": 120 }] }, "view": "60 20 200 150", "name": "Sail, bow on", "note": "sidelights, no white" },

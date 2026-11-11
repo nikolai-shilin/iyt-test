@@ -11,7 +11,7 @@
       "blocks": [
         { "p": "A position is a **latitude**, read on the side scales, and a **longitude**, read at top and bottom, in degrees and minutes: 37.75° is 37°45.0'." },
         { "photo": "bareboat-skipper/navigation/1", "plan": 1.6, "fig": { "type": "chart", "labels": [[8, 22, "37°50'N", "start"], [8, 170, "37°40'N", "start"], [196, 67, "37°47.5'N", "start"]], "track": "M60 26 H300 M60 174 H300", "boat": [180, 63, 0], "note": "Parallels 10' apart · three-quarters up is 7.5'" } },
-        { "p": "One minute of latitude is one **nautical mile** (1,852 m): measure distance with dividers on the latitude scale level with your position, never on the longitude scale. A course read against a meridian is true." },
+        { "p": "One minute of latitude is one **nautical mile** (1,852 m). A course read against a meridian is true." },
         { "p": "A knot is one mile an hour: 18 miles at 5 knots take 3.6 hours, or 3 h 36 min. For pilotage use the **largest-scale** chart aboard." }
       ]
     },
@@ -52,7 +52,7 @@
     {
       "id": "fix",
       "kicker": "Position fixing",
-      "title": "Crossing position lines",
+      "title": "Fixing by bearings",
       "qa": { "q": "How do I plot a fix from compass bearings of landmarks?", "a": "Each bearing of a charted object is a **position line**, drawn from the object on the reciprocal bearing. Two lines crossing give a fix, a third checks it; choose objects close by, 60° to 120° apart." },
       "refs": ["Position fixing"],
       "blocks": [
@@ -75,7 +75,7 @@
       "blocks": [
         { "p": "From the last fix, plot the course steered and the distance by log: that is the **dead reckoning** (DR) position. Add tidal stream and leeway for an **estimated position** (EP). A fix is drawn as a circled dot, an EP as a triangle. Log position, course and log reading hourly, in case the electronics fail." },
         { "photo": "bareboat-skipper/navigation/5", "plan": 1.6, "fig": { "type": "chart", "boat": [40, 120, 90], "track": "M55 120 L290 120 L290 178", "marks": [[290, 120, "w", ""], [290, 178, "w", ""]], "labels": [[170, 136, "6 M by log", "middle"], [284, 153, "tide 1.5 M", "end"], [300, 124, "DR", "start"], [300, 182, "EP", "start"]], "panel": ["10:00 – 11:00", "Course 090°T", "Log 6.0 M", "Tide 180°T 1.5 kn"], "depths": [[100, 60, "40"], [200, 170, "55"]], "note": "Fix at the boat · no leeway" } },
-        { "p": "**Leeway** is the slip downwind, seen as the angle between wake and centreline. To hold a track across a stream, aim up-tide: by the 1-in-60 rule a 2-knot stream at 6 knots needs about 20°." },
+        { "p": "**Leeway** is the slip downwind, seen as the angle between wake and centreline; it grows as she heels. To hold a track across a stream, aim up-tide: by the 1-in-60 rule, 60 × stream ÷ speed, a 2-knot stream at 6 knots needs about 20°." },
         { "photo": "bareboat-skipper/navigation/6", "plan": 1.6, "fig": { "type": "sail", "wind": 0, "hdg": 50, "nogo": true, "note": "Heading 050°T · leeway 5° · water track 055°T" } },
         { "p": "The plotter's **COG** and **SOG** are course and speed over the ground; compass and log work through the water. The difference is the stream, unless it is the same on every heading: then the log is wrong. A growing cross-track error means you are being set: steer back towards the track." }
       ]
@@ -87,7 +87,7 @@
       "qa": { "q": "How do I work out how much water there is now over a charted depth?", "a": "Add the **height of tide** to the charted depth, since both are measured from chart datum. The rule of twelfths gives the rise: 1, 2, 3, 3, 2, 1 twelfths of the range in each of the six hours." },
       "refs": ["Tides", "Rule of twelfths", "Tidal streams", "Charts / tides"],
       "blocks": [
-        { "p": "The **height of tide** is measured up from chart datum: depth now = charted depth + height of tide. The **range** is high water minus low water. **Springs**, just after new and full moon, bring the highest highs, lowest lows and strongest streams." },
+        { "p": "The **height of tide** is measured up from chart datum: depth now = charted depth + height of tide. **Tide tables** in the almanac give the times and heights of high and low water; the **range** is one minus the other. **Springs**, just after new and full moon, bring the highest highs, lowest lows and strongest streams." },
         { "photo": "bareboat-skipper/navigation/7", "plan": 1.6, "fig": { "type": "chart", "depths": [[60, 60, "8"], [110, 90, "5"], [150, 118, "1.5"], [120, 150, "4"], [220, 150, "7"], [90, 170, "12"]], "track": "M30 170 L150 118 L260 60", "boat": [40, 168, 67], "panel": ["Now 14:00", "Height of tide 1.2 m", "Draft 1.9 m"], "note": "Shoal: 1.5 + 1.2 = 2.7 m · 0.8 m under the keel" } },
         { "p": "The tide rises by the **rule of twelfths**: 1, 2, 3, 3, 2, 1 twelfths of the range in the six hours." },
         { "photo": "bareboat-skipper/navigation/8", "plan": 1.6, "fig": { "type": "card", "title": "Rule of twelfths", "lines": ["LW 08:00 0.4 m · HW 14:00 2.2 m", "Range 1.8 m, one twelfth 0.15 m", "10:00 is LW + 2 h: 1 + 2 = 3 twelfths", "Rise 0.45 m · height of tide 0.85 m"] } },
@@ -101,7 +101,7 @@
       "qa": { "q": "How do I use leading marks and a clearing bearing to get into harbour safely?", "a": "Keep two charted objects in line: a **transit** is an exact position line with no compass, and if the front mark slides off, steer towards it. A **clearing bearing** on a charted object fences off a danger." },
       "refs": ["Pilotage", "Clearing bearings", "Electronic navigation", "GPS & chart datum", "Passage planning"],
       "blocks": [
-        { "p": "Inshore you navigate by eye, to a plan made beforehand: marks, bearings to hold, where to turn. Two charted objects in line make a **transit**, an exact position line with no compass; if the front mark slides off, steer towards it. A **clearing bearing** fences off a danger." },
+        { "p": "Inshore you navigate by eye, to a plan made beforehand: marks, bearings to hold, where to turn. Two charted objects in line, often a pair of purpose-built boards, make a **transit**, an exact position line with no compass. A **clearing bearing** fences off a danger." },
         { "photo": "bareboat-skipper/navigation/9", "plan": 1.6, "fig": { "type": "chart", "land": "M0 0 H320 V40 H200 V100 H120 V40 H0 Z", "marks": [[160, 30, "w", "rear"], [160, 70, "w", "front"]], "track": "M160 190 L160 80", "boat": [160, 180, 0], "labels": [[160, 125, "keep in line", "middle"]], "note": "Leading marks into the harbour" } },
         { "photo": "bareboat-skipper/navigation/10", "plan": 1.6, "fig": { "type": "chart", "land": "M0 0 H320 V38 C 250 44 200 36 150 42 C 100 48 50 40 0 44 Z", "marks": [[260, 30, "k", "church"]], "track": "M260 30 L87 130", "depths": [[110, 86, "0.6", true], [215, 150, "14"], [280, 120, "18"], [140, 172, "9"]], "labels": [[110, 72, "reef", "middle"], [200, 96, "clearing line 060°T", "start"]], "boat": [40, 172, 90], "note": "Church bearing less than 060°T: south of the reef" } },
         { "p": "GPS is accurate; the chart under it may not be. Plotters hide rocks when zoomed out, small bays can be drawn offset, and older paper charts need a datum shift for WGS84 positions. Zoom in along every leg, put waypoints in safe water off the entrance, and if the depth or the view disagrees with the screen, believe them. A passage plan also names ports of refuge." }

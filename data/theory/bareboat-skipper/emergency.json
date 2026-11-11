@@ -9,7 +9,7 @@
       "qa": { "q": "Which VHF channel do I call another yacht on, and where do we then talk?", "a": "Call on **channel 16**, then move to a working channel; between yachts, an intership one such as 72. Channel 70 carries DSC data only, never voice." },
       "refs": ["VHF", "VHF operation", "VHF range", "VHF channels", "Radio procedure", "Prowords", "Phonetic alphabet", "Radio licences", "MMSI"],
       "blocks": [
-        { "p": "**Channel 16** is for distress and for calling: make contact, then move to a working channel, between yachts an intership one such as 72. **Channel 70** carries DSC data only, never voice. Ask for a radio check on a working channel." },
+        { "p": "**Channel 16** is for distress and for calling. Ask for a radio check on a working channel." },
         { "photo": "bareboat-skipper/emergency/1", "fig": { "type": "card", "title": "Routine call on 16", "lines": ["Thalassa, Thalassa, Thalassa", "this is Kalliope, Kalliope, Kalliope", "OVER", "Thalassa answers: both move to 72"] } },
         { "p": "Use low power, 1 W, at short range; set the squelch where the hiss just stops; dual watch keeps an ear on 16. VHF is line of sight, so range depends on antenna height: the masthead antenna far outreaches a handheld. Spell with the phonetic alphabet and say tree, fower, fife, niner. Routine use needs an operator's certificate such as the SRC. An MMSI beginning 00 is a coast station." },
         { "table": { "head": ["Proword", "Meaning"], "rows": [
@@ -56,7 +56,7 @@
       "qa": { "q": "What should I do if I hear another boat's MAYDAY on the VHF?", "a": "Don't acknowledge a DSC alert: listen on 16, note the details, and stay off the channel if a coast station answers. If none does and you can help, reply RECEIVED MAYDAY and go; if you cannot, send a **MAYDAY RELAY**." },
       "refs": ["MAYDAY relay"],
       "blocks": [
-        { "p": "A DSC distress alarm on your set: do not acknowledge it, coast stations do that. Listen on 16 for the voice MAYDAY and note the details. If a coast station has answered, stay off the channel. If nobody answers and you can help, reply RECEIVED MAYDAY, go, and tell the coast station." },
+        { "p": "A DSC distress alarm on your set: do not acknowledge it, coast stations do that. If a coast station has answered, stay off the channel; if you are close and can help, tell it and go. If nobody answers and you can help, reply RECEIVED MAYDAY, go, and tell the coast station." },
         { "p": "If you cannot help, or the casualty cannot call, relay it: **MAYDAY RELAY** three times, all stations three times, this is and your own name three times, then her position and trouble." },
         { "photo": "bareboat-skipper/emergency/4", "plan": 1.6, "fig": { "type": "encounter", "you": { "hdg": 0, "sail": true, "boom": -14 }, "other": { "bearing": 40, "dist": 85, "hdg": 270, "sail": true, "boom": 14, "label": "Yacht" }, "wind": 90, "note": "Red hand flare from this yacht, nothing on the radio" } },
         { "table": { "head": ["You hear", "Meaning"], "rows": [
@@ -92,8 +92,8 @@
       "blocks": [
         { "list": [
           "Throw the danbuoy, post a spotter and press **MOB** on the plotter. Out of sight: MAYDAY.",
-          "Tack at once, leaving the headsail backed: the quick-stop keeps you close.",
-          "Approach on a close reach, easing sheets to slow; under power, slowly into the wind, in neutral alongside.",
+          "Tack at once, leaving the headsail backed: the quick-stop keeps you close. Or bear away to a beam reach for a few seconds, tack and return on a broad reach.",
+          "Approach on a close reach, easing sheets to slow, and stop with them to leeward; under power, slowly into the wind, in neutral alongside.",
           "Get a line on them first. Lift at the side with a halyard on the lifejacket's lifting loop; after long immersion, horizontally."
         ] },
         { "photo": "bareboat-skipper/emergency/6", "plan": 1.6, "fig": { "type": "encounter", "you": { "hdg": 300, "sail": true, "boom": -14 }, "other": { "bearing": 0, "dist": 75, "hdg": 0, "scale": 0.3, "label": "MOB" }, "wind": 0, "note": "Final approach under sail: close reach, sheets eased" } }
@@ -106,7 +106,7 @@
       "qa": { "q": "My yacht is taking on water: what do I do first?", "a": "Find and stop the inflow, because pumps only buy time: close the seacock, hammer a bung into a broken fitting, or tack to lift a hole clear of the water." },
       "refs": ["Flooding", "Fire", "Grounding", "Dismasting", "Loss of steering", "Towing", "Helicopter rescue", "Abandoning ship"],
       "blocks": [
-        { "p": "**Flooding**: pumps only buy time, so find and stop the inflow. Close the seacock, hammer a bung into a broken fitting, tack to lift a hole clear of the water. **Fire** in the engine bay: stop the engine, keep the hatch shut and fire the extinguisher through the fire port. Keep any fire downwind of the crew." },
+        { "p": "**Flooding**: taste it first: fresh means a tank or pipe, salt the sea. Close the seacock, hammer a bung into a broken fitting, tack to lift a hole clear of the water. **Fire** in the engine bay: stop the engine, keep the hatch shut and fire the extinguisher through the fire port. Keep any fire downwind of the crew." },
         { "table": { "head": ["Emergency", "What you do"], "rows": [
           ["Aground", "Heel her, kedge off towards deep water. Holed on rock: check before you pull off"],
           ["Dismasted", "Cut the rig away before it holes the hull; no lines in the water before you motor"],
