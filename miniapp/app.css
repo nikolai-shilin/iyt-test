@@ -377,6 +377,14 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .dbar b { text-align: right; color: var(--ink); font: 700 14px/1 'Carlito', Arial, sans-serif; font-variant-numeric: tabular-nums; }
 /* The Regatta game's block under the charts: its own heading, set apart from the charts above */
 .app .gmsec { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+/* Best times by course: a small table per course, rank · name · races · time; the fastest in the accent colour */
+.app .gmlb { display: flex; flex-direction: column; gap: 6px; padding-top: 6px; }
+.app .gmlb .gmc { font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: 11px; }
+.app .gmrow { display: grid; grid-template-columns: 1.4em minmax(0, 1fr) auto 3.2em; align-items: baseline; gap: 10px; }
+.app .gmrow .gmname { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.app .gmrow .gmn, .app .gmrow .gmt { font: 700 14px/1 'Carlito', Arial, sans-serif; font-variant-numeric: tabular-nums; color: var(--muted); }
+.app .gmrow .gmt { text-align: right; color: var(--ink); }
+.app .gmrow.gm1 .gmn, .app .gmrow.gm1 .gmt { color: var(--accent); }
 .app .in .dtrack i, .app .dchart.grow .dtrack i { transform-origin: left; animation: growX .45s var(--ease-out) both; }
 @media (prefers-reduced-motion: reduce) { .app .in .dtrack i, .app .dchart.grow .dtrack i { animation: none; } }
 .app .in .dplot i, .app .dchart.grow .dplot i { transform-origin: bottom; animation: growY .45s var(--ease-out) both; }

@@ -7,7 +7,7 @@
 //                                 wrongNote: { 'bs-034': { text, at, lang } },
 //                                 notes: [ { k: 'bs-buoyage/cardinal', text, at, lang } ] } ],
 //                               series: { hour: [ { at, joined, answers, wrong, reads, reports, races } × 24 ], day: [ … × 91 ] } | null,
-//                               game: [ { at, u, w, f, p, n, s, d } ] | null }
+//                               game: [ { at, u, w, l, f, p, n, s, d } ] | null }
 //   POST /api/admin { unflag: { q: 'bs-012', k: 'flags' | 'wrong', users: [id, …] } } → { ok: true, users: [id, …] }
 //                             takes that flag off those students' question (public.flag_clears, see below); 501 when the
 //                             table is not in the database yet
@@ -37,7 +37,8 @@
 // that function is in the database they are counted here from the rows. Reads and reports are always counted here.
 // null when neither worked — the rest of the page still loads.
 // game is the Regatta game's races over the same 91 days, newest first (public.game_races, written by api/game.mjs):
-// at = when it started (ms), u = the Telegram user (null: played in a plain browser), w = the wind, f = when the
+// at = when it started (ms), u = the Telegram user (null: played in a plain browser), w = the wind, l = laps (wind and
+// laps make the course, so times compare only within them), f = when the
 // player finished (ms, 0 = left before the finish), p = their place (null: not finished or disqualified), n = boats in
 // the race, s = their time (s), d = disqualified. The app counts the races, players and places for the range on
 // screen; series.races is the chart of races started. null until the table is in the database.
@@ -125,8 +126,8 @@ async function gameRaces() {
   const from = new Date(Date.now() - UNITS.day[0] * UNITS.day[1]).toISOString(), out = [];
   try {
     for (let off = 0; off < MAX_GAME_ROWS; off += 1000) {
-      const page = await db(`game_races?select=started_at,finished_at,user_id,wind,place,boats,secs,dsq&started_at=gte.${from}&order=started_at.desc&limit=1000&offset=${off}`);
-      for (const r of page) out.push({ at: Date.parse(r.started_at), u: r.user_id, w: r.wind, f: r.finished_at ? Date.parse(r.finished_at) : 0, p: r.place, n: r.boats, s: r.secs, d: !!r.dsq });
+      const page = await db(`game_races?select=started_at,finished_at,user_id,wind,laps,place,boats,secs,dsq&started_at=gte.${from}&order=started_at.desc&limit=1000&offset=${off}`);
+      for (const r of page) out.push({ at: Date.parse(r.started_at), u: r.user_id, w: r.wind, l: r.laps, f: r.finished_at ? Date.parse(r.finished_at) : 0, p: r.place, n: r.boats, s: r.secs, d: !!r.dsq });
       if (page.length < 1000) break;
     }
     return out;

@@ -99,8 +99,8 @@ let LANG = 'en';
 /* ---------- interface strings ---------- */
 // Plural forms: en [one, many]; ru [one, few, many] (1 вопрос, 2 вопроса, 5 вопросов).
 const PL = {
-  en: { question: ['question', 'questions'], topic: ['topic', 'topics'], mistake: ['mistake', 'mistakes'], exam: ['exam', 'exams'], day: ['day', 'days'], minute: ['minute', 'minutes'], student: ['student', 'students'], picture: ['picture', 'pictures'], race: ['race', 'races'], player: ['player', 'players'] },
-  ru: { question: ['вопрос', 'вопроса', 'вопросов'], topic: ['тема', 'темы', 'тем'], topicAcc: ['тему', 'темы', 'тем'], mistake: ['ошибка', 'ошибки', 'ошибок'], exam: ['экзамен', 'экзамена', 'экзаменов'], day: ['день', 'дня', 'дней'], minute: ['минута', 'минуты', 'минут'], student: ['ученик', 'ученика', 'учеников'], picture: ['рисунок', 'рисунка', 'рисунков'], race: ['гонка', 'гонки', 'гонок'], player: ['игрок', 'игрока', 'игроков'] },
+  en: { question: ['question', 'questions'], topic: ['topic', 'topics'], mistake: ['mistake', 'mistakes'], exam: ['exam', 'exams'], day: ['day', 'days'], minute: ['minute', 'minutes'], student: ['student', 'students'], picture: ['picture', 'pictures'], race: ['race', 'races'], player: ['player', 'players'], lap: ['lap', 'laps'] },
+  ru: { question: ['вопрос', 'вопроса', 'вопросов'], topic: ['тема', 'темы', 'тем'], topicAcc: ['тему', 'темы', 'тем'], mistake: ['ошибка', 'ошибки', 'ошибок'], exam: ['экзамен', 'экзамена', 'экзаменов'], day: ['день', 'дня', 'дней'], minute: ['минута', 'минуты', 'минут'], student: ['ученик', 'ученика', 'учеников'], picture: ['рисунок', 'рисунка', 'рисунков'], race: ['гонка', 'гонки', 'гонок'], player: ['игрок', 'игрока', 'игроков'], lap: ['круг', 'круга', 'кругов'] },
 };
 function word(n, key) {
   const f = (PL[LANG][key] || PL.en[key] || PL[LANG][key.replace(/Acc$/, '')]);
@@ -223,7 +223,7 @@ const STR = {
     chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chReports: 'Mistakes reported', chRange: 'Period', chLearning: 'Learning now, by course', chLearnNone: 'Nobody studied in this period', chNone: 'No numbers for the charts yet',
     rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
     chNote: (r) => ({ '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '3m': 'last 3 months' })[r],
-    gmK: 'Game', gmT: 'Regatta', gmFinished: 'finished', gmChart: 'Races started', gmTop: 'Most races', gmWind: 'Races by wind', gmPlaces: 'Where players finished',
+    gmK: 'Game', gmT: 'Regatta', gmFinished: 'finished', gmChart: 'Races started', gmLeaders: 'Best times by course', gmLeadersMeta: 'Fastest finish of each player, without disqualifications', gmTop: 'Most races', gmWind: 'Races by wind', gmPlaces: 'Where players finished',
     gmLight: 'Light wind', gmMedium: 'Medium wind', gmStrong: 'Strong wind', gmAnon: 'No Telegram', gmBest: (p) => `best ${p}`, gmDsq: 'Disqualified',
     gmPlace: (n) => `${n}${['st', 'nd', 'rd'][n - 1] || 'th'}`, gmNone: 'Nobody raced in this period', gmSetup: 'Game statistics start once the game_races migration is in the database',
     unflagOne: 'Remove', unflagAll: (n) => `Remove from all ${n}`, confirmUnflagAll: (n) => `Remove this flag for all ${pl(n, 'student')}?`,
@@ -248,7 +248,7 @@ const STR = {
     picPh: 'Например: правый бортовой огонь нарисован красным, а должен быть зелёным',
     readUpK: 'Что почитать', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Скоро', soon2027: 'В 2027 году', planned: 'В планах',
-    homeKicker: 'Теория к яхтенным сертификатам · бесплатно', homeTitle: 'Сдайте экзамен на яхтенный&nbsp;сертификат',
+    homeKicker: 'Теория к яхтенным сертификатам · бесплатно', homeTitle: 'Сдайте экзамен на&nbsp;яхтенный сертификат',
     homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа. Выберите уровень, к которому готовитесь.',
     streak: (n) => `${pl(n, 'day')} подряд`,
     levelMeta: (t, q, ex) => `${pl(t, 'topic')} · ${pl(q, 'question')}${ex ? ' · ' + pl(ex, 'exam') : ''}`,
@@ -347,7 +347,7 @@ const STR = {
     chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chReports: 'Сообщения об ошибках', chRange: 'Период', chLearning: 'Сейчас изучают, по курсам', chLearnNone: 'За этот период никто не занимался', chNone: 'Для графиков пока нет данных',
     rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
     chNote: (r) => ({ '24h': 'за 24 часа', '7d': 'за 7 дней', '30d': 'за 30 дней', '3m': 'за 3 месяца' })[r],
-    gmK: 'Игра', gmT: 'Регата', gmFinished: 'до финиша', gmChart: 'Начато гонок', gmTop: 'Больше всех гонок', gmWind: 'Гонки по ветру', gmPlaces: 'Места на финише',
+    gmK: 'Игра', gmT: 'Регата', gmFinished: 'до финиша', gmChart: 'Начато гонок', gmLeaders: 'Лучшее время на каждой дистанции', gmLeadersMeta: 'Самый быстрый финиш каждого игрока, без дисквалификаций', gmTop: 'Больше всех гонок', gmWind: 'Гонки по ветру', gmPlaces: 'Места на финише',
     gmLight: 'Слабый ветер', gmMedium: 'Средний ветер', gmStrong: 'Сильный ветер', gmAnon: 'Без Telegram', gmBest: (p) => `лучшее ${p}`, gmDsq: 'Дисквалификация',
     gmPlace: (n) => `${n}-е`, gmNone: 'За этот период никто не гонялся', gmSetup: 'Статистика игры появится, когда миграция game_races будет в базе',
     unflagOne: 'Снять', unflagAll: (n) => `Снять у всех (${n})`, confirmUnflagAll: (n) => `Снять эту отметку у всех (${pl(n, 'student')})?`,
@@ -775,7 +775,7 @@ function loadDaily() {
 }
 // Admin: every student's results from api/admin.mjs. undefined = not asked, 'loading', null = failed, or the list.
 // ADM_SERIES: joins, answers, wrong answers, theory reads and errors per UTC hour (24) and day (91) for the Overview
-// charts, or null. ADM_GAME: the Regatta races of the last 91 days ({ at, u, w, f, p, n, s, d }, api/admin.mjs), or null.
+// charts, or null. ADM_GAME: the Regatta races of the last 91 days ({ at, u, w, l, f, p, n, s, d }, api/admin.mjs), or null.
 let ADM, ADM_SERIES = null, ADM_GAME = null;
 // The admin pages, in the order of their bottom menu: [view, icon, label]
 const ADMIN_TABS = [['admin', 'chart', 'tabOverview'], ['adminUsers', 'users', 'tabStudents'], ['adminWrong', 'alert', 'tabReported'], ['adminNotes', 'page', 'tabArticles'], ['adminFlags', 'flag', 'tabFlagged']];
@@ -994,8 +994,8 @@ function dailyCharts() {
     learningChart() + series + gameBlock();
 }
 // The Regatta game in the range on screen (ADM_GAME): races started, players (a browser without Telegram counts as
-// one) and races finished; the races per hour, day or week; who raced most, with their best place; the wind they
-// chose; and where they finished.
+// one) and races finished; the races per hour, day or week; the fastest players on each course (gameLeaders); who
+// raced most, with their best place; the wind they chose; and where they finished.
 function gameBlock() {
   const head = `<div class="stack g4 gmsec"><span class="meta">${t('gmK')}</span><h3 class="display-s" style="font-size:22px">${t('gmT')}</h3></div>`;
   if (!ADM_GAME) return head + `<p class="card-meta">${t('gmSetup')}</p>`;
@@ -1014,14 +1014,39 @@ function gameBlock() {
     return `<div class="dchart${CH_GROW ? ' grow' : ''}"><div class="dhead"><div class="stack"><span class="kicker">${esc(title)}</span><span class="meta dread"><b>${total}</b> ${esc(word(total, 'race'))}</span></div></div>` +
       `<div class="dbars">${rows.map(([l, n]) => `<div class="dbar"><span class="card-meta">${esc(l)}</span><span class="dtrack"><i style="width:${n ? Math.max(2, (n / max) * 100) : 0}%"></i></span><b>${n}</b></div>`).join('')}</div></div>`; };
   const byId = new Map((Array.isArray(ADM) ? ADM : []).map((u) => [u.id, u]));
+  const nameOf = (u) => (u == null ? t('gmAnon') : byId.has(u) ? studentName(byId.get(u)) : String(u));
   const top = [...who.values()].sort((a, b) => b.n - a.n).slice(0, 8).map((w) => {
-    const name = w.u == null ? t('gmAnon') : byId.has(w.u) ? studentName(byId.get(w.u)) : String(w.u);
+    const name = nameOf(w.u);
     return [w.best ? `${name} · ${t('gmBest', t('gmPlace', w.best))}` : name, w.n];
   });
   const wind = [['light', 'gmLight'], ['medium', 'gmMedium'], ['strong', 'gmStrong']].map(([k, l]) => [t(l), list.filter((g) => g.w === k).length]);
   const most = Math.max(4, ...fin.map((g) => g.p || 0)), places = Array.from({ length: most }, (_, i) => [t('gmPlace', i + 1), fin.filter((g) => g.p === i + 1).length]);
   if (fin.some((g) => g.d)) places.push([t('gmDsq'), fin.filter((g) => g.d).length]);
-  return head + tiles + chart + bars(t('gmTop'), list.length, top) + bars(t('gmWind'), list.length, wind) + (fin.length ? bars(t('gmPlaces'), fin.length, places) : '');
+  return head + tiles + chart + gameLeaders(fin, nameOf) + bars(t('gmTop'), list.length, top) + bars(t('gmWind'), list.length, wind) + (fin.length ? bars(t('gmPlaces'), fin.length, places) : '');
+}
+// The best players of the range on each course: wind and laps set the course (its leg length), so times compare
+// only within one. Per course, every player's fastest finish without a disqualification, the top 5, fastest first,
+// with how many races they finished on it and their best place there. Players in a plain browser share one row (No
+// Telegram).
+const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+function gameLeaders(fin, nameOf) {
+  const courses = [];
+  for (const w of ['light', 'medium', 'strong']) for (const l of [1, 2]) {
+    const best = new Map();
+    for (const g of fin) {
+      if (g.w !== w || (g.l || 1) !== l || g.d || !(g.s > 0)) continue;
+      const k = g.u == null ? 'anon' : g.u, b = best.get(k) || { u: g.u, s: Infinity, n: 0, p: 0 };
+      b.n++; b.s = Math.min(b.s, g.s); if (g.p && (!b.p || g.p < b.p)) b.p = g.p;
+      best.set(k, b);
+    }
+    if (best.size) courses.push([w, l, [...best.values()].sort((a, b) => a.s - b.s).slice(0, 5)]);
+  }
+  if (!courses.length) return '';
+  const wind = { light: 'gmLight', medium: 'gmMedium', strong: 'gmStrong' };
+  return `<div class="dchart"><div class="dhead"><div class="stack"><span class="kicker">${esc(t('gmLeaders'))}</span><span class="card-meta">${esc(t('gmLeadersMeta'))}</span></div></div>` +
+    courses.map(([w, l, rows]) => `<div class="gmlb"><span class="card-meta gmc">${esc(`${t(wind[w])} · ${pl(l, 'lap')}`)}</span>` +
+      rows.map((b, i) => `<div class="gmrow${i === 0 ? ' gm1' : ''}"><b class="gmn">${i + 1}</b><span class="body-s gmname">${esc(nameOf(b.u))}</span>` +
+        `<span class="card-meta">${esc(pl(b.n, 'race'))}${b.p ? ` · ${esc(t('gmBest', t('gmPlace', b.p)))}` : ''}</span><b class="gmt">${mmss(b.s)}</b></div>`).join('') + '</div>').join('') + '</div>';
 }
 // Learning now: the students active in the range (their last sync), by the course they are on (studentLevel: the one
 // they picked last, else the one they have seen most of), most first. Students with no answers yet are not counted.
