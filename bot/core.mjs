@@ -136,8 +136,8 @@ const tag = (ru) => (ru ? 'r' : 'e');
 const tagRu = (t, from) => (t === 'r' ? true : t === 'e' ? false : RU(from));
 const T = {
   start: (ru) => ru
-    ? `⚓️ <b>IYT Test</b> — вопросы для подготовки к экзаменам IYT, по Правилам парусных гонок и по приёмке чартерной яхты. Уже доступны: <b>${names.join('</b>, <b>')}</b> — ${N} ситуаций, тренировка по темам и пробный экзамен.\n\nНажмите «Открыть» и выберите уровень.`
-    : `⚓️ <b>IYT Test</b> — practice questions for IYT certification levels, the Racing Rules of Sailing and the charter check-in. Ready now: <b>${names.join('</b>, <b>')}</b> — ${N} situations, practice by topic and a mock exam.\n\nTap Open and pick your level.`,
+    ? `⚓️ <b>Sailing Certification Test</b> — вопросы для подготовки к экзаменам на яхтенные сертификаты, по Правилам парусных гонок и по приёмке чартерной яхты. Уже доступны: <b>${names.join('</b>, <b>')}</b> — ${N} ситуаций, тренировка по темам и пробный экзамен.\n\nНажмите «Открыть» и выберите уровень.`
+    : `⚓️ <b>Sailing Certification Test</b> — practice questions for sailing certification levels, the Racing Rules of Sailing and the charter check-in. Ready now: <b>${names.join('</b>, <b>')}</b> — ${N} situations, practice by topic and a mock exam.\n\nTap Open and pick your level.`,
   open: (ru) => (ru ? 'Открыть' : 'Open'),
   exam: (ru) => (ru ? '⏱ Пробный экзамен по вашему уровню: случайные вопросы из всех тем, таймер, ответы в конце, 70 % для сдачи.' : '⏱ Mock exam for your level: random questions from every topic, a timer, answers at the end, 70 % to pass.'),
   examBtn: (ru) => (ru ? 'Начать экзамен' : 'Start the exam'),

@@ -59,8 +59,8 @@ const FIG_RU = {
 const STR = {
   en: {
     levels: 'Levels', about: 'About', other: 'Русский', practise: 'Practise in the app', telegram: 'Open in Telegram',
-    kicker: 'IYT theory · free', ruleK: 'Rule', figure: 'Figure',
-    homeTitle: 'Pass your IYT exam',
+    kicker: 'Sailing certification theory · free', ruleK: 'Rule', figure: 'Figure',
+    homeTitle: 'Pass your sailing certification exam',
     homeLead: 'Close-to-real questions for every certification level, with an explanation after each answer, and a theory article for every topic. Pick the level you are studying for.',
     levelTitle: (l, kind) => `${l} practice test: ${kind === 'other' ? '' : 'exam '}questions and theory`,
     levelDesc: (l, n, t, q, m, p) => `Free ${l} practice test: ${n} questions in ${t} topics with the reason after every answer, a theory article for each topic, and a timed mock exam of ${q} questions in ${m} minutes, pass at ${p} %.`,
@@ -75,24 +75,24 @@ const STR = {
     ctaK: 'Practise it', ctaTopic: (n) => `All ${n} questions of this topic are in the app: practice by topic with the reason after every answer, your mistakes brought back, and a timed mock exam. Free, no sign-up, in the browser or in Telegram.`,
     ctaLevel: 'Practise by topic with the reason after every answer, take a timed mock exam, and see your progress per topic. Free, no sign-up, in the browser or in Telegram.',
     prev: (i) => `‹ Topic ${i}`, next: (i) => `Topic ${i} ›`,
-    foot: 'Written for study, close to the IYT syllabus. Not an IYT or World Sailing publication; the rules themselves are the authority.',
+    foot: 'Written for study, close to the course syllabus. Not an official publication of a certifying body or World Sailing; the rules themselves are the authority.',
     notFound: 'This page is not here', notFoundLead: 'The address may be mistyped, or the page has moved. The levels are below, and the app is on the home page.',
-    aboutTitle: 'About IYT Test',
-    aboutLead: 'A free practice app for the theory of IYT sailing certificates, in English and Russian, in any browser and in Telegram.',
+    aboutTitle: 'About Sailing Certification Test',
+    aboutLead: 'A free practice app for the theory of sailing certification, in English and Russian, in any browser and in Telegram.',
     aboutBody: [
-      'IYT Test covers the IYT levels from VHF Radio Operator and International Crew to Yachtmaster Ocean, the Racing Rules of Sailing, and a charter check-in course. Every question is a situation you meet on the water, drawn where it can be: the mark ahead, the lights at night, the other boat’s bearing, the engine panel. Four options, and a one-line note naming the rule.',
+      'Sailing Certification Test covers the sailing certification levels from VHF Radio Operator and International Crew to Yachtmaster Ocean, the Racing Rules of Sailing, and a charter check-in course. Every question is a situation you meet on the water, drawn where it can be: the mark ahead, the lights at night, the other boat’s bearing, the engine panel. Four options, and a one-line note naming the rule.',
       'Each topic of each level has a theory article that explains the rules its questions ask about, with drawings. In the app you practise by topic, your mistakes come back until you get them right, and a timed mock exam spreads its questions over every topic.',
-      '**Written for study.** The questions and the articles are our own work, close to the syllabus. They are not IYT exam content, and neither IYT nor World Sailing has reviewed them. Facts follow COLREGs, IALA buoyage and standard seamanship; where practice differs by region, the article says so. The exam size, time and pass mark in the app are its own defaults.',
+      '**Written for study.** The questions and the articles are our own work, close to the syllabus. They are not official exam content, and no certifying body or World Sailing has reviewed them. Facts follow COLREGs, IALA buoyage and standard seamanship; where practice differs by region, the article says so. The exam size, time and pass mark in the app are its own defaults.',
     ],
     aboutWho: (h) => `Made by RYC. Found a mistake? Every question and every article section has a report button in the app, or write to the author on Telegram: <a href="https://t.me/${h}">@${h}</a>.`,
     aboutMcp: (u) => `For AI assistants: the questions and the articles are also a public, read-only MCP server at <code>${u}</code>. Add it as a custom connector and practise in your own assistant.`,
     privacy: 'Privacy', privTitle: 'Privacy policy', privDate: 'Updated 5 November 2026',
-    privLead: 'What IYT Test keeps about you, where, who sees it, and how to have it deleted. The short version: in a browser, nothing that says who you are; in Telegram, your Telegram name and your progress, so it follows you between devices.',
+    privLead: 'What Sailing Certification Test keeps about you, where, who sees it, and how to have it deleted. The short version: in a browser, nothing that says who you are; in Telegram, your Telegram name and your progress, so it follows you between devices.',
     privBody: [
-      ['Who we are', 'IYT Test is made by RYC. For anything about your data, write to the author on Telegram: [@fullcrimp](https://t.me/fullcrimp).'],
+      ['Who we are', 'Sailing Certification Test is made by RYC. For anything about your data, write to the author on Telegram: [@fullcrimp](https://t.me/fullcrimp).'],
       ['In a browser', 'The site and the app ask for no account. Your progress stays **on your device**, in the browser’s storage, and is not sent to us. We count page views with Vercel Web Analytics, which uses no cookies and cannot tell who you are: it sees the page, the referring site, and the country and kind of device.'],
       ['In Telegram', 'When you open the app in Telegram, Telegram gives it your **Telegram id, name, username and language**, signed so that nobody else can use them. The app keeps your progress in Telegram’s cloud storage and on our server, so it is the same on every device: the questions you answered, whether you were right, the option you picked and when, your mock exams, the questions you flagged and the notes you wrote about a question or a section of an article.',
-        'The admins of IYT Test (the author) can see each student’s name, username, results, flags and notes, to fix the questions people report and see where they get stuck. They also see your Telegram profile photo, fetched from Telegram when they open the list, not stored.'],
+        'The admins of Sailing Certification Test (the author) can see each student’s name, username, results, flags and notes, to fix the questions people report and see where they get stuck. They also see your Telegram profile photo, fetched from Telegram when they open the list, not stored.'],
       ['The Telegram bot', 'When you write to [@iyt_test_bot](https://t.me/iyt_test_bot), it saves your Telegram id, name, username and language, and whether the question of the day is on. It does not keep what you write to it or how you answer the question of the day. If you block the bot, it marks you as blocked and stops writing.'],
       ['The MCP server', 'The MCP server for AI assistants asks for no sign-in and stores nothing about the people or the assistants that use it. Like every request to the site, a call passes through the hosting’s logs (the IP address, the address called and the time), which Vercel keeps for a limited time to run the service.'],
       ['Who else handles it', 'Vercel hosts the site, the app and the server, and counts the page views. Supabase holds the database, in the EU (Stockholm). Telegram runs the bot, the mini app and its cloud storage. Nobody else gets your data: there are no ads, and nothing is sold.'],
@@ -101,8 +101,8 @@ const STR = {
     ],
     mcpHow: 'How to connect it', mcpBand: 'Practise in Claude or ChatGPT', mcpBandText: 'The questions and the theory are also an MCP server: add it to your AI assistant and it quizzes you, checks your answers and explains the rule.',
     mcp: 'For AI assistants', mcpK: 'MCP server · free', mcpTitle: 'Practise in your AI assistant',
-    mcpDesc: 'Connect IYT Test to Claude, ChatGPT or any assistant that speaks MCP: it quizzes you on IYT questions, checks your answers, explains the rule and runs a mock exam. Free, no sign-in.',
-    mcpLead: 'The questions and the theory articles of IYT Test are also an MCP server. Add it to Claude, ChatGPT or any other assistant that speaks the Model Context Protocol, and the assistant can quiz you, check your answers, explain the rule behind each one and run a mock exam, in a conversation.',
+    mcpDesc: 'Connect Sailing Certification Test to Claude, ChatGPT or any assistant that speaks MCP: it quizzes you on sailing certification questions, checks your answers, explains the rule and runs a mock exam. Free, no sign-in.',
+    mcpLead: 'The questions and the theory articles of Sailing Certification Test are also an MCP server. Add it to Claude, ChatGPT or any other assistant that speaks the Model Context Protocol, and the assistant can quiz you, check your answers, explain the rule behind each one and run a mock exam, in a conversation.',
     mcpUrlK: 'The address', mcpUrlNote: 'Public and read-only: no sign-in, no key, nothing to install.',
     mcpBody: [
       ['Connect it', '**Claude** (web, desktop and mobile): Settings → Connectors → Add custom connector, then paste the address.',
@@ -124,15 +124,15 @@ const STR = {
         ['get_figure', 'A drawing as SVG'],
       ] }, 'Every tool answers in English or Russian. What is not translated yet comes in English.'],
       ['What it keeps', 'Nothing. The server asks for no sign-in and stores nothing about you or your assistant; your progress in the app is not connected to it. The details are in the [privacy policy](/privacy).'],
-      ['Where else to find it', 'It is listed in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.nikolai-shilin/iyt-test) as `io.github.nikolai-shilin/iyt-test`. The questions and the articles are written for study, close to the syllabus; they are not IYT exam content.'],
+      ['Where else to find it', 'It is listed in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.nikolai-shilin/iyt-test) as `io.github.nikolai-shilin/iyt-test`. The questions and the articles are written for study, close to the syllabus; they are not official exam content.'],
     ],
   },
   ru: {
     levels: 'Уровни', about: 'О проекте', other: 'English', practise: 'Тренироваться в приложении', telegram: 'Открыть в Telegram',
-    kicker: 'Теория IYT · бесплатно', ruleK: 'Правило', figure: 'Рисунок',
-    homeTitle: 'Сдайте экзамен IYT',
+    kicker: 'Теория к яхтенным сертификатам · бесплатно', ruleK: 'Правило', figure: 'Рисунок',
+    homeTitle: 'Сдайте экзамен на яхтенный сертификат',
     homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа и статьёй по теории для каждой темы. Выберите уровень, к которому готовитесь.',
-    levelTitle: (l, kind) => `${l}: тест и теория к ${kind === 'licence' ? 'экзамену на права на яхту' : kind === 'iyt' ? 'экзамену IYT' : 'экзамену'}`,
+    levelTitle: (l, kind) => `${l}: тест и теория к ${kind === 'licence' ? 'экзамену на права на яхту' : kind === 'iyt' ? 'экзамену на яхтенный сертификат' : 'экзамену'}`,
     levelDesc: (l, n, t, q, m, p, kind) => `${kind === 'licence' ? `Бесплатный тест к экзамену на международные права на яхту ${l}` : `Бесплатный тест ${l}`}: ${n} вопросов по ${t} темам с пояснением к каждому ответу, статья по теории для каждой темы и пробный экзамен на время (${q} вопросов, ${m} минут, проходной балл ${p} %).`,
     levelLead: (n, t) => `${n} вопросов по ${t} темам. У каждой темы есть статья с рисунками, которая объясняет правила из вопросов; приложение задаёт вопросы, объясняет каждый ответ и возвращает ошибки, пока вы не ответите верно.`,
     questions: 'вопросов', topics: 'тем', exam: 'вопросов в экзамене',
@@ -145,24 +145,24 @@ const STR = {
     ctaK: 'Потренируйтесь', ctaTopic: (n) => `Все ${n} вопросов этой темы — в приложении: тренировка по темам с пояснением после каждого ответа, ошибки возвращаются, есть пробный экзамен на время. Бесплатно, без регистрации, в браузере или в Telegram.`,
     ctaLevel: 'Тренируйтесь по темам с пояснением после каждого ответа, сдайте пробный экзамен на время и следите за прогрессом по каждой теме. Бесплатно, без регистрации, в браузере или в Telegram.',
     prev: (i) => `‹ Тема ${i}`, next: (i) => `Тема ${i} ›`,
-    foot: 'Написано для подготовки, близко к программе IYT. Не издание IYT или World Sailing; авторитетны сами правила.',
+    foot: 'Написано для подготовки, близко к программе курсов. Не официальное издание сертифицирующей организации или World Sailing; авторитетны сами правила.',
     notFound: 'Такой страницы нет', notFoundLead: 'Возможно, в адресе опечатка или страница переехала. Уровни — ниже, приложение — на главной.',
-    aboutTitle: 'Об IYT Test',
-    aboutLead: 'Бесплатное приложение для подготовки к теории яхтенных сертификатов IYT — на русском и английском, в браузере и в Telegram.',
+    aboutTitle: 'О Sailing Certification Test',
+    aboutLead: 'Бесплатное приложение для подготовки к теории яхтенных сертификатов — на русском и английском, в браузере и в Telegram.',
     aboutBody: [
-      'IYT Test охватывает уровни IYT от VHF Radio Operator и International Crew до Yachtmaster Ocean, Правила парусных гонок и курс приёмки чартерной яхты. Каждый вопрос — ситуация, которая встречается на воде, и где можно, она нарисована: знак по курсу, огни ночью, пеленг на другую яхту, приборы двигателя. Четыре варианта и одна строка с правилом.',
+      'Sailing Certification Test охватывает уровни яхтенной сертификации от VHF Radio Operator и International Crew до Yachtmaster Ocean, Правила парусных гонок и курс приёмки чартерной яхты. Каждый вопрос — ситуация, которая встречается на воде, и где можно, она нарисована: знак по курсу, огни ночью, пеленг на другую яхту, приборы двигателя. Четыре варианта и одна строка с правилом.',
       'У каждой темы каждого уровня есть статья по теории с рисунками, которая объясняет правила из её вопросов. В приложении вы тренируетесь по темам, ошибки возвращаются, пока вы не ответите верно, а пробный экзамен на время собирает вопросы со всех тем.',
-      '**Написано для подготовки.** Вопросы и статьи — наша собственная работа, близкая к программе. Это не экзаменационные материалы IYT, ни IYT, ни World Sailing их не проверяли. Факты следуют МППСС, системе IALA и хорошей морской практике; где практика зависит от региона, статья это оговаривает. Размер экзамена, время и проходной балл — настройки самого приложения.',
+      '**Написано для подготовки.** Вопросы и статьи — наша собственная работа, близкая к программе. Это не официальные экзаменационные материалы, ни сертифицирующие организации, ни World Sailing их не проверяли. Факты следуют МППСС, системе IALA и хорошей морской практике; где практика зависит от региона, статья это оговаривает. Размер экзамена, время и проходной балл — настройки самого приложения.',
     ],
     aboutWho: (h) => `Сделано RYC. Нашли ошибку? У каждого вопроса и каждого раздела статьи в приложении есть кнопка «Сообщить», или напишите автору в Telegram: <a href="https://t.me/${h}">@${h}</a>.`,
     aboutMcp: (u) => `Для ИИ-ассистентов: вопросы и статьи доступны как публичный MCP-сервер только для чтения — <code>${u}</code>. Добавьте его как свой коннектор и тренируйтесь в своём ассистенте.`,
     privacy: 'Конфиденциальность', privTitle: 'Политика конфиденциальности', privDate: 'Обновлено 5 ноября 2026 года',
-    privLead: 'Что IYT Test хранит о вас, где, кто это видит и как это удалить. Коротко: в браузере — ничего, по чему вас можно узнать; в Telegram — ваше имя в Telegram и ваш прогресс, чтобы он был одинаковым на всех устройствах.',
+    privLead: 'Что Sailing Certification Test хранит о вас, где, кто это видит и как это удалить. Коротко: в браузере — ничего, по чему вас можно узнать; в Telegram — ваше имя в Telegram и ваш прогресс, чтобы он был одинаковым на всех устройствах.',
     privBody: [
-      ['Кто мы', 'IYT Test делает RYC. По любым вопросам о ваших данных пишите автору в Telegram: [@fullcrimp](https://t.me/fullcrimp).'],
+      ['Кто мы', 'Sailing Certification Test делает RYC. По любым вопросам о ваших данных пишите автору в Telegram: [@fullcrimp](https://t.me/fullcrimp).'],
       ['В браузере', 'Сайт и приложение не просят учётной записи. Ваш прогресс хранится **на вашем устройстве**, в памяти браузера, и нам не отправляется. Просмотры страниц мы считаем через Vercel Web Analytics: без cookie и без возможности узнать, кто вы, — видны только страница, сайт, с которого вы пришли, страна и тип устройства.'],
       ['В Telegram', 'Когда вы открываете приложение в Telegram, Telegram передаёт ему ваши **id, имя, имя пользователя и язык** с подписью, так что никто другой не может ими воспользоваться. Приложение хранит ваш прогресс в облачном хранилище Telegram и на нашем сервере, чтобы он был одинаковым на всех устройствах: на какие вопросы вы отвечали, верно ли, какой вариант выбрали и когда, ваши пробные экзамены, отмеченные вопросы и заметки, которые вы оставили к вопросу или разделу статьи.',
-        'Администраторы IYT Test (автор) видят имя, имя пользователя, результаты, отметки и заметки каждого ученика — чтобы исправлять вопросы, о которых сообщают, и видеть, где возникают трудности. Ещё они видят фото вашего профиля в Telegram: оно загружается из Telegram, когда они открывают список, и не хранится.'],
+        'Администраторы Sailing Certification Test (автор) видят имя, имя пользователя, результаты, отметки и заметки каждого ученика — чтобы исправлять вопросы, о которых сообщают, и видеть, где возникают трудности. Ещё они видят фото вашего профиля в Telegram: оно загружается из Telegram, когда они открывают список, и не хранится.'],
       ['Бот в Telegram', 'Когда вы пишете [@iyt_test_bot](https://t.me/iyt_test_bot), он сохраняет ваши id, имя, имя пользователя и язык в Telegram и то, включён ли вопрос дня. Он не хранит то, что вы ему пишете, и ваши ответы на вопрос дня. Если вы заблокируете бота, он отметит это и перестанет писать.'],
       ['MCP-сервер', 'MCP-сервер для ИИ-ассистентов не просит входа и не хранит ничего о людях и ассистентах, которые к нему обращаются. Как и любой запрос к сайту, обращение проходит через журналы хостинга (IP-адрес, запрошенный адрес и время), которые Vercel хранит ограниченное время для работы сервиса.'],
       ['Кто ещё обрабатывает данные', 'Vercel размещает сайт, приложение и сервер и считает просмотры страниц. Supabase хранит базу данных в ЕС (Стокгольм). Telegram обслуживает бота, мини-приложение и его облачное хранилище. Больше ваши данные никто не получает: рекламы нет, ничего не продаётся.'],
@@ -171,8 +171,8 @@ const STR = {
     ],
     mcpHow: 'Как подключить', mcpBand: 'Тренируйтесь в Claude или ChatGPT', mcpBandText: 'Вопросы и теория доступны и как MCP-сервер: добавьте его в свой ИИ-ассистент, и он будет задавать вопросы, проверять ответы и объяснять правило.',
     mcp: 'Для ИИ-ассистентов', mcpK: 'MCP-сервер · бесплатно', mcpTitle: 'Тренируйтесь в своём ИИ-ассистенте',
-    mcpDesc: 'Подключите IYT Test к Claude, ChatGPT или любому ассистенту с поддержкой MCP: он задаёт вопросы IYT, проверяет ответы, объясняет правило и проводит пробный экзамен. Бесплатно, без входа.',
-    mcpLead: 'Вопросы и статьи по теории IYT Test доступны и как MCP-сервер. Добавьте его в Claude, ChatGPT или другой ассистент, который поддерживает Model Context Protocol, — и ассистент прямо в разговоре будет задавать вопросы, проверять ответы, объяснять правило за каждым и проводить пробный экзамен.',
+    mcpDesc: 'Подключите Sailing Certification Test к Claude, ChatGPT или любому ассистенту с поддержкой MCP: он задаёт вопросы к яхтенным сертификатам, проверяет ответы, объясняет правило и проводит пробный экзамен. Бесплатно, без входа.',
+    mcpLead: 'Вопросы и статьи по теории Sailing Certification Test доступны и как MCP-сервер. Добавьте его в Claude, ChatGPT или другой ассистент, который поддерживает Model Context Protocol, — и ассистент прямо в разговоре будет задавать вопросы, проверять ответы, объяснять правило за каждым и проводить пробный экзамен.',
     mcpUrlK: 'Адрес', mcpUrlNote: 'Публичный и только для чтения: без входа, без ключа, ничего не нужно устанавливать.',
     mcpBody: [
       ['Как подключить', '**Claude** (веб, компьютер и телефон): Настройки → Коннекторы → Добавить свой коннектор, затем вставьте адрес.',
@@ -194,7 +194,7 @@ const STR = {
         ['get_figure', 'Рисунок в формате SVG'],
       ] }, 'Все инструменты отвечают на английском или русском. То, что ещё не переведено, приходит на английском.'],
       ['Что он хранит', 'Ничего. Сервер не просит входа и ничего не хранит о вас и вашем ассистенте; ваш прогресс в приложении с ним не связан. Подробности — в [политике конфиденциальности](/ru/privacy).'],
-      ['Где ещё его найти', 'Он опубликован в [официальном реестре MCP](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.nikolai-shilin/iyt-test) под именем `io.github.nikolai-shilin/iyt-test`. Вопросы и статьи написаны для подготовки, близко к программе; это не экзаменационные материалы IYT.'],
+      ['Где ещё его найти', 'Он опубликован в [официальном реестре MCP](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.nikolai-shilin/iyt-test) под именем `io.github.nikolai-shilin/iyt-test`. Вопросы и статьи написаны для подготовки, близко к программе; это не официальные экзаменационные материалы.'],
     ],
   },
 };
@@ -304,7 +304,7 @@ function shell({ lang, path, alt = {}, title, desc, body, ld, css, type = 'websi
 <link rel="apple-touch-icon" href="/apple-icon.png">
 ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${url}">\n${alts.join('\n')}`}
 <meta property="og:type" content="${type}">
-<meta property="og:site_name" content="IYT Test">
+<meta property="og:site_name" content="Sailing Certification Test">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
@@ -317,7 +317,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
 <body>
 <div class="screen app page" id="page">
 <script>try { if (matchMedia('(prefers-color-scheme: dark)').matches) { document.getElementById('page').classList.add('theme-night'); document.documentElement.dataset.theme = 'dark'; document.querySelector('meta[name=theme-color]').content = '#000000'; } } catch (e) {}</script>
-<header class="wrap pg-top"><a href="${at(lang)}" aria-label="IYT Test"><img class="logo" src="/design/logo-black.svg" alt="RYC" width="50" height="25"></a>
+<header class="wrap pg-top"><a href="${at(lang)}" aria-label="Sailing Certification Test"><img class="logo" src="/design/logo-black.svg" alt="RYC" width="50" height="25"></a>
 <nav><a href="${at(lang, '/about')}">${s.about}</a>${alt[other] ? `<a href="${alt[other]}" hreflang="${other}" lang="${other}">${STR[lang].other}</a>` : ''}</nav></header>
 <main class="wrap">
 ${body}
@@ -334,7 +334,7 @@ const crumbs = (items) => `<nav class="crumbs meta" aria-label="Breadcrumbs">${i
 const crumbLd = (items) => ({ '@type': 'BreadcrumbList', itemListElement: items.map(([name, href], i) => ({ '@type': 'ListItem', position: i + 1, name, item: SITE + href })) });
 const cta = (s, text, link) => `<div class="band pg-cta"><span class="kicker">${s.ctaK}</span><p class="body-muted" style="margin:0">${text}</p>` +
   `<div class="row"><a class="pill pill-primary" href="${appLink(link)}">${s.practise}</a><a class="pill pill-quiet" href="${tgLink(link)}">${s.telegram}</a></div></div>`;
-const ORG = { '@type': 'Organization', name: 'IYT Test', url: `${SITE}/`, logo: `${SITE}/design/logo-black.svg` };
+const ORG = { '@type': 'Organization', name: 'Sailing Certification Test', url: `${SITE}/`, logo: `${SITE}/design/logo-black.svg` };
 
 export async function buildPages(out, { css }) {
   const sheet = await readFile(join(root, 'miniapp/site.css'), 'utf8');
@@ -380,7 +380,7 @@ export async function buildPages(out, { css }) {
         path: lp, lang, alt: { en: `/${L.id}`, ru: `/ru/${L.id}` },
         html: shell({
           lang, path: lp, alt: { en: `/${L.id}`, ru: `/ru/${L.id}` }, css,
-          title: `${s.levelTitle(L.title, L.kind)} · IYT Test`,
+          title: `${s.levelTitle(L.title, L.kind)} · Sailing Certification Test`,
           desc: clip(s.levelDesc(L.title, b.questions.length, b.topics.length, b.examQuestions, b.examMinutes, b.passMark, L.kind), 300),
           ld: { '@context': 'https://schema.org', '@graph': [
             { '@type': 'CollectionPage', name: s.levelTitle(L.title, L.kind), url: SITE + lp, inLanguage: lang, isAccessibleForFree: true, publisher: ORG,
@@ -426,7 +426,7 @@ ${cta(s, s.ctaLevel, L.link)}
           path, lang, alt,
           html: shell({
             lang, path, alt, css, type: 'article',
-            title: `${s.articleTitle(tt, L.title)} · IYT Test`,
+            title: `${s.articleTitle(tt, L.title)} · Sailing Certification Test`,
             desc: clip(a.lead),
             ld: { '@context': 'https://schema.org', '@graph': [
               { '@type': 'Article', headline: tt, description: plain(a.lead), inLanguage: lang, url: SITE + path, mainEntityOfPage: SITE + path, image: `${SITE}/intro.jpg`,
@@ -460,7 +460,7 @@ ${cta(s, s.ctaTopic(qs.length), L.link)}
     add({
       path: ap, lang, alt: { en: '/about', ru: '/ru/about' },
       html: shell({
-        lang, path: ap, alt: { en: '/about', ru: '/ru/about' }, css, title: `${s.aboutTitle} · IYT Test`, desc: clip(s.aboutLead),
+        lang, path: ap, alt: { en: '/about', ru: '/ru/about' }, css, title: `${s.aboutTitle} · Sailing Certification Test`, desc: clip(s.aboutLead),
         ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'AboutPage', name: s.aboutTitle, url: SITE + ap, inLanguage: lang, publisher: ORG }, crumbLd([[s.levels, home], [s.aboutTitle, ap]])] },
         body: `${crumbs([[s.levels, home], [s.aboutTitle, ap]])}
 <div class="pg-head"><h1 class="display">${s.aboutTitle}</h1><p class="body-muted">${esc(s.aboutLead)}</p></div>
@@ -476,7 +476,7 @@ ${cta(s, s.ctaLevel, 'level')}`,
     add({
       path: pp, lang, alt: { en: '/privacy', ru: '/ru/privacy' },
       html: shell({
-        lang, path: pp, alt: { en: '/privacy', ru: '/ru/privacy' }, css, title: `${s.privTitle} · IYT Test`, desc: clip(s.privLead),
+        lang, path: pp, alt: { en: '/privacy', ru: '/ru/privacy' }, css, title: `${s.privTitle} · Sailing Certification Test`, desc: clip(s.privLead),
         ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'WebPage', name: s.privTitle, url: SITE + pp, inLanguage: lang, publisher: ORG, dateModified: '2026-11-05' }, crumbLd([[s.levels, home], [s.privTitle, pp]])] },
         body: `${crumbs([[s.levels, home], [s.privTitle, pp]])}
 <div class="pg-head"><span class="meta">${s.privDate}</span><h1 class="display">${s.privTitle}</h1><p class="body-muted">${esc(s.privLead)}</p></div>
@@ -493,9 +493,9 @@ ${s.privBody.map(([h, ...ps]) => `<section class="th-sec"><h2 class="th-h">${esc
     add({
       path: mp, lang, alt: { en: '/mcp', ru: '/ru/mcp' },
       html: shell({
-        lang, path: mp, alt: { en: '/mcp', ru: '/ru/mcp' }, css, title: `${s.mcpTitle} · IYT Test`, desc: clip(s.mcpDesc),
+        lang, path: mp, alt: { en: '/mcp', ru: '/ru/mcp' }, css, title: `${s.mcpTitle} · Sailing Certification Test`, desc: clip(s.mcpDesc),
         ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'WebPage', name: s.mcpTitle, url: SITE + mp, inLanguage: lang, publisher: ORG,
-          about: { '@type': 'WebAPI', name: 'IYT Test MCP server', url: mcpUrl, documentation: SITE + mp, isAccessibleForFree: true, provider: ORG } }, crumbLd([[s.levels, home], [s.mcp, mp]])] },
+          about: { '@type': 'WebAPI', name: 'Sailing Certification Test MCP server', url: mcpUrl, documentation: SITE + mp, isAccessibleForFree: true, provider: ORG } }, crumbLd([[s.levels, home], [s.mcp, mp]])] },
         body: `${crumbs([[s.levels, home], [s.mcp, mp]])}
 <div class="pg-head"><span class="meta">${s.mcpK}</span><h1 class="display">${s.mcpTitle}</h1><p class="body-muted">${esc(s.mcpLead)}</p></div>
 <div class="band pg-cta"><span class="kicker">${s.mcpUrlK}</span><pre class="pg-code pg-url"><code>${esc(mcpUrl).replace('.com/', '.com/<wbr>')}</code></pre><p class="body-muted" style="margin:0">${s.mcpUrlNote}</p></div>
@@ -511,8 +511,8 @@ ${s.mcpBody.map(([h, ...bs]) => `<section class="th-sec"><h2 class="th-h">${esc(
       path: '/ru', lang: 'ru', alt: { en: '/', ru: '/ru' },
       html: shell({
         lang: 'ru', path: '/ru', alt: { en: '/', ru: '/ru' }, css,
-        title: 'Права на яхту IYT: тест и теория к экзамену, от VHF до Yachtmaster Ocean · IYT Test',
-        desc: 'Бесплатный тест к экзамену на международные права на яхту IYT: вопросы в картинках с пояснением к каждому ответу, теория по МППСС, навигации и безопасности, пробный экзамен. От VHF до Yachtmaster Ocean.',
+        title: 'Права на яхту: тест и теория к экзамену на яхтенный сертификат, от VHF до Yachtmaster Ocean · Sailing Certification Test',
+        desc: 'Бесплатный тест к экзамену на международные права на яхту: вопросы в картинках с пояснением к каждому ответу, теория по МППСС, навигации и безопасности, пробный экзамен. От VHF до Yachtmaster Ocean.',
         ld: { '@context': 'https://schema.org', '@type': 'WebPage', name: s.homeTitle, url: `${SITE}/ru`, inLanguage: 'ru', publisher: ORG,
           mainEntity: { '@type': 'ItemList', itemListElement: levels.map((L, i) => ({ '@type': 'ListItem', position: i + 1, name: L.title, url: `${SITE}/ru/${L.id}` })) } },
         body: `<div class="pg-head"><span class="meta">${s.kicker}</span><h1 class="display">${s.homeTitle}</h1><p class="body-muted">${s.homeLead}</p></div>
@@ -525,7 +525,7 @@ ${cta(s, s.ctaLevel, 'level')}
 
   // the page for an address that is not here (Vercel serves 404.html), not indexed
   await writeFile(join(out, '404.html'), shell({
-    lang: 'en', path: '/404', css, noindex: true, title: `${STR.en.notFound} · IYT Test`, desc: STR.en.notFoundLead,
+    lang: 'en', path: '/404', css, noindex: true, title: `${STR.en.notFound} · Sailing Certification Test`, desc: STR.en.notFoundLead,
     body: `<div class="pg-head"><h1 class="display">${STR.en.notFound}</h1><p class="body-muted">${STR.en.notFoundLead}</p></div>
 <ul class="pg-list">${levels.map((L) => `<li><a class="band pg-row" href="/${L.id}"><span class="card-title">${esc(L.title)}</span><span class="card-meta">${STR.en.nq(L.bank.questions.length)}</span></a></li>`).join('')}</ul>`,
   }));
@@ -551,9 +551,9 @@ ${all.map((p) => `  <url><loc>${SITE}${p.path}</loc>${Object.keys(p.alt).length 
   await writeFile(join(out, 'pages.json'), JSON.stringify(Object.fromEntries(all.map((p) => [p.path, hash(steady(p.html))])), null, 1));
 
   // llms.txt (llmstxt.org): what the site is and where its content is, for AI assistants
-  await writeFile(join(out, 'llms.txt'), `# IYT Test
+  await writeFile(join(out, 'llms.txt'), `# Sailing Certification Test
 
-> Free practice questions and theory articles for IYT sailing certification levels (VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper, Yachtmaster Coastal, Offshore and Ocean), the Racing Rules of Sailing and a charter check-in course, in English and Russian. Written for study, close to the syllabus; not an IYT or World Sailing publication.
+> Free practice questions and theory articles for sailing certification levels (VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper, Yachtmaster Coastal, Offshore and Ocean), the Racing Rules of Sailing and a charter check-in course, in English and Russian. Written for study, close to the syllabus; not an official publication of a certifying body or World Sailing.
 
 Each level page lists its topics; each topic page is a theory article with drawings, followed by sample questions with their answers and the rule behind each. The full question banks are practised in the app at ${SITE}/ (also in Telegram: https://t.me/${BOT}). Russian pages are the same addresses under ${SITE}/ru.
 
@@ -569,7 +569,7 @@ ${levels.map((L) => `## ${L.title}: theory\n\n${L.bank.topics.filter((tp) => L.a
 
 ## Optional
 
-- [About](${SITE}/about): what IYT Test is, who makes it, and what it is not
+- [About](${SITE}/about): what Sailing Certification Test is, who makes it, and what it is not
 - [Privacy](${SITE}/privacy): what the site, the app, the bot and the MCP server keep about you
 `);
   return all.length;

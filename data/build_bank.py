@@ -316,8 +316,8 @@ for i, x in enumerate(Q):
     wrong = x['o'][:]; rnd.shuffle(wrong); target = i % 4
     opts = wrong[:]; opts.insert(target, x['a'])
     out.append(dict(id=f'bs-{i + 1:03d}', topic=x['topic'], difficulty=x['difficulty'], q=x['q'], figure=x['fig'], options=opts, answer=target, why=x['why'], ref=x['ref'], **PHOTOS.get(x['q'], {})))
-bank = dict(level='bareboat-skipper', title='IYT Bareboat Skipper', lang='en', passMark=70, examQuestions=40, examMinutes=60, version='2026-11-02d',
-            note='Scenario questions written for study, close to the IYT Bareboat Skipper theory syllabus. Not official IYT exam content. '
+bank = dict(level='bareboat-skipper', title='Bareboat Skipper', lang='en', passMark=70, examQuestions=40, examMinutes=60, version='2026-11-02d',
+            note='Scenario questions written for study, close to the Bareboat Skipper theory syllabus. Not official exam content. '
                  'figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.',
             topics=[dict(id=t, title=n, count=sum(1 for x in Q if x['topic'] == t)) for t, n in TOPICS], questions=out)
 path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'questions', 'bareboat-skipper.json')

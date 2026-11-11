@@ -17,5 +17,5 @@ export async function POST(request) {
 }
 
 export function GET() {
-  return new Response('IYT Test bot webhook', { headers: { 'content-type': 'text/plain' } });
+  return new Response('Sailing Certification Test bot webhook', { headers: { 'content-type': 'text/plain' } });
 }

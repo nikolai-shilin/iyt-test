@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from i18n import figure_texts  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-NOTE = ('Scenario questions written for study, close to the IYT {name} syllabus. Not official IYT exam content. '
+NOTE = ('Scenario questions written for study, close to the {name} syllabus. Not official exam content. '
         'figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults to verify.')
 
 RRS_NOTE = ('Scenario questions on the Racing Rules of Sailing 2025–2028 (World Sailing), written for study: real situations on the '
@@ -26,7 +26,7 @@ RRS_NOTE = ('Scenario questions on the Racing Rules of Sailing 2025–2028 (Worl
             'figure is a spec for docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults.')
 
 CHECKIN_NOTE = ('Scenario questions on the charter check-in, written for study: taking over a bareboat at the base — papers, the walk-round, '
-                'engine, electrics, water and gas, instruments, safety gear, ground tackle — and handing it back. Not an IYT course and not '
+                'engine, electrics, water and gas, instruments, safety gear, ground tackle — and handing it back. Not a sailing certification course and not '
                 'any charter company\'s procedure; the contract and the base\'s briefing are the authority. figure is a spec for '
                 'docs/design/figures.js (null = text question). Pass mark, exam size and time are app defaults.')
 
@@ -194,7 +194,7 @@ def build(level):
             got = set((r.get('fig') or {}))
             assert want == got, f'{qid}: Russian figure paths {sorted(got)}, want {sorted(want)}'
             tr[qid] = {k: v for k, v in dict(q=r['q'], options=pick(r), why=r['why'], ref=r['ref'], figure=r.get('fig') or {}).items() if v}
-    bank = dict(level=level, title=L.get('title', f'IYT {L["name"]}'), lang='en', passMark=L['passMark'], examQuestions=L['examQuestions'],
+    bank = dict(level=level, title=L.get('title', L['name']), lang='en', passMark=L['passMark'], examQuestions=L['examQuestions'],
                 examMinutes=L['examMinutes'], version=L['version'], note=L.get('note', NOTE.format(name=L['name'])),
                 topics=[dict(id=t, title=n, icon=ic, count=sum(1 for x in Q if x['topic'] == t)) for t, n, _, _, ic in L['topics']],
                 questions=out)

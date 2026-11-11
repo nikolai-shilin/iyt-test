@@ -32,15 +32,15 @@ const LIMITS = { name: 64, description: 512, short_description: 120 };
 
 const TEXTS = {
   en: {
-    name: 'IYT Test — exam practice',
-    description: `⚓️ Practice questions for IYT levels — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper and Yachtmaster Coastal, Offshore and Ocean — plus the Racing Rules of Sailing and charter check-in. Over 6,000 questions, in English and Russian.
+    name: 'Sailing Certification Test — exam practice',
+    description: `⚓️ Practice for sailing certification levels — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper and Yachtmaster Coastal, Offshore and Ocean — plus the Racing Rules of Sailing and charter check-in. 6,000+ questions in English and Russian.
 
 Real situations, drawn: the mark ahead, the lights at night, the other boat's bearing. Four options and the rule in one line.
 
 📚 Practise by topic · ⏱ Mock exam · 🔁 Mistakes come back · 🔥 A question a day in chat
 
 Tap Start to pick your level.`,
-    short_description: 'Practice for IYT levels from VHF to Yachtmaster Ocean, Racing Rules and charter check-in. Mock exam, daily question.',
+    short_description: 'Sailing certification practice from VHF to Yachtmaster Ocean, Racing Rules, charter check-in. Mock exam, daily question.',
     commands: [
       { command: 'start', description: 'Pick a level and practise' },
       { command: 'exam', description: 'Start a mock exam' },
@@ -50,15 +50,15 @@ Tap Start to pick your level.`,
     ],
   },
   ru: {
-    name: 'IYT Test — подготовка к экзамену',
-    description: `⚓️ Вопросы для подготовки к экзаменам IYT — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper и Yachtmaster Coastal, Offshore и Ocean, а ещё по Правилам парусных гонок и приёмке чартерной яхты. Более 6000 вопросов на русском и английском.
+    name: 'Sailing Certification Test — подготовка к экзамену',
+    description: `⚓️ Подготовка к экзаменам на яхтенные сертификаты — VHF Radio Operator, International Crew, Flotilla Skipper, Bareboat Skipper и Yachtmaster Coastal, Offshore и Ocean, а ещё по Правилам парусных гонок и приёмке чартерной яхты. 6000+ вопросов на русском и английском.
 
 Ситуации в картинках: знак по курсу, огни ночью, пеленг на другую яхту. Четыре варианта и одна строка с правилом.
 
 📚 Тренировка по темам · ⏱ Пробный экзамен · 🔁 Ошибки возвращаются · 🔥 Вопрос дня в чате
 
 Нажмите «Старт» и выберите уровень.`,
-    short_description: 'Подготовка к IYT от VHF до Yachtmaster Ocean, Правила гонок, приёмка яхты. Пробный экзамен, вопрос дня.',
+    short_description: 'Яхтенные сертификаты от VHF до Yachtmaster Ocean, Правила гонок, приёмка яхты. Пробный экзамен, вопрос дня.',
     commands: [
       { command: 'start', description: 'Выбрать уровень и тренироваться' },
       { command: 'exam', description: 'Пробный экзамен' },

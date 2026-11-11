@@ -218,7 +218,7 @@ const QID = { type: 'string', description: 'Question id, e.g. bs-001.' };
 const EXCLUDE = { type: 'array', items: { type: 'string' }, description: 'Question ids the student has already had in this conversation, so they are not repeated.' };
 const tool = (name, title, description, properties, required, run) => ({ name, title, description, inputSchema: { type: 'object', properties, required, additionalProperties: false }, annotations: { title, readOnlyHint: true, openWorldHint: false }, run });
 const TOOLS = [
-  tool('list_levels', 'List levels', 'The levels with a question bank (IYT courses, the Racing Rules of Sailing, the charter check-in): topics, number of questions, mock-exam settings and which topics have a theory article.',
+  tool('list_levels', 'List levels', 'The levels with a question bank (sailing certification courses, the Racing Rules of Sailing, the charter check-in): topics, number of questions, mock-exam settings and which topics have a theory article.',
     { lang: LANG }, [], (a, ctx) => banks.map((b) => ({
       id: b.id, title: b.bank.title, questions: b.bank.questions.length, russian: !!(b.ru.questions && Object.keys(b.ru.questions).length),
       exam: { questions: Math.min(b.bank.examQuestions, b.bank.questions.length), minutes: b.bank.examMinutes, pass_mark: b.bank.passMark },
@@ -286,7 +286,7 @@ const TOOLS = [
         return { topic, title: topicTitle(b, topic, ctx.lang), language: lang, russian: !!b.theory[topic].ru, ...(one ? { sections: art.sections.map((s) => ({ section: s.id, kicker: s.kicker, title: s.title })) } : { sections: art.sections.length }) };
       }) }));
     }),
-  tool('get_theory', 'Read a theory article', 'A theory article, or one section of it, as text: the rule, the reason, tables and links to the drawings. Study notes close to the syllabus, not official IYT text.',
+  tool('get_theory', 'Read a theory article', 'A theory article, or one section of it, as text: the rule, the reason, tables and links to the drawings. Study notes close to the syllabus, not official course text.',
     { level: LEVEL, topic: { type: 'string', description: 'Topic id, e.g. buoyage.' }, section: { type: 'string', description: 'Section id, to read one section only.' }, lang: LANG },
     ['level', 'topic'], (a, ctx) => {
       const b = levelOf(a.level), topic = withArticle(b, a.topic), ids = article(b, topic, ctx.lang).a.sections.map((s) => s.id);
@@ -333,10 +333,10 @@ function figureSvg(id, lang) {
 
 // ---------- the protocol ----------
 const VERSIONS = ['2025-11-25', '2025-06-18', '2025-03-26', '2024-11-05']; // newest first
-const INSTRUCTIONS = `IYT Test: practice questions and theory for IYT sailing certification levels, the Racing Rules of Sailing and the charter check-in (${Object.keys(byId).length} questions). ` +
+const INSTRUCTIONS = `Sailing Certification Test: practice questions and theory for sailing certification levels, the Racing Rules of Sailing and the charter check-in (${Object.keys(byId).length} questions). ` +
   'Call list_levels first. Ask questions one at a time with options A to D and never reveal the answer before the student chooses; check_answer gives the verdict, the note and the theory section to read. ' +
   'Most questions have a drawing: show figure.url to the student (an SVG image) because the question usually depends on it; if you describe the drawing instead, say what is seen without naming what the question asks. ' +
-  'The questions and articles are study material, not official IYT exam content. The app itself: ' + `${SITE} and the Telegram bot @iyt_test_bot.`;
+  'The questions and articles are study material, not official exam content. The app itself: ' + `${SITE} and the Telegram bot @iyt_test_bot.`;
 const CORS = { 'access-control-allow-origin': '*', 'access-control-allow-methods': 'POST, GET, OPTIONS', 'access-control-allow-headers': 'content-type, accept, authorization, mcp-protocol-version, mcp-session-id', 'access-control-max-age': '86400' };
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store', ...CORS } });
 const fail = (id, code, message) => ({ jsonrpc: '2.0', id: id ?? null, error: { code, message } });
@@ -351,7 +351,7 @@ function handle(msg, ctx) {
   if (msg.method === 'initialize') return ok({
     protocolVersion: VERSIONS.includes(p.protocolVersion) ? p.protocolVersion : VERSIONS[0],
     capabilities: { tools: { listChanged: false } },
-    serverInfo: { name: 'iyt-test', title: 'IYT Test', version: '1.0.1', websiteUrl: `${SITE}/mcp`, icons: [{ src: `${SITE}/icon.png`, mimeType: 'image/png', sizes: ['192x192'] }] },
+    serverInfo: { name: 'iyt-test', title: 'Sailing Certification Test', version: '1.0.1', websiteUrl: `${SITE}/mcp`, icons: [{ src: `${SITE}/icon.png`, mimeType: 'image/png', sizes: ['192x192'] }] },
     instructions: INSTRUCTIONS,
   });
   if (msg.method === 'ping') return ok({});
@@ -390,7 +390,7 @@ export function GET(request) {
     if (!svg) return new Response('no such figure', { status: 404, headers: { 'content-type': 'text/plain', ...CORS } });
     return new Response(svg, { headers: { 'content-type': 'image/svg+xml; charset=utf-8', 'cache-control': 'public, max-age=3600', ...CORS } });
   }
-  return new Response('IYT Test MCP server: POST JSON-RPC here (Model Context Protocol, Streamable HTTP).', { status: 405, headers: { allow: 'POST, OPTIONS', 'content-type': 'text/plain', ...CORS } });
+  return new Response('Sailing Certification Test MCP server: POST JSON-RPC here (Model Context Protocol, Streamable HTTP).', { status: 405, headers: { allow: 'POST, OPTIONS', 'content-type': 'text/plain', ...CORS } });
 }
 
 export const OPTIONS = () => new Response(null, { status: 204, headers: CORS });

@@ -125,7 +125,7 @@ const STR = {
     picPh: 'For example: the starboard sidelight is drawn red, it should be green',
     readUpK: 'Where to read', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Coming soon', soon2027: 'Coming in 2027', planned: 'Planned',
-    homeKicker: 'IYT theory · free', homeTitle: 'Pass your IYT&nbsp;exam',
+    homeKicker: 'Sailing certification theory · free', homeTitle: 'Pass your sailing certification&nbsp;exam',
     homeLead: 'Close-to-real questions for every certification level, with an explanation after each answer. Pick the level you are studying for.',
     streak: (n) => `${n}-day streak`,
     levelMeta: (t, q, ex) => `${pl(t, 'topic')} · ${pl(q, 'question')}${ex ? ' · ' + pl(ex, 'exam') + ' taken' : ''}`,
@@ -134,8 +134,8 @@ const STR = {
     mastered: 'mastered', covered: 'covered', halfway: 'right once', halfwayN: (n) => `+${n} right once`, moreLevels: 'More levels',
     regK: 'Game', regTitle: 'Regatta: sail a race in 3D', regText: 'Race a yacht against three boats round a windward–leeward course, in light, medium or strong wind. Steer, trim the sheet, tack and read the gusts.', regBtn: 'Play',
     mcpK: 'For AI assistants', mcpTitle: 'Practise in Claude or ChatGPT', mcpText: 'The questions and the theory are also an MCP server: add it to your AI assistant and it quizzes you, checks your answers and explains the rule.', mcpBtn: 'How to connect it',
-    grpK: 'Discuss the questions', grpName: 'IYT Test · Discussion', grpRole: 'Telegram group for students', grpText: 'Ask why an answer is right, talk through the tricky ones, tell how your exam went.', grpBtn: 'Join the group',
-    fbK: 'Feedback?', fbRole: 'Author of IYT Test', fbText: 'Found a mistake in a question, missing a topic or have an idea? Write to me on Telegram, I read every message.', fbBtn: 'Write on Telegram',
+    grpK: 'Discuss the questions', grpName: 'Sailing Certification Test · Discussion', grpRole: 'Telegram group for students', grpText: 'Ask why an answer is right, talk through the tricky ones, tell how your exam went.', grpBtn: 'Join the group',
+    fbK: 'Feedback?', fbRole: 'Author of Sailing Certification Test', fbText: 'Found a mistake in a question, missing a topic or have an idea? Write to me on Telegram, I read every message.', fbBtn: 'Write on Telegram',
     ringLabel: (s, m) => `${s}% seen · ${m}% mastered`, answers: 'Answer options', figure: 'Figure',
     figNames: { anchor: 'Anchorage sketch', boat: 'Parts of a yacht', lines: 'Mooring lines', radio: 'VHF set', flag: 'Signal flags', tide: 'Tidal curve', sphere: 'Celestial sphere', altitude: 'Sextant altitude', bay: 'Bay chart', buoy: 'Buoy', card: 'Notes', chart: 'Chart extract', compass: 'Compass rose', dayshape: 'Day shape', encounter: 'Two vessels meeting', isobars: 'Weather map', lights: 'Navigation lights', panel: 'Instrument panel', rope: 'Rope and knot', sail: 'Sailing boat and wind' }, timeLeft: 'Time left', fiveLeft: '5 minutes left',
     nextLevelK: 'Next level', open: 'Open', resetNothing: 'Nothing to reset yet', retry: 'Try again', allTopicsChip: 'All topics',
@@ -169,7 +169,7 @@ const STR = {
       ['No explanations until you submit', 'Afterwards every mistake shows the right answer and why.'],
       ['Leaving pauses the timer', 'Close the app and the exam waits for you, up to 24 hours.']],
     lastAttempts: 'Last attempts', passedW: 'passed', notPassedW: 'not passed',
-    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Exam size, time and pass mark are app defaults — there is no official rules exam.' : LEVEL.id === 'charter-checkin' ? 'Exam size, time and pass mark are app defaults — there is no check-in exam, only a boat to take over.' : 'Exam size, time and pass mark are app defaults, not confirmed IYT figures.'),
+    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Exam size, time and pass mark are app defaults — there is no official rules exam.' : LEVEL.id === 'charter-checkin' ? 'Exam size, time and pass mark are app defaults — there is no check-in exam, only a boat to take over.' : 'Exam size, time and pass mark are app defaults, not official exam figures.'),
     startExam: 'Start the exam', continueExam: 'Continue the exam', startOver: 'Start over',
     confirmRestart: 'Start a new exam? The one in progress will be dropped.',
     nOf: (i, n) => `${i} of ${n}`, nextArrow: 'Next ›', finishDots: 'Finish…', prevArrow: '‹ Previous', allQuestions: 'All questions',
@@ -184,7 +184,7 @@ const STR = {
     costMost: (list) => `${list} cost you the most points.`, workFirst: 'Work on these first', fine: 'Fine',
     backToLevel: 'Back to the level', practiseWeak: (w) => `Practise the ${pl(w, 'topic')}`.replace('topic', 'weak topic'), practise: 'Practise', share: 'Share',
     reviewN: (n) => `Review ${pl(n, 'mistake')}`,
-    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `I scored ${p}% on the ${lv} mock exam — situations on the race course, by the rules:` : LEVEL.id === 'charter-checkin' ? `I scored ${p}% on the ${lv} mock exam — taking over a charter yacht, step by step:` : `I scored ${p}% on the IYT ${lv} mock exam — practice questions for IYT levels:`), copied: 'Copied to the clipboard',
+    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `I scored ${p}% on the ${lv} mock exam — situations on the race course, by the rules:` : LEVEL.id === 'charter-checkin' ? `I scored ${p}% on the ${lv} mock exam — taking over a charter yacht, step by step:` : `I scored ${p}% on the ${lv} mock exam — practice questions for sailing certification levels:`), copied: 'Copied to the clipboard',
     thisWeek: 'This week', answeredW: 'answered', dayStreak: 'day streak', masteryByTopic: 'Mastery by topic', practiseWeakest: 'Practise weakest ›',
     misMeta: (n) => `${pl(n, 'question')} answered wrong and not yet mastered`, noneNow: 'None right now',
     flaggedQ: 'Flagged questions', flagHint: 'Flag a question to keep it here',
@@ -196,7 +196,7 @@ const STR = {
     explain: 'Explain after each answer', explainMeta: 'Off = exam style, results at the end',
     reset: 'Reset progress', resetMeta: 'Mastery, mistakes, streak and exams', resetBtn: 'Reset',
     confirmReset: 'Reset all progress? Mastery, mistakes, streak and exam history will be cleared.', resetDone: 'Progress reset',
-    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Questions are written for study from the Racing Rules of Sailing 2025–2028 and are not a World Sailing publication; the rules themselves are the authority. Bank version ${v}.` : LEVEL.id === 'charter-checkin' ? `Questions are written for study and are not any charter company's procedure; your contract and the base's briefing are the authority. Bank version ${v}.` : `Questions are written for study and are not official IYT exam content. Bank version ${v}.`), partEnglish: '', loading: 'Loading…',
+    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Questions are written for study from the Racing Rules of Sailing 2025–2028 and are not a World Sailing publication; the rules themselves are the authority. Bank version ${v}.` : LEVEL.id === 'charter-checkin' ? `Questions are written for study and are not any charter company's procedure; your contract and the base's briefing are the authority. Bank version ${v}.` : `Questions are written for study and are not official exam content. Bank version ${v}.`), partEnglish: '', loading: 'Loading…',
     whatToPractise: 'What to practise?', all: 'All', none: 'None', weakPre: 'Weak topics are preselected. ', tapToggle: 'Tap a topic to practise just that; tap more to add.',
     questionsK: 'Questions', allN: (n) => `All ${n}`, mistakesOnly: 'Mistakes only', showAnswer: 'Explain after each answer',
     start: (n) => `Start · ${pl(n, 'question')}`, pickTopic: 'Pick a topic',
@@ -244,7 +244,7 @@ const STR = {
     picPh: 'Например: правый бортовой огонь нарисован красным, а должен быть зелёным',
     readUpK: 'Что почитать', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Скоро', soon2027: 'В 2027 году', planned: 'В планах',
-    homeKicker: 'Теория IYT · бесплатно', homeTitle: 'Сдайте экзамен&nbsp;IYT',
+    homeKicker: 'Теория к яхтенным сертификатам · бесплатно', homeTitle: 'Сдайте экзамен на яхтенный&nbsp;сертификат',
     homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа. Выберите уровень, к которому готовитесь.',
     streak: (n) => `${pl(n, 'day')} подряд`,
     levelMeta: (t, q, ex) => `${pl(t, 'topic')} · ${pl(q, 'question')}${ex ? ' · ' + pl(ex, 'exam') : ''}`,
@@ -253,8 +253,8 @@ const STR = {
     mastered: 'освоено', covered: 'пройдено', halfway: 'верно 1 раз', halfwayN: (n) => `+${n} верно 1 раз`, moreLevels: 'Другие уровни',
     regK: 'Игра', regTitle: 'Регата: гонка под парусом в 3D', regText: 'Гонка на яхте против трёх лодок по курсу «апвинд — даунвинд» при слабом, среднем или сильном ветре. Рули, работай шкотом, делай повороты и лови порывы.', regBtn: 'Играть',
     mcpK: 'Для ИИ-ассистентов', mcpTitle: 'Тренируйтесь в Claude или ChatGPT', mcpText: 'Вопросы и теория доступны и как MCP-сервер: добавьте его в свой ИИ-ассистент, и он будет задавать вопросы, проверять ответы и объяснять правило.', mcpBtn: 'Как подключить',
-    grpK: 'Обсуждайте вопросы', grpName: 'IYT Test · Discussion', grpRole: 'Группа в Telegram для тех, кто готовится', grpText: 'Спросите, почему ответ верный, разберите сложные вопросы, расскажите, как прошёл экзамен.', grpBtn: 'Вступить в группу',
-    fbK: 'Есть отзыв?', fbRole: 'Автор IYT Test', fbText: 'Нашли ошибку в вопросе, не хватает темы или есть идея? Напишите мне в Telegram — читаю каждое сообщение.', fbBtn: 'Написать в Telegram',
+    grpK: 'Обсуждайте вопросы', grpName: 'Sailing Certification Test · Discussion', grpRole: 'Группа в Telegram для тех, кто готовится', grpText: 'Спросите, почему ответ верный, разберите сложные вопросы, расскажите, как прошёл экзамен.', grpBtn: 'Вступить в группу',
+    fbK: 'Есть отзыв?', fbRole: 'Автор Sailing Certification Test', fbText: 'Нашли ошибку в вопросе, не хватает темы или есть идея? Напишите мне в Telegram — читаю каждое сообщение.', fbBtn: 'Написать в Telegram',
     ringLabel: (s, m) => `${s}% пройдено · ${m}% освоено`, answers: 'Варианты ответа', figure: 'Рисунок',
     figNames: { anchor: 'Схема якорной стоянки', boat: 'Устройство яхты', lines: 'Швартовы', radio: 'УКВ-радиостанция', flag: 'Сигнальные флаги', tide: 'Кривая прилива', sphere: 'Небесная сфера', altitude: 'Высота светила', bay: 'Карта бухты', buoy: 'Буй', card: 'Заметки', chart: 'Фрагмент карты', compass: 'Картушка компаса', dayshape: 'Дневной знак', encounter: 'Расхождение двух судов', isobars: 'Карта погоды', lights: 'Навигационные огни', panel: 'Приборная панель', rope: 'Трос и узел', sail: 'Парусная яхта и ветер' }, timeLeft: 'Осталось времени', fiveLeft: 'Осталось 5 минут',
     nextLevelK: 'Следующий уровень', open: 'Открыть', resetNothing: 'Сбрасывать пока нечего', retry: 'Повторить', allTopicsChip: 'Все темы',
@@ -288,7 +288,7 @@ const STR = {
       ['Пояснения — только после сдачи', 'Потом у каждой ошибки будет верный ответ и пояснение.'],
       ['Выход ставит таймер на паузу', 'Закройте приложение — экзамен подождёт до 24 часов.']],
     lastAttempts: 'Последние попытки', passedW: 'сдан', notPassedW: 'не сдан',
-    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Число вопросов, время и проходной балл — настройки приложения: официального экзамена по правилам нет.' : LEVEL.id === 'charter-checkin' ? 'Число вопросов, время и проходной балл — настройки приложения: экзамена по приёмке яхты нет, есть только сама яхта.' : 'Число вопросов, время и проходной балл — настройки приложения, а не подтверждённые данные IYT.'),
+    examDefaults: () => (LEVEL.id === 'racing-rules' ? 'Число вопросов, время и проходной балл — настройки приложения: официального экзамена по правилам нет.' : LEVEL.id === 'charter-checkin' ? 'Число вопросов, время и проходной балл — настройки приложения: экзамена по приёмке яхты нет, есть только сама яхта.' : 'Число вопросов, время и проходной балл — настройки приложения, а не официальные данные экзамена.'),
     startExam: 'Начать экзамен', continueExam: 'Продолжить экзамен', startOver: 'Начать заново',
     confirmRestart: 'Начать новый экзамен? Текущий будет сброшен.',
     nOf: (i, n) => `${i} из ${n}`, nextArrow: 'Далее ›', finishDots: 'Завершить…', prevArrow: '‹ Назад', allQuestions: 'Все вопросы',
@@ -303,7 +303,7 @@ const STR = {
     costMost: (list) => `Больше всего баллов потеряно в темах: ${list}.`, workFirst: 'Сначала подтяните', fine: 'В порядке',
     backToLevel: 'К уровню', practiseWeak: (w) => `Тренировать слабые темы (${w})`, practise: 'Тренировка', share: 'Поделиться',
     reviewN: (n) => `Разобрать ошибки (${n})`,
-    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `Мой результат на пробном экзамене по правилам парусных гонок — ${p}%. Ситуации на дистанции по ППГ-25:` : LEVEL.id === 'charter-checkin' ? `Мой результат на пробном экзамене по приёмке чартерной яхты — ${p}%. Чек-ин шаг за шагом:` : `Мой результат на пробном экзамене IYT ${lv} — ${p}%. Вопросы для подготовки к IYT:`), copied: 'Скопировано',
+    shareText: (p, lv) => (LEVEL.id === 'racing-rules' ? `Мой результат на пробном экзамене по правилам парусных гонок — ${p}%. Ситуации на дистанции по ППГ-25:` : LEVEL.id === 'charter-checkin' ? `Мой результат на пробном экзамене по приёмке чартерной яхты — ${p}%. Чек-ин шаг за шагом:` : `Мой результат на пробном экзамене ${lv} — ${p}%. Вопросы для подготовки к яхтенным сертификатам:`), copied: 'Скопировано',
     thisWeek: 'Эта неделя', answeredW: 'отвечено', dayStreak: (n) => `${word(n, 'day')} подряд`, masteryByTopic: 'Освоение по темам', practiseWeakest: 'Тренировать слабые ›',
     misMeta: (n) => `Вопросов с ошибкой, ещё не освоенных: ${n}`, noneNow: 'Сейчас нет',
     flaggedQ: 'Отмеченные вопросы', flagHint: 'Отметьте вопрос — он появится здесь',
@@ -315,7 +315,7 @@ const STR = {
     explain: 'Пояснение после ответа', explainMeta: 'Выкл. — как на экзамене, итог в конце',
     reset: 'Сбросить прогресс', resetMeta: 'Освоение, ошибки, серия дней и экзамены', resetBtn: 'Сбросить',
     confirmReset: 'Сбросить весь прогресс? Освоение, ошибки, серия дней и история экзаменов будут удалены.', resetDone: 'Прогресс сброшен',
-    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Вопросы написаны для подготовки по Правилам парусных гонок 2025–2028 и не являются публикацией World Sailing; сами правила — единственный источник. Версия банка ${v}.` : LEVEL.id === 'charter-checkin' ? `Вопросы написаны для подготовки и не являются процедурой какой-либо чартерной компании; ваш договор и брифинг на базе — единственный источник. Версия банка ${v}.` : `Вопросы написаны для подготовки и не являются официальными вопросами экзамена IYT. Версия банка ${v}.`),
+    disclaimer: (v) => (LEVEL.id === 'racing-rules' ? `Вопросы написаны для подготовки по Правилам парусных гонок 2025–2028 и не являются публикацией World Sailing; сами правила — единственный источник. Версия банка ${v}.` : LEVEL.id === 'charter-checkin' ? `Вопросы написаны для подготовки и не являются процедурой какой-либо чартерной компании; ваш договор и брифинг на базе — единственный источник. Версия банка ${v}.` : `Вопросы написаны для подготовки и не являются официальными вопросами экзамена. Версия банка ${v}.`),
     loading: 'Загрузка…',
     partEnglish: ' Перевод вопросов готовится — пока часть из них на английском.',
     whatToPractise: 'Что тренируем?', all: 'Все', none: 'Снять все', weakPre: 'Слабые темы уже выбраны. ', tapToggle: 'Нажмите тему, чтобы тренировать только её; ещё одну — чтобы добавить.',
@@ -848,7 +848,7 @@ function bootSkeleton() {
     b.querySelector('.sk-hero').outerHTML = `<div class="band resume">${sk('80px', '13px', ';margin:1.5px 0')}<div class="row" style="gap:14px"><span class="sk sk-ring"></span><div class="stack">${sk('120px', '15px', ';margin:2px 0')}${sk('140px', '12px', ';margin:2px 0')}</div></div>${sk('100%', '50px', ';border-radius:25px')}</div>`;
     b.querySelector('.sk-levels').insertAdjacentHTML('afterbegin', sk('60px', '13px', ';margin:1.5px 0'));
   }
-  if (!IN_TG) $app.insertAdjacentHTML('afterbegin', '<div class="tgh"><span></span><b>IYT Test</b><span></span></div>');
+  if (!IN_TG) $app.insertAdjacentHTML('afterbegin', '<div class="tgh"><span></span><b>Sailing Certification Test</b><span></span></div>');
   $app.insertAdjacentHTML('beforeend', navHtml('home', false));
   paintIcons($app);
 }
@@ -1397,7 +1397,7 @@ const VIEWS = {
         <p class="body-muted">${t('homeLead')}</p></div>`;
     const more = LEVELS.filter((l) => !(l.id && lvMeta(l.id)));
     return {
-      title: 'IYT Test', nav: 'home',
+      title: 'Sailing Certification Test', nav: 'home',
       body: `<div class="row sb-between" style="min-height:40px"><img class="logo" src="design/logo-black.svg" alt="RYC">${st ? `<span class="streak${grew ? ' grew' : ''}"><span class="fire" data-i="fire" data-s="14"></span>${t('streak', st)}</span>` : ''}</div>
         ${top}
         ${S.exam ? `<div class="continue" data-act="resumeExam"><div><span class="meta">${t('examOpen')}</span><div class="card-title" style="margin-top:4px">${examLine()}</div></div><span class="mini mini-accent">${t('continue')}</span></div>` : ''}
@@ -1667,7 +1667,7 @@ const VIEWS = {
     const exams = myExams().slice(0, 5).map((e) => `<div class="att"><span class="card-meta">${day(e.at)}</span><span class="card-meta">${e.pct}% · <span class="${e.passed ? 'acc' : 'bad-t'}">${e.passed ? t('passedW') : t('notPassedW')}</span></span></div>`).join('');
     const weakest = TOPICS.filter((tp) => topicSeen(tp.id)).sort((a, b) => topicAcc(a.id) - topicAcc(b.id) || topicPct(a.id) - topicPct(b.id)).slice(0, 3);
     return {
-      title: 'IYT Test', nav: 'progress',
+      title: 'Sailing Certification Test', nav: 'progress',
       body: `<div class="stack g4"><span class="meta">${LEVEL.title}${S.total ? ' · ' + t('answeredN', S.total) : ''}</span><h2 class="display-s">${t('progress')}</h2></div>
         <div class="stats"><div class="stat"><b data-count="${sp}" data-suffix="%" data-k="seen:${LEVEL.id}">${sp}%</b><span class="meta">${t('covered')}</span></div><div class="stat"><b data-count="${m}" data-k="m:${LEVEL.id}">${m}</b><span class="meta">${t('mastered')}</span></div><div class="stat"><b data-count="${st}" data-k="streak">${st}</b><span class="meta">${t('dayStreak', st)}</span></div></div>
         <div class="band" style="padding:16px 18px"><div class="row sb-between" style="margin-bottom:12px"><span class="kicker">${t('thisWeek')}</span><span class="meta">${pl(sum, 'question')}</span></div><div class="days">${days}</div></div>
@@ -1700,7 +1700,7 @@ const VIEWS = {
     // admins get the admin pages (api/admin.mjs says who)
     const admin = ADMIN ? `<div class="set" data-act="admin"><div><div class="card-title">${t('adminT')}</div><div class="card-meta">${t('adminMeta')}</div></div><span class="val">${svg('next', 16)}</span></div>` : '';
     return {
-      title: 'IYT Test', nav: 'profile',
+      title: 'Sailing Certification Test', nav: 'profile',
       body: `<div class="row" style="gap:14px"><span class="tg-ava" style="width:52px;height:52px;font-size:16px">${ava}</span><div><div class="card-title" style="font-size:18px">${esc(name)}</div>
           <div class="card-meta">${u ? (u.username ? '@' + esc(u.username) + ' · ' : '') + t('syncedTg') : t('savedBrowser')}</div></div></div>
         <div class="stack">
