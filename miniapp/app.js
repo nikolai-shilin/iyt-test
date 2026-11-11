@@ -1024,7 +1024,8 @@ function gameBlock() {
   const wind = [['light', 'gmLight'], ['medium', 'gmMedium'], ['strong', 'gmStrong']].map(([k, l]) => [t(l), list.filter((g) => g.w === k).length]);
   const most = Math.max(4, ...fin.map((g) => g.p || 0)), places = Array.from({ length: most }, (_, i) => [t('gmPlace', i + 1), fin.filter((g) => g.p === i + 1).length]);
   if (fin.some((g) => g.d)) places.push([t('gmDsq'), fin.filter((g) => g.d).length]);
-  return head + tiles + chart + gameLeaders(fin, nameOf) + bars(t('gmTop'), list.length, top) + bars(t('gmWind'), list.length, wind) + (fin.length ? bars(t('gmPlaces'), fin.length, places) : '');
+  const avaOf = (u) => (u != null && byId.has(u) ? avatar(byId.get(u), 'gmava') : `<span class="gmava">${esc(initials(nameOf(u)))}</span>`);
+  return head + tiles + chart + gameLeaders(fin, nameOf, avaOf) + bars(t('gmTop'), list.length, top) + bars(t('gmWind'), list.length, wind) + (fin.length ? bars(t('gmPlaces'), fin.length, places) : '');
 }
 // The best players of the range on each course: wind, laps, course length (short, medium, long) and the number of
 // boats make the course, so times compare only within one. Per course, every player's fastest finish without a
@@ -1039,13 +1040,19 @@ const gmCourse = (c) => [t({ light: 'gmLight', medium: 'gmMedium', strong: 'gmSt
 // The game card on Home, for everyone (GET /api/game): races and players this week, and the three fastest on the
 // course raced most this month (first name and last initial, Guest outside Telegram). undefined = not asked yet,
 // 'loading', null = failed or no races. It is filled in place when it comes ([data-gs]), so Home does not redraw.
+// A player's picture that does not load (no photo the bot may see: 204) is taken away, leaving their initials.
+addEventListener('error', (e) => { if (e.target && e.target.matches && e.target.matches('.gmava img')) e.target.remove(); }, true);
 let GSTATS;
 function gameStatsHtml() {
   const g = GSTATS;
   if (!g || g === 'loading') return '';
   const line = g.week.races ? `<span class="card-meta">${esc(t('regWeek', g.week.races, g.week.players))}</span>` : '';
   const b = g.best && g.best.top.length ? `<div class="gmlb"><span class="kicker">${esc(t('regBest'))}</span><span class="card-meta">${esc(gmCourse(g.best))}</span>` +
-    g.best.top.map((x, i) => `<div class="gmrow${i === 0 ? ' gm1' : ''}"><b class="gmn">${i + 1}</b><span class="body-s gmname">${esc(x.name || t('regGuest'))}</span><span></span><b class="gmt">${mmss(x.s)}</b></div>`).join('') + '</div>' : '';
+    g.best.top.map((x, i) => { const name = x.name || t('regGuest');
+      // the player's Telegram photo over their initials; with no photo (204) the image is dropped (gmavaGone)
+      const pic = `<span class="gmava">${esc(initials(name))}${x.ph ? `<img src="/api/game?photo=${encodeURIComponent(x.ph)}" alt="" loading="lazy">` : ''}</span>`;
+      return `<div class="gmrow${i === 0 ? ' gm1' : ''}"><b class="gmn">${i + 1}</b>${pic}<span class="body-s gmname">${esc(name)}</span>` +
+        `<span class="card-meta">${x.p ? esc(t('gmBest', t('gmPlace', x.p))) : ''}</span><b class="gmt">${mmss(x.s)}</b></div>`; }).join('') + '</div>' : '';
   return line + b;
 }
 function gameStats() {
@@ -1056,7 +1063,7 @@ function gameStats() {
   }
   return `<div class="stack regstats" data-gs>${gameStatsHtml()}</div>`;
 }
-function gameLeaders(fin, nameOf) {
+function gameLeaders(fin, nameOf, avaOf) {
   const courses = new Map();
   for (const g of fin) {
     if (g.d || !(g.s > 0) || !GM_WIND.includes(g.w)) continue;
@@ -1071,7 +1078,7 @@ function gameLeaders(fin, nameOf) {
   const list = [...courses.values()].sort((a, b) => { const x = order(a), y = order(b); for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return x[i] - y[i]; return 0; });
   return `<div class="dchart"><div class="dhead"><div class="stack"><span class="kicker">${esc(t('gmLeaders'))}</span><span class="card-meta">${esc(t('gmLeadersMeta'))}</span></div></div>` +
     list.map((c) => `<div class="gmlb"><span class="card-meta gmc">${esc(gmCourse(c))}</span>` +
-      [...c.best.values()].sort((a, b) => a.s - b.s).slice(0, 5).map((b, i) => `<div class="gmrow${i === 0 ? ' gm1' : ''}"><b class="gmn">${i + 1}</b><span class="body-s gmname">${esc(nameOf(b.u))}</span>` +
+      [...c.best.values()].sort((a, b) => a.s - b.s).slice(0, 5).map((b, i) => `<div class="gmrow${i === 0 ? ' gm1' : ''}"><b class="gmn">${i + 1}</b>${avaOf(b.u)}<span class="body-s gmname">${esc(nameOf(b.u))}</span>` +
         `<span class="card-meta">${esc(pl(b.n, 'race'))}${b.p ? ` · ${esc(t('gmBest', t('gmPlace', b.p)))}` : ''}</span><b class="gmt">${mmss(b.s)}</b></div>`).join('') + '</div>').join('') + '</div>';
 }
 // Learning now: the students active in the range (their last sync), by the course they are on (studentLevel: the one

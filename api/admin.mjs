@@ -49,7 +49,7 @@
 // anyone who is not an admin gets 403, exactly like a bad signature. Env on Vercel: TELEGRAM_BOT_TOKEN, SUPABASE_URL,
 // SUPABASE_SECRET_KEY. Without the database it answers 503.
 
-import { verifyInitData, isAdmin, db, logError, SB, SB_KEY } from './settings.mjs';
+import { verifyInitData, isAdmin, db, logError, tgPhoto, SB, SB_KEY } from './settings.mjs';
 
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
 const MAX_USERS = 1000;
@@ -188,21 +188,6 @@ export function summarise(u, p) {
 }
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-async function tg(method, params) {
-  const res = await fetch(`https://api.telegram.org/bot${TOKEN}/${method}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(params), signal: AbortSignal.timeout(8000) });
-  const data = await res.json();
-  if (!data.ok) throw new Error(`${method}: ${data.description}`);
-  return data.result;
-}
-async function photo(id) {
-  const { photos } = await tg('getUserProfilePhotos', { user_id: id, limit: 1 });
-  const sizes = photos && photos[0];
-  if (!sizes || !sizes.length) return new Response(null, { status: 204, headers: { 'cache-control': 'private, max-age=3600' } });
-  const { file_path } = await tg('getFile', { file_id: sizes[0].file_id }); // [0] is the smallest size (160 px)
-  const file = await fetch(`https://api.telegram.org/file/bot${TOKEN}/${file_path}`, { signal: AbortSignal.timeout(8000) });
-  if (!file.ok) throw new Error(`file ${file.status}`);
-  return new Response(await file.arrayBuffer(), { headers: { 'content-type': 'image/jpeg', 'cache-control': 'private, max-age=86400' } });
-}
 
 export async function GET(request) {
   if (!SB || !SB_KEY) return json({ error: 'no database' }, 503);
@@ -211,7 +196,7 @@ export async function GET(request) {
   const id = new URL(request.url).searchParams.get('photo');
   if (id != null) {
     if (!/^\d{1,20}$/.test(id)) return json({ error: 'bad request' }, 400);
-    try { return await photo(+id); } catch (e) { await logError('admin photo', e, +id); return json({ error: 'failed' }, 500); }
+    try { return await tgPhoto(+id); } catch (e) { await logError('admin photo', e, +id); return json({ error: 'failed' }, 500); }
   }
   try {
     const [users, progress, clears, game] = await Promise.all([
