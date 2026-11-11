@@ -81,12 +81,12 @@ def merchant_geom(L, kind='cargo'):
     return dict(B=Bm, D=D, rx=rx, radar_top=radar_top, fmx=fmx, fore_top=fore_top, bridge=zb + hb * 0.5, stern=-L / 2)
 
 def trawler(pos, heading, k=1.1):
-    """The UK trawler model under a holder: model x -16.7 (stern) .. 2.4 (bow), centreline y 1.1, waterline z 1.1,
+    """The UK trawler model under a holder: model x -16.7 (stern) .. 2.4 (bow), centreline y 1.1, waterline z K.TRAWLER_WL,
     her mast top near model (-1.45, 1.1, 9.7). In her frame: length 19 m x k, mast at x +5.7k."""
     h = holder('trawler', pos, heading)
     root, vis, _ = P.trawler((0, 0), 90.0, booms=True)
     root.parent = h; root.scale = (k,) * 3
-    root.rotation_euler = (0, 0, 0); root.location = (7.15 * k, -1.1 * k, -1.1 * k)
+    root.rotation_euler = (0, 0, 0); root.location = (7.15 * k, -1.1 * k, -K.TRAWLER_WL * k)
     bpy.context.view_layer.update()
     return h
 

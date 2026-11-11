@@ -184,7 +184,7 @@ elif FIG == 12:
     L3 = beacon(600, shore(600) + 30, 12.0)
     K.camera(y.world((9.0, -0.85, 5.15)), Vector((40, 1500, 40)), 32)
     up = Vector((0, 0, 30))
-    labels = [(tuple(L1.location + up), 'Fl 5s'), (tuple(L2.location + up), 'Fl(3) 15s 49m 22M', 'blue'), (tuple(L3.location + up), 'Fl(2) 10s')]
+    labels = [(tuple(L1.location + up), 'Fl 5s'), (tuple(L2.location + up), 'Fl(3) 15s 49m 22M', 'blue'), (tuple(L3.location + up), 'Oc 4s')]
     note = 'Dusk · time each light to name it'; extra = {'bloom': 1.0}; expo = 0.6
 elif FIG == 13:
     y = K.load_yacht(); y.place(140, 0, heading=0)

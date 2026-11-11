@@ -21,6 +21,12 @@ def arrow(img, x0, y0, x1, y1, color='red'):
             (bx - nx * hw, by - ny * hw), (bx - nx * w, by - ny * w), (x0 - nx * w, y0 - ny * w)]
     d.polygon(poly, fill=c + (240,), outline=(0, 0, 0, 160), width=2)
 
+def leader(img, x0, y0, x1, y1):
+    """A thin white line with a dark edge from a label's anchor (a dot) to its pill, when the pill sits off to one side."""
+    d = ImageDraw.Draw(img, 'RGBA')
+    d.line([(x0, y0), (x1, y1)], fill=(0, 0, 0, 110), width=6); d.line([(x0, y0), (x1, y1)], fill=(255, 255, 255, 240), width=3)
+    d.ellipse([x0 - 7, y0 - 7, x0 + 7, y0 + 7], fill=(255, 255, 255, 245), outline=(0, 0, 0, 140), width=2)
+
 def bloom(img, strength=1.0):
     """Glow round bright lights (night scenes): blur the brightest pixels and add them back."""
     from PIL import ImageFilter, ImageChops
@@ -59,7 +65,11 @@ def label(path, ru=False):
     img = Image.open(path).convert('RGBA')
     if lab.get('bloom'): img = bloom(img, lab['bloom'])
     for A in lab.get('arrows', []): arrow(img, *A['from'], *A['to'], A.get('color', 'red'))
-    for L in lab['labels']: pill(img, L['x'], L['y'] - 4, L['text'], color=L.get('color'))
+    for L in lab['labels']:
+        x, y = L['x'], L['y']
+        if 'dx' in L:   # off to one side: a leader from the anchor to the pill's pointer
+            leader(img, x, y, x + L['dx'], y + L['dy'] - 7); x, y = x + L['dx'], y + L['dy']
+        pill(img, x, y - 4, L['text'], color=L.get('color'))
     if lab.get('note'): note(img, lab['note'])
     for k, t in enumerate(lab.get('lines', [])): note(img, t, 27 + 58 + k * 52, 24)   # more lines of the figure's data, under the note
     out = base + ('-labelled.ru.jpg' if ru else '-labelled.jpg'); img.convert('RGB').save(out, quality=92); return out

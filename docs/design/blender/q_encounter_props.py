@@ -100,7 +100,7 @@ def vessel(file, pos, heading, length, rule=None, flip=False, draft=0.8, hide=No
 def motor_yacht(pos, heading, length=12.0, hull='#1f2d4a'):
     """The 11 m motor yacht: white superstructure, a dark hull below the rubbing strake."""
     navy = C.simple('my-hull', hull, 0.3, coat=0.8)
-    spin, vis = vessel('vessel-motor-yacht.glb', pos, heading, length, None, flip=True, draft=0.55)
+    spin, vis = vessel('vessel-motor-yacht.glb', pos, heading, length, None, flip=True, draft=K.MOTOR_DRAFT * length)
     bpy.context.view_layer.update(); lo, hi = K.bbox(vis)
     for o in vis:   # the lower hull plating (big, low parts) navy
         l, h = K.bbox([o])
@@ -111,7 +111,7 @@ def motor_yacht(pos, heading, length=12.0, hull='#1f2d4a'):
     return spin, vis, top_of(vis)
 
 def rib(pos, heading, length=5.0):
-    spin, vis = vessel('tender-rib.glb', pos, heading, length, None, flip=RIB_FLIP, draft=0.25)
+    spin, vis = vessel('tender-rib.glb', pos, heading, length, None, flip=RIB_FLIP, draft=K.RIB_DRAFT * length)
     grey = C.simple('rib-tube', '#3b4046', 0.55)
     for o in vis:
         for sl in o.material_slots:
@@ -120,7 +120,7 @@ def rib(pos, heading, length=5.0):
     return spin, vis, top_of(vis)
 RIB_FLIP = True
 
-WL_T = 1.1           # the trawler model's waterline (model z)
+WL_T = K.TRAWLER_WL  # the trawler model's waterline (model z)
 YARD = (-1.45, 2.35, 8.25)   # the end of the trawler's crosstree, where her shapes hang (art_colregs_b)
 def trawler(pos, heading, booms=True, scale=1.0):
     """(art_colregs_b.trawler) The UK trawler, navy and red, its sea slab dropped."""
@@ -144,6 +144,7 @@ def trawler(pos, heading, booms=True, scale=1.0):
     root.location = (pos[0], pos[1], -WL_T * scale)
     root.rotation_euler = Euler((0, 0, deg(90 - heading)), 'XYZ')
     bpy.context.view_layer.update()
+    K.trawler_paint(objs, scale)                      # dark hull, red boot-top (her planking texture read pale)
     vis = [o for o in meshes if not o.hide_render]
     return root, vis, top_of(vis)
 
@@ -162,7 +163,7 @@ def ferry(pos, heading, length=60.0):
     c = Vector(((lo.x + hi.x) / 2, (lo.y + hi.y) / 2, 0))
     root.location = Vector(root.location) - c
     piv = bpy.data.objects.new('ferry-pivot', None); C.col.objects.link(piv)
-    root.parent = piv; piv.location = (pos[0], pos[1], -2.4 * k); piv.rotation_euler = (0, 0, deg(90 - heading) + FERRY_TURN)
+    root.parent = piv; piv.location = (pos[0], pos[1], -K.FERRY_WL * k); piv.rotation_euler = (0, 0, deg(90 - heading) + FERRY_TURN)
     bpy.context.view_layer.update()
     return piv, vis, top_of(vis)
 FERRY_TURN = 0.0

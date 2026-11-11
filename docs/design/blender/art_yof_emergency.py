@@ -291,7 +291,7 @@ elif FIG == 15:
         if 'wake' in ms or 'sea' in ms: return True
         lo, hi = K.bbox([o])
         return (hi.y - lo.y) > 11 and lo.z > -3            # the fire-fighting water jets
-    tug, tvis = vessel('vessel-tug.glb', (0, 30), 0, 30.0, None, flip=False, draft=2.2, hide=hide)
+    tug, tvis = vessel('vessel-tug.glb', (0, 30), 0, 30.0, None, flip=False, draft=K.TUG_DRAFT, hide=hide)
     bpy.context.view_layer.update(); tlo, thi = K.bbox(tvis)
     yt = motoring('casualty', 0, 0, -48); furl(yt); K.wake(yt, 20, 5, 0.5)
     tstern = Vector(((tlo.x + thi.x) / 2, tlo.y + 1.0, 2.2)); bow = yt.world((10.6, K.MAST.y, 4.0))

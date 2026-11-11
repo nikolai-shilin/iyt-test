@@ -195,7 +195,7 @@ elif FIG == 4:
 elif FIG == 7:
     DEPTH, TIDE, CHART, DRAFT = 2.7, 1.2, 1.5, 1.9
     y = K.load_yacht(); y.place(0, 0, heading=0)
-    y.root.location.z = 2.0 - DRAFT
+    y.set_draft(DRAFT)
     KW.antifoul_hull(y)
     bpy.context.view_layer.update()
     keel = [o for o in y.objs if o.type == 'MESH' and not o.hide_render and K.bbox([o])[0].z < -DRAFT + 0.15]

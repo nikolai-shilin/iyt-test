@@ -87,7 +87,7 @@ elif FIG == 3:
 elif FIG == 4:
     TIDE, CHART, DRAFT, LOW = 1.2, 5.4, 2.2, 1.3          # LOW: half the swell 1.0 + squat 0.3
     DEPTH = TIDE + CHART
-    y = A.yacht('you').place(0, 0, heading=0); y.root.location.z = 2.0 - DRAFT
+    y = A.yacht('you').place(0, 0, heading=0).set_draft(DRAFT)
     KW.antifoul_hull(y); bpy.context.view_layer.update()
     keel = [o for o in y.objs if o.type == 'MESH' and not o.hide_render and K.bbox([o])[0].z < -DRAFT + 0.15]
     klo, khi = K.bbox(keel); kb = Vector(((klo.x + khi.x) / 2, (klo.y + khi.y) / 2, klo.z))

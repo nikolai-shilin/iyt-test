@@ -685,6 +685,7 @@ def render(out, samples=256, scale=100, exposure=-0.6, labels=(), note=None, ble
     for item in labels:
         x, y = px(item[0]); d = {'text': item[1], 'x': x, 'y': y}
         if len(item) > 2: d['color'] = item[2]
+        if len(item) > 3: d['dx'], d['dy'] = item[3]   # the pill moved off its anchor by (dx, dy) px, on a leader line
         lab.append(d)
     arr = [{'from': px(a), 'to': px(b), 'color': c} for a, b, c in arrows]
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)

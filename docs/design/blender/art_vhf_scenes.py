@@ -375,7 +375,7 @@ def lifeboat(pos, heading, length=16.0):
         l = sum(c) / 3
         if 'Glass' in n or 'glass' in n or l < 0.12: return None
         return navy if l < 0.5 else orange
-    spin, vis = vessel('vessel-motor-yacht.glb', pos, heading, length, rule, flip=FLIP_MY, draft=0.9)
+    spin, vis = vessel('vessel-motor-yacht.glb', pos, heading, length, rule, flip=FLIP_MY, draft=K.MOTOR_DRAFT * length)
     return spin, vis
 
 FLIP_MY = True       # the motor yacht's bow lies along the model's -X (checked on a draft)
@@ -526,7 +526,7 @@ if ART == 'channels' and FIG == 7:
     def srule(c, n):
         if c is None: return None
         return navy if (c[2] > c[0] + 0.08 and sum(c) / 3 > 0.35) else None
-    ship, svis = vessel('vessel-ferry.glb', (sp.x, sp.y), 250, 62.0, srule, draft=2.2)
+    ship, svis = vessel('vessel-ferry.glb', (sp.x, sp.y), 250, 62.0, srule, draft=(K.FERRY_WL + 0.57) * 62.0 / 50.7)   # keel (model z -0.57) so far down that her waterline is at model z K.FERRY_WL (model 50.7 m long)
     bpy.context.view_layer.update(); lo, hi = K.bbox(svis)
     wake_strip(((lo.x + hi.x) / 2 + 30 * math.sin(deg(250)), (lo.y + hi.y) / 2 + 30 * math.cos(deg(250))), 250, 70, 6, 22, 0.35)
     K.camera(tuple(you.world((-2.2, -0.9, 5.15))), (sp.x - 20, sp.y - 30, -22), 30)
@@ -684,7 +684,7 @@ elif ART == 'gmdss' and FIG in (3, 5):
         def rule(c, n):
             if c is None: return white
             return None if sum(c) / 3 < 0.25 or 'lass' in n else white
-        mb, mvis = vessel('vessel-motor-yacht.glb', (sp.x, sp.y), 250, 9.0, rule, flip=FLIP_MY, draft=0.5)
+        mb, mvis = vessel('vessel-motor-yacht.glb', (sp.x, sp.y), 250, 9.0, rule, flip=FLIP_MY, draft=K.MOTOR_DRAFT * 9.0)
         bpy.context.view_layer.update(); mlo, mhi = K.bbox(mvis)
         wake_strip(((mlo.x + mhi.x) / 2 - 4 * math.sin(deg(250)), (mlo.y + mhi.y) / 2 - 4 * math.cos(deg(250))), 250, 30, 2, 9, 0.45)
         helm_camera(you, look_model=(9.0, -2.6, 3.7), lens=24)

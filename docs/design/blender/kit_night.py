@@ -68,8 +68,8 @@ def ship(pos, heading, lights=('masthead', 'red')):
     K.recolor(objs, lambda c, n: dull)
     for o in objs:   # parts that came without any material would render default white
         if o.type == 'MESH' and not o.data.materials: o.data.materials.append(dull)
-    # model: bow along +X, centreline y ~ 1.2, waterline z 0; pivot on the centreline amidships
-    root.location = pos; root.rotation_euler = Euler((0, 0, deg(90 - heading)), 'XYZ')
+    # model: bow along +X, centreline y ~ 1.2, waterline z K.TRAWLER_WL; pivot on the centreline amidships
+    root.location = (pos[0], pos[1], -K.TRAWLER_WL); root.rotation_euler = Euler((0, 0, deg(90 - heading)), 'XYZ')
     bpy.context.view_layer.update()
     W = lambda p: root.matrix_world @ Vector(p)
     spots = {'masthead': ((-1.43, 1.3, 8.45), 'white'), 'red': ((-1.0, 3.6, 5.0), 'red'), 'green': ((-1.0, -1.2, 5.0), 'green'),

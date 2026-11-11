@@ -43,7 +43,7 @@ def hoist(top, kinds, gap=GAP):
     return cs
 
 # ---------- the trawler / workboat ----------
-WL_T = 1.1           # the trawler model's waterline (model z)
+WL_T = K.TRAWLER_WL  # the trawler model's waterline (model z)
 def trawler(pos, heading, booms=True, heel=0.0, sink=0.0):
     root, objs = K.load_model('vessel-trawler.glb', drop_planes=False)
     bpy.context.view_layer.update()
@@ -64,6 +64,7 @@ def trawler(pos, heading, booms=True, heel=0.0, sink=0.0):
     root.location = (pos[0], pos[1], -WL_T + sink)
     root.rotation_euler = Euler((deg(heel), 0, deg(90 - heading)), 'XYZ')
     bpy.context.view_layer.update()
+    K.trawler_paint(objs)                             # dark hull, red boot-top (her planking texture read pale)
     return root
 
 def tworld(root, p):
@@ -109,7 +110,7 @@ def ferry(pos, heading, length=85.0):
     c = Vector(((lo.x + hi.x) / 2, (lo.y + hi.y) / 2, 0))
     root.location = Vector(root.location) - c
     piv = bpy.data.objects.new('ferry-pivot', None); C.col.objects.link(piv)
-    root.parent = piv; piv.location = (pos[0], pos[1], -2.4 * k); piv.rotation_euler = (0, 0, deg(90 - heading))
+    root.parent = piv; piv.location = (pos[0], pos[1], -K.FERRY_WL * k); piv.rotation_euler = (0, 0, deg(90 - heading))
     bpy.context.view_layer.update()
     return piv, vis, k
 

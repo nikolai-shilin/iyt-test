@@ -174,7 +174,7 @@ else:
         C.cyl('cleat-horn', 0.022, 0.022, 0.34, 20, M['galv'], p + Vector((0, 0, 0.085)), (0, math.pi / 2, 0))
         for dx in (-0.07, 0.07): C.cyl('cleat-leg', 0.025, 0.032, 0.08, 16, M['galv'], p + Vector((dx, 0, 0.04)))
         return p + Vector((0, 0, 0.09))
-    P = {k: cleat_at(px) for k, px in (('bow', 11.5), ('stern', -11.5), ('fwd', 5.5), ('aft', -5.5))}
+    P = {k: cleat_at(px) for k, px in (('bow', 11.5), ('stern', -11.5))}
     # fenders between hull and pontoon
     sock = C.fabric_mat('fender-sock', '#1e2f55', '#5d75a8', 1400.0)
     for fx in (-3.0, 1.5, 5.0):
@@ -185,22 +185,25 @@ else:
         me = bpy.data.meshes.new('fender'); bm.to_mesh(me); bm.free()
         C.obj('fender', me, sock, (fx, hy + 0.115, 0.42))
     # the lines: off her cleats, over the toe rail, sagging down to the pontoon cleats
-    def line(name, boat_pt, cleat_pt, sag=0.25):
+    def line(name, boat_pt, cleat_pt, sag=0.25, color='#1b2c4c'):
         bp = Vector(boat_pt); ey = side_y(bp.x, 1.45, start=edge - 0.01)
         over = Vector((bp.x + (cleat_pt.x - bp.x) * 0.06, (ey if ey is not None else bp.y) + 0.04, 1.58))
         pts = [bp + Vector((0, 0, 0.03)), over]
         for t in (0.2, 0.4, 0.6, 0.8):
             q = over.lerp(cleat_pt, t); q.z -= math.sin(t * math.pi) * sag; pts.append(q)
         pts.append(cleat_pt + Vector((0, -0.02, 0.0)))
-        C.braid(name, [V3(p) for p in pts], 0.013, '#1b2c4c', '#e9e3d2', whip='#141414', fine=1.4)   # navy braid reads on pale planks
+        C.braid(name, [V3(p) for p in pts], 0.022, color, '#e9e3d2', whip='#141414', fine=1.4)   # thick enough to read from the drone
         return pts
     bowc, midc, stc = y.world((8.9, 0.84, 3.58)), y.world((3.66, 2.25, 3.58)), y.world((-1.46, 2.05, 3.58))
+    P['mid'] = cleat_at((bowc.x + stc.x) / 2)             # abreast her middle: both springs go to it
     lb = line('bow-line', bowc, P['bow'])
     ls = line('stern-line', stc, P['stern'])
-    lf = line('fwd-spring', midc, P['aft'], 0.15)          # from midships aft: stops her surging forward
-    la = line('aft-spring', midc + Vector((0.12, 0, 0)), P['fwd'], 0.15)   # from midships forward: stops her going astern
+    # the springs from her bow and stern cleats to the one pontoon cleat abreast her middle (as a reviewer asked):
+    # the one from the bow runs aft and stops her surging forward, the one from the stern runs forward and stops her going astern
+    lf = line('fwd-spring', bowc + Vector((-0.12, 0, 0)), P['mid'] + Vector((0.06, 0, 0)), 0.15, '#e2601e')   # springs in orange
+    la = line('aft-spring', stc + Vector((0.12, 0, 0)), P['mid'] + Vector((-0.06, 0, 0)), 0.15, '#e2601e')
     K.day_sky(sun_az=330, sun_el=48)                       # sun behind the camera: no glare, her side lit
     KW.camera(Vector((-1.0, 19.0, 12.0)), Vector((0.5, 0.2, 0.9)), lens=36)   # from over the pontoon: the lines lie in front
     labels = [(tuple(lb[3] + Vector((0, 0, 0.3))), 'bow line'), (tuple(ls[3] + Vector((0, 0, 0.3))), 'stern line'),
-              (tuple(midc.lerp(P['aft'], 0.5) + Vector((0, 0, 0.6))), 'springs', 'blue')]
+              (tuple(lf[4] + Vector((0, 0, 0.3))), 'spring', 'blue'), (tuple(la[4] + Vector((0, 0, 0.3))), 'spring', 'blue')]
     C.render(OUT, SAMPLES, SCALE, -0.6, labels, 'Alongside: breast lines hold, springs stop the surge', space='blender')

@@ -76,7 +76,7 @@ if FIG == 1:
     root.scale = (1.5,) * 3                         # the 57 m ferry made an 85 m coaster
     bpy.context.view_layer.update(); lo, hi = K.bbox(vis)
     sx, sy = pos(0, 50, 330)                        # her bearing 050° relative; shortened from 600 m to read
-    root.location = (sx - (lo.x + hi.x) / 2, sy - (lo.y + hi.y) / 2, -lo.z - 1.6)
+    root.location = (sx - (lo.x + hi.x) / 2, sy - (lo.y + hi.y) / 2, -K.FERRY_WL * 1.5)   # her waterline on the sea
     bpy.context.view_layer.update(); lo, hi = K.bbox(vis)
     # from our starboard side deck by the shrouds, looking along her bearing over the bow
     # from the starboard wheel, looking 32° to starboard: the bow and pulpit on the left, the ship on the right

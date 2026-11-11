@@ -2,7 +2,7 @@
 # downloaded models in models/ (see models/README.md). Blender space throughout: Z up, the sea surface at z = 0.
 #
 # The yacht is the Jeanneau Sun Odyssey 49DS from 3D Warehouse. In its own file the bow points along +X
-# (stem x 10.8, transom x -3.8), the centreline is y 0.13, the deck is at z 3.5 and the waterline at z 2.0.
+# (stem x 10.8, transom x -3.8), the centreline is y 0.13, the deck is at z 3.5 and the waterline at z 2.35 (WL).
 import os, math, random
 import bpy, bmesh
 from mathutils import Vector, Matrix, Euler
@@ -11,8 +11,14 @@ from common import node, link, setin, math_, ramp, mixc, lin, new_mat, obj_coord
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODELS = os.path.join(HERE, 'models')
-WL = 2.0                     # yacht waterline in model space
+WL = 2.35                    # yacht waterline in model space (2.0 left her floating on the water, rudder and turn of the
+                             # bilge showing; 2.35 chosen by eye, 2026-11-11: the transom just clear)
 MAST = Vector((4.93, 0.13))  # mast centre, model space (x, y)
+FERRY_WL = 2.4               # vessel-ferry.glb's waterline (model z): a thin red boot-top showing (lower values showed the whole bottom)
+TUG_DRAFT = 2.2              # vessel-tug.glb at 30 m: keel this far under (her red boot-top just showing)
+MOTOR_DRAFT = 0.08           # vessel-motor-yacht.glb: outboard skeg under the water, as a share of her length (0.55 m at 12 m floated)
+RIB_DRAFT = 0.18             # tender-rib.glb: outboard leg under the water, share of length (the tubes rest on the water)
+TRAWLER_WL = 1.6             # vessel-trawler.glb's waterline (model z): her bottom paint just under water (1.1 left it showing)
 FORESTAY = (Vector((10.62, 0.13, 3.95)), Vector((5.25, 0.13, 20.1)))   # tack and head of the forestay
 
 def deg(a): return math.radians(a)
@@ -119,6 +125,11 @@ class Yacht:
         """Heading in degrees, 0 = bow towards +Y (north), clockwise like a compass. Heel to starboard positive."""
         self.root.location = (x, y, 0.0)
         self.root.rotation_euler = Euler((deg(heel), 0.0, deg(90 - heading)), 'XYZ')  # roll about the length (model X)
+        return self
+    def set_draft(self, d):
+        """Scale her about the waterline so the keel is d m deep (the model's own draft is WL), the hull still
+        floating at the surface: for figures that state a draft (the old way, root z = 2.0 - d, lifted her out)."""
+        self.root.scale = (d / WL,) * 3; self.root.location.z = 0.0
         return self
     def world(self, p):
         """A model-space point (as in the GLB) in world space, after place()."""
@@ -346,6 +357,26 @@ def nav_light(name, p, color, power=2.0, radius=0.05, cone=None):
     return o
 
 # ---------- other models ----------
+def trawler_paint(objs, scale=1.0, hull='#1b2738'):
+    """vessel-trawler.glb in daylight colours, by world height (call once she is placed): dark red bottom paint under
+    the water, a red boot-top at it, dark hull up to the sheer, off-white above (gantry, masts). Only the parts that
+    dip under the water are painted; the wheelhouse keeps its own materials. Her own planking texture read pale grey."""
+    m, nt, b, _ = new_mat('trawler-hull')
+    g = node(nt, 'ShaderNodeNewGeometry'); sz = node(nt, 'ShaderNodeSeparateXYZ'); link(nt, g.outputs['Position'], sz.inputs['Vector'])
+    f = math_(nt, 'MULTIPLY_ADD', sz.outputs['Z'], 0.1 / scale, 0.3)          # world z -3 .. 7 (per scale) -> 0 .. 1
+    sheer = (4.15 - TRAWLER_WL) * 0.1 + 0.3                                    # her bulwark top, model z 4.15
+    c = ramp(nt, [(0.0, '#3e1714'), (0.297, '#3e1714'), (0.298, '#8e211a'), (0.315, '#8e211a'), (0.316, hull), (sheer, hull),
+                  (sheer + 0.002, '#d6d6d1'), (1.0, '#d6d6d1')], 'CONSTANT')
+    link(nt, f, c.inputs['Fac']); link(nt, c.outputs['Color'], b.inputs['Base Color'])
+    setin(b, 'Roughness', 0.45); setin(b, 'Coat Weight', 0.3)
+    bpy.context.view_layer.update()
+    for o in objs:
+        if o.type != 'MESH' or o.hide_render: continue
+        lo, hi = bbox([o])
+        if lo.z < -0.2 * scale:
+            for sl in o.material_slots: sl.material = m
+    return m
+
 def load_model(file, keep=None, drop_planes=True, scale=1.0):
     """Import one of models/*.glb into its own empty. drop_planes removes big flat 'ground' or 'sea' parts the
     SketchUp author left in. keep: optional predicate on objects."""

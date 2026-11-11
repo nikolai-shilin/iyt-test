@@ -173,7 +173,8 @@ if FIG == 1:
         bow.append(V(pin.x - 0.0 - 0.15 * math.sin(a) * 0.75, 0.8, zr + 0.02 * math.cos(a)))
     tubeP('shackle-bow', bow, 0.0065, gm)
     K.day_sky(sun_az=200, sun_el=40); K.darken_visible_sky()
-    labels = [((-0.18, 0.775, 0.022), 'thimble'), ((0.02, 0.8, 0.03), 'eye splice', 'blue'), ((-0.33, 0.8, 0.075), 'shackle')]
+    labels = [((-0.18, 0.775, 0.022), 'thimble'), ((0.02, 0.8, 0.03), 'eye splice', 'blue'), ((-0.30, 0.8, 0.03), 'shackle'),
+              ((-0.40, 0.745, 0.066), 'ring')]
     finish(labels, 'A thimble inside the eye takes the chafe', (-0.10, 0.36, 0.46), (-0.20, 0.8, 0.0), 44, fstop=16.0)
 
 elif FIG in (6, 8):

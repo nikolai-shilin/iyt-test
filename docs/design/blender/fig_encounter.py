@@ -46,7 +46,7 @@ else:
         if m: o.data.materials.clear() if False else None; [setattr(sl, 'material', m) for sl in o.material_slots]
     root.rotation_euler = (0, 0, math.radians(-70))
     bpy.context.view_layer.update(); lo, hi = K.bbox(meshes)
-    root.location = (root.location.x + 26 - (lo.x + hi.x) / 2, root.location.y + 52 - (lo.y + hi.y) / 2, root.location.z - lo.z - 2.0)
+    root.location = (root.location.x + 26 - (lo.x + hi.x) / 2, root.location.y + 52 - (lo.y + hi.y) / 2, root.location.z - lo.z - 0.97 - K.TRAWLER_WL)   # keel at model z -0.97
     bpy.context.view_layer.update(); lo, hi = K.bbox(meshes)
     # the mast: the tallest thin part; hoist the shapes on a halyard a little below its top
     mast = max(meshes, key=lambda o: (K.bbox([o])[1].z, -(K.bbox([o])[1] - K.bbox([o])[0]).xy.length))

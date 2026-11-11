@@ -1357,7 +1357,7 @@ if BL:
             spin, mvis, mtop = EP.motor_yacht((0, 0), 180, cfg['motor']); bpy.context.view_layer.update()   # bow north: the model's bow lies on -heading
             mlo, mhi = K.bbox(mvis); bow = Vector(((mlo.x + mhi.x) / 2, mhi.y - 0.6, 2.5)); y = None
         else:
-            y = K.load_yacht(); y.place(0, 0, heading=0); y.root.location.z = 2.0 - draft
+            y = K.load_yacht(); y.place(0, 0, heading=0).set_draft(draft)
             KW.antifoul_hull(y); bpy.context.view_layer.update()
             bow = y.world((10.95, 0.13, 3.72))
         sb = -dep + 0.07
@@ -1496,7 +1496,7 @@ if BL:
         C.tube('halyard', [top, bottom], 0.012 * max(1, k * 0.7), 6, 1.0, C.simple('halyard', '#202224', 0.6))
         return cs
 
-    WL_T = 1.1
+    WL_T = K.TRAWLER_WL
     def trawler(pos, heading, booms=True):
         root, objs = K.load_model('vessel-trawler.glb', drop_planes=False)
         bpy.context.view_layer.update()
@@ -1516,6 +1516,7 @@ if BL:
         K.recolor(objs, rule)
         root.location = (pos[0], pos[1], -WL_T); root.rotation_euler = Euler((0, 0, deg(90 - heading)), 'XYZ')
         bpy.context.view_layer.update()
+        K.trawler_paint(objs)                         # dark hull, red boot-top (her planking texture read pale)
         return root
     YARD = (-1.45, 2.35, 8.25)
 
@@ -1531,7 +1532,7 @@ if BL:
         bpy.context.view_layer.update(); lo, hi = K.bbox(vis)
         c = Vector(((lo.x + hi.x) / 2, (lo.y + hi.y) / 2, 0)); root.location = Vector(root.location) - c
         piv = bpy.data.objects.new('ferry-pivot', None); C.col.objects.link(piv)
-        root.parent = piv; piv.location = (pos[0], pos[1], -2.4 * k - sink); piv.rotation_euler = (0, 0, deg(90 - heading))
+        root.parent = piv; piv.location = (pos[0], pos[1], -K.FERRY_WL * k - sink); piv.rotation_euler = (0, 0, deg(90 - heading))
         bpy.context.view_layer.update()
         return piv, vis, k
 

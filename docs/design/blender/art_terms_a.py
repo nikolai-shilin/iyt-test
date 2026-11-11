@@ -148,9 +148,11 @@ else:  # FIG 4
     K.camera((c.x, c.y - 27.0, c.z - 1.0), (c.x, c.y, c.z + 0.8), 28)
     mid = lambda a, b2, t: tuple(a.lerp(b2, t))
     bl = batten_lines[1] if len(batten_lines) > 1 else [clew]
-    labels = [(tuple(head + Vector((0, -0.3, 0.3))), 'head'), (tuple(tack + Vector((0.2, -0.3, -0.2))), 'tack'), (tuple(clew + Vector((-0.2, -0.3, -0.2))), 'clew'),
-              (mid(tack, head, 0.55), 'luff'), (mid(clew, head, 0.58), 'leech'), (mid(tack, clew, 0.5), 'foot'),
-              (tuple(bl[2]), 'batten', 'blue'), (tuple(ties[len(ties) // 2] if ties else tack), 'reef points', 'blue')]
+    # the sail is narrow on the image, so most pills sit off to the side on a leader (px offsets), clear of each other
+    labels = [(tuple(head + Vector((0, -0.3, 0.3))), 'head'), (tuple(tack + Vector((0.2, -0.3, -0.2))), 'tack', None, (165, 0)),
+              (tuple(clew + Vector((-0.2, -0.3, -0.2))), 'clew', None, (-200, -30)),
+              (mid(tack, head, 0.55), 'luff', None, (170, 0)), (mid(clew, head, 0.58), 'leech', None, (-190, -10)), (mid(tack, clew, 0.5), 'foot', None, (-150, 95)),
+              (tuple(bl[2]), 'batten', 'blue', (-210, 55)), (tuple(ties[len(ties) // 2] if ties else tack), 'reef points', 'blue', (-230, -15))]
     note = 'Sails and their lines'
 
 C.render(OUT, SAMPLES, SCALE, -0.7, labels, note, space='blender', arrows=arrows)

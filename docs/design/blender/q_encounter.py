@@ -188,7 +188,7 @@ def make_other(p, kind):
             ms = ' '.join(sl.material.name for sl in o.material_slots if sl.material)
             if 'wake' in ms or 'sea' in ms: return True
             lo, hi = K.bbox([o]); return (hi.y - lo.y) > 11 and lo.z > -3
-        r, vis = P.vessel('vessel-tug.glb', (p.x, p.y), h, L, None, flip=False, draft=2.2, hide=hide)
+        r, vis = P.vessel('vessel-tug.glb', (p.x, p.y), h, L, None, flip=False, draft=K.TUG_DRAFT * L / 30.0, hide=hide)
         return None, P.top_of(vis), r
     raise SystemExit('unknown kind ' + kind)
 

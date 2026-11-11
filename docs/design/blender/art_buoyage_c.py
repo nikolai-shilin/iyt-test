@@ -33,7 +33,7 @@ def work_vessel(pos, heading, stack, keep_booms=False, spacing=1.6):
     K.recolor(objs, lambda c, n: dull)
     for o in objs:
         if o.type == 'MESH' and not o.data.materials: o.data.materials.append(dull)
-    root.location = pos; root.rotation_euler = Euler((0, 0, deg(90 - heading)), 'XYZ')
+    root.location = (pos[0], pos[1], -K.TRAWLER_WL); root.rotation_euler = Euler((0, 0, deg(90 - heading)), 'XYZ')   # her waterline on the sea
     bpy.context.view_layer.update()
     top = root.matrix_world @ Vector((-1.43, 1.3, 8.45 + 0.4 + spacing * (len(stack) - 1) * 0.5))   # clear of her gantry
     out = []

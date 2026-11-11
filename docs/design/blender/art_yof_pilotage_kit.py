@@ -281,7 +281,7 @@ def ship(pos, heading, model='vessel-ferry.glb', length=None):
     vis = [o for o in objs if o.type == 'MESH' and not o.hide_render]
     lo, hi = K.bbox(vis); cx, cy = (lo.x + hi.x) / 2, (lo.y + hi.y) / 2
     for o in objs:
-        if o.parent == root: o.location = Vector(o.location) - Vector((cx, cy, 1.0))
+        if o.parent == root: o.location = Vector(o.location) - Vector((cx, cy, K.FERRY_WL if model == 'vessel-ferry.glb' else 1.0))
     if length: k = length / (hi.x - lo.x); root.scale = (k,) * 3
     root.location = Vector((pos[0], pos[1], 0.0)); root.rotation_euler = (0, 0, deg(90 - heading))
     return root, vis

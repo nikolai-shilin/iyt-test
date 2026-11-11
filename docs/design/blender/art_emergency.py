@@ -224,7 +224,7 @@ elif FIG == 5:
     bpy.context.view_layer.update(); vis = [o for o in objs if o.type == 'MESH' and not o.hide_render]; lo, hi = K.bbox(vis)
     root.rotation_euler = (0, 0, math.radians(-110))
     bpy.context.view_layer.update(); lo, hi = K.bbox(vis)
-    root.location = (root.location.x + ox - (lo.x + hi.x) / 2, root.location.y + oy - (lo.y + hi.y) / 2, root.location.z - lo.z - 0.35)
+    root.location = (root.location.x + ox - (lo.x + hi.x) / 2, root.location.y + oy - (lo.y + hi.y) / 2, root.location.z - lo.z - 0.8)   # outboard leg 0.8 m down: the tubes on the water
     bpy.context.view_layer.update(); lo, hi = K.bbox(vis)
     person(((lo.x + hi.x) / 2, (lo.y + hi.y) / 2, lo.z + 0.45), heading=200, arms='up')
     eye = you.world((6.4, -0.7, 5.2)); look = Vector((ox, oy, 1.4))
