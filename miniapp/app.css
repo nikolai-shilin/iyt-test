@@ -385,6 +385,10 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .gmrow .gmn, .app .gmrow .gmt { font: 700 14px/1 'Carlito', Arial, sans-serif; font-variant-numeric: tabular-nums; color: var(--muted); }
 .app .gmrow .gmt { text-align: right; color: var(--ink); }
 .app .gmrow.gm1 .gmn, .app .gmrow.gm1 .gmt { color: var(--accent); }
+/* The game card on Home: this week's numbers and the fastest three, between its text and its button */
+.app .regstats { gap: 8px; }
+.app .regstats:empty { display: none; }
+.app .regstats .gmlb { padding-top: 4px; }
 .app .in .dtrack i, .app .dchart.grow .dtrack i { transform-origin: left; animation: growX .45s var(--ease-out) both; }
 @media (prefers-reduced-motion: reduce) { .app .in .dtrack i, .app .dchart.grow .dtrack i { animation: none; } }
 .app .in .dplot i, .app .dchart.grow .dplot i { transform-origin: bottom; animation: growY .45s var(--ease-out) both; }

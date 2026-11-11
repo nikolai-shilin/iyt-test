@@ -223,6 +223,7 @@ const STR = {
     chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chReports: 'Mistakes reported', chRange: 'Period', chLearning: 'Learning now, by course', chLearnNone: 'Nobody studied in this period', chNone: 'No numbers for the charts yet',
     rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
     chNote: (r) => ({ '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '3m': 'last 3 months' })[r],
+    regWeek: (r, p) => `${pl(r, 'race')} this week · ${pl(p, 'player')}`, regBest: 'Fastest this month', regGuest: 'Guest',
     gmK: 'Game', gmT: 'Regatta', gmFinished: 'finished', gmChart: 'Races started', gmShort: 'Short course', gmMid: 'Medium course', gmLong: 'Long course', gmNoLen: 'length not recorded', gmLeaders: 'Best times by course', gmLeadersMeta: 'Fastest finish of each player, without disqualifications', gmTop: 'Most races', gmWind: 'Races by wind', gmPlaces: 'Where players finished',
     gmLight: 'Light wind', gmMedium: 'Medium wind', gmStrong: 'Strong wind', gmAnon: 'No Telegram', gmBest: (p) => `best ${p}`, gmDsq: 'Disqualified',
     gmPlace: (n) => `${n}${['st', 'nd', 'rd'][n - 1] || 'th'}`, gmNone: 'Nobody raced in this period', gmSetup: 'Game statistics start once the game_races migration is in the database',
@@ -347,6 +348,7 @@ const STR = {
     chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chReports: 'Сообщения об ошибках', chRange: 'Период', chLearning: 'Сейчас изучают, по курсам', chLearnNone: 'За этот период никто не занимался', chNone: 'Для графиков пока нет данных',
     rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
     chNote: (r) => ({ '24h': 'за 24 часа', '7d': 'за 7 дней', '30d': 'за 30 дней', '3m': 'за 3 месяца' })[r],
+    regWeek: (r, p) => `${pl(r, 'race')} за неделю · ${pl(p, 'player')}`, regBest: 'Быстрее всех за месяц', regGuest: 'Гость',
     gmK: 'Игра', gmT: 'Регата', gmFinished: 'до финиша', gmChart: 'Начато гонок', gmShort: 'Короткая дистанция', gmMid: 'Средняя дистанция', gmLong: 'Длинная дистанция', gmNoLen: 'длина не записана', gmLeaders: 'Лучшее время на каждой дистанции', gmLeadersMeta: 'Самый быстрый финиш каждого игрока, без дисквалификаций', gmTop: 'Больше всех гонок', gmWind: 'Гонки по ветру', gmPlaces: 'Места на финише',
     gmLight: 'Слабый ветер', gmMedium: 'Средний ветер', gmStrong: 'Сильный ветер', gmAnon: 'Без Telegram', gmBest: (p) => `лучшее ${p}`, gmDsq: 'Дисквалификация',
     gmPlace: (n) => `${n}-е`, gmNone: 'За этот период никто не гонялся', gmSetup: 'Статистика игры появится, когда миграция game_races будет в базе',
@@ -1031,6 +1033,29 @@ function gameBlock() {
 // their own.
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 const GM_WIND = ['light', 'medium', 'strong'], GM_LEN = ['short', 'medium', 'long'];
+// A course in words: "Medium wind · Long course · 1 lap · 10 boats" ({ w, l, c, n }; c and n may be missing)
+const gmCourse = (c) => [t({ light: 'gmLight', medium: 'gmMedium', strong: 'gmStrong' }[c.w]), c.c ? t({ short: 'gmShort', medium: 'gmMid', long: 'gmLong' }[c.c]) : t('gmNoLen'),
+  pl(c.l || 1, 'lap'), c.n ? pl(c.n, 'boat') : ''].filter(Boolean).join(' · ');
+// The game card on Home, for everyone (GET /api/game): races and players this week, and the three fastest on the
+// course raced most this month (first name and last initial, Guest outside Telegram). undefined = not asked yet,
+// 'loading', null = failed or no races. It is filled in place when it comes ([data-gs]), so Home does not redraw.
+let GSTATS;
+function gameStatsHtml() {
+  const g = GSTATS;
+  if (!g || g === 'loading') return '';
+  const line = g.week.races ? `<span class="card-meta">${esc(t('regWeek', g.week.races, g.week.players))}</span>` : '';
+  const b = g.best && g.best.top.length ? `<div class="gmlb"><span class="kicker">${esc(t('regBest'))}</span><span class="card-meta">${esc(gmCourse(g.best))}</span>` +
+    g.best.top.map((x, i) => `<div class="gmrow${i === 0 ? ' gm1' : ''}"><b class="gmn">${i + 1}</b><span class="body-s gmname">${esc(x.name || t('regGuest'))}</span><span></span><b class="gmt">${mmss(x.s)}</b></div>`).join('') + '</div>' : '';
+  return line + b;
+}
+function gameStats() {
+  if (GSTATS === undefined) {
+    GSTATS = 'loading';
+    fetch('/api/game').then((r) => (r.ok ? r.json() : null)).then((j) => { GSTATS = j && j.week ? j : null; }).catch(() => { GSTATS = null; })
+      .then(() => document.querySelectorAll('[data-gs]').forEach((e) => { e.innerHTML = gameStatsHtml(); }));
+  }
+  return `<div class="stack regstats" data-gs>${gameStatsHtml()}</div>`;
+}
 function gameLeaders(fin, nameOf) {
   const courses = new Map();
   for (const g of fin) {
@@ -1044,10 +1069,8 @@ function gameLeaders(fin, nameOf) {
   if (!courses.size) return '';
   const order = (c) => [GM_WIND.indexOf(c.w), c.c ? GM_LEN.indexOf(c.c) : 9, c.l, c.n];
   const list = [...courses.values()].sort((a, b) => { const x = order(a), y = order(b); for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return x[i] - y[i]; return 0; });
-  const wind = { light: 'gmLight', medium: 'gmMedium', strong: 'gmStrong' }, len = { short: 'gmShort', medium: 'gmMid', long: 'gmLong' };
-  const label = (c) => [t(wind[c.w]), c.c ? t(len[c.c]) : t('gmNoLen'), pl(c.l, 'lap'), c.n ? pl(c.n, 'boat') : ''].filter(Boolean).join(' · ');
   return `<div class="dchart"><div class="dhead"><div class="stack"><span class="kicker">${esc(t('gmLeaders'))}</span><span class="card-meta">${esc(t('gmLeadersMeta'))}</span></div></div>` +
-    list.map((c) => `<div class="gmlb"><span class="card-meta gmc">${esc(label(c))}</span>` +
+    list.map((c) => `<div class="gmlb"><span class="card-meta gmc">${esc(gmCourse(c))}</span>` +
       [...c.best.values()].sort((a, b) => a.s - b.s).slice(0, 5).map((b, i) => `<div class="gmrow${i === 0 ? ' gm1' : ''}"><b class="gmn">${i + 1}</b><span class="body-s gmname">${esc(nameOf(b.u))}</span>` +
         `<span class="card-meta">${esc(pl(b.n, 'race'))}${b.p ? ` · ${esc(t('gmBest', t('gmPlace', b.p)))}` : ''}</span><b class="gmt">${mmss(b.s)}</b></div>`).join('') + '</div>').join('') + '</div>';
 }
@@ -1469,7 +1492,7 @@ const VIEWS = {
         <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
         ${more.length ? `<div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${more.map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>` : ''}
         <div class="band mcpband"><span class="kicker">${t('regK')}</span><div class="card-title">${t('regTitle')}</div>
-          <p class="body-muted">${t('regText')}</p>
+          <p class="body-muted">${t('regText')}</p>${gameStats()}
           <button class="pill pill-quiet pill-wide" data-act="regatta" role="link"><span data-i="yacht" data-s="18"></span>${t('regBtn')}</button></div>
         <div class="band mcpband"><span class="kicker">${t('mcpK')}</span><div class="card-title">${t('mcpTitle')}</div>
           <p class="body-muted">${t('mcpText')}</p>
