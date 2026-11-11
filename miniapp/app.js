@@ -1,6 +1,7 @@
 /* IYT Test — Telegram mini app.
    Screens follow docs/design/flows.html (A1–A9 practice, B1–B5 mock exam, C1–C2 progress and profile); C4 Admin
-   (five pages under one tab strip: Overview with joins, answers, wrong answers, theory reads and errors; Students; the
+   (five pages under one tab strip: Overview with joins, answers, wrong answers, theory reads, errors and the Regatta
+   game's races and players; Students; the
    questions reported as wrong; what students say is wrong in the articles; the flagged questions — api/admin.mjs; the
    questions and articles in the language each student read them in) opens from the profile for the admins only. C1b lists the
    questions the student reported as wrong, so they can withdraw a report.
@@ -98,8 +99,8 @@ let LANG = 'en';
 /* ---------- interface strings ---------- */
 // Plural forms: en [one, many]; ru [one, few, many] (1 вопрос, 2 вопроса, 5 вопросов).
 const PL = {
-  en: { question: ['question', 'questions'], topic: ['topic', 'topics'], mistake: ['mistake', 'mistakes'], exam: ['exam', 'exams'], day: ['day', 'days'], minute: ['minute', 'minutes'], student: ['student', 'students'], picture: ['picture', 'pictures'] },
-  ru: { question: ['вопрос', 'вопроса', 'вопросов'], topic: ['тема', 'темы', 'тем'], topicAcc: ['тему', 'темы', 'тем'], mistake: ['ошибка', 'ошибки', 'ошибок'], exam: ['экзамен', 'экзамена', 'экзаменов'], day: ['день', 'дня', 'дней'], minute: ['минута', 'минуты', 'минут'], student: ['ученик', 'ученика', 'учеников'], picture: ['рисунок', 'рисунка', 'рисунков'] },
+  en: { question: ['question', 'questions'], topic: ['topic', 'topics'], mistake: ['mistake', 'mistakes'], exam: ['exam', 'exams'], day: ['day', 'days'], minute: ['minute', 'minutes'], student: ['student', 'students'], picture: ['picture', 'pictures'], race: ['race', 'races'], player: ['player', 'players'] },
+  ru: { question: ['вопрос', 'вопроса', 'вопросов'], topic: ['тема', 'темы', 'тем'], topicAcc: ['тему', 'темы', 'тем'], mistake: ['ошибка', 'ошибки', 'ошибок'], exam: ['экзамен', 'экзамена', 'экзаменов'], day: ['день', 'дня', 'дней'], minute: ['минута', 'минуты', 'минут'], student: ['ученик', 'ученика', 'учеников'], picture: ['рисунок', 'рисунка', 'рисунков'], race: ['гонка', 'гонки', 'гонок'], player: ['игрок', 'игрока', 'игроков'] },
 };
 function word(n, key) {
   const f = (PL[LANG][key] || PL.en[key] || PL[LANG][key.replace(/Acc$/, '')]);
@@ -222,6 +223,9 @@ const STR = {
     chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chReports: 'Mistakes reported', chRange: 'Period', chLearning: 'Learning now, by course', chLearnNone: 'Nobody studied in this period', chNone: 'No numbers for the charts yet',
     rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
     chNote: (r) => ({ '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '3m': 'last 3 months' })[r],
+    gmK: 'Game', gmT: 'Regatta', gmFinished: 'finished', gmChart: 'Races started', gmTop: 'Most races', gmWind: 'Races by wind', gmPlaces: 'Where players finished',
+    gmLight: 'Light wind', gmMedium: 'Medium wind', gmStrong: 'Strong wind', gmAnon: 'No Telegram', gmBest: (p) => `best ${p}`, gmDsq: 'Disqualified',
+    gmPlace: (n) => `${n}${['st', 'nd', 'rd'][n - 1] || 'th'}`, gmNone: 'Nobody raced in this period', gmSetup: 'Game statistics start once the game_races migration is in the database',
     unflagOne: 'Remove', unflagAll: (n) => `Remove from all ${n}`, confirmUnflagAll: (n) => `Remove this flag for all ${pl(n, 'student')}?`,
     unflagDone: 'Flag removed', unflagDoneAll: 'Flag removed for everyone', unflagSetup: 'Needs the latest database migration',
     unflagHint: 'A removed flag also goes from the student’s app the next time it syncs.',
@@ -343,6 +347,9 @@ const STR = {
     chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chReports: 'Сообщения об ошибках', chRange: 'Период', chLearning: 'Сейчас изучают, по курсам', chLearnNone: 'За этот период никто не занимался', chNone: 'Для графиков пока нет данных',
     rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
     chNote: (r) => ({ '24h': 'за 24 часа', '7d': 'за 7 дней', '30d': 'за 30 дней', '3m': 'за 3 месяца' })[r],
+    gmK: 'Игра', gmT: 'Регата', gmFinished: 'до финиша', gmChart: 'Начато гонок', gmTop: 'Больше всех гонок', gmWind: 'Гонки по ветру', gmPlaces: 'Места на финише',
+    gmLight: 'Слабый ветер', gmMedium: 'Средний ветер', gmStrong: 'Сильный ветер', gmAnon: 'Без Telegram', gmBest: (p) => `лучшее ${p}`, gmDsq: 'Дисквалификация',
+    gmPlace: (n) => `${n}-е`, gmNone: 'За этот период никто не гонялся', gmSetup: 'Статистика игры появится, когда миграция game_races будет в базе',
     unflagOne: 'Снять', unflagAll: (n) => `Снять у всех (${n})`, confirmUnflagAll: (n) => `Снять эту отметку у всех (${pl(n, 'student')})?`,
     unflagDone: 'Отметка снята', unflagDoneAll: 'Отметка снята у всех', unflagSetup: 'Нужна последняя миграция базы данных',
     unflagHint: 'Снятая отметка пропадёт и в приложении ученика при следующей синхронизации.',
@@ -768,8 +775,8 @@ function loadDaily() {
 }
 // Admin: every student's results from api/admin.mjs. undefined = not asked, 'loading', null = failed, or the list.
 // ADM_SERIES: joins, answers, wrong answers, theory reads and errors per UTC hour (24) and day (91) for the Overview
-// charts, or null.
-let ADM, ADM_SERIES = null;
+// charts, or null. ADM_GAME: the Regatta races of the last 91 days ({ at, u, w, f, p, n, s, d }, api/admin.mjs), or null.
+let ADM, ADM_SERIES = null, ADM_GAME = null;
 // The admin pages, in the order of their bottom menu: [view, icon, label]
 const ADMIN_TABS = [['admin', 'chart', 'tabOverview'], ['adminUsers', 'users', 'tabStudents'], ['adminWrong', 'alert', 'tabReported'], ['adminNotes', 'page', 'tabArticles'], ['adminFlags', 'flag', 'tabFlagged']];
 const isAdminView = (v) => ADMIN_TABS.some(([k]) => k === v);
@@ -778,7 +785,7 @@ function loadStudents(again) {
   ADM = 'loading';
   fetch('/api/admin', { headers: { 'x-telegram-init-data': IN_TG ? TG.initData : '' } })
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
-    .then((j) => { ADM = Array.isArray(j.users) ? j.users : null; ADM_SERIES = j.series && Array.isArray(j.series.hour) && Array.isArray(j.series.day) ? j.series : null; })
+    .then((j) => { ADM = Array.isArray(j.users) ? j.users : null; ADM_SERIES = j.series && Array.isArray(j.series.hour) && Array.isArray(j.series.day) ? j.series : null; ADM_GAME = Array.isArray(j.game) ? j.game : null; })
     .catch(() => { ADM = null; })
     .then(() => { if (isAdminView(cur().v)) render(true); if (ADM) loadPhotos(); });
 }
@@ -973,7 +980,7 @@ function buckets(range) {
   const days = ADM_SERIES.day.slice(-91), out = [];
   for (let i = days.length % 7; i < days.length; i += 7) {
     const wk = days.slice(i, i + 7), r = { l: `${uday(wk[0].at)} – ${uday(wk[wk.length - 1].at)}`, x: uday(wk[0].at) };
-    for (const [k] of CHARTS) r[k] = wk.reduce((a, d) => a + (+d[k] || 0), 0);
+    for (const k of [...CHARTS.map((c) => c[0]), 'races']) r[k] = wk.reduce((a, d) => a + (+d[k] || 0), 0);
     out.push(r);
   }
   return out;
@@ -984,7 +991,37 @@ function dailyCharts() {
   const sw = RANGES.map((r) => `<button class="lang${r === CH_RANGE ? ' lang-on' : ''}" role="radio" aria-checked="${r === CH_RANGE}" data-act="range" data-r="${r}">${t('rg' + r)}</button>`).join('');
   const series = ADM_SERIES && ADM_SERIES.day.length ? CHARTS.map(([k, title, cls]) => dayChart(buckets(CH_RANGE), k, t(title), cls)).join('') : `<p class="card-meta">${t('chNone')}</p>`;
   return `<div class="dhead dtop"><span class="kicker">${esc(t('chNote', CH_RANGE))}</span><div class="langs dsw" role="radiogroup" aria-label="${esc(t('chRange'))}">${sw}</div></div>` +
-    learningChart() + series;
+    learningChart() + series + gameBlock();
+}
+// The Regatta game in the range on screen (ADM_GAME): races started, players (a browser without Telegram counts as
+// one) and races finished; the races per hour, day or week; who raced most, with their best place; the wind they
+// chose; and where they finished.
+function gameBlock() {
+  const head = `<div class="stack g4 gmsec"><span class="meta">${t('gmK')}</span><h3 class="display-s" style="font-size:22px">${t('gmT')}</h3></div>`;
+  if (!ADM_GAME) return head + `<p class="card-meta">${t('gmSetup')}</p>`;
+  const from = Date.now() - RANGE_MS[CH_RANGE], list = ADM_GAME.filter((g) => g.at >= from);
+  const fin = list.filter((g) => g.f), who = new Map();
+  for (const g of list) {
+    const k = g.u == null ? 'anon' : g.u, w = who.get(k) || { u: g.u, n: 0, best: 0 };
+    w.n++; if (g.p && (!w.best || g.p < w.best)) w.best = g.p;
+    who.set(k, w);
+  }
+  const stat = (n, label) => `<div class="stat"><b>${n}</b><span class="meta">${esc(label)}</span></div>`;
+  const tiles = `<div class="stats">${stat(list.length, word(list.length, 'race'))}${stat(who.size, word(who.size, 'player'))}${stat(fin.length, t('gmFinished'))}</div>`;
+  const chart = ADM_SERIES && ADM_SERIES.day.length ? dayChart(buckets(CH_RANGE), 'races', t('gmChart'), '') : '';
+  if (!list.length) return head + tiles + chart + `<p class="card-meta">${t('gmNone')}</p>`;
+  const bars = (title, total, rows) => { const max = Math.max(1, ...rows.map((r) => r[1]));
+    return `<div class="dchart${CH_GROW ? ' grow' : ''}"><div class="dhead"><div class="stack"><span class="kicker">${esc(title)}</span><span class="meta dread"><b>${total}</b> ${esc(word(total, 'race'))}</span></div></div>` +
+      `<div class="dbars">${rows.map(([l, n]) => `<div class="dbar"><span class="card-meta">${esc(l)}</span><span class="dtrack"><i style="width:${n ? Math.max(2, (n / max) * 100) : 0}%"></i></span><b>${n}</b></div>`).join('')}</div></div>`; };
+  const byId = new Map((Array.isArray(ADM) ? ADM : []).map((u) => [u.id, u]));
+  const top = [...who.values()].sort((a, b) => b.n - a.n).slice(0, 8).map((w) => {
+    const name = w.u == null ? t('gmAnon') : byId.has(w.u) ? studentName(byId.get(w.u)) : String(w.u);
+    return [w.best ? `${name} · ${t('gmBest', t('gmPlace', w.best))}` : name, w.n];
+  });
+  const wind = [['light', 'gmLight'], ['medium', 'gmMedium'], ['strong', 'gmStrong']].map(([k, l]) => [t(l), list.filter((g) => g.w === k).length]);
+  const most = Math.max(4, ...fin.map((g) => g.p || 0)), places = Array.from({ length: most }, (_, i) => [t('gmPlace', i + 1), fin.filter((g) => g.p === i + 1).length]);
+  if (fin.some((g) => g.d)) places.push([t('gmDsq'), fin.filter((g) => g.d).length]);
+  return head + tiles + chart + bars(t('gmTop'), list.length, top) + bars(t('gmWind'), list.length, wind) + (fin.length ? bars(t('gmPlaces'), fin.length, places) : '');
 }
 // Learning now: the students active in the range (their last sync), by the course they are on (studentLevel: the one
 // they picked last, else the one they have seen most of), most first. Students with no answers yet are not counted.

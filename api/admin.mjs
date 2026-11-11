@@ -6,7 +6,8 @@
 //                                 flags: ['bs-012', …], wrong: ['bs-034', …],
 //                                 wrongNote: { 'bs-034': { text, at, lang } },
 //                                 notes: [ { k: 'bs-buoyage/cardinal', text, at, lang } ] } ],
-//                               series: { hour: [ { at, joined, answers, wrong, reads, reports } × 24 ], day: [ … × 91 ] } | null }
+//                               series: { hour: [ { at, joined, answers, wrong, reads, reports, races } × 24 ], day: [ … × 91 ] } | null,
+//                               game: [ { at, u, w, f, p, n, s, d } ] | null }
 //   POST /api/admin { unflag: { q: 'bs-012', k: 'flags' | 'wrong', users: [id, …] } } → { ok: true, users: [id, …] }
 //                             takes that flag off those students' question (public.flag_clears, see below); 501 when the
 //                             table is not in the database yet
@@ -35,6 +36,11 @@
 // it. Joins and answers come from public.admin_series() (supabase/migrations/20261105120000_errors_log.sql); until
 // that function is in the database they are counted here from the rows. Reads and reports are always counted here.
 // null when neither worked — the rest of the page still loads.
+// game is the Regatta game's races over the same 91 days, newest first (public.game_races, written by api/game.mjs):
+// at = when it started (ms), u = the Telegram user (null: played in a plain browser), w = the wind, f = when the
+// player finished (ms, 0 = left before the finish), p = their place (null: not finished or disqualified), n = boats in
+// the race, s = their time (s), d = disqualified. The app counts the races, players and places for the range on
+// screen; series.races is the chart of races started. null until the table is in the database.
 // An admin taking a flag off writes public.flag_clears; the student's app drops the flag on its next sync
 // (api/progress.mjs), and until then the lists here leave it out.
 // The caller proves who they are with Telegram.WebApp.initData in the x-telegram-init-data header (as api/settings.mjs);
@@ -69,13 +75,13 @@ const dkey = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.g
 const UNITS = { hour: [24, 3600e3], day: [91, 86400e3] }; // buckets in the series, and their length in ms
 const MAX_ANSWER_ROWS = 50_000; // the fallback below reads the rows themselves; past this the database function is a must
 // Joins, answers, wrong answers, theory reads and reported mistakes per UTC hour and per UTC day, oldest first (see the header).
-async function series(users, progress) {
+async function series(users, progress, game) {
   const out = {}, starts = {};
   for (const [u, [n, step]] of Object.entries(UNITS)) {
     const s = new Date();
     if (u === 'hour') s.setUTCMinutes(0, 0, 0); else s.setUTCHours(0, 0, 0, 0);
     starts[u] = +s - (n - 1) * step;
-    out[u] = Array.from({ length: n }, (_, i) => ({ at: new Date(starts[u] + i * step).toISOString(), joined: 0, answers: 0, wrong: 0, reads: 0, reports: 0 }));
+    out[u] = Array.from({ length: n }, (_, i) => ({ at: new Date(starts[u] + i * step).toISOString(), joined: 0, answers: 0, wrong: 0, reads: 0, reports: 0, races: 0 }));
   }
   const add = (time, f) => { for (const u in UNITS) { const i = Math.floor((time - starts[u]) / UNITS[u][1]); if (i >= 0 && i < out[u].length) f(out[u][i]); } };
   // state.read['<prefix>-<topic>'] = when the article was read to the end (ms), or 1 from before the times were kept
@@ -87,6 +93,7 @@ async function series(users, progress) {
     for (const v of Object.values(obj(p.wrongAt))) if (v > 1e12) add(v, (r) => r.reports++);
     for (const n of Object.values(obj(p.notes))) if (n && n.at > 1e12) add(n.at, (r) => r.reports++);
   }
+  for (const g of game || []) add(g.at, (r) => r.races++);
   let fn = null;
   try {
     fn = await Promise.all(Object.keys(UNITS).map((u) => db('rpc/admin_series', { method: 'POST', body: { p_unit: u, p_count: UNITS[u][0] } })));
@@ -110,6 +117,23 @@ async function series(users, progress) {
     if (page.length < 1000) break;
   }
   return out;
+}
+// The Regatta races of the last 91 days, newest first (see the header), a page of 1000 at a time (the most the database
+// gives at once); null while the table is not there, or when it fails (the rest of the page still loads).
+const MAX_GAME_ROWS = 20_000;
+async function gameRaces() {
+  const from = new Date(Date.now() - UNITS.day[0] * UNITS.day[1]).toISOString(), out = [];
+  try {
+    for (let off = 0; off < MAX_GAME_ROWS; off += 1000) {
+      const page = await db(`game_races?select=started_at,finished_at,user_id,wind,place,boats,secs,dsq&started_at=gte.${from}&order=started_at.desc&limit=1000&offset=${off}`);
+      for (const r of page) out.push({ at: Date.parse(r.started_at), u: r.user_id, w: r.wind, f: r.finished_at ? Date.parse(r.finished_at) : 0, p: r.place, n: r.boats, s: r.secs, d: !!r.dsq });
+      if (page.length < 1000) break;
+    }
+    return out;
+  } catch (e) {
+    if (!/: 404 /.test(e.message)) await logError('admin game', e);
+    return null;
+  }
 }
 // The flags admins took off that the students' apps have not dropped yet ([] while the table is not there).
 const pendingClears = () => db('flag_clears?select=user_id,question_id,kind&limit=10000').catch(async (e) => {
@@ -188,19 +212,20 @@ export async function GET(request) {
     try { return await photo(+id); } catch (e) { await logError('admin photo', e, +id); return json({ error: 'failed' }, 500); }
   }
   try {
-    const [users, progress, clears] = await Promise.all([
+    const [users, progress, clears, game] = await Promise.all([
       db(`users?select=id,name,username,lang,daily_question,blocked_at,created_at,updated_at&order=updated_at.desc&limit=${MAX_USERS}`),
       // only the parts of the state the summary needs; the whole state can be ~100 KB per student
       db(`progress?select=user_id,ts,updated_at,total:state->total,q:state->q,exams:state->exams,days:state->days,set:state->set,flags:state->flags,wrong:state->wrong,wrongAt:state->wrongAt,wrongNote:state->wrongNote,notes:state->notes,read:state->read&limit=${MAX_USERS}`),
       pendingClears(),
+      gameRaces(),
     ]);
     const byUser = new Map(progress.map((p) => [p.user_id, p]));
     const list = users.map((u) => summarise(u, byUser.get(u.id)));
     list.sort((a, b) => Date.parse(b.active) - Date.parse(a.active));
     const byId = new Map(list.map((u) => [u.id, u]));
     for (const c of clears) { const u = byId.get(c.user_id); if (u && (c.kind === 'flags' || c.kind === 'wrong')) u[c.kind] = u[c.kind].filter((id) => id !== c.question_id); }
-    const data = await series(users, progress).catch(async (e) => { await logError('admin series', e); return null; });
-    return json({ users: list, series: data });
+    const data = await series(users, progress, game).catch(async (e) => { await logError('admin series', e); return null; });
+    return json({ users: list, series: data, game });
   } catch (e) {
     await logError('admin', e, user.id);
     return json({ error: 'failed' }, 500);

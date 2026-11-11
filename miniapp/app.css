@@ -375,6 +375,8 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .dtrack { height: 10px; border-radius: 5px; background: var(--line); overflow: hidden; }
 .app .dtrack i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
 .app .dbar b { text-align: right; color: var(--ink); font: 700 14px/1 'Carlito', Arial, sans-serif; font-variant-numeric: tabular-nums; }
+/* The Regatta game's block under the charts: its own heading, set apart from the charts above */
+.app .gmsec { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
 .app .in .dtrack i, .app .dchart.grow .dtrack i { transform-origin: left; animation: growX .45s var(--ease-out) both; }
 @media (prefers-reduced-motion: reduce) { .app .in .dtrack i, .app .dchart.grow .dtrack i { animation: none; } }
 .app .in .dplot i, .app .dchart.grow .dplot i { transform-origin: bottom; animation: growY .45s var(--ease-out) both; }
