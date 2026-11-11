@@ -48,7 +48,7 @@ const PLANS = {
   const CODE = /^(red|blue|green|yellow|accent|white|black|grey|gray|orange|ink|muted|course|line|light|dash|dashed|dotted|solid|middle|start|end|top|bottom|[a-zA-Z]{1,2}|[\d\s.,:°′″'"+-]*)$/;
   const deep = (v, k, fn) => typeof v === 'string' ? (SKIP.has(k) || CODE.test(v) ? v : fn(v)) : Array.isArray(v) ? v.map((x) => deep(x, k, fn)) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([kk, x]) => [kk, deep(x, kk, fn)])) : v;
   const get = async (u) => { const r = await fetch(`${u}?v=${Date.now()}`); return r.ok ? r.json() : null; };
-  if (ru) Object.assign(window.SCH_TEXT, { You: 'Вы', Other: 'Судно', Wind: 'Ветер', N: 'С', port: 'слева', stbd: 'справа' });
+  if (ru) Object.assign(window.SCH_TEXT, { You: 'Вы', Other: 'Судно', Wind: 'Ветер', N: 'С', port: 'слева', stbd: 'справа', depth: 'глубина', bow: 'роульс', chain: 'цепь', s: 'с' });
   const draw = (A) => A.svg ? A.svg : A.rhythm ? schematicRhythm(A.rhythm) : A.profile ? schematicProfile(A.profile) : A.noScale ? schematic(A.sch).replace(/<g><line x1="30"[\s\S]*?<\/g>/, '') : schematic(A.sch);
   const OWN = [[/(\d) m\b/g, '$1 м'], [/^(\d[\d.,]*) (miles|M)$/, '$1 мили']];
   const rows = document.getElementById('rows');
