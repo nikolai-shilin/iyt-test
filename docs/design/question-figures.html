@@ -64,7 +64,7 @@ const PLANS = {
     rows.append(row);
   };
   if (type) {
-    const base = `figure-style/questions/${level}`, list = await get(`${base}/${type}.json`) || [];
+    const base = `figure-style/questions/${level}`, topic = q.get('topic'), list = ((await get(`${base}/${type}.json`)) || []).filter((x) => !topic || x.topic === topic);
     for (const x of list) {
       const RU = ru ? (await get(`${base}/${x.id}/ru.json`)) || {} : null;
       for (const kind of ['q', 'plan']) { const A = await get(`${base}/${x.id}/${kind}.json`); if (A) add(x.id, kind, A, RU); }

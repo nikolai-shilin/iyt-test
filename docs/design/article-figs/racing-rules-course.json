@@ -1,0 +1,212 @@
+{
+ "article": "racing-rules/course",
+ "topic": "course",
+ "lead": "Start, sail the course, finish: each word has a definition. Here are the string test, the marks, the finish and flags S, N, C and M.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Sailing the course",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "mark": {
+     "x": 190,
+     "y": 100,
+     "label": "Right-hand gate mark"
+    },
+    "track": "M150 20 L215 85 L214 118 L196 140",
+    "boats": [
+     {
+      "x": 196,
+      "y": 140,
+      "hdg": 315,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "note": "Outside the gate: the string never passed between the marks"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Correcting an error",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "mark": {
+     "x": 160,
+     "y": 80,
+     "label": "Windward mark"
+    },
+    "track": "M120 180 L140 100 Q150 55 178 80 L200 140",
+    "boats": [
+     {
+      "x": 200,
+      "y": 140,
+      "hdg": 180,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "note": "Marks to port; this one was left to starboard"
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Touching a mark",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "mark": {
+     "x": 160,
+     "y": 90,
+     "label": "Windward mark"
+    },
+    "boats": [
+     {
+      "x": 178,
+      "y": 118,
+      "hdg": 330,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "note": "A sheet, the boom or a hand on it: a touch"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Finishing",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "line": {
+     "x1": 60,
+     "y1": 110,
+     "x2": 240,
+     "y2": 110,
+     "label": "Finishing line"
+    },
+    "boats": [
+     {
+      "x": 110,
+      "y": 114,
+      "hdg": 315,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "note": "The bow is across from the course side: finished"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Shortening and abandoning",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "S",
+      "S|shortened"
+     ],
+     [
+      "N",
+      "N|abandoned"
+     ],
+     [
+      "H",
+      "H under N|see ashore"
+     ],
+     [
+      "A",
+      "A under N|no more today"
+     ]
+    ],
+    "note": "S: two sounds · N: three sounds"
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Shortening and abandoning",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "mark": {
+     "x": 160,
+     "y": 80,
+     "label": "Mark 3",
+     "labelY": -14
+    },
+    "line": {
+     "x1": 160,
+     "y1": 80,
+     "x2": 250,
+     "y2": 84
+    },
+    "boats": [
+     {
+      "x": 250,
+      "y": 140,
+      "hdg": 315,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "note": "Finish between mark 3 and the boat showing flag S"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Changed legs, missing marks",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "C",
+      "C|leg changed"
+     ],
+     [
+      "M",
+      "M|missing mark"
+     ]
+    ],
+    "note": "Both with repeated sounds"
+   },
+   "cap": null
+  },
+  {
+   "n": 8,
+   "section": "Changed legs, missing marks",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "obstruction": {
+     "x": 147,
+     "y": 104,
+     "w": 26,
+     "h": 12,
+     "label": "RIB, flag M",
+     "lx": 160,
+     "ly": 134
+    },
+    "boats": [
+     {
+      "x": 125,
+      "y": 45,
+      "hdg": 180,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "note": "Mark 2 has gone: the RIB showing M is now the mark"
+   },
+   "cap": null
+  }
+ ]
+}

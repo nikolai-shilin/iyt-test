@@ -1,0 +1,185 @@
+{
+ "article": "racing-rules/starting",
+ "topic": "starting",
+ "lead": "A start is run by flags; the sounds only draw your eye to them. Learn the sequence, what each preparatory flag threatens, and what to do when you are over the line.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "The sequence",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "P",
+      "P|up at 4, down at 1"
+     ],
+     [
+      "orange",
+      "Orange|end of the line"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Preparatory flags",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "I",
+      "I|round an end"
+     ],
+     [
+      "Z",
+      "Z|20 % penalty"
+     ],
+     [
+      "U",
+      "U|disqualified"
+     ],
+     [
+      "black",
+      "Black|disqualified"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Preparatory flags",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 175,
+      "y": 118,
+      "hdg": 315,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "line": {
+     "x1": 40,
+     "y1": 135,
+     "x2": 280,
+     "y2": 135
+    },
+    "mark": {
+     "x": 160,
+     "y": 40,
+     "label": "First mark",
+     "labelY": -14
+    },
+    "track": "M40 135 L160 40 L280 135",
+    "note": "Z, U, black: stay out of the triangle in the last minute"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Starting correctly",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 138,
+      "y": 133,
+      "hdg": 330,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "line": {
+     "x1": 40,
+     "y1": 105,
+     "x2": 280,
+     "y2": 105
+    },
+    "track": "M168 89 L150 120 L138 137 L115 95",
+    "note": "Over at the gun: back below the line, then start"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Recalls",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "X",
+      "X|individual recall"
+     ],
+     [
+      "first-sub",
+      "First Substitute|general recall"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Postponed, abandoned",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "AP",
+      "AP|postponed"
+     ],
+     [
+      "N",
+      "N|abandoned"
+     ],
+     [
+      "H",
+      "over H|signals ashore"
+     ],
+     [
+      "A",
+      "over A|no more today"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Before the gun",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 195,
+      "y": 138,
+      "hdg": 315,
+      "label": "You",
+      "you": true
+     },
+     {
+      "x": 222,
+      "y": 126,
+      "hdg": 295,
+      "label": "A"
+     }
+    ],
+    "line": {
+     "x1": 40,
+     "y1": 90,
+     "x2": 250,
+     "y2": 90,
+     "label": "Start line"
+    },
+    "note": "A reaches in to windward: no room at the committee boat"
+   },
+   "cap": null
+  }
+ ]
+}

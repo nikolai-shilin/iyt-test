@@ -1,0 +1,52 @@
+{
+ "title": "Blue: only the hull counts",
+ "key": [
+  "A boat is in the zone when any part of her hull is in it",
+  "Your bowsprit and sails do not count: Blue's hull got there first",
+  "Definition Zone"
+ ],
+ "tags": [
+  [
+   "You",
+   "hull not yet in",
+   "red"
+  ],
+  [
+   "Blue",
+   "hull in first",
+   "accent"
+  ]
+ ],
+ "zone": true,
+ "ghosts": [
+  {
+   "of": "You",
+   "x": 140,
+   "y": 14,
+   "text": "a second earlier"
+  },
+  {
+   "of": "Blue",
+   "x": 112,
+   "y": 30
+  }
+ ],
+ "lines": [
+  [
+   140,
+   26,
+   140,
+   36,
+   "ink"
+  ]
+ ],
+ "ru": {
+  "Blue: only the hull counts": "Blue: считается только корпус",
+  "A boat is in the zone when any part of her hull is in it": "Яхта в зоне, когда в ней любая часть её корпуса",
+  "Your bowsprit and sails do not count: Blue's hull got there first": "Бушприт и паруса не в счёт: корпус Blue вошёл первым",
+  "Definition Zone": "Определение «Зона»",
+  "hull not yet in": "корпус ещё вне",
+  "hull in first": "корпус первым",
+  "a second earlier": "секундой раньше"
+ }
+}

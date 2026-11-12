@@ -10,7 +10,7 @@
       "refs": ["RRS 19.2(b), RRS definition Obstruction", "RRS 19.1(a), RRS 18.1", "RRS 19.1(b)", "RRS 19.2, RRS definition Obstruction", "RRS definition Obstruction", "RRS 19.1(a), RRS 18.1, RRS 11", "RRS 19.2(b), RRS definition Mark"],
       "blocks": [
         { "p": "An **obstruction** is an object you could not pass without a substantial change of course if you sailed straight at it from one hull length away: an anchored vessel, a pier, a rock, buoyed or not. So is an area the sailing instructions close to boats. A boat racing is one only to boats that must keep clear of her or, under rule 22, avoid her." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 130, "y": 132, "hdg": 45, "label": "You", "you": true }, { "x": 104, "y": 114, "hdg": 45, "label": "A" }, { "x": 205, "y": 68, "hdg": 315, "label": "B" }], "note": "B on starboard is an obstruction to both port-tack boats" } },
+        { "photo": "racing-rules/obstructions/1", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 130, "y": 132, "hdg": 45, "label": "You", "you": true }, { "x": 104, "y": 114, "hdg": 45, "label": "A" }, { "x": 205, "y": 68, "hdg": 315, "label": "B" }], "note": "B on starboard is an obstruction to both port-tack boats" } },
         { "p": "Rule 19 does not apply at a mark you both must leave on the same side: there rule 18 governs, or neither rule at a starting mark as you approach to start. Nor is a third boat an obstruction between two boats to whom rule 18 applies when she overlaps each of them." }
       ]
     },
@@ -23,8 +23,8 @@
       "blocks": [
         { "p": "The **right-of-way boat chooses** the side on which to pass; if she changes course to do it, she gives the other boat room to keep clear. When the boats are **overlapped**, the outside boat gives the inside boat room between her and the obstruction, right of way or not, unless she has been unable to since the overlap began. Room is seamanlike space for the conditions, current included, and no wider." },
         { "tiles": [
-          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 115, "y": 56, "hdg": 90, "label": "inside" }, { "x": 100, "y": 108, "hdg": 90, "label": "outside" }], "obstruction": { "x": 60, "y": 0, "w": 170, "h": 34, "label": "Pier" } }, "name": "Overlapped at a pier", "note": "outside gives room", "view": "30 0 290 160" },
-          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 188, "y": 49, "hdg": 270, "label": "A" }, { "x": 168, "y": 64, "hdg": 270, "label": "B" }], "obstruction": { "x": 0, "y": 0, "w": 250, "h": 38, "label": "Sea wall" } }, "name": "Along a sea wall", "note": "A squeezes in with no room: no rights", "view": "30 0 290 160" }
+          { "photo": "racing-rules/obstructions/2", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 115, "y": 56, "hdg": 90, "label": "inside" }, { "x": 100, "y": 108, "hdg": 90, "label": "outside" }], "obstruction": { "x": 60, "y": 0, "w": 170, "h": 34, "label": "Pier" } }, "name": "Overlapped at a pier", "note": "outside gives room", "view": "30 0 290 160" },
+          { "photo": "racing-rules/obstructions/3", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 188, "y": 49, "hdg": 270, "label": "A" }, { "x": 168, "y": 64, "hdg": 270, "label": "B" }], "obstruction": { "x": 0, "y": 0, "w": 250, "h": 38, "label": "Sea wall" } }, "name": "Along a sea wall", "note": "A squeezes in with no room: no rights", "view": "30 0 290 160" }
         ], "cols": 2 },
         { "p": "A **continuing obstruction** is one you sail alongside for a while: a shore, a sea wall, a line of moored boats. There a boat clear astern may take an inside overlap only if there is room to pass between the other boat and the obstruction when the overlap begins. If not, she gets no room and must keep clear while the overlap lasts; rules 10 and 11 do not help her. Rule 19, not 18, applies there even if it is a mark." }
       ]
@@ -37,7 +37,7 @@
       "refs": ["RRS 20.2(c)", "RRS 20.1, RRS 20.2(b)", "RRS 20.2(d)", "RRS 20.1", "RRS 20.1(b), RRS 20.2(b)", "RRS 20.3", "RRS 20.2(a), RRS 13", "RRS 20.4(a)", "RRS 20.2(c), RRS 20.3", "RRS 20.1, RRS 10", "RRS 20.2(e)", "RRS 20.2(c), RRS definition Room", "RRS 20.1, RRS definition Obstruction", "RRS 19.2(a), RRS 20.1", "RRS 20.2(c), RRS 43.1", "RRS 20.1(a), RRS 20.2(b)", "RRS 20.1, RRS 20.2(c)", "RRS 20.2(c), RRS 20.2(d)", "RRS 20.4(b)", "RRS 20.1, RRS definition Fetching", "RRS 20.1, RRS 20.2(a)", "RRS 20.1(b), RRS 20.2"],
       "blocks": [
         { "p": "Close-hauled towards a shore with a boat close to windward, you cannot tack without fouling her. Rule 20 lets you hail **\"Room to tack\"** to a boat on the same tack, overlapped or not, but only when you are approaching an obstruction, will soon need a substantial course change to avoid it safely, and are sailing close-hauled or above." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 150, "y": 135, "hdg": 45, "label": "You", "you": true }, { "x": 126, "y": 117, "hdg": 45, "label": "A" }], "obstruction": { "path": "M210 0 L320 0 L320 90 L250 90 Z", "label": "Quay", "lx": 230, "ly": 104 }, "note": "You hail; A tacks or answers \"You tack\"" } },
+        { "photo": "racing-rules/obstructions/4", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 150, "y": 135, "hdg": 45, "label": "You", "you": true }, { "x": 126, "y": 117, "hdg": 45, "label": "A" }], "obstruction": { "path": "M210 0 L320 0 L320 90 L250 90 Z", "label": "Quay", "lx": 230, "ly": 104 }, "note": "You hail; A tacks or answers \"You tack\"" } },
         { "list": [
           "You hail, then give her time to respond.",
           "She must respond even to a hail she thinks wrong: her remedy is a protest.",
@@ -60,7 +60,7 @@
           ["Taking a penalty", "During the turns, on either tack"],
           ["Moving astern or sideways to windward by backing a sail", "While she moves that way"]
         ] } },
-        { "fig": { "type": "race", "wind": 0, "line": { "x1": 40, "y1": 100, "x2": 250, "y2": 100 }, "boats": [{ "x": 150, "y": 50, "hdg": 200, "label": "You", "you": true }, { "x": 110, "y": 140, "hdg": 45, "label": "A" }, { "x": 190, "y": 143, "hdg": 315, "label": "B" }], "note": "Returning after the start: keep clear of A and B" } },
+        { "photo": "racing-rules/obstructions/5", "plan": 1.467, "fig": { "type": "race", "wind": 0, "line": { "x1": 40, "y1": 100, "x2": 250, "y2": 100 }, "boats": [{ "x": 150, "y": 50, "hdg": 200, "label": "You", "you": true }, { "x": 110, "y": 140, "hdg": 45, "label": "A" }, { "x": 190, "y": 143, "hdg": 315, "label": "B" }], "note": "Returning after the start: keep clear of A and B" } },
         { "p": "Over the line before the gun you still have your ordinary rights: rule 21.1 begins at your starting signal. A boat that was over and sails on is not returning and keeps her rights." }
       ]
     },
@@ -72,7 +72,7 @@
       "refs": ["RRS 22", "RRS 22, RRS definition Obstruction", "RRS 22, RRS 45, RRS Part 2 Section D preamble", "RRS 22, RRS 1.1, RRS 61.4(b)(4)", "RRS 22, RRS 14", "RRS 22, RRS 19.2(b), RRS definition Obstruction", "RRS 22, RRS Part 2 Section D preamble", "RRS 45, RRS 22", "RRS 22, RRS 13, RRS 43.1(a)", "RRS 22, RRS 10", "RRS 22, RRS 44.1"],
       "blocks": [
         { "p": "If possible, avoid a boat that is **capsized** or has not regained control after capsizing, is **anchored** or **aground**, or is **trying to help** a person or vessel in danger. Her tack is irrelevant: Section A is off. A boat is capsized when her masthead is in the water; knocked flat with the mast clear she is an ordinary boat, and once she sails under control again the normal rules return." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 160, "y": 55, "hdg": 181, "label": "You", "you": true }, { "x": 160, "y": 130, "hdg": 90, "label": "A" }], "note": "A is capsized dead ahead: avoid her if possible" } },
+        { "photo": "racing-rules/obstructions/6", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 160, "y": 55, "hdg": 181, "label": "You", "you": true }, { "x": 160, "y": 130, "hdg": 90, "label": "A" }], "note": "A is capsized dead ahead: avoid her if possible" } },
         { "p": "Anchoring while racing is allowed, and a boat you must avoid is an obstruction. \"If possible\" is meant: capsized yourself, you break nothing. A two-turns penalty clears a breach; a boat that stopped to help may ask for redress." }
       ]
     },
@@ -84,7 +84,7 @@
       "refs": ["RRS 23.1", "RRS 23.2", "RRS 23.1, RRS definition Racing", "RRS 23.2, RRS definition Proper Course", "RRS 23.1, RRS 23.2, RRS definition Racing", "RRS 23.2, RRS 21.1", "RRS definition Racing, RRS 10, RRS 23.1", "RRS 23.1, RRS 60.5(c)", "RRS 10, RRS 23.2", "RRS 10, RRS definition Racing", "RRS 23.1, RRS 30.4"],
       "blocks": [
         { "p": "You are **racing** from your preparatory signal until you have finished and cleared the finishing line and marks, or retired. At other times rule 23.1 applies: if reasonably possible, do not interfere with a boat that is racing. Finished, retired or waiting for your start, go round the fleet." },
-        { "fig": { "type": "race", "wind": 0, "line": { "x1": 60, "y1": 60, "x2": 240, "y2": 60, "label": "Finish line" }, "boats": [{ "x": 120, "y": 105, "hdg": 120, "label": "You", "you": true }, { "x": 205, "y": 140, "hdg": 315, "label": "A" }], "note": "You have finished and cleared the line: stay out of A's way" } },
+        { "photo": "racing-rules/obstructions/7", "plan": 1.467, "fig": { "type": "race", "wind": 0, "line": { "x1": 60, "y1": 60, "x2": 240, "y2": 60, "label": "Finish line" }, "boats": [{ "x": 120, "y": 105, "hdg": 120, "label": "You", "you": true }, { "x": 205, "y": 140, "hdg": 315, "label": "A" }], "note": "You have finished and cleared the line: stay out of A's way" } },
         { "p": "Rule 23.2 protects a boat taking a penalty, a boat on another leg and a boat returning to start: do not interfere with them if reasonably possible. After your starting signal it does not bind you while you sail your proper course, but rule 10 still does. A boat that will be scored OCS is still racing, with full rights." }
       ]
     }

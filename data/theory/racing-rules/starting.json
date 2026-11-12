@@ -15,7 +15,7 @@
           ["1 min", "Preparatory flag down", "1 long", "One minute"],
           ["0", "Class flag down", "1", "Start"]
         ] } },
-        { "fig": { "type": "flag", "flags": [["P", "P|up at 4, down at 1"], ["orange", "Orange|end of the line"]] }, "view": "0 40 320 104" },
+        { "photo": "racing-rules/starting/1", "fig": { "type": "flag", "flags": [["P", "P|up at 4, down at 1"], ["orange", "Orange|end of the line"]] }, "view": "0 40 320 104" },
         { "p": "**Times are taken from the flags**: a missing horn changes nothing, and a horn without the flag is no signal. The sailing instructions may change the five minutes. The next class's warning comes with or after the start before it. You are **racing** from your preparatory signal." }
       ]
     },
@@ -26,9 +26,9 @@
       "qa": { "q": "What happens if I'm in the triangle in the last minute under the black flag, rule 30.4?", "a": "You are disqualified without a hearing: under the **black flag**, a boat identified in the triangle between the ends of the line and the first mark in the last minute is scored BFD and cannot sail a restart." },
       "refs": ["RRS 30.2", "RRS 30.4", "RRS 30.1, RRS definition Start", "RRS 30.2, RRS 44.3(c)", "RRS 30.1, race signals", "RRS 30.2, race signals", "RRS 30.4, race signals", "RRS 30.3, race signals", "RRS 30.1, RRS 29.1", "RRS 30.1", "RRS 30.2, RRS definition Start", "RRS 30.3, RRS A5", "RRS 30.3, RRS 30.4", "RRS 30.3, RRS 36", "RRS 30.4, RRS A5", "RRS 30.4, RRS 61.4(b)(1)", "RRS 30.4, RRS 36", "RRS 30.4, RRS 29.2", "RRS 30, RRS 29.2", "RRS 26, RRS 30.1, RRS 30.2"],
       "blocks": [
-        { "fig": { "type": "flag", "flags": [["I", "I|round an end"], ["Z", "Z|20 % penalty"], ["U", "U|disqualified"], ["black", "Black|disqualified"]] }, "view": "0 40 320 104" },
+        { "photo": "racing-rules/starting/2", "fig": { "type": "flag", "flags": [["I", "I|round an end"], ["Z", "Z|20 % penalty"], ["U", "U|disqualified"], ["black", "Black|disqualified"]] }, "view": "0 40 320 104" },
         { "p": "Flag **P** adds nothing. The others police the **last minute** before your starting signal. Under **I**, a boat with any part of her hull on the course side must sail round an end, across an extension of the line, to the pre-start side before starting. **Z**, **U** and **black** concern the triangle between the ends of the line and the first mark: a boat identified there is penalised without a hearing, even if she is behind the line at the gun." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 175, "y": 118, "hdg": 315, "label": "You", "you": true }], "line": { "x1": 40, "y1": 135, "x2": 280, "y2": 135 }, "mark": { "x": 160, "y": 40, "label": "First mark", "labelY": -14 }, "track": "M40 135 L160 40 L280 135", "note": "Z, U, black: stay out of the triangle in the last minute" } },
+        { "photo": "racing-rules/starting/3", "plan": 1.317, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 175, "y": 118, "hdg": 315, "label": "You", "you": true }], "line": { "x1": 40, "y1": 135, "x2": 280, "y2": 135 }, "mark": { "x": 160, "y": 40, "label": "First mark", "labelY": -14 }, "track": "M40 135 L160 40 L280 135", "note": "Z, U, black: stay out of the triangle in the last minute" } },
         { "table": { "head": ["Flag", "Penalty", "After a recall or resail"], "rows": [
           ["Z · 30.2", "20 % scoring penalty", "Stands; caught again, 20 % more"],
           ["U · 30.3", "Disqualified", "Cancelled"],
@@ -45,7 +45,7 @@
       "refs": ["RRS definition Start, RRS 29.1", "RRS definition Start, RRS 28.1", "RRS 29.1, RRS 21.1, RRS definition Start", "RRS definition Start, RRS 28.1, Basic Principle Sportsmanship", "RRS 21.1", "RRS 21.1, RRS 10", "RRS definition Start, RRS 30.1", "RRS 29.1, RRS definition Start, RRS 61.4(b)(1)", "RRS 29.1, RRS definition Start", "RRS 29.1, RRS definition Start, RRS 61.4", "RRS 26, RRS definition Start", "RRS 21.1, RRS 14, RRS 43.1(c)"],
       "blocks": [
         { "p": "You **start** when your hull, having been entirely on the pre-start side at or after your starting signal, crosses the line from that side. Only the hull counts, not a bowsprit or crew. Over at the signal, you have not started, whatever the cause and whether or not anyone tells you." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 138, "y": 133, "hdg": 330, "label": "You", "you": true }], "line": { "x1": 40, "y1": 105, "x2": 280, "y2": 105 }, "track": "M168 89 L150 120 L138 137 L115 95", "note": "Over at the gun: back below the line, then start" } },
+        { "photo": "racing-rules/starting/4", "plan": 1.317, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 138, "y": 133, "hdg": 330, "label": "You", "you": true }], "line": { "x1": 40, "y1": 105, "x2": 280, "y2": 105 }, "track": "M168 89 L150 120 L138 137 L115 95", "note": "Over at the gun: back below the line, then start" } },
         { "p": "Bring the whole hull back to the pre-start side of the line or its extensions, by any route under flag P, round an end under flag I, and cross again. While returning after your starting signal you keep clear of boats that are not, until your hull is completely on the pre-start side; then your ordinary rights are back. Sail on and you are scored OCS." }
       ]
     },
@@ -56,7 +56,7 @@
       "qa": { "q": "What is the difference between flag X and First Substitute at a race start?", "a": "Flag X with one sound is an **individual recall**: boats over the line return and start. First Substitute with two sounds is a general recall: racing stops, and the new warning comes one minute after it is lowered." },
       "refs": ["RRS 29.1, RRS A5", "RRS 29.2", "RRS 29.1", "RRS 29.2, race signals", "RRS definition Racing", "RRS 36, RRS 29.2", "RRS 29.2, RRS 26", "RRS 29.1, RRS 30.1", "RRS 29.1, RRS 30.4", "RRS 29.1, RRS 26", "RRS 29.1, RRS A5, RRS 61.4(b)(1)", "RRS definition Racing, RRS 31, RRS 29.2", "RRS 29.1, race signals (X)", "RRS 29.2, race signals (First Substitute)"],
       "blocks": [
-        { "fig": { "type": "flag", "flags": [["X", "X|individual recall"], ["first-sub", "First Substitute|general recall"]] }, "view": "0 40 320 104" },
+        { "photo": "racing-rules/starting/5", "fig": { "type": "flag", "flags": [["X", "X|individual recall"], ["first-sub", "First Substitute|general recall"]] }, "view": "0 40 320 104" },
         { "p": "**Individual recall**: flag X with one sound, promptly after the start, when a boat is over or must round an end. The committee need not hail numbers. X stays up until those boats have returned, but no later than four minutes after the start or one minute before the next start." },
         { "p": "**General recall**: First Substitute with two sounds, when the committee cannot identify the boats over or erred in the procedure. Racing stops. The new warning comes one minute after First Substitute is lowered. A breach in the recalled start is not penalised, except under rules 2, 30.2, 30.4 and 69, or rule 14 with injury or serious damage." }
       ]
@@ -68,7 +68,7 @@
       "qa": { "q": "What does the AP flag mean in a sailing race, and when is the next start?", "a": "**AP** with two sounds postpones races not yet started; the warning signal comes one minute after AP is lowered. Over a numeral pennant 1–9 it postpones by that many hours; over A, no more racing today." },
       "refs": ["RRS 27.3, race signals", "RRS race signals (AP over numeral pennant)", "RRS race signals (AP over A)", "RRS race signals (AP over H)", "RRS 32, race signals (N)", "RRS 32, race signals (N over A)", "RRS 32, race signals (N over H)", "RRS race signals (L)", "RRS 40, RRS 27.1, race signals (Y)", "RRS race signals (orange flag), SI", "RRS 27.1", "RRS 27.2, RRS 61.4(b)(1)", "RRS 27.3", "RRS 27.3, race signals (N)", "RRS 26, race signals (AP over numeral pennant)", "RRS 27.3, race signals (AP)", "RRS 27.3, RRS 29.2"],
       "blocks": [
-        { "fig": { "type": "flag", "flags": [["AP", "AP|postponed"], ["N", "N|abandoned"], ["H", "over H|signals ashore"], ["A", "over A|no more today"]] }, "view": "0 40 320 104" },
+        { "photo": "racing-rules/starting/6", "fig": { "type": "flag", "flags": [["AP", "AP|postponed"], ["N", "N|abandoned"], ["H", "over H|signals ashore"], ["A", "over A|no more today"]] }, "view": "0 40 320 104" },
         { "table": { "head": ["Signal", "Sounds", "Meaning"], "rows": [
           ["AP", "2", "Races not started are postponed; warning 1 minute after AP comes down"],
           ["AP over numeral pennant 1–9", "2", "Postponed 1–9 hours from the scheduled start"],
@@ -86,7 +86,7 @@
       "qa": { "q": "Do I get mark-room at the committee boat when starting a race?", "a": "No: a **starting mark** surrounded by navigable water gives no mark-room as boats approach it to start, so a windward boat has no claim on the gap. The usual rules apply: port keeps clear of starboard, windward of leeward." },
       "refs": ["RRS Part 2 Section C preamble, RRS 11", "RRS 10, RRS Part 2 Section C preamble", "RRS definition Proper Course, RRS 17, RRS 16.1", "RRS Part 2 Section C preamble, RRS 11, RRS 16.1", "RRS 16.1, RRS 31, RRS 43.1(a)", "RRS 31, RRS 44.1, RRS definition Racing", "RRS definition Racing, RRS 31", "RRS 21.3"],
       "blocks": [
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 195, "y": 138, "hdg": 315, "label": "You", "you": true }, { "x": 222, "y": 126, "hdg": 295, "label": "A" }], "line": { "x1": 40, "y1": 90, "x2": 250, "y2": 90, "label": "Start line" }, "note": "A reaches in to windward: no room at the committee boat" } },
+        { "photo": "racing-rules/starting/7", "plan": 1.317, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 195, "y": 138, "hdg": 315, "label": "You", "you": true }, { "x": 222, "y": 126, "hdg": 295, "label": "A" }], "line": { "x1": 40, "y1": 90, "x2": 250, "y2": 90, "label": "Start line" }, "note": "A reaches in to windward: no room at the committee boat" } },
         { "p": "Before the gun the usual rules decide: port keeps clear of starboard, windward of leeward. **A starting mark surrounded by navigable water gives no mark-room** as boats approach it to start, so a boat reaching in to windward has no claim on the gap at the committee boat. The leeward boat may hold her course or luff, giving room to keep clear when she changes course." },
         { "p": "Before the starting signal there is no proper course, so rule 17 does not stop a luff. Touch a starting mark while racing: one-turn penalty, unless another boat's breach forced you onto it. A boat backing a sail to move astern keeps clear." }
       ]

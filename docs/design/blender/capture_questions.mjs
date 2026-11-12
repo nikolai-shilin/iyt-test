@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 //   node docs/design/blender/capture_questions.mjs bareboat-skipper --type encounter [--ru]   # <id>/plan[.ru].png and q[.ru].png
 const HERE = dirname(fileURLToPath(import.meta.url)), level = process.argv[2] || 'vhf-radio-operator', RU = process.argv.includes('--ru');
 const TYPE = process.argv.includes('--type') ? process.argv[process.argv.indexOf('--type') + 1] : '';
+const TOPIC = process.argv.includes('--topic') ? process.argv[process.argv.indexOf('--topic') + 1] : '';   // only that topic's questions
 const OUT = join(HERE, '..', 'figure-style', 'questions', level);
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', PORT = 9400 + Math.floor(Math.random() * 500);   // several agents may capture at once
 const chrome = spawn(CHROME, ['--headless=new', '--disable-gpu', '--no-first-run', `--remote-debugging-port=${PORT}`, `--user-data-dir=${mkdtempSync(join(tmpdir(), 'q-cap-'))}`, 'about:blank'], { stdio: 'ignore' });
@@ -23,7 +24,7 @@ try {
   const evaluate = async expression => (await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })).result?.result?.value;
   await send('Emulation.setDeviceMetricsOverride', { width: 1200, height: 1200, deviceScaleFactor: 2, mobile: false });
   await send('Page.enable');
-  await send('Page.navigate', { url: `http://localhost:5182/question-figures.html?l=${level}${TYPE ? `&t=${TYPE}` : ''}${RU ? '&lang=ru' : ''}` });
+  await send('Page.navigate', { url: `http://localhost:5182/question-figures.html?l=${level}${TYPE ? `&t=${TYPE}` : ''}${TOPIC ? `&topic=${TOPIC}` : ''}${RU ? '&lang=ru' : ''}` });
   let done; for (let i = 0; i < 600 && done !== '1'; i++) { await sleep(250); done = await evaluate('document.body && document.body.dataset.done'); }
   if (done !== '1') throw new Error('page did not finish');
   await sleep(300);

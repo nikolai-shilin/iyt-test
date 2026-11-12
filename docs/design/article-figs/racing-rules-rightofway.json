@@ -1,0 +1,179 @@
+{
+ "article": "racing-rules/rightofway",
+ "topic": "rightofway",
+ "lead": "Four rules say who has right of way when two boats meet. Two facts decide which one applies: the tack each boat is on and whether they overlap. One boat keeps clear; the other may sail her course.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Rule 10 · opposite tacks",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 105,
+      "y": 130,
+      "hdg": 45,
+      "label": "port"
+     },
+     {
+      "x": 215,
+      "y": 130,
+      "hdg": 315,
+      "label": "starboard"
+     }
+    ]
+   },
+   "cap": "port crosses, ducks or tacks",
+   "name": "On a beat"
+  },
+  {
+   "n": 2,
+   "section": "Rule 10 · opposite tacks",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 125,
+      "y": 100,
+      "hdg": 170
+     },
+     {
+      "x": 205,
+      "y": 100,
+      "hdg": 190
+     }
+    ]
+   },
+   "cap": "boom to starboard: port tack keeps clear",
+   "name": "On a run"
+  },
+  {
+   "n": 3,
+   "section": "Rule 11 · same tack, overlapped",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 175,
+      "y": 95,
+      "hdg": 315,
+      "label": "windward"
+     },
+     {
+      "x": 135,
+      "y": 135,
+      "hdg": 315,
+      "label": "leeward"
+     }
+    ]
+   },
+   "cap": "windward keeps clear: hull, boom and sails",
+   "name": "Overlapped"
+  },
+  {
+   "n": 4,
+   "section": "Rule 11 · same tack, overlapped",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 222,
+      "y": 147,
+      "hdg": 315
+     },
+     {
+      "x": 243,
+      "y": 143,
+      "hdg": 315,
+      "label": "windward"
+     }
+    ],
+    "line": {
+     "x1": 30,
+     "y1": 85,
+     "x2": 200,
+     "y2": 85,
+     "label": "Start line"
+    }
+   },
+   "cap": "no room at the committee boat",
+   "name": "Barging at the start"
+  },
+  {
+   "n": 5,
+   "section": "Rule 12 · same tack, not overlapped",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 210,
+      "y": 120,
+      "hdg": 270
+     },
+     {
+      "x": 236,
+      "y": 97,
+      "hdg": 270,
+      "label": "You",
+      "you": true
+     }
+    ]
+   },
+   "cap": "you keep clear all the way: rule 12, then 11",
+   "name": "You pass to windward"
+  },
+  {
+   "n": 6,
+   "section": "Rule 12 · same tack, not overlapped",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 210,
+      "y": 100,
+      "hdg": 270
+     },
+     {
+      "x": 230,
+      "y": 123,
+      "hdg": 270,
+      "label": "You",
+      "you": true
+     }
+    ]
+   },
+   "cap": "once overlapped you have right of way",
+   "name": "You pass to leeward"
+  },
+  {
+   "n": 7,
+   "section": "Rule 13 · while tacking",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 208,
+      "y": 143,
+      "hdg": 315,
+      "label": "starboard"
+     },
+     {
+      "x": 150,
+      "y": 85,
+      "hdg": 345,
+      "label": "tacking"
+     }
+    ],
+    "note": "Past head to wind, not yet close-hauled: she keeps clear"
+   },
+   "cap": null
+  }
+ ]
+}

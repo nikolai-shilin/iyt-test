@@ -1,0 +1,153 @@
+{
+ "article": "racing-rules/limits",
+ "topic": "limits",
+ "lead": "Right of way is not a licence. Rules 14 to 17 limit every boat, and above all the right-of-way boat: avoid contact, give room when you gain right of way or change course, and do not luff a boat you caught from astern.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Rule 14 · avoiding contact",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 70,
+      "y": 135,
+      "hdg": 45,
+      "label": "port"
+     },
+     {
+      "x": 200,
+      "y": 135,
+      "hdg": 315,
+      "label": "starboard"
+     }
+    ],
+    "note": "Port is not keeping clear: now starboard must act too"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Rule 15 · acquiring right of way",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 245,
+      "y": 130,
+      "hdg": 315
+     },
+     {
+      "x": 205,
+      "y": 112,
+      "hdg": 315,
+      "label": "You",
+      "you": true
+     }
+    ]
+   },
+   "cap": "she needs room to keep clear",
+   "name": "Your tack: rule 15"
+  },
+  {
+   "n": 3,
+   "section": "Rule 15 · acquiring right of way",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 220,
+      "y": 125,
+      "hdg": 45,
+      "label": "You",
+      "you": true
+     },
+     {
+      "x": 195,
+      "y": 100,
+      "hdg": 45
+     }
+    ]
+   },
+   "cap": "she keeps clear at once",
+   "name": "Her tack: no rule 15"
+  },
+  {
+   "n": 4,
+   "section": "Rule 16.1 · changing course",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 165,
+      "y": 82,
+      "hdg": 270
+     },
+     {
+      "x": 160,
+      "y": 125,
+      "hdg": 290,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "note": "You luff slowly: the windward boat has room to respond"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Rule 16.2 · on a beat",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 190,
+      "y": 105,
+      "hdg": 300,
+      "label": "starboard"
+     },
+     {
+      "x": 110,
+      "y": 135,
+      "hdg": 65,
+      "label": "port"
+     }
+    ],
+    "note": "Starboard bears away at the ducking boat: rule 16.2"
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Rule 17 · proper course",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 150,
+      "y": 85,
+      "hdg": 270,
+      "label": "windward"
+     },
+     {
+      "x": 165,
+      "y": 130,
+      "hdg": 270,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "track": "M228 105 L182 126",
+    "note": "From clear astern, within two lengths: rule 17"
+   },
+   "cap": null
+  }
+ ]
+}

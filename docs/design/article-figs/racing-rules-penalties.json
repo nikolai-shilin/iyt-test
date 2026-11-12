@@ -1,0 +1,235 @@
+{
+ "article": "racing-rules/penalties",
+ "topic": "penalties",
+ "lead": "Break a rule and you pay for it on the water, at once and unasked. Which penalty fits which breach, how to take it, and when turns are not enough.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Turns penalties",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 150,
+      "y": 135,
+      "hdg": 45,
+      "label": "You",
+      "you": true
+     },
+     {
+      "x": 215,
+      "y": 100,
+      "hdg": 315,
+      "label": "Grey"
+     }
+    ]
+   },
+   "cap": "port tack fails to keep clear",
+   "name": "Two-Turns Penalty"
+  },
+  {
+   "n": 2,
+   "section": "Turns penalties",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 185,
+      "y": 122,
+      "hdg": 300,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "mark": {
+     "x": 195,
+     "y": 95,
+     "label": "Mark",
+     "labelY": -16
+    }
+   },
+   "cap": "your boom brushes the mark",
+   "name": "One-Turn Penalty"
+  },
+  {
+   "n": 3,
+   "section": "Taking the turns",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 160,
+      "y": 120,
+      "hdg": 225,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "track": "M160 60 L160 110 C 200 140 220 90 180 70 C 150 60 140 100 160 110",
+    "note": "Downwind: gybe, luff, tack, bear away"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Taking the turns",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "line": {
+     "x1": 60,
+     "y1": 115,
+     "x2": 250,
+     "y2": 115,
+     "label": "Finish line"
+    },
+    "boats": [
+     {
+      "x": 150,
+      "y": 60,
+      "hdg": 315,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "track": "M165 150 L150 75 C 120 45 175 35 160 65",
+    "note": "Turns beyond the line: come back, cross again"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Retiring",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 167,
+      "y": 119,
+      "hdg": 45,
+      "label": "You",
+      "you": true
+     },
+     {
+      "x": 182,
+      "y": 104,
+      "hdg": 315,
+      "label": "Grey"
+     }
+    ],
+    "note": "A hole in Grey's side: retire, turns do not count"
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Exoneration",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 165,
+      "y": 122,
+      "hdg": 315,
+      "label": "You",
+      "you": true
+     },
+     {
+      "x": 190,
+      "y": 116,
+      "hdg": 315,
+      "label": "Blue"
+     }
+    ],
+    "mark": {
+     "x": 146,
+     "y": 116,
+     "label": "Mark",
+     "labelY": 22
+    }
+   },
+   "cap": "Blue pushes you onto the mark",
+   "name": "Compelled"
+  },
+  {
+   "n": 7,
+   "section": "Exoneration",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 165,
+      "y": 120,
+      "hdg": 330,
+      "label": "You",
+      "you": true
+     },
+     {
+      "x": 200,
+      "y": 120,
+      "hdg": 330,
+      "label": "Yellow"
+     }
+    ],
+    "mark": {
+     "x": 150,
+     "y": 95,
+     "label": "Mark",
+     "labelY": -16
+    }
+   },
+   "cap": "Yellow leaves too little room",
+   "name": "Within mark-room"
+  },
+  {
+   "n": 8,
+   "section": "Scoring Penalty",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "yellow",
+      "Yellow|Scoring Penalty"
+     ],
+     [
+      "red",
+      "Red|a protest"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 9,
+   "section": "Starting penalties",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "I",
+      "I|round an end"
+     ],
+     [
+      "Z",
+      "Z|20%"
+     ],
+     [
+      "U",
+      "U|UFD"
+     ],
+     [
+      "black",
+      "Black|BFD"
+     ]
+    ]
+   },
+   "cap": null
+  }
+ ]
+}

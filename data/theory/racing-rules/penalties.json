@@ -11,8 +11,8 @@
       "blocks": [
         { "p": "Break a rule without being exonerated and you take the penalty promptly, protest or no protest. For a rule of **Part 2** (rules 10 to 23) it is a **Two-Turns Penalty**; for touching a mark (rule 31), a **One-Turn Penalty**, even if swept there. Both in one incident: two turns." },
         { "tiles": [
-          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 150, "y": 135, "hdg": 45, "label": "You", "you": true }, { "x": 215, "y": 100, "hdg": 315, "label": "Grey" }] }, "view": "95 0 225 179", "name": "Two-Turns Penalty", "note": "port tack fails to keep clear" },
-          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 185, "y": 122, "hdg": 300, "label": "You", "you": true }], "mark": { "x": 195, "y": 95, "label": "Mark", "labelY": -16 } }, "view": "95 0 225 179", "name": "One-Turn Penalty", "note": "your boom brushes the mark" }
+          { "photo": "racing-rules/penalties/1", "plan": 1.317, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 150, "y": 135, "hdg": 45, "label": "You", "you": true }, { "x": 215, "y": 100, "hdg": 315, "label": "Grey" }] }, "view": "95 0 225 179", "name": "Two-Turns Penalty", "note": "port tack fails to keep clear" },
+          { "photo": "racing-rules/penalties/2", "plan": 1.389, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 185, "y": 122, "hdg": 300, "label": "You", "you": true }], "mark": { "x": 195, "y": 95, "label": "Mark", "labelY": -16 } }, "view": "95 0 225 179", "name": "One-Turn Penalty", "note": "your boom brushes the mark" }
         ] },
         { "p": "Turns pay for these rules only: for rule 42 or 49 you retire, or the protest committee decides. Each incident, and each boat that may have broken a rule, needs its own penalty. If you broke none, a hail of \"Protest\" obliges you to nothing. Not yet racing, or finished and clear of the line: no turns owed. The sailing instructions may replace the turns with another penalty." }
       ]
@@ -25,9 +25,9 @@
       "refs": ["RRS 44.2", "RRS 44.2, RRS 21.2", "RRS 21.2", "RRS 21.2, RRS 23.2", "RRS 23.2", "RRS 44.2, RRS definition Racing", "RRS 44.2, RRS definition Finish", "RRS 31, RRS 44.2, RRS definition Finish", "RRS 31, RRS 44.2", "RRS 44.2, RRS 60.2"],
       "blocks": [
         { "p": "Sail **well clear** of other boats as soon after the incident as you can, then turn **promptly**. Each turn includes one tack and one gybe, in either order; both turns go the same way. Two tacks are not a turn, and turns a leg later do not count." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 160, "y": 120, "hdg": 225, "label": "You", "you": true }], "track": "M160 60 L160 110 C 200 140 220 90 180 70 C 150 60 140 100 160 110", "note": "Downwind: gybe, luff, tack, bear away" } },
+        { "photo": "racing-rules/penalties/3", "plan": 1.317, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 160, "y": 120, "hdg": 225, "label": "You", "you": true }], "track": "M160 60 L160 110 C 200 140 220 90 180 70 C 150 60 140 100 160 110", "note": "Downwind: gybe, luff, tack, bear away" } },
         { "p": "While turning you **keep clear** of boats not taking a penalty (rule 21.2). If reasonably possible others must not interfere, but after the start a boat on her proper course need not avoid you (rule 23.2). A mark touched during the turns costs one more turn." },
-        { "fig": { "type": "race", "wind": 0, "line": { "x1": 60, "y1": 115, "x2": 250, "y2": 115, "label": "Finish line" }, "boats": [{ "x": 150, "y": 60, "hdg": 315, "label": "You", "you": true }], "track": "M165 150 L150 75 C 120 45 175 35 160 65", "note": "Turns beyond the line: come back, cross again" } },
+        { "photo": "racing-rules/penalties/4", "plan": 1.317, "fig": { "type": "race", "wind": 0, "line": { "x1": 60, "y1": 115, "x2": 250, "y2": 115, "label": "Finish line" }, "boats": [{ "x": 150, "y": 60, "hdg": 315, "label": "You", "you": true }], "track": "M165 150 L150 75 C 120 45 175 35 160 65", "note": "Turns beyond the line: come back, cross again" } },
         { "p": "A penalty earned before the start need not wait for the starting signal. At the **finish** your hull must be completely back on the course side after the turns before you cross the line; likewise after touching a finishing mark." }
       ]
     },
@@ -39,7 +39,7 @@
       "refs": ["RRS 44.1(b)", "RRS 44.1(b), RRS 60.5(c)", "RRS 60.5(c)", "RRS 2", "RRS Appendix A", "RRS 44.1(b), RRS 23.1", "RRS 36", "RRS 36, RRS 44.1(b)"],
       "blocks": [
         { "p": "Turns do not pay if you caused **injury** or **serious damage**, or if despite them your breach gained you a **significant advantage** in the race or series: then you **retire**." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 167, "y": 119, "hdg": 45, "label": "You", "you": true }, { "x": 182, "y": 104, "hdg": 315, "label": "Grey" }], "note": "A hole in Grey's side: retire, turns do not count" } },
+        { "photo": "racing-rules/penalties/5", "plan": 1.389, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 167, "y": 119, "hdg": 45, "label": "You", "you": true }, { "x": 182, "y": 104, "hdg": 315, "label": "Grey" }], "note": "A hole in Grey's side: retire, turns do not count" } },
         { "table": { "head": ["At the hearing", "Decision"], "rows": [
           ["Turns taken promptly", "No further penalty"],
           ["No penalty taken", "Disqualified (DSQ)"],
@@ -58,8 +58,8 @@
       "blocks": [
         { "p": "Rule 43 **exonerates** you when another boat's breach **compelled** you to break a rule; when, sailing within the **room or mark-room** owed to you, you broke a right-of-way rule or rule 15 or 16 against the boat that owed it, or were forced onto the mark (rule 31); and when, holding right of way, you broke rule 14 but the contact caused **no damage or injury**." },
         { "tiles": [
-          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 122, "hdg": 315, "label": "You", "you": true }, { "x": 190, "y": 116, "hdg": 315, "label": "Blue" }], "mark": { "x": 146, "y": 116, "label": "Mark", "labelY": 22 } }, "view": "95 0 225 179", "name": "Compelled", "note": "Blue pushes you onto the mark" },
-          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 120, "hdg": 330, "label": "You", "you": true }, { "x": 200, "y": 120, "hdg": 330, "label": "Yellow" }], "mark": { "x": 150, "y": 95, "label": "Mark", "labelY": -16 } }, "view": "95 0 225 179", "name": "Within mark-room", "note": "Yellow leaves too little room" }
+          { "photo": "racing-rules/penalties/6", "plan": 1.317, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 122, "hdg": 315, "label": "You", "you": true }, { "x": 190, "y": 116, "hdg": 315, "label": "Blue" }], "mark": { "x": 146, "y": 116, "label": "Mark", "labelY": 22 } }, "view": "95 0 225 179", "name": "Compelled", "note": "Blue pushes you onto the mark" },
+          { "photo": "racing-rules/penalties/7", "plan": 1.317, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 120, "hdg": 330, "label": "You", "you": true }, { "x": 200, "y": 120, "hdg": 330, "label": "Yellow" }], "mark": { "x": 150, "y": 95, "label": "Mark", "labelY": -16 } }, "view": "95 0 225 179", "name": "Within mark-room", "note": "Yellow leaves too little room" }
         ] },
         { "p": "An exonerated boat takes no penalty. But the hearing finds the facts: if nobody forced you onto the mark, you are disqualified. And a right-of-way boat that could have avoided a collision with damage has broken rule 14 too." }
       ]
@@ -72,7 +72,7 @@
       "refs": ["RRS 44.3", "RRS 44.3(a)", "RRS 44.3(b)", "RRS 44.3(c)", "RRS 44.3(a), RRS 44.3(b)", "RRS 44.1, RRS 44.3(a)", "RRS 44.1(b), RRS 44.3", "RRS 44.2, RRS 44.3, RRS 60.2", "RRS Appendix T1", "RRS Appendix T1, T4", "RRS Appendix T1, T2, RRS 44.1(b)", "RRS Introduction (Terminology, [DP]), RRS 40"],
       "blocks": [
         { "p": "Where the notice of race or sailing instructions specify the **Scoring Penalty** (rule 44.3), it replaces the turns: show a yellow flag at the first reasonable opportunity, keep it up until you finish, then tell the race committee and name the other boat. Otherwise a yellow flag is no penalty." },
-        { "fig": { "type": "flag", "flags": [["yellow", "Yellow|Scoring Penalty"], ["red", "Red|a protest"]] } },
+        { "photo": "racing-rules/penalties/8", "fig": { "type": "flag", "flags": [["yellow", "Yellow|Scoring Penalty"], ["red", "Red|a protest"]] } },
         { "p": "It costs 20% of the DNF score, rounded to a tenth of a point (or the points stated), never takes you beyond DNF and changes nobody else's score." },
         { "table": { "head": ["49 boats, you finish 7th", "Points"], "rows": [
           ["DNF score: 49 + 1", "50"],
@@ -90,7 +90,7 @@
       "refs": ["RRS 29.1, RRS Appendix A", "RRS 29.1, RRS 21.1", "RRS 21.1", "RRS 30.1", "RRS 30.2", "RRS 30.3", "RRS 30.3, RRS 30.1", "RRS 30.4"],
       "blocks": [
         { "p": "Turns do not cure being over the line at the start: you return and start, keeping clear of boats that are not returning, or you are scored OCS. The preparatory flag prices the **last minute**." },
-        { "fig": { "type": "flag", "flags": [["I", "I|round an end"], ["Z", "Z|20%"], ["U", "U|UFD"], ["black", "Black|BFD"]] } },
+        { "photo": "racing-rules/penalties/9", "fig": { "type": "flag", "flags": [["I", "I|round an end"], ["Z", "Z|20%"], ["U", "U|UFD"], ["black", "Black|BFD"]] } },
         { "table": { "head": ["Flag", "Caught in the last minute", "After a general recall"], "rows": [
           ["I", "Over the line: round an end", "—"],
           ["Z", "In the triangle: 20%", "Stays; again, another 20%"],

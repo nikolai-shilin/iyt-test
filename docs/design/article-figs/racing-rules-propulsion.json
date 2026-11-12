@@ -1,0 +1,166 @@
+{
+ "article": "racing-rules/propulsion",
+ "topic": "propulsion",
+ "lead": "Rule 42: a boat races on wind and water alone. Part 4 adds no outside help, lifejackets under flag Y and limits on crew and gear.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Rule 42.1",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 140,
+      "y": 96,
+      "hdg": 0,
+      "label": "You",
+      "you": true
+     },
+     {
+      "x": 190,
+      "y": 148,
+      "hdg": 315,
+      "label": "Grey"
+     }
+    ],
+    "line": {
+     "x1": 40,
+     "y1": 70,
+     "x2": 260,
+     "y2": 70,
+     "label": "Start line"
+    },
+    "note": "A backed mainsail uses the wind; keep clear (rule 21)"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Rule 42.2",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 140,
+      "y": 132,
+      "hdg": 200,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "track": "M150 22 L132 58 L166 94 L140 132",
+    "note": "Steady wind, nobody near: gybe after gybe is propulsion"
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Rule 42.3",
+   "fig": {
+    "type": "sail",
+    "wind": 0,
+    "hdg": 15,
+    "nogo": true,
+    "note": "Stopped in the shaded sector: scull to its edge, no further"
+   },
+   "cap": null
+  },
+  {
+   "n": 4,
+   "section": "Rule 42.3",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "obstruction": {
+     "x": 0,
+     "y": 120,
+     "w": 320,
+     "h": 80,
+     "label": "Sandbank"
+    },
+    "boats": [
+     {
+      "x": 120,
+      "y": 115,
+      "hdg": 60,
+      "label": "You",
+      "you": true
+     }
+    ],
+    "note": "Aground: crews may push by hand; no tow under engine"
+   },
+   "cap": null
+  },
+  {
+   "n": 5,
+   "section": "Enforcement",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "yellow",
+      "Yellow flag|rule 42 penalty"
+     ],
+     [
+      "O",
+      "Flag O|kinetics allowed"
+     ]
+    ]
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Outside help, crew, anchoring",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "mark": {
+     "x": 160,
+     "y": 45,
+     "label": "Windward mark"
+    },
+    "boats": [
+     {
+      "x": 150,
+      "y": 100,
+      "hdg": 315,
+      "label": "You",
+      "you": true
+     },
+     {
+      "x": 85,
+      "y": 138,
+      "hdg": 315,
+      "label": "Blue"
+     },
+     {
+      "x": 232,
+      "y": 142,
+      "hdg": 45,
+      "label": "Red"
+     }
+    ],
+    "note": "No wind, foul tide: you anchor, the others drift back"
+   },
+   "cap": null
+  },
+  {
+   "n": 7,
+   "section": "Lifejackets, hiking, gear",
+   "fig": {
+    "type": "flag",
+    "flags": [
+     [
+      "Y",
+      "Y|wear lifejackets"
+     ]
+    ],
+    "note": "One sound signal"
+   },
+   "cap": null
+  }
+ ]
+}

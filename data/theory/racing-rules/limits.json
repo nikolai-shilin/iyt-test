@@ -20,7 +20,7 @@
       ],
       "blocks": [
         { "p": "Every boat must **avoid contact with another boat if reasonably possible**, and must not cause contact between other boats or between a boat and an object. A right-of-way boat, or one sailing within room she is entitled to, need not act until it is clear that the other boat is not keeping clear or giving that room. From then on she must, and a hail is no substitute." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 70, "y": 135, "hdg": 45, "label": "port" }, { "x": 200, "y": 135, "hdg": 315, "label": "starboard" }], "note": "Port is not keeping clear: now starboard must act too" } },
+        { "photo": "racing-rules/limits/1", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 70, "y": 135, "hdg": 45, "label": "port" }, { "x": 200, "y": 135, "hdg": 315, "label": "starboard" }], "note": "Port is not keeping clear: now starboard must act too" } },
         { "p": "Only what is reasonably possible is asked: a boat given no time to react, or one that could escape only by hitting a third boat, breaks nothing. Contact by any part of a boat or her equipment counts. Avoiding early is always allowed." }
       ]
     },
@@ -72,8 +72,8 @@
       "blocks": [
         { "p": "When you **acquire right of way** by your own action, you must initially give the other boat **room to keep clear**: after tacking or gybing onto starboard, tacking close to leeward of her, overlapping her to leeward from clear astern, or getting back to the pre-start side." },
         { "tiles": [
-          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 245, "y": 130, "hdg": 315 }, { "x": 205, "y": 112, "hdg": 315, "label": "You", "you": true }] }, "view": "150 0 170 185", "name": "Your tack: rule 15", "note": "she needs room to keep clear" },
-          { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 220, "y": 125, "hdg": 45, "label": "You", "you": true }, { "x": 195, "y": 100, "hdg": 45 }] }, "view": "150 0 170 185", "name": "Her tack: no rule 15", "note": "she keeps clear at once" }
+          { "photo": "racing-rules/limits/2", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 245, "y": 130, "hdg": 315 }, { "x": 205, "y": 112, "hdg": 315, "label": "You", "you": true }] }, "view": "150 0 170 185", "name": "Your tack: rule 15", "note": "she needs room to keep clear" },
+          { "photo": "racing-rules/limits/3", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 220, "y": 125, "hdg": 45, "label": "You", "you": true }, { "x": 195, "y": 100, "hdg": 45 }] }, "view": "150 0 170 185", "name": "Her tack: no rule 15", "note": "she keeps clear at once" }
         ] },
         { "p": "It does not apply when you gain right of way because of the other boat's actions, such as her tack or gybe, or when you had it all along. \"Initially\" means just that: once she has had room, her ordinary duty takes over. Room is a prompt, seamanlike manoeuvre, even a sharp bear-away; no rule sets a distance for \"tacking too close\"." }
       ]
@@ -98,7 +98,7 @@
       ],
       "blocks": [
         { "p": "When a **right-of-way boat changes course**, she must give the other boat room to keep clear. That binds the leeward boat who luffs, the starboard-tack boat who luffs or bears away and the boat clear ahead, before the start as well as after it." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 82, "hdg": 270 }, { "x": 160, "y": 125, "hdg": 290, "label": "You", "you": true }], "note": "You luff slowly: the windward boat has room to respond" } },
+        { "photo": "racing-rules/limits/4", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 165, "y": 82, "hdg": 270 }, { "x": 160, "y": 125, "hdg": 290, "label": "You", "you": true }], "note": "You luff slowly: the windward boat has room to respond" } },
         { "p": "Room is judged in the existing conditions: the other boat must be able to respond in a seamanlike way without hitting a third boat or an obstruction. If she has one such way out and misjudges it, the breach is hers. Slowing down on a steady heading is not a change of course. No hail is required, \"Hold your course!\" binds nobody, and you may alter as often as you like, even below your proper course." },
         { "p": "Rule 16.1 limits only the right-of-way boat. A keep-clear boat that sails into her simply fails to keep clear; one robbed of room by a sudden turn is exonerated." }
       ]
@@ -118,7 +118,7 @@
       ],
       "blocks": [
         { "p": "On a beat to windward, when a port-tack boat is keeping clear by sailing to pass to leeward of a starboard-tack boat, the **starboard-tack boat must not bear away** if the port-tack boat would then have to change course immediately to go on keeping clear." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 190, "y": 105, "hdg": 300, "label": "starboard" }, { "x": 110, "y": 135, "hdg": 65, "label": "port" }], "note": "Starboard bears away at the ducking boat: rule 16.2" } },
+        { "photo": "racing-rules/limits/5", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 190, "y": 105, "hdg": 300, "label": "starboard" }, { "x": 110, "y": 135, "hdg": 65, "label": "port" }], "note": "Starboard bears away at the ducking boat: rule 16.2" } },
         { "p": "The rule is narrow. It applies only on a beat, only to a bear-away (a luff is judged by rule 16.1) and only if the other boat must react at once: five lengths away she need not. A header is no excuse. A starboard-tack boat that holds her course breaks nothing, and a breach costs two turns even without contact." }
       ]
     },
@@ -140,7 +140,7 @@
       ],
       "blocks": [
         { "p": "If you become overlapped **to leeward from clear astern within two of your hull lengths**, you may not sail above your proper course while the boats stay on the same tack and overlapped within that distance, unless you promptly pass astern of her." },
-        { "fig": { "type": "race", "wind": 0, "boats": [{ "x": 150, "y": 85, "hdg": 270, "label": "windward" }, { "x": 165, "y": 130, "hdg": 270, "label": "You", "you": true }], "track": "M228 105 L182 126", "note": "From clear astern, within two lengths: rule 17" } },
+        { "photo": "racing-rules/limits/6", "plan": 1.467, "fig": { "type": "race", "wind": 0, "boats": [{ "x": 150, "y": 85, "hdg": 270, "label": "windward" }, { "x": 165, "y": 130, "hdg": 270, "label": "You", "you": true }], "track": "M228 105 L182 126", "note": "From clear astern, within two lengths: rule 17" } },
         { "table": { "head": ["How the overlap began", "Rule 17"], "rows": [
           ["To leeward from clear astern, within two lengths", "Applies"],
           ["More than two lengths to leeward", "No"],

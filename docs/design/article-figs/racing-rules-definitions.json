@@ -1,0 +1,230 @@
+{
+ "article": "racing-rules/definitions",
+ "topic": "definitions",
+ "lead": "The racing rules are written in defined terms. Learn what keep clear, overlap, room and zone mean, and the right-of-way rules become short.",
+ "figs": [
+  {
+   "n": 1,
+   "section": "Tack, leeward, windward",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 70,
+      "y": 105,
+      "hdg": 315,
+      "label": "starboard"
+     },
+     {
+      "x": 160,
+      "y": 80,
+      "hdg": 181,
+      "label": "starboard"
+     },
+     {
+      "x": 235,
+      "y": 115,
+      "hdg": 45,
+      "label": "port"
+     }
+    ],
+    "note": "The tack is the windward side, opposite the mainsail"
+   },
+   "cap": null
+  },
+  {
+   "n": 2,
+   "section": "Clear astern, overlap",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 120,
+      "y": 70,
+      "hdg": 270,
+      "label": "A"
+     },
+     {
+      "x": 165,
+      "y": 82,
+      "hdg": 270,
+      "label": "B"
+     },
+     {
+      "x": 128,
+      "y": 135,
+      "hdg": 270,
+      "label": "C"
+     }
+    ],
+    "track": "M131 30 L131 162",
+    "note": "B is clear astern of A · C overlaps A"
+   },
+   "cap": null
+  },
+  {
+   "n": 3,
+   "section": "Keep clear, room, proper course",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 190,
+      "y": 118,
+      "hdg": 45,
+      "label": "port"
+     },
+     {
+      "x": 235,
+      "y": 140,
+      "hdg": 315,
+      "label": "starboard"
+     }
+    ]
+   },
+   "cap": "starboard has to luff",
+   "name": "Not keeping clear"
+  },
+  {
+   "n": 4,
+   "section": "Keep clear, room, proper course",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 220,
+      "y": 92,
+      "hdg": 270
+     },
+     {
+      "x": 220,
+      "y": 110,
+      "hdg": 270,
+      "label": "leeward"
+     }
+    ]
+   },
+   "cap": "leeward cannot luff without contact",
+   "name": "Not keeping clear"
+  },
+  {
+   "n": 5,
+   "section": "Mark, zone, mark-room",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 212,
+      "y": 138,
+      "hdg": 315,
+      "label": "in the zone"
+     },
+     {
+      "x": 262,
+      "y": 120,
+      "hdg": 315,
+      "label": "outside"
+     }
+    ],
+    "mark": {
+     "x": 160,
+     "y": 85,
+     "zone": true,
+     "label": "Windward mark"
+    },
+    "note": "Three hull lengths of the boat nearer the mark"
+   },
+   "cap": null
+  },
+  {
+   "n": 6,
+   "section": "Obstruction",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 110,
+      "y": 140,
+      "hdg": 45,
+      "you": true
+     }
+    ],
+    "obstruction": {
+     "x": 125,
+     "y": 80,
+     "w": 80,
+     "h": 22,
+     "label": "Moored yacht"
+    }
+   },
+   "cap": "one length away, straight at it",
+   "name": "Obstruction"
+  },
+  {
+   "n": 7,
+   "section": "Obstruction",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 85,
+      "y": 70,
+      "hdg": 181
+     },
+     {
+      "x": 112,
+      "y": 82,
+      "hdg": 181
+     }
+    ],
+    "obstruction": {
+     "x": 0,
+     "y": 0,
+     "w": 60,
+     "h": 200,
+     "label": "Shore"
+    }
+   },
+   "cap": "three lengths or more along it",
+   "name": "Continuing obstruction"
+  },
+  {
+   "n": 8,
+   "section": "Racing, start, finish",
+   "fig": {
+    "type": "race",
+    "wind": 0,
+    "boats": [
+     {
+      "x": 110,
+      "y": 112,
+      "hdg": 315,
+      "label": "A"
+     },
+     {
+      "x": 200,
+      "y": 140,
+      "hdg": 315,
+      "label": "B"
+     }
+    ],
+    "line": {
+     "x1": 40,
+     "y1": 120,
+     "x2": 280,
+     "y2": 120,
+     "label": "Start line"
+    },
+    "note": "At the signal: A is over and must come back, B may start"
+   },
+   "cap": null
+  }
+ ]
+}
