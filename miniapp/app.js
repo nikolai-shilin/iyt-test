@@ -51,17 +51,17 @@ const $app = document.getElementById('app');
 
 // IYT recreational levels in course-progression order (iytworld.com/students/recreational/iyt-course-progression),
 // then the Racing Rules of Sailing and the Charter Check-in (not IYT courses). A level with an id has a bank (data/<id>.json, question ids
-// <prefix>-nnn); the others show as coming.
+// <prefix>-nnn); the others show as coming. review: its questions and articles are being checked (a tag on Home, a note on its screen).
 const LEVELS = [
   { id: 'vhf-radio-operator', prefix: 'vhf', link: 'vhf', title: 'VHF Radio Operator' },
-  { id: 'international-crew', prefix: 'ic', link: 'crew', title: 'International Crew' },
-  { id: 'flotilla-skipper', prefix: 'fs', link: 'flotilla', title: 'Flotilla Skipper' },
+  { id: 'international-crew', prefix: 'ic', link: 'crew', title: 'International Crew', review: true },
+  { id: 'flotilla-skipper', prefix: 'fs', link: 'flotilla', title: 'Flotilla Skipper', review: true },
   { id: 'bareboat-skipper', prefix: 'bs', link: 'bareboat', title: 'Bareboat Skipper' },
-  { id: 'yachtmaster-coastal', prefix: 'yc', link: 'coastal', title: 'Yachtmaster Coastal' },
-  { id: 'yachtmaster-offshore', prefix: 'yof', link: 'offshore', title: 'Yachtmaster Offshore' },
-  { id: 'yachtmaster-ocean', prefix: 'yo', link: 'ocean', title: 'Yachtmaster Ocean' },
-  { id: 'racing-rules', prefix: 'rr', link: 'racing', title: 'Racing Rules of Sailing' },
-  { id: 'charter-checkin', prefix: 'ci', link: 'checkin', title: 'Charter Check-in' },
+  { id: 'yachtmaster-coastal', prefix: 'yc', link: 'coastal', title: 'Yachtmaster Coastal', review: true },
+  { id: 'yachtmaster-offshore', prefix: 'yof', link: 'offshore', title: 'Yachtmaster Offshore', review: true },
+  { id: 'yachtmaster-ocean', prefix: 'yo', link: 'ocean', title: 'Yachtmaster Ocean', review: true },
+  { id: 'racing-rules', prefix: 'rr', link: 'racing', title: 'Racing Rules of Sailing', review: true },
+  { id: 'charter-checkin', prefix: 'ci', link: 'checkin', title: 'Charter Check-in', review: true },
 ];
 const DEFAULT_LEVEL = 'bareboat-skipper';
 let LEVEL = LEVELS.find((l) => l.id === DEFAULT_LEVEL); // the current level
@@ -126,6 +126,7 @@ const STR = {
     picPh: 'For example: the starboard sidelight is drawn red, it should be green',
     readUpK: 'Where to read', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Coming soon', soon2027: 'Coming in 2027', planned: 'Planned',
+    underReview: 'Under review', underReviewNote: 'We are checking this level’s questions and theory right now. Some may still change.',
     homeKicker: 'Sailing certification theory · free', homeTitle: 'Pass your sailing certification&nbsp;exam',
     homeLead: 'Close-to-real questions for every certification level, with an explanation after each answer. Pick the level you are studying for.',
     streak: (n) => `${n}-day streak`,
@@ -249,6 +250,7 @@ const STR = {
     picPh: 'Например: правый бортовой огонь нарисован красным, а должен быть зелёным',
     readUpK: 'Что почитать', mistakesIn: (n) => pl(n, 'mistake'),
     soon: 'Скоро', soon2027: 'В 2027 году', planned: 'В планах',
+    underReview: 'На проверке', underReviewNote: 'Вопросы и теорию этого уровня сейчас проверяют. Что-то ещё может измениться.',
     homeKicker: 'Теория к яхтенным сертификатам · бесплатно', homeTitle: 'Сдайте экзамен на&nbsp;яхтенный сертификат',
     homeLead: 'Вопросы, близкие к настоящему экзамену, для каждого уровня — с пояснением после каждого ответа. Выберите уровень, к которому готовитесь.',
     streak: (n) => `${pl(n, 'day')} подряд`,
@@ -1479,7 +1481,7 @@ const VIEWS = {
     const returning = S.total > 0;
     const lv = ready().map((l) => {
       const m = lvMeta(l.id), [lp, sp] = lvPcts(l);
-      return `<a href="${webPath(l.id)}" class="lvl${l === LEVEL && returning ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, sp, '', undefined, l.id)}<div><div class="card-title">${l.title}</div>` +
+      return `<a href="${webPath(l.id)}" class="lvl${l === LEVEL && returning ? ' on' : ''}" data-act="level" data-id="${l.id}">${ring(lp, sp, '', undefined, l.id)}<div><div class="card-title">${l.title}${l.review ? ` <span class="revtag">${t('underReview')}</span>` : ''}</div>` +
         `<div class="card-meta">${t('levelMeta', m.t, m.n, myExams(l.id).length)}</div></div><span class="chev" data-i="next" data-s="20"></span></a>`;
     }).join('');
     // first visit: the pitch; afterwards: pick up where you left off
@@ -1526,6 +1528,7 @@ const VIEWS = {
     return {
       title: LEVEL.title,
       body: `<div class="stack g4"><span class="meta">${LANG === 'ru' && LEVEL_RU[LEVEL.id] ? LEVEL_RU[LEVEL.id] : t('levelMeta', TOPICS.length, BANK.questions.length, myExams().length)}</span><h2 class="display-s">${esc(LEVEL.title)}</h2></div>
+        ${LEVEL.review ? `<div class="revnote"><span class="revtag">${t('underReview')}</span><p class="card-meta">${t('underReviewNote')}</p></div>` : ''}
         <div class="row" style="gap:18px;align-items:center">${ring(lp, sp, ' l', `<b data-count="${sp}" data-suffix="%" data-k="seen:${LEVEL.id}">${sp}%</b><small>${t('covered')}</small>`, LEVEL.id)}
           <p class="body-s">${esc(text)}</p></div>
         <div class="row" style="gap:10px"><button class="pill pill-primary lvl-btn" data-act="setup"><span data-i="play" data-s="20"></span>${t('practice')}</button>

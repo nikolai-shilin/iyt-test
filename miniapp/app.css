@@ -496,3 +496,9 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .anote .anq { font-size: 13px; line-height: 1.45; padding-left: 10px; border-left: 2px solid var(--line); overflow-wrap: anywhere;
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
 .app .anote .ant { margin-top: 4px; }
+
+/* A level whose questions and articles are being checked (LEVELS review: true): a quiet tag, and a note on its screen */
+.app .revtag { display: inline-block; vertical-align: 2px; margin-left: 6px; padding: 0 8px; border: 1px solid var(--tag-line); border-radius: 999px; color: var(--muted); font: 700 11px/20px 'Carlito', Arial, sans-serif; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+.app .revnote { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 12px 14px; border-radius: 12px; background: var(--band); }
+.app .revnote .revtag { margin-left: 0; }
+.app .revnote p { margin: 0; }
