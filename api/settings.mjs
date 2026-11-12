@@ -83,3 +83,22 @@ async function handle(request, write) {
 
 export const GET = (request) => handle(request, false);
 export const POST = (request) => handle(request, true);
+
+// A user's Telegram profile photo (JPEG, the smallest size), as a response; 204 when they have none the bot may see.
+// The bot fetches it (getUserProfilePhotos + getFile) because the file link carries the bot token, so the app never
+// sees that link. Used by api/admin.mjs (?photo=, admins) and api/game.mjs (?photo=, the players in the game's best times).
+async function tg(method, params) {
+  const res = await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/${method}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(params), signal: AbortSignal.timeout(8000) });
+  const data = await res.json();
+  if (!data.ok) throw new Error(`${method}: ${data.description}`);
+  return data.result;
+}
+export async function tgPhoto(id, cache = 'private') {
+  const { photos } = await tg('getUserProfilePhotos', { user_id: id, limit: 1 });
+  const sizes = photos && photos[0];
+  if (!sizes || !sizes.length) return new Response(null, { status: 204, headers: { 'cache-control': `${cache}, max-age=3600` } });
+  const { file_path } = await tg('getFile', { file_id: sizes[0].file_id }); // [0] is the smallest size (160 px)
+  const file = await fetch(`https://api.telegram.org/file/bot${process.env.TELEGRAM_BOT_TOKEN}/${file_path}`, { signal: AbortSignal.timeout(8000) });
+  if (!file.ok) throw new Error(`file ${file.status}`);
+  return new Response(await file.arrayBuffer(), { headers: { 'content-type': 'image/jpeg', 'cache-control': `${cache}, max-age=86400` } });
+}
