@@ -42,9 +42,6 @@ const NATIVE_BUTTONS = false;
 const BOT_LINK = 'https://t.me/iyt_test_bot';
 // RYC Rentals: yacht charter, as a mini app of its own bot (Profile links to it)
 const RENTALS_LINK = 'https://t.me/rycrentals_bot?startapp';
-// Feedback on Home: a Telegram chat with the author (photo: miniapp/fullcrimp.jpg)
-const FEEDBACK_HANDLE = 'fullcrimp';
-const FEEDBACK_LINK = `https://t.me/${FEEDBACK_HANDLE}`;
 // Group card on Home: the students' public Telegram group "IYT Test · Discussion" (photo: miniapp/group.png)
 const GROUP_LINK = 'https://t.me/iyt_test_group';
 const $app = document.getElementById('app');
@@ -139,7 +136,6 @@ const STR = {
     regPhys: 'The boat’s physics is built on the median polar diagram of the First 40.7 class, compiled from 193 official ORC measurements. The public source gives one “best” polar curve for the class, not separate curves for each combination of sails. So the tables are split by the usual use: the jib close-hauled and on a beam reach, the spinnaker on broad reaches and runs. Exact target speeds for a particular yacht need her ORC Speed Guide, her actual sails, and allowances for the sea state, her load and her trim.',
     mcpK: 'For AI assistants', mcpTitle: 'Practise in Claude or ChatGPT', mcpText: 'The questions and the theory are also an MCP server: add it to your AI assistant and it quizzes you, checks your answers and explains the rule.', mcpBtn: 'How to connect it',
     grpK: 'Discuss the questions', grpName: 'Sailing Certification Test · Discussion', grpRole: 'Telegram group for students', grpText: 'Ask why an answer is right, talk through the tricky ones, tell how your exam went.', grpBtn: 'Join the group',
-    fbK: 'Feedback?', fbRole: 'Author of Sailing Certification Test', fbText: 'Found a mistake in a question, missing a topic or have an idea? Write to me on Telegram, I read every message.', fbBtn: 'Write on Telegram',
     ringLabel: (s, m) => `${s}% seen · ${m}% mastered`, answers: 'Answer options', figure: 'Figure',
     figNames: { anchor: 'Anchorage sketch', boat: 'Parts of a yacht', lines: 'Mooring lines', radio: 'VHF set', flag: 'Signal flags', tide: 'Tidal curve', sphere: 'Celestial sphere', altitude: 'Sextant altitude', bay: 'Bay chart', buoy: 'Buoy', card: 'Notes', chart: 'Chart extract', compass: 'Compass rose', dayshape: 'Day shape', encounter: 'Two vessels meeting', isobars: 'Weather map', lights: 'Navigation lights', panel: 'Instrument panel', rope: 'Rope and knot', sail: 'Sailing boat and wind' }, timeLeft: 'Time left', fiveLeft: '5 minutes left',
     nextLevelK: 'Next level', open: 'Open', resetNothing: 'Nothing to reset yet', retry: 'Try again', allTopicsChip: 'All topics',
@@ -265,7 +261,6 @@ const STR = {
     regPhys: 'Физика лодки основана на медианной полярной диаграмме класса First 40.7, собранной из 193 официальных ORC-измерений. Публичный источник даёт единую «лучшую» полярную кривую класса, а не отдельные кривые для каждой комбинации парусов. Поэтому таблицы разделены по обычному применению: стаксель на лавировке/галфвинде, спинакер на широких и полных курсах. Для точных целевых скоростей конкретной яхты нужны её ORC Speed Guide, фактическая конфигурация парусов и поправка на состояние моря, загрузку и настройку.',
     mcpK: 'Для ИИ-ассистентов', mcpTitle: 'Тренируйтесь в Claude или ChatGPT', mcpText: 'Вопросы и теория доступны и как MCP-сервер: добавьте его в свой ИИ-ассистент, и он будет задавать вопросы, проверять ответы и объяснять правило.', mcpBtn: 'Как подключить',
     grpK: 'Обсуждайте вопросы', grpName: 'Sailing Certification Test · Discussion', grpRole: 'Группа в Telegram для тех, кто готовится', grpText: 'Спросите, почему ответ верный, разберите сложные вопросы, расскажите, как прошёл экзамен.', grpBtn: 'Вступить в группу',
-    fbK: 'Есть отзыв?', fbRole: 'Автор Sailing Certification Test', fbText: 'Нашли ошибку в вопросе, не хватает темы или есть идея? Напишите мне в Telegram — читаю каждое сообщение.', fbBtn: 'Написать в Telegram',
     ringLabel: (s, m) => `${s}% пройдено · ${m}% освоено`, answers: 'Варианты ответа', figure: 'Рисунок',
     figNames: { anchor: 'Схема якорной стоянки', boat: 'Устройство яхты', lines: 'Швартовы', radio: 'УКВ-радиостанция', flag: 'Сигнальные флаги', tide: 'Кривая прилива', sphere: 'Небесная сфера', altitude: 'Высота светила', bay: 'Карта бухты', buoy: 'Буй', card: 'Заметки', chart: 'Фрагмент карты', compass: 'Картушка компаса', dayshape: 'Дневной знак', encounter: 'Расхождение двух судов', isobars: 'Карта погоды', lights: 'Навигационные огни', panel: 'Приборная панель', rope: 'Трос и узел', sail: 'Парусная яхта и ветер' }, timeLeft: 'Осталось времени', fiveLeft: 'Осталось 5 минут',
     nextLevelK: 'Следующий уровень', open: 'Открыть', resetNothing: 'Сбрасывать пока нечего', retry: 'Повторить', allTopicsChip: 'Все темы',
@@ -1517,11 +1512,7 @@ const VIEWS = {
         <div class="band fback grpband"><span class="kicker">${t('grpK')}</span>
           <div class="row fb-who"><img class="fb-face" src="group.png" alt="" width="56" height="56" decoding="async"><div><div class="fb-nick">${t('grpName')}</div><div class="card-meta">${t('grpRole')}</div></div></div>
           <p class="body-muted">${t('grpText')}</p>
-          <button class="pill pill-quiet pill-wide fb-go" data-act="group" role="link"><span data-i="users" data-s="18"></span>${t('grpBtn')}</button></div>
-        <div class="band fback"><span class="kicker">${t('fbK')}</span>
-          <div class="row fb-who"><img class="fb-face" src="fullcrimp.jpg" alt="" width="56" height="56" decoding="async"><div><div class="fb-nick">@${FEEDBACK_HANDLE}</div><div class="card-meta">${t('fbRole')}</div></div></div>
-          <p class="body-muted">${t('fbText')}</p>
-          <button class="pill pill-quiet pill-wide fb-go" data-act="feedback" role="link"><span data-i="send" data-s="18"></span>${t('fbBtn')}</button></div>`,
+          <button class="pill pill-quiet pill-wide fb-go" data-act="group" role="link"><span data-i="users" data-s="18"></span>${t('grpBtn')}</button></div>`,
     };
   },
 
@@ -2251,7 +2242,6 @@ const ACT = {
   // the MCP server's page on the site (miniapp/pages.mjs), in the app's language; from Telegram it opens in the browser
   regatta: () => location.assign(`/regatta?lang=${LANG}`), // the 3D sailing game (miniapp/regatta.html), in the app's language
   mcp: () => { const path = LANG === 'ru' ? '/ru/mcp' : '/mcp'; return IN_TG ? TG.openLink(location.origin + path) : location.assign(path); },
-  feedback: () => (IN_TG ? TG.openTelegramLink(FEEDBACK_LINK) : window.open(FEEDBACK_LINK, '_blank', 'noopener')),
   group: () => (IN_TG ? TG.openTelegramLink(GROUP_LINK) : window.open(GROUP_LINK, '_blank', 'noopener')),
   adminReload: () => { loadStudents(true); render(); },
   student: (d) => { sheet = { v: 'student', id: +d.id }; render(); },

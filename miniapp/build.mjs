@@ -32,7 +32,6 @@ const FILES = [
   ['miniapp/app.js', 'app.js'],
   ['miniapp/app.css', 'app.css'],
   ['miniapp/intro.jpg', 'intro.jpg'], // the photo on the bot's /start welcome (bot/core.mjs)
-  ['miniapp/fullcrimp.jpg', 'fullcrimp.jpg'], // the author's photo on the Home feedback card
   ['miniapp/group.png', 'group.png'], // the students' Telegram group picture on the Home group card
   // the RYC flag icons, taken from rycrentals.com
   ['miniapp/favicon.ico', 'favicon.ico'],
