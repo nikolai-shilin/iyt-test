@@ -390,6 +390,12 @@ html[data-nav="theme"]::view-transition-new(root) { animation: vt-theme .55s var
 .app .gmrow.gm1 .gmn, .app .gmrow.gm1 .gmt { color: var(--accent); }
 /* The game card on Home: this week's numbers and the fastest three, between its text and its button */
 .app .regstats { gap: 8px; }
+/* The game card's note on the boat's physics: one line that opens to the note (the class polar it is built on) */
+.app .regphys summary { cursor: pointer; color: var(--accent); list-style: none; }
+.app .regphys summary::-webkit-details-marker { display: none; }
+.app .regphys summary::after { content: ' ›'; }
+.app .regphys[open] summary::after { content: ' ‹'; }
+.app .regphys p { margin: 6px 0 0; }
 .app .regstats:empty { display: none; }
 .app .regstats .gmlb { padding-top: 4px; }
 .app .in .dtrack i, .app .dchart.grow .dtrack i { transform-origin: left; animation: growX .45s var(--ease-out) both; }

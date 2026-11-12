@@ -134,7 +134,9 @@ const STR = {
     examOpen: 'Mock exam in progress', continue: 'Continue',
     examLine: (a, n, left) => `${a} of ${n} answered · ${left} left`,
     mastered: 'mastered', covered: 'covered', halfway: 'right once', halfwayN: (n) => `+${n} right once`, moreLevels: 'More levels',
-    regK: 'Game', regTitle: 'Regatta: sail a race in 3D', regText: 'Race a yacht against three boats round a windward–leeward course, in light, medium or strong wind. Steer, trim the sheet, tack and read the gusts.', regBtn: 'Play',
+    regK: 'Game', regTitle: 'Up and down: sail a race in 3D', regText: 'Just for fun — a break to relax between tests. Race a yacht against three boats round a windward–leeward course, in light, medium or strong wind. Steer, trim the sheet, tack and read the gusts.', regBtn: 'Play',
+    regPhysK: 'How the boat sails',
+    regPhys: 'The boat’s physics is built on the median polar diagram of the First 40.7 class, compiled from 193 official ORC measurements. The public source gives one “best” polar curve for the class, not separate curves for each combination of sails. So the tables are split by the usual use: the jib close-hauled and on a beam reach, the spinnaker on broad reaches and runs. Exact target speeds for a particular yacht need her ORC Speed Guide, her actual sails, and allowances for the sea state, her load and her trim.',
     mcpK: 'For AI assistants', mcpTitle: 'Practise in Claude or ChatGPT', mcpText: 'The questions and the theory are also an MCP server: add it to your AI assistant and it quizzes you, checks your answers and explains the rule.', mcpBtn: 'How to connect it',
     grpK: 'Discuss the questions', grpName: 'Sailing Certification Test · Discussion', grpRole: 'Telegram group for students', grpText: 'Ask why an answer is right, talk through the tricky ones, tell how your exam went.', grpBtn: 'Join the group',
     fbK: 'Feedback?', fbRole: 'Author of Sailing Certification Test', fbText: 'Found a mistake in a question, missing a topic or have an idea? Write to me on Telegram, I read every message.', fbBtn: 'Write on Telegram',
@@ -224,8 +226,8 @@ const STR = {
     chJoined: 'Joined', chAnswers: 'Answers', chWrong: 'Wrong answers', chReads: 'Theory articles read', chReports: 'Mistakes reported', chRange: 'Period', chLearning: 'Learning now, by course', chLearnNone: 'Nobody studied in this period', chNone: 'No numbers for the charts yet',
     rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
     chNote: (r) => ({ '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '3m': 'last 3 months' })[r],
-    regWeek: (r, p) => `${pl(r, 'race')} this week · ${pl(p, 'player')}`, regBest: 'Fastest this month', regGuest: 'Guest',
-    gmK: 'Game', gmT: 'Regatta', gmFinished: 'finished', gmChart: 'Races started', gmShort: 'Short course', gmMid: 'Medium course', gmLong: 'Long course', gmNoLen: 'length not recorded', gmLeaders: 'Best times by course', gmLeadersMeta: 'Fastest finish of each player, without disqualifications', gmTop: 'Most races', gmWind: 'Races by wind', gmPlaces: 'Where players finished',
+    regWeek: (r, p) => `${pl(r, 'race')} this week · ${pl(p, 'player')}`, regBest: 'Fastest this month', regGuest: 'Guest', regToday: 'Today’s race · fastest',
+    gmK: 'Game', gmT: 'Up and down', gmFinished: 'finished', gmChart: 'Races started', gmShort: 'Short course', gmMid: 'Medium course', gmLong: 'Long course', gmNoLen: 'length not recorded', gmLeaders: 'Best times by course', gmLeadersMeta: 'Fastest finish of each player, without disqualifications', gmTop: 'Most races', gmWind: 'Races by wind', gmPlaces: 'Where players finished',
     gmLight: 'Light wind', gmMedium: 'Medium wind', gmStrong: 'Strong wind', gmAnon: 'No Telegram', gmBest: (p) => `best ${p}`, gmDsq: 'Disqualified',
     gmPlace: (n) => `${n}${['st', 'nd', 'rd'][n - 1] || 'th'}`, gmNone: 'Nobody raced in this period', gmSetup: 'Game statistics start once the game_races migration is in the database',
     unflagOne: 'Remove', unflagAll: (n) => `Remove from all ${n}`, confirmUnflagAll: (n) => `Remove this flag for all ${pl(n, 'student')}?`,
@@ -258,7 +260,9 @@ const STR = {
     examOpen: 'Пробный экзамен не закончен', continue: 'Продолжить',
     examLine: (a, n, left) => `отвечено ${a} из ${n} · осталось ${left}`,
     mastered: 'освоено', covered: 'пройдено', halfway: 'верно 1 раз', halfwayN: (n) => `+${n} верно 1 раз`, moreLevels: 'Другие уровни',
-    regK: 'Игра', regTitle: 'Регата: гонка под парусом в 3D', regText: 'Гонка на яхте против трёх лодок по курсу «апвинд — даунвинд» при слабом, среднем или сильном ветре. Рули, работай шкотом, делай повороты и лови порывы.', regBtn: 'Играть',
+    regK: 'Игра', regTitle: 'Up and down: гонка под парусом в 3D', regText: 'Просто для удовольствия — отдохни и расслабься между тестами. Гонка на яхте против трёх лодок по курсу «апвинд — даунвинд» при слабом, среднем или сильном ветре. Рули, работай шкотом, делай повороты и лови порывы.', regBtn: 'Играть',
+    regPhysK: 'Как устроена физика лодки',
+    regPhys: 'Физика лодки основана на медианной полярной диаграмме класса First 40.7, собранной из 193 официальных ORC-измерений. Публичный источник даёт единую «лучшую» полярную кривую класса, а не отдельные кривые для каждой комбинации парусов. Поэтому таблицы разделены по обычному применению: стаксель на лавировке/галфвинде, спинакер на широких и полных курсах. Для точных целевых скоростей конкретной яхты нужны её ORC Speed Guide, фактическая конфигурация парусов и поправка на состояние моря, загрузку и настройку.',
     mcpK: 'Для ИИ-ассистентов', mcpTitle: 'Тренируйтесь в Claude или ChatGPT', mcpText: 'Вопросы и теория доступны и как MCP-сервер: добавьте его в свой ИИ-ассистент, и он будет задавать вопросы, проверять ответы и объяснять правило.', mcpBtn: 'Как подключить',
     grpK: 'Обсуждайте вопросы', grpName: 'Sailing Certification Test · Discussion', grpRole: 'Группа в Telegram для тех, кто готовится', grpText: 'Спросите, почему ответ верный, разберите сложные вопросы, расскажите, как прошёл экзамен.', grpBtn: 'Вступить в группу',
     fbK: 'Есть отзыв?', fbRole: 'Автор Sailing Certification Test', fbText: 'Нашли ошибку в вопросе, не хватает темы или есть идея? Напишите мне в Telegram — читаю каждое сообщение.', fbBtn: 'Написать в Telegram',
@@ -350,8 +354,8 @@ const STR = {
     chJoined: 'Новые ученики', chAnswers: 'Ответы', chWrong: 'Неверные ответы', chReads: 'Прочитано статей', chReports: 'Сообщения об ошибках', chRange: 'Период', chLearning: 'Сейчас изучают, по курсам', chLearnNone: 'За этот период никто не занимался', chNone: 'Для графиков пока нет данных',
     rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
     chNote: (r) => ({ '24h': 'за 24 часа', '7d': 'за 7 дней', '30d': 'за 30 дней', '3m': 'за 3 месяца' })[r],
-    regWeek: (r, p) => `${pl(r, 'race')} за неделю · ${pl(p, 'player')}`, regBest: 'Быстрее всех за месяц', regGuest: 'Гость',
-    gmK: 'Игра', gmT: 'Регата', gmFinished: 'до финиша', gmChart: 'Начато гонок', gmShort: 'Короткая дистанция', gmMid: 'Средняя дистанция', gmLong: 'Длинная дистанция', gmNoLen: 'длина не записана', gmLeaders: 'Лучшее время на каждой дистанции', gmLeadersMeta: 'Самый быстрый финиш каждого игрока, без дисквалификаций', gmTop: 'Больше всех гонок', gmWind: 'Гонки по ветру', gmPlaces: 'Места на финише',
+    regWeek: (r, p) => `${pl(r, 'race')} за неделю · ${pl(p, 'player')}`, regBest: 'Быстрее всех за месяц', regGuest: 'Гость', regToday: 'Гонка дня · быстрее всех',
+    gmK: 'Игра', gmT: 'Up and down', gmFinished: 'до финиша', gmChart: 'Начато гонок', gmShort: 'Короткая дистанция', gmMid: 'Средняя дистанция', gmLong: 'Длинная дистанция', gmNoLen: 'длина не записана', gmLeaders: 'Лучшее время на каждой дистанции', gmLeadersMeta: 'Самый быстрый финиш каждого игрока, без дисквалификаций', gmTop: 'Больше всех гонок', gmWind: 'Гонки по ветру', gmPlaces: 'Места на финише',
     gmLight: 'Слабый ветер', gmMedium: 'Средний ветер', gmStrong: 'Сильный ветер', gmAnon: 'Без Telegram', gmBest: (p) => `лучшее ${p}`, gmDsq: 'Дисквалификация',
     gmPlace: (n) => `${n}-е`, gmNone: 'За этот период никто не гонялся', gmSetup: 'Статистика игры появится, когда миграция game_races будет в базе',
     unflagOne: 'Снять', unflagAll: (n) => `Снять у всех (${n})`, confirmUnflagAll: (n) => `Снять эту отметку у всех (${pl(n, 'student')})?`,
@@ -1049,8 +1053,11 @@ function gameStatsHtml() {
   const g = GSTATS;
   if (!g || g === 'loading') return '';
   const line = g.week.races ? `<span class="card-meta">${esc(t('regWeek', g.week.races, g.week.players))}</span>` : '';
-  const b = g.best && g.best.top.length ? `<div class="gmlb"><span class="kicker">${esc(t('regBest'))}</span><span class="card-meta">${esc(gmCourse(g.best))}</span>` +
-    g.best.top.map((x, i) => { const name = x.name || t('regGuest');
+  // today's race (the same wind for everyone, so the fairest ranking) when anyone has finished it, else the course
+  // raced most this month
+  const lb = g.daily && g.daily.top.length ? { k: 'regToday', top: g.daily.top, course: { w: g.daily.w, c: 'short', l: 1, n: 5 } } : g.best && g.best.top.length ? { k: 'regBest', top: g.best.top, course: g.best } : null;
+  const b = lb ? `<div class="gmlb"><span class="kicker">${esc(t(lb.k))}</span><span class="card-meta">${esc(gmCourse(lb.course))}</span>` +
+    lb.top.map((x, i) => { const name = x.name || t('regGuest');
       // the player's Telegram photo over their initials; with no photo (204) the image is dropped (gmavaGone)
       const pic = `<span class="gmava">${esc(initials(name))}${x.ph ? `<img src="/api/game?photo=${encodeURIComponent(x.ph)}" alt="" loading="lazy">` : ''}</span>`;
       return `<div class="gmrow${i === 0 ? ' gm1' : ''}"><b class="gmn">${i + 1}</b>${pic}<span class="body-s gmname">${esc(name)}</span>` +
@@ -1501,7 +1508,8 @@ const VIEWS = {
         <div class="stack" style="gap:10px">${returning ? `<span class="kicker">${t('levelsK')}</span>` : ''}${lv}</div>
         ${more.length ? `<div class="band soonlist"><span class="kicker">${t('moreLevels')}</span>${more.map((l) => `<div class="att"><span class="card-title" style="font-weight:400">${l.title}</span><span class="card-meta">${t(l.soon || 'soon')}</span></div>`).join('')}</div>` : ''}
         <div class="band mcpband"><span class="kicker">${t('regK')}</span><div class="card-title">${t('regTitle')}</div>
-          <p class="body-muted">${t('regText')}</p>${gameStats()}
+          <p class="body-muted">${t('regText')}</p>
+          <details class="regphys"><summary class="card-meta">${t('regPhysK')}</summary><p class="card-meta">${t('regPhys')}</p></details>${gameStats()}
           <button class="pill pill-quiet pill-wide" data-act="regatta" role="link"><span data-i="yacht" data-s="18"></span>${t('regBtn')}</button></div>
         <div class="band mcpband"><span class="kicker">${t('mcpK')}</span><div class="card-title">${t('mcpTitle')}</div>
           <p class="body-muted">${t('mcpText')}</p>
