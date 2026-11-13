@@ -2240,12 +2240,11 @@ const ACT = {
   },
   rentals: () => (IN_TG ? TG.openTelegramLink(RENTALS_LINK) : window.open(RENTALS_LINK, '_blank', 'noopener')),
   // the MCP server's page on the site (miniapp/pages.mjs), in the app's language; from Telegram it opens in the browser
-  // the 3D sailing game (miniapp/regatta.html), in the app's language, at its own address (middleware.js; elsewhere, as
-  // on a preview, at /regatta). From Telegram the launch data goes along in the hash, the way Telegram hands it to a
-  // mini app, so the game on its own host still knows the player and the Telegram buttons work.
-  regatta: () => location.assign(location.hostname !== 'iyt.rycrentals.com' ? `/regatta?lang=${LANG}`
-    : `https://regatta.rycrentals.com/?lang=${LANG}${IN_TG ? `#${new URLSearchParams({ tgWebAppData: TG.initData,
-      tgWebAppVersion: TG.version, tgWebAppPlatform: TG.platform, tgWebAppThemeParams: JSON.stringify(TG.themeParams || {}) })}` : ''}`),
+  // the 3D sailing game, a site of its own (ryc-regatta/, at regatta.rycrentals.com), in the app's language. From Telegram
+  // the launch data goes along in the hash, the way Telegram hands it to a mini app, so the game still knows the player
+  // and the Telegram buttons work there.
+  regatta: () => location.assign(`https://regatta.rycrentals.com/?lang=${LANG}${IN_TG ? `#${new URLSearchParams({ tgWebAppData: TG.initData,
+    tgWebAppVersion: TG.version, tgWebAppPlatform: TG.platform, tgWebAppThemeParams: JSON.stringify(TG.themeParams || {}) })}` : ''}`),
   mcp: () => { const path = LANG === 'ru' ? '/ru/mcp' : '/mcp'; return IN_TG ? TG.openLink(location.origin + path) : location.assign(path); },
   group: () => (IN_TG ? TG.openTelegramLink(GROUP_LINK) : window.open(GROUP_LINK, '_blank', 'noopener')),
   adminReload: () => { loadStudents(true); render(); },

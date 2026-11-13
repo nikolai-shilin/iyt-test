@@ -1,6 +1,7 @@
 // The Regatta game's races, kept in public.game_races (supabase/migrations/20261111120000_game_races.sql) for the
-// admins' Overview page (api/admin.mjs) and the game card on everyone's Home. miniapp/regatta/stats.js posts here
-// when a race starts and when the player finishes it.
+// admins' Overview page (api/admin.mjs) and the game card on everyone's Home. ryc-regatta/game/stats.js posts here
+// when a race starts and when the player finishes it. The game is a site of its own (regatta.rycrentals.com), so every
+// answer allows any origin (CORS): the numbers are public, and a post carries no cookies.
 //
 //   GET /api/game → { week: { races, players }, best: { w, l, c, n, top: [ { name, s, p, ph } ] } | null,
 //                     daily: { d, w, races, top: [ { name, s, p, ph } ] } | null }                                (public, cached)
@@ -34,7 +35,8 @@ const LIMIT = 60, WINDOW = 10 * 60e3;
 const seen = new Map(); // address → [count, window start]
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const int = (v, lo, hi) => (Number.isInteger(v) && v >= lo && v <= hi ? v : null);
-const done = (status = 204) => new Response(null, { status });
+const CORS = { 'access-control-allow-origin': '*' };
+const done = (status = 204) => new Response(null, { status, headers: CORS });
 
 // For everyone: the numbers on the game card. Cached at the edge for 5 minutes, so the table is read at most that
 // often however many people open Home.
@@ -63,7 +65,7 @@ export async function GET(request) {
     if (!id || !process.env.TELEGRAM_BOT_TOKEN) return new Response(null, { status: 404 });
     try { return await tgPhoto(id, 'public'); } catch (e) { await logError('game photo', e, id); return new Response(null, { status: 502 }); }
   }
-  const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': status === 200 ? 'public, max-age=60, s-maxage=300, stale-while-revalidate=600' : 'no-store' } });
+  const json = (body, status = 200) => Response.json(body, { status, headers: { ...CORS, 'cache-control': status === 200 ? 'public, max-age=60, s-maxage=300, stale-while-revalidate=600' : 'no-store' } });
   if (!SB || !SB_KEY) return json({ week: { races: 0, players: 0 }, best: null });
   try {
     const now = Date.now(), from = new Date(now - 30 * DAY).toISOString(), rows = [];
@@ -126,7 +128,8 @@ export async function POST(request) {
   const id = b && typeof b.id === 'string' ? b.id.toLowerCase() : '';
   if (!UUID.test(id) || !['start', 'finish'].includes(b.ev)) return done(400);
   if (!SB || !SB_KEY) return done();
-  const user = verifyInitData(request.headers.get('x-telegram-init-data'), process.env.TELEGRAM_BOT_TOKEN);
+  // the launch data: in the body from the game (a simple cross-site post, see stats.js), or in the header as from the app
+  const user = verifyInitData(request.headers.get('x-telegram-init-data') || (typeof b.initData === 'string' ? b.initData : ''), process.env.TELEGRAM_BOT_TOKEN);
   try {
     if (b.ev === 'start') {
       // a daily race names its day: today or yesterday (UTC), for a player just past midnight
