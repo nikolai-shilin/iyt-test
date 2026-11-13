@@ -5,6 +5,7 @@
   "buildCommand": "node miniapp/build.mjs",
   "outputDirectory": "miniapp/dist",
   "cleanUrls": true,
+  "regions": ["arn1"],
   "functions": {
     "api/telegram.mjs": { "includeFiles": "{data/questions/*.json,data/theory/**/*.json}" },
     "api/daily.mjs": { "includeFiles": "{data/questions/*.json,data/theory/**/*.json}", "maxDuration": 300 },
