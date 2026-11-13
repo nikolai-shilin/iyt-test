@@ -11,8 +11,8 @@
 //     and the last initial ("Anna P."), null for a player in a plain browser or one the app does not know. ph is the
 //     key to their picture (below), for a player inside Telegram; nothing else about a player leaves the server.
 //     Daily races are left out of it: daily is today's daily race (UTC date d, its wind w), the races finished on it and
-//     its 3 fastest. Everyone sails the daily race in the same wind (the seed is the date), so only there do times
-//     compare fairly.
+//     its 3 fastest players, guests left out (races counts their races all the same). Everyone sails the daily race in
+//     the same wind (the seed is the date), so only there do times compare fairly.
 //   GET /api/game?photo=<ph> → that player's Telegram profile photo (JPEG), 204 when the bot may see none. ph is
 //     their Telegram id sealed with a key made from the bot token (AES-GCM, so it can be neither read nor made up);
 //     the same player always gets the same ph, so the photo can be cached.
@@ -160,13 +160,16 @@ export async function GET(request) {
     };
     const busiest = [...courses.values()].sort((a, b) => b.races - a.races)[0];
     const best = busiest ? { w: busiest.w, l: busiest.l, c: busiest.c, n: busiest.n, top: await podium(busiest.best) } : null;
-    // today's daily race (UTC): each player's best time on it
+    // today's daily race (UTC): each player's best time on it. Every race counts in races, but only a player who is
+    // somebody ranks: the site asks a guest to sign in to get on this ranking, and all guests together are not a player.
     const today = new Date(now).toISOString().slice(0, 10), dBest = new Map();
     let dWind = null, dRaces = 0;
     for (const r of rows) {
       if (r.daily !== today || !r.finished_at || r.dsq || !(r.secs > 0)) continue;
       dWind = r.wind; dRaces++;
-      const k = who(r), b = dBest.get(k) || { u: r.user_id, a: r.player || null, s: Infinity, p: 0 };
+      const k = who(r);
+      if (k === 'anon') continue;
+      const b = dBest.get(k) || { u: r.user_id, a: r.player || null, s: Infinity, p: 0 };
       b.s = Math.min(b.s, r.secs); if (r.place && (!b.p || r.place < b.p)) b.p = r.place;
       dBest.set(k, b);
     }
