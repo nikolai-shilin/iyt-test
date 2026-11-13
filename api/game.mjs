@@ -1,5 +1,5 @@
 // The Regatta game's races, kept in public.game_races (supabase/migrations/20261111120000_game_races.sql) for the
-// admins' Overview page (api/admin.mjs) and the game card on everyone's Home. ryc-regatta/game/stats.js posts here
+// admins' Overview page (api/admin.mjs) and the game card on everyone's Home. the game's stats.js (the ryc-regatta repo) posts here
 // when a race starts and when the player finishes it. The game is a site of its own (regatta.rycrentals.com), so every
 // answer allows any origin (CORS): the numbers are public, and a post carries no cookies.
 //

@@ -1,4 +1,4 @@
-# Upload only what the mini app, the bot webhook and the game (ryc-regatta/, its own Vercel project) need — never .env.local.
+# Upload only what the mini app and the bot webhook need — never .env.local.
 /*
 !/miniapp
 !/docs
@@ -7,7 +7,6 @@
 !/vercel.json
 !/api
 !/bot
-!/ryc-regatta
 /bot/assets
 /miniapp/dist
 /data/build_bank.py
