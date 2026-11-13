@@ -43,6 +43,12 @@ const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], [
 
 // What a level's certificate is, for the words of its title: the skipper and Yachtmaster levels are what people call
 // a licence («права на яхту»), VHF and Crew are IYT certificates, the racing rules and the charter check-in neither.
+// Up and down, our free 3D sailing race: the racing-rules pages link to its guide on the rules they explain (with the
+// anchor of the rule where the guide has one), the start to its guide on starting, the level page to all its guides.
+const GAME = 'https://regatta.rycrentals.com';
+const GAME_GUIDE = { starting: '/learn/start', rightofway: '/learn/rules#r10', marks: '/learn/rules#r18', penalties: '/learn/rules#pen' };
+const gameUrl = (path, lang) => { const [p, h] = path.split('#'); return `${GAME}${p}${lang === 'ru' ? '?lang=ru' : ''}${h ? `#${h}` : ''}`; };
+
 const KIND = { 'flotilla-skipper': 'licence', 'bareboat-skipper': 'licence', 'yachtmaster-coastal': 'licence', 'yachtmaster-offshore': 'licence', 'yachtmaster-ocean': 'licence', 'vhf-radio-operator': 'iyt', 'international-crew': 'iyt' };
 
 // figures.js is a browser script: run it here, as api/mcp.mjs and data/check_theory.mjs do.
@@ -75,6 +81,8 @@ const STR = {
     ctaK: 'Practise it', ctaTopic: (n) => `All ${n} questions of this topic are in the app: practice by topic with the reason after every answer, your mistakes brought back, and a timed mock exam. Free, no sign-up, in the browser or in Telegram.`,
     ctaLevel: 'Practise by topic with the reason after every answer, take a timed mock exam, and see your progress per topic. Free, no sign-up, in the browser or in Telegram.',
     prev: (i) => `‹ Topic ${i}`, next: (i) => `Topic ${i} ›`,
+    game: 'Try these rules on the water:', gameLink: 'Up and down, a free 3D sailing race in your browser →',
+    gameLevel: 'Race by these rules on the water:', gameLevelLink: 'Up and down, a free 3D sailing race in your browser, and its short guides to the rules, the start and wind shifts →',
     foot: 'Written for study, close to the course syllabus. Not an official publication of a certifying body or World Sailing; the rules themselves are the authority.',
     notFound: 'This page is not here', notFoundLead: 'The address may be mistyped, or the page has moved. The levels are below, and the app is on the home page.',
     aboutTitle: 'About Sailing Certification Test',
@@ -145,6 +153,8 @@ const STR = {
     ctaK: 'Потренируйтесь', ctaTopic: (n) => `Все ${n} вопросов этой темы — в приложении: тренировка по темам с пояснением после каждого ответа, ошибки возвращаются, есть пробный экзамен на время. Бесплатно, без регистрации, в браузере или в Telegram.`,
     ctaLevel: 'Тренируйтесь по темам с пояснением после каждого ответа, сдайте пробный экзамен на время и следите за прогрессом по каждой теме. Бесплатно, без регистрации, в браузере или в Telegram.',
     prev: (i) => `‹ Тема ${i}`, next: (i) => `Тема ${i} ›`,
+    game: 'Попробуйте эти правила на воде:', gameLink: 'Up and down — бесплатная 3D-парусная гонка в браузере →',
+    gameLevel: 'Гоняйтесь по этим правилам на воде:', gameLevelLink: 'Up and down — бесплатная 3D-парусная гонка в браузере и короткие гайды по правилам, старту и заходам ветра →',
     foot: 'Написано для подготовки, близко к программе курсов. Не официальное издание сертифицирующей организации или World Sailing; авторитетны сами правила.',
     notFound: 'Такой страницы нет', notFoundLead: 'Возможно, в адресе опечатка или страница переехала. Уровни — ниже, приложение — на главной.',
     aboutTitle: 'О Sailing Certification Test',
@@ -334,6 +344,7 @@ const crumbs = (items) => `<nav class="crumbs meta" aria-label="Breadcrumbs">${i
 const crumbLd = (items) => ({ '@type': 'BreadcrumbList', itemListElement: items.map(([name, href], i) => ({ '@type': 'ListItem', position: i + 1, name, item: SITE + href })) });
 const cta = (s, text, link) => `<div class="band pg-cta"><span class="kicker">${s.ctaK}</span><p class="body-muted" style="margin:0">${text}</p>` +
   `<div class="row"><a class="pill pill-primary" href="${appLink(link)}">${s.practise}</a><a class="pill pill-quiet" href="${tgLink(link)}">${s.telegram}</a></div></div>`;
+const game = (lead, text, url) => `<p class="body-muted pg-game">${lead} <a href="${esc(url)}">${text}</a></p>`;
 const ORG = { '@type': 'Organization', name: 'Sailing Certification Test', url: `${SITE}/`, logo: `${SITE}/design/logo-black.svg` };
 
 export async function buildPages(out, { css }) {
@@ -392,7 +403,7 @@ export async function buildPages(out, { css }) {
 <div class="band pg-facts"><div><b>${b.questions.length}</b><span class="meta">${s.questions}</span></div><div><b>${b.topics.length}</b><span class="meta">${s.topics}</span></div><div><b>${b.examQuestions}</b><span class="meta">${s.exam}</span></div></div>
 <p class="card-meta" style="margin:-12px 0 0">${s.examLine(b.examQuestions, b.examMinutes, b.passMark)}</p>
 <section class="stack g12"><h2 class="kicker">${s.topicsK}</h2><ol class="pg-list">${rows}</ol></section>
-${cta(s, s.ctaLevel, L.link)}
+${cta(s, s.ctaLevel, L.link)}${L.id === 'racing-rules' ? `\n${game(s.gameLevel, s.gameLevelLink, gameUrl('/learn', lang))}` : ''}
 <section class="stack g12"><h2 class="kicker">${s.otherK}</h2><ul class="pg-list">${others}</ul></section>`,
         }),
       });
@@ -448,7 +459,7 @@ ${cta(s, s.ctaLevel, L.link)}
 ${a.sections.map((x, n) => `<section class="th-sec" id="sec-${esc(x.id)}"><span class="kicker">${n + 1} · ${esc(x.kicker)}</span><h2 class="th-h">${esc(x.title)}</h2>${x.qa && x.qa.q && x.qa.a ? `<div class="th-qa"><p class="th-q">${esc(x.qa.q)}</p><p class="th-p">${inline(x.qa.a)}</p></div>` : ''}${x.blocks.map((bl) => block(bl, s, ru)).join('')}</section>`).join('\n')}
 <section class="stack g12" id="questions"><h2 class="th-h">${s.qsK}</h2><p class="body-muted">${s.qsLead}</p>
 ${qHtml}</section>
-${cta(s, s.ctaTopic(qs.length), L.link)}
+${cta(s, s.ctaTopic(qs.length), L.link)}${L.id === 'racing-rules' ? `\n${game(s.game, s.gameLink, gameUrl(GAME_GUIDE[tp.id] || '/learn/rules', lang))}` : ''}
 <div class="th-nextprev">${near(arts[ai - 1], 'prev')}${near(arts[ai + 1], 'next')}</div>`,
           }),
         });
