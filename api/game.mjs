@@ -141,16 +141,13 @@ function latestFlags(rows) {
   return out;
 }
 // The flag each of a rating's players flies: the one of their latest race of any kind in the last 30 days (a start
-// they didn't finish, a free race), as the game card has it, so a flag shows from the race it's first sailed under
-// and goes when it's taken down; for a player with no race that recent, the one of their latest race among rows.
-async function flyingFlags(players, rows, now) {
-  const us = [...new Set(players.map((x) => x.u).filter((u) => u != null))], as = [...new Set(players.map((x) => x.a).filter(Boolean))];
-  const or = [us.length && `user_id.in.(${us.join(',')})`, as.length && `player.in.(${as.join(',')})`].filter(Boolean).join(',');
+// they didn't finish, a free race), read exactly as the game card reads it (every race of those 30 days, not a filter
+// on the rating's players), so the card and the rating always show a player under the same flag; for a player with no
+// race that recent, the one of their latest race among rows.
+async function flyingFlags(rows, now) {
   let recent = [];
-  if (or) {
-    try { recent = await readRaces('started_at,user_id,player,flag', `started_at=gte.${new Date(now - 30 * DAY).toISOString()}&or=(${or})`); }
-    catch { /* the rating's own rows then */ }
-  }
+  try { recent = await readRaces('started_at,user_id,player,flag', `started_at=gte.${new Date(now - 30 * DAY).toISOString()}`); }
+  catch (e) { await logError('rating flags', e); } // the rating's own rows then
   return latestFlags([...rows, ...recent]);
 }
 // each player's best time among rows (finished, no disqualification, a time), with their best place and how many
@@ -301,7 +298,7 @@ async function dayRating(day, json) {
     const ranked = new Map([...byDay].map(([d, rs]) => [d, rankDay(bests(rs))]).filter(([, list]) => list.length));
     const days = [...ranked.keys()].sort().reverse();
     const mine = byDay.get(day) || [], dayList = ranked.get(day) || [], month = monthTable([...ranked.values()]);
-    const flags = await flyingFlags([...dayList, ...month], rows, now);
+    const flags = await flyingFlags(rows, now);
     // names: the day's players first, then the month's, the most points first
     const names = await namesOf([...dayList, ...month], 80);
     const pub = (x) => ({ k: keyOf(x), name: names.get(x.key) || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null });

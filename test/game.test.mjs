@@ -15,7 +15,7 @@ const race = (o) => ({ started_at: at(0), finished_at: at(0), user_id: null, pla
 
 // The database: game_races gives back rows (whatever the filter, the URL is kept), users the Telegram names, Auth
 // a site account's display name. missing: a column the table doesn't have yet. recent: what the read of the ranked
-// players' latest races (for their flags, an or= filter) gets, rows when not given.
+// players' latest races (for their flags: every race of the last 30 days, no daily= filter) gets, rows when not given.
 function stub({ rows = [], recent = null, users = [], accounts = {}, missing = null } = {}) {
   const calls = [];
   globalThis.fetch = async (url, init = {}) => {
@@ -25,7 +25,7 @@ function stub({ rows = [], recent = null, users = [], accounts = {}, missing = n
       if (missing && (init.method === 'POST' ? init.body.includes(`"${missing}"`) : u.includes(missing))) return fail(missing);
       if (init.method === 'POST' || init.method === 'PATCH') return Response.json([]);
       const off = Number(/offset=(\d+)/.exec(u)?.[1] || 0);
-      return Response.json(off ? [] : recent && u.includes('or=(') ? recent : rows);
+      return Response.json(off ? [] : recent && !u.includes('daily=') ? recent : rows);
     }
     if (u.includes('/rest/v1/users')) return Response.json(users);
     if (u.includes('/rest/v1/errors')) return Response.json([]);
@@ -107,7 +107,8 @@ test('GET ?day=: the flag a player flies is the one of their latest race of any 
   assert.deepEqual(j.rows.map((x) => [x.name, x.fl]), [['Anna', 'ge'], ['Fed', null], ['Bo', 'nl']]);
   const q = calls.filter((c) => c.url.includes('game_races')).at(-1).url;
   assert.match(q, /select=started_at,user_id,player,flag&/); assert.ok(!q.includes('finished_at'), 'any race, finished or not');
-  assert.match(decodeURIComponent(q), new RegExp(`or=\\(user_id\\.in\\.\\(7,8\\),player\\.in\\.\\(${A}\\)\\)`), "only the rating's players");
+  assert.ok(!q.includes('or=') && !q.includes('daily='), 'every recent race, read as the game card reads them');
+  assert.match(decodeURIComponent(q), /started_at=gte\.\d{4}-\d{2}-\d{2}T/);
 });
 
 test('GET ?day= before the flag column is there: read without it', async () => {
