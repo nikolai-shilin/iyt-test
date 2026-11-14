@@ -12,6 +12,7 @@
     "bot:daily": "node --env-file=.env.local bot/scripts/daily.mjs",
     "db:load": "node --env-file=.env.local data/load.mjs",
     "check:theory": "node data/check_theory.mjs",
-    "seo:ping": "node miniapp/indexnow.mjs"
+    "seo:ping": "node miniapp/indexnow.mjs",
+    "test": "node --test test/*.test.mjs"
   }
 }
