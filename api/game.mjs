@@ -47,6 +47,7 @@ const LIMIT = 60, WINDOW = 10 * 60e3;
 const seen = new Map(); // address → [count, window start]
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 const int = (v, lo, hi) => (Number.isInteger(v) && v >= lo && v <= hi ? v : null);
+const SHAPES = ['wl', 'tri', 'trap', 'wlu']; // up and down, triangle, trapezoid, up and down with an upwind finish
 const CORS = { 'access-control-allow-origin': '*' };
 const done = (status = 204) => new Response(null, { status, headers: CORS });
 
@@ -161,7 +162,7 @@ export async function GET(request) {
       }
       return top.map((x) => ({ name: names.get(x.u != null ? x.u : `a:${x.a}`) || null, s: x.s, p: x.p || null, ph: x.u != null ? sealId(x.u) : null }));
     };
-    const busiest = [...courses.values()].sort((a, b) => b.races - a.races)[0];
+    const busiest = [...courses.values()].sort((a, b) => b.races - a.races || SHAPES.indexOf(a.sh) - SHAPES.indexOf(b.sh))[0];
     const best = busiest ? { w: busiest.w, l: busiest.l, c: busiest.c, n: busiest.n, sh: busiest.sh, top: await podium(busiest.best) } : null;
     // today's daily race (UTC): each player's best time on it. Every race counts in races, but only a player who is
     // somebody ranks: the site asks a guest to sign in to get on this ranking, and all guests together are not a player.
@@ -205,7 +206,7 @@ export async function POST(request) {
       const daily = typeof b.daily === 'string' && [0, 1].some((d) => new Date(now - d * DAY).toISOString().slice(0, 10) === b.daily) ? b.daily : null;
       let row = { id, user_id: tg, wind: ['light', 'medium', 'strong'].includes(b.wind) ? b.wind : null, laps: int(b.laps, 1, 9),
                   length: ['short', 'medium', 'long'].includes(b.length) ? b.length : null, boats: int(b.boats, 1, 20), ...(daily && { daily }), ...(player && { player }),
-                  shape: ['wl', 'tri', 'trap', 'wlu'].includes(b.shape) ? b.shape : null };
+                  shape: SHAPES.includes(b.shape) ? b.shape : null };
       // a column not there yet (migrations 20261112120000, 20261113120000, 20261114120000): written without it
       for (;;) {
         try { await db('game_races?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: row }); break; }

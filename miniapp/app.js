@@ -1034,7 +1034,7 @@ function gameBlock() {
 // Players in a plain browser share one row (No Telegram). Races from before the length was kept are a course of
 // their own.
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
-const GM_WIND = ['light', 'medium', 'strong'], GM_LEN = ['short', 'medium', 'long'];
+const GM_WIND = ['light', 'medium', 'strong'], GM_LEN = ['short', 'medium', 'long'], GM_SHAPE = ['wl', 'tri', 'trap', 'wlu'];
 // A course in words: "Medium wind · Long course · 1 lap · 10 boats" ({ w, l, c, n, sh }; c and n may be missing), and its
 // shape after them unless it is up and down (sh 'wl' or missing)
 const gmCourse = (c) => [t({ light: 'gmLight', medium: 'gmMedium', strong: 'gmStrong' }[c.w]), c.c ? t({ short: 'gmShort', medium: 'gmMid', long: 'gmLong' }[c.c]) : t('gmNoLen'),
@@ -1079,7 +1079,7 @@ function gameLeaders(fin, nameOf, avaOf) {
     best.best.set(k, b); courses.set(key, best);
   }
   if (!courses.size) return '';
-  const order = (c) => [GM_WIND.indexOf(c.w), c.c ? GM_LEN.indexOf(c.c) : 9, c.l, c.n];
+  const order = (c) => [GM_WIND.indexOf(c.w), c.c ? GM_LEN.indexOf(c.c) : 9, c.l, c.n, GM_SHAPE.indexOf(c.sh)];
   const list = [...courses.values()].sort((a, b) => { const x = order(a), y = order(b); for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return x[i] - y[i]; return 0; });
   return `<div class="dchart"><div class="dhead"><div class="stack"><span class="kicker">${esc(t('gmLeaders'))}</span><span class="card-meta">${esc(t('gmLeadersMeta'))}</span></div></div>` +
     list.map((c) => `<div class="gmlb"><span class="card-meta gmc">${esc(gmCourse(c))}</span>` +
