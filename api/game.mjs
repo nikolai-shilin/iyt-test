@@ -167,16 +167,21 @@ export async function GET(request) {
     // today's daily race (UTC): each player's best time on it. Every race counts in races, but only a player who is
     // somebody ranks: the site asks a guest to sign in to get on this ranking, and all guests together are not a player.
     const today = new Date(now).toISOString().slice(0, 10), dBest = new Map();
-    let dWind = null, dShape = 'wl', dRaces = 0;
+    // today's shape: the one most of today's rows name (a game from before the shapes posts none, so a row without one
+    // says nothing about it), up and down if none does
+    let dWind = null, dRaces = 0;
+    const dShapes = new Map();
     for (const r of rows) {
       if (r.daily !== today || !r.finished_at || r.dsq || !(r.secs > 0)) continue;
-      dWind = r.wind; dShape = r.shape || 'wl'; dRaces++;
+      dWind = r.wind; dRaces++;
+      if (r.shape) dShapes.set(r.shape, (dShapes.get(r.shape) || 0) + 1);
       const k = who(r);
       if (k === 'anon') continue;
       const b = dBest.get(k) || { u: r.user_id, a: r.player || null, s: Infinity, p: 0 };
       b.s = Math.min(b.s, r.secs); if (r.place && (!b.p || r.place < b.p)) b.p = r.place;
       dBest.set(k, b);
     }
+    const dShape = [...dShapes].sort((a, b) => b[1] - a[1] || SHAPES.indexOf(a[0]) - SHAPES.indexOf(b[0]))[0]?.[0] || 'wl';
     const daily = dRaces ? { d: today, w: dWind, sh: dShape, races: dRaces, top: await podium(dBest) } : null;
     return json({ week: { races: week.length, players }, best, daily });
   } catch (e) {
