@@ -25,6 +25,7 @@
 //   GET /api/game?day=2026-11-14 → that day's daily race ranked, and the month's points to that day (public, cached):
 //     { d, w, races, guests, rows: [ { k, name, ph, fl, s, p, pts, n } ],
 //       month: { m: '2026-11', days, rows: [ { k, name, ph, fl, pts, days, wins, podiums } ] }, days: [ '2026-11-14', … ] }
+//     name here is the whole name ("Anna Petrova", at most 40 characters), not the card's first name and initial.
 //     races: the day's finished races (no disqualification, a time that passed the checks), guests' among them (how
 //     many: guests); only a player who is somebody ranks. rows: each player's best time that day (s), their best place
 //     in the fleet (p) and how many races they finished (n), the fastest first. Points (pts): on a day N players rank,
@@ -109,6 +110,8 @@ function openId(key) {
   } catch { return null; }
 }
 const shortName = (name) => { const w = String(name || '').trim().split(/\s+/).filter(Boolean); return w.length ? `${w[0].slice(0, 20)}${w[1] ? ` ${[...w[1]][0]}.` : ''}` : null; };
+// the whole name, as the rating shows it ("Anna Petrova"): its words, one space apart, at most 40 characters
+const fullName = (name) => { const n = String(name || '').trim().split(/\s+/).filter(Boolean).join(' '); return n ? [...n].slice(0, 40).join('') : null; };
 // a boat's flag as the game posts it (lib/flags.ts in the ryc-regatta repo): 'gb', or one with a region, 'gb-sct'
 const flagOf = (v) => (typeof v === 'string' && /^[a-z]{2}(-[a-z]{2,4})?$/.test(v) ? v : null);
 // the columns added after the table, newest last: a read or a write without one of them still works before its
@@ -187,18 +190,20 @@ export function monthTable(days) {
   return [...out.values()].sort((a, b) => b.pts - a.pts || b.wins - a.wins || b.podiums - a.podiums);
 }
 // Names for players ({ key, u, a }): a Telegram user's from the users table (one look-up a hundred), a site account's
-// display name from Supabase Auth, at most cap of those (each is a request of its own). key → name.
-async function namesOf(players, cap) {
+// display name from Supabase Auth, at most cap of those (each is a request of its own). key → name: short ("Anna P."),
+// or the whole name when full (the rating).
+async function namesOf(players, cap, full = false) {
+  const nameOf = full ? fullName : shortName;
   const names = new Map(), ids = [...new Set(players.filter((x) => x.u != null).map((x) => x.u))];
   for (let i = 0; i < ids.length; i += 100) {
-    for (const u of await db(`users?select=id,name&id=in.(${ids.slice(i, i + 100).join(',')})`)) names.set(String(u.id), shortName(u.name));
+    for (const u of await db(`users?select=id,name&id=in.(${ids.slice(i, i + 100).join(',')})`)) names.set(String(u.id), nameOf(u.name));
   }
   for (const x of players) if (x.u != null) names.set(x.key, names.get(String(x.u)) || null);
   const site = [...new Map(players.filter((x) => x.u == null && x.a).map((x) => [x.key, x])).values()].slice(0, cap);
   for (let i = 0; i < site.length; i += 10) {
     await Promise.all(site.slice(i, i + 10).map(async (x) => {
       const u = await auth(`admin/users/${x.a}`).catch(() => null);
-      names.set(x.key, shortName(u && u.user_metadata && u.user_metadata.display_name));
+      names.set(x.key, nameOf(u && u.user_metadata && u.user_metadata.display_name));
     }));
   }
   return names;
@@ -300,7 +305,7 @@ async function dayRating(day, json) {
     const mine = byDay.get(day) || [], dayList = ranked.get(day) || [], month = monthTable([...ranked.values()]);
     const flags = await flyingFlags(rows, now);
     // names: the day's players first, then the month's, the most points first
-    const names = await namesOf([...dayList, ...month], 80);
+    const names = await namesOf([...dayList, ...month], 80, true);
     const pub = (x) => ({ k: keyOf(x), name: names.get(x.key) || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null });
     const nameSort = (a, b) => (a.name == null) - (b.name == null) || String(a.name || '').localeCompare(String(b.name || ''));
     return json({

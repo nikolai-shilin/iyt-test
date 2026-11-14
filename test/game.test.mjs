@@ -64,21 +64,21 @@ test('GET ?day=: the day ranked, the month to it, names, flags from the latest r
       race({ player: A, secs: 190, flag: 'gb-sct' }), race({ secs: 170 }),
       ...(day(0).slice(0, 7) === day(1).slice(0, 7) ? [race({ player: A, secs: 160, daily: day(1), started_at: at(1), finished_at: at(1) }), race({ user_id: 7, secs: 170, daily: day(1), started_at: at(1), finished_at: at(1) })] : []),
     ],
-    users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [A]: 'Fed' },
+    users: [{ id: 7, name: ' Anna   Petrova ' }], accounts: { [A]: 'Fed' },
   });
   const r = await GET(new Request(`https://x.test/api/game?day=${day(0)}`));
   assert.equal(r.status, 200);
   assert.match(r.headers.get('cache-control'), /s-maxage=300/, "today's: the card's five minutes");
   const j = await r.json();
   assert.equal(j.d, day(0)); assert.equal(j.races, 4); assert.equal(j.guests, 1); assert.equal(j.w, 'medium');
-  assert.deepEqual(j.rows.map((x) => [x.name, x.fl, x.s, x.p, x.pts, x.n]), [['Anna P.', 'it', 175, 1, 2, 2], ['Fed', 'gb-sct', 190, 1, 1, 1]]);
+  assert.deepEqual(j.rows.map((x) => [x.name, x.fl, x.s, x.p, x.pts, x.n]), [['Anna Petrova', 'it', 175, 1, 2, 2], ['Fed', 'gb-sct', 190, 1, 1, 1]]);
   assert.ok(j.rows[0].ph && j.rows[0].k === j.rows[0].ph, 'a Telegram player: the picture key is their key');
   assert.equal(j.rows[1].ph, null); assert.match(j.rows[1].k, /^[A-Za-z0-9_-]{16}$/);
   assert.ok(!JSON.stringify(j).includes(A) && !/"7"|:7[,}]/.test(JSON.stringify(j)), 'no raw ids');
   assert.equal(j.month.m, day(0).slice(0, 7));
   if (j.days.length === 2) {
     assert.deepEqual(j.days, [day(0), day(1)]);
-    assert.deepEqual(j.month.rows.map((x) => [x.name, x.pts, x.days, x.wins, x.podiums]), [['Anna P.', 3, 2, 1, 2], ['Fed', 3, 2, 1, 2]]);
+    assert.deepEqual(j.month.rows.map((x) => [x.name, x.pts, x.days, x.wins, x.podiums]), [['Anna Petrova', 3, 2, 1, 2], ['Fed', 3, 2, 1, 2]]);
   }
   const q = calls.find((c) => c.url.includes('game_races')).url;
   assert.match(q, new RegExp(`daily=gte\\.${day(0).slice(0, 7)}-01&daily=lte\\.${day(0)}&finished_at=not\\.is\\.null`));
