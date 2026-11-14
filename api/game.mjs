@@ -361,15 +361,20 @@ export async function POST(request) {
       });
     } else {
       let secs = Number.isFinite(b.secs) && b.secs >= 0 && b.secs < 86400 ? Math.round(b.secs * 10) / 10 : null;
-      const [st] = await db(`game_races?select=started_at,wind,length,laps&id=eq.${id}&finished_at=is.null`);
+      const [st] = await db(`game_races?select=started_at,wind,length,laps,boats&id=eq.${id}&finished_at=is.null`);
       if (!st) return done();
       // the time can't be more than 3× the time since the start was posted (the game's fastest speed), less a little slack
       if (secs != null && secs > ((now - Date.parse(st.started_at)) / 1000) * 3 + 20) secs = null;
       // nor shorter than the course allows
       if (secs != null && secs < floorSecs(st)) secs = null;
+      // the fleet as the finish counts it, else as the start did: a finish without a good one never blanks the start's,
+      // which would drop the race from its course's ranking. A place outside the fleet is no place (the table's
+      // game_races_place_in_fleet check would refuse the whole finish).
+      const boats = int(b.boats, 1, 20) ?? st.boats ?? null;
+      const place = b.dsq ? null : int(b.place, 1, boats ?? 20);
       await db(`game_races?id=eq.${id}&finished_at=is.null`, {
         method: 'PATCH', prefer: 'return=representation',
-        body: { finished_at: new Date().toISOString(), place: b.dsq ? null : int(b.place, 1, 20), boats: int(b.boats, 1, 20), secs, dsq: !!b.dsq },
+        body: { finished_at: new Date().toISOString(), place, boats, secs, dsq: !!b.dsq },
       });
     }
   } catch (e) {

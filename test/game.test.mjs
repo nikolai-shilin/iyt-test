@@ -137,3 +137,22 @@ test('POST start: the boat\'s flag is kept when it is a flag, and left out befor
   const posts = calls.filter((c) => c.method === 'POST');
   assert.equal(posts.length, 2); assert.ok(!('flag' in posts[1].body));
 });
+
+test('POST finish: a finish without a good fleet keeps the start\'s, and a place outside the fleet is none', async () => {
+  const id = '44444444-4444-4444-8444-444444444444', post = (body) => POST(new Request('https://x.test/api/game', { method: 'POST', body: JSON.stringify(body), headers: { 'x-forwarded-for': `10.0.1.${Math.random() * 250 | 0}` } }));
+  const started = [{ started_at: new Date(Date.now() - 600e3).toISOString(), wind: 'medium', length: 'short', laps: 1, boats: 5 }];
+  const patch = (calls) => calls.find((c) => c.method === 'PATCH').body;
+  let calls = stub({ rows: started });
+  await post({ ev: 'finish', id, place: 2, secs: 300, dsq: false });
+  assert.equal(patch(calls).boats, 5, 'the start\'s fleet is kept');
+  assert.equal(patch(calls).place, 2);
+  calls = stub({ rows: started });
+  await post({ ev: 'finish', id, place: 7, boats: 5, secs: 300, dsq: false });
+  assert.equal(patch(calls).place, null);
+  assert.equal(patch(calls).boats, 5);
+  calls = stub({ rows: started });
+  await post({ ev: 'finish', id, place: 3, boats: 4, secs: 300, dsq: true });
+  assert.equal(patch(calls).place, null);
+  assert.equal(patch(calls).dsq, true);
+  assert.equal(patch(calls).secs, 300);
+});
