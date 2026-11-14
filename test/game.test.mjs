@@ -14,8 +14,9 @@ const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;
 const race = (o) => ({ started_at: at(0), finished_at: at(0), user_id: null, player: null, wind: 'medium', secs: 200, dsq: false, place: 1, daily: day(0), flag: null, ...o });
 
 // The database: game_races gives back rows (whatever the filter, the URL is kept), users the Telegram names, Auth
-// a site account's display name. missing: a column the table doesn't have yet.
-function stub({ rows = [], users = [], accounts = {}, missing = null } = {}) {
+// a site account's display name. missing: a column the table doesn't have yet. recent: what the read of the ranked
+// players' latest races (for their flags, an or= filter) gets, rows when not given.
+function stub({ rows = [], recent = null, users = [], accounts = {}, missing = null } = {}) {
   const calls = [];
   globalThis.fetch = async (url, init = {}) => {
     const u = String(url); calls.push({ url: u, method: init.method || 'GET', body: init.body && JSON.parse(init.body) });
@@ -24,7 +25,7 @@ function stub({ rows = [], users = [], accounts = {}, missing = null } = {}) {
       if (missing && (init.method === 'POST' ? init.body.includes(`"${missing}"`) : u.includes(missing))) return fail(missing);
       if (init.method === 'POST' || init.method === 'PATCH') return Response.json([]);
       const off = Number(/offset=(\d+)/.exec(u)?.[1] || 0);
-      return Response.json(off ? [] : rows);
+      return Response.json(off ? [] : recent && u.includes('or=(') ? recent : rows);
     }
     if (u.includes('/rest/v1/users')) return Response.json(users);
     if (u.includes('/rest/v1/errors')) return Response.json([]);
@@ -90,6 +91,23 @@ test('GET ?day=: a past day is cached long; the future, a non-date and the far p
   assert.equal(past.status, 200); assert.match(past.headers.get('cache-control'), /s-maxage=86400/);
   assert.deepEqual((await past.json()).rows, []);
   for (const d of [day(-1), '2026-02-30', 'today', day(500)]) assert.equal((await GET(new Request(`https://x.test/api/game?day=${d}`))).status, 404, d);
+});
+
+test('GET ?day=: the flag a player flies is the one of their latest race of any kind, an unfinished one or a free race too', async () => {
+  const calls = stub({
+    rows: [race({ user_id: 7, secs: 180, started_at: at(0, 9) }), race({ player: A, secs: 190, flag: 'fr', started_at: at(0, 9) }), race({ user_id: 8, secs: 200, flag: 'nl' })],
+    recent: [
+      { started_at: at(0, 12), user_id: 7, player: null, flag: 'ge' },   // a later start, not finished: flies Georgia now
+      { started_at: at(0, 12), user_id: null, player: A, flag: null },   // took their flag down since
+      { started_at: at(0, 12), user_id: 99, player: null, flag: 'it' },  // not on the rating: no matter
+    ],
+    users: [{ id: 7, name: 'Anna' }, { id: 8, name: 'Bo' }], accounts: { [A]: 'Fed' },
+  });
+  const j = await (await GET(new Request(`https://x.test/api/game?day=${day(0)}`))).json();
+  assert.deepEqual(j.rows.map((x) => [x.name, x.fl]), [['Anna', 'ge'], ['Fed', null], ['Bo', 'nl']]);
+  const q = calls.filter((c) => c.url.includes('game_races')).at(-1).url;
+  assert.match(q, /select=started_at,user_id,player,flag&/); assert.ok(!q.includes('finished_at'), 'any race, finished or not');
+  assert.match(decodeURIComponent(q), new RegExp(`or=\\(user_id\\.in\\.\\(7,8\\),player\\.in\\.\\(${A}\\)\\)`), "only the rating's players");
 });
 
 test('GET ?day= before the flag column is there: read without it', async () => {
