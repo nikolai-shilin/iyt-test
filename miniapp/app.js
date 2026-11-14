@@ -223,7 +223,7 @@ const STR = {
     rg24h: '24h', rg7d: '7d', rg30d: '30d', rg3m: '3m', chOf: (p) => `${p}% of answers`,
     chNote: (r) => ({ '24h': 'last 24 hours', '7d': 'last 7 days', '30d': 'last 30 days', '3m': 'last 3 months' })[r],
     regWeek: (r, p) => `${pl(r, 'race')} this week · ${pl(p, 'player')}`, regBest: 'Fastest this month', regGuest: 'Guest', regToday: 'Today’s race · fastest',
-    gmK: 'Game', gmT: 'Up and down', gmFinished: 'finished', gmChart: 'Races started', gmShort: 'Short course', gmMid: 'Medium course', gmLong: 'Long course', gmNoLen: 'length not recorded', gmLeaders: 'Best times by course', gmLeadersMeta: 'Fastest finish of each player, without disqualifications', gmTop: 'Most races', gmWind: 'Races by wind', gmPlaces: 'Where players finished',
+    gmK: 'Game', gmT: 'Up and down', gmFinished: 'finished', gmChart: 'Races started', gmShort: 'Short course', gmMid: 'Medium course', gmLong: 'Long course', gmNoLen: 'length not recorded', gmShTri: 'Triangle', gmShTrap: 'Trapezoid', gmShWlu: 'Up and down, upwind finish', gmLeaders: 'Best times by course', gmLeadersMeta: 'Fastest finish of each player, without disqualifications', gmTop: 'Most races', gmWind: 'Races by wind', gmPlaces: 'Where players finished',
     gmLight: 'Light wind', gmMedium: 'Medium wind', gmStrong: 'Strong wind', gmAnon: 'No Telegram', gmBest: (p) => `best ${p}`, gmDsq: 'Disqualified',
     gmPlace: (n) => `${n}${['st', 'nd', 'rd'][n - 1] || 'th'}`, gmNone: 'Nobody raced in this period', gmSetup: 'Game statistics start once the game_races migration is in the database',
     unflagOne: 'Remove', unflagAll: (n) => `Remove from all ${n}`, confirmUnflagAll: (n) => `Remove this flag for all ${pl(n, 'student')}?`,
@@ -350,7 +350,7 @@ const STR = {
     rg24h: '24ч', rg7d: '7д', rg30d: '30д', rg3m: '3м', chOf: (p) => `${p}% ответов`,
     chNote: (r) => ({ '24h': 'за 24 часа', '7d': 'за 7 дней', '30d': 'за 30 дней', '3m': 'за 3 месяца' })[r],
     regWeek: (r, p) => `${pl(r, 'race')} за неделю · ${pl(p, 'player')}`, regBest: 'Быстрее всех за месяц', regGuest: 'Гость', regToday: 'Гонка дня · быстрее всех',
-    gmK: 'Игра', gmT: 'Up and down', gmFinished: 'до финиша', gmChart: 'Начато гонок', gmShort: 'Короткая дистанция', gmMid: 'Средняя дистанция', gmLong: 'Длинная дистанция', gmNoLen: 'длина не записана', gmLeaders: 'Лучшее время на каждой дистанции', gmLeadersMeta: 'Самый быстрый финиш каждого игрока, без дисквалификаций', gmTop: 'Больше всех гонок', gmWind: 'Гонки по ветру', gmPlaces: 'Места на финише',
+    gmK: 'Игра', gmT: 'Up and down', gmFinished: 'до финиша', gmChart: 'Начато гонок', gmShort: 'Короткая дистанция', gmMid: 'Средняя дистанция', gmLong: 'Длинная дистанция', gmNoLen: 'длина не записана', gmShTri: 'Треугольник', gmShTrap: 'Трапеция', gmShWlu: 'Апвинд — даунвинд, финиш наверху', gmLeaders: 'Лучшее время на каждой дистанции', gmLeadersMeta: 'Самый быстрый финиш каждого игрока, без дисквалификаций', gmTop: 'Больше всех гонок', gmWind: 'Гонки по ветру', gmPlaces: 'Места на финише',
     gmLight: 'Слабый ветер', gmMedium: 'Средний ветер', gmStrong: 'Сильный ветер', gmAnon: 'Без Telegram', gmBest: (p) => `лучшее ${p}`, gmDsq: 'Дисквалификация',
     gmPlace: (n) => `${n}-е`, gmNone: 'За этот период никто не гонялся', gmSetup: 'Статистика игры появится, когда миграция game_races будет в базе',
     unflagOne: 'Снять', unflagAll: (n) => `Снять у всех (${n})`, confirmUnflagAll: (n) => `Снять эту отметку у всех (${pl(n, 'student')})?`,
@@ -1034,10 +1034,11 @@ function gameBlock() {
 // Players in a plain browser share one row (No Telegram). Races from before the length was kept are a course of
 // their own.
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
-const GM_WIND = ['light', 'medium', 'strong'], GM_LEN = ['short', 'medium', 'long'];
-// A course in words: "Medium wind · Long course · 1 lap · 10 boats" ({ w, l, c, n }; c and n may be missing)
+const GM_WIND = ['light', 'medium', 'strong'], GM_LEN = ['short', 'medium', 'long'], GM_SHAPE = ['wl', 'tri', 'trap', 'wlu'];
+// A course in words: "Medium wind · Long course · 1 lap · 10 boats" ({ w, l, c, n, sh }; c and n may be missing), and its
+// shape after them unless it is up and down (sh 'wl' or missing)
 const gmCourse = (c) => [t({ light: 'gmLight', medium: 'gmMedium', strong: 'gmStrong' }[c.w]), c.c ? t({ short: 'gmShort', medium: 'gmMid', long: 'gmLong' }[c.c]) : t('gmNoLen'),
-  pl(c.l || 1, 'lap'), c.n ? pl(c.n, 'boat') : ''].filter(Boolean).join(' · ');
+  pl(c.l || 1, 'lap'), c.n ? pl(c.n, 'boat') : '', c.sh && c.sh !== 'wl' ? t({ tri: 'gmShTri', trap: 'gmShTrap', wlu: 'gmShWlu' }[c.sh]) : ''].filter(Boolean).join(' · ');
 // The game card on Home, for everyone (GET /api/game): races and players this week, and the three fastest on the
 // course raced most this month (first name and last initial, Guest outside Telegram). undefined = not asked yet,
 // 'loading', null = failed or no races. It is filled in place when it comes ([data-gs]), so Home does not redraw.
@@ -1050,7 +1051,7 @@ function gameStatsHtml() {
   const line = g.week.races ? `<span class="card-meta">${esc(t('regWeek', g.week.races, g.week.players))}</span>` : '';
   // today's race (the same wind for everyone, so the fairest ranking) when anyone has finished it, else the course
   // raced most this month
-  const lb = g.daily && g.daily.top.length ? { k: 'regToday', top: g.daily.top, course: { w: g.daily.w, c: 'short', l: 1, n: 5 } } : g.best && g.best.top.length ? { k: 'regBest', top: g.best.top, course: g.best } : null;
+  const lb = g.daily && g.daily.top.length ? { k: 'regToday', top: g.daily.top, course: { w: g.daily.w, c: 'short', l: 1, n: 5, sh: g.daily.sh } } : g.best && g.best.top.length ? { k: 'regBest', top: g.best.top, course: g.best } : null;
   const b = lb ? `<div class="gmlb"><span class="kicker">${esc(t(lb.k))}</span><span class="card-meta">${esc(gmCourse(lb.course))}</span>` +
     lb.top.map((x, i) => { const name = x.name || t('regGuest');
       // the player's Telegram photo over their initials; with no photo (204) the image is dropped (gmavaGone)
@@ -1071,14 +1072,14 @@ function gameLeaders(fin, nameOf, avaOf) {
   const courses = new Map();
   for (const g of fin) {
     if (g.d || !(g.s > 0) || !GM_WIND.includes(g.w)) continue;
-    const c = { w: g.w, l: g.l || 1, c: GM_LEN.includes(g.c) ? g.c : '', n: g.n || 0 }, key = `${c.w}|${c.l}|${c.c}|${c.n}`;
+    const c = { w: g.w, l: g.l || 1, c: GM_LEN.includes(g.c) ? g.c : '', n: g.n || 0, sh: g.sh || 'wl' }, key = `${c.w}|${c.l}|${c.c}|${c.n}|${c.sh}`;
     const best = courses.get(key) || Object.assign(c, { best: new Map() }), k = g.u == null ? 'anon' : g.u;
     const b = best.best.get(k) || { u: g.u, s: Infinity, n: 0, p: 0 };
     b.n++; b.s = Math.min(b.s, g.s); if (g.p && (!b.p || g.p < b.p)) b.p = g.p;
     best.best.set(k, b); courses.set(key, best);
   }
   if (!courses.size) return '';
-  const order = (c) => [GM_WIND.indexOf(c.w), c.c ? GM_LEN.indexOf(c.c) : 9, c.l, c.n];
+  const order = (c) => [GM_WIND.indexOf(c.w), c.c ? GM_LEN.indexOf(c.c) : 9, c.l, c.n, GM_SHAPE.indexOf(c.sh)];
   const list = [...courses.values()].sort((a, b) => { const x = order(a), y = order(b); for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return x[i] - y[i]; return 0; });
   return `<div class="dchart"><div class="dhead"><div class="stack"><span class="kicker">${esc(t('gmLeaders'))}</span><span class="card-meta">${esc(t('gmLeadersMeta'))}</span></div></div>` +
     list.map((c) => `<div class="gmlb"><span class="card-meta gmc">${esc(gmCourse(c))}</span>` +
