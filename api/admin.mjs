@@ -7,7 +7,7 @@
 //                                 wrongNote: { 'bs-034': { text, at, lang } },
 //                                 notes: [ { k: 'bs-buoyage/cardinal', text, at, lang } ] } ],
 //                               series: { hour: [ { at, joined, answers, wrong, reads, reports, races } × 24 ], day: [ … × 91 ] } | null,
-//                               game: [ { at, u, w, l, c, f, p, n, s, d } ] | null }
+//                               game: [ { at, u, w, l, c, f, p, n, s, d, sh } ] | null }
 //   POST /api/admin { unflag: { q: 'bs-012', k: 'flags' | 'wrong', users: [id, …] } } → { ok: true, users: [id, …] }
 //                             takes that flag off those students' question (public.flag_clears, see below); 501 when the
 //                             table is not in the database yet
@@ -127,8 +127,8 @@ async function gameRaces() {
   const from = new Date(Date.now() - UNITS.day[0] * UNITS.day[1]).toISOString(), out = [];
   try {
     for (let off = 0; off < MAX_GAME_ROWS; off += 1000) {
-      const page = await db(`game_races?select=started_at,finished_at,user_id,wind,laps,length,place,boats,secs,dsq&started_at=gte.${from}&order=started_at.desc&limit=1000&offset=${off}`);
-      for (const r of page) out.push({ at: Date.parse(r.started_at), u: r.user_id, w: r.wind, l: r.laps, c: r.length, f: r.finished_at ? Date.parse(r.finished_at) : 0, p: r.place, n: r.boats, s: r.secs, d: !!r.dsq });
+      const page = await db(`game_races?select=started_at,finished_at,user_id,wind,laps,length,place,boats,secs,dsq,shape&started_at=gte.${from}&order=started_at.desc&limit=1000&offset=${off}`);
+      for (const r of page) out.push({ at: Date.parse(r.started_at), u: r.user_id, w: r.wind, l: r.laps, c: r.length, f: r.finished_at ? Date.parse(r.finished_at) : 0, p: r.place, n: r.boats, s: r.secs, d: !!r.dsq, sh: r.shape || 'wl' });
       if (page.length < 1000) break;
     }
     return out;

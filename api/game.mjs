@@ -3,13 +3,15 @@
 // when a race starts and when the player finishes it. The game is a site of its own (regatta.rycrentals.com), so every
 // answer allows any origin (CORS): the numbers are public, and a post carries no cookies.
 //
-//   GET /api/game → { week: { races, players }, best: { w, l, c, n, top: [ { name, s, p, ph } ] } | null,
-//                     daily: { d, w, races, top: [ { name, s, p, ph } ] } | null }                                (public, cached)
+//   GET /api/game → { week: { races, players }, best: { w, l, c, n, sh, top: [ { name, s, p, ph } ] } | null,
+//                     daily: { d, w, sh, races, top: [ { name, s, p, ph } ] } | null }                                (public, cached)
 //     week: races started in the last 7 days and the players in them (everyone in a plain browser counts as one);
 //     best: the course most finished on in the last 30 days (wind, laps, length, boats) and its 3 fastest players, by
 //     their best time without a disqualification, with their best place on that course (p). name is the first name
 //     and the last initial ("Anna P."), null for a player in a plain browser or one the app does not know. ph is the
 //     key to their picture (below), for a player inside Telegram; nothing else about a player leaves the server.
+//     The course also has a shape (sh: 'wl' up and down, 'tri' triangle, 'trap' trapezoid, 'wlu' up and down with an
+//     upwind finish; races from before it was kept count as 'wl'), so two shapes are two courses.
 //     Daily races are left out of it: daily is today's daily race (UTC date d, its wind w), the races finished on it and
 //     its 3 fastest players, guests left out (races counts their races all the same). Everyone sails the daily race in
 //     the same wind (the seed is the date), so only there do times compare fairly.
@@ -21,7 +23,8 @@
 //     the player gave the link to can find it.
 //
 //   POST /api/game { ev: 'start', id: '<uuid>', wind: 'light' | 'medium' | 'strong', laps: 1,
-//                    length: 'short' | 'medium' | 'long', boats: 10, daily: '2026-11-12' (the daily race only) } → 204
+//                    length: 'short' | 'medium' | 'long', boats: 10, daily: '2026-11-12' (the daily race only),
+//                    shape: 'wl' | 'tri' | 'trap' | 'wlu' } → 204
 //   POST /api/game { ev: 'finish', id: '<uuid>', place: 2 | null, boats: 4, secs: 431.2, dsq: false }       → 204
 //   POST /api/game { ev: 'result', id: '<uuid>', result: { … } }  (the result page's record, at most RESULT_MAX) → 204
 //
@@ -118,13 +121,13 @@ export async function GET(request) {
   if (!SB || !SB_KEY) return json({ week: { races: 0, players: 0 }, best: null });
   try {
     const now = Date.now(), from = new Date(now - 30 * DAY).toISOString(), rows = [];
-    let cols = 'started_at,finished_at,user_id,player,wind,laps,length,boats,secs,dsq,place,daily';
+    let cols = 'started_at,finished_at,user_id,player,wind,laps,length,boats,secs,dsq,place,daily,shape';
     for (let off = 0; off < MAX_ROWS; off += 1000) {
       let page;
       try { page = await db(`game_races?select=${cols}&started_at=gte.${from}&order=started_at.desc&limit=1000&offset=${off}`); }
       catch (e) {
-        // a column not there yet (migrations 20261112120000, 20261113120000): read without it
-        const col = !off && ['player', 'daily'].find((c) => cols.includes(`,${c}`) && new RegExp(c).test(e.message));
+        // a column not there yet (migrations 20261112120000, 20261113120000, 20261114120000): read without it
+        const col = !off && ['player', 'daily', 'shape'].find((c) => cols.includes(`,${c}`) && new RegExp(c).test(e.message));
         if (!col) throw e;
         cols = cols.replace(`,${col}`, ''); off -= 1000; continue;
       }
@@ -137,7 +140,7 @@ export async function GET(request) {
     const courses = new Map();
     for (const r of rows) {
       if (!r.finished_at || r.dsq || !(r.secs > 0) || !r.length || !r.boats || r.daily) continue;
-      const key = `${r.wind}|${r.laps || 1}|${r.length}|${r.boats}`, c = courses.get(key) || { w: r.wind, l: r.laps || 1, c: r.length, n: r.boats, races: 0, best: new Map() };
+      const sh = r.shape || 'wl', key = `${r.wind}|${r.laps || 1}|${r.length}|${r.boats}|${sh}`, c = courses.get(key) || { w: r.wind, l: r.laps || 1, c: r.length, n: r.boats, sh, races: 0, best: new Map() };
       c.races++;
       const k = who(r);
       const b = c.best.get(k) || { u: r.user_id, a: r.player || null, s: Infinity, p: 0 };
@@ -159,21 +162,21 @@ export async function GET(request) {
       return top.map((x) => ({ name: names.get(x.u != null ? x.u : `a:${x.a}`) || null, s: x.s, p: x.p || null, ph: x.u != null ? sealId(x.u) : null }));
     };
     const busiest = [...courses.values()].sort((a, b) => b.races - a.races)[0];
-    const best = busiest ? { w: busiest.w, l: busiest.l, c: busiest.c, n: busiest.n, top: await podium(busiest.best) } : null;
+    const best = busiest ? { w: busiest.w, l: busiest.l, c: busiest.c, n: busiest.n, sh: busiest.sh, top: await podium(busiest.best) } : null;
     // today's daily race (UTC): each player's best time on it. Every race counts in races, but only a player who is
     // somebody ranks: the site asks a guest to sign in to get on this ranking, and all guests together are not a player.
     const today = new Date(now).toISOString().slice(0, 10), dBest = new Map();
-    let dWind = null, dRaces = 0;
+    let dWind = null, dShape = 'wl', dRaces = 0;
     for (const r of rows) {
       if (r.daily !== today || !r.finished_at || r.dsq || !(r.secs > 0)) continue;
-      dWind = r.wind; dRaces++;
+      dWind = r.wind; dShape = r.shape || 'wl'; dRaces++;
       const k = who(r);
       if (k === 'anon') continue;
       const b = dBest.get(k) || { u: r.user_id, a: r.player || null, s: Infinity, p: 0 };
       b.s = Math.min(b.s, r.secs); if (r.place && (!b.p || r.place < b.p)) b.p = r.place;
       dBest.set(k, b);
     }
-    const daily = dRaces ? { d: today, w: dWind, races: dRaces, top: await podium(dBest) } : null;
+    const daily = dRaces ? { d: today, w: dWind, sh: dShape, races: dRaces, top: await podium(dBest) } : null;
     return json({ week: { races: week.length, players }, best, daily });
   } catch (e) {
     if (!/: 404 /.test(e.message)) await logError('game stats', e);
@@ -201,12 +204,13 @@ export async function POST(request) {
       // a daily race names its day: today or yesterday (UTC), for a player just past midnight
       const daily = typeof b.daily === 'string' && [0, 1].some((d) => new Date(now - d * DAY).toISOString().slice(0, 10) === b.daily) ? b.daily : null;
       let row = { id, user_id: tg, wind: ['light', 'medium', 'strong'].includes(b.wind) ? b.wind : null, laps: int(b.laps, 1, 9),
-                  length: ['short', 'medium', 'long'].includes(b.length) ? b.length : null, boats: int(b.boats, 1, 20), ...(daily && { daily }), ...(player && { player }) };
-      // a column not there yet (migrations 20261112120000, 20261113120000): written without it
+                  length: ['short', 'medium', 'long'].includes(b.length) ? b.length : null, boats: int(b.boats, 1, 20), ...(daily && { daily }), ...(player && { player }),
+                  shape: ['wl', 'tri', 'trap', 'wlu'].includes(b.shape) ? b.shape : null };
+      // a column not there yet (migrations 20261112120000, 20261113120000, 20261114120000): written without it
       for (;;) {
         try { await db('game_races?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: row }); break; }
         catch (e) {
-          const col = ['player', 'daily'].find((c) => c in row && new RegExp(c).test(e.message));
+          const col = ['player', 'daily', 'shape'].find((c) => c in row && new RegExp(c).test(e.message));
           if (!col) throw e;
           const { [col]: _, ...rest } = row; row = rest;
         }
