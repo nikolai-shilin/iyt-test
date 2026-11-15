@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
-const { GET, POST, bests, rankDay, monthTable } = await import('../api/game.mjs');
+const { GET, POST, bests, rankDay, monthTable, accountFlag } = await import('../api/game.mjs');
 
 const day = (d) => new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
 const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;
@@ -30,7 +30,8 @@ function stub({ rows = [], recent = null, users = [], accounts = {}, missing = n
     if (u.includes('/rest/v1/users')) return Response.json(users);
     if (u.includes('/rest/v1/errors')) return Response.json([]);
     const acc = /admin\/users\/([0-9a-f-]+)/.exec(u);
-    if (acc) return accounts[acc[1]] ? Response.json({ user_metadata: { display_name: accounts[acc[1]] } }) : new Response('', { status: 404 });
+    const m = acc && accounts[acc[1]];
+    if (acc) return m ? Response.json({ user_metadata: typeof m === 'string' ? { display_name: m } : m }) : new Response('', { status: 404 });
     return new Response('', { status: 404 });
   };
   return calls;
@@ -122,6 +123,26 @@ test('GET: the game card\'s podiums carry each player\'s flag', async () => {
   stub({ rows: [race({ user_id: 7, flag: 'nl', secs: 150 }), race({ player: B, secs: 160 })], users: [{ id: 7, name: 'Anna' }], accounts: { [B]: 'Bo Z' } });
   const j = await (await GET(new Request('https://x.test/api/game'))).json();
   assert.deepEqual(j.daily.top.map((x) => [x.name, x.fl]), [['Anna', 'nl'], ['Bo Z.', null]]);
+});
+
+test('a site account\'s flag is its boat\'s, else its latest race\'s', async () => {
+  assert.equal(accountFlag({ boat: { flag: 'by', num: '7' } }), 'by');
+  assert.equal(accountFlag({ boat: { num: '7' } }), null, 'a boat that flies no flag');
+  assert.equal(accountFlag({ boat: { flag: 'Evil<' } }), null);
+  assert.equal(accountFlag({ display_name: 'Fed' }), undefined, 'no boat kept: the race says');
+  assert.equal(accountFlag({ boat: ['by'] }), undefined);
+  assert.equal(accountFlag(null), undefined);
+  const C = '33333333-3333-4333-8333-333333333334';
+  stub({
+    rows: [race({ player: A, secs: 150 }), race({ player: B, secs: 160, flag: 'nl' }), race({ player: C, secs: 170, flag: 'it' }), race({ user_id: 7, secs: 180, flag: 'gb' })],
+    users: [{ id: 7, name: 'Anna' }],
+    accounts: { [A]: { display_name: 'Nikolai S', boat: { flag: 'by' } }, [B]: { display_name: 'Bo Z', boat: { num: '3' } }, [C]: 'Cy' },
+  });
+  const j = await (await GET(new Request(`https://x.test/api/game?day=${day(0)}`))).json();
+  assert.deepEqual(j.rows.map((x) => [x.name, x.fl]), [['Nikolai S', 'by'], ['Bo Z', null], ['Cy', 'it'], ['Anna', 'gb']]);
+  assert.deepEqual(j.month.rows.find((x) => x.name === 'Nikolai S').fl, 'by');
+  const card = await (await GET(new Request('https://x.test/api/game'))).json();
+  assert.deepEqual(card.daily.top.map((x) => [x.name, x.fl]), [['Nikolai S.', 'by'], ['Bo Z.', null], ['Cy', 'it']]);
 });
 
 test('POST start: the boat\'s flag is kept when it is a flag, and left out before its column is there', async () => {

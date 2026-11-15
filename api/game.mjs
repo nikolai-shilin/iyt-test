@@ -9,7 +9,8 @@
 //     best: the course most finished on in the last 30 days (wind, laps, length, boats) and its 3 fastest players, by
 //     their best time without a disqualification, with their best place on that course (p). name is the first name
 //     and the last initial ("Anna P."), null for a player in a plain browser or one the app does not know. ph is the
-//     key to their picture (below), for a player inside Telegram; fl is the flag their boat flew in their latest race
+//     key to their picture (below), for a player inside Telegram; fl is the flag their site account's boat flies
+//     (user_metadata.boat, accountFlag), else the one their boat flew in their latest race
 //     ('gb', null for none); nothing else about a player leaves the server.
 //     The course also has a shape (sh: 'wl' up and down, 'tri' triangle, 'trap' trapezoid, 'wlu' up and down with an
 //     upwind finish; races from before it was kept count as 'wl'), so two shapes are two courses.
@@ -114,6 +115,13 @@ const shortName = (name) => { const w = String(name || '').trim().split(/\s+/).f
 const fullName = (name) => { const n = String(name || '').trim().split(/\s+/).filter(Boolean).join(' '); return n ? [...n].slice(0, 40).join('') : null; };
 // a boat's flag as the game posts it (lib/flags.ts in the ryc-regatta repo): 'gb', or one with a region, 'gb-sct'
 const flagOf = (v) => (typeof v === 'string' && /^[a-z]{2}(-[a-z]{2,4})?$/.test(v) ? v : null);
+// The flag a site account flies now: the site keeps a signed-in player's boat in user_metadata.boat (lib/boat.ts in
+// the ryc-regatta repo), so a flag picked there is theirs at once, on any device, without a race to carry it. Its
+// flag, or null for a boat that flies none; undefined for an account with no boat kept, whose latest race then says.
+export const accountFlag = (meta) => {
+  const boat = meta && meta.boat;
+  return boat && typeof boat === 'object' && !Array.isArray(boat) ? flagOf(boat.flag) : undefined;
+};
 // the columns added after the table, newest last: a read or a write without one of them still works before its
 // migration is applied (20261112120000, 20261113120000, 20261114120000, 20261114130000)
 const LATER = ['player', 'daily', 'shape', 'flag'];
@@ -191,8 +199,9 @@ export function monthTable(days) {
 }
 // Names for players ({ key, u, a }): a Telegram user's from the users table (one look-up a hundred), a site account's
 // display name from Supabase Auth, at most cap of those (each is a request of its own). key → name: short ("Anna P."),
-// or the whole name when full (the rating).
-async function namesOf(players, cap, full = false) {
+// or the whole name when full (the rating). flags, when given, takes each of those site accounts' own flag
+// (accountFlag) in place of the one their latest race flew.
+async function namesOf(players, cap, full = false, flags = null) {
   const nameOf = full ? fullName : shortName;
   const names = new Map(), ids = [...new Set(players.filter((x) => x.u != null).map((x) => x.u))];
   for (let i = 0; i < ids.length; i += 100) {
@@ -204,6 +213,8 @@ async function namesOf(players, cap, full = false) {
     await Promise.all(site.slice(i, i + 10).map(async (x) => {
       const u = await auth(`admin/users/${x.a}`).catch(() => null);
       names.set(x.key, nameOf(u && u.user_metadata && u.user_metadata.display_name));
+      const fl = flags && u ? accountFlag(u.user_metadata) : undefined;
+      if (fl !== undefined) flags.set(x.key, fl);
     }));
   }
   return names;
@@ -257,7 +268,7 @@ export async function GET(request) {
     // the three fastest of a set of players' bests, with their names, pictures and flags
     const podium = async (best) => {
       const top = [...best].map(([key, b]) => ({ key, ...b })).sort((a, b) => a.s - b.s).slice(0, 3);
-      const names = await namesOf(top, 3);
+      const names = await namesOf(top, 3, false, flags);
       return top.map((x) => ({ name: names.get(x.key) || null, s: x.s, p: x.p || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null }));
     };
     const busiest = [...courses.values()].sort((a, b) => b.races - a.races || SHAPES.indexOf(a.sh) - SHAPES.indexOf(b.sh))[0];
@@ -305,7 +316,7 @@ async function dayRating(day, json) {
     const mine = byDay.get(day) || [], dayList = ranked.get(day) || [], month = monthTable([...ranked.values()]);
     const flags = await flyingFlags(rows, now);
     // names: the day's players first, then the month's, the most points first
-    const names = await namesOf([...dayList, ...month], 80, true);
+    const names = await namesOf([...dayList, ...month], 80, true, flags);
     const pub = (x) => ({ k: keyOf(x), name: names.get(x.key) || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null });
     const nameSort = (a, b) => (a.name == null) - (b.name == null) || String(a.name || '').localeCompare(String(b.name || ''));
     return json({
