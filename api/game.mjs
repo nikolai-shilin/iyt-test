@@ -42,7 +42,8 @@
 //
 //   POST /api/game { ev: 'start', id: '<uuid>', wind: 'light' | 'medium' | 'strong', laps: 1,
 //                    length: 'short' | 'medium' | 'long', boats: 10, daily: '2026-11-12' (the daily race only),
-//                    shape: 'wl' | 'tri' | 'trap' | 'wlu', flag: 'gb' (the boat's flag, if she flies one) } → 204
+//                    shape: 'wl' | 'tri' | 'trap' | 'wlu', flag: 'gb' (the boat's flag, if she flies one),
+//                    yacht: 'ac75' (the class of yacht, when not the club's 40-footer: public/game/classes.js there) } → 204
 //   POST /api/game { ev: 'finish', id: '<uuid>', place: 2 | null, boats: 4, secs: 431.2, dsq: false }       → 204
 //   POST /api/game { ev: 'result', id: '<uuid>', result: { … } }  (the result page's record, at most RESULT_MAX) → 204
 //
@@ -72,8 +73,14 @@ const done = (status = 204) => new Response(null, { status, headers: CORS });
 // The shortest time a course allows. The game's beat (the start to the windward mark) is BEAT metres in each wind, times
 // LEN for the course length; its computer skippers, who sail close to the boat's polar, take 0.75–1.2 s a metre of beat
 // for each lap (public/game/sim.js, measured in the ryc-regatta repo's test/sim.test.mjs). No one sails it in half that.
+// Another class of yacht sails a course of her own size at her own pace: a faster one (YACHT_FLOOR) gets that share of
+// the floor. The AC75 lays her courses 2.5 times as long and sails them in some 45% of the 40-footer's time (the game's
+// test/sim.test.mjs measures each class of today's races against this); the others are no faster than the 40-footer.
 const BEAT = { light: 200, medium: 260, strong: 280 }, LEN = { short: 1, medium: 2, long: 3.4 }, FLOOR = 0.45;
-const floorSecs = (r) => (BEAT[r.wind] && LEN[r.length] ? FLOOR * BEAT[r.wind] * LEN[r.length] * (r.laps || 1) : 0);
+export const YACHT_FLOOR = { ac75: 0.4 };
+export const floorSecs = (r) => (BEAT[r.wind] && LEN[r.length] ? FLOOR * BEAT[r.wind] * LEN[r.length] * (r.laps || 1) * (YACHT_FLOOR[r.yacht] ?? 1) : 0);
+// a class of yacht as the game posts it: its id in classes.js (none for the club's 40-footer)
+const yachtOf = (v) => (typeof v === 'string' && /^[a-z][a-z0-9]{1,15}$/.test(v) && v !== 'club40' ? v : null);
 const RESULT_MAX = 60_000; // bytes of JSON: twelve boats' thinned tracks and the log come to some 25 000
 
 // Supabase Auth, with the same key rules as db() in settings.mjs (the admin API) or with a player's own token.
@@ -127,8 +134,8 @@ export const accountFlag = (meta) => {
   return boat && typeof boat === 'object' && !Array.isArray(boat) ? flagOf(boat.flag) : undefined;
 };
 // the columns added after the table, newest last: a read or a write without one of them still works before its
-// migration is applied (20261112120000, 20261113120000, 20261114120000, 20261114130000)
-const LATER = ['player', 'daily', 'shape', 'flag'];
+// migration is applied (20261112120000, 20261113120000, 20261114120000, 20261114130000, 20261115130000)
+const LATER = ['player', 'daily', 'shape', 'flag', 'yacht'];
 
 // Every race the filter finds, 1000 a page, the latest first; a later column not there yet is left out of cols.
 async function readRaces(cols, filter) {
@@ -370,7 +377,7 @@ export async function POST(request) {
       const daily = typeof b.daily === 'string' && [0, 1].some((d) => new Date(now - d * DAY).toISOString().slice(0, 10) === b.daily) ? b.daily : null;
       let row = { id, user_id: tg, wind: ['light', 'medium', 'strong'].includes(b.wind) ? b.wind : null, laps: int(b.laps, 1, 9),
                   length: ['short', 'medium', 'long'].includes(b.length) ? b.length : null, boats: int(b.boats, 1, 20), ...(daily && { daily }), ...(player && { player }),
-                  shape: SHAPES.includes(b.shape) ? b.shape : null, ...(flagOf(b.flag) && { flag: b.flag }) };
+                  shape: SHAPES.includes(b.shape) ? b.shape : null, ...(flagOf(b.flag) && { flag: b.flag }), ...(yachtOf(b.yacht) && { yacht: b.yacht }) };
       // a column not there yet (LATER): written without it
       for (;;) {
         try { await db('game_races?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: row }); break; }
@@ -389,11 +396,13 @@ export async function POST(request) {
       });
     } else {
       let secs = Number.isFinite(b.secs) && b.secs >= 0 && b.secs < 86400 ? Math.round(b.secs * 10) / 10 : null;
-      const [st] = await db(`game_races?select=started_at,wind,length,laps,boats&id=eq.${id}&finished_at=is.null`);
+      // (and the yacht, for the floor: read without it before its column is there)
+      const start = (cols) => db(`game_races?select=${cols}&id=eq.${id}&finished_at=is.null`);
+      const [st] = await start('started_at,wind,length,laps,boats,yacht').catch((e) => (/yacht/.test(e.message) ? start('started_at,wind,length,laps,boats') : Promise.reject(e)));
       if (!st) return done();
       // the time can't be more than 3× the time since the start was posted (the game's fastest speed), less a little slack
       if (secs != null && secs > ((now - Date.parse(st.started_at)) / 1000) * 3 + 20) secs = null;
-      // nor shorter than the course allows
+      // nor shorter than the course allows, in her class of yacht
       if (secs != null && secs < floorSecs(st)) secs = null;
       // the fleet as the finish counts it, else as the start did: a finish without a good one never blanks the start's,
       // which would drop the race from its course's ranking. A place outside the fleet is no place (the table's

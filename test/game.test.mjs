@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
-const { GET, POST, bests, rankDay, monthTable, accountFlag } = await import('../api/game.mjs');
+const { GET, POST, bests, rankDay, monthTable, accountFlag, floorSecs } = await import('../api/game.mjs');
 
 const day = (d) => new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
 const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;
@@ -194,4 +194,30 @@ test('GET ?day=&brief: the day alone, its top named and every ranked time, witho
   assert.match(q, new RegExp(`daily=eq\\.${day(0)}&finished_at`), "that day's races only");
   const past = await GET(new Request(`https://x.test/api/game?day=${day(3)}&brief`));
   assert.match(past.headers.get('cache-control'), /s-maxage=86400/);
+});
+
+test('POST start and finish: the yacht is kept, and a faster class gets her share of the floor', async () => {
+  const id = '55555555-5555-4555-8555-555555555555', post = (body) => POST(new Request('https://x.test/api/game', { method: 'POST', body: JSON.stringify(body), headers: { 'x-forwarded-for': `10.0.2.${Math.random() * 250 | 0}` } }));
+  let calls = stub();
+  await post({ ev: 'start', id, wind: 'medium', laps: 1, length: 'short', boats: 5, yacht: 'ac75' });
+  assert.equal(calls.find((c) => c.method === 'POST').body.yacht, 'ac75');
+  calls = stub();
+  await post({ ev: 'start', id, wind: 'medium', yacht: 'AC75; drop' });
+  assert.ok(!('yacht' in calls.find((c) => c.method === 'POST').body));
+  // the floor of one short lap in medium wind: 0.45 s a metre of 260 m, 117 s; an AC75's, 0.4 of it
+  assert.equal(floorSecs({ wind: 'medium', length: 'short', laps: 1 }), 117);
+  assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'ac75' }) * 10) / 10, 46.8);
+  assert.equal(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'j70' }), 117);
+  const started = (yacht) => [{ started_at: new Date(Date.now() - 600e3).toISOString(), wind: 'medium', length: 'short', laps: 1, boats: 5, yacht }];
+  const patch = (calls) => calls.find((c) => c.method === 'PATCH').body;
+  calls = stub({ rows: started('ac75') });
+  await post({ ev: 'finish', id, place: 1, secs: 106, dsq: false });
+  assert.equal(patch(calls).secs, 106, 'an AC75 lap under the 40-footer\'s floor is kept');
+  calls = stub({ rows: started(null) });
+  await post({ ev: 'finish', id, place: 1, secs: 106, dsq: false });
+  assert.equal(patch(calls).secs, null, 'the same time in the 40-footer is not');
+  // before the column is there, the start is read without it: the 40-footer's floor
+  calls = stub({ rows: started(undefined), missing: 'yacht' });
+  await post({ ev: 'finish', id, place: 1, secs: 300, dsq: false });
+  assert.equal(patch(calls).secs, 300);
 });
