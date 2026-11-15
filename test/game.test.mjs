@@ -177,3 +177,21 @@ test('POST finish: a finish without a good fleet keeps the start\'s, and a place
   assert.equal(patch(calls).dsq, true);
   assert.equal(patch(calls).secs, 300);
 });
+
+test('GET ?day=&brief: the day alone, its top named and every ranked time, without the month', async () => {
+  const calls = stub({
+    rows: [race({ user_id: 7, secs: 175, flag: 'it' }), race({ player: A, secs: 190 }), race({ player: B, secs: 182 }), race({ secs: 150 })],
+    users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [A]: 'Fed', [B]: 'Bo' },
+  });
+  const r = await GET(new Request(`https://x.test/api/game?day=${day(0)}&brief`));
+  assert.equal(r.status, 200); assert.match(r.headers.get('cache-control'), /s-maxage=300/);
+  const j = await r.json();
+  assert.equal(j.ranked, 3); assert.equal(j.races, 4); assert.equal(j.guests, 1);
+  assert.deepEqual(j.s, [175, 182, 190], 'every ranked time, a guest\'s left out');
+  assert.deepEqual(j.top.map((x) => [x.name, x.fl, x.s, x.pts]), [['Anna Petrova', 'it', 175, 3], ['Bo', null, 182, 2], ['Fed', null, 190, 1]]);
+  assert.equal(j.month, undefined); assert.equal(j.rows, undefined);
+  const q = calls.find((c) => c.url.includes('game_races')).url;
+  assert.match(q, new RegExp(`daily=eq\\.${day(0)}&finished_at`), "that day's races only");
+  const past = await GET(new Request(`https://x.test/api/game?day=${day(3)}&brief`));
+  assert.match(past.headers.get('cache-control'), /s-maxage=86400/);
+});

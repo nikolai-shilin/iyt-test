@@ -35,6 +35,10 @@
 //     and was in the top three of, the most points first. days: the month's days up to d that ranked anyone, the
 //     latest first. k is a key that stays the same for a player (not their id). A day in the future, more than
 //     DAY_BACK days back or not a date is 404.
+//   GET /api/game?day=2026-11-14&brief → the same day without the month and without everyone's rows, for the pages
+//     that only place one time on the day (the result page, your month, Home's card): { d, w, races, guests, ranked,
+//     top: [ the first TOP_BRIEF rows, as rows above ], s: [ every ranked player's best time, the fastest first ] }.
+//     It reads that day's races alone and names only the top, so it stays small and cheap however many sail.
 //
 //   POST /api/game { ev: 'start', id: '<uuid>', wind: 'light' | 'medium' | 'strong', laps: 1,
 //                    length: 'short' | 'medium' | 'long', boats: 10, daily: '2026-11-12' (the daily race only),
@@ -249,7 +253,7 @@ export async function GET(request) {
     }
   }
   const day = params.get('day');
-  if (day != null) return dayRating(day, json);
+  if (day != null) return dayRating(day, json, params.has('brief'));
   if (!SB || !SB_KEY) return json({ week: { races: 0, players: 0 }, best: null });
   try {
     const now = Date.now(), from = new Date(now - 30 * DAY).toISOString();
@@ -292,19 +296,22 @@ export async function GET(request) {
 }
 
 // GET ?day=: the day's daily race ranked and the month's points to that day (see the top of the file).
-async function dayRating(day, json) {
+const TOP_BRIEF = 10;
+async function dayRating(day, json, brief = false) {
   const now = Date.now(), today = new Date(now).toISOString().slice(0, 10), t = Date.parse(`${day}T00:00:00Z`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !Number.isFinite(t) || new Date(t).toISOString().slice(0, 10) !== day
       || day > today || t < Date.parse(`${today}T00:00:00Z`) - DAY_BACK * DAY) return json({ error: 'not found' }, 404);
   // a past day no longer changes; today's does, so it keeps the card's five minutes
   const cache = day < today ? 'public, max-age=300, s-maxage=86400, stale-while-revalidate=86400' : undefined;
-  const m = day.slice(0, 7), empty = { d: day, w: null, races: 0, guests: 0, rows: [], month: { m, days: 0, rows: [] }, days: [] };
+  const m = day.slice(0, 7), empty = brief ? { d: day, w: null, races: 0, guests: 0, ranked: 0, top: [], s: [] }
+    : { d: day, w: null, races: 0, guests: 0, rows: [], month: { m, days: 0, rows: [] }, days: [] };
   if (!SB || !SB_KEY) return json(empty, 200, cache);
   try {
     let rows;
     try {
+      // brief: that day's races alone; else the month's to that day, for its table
       rows = await readRaces('started_at,finished_at,user_id,player,wind,secs,dsq,place,daily,flag',
-        `daily=gte.${m}-01&daily=lte.${day}&finished_at=not.is.null&dsq=is.false&secs=gt.0`);
+        `${brief ? `daily=eq.${day}` : `daily=gte.${m}-01&daily=lte.${day}`}&finished_at=not.is.null&dsq=is.false&secs=gt.0`);
     } catch (e) {
       if (/daily/.test(e.message)) return json(empty, 200, cache); // no daily column yet: no daily races either
       throw e;
@@ -313,7 +320,17 @@ async function dayRating(day, json) {
     for (const r of rows) (byDay.get(r.daily) || byDay.set(r.daily, []).get(r.daily)).push(r);
     const ranked = new Map([...byDay].map(([d, rs]) => [d, rankDay(bests(rs))]).filter(([, list]) => list.length));
     const days = [...ranked.keys()].sort().reverse();
-    const mine = byDay.get(day) || [], dayList = ranked.get(day) || [], month = monthTable([...ranked.values()]);
+    const mine = byDay.get(day) || [], dayList = ranked.get(day) || [];
+    if (brief) {
+      const top = dayList.slice(0, TOP_BRIEF), flags = await flyingFlags(mine, now), names = await namesOf(top, TOP_BRIEF, true, flags);
+      return json({
+        d: day, w: mine.length ? mine[mine.length - 1].wind : null, races: mine.length, guests: mine.filter((r) => who(r) === 'anon').length,
+        ranked: dayList.length,
+        top: top.map((x) => ({ k: keyOf(x), name: names.get(x.key) || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null, s: x.s, p: x.p || null, pts: x.pts, n: x.n })),
+        s: dayList.map((x) => x.s),
+      }, 200, cache);
+    }
+    const month = monthTable([...ranked.values()]);
     const flags = await flyingFlags(rows, now);
     // names: the day's players first, then the month's, the most points first
     const names = await namesOf([...dayList, ...month], 80, true, flags);
