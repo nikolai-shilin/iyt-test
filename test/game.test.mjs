@@ -207,7 +207,10 @@ test('POST start and finish: the yacht is kept, and a faster class gets her shar
   // the floor of one short lap in medium wind: 0.45 s a metre of 260 m, 117 s; an AC75's, 0.4 of it
   assert.equal(floorSecs({ wind: 'medium', length: 'short', laps: 1 }), 117);
   assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'ac75' }) * 10) / 10, 46.8);
-  assert.equal(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'j70' }), 117);
+  assert.equal(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'bavaria46' }), 117);
+  // a Laser's 0.8 of it, a J/70's and an RS21's 0.9: in a blow they sail as near their polars as in a breeze
+  assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'laser' }) * 10) / 10, 93.6);
+  assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'j70' }) * 10) / 10, 105.3);
   // an Optimist's, 0.6 of it: her course is sized to her
   assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'optimist' }) * 10) / 10, 70.2);
   const started = (yacht) => [{ started_at: new Date(Date.now() - 600e3).toISOString(), wind: 'medium', length: 'short', laps: 1, boats: 5, yacht }];
