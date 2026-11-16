@@ -208,11 +208,16 @@ test('POST start and finish: the yacht is kept, and a faster class gets her shar
   assert.equal(floorSecs({ wind: 'medium', length: 'short', laps: 1 }), 117);
   assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'ac75' }) * 10) / 10, 46.8);
   assert.equal(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'j70' }), 117);
+  // an Optimist's, 0.6 of it: her course is sized to her
+  assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'optimist' }) * 10) / 10, 70.2);
   const started = (yacht) => [{ started_at: new Date(Date.now() - 600e3).toISOString(), wind: 'medium', length: 'short', laps: 1, boats: 5, yacht }];
   const patch = (calls) => calls.find((c) => c.method === 'PATCH').body;
   calls = stub({ rows: started('ac75') });
   await post({ ev: 'finish', id, place: 1, secs: 106, dsq: false });
   assert.equal(patch(calls).secs, 106, 'an AC75 lap under the 40-footer\'s floor is kept');
+  calls = stub({ rows: started('optimist') });
+  await post({ ev: 'finish', id, place: 1, secs: 106, dsq: false });
+  assert.equal(patch(calls).secs, 106, 'an Optimist\'s short course under the 40-footer\'s floor is kept');
   calls = stub({ rows: started(null) });
   await post({ ev: 'finish', id, place: 1, secs: 106, dsq: false });
   assert.equal(patch(calls).secs, null, 'the same time in the 40-footer is not');

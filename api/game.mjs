@@ -75,9 +75,11 @@ const done = (status = 204) => new Response(null, { status, headers: CORS });
 // for each lap (public/game/sim.js, measured in the ryc-regatta repo's test/sim.test.mjs). No one sails it in half that.
 // Another class of yacht sails a course of her own size at her own pace: a faster one (YACHT_FLOOR) gets that share of
 // the floor. The AC75 lays her courses 2.5 times as long and sails them in some 45% of the 40-footer's time (the game's
-// test/sim.test.mjs measures each class of today's races against this); the others are no faster than the 40-footer.
+// test/sim.test.mjs measures each class of today's races against this). The Optimist is slow but her courses are
+// sized to her, so short that in 12 knots her computer boats sail one in 1.16 times the floor: 0.6 of it. The others
+// take at least half as long again as the floor.
 const BEAT = { light: 200, medium: 260, strong: 280 }, LEN = { short: 1, medium: 2, long: 3.4 }, FLOOR = 0.45;
-export const YACHT_FLOOR = { ac75: 0.4 };
+export const YACHT_FLOOR = { ac75: 0.4, optimist: 0.6 };
 export const floorSecs = (r) => (BEAT[r.wind] && LEN[r.length] ? FLOOR * BEAT[r.wind] * LEN[r.length] * (r.laps || 1) * (YACHT_FLOOR[r.yacht] ?? 1) : 0);
 // a class of yacht as the game posts it: its id in classes.js (none for the club's 40-footer)
 const yachtOf = (v) => (typeof v === 'string' && /^[a-z][a-z0-9]{1,15}$/.test(v) && v !== 'club40' ? v : null);
