@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
-const { GET, POST, bests, rankDay, monthTable, accountFlag, floorSecs } = await import('../api/game.mjs');
+const { GET, POST, bests, rankDay, monthTable, accountFlag, floorSecs, perfOf } = await import('../api/game.mjs');
 
 const day = (d) => new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
 const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;
@@ -228,4 +228,32 @@ test('POST start and finish: the yacht is kept, and a faster class gets her shar
   calls = stub({ rows: started(undefined), missing: 'yacht' });
   await post({ ev: 'finish', id, place: 1, secs: 300, dsq: false });
   assert.equal(patch(calls).secs, 300);
+});
+
+test('POST start keeps the venue; POST perf keeps how the game ran, once, each field checked, nothing before its column', async () => {
+  const id = '66666666-6666-4666-8666-666666666666', post = (body) => POST(new Request('https://x.test/api/game', { method: 'POST', body: JSON.stringify(body), headers: { 'x-forwarded-for': `10.0.3.${Math.random() * 250 | 0}` } }));
+  let calls = stub();
+  await post({ ev: 'start', id, wind: 'light', venue: 'cowes' });
+  assert.equal(calls.find((c) => c.method === 'POST').body.venue, 'cowes');
+  calls = stub();
+  await post({ ev: 'start', id, wind: 'light', venue: 'Cowes; drop' });
+  assert.ok(!('venue' in calls.find((c) => c.method === 'POST').body));
+  // the game's summary: kept as it is, on the race's row while it has none
+  const perf = { fps: 58.8, low: 31.2, stall: 0.4, secs: 312, q0: 'high', q: 'medium', gfx: 'auto', saver: 0, dev: 'phone', tg: 1, os: 'ios', br: 'safari',
+    dpr: 3, cores: 6, mem: 4, gpu: 'Apple GPU', w: 1170, h: 2532, load: 6.4 };
+  calls = stub();
+  assert.equal((await post({ ev: 'perf', id, perf })).status, 204);
+  const patch = calls.find((c) => c.method === 'PATCH');
+  assert.match(patch.url, /id=eq\.6+-.*&perf=is\.null/);
+  assert.deepEqual(patch.body, { perf });
+  // anything else dropped, out of bounds left out, and no frame rate is no perf at all
+  assert.deepEqual(perfOf({ fps: 60, q: 'ultra', dev: 'fridge', gpu: 'NVIDIA <b>RTX</b> 4090', name: 'Anna', mem: -1, load: 1e9 }), { fps: 60, gpu: 'NVIDIA bRTX/b 4090' });
+  assert.equal(perfOf({ low: 20 }), null);
+  calls = stub();
+  assert.equal((await post({ ev: 'perf', id, perf: { low: 20 } })).status, 400);
+  assert.ok(!calls.some((c) => c.method === 'PATCH'));
+  // before the column is there: nothing kept, nothing logged as an error
+  calls = stub({ missing: 'perf' });
+  assert.equal((await post({ ev: 'perf', id, perf })).status, 204);
+  assert.ok(!calls.some((c) => c.url.includes('/rest/v1/errors')));
 });

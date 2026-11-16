@@ -43,9 +43,15 @@
 //   POST /api/game { ev: 'start', id: '<uuid>', wind: 'light' | 'medium' | 'strong', laps: 1,
 //                    length: 'short' | 'medium' | 'long', boats: 10, daily: '2026-11-12' (the daily race only),
 //                    shape: 'wl' | 'tri' | 'trap' | 'wlu', flag: 'gb' (the boat's flag, if she flies one),
-//                    yacht: 'ac75' (the class of yacht, when not the club's 40-footer: public/game/classes.js there) } → 204
+//                    yacht: 'ac75' (the class of yacht, when not the club's 40-footer: public/game/classes.js there),
+//                    venue: 'cowes' (where it is sailed: public/game/venues.js there) } → 204
 //   POST /api/game { ev: 'finish', id: '<uuid>', place: 2 | null, boats: 4, secs: 431.2, dsq: false }       → 204
 //   POST /api/game { ev: 'result', id: '<uuid>', result: { … } }  (the result page's record, at most RESULT_MAX) → 204
+//   POST /api/game { ev: 'perf', id: '<uuid>', perf: { fps, low, stall, secs, q0, q, gfx, saver, dev, tg, os, br, dpr,
+//                    cores, mem, gpu, w, h, load } } → 204
+//     how the game ran through the race (stats.js perfSummary there), for the site's /admin (regatta_admin_stats in
+//     supabase/migrations/20261117120000_game_races_perf.sql): kept once a race, each field checked (perfOf), the
+//     rest dropped. It names no one.
 //
 // Who the player is: inside Telegram, the launch data (initData in the body, or x-telegram-init-data as
 // api/settings.mjs); on the site, the access token of their Regatta account (token in the body: the site's accounts
@@ -85,6 +91,28 @@ export const YACHT_FLOOR = { ac75: 0.4, optimist: 0.6, laser: 0.8, j70: 0.9, rs2
 export const floorSecs = (r) => (BEAT[r.wind] && LEN[r.length] ? FLOOR * BEAT[r.wind] * LEN[r.length] * (r.laps || 1) * (YACHT_FLOOR[r.yacht] ?? 1) : 0);
 // a class of yacht as the game posts it: its id in classes.js (none for the club's 40-footer)
 const yachtOf = (v) => (typeof v === 'string' && /^[a-z][a-z0-9]{1,15}$/.test(v) && v !== 'club40' ? v : null);
+const venueOf = (v) => (typeof v === 'string' && /^[a-z][a-z0-9-]{1,23}$/.test(v) ? v : null);
+// how the game ran (ev: 'perf'): each field as the game makes it, within bounds, or left out; null for a perf that
+// isn't one (no frame rate)
+export function perfOf(p) {
+  if (!p || typeof p !== 'object' || Array.isArray(p)) return null;
+  const num = (v, lo, hi, k = 10) => (typeof v === 'number' && Number.isFinite(v) && v >= lo && v <= hi ? Math.round(v * k) / k : undefined);
+  const one = (v, list) => (list.includes(v) ? v : undefined);
+  const LV = ['high', 'medium', 'low'];
+  const out = {
+    fps: num(p.fps, 0.5, 500), low: num(p.low, 0.5, 500), stall: num(p.stall, 0, 6000, 100), secs: num(p.secs, 0, 86400, 1),
+    q0: one(p.q0, LV), q: one(p.q, LV), gfx: one(p.gfx, ['auto', ...LV]), saver: one(p.saver, [0, 1]),
+    dev: one(p.dev, ['phone', 'tablet', 'desktop']), tg: one(p.tg, [0, 1]),
+    os: one(p.os, ['ios', 'android', 'chromeos', 'mac', 'windows', 'linux', 'other']),
+    br: one(p.br, ['safari', 'chrome', 'firefox', 'edge', 'yandex', 'opera', 'other']),
+    dpr: num(p.dpr, 0.25, 8, 100), cores: num(p.cores, 1, 256, 1), mem: num(p.mem, 0.1, 1024, 100),
+    gpu: typeof p.gpu === 'string' ? p.gpu.replace(/[^\w ()+\-.,/:]/g, '').trim().slice(0, 60) || undefined : undefined,
+    w: num(p.w, 1, 20000, 1), h: num(p.h, 1, 20000, 1), load: num(p.load, 0, 3600),
+  };
+  if (out.fps === undefined) return null;
+  for (const k of Object.keys(out)) if (out[k] === undefined) delete out[k];
+  return out;
+}
 const RESULT_MAX = 60_000; // bytes of JSON: twelve boats' thinned tracks and the log come to some 25 000
 
 // Supabase Auth, with the same key rules as db() in settings.mjs (the admin API) or with a player's own token.
@@ -138,8 +166,8 @@ export const accountFlag = (meta) => {
   return boat && typeof boat === 'object' && !Array.isArray(boat) ? flagOf(boat.flag) : undefined;
 };
 // the columns added after the table, newest last: a read or a write without one of them still works before its
-// migration is applied (20261112120000, 20261113120000, 20261114120000, 20261114130000, 20261115130000)
-const LATER = ['player', 'daily', 'shape', 'flag', 'yacht'];
+// migration is applied (20261112120000, 20261113120000, 20261114120000, 20261114130000, 20261115130000, 20261117120000)
+const LATER = ['player', 'daily', 'shape', 'flag', 'yacht', 'venue'];
 
 // Every race the filter finds, 1000 a page, the latest first; a later column not there yet is left out of cols.
 async function readRaces(cols, filter) {
@@ -368,7 +396,7 @@ export async function POST(request) {
   let b;
   try { b = await request.json(); } catch { return done(400); }
   const id = b && typeof b.id === 'string' ? b.id.toLowerCase() : '';
-  if (!UUID.test(id) || !['start', 'finish', 'result'].includes(b.ev)) return done(400);
+  if (!UUID.test(id) || !['start', 'finish', 'result', 'perf'].includes(b.ev)) return done(400);
   if (!SB || !SB_KEY) return done();
   // the launch data: in the body from the game (a simple cross-site post, see stats.js), or in the header as from the app
   const user = verifyInitData(request.headers.get('x-telegram-init-data') || (typeof b.initData === 'string' ? b.initData : ''), process.env.TELEGRAM_BOT_TOKEN);
@@ -381,7 +409,7 @@ export async function POST(request) {
       const daily = typeof b.daily === 'string' && [0, 1].some((d) => new Date(now - d * DAY).toISOString().slice(0, 10) === b.daily) ? b.daily : null;
       let row = { id, user_id: tg, wind: ['light', 'medium', 'strong'].includes(b.wind) ? b.wind : null, laps: int(b.laps, 1, 9),
                   length: ['short', 'medium', 'long'].includes(b.length) ? b.length : null, boats: int(b.boats, 1, 20), ...(daily && { daily }), ...(player && { player }),
-                  shape: SHAPES.includes(b.shape) ? b.shape : null, ...(flagOf(b.flag) && { flag: b.flag }), ...(yachtOf(b.yacht) && { yacht: b.yacht }) };
+                  shape: SHAPES.includes(b.shape) ? b.shape : null, ...(flagOf(b.flag) && { flag: b.flag }), ...(yachtOf(b.yacht) && { yacht: b.yacht }), ...(venueOf(b.venue) && { venue: b.venue }) };
       // a column not there yet (LATER): written without it
       for (;;) {
         try { await db('game_races?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: row }); break; }
@@ -391,6 +419,13 @@ export async function POST(request) {
           const { [col]: _, ...rest } = row; row = rest;
         }
       }
+    } else if (b.ev === 'perf') {
+      // how the game ran: once, for a race that was started here (no perf column yet: nothing kept)
+      const perf = perfOf(b.perf);
+      if (!perf) return done(400);
+      await db(`game_races?id=eq.${id}&perf=is.null`, { method: 'PATCH', prefer: 'return=representation', body: { perf } }).catch((e) => {
+        if (!/perf/.test(e.message)) throw e;
+      });
     } else if (b.ev === 'result') {
       // the result page's record, for a shared link: once, for a race that was started here, and not too big
       const text = JSON.stringify(b.result || null);
