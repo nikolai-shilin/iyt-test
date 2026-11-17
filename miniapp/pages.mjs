@@ -45,7 +45,7 @@ const LEVELS = [['vhf-radio-operator', 'vhf'], ['international-crew', 'crew'], [
 // a licence («права на яхту»), VHF and Crew are IYT certificates, the racing rules and the charter check-in neither.
 // Up and down, our free 3D sailing race: each racing-rules page links to the game's guide closest to it (with the
 // anchor of the rule where the guide has one), the rest to its guide on the rules; the level page to all its guides.
-const GAME = 'https://regatta.rycrentals.com';
+const GAME = 'https://www.sailupdown.com';
 const GAME_GUIDE = { definitions: '/learn/glossary', rightofway: '/learn/rules#r10', marks: '/learn/marks#room', starting: '/learn/start', course: '/learn/marks', penalties: '/learn/rules#pen' };
 const gameUrl = (path, lang) => { const [p, h] = path.split('#'); return `${GAME}${p}${lang === 'ru' ? '?lang=ru' : ''}${h ? `#${h}` : ''}`; };
 

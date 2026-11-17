@@ -1,4 +1,4 @@
-// A Telegram player's sign-in on the Regatta site (the ryc-regatta repo, regatta.rycrentals.com), whose accounts are
+// A Telegram player's sign-in on the Regatta site (the ryc-regatta repo, www.sailupdown.com), whose accounts are
 // this Supabase project's Auth users. The app's Regatta button opens the site with the launch data in the hash; the
 // site's server posts it here. It is checked with the bot token, the player's Auth user is made the first time
 // (tg-<telegram id>@telegram.rycrentals.com, never mailed, named after the Telegram name, app_metadata.telegram_id),
