@@ -39,6 +39,19 @@
 //     that only place one time on the day (the result page, your month, Home's card): { d, w, races, guests, ranked,
 //     top: [ the first TOP_BRIEF rows, as rows above ], s: [ every ranked player's best time, the fastest first ] }.
 //     It reads that day's races alone and names only the top, so it stays small and cheap however many sail.
+//   GET /api/game?players[&page=2] → everyone who is somebody (inside Telegram or with a site account; guests are not
+//     players) and has started a race, the most races first, PLAYERS_PER a page (public, cached):
+//     { total, page, pages, per, rows: [ { k, name, ph, fl, n, fin, wins, podiums, days, last, yacht } ] }
+//     k, name (the whole name), ph and fl as the rating's; n the races they began, fin finished, wins and podiums the
+//     races they won and were in the top three of (a disqualification is neither), days the UTC days they sailed on,
+//     last when they last began one, yacht the class they sailed most (null: the club's JPK 1050). A page past the
+//     last is the last.
+//   GET /api/game?player=<k> → that player's card for the site's /players (public, cached), 404 for a key nobody has:
+//     the row above, and first (their first race), dsq, best (their best place) and fleet (in how many boats), daily
+//     ({ n: today's races they finished, days, wins, best: their best place in one }), yachts and venues ([ { id, n } ],
+//     the most sailed first) and boat: their boat's colours as they keep it on the site (lib/boat.ts there,
+//     public.regatta_boat in supabase/migrations/20261117170000_regatta_boat.sql), only its own fields, each checked
+//     (boatOf), null for a player whose boat the site never kept.
 //
 //   POST /api/game { ev: 'start', id: '<uuid>', wind: 'light' | 'medium' | 'strong', laps: 1,
 //                    length: 'short' | 'medium' | 'long', boats: 10, daily: '2026-11-12' (the daily race only),
@@ -343,6 +356,7 @@ export async function GET(request) {
   }
   const day = params.get('day');
   if (day != null) return dayRating(day, json, params.has('brief'));
+  if (params.has('players') || params.has('player')) return players(params, json);
   if (!SB || !SB_KEY) return json({ week: { races: 0, players: 0 }, best: null });
   try {
     const now = Date.now(), from = new Date(now - 30 * DAY).toISOString();
@@ -380,6 +394,86 @@ export async function GET(request) {
     return json({ week: { races: week.length, players }, best, daily });
   } catch (e) {
     if (!/: 404 /.test(e.message)) await logError('game stats', e);
+    return json({ error: 'failed' }, 500);
+  }
+}
+
+// GET ?players and ?player=: the players (see the top of the file).
+const PLAYERS_PER = 20;
+const HEX = /^#[0-9a-f]{6}$/i;
+// a boat as the site keeps it (lib/boat.ts in the ryc-regatta repo), only its own fields, each checked: what leaves
+// the server is colours, a deck, a few short words and a flag. Its own logo picture (logoImg) stays: it isn't kept
+// in the account, and a custom logo without it is the club's badge.
+export function boatOf(b) {
+  if (!b || typeof b !== 'object' || Array.isArray(b)) return null;
+  const out = {}, word = (v, n) => (typeof v === 'string' ? [...v.replace(/[\u0000-\u001f<>]/g, '')].slice(0, n).join('') : undefined);
+  for (const k of ['hull', 'cloth', 'ink', 'kite', 'kite2', 'kite3', 'bottom', 'crew', 'pants']) if (typeof b[k] === 'string' && HEX.test(b[k])) out[k] = b[k].toLowerCase();
+  if (typeof b.laminate === 'boolean') out.laminate = b.laminate;
+  if (['nonskid', 'teak', 'hull'].includes(b.deck)) out.deck = b.deck;
+  if (['ryc', 'custom', 'none'].includes(b.logo)) out.logo = b.logo;
+  for (const [k, n] of [['name', 16], ['nat', 3], ['num', 4], ['preset', 16]]) { const v = word(b[k], n); if (v !== undefined) out[k] = v; }
+  const fl = flagOf(b.flag); if (fl) out.flag = fl;
+  return out.hull ? out : null;
+}
+// Every player who is somebody, from all their races: key → { key, u, a, n, fin, wins, podiums, dsq, days, first,
+// last, best, fleet, daily, yachts, venues }, the most races first, then the latest seen.
+export function playersOf(rows) {
+  const out = new Map(), count = (m, k) => m.set(k, (m.get(k) || 0) + 1);
+  for (const r of rows) {
+    const key = who(r);
+    if (key === 'anon') continue;
+    const p = out.get(key) || { key, u: r.user_id ?? null, a: r.player || null, n: 0, fin: 0, wins: 0, podiums: 0, dsq: 0, dayset: new Set(), first: r.started_at, last: r.started_at,
+      best: null, fleet: null, daily: { n: 0, days: new Set(), wins: 0, best: null }, yachts: new Map(), venues: new Map() };
+    p.n++; p.dayset.add(String(r.started_at).slice(0, 10));
+    if (r.started_at < p.first) p.first = r.started_at;
+    if (r.started_at > p.last) p.last = r.started_at;
+    count(p.yachts, r.yacht || 'jpk1050');
+    if (r.venue) count(p.venues, r.venue);
+    if (r.dsq) p.dsq++;
+    if (r.finished_at && !r.dsq) {
+      p.fin++;
+      if (r.place === 1) p.wins++;
+      if (r.place && r.place <= 3) p.podiums++;
+      if (r.place && (p.best == null || r.place < p.best || (r.place === p.best && (r.boats || 0) > (p.fleet || 0)))) { p.best = r.place; p.fleet = r.boats || null; }
+      if (r.daily && r.secs > 0) {
+        p.daily.n++; p.daily.days.add(r.daily);
+        if (r.place === 1) p.daily.wins++;
+        if (r.place && (p.daily.best == null || r.place < p.daily.best)) p.daily.best = r.place;
+      }
+    }
+    out.set(key, p);
+  }
+  const most = (m) => [...m].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])));
+  return [...out.values()].map(({ dayset, daily, yachts, venues, ...p }) => ({
+    ...p, days: dayset.size, daily: { n: daily.n, days: daily.days.size, wins: daily.wins, best: daily.best },
+    yachts: most(yachts).map(([id, n]) => ({ id, n })), venues: most(venues).map(([id, n]) => ({ id, n })),
+  })).sort((a, b) => b.n - a.n || (a.last < b.last) - (a.last > b.last));
+}
+async function players(params, json) {
+  const page = Math.max(1, Math.min(10_000, Math.floor(Number(params.get('page')) || 1))), want = params.get('player');
+  if (want != null && (want.length > 64 || !/^[A-Za-z0-9_-]+$/.test(want))) return json({ error: 'not found' }, 404);
+  if (!SB || !SB_KEY) return want != null ? json({ error: 'not found' }, 404) : json({ total: 0, page: 1, pages: 1, per: PLAYERS_PER, rows: [] });
+  try {
+    const rows = await readRaces('started_at,finished_at,user_id,player,boats,secs,dsq,place,daily,flag,yacht,venue', 'or=(user_id.not.is.null,player.not.is.null)');
+    const all = playersOf(rows), flags = latestFlags(rows);
+    const row = (x, names) => ({
+      k: keyOf(x), name: names.get(x.key) || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null,
+      n: x.n, fin: x.fin, wins: x.wins, podiums: x.podiums, days: x.days, last: x.last, yacht: x.yachts[0] && x.yachts[0].id !== 'jpk1050' ? x.yachts[0].id : null,
+    });
+    if (want == null) {
+      const pages = Math.max(1, Math.ceil(all.length / PLAYERS_PER)), p = Math.min(page, pages);
+      const slice = all.slice((p - 1) * PLAYERS_PER, p * PLAYERS_PER), names = await namesOf(slice, PLAYERS_PER, true, flags);
+      return json({ total: all.length, page: p, pages, per: PLAYERS_PER, rows: slice.map((x) => row(x, names)) });
+    }
+    const x = all.find((y) => keyOf(y) === want);
+    if (!x) return json({ error: 'not found' }, 404);
+    let boat = null;
+    try { boat = boatOf(await db('rpc/regatta_boat', { method: 'POST', body: x.u != null ? { tg: x.u } : { acct: x.a } })); }
+    catch (e) { if (!/: 404 /.test(e.message)) await logError('game player boat', e); } // before its migration: no boat
+    const names = await namesOf([x], 1, true, flags);
+    return json({ ...row(x, names), first: x.first, dsq: x.dsq, best: x.best, fleet: x.fleet, daily: x.daily, yachts: x.yachts, venues: x.venues, boat });
+  } catch (e) {
+    if (!/: 404 /.test(e.message)) await logError('game players', e);
     return json({ error: 'failed' }, 500);
   }
 }

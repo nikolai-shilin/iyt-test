@@ -301,3 +301,54 @@ test('POST end, rate, open and visit: each checked, the race\'s kept once, a vis
   assert.equal((await post({ ev: 'visit', id: vid, visit: { stage: 'left', races: 2 } })).status, 204);
   assert.ok(!calls.some((c) => c.url.includes('/rest/v1/errors')));
 });
+
+test('GET ?players: the somebodies, the most races first, a page at a time, named, with keys that are not ids', async () => {
+  const rows = [
+    race({ user_id: 7, place: 1, flag: 'gb', yacht: 'j70', started_at: at(0, 9) }), race({ user_id: 7, place: 3, yacht: 'j70', daily: null, started_at: at(1) }),
+    race({ user_id: 7, finished_at: null, place: null, secs: null, started_at: at(2) }),
+    race({ player: A, place: 4, boats: 8, started_at: at(0, 11) }), race({ player: A, dsq: true, place: null, started_at: at(3) }),
+    race({ place: 1 }), race({ place: 2 }), race({ place: 1 }), race({ place: 1 }), // guests: not players
+  ];
+  stub({ rows, users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [A]: { display_name: 'Fed', boat: { hull: '#112233', flag: 'by' } } } });
+  const r = await GET(new Request('https://x.test/api/game?players'));
+  assert.equal(r.status, 200);
+  const j = await r.json();
+  assert.deepEqual([j.total, j.page, j.pages, j.per], [2, 1, 1, 20]);
+  assert.deepEqual(j.rows.map((x) => [x.name, x.fl, x.n, x.fin, x.wins, x.podiums, x.days, x.yacht]),
+    [['Anna Petrova', 'gb', 3, 2, 1, 2, 3, 'j70'], ['Fed', 'by', 2, 1, 0, 0, 2, null]]);
+  assert.ok(!JSON.stringify(j).includes(A) && !/"7"|:7[,}]/.test(JSON.stringify(j)), 'no raw ids');
+  const far = await (await GET(new Request('https://x.test/api/game?players&page=9'))).json();
+  assert.equal(far.page, 1, 'a page past the last is the last');
+});
+
+test('GET ?players: twenty a page', async () => {
+  const rows = Array.from({ length: 45 }, (_, i) => race({ user_id: 100 + i, started_at: at(0, 1 + (i % 20)) }));
+  stub({ rows, users: [] });
+  const j = await (await GET(new Request('https://x.test/api/game?players&page=3'))).json();
+  assert.deepEqual([j.total, j.page, j.pages, j.rows.length], [45, 3, 3, 5]);
+});
+
+test('GET ?player=: one player\'s card with their boat, checked; a key nobody has is not found', async () => {
+  const calls = stub({
+    rows: [race({ player: A, place: 2, boats: 6, venue: 'cowes', yacht: 'dragon' }), race({ player: A, place: 1, boats: 4, venue: 'cowes', daily: null }), race({ user_id: 7, place: 1 })],
+    users: [{ id: 7, name: 'Anna' }], accounts: { [A]: 'Fed' },
+  });
+  const list = await (await GET(new Request('https://x.test/api/game?players'))).json();
+  const fed = list.rows.find((x) => x.name === 'Fed');
+  const real = globalThis.fetch;
+  globalThis.fetch = async (url, init) => String(url).includes('/rpc/regatta_boat')
+    ? Response.json({ hull: '#AABBCC', cloth: 'red', deck: 'teak', name: 'Sea <b>Wolf</b>', num: '12345', flag: 'it', logoImg: 'data:image/png;base64,xx', email: 'x@y.z' })
+    : real(url, init);
+  const r = await GET(new Request(`https://x.test/api/game?player=${fed.k}`));
+  globalThis.fetch = real;
+  assert.equal(r.status, 200);
+  const j = await r.json();
+  assert.deepEqual([j.name, j.n, j.fin, j.wins, j.podiums, j.best, j.fleet], ['Fed', 2, 2, 1, 2, 1, 4]);
+  assert.deepEqual([j.daily.n, j.daily.days, j.daily.best], [1, 1, 2]);
+  assert.deepEqual(j.yachts, [{ id: 'dragon', n: 1 }, { id: 'jpk1050', n: 1 }]);
+  assert.deepEqual(j.venues, [{ id: 'cowes', n: 2 }]);
+  assert.deepEqual(j.boat, { hull: '#aabbcc', deck: 'teak', name: 'Sea bWolf/b', num: '1234', flag: 'it' });
+  assert.ok(calls.length);
+  assert.equal((await GET(new Request('https://x.test/api/game?player=nobodyAtAll'))).status, 404);
+  assert.equal((await GET(new Request('https://x.test/api/game?player=%3Cx%3E'))).status, 404);
+});
