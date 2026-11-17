@@ -54,6 +54,12 @@
 //     the most sailed first) and boat: their boat's colours as they keep it on the site (lib/boat.ts there,
 //     public.regatta_boat in supabase/migrations/20261117170000_regatta_boat.sql), only its own fields, each checked
 //     (boatOf), null for a player whose boat the site never kept.
+//   GET /api/game?me with Authorization: Bearer <a player's access token> → { k }: that player's own key, as above, for
+//     the site's "Your player card" (app/auth/player in the ryc-regatta repo asks on their behalf, server to server).
+//     Supabase says whose the token is, as it does for a race's start, so the key is only ever told to its owner:
+//     there is no asking for anyone else's, by id or otherwise. 401 for no token or one Supabase doesn't take, 404
+//     for an account that has started no race (not a player yet). Never cached; the Authorization header also keeps
+//     browsers on other sites from asking (CORS allows no headers).
 //
 //   POST /api/game { ev: 'start', id: '<uuid>', wind: 'light' | 'medium' | 'strong', laps: 1,
 //                    length: 'short' | 'medium' | 'long', boats: 10, daily: '2026-11-12' (the daily race only),
@@ -358,6 +364,7 @@ export async function GET(request) {
   }
   const day = params.get('day');
   if (day != null) return dayRating(day, json, params.has('brief'));
+  if (params.has('me')) return me(request, json);
   if (params.has('players') || params.has('player')) return players(params, json);
   if (!SB || !SB_KEY) return json({ week: { races: 0, players: 0 }, best: null });
   try {
@@ -483,6 +490,23 @@ async function players(params, json) {
   } catch (e) {
     if (!/: 404 /.test(e.message)) await logError('game players', e);
     return json({ error: 'failed' }, 500);
+  }
+}
+
+// GET ?me: the key of the player whose token it is (see the top of the file).
+async function me(request, json) {
+  const bearer = /^Bearer\s+(\S+)$/i.exec((request && request.headers.get('authorization')) || '');
+  if (!SB || !SB_KEY) return json({ error: 'not found' }, 404);
+  const acct = bearer ? await account(bearer[1]) : null;
+  if (!acct) return json({ error: 'unauthorized' }, 401);
+  try {
+    // a player once they have started a race, as /players counts them
+    const [r] = await db(`game_races?select=id&${acct.tg ? `user_id=eq.${acct.tg}` : `player=eq.${acct.player}`}&limit=1`);
+    if (!r) return json({ error: 'not found' }, 404);
+    return json({ k: keyOf(acct.tg ? { u: acct.tg } : { a: acct.player }) }, 200, 'private, no-store');
+  } catch (e) {
+    if (!/: 404 /.test(e.message)) await logError('game me', e);
+    return json({ error: 'not found' }, 404);
   }
 }
 

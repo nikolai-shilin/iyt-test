@@ -16,7 +16,7 @@ const race = (o) => ({ started_at: at(0), finished_at: at(0), user_id: null, pla
 // The database: game_races gives back rows (whatever the filter, the URL is kept), users the Telegram names, Auth
 // a site account's display name. missing: a column the table doesn't have yet. recent: what the read of the ranked
 // players' latest races (for their flags: every race of the last 30 days, no daily= filter) gets, rows when not given.
-function stub({ rows = [], recent = null, users = [], accounts = {}, missing = null } = {}) {
+function stub({ rows = [], recent = null, users = [], accounts = {}, missing = null, tokens = {} } = {}) {
   const calls = [];
   globalThis.fetch = async (url, init = {}) => {
     const u = String(url); calls.push({ url: u, method: init.method || 'GET', body: init.body && JSON.parse(init.body) });
@@ -24,6 +24,9 @@ function stub({ rows = [], recent = null, users = [], accounts = {}, missing = n
     if (u.includes('/rest/v1/game_races')) {
       if (missing && (init.method === 'POST' ? init.body.includes(`"${missing}"`) : u.includes(missing))) return fail(missing);
       if (init.method === 'POST' || init.method === 'PATCH') return Response.json([]);
+      // GET ?me's look for one race of the player's: the rows that are theirs
+      const one = /select=id&(user_id|player)=eq\.([^&]+)/.exec(u);
+      if (one) return Response.json(rows.filter((r) => String(r[one[1]]) === decodeURIComponent(one[2])).slice(0, 1).map(() => ({ id: 'x' })));
       const off = Number(/offset=(\d+)/.exec(u)?.[1] || 0);
       return Response.json(off ? [] : recent && !u.includes('daily=') ? recent : rows);
     }
@@ -33,6 +36,11 @@ function stub({ rows = [], recent = null, users = [], accounts = {}, missing = n
     }
     if (u.includes('/rest/v1/users')) return Response.json(users);
     if (u.includes('/rest/v1/errors')) return Response.json([]);
+    // Auth's user behind an access token (tokens: token → { id, app_metadata })
+    if (u.endsWith('/auth/v1/user')) {
+      const t = /^Bearer (.+)$/.exec((init.headers && init.headers.authorization) || '')?.[1];
+      return tokens[t] ? Response.json(tokens[t]) : new Response('', { status: 401 });
+    }
     const acc = /admin\/users\/([0-9a-f-]+)/.exec(u);
     const m = acc && accounts[acc[1]];
     if (acc) return m ? Response.json({ user_metadata: typeof m === 'string' ? { display_name: m } : m }) : new Response('', { status: 404 });
@@ -352,4 +360,24 @@ test('GET ?player=: one player\'s card with their boat, checked; a key nobody ha
   assert.ok(calls.length);
   assert.equal((await GET(new Request('https://x.test/api/game?player=nobodyAtAll'))).status, 404);
   assert.equal((await GET(new Request('https://x.test/api/game?player=%3Cx%3E'))).status, 404);
+});
+
+test('GET ?me: the key of the player whose token it is, the one /players has; none for a guest or a new account', async () => {
+  const C = '33333333-3333-4333-8333-333333333333';
+  stub({
+    rows: [race({ player: A }), race({ user_id: 7, secs: 190 })], users: [{ id: 7, name: 'Anna' }], accounts: { [A]: 'Fed' },
+    tokens: { site: { id: A, app_metadata: { provider: 'google' } }, tg: { id: B, app_metadata: { telegram_id: 7 } }, fresh: { id: C, app_metadata: {} } },
+  });
+  const list = await (await GET(new Request('https://x.test/api/game?players'))).json();
+  const keyOf = (name) => list.rows.find((x) => x.name === name).k;
+  const ask = (token) => GET(new Request('https://x.test/api/game?me', token == null ? {} : { headers: { authorization: `Bearer ${token}` } }));
+  const site = await ask('site');
+  assert.equal(site.status, 200);
+  assert.match(site.headers.get('cache-control'), /no-store/);
+  assert.deepEqual(await site.json(), { k: keyOf('Fed') });
+  assert.deepEqual(await (await ask('tg')).json(), { k: keyOf('Anna') }, 'a Telegram account: the key of their Telegram id');
+  assert.equal((await ask('fresh')).status, 404, 'signed in, never raced: not a player');
+  assert.equal((await ask('forged')).status, 401);
+  assert.equal((await ask(null)).status, 401);
+  assert.equal((await GET(new Request(`https://x.test/api/game?me&player=${A}`))).status, 401, 'no way round the token');
 });
