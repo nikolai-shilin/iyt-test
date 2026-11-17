@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
-const { GET, POST, bests, rankDay, monthTable, accountFlag, floorSecs, perfOf } = await import('../api/game.mjs');
+const { GET, POST, bests, rankDay, monthTable, accountFlag, floorSecs, perfOf, endOf, visitOf, openOf } = await import('../api/game.mjs');
 
 const day = (d) => new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
 const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;
@@ -26,6 +26,10 @@ function stub({ rows = [], recent = null, users = [], accounts = {}, missing = n
       if (init.method === 'POST' || init.method === 'PATCH') return Response.json([]);
       const off = Number(/offset=(\d+)/.exec(u)?.[1] || 0);
       return Response.json(off ? [] : recent && !u.includes('daily=') ? recent : rows);
+    }
+    if (u.includes('/rest/v1/game_visits')) {
+      if (missing === 'game_visits') return new Response(JSON.stringify({ message: 'relation "public.game_visits" does not exist' }), { status: 404 });
+      return Response.json([]);
     }
     if (u.includes('/rest/v1/users')) return Response.json(users);
     if (u.includes('/rest/v1/errors')) return Response.json([]);
@@ -255,5 +259,45 @@ test('POST start keeps the venue; POST perf keeps how the game ran, once, each f
   // before the column is there: nothing kept, nothing logged as an error
   calls = stub({ missing: 'perf' });
   assert.equal((await post({ ev: 'perf', id, perf })).status, 204);
+  assert.ok(!calls.some((c) => c.url.includes('/rest/v1/errors')));
+});
+
+test('POST end, rate, open and visit: each checked, the race\'s kept once, a visit made and then filled in', async () => {
+  const id = '77777777-7777-4777-8777-777777777777', vid = '88888888-8888-4888-8888-888888888888';
+  const post = (body) => POST(new Request('https://x.test/api/game', { method: 'POST', body: JSON.stringify(body), headers: { 'x-forwarded-for': `10.0.4.${Math.random() * 250 | 0}` } }));
+  // the start names the browser and the visit
+  let calls = stub();
+  await post({ ev: 'start', id, wind: 'light', vid, visit: vid });
+  assert.deepEqual([calls.find((c) => c.method === 'POST').body.vid, calls.find((c) => c.method === 'POST').body.visit], [vid, vid]);
+  // how it ended: once (ended=is.null), its incidents and settings kept, anything else dropped
+  const end = { how: 'menu', leg: 1, legs: 3, clock: 95, place: 5, boats: 6, done: 0, inc: { ocs: 1, touched: 2 }, last: 'touched', ago: 12, pens: 1, mins: 2.4,
+    use: { cam: 'drone', trim: 1, sound: 1, music: 'racing', speed: 2 } };
+  calls = stub();
+  assert.equal((await post({ ev: 'end', id, end: { ...end, name: 'Anna' } })).status, 204);
+  const patch = calls.find((c) => c.method === 'PATCH');
+  assert.match(patch.url, /ended=is\.null/); assert.deepEqual(patch.body, { ended: end });
+  assert.equal(endOf({ how: 'quit' }), null);
+  assert.deepEqual(endOf({ how: 'close', inc: { '<b>': 1, ocs: -1 }, use: { cam: '<script>' } }), { how: 'close', done: 0, inc: {}, use: {} });
+  // the rating and the comment, each once; out of range or empty is refused
+  calls = stub();
+  await post({ ev: 'rate', id, rating: 4 });
+  assert.deepEqual(calls.find((c) => c.method === 'PATCH').body, { rating: 4 }); assert.match(calls.find((c) => c.method === 'PATCH').url, /rating=is\.null/);
+  calls = stub();
+  await post({ ev: 'rate', id, comment: '  The start\u0000 was hard  ' });
+  assert.deepEqual(calls.find((c) => c.method === 'PATCH').body, { comment: 'The start was hard' });
+  for (const bad of [{ rating: 6 }, { rating: 0 }, { comment: '   ' }]) assert.equal((await post({ ev: 'rate', id, ...bad })).status, 400);
+  // a visit: opened, then what it came to (stamped), errors kept within bounds
+  calls = stub();
+  await post({ ev: 'open', id: vid, open: { vid, ref: 'tg', kind: 'today', tg: 1, dev: 'phone', ua: 'x' } });
+  assert.deepEqual(calls.find((c) => c.url.includes('game_visits')).body, { id: vid, vid, ref: 'tg', kind: 'today', tg: 1, dev: 'phone' });
+  calls = stub();
+  await post({ ev: 'visit', id: vid, visit: { stage: 'loaded', vid, races: 1, finished: 0, mins: 0.5, load: 6.2, errors: [{ m: 'TypeError: boom', src: 'world.js:9', n: 2 }] } });
+  const v = calls.filter((c) => c.url.includes('game_visits'));
+  assert.equal(v.length, 2); assert.equal(v[1].method, 'PATCH');
+  assert.ok(v[1].body.loaded_at && v[1].body.last_at); assert.equal(v[1].body.load, 6.2); assert.deepEqual(v[1].body.errors, [{ m: 'TypeError: boom', src: 'world.js:9', n: 2 }]);
+  assert.equal(visitOf({ stage: 'done' }), null); assert.equal(openOf(null), null);
+  // no game_visits table yet: nothing kept, nothing logged
+  calls = stub({ missing: 'game_visits' });
+  assert.equal((await post({ ev: 'visit', id: vid, visit: { stage: 'left', races: 2 } })).status, 204);
   assert.ok(!calls.some((c) => c.url.includes('/rest/v1/errors')));
 });

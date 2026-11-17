@@ -52,6 +52,21 @@
 //     how the game ran through the race (stats.js perfSummary there), for the site's /admin (regatta_admin_stats in
 //     supabase/migrations/20261117120000_game_races_perf.sql): kept once a race, each field checked (perfOf), the
 //     rest dropped. It names no one.
+//   POST /api/game { ev: 'end', id: '<uuid>', end: { how, leg, legs, clock, place, boats, done, inc: { ocs: 1, … }, last,
+//                    ago, pens, mins, use: { cam, trim, sound, … } } } → 204
+//     how the race ended for the player (stats.js raceEnded): finish, restart, change, menu, close, hidden or new; where
+//     (the leg, the clock, her place); the incidents (the race's own words for them) and the last one, seconds before;
+//     what she had set. Kept once a race (endOf).
+//   POST /api/game { ev: 'rate', id: '<uuid>', rating: 1–5 } or { ev: 'rate', id, comment: '…' (500 at most) } → 204
+//     how the player liked the race (the result page's RateRace there): each kept once a race.
+//   POST /api/game { ev: 'open', id: '<visit uuid>', open: { vid, ref, kind, tg, dev } } → 204
+//   POST /api/game { ev: 'visit', id: '<visit uuid>', visit: { stage: 'loaded' | 'failed' | 'gave-up' | 'left', vid, … } } → 204
+//     a visit of the game's page (public.game_visits): opened (the loading screen, play/index.html, posts it first:
+//     this browser's random id vid, where from, which race, Telegram, the device), then loaded (the race under way, the
+//     seconds it took), failed (why), gave up while loading (how far it had got), and as it is left or put away the races
+//     begun and finished, the minutes on the page, how to play opened, a drill or a ghost, its first errors and a lost
+//     WebGL context (visitOf). The start of a race names its visit and vid too, so a guest who comes back counts once.
+//     None of it names anyone.
 //
 // Who the player is: inside Telegram, the launch data (initData in the body, or x-telegram-init-data as
 // api/settings.mjs); on the site, the access token of their Regatta account (token in the body: the site's accounts
@@ -91,6 +106,41 @@ export const YACHT_FLOOR = { ac75: 0.4, optimist: 0.6, laser: 0.8, j70: 0.9, rs2
 export const floorSecs = (r) => (BEAT[r.wind] && LEN[r.length] ? FLOOR * BEAT[r.wind] * LEN[r.length] * (r.laps || 1) * (YACHT_FLOOR[r.yacht] ?? 1) : 0);
 // a class of yacht as the game posts it: its id in classes.js (none for the club's 40-footer)
 const yachtOf = (v) => (typeof v === 'string' && /^[a-z][a-z0-9]{1,15}$/.test(v) && v !== 'club40' ? v : null);
+const UUIDV = (v) => (typeof v === 'string' && UUID.test(v.toLowerCase()) ? v.toLowerCase() : null);
+const word = (v, n = 24) => (typeof v === 'string' && /^[a-z][a-zA-Z0-9-]{0,40}$/.test(v) ? v.slice(0, n) : undefined);
+const numIn = (v, lo, hi, k = 10) => (typeof v === 'number' && Number.isFinite(v) && v >= lo && v <= hi ? Math.round(v * k) / k : undefined);
+const clean = (o) => { for (const k of Object.keys(o)) if (o[k] === undefined) delete o[k]; return o; };
+const text = (v, n) => (typeof v === 'string' ? v.replace(/[\u0000-\u001f\u007f]+/g, ' ').replace(/ {2,}/g, ' ').trim().slice(0, n) || undefined : undefined);
+// how a race ended (ev: 'end'): null without a known how
+const HOWS = ['finish', 'restart', 'change', 'menu', 'close', 'hidden', 'new'];
+export function endOf(e) {
+  if (!e || typeof e !== 'object' || !HOWS.includes(e.how)) return null;
+  const inc = {};
+  if (e.inc && typeof e.inc === 'object' && !Array.isArray(e.inc)) for (const [k, n] of Object.entries(e.inc).slice(0, 20)) { const w = word(k), c = numIn(n, 0, 9999, 1); if (w && c !== undefined) inc[w] = c; }
+  const use = {};
+  if (e.use && typeof e.use === 'object' && !Array.isArray(e.use)) for (const [k, v] of Object.entries(e.use).slice(0, 20)) {
+    const w = word(k, 12); if (!w) continue;
+    const x = typeof v === 'number' ? numIn(v, -100, 100, 100) : word(v, 16);
+    if (x !== undefined) use[w] = x;
+  }
+  return clean({ how: e.how, leg: numIn(e.leg, 0, 99, 1), legs: numIn(e.legs, 0, 99, 1), clock: numIn(e.clock, -3600, 86400, 1), place: numIn(e.place, 1, 20, 1),
+    boats: numIn(e.boats, 1, 20, 1), done: e.done === 1 ? 1 : 0, inc, last: word(e.last), ago: numIn(e.ago, 0, 86400, 1), pens: numIn(e.pens, 0, 999, 1),
+    mins: numIn(e.mins, 0, 1440), use });
+}
+// a visit's opening (ev: 'open') and what it came to (ev: 'visit')
+const STAGES = ['loaded', 'failed', 'gave-up', 'left'];
+export function openOf(o) {
+  if (!o || typeof o !== 'object') return null;
+  return clean({ vid: UUIDV(o.vid) ?? undefined, ref: ['tg', 'site', 'other', 'direct'].includes(o.ref) ? o.ref : undefined,
+    kind: ['today', 'free', 'match', 'drill'].includes(o.kind) ? o.kind : undefined, tg: o.tg === 1 ? 1 : 0, dev: ['phone', 'tablet', 'desktop'].includes(o.dev) ? o.dev : undefined });
+}
+export function visitOf(v) {
+  if (!v || typeof v !== 'object' || !STAGES.includes(v.stage)) return null;
+  const errors = Array.isArray(v.errors) ? v.errors.slice(0, 5).map((x) => x && typeof x === 'object' && clean({ m: text(x.m, 140), src: text(x.src, 60), n: numIn(x.n, 1, 1e6, 1) })).filter((x) => x && x.m) : undefined;
+  return clean({ stage: v.stage, vid: UUIDV(v.vid) ?? undefined, races: numIn(v.races, 0, 9999, 1), finished: numIn(v.finished, 0, 9999, 1), mins: numIn(v.mins, 0, 1440),
+    howto: v.howto === 1 ? 1 : undefined, drill: v.drill === 1 ? 1 : undefined, ghost: v.ghost === 1 ? 1 : undefined, lost: v.lost === 1 ? 1 : undefined,
+    load: numIn(v.load, 0, 3600), why: text(v.why, 140), pct: numIn(v.pct, 0, 100, 1), errors: errors && errors.length ? errors : undefined });
+}
 const venueOf = (v) => (typeof v === 'string' && /^[a-z][a-z0-9-]{1,23}$/.test(v) ? v : null);
 // how the game ran (ev: 'perf'): each field as the game makes it, within bounds, or left out; null for a perf that
 // isn't one (no frame rate)
@@ -167,7 +217,7 @@ export const accountFlag = (meta) => {
 };
 // the columns added after the table, newest last: a read or a write without one of them still works before its
 // migration is applied (20261112120000, 20261113120000, 20261114120000, 20261114130000, 20261115130000, 20261117120000)
-const LATER = ['player', 'daily', 'shape', 'flag', 'yacht', 'venue'];
+const LATER = ['player', 'daily', 'shape', 'flag', 'yacht', 'venue', 'vid', 'visit'];
 
 // Every race the filter finds, 1000 a page, the latest first; a later column not there yet is left out of cols.
 async function readRaces(cols, filter) {
@@ -396,7 +446,7 @@ export async function POST(request) {
   let b;
   try { b = await request.json(); } catch { return done(400); }
   const id = b && typeof b.id === 'string' ? b.id.toLowerCase() : '';
-  if (!UUID.test(id) || !['start', 'finish', 'result', 'perf'].includes(b.ev)) return done(400);
+  if (!UUID.test(id) || !['start', 'finish', 'result', 'perf', 'end', 'rate', 'open', 'visit'].includes(b.ev)) return done(400);
   if (!SB || !SB_KEY) return done();
   // the launch data: in the body from the game (a simple cross-site post, see stats.js), or in the header as from the app
   const user = verifyInitData(request.headers.get('x-telegram-init-data') || (typeof b.initData === 'string' ? b.initData : ''), process.env.TELEGRAM_BOT_TOKEN);
@@ -409,7 +459,8 @@ export async function POST(request) {
       const daily = typeof b.daily === 'string' && [0, 1].some((d) => new Date(now - d * DAY).toISOString().slice(0, 10) === b.daily) ? b.daily : null;
       let row = { id, user_id: tg, wind: ['light', 'medium', 'strong'].includes(b.wind) ? b.wind : null, laps: int(b.laps, 1, 9),
                   length: ['short', 'medium', 'long'].includes(b.length) ? b.length : null, boats: int(b.boats, 1, 20), ...(daily && { daily }), ...(player && { player }),
-                  shape: SHAPES.includes(b.shape) ? b.shape : null, ...(flagOf(b.flag) && { flag: b.flag }), ...(yachtOf(b.yacht) && { yacht: b.yacht }), ...(venueOf(b.venue) && { venue: b.venue }) };
+                  shape: SHAPES.includes(b.shape) ? b.shape : null, ...(flagOf(b.flag) && { flag: b.flag }), ...(yachtOf(b.yacht) && { yacht: b.yacht }), ...(venueOf(b.venue) && { venue: b.venue }),
+                  ...(UUIDV(b.vid) && { vid: UUIDV(b.vid) }), ...(UUIDV(b.visit) && { visit: UUIDV(b.visit) }) };
       // a column not there yet (LATER): written without it
       for (;;) {
         try { await db('game_races?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: row }); break; }
@@ -418,6 +469,29 @@ export async function POST(request) {
           if (!col) throw e;
           const { [col]: _, ...rest } = row; row = rest;
         }
+      }
+    } else if (b.ev === 'end' || b.ev === 'rate') {
+      // how the race ended, and how the player liked it: each once (none of these columns yet: nothing kept)
+      let body, once;
+      if (b.ev === 'end') { const end = endOf(b.end); if (!end) return done(400); body = { ended: end }; once = 'ended'; }
+      else if (b.rating !== undefined) { const r = int(b.rating, 1, 5); if (r == null) return done(400); body = { rating: r }; once = 'rating'; }
+      else { const c = text(b.comment, 500); if (!c) return done(400); body = { comment: c }; once = 'comment'; }
+      await db(`game_races?id=eq.${id}&${once}=is.null`, { method: 'PATCH', prefer: 'return=representation', body }).catch((e) => {
+        if (!new RegExp(once).test(e.message)) throw e;
+      });
+    } else if (b.ev === 'open' || b.ev === 'visit') {
+      // a visit: opened (a new row, once), then what it came to, each stage stamped when it is first said
+      const missing = (e) => { if (!/game_visits/.test(e.message) && !/: 404 /.test(e.message)) throw e; };
+      if (b.ev === 'open') {
+        const o = openOf(b.open); if (!o) return done(400);
+        await db('game_visits?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: { id, ...o } }).catch(missing);
+      } else {
+        const v = visitOf(b.visit); if (!v) return done(400);
+        const { stage, vid, ...rest } = v, at = new Date().toISOString();
+        const body = { ...rest, last_at: at, ...(stage === 'loaded' && { loaded_at: at }), ...(stage === 'failed' && { failed_at: at }), ...(stage === 'gave-up' && { gave_up_at: at }) };
+        // a visit whose opening never came (an old cached page): made now, with what is known
+        await db('game_visits?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: { id, ...(vid && { vid }) } }).catch(missing);
+        await db(`game_visits?id=eq.${id}`, { method: 'PATCH', prefer: 'return=representation', body }).catch(missing);
       }
     } else if (b.ev === 'perf') {
       // how the game ran: once, for a race that was started here (no perf column yet: nothing kept)
