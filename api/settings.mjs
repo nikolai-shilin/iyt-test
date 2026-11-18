@@ -15,6 +15,11 @@ import { createHmac, timingSafeEqual } from 'node:crypto';
 
 const MAX_AGE = 24 * 3600; // launch data older than a day is refused
 
+// A Regatta player's name carries no emoji: a keycap, a flag, a pictograph with its skin tone, joiners and variation
+// selectors. Letters and digits of any script stay. The same pattern as lib/name.ts in the ryc-regatta repo.
+const EMOJI = /[#*0-9]️?⃣|[\p{Extended_Pictographic}\p{Emoji_Modifier}\p{Regional_Indicator}][︎️‍\u{E0020}-\u{E007F}]*/gu;
+export const noEmoji = (s) => String(s || '').replace(EMOJI, '').replace(/\s+/g, ' ').trim();
+
 // Checks the signature of Telegram.WebApp.initData (core.telegram.org/bots/webapps#validating-data-received-via-the-mini-app)
 // and returns its user, or null.
 export function verifyInitData(initData, token, now = Date.now() / 1000) {

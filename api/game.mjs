@@ -102,7 +102,7 @@
 // there, it answers 204 all the same; the game never waits on it.
 
 import { createCipheriv, createDecipheriv, createHash, createHmac } from 'node:crypto';
-import { verifyInitData, db, logError, tgPhoto, SB, SB_KEY } from './settings.mjs';
+import { verifyInitData, db, logError, tgPhoto, noEmoji, SB, SB_KEY } from './settings.mjs';
 
 const LIMIT = 60, WINDOW = 10 * 60e3;
 const seen = new Map(); // address → [count, window start]
@@ -224,9 +224,10 @@ function openId(key) {
     return Number.isSafeInteger(id) && id > 0 ? id : null;
   } catch { return null; }
 }
-const shortName = (name) => { const w = String(name || '').trim().split(/\s+/).filter(Boolean); return w.length ? `${w[0].slice(0, 20)}${w[1] ? ` ${[...w[1]][0]}.` : ''}` : null; };
+// Names are read without their emoji: a Telegram name is written again from Telegram each time its player opens the app
+export const shortName = (name) => { const w = noEmoji(name).split(' ').filter(Boolean); return w.length ? `${w[0].slice(0, 20)}${w[1] ? ` ${[...w[1]][0]}.` : ''}` : null; };
 // the whole name, as the rating shows it ("Anna Petrova"): its words, one space apart, at most 40 characters
-const fullName = (name) => { const n = String(name || '').trim().split(/\s+/).filter(Boolean).join(' '); return n ? [...n].slice(0, 40).join('') : null; };
+export const fullName = (name) => { const n = noEmoji(name); return n ? [...n].slice(0, 40).join('') : null; };
 // a boat's flag as the game posts it (lib/flags.ts in the ryc-regatta repo): 'gb', or one with a region, 'gb-sct'
 const flagOf = (v) => (typeof v === 'string' && /^[a-z]{2}(-[a-z]{2,4})?$/.test(v) ? v : null);
 // The flag a site account flies now: the site keeps a signed-in player's boat in user_metadata.boat (lib/boat.ts in

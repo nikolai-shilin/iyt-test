@@ -10,9 +10,16 @@
 // The token lets whoever holds it sign in as that player, so it goes only to a caller who already holds that player's
 // signed launch data. Env on Vercel: TELEGRAM_BOT_TOKEN, SUPABASE_URL, SUPABASE_SECRET_KEY.
 
-import { verifyInitData, logError, SB, SB_KEY } from './settings.mjs';
+import { verifyInitData, logError, noEmoji, SB, SB_KEY } from './settings.mjs';
 
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
+
+// a new account's name for the ranking, as the site's own name page would make it: the first name and the first letter
+// of the surname, without emoji
+export const accountName = (user) => {
+  const first = noEmoji(user.first_name), last = noEmoji(user.last_name);
+  return [first, last && `${[...last][0]}.`].filter(Boolean).join(' ').slice(0, 24) || user.username || null;
+};
 
 // Supabase Auth's admin API, with the same key rules as db() in settings.mjs.
 async function auth(path, body) {
@@ -30,9 +37,8 @@ export async function POST(request) {
 
   const email = `tg-${user.id}@telegram.rycrentals.com`;
   try {
-    // the first time only: a confirmed user, named for the ranking as the site's own name page would (first name and
-    // the first letter of the surname); later the player's own choice of name is left alone
-    const name = [user.first_name, user.last_name && `${user.last_name[0]}.`].filter(Boolean).join(' ').slice(0, 24) || user.username || null;
+    // the first time only: a confirmed user, named for the ranking; later the player's own choice of name is left alone
+    const name = accountName(user);
     const made = await auth('admin/users', {
       email, email_confirm: true,
       user_metadata: { ...(name && { display_name: name }) },
