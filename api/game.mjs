@@ -323,6 +323,18 @@ async function namesOf(players, cap, full = false, flags = null) {
   }
   for (const x of players) if (x.u != null) names.set(x.key, names.get(String(x.u)) || null);
   const site = [...new Map(players.filter((x) => x.u == null && x.a).map((x) => [x.key, x])).values()].slice(0, cap);
+  if (!site.length) return names;
+  // all of them in one question (public.regatta_names); before its migration, each by itself
+  try {
+    const got = new Map((await db('rpc/regatta_names', { method: 'POST', body: { ids: site.map((x) => x.a) } })).map((u) => [u.id, u]));
+    for (const x of site) {
+      const u = got.get(x.a);
+      names.set(x.key, nameOf(u && u.display_name));
+      const fl = flags && u ? accountFlag({ boat: u.boat }) : undefined;
+      if (fl !== undefined) flags.set(x.key, fl);
+    }
+    return names;
+  } catch (e) { if (!/: 404 /.test(e.message)) await logError('game names', e); }
   for (let i = 0; i < site.length; i += 10) {
     await Promise.all(site.slice(i, i + 10).map(async (x) => {
       const u = await auth(`admin/users/${x.a}`).catch(() => null);
@@ -455,22 +467,43 @@ export function playersOf(rows) {
   const byDay = new Map();
   for (const r of rows) if (r.daily && r.finished_at && !r.dsq && r.secs > 0) (byDay.get(r.daily) || byDay.set(r.daily, []).get(r.daily)).push(r);
   const rated = new Map(monthTable([...byDay.values()].map((rs) => rankDay(bests(rs)))).map((m) => [m.key, m]));
+  return rankedPlayers([...out.values()].map(({ dayset, ...p }) => ({ ...p, days: dayset.size })), rated);
+}
+// the players with their points, each one's card as the site reads it, in the order they rank
+function rankedPlayers(list, rated) {
   const most = (m) => [...m].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])));
-  return [...out.values()].map(({ dayset, dn, yachts, venues, ...p }) => {
+  return list.map(({ dn, yachts, venues, ...p }) => {
     const m = rated.get(p.key);
     return {
-      ...p, pts: m ? m.pts : 0, days: dayset.size, daily: { n: dn, days: m ? m.days : 0, wins: m ? m.wins : 0, podiums: m ? m.podiums : 0 },
+      ...p, pts: m ? m.pts : 0, daily: { n: dn, days: m ? m.days : 0, wins: m ? m.wins : 0, podiums: m ? m.podiums : 0 },
       yachts: most(yachts).map(([id, n]) => ({ id, n })), venues: most(venues).map(([id, n]) => ({ id, n })),
     };
   }).sort((a, b) => b.pts - a.pts || b.daily.wins - a.daily.wins || b.daily.podiums - a.daily.podiums || b.wins - a.wins || b.n - a.n || (a.last < b.last) - (a.last > b.last));
+}
+// The same players from what public.regatta_players has added up: however many races there are, it is one answer.
+const keyIn = (x) => (x.u != null ? x.u : `a:${x.a}`);
+export function playersFrom(sum) {
+  const byDay = new Map();
+  for (const x of sum.days) (byDay.get(x.d) || byDay.set(x.d, new Map()).get(x.d)).set(keyIn(x), { u: x.u ?? null, a: x.a ?? null, s: x.s, p: x.p || 0, n: x.n });
+  const rated = new Map(monthTable([...byDay.values()].map(rankDay)).map((m) => [m.key, m]));
+  return rankedPlayers(sum.players.map(({ flag, yachts, venues, ...p }) => ({ ...p, key: keyIn(p), u: p.u ?? null, a: p.a ?? null, best: p.best ?? null, fleet: p.fleet ?? null,
+    yachts: new Map(Object.entries(yachts)), venues: new Map(Object.entries(venues)) })), rated);
+}
+// every player and the flag each flew last; before the function's migration, from all their races
+async function everyPlayer() {
+  try {
+    const sum = await db('rpc/regatta_players', { method: 'POST', body: {} });
+    return { all: playersFrom(sum), flags: new Map(sum.players.map((p) => [keyIn(p), flagOf(p.flag)])) };
+  } catch (e) { if (!/: 404 /.test(e.message)) await logError('game players sum', e); }
+  const rows = await readRaces('started_at,finished_at,user_id,player,boats,secs,dsq,place,daily,flag,yacht,venue', 'or=(user_id.not.is.null,player.not.is.null)');
+  return { all: playersOf(rows), flags: latestFlags(rows) };
 }
 async function players(params, json) {
   const page = Math.max(1, Math.min(10_000, Math.floor(Number(params.get('page')) || 1))), want = params.get('player');
   if (want != null && (want.length > 64 || !/^[A-Za-z0-9_-]+$/.test(want))) return json({ error: 'not found' }, 404);
   if (!SB || !SB_KEY) return want != null ? json({ error: 'not found' }, 404) : json({ total: 0, page: 1, pages: 1, per: PLAYERS_PER, rows: [] });
   try {
-    const rows = await readRaces('started_at,finished_at,user_id,player,boats,secs,dsq,place,daily,flag,yacht,venue', 'or=(user_id.not.is.null,player.not.is.null)');
-    const all = playersOf(rows), flags = latestFlags(rows);
+    const { all, flags } = await everyPlayer();
     const row = (x, names) => ({
       k: keyOf(x), name: names.get(x.key) || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null,
       pts: x.pts, n: x.n, fin: x.fin, wins: x.wins, podiums: x.podiums, days: x.days, last: x.last, yacht: x.yachts[0] && x.yachts[0].id !== 'jpk1050' ? x.yachts[0].id : null,

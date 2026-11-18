@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
-const { GET, POST, bests, rankDay, monthTable, accountFlag, floorSecs, perfOf, endOf, visitOf, openOf } = await import('../api/game.mjs');
+const { GET, POST, bests, rankDay, monthTable, playersOf, playersFrom, accountFlag, floorSecs, perfOf, endOf, visitOf, openOf } = await import('../api/game.mjs');
 
 const day = (d) => new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
 const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;
@@ -380,4 +380,25 @@ test('GET ?me: the key of the player whose token it is, the one /players has; no
   assert.equal((await ask('forged')).status, 401);
   assert.equal((await ask(null)).status, 401);
   assert.equal((await GET(new Request(`https://x.test/api/game?me&player=${A}`))).status, 401, 'no way round the token');
+});
+
+test('the players added up by the database rank as the ones read race by race', () => {
+  const rows = [race({ user_id: 7, place: 1, secs: 190, boats: 6, flag: 'gb', yacht: 'j70', venue: 'cowes' }), race({ player: A, place: 2, secs: 200, boats: 6 }),
+    race({ user_id: 7, place: 3, daily: null, boats: 4, started_at: at(2) }), race({ player: A, dsq: true, place: null, daily: null, started_at: at(3) })];
+  const sum = { players: [
+    { u: 7, a: null, n: 2, fin: 2, wins: 1, podiums: 2, dsq: 0, days: 2, first: at(2), last: at(0), best: 1, fleet: 6, dn: 1, flag: 'gb', yachts: { j70: 1, jpk1050: 1 }, venues: { cowes: 1 } },
+    { u: null, a: A, n: 2, fin: 1, wins: 0, podiums: 1, dsq: 1, days: 2, first: at(3), last: at(0), best: 2, fleet: 6, dn: 1, flag: null, yachts: { jpk1050: 2 }, venues: {} },
+  ], days: [{ d: day(0), u: 7, a: null, s: 190, p: 1, n: 1 }, { d: day(0), u: null, a: A, s: 200, p: 2, n: 1 }] };
+  assert.deepEqual(playersFrom(sum), playersOf(rows));
+});
+
+test('a site account\'s name and flag come in one question once the function is there', async () => {
+  const calls = stub({ rows: [race({ player: A, place: 1 }), race({ player: B, place: 2, secs: 210 })] });
+  const real = globalThis.fetch;
+  globalThis.fetch = async (url, init) => (String(url).includes('/rpc/regatta_names')
+    ? (calls.push({ url: String(url) }), Response.json([{ id: A, display_name: 'Fed', boat: { flag: 'by' } }, { id: B, display_name: 'Ann', boat: null }])) : real(url, init));
+  const j = await (await GET(new Request(`https://x.test/api/game?day=${day(0)}`))).json();
+  globalThis.fetch = real;
+  assert.deepEqual(j.rows.map((x) => [x.name, x.fl]), [['Fed', 'by'], ['Ann', null]]);
+  assert.ok(!calls.some((c) => c.url.includes('/auth/v1/admin/users/')), 'no account asked for by itself');
 });
