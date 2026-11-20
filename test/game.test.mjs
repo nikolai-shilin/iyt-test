@@ -323,10 +323,18 @@ test('GET ?players: the somebodies, the most points first, a page at a time, nam
   const j = await r.json();
   assert.deepEqual([j.total, j.page, j.pages, j.per], [2, 1, 1, 20]);
   assert.deepEqual(j.rows.map((x) => [x.name, x.fl, x.pts, x.n, x.fin, x.wins, x.podiums, x.days, x.yacht]),
-    [['Anna Petrova', 'gb', 2, 3, 2, 1, 2, 3, 'j70'], ['Fed', 'by', 1, 4, 3, 0, 0, 4, null]], 'the most points first, though Fed sailed more races');
+    [['Anna Petrova', 'gb', 2, 3, 2, 1, 2, 3, 'j70'], ['Fed', 'by', 1, 4, 3, 0, 0, 4, 'jpk1050']], 'the most points first, though Fed sailed more races; each in the yacht they sailed last');
   assert.ok(!JSON.stringify(j).includes(A) && !/"7"|:7[,}]/.test(JSON.stringify(j)), 'no raw ids');
   const far = await (await GET(new Request('https://x.test/api/game?players&page=9'))).json();
   assert.equal(far.page, 1, 'a page past the last is the last');
+});
+
+test('a player\'s yacht is the one they sailed last, not the one they sailed most', () => {
+  const rows = [race({ user_id: 7, yacht: 'j70', started_at: at(3) }), race({ user_id: 7, yacht: 'j70', started_at: at(2) }), race({ user_id: 7, yacht: 'ac75', started_at: at(0) }),
+    race({ user_id: 7, yacht: 'j70', started_at: at(1) })];
+  const [p] = playersOf(rows);
+  assert.equal(p.yacht, 'ac75');
+  assert.deepEqual(p.yachts[0], { id: 'j70', n: 3 }, 'the card still counts the most sailed first');
 });
 
 test('GET ?players: twenty a page', async () => {
@@ -386,8 +394,8 @@ test('the players added up by the database rank as the ones read race by race', 
   const rows = [race({ user_id: 7, place: 1, secs: 190, boats: 6, flag: 'gb', yacht: 'j70', venue: 'cowes' }), race({ player: A, place: 2, secs: 200, boats: 6 }),
     race({ user_id: 7, place: 3, daily: null, boats: 4, started_at: at(2) }), race({ player: A, dsq: true, place: null, daily: null, started_at: at(3) })];
   const sum = { players: [
-    { u: 7, a: null, n: 2, fin: 2, wins: 1, podiums: 2, dsq: 0, days: 2, first: at(2), last: at(0), best: 1, fleet: 6, dn: 1, flag: 'gb', yachts: { j70: 1, jpk1050: 1 }, venues: { cowes: 1 } },
-    { u: null, a: A, n: 2, fin: 1, wins: 0, podiums: 1, dsq: 1, days: 2, first: at(3), last: at(0), best: 2, fleet: 6, dn: 1, flag: null, yachts: { jpk1050: 2 }, venues: {} },
+    { u: 7, a: null, n: 2, fin: 2, wins: 1, podiums: 2, dsq: 0, days: 2, first: at(2), last: at(0), yacht: 'j70', best: 1, fleet: 6, dn: 1, flag: 'gb', yachts: { j70: 1, jpk1050: 1 }, venues: { cowes: 1 } },
+    { u: null, a: A, n: 2, fin: 1, wins: 0, podiums: 1, dsq: 1, days: 2, first: at(3), last: at(0), yacht: 'jpk1050', best: 2, fleet: 6, dn: 1, flag: null, yachts: { jpk1050: 2 }, venues: {} },
   ], days: [{ d: day(0), u: 7, a: null, s: 190, p: 1, n: 1 }, { d: day(0), u: null, a: A, s: 200, p: 2, n: 1 }] };
   assert.deepEqual(playersFrom(sum), playersOf(rows));
 });

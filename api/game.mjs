@@ -45,7 +45,7 @@
 //     k, name (the whole name), ph and fl as the rating's; pts the rating's points of every day of the daily race
 //     they ranked on, added up (ties as the rating's: days won, days in the top three; then race wins, races); n the races they began, fin finished, wins and podiums the
 //     races they won and were in the top three of (a disqualification is neither), days the UTC days they sailed on,
-//     last when they last began one, yacht the class they sailed most (null: the club's JPK 1050). A page past the
+//     last when they last began one, yacht the class they sailed last (jpk1050: the club's JPK 1050). A page past the
 //     last is the last.
 //   GET /api/game?player=<k> → that player's card for the site's /players (public, cached), 404 for a key nobody has:
 //     the row above, and first (their first race), dsq, best (their best place) and fleet (in how many boats), daily
@@ -465,7 +465,7 @@ export function boatOf(b) {
   return out.hull ? out : null;
 }
 // Every player who is somebody, from all their races: key → { key, u, a, pts, n, fin, wins, podiums, dsq, days, first,
-// last, best, fleet, daily, yachts, venues }. pts: the rating's points (rankDay) of every day of the daily race they
+// last, yacht (the class of that last race), best, fleet, daily, yachts, venues }. pts: the rating's points (rankDay) of every day of the daily race they
 // ranked on, added up; daily: those days' finishes (n), the days they ranked (days), won and were in the top three
 // of. The most points first, then, as the rating, the most days won and in the top three, then race wins and races,
 // then the latest seen.
@@ -475,10 +475,10 @@ export function playersOf(rows) {
     const key = who(r);
     if (key === 'anon') continue;
     const p = out.get(key) || { key, u: r.user_id ?? null, a: r.player || null, n: 0, fin: 0, wins: 0, podiums: 0, dsq: 0, dayset: new Set(), first: r.started_at, last: r.started_at,
-      best: null, fleet: null, dn: 0, yachts: new Map(), venues: new Map() };
+      yacht: r.yacht || 'jpk1050', best: null, fleet: null, dn: 0, yachts: new Map(), venues: new Map() };
     p.n++; p.dayset.add(String(r.started_at).slice(0, 10));
     if (r.started_at < p.first) p.first = r.started_at;
-    if (r.started_at > p.last) p.last = r.started_at;
+    if (r.started_at > p.last) { p.last = r.started_at; p.yacht = r.yacht || 'jpk1050'; }
     count(p.yachts, r.yacht || 'jpk1050');
     if (r.venue) count(p.venues, r.venue);
     if (r.dsq) p.dsq++;
@@ -534,7 +534,8 @@ async function players(params, json) {
     const { all, flags } = await everyPlayer();
     const row = (x, names) => ({
       k: keyOf(x), name: names.get(x.key) || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null,
-      pts: x.pts, n: x.n, fin: x.fin, wins: x.wins, podiums: x.podiums, days: x.days, last: x.last, yacht: x.yachts[0] && x.yachts[0].id !== 'jpk1050' ? x.yachts[0].id : null,
+      pts: x.pts, n: x.n, fin: x.fin, wins: x.wins, podiums: x.podiums, days: x.days, last: x.last,
+      yacht: x.yacht || (x.yachts[0] ? x.yachts[0].id : 'jpk1050'), // (before the function's migration has it: the class sailed most)
     });
     if (want == null) {
       const pages = Math.max(1, Math.ceil(all.length / PLAYERS_PER)), p = Math.min(page, pages);
