@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
-const { GET, POST, bests, rankDay, monthTable, playersOf, playersFrom, accountFlag, floorSecs, perfOf, endOf, visitOf, openOf } = await import('../api/game.mjs');
+const { GET, POST, bests, rankDay, monthTable, playersOf, playersFrom, accountFlag, floorSecs, perfOf, endOf, visitOf, openOf, dailyYacht } = await import('../api/game.mjs');
 
 const day = (d) => new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
 const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;
@@ -401,4 +401,18 @@ test('a site account\'s name and flag come in one question once the function is 
   globalThis.fetch = real;
   assert.deepEqual(j.rows.map((x) => [x.name, x.fl]), [['Fed', 'by'], ['Ann', null]]);
   assert.ok(!calls.some((c) => c.url.includes('/auth/v1/admin/users/')), 'no account asked for by itself');
+});
+
+test('POST start: a daily race is that day\'s only in that day\'s yacht (a page left open past midnight sails the day before\'s)', async () => {
+  // the days so far, as the game's classes.js dailyYacht names them
+  assert.deepEqual(['2026-11-15', '2026-11-16', '2026-11-17', '2026-11-18', '2026-11-19', '2026-11-20'].map(dailyYacht), ['jpk1050', 'laser', 'optimist', 'rs21', 'ac75', 'dragon']);
+  const id = '66666666-6666-4666-8666-666666666666', post = (body) => POST(new Request('https://x.test/api/game', { method: 'POST', body: JSON.stringify(body), headers: { 'x-forwarded-for': `10.0.3.${Math.random() * 250 | 0}` } }));
+  const today = new Date().toISOString().slice(0, 10), y = dailyYacht(today), other = y === 'ac75' ? 'dragon' : 'ac75';
+  let calls = stub();
+  await post({ ev: 'start', id, wind: 'light', laps: 1, length: 'short', boats: 5, daily: today, ...(y !== 'jpk1050' && { yacht: y }) });
+  assert.equal(calls.find((c) => c.method === 'POST').body.daily, today, 'in the day\'s yacht: the day\'s race');
+  calls = stub();
+  await post({ ev: 'start', id, wind: 'light', laps: 1, length: 'short', boats: 5, daily: today, yacht: other });
+  const body = calls.find((c) => c.method === 'POST').body;
+  assert.ok(!('daily' in body), 'in another: a race of no day'); assert.equal(body.yacht, other);
 });

@@ -128,6 +128,32 @@ export const YACHT_FLOOR = { ac75: 0.4, optimist: 0.6, laser: 0.8, j70: 0.8, rs2
 export const floorSecs = (r) => (BEAT[r.wind] && LEN[r.length] ? FLOOR * BEAT[r.wind] * LEN[r.length] * (r.laps || 1) * (YACHT_FLOOR[r.yacht] ?? 1) : 0);
 // a class of yacht as the game posts it: its id in classes.js (none for the club's 40-footer)
 const yachtOf = (v) => (typeof v === 'string' && /^[a-z][a-z0-9]{1,15}$/.test(v) && v !== 'club40' ? v : null);
+
+// The yacht of a day's daily race, as ryc-regatta's public/game/classes.js dailyYacht (and its lib/race.ts): from the
+// day each joins (DAILY_YACHTS) the days go round them in a shuffled order, never the same two days running; before
+// the first, the JPK 1050. A start that names a day is kept as that day's race only in that day's yacht: a game page
+// left open past midnight sailed the new day's wind in the day before's yacht (20 Nov 2026: the Dragon's day won in
+// the AC75, in two thirds of the time), and its time ranked first. Kept in step with the game by hand: a class added
+// there is added here the same day (test/game.test.mjs checks the days so far).
+const DAILY_YACHTS = { jpk1050: '2026-11-16', bavaria46: '2026-11-16', j70: '2026-11-16', rs21: '2026-11-16', laser: '2026-11-16', dragon: '2026-11-17', optimist: '2026-11-17', ac75: '2026-11-18', jclass: '2026-11-18' };
+const dayN = (s) => Math.floor(Date.parse(s) / 864e5);
+const YACHT_ROUNDS = [...new Set(Object.values(DAILY_YACHTS).map(dayN))].sort((a, b) => a - b)
+  .map((n0) => ({ n0, ids: Object.keys(DAILY_YACHTS).filter((id) => dayN(DAILY_YACHTS[id]) <= n0) }));
+function yachtRound(ids, k) {
+  let s = ((k + 1) * 69069 + 4111) >>> 0 || 1;
+  const r = () => { s ^= s << 13; s >>>= 0; s ^= s >> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; };
+  const a = ids.slice();
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+function yachtOn(n) {
+  if (n < YACHT_ROUNDS[0].n0) return 'jpk1050';
+  let e = YACHT_ROUNDS.length - 1; while (e > 0 && n < YACHT_ROUNDS[e].n0) e--;
+  const { n0, ids } = YACHT_ROUNDS[e], len = ids.length, k = Math.floor((n - n0) / len), a = yachtRound(ids, k);
+  if (len > 1 && a[0] === (k > 0 ? yachtRound(ids, k - 1)[len - 1] : yachtOn(n0 - 1))) [a[0], a[1]] = [a[1], a[0]];
+  return a[n - n0 - k * len];
+}
+export const dailyYacht = (day) => yachtOn(dayN(day)); // day: '2026-11-20'
 const UUIDV = (v) => (typeof v === 'string' && UUID.test(v.toLowerCase()) ? v.toLowerCase() : null);
 const word = (v, n = 24) => (typeof v === 'string' && /^[a-z][a-zA-Z0-9-]{0,40}$/.test(v) ? v.slice(0, n) : undefined);
 const numIn = (v, lo, hi, k = 10) => (typeof v === 'number' && Number.isFinite(v) && v >= lo && v <= hi ? Math.round(v * k) / k : undefined);
@@ -617,7 +643,9 @@ export async function POST(request) {
       const acct = user ? null : await account(b.token);
       const tg = user ? user.id : acct && acct.tg ? acct.tg : null, player = acct && acct.player ? acct.player : null;
       // a daily race names its day: today or yesterday (UTC), for a player just past midnight
-      const daily = typeof b.daily === 'string' && [0, 1].some((d) => new Date(now - d * DAY).toISOString().slice(0, 10) === b.daily) ? b.daily : null;
+      // …in that day's yacht (none posted: the JPK 1050), or it is no day's race
+      const daily = typeof b.daily === 'string' && [0, 1].some((d) => new Date(now - d * DAY).toISOString().slice(0, 10) === b.daily)
+        && (yachtOf(b.yacht) || 'jpk1050') === dailyYacht(b.daily) ? b.daily : null;
       let row = { id, user_id: tg, wind: ['light', 'medium', 'strong'].includes(b.wind) ? b.wind : null, laps: int(b.laps, 1, 9),
                   length: ['short', 'medium', 'long'].includes(b.length) ? b.length : null, boats: int(b.boats, 1, 20), ...(daily && { daily }), ...(player && { player }),
                   shape: SHAPES.includes(b.shape) ? b.shape : null, ...(flagOf(b.flag) && { flag: b.flag }), ...(yachtOf(b.yacht) && { yacht: b.yacht }), ...(venueOf(b.venue) && { venue: b.venue }),
