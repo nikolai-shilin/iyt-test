@@ -60,6 +60,15 @@
 //     there is no asking for anyone else's, by id or otherwise. 401 for no token or one Supabase doesn't take, 404
 //     for an account that has started no race (not a player yet). Never cached; the Authorization header also keeps
 //     browsers on other sites from asking (CORS allows no headers).
+//   GET /api/game?month=2026-11&k=<k> → one player's month day by day (public, cached), for the site's /race/month:
+//     { m, k, pts, place, of, wins, podiums, sailed, days: [ { d, s, place, of, pts } ], near: [ { k, name, fl, pts,
+//     place, me } ], above: { place, pts } | null }. The days are the ones they ranked on, the earliest first: their
+//     best time (s), their place among the of ranked that day and the points it took, as ?day= gives them, so the days
+//     add up to pts, their points on the month's table. place: theirs on that table of of players (equal points, wins
+//     and podiums share the better place); sailed the month's days that ranked anyone; near the table's rows around
+//     them (NEAR either side), named; above the nearest place ahead of theirs and its points. A key not on the month's
+//     table gets no days (pts 0, place null); a month in the future, more than DAY_BACK days back or not a month, or a
+//     key not shaped as one, is 404.
 //
 //   POST /api/game { ev: 'start', id: '<uuid>', wind: 'light' | 'medium' | 'strong', laps: 1,
 //                    length: 'short' | 'medium' | 'long', boats: 10, daily: '2026-11-12' (the daily race only),
@@ -405,6 +414,8 @@ export async function GET(request) {
   }
   const day = params.get('day');
   if (day != null) return dayRating(day, json, params.has('brief'));
+  const month = params.get('month');
+  if (month != null) return playerMonth(month, params.get('k') || '', json);
   if (params.has('me')) return me(request, json);
   if (params.has('players') || params.has('player')) return players(params, json);
   if (!SB || !SB_KEY) return json({ week: { races: 0, players: 0 }, best: null });
@@ -623,6 +634,55 @@ async function dayRating(day, json, brief = false) {
     }, 200, cache);
   } catch (e) {
     if (!/: 404 /.test(e.message)) await logError('game rating', e);
+    return json({ error: 'failed' }, 500);
+  }
+}
+
+// GET ?month=&k=: one player's month day by day (see the top of the file). The same days and points as the month's
+// table on ?day= (rankDay, monthTable), so the days add up to the points the board gives them.
+const NEAR = 2;
+async function playerMonth(m, k, json) {
+  const now = Date.now(), today = new Date(now).toISOString().slice(0, 10), cur = today.slice(0, 7);
+  const y = +m.slice(0, 4), mo = +m.slice(5, 7);
+  const last = /^\d{4}-(0[1-9]|1[0-2])$/.test(m) ? new Date(Date.UTC(y, mo, 0)).toISOString().slice(0, 10) : null;
+  if (!last || m > cur || Date.parse(`${last}T00:00:00Z`) < Date.parse(`${today}T00:00:00Z`) - DAY_BACK * DAY
+      || !/^[A-Za-z0-9_-]{8,64}$/.test(k)) return json({ error: 'not found' }, 404);
+  // a month gone by no longer changes; this one does, as the day's board does
+  const cache = m < cur ? 'public, max-age=300, s-maxage=86400, stale-while-revalidate=86400' : undefined;
+  const none = { m, k, pts: 0, place: null, of: 0, wins: 0, podiums: 0, sailed: 0, days: [], near: [], above: null };
+  if (!SB || !SB_KEY) return json(none, 200, cache);
+  try {
+    let rows;
+    try {
+      rows = await readRaces('started_at,finished_at,user_id,player,secs,dsq,place,daily,flag',
+        `daily=gte.${m}-01&daily=lte.${last < today ? last : today}&finished_at=not.is.null&dsq=is.false&secs=gt.0`);
+    } catch (e) {
+      if (/daily/.test(e.message)) return json(none, 200, cache);
+      throw e;
+    }
+    const byDay = new Map();
+    for (const r of rows) (byDay.get(r.daily) || byDay.set(r.daily, []).get(r.daily)).push(r);
+    const ranked = [...byDay].map(([d, rs]) => [d, rankDay(bests(rs))]).filter(([, list]) => list.length).sort(([a], [b]) => (a < b ? -1 : 1));
+    const keys = new Map(), kOf = (x) => keys.get(x.key) ?? keys.set(x.key, keyOf(x)).get(x.key);
+    // the month's table in the board's order; equal points, wins and podiums share the better place
+    const month = monthTable(ranked.map(([, list]) => list)).sort((a, b) => b.pts - a.pts || b.wins - a.wins || b.podiums - a.podiums || (kOf(a) < kOf(b) ? -1 : 1));
+    const same = (a, b) => a.pts === b.pts && a.wins === b.wins && a.podiums === b.podiums;
+    let place = 0;
+    month.forEach((x, i) => { if (!i || !same(x, month[i - 1])) place = i + 1; x.place = place; });
+    const i = month.findIndex((x) => kOf(x) === k), me = month[i];
+    const out = { ...none, of: month.length, sailed: ranked.length };
+    if (!me) return json(out, 200, cache);
+    const days = ranked.map(([d, list]) => { const x = list.find((y) => kOf(y) === k); return x ? { d, s: x.s, place: x.place, of: list.length, pts: x.pts } : null; }).filter(Boolean);
+    const up = month.slice(0, i).reverse().find((x) => x.place < me.place);
+    const near = month.slice(Math.max(0, i - NEAR), i + NEAR + 1);
+    const flags = await flyingFlags(rows, now), names = await namesOf(near, near.length, true, flags);
+    return json({
+      ...out, pts: me.pts, place: me.place, wins: me.wins, podiums: me.podiums, days,
+      near: near.map((x) => ({ k: kOf(x), name: names.get(x.key) || null, fl: flags.get(x.key) ?? null, pts: x.pts, place: x.place, me: x === me })),
+      above: up ? { place: up.place, pts: up.pts } : null,
+    }, 200, cache);
+  } catch (e) {
+    if (!/: 404 /.test(e.message)) await logError('game month', e);
     return json({ error: 'failed' }, 500);
   }
 }
