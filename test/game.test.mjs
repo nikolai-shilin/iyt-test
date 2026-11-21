@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
-const { GET, POST, bests, rankDay, monthTable, playersOf, playersFrom, accountFlag, floorSecs, perfOf, endOf, visitOf, openOf, dailyYacht } = await import('../api/game.mjs');
+const { GET, POST, bests, rankDay, monthTable, playersOf, playersFrom, elosFrom, accountFlag, floorSecs, perfOf, endOf, visitOf, openOf, dailyYacht } = await import('../api/game.mjs');
 
 const day = (d) => new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
 const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;
@@ -503,4 +503,22 @@ test('GET ?player=: the card carries the achievements the database works out for
   stub({ rows: [race({ player: A, place: 1, boats: 4, venue: 'cowes' })], accounts: { [A]: 'Fed' } });
   const k = await (await GET(new Request(`https://x.test/api/game?player=${fed.k}`))).json();
   assert.deepEqual(k.achievements, []); assert.equal(k.name, 'Fed');
+});
+
+test('elosFrom: each player their 1-on-1 rating, by Telegram id or account, none without a rated race', () => {
+  const list = [
+    { tg: 77, acct: '00000000-0000-4000-8000-000000000001', rating: 1532, races: 2 },
+    { tg: null, acct: '00000000-0000-4000-8000-000000000002', rating: 1618, races: 9 },
+    { tg: null, acct: '00000000-0000-4000-8000-000000000003', rating: 1500, races: 0 },
+    { tg: null, acct: '00000000-0000-4000-8000-000000000004', rating: '1500', races: 3 },
+  ];
+  const players = [
+    { key: 77, u: 77, a: null },
+    { key: 'a:00000000-0000-4000-8000-000000000002', u: null, a: '00000000-0000-4000-8000-000000000002' },
+    { key: 'a:00000000-0000-4000-8000-000000000003', u: null, a: '00000000-0000-4000-8000-000000000003' },
+    { key: 'a:00000000-0000-4000-8000-000000000004', u: null, a: '00000000-0000-4000-8000-000000000004' },
+    { key: 99, u: 99, a: null },
+  ];
+  assert.deepEqual([...elosFrom(list, players)], [[77, { r: 1532, n: 2 }], ['a:00000000-0000-4000-8000-000000000002', { r: 1618, n: 9 }]]);
+  assert.deepEqual([...elosFrom(null, players)], []);
 });

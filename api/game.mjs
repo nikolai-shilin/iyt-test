@@ -41,11 +41,12 @@
 //     It reads that day's races alone and names only the top, so it stays small and cheap however many sail.
 //   GET /api/game?players[&page=2] → everyone who is somebody (inside Telegram or with a site account; guests are not
 //     players) and has started a race, the most points first, PLAYERS_PER a page (public, cached):
-//     { total, page, pages, per, rows: [ { k, name, ph, fl, pts, n, fin, wins, podiums, days, last, yacht } ] }
+//     { total, page, pages, per, rows: [ { k, name, ph, fl, pts, n, fin, wins, podiums, days, last, yacht, elo } ] }
 //     k, name (the whole name), ph and fl as the rating's; pts the rating's points of every day of the daily race
 //     they ranked on, added up (ties as the rating's: days won, days in the top three; then race wins, races); n the races they began, fin finished, wins and podiums the
 //     races they won and were in the top three of (a disqualification is neither), days the UTC days they sailed on,
-//     last when they last began one, yacht the class they sailed last (jpk1050: the club's JPK 1050). A page past the
+//     last when they last began one, yacht the class they sailed last (jpk1050: the club's JPK 1050), elo their 1-on-1
+//     rating ({ r: rating, n: rated races }, null for one with no rated race; regatta_ratings_of). A page past the
 //     last is the last.
 //   GET /api/game?player=<k> → that player's card for the site's /players (public, cached), 404 for a key nobody has:
 //     the row above, and first (their first race), dsq, best (their best place) and fleet (in how many boats), daily
@@ -558,21 +559,42 @@ async function everyPlayer() {
   const rows = await readRaces('started_at,finished_at,user_id,player,boats,secs,dsq,place,daily,flag,yacht,venue', 'or=(user_id.not.is.null,player.not.is.null)');
   return { all: playersOf(rows), flags: latestFlags(rows) };
 }
+// The 1-on-1 rating of players ({ key, u, a }), key → { r: rating, n: rated races }, only for those with a rated race
+// (regatta_ratings_of, supabase/migrations/20261122110000_regatta_ratings_of.sql); before its migration, or a failure: none.
+export function elosFrom(list, players) {
+  const byTg = new Map(), byAcct = new Map(), out = new Map();
+  for (const e of Array.isArray(list) ? list : []) {
+    if (!e || !Number.isInteger(e.rating) || !Number.isInteger(e.races) || e.races < 1) continue;
+    const v = { r: e.rating, n: e.races };
+    if (e.tg != null && !(byTg.get(String(e.tg))?.n > v.n)) byTg.set(String(e.tg), v);
+    if (e.acct) byAcct.set(e.acct, v);
+  }
+  for (const x of players) { const v = x.u != null ? byTg.get(String(x.u)) : x.a ? byAcct.get(x.a) : null; if (v) out.set(x.key, v); }
+  return out;
+}
+async function elosOf(players) {
+  const tgs = [...new Set(players.filter((x) => x.u != null).map((x) => Number(x.u)).filter(Number.isSafeInteger))];
+  const accts = [...new Set(players.filter((x) => x.u == null && x.a && UUID.test(x.a)).map((x) => x.a))];
+  if (!tgs.length && !accts.length) return new Map();
+  try { return elosFrom(await db('rpc/regatta_ratings_of', { method: 'POST', body: { tgs, accts } }), players); }
+  catch (e) { if (!/: 404 /.test(e.message)) await logError('game players elo', e); return new Map(); }
+}
 async function players(params, json) {
   const page = Math.max(1, Math.min(10_000, Math.floor(Number(params.get('page')) || 1))), want = params.get('player');
   if (want != null && (want.length > 64 || !/^[A-Za-z0-9_-]+$/.test(want))) return json({ error: 'not found' }, 404);
   if (!SB || !SB_KEY) return want != null ? json({ error: 'not found' }, 404) : json({ total: 0, page: 1, pages: 1, per: PLAYERS_PER, rows: [] });
   try {
     const { all, flags } = await everyPlayer();
-    const row = (x, names) => ({
+    const row = (x, names, elos) => ({
       k: keyOf(x), name: names.get(x.key) || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null,
       pts: x.pts, n: x.n, fin: x.fin, wins: x.wins, podiums: x.podiums, days: x.days, last: x.last,
       yacht: x.yacht || (x.yachts[0] ? x.yachts[0].id : 'jpk1050'), // (before the function's migration has it: the class sailed most)
+      elo: elos.get(x.key) ?? null,
     });
     if (want == null) {
       const pages = Math.max(1, Math.ceil(all.length / PLAYERS_PER)), p = Math.min(page, pages);
-      const slice = all.slice((p - 1) * PLAYERS_PER, p * PLAYERS_PER), names = await namesOf(slice, PLAYERS_PER, true, flags);
-      return json({ total: all.length, page: p, pages, per: PLAYERS_PER, rows: slice.map((x) => row(x, names)) });
+      const slice = all.slice((p - 1) * PLAYERS_PER, p * PLAYERS_PER), [names, elos] = await Promise.all([namesOf(slice, PLAYERS_PER, true, flags), elosOf(slice)]);
+      return json({ total: all.length, page: p, pages, per: PLAYERS_PER, rows: slice.map((x) => row(x, names, elos)) });
     }
     const x = all.find((y) => keyOf(y) === want);
     if (!x) return json({ error: 'not found' }, 404);
@@ -584,8 +606,8 @@ async function players(params, json) {
     let achievements = [];
     try { achievements = achievementsOf(await db('rpc/regatta_achievements_of', { method: 'POST', body: x.u != null ? { tg: x.u } : { acct: x.a } })); }
     catch (e) { if (!/: 404 /.test(e.message)) await logError('game player achievements', e); }
-    const names = await namesOf([x], 1, true, flags);
-    return json({ ...row(x, names), first: x.first, dsq: x.dsq, best: x.best, fleet: x.fleet, daily: x.daily, yachts: x.yachts, venues: x.venues, boat, achievements });
+    const [names, elos] = await Promise.all([namesOf([x], 1, true, flags), elosOf([x])]);
+    return json({ ...row(x, names, elos), first: x.first, dsq: x.dsq, best: x.best, fleet: x.fleet, daily: x.daily, yachts: x.yachts, venues: x.venues, boat, achievements });
   } catch (e) {
     if (!/: 404 /.test(e.message)) await logError('game players', e);
     return json({ error: 'failed' }, 500);
