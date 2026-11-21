@@ -54,6 +54,9 @@
 //     the most sailed first) and boat: their boat's colours as they keep it on the site (lib/boat.ts there,
 //     public.regatta_boat in supabase/migrations/20261117170000_regatta_boat.sql), only its own fields, each checked
 //     (boatOf), null for a player whose boat the site never kept.
+//     achievements: what they have of the site's achievements, as the database works them out on their own card
+//     (regatta_achievements_of, supabase/migrations/20261122070000_regatta_achievements_of.sql): [ { key, at, detail } ],
+//     the earliest first; [] before that migration or for an account it can't find.
 //   GET /api/game?me with Authorization: Bearer <a player's access token> → { k }: that player's own key, as above, for
 //     the site's "Your player card" (app/auth/player in the ryc-regatta repo asks on their behalf, server to server).
 //     Supabase says whose the token is, as it does for a race's start, so the key is only ever told to its owner:
@@ -459,6 +462,21 @@ export async function GET(request) {
   }
 }
 
+// a card's achievements as the database gives them, each checked: its key, the day it came and a detail of numbers and
+// short names only
+const ACH = /^[a-z0-9_]{2,24}$/;
+export function achievementsOf(list) {
+  if (!Array.isArray(list)) return [];
+  return list.filter((g) => g && ACH.test(g.key) && typeof g.at === 'string' && Number.isFinite(Date.parse(g.at))).slice(0, 40).map((g) => {
+    const detail = {};
+    for (const [k, v] of Object.entries(g.detail && typeof g.detail === 'object' ? g.detail : {})) {
+      if (!/^[a-z]{1,12}$/.test(k)) continue;
+      if (typeof v === 'number' && Number.isFinite(v)) detail[k] = v;
+      else if (typeof v === 'string' && v.length <= 40) detail[k] = v;
+    }
+    return { key: g.key, at: g.at, detail };
+  });
+}
 // GET ?players and ?player=: the players (see the top of the file).
 const PLAYERS_PER = 20;
 const HEX = /^#[0-9a-f]{6}$/i;
@@ -559,8 +577,13 @@ async function players(params, json) {
     let boat = null;
     try { boat = boatOf(await db('rpc/regatta_boat', { method: 'POST', body: x.u != null ? { tg: x.u } : { acct: x.a } })); }
     catch (e) { if (!/: 404 /.test(e.message)) await logError('game player boat', e); } // before its migration: no boat
+    // their achievements, worked out by the database as on their own card (regatta_achievements_of; before its
+    // migration, or a failure: none)
+    let achievements = [];
+    try { achievements = achievementsOf(await db('rpc/regatta_achievements_of', { method: 'POST', body: x.u != null ? { tg: x.u } : { acct: x.a } })); }
+    catch (e) { if (!/: 404 /.test(e.message)) await logError('game player achievements', e); }
     const names = await namesOf([x], 1, true, flags);
-    return json({ ...row(x, names), first: x.first, dsq: x.dsq, best: x.best, fleet: x.fleet, daily: x.daily, yachts: x.yachts, venues: x.venues, boat });
+    return json({ ...row(x, names), first: x.first, dsq: x.dsq, best: x.best, fleet: x.fleet, daily: x.daily, yachts: x.yachts, venues: x.venues, boat, achievements });
   } catch (e) {
     if (!/: 404 /.test(e.message)) await logError('game players', e);
     return json({ error: 'failed' }, 500);

@@ -470,3 +470,33 @@ test('GET ?month=&k=: one player\'s month day by day, adding up to their points 
     assert.equal((await GET(new Request(`https://x.test/api/game?month=${mm}&k=${encodeURIComponent(kk)}`))).status, 404, `${mm} ${kk}`);
   }
 });
+
+test('GET ?player=: the card carries the achievements the database works out for that account, each checked', async () => {
+  const calls = stub({ rows: [race({ player: A, place: 1, boats: 4, venue: 'cowes' })], accounts: { [A]: 'Fed' } });
+  const list = await (await GET(new Request('https://x.test/api/game?players'))).json();
+  const fed = list.rows.find((x) => x.name === 'Fed');
+  const real = globalThis.fetch, asked = [];
+  globalThis.fetch = async (url, init) => {
+    if (String(url).includes('/rpc/regatta_achievements_of')) {
+      asked.push(JSON.parse(init.body));
+      return Response.json([
+        { key: 'first_race', at: '2026-11-14T10:00:00Z', detail: {} },
+        { key: 'giant', at: '2026-11-19T19:30:00Z', detail: { them: 'Tomás R.', rating: 1752, gap: 214, email: 'x'.repeat(60), 'Bad Key': 1, obj: { a: 1 } } },
+        { key: 'BAD KEY', at: '2026-11-19T19:30:00Z' }, { key: 'week', at: 'never' }, null,
+      ]);
+    }
+    return real(url, init);
+  };
+  const j = await (await GET(new Request(`https://x.test/api/game?player=${fed.k}`))).json();
+  globalThis.fetch = real;
+  assert.deepEqual(asked, [{ acct: A }]);
+  assert.deepEqual(j.achievements, [
+    { key: 'first_race', at: '2026-11-14T10:00:00Z', detail: {} },
+    { key: 'giant', at: '2026-11-19T19:30:00Z', detail: { them: 'Tomás R.', rating: 1752, gap: 214 } },
+  ]);
+  assert.ok(calls.length);
+  // before the migration (the database says 404): none, and the card all the same
+  stub({ rows: [race({ player: A, place: 1, boats: 4, venue: 'cowes' })], accounts: { [A]: 'Fed' } });
+  const k = await (await GET(new Request(`https://x.test/api/game?player=${fed.k}`))).json();
+  assert.deepEqual(k.achievements, []); assert.equal(k.name, 'Fed');
+});
