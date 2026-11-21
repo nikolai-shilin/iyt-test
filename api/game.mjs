@@ -123,9 +123,11 @@ const done = (status = 204) => new Response(null, { status, headers: CORS });
 // the Laser, the J/70 and the RS21 sail to their polars upwind as they do in a moderate breeze (they had been held to
 // some 60% of them), so their best computer boats sail a short lap in 19 knots in 1.28, 1.44 and 1.48 times the
 // floor: they get 0.8, 0.9 and 0.9 of it. The J/70's, sent round the marks at her own size (ryc-regatta's sim.js
-// SZ_NEAR), came down to 1.33 of it, so she gets the Laser's 0.8. The others take at least half as long again as the floor.
+// SZ_NEAR), came down to 1.33 of it, so she gets the Laser's 0.8. The F50 (from 23 November) sails a short lap in a blow
+// as fast as the AC75, her best computer boats in 0.86 of the floor: she gets the AC75's 0.4. The others take at least
+// half as long again as the floor.
 const BEAT = { light: 200, medium: 260, strong: 280 }, LEN = { short: 1, medium: 2, long: 3.4 }, FLOOR = 0.45;
-export const YACHT_FLOOR = { ac75: 0.4, optimist: 0.6, laser: 0.8, j70: 0.8, rs21: 0.9 };
+export const YACHT_FLOOR = { ac75: 0.4, f50: 0.4, optimist: 0.6, laser: 0.8, j70: 0.8, rs21: 0.9 };
 export const floorSecs = (r) => (BEAT[r.wind] && LEN[r.length] ? FLOOR * BEAT[r.wind] * LEN[r.length] * (r.laps || 1) * (YACHT_FLOOR[r.yacht] ?? 1) : 0);
 // a class of yacht as the game posts it: its id in classes.js (none for the club's 40-footer)
 const yachtOf = (v) => (typeof v === 'string' && /^[a-z][a-z0-9]{1,15}$/.test(v) && v !== 'club40' ? v : null);
@@ -136,7 +138,7 @@ const yachtOf = (v) => (typeof v === 'string' && /^[a-z][a-z0-9]{1,15}$/.test(v)
 // left open past midnight sailed the new day's wind in the day before's yacht (20 Nov 2026: the Dragon's day won in
 // the AC75, in two thirds of the time), and its time ranked first. Kept in step with the game by hand: a class added
 // there is added here the same day (test/game.test.mjs checks the days so far).
-const DAILY_YACHTS = { jpk1050: '2026-11-16', bavaria46: '2026-11-16', j70: '2026-11-16', rs21: '2026-11-16', laser: '2026-11-16', dragon: '2026-11-17', optimist: '2026-11-17', ac75: '2026-11-18', jclass: '2026-11-18' };
+const DAILY_YACHTS = { jpk1050: '2026-11-16', bavaria46: '2026-11-16', j70: '2026-11-16', rs21: '2026-11-16', laser: '2026-11-16', dragon: '2026-11-17', optimist: '2026-11-17', ac75: '2026-11-18', jclass: '2026-11-18', f50: '2026-11-23' };
 const dayN = (s) => Math.floor(Date.parse(s) / 864e5);
 const YACHT_ROUNDS = [...new Set(Object.values(DAILY_YACHTS).map(dayN))].sort((a, b) => a - b)
   .map((n0) => ({ n0, ids: Object.keys(DAILY_YACHTS).filter((id) => dayN(DAILY_YACHTS[id]) <= n0) }));

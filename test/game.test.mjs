@@ -220,6 +220,8 @@ test('POST start and finish: the yacht is kept, and a faster class gets her shar
   assert.equal(floorSecs({ wind: 'medium', length: 'short', laps: 1 }), 117);
   assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'ac75' }) * 10) / 10, 46.8);
   assert.equal(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'bavaria46' }), 117);
+  // an F50's, as fast round her course as the AC75 round hers, the AC75's
+  assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'f50' }) * 10) / 10, 46.8);
   // a Laser's and a J/70's 0.8 of it, an RS21's 0.9: in a blow they sail as near their polars as in a breeze
   assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'laser' }) * 10) / 10, 93.6);
   assert.equal(Math.round(floorSecs({ wind: 'medium', length: 'short', laps: 1, yacht: 'j70' }) * 10) / 10, 93.6);
@@ -420,6 +422,8 @@ test('a site account\'s name and flag come in one question once the function is 
 test('POST start: a daily race is that day\'s only in that day\'s yacht (a page left open past midnight sails the day before\'s)', async () => {
   // the days so far, as the game's classes.js dailyYacht names them
   assert.deepEqual(['2026-11-15', '2026-11-16', '2026-11-17', '2026-11-18', '2026-11-19', '2026-11-20'].map(dailyYacht), ['jpk1050', 'laser', 'optimist', 'rs21', 'ac75', 'dragon']);
+  // …and the days to come: the J Class's first on the 22nd; the F50 joins on the 23rd and first sails on the 28th
+  assert.deepEqual(['2026-11-21', '2026-11-22', '2026-11-23', '2026-11-28'].map(dailyYacht), ['bavaria46', 'jclass', 'laser', 'f50']);
   const id = '66666666-6666-4666-8666-666666666666', post = (body) => POST(new Request('https://x.test/api/game', { method: 'POST', body: JSON.stringify(body), headers: { 'x-forwarded-for': `10.0.3.${Math.random() * 250 | 0}` } }));
   const today = new Date().toISOString().slice(0, 10), y = dailyYacht(today), other = y === 'ac75' ? 'dragon' : 'ac75';
   let calls = stub();
