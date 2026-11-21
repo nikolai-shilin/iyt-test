@@ -264,6 +264,9 @@ test('POST start keeps the venue; POST perf keeps how the game ran, once, each f
   // the resolution below Low (rs: 1 none, 0.8 or 0.65): a share of a pixel, nothing else
   for (const rs of [1, 0.8, 0.65]) assert.equal(perfOf({ fps: 20, rs }).rs, rs);
   for (const rs of [0, 0.1, 1.5, '0.8', null]) assert.ok(!('rs' in perfOf({ fps: 20, rs })), String(rs));
+  // the setting: Auto, a level (Lowest: Low drawn at two thirds of its resolution) or Custom
+  for (const gfx of ['auto', 'high', 'medium', 'low', 'lowest', 'custom']) assert.equal(perfOf({ fps: 20, gfx }).gfx, gfx);
+  assert.ok(!('gfx' in perfOf({ fps: 20, gfx: 'ultra' })));
   calls = stub();
   assert.equal((await post({ ev: 'perf', id, perf: { low: 20 } })).status, 400);
   assert.ok(!calls.some((c) => c.method === 'PATCH'));

@@ -200,7 +200,7 @@ export function perfOf(p) {
   const LV = ['high', 'medium', 'low'];
   const out = {
     fps: num(p.fps, 0.5, 500), low: num(p.low, 0.5, 500), stall: num(p.stall, 0, 6000, 100), secs: num(p.secs, 0, 86400, 1),
-    q0: one(p.q0, LV), q: one(p.q, LV), gfx: one(p.gfx, ['auto', ...LV]), saver: one(p.saver, [0, 1]), rs: num(p.rs, 0.25, 1, 100),
+    q0: one(p.q0, LV), q: one(p.q, LV), gfx: one(p.gfx, ['auto', ...LV, 'lowest', 'custom']), saver: one(p.saver, [0, 1]), rs: num(p.rs, 0.25, 1, 100),
     dev: one(p.dev, ['phone', 'tablet', 'desktop']), tg: one(p.tg, [0, 1]),
     os: one(p.os, ['ios', 'android', 'chromeos', 'mac', 'windows', 'linux', 'other']),
     br: one(p.br, ['safari', 'chrome', 'firefox', 'edge', 'yandex', 'opera', 'other']),
