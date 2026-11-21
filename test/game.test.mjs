@@ -434,3 +434,73 @@ test('POST start: a daily race is that day\'s only in that day\'s yacht (a page 
   const body = calls.find((c) => c.method === 'POST').body;
   assert.ok(!('daily' in body), 'in another: a race of no day'); assert.equal(body.yacht, other);
 });
+
+test('GET ?month=&k=: one player\'s month day by day, adding up to their points on the month\'s table', async () => {
+  const m = day(0).slice(0, 7), ds = [2, 1, 0].map(day).filter((d) => d.startsWith(m));
+  const on = (d, o) => race({ daily: d, started_at: `${d}T10:00:00Z`, finished_at: `${d}T10:00:00Z`, ...o });
+  // each day: Anna (7) and Fed (A) and Bo (B) and a guest; Anna wins the first day, Fed the others
+  const rows = ds.flatMap((d, i) => [on(d, { user_id: 7, secs: i ? 190 : 170 }), on(d, { player: A, secs: 180 }), on(d, { player: B, secs: 200 + i }), on(d, { secs: 100 })]);
+  stub({ rows, users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [A]: 'Fed', [B]: 'Bo' } });
+  const board = await (await GET(new Request(`https://x.test/api/game?day=${day(0)}`))).json();
+  const fed = board.month.rows.find((x) => x.name === 'Fed'), bo = board.month.rows.find((x) => x.name === 'Bo');
+  const calls = stub({ rows, users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [A]: 'Fed', [B]: 'Bo' } });
+  const r = await GET(new Request(`https://x.test/api/game?month=${m}&k=${fed.k}`));
+  assert.equal(r.status, 200); assert.match(r.headers.get('cache-control'), /s-maxage=300/, 'this month: five minutes');
+  const j = await r.json();
+  assert.equal(j.m, m); assert.equal(j.k, fed.k); assert.equal(j.sailed, ds.length); assert.equal(j.of, 3);
+  assert.deepEqual(j.days.map((x) => x.d), ds, 'the days they ranked on, the earliest first');
+  assert.ok(j.days.every((x) => x.of === 3 && x.pts === x.of - x.place + 1), 'each day: ranked less place plus one');
+  assert.equal(j.days.reduce((a, x) => a + x.pts, 0), j.pts, 'the days add up');
+  assert.equal(j.pts, fed.pts, "to the board's points");
+  assert.equal(j.days[0].place, 2, "second to Anna on the first day"); assert.equal(j.days[0].s, 180);
+  assert.deepEqual(j.near.map((x) => x.name), board.month.rows.map((x) => x.name), 'the rows around them, named, in the board\'s order');
+  assert.ok(j.near.find((x) => x.me).k === fed.k && j.near.filter((x) => x.me).length === 1);
+  assert.ok(!JSON.stringify(j).includes(A), 'no raw ids');
+  if (ds.length > 1) { assert.equal(j.place, 1); assert.equal(j.above, null); }
+  // Bo: last every day, a point a day, and the place ahead of theirs
+  const b = await (await GET(new Request(`https://x.test/api/game?month=${m}&k=${bo.k}`))).json();
+  assert.equal(b.pts, ds.length); assert.equal(b.place, 3); assert.deepEqual(b.days.map((x) => x.place), ds.map(() => 3));
+  assert.deepEqual(b.above, { place: 2, pts: board.month.rows[1].pts });
+  const q = calls.find((c) => c.url.includes('game_races')).url;
+  assert.match(q, new RegExp(`daily=gte\\.${m}-01&daily=lte\\.${day(0)}&finished_at`));
+  // a key not on the table: no days, and nothing said about whose it might be
+  const x = await (await GET(new Request(`https://x.test/api/game?month=${m}&k=abcdefghijklmnop`))).json();
+  assert.deepEqual([x.pts, x.place, x.days, x.near, x.of], [0, null, [], [], 3]);
+  // a month gone by is cached long; the future, a non-month, the far past and a key not shaped as one are not found
+  const prev = new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7) - 2, 1)).toISOString().slice(0, 7);
+  assert.match((await GET(new Request(`https://x.test/api/game?month=${prev}&k=${fed.k}`))).headers.get('cache-control'), /s-maxage=86400/);
+  const next = new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 1)).toISOString().slice(0, 7);
+  for (const [mm, kk] of [[next, fed.k], ['2026-13', fed.k], ['2024-01', fed.k], [m, 'short'], [m, 'a b c d e f g h']]) {
+    assert.equal((await GET(new Request(`https://x.test/api/game?month=${mm}&k=${encodeURIComponent(kk)}`))).status, 404, `${mm} ${kk}`);
+  }
+});
+
+test('GET ?player=: the card carries the achievements the database works out for that account, each checked', async () => {
+  const calls = stub({ rows: [race({ player: A, place: 1, boats: 4, venue: 'cowes' })], accounts: { [A]: 'Fed' } });
+  const list = await (await GET(new Request('https://x.test/api/game?players'))).json();
+  const fed = list.rows.find((x) => x.name === 'Fed');
+  const real = globalThis.fetch, asked = [];
+  globalThis.fetch = async (url, init) => {
+    if (String(url).includes('/rpc/regatta_achievements_of')) {
+      asked.push(JSON.parse(init.body));
+      return Response.json([
+        { key: 'first_race', at: '2026-11-14T10:00:00Z', detail: {} },
+        { key: 'giant', at: '2026-11-19T19:30:00Z', detail: { them: 'Tomás R.', rating: 1752, gap: 214, email: 'x'.repeat(60), 'Bad Key': 1, obj: { a: 1 } } },
+        { key: 'BAD KEY', at: '2026-11-19T19:30:00Z' }, { key: 'week', at: 'never' }, null,
+      ]);
+    }
+    return real(url, init);
+  };
+  const j = await (await GET(new Request(`https://x.test/api/game?player=${fed.k}`))).json();
+  globalThis.fetch = real;
+  assert.deepEqual(asked, [{ acct: A }]);
+  assert.deepEqual(j.achievements, [
+    { key: 'first_race', at: '2026-11-14T10:00:00Z', detail: {} },
+    { key: 'giant', at: '2026-11-19T19:30:00Z', detail: { them: 'Tomás R.', rating: 1752, gap: 214 } },
+  ]);
+  assert.ok(calls.length);
+  // before the migration (the database says 404): none, and the card all the same
+  stub({ rows: [race({ player: A, place: 1, boats: 4, venue: 'cowes' })], accounts: { [A]: 'Fed' } });
+  const k = await (await GET(new Request(`https://x.test/api/game?player=${fed.k}`))).json();
+  assert.deepEqual(k.achievements, []); assert.equal(k.name, 'Fed');
+});
