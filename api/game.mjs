@@ -68,11 +68,12 @@
 //                    venue: 'cowes' (where it is sailed: public/game/venues.js there) } → 204
 //   POST /api/game { ev: 'finish', id: '<uuid>', place: 2 | null, boats: 4, secs: 431.2, dsq: false }       → 204
 //   POST /api/game { ev: 'result', id: '<uuid>', result: { … } }  (the result page's record, at most RESULT_MAX) → 204
-//   POST /api/game { ev: 'perf', id: '<uuid>', perf: { fps, low, stall, secs, q0, q, gfx, saver, dev, tg, os, br, dpr,
+//   POST /api/game { ev: 'perf', id: '<uuid>', perf: { fps, low, stall, secs, q0, q, gfx, saver, rs, dev, tg, os, br, dpr,
 //                    cores, mem, gpu, w, h, load } } → 204
 //     how the game ran through the race (stats.js perfSummary there), for the site's /admin (regatta_admin_stats in
 //     supabase/migrations/20261117120000_game_races_perf.sql): kept once a race, each field checked (perfOf), the
-//     rest dropped. It names no one.
+//     rest dropped. rs: the resolution below Low Auto drew at the race's end (gfx.js RES_BELOW there: 0.8 or 0.65; 1 none).
+//     It names no one.
 //   POST /api/game { ev: 'end', id: '<uuid>', end: { how, leg, legs, clock, place, boats, done, inc: { ocs: 1, … }, last,
 //                    ago, pens, mins, use: { cam, trim, sound, … } } } → 204
 //     how the race ended for the player (stats.js raceEnded): finish, restart, change, menu, close, hidden or new; where
@@ -199,7 +200,7 @@ export function perfOf(p) {
   const LV = ['high', 'medium', 'low'];
   const out = {
     fps: num(p.fps, 0.5, 500), low: num(p.low, 0.5, 500), stall: num(p.stall, 0, 6000, 100), secs: num(p.secs, 0, 86400, 1),
-    q0: one(p.q0, LV), q: one(p.q, LV), gfx: one(p.gfx, ['auto', ...LV]), saver: one(p.saver, [0, 1]),
+    q0: one(p.q0, LV), q: one(p.q, LV), gfx: one(p.gfx, ['auto', ...LV]), saver: one(p.saver, [0, 1]), rs: num(p.rs, 0.25, 1, 100),
     dev: one(p.dev, ['phone', 'tablet', 'desktop']), tg: one(p.tg, [0, 1]),
     os: one(p.os, ['ios', 'android', 'chromeos', 'mac', 'windows', 'linux', 'other']),
     br: one(p.br, ['safari', 'chrome', 'firefox', 'edge', 'yandex', 'opera', 'other']),

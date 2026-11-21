@@ -251,7 +251,7 @@ test('POST start keeps the venue; POST perf keeps how the game ran, once, each f
   await post({ ev: 'start', id, wind: 'light', venue: 'Cowes; drop' });
   assert.ok(!('venue' in calls.find((c) => c.method === 'POST').body));
   // the game's summary: kept as it is, on the race's row while it has none
-  const perf = { fps: 58.8, low: 31.2, stall: 0.4, secs: 312, q0: 'high', q: 'medium', gfx: 'auto', saver: 0, dev: 'phone', tg: 1, os: 'ios', br: 'safari',
+  const perf = { fps: 58.8, low: 31.2, stall: 0.4, secs: 312, q0: 'high', q: 'medium', gfx: 'auto', saver: 0, rs: 0.65, dev: 'phone', tg: 1, os: 'ios', br: 'safari',
     dpr: 3, cores: 6, mem: 4, gpu: 'Apple GPU', w: 1170, h: 2532, load: 6.4 };
   calls = stub();
   assert.equal((await post({ ev: 'perf', id, perf })).status, 204);
@@ -261,6 +261,9 @@ test('POST start keeps the venue; POST perf keeps how the game ran, once, each f
   // anything else dropped, out of bounds left out, and no frame rate is no perf at all
   assert.deepEqual(perfOf({ fps: 60, q: 'ultra', dev: 'fridge', gpu: 'NVIDIA <b>RTX</b> 4090', name: 'Anna', mem: -1, load: 1e9 }), { fps: 60, gpu: 'NVIDIA bRTX/b 4090' });
   assert.equal(perfOf({ low: 20 }), null);
+  // the resolution below Low (rs: 1 none, 0.8 or 0.65): a share of a pixel, nothing else
+  for (const rs of [1, 0.8, 0.65]) assert.equal(perfOf({ fps: 20, rs }).rs, rs);
+  for (const rs of [0, 0.1, 1.5, '0.8', null]) assert.ok(!('rs' in perfOf({ fps: 20, rs })), String(rs));
   calls = stub();
   assert.equal((await post({ ev: 'perf', id, perf: { low: 20 } })).status, 400);
   assert.ok(!calls.some((c) => c.method === 'PATCH'));
