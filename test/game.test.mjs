@@ -268,6 +268,8 @@ test('POST start keeps the venue; POST perf keeps how the game ran, once, each f
   for (const rs of [0, 0.1, 1.5, '0.8', null]) assert.ok(!('rs' in perfOf({ fps: 20, rs })), String(rs));
   assert.deepEqual(perfOf({ fps: 30.3, busy: 21.254, busy95: 34.75, sim: 4.1, draw: 13.6 }), { fps: 30.3, busy: 21.25, busy95: 34.75, sim: 4.1, draw: 13.6 });
   assert.deepEqual(perfOf({ fps: 30.3, busy: -1, busy95: '9', sim: 1e6, draw: NaN }), { fps: 30.3 });
+  for (const aa of [0, 1]) assert.equal(perfOf({ fps: 30.3, aa }).aa, aa);
+  for (const aa of [2, '0', null, true]) assert.ok(!('aa' in perfOf({ fps: 30.3, aa })), String(aa));
   // the setting: Auto, a level (Lowest: Low drawn at two thirds of its resolution) or Custom
   for (const gfx of ['auto', 'high', 'medium', 'low', 'lowest', 'custom']) assert.equal(perfOf({ fps: 20, gfx }).gfx, gfx);
   assert.ok(!('gfx' in perfOf({ fps: 20, gfx: 'ultra' })));
