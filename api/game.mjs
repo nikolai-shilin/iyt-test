@@ -82,10 +82,12 @@
 //   POST /api/game { ev: 'finish', id: '<uuid>', place: 2 | null, boats: 4, secs: 431.2, dsq: false }       → 204
 //   POST /api/game { ev: 'result', id: '<uuid>', result: { … } }  (the result page's record, at most RESULT_MAX) → 204
 //   POST /api/game { ev: 'perf', id: '<uuid>', perf: { fps, low, stall, secs, q0, q, gfx, saver, rs, dev, tg, os, br, dpr,
-//                    cores, mem, gpu, w, h, load } } → 204
+//                    cores, mem, gpu, w, h, load, busy, busy95, sim, draw } } → 204
 //     how the game ran through the race (stats.js perfSummary there), for the site's /admin (regatta_admin_stats in
 //     supabase/migrations/20261117120000_game_races_perf.sql): kept once a race, each field checked (perfOf), the
 //     rest dropped. rs: the resolution below Low Auto drew at the race's end (gfx.js RES_BELOW there: 0.8 or 0.65; 1 none).
+//     busy, busy95: the middle and the 95th percentile frame's ms on the page's thread; sim, draw: the mean ms a frame in
+//     the race's steps and in drawing (main.js frame there). A frame much longer than busy waited on the GPU or the screen.
 //     It names no one.
 //   POST /api/game { ev: 'end', id: '<uuid>', end: { how, leg, legs, clock, place, boats, done, inc: { ocs: 1, … }, last,
 //                    ago, pens, mins, use: { cam, trim, sound, … } } } → 204
@@ -222,6 +224,7 @@ export function perfOf(p) {
     dpr: num(p.dpr, 0.25, 8, 100), cores: num(p.cores, 1, 256, 1), mem: num(p.mem, 0.1, 1024, 100),
     gpu: typeof p.gpu === 'string' ? p.gpu.replace(/[^\w ()+\-.,/:]/g, '').trim().slice(0, 60) || undefined : undefined,
     w: num(p.w, 1, 20000, 1), h: num(p.h, 1, 20000, 1), load: num(p.load, 0, 3600),
+    busy: num(p.busy, 0, 1000, 100), busy95: num(p.busy95, 0, 1000, 100), sim: num(p.sim, 0, 1000, 100), draw: num(p.draw, 0, 1000, 100),
   };
   if (out.fps === undefined) return null;
   for (const k of Object.keys(out)) if (out[k] === undefined) delete out[k];
