@@ -125,6 +125,30 @@ test('GET ?day=: the flag a player flies is the one of their latest race of any 
   assert.match(decodeURIComponent(q), /started_at=gte\.\d{4}-\d{2}-\d{2}T/);
 });
 
+test('GET ?day=: the ranked players\' flags in one question when the database has it, not the 30 days read', async () => {
+  const calls = stub({
+    rows: [race({ user_id: 7, secs: 180, started_at: at(0, 9) }), race({ player: A, secs: 190, flag: 'fr', started_at: at(0, 9) }), race({ player: B, secs: 200, flag: 'nl' })],
+    users: [{ id: 7, name: 'Anna' }], accounts: { [A]: 'Fed', [B]: { display_name: 'Bo', boat: { flag: 'by' } } },
+  });
+  const real = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    if (!String(url).includes('/rpc/regatta_flags_of')) return real(url, init);
+    calls.push({ url: String(url), body: JSON.parse(init.body) });
+    return Response.json([
+      { user_id: 7, player: null, started_at: at(0, 12), flag: 'ge' },   // a later start: flies Georgia now
+      { user_id: null, player: A, started_at: at(0, 12), flag: null },   // took their flag down since
+      { user_id: null, player: B, started_at: at(0, 12), flag: 'it' },   // their boat's own flag wins
+    ]);
+  };
+  for (const url of [`https://x.test/api/game?day=${day(0)}`, `https://x.test/api/game?day=${day(0)}&brief`]) {
+    const j = await (await GET(new Request(url))).json();
+    assert.deepEqual((j.rows || j.top).map((x) => [x.name, x.fl]), [['Anna', 'ge'], ['Fed', null], ['Bo', 'by']], url);
+  }
+  const asked = calls.filter((c) => c.url.includes('/rpc/regatta_flags_of'));
+  assert.deepEqual(asked[0].body, { tgs: [7], accts: [A, B] });
+  assert.ok(!calls.some((c) => c.url.includes('game_races') && !c.url.includes('daily=')), 'no read of every recent race');
+});
+
 test('GET ?day= before the flag column is there: read without it', async () => {
   const calls = stub({ rows: [race({ user_id: 7 })], users: [{ id: 7, name: 'Anna' }], missing: 'flag' });
   const j = await (await GET(new Request(`https://x.test/api/game?day=${day(0)}`))).json();

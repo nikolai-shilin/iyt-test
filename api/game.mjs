@@ -320,15 +320,30 @@ function latestFlags(rows) {
   }
   return out;
 }
-// The flag each of a rating's players flies: the one of their latest race of any kind in the last 30 days (a start
-// they didn't finish, a free race), read exactly as the game card reads it (every race of those 30 days, not a filter
-// on the rating's players), so the card and the rating always show a player under the same flag; for a player with no
-// race that recent, the one of their latest race among rows.
-async function flyingFlags(rows, now) {
+// The flag each of a rating's players ({ u, a }) flies: the one of their latest race of any kind in the last 30 days
+// (a start they didn't finish, a free race), as the game card reads it, so the card and the rating always show a
+// player under the same flag; for a player with no race that recent, the one of their latest race among rows. Their
+// latest races in one question (public.regatta_flags_of); before its migration, every race of the 30 days.
+async function flyingFlags(rows, now, players) {
+  const tgs = [...new Set(players.filter((x) => x.u != null).map((x) => x.u))];
+  const accts = [...new Set(players.filter((x) => x.u == null && x.a).map((x) => x.a))];
   let recent = [];
-  try { recent = await readRaces('started_at,user_id,player,flag', `started_at=gte.${new Date(now - 30 * DAY).toISOString()}`); }
-  catch (e) { await logError('rating flags', e); } // the rating's own rows then
+  try { if (tgs.length || accts.length) recent = await db('rpc/regatta_flags_of', { method: 'POST', body: { tgs, accts } }); }
+  catch (e) {
+    if (!/: 404 /.test(e.message)) await logError('rating flags', e); // the rating's own rows then
+    else {
+      try { recent = await readRaces('started_at,user_id,player,flag', `started_at=gte.${new Date(now - 30 * DAY).toISOString()}`); }
+      catch (e2) { await logError('rating flags', e2); }
+    }
+  }
   return latestFlags([...rows, ...recent]);
+}
+// A rating's flags and whole names at once: a site account's own boat's flag (namesOf) over the one its races flew.
+async function flagsAndNames(rows, now, players, cap) {
+  const own = new Map();
+  const [flags, names] = await Promise.all([flyingFlags(rows, now, players), namesOf(players, cap, true, own)]);
+  for (const [k, f] of own) flags.set(k, f);
+  return { flags, names };
 }
 // each player's best time among rows (finished, no disqualification, a time), with their best place and how many
 // of them they finished: key → { u, a, s, p, n }. Guests are left out unless guests is true.
@@ -688,7 +703,7 @@ async function dayRating(day, json, brief = false) {
     const days = [...ranked.keys()].sort().reverse();
     const mine = byDay.get(day) || [], dayList = ranked.get(day) || [];
     if (brief) {
-      const top = dayList.slice(0, TOP_BRIEF), flags = await flyingFlags(mine, now), names = await namesOf(top, TOP_BRIEF, true, flags);
+      const top = dayList.slice(0, TOP_BRIEF), { flags, names } = await flagsAndNames(mine, now, top, TOP_BRIEF);
       return json({
         d: day, w: mine.length ? mine[mine.length - 1].wind : null, races: mine.length, guests: mine.filter((r) => who(r) === 'anon').length,
         ranked: dayList.length,
@@ -697,9 +712,8 @@ async function dayRating(day, json, brief = false) {
       }, 200, cache);
     }
     const month = monthTable([...ranked.values()]);
-    const flags = await flyingFlags(rows, now);
     // names: the day's players first, then the month's, the most points first
-    const names = await namesOf([...dayList, ...month], 80, true, flags);
+    const { flags, names } = await flagsAndNames(rows, now, [...dayList, ...month], 80);
     const pub = (x) => ({ k: keyOf(x), name: names.get(x.key) || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null });
     const nameSort = (a, b) => (a.name == null) - (b.name == null) || String(a.name || '').localeCompare(String(b.name || ''));
     return json({
@@ -752,7 +766,7 @@ async function playerMonth(m, k, json) {
     const days = ranked.map(([d, list]) => { const x = list.find((y) => kOf(y) === k); return x ? { d, s: x.s, place: x.place, of: list.length, pts: x.pts } : null; }).filter(Boolean);
     const up = month.slice(0, i).reverse().find((x) => x.place < me.place);
     const near = month.slice(Math.max(0, i - NEAR), i + NEAR + 1);
-    const flags = await flyingFlags(rows, now), names = await namesOf(near, near.length, true, flags);
+    const { flags, names } = await flagsAndNames(rows, now, near, near.length);
     return json({
       ...out, pts: me.pts, place: me.place, wins: me.wins, podiums: me.podiums, days,
       near: near.map((x) => ({ k: kOf(x), name: names.get(x.key) || null, fl: flags.get(x.key) ?? null, pts: x.pts, place: x.place, me: x === me })),
