@@ -22,13 +22,15 @@ const RU = (u) => /^(ru|uk|be|kk)\b/i.test(u?.language_code || ''); // same rule
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
 
 // The flags admins took off this student that their app still has to drop (see the header). With a state sent, the
-// ones it no longer holds are done and deleted; a read returns them all. Never fails the sync ([] on any error).
-async function clears(userId, state) {
+// ones it no longer holds are done and deleted, once synced (a promise of whether the state was kept) says so; a read
+// returns them all. Never fails the sync ([] on any error).
+async function clears(userId, state, synced) {
   try {
     const rows = await db(`flag_clears?user_id=eq.${userId}&select=question_id,kind`);
     if (!rows.length) return [];
     const has = (r) => !state || (Array.isArray(state[r.kind]) && state[r.kind].includes(r.question_id));
     const done = rows.filter((r) => !has(r));
+    if (done.length && !(await synced)) return [];
     await Promise.all(done.map((r) => db(`flag_clears?user_id=eq.${userId}&question_id=eq.${encodeURIComponent(r.question_id)}&kind=eq.${r.kind}`, { method: 'DELETE', prefer: 'return=representation' })));
     return rows.filter(has).map((r) => ({ q: r.question_id, k: r.kind }));
   } catch (e) {
@@ -69,10 +71,14 @@ export async function POST(request) {
   try {
     // New secret keys (sb_secret_…) go in apikey only; a legacy service_role JWT also goes in Authorization.
     const headers = { apikey: SB_KEY, 'content-type': 'application/json', ...(SB_KEY.startsWith('eyJ') && { authorization: `Bearer ${SB_KEY}` }) };
-    const res = await fetch(`${SB}/rest/v1/rpc/sync_progress`, { method: 'POST', headers, body: JSON.stringify(args) });
+    // the admins' cleared flags are looked up at the same time (they go by the state sent); the ones done are deleted
+    // only once the sync has gone through
+    const sync = fetch(`${SB}/rest/v1/rpc/sync_progress`, { method: 'POST', headers, body: JSON.stringify(args) });
+    const clear = clears(user.id, state, sync.then((x) => x.ok, () => false));
+    const res = await sync;
     if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
     const r = await res.json();
-    return json({ ts: r.ts, state: r.state, answers: r.answers, clear: await clears(user.id, state) });
+    return json({ ts: r.ts, state: r.state, answers: r.answers, clear: await clear });
   } catch (e) {
     await logError('progress', e, user.id);
     return json({ error: 'failed' }, 500);
