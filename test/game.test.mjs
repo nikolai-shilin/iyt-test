@@ -451,6 +451,27 @@ test('GET ?players: twenty a page', async () => {
   assert.deepEqual([j.total, j.page, j.pages, j.rows.length], [45, 3, 3, 5]);
 });
 
+test('GET ?player=: the boat, achievements, name and rating are asked at once', async () => {
+  stub({ rows: [race({ user_id: 7, secs: 180 })], users: [{ id: 7, name: 'Anna' }] });
+  const list = await (await GET(new Request('https://x.test/api/game?players'))).json();
+  const real = globalThis.fetch;
+  let asked = null, overlapped = false;
+  const achievementsAsked = new Promise((r) => { asked = r; });
+  globalThis.fetch = async (url, init) => {
+    const u = String(url);
+    if (u.includes('/rpc/regatta_achievements_of')) { asked(); return Response.json([{ key: 'first_win', at: at(0), detail: {} }]); }
+    if (u.includes('/rpc/regatta_boat')) {
+      // the boat's answer waits for the achievements' question: asked one after the other, it would come only at the timeout
+      overlapped = await Promise.race([achievementsAsked.then(() => true), new Promise((r) => setTimeout(() => r(false), 500))]);
+      return Response.json({ hull: '#112233' });
+    }
+    return real(url, init);
+  };
+  const j = await (await GET(new Request(`https://x.test/api/game?player=${list.rows[0].k}`))).json();
+  assert.equal(j.name, 'Anna'); assert.equal(j.boat.hull, '#112233'); assert.deepEqual(j.achievements.map((g) => g.key), ['first_win']);
+  assert.ok(overlapped, 'the achievements were asked while the boat was');
+});
+
 test('GET ?player=: one player\'s card with their boat, checked; a key nobody has is not found', async () => {
   const calls = stub({
     rows: [race({ player: A, place: 2, boats: 6, venue: 'cowes', yacht: 'dragon' }), race({ player: A, place: 1, boats: 4, venue: 'cowes', daily: null }), race({ user_id: 7, place: 1, secs: 190 })],

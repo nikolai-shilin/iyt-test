@@ -648,15 +648,14 @@ async function players(params, json) {
     }
     const x = all.find((y) => keyOf(y) === want);
     if (!x) return json({ error: 'not found' }, 404);
-    let boat = null;
-    try { boat = boatOf(await db('rpc/regatta_boat', { method: 'POST', body: x.u != null ? { tg: x.u } : { acct: x.a } })); }
-    catch (e) { if (!/: 404 /.test(e.message)) await logError('game player boat', e); } // before its migration: no boat
-    // their achievements, worked out by the database as on their own card (regatta_achievements_of; before its
-    // migration, or a failure: none)
-    let achievements = [];
-    try { achievements = achievementsOf(await db('rpc/regatta_achievements_of', { method: 'POST', body: x.u != null ? { tg: x.u } : { acct: x.a } })); }
-    catch (e) { if (!/: 404 /.test(e.message)) await logError('game player achievements', e); }
-    const [names, elos] = await Promise.all([namesOf([x], 1, true, flags), elosOf([x])]);
+    // their boat, their achievements (worked out by the database as on their own card), name and 1-on-1 rating, all
+    // asked at once; a boat or achievements before its migration, or a failure: none
+    const who1 = x.u != null ? { tg: x.u } : { acct: x.a };
+    const [boat, achievements, names, elos] = await Promise.all([
+      db('rpc/regatta_boat', { method: 'POST', body: who1 }).then(boatOf, async (e) => { if (!/: 404 /.test(e.message)) await logError('game player boat', e); return null; }),
+      db('rpc/regatta_achievements_of', { method: 'POST', body: who1 }).then(achievementsOf, async (e) => { if (!/: 404 /.test(e.message)) await logError('game player achievements', e); return []; }),
+      namesOf([x], 1, true, flags), elosOf([x]),
+    ]);
     return json({ ...row(x, names, elos), first: x.first, dsq: x.dsq, best: x.best, fleet: x.fleet, daily: x.daily, yachts: x.yachts, venues: x.venues, boat, achievements });
   } catch (e) {
     if (!/: 404 /.test(e.message)) await logError('game players', e);
