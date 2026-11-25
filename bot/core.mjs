@@ -90,14 +90,15 @@ export async function db(path, { method = 'GET', body, prefer } = {}) {
 }
 // Saves who wrote to the bot (private chats only: the daily question goes to the user's own chat) and returns their
 // row, so callers know whether the daily question is on. A new user gets daily_question = true (the column default).
-async function remember(from, chat) {
+// set: more of the row written in the same go (the switch: { daily_question }); a failure to write it is thrown, where
+// a plain remember only notes it.
+async function remember(from, chat, set = null) {
   if (!hasDb || !from || from.is_bot || chat?.type !== 'private') return null;
   const row = { id: from.id, name: [from.first_name, from.last_name].filter(Boolean).join(' ') || null, username: from.username || null,
-    lang: RU(from) ? 'ru' : 'en', blocked_at: null, updated_at: new Date().toISOString() };
+    lang: RU(from) ? 'ru' : 'en', blocked_at: null, updated_at: new Date().toISOString(), ...set };
   try { return (await db('users?on_conflict=id&select=id,daily_question', { method: 'POST', body: row, prefer: 'resolution=merge-duplicates,return=representation' }))[0]; }
-  catch (e) { console.error('remember', from.id, e.message); return null; }
+  catch (e) { if (set) throw e; console.error('remember', from.id, e.message); return null; }
 }
-const setDaily = (id, on) => db(`users?id=eq.${+id}`, { method: 'PATCH', body: { daily_question: on, updated_at: new Date().toISOString() } });
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
 const open = (text, screen) => (webapp ? [{ text, web_app: { url: screen ? `${webapp}/?screen=${screen}` : `${webapp}/` } }] : null);
 const kb = (...rows) => ({ inline_keyboard: rows.filter(Boolean) });
@@ -218,23 +219,31 @@ export function questionOfTheDay(day, levelId) {
 async function onMessage(m) {
   const cmd = (m.text || '').split(/[\s@]/)[0];
   const ru = RU(m.from), chat = m.chat.id;
-  const user = await remember(m.from, m.chat);
-  if (cmd === '/start') return welcome(chat, ru);
-  if (cmd === '/exam') return send(chat, T.exam(ru), kb(open(T.examBtn(ru), 'exam')));
-  if (cmd === '/progress') return send(chat, T.progress(ru), kb(open(T.progressBtn(ru), 'progress')));
-  if (cmd === '/settings') return user
-    ? send(chat, T.settingsDaily(ru) + T.settings(ru), kb(dailySwitch(user.daily_question, ru), open(T.settingsBtn(ru), 'profile')))
-    : send(chat, T.settings(ru), kb(open(T.settingsBtn(ru), 'profile')));
-  if (cmd === '/daily') return sendQuestion(chat, daily[Math.floor(Math.random() * daily.length)], await prefersRu(m.from));
+  // who wrote is saved while the reply goes (remember never fails); only /settings needs their row first
+  const saved = remember(m.from, m.chat);
+  const reply = async (sending) => { const [r] = await Promise.allSettled([sending, saved]); if (r.status === 'rejected') throw r.reason; return r.value; };
+  if (cmd === '/start') return reply(welcome(chat, ru));
+  if (cmd === '/exam') return reply(send(chat, T.exam(ru), kb(open(T.examBtn(ru), 'exam'))));
+  if (cmd === '/progress') return reply(send(chat, T.progress(ru), kb(open(T.progressBtn(ru), 'progress'))));
+  if (cmd === '/settings') {
+    const user = await saved;
+    return user
+      ? send(chat, T.settingsDaily(ru) + T.settings(ru), kb(dailySwitch(user.daily_question, ru), open(T.settingsBtn(ru), 'profile')))
+      : send(chat, T.settings(ru), kb(open(T.settingsBtn(ru), 'profile')));
+  }
+  if (cmd === '/daily') { const q = daily[Math.floor(Math.random() * daily.length)]; return reply(prefersRu(m.from).then((isRu) => sendQuestion(chat, q, isRu))); }
+  await saved;
 }
 
 // Flips the user's switch and redraws the button in place, leaving the message's other buttons as they are.
+// The switch is written with the rest of the user's row in one go; then the tap is answered and the button redrawn at once.
 async function onSwitch(c, on, ru) {
-  if (!hasDb || !(await remember(c.from, c.message.chat))) return api('answerCallbackQuery', { callback_query_id: c.id });
-  await setDaily(c.from.id, on);
-  await api('answerCallbackQuery', { callback_query_id: c.id, text: on ? T.turnedOn(ru) : T.turnedOff(ru) });
+  if (!hasDb || !(await remember(c.from, c.message.chat, { daily_question: on }))) return api('answerCallbackQuery', { callback_query_id: c.id });
   const rows = (c.message.reply_markup?.inline_keyboard || []).map((r) => (r.some((b) => b.callback_data?.startsWith('dq:')) ? dailySwitch(on, ru) : r));
-  await api('editMessageReplyMarkup', { chat_id: c.message.chat.id, message_id: c.message.message_id, reply_markup: { inline_keyboard: rows } });
+  await Promise.all([
+    api('answerCallbackQuery', { callback_query_id: c.id, text: on ? T.turnedOn(ru) : T.turnedOff(ru) }),
+    api('editMessageReplyMarkup', { chat_id: c.message.chat.id, message_id: c.message.message_id, reply_markup: { inline_keyboard: rows } }),
+  ]);
 }
 
 async function onCallback(c) {
