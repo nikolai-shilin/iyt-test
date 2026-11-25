@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
-const { GET, POST, bests, rankDay, monthTable, playersOf, playersFrom, elosFrom, accountFlag, floorSecs, perfOf, endOf, visitOf, openOf, dailyYacht } = await import('../api/game.mjs');
+const { GET, POST, bests, rankDay, monthTable, playersOf, playersFrom, elosFrom, accountFlag, gameCard, floorSecs, perfOf, endOf, visitOf, openOf, dailyYacht } = await import('../api/game.mjs');
 
 const day = (d) => new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
 const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;
@@ -136,6 +136,39 @@ test('GET: the game card\'s podiums carry each player\'s flag', async () => {
   stub({ rows: [race({ user_id: 7, flag: 'nl', secs: 150 }), race({ player: B, secs: 160 })], users: [{ id: 7, name: 'Anna' }], accounts: { [B]: 'Bo Z' } });
   const j = await (await GET(new Request('https://x.test/api/game'))).json();
   assert.deepEqual(j.daily.top.map((x) => [x.name, x.fl]), [['Anna', 'nl'], ['Bo Z.', null]]);
+});
+
+test('GET: the card from the database\'s one question when it is there, named in one look-up, no race read', async () => {
+  const calls = stub({ users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [B]: 'Bo Z' } });
+  const real = globalThis.fetch, card = {
+    week: { races: 12, players: 4 },
+    best: { w: 'medium', l: 2, c: 'short', n: 6, sh: 'tri', top: [{ u: 7, a: null, s: 150.5, p: 1, fl: 'nl' }, { u: null, a: B, s: 160, p: null, fl: 'Evil<' }] },
+    daily: { d: day(0), w: 'light', sh: 'wl', races: 3, top: [{ u: 7, a: null, s: 99, p: 2, fl: 'nl' }] },
+  };
+  globalThis.fetch = async (url, init) => (String(url).includes('/rpc/regatta_game_card') ? Response.json(card) : real(url, init));
+  const j = await (await GET(new Request('https://x.test/api/game'))).json();
+  assert.deepEqual(j.week, { races: 12, players: 4 });
+  assert.deepEqual({ ...j.best, top: undefined }, { w: 'medium', l: 2, c: 'short', n: 6, sh: 'tri', top: undefined });
+  assert.deepEqual(j.best.top.map((x) => [x.name, x.s, x.p, x.fl, !!x.ph]), [['Anna P.', 150.5, 1, 'nl', true], ['Bo Z.', 160, null, null, false]]);
+  assert.deepEqual(j.daily.top.map((x) => [x.name, x.s, x.fl]), [['Anna P.', 99, 'nl']]);
+  assert.ok(!calls.some((c) => c.url.includes('/game_races')), 'no race read');
+  assert.equal(calls.filter((c) => c.url.includes('/rest/v1/users')).length, 1, 'both podiums named at once');
+});
+
+test('gameCard: the busiest free course and today\'s daily race, as the database works them out', () => {
+  const now = Date.now(), free = (o) => race({ daily: null, length: 'short', boats: 6, laps: 2, shape: 'tri', ...o });
+  const rows = [
+    free({ user_id: 1, secs: 140, place: 2, flag: 'gb' }), free({ user_id: 1, secs: 130 }), free({ secs: 120 }), free({ player: A, secs: 150, dsq: true }),
+    free({ user_id: 2, secs: 90, shape: 'wl' }),                                   // another course, raced once
+    race({ user_id: 2, secs: 200, shape: 'trap', wind: 'strong' }), race({ player: A, secs: 190, wind: 'light' }), race({ secs: 100 }),
+    { ...race({ user_id: 3 }), finished_at: null, started_at: at(10) },             // started 10 days ago: not this week
+  ];
+  const c = gameCard(rows, now);
+  assert.deepEqual(c.week, { races: 8, players: 4 }, 'every guest together is one player');
+  assert.deepEqual({ ...c.best, top: undefined }, { w: 'medium', l: 2, c: 'short', n: 6, sh: 'tri', top: undefined });
+  assert.deepEqual(c.best.top, [{ u: null, a: null, s: 120, p: 1, fl: null }, { u: 1, a: null, s: 130, p: 1, fl: 'gb' }]);
+  assert.deepEqual({ ...c.daily, top: undefined }, { d: day(0), w: 'medium', sh: 'trap', races: 3, top: undefined });
+  assert.deepEqual(c.daily.top.map((x) => [x.u, x.a, x.s]), [[null, A, 190], [2, null, 200]], 'guests left out');
 });
 
 test('a site account\'s flag is its boat\'s, else its latest race\'s', async () => {

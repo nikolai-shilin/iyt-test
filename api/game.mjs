@@ -405,6 +405,40 @@ const AKEY = createHash('sha256').update(`game-player:${process.env.TELEGRAM_BOT
 const keyOf = (x) => (x.u != null ? sealId(x.u) : createHmac('sha256', AKEY).update(`a:${x.a}`).digest('base64url').slice(0, 16));
 const DAY_BACK = 400;
 
+// The game card's numbers from the last 30 days' races (rows, the latest first), as public.regatta_game_card
+// (supabase/migrations/20261125130000_regatta_game_card.sql) works them out in the database; this is the same reckoning
+// for before that migration. { week: { races, players }, best: { w, l, c, n, sh, top } | null, daily: { d, w, sh,
+// races, top } | null }, a top's players { u, a, s, p, fl } (fl: the flag of their latest race), names left to GET.
+export function gameCard(rows, now) {
+  const week = rows.filter((r) => Date.parse(r.started_at) >= now - 7 * DAY);
+  const flags = latestFlags(rows);
+  // the three fastest of a set of players' bests; equal times to the one who raced latest (rows come latest first)
+  const top = (best) => [...best].map(([key, b]) => ({ key, ...b })).sort((a, b) => a.s - b.s).slice(0, 3)
+    .map((x) => ({ u: x.u, a: x.u == null ? x.a : null, s: x.s, p: x.p || null, fl: flags.get(x.key) ?? null }));
+  // the courses finished on, the busiest first; on it, each player's best time
+  const courses = new Map();
+  for (const r of rows) {
+    if (!r.finished_at || r.dsq || !(r.secs > 0) || !r.length || !r.boats || r.daily) continue;
+    const sh = r.shape || 'wl', key = `${r.wind}|${r.laps || 1}|${r.length}|${r.boats}|${sh}`, c = courses.get(key) || { w: r.wind, l: r.laps || 1, c: r.length, n: r.boats, sh, races: 0, rows: [] };
+    c.races++; c.rows.push(r);
+    courses.set(key, c);
+  }
+  const busiest = [...courses.values()].sort((a, b) => b.races - a.races || SHAPES.indexOf(a.sh) - SHAPES.indexOf(b.sh))[0];
+  // (the course's ranking is everyone's, guests together counting as one, as it always has)
+  const best = busiest ? { w: busiest.w, l: busiest.l, c: busiest.c, n: busiest.n, sh: busiest.sh, top: top(bests(busiest.rows, true)) } : null;
+  // today's daily race (UTC): each player's best time on it. Every race counts in races, but only a player who is
+  // somebody ranks: the site asks a guest to sign in to get on this ranking, and all guests together are not a player.
+  const today = new Date(now).toISOString().slice(0, 10);
+  const dRows = rows.filter((r) => r.daily === today && r.finished_at && !r.dsq && r.secs > 0);
+  // today's shape: the one most of today's rows name (a game from before the shapes posts none, so a row without one
+  // says nothing about it), up and down if none does
+  const dShapes = new Map();
+  for (const r of dRows) if (r.shape) dShapes.set(r.shape, (dShapes.get(r.shape) || 0) + 1);
+  const dShape = [...dShapes].sort((a, b) => b[1] - a[1] || SHAPES.indexOf(a[0]) - SHAPES.indexOf(b[0]))[0]?.[0] || 'wl';
+  const daily = dRows.length ? { d: today, w: dRows[dRows.length - 1].wind, sh: dShape, races: dRows.length, top: top(bests(dRows)) } : null;
+  return { week: { races: week.length, players: new Set(week.map(who)).size }, best, daily };
+}
+
 export async function GET(request) {
   const params = request ? new URL(request.url).searchParams : new URLSearchParams();
   const key = params.get('photo');
@@ -437,39 +471,24 @@ export async function GET(request) {
   if (params.has('players') || params.has('player')) return players(params, json);
   if (!SB || !SB_KEY) return json({ week: { races: 0, players: 0 }, best: null });
   try {
-    const now = Date.now(), from = new Date(now - 30 * DAY).toISOString();
-    const rows = await readRaces('started_at,finished_at,user_id,player,wind,laps,length,boats,secs,dsq,place,daily,shape,flag', `started_at=gte.${from}`);
-    const week = rows.filter((r) => Date.parse(r.started_at) >= now - 7 * DAY);
-    const players = new Set(week.map(who)).size;
-    const flags = latestFlags(rows);
-    // the courses finished on, the busiest first; on it, each player's best time
-    const courses = new Map();
-    for (const r of rows) {
-      if (!r.finished_at || r.dsq || !(r.secs > 0) || !r.length || !r.boats || r.daily) continue;
-      const sh = r.shape || 'wl', key = `${r.wind}|${r.laps || 1}|${r.length}|${r.boats}|${sh}`, c = courses.get(key) || { w: r.wind, l: r.laps || 1, c: r.length, n: r.boats, sh, races: 0, rows: [] };
-      c.races++; c.rows.push(r);
-      courses.set(key, c);
+    // the numbers in one question (public.regatta_game_card); before its migration, from every race of the 30 days
+    let card;
+    try { card = await db('rpc/regatta_game_card', { method: 'POST', body: {} }); }
+    catch (e) {
+      if (!/: 404 /.test(e.message)) throw e;
+      const now = Date.now();
+      card = gameCard(await readRaces('started_at,finished_at,user_id,player,wind,laps,length,boats,secs,dsq,place,daily,shape,flag', `started_at=gte.${new Date(now - 30 * DAY).toISOString()}`), now);
     }
-    // the three fastest of a set of players' bests, with their names, pictures and flags
-    const podium = async (best) => {
-      const top = [...best].map(([key, b]) => ({ key, ...b })).sort((a, b) => a.s - b.s).slice(0, 3);
-      const names = await namesOf(top, 3, false, flags);
-      return top.map((x) => ({ name: names.get(x.key) || null, s: x.s, p: x.p || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null }));
-    };
-    const busiest = [...courses.values()].sort((a, b) => b.races - a.races || SHAPES.indexOf(a.sh) - SHAPES.indexOf(b.sh))[0];
-    // (the course's ranking is everyone's, guests together counting as one, as it always has)
-    const best = busiest ? { w: busiest.w, l: busiest.l, c: busiest.c, n: busiest.n, sh: busiest.sh, top: await podium(bests(busiest.rows, true)) } : null;
-    // today's daily race (UTC): each player's best time on it. Every race counts in races, but only a player who is
-    // somebody ranks: the site asks a guest to sign in to get on this ranking, and all guests together are not a player.
-    const today = new Date(now).toISOString().slice(0, 10);
-    const dRows = rows.filter((r) => r.daily === today && r.finished_at && !r.dsq && r.secs > 0);
-    // today's shape: the one most of today's rows name (a game from before the shapes posts none, so a row without one
-    // says nothing about it), up and down if none does
-    const dShapes = new Map();
-    for (const r of dRows) if (r.shape) dShapes.set(r.shape, (dShapes.get(r.shape) || 0) + 1);
-    const dShape = [...dShapes].sort((a, b) => b[1] - a[1] || SHAPES.indexOf(a[0]) - SHAPES.indexOf(b[0]))[0]?.[0] || 'wl';
-    const daily = dRows.length ? { d: today, w: dRows[dRows.length - 1].wind, sh: dShape, races: dRows.length, top: await podium(bests(dRows)) } : null;
-    return json({ week: { races: week.length, players }, best, daily });
+    // the podiums' players named (one look-up for both), with their pictures and flags: a site account's boat's own,
+    // else their latest race's
+    const tops = [...(card.best ? card.best.top : []), ...(card.daily ? card.daily.top : [])];
+    for (const x of tops) x.key = x.u != null ? x.u : x.a ? `a:${x.a}` : 'anon';
+    const flags = new Map(tops.map((x) => [x.key, flagOf(x.fl)]));
+    const names = await namesOf(tops, 6, false, flags);
+    const podium = (top) => top.map((x) => ({ name: names.get(x.key) || null, s: x.s, p: x.p || null, ph: x.u != null ? sealId(x.u) : null, fl: flags.get(x.key) ?? null }));
+    const best = card.best ? { ...card.best, top: podium(card.best.top) } : null;
+    const daily = card.daily ? { ...card.daily, top: podium(card.daily.top) } : null;
+    return json({ week: card.week, best, daily });
   } catch (e) {
     if (!/: 404 /.test(e.message)) await logError('game stats', e);
     return json({ error: 'failed' }, 500);
