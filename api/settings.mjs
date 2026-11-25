@@ -91,7 +91,7 @@ export const POST = (request) => handle(request, true);
 
 // A user's Telegram profile photo (JPEG, the smallest size), as a response; 204 when they have none the bot may see.
 // The bot fetches it (getUserProfilePhotos + getFile) because the file link carries the bot token, so the app never
-// sees that link. Used by api/admin.mjs (?photo=, admins) and legacy-regatta-api/game.mjs (?photo=, the players in the game's best times).
+// sees that link. Used by api/admin.mjs (?photo=, admins) and the Regatta API in the ryc-regatta repo (api/game.go, ?photo=, the players in the game's best times).
 async function tg(method, params) {
   const res = await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/${method}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(params), signal: AbortSignal.timeout(8000) });
   const data = await res.json();

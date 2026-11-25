@@ -5,6 +5,10 @@ One Postgres database behind the mini app, the bot and the website: Supabase pro
 
 The schema lives in `supabase/migrations/` (apply new files in order with the Supabase dashboard SQL editor, the MCP
 `apply_migration` tool or `supabase db push`).
+The Regatta game's migrations (every `game_*` and `regatta_*` file, and `boat_logos_bucket`, except `regatta_admin_races`, which serves
+the admin page here) moved on 25 Nov 2026 to `ryc-regatta/supabase/migrations/`; the same database, so the tables are still described here. The
+Regatta API itself (scores, Telegram session, bot notice) is Go in the ryc-regatta repo (`api/*.go`, `regatta/`); `vercel.json` here only forwards
+its old addresses.
 
 **What is in it:**
 - the catalogue — 8 levels (4 `available`, the rest `planned`/`soon`), their topics, questions and Russian
