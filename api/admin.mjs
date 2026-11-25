@@ -36,7 +36,7 @@
 // it. Joins and answers come from public.admin_series() (supabase/migrations/20261105120000_errors_log.sql); until
 // that function is in the database they are counted here from the rows. Reads and reports are always counted here.
 // null when neither worked — the rest of the page still loads.
-// game is the Regatta game's races over the same 91 days, newest first (public.game_races, written by api/game.mjs):
+// game is the Regatta game's races over the same 91 days, newest first (public.game_races, written by legacy-regatta-api/game.mjs, now the Go port in ryc-regatta):
 // at = when it started (ms), u = the Telegram user (null: played in a plain browser), w = the wind, l = laps, c = the course
 // length ('short' | 'medium' | 'long', null before it was kept; wind, laps, length and boats make the course, so times
 // compare only within one), f = when the

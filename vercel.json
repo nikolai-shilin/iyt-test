@@ -12,6 +12,11 @@
     "api/mcp.mjs": { "includeFiles": "{data/questions/*.json,data/theory/**/*.json,docs/design/figures.js}" }
   },
   "crons": [{ "path": "/api/daily", "schedule": "0 9 * * *" }],
+  "rewrites": [
+    { "source": "/api/game", "destination": "https://www.sailupdown.com/api/game" },
+    { "source": "/api/regatta-session", "destination": "https://www.sailupdown.com/api/regatta-session" },
+    { "source": "/api/regatta-notify", "destination": "https://www.sailupdown.com/api/regatta-notify" }
+  ],
   "redirects": [
     { "source": "/regatta", "destination": "https://www.sailupdown.com/", "permanent": true }
   ],

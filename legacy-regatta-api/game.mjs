@@ -1,3 +1,6 @@
+// NO LONGER SERVED from here. The Go port in the ryc-regatta repo (www.sailupdown.com/api/game) serves this endpoint now, and
+// vercel.json forwards /api/game to it. This file stays, with its tests, until the old code is deleted.
+
 // The Regatta game's races, kept in public.game_races (supabase/migrations/20261111120000_game_races.sql) for the
 // admins' Overview page (api/admin.mjs) and the game card on everyone's Home. the game's stats.js (the ryc-regatta repo) posts here
 // when a race starts and when the player finishes it. The game is a site of its own (www.sailupdown.com), so every
@@ -120,7 +123,7 @@
 // there, it answers 204 all the same; the game never waits on it.
 
 import { createCipheriv, createDecipheriv, createHash, createHmac } from 'node:crypto';
-import { verifyInitData, db, logError, tgPhoto, noEmoji, SB, SB_KEY } from './settings.mjs';
+import { verifyInitData, db, logError, tgPhoto, noEmoji, SB, SB_KEY } from '../api/settings.mjs';
 
 const LIMIT = 60, WINDOW = 10 * 60e3;
 const seen = new Map(); // address → [count, window start]

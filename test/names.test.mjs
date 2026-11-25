@@ -6,8 +6,8 @@ process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
 const { noEmoji } = await import('../api/settings.mjs');
-const { fullName, shortName } = await import('../api/game.mjs');
-const { accountName } = await import('../api/regatta-session.mjs');
+const { fullName, shortName } = await import('../legacy-regatta-api/game.mjs');
+const { accountName } = await import('../legacy-regatta-api/regatta-session.mjs');
 
 test('emoji are taken out of a name, and the spaces they leave', () => {
   for (const [s, want] of [

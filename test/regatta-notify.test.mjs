@@ -1,9 +1,9 @@
-// The Regatta site's message to a sailor through the bot (api/regatta-notify.mjs): only with the shared secret, only a
+// The Regatta site's message to a sailor through the bot (legacy-regatta-api/regatta-notify.mjs): only with the shared secret, only a
 // short text and a button to a page of the site, sent as plain text with a web_app button; a blocked user marked and
 // answered 410. Run: node --test test/regatta-notify.test.mjs
 import { test, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
-import { POST, readNotice } from '../api/regatta-notify.mjs';
+import { POST, readNotice } from '../legacy-regatta-api/regatta-notify.mjs';
 
 const OK = { telegram_id: 990000001, text: 'Match found: Bea K.\n1585 · Fleet. Tap within 60 s to say Ready.', button: { text: 'Open Match found', url: 'https://www.sailupdown.com/duel?resume' } };
 const req = (body, auth = 'Bearer s3cret') => new Request('https://iyt.example/api/regatta-notify', { method: 'POST', headers: { 'content-type': 'application/json', ...(auth && { authorization: auth }) }, body: JSON.stringify(body) });

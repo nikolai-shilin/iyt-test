@@ -1,3 +1,6 @@
+// NO LONGER SERVED from here. The Go port in the ryc-regatta repo (www.sailupdown.com/api/regatta-session) serves this endpoint now, and
+// vercel.json forwards /api/regatta-session to it. This file stays, with its tests, until the old code is deleted.
+
 // A Telegram player's sign-in on the Regatta site (the ryc-regatta repo, www.sailupdown.com), whose accounts are
 // this Supabase project's Auth users. The app's Regatta button opens the site with the launch data in the hash; the
 // site's server posts it here. It is checked with the bot token, the player's Auth user is made the first time
@@ -10,7 +13,7 @@
 // The token lets whoever holds it sign in as that player, so it goes only to a caller who already holds that player's
 // signed launch data. Env on Vercel: TELEGRAM_BOT_TOKEN, SUPABASE_URL, SUPABASE_SECRET_KEY.
 
-import { verifyInitData, logError, noEmoji, SB, SB_KEY } from './settings.mjs';
+import { verifyInitData, logError, noEmoji, SB, SB_KEY } from '../api/settings.mjs';
 
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
 

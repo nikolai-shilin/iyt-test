@@ -1,4 +1,4 @@
-// api/game.mjs's rankings: the points of a daily race, the month's table, and the answers of GET ?day= and the POST of
+// legacy-regatta-api/game.mjs's rankings: the points of a daily race, the month's table, and the answers of GET ?day= and the POST of
 // a start with the boat's flag, against a database played by a stub of fetch. Run: npm test
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 process.env.SUPABASE_URL = 'https://db.test';
 process.env.SUPABASE_SECRET_KEY = 'sb_secret_test';
 process.env.TELEGRAM_BOT_TOKEN = '1:test';
-const { GET, POST, bests, rankDay, monthTable, playersOf, playersFrom, elosFrom, accountFlag, gameCard, floorSecs, perfOf, endOf, visitOf, openOf, dailyYacht } = await import('../api/game.mjs');
+const { GET, POST, bests, rankDay, monthTable, playersOf, playersFrom, elosFrom, accountFlag, gameCard, floorSecs, perfOf, endOf, visitOf, openOf, dailyYacht } = await import('../legacy-regatta-api/game.mjs');
 
 const day = (d) => new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
 const at = (d, h = 10) => `${day(d)}T${String(h).padStart(2, '0')}:00:00Z`;

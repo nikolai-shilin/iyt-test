@@ -1,3 +1,6 @@
+// NO LONGER SERVED from here. The Go port in the ryc-regatta repo (www.sailupdown.com/api/regatta-notify) serves this endpoint now, and
+// vercel.json forwards /api/regatta-notify to it. This file stays, with its tests, until the old code is deleted.
+
 // A message from the Regatta site (the ryc-regatta repo, www.sailupdown.com) to one of its sailors through this bot:
 // a 1-on-1 Match found while they are away from the site (lib/push-send.ts there; who may be written to is the
 // database's regatta_pair_push, supabase/migrations/20261121235000_regatta_telegram.sql). The bot token stays here.
@@ -11,7 +14,7 @@
 // database stops offering them. Env on Vercel: REGATTA_NOTIFY_SECRET (the same on the site), TELEGRAM_BOT_TOKEN,
 // SUPABASE_URL, SUPABASE_SECRET_KEY.
 
-import { db, logError } from './settings.mjs';
+import { db, logError } from '../api/settings.mjs';
 
 const SITE = 'https://www.sailupdown.com';
 const json = (body, status = 200) => Response.json(body, { status, headers: { 'cache-control': 'no-store' } });
