@@ -420,11 +420,21 @@ test('POST end, rate, open and visit: each checked, the race\'s kept once, a vis
   calls = stub();
   await post({ ev: 'open', id: vid, open: { vid, ref: 'tg', kind: 'today', tg: 1, dev: 'phone', ua: 'x' } });
   assert.deepEqual(calls.find((c) => c.url.includes('game_visits')).body, { id: vid, vid, ref: 'tg', kind: 'today', tg: 1, dev: 'phone' });
+  // its row there (the opening came first, as nearly always): one update
   calls = stub();
+  const real = globalThis.fetch;
+  globalThis.fetch = async (url, init = {}) => (String(url).includes('/rest/v1/game_visits') && init.method === 'PATCH'
+    ? (calls.push({ url: String(url), method: 'PATCH', body: JSON.parse(init.body) }), Response.json([{ id: vid }])) : real(url, init));
   await post({ ev: 'visit', id: vid, visit: { stage: 'loaded', vid, races: 1, finished: 0, mins: 0.5, load: 6.2, errors: [{ m: 'TypeError: boom', src: 'world.js:9', n: 2 }] } });
-  const v = calls.filter((c) => c.url.includes('game_visits'));
-  assert.equal(v.length, 2); assert.equal(v[1].method, 'PATCH');
-  assert.ok(v[1].body.loaded_at && v[1].body.last_at); assert.equal(v[1].body.load, 6.2); assert.deepEqual(v[1].body.errors, [{ m: 'TypeError: boom', src: 'world.js:9', n: 2 }]);
+  let v = calls.filter((c) => c.url.includes('game_visits'));
+  assert.equal(v.length, 1); assert.equal(v[0].method, 'PATCH');
+  assert.ok(v[0].body.loaded_at && v[0].body.last_at); assert.equal(v[0].body.load, 6.2); assert.deepEqual(v[0].body.errors, [{ m: 'TypeError: boom', src: 'world.js:9', n: 2 }]);
+  // no row (its opening never came): the update finds none, the row is made with what is known, and updated
+  calls = stub();
+  await post({ ev: 'visit', id: vid, visit: { stage: 'loaded', vid, races: 1 } });
+  v = calls.filter((c) => c.url.includes('game_visits'));
+  assert.deepEqual(v.map((c) => c.method), ['PATCH', 'POST', 'PATCH']);
+  assert.deepEqual(v[1].body, { id: vid, vid }); assert.ok(v[2].body.loaded_at); assert.equal(v[2].body.races, 1);
   assert.equal(visitOf({ stage: 'done' }), null); assert.equal(openOf(null), null);
   // no game_visits table yet: nothing kept, nothing logged
   calls = stub({ missing: 'game_visits' });

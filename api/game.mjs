@@ -871,9 +871,14 @@ export async function POST(request) {
         const v = visitOf(b.visit); if (!v) return done(400);
         const { stage, vid, ...rest } = v, at = new Date().toISOString();
         const body = { ...rest, last_at: at, ...(stage === 'loaded' && { loaded_at: at }), ...(stage === 'failed' && { failed_at: at }), ...(stage === 'gave-up' && { gave_up_at: at }) };
-        // a visit whose opening never came (an old cached page): made now, with what is known
-        await db('game_visits?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: { id, ...(vid && { vid }) } }).catch(missing);
-        await db(`game_visits?id=eq.${id}`, { method: 'PATCH', prefer: 'return=representation', body }).catch(missing);
+        // the visit's row, made by its opening, updated (one round trip); a visit whose opening never came (an old cached
+        // page, one in some hundreds) is made then, with what is known, and updated again
+        const update = () => db(`game_visits?id=eq.${id}&select=id`, { method: 'PATCH', prefer: 'return=representation', body });
+        const got = await update().catch(missing);
+        if (Array.isArray(got) && !got.length) {
+          await db('game_visits?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: { id, ...(vid && { vid }) } }).catch(missing);
+          await update().catch(missing);
+        }
       }
     } else if (b.ev === 'perf') {
       // how the game ran: once, for a race that was started here (no perf column yet: nothing kept)
