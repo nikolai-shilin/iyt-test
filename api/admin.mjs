@@ -43,6 +43,8 @@
 // player finished (ms, 0 = left before the finish), p = their place (null: not finished or disqualified), n = boats in
 // the race, s = their time (s), d = disqualified. The app counts the races, players and places for the range on
 // screen; series.races is the chart of races started. null until the table is in the database.
+// The database makes these records in one question (public.regatta_admin_races, supabase/migrations/
+// 20261125160000_regatta_admin_races.sql); before that function, they are made here from the races a page at a time.
 // An admin taking a flag off writes public.flag_clears; the student's app drops the flag on its next sync
 // (api/progress.mjs), and until then the lists here leave it out.
 // The caller proves who they are with Telegram.WebApp.initData in the x-telegram-init-data header (as api/settings.mjs);
@@ -77,7 +79,11 @@ const dkey = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.g
 const UNITS = { hour: [24, 3600e3], day: [91, 86400e3] }; // buckets in the series, and their length in ms
 const MAX_ANSWER_ROWS = 50_000; // the fallback below reads the rows themselves; past this the database function is a must
 // Joins, answers, wrong answers, theory reads and reported mistakes per UTC hour and per UTC day, oldest first (see the header).
-async function series(users, progress, game) {
+// The chart's joins, answers and wrong answers per hour and per day from public.admin_series, one question a unit;
+// null before its migration. Never rejects: a real failure is handed to series to throw.
+const seriesFn = () => Promise.all(Object.keys(UNITS).map((u) => db('rpc/admin_series', { method: 'POST', body: { p_unit: u, p_count: UNITS[u][0] } })))
+  .catch((e) => (/: 404 /.test(e.message) ? null : e));
+async function series(users, progress, game, fnAsked) {
   const out = {}, starts = {};
   for (const [u, [n, step]] of Object.entries(UNITS)) {
     const s = new Date();
@@ -96,12 +102,8 @@ async function series(users, progress, game) {
     for (const n of Object.values(obj(p.notes))) if (n && n.at > 1e12) add(n.at, (r) => r.reports++);
   }
   for (const g of game || []) add(g.at, (r) => r.races++);
-  let fn = null;
-  try {
-    fn = await Promise.all(Object.keys(UNITS).map((u) => db('rpc/admin_series', { method: 'POST', body: { p_unit: u, p_count: UNITS[u][0] } })));
-  } catch (e) {
-    if (!/: 404 /.test(e.message)) throw e; // anything but "no such function" is a real failure
-  }
+  const fn = fnAsked === undefined ? await seriesFn() : fnAsked;
+  if (fn instanceof Error) throw fn; // anything but "no such function" is a real failure
   if (fn) {
     // the function's buckets are the same UTC hours and days as out's, matched by their start (the hour may have
     // rolled over between the two clocks; a row with no bucket here is left out)
@@ -127,6 +129,9 @@ async function gameRaces() {
   const from = new Date(Date.now() - UNITS.day[0] * UNITS.day[1]).toISOString(), out = [];
   let cols = 'started_at,finished_at,user_id,wind,laps,length,place,boats,secs,dsq,shape';
   try {
+    // the records made by the database in one question (public.regatta_admin_races); before its migration, the pages
+    try { return await db('rpc/regatta_admin_races', { method: 'POST', body: { days: UNITS.day[0] } }); }
+    catch (e) { if (!/: 404 /.test(e.message)) throw e; }
     for (let off = 0; off < MAX_GAME_ROWS; off += 1000) {
       let page;
       try { page = await db(`game_races?select=${cols}&started_at=gte.${from}&order=started_at.desc&limit=1000&offset=${off}`); }
@@ -206,6 +211,8 @@ export async function GET(request) {
     try { return await tgPhoto(+id); } catch (e) { await logError('admin photo', e, +id); return json({ error: 'failed' }, 500); }
   }
   try {
+    // the chart's joins and answers asked at the same time as the rest (series takes them when they come)
+    const fnSeries = seriesFn();
     const [users, progress, clears, game] = await Promise.all([
       db(`users?select=id,name,username,lang,daily_question,blocked_at,created_at,updated_at&order=updated_at.desc&limit=${MAX_USERS}`),
       // only the parts of the state the summary needs; the whole state can be ~100 KB per student
@@ -218,7 +225,7 @@ export async function GET(request) {
     list.sort((a, b) => Date.parse(b.active) - Date.parse(a.active));
     const byId = new Map(list.map((u) => [u.id, u]));
     for (const c of clears) { const u = byId.get(c.user_id); if (u && (c.kind === 'flags' || c.kind === 'wrong')) u[c.kind] = u[c.kind].filter((id) => id !== c.question_id); }
-    const data = await series(users, progress, game).catch(async (e) => { await logError('admin series', e); return null; });
+    const data = await series(users, progress, game, await fnSeries).catch(async (e) => { await logError('admin series', e); return null; });
     return json({ users: list, series: data, game });
   } catch (e) {
     await logError('admin', e, user.id);
