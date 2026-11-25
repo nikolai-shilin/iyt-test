@@ -555,6 +555,39 @@ test('POST start: a daily race is that day\'s only in that day\'s yacht (a page 
   assert.ok(!('daily' in body), 'in another: a race of no day'); assert.equal(body.yacht, other);
 });
 
+test('GET ?month=&k=: the same month from the database\'s daily bests as from every race, without reading the races', async () => {
+  const m = day(0).slice(0, 7), ds = [2, 1, 0].map(day).filter((d) => d.startsWith(m));
+  const on = (d, h, o) => race({ daily: d, started_at: `${d}T${h}:00:00Z`, finished_at: `${d}T${h}:00:00Z`, ...o });
+  // two races a day for some, an equal time, a guest, flags that change
+  const rows = ds.flatMap((d, i) => [on(d, 11, { user_id: 7, secs: 190, flag: 'gb' }), on(d, 10, { user_id: 7, secs: 170 + i, place: 2 }), on(d, 12, { player: A, secs: 180, flag: i ? 'fr' : null }),
+    on(d, 9, { player: B, secs: 180 }), on(d, 8, { secs: 100 })]).sort((a, b) => (a.started_at < b.started_at ? 1 : -1));
+  // what regatta_daily_bests gives for those rows
+  const sums = new Map();
+  for (const r of rows) {
+    if (r.user_id == null && !r.player) continue;
+    const k = `${r.daily}|${r.user_id ?? `a:${r.player}`}`, x = sums.get(k) || { d: r.daily, u: r.user_id, a: r.user_id == null ? r.player : null, s: Infinity, p: null, n: 0, at: r.started_at, fl: r.flag };
+    x.s = Math.min(x.s, r.secs); x.n++; if (r.place && (x.p == null || r.place < x.p)) x.p = r.place;
+    sums.set(k, x);
+  }
+  const opts = { rows, users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [A]: 'Fed', [B]: 'Bo' } };
+  stub(opts);
+  const ks = (await (await GET(new Request(`https://x.test/api/game?day=${day(0)}`))).json()).month.rows.map((x) => x.k);
+  for (const k of ks) {
+    stub(opts);
+    const old = await (await GET(new Request(`https://x.test/api/game?month=${m}&k=${k}`))).json();
+    const calls = stub(opts), real = globalThis.fetch;
+    globalThis.fetch = async (url, init) => {
+      if (!String(url).includes('/rpc/regatta_daily_bests')) return real(url, init);
+      calls.push({ url: String(url), body: JSON.parse(init.body) });
+      return Response.json([...sums.values()]);
+    };
+    const now = await (await GET(new Request(`https://x.test/api/game?month=${m}&k=${k}`))).json();
+    assert.deepEqual(now, old, k);
+    assert.deepEqual(calls.find((c) => c.url.includes('regatta_daily_bests')).body, { since: `${m}-01`, until: day(0) });
+    assert.ok(!calls.some((c) => c.url.includes('game_races') && c.url.includes('daily=')), 'the month\'s races not read');
+  }
+});
+
 test('GET ?month=&k=: one player\'s month day by day, adding up to their points on the month\'s table', async () => {
   const m = day(0).slice(0, 7), ds = [2, 1, 0].map(day).filter((d) => d.startsWith(m));
   const on = (d, o) => race({ daily: d, started_at: `${d}T10:00:00Z`, finished_at: `${d}T10:00:00Z`, ...o });

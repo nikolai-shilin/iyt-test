@@ -338,6 +338,24 @@ async function flyingFlags(rows, now, players) {
   }
   return latestFlags([...rows, ...recent]);
 }
+// Each player's best of each day of the daily race from since to until, as public.regatta_daily_bests adds them up:
+// day → (key → { u, a, s, p, n }), as bests gives them (each day's players their latest race first, so equal times
+// fall as they do there), with .rows, each one's latest race of each day ({ started_at, user_id, player, flag }), for
+// their flags. null before the function's migration.
+export async function dailyBestsOf(since, until) {
+  let list;
+  try { list = await db('rpc/regatta_daily_bests', { method: 'POST', body: { since, until } }); }
+  catch (e) { if (/: 404 /.test(e.message)) return null; throw e; }
+  const byDay = new Map(), rows = [];
+  for (const x of Array.isArray(list) ? list : []) {
+    const u = x.u ?? null, a = u == null ? x.a ?? null : null, key = u != null ? u : `a:${a}`;
+    if (u == null && !a) continue;
+    (byDay.get(x.d) || byDay.set(x.d, new Map()).get(x.d)).set(key, { u, a, s: x.s, p: x.p || 0, n: x.n });
+    rows.push({ started_at: x.at, user_id: u, player: a, flag: x.fl ?? null });
+  }
+  byDay.rows = rows;
+  return byDay;
+}
 // A rating's flags and whole names at once: a site account's own boat's flag (namesOf) over the one its races flew.
 async function flagsAndNames(rows, now, players, cap) {
   const own = new Map();
@@ -747,17 +765,23 @@ async function playerMonth(m, k, json) {
   const none = { m, k, pts: 0, place: null, of: 0, wins: 0, podiums: 0, sailed: 0, days: [], near: [], above: null };
   if (!SB || !SB_KEY) return json(none, 200, cache);
   try {
-    let rows;
-    try {
-      rows = await readRaces('started_at,finished_at,user_id,player,secs,dsq,place,daily,flag',
-        `daily=gte.${m}-01&daily=lte.${last < today ? last : today}&finished_at=not.is.null&dsq=is.false&secs=gt.0`);
-    } catch (e) {
-      if (/daily/.test(e.message)) return json(none, 200, cache);
-      throw e;
+    // each player's best of each day, added up by the database (regatta_daily_bests); before its migration, from every
+    // finished daily race of the month. rows: what the flags of players with no race in the last 30 days come from.
+    let rows, byDay = await dailyBestsOf(`${m}-01`, last < today ? last : today);
+    if (byDay) rows = byDay.rows;
+    else {
+      try {
+        rows = await readRaces('started_at,finished_at,user_id,player,secs,dsq,place,daily,flag',
+          `daily=gte.${m}-01&daily=lte.${last < today ? last : today}&finished_at=not.is.null&dsq=is.false&secs=gt.0`);
+      } catch (e) {
+        if (/daily/.test(e.message)) return json(none, 200, cache);
+        throw e;
+      }
+      byDay = new Map();
+      for (const r of rows) (byDay.get(r.daily) || byDay.set(r.daily, []).get(r.daily)).push(r);
+      for (const [d, rs] of byDay) byDay.set(d, bests(rs));
     }
-    const byDay = new Map();
-    for (const r of rows) (byDay.get(r.daily) || byDay.set(r.daily, []).get(r.daily)).push(r);
-    const ranked = [...byDay].map(([d, rs]) => [d, rankDay(bests(rs))]).filter(([, list]) => list.length).sort(([a], [b]) => (a < b ? -1 : 1));
+    const ranked = [...byDay].map(([d, best]) => [d, rankDay(best)]).filter(([, list]) => list.length).sort(([a], [b]) => (a < b ? -1 : 1));
     const keys = new Map(), kOf = (x) => keys.get(x.key) ?? keys.set(x.key, keyOf(x)).get(x.key);
     // the month's table in the board's order; equal points, wins and podiums share the better place
     const month = monthTable(ranked.map(([, list]) => list)).sort((a, b) => b.pts - a.pts || b.wins - a.wins || b.podiums - a.podiums || (kOf(a) < kOf(b) ? -1 : 1));
