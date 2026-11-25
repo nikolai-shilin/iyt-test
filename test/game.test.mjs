@@ -101,10 +101,12 @@ test('GET ?day=: the day ranked, the month to it, names, flags from the latest r
 });
 
 test('GET ?day=: the same board from the database\'s daily bests and the day\'s races as from the month\'s races, without reading them', async () => {
-  const m = day(0).slice(0, 7), ds = [2, 1, 0].map(day).filter((d) => d.startsWith(m));
+  const C = '33333333-3333-4333-8333-333333333335', m = day(0).slice(0, 7), ds = [2, 1, 0].map(day).filter((d) => d.startsWith(m));
   const on = (d, h, o) => race({ daily: d, started_at: `${d}T${h}:00:00Z`, finished_at: `${d}T${h}:00:00Z`, ...o });
   const rows = ds.flatMap((d, i) => [on(d, 11, { user_id: 7, secs: 190, flag: 'gb' }), on(d, 10, { user_id: 7, secs: 170 + i, place: 2, wind: 'light' }), on(d, 12, { player: A, secs: 180, flag: i ? 'fr' : null }),
-    on(d, 9, { player: B, secs: 180 }), on(d, 8, { secs: 100, wind: 'strong' })]).sort((a, b) => (a.started_at < b.started_at ? 1 : -1));
+    // two players with no name: C ahead on the first day, level on the second, B ahead on the third; equal on the
+    // month, they keep the order they always had (the latest day's)
+    on(d, 9, { player: B, secs: [182, 181.5, 181][i] }), on(d, 7, { player: C, secs: [181, 181.5, 182][i] }), on(d, 8, { secs: 100, wind: 'strong' })]).sort((a, b) => (a.started_at < b.started_at ? 1 : -1));
   const sums = new Map();
   for (const r of rows) {
     if (r.user_id == null && !r.player) continue;
@@ -112,7 +114,7 @@ test('GET ?day=: the same board from the database\'s daily bests and the day\'s 
     x.s = Math.min(x.s, r.secs); x.n++; if (r.place && (x.p == null || r.place < x.p)) x.p = r.place;
     sums.set(k, x);
   }
-  const opts = { users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [A]: 'Fed', [B]: 'Bo' } };
+  const opts = { users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [A]: 'Fed' } };
   for (const d of ds) {
     stub({ ...opts, rows: rows.filter((r) => r.daily <= d) });
     const old = await (await GET(new Request(`https://x.test/api/game?day=${d}`))).json();
@@ -120,7 +122,8 @@ test('GET ?day=: the same board from the database\'s daily bests and the day\'s 
     globalThis.fetch = async (url, init) => {
       if (!String(url).includes('/rpc/regatta_daily_bests')) return real(url, init);
       calls.push({ url: String(url), body: JSON.parse(init.body) });
-      return Response.json([...sums.values()].filter((x) => x.d <= d));
+      // in the function's order: the earliest day first, each day's players their latest race first
+      return Response.json([...sums.values()].filter((x) => x.d <= d).sort((x, y) => (x.d !== y.d ? (x.d < y.d ? -1 : 1) : x.at < y.at ? 1 : -1)));
     };
     const now = await (await GET(new Request(`https://x.test/api/game?day=${d}`))).json();
     assert.deepEqual(now, old, d);
@@ -609,7 +612,7 @@ test('GET ?month=&k=: the same month from the database\'s daily bests as from ev
     globalThis.fetch = async (url, init) => {
       if (!String(url).includes('/rpc/regatta_daily_bests')) return real(url, init);
       calls.push({ url: String(url), body: JSON.parse(init.body) });
-      return Response.json([...sums.values()]);
+      return Response.json([...sums.values()].sort((x, y) => (x.d !== y.d ? (x.d < y.d ? -1 : 1) : x.at < y.at ? 1 : -1)));
     };
     const now = await (await GET(new Request(`https://x.test/api/game?month=${m}&k=${k}`))).json();
     assert.deepEqual(now, old, k);

@@ -723,7 +723,9 @@ async function dayRating(day, json, brief = false) {
     }
     const byDay = new Map();
     for (const r of rows) (byDay.get(r.daily) || byDay.set(r.daily, []).get(r.daily)).push(r);
-    const best = sums ? [...sums] : [...byDay].map(([d, rs]) => [d, bests(rs)]);
+    // (the days the latest first, as the races come: players equal on the month's table keep the order they always had)
+    // (the days the latest first, as the races come: players equal on the month's table keep the order they always had)
+    const best = sums ? [...sums].sort(([a], [b]) => (a < b ? 1 : -1)) : [...byDay].map(([d, rs]) => [d, bests(rs)]);
     if (sums) rows = [...rows, ...sums.rows]; // (for the flags of players with no race in the last 30 days)
     const ranked = new Map(best.map(([d, b]) => [d, rankDay(b)]).filter(([, list]) => list.length));
     const days = [...ranked.keys()].sort().reverse();
