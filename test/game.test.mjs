@@ -149,6 +149,25 @@ test('GET ?day=: the ranked players\' flags in one question when the database ha
   assert.ok(!calls.some((c) => c.url.includes('game_races') && !c.url.includes('daily=')), 'no read of every recent race');
 });
 
+test('GET ?day=: Telegram players\' and site accounts\' names are asked at once', async () => {
+  stub({ rows: [race({ user_id: 7, secs: 180 }), race({ player: A, secs: 190 })], users: [{ id: 7, name: 'Anna' }] });
+  const real = globalThis.fetch;
+  let asked = null, overlapped = false;
+  const accountsAsked = new Promise((r) => { asked = r; });
+  globalThis.fetch = async (url, init) => {
+    const u = String(url);
+    if (u.includes('/rpc/regatta_names')) { asked(); return Response.json([{ id: A, display_name: 'Fed' }]); }
+    if (u.includes('/rest/v1/users')) {
+      // the users' answer waits for the accounts' question: asked one after the other, it would come only at the timeout
+      overlapped = await Promise.race([accountsAsked.then(() => true), new Promise((r) => setTimeout(() => r(false), 500))]);
+    }
+    return real(url, init);
+  };
+  const j = await (await GET(new Request(`https://x.test/api/game?day=${day(0)}&brief`))).json();
+  assert.deepEqual(j.top.map((x) => x.name), ['Anna', 'Fed']);
+  assert.ok(overlapped, 'the accounts were asked while the users were');
+});
+
 test('GET ?day= before the flag column is there: read without it', async () => {
   const calls = stub({ rows: [race({ user_id: 7 })], users: [{ id: 7, name: 'Anna' }], missing: 'flag' });
   const j = await (await GET(new Request(`https://x.test/api/game?day=${day(0)}`))).json();

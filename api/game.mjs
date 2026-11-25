@@ -382,37 +382,42 @@ export function monthTable(days) {
   return [...out.values()].sort((a, b) => b.pts - a.pts || b.wins - a.wins || b.podiums - a.podiums);
 }
 // Names for players ({ key, u, a }): a Telegram user's from the users table (one look-up a hundred), a site account's
-// display name from Supabase Auth, at most cap of those (each is a request of its own). key → name: short ("Anna P."),
-// or the whole name when full (the rating). flags, when given, takes each of those site accounts' own flag
-// (accountFlag) in place of the one their latest race flew.
+// display name from Supabase Auth, at most cap of those. The two kinds are asked at once, the hundreds side by side.
+// key → name: short ("Anna P."), or the whole name when full (the rating). flags, when given, takes each of those site
+// accounts' own flag (accountFlag) in place of the one their latest race flew.
 async function namesOf(players, cap, full = false, flags = null) {
   const nameOf = full ? fullName : shortName;
   const names = new Map(), ids = [...new Set(players.filter((x) => x.u != null).map((x) => x.u))];
-  for (let i = 0; i < ids.length; i += 100) {
-    for (const u of await db(`users?select=id,name&id=in.(${ids.slice(i, i + 100).join(',')})`)) names.set(String(u.id), nameOf(u.name));
-  }
-  for (const x of players) if (x.u != null) names.set(x.key, names.get(String(x.u)) || null);
   const site = [...new Map(players.filter((x) => x.u == null && x.a).map((x) => [x.key, x])).values()].slice(0, cap);
-  if (!site.length) return names;
-  // all of them in one question (public.regatta_names); before its migration, each by itself
-  try {
-    const got = new Map((await db('rpc/regatta_names', { method: 'POST', body: { ids: site.map((x) => x.a) } })).map((u) => [u.id, u]));
-    for (const x of site) {
-      const u = got.get(x.a);
-      names.set(x.key, nameOf(u && u.display_name));
-      const fl = flags && u ? accountFlag({ boat: u.boat }) : undefined;
-      if (fl !== undefined) flags.set(x.key, fl);
+  const telegram = async () => {
+    const lists = [];
+    for (let i = 0; i < ids.length; i += 100) lists.push(db(`users?select=id,name&id=in.(${ids.slice(i, i + 100).join(',')})`));
+    for (const list of await Promise.all(lists)) for (const u of list) names.set(String(u.id), nameOf(u.name));
+    for (const x of players) if (x.u != null) names.set(x.key, names.get(String(x.u)) || null);
+  };
+  const accounts = async () => {
+    if (!site.length) return;
+    // all of them in one question (public.regatta_names); before its migration, each by itself
+    try {
+      const got = new Map((await db('rpc/regatta_names', { method: 'POST', body: { ids: site.map((x) => x.a) } })).map((u) => [u.id, u]));
+      for (const x of site) {
+        const u = got.get(x.a);
+        names.set(x.key, nameOf(u && u.display_name));
+        const fl = flags && u ? accountFlag({ boat: u.boat }) : undefined;
+        if (fl !== undefined) flags.set(x.key, fl);
+      }
+      return;
+    } catch (e) { if (!/: 404 /.test(e.message)) await logError('game names', e); }
+    for (let i = 0; i < site.length; i += 10) {
+      await Promise.all(site.slice(i, i + 10).map(async (x) => {
+        const u = await auth(`admin/users/${x.a}`).catch(() => null);
+        names.set(x.key, nameOf(u && u.user_metadata && u.user_metadata.display_name));
+        const fl = flags && u ? accountFlag(u.user_metadata) : undefined;
+        if (fl !== undefined) flags.set(x.key, fl);
+      }));
     }
-    return names;
-  } catch (e) { if (!/: 404 /.test(e.message)) await logError('game names', e); }
-  for (let i = 0; i < site.length; i += 10) {
-    await Promise.all(site.slice(i, i + 10).map(async (x) => {
-      const u = await auth(`admin/users/${x.a}`).catch(() => null);
-      names.set(x.key, nameOf(u && u.user_metadata && u.user_metadata.display_name));
-      const fl = flags && u ? accountFlag(u.user_metadata) : undefined;
-      if (fl !== undefined) flags.set(x.key, fl);
-    }));
-  }
+  };
+  await Promise.all([telegram(), accounts()]);
   return names;
 }
 // what of a player leaves the server: a key that stays theirs (not their id), and their picture's key if in Telegram
