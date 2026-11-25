@@ -94,9 +94,39 @@ test('GET ?day=: the day ranked, the month to it, names, flags from the latest r
     assert.deepEqual(j.days, [day(0), day(1)]);
     assert.deepEqual(j.month.rows.map((x) => [x.name, x.pts, x.days, x.wins, x.podiums]), [['Anna Petrova', 3, 2, 1, 2], ['Fed', 3, 2, 1, 2]]);
   }
-  const q = calls.find((c) => c.url.includes('game_races')).url;
+  // before the daily bests' migration: the month's races read (after the day's own)
+  const q = calls.find((c) => c.url.includes('game_races') && c.url.includes('daily=gte')).url;
   assert.match(q, new RegExp(`daily=gte\\.${day(0).slice(0, 7)}-01&daily=lte\\.${day(0)}&finished_at=not\\.is\\.null`));
   assert.match(q, /select=[^&]*flag/);
+});
+
+test('GET ?day=: the same board from the database\'s daily bests and the day\'s races as from the month\'s races, without reading them', async () => {
+  const m = day(0).slice(0, 7), ds = [2, 1, 0].map(day).filter((d) => d.startsWith(m));
+  const on = (d, h, o) => race({ daily: d, started_at: `${d}T${h}:00:00Z`, finished_at: `${d}T${h}:00:00Z`, ...o });
+  const rows = ds.flatMap((d, i) => [on(d, 11, { user_id: 7, secs: 190, flag: 'gb' }), on(d, 10, { user_id: 7, secs: 170 + i, place: 2, wind: 'light' }), on(d, 12, { player: A, secs: 180, flag: i ? 'fr' : null }),
+    on(d, 9, { player: B, secs: 180 }), on(d, 8, { secs: 100, wind: 'strong' })]).sort((a, b) => (a.started_at < b.started_at ? 1 : -1));
+  const sums = new Map();
+  for (const r of rows) {
+    if (r.user_id == null && !r.player) continue;
+    const k = `${r.daily}|${r.user_id ?? `a:${r.player}`}`, x = sums.get(k) || { d: r.daily, u: r.user_id, a: r.user_id == null ? r.player : null, s: Infinity, p: null, n: 0, at: r.started_at, fl: r.flag };
+    x.s = Math.min(x.s, r.secs); x.n++; if (r.place && (x.p == null || r.place < x.p)) x.p = r.place;
+    sums.set(k, x);
+  }
+  const opts = { users: [{ id: 7, name: 'Anna Petrova' }], accounts: { [A]: 'Fed', [B]: 'Bo' } };
+  for (const d of ds) {
+    stub({ ...opts, rows: rows.filter((r) => r.daily <= d) });
+    const old = await (await GET(new Request(`https://x.test/api/game?day=${d}`))).json();
+    const calls = stub({ ...opts, rows: rows.filter((r) => r.daily === d) }), real = globalThis.fetch;
+    globalThis.fetch = async (url, init) => {
+      if (!String(url).includes('/rpc/regatta_daily_bests')) return real(url, init);
+      calls.push({ url: String(url), body: JSON.parse(init.body) });
+      return Response.json([...sums.values()].filter((x) => x.d <= d));
+    };
+    const now = await (await GET(new Request(`https://x.test/api/game?day=${d}`))).json();
+    assert.deepEqual(now, old, d);
+    assert.deepEqual(calls.find((c) => c.url.includes('regatta_daily_bests')).body, { since: `${m}-01`, until: d });
+    assert.ok(!calls.some((c) => c.url.includes('daily=gte')), 'the month\'s races not read');
+  }
 });
 
 test('GET ?day=: a past day is cached long; the future, a non-date and the far past are not found', async () => {

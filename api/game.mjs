@@ -710,18 +710,22 @@ async function dayRating(day, json, brief = false) {
     : { d: day, w: null, races: 0, guests: 0, rows: [], month: { m, days: 0, rows: [] }, days: [] };
   if (!SB || !SB_KEY) return json(empty, 200, cache);
   try {
-    let rows;
+    const cols = 'started_at,finished_at,user_id,player,wind,secs,dsq,place,daily,flag', fin = '&finished_at=not.is.null&dsq=is.false&secs=gt.0';
+    let rows, sums = null;
     try {
-      // brief: that day's races alone; else the month's to that day, for its table
-      rows = await readRaces('started_at,finished_at,user_id,player,wind,secs,dsq,place,daily,flag',
-        `${brief ? `daily=eq.${day}` : `daily=gte.${m}-01&daily=lte.${day}`}&finished_at=not.is.null&dsq=is.false&secs=gt.0`);
+      // that day's races; and for the month's table (not brief), each player's best of each day of the month to that
+      // day, added up by the database (regatta_daily_bests) at the same time, or before its migration every race of them
+      [sums, rows] = await Promise.all([brief ? null : dailyBestsOf(`${m}-01`, day), readRaces(cols, `daily=eq.${day}${fin}`)]);
+      if (!brief && !sums) rows = await readRaces(cols, `daily=gte.${m}-01&daily=lte.${day}${fin}`);
     } catch (e) {
       if (/daily/.test(e.message)) return json(empty, 200, cache); // no daily column yet: no daily races either
       throw e;
     }
     const byDay = new Map();
     for (const r of rows) (byDay.get(r.daily) || byDay.set(r.daily, []).get(r.daily)).push(r);
-    const ranked = new Map([...byDay].map(([d, rs]) => [d, rankDay(bests(rs))]).filter(([, list]) => list.length));
+    const best = sums ? [...sums] : [...byDay].map(([d, rs]) => [d, bests(rs)]);
+    if (sums) rows = [...rows, ...sums.rows]; // (for the flags of players with no race in the last 30 days)
+    const ranked = new Map(best.map(([d, b]) => [d, rankDay(b)]).filter(([, list]) => list.length));
     const days = [...ranked.keys()].sort().reverse();
     const mine = byDay.get(day) || [], dayList = ranked.get(day) || [];
     if (brief) {
