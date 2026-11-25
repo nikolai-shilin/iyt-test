@@ -32,6 +32,7 @@ function stub({ rows = [], recent = null, users = [], accounts = {}, missing = n
     }
     if (u.includes('/rest/v1/game_visits')) {
       if (missing === 'game_visits') return new Response(JSON.stringify({ message: 'relation "public.game_visits" does not exist' }), { status: 404 });
+      if (missing === 'src' && init.body && init.body.includes('"src"')) return new Response(JSON.stringify({ message: "Could not find the 'src' column of 'game_visits' in the schema cache" }), { status: 400 });
       return Response.json([]);
     }
     if (u.includes('/rest/v1/users')) return Response.json(users);
@@ -319,6 +320,24 @@ test('POST end, rate, open and visit: each checked, the race\'s kept once, a vis
   // no game_visits table yet: nothing kept, nothing logged
   calls = stub({ missing: 'game_visits' });
   assert.equal((await post({ ev: 'visit', id: vid, visit: { stage: 'left', races: 2 } })).status, 204);
+  assert.ok(!calls.some((c) => c.url.includes('/rest/v1/errors')));
+});
+
+test('POST open: where the browser first came from goes with the visit, in clean words; without its columns the visit is kept all the same', async () => {
+  const vid = '33333333-3333-4333-8333-333333333333';
+  const post = (body) => POST(new Request('https://x.test/api/game', { method: 'POST', body: JSON.stringify(body), headers: { 'x-forwarded-for': `10.0.5.${Math.random() * 250 | 0}` } }));
+  let calls = stub();
+  await post({ ev: 'open', id: vid, open: { vid, ref: 'direct', kind: 'today', tg: 0, dev: 'phone', src: 'telegram', medium: 'post', campaign: 'daily-2026-11-25', ref_host: 'l.instagram.com', app: 'instagram' } });
+  assert.deepEqual(calls.find((c) => c.url.includes('game_visits')).body,
+    { id: vid, vid, ref: 'direct', kind: 'today', tg: 0, dev: 'phone', src: 'telegram', medium: 'post', campaign: 'daily-2026-11-25', ref_host: 'l.instagram.com', app: 'instagram' });
+  // not words, too long, an app we don't know: left out
+  const o = openOf({ src: 'Tele gram', medium: '<b>', campaign: 'x'.repeat(80), ref_host: 'a.b', app: 'myspace' });
+  assert.deepEqual([o.src, o.medium, o.campaign.length, o.ref_host, o.app], [undefined, undefined, 64, 'a.b', undefined]);
+  // the columns not made yet: the visit kept without them
+  calls = stub({ missing: 'src' });
+  assert.equal((await post({ ev: 'open', id: vid, open: { vid, ref: 'other', src: 'share', medium: 'result' } })).status, 204);
+  const v = calls.filter((c) => c.url.includes('game_visits'));
+  assert.equal(v.length, 2); assert.deepEqual(v[1].body, { id: vid, vid, ref: 'other', tg: 0 });
   assert.ok(!calls.some((c) => c.url.includes('/rest/v1/errors')));
 });
 

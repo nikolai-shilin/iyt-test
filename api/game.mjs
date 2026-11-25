@@ -97,10 +97,11 @@
 //     what she had set. Kept once a race (endOf).
 //   POST /api/game { ev: 'rate', id: '<uuid>', rating: 1–5 } or { ev: 'rate', id, comment: '…' (500 at most) } → 204
 //     how the player liked the race (the result page's RateRace there): each kept once a race.
-//   POST /api/game { ev: 'open', id: '<visit uuid>', open: { vid, ref, kind, tg, dev } } → 204
+//   POST /api/game { ev: 'open', id: '<visit uuid>', open: { vid, ref, kind, tg, dev, src, medium, campaign, ref_host, app } } → 204
 //   POST /api/game { ev: 'visit', id: '<visit uuid>', visit: { stage: 'loaded' | 'failed' | 'gave-up' | 'left', vid, … } } → 204
 //     a visit of the game's page (public.game_visits): opened (the loading screen, play/index.html, posts it first:
-//     this browser's random id vid, where from, which race, Telegram, the device), then loaded (the race under way, the
+//     this browser's random id vid, where from, which race, Telegram, the device, and where the browser first came from:
+//     the first tagged link's source, medium and campaign, another site's host, an app's own browser), then loaded (the race under way, the
 //     seconds it took), failed (why), gave up while loading (how far it had got), and as it is left or put away the races
 //     begun and finished, the minutes on the page, how to play opened, a drill or a ghost, its first errors and a lost
 //     WebGL context (visitOf). The start of a race names its visit and vid too, so a guest who comes back counts once.
@@ -196,10 +197,16 @@ export function endOf(e) {
 }
 // a visit's opening (ev: 'open') and what it came to (ev: 'visit')
 const STAGES = ['loaded', 'failed', 'gave-up', 'left'];
+// where the browser first came from (the site's public/game/first-touch.js): src (utm_source or ?src=), medium,
+// campaign, ref_host (another site's host) and app (the app whose browser it opened in), each a lower-case word
+const SRC = ['src', 'medium', 'campaign', 'ref_host', 'app'];
+const tag = (v, n) => (typeof v === 'string' && /^[a-z0-9][a-z0-9._-]*$/.test(v) ? v.slice(0, n) : undefined);
 export function openOf(o) {
   if (!o || typeof o !== 'object') return null;
   return clean({ vid: UUIDV(o.vid) ?? undefined, ref: ['tg', 'site', 'other', 'direct'].includes(o.ref) ? o.ref : undefined,
-    kind: ['today', 'free', 'match', 'drill'].includes(o.kind) ? o.kind : undefined, tg: o.tg === 1 ? 1 : 0, dev: ['phone', 'tablet', 'desktop'].includes(o.dev) ? o.dev : undefined });
+    kind: ['today', 'free', 'match', 'drill'].includes(o.kind) ? o.kind : undefined, tg: o.tg === 1 ? 1 : 0, dev: ['phone', 'tablet', 'desktop'].includes(o.dev) ? o.dev : undefined,
+    src: tag(o.src, 32), medium: tag(o.medium, 32), campaign: tag(o.campaign, 64), ref_host: tag(o.ref_host, 64),
+    app: ['instagram', 'threads', 'facebook', 'telegram', 'linkedin'].includes(o.app) ? o.app : undefined });
 }
 export function visitOf(v) {
   if (!v || typeof v !== 'object' || !STAGES.includes(v.stage)) return null;
@@ -786,7 +793,13 @@ export async function POST(request) {
       const missing = (e) => { if (!/game_visits/.test(e.message) && !/: 404 /.test(e.message)) throw e; };
       if (b.ev === 'open') {
         const o = openOf(b.open); if (!o) return done(400);
-        await db('game_visits?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body: { id, ...o } }).catch(missing);
+        const open = (body) => db('game_visits?on_conflict=id', { method: 'POST', prefer: 'resolution=ignore-duplicates,return=representation', body });
+        // the source's columns not there yet (migration 20261125120000): the visit kept without them
+        await open({ id, ...o }).catch((e) => {
+          const has = SRC.filter((c) => c in o);
+          if (!has.length || !has.some((c) => new RegExp(`\\b${c}\\b`).test(e.message))) throw e;
+          return open({ id, ...Object.fromEntries(Object.entries(o).filter(([k]) => !SRC.includes(k))) });
+        }).catch(missing);
       } else {
         const v = visitOf(b.visit); if (!v) return done(400);
         const { stage, vid, ...rest } = v, at = new Date().toISOString();
